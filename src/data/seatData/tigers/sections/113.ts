@@ -1,0 +1,13168 @@
+/**
+ * 113 - tigers
+ * Generated: 2025-10-23T14:45:23.035Z
+ * Total Seats: 489
+ * Total Rows: 33
+ */
+
+import type { SectionSeatingData } from '@/types/seat';
+
+export const section_113: SectionSeatingData = {
+  "sectionId": "113",
+  "sectionName": "113",
+  "stadiumId": "tigers",
+  "totalSeats": 489,
+  "totalRows": 33,
+  "rows": [
+    {
+      "rowNumber": "A",
+      "sectionId": "113",
+      "seatCount": 15,
+      "elevation": 17.5,
+      "depth": 112.8,
+      "rowSpacing": 36,
+      "seats": [
+        {
+          "id": "tigers-113-A-1",
+          "sectionId": "113",
+          "row": "A",
+          "seatNumber": "1",
+          "position3D": {
+            "x": 41.93903235652498,
+            "y": -104.71369330225322,
+            "z": 17.5
+          },
+          "elevation": 17.5,
+          "distanceFromHomeplate": 112.8,
+          "angle": 21.82666666666666,
+          "facing": 201.82666666666665,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "tigers-113-A-2",
+          "sectionId": "113",
+          "row": "A",
+          "seatNumber": "2",
+          "position3D": {
+            "x": 42.401612577282194,
+            "y": -104.52723688515863,
+            "z": 17.5
+          },
+          "elevation": 17.5,
+          "distanceFromHomeplate": 112.80000000000001,
+          "angle": 22.079999999999995,
+          "facing": 202.07999999999998,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "tigers-113-A-3",
+          "sectionId": "113",
+          "row": "A",
+          "seatNumber": "3",
+          "position3D": {
+            "x": 42.86336386189573,
+            "y": -104.33873699850277,
+            "z": 17.5
+          },
+          "elevation": 17.5,
+          "distanceFromHomeplate": 112.8,
+          "angle": 22.33333333333333,
+          "facing": 202.33333333333331,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "tigers-113-A-4",
+          "sectionId": "113",
+          "row": "A",
+          "seatNumber": "4",
+          "position3D": {
+            "x": 43.324277183295486,
+            "y": -104.14819732739008,
+            "z": 17.5
+          },
+          "elevation": 17.5,
+          "distanceFromHomeplate": 112.8,
+          "angle": 22.586666666666662,
+          "facing": 202.58666666666667,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "tigers-113-A-5",
+          "sectionId": "113",
+          "row": "A",
+          "seatNumber": "5",
+          "position3D": {
+            "x": 43.784343530793315,
+            "y": -103.95562159680196,
+            "z": 17.5
+          },
+          "elevation": 17.5,
+          "distanceFromHomeplate": 112.8,
+          "angle": 22.839999999999996,
+          "facing": 202.84,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "tigers-113-A-6",
+          "sectionId": "113",
+          "row": "A",
+          "seatNumber": "6",
+          "position3D": {
+            "x": 44.24355391025895,
+            "y": -103.7610135715241,
+            "z": 17.5
+          },
+          "elevation": 17.5,
+          "distanceFromHomeplate": 112.8,
+          "angle": 23.09333333333333,
+          "facing": 203.09333333333333,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "tigers-113-A-7",
+          "sectionId": "113",
+          "row": "A",
+          "seatNumber": "7",
+          "position3D": {
+            "x": 44.701899344296066,
+            "y": -103.56437705607281,
+            "z": 17.5
+          },
+          "elevation": 17.5,
+          "distanceFromHomeplate": 112.8,
+          "angle": 23.346666666666664,
+          "facing": 203.34666666666666,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "tigers-113-A-8",
+          "sectionId": "113",
+          "row": "A",
+          "seatNumber": "8",
+          "position3D": {
+            "x": 45.159370872417746,
+            "y": -103.36571589462062,
+            "z": 17.5
+          },
+          "elevation": 17.5,
+          "distanceFromHomeplate": 112.8,
+          "angle": 23.599999999999994,
+          "facing": 203.6,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "tigers-113-A-9",
+          "sectionId": "113",
+          "row": "A",
+          "seatNumber": "9",
+          "position3D": {
+            "x": 45.61595955122155,
+            "y": -103.16503397092117,
+            "z": 17.5
+          },
+          "elevation": 17.5,
+          "distanceFromHomeplate": 112.8,
+          "angle": 23.853333333333328,
+          "facing": 203.85333333333332,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "tigers-113-A-10",
+          "sectionId": "113",
+          "row": "A",
+          "seatNumber": "10",
+          "position3D": {
+            "x": 46.071656454564426,
+            "y": -102.96233520823327,
+            "z": 17.5
+          },
+          "elevation": 17.5,
+          "distanceFromHomeplate": 112.8,
+          "angle": 24.106666666666662,
+          "facing": 204.10666666666665,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "tigers-113-A-11",
+          "sectionId": "113",
+          "row": "A",
+          "seatNumber": "11",
+          "position3D": {
+            "x": 46.526452673737296,
+            "y": -102.75762356924416,
+            "z": 17.5
+          },
+          "elevation": 17.5,
+          "distanceFromHomeplate": 112.8,
+          "angle": 24.359999999999996,
+          "facing": 204.35999999999999,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "tigers-113-A-12",
+          "sectionId": "113",
+          "row": "A",
+          "seatNumber": "12",
+          "position3D": {
+            "x": 46.98033931763899,
+            "y": -102.55090305599217,
+            "z": 17.5
+          },
+          "elevation": 17.5,
+          "distanceFromHomeplate": 112.8,
+          "angle": 24.61333333333333,
+          "facing": 204.61333333333334,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "tigers-113-A-13",
+          "sectionId": "113",
+          "row": "A",
+          "seatNumber": "13",
+          "position3D": {
+            "x": 47.4333075129503,
+            "y": -102.34217770978832,
+            "z": 17.5
+          },
+          "elevation": 17.5,
+          "distanceFromHomeplate": 112.8,
+          "angle": 24.86666666666666,
+          "facing": 204.86666666666667,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "tigers-113-A-14",
+          "sectionId": "113",
+          "row": "A",
+          "seatNumber": "14",
+          "position3D": {
+            "x": 47.88534840430735,
+            "y": -102.1314516111374,
+            "z": 17.5
+          },
+          "elevation": 17.5,
+          "distanceFromHomeplate": 112.8,
+          "angle": 25.119999999999994,
+          "facing": 205.12,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "tigers-113-A-15",
+          "sectionId": "113",
+          "row": "A",
+          "seatNumber": "15",
+          "position3D": {
+            "x": 48.336453154474725,
+            "y": -101.91872887965819,
+            "z": 17.5
+          },
+          "elevation": 17.5,
+          "distanceFromHomeplate": 112.80000000000001,
+          "angle": 25.373333333333328,
+          "facing": 205.37333333333333,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        }
+      ],
+      "covered": false,
+      "hasAisleSeats": false,
+      "wheelchairRow": false
+    },
+    {
+      "rowNumber": "B",
+      "sectionId": "113",
+      "seatCount": 15,
+      "elevation": 20,
+      "depth": 115.6,
+      "rowSpacing": 36,
+      "seats": [
+        {
+          "id": "tigers-113-B-1",
+          "sectionId": "113",
+          "row": "B",
+          "seatNumber": "1",
+          "position3D": {
+            "x": 42.980072166793335,
+            "y": -107.31296937713184,
+            "z": 20
+          },
+          "elevation": 20,
+          "distanceFromHomeplate": 115.59999999999998,
+          "angle": 21.82666666666666,
+          "facing": 201.82666666666665,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "tigers-113-B-2",
+          "sectionId": "113",
+          "row": "B",
+          "seatNumber": "2",
+          "position3D": {
+            "x": 43.454134875299836,
+            "y": -107.1218846092583,
+            "z": 20
+          },
+          "elevation": 20,
+          "distanceFromHomeplate": 115.60000000000001,
+          "angle": 22.079999999999995,
+          "facing": 202.07999999999998,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "tigers-113-B-3",
+          "sectionId": "113",
+          "row": "B",
+          "seatNumber": "3",
+          "position3D": {
+            "x": 43.92734807123356,
+            "y": -106.92870564740177,
+            "z": 20
+          },
+          "elevation": 20,
+          "distanceFromHomeplate": 115.6,
+          "angle": 22.33333333333333,
+          "facing": 202.33333333333331,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "tigers-113-B-4",
+          "sectionId": "113",
+          "row": "B",
+          "seatNumber": "4",
+          "position3D": {
+            "x": 44.39970250344821,
+            "y": -106.73343626814089,
+            "z": 20
+          },
+          "elevation": 20,
+          "distanceFromHomeplate": 115.6,
+          "angle": 22.586666666666662,
+          "facing": 202.58666666666667,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "tigers-113-B-5",
+          "sectionId": "113",
+          "row": "B",
+          "seatNumber": "5",
+          "position3D": {
+            "x": 44.871188937586055,
+            "y": -106.53608028892116,
+            "z": 20
+          },
+          "elevation": 20,
+          "distanceFromHomeplate": 115.6,
+          "angle": 22.839999999999996,
+          "facing": 202.84,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "tigers-113-B-6",
+          "sectionId": "113",
+          "row": "B",
+          "seatNumber": "6",
+          "position3D": {
+            "x": 45.341798156258285,
+            "y": -106.33664156798037,
+            "z": 20
+          },
+          "elevation": 20,
+          "distanceFromHomeplate": 115.59999999999998,
+          "angle": 23.09333333333333,
+          "facing": 203.09333333333333,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "tigers-113-B-7",
+          "sectionId": "113",
+          "row": "B",
+          "seatNumber": "7",
+          "position3D": {
+            "x": 45.8115209592254,
+            "y": -106.13512400427321,
+            "z": 20
+          },
+          "elevation": 20,
+          "distanceFromHomeplate": 115.60000000000001,
+          "angle": 23.346666666666664,
+          "facing": 203.34666666666666,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "tigers-113-B-8",
+          "sectionId": "113",
+          "row": "B",
+          "seatNumber": "8",
+          "position3D": {
+            "x": 46.28034816357705,
+            "y": -105.93153153739489,
+            "z": 20
+          },
+          "elevation": 20,
+          "distanceFromHomeplate": 115.6,
+          "angle": 23.599999999999994,
+          "facing": 203.6,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "tigers-113-B-9",
+          "sectionId": "113",
+          "row": "B",
+          "seatNumber": "9",
+          "position3D": {
+            "x": 46.74827060391145,
+            "y": -105.72586814750431,
+            "z": 20
+          },
+          "elevation": 20,
+          "distanceFromHomeplate": 115.60000000000001,
+          "angle": 23.853333333333328,
+          "facing": 203.85333333333332,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "tigers-113-B-10",
+          "sectionId": "113",
+          "row": "B",
+          "seatNumber": "10",
+          "position3D": {
+            "x": 47.2152791325146,
+            "y": -105.51813785524615,
+            "z": 20
+          },
+          "elevation": 20,
+          "distanceFromHomeplate": 115.60000000000001,
+          "angle": 24.106666666666662,
+          "facing": 204.10666666666665,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "tigers-113-B-11",
+          "sectionId": "113",
+          "row": "B",
+          "seatNumber": "11",
+          "position3D": {
+            "x": 47.68136461953929,
+            "y": -105.3083447216722,
+            "z": 20
+          },
+          "elevation": 20,
+          "distanceFromHomeplate": 115.59999999999998,
+          "angle": 24.359999999999996,
+          "facing": 204.35999999999999,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "tigers-113-B-12",
+          "sectionId": "113",
+          "row": "B",
+          "seatNumber": "12",
+          "position3D": {
+            "x": 48.14651795318323,
+            "y": -105.09649284816217,
+            "z": 20
+          },
+          "elevation": 20,
+          "distanceFromHomeplate": 115.59999999999998,
+          "angle": 24.61333333333333,
+          "facing": 204.61333333333334,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "tigers-113-B-13",
+          "sectionId": "113",
+          "row": "B",
+          "seatNumber": "13",
+          "position3D": {
+            "x": 48.610730039867505,
+            "y": -104.88258637634334,
+            "z": 20
+          },
+          "elevation": 20,
+          "distanceFromHomeplate": 115.6,
+          "angle": 24.86666666666666,
+          "facing": 204.86666666666667,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "tigers-113-B-14",
+          "sectionId": "113",
+          "row": "B",
+          "seatNumber": "14",
+          "position3D": {
+            "x": 49.07399180441427,
+            "y": -104.66662948800959,
+            "z": 20
+          },
+          "elevation": 20,
+          "distanceFromHomeplate": 115.59999999999998,
+          "angle": 25.119999999999994,
+          "facing": 205.12,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "tigers-113-B-15",
+          "sectionId": "113",
+          "row": "B",
+          "seatNumber": "15",
+          "position3D": {
+            "x": 49.53629419022409,
+            "y": -104.44862640503978,
+            "z": 20
+          },
+          "elevation": 20,
+          "distanceFromHomeplate": 115.60000000000001,
+          "angle": 25.373333333333328,
+          "facing": 205.37333333333333,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        }
+      ],
+      "covered": false,
+      "hasAisleSeats": false,
+      "wheelchairRow": false
+    },
+    {
+      "rowNumber": "C",
+      "sectionId": "113",
+      "seatCount": 15,
+      "elevation": 22.5,
+      "depth": 118.4,
+      "rowSpacing": 36,
+      "seats": [
+        {
+          "id": "tigers-113-C-1",
+          "sectionId": "113",
+          "row": "C",
+          "seatNumber": "1",
+          "position3D": {
+            "x": 44.021111977061686,
+            "y": -109.91224545201048,
+            "z": 22.5
+          },
+          "elevation": 22.5,
+          "distanceFromHomeplate": 118.4,
+          "angle": 21.82666666666666,
+          "facing": 201.82666666666665,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "tigers-113-C-2",
+          "sectionId": "113",
+          "row": "C",
+          "seatNumber": "2",
+          "position3D": {
+            "x": 44.506657173317485,
+            "y": -109.71653233335799,
+            "z": 22.5
+          },
+          "elevation": 22.5,
+          "distanceFromHomeplate": 118.4,
+          "angle": 22.079999999999995,
+          "facing": 202.07999999999998,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "tigers-113-C-3",
+          "sectionId": "113",
+          "row": "C",
+          "seatNumber": "3",
+          "position3D": {
+            "x": 44.991332280571406,
+            "y": -109.51867429630079,
+            "z": 22.5
+          },
+          "elevation": 22.5,
+          "distanceFromHomeplate": 118.4,
+          "angle": 22.33333333333333,
+          "facing": 202.33333333333331,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "tigers-113-C-4",
+          "sectionId": "113",
+          "row": "C",
+          "seatNumber": "4",
+          "position3D": {
+            "x": 45.47512782360094,
+            "y": -109.31867520889172,
+            "z": 22.5
+          },
+          "elevation": 22.5,
+          "distanceFromHomeplate": 118.4,
+          "angle": 22.586666666666662,
+          "facing": 202.58666666666667,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "tigers-113-C-5",
+          "sectionId": "113",
+          "row": "C",
+          "seatNumber": "5",
+          "position3D": {
+            "x": 45.9580343443788,
+            "y": -109.11653898104036,
+            "z": 22.5
+          },
+          "elevation": 22.5,
+          "distanceFromHomeplate": 118.40000000000002,
+          "angle": 22.839999999999996,
+          "facing": 202.84,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "tigers-113-C-6",
+          "sectionId": "113",
+          "row": "C",
+          "seatNumber": "6",
+          "position3D": {
+            "x": 46.440042402257625,
+            "y": -108.91226956443666,
+            "z": 22.5
+          },
+          "elevation": 22.5,
+          "distanceFromHomeplate": 118.4,
+          "angle": 23.09333333333333,
+          "facing": 203.09333333333333,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "tigers-113-C-7",
+          "sectionId": "113",
+          "row": "C",
+          "seatNumber": "7",
+          "position3D": {
+            "x": 46.92114257415474,
+            "y": -108.7058709524736,
+            "z": 22.5
+          },
+          "elevation": 22.5,
+          "distanceFromHomeplate": 118.4,
+          "angle": 23.346666666666664,
+          "facing": 203.34666666666666,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "tigers-113-C-8",
+          "sectionId": "113",
+          "row": "C",
+          "seatNumber": "8",
+          "position3D": {
+            "x": 47.40132545473636,
+            "y": -108.49734718016917,
+            "z": 22.5
+          },
+          "elevation": 22.5,
+          "distanceFromHomeplate": 118.39999999999999,
+          "angle": 23.599999999999994,
+          "facing": 203.6,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "tigers-113-C-9",
+          "sectionId": "113",
+          "row": "C",
+          "seatNumber": "9",
+          "position3D": {
+            "x": 47.88058165660135,
+            "y": -108.28670232408749,
+            "z": 22.5
+          },
+          "elevation": 22.5,
+          "distanceFromHomeplate": 118.40000000000002,
+          "angle": 23.853333333333328,
+          "facing": 203.85333333333332,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "tigers-113-C-10",
+          "sectionId": "113",
+          "row": "C",
+          "seatNumber": "10",
+          "position3D": {
+            "x": 48.35890181046479,
+            "y": -108.07394050225905,
+            "z": 22.5
+          },
+          "elevation": 22.5,
+          "distanceFromHomeplate": 118.40000000000002,
+          "angle": 24.106666666666662,
+          "facing": 204.10666666666665,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "tigers-113-C-11",
+          "sectionId": "113",
+          "row": "C",
+          "seatNumber": "11",
+          "position3D": {
+            "x": 48.83627656534128,
+            "y": -107.85906587410027,
+            "z": 22.5
+          },
+          "elevation": 22.5,
+          "distanceFromHomeplate": 118.40000000000002,
+          "angle": 24.359999999999996,
+          "facing": 204.35999999999999,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "tigers-113-C-12",
+          "sectionId": "113",
+          "row": "C",
+          "seatNumber": "12",
+          "position3D": {
+            "x": 49.31269658872746,
+            "y": -107.6420826403322,
+            "z": 22.5
+          },
+          "elevation": 22.5,
+          "distanceFromHomeplate": 118.4,
+          "angle": 24.61333333333333,
+          "facing": 204.61333333333334,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "tigers-113-C-13",
+          "sectionId": "113",
+          "row": "C",
+          "seatNumber": "13",
+          "position3D": {
+            "x": 49.78815256678472,
+            "y": -107.42299504289838,
+            "z": 22.5
+          },
+          "elevation": 22.5,
+          "distanceFromHomeplate": 118.4,
+          "angle": 24.86666666666666,
+          "facing": 204.86666666666667,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "tigers-113-C-14",
+          "sectionId": "113",
+          "row": "C",
+          "seatNumber": "14",
+          "position3D": {
+            "x": 50.26263520452119,
+            "y": -107.20180736488182,
+            "z": 22.5
+          },
+          "elevation": 22.5,
+          "distanceFromHomeplate": 118.40000000000002,
+          "angle": 25.119999999999994,
+          "facing": 205.12,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "tigers-113-C-15",
+          "sectionId": "113",
+          "row": "C",
+          "seatNumber": "15",
+          "position3D": {
+            "x": 50.73613522597347,
+            "y": -106.97852393042136,
+            "z": 22.5
+          },
+          "elevation": 22.5,
+          "distanceFromHomeplate": 118.4,
+          "angle": 25.373333333333328,
+          "facing": 205.37333333333333,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        }
+      ],
+      "covered": false,
+      "hasAisleSeats": false,
+      "wheelchairRow": false
+    },
+    {
+      "rowNumber": "D",
+      "sectionId": "113",
+      "seatCount": 15,
+      "elevation": 25,
+      "depth": 121.2,
+      "rowSpacing": 36,
+      "seats": [
+        {
+          "id": "tigers-113-D-1",
+          "sectionId": "113",
+          "row": "D",
+          "seatNumber": "1",
+          "position3D": {
+            "x": 45.06215178733004,
+            "y": -112.5115215268891,
+            "z": 25
+          },
+          "elevation": 25,
+          "distanceFromHomeplate": 121.2,
+          "angle": 21.82666666666666,
+          "facing": 201.82666666666665,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "tigers-113-D-2",
+          "sectionId": "113",
+          "row": "D",
+          "seatNumber": "2",
+          "position3D": {
+            "x": 45.55917947133513,
+            "y": -112.31118005745768,
+            "z": 25
+          },
+          "elevation": 25,
+          "distanceFromHomeplate": 121.2,
+          "angle": 22.079999999999995,
+          "facing": 202.07999999999998,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "tigers-113-D-3",
+          "sectionId": "113",
+          "row": "D",
+          "seatNumber": "3",
+          "position3D": {
+            "x": 46.05531648990924,
+            "y": -112.10864294519979,
+            "z": 25
+          },
+          "elevation": 25,
+          "distanceFromHomeplate": 121.2,
+          "angle": 22.33333333333333,
+          "facing": 202.33333333333331,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "tigers-113-D-4",
+          "sectionId": "113",
+          "row": "D",
+          "seatNumber": "4",
+          "position3D": {
+            "x": 46.55055314375366,
+            "y": -111.90391414964253,
+            "z": 25
+          },
+          "elevation": 25,
+          "distanceFromHomeplate": 121.2,
+          "angle": 22.586666666666662,
+          "facing": 202.58666666666667,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "tigers-113-D-5",
+          "sectionId": "113",
+          "row": "D",
+          "seatNumber": "5",
+          "position3D": {
+            "x": 47.04487975117154,
+            "y": -111.69699767315956,
+            "z": 25
+          },
+          "elevation": 25,
+          "distanceFromHomeplate": 121.2,
+          "angle": 22.839999999999996,
+          "facing": 202.84,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "tigers-113-D-6",
+          "sectionId": "113",
+          "row": "D",
+          "seatNumber": "6",
+          "position3D": {
+            "x": 47.538286648256964,
+            "y": -111.48789756089292,
+            "z": 25
+          },
+          "elevation": 25,
+          "distanceFromHomeplate": 121.19999999999999,
+          "angle": 23.09333333333333,
+          "facing": 203.09333333333333,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "tigers-113-D-7",
+          "sectionId": "113",
+          "row": "D",
+          "seatNumber": "7",
+          "position3D": {
+            "x": 48.030764189084074,
+            "y": -111.276617900674,
+            "z": 25
+          },
+          "elevation": 25,
+          "distanceFromHomeplate": 121.2,
+          "angle": 23.346666666666664,
+          "facing": 203.34666666666666,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "tigers-113-D-8",
+          "sectionId": "113",
+          "row": "D",
+          "seatNumber": "8",
+          "position3D": {
+            "x": 48.522302745895665,
+            "y": -111.06316282294344,
+            "z": 25
+          },
+          "elevation": 25,
+          "distanceFromHomeplate": 121.19999999999999,
+          "angle": 23.599999999999994,
+          "facing": 203.6,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "tigers-113-D-9",
+          "sectionId": "113",
+          "row": "D",
+          "seatNumber": "9",
+          "position3D": {
+            "x": 49.01289270929124,
+            "y": -110.84753650067063,
+            "z": 25
+          },
+          "elevation": 25,
+          "distanceFromHomeplate": 121.2,
+          "angle": 23.853333333333328,
+          "facing": 203.85333333333332,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "tigers-113-D-10",
+          "sectionId": "113",
+          "row": "D",
+          "seatNumber": "10",
+          "position3D": {
+            "x": 49.50252448841497,
+            "y": -110.62974314927192,
+            "z": 25
+          },
+          "elevation": 25,
+          "distanceFromHomeplate": 121.2,
+          "angle": 24.106666666666662,
+          "facing": 204.10666666666665,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "tigers-113-D-11",
+          "sectionId": "113",
+          "row": "D",
+          "seatNumber": "11",
+          "position3D": {
+            "x": 49.99118851114327,
+            "y": -110.4097870265283,
+            "z": 25
+          },
+          "elevation": 25,
+          "distanceFromHomeplate": 121.2,
+          "angle": 24.359999999999996,
+          "facing": 204.35999999999999,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "tigers-113-D-12",
+          "sectionId": "113",
+          "row": "D",
+          "seatNumber": "12",
+          "position3D": {
+            "x": 50.47887522427169,
+            "y": -110.18767243250223,
+            "z": 25
+          },
+          "elevation": 25,
+          "distanceFromHomeplate": 121.2,
+          "angle": 24.61333333333333,
+          "facing": 204.61333333333334,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "tigers-113-D-13",
+          "sectionId": "113",
+          "row": "D",
+          "seatNumber": "13",
+          "position3D": {
+            "x": 50.96557509370192,
+            "y": -109.9634037094534,
+            "z": 25
+          },
+          "elevation": 25,
+          "distanceFromHomeplate": 121.19999999999999,
+          "angle": 24.86666666666666,
+          "facing": 204.86666666666667,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "tigers-113-D-14",
+          "sectionId": "113",
+          "row": "D",
+          "seatNumber": "14",
+          "position3D": {
+            "x": 51.45127860462811,
+            "y": -109.73698524175401,
+            "z": 25
+          },
+          "elevation": 25,
+          "distanceFromHomeplate": 121.19999999999999,
+          "angle": 25.119999999999994,
+          "facing": 205.12,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "tigers-113-D-15",
+          "sectionId": "113",
+          "row": "D",
+          "seatNumber": "15",
+          "position3D": {
+            "x": 51.93597626172284,
+            "y": -109.50842145580295,
+            "z": 25
+          },
+          "elevation": 25,
+          "distanceFromHomeplate": 121.2,
+          "angle": 25.373333333333328,
+          "facing": 205.37333333333333,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        }
+      ],
+      "covered": false,
+      "hasAisleSeats": false,
+      "wheelchairRow": false
+    },
+    {
+      "rowNumber": "E",
+      "sectionId": "113",
+      "seatCount": 14,
+      "elevation": 27.5,
+      "depth": 124,
+      "rowSpacing": 36,
+      "seats": [
+        {
+          "id": "tigers-113-E-1",
+          "sectionId": "113",
+          "row": "E",
+          "seatNumber": "1",
+          "position3D": {
+            "x": 46.12136825415676,
+            "y": -115.10351597742122,
+            "z": 27.5
+          },
+          "elevation": 27.5,
+          "distanceFromHomeplate": 124,
+          "angle": 21.835714285714282,
+          "facing": 201.8357142857143,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "tigers-113-E-2",
+          "sectionId": "113",
+          "row": "E",
+          "seatNumber": "2",
+          "position3D": {
+            "x": 46.666131130488594,
+            "y": -114.88373342345749,
+            "z": 27.5
+          },
+          "elevation": 27.5,
+          "distanceFromHomeplate": 124,
+          "angle": 22.107142857142854,
+          "facing": 202.10714285714286,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "tigers-113-E-3",
+          "sectionId": "113",
+          "row": "E",
+          "seatNumber": "3",
+          "position3D": {
+            "x": 47.20984671709727,
+            "y": -114.66137262804845,
+            "z": 27.5
+          },
+          "elevation": 27.5,
+          "distanceFromHomeplate": 124,
+          "angle": 22.378571428571423,
+          "facing": 202.37857142857143,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "tigers-113-E-4",
+          "sectionId": "113",
+          "row": "E",
+          "seatNumber": "4",
+          "position3D": {
+            "x": 47.75250281181966,
+            "y": -114.43643858145515,
+            "z": 27.5
+          },
+          "elevation": 27.5,
+          "distanceFromHomeplate": 124.00000000000001,
+          "angle": 22.649999999999995,
+          "facing": 202.65,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "tigers-113-E-5",
+          "sectionId": "113",
+          "row": "E",
+          "seatNumber": "5",
+          "position3D": {
+            "x": 48.294087236269874,
+            "y": -114.20893633168797,
+            "z": 27.5
+          },
+          "elevation": 27.5,
+          "distanceFromHomeplate": 124,
+          "angle": 22.921428571428567,
+          "facing": 202.92142857142858,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "tigers-113-E-6",
+          "sectionId": "113",
+          "row": "E",
+          "seatNumber": "6",
+          "position3D": {
+            "x": 48.834587836112675,
+            "y": -113.97887098439341,
+            "z": 27.5
+          },
+          "elevation": 27.5,
+          "distanceFromHomeplate": 124.00000000000001,
+          "angle": 23.19285714285714,
+          "facing": 203.19285714285715,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "tigers-113-E-7",
+          "sectionId": "113",
+          "row": "E",
+          "seatNumber": "7",
+          "position3D": {
+            "x": 49.37399248133619,
+            "y": -113.74624770273945,
+            "z": 27.5
+          },
+          "elevation": 27.5,
+          "distanceFromHomeplate": 124.00000000000001,
+          "angle": 23.464285714285708,
+          "facing": 203.46428571428572,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "tigers-113-E-8",
+          "sectionId": "113",
+          "row": "E",
+          "seatNumber": "8",
+          "position3D": {
+            "x": 49.91228906652425,
+            "y": -113.51107170729966,
+            "z": 27.5
+          },
+          "elevation": 27.5,
+          "distanceFromHomeplate": 124.00000000000001,
+          "angle": 23.73571428571428,
+          "facing": 203.73571428571427,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "tigers-113-E-9",
+          "sectionId": "113",
+          "row": "E",
+          "seatNumber": "9",
+          "position3D": {
+            "x": 50.449465511127805,
+            "y": -113.27334827593614,
+            "z": 27.5
+          },
+          "elevation": 27.5,
+          "distanceFromHomeplate": 124,
+          "angle": 24.007142857142853,
+          "facing": 204.00714285714287,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "tigers-113-E-10",
+          "sectionId": "113",
+          "row": "E",
+          "seatNumber": "10",
+          "position3D": {
+            "x": 50.985509759736374,
+            "y": -113.03308274368096,
+            "z": 27.5
+          },
+          "elevation": 27.5,
+          "distanceFromHomeplate": 124,
+          "angle": 24.278571428571425,
+          "facing": 204.2785714285714,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "tigers-113-E-11",
+          "sectionId": "113",
+          "row": "E",
+          "seatNumber": "11",
+          "position3D": {
+            "x": 51.520409782348324,
+            "y": -112.79028050261648,
+            "z": 27.5
+          },
+          "elevation": 27.5,
+          "distanceFromHomeplate": 124,
+          "angle": 24.549999999999997,
+          "facing": 204.55,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "tigers-113-E-12",
+          "sectionId": "113",
+          "row": "E",
+          "seatNumber": "12",
+          "position3D": {
+            "x": 52.05415357464096,
+            "y": -112.54494700175434,
+            "z": 27.5
+          },
+          "elevation": 27.5,
+          "distanceFromHomeplate": 123.99999999999999,
+          "angle": 24.821428571428566,
+          "facing": 204.82142857142856,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "tigers-113-E-13",
+          "sectionId": "113",
+          "row": "E",
+          "seatNumber": "13",
+          "position3D": {
+            "x": 52.58672915823992,
+            "y": -112.29708774691319,
+            "z": 27.5
+          },
+          "elevation": 27.5,
+          "distanceFromHomeplate": 124.00000000000001,
+          "angle": 25.092857142857138,
+          "facing": 205.09285714285713,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "tigers-113-E-14",
+          "sectionId": "113",
+          "row": "E",
+          "seatNumber": "14",
+          "position3D": {
+            "x": 53.11812458098798,
+            "y": -112.04670830059507,
+            "z": 27.5
+          },
+          "elevation": 27.5,
+          "distanceFromHomeplate": 124,
+          "angle": 25.36428571428571,
+          "facing": 205.3642857142857,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        }
+      ],
+      "covered": false,
+      "hasAisleSeats": false,
+      "wheelchairRow": false
+    },
+    {
+      "rowNumber": "F",
+      "sectionId": "113",
+      "seatCount": 15,
+      "elevation": 30,
+      "depth": 126.8,
+      "rowSpacing": 36,
+      "seats": [
+        {
+          "id": "tigers-113-F-1",
+          "sectionId": "113",
+          "row": "F",
+          "seatNumber": "1",
+          "position3D": {
+            "x": 47.144231407866734,
+            "y": -117.71007367664635,
+            "z": 30
+          },
+          "elevation": 30,
+          "distanceFromHomeplate": 126.8,
+          "angle": 21.82666666666666,
+          "facing": 201.82666666666665,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "tigers-113-F-2",
+          "sectionId": "113",
+          "row": "F",
+          "seatNumber": "2",
+          "position3D": {
+            "x": 47.66422406737041,
+            "y": -117.50047550565704,
+            "z": 30
+          },
+          "elevation": 30,
+          "distanceFromHomeplate": 126.80000000000001,
+          "angle": 22.079999999999995,
+          "facing": 202.07999999999998,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "tigers-113-F-3",
+          "sectionId": "113",
+          "row": "F",
+          "seatNumber": "3",
+          "position3D": {
+            "x": 48.18328490858491,
+            "y": -117.2885802429978,
+            "z": 30
+          },
+          "elevation": 30,
+          "distanceFromHomeplate": 126.8,
+          "angle": 22.33333333333333,
+          "facing": 202.33333333333331,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "tigers-113-F-4",
+          "sectionId": "113",
+          "row": "F",
+          "seatNumber": "4",
+          "position3D": {
+            "x": 48.70140378405911,
+            "y": -117.07439203114416,
+            "z": 30
+          },
+          "elevation": 30,
+          "distanceFromHomeplate": 126.8,
+          "angle": 22.586666666666662,
+          "facing": 202.58666666666667,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "tigers-113-F-5",
+          "sectionId": "113",
+          "row": "F",
+          "seatNumber": "5",
+          "position3D": {
+            "x": 49.21857056475702,
+            "y": -116.85791505739795,
+            "z": 30
+          },
+          "elevation": 30,
+          "distanceFromHomeplate": 126.8,
+          "angle": 22.839999999999996,
+          "facing": 202.84,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "tigers-113-F-6",
+          "sectionId": "113",
+          "row": "F",
+          "seatNumber": "6",
+          "position3D": {
+            "x": 49.73477514025563,
+            "y": -116.63915355380546,
+            "z": 30
+          },
+          "elevation": 30,
+          "distanceFromHomeplate": 126.8,
+          "angle": 23.09333333333333,
+          "facing": 203.09333333333333,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "tigers-113-F-7",
+          "sectionId": "113",
+          "row": "F",
+          "seatNumber": "7",
+          "position3D": {
+            "x": 50.250007418942744,
+            "y": -116.41811179707477,
+            "z": 30
+          },
+          "elevation": 30,
+          "distanceFromHomeplate": 126.8,
+          "angle": 23.346666666666664,
+          "facing": 203.34666666666666,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "tigers-113-F-8",
+          "sectionId": "113",
+          "row": "F",
+          "seatNumber": "8",
+          "position3D": {
+            "x": 50.76425732821427,
+            "y": -116.19479410849198,
+            "z": 30
+          },
+          "elevation": 30,
+          "distanceFromHomeplate": 126.8,
+          "angle": 23.599999999999994,
+          "facing": 203.6,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "tigers-113-F-9",
+          "sectionId": "113",
+          "row": "F",
+          "seatNumber": "9",
+          "position3D": {
+            "x": 51.277514814671036,
+            "y": -115.96920485383693,
+            "z": 30
+          },
+          "elevation": 30,
+          "distanceFromHomeplate": 126.80000000000001,
+          "angle": 23.853333333333328,
+          "facing": 203.85333333333332,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "tigers-113-F-10",
+          "sectionId": "113",
+          "row": "F",
+          "seatNumber": "10",
+          "position3D": {
+            "x": 51.78976984431533,
+            "y": -115.74134844329768,
+            "z": 30
+          },
+          "elevation": 30,
+          "distanceFromHomeplate": 126.8,
+          "angle": 24.106666666666662,
+          "facing": 204.10666666666665,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "tigers-113-F-11",
+          "sectionId": "113",
+          "row": "F",
+          "seatNumber": "11",
+          "position3D": {
+            "x": 52.30101240274725,
+            "y": -115.5112293313844,
+            "z": 30
+          },
+          "elevation": 30,
+          "distanceFromHomeplate": 126.8,
+          "angle": 24.359999999999996,
+          "facing": 204.35999999999999,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "tigers-113-F-12",
+          "sectionId": "113",
+          "row": "F",
+          "seatNumber": "12",
+          "position3D": {
+            "x": 52.81123249536015,
+            "y": -115.27885201684225,
+            "z": 30
+          },
+          "elevation": 30,
+          "distanceFromHomeplate": 126.8,
+          "angle": 24.61333333333333,
+          "facing": 204.61333333333334,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "tigers-113-F-13",
+          "sectionId": "113",
+          "row": "F",
+          "seatNumber": "13",
+          "position3D": {
+            "x": 53.320420147536325,
+            "y": -115.04422104256346,
+            "z": 30
+          },
+          "elevation": 30,
+          "distanceFromHomeplate": 126.8,
+          "angle": 24.86666666666666,
+          "facing": 204.86666666666667,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "tigers-113-F-14",
+          "sectionId": "113",
+          "row": "F",
+          "seatNumber": "14",
+          "position3D": {
+            "x": 53.828565404841946,
+            "y": -114.80734099549842,
+            "z": 30
+          },
+          "elevation": 30,
+          "distanceFromHomeplate": 126.80000000000001,
+          "angle": 25.119999999999994,
+          "facing": 205.12,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "tigers-113-F-15",
+          "sectionId": "113",
+          "row": "F",
+          "seatNumber": "15",
+          "position3D": {
+            "x": 54.33565833322159,
+            "y": -114.56821650656612,
+            "z": 30
+          },
+          "elevation": 30,
+          "distanceFromHomeplate": 126.80000000000001,
+          "angle": 25.373333333333328,
+          "facing": 205.37333333333333,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        }
+      ],
+      "covered": false,
+      "hasAisleSeats": false,
+      "wheelchairRow": false
+    },
+    {
+      "rowNumber": "G",
+      "sectionId": "113",
+      "seatCount": 15,
+      "elevation": 32.5,
+      "depth": 129.6,
+      "rowSpacing": 36,
+      "seats": [
+        {
+          "id": "tigers-113-G-1",
+          "sectionId": "113",
+          "row": "G",
+          "seatNumber": "1",
+          "position3D": {
+            "x": 48.185271218135085,
+            "y": -120.30934975152498,
+            "z": 32.5
+          },
+          "elevation": 32.5,
+          "distanceFromHomeplate": 129.6,
+          "angle": 21.82666666666666,
+          "facing": 201.82666666666665,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "tigers-113-G-2",
+          "sectionId": "113",
+          "row": "G",
+          "seatNumber": "2",
+          "position3D": {
+            "x": 48.716746365388055,
+            "y": -120.09512322975671,
+            "z": 32.5
+          },
+          "elevation": 32.5,
+          "distanceFromHomeplate": 129.6,
+          "angle": 22.079999999999995,
+          "facing": 202.07999999999998,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "tigers-113-G-3",
+          "sectionId": "113",
+          "row": "G",
+          "seatNumber": "3",
+          "position3D": {
+            "x": 49.24726911792275,
+            "y": -119.8785488918968,
+            "z": 32.5
+          },
+          "elevation": 32.5,
+          "distanceFromHomeplate": 129.6,
+          "angle": 22.33333333333333,
+          "facing": 202.33333333333331,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "tigers-113-G-4",
+          "sectionId": "113",
+          "row": "G",
+          "seatNumber": "4",
+          "position3D": {
+            "x": 49.776829104211835,
+            "y": -119.65963097189497,
+            "z": 32.5
+          },
+          "elevation": 32.5,
+          "distanceFromHomeplate": 129.6,
+          "angle": 22.586666666666662,
+          "facing": 202.58666666666667,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "tigers-113-G-5",
+          "sectionId": "113",
+          "row": "G",
+          "seatNumber": "5",
+          "position3D": {
+            "x": 50.30541597154976,
+            "y": -119.43837374951714,
+            "z": 32.5
+          },
+          "elevation": 32.5,
+          "distanceFromHomeplate": 129.6,
+          "angle": 22.839999999999996,
+          "facing": 202.84,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "tigers-113-G-6",
+          "sectionId": "113",
+          "row": "G",
+          "seatNumber": "6",
+          "position3D": {
+            "x": 50.83301938625497,
+            "y": -119.21478155026173,
+            "z": 32.5
+          },
+          "elevation": 32.5,
+          "distanceFromHomeplate": 129.6,
+          "angle": 23.09333333333333,
+          "facing": 203.09333333333333,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "tigers-113-G-7",
+          "sectionId": "113",
+          "row": "G",
+          "seatNumber": "7",
+          "position3D": {
+            "x": 51.359629033872075,
+            "y": -118.98885874527515,
+            "z": 32.5
+          },
+          "elevation": 32.5,
+          "distanceFromHomeplate": 129.6,
+          "angle": 23.346666666666664,
+          "facing": 203.34666666666666,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "tigers-113-G-8",
+          "sectionId": "113",
+          "row": "G",
+          "seatNumber": "8",
+          "position3D": {
+            "x": 51.88523461937358,
+            "y": -118.76060975126624,
+            "z": 32.5
+          },
+          "elevation": 32.5,
+          "distanceFromHomeplate": 129.6,
+          "angle": 23.599999999999994,
+          "facing": 203.6,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "tigers-113-G-9",
+          "sectionId": "113",
+          "row": "G",
+          "seatNumber": "9",
+          "position3D": {
+            "x": 52.40982586736093,
+            "y": -118.53003903042007,
+            "z": 32.5
+          },
+          "elevation": 32.5,
+          "distanceFromHomeplate": 129.6,
+          "angle": 23.853333333333328,
+          "facing": 203.85333333333332,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "tigers-113-G-10",
+          "sectionId": "113",
+          "row": "G",
+          "seatNumber": "10",
+          "position3D": {
+            "x": 52.93339252226551,
+            "y": -118.29715109031056,
+            "z": 32.5
+          },
+          "elevation": 32.5,
+          "distanceFromHomeplate": 129.6,
+          "angle": 24.106666666666662,
+          "facing": 204.10666666666665,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "tigers-113-G-11",
+          "sectionId": "113",
+          "row": "G",
+          "seatNumber": "11",
+          "position3D": {
+            "x": 53.45592434854923,
+            "y": -118.06195048381244,
+            "z": 32.5
+          },
+          "elevation": 32.5,
+          "distanceFromHomeplate": 129.6,
+          "angle": 24.359999999999996,
+          "facing": 204.35999999999999,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "tigers-113-G-12",
+          "sectionId": "113",
+          "row": "G",
+          "seatNumber": "12",
+          "position3D": {
+            "x": 53.97741113090438,
+            "y": -117.82444180901227,
+            "z": 32.5
+          },
+          "elevation": 32.5,
+          "distanceFromHomeplate": 129.6,
+          "angle": 24.61333333333333,
+          "facing": 204.61333333333334,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "tigers-113-G-13",
+          "sectionId": "113",
+          "row": "G",
+          "seatNumber": "13",
+          "position3D": {
+            "x": 54.49784267445353,
+            "y": -117.58462970911849,
+            "z": 32.5
+          },
+          "elevation": 32.5,
+          "distanceFromHomeplate": 129.6,
+          "angle": 24.86666666666666,
+          "facing": 204.86666666666667,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "tigers-113-G-14",
+          "sectionId": "113",
+          "row": "G",
+          "seatNumber": "14",
+          "position3D": {
+            "x": 55.017208804948865,
+            "y": -117.34251887237062,
+            "z": 32.5
+          },
+          "elevation": 32.5,
+          "distanceFromHomeplate": 129.6,
+          "angle": 25.119999999999994,
+          "facing": 205.12,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "tigers-113-G-15",
+          "sectionId": "113",
+          "row": "G",
+          "seatNumber": "15",
+          "position3D": {
+            "x": 55.53549936897096,
+            "y": -117.0981140319477,
+            "z": 32.5
+          },
+          "elevation": 32.5,
+          "distanceFromHomeplate": 129.6,
+          "angle": 25.373333333333328,
+          "facing": 205.37333333333333,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        }
+      ],
+      "covered": false,
+      "hasAisleSeats": false,
+      "wheelchairRow": false
+    },
+    {
+      "rowNumber": "H",
+      "sectionId": "113",
+      "seatCount": 15,
+      "elevation": 35,
+      "depth": 132.4,
+      "rowSpacing": 36,
+      "seats": [
+        {
+          "id": "tigers-113-H-1",
+          "sectionId": "113",
+          "row": "H",
+          "seatNumber": "1",
+          "position3D": {
+            "x": 49.226311028403444,
+            "y": -122.90862582640361,
+            "z": 35
+          },
+          "elevation": 35,
+          "distanceFromHomeplate": 132.4,
+          "angle": 21.82666666666666,
+          "facing": 201.82666666666665,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "tigers-113-H-2",
+          "sectionId": "113",
+          "row": "H",
+          "seatNumber": "2",
+          "position3D": {
+            "x": 49.7692686634057,
+            "y": -122.68977095385641,
+            "z": 35
+          },
+          "elevation": 35,
+          "distanceFromHomeplate": 132.40000000000003,
+          "angle": 22.079999999999995,
+          "facing": 202.07999999999998,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "tigers-113-H-3",
+          "sectionId": "113",
+          "row": "H",
+          "seatNumber": "3",
+          "position3D": {
+            "x": 50.31125332726059,
+            "y": -122.46851754079582,
+            "z": 35
+          },
+          "elevation": 35,
+          "distanceFromHomeplate": 132.4,
+          "angle": 22.33333333333333,
+          "facing": 202.33333333333331,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "tigers-113-H-4",
+          "sectionId": "113",
+          "row": "H",
+          "seatNumber": "4",
+          "position3D": {
+            "x": 50.85225442436457,
+            "y": -122.2448699126458,
+            "z": 35
+          },
+          "elevation": 35,
+          "distanceFromHomeplate": 132.4,
+          "angle": 22.586666666666662,
+          "facing": 202.58666666666667,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "tigers-113-H-5",
+          "sectionId": "113",
+          "row": "H",
+          "seatNumber": "5",
+          "position3D": {
+            "x": 51.39226137834251,
+            "y": -122.01883244163635,
+            "z": 35
+          },
+          "elevation": 35,
+          "distanceFromHomeplate": 132.4,
+          "angle": 22.839999999999996,
+          "facing": 202.84,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "tigers-113-H-6",
+          "sectionId": "113",
+          "row": "H",
+          "seatNumber": "6",
+          "position3D": {
+            "x": 51.93126363225431,
+            "y": -121.79040954671801,
+            "z": 35
+          },
+          "elevation": 35,
+          "distanceFromHomeplate": 132.4,
+          "angle": 23.09333333333333,
+          "facing": 203.09333333333333,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "tigers-113-H-7",
+          "sectionId": "113",
+          "row": "H",
+          "seatNumber": "7",
+          "position3D": {
+            "x": 52.46925064880141,
+            "y": -121.55960569347555,
+            "z": 35
+          },
+          "elevation": 35,
+          "distanceFromHomeplate": 132.4,
+          "angle": 23.346666666666664,
+          "facing": 203.34666666666666,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "tigers-113-H-8",
+          "sectionId": "113",
+          "row": "H",
+          "seatNumber": "8",
+          "position3D": {
+            "x": 53.00621191053289,
+            "y": -121.32642539404053,
+            "z": 35
+          },
+          "elevation": 35,
+          "distanceFromHomeplate": 132.4,
+          "angle": 23.599999999999994,
+          "facing": 203.6,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "tigers-113-H-9",
+          "sectionId": "113",
+          "row": "H",
+          "seatNumber": "9",
+          "position3D": {
+            "x": 53.54213692005083,
+            "y": -121.09087320700323,
+            "z": 35
+          },
+          "elevation": 35,
+          "distanceFromHomeplate": 132.4,
+          "angle": 23.853333333333328,
+          "facing": 203.85333333333332,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "tigers-113-H-10",
+          "sectionId": "113",
+          "row": "H",
+          "seatNumber": "10",
+          "position3D": {
+            "x": 54.0770152002157,
+            "y": -120.85295373732346,
+            "z": 35
+          },
+          "elevation": 35,
+          "distanceFromHomeplate": 132.4,
+          "angle": 24.106666666666662,
+          "facing": 204.10666666666665,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "tigers-113-H-11",
+          "sectionId": "113",
+          "row": "H",
+          "seatNumber": "11",
+          "position3D": {
+            "x": 54.61083629435123,
+            "y": -120.61267163624049,
+            "z": 35
+          },
+          "elevation": 35,
+          "distanceFromHomeplate": 132.4,
+          "angle": 24.359999999999996,
+          "facing": 204.35999999999999,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "tigers-113-H-12",
+          "sectionId": "113",
+          "row": "H",
+          "seatNumber": "12",
+          "position3D": {
+            "x": 55.14358976644861,
+            "y": -120.37003160118229,
+            "z": 35
+          },
+          "elevation": 35,
+          "distanceFromHomeplate": 132.4,
+          "angle": 24.61333333333333,
+          "facing": 204.61333333333334,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "tigers-113-H-13",
+          "sectionId": "113",
+          "row": "H",
+          "seatNumber": "13",
+          "position3D": {
+            "x": 55.67526520137074,
+            "y": -120.12503837567353,
+            "z": 35
+          },
+          "elevation": 35,
+          "distanceFromHomeplate": 132.4,
+          "angle": 24.86666666666666,
+          "facing": 204.86666666666667,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "tigers-113-H-14",
+          "sectionId": "113",
+          "row": "H",
+          "seatNumber": "14",
+          "position3D": {
+            "x": 56.20585220505579,
+            "y": -119.87769674924284,
+            "z": 35
+          },
+          "elevation": 35,
+          "distanceFromHomeplate": 132.4,
+          "angle": 25.119999999999994,
+          "facing": 205.12,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "tigers-113-H-15",
+          "sectionId": "113",
+          "row": "H",
+          "seatNumber": "15",
+          "position3D": {
+            "x": 56.73534040472033,
+            "y": -119.6280115573293,
+            "z": 35
+          },
+          "elevation": 35,
+          "distanceFromHomeplate": 132.40000000000003,
+          "angle": 25.373333333333328,
+          "facing": 205.37333333333333,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        }
+      ],
+      "covered": false,
+      "hasAisleSeats": false,
+      "wheelchairRow": false
+    },
+    {
+      "rowNumber": "I",
+      "sectionId": "113",
+      "seatCount": 15,
+      "elevation": 37.5,
+      "depth": 135.2,
+      "rowSpacing": 36,
+      "seats": [
+        {
+          "id": "tigers-113-I-1",
+          "sectionId": "113",
+          "row": "I",
+          "seatNumber": "1",
+          "position3D": {
+            "x": 50.26735083867179,
+            "y": -125.50790190128222,
+            "z": 37.5
+          },
+          "elevation": 37.5,
+          "distanceFromHomeplate": 135.20000000000002,
+          "angle": 21.82666666666666,
+          "facing": 201.82666666666665,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "tigers-113-I-2",
+          "sectionId": "113",
+          "row": "I",
+          "seatNumber": "2",
+          "position3D": {
+            "x": 50.82179096142334,
+            "y": -125.28441867795607,
+            "z": 37.5
+          },
+          "elevation": 37.5,
+          "distanceFromHomeplate": 135.2,
+          "angle": 22.079999999999995,
+          "facing": 202.07999999999998,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "tigers-113-I-3",
+          "sectionId": "113",
+          "row": "I",
+          "seatNumber": "3",
+          "position3D": {
+            "x": 51.37523753659842,
+            "y": -125.0584861896948,
+            "z": 37.5
+          },
+          "elevation": 37.5,
+          "distanceFromHomeplate": 135.2,
+          "angle": 22.33333333333333,
+          "facing": 202.33333333333331,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "tigers-113-I-4",
+          "sectionId": "113",
+          "row": "I",
+          "seatNumber": "4",
+          "position3D": {
+            "x": 51.927679744517285,
+            "y": -124.83010885339661,
+            "z": 37.5
+          },
+          "elevation": 37.5,
+          "distanceFromHomeplate": 135.2,
+          "angle": 22.586666666666662,
+          "facing": 202.58666666666667,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "tigers-113-I-5",
+          "sectionId": "113",
+          "row": "I",
+          "seatNumber": "5",
+          "position3D": {
+            "x": 52.479106785135244,
+            "y": -124.59929113375553,
+            "z": 37.5
+          },
+          "elevation": 37.5,
+          "distanceFromHomeplate": 135.2,
+          "angle": 22.839999999999996,
+          "facing": 202.84,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "tigers-113-I-6",
+          "sectionId": "113",
+          "row": "I",
+          "seatNumber": "6",
+          "position3D": {
+            "x": 53.02950787825363,
+            "y": -124.36603754317427,
+            "z": 37.5
+          },
+          "elevation": 37.5,
+          "distanceFromHomeplate": 135.2,
+          "angle": 23.09333333333333,
+          "facing": 203.09333333333333,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "tigers-113-I-7",
+          "sectionId": "113",
+          "row": "I",
+          "seatNumber": "7",
+          "position3D": {
+            "x": 53.578872263730744,
+            "y": -124.13035264167593,
+            "z": 37.5
+          },
+          "elevation": 37.5,
+          "distanceFromHomeplate": 135.2,
+          "angle": 23.346666666666664,
+          "facing": 203.34666666666666,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "tigers-113-I-8",
+          "sectionId": "113",
+          "row": "I",
+          "seatNumber": "8",
+          "position3D": {
+            "x": 54.12718920169219,
+            "y": -123.89224103681478,
+            "z": 37.5
+          },
+          "elevation": 37.5,
+          "distanceFromHomeplate": 135.2,
+          "angle": 23.599999999999994,
+          "facing": 203.6,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "tigers-113-I-9",
+          "sectionId": "113",
+          "row": "I",
+          "seatNumber": "9",
+          "position3D": {
+            "x": 54.67444797274072,
+            "y": -123.65170738358637,
+            "z": 37.5
+          },
+          "elevation": 37.5,
+          "distanceFromHomeplate": 135.20000000000002,
+          "angle": 23.853333333333328,
+          "facing": 203.85333333333332,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "tigers-113-I-10",
+          "sectionId": "113",
+          "row": "I",
+          "seatNumber": "10",
+          "position3D": {
+            "x": 55.22063787816587,
+            "y": -123.40875638433633,
+            "z": 37.5
+          },
+          "elevation": 37.5,
+          "distanceFromHomeplate": 135.20000000000002,
+          "angle": 24.106666666666662,
+          "facing": 204.10666666666665,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "tigers-113-I-11",
+          "sectionId": "113",
+          "row": "I",
+          "seatNumber": "11",
+          "position3D": {
+            "x": 55.76574824015321,
+            "y": -123.16339278866853,
+            "z": 37.5
+          },
+          "elevation": 37.5,
+          "distanceFromHomeplate": 135.20000000000002,
+          "angle": 24.359999999999996,
+          "facing": 204.35999999999999,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "tigers-113-I-12",
+          "sectionId": "113",
+          "row": "I",
+          "seatNumber": "12",
+          "position3D": {
+            "x": 56.309768401992834,
+            "y": -122.9156213933523,
+            "z": 37.5
+          },
+          "elevation": 37.5,
+          "distanceFromHomeplate": 135.2,
+          "angle": 24.61333333333333,
+          "facing": 204.61333333333334,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "tigers-113-I-13",
+          "sectionId": "113",
+          "row": "I",
+          "seatNumber": "13",
+          "position3D": {
+            "x": 56.85268772828794,
+            "y": -122.66544704222854,
+            "z": 37.5
+          },
+          "elevation": 37.5,
+          "distanceFromHomeplate": 135.2,
+          "angle": 24.86666666666666,
+          "facing": 204.86666666666667,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "tigers-113-I-14",
+          "sectionId": "113",
+          "row": "I",
+          "seatNumber": "14",
+          "position3D": {
+            "x": 57.3944956051627,
+            "y": -122.41287462611503,
+            "z": 37.5
+          },
+          "elevation": 37.5,
+          "distanceFromHomeplate": 135.2,
+          "angle": 25.119999999999994,
+          "facing": 205.12,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "tigers-113-I-15",
+          "sectionId": "113",
+          "row": "I",
+          "seatNumber": "15",
+          "position3D": {
+            "x": 57.9351814404697,
+            "y": -122.15790908271087,
+            "z": 37.5
+          },
+          "elevation": 37.5,
+          "distanceFromHomeplate": 135.20000000000002,
+          "angle": 25.373333333333328,
+          "facing": 205.37333333333333,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        }
+      ],
+      "covered": false,
+      "hasAisleSeats": false,
+      "wheelchairRow": false
+    },
+    {
+      "rowNumber": "J",
+      "sectionId": "113",
+      "seatCount": 14,
+      "elevation": 40,
+      "depth": 138,
+      "rowSpacing": 36,
+      "seats": [
+        {
+          "id": "tigers-113-J-1",
+          "sectionId": "113",
+          "row": "J",
+          "seatNumber": "1",
+          "position3D": {
+            "x": 51.32861950865833,
+            "y": -128.09907423293652,
+            "z": 40
+          },
+          "elevation": 40,
+          "distanceFromHomeplate": 138,
+          "angle": 21.835714285714282,
+          "facing": 201.8357142857143,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "tigers-113-J-2",
+          "sectionId": "113",
+          "row": "J",
+          "seatNumber": "2",
+          "position3D": {
+            "x": 51.934887871027634,
+            "y": -127.8544775196543,
+            "z": 40
+          },
+          "elevation": 40,
+          "distanceFromHomeplate": 138,
+          "angle": 22.107142857142854,
+          "facing": 202.10714285714286,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "tigers-113-J-3",
+          "sectionId": "113",
+          "row": "J",
+          "seatNumber": "3",
+          "position3D": {
+            "x": 52.539990701285674,
+            "y": -127.60701147315069,
+            "z": 40
+          },
+          "elevation": 40,
+          "distanceFromHomeplate": 138,
+          "angle": 22.378571428571423,
+          "facing": 202.37857142857143,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "tigers-113-J-4",
+          "sectionId": "113",
+          "row": "J",
+          "seatNumber": "4",
+          "position3D": {
+            "x": 53.14391441960576,
+            "y": -127.35668164710331,
+            "z": 40
+          },
+          "elevation": 40,
+          "distanceFromHomeplate": 138,
+          "angle": 22.649999999999995,
+          "facing": 202.65,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "tigers-113-J-5",
+          "sectionId": "113",
+          "row": "J",
+          "seatNumber": "5",
+          "position3D": {
+            "x": 53.74664547262292,
+            "y": -127.10349365945919,
+            "z": 40
+          },
+          "elevation": 40,
+          "distanceFromHomeplate": 138,
+          "angle": 22.921428571428567,
+          "facing": 202.92142857142858,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "tigers-113-J-6",
+          "sectionId": "113",
+          "row": "J",
+          "seatNumber": "6",
+          "position3D": {
+            "x": 54.3481703337383,
+            "y": -126.84745319230879,
+            "z": 40
+          },
+          "elevation": 40,
+          "distanceFromHomeplate": 138,
+          "angle": 23.19285714285714,
+          "facing": 203.19285714285715,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "tigers-113-J-7",
+          "sectionId": "113",
+          "row": "J",
+          "seatNumber": "7",
+          "position3D": {
+            "x": 54.94847550342253,
+            "y": -126.58856599175841,
+            "z": 40
+          },
+          "elevation": 40,
+          "distanceFromHomeplate": 138,
+          "angle": 23.464285714285708,
+          "facing": 203.46428571428572,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "tigers-113-J-8",
+          "sectionId": "113",
+          "row": "J",
+          "seatNumber": "8",
+          "position3D": {
+            "x": 55.54754750951892,
+            "y": -126.32683786780123,
+            "z": 40
+          },
+          "elevation": 40,
+          "distanceFromHomeplate": 138,
+          "angle": 23.73571428571428,
+          "facing": 203.73571428571427,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "tigers-113-J-9",
+          "sectionId": "113",
+          "row": "J",
+          "seatNumber": "9",
+          "position3D": {
+            "x": 56.14537290754546,
+            "y": -126.062274694187,
+            "z": 40
+          },
+          "elevation": 40,
+          "distanceFromHomeplate": 138,
+          "angle": 24.007142857142853,
+          "facing": 204.00714285714287,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "tigers-113-J-10",
+          "sectionId": "113",
+          "row": "J",
+          "seatNumber": "10",
+          "position3D": {
+            "x": 56.74193828099693,
+            "y": -125.7948824082901,
+            "z": 40
+          },
+          "elevation": 40,
+          "distanceFromHomeplate": 138,
+          "angle": 24.278571428571425,
+          "facing": 204.2785714285714,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "tigers-113-J-11",
+          "sectionId": "113",
+          "row": "J",
+          "seatNumber": "11",
+          "position3D": {
+            "x": 57.33723024164571,
+            "y": -125.5246670109764,
+            "z": 40
+          },
+          "elevation": 40,
+          "distanceFromHomeplate": 138,
+          "angle": 24.549999999999997,
+          "facing": 204.55,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "tigers-113-J-12",
+          "sectionId": "113",
+          "row": "J",
+          "seatNumber": "12",
+          "position3D": {
+            "x": 57.93123542984235,
+            "y": -125.25163456646854,
+            "z": 40
+          },
+          "elevation": 40,
+          "distanceFromHomeplate": 138,
+          "angle": 24.821428571428566,
+          "facing": 204.82142857142856,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "tigers-113-J-13",
+          "sectionId": "113",
+          "row": "J",
+          "seatNumber": "13",
+          "position3D": {
+            "x": 58.52394051481539,
+            "y": -124.97579120220983,
+            "z": 40
+          },
+          "elevation": 40,
+          "distanceFromHomeplate": 138,
+          "angle": 25.092857142857138,
+          "facing": 205.09285714285713,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "tigers-113-J-14",
+          "sectionId": "113",
+          "row": "J",
+          "seatNumber": "14",
+          "position3D": {
+            "x": 59.1153321949705,
+            "y": -124.69714310872676,
+            "z": 40
+          },
+          "elevation": 40,
+          "distanceFromHomeplate": 138,
+          "angle": 25.36428571428571,
+          "facing": 205.3642857142857,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        }
+      ],
+      "covered": false,
+      "hasAisleSeats": false,
+      "wheelchairRow": false
+    },
+    {
+      "rowNumber": "K",
+      "sectionId": "113",
+      "seatCount": 15,
+      "elevation": 42.5,
+      "depth": 140.8,
+      "rowSpacing": 36,
+      "seats": [
+        {
+          "id": "tigers-113-K-1",
+          "sectionId": "113",
+          "row": "K",
+          "seatNumber": "1",
+          "position3D": {
+            "x": 52.3494304592085,
+            "y": -130.7064540510395,
+            "z": 42.5
+          },
+          "elevation": 42.5,
+          "distanceFromHomeplate": 140.8,
+          "angle": 21.82666666666666,
+          "facing": 201.82666666666665,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "tigers-113-K-2",
+          "sectionId": "113",
+          "row": "K",
+          "seatNumber": "2",
+          "position3D": {
+            "x": 52.92683555745863,
+            "y": -130.47371412615547,
+            "z": 42.5
+          },
+          "elevation": 42.5,
+          "distanceFromHomeplate": 140.8,
+          "angle": 22.079999999999995,
+          "facing": 202.07999999999998,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "tigers-113-K-3",
+          "sectionId": "113",
+          "row": "K",
+          "seatNumber": "3",
+          "position3D": {
+            "x": 53.503205955274105,
+            "y": -130.23842348749284,
+            "z": 42.5
+          },
+          "elevation": 42.5,
+          "distanceFromHomeplate": 140.8,
+          "angle": 22.33333333333333,
+          "facing": 202.33333333333331,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "tigers-113-K-4",
+          "sectionId": "113",
+          "row": "K",
+          "seatNumber": "4",
+          "position3D": {
+            "x": 54.07853038482274,
+            "y": -130.00058673489826,
+            "z": 42.5
+          },
+          "elevation": 42.5,
+          "distanceFromHomeplate": 140.8,
+          "angle": 22.586666666666662,
+          "facing": 202.58666666666667,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "tigers-113-K-5",
+          "sectionId": "113",
+          "row": "K",
+          "seatNumber": "5",
+          "position3D": {
+            "x": 54.65279759872074,
+            "y": -129.76020851799393,
+            "z": 42.5
+          },
+          "elevation": 42.5,
+          "distanceFromHomeplate": 140.8,
+          "angle": 22.839999999999996,
+          "facing": 202.84,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "tigers-113-K-6",
+          "sectionId": "113",
+          "row": "K",
+          "seatNumber": "6",
+          "position3D": {
+            "x": 55.22599637025231,
+            "y": -129.51729353608684,
+            "z": 42.5
+          },
+          "elevation": 42.5,
+          "distanceFromHomeplate": 140.8,
+          "angle": 23.09333333333333,
+          "facing": 203.09333333333333,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "tigers-113-K-7",
+          "sectionId": "113",
+          "row": "K",
+          "seatNumber": "7",
+          "position3D": {
+            "x": 55.79811549358942,
+            "y": -129.27184653807672,
+            "z": 42.5
+          },
+          "elevation": 42.5,
+          "distanceFromHomeplate": 140.8,
+          "angle": 23.346666666666664,
+          "facing": 203.34666666666666,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "tigers-113-K-8",
+          "sectionId": "113",
+          "row": "K",
+          "seatNumber": "8",
+          "position3D": {
+            "x": 56.36914378401081,
+            "y": -129.02387232236336,
+            "z": 42.5
+          },
+          "elevation": 42.5,
+          "distanceFromHomeplate": 140.8,
+          "angle": 23.599999999999994,
+          "facing": 203.6,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "tigers-113-K-9",
+          "sectionId": "113",
+          "row": "K",
+          "seatNumber": "9",
+          "position3D": {
+            "x": 56.93907007812052,
+            "y": -128.77337573675268,
+            "z": 42.5
+          },
+          "elevation": 42.5,
+          "distanceFromHomeplate": 140.8,
+          "angle": 23.853333333333328,
+          "facing": 203.85333333333332,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "tigers-113-K-10",
+          "sectionId": "113",
+          "row": "K",
+          "seatNumber": "10",
+          "position3D": {
+            "x": 57.50788323406624,
+            "y": -128.52036167836212,
+            "z": 42.5
+          },
+          "elevation": 42.5,
+          "distanceFromHomeplate": 140.80000000000004,
+          "angle": 24.106666666666662,
+          "facing": 204.10666666666665,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "tigers-113-K-11",
+          "sectionId": "113",
+          "row": "K",
+          "seatNumber": "11",
+          "position3D": {
+            "x": 58.0755721317572,
+            "y": -128.26483509352465,
+            "z": 42.5
+          },
+          "elevation": 42.5,
+          "distanceFromHomeplate": 140.8,
+          "angle": 24.359999999999996,
+          "facing": 204.35999999999999,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "tigers-113-K-12",
+          "sectionId": "113",
+          "row": "K",
+          "seatNumber": "12",
+          "position3D": {
+            "x": 58.6421256730813,
+            "y": -128.00680097769236,
+            "z": 42.5
+          },
+          "elevation": 42.5,
+          "distanceFromHomeplate": 140.8,
+          "angle": 24.61333333333333,
+          "facing": 204.61333333333334,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "tigers-113-K-13",
+          "sectionId": "113",
+          "row": "K",
+          "seatNumber": "13",
+          "position3D": {
+            "x": 59.207532782122364,
+            "y": -127.74626437533861,
+            "z": 42.5
+          },
+          "elevation": 42.5,
+          "distanceFromHomeplate": 140.8,
+          "angle": 24.86666666666666,
+          "facing": 204.86666666666667,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "tigers-113-K-14",
+          "sectionId": "113",
+          "row": "K",
+          "seatNumber": "14",
+          "position3D": {
+            "x": 59.771782405376555,
+            "y": -127.48323037985946,
+            "z": 42.5
+          },
+          "elevation": 42.5,
+          "distanceFromHomeplate": 140.8,
+          "angle": 25.119999999999994,
+          "facing": 205.12,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "tigers-113-K-15",
+          "sectionId": "113",
+          "row": "K",
+          "seatNumber": "15",
+          "position3D": {
+            "x": 60.33486351196846,
+            "y": -127.21770413347406,
+            "z": 42.5
+          },
+          "elevation": 42.5,
+          "distanceFromHomeplate": 140.8,
+          "angle": 25.373333333333328,
+          "facing": 205.37333333333333,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        }
+      ],
+      "covered": false,
+      "hasAisleSeats": false,
+      "wheelchairRow": false
+    },
+    {
+      "rowNumber": "L",
+      "sectionId": "113",
+      "seatCount": 15,
+      "elevation": 45,
+      "depth": 143.6,
+      "rowSpacing": 36,
+      "seats": [
+        {
+          "id": "tigers-113-L-1",
+          "sectionId": "113",
+          "row": "L",
+          "seatNumber": "1",
+          "position3D": {
+            "x": 53.39047026947684,
+            "y": -133.3057301259181,
+            "z": 45
+          },
+          "elevation": 45,
+          "distanceFromHomeplate": 143.6,
+          "angle": 21.82666666666666,
+          "facing": 201.82666666666665,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "tigers-113-L-2",
+          "sectionId": "113",
+          "row": "L",
+          "seatNumber": "2",
+          "position3D": {
+            "x": 53.979357855476266,
+            "y": -133.06836185025512,
+            "z": 45
+          },
+          "elevation": 45,
+          "distanceFromHomeplate": 143.6,
+          "angle": 22.079999999999995,
+          "facing": 202.07999999999998,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "tigers-113-L-3",
+          "sectionId": "113",
+          "row": "L",
+          "seatNumber": "3",
+          "position3D": {
+            "x": 54.56719016461194,
+            "y": -132.8283921363918,
+            "z": 45
+          },
+          "elevation": 45,
+          "distanceFromHomeplate": 143.6,
+          "angle": 22.33333333333333,
+          "facing": 202.33333333333331,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "tigers-113-L-4",
+          "sectionId": "113",
+          "row": "L",
+          "seatNumber": "4",
+          "position3D": {
+            "x": 55.15395570497546,
+            "y": -132.58582567564906,
+            "z": 45
+          },
+          "elevation": 45,
+          "distanceFromHomeplate": 143.6,
+          "angle": 22.586666666666662,
+          "facing": 202.58666666666667,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "tigers-113-L-5",
+          "sectionId": "113",
+          "row": "L",
+          "seatNumber": "5",
+          "position3D": {
+            "x": 55.73964300551347,
+            "y": -132.3406672101131,
+            "z": 45
+          },
+          "elevation": 45,
+          "distanceFromHomeplate": 143.6,
+          "angle": 22.839999999999996,
+          "facing": 202.84,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "tigers-113-L-6",
+          "sectionId": "113",
+          "row": "L",
+          "seatNumber": "6",
+          "position3D": {
+            "x": 56.32424061625164,
+            "y": -132.0929215325431,
+            "z": 45
+          },
+          "elevation": 45,
+          "distanceFromHomeplate": 143.6,
+          "angle": 23.09333333333333,
+          "facing": 203.09333333333333,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "tigers-113-L-7",
+          "sectionId": "113",
+          "row": "L",
+          "seatNumber": "7",
+          "position3D": {
+            "x": 56.90773710851875,
+            "y": -131.8425934862771,
+            "z": 45
+          },
+          "elevation": 45,
+          "distanceFromHomeplate": 143.60000000000002,
+          "angle": 23.346666666666664,
+          "facing": 203.34666666666666,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "tigers-113-L-8",
+          "sectionId": "113",
+          "row": "L",
+          "seatNumber": "8",
+          "position3D": {
+            "x": 57.49012107517011,
+            "y": -131.5896879651376,
+            "z": 45
+          },
+          "elevation": 45,
+          "distanceFromHomeplate": 143.6,
+          "angle": 23.599999999999994,
+          "facing": 203.6,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "tigers-113-L-9",
+          "sectionId": "113",
+          "row": "L",
+          "seatNumber": "9",
+          "position3D": {
+            "x": 58.071381130810416,
+            "y": -131.33420991333583,
+            "z": 45
+          },
+          "elevation": 45,
+          "distanceFromHomeplate": 143.60000000000002,
+          "angle": 23.853333333333328,
+          "facing": 203.85333333333332,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "tigers-113-L-10",
+          "sectionId": "113",
+          "row": "L",
+          "seatNumber": "10",
+          "position3D": {
+            "x": 58.65150591201641,
+            "y": -131.07616432537498,
+            "z": 45
+          },
+          "elevation": 45,
+          "distanceFromHomeplate": 143.6,
+          "angle": 24.106666666666662,
+          "facing": 204.10666666666665,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "tigers-113-L-11",
+          "sectionId": "113",
+          "row": "L",
+          "seatNumber": "11",
+          "position3D": {
+            "x": 59.23048407755918,
+            "y": -130.81555624595268,
+            "z": 45
+          },
+          "elevation": 45,
+          "distanceFromHomeplate": 143.6,
+          "angle": 24.359999999999996,
+          "facing": 204.35999999999999,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "tigers-113-L-12",
+          "sectionId": "113",
+          "row": "L",
+          "seatNumber": "12",
+          "position3D": {
+            "x": 59.80830430862553,
+            "y": -130.55239076986237,
+            "z": 45
+          },
+          "elevation": 45,
+          "distanceFromHomeplate": 143.6,
+          "angle": 24.61333333333333,
+          "facing": 204.61333333333334,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "tigers-113-L-13",
+          "sectionId": "113",
+          "row": "L",
+          "seatNumber": "13",
+          "position3D": {
+            "x": 60.38495530903956,
+            "y": -130.28667304189364,
+            "z": 45
+          },
+          "elevation": 45,
+          "distanceFromHomeplate": 143.6,
+          "angle": 24.86666666666666,
+          "facing": 204.86666666666667,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "tigers-113-L-14",
+          "sectionId": "113",
+          "row": "L",
+          "seatNumber": "14",
+          "position3D": {
+            "x": 60.96042580548347,
+            "y": -130.01840825673165,
+            "z": 45
+          },
+          "elevation": 45,
+          "distanceFromHomeplate": 143.6,
+          "angle": 25.119999999999994,
+          "facing": 205.12,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "tigers-113-L-15",
+          "sectionId": "113",
+          "row": "L",
+          "seatNumber": "15",
+          "position3D": {
+            "x": 61.53470454771782,
+            "y": -129.74760165885564,
+            "z": 45
+          },
+          "elevation": 45,
+          "distanceFromHomeplate": 143.60000000000002,
+          "angle": 25.373333333333328,
+          "facing": 205.37333333333333,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        }
+      ],
+      "covered": false,
+      "hasAisleSeats": false,
+      "wheelchairRow": false
+    },
+    {
+      "rowNumber": "M",
+      "sectionId": "113",
+      "seatCount": 15,
+      "elevation": 47.5,
+      "depth": 146.4,
+      "rowSpacing": 36,
+      "seats": [
+        {
+          "id": "tigers-113-M-1",
+          "sectionId": "113",
+          "row": "M",
+          "seatNumber": "1",
+          "position3D": {
+            "x": 54.431510079745195,
+            "y": -135.90500620079675,
+            "z": 47.5
+          },
+          "elevation": 47.5,
+          "distanceFromHomeplate": 146.40000000000003,
+          "angle": 21.82666666666666,
+          "facing": 201.82666666666665,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "tigers-113-M-2",
+          "sectionId": "113",
+          "row": "M",
+          "seatNumber": "2",
+          "position3D": {
+            "x": 55.031880153493915,
+            "y": -135.66300957435482,
+            "z": 47.5
+          },
+          "elevation": 47.5,
+          "distanceFromHomeplate": 146.40000000000003,
+          "angle": 22.079999999999995,
+          "facing": 202.07999999999998,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "tigers-113-M-3",
+          "sectionId": "113",
+          "row": "M",
+          "seatNumber": "3",
+          "position3D": {
+            "x": 55.631174373949776,
+            "y": -135.41836078529084,
+            "z": 47.5
+          },
+          "elevation": 47.5,
+          "distanceFromHomeplate": 146.4,
+          "angle": 22.33333333333333,
+          "facing": 202.33333333333331,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "tigers-113-M-4",
+          "sectionId": "113",
+          "row": "M",
+          "seatNumber": "4",
+          "position3D": {
+            "x": 56.22938102512819,
+            "y": -135.1710646163999,
+            "z": 47.5
+          },
+          "elevation": 47.5,
+          "distanceFromHomeplate": 146.4,
+          "angle": 22.586666666666662,
+          "facing": 202.58666666666667,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "tigers-113-M-5",
+          "sectionId": "113",
+          "row": "M",
+          "seatNumber": "5",
+          "position3D": {
+            "x": 56.82648841230622,
+            "y": -134.92112590223232,
+            "z": 47.5
+          },
+          "elevation": 47.5,
+          "distanceFromHomeplate": 146.4,
+          "angle": 22.839999999999996,
+          "facing": 202.84,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "tigers-113-M-6",
+          "sectionId": "113",
+          "row": "M",
+          "seatNumber": "6",
+          "position3D": {
+            "x": 57.42248486225098,
+            "y": -134.66854952899936,
+            "z": 47.5
+          },
+          "elevation": 47.5,
+          "distanceFromHomeplate": 146.4,
+          "angle": 23.09333333333333,
+          "facing": 203.09333333333333,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "tigers-113-M-7",
+          "sectionId": "113",
+          "row": "M",
+          "seatNumber": "7",
+          "position3D": {
+            "x": 58.01735872344809,
+            "y": -134.4133404344775,
+            "z": 47.5
+          },
+          "elevation": 47.5,
+          "distanceFromHomeplate": 146.4,
+          "angle": 23.346666666666664,
+          "facing": 203.34666666666666,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "tigers-113-M-8",
+          "sectionId": "113",
+          "row": "M",
+          "seatNumber": "8",
+          "position3D": {
+            "x": 58.611098366329415,
+            "y": -134.1555036079119,
+            "z": 47.5
+          },
+          "elevation": 47.5,
+          "distanceFromHomeplate": 146.4,
+          "angle": 23.599999999999994,
+          "facing": 203.6,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "tigers-113-M-9",
+          "sectionId": "113",
+          "row": "M",
+          "seatNumber": "9",
+          "position3D": {
+            "x": 59.203692183500316,
+            "y": -133.89504408991897,
+            "z": 47.5
+          },
+          "elevation": 47.5,
+          "distanceFromHomeplate": 146.4,
+          "angle": 23.853333333333328,
+          "facing": 203.85333333333332,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "tigers-113-M-10",
+          "sectionId": "113",
+          "row": "M",
+          "seatNumber": "10",
+          "position3D": {
+            "x": 59.7951285899666,
+            "y": -133.63196697238786,
+            "z": 47.5
+          },
+          "elevation": 47.5,
+          "distanceFromHomeplate": 146.4,
+          "angle": 24.106666666666662,
+          "facing": 204.10666666666665,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "tigers-113-M-11",
+          "sectionId": "113",
+          "row": "M",
+          "seatNumber": "11",
+          "position3D": {
+            "x": 60.385396023361174,
+            "y": -133.36627739838073,
+            "z": 47.5
+          },
+          "elevation": 47.5,
+          "distanceFromHomeplate": 146.4,
+          "angle": 24.359999999999996,
+          "facing": 204.35999999999999,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "tigers-113-M-12",
+          "sectionId": "113",
+          "row": "M",
+          "seatNumber": "12",
+          "position3D": {
+            "x": 60.974482944169765,
+            "y": -133.09798056203238,
+            "z": 47.5
+          },
+          "elevation": 47.5,
+          "distanceFromHomeplate": 146.39999999999998,
+          "angle": 24.61333333333333,
+          "facing": 204.61333333333334,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "tigers-113-M-13",
+          "sectionId": "113",
+          "row": "M",
+          "seatNumber": "13",
+          "position3D": {
+            "x": 61.562377835956774,
+            "y": -132.82708170844867,
+            "z": 47.5
+          },
+          "elevation": 47.5,
+          "distanceFromHomeplate": 146.4,
+          "angle": 24.86666666666666,
+          "facing": 204.86666666666667,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "tigers-113-M-14",
+          "sectionId": "113",
+          "row": "M",
+          "seatNumber": "14",
+          "position3D": {
+            "x": 62.14906920559039,
+            "y": -132.55358613360386,
+            "z": 47.5
+          },
+          "elevation": 47.5,
+          "distanceFromHomeplate": 146.4,
+          "angle": 25.119999999999994,
+          "facing": 205.12,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "tigers-113-M-15",
+          "sectionId": "113",
+          "row": "M",
+          "seatNumber": "15",
+          "position3D": {
+            "x": 62.734545583467195,
+            "y": -132.27749918423723,
+            "z": 47.5
+          },
+          "elevation": 47.5,
+          "distanceFromHomeplate": 146.40000000000003,
+          "angle": 25.373333333333328,
+          "facing": 205.37333333333333,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        }
+      ],
+      "covered": false,
+      "hasAisleSeats": false,
+      "wheelchairRow": false
+    },
+    {
+      "rowNumber": "N",
+      "sectionId": "113",
+      "seatCount": 15,
+      "elevation": 50,
+      "depth": 149.2,
+      "rowSpacing": 36,
+      "seats": [
+        {
+          "id": "tigers-113-N-1",
+          "sectionId": "113",
+          "row": "N",
+          "seatNumber": "1",
+          "position3D": {
+            "x": 55.47254989001354,
+            "y": -138.50428227567534,
+            "z": 50
+          },
+          "elevation": 50,
+          "distanceFromHomeplate": 149.2,
+          "angle": 21.82666666666666,
+          "facing": 201.82666666666665,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "tigers-113-N-2",
+          "sectionId": "113",
+          "row": "N",
+          "seatNumber": "2",
+          "position3D": {
+            "x": 56.08440245151155,
+            "y": -138.2576572984545,
+            "z": 50
+          },
+          "elevation": 50,
+          "distanceFromHomeplate": 149.2,
+          "angle": 22.079999999999995,
+          "facing": 202.07999999999998,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "tigers-113-N-3",
+          "sectionId": "113",
+          "row": "N",
+          "seatNumber": "3",
+          "position3D": {
+            "x": 56.69515858328761,
+            "y": -138.00832943418982,
+            "z": 50
+          },
+          "elevation": 50,
+          "distanceFromHomeplate": 149.19999999999996,
+          "angle": 22.33333333333333,
+          "facing": 202.33333333333331,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "tigers-113-N-4",
+          "sectionId": "113",
+          "row": "N",
+          "seatNumber": "4",
+          "position3D": {
+            "x": 57.30480634528091,
+            "y": -137.7563035571507,
+            "z": 50
+          },
+          "elevation": 50,
+          "distanceFromHomeplate": 149.19999999999996,
+          "angle": 22.586666666666662,
+          "facing": 202.58666666666667,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "tigers-113-N-5",
+          "sectionId": "113",
+          "row": "N",
+          "seatNumber": "5",
+          "position3D": {
+            "x": 57.91333381909896,
+            "y": -137.50158459435153,
+            "z": 50
+          },
+          "elevation": 50,
+          "distanceFromHomeplate": 149.2,
+          "angle": 22.839999999999996,
+          "facing": 202.84,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "tigers-113-N-6",
+          "sectionId": "113",
+          "row": "N",
+          "seatNumber": "6",
+          "position3D": {
+            "x": 58.520729108250315,
+            "y": -137.24417752545563,
+            "z": 50
+          },
+          "elevation": 50,
+          "distanceFromHomeplate": 149.2,
+          "angle": 23.09333333333333,
+          "facing": 203.09333333333333,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "tigers-113-N-7",
+          "sectionId": "113",
+          "row": "N",
+          "seatNumber": "7",
+          "position3D": {
+            "x": 59.12698033837742,
+            "y": -136.98408738267787,
+            "z": 50
+          },
+          "elevation": 50,
+          "distanceFromHomeplate": 149.2,
+          "angle": 23.346666666666664,
+          "facing": 203.34666666666666,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "tigers-113-N-8",
+          "sectionId": "113",
+          "row": "N",
+          "seatNumber": "8",
+          "position3D": {
+            "x": 59.732075657488714,
+            "y": -136.72131925068615,
+            "z": 50
+          },
+          "elevation": 50,
+          "distanceFromHomeplate": 149.2,
+          "angle": 23.599999999999994,
+          "facing": 203.6,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "tigers-113-N-9",
+          "sectionId": "113",
+          "row": "N",
+          "seatNumber": "9",
+          "position3D": {
+            "x": 60.33600323619021,
+            "y": -136.4558782665021,
+            "z": 50
+          },
+          "elevation": 50,
+          "distanceFromHomeplate": 149.2,
+          "angle": 23.853333333333328,
+          "facing": 203.85333333333332,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "tigers-113-N-10",
+          "sectionId": "113",
+          "row": "N",
+          "seatNumber": "10",
+          "position3D": {
+            "x": 60.93875126791677,
+            "y": -136.18776961940074,
+            "z": 50
+          },
+          "elevation": 50,
+          "distanceFromHomeplate": 149.2,
+          "angle": 24.106666666666662,
+          "facing": 204.10666666666665,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "tigers-113-N-11",
+          "sectionId": "113",
+          "row": "N",
+          "seatNumber": "11",
+          "position3D": {
+            "x": 61.54030796916316,
+            "y": -135.91699855080876,
+            "z": 50
+          },
+          "elevation": 50,
+          "distanceFromHomeplate": 149.2,
+          "angle": 24.359999999999996,
+          "facing": 204.35999999999999,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "tigers-113-N-12",
+          "sectionId": "113",
+          "row": "N",
+          "seatNumber": "12",
+          "position3D": {
+            "x": 62.140661579713985,
+            "y": -135.64357035420238,
+            "z": 50
+          },
+          "elevation": 50,
+          "distanceFromHomeplate": 149.19999999999996,
+          "angle": 24.61333333333333,
+          "facing": 204.61333333333334,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "tigers-113-N-13",
+          "sectionId": "113",
+          "row": "N",
+          "seatNumber": "13",
+          "position3D": {
+            "x": 62.73980036287397,
+            "y": -135.36749037500368,
+            "z": 50
+          },
+          "elevation": 50,
+          "distanceFromHomeplate": 149.2,
+          "angle": 24.86666666666666,
+          "facing": 204.86666666666667,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "tigers-113-N-14",
+          "sectionId": "113",
+          "row": "N",
+          "seatNumber": "14",
+          "position3D": {
+            "x": 63.337712605697305,
+            "y": -135.08876401047604,
+            "z": 50
+          },
+          "elevation": 50,
+          "distanceFromHomeplate": 149.19999999999996,
+          "angle": 25.119999999999994,
+          "facing": 205.12,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "tigers-113-N-15",
+          "sectionId": "113",
+          "row": "N",
+          "seatNumber": "15",
+          "position3D": {
+            "x": 63.93438661921656,
+            "y": -134.80739670961879,
+            "z": 50
+          },
+          "elevation": 50,
+          "distanceFromHomeplate": 149.19999999999996,
+          "angle": 25.373333333333328,
+          "facing": 205.37333333333333,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        }
+      ],
+      "covered": false,
+      "hasAisleSeats": false,
+      "wheelchairRow": false
+    },
+    {
+      "rowNumber": "O",
+      "sectionId": "113",
+      "seatCount": 14,
+      "elevation": 52.5,
+      "depth": 152,
+      "rowSpacing": 36,
+      "seats": [
+        {
+          "id": "tigers-113-O-1",
+          "sectionId": "113",
+          "row": "O",
+          "seatNumber": "1",
+          "position3D": {
+            "x": 56.53587076315989,
+            "y": -141.09463248845182,
+            "z": 52.5
+          },
+          "elevation": 52.5,
+          "distanceFromHomeplate": 152,
+          "angle": 21.835714285714282,
+          "facing": 201.8357142857143,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "tigers-113-O-2",
+          "sectionId": "113",
+          "row": "O",
+          "seatNumber": "2",
+          "position3D": {
+            "x": 57.203644611566666,
+            "y": -140.82522161585112,
+            "z": 52.5
+          },
+          "elevation": 52.5,
+          "distanceFromHomeplate": 152,
+          "angle": 22.107142857142854,
+          "facing": 202.10714285714286,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "tigers-113-O-3",
+          "sectionId": "113",
+          "row": "O",
+          "seatNumber": "3",
+          "position3D": {
+            "x": 57.87013468547408,
+            "y": -140.55265031825294,
+            "z": 52.5
+          },
+          "elevation": 52.5,
+          "distanceFromHomeplate": 152,
+          "angle": 22.378571428571423,
+          "facing": 202.37857142857143,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "tigers-113-O-4",
+          "sectionId": "113",
+          "row": "O",
+          "seatNumber": "4",
+          "position3D": {
+            "x": 58.53532602739185,
+            "y": -140.27692471275148,
+            "z": 52.5
+          },
+          "elevation": 52.5,
+          "distanceFromHomeplate": 152.00000000000003,
+          "angle": 22.649999999999995,
+          "facing": 202.65,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "tigers-113-O-5",
+          "sectionId": "113",
+          "row": "O",
+          "seatNumber": "5",
+          "position3D": {
+            "x": 59.19920370897597,
+            "y": -139.9980509872304,
+            "z": 52.5
+          },
+          "elevation": 52.5,
+          "distanceFromHomeplate": 152,
+          "angle": 22.921428571428567,
+          "facing": 202.92142857142858,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "tigers-113-O-6",
+          "sectionId": "113",
+          "row": "O",
+          "seatNumber": "6",
+          "position3D": {
+            "x": 59.86175283136392,
+            "y": -139.71603540022417,
+            "z": 52.5
+          },
+          "elevation": 52.5,
+          "distanceFromHomeplate": 152,
+          "angle": 23.19285714285714,
+          "facing": 203.19285714285715,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "tigers-113-O-7",
+          "sectionId": "113",
+          "row": "O",
+          "seatNumber": "7",
+          "position3D": {
+            "x": 60.52295852550888,
+            "y": -139.43088428077738,
+            "z": 52.5
+          },
+          "elevation": 52.5,
+          "distanceFromHomeplate": 152,
+          "angle": 23.464285714285708,
+          "facing": 203.46428571428572,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "tigers-113-O-8",
+          "sectionId": "113",
+          "row": "O",
+          "seatNumber": "8",
+          "position3D": {
+            "x": 61.1828059525136,
+            "y": -139.1426040283028,
+            "z": 52.5
+          },
+          "elevation": 52.5,
+          "distanceFromHomeplate": 152,
+          "angle": 23.73571428571428,
+          "facing": 203.73571428571427,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "tigers-113-O-9",
+          "sectionId": "113",
+          "row": "O",
+          "seatNumber": "9",
+          "position3D": {
+            "x": 61.84128030396312,
+            "y": -138.85120111243785,
+            "z": 52.5
+          },
+          "elevation": 52.5,
+          "distanceFromHomeplate": 152,
+          "angle": 24.007142857142853,
+          "facing": 204.00714285714287,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "tigers-113-O-10",
+          "sectionId": "113",
+          "row": "O",
+          "seatNumber": "10",
+          "position3D": {
+            "x": 62.49836680225749,
+            "y": -138.55668207289924,
+            "z": 52.5
+          },
+          "elevation": 52.5,
+          "distanceFromHomeplate": 152,
+          "angle": 24.278571428571425,
+          "facing": 204.2785714285714,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "tigers-113-O-11",
+          "sectionId": "113",
+          "row": "O",
+          "seatNumber": "11",
+          "position3D": {
+            "x": 63.1540507009431,
+            "y": -138.25905351933633,
+            "z": 52.5
+          },
+          "elevation": 52.5,
+          "distanceFromHomeplate": 152,
+          "angle": 24.549999999999997,
+          "facing": 204.55,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "tigers-113-O-12",
+          "sectionId": "113",
+          "row": "O",
+          "seatNumber": "12",
+          "position3D": {
+            "x": 63.808317285043756,
+            "y": -137.95832213118274,
+            "z": 52.5
+          },
+          "elevation": 52.5,
+          "distanceFromHomeplate": 152,
+          "angle": 24.821428571428566,
+          "facing": 204.82142857142856,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "tigers-113-O-13",
+          "sectionId": "113",
+          "row": "O",
+          "seatNumber": "13",
+          "position3D": {
+            "x": 64.46115187139087,
+            "y": -137.6544946575065,
+            "z": 52.5
+          },
+          "elevation": 52.5,
+          "distanceFromHomeplate": 152,
+          "angle": 25.092857142857138,
+          "facing": 205.09285714285713,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "tigers-113-O-14",
+          "sectionId": "113",
+          "row": "O",
+          "seatNumber": "14",
+          "position3D": {
+            "x": 65.11253980895302,
+            "y": -137.34757791685848,
+            "z": 52.5
+          },
+          "elevation": 52.5,
+          "distanceFromHomeplate": 152,
+          "angle": 25.36428571428571,
+          "facing": 205.3642857142857,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        }
+      ],
+      "covered": false,
+      "hasAisleSeats": false,
+      "wheelchairRow": false
+    },
+    {
+      "rowNumber": "P",
+      "sectionId": "113",
+      "seatCount": 15,
+      "elevation": 55,
+      "depth": 154.8,
+      "rowSpacing": 36,
+      "seats": [
+        {
+          "id": "tigers-113-P-1",
+          "sectionId": "113",
+          "row": "P",
+          "seatNumber": "1",
+          "position3D": {
+            "x": 57.55462951055025,
+            "y": -143.70283442543263,
+            "z": 55
+          },
+          "elevation": 55,
+          "distanceFromHomeplate": 154.8,
+          "angle": 21.82666666666666,
+          "facing": 201.82666666666665,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "tigers-113-P-2",
+          "sectionId": "113",
+          "row": "P",
+          "seatNumber": "2",
+          "position3D": {
+            "x": 58.18944704754685,
+            "y": -143.44695274665386,
+            "z": 55
+          },
+          "elevation": 55,
+          "distanceFromHomeplate": 154.80000000000004,
+          "angle": 22.079999999999995,
+          "facing": 202.07999999999998,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "tigers-113-P-3",
+          "sectionId": "113",
+          "row": "P",
+          "seatNumber": "3",
+          "position3D": {
+            "x": 58.823127001963286,
+            "y": -143.18826673198785,
+            "z": 55
+          },
+          "elevation": 55,
+          "distanceFromHomeplate": 154.8,
+          "angle": 22.33333333333333,
+          "facing": 202.33333333333331,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "tigers-113-P-4",
+          "sectionId": "113",
+          "row": "P",
+          "seatNumber": "4",
+          "position3D": {
+            "x": 59.455656985586366,
+            "y": -142.92678143865234,
+            "z": 55
+          },
+          "elevation": 55,
+          "distanceFromHomeplate": 154.8,
+          "angle": 22.586666666666662,
+          "facing": 202.58666666666667,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "tigers-113-P-5",
+          "sectionId": "113",
+          "row": "P",
+          "seatNumber": "5",
+          "position3D": {
+            "x": 60.08702463268445,
+            "y": -142.66250197858994,
+            "z": 55
+          },
+          "elevation": 55,
+          "distanceFromHomeplate": 154.80000000000004,
+          "angle": 22.839999999999996,
+          "facing": 202.84,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "tigers-113-P-6",
+          "sectionId": "113",
+          "row": "P",
+          "seatNumber": "6",
+          "position3D": {
+            "x": 60.71721760024899,
+            "y": -142.39543351836818,
+            "z": 55
+          },
+          "elevation": 55,
+          "distanceFromHomeplate": 154.79999999999998,
+          "angle": 23.09333333333333,
+          "facing": 203.09333333333333,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "tigers-113-P-7",
+          "sectionId": "113",
+          "row": "P",
+          "seatNumber": "7",
+          "position3D": {
+            "x": 61.3462235682361,
+            "y": -142.12558127907866,
+            "z": 55
+          },
+          "elevation": 55,
+          "distanceFromHomeplate": 154.8,
+          "angle": 23.346666666666664,
+          "facing": 203.34666666666666,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "tigers-113-P-8",
+          "sectionId": "113",
+          "row": "P",
+          "seatNumber": "8",
+          "position3D": {
+            "x": 61.974030239807334,
+            "y": -141.85295053623472,
+            "z": 55
+          },
+          "elevation": 55,
+          "distanceFromHomeplate": 154.8,
+          "angle": 23.599999999999994,
+          "facing": 203.6,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "tigers-113-P-9",
+          "sectionId": "113",
+          "row": "P",
+          "seatNumber": "9",
+          "position3D": {
+            "x": 62.60062534157001,
+            "y": -141.57754661966842,
+            "z": 55
+          },
+          "elevation": 55,
+          "distanceFromHomeplate": 154.8,
+          "angle": 23.853333333333328,
+          "facing": 203.85333333333332,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "tigers-113-P-10",
+          "sectionId": "113",
+          "row": "P",
+          "seatNumber": "10",
+          "position3D": {
+            "x": 63.225996623817146,
+            "y": -141.29937491342653,
+            "z": 55
+          },
+          "elevation": 55,
+          "distanceFromHomeplate": 154.80000000000004,
+          "angle": 24.106666666666662,
+          "facing": 204.10666666666665,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "tigers-113-P-11",
+          "sectionId": "113",
+          "row": "P",
+          "seatNumber": "11",
+          "position3D": {
+            "x": 63.85013186076715,
+            "y": -141.01844085566486,
+            "z": 55
+          },
+          "elevation": 55,
+          "distanceFromHomeplate": 154.8,
+          "angle": 24.359999999999996,
+          "facing": 204.35999999999999,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "tigers-113-P-12",
+          "sectionId": "113",
+          "row": "P",
+          "seatNumber": "12",
+          "position3D": {
+            "x": 64.47301885080246,
+            "y": -140.73474993854245,
+            "z": 55
+          },
+          "elevation": 55,
+          "distanceFromHomeplate": 154.8,
+          "angle": 24.61333333333333,
+          "facing": 204.61333333333334,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "tigers-113-P-13",
+          "sectionId": "113",
+          "row": "P",
+          "seatNumber": "13",
+          "position3D": {
+            "x": 65.09464541670839,
+            "y": -140.44830770811376,
+            "z": 55
+          },
+          "elevation": 55,
+          "distanceFromHomeplate": 154.8,
+          "angle": 24.86666666666666,
+          "facing": 204.86666666666667,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "tigers-113-P-14",
+          "sectionId": "113",
+          "row": "P",
+          "seatNumber": "14",
+          "position3D": {
+            "x": 65.71499940591116,
+            "y": -140.1591197642205,
+            "z": 55
+          },
+          "elevation": 55,
+          "distanceFromHomeplate": 154.80000000000004,
+          "angle": 25.119999999999994,
+          "facing": 205.12,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "tigers-113-P-15",
+          "sectionId": "113",
+          "row": "P",
+          "seatNumber": "15",
+          "position3D": {
+            "x": 66.33406869071531,
+            "y": -139.86719176038198,
+            "z": 55
+          },
+          "elevation": 55,
+          "distanceFromHomeplate": 154.8,
+          "angle": 25.373333333333328,
+          "facing": 205.37333333333333,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        }
+      ],
+      "covered": false,
+      "hasAisleSeats": false,
+      "wheelchairRow": false
+    },
+    {
+      "rowNumber": "Q",
+      "sectionId": "113",
+      "seatCount": 15,
+      "elevation": 57.5,
+      "depth": 157.6,
+      "rowSpacing": 36,
+      "seats": [
+        {
+          "id": "tigers-113-Q-1",
+          "sectionId": "113",
+          "row": "Q",
+          "seatNumber": "1",
+          "position3D": {
+            "x": 58.595669320818594,
+            "y": -146.30211050031124,
+            "z": 57.5
+          },
+          "elevation": 57.5,
+          "distanceFromHomeplate": 157.6,
+          "angle": 21.82666666666666,
+          "facing": 201.82666666666665,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "tigers-113-Q-2",
+          "sectionId": "113",
+          "row": "Q",
+          "seatNumber": "2",
+          "position3D": {
+            "x": 59.241969345564485,
+            "y": -146.04160047075354,
+            "z": 57.5
+          },
+          "elevation": 57.5,
+          "distanceFromHomeplate": 157.6,
+          "angle": 22.079999999999995,
+          "facing": 202.07999999999998,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "tigers-113-Q-3",
+          "sectionId": "113",
+          "row": "Q",
+          "seatNumber": "3",
+          "position3D": {
+            "x": 59.88711121130112,
+            "y": -145.77823538088685,
+            "z": 57.5
+          },
+          "elevation": 57.5,
+          "distanceFromHomeplate": 157.6,
+          "angle": 22.33333333333333,
+          "facing": 202.33333333333331,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "tigers-113-Q-4",
+          "sectionId": "113",
+          "row": "Q",
+          "seatNumber": "4",
+          "position3D": {
+            "x": 60.53108230573908,
+            "y": -145.51202037940314,
+            "z": 57.5
+          },
+          "elevation": 57.5,
+          "distanceFromHomeplate": 157.59999999999997,
+          "angle": 22.586666666666662,
+          "facing": 202.58666666666667,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "tigers-113-Q-5",
+          "sectionId": "113",
+          "row": "Q",
+          "seatNumber": "5",
+          "position3D": {
+            "x": 61.17387003947719,
+            "y": -145.24296067070912,
+            "z": 57.5
+          },
+          "elevation": 57.5,
+          "distanceFromHomeplate": 157.6,
+          "angle": 22.839999999999996,
+          "facing": 202.84,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "tigers-113-Q-6",
+          "sectionId": "113",
+          "row": "Q",
+          "seatNumber": "6",
+          "position3D": {
+            "x": 61.81546184624832,
+            "y": -144.97106151482444,
+            "z": 57.5
+          },
+          "elevation": 57.5,
+          "distanceFromHomeplate": 157.6,
+          "angle": 23.09333333333333,
+          "facing": 203.09333333333333,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "tigers-113-Q-7",
+          "sectionId": "113",
+          "row": "Q",
+          "seatNumber": "7",
+          "position3D": {
+            "x": 62.45584518316543,
+            "y": -144.69632822727905,
+            "z": 57.5
+          },
+          "elevation": 57.5,
+          "distanceFromHomeplate": 157.6,
+          "angle": 23.346666666666664,
+          "facing": 203.34666666666666,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "tigers-113-Q-8",
+          "sectionId": "113",
+          "row": "Q",
+          "seatNumber": "8",
+          "position3D": {
+            "x": 63.09500753096663,
+            "y": -144.41876617900897,
+            "z": 57.5
+          },
+          "elevation": 57.5,
+          "distanceFromHomeplate": 157.6,
+          "angle": 23.599999999999994,
+          "facing": 203.6,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "tigers-113-Q-9",
+          "sectionId": "113",
+          "row": "Q",
+          "seatNumber": "9",
+          "position3D": {
+            "x": 63.7329363942599,
+            "y": -144.13838079625157,
+            "z": 57.5
+          },
+          "elevation": 57.5,
+          "distanceFromHomeplate": 157.6,
+          "angle": 23.853333333333328,
+          "facing": 203.85333333333332,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "tigers-113-Q-10",
+          "sectionId": "113",
+          "row": "Q",
+          "seatNumber": "10",
+          "position3D": {
+            "x": 64.36961930176732,
+            "y": -143.8551775604394,
+            "z": 57.5
+          },
+          "elevation": 57.5,
+          "distanceFromHomeplate": 157.6,
+          "angle": 24.106666666666662,
+          "facing": 204.10666666666665,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "tigers-113-Q-11",
+          "sectionId": "113",
+          "row": "Q",
+          "seatNumber": "11",
+          "position3D": {
+            "x": 65.00504380656913,
+            "y": -143.56916200809292,
+            "z": 57.5
+          },
+          "elevation": 57.5,
+          "distanceFromHomeplate": 157.6,
+          "angle": 24.359999999999996,
+          "facing": 204.35999999999999,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "tigers-113-Q-12",
+          "sectionId": "113",
+          "row": "Q",
+          "seatNumber": "12",
+          "position3D": {
+            "x": 65.63919748634669,
+            "y": -143.28033973071246,
+            "z": 57.5
+          },
+          "elevation": 57.5,
+          "distanceFromHomeplate": 157.6,
+          "angle": 24.61333333333333,
+          "facing": 204.61333333333334,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "tigers-113-Q-13",
+          "sectionId": "113",
+          "row": "Q",
+          "seatNumber": "13",
+          "position3D": {
+            "x": 66.27206794362559,
+            "y": -142.98871637466877,
+            "z": 57.5
+          },
+          "elevation": 57.5,
+          "distanceFromHomeplate": 157.6,
+          "angle": 24.86666666666666,
+          "facing": 204.86666666666667,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "tigers-113-Q-14",
+          "sectionId": "113",
+          "row": "Q",
+          "seatNumber": "14",
+          "position3D": {
+            "x": 66.90364280601807,
+            "y": -142.69429764109267,
+            "z": 57.5
+          },
+          "elevation": 57.5,
+          "distanceFromHomeplate": 157.6,
+          "angle": 25.119999999999994,
+          "facing": 205.12,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "tigers-113-Q-15",
+          "sectionId": "113",
+          "row": "Q",
+          "seatNumber": "15",
+          "position3D": {
+            "x": 67.53390972646469,
+            "y": -142.39708928576357,
+            "z": 57.5
+          },
+          "elevation": 57.5,
+          "distanceFromHomeplate": 157.6,
+          "angle": 25.373333333333328,
+          "facing": 205.37333333333333,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        }
+      ],
+      "covered": false,
+      "hasAisleSeats": false,
+      "wheelchairRow": false
+    },
+    {
+      "rowNumber": "R",
+      "sectionId": "113",
+      "seatCount": 15,
+      "elevation": 60,
+      "depth": 160.4,
+      "rowSpacing": 36,
+      "seats": [
+        {
+          "id": "tigers-113-R-1",
+          "sectionId": "113",
+          "row": "R",
+          "seatNumber": "1",
+          "position3D": {
+            "x": 59.636709131086945,
+            "y": -148.90138657518986,
+            "z": 60
+          },
+          "elevation": 60,
+          "distanceFromHomeplate": 160.4,
+          "angle": 21.82666666666666,
+          "facing": 201.82666666666665,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "tigers-113-R-2",
+          "sectionId": "113",
+          "row": "R",
+          "seatNumber": "2",
+          "position3D": {
+            "x": 60.294491643582134,
+            "y": -148.63624819485324,
+            "z": 60
+          },
+          "elevation": 60,
+          "distanceFromHomeplate": 160.40000000000003,
+          "angle": 22.079999999999995,
+          "facing": 202.07999999999998,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "tigers-113-R-3",
+          "sectionId": "113",
+          "row": "R",
+          "seatNumber": "3",
+          "position3D": {
+            "x": 60.951095420638964,
+            "y": -148.36820402978586,
+            "z": 60
+          },
+          "elevation": 60,
+          "distanceFromHomeplate": 160.4,
+          "angle": 22.33333333333333,
+          "facing": 202.33333333333331,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "tigers-113-R-4",
+          "sectionId": "113",
+          "row": "R",
+          "seatNumber": "4",
+          "position3D": {
+            "x": 61.606507625891815,
+            "y": -148.09725932015397,
+            "z": 60
+          },
+          "elevation": 60,
+          "distanceFromHomeplate": 160.39999999999998,
+          "angle": 22.586666666666662,
+          "facing": 202.58666666666667,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "tigers-113-R-5",
+          "sectionId": "113",
+          "row": "R",
+          "seatNumber": "5",
+          "position3D": {
+            "x": 62.26071544626993,
+            "y": -147.82341936282833,
+            "z": 60
+          },
+          "elevation": 60,
+          "distanceFromHomeplate": 160.40000000000003,
+          "angle": 22.839999999999996,
+          "facing": 202.84,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "tigers-113-R-6",
+          "sectionId": "113",
+          "row": "R",
+          "seatNumber": "6",
+          "position3D": {
+            "x": 62.913706092247665,
+            "y": -147.54668951128073,
+            "z": 60
+          },
+          "elevation": 60,
+          "distanceFromHomeplate": 160.4,
+          "angle": 23.09333333333333,
+          "facing": 203.09333333333333,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "tigers-113-R-7",
+          "sectionId": "113",
+          "row": "R",
+          "seatNumber": "7",
+          "position3D": {
+            "x": 63.56546679809477,
+            "y": -147.26707517547945,
+            "z": 60
+          },
+          "elevation": 60,
+          "distanceFromHomeplate": 160.4,
+          "angle": 23.346666666666664,
+          "facing": 203.34666666666666,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "tigers-113-R-8",
+          "sectionId": "113",
+          "row": "R",
+          "seatNumber": "8",
+          "position3D": {
+            "x": 64.21598482212595,
+            "y": -146.98458182178325,
+            "z": 60
+          },
+          "elevation": 60,
+          "distanceFromHomeplate": 160.4,
+          "angle": 23.599999999999994,
+          "facing": 203.6,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "tigers-113-R-9",
+          "sectionId": "113",
+          "row": "R",
+          "seatNumber": "9",
+          "position3D": {
+            "x": 64.8652474469498,
+            "y": -146.69921497283474,
+            "z": 60
+          },
+          "elevation": 60,
+          "distanceFromHomeplate": 160.40000000000003,
+          "angle": 23.853333333333328,
+          "facing": 203.85333333333332,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "tigers-113-R-10",
+          "sectionId": "113",
+          "row": "R",
+          "seatNumber": "10",
+          "position3D": {
+            "x": 65.5132419797175,
+            "y": -146.41098020745227,
+            "z": 60
+          },
+          "elevation": 60,
+          "distanceFromHomeplate": 160.4,
+          "angle": 24.106666666666662,
+          "facing": 204.10666666666665,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "tigers-113-R-11",
+          "sectionId": "113",
+          "row": "R",
+          "seatNumber": "11",
+          "position3D": {
+            "x": 66.15995575237113,
+            "y": -146.11988316052097,
+            "z": 60
+          },
+          "elevation": 60,
+          "distanceFromHomeplate": 160.40000000000003,
+          "angle": 24.359999999999996,
+          "facing": 204.35999999999999,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "tigers-113-R-12",
+          "sectionId": "113",
+          "row": "R",
+          "seatNumber": "12",
+          "position3D": {
+            "x": 66.80537612189092,
+            "y": -145.8259295228825,
+            "z": 60
+          },
+          "elevation": 60,
+          "distanceFromHomeplate": 160.4,
+          "angle": 24.61333333333333,
+          "facing": 204.61333333333334,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "tigers-113-R-13",
+          "sectionId": "113",
+          "row": "R",
+          "seatNumber": "13",
+          "position3D": {
+            "x": 67.4494904705428,
+            "y": -145.5291250412238,
+            "z": 60
+          },
+          "elevation": 60,
+          "distanceFromHomeplate": 160.4,
+          "angle": 24.86666666666666,
+          "facing": 204.86666666666667,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "tigers-113-R-14",
+          "sectionId": "113",
+          "row": "R",
+          "seatNumber": "14",
+          "position3D": {
+            "x": 68.092286206125,
+            "y": -145.2294755179649,
+            "z": 60
+          },
+          "elevation": 60,
+          "distanceFromHomeplate": 160.4,
+          "angle": 25.119999999999994,
+          "facing": 205.12,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "tigers-113-R-15",
+          "sectionId": "113",
+          "row": "R",
+          "seatNumber": "15",
+          "position3D": {
+            "x": 68.73375076221406,
+            "y": -144.92698681114516,
+            "z": 60
+          },
+          "elevation": 60,
+          "distanceFromHomeplate": 160.4,
+          "angle": 25.373333333333328,
+          "facing": 205.37333333333333,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        }
+      ],
+      "covered": false,
+      "hasAisleSeats": false,
+      "wheelchairRow": false
+    },
+    {
+      "rowNumber": "S",
+      "sectionId": "113",
+      "seatCount": 15,
+      "elevation": 62.5,
+      "depth": 163.2,
+      "rowSpacing": 36,
+      "seats": [
+        {
+          "id": "tigers-113-S-1",
+          "sectionId": "113",
+          "row": "S",
+          "seatNumber": "1",
+          "position3D": {
+            "x": 60.67774894135529,
+            "y": -151.50066265006848,
+            "z": 62.5
+          },
+          "elevation": 62.5,
+          "distanceFromHomeplate": 163.2,
+          "angle": 21.82666666666666,
+          "facing": 201.82666666666665,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "tigers-113-S-2",
+          "sectionId": "113",
+          "row": "S",
+          "seatNumber": "2",
+          "position3D": {
+            "x": 61.34701394159977,
+            "y": -151.23089591895288,
+            "z": 62.5
+          },
+          "elevation": 62.5,
+          "distanceFromHomeplate": 163.2,
+          "angle": 22.079999999999995,
+          "facing": 202.07999999999998,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "tigers-113-S-3",
+          "sectionId": "113",
+          "row": "S",
+          "seatNumber": "3",
+          "position3D": {
+            "x": 62.01507962997679,
+            "y": -150.95817267868486,
+            "z": 62.5
+          },
+          "elevation": 62.5,
+          "distanceFromHomeplate": 163.2,
+          "angle": 22.33333333333333,
+          "facing": 202.33333333333331,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "tigers-113-S-4",
+          "sectionId": "113",
+          "row": "S",
+          "seatNumber": "4",
+          "position3D": {
+            "x": 62.68193294604453,
+            "y": -150.6824982609048,
+            "z": 62.5
+          },
+          "elevation": 62.5,
+          "distanceFromHomeplate": 163.2,
+          "angle": 22.586666666666662,
+          "facing": 202.58666666666667,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "tigers-113-S-5",
+          "sectionId": "113",
+          "row": "S",
+          "seatNumber": "5",
+          "position3D": {
+            "x": 63.34756085306267,
+            "y": -150.4038780549475,
+            "z": 62.5
+          },
+          "elevation": 62.5,
+          "distanceFromHomeplate": 163.20000000000002,
+          "angle": 22.839999999999996,
+          "facing": 202.84,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "tigers-113-S-6",
+          "sectionId": "113",
+          "row": "S",
+          "seatNumber": "6",
+          "position3D": {
+            "x": 64.01195033824699,
+            "y": -150.122317507737,
+            "z": 62.5
+          },
+          "elevation": 62.5,
+          "distanceFromHomeplate": 163.2,
+          "angle": 23.09333333333333,
+          "facing": 203.09333333333333,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "tigers-113-S-7",
+          "sectionId": "113",
+          "row": "S",
+          "seatNumber": "7",
+          "position3D": {
+            "x": 64.6750884130241,
+            "y": -149.8378221236798,
+            "z": 62.5
+          },
+          "elevation": 62.5,
+          "distanceFromHomeplate": 163.2,
+          "angle": 23.346666666666664,
+          "facing": 203.34666666666666,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "tigers-113-S-8",
+          "sectionId": "113",
+          "row": "S",
+          "seatNumber": "8",
+          "position3D": {
+            "x": 65.33696211328524,
+            "y": -149.5503974645575,
+            "z": 62.5
+          },
+          "elevation": 62.5,
+          "distanceFromHomeplate": 163.2,
+          "angle": 23.599999999999994,
+          "facing": 203.6,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "tigers-113-S-9",
+          "sectionId": "113",
+          "row": "S",
+          "seatNumber": "9",
+          "position3D": {
+            "x": 65.9975584996397,
+            "y": -149.26004914941785,
+            "z": 62.5
+          },
+          "elevation": 62.5,
+          "distanceFromHomeplate": 163.2,
+          "angle": 23.853333333333328,
+          "facing": 203.85333333333332,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "tigers-113-S-10",
+          "sectionId": "113",
+          "row": "S",
+          "seatNumber": "10",
+          "position3D": {
+            "x": 66.65686465766768,
+            "y": -148.96678285446515,
+            "z": 62.5
+          },
+          "elevation": 62.5,
+          "distanceFromHomeplate": 163.2,
+          "angle": 24.106666666666662,
+          "facing": 204.10666666666665,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "tigers-113-S-11",
+          "sectionId": "113",
+          "row": "S",
+          "seatNumber": "11",
+          "position3D": {
+            "x": 67.3148676981731,
+            "y": -148.670604312949,
+            "z": 62.5
+          },
+          "elevation": 62.5,
+          "distanceFromHomeplate": 163.2,
+          "angle": 24.359999999999996,
+          "facing": 204.35999999999999,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "tigers-113-S-12",
+          "sectionId": "113",
+          "row": "S",
+          "seatNumber": "12",
+          "position3D": {
+            "x": 67.97155475743514,
+            "y": -148.37151931505247,
+            "z": 62.5
+          },
+          "elevation": 62.5,
+          "distanceFromHomeplate": 163.19999999999996,
+          "angle": 24.61333333333333,
+          "facing": 204.61333333333334,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "tigers-113-S-13",
+          "sectionId": "113",
+          "row": "S",
+          "seatNumber": "13",
+          "position3D": {
+            "x": 68.62691299746,
+            "y": -148.06953370777882,
+            "z": 62.5
+          },
+          "elevation": 62.5,
+          "distanceFromHomeplate": 163.19999999999996,
+          "angle": 24.86666666666666,
+          "facing": 204.86666666666667,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "tigers-113-S-14",
+          "sectionId": "113",
+          "row": "S",
+          "seatNumber": "14",
+          "position3D": {
+            "x": 69.28092960623191,
+            "y": -147.76465339483707,
+            "z": 62.5
+          },
+          "elevation": 62.5,
+          "distanceFromHomeplate": 163.2,
+          "angle": 25.119999999999994,
+          "facing": 205.12,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "tigers-113-S-15",
+          "sectionId": "113",
+          "row": "S",
+          "seatNumber": "15",
+          "position3D": {
+            "x": 69.93359179796343,
+            "y": -147.45688433652674,
+            "z": 62.5
+          },
+          "elevation": 62.5,
+          "distanceFromHomeplate": 163.20000000000002,
+          "angle": 25.373333333333328,
+          "facing": 205.37333333333333,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        }
+      ],
+      "covered": false,
+      "hasAisleSeats": false,
+      "wheelchairRow": false
+    },
+    {
+      "rowNumber": "T",
+      "sectionId": "113",
+      "seatCount": 14,
+      "elevation": 65,
+      "depth": 166,
+      "rowSpacing": 36,
+      "seats": [
+        {
+          "id": "tigers-113-T-1",
+          "sectionId": "113",
+          "row": "T",
+          "seatNumber": "1",
+          "position3D": {
+            "x": 61.74312201766146,
+            "y": -154.09019074396713,
+            "z": 65
+          },
+          "elevation": 65,
+          "distanceFromHomeplate": 166.00000000000003,
+          "angle": 21.835714285714282,
+          "facing": 201.8357142857143,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "tigers-113-T-2",
+          "sectionId": "113",
+          "row": "T",
+          "seatNumber": "2",
+          "position3D": {
+            "x": 62.4724013521057,
+            "y": -153.79596571204792,
+            "z": 65
+          },
+          "elevation": 65,
+          "distanceFromHomeplate": 166,
+          "angle": 22.107142857142854,
+          "facing": 202.10714285714286,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "tigers-113-T-3",
+          "sectionId": "113",
+          "row": "T",
+          "seatNumber": "3",
+          "position3D": {
+            "x": 63.20027866966248,
+            "y": -153.4982891633552,
+            "z": 65
+          },
+          "elevation": 65,
+          "distanceFromHomeplate": 166,
+          "angle": 22.378571428571423,
+          "facing": 202.37857142857143,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "tigers-113-T-4",
+          "sectionId": "113",
+          "row": "T",
+          "seatNumber": "4",
+          "position3D": {
+            "x": 63.926737635177936,
+            "y": -153.19716777839963,
+            "z": 65
+          },
+          "elevation": 65,
+          "distanceFromHomeplate": 166,
+          "angle": 22.649999999999995,
+          "facing": 202.65,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "tigers-113-T-5",
+          "sectionId": "113",
+          "row": "T",
+          "seatNumber": "5",
+          "position3D": {
+            "x": 64.65176194532901,
+            "y": -152.89260831500164,
+            "z": 65
+          },
+          "elevation": 65,
+          "distanceFromHomeplate": 166,
+          "angle": 22.921428571428567,
+          "facing": 202.92142857142858,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "tigers-113-T-6",
+          "sectionId": "113",
+          "row": "T",
+          "seatNumber": "6",
+          "position3D": {
+            "x": 65.37533532898955,
+            "y": -152.58461760813955,
+            "z": 65
+          },
+          "elevation": 65,
+          "distanceFromHomeplate": 166,
+          "angle": 23.19285714285714,
+          "facing": 203.19285714285715,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "tigers-113-T-7",
+          "sectionId": "113",
+          "row": "T",
+          "seatNumber": "7",
+          "position3D": {
+            "x": 66.09744154759522,
+            "y": -152.27320256979635,
+            "z": 65
+          },
+          "elevation": 65,
+          "distanceFromHomeplate": 166,
+          "angle": 23.464285714285708,
+          "facing": 203.46428571428572,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "tigers-113-T-8",
+          "sectionId": "113",
+          "row": "T",
+          "seatNumber": "8",
+          "position3D": {
+            "x": 66.81806439550827,
+            "y": -151.9583701888044,
+            "z": 65
+          },
+          "elevation": 65,
+          "distanceFromHomeplate": 166.00000000000003,
+          "angle": 23.73571428571428,
+          "facing": 203.73571428571427,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "tigers-113-T-9",
+          "sectionId": "113",
+          "row": "T",
+          "seatNumber": "9",
+          "position3D": {
+            "x": 67.53718770038077,
+            "y": -151.64012753068872,
+            "z": 65
+          },
+          "elevation": 65,
+          "distanceFromHomeplate": 166,
+          "angle": 24.007142857142853,
+          "facing": 204.00714285714287,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "tigers-113-T-10",
+          "sectionId": "113",
+          "row": "T",
+          "seatNumber": "10",
+          "position3D": {
+            "x": 68.25479532351805,
+            "y": -151.3184817375084,
+            "z": 65
+          },
+          "elevation": 65,
+          "distanceFromHomeplate": 166,
+          "angle": 24.278571428571425,
+          "facing": 204.2785714285714,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "tigers-113-T-11",
+          "sectionId": "113",
+          "row": "T",
+          "seatNumber": "11",
+          "position3D": {
+            "x": 68.97087116024049,
+            "y": -150.99344002769627,
+            "z": 65
+          },
+          "elevation": 65,
+          "distanceFromHomeplate": 166,
+          "angle": 24.549999999999997,
+          "facing": 204.55,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "tigers-113-T-12",
+          "sectionId": "113",
+          "row": "T",
+          "seatNumber": "12",
+          "position3D": {
+            "x": 69.68539914024515,
+            "y": -150.66500969589694,
+            "z": 65
+          },
+          "elevation": 65,
+          "distanceFromHomeplate": 166,
+          "angle": 24.821428571428566,
+          "facing": 204.82142857142856,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "tigers-113-T-13",
+          "sectionId": "113",
+          "row": "T",
+          "seatNumber": "13",
+          "position3D": {
+            "x": 70.39836322796634,
+            "y": -150.33319811280313,
+            "z": 65
+          },
+          "elevation": 65,
+          "distanceFromHomeplate": 166,
+          "angle": 25.092857142857138,
+          "facing": 205.09285714285713,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "tigers-113-T-14",
+          "sectionId": "113",
+          "row": "T",
+          "seatNumber": "14",
+          "position3D": {
+            "x": 71.10974742293553,
+            "y": -149.99801272499016,
+            "z": 65
+          },
+          "elevation": 65,
+          "distanceFromHomeplate": 166,
+          "angle": 25.36428571428571,
+          "facing": 205.3642857142857,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        }
+      ],
+      "covered": false,
+      "hasAisleSeats": false,
+      "wheelchairRow": false
+    },
+    {
+      "rowNumber": "U",
+      "sectionId": "113",
+      "seatCount": 15,
+      "elevation": 67.5,
+      "depth": 168.8,
+      "rowSpacing": 36,
+      "seats": [
+        {
+          "id": "tigers-113-U-1",
+          "sectionId": "113",
+          "row": "U",
+          "seatNumber": "1",
+          "position3D": {
+            "x": 62.759828561892,
+            "y": -156.69921479982574,
+            "z": 67.5
+          },
+          "elevation": 67.5,
+          "distanceFromHomeplate": 168.8,
+          "angle": 21.82666666666666,
+          "facing": 201.82666666666665,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "tigers-113-U-2",
+          "sectionId": "113",
+          "row": "U",
+          "seatNumber": "2",
+          "position3D": {
+            "x": 63.45205853763506,
+            "y": -156.42019136715228,
+            "z": 67.5
+          },
+          "elevation": 67.5,
+          "distanceFromHomeplate": 168.80000000000004,
+          "angle": 22.079999999999995,
+          "facing": 202.07999999999998,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "tigers-113-U-3",
+          "sectionId": "113",
+          "row": "U",
+          "seatNumber": "3",
+          "position3D": {
+            "x": 64.14304804865247,
+            "y": -156.1381099764829,
+            "z": 67.5
+          },
+          "elevation": 67.5,
+          "distanceFromHomeplate": 168.80000000000004,
+          "angle": 22.33333333333333,
+          "facing": 202.33333333333331,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "tigers-113-U-4",
+          "sectionId": "113",
+          "row": "U",
+          "seatNumber": "4",
+          "position3D": {
+            "x": 64.83278358634999,
+            "y": -155.85297614240645,
+            "z": 67.5
+          },
+          "elevation": 67.5,
+          "distanceFromHomeplate": 168.8,
+          "angle": 22.586666666666662,
+          "facing": 202.58666666666667,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "tigers-113-U-5",
+          "sectionId": "113",
+          "row": "U",
+          "seatNumber": "5",
+          "position3D": {
+            "x": 65.52125166664815,
+            "y": -155.56479543918593,
+            "z": 67.5
+          },
+          "elevation": 67.5,
+          "distanceFromHomeplate": 168.8,
+          "angle": 22.839999999999996,
+          "facing": 202.84,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "tigers-113-U-6",
+          "sectionId": "113",
+          "row": "U",
+          "seatNumber": "6",
+          "position3D": {
+            "x": 66.20843883024567,
+            "y": -155.27357350064955,
+            "z": 67.5
+          },
+          "elevation": 67.5,
+          "distanceFromHomeplate": 168.79999999999998,
+          "angle": 23.09333333333333,
+          "facing": 203.09333333333333,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "tigers-113-U-7",
+          "sectionId": "113",
+          "row": "U",
+          "seatNumber": "7",
+          "position3D": {
+            "x": 66.89433164288278,
+            "y": -154.9793160200806,
+            "z": 67.5
+          },
+          "elevation": 67.5,
+          "distanceFromHomeplate": 168.79999999999998,
+          "angle": 23.346666666666664,
+          "facing": 203.34666666666666,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "tigers-113-U-8",
+          "sectionId": "113",
+          "row": "U",
+          "seatNumber": "8",
+          "position3D": {
+            "x": 67.57891669560387,
+            "y": -154.68202875010607,
+            "z": 67.5
+          },
+          "elevation": 67.5,
+          "distanceFromHomeplate": 168.80000000000004,
+          "angle": 23.599999999999994,
+          "facing": 203.6,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "tigers-113-U-9",
+          "sectionId": "113",
+          "row": "U",
+          "seatNumber": "9",
+          "position3D": {
+            "x": 68.2621806050195,
+            "y": -154.3817175025842,
+            "z": 67.5
+          },
+          "elevation": 67.5,
+          "distanceFromHomeplate": 168.80000000000004,
+          "angle": 23.853333333333328,
+          "facing": 203.85333333333332,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "tigers-113-U-10",
+          "sectionId": "113",
+          "row": "U",
+          "seatNumber": "10",
+          "position3D": {
+            "x": 68.94411001356805,
+            "y": -154.07838814849094,
+            "z": 67.5
+          },
+          "elevation": 67.5,
+          "distanceFromHomeplate": 168.80000000000004,
+          "angle": 24.106666666666662,
+          "facing": 204.10666666666665,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "tigers-113-U-11",
+          "sectionId": "113",
+          "row": "U",
+          "seatNumber": "11",
+          "position3D": {
+            "x": 69.6246915897771,
+            "y": -153.7720466178051,
+            "z": 67.5
+          },
+          "elevation": 67.5,
+          "distanceFromHomeplate": 168.8,
+          "angle": 24.359999999999996,
+          "facing": 204.35999999999999,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "tigers-113-U-12",
+          "sectionId": "113",
+          "row": "U",
+          "seatNumber": "12",
+          "position3D": {
+            "x": 70.30391202852361,
+            "y": -153.46269889939254,
+            "z": 67.5
+          },
+          "elevation": 67.5,
+          "distanceFromHomeplate": 168.8,
+          "angle": 24.61333333333333,
+          "facing": 204.61333333333334,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "tigers-113-U-13",
+          "sectionId": "113",
+          "row": "U",
+          "seatNumber": "13",
+          "position3D": {
+            "x": 70.98175805129442,
+            "y": -153.15035104088892,
+            "z": 67.5
+          },
+          "elevation": 67.5,
+          "distanceFromHomeplate": 168.80000000000004,
+          "angle": 24.86666666666666,
+          "facing": 204.86666666666667,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "tigers-113-U-14",
+          "sectionId": "113",
+          "row": "U",
+          "seatNumber": "14",
+          "position3D": {
+            "x": 71.65821640644576,
+            "y": -152.83500914858152,
+            "z": 67.5
+          },
+          "elevation": 67.5,
+          "distanceFromHomeplate": 168.80000000000004,
+          "angle": 25.119999999999994,
+          "facing": 205.12,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "tigers-113-U-15",
+          "sectionId": "113",
+          "row": "U",
+          "seatNumber": "15",
+          "position3D": {
+            "x": 72.33327386946218,
+            "y": -152.5166793872899,
+            "z": 67.5
+          },
+          "elevation": 67.5,
+          "distanceFromHomeplate": 168.8,
+          "angle": 25.373333333333328,
+          "facing": 205.37333333333333,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        }
+      ],
+      "covered": false,
+      "hasAisleSeats": false,
+      "wheelchairRow": false
+    },
+    {
+      "rowNumber": "V",
+      "sectionId": "113",
+      "seatCount": 15,
+      "elevation": 70,
+      "depth": 171.6,
+      "rowSpacing": 36,
+      "seats": [
+        {
+          "id": "tigers-113-V-1",
+          "sectionId": "113",
+          "row": "V",
+          "seatNumber": "1",
+          "position3D": {
+            "x": 63.800868372160345,
+            "y": -159.29849087470436,
+            "z": 70
+          },
+          "elevation": 70,
+          "distanceFromHomeplate": 171.6,
+          "angle": 21.82666666666666,
+          "facing": 201.82666666666665,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "tigers-113-V-2",
+          "sectionId": "113",
+          "row": "V",
+          "seatNumber": "2",
+          "position3D": {
+            "x": 64.5045808356527,
+            "y": -159.01483909125196,
+            "z": 70
+          },
+          "elevation": 70,
+          "distanceFromHomeplate": 171.60000000000002,
+          "angle": 22.079999999999995,
+          "facing": 202.07999999999998,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "tigers-113-V-3",
+          "sectionId": "113",
+          "row": "V",
+          "seatNumber": "3",
+          "position3D": {
+            "x": 65.2070322579903,
+            "y": -158.72807862538187,
+            "z": 70
+          },
+          "elevation": 70,
+          "distanceFromHomeplate": 171.6,
+          "angle": 22.33333333333333,
+          "facing": 202.33333333333331,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "tigers-113-V-4",
+          "sectionId": "113",
+          "row": "V",
+          "seatNumber": "4",
+          "position3D": {
+            "x": 65.90820890650271,
+            "y": -158.43821508315725,
+            "z": 70
+          },
+          "elevation": 70,
+          "distanceFromHomeplate": 171.6,
+          "angle": 22.586666666666662,
+          "facing": 202.58666666666667,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "tigers-113-V-5",
+          "sectionId": "113",
+          "row": "V",
+          "seatNumber": "5",
+          "position3D": {
+            "x": 66.60809707344089,
+            "y": -158.1452541313051,
+            "z": 70
+          },
+          "elevation": 70,
+          "distanceFromHomeplate": 171.6,
+          "angle": 22.839999999999996,
+          "facing": 202.84,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "tigers-113-V-6",
+          "sectionId": "113",
+          "row": "V",
+          "seatNumber": "6",
+          "position3D": {
+            "x": 67.306683076245,
+            "y": -157.8492014971058,
+            "z": 70
+          },
+          "elevation": 70,
+          "distanceFromHomeplate": 171.6,
+          "angle": 23.09333333333333,
+          "facing": 203.09333333333333,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "tigers-113-V-7",
+          "sectionId": "113",
+          "row": "V",
+          "seatNumber": "7",
+          "position3D": {
+            "x": 68.0039532578121,
+            "y": -157.550062968281,
+            "z": 70
+          },
+          "elevation": 70,
+          "distanceFromHomeplate": 171.6,
+          "angle": 23.346666666666664,
+          "facing": 203.34666666666666,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "tigers-113-V-8",
+          "sectionId": "113",
+          "row": "V",
+          "seatNumber": "8",
+          "position3D": {
+            "x": 68.69989398676316,
+            "y": -157.24784439288032,
+            "z": 70
+          },
+          "elevation": 70,
+          "distanceFromHomeplate": 171.6,
+          "angle": 23.599999999999994,
+          "facing": 203.6,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "tigers-113-V-9",
+          "sectionId": "113",
+          "row": "V",
+          "seatNumber": "9",
+          "position3D": {
+            "x": 69.39449165770938,
+            "y": -156.9425516791673,
+            "z": 70
+          },
+          "elevation": 70,
+          "distanceFromHomeplate": 171.6,
+          "angle": 23.853333333333328,
+          "facing": 203.85333333333332,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "tigers-113-V-10",
+          "sectionId": "113",
+          "row": "V",
+          "seatNumber": "10",
+          "position3D": {
+            "x": 70.08773269151823,
+            "y": -156.6341907955038,
+            "z": 70
+          },
+          "elevation": 70,
+          "distanceFromHomeplate": 171.6,
+          "angle": 24.106666666666662,
+          "facing": 204.10666666666665,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "tigers-113-V-11",
+          "sectionId": "113",
+          "row": "V",
+          "seatNumber": "11",
+          "position3D": {
+            "x": 70.77960353557908,
+            "y": -156.32276777023313,
+            "z": 70
+          },
+          "elevation": 70,
+          "distanceFromHomeplate": 171.6,
+          "angle": 24.359999999999996,
+          "facing": 204.35999999999999,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "tigers-113-V-12",
+          "sectionId": "113",
+          "row": "V",
+          "seatNumber": "12",
+          "position3D": {
+            "x": 71.47009066406784,
+            "y": -156.00828869156254,
+            "z": 70
+          },
+          "elevation": 70,
+          "distanceFromHomeplate": 171.6,
+          "angle": 24.61333333333333,
+          "facing": 204.61333333333334,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "tigers-113-V-13",
+          "sectionId": "113",
+          "row": "V",
+          "seatNumber": "13",
+          "position3D": {
+            "x": 72.15918057821162,
+            "y": -155.69075970744393,
+            "z": 70
+          },
+          "elevation": 70,
+          "distanceFromHomeplate": 171.6,
+          "angle": 24.86666666666666,
+          "facing": 204.86666666666667,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "tigers-113-V-14",
+          "sectionId": "113",
+          "row": "V",
+          "seatNumber": "14",
+          "position3D": {
+            "x": 72.84685980655267,
+            "y": -155.3701870254537,
+            "z": 70
+          },
+          "elevation": 70,
+          "distanceFromHomeplate": 171.6,
+          "angle": 25.119999999999994,
+          "facing": 205.12,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "tigers-113-V-15",
+          "sectionId": "113",
+          "row": "V",
+          "seatNumber": "15",
+          "position3D": {
+            "x": 73.53311490521155,
+            "y": -155.0465769126715,
+            "z": 70
+          },
+          "elevation": 70,
+          "distanceFromHomeplate": 171.60000000000002,
+          "angle": 25.373333333333328,
+          "facing": 205.37333333333333,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        }
+      ],
+      "covered": false,
+      "hasAisleSeats": false,
+      "wheelchairRow": false
+    },
+    {
+      "rowNumber": "W",
+      "sectionId": "113",
+      "seatCount": 15,
+      "elevation": 72.5,
+      "depth": 174.39999999999998,
+      "rowSpacing": 36,
+      "seats": [
+        {
+          "id": "tigers-113-W-1",
+          "sectionId": "113",
+          "row": "W",
+          "seatNumber": "1",
+          "position3D": {
+            "x": 64.8419081824287,
+            "y": -161.89776694958297,
+            "z": 72.5
+          },
+          "elevation": 72.5,
+          "distanceFromHomeplate": 174.39999999999998,
+          "angle": 21.82666666666666,
+          "facing": 201.82666666666665,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "tigers-113-W-2",
+          "sectionId": "113",
+          "row": "W",
+          "seatNumber": "2",
+          "position3D": {
+            "x": 65.55710313367034,
+            "y": -161.6094868153516,
+            "z": 72.5
+          },
+          "elevation": 72.5,
+          "distanceFromHomeplate": 174.39999999999998,
+          "angle": 22.079999999999995,
+          "facing": 202.07999999999998,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "tigers-113-W-3",
+          "sectionId": "113",
+          "row": "W",
+          "seatNumber": "3",
+          "position3D": {
+            "x": 66.27101646732814,
+            "y": -161.31804727428087,
+            "z": 72.5
+          },
+          "elevation": 72.5,
+          "distanceFromHomeplate": 174.39999999999998,
+          "angle": 22.33333333333333,
+          "facing": 202.33333333333331,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "tigers-113-W-4",
+          "sectionId": "113",
+          "row": "W",
+          "seatNumber": "4",
+          "position3D": {
+            "x": 66.98363422665543,
+            "y": -161.02345402390804,
+            "z": 72.5
+          },
+          "elevation": 72.5,
+          "distanceFromHomeplate": 174.39999999999998,
+          "angle": 22.586666666666662,
+          "facing": 202.58666666666667,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "tigers-113-W-5",
+          "sectionId": "113",
+          "row": "W",
+          "seatNumber": "5",
+          "position3D": {
+            "x": 67.69494248023364,
+            "y": -160.7257128234243,
+            "z": 72.5
+          },
+          "elevation": 72.5,
+          "distanceFromHomeplate": 174.39999999999998,
+          "angle": 22.839999999999996,
+          "facing": 202.84,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "tigers-113-W-6",
+          "sectionId": "113",
+          "row": "W",
+          "seatNumber": "6",
+          "position3D": {
+            "x": 68.40492732224433,
+            "y": -160.42482949356207,
+            "z": 72.5
+          },
+          "elevation": 72.5,
+          "distanceFromHomeplate": 174.39999999999998,
+          "angle": 23.09333333333333,
+          "facing": 203.09333333333333,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "tigers-113-W-7",
+          "sectionId": "113",
+          "row": "W",
+          "seatNumber": "7",
+          "position3D": {
+            "x": 69.11357487274142,
+            "y": -160.12080991648136,
+            "z": 72.5
+          },
+          "elevation": 72.5,
+          "distanceFromHomeplate": 174.39999999999998,
+          "angle": 23.346666666666664,
+          "facing": 203.34666666666666,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "tigers-113-W-8",
+          "sectionId": "113",
+          "row": "W",
+          "seatNumber": "8",
+          "position3D": {
+            "x": 69.82087127792246,
+            "y": -159.81366003565458,
+            "z": 72.5
+          },
+          "elevation": 72.5,
+          "distanceFromHomeplate": 174.39999999999998,
+          "angle": 23.599999999999994,
+          "facing": 203.6,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "tigers-113-W-9",
+          "sectionId": "113",
+          "row": "W",
+          "seatNumber": "9",
+          "position3D": {
+            "x": 70.52680271039927,
+            "y": -159.50338585575045,
+            "z": 72.5
+          },
+          "elevation": 72.5,
+          "distanceFromHomeplate": 174.39999999999998,
+          "angle": 23.853333333333328,
+          "facing": 203.85333333333332,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "tigers-113-W-10",
+          "sectionId": "113",
+          "row": "W",
+          "seatNumber": "10",
+          "position3D": {
+            "x": 71.23135536946839,
+            "y": -159.18999344251668,
+            "z": 72.5
+          },
+          "elevation": 72.5,
+          "distanceFromHomeplate": 174.39999999999998,
+          "angle": 24.106666666666662,
+          "facing": 204.10666666666665,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "tigers-113-W-11",
+          "sectionId": "113",
+          "row": "W",
+          "seatNumber": "11",
+          "position3D": {
+            "x": 71.93451548138106,
+            "y": -158.87348892266118,
+            "z": 72.5
+          },
+          "elevation": 72.5,
+          "distanceFromHomeplate": 174.39999999999998,
+          "angle": 24.359999999999996,
+          "facing": 204.35999999999999,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "tigers-113-W-12",
+          "sectionId": "113",
+          "row": "W",
+          "seatNumber": "12",
+          "position3D": {
+            "x": 72.63626929961205,
+            "y": -158.55387848373255,
+            "z": 72.5
+          },
+          "elevation": 72.5,
+          "distanceFromHomeplate": 174.39999999999998,
+          "angle": 24.61333333333333,
+          "facing": 204.61333333333334,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "tigers-113-W-13",
+          "sectionId": "113",
+          "row": "W",
+          "seatNumber": "13",
+          "position3D": {
+            "x": 73.33660310512882,
+            "y": -158.23116837399894,
+            "z": 72.5
+          },
+          "elevation": 72.5,
+          "distanceFromHomeplate": 174.39999999999998,
+          "angle": 24.86666666666666,
+          "facing": 204.86666666666667,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "tigers-113-W-14",
+          "sectionId": "113",
+          "row": "W",
+          "seatNumber": "14",
+          "position3D": {
+            "x": 74.03550320665958,
+            "y": -157.90536490232589,
+            "z": 72.5
+          },
+          "elevation": 72.5,
+          "distanceFromHomeplate": 174.39999999999998,
+          "angle": 25.119999999999994,
+          "facing": 205.12,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "tigers-113-W-15",
+          "sectionId": "113",
+          "row": "W",
+          "seatNumber": "15",
+          "position3D": {
+            "x": 74.7329559409609,
+            "y": -157.57647443805305,
+            "z": 72.5
+          },
+          "elevation": 72.5,
+          "distanceFromHomeplate": 174.39999999999998,
+          "angle": 25.373333333333328,
+          "facing": 205.37333333333333,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        }
+      ],
+      "covered": false,
+      "hasAisleSeats": false,
+      "wheelchairRow": false
+    },
+    {
+      "rowNumber": "X",
+      "sectionId": "113",
+      "seatCount": 15,
+      "elevation": 75,
+      "depth": 177.2,
+      "rowSpacing": 36,
+      "seats": [
+        {
+          "id": "tigers-113-X-1",
+          "sectionId": "113",
+          "row": "X",
+          "seatNumber": "1",
+          "position3D": {
+            "x": 65.88294799269704,
+            "y": -164.49704302446162,
+            "z": 75
+          },
+          "elevation": 75,
+          "distanceFromHomeplate": 177.2,
+          "angle": 21.82666666666666,
+          "facing": 201.82666666666665,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "tigers-113-X-2",
+          "sectionId": "113",
+          "row": "X",
+          "seatNumber": "2",
+          "position3D": {
+            "x": 66.60962543168799,
+            "y": -164.2041345394513,
+            "z": 75
+          },
+          "elevation": 75,
+          "distanceFromHomeplate": 177.2,
+          "angle": 22.079999999999995,
+          "facing": 202.07999999999998,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "tigers-113-X-3",
+          "sectionId": "113",
+          "row": "X",
+          "seatNumber": "3",
+          "position3D": {
+            "x": 67.33500067666598,
+            "y": -163.90801592317987,
+            "z": 75
+          },
+          "elevation": 75,
+          "distanceFromHomeplate": 177.2,
+          "angle": 22.33333333333333,
+          "facing": 202.33333333333331,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "tigers-113-X-4",
+          "sectionId": "113",
+          "row": "X",
+          "seatNumber": "4",
+          "position3D": {
+            "x": 68.05905954680816,
+            "y": -163.60869296465887,
+            "z": 75
+          },
+          "elevation": 75,
+          "distanceFromHomeplate": 177.2,
+          "angle": 22.586666666666662,
+          "facing": 202.58666666666667,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "tigers-113-X-5",
+          "sectionId": "113",
+          "row": "X",
+          "seatNumber": "5",
+          "position3D": {
+            "x": 68.78178788702637,
+            "y": -163.3061715155435,
+            "z": 75
+          },
+          "elevation": 75,
+          "distanceFromHomeplate": 177.2,
+          "angle": 22.839999999999996,
+          "facing": 202.84,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "tigers-113-X-6",
+          "sectionId": "113",
+          "row": "X",
+          "seatNumber": "6",
+          "position3D": {
+            "x": 69.50317156824367,
+            "y": -163.00045749001833,
+            "z": 75
+          },
+          "elevation": 75,
+          "distanceFromHomeplate": 177.19999999999996,
+          "angle": 23.09333333333333,
+          "facing": 203.09333333333333,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "tigers-113-X-7",
+          "sectionId": "113",
+          "row": "X",
+          "seatNumber": "7",
+          "position3D": {
+            "x": 70.22319648767076,
+            "y": -162.69155686468176,
+            "z": 75
+          },
+          "elevation": 75,
+          "distanceFromHomeplate": 177.2,
+          "angle": 23.346666666666664,
+          "facing": 203.34666666666666,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "tigers-113-X-8",
+          "sectionId": "113",
+          "row": "X",
+          "seatNumber": "8",
+          "position3D": {
+            "x": 70.94184856908177,
+            "y": -162.37947567842886,
+            "z": 75
+          },
+          "elevation": 75,
+          "distanceFromHomeplate": 177.2,
+          "angle": 23.599999999999994,
+          "facing": 203.6,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "tigers-113-X-9",
+          "sectionId": "113",
+          "row": "X",
+          "seatNumber": "9",
+          "position3D": {
+            "x": 71.65911376308917,
+            "y": -162.06422003233362,
+            "z": 75
+          },
+          "elevation": 75,
+          "distanceFromHomeplate": 177.20000000000002,
+          "angle": 23.853333333333328,
+          "facing": 203.85333333333332,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "tigers-113-X-10",
+          "sectionId": "113",
+          "row": "X",
+          "seatNumber": "10",
+          "position3D": {
+            "x": 72.37497804741858,
+            "y": -161.74579608952956,
+            "z": 75
+          },
+          "elevation": 75,
+          "distanceFromHomeplate": 177.2,
+          "angle": 24.106666666666662,
+          "facing": 204.10666666666665,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "tigers-113-X-11",
+          "sectionId": "113",
+          "row": "X",
+          "seatNumber": "11",
+          "position3D": {
+            "x": 73.08942742718305,
+            "y": -161.42421007508923,
+            "z": 75
+          },
+          "elevation": 75,
+          "distanceFromHomeplate": 177.2,
+          "angle": 24.359999999999996,
+          "facing": 204.35999999999999,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "tigers-113-X-12",
+          "sectionId": "113",
+          "row": "X",
+          "seatNumber": "12",
+          "position3D": {
+            "x": 73.8024479351563,
+            "y": -161.09946827590258,
+            "z": 75
+          },
+          "elevation": 75,
+          "distanceFromHomeplate": 177.2,
+          "angle": 24.61333333333333,
+          "facing": 204.61333333333334,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "tigers-113-X-13",
+          "sectionId": "113",
+          "row": "X",
+          "seatNumber": "13",
+          "position3D": {
+            "x": 74.51402563204603,
+            "y": -160.77157704055398,
+            "z": 75
+          },
+          "elevation": 75,
+          "distanceFromHomeplate": 177.2,
+          "angle": 24.86666666666666,
+          "facing": 204.86666666666667,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "tigers-113-X-14",
+          "sectionId": "113",
+          "row": "X",
+          "seatNumber": "14",
+          "position3D": {
+            "x": 75.22414660676651,
+            "y": -160.4405427791981,
+            "z": 75
+          },
+          "elevation": 75,
+          "distanceFromHomeplate": 177.2,
+          "angle": 25.119999999999994,
+          "facing": 205.12,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "tigers-113-X-15",
+          "sectionId": "113",
+          "row": "X",
+          "seatNumber": "15",
+          "position3D": {
+            "x": 75.93279697671029,
+            "y": -160.10637196343467,
+            "z": 75
+          },
+          "elevation": 75,
+          "distanceFromHomeplate": 177.20000000000002,
+          "angle": 25.373333333333328,
+          "facing": 205.37333333333333,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        }
+      ],
+      "covered": false,
+      "hasAisleSeats": false,
+      "wheelchairRow": false
+    },
+    {
+      "rowNumber": "Y",
+      "sectionId": "113",
+      "seatCount": 14,
+      "elevation": 77.5,
+      "depth": 180,
+      "rowSpacing": 36,
+      "seats": [
+        {
+          "id": "tigers-113-Y-1",
+          "sectionId": "113",
+          "row": "Y",
+          "seatNumber": "1",
+          "position3D": {
+            "x": 66.95037327216303,
+            "y": -167.08574899948243,
+            "z": 77.5
+          },
+          "elevation": 77.5,
+          "distanceFromHomeplate": 180.00000000000003,
+          "angle": 21.835714285714282,
+          "facing": 201.8357142857143,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "tigers-113-Y-2",
+          "sectionId": "113",
+          "row": "Y",
+          "seatNumber": "2",
+          "position3D": {
+            "x": 67.74115809264474,
+            "y": -166.76670980824474,
+            "z": 77.5
+          },
+          "elevation": 77.5,
+          "distanceFromHomeplate": 180,
+          "angle": 22.107142857142854,
+          "facing": 202.10714285714286,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "tigers-113-Y-3",
+          "sectionId": "113",
+          "row": "Y",
+          "seatNumber": "3",
+          "position3D": {
+            "x": 68.53042265385088,
+            "y": -166.44392800845742,
+            "z": 77.5
+          },
+          "elevation": 77.5,
+          "distanceFromHomeplate": 180,
+          "angle": 22.378571428571423,
+          "facing": 202.37857142857143,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "tigers-113-Y-4",
+          "sectionId": "113",
+          "row": "Y",
+          "seatNumber": "4",
+          "position3D": {
+            "x": 69.31814924296403,
+            "y": -166.1174108440478,
+            "z": 77.5
+          },
+          "elevation": 77.5,
+          "distanceFromHomeplate": 180.00000000000003,
+          "angle": 22.649999999999995,
+          "facing": 202.65,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "tigers-113-Y-5",
+          "sectionId": "113",
+          "row": "Y",
+          "seatNumber": "5",
+          "position3D": {
+            "x": 70.10432018168207,
+            "y": -165.78716564277286,
+            "z": 77.5
+          },
+          "elevation": 77.5,
+          "distanceFromHomeplate": 180,
+          "angle": 22.921428571428567,
+          "facing": 202.92142857142858,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "tigers-113-Y-6",
+          "sectionId": "113",
+          "row": "Y",
+          "seatNumber": "6",
+          "position3D": {
+            "x": 70.88891782661517,
+            "y": -165.45319981605493,
+            "z": 77.5
+          },
+          "elevation": 77.5,
+          "distanceFromHomeplate": 180,
+          "angle": 23.19285714285714,
+          "facing": 203.19285714285715,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "tigers-113-Y-7",
+          "sectionId": "113",
+          "row": "Y",
+          "seatNumber": "7",
+          "position3D": {
+            "x": 71.67192456968156,
+            "y": -165.11552085881533,
+            "z": 77.5
+          },
+          "elevation": 77.5,
+          "distanceFromHomeplate": 180,
+          "angle": 23.464285714285708,
+          "facing": 203.46428571428572,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "tigers-113-Y-8",
+          "sectionId": "113",
+          "row": "Y",
+          "seatNumber": "8",
+          "position3D": {
+            "x": 72.45332283850294,
+            "y": -164.77413634930596,
+            "z": 77.5
+          },
+          "elevation": 77.5,
+          "distanceFromHomeplate": 180.00000000000003,
+          "angle": 23.73571428571428,
+          "facing": 203.73571428571427,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "tigers-113-Y-9",
+          "sectionId": "113",
+          "row": "Y",
+          "seatNumber": "9",
+          "position3D": {
+            "x": 73.23309509679842,
+            "y": -164.42905394893955,
+            "z": 77.5
+          },
+          "elevation": 77.5,
+          "distanceFromHomeplate": 179.99999999999997,
+          "angle": 24.007142857142853,
+          "facing": 204.00714285714287,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "tigers-113-Y-10",
+          "sectionId": "113",
+          "row": "Y",
+          "seatNumber": "10",
+          "position3D": {
+            "x": 74.01122384477861,
+            "y": -164.08028140211752,
+            "z": 77.5
+          },
+          "elevation": 77.5,
+          "distanceFromHomeplate": 180,
+          "angle": 24.278571428571425,
+          "facing": 204.2785714285714,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "tigers-113-Y-11",
+          "sectionId": "113",
+          "row": "Y",
+          "seatNumber": "11",
+          "position3D": {
+            "x": 74.78769161953788,
+            "y": -163.72782653605617,
+            "z": 77.5
+          },
+          "elevation": 77.5,
+          "distanceFromHomeplate": 179.99999999999997,
+          "angle": 24.549999999999997,
+          "facing": 204.55,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "tigers-113-Y-12",
+          "sectionId": "113",
+          "row": "Y",
+          "seatNumber": "12",
+          "position3D": {
+            "x": 75.56248099544655,
+            "y": -163.37169726061114,
+            "z": 77.5
+          },
+          "elevation": 77.5,
+          "distanceFromHomeplate": 180,
+          "angle": 24.821428571428566,
+          "facing": 204.82142857142856,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "tigers-113-Y-13",
+          "sectionId": "113",
+          "row": "Y",
+          "seatNumber": "13",
+          "position3D": {
+            "x": 76.33557458454182,
+            "y": -163.0119015680998,
+            "z": 77.5
+          },
+          "elevation": 77.5,
+          "distanceFromHomeplate": 180,
+          "angle": 25.092857142857138,
+          "facing": 205.09285714285713,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "tigers-113-Y-14",
+          "sectionId": "113",
+          "row": "Y",
+          "seatNumber": "14",
+          "position3D": {
+            "x": 77.10695503691804,
+            "y": -162.64844753312187,
+            "z": 77.5
+          },
+          "elevation": 77.5,
+          "distanceFromHomeplate": 180,
+          "angle": 25.36428571428571,
+          "facing": 205.3642857142857,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        }
+      ],
+      "covered": false,
+      "hasAisleSeats": false,
+      "wheelchairRow": false
+    },
+    {
+      "rowNumber": "Z",
+      "sectionId": "113",
+      "seatCount": 15,
+      "elevation": 80,
+      "depth": 182.8,
+      "rowSpacing": 36,
+      "seats": [
+        {
+          "id": "tigers-113-Z-1",
+          "sectionId": "113",
+          "row": "Z",
+          "seatNumber": "1",
+          "position3D": {
+            "x": 67.96502761323376,
+            "y": -169.69559517421888,
+            "z": 80
+          },
+          "elevation": 80,
+          "distanceFromHomeplate": 182.8,
+          "angle": 21.82666666666666,
+          "facing": 201.82666666666665,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "tigers-113-Z-2",
+          "sectionId": "113",
+          "row": "Z",
+          "seatNumber": "2",
+          "position3D": {
+            "x": 68.71467002772327,
+            "y": -169.39342998765068,
+            "z": 80
+          },
+          "elevation": 80,
+          "distanceFromHomeplate": 182.8,
+          "angle": 22.079999999999995,
+          "facing": 202.07999999999998,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "tigers-113-Z-3",
+          "sectionId": "113",
+          "row": "Z",
+          "seatNumber": "3",
+          "position3D": {
+            "x": 69.46296909534166,
+            "y": -169.0879532209779,
+            "z": 80
+          },
+          "elevation": 80,
+          "distanceFromHomeplate": 182.8,
+          "angle": 22.33333333333333,
+          "facing": 202.33333333333331,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "tigers-113-Z-4",
+          "sectionId": "113",
+          "row": "Z",
+          "seatNumber": "4",
+          "position3D": {
+            "x": 70.2099101871136,
+            "y": -168.77917084616053,
+            "z": 80
+          },
+          "elevation": 80,
+          "distanceFromHomeplate": 182.8,
+          "angle": 22.586666666666662,
+          "facing": 202.58666666666667,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "tigers-113-Z-5",
+          "sectionId": "113",
+          "row": "Z",
+          "seatNumber": "5",
+          "position3D": {
+            "x": 70.95547870061186,
+            "y": -168.4670888997819,
+            "z": 80
+          },
+          "elevation": 80,
+          "distanceFromHomeplate": 182.8,
+          "angle": 22.839999999999996,
+          "facing": 202.84,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "tigers-113-Z-6",
+          "sectionId": "113",
+          "row": "Z",
+          "seatNumber": "6",
+          "position3D": {
+            "x": 71.69966006024235,
+            "y": -168.15171348293092,
+            "z": 80
+          },
+          "elevation": 80,
+          "distanceFromHomeplate": 182.8,
+          "angle": 23.09333333333333,
+          "facing": 203.09333333333333,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "tigers-113-Z-7",
+          "sectionId": "113",
+          "row": "Z",
+          "seatNumber": "7",
+          "position3D": {
+            "x": 72.44243971752945,
+            "y": -167.83305076108257,
+            "z": 80
+          },
+          "elevation": 80,
+          "distanceFromHomeplate": 182.80000000000004,
+          "angle": 23.346666666666664,
+          "facing": 203.34666666666666,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "tigers-113-Z-8",
+          "sectionId": "113",
+          "row": "Z",
+          "seatNumber": "8",
+          "position3D": {
+            "x": 73.1838031514004,
+            "y": -167.51110696397743,
+            "z": 80
+          },
+          "elevation": 80,
+          "distanceFromHomeplate": 182.80000000000004,
+          "angle": 23.599999999999994,
+          "facing": 203.6,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "tigers-113-Z-9",
+          "sectionId": "113",
+          "row": "Z",
+          "seatNumber": "9",
+          "position3D": {
+            "x": 73.92373586846898,
+            "y": -167.18588838549994,
+            "z": 80
+          },
+          "elevation": 80,
+          "distanceFromHomeplate": 182.80000000000004,
+          "angle": 23.853333333333328,
+          "facing": 203.85333333333332,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "tigers-113-Z-10",
+          "sectionId": "113",
+          "row": "Z",
+          "seatNumber": "10",
+          "position3D": {
+            "x": 74.66222340331895,
+            "y": -166.85740138355536,
+            "z": 80
+          },
+          "elevation": 80,
+          "distanceFromHomeplate": 182.80000000000004,
+          "angle": 24.106666666666662,
+          "facing": 204.10666666666665,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "tigers-113-Z-11",
+          "sectionId": "113",
+          "row": "Z",
+          "seatNumber": "11",
+          "position3D": {
+            "x": 75.39925131878705,
+            "y": -166.52565237994534,
+            "z": 80
+          },
+          "elevation": 80,
+          "distanceFromHomeplate": 182.80000000000004,
+          "angle": 24.359999999999996,
+          "facing": 204.35999999999999,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "tigers-113-Z-12",
+          "sectionId": "113",
+          "row": "Z",
+          "seatNumber": "12",
+          "position3D": {
+            "x": 76.13480520624476,
+            "y": -166.19064786024262,
+            "z": 80
+          },
+          "elevation": 80,
+          "distanceFromHomeplate": 182.79999999999998,
+          "angle": 24.61333333333333,
+          "facing": 204.61333333333334,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "tigers-113-Z-13",
+          "sectionId": "113",
+          "row": "Z",
+          "seatNumber": "13",
+          "position3D": {
+            "x": 76.86887068588045,
+            "y": -165.85239437366405,
+            "z": 80
+          },
+          "elevation": 80,
+          "distanceFromHomeplate": 182.8,
+          "angle": 24.86666666666666,
+          "facing": 204.86666666666667,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "tigers-113-Z-14",
+          "sectionId": "113",
+          "row": "Z",
+          "seatNumber": "14",
+          "position3D": {
+            "x": 77.60143340698035,
+            "y": -165.51089853294252,
+            "z": 80
+          },
+          "elevation": 80,
+          "distanceFromHomeplate": 182.8,
+          "angle": 25.119999999999994,
+          "facing": 205.12,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "tigers-113-Z-15",
+          "sectionId": "113",
+          "row": "Z",
+          "seatNumber": "15",
+          "position3D": {
+            "x": 78.33247904820904,
+            "y": -165.16616701419784,
+            "z": 80
+          },
+          "elevation": 80,
+          "distanceFromHomeplate": 182.8,
+          "angle": 25.373333333333328,
+          "facing": 205.37333333333333,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        }
+      ],
+      "covered": false,
+      "hasAisleSeats": false,
+      "wheelchairRow": false
+    },
+    {
+      "rowNumber": "AA",
+      "sectionId": "113",
+      "seatCount": 15,
+      "elevation": 82.5,
+      "depth": 185.6,
+      "rowSpacing": 36,
+      "seats": [
+        {
+          "id": "tigers-113-AA-1",
+          "sectionId": "113",
+          "row": "AA",
+          "seatNumber": "1",
+          "position3D": {
+            "x": 69.0060674235021,
+            "y": -172.2948712490975,
+            "z": 82.5
+          },
+          "elevation": 82.5,
+          "distanceFromHomeplate": 185.6,
+          "angle": 21.82666666666666,
+          "facing": 201.82666666666665,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "tigers-113-AA-2",
+          "sectionId": "113",
+          "row": "AA",
+          "seatNumber": "2",
+          "position3D": {
+            "x": 69.76719232574091,
+            "y": -171.98807771175035,
+            "z": 82.5
+          },
+          "elevation": 82.5,
+          "distanceFromHomeplate": 185.6,
+          "angle": 22.079999999999995,
+          "facing": 202.07999999999998,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "tigers-113-AA-3",
+          "sectionId": "113",
+          "row": "AA",
+          "seatNumber": "3",
+          "position3D": {
+            "x": 70.5269533046795,
+            "y": -171.6779218698769,
+            "z": 82.5
+          },
+          "elevation": 82.5,
+          "distanceFromHomeplate": 185.6,
+          "angle": 22.33333333333333,
+          "facing": 202.33333333333331,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "tigers-113-AA-4",
+          "sectionId": "113",
+          "row": "AA",
+          "seatNumber": "4",
+          "position3D": {
+            "x": 71.28533550726634,
+            "y": -171.36440978691132,
+            "z": 82.5
+          },
+          "elevation": 82.5,
+          "distanceFromHomeplate": 185.6,
+          "angle": 22.586666666666662,
+          "facing": 202.58666666666667,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "tigers-113-AA-5",
+          "sectionId": "113",
+          "row": "AA",
+          "seatNumber": "5",
+          "position3D": {
+            "x": 72.0423241074046,
+            "y": -171.0475475919011,
+            "z": 82.5
+          },
+          "elevation": 82.5,
+          "distanceFromHomeplate": 185.6,
+          "angle": 22.839999999999996,
+          "facing": 202.84,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "tigers-113-AA-6",
+          "sectionId": "113",
+          "row": "AA",
+          "seatNumber": "6",
+          "position3D": {
+            "x": 72.79790430624168,
+            "y": -170.72734147938718,
+            "z": 82.5
+          },
+          "elevation": 82.5,
+          "distanceFromHomeplate": 185.6,
+          "angle": 23.09333333333333,
+          "facing": 203.09333333333333,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "tigers-113-AA-7",
+          "sectionId": "113",
+          "row": "AA",
+          "seatNumber": "7",
+          "position3D": {
+            "x": 73.55206133245878,
+            "y": -170.40379770928294,
+            "z": 82.5
+          },
+          "elevation": 82.5,
+          "distanceFromHomeplate": 185.6,
+          "angle": 23.346666666666664,
+          "facing": 203.34666666666666,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "tigers-113-AA-8",
+          "sectionId": "113",
+          "row": "AA",
+          "seatNumber": "8",
+          "position3D": {
+            "x": 74.30478044255969,
+            "y": -170.07692260675168,
+            "z": 82.5
+          },
+          "elevation": 82.5,
+          "distanceFromHomeplate": 185.6,
+          "angle": 23.599999999999994,
+          "facing": 203.6,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "tigers-113-AA-9",
+          "sectionId": "113",
+          "row": "AA",
+          "seatNumber": "9",
+          "position3D": {
+            "x": 75.05604692115887,
+            "y": -169.74672256208305,
+            "z": 82.5
+          },
+          "elevation": 82.5,
+          "distanceFromHomeplate": 185.6,
+          "angle": 23.853333333333328,
+          "facing": 203.85333333333332,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "tigers-113-AA-10",
+          "sectionId": "113",
+          "row": "AA",
+          "seatNumber": "10",
+          "position3D": {
+            "x": 75.80584608126912,
+            "y": -169.4132040305682,
+            "z": 82.5
+          },
+          "elevation": 82.5,
+          "distanceFromHomeplate": 185.6,
+          "angle": 24.106666666666662,
+          "facing": 204.10666666666665,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "tigers-113-AA-11",
+          "sectionId": "113",
+          "row": "AA",
+          "seatNumber": "11",
+          "position3D": {
+            "x": 76.55416326458902,
+            "y": -169.07637353237337,
+            "z": 82.5
+          },
+          "elevation": 82.5,
+          "distanceFromHomeplate": 185.6,
+          "angle": 24.359999999999996,
+          "facing": 204.35999999999999,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "tigers-113-AA-12",
+          "sectionId": "113",
+          "row": "AA",
+          "seatNumber": "12",
+          "position3D": {
+            "x": 77.30098384178899,
+            "y": -168.73623765241263,
+            "z": 82.5
+          },
+          "elevation": 82.5,
+          "distanceFromHomeplate": 185.6,
+          "angle": 24.61333333333333,
+          "facing": 204.61333333333334,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "tigers-113-AA-13",
+          "sectionId": "113",
+          "row": "AA",
+          "seatNumber": "13",
+          "position3D": {
+            "x": 78.04629321279765,
+            "y": -168.39280304021906,
+            "z": 82.5
+          },
+          "elevation": 82.5,
+          "distanceFromHomeplate": 185.6,
+          "angle": 24.86666666666666,
+          "facing": 204.86666666666667,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "tigers-113-AA-14",
+          "sectionId": "113",
+          "row": "AA",
+          "seatNumber": "14",
+          "position3D": {
+            "x": 78.79007680708727,
+            "y": -168.04607640981473,
+            "z": 82.5
+          },
+          "elevation": 82.5,
+          "distanceFromHomeplate": 185.6,
+          "angle": 25.119999999999994,
+          "facing": 205.12,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "tigers-113-AA-15",
+          "sectionId": "113",
+          "row": "AA",
+          "seatNumber": "15",
+          "position3D": {
+            "x": 79.53232008395841,
+            "y": -167.69606453957942,
+            "z": 82.5
+          },
+          "elevation": 82.5,
+          "distanceFromHomeplate": 185.6,
+          "angle": 25.373333333333328,
+          "facing": 205.37333333333333,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        }
+      ],
+      "covered": false,
+      "hasAisleSeats": false,
+      "wheelchairRow": false
+    },
+    {
+      "rowNumber": "BB",
+      "sectionId": "113",
+      "seatCount": 15,
+      "elevation": 85,
+      "depth": 188.39999999999998,
+      "rowSpacing": 36,
+      "seats": [
+        {
+          "id": "tigers-113-BB-1",
+          "sectionId": "113",
+          "row": "BB",
+          "seatNumber": "1",
+          "position3D": {
+            "x": 70.04710723377045,
+            "y": -174.8941473239761,
+            "z": 85
+          },
+          "elevation": 85,
+          "distanceFromHomeplate": 188.4,
+          "angle": 21.82666666666666,
+          "facing": 201.82666666666665,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "tigers-113-BB-2",
+          "sectionId": "113",
+          "row": "BB",
+          "seatNumber": "2",
+          "position3D": {
+            "x": 70.81971462375856,
+            "y": -174.58272543585002,
+            "z": 85
+          },
+          "elevation": 85,
+          "distanceFromHomeplate": 188.4,
+          "angle": 22.079999999999995,
+          "facing": 202.07999999999998,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "tigers-113-BB-3",
+          "sectionId": "113",
+          "row": "BB",
+          "seatNumber": "3",
+          "position3D": {
+            "x": 71.59093751401733,
+            "y": -174.26789051877589,
+            "z": 85
+          },
+          "elevation": 85,
+          "distanceFromHomeplate": 188.39999999999998,
+          "angle": 22.33333333333333,
+          "facing": 202.33333333333331,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "tigers-113-BB-4",
+          "sectionId": "113",
+          "row": "BB",
+          "seatNumber": "4",
+          "position3D": {
+            "x": 72.36076082741906,
+            "y": -173.94964872766212,
+            "z": 85
+          },
+          "elevation": 85,
+          "distanceFromHomeplate": 188.39999999999998,
+          "angle": 22.586666666666662,
+          "facing": 202.58666666666667,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "tigers-113-BB-5",
+          "sectionId": "113",
+          "row": "BB",
+          "seatNumber": "5",
+          "position3D": {
+            "x": 73.12916951419734,
+            "y": -173.62800628402027,
+            "z": 85
+          },
+          "elevation": 85,
+          "distanceFromHomeplate": 188.39999999999998,
+          "angle": 22.839999999999996,
+          "facing": 202.84,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "tigers-113-BB-6",
+          "sectionId": "113",
+          "row": "BB",
+          "seatNumber": "6",
+          "position3D": {
+            "x": 73.896148552241,
+            "y": -173.3029694758434,
+            "z": 85
+          },
+          "elevation": 85,
+          "distanceFromHomeplate": 188.39999999999995,
+          "angle": 23.09333333333333,
+          "facing": 203.09333333333333,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "tigers-113-BB-7",
+          "sectionId": "113",
+          "row": "BB",
+          "seatNumber": "7",
+          "position3D": {
+            "x": 74.6616829473881,
+            "y": -172.9745446574833,
+            "z": 85
+          },
+          "elevation": 85,
+          "distanceFromHomeplate": 188.39999999999998,
+          "angle": 23.346666666666664,
+          "facing": 203.34666666666666,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "tigers-113-BB-8",
+          "sectionId": "113",
+          "row": "BB",
+          "seatNumber": "8",
+          "position3D": {
+            "x": 75.425757733719,
+            "y": -172.64273824952593,
+            "z": 85
+          },
+          "elevation": 85,
+          "distanceFromHomeplate": 188.4,
+          "angle": 23.599999999999994,
+          "facing": 203.6,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "tigers-113-BB-9",
+          "sectionId": "113",
+          "row": "BB",
+          "seatNumber": "9",
+          "position3D": {
+            "x": 76.18835797384875,
+            "y": -172.3075567386662,
+            "z": 85
+          },
+          "elevation": 85,
+          "distanceFromHomeplate": 188.4,
+          "angle": 23.853333333333328,
+          "facing": 203.85333333333332,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "tigers-113-BB-10",
+          "sectionId": "113",
+          "row": "BB",
+          "seatNumber": "10",
+          "position3D": {
+            "x": 76.9494687592193,
+            "y": -171.9690066775811,
+            "z": 85
+          },
+          "elevation": 85,
+          "distanceFromHomeplate": 188.4,
+          "angle": 24.106666666666662,
+          "facing": 204.10666666666665,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "tigers-113-BB-11",
+          "sectionId": "113",
+          "row": "BB",
+          "seatNumber": "11",
+          "position3D": {
+            "x": 77.709075210391,
+            "y": -171.6270946848014,
+            "z": 85
+          },
+          "elevation": 85,
+          "distanceFromHomeplate": 188.39999999999998,
+          "angle": 24.359999999999996,
+          "facing": 204.35999999999999,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "tigers-113-BB-12",
+          "sectionId": "113",
+          "row": "BB",
+          "seatNumber": "12",
+          "position3D": {
+            "x": 78.4671624773332,
+            "y": -171.28182744458263,
+            "z": 85
+          },
+          "elevation": 85,
+          "distanceFromHomeplate": 188.39999999999998,
+          "angle": 24.61333333333333,
+          "facing": 204.61333333333334,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "tigers-113-BB-13",
+          "sectionId": "113",
+          "row": "BB",
+          "seatNumber": "13",
+          "position3D": {
+            "x": 79.22371573971485,
+            "y": -170.93321170677407,
+            "z": 85
+          },
+          "elevation": 85,
+          "distanceFromHomeplate": 188.39999999999998,
+          "angle": 24.86666666666666,
+          "facing": 204.86666666666667,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "tigers-113-BB-14",
+          "sectionId": "113",
+          "row": "BB",
+          "seatNumber": "14",
+          "position3D": {
+            "x": 79.97872020719419,
+            "y": -170.5812542866869,
+            "z": 85
+          },
+          "elevation": 85,
+          "distanceFromHomeplate": 188.4,
+          "angle": 25.119999999999994,
+          "facing": 205.12,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "tigers-113-BB-15",
+          "sectionId": "113",
+          "row": "BB",
+          "seatNumber": "15",
+          "position3D": {
+            "x": 80.73216111970777,
+            "y": -170.22596206496098,
+            "z": 85
+          },
+          "elevation": 85,
+          "distanceFromHomeplate": 188.39999999999998,
+          "angle": 25.373333333333328,
+          "facing": 205.37333333333333,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        }
+      ],
+      "covered": false,
+      "hasAisleSeats": false,
+      "wheelchairRow": false
+    },
+    {
+      "rowNumber": "CC",
+      "sectionId": "113",
+      "seatCount": 15,
+      "elevation": 87.5,
+      "depth": 191.2,
+      "rowSpacing": 36,
+      "seats": [
+        {
+          "id": "tigers-113-CC-1",
+          "sectionId": "113",
+          "row": "CC",
+          "seatNumber": "1",
+          "position3D": {
+            "x": 71.0881470440388,
+            "y": -177.49342339885473,
+            "z": 87.5
+          },
+          "elevation": 87.5,
+          "distanceFromHomeplate": 191.2,
+          "angle": 21.82666666666666,
+          "facing": 201.82666666666665,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "tigers-113-CC-2",
+          "sectionId": "113",
+          "row": "CC",
+          "seatNumber": "2",
+          "position3D": {
+            "x": 71.87223692177619,
+            "y": -177.17737315994972,
+            "z": 87.5
+          },
+          "elevation": 87.5,
+          "distanceFromHomeplate": 191.20000000000002,
+          "angle": 22.079999999999995,
+          "facing": 202.07999999999998,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "tigers-113-CC-3",
+          "sectionId": "113",
+          "row": "CC",
+          "seatNumber": "3",
+          "position3D": {
+            "x": 72.65492172335516,
+            "y": -176.85785916767492,
+            "z": 87.5
+          },
+          "elevation": 87.5,
+          "distanceFromHomeplate": 191.20000000000002,
+          "angle": 22.33333333333333,
+          "facing": 202.33333333333331,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "tigers-113-CC-4",
+          "sectionId": "113",
+          "row": "CC",
+          "seatNumber": "4",
+          "position3D": {
+            "x": 73.43618614757177,
+            "y": -176.53488766841295,
+            "z": 87.5
+          },
+          "elevation": 87.5,
+          "distanceFromHomeplate": 191.19999999999996,
+          "angle": 22.586666666666662,
+          "facing": 202.58666666666667,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "tigers-113-CC-5",
+          "sectionId": "113",
+          "row": "CC",
+          "seatNumber": "5",
+          "position3D": {
+            "x": 74.21601492099009,
+            "y": -176.20846497613948,
+            "z": 87.5
+          },
+          "elevation": 87.5,
+          "distanceFromHomeplate": 191.2,
+          "angle": 22.839999999999996,
+          "facing": 202.84,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "tigers-113-CC-6",
+          "sectionId": "113",
+          "row": "CC",
+          "seatNumber": "6",
+          "position3D": {
+            "x": 74.99439279824034,
+            "y": -175.8785974722997,
+            "z": 87.5
+          },
+          "elevation": 87.5,
+          "distanceFromHomeplate": 191.19999999999996,
+          "angle": 23.09333333333333,
+          "facing": 203.09333333333333,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "tigers-113-CC-7",
+          "sectionId": "113",
+          "row": "CC",
+          "seatNumber": "7",
+          "position3D": {
+            "x": 75.77130456231744,
+            "y": -175.5452916056837,
+            "z": 87.5
+          },
+          "elevation": 87.5,
+          "distanceFromHomeplate": 191.19999999999996,
+          "angle": 23.346666666666664,
+          "facing": 203.34666666666666,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "tigers-113-CC-8",
+          "sectionId": "113",
+          "row": "CC",
+          "seatNumber": "8",
+          "position3D": {
+            "x": 76.5467350248783,
+            "y": -175.20855389230022,
+            "z": 87.5
+          },
+          "elevation": 87.5,
+          "distanceFromHomeplate": 191.20000000000002,
+          "angle": 23.599999999999994,
+          "facing": 203.6,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "tigers-113-CC-9",
+          "sectionId": "113",
+          "row": "CC",
+          "seatNumber": "9",
+          "position3D": {
+            "x": 77.32066902653865,
+            "y": -174.86839091524936,
+            "z": 87.5
+          },
+          "elevation": 87.5,
+          "distanceFromHomeplate": 191.20000000000002,
+          "angle": 23.853333333333328,
+          "facing": 203.85333333333332,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "tigers-113-CC-10",
+          "sectionId": "113",
+          "row": "CC",
+          "seatNumber": "10",
+          "position3D": {
+            "x": 78.09309143716949,
+            "y": -174.52480932459397,
+            "z": 87.5
+          },
+          "elevation": 87.5,
+          "distanceFromHomeplate": 191.20000000000002,
+          "angle": 24.106666666666662,
+          "facing": 204.10666666666665,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "tigers-113-CC-11",
+          "sectionId": "113",
+          "row": "CC",
+          "seatNumber": "11",
+          "position3D": {
+            "x": 78.863987156193,
+            "y": -174.17781583722947,
+            "z": 87.5
+          },
+          "elevation": 87.5,
+          "distanceFromHomeplate": 191.20000000000002,
+          "angle": 24.359999999999996,
+          "facing": 204.35999999999999,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "tigers-113-CC-12",
+          "sectionId": "113",
+          "row": "CC",
+          "seatNumber": "12",
+          "position3D": {
+            "x": 79.63334111287745,
+            "y": -173.82741723675267,
+            "z": 87.5
+          },
+          "elevation": 87.5,
+          "distanceFromHomeplate": 191.2,
+          "angle": 24.61333333333333,
+          "facing": 204.61333333333334,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "tigers-113-CC-13",
+          "sectionId": "113",
+          "row": "CC",
+          "seatNumber": "13",
+          "position3D": {
+            "x": 80.40113826663206,
+            "y": -173.4736203733291,
+            "z": 87.5
+          },
+          "elevation": 87.5,
+          "distanceFromHomeplate": 191.19999999999996,
+          "angle": 24.86666666666666,
+          "facing": 204.86666666666667,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "tigers-113-CC-14",
+          "sectionId": "113",
+          "row": "CC",
+          "seatNumber": "14",
+          "position3D": {
+            "x": 81.1673636073011,
+            "y": -173.11643216355913,
+            "z": 87.5
+          },
+          "elevation": 87.5,
+          "distanceFromHomeplate": 191.2,
+          "angle": 25.119999999999994,
+          "facing": 205.12,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "tigers-113-CC-15",
+          "sectionId": "113",
+          "row": "CC",
+          "seatNumber": "15",
+          "position3D": {
+            "x": 81.93200215545716,
+            "y": -172.7558595903426,
+            "z": 87.5
+          },
+          "elevation": 87.5,
+          "distanceFromHomeplate": 191.20000000000002,
+          "angle": 25.373333333333328,
+          "facing": 205.37333333333333,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        }
+      ],
+      "covered": false,
+      "hasAisleSeats": false,
+      "wheelchairRow": false
+    },
+    {
+      "rowNumber": "DD",
+      "sectionId": "113",
+      "seatCount": 14,
+      "elevation": 90,
+      "depth": 194,
+      "rowSpacing": 36,
+      "seats": [
+        {
+          "id": "tigers-113-DD-1",
+          "sectionId": "113",
+          "row": "DD",
+          "seatNumber": "1",
+          "position3D": {
+            "x": 72.1576245266646,
+            "y": -180.0813072549977,
+            "z": 90
+          },
+          "elevation": 90,
+          "distanceFromHomeplate": 194,
+          "angle": 21.835714285714282,
+          "facing": 201.8357142857143,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "tigers-113-DD-2",
+          "sectionId": "113",
+          "row": "DD",
+          "seatNumber": "2",
+          "position3D": {
+            "x": 73.00991483318377,
+            "y": -179.73745390444154,
+            "z": 90
+          },
+          "elevation": 90,
+          "distanceFromHomeplate": 193.99999999999997,
+          "angle": 22.107142857142854,
+          "facing": 202.10714285714286,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "tigers-113-DD-3",
+          "sectionId": "113",
+          "row": "DD",
+          "seatNumber": "3",
+          "position3D": {
+            "x": 73.86056663803929,
+            "y": -179.38956685355967,
+            "z": 90
+          },
+          "elevation": 90,
+          "distanceFromHomeplate": 194,
+          "angle": 22.378571428571423,
+          "facing": 202.37857142857143,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "tigers-113-DD-4",
+          "sectionId": "113",
+          "row": "DD",
+          "seatNumber": "4",
+          "position3D": {
+            "x": 74.70956085075012,
+            "y": -179.03765390969596,
+            "z": 90
+          },
+          "elevation": 90,
+          "distanceFromHomeplate": 194.00000000000003,
+          "angle": 22.649999999999995,
+          "facing": 202.65,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "tigers-113-DD-5",
+          "sectionId": "113",
+          "row": "DD",
+          "seatNumber": "5",
+          "position3D": {
+            "x": 75.55687841803513,
+            "y": -178.6817229705441,
+            "z": 90
+          },
+          "elevation": 90,
+          "distanceFromHomeplate": 194.00000000000003,
+          "angle": 22.921428571428567,
+          "facing": 202.92142857142858,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "tigers-113-DD-6",
+          "sectionId": "113",
+          "row": "DD",
+          "seatNumber": "6",
+          "position3D": {
+            "x": 76.4025003242408,
+            "y": -178.32178202397034,
+            "z": 90
+          },
+          "elevation": 90,
+          "distanceFromHomeplate": 194.00000000000003,
+          "angle": 23.19285714285714,
+          "facing": 203.19285714285715,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "tigers-113-DD-7",
+          "sectionId": "113",
+          "row": "DD",
+          "seatNumber": "7",
+          "position3D": {
+            "x": 77.2464075917679,
+            "y": -177.9578391478343,
+            "z": 90
+          },
+          "elevation": 90,
+          "distanceFromHomeplate": 194.00000000000003,
+          "angle": 23.464285714285708,
+          "facing": 203.46428571428572,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "tigers-113-DD-8",
+          "sectionId": "113",
+          "row": "DD",
+          "seatNumber": "8",
+          "position3D": {
+            "x": 78.08858128149762,
+            "y": -177.58990250980753,
+            "z": 90
+          },
+          "elevation": 90,
+          "distanceFromHomeplate": 194,
+          "angle": 23.73571428571428,
+          "facing": 203.73571428571427,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "tigers-113-DD-9",
+          "sectionId": "113",
+          "row": "DD",
+          "seatNumber": "9",
+          "position3D": {
+            "x": 78.92900249321607,
+            "y": -177.21798036719042,
+            "z": 90
+          },
+          "elevation": 90,
+          "distanceFromHomeplate": 194,
+          "angle": 24.007142857142853,
+          "facing": 204.00714285714287,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "tigers-113-DD-10",
+          "sectionId": "113",
+          "row": "DD",
+          "seatNumber": "10",
+          "position3D": {
+            "x": 79.76765236603917,
+            "y": -176.84208106672668,
+            "z": 90
+          },
+          "elevation": 90,
+          "distanceFromHomeplate": 194.00000000000003,
+          "angle": 24.278571428571425,
+          "facing": 204.2785714285714,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "tigers-113-DD-11",
+          "sectionId": "113",
+          "row": "DD",
+          "seatNumber": "11",
+          "position3D": {
+            "x": 80.60451207883528,
+            "y": -176.4622130444161,
+            "z": 90
+          },
+          "elevation": 90,
+          "distanceFromHomeplate": 194,
+          "angle": 24.549999999999997,
+          "facing": 204.55,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "tigers-113-DD-12",
+          "sectionId": "113",
+          "row": "DD",
+          "seatNumber": "12",
+          "position3D": {
+            "x": 81.43956285064795,
+            "y": -176.07838482532534,
+            "z": 90
+          },
+          "elevation": 90,
+          "distanceFromHomeplate": 194,
+          "angle": 24.821428571428566,
+          "facing": 204.82142857142856,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "tigers-113-DD-13",
+          "sectionId": "113",
+          "row": "DD",
+          "seatNumber": "13",
+          "position3D": {
+            "x": 82.27278594111729,
+            "y": -175.69060502339644,
+            "z": 90
+          },
+          "elevation": 90,
+          "distanceFromHomeplate": 194,
+          "angle": 25.092857142857138,
+          "facing": 205.09285714285713,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "tigers-113-DD-14",
+          "sectionId": "113",
+          "row": "DD",
+          "seatNumber": "14",
+          "position3D": {
+            "x": 83.10416265090055,
+            "y": -175.29888234125357,
+            "z": 90
+          },
+          "elevation": 90,
+          "distanceFromHomeplate": 194,
+          "angle": 25.36428571428571,
+          "facing": 205.3642857142857,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        }
+      ],
+      "covered": false,
+      "hasAisleSeats": false,
+      "wheelchairRow": false
+    },
+    {
+      "rowNumber": "EE",
+      "sectionId": "113",
+      "seatCount": 15,
+      "elevation": 92.5,
+      "depth": 196.8,
+      "rowSpacing": 36,
+      "seats": [
+        {
+          "id": "tigers-113-EE-1",
+          "sectionId": "113",
+          "row": "EE",
+          "seatNumber": "1",
+          "position3D": {
+            "x": 73.17022666457551,
+            "y": -182.69197554861202,
+            "z": 92.5
+          },
+          "elevation": 92.5,
+          "distanceFromHomeplate": 196.80000000000004,
+          "angle": 21.82666666666666,
+          "facing": 201.82666666666665,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "tigers-113-EE-2",
+          "sectionId": "113",
+          "row": "EE",
+          "seatNumber": "2",
+          "position3D": {
+            "x": 73.97728151781149,
+            "y": -182.3666686081491,
+            "z": 92.5
+          },
+          "elevation": 92.5,
+          "distanceFromHomeplate": 196.8,
+          "angle": 22.079999999999995,
+          "facing": 202.07999999999998,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "tigers-113-EE-3",
+          "sectionId": "113",
+          "row": "EE",
+          "seatNumber": "3",
+          "position3D": {
+            "x": 74.78289014203085,
+            "y": -182.03779646547292,
+            "z": 92.5
+          },
+          "elevation": 92.5,
+          "distanceFromHomeplate": 196.79999999999998,
+          "angle": 22.33333333333333,
+          "facing": 202.33333333333331,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "tigers-113-EE-4",
+          "sectionId": "113",
+          "row": "EE",
+          "seatNumber": "4",
+          "position3D": {
+            "x": 75.58703678787724,
+            "y": -181.7053655499146,
+            "z": 92.5
+          },
+          "elevation": 92.5,
+          "distanceFromHomeplate": 196.79999999999998,
+          "angle": 22.586666666666662,
+          "facing": 202.58666666666667,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "tigers-113-EE-5",
+          "sectionId": "113",
+          "row": "EE",
+          "seatNumber": "5",
+          "position3D": {
+            "x": 76.38970573457557,
+            "y": -181.3693823603779,
+            "z": 92.5
+          },
+          "elevation": 92.5,
+          "distanceFromHomeplate": 196.8,
+          "angle": 22.839999999999996,
+          "facing": 202.84,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "tigers-113-EE-6",
+          "sectionId": "113",
+          "row": "EE",
+          "seatNumber": "6",
+          "position3D": {
+            "x": 77.19088129023903,
+            "y": -181.02985346521228,
+            "z": 92.5
+          },
+          "elevation": 92.5,
+          "distanceFromHomeplate": 196.8,
+          "angle": 23.09333333333333,
+          "facing": 203.09333333333333,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "tigers-113-EE-7",
+          "sectionId": "113",
+          "row": "EE",
+          "seatNumber": "7",
+          "position3D": {
+            "x": 77.99054779217612,
+            "y": -180.68678550208452,
+            "z": 92.5
+          },
+          "elevation": 92.5,
+          "distanceFromHomeplate": 196.8,
+          "angle": 23.346666666666664,
+          "facing": 203.34666666666666,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "tigers-113-EE-8",
+          "sectionId": "113",
+          "row": "EE",
+          "seatNumber": "8",
+          "position3D": {
+            "x": 78.78868960719693,
+            "y": -180.34018517784878,
+            "z": 92.5
+          },
+          "elevation": 92.5,
+          "distanceFromHomeplate": 196.8,
+          "angle": 23.599999999999994,
+          "facing": 203.6,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "tigers-113-EE-9",
+          "sectionId": "113",
+          "row": "EE",
+          "seatNumber": "9",
+          "position3D": {
+            "x": 79.58529113191845,
+            "y": -179.99005926841568,
+            "z": 92.5
+          },
+          "elevation": 92.5,
+          "distanceFromHomeplate": 196.8,
+          "angle": 23.853333333333328,
+          "facing": 203.85333333333332,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "tigers-113-EE-10",
+          "sectionId": "113",
+          "row": "EE",
+          "seatNumber": "10",
+          "position3D": {
+            "x": 80.38033679306986,
+            "y": -179.63641461861977,
+            "z": 92.5
+          },
+          "elevation": 92.5,
+          "distanceFromHomeplate": 196.8,
+          "angle": 24.106666666666662,
+          "facing": 204.10666666666665,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "tigers-113-EE-11",
+          "sectionId": "113",
+          "row": "EE",
+          "seatNumber": "11",
+          "position3D": {
+            "x": 81.17381104779699,
+            "y": -179.27925814208558,
+            "z": 92.5
+          },
+          "elevation": 92.5,
+          "distanceFromHomeplate": 196.8,
+          "angle": 24.359999999999996,
+          "facing": 204.35999999999999,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "tigers-113-EE-12",
+          "sectionId": "113",
+          "row": "EE",
+          "seatNumber": "12",
+          "position3D": {
+            "x": 81.96569838396591,
+            "y": -178.9185968210927,
+            "z": 92.5
+          },
+          "elevation": 92.5,
+          "distanceFromHomeplate": 196.79999999999998,
+          "angle": 24.61333333333333,
+          "facing": 204.61333333333334,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "tigers-113-EE-13",
+          "sectionId": "113",
+          "row": "EE",
+          "seatNumber": "13",
+          "position3D": {
+            "x": 82.75598332046648,
+            "y": -178.5544377064392,
+            "z": 92.5
+          },
+          "elevation": 92.5,
+          "distanceFromHomeplate": 196.79999999999998,
+          "angle": 24.86666666666666,
+          "facing": 204.86666666666667,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "tigers-113-EE-14",
+          "sectionId": "113",
+          "row": "EE",
+          "seatNumber": "14",
+          "position3D": {
+            "x": 83.54465040751495,
+            "y": -178.18678791730355,
+            "z": 92.5
+          },
+          "elevation": 92.5,
+          "distanceFromHomeplate": 196.79999999999998,
+          "angle": 25.119999999999994,
+          "facing": 205.12,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "tigers-113-EE-15",
+          "sectionId": "113",
+          "row": "EE",
+          "seatNumber": "15",
+          "position3D": {
+            "x": 84.3316842269559,
+            "y": -177.8156546411058,
+            "z": 92.5
+          },
+          "elevation": 92.5,
+          "distanceFromHomeplate": 196.80000000000004,
+          "angle": 25.373333333333328,
+          "facing": 205.37333333333333,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        }
+      ],
+      "covered": false,
+      "hasAisleSeats": false,
+      "wheelchairRow": false
+    },
+    {
+      "rowNumber": "FF",
+      "sectionId": "113",
+      "seatCount": 15,
+      "elevation": 95,
+      "depth": 199.6,
+      "rowSpacing": 36,
+      "seats": [
+        {
+          "id": "tigers-113-FF-1",
+          "sectionId": "113",
+          "row": "FF",
+          "seatNumber": "1",
+          "position3D": {
+            "x": 74.21126647484385,
+            "y": -185.29125162349064,
+            "z": 95
+          },
+          "elevation": 95,
+          "distanceFromHomeplate": 199.60000000000002,
+          "angle": 21.82666666666666,
+          "facing": 201.82666666666665,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "tigers-113-FF-2",
+          "sectionId": "113",
+          "row": "FF",
+          "seatNumber": "2",
+          "position3D": {
+            "x": 75.02980381582913,
+            "y": -184.96131633224877,
+            "z": 95
+          },
+          "elevation": 95,
+          "distanceFromHomeplate": 199.60000000000002,
+          "angle": 22.079999999999995,
+          "facing": 202.07999999999998,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "tigers-113-FF-3",
+          "sectionId": "113",
+          "row": "FF",
+          "seatNumber": "3",
+          "position3D": {
+            "x": 75.84687435136868,
+            "y": -184.62776511437193,
+            "z": 95
+          },
+          "elevation": 95,
+          "distanceFromHomeplate": 199.6,
+          "angle": 22.33333333333333,
+          "facing": 202.33333333333331,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "tigers-113-FF-4",
+          "sectionId": "113",
+          "row": "FF",
+          "seatNumber": "4",
+          "position3D": {
+            "x": 76.66246210802996,
+            "y": -184.2906044906654,
+            "z": 95
+          },
+          "elevation": 95,
+          "distanceFromHomeplate": 199.59999999999997,
+          "angle": 22.586666666666662,
+          "facing": 202.58666666666667,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "tigers-113-FF-5",
+          "sectionId": "113",
+          "row": "FF",
+          "seatNumber": "5",
+          "position3D": {
+            "x": 77.47655114136832,
+            "y": -183.94984105249708,
+            "z": 95
+          },
+          "elevation": 95,
+          "distanceFromHomeplate": 199.6,
+          "angle": 22.839999999999996,
+          "facing": 202.84,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "tigers-113-FF-6",
+          "sectionId": "113",
+          "row": "FF",
+          "seatNumber": "6",
+          "position3D": {
+            "x": 78.28912553623836,
+            "y": -183.60548146166852,
+            "z": 95
+          },
+          "elevation": 95,
+          "distanceFromHomeplate": 199.59999999999997,
+          "angle": 23.09333333333333,
+          "facing": 203.09333333333333,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "tigers-113-FF-7",
+          "sectionId": "113",
+          "row": "FF",
+          "seatNumber": "7",
+          "position3D": {
+            "x": 79.10016940710545,
+            "y": -183.25753245028488,
+            "z": 95
+          },
+          "elevation": 95,
+          "distanceFromHomeplate": 199.60000000000002,
+          "angle": 23.346666666666664,
+          "facing": 203.34666666666666,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "tigers-113-FF-8",
+          "sectionId": "113",
+          "row": "FF",
+          "seatNumber": "8",
+          "position3D": {
+            "x": 79.90966689835622,
+            "y": -182.90600082062303,
+            "z": 95
+          },
+          "elevation": 95,
+          "distanceFromHomeplate": 199.60000000000002,
+          "angle": 23.599999999999994,
+          "facing": 203.6,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "tigers-113-FF-9",
+          "sectionId": "113",
+          "row": "FF",
+          "seatNumber": "9",
+          "position3D": {
+            "x": 80.71760218460835,
+            "y": -182.55089344499882,
+            "z": 95
+          },
+          "elevation": 95,
+          "distanceFromHomeplate": 199.60000000000002,
+          "angle": 23.853333333333328,
+          "facing": 203.85333333333332,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "tigers-113-FF-10",
+          "sectionId": "113",
+          "row": "FF",
+          "seatNumber": "10",
+          "position3D": {
+            "x": 81.52395947102004,
+            "y": -182.19221726563262,
+            "z": 95
+          },
+          "elevation": 95,
+          "distanceFromHomeplate": 199.60000000000002,
+          "angle": 24.106666666666662,
+          "facing": 204.10666666666665,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "tigers-113-FF-11",
+          "sectionId": "113",
+          "row": "FF",
+          "seatNumber": "11",
+          "position3D": {
+            "x": 82.32872299359897,
+            "y": -181.8299792945136,
+            "z": 95
+          },
+          "elevation": 95,
+          "distanceFromHomeplate": 199.60000000000002,
+          "angle": 24.359999999999996,
+          "facing": 204.35999999999999,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "tigers-113-FF-12",
+          "sectionId": "113",
+          "row": "FF",
+          "seatNumber": "12",
+          "position3D": {
+            "x": 83.13187701951014,
+            "y": -181.4641866132627,
+            "z": 95
+          },
+          "elevation": 95,
+          "distanceFromHomeplate": 199.6,
+          "angle": 24.61333333333333,
+          "facing": 204.61333333333334,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "tigers-113-FF-13",
+          "sectionId": "113",
+          "row": "FF",
+          "seatNumber": "13",
+          "position3D": {
+            "x": 83.93340584738368,
+            "y": -181.09484637299423,
+            "z": 95
+          },
+          "elevation": 95,
+          "distanceFromHomeplate": 199.60000000000002,
+          "angle": 24.86666666666666,
+          "facing": 204.86666666666667,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "tigers-113-FF-14",
+          "sectionId": "113",
+          "row": "FF",
+          "seatNumber": "14",
+          "position3D": {
+            "x": 84.73329380762186,
+            "y": -180.72196579417573,
+            "z": 95
+          },
+          "elevation": 95,
+          "distanceFromHomeplate": 199.59999999999997,
+          "angle": 25.119999999999994,
+          "facing": 205.12,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "tigers-113-FF-15",
+          "sectionId": "113",
+          "row": "FF",
+          "seatNumber": "15",
+          "position3D": {
+            "x": 85.53152526270527,
+            "y": -180.34555216648735,
+            "z": 95
+          },
+          "elevation": 95,
+          "distanceFromHomeplate": 199.60000000000002,
+          "angle": 25.373333333333328,
+          "facing": 205.37333333333333,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        }
+      ],
+      "covered": false,
+      "hasAisleSeats": false,
+      "wheelchairRow": false
+    },
+    {
+      "rowNumber": "GG",
+      "sectionId": "113",
+      "seatCount": 15,
+      "elevation": 97.5,
+      "depth": 202.39999999999998,
+      "rowSpacing": 36,
+      "seats": [
+        {
+          "id": "tigers-113-GG-1",
+          "sectionId": "113",
+          "row": "GG",
+          "seatNumber": "1",
+          "position3D": {
+            "x": 75.2523062851122,
+            "y": -187.89052769836923,
+            "z": 97.5
+          },
+          "elevation": 97.5,
+          "distanceFromHomeplate": 202.39999999999998,
+          "angle": 21.82666666666666,
+          "facing": 201.82666666666665,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "tigers-113-GG-2",
+          "sectionId": "113",
+          "row": "GG",
+          "seatNumber": "2",
+          "position3D": {
+            "x": 76.08232611384676,
+            "y": -187.55596405634844,
+            "z": 97.5
+          },
+          "elevation": 97.5,
+          "distanceFromHomeplate": 202.39999999999998,
+          "angle": 22.079999999999995,
+          "facing": 202.07999999999998,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "tigers-113-GG-3",
+          "sectionId": "113",
+          "row": "GG",
+          "seatNumber": "3",
+          "position3D": {
+            "x": 76.91085856070652,
+            "y": -187.2177337632709,
+            "z": 97.5
+          },
+          "elevation": 97.5,
+          "distanceFromHomeplate": 202.39999999999998,
+          "angle": 22.33333333333333,
+          "facing": 202.33333333333331,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "tigers-113-GG-4",
+          "sectionId": "113",
+          "row": "GG",
+          "seatNumber": "4",
+          "position3D": {
+            "x": 77.73788742818267,
+            "y": -186.8758434314162,
+            "z": 97.5
+          },
+          "elevation": 97.5,
+          "distanceFromHomeplate": 202.39999999999995,
+          "angle": 22.586666666666662,
+          "facing": 202.58666666666667,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "tigers-113-GG-5",
+          "sectionId": "113",
+          "row": "GG",
+          "seatNumber": "5",
+          "position3D": {
+            "x": 78.56339654816105,
+            "y": -186.53029974461626,
+            "z": 97.5
+          },
+          "elevation": 97.5,
+          "distanceFromHomeplate": 202.39999999999998,
+          "angle": 22.839999999999996,
+          "facing": 202.84,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "tigers-113-GG-6",
+          "sectionId": "113",
+          "row": "GG",
+          "seatNumber": "6",
+          "position3D": {
+            "x": 79.38736978223768,
+            "y": -186.18110945812478,
+            "z": 97.5
+          },
+          "elevation": 97.5,
+          "distanceFromHomeplate": 202.39999999999998,
+          "angle": 23.09333333333333,
+          "facing": 203.09333333333333,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "tigers-113-GG-7",
+          "sectionId": "113",
+          "row": "GG",
+          "seatNumber": "7",
+          "position3D": {
+            "x": 80.20979102203478,
+            "y": -185.82827939848525,
+            "z": 97.5
+          },
+          "elevation": 97.5,
+          "distanceFromHomeplate": 202.39999999999998,
+          "angle": 23.346666666666664,
+          "facing": 203.34666666666666,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "tigers-113-GG-8",
+          "sectionId": "113",
+          "row": "GG",
+          "seatNumber": "8",
+          "position3D": {
+            "x": 81.03064418951553,
+            "y": -185.4718164633973,
+            "z": 97.5
+          },
+          "elevation": 97.5,
+          "distanceFromHomeplate": 202.39999999999998,
+          "angle": 23.599999999999994,
+          "facing": 203.6,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "tigers-113-GG-9",
+          "sectionId": "113",
+          "row": "GG",
+          "seatNumber": "9",
+          "position3D": {
+            "x": 81.84991323729824,
+            "y": -185.11172762158193,
+            "z": 97.5
+          },
+          "elevation": 97.5,
+          "distanceFromHomeplate": 202.39999999999998,
+          "angle": 23.853333333333328,
+          "facing": 203.85333333333332,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "tigers-113-GG-10",
+          "sectionId": "113",
+          "row": "GG",
+          "seatNumber": "10",
+          "position3D": {
+            "x": 82.6675821489702,
+            "y": -184.7480199126455,
+            "z": 97.5
+          },
+          "elevation": 97.5,
+          "distanceFromHomeplate": 202.39999999999998,
+          "angle": 24.106666666666662,
+          "facing": 204.10666666666665,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "tigers-113-GG-11",
+          "sectionId": "113",
+          "row": "GG",
+          "seatNumber": "11",
+          "position3D": {
+            "x": 83.48363493940096,
+            "y": -184.38070044694163,
+            "z": 97.5
+          },
+          "elevation": 97.5,
+          "distanceFromHomeplate": 202.39999999999998,
+          "angle": 24.359999999999996,
+          "facing": 204.35999999999999,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "tigers-113-GG-12",
+          "sectionId": "113",
+          "row": "GG",
+          "seatNumber": "12",
+          "position3D": {
+            "x": 84.29805565505436,
+            "y": -184.00977640543272,
+            "z": 97.5
+          },
+          "elevation": 97.5,
+          "distanceFromHomeplate": 202.39999999999995,
+          "angle": 24.61333333333333,
+          "facing": 204.61333333333334,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "tigers-113-GG-13",
+          "sectionId": "113",
+          "row": "GG",
+          "seatNumber": "13",
+          "position3D": {
+            "x": 85.11082837430088,
+            "y": -183.63525503954924,
+            "z": 97.5
+          },
+          "elevation": 97.5,
+          "distanceFromHomeplate": 202.39999999999998,
+          "angle": 24.86666666666666,
+          "facing": 204.86666666666667,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "tigers-113-GG-14",
+          "sectionId": "113",
+          "row": "GG",
+          "seatNumber": "14",
+          "position3D": {
+            "x": 85.92193720772877,
+            "y": -183.25714367104794,
+            "z": 97.5
+          },
+          "elevation": 97.5,
+          "distanceFromHomeplate": 202.39999999999998,
+          "angle": 25.119999999999994,
+          "facing": 205.12,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "tigers-113-GG-15",
+          "sectionId": "113",
+          "row": "GG",
+          "seatNumber": "15",
+          "position3D": {
+            "x": 86.73136629845463,
+            "y": -182.87544969186894,
+            "z": 97.5
+          },
+          "elevation": 97.5,
+          "distanceFromHomeplate": 202.39999999999998,
+          "angle": 25.373333333333328,
+          "facing": 205.37333333333333,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        }
+      ],
+      "covered": false,
+      "hasAisleSeats": false,
+      "wheelchairRow": false
+    }
+  ],
+  "seatDistribution": {
+    "standard": 423,
+    "aisle": 66,
+    "wheelchair": 0,
+    "companion": 0,
+    "other": 0
+  }
+};
