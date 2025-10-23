@@ -1,0 +1,10087 @@
+/**
+ * 3 - rangers
+ * Generated: 2025-10-23T02:07:32.236Z
+ * Total Seats: 378
+ * Total Rows: 18
+ */
+
+import type { SectionSeatingData } from '@/types/seat';
+
+export const section_3: SectionSeatingData = {
+  "sectionId": "3",
+  "sectionName": "3",
+  "stadiumId": "rangers",
+  "totalSeats": 378,
+  "totalRows": 18,
+  "rows": [
+    {
+      "rowNumber": "1",
+      "sectionId": "3",
+      "seatCount": 21,
+      "elevation": 10,
+      "depth": 80,
+      "rowSpacing": 36,
+      "seats": [
+        {
+          "id": "rangers-3-1-1",
+          "sectionId": "3",
+          "row": "1",
+          "seatNumber": "1",
+          "position3D": {
+            "x": -75.22078676052016,
+            "y": -27.236615779651427,
+            "z": 10
+          },
+          "elevation": 10,
+          "distanceFromHomeplate": 80.00000000000001,
+          "angle": -70.0952380952381,
+          "facing": 109.9047619047619,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rangers-3-1-2",
+          "sectionId": "3",
+          "row": "1",
+          "seatNumber": "2",
+          "position3D": {
+            "x": -75.07255195514078,
+            "y": -27.64257482476422,
+            "z": 10
+          },
+          "elevation": 10,
+          "distanceFromHomeplate": 80,
+          "angle": -69.78571428571429,
+          "facing": 110.21428571428571,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rangers-3-1-3",
+          "sectionId": "3",
+          "row": "1",
+          "seatNumber": "3",
+          "position3D": {
+            "x": -74.9221262476093,
+            "y": -28.0477271545716,
+            "z": 10
+          },
+          "elevation": 10,
+          "distanceFromHomeplate": 80,
+          "angle": -69.47619047619048,
+          "facing": 110.52380952380952,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rangers-3-1-4",
+          "sectionId": "3",
+          "row": "1",
+          "seatNumber": "4",
+          "position3D": {
+            "x": -74.76951402791909,
+            "y": -28.452060945190087,
+            "z": 10
+          },
+          "elevation": 10,
+          "distanceFromHomeplate": 80,
+          "angle": -69.16666666666667,
+          "facing": 110.83333333333333,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rangers-3-1-5",
+          "sectionId": "3",
+          "row": "1",
+          "seatNumber": "5",
+          "position3D": {
+            "x": -74.61471974987421,
+            "y": -28.85556439662429,
+            "z": 10
+          },
+          "elevation": 10,
+          "distanceFromHomeplate": 80,
+          "angle": -68.85714285714286,
+          "facing": 111.14285714285714,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rangers-3-1-6",
+          "sectionId": "3",
+          "row": "1",
+          "seatNumber": "6",
+          "position3D": {
+            "x": -74.45774793095958,
+            "y": -29.25822573311111,
+            "z": 10
+          },
+          "elevation": 10,
+          "distanceFromHomeplate": 80.00000000000001,
+          "angle": -68.54761904761905,
+          "facing": 111.45238095238095,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rangers-3-1-7",
+          "sectionId": "3",
+          "row": "1",
+          "seatNumber": "7",
+          "position3D": {
+            "x": -74.29860315220895,
+            "y": -29.660033203463648,
+            "z": 10
+          },
+          "elevation": 10,
+          "distanceFromHomeplate": 80,
+          "angle": -68.23809523809524,
+          "facing": 111.76190476190476,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rangers-3-1-8",
+          "sectionId": "3",
+          "row": "1",
+          "seatNumber": "8",
+          "position3D": {
+            "x": -74.1372900580713,
+            "y": -30.060975081414128,
+            "z": 10
+          },
+          "elevation": 10,
+          "distanceFromHomeplate": 79.99999999999999,
+          "angle": -67.92857142857143,
+          "facing": 112.07142857142857,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rangers-3-1-9",
+          "sectionId": "3",
+          "row": "1",
+          "seatNumber": "9",
+          "position3D": {
+            "x": -73.97381335627531,
+            "y": -30.46103966595596,
+            "z": 10
+          },
+          "elevation": 10,
+          "distanceFromHomeplate": 80,
+          "angle": -67.61904761904762,
+          "facing": 112.38095238095238,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rangers-3-1-10",
+          "sectionId": "3",
+          "row": "1",
+          "seatNumber": "10",
+          "position3D": {
+            "x": -73.80817781769194,
+            "y": -30.860215281685356,
+            "z": 10
+          },
+          "elevation": 10,
+          "distanceFromHomeplate": 80,
+          "angle": -67.30952380952381,
+          "facing": 112.69047619047619,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rangers-3-1-11",
+          "sectionId": "3",
+          "row": "1",
+          "seatNumber": "11",
+          "position3D": {
+            "x": -73.64038827619521,
+            "y": -31.25849027914193,
+            "z": 10
+          },
+          "elevation": 10,
+          "distanceFromHomeplate": 80,
+          "angle": -67,
+          "facing": 113,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rangers-3-1-12",
+          "sectionId": "3",
+          "row": "1",
+          "seatNumber": "12",
+          "position3D": {
+            "x": -73.47044962852112,
+            "y": -31.655853035148823,
+            "z": 10
+          },
+          "elevation": 10,
+          "distanceFromHomeplate": 80,
+          "angle": -66.69047619047619,
+          "facing": 113.30952380952381,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rangers-3-1-13",
+          "sectionId": "3",
+          "row": "1",
+          "seatNumber": "13",
+          "position3D": {
+            "x": -73.29836683412472,
+            "y": -32.052291953151894,
+            "z": 10
+          },
+          "elevation": 10,
+          "distanceFromHomeplate": 80,
+          "angle": -66.38095238095238,
+          "facing": 113.61904761904762,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rangers-3-1-14",
+          "sectionId": "3",
+          "row": "1",
+          "seatNumber": "14",
+          "position3D": {
+            "x": -73.12414491503544,
+            "y": -32.44779546355802,
+            "z": 10
+          },
+          "elevation": 10,
+          "distanceFromHomeplate": 80,
+          "angle": -66.07142857142857,
+          "facing": 113.92857142857143,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rangers-3-1-15",
+          "sectionId": "3",
+          "row": "1",
+          "seatNumber": "15",
+          "position3D": {
+            "x": -72.9477889557105,
+            "y": -32.84235202407285,
+            "z": 10
+          },
+          "elevation": 10,
+          "distanceFromHomeplate": 80,
+          "angle": -65.76190476190476,
+          "facing": 114.23809523809524,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rangers-3-1-16",
+          "sectionId": "3",
+          "row": "1",
+          "seatNumber": "16",
+          "position3D": {
+            "x": -72.76930410288648,
+            "y": -33.235950120037614,
+            "z": 10
+          },
+          "elevation": 10,
+          "distanceFromHomeplate": 80,
+          "angle": -65.45238095238095,
+          "facing": 114.54761904761905,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rangers-3-1-17",
+          "sectionId": "3",
+          "row": "1",
+          "seatNumber": "17",
+          "position3D": {
+            "x": -72.58869556542918,
+            "y": -33.62857826476527,
+            "z": 10
+          },
+          "elevation": 10,
+          "distanceFromHomeplate": 80,
+          "angle": -65.14285714285714,
+          "facing": 114.85714285714286,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rangers-3-1-18",
+          "sectionId": "3",
+          "row": "1",
+          "seatNumber": "18",
+          "position3D": {
+            "x": -72.40596861418157,
+            "y": -34.02022499987547,
+            "z": 10
+          },
+          "elevation": 10,
+          "distanceFromHomeplate": 79.99999999999999,
+          "angle": -64.83333333333333,
+          "facing": 115.16666666666667,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rangers-3-1-19",
+          "sectionId": "3",
+          "row": "1",
+          "seatNumber": "19",
+          "position3D": {
+            "x": -72.22112858181005,
+            "y": -34.41087889562922,
+            "z": 10
+          },
+          "elevation": 10,
+          "distanceFromHomeplate": 80,
+          "angle": -64.52380952380952,
+          "facing": 115.47619047619048,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rangers-3-1-20",
+          "sectionId": "3",
+          "row": "1",
+          "seatNumber": "20",
+          "position3D": {
+            "x": -72.03418086264863,
+            "y": -34.80052855126236,
+            "z": 10
+          },
+          "elevation": 10,
+          "distanceFromHomeplate": 80,
+          "angle": -64.21428571428571,
+          "facing": 115.78571428571429,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rangers-3-1-21",
+          "sectionId": "3",
+          "row": "1",
+          "seatNumber": "21",
+          "position3D": {
+            "x": -71.84513091254166,
+            "y": -35.189162595318344,
+            "z": 10
+          },
+          "elevation": 10,
+          "distanceFromHomeplate": 80.00000000000001,
+          "angle": -63.904761904761905,
+          "facing": 116.0952380952381,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        }
+      ],
+      "covered": false,
+      "hasAisleSeats": false,
+      "wheelchairRow": false
+    },
+    {
+      "rowNumber": "2",
+      "sectionId": "3",
+      "seatCount": 21,
+      "elevation": 12.5,
+      "depth": 82.8,
+      "rowSpacing": 36,
+      "seats": [
+        {
+          "id": "rangers-3-2-1",
+          "sectionId": "3",
+          "row": "2",
+          "seatNumber": "1",
+          "position3D": {
+            "x": -77.85351429713835,
+            "y": -28.189897331939225,
+            "z": 12.5
+          },
+          "elevation": 12.5,
+          "distanceFromHomeplate": 82.8,
+          "angle": -70.0952380952381,
+          "facing": 109.9047619047619,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rangers-3-2-2",
+          "sectionId": "3",
+          "row": "2",
+          "seatNumber": "2",
+          "position3D": {
+            "x": -77.7000912735707,
+            "y": -28.610064943630967,
+            "z": 12.5
+          },
+          "elevation": 12.5,
+          "distanceFromHomeplate": 82.8,
+          "angle": -69.78571428571429,
+          "facing": 110.21428571428571,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rangers-3-2-3",
+          "sectionId": "3",
+          "row": "2",
+          "seatNumber": "3",
+          "position3D": {
+            "x": -77.54440066627562,
+            "y": -29.029397604981604,
+            "z": 12.5
+          },
+          "elevation": 12.5,
+          "distanceFromHomeplate": 82.79999999999998,
+          "angle": -69.47619047619048,
+          "facing": 110.52380952380952,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rangers-3-2-4",
+          "sectionId": "3",
+          "row": "2",
+          "seatNumber": "4",
+          "position3D": {
+            "x": -77.38644701889625,
+            "y": -29.44788307827174,
+            "z": 12.5
+          },
+          "elevation": 12.5,
+          "distanceFromHomeplate": 82.8,
+          "angle": -69.16666666666667,
+          "facing": 110.83333333333333,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rangers-3-2-5",
+          "sectionId": "3",
+          "row": "2",
+          "seatNumber": "5",
+          "position3D": {
+            "x": -77.2262349411198,
+            "y": -29.86550915050614,
+            "z": 12.5
+          },
+          "elevation": 12.5,
+          "distanceFromHomeplate": 82.79999999999998,
+          "angle": -68.85714285714286,
+          "facing": 111.14285714285714,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rangers-3-2-6",
+          "sectionId": "3",
+          "row": "2",
+          "seatNumber": "6",
+          "position3D": {
+            "x": -77.06376910854316,
+            "y": -30.28226363377,
+            "z": 12.5
+          },
+          "elevation": 12.5,
+          "distanceFromHomeplate": 82.8,
+          "angle": -68.54761904761905,
+          "facing": 111.45238095238095,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rangers-3-2-7",
+          "sectionId": "3",
+          "row": "2",
+          "seatNumber": "7",
+          "position3D": {
+            "x": -76.89905426253627,
+            "y": -30.698134365584874,
+            "z": 12.5
+          },
+          "elevation": 12.5,
+          "distanceFromHomeplate": 82.8,
+          "angle": -68.23809523809524,
+          "facing": 111.76190476190476,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rangers-3-2-8",
+          "sectionId": "3",
+          "row": "2",
+          "seatNumber": "8",
+          "position3D": {
+            "x": -76.73209521010381,
+            "y": -31.113109209263623,
+            "z": 12.5
+          },
+          "elevation": 12.5,
+          "distanceFromHomeplate": 82.80000000000001,
+          "angle": -67.92857142857143,
+          "facing": 112.07142857142857,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rangers-3-2-9",
+          "sectionId": "3",
+          "row": "2",
+          "seatNumber": "9",
+          "position3D": {
+            "x": -76.56289682374495,
+            "y": -31.527176054264416,
+            "z": 12.5
+          },
+          "elevation": 12.5,
+          "distanceFromHomeplate": 82.79999999999998,
+          "angle": -67.61904761904762,
+          "facing": 112.38095238095238,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rangers-3-2-10",
+          "sectionId": "3",
+          "row": "2",
+          "seatNumber": "10",
+          "position3D": {
+            "x": -76.39146404131117,
+            "y": -31.940322816544345,
+            "z": 12.5
+          },
+          "elevation": 12.5,
+          "distanceFromHomeplate": 82.8,
+          "angle": -67.30952380952381,
+          "facing": 112.69047619047619,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rangers-3-2-11",
+          "sectionId": "3",
+          "row": "2",
+          "seatNumber": "11",
+          "position3D": {
+            "x": -76.21780186586204,
+            "y": -32.3525374389119,
+            "z": 12.5
+          },
+          "elevation": 12.5,
+          "distanceFromHomeplate": 82.8,
+          "angle": -67,
+          "facing": 113,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rangers-3-2-12",
+          "sectionId": "3",
+          "row": "2",
+          "seatNumber": "12",
+          "position3D": {
+            "x": -76.04191536551936,
+            "y": -32.76380789137903,
+            "z": 12.5
+          },
+          "elevation": 12.5,
+          "distanceFromHomeplate": 82.8,
+          "angle": -66.69047619047619,
+          "facing": 113.30952380952381,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rangers-3-2-13",
+          "sectionId": "3",
+          "row": "2",
+          "seatNumber": "13",
+          "position3D": {
+            "x": -75.86380967331908,
+            "y": -33.17412217151221,
+            "z": 12.5
+          },
+          "elevation": 12.5,
+          "distanceFromHomeplate": 82.8,
+          "angle": -66.38095238095238,
+          "facing": 113.61904761904762,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rangers-3-2-14",
+          "sectionId": "3",
+          "row": "2",
+          "seatNumber": "14",
+          "position3D": {
+            "x": -75.68348998706168,
+            "y": -33.58346830478255,
+            "z": 12.5
+          },
+          "elevation": 12.5,
+          "distanceFromHomeplate": 82.8,
+          "angle": -66.07142857142857,
+          "facing": 113.92857142857143,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rangers-3-2-15",
+          "sectionId": "3",
+          "row": "2",
+          "seatNumber": "15",
+          "position3D": {
+            "x": -75.50096156916035,
+            "y": -33.991834344915404,
+            "z": 12.5
+          },
+          "elevation": 12.5,
+          "distanceFromHomeplate": 82.8,
+          "angle": -65.76190476190476,
+          "facing": 114.23809523809524,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rangers-3-2-16",
+          "sectionId": "3",
+          "row": "2",
+          "seatNumber": "16",
+          "position3D": {
+            "x": -75.31622974648751,
+            "y": -34.399208374238924,
+            "z": 12.5
+          },
+          "elevation": 12.5,
+          "distanceFromHomeplate": 82.8,
+          "angle": -65.45238095238095,
+          "facing": 114.54761904761905,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rangers-3-2-17",
+          "sectionId": "3",
+          "row": "2",
+          "seatNumber": "17",
+          "position3D": {
+            "x": -75.12929991021919,
+            "y": -34.80557850403205,
+            "z": 12.5
+          },
+          "elevation": 12.5,
+          "distanceFromHomeplate": 82.8,
+          "angle": -65.14285714285714,
+          "facing": 114.85714285714286,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rangers-3-2-18",
+          "sectionId": "3",
+          "row": "2",
+          "seatNumber": "18",
+          "position3D": {
+            "x": -74.94017751567793,
+            "y": -35.21093287487111,
+            "z": 12.5
+          },
+          "elevation": 12.5,
+          "distanceFromHomeplate": 82.8,
+          "angle": -64.83333333333333,
+          "facing": 115.16666666666667,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rangers-3-2-19",
+          "sectionId": "3",
+          "row": "2",
+          "seatNumber": "19",
+          "position3D": {
+            "x": -74.74886808217339,
+            "y": -35.615259656976235,
+            "z": 12.5
+          },
+          "elevation": 12.5,
+          "distanceFromHomeplate": 82.79999999999998,
+          "angle": -64.52380952380952,
+          "facing": 115.47619047619048,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rangers-3-2-20",
+          "sectionId": "3",
+          "row": "2",
+          "seatNumber": "20",
+          "position3D": {
+            "x": -74.55537719284132,
+            "y": -36.01854705055654,
+            "z": 12.5
+          },
+          "elevation": 12.5,
+          "distanceFromHomeplate": 82.79999999999998,
+          "angle": -64.21428571428571,
+          "facing": 115.78571428571429,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rangers-3-2-21",
+          "sectionId": "3",
+          "row": "2",
+          "seatNumber": "21",
+          "position3D": {
+            "x": -74.35971049448061,
+            "y": -36.42078328615448,
+            "z": 12.5
+          },
+          "elevation": 12.5,
+          "distanceFromHomeplate": 82.8,
+          "angle": -63.904761904761905,
+          "facing": 116.0952380952381,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        }
+      ],
+      "covered": false,
+      "hasAisleSeats": false,
+      "wheelchairRow": false
+    },
+    {
+      "rowNumber": "3",
+      "sectionId": "3",
+      "seatCount": 21,
+      "elevation": 15,
+      "depth": 85.6,
+      "rowSpacing": 36,
+      "seats": [
+        {
+          "id": "rangers-3-3-1",
+          "sectionId": "3",
+          "row": "3",
+          "seatNumber": "1",
+          "position3D": {
+            "x": -80.48624183375655,
+            "y": -29.143178884227027,
+            "z": 15
+          },
+          "elevation": 15,
+          "distanceFromHomeplate": 85.6,
+          "angle": -70.0952380952381,
+          "facing": 109.9047619047619,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rangers-3-3-2",
+          "sectionId": "3",
+          "row": "3",
+          "seatNumber": "2",
+          "position3D": {
+            "x": -80.32763059200063,
+            "y": -29.577555062497716,
+            "z": 15
+          },
+          "elevation": 15,
+          "distanceFromHomeplate": 85.60000000000001,
+          "angle": -69.78571428571429,
+          "facing": 110.21428571428571,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rangers-3-3-3",
+          "sectionId": "3",
+          "row": "3",
+          "seatNumber": "3",
+          "position3D": {
+            "x": -80.16667508494196,
+            "y": -30.01106805539161,
+            "z": 15
+          },
+          "elevation": 15,
+          "distanceFromHomeplate": 85.6,
+          "angle": -69.47619047619048,
+          "facing": 110.52380952380952,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rangers-3-3-4",
+          "sectionId": "3",
+          "row": "3",
+          "seatNumber": "4",
+          "position3D": {
+            "x": -80.00338000987342,
+            "y": -30.443705211353393,
+            "z": 15
+          },
+          "elevation": 15,
+          "distanceFromHomeplate": 85.60000000000001,
+          "angle": -69.16666666666667,
+          "facing": 110.83333333333333,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rangers-3-3-5",
+          "sectionId": "3",
+          "row": "3",
+          "seatNumber": "5",
+          "position3D": {
+            "x": -79.8377501323654,
+            "y": -30.87545390438799,
+            "z": 15
+          },
+          "elevation": 15,
+          "distanceFromHomeplate": 85.6,
+          "angle": -68.85714285714286,
+          "facing": 111.14285714285714,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rangers-3-3-6",
+          "sectionId": "3",
+          "row": "3",
+          "seatNumber": "6",
+          "position3D": {
+            "x": -79.66979028612674,
+            "y": -31.306301534428886,
+            "z": 15
+          },
+          "elevation": 15,
+          "distanceFromHomeplate": 85.6,
+          "angle": -68.54761904761905,
+          "facing": 111.45238095238095,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rangers-3-3-7",
+          "sectionId": "3",
+          "row": "3",
+          "seatNumber": "7",
+          "position3D": {
+            "x": -79.49950537286358,
+            "y": -31.7362355277061,
+            "z": 15
+          },
+          "elevation": 15,
+          "distanceFromHomeplate": 85.60000000000001,
+          "angle": -68.23809523809524,
+          "facing": 111.76190476190476,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rangers-3-3-8",
+          "sectionId": "3",
+          "row": "3",
+          "seatNumber": "8",
+          "position3D": {
+            "x": -79.3269003621363,
+            "y": -32.16524333711312,
+            "z": 15
+          },
+          "elevation": 15,
+          "distanceFromHomeplate": 85.6,
+          "angle": -67.92857142857143,
+          "facing": 112.07142857142857,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rangers-3-3-9",
+          "sectionId": "3",
+          "row": "3",
+          "seatNumber": "9",
+          "position3D": {
+            "x": -79.15198029121458,
+            "y": -32.59331244257287,
+            "z": 15
+          },
+          "elevation": 15,
+          "distanceFromHomeplate": 85.6,
+          "angle": -67.61904761904762,
+          "facing": 112.38095238095238,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rangers-3-3-10",
+          "sectionId": "3",
+          "row": "3",
+          "seatNumber": "10",
+          "position3D": {
+            "x": -78.97475026493038,
+            "y": -33.02043035140333,
+            "z": 15
+          },
+          "elevation": 15,
+          "distanceFromHomeplate": 85.6,
+          "angle": -67.30952380952381,
+          "facing": 112.69047619047619,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rangers-3-3-11",
+          "sectionId": "3",
+          "row": "3",
+          "seatNumber": "11",
+          "position3D": {
+            "x": -78.79521545552888,
+            "y": -33.446584598681866,
+            "z": 15
+          },
+          "elevation": 15,
+          "distanceFromHomeplate": 85.6,
+          "angle": -67,
+          "facing": 113,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rangers-3-3-12",
+          "sectionId": "3",
+          "row": "3",
+          "seatNumber": "12",
+          "position3D": {
+            "x": -78.6133811025176,
+            "y": -33.87176274760924,
+            "z": 15
+          },
+          "elevation": 15,
+          "distanceFromHomeplate": 85.6,
+          "angle": -66.69047619047619,
+          "facing": 113.30952380952381,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rangers-3-3-13",
+          "sectionId": "3",
+          "row": "3",
+          "seatNumber": "13",
+          "position3D": {
+            "x": -78.42925251251344,
+            "y": -34.295952389872525,
+            "z": 15
+          },
+          "elevation": 15,
+          "distanceFromHomeplate": 85.6,
+          "angle": -66.38095238095238,
+          "facing": 113.61904761904762,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rangers-3-3-14",
+          "sectionId": "3",
+          "row": "3",
+          "seatNumber": "14",
+          "position3D": {
+            "x": -78.24283505908791,
+            "y": -34.71914114600708,
+            "z": 15
+          },
+          "elevation": 15,
+          "distanceFromHomeplate": 85.6,
+          "angle": -66.07142857142857,
+          "facing": 113.92857142857143,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rangers-3-3-15",
+          "sectionId": "3",
+          "row": "3",
+          "seatNumber": "15",
+          "position3D": {
+            "x": -78.05413418261023,
+            "y": -35.14131666575795,
+            "z": 15
+          },
+          "elevation": 15,
+          "distanceFromHomeplate": 85.6,
+          "angle": -65.76190476190476,
+          "facing": 114.23809523809524,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rangers-3-3-16",
+          "sectionId": "3",
+          "row": "3",
+          "seatNumber": "16",
+          "position3D": {
+            "x": -77.86315539008854,
+            "y": -35.56246662844024,
+            "z": 15
+          },
+          "elevation": 15,
+          "distanceFromHomeplate": 85.6,
+          "angle": -65.45238095238095,
+          "facing": 114.54761904761905,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rangers-3-3-17",
+          "sectionId": "3",
+          "row": "3",
+          "seatNumber": "17",
+          "position3D": {
+            "x": -77.66990425500921,
+            "y": -35.98257874329883,
+            "z": 15
+          },
+          "elevation": 15,
+          "distanceFromHomeplate": 85.6,
+          "angle": -65.14285714285714,
+          "facing": 114.85714285714286,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rangers-3-3-18",
+          "sectionId": "3",
+          "row": "3",
+          "seatNumber": "18",
+          "position3D": {
+            "x": -77.47438641717429,
+            "y": -36.40164074986675,
+            "z": 15
+          },
+          "elevation": 15,
+          "distanceFromHomeplate": 85.6,
+          "angle": -64.83333333333333,
+          "facing": 115.16666666666667,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rangers-3-3-19",
+          "sectionId": "3",
+          "row": "3",
+          "seatNumber": "19",
+          "position3D": {
+            "x": -77.27660758253674,
+            "y": -36.81964041832326,
+            "z": 15
+          },
+          "elevation": 15,
+          "distanceFromHomeplate": 85.6,
+          "angle": -64.52380952380952,
+          "facing": 115.47619047619048,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rangers-3-3-20",
+          "sectionId": "3",
+          "row": "3",
+          "seatNumber": "20",
+          "position3D": {
+            "x": -77.07657352303401,
+            "y": -37.236565549850724,
+            "z": 15
+          },
+          "elevation": 15,
+          "distanceFromHomeplate": 85.6,
+          "angle": -64.21428571428571,
+          "facing": 115.78571428571429,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rangers-3-3-21",
+          "sectionId": "3",
+          "row": "3",
+          "seatNumber": "21",
+          "position3D": {
+            "x": -76.87429007641957,
+            "y": -37.65240397699063,
+            "z": 15
+          },
+          "elevation": 15,
+          "distanceFromHomeplate": 85.6,
+          "angle": -63.904761904761905,
+          "facing": 116.0952380952381,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        }
+      ],
+      "covered": false,
+      "hasAisleSeats": false,
+      "wheelchairRow": false
+    },
+    {
+      "rowNumber": "4",
+      "sectionId": "3",
+      "seatCount": 21,
+      "elevation": 17.5,
+      "depth": 88.4,
+      "rowSpacing": 36,
+      "seats": [
+        {
+          "id": "rangers-3-4-1",
+          "sectionId": "3",
+          "row": "4",
+          "seatNumber": "1",
+          "position3D": {
+            "x": -83.11896937037477,
+            "y": -30.09646043651483,
+            "z": 17.5
+          },
+          "elevation": 17.5,
+          "distanceFromHomeplate": 88.4,
+          "angle": -70.0952380952381,
+          "facing": 109.9047619047619,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rangers-3-4-2",
+          "sectionId": "3",
+          "row": "4",
+          "seatNumber": "2",
+          "position3D": {
+            "x": -82.95516991043057,
+            "y": -30.545045181364465,
+            "z": 17.5
+          },
+          "elevation": 17.5,
+          "distanceFromHomeplate": 88.4,
+          "angle": -69.78571428571429,
+          "facing": 110.21428571428571,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rangers-3-4-3",
+          "sectionId": "3",
+          "row": "4",
+          "seatNumber": "3",
+          "position3D": {
+            "x": -82.7889495036083,
+            "y": -30.99273850580162,
+            "z": 17.5
+          },
+          "elevation": 17.5,
+          "distanceFromHomeplate": 88.4,
+          "angle": -69.47619047619048,
+          "facing": 110.52380952380952,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rangers-3-4-4",
+          "sectionId": "3",
+          "row": "4",
+          "seatNumber": "4",
+          "position3D": {
+            "x": -82.6203130008506,
+            "y": -31.43952734443505,
+            "z": 17.5
+          },
+          "elevation": 17.5,
+          "distanceFromHomeplate": 88.4,
+          "angle": -69.16666666666667,
+          "facing": 110.83333333333333,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rangers-3-4-5",
+          "sectionId": "3",
+          "row": "4",
+          "seatNumber": "5",
+          "position3D": {
+            "x": -82.449265323611,
+            "y": -31.885398658269843,
+            "z": 17.5
+          },
+          "elevation": 17.5,
+          "distanceFromHomeplate": 88.4,
+          "angle": -68.85714285714286,
+          "facing": 111.14285714285714,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rangers-3-4-6",
+          "sectionId": "3",
+          "row": "4",
+          "seatNumber": "6",
+          "position3D": {
+            "x": -82.27581146371034,
+            "y": -32.33033943508778,
+            "z": 17.5
+          },
+          "elevation": 17.5,
+          "distanceFromHomeplate": 88.4,
+          "angle": -68.54761904761905,
+          "facing": 111.45238095238095,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rangers-3-4-7",
+          "sectionId": "3",
+          "row": "4",
+          "seatNumber": "7",
+          "position3D": {
+            "x": -82.0999564831909,
+            "y": -32.77433668982733,
+            "z": 17.5
+          },
+          "elevation": 17.5,
+          "distanceFromHomeplate": 88.4,
+          "angle": -68.23809523809524,
+          "facing": 111.76190476190476,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rangers-3-4-8",
+          "sectionId": "3",
+          "row": "4",
+          "seatNumber": "8",
+          "position3D": {
+            "x": -81.9217055141688,
+            "y": -33.21737746496262,
+            "z": 17.5
+          },
+          "elevation": 17.5,
+          "distanceFromHomeplate": 88.4,
+          "angle": -67.92857142857143,
+          "facing": 112.07142857142857,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rangers-3-4-9",
+          "sectionId": "3",
+          "row": "4",
+          "seatNumber": "9",
+          "position3D": {
+            "x": -81.74106375868423,
+            "y": -33.65944883088134,
+            "z": 17.5
+          },
+          "elevation": 17.5,
+          "distanceFromHomeplate": 88.4,
+          "angle": -67.61904761904762,
+          "facing": 112.38095238095238,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rangers-3-4-10",
+          "sectionId": "3",
+          "row": "4",
+          "seatNumber": "10",
+          "position3D": {
+            "x": -81.5580364885496,
+            "y": -34.10053788626232,
+            "z": 17.5
+          },
+          "elevation": 17.5,
+          "distanceFromHomeplate": 88.4,
+          "angle": -67.30952380952381,
+          "facing": 112.69047619047619,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rangers-3-4-11",
+          "sectionId": "3",
+          "row": "4",
+          "seatNumber": "11",
+          "position3D": {
+            "x": -81.37262904519571,
+            "y": -34.54063175845184,
+            "z": 17.5
+          },
+          "elevation": 17.5,
+          "distanceFromHomeplate": 88.39999999999999,
+          "angle": -67,
+          "facing": 113,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rangers-3-4-12",
+          "sectionId": "3",
+          "row": "4",
+          "seatNumber": "12",
+          "position3D": {
+            "x": -81.18484683951584,
+            "y": -34.979717603839454,
+            "z": 17.5
+          },
+          "elevation": 17.5,
+          "distanceFromHomeplate": 88.4,
+          "angle": -66.69047619047619,
+          "facing": 113.30952380952381,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rangers-3-4-13",
+          "sectionId": "3",
+          "row": "4",
+          "seatNumber": "13",
+          "position3D": {
+            "x": -80.99469535170782,
+            "y": -35.41778260823285,
+            "z": 17.5
+          },
+          "elevation": 17.5,
+          "distanceFromHomeplate": 88.4,
+          "angle": -66.38095238095238,
+          "facing": 113.61904761904762,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rangers-3-4-14",
+          "sectionId": "3",
+          "row": "4",
+          "seatNumber": "14",
+          "position3D": {
+            "x": -80.80218013111417,
+            "y": -35.854813987231616,
+            "z": 17.5
+          },
+          "elevation": 17.5,
+          "distanceFromHomeplate": 88.4,
+          "angle": -66.07142857142857,
+          "facing": 113.92857142857143,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rangers-3-4-15",
+          "sectionId": "3",
+          "row": "4",
+          "seatNumber": "15",
+          "position3D": {
+            "x": -80.6073067960601,
+            "y": -36.29079898660051,
+            "z": 17.5
+          },
+          "elevation": 17.5,
+          "distanceFromHomeplate": 88.4,
+          "angle": -65.76190476190476,
+          "facing": 114.23809523809524,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rangers-3-4-16",
+          "sectionId": "3",
+          "row": "4",
+          "seatNumber": "16",
+          "position3D": {
+            "x": -80.41008103368956,
+            "y": -36.725724882641565,
+            "z": 17.5
+          },
+          "elevation": 17.5,
+          "distanceFromHomeplate": 88.39999999999999,
+          "angle": -65.45238095238095,
+          "facing": 114.54761904761905,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rangers-3-4-17",
+          "sectionId": "3",
+          "row": "4",
+          "seatNumber": "17",
+          "position3D": {
+            "x": -80.21050859979924,
+            "y": -37.15957898256562,
+            "z": 17.5
+          },
+          "elevation": 17.5,
+          "distanceFromHomeplate": 88.4,
+          "angle": -65.14285714285714,
+          "facing": 114.85714285714286,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rangers-3-4-18",
+          "sectionId": "3",
+          "row": "4",
+          "seatNumber": "18",
+          "position3D": {
+            "x": -80.00859531867066,
+            "y": -37.592348624862396,
+            "z": 17.5
+          },
+          "elevation": 17.5,
+          "distanceFromHomeplate": 88.4,
+          "angle": -64.83333333333333,
+          "facing": 115.16666666666667,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rangers-3-4-19",
+          "sectionId": "3",
+          "row": "4",
+          "seatNumber": "19",
+          "position3D": {
+            "x": -79.80434708290011,
+            "y": -38.024021179670285,
+            "z": 17.5
+          },
+          "elevation": 17.5,
+          "distanceFromHomeplate": 88.4,
+          "angle": -64.52380952380952,
+          "facing": 115.47619047619048,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rangers-3-4-20",
+          "sectionId": "3",
+          "row": "4",
+          "seatNumber": "20",
+          "position3D": {
+            "x": -79.59776985322674,
+            "y": -38.45458404914491,
+            "z": 17.5
+          },
+          "elevation": 17.5,
+          "distanceFromHomeplate": 88.4,
+          "angle": -64.21428571428571,
+          "facing": 115.78571428571429,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rangers-3-4-21",
+          "sectionId": "3",
+          "row": "4",
+          "seatNumber": "21",
+          "position3D": {
+            "x": -79.38886965835854,
+            "y": -38.88402466782677,
+            "z": 17.5
+          },
+          "elevation": 17.5,
+          "distanceFromHomeplate": 88.4,
+          "angle": -63.904761904761905,
+          "facing": 116.0952380952381,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        }
+      ],
+      "covered": false,
+      "hasAisleSeats": false,
+      "wheelchairRow": false
+    },
+    {
+      "rowNumber": "5",
+      "sectionId": "3",
+      "seatCount": 21,
+      "elevation": 20,
+      "depth": 91.2,
+      "rowSpacing": 36,
+      "seats": [
+        {
+          "id": "rangers-3-5-1",
+          "sectionId": "3",
+          "row": "5",
+          "seatNumber": "1",
+          "position3D": {
+            "x": -85.75169690699298,
+            "y": -31.049741988802626,
+            "z": 20
+          },
+          "elevation": 20,
+          "distanceFromHomeplate": 91.20000000000002,
+          "angle": -70.0952380952381,
+          "facing": 109.9047619047619,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rangers-3-5-2",
+          "sectionId": "3",
+          "row": "5",
+          "seatNumber": "2",
+          "position3D": {
+            "x": -85.5827092288605,
+            "y": -31.512535300231214,
+            "z": 20
+          },
+          "elevation": 20,
+          "distanceFromHomeplate": 91.2,
+          "angle": -69.78571428571429,
+          "facing": 110.21428571428571,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rangers-3-5-3",
+          "sectionId": "3",
+          "row": "5",
+          "seatNumber": "3",
+          "position3D": {
+            "x": -85.41122392227462,
+            "y": -31.974408956211626,
+            "z": 20
+          },
+          "elevation": 20,
+          "distanceFromHomeplate": 91.20000000000002,
+          "angle": -69.47619047619048,
+          "facing": 110.52380952380952,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rangers-3-5-4",
+          "sectionId": "3",
+          "row": "5",
+          "seatNumber": "4",
+          "position3D": {
+            "x": -85.23724599182776,
+            "y": -32.4353494775167,
+            "z": 20
+          },
+          "elevation": 20,
+          "distanceFromHomeplate": 91.20000000000002,
+          "angle": -69.16666666666667,
+          "facing": 110.83333333333333,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rangers-3-5-5",
+          "sectionId": "3",
+          "row": "5",
+          "seatNumber": "5",
+          "position3D": {
+            "x": -85.0607805148566,
+            "y": -32.89534341215169,
+            "z": 20
+          },
+          "elevation": 20,
+          "distanceFromHomeplate": 91.2,
+          "angle": -68.85714285714286,
+          "facing": 111.14285714285714,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rangers-3-5-6",
+          "sectionId": "3",
+          "row": "5",
+          "seatNumber": "6",
+          "position3D": {
+            "x": -84.88183264129393,
+            "y": -33.35437733574667,
+            "z": 20
+          },
+          "elevation": 20,
+          "distanceFromHomeplate": 91.20000000000002,
+          "angle": -68.54761904761905,
+          "facing": 111.45238095238095,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rangers-3-5-7",
+          "sectionId": "3",
+          "row": "5",
+          "seatNumber": "7",
+          "position3D": {
+            "x": -84.70040759351821,
+            "y": -33.81243785194856,
+            "z": 20
+          },
+          "elevation": 20,
+          "distanceFromHomeplate": 91.2,
+          "angle": -68.23809523809524,
+          "facing": 111.76190476190476,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rangers-3-5-8",
+          "sectionId": "3",
+          "row": "5",
+          "seatNumber": "8",
+          "position3D": {
+            "x": -84.5165106662013,
+            "y": -34.26951159281211,
+            "z": 20
+          },
+          "elevation": 20,
+          "distanceFromHomeplate": 91.20000000000002,
+          "angle": -67.92857142857143,
+          "facing": 112.07142857142857,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rangers-3-5-9",
+          "sectionId": "3",
+          "row": "5",
+          "seatNumber": "9",
+          "position3D": {
+            "x": -84.33014722615387,
+            "y": -34.725585219189796,
+            "z": 20
+          },
+          "elevation": 20,
+          "distanceFromHomeplate": 91.2,
+          "angle": -67.61904761904762,
+          "facing": 112.38095238095238,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rangers-3-5-10",
+          "sectionId": "3",
+          "row": "5",
+          "seatNumber": "10",
+          "position3D": {
+            "x": -84.14132271216882,
+            "y": -35.180645421121305,
+            "z": 20
+          },
+          "elevation": 20,
+          "distanceFromHomeplate": 91.19999999999999,
+          "angle": -67.30952380952381,
+          "facing": 112.69047619047619,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rangers-3-5-11",
+          "sectionId": "3",
+          "row": "5",
+          "seatNumber": "11",
+          "position3D": {
+            "x": -83.95004263486254,
+            "y": -35.6346789182218,
+            "z": 20
+          },
+          "elevation": 20,
+          "distanceFromHomeplate": 91.2,
+          "angle": -67,
+          "facing": 113,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rangers-3-5-12",
+          "sectionId": "3",
+          "row": "5",
+          "seatNumber": "12",
+          "position3D": {
+            "x": -83.75631257651408,
+            "y": -36.087672460069655,
+            "z": 20
+          },
+          "elevation": 20,
+          "distanceFromHomeplate": 91.19999999999999,
+          "angle": -66.69047619047619,
+          "facing": 113.30952380952381,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rangers-3-5-13",
+          "sectionId": "3",
+          "row": "5",
+          "seatNumber": "13",
+          "position3D": {
+            "x": -83.56013819090218,
+            "y": -36.539612826593164,
+            "z": 20
+          },
+          "elevation": 20,
+          "distanceFromHomeplate": 91.2,
+          "angle": -66.38095238095238,
+          "facing": 113.61904761904762,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rangers-3-5-14",
+          "sectionId": "3",
+          "row": "5",
+          "seatNumber": "14",
+          "position3D": {
+            "x": -83.3615252031404,
+            "y": -36.99048682845615,
+            "z": 20
+          },
+          "elevation": 20,
+          "distanceFromHomeplate": 91.2,
+          "angle": -66.07142857142857,
+          "facing": 113.92857142857143,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rangers-3-5-15",
+          "sectionId": "3",
+          "row": "5",
+          "seatNumber": "15",
+          "position3D": {
+            "x": -83.16047940950996,
+            "y": -37.44028130744305,
+            "z": 20
+          },
+          "elevation": 20,
+          "distanceFromHomeplate": 91.2,
+          "angle": -65.76190476190476,
+          "facing": 114.23809523809524,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rangers-3-5-16",
+          "sectionId": "3",
+          "row": "5",
+          "seatNumber": "16",
+          "position3D": {
+            "x": -82.9570066772906,
+            "y": -37.88898313684288,
+            "z": 20
+          },
+          "elevation": 20,
+          "distanceFromHomeplate": 91.2,
+          "angle": -65.45238095238095,
+          "facing": 114.54761904761905,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rangers-3-5-17",
+          "sectionId": "3",
+          "row": "5",
+          "seatNumber": "17",
+          "position3D": {
+            "x": -82.75111294458927,
+            "y": -38.33657922183241,
+            "z": 20
+          },
+          "elevation": 20,
+          "distanceFromHomeplate": 91.20000000000002,
+          "angle": -65.14285714285714,
+          "facing": 114.85714285714286,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rangers-3-5-18",
+          "sectionId": "3",
+          "row": "5",
+          "seatNumber": "18",
+          "position3D": {
+            "x": -82.542804220167,
+            "y": -38.783056499858034,
+            "z": 20
+          },
+          "elevation": 20,
+          "distanceFromHomeplate": 91.2,
+          "angle": -64.83333333333333,
+          "facing": 115.16666666666667,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rangers-3-5-19",
+          "sectionId": "3",
+          "row": "5",
+          "seatNumber": "19",
+          "position3D": {
+            "x": -82.33208658326346,
+            "y": -39.22840194101731,
+            "z": 20
+          },
+          "elevation": 20,
+          "distanceFromHomeplate": 91.20000000000002,
+          "angle": -64.52380952380952,
+          "facing": 115.47619047619048,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rangers-3-5-20",
+          "sectionId": "3",
+          "row": "5",
+          "seatNumber": "20",
+          "position3D": {
+            "x": -82.11896618341943,
+            "y": -39.672602548439095,
+            "z": 20
+          },
+          "elevation": 20,
+          "distanceFromHomeplate": 91.2,
+          "angle": -64.21428571428571,
+          "facing": 115.78571428571429,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rangers-3-5-21",
+          "sectionId": "3",
+          "row": "5",
+          "seatNumber": "21",
+          "position3D": {
+            "x": -81.90344924029749,
+            "y": -40.11564535866291,
+            "z": 20
+          },
+          "elevation": 20,
+          "distanceFromHomeplate": 91.2,
+          "angle": -63.904761904761905,
+          "facing": 116.0952380952381,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        }
+      ],
+      "covered": false,
+      "hasAisleSeats": false,
+      "wheelchairRow": false
+    },
+    {
+      "rowNumber": "6",
+      "sectionId": "3",
+      "seatCount": 21,
+      "elevation": 22.5,
+      "depth": 94,
+      "rowSpacing": 36,
+      "seats": [
+        {
+          "id": "rangers-3-6-1",
+          "sectionId": "3",
+          "row": "6",
+          "seatNumber": "1",
+          "position3D": {
+            "x": -88.38442444361118,
+            "y": -32.00302354109043,
+            "z": 22.5
+          },
+          "elevation": 22.5,
+          "distanceFromHomeplate": 94.00000000000001,
+          "angle": -70.0952380952381,
+          "facing": 109.9047619047619,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rangers-3-6-2",
+          "sectionId": "3",
+          "row": "6",
+          "seatNumber": "2",
+          "position3D": {
+            "x": -88.2102485472904,
+            "y": -32.48002541909796,
+            "z": 22.5
+          },
+          "elevation": 22.5,
+          "distanceFromHomeplate": 93.99999999999999,
+          "angle": -69.78571428571429,
+          "facing": 110.21428571428571,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rangers-3-6-3",
+          "sectionId": "3",
+          "row": "6",
+          "seatNumber": "3",
+          "position3D": {
+            "x": -88.03349834094094,
+            "y": -32.95607940662163,
+            "z": 22.5
+          },
+          "elevation": 22.5,
+          "distanceFromHomeplate": 94.00000000000001,
+          "angle": -69.47619047619048,
+          "facing": 110.52380952380952,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rangers-3-6-4",
+          "sectionId": "3",
+          "row": "6",
+          "seatNumber": "4",
+          "position3D": {
+            "x": -87.85417898280492,
+            "y": -33.431171610598355,
+            "z": 22.5
+          },
+          "elevation": 22.5,
+          "distanceFromHomeplate": 94,
+          "angle": -69.16666666666667,
+          "facing": 110.83333333333333,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rangers-3-6-5",
+          "sectionId": "3",
+          "row": "6",
+          "seatNumber": "5",
+          "position3D": {
+            "x": -87.67229570610219,
+            "y": -33.90528816603354,
+            "z": 22.5
+          },
+          "elevation": 22.5,
+          "distanceFromHomeplate": 93.99999999999999,
+          "angle": -68.85714285714286,
+          "facing": 111.14285714285714,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rangers-3-6-6",
+          "sectionId": "3",
+          "row": "6",
+          "seatNumber": "6",
+          "position3D": {
+            "x": -87.48785381887751,
+            "y": -34.37841523640556,
+            "z": 22.5
+          },
+          "elevation": 22.5,
+          "distanceFromHomeplate": 94.00000000000001,
+          "angle": -68.54761904761905,
+          "facing": 111.45238095238095,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rangers-3-6-7",
+          "sectionId": "3",
+          "row": "6",
+          "seatNumber": "7",
+          "position3D": {
+            "x": -87.30085870384552,
+            "y": -34.85053901406979,
+            "z": 22.5
+          },
+          "elevation": 22.5,
+          "distanceFromHomeplate": 94,
+          "angle": -68.23809523809524,
+          "facing": 111.76190476190476,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rangers-3-6-8",
+          "sectionId": "3",
+          "row": "6",
+          "seatNumber": "8",
+          "position3D": {
+            "x": -87.11131581823379,
+            "y": -35.3216457206616,
+            "z": 22.5
+          },
+          "elevation": 22.5,
+          "distanceFromHomeplate": 94,
+          "angle": -67.92857142857143,
+          "facing": 112.07142857142857,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rangers-3-6-9",
+          "sectionId": "3",
+          "row": "6",
+          "seatNumber": "9",
+          "position3D": {
+            "x": -86.9192306936235,
+            "y": -35.79172160749825,
+            "z": 22.5
+          },
+          "elevation": 22.5,
+          "distanceFromHomeplate": 94,
+          "angle": -67.61904761904762,
+          "facing": 112.38095238095238,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rangers-3-6-10",
+          "sectionId": "3",
+          "row": "6",
+          "seatNumber": "10",
+          "position3D": {
+            "x": -86.72460893578804,
+            "y": -36.260752955980294,
+            "z": 22.5
+          },
+          "elevation": 22.5,
+          "distanceFromHomeplate": 94,
+          "angle": -67.30952380952381,
+          "facing": 112.69047619047619,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rangers-3-6-11",
+          "sectionId": "3",
+          "row": "6",
+          "seatNumber": "11",
+          "position3D": {
+            "x": -86.52745622452937,
+            "y": -36.72872607799177,
+            "z": 22.5
+          },
+          "elevation": 22.5,
+          "distanceFromHomeplate": 94,
+          "angle": -67,
+          "facing": 113,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rangers-3-6-12",
+          "sectionId": "3",
+          "row": "6",
+          "seatNumber": "12",
+          "position3D": {
+            "x": -86.32777831351231,
+            "y": -37.19562731629986,
+            "z": 22.5
+          },
+          "elevation": 22.5,
+          "distanceFromHomeplate": 94,
+          "angle": -66.69047619047619,
+          "facing": 113.30952380952381,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rangers-3-6-13",
+          "sectionId": "3",
+          "row": "6",
+          "seatNumber": "13",
+          "position3D": {
+            "x": -86.12558103009654,
+            "y": -37.66144304495348,
+            "z": 22.5
+          },
+          "elevation": 22.5,
+          "distanceFromHomeplate": 94,
+          "angle": -66.38095238095238,
+          "facing": 113.61904761904762,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rangers-3-6-14",
+          "sectionId": "3",
+          "row": "6",
+          "seatNumber": "14",
+          "position3D": {
+            "x": -85.92087027516665,
+            "y": -38.126159669680675,
+            "z": 22.5
+          },
+          "elevation": 22.5,
+          "distanceFromHomeplate": 94.00000000000001,
+          "angle": -66.07142857142857,
+          "facing": 113.92857142857143,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rangers-3-6-15",
+          "sectionId": "3",
+          "row": "6",
+          "seatNumber": "15",
+          "position3D": {
+            "x": -85.71365202295983,
+            "y": -38.5897636282856,
+            "z": 22.5
+          },
+          "elevation": 22.5,
+          "distanceFromHomeplate": 94.00000000000001,
+          "angle": -65.76190476190476,
+          "facing": 114.23809523809524,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rangers-3-6-16",
+          "sectionId": "3",
+          "row": "6",
+          "seatNumber": "16",
+          "position3D": {
+            "x": -85.50393232089162,
+            "y": -39.05224139104419,
+            "z": 22.5
+          },
+          "elevation": 22.5,
+          "distanceFromHomeplate": 94,
+          "angle": -65.45238095238095,
+          "facing": 114.54761904761905,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rangers-3-6-17",
+          "sectionId": "3",
+          "row": "6",
+          "seatNumber": "17",
+          "position3D": {
+            "x": -85.29171728937928,
+            "y": -39.51357946109919,
+            "z": 22.5
+          },
+          "elevation": 22.5,
+          "distanceFromHomeplate": 94,
+          "angle": -65.14285714285714,
+          "facing": 114.85714285714286,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rangers-3-6-18",
+          "sectionId": "3",
+          "row": "6",
+          "seatNumber": "18",
+          "position3D": {
+            "x": -85.07701312166336,
+            "y": -39.97376437485368,
+            "z": 22.5
+          },
+          "elevation": 22.5,
+          "distanceFromHomeplate": 94,
+          "angle": -64.83333333333333,
+          "facing": 115.16666666666667,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rangers-3-6-19",
+          "sectionId": "3",
+          "row": "6",
+          "seatNumber": "19",
+          "position3D": {
+            "x": -84.8598260836268,
+            "y": -40.43278270236433,
+            "z": 22.5
+          },
+          "elevation": 22.5,
+          "distanceFromHomeplate": 94,
+          "angle": -64.52380952380952,
+          "facing": 115.47619047619048,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rangers-3-6-20",
+          "sectionId": "3",
+          "row": "6",
+          "seatNumber": "20",
+          "position3D": {
+            "x": -84.64016251361213,
+            "y": -40.890621047733276,
+            "z": 22.5
+          },
+          "elevation": 22.5,
+          "distanceFromHomeplate": 94,
+          "angle": -64.21428571428571,
+          "facing": 115.78571428571429,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rangers-3-6-21",
+          "sectionId": "3",
+          "row": "6",
+          "seatNumber": "21",
+          "position3D": {
+            "x": -84.41802882223645,
+            "y": -41.347266049499055,
+            "z": 22.5
+          },
+          "elevation": 22.5,
+          "distanceFromHomeplate": 94,
+          "angle": -63.904761904761905,
+          "facing": 116.0952380952381,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        }
+      ],
+      "covered": false,
+      "hasAisleSeats": false,
+      "wheelchairRow": false
+    },
+    {
+      "rowNumber": "7",
+      "sectionId": "3",
+      "seatCount": 21,
+      "elevation": 25,
+      "depth": 96.8,
+      "rowSpacing": 36,
+      "seats": [
+        {
+          "id": "rangers-3-7-1",
+          "sectionId": "3",
+          "row": "7",
+          "seatNumber": "1",
+          "position3D": {
+            "x": -91.01715198022937,
+            "y": -32.956305093378226,
+            "z": 25
+          },
+          "elevation": 25,
+          "distanceFromHomeplate": 96.8,
+          "angle": -70.0952380952381,
+          "facing": 109.9047619047619,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rangers-3-7-2",
+          "sectionId": "3",
+          "row": "7",
+          "seatNumber": "2",
+          "position3D": {
+            "x": -90.83778786572033,
+            "y": -33.447515537964705,
+            "z": 25
+          },
+          "elevation": 25,
+          "distanceFromHomeplate": 96.79999999999998,
+          "angle": -69.78571428571429,
+          "facing": 110.21428571428571,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rangers-3-7-3",
+          "sectionId": "3",
+          "row": "7",
+          "seatNumber": "3",
+          "position3D": {
+            "x": -90.65577275960726,
+            "y": -33.93774985703163,
+            "z": 25
+          },
+          "elevation": 25,
+          "distanceFromHomeplate": 96.8,
+          "angle": -69.47619047619048,
+          "facing": 110.52380952380952,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rangers-3-7-4",
+          "sectionId": "3",
+          "row": "7",
+          "seatNumber": "4",
+          "position3D": {
+            "x": -90.4711119737821,
+            "y": -34.42699374368001,
+            "z": 25
+          },
+          "elevation": 25,
+          "distanceFromHomeplate": 96.80000000000001,
+          "angle": -69.16666666666667,
+          "facing": 110.83333333333333,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rangers-3-7-5",
+          "sectionId": "3",
+          "row": "7",
+          "seatNumber": "5",
+          "position3D": {
+            "x": -90.28381089734779,
+            "y": -34.91523291991539,
+            "z": 25
+          },
+          "elevation": 25,
+          "distanceFromHomeplate": 96.8,
+          "angle": -68.85714285714286,
+          "facing": 111.14285714285714,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rangers-3-7-6",
+          "sectionId": "3",
+          "row": "7",
+          "seatNumber": "6",
+          "position3D": {
+            "x": -90.09387499646108,
+            "y": -35.40245313706444,
+            "z": 25
+          },
+          "elevation": 25,
+          "distanceFromHomeplate": 96.79999999999998,
+          "angle": -68.54761904761905,
+          "facing": 111.45238095238095,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rangers-3-7-7",
+          "sectionId": "3",
+          "row": "7",
+          "seatNumber": "7",
+          "position3D": {
+            "x": -89.90130981417283,
+            "y": -35.88864017619101,
+            "z": 25
+          },
+          "elevation": 25,
+          "distanceFromHomeplate": 96.8,
+          "angle": -68.23809523809524,
+          "facing": 111.76190476190476,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rangers-3-7-8",
+          "sectionId": "3",
+          "row": "7",
+          "seatNumber": "8",
+          "position3D": {
+            "x": -89.70612097026628,
+            "y": -36.3737798485111,
+            "z": 25
+          },
+          "elevation": 25,
+          "distanceFromHomeplate": 96.8,
+          "angle": -67.92857142857143,
+          "facing": 112.07142857142857,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rangers-3-7-9",
+          "sectionId": "3",
+          "row": "7",
+          "seatNumber": "9",
+          "position3D": {
+            "x": -89.50831416109314,
+            "y": -36.85785799580671,
+            "z": 25
+          },
+          "elevation": 25,
+          "distanceFromHomeplate": 96.8,
+          "angle": -67.61904761904762,
+          "facing": 112.38095238095238,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rangers-3-7-10",
+          "sectionId": "3",
+          "row": "7",
+          "seatNumber": "10",
+          "position3D": {
+            "x": -89.30789515940725,
+            "y": -37.34086049083928,
+            "z": 25
+          },
+          "elevation": 25,
+          "distanceFromHomeplate": 96.8,
+          "angle": -67.30952380952381,
+          "facing": 112.69047619047619,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rangers-3-7-11",
+          "sectionId": "3",
+          "row": "7",
+          "seatNumber": "11",
+          "position3D": {
+            "x": -89.1048698141962,
+            "y": -37.82277323776174,
+            "z": 25
+          },
+          "elevation": 25,
+          "distanceFromHomeplate": 96.8,
+          "angle": -67,
+          "facing": 113,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rangers-3-7-12",
+          "sectionId": "3",
+          "row": "7",
+          "seatNumber": "12",
+          "position3D": {
+            "x": -88.89924405051056,
+            "y": -38.30358217253007,
+            "z": 25
+          },
+          "elevation": 25,
+          "distanceFromHomeplate": 96.8,
+          "angle": -66.69047619047619,
+          "facing": 113.30952380952381,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rangers-3-7-13",
+          "sectionId": "3",
+          "row": "7",
+          "seatNumber": "13",
+          "position3D": {
+            "x": -88.6910238692909,
+            "y": -38.78327326331379,
+            "z": 25
+          },
+          "elevation": 25,
+          "distanceFromHomeplate": 96.79999999999998,
+          "angle": -66.38095238095238,
+          "facing": 113.61904761904762,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rangers-3-7-14",
+          "sectionId": "3",
+          "row": "7",
+          "seatNumber": "14",
+          "position3D": {
+            "x": -88.48021534719288,
+            "y": -39.26183251090521,
+            "z": 25
+          },
+          "elevation": 25,
+          "distanceFromHomeplate": 96.8,
+          "angle": -66.07142857142857,
+          "facing": 113.92857142857143,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rangers-3-7-15",
+          "sectionId": "3",
+          "row": "7",
+          "seatNumber": "15",
+          "position3D": {
+            "x": -88.2668246364097,
+            "y": -39.739245949128154,
+            "z": 25
+          },
+          "elevation": 25,
+          "distanceFromHomeplate": 96.8,
+          "angle": -65.76190476190476,
+          "facing": 114.23809523809524,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rangers-3-7-16",
+          "sectionId": "3",
+          "row": "7",
+          "seatNumber": "16",
+          "position3D": {
+            "x": -88.05085796449265,
+            "y": -40.21549964524551,
+            "z": 25
+          },
+          "elevation": 25,
+          "distanceFromHomeplate": 96.8,
+          "angle": -65.45238095238095,
+          "facing": 114.54761904761905,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rangers-3-7-17",
+          "sectionId": "3",
+          "row": "7",
+          "seatNumber": "17",
+          "position3D": {
+            "x": -87.8323216341693,
+            "y": -40.69057970036597,
+            "z": 25
+          },
+          "elevation": 25,
+          "distanceFromHomeplate": 96.8,
+          "angle": -65.14285714285714,
+          "facing": 114.85714285714286,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rangers-3-7-18",
+          "sectionId": "3",
+          "row": "7",
+          "seatNumber": "18",
+          "position3D": {
+            "x": -87.61122202315971,
+            "y": -41.16447224984932,
+            "z": 25
+          },
+          "elevation": 25,
+          "distanceFromHomeplate": 96.8,
+          "angle": -64.83333333333333,
+          "facing": 115.16666666666667,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rangers-3-7-19",
+          "sectionId": "3",
+          "row": "7",
+          "seatNumber": "19",
+          "position3D": {
+            "x": -87.38756558399015,
+            "y": -41.63716346371135,
+            "z": 25
+          },
+          "elevation": 25,
+          "distanceFromHomeplate": 96.8,
+          "angle": -64.52380952380952,
+          "facing": 115.47619047619048,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rangers-3-7-20",
+          "sectionId": "3",
+          "row": "7",
+          "seatNumber": "20",
+          "position3D": {
+            "x": -87.16135884380483,
+            "y": -42.10863954702746,
+            "z": 25
+          },
+          "elevation": 25,
+          "distanceFromHomeplate": 96.8,
+          "angle": -64.21428571428571,
+          "facing": 115.78571428571429,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rangers-3-7-21",
+          "sectionId": "3",
+          "row": "7",
+          "seatNumber": "21",
+          "position3D": {
+            "x": -86.93260840417541,
+            "y": -42.57888674033519,
+            "z": 25
+          },
+          "elevation": 25,
+          "distanceFromHomeplate": 96.80000000000001,
+          "angle": -63.904761904761905,
+          "facing": 116.0952380952381,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        }
+      ],
+      "covered": false,
+      "hasAisleSeats": false,
+      "wheelchairRow": false
+    },
+    {
+      "rowNumber": "8",
+      "sectionId": "3",
+      "seatCount": 21,
+      "elevation": 27.5,
+      "depth": 99.6,
+      "rowSpacing": 36,
+      "seats": [
+        {
+          "id": "rangers-3-8-1",
+          "sectionId": "3",
+          "row": "8",
+          "seatNumber": "1",
+          "position3D": {
+            "x": -93.64987951684758,
+            "y": -33.909586645666025,
+            "z": 27.5
+          },
+          "elevation": 27.5,
+          "distanceFromHomeplate": 99.6,
+          "angle": -70.0952380952381,
+          "facing": 109.9047619047619,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rangers-3-8-2",
+          "sectionId": "3",
+          "row": "8",
+          "seatNumber": "2",
+          "position3D": {
+            "x": -93.46532718415025,
+            "y": -34.415005656831454,
+            "z": 27.5
+          },
+          "elevation": 27.5,
+          "distanceFromHomeplate": 99.59999999999998,
+          "angle": -69.78571428571429,
+          "facing": 110.21428571428571,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rangers-3-8-3",
+          "sectionId": "3",
+          "row": "8",
+          "seatNumber": "3",
+          "position3D": {
+            "x": -93.27804717827358,
+            "y": -34.91942030744164,
+            "z": 27.5
+          },
+          "elevation": 27.5,
+          "distanceFromHomeplate": 99.6,
+          "angle": -69.47619047619048,
+          "facing": 110.52380952380952,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rangers-3-8-4",
+          "sectionId": "3",
+          "row": "8",
+          "seatNumber": "4",
+          "position3D": {
+            "x": -93.08804496475926,
+            "y": -35.42281587676165,
+            "z": 27.5
+          },
+          "elevation": 27.5,
+          "distanceFromHomeplate": 99.6,
+          "angle": -69.16666666666667,
+          "facing": 110.83333333333333,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rangers-3-8-5",
+          "sectionId": "3",
+          "row": "8",
+          "seatNumber": "5",
+          "position3D": {
+            "x": -92.8953260885934,
+            "y": -35.925177673797236,
+            "z": 27.5
+          },
+          "elevation": 27.5,
+          "distanceFromHomeplate": 99.6,
+          "angle": -68.85714285714286,
+          "facing": 111.14285714285714,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rangers-3-8-6",
+          "sectionId": "3",
+          "row": "8",
+          "seatNumber": "6",
+          "position3D": {
+            "x": -92.69989617404467,
+            "y": -36.42649103772333,
+            "z": 27.5
+          },
+          "elevation": 27.5,
+          "distanceFromHomeplate": 99.6,
+          "angle": -68.54761904761905,
+          "facing": 111.45238095238095,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rangers-3-8-7",
+          "sectionId": "3",
+          "row": "8",
+          "seatNumber": "7",
+          "position3D": {
+            "x": -92.50176092450015,
+            "y": -36.92674133831224,
+            "z": 27.5
+          },
+          "elevation": 27.5,
+          "distanceFromHomeplate": 99.6,
+          "angle": -68.23809523809524,
+          "facing": 111.76190476190476,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rangers-3-8-8",
+          "sectionId": "3",
+          "row": "8",
+          "seatNumber": "8",
+          "position3D": {
+            "x": -92.30092612229878,
+            "y": -37.42591397636059,
+            "z": 27.5
+          },
+          "elevation": 27.5,
+          "distanceFromHomeplate": 99.6,
+          "angle": -67.92857142857143,
+          "facing": 112.07142857142857,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rangers-3-8-9",
+          "sectionId": "3",
+          "row": "8",
+          "seatNumber": "9",
+          "position3D": {
+            "x": -92.09739762856277,
+            "y": -37.92399438411517,
+            "z": 27.5
+          },
+          "elevation": 27.5,
+          "distanceFromHomeplate": 99.6,
+          "angle": -67.61904761904762,
+          "facing": 112.38095238095238,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rangers-3-8-10",
+          "sectionId": "3",
+          "row": "8",
+          "seatNumber": "10",
+          "position3D": {
+            "x": -91.89118138302646,
+            "y": -38.420968025698265,
+            "z": 27.5
+          },
+          "elevation": 27.5,
+          "distanceFromHomeplate": 99.6,
+          "angle": -67.30952380952381,
+          "facing": 112.69047619047619,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rangers-3-8-11",
+          "sectionId": "3",
+          "row": "8",
+          "seatNumber": "11",
+          "position3D": {
+            "x": -91.68228340386304,
+            "y": -38.9168203975317,
+            "z": 27.5
+          },
+          "elevation": 27.5,
+          "distanceFromHomeplate": 99.6,
+          "angle": -67,
+          "facing": 113,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rangers-3-8-12",
+          "sectionId": "3",
+          "row": "8",
+          "seatNumber": "12",
+          "position3D": {
+            "x": -91.4707097875088,
+            "y": -39.41153702876028,
+            "z": 27.5
+          },
+          "elevation": 27.5,
+          "distanceFromHomeplate": 99.6,
+          "angle": -66.69047619047619,
+          "facing": 113.30952380952381,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rangers-3-8-13",
+          "sectionId": "3",
+          "row": "8",
+          "seatNumber": "13",
+          "position3D": {
+            "x": -91.25646670848526,
+            "y": -39.905103481674104,
+            "z": 27.5
+          },
+          "elevation": 27.5,
+          "distanceFromHomeplate": 99.6,
+          "angle": -66.38095238095238,
+          "facing": 113.61904761904762,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rangers-3-8-14",
+          "sectionId": "3",
+          "row": "8",
+          "seatNumber": "14",
+          "position3D": {
+            "x": -91.03956041921911,
+            "y": -40.397505352129734,
+            "z": 27.5
+          },
+          "elevation": 27.5,
+          "distanceFromHomeplate": 99.6,
+          "angle": -66.07142857142857,
+          "facing": 113.92857142857143,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rangers-3-8-15",
+          "sectionId": "3",
+          "row": "8",
+          "seatNumber": "15",
+          "position3D": {
+            "x": -90.81999724985955,
+            "y": -40.8887282699707,
+            "z": 27.5
+          },
+          "elevation": 27.5,
+          "distanceFromHomeplate": 99.6,
+          "angle": -65.76190476190476,
+          "facing": 114.23809523809524,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rangers-3-8-16",
+          "sectionId": "3",
+          "row": "8",
+          "seatNumber": "16",
+          "position3D": {
+            "x": -90.59778360809366,
+            "y": -41.378757899446825,
+            "z": 27.5
+          },
+          "elevation": 27.5,
+          "distanceFromHomeplate": 99.59999999999998,
+          "angle": -65.45238095238095,
+          "facing": 114.54761904761905,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rangers-3-8-17",
+          "sectionId": "3",
+          "row": "8",
+          "seatNumber": "17",
+          "position3D": {
+            "x": -90.37292597895932,
+            "y": -41.867579939632755,
+            "z": 27.5
+          },
+          "elevation": 27.5,
+          "distanceFromHomeplate": 99.6,
+          "angle": -65.14285714285714,
+          "facing": 114.85714285714286,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rangers-3-8-18",
+          "sectionId": "3",
+          "row": "8",
+          "seatNumber": "18",
+          "position3D": {
+            "x": -90.14543092465607,
+            "y": -42.355180124844956,
+            "z": 27.5
+          },
+          "elevation": 27.5,
+          "distanceFromHomeplate": 99.6,
+          "angle": -64.83333333333333,
+          "facing": 115.16666666666667,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rangers-3-8-19",
+          "sectionId": "3",
+          "row": "8",
+          "seatNumber": "19",
+          "position3D": {
+            "x": -89.9153050843535,
+            "y": -42.84154422505837,
+            "z": 27.5
+          },
+          "elevation": 27.5,
+          "distanceFromHomeplate": 99.6,
+          "angle": -64.52380952380952,
+          "facing": 115.47619047619048,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rangers-3-8-20",
+          "sectionId": "3",
+          "row": "8",
+          "seatNumber": "20",
+          "position3D": {
+            "x": -89.68255517399753,
+            "y": -43.32665804632164,
+            "z": 27.5
+          },
+          "elevation": 27.5,
+          "distanceFromHomeplate": 99.6,
+          "angle": -64.21428571428571,
+          "facing": 115.78571428571429,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rangers-3-8-21",
+          "sectionId": "3",
+          "row": "8",
+          "seatNumber": "21",
+          "position3D": {
+            "x": -89.44718798611436,
+            "y": -43.81050743117133,
+            "z": 27.5
+          },
+          "elevation": 27.5,
+          "distanceFromHomeplate": 99.6,
+          "angle": -63.904761904761905,
+          "facing": 116.0952380952381,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        }
+      ],
+      "covered": false,
+      "hasAisleSeats": false,
+      "wheelchairRow": false
+    },
+    {
+      "rowNumber": "9",
+      "sectionId": "3",
+      "seatCount": 21,
+      "elevation": 30,
+      "depth": 102.4,
+      "rowSpacing": 36,
+      "seats": [
+        {
+          "id": "rangers-3-9-1",
+          "sectionId": "3",
+          "row": "9",
+          "seatNumber": "1",
+          "position3D": {
+            "x": -96.2826070534658,
+            "y": -34.86286819795383,
+            "z": 30
+          },
+          "elevation": 30,
+          "distanceFromHomeplate": 102.4,
+          "angle": -70.0952380952381,
+          "facing": 109.9047619047619,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rangers-3-9-2",
+          "sectionId": "3",
+          "row": "9",
+          "seatNumber": "2",
+          "position3D": {
+            "x": -96.0928665025802,
+            "y": -35.3824957756982,
+            "z": 30
+          },
+          "elevation": 30,
+          "distanceFromHomeplate": 102.4,
+          "angle": -69.78571428571429,
+          "facing": 110.21428571428571,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rangers-3-9-3",
+          "sectionId": "3",
+          "row": "9",
+          "seatNumber": "3",
+          "position3D": {
+            "x": -95.90032159693992,
+            "y": -35.90109075785165,
+            "z": 30
+          },
+          "elevation": 30,
+          "distanceFromHomeplate": 102.4,
+          "angle": -69.47619047619048,
+          "facing": 110.52380952380952,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rangers-3-9-4",
+          "sectionId": "3",
+          "row": "9",
+          "seatNumber": "4",
+          "position3D": {
+            "x": -95.70497795573644,
+            "y": -36.41863800984331,
+            "z": 30
+          },
+          "elevation": 30,
+          "distanceFromHomeplate": 102.4,
+          "angle": -69.16666666666667,
+          "facing": 110.83333333333333,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rangers-3-9-5",
+          "sectionId": "3",
+          "row": "9",
+          "seatNumber": "5",
+          "position3D": {
+            "x": -95.506841279839,
+            "y": -36.93512242767909,
+            "z": 30
+          },
+          "elevation": 30,
+          "distanceFromHomeplate": 102.4,
+          "angle": -68.85714285714286,
+          "facing": 111.14285714285714,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rangers-3-9-6",
+          "sectionId": "3",
+          "row": "9",
+          "seatNumber": "6",
+          "position3D": {
+            "x": -95.30591735162827,
+            "y": -37.45052893838223,
+            "z": 30
+          },
+          "elevation": 30,
+          "distanceFromHomeplate": 102.4,
+          "angle": -68.54761904761905,
+          "facing": 111.45238095238095,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rangers-3-9-7",
+          "sectionId": "3",
+          "row": "9",
+          "seatNumber": "7",
+          "position3D": {
+            "x": -95.10221203482746,
+            "y": -37.96484250043347,
+            "z": 30
+          },
+          "elevation": 30,
+          "distanceFromHomeplate": 102.4,
+          "angle": -68.23809523809524,
+          "facing": 111.76190476190476,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rangers-3-9-8",
+          "sectionId": "3",
+          "row": "9",
+          "seatNumber": "8",
+          "position3D": {
+            "x": -94.89573127433128,
+            "y": -38.47804810421009,
+            "z": 30
+          },
+          "elevation": 30,
+          "distanceFromHomeplate": 102.4,
+          "angle": -67.92857142857143,
+          "facing": 112.07142857142857,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rangers-3-9-9",
+          "sectionId": "3",
+          "row": "9",
+          "seatNumber": "9",
+          "position3D": {
+            "x": -94.68648109603242,
+            "y": -38.99013077242363,
+            "z": 30
+          },
+          "elevation": 30,
+          "distanceFromHomeplate": 102.4,
+          "angle": -67.61904761904762,
+          "facing": 112.38095238095238,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rangers-3-9-10",
+          "sectionId": "3",
+          "row": "9",
+          "seatNumber": "10",
+          "position3D": {
+            "x": -94.4744676066457,
+            "y": -39.50107556055726,
+            "z": 30
+          },
+          "elevation": 30,
+          "distanceFromHomeplate": 102.4,
+          "angle": -67.30952380952381,
+          "facing": 112.69047619047619,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rangers-3-9-11",
+          "sectionId": "3",
+          "row": "9",
+          "seatNumber": "11",
+          "position3D": {
+            "x": -94.25969699352987,
+            "y": -40.01086755730168,
+            "z": 30
+          },
+          "elevation": 30,
+          "distanceFromHomeplate": 102.4,
+          "angle": -67,
+          "facing": 113,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rangers-3-9-12",
+          "sectionId": "3",
+          "row": "9",
+          "seatNumber": "12",
+          "position3D": {
+            "x": -94.04217552450704,
+            "y": -40.519491884990494,
+            "z": 30
+          },
+          "elevation": 30,
+          "distanceFromHomeplate": 102.4,
+          "angle": -66.69047619047619,
+          "facing": 113.30952380952381,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rangers-3-9-13",
+          "sectionId": "3",
+          "row": "9",
+          "seatNumber": "13",
+          "position3D": {
+            "x": -93.82190954767964,
+            "y": -41.02693370003443,
+            "z": 30
+          },
+          "elevation": 30,
+          "distanceFromHomeplate": 102.4,
+          "angle": -66.38095238095238,
+          "facing": 113.61904761904762,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rangers-3-9-14",
+          "sectionId": "3",
+          "row": "9",
+          "seatNumber": "14",
+          "position3D": {
+            "x": -93.59890549124538,
+            "y": -41.533178193354274,
+            "z": 30
+          },
+          "elevation": 30,
+          "distanceFromHomeplate": 102.4,
+          "angle": -66.07142857142857,
+          "facing": 113.92857142857143,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rangers-3-9-15",
+          "sectionId": "3",
+          "row": "9",
+          "seatNumber": "15",
+          "position3D": {
+            "x": -93.37316986330944,
+            "y": -42.03821059081326,
+            "z": 30
+          },
+          "elevation": 30,
+          "distanceFromHomeplate": 102.4,
+          "angle": -65.76190476190476,
+          "facing": 114.23809523809524,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rangers-3-9-16",
+          "sectionId": "3",
+          "row": "9",
+          "seatNumber": "16",
+          "position3D": {
+            "x": -93.1447092516947,
+            "y": -42.54201615364815,
+            "z": 30
+          },
+          "elevation": 30,
+          "distanceFromHomeplate": 102.4,
+          "angle": -65.45238095238095,
+          "facing": 114.54761904761905,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rangers-3-9-17",
+          "sectionId": "3",
+          "row": "9",
+          "seatNumber": "17",
+          "position3D": {
+            "x": -92.91353032374934,
+            "y": -43.044580178899544,
+            "z": 30
+          },
+          "elevation": 30,
+          "distanceFromHomeplate": 102.4,
+          "angle": -65.14285714285714,
+          "facing": 114.85714285714286,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rangers-3-9-18",
+          "sectionId": "3",
+          "row": "9",
+          "seatNumber": "18",
+          "position3D": {
+            "x": -92.67963982615242,
+            "y": -43.5458879998406,
+            "z": 30
+          },
+          "elevation": 30,
+          "distanceFromHomeplate": 102.4,
+          "angle": -64.83333333333333,
+          "facing": 115.16666666666667,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rangers-3-9-19",
+          "sectionId": "3",
+          "row": "9",
+          "seatNumber": "19",
+          "position3D": {
+            "x": -92.44304458471686,
+            "y": -44.045924986405396,
+            "z": 30
+          },
+          "elevation": 30,
+          "distanceFromHomeplate": 102.4,
+          "angle": -64.52380952380952,
+          "facing": 115.47619047619048,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rangers-3-9-20",
+          "sectionId": "3",
+          "row": "9",
+          "seatNumber": "20",
+          "position3D": {
+            "x": -92.20375150419024,
+            "y": -44.54467654561583,
+            "z": 30
+          },
+          "elevation": 30,
+          "distanceFromHomeplate": 102.4,
+          "angle": -64.21428571428571,
+          "facing": 115.78571428571429,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rangers-3-9-21",
+          "sectionId": "3",
+          "row": "9",
+          "seatNumber": "21",
+          "position3D": {
+            "x": -91.96176756805333,
+            "y": -45.04212812200748,
+            "z": 30
+          },
+          "elevation": 30,
+          "distanceFromHomeplate": 102.4,
+          "angle": -63.904761904761905,
+          "facing": 116.0952380952381,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        }
+      ],
+      "covered": false,
+      "hasAisleSeats": false,
+      "wheelchairRow": false
+    },
+    {
+      "rowNumber": "10",
+      "sectionId": "3",
+      "seatCount": 21,
+      "elevation": 32.5,
+      "depth": 105.2,
+      "rowSpacing": 36,
+      "seats": [
+        {
+          "id": "rangers-3-10-1",
+          "sectionId": "3",
+          "row": "10",
+          "seatNumber": "1",
+          "position3D": {
+            "x": -98.915334590084,
+            "y": -35.81614975024163,
+            "z": 32.5
+          },
+          "elevation": 32.5,
+          "distanceFromHomeplate": 105.2,
+          "angle": -70.0952380952381,
+          "facing": 109.9047619047619,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rangers-3-10-2",
+          "sectionId": "3",
+          "row": "10",
+          "seatNumber": "2",
+          "position3D": {
+            "x": -98.72040582101012,
+            "y": -36.34998589456495,
+            "z": 32.5
+          },
+          "elevation": 32.5,
+          "distanceFromHomeplate": 105.19999999999999,
+          "angle": -69.78571428571429,
+          "facing": 110.21428571428571,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rangers-3-10-3",
+          "sectionId": "3",
+          "row": "10",
+          "seatNumber": "3",
+          "position3D": {
+            "x": -98.52259601560624,
+            "y": -36.882761208261655,
+            "z": 32.5
+          },
+          "elevation": 32.5,
+          "distanceFromHomeplate": 105.2,
+          "angle": -69.47619047619048,
+          "facing": 110.52380952380952,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rangers-3-10-4",
+          "sectionId": "3",
+          "row": "10",
+          "seatNumber": "4",
+          "position3D": {
+            "x": -98.3219109467136,
+            "y": -37.414460142924966,
+            "z": 32.5
+          },
+          "elevation": 32.5,
+          "distanceFromHomeplate": 105.2,
+          "angle": -69.16666666666667,
+          "facing": 110.83333333333333,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rangers-3-10-5",
+          "sectionId": "3",
+          "row": "10",
+          "seatNumber": "5",
+          "position3D": {
+            "x": -98.1183564710846,
+            "y": -37.945067181560944,
+            "z": 32.5
+          },
+          "elevation": 32.5,
+          "distanceFromHomeplate": 105.20000000000002,
+          "angle": -68.85714285714286,
+          "facing": 111.14285714285714,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rangers-3-10-6",
+          "sectionId": "3",
+          "row": "10",
+          "seatNumber": "6",
+          "position3D": {
+            "x": -97.91193852921185,
+            "y": -38.47456683904111,
+            "z": 32.5
+          },
+          "elevation": 32.5,
+          "distanceFromHomeplate": 105.2,
+          "angle": -68.54761904761905,
+          "facing": 111.45238095238095,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rangers-3-10-7",
+          "sectionId": "3",
+          "row": "10",
+          "seatNumber": "7",
+          "position3D": {
+            "x": -97.70266314515477,
+            "y": -39.0029436625547,
+            "z": 32.5
+          },
+          "elevation": 32.5,
+          "distanceFromHomeplate": 105.2,
+          "angle": -68.23809523809524,
+          "facing": 111.76190476190476,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rangers-3-10-8",
+          "sectionId": "3",
+          "row": "10",
+          "seatNumber": "8",
+          "position3D": {
+            "x": -97.49053642636378,
+            "y": -39.53018223205958,
+            "z": 32.5
+          },
+          "elevation": 32.5,
+          "distanceFromHomeplate": 105.2,
+          "angle": -67.92857142857143,
+          "facing": 112.07142857142857,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rangers-3-10-9",
+          "sectionId": "3",
+          "row": "10",
+          "seatNumber": "9",
+          "position3D": {
+            "x": -97.27556456350204,
+            "y": -40.05626716073209,
+            "z": 32.5
+          },
+          "elevation": 32.5,
+          "distanceFromHomeplate": 105.19999999999999,
+          "angle": -67.61904761904762,
+          "facing": 112.38095238095238,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rangers-3-10-10",
+          "sectionId": "3",
+          "row": "10",
+          "seatNumber": "10",
+          "position3D": {
+            "x": -97.05775383026491,
+            "y": -40.58118309541624,
+            "z": 32.5
+          },
+          "elevation": 32.5,
+          "distanceFromHomeplate": 105.2,
+          "angle": -67.30952380952381,
+          "facing": 112.69047619047619,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rangers-3-10-11",
+          "sectionId": "3",
+          "row": "10",
+          "seatNumber": "11",
+          "position3D": {
+            "x": -96.8371105831967,
+            "y": -41.104914717071644,
+            "z": 32.5
+          },
+          "elevation": 32.5,
+          "distanceFromHomeplate": 105.2,
+          "angle": -67,
+          "facing": 113,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rangers-3-10-12",
+          "sectionId": "3",
+          "row": "10",
+          "seatNumber": "12",
+          "position3D": {
+            "x": -96.61364126150528,
+            "y": -41.6274467412207,
+            "z": 32.5
+          },
+          "elevation": 32.5,
+          "distanceFromHomeplate": 105.20000000000002,
+          "angle": -66.69047619047619,
+          "facing": 113.30952380952381,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rangers-3-10-13",
+          "sectionId": "3",
+          "row": "10",
+          "seatNumber": "13",
+          "position3D": {
+            "x": -96.387352386874,
+            "y": -42.14876391839474,
+            "z": 32.5
+          },
+          "elevation": 32.5,
+          "distanceFromHomeplate": 105.19999999999999,
+          "angle": -66.38095238095238,
+          "facing": 113.61904761904762,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rangers-3-10-14",
+          "sectionId": "3",
+          "row": "10",
+          "seatNumber": "14",
+          "position3D": {
+            "x": -96.15825056327161,
+            "y": -42.6688510345788,
+            "z": 32.5
+          },
+          "elevation": 32.5,
+          "distanceFromHomeplate": 105.2,
+          "angle": -66.07142857142857,
+          "facing": 113.92857142857143,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rangers-3-10-15",
+          "sectionId": "3",
+          "row": "10",
+          "seatNumber": "15",
+          "position3D": {
+            "x": -95.9263424767593,
+            "y": -43.1876929116558,
+            "z": 32.5
+          },
+          "elevation": 32.5,
+          "distanceFromHomeplate": 105.2,
+          "angle": -65.76190476190476,
+          "facing": 114.23809523809524,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rangers-3-10-16",
+          "sectionId": "3",
+          "row": "10",
+          "seatNumber": "16",
+          "position3D": {
+            "x": -95.69163489529573,
+            "y": -43.70527440784946,
+            "z": 32.5
+          },
+          "elevation": 32.5,
+          "distanceFromHomeplate": 105.2,
+          "angle": -65.45238095238095,
+          "facing": 114.54761904761905,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rangers-3-10-17",
+          "sectionId": "3",
+          "row": "10",
+          "seatNumber": "17",
+          "position3D": {
+            "x": -95.45413466853937,
+            "y": -44.221580418166326,
+            "z": 32.5
+          },
+          "elevation": 32.5,
+          "distanceFromHomeplate": 105.19999999999999,
+          "angle": -65.14285714285714,
+          "facing": 114.85714285714286,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rangers-3-10-18",
+          "sectionId": "3",
+          "row": "10",
+          "seatNumber": "18",
+          "position3D": {
+            "x": -95.21384872764878,
+            "y": -44.73659587483625,
+            "z": 32.5
+          },
+          "elevation": 32.5,
+          "distanceFromHomeplate": 105.2,
+          "angle": -64.83333333333333,
+          "facing": 115.16666666666667,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rangers-3-10-19",
+          "sectionId": "3",
+          "row": "10",
+          "seatNumber": "19",
+          "position3D": {
+            "x": -94.97078408508021,
+            "y": -45.25030574775242,
+            "z": 32.5
+          },
+          "elevation": 32.5,
+          "distanceFromHomeplate": 105.2,
+          "angle": -64.52380952380952,
+          "facing": 115.47619047619048,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rangers-3-10-20",
+          "sectionId": "3",
+          "row": "10",
+          "seatNumber": "20",
+          "position3D": {
+            "x": -94.72494783438295,
+            "y": -45.762695044910004,
+            "z": 32.5
+          },
+          "elevation": 32.5,
+          "distanceFromHomeplate": 105.2,
+          "angle": -64.21428571428571,
+          "facing": 115.78571428571429,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rangers-3-10-21",
+          "sectionId": "3",
+          "row": "10",
+          "seatNumber": "21",
+          "position3D": {
+            "x": -94.47634714999228,
+            "y": -46.27374881284362,
+            "z": 32.5
+          },
+          "elevation": 32.5,
+          "distanceFromHomeplate": 105.2,
+          "angle": -63.904761904761905,
+          "facing": 116.0952380952381,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        }
+      ],
+      "covered": false,
+      "hasAisleSeats": false,
+      "wheelchairRow": false
+    },
+    {
+      "rowNumber": "11",
+      "sectionId": "3",
+      "seatCount": 21,
+      "elevation": 35,
+      "depth": 108,
+      "rowSpacing": 36,
+      "seats": [
+        {
+          "id": "rangers-3-11-1",
+          "sectionId": "3",
+          "row": "11",
+          "seatNumber": "1",
+          "position3D": {
+            "x": -101.5480621267022,
+            "y": -36.769431302529426,
+            "z": 35
+          },
+          "elevation": 35,
+          "distanceFromHomeplate": 108.00000000000001,
+          "angle": -70.0952380952381,
+          "facing": 109.9047619047619,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rangers-3-11-2",
+          "sectionId": "3",
+          "row": "11",
+          "seatNumber": "2",
+          "position3D": {
+            "x": -101.34794513944004,
+            "y": -37.3174760134317,
+            "z": 35
+          },
+          "elevation": 35,
+          "distanceFromHomeplate": 107.99999999999999,
+          "angle": -69.78571428571429,
+          "facing": 110.21428571428571,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rangers-3-11-3",
+          "sectionId": "3",
+          "row": "11",
+          "seatNumber": "3",
+          "position3D": {
+            "x": -101.14487043427256,
+            "y": -37.86443165867166,
+            "z": 35
+          },
+          "elevation": 35,
+          "distanceFromHomeplate": 108,
+          "angle": -69.47619047619048,
+          "facing": 110.52380952380952,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rangers-3-11-4",
+          "sectionId": "3",
+          "row": "11",
+          "seatNumber": "4",
+          "position3D": {
+            "x": -100.93884393769076,
+            "y": -38.41028227600662,
+            "z": 35
+          },
+          "elevation": 35,
+          "distanceFromHomeplate": 108,
+          "angle": -69.16666666666667,
+          "facing": 110.83333333333333,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rangers-3-11-5",
+          "sectionId": "3",
+          "row": "11",
+          "seatNumber": "5",
+          "position3D": {
+            "x": -100.72987166233018,
+            "y": -38.95501193544279,
+            "z": 35
+          },
+          "elevation": 35,
+          "distanceFromHomeplate": 108,
+          "angle": -68.85714285714286,
+          "facing": 111.14285714285714,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rangers-3-11-6",
+          "sectionId": "3",
+          "row": "11",
+          "seatNumber": "6",
+          "position3D": {
+            "x": -100.51795970679544,
+            "y": -39.4986047397,
+            "z": 35
+          },
+          "elevation": 35,
+          "distanceFromHomeplate": 108.00000000000001,
+          "angle": -68.54761904761905,
+          "facing": 111.45238095238095,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rangers-3-11-7",
+          "sectionId": "3",
+          "row": "11",
+          "seatNumber": "7",
+          "position3D": {
+            "x": -100.30311425548209,
+            "y": -40.04104482467592,
+            "z": 35
+          },
+          "elevation": 35,
+          "distanceFromHomeplate": 108,
+          "angle": -68.23809523809524,
+          "facing": 111.76190476190476,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rangers-3-11-8",
+          "sectionId": "3",
+          "row": "11",
+          "seatNumber": "8",
+          "position3D": {
+            "x": -100.08534157839627,
+            "y": -40.58231635990907,
+            "z": 35
+          },
+          "elevation": 35,
+          "distanceFromHomeplate": 108,
+          "angle": -67.92857142857143,
+          "facing": 112.07142857142857,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rangers-3-11-9",
+          "sectionId": "3",
+          "row": "11",
+          "seatNumber": "9",
+          "position3D": {
+            "x": -99.86464803097168,
+            "y": -41.12240354904055,
+            "z": 35
+          },
+          "elevation": 35,
+          "distanceFromHomeplate": 107.99999999999999,
+          "angle": -67.61904761904762,
+          "facing": 112.38095238095238,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rangers-3-11-10",
+          "sectionId": "3",
+          "row": "11",
+          "seatNumber": "10",
+          "position3D": {
+            "x": -99.64104005388413,
+            "y": -41.66129063027523,
+            "z": 35
+          },
+          "elevation": 35,
+          "distanceFromHomeplate": 107.99999999999999,
+          "angle": -67.30952380952381,
+          "facing": 112.69047619047619,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rangers-3-11-11",
+          "sectionId": "3",
+          "row": "11",
+          "seatNumber": "11",
+          "position3D": {
+            "x": -99.41452417286354,
+            "y": -42.19896187684161,
+            "z": 35
+          },
+          "elevation": 35,
+          "distanceFromHomeplate": 108,
+          "angle": -67,
+          "facing": 113,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rangers-3-11-12",
+          "sectionId": "3",
+          "row": "11",
+          "seatNumber": "12",
+          "position3D": {
+            "x": -99.18510699850351,
+            "y": -42.73540159745091,
+            "z": 35
+          },
+          "elevation": 35,
+          "distanceFromHomeplate": 108,
+          "angle": -66.69047619047619,
+          "facing": 113.30952380952381,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rangers-3-11-13",
+          "sectionId": "3",
+          "row": "11",
+          "seatNumber": "13",
+          "position3D": {
+            "x": -98.95279522606837,
+            "y": -43.27059413675506,
+            "z": 35
+          },
+          "elevation": 35,
+          "distanceFromHomeplate": 108.00000000000001,
+          "angle": -66.38095238095238,
+          "facing": 113.61904761904762,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rangers-3-11-14",
+          "sectionId": "3",
+          "row": "11",
+          "seatNumber": "14",
+          "position3D": {
+            "x": -98.71759563529784,
+            "y": -43.80452387580333,
+            "z": 35
+          },
+          "elevation": 35,
+          "distanceFromHomeplate": 108,
+          "angle": -66.07142857142857,
+          "facing": 113.92857142857143,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rangers-3-11-15",
+          "sectionId": "3",
+          "row": "11",
+          "seatNumber": "15",
+          "position3D": {
+            "x": -98.47951509020916,
+            "y": -44.33717523249835,
+            "z": 35
+          },
+          "elevation": 35,
+          "distanceFromHomeplate": 107.99999999999999,
+          "angle": -65.76190476190476,
+          "facing": 114.23809523809524,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rangers-3-11-16",
+          "sectionId": "3",
+          "row": "11",
+          "seatNumber": "16",
+          "position3D": {
+            "x": -98.23856053889675,
+            "y": -44.868532662050775,
+            "z": 35
+          },
+          "elevation": 35,
+          "distanceFromHomeplate": 107.99999999999999,
+          "angle": -65.45238095238095,
+          "facing": 114.54761904761905,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rangers-3-11-17",
+          "sectionId": "3",
+          "row": "11",
+          "seatNumber": "17",
+          "position3D": {
+            "x": -97.99473901332938,
+            "y": -45.39858065743311,
+            "z": 35
+          },
+          "elevation": 35,
+          "distanceFromHomeplate": 107.99999999999999,
+          "angle": -65.14285714285714,
+          "facing": 114.85714285714286,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rangers-3-11-18",
+          "sectionId": "3",
+          "row": "11",
+          "seatNumber": "18",
+          "position3D": {
+            "x": -97.74805762914514,
+            "y": -45.927303749831886,
+            "z": 35
+          },
+          "elevation": 35,
+          "distanceFromHomeplate": 108.00000000000001,
+          "angle": -64.83333333333333,
+          "facing": 115.16666666666667,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rangers-3-11-19",
+          "sectionId": "3",
+          "row": "11",
+          "seatNumber": "19",
+          "position3D": {
+            "x": -97.49852358544356,
+            "y": -46.45468650909944,
+            "z": 35
+          },
+          "elevation": 35,
+          "distanceFromHomeplate": 108,
+          "angle": -64.52380952380952,
+          "facing": 115.47619047619048,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rangers-3-11-20",
+          "sectionId": "3",
+          "row": "11",
+          "seatNumber": "20",
+          "position3D": {
+            "x": -97.24614416457564,
+            "y": -46.980713544204185,
+            "z": 35
+          },
+          "elevation": 35,
+          "distanceFromHomeplate": 107.99999999999999,
+          "angle": -64.21428571428571,
+          "facing": 115.78571428571429,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rangers-3-11-21",
+          "sectionId": "3",
+          "row": "11",
+          "seatNumber": "21",
+          "position3D": {
+            "x": -96.99092673193124,
+            "y": -47.50536950367976,
+            "z": 35
+          },
+          "elevation": 35,
+          "distanceFromHomeplate": 108,
+          "angle": -63.904761904761905,
+          "facing": 116.0952380952381,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        }
+      ],
+      "covered": false,
+      "hasAisleSeats": false,
+      "wheelchairRow": false
+    },
+    {
+      "rowNumber": "12",
+      "sectionId": "3",
+      "seatCount": 21,
+      "elevation": 37.5,
+      "depth": 110.8,
+      "rowSpacing": 36,
+      "seats": [
+        {
+          "id": "rangers-3-12-1",
+          "sectionId": "3",
+          "row": "12",
+          "seatNumber": "1",
+          "position3D": {
+            "x": -104.1807896633204,
+            "y": -37.722712854817225,
+            "z": 37.5
+          },
+          "elevation": 37.5,
+          "distanceFromHomeplate": 110.8,
+          "angle": -70.0952380952381,
+          "facing": 109.9047619047619,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rangers-3-12-2",
+          "sectionId": "3",
+          "row": "12",
+          "seatNumber": "2",
+          "position3D": {
+            "x": -103.97548445786997,
+            "y": -38.28496613229844,
+            "z": 37.5
+          },
+          "elevation": 37.5,
+          "distanceFromHomeplate": 110.79999999999998,
+          "angle": -69.78571428571429,
+          "facing": 110.21428571428571,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rangers-3-12-3",
+          "sectionId": "3",
+          "row": "12",
+          "seatNumber": "3",
+          "position3D": {
+            "x": -103.76714485293888,
+            "y": -38.84610210908166,
+            "z": 37.5
+          },
+          "elevation": 37.5,
+          "distanceFromHomeplate": 110.8,
+          "angle": -69.47619047619048,
+          "facing": 110.52380952380952,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rangers-3-12-4",
+          "sectionId": "3",
+          "row": "12",
+          "seatNumber": "4",
+          "position3D": {
+            "x": -103.55577692866794,
+            "y": -39.40610440908827,
+            "z": 37.5
+          },
+          "elevation": 37.5,
+          "distanceFromHomeplate": 110.80000000000001,
+          "angle": -69.16666666666667,
+          "facing": 110.83333333333333,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rangers-3-12-5",
+          "sectionId": "3",
+          "row": "12",
+          "seatNumber": "5",
+          "position3D": {
+            "x": -103.34138685357578,
+            "y": -39.96495668932464,
+            "z": 37.5
+          },
+          "elevation": 37.5,
+          "distanceFromHomeplate": 110.80000000000001,
+          "angle": -68.85714285714286,
+          "facing": 111.14285714285714,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rangers-3-12-6",
+          "sectionId": "3",
+          "row": "12",
+          "seatNumber": "6",
+          "position3D": {
+            "x": -103.12398088437901,
+            "y": -40.52264264035889,
+            "z": 37.5
+          },
+          "elevation": 37.5,
+          "distanceFromHomeplate": 110.8,
+          "angle": -68.54761904761905,
+          "facing": 111.45238095238095,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rangers-3-12-7",
+          "sectionId": "3",
+          "row": "12",
+          "seatNumber": "7",
+          "position3D": {
+            "x": -102.9035653658094,
+            "y": -41.07914598679715,
+            "z": 37.5
+          },
+          "elevation": 37.5,
+          "distanceFromHomeplate": 110.8,
+          "angle": -68.23809523809524,
+          "facing": 111.76190476190476,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rangers-3-12-8",
+          "sectionId": "3",
+          "row": "12",
+          "seatNumber": "8",
+          "position3D": {
+            "x": -102.68014673042876,
+            "y": -41.63445048775857,
+            "z": 37.5
+          },
+          "elevation": 37.5,
+          "distanceFromHomeplate": 110.8,
+          "angle": -67.92857142857143,
+          "facing": 112.07142857142857,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rangers-3-12-9",
+          "sectionId": "3",
+          "row": "12",
+          "seatNumber": "9",
+          "position3D": {
+            "x": -102.45373149844131,
+            "y": -42.188539937349006,
+            "z": 37.5
+          },
+          "elevation": 37.5,
+          "distanceFromHomeplate": 110.79999999999998,
+          "angle": -67.61904761904762,
+          "facing": 112.38095238095238,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rangers-3-12-10",
+          "sectionId": "3",
+          "row": "12",
+          "seatNumber": "10",
+          "position3D": {
+            "x": -102.22432627750334,
+            "y": -42.74139816513422,
+            "z": 37.5
+          },
+          "elevation": 37.5,
+          "distanceFromHomeplate": 110.79999999999998,
+          "angle": -67.30952380952381,
+          "facing": 112.69047619047619,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rangers-3-12-11",
+          "sectionId": "3",
+          "row": "12",
+          "seatNumber": "11",
+          "position3D": {
+            "x": -101.99193776253037,
+            "y": -43.29300903661158,
+            "z": 37.5
+          },
+          "elevation": 37.5,
+          "distanceFromHomeplate": 110.80000000000001,
+          "angle": -67,
+          "facing": 113,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rangers-3-12-12",
+          "sectionId": "3",
+          "row": "12",
+          "seatNumber": "12",
+          "position3D": {
+            "x": -101.75657273550175,
+            "y": -43.84335645368112,
+            "z": 37.5
+          },
+          "elevation": 37.5,
+          "distanceFromHomeplate": 110.8,
+          "angle": -66.69047619047619,
+          "facing": 113.30952380952381,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rangers-3-12-13",
+          "sectionId": "3",
+          "row": "12",
+          "seatNumber": "13",
+          "position3D": {
+            "x": -101.51823806526274,
+            "y": -44.392424355115374,
+            "z": 37.5
+          },
+          "elevation": 37.5,
+          "distanceFromHomeplate": 110.80000000000001,
+          "angle": -66.38095238095238,
+          "facing": 113.61904761904762,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rangers-3-12-14",
+          "sectionId": "3",
+          "row": "12",
+          "seatNumber": "14",
+          "position3D": {
+            "x": -101.27694070732409,
+            "y": -44.94019671702786,
+            "z": 37.5
+          },
+          "elevation": 37.5,
+          "distanceFromHomeplate": 110.8,
+          "angle": -66.07142857142857,
+          "facing": 113.92857142857143,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rangers-3-12-15",
+          "sectionId": "3",
+          "row": "12",
+          "seatNumber": "15",
+          "position3D": {
+            "x": -101.03268770365904,
+            "y": -45.486657553340905,
+            "z": 37.5
+          },
+          "elevation": 37.5,
+          "distanceFromHomeplate": 110.8,
+          "angle": -65.76190476190476,
+          "facing": 114.23809523809524,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rangers-3-12-16",
+          "sectionId": "3",
+          "row": "12",
+          "seatNumber": "16",
+          "position3D": {
+            "x": -100.78548618249778,
+            "y": -46.03179091625209,
+            "z": 37.5
+          },
+          "elevation": 37.5,
+          "distanceFromHomeplate": 110.8,
+          "angle": -65.45238095238095,
+          "facing": 114.54761904761905,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rangers-3-12-17",
+          "sectionId": "3",
+          "row": "12",
+          "seatNumber": "17",
+          "position3D": {
+            "x": -100.5353433581194,
+            "y": -46.5755808966999,
+            "z": 37.5
+          },
+          "elevation": 37.5,
+          "distanceFromHomeplate": 110.8,
+          "angle": -65.14285714285714,
+          "facing": 114.85714285714286,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rangers-3-12-18",
+          "sectionId": "3",
+          "row": "12",
+          "seatNumber": "18",
+          "position3D": {
+            "x": -100.2822665306415,
+            "y": -47.118011624827524,
+            "z": 37.5
+          },
+          "elevation": 37.5,
+          "distanceFromHomeplate": 110.80000000000001,
+          "angle": -64.83333333333333,
+          "facing": 115.16666666666667,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rangers-3-12-19",
+          "sectionId": "3",
+          "row": "12",
+          "seatNumber": "19",
+          "position3D": {
+            "x": -100.02626308580692,
+            "y": -47.659067270446464,
+            "z": 37.5
+          },
+          "elevation": 37.5,
+          "distanceFromHomeplate": 110.80000000000001,
+          "angle": -64.52380952380952,
+          "facing": 115.47619047619048,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rangers-3-12-20",
+          "sectionId": "3",
+          "row": "12",
+          "seatNumber": "20",
+          "position3D": {
+            "x": -99.76734049476833,
+            "y": -48.19873204349837,
+            "z": 37.5
+          },
+          "elevation": 37.5,
+          "distanceFromHomeplate": 110.79999999999998,
+          "angle": -64.21428571428571,
+          "facing": 115.78571428571429,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rangers-3-12-21",
+          "sectionId": "3",
+          "row": "12",
+          "seatNumber": "21",
+          "position3D": {
+            "x": -99.5055063138702,
+            "y": -48.736990194515904,
+            "z": 37.5
+          },
+          "elevation": 37.5,
+          "distanceFromHomeplate": 110.80000000000001,
+          "angle": -63.904761904761905,
+          "facing": 116.0952380952381,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        }
+      ],
+      "covered": false,
+      "hasAisleSeats": false,
+      "wheelchairRow": false
+    },
+    {
+      "rowNumber": "13",
+      "sectionId": "3",
+      "seatCount": 21,
+      "elevation": 40,
+      "depth": 113.6,
+      "rowSpacing": 36,
+      "seats": [
+        {
+          "id": "rangers-3-13-1",
+          "sectionId": "3",
+          "row": "13",
+          "seatNumber": "1",
+          "position3D": {
+            "x": -106.8135171999386,
+            "y": -38.67599440710502,
+            "z": 40
+          },
+          "elevation": 40,
+          "distanceFromHomeplate": 113.6,
+          "angle": -70.0952380952381,
+          "facing": 109.9047619047619,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rangers-3-13-2",
+          "sectionId": "3",
+          "row": "13",
+          "seatNumber": "2",
+          "position3D": {
+            "x": -106.60302377629989,
+            "y": -39.25245625116519,
+            "z": 40
+          },
+          "elevation": 40,
+          "distanceFromHomeplate": 113.6,
+          "angle": -69.78571428571429,
+          "facing": 110.21428571428571,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rangers-3-13-3",
+          "sectionId": "3",
+          "row": "13",
+          "seatNumber": "3",
+          "position3D": {
+            "x": -106.3894192716052,
+            "y": -39.82777255949167,
+            "z": 40
+          },
+          "elevation": 40,
+          "distanceFromHomeplate": 113.6,
+          "angle": -69.47619047619048,
+          "facing": 110.52380952380952,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rangers-3-13-4",
+          "sectionId": "3",
+          "row": "13",
+          "seatNumber": "4",
+          "position3D": {
+            "x": -106.1727099196451,
+            "y": -40.401926542169925,
+            "z": 40
+          },
+          "elevation": 40,
+          "distanceFromHomeplate": 113.60000000000001,
+          "angle": -69.16666666666667,
+          "facing": 110.83333333333333,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rangers-3-13-5",
+          "sectionId": "3",
+          "row": "13",
+          "seatNumber": "5",
+          "position3D": {
+            "x": -105.95290204482137,
+            "y": -40.97490144320649,
+            "z": 40
+          },
+          "elevation": 40,
+          "distanceFromHomeplate": 113.6,
+          "angle": -68.85714285714286,
+          "facing": 111.14285714285714,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rangers-3-13-6",
+          "sectionId": "3",
+          "row": "13",
+          "seatNumber": "6",
+          "position3D": {
+            "x": -105.7300020619626,
+            "y": -41.54668054101778,
+            "z": 40
+          },
+          "elevation": 40,
+          "distanceFromHomeplate": 113.60000000000001,
+          "angle": -68.54761904761905,
+          "facing": 111.45238095238095,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rangers-3-13-7",
+          "sectionId": "3",
+          "row": "13",
+          "seatNumber": "7",
+          "position3D": {
+            "x": -105.50401647613671,
+            "y": -42.11724714891837,
+            "z": 40
+          },
+          "elevation": 40,
+          "distanceFromHomeplate": 113.60000000000001,
+          "angle": -68.23809523809524,
+          "facing": 111.76190476190476,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rangers-3-13-8",
+          "sectionId": "3",
+          "row": "13",
+          "seatNumber": "8",
+          "position3D": {
+            "x": -105.27495188246125,
+            "y": -42.68658461560806,
+            "z": 40
+          },
+          "elevation": 40,
+          "distanceFromHomeplate": 113.6,
+          "angle": -67.92857142857143,
+          "facing": 112.07142857142857,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rangers-3-13-9",
+          "sectionId": "3",
+          "row": "13",
+          "seatNumber": "9",
+          "position3D": {
+            "x": -105.04281496591095,
+            "y": -43.254676325657464,
+            "z": 40
+          },
+          "elevation": 40,
+          "distanceFromHomeplate": 113.6,
+          "angle": -67.61904761904762,
+          "facing": 112.38095238095238,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rangers-3-13-10",
+          "sectionId": "3",
+          "row": "13",
+          "seatNumber": "10",
+          "position3D": {
+            "x": -104.80761250112256,
+            "y": -43.8215056999932,
+            "z": 40
+          },
+          "elevation": 40,
+          "distanceFromHomeplate": 113.6,
+          "angle": -67.30952380952381,
+          "facing": 112.69047619047619,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rangers-3-13-11",
+          "sectionId": "3",
+          "row": "13",
+          "seatNumber": "11",
+          "position3D": {
+            "x": -104.5693513521972,
+            "y": -44.38705619638154,
+            "z": 40
+          },
+          "elevation": 40,
+          "distanceFromHomeplate": 113.6,
+          "angle": -67,
+          "facing": 113,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rangers-3-13-12",
+          "sectionId": "3",
+          "row": "13",
+          "seatNumber": "12",
+          "position3D": {
+            "x": -104.32803847249998,
+            "y": -44.951311309911326,
+            "z": 40
+          },
+          "elevation": 40,
+          "distanceFromHomeplate": 113.6,
+          "angle": -66.69047619047619,
+          "facing": 113.30952380952381,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rangers-3-13-13",
+          "sectionId": "3",
+          "row": "13",
+          "seatNumber": "13",
+          "position3D": {
+            "x": -104.0836809044571,
+            "y": -45.51425457347569,
+            "z": 40
+          },
+          "elevation": 40,
+          "distanceFromHomeplate": 113.6,
+          "angle": -66.38095238095238,
+          "facing": 113.61904761904762,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rangers-3-13-14",
+          "sectionId": "3",
+          "row": "13",
+          "seatNumber": "14",
+          "position3D": {
+            "x": -103.83628577935032,
+            "y": -46.07586955825239,
+            "z": 40
+          },
+          "elevation": 40,
+          "distanceFromHomeplate": 113.6,
+          "angle": -66.07142857142857,
+          "facing": 113.92857142857143,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rangers-3-13-15",
+          "sectionId": "3",
+          "row": "13",
+          "seatNumber": "15",
+          "position3D": {
+            "x": -103.5858603171089,
+            "y": -46.63613987418345,
+            "z": 40
+          },
+          "elevation": 40,
+          "distanceFromHomeplate": 113.6,
+          "angle": -65.76190476190476,
+          "facing": 114.23809523809524,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rangers-3-13-16",
+          "sectionId": "3",
+          "row": "13",
+          "seatNumber": "16",
+          "position3D": {
+            "x": -103.3324118260988,
+            "y": -47.19504917045341,
+            "z": 40
+          },
+          "elevation": 40,
+          "distanceFromHomeplate": 113.6,
+          "angle": -65.45238095238095,
+          "facing": 114.54761904761905,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rangers-3-13-17",
+          "sectionId": "3",
+          "row": "13",
+          "seatNumber": "17",
+          "position3D": {
+            "x": -103.07594770290942,
+            "y": -47.75258113596668,
+            "z": 40
+          },
+          "elevation": 40,
+          "distanceFromHomeplate": 113.6,
+          "angle": -65.14285714285714,
+          "facing": 114.85714285714286,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rangers-3-13-18",
+          "sectionId": "3",
+          "row": "13",
+          "seatNumber": "18",
+          "position3D": {
+            "x": -102.81647543213784,
+            "y": -48.30871949982316,
+            "z": 40
+          },
+          "elevation": 40,
+          "distanceFromHomeplate": 113.6,
+          "angle": -64.83333333333333,
+          "facing": 115.16666666666667,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rangers-3-13-19",
+          "sectionId": "3",
+          "row": "13",
+          "seatNumber": "19",
+          "position3D": {
+            "x": -102.55400258617026,
+            "y": -48.86344803179348,
+            "z": 40
+          },
+          "elevation": 40,
+          "distanceFromHomeplate": 113.6,
+          "angle": -64.52380952380952,
+          "facing": 115.47619047619048,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rangers-3-13-20",
+          "sectionId": "3",
+          "row": "13",
+          "seatNumber": "20",
+          "position3D": {
+            "x": -102.28853682496104,
+            "y": -49.41675054279255,
+            "z": 40
+          },
+          "elevation": 40,
+          "distanceFromHomeplate": 113.6,
+          "angle": -64.21428571428571,
+          "facing": 115.78571428571429,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rangers-3-13-21",
+          "sectionId": "3",
+          "row": "13",
+          "seatNumber": "21",
+          "position3D": {
+            "x": -102.02008589580915,
+            "y": -49.96861088535204,
+            "z": 40
+          },
+          "elevation": 40,
+          "distanceFromHomeplate": 113.6,
+          "angle": -63.904761904761905,
+          "facing": 116.0952380952381,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        }
+      ],
+      "covered": false,
+      "hasAisleSeats": false,
+      "wheelchairRow": false
+    },
+    {
+      "rowNumber": "14",
+      "sectionId": "3",
+      "seatCount": 21,
+      "elevation": 42.5,
+      "depth": 116.4,
+      "rowSpacing": 36,
+      "seats": [
+        {
+          "id": "rangers-3-14-1",
+          "sectionId": "3",
+          "row": "14",
+          "seatNumber": "1",
+          "position3D": {
+            "x": -109.44624473655682,
+            "y": -39.62927595939283,
+            "z": 42.5
+          },
+          "elevation": 42.5,
+          "distanceFromHomeplate": 116.4,
+          "angle": -70.0952380952381,
+          "facing": 109.9047619047619,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rangers-3-14-2",
+          "sectionId": "3",
+          "row": "14",
+          "seatNumber": "2",
+          "position3D": {
+            "x": -109.23056309472983,
+            "y": -40.21994637003194,
+            "z": 42.5
+          },
+          "elevation": 42.5,
+          "distanceFromHomeplate": 116.4,
+          "angle": -69.78571428571429,
+          "facing": 110.21428571428571,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rangers-3-14-3",
+          "sectionId": "3",
+          "row": "14",
+          "seatNumber": "3",
+          "position3D": {
+            "x": -109.01169369027154,
+            "y": -40.80944300990168,
+            "z": 42.5
+          },
+          "elevation": 42.5,
+          "distanceFromHomeplate": 116.4,
+          "angle": -69.47619047619048,
+          "facing": 110.52380952380952,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rangers-3-14-4",
+          "sectionId": "3",
+          "row": "14",
+          "seatNumber": "4",
+          "position3D": {
+            "x": -108.78964291062228,
+            "y": -41.39774867525158,
+            "z": 42.5
+          },
+          "elevation": 42.5,
+          "distanceFromHomeplate": 116.4,
+          "angle": -69.16666666666667,
+          "facing": 110.83333333333333,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rangers-3-14-5",
+          "sectionId": "3",
+          "row": "14",
+          "seatNumber": "5",
+          "position3D": {
+            "x": -108.56441723606699,
+            "y": -41.984846197088345,
+            "z": 42.5
+          },
+          "elevation": 42.5,
+          "distanceFromHomeplate": 116.4,
+          "angle": -68.85714285714286,
+          "facing": 111.14285714285714,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rangers-3-14-6",
+          "sectionId": "3",
+          "row": "14",
+          "seatNumber": "6",
+          "position3D": {
+            "x": -108.3360232395462,
+            "y": -42.57071844167667,
+            "z": 42.5
+          },
+          "elevation": 42.5,
+          "distanceFromHomeplate": 116.4,
+          "angle": -68.54761904761905,
+          "facing": 111.45238095238095,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rangers-3-14-7",
+          "sectionId": "3",
+          "row": "14",
+          "seatNumber": "7",
+          "position3D": {
+            "x": -108.10446758646403,
+            "y": -43.15534831103961,
+            "z": 42.5
+          },
+          "elevation": 42.5,
+          "distanceFromHomeplate": 116.4,
+          "angle": -68.23809523809524,
+          "facing": 111.76190476190476,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rangers-3-14-8",
+          "sectionId": "3",
+          "row": "14",
+          "seatNumber": "8",
+          "position3D": {
+            "x": -107.86975703449376,
+            "y": -43.73871874345756,
+            "z": 42.5
+          },
+          "elevation": 42.5,
+          "distanceFromHomeplate": 116.4,
+          "angle": -67.92857142857143,
+          "facing": 112.07142857142857,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rangers-3-14-9",
+          "sectionId": "3",
+          "row": "14",
+          "seatNumber": "9",
+          "position3D": {
+            "x": -107.6318984333806,
+            "y": -44.32081271396592,
+            "z": 42.5
+          },
+          "elevation": 42.5,
+          "distanceFromHomeplate": 116.4,
+          "angle": -67.61904761904762,
+          "facing": 112.38095238095238,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rangers-3-14-10",
+          "sectionId": "3",
+          "row": "14",
+          "seatNumber": "10",
+          "position3D": {
+            "x": -107.39089872474179,
+            "y": -44.9016132348522,
+            "z": 42.5
+          },
+          "elevation": 42.5,
+          "distanceFromHomeplate": 116.4,
+          "angle": -67.30952380952381,
+          "facing": 112.69047619047619,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rangers-3-14-11",
+          "sectionId": "3",
+          "row": "14",
+          "seatNumber": "11",
+          "position3D": {
+            "x": -107.14676494186403,
+            "y": -45.481103356151515,
+            "z": 42.5
+          },
+          "elevation": 42.5,
+          "distanceFromHomeplate": 116.39999999999999,
+          "angle": -67,
+          "facing": 113,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rangers-3-14-12",
+          "sectionId": "3",
+          "row": "14",
+          "seatNumber": "12",
+          "position3D": {
+            "x": -106.89950420949823,
+            "y": -46.05926616614154,
+            "z": 42.5
+          },
+          "elevation": 42.5,
+          "distanceFromHomeplate": 116.4,
+          "angle": -66.69047619047619,
+          "facing": 113.30952380952381,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rangers-3-14-13",
+          "sectionId": "3",
+          "row": "14",
+          "seatNumber": "13",
+          "position3D": {
+            "x": -106.64912374365147,
+            "y": -46.63608479183601,
+            "z": 42.5
+          },
+          "elevation": 42.5,
+          "distanceFromHomeplate": 116.4,
+          "angle": -66.38095238095238,
+          "facing": 113.61904761904762,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rangers-3-14-14",
+          "sectionId": "3",
+          "row": "14",
+          "seatNumber": "14",
+          "position3D": {
+            "x": -106.39563085137657,
+            "y": -47.211542399476926,
+            "z": 42.5
+          },
+          "elevation": 42.5,
+          "distanceFromHomeplate": 116.4,
+          "angle": -66.07142857142857,
+          "facing": 113.92857142857143,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rangers-3-14-15",
+          "sectionId": "3",
+          "row": "14",
+          "seatNumber": "15",
+          "position3D": {
+            "x": -106.13903293055877,
+            "y": -47.78562219502601,
+            "z": 42.5
+          },
+          "elevation": 42.5,
+          "distanceFromHomeplate": 116.4,
+          "angle": -65.76190476190476,
+          "facing": 114.23809523809524,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rangers-3-14-16",
+          "sectionId": "3",
+          "row": "14",
+          "seatNumber": "16",
+          "position3D": {
+            "x": -105.87933746969983,
+            "y": -48.358307424654726,
+            "z": 42.5
+          },
+          "elevation": 42.5,
+          "distanceFromHomeplate": 116.4,
+          "angle": -65.45238095238095,
+          "facing": 114.54761904761905,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rangers-3-14-17",
+          "sectionId": "3",
+          "row": "14",
+          "seatNumber": "17",
+          "position3D": {
+            "x": -105.61655204769946,
+            "y": -48.92958137523347,
+            "z": 42.5
+          },
+          "elevation": 42.5,
+          "distanceFromHomeplate": 116.4,
+          "angle": -65.14285714285714,
+          "facing": 114.85714285714286,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rangers-3-14-18",
+          "sectionId": "3",
+          "row": "14",
+          "seatNumber": "18",
+          "position3D": {
+            "x": -105.3506843336342,
+            "y": -49.499427374818815,
+            "z": 42.5
+          },
+          "elevation": 42.5,
+          "distanceFromHomeplate": 116.4,
+          "angle": -64.83333333333333,
+          "facing": 115.16666666666667,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rangers-3-14-19",
+          "sectionId": "3",
+          "row": "14",
+          "seatNumber": "19",
+          "position3D": {
+            "x": -105.08174208653362,
+            "y": -50.067828793140514,
+            "z": 42.5
+          },
+          "elevation": 42.5,
+          "distanceFromHomeplate": 116.4,
+          "angle": -64.52380952380952,
+          "facing": 115.47619047619048,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rangers-3-14-20",
+          "sectionId": "3",
+          "row": "14",
+          "seatNumber": "20",
+          "position3D": {
+            "x": -104.80973315515375,
+            "y": -50.63476904208674,
+            "z": 42.5
+          },
+          "elevation": 42.5,
+          "distanceFromHomeplate": 116.4,
+          "angle": -64.21428571428571,
+          "facing": 115.78571428571429,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rangers-3-14-21",
+          "sectionId": "3",
+          "row": "14",
+          "seatNumber": "21",
+          "position3D": {
+            "x": -104.53466547774812,
+            "y": -51.20023157618819,
+            "z": 42.5
+          },
+          "elevation": 42.5,
+          "distanceFromHomeplate": 116.4,
+          "angle": -63.904761904761905,
+          "facing": 116.0952380952381,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        }
+      ],
+      "covered": false,
+      "hasAisleSeats": false,
+      "wheelchairRow": false
+    },
+    {
+      "rowNumber": "15",
+      "sectionId": "3",
+      "seatCount": 21,
+      "elevation": 45,
+      "depth": 119.19999999999999,
+      "rowSpacing": 36,
+      "seats": [
+        {
+          "id": "rangers-3-15-1",
+          "sectionId": "3",
+          "row": "15",
+          "seatNumber": "1",
+          "position3D": {
+            "x": -112.07897227317501,
+            "y": -40.582557511680626,
+            "z": 45
+          },
+          "elevation": 45,
+          "distanceFromHomeplate": 119.2,
+          "angle": -70.0952380952381,
+          "facing": 109.9047619047619,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rangers-3-15-2",
+          "sectionId": "3",
+          "row": "15",
+          "seatNumber": "2",
+          "position3D": {
+            "x": -111.85810241315974,
+            "y": -41.18743648889868,
+            "z": 45
+          },
+          "elevation": 45,
+          "distanceFromHomeplate": 119.19999999999999,
+          "angle": -69.78571428571429,
+          "facing": 110.21428571428571,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rangers-3-15-3",
+          "sectionId": "3",
+          "row": "15",
+          "seatNumber": "3",
+          "position3D": {
+            "x": -111.63396810893785,
+            "y": -41.79111346031168,
+            "z": 45
+          },
+          "elevation": 45,
+          "distanceFromHomeplate": 119.19999999999999,
+          "angle": -69.47619047619048,
+          "facing": 110.52380952380952,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rangers-3-15-4",
+          "sectionId": "3",
+          "row": "15",
+          "seatNumber": "4",
+          "position3D": {
+            "x": -111.40657590159942,
+            "y": -42.39357080833322,
+            "z": 45
+          },
+          "elevation": 45,
+          "distanceFromHomeplate": 119.19999999999999,
+          "angle": -69.16666666666667,
+          "facing": 110.83333333333333,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rangers-3-15-5",
+          "sectionId": "3",
+          "row": "15",
+          "seatNumber": "5",
+          "position3D": {
+            "x": -111.17593242731256,
+            "y": -42.994790950970184,
+            "z": 45
+          },
+          "elevation": 45,
+          "distanceFromHomeplate": 119.19999999999999,
+          "angle": -68.85714285714286,
+          "facing": 111.14285714285714,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rangers-3-15-6",
+          "sectionId": "3",
+          "row": "15",
+          "seatNumber": "6",
+          "position3D": {
+            "x": -110.94204441712976,
+            "y": -43.59475634233555,
+            "z": 45
+          },
+          "elevation": 45,
+          "distanceFromHomeplate": 119.2,
+          "angle": -68.54761904761905,
+          "facing": 111.45238095238095,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rangers-3-15-7",
+          "sectionId": "3",
+          "row": "15",
+          "seatNumber": "7",
+          "position3D": {
+            "x": -110.70491869679132,
+            "y": -44.19344947316083,
+            "z": 45
+          },
+          "elevation": 45,
+          "distanceFromHomeplate": 119.19999999999999,
+          "angle": -68.23809523809524,
+          "facing": 111.76190476190476,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rangers-3-15-8",
+          "sectionId": "3",
+          "row": "15",
+          "seatNumber": "8",
+          "position3D": {
+            "x": -110.46456218652624,
+            "y": -44.79085287130705,
+            "z": 45
+          },
+          "elevation": 45,
+          "distanceFromHomeplate": 119.19999999999999,
+          "angle": -67.92857142857143,
+          "facing": 112.07142857142857,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rangers-3-15-9",
+          "sectionId": "3",
+          "row": "15",
+          "seatNumber": "9",
+          "position3D": {
+            "x": -110.22098190085022,
+            "y": -45.38694910227438,
+            "z": 45
+          },
+          "elevation": 45,
+          "distanceFromHomeplate": 119.19999999999999,
+          "angle": -67.61904761904762,
+          "facing": 112.38095238095238,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rangers-3-15-10",
+          "sectionId": "3",
+          "row": "15",
+          "seatNumber": "10",
+          "position3D": {
+            "x": -109.97418494836099,
+            "y": -45.981720769711174,
+            "z": 45
+          },
+          "elevation": 45,
+          "distanceFromHomeplate": 119.19999999999999,
+          "angle": -67.30952380952381,
+          "facing": 112.69047619047619,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rangers-3-15-11",
+          "sectionId": "3",
+          "row": "15",
+          "seatNumber": "11",
+          "position3D": {
+            "x": -109.72417853153085,
+            "y": -46.57515051592148,
+            "z": 45
+          },
+          "elevation": 45,
+          "distanceFromHomeplate": 119.19999999999999,
+          "angle": -67,
+          "facing": 113,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rangers-3-15-12",
+          "sectionId": "3",
+          "row": "15",
+          "seatNumber": "12",
+          "position3D": {
+            "x": -109.47096994649647,
+            "y": -47.16722102237174,
+            "z": 45
+          },
+          "elevation": 45,
+          "distanceFromHomeplate": 119.2,
+          "angle": -66.69047619047619,
+          "facing": 113.30952380952381,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rangers-3-15-13",
+          "sectionId": "3",
+          "row": "15",
+          "seatNumber": "13",
+          "position3D": {
+            "x": -109.21456658284582,
+            "y": -47.75791501019632,
+            "z": 45
+          },
+          "elevation": 45,
+          "distanceFromHomeplate": 119.19999999999999,
+          "angle": -66.38095238095238,
+          "facing": 113.61904761904762,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rangers-3-15-14",
+          "sectionId": "3",
+          "row": "15",
+          "seatNumber": "14",
+          "position3D": {
+            "x": -108.9549759234028,
+            "y": -48.34721524070145,
+            "z": 45
+          },
+          "elevation": 45,
+          "distanceFromHomeplate": 119.2,
+          "angle": -66.07142857142857,
+          "facing": 113.92857142857143,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rangers-3-15-15",
+          "sectionId": "3",
+          "row": "15",
+          "seatNumber": "15",
+          "position3D": {
+            "x": -108.69220554400863,
+            "y": -48.935104515868545,
+            "z": 45
+          },
+          "elevation": 45,
+          "distanceFromHomeplate": 119.2,
+          "angle": -65.76190476190476,
+          "facing": 114.23809523809524,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rangers-3-15-16",
+          "sectionId": "3",
+          "row": "15",
+          "seatNumber": "16",
+          "position3D": {
+            "x": -108.42626311330085,
+            "y": -49.521565678856035,
+            "z": 45
+          },
+          "elevation": 45,
+          "distanceFromHomeplate": 119.19999999999999,
+          "angle": -65.45238095238095,
+          "facing": 114.54761904761905,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rangers-3-15-17",
+          "sectionId": "3",
+          "row": "15",
+          "seatNumber": "17",
+          "position3D": {
+            "x": -108.15715639248945,
+            "y": -50.10658161450024,
+            "z": 45
+          },
+          "elevation": 45,
+          "distanceFromHomeplate": 119.19999999999999,
+          "angle": -65.14285714285714,
+          "facing": 114.85714285714286,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rangers-3-15-18",
+          "sectionId": "3",
+          "row": "15",
+          "seatNumber": "18",
+          "position3D": {
+            "x": -107.88489323513055,
+            "y": -50.690135249814446,
+            "z": 45
+          },
+          "elevation": 45,
+          "distanceFromHomeplate": 119.2,
+          "angle": -64.83333333333333,
+          "facing": 115.16666666666667,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rangers-3-15-19",
+          "sectionId": "3",
+          "row": "15",
+          "seatNumber": "19",
+          "position3D": {
+            "x": -107.60948158689696,
+            "y": -51.272209554487524,
+            "z": 45
+          },
+          "elevation": 45,
+          "distanceFromHomeplate": 119.19999999999999,
+          "angle": -64.52380952380952,
+          "facing": 115.47619047619048,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rangers-3-15-20",
+          "sectionId": "3",
+          "row": "15",
+          "seatNumber": "20",
+          "position3D": {
+            "x": -107.33092948534643,
+            "y": -51.85278754138091,
+            "z": 45
+          },
+          "elevation": 45,
+          "distanceFromHomeplate": 119.19999999999997,
+          "angle": -64.21428571428571,
+          "facing": 115.78571428571429,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rangers-3-15-21",
+          "sectionId": "3",
+          "row": "15",
+          "seatNumber": "21",
+          "position3D": {
+            "x": -107.04924505968707,
+            "y": -52.431852267024325,
+            "z": 45
+          },
+          "elevation": 45,
+          "distanceFromHomeplate": 119.2,
+          "angle": -63.904761904761905,
+          "facing": 116.0952380952381,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        }
+      ],
+      "covered": false,
+      "hasAisleSeats": false,
+      "wheelchairRow": false
+    },
+    {
+      "rowNumber": "16",
+      "sectionId": "3",
+      "seatCount": 21,
+      "elevation": 47.5,
+      "depth": 122,
+      "rowSpacing": 36,
+      "seats": [
+        {
+          "id": "rangers-3-16-1",
+          "sectionId": "3",
+          "row": "16",
+          "seatNumber": "1",
+          "position3D": {
+            "x": -114.71169980979323,
+            "y": -41.535839063968425,
+            "z": 47.5
+          },
+          "elevation": 47.5,
+          "distanceFromHomeplate": 122.00000000000001,
+          "angle": -70.0952380952381,
+          "facing": 109.9047619047619,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rangers-3-16-2",
+          "sectionId": "3",
+          "row": "16",
+          "seatNumber": "2",
+          "position3D": {
+            "x": -114.48564173158968,
+            "y": -42.15492660776544,
+            "z": 47.5
+          },
+          "elevation": 47.5,
+          "distanceFromHomeplate": 121.99999999999999,
+          "angle": -69.78571428571429,
+          "facing": 110.21428571428571,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rangers-3-16-3",
+          "sectionId": "3",
+          "row": "16",
+          "seatNumber": "3",
+          "position3D": {
+            "x": -114.25624252760419,
+            "y": -42.77278391072169,
+            "z": 47.5
+          },
+          "elevation": 47.5,
+          "distanceFromHomeplate": 122,
+          "angle": -69.47619047619048,
+          "facing": 110.52380952380952,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rangers-3-16-4",
+          "sectionId": "3",
+          "row": "16",
+          "seatNumber": "4",
+          "position3D": {
+            "x": -114.02350889257661,
+            "y": -43.38939294141488,
+            "z": 47.5
+          },
+          "elevation": 47.5,
+          "distanceFromHomeplate": 122.00000000000001,
+          "angle": -69.16666666666667,
+          "facing": 110.83333333333333,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rangers-3-16-5",
+          "sectionId": "3",
+          "row": "16",
+          "seatNumber": "5",
+          "position3D": {
+            "x": -113.78744761855818,
+            "y": -44.00473570485204,
+            "z": 47.5
+          },
+          "elevation": 47.5,
+          "distanceFromHomeplate": 122,
+          "angle": -68.85714285714286,
+          "facing": 111.14285714285714,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rangers-3-16-6",
+          "sectionId": "3",
+          "row": "16",
+          "seatNumber": "6",
+          "position3D": {
+            "x": -113.54806559471336,
+            "y": -44.61879424299445,
+            "z": 47.5
+          },
+          "elevation": 47.5,
+          "distanceFromHomeplate": 122.00000000000001,
+          "angle": -68.54761904761905,
+          "facing": 111.45238095238095,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rangers-3-16-7",
+          "sectionId": "3",
+          "row": "16",
+          "seatNumber": "7",
+          "position3D": {
+            "x": -113.30536980711865,
+            "y": -45.23155063528206,
+            "z": 47.5
+          },
+          "elevation": 47.5,
+          "distanceFromHomeplate": 122,
+          "angle": -68.23809523809524,
+          "facing": 111.76190476190476,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rangers-3-16-8",
+          "sectionId": "3",
+          "row": "16",
+          "seatNumber": "8",
+          "position3D": {
+            "x": -113.05936733855874,
+            "y": -45.84298699915655,
+            "z": 47.5
+          },
+          "elevation": 47.5,
+          "distanceFromHomeplate": 122,
+          "angle": -67.92857142857143,
+          "facing": 112.07142857142857,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rangers-3-16-9",
+          "sectionId": "3",
+          "row": "16",
+          "seatNumber": "9",
+          "position3D": {
+            "x": -112.81006536831987,
+            "y": -46.453085490582836,
+            "z": 47.5
+          },
+          "elevation": 47.5,
+          "distanceFromHomeplate": 122,
+          "angle": -67.61904761904762,
+          "facing": 112.38095238095238,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rangers-3-16-10",
+          "sectionId": "3",
+          "row": "16",
+          "seatNumber": "10",
+          "position3D": {
+            "x": -112.55747117198023,
+            "y": -47.06182830457017,
+            "z": 47.5
+          },
+          "elevation": 47.5,
+          "distanceFromHomeplate": 122.00000000000001,
+          "angle": -67.30952380952381,
+          "facing": 112.69047619047619,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rangers-3-16-11",
+          "sectionId": "3",
+          "row": "16",
+          "seatNumber": "11",
+          "position3D": {
+            "x": -112.3015921211977,
+            "y": -47.66919767569145,
+            "z": 47.5
+          },
+          "elevation": 47.5,
+          "distanceFromHomeplate": 122,
+          "angle": -67,
+          "facing": 113,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rangers-3-16-12",
+          "sectionId": "3",
+          "row": "16",
+          "seatNumber": "12",
+          "position3D": {
+            "x": -112.04243568349472,
+            "y": -48.27517587860196,
+            "z": 47.5
+          },
+          "elevation": 47.5,
+          "distanceFromHomeplate": 122.00000000000001,
+          "angle": -66.69047619047619,
+          "facing": 113.30952380952381,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rangers-3-16-13",
+          "sectionId": "3",
+          "row": "16",
+          "seatNumber": "13",
+          "position3D": {
+            "x": -111.7800094220402,
+            "y": -48.87974522855664,
+            "z": 47.5
+          },
+          "elevation": 47.5,
+          "distanceFromHomeplate": 122,
+          "angle": -66.38095238095238,
+          "facing": 113.61904761904762,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rangers-3-16-14",
+          "sectionId": "3",
+          "row": "16",
+          "seatNumber": "14",
+          "position3D": {
+            "x": -111.51432099542905,
+            "y": -49.482888081925985,
+            "z": 47.5
+          },
+          "elevation": 47.5,
+          "distanceFromHomeplate": 122,
+          "angle": -66.07142857142857,
+          "facing": 113.92857142857143,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rangers-3-16-15",
+          "sectionId": "3",
+          "row": "16",
+          "seatNumber": "15",
+          "position3D": {
+            "x": -111.2453781574585,
+            "y": -50.084586836711104,
+            "z": 47.5
+          },
+          "elevation": 47.5,
+          "distanceFromHomeplate": 122.00000000000001,
+          "angle": -65.76190476190476,
+          "facing": 114.23809523809524,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rangers-3-16-16",
+          "sectionId": "3",
+          "row": "16",
+          "seatNumber": "16",
+          "position3D": {
+            "x": -110.97318875690189,
+            "y": -50.68482393305736,
+            "z": 47.5
+          },
+          "elevation": 47.5,
+          "distanceFromHomeplate": 122,
+          "angle": -65.45238095238095,
+          "facing": 114.54761904761905,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rangers-3-16-17",
+          "sectionId": "3",
+          "row": "16",
+          "seatNumber": "17",
+          "position3D": {
+            "x": -110.6977607372795,
+            "y": -51.28358185376703,
+            "z": 47.5
+          },
+          "elevation": 47.5,
+          "distanceFromHomeplate": 122.00000000000001,
+          "angle": -65.14285714285714,
+          "facing": 114.85714285714286,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rangers-3-16-18",
+          "sectionId": "3",
+          "row": "16",
+          "seatNumber": "18",
+          "position3D": {
+            "x": -110.41910213662692,
+            "y": -51.88084312481009,
+            "z": 47.5
+          },
+          "elevation": 47.5,
+          "distanceFromHomeplate": 122.00000000000001,
+          "angle": -64.83333333333333,
+          "facing": 115.16666666666667,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rangers-3-16-19",
+          "sectionId": "3",
+          "row": "16",
+          "seatNumber": "19",
+          "position3D": {
+            "x": -110.13722108726031,
+            "y": -52.47659031583456,
+            "z": 47.5
+          },
+          "elevation": 47.5,
+          "distanceFromHomeplate": 121.99999999999999,
+          "angle": -64.52380952380952,
+          "facing": 115.47619047619048,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rangers-3-16-20",
+          "sectionId": "3",
+          "row": "16",
+          "seatNumber": "20",
+          "position3D": {
+            "x": -109.85212581553914,
+            "y": -53.0708060406751,
+            "z": 47.5
+          },
+          "elevation": 47.5,
+          "distanceFromHomeplate": 121.99999999999999,
+          "angle": -64.21428571428571,
+          "facing": 115.78571428571429,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rangers-3-16-21",
+          "sectionId": "3",
+          "row": "16",
+          "seatNumber": "21",
+          "position3D": {
+            "x": -109.56382464162603,
+            "y": -53.66347295786047,
+            "z": 47.5
+          },
+          "elevation": 47.5,
+          "distanceFromHomeplate": 122,
+          "angle": -63.904761904761905,
+          "facing": 116.0952380952381,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        }
+      ],
+      "covered": false,
+      "hasAisleSeats": false,
+      "wheelchairRow": false
+    },
+    {
+      "rowNumber": "17",
+      "sectionId": "3",
+      "seatCount": 21,
+      "elevation": 50,
+      "depth": 124.8,
+      "rowSpacing": 36,
+      "seats": [
+        {
+          "id": "rangers-3-17-1",
+          "sectionId": "3",
+          "row": "17",
+          "seatNumber": "1",
+          "position3D": {
+            "x": -117.34442734641144,
+            "y": -42.48912061625622,
+            "z": 50
+          },
+          "elevation": 50,
+          "distanceFromHomeplate": 124.80000000000001,
+          "angle": -70.0952380952381,
+          "facing": 109.9047619047619,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rangers-3-17-2",
+          "sectionId": "3",
+          "row": "17",
+          "seatNumber": "2",
+          "position3D": {
+            "x": -117.1131810500196,
+            "y": -43.12241672663218,
+            "z": 50
+          },
+          "elevation": 50,
+          "distanceFromHomeplate": 124.79999999999998,
+          "angle": -69.78571428571429,
+          "facing": 110.21428571428571,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rangers-3-17-3",
+          "sectionId": "3",
+          "row": "17",
+          "seatNumber": "3",
+          "position3D": {
+            "x": -116.87851694627051,
+            "y": -43.75445436113169,
+            "z": 50
+          },
+          "elevation": 50,
+          "distanceFromHomeplate": 124.79999999999998,
+          "angle": -69.47619047619048,
+          "facing": 110.52380952380952,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rangers-3-17-4",
+          "sectionId": "3",
+          "row": "17",
+          "seatNumber": "4",
+          "position3D": {
+            "x": -116.64044188355378,
+            "y": -44.385215074496536,
+            "z": 50
+          },
+          "elevation": 50,
+          "distanceFromHomeplate": 124.8,
+          "angle": -69.16666666666667,
+          "facing": 110.83333333333333,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rangers-3-17-5",
+          "sectionId": "3",
+          "row": "17",
+          "seatNumber": "5",
+          "position3D": {
+            "x": -116.39896280980376,
+            "y": -45.01468045873389,
+            "z": 50
+          },
+          "elevation": 50,
+          "distanceFromHomeplate": 124.8,
+          "angle": -68.85714285714286,
+          "facing": 111.14285714285714,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rangers-3-17-6",
+          "sectionId": "3",
+          "row": "17",
+          "seatNumber": "6",
+          "position3D": {
+            "x": -116.15408677229694,
+            "y": -45.64283214365334,
+            "z": 50
+          },
+          "elevation": 50,
+          "distanceFromHomeplate": 124.8,
+          "angle": -68.54761904761905,
+          "facing": 111.45238095238095,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rangers-3-17-7",
+          "sectionId": "3",
+          "row": "17",
+          "seatNumber": "7",
+          "position3D": {
+            "x": -115.90582091744596,
+            "y": -46.26965179740329,
+            "z": 50
+          },
+          "elevation": 50,
+          "distanceFromHomeplate": 124.8,
+          "angle": -68.23809523809524,
+          "facing": 111.76190476190476,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rangers-3-17-8",
+          "sectionId": "3",
+          "row": "17",
+          "seatNumber": "8",
+          "position3D": {
+            "x": -115.65417249059124,
+            "y": -46.89512112700604,
+            "z": 50
+          },
+          "elevation": 50,
+          "distanceFromHomeplate": 124.8,
+          "angle": -67.92857142857143,
+          "facing": 112.07142857142857,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rangers-3-17-9",
+          "sectionId": "3",
+          "row": "17",
+          "seatNumber": "9",
+          "position3D": {
+            "x": -115.3991488357895,
+            "y": -47.519221878891294,
+            "z": 50
+          },
+          "elevation": 50,
+          "distanceFromHomeplate": 124.8,
+          "angle": -67.61904761904762,
+          "facing": 112.38095238095238,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rangers-3-17-10",
+          "sectionId": "3",
+          "row": "17",
+          "seatNumber": "10",
+          "position3D": {
+            "x": -115.14075739559944,
+            "y": -48.14193583942916,
+            "z": 50
+          },
+          "elevation": 50,
+          "distanceFromHomeplate": 124.8,
+          "angle": -67.30952380952381,
+          "facing": 112.69047619047619,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rangers-3-17-11",
+          "sectionId": "3",
+          "row": "17",
+          "seatNumber": "11",
+          "position3D": {
+            "x": -114.87900571086453,
+            "y": -48.763244835461414,
+            "z": 50
+          },
+          "elevation": 50,
+          "distanceFromHomeplate": 124.8,
+          "angle": -67,
+          "facing": 113,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rangers-3-17-12",
+          "sectionId": "3",
+          "row": "17",
+          "seatNumber": "12",
+          "position3D": {
+            "x": -114.61390142049295,
+            "y": -49.383130734832164,
+            "z": 50
+          },
+          "elevation": 50,
+          "distanceFromHomeplate": 124.8,
+          "angle": -66.69047619047619,
+          "facing": 113.30952380952381,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rangers-3-17-13",
+          "sectionId": "3",
+          "row": "17",
+          "seatNumber": "13",
+          "position3D": {
+            "x": -114.34545226123456,
+            "y": -50.00157544691695,
+            "z": 50
+          },
+          "elevation": 50,
+          "distanceFromHomeplate": 124.8,
+          "angle": -66.38095238095238,
+          "facing": 113.61904761904762,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rangers-3-17-14",
+          "sectionId": "3",
+          "row": "17",
+          "seatNumber": "14",
+          "position3D": {
+            "x": -114.07366606745528,
+            "y": -50.61856092315051,
+            "z": 50
+          },
+          "elevation": 50,
+          "distanceFromHomeplate": 124.79999999999998,
+          "angle": -66.07142857142857,
+          "facing": 113.92857142857143,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rangers-3-17-15",
+          "sectionId": "3",
+          "row": "17",
+          "seatNumber": "15",
+          "position3D": {
+            "x": -113.79855077090836,
+            "y": -51.23406915755365,
+            "z": 50
+          },
+          "elevation": 50,
+          "distanceFromHomeplate": 124.8,
+          "angle": -65.76190476190476,
+          "facing": 114.23809523809524,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rangers-3-17-16",
+          "sectionId": "3",
+          "row": "17",
+          "seatNumber": "16",
+          "position3D": {
+            "x": -113.52011440050292,
+            "y": -51.848082187258676,
+            "z": 50
+          },
+          "elevation": 50,
+          "distanceFromHomeplate": 124.8,
+          "angle": -65.45238095238095,
+          "facing": 114.54761904761905,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rangers-3-17-17",
+          "sectionId": "3",
+          "row": "17",
+          "seatNumber": "17",
+          "position3D": {
+            "x": -113.2383650820695,
+            "y": -52.460582093033814,
+            "z": 50
+          },
+          "elevation": 50,
+          "distanceFromHomeplate": 124.79999999999998,
+          "angle": -65.14285714285714,
+          "facing": 114.85714285714286,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rangers-3-17-18",
+          "sectionId": "3",
+          "row": "17",
+          "seatNumber": "18",
+          "position3D": {
+            "x": -112.95331103812326,
+            "y": -53.07155099980573,
+            "z": 50
+          },
+          "elevation": 50,
+          "distanceFromHomeplate": 124.79999999999998,
+          "angle": -64.83333333333333,
+          "facing": 115.16666666666667,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rangers-3-17-19",
+          "sectionId": "3",
+          "row": "17",
+          "seatNumber": "19",
+          "position3D": {
+            "x": -112.66496058762367,
+            "y": -53.680971077181574,
+            "z": 50
+          },
+          "elevation": 50,
+          "distanceFromHomeplate": 124.8,
+          "angle": -64.52380952380952,
+          "facing": 115.47619047619048,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rangers-3-17-20",
+          "sectionId": "3",
+          "row": "17",
+          "seatNumber": "20",
+          "position3D": {
+            "x": -112.37332214573185,
+            "y": -54.28882453996928,
+            "z": 50
+          },
+          "elevation": 50,
+          "distanceFromHomeplate": 124.79999999999998,
+          "angle": -64.21428571428571,
+          "facing": 115.78571428571429,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rangers-3-17-21",
+          "sectionId": "3",
+          "row": "17",
+          "seatNumber": "21",
+          "position3D": {
+            "x": -112.07840422356499,
+            "y": -54.89509364869661,
+            "z": 50
+          },
+          "elevation": 50,
+          "distanceFromHomeplate": 124.8,
+          "angle": -63.904761904761905,
+          "facing": 116.0952380952381,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        }
+      ],
+      "covered": false,
+      "hasAisleSeats": false,
+      "wheelchairRow": false
+    },
+    {
+      "rowNumber": "18",
+      "sectionId": "3",
+      "seatCount": 21,
+      "elevation": 52.5,
+      "depth": 127.6,
+      "rowSpacing": 36,
+      "seats": [
+        {
+          "id": "rangers-3-18-1",
+          "sectionId": "3",
+          "row": "18",
+          "seatNumber": "1",
+          "position3D": {
+            "x": -119.97715488302963,
+            "y": -43.44240216854403,
+            "z": 52.5
+          },
+          "elevation": 52.5,
+          "distanceFromHomeplate": 127.6,
+          "angle": -70.0952380952381,
+          "facing": 109.9047619047619,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rangers-3-18-2",
+          "sectionId": "3",
+          "row": "18",
+          "seatNumber": "2",
+          "position3D": {
+            "x": -119.74072036844953,
+            "y": -44.08990684549893,
+            "z": 52.5
+          },
+          "elevation": 52.5,
+          "distanceFromHomeplate": 127.59999999999998,
+          "angle": -69.78571428571429,
+          "facing": 110.21428571428571,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rangers-3-18-3",
+          "sectionId": "3",
+          "row": "18",
+          "seatNumber": "3",
+          "position3D": {
+            "x": -119.50079136493683,
+            "y": -44.7361248115417,
+            "z": 52.5
+          },
+          "elevation": 52.5,
+          "distanceFromHomeplate": 127.59999999999998,
+          "angle": -69.47619047619048,
+          "facing": 110.52380952380952,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rangers-3-18-4",
+          "sectionId": "3",
+          "row": "18",
+          "seatNumber": "4",
+          "position3D": {
+            "x": -119.25737487453094,
+            "y": -45.38103720757819,
+            "z": 52.5
+          },
+          "elevation": 52.5,
+          "distanceFromHomeplate": 127.6,
+          "angle": -69.16666666666667,
+          "facing": 110.83333333333333,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rangers-3-18-5",
+          "sectionId": "3",
+          "row": "18",
+          "seatNumber": "5",
+          "position3D": {
+            "x": -119.01047800104936,
+            "y": -46.02462521261574,
+            "z": 52.5
+          },
+          "elevation": 52.5,
+          "distanceFromHomeplate": 127.6,
+          "angle": -68.85714285714286,
+          "facing": 111.14285714285714,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rangers-3-18-6",
+          "sectionId": "3",
+          "row": "18",
+          "seatNumber": "6",
+          "position3D": {
+            "x": -118.76010794988052,
+            "y": -46.66687004431222,
+            "z": 52.5
+          },
+          "elevation": 52.5,
+          "distanceFromHomeplate": 127.6,
+          "angle": -68.54761904761905,
+          "facing": 111.45238095238095,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rangers-3-18-7",
+          "sectionId": "3",
+          "row": "18",
+          "seatNumber": "7",
+          "position3D": {
+            "x": -118.50627202777328,
+            "y": -47.307752959524514,
+            "z": 52.5
+          },
+          "elevation": 52.5,
+          "distanceFromHomeplate": 127.6,
+          "angle": -68.23809523809524,
+          "facing": 111.76190476190476,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rangers-3-18-8",
+          "sectionId": "3",
+          "row": "18",
+          "seatNumber": "8",
+          "position3D": {
+            "x": -118.24897764262373,
+            "y": -47.947255254855534,
+            "z": 52.5
+          },
+          "elevation": 52.5,
+          "distanceFromHomeplate": 127.6,
+          "angle": -67.92857142857143,
+          "facing": 112.07142857142857,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rangers-3-18-9",
+          "sectionId": "3",
+          "row": "18",
+          "seatNumber": "9",
+          "position3D": {
+            "x": -117.98823230325914,
+            "y": -48.58535826719975,
+            "z": 52.5
+          },
+          "elevation": 52.5,
+          "distanceFromHomeplate": 127.6,
+          "angle": -67.61904761904762,
+          "facing": 112.38095238095238,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rangers-3-18-10",
+          "sectionId": "3",
+          "row": "18",
+          "seatNumber": "10",
+          "position3D": {
+            "x": -117.72404361921865,
+            "y": -49.22204337428814,
+            "z": 52.5
+          },
+          "elevation": 52.5,
+          "distanceFromHomeplate": 127.6,
+          "angle": -67.30952380952381,
+          "facing": 112.69047619047619,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rangers-3-18-11",
+          "sectionId": "3",
+          "row": "18",
+          "seatNumber": "11",
+          "position3D": {
+            "x": -117.45641930053135,
+            "y": -49.85729199523138,
+            "z": 52.5
+          },
+          "elevation": 52.5,
+          "distanceFromHomeplate": 127.59999999999998,
+          "angle": -67,
+          "facing": 113,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rangers-3-18-12",
+          "sectionId": "3",
+          "row": "18",
+          "seatNumber": "12",
+          "position3D": {
+            "x": -117.18536715749119,
+            "y": -50.49108559106237,
+            "z": 52.5
+          },
+          "elevation": 52.5,
+          "distanceFromHomeplate": 127.6,
+          "angle": -66.69047619047619,
+          "facing": 113.30952380952381,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rangers-3-18-13",
+          "sectionId": "3",
+          "row": "18",
+          "seatNumber": "13",
+          "position3D": {
+            "x": -116.91089510042892,
+            "y": -51.12340566527727,
+            "z": 52.5
+          },
+          "elevation": 52.5,
+          "distanceFromHomeplate": 127.6,
+          "angle": -66.38095238095238,
+          "facing": 113.61904761904762,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rangers-3-18-14",
+          "sectionId": "3",
+          "row": "18",
+          "seatNumber": "14",
+          "position3D": {
+            "x": -116.63301113948152,
+            "y": -51.754233764375044,
+            "z": 52.5
+          },
+          "elevation": 52.5,
+          "distanceFromHomeplate": 127.6,
+          "angle": -66.07142857142857,
+          "facing": 113.92857142857143,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rangers-3-18-15",
+          "sectionId": "3",
+          "row": "18",
+          "seatNumber": "15",
+          "position3D": {
+            "x": -116.35172338435824,
+            "y": -52.3835514783962,
+            "z": 52.5
+          },
+          "elevation": 52.5,
+          "distanceFromHomeplate": 127.60000000000001,
+          "angle": -65.76190476190476,
+          "facing": 114.23809523809524,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rangers-3-18-16",
+          "sectionId": "3",
+          "row": "18",
+          "seatNumber": "16",
+          "position3D": {
+            "x": -116.06704004410393,
+            "y": -53.011340441459986,
+            "z": 52.5
+          },
+          "elevation": 52.5,
+          "distanceFromHomeplate": 127.6,
+          "angle": -65.45238095238095,
+          "facing": 114.54761904761905,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rangers-3-18-17",
+          "sectionId": "3",
+          "row": "18",
+          "seatNumber": "17",
+          "position3D": {
+            "x": -115.77896942685953,
+            "y": -53.637582332300596,
+            "z": 52.5
+          },
+          "elevation": 52.5,
+          "distanceFromHomeplate": 127.6,
+          "angle": -65.14285714285714,
+          "facing": 114.85714285714286,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rangers-3-18-18",
+          "sectionId": "3",
+          "row": "18",
+          "seatNumber": "18",
+          "position3D": {
+            "x": -115.48751993961962,
+            "y": -54.262258874801375,
+            "z": 52.5
+          },
+          "elevation": 52.5,
+          "distanceFromHomeplate": 127.6,
+          "angle": -64.83333333333333,
+          "facing": 115.16666666666667,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rangers-3-18-19",
+          "sectionId": "3",
+          "row": "18",
+          "seatNumber": "19",
+          "position3D": {
+            "x": -115.19270008798702,
+            "y": -54.8853518385286,
+            "z": 52.5
+          },
+          "elevation": 52.5,
+          "distanceFromHomeplate": 127.6,
+          "angle": -64.52380952380952,
+          "facing": 115.47619047619048,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rangers-3-18-20",
+          "sectionId": "3",
+          "row": "18",
+          "seatNumber": "20",
+          "position3D": {
+            "x": -114.89451847592454,
+            "y": -55.506843039263465,
+            "z": 52.5
+          },
+          "elevation": 52.5,
+          "distanceFromHomeplate": 127.6,
+          "angle": -64.21428571428571,
+          "facing": 115.78571428571429,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rangers-3-18-21",
+          "sectionId": "3",
+          "row": "18",
+          "seatNumber": "21",
+          "position3D": {
+            "x": -114.59298380550395,
+            "y": -56.126714339532754,
+            "z": 52.5
+          },
+          "elevation": 52.5,
+          "distanceFromHomeplate": 127.60000000000001,
+          "angle": -63.904761904761905,
+          "facing": 116.0952380952381,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        }
+      ],
+      "covered": false,
+      "hasAisleSeats": false,
+      "wheelchairRow": false
+    }
+  ],
+  "seatDistribution": {
+    "standard": 342,
+    "aisle": 36,
+    "wheelchair": 0,
+    "companion": 0,
+    "other": 0
+  }
+};
