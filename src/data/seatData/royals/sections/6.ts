@@ -1,0 +1,1663 @@
+/**
+ * 6 - royals
+ * Generated: 2025-10-23T14:23:39.250Z
+ * Total Seats: 60
+ * Total Rows: 6
+ */
+
+import type { SectionSeatingData } from '@/types/seat';
+
+export const section_6: SectionSeatingData = {
+  "sectionId": "6",
+  "sectionName": "6",
+  "stadiumId": "royals",
+  "totalSeats": 60,
+  "totalRows": 6,
+  "rows": [
+    {
+      "rowNumber": "A",
+      "sectionId": "6",
+      "seatCount": 10,
+      "elevation": 12.5,
+      "depth": 52.8,
+      "rowSpacing": 36,
+      "seats": [
+        {
+          "id": "royals-6-A-1",
+          "sectionId": "6",
+          "row": "A",
+          "seatNumber": "1",
+          "position3D": {
+            "x": 41.2009630571869,
+            "y": -33.02000368201554,
+            "z": 12.5
+          },
+          "elevation": 12.5,
+          "distanceFromHomeplate": 52.79999999999999,
+          "angle": 51.29,
+          "facing": 231.29,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "royals-6-A-2",
+          "sectionId": "6",
+          "row": "A",
+          "seatNumber": "2",
+          "position3D": {
+            "x": 41.41905226431852,
+            "y": -32.74602433159865,
+            "z": 12.5
+          },
+          "elevation": 12.5,
+          "distanceFromHomeplate": 52.800000000000004,
+          "angle": 51.67,
+          "facing": 231.67000000000002,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "royals-6-A-3",
+          "sectionId": "6",
+          "row": "A",
+          "seatNumber": "3",
+          "position3D": {
+            "x": 41.63531958840682,
+            "y": -32.47060459509843,
+            "z": 12.5
+          },
+          "elevation": 12.5,
+          "distanceFromHomeplate": 52.800000000000004,
+          "angle": 52.050000000000004,
+          "facing": 232.05,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "royals-6-A-4",
+          "sectionId": "6",
+          "row": "A",
+          "seatNumber": "4",
+          "position3D": {
+            "x": 41.84975551658878,
+            "y": -32.19375658729107,
+            "z": 12.5
+          },
+          "elevation": 12.5,
+          "distanceFromHomeplate": 52.800000000000004,
+          "angle": 52.43,
+          "facing": 232.43,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "royals-6-A-5",
+          "sectionId": "6",
+          "row": "A",
+          "seatNumber": "5",
+          "position3D": {
+            "x": 42.06235061655824,
+            "y": -31.91549248577753,
+            "z": 12.5
+          },
+          "elevation": 12.5,
+          "distanceFromHomeplate": 52.8,
+          "angle": 52.81,
+          "facing": 232.81,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "royals-6-A-6",
+          "sectionId": "6",
+          "row": "A",
+          "seatNumber": "6",
+          "position3D": {
+            "x": 42.273095536980826,
+            "y": -31.635824530447938,
+            "z": 12.5
+          },
+          "elevation": 12.5,
+          "distanceFromHomeplate": 52.8,
+          "angle": 53.19,
+          "facing": 233.19,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "royals-6-A-7",
+          "sectionId": "6",
+          "row": "A",
+          "seatNumber": "7",
+          "position3D": {
+            "x": 42.48198100790525,
+            "y": -31.354765022943127,
+            "z": 12.5
+          },
+          "elevation": 12.5,
+          "distanceFromHomeplate": 52.8,
+          "angle": 53.57,
+          "facing": 233.57,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "royals-6-A-8",
+          "sectionId": "6",
+          "row": "A",
+          "seatNumber": "8",
+          "position3D": {
+            "x": 42.68899784117106,
+            "y": -31.072326326113604,
+            "z": 12.5
+          },
+          "elevation": 12.5,
+          "distanceFromHomeplate": 52.8,
+          "angle": 53.95,
+          "facing": 233.95,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "royals-6-A-9",
+          "sectionId": "6",
+          "row": "A",
+          "seatNumber": "9",
+          "position3D": {
+            "x": 42.89413693081282,
+            "y": -30.788520863475718,
+            "z": 12.5
+          },
+          "elevation": 12.5,
+          "distanceFromHomeplate": 52.8,
+          "angle": 54.33,
+          "facing": 234.32999999999998,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "royals-6-A-10",
+          "sectionId": "6",
+          "row": "A",
+          "seatNumber": "10",
+          "position3D": {
+            "x": 43.097389253460655,
+            "y": -30.503361118665158,
+            "z": 12.5
+          },
+          "elevation": 12.5,
+          "distanceFromHomeplate": 52.79999999999999,
+          "angle": 54.71,
+          "facing": 234.71,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        }
+      ],
+      "covered": false,
+      "hasAisleSeats": false,
+      "wheelchairRow": false
+    },
+    {
+      "rowNumber": "B",
+      "sectionId": "6",
+      "seatCount": 10,
+      "elevation": 15,
+      "depth": 55.6,
+      "rowSpacing": 36,
+      "seats": [
+        {
+          "id": "royals-6-B-1",
+          "sectionId": "6",
+          "row": "B",
+          "seatNumber": "1",
+          "position3D": {
+            "x": 43.38586261324984,
+            "y": -34.77106448333455,
+            "z": 15
+          },
+          "elevation": 15,
+          "distanceFromHomeplate": 55.599999999999994,
+          "angle": 51.29,
+          "facing": 231.29,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "royals-6-B-2",
+          "sectionId": "6",
+          "row": "B",
+          "seatNumber": "2",
+          "position3D": {
+            "x": 43.6155171571233,
+            "y": -34.482555924941,
+            "z": 15
+          },
+          "elevation": 15,
+          "distanceFromHomeplate": 55.60000000000001,
+          "angle": 51.67,
+          "facing": 231.67000000000002,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "royals-6-B-3",
+          "sectionId": "6",
+          "row": "B",
+          "seatNumber": "3",
+          "position3D": {
+            "x": 43.84325320294355,
+            "y": -34.19253059635365,
+            "z": 15
+          },
+          "elevation": 15,
+          "distanceFromHomeplate": 55.60000000000001,
+          "angle": 52.050000000000004,
+          "facing": 232.05,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "royals-6-B-4",
+          "sectionId": "6",
+          "row": "B",
+          "seatNumber": "4",
+          "position3D": {
+            "x": 44.069060733377576,
+            "y": -33.90100125479893,
+            "z": 15
+          },
+          "elevation": 15,
+          "distanceFromHomeplate": 55.599999999999994,
+          "angle": 52.43,
+          "facing": 232.43,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "royals-6-B-5",
+          "sectionId": "6",
+          "row": "B",
+          "seatNumber": "5",
+          "position3D": {
+            "x": 44.292929815921184,
+            "y": -33.60798072365967,
+            "z": 15
+          },
+          "elevation": 15,
+          "distanceFromHomeplate": 55.599999999999994,
+          "angle": 52.81,
+          "facing": 232.81,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "royals-6-B-6",
+          "sectionId": "6",
+          "row": "B",
+          "seatNumber": "6",
+          "position3D": {
+            "x": 44.51485060333587,
+            "y": -33.31348189191109,
+            "z": 15
+          },
+          "elevation": 15,
+          "distanceFromHomeplate": 55.6,
+          "angle": 53.19,
+          "facing": 233.19,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "royals-6-B-7",
+          "sectionId": "6",
+          "row": "B",
+          "seatNumber": "7",
+          "position3D": {
+            "x": 44.73481333408204,
+            "y": -33.01751771355375,
+            "z": 15
+          },
+          "elevation": 15,
+          "distanceFromHomeplate": 55.6,
+          "angle": 53.57,
+          "facing": 233.57,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "royals-6-B-8",
+          "sectionId": "6",
+          "row": "B",
+          "seatNumber": "8",
+          "position3D": {
+            "x": 44.95280833274831,
+            "y": -32.720101207043875,
+            "z": 15
+          },
+          "elevation": 15,
+          "distanceFromHomeplate": 55.6,
+          "angle": 53.95,
+          "facing": 233.95,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "royals-6-B-9",
+          "sectionId": "6",
+          "row": "B",
+          "seatNumber": "9",
+          "position3D": {
+            "x": 45.16882601047714,
+            "y": -32.42124545472064,
+            "z": 15
+          },
+          "elevation": 15,
+          "distanceFromHomeplate": 55.6,
+          "angle": 54.33,
+          "facing": 234.32999999999998,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "royals-6-B-10",
+          "sectionId": "6",
+          "row": "B",
+          "seatNumber": "10",
+          "position3D": {
+            "x": 45.38285686538661,
+            "y": -32.12096360223074,
+            "z": 15
+          },
+          "elevation": 15,
+          "distanceFromHomeplate": 55.6,
+          "angle": 54.71,
+          "facing": 234.71,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        }
+      ],
+      "covered": false,
+      "hasAisleSeats": false,
+      "wheelchairRow": false
+    },
+    {
+      "rowNumber": "C",
+      "sectionId": "6",
+      "seatCount": 10,
+      "elevation": 17.5,
+      "depth": 58.4,
+      "rowSpacing": 36,
+      "seats": [
+        {
+          "id": "royals-6-C-1",
+          "sectionId": "6",
+          "row": "C",
+          "seatNumber": "1",
+          "position3D": {
+            "x": 45.570762169312786,
+            "y": -36.522125284653555,
+            "z": 17.5
+          },
+          "elevation": 17.5,
+          "distanceFromHomeplate": 58.4,
+          "angle": 51.29,
+          "facing": 231.29,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "royals-6-C-2",
+          "sectionId": "6",
+          "row": "C",
+          "seatNumber": "2",
+          "position3D": {
+            "x": 45.81198204992807,
+            "y": -36.21908751828335,
+            "z": 17.5
+          },
+          "elevation": 17.5,
+          "distanceFromHomeplate": 58.400000000000006,
+          "angle": 51.67,
+          "facing": 231.67000000000002,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "royals-6-C-3",
+          "sectionId": "6",
+          "row": "C",
+          "seatNumber": "3",
+          "position3D": {
+            "x": 46.05118681748027,
+            "y": -35.91445659760887,
+            "z": 17.5
+          },
+          "elevation": 17.5,
+          "distanceFromHomeplate": 58.4,
+          "angle": 52.050000000000004,
+          "facing": 232.05,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "royals-6-C-4",
+          "sectionId": "6",
+          "row": "C",
+          "seatNumber": "4",
+          "position3D": {
+            "x": 46.28836595016637,
+            "y": -35.608245922306786,
+            "z": 17.5
+          },
+          "elevation": 17.5,
+          "distanceFromHomeplate": 58.4,
+          "angle": 52.43,
+          "facing": 232.43,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "royals-6-C-5",
+          "sectionId": "6",
+          "row": "C",
+          "seatNumber": "5",
+          "position3D": {
+            "x": 46.52350901528411,
+            "y": -35.30046896154182,
+            "z": 17.5
+          },
+          "elevation": 17.5,
+          "distanceFromHomeplate": 58.4,
+          "angle": 52.81,
+          "facing": 232.81,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "royals-6-C-6",
+          "sectionId": "6",
+          "row": "C",
+          "seatNumber": "6",
+          "position3D": {
+            "x": 46.75660566969092,
+            "y": -34.991139253374236,
+            "z": 17.5
+          },
+          "elevation": 17.5,
+          "distanceFromHomeplate": 58.400000000000006,
+          "angle": 53.19,
+          "facing": 233.19,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "royals-6-C-7",
+          "sectionId": "6",
+          "row": "C",
+          "seatNumber": "7",
+          "position3D": {
+            "x": 46.987645660258835,
+            "y": -34.68027040416437,
+            "z": 17.5
+          },
+          "elevation": 17.5,
+          "distanceFromHomeplate": 58.4,
+          "angle": 53.57,
+          "facing": 233.57,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "royals-6-C-8",
+          "sectionId": "6",
+          "row": "C",
+          "seatNumber": "8",
+          "position3D": {
+            "x": 47.216618824325565,
+            "y": -34.36787608797414,
+            "z": 17.5
+          },
+          "elevation": 17.5,
+          "distanceFromHomeplate": 58.4,
+          "angle": 53.95,
+          "facing": 233.95,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "royals-6-C-9",
+          "sectionId": "6",
+          "row": "C",
+          "seatNumber": "9",
+          "position3D": {
+            "x": 47.44351509014145,
+            "y": -34.05397004596556,
+            "z": 17.5
+          },
+          "elevation": 17.5,
+          "distanceFromHomeplate": 58.4,
+          "angle": 54.33,
+          "facing": 234.32999999999998,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "royals-6-C-10",
+          "sectionId": "6",
+          "row": "C",
+          "seatNumber": "10",
+          "position3D": {
+            "x": 47.668324477312545,
+            "y": -33.738566085796315,
+            "z": 17.5
+          },
+          "elevation": 17.5,
+          "distanceFromHomeplate": 58.4,
+          "angle": 54.71,
+          "facing": 234.71,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        }
+      ],
+      "covered": false,
+      "hasAisleSeats": false,
+      "wheelchairRow": false
+    },
+    {
+      "rowNumber": "D",
+      "sectionId": "6",
+      "seatCount": 10,
+      "elevation": 20,
+      "depth": 61.2,
+      "rowSpacing": 36,
+      "seats": [
+        {
+          "id": "royals-6-D-1",
+          "sectionId": "6",
+          "row": "D",
+          "seatNumber": "1",
+          "position3D": {
+            "x": 47.75566172537573,
+            "y": -38.27318608597256,
+            "z": 20
+          },
+          "elevation": 20,
+          "distanceFromHomeplate": 61.2,
+          "angle": 51.29,
+          "facing": 231.29,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "royals-6-D-2",
+          "sectionId": "6",
+          "row": "D",
+          "seatNumber": "2",
+          "position3D": {
+            "x": 48.00844694273284,
+            "y": -37.95561911162571,
+            "z": 20
+          },
+          "elevation": 20,
+          "distanceFromHomeplate": 61.2,
+          "angle": 51.67,
+          "facing": 231.67000000000002,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "royals-6-D-3",
+          "sectionId": "6",
+          "row": "D",
+          "seatNumber": "3",
+          "position3D": {
+            "x": 48.259120432017006,
+            "y": -37.63638259886409,
+            "z": 20
+          },
+          "elevation": 20,
+          "distanceFromHomeplate": 61.2,
+          "angle": 52.050000000000004,
+          "facing": 232.05,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "royals-6-D-4",
+          "sectionId": "6",
+          "row": "D",
+          "seatNumber": "4",
+          "position3D": {
+            "x": 48.50767116695518,
+            "y": -37.31549058981465,
+            "z": 20
+          },
+          "elevation": 20,
+          "distanceFromHomeplate": 61.2,
+          "angle": 52.43,
+          "facing": 232.43,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "royals-6-D-5",
+          "sectionId": "6",
+          "row": "D",
+          "seatNumber": "5",
+          "position3D": {
+            "x": 48.754088214647055,
+            "y": -36.99295719942396,
+            "z": 20
+          },
+          "elevation": 20,
+          "distanceFromHomeplate": 61.2,
+          "angle": 52.81,
+          "facing": 232.81,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "royals-6-D-6",
+          "sectionId": "6",
+          "row": "D",
+          "seatNumber": "6",
+          "position3D": {
+            "x": 48.99836073604597,
+            "y": -36.66879661483738,
+            "z": 20
+          },
+          "elevation": 20,
+          "distanceFromHomeplate": 61.2,
+          "angle": 53.19,
+          "facing": 233.19,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "royals-6-D-7",
+          "sectionId": "6",
+          "row": "D",
+          "seatNumber": "7",
+          "position3D": {
+            "x": 49.24047798643563,
+            "y": -36.34302309477499,
+            "z": 20
+          },
+          "elevation": 20,
+          "distanceFromHomeplate": 61.2,
+          "angle": 53.57,
+          "facing": 233.57,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "royals-6-D-8",
+          "sectionId": "6",
+          "row": "D",
+          "seatNumber": "8",
+          "position3D": {
+            "x": 49.48042931590282,
+            "y": -36.01565096890441,
+            "z": 20
+          },
+          "elevation": 20,
+          "distanceFromHomeplate": 61.2,
+          "angle": 53.95,
+          "facing": 233.95,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "royals-6-D-9",
+          "sectionId": "6",
+          "row": "D",
+          "seatNumber": "9",
+          "position3D": {
+            "x": 49.71820416980577,
+            "y": -35.68669463721049,
+            "z": 20
+          },
+          "elevation": 20,
+          "distanceFromHomeplate": 61.2,
+          "angle": 54.33,
+          "facing": 234.32999999999998,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "royals-6-D-10",
+          "sectionId": "6",
+          "row": "D",
+          "seatNumber": "10",
+          "position3D": {
+            "x": 49.95379208923849,
+            "y": -35.35616856936189,
+            "z": 20
+          },
+          "elevation": 20,
+          "distanceFromHomeplate": 61.199999999999996,
+          "angle": 54.71,
+          "facing": 234.71,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        }
+      ],
+      "covered": false,
+      "hasAisleSeats": false,
+      "wheelchairRow": false
+    },
+    {
+      "rowNumber": "E",
+      "sectionId": "6",
+      "seatCount": 10,
+      "elevation": 22.5,
+      "depth": 64,
+      "rowSpacing": 36,
+      "seats": [
+        {
+          "id": "royals-6-E-1",
+          "sectionId": "6",
+          "row": "E",
+          "seatNumber": "1",
+          "position3D": {
+            "x": 49.94056128143867,
+            "y": -40.02424688729157,
+            "z": 22.5
+          },
+          "elevation": 22.5,
+          "distanceFromHomeplate": 64,
+          "angle": 51.29,
+          "facing": 231.29,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "royals-6-E-2",
+          "sectionId": "6",
+          "row": "E",
+          "seatNumber": "2",
+          "position3D": {
+            "x": 50.20491183553761,
+            "y": -39.69215070496806,
+            "z": 22.5
+          },
+          "elevation": 22.5,
+          "distanceFromHomeplate": 64,
+          "angle": 51.67,
+          "facing": 231.67000000000002,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "royals-6-E-3",
+          "sectionId": "6",
+          "row": "E",
+          "seatNumber": "3",
+          "position3D": {
+            "x": 50.46705404655373,
+            "y": -39.35830860011931,
+            "z": 22.5
+          },
+          "elevation": 22.5,
+          "distanceFromHomeplate": 64,
+          "angle": 52.050000000000004,
+          "facing": 232.05,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "royals-6-E-4",
+          "sectionId": "6",
+          "row": "E",
+          "seatNumber": "4",
+          "position3D": {
+            "x": 50.726976383743974,
+            "y": -39.02273525732251,
+            "z": 22.5
+          },
+          "elevation": 22.5,
+          "distanceFromHomeplate": 64,
+          "angle": 52.43,
+          "facing": 232.43,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "royals-6-E-5",
+          "sectionId": "6",
+          "row": "E",
+          "seatNumber": "5",
+          "position3D": {
+            "x": 50.98466741400999,
+            "y": -38.6854454373061,
+            "z": 22.5
+          },
+          "elevation": 22.5,
+          "distanceFromHomeplate": 63.99999999999999,
+          "angle": 52.81,
+          "facing": 232.81,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "royals-6-E-6",
+          "sectionId": "6",
+          "row": "E",
+          "seatNumber": "6",
+          "position3D": {
+            "x": 51.24011580240101,
+            "y": -38.34645397630053,
+            "z": 22.5
+          },
+          "elevation": 22.5,
+          "distanceFromHomeplate": 64,
+          "angle": 53.19,
+          "facing": 233.19,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "royals-6-E-7",
+          "sectionId": "6",
+          "row": "E",
+          "seatNumber": "7",
+          "position3D": {
+            "x": 51.49331031261242,
+            "y": -38.00577578538561,
+            "z": 22.5
+          },
+          "elevation": 22.5,
+          "distanceFromHomeplate": 64,
+          "angle": 53.57,
+          "facing": 233.57,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "royals-6-E-8",
+          "sectionId": "6",
+          "row": "E",
+          "seatNumber": "8",
+          "position3D": {
+            "x": 51.74423980748007,
+            "y": -37.663425849834674,
+            "z": 22.5
+          },
+          "elevation": 22.5,
+          "distanceFromHomeplate": 64,
+          "angle": 53.95,
+          "facing": 233.95,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "royals-6-E-9",
+          "sectionId": "6",
+          "row": "E",
+          "seatNumber": "9",
+          "position3D": {
+            "x": 51.992893249470086,
+            "y": -37.319419228455416,
+            "z": 22.5
+          },
+          "elevation": 22.5,
+          "distanceFromHomeplate": 64,
+          "angle": 54.33,
+          "facing": 234.32999999999998,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "royals-6-E-10",
+          "sectionId": "6",
+          "row": "E",
+          "seatNumber": "10",
+          "position3D": {
+            "x": 52.239259701164436,
+            "y": -36.97377105292747,
+            "z": 22.5
+          },
+          "elevation": 22.5,
+          "distanceFromHomeplate": 64,
+          "angle": 54.71,
+          "facing": 234.71,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        }
+      ],
+      "covered": false,
+      "hasAisleSeats": false,
+      "wheelchairRow": false
+    },
+    {
+      "rowNumber": "F",
+      "sectionId": "6",
+      "seatCount": 10,
+      "elevation": 25,
+      "depth": 66.8,
+      "rowSpacing": 36,
+      "seats": [
+        {
+          "id": "royals-6-F-1",
+          "sectionId": "6",
+          "row": "F",
+          "seatNumber": "1",
+          "position3D": {
+            "x": 52.125460837501606,
+            "y": -41.775307688610575,
+            "z": 25
+          },
+          "elevation": 25,
+          "distanceFromHomeplate": 66.8,
+          "angle": 51.29,
+          "facing": 231.29,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "royals-6-F-2",
+          "sectionId": "6",
+          "row": "F",
+          "seatNumber": "2",
+          "position3D": {
+            "x": 52.40137672834238,
+            "y": -41.428682298310406,
+            "z": 25
+          },
+          "elevation": 25,
+          "distanceFromHomeplate": 66.8,
+          "angle": 51.67,
+          "facing": 231.67000000000002,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "royals-6-F-3",
+          "sectionId": "6",
+          "row": "F",
+          "seatNumber": "3",
+          "position3D": {
+            "x": 52.67498766109045,
+            "y": -41.08023460137453,
+            "z": 25
+          },
+          "elevation": 25,
+          "distanceFromHomeplate": 66.8,
+          "angle": 52.050000000000004,
+          "facing": 232.05,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "royals-6-F-4",
+          "sectionId": "6",
+          "row": "F",
+          "seatNumber": "4",
+          "position3D": {
+            "x": 52.94628160053277,
+            "y": -40.72997992483037,
+            "z": 25
+          },
+          "elevation": 25,
+          "distanceFromHomeplate": 66.8,
+          "angle": 52.43,
+          "facing": 232.43,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "royals-6-F-5",
+          "sectionId": "6",
+          "row": "F",
+          "seatNumber": "5",
+          "position3D": {
+            "x": 53.215246613372926,
+            "y": -40.37793367518824,
+            "z": 25
+          },
+          "elevation": 25,
+          "distanceFromHomeplate": 66.8,
+          "angle": 52.81,
+          "facing": 232.81,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "royals-6-F-6",
+          "sectionId": "6",
+          "row": "F",
+          "seatNumber": "6",
+          "position3D": {
+            "x": 53.48187086875605,
+            "y": -40.02411133776368,
+            "z": 25
+          },
+          "elevation": 25,
+          "distanceFromHomeplate": 66.8,
+          "angle": 53.19,
+          "facing": 233.19,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "royals-6-F-7",
+          "sectionId": "6",
+          "row": "F",
+          "seatNumber": "7",
+          "position3D": {
+            "x": 53.746142638789216,
+            "y": -39.668528475996226,
+            "z": 25
+          },
+          "elevation": 25,
+          "distanceFromHomeplate": 66.8,
+          "angle": 53.57,
+          "facing": 233.57,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "royals-6-F-8",
+          "sectionId": "6",
+          "row": "F",
+          "seatNumber": "8",
+          "position3D": {
+            "x": 54.008050299057324,
+            "y": -39.31120073076494,
+            "z": 25
+          },
+          "elevation": 25,
+          "distanceFromHomeplate": 66.8,
+          "angle": 53.95,
+          "facing": 233.95,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "royals-6-F-9",
+          "sectionId": "6",
+          "row": "F",
+          "seatNumber": "9",
+          "position3D": {
+            "x": 54.2675823291344,
+            "y": -38.95214381970034,
+            "z": 25
+          },
+          "elevation": 25,
+          "distanceFromHomeplate": 66.8,
+          "angle": 54.33,
+          "facing": 234.32999999999998,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "royals-6-F-10",
+          "sectionId": "6",
+          "row": "F",
+          "seatNumber": "10",
+          "position3D": {
+            "x": 54.52472731309038,
+            "y": -38.591373536493045,
+            "z": 25
+          },
+          "elevation": 25,
+          "distanceFromHomeplate": 66.8,
+          "angle": 54.71,
+          "facing": 234.71,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        }
+      ],
+      "covered": false,
+      "hasAisleSeats": false,
+      "wheelchairRow": false
+    }
+  ],
+  "seatDistribution": {
+    "standard": 48,
+    "aisle": 12,
+    "wheelchair": 0,
+    "companion": 0,
+    "other": 0
+  }
+};
