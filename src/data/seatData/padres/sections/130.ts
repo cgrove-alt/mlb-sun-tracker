@@ -1,0 +1,10087 @@
+/**
+ * 130 - padres
+ * Generated: 2025-10-23T01:26:27.274Z
+ * Total Seats: 378
+ * Total Rows: 18
+ */
+
+import type { SectionSeatingData } from '@/types/seat';
+
+export const section_130: SectionSeatingData = {
+  "sectionId": "130",
+  "sectionName": "130",
+  "stadiumId": "padres",
+  "totalSeats": 378,
+  "totalRows": 18,
+  "rows": [
+    {
+      "rowNumber": "1",
+      "sectionId": "130",
+      "seatCount": 21,
+      "elevation": 8,
+      "depth": 85,
+      "rowSpacing": 36,
+      "seats": [
+        {
+          "id": "padres-130-1-1",
+          "sectionId": "130",
+          "row": "1",
+          "seatNumber": "1",
+          "position3D": {
+            "x": 40.17304077985472,
+            "y": 74.90745486598867,
+            "z": 8
+          },
+          "elevation": 8,
+          "distanceFromHomeplate": 85,
+          "angle": -208.2047619047619,
+          "facing": -28.20476190476191,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "padres-130-1-2",
+          "sectionId": "130",
+          "row": "1",
+          "seatNumber": "2",
+          "position3D": {
+            "x": 39.923794155114,
+            "y": 75.04059341623096,
+            "z": 8
+          },
+          "elevation": 8,
+          "distanceFromHomeplate": 85,
+          "angle": -208.01428571428573,
+          "facing": -28.014285714285734,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "padres-130-1-3",
+          "sectionId": "130",
+          "row": "1",
+          "seatNumber": "3",
+          "position3D": {
+            "x": 39.6741062978304,
+            "y": 75.17290262766534,
+            "z": 8
+          },
+          "elevation": 8,
+          "distanceFromHomeplate": 85,
+          "angle": -207.82380952380953,
+          "facing": -27.82380952380953,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "padres-130-1-4",
+          "sectionId": "130",
+          "row": "1",
+          "seatNumber": "4",
+          "position3D": {
+            "x": 39.42397996752141,
+            "y": 75.30438103802773,
+            "z": 8
+          },
+          "elevation": 8,
+          "distanceFromHomeplate": 85,
+          "angle": -207.63333333333335,
+          "facing": -27.633333333333354,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "padres-130-1-5",
+          "sectionId": "130",
+          "row": "1",
+          "seatNumber": "5",
+          "position3D": {
+            "x": 39.17341792855047,
+            "y": 75.43502719423597,
+            "z": 8
+          },
+          "elevation": 8,
+          "distanceFromHomeplate": 85,
+          "angle": -207.44285714285715,
+          "facing": -27.44285714285715,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "padres-130-1-6",
+          "sectionId": "130",
+          "row": "1",
+          "seatNumber": "6",
+          "position3D": {
+            "x": 38.92242295009634,
+            "y": 75.5648396524059,
+            "z": 8
+          },
+          "elevation": 8,
+          "distanceFromHomeplate": 85,
+          "angle": -207.25238095238097,
+          "facing": -27.252380952380975,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "padres-130-1-7",
+          "sectionId": "130",
+          "row": "1",
+          "seatNumber": "7",
+          "position3D": {
+            "x": 38.67099780612278,
+            "y": 75.69381697786714,
+            "z": 8
+          },
+          "elevation": 8,
+          "distanceFromHomeplate": 85,
+          "angle": -207.06190476190477,
+          "facing": -27.06190476190477,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "padres-130-1-8",
+          "sectionId": "130",
+          "row": "1",
+          "seatNumber": "8",
+          "position3D": {
+            "x": 38.41914527534754,
+            "y": 75.8219577451792,
+            "z": 8
+          },
+          "elevation": 8,
+          "distanceFromHomeplate": 85,
+          "angle": -206.8714285714286,
+          "facing": -26.871428571428595,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "padres-130-1-9",
+          "sectionId": "130",
+          "row": "1",
+          "seatNumber": "9",
+          "position3D": {
+            "x": 38.16686814121152,
+            "y": 75.94926053814726,
+            "z": 8
+          },
+          "elevation": 8,
+          "distanceFromHomeplate": 85,
+          "angle": -206.6809523809524,
+          "facing": -26.68095238095239,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "padres-130-1-10",
+          "sectionId": "130",
+          "row": "1",
+          "seatNumber": "10",
+          "position3D": {
+            "x": 37.91416919184898,
+            "y": 76.07572394983731,
+            "z": 8
+          },
+          "elevation": 8,
+          "distanceFromHomeplate": 85,
+          "angle": -206.49047619047622,
+          "facing": -26.490476190476215,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "padres-130-1-11",
+          "sectionId": "130",
+          "row": "1",
+          "seatNumber": "11",
+          "position3D": {
+            "x": 37.66105122005525,
+            "y": 76.20134658259245,
+            "z": 8
+          },
+          "elevation": 8,
+          "distanceFromHomeplate": 85,
+          "angle": -206.3,
+          "facing": -26.30000000000001,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "padres-130-1-12",
+          "sectionId": "130",
+          "row": "1",
+          "seatNumber": "12",
+          "position3D": {
+            "x": 37.407517023257206,
+            "y": 76.32612704804772,
+            "z": 8
+          },
+          "elevation": 8,
+          "distanceFromHomeplate": 85,
+          "angle": -206.1095238095238,
+          "facing": -26.109523809523807,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "padres-130-1-13",
+          "sectionId": "130",
+          "row": "1",
+          "seatNumber": "13",
+          "position3D": {
+            "x": 37.153569403481505,
+            "y": 76.4500639671458,
+            "z": 8
+          },
+          "elevation": 8,
+          "distanceFromHomeplate": 85,
+          "angle": -205.91904761904763,
+          "facing": -25.91904761904763,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "padres-130-1-14",
+          "sectionId": "130",
+          "row": "1",
+          "seatNumber": "14",
+          "position3D": {
+            "x": 36.89921116732391,
+            "y": 76.57315597015209,
+            "z": 8
+          },
+          "elevation": 8,
+          "distanceFromHomeplate": 85,
+          "angle": -205.72857142857143,
+          "facing": -25.728571428571428,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "padres-130-1-15",
+          "sectionId": "130",
+          "row": "1",
+          "seatNumber": "15",
+          "position3D": {
+            "x": 36.64444512591846,
+            "y": 76.69540169666986,
+            "z": 8
+          },
+          "elevation": 8,
+          "distanceFromHomeplate": 85,
+          "angle": -205.53809523809525,
+          "facing": -25.538095238095252,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "padres-130-1-16",
+          "sectionId": "130",
+          "row": "1",
+          "seatNumber": "16",
+          "position3D": {
+            "x": 36.389274094906,
+            "y": 76.8167997956554,
+            "z": 8
+          },
+          "elevation": 8,
+          "distanceFromHomeplate": 85,
+          "angle": -205.34761904761905,
+          "facing": -25.347619047619048,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "padres-130-1-17",
+          "sectionId": "130",
+          "row": "1",
+          "seatNumber": "17",
+          "position3D": {
+            "x": 36.13370089440327,
+            "y": 76.93734892543283,
+            "z": 8
+          },
+          "elevation": 8,
+          "distanceFromHomeplate": 85,
+          "angle": -205.15714285714287,
+          "facing": -25.157142857142873,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "padres-130-1-18",
+          "sectionId": "130",
+          "row": "1",
+          "seatNumber": "18",
+          "position3D": {
+            "x": 35.877728348972006,
+            "y": 77.05704775370887,
+            "z": 8
+          },
+          "elevation": 8,
+          "distanceFromHomeplate": 85,
+          "angle": -204.96666666666667,
+          "facing": -24.96666666666667,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "padres-130-1-19",
+          "sectionId": "130",
+          "row": "1",
+          "seatNumber": "19",
+          "position3D": {
+            "x": 35.62135928758704,
+            "y": 77.17589495758787,
+            "z": 8
+          },
+          "elevation": 8,
+          "distanceFromHomeplate": 85,
+          "angle": -204.7761904761905,
+          "facing": -24.776190476190493,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "padres-130-1-20",
+          "sectionId": "130",
+          "row": "1",
+          "seatNumber": "20",
+          "position3D": {
+            "x": 35.36459654360565,
+            "y": 77.29388922358608,
+            "z": 8
+          },
+          "elevation": 8,
+          "distanceFromHomeplate": 85,
+          "angle": -204.5857142857143,
+          "facing": -24.58571428571429,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "padres-130-1-21",
+          "sectionId": "130",
+          "row": "1",
+          "seatNumber": "21",
+          "position3D": {
+            "x": 35.10744295473626,
+            "y": 77.41102924764623,
+            "z": 8
+          },
+          "elevation": 8,
+          "distanceFromHomeplate": 85,
+          "angle": -204.3952380952381,
+          "facing": -24.395238095238113,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        }
+      ],
+      "covered": false,
+      "hasAisleSeats": false,
+      "wheelchairRow": false
+    },
+    {
+      "rowNumber": "2",
+      "sectionId": "130",
+      "seatCount": 21,
+      "elevation": 10.5,
+      "depth": 87.8,
+      "rowSpacing": 36,
+      "seats": [
+        {
+          "id": "padres-130-2-1",
+          "sectionId": "130",
+          "row": "2",
+          "seatNumber": "1",
+          "position3D": {
+            "x": 41.496388005544055,
+            "y": 77.37499455569183,
+            "z": 10.5
+          },
+          "elevation": 10.5,
+          "distanceFromHomeplate": 87.8,
+          "angle": -208.2047619047619,
+          "facing": -28.20476190476191,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "padres-130-2-2",
+          "sectionId": "130",
+          "row": "2",
+          "seatNumber": "2",
+          "position3D": {
+            "x": 41.23893090375305,
+            "y": 77.51251884641268,
+            "z": 10.5
+          },
+          "elevation": 10.5,
+          "distanceFromHomeplate": 87.8,
+          "angle": -208.01428571428573,
+          "facing": -28.014285714285734,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "padres-130-2-3",
+          "sectionId": "130",
+          "row": "2",
+          "seatNumber": "3",
+          "position3D": {
+            "x": 40.98101803470011,
+            "y": 77.64918647892961,
+            "z": 10.5
+          },
+          "elevation": 10.5,
+          "distanceFromHomeplate": 87.8,
+          "angle": -207.82380952380953,
+          "facing": -27.82380952380953,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "padres-130-2-4",
+          "sectionId": "130",
+          "row": "2",
+          "seatNumber": "4",
+          "position3D": {
+            "x": 40.722652248804465,
+            "y": 77.78499594280981,
+            "z": 10.5
+          },
+          "elevation": 10.5,
+          "distanceFromHomeplate": 87.8,
+          "angle": -207.63333333333335,
+          "facing": -27.633333333333354,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "padres-130-2-5",
+          "sectionId": "130",
+          "row": "2",
+          "seatNumber": "5",
+          "position3D": {
+            "x": 40.46383640149096,
+            "y": 77.91994573710491,
+            "z": 10.5
+          },
+          "elevation": 10.5,
+          "distanceFromHomeplate": 87.8,
+          "angle": -207.44285714285715,
+          "facing": -27.44285714285715,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "padres-130-2-6",
+          "sectionId": "130",
+          "row": "2",
+          "seatNumber": "6",
+          "position3D": {
+            "x": 40.20457335315834,
+            "y": 78.0540343703675,
+            "z": 10.5
+          },
+          "elevation": 10.5,
+          "distanceFromHomeplate": 87.80000000000001,
+          "angle": -207.25238095238097,
+          "facing": -27.252380952380975,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "padres-130-2-7",
+          "sectionId": "130",
+          "row": "2",
+          "seatNumber": "7",
+          "position3D": {
+            "x": 39.944865969148,
+            "y": 78.18726036066747,
+            "z": 10.5
+          },
+          "elevation": 10.5,
+          "distanceFromHomeplate": 87.8,
+          "angle": -207.06190476190477,
+          "facing": -27.06190476190477,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "padres-130-2-8",
+          "sectionId": "130",
+          "row": "2",
+          "seatNumber": "8",
+          "position3D": {
+            "x": 39.68471711971193,
+            "y": 78.31962223560863,
+            "z": 10.5
+          },
+          "elevation": 10.5,
+          "distanceFromHomeplate": 87.8,
+          "angle": -206.8714285714286,
+          "facing": -26.871428571428595,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "padres-130-2-9",
+          "sectionId": "130",
+          "row": "2",
+          "seatNumber": "9",
+          "position3D": {
+            "x": 39.424129679980844,
+            "y": 78.45111853234505,
+            "z": 10.5
+          },
+          "elevation": 10.5,
+          "distanceFromHomeplate": 87.8,
+          "angle": -206.6809523809524,
+          "facing": -26.68095238095239,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "padres-130-2-10",
+          "sectionId": "130",
+          "row": "2",
+          "seatNumber": "10",
+          "position3D": {
+            "x": 39.16310652993341,
+            "y": 78.58174779759665,
+            "z": 10.5
+          },
+          "elevation": 10.5,
+          "distanceFromHomeplate": 87.8,
+          "angle": -206.49047619047622,
+          "facing": -26.490476190476215,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "padres-130-2-11",
+          "sectionId": "130",
+          "row": "2",
+          "seatNumber": "11",
+          "position3D": {
+            "x": 38.90165055436295,
+            "y": 78.71150858766609,
+            "z": 10.5
+          },
+          "elevation": 10.5,
+          "distanceFromHomeplate": 87.8,
+          "angle": -206.3,
+          "facing": -26.30000000000001,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "padres-130-2-12",
+          "sectionId": "130",
+          "row": "2",
+          "seatNumber": "12",
+          "position3D": {
+            "x": 38.63976464284685,
+            "y": 78.840399468454,
+            "z": 10.5
+          },
+          "elevation": 10.5,
+          "distanceFromHomeplate": 87.8,
+          "angle": -206.1095238095238,
+          "facing": -26.109523809523807,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "padres-130-2-13",
+          "sectionId": "130",
+          "row": "2",
+          "seatNumber": "13",
+          "position3D": {
+            "x": 38.37745168971384,
+            "y": 78.96841901547529,
+            "z": 10.5
+          },
+          "elevation": 10.5,
+          "distanceFromHomeplate": 87.8,
+          "angle": -205.91904761904763,
+          "facing": -25.91904761904763,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "padres-130-2-14",
+          "sectionId": "130",
+          "row": "2",
+          "seatNumber": "14",
+          "position3D": {
+            "x": 38.11471459401223,
+            "y": 79.09556581387474,
+            "z": 10.5
+          },
+          "elevation": 10.5,
+          "distanceFromHomeplate": 87.8,
+          "angle": -205.72857142857143,
+          "facing": -25.728571428571428,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "padres-130-2-15",
+          "sectionId": "130",
+          "row": "2",
+          "seatNumber": "15",
+          "position3D": {
+            "x": 37.85155625947812,
+            "y": 79.22183845844252,
+            "z": 10.5
+          },
+          "elevation": 10.5,
+          "distanceFromHomeplate": 87.8,
+          "angle": -205.53809523809525,
+          "facing": -25.538095238095252,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "padres-130-2-16",
+          "sectionId": "130",
+          "row": "2",
+          "seatNumber": "16",
+          "position3D": {
+            "x": 37.587979594502904,
+            "y": 79.34723555362993,
+            "z": 10.5
+          },
+          "elevation": 10.5,
+          "distanceFromHomeplate": 87.8,
+          "angle": -205.34761904761905,
+          "facing": -25.347619047619048,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "padres-130-2-17",
+          "sectionId": "130",
+          "row": "2",
+          "seatNumber": "17",
+          "position3D": {
+            "x": 37.32398751210126,
+            "y": 79.47175571356473,
+            "z": 10.5
+          },
+          "elevation": 10.5,
+          "distanceFromHomeplate": 87.8,
+          "angle": -205.15714285714287,
+          "facing": -25.157142857142873,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "padres-130-2-18",
+          "sectionId": "130",
+          "row": "2",
+          "seatNumber": "18",
+          "position3D": {
+            "x": 37.05958292987932,
+            "y": 79.59539756206634,
+            "z": 10.5
+          },
+          "elevation": 10.5,
+          "distanceFromHomeplate": 87.8,
+          "angle": -204.96666666666667,
+          "facing": -24.96666666666667,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "padres-130-2-19",
+          "sectionId": "130",
+          "row": "2",
+          "seatNumber": "19",
+          "position3D": {
+            "x": 36.79476877000167,
+            "y": 79.71815973266135,
+            "z": 10.5
+          },
+          "elevation": 10.5,
+          "distanceFromHomeplate": 87.8,
+          "angle": -204.7761904761905,
+          "facing": -24.776190476190493,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "padres-130-2-20",
+          "sectionId": "130",
+          "row": "2",
+          "seatNumber": "20",
+          "position3D": {
+            "x": 36.52954795915972,
+            "y": 79.84004086859832,
+            "z": 10.5
+          },
+          "elevation": 10.5,
+          "distanceFromHomeplate": 87.8,
+          "angle": -204.5857142857143,
+          "facing": -24.58571428571429,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "padres-130-2-21",
+          "sectionId": "130",
+          "row": "2",
+          "seatNumber": "21",
+          "position3D": {
+            "x": 36.263923428539336,
+            "y": 79.96103962286281,
+            "z": 10.5
+          },
+          "elevation": 10.5,
+          "distanceFromHomeplate": 87.80000000000001,
+          "angle": -204.3952380952381,
+          "facing": -24.395238095238113,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        }
+      ],
+      "covered": false,
+      "hasAisleSeats": false,
+      "wheelchairRow": false
+    },
+    {
+      "rowNumber": "3",
+      "sectionId": "130",
+      "seatCount": 21,
+      "elevation": 13,
+      "depth": 90.6,
+      "rowSpacing": 36,
+      "seats": [
+        {
+          "id": "padres-130-3-1",
+          "sectionId": "130",
+          "row": "3",
+          "seatNumber": "1",
+          "position3D": {
+            "x": 42.81973523123338,
+            "y": 79.84253424539497,
+            "z": 13
+          },
+          "elevation": 13,
+          "distanceFromHomeplate": 90.6,
+          "angle": -208.2047619047619,
+          "facing": -28.20476190476191,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "padres-130-3-2",
+          "sectionId": "130",
+          "row": "3",
+          "seatNumber": "2",
+          "position3D": {
+            "x": 42.55406765239209,
+            "y": 79.9844442765944,
+            "z": 13
+          },
+          "elevation": 13,
+          "distanceFromHomeplate": 90.6,
+          "angle": -208.01428571428573,
+          "facing": -28.014285714285734,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "padres-130-3-3",
+          "sectionId": "130",
+          "row": "3",
+          "seatNumber": "3",
+          "position3D": {
+            "x": 42.28792977156981,
+            "y": 80.12547033019386,
+            "z": 13
+          },
+          "elevation": 13,
+          "distanceFromHomeplate": 90.59999999999998,
+          "angle": -207.82380952380953,
+          "facing": -27.82380952380953,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "padres-130-3-4",
+          "sectionId": "130",
+          "row": "3",
+          "seatNumber": "4",
+          "position3D": {
+            "x": 42.021324530087526,
+            "y": 80.2656108475919,
+            "z": 13
+          },
+          "elevation": 13,
+          "distanceFromHomeplate": 90.6,
+          "angle": -207.63333333333335,
+          "facing": -27.633333333333354,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "padres-130-3-5",
+          "sectionId": "130",
+          "row": "3",
+          "seatNumber": "5",
+          "position3D": {
+            "x": 41.75425487443144,
+            "y": 80.40486427997386,
+            "z": 13
+          },
+          "elevation": 13,
+          "distanceFromHomeplate": 90.6,
+          "angle": -207.44285714285715,
+          "facing": -27.44285714285715,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "padres-130-3-6",
+          "sectionId": "130",
+          "row": "3",
+          "seatNumber": "6",
+          "position3D": {
+            "x": 41.48672375622033,
+            "y": 80.5432290883291,
+            "z": 13
+          },
+          "elevation": 13,
+          "distanceFromHomeplate": 90.6,
+          "angle": -207.25238095238097,
+          "facing": -27.252380952380975,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "padres-130-3-7",
+          "sectionId": "130",
+          "row": "3",
+          "seatNumber": "7",
+          "position3D": {
+            "x": 41.21873413217322,
+            "y": 80.68070374346779,
+            "z": 13
+          },
+          "elevation": 13,
+          "distanceFromHomeplate": 90.6,
+          "angle": -207.06190476190477,
+          "facing": -27.06190476190477,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "padres-130-3-8",
+          "sectionId": "130",
+          "row": "3",
+          "seatNumber": "8",
+          "position3D": {
+            "x": 40.950288964076314,
+            "y": 80.81728672603806,
+            "z": 13
+          },
+          "elevation": 13,
+          "distanceFromHomeplate": 90.6,
+          "angle": -206.8714285714286,
+          "facing": -26.871428571428595,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "padres-130-3-9",
+          "sectionId": "130",
+          "row": "3",
+          "seatNumber": "9",
+          "position3D": {
+            "x": 40.68139121875016,
+            "y": 80.95297652654284,
+            "z": 13
+          },
+          "elevation": 13,
+          "distanceFromHomeplate": 90.6,
+          "angle": -206.6809523809524,
+          "facing": -26.68095238095239,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "padres-130-3-10",
+          "sectionId": "130",
+          "row": "3",
+          "seatNumber": "10",
+          "position3D": {
+            "x": 40.41204386801785,
+            "y": 81.087771645356,
+            "z": 13
+          },
+          "elevation": 13,
+          "distanceFromHomeplate": 90.60000000000001,
+          "angle": -206.49047619047622,
+          "facing": -26.490476190476215,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "padres-130-3-11",
+          "sectionId": "130",
+          "row": "3",
+          "seatNumber": "11",
+          "position3D": {
+            "x": 40.14224988867065,
+            "y": 81.22167059273971,
+            "z": 13
+          },
+          "elevation": 13,
+          "distanceFromHomeplate": 90.59999999999998,
+          "angle": -206.3,
+          "facing": -26.30000000000001,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "padres-130-3-12",
+          "sectionId": "130",
+          "row": "3",
+          "seatNumber": "12",
+          "position3D": {
+            "x": 39.8720122624365,
+            "y": 81.35467188886027,
+            "z": 13
+          },
+          "elevation": 13,
+          "distanceFromHomeplate": 90.59999999999998,
+          "angle": -206.1095238095238,
+          "facing": -26.109523809523807,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "padres-130-3-13",
+          "sectionId": "130",
+          "row": "3",
+          "seatNumber": "13",
+          "position3D": {
+            "x": 39.60133397594617,
+            "y": 81.4867740638048,
+            "z": 13
+          },
+          "elevation": 13,
+          "distanceFromHomeplate": 90.6,
+          "angle": -205.91904761904763,
+          "facing": -25.91904761904763,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "padres-130-3-14",
+          "sectionId": "130",
+          "row": "3",
+          "seatNumber": "14",
+          "position3D": {
+            "x": 39.33021802070054,
+            "y": 81.6179756575974,
+            "z": 13
+          },
+          "elevation": 13,
+          "distanceFromHomeplate": 90.6,
+          "angle": -205.72857142857143,
+          "facing": -25.728571428571428,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "padres-130-3-15",
+          "sectionId": "130",
+          "row": "3",
+          "seatNumber": "15",
+          "position3D": {
+            "x": 39.05866739303779,
+            "y": 81.74827522021516,
+            "z": 13
+          },
+          "elevation": 13,
+          "distanceFromHomeplate": 90.59999999999998,
+          "angle": -205.53809523809525,
+          "facing": -25.538095238095252,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "padres-130-3-16",
+          "sectionId": "130",
+          "row": "3",
+          "seatNumber": "16",
+          "position3D": {
+            "x": 38.78668509409981,
+            "y": 81.87767131160446,
+            "z": 13
+          },
+          "elevation": 13,
+          "distanceFromHomeplate": 90.60000000000001,
+          "angle": -205.34761904761905,
+          "facing": -25.347619047619048,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "padres-130-3-17",
+          "sectionId": "130",
+          "row": "3",
+          "seatNumber": "17",
+          "position3D": {
+            "x": 38.51427412979925,
+            "y": 82.00616250169664,
+            "z": 13
+          },
+          "elevation": 13,
+          "distanceFromHomeplate": 90.6,
+          "angle": -205.15714285714287,
+          "facing": -25.157142857142873,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "padres-130-3-18",
+          "sectionId": "130",
+          "row": "3",
+          "seatNumber": "18",
+          "position3D": {
+            "x": 38.241437510786625,
+            "y": 82.1337473704238,
+            "z": 13
+          },
+          "elevation": 13,
+          "distanceFromHomeplate": 90.59999999999998,
+          "angle": -204.96666666666667,
+          "facing": -24.96666666666667,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "padres-130-3-19",
+          "sectionId": "130",
+          "row": "3",
+          "seatNumber": "19",
+          "position3D": {
+            "x": 37.9681782524163,
+            "y": 82.26042450773483,
+            "z": 13
+          },
+          "elevation": 13,
+          "distanceFromHomeplate": 90.6,
+          "angle": -204.7761904761905,
+          "facing": -24.776190476190493,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "padres-130-3-20",
+          "sectionId": "130",
+          "row": "3",
+          "seatNumber": "20",
+          "position3D": {
+            "x": 37.694499374713786,
+            "y": 82.38619251361057,
+            "z": 13
+          },
+          "elevation": 13,
+          "distanceFromHomeplate": 90.60000000000001,
+          "angle": -204.5857142857143,
+          "facing": -24.58571428571429,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "padres-130-3-21",
+          "sectionId": "130",
+          "row": "3",
+          "seatNumber": "21",
+          "position3D": {
+            "x": 37.420403902342414,
+            "y": 82.51104999807939,
+            "z": 13
+          },
+          "elevation": 13,
+          "distanceFromHomeplate": 90.60000000000001,
+          "angle": -204.3952380952381,
+          "facing": -24.395238095238113,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        }
+      ],
+      "covered": false,
+      "hasAisleSeats": false,
+      "wheelchairRow": false
+    },
+    {
+      "rowNumber": "4",
+      "sectionId": "130",
+      "seatCount": 21,
+      "elevation": 15.5,
+      "depth": 93.4,
+      "rowSpacing": 36,
+      "seats": [
+        {
+          "id": "padres-130-4-1",
+          "sectionId": "130",
+          "row": "4",
+          "seatNumber": "1",
+          "position3D": {
+            "x": 44.14308245692272,
+            "y": 82.31007393509815,
+            "z": 15.5
+          },
+          "elevation": 15.5,
+          "distanceFromHomeplate": 93.4,
+          "angle": -208.2047619047619,
+          "facing": -28.20476190476191,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "padres-130-4-2",
+          "sectionId": "130",
+          "row": "4",
+          "seatNumber": "2",
+          "position3D": {
+            "x": 43.86920440103115,
+            "y": 82.45636970677614,
+            "z": 15.5
+          },
+          "elevation": 15.5,
+          "distanceFromHomeplate": 93.4,
+          "angle": -208.01428571428573,
+          "facing": -28.014285714285734,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "padres-130-4-3",
+          "sectionId": "130",
+          "row": "4",
+          "seatNumber": "3",
+          "position3D": {
+            "x": 43.59484150843952,
+            "y": 82.60175418145815,
+            "z": 15.5
+          },
+          "elevation": 15.5,
+          "distanceFromHomeplate": 93.39999999999999,
+          "angle": -207.82380952380953,
+          "facing": -27.82380952380953,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "padres-130-4-4",
+          "sectionId": "130",
+          "row": "4",
+          "seatNumber": "4",
+          "position3D": {
+            "x": 43.319996811370586,
+            "y": 82.746225752374,
+            "z": 15.5
+          },
+          "elevation": 15.5,
+          "distanceFromHomeplate": 93.39999999999999,
+          "angle": -207.63333333333335,
+          "facing": -27.633333333333354,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "padres-130-4-5",
+          "sectionId": "130",
+          "row": "4",
+          "seatNumber": "5",
+          "position3D": {
+            "x": 43.04467334737193,
+            "y": 82.88978282284282,
+            "z": 15.5
+          },
+          "elevation": 15.5,
+          "distanceFromHomeplate": 93.39999999999999,
+          "angle": -207.44285714285715,
+          "facing": -27.44285714285715,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "padres-130-4-6",
+          "sectionId": "130",
+          "row": "4",
+          "seatNumber": "6",
+          "position3D": {
+            "x": 42.76887415928233,
+            "y": 83.03242380629072,
+            "z": 15.5
+          },
+          "elevation": 15.5,
+          "distanceFromHomeplate": 93.40000000000002,
+          "angle": -207.25238095238097,
+          "facing": -27.252380952380975,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "padres-130-4-7",
+          "sectionId": "130",
+          "row": "4",
+          "seatNumber": "7",
+          "position3D": {
+            "x": 42.492602295198445,
+            "y": 83.17414712626814,
+            "z": 15.5
+          },
+          "elevation": 15.5,
+          "distanceFromHomeplate": 93.40000000000002,
+          "angle": -207.06190476190477,
+          "facing": -27.06190476190477,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "padres-130-4-8",
+          "sectionId": "130",
+          "row": "4",
+          "seatNumber": "8",
+          "position3D": {
+            "x": 42.21586080844071,
+            "y": 83.3149512164675,
+            "z": 15.5
+          },
+          "elevation": 15.5,
+          "distanceFromHomeplate": 93.39999999999999,
+          "angle": -206.8714285714286,
+          "facing": -26.871428571428595,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "padres-130-4-9",
+          "sectionId": "130",
+          "row": "4",
+          "seatNumber": "9",
+          "position3D": {
+            "x": 41.938652757519485,
+            "y": 83.45483452074063,
+            "z": 15.5
+          },
+          "elevation": 15.5,
+          "distanceFromHomeplate": 93.39999999999999,
+          "angle": -206.6809523809524,
+          "facing": -26.68095238095239,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "padres-130-4-10",
+          "sectionId": "130",
+          "row": "4",
+          "seatNumber": "10",
+          "position3D": {
+            "x": 41.66098120610229,
+            "y": 83.59379549311535,
+            "z": 15.5
+          },
+          "elevation": 15.5,
+          "distanceFromHomeplate": 93.4,
+          "angle": -206.49047619047622,
+          "facing": -26.490476190476215,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "padres-130-4-11",
+          "sectionId": "130",
+          "row": "4",
+          "seatNumber": "11",
+          "position3D": {
+            "x": 41.38284922297836,
+            "y": 83.73183259781337,
+            "z": 15.5
+          },
+          "elevation": 15.5,
+          "distanceFromHomeplate": 93.4,
+          "angle": -206.3,
+          "facing": -26.30000000000001,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "padres-130-4-12",
+          "sectionId": "130",
+          "row": "4",
+          "seatNumber": "12",
+          "position3D": {
+            "x": 41.104259882026156,
+            "y": 83.86894430926655,
+            "z": 15.5
+          },
+          "elevation": 15.5,
+          "distanceFromHomeplate": 93.39999999999999,
+          "angle": -206.1095238095238,
+          "facing": -26.109523809523807,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "padres-130-4-13",
+          "sectionId": "130",
+          "row": "4",
+          "seatNumber": "13",
+          "position3D": {
+            "x": 40.82521626217851,
+            "y": 84.00512911213433,
+            "z": 15.5
+          },
+          "elevation": 15.5,
+          "distanceFromHomeplate": 93.40000000000002,
+          "angle": -205.91904761904763,
+          "facing": -25.91904761904763,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "padres-130-4-14",
+          "sectionId": "130",
+          "row": "4",
+          "seatNumber": "14",
+          "position3D": {
+            "x": 40.545721447388864,
+            "y": 84.14038550132007,
+            "z": 15.5
+          },
+          "elevation": 15.5,
+          "distanceFromHomeplate": 93.4,
+          "angle": -205.72857142857143,
+          "facing": -25.728571428571428,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "padres-130-4-15",
+          "sectionId": "130",
+          "row": "4",
+          "seatNumber": "15",
+          "position3D": {
+            "x": 40.265778526597465,
+            "y": 84.27471198198783,
+            "z": 15.5
+          },
+          "elevation": 15.5,
+          "distanceFromHomeplate": 93.4,
+          "angle": -205.53809523809525,
+          "facing": -25.538095238095252,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "padres-130-4-16",
+          "sectionId": "130",
+          "row": "4",
+          "seatNumber": "16",
+          "position3D": {
+            "x": 39.985390593696714,
+            "y": 84.40810706957899,
+            "z": 15.5
+          },
+          "elevation": 15.5,
+          "distanceFromHomeplate": 93.39999999999999,
+          "angle": -205.34761904761905,
+          "facing": -25.347619047619048,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "padres-130-4-17",
+          "sectionId": "130",
+          "row": "4",
+          "seatNumber": "17",
+          "position3D": {
+            "x": 39.70456074749724,
+            "y": 84.54056928982855,
+            "z": 15.5
+          },
+          "elevation": 15.5,
+          "distanceFromHomeplate": 93.4,
+          "angle": -205.15714285714287,
+          "facing": -25.157142857142873,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "padres-130-4-18",
+          "sectionId": "130",
+          "row": "4",
+          "seatNumber": "18",
+          "position3D": {
+            "x": 39.423292091693945,
+            "y": 84.67209717878129,
+            "z": 15.5
+          },
+          "elevation": 15.5,
+          "distanceFromHomeplate": 93.4,
+          "angle": -204.96666666666667,
+          "facing": -24.96666666666667,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "padres-130-4-19",
+          "sectionId": "130",
+          "row": "4",
+          "seatNumber": "19",
+          "position3D": {
+            "x": 39.141587734830935,
+            "y": 84.80268928280832,
+            "z": 15.5
+          },
+          "elevation": 15.5,
+          "distanceFromHomeplate": 93.39999999999999,
+          "angle": -204.7761904761905,
+          "facing": -24.776190476190493,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "padres-130-4-20",
+          "sectionId": "130",
+          "row": "4",
+          "seatNumber": "20",
+          "position3D": {
+            "x": 38.859450790267864,
+            "y": 84.93234415862283,
+            "z": 15.5
+          },
+          "elevation": 15.5,
+          "distanceFromHomeplate": 93.40000000000002,
+          "angle": -204.5857142857143,
+          "facing": -24.58571428571429,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "padres-130-4-21",
+          "sectionId": "130",
+          "row": "4",
+          "seatNumber": "21",
+          "position3D": {
+            "x": 38.57688437614549,
+            "y": 85.06106037329597,
+            "z": 15.5
+          },
+          "elevation": 15.5,
+          "distanceFromHomeplate": 93.4,
+          "angle": -204.3952380952381,
+          "facing": -24.395238095238113,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        }
+      ],
+      "covered": false,
+      "hasAisleSeats": false,
+      "wheelchairRow": false
+    },
+    {
+      "rowNumber": "5",
+      "sectionId": "130",
+      "seatCount": 21,
+      "elevation": 18,
+      "depth": 96.2,
+      "rowSpacing": 36,
+      "seats": [
+        {
+          "id": "padres-130-5-1",
+          "sectionId": "130",
+          "row": "5",
+          "seatNumber": "1",
+          "position3D": {
+            "x": 45.46642968261205,
+            "y": 84.77761362480129,
+            "z": 18
+          },
+          "elevation": 18,
+          "distanceFromHomeplate": 96.19999999999999,
+          "angle": -208.2047619047619,
+          "facing": -28.20476190476191,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "padres-130-5-2",
+          "sectionId": "130",
+          "row": "5",
+          "seatNumber": "2",
+          "position3D": {
+            "x": 45.184341149670196,
+            "y": 84.92829513695786,
+            "z": 18
+          },
+          "elevation": 18,
+          "distanceFromHomeplate": 96.19999999999999,
+          "angle": -208.01428571428573,
+          "facing": -28.014285714285734,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "padres-130-5-3",
+          "sectionId": "130",
+          "row": "5",
+          "seatNumber": "3",
+          "position3D": {
+            "x": 44.90175324530923,
+            "y": 85.07803803272242,
+            "z": 18
+          },
+          "elevation": 18,
+          "distanceFromHomeplate": 96.2,
+          "angle": -207.82380952380953,
+          "facing": -27.82380952380953,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "padres-130-5-4",
+          "sectionId": "130",
+          "row": "5",
+          "seatNumber": "4",
+          "position3D": {
+            "x": 44.61866909265365,
+            "y": 85.22684065715609,
+            "z": 18
+          },
+          "elevation": 18,
+          "distanceFromHomeplate": 96.2,
+          "angle": -207.63333333333335,
+          "facing": -27.633333333333354,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "padres-130-5-5",
+          "sectionId": "130",
+          "row": "5",
+          "seatNumber": "5",
+          "position3D": {
+            "x": 44.335091820312414,
+            "y": 85.37470136571177,
+            "z": 18
+          },
+          "elevation": 18,
+          "distanceFromHomeplate": 96.2,
+          "angle": -207.44285714285715,
+          "facing": -27.44285714285715,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "padres-130-5-6",
+          "sectionId": "130",
+          "row": "5",
+          "seatNumber": "6",
+          "position3D": {
+            "x": 44.05102456234433,
+            "y": 85.52161852425232,
+            "z": 18
+          },
+          "elevation": 18,
+          "distanceFromHomeplate": 96.2,
+          "angle": -207.25238095238097,
+          "facing": -27.252380952380975,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "padres-130-5-7",
+          "sectionId": "130",
+          "row": "5",
+          "seatNumber": "7",
+          "position3D": {
+            "x": 43.766470458223665,
+            "y": 85.66759050906846,
+            "z": 18
+          },
+          "elevation": 18,
+          "distanceFromHomeplate": 96.20000000000002,
+          "angle": -207.06190476190477,
+          "facing": -27.06190476190477,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "padres-130-5-8",
+          "sectionId": "130",
+          "row": "5",
+          "seatNumber": "8",
+          "position3D": {
+            "x": 43.4814326528051,
+            "y": 85.81261570689693,
+            "z": 18
+          },
+          "elevation": 18,
+          "distanceFromHomeplate": 96.2,
+          "angle": -206.8714285714286,
+          "facing": -26.871428571428595,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "padres-130-5-9",
+          "sectionId": "130",
+          "row": "5",
+          "seatNumber": "9",
+          "position3D": {
+            "x": 43.195914296288805,
+            "y": 85.95669251493842,
+            "z": 18
+          },
+          "elevation": 18,
+          "distanceFromHomeplate": 96.19999999999999,
+          "angle": -206.6809523809524,
+          "facing": -26.68095238095239,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "padres-130-5-10",
+          "sectionId": "130",
+          "row": "5",
+          "seatNumber": "10",
+          "position3D": {
+            "x": 42.90991854418672,
+            "y": 86.0998193408747,
+            "z": 18
+          },
+          "elevation": 18,
+          "distanceFromHomeplate": 96.2,
+          "angle": -206.49047619047622,
+          "facing": -26.490476190476215,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "padres-130-5-11",
+          "sectionId": "130",
+          "row": "5",
+          "seatNumber": "11",
+          "position3D": {
+            "x": 42.62344855728606,
+            "y": 86.24199460288699,
+            "z": 18
+          },
+          "elevation": 18,
+          "distanceFromHomeplate": 96.19999999999999,
+          "angle": -206.3,
+          "facing": -26.30000000000001,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "padres-130-5-12",
+          "sectionId": "130",
+          "row": "5",
+          "seatNumber": "12",
+          "position3D": {
+            "x": 42.3365075016158,
+            "y": 86.38321672967284,
+            "z": 18
+          },
+          "elevation": 18,
+          "distanceFromHomeplate": 96.2,
+          "angle": -206.1095238095238,
+          "facing": -26.109523809523807,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "padres-130-5-13",
+          "sectionId": "130",
+          "row": "5",
+          "seatNumber": "13",
+          "position3D": {
+            "x": 42.04909854841084,
+            "y": 86.52348416046382,
+            "z": 18
+          },
+          "elevation": 18,
+          "distanceFromHomeplate": 96.2,
+          "angle": -205.91904761904763,
+          "facing": -25.91904761904763,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "padres-130-5-14",
+          "sectionId": "130",
+          "row": "5",
+          "seatNumber": "14",
+          "position3D": {
+            "x": 41.76122487407718,
+            "y": 86.66279534504272,
+            "z": 18
+          },
+          "elevation": 18,
+          "distanceFromHomeplate": 96.20000000000002,
+          "angle": -205.72857142857143,
+          "facing": -25.728571428571428,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "padres-130-5-15",
+          "sectionId": "130",
+          "row": "5",
+          "seatNumber": "15",
+          "position3D": {
+            "x": 41.47288966015713,
+            "y": 86.80114874376048,
+            "z": 18
+          },
+          "elevation": 18,
+          "distanceFromHomeplate": 96.19999999999999,
+          "angle": -205.53809523809525,
+          "facing": -25.538095238095252,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "padres-130-5-16",
+          "sectionId": "130",
+          "row": "5",
+          "seatNumber": "16",
+          "position3D": {
+            "x": 41.18409609329362,
+            "y": 86.93854282755352,
+            "z": 18
+          },
+          "elevation": 18,
+          "distanceFromHomeplate": 96.2,
+          "angle": -205.34761904761905,
+          "facing": -25.347619047619048,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "padres-130-5-17",
+          "sectionId": "130",
+          "row": "5",
+          "seatNumber": "17",
+          "position3D": {
+            "x": 40.89484736519523,
+            "y": 87.07497607796046,
+            "z": 18
+          },
+          "elevation": 18,
+          "distanceFromHomeplate": 96.2,
+          "angle": -205.15714285714287,
+          "facing": -25.157142857142873,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "padres-130-5-18",
+          "sectionId": "130",
+          "row": "5",
+          "seatNumber": "18",
+          "position3D": {
+            "x": 40.60514667260126,
+            "y": 87.21044698713875,
+            "z": 18
+          },
+          "elevation": 18,
+          "distanceFromHomeplate": 96.2,
+          "angle": -204.96666666666667,
+          "facing": -24.96666666666667,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "padres-130-5-19",
+          "sectionId": "130",
+          "row": "5",
+          "seatNumber": "19",
+          "position3D": {
+            "x": 40.31499721724557,
+            "y": 87.3449540578818,
+            "z": 18
+          },
+          "elevation": 18,
+          "distanceFromHomeplate": 96.19999999999999,
+          "angle": -204.7761904761905,
+          "facing": -24.776190476190493,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "padres-130-5-20",
+          "sectionId": "130",
+          "row": "5",
+          "seatNumber": "20",
+          "position3D": {
+            "x": 40.02440220582193,
+            "y": 87.47849580363507,
+            "z": 18
+          },
+          "elevation": 18,
+          "distanceFromHomeplate": 96.20000000000002,
+          "angle": -204.5857142857143,
+          "facing": -24.58571428571429,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "padres-130-5-21",
+          "sectionId": "130",
+          "row": "5",
+          "seatNumber": "21",
+          "position3D": {
+            "x": 39.73336484994857,
+            "y": 87.61107074851256,
+            "z": 18
+          },
+          "elevation": 18,
+          "distanceFromHomeplate": 96.20000000000002,
+          "angle": -204.3952380952381,
+          "facing": -24.395238095238113,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        }
+      ],
+      "covered": false,
+      "hasAisleSeats": false,
+      "wheelchairRow": false
+    },
+    {
+      "rowNumber": "6",
+      "sectionId": "130",
+      "seatCount": 21,
+      "elevation": 20.5,
+      "depth": 99,
+      "rowSpacing": 36,
+      "seats": [
+        {
+          "id": "padres-130-6-1",
+          "sectionId": "130",
+          "row": "6",
+          "seatNumber": "1",
+          "position3D": {
+            "x": 46.789776908301384,
+            "y": 87.24515331450445,
+            "z": 20.5
+          },
+          "elevation": 20.5,
+          "distanceFromHomeplate": 99,
+          "angle": -208.2047619047619,
+          "facing": -28.20476190476191,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "padres-130-6-2",
+          "sectionId": "130",
+          "row": "6",
+          "seatNumber": "2",
+          "position3D": {
+            "x": 46.499477898309244,
+            "y": 87.40022056713958,
+            "z": 20.5
+          },
+          "elevation": 20.5,
+          "distanceFromHomeplate": 99,
+          "angle": -208.01428571428573,
+          "facing": -28.014285714285734,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "padres-130-6-3",
+          "sectionId": "130",
+          "row": "6",
+          "seatNumber": "3",
+          "position3D": {
+            "x": 46.20866498217893,
+            "y": 87.55432188398669,
+            "z": 20.5
+          },
+          "elevation": 20.5,
+          "distanceFromHomeplate": 99,
+          "angle": -207.82380952380953,
+          "facing": -27.82380952380953,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "padres-130-6-4",
+          "sectionId": "130",
+          "row": "6",
+          "seatNumber": "4",
+          "position3D": {
+            "x": 45.9173413739367,
+            "y": 87.70745556193818,
+            "z": 20.5
+          },
+          "elevation": 20.5,
+          "distanceFromHomeplate": 99,
+          "angle": -207.63333333333335,
+          "facing": -27.633333333333354,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "padres-130-6-5",
+          "sectionId": "130",
+          "row": "6",
+          "seatNumber": "5",
+          "position3D": {
+            "x": 45.6255102932529,
+            "y": 87.85961990858071,
+            "z": 20.5
+          },
+          "elevation": 20.5,
+          "distanceFromHomeplate": 98.99999999999999,
+          "angle": -207.44285714285715,
+          "facing": -27.44285714285715,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "padres-130-6-6",
+          "sectionId": "130",
+          "row": "6",
+          "seatNumber": "6",
+          "position3D": {
+            "x": 45.33317496540632,
+            "y": 88.01081324221393,
+            "z": 20.5
+          },
+          "elevation": 20.5,
+          "distanceFromHomeplate": 99.00000000000001,
+          "angle": -207.25238095238097,
+          "facing": -27.252380952380975,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "padres-130-6-7",
+          "sectionId": "130",
+          "row": "6",
+          "seatNumber": "7",
+          "position3D": {
+            "x": 45.040338621248885,
+            "y": 88.16103389186878,
+            "z": 20.5
+          },
+          "elevation": 20.5,
+          "distanceFromHomeplate": 99,
+          "angle": -207.06190476190477,
+          "facing": -27.06190476190477,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "padres-130-6-8",
+          "sectionId": "130",
+          "row": "6",
+          "seatNumber": "8",
+          "position3D": {
+            "x": 44.747004497169485,
+            "y": 88.31028019732636,
+            "z": 20.5
+          },
+          "elevation": 20.5,
+          "distanceFromHomeplate": 98.99999999999999,
+          "angle": -206.8714285714286,
+          "facing": -26.871428571428595,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "padres-130-6-9",
+          "sectionId": "130",
+          "row": "6",
+          "seatNumber": "9",
+          "position3D": {
+            "x": 44.453175835058126,
+            "y": 88.45855050913622,
+            "z": 20.5
+          },
+          "elevation": 20.5,
+          "distanceFromHomeplate": 98.99999999999999,
+          "angle": -206.6809523809524,
+          "facing": -26.68095238095239,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "padres-130-6-10",
+          "sectionId": "130",
+          "row": "6",
+          "seatNumber": "10",
+          "position3D": {
+            "x": 44.15885588227116,
+            "y": 88.60584318863404,
+            "z": 20.5
+          },
+          "elevation": 20.5,
+          "distanceFromHomeplate": 99,
+          "angle": -206.49047619047622,
+          "facing": -26.490476190476215,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "padres-130-6-11",
+          "sectionId": "130",
+          "row": "6",
+          "seatNumber": "11",
+          "position3D": {
+            "x": 43.86404789159376,
+            "y": 88.75215660796063,
+            "z": 20.5
+          },
+          "elevation": 20.5,
+          "distanceFromHomeplate": 99,
+          "angle": -206.3,
+          "facing": -26.30000000000001,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "padres-130-6-12",
+          "sectionId": "130",
+          "row": "6",
+          "seatNumber": "12",
+          "position3D": {
+            "x": 43.56875512120545,
+            "y": 88.89748915007911,
+            "z": 20.5
+          },
+          "elevation": 20.5,
+          "distanceFromHomeplate": 99,
+          "angle": -206.1095238095238,
+          "facing": -26.109523809523807,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "padres-130-6-13",
+          "sectionId": "130",
+          "row": "6",
+          "seatNumber": "13",
+          "position3D": {
+            "x": 43.272980834643164,
+            "y": 89.04183920879333,
+            "z": 20.5
+          },
+          "elevation": 20.5,
+          "distanceFromHomeplate": 99,
+          "angle": -205.91904761904763,
+          "facing": -25.91904761904763,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "padres-130-6-14",
+          "sectionId": "130",
+          "row": "6",
+          "seatNumber": "14",
+          "position3D": {
+            "x": 42.976728300765494,
+            "y": 89.18520518876538,
+            "z": 20.5
+          },
+          "elevation": 20.5,
+          "distanceFromHomeplate": 99,
+          "angle": -205.72857142857143,
+          "facing": -25.728571428571428,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "padres-130-6-15",
+          "sectionId": "130",
+          "row": "6",
+          "seatNumber": "15",
+          "position3D": {
+            "x": 42.68000079371679,
+            "y": 89.32758550553314,
+            "z": 20.5
+          },
+          "elevation": 20.5,
+          "distanceFromHomeplate": 99,
+          "angle": -205.53809523809525,
+          "facing": -25.538095238095252,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "padres-130-6-16",
+          "sectionId": "130",
+          "row": "6",
+          "seatNumber": "16",
+          "position3D": {
+            "x": 42.38280159289052,
+            "y": 89.46897858552805,
+            "z": 20.5
+          },
+          "elevation": 20.5,
+          "distanceFromHomeplate": 99,
+          "angle": -205.34761904761905,
+          "facing": -25.347619047619048,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "padres-130-6-17",
+          "sectionId": "130",
+          "row": "6",
+          "seatNumber": "17",
+          "position3D": {
+            "x": 42.08513398289322,
+            "y": 89.60938286609236,
+            "z": 20.5
+          },
+          "elevation": 20.5,
+          "distanceFromHomeplate": 99,
+          "angle": -205.15714285714287,
+          "facing": -25.157142857142873,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "padres-130-6-18",
+          "sectionId": "130",
+          "row": "6",
+          "seatNumber": "18",
+          "position3D": {
+            "x": 41.78700125350857,
+            "y": 89.74879679549622,
+            "z": 20.5
+          },
+          "elevation": 20.5,
+          "distanceFromHomeplate": 98.99999999999999,
+          "angle": -204.96666666666667,
+          "facing": -24.96666666666667,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "padres-130-6-19",
+          "sectionId": "130",
+          "row": "6",
+          "seatNumber": "19",
+          "position3D": {
+            "x": 41.488406699660196,
+            "y": 89.88721883295528,
+            "z": 20.5
+          },
+          "elevation": 20.5,
+          "distanceFromHomeplate": 99,
+          "angle": -204.7761904761905,
+          "facing": -24.776190476190493,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "padres-130-6-20",
+          "sectionId": "130",
+          "row": "6",
+          "seatNumber": "20",
+          "position3D": {
+            "x": 41.18935362137599,
+            "y": 90.02464744864731,
+            "z": 20.5
+          },
+          "elevation": 20.5,
+          "distanceFromHomeplate": 99.00000000000001,
+          "angle": -204.5857142857143,
+          "facing": -24.58571428571429,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "padres-130-6-21",
+          "sectionId": "130",
+          "row": "6",
+          "seatNumber": "21",
+          "position3D": {
+            "x": 40.88984532375164,
+            "y": 90.16108112372913,
+            "z": 20.5
+          },
+          "elevation": 20.5,
+          "distanceFromHomeplate": 99,
+          "angle": -204.3952380952381,
+          "facing": -24.395238095238113,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        }
+      ],
+      "covered": false,
+      "hasAisleSeats": false,
+      "wheelchairRow": false
+    },
+    {
+      "rowNumber": "7",
+      "sectionId": "130",
+      "seatCount": 21,
+      "elevation": 23,
+      "depth": 101.8,
+      "rowSpacing": 36,
+      "seats": [
+        {
+          "id": "padres-130-7-1",
+          "sectionId": "130",
+          "row": "7",
+          "seatNumber": "1",
+          "position3D": {
+            "x": 48.113124133990716,
+            "y": 89.71269300420761,
+            "z": 23
+          },
+          "elevation": 23,
+          "distanceFromHomeplate": 101.8,
+          "angle": -208.2047619047619,
+          "facing": -28.20476190476191,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "padres-130-7-2",
+          "sectionId": "130",
+          "row": "7",
+          "seatNumber": "2",
+          "position3D": {
+            "x": 47.81461464694829,
+            "y": 89.87214599732131,
+            "z": 23
+          },
+          "elevation": 23,
+          "distanceFromHomeplate": 101.79999999999998,
+          "angle": -208.01428571428573,
+          "facing": -28.014285714285734,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "padres-130-7-3",
+          "sectionId": "130",
+          "row": "7",
+          "seatNumber": "3",
+          "position3D": {
+            "x": 47.51557671904864,
+            "y": 90.03060573525094,
+            "z": 23
+          },
+          "elevation": 23,
+          "distanceFromHomeplate": 101.79999999999998,
+          "angle": -207.82380952380953,
+          "facing": -27.82380952380953,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "padres-130-7-4",
+          "sectionId": "130",
+          "row": "7",
+          "seatNumber": "4",
+          "position3D": {
+            "x": 47.21601365521976,
+            "y": 90.18807046672026,
+            "z": 23
+          },
+          "elevation": 23,
+          "distanceFromHomeplate": 101.79999999999998,
+          "angle": -207.63333333333335,
+          "facing": -27.633333333333354,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "padres-130-7-5",
+          "sectionId": "130",
+          "row": "7",
+          "seatNumber": "5",
+          "position3D": {
+            "x": 46.91592876619339,
+            "y": 90.34453845144967,
+            "z": 23
+          },
+          "elevation": 23,
+          "distanceFromHomeplate": 101.8,
+          "angle": -207.44285714285715,
+          "facing": -27.44285714285715,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "padres-130-7-6",
+          "sectionId": "130",
+          "row": "7",
+          "seatNumber": "6",
+          "position3D": {
+            "x": 46.61532536846832,
+            "y": 90.50000796017552,
+            "z": 23
+          },
+          "elevation": 23,
+          "distanceFromHomeplate": 101.8,
+          "angle": -207.25238095238097,
+          "facing": -27.252380952380975,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "padres-130-7-7",
+          "sectionId": "130",
+          "row": "7",
+          "seatNumber": "7",
+          "position3D": {
+            "x": 46.314206784274106,
+            "y": 90.65447727466912,
+            "z": 23
+          },
+          "elevation": 23,
+          "distanceFromHomeplate": 101.80000000000001,
+          "angle": -207.06190476190477,
+          "facing": -27.06190476190477,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "padres-130-7-8",
+          "sectionId": "130",
+          "row": "7",
+          "seatNumber": "8",
+          "position3D": {
+            "x": 46.01257634153387,
+            "y": 90.80794468775579,
+            "z": 23
+          },
+          "elevation": 23,
+          "distanceFromHomeplate": 101.79999999999998,
+          "angle": -206.8714285714286,
+          "facing": -26.871428571428595,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "padres-130-7-9",
+          "sectionId": "130",
+          "row": "7",
+          "seatNumber": "9",
+          "position3D": {
+            "x": 45.710437373827446,
+            "y": 90.96040850333401,
+            "z": 23
+          },
+          "elevation": 23,
+          "distanceFromHomeplate": 101.8,
+          "angle": -206.6809523809524,
+          "facing": -26.68095238095239,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "padres-130-7-10",
+          "sectionId": "130",
+          "row": "7",
+          "seatNumber": "10",
+          "position3D": {
+            "x": 45.40779322035559,
+            "y": 91.11186703639339,
+            "z": 23
+          },
+          "elevation": 23,
+          "distanceFromHomeplate": 101.8,
+          "angle": -206.49047619047622,
+          "facing": -26.490476190476215,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "padres-130-7-11",
+          "sectionId": "130",
+          "row": "7",
+          "seatNumber": "11",
+          "position3D": {
+            "x": 45.10464722590146,
+            "y": 91.26231861303425,
+            "z": 23
+          },
+          "elevation": 23,
+          "distanceFromHomeplate": 101.8,
+          "angle": -206.3,
+          "facing": -26.30000000000001,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "padres-130-7-12",
+          "sectionId": "130",
+          "row": "7",
+          "seatNumber": "12",
+          "position3D": {
+            "x": 44.8010027407951,
+            "y": 91.41176157048538,
+            "z": 23
+          },
+          "elevation": 23,
+          "distanceFromHomeplate": 101.79999999999998,
+          "angle": -206.1095238095238,
+          "facing": -26.109523809523807,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "padres-130-7-13",
+          "sectionId": "130",
+          "row": "7",
+          "seatNumber": "13",
+          "position3D": {
+            "x": 44.496863120875496,
+            "y": 91.56019425712284,
+            "z": 23
+          },
+          "elevation": 23,
+          "distanceFromHomeplate": 101.80000000000001,
+          "angle": -205.91904761904763,
+          "facing": -25.91904761904763,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "padres-130-7-14",
+          "sectionId": "130",
+          "row": "7",
+          "seatNumber": "14",
+          "position3D": {
+            "x": 44.19223172745381,
+            "y": 91.70761503248802,
+            "z": 23
+          },
+          "elevation": 23,
+          "distanceFromHomeplate": 101.79999999999998,
+          "angle": -205.72857142857143,
+          "facing": -25.728571428571428,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "padres-130-7-15",
+          "sectionId": "130",
+          "row": "7",
+          "seatNumber": "15",
+          "position3D": {
+            "x": 43.88711192727646,
+            "y": 91.8540222673058,
+            "z": 23
+          },
+          "elevation": 23,
+          "distanceFromHomeplate": 101.8,
+          "angle": -205.53809523809525,
+          "facing": -25.538095238095252,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "padres-130-7-16",
+          "sectionId": "130",
+          "row": "7",
+          "seatNumber": "16",
+          "position3D": {
+            "x": 43.58150709248742,
+            "y": 91.99941434350258,
+            "z": 23
+          },
+          "elevation": 23,
+          "distanceFromHomeplate": 101.79999999999998,
+          "angle": -205.34761904761905,
+          "facing": -25.347619047619048,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "padres-130-7-17",
+          "sectionId": "130",
+          "row": "7",
+          "seatNumber": "17",
+          "position3D": {
+            "x": 43.27542060059121,
+            "y": 92.14378965422426,
+            "z": 23
+          },
+          "elevation": 23,
+          "distanceFromHomeplate": 101.80000000000001,
+          "angle": -205.15714285714287,
+          "facing": -25.157142857142873,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "padres-130-7-18",
+          "sectionId": "130",
+          "row": "7",
+          "seatNumber": "18",
+          "position3D": {
+            "x": 42.96885583441588,
+            "y": 92.28714660385369,
+            "z": 23
+          },
+          "elevation": 23,
+          "distanceFromHomeplate": 101.8,
+          "angle": -204.96666666666667,
+          "facing": -24.96666666666667,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "padres-130-7-19",
+          "sectionId": "130",
+          "row": "7",
+          "seatNumber": "19",
+          "position3D": {
+            "x": 42.66181618207483,
+            "y": 92.42948360802876,
+            "z": 23
+          },
+          "elevation": 23,
+          "distanceFromHomeplate": 101.8,
+          "angle": -204.7761904761905,
+          "facing": -24.776190476190493,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "padres-130-7-20",
+          "sectionId": "130",
+          "row": "7",
+          "seatNumber": "20",
+          "position3D": {
+            "x": 42.354305036930064,
+            "y": 92.57079909365956,
+            "z": 23
+          },
+          "elevation": 23,
+          "distanceFromHomeplate": 101.80000000000001,
+          "angle": -204.5857142857143,
+          "facing": -24.58571428571429,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "padres-130-7-21",
+          "sectionId": "130",
+          "row": "7",
+          "seatNumber": "21",
+          "position3D": {
+            "x": 42.04632579755472,
+            "y": 92.71109149894572,
+            "z": 23
+          },
+          "elevation": 23,
+          "distanceFromHomeplate": 101.80000000000001,
+          "angle": -204.3952380952381,
+          "facing": -24.395238095238113,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        }
+      ],
+      "covered": false,
+      "hasAisleSeats": false,
+      "wheelchairRow": false
+    },
+    {
+      "rowNumber": "8",
+      "sectionId": "130",
+      "seatCount": 21,
+      "elevation": 25.5,
+      "depth": 104.6,
+      "rowSpacing": 36,
+      "seats": [
+        {
+          "id": "padres-130-8-1",
+          "sectionId": "130",
+          "row": "8",
+          "seatNumber": "1",
+          "position3D": {
+            "x": 49.43647135968004,
+            "y": 92.18023269391075,
+            "z": 25.5
+          },
+          "elevation": 25.5,
+          "distanceFromHomeplate": 104.6,
+          "angle": -208.2047619047619,
+          "facing": -28.20476190476191,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "padres-130-8-2",
+          "sectionId": "130",
+          "row": "8",
+          "seatNumber": "2",
+          "position3D": {
+            "x": 49.12975139558734,
+            "y": 92.34407142750302,
+            "z": 25.5
+          },
+          "elevation": 25.5,
+          "distanceFromHomeplate": 104.59999999999998,
+          "angle": -208.01428571428573,
+          "facing": -28.014285714285734,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "padres-130-8-3",
+          "sectionId": "130",
+          "row": "8",
+          "seatNumber": "3",
+          "position3D": {
+            "x": 48.82248845591835,
+            "y": 92.50688958651521,
+            "z": 25.5
+          },
+          "elevation": 25.5,
+          "distanceFromHomeplate": 104.59999999999998,
+          "angle": -207.82380952380953,
+          "facing": -27.82380952380953,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "padres-130-8-4",
+          "sectionId": "130",
+          "row": "8",
+          "seatNumber": "4",
+          "position3D": {
+            "x": 48.514685936502815,
+            "y": 92.66868537150235,
+            "z": 25.5
+          },
+          "elevation": 25.5,
+          "distanceFromHomeplate": 104.59999999999998,
+          "angle": -207.63333333333335,
+          "facing": -27.633333333333354,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "padres-130-8-5",
+          "sectionId": "130",
+          "row": "8",
+          "seatNumber": "5",
+          "position3D": {
+            "x": 48.20634723913387,
+            "y": 92.8294569943186,
+            "z": 25.5
+          },
+          "elevation": 25.5,
+          "distanceFromHomeplate": 104.6,
+          "angle": -207.44285714285715,
+          "facing": -27.44285714285715,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "padres-130-8-6",
+          "sectionId": "130",
+          "row": "8",
+          "seatNumber": "6",
+          "position3D": {
+            "x": 47.89747577153032,
+            "y": 92.98920267813713,
+            "z": 25.5
+          },
+          "elevation": 25.5,
+          "distanceFromHomeplate": 104.6,
+          "angle": -207.25238095238097,
+          "facing": -27.252380952380975,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "padres-130-8-7",
+          "sectionId": "130",
+          "row": "8",
+          "seatNumber": "7",
+          "position3D": {
+            "x": 47.588074947299326,
+            "y": 93.14792065746944,
+            "z": 25.5
+          },
+          "elevation": 25.5,
+          "distanceFromHomeplate": 104.6,
+          "angle": -207.06190476190477,
+          "facing": -27.06190476190477,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "padres-130-8-8",
+          "sectionId": "130",
+          "row": "8",
+          "seatNumber": "8",
+          "position3D": {
+            "x": 47.27814818589826,
+            "y": 93.30560917818522,
+            "z": 25.5
+          },
+          "elevation": 25.5,
+          "distanceFromHomeplate": 104.59999999999998,
+          "angle": -206.8714285714286,
+          "facing": -26.871428571428595,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "padres-130-8-9",
+          "sectionId": "130",
+          "row": "8",
+          "seatNumber": "9",
+          "position3D": {
+            "x": 46.96769891259677,
+            "y": 93.4622664975318,
+            "z": 25.5
+          },
+          "elevation": 25.5,
+          "distanceFromHomeplate": 104.6,
+          "angle": -206.6809523809524,
+          "facing": -26.68095238095239,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "padres-130-8-10",
+          "sectionId": "130",
+          "row": "8",
+          "seatNumber": "10",
+          "position3D": {
+            "x": 46.65673055844003,
+            "y": 93.61789088415273,
+            "z": 25.5
+          },
+          "elevation": 25.5,
+          "distanceFromHomeplate": 104.6,
+          "angle": -206.49047619047622,
+          "facing": -26.490476190476215,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "padres-130-8-11",
+          "sectionId": "130",
+          "row": "8",
+          "seatNumber": "11",
+          "position3D": {
+            "x": 46.34524656020916,
+            "y": 93.77248061810789,
+            "z": 25.5
+          },
+          "elevation": 25.5,
+          "distanceFromHomeplate": 104.6,
+          "angle": -206.3,
+          "facing": -26.30000000000001,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "padres-130-8-12",
+          "sectionId": "130",
+          "row": "8",
+          "seatNumber": "12",
+          "position3D": {
+            "x": 46.03325036038474,
+            "y": 93.92603399089165,
+            "z": 25.5
+          },
+          "elevation": 25.5,
+          "distanceFromHomeplate": 104.59999999999998,
+          "angle": -206.1095238095238,
+          "facing": -26.109523809523807,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "padres-130-8-13",
+          "sectionId": "130",
+          "row": "8",
+          "seatNumber": "13",
+          "position3D": {
+            "x": 45.72074540710783,
+            "y": 94.07854930545234,
+            "z": 25.5
+          },
+          "elevation": 25.5,
+          "distanceFromHomeplate": 104.6,
+          "angle": -205.91904761904763,
+          "facing": -25.91904761904763,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "padres-130-8-14",
+          "sectionId": "130",
+          "row": "8",
+          "seatNumber": "14",
+          "position3D": {
+            "x": 45.40773515414213,
+            "y": 94.23002487621068,
+            "z": 25.5
+          },
+          "elevation": 25.5,
+          "distanceFromHomeplate": 104.6,
+          "angle": -205.72857142857143,
+          "facing": -25.728571428571428,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "padres-130-8-15",
+          "sectionId": "130",
+          "row": "8",
+          "seatNumber": "15",
+          "position3D": {
+            "x": 45.09422306083612,
+            "y": 94.38045902907844,
+            "z": 25.5
+          },
+          "elevation": 25.5,
+          "distanceFromHomeplate": 104.6,
+          "angle": -205.53809523809525,
+          "facing": -25.538095238095252,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "padres-130-8-16",
+          "sectionId": "130",
+          "row": "8",
+          "seatNumber": "16",
+          "position3D": {
+            "x": 44.780212592084325,
+            "y": 94.52985010147711,
+            "z": 25.5
+          },
+          "elevation": 25.5,
+          "distanceFromHomeplate": 104.6,
+          "angle": -205.34761904761905,
+          "facing": -25.347619047619048,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "padres-130-8-17",
+          "sectionId": "130",
+          "row": "8",
+          "seatNumber": "17",
+          "position3D": {
+            "x": 44.4657072182892,
+            "y": 94.67819644235617,
+            "z": 25.5
+          },
+          "elevation": 25.5,
+          "distanceFromHomeplate": 104.6,
+          "angle": -205.15714285714287,
+          "facing": -25.157142857142873,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "padres-130-8-18",
+          "sectionId": "130",
+          "row": "8",
+          "seatNumber": "18",
+          "position3D": {
+            "x": 44.150710415323196,
+            "y": 94.82549641221115,
+            "z": 25.5
+          },
+          "elevation": 25.5,
+          "distanceFromHomeplate": 104.6,
+          "angle": -204.96666666666667,
+          "facing": -24.96666666666667,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "padres-130-8-19",
+          "sectionId": "130",
+          "row": "8",
+          "seatNumber": "19",
+          "position3D": {
+            "x": 43.83522566448946,
+            "y": 94.97174838310224,
+            "z": 25.5
+          },
+          "elevation": 25.5,
+          "distanceFromHomeplate": 104.6,
+          "angle": -204.7761904761905,
+          "facing": -24.776190476190493,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "padres-130-8-20",
+          "sectionId": "130",
+          "row": "8",
+          "seatNumber": "20",
+          "position3D": {
+            "x": 43.51925645248413,
+            "y": 95.1169507386718,
+            "z": 25.5
+          },
+          "elevation": 25.5,
+          "distanceFromHomeplate": 104.6,
+          "angle": -204.5857142857143,
+          "facing": -24.58571428571429,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "padres-130-8-21",
+          "sectionId": "130",
+          "row": "8",
+          "seatNumber": "21",
+          "position3D": {
+            "x": 43.202806271357794,
+            "y": 95.26110187416229,
+            "z": 25.5
+          },
+          "elevation": 25.5,
+          "distanceFromHomeplate": 104.6,
+          "angle": -204.3952380952381,
+          "facing": -24.395238095238113,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        }
+      ],
+      "covered": false,
+      "hasAisleSeats": false,
+      "wheelchairRow": false
+    },
+    {
+      "rowNumber": "9",
+      "sectionId": "130",
+      "seatCount": 21,
+      "elevation": 28,
+      "depth": 107.4,
+      "rowSpacing": 36,
+      "seats": [
+        {
+          "id": "padres-130-9-1",
+          "sectionId": "130",
+          "row": "9",
+          "seatNumber": "1",
+          "position3D": {
+            "x": 50.75981858536938,
+            "y": 94.64777238361393,
+            "z": 28
+          },
+          "elevation": 28,
+          "distanceFromHomeplate": 107.4,
+          "angle": -208.2047619047619,
+          "facing": -28.20476190476191,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "padres-130-9-2",
+          "sectionId": "130",
+          "row": "9",
+          "seatNumber": "2",
+          "position3D": {
+            "x": 50.4448881442264,
+            "y": 94.81599685768477,
+            "z": 28
+          },
+          "elevation": 28,
+          "distanceFromHomeplate": 107.4,
+          "angle": -208.01428571428573,
+          "facing": -28.014285714285734,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "padres-130-9-3",
+          "sectionId": "130",
+          "row": "9",
+          "seatNumber": "3",
+          "position3D": {
+            "x": 50.129400192788054,
+            "y": 94.9831734377795,
+            "z": 28
+          },
+          "elevation": 28,
+          "distanceFromHomeplate": 107.4,
+          "angle": -207.82380952380953,
+          "facing": -27.82380952380953,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "padres-130-9-4",
+          "sectionId": "130",
+          "row": "9",
+          "seatNumber": "4",
+          "position3D": {
+            "x": 49.81335821778588,
+            "y": 95.14930027628445,
+            "z": 28
+          },
+          "elevation": 28,
+          "distanceFromHomeplate": 107.4,
+          "angle": -207.63333333333335,
+          "facing": -27.633333333333354,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "padres-130-9-5",
+          "sectionId": "130",
+          "row": "9",
+          "seatNumber": "5",
+          "position3D": {
+            "x": 49.496765712074364,
+            "y": 95.31437553718757,
+            "z": 28
+          },
+          "elevation": 28,
+          "distanceFromHomeplate": 107.4,
+          "angle": -207.44285714285715,
+          "facing": -27.44285714285715,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "padres-130-9-6",
+          "sectionId": "130",
+          "row": "9",
+          "seatNumber": "6",
+          "position3D": {
+            "x": 49.17962617459232,
+            "y": 95.47839739609874,
+            "z": 28
+          },
+          "elevation": 28,
+          "distanceFromHomeplate": 107.4,
+          "angle": -207.25238095238097,
+          "facing": -27.252380952380975,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "padres-130-9-7",
+          "sectionId": "130",
+          "row": "9",
+          "seatNumber": "7",
+          "position3D": {
+            "x": 48.86194311032455,
+            "y": 95.64136404026978,
+            "z": 28
+          },
+          "elevation": 28,
+          "distanceFromHomeplate": 107.4,
+          "angle": -207.06190476190477,
+          "facing": -27.06190476190477,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "padres-130-9-8",
+          "sectionId": "130",
+          "row": "9",
+          "seatNumber": "8",
+          "position3D": {
+            "x": 48.543720030262655,
+            "y": 95.80327366861466,
+            "z": 28
+          },
+          "elevation": 28,
+          "distanceFromHomeplate": 107.4,
+          "angle": -206.8714285714286,
+          "facing": -26.871428571428595,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "padres-130-9-9",
+          "sectionId": "130",
+          "row": "9",
+          "seatNumber": "9",
+          "position3D": {
+            "x": 48.22496045136609,
+            "y": 95.9641244917296,
+            "z": 28
+          },
+          "elevation": 28,
+          "distanceFromHomeplate": 107.4,
+          "angle": -206.6809523809524,
+          "facing": -26.68095238095239,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "padres-130-9-10",
+          "sectionId": "130",
+          "row": "9",
+          "seatNumber": "10",
+          "position3D": {
+            "x": 47.90566789652447,
+            "y": 96.1239147319121,
+            "z": 28
+          },
+          "elevation": 28,
+          "distanceFromHomeplate": 107.4,
+          "angle": -206.49047619047622,
+          "facing": -26.490476190476215,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "padres-130-9-11",
+          "sectionId": "130",
+          "row": "9",
+          "seatNumber": "11",
+          "position3D": {
+            "x": 47.58584589451687,
+            "y": 96.28264262318153,
+            "z": 28
+          },
+          "elevation": 28,
+          "distanceFromHomeplate": 107.4,
+          "angle": -206.3,
+          "facing": -26.30000000000001,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "padres-130-9-12",
+          "sectionId": "130",
+          "row": "9",
+          "seatNumber": "12",
+          "position3D": {
+            "x": 47.2654979799744,
+            "y": 96.44030641129795,
+            "z": 28
+          },
+          "elevation": 28,
+          "distanceFromHomeplate": 107.4,
+          "angle": -206.1095238095238,
+          "facing": -26.109523809523807,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "padres-130-9-13",
+          "sectionId": "130",
+          "row": "9",
+          "seatNumber": "13",
+          "position3D": {
+            "x": 46.944627693340166,
+            "y": 96.59690435378187,
+            "z": 28
+          },
+          "elevation": 28,
+          "distanceFromHomeplate": 107.4,
+          "angle": -205.91904761904763,
+          "facing": -25.91904761904763,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "padres-130-9-14",
+          "sectionId": "130",
+          "row": "9",
+          "seatNumber": "14",
+          "position3D": {
+            "x": 46.62323858083045,
+            "y": 96.75243471993335,
+            "z": 28
+          },
+          "elevation": 28,
+          "distanceFromHomeplate": 107.4,
+          "angle": -205.72857142857143,
+          "facing": -25.728571428571428,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "padres-130-9-15",
+          "sectionId": "130",
+          "row": "9",
+          "seatNumber": "15",
+          "position3D": {
+            "x": 46.3013341943958,
+            "y": 96.90689579085111,
+            "z": 28
+          },
+          "elevation": 28,
+          "distanceFromHomeplate": 107.4,
+          "angle": -205.53809523809525,
+          "facing": -25.538095238095252,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "padres-130-9-16",
+          "sectionId": "130",
+          "row": "9",
+          "seatNumber": "16",
+          "position3D": {
+            "x": 45.97891809168124,
+            "y": 97.06028585945165,
+            "z": 28
+          },
+          "elevation": 28,
+          "distanceFromHomeplate": 107.40000000000002,
+          "angle": -205.34761904761905,
+          "facing": -25.347619047619048,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "padres-130-9-17",
+          "sectionId": "130",
+          "row": "9",
+          "seatNumber": "17",
+          "position3D": {
+            "x": 45.655993835987196,
+            "y": 97.21260323048809,
+            "z": 28
+          },
+          "elevation": 28,
+          "distanceFromHomeplate": 107.40000000000002,
+          "angle": -205.15714285714287,
+          "facing": -25.157142857142873,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "padres-130-9-18",
+          "sectionId": "130",
+          "row": "9",
+          "seatNumber": "18",
+          "position3D": {
+            "x": 45.33256499623051,
+            "y": 97.36384622056863,
+            "z": 28
+          },
+          "elevation": 28,
+          "distanceFromHomeplate": 107.4,
+          "angle": -204.96666666666667,
+          "facing": -24.96666666666667,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "padres-130-9-19",
+          "sectionId": "130",
+          "row": "9",
+          "seatNumber": "19",
+          "position3D": {
+            "x": 45.0086351469041,
+            "y": 97.51401315817573,
+            "z": 28
+          },
+          "elevation": 28,
+          "distanceFromHomeplate": 107.4,
+          "angle": -204.7761904761905,
+          "facing": -24.776190476190493,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "padres-130-9-20",
+          "sectionId": "130",
+          "row": "9",
+          "seatNumber": "20",
+          "position3D": {
+            "x": 44.68420786803821,
+            "y": 97.66310238368406,
+            "z": 28
+          },
+          "elevation": 28,
+          "distanceFromHomeplate": 107.40000000000002,
+          "angle": -204.5857142857143,
+          "facing": -24.58571428571429,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "padres-130-9-21",
+          "sectionId": "130",
+          "row": "9",
+          "seatNumber": "21",
+          "position3D": {
+            "x": 44.35928674516088,
+            "y": 97.8111122493789,
+            "z": 28
+          },
+          "elevation": 28,
+          "distanceFromHomeplate": 107.40000000000002,
+          "angle": -204.3952380952381,
+          "facing": -24.395238095238113,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        }
+      ],
+      "covered": false,
+      "hasAisleSeats": false,
+      "wheelchairRow": false
+    },
+    {
+      "rowNumber": "10",
+      "sectionId": "130",
+      "seatCount": 21,
+      "elevation": 30.5,
+      "depth": 110.2,
+      "rowSpacing": 36,
+      "seats": [
+        {
+          "id": "padres-130-10-1",
+          "sectionId": "130",
+          "row": "10",
+          "seatNumber": "1",
+          "position3D": {
+            "x": 52.08316581105871,
+            "y": 97.11531207331707,
+            "z": 30.5
+          },
+          "elevation": 30.5,
+          "distanceFromHomeplate": 110.2,
+          "angle": -208.2047619047619,
+          "facing": -28.20476190476191,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "padres-130-10-2",
+          "sectionId": "130",
+          "row": "10",
+          "seatNumber": "2",
+          "position3D": {
+            "x": 51.760024892865445,
+            "y": 97.2879222878665,
+            "z": 30.5
+          },
+          "elevation": 30.5,
+          "distanceFromHomeplate": 110.2,
+          "angle": -208.01428571428573,
+          "facing": -28.014285714285734,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "padres-130-10-3",
+          "sectionId": "130",
+          "row": "10",
+          "seatNumber": "3",
+          "position3D": {
+            "x": 51.43631192965776,
+            "y": 97.45945728904377,
+            "z": 30.5
+          },
+          "elevation": 30.5,
+          "distanceFromHomeplate": 110.2,
+          "angle": -207.82380952380953,
+          "facing": -27.82380952380953,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "padres-130-10-4",
+          "sectionId": "130",
+          "row": "10",
+          "seatNumber": "4",
+          "position3D": {
+            "x": 51.112030499068936,
+            "y": 97.62991518106654,
+            "z": 30.5
+          },
+          "elevation": 30.5,
+          "distanceFromHomeplate": 110.19999999999999,
+          "angle": -207.63333333333335,
+          "facing": -27.633333333333354,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "padres-130-10-5",
+          "sectionId": "130",
+          "row": "10",
+          "seatNumber": "5",
+          "position3D": {
+            "x": 50.787184185014844,
+            "y": 97.79929408005651,
+            "z": 30.5
+          },
+          "elevation": 30.5,
+          "distanceFromHomeplate": 110.19999999999999,
+          "angle": -207.44285714285715,
+          "facing": -27.44285714285715,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "padres-130-10-6",
+          "sectionId": "130",
+          "row": "10",
+          "seatNumber": "6",
+          "position3D": {
+            "x": 50.46177657765431,
+            "y": 97.96759211406035,
+            "z": 30.5
+          },
+          "elevation": 30.5,
+          "distanceFromHomeplate": 110.2,
+          "angle": -207.25238095238097,
+          "facing": -27.252380952380975,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "padres-130-10-7",
+          "sectionId": "130",
+          "row": "10",
+          "seatNumber": "7",
+          "position3D": {
+            "x": 50.135811273349766,
+            "y": 98.1348074230701,
+            "z": 30.5
+          },
+          "elevation": 30.5,
+          "distanceFromHomeplate": 110.2,
+          "angle": -207.06190476190477,
+          "facing": -27.06190476190477,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "padres-130-10-8",
+          "sectionId": "130",
+          "row": "10",
+          "seatNumber": "8",
+          "position3D": {
+            "x": 49.80929187462704,
+            "y": 98.3009381590441,
+            "z": 30.5
+          },
+          "elevation": 30.5,
+          "distanceFromHomeplate": 110.19999999999999,
+          "angle": -206.8714285714286,
+          "facing": -26.871428571428595,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "padres-130-10-9",
+          "sectionId": "130",
+          "row": "10",
+          "seatNumber": "9",
+          "position3D": {
+            "x": 49.48222199013541,
+            "y": 98.46598248592738,
+            "z": 30.5
+          },
+          "elevation": 30.5,
+          "distanceFromHomeplate": 110.19999999999999,
+          "angle": -206.6809523809524,
+          "facing": -26.68095238095239,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "padres-130-10-10",
+          "sectionId": "130",
+          "row": "10",
+          "seatNumber": "10",
+          "position3D": {
+            "x": 49.15460523460891,
+            "y": 98.62993857967143,
+            "z": 30.5
+          },
+          "elevation": 30.5,
+          "distanceFromHomeplate": 110.2,
+          "angle": -206.49047619047622,
+          "facing": -26.490476190476215,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "padres-130-10-11",
+          "sectionId": "130",
+          "row": "10",
+          "seatNumber": "11",
+          "position3D": {
+            "x": 48.82644522882457,
+            "y": 98.79280462825517,
+            "z": 30.5
+          },
+          "elevation": 30.5,
+          "distanceFromHomeplate": 110.2,
+          "angle": -206.3,
+          "facing": -26.30000000000001,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "padres-130-10-12",
+          "sectionId": "130",
+          "row": "10",
+          "seatNumber": "12",
+          "position3D": {
+            "x": 48.49774559956405,
+            "y": 98.95457883170423,
+            "z": 30.5
+          },
+          "elevation": 30.5,
+          "distanceFromHomeplate": 110.2,
+          "angle": -206.1095238095238,
+          "facing": -26.109523809523807,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "padres-130-10-13",
+          "sectionId": "130",
+          "row": "10",
+          "seatNumber": "13",
+          "position3D": {
+            "x": 48.1685099795725,
+            "y": 99.11525940211136,
+            "z": 30.5
+          },
+          "elevation": 30.5,
+          "distanceFromHomeplate": 110.2,
+          "angle": -205.91904761904763,
+          "facing": -25.91904761904763,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "padres-130-10-14",
+          "sectionId": "130",
+          "row": "10",
+          "seatNumber": "14",
+          "position3D": {
+            "x": 47.83874200751877,
+            "y": 99.274844563656,
+            "z": 30.5
+          },
+          "elevation": 30.5,
+          "distanceFromHomeplate": 110.2,
+          "angle": -205.72857142857143,
+          "facing": -25.728571428571428,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "padres-130-10-15",
+          "sectionId": "130",
+          "row": "10",
+          "seatNumber": "15",
+          "position3D": {
+            "x": 47.508445327955464,
+            "y": 99.43333255262375,
+            "z": 30.5
+          },
+          "elevation": 30.5,
+          "distanceFromHomeplate": 110.19999999999999,
+          "angle": -205.53809523809525,
+          "facing": -25.538095238095252,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "padres-130-10-16",
+          "sectionId": "130",
+          "row": "10",
+          "seatNumber": "16",
+          "position3D": {
+            "x": 47.177623591278135,
+            "y": 99.59072161742618,
+            "z": 30.5
+          },
+          "elevation": 30.5,
+          "distanceFromHomeplate": 110.2,
+          "angle": -205.34761904761905,
+          "facing": -25.347619047619048,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "padres-130-10-17",
+          "sectionId": "130",
+          "row": "10",
+          "seatNumber": "17",
+          "position3D": {
+            "x": 46.84628045368518,
+            "y": 99.74701001861999,
+            "z": 30.5
+          },
+          "elevation": 30.5,
+          "distanceFromHomeplate": 110.20000000000002,
+          "angle": -205.15714285714287,
+          "facing": -25.157142857142873,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "padres-130-10-18",
+          "sectionId": "130",
+          "row": "10",
+          "seatNumber": "18",
+          "position3D": {
+            "x": 46.51441957713782,
+            "y": 99.9021960289261,
+            "z": 30.5
+          },
+          "elevation": 30.5,
+          "distanceFromHomeplate": 110.2,
+          "angle": -204.96666666666667,
+          "facing": -24.96666666666667,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "padres-130-10-19",
+          "sectionId": "130",
+          "row": "10",
+          "seatNumber": "19",
+          "position3D": {
+            "x": 46.182044629318725,
+            "y": 100.0562779332492,
+            "z": 30.5
+          },
+          "elevation": 30.5,
+          "distanceFromHomeplate": 110.19999999999999,
+          "angle": -204.7761904761905,
+          "facing": -24.776190476190493,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "padres-130-10-20",
+          "sectionId": "130",
+          "row": "10",
+          "seatNumber": "20",
+          "position3D": {
+            "x": 45.84915928359227,
+            "y": 100.20925402869631,
+            "z": 30.5
+          },
+          "elevation": 30.5,
+          "distanceFromHomeplate": 110.2,
+          "angle": -204.5857142857143,
+          "facing": -24.58571428571429,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "padres-130-10-21",
+          "sectionId": "130",
+          "row": "10",
+          "seatNumber": "21",
+          "position3D": {
+            "x": 45.51576721896395,
+            "y": 100.36112262459547,
+            "z": 30.5
+          },
+          "elevation": 30.5,
+          "distanceFromHomeplate": 110.2,
+          "angle": -204.3952380952381,
+          "facing": -24.395238095238113,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        }
+      ],
+      "covered": false,
+      "hasAisleSeats": false,
+      "wheelchairRow": false
+    },
+    {
+      "rowNumber": "11",
+      "sectionId": "130",
+      "seatCount": 21,
+      "elevation": 33,
+      "depth": 113,
+      "rowSpacing": 36,
+      "seats": [
+        {
+          "id": "padres-130-11-1",
+          "sectionId": "130",
+          "row": "11",
+          "seatNumber": "1",
+          "position3D": {
+            "x": 53.406513036748045,
+            "y": 99.58285176302023,
+            "z": 33
+          },
+          "elevation": 33,
+          "distanceFromHomeplate": 113,
+          "angle": -208.2047619047619,
+          "facing": -28.20476190476191,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "padres-130-11-2",
+          "sectionId": "130",
+          "row": "11",
+          "seatNumber": "2",
+          "position3D": {
+            "x": 53.075161641504494,
+            "y": 99.7598477180482,
+            "z": 33
+          },
+          "elevation": 33,
+          "distanceFromHomeplate": 112.99999999999999,
+          "angle": -208.01428571428573,
+          "facing": -28.014285714285734,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "padres-130-11-3",
+          "sectionId": "130",
+          "row": "11",
+          "seatNumber": "3",
+          "position3D": {
+            "x": 52.74322366652747,
+            "y": 99.93574114030804,
+            "z": 33
+          },
+          "elevation": 33,
+          "distanceFromHomeplate": 113,
+          "angle": -207.82380952380953,
+          "facing": -27.82380952380953,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "padres-130-11-4",
+          "sectionId": "130",
+          "row": "11",
+          "seatNumber": "4",
+          "position3D": {
+            "x": 52.410702780352,
+            "y": 100.11053008584864,
+            "z": 33
+          },
+          "elevation": 33,
+          "distanceFromHomeplate": 113.00000000000001,
+          "angle": -207.63333333333335,
+          "facing": -27.633333333333354,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "padres-130-11-5",
+          "sectionId": "130",
+          "row": "11",
+          "seatNumber": "5",
+          "position3D": {
+            "x": 52.07760265795533,
+            "y": 100.28421262292547,
+            "z": 33
+          },
+          "elevation": 33,
+          "distanceFromHomeplate": 113,
+          "angle": -207.44285714285715,
+          "facing": -27.44285714285715,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "padres-130-11-6",
+          "sectionId": "130",
+          "row": "11",
+          "seatNumber": "6",
+          "position3D": {
+            "x": 51.74392698071631,
+            "y": 100.45678683202195,
+            "z": 33
+          },
+          "elevation": 33,
+          "distanceFromHomeplate": 113,
+          "angle": -207.25238095238097,
+          "facing": -27.252380952380975,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "padres-130-11-7",
+          "sectionId": "130",
+          "row": "11",
+          "seatNumber": "7",
+          "position3D": {
+            "x": 51.40967943637499,
+            "y": 100.62825080587044,
+            "z": 33
+          },
+          "elevation": 33,
+          "distanceFromHomeplate": 113,
+          "angle": -207.06190476190477,
+          "facing": -27.06190476190477,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "padres-130-11-8",
+          "sectionId": "130",
+          "row": "11",
+          "seatNumber": "8",
+          "position3D": {
+            "x": 51.07486371899143,
+            "y": 100.79860264947352,
+            "z": 33
+          },
+          "elevation": 33,
+          "distanceFromHomeplate": 112.99999999999999,
+          "angle": -206.8714285714286,
+          "facing": -26.871428571428595,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "padres-130-11-9",
+          "sectionId": "130",
+          "row": "11",
+          "seatNumber": "9",
+          "position3D": {
+            "x": 50.73948352890473,
+            "y": 100.96784048012518,
+            "z": 33
+          },
+          "elevation": 33,
+          "distanceFromHomeplate": 112.99999999999999,
+          "angle": -206.6809523809524,
+          "facing": -26.68095238095239,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "padres-130-11-10",
+          "sectionId": "130",
+          "row": "11",
+          "seatNumber": "10",
+          "position3D": {
+            "x": 50.40354257269335,
+            "y": 101.13596242743078,
+            "z": 33
+          },
+          "elevation": 33,
+          "distanceFromHomeplate": 113,
+          "angle": -206.49047619047622,
+          "facing": -26.490476190476215,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "padres-130-11-11",
+          "sectionId": "130",
+          "row": "11",
+          "seatNumber": "11",
+          "position3D": {
+            "x": 50.06704456313227,
+            "y": 101.3029666333288,
+            "z": 33
+          },
+          "elevation": 33,
+          "distanceFromHomeplate": 113,
+          "angle": -206.3,
+          "facing": -26.30000000000001,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "padres-130-11-12",
+          "sectionId": "130",
+          "row": "11",
+          "seatNumber": "12",
+          "position3D": {
+            "x": 49.72999321915369,
+            "y": 101.4688512521105,
+            "z": 33
+          },
+          "elevation": 33,
+          "distanceFromHomeplate": 112.99999999999999,
+          "angle": -206.1095238095238,
+          "facing": -26.109523809523807,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "padres-130-11-13",
+          "sectionId": "130",
+          "row": "11",
+          "seatNumber": "13",
+          "position3D": {
+            "x": 49.39239226580483,
+            "y": 101.63361445044087,
+            "z": 33
+          },
+          "elevation": 33,
+          "distanceFromHomeplate": 113.00000000000001,
+          "angle": -205.91904761904763,
+          "facing": -25.91904761904763,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "padres-130-11-14",
+          "sectionId": "130",
+          "row": "11",
+          "seatNumber": "14",
+          "position3D": {
+            "x": 49.05424543420708,
+            "y": 101.79725440737866,
+            "z": 33
+          },
+          "elevation": 33,
+          "distanceFromHomeplate": 113,
+          "angle": -205.72857142857143,
+          "facing": -25.728571428571428,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "padres-130-11-15",
+          "sectionId": "130",
+          "row": "11",
+          "seatNumber": "15",
+          "position3D": {
+            "x": 48.71555646151513,
+            "y": 101.95976931439641,
+            "z": 33
+          },
+          "elevation": 33,
+          "distanceFromHomeplate": 113,
+          "angle": -205.53809523809525,
+          "facing": -25.538095238095252,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "padres-130-11-16",
+          "sectionId": "130",
+          "row": "11",
+          "seatNumber": "16",
+          "position3D": {
+            "x": 48.37632909087504,
+            "y": 102.1211573754007,
+            "z": 33
+          },
+          "elevation": 33,
+          "distanceFromHomeplate": 113,
+          "angle": -205.34761904761905,
+          "facing": -25.347619047619048,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "padres-130-11-17",
+          "sectionId": "130",
+          "row": "11",
+          "seatNumber": "17",
+          "position3D": {
+            "x": 48.036567071383175,
+            "y": 102.28141680675189,
+            "z": 33
+          },
+          "elevation": 33,
+          "distanceFromHomeplate": 113.00000000000001,
+          "angle": -205.15714285714287,
+          "facing": -25.157142857142873,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "padres-130-11-18",
+          "sectionId": "130",
+          "row": "11",
+          "seatNumber": "18",
+          "position3D": {
+            "x": 47.696274158045135,
+            "y": 102.44054583728357,
+            "z": 33
+          },
+          "elevation": 33,
+          "distanceFromHomeplate": 112.99999999999999,
+          "angle": -204.96666666666667,
+          "facing": -24.96666666666667,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "padres-130-11-19",
+          "sectionId": "130",
+          "row": "11",
+          "seatNumber": "19",
+          "position3D": {
+            "x": 47.35545411173336,
+            "y": 102.5985427083227,
+            "z": 33
+          },
+          "elevation": 33,
+          "distanceFromHomeplate": 113,
+          "angle": -204.7761904761905,
+          "facing": -24.776190476190493,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "padres-130-11-20",
+          "sectionId": "130",
+          "row": "11",
+          "seatNumber": "20",
+          "position3D": {
+            "x": 47.014110699146336,
+            "y": 102.75540567370855,
+            "z": 33
+          },
+          "elevation": 33,
+          "distanceFromHomeplate": 113.00000000000001,
+          "angle": -204.5857142857143,
+          "facing": -24.58571428571429,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "padres-130-11-21",
+          "sectionId": "130",
+          "row": "11",
+          "seatNumber": "21",
+          "position3D": {
+            "x": 46.67224769276703,
+            "y": 102.91113299981204,
+            "z": 33
+          },
+          "elevation": 33,
+          "distanceFromHomeplate": 113,
+          "angle": -204.3952380952381,
+          "facing": -24.395238095238113,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        }
+      ],
+      "covered": false,
+      "hasAisleSeats": false,
+      "wheelchairRow": false
+    },
+    {
+      "rowNumber": "12",
+      "sectionId": "130",
+      "seatCount": 21,
+      "elevation": 35.5,
+      "depth": 115.8,
+      "rowSpacing": 36,
+      "seats": [
+        {
+          "id": "padres-130-12-1",
+          "sectionId": "130",
+          "row": "12",
+          "seatNumber": "1",
+          "position3D": {
+            "x": 54.72986026243737,
+            "y": 102.05039145272339,
+            "z": 35.5
+          },
+          "elevation": 35.5,
+          "distanceFromHomeplate": 115.80000000000001,
+          "angle": -208.2047619047619,
+          "facing": -28.20476190476191,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "padres-130-12-2",
+          "sectionId": "130",
+          "row": "12",
+          "seatNumber": "2",
+          "position3D": {
+            "x": 54.39029839014354,
+            "y": 102.23177314822993,
+            "z": 35.5
+          },
+          "elevation": 35.5,
+          "distanceFromHomeplate": 115.8,
+          "angle": -208.01428571428573,
+          "facing": -28.014285714285734,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "padres-130-12-3",
+          "sectionId": "130",
+          "row": "12",
+          "seatNumber": "3",
+          "position3D": {
+            "x": 54.05013540339718,
+            "y": 102.4120249915723,
+            "z": 35.5
+          },
+          "elevation": 35.5,
+          "distanceFromHomeplate": 115.79999999999998,
+          "angle": -207.82380952380953,
+          "facing": -27.82380952380953,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "padres-130-12-4",
+          "sectionId": "130",
+          "row": "12",
+          "seatNumber": "4",
+          "position3D": {
+            "x": 53.70937506163505,
+            "y": 102.59114499063072,
+            "z": 35.5
+          },
+          "elevation": 35.5,
+          "distanceFromHomeplate": 115.80000000000001,
+          "angle": -207.63333333333335,
+          "facing": -27.633333333333354,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "padres-130-12-5",
+          "sectionId": "130",
+          "row": "12",
+          "seatNumber": "5",
+          "position3D": {
+            "x": 53.36802113089582,
+            "y": 102.7691311657944,
+            "z": 35.5
+          },
+          "elevation": 35.5,
+          "distanceFromHomeplate": 115.8,
+          "angle": -207.44285714285715,
+          "facing": -27.44285714285715,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "padres-130-12-6",
+          "sectionId": "130",
+          "row": "12",
+          "seatNumber": "6",
+          "position3D": {
+            "x": 53.02607738377831,
+            "y": 102.94598154998356,
+            "z": 35.5
+          },
+          "elevation": 35.5,
+          "distanceFromHomeplate": 115.80000000000001,
+          "angle": -207.25238095238097,
+          "facing": -27.252380952380975,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "padres-130-12-7",
+          "sectionId": "130",
+          "row": "12",
+          "seatNumber": "7",
+          "position3D": {
+            "x": 52.68354759940021,
+            "y": 103.12169418867076,
+            "z": 35.5
+          },
+          "elevation": 35.5,
+          "distanceFromHomeplate": 115.8,
+          "angle": -207.06190476190477,
+          "facing": -27.06190476190477,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "padres-130-12-8",
+          "sectionId": "130",
+          "row": "12",
+          "seatNumber": "8",
+          "position3D": {
+            "x": 52.34043556335582,
+            "y": 103.29626713990297,
+            "z": 35.5
+          },
+          "elevation": 35.5,
+          "distanceFromHomeplate": 115.8,
+          "angle": -206.8714285714286,
+          "facing": -26.871428571428595,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "padres-130-12-9",
+          "sectionId": "130",
+          "row": "12",
+          "seatNumber": "9",
+          "position3D": {
+            "x": 51.99674506767405,
+            "y": 103.46969847432297,
+            "z": 35.5
+          },
+          "elevation": 35.5,
+          "distanceFromHomeplate": 115.79999999999998,
+          "angle": -206.6809523809524,
+          "facing": -26.68095238095239,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "padres-130-12-10",
+          "sectionId": "130",
+          "row": "12",
+          "seatNumber": "10",
+          "position3D": {
+            "x": 51.65247991077778,
+            "y": 103.64198627519012,
+            "z": 35.5
+          },
+          "elevation": 35.5,
+          "distanceFromHomeplate": 115.8,
+          "angle": -206.49047619047622,
+          "facing": -26.490476190476215,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "padres-130-12-11",
+          "sectionId": "130",
+          "row": "12",
+          "seatNumber": "11",
+          "position3D": {
+            "x": 51.307643897439974,
+            "y": 103.81312863840243,
+            "z": 35.5
+          },
+          "elevation": 35.5,
+          "distanceFromHomeplate": 115.8,
+          "angle": -206.3,
+          "facing": -26.30000000000001,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "padres-130-12-12",
+          "sectionId": "130",
+          "row": "12",
+          "seatNumber": "12",
+          "position3D": {
+            "x": 50.96224083874334,
+            "y": 103.98312367251677,
+            "z": 35.5
+          },
+          "elevation": 35.5,
+          "distanceFromHomeplate": 115.79999999999998,
+          "angle": -206.1095238095238,
+          "facing": -26.109523809523807,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "padres-130-12-13",
+          "sectionId": "130",
+          "row": "12",
+          "seatNumber": "13",
+          "position3D": {
+            "x": 50.616274552037154,
+            "y": 104.15196949877038,
+            "z": 35.5
+          },
+          "elevation": 35.5,
+          "distanceFromHomeplate": 115.8,
+          "angle": -205.91904761904763,
+          "facing": -25.91904761904763,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "padres-130-12-14",
+          "sectionId": "130",
+          "row": "12",
+          "seatNumber": "14",
+          "position3D": {
+            "x": 50.2697488608954,
+            "y": 104.31966425110132,
+            "z": 35.5
+          },
+          "elevation": 35.5,
+          "distanceFromHomeplate": 115.8,
+          "angle": -205.72857142857143,
+          "facing": -25.728571428571428,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "padres-130-12-15",
+          "sectionId": "130",
+          "row": "12",
+          "seatNumber": "15",
+          "position3D": {
+            "x": 49.92266759507479,
+            "y": 104.48620607616905,
+            "z": 35.5
+          },
+          "elevation": 35.5,
+          "distanceFromHomeplate": 115.8,
+          "angle": -205.53809523809525,
+          "facing": -25.538095238095252,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "padres-130-12-16",
+          "sectionId": "130",
+          "row": "12",
+          "seatNumber": "16",
+          "position3D": {
+            "x": 49.575034590471944,
+            "y": 104.65159313337523,
+            "z": 35.5
+          },
+          "elevation": 35.5,
+          "distanceFromHomeplate": 115.8,
+          "angle": -205.34761904761905,
+          "facing": -25.347619047619048,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "padres-130-12-17",
+          "sectionId": "130",
+          "row": "12",
+          "seatNumber": "17",
+          "position3D": {
+            "x": 49.22685368908116,
+            "y": 104.8158235948838,
+            "z": 35.5
+          },
+          "elevation": 35.5,
+          "distanceFromHomeplate": 115.80000000000001,
+          "angle": -205.15714285714287,
+          "facing": -25.157142857142873,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "padres-130-12-18",
+          "sectionId": "130",
+          "row": "12",
+          "seatNumber": "18",
+          "position3D": {
+            "x": 48.87812873895245,
+            "y": 104.97889564564103,
+            "z": 35.5
+          },
+          "elevation": 35.5,
+          "distanceFromHomeplate": 115.8,
+          "angle": -204.96666666666667,
+          "facing": -24.96666666666667,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "padres-130-12-19",
+          "sectionId": "130",
+          "row": "12",
+          "seatNumber": "19",
+          "position3D": {
+            "x": 48.528863594147985,
+            "y": 105.14080748339617,
+            "z": 35.5
+          },
+          "elevation": 35.5,
+          "distanceFromHomeplate": 115.8,
+          "angle": -204.7761904761905,
+          "facing": -24.776190476190493,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "padres-130-12-20",
+          "sectionId": "130",
+          "row": "12",
+          "seatNumber": "20",
+          "position3D": {
+            "x": 48.17906211470041,
+            "y": 105.3015573187208,
+            "z": 35.5
+          },
+          "elevation": 35.5,
+          "distanceFromHomeplate": 115.80000000000001,
+          "angle": -204.5857142857143,
+          "facing": -24.58571428571429,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "padres-130-12-21",
+          "sectionId": "130",
+          "row": "12",
+          "seatNumber": "21",
+          "position3D": {
+            "x": 47.8287281665701,
+            "y": 105.46114337502863,
+            "z": 35.5
+          },
+          "elevation": 35.5,
+          "distanceFromHomeplate": 115.80000000000001,
+          "angle": -204.3952380952381,
+          "facing": -24.395238095238113,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        }
+      ],
+      "covered": false,
+      "hasAisleSeats": false,
+      "wheelchairRow": false
+    },
+    {
+      "rowNumber": "13",
+      "sectionId": "130",
+      "seatCount": 21,
+      "elevation": 38,
+      "depth": 118.6,
+      "rowSpacing": 36,
+      "seats": [
+        {
+          "id": "padres-130-13-1",
+          "sectionId": "130",
+          "row": "13",
+          "seatNumber": "1",
+          "position3D": {
+            "x": 56.0532074881267,
+            "y": 104.51793114242653,
+            "z": 38
+          },
+          "elevation": 38,
+          "distanceFromHomeplate": 118.6,
+          "angle": -208.2047619047619,
+          "facing": -28.20476190476191,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "padres-130-13-2",
+          "sectionId": "130",
+          "row": "13",
+          "seatNumber": "2",
+          "position3D": {
+            "x": 55.70543513878259,
+            "y": 104.70369857841166,
+            "z": 38
+          },
+          "elevation": 38,
+          "distanceFromHomeplate": 118.6,
+          "angle": -208.01428571428573,
+          "facing": -28.014285714285734,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "padres-130-13-3",
+          "sectionId": "130",
+          "row": "13",
+          "seatNumber": "3",
+          "position3D": {
+            "x": 55.35704714026688,
+            "y": 104.88830884283657,
+            "z": 38
+          },
+          "elevation": 38,
+          "distanceFromHomeplate": 118.6,
+          "angle": -207.82380952380953,
+          "facing": -27.82380952380953,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "padres-130-13-4",
+          "sectionId": "130",
+          "row": "13",
+          "seatNumber": "4",
+          "position3D": {
+            "x": 55.008047342918104,
+            "y": 105.07175989541281,
+            "z": 38
+          },
+          "elevation": 38,
+          "distanceFromHomeplate": 118.6,
+          "angle": -207.63333333333335,
+          "facing": -27.633333333333354,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "padres-130-13-5",
+          "sectionId": "130",
+          "row": "13",
+          "seatNumber": "5",
+          "position3D": {
+            "x": 54.6584396038363,
+            "y": 105.25404970866336,
+            "z": 38
+          },
+          "elevation": 38,
+          "distanceFromHomeplate": 118.6,
+          "angle": -207.44285714285715,
+          "facing": -27.44285714285715,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "padres-130-13-6",
+          "sectionId": "130",
+          "row": "13",
+          "seatNumber": "6",
+          "position3D": {
+            "x": 54.3082277868403,
+            "y": 105.43517626794517,
+            "z": 38
+          },
+          "elevation": 38,
+          "distanceFromHomeplate": 118.60000000000001,
+          "angle": -207.25238095238097,
+          "facing": -27.252380952380975,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "padres-130-13-7",
+          "sectionId": "130",
+          "row": "13",
+          "seatNumber": "7",
+          "position3D": {
+            "x": 53.95741576242543,
+            "y": 105.61513757147108,
+            "z": 38
+          },
+          "elevation": 38,
+          "distanceFromHomeplate": 118.6,
+          "angle": -207.06190476190477,
+          "facing": -27.06190476190477,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "padres-130-13-8",
+          "sectionId": "130",
+          "row": "13",
+          "seatNumber": "8",
+          "position3D": {
+            "x": 53.606007407720206,
+            "y": 105.7939316303324,
+            "z": 38
+          },
+          "elevation": 38,
+          "distanceFromHomeplate": 118.6,
+          "angle": -206.8714285714286,
+          "facing": -26.871428571428595,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "padres-130-13-9",
+          "sectionId": "130",
+          "row": "13",
+          "seatNumber": "9",
+          "position3D": {
+            "x": 53.25400660644337,
+            "y": 105.97155646852076,
+            "z": 38
+          },
+          "elevation": 38,
+          "distanceFromHomeplate": 118.6,
+          "angle": -206.6809523809524,
+          "facing": -26.68095238095239,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "padres-130-13-10",
+          "sectionId": "130",
+          "row": "13",
+          "seatNumber": "10",
+          "position3D": {
+            "x": 52.90141724886222,
+            "y": 106.14801012294947,
+            "z": 38
+          },
+          "elevation": 38,
+          "distanceFromHomeplate": 118.6,
+          "angle": -206.49047619047622,
+          "facing": -26.490476190476215,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "padres-130-13-11",
+          "sectionId": "130",
+          "row": "13",
+          "seatNumber": "11",
+          "position3D": {
+            "x": 52.548243231747676,
+            "y": 106.32329064347606,
+            "z": 38
+          },
+          "elevation": 38,
+          "distanceFromHomeplate": 118.6,
+          "angle": -206.3,
+          "facing": -26.30000000000001,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "padres-130-13-12",
+          "sectionId": "130",
+          "row": "13",
+          "seatNumber": "12",
+          "position3D": {
+            "x": 52.19448845833299,
+            "y": 106.49739609292305,
+            "z": 38
+          },
+          "elevation": 38,
+          "distanceFromHomeplate": 118.6,
+          "angle": -206.1095238095238,
+          "facing": -26.109523809523807,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "padres-130-13-13",
+          "sectionId": "130",
+          "row": "13",
+          "seatNumber": "13",
+          "position3D": {
+            "x": 51.840156838269486,
+            "y": 106.67032454709988,
+            "z": 38
+          },
+          "elevation": 38,
+          "distanceFromHomeplate": 118.6,
+          "angle": -205.91904761904763,
+          "facing": -25.91904761904763,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "padres-130-13-14",
+          "sectionId": "130",
+          "row": "13",
+          "seatNumber": "14",
+          "position3D": {
+            "x": 51.48525228758371,
+            "y": 106.84207409482397,
+            "z": 38
+          },
+          "elevation": 38,
+          "distanceFromHomeplate": 118.6,
+          "angle": -205.72857142857143,
+          "facing": -25.728571428571428,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "padres-130-13-15",
+          "sectionId": "130",
+          "row": "13",
+          "seatNumber": "15",
+          "position3D": {
+            "x": 51.129778728634456,
+            "y": 107.01264283794171,
+            "z": 38
+          },
+          "elevation": 38,
+          "distanceFromHomeplate": 118.6,
+          "angle": -205.53809523809525,
+          "facing": -25.538095238095252,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "padres-130-13-16",
+          "sectionId": "130",
+          "row": "13",
+          "seatNumber": "16",
+          "position3D": {
+            "x": 50.77374009006884,
+            "y": 107.18202889134976,
+            "z": 38
+          },
+          "elevation": 38,
+          "distanceFromHomeplate": 118.6,
+          "angle": -205.34761904761905,
+          "facing": -25.347619047619048,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "padres-130-13-17",
+          "sectionId": "130",
+          "row": "13",
+          "seatNumber": "17",
+          "position3D": {
+            "x": 50.417140306779146,
+            "y": 107.35023038301568,
+            "z": 38
+          },
+          "elevation": 38,
+          "distanceFromHomeplate": 118.6,
+          "angle": -205.15714285714287,
+          "facing": -25.157142857142873,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "padres-130-13-18",
+          "sectionId": "130",
+          "row": "13",
+          "seatNumber": "18",
+          "position3D": {
+            "x": 50.05998331985976,
+            "y": 107.5172454539985,
+            "z": 38
+          },
+          "elevation": 38,
+          "distanceFromHomeplate": 118.6,
+          "angle": -204.96666666666667,
+          "facing": -24.96666666666667,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "padres-130-13-19",
+          "sectionId": "130",
+          "row": "13",
+          "seatNumber": "19",
+          "position3D": {
+            "x": 49.70227307656262,
+            "y": 107.68307225846965,
+            "z": 38
+          },
+          "elevation": 38,
+          "distanceFromHomeplate": 118.6,
+          "angle": -204.7761904761905,
+          "facing": -24.776190476190493,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "padres-130-13-20",
+          "sectionId": "130",
+          "row": "13",
+          "seatNumber": "20",
+          "position3D": {
+            "x": 49.34401353025447,
+            "y": 107.84770896373304,
+            "z": 38
+          },
+          "elevation": 38,
+          "distanceFromHomeplate": 118.60000000000001,
+          "angle": -204.5857142857143,
+          "facing": -24.58571428571429,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "padres-130-13-21",
+          "sectionId": "130",
+          "row": "13",
+          "seatNumber": "21",
+          "position3D": {
+            "x": 48.98520864037318,
+            "y": 108.0111537502452,
+            "z": 38
+          },
+          "elevation": 38,
+          "distanceFromHomeplate": 118.6,
+          "angle": -204.3952380952381,
+          "facing": -24.395238095238113,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        }
+      ],
+      "covered": false,
+      "hasAisleSeats": false,
+      "wheelchairRow": false
+    },
+    {
+      "rowNumber": "14",
+      "sectionId": "130",
+      "seatCount": 21,
+      "elevation": 40.5,
+      "depth": 121.4,
+      "rowSpacing": 36,
+      "seats": [
+        {
+          "id": "padres-130-14-1",
+          "sectionId": "130",
+          "row": "14",
+          "seatNumber": "1",
+          "position3D": {
+            "x": 57.37655471381604,
+            "y": 106.9854708321297,
+            "z": 40.5
+          },
+          "elevation": 40.5,
+          "distanceFromHomeplate": 121.4,
+          "angle": -208.2047619047619,
+          "facing": -28.20476190476191,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "padres-130-14-2",
+          "sectionId": "130",
+          "row": "14",
+          "seatNumber": "2",
+          "position3D": {
+            "x": 57.020571887421646,
+            "y": 107.17562400859339,
+            "z": 40.5
+          },
+          "elevation": 40.5,
+          "distanceFromHomeplate": 121.39999999999999,
+          "angle": -208.01428571428573,
+          "facing": -28.014285714285734,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "padres-130-14-3",
+          "sectionId": "130",
+          "row": "14",
+          "seatNumber": "3",
+          "position3D": {
+            "x": 56.663958877136594,
+            "y": 107.36459269410085,
+            "z": 40.5
+          },
+          "elevation": 40.5,
+          "distanceFromHomeplate": 121.4,
+          "angle": -207.82380952380953,
+          "facing": -27.82380952380953,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "padres-130-14-4",
+          "sectionId": "130",
+          "row": "14",
+          "seatNumber": "4",
+          "position3D": {
+            "x": 56.30671962420117,
+            "y": 107.55237480019491,
+            "z": 40.5
+          },
+          "elevation": 40.5,
+          "distanceFromHomeplate": 121.4,
+          "angle": -207.63333333333335,
+          "facing": -27.633333333333354,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "padres-130-14-5",
+          "sectionId": "130",
+          "row": "14",
+          "seatNumber": "5",
+          "position3D": {
+            "x": 55.948858076776794,
+            "y": 107.73896825153231,
+            "z": 40.5
+          },
+          "elevation": 40.5,
+          "distanceFromHomeplate": 121.39999999999999,
+          "angle": -207.44285714285715,
+          "facing": -27.44285714285715,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "padres-130-14-6",
+          "sectionId": "130",
+          "row": "14",
+          "seatNumber": "6",
+          "position3D": {
+            "x": 55.5903781899023,
+            "y": 107.92437098590678,
+            "z": 40.5
+          },
+          "elevation": 40.5,
+          "distanceFromHomeplate": 121.4,
+          "angle": -207.25238095238097,
+          "facing": -27.252380952380975,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "padres-130-14-7",
+          "sectionId": "130",
+          "row": "14",
+          "seatNumber": "7",
+          "position3D": {
+            "x": 55.231283925450654,
+            "y": 108.10858095427143,
+            "z": 40.5
+          },
+          "elevation": 40.5,
+          "distanceFromHomeplate": 121.40000000000002,
+          "angle": -207.06190476190477,
+          "facing": -27.06190476190477,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "padres-130-14-8",
+          "sectionId": "130",
+          "row": "14",
+          "seatNumber": "8",
+          "position3D": {
+            "x": 54.8715792520846,
+            "y": 108.29159612076184,
+            "z": 40.5
+          },
+          "elevation": 40.5,
+          "distanceFromHomeplate": 121.4,
+          "angle": -206.8714285714286,
+          "facing": -26.871428571428595,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "padres-130-14-9",
+          "sectionId": "130",
+          "row": "14",
+          "seatNumber": "9",
+          "position3D": {
+            "x": 54.511268145212696,
+            "y": 108.47341446271857,
+            "z": 40.5
+          },
+          "elevation": 40.5,
+          "distanceFromHomeplate": 121.4,
+          "angle": -206.6809523809524,
+          "facing": -26.68095238095239,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "padres-130-14-10",
+          "sectionId": "130",
+          "row": "14",
+          "seatNumber": "10",
+          "position3D": {
+            "x": 54.150354586946655,
+            "y": 108.65403397070882,
+            "z": 40.5
+          },
+          "elevation": 40.5,
+          "distanceFromHomeplate": 121.4,
+          "angle": -206.49047619047622,
+          "facing": -26.490476190476215,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "padres-130-14-11",
+          "sectionId": "130",
+          "row": "14",
+          "seatNumber": "11",
+          "position3D": {
+            "x": 53.78884256605538,
+            "y": 108.83345264854971,
+            "z": 40.5
+          },
+          "elevation": 40.5,
+          "distanceFromHomeplate": 121.4,
+          "angle": -206.3,
+          "facing": -26.30000000000001,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "padres-130-14-12",
+          "sectionId": "130",
+          "row": "14",
+          "seatNumber": "12",
+          "position3D": {
+            "x": 53.42673607792264,
+            "y": 109.01166851332934,
+            "z": 40.5
+          },
+          "elevation": 40.5,
+          "distanceFromHomeplate": 121.4,
+          "angle": -206.1095238095238,
+          "facing": -26.109523809523807,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "padres-130-14-13",
+          "sectionId": "130",
+          "row": "14",
+          "seatNumber": "13",
+          "position3D": {
+            "x": 53.064039124501825,
+            "y": 109.1886795954294,
+            "z": 40.5
+          },
+          "elevation": 40.5,
+          "distanceFromHomeplate": 121.4,
+          "angle": -205.91904761904763,
+          "facing": -25.91904761904763,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "padres-130-14-14",
+          "sectionId": "130",
+          "row": "14",
+          "seatNumber": "14",
+          "position3D": {
+            "x": 52.700755714272034,
+            "y": 109.36448393854664,
+            "z": 40.5
+          },
+          "elevation": 40.5,
+          "distanceFromHomeplate": 121.4,
+          "angle": -205.72857142857143,
+          "facing": -25.728571428571428,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "padres-130-14-15",
+          "sectionId": "130",
+          "row": "14",
+          "seatNumber": "15",
+          "position3D": {
+            "x": 52.336889862194134,
+            "y": 109.53907959971437,
+            "z": 40.5
+          },
+          "elevation": 40.5,
+          "distanceFromHomeplate": 121.39999999999999,
+          "angle": -205.53809523809525,
+          "facing": -25.538095238095252,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "padres-130-14-16",
+          "sectionId": "130",
+          "row": "14",
+          "seatNumber": "16",
+          "position3D": {
+            "x": 51.97244558966575,
+            "y": 109.7124646493243,
+            "z": 40.5
+          },
+          "elevation": 40.5,
+          "distanceFromHomeplate": 121.4,
+          "angle": -205.34761904761905,
+          "facing": -25.347619047619048,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "padres-130-14-17",
+          "sectionId": "130",
+          "row": "14",
+          "seatNumber": "17",
+          "position3D": {
+            "x": 51.607426924477146,
+            "y": 109.8846371711476,
+            "z": 40.5
+          },
+          "elevation": 40.5,
+          "distanceFromHomeplate": 121.4,
+          "angle": -205.15714285714287,
+          "facing": -25.157142857142873,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "padres-130-14-18",
+          "sectionId": "130",
+          "row": "14",
+          "seatNumber": "18",
+          "position3D": {
+            "x": 51.241837900767074,
+            "y": 110.05559526235598,
+            "z": 40.5
+          },
+          "elevation": 40.5,
+          "distanceFromHomeplate": 121.4,
+          "angle": -204.96666666666667,
+          "facing": -24.96666666666667,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "padres-130-14-19",
+          "sectionId": "130",
+          "row": "14",
+          "seatNumber": "19",
+          "position3D": {
+            "x": 50.87568255897725,
+            "y": 110.22533703354314,
+            "z": 40.5
+          },
+          "elevation": 40.5,
+          "distanceFromHomeplate": 121.39999999999999,
+          "angle": -204.7761904761905,
+          "facing": -24.776190476190493,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "padres-130-14-20",
+          "sectionId": "130",
+          "row": "14",
+          "seatNumber": "20",
+          "position3D": {
+            "x": 50.50896494580855,
+            "y": 110.3938606087453,
+            "z": 40.5
+          },
+          "elevation": 40.5,
+          "distanceFromHomeplate": 121.4,
+          "angle": -204.5857142857143,
+          "facing": -24.58571428571429,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "padres-130-14-21",
+          "sectionId": "130",
+          "row": "14",
+          "seatNumber": "21",
+          "position3D": {
+            "x": 50.14168911417626,
+            "y": 110.5611641254618,
+            "z": 40.5
+          },
+          "elevation": 40.5,
+          "distanceFromHomeplate": 121.4,
+          "angle": -204.3952380952381,
+          "facing": -24.395238095238113,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        }
+      ],
+      "covered": false,
+      "hasAisleSeats": false,
+      "wheelchairRow": false
+    },
+    {
+      "rowNumber": "15",
+      "sectionId": "130",
+      "seatCount": 21,
+      "elevation": 43,
+      "depth": 124.19999999999999,
+      "rowSpacing": 36,
+      "seats": [
+        {
+          "id": "padres-130-15-1",
+          "sectionId": "130",
+          "row": "15",
+          "seatNumber": "1",
+          "position3D": {
+            "x": 58.69990193950537,
+            "y": 109.45301052183285,
+            "z": 43
+          },
+          "elevation": 43,
+          "distanceFromHomeplate": 124.2,
+          "angle": -208.2047619047619,
+          "facing": -28.20476190476191,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "padres-130-15-2",
+          "sectionId": "130",
+          "row": "15",
+          "seatNumber": "2",
+          "position3D": {
+            "x": 58.33570863606069,
+            "y": 109.6475494387751,
+            "z": 43
+          },
+          "elevation": 43,
+          "distanceFromHomeplate": 124.19999999999999,
+          "angle": -208.01428571428573,
+          "facing": -28.014285714285734,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "padres-130-15-3",
+          "sectionId": "130",
+          "row": "15",
+          "seatNumber": "3",
+          "position3D": {
+            "x": 57.970870614006294,
+            "y": 109.8408765453651,
+            "z": 43
+          },
+          "elevation": 43,
+          "distanceFromHomeplate": 124.19999999999999,
+          "angle": -207.82380952380953,
+          "facing": -27.82380952380953,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "padres-130-15-4",
+          "sectionId": "130",
+          "row": "15",
+          "seatNumber": "4",
+          "position3D": {
+            "x": 57.60539190548422,
+            "y": 110.03298970497698,
+            "z": 43
+          },
+          "elevation": 43,
+          "distanceFromHomeplate": 124.19999999999999,
+          "angle": -207.63333333333335,
+          "facing": -27.633333333333354,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "padres-130-15-5",
+          "sectionId": "130",
+          "row": "15",
+          "seatNumber": "5",
+          "position3D": {
+            "x": 57.239276549717275,
+            "y": 110.22388679440125,
+            "z": 43
+          },
+          "elevation": 43,
+          "distanceFromHomeplate": 124.19999999999999,
+          "angle": -207.44285714285715,
+          "facing": -27.44285714285715,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "padres-130-15-6",
+          "sectionId": "130",
+          "row": "15",
+          "seatNumber": "6",
+          "position3D": {
+            "x": 56.872528592964294,
+            "y": 110.41356570386837,
+            "z": 43
+          },
+          "elevation": 43,
+          "distanceFromHomeplate": 124.2,
+          "angle": -207.25238095238097,
+          "facing": -27.252380952380975,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "padres-130-15-7",
+          "sectionId": "130",
+          "row": "15",
+          "seatNumber": "7",
+          "position3D": {
+            "x": 56.50515208847587,
+            "y": 110.60202433707174,
+            "z": 43
+          },
+          "elevation": 43,
+          "distanceFromHomeplate": 124.19999999999999,
+          "angle": -207.06190476190477,
+          "facing": -27.06190476190477,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "padres-130-15-8",
+          "sectionId": "130",
+          "row": "15",
+          "seatNumber": "8",
+          "position3D": {
+            "x": 56.13715109644899,
+            "y": 110.78926061119125,
+            "z": 43
+          },
+          "elevation": 43,
+          "distanceFromHomeplate": 124.19999999999999,
+          "angle": -206.8714285714286,
+          "facing": -26.871428571428595,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "padres-130-15-9",
+          "sectionId": "130",
+          "row": "15",
+          "seatNumber": "9",
+          "position3D": {
+            "x": 55.76852968398201,
+            "y": 110.97527245691634,
+            "z": 43
+          },
+          "elevation": 43,
+          "distanceFromHomeplate": 124.19999999999999,
+          "angle": -206.6809523809524,
+          "facing": -26.68095238095239,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "padres-130-15-10",
+          "sectionId": "130",
+          "row": "15",
+          "seatNumber": "10",
+          "position3D": {
+            "x": 55.399291925031086,
+            "y": 111.16005781846816,
+            "z": 43
+          },
+          "elevation": 43,
+          "distanceFromHomeplate": 124.2,
+          "angle": -206.49047619047622,
+          "facing": -26.490476190476215,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "padres-130-15-11",
+          "sectionId": "130",
+          "row": "15",
+          "seatNumber": "11",
+          "position3D": {
+            "x": 55.029441900363075,
+            "y": 111.34361465362332,
+            "z": 43
+          },
+          "elevation": 43,
+          "distanceFromHomeplate": 124.19999999999999,
+          "angle": -206.3,
+          "facing": -26.30000000000001,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "padres-130-15-12",
+          "sectionId": "130",
+          "row": "15",
+          "seatNumber": "12",
+          "position3D": {
+            "x": 54.658983697512284,
+            "y": 111.5259409337356,
+            "z": 43
+          },
+          "elevation": 43,
+          "distanceFromHomeplate": 124.19999999999999,
+          "angle": -206.1095238095238,
+          "facing": -26.109523809523807,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "padres-130-15-13",
+          "sectionId": "130",
+          "row": "15",
+          "seatNumber": "13",
+          "position3D": {
+            "x": 54.28792141073415,
+            "y": 111.7070346437589,
+            "z": 43
+          },
+          "elevation": 43,
+          "distanceFromHomeplate": 124.2,
+          "angle": -205.91904761904763,
+          "facing": -25.91904761904763,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "padres-130-15-14",
+          "sectionId": "130",
+          "row": "15",
+          "seatNumber": "14",
+          "position3D": {
+            "x": 53.91625914096034,
+            "y": 111.88689378226928,
+            "z": 43
+          },
+          "elevation": 43,
+          "distanceFromHomeplate": 124.19999999999999,
+          "angle": -205.72857142857143,
+          "facing": -25.728571428571428,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "padres-130-15-15",
+          "sectionId": "130",
+          "row": "15",
+          "seatNumber": "15",
+          "position3D": {
+            "x": 53.54400099575379,
+            "y": 112.06551636148701,
+            "z": 43
+          },
+          "elevation": 43,
+          "distanceFromHomeplate": 124.19999999999999,
+          "angle": -205.53809523809525,
+          "facing": -25.538095238095252,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "padres-130-15-16",
+          "sectionId": "130",
+          "row": "15",
+          "seatNumber": "16",
+          "position3D": {
+            "x": 53.17115108926265,
+            "y": 112.24290040729882,
+            "z": 43
+          },
+          "elevation": 43,
+          "distanceFromHomeplate": 124.19999999999999,
+          "angle": -205.34761904761905,
+          "facing": -25.347619047619048,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "padres-130-15-17",
+          "sectionId": "130",
+          "row": "15",
+          "seatNumber": "17",
+          "position3D": {
+            "x": 52.797713542175124,
+            "y": 112.41904395927949,
+            "z": 43
+          },
+          "elevation": 43,
+          "distanceFromHomeplate": 124.19999999999999,
+          "angle": -205.15714285714287,
+          "facing": -25.157142857142873,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "padres-130-15-18",
+          "sectionId": "130",
+          "row": "15",
+          "seatNumber": "18",
+          "position3D": {
+            "x": 52.42369248167438,
+            "y": 112.59394507071343,
+            "z": 43
+          },
+          "elevation": 43,
+          "distanceFromHomeplate": 124.19999999999999,
+          "angle": -204.96666666666667,
+          "facing": -24.96666666666667,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "padres-130-15-19",
+          "sectionId": "130",
+          "row": "15",
+          "seatNumber": "19",
+          "position3D": {
+            "x": 52.04909204139188,
+            "y": 112.76760180861662,
+            "z": 43
+          },
+          "elevation": 43,
+          "distanceFromHomeplate": 124.19999999999999,
+          "angle": -204.7761904761905,
+          "facing": -24.776190476190493,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "padres-130-15-20",
+          "sectionId": "130",
+          "row": "15",
+          "seatNumber": "20",
+          "position3D": {
+            "x": 51.67391636136261,
+            "y": 112.94001225375753,
+            "z": 43
+          },
+          "elevation": 43,
+          "distanceFromHomeplate": 124.2,
+          "angle": -204.5857142857143,
+          "facing": -24.58571428571429,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "padres-130-15-21",
+          "sectionId": "130",
+          "row": "15",
+          "seatNumber": "21",
+          "position3D": {
+            "x": 51.29816958797933,
+            "y": 113.11117450067836,
+            "z": 43
+          },
+          "elevation": 43,
+          "distanceFromHomeplate": 124.19999999999999,
+          "angle": -204.3952380952381,
+          "facing": -24.395238095238113,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        }
+      ],
+      "covered": false,
+      "hasAisleSeats": false,
+      "wheelchairRow": false
+    },
+    {
+      "rowNumber": "16",
+      "sectionId": "130",
+      "seatCount": 21,
+      "elevation": 45.5,
+      "depth": 127,
+      "rowSpacing": 36,
+      "seats": [
+        {
+          "id": "padres-130-16-1",
+          "sectionId": "130",
+          "row": "16",
+          "seatNumber": "1",
+          "position3D": {
+            "x": 60.023249165194706,
+            "y": 111.92055021153601,
+            "z": 45.5
+          },
+          "elevation": 45.5,
+          "distanceFromHomeplate": 127,
+          "angle": -208.2047619047619,
+          "facing": -28.20476190476191,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "padres-130-16-2",
+          "sectionId": "130",
+          "row": "16",
+          "seatNumber": "2",
+          "position3D": {
+            "x": 59.65084538469974,
+            "y": 112.11947486895684,
+            "z": 45.5
+          },
+          "elevation": 45.5,
+          "distanceFromHomeplate": 127,
+          "angle": -208.01428571428573,
+          "facing": -28.014285714285734,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "padres-130-16-3",
+          "sectionId": "130",
+          "row": "16",
+          "seatNumber": "3",
+          "position3D": {
+            "x": 59.277782350876,
+            "y": 112.31716039662938,
+            "z": 45.5
+          },
+          "elevation": 45.5,
+          "distanceFromHomeplate": 126.99999999999999,
+          "angle": -207.82380952380953,
+          "facing": -27.82380952380953,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "padres-130-16-4",
+          "sectionId": "130",
+          "row": "16",
+          "seatNumber": "4",
+          "position3D": {
+            "x": 58.904064186767286,
+            "y": 112.51360460975908,
+            "z": 45.5
+          },
+          "elevation": 45.5,
+          "distanceFromHomeplate": 127.00000000000001,
+          "angle": -207.63333333333335,
+          "facing": -27.633333333333354,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "padres-130-16-5",
+          "sectionId": "130",
+          "row": "16",
+          "seatNumber": "5",
+          "position3D": {
+            "x": 58.52969502265776,
+            "y": 112.7088053372702,
+            "z": 45.5
+          },
+          "elevation": 45.5,
+          "distanceFromHomeplate": 126.99999999999999,
+          "angle": -207.44285714285715,
+          "facing": -27.44285714285715,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "padres-130-16-6",
+          "sectionId": "130",
+          "row": "16",
+          "seatNumber": "6",
+          "position3D": {
+            "x": 58.1546789960263,
+            "y": 112.90276042182998,
+            "z": 45.5
+          },
+          "elevation": 45.5,
+          "distanceFromHomeplate": 127.00000000000001,
+          "angle": -207.25238095238097,
+          "facing": -27.252380952380975,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "padres-130-16-7",
+          "sectionId": "130",
+          "row": "16",
+          "seatNumber": "7",
+          "position3D": {
+            "x": 57.779020251501095,
+            "y": 113.09546771987208,
+            "z": 45.5
+          },
+          "elevation": 45.5,
+          "distanceFromHomeplate": 127,
+          "angle": -207.06190476190477,
+          "facing": -27.06190476190477,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "padres-130-16-8",
+          "sectionId": "130",
+          "row": "16",
+          "seatNumber": "8",
+          "position3D": {
+            "x": 57.402722940813376,
+            "y": 113.2869251016207,
+            "z": 45.5
+          },
+          "elevation": 45.5,
+          "distanceFromHomeplate": 127,
+          "angle": -206.8714285714286,
+          "facing": -26.871428571428595,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "padres-130-16-9",
+          "sectionId": "130",
+          "row": "16",
+          "seatNumber": "9",
+          "position3D": {
+            "x": 57.02579122275133,
+            "y": 113.47713045111414,
+            "z": 45.5
+          },
+          "elevation": 45.5,
+          "distanceFromHomeplate": 126.99999999999999,
+          "angle": -206.6809523809524,
+          "facing": -26.68095238095239,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "padres-130-16-10",
+          "sectionId": "130",
+          "row": "16",
+          "seatNumber": "10",
+          "position3D": {
+            "x": 56.64822926311553,
+            "y": 113.66608166622751,
+            "z": 45.5
+          },
+          "elevation": 45.5,
+          "distanceFromHomeplate": 127.00000000000001,
+          "angle": -206.49047619047622,
+          "facing": -26.490476190476215,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "padres-130-16-11",
+          "sectionId": "130",
+          "row": "16",
+          "seatNumber": "11",
+          "position3D": {
+            "x": 56.270041234670785,
+            "y": 113.85377665869696,
+            "z": 45.5
+          },
+          "elevation": 45.5,
+          "distanceFromHomeplate": 126.99999999999999,
+          "angle": -206.3,
+          "facing": -26.30000000000001,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "padres-130-16-12",
+          "sectionId": "130",
+          "row": "16",
+          "seatNumber": "12",
+          "position3D": {
+            "x": 55.89123131710194,
+            "y": 114.04021335414188,
+            "z": 45.5
+          },
+          "elevation": 45.5,
+          "distanceFromHomeplate": 126.99999999999999,
+          "angle": -206.1095238095238,
+          "facing": -26.109523809523807,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "padres-130-16-13",
+          "sectionId": "130",
+          "row": "16",
+          "seatNumber": "13",
+          "position3D": {
+            "x": 55.51180369696649,
+            "y": 114.22538969208841,
+            "z": 45.5
+          },
+          "elevation": 45.5,
+          "distanceFromHomeplate": 127,
+          "angle": -205.91904761904763,
+          "facing": -25.91904761904763,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "padres-130-16-14",
+          "sectionId": "130",
+          "row": "16",
+          "seatNumber": "14",
+          "position3D": {
+            "x": 55.131762567648664,
+            "y": 114.40930362599194,
+            "z": 45.5
+          },
+          "elevation": 45.5,
+          "distanceFromHomeplate": 126.99999999999999,
+          "angle": -205.72857142857143,
+          "facing": -25.728571428571428,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "padres-130-16-15",
+          "sectionId": "130",
+          "row": "16",
+          "seatNumber": "15",
+          "position3D": {
+            "x": 54.75111212931346,
+            "y": 114.59195312325969,
+            "z": 45.5
+          },
+          "elevation": 45.5,
+          "distanceFromHomeplate": 127,
+          "angle": -205.53809523809525,
+          "facing": -25.538095238095252,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "padres-130-16-16",
+          "sectionId": "130",
+          "row": "16",
+          "seatNumber": "16",
+          "position3D": {
+            "x": 54.369856588859555,
+            "y": 114.77333616527336,
+            "z": 45.5
+          },
+          "elevation": 45.5,
+          "distanceFromHomeplate": 127.00000000000001,
+          "angle": -205.34761904761905,
+          "facing": -25.347619047619048,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "padres-130-16-17",
+          "sectionId": "130",
+          "row": "16",
+          "seatNumber": "17",
+          "position3D": {
+            "x": 53.988000159873124,
+            "y": 114.95345074741141,
+            "z": 45.5
+          },
+          "elevation": 45.5,
+          "distanceFromHomeplate": 127,
+          "angle": -205.15714285714287,
+          "facing": -25.157142857142873,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "padres-130-16-18",
+          "sectionId": "130",
+          "row": "16",
+          "seatNumber": "18",
+          "position3D": {
+            "x": 53.6055470625817,
+            "y": 115.13229487907091,
+            "z": 45.5
+          },
+          "elevation": 45.5,
+          "distanceFromHomeplate": 127,
+          "angle": -204.96666666666667,
+          "facing": -24.96666666666667,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "padres-130-16-19",
+          "sectionId": "130",
+          "row": "16",
+          "seatNumber": "19",
+          "position3D": {
+            "x": 53.222501523806514,
+            "y": 115.30986658369011,
+            "z": 45.5
+          },
+          "elevation": 45.5,
+          "distanceFromHomeplate": 127,
+          "angle": -204.7761904761905,
+          "facing": -24.776190476190493,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "padres-130-16-20",
+          "sectionId": "130",
+          "row": "16",
+          "seatNumber": "20",
+          "position3D": {
+            "x": 52.83886777691668,
+            "y": 115.48616389876979,
+            "z": 45.5
+          },
+          "elevation": 45.5,
+          "distanceFromHomeplate": 127.00000000000001,
+          "angle": -204.5857142857143,
+          "facing": -24.58571428571429,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "padres-130-16-21",
+          "sectionId": "130",
+          "row": "16",
+          "seatNumber": "21",
+          "position3D": {
+            "x": 52.45465006178241,
+            "y": 115.66118487589495,
+            "z": 45.5
+          },
+          "elevation": 45.5,
+          "distanceFromHomeplate": 127,
+          "angle": -204.3952380952381,
+          "facing": -24.395238095238113,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        }
+      ],
+      "covered": false,
+      "hasAisleSeats": false,
+      "wheelchairRow": false
+    },
+    {
+      "rowNumber": "17",
+      "sectionId": "130",
+      "seatCount": 21,
+      "elevation": 48,
+      "depth": 129.8,
+      "rowSpacing": 36,
+      "seats": [
+        {
+          "id": "padres-130-17-1",
+          "sectionId": "130",
+          "row": "17",
+          "seatNumber": "1",
+          "position3D": {
+            "x": 61.34659639088404,
+            "y": 114.38808990123918,
+            "z": 48
+          },
+          "elevation": 48,
+          "distanceFromHomeplate": 129.8,
+          "angle": -208.2047619047619,
+          "facing": -28.20476190476191,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "padres-130-17-2",
+          "sectionId": "130",
+          "row": "17",
+          "seatNumber": "2",
+          "position3D": {
+            "x": 60.9659821333388,
+            "y": 114.59140029913857,
+            "z": 48
+          },
+          "elevation": 48,
+          "distanceFromHomeplate": 129.8,
+          "angle": -208.01428571428573,
+          "facing": -28.014285714285734,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "padres-130-17-3",
+          "sectionId": "130",
+          "row": "17",
+          "seatNumber": "3",
+          "position3D": {
+            "x": 60.58469408774572,
+            "y": 114.79344424789366,
+            "z": 48
+          },
+          "elevation": 48,
+          "distanceFromHomeplate": 129.8,
+          "angle": -207.82380952380953,
+          "facing": -27.82380952380953,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "padres-130-17-4",
+          "sectionId": "130",
+          "row": "17",
+          "seatNumber": "4",
+          "position3D": {
+            "x": 60.20273646805035,
+            "y": 114.99421951454119,
+            "z": 48
+          },
+          "elevation": 48,
+          "distanceFromHomeplate": 129.8,
+          "angle": -207.63333333333335,
+          "facing": -27.633333333333354,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "padres-130-17-5",
+          "sectionId": "130",
+          "row": "17",
+          "seatNumber": "5",
+          "position3D": {
+            "x": 59.82011349559826,
+            "y": 115.19372388013917,
+            "z": 48
+          },
+          "elevation": 48,
+          "distanceFromHomeplate": 129.8,
+          "angle": -207.44285714285715,
+          "facing": -27.44285714285715,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "padres-130-17-6",
+          "sectionId": "130",
+          "row": "17",
+          "seatNumber": "6",
+          "position3D": {
+            "x": 59.436829399088296,
+            "y": 115.3919551397916,
+            "z": 48
+          },
+          "elevation": 48,
+          "distanceFromHomeplate": 129.8,
+          "angle": -207.25238095238097,
+          "facing": -27.252380952380975,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "padres-130-17-7",
+          "sectionId": "130",
+          "row": "17",
+          "seatNumber": "7",
+          "position3D": {
+            "x": 59.05288841452632,
+            "y": 115.58891110267243,
+            "z": 48
+          },
+          "elevation": 48,
+          "distanceFromHomeplate": 129.80000000000004,
+          "angle": -207.06190476190477,
+          "facing": -27.06190476190477,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "padres-130-17-8",
+          "sectionId": "130",
+          "row": "17",
+          "seatNumber": "8",
+          "position3D": {
+            "x": 58.66829478517777,
+            "y": 115.78458959205014,
+            "z": 48
+          },
+          "elevation": 48,
+          "distanceFromHomeplate": 129.8,
+          "angle": -206.8714285714286,
+          "facing": -26.871428571428595,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "padres-130-17-9",
+          "sectionId": "130",
+          "row": "17",
+          "seatNumber": "9",
+          "position3D": {
+            "x": 58.28305276152066,
+            "y": 115.97898844531194,
+            "z": 48
+          },
+          "elevation": 48,
+          "distanceFromHomeplate": 129.8,
+          "angle": -206.6809523809524,
+          "facing": -26.68095238095239,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "padres-130-17-10",
+          "sectionId": "130",
+          "row": "17",
+          "seatNumber": "10",
+          "position3D": {
+            "x": 57.89716660119997,
+            "y": 116.17210551398686,
+            "z": 48
+          },
+          "elevation": 48,
+          "distanceFromHomeplate": 129.8,
+          "angle": -206.49047619047622,
+          "facing": -26.490476190476215,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "padres-130-17-11",
+          "sectionId": "130",
+          "row": "17",
+          "seatNumber": "11",
+          "position3D": {
+            "x": 57.51064056897849,
+            "y": 116.36393866377061,
+            "z": 48
+          },
+          "elevation": 48,
+          "distanceFromHomeplate": 129.8,
+          "angle": -206.3,
+          "facing": -26.30000000000001,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "padres-130-17-12",
+          "sectionId": "130",
+          "row": "17",
+          "seatNumber": "12",
+          "position3D": {
+            "x": 57.12347893669159,
+            "y": 116.55448577454817,
+            "z": 48
+          },
+          "elevation": 48,
+          "distanceFromHomeplate": 129.8,
+          "angle": -206.1095238095238,
+          "facing": -26.109523809523807,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "padres-130-17-13",
+          "sectionId": "130",
+          "row": "17",
+          "seatNumber": "13",
+          "position3D": {
+            "x": 56.73568598319883,
+            "y": 116.74374474041794,
+            "z": 48
+          },
+          "elevation": 48,
+          "distanceFromHomeplate": 129.8,
+          "angle": -205.91904761904763,
+          "facing": -25.91904761904763,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "padres-130-17-14",
+          "sectionId": "130",
+          "row": "17",
+          "seatNumber": "14",
+          "position3D": {
+            "x": 56.347265994336986,
+            "y": 116.93171346971461,
+            "z": 48
+          },
+          "elevation": 48,
+          "distanceFromHomeplate": 129.8,
+          "angle": -205.72857142857143,
+          "facing": -25.728571428571428,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "padres-130-17-15",
+          "sectionId": "130",
+          "row": "17",
+          "seatNumber": "15",
+          "position3D": {
+            "x": 55.95822326287313,
+            "y": 117.11838988503234,
+            "z": 48
+          },
+          "elevation": 48,
+          "distanceFromHomeplate": 129.8,
+          "angle": -205.53809523809525,
+          "facing": -25.538095238095252,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "padres-130-17-16",
+          "sectionId": "130",
+          "row": "17",
+          "seatNumber": "16",
+          "position3D": {
+            "x": 55.56856208845647,
+            "y": 117.3037719232479,
+            "z": 48
+          },
+          "elevation": 48,
+          "distanceFromHomeplate": 129.8,
+          "angle": -205.34761904761905,
+          "facing": -25.347619047619048,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "padres-130-17-17",
+          "sectionId": "130",
+          "row": "17",
+          "seatNumber": "17",
+          "position3D": {
+            "x": 55.17828677757112,
+            "y": 117.48785753554333,
+            "z": 48
+          },
+          "elevation": 48,
+          "distanceFromHomeplate": 129.8,
+          "angle": -205.15714285714287,
+          "facing": -25.157142857142873,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "padres-130-17-18",
+          "sectionId": "130",
+          "row": "17",
+          "seatNumber": "18",
+          "position3D": {
+            "x": 54.78740164348902,
+            "y": 117.67064468742839,
+            "z": 48
+          },
+          "elevation": 48,
+          "distanceFromHomeplate": 129.8,
+          "angle": -204.96666666666667,
+          "facing": -24.96666666666667,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "padres-130-17-19",
+          "sectionId": "130",
+          "row": "17",
+          "seatNumber": "19",
+          "position3D": {
+            "x": 54.395911006221155,
+            "y": 117.8521313587636,
+            "z": 48
+          },
+          "elevation": 48,
+          "distanceFromHomeplate": 129.8,
+          "angle": -204.7761904761905,
+          "facing": -24.776190476190493,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "padres-130-17-20",
+          "sectionId": "130",
+          "row": "17",
+          "seatNumber": "20",
+          "position3D": {
+            "x": 54.00381919247076,
+            "y": 118.03231554378205,
+            "z": 48
+          },
+          "elevation": 48,
+          "distanceFromHomeplate": 129.80000000000004,
+          "angle": -204.5857142857143,
+          "facing": -24.58571428571429,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "padres-130-17-21",
+          "sectionId": "130",
+          "row": "17",
+          "seatNumber": "21",
+          "position3D": {
+            "x": 53.611130535585495,
+            "y": 118.21119525111155,
+            "z": 48
+          },
+          "elevation": 48,
+          "distanceFromHomeplate": 129.8,
+          "angle": -204.3952380952381,
+          "facing": -24.395238095238113,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        }
+      ],
+      "covered": false,
+      "hasAisleSeats": false,
+      "wheelchairRow": false
+    },
+    {
+      "rowNumber": "18",
+      "sectionId": "130",
+      "seatCount": 21,
+      "elevation": 50.5,
+      "depth": 132.6,
+      "rowSpacing": 36,
+      "seats": [
+        {
+          "id": "padres-130-18-1",
+          "sectionId": "130",
+          "row": "18",
+          "seatNumber": "1",
+          "position3D": {
+            "x": 62.66994361657336,
+            "y": 116.85562959094231,
+            "z": 50.5
+          },
+          "elevation": 50.5,
+          "distanceFromHomeplate": 132.6,
+          "angle": -208.2047619047619,
+          "facing": -28.20476190476191,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "padres-130-18-2",
+          "sectionId": "130",
+          "row": "18",
+          "seatNumber": "2",
+          "position3D": {
+            "x": 62.28111888197784,
+            "y": 117.06332572932028,
+            "z": 50.5
+          },
+          "elevation": 50.5,
+          "distanceFromHomeplate": 132.6,
+          "angle": -208.01428571428573,
+          "facing": -28.014285714285734,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "padres-130-18-3",
+          "sectionId": "130",
+          "row": "18",
+          "seatNumber": "3",
+          "position3D": {
+            "x": 61.89160582461542,
+            "y": 117.26972809915792,
+            "z": 50.5
+          },
+          "elevation": 50.5,
+          "distanceFromHomeplate": 132.6,
+          "angle": -207.82380952380953,
+          "facing": -27.82380952380953,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "padres-130-18-4",
+          "sectionId": "130",
+          "row": "18",
+          "seatNumber": "4",
+          "position3D": {
+            "x": 61.5014087493334,
+            "y": 117.47483441932326,
+            "z": 50.5
+          },
+          "elevation": 50.5,
+          "distanceFromHomeplate": 132.6,
+          "angle": -207.63333333333335,
+          "facing": -27.633333333333354,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "padres-130-18-5",
+          "sectionId": "130",
+          "row": "18",
+          "seatNumber": "5",
+          "position3D": {
+            "x": 61.11053196853873,
+            "y": 117.6786424230081,
+            "z": 50.5
+          },
+          "elevation": 50.5,
+          "distanceFromHomeplate": 132.6,
+          "angle": -207.44285714285715,
+          "facing": -27.44285714285715,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "padres-130-18-6",
+          "sectionId": "130",
+          "row": "18",
+          "seatNumber": "6",
+          "position3D": {
+            "x": 60.71897980215029,
+            "y": 117.88114985775319,
+            "z": 50.5
+          },
+          "elevation": 50.5,
+          "distanceFromHomeplate": 132.6,
+          "angle": -207.25238095238097,
+          "facing": -27.252380952380975,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "padres-130-18-7",
+          "sectionId": "130",
+          "row": "18",
+          "seatNumber": "7",
+          "position3D": {
+            "x": 60.326756577551535,
+            "y": 118.08235448547273,
+            "z": 50.5
+          },
+          "elevation": 50.5,
+          "distanceFromHomeplate": 132.6,
+          "angle": -207.06190476190477,
+          "facing": -27.06190476190477,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "padres-130-18-8",
+          "sectionId": "130",
+          "row": "18",
+          "seatNumber": "8",
+          "position3D": {
+            "x": 59.93386662954216,
+            "y": 118.28225408247955,
+            "z": 50.5
+          },
+          "elevation": 50.5,
+          "distanceFromHomeplate": 132.6,
+          "angle": -206.8714285714286,
+          "facing": -26.871428571428595,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "padres-130-18-9",
+          "sectionId": "130",
+          "row": "18",
+          "seatNumber": "9",
+          "position3D": {
+            "x": 59.54031430028997,
+            "y": 118.48084643950972,
+            "z": 50.5
+          },
+          "elevation": 50.5,
+          "distanceFromHomeplate": 132.6,
+          "angle": -206.6809523809524,
+          "facing": -26.68095238095239,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "padres-130-18-10",
+          "sectionId": "130",
+          "row": "18",
+          "seatNumber": "10",
+          "position3D": {
+            "x": 59.1461039392844,
+            "y": 118.6781293617462,
+            "z": 50.5
+          },
+          "elevation": 50.5,
+          "distanceFromHomeplate": 132.6,
+          "angle": -206.49047619047622,
+          "facing": -26.490476190476215,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "padres-130-18-11",
+          "sectionId": "130",
+          "row": "18",
+          "seatNumber": "11",
+          "position3D": {
+            "x": 58.751239903286184,
+            "y": 118.87410066884422,
+            "z": 50.5
+          },
+          "elevation": 50.5,
+          "distanceFromHomeplate": 132.6,
+          "angle": -206.3,
+          "facing": -26.30000000000001,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "padres-130-18-12",
+          "sectionId": "130",
+          "row": "18",
+          "seatNumber": "12",
+          "position3D": {
+            "x": 58.35572655628123,
+            "y": 119.06875819495444,
+            "z": 50.5
+          },
+          "elevation": 50.5,
+          "distanceFromHomeplate": 132.6,
+          "angle": -206.1095238095238,
+          "facing": -26.109523809523807,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "padres-130-18-13",
+          "sectionId": "130",
+          "row": "18",
+          "seatNumber": "13",
+          "position3D": {
+            "x": 57.959568269431145,
+            "y": 119.26209978874743,
+            "z": 50.5
+          },
+          "elevation": 50.5,
+          "distanceFromHomeplate": 132.6,
+          "angle": -205.91904761904763,
+          "facing": -25.91904761904763,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "padres-130-18-14",
+          "sectionId": "130",
+          "row": "18",
+          "seatNumber": "14",
+          "position3D": {
+            "x": 57.5627694210253,
+            "y": 119.45412331343725,
+            "z": 50.5
+          },
+          "elevation": 50.5,
+          "distanceFromHomeplate": 132.6,
+          "angle": -205.72857142857143,
+          "facing": -25.728571428571428,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "padres-130-18-15",
+          "sectionId": "130",
+          "row": "18",
+          "seatNumber": "15",
+          "position3D": {
+            "x": 57.16533439643279,
+            "y": 119.64482664680499,
+            "z": 50.5
+          },
+          "elevation": 50.5,
+          "distanceFromHomeplate": 132.6,
+          "angle": -205.53809523809525,
+          "facing": -25.538095238095252,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "padres-130-18-16",
+          "sectionId": "130",
+          "row": "18",
+          "seatNumber": "16",
+          "position3D": {
+            "x": 56.767267588053365,
+            "y": 119.83420768122241,
+            "z": 50.5
+          },
+          "elevation": 50.5,
+          "distanceFromHomeplate": 132.6,
+          "angle": -205.34761904761905,
+          "facing": -25.347619047619048,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "padres-130-18-17",
+          "sectionId": "130",
+          "row": "18",
+          "seatNumber": "17",
+          "position3D": {
+            "x": 56.3685733952691,
+            "y": 120.02226432367522,
+            "z": 50.5
+          },
+          "elevation": 50.5,
+          "distanceFromHomeplate": 132.6,
+          "angle": -205.15714285714287,
+          "facing": -25.157142857142873,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "padres-130-18-18",
+          "sectionId": "130",
+          "row": "18",
+          "seatNumber": "18",
+          "position3D": {
+            "x": 55.969256224396325,
+            "y": 120.20899449578584,
+            "z": 50.5
+          },
+          "elevation": 50.5,
+          "distanceFromHomeplate": 132.6,
+          "angle": -204.96666666666667,
+          "facing": -24.96666666666667,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "padres-130-18-19",
+          "sectionId": "130",
+          "row": "18",
+          "seatNumber": "19",
+          "position3D": {
+            "x": 55.56932048863578,
+            "y": 120.39439613383706,
+            "z": 50.5
+          },
+          "elevation": 50.5,
+          "distanceFromHomeplate": 132.6,
+          "angle": -204.7761904761905,
+          "facing": -24.776190476190493,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "padres-130-18-20",
+          "sectionId": "130",
+          "row": "18",
+          "seatNumber": "20",
+          "position3D": {
+            "x": 55.168770608024815,
+            "y": 120.57846718879428,
+            "z": 50.5
+          },
+          "elevation": 50.5,
+          "distanceFromHomeplate": 132.6,
+          "angle": -204.5857142857143,
+          "facing": -24.58571428571429,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "padres-130-18-21",
+          "sectionId": "130",
+          "row": "18",
+          "seatNumber": "21",
+          "position3D": {
+            "x": 54.76761100938857,
+            "y": 120.7612056263281,
+            "z": 50.5
+          },
+          "elevation": 50.5,
+          "distanceFromHomeplate": 132.6,
+          "angle": -204.3952380952381,
+          "facing": -24.395238095238113,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        }
+      ],
+      "covered": false,
+      "hasAisleSeats": false,
+      "wheelchairRow": false
+    }
+  ],
+  "seatDistribution": {
+    "standard": 342,
+    "aisle": 36,
+    "wheelchair": 0,
+    "companion": 0,
+    "other": 0
+  }
+};
