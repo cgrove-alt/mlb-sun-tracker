@@ -1,0 +1,3535 @@
+/**
+ * Family Deck 316 - guardians
+ * Generated: 2025-10-23T00:11:52.249Z
+ * Total Seats: 130
+ * Total Rows: 10
+ */
+
+import type { SectionSeatingData } from '@/types/seat';
+
+export const section_316: SectionSeatingData = {
+  "sectionId": "316",
+  "sectionName": "Family Deck 316",
+  "stadiumId": "guardians",
+  "totalSeats": 130,
+  "totalRows": 10,
+  "rows": [
+    {
+      "rowNumber": "1",
+      "sectionId": "316",
+      "seatCount": 13,
+      "elevation": 30,
+      "depth": 130,
+      "rowSpacing": 36,
+      "seats": [
+        {
+          "id": "guardians-316-1-1",
+          "sectionId": "316",
+          "row": "1",
+          "seatNumber": "1",
+          "position3D": {
+            "x": -126.38768922126731,
+            "y": 30.432745740539964,
+            "z": 30
+          },
+          "elevation": 30,
+          "distanceFromHomeplate": 130,
+          "angle": -103.53846153846153,
+          "facing": 76.46153846153847,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "guardians-316-1-2",
+          "sectionId": "316",
+          "row": "1",
+          "seatNumber": "2",
+          "position3D": {
+            "x": -126.60895955877211,
+            "y": 29.498667079127568,
+            "z": 30
+          },
+          "elevation": 30,
+          "distanceFromHomeplate": 130,
+          "angle": -103.11538461538461,
+          "facing": 76.88461538461539,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "guardians-316-1-3",
+          "sectionId": "316",
+          "row": "1",
+          "seatNumber": "3",
+          "position3D": {
+            "x": -126.82332661012222,
+            "y": 28.56298001858813,
+            "z": 30
+          },
+          "elevation": 30,
+          "distanceFromHomeplate": 130,
+          "angle": -102.6923076923077,
+          "facing": 77.3076923076923,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "guardians-316-1-4",
+          "sectionId": "316",
+          "row": "1",
+          "seatNumber": "4",
+          "position3D": {
+            "x": -127.03077868706815,
+            "y": 27.62573557676088,
+            "z": 30
+          },
+          "elevation": 30,
+          "distanceFromHomeplate": 130,
+          "angle": -102.26923076923077,
+          "facing": 77.73076923076923,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "guardians-316-1-5",
+          "sectionId": "316",
+          "row": "1",
+          "seatNumber": "5",
+          "position3D": {
+            "x": -127.23130447839586,
+            "y": 26.68698485640011,
+            "z": 30
+          },
+          "elevation": 30,
+          "distanceFromHomeplate": 130,
+          "angle": -101.84615384615384,
+          "facing": 78.15384615384616,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "guardians-316-1-6",
+          "sectionId": "316",
+          "row": "1",
+          "seatNumber": "6",
+          "position3D": {
+            "x": -127.4248930505432,
+            "y": 25.746779042389463,
+            "z": 30
+          },
+          "elevation": 30,
+          "distanceFromHomeplate": 130,
+          "angle": -101.42307692307692,
+          "facing": 78.57692307692308,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "guardians-316-1-7",
+          "sectionId": "316",
+          "row": "1",
+          "seatNumber": "7",
+          "position3D": {
+            "x": -127.61153384819632,
+            "y": 24.805169398950813,
+            "z": 30
+          },
+          "elevation": 30,
+          "distanceFromHomeplate": 130,
+          "angle": -101,
+          "facing": 79,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "guardians-316-1-8",
+          "sectionId": "316",
+          "row": "1",
+          "seatNumber": "8",
+          "position3D": {
+            "x": -127.79121669486501,
+            "y": 23.862207266848852,
+            "z": 30
+          },
+          "elevation": 30,
+          "distanceFromHomeplate": 130,
+          "angle": -100.57692307692308,
+          "facing": 79.42307692307692,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "guardians-316-1-9",
+          "sectionId": "316",
+          "row": "1",
+          "seatNumber": "9",
+          "position3D": {
+            "x": -127.96393179343771,
+            "y": 22.917944060591985,
+            "z": 30
+          },
+          "elevation": 30,
+          "distanceFromHomeplate": 130,
+          "angle": -100.15384615384616,
+          "facing": 79.84615384615384,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "guardians-316-1-10",
+          "sectionId": "316",
+          "row": "1",
+          "seatNumber": "10",
+          "position3D": {
+            "x": -128.12966972671552,
+            "y": 21.972431265629236,
+            "z": 30
+          },
+          "elevation": 30,
+          "distanceFromHomeplate": 130,
+          "angle": -99.73076923076923,
+          "facing": 80.26923076923077,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "guardians-316-1-11",
+          "sectionId": "316",
+          "row": "1",
+          "seatNumber": "11",
+          "position3D": {
+            "x": -128.28842145792584,
+            "y": 21.025720435542667,
+            "z": 30
+          },
+          "elevation": 30,
+          "distanceFromHomeplate": 130,
+          "angle": -99.3076923076923,
+          "facing": 80.6923076923077,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "guardians-316-1-12",
+          "sectionId": "316",
+          "row": "1",
+          "seatNumber": "12",
+          "position3D": {
+            "x": -128.44017833121495,
+            "y": 20.077863189236627,
+            "z": 30
+          },
+          "elevation": 30,
+          "distanceFromHomeplate": 130,
+          "angle": -98.88461538461539,
+          "facing": 81.11538461538461,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "guardians-316-1-13",
+          "sectionId": "316",
+          "row": "1",
+          "seatNumber": "13",
+          "position3D": {
+            "x": -128.58493207212013,
+            "y": 19.128911208123082,
+            "z": 30
+          },
+          "elevation": 30,
+          "distanceFromHomeplate": 130,
+          "angle": -98.46153846153847,
+          "facing": 81.53846153846153,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        }
+      ],
+      "covered": false,
+      "hasAisleSeats": false,
+      "wheelchairRow": false
+    },
+    {
+      "rowNumber": "2",
+      "sectionId": "316",
+      "seatCount": 13,
+      "elevation": 32.5,
+      "depth": 132.8,
+      "rowSpacing": 36,
+      "seats": [
+        {
+          "id": "guardians-316-2-1",
+          "sectionId": "316",
+          "row": "2",
+          "seatNumber": "1",
+          "position3D": {
+            "x": -129.10988560449462,
+            "y": 31.088220264182368,
+            "z": 32.5
+          },
+          "elevation": 32.5,
+          "distanceFromHomeplate": 132.8,
+          "angle": -103.53846153846153,
+          "facing": 76.46153846153847,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "guardians-316-2-2",
+          "sectionId": "316",
+          "row": "2",
+          "seatNumber": "2",
+          "position3D": {
+            "x": -129.33592176465336,
+            "y": 30.134022985447242,
+            "z": 32.5
+          },
+          "elevation": 32.5,
+          "distanceFromHomeplate": 132.79999999999998,
+          "angle": -103.11538461538461,
+          "facing": 76.88461538461539,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "guardians-316-2-3",
+          "sectionId": "316",
+          "row": "2",
+          "seatNumber": "3",
+          "position3D": {
+            "x": -129.5549059524941,
+            "y": 29.17818266514234,
+            "z": 32.5
+          },
+          "elevation": 32.5,
+          "distanceFromHomeplate": 132.8,
+          "angle": -102.6923076923077,
+          "facing": 77.3076923076923,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "guardians-316-2-4",
+          "sectionId": "316",
+          "row": "2",
+          "seatNumber": "4",
+          "position3D": {
+            "x": -129.7668262280204,
+            "y": 28.220751419952656,
+            "z": 32.5
+          },
+          "elevation": 32.5,
+          "distanceFromHomeplate": 132.8,
+          "angle": -102.26923076923077,
+          "facing": 77.73076923076923,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "guardians-316-2-5",
+          "sectionId": "316",
+          "row": "2",
+          "seatNumber": "5",
+          "position3D": {
+            "x": -129.97167103639208,
+            "y": 27.26178145330719,
+            "z": 32.5
+          },
+          "elevation": 32.5,
+          "distanceFromHomeplate": 132.8,
+          "angle": -101.84615384615384,
+          "facing": 78.15384615384616,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "guardians-316-2-6",
+          "sectionId": "316",
+          "row": "2",
+          "seatNumber": "6",
+          "position3D": {
+            "x": -130.16942920855493,
+            "y": 26.30132505253324,
+            "z": 32.5
+          },
+          "elevation": 32.5,
+          "distanceFromHomeplate": 132.80000000000004,
+          "angle": -101.42307692307692,
+          "facing": 78.57692307692308,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "guardians-316-2-7",
+          "sectionId": "316",
+          "row": "2",
+          "seatNumber": "7",
+          "position3D": {
+            "x": -130.36008996184978,
+            "y": 25.33943458600514,
+            "z": 32.5
+          },
+          "elevation": 32.5,
+          "distanceFromHomeplate": 132.8,
+          "angle": -101,
+          "facing": 79,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "guardians-316-2-8",
+          "sectionId": "316",
+          "row": "2",
+          "seatNumber": "8",
+          "position3D": {
+            "x": -130.5436429006006,
+            "y": 24.376162500288675,
+            "z": 32.5
+          },
+          "elevation": 32.5,
+          "distanceFromHomeplate": 132.80000000000004,
+          "angle": -100.57692307692308,
+          "facing": 79.42307692307692,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "guardians-316-2-9",
+          "sectionId": "316",
+          "row": "2",
+          "seatNumber": "9",
+          "position3D": {
+            "x": -130.720078016681,
+            "y": 23.411561317281663,
+            "z": 32.5
+          },
+          "elevation": 32.5,
+          "distanceFromHomeplate": 132.8,
+          "angle": -100.15384615384616,
+          "facing": 79.84615384615384,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "guardians-316-2-10",
+          "sectionId": "316",
+          "row": "2",
+          "seatNumber": "10",
+          "position3D": {
+            "x": -130.88938569006018,
+            "y": 22.445683631350484,
+            "z": 32.5
+          },
+          "elevation": 32.5,
+          "distanceFromHomeplate": 132.8,
+          "angle": -99.73076923076923,
+          "facing": 80.26923076923077,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "guardians-316-2-11",
+          "sectionId": "316",
+          "row": "2",
+          "seatNumber": "11",
+          "position3D": {
+            "x": -131.05155668932733,
+            "y": 21.47858210646205,
+            "z": 32.5
+          },
+          "elevation": 32.5,
+          "distanceFromHomeplate": 132.80000000000004,
+          "angle": -99.3076923076923,
+          "facing": 80.6923076923077,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "guardians-316-2-12",
+          "sectionId": "316",
+          "row": "2",
+          "seatNumber": "12",
+          "position3D": {
+            "x": -131.20658217219497,
+            "y": 20.510309473312496,
+            "z": 32.5
+          },
+          "elevation": 32.5,
+          "distanceFromHomeplate": 132.8,
+          "angle": -98.88461538461539,
+          "facing": 81.11538461538461,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "guardians-316-2-13",
+          "sectionId": "316",
+          "row": "2",
+          "seatNumber": "13",
+          "position3D": {
+            "x": -131.35445368598118,
+            "y": 19.540918526451886,
+            "z": 32.5
+          },
+          "elevation": 32.5,
+          "distanceFromHomeplate": 132.80000000000004,
+          "angle": -98.46153846153847,
+          "facing": 81.53846153846153,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        }
+      ],
+      "covered": false,
+      "hasAisleSeats": false,
+      "wheelchairRow": false
+    },
+    {
+      "rowNumber": "3",
+      "sectionId": "316",
+      "seatCount": 13,
+      "elevation": 35,
+      "depth": 135.6,
+      "rowSpacing": 36,
+      "seats": [
+        {
+          "id": "guardians-316-3-1",
+          "sectionId": "316",
+          "row": "3",
+          "seatNumber": "1",
+          "position3D": {
+            "x": -131.8320819877219,
+            "y": 31.74369478782476,
+            "z": 35
+          },
+          "elevation": 35,
+          "distanceFromHomeplate": 135.6,
+          "angle": -103.53846153846153,
+          "facing": 76.46153846153847,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "guardians-316-3-2",
+          "sectionId": "316",
+          "row": "3",
+          "seatNumber": "2",
+          "position3D": {
+            "x": -132.0628839705346,
+            "y": 30.76937889176691,
+            "z": 35
+          },
+          "elevation": 35,
+          "distanceFromHomeplate": 135.6,
+          "angle": -103.11538461538461,
+          "facing": 76.88461538461539,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "guardians-316-3-3",
+          "sectionId": "316",
+          "row": "3",
+          "seatNumber": "3",
+          "position3D": {
+            "x": -132.28648529486594,
+            "y": 29.793385311696543,
+            "z": 35
+          },
+          "elevation": 35,
+          "distanceFromHomeplate": 135.6,
+          "angle": -102.6923076923077,
+          "facing": 77.3076923076923,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "guardians-316-3-4",
+          "sectionId": "316",
+          "row": "3",
+          "seatNumber": "4",
+          "position3D": {
+            "x": -132.50287376897262,
+            "y": 28.815767263144426,
+            "z": 35
+          },
+          "elevation": 35,
+          "distanceFromHomeplate": 135.6,
+          "angle": -102.26923076923077,
+          "facing": 77.73076923076923,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "guardians-316-3-5",
+          "sectionId": "316",
+          "row": "3",
+          "seatNumber": "5",
+          "position3D": {
+            "x": -132.71203759438828,
+            "y": 27.836578050214264,
+            "z": 35
+          },
+          "elevation": 35,
+          "distanceFromHomeplate": 135.6,
+          "angle": -101.84615384615384,
+          "facing": 78.15384615384616,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "guardians-316-3-6",
+          "sectionId": "316",
+          "row": "3",
+          "seatNumber": "6",
+          "position3D": {
+            "x": -132.9139653665666,
+            "y": 26.855871062677007,
+            "z": 35
+          },
+          "elevation": 35,
+          "distanceFromHomeplate": 135.6,
+          "angle": -101.42307692307692,
+          "facing": 78.57692307692308,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "guardians-316-3-7",
+          "sectionId": "316",
+          "row": "3",
+          "seatNumber": "7",
+          "position3D": {
+            "x": -133.10864607550323,
+            "y": 25.873699773059464,
+            "z": 35
+          },
+          "elevation": 35,
+          "distanceFromHomeplate": 135.6,
+          "angle": -101,
+          "facing": 79,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "guardians-316-3-8",
+          "sectionId": "316",
+          "row": "3",
+          "seatNumber": "8",
+          "position3D": {
+            "x": -133.29606910633612,
+            "y": 24.89011773372849,
+            "z": 35
+          },
+          "elevation": 35,
+          "distanceFromHomeplate": 135.6,
+          "angle": -100.57692307692308,
+          "facing": 79.42307692307692,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "guardians-316-3-9",
+          "sectionId": "316",
+          "row": "3",
+          "seatNumber": "9",
+          "position3D": {
+            "x": -133.47622423992425,
+            "y": 23.905178573971334,
+            "z": 35
+          },
+          "elevation": 35,
+          "distanceFromHomeplate": 135.6,
+          "angle": -100.15384615384616,
+          "facing": 79.84615384615384,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "guardians-316-3-10",
+          "sectionId": "316",
+          "row": "3",
+          "seatNumber": "10",
+          "position3D": {
+            "x": -133.64910165340478,
+            "y": 22.918935997071728,
+            "z": 35
+          },
+          "elevation": 35,
+          "distanceFromHomeplate": 135.59999999999997,
+          "angle": -99.73076923076923,
+          "facing": 80.26923076923077,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "guardians-316-3-11",
+          "sectionId": "316",
+          "row": "3",
+          "seatNumber": "11",
+          "position3D": {
+            "x": -133.8146919207288,
+            "y": 21.931443777381425,
+            "z": 35
+          },
+          "elevation": 35,
+          "distanceFromHomeplate": 135.60000000000002,
+          "angle": -99.3076923076923,
+          "facing": 80.6923076923077,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "guardians-316-3-12",
+          "sectionId": "316",
+          "row": "3",
+          "seatNumber": "12",
+          "position3D": {
+            "x": -133.97298601317496,
+            "y": 20.94275575738836,
+            "z": 35
+          },
+          "elevation": 35,
+          "distanceFromHomeplate": 135.6,
+          "angle": -98.88461538461539,
+          "facing": 81.11538461538461,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "guardians-316-3-13",
+          "sectionId": "316",
+          "row": "3",
+          "seatNumber": "13",
+          "position3D": {
+            "x": -134.12397529984221,
+            "y": 19.95292584478069,
+            "z": 35
+          },
+          "elevation": 35,
+          "distanceFromHomeplate": 135.60000000000002,
+          "angle": -98.46153846153847,
+          "facing": 81.53846153846153,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        }
+      ],
+      "covered": false,
+      "hasAisleSeats": false,
+      "wheelchairRow": false
+    },
+    {
+      "rowNumber": "4",
+      "sectionId": "316",
+      "seatCount": 13,
+      "elevation": 37.5,
+      "depth": 138.4,
+      "rowSpacing": 36,
+      "seats": [
+        {
+          "id": "guardians-316-4-1",
+          "sectionId": "316",
+          "row": "4",
+          "seatNumber": "1",
+          "position3D": {
+            "x": -134.5542783709492,
+            "y": 32.39916931146716,
+            "z": 37.5
+          },
+          "elevation": 37.5,
+          "distanceFromHomeplate": 138.4,
+          "angle": -103.53846153846153,
+          "facing": 76.46153846153847,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "guardians-316-4-2",
+          "sectionId": "316",
+          "row": "4",
+          "seatNumber": "2",
+          "position3D": {
+            "x": -134.78984617641586,
+            "y": 31.404734798086583,
+            "z": 37.5
+          },
+          "elevation": 37.5,
+          "distanceFromHomeplate": 138.4,
+          "angle": -103.11538461538461,
+          "facing": 76.88461538461539,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "guardians-316-4-3",
+          "sectionId": "316",
+          "row": "4",
+          "seatNumber": "3",
+          "position3D": {
+            "x": -135.0180646372378,
+            "y": 30.408587958250752,
+            "z": 37.5
+          },
+          "elevation": 37.5,
+          "distanceFromHomeplate": 138.4,
+          "angle": -102.6923076923077,
+          "facing": 77.3076923076923,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "guardians-316-4-4",
+          "sectionId": "316",
+          "row": "4",
+          "seatNumber": "4",
+          "position3D": {
+            "x": -135.23892130992488,
+            "y": 29.4107831063362,
+            "z": 37.5
+          },
+          "elevation": 37.5,
+          "distanceFromHomeplate": 138.4,
+          "angle": -102.26923076923077,
+          "facing": 77.73076923076923,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "guardians-316-4-5",
+          "sectionId": "316",
+          "row": "4",
+          "seatNumber": "5",
+          "position3D": {
+            "x": -135.4524041523845,
+            "y": 28.411374647121345,
+            "z": 37.5
+          },
+          "elevation": 37.5,
+          "distanceFromHomeplate": 138.4,
+          "angle": -101.84615384615384,
+          "facing": 78.15384615384616,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "guardians-316-4-6",
+          "sectionId": "316",
+          "row": "4",
+          "seatNumber": "6",
+          "position3D": {
+            "x": -135.65850152457833,
+            "y": 27.410417072820785,
+            "z": 37.5
+          },
+          "elevation": 37.5,
+          "distanceFromHomeplate": 138.4,
+          "angle": -101.42307692307692,
+          "facing": 78.57692307692308,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "guardians-316-4-7",
+          "sectionId": "316",
+          "row": "4",
+          "seatNumber": "7",
+          "position3D": {
+            "x": -135.8572021891567,
+            "y": 26.40796496011379,
+            "z": 37.5
+          },
+          "elevation": 37.5,
+          "distanceFromHomeplate": 138.4,
+          "angle": -101,
+          "facing": 79,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "guardians-316-4-8",
+          "sectionId": "316",
+          "row": "4",
+          "seatNumber": "8",
+          "position3D": {
+            "x": -136.04849531207168,
+            "y": 25.404072967168315,
+            "z": 37.5
+          },
+          "elevation": 37.5,
+          "distanceFromHomeplate": 138.4,
+          "angle": -100.57692307692308,
+          "facing": 79.42307692307692,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "guardians-316-4-9",
+          "sectionId": "316",
+          "row": "4",
+          "seatNumber": "9",
+          "position3D": {
+            "x": -136.23237046316754,
+            "y": 24.398795830661008,
+            "z": 37.5
+          },
+          "elevation": 37.5,
+          "distanceFromHomeplate": 138.4,
+          "angle": -100.15384615384616,
+          "facing": 79.84615384615384,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "guardians-316-4-10",
+          "sectionId": "316",
+          "row": "4",
+          "seatNumber": "10",
+          "position3D": {
+            "x": -136.40881761674945,
+            "y": 23.392188362792975,
+            "z": 37.5
+          },
+          "elevation": 37.5,
+          "distanceFromHomeplate": 138.4,
+          "angle": -99.73076923076923,
+          "facing": 80.26923076923077,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "guardians-316-4-11",
+          "sectionId": "316",
+          "row": "4",
+          "seatNumber": "11",
+          "position3D": {
+            "x": -136.57782715213028,
+            "y": 22.384305448300807,
+            "z": 37.5
+          },
+          "elevation": 37.5,
+          "distanceFromHomeplate": 138.4,
+          "angle": -99.3076923076923,
+          "facing": 80.6923076923077,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "guardians-316-4-12",
+          "sectionId": "316",
+          "row": "4",
+          "seatNumber": "12",
+          "position3D": {
+            "x": -136.73938985415498,
+            "y": 21.375202041464227,
+            "z": 37.5
+          },
+          "elevation": 37.5,
+          "distanceFromHomeplate": 138.4,
+          "angle": -98.88461538461539,
+          "facing": 81.11538461538461,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "guardians-316-4-13",
+          "sectionId": "316",
+          "row": "4",
+          "seatNumber": "13",
+          "position3D": {
+            "x": -136.89349691370327,
+            "y": 20.364933163109495,
+            "z": 37.5
+          },
+          "elevation": 37.5,
+          "distanceFromHomeplate": 138.4,
+          "angle": -98.46153846153847,
+          "facing": 81.53846153846153,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        }
+      ],
+      "covered": false,
+      "hasAisleSeats": false,
+      "wheelchairRow": false
+    },
+    {
+      "rowNumber": "5",
+      "sectionId": "316",
+      "seatCount": 13,
+      "elevation": 40,
+      "depth": 141.2,
+      "rowSpacing": 36,
+      "seats": [
+        {
+          "id": "guardians-316-5-1",
+          "sectionId": "316",
+          "row": "5",
+          "seatNumber": "1",
+          "position3D": {
+            "x": -137.27647475417646,
+            "y": 33.05464383510956,
+            "z": 40
+          },
+          "elevation": 40,
+          "distanceFromHomeplate": 141.2,
+          "angle": -103.53846153846153,
+          "facing": 76.46153846153847,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "guardians-316-5-2",
+          "sectionId": "316",
+          "row": "5",
+          "seatNumber": "2",
+          "position3D": {
+            "x": -137.51680838229709,
+            "y": 32.040090704406246,
+            "z": 40
+          },
+          "elevation": 40,
+          "distanceFromHomeplate": 141.2,
+          "angle": -103.11538461538461,
+          "facing": 76.88461538461539,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "guardians-316-5-3",
+          "sectionId": "316",
+          "row": "5",
+          "seatNumber": "3",
+          "position3D": {
+            "x": -137.74964397960966,
+            "y": 31.023790604804955,
+            "z": 40
+          },
+          "elevation": 40,
+          "distanceFromHomeplate": 141.2,
+          "angle": -102.6923076923077,
+          "facing": 77.3076923076923,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "guardians-316-5-4",
+          "sectionId": "316",
+          "row": "5",
+          "seatNumber": "4",
+          "position3D": {
+            "x": -137.97496885087708,
+            "y": 30.00579894952797,
+            "z": 40
+          },
+          "elevation": 40,
+          "distanceFromHomeplate": 141.2,
+          "angle": -102.26923076923077,
+          "facing": 77.73076923076923,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "guardians-316-5-5",
+          "sectionId": "316",
+          "row": "5",
+          "seatNumber": "5",
+          "position3D": {
+            "x": -138.1927707103807,
+            "y": 28.986171244028423,
+            "z": 40
+          },
+          "elevation": 40,
+          "distanceFromHomeplate": 141.2,
+          "angle": -101.84615384615384,
+          "facing": 78.15384615384616,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "guardians-316-5-6",
+          "sectionId": "316",
+          "row": "5",
+          "seatNumber": "6",
+          "position3D": {
+            "x": -138.40303768259,
+            "y": 27.964963082964555,
+            "z": 40
+          },
+          "elevation": 40,
+          "distanceFromHomeplate": 141.2,
+          "angle": -101.42307692307692,
+          "facing": 78.57692307692308,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "guardians-316-5-7",
+          "sectionId": "316",
+          "row": "5",
+          "seatNumber": "7",
+          "position3D": {
+            "x": -138.60575830281013,
+            "y": 26.94223014716811,
+            "z": 40
+          },
+          "elevation": 40,
+          "distanceFromHomeplate": 141.19999999999996,
+          "angle": -101,
+          "facing": 79,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "guardians-316-5-8",
+          "sectionId": "316",
+          "row": "5",
+          "seatNumber": "8",
+          "position3D": {
+            "x": -138.8009215178072,
+            "y": 25.918028200608134,
+            "z": 40
+          },
+          "elevation": 40,
+          "distanceFromHomeplate": 141.2,
+          "angle": -100.57692307692308,
+          "facing": 79.42307692307692,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "guardians-316-5-9",
+          "sectionId": "316",
+          "row": "5",
+          "seatNumber": "9",
+          "position3D": {
+            "x": -138.98851668641078,
+            "y": 24.89241308735068,
+            "z": 40
+          },
+          "elevation": 40,
+          "distanceFromHomeplate": 141.2,
+          "angle": -100.15384615384616,
+          "facing": 79.84615384615384,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "guardians-316-5-10",
+          "sectionId": "316",
+          "row": "5",
+          "seatNumber": "10",
+          "position3D": {
+            "x": -139.16853358009408,
+            "y": 23.865440728514216,
+            "z": 40
+          },
+          "elevation": 40,
+          "distanceFromHomeplate": 141.2,
+          "angle": -99.73076923076923,
+          "facing": 80.26923076923077,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "guardians-316-5-11",
+          "sectionId": "316",
+          "row": "5",
+          "seatNumber": "11",
+          "position3D": {
+            "x": -139.34096238353175,
+            "y": 22.837167119220187,
+            "z": 40
+          },
+          "elevation": 40,
+          "distanceFromHomeplate": 141.2,
+          "angle": -99.3076923076923,
+          "facing": 80.6923076923077,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "guardians-316-5-12",
+          "sectionId": "316",
+          "row": "5",
+          "seatNumber": "12",
+          "position3D": {
+            "x": -139.505793695135,
+            "y": 21.80764832554009,
+            "z": 40
+          },
+          "elevation": 40,
+          "distanceFromHomeplate": 141.2,
+          "angle": -98.88461538461539,
+          "facing": 81.11538461538461,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "guardians-316-5-13",
+          "sectionId": "316",
+          "row": "5",
+          "seatNumber": "13",
+          "position3D": {
+            "x": -139.6630185275643,
+            "y": 20.7769404814383,
+            "z": 40
+          },
+          "elevation": 40,
+          "distanceFromHomeplate": 141.2,
+          "angle": -98.46153846153847,
+          "facing": 81.53846153846153,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        }
+      ],
+      "covered": false,
+      "hasAisleSeats": false,
+      "wheelchairRow": false
+    },
+    {
+      "rowNumber": "6",
+      "sectionId": "316",
+      "seatCount": 13,
+      "elevation": 42.5,
+      "depth": 144,
+      "rowSpacing": 36,
+      "seats": [
+        {
+          "id": "guardians-316-6-1",
+          "sectionId": "316",
+          "row": "6",
+          "seatNumber": "1",
+          "position3D": {
+            "x": -139.9986711374038,
+            "y": 33.71011835875196,
+            "z": 42.5
+          },
+          "elevation": 42.5,
+          "distanceFromHomeplate": 144,
+          "angle": -103.53846153846153,
+          "facing": 76.46153846153847,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "guardians-316-6-2",
+          "sectionId": "316",
+          "row": "6",
+          "seatNumber": "2",
+          "position3D": {
+            "x": -140.24377058817834,
+            "y": 32.67544661072592,
+            "z": 42.5
+          },
+          "elevation": 42.5,
+          "distanceFromHomeplate": 144,
+          "angle": -103.11538461538461,
+          "facing": 76.88461538461539,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "guardians-316-6-3",
+          "sectionId": "316",
+          "row": "6",
+          "seatNumber": "3",
+          "position3D": {
+            "x": -140.48122332198153,
+            "y": 31.63899325135916,
+            "z": 42.5
+          },
+          "elevation": 42.5,
+          "distanceFromHomeplate": 144,
+          "angle": -102.6923076923077,
+          "facing": 77.3076923076923,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "guardians-316-6-4",
+          "sectionId": "316",
+          "row": "6",
+          "seatNumber": "4",
+          "position3D": {
+            "x": -140.71101639182933,
+            "y": 30.600814792719746,
+            "z": 42.5
+          },
+          "elevation": 42.5,
+          "distanceFromHomeplate": 144,
+          "angle": -102.26923076923077,
+          "facing": 77.73076923076923,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "guardians-316-6-5",
+          "sectionId": "316",
+          "row": "6",
+          "seatNumber": "5",
+          "position3D": {
+            "x": -140.93313726837695,
+            "y": 29.560967840935504,
+            "z": 42.5
+          },
+          "elevation": 42.5,
+          "distanceFromHomeplate": 144,
+          "angle": -101.84615384615384,
+          "facing": 78.15384615384616,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "guardians-316-6-6",
+          "sectionId": "316",
+          "row": "6",
+          "seatNumber": "6",
+          "position3D": {
+            "x": -141.1475738406017,
+            "y": 28.51950909310833,
+            "z": 42.5
+          },
+          "elevation": 42.5,
+          "distanceFromHomeplate": 144,
+          "angle": -101.42307692307692,
+          "facing": 78.57692307692308,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "guardians-316-6-7",
+          "sectionId": "316",
+          "row": "6",
+          "seatNumber": "7",
+          "position3D": {
+            "x": -141.3543144164636,
+            "y": 27.47649533422244,
+            "z": 42.5
+          },
+          "elevation": 42.5,
+          "distanceFromHomeplate": 144,
+          "angle": -101,
+          "facing": 79,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "guardians-316-6-8",
+          "sectionId": "316",
+          "row": "6",
+          "seatNumber": "8",
+          "position3D": {
+            "x": -141.55334772354277,
+            "y": 26.431983434047957,
+            "z": 42.5
+          },
+          "elevation": 42.5,
+          "distanceFromHomeplate": 144,
+          "angle": -100.57692307692308,
+          "facing": 79.42307692307692,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "guardians-316-6-9",
+          "sectionId": "316",
+          "row": "6",
+          "seatNumber": "9",
+          "position3D": {
+            "x": -141.74466290965407,
+            "y": 25.386030344040353,
+            "z": 42.5
+          },
+          "elevation": 42.5,
+          "distanceFromHomeplate": 144,
+          "angle": -100.15384615384616,
+          "facing": 79.84615384615384,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "guardians-316-6-10",
+          "sectionId": "316",
+          "row": "6",
+          "seatNumber": "10",
+          "position3D": {
+            "x": -141.92824954343874,
+            "y": 24.338693094235463,
+            "z": 42.5
+          },
+          "elevation": 42.5,
+          "distanceFromHomeplate": 144,
+          "angle": -99.73076923076923,
+          "facing": 80.26923076923077,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "guardians-316-6-11",
+          "sectionId": "316",
+          "row": "6",
+          "seatNumber": "11",
+          "position3D": {
+            "x": -142.10409761493324,
+            "y": 23.29002879013957,
+            "z": 42.5
+          },
+          "elevation": 42.5,
+          "distanceFromHomeplate": 144,
+          "angle": -99.3076923076923,
+          "facing": 80.6923076923077,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "guardians-316-6-12",
+          "sectionId": "316",
+          "row": "6",
+          "seatNumber": "12",
+          "position3D": {
+            "x": -142.27219753611502,
+            "y": 22.24009460961596,
+            "z": 42.5
+          },
+          "elevation": 42.5,
+          "distanceFromHomeplate": 144,
+          "angle": -98.88461538461539,
+          "facing": 81.11538461538461,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "guardians-316-6-13",
+          "sectionId": "316",
+          "row": "6",
+          "seatNumber": "13",
+          "position3D": {
+            "x": -142.43254014142536,
+            "y": 21.188947799767103,
+            "z": 42.5
+          },
+          "elevation": 42.5,
+          "distanceFromHomeplate": 144,
+          "angle": -98.46153846153847,
+          "facing": 81.53846153846153,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        }
+      ],
+      "covered": false,
+      "hasAisleSeats": false,
+      "wheelchairRow": false
+    },
+    {
+      "rowNumber": "7",
+      "sectionId": "316",
+      "seatCount": 13,
+      "elevation": 45,
+      "depth": 146.8,
+      "rowSpacing": 36,
+      "seats": [
+        {
+          "id": "guardians-316-7-1",
+          "sectionId": "316",
+          "row": "7",
+          "seatNumber": "1",
+          "position3D": {
+            "x": -142.7208675206311,
+            "y": 34.36559288239436,
+            "z": 45
+          },
+          "elevation": 45,
+          "distanceFromHomeplate": 146.8,
+          "angle": -103.53846153846153,
+          "facing": 76.46153846153847,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "guardians-316-7-2",
+          "sectionId": "316",
+          "row": "7",
+          "seatNumber": "2",
+          "position3D": {
+            "x": -142.97073279405961,
+            "y": 33.310802517045595,
+            "z": 45
+          },
+          "elevation": 45,
+          "distanceFromHomeplate": 146.8,
+          "angle": -103.11538461538461,
+          "facing": 76.88461538461539,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "guardians-316-7-3",
+          "sectionId": "316",
+          "row": "7",
+          "seatNumber": "3",
+          "position3D": {
+            "x": -143.2128026643534,
+            "y": 32.25419589791337,
+            "z": 45
+          },
+          "elevation": 45,
+          "distanceFromHomeplate": 146.8,
+          "angle": -102.6923076923077,
+          "facing": 77.3076923076923,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "guardians-316-7-4",
+          "sectionId": "316",
+          "row": "7",
+          "seatNumber": "4",
+          "position3D": {
+            "x": -143.4470639327816,
+            "y": 31.19583063591152,
+            "z": 45
+          },
+          "elevation": 45,
+          "distanceFromHomeplate": 146.8,
+          "angle": -102.26923076923077,
+          "facing": 77.73076923076923,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "guardians-316-7-5",
+          "sectionId": "316",
+          "row": "7",
+          "seatNumber": "5",
+          "position3D": {
+            "x": -143.67350382637318,
+            "y": 30.135764437842585,
+            "z": 45
+          },
+          "elevation": 45,
+          "distanceFromHomeplate": 146.8,
+          "angle": -101.84615384615384,
+          "facing": 78.15384615384616,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "guardians-316-7-6",
+          "sectionId": "316",
+          "row": "7",
+          "seatNumber": "6",
+          "position3D": {
+            "x": -143.89210999861342,
+            "y": 29.074055103252103,
+            "z": 45
+          },
+          "elevation": 45,
+          "distanceFromHomeplate": 146.8,
+          "angle": -101.42307692307692,
+          "facing": 78.57692307692308,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "guardians-316-7-7",
+          "sectionId": "316",
+          "row": "7",
+          "seatNumber": "7",
+          "position3D": {
+            "x": -144.1028705301171,
+            "y": 28.01076052127677,
+            "z": 45
+          },
+          "elevation": 45,
+          "distanceFromHomeplate": 146.8,
+          "angle": -101,
+          "facing": 79,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "guardians-316-7-8",
+          "sectionId": "316",
+          "row": "7",
+          "seatNumber": "8",
+          "position3D": {
+            "x": -144.30577392927833,
+            "y": 26.94593866748778,
+            "z": 45
+          },
+          "elevation": 45,
+          "distanceFromHomeplate": 146.79999999999998,
+          "angle": -100.57692307692308,
+          "facing": 79.42307692307692,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "guardians-316-7-9",
+          "sectionId": "316",
+          "row": "7",
+          "seatNumber": "9",
+          "position3D": {
+            "x": -144.50080913289736,
+            "y": 25.87964760073003,
+            "z": 45
+          },
+          "elevation": 45,
+          "distanceFromHomeplate": 146.8,
+          "angle": -100.15384615384616,
+          "facing": 79.84615384615384,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "guardians-316-7-10",
+          "sectionId": "316",
+          "row": "7",
+          "seatNumber": "10",
+          "position3D": {
+            "x": -144.68796550678337,
+            "y": 24.81194545995671,
+            "z": 45
+          },
+          "elevation": 45,
+          "distanceFromHomeplate": 146.8,
+          "angle": -99.73076923076923,
+          "facing": 80.26923076923077,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "guardians-316-7-11",
+          "sectionId": "316",
+          "row": "7",
+          "seatNumber": "11",
+          "position3D": {
+            "x": -144.86723284633473,
+            "y": 23.742890461058952,
+            "z": 45
+          },
+          "elevation": 45,
+          "distanceFromHomeplate": 146.8,
+          "angle": -99.3076923076923,
+          "facing": 80.6923076923077,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "guardians-316-7-12",
+          "sectionId": "316",
+          "row": "7",
+          "seatNumber": "12",
+          "position3D": {
+            "x": -145.03860137709503,
+            "y": 22.672540893691824,
+            "z": 45
+          },
+          "elevation": 45,
+          "distanceFromHomeplate": 146.8,
+          "angle": -98.88461538461539,
+          "facing": 81.11538461538461,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "guardians-316-7-13",
+          "sectionId": "316",
+          "row": "7",
+          "seatNumber": "13",
+          "position3D": {
+            "x": -145.20206175528642,
+            "y": 21.60095511809591,
+            "z": 45
+          },
+          "elevation": 45,
+          "distanceFromHomeplate": 146.80000000000004,
+          "angle": -98.46153846153847,
+          "facing": 81.53846153846153,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        }
+      ],
+      "covered": false,
+      "hasAisleSeats": false,
+      "wheelchairRow": false
+    },
+    {
+      "rowNumber": "8",
+      "sectionId": "316",
+      "seatCount": 13,
+      "elevation": 47.5,
+      "depth": 149.6,
+      "rowSpacing": 36,
+      "seats": [
+        {
+          "id": "guardians-316-8-1",
+          "sectionId": "316",
+          "row": "8",
+          "seatNumber": "1",
+          "position3D": {
+            "x": -145.44306390385836,
+            "y": 35.02106740603676,
+            "z": 47.5
+          },
+          "elevation": 47.5,
+          "distanceFromHomeplate": 149.6,
+          "angle": -103.53846153846153,
+          "facing": 76.46153846153847,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "guardians-316-8-2",
+          "sectionId": "316",
+          "row": "8",
+          "seatNumber": "2",
+          "position3D": {
+            "x": -145.69769499994084,
+            "y": 33.94615842336526,
+            "z": 47.5
+          },
+          "elevation": 47.5,
+          "distanceFromHomeplate": 149.6,
+          "angle": -103.11538461538461,
+          "facing": 76.88461538461539,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "guardians-316-8-3",
+          "sectionId": "316",
+          "row": "8",
+          "seatNumber": "3",
+          "position3D": {
+            "x": -145.94438200672525,
+            "y": 32.86939854446757,
+            "z": 47.5
+          },
+          "elevation": 47.5,
+          "distanceFromHomeplate": 149.6,
+          "angle": -102.6923076923077,
+          "facing": 77.3076923076923,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "guardians-316-8-4",
+          "sectionId": "316",
+          "row": "8",
+          "seatNumber": "4",
+          "position3D": {
+            "x": -146.18311147373382,
+            "y": 31.79084647910329,
+            "z": 47.5
+          },
+          "elevation": 47.5,
+          "distanceFromHomeplate": 149.6,
+          "angle": -102.26923076923077,
+          "facing": 77.73076923076923,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "guardians-316-8-5",
+          "sectionId": "316",
+          "row": "8",
+          "seatNumber": "5",
+          "position3D": {
+            "x": -146.41387038436937,
+            "y": 30.71056103474966,
+            "z": 47.5
+          },
+          "elevation": 47.5,
+          "distanceFromHomeplate": 149.6,
+          "angle": -101.84615384615384,
+          "facing": 78.15384615384616,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "guardians-316-8-6",
+          "sectionId": "316",
+          "row": "8",
+          "seatNumber": "6",
+          "position3D": {
+            "x": -146.6366461566251,
+            "y": 29.628601113395874,
+            "z": 47.5
+          },
+          "elevation": 47.5,
+          "distanceFromHomeplate": 149.59999999999997,
+          "angle": -101.42307692307692,
+          "facing": 78.57692307692308,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "guardians-316-8-7",
+          "sectionId": "316",
+          "row": "8",
+          "seatNumber": "7",
+          "position3D": {
+            "x": -146.85142664377054,
+            "y": 28.54502570833109,
+            "z": 47.5
+          },
+          "elevation": 47.5,
+          "distanceFromHomeplate": 149.60000000000002,
+          "angle": -101,
+          "facing": 79,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "guardians-316-8-8",
+          "sectionId": "316",
+          "row": "8",
+          "seatNumber": "8",
+          "position3D": {
+            "x": -147.0582001350139,
+            "y": 27.4598939009276,
+            "z": 47.5
+          },
+          "elevation": 47.5,
+          "distanceFromHomeplate": 149.60000000000002,
+          "angle": -100.57692307692308,
+          "facing": 79.42307692307692,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "guardians-316-8-9",
+          "sectionId": "316",
+          "row": "8",
+          "seatNumber": "9",
+          "position3D": {
+            "x": -147.25695535614062,
+            "y": 26.373264857419702,
+            "z": 47.5
+          },
+          "elevation": 47.5,
+          "distanceFromHomeplate": 149.6,
+          "angle": -100.15384615384616,
+          "facing": 79.84615384615384,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "guardians-316-8-10",
+          "sectionId": "316",
+          "row": "8",
+          "seatNumber": "10",
+          "position3D": {
+            "x": -147.447681470128,
+            "y": 25.28519782567795,
+            "z": 47.5
+          },
+          "elevation": 47.5,
+          "distanceFromHomeplate": 149.6,
+          "angle": -99.73076923076923,
+          "facing": 80.26923076923077,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "guardians-316-8-11",
+          "sectionId": "316",
+          "row": "8",
+          "seatNumber": "11",
+          "position3D": {
+            "x": -147.63036807773616,
+            "y": 24.195752131978328,
+            "z": 47.5
+          },
+          "elevation": 47.5,
+          "distanceFromHomeplate": 149.6,
+          "angle": -99.3076923076923,
+          "facing": 80.6923076923077,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "guardians-316-8-12",
+          "sectionId": "316",
+          "row": "8",
+          "seatNumber": "12",
+          "position3D": {
+            "x": -147.80500521807505,
+            "y": 23.104987177767686,
+            "z": 47.5
+          },
+          "elevation": 47.5,
+          "distanceFromHomeplate": 149.60000000000002,
+          "angle": -98.88461538461539,
+          "facing": 81.11538461538461,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "guardians-316-8-13",
+          "sectionId": "316",
+          "row": "8",
+          "seatNumber": "13",
+          "position3D": {
+            "x": -147.97158336914745,
+            "y": 22.01296243642471,
+            "z": 47.5
+          },
+          "elevation": 47.5,
+          "distanceFromHomeplate": 149.6,
+          "angle": -98.46153846153847,
+          "facing": 81.53846153846153,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        }
+      ],
+      "covered": false,
+      "hasAisleSeats": false,
+      "wheelchairRow": false
+    },
+    {
+      "rowNumber": "9",
+      "sectionId": "316",
+      "seatCount": 13,
+      "elevation": 50,
+      "depth": 152.4,
+      "rowSpacing": 36,
+      "seats": [
+        {
+          "id": "guardians-316-9-1",
+          "sectionId": "316",
+          "row": "9",
+          "seatNumber": "1",
+          "position3D": {
+            "x": -148.1652602870857,
+            "y": 35.67654192967916,
+            "z": 50
+          },
+          "elevation": 50,
+          "distanceFromHomeplate": 152.4,
+          "angle": -103.53846153846153,
+          "facing": 76.46153846153847,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "guardians-316-9-2",
+          "sectionId": "316",
+          "row": "9",
+          "seatNumber": "2",
+          "position3D": {
+            "x": -148.4246572058221,
+            "y": 34.581514329684936,
+            "z": 50
+          },
+          "elevation": 50,
+          "distanceFromHomeplate": 152.4,
+          "angle": -103.11538461538461,
+          "facing": 76.88461538461539,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "guardians-316-9-3",
+          "sectionId": "316",
+          "row": "9",
+          "seatNumber": "3",
+          "position3D": {
+            "x": -148.67596134909712,
+            "y": 33.48460119102178,
+            "z": 50
+          },
+          "elevation": 50,
+          "distanceFromHomeplate": 152.4,
+          "angle": -102.6923076923077,
+          "facing": 77.3076923076923,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "guardians-316-9-4",
+          "sectionId": "316",
+          "row": "9",
+          "seatNumber": "4",
+          "position3D": {
+            "x": -148.91915901468604,
+            "y": 32.38586232229507,
+            "z": 50
+          },
+          "elevation": 50,
+          "distanceFromHomeplate": 152.4,
+          "angle": -102.26923076923077,
+          "facing": 77.73076923076923,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "guardians-316-9-5",
+          "sectionId": "316",
+          "row": "9",
+          "seatNumber": "5",
+          "position3D": {
+            "x": -149.1542369423656,
+            "y": 31.285357631656744,
+            "z": 50
+          },
+          "elevation": 50,
+          "distanceFromHomeplate": 152.4,
+          "angle": -101.84615384615384,
+          "facing": 78.15384615384616,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "guardians-316-9-6",
+          "sectionId": "316",
+          "row": "9",
+          "seatNumber": "6",
+          "position3D": {
+            "x": -149.38118231463682,
+            "y": 30.183147123539648,
+            "z": 50
+          },
+          "elevation": 50,
+          "distanceFromHomeplate": 152.4,
+          "angle": -101.42307692307692,
+          "facing": 78.57692307692308,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "guardians-316-9-7",
+          "sectionId": "316",
+          "row": "9",
+          "seatNumber": "7",
+          "position3D": {
+            "x": -149.599982757424,
+            "y": 29.079290895385416,
+            "z": 50
+          },
+          "elevation": 50,
+          "distanceFromHomeplate": 152.4,
+          "angle": -101,
+          "facing": 79,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "guardians-316-9-8",
+          "sectionId": "316",
+          "row": "9",
+          "seatNumber": "8",
+          "position3D": {
+            "x": -149.81062634074945,
+            "y": 27.973849134367423,
+            "z": 50
+          },
+          "elevation": 50,
+          "distanceFromHomeplate": 152.4,
+          "angle": -100.57692307692308,
+          "facing": 79.42307692307692,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "guardians-316-9-9",
+          "sectionId": "316",
+          "row": "9",
+          "seatNumber": "9",
+          "position3D": {
+            "x": -150.0131015793839,
+            "y": 26.866882114109377,
+            "z": 50
+          },
+          "elevation": 50,
+          "distanceFromHomeplate": 152.4,
+          "angle": -100.15384615384616,
+          "facing": 79.84615384615384,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "guardians-316-9-10",
+          "sectionId": "316",
+          "row": "9",
+          "seatNumber": "10",
+          "position3D": {
+            "x": -150.20739743347266,
+            "y": 25.7584501913992,
+            "z": 50
+          },
+          "elevation": 50,
+          "distanceFromHomeplate": 152.4,
+          "angle": -99.73076923076923,
+          "facing": 80.26923076923077,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "guardians-316-9-11",
+          "sectionId": "316",
+          "row": "9",
+          "seatNumber": "11",
+          "position3D": {
+            "x": -150.39350330913766,
+            "y": 24.64861380289771,
+            "z": 50
+          },
+          "elevation": 50,
+          "distanceFromHomeplate": 152.4,
+          "angle": -99.3076923076923,
+          "facing": 80.6923076923077,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "guardians-316-9-12",
+          "sectionId": "316",
+          "row": "9",
+          "seatNumber": "12",
+          "position3D": {
+            "x": -150.57140905905507,
+            "y": 23.537433461843555,
+            "z": 50
+          },
+          "elevation": 50,
+          "distanceFromHomeplate": 152.4,
+          "angle": -98.88461538461539,
+          "facing": 81.11538461538461,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "guardians-316-9-13",
+          "sectionId": "316",
+          "row": "9",
+          "seatNumber": "13",
+          "position3D": {
+            "x": -150.7411049830085,
+            "y": 22.42496975475352,
+            "z": 50
+          },
+          "elevation": 50,
+          "distanceFromHomeplate": 152.4,
+          "angle": -98.46153846153847,
+          "facing": 81.53846153846153,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        }
+      ],
+      "covered": false,
+      "hasAisleSeats": false,
+      "wheelchairRow": false
+    },
+    {
+      "rowNumber": "10",
+      "sectionId": "316",
+      "seatCount": 13,
+      "elevation": 52.5,
+      "depth": 155.2,
+      "rowSpacing": 36,
+      "seats": [
+        {
+          "id": "guardians-316-10-1",
+          "sectionId": "316",
+          "row": "10",
+          "seatNumber": "1",
+          "position3D": {
+            "x": -150.88745667031296,
+            "y": 36.33201645332156,
+            "z": 52.5
+          },
+          "elevation": 52.5,
+          "distanceFromHomeplate": 155.2,
+          "angle": -103.53846153846153,
+          "facing": 76.46153846153847,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "guardians-316-10-2",
+          "sectionId": "316",
+          "row": "10",
+          "seatNumber": "2",
+          "position3D": {
+            "x": -151.1516194117033,
+            "y": 35.2168702360046,
+            "z": 52.5
+          },
+          "elevation": 52.5,
+          "distanceFromHomeplate": 155.2,
+          "angle": -103.11538461538461,
+          "facing": 76.88461538461539,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "guardians-316-10-3",
+          "sectionId": "316",
+          "row": "10",
+          "seatNumber": "3",
+          "position3D": {
+            "x": -151.40754069146897,
+            "y": 34.09980383757598,
+            "z": 52.5
+          },
+          "elevation": 52.5,
+          "distanceFromHomeplate": 155.2,
+          "angle": -102.6923076923077,
+          "facing": 77.3076923076923,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "guardians-316-10-4",
+          "sectionId": "316",
+          "row": "10",
+          "seatNumber": "4",
+          "position3D": {
+            "x": -151.65520655563827,
+            "y": 32.980878165486835,
+            "z": 52.5
+          },
+          "elevation": 52.5,
+          "distanceFromHomeplate": 155.2,
+          "angle": -102.26923076923077,
+          "facing": 77.73076923076923,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "guardians-316-10-5",
+          "sectionId": "316",
+          "row": "10",
+          "seatNumber": "5",
+          "position3D": {
+            "x": -151.8946035003618,
+            "y": 31.860154228563818,
+            "z": 52.5
+          },
+          "elevation": 52.5,
+          "distanceFromHomeplate": 155.2,
+          "angle": -101.84615384615384,
+          "facing": 78.15384615384616,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "guardians-316-10-6",
+          "sectionId": "316",
+          "row": "10",
+          "seatNumber": "6",
+          "position3D": {
+            "x": -152.1257184726485,
+            "y": 30.73769313368342,
+            "z": 52.5
+          },
+          "elevation": 52.5,
+          "distanceFromHomeplate": 155.2,
+          "angle": -101.42307692307692,
+          "facing": 78.57692307692308,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "guardians-316-10-7",
+          "sectionId": "316",
+          "row": "10",
+          "seatNumber": "7",
+          "position3D": {
+            "x": -152.34853887107744,
+            "y": 29.61355608243974,
+            "z": 52.5
+          },
+          "elevation": 52.5,
+          "distanceFromHomeplate": 155.2,
+          "angle": -101,
+          "facing": 79,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "guardians-316-10-8",
+          "sectionId": "316",
+          "row": "10",
+          "seatNumber": "8",
+          "position3D": {
+            "x": -152.56305254648498,
+            "y": 28.487804367807243,
+            "z": 52.5
+          },
+          "elevation": 52.5,
+          "distanceFromHomeplate": 155.2,
+          "angle": -100.57692307692308,
+          "facing": 79.42307692307692,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "guardians-316-10-9",
+          "sectionId": "316",
+          "row": "10",
+          "seatNumber": "9",
+          "position3D": {
+            "x": -152.76924780262715,
+            "y": 27.360499370799047,
+            "z": 52.5
+          },
+          "elevation": 52.5,
+          "distanceFromHomeplate": 155.2,
+          "angle": -100.15384615384616,
+          "facing": 79.84615384615384,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "guardians-316-10-10",
+          "sectionId": "316",
+          "row": "10",
+          "seatNumber": "10",
+          "position3D": {
+            "x": -152.9671133968173,
+            "y": 26.231702557120443,
+            "z": 52.5
+          },
+          "elevation": 52.5,
+          "distanceFromHomeplate": 155.2,
+          "angle": -99.73076923076923,
+          "facing": 80.26923076923077,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "guardians-316-10-11",
+          "sectionId": "316",
+          "row": "10",
+          "seatNumber": "11",
+          "position3D": {
+            "x": -153.15663854053912,
+            "y": 25.10147547381709,
+            "z": 52.5
+          },
+          "elevation": 52.5,
+          "distanceFromHomeplate": 155.2,
+          "angle": -99.3076923076923,
+          "facing": 80.6923076923077,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "guardians-316-10-12",
+          "sectionId": "316",
+          "row": "10",
+          "seatNumber": "12",
+          "position3D": {
+            "x": -153.33781290003506,
+            "y": 23.969879745919418,
+            "z": 52.5
+          },
+          "elevation": 52.5,
+          "distanceFromHomeplate": 155.2,
+          "angle": -98.88461538461539,
+          "facing": 81.11538461538461,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "guardians-316-10-13",
+          "sectionId": "316",
+          "row": "10",
+          "seatNumber": "13",
+          "position3D": {
+            "x": -153.51062659686954,
+            "y": 22.836977073082323,
+            "z": 52.5
+          },
+          "elevation": 52.5,
+          "distanceFromHomeplate": 155.2,
+          "angle": -98.46153846153847,
+          "facing": 81.53846153846153,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        }
+      ],
+      "covered": false,
+      "hasAisleSeats": false,
+      "wheelchairRow": false
+    }
+  ],
+  "seatDistribution": {
+    "standard": 110,
+    "aisle": 20,
+    "wheelchair": 0,
+    "companion": 0,
+    "other": 0
+  }
+};
