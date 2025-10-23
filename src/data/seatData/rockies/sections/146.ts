@@ -1,0 +1,12037 @@
+/**
+ * 146 - rockies
+ * Generated: 2025-10-23T12:21:01.870Z
+ * Total Seats: 448
+ * Total Rows: 28
+ */
+
+import type { SectionSeatingData } from '@/types/seat';
+
+export const section_146: SectionSeatingData = {
+  "sectionId": "146",
+  "sectionName": "146",
+  "stadiumId": "rockies",
+  "totalSeats": 448,
+  "totalRows": 28,
+  "rows": [
+    {
+      "rowNumber": "12",
+      "sectionId": "146",
+      "seatCount": 16,
+      "elevation": 45,
+      "depth": 158.6,
+      "rowSpacing": 36,
+      "seats": [
+        {
+          "id": "rockies-146-12-1",
+          "sectionId": "146",
+          "row": "12",
+          "seatNumber": "1",
+          "position3D": {
+            "x": 25.34007819091103,
+            "y": 156.56257674578083,
+            "z": 45
+          },
+          "elevation": 45,
+          "distanceFromHomeplate": 158.6,
+          "angle": -189.19375,
+          "facing": -9.193749999999994,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rockies-146-12-2",
+          "sectionId": "146",
+          "row": "12",
+          "seatNumber": "2",
+          "position3D": {
+            "x": 24.759242095565572,
+            "y": 156.65548164955214,
+            "z": 45
+          },
+          "elevation": 45,
+          "distanceFromHomeplate": 158.6,
+          "angle": -188.98125,
+          "facing": -8.981249999999989,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rockies-146-12-3",
+          "sectionId": "146",
+          "row": "12",
+          "seatNumber": "3",
+          "position3D": {
+            "x": 24.17806542781814,
+            "y": 156.7462317000576,
+            "z": 45
+          },
+          "elevation": 45,
+          "distanceFromHomeplate": 158.59999999999997,
+          "angle": -188.76874999999998,
+          "facing": -8.768749999999983,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rockies-146-12-4",
+          "sectionId": "146",
+          "row": "12",
+          "seatNumber": "4",
+          "position3D": {
+            "x": 23.596556181965557,
+            "y": 156.83482564899717,
+            "z": 45
+          },
+          "elevation": 45,
+          "distanceFromHomeplate": 158.6,
+          "angle": -188.55624999999998,
+          "facing": -8.556249999999977,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rockies-146-12-5",
+          "sectionId": "146",
+          "row": "12",
+          "seatNumber": "5",
+          "position3D": {
+            "x": 23.014722356879645,
+            "y": 156.92126227772877,
+            "z": 45
+          },
+          "elevation": 45,
+          "distanceFromHomeplate": 158.6,
+          "angle": -188.34374999999997,
+          "facing": -8.343749999999972,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rockies-146-12-6",
+          "sectionId": "146",
+          "row": "12",
+          "seatNumber": "6",
+          "position3D": {
+            "x": 22.43257195589653,
+            "y": 157.0055403972851,
+            "z": 45
+          },
+          "elevation": 45,
+          "distanceFromHomeplate": 158.6,
+          "angle": -188.13125,
+          "facing": -8.131249999999994,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rockies-146-12-7",
+          "sectionId": "146",
+          "row": "12",
+          "seatNumber": "7",
+          "position3D": {
+            "x": 21.850112986707227,
+            "y": 157.0876588483899,
+            "z": 45
+          },
+          "elevation": 45,
+          "distanceFromHomeplate": 158.60000000000002,
+          "angle": -187.91875,
+          "facing": -7.918749999999989,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rockies-146-12-8",
+          "sectionId": "146",
+          "row": "12",
+          "seatNumber": "8",
+          "position3D": {
+            "x": 21.26735346124749,
+            "y": 157.16761650147387,
+            "z": 45
+          },
+          "elevation": 45,
+          "distanceFromHomeplate": 158.6,
+          "angle": -187.70624999999998,
+          "facing": -7.706249999999983,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rockies-146-12-9",
+          "sectionId": "146",
+          "row": "12",
+          "seatNumber": "9",
+          "position3D": {
+            "x": 20.684301395586935,
+            "y": 157.2454122566904,
+            "z": 45
+          },
+          "elevation": 45,
+          "distanceFromHomeplate": 158.6,
+          "angle": -187.49374999999998,
+          "facing": -7.493749999999977,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rockies-146-12-10",
+          "sectionId": "146",
+          "row": "12",
+          "seatNumber": "10",
+          "position3D": {
+            "x": 20.100964809819434,
+            "y": 157.32104504393047,
+            "z": 45
+          },
+          "elevation": 45,
+          "distanceFromHomeplate": 158.6,
+          "angle": -187.28124999999997,
+          "facing": -7.281249999999972,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rockies-146-12-11",
+          "sectionId": "146",
+          "row": "12",
+          "seatNumber": "11",
+          "position3D": {
+            "x": 19.517351727952132,
+            "y": 157.39451382283755,
+            "z": 45
+          },
+          "elevation": 45,
+          "distanceFromHomeplate": 158.6,
+          "angle": -187.06875,
+          "facing": -7.068749999999994,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rockies-146-12-12",
+          "sectionId": "146",
+          "row": "12",
+          "seatNumber": "12",
+          "position3D": {
+            "x": 18.933470177795748,
+            "y": 157.4658175828218,
+            "z": 45
+          },
+          "elevation": 45,
+          "distanceFromHomeplate": 158.6,
+          "angle": -186.85625,
+          "facing": -6.856249999999989,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rockies-146-12-13",
+          "sectionId": "146",
+          "row": "12",
+          "seatNumber": "13",
+          "position3D": {
+            "x": 18.349328190854163,
+            "y": 157.53495534307402,
+            "z": 45
+          },
+          "elevation": 45,
+          "distanceFromHomeplate": 158.6,
+          "angle": -186.64374999999998,
+          "facing": -6.643749999999983,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rockies-146-12-14",
+          "sectionId": "146",
+          "row": "12",
+          "seatNumber": "14",
+          "position3D": {
+            "x": 17.764933802213246,
+            "y": 157.60192615257904,
+            "z": 45
+          },
+          "elevation": 45,
+          "distanceFromHomeplate": 158.6,
+          "angle": -186.43124999999998,
+          "facing": -6.431249999999977,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rockies-146-12-15",
+          "sectionId": "146",
+          "row": "12",
+          "seatNumber": "15",
+          "position3D": {
+            "x": 17.18029505043102,
+            "y": 157.666729090129,
+            "z": 45
+          },
+          "elevation": 45,
+          "distanceFromHomeplate": 158.59999999999997,
+          "angle": -186.21874999999997,
+          "facing": -6.218749999999972,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rockies-146-12-16",
+          "sectionId": "146",
+          "row": "12",
+          "seatNumber": "16",
+          "position3D": {
+            "x": 16.59541997742639,
+            "y": 157.7293632643359,
+            "z": 45
+          },
+          "elevation": 45,
+          "distanceFromHomeplate": 158.6,
+          "angle": -186.00625,
+          "facing": -6.006249999999994,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        }
+      ],
+      "covered": false,
+      "hasAisleSeats": false,
+      "wheelchairRow": false
+    },
+    {
+      "rowNumber": "13",
+      "sectionId": "146",
+      "seatCount": 16,
+      "elevation": 47.5,
+      "depth": 161.4,
+      "rowSpacing": 36,
+      "seats": [
+        {
+          "id": "rockies-146-13-1",
+          "sectionId": "146",
+          "row": "13",
+          "seatNumber": "1",
+          "position3D": {
+            "x": 25.787444010170496,
+            "y": 159.32660710447055,
+            "z": 47.5
+          },
+          "elevation": 47.5,
+          "distanceFromHomeplate": 161.4,
+          "angle": -189.19375,
+          "facing": -9.193749999999994,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rockies-146-13-2",
+          "sectionId": "146",
+          "row": "13",
+          "seatNumber": "2",
+          "position3D": {
+            "x": 25.196353557530163,
+            "y": 159.4211521956981,
+            "z": 47.5
+          },
+          "elevation": 47.5,
+          "distanceFromHomeplate": 161.4,
+          "angle": -188.98125,
+          "facing": -8.981249999999989,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rockies-146-13-3",
+          "sectionId": "146",
+          "row": "13",
+          "seatNumber": "3",
+          "position3D": {
+            "x": 24.604916519860332,
+            "y": 159.5135043908531,
+            "z": 47.5
+          },
+          "elevation": 47.5,
+          "distanceFromHomeplate": 161.4,
+          "angle": -188.76874999999998,
+          "facing": -8.768749999999983,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rockies-146-13-4",
+          "sectionId": "146",
+          "row": "13",
+          "seatNumber": "4",
+          "position3D": {
+            "x": 24.013141032592944,
+            "y": 159.60366241959738,
+            "z": 47.5
+          },
+          "elevation": 47.5,
+          "distanceFromHomeplate": 161.4,
+          "angle": -188.55624999999998,
+          "facing": -8.556249999999977,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rockies-146-13-5",
+          "sectionId": "146",
+          "row": "13",
+          "seatNumber": "5",
+          "position3D": {
+            "x": 23.42103523581573,
+            "y": 159.69162504177444,
+            "z": 47.5
+          },
+          "elevation": 47.5,
+          "distanceFromHomeplate": 161.4,
+          "angle": -188.34374999999997,
+          "facing": -8.343749999999972,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rockies-146-13-6",
+          "sectionId": "146",
+          "row": "13",
+          "seatNumber": "6",
+          "position3D": {
+            "x": 22.828607274159523,
+            "y": 159.77739104742633,
+            "z": 47.5
+          },
+          "elevation": 47.5,
+          "distanceFromHomeplate": 161.4,
+          "angle": -188.13125,
+          "facing": -8.131249999999994,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rockies-146-13-7",
+          "sectionId": "146",
+          "row": "13",
+          "seatNumber": "7",
+          "position3D": {
+            "x": 22.235865296686924,
+            "y": 159.86095925681042,
+            "z": 47.5
+          },
+          "elevation": 47.5,
+          "distanceFromHomeplate": 161.4,
+          "angle": -187.91875,
+          "facing": -7.918749999999989,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rockies-146-13-8",
+          "sectionId": "146",
+          "row": "13",
+          "seatNumber": "8",
+          "position3D": {
+            "x": 21.642817456780236,
+            "y": 159.9423285204154,
+            "z": 47.5
+          },
+          "elevation": 47.5,
+          "distanceFromHomeplate": 161.4,
+          "angle": -187.70624999999998,
+          "facing": -7.706249999999983,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rockies-146-13-9",
+          "sectionId": "146",
+          "row": "13",
+          "seatNumber": "9",
+          "position3D": {
+            "x": 21.049471912028572,
+            "y": 160.0214977189775,
+            "z": 47.5
+          },
+          "elevation": 47.5,
+          "distanceFromHomeplate": 161.4,
+          "angle": -187.49374999999998,
+          "facing": -7.493749999999977,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rockies-146-13-10",
+          "sectionId": "146",
+          "row": "13",
+          "seatNumber": "10",
+          "position3D": {
+            "x": 20.455836824116375,
+            "y": 160.09846576349545,
+            "z": 47.5
+          },
+          "elevation": 47.5,
+          "distanceFromHomeplate": 161.4,
+          "angle": -187.28124999999997,
+          "facing": -7.281249999999972,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rockies-146-13-11",
+          "sectionId": "146",
+          "row": "13",
+          "seatNumber": "11",
+          "position3D": {
+            "x": 19.86192035871043,
+            "y": 160.1732315952458,
+            "z": 47.5
+          },
+          "elevation": 47.5,
+          "distanceFromHomeplate": 161.4,
+          "angle": -187.06875,
+          "facing": -7.068749999999994,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rockies-146-13-12",
+          "sectionId": "146",
+          "row": "13",
+          "seatNumber": "12",
+          "position3D": {
+            "x": 19.26773068534826,
+            "y": 160.24579418579725,
+            "z": 47.5
+          },
+          "elevation": 47.5,
+          "distanceFromHomeplate": 161.4,
+          "angle": -186.85625,
+          "facing": -6.856249999999989,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rockies-146-13-13",
+          "sectionId": "146",
+          "row": "13",
+          "seatNumber": "13",
+          "position3D": {
+            "x": 18.67327597732574,
+            "y": 160.3161525370249,
+            "z": 47.5
+          },
+          "elevation": 47.5,
+          "distanceFromHomeplate": 161.4,
+          "angle": -186.64374999999998,
+          "facing": -6.643749999999983,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rockies-146-13-14",
+          "sectionId": "146",
+          "row": "13",
+          "seatNumber": "14",
+          "position3D": {
+            "x": 18.078564411583972,
+            "y": 160.38430568112395,
+            "z": 47.5
+          },
+          "elevation": 47.5,
+          "distanceFromHomeplate": 161.4,
+          "angle": -186.43124999999998,
+          "facing": -6.431249999999977,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rockies-146-13-15",
+          "sectionId": "146",
+          "row": "13",
+          "seatNumber": "15",
+          "position3D": {
+            "x": 17.48360416859752,
+            "y": 160.4502526806231,
+            "z": 47.5
+          },
+          "elevation": 47.5,
+          "distanceFromHomeplate": 161.4,
+          "angle": -186.21874999999997,
+          "facing": -6.218749999999972,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rockies-146-13-16",
+          "sectionId": "146",
+          "row": "13",
+          "seatNumber": "16",
+          "position3D": {
+            "x": 16.888403432261157,
+            "y": 160.51399262839732,
+            "z": 47.5
+          },
+          "elevation": 47.5,
+          "distanceFromHomeplate": 161.4,
+          "angle": -186.00625,
+          "facing": -6.006249999999994,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        }
+      ],
+      "covered": false,
+      "hasAisleSeats": false,
+      "wheelchairRow": false
+    },
+    {
+      "rowNumber": "14",
+      "sectionId": "146",
+      "seatCount": 16,
+      "elevation": 50,
+      "depth": 164.2,
+      "rowSpacing": 36,
+      "seats": [
+        {
+          "id": "rockies-146-14-1",
+          "sectionId": "146",
+          "row": "14",
+          "seatNumber": "1",
+          "position3D": {
+            "x": 26.234809829429956,
+            "y": 162.09063746316022,
+            "z": 50
+          },
+          "elevation": 50,
+          "distanceFromHomeplate": 164.2,
+          "angle": -189.19375,
+          "facing": -9.193749999999994,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rockies-146-14-2",
+          "sectionId": "146",
+          "row": "14",
+          "seatNumber": "2",
+          "position3D": {
+            "x": 25.633465019494746,
+            "y": 162.18682274184403,
+            "z": 50
+          },
+          "elevation": 50,
+          "distanceFromHomeplate": 164.2,
+          "angle": -188.98125,
+          "facing": -8.981249999999989,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rockies-146-14-3",
+          "sectionId": "146",
+          "row": "14",
+          "seatNumber": "3",
+          "position3D": {
+            "x": 25.031767611902513,
+            "y": 162.28077708164855,
+            "z": 50
+          },
+          "elevation": 50,
+          "distanceFromHomeplate": 164.2,
+          "angle": -188.76874999999998,
+          "facing": -8.768749999999983,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rockies-146-14-4",
+          "sectionId": "146",
+          "row": "14",
+          "seatNumber": "4",
+          "position3D": {
+            "x": 24.42972588322033,
+            "y": 162.37249919019757,
+            "z": 50
+          },
+          "elevation": 50,
+          "distanceFromHomeplate": 164.2,
+          "angle": -188.55624999999998,
+          "facing": -8.556249999999977,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rockies-146-14-5",
+          "sectionId": "146",
+          "row": "14",
+          "seatNumber": "5",
+          "position3D": {
+            "x": 23.82734811475181,
+            "y": 162.4619878058201,
+            "z": 50
+          },
+          "elevation": 50,
+          "distanceFromHomeplate": 164.20000000000002,
+          "angle": -188.34374999999997,
+          "facing": -8.343749999999972,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rockies-146-14-6",
+          "sectionId": "146",
+          "row": "14",
+          "seatNumber": "6",
+          "position3D": {
+            "x": 23.224642592422512,
+            "y": 162.54924169756754,
+            "z": 50
+          },
+          "elevation": 50,
+          "distanceFromHomeplate": 164.2,
+          "angle": -188.13125,
+          "facing": -8.131249999999994,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rockies-146-14-7",
+          "sectionId": "146",
+          "row": "14",
+          "seatNumber": "7",
+          "position3D": {
+            "x": 22.62161760666662,
+            "y": 162.6342596652309,
+            "z": 50
+          },
+          "elevation": 50,
+          "distanceFromHomeplate": 164.2,
+          "angle": -187.91875,
+          "facing": -7.918749999999989,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rockies-146-14-8",
+          "sectionId": "146",
+          "row": "14",
+          "seatNumber": "8",
+          "position3D": {
+            "x": 22.018281452312976,
+            "y": 162.71704053935693,
+            "z": 50
+          },
+          "elevation": 50,
+          "distanceFromHomeplate": 164.2,
+          "angle": -187.70624999999998,
+          "facing": -7.706249999999983,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rockies-146-14-9",
+          "sectionId": "146",
+          "row": "14",
+          "seatNumber": "9",
+          "position3D": {
+            "x": 21.414642428470206,
+            "y": 162.7975831812646,
+            "z": 50
+          },
+          "elevation": 50,
+          "distanceFromHomeplate": 164.20000000000002,
+          "angle": -187.49374999999998,
+          "facing": -7.493749999999977,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rockies-146-14-10",
+          "sectionId": "146",
+          "row": "14",
+          "seatNumber": "10",
+          "position3D": {
+            "x": 20.810708838413312,
+            "y": 162.8758864830604,
+            "z": 50
+          },
+          "elevation": 50,
+          "distanceFromHomeplate": 164.2,
+          "angle": -187.28124999999997,
+          "facing": -7.281249999999972,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rockies-146-14-11",
+          "sectionId": "146",
+          "row": "14",
+          "seatNumber": "11",
+          "position3D": {
+            "x": 20.206488989468728,
+            "y": 162.951949367654,
+            "z": 50
+          },
+          "elevation": 50,
+          "distanceFromHomeplate": 164.2,
+          "angle": -187.06875,
+          "facing": -7.068749999999994,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rockies-146-14-12",
+          "sectionId": "146",
+          "row": "14",
+          "seatNumber": "12",
+          "position3D": {
+            "x": 19.601991192900766,
+            "y": 163.02577078877263,
+            "z": 50
+          },
+          "elevation": 50,
+          "distanceFromHomeplate": 164.19999999999996,
+          "angle": -186.85625,
+          "facing": -6.856249999999989,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rockies-146-14-13",
+          "sectionId": "146",
+          "row": "14",
+          "seatNumber": "13",
+          "position3D": {
+            "x": 18.99722376379731,
+            "y": 163.09734973097574,
+            "z": 50
+          },
+          "elevation": 50,
+          "distanceFromHomeplate": 164.2,
+          "angle": -186.64374999999998,
+          "facing": -6.643749999999983,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rockies-146-14-14",
+          "sectionId": "146",
+          "row": "14",
+          "seatNumber": "14",
+          "position3D": {
+            "x": 18.3921950209547,
+            "y": 163.16668520966883,
+            "z": 50
+          },
+          "elevation": 50,
+          "distanceFromHomeplate": 164.19999999999996,
+          "angle": -186.43124999999998,
+          "facing": -6.431249999999977,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rockies-146-14-15",
+          "sectionId": "146",
+          "row": "14",
+          "seatNumber": "15",
+          "position3D": {
+            "x": 17.78691328676402,
+            "y": 163.23377627111716,
+            "z": 50
+          },
+          "elevation": 50,
+          "distanceFromHomeplate": 164.2,
+          "angle": -186.21874999999997,
+          "facing": -6.218749999999972,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rockies-146-14-16",
+          "sectionId": "146",
+          "row": "14",
+          "seatNumber": "16",
+          "position3D": {
+            "x": 17.181386887095922,
+            "y": 163.29862199245872,
+            "z": 50
+          },
+          "elevation": 50,
+          "distanceFromHomeplate": 164.2,
+          "angle": -186.00625,
+          "facing": -6.006249999999994,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        }
+      ],
+      "covered": false,
+      "hasAisleSeats": false,
+      "wheelchairRow": false
+    },
+    {
+      "rowNumber": "15",
+      "sectionId": "146",
+      "seatCount": 16,
+      "elevation": 52.5,
+      "depth": 167,
+      "rowSpacing": 36,
+      "seats": [
+        {
+          "id": "rockies-146-15-1",
+          "sectionId": "146",
+          "row": "15",
+          "seatNumber": "1",
+          "position3D": {
+            "x": 26.68217564868942,
+            "y": 164.85466782184994,
+            "z": 52.5
+          },
+          "elevation": 52.5,
+          "distanceFromHomeplate": 167,
+          "angle": -189.19375,
+          "facing": -9.193749999999994,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rockies-146-15-2",
+          "sectionId": "146",
+          "row": "15",
+          "seatNumber": "2",
+          "position3D": {
+            "x": 26.070576481459337,
+            "y": 164.95249328798997,
+            "z": 52.5
+          },
+          "elevation": 52.5,
+          "distanceFromHomeplate": 167,
+          "angle": -188.98125,
+          "facing": -8.981249999999989,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rockies-146-15-3",
+          "sectionId": "146",
+          "row": "15",
+          "seatNumber": "3",
+          "position3D": {
+            "x": 25.4586187039447,
+            "y": 165.04804977244402,
+            "z": 52.5
+          },
+          "elevation": 52.5,
+          "distanceFromHomeplate": 167,
+          "angle": -188.76874999999998,
+          "facing": -8.768749999999983,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rockies-146-15-4",
+          "sectionId": "146",
+          "row": "15",
+          "seatNumber": "4",
+          "position3D": {
+            "x": 24.846310733847716,
+            "y": 165.1413359607978,
+            "z": 52.5
+          },
+          "elevation": 52.5,
+          "distanceFromHomeplate": 167,
+          "angle": -188.55624999999998,
+          "facing": -8.556249999999977,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rockies-146-15-5",
+          "sectionId": "146",
+          "row": "15",
+          "seatNumber": "5",
+          "position3D": {
+            "x": 24.2336609936879,
+            "y": 165.23235056986573,
+            "z": 52.5
+          },
+          "elevation": 52.5,
+          "distanceFromHomeplate": 167,
+          "angle": -188.34374999999997,
+          "facing": -8.343749999999972,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rockies-146-15-6",
+          "sectionId": "146",
+          "row": "15",
+          "seatNumber": "6",
+          "position3D": {
+            "x": 23.620677910685504,
+            "y": 165.3210923477088,
+            "z": 52.5
+          },
+          "elevation": 52.5,
+          "distanceFromHomeplate": 167.00000000000003,
+          "angle": -188.13125,
+          "facing": -8.131249999999994,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rockies-146-15-7",
+          "sectionId": "146",
+          "row": "15",
+          "seatNumber": "7",
+          "position3D": {
+            "x": 23.007369916646322,
+            "y": 165.4075600736514,
+            "z": 52.5
+          },
+          "elevation": 52.5,
+          "distanceFromHomeplate": 167,
+          "angle": -187.91875,
+          "facing": -7.918749999999989,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rockies-146-15-8",
+          "sectionId": "146",
+          "row": "15",
+          "seatNumber": "8",
+          "position3D": {
+            "x": 22.39374544784572,
+            "y": 165.49175255829846,
+            "z": 52.5
+          },
+          "elevation": 52.5,
+          "distanceFromHomeplate": 167,
+          "angle": -187.70624999999998,
+          "facing": -7.706249999999983,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rockies-146-15-9",
+          "sectionId": "146",
+          "row": "15",
+          "seatNumber": "9",
+          "position3D": {
+            "x": 21.779812944911843,
+            "y": 165.57366864355168,
+            "z": 52.5
+          },
+          "elevation": 52.5,
+          "distanceFromHomeplate": 167,
+          "angle": -187.49374999999998,
+          "facing": -7.493749999999977,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rockies-146-15-10",
+          "sectionId": "146",
+          "row": "15",
+          "seatNumber": "10",
+          "position3D": {
+            "x": 21.165580852710253,
+            "y": 165.6533072026254,
+            "z": 52.5
+          },
+          "elevation": 52.5,
+          "distanceFromHomeplate": 167,
+          "angle": -187.28124999999997,
+          "facing": -7.281249999999972,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rockies-146-15-11",
+          "sectionId": "146",
+          "row": "15",
+          "seatNumber": "11",
+          "position3D": {
+            "x": 20.551057620227027,
+            "y": 165.73066714006225,
+            "z": 52.5
+          },
+          "elevation": 52.5,
+          "distanceFromHomeplate": 167,
+          "angle": -187.06875,
+          "facing": -7.068749999999994,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rockies-146-15-12",
+          "sectionId": "146",
+          "row": "15",
+          "seatNumber": "12",
+          "position3D": {
+            "x": 19.93625170045328,
+            "y": 165.80574739174807,
+            "z": 52.5
+          },
+          "elevation": 52.5,
+          "distanceFromHomeplate": 167,
+          "angle": -186.85625,
+          "facing": -6.856249999999989,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rockies-146-15-13",
+          "sectionId": "146",
+          "row": "15",
+          "seatNumber": "13",
+          "position3D": {
+            "x": 19.321171550268886,
+            "y": 165.8785469249266,
+            "z": 52.5
+          },
+          "elevation": 52.5,
+          "distanceFromHomeplate": 167,
+          "angle": -186.64374999999998,
+          "facing": -6.643749999999983,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rockies-146-15-14",
+          "sectionId": "146",
+          "row": "15",
+          "seatNumber": "14",
+          "position3D": {
+            "x": 18.705825630325425,
+            "y": 165.94906473821376,
+            "z": 52.5
+          },
+          "elevation": 52.5,
+          "distanceFromHomeplate": 167,
+          "angle": -186.43124999999998,
+          "facing": -6.431249999999977,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rockies-146-15-15",
+          "sectionId": "146",
+          "row": "15",
+          "seatNumber": "15",
+          "position3D": {
+            "x": 18.09022240493052,
+            "y": 166.01729986161126,
+            "z": 52.5
+          },
+          "elevation": 52.5,
+          "distanceFromHomeplate": 167,
+          "angle": -186.21874999999997,
+          "facing": -6.218749999999972,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rockies-146-15-16",
+          "sectionId": "146",
+          "row": "15",
+          "seatNumber": "16",
+          "position3D": {
+            "x": 17.474370341930687,
+            "y": 166.08325135652015,
+            "z": 52.5
+          },
+          "elevation": 52.5,
+          "distanceFromHomeplate": 167,
+          "angle": -186.00625,
+          "facing": -6.006249999999994,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        }
+      ],
+      "covered": false,
+      "hasAisleSeats": false,
+      "wheelchairRow": false
+    },
+    {
+      "rowNumber": "16",
+      "sectionId": "146",
+      "seatCount": 16,
+      "elevation": 55,
+      "depth": 169.8,
+      "rowSpacing": 36,
+      "seats": [
+        {
+          "id": "rockies-146-16-1",
+          "sectionId": "146",
+          "row": "16",
+          "seatNumber": "1",
+          "position3D": {
+            "x": 27.129541467948886,
+            "y": 167.61869818053964,
+            "z": 55
+          },
+          "elevation": 55,
+          "distanceFromHomeplate": 169.8,
+          "angle": -189.19375,
+          "facing": -9.193749999999994,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rockies-146-16-2",
+          "sectionId": "146",
+          "row": "16",
+          "seatNumber": "2",
+          "position3D": {
+            "x": 26.507687943423925,
+            "y": 167.71816383413594,
+            "z": 55
+          },
+          "elevation": 55,
+          "distanceFromHomeplate": 169.8,
+          "angle": -188.98125,
+          "facing": -8.981249999999989,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rockies-146-16-3",
+          "sectionId": "146",
+          "row": "16",
+          "seatNumber": "3",
+          "position3D": {
+            "x": 25.88546979598689,
+            "y": 167.8153224632395,
+            "z": 55
+          },
+          "elevation": 55,
+          "distanceFromHomeplate": 169.8,
+          "angle": -188.76874999999998,
+          "facing": -8.768749999999983,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rockies-146-16-4",
+          "sectionId": "146",
+          "row": "16",
+          "seatNumber": "4",
+          "position3D": {
+            "x": 25.262895584475107,
+            "y": 167.910172731398,
+            "z": 55
+          },
+          "elevation": 55,
+          "distanceFromHomeplate": 169.8,
+          "angle": -188.55624999999998,
+          "facing": -8.556249999999977,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rockies-146-16-5",
+          "sectionId": "146",
+          "row": "16",
+          "seatNumber": "5",
+          "position3D": {
+            "x": 24.639973872623983,
+            "y": 168.0027133339114,
+            "z": 55
+          },
+          "elevation": 55,
+          "distanceFromHomeplate": 169.8,
+          "angle": -188.34374999999997,
+          "facing": -8.343749999999972,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rockies-146-16-6",
+          "sectionId": "146",
+          "row": "16",
+          "seatNumber": "6",
+          "position3D": {
+            "x": 24.016713228948497,
+            "y": 168.09294299785003,
+            "z": 55
+          },
+          "elevation": 55,
+          "distanceFromHomeplate": 169.8,
+          "angle": -188.13125,
+          "facing": -8.131249999999994,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rockies-146-16-7",
+          "sectionId": "146",
+          "row": "16",
+          "seatNumber": "7",
+          "position3D": {
+            "x": 23.393122226626023,
+            "y": 168.18086048207192,
+            "z": 55
+          },
+          "elevation": 55,
+          "distanceFromHomeplate": 169.8,
+          "angle": -187.91875,
+          "facing": -7.918749999999989,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rockies-146-16-8",
+          "sectionId": "146",
+          "row": "16",
+          "seatNumber": "8",
+          "position3D": {
+            "x": 22.769209443378465,
+            "y": 168.26646457724001,
+            "z": 55
+          },
+          "elevation": 55,
+          "distanceFromHomeplate": 169.8,
+          "angle": -187.70624999999998,
+          "facing": -7.706249999999983,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rockies-146-16-9",
+          "sectionId": "146",
+          "row": "16",
+          "seatNumber": "9",
+          "position3D": {
+            "x": 22.14498346135348,
+            "y": 168.3497541058388,
+            "z": 55
+          },
+          "elevation": 55,
+          "distanceFromHomeplate": 169.8,
+          "angle": -187.49374999999998,
+          "facing": -7.493749999999977,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rockies-146-16-10",
+          "sectionId": "146",
+          "row": "16",
+          "seatNumber": "10",
+          "position3D": {
+            "x": 21.52045286700719,
+            "y": 168.43072792219039,
+            "z": 55
+          },
+          "elevation": 55,
+          "distanceFromHomeplate": 169.8,
+          "angle": -187.28124999999997,
+          "facing": -7.281249999999972,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rockies-146-16-11",
+          "sectionId": "146",
+          "row": "16",
+          "seatNumber": "11",
+          "position3D": {
+            "x": 20.895626250985323,
+            "y": 168.50938491247047,
+            "z": 55
+          },
+          "elevation": 55,
+          "distanceFromHomeplate": 169.79999999999998,
+          "angle": -187.06875,
+          "facing": -7.068749999999994,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rockies-146-16-12",
+          "sectionId": "146",
+          "row": "16",
+          "seatNumber": "12",
+          "position3D": {
+            "x": 20.27051220800579,
+            "y": 168.5857239947235,
+            "z": 55
+          },
+          "elevation": 55,
+          "distanceFromHomeplate": 169.8,
+          "angle": -186.85625,
+          "facing": -6.856249999999989,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rockies-146-16-13",
+          "sectionId": "146",
+          "row": "16",
+          "seatNumber": "13",
+          "position3D": {
+            "x": 19.64511933674046,
+            "y": 168.6597441188775,
+            "z": 55
+          },
+          "elevation": 55,
+          "distanceFromHomeplate": 169.80000000000004,
+          "angle": -186.64374999999998,
+          "facing": -6.643749999999983,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rockies-146-16-14",
+          "sectionId": "146",
+          "row": "16",
+          "seatNumber": "14",
+          "position3D": {
+            "x": 19.01945623969615,
+            "y": 168.73144426675867,
+            "z": 55
+          },
+          "elevation": 55,
+          "distanceFromHomeplate": 169.8,
+          "angle": -186.43124999999998,
+          "facing": -6.431249999999977,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rockies-146-16-15",
+          "sectionId": "146",
+          "row": "16",
+          "seatNumber": "15",
+          "position3D": {
+            "x": 18.39353152309702,
+            "y": 168.80082345210536,
+            "z": 55
+          },
+          "elevation": 55,
+          "distanceFromHomeplate": 169.8,
+          "angle": -186.21874999999997,
+          "facing": -6.218749999999972,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rockies-146-16-16",
+          "sectionId": "146",
+          "row": "16",
+          "seatNumber": "16",
+          "position3D": {
+            "x": 17.767353796765455,
+            "y": 168.86788072058158,
+            "z": 55
+          },
+          "elevation": 55,
+          "distanceFromHomeplate": 169.8,
+          "angle": -186.00625,
+          "facing": -6.006249999999994,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        }
+      ],
+      "covered": false,
+      "hasAisleSeats": false,
+      "wheelchairRow": false
+    },
+    {
+      "rowNumber": "17",
+      "sectionId": "146",
+      "seatCount": 16,
+      "elevation": 57.5,
+      "depth": 172.6,
+      "rowSpacing": 36,
+      "seats": [
+        {
+          "id": "rockies-146-17-1",
+          "sectionId": "146",
+          "row": "17",
+          "seatNumber": "1",
+          "position3D": {
+            "x": 27.576907287208346,
+            "y": 170.38272853922933,
+            "z": 57.5
+          },
+          "elevation": 57.5,
+          "distanceFromHomeplate": 172.6,
+          "angle": -189.19375,
+          "facing": -9.193749999999994,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rockies-146-17-2",
+          "sectionId": "146",
+          "row": "17",
+          "seatNumber": "2",
+          "position3D": {
+            "x": 26.944799405388512,
+            "y": 170.48383438028185,
+            "z": 57.5
+          },
+          "elevation": 57.5,
+          "distanceFromHomeplate": 172.6,
+          "angle": -188.98125,
+          "facing": -8.981249999999989,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rockies-146-17-3",
+          "sectionId": "146",
+          "row": "17",
+          "seatNumber": "3",
+          "position3D": {
+            "x": 26.312320888029074,
+            "y": 170.58259515403495,
+            "z": 57.5
+          },
+          "elevation": 57.5,
+          "distanceFromHomeplate": 172.6,
+          "angle": -188.76874999999998,
+          "facing": -8.768749999999983,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rockies-146-17-4",
+          "sectionId": "146",
+          "row": "17",
+          "seatNumber": "4",
+          "position3D": {
+            "x": 25.67948043510249,
+            "y": 170.6790095019982,
+            "z": 57.5
+          },
+          "elevation": 57.5,
+          "distanceFromHomeplate": 172.6,
+          "angle": -188.55624999999998,
+          "facing": -8.556249999999977,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rockies-146-17-5",
+          "sectionId": "146",
+          "row": "17",
+          "seatNumber": "5",
+          "position3D": {
+            "x": 25.046286751560064,
+            "y": 170.77307609795704,
+            "z": 57.5
+          },
+          "elevation": 57.5,
+          "distanceFromHomeplate": 172.6,
+          "angle": -188.34374999999997,
+          "facing": -8.343749999999972,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rockies-146-17-6",
+          "sectionId": "146",
+          "row": "17",
+          "seatNumber": "6",
+          "position3D": {
+            "x": 24.412748547211482,
+            "y": 170.86479364799123,
+            "z": 57.5
+          },
+          "elevation": 57.5,
+          "distanceFromHomeplate": 172.6,
+          "angle": -188.13125,
+          "facing": -8.131249999999994,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rockies-146-17-7",
+          "sectionId": "146",
+          "row": "17",
+          "seatNumber": "7",
+          "position3D": {
+            "x": 23.77887453660572,
+            "y": 170.9541608904924,
+            "z": 57.5
+          },
+          "elevation": 57.5,
+          "distanceFromHomeplate": 172.6,
+          "angle": -187.91875,
+          "facing": -7.918749999999989,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rockies-146-17-8",
+          "sectionId": "146",
+          "row": "17",
+          "seatNumber": "8",
+          "position3D": {
+            "x": 23.144673438911205,
+            "y": 171.04117659618151,
+            "z": 57.5
+          },
+          "elevation": 57.5,
+          "distanceFromHomeplate": 172.6,
+          "angle": -187.70624999999998,
+          "facing": -7.706249999999983,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rockies-146-17-9",
+          "sectionId": "146",
+          "row": "17",
+          "seatNumber": "9",
+          "position3D": {
+            "x": 22.510153977795113,
+            "y": 171.12583956812588,
+            "z": 57.5
+          },
+          "elevation": 57.5,
+          "distanceFromHomeplate": 172.6,
+          "angle": -187.49374999999998,
+          "facing": -7.493749999999977,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rockies-146-17-10",
+          "sectionId": "146",
+          "row": "17",
+          "seatNumber": "10",
+          "position3D": {
+            "x": 21.875324881304127,
+            "y": 171.20814864175534,
+            "z": 57.5
+          },
+          "elevation": 57.5,
+          "distanceFromHomeplate": 172.6,
+          "angle": -187.28124999999997,
+          "facing": -7.281249999999972,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rockies-146-17-11",
+          "sectionId": "146",
+          "row": "17",
+          "seatNumber": "11",
+          "position3D": {
+            "x": 21.24019488174362,
+            "y": 171.28810268487868,
+            "z": 57.5
+          },
+          "elevation": 57.5,
+          "distanceFromHomeplate": 172.59999999999997,
+          "angle": -187.06875,
+          "facing": -7.068749999999994,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rockies-146-17-12",
+          "sectionId": "146",
+          "row": "17",
+          "seatNumber": "12",
+          "position3D": {
+            "x": 20.604772715558298,
+            "y": 171.3657005976989,
+            "z": 57.5
+          },
+          "elevation": 57.5,
+          "distanceFromHomeplate": 172.59999999999997,
+          "angle": -186.85625,
+          "facing": -6.856249999999989,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rockies-146-17-13",
+          "sectionId": "146",
+          "row": "17",
+          "seatNumber": "13",
+          "position3D": {
+            "x": 19.969067123212035,
+            "y": 171.44094131282836,
+            "z": 57.5
+          },
+          "elevation": 57.5,
+          "distanceFromHomeplate": 172.60000000000002,
+          "angle": -186.64374999999998,
+          "facing": -6.643749999999983,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rockies-146-17-14",
+          "sectionId": "146",
+          "row": "17",
+          "seatNumber": "14",
+          "position3D": {
+            "x": 19.333086849066873,
+            "y": 171.51382379530355,
+            "z": 57.5
+          },
+          "elevation": 57.5,
+          "distanceFromHomeplate": 172.6,
+          "angle": -186.43124999999998,
+          "facing": -6.431249999999977,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rockies-146-17-15",
+          "sectionId": "146",
+          "row": "17",
+          "seatNumber": "15",
+          "position3D": {
+            "x": 18.696840641263517,
+            "y": 171.5843470425994,
+            "z": 57.5
+          },
+          "elevation": 57.5,
+          "distanceFromHomeplate": 172.6,
+          "angle": -186.21874999999997,
+          "facing": -6.218749999999972,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rockies-146-17-16",
+          "sectionId": "146",
+          "row": "17",
+          "seatNumber": "16",
+          "position3D": {
+            "x": 18.06033725160022,
+            "y": 171.65251008464298,
+            "z": 57.5
+          },
+          "elevation": 57.5,
+          "distanceFromHomeplate": 172.6,
+          "angle": -186.00625,
+          "facing": -6.006249999999994,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        }
+      ],
+      "covered": false,
+      "hasAisleSeats": false,
+      "wheelchairRow": false
+    },
+    {
+      "rowNumber": "18",
+      "sectionId": "146",
+      "seatCount": 16,
+      "elevation": 60,
+      "depth": 175.4,
+      "rowSpacing": 36,
+      "seats": [
+        {
+          "id": "rockies-146-18-1",
+          "sectionId": "146",
+          "row": "18",
+          "seatNumber": "1",
+          "position3D": {
+            "x": 28.024273106467813,
+            "y": 173.14675889791906,
+            "z": 60
+          },
+          "elevation": 60,
+          "distanceFromHomeplate": 175.40000000000003,
+          "angle": -189.19375,
+          "facing": -9.193749999999994,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rockies-146-18-2",
+          "sectionId": "146",
+          "row": "18",
+          "seatNumber": "2",
+          "position3D": {
+            "x": 27.3819108673531,
+            "y": 173.2495049264278,
+            "z": 60
+          },
+          "elevation": 60,
+          "distanceFromHomeplate": 175.39999999999998,
+          "angle": -188.98125,
+          "facing": -8.981249999999989,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rockies-146-18-3",
+          "sectionId": "146",
+          "row": "18",
+          "seatNumber": "3",
+          "position3D": {
+            "x": 26.739171980071262,
+            "y": 173.34986784483044,
+            "z": 60
+          },
+          "elevation": 60,
+          "distanceFromHomeplate": 175.40000000000003,
+          "angle": -188.76874999999998,
+          "facing": -8.768749999999983,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rockies-146-18-4",
+          "sectionId": "146",
+          "row": "18",
+          "seatNumber": "4",
+          "position3D": {
+            "x": 26.09606528572988,
+            "y": 173.4478462725984,
+            "z": 60
+          },
+          "elevation": 60,
+          "distanceFromHomeplate": 175.40000000000003,
+          "angle": -188.55624999999998,
+          "facing": -8.556249999999977,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rockies-146-18-5",
+          "sectionId": "146",
+          "row": "18",
+          "seatNumber": "5",
+          "position3D": {
+            "x": 25.452599630496152,
+            "y": 173.54343886200272,
+            "z": 60
+          },
+          "elevation": 60,
+          "distanceFromHomeplate": 175.40000000000003,
+          "angle": -188.34374999999997,
+          "facing": -8.343749999999972,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rockies-146-18-6",
+          "sectionId": "146",
+          "row": "18",
+          "seatNumber": "6",
+          "position3D": {
+            "x": 24.808783865474474,
+            "y": 173.63664429813247,
+            "z": 60
+          },
+          "elevation": 60,
+          "distanceFromHomeplate": 175.4,
+          "angle": -188.13125,
+          "facing": -8.131249999999994,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rockies-146-18-7",
+          "sectionId": "146",
+          "row": "18",
+          "seatNumber": "7",
+          "position3D": {
+            "x": 24.16462684658542,
+            "y": 173.7274612989129,
+            "z": 60
+          },
+          "elevation": 60,
+          "distanceFromHomeplate": 175.4,
+          "angle": -187.91875,
+          "facing": -7.918749999999989,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rockies-146-18-8",
+          "sectionId": "146",
+          "row": "18",
+          "seatNumber": "8",
+          "position3D": {
+            "x": 23.52013743444395,
+            "y": 173.81588861512307,
+            "z": 60
+          },
+          "elevation": 60,
+          "distanceFromHomeplate": 175.4,
+          "angle": -187.70624999999998,
+          "facing": -7.706249999999983,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rockies-146-18-9",
+          "sectionId": "146",
+          "row": "18",
+          "seatNumber": "9",
+          "position3D": {
+            "x": 22.87532449423675,
+            "y": 173.90192503041297,
+            "z": 60
+          },
+          "elevation": 60,
+          "distanceFromHomeplate": 175.4,
+          "angle": -187.49374999999998,
+          "facing": -7.493749999999977,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rockies-146-18-10",
+          "sectionId": "146",
+          "row": "18",
+          "seatNumber": "10",
+          "position3D": {
+            "x": 22.23019689560107,
+            "y": 173.98556936132033,
+            "z": 60
+          },
+          "elevation": 60,
+          "distanceFromHomeplate": 175.4,
+          "angle": -187.28124999999997,
+          "facing": -7.281249999999972,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rockies-146-18-11",
+          "sectionId": "146",
+          "row": "18",
+          "seatNumber": "11",
+          "position3D": {
+            "x": 21.58476351250192,
+            "y": 174.06682045728692,
+            "z": 60
+          },
+          "elevation": 60,
+          "distanceFromHomeplate": 175.39999999999998,
+          "angle": -187.06875,
+          "facing": -7.068749999999994,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rockies-146-18-12",
+          "sectionId": "146",
+          "row": "18",
+          "seatNumber": "12",
+          "position3D": {
+            "x": 20.93903322311081,
+            "y": 174.14567720067433,
+            "z": 60
+          },
+          "elevation": 60,
+          "distanceFromHomeplate": 175.4,
+          "angle": -186.85625,
+          "facing": -6.856249999999989,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rockies-146-18-13",
+          "sectionId": "146",
+          "row": "18",
+          "seatNumber": "13",
+          "position3D": {
+            "x": 20.29301490968361,
+            "y": 174.22213850677923,
+            "z": 60
+          },
+          "elevation": 60,
+          "distanceFromHomeplate": 175.40000000000003,
+          "angle": -186.64374999999998,
+          "facing": -6.643749999999983,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rockies-146-18-14",
+          "sectionId": "146",
+          "row": "18",
+          "seatNumber": "14",
+          "position3D": {
+            "x": 19.646717458437603,
+            "y": 174.29620332384846,
+            "z": 60
+          },
+          "elevation": 60,
+          "distanceFromHomeplate": 175.4,
+          "angle": -186.43124999999998,
+          "facing": -6.431249999999977,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rockies-146-18-15",
+          "sectionId": "146",
+          "row": "18",
+          "seatNumber": "15",
+          "position3D": {
+            "x": 19.00014975943002,
+            "y": 174.3678706330935,
+            "z": 60
+          },
+          "elevation": 60,
+          "distanceFromHomeplate": 175.4,
+          "angle": -186.21874999999997,
+          "facing": -6.218749999999972,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rockies-146-18-16",
+          "sectionId": "146",
+          "row": "18",
+          "seatNumber": "16",
+          "position3D": {
+            "x": 18.353320706434985,
+            "y": 174.4371394487044,
+            "z": 60
+          },
+          "elevation": 60,
+          "distanceFromHomeplate": 175.39999999999998,
+          "angle": -186.00625,
+          "facing": -6.006249999999994,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        }
+      ],
+      "covered": false,
+      "hasAisleSeats": false,
+      "wheelchairRow": false
+    },
+    {
+      "rowNumber": "19",
+      "sectionId": "146",
+      "seatCount": 16,
+      "elevation": 62.5,
+      "depth": 178.2,
+      "rowSpacing": 36,
+      "seats": [
+        {
+          "id": "rockies-146-19-1",
+          "sectionId": "146",
+          "row": "19",
+          "seatNumber": "1",
+          "position3D": {
+            "x": 28.471638925727273,
+            "y": 175.91078925660872,
+            "z": 62.5
+          },
+          "elevation": 62.5,
+          "distanceFromHomeplate": 178.2,
+          "angle": -189.19375,
+          "facing": -9.193749999999994,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rockies-146-19-2",
+          "sectionId": "146",
+          "row": "19",
+          "seatNumber": "2",
+          "position3D": {
+            "x": 27.819022329317686,
+            "y": 176.01517547257373,
+            "z": 62.5
+          },
+          "elevation": 62.5,
+          "distanceFromHomeplate": 178.2,
+          "angle": -188.98125,
+          "facing": -8.981249999999989,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rockies-146-19-3",
+          "sectionId": "146",
+          "row": "19",
+          "seatNumber": "3",
+          "position3D": {
+            "x": 27.166023072113447,
+            "y": 176.11714053562588,
+            "z": 62.5
+          },
+          "elevation": 62.5,
+          "distanceFromHomeplate": 178.2,
+          "angle": -188.76874999999998,
+          "facing": -8.768749999999983,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rockies-146-19-4",
+          "sectionId": "146",
+          "row": "19",
+          "seatNumber": "4",
+          "position3D": {
+            "x": 26.512650136357262,
+            "y": 176.21668304319857,
+            "z": 62.5
+          },
+          "elevation": 62.5,
+          "distanceFromHomeplate": 178.19999999999996,
+          "angle": -188.55624999999998,
+          "facing": -8.556249999999977,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rockies-146-19-5",
+          "sectionId": "146",
+          "row": "19",
+          "seatNumber": "5",
+          "position3D": {
+            "x": 25.858912509432233,
+            "y": 176.31380162604833,
+            "z": 62.5
+          },
+          "elevation": 62.5,
+          "distanceFromHomeplate": 178.2,
+          "angle": -188.34374999999997,
+          "facing": -8.343749999999972,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rockies-146-19-6",
+          "sectionId": "146",
+          "row": "19",
+          "seatNumber": "6",
+          "position3D": {
+            "x": 25.204819183737463,
+            "y": 176.40849494827367,
+            "z": 62.5
+          },
+          "elevation": 62.5,
+          "distanceFromHomeplate": 178.2,
+          "angle": -188.13125,
+          "facing": -8.131249999999994,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rockies-146-19-7",
+          "sectionId": "146",
+          "row": "19",
+          "seatNumber": "7",
+          "position3D": {
+            "x": 24.550379156565118,
+            "y": 176.50076170733342,
+            "z": 62.5
+          },
+          "elevation": 62.5,
+          "distanceFromHomeplate": 178.20000000000002,
+          "angle": -187.91875,
+          "facing": -7.918749999999989,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rockies-146-19-8",
+          "sectionId": "146",
+          "row": "19",
+          "seatNumber": "8",
+          "position3D": {
+            "x": 23.89560142997669,
+            "y": 176.59060063406457,
+            "z": 62.5
+          },
+          "elevation": 62.5,
+          "distanceFromHomeplate": 178.19999999999996,
+          "angle": -187.70624999999998,
+          "facing": -7.706249999999983,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rockies-146-19-9",
+          "sectionId": "146",
+          "row": "19",
+          "seatNumber": "9",
+          "position3D": {
+            "x": 23.240495010678384,
+            "y": 176.67801049270005,
+            "z": 62.5
+          },
+          "elevation": 62.5,
+          "distanceFromHomeplate": 178.2,
+          "angle": -187.49374999999998,
+          "facing": -7.493749999999977,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rockies-146-19-10",
+          "sectionId": "146",
+          "row": "19",
+          "seatNumber": "10",
+          "position3D": {
+            "x": 22.585068909898002,
+            "y": 176.7629900808853,
+            "z": 62.5
+          },
+          "elevation": 62.5,
+          "distanceFromHomeplate": 178.19999999999996,
+          "angle": -187.28124999999997,
+          "facing": -7.281249999999972,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rockies-146-19-11",
+          "sectionId": "146",
+          "row": "19",
+          "seatNumber": "11",
+          "position3D": {
+            "x": 21.929332143260215,
+            "y": 176.84553822969514,
+            "z": 62.5
+          },
+          "elevation": 62.5,
+          "distanceFromHomeplate": 178.19999999999996,
+          "angle": -187.06875,
+          "facing": -7.068749999999994,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rockies-146-19-12",
+          "sectionId": "146",
+          "row": "19",
+          "seatNumber": "12",
+          "position3D": {
+            "x": 21.27329373066332,
+            "y": 176.92565380364974,
+            "z": 62.5
+          },
+          "elevation": 62.5,
+          "distanceFromHomeplate": 178.2,
+          "angle": -186.85625,
+          "facing": -6.856249999999989,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rockies-146-19-13",
+          "sectionId": "146",
+          "row": "19",
+          "seatNumber": "13",
+          "position3D": {
+            "x": 20.61696269615518,
+            "y": 177.00333570073008,
+            "z": 62.5
+          },
+          "elevation": 62.5,
+          "distanceFromHomeplate": 178.20000000000002,
+          "angle": -186.64374999999998,
+          "facing": -6.643749999999983,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rockies-146-19-14",
+          "sectionId": "146",
+          "row": "19",
+          "seatNumber": "14",
+          "position3D": {
+            "x": 19.960348067808326,
+            "y": 177.07858285239334,
+            "z": 62.5
+          },
+          "elevation": 62.5,
+          "distanceFromHomeplate": 178.2,
+          "angle": -186.43124999999998,
+          "facing": -6.431249999999977,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rockies-146-19-15",
+          "sectionId": "146",
+          "row": "19",
+          "seatNumber": "15",
+          "position3D": {
+            "x": 19.303458877596515,
+            "y": 177.15139422358757,
+            "z": 62.5
+          },
+          "elevation": 62.5,
+          "distanceFromHomeplate": 178.2,
+          "angle": -186.21874999999997,
+          "facing": -6.218749999999972,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rockies-146-19-16",
+          "sectionId": "146",
+          "row": "19",
+          "seatNumber": "16",
+          "position3D": {
+            "x": 18.64630416126975,
+            "y": 177.2217688127658,
+            "z": 62.5
+          },
+          "elevation": 62.5,
+          "distanceFromHomeplate": 178.19999999999996,
+          "angle": -186.00625,
+          "facing": -6.006249999999994,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        }
+      ],
+      "covered": false,
+      "hasAisleSeats": false,
+      "wheelchairRow": false
+    },
+    {
+      "rowNumber": "20",
+      "sectionId": "146",
+      "seatCount": 16,
+      "elevation": 65,
+      "depth": 181,
+      "rowSpacing": 36,
+      "seats": [
+        {
+          "id": "rockies-146-20-1",
+          "sectionId": "146",
+          "row": "20",
+          "seatNumber": "1",
+          "position3D": {
+            "x": 28.919004744986736,
+            "y": 178.67481961529845,
+            "z": 65
+          },
+          "elevation": 65,
+          "distanceFromHomeplate": 181,
+          "angle": -189.19375,
+          "facing": -9.193749999999994,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rockies-146-20-2",
+          "sectionId": "146",
+          "row": "20",
+          "seatNumber": "2",
+          "position3D": {
+            "x": 28.256133791282274,
+            "y": 178.78084601871967,
+            "z": 65
+          },
+          "elevation": 65,
+          "distanceFromHomeplate": 181,
+          "angle": -188.98125,
+          "facing": -8.981249999999989,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rockies-146-20-3",
+          "sectionId": "146",
+          "row": "20",
+          "seatNumber": "3",
+          "position3D": {
+            "x": 27.592874164155635,
+            "y": 178.88441322642137,
+            "z": 65
+          },
+          "elevation": 65,
+          "distanceFromHomeplate": 181,
+          "angle": -188.76874999999998,
+          "facing": -8.768749999999983,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rockies-146-20-4",
+          "sectionId": "146",
+          "row": "20",
+          "seatNumber": "4",
+          "position3D": {
+            "x": 26.92923498698465,
+            "y": 178.9855198137988,
+            "z": 65
+          },
+          "elevation": 65,
+          "distanceFromHomeplate": 181,
+          "angle": -188.55624999999998,
+          "facing": -8.556249999999977,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rockies-146-20-5",
+          "sectionId": "146",
+          "row": "20",
+          "seatNumber": "5",
+          "position3D": {
+            "x": 26.26522538836832,
+            "y": 179.084164390094,
+            "z": 65
+          },
+          "elevation": 65,
+          "distanceFromHomeplate": 181,
+          "angle": -188.34374999999997,
+          "facing": -8.343749999999972,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rockies-146-20-6",
+          "sectionId": "146",
+          "row": "20",
+          "seatNumber": "6",
+          "position3D": {
+            "x": 25.600854502000455,
+            "y": 179.1803455984149,
+            "z": 65
+          },
+          "elevation": 65,
+          "distanceFromHomeplate": 181,
+          "angle": -188.13125,
+          "facing": -8.131249999999994,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rockies-146-20-7",
+          "sectionId": "146",
+          "row": "20",
+          "seatNumber": "7",
+          "position3D": {
+            "x": 24.93613146654482,
+            "y": 179.27406211575394,
+            "z": 65
+          },
+          "elevation": 65,
+          "distanceFromHomeplate": 181.00000000000003,
+          "angle": -187.91875,
+          "facing": -7.918749999999989,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rockies-146-20-8",
+          "sectionId": "146",
+          "row": "20",
+          "seatNumber": "8",
+          "position3D": {
+            "x": 24.271065425509434,
+            "y": 179.36531265300613,
+            "z": 65
+          },
+          "elevation": 65,
+          "distanceFromHomeplate": 181,
+          "angle": -187.70624999999998,
+          "facing": -7.706249999999983,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rockies-146-20-9",
+          "sectionId": "146",
+          "row": "20",
+          "seatNumber": "9",
+          "position3D": {
+            "x": 23.605665527120024,
+            "y": 179.45409595498717,
+            "z": 65
+          },
+          "elevation": 65,
+          "distanceFromHomeplate": 181,
+          "angle": -187.49374999999998,
+          "facing": -7.493749999999977,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rockies-146-20-10",
+          "sectionId": "146",
+          "row": "20",
+          "seatNumber": "10",
+          "position3D": {
+            "x": 22.939940924194943,
+            "y": 179.54041080045027,
+            "z": 65
+          },
+          "elevation": 65,
+          "distanceFromHomeplate": 181,
+          "angle": -187.28124999999997,
+          "facing": -7.281249999999972,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rockies-146-20-11",
+          "sectionId": "146",
+          "row": "20",
+          "seatNumber": "11",
+          "position3D": {
+            "x": 22.273900774018514,
+            "y": 179.62425600210338,
+            "z": 65
+          },
+          "elevation": 65,
+          "distanceFromHomeplate": 181,
+          "angle": -187.06875,
+          "facing": -7.068749999999994,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rockies-146-20-12",
+          "sectionId": "146",
+          "row": "20",
+          "seatNumber": "12",
+          "position3D": {
+            "x": 21.60755423821583,
+            "y": 179.70563040662515,
+            "z": 65
+          },
+          "elevation": 65,
+          "distanceFromHomeplate": 181,
+          "angle": -186.85625,
+          "facing": -6.856249999999989,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rockies-146-20-13",
+          "sectionId": "146",
+          "row": "20",
+          "seatNumber": "13",
+          "position3D": {
+            "x": 20.94091048262676,
+            "y": 179.78453289468095,
+            "z": 65
+          },
+          "elevation": 65,
+          "distanceFromHomeplate": 181.00000000000003,
+          "angle": -186.64374999999998,
+          "facing": -6.643749999999983,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rockies-146-20-14",
+          "sectionId": "146",
+          "row": "20",
+          "seatNumber": "14",
+          "position3D": {
+            "x": 20.273978677179052,
+            "y": 179.86096238093825,
+            "z": 65
+          },
+          "elevation": 65,
+          "distanceFromHomeplate": 181,
+          "angle": -186.43124999999998,
+          "facing": -6.431249999999977,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rockies-146-20-15",
+          "sectionId": "146",
+          "row": "20",
+          "seatNumber": "15",
+          "position3D": {
+            "x": 19.60676799576302,
+            "y": 179.93491781408167,
+            "z": 65
+          },
+          "elevation": 65,
+          "distanceFromHomeplate": 181,
+          "angle": -186.21874999999997,
+          "facing": -6.218749999999972,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rockies-146-20-16",
+          "sectionId": "146",
+          "row": "20",
+          "seatNumber": "16",
+          "position3D": {
+            "x": 18.93928761610452,
+            "y": 180.00639817682722,
+            "z": 65
+          },
+          "elevation": 65,
+          "distanceFromHomeplate": 181,
+          "angle": -186.00625,
+          "facing": -6.006249999999994,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        }
+      ],
+      "covered": false,
+      "hasAisleSeats": false,
+      "wheelchairRow": false
+    },
+    {
+      "rowNumber": "21",
+      "sectionId": "146",
+      "seatCount": 16,
+      "elevation": 67.5,
+      "depth": 183.8,
+      "rowSpacing": 36,
+      "seats": [
+        {
+          "id": "rockies-146-21-1",
+          "sectionId": "146",
+          "row": "21",
+          "seatNumber": "1",
+          "position3D": {
+            "x": 29.366370564246203,
+            "y": 181.43884997398814,
+            "z": 67.5
+          },
+          "elevation": 67.5,
+          "distanceFromHomeplate": 183.8,
+          "angle": -189.19375,
+          "facing": -9.193749999999994,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rockies-146-21-2",
+          "sectionId": "146",
+          "row": "21",
+          "seatNumber": "2",
+          "position3D": {
+            "x": 28.693245253246864,
+            "y": 181.54651656486564,
+            "z": 67.5
+          },
+          "elevation": 67.5,
+          "distanceFromHomeplate": 183.8,
+          "angle": -188.98125,
+          "facing": -8.981249999999989,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rockies-146-21-3",
+          "sectionId": "146",
+          "row": "21",
+          "seatNumber": "3",
+          "position3D": {
+            "x": 28.019725256197823,
+            "y": 181.65168591721684,
+            "z": 67.5
+          },
+          "elevation": 67.5,
+          "distanceFromHomeplate": 183.8,
+          "angle": -188.76874999999998,
+          "facing": -8.768749999999983,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rockies-146-21-4",
+          "sectionId": "146",
+          "row": "21",
+          "seatNumber": "4",
+          "position3D": {
+            "x": 27.34581983761204,
+            "y": 181.754356584399,
+            "z": 67.5
+          },
+          "elevation": 67.5,
+          "distanceFromHomeplate": 183.8,
+          "angle": -188.55624999999998,
+          "facing": -8.556249999999977,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rockies-146-21-5",
+          "sectionId": "146",
+          "row": "21",
+          "seatNumber": "5",
+          "position3D": {
+            "x": 26.671538267304406,
+            "y": 181.85452715413967,
+            "z": 67.5
+          },
+          "elevation": 67.5,
+          "distanceFromHomeplate": 183.80000000000004,
+          "angle": -188.34374999999997,
+          "facing": -8.343749999999972,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rockies-146-21-6",
+          "sectionId": "146",
+          "row": "21",
+          "seatNumber": "6",
+          "position3D": {
+            "x": 25.996889820263448,
+            "y": 181.95219624855613,
+            "z": 67.5
+          },
+          "elevation": 67.5,
+          "distanceFromHomeplate": 183.8,
+          "angle": -188.13125,
+          "facing": -8.131249999999994,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rockies-146-21-7",
+          "sectionId": "146",
+          "row": "21",
+          "seatNumber": "7",
+          "position3D": {
+            "x": 25.32188377652452,
+            "y": 182.04736252417445,
+            "z": 67.5
+          },
+          "elevation": 67.5,
+          "distanceFromHomeplate": 183.80000000000004,
+          "angle": -187.91875,
+          "facing": -7.918749999999989,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rockies-146-21-8",
+          "sectionId": "146",
+          "row": "21",
+          "seatNumber": "8",
+          "position3D": {
+            "x": 24.646529421042178,
+            "y": 182.14002467194766,
+            "z": 67.5
+          },
+          "elevation": 67.5,
+          "distanceFromHomeplate": 183.8,
+          "angle": -187.70624999999998,
+          "facing": -7.706249999999983,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rockies-146-21-9",
+          "sectionId": "146",
+          "row": "21",
+          "seatNumber": "9",
+          "position3D": {
+            "x": 23.97083604356166,
+            "y": 182.23018141727428,
+            "z": 67.5
+          },
+          "elevation": 67.5,
+          "distanceFromHomeplate": 183.80000000000004,
+          "angle": -187.49374999999998,
+          "facing": -7.493749999999977,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rockies-146-21-10",
+          "sectionId": "146",
+          "row": "21",
+          "seatNumber": "10",
+          "position3D": {
+            "x": 23.294812938491884,
+            "y": 182.31783152001526,
+            "z": 67.5
+          },
+          "elevation": 67.5,
+          "distanceFromHomeplate": 183.8,
+          "angle": -187.28124999999997,
+          "facing": -7.281249999999972,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rockies-146-21-11",
+          "sectionId": "146",
+          "row": "21",
+          "seatNumber": "11",
+          "position3D": {
+            "x": 22.61846940477681,
+            "y": 182.40297377451162,
+            "z": 67.5
+          },
+          "elevation": 67.5,
+          "distanceFromHomeplate": 183.8,
+          "angle": -187.06875,
+          "facing": -7.068749999999994,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rockies-146-21-12",
+          "sectionId": "146",
+          "row": "21",
+          "seatNumber": "12",
+          "position3D": {
+            "x": 21.94181474576834,
+            "y": 182.48560700960059,
+            "z": 67.5
+          },
+          "elevation": 67.5,
+          "distanceFromHomeplate": 183.8,
+          "angle": -186.85625,
+          "facing": -6.856249999999989,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rockies-146-21-13",
+          "sectionId": "146",
+          "row": "21",
+          "seatNumber": "13",
+          "position3D": {
+            "x": 21.264858269098333,
+            "y": 182.56573008863182,
+            "z": 67.5
+          },
+          "elevation": 67.5,
+          "distanceFromHomeplate": 183.8,
+          "angle": -186.64374999999998,
+          "facing": -6.643749999999983,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rockies-146-21-14",
+          "sectionId": "146",
+          "row": "21",
+          "seatNumber": "14",
+          "position3D": {
+            "x": 20.587609286549778,
+            "y": 182.64334190948315,
+            "z": 67.5
+          },
+          "elevation": 67.5,
+          "distanceFromHomeplate": 183.79999999999998,
+          "angle": -186.43124999999998,
+          "facing": -6.431249999999977,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rockies-146-21-15",
+          "sectionId": "146",
+          "row": "21",
+          "seatNumber": "15",
+          "position3D": {
+            "x": 19.910077113929518,
+            "y": 182.71844140457574,
+            "z": 67.5
+          },
+          "elevation": 67.5,
+          "distanceFromHomeplate": 183.8,
+          "angle": -186.21874999999997,
+          "facing": -6.218749999999972,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rockies-146-21-16",
+          "sectionId": "146",
+          "row": "21",
+          "seatNumber": "16",
+          "position3D": {
+            "x": 19.232271070939284,
+            "y": 182.79102754088865,
+            "z": 67.5
+          },
+          "elevation": 67.5,
+          "distanceFromHomeplate": 183.8,
+          "angle": -186.00625,
+          "facing": -6.006249999999994,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        }
+      ],
+      "covered": false,
+      "hasAisleSeats": false,
+      "wheelchairRow": false
+    },
+    {
+      "rowNumber": "22",
+      "sectionId": "146",
+      "seatCount": 16,
+      "elevation": 70,
+      "depth": 186.6,
+      "rowSpacing": 36,
+      "seats": [
+        {
+          "id": "rockies-146-22-1",
+          "sectionId": "146",
+          "row": "22",
+          "seatNumber": "1",
+          "position3D": {
+            "x": 29.813736383505663,
+            "y": 184.20288033267784,
+            "z": 70
+          },
+          "elevation": 70,
+          "distanceFromHomeplate": 186.6,
+          "angle": -189.19375,
+          "facing": -9.193749999999994,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rockies-146-22-2",
+          "sectionId": "146",
+          "row": "22",
+          "seatNumber": "2",
+          "position3D": {
+            "x": 29.130356715211448,
+            "y": 184.31218711101155,
+            "z": 70
+          },
+          "elevation": 70,
+          "distanceFromHomeplate": 186.6,
+          "angle": -188.98125,
+          "facing": -8.981249999999989,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rockies-146-22-3",
+          "sectionId": "146",
+          "row": "22",
+          "seatNumber": "3",
+          "position3D": {
+            "x": 28.446576348240008,
+            "y": 184.4189586080123,
+            "z": 70
+          },
+          "elevation": 70,
+          "distanceFromHomeplate": 186.60000000000002,
+          "angle": -188.76874999999998,
+          "facing": -8.768749999999983,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rockies-146-22-4",
+          "sectionId": "146",
+          "row": "22",
+          "seatNumber": "4",
+          "position3D": {
+            "x": 27.762404688239425,
+            "y": 184.5231933549992,
+            "z": 70
+          },
+          "elevation": 70,
+          "distanceFromHomeplate": 186.6,
+          "angle": -188.55624999999998,
+          "facing": -8.556249999999977,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rockies-146-22-5",
+          "sectionId": "146",
+          "row": "22",
+          "seatNumber": "5",
+          "position3D": {
+            "x": 27.077851146240487,
+            "y": 184.62488991818532,
+            "z": 70
+          },
+          "elevation": 70,
+          "distanceFromHomeplate": 186.60000000000002,
+          "angle": -188.34374999999997,
+          "facing": -8.343749999999972,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rockies-146-22-6",
+          "sectionId": "146",
+          "row": "22",
+          "seatNumber": "6",
+          "position3D": {
+            "x": 26.392925138526437,
+            "y": 184.72404689869737,
+            "z": 70
+          },
+          "elevation": 70,
+          "distanceFromHomeplate": 186.60000000000002,
+          "angle": -188.13125,
+          "facing": -8.131249999999994,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rockies-146-22-7",
+          "sectionId": "146",
+          "row": "22",
+          "seatNumber": "7",
+          "position3D": {
+            "x": 25.707636086504213,
+            "y": 184.82066293259493,
+            "z": 70
+          },
+          "elevation": 70,
+          "distanceFromHomeplate": 186.6,
+          "angle": -187.91875,
+          "facing": -7.918749999999989,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rockies-146-22-8",
+          "sectionId": "146",
+          "row": "22",
+          "seatNumber": "8",
+          "position3D": {
+            "x": 25.021993416574915,
+            "y": 184.91473669088919,
+            "z": 70
+          },
+          "elevation": 70,
+          "distanceFromHomeplate": 186.6,
+          "angle": -187.70624999999998,
+          "facing": -7.706249999999983,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rockies-146-22-9",
+          "sectionId": "146",
+          "row": "22",
+          "seatNumber": "9",
+          "position3D": {
+            "x": 24.336006560003295,
+            "y": 185.00626687956134,
+            "z": 70
+          },
+          "elevation": 70,
+          "distanceFromHomeplate": 186.6,
+          "angle": -187.49374999999998,
+          "facing": -7.493749999999977,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rockies-146-22-10",
+          "sectionId": "146",
+          "row": "22",
+          "seatNumber": "10",
+          "position3D": {
+            "x": 23.649684952788817,
+            "y": 185.09525223958022,
+            "z": 70
+          },
+          "elevation": 70,
+          "distanceFromHomeplate": 186.6,
+          "angle": -187.28124999999997,
+          "facing": -7.281249999999972,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rockies-146-22-11",
+          "sectionId": "146",
+          "row": "22",
+          "seatNumber": "11",
+          "position3D": {
+            "x": 22.963038035535106,
+            "y": 185.18169154691984,
+            "z": 70
+          },
+          "elevation": 70,
+          "distanceFromHomeplate": 186.59999999999997,
+          "angle": -187.06875,
+          "facing": -7.068749999999994,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rockies-146-22-12",
+          "sectionId": "146",
+          "row": "22",
+          "seatNumber": "12",
+          "position3D": {
+            "x": 22.276075253320847,
+            "y": 185.265583612576,
+            "z": 70
+          },
+          "elevation": 70,
+          "distanceFromHomeplate": 186.6,
+          "angle": -186.85625,
+          "facing": -6.856249999999989,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rockies-146-22-13",
+          "sectionId": "146",
+          "row": "22",
+          "seatNumber": "13",
+          "position3D": {
+            "x": 21.588806055569904,
+            "y": 185.34692728258267,
+            "z": 70
+          },
+          "elevation": 70,
+          "distanceFromHomeplate": 186.6,
+          "angle": -186.64374999999998,
+          "facing": -6.643749999999983,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rockies-146-22-14",
+          "sectionId": "146",
+          "row": "22",
+          "seatNumber": "14",
+          "position3D": {
+            "x": 20.901239895920504,
+            "y": 185.42572143802806,
+            "z": 70
+          },
+          "elevation": 70,
+          "distanceFromHomeplate": 186.6,
+          "angle": -186.43124999999998,
+          "facing": -6.431249999999977,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rockies-146-22-15",
+          "sectionId": "146",
+          "row": "22",
+          "seatNumber": "15",
+          "position3D": {
+            "x": 20.213386232096017,
+            "y": 185.5019649950698,
+            "z": 70
+          },
+          "elevation": 70,
+          "distanceFromHomeplate": 186.6,
+          "angle": -186.21874999999997,
+          "facing": -6.218749999999972,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rockies-146-22-16",
+          "sectionId": "146",
+          "row": "22",
+          "seatNumber": "16",
+          "position3D": {
+            "x": 19.52525452577405,
+            "y": 185.57565690495005,
+            "z": 70
+          },
+          "elevation": 70,
+          "distanceFromHomeplate": 186.59999999999997,
+          "angle": -186.00625,
+          "facing": -6.006249999999994,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        }
+      ],
+      "covered": false,
+      "hasAisleSeats": false,
+      "wheelchairRow": false
+    },
+    {
+      "rowNumber": "23",
+      "sectionId": "146",
+      "seatCount": 16,
+      "elevation": 72.5,
+      "depth": 189.39999999999998,
+      "rowSpacing": 36,
+      "seats": [
+        {
+          "id": "rockies-146-23-1",
+          "sectionId": "146",
+          "row": "23",
+          "seatNumber": "1",
+          "position3D": {
+            "x": 30.261102202765123,
+            "y": 186.9669106913675,
+            "z": 72.5
+          },
+          "elevation": 72.5,
+          "distanceFromHomeplate": 189.39999999999998,
+          "angle": -189.19375,
+          "facing": -9.193749999999994,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rockies-146-23-2",
+          "sectionId": "146",
+          "row": "23",
+          "seatNumber": "2",
+          "position3D": {
+            "x": 29.567468177176035,
+            "y": 187.07785765715747,
+            "z": 72.5
+          },
+          "elevation": 72.5,
+          "distanceFromHomeplate": 189.39999999999998,
+          "angle": -188.98125,
+          "facing": -8.981249999999989,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rockies-146-23-3",
+          "sectionId": "146",
+          "row": "23",
+          "seatNumber": "3",
+          "position3D": {
+            "x": 28.873427440282192,
+            "y": 187.18623129880774,
+            "z": 72.5
+          },
+          "elevation": 72.5,
+          "distanceFromHomeplate": 189.39999999999998,
+          "angle": -188.76874999999998,
+          "facing": -8.768749999999983,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rockies-146-23-4",
+          "sectionId": "146",
+          "row": "23",
+          "seatNumber": "4",
+          "position3D": {
+            "x": 28.17898953886681,
+            "y": 187.29203012559938,
+            "z": 72.5
+          },
+          "elevation": 72.5,
+          "distanceFromHomeplate": 189.39999999999998,
+          "angle": -188.55624999999998,
+          "facing": -8.556249999999977,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rockies-146-23-5",
+          "sectionId": "146",
+          "row": "23",
+          "seatNumber": "5",
+          "position3D": {
+            "x": 27.48416402517657,
+            "y": 187.39525268223093,
+            "z": 72.5
+          },
+          "elevation": 72.5,
+          "distanceFromHomeplate": 189.39999999999998,
+          "angle": -188.34374999999997,
+          "facing": -8.343749999999972,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rockies-146-23-6",
+          "sectionId": "146",
+          "row": "23",
+          "seatNumber": "6",
+          "position3D": {
+            "x": 26.788960456789425,
+            "y": 187.49589754883857,
+            "z": 72.5
+          },
+          "elevation": 72.5,
+          "distanceFromHomeplate": 189.4,
+          "angle": -188.13125,
+          "facing": -8.131249999999994,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rockies-146-23-7",
+          "sectionId": "146",
+          "row": "23",
+          "seatNumber": "7",
+          "position3D": {
+            "x": 26.09338839648391,
+            "y": 187.5939633410154,
+            "z": 72.5
+          },
+          "elevation": 72.5,
+          "distanceFromHomeplate": 189.4,
+          "angle": -187.91875,
+          "facing": -7.918749999999989,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rockies-146-23-8",
+          "sectionId": "146",
+          "row": "23",
+          "seatNumber": "8",
+          "position3D": {
+            "x": 25.397457412107656,
+            "y": 187.68944870983069,
+            "z": 72.5
+          },
+          "elevation": 72.5,
+          "distanceFromHomeplate": 189.39999999999995,
+          "angle": -187.70624999999998,
+          "facing": -7.706249999999983,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rockies-146-23-9",
+          "sectionId": "146",
+          "row": "23",
+          "seatNumber": "9",
+          "position3D": {
+            "x": 24.701177076444928,
+            "y": 187.78235234184842,
+            "z": 72.5
+          },
+          "elevation": 72.5,
+          "distanceFromHomeplate": 189.39999999999998,
+          "angle": -187.49374999999998,
+          "facing": -7.493749999999977,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rockies-146-23-10",
+          "sectionId": "146",
+          "row": "23",
+          "seatNumber": "10",
+          "position3D": {
+            "x": 24.004556967085755,
+            "y": 187.87267295914518,
+            "z": 72.5
+          },
+          "elevation": 72.5,
+          "distanceFromHomeplate": 189.39999999999995,
+          "angle": -187.28124999999997,
+          "facing": -7.281249999999972,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rockies-146-23-11",
+          "sectionId": "146",
+          "row": "23",
+          "seatNumber": "11",
+          "position3D": {
+            "x": 23.307606666293402,
+            "y": 187.96040931932805,
+            "z": 72.5
+          },
+          "elevation": 72.5,
+          "distanceFromHomeplate": 189.39999999999998,
+          "angle": -187.06875,
+          "facing": -7.068749999999994,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rockies-146-23-12",
+          "sectionId": "146",
+          "row": "23",
+          "seatNumber": "12",
+          "position3D": {
+            "x": 22.610335760873358,
+            "y": 188.04556021555138,
+            "z": 72.5
+          },
+          "elevation": 72.5,
+          "distanceFromHomeplate": 189.39999999999998,
+          "angle": -186.85625,
+          "facing": -6.856249999999989,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rockies-146-23-13",
+          "sectionId": "146",
+          "row": "23",
+          "seatNumber": "13",
+          "position3D": {
+            "x": 21.91275384204148,
+            "y": 188.12812447653351,
+            "z": 72.5
+          },
+          "elevation": 72.5,
+          "distanceFromHomeplate": 189.39999999999998,
+          "angle": -186.64374999999998,
+          "facing": -6.643749999999983,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rockies-146-23-14",
+          "sectionId": "146",
+          "row": "23",
+          "seatNumber": "14",
+          "position3D": {
+            "x": 21.214870505291227,
+            "y": 188.20810096657294,
+            "z": 72.5
+          },
+          "elevation": 72.5,
+          "distanceFromHomeplate": 189.39999999999998,
+          "angle": -186.43124999999998,
+          "facing": -6.431249999999977,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rockies-146-23-15",
+          "sectionId": "146",
+          "row": "23",
+          "seatNumber": "15",
+          "position3D": {
+            "x": 20.516695350262516,
+            "y": 188.28548858556388,
+            "z": 72.5
+          },
+          "elevation": 72.5,
+          "distanceFromHomeplate": 189.39999999999998,
+          "angle": -186.21874999999997,
+          "facing": -6.218749999999972,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rockies-146-23-16",
+          "sectionId": "146",
+          "row": "23",
+          "seatNumber": "16",
+          "position3D": {
+            "x": 19.818237980608814,
+            "y": 188.36028626901145,
+            "z": 72.5
+          },
+          "elevation": 72.5,
+          "distanceFromHomeplate": 189.39999999999998,
+          "angle": -186.00625,
+          "facing": -6.006249999999994,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        }
+      ],
+      "covered": false,
+      "hasAisleSeats": false,
+      "wheelchairRow": false
+    },
+    {
+      "rowNumber": "24",
+      "sectionId": "146",
+      "seatCount": 16,
+      "elevation": 75,
+      "depth": 192.2,
+      "rowSpacing": 36,
+      "seats": [
+        {
+          "id": "rockies-146-24-1",
+          "sectionId": "146",
+          "row": "24",
+          "seatNumber": "1",
+          "position3D": {
+            "x": 30.70846802202459,
+            "y": 189.73094105005723,
+            "z": 75
+          },
+          "elevation": 75,
+          "distanceFromHomeplate": 192.2,
+          "angle": -189.19375,
+          "facing": -9.193749999999994,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rockies-146-24-2",
+          "sectionId": "146",
+          "row": "24",
+          "seatNumber": "2",
+          "position3D": {
+            "x": 30.004579639140623,
+            "y": 189.84352820330344,
+            "z": 75
+          },
+          "elevation": 75,
+          "distanceFromHomeplate": 192.2,
+          "angle": -188.98125,
+          "facing": -8.981249999999989,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rockies-146-24-3",
+          "sectionId": "146",
+          "row": "24",
+          "seatNumber": "3",
+          "position3D": {
+            "x": 29.30027853232438,
+            "y": 189.95350398960323,
+            "z": 75
+          },
+          "elevation": 75,
+          "distanceFromHomeplate": 192.2,
+          "angle": -188.76874999999998,
+          "facing": -8.768749999999983,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rockies-146-24-4",
+          "sectionId": "146",
+          "row": "24",
+          "seatNumber": "4",
+          "position3D": {
+            "x": 28.595574389494196,
+            "y": 190.0608668961996,
+            "z": 75
+          },
+          "elevation": 75,
+          "distanceFromHomeplate": 192.2,
+          "angle": -188.55624999999998,
+          "facing": -8.556249999999977,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rockies-146-24-5",
+          "sectionId": "146",
+          "row": "24",
+          "seatNumber": "5",
+          "position3D": {
+            "x": 27.890476904112656,
+            "y": 190.1656154462766,
+            "z": 75
+          },
+          "elevation": 75,
+          "distanceFromHomeplate": 192.2,
+          "angle": -188.34374999999997,
+          "facing": -8.343749999999972,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rockies-146-24-6",
+          "sectionId": "146",
+          "row": "24",
+          "seatNumber": "6",
+          "position3D": {
+            "x": 27.184995775052418,
+            "y": 190.2677481989798,
+            "z": 75
+          },
+          "elevation": 75,
+          "distanceFromHomeplate": 192.2,
+          "angle": -188.13125,
+          "facing": -8.131249999999994,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rockies-146-24-7",
+          "sectionId": "146",
+          "row": "24",
+          "seatNumber": "7",
+          "position3D": {
+            "x": 26.47914070646361,
+            "y": 190.36726374943592,
+            "z": 75
+          },
+          "elevation": 75,
+          "distanceFromHomeplate": 192.2,
+          "angle": -187.91875,
+          "facing": -7.918749999999989,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rockies-146-24-8",
+          "sectionId": "146",
+          "row": "24",
+          "seatNumber": "8",
+          "position3D": {
+            "x": 25.7729214076404,
+            "y": 190.46416072877224,
+            "z": 75
+          },
+          "elevation": 75,
+          "distanceFromHomeplate": 192.2,
+          "angle": -187.70624999999998,
+          "facing": -7.706249999999983,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rockies-146-24-9",
+          "sectionId": "146",
+          "row": "24",
+          "seatNumber": "9",
+          "position3D": {
+            "x": 25.066347592886565,
+            "y": 190.55843780413554,
+            "z": 75
+          },
+          "elevation": 75,
+          "distanceFromHomeplate": 192.20000000000002,
+          "angle": -187.49374999999998,
+          "facing": -7.493749999999977,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rockies-146-24-10",
+          "sectionId": "146",
+          "row": "24",
+          "seatNumber": "10",
+          "position3D": {
+            "x": 24.359428981382695,
+            "y": 190.6500936787102,
+            "z": 75
+          },
+          "elevation": 75,
+          "distanceFromHomeplate": 192.20000000000002,
+          "angle": -187.28124999999997,
+          "facing": -7.281249999999972,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rockies-146-24-11",
+          "sectionId": "146",
+          "row": "24",
+          "seatNumber": "11",
+          "position3D": {
+            "x": 23.652175297051702,
+            "y": 190.7391270917363,
+            "z": 75
+          },
+          "elevation": 75,
+          "distanceFromHomeplate": 192.2,
+          "angle": -187.06875,
+          "facing": -7.068749999999994,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rockies-146-24-12",
+          "sectionId": "146",
+          "row": "24",
+          "seatNumber": "12",
+          "position3D": {
+            "x": 22.94459626842587,
+            "y": 190.8255368185268,
+            "z": 75
+          },
+          "elevation": 75,
+          "distanceFromHomeplate": 192.2,
+          "angle": -186.85625,
+          "facing": -6.856249999999989,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rockies-146-24-13",
+          "sectionId": "146",
+          "row": "24",
+          "seatNumber": "13",
+          "position3D": {
+            "x": 22.236701628513053,
+            "y": 190.9093216704844,
+            "z": 75
+          },
+          "elevation": 75,
+          "distanceFromHomeplate": 192.2,
+          "angle": -186.64374999999998,
+          "facing": -6.643749999999983,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rockies-146-24-14",
+          "sectionId": "146",
+          "row": "24",
+          "seatNumber": "14",
+          "position3D": {
+            "x": 21.528501114661953,
+            "y": 190.99048049511785,
+            "z": 75
+          },
+          "elevation": 75,
+          "distanceFromHomeplate": 192.19999999999996,
+          "angle": -186.43124999999998,
+          "facing": -6.431249999999977,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rockies-146-24-15",
+          "sectionId": "146",
+          "row": "24",
+          "seatNumber": "15",
+          "position3D": {
+            "x": 20.820004468429016,
+            "y": 191.06901217605798,
+            "z": 75
+          },
+          "elevation": 75,
+          "distanceFromHomeplate": 192.20000000000002,
+          "angle": -186.21874999999997,
+          "facing": -6.218749999999972,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rockies-146-24-16",
+          "sectionId": "146",
+          "row": "24",
+          "seatNumber": "16",
+          "position3D": {
+            "x": 20.111221435443582,
+            "y": 191.14491563307288,
+            "z": 75
+          },
+          "elevation": 75,
+          "distanceFromHomeplate": 192.2,
+          "angle": -186.00625,
+          "facing": -6.006249999999994,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        }
+      ],
+      "covered": false,
+      "hasAisleSeats": false,
+      "wheelchairRow": false
+    },
+    {
+      "rowNumber": "25",
+      "sectionId": "146",
+      "seatCount": 16,
+      "elevation": 77.5,
+      "depth": 195,
+      "rowSpacing": 36,
+      "seats": [
+        {
+          "id": "rockies-146-25-1",
+          "sectionId": "146",
+          "row": "25",
+          "seatNumber": "1",
+          "position3D": {
+            "x": 31.155833841284053,
+            "y": 192.49497140874695,
+            "z": 77.5
+          },
+          "elevation": 77.5,
+          "distanceFromHomeplate": 195,
+          "angle": -189.19375,
+          "facing": -9.193749999999994,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rockies-146-25-2",
+          "sectionId": "146",
+          "row": "25",
+          "seatNumber": "2",
+          "position3D": {
+            "x": 30.441691101105214,
+            "y": 192.60919874944938,
+            "z": 77.5
+          },
+          "elevation": 77.5,
+          "distanceFromHomeplate": 195,
+          "angle": -188.98125,
+          "facing": -8.981249999999989,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rockies-146-25-3",
+          "sectionId": "146",
+          "row": "25",
+          "seatNumber": "3",
+          "position3D": {
+            "x": 29.72712962436657,
+            "y": 192.7207766803987,
+            "z": 77.5
+          },
+          "elevation": 77.5,
+          "distanceFromHomeplate": 195,
+          "angle": -188.76874999999998,
+          "facing": -8.768749999999983,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rockies-146-25-4",
+          "sectionId": "146",
+          "row": "25",
+          "seatNumber": "4",
+          "position3D": {
+            "x": 29.012159240121587,
+            "y": 192.82970366679982,
+            "z": 77.5
+          },
+          "elevation": 77.5,
+          "distanceFromHomeplate": 195,
+          "angle": -188.55624999999998,
+          "facing": -8.556249999999977,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rockies-146-25-5",
+          "sectionId": "146",
+          "row": "25",
+          "seatNumber": "5",
+          "position3D": {
+            "x": 28.29678978304874,
+            "y": 192.93597821032228,
+            "z": 77.5
+          },
+          "elevation": 77.5,
+          "distanceFromHomeplate": 195,
+          "angle": -188.34374999999997,
+          "facing": -8.343749999999972,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rockies-146-25-6",
+          "sectionId": "146",
+          "row": "25",
+          "seatNumber": "6",
+          "position3D": {
+            "x": 27.58103109331541,
+            "y": 193.03959884912103,
+            "z": 77.5
+          },
+          "elevation": 77.5,
+          "distanceFromHomeplate": 195.00000000000003,
+          "angle": -188.13125,
+          "facing": -8.131249999999994,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rockies-146-25-7",
+          "sectionId": "146",
+          "row": "25",
+          "seatNumber": "7",
+          "position3D": {
+            "x": 26.86489301644331,
+            "y": 193.14056415785643,
+            "z": 77.5
+          },
+          "elevation": 77.5,
+          "distanceFromHomeplate": 195.00000000000003,
+          "angle": -187.91875,
+          "facing": -7.918749999999989,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rockies-146-25-8",
+          "sectionId": "146",
+          "row": "25",
+          "seatNumber": "8",
+          "position3D": {
+            "x": 26.148385403173144,
+            "y": 193.23887274771377,
+            "z": 77.5
+          },
+          "elevation": 77.5,
+          "distanceFromHomeplate": 195,
+          "angle": -187.70624999999998,
+          "facing": -7.706249999999983,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rockies-146-25-9",
+          "sectionId": "146",
+          "row": "25",
+          "seatNumber": "9",
+          "position3D": {
+            "x": 25.431518109328202,
+            "y": 193.33452326642262,
+            "z": 77.5
+          },
+          "elevation": 77.5,
+          "distanceFromHomeplate": 195,
+          "angle": -187.49374999999998,
+          "facing": -7.493749999999977,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rockies-146-25-10",
+          "sectionId": "146",
+          "row": "25",
+          "seatNumber": "10",
+          "position3D": {
+            "x": 24.714300995679636,
+            "y": 193.42751439827518,
+            "z": 77.5
+          },
+          "elevation": 77.5,
+          "distanceFromHomeplate": 195,
+          "angle": -187.28124999999997,
+          "facing": -7.281249999999972,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rockies-146-25-11",
+          "sectionId": "146",
+          "row": "25",
+          "seatNumber": "11",
+          "position3D": {
+            "x": 23.99674392781,
+            "y": 193.51784486414454,
+            "z": 77.5
+          },
+          "elevation": 77.5,
+          "distanceFromHomeplate": 195,
+          "angle": -187.06875,
+          "facing": -7.068749999999994,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rockies-146-25-12",
+          "sectionId": "146",
+          "row": "25",
+          "seatNumber": "12",
+          "position3D": {
+            "x": 23.27885677597838,
+            "y": 193.60551342150225,
+            "z": 77.5
+          },
+          "elevation": 77.5,
+          "distanceFromHomeplate": 195,
+          "angle": -186.85625,
+          "facing": -6.856249999999989,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rockies-146-25-13",
+          "sectionId": "146",
+          "row": "25",
+          "seatNumber": "13",
+          "position3D": {
+            "x": 22.560649414984628,
+            "y": 193.6905188644353,
+            "z": 77.5
+          },
+          "elevation": 77.5,
+          "distanceFromHomeplate": 195.00000000000003,
+          "angle": -186.64374999999998,
+          "facing": -6.643749999999983,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rockies-146-25-14",
+          "sectionId": "146",
+          "row": "25",
+          "seatNumber": "14",
+          "position3D": {
+            "x": 21.84213172403268,
+            "y": 193.77286002366276,
+            "z": 77.5
+          },
+          "elevation": 77.5,
+          "distanceFromHomeplate": 194.99999999999997,
+          "angle": -186.43124999999998,
+          "facing": -6.431249999999977,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rockies-146-25-15",
+          "sectionId": "146",
+          "row": "25",
+          "seatNumber": "15",
+          "position3D": {
+            "x": 21.123313586595515,
+            "y": 193.85253576655208,
+            "z": 77.5
+          },
+          "elevation": 77.5,
+          "distanceFromHomeplate": 195,
+          "angle": -186.21874999999997,
+          "facing": -6.218749999999972,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rockies-146-25-16",
+          "sectionId": "146",
+          "row": "25",
+          "seatNumber": "16",
+          "position3D": {
+            "x": 20.404204890278347,
+            "y": 193.92954499713431,
+            "z": 77.5
+          },
+          "elevation": 77.5,
+          "distanceFromHomeplate": 195,
+          "angle": -186.00625,
+          "facing": -6.006249999999994,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        }
+      ],
+      "covered": false,
+      "hasAisleSeats": false,
+      "wheelchairRow": false
+    },
+    {
+      "rowNumber": "26",
+      "sectionId": "146",
+      "seatCount": 16,
+      "elevation": 80,
+      "depth": 197.8,
+      "rowSpacing": 36,
+      "seats": [
+        {
+          "id": "rockies-146-26-1",
+          "sectionId": "146",
+          "row": "26",
+          "seatNumber": "1",
+          "position3D": {
+            "x": 31.60319966054352,
+            "y": 195.25900176743664,
+            "z": 80
+          },
+          "elevation": 80,
+          "distanceFromHomeplate": 197.8,
+          "angle": -189.19375,
+          "facing": -9.193749999999994,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rockies-146-26-2",
+          "sectionId": "146",
+          "row": "26",
+          "seatNumber": "2",
+          "position3D": {
+            "x": 30.878802563069804,
+            "y": 195.37486929559532,
+            "z": 80
+          },
+          "elevation": 80,
+          "distanceFromHomeplate": 197.8,
+          "angle": -188.98125,
+          "facing": -8.981249999999989,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rockies-146-26-3",
+          "sectionId": "146",
+          "row": "26",
+          "seatNumber": "3",
+          "position3D": {
+            "x": 30.153980716408757,
+            "y": 195.4880493711942,
+            "z": 80
+          },
+          "elevation": 80,
+          "distanceFromHomeplate": 197.8,
+          "angle": -188.76874999999998,
+          "facing": -8.768749999999983,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rockies-146-26-4",
+          "sectionId": "146",
+          "row": "26",
+          "seatNumber": "4",
+          "position3D": {
+            "x": 29.428744090748975,
+            "y": 195.59854043740003,
+            "z": 80
+          },
+          "elevation": 80,
+          "distanceFromHomeplate": 197.80000000000004,
+          "angle": -188.55624999999998,
+          "facing": -8.556249999999977,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rockies-146-26-5",
+          "sectionId": "146",
+          "row": "26",
+          "seatNumber": "5",
+          "position3D": {
+            "x": 28.70310266198483,
+            "y": 195.70634097436795,
+            "z": 80
+          },
+          "elevation": 80,
+          "distanceFromHomeplate": 197.80000000000004,
+          "angle": -188.34374999999997,
+          "facing": -8.343749999999972,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rockies-146-26-6",
+          "sectionId": "146",
+          "row": "26",
+          "seatNumber": "6",
+          "position3D": {
+            "x": 27.9770664115784,
+            "y": 195.81144949926227,
+            "z": 80
+          },
+          "elevation": 80,
+          "distanceFromHomeplate": 197.80000000000004,
+          "angle": -188.13125,
+          "facing": -8.131249999999994,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rockies-146-26-7",
+          "sectionId": "146",
+          "row": "26",
+          "seatNumber": "7",
+          "position3D": {
+            "x": 27.25064532642301,
+            "y": 195.91386456627694,
+            "z": 80
+          },
+          "elevation": 80,
+          "distanceFromHomeplate": 197.8,
+          "angle": -187.91875,
+          "facing": -7.918749999999989,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rockies-146-26-8",
+          "sectionId": "146",
+          "row": "26",
+          "seatNumber": "8",
+          "position3D": {
+            "x": 26.523849398705888,
+            "y": 196.01358476665533,
+            "z": 80
+          },
+          "elevation": 80,
+          "distanceFromHomeplate": 197.8,
+          "angle": -187.70624999999998,
+          "facing": -7.706249999999983,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rockies-146-26-9",
+          "sectionId": "146",
+          "row": "26",
+          "seatNumber": "9",
+          "position3D": {
+            "x": 25.79668862576984,
+            "y": 196.11060872870974,
+            "z": 80
+          },
+          "elevation": 80,
+          "distanceFromHomeplate": 197.8,
+          "angle": -187.49374999999998,
+          "facing": -7.493749999999977,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rockies-146-26-10",
+          "sectionId": "146",
+          "row": "26",
+          "seatNumber": "10",
+          "position3D": {
+            "x": 25.069173009976573,
+            "y": 196.20493511784017,
+            "z": 80
+          },
+          "elevation": 80,
+          "distanceFromHomeplate": 197.80000000000004,
+          "angle": -187.28124999999997,
+          "facing": -7.281249999999972,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rockies-146-26-11",
+          "sectionId": "146",
+          "row": "26",
+          "seatNumber": "11",
+          "position3D": {
+            "x": 24.341312558568298,
+            "y": 196.29656263655278,
+            "z": 80
+          },
+          "elevation": 80,
+          "distanceFromHomeplate": 197.8,
+          "angle": -187.06875,
+          "facing": -7.068749999999994,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rockies-146-26-12",
+          "sectionId": "146",
+          "row": "26",
+          "seatNumber": "12",
+          "position3D": {
+            "x": 23.61311728353089,
+            "y": 196.38549002447766,
+            "z": 80
+          },
+          "elevation": 80,
+          "distanceFromHomeplate": 197.8,
+          "angle": -186.85625,
+          "facing": -6.856249999999989,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rockies-146-26-13",
+          "sectionId": "146",
+          "row": "26",
+          "seatNumber": "13",
+          "position3D": {
+            "x": 22.884597201456202,
+            "y": 196.47171605838616,
+            "z": 80
+          },
+          "elevation": 80,
+          "distanceFromHomeplate": 197.80000000000004,
+          "angle": -186.64374999999998,
+          "facing": -6.643749999999983,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rockies-146-26-14",
+          "sectionId": "146",
+          "row": "26",
+          "seatNumber": "14",
+          "position3D": {
+            "x": 22.15576233340341,
+            "y": 196.55523955220767,
+            "z": 80
+          },
+          "elevation": 80,
+          "distanceFromHomeplate": 197.79999999999998,
+          "angle": -186.43124999999998,
+          "facing": -6.431249999999977,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rockies-146-26-15",
+          "sectionId": "146",
+          "row": "26",
+          "seatNumber": "15",
+          "position3D": {
+            "x": 21.426622704762018,
+            "y": 196.63605935704615,
+            "z": 80
+          },
+          "elevation": 80,
+          "distanceFromHomeplate": 197.8,
+          "angle": -186.21874999999997,
+          "facing": -6.218749999999972,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rockies-146-26-16",
+          "sectionId": "146",
+          "row": "26",
+          "seatNumber": "16",
+          "position3D": {
+            "x": 20.697188345113116,
+            "y": 196.71417436119572,
+            "z": 80
+          },
+          "elevation": 80,
+          "distanceFromHomeplate": 197.79999999999998,
+          "angle": -186.00625,
+          "facing": -6.006249999999994,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        }
+      ],
+      "covered": false,
+      "hasAisleSeats": false,
+      "wheelchairRow": false
+    },
+    {
+      "rowNumber": "27",
+      "sectionId": "146",
+      "seatCount": 16,
+      "elevation": 82.5,
+      "depth": 200.6,
+      "rowSpacing": 36,
+      "seats": [
+        {
+          "id": "rockies-146-27-1",
+          "sectionId": "146",
+          "row": "27",
+          "seatNumber": "1",
+          "position3D": {
+            "x": 32.050565479802984,
+            "y": 198.02303212612634,
+            "z": 82.5
+          },
+          "elevation": 82.5,
+          "distanceFromHomeplate": 200.6,
+          "angle": -189.19375,
+          "facing": -9.193749999999994,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rockies-146-27-2",
+          "sectionId": "146",
+          "row": "27",
+          "seatNumber": "2",
+          "position3D": {
+            "x": 31.315914025034388,
+            "y": 198.14053984174126,
+            "z": 82.5
+          },
+          "elevation": 82.5,
+          "distanceFromHomeplate": 200.6,
+          "angle": -188.98125,
+          "facing": -8.981249999999989,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rockies-146-27-3",
+          "sectionId": "146",
+          "row": "27",
+          "seatNumber": "3",
+          "position3D": {
+            "x": 30.58083180845094,
+            "y": 198.25532206198963,
+            "z": 82.5
+          },
+          "elevation": 82.5,
+          "distanceFromHomeplate": 200.6,
+          "angle": -188.76874999999998,
+          "facing": -8.768749999999983,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rockies-146-27-4",
+          "sectionId": "146",
+          "row": "27",
+          "seatNumber": "4",
+          "position3D": {
+            "x": 29.84532894137636,
+            "y": 198.36737720800022,
+            "z": 82.5
+          },
+          "elevation": 82.5,
+          "distanceFromHomeplate": 200.6,
+          "angle": -188.55624999999998,
+          "facing": -8.556249999999977,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rockies-146-27-5",
+          "sectionId": "146",
+          "row": "27",
+          "seatNumber": "5",
+          "position3D": {
+            "x": 29.10941554092091,
+            "y": 198.47670373841356,
+            "z": 82.5
+          },
+          "elevation": 82.5,
+          "distanceFromHomeplate": 200.6,
+          "angle": -188.34374999999997,
+          "facing": -8.343749999999972,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rockies-146-27-6",
+          "sectionId": "146",
+          "row": "27",
+          "seatNumber": "6",
+          "position3D": {
+            "x": 28.373101729841387,
+            "y": 198.58330014940347,
+            "z": 82.5
+          },
+          "elevation": 82.5,
+          "distanceFromHomeplate": 200.6,
+          "angle": -188.13125,
+          "facing": -8.131249999999994,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rockies-146-27-7",
+          "sectionId": "146",
+          "row": "27",
+          "seatNumber": "7",
+          "position3D": {
+            "x": 27.63639763640271,
+            "y": 198.68716497469745,
+            "z": 82.5
+          },
+          "elevation": 82.5,
+          "distanceFromHomeplate": 200.60000000000002,
+          "angle": -187.91875,
+          "facing": -7.918749999999989,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rockies-146-27-8",
+          "sectionId": "146",
+          "row": "27",
+          "seatNumber": "8",
+          "position3D": {
+            "x": 26.89931339423863,
+            "y": 198.78829678559683,
+            "z": 82.5
+          },
+          "elevation": 82.5,
+          "distanceFromHomeplate": 200.6,
+          "angle": -187.70624999999998,
+          "facing": -7.706249999999983,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rockies-146-27-9",
+          "sectionId": "146",
+          "row": "27",
+          "seatNumber": "9",
+          "position3D": {
+            "x": 26.161859142211473,
+            "y": 198.88669419099682,
+            "z": 82.5
+          },
+          "elevation": 82.5,
+          "distanceFromHomeplate": 200.6,
+          "angle": -187.49374999999998,
+          "facing": -7.493749999999977,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rockies-146-27-10",
+          "sectionId": "146",
+          "row": "27",
+          "seatNumber": "10",
+          "position3D": {
+            "x": 25.42404502427351,
+            "y": 198.98235583740512,
+            "z": 82.5
+          },
+          "elevation": 82.5,
+          "distanceFromHomeplate": 200.6,
+          "angle": -187.28124999999997,
+          "facing": -7.281249999999972,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rockies-146-27-11",
+          "sectionId": "146",
+          "row": "27",
+          "seatNumber": "11",
+          "position3D": {
+            "x": 24.685881189326594,
+            "y": 199.075280408961,
+            "z": 82.5
+          },
+          "elevation": 82.5,
+          "distanceFromHomeplate": 200.6,
+          "angle": -187.06875,
+          "facing": -7.068749999999994,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rockies-146-27-12",
+          "sectionId": "146",
+          "row": "27",
+          "seatNumber": "12",
+          "position3D": {
+            "x": 23.947377791083397,
+            "y": 199.16546662745307,
+            "z": 82.5
+          },
+          "elevation": 82.5,
+          "distanceFromHomeplate": 200.6,
+          "angle": -186.85625,
+          "facing": -6.856249999999989,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rockies-146-27-13",
+          "sectionId": "146",
+          "row": "27",
+          "seatNumber": "13",
+          "position3D": {
+            "x": 23.208544987927777,
+            "y": 199.252913252337,
+            "z": 82.5
+          },
+          "elevation": 82.5,
+          "distanceFromHomeplate": 200.60000000000002,
+          "angle": -186.64374999999998,
+          "facing": -6.643749999999983,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rockies-146-27-14",
+          "sectionId": "146",
+          "row": "27",
+          "seatNumber": "14",
+          "position3D": {
+            "x": 22.46939294277413,
+            "y": 199.33761908075255,
+            "z": 82.5
+          },
+          "elevation": 82.5,
+          "distanceFromHomeplate": 200.59999999999997,
+          "angle": -186.43124999999998,
+          "facing": -6.431249999999977,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rockies-146-27-15",
+          "sectionId": "146",
+          "row": "27",
+          "seatNumber": "15",
+          "position3D": {
+            "x": 21.729931822928517,
+            "y": 199.41958294754022,
+            "z": 82.5
+          },
+          "elevation": 82.5,
+          "distanceFromHomeplate": 200.6,
+          "angle": -186.21874999999997,
+          "facing": -6.218749999999972,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rockies-146-27-16",
+          "sectionId": "146",
+          "row": "27",
+          "seatNumber": "16",
+          "position3D": {
+            "x": 20.99017179994788,
+            "y": 199.49880372525712,
+            "z": 82.5
+          },
+          "elevation": 82.5,
+          "distanceFromHomeplate": 200.59999999999997,
+          "angle": -186.00625,
+          "facing": -6.006249999999994,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        }
+      ],
+      "covered": false,
+      "hasAisleSeats": false,
+      "wheelchairRow": false
+    },
+    {
+      "rowNumber": "28",
+      "sectionId": "146",
+      "seatCount": 16,
+      "elevation": 85,
+      "depth": 203.39999999999998,
+      "rowSpacing": 36,
+      "seats": [
+        {
+          "id": "rockies-146-28-1",
+          "sectionId": "146",
+          "row": "28",
+          "seatNumber": "1",
+          "position3D": {
+            "x": 32.497931299062444,
+            "y": 200.787062484816,
+            "z": 85
+          },
+          "elevation": 85,
+          "distanceFromHomeplate": 203.39999999999995,
+          "angle": -189.19375,
+          "facing": -9.193749999999994,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rockies-146-28-2",
+          "sectionId": "146",
+          "row": "28",
+          "seatNumber": "2",
+          "position3D": {
+            "x": 31.753025486998972,
+            "y": 200.90621038788717,
+            "z": 85
+          },
+          "elevation": 85,
+          "distanceFromHomeplate": 203.39999999999998,
+          "angle": -188.98125,
+          "facing": -8.981249999999989,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rockies-146-28-3",
+          "sectionId": "146",
+          "row": "28",
+          "seatNumber": "3",
+          "position3D": {
+            "x": 31.007682900493126,
+            "y": 201.0225947527851,
+            "z": 85
+          },
+          "elevation": 85,
+          "distanceFromHomeplate": 203.4,
+          "angle": -188.76874999999998,
+          "facing": -8.768749999999983,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rockies-146-28-4",
+          "sectionId": "146",
+          "row": "28",
+          "seatNumber": "4",
+          "position3D": {
+            "x": 30.261913792003742,
+            "y": 201.13621397860038,
+            "z": 85
+          },
+          "elevation": 85,
+          "distanceFromHomeplate": 203.39999999999998,
+          "angle": -188.55624999999998,
+          "facing": -8.556249999999977,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rockies-146-28-5",
+          "sectionId": "146",
+          "row": "28",
+          "seatNumber": "5",
+          "position3D": {
+            "x": 29.51572841985699,
+            "y": 201.2470665024592,
+            "z": 85
+          },
+          "elevation": 85,
+          "distanceFromHomeplate": 203.39999999999998,
+          "angle": -188.34374999999997,
+          "facing": -8.343749999999972,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rockies-146-28-6",
+          "sectionId": "146",
+          "row": "28",
+          "seatNumber": "6",
+          "position3D": {
+            "x": 28.769137048104376,
+            "y": 201.3551507995447,
+            "z": 85
+          },
+          "elevation": 85,
+          "distanceFromHomeplate": 203.4,
+          "angle": -188.13125,
+          "facing": -8.131249999999994,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rockies-146-28-7",
+          "sectionId": "146",
+          "row": "28",
+          "seatNumber": "7",
+          "position3D": {
+            "x": 28.022149946382406,
+            "y": 201.46046538311793,
+            "z": 85
+          },
+          "elevation": 85,
+          "distanceFromHomeplate": 203.4,
+          "angle": -187.91875,
+          "facing": -7.918749999999989,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rockies-146-28-8",
+          "sectionId": "146",
+          "row": "28",
+          "seatNumber": "8",
+          "position3D": {
+            "x": 27.27477738977137,
+            "y": 201.56300880453836,
+            "z": 85
+          },
+          "elevation": 85,
+          "distanceFromHomeplate": 203.39999999999998,
+          "angle": -187.70624999999998,
+          "facing": -7.706249999999983,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rockies-146-28-9",
+          "sectionId": "146",
+          "row": "28",
+          "seatNumber": "9",
+          "position3D": {
+            "x": 26.527029658653106,
+            "y": 201.6627796532839,
+            "z": 85
+          },
+          "elevation": 85,
+          "distanceFromHomeplate": 203.4,
+          "angle": -187.49374999999998,
+          "facing": -7.493749999999977,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rockies-146-28-10",
+          "sectionId": "146",
+          "row": "28",
+          "seatNumber": "10",
+          "position3D": {
+            "x": 25.778917038570448,
+            "y": 201.75977655697008,
+            "z": 85
+          },
+          "elevation": 85,
+          "distanceFromHomeplate": 203.39999999999998,
+          "angle": -187.28124999999997,
+          "facing": -7.281249999999972,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rockies-146-28-11",
+          "sectionId": "146",
+          "row": "28",
+          "seatNumber": "11",
+          "position3D": {
+            "x": 25.03044982008489,
+            "y": 201.8539981813692,
+            "z": 85
+          },
+          "elevation": 85,
+          "distanceFromHomeplate": 203.39999999999998,
+          "angle": -187.06875,
+          "facing": -7.068749999999994,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rockies-146-28-12",
+          "sectionId": "146",
+          "row": "28",
+          "seatNumber": "12",
+          "position3D": {
+            "x": 24.281638298635908,
+            "y": 201.94544323042845,
+            "z": 85
+          },
+          "elevation": 85,
+          "distanceFromHomeplate": 203.39999999999995,
+          "angle": -186.85625,
+          "facing": -6.856249999999989,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rockies-146-28-13",
+          "sectionId": "146",
+          "row": "28",
+          "seatNumber": "13",
+          "position3D": {
+            "x": 23.532492774399348,
+            "y": 202.03411044628785,
+            "z": 85
+          },
+          "elevation": 85,
+          "distanceFromHomeplate": 203.4,
+          "angle": -186.64374999999998,
+          "facing": -6.643749999999983,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rockies-146-28-14",
+          "sectionId": "146",
+          "row": "28",
+          "seatNumber": "14",
+          "position3D": {
+            "x": 22.783023552144854,
+            "y": 202.11999860929745,
+            "z": 85
+          },
+          "elevation": 85,
+          "distanceFromHomeplate": 203.39999999999998,
+          "angle": -186.43124999999998,
+          "facing": -6.431249999999977,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rockies-146-28-15",
+          "sectionId": "146",
+          "row": "28",
+          "seatNumber": "15",
+          "position3D": {
+            "x": 22.033240941095013,
+            "y": 202.2031065380343,
+            "z": 85
+          },
+          "elevation": 85,
+          "distanceFromHomeplate": 203.39999999999998,
+          "angle": -186.21874999999997,
+          "facing": -6.218749999999972,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rockies-146-28-16",
+          "sectionId": "146",
+          "row": "28",
+          "seatNumber": "16",
+          "position3D": {
+            "x": 21.283155254782642,
+            "y": 202.28343308931852,
+            "z": 85
+          },
+          "elevation": 85,
+          "distanceFromHomeplate": 203.39999999999995,
+          "angle": -186.00625,
+          "facing": -6.006249999999994,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        }
+      ],
+      "covered": false,
+      "hasAisleSeats": false,
+      "wheelchairRow": false
+    },
+    {
+      "rowNumber": "29",
+      "sectionId": "146",
+      "seatCount": 16,
+      "elevation": 87.5,
+      "depth": 206.2,
+      "rowSpacing": 36,
+      "seats": [
+        {
+          "id": "rockies-146-29-1",
+          "sectionId": "146",
+          "row": "29",
+          "seatNumber": "1",
+          "position3D": {
+            "x": 32.9452971183219,
+            "y": 203.55109284350573,
+            "z": 87.5
+          },
+          "elevation": 87.5,
+          "distanceFromHomeplate": 206.2,
+          "angle": -189.19375,
+          "facing": -9.193749999999994,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rockies-146-29-2",
+          "sectionId": "146",
+          "row": "29",
+          "seatNumber": "2",
+          "position3D": {
+            "x": 32.19013694896356,
+            "y": 203.6718809340331,
+            "z": 87.5
+          },
+          "elevation": 87.5,
+          "distanceFromHomeplate": 206.2,
+          "angle": -188.98125,
+          "facing": -8.981249999999989,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rockies-146-29-3",
+          "sectionId": "146",
+          "row": "29",
+          "seatNumber": "3",
+          "position3D": {
+            "x": 31.434533992535314,
+            "y": 203.78986744358056,
+            "z": 87.5
+          },
+          "elevation": 87.5,
+          "distanceFromHomeplate": 206.2,
+          "angle": -188.76874999999998,
+          "facing": -8.768749999999983,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rockies-146-29-4",
+          "sectionId": "146",
+          "row": "29",
+          "seatNumber": "4",
+          "position3D": {
+            "x": 30.67849864263113,
+            "y": 203.9050507492006,
+            "z": 87.5
+          },
+          "elevation": 87.5,
+          "distanceFromHomeplate": 206.19999999999996,
+          "angle": -188.55624999999998,
+          "facing": -8.556249999999977,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rockies-146-29-5",
+          "sectionId": "146",
+          "row": "29",
+          "seatNumber": "5",
+          "position3D": {
+            "x": 29.92204129879308,
+            "y": 204.01742926650488,
+            "z": 87.5
+          },
+          "elevation": 87.5,
+          "distanceFromHomeplate": 206.20000000000002,
+          "angle": -188.34374999999997,
+          "facing": -8.343749999999972,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rockies-146-29-6",
+          "sectionId": "146",
+          "row": "29",
+          "seatNumber": "6",
+          "position3D": {
+            "x": 29.16517236636737,
+            "y": 204.12700144968593,
+            "z": 87.5
+          },
+          "elevation": 87.5,
+          "distanceFromHomeplate": 206.20000000000002,
+          "angle": -188.13125,
+          "facing": -8.131249999999994,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rockies-146-29-7",
+          "sectionId": "146",
+          "row": "29",
+          "seatNumber": "7",
+          "position3D": {
+            "x": 28.407902256362103,
+            "y": 204.23376579153845,
+            "z": 87.5
+          },
+          "elevation": 87.5,
+          "distanceFromHomeplate": 206.20000000000002,
+          "angle": -187.91875,
+          "facing": -7.918749999999989,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rockies-146-29-8",
+          "sectionId": "146",
+          "row": "29",
+          "seatNumber": "8",
+          "position3D": {
+            "x": 27.650241385304113,
+            "y": 204.33772082347988,
+            "z": 87.5
+          },
+          "elevation": 87.5,
+          "distanceFromHomeplate": 206.19999999999996,
+          "angle": -187.70624999999998,
+          "facing": -7.706249999999983,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rockies-146-29-9",
+          "sectionId": "146",
+          "row": "29",
+          "seatNumber": "9",
+          "position3D": {
+            "x": 26.892200175094743,
+            "y": 204.438865115571,
+            "z": 87.5
+          },
+          "elevation": 87.5,
+          "distanceFromHomeplate": 206.2,
+          "angle": -187.49374999999998,
+          "facing": -7.493749999999977,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rockies-146-29-10",
+          "sectionId": "146",
+          "row": "29",
+          "seatNumber": "10",
+          "position3D": {
+            "x": 26.133789052867385,
+            "y": 204.53719727653507,
+            "z": 87.5
+          },
+          "elevation": 87.5,
+          "distanceFromHomeplate": 206.2,
+          "angle": -187.28124999999997,
+          "facing": -7.281249999999972,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rockies-146-29-11",
+          "sectionId": "146",
+          "row": "29",
+          "seatNumber": "11",
+          "position3D": {
+            "x": 25.37501845084319,
+            "y": 204.63271595377745,
+            "z": 87.5
+          },
+          "elevation": 87.5,
+          "distanceFromHomeplate": 206.2,
+          "angle": -187.06875,
+          "facing": -7.068749999999994,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rockies-146-29-12",
+          "sectionId": "146",
+          "row": "29",
+          "seatNumber": "12",
+          "position3D": {
+            "x": 24.61589880618842,
+            "y": 204.7254198334039,
+            "z": 87.5
+          },
+          "elevation": 87.5,
+          "distanceFromHomeplate": 206.19999999999996,
+          "angle": -186.85625,
+          "facing": -6.856249999999989,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rockies-146-29-13",
+          "sectionId": "146",
+          "row": "29",
+          "seatNumber": "13",
+          "position3D": {
+            "x": 23.856440560870922,
+            "y": 204.81530764023873,
+            "z": 87.5
+          },
+          "elevation": 87.5,
+          "distanceFromHomeplate": 206.20000000000002,
+          "angle": -186.64374999999998,
+          "facing": -6.643749999999983,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rockies-146-29-14",
+          "sectionId": "146",
+          "row": "29",
+          "seatNumber": "14",
+          "position3D": {
+            "x": 23.096654161515584,
+            "y": 204.90237813784236,
+            "z": 87.5
+          },
+          "elevation": 87.5,
+          "distanceFromHomeplate": 206.2,
+          "angle": -186.43124999999998,
+          "facing": -6.431249999999977,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rockies-146-29-15",
+          "sectionId": "146",
+          "row": "29",
+          "seatNumber": "15",
+          "position3D": {
+            "x": 22.336550059261516,
+            "y": 204.9866301285284,
+            "z": 87.5
+          },
+          "elevation": 87.5,
+          "distanceFromHomeplate": 206.2,
+          "angle": -186.21874999999997,
+          "facing": -6.218749999999972,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rockies-146-29-16",
+          "sectionId": "146",
+          "row": "29",
+          "seatNumber": "16",
+          "position3D": {
+            "x": 21.57613870961741,
+            "y": 205.06806245337995,
+            "z": 87.5
+          },
+          "elevation": 87.5,
+          "distanceFromHomeplate": 206.19999999999996,
+          "angle": -186.00625,
+          "facing": -6.006249999999994,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        }
+      ],
+      "covered": false,
+      "hasAisleSeats": false,
+      "wheelchairRow": false
+    },
+    {
+      "rowNumber": "30",
+      "sectionId": "146",
+      "seatCount": 16,
+      "elevation": 90,
+      "depth": 209,
+      "rowSpacing": 36,
+      "seats": [
+        {
+          "id": "rockies-146-30-1",
+          "sectionId": "146",
+          "row": "30",
+          "seatNumber": "1",
+          "position3D": {
+            "x": 33.39266293758137,
+            "y": 206.31512320219542,
+            "z": 90
+          },
+          "elevation": 90,
+          "distanceFromHomeplate": 209,
+          "angle": -189.19375,
+          "facing": -9.193749999999994,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rockies-146-30-2",
+          "sectionId": "146",
+          "row": "30",
+          "seatNumber": "2",
+          "position3D": {
+            "x": 32.62724841092815,
+            "y": 206.43755148017908,
+            "z": 90
+          },
+          "elevation": 90,
+          "distanceFromHomeplate": 209.00000000000003,
+          "angle": -188.98125,
+          "facing": -8.981249999999989,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rockies-146-30-3",
+          "sectionId": "146",
+          "row": "30",
+          "seatNumber": "3",
+          "position3D": {
+            "x": 31.861385084577503,
+            "y": 206.55714013437606,
+            "z": 90
+          },
+          "elevation": 90,
+          "distanceFromHomeplate": 209,
+          "angle": -188.76874999999998,
+          "facing": -8.768749999999983,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rockies-146-30-4",
+          "sectionId": "146",
+          "row": "30",
+          "seatNumber": "4",
+          "position3D": {
+            "x": 31.09508349325852,
+            "y": 206.67388751980081,
+            "z": 90
+          },
+          "elevation": 90,
+          "distanceFromHomeplate": 209,
+          "angle": -188.55624999999998,
+          "facing": -8.556249999999977,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rockies-146-30-5",
+          "sectionId": "146",
+          "row": "30",
+          "seatNumber": "5",
+          "position3D": {
+            "x": 30.328354177729164,
+            "y": 206.78779203055055,
+            "z": 90
+          },
+          "elevation": 90,
+          "distanceFromHomeplate": 209.00000000000003,
+          "angle": -188.34374999999997,
+          "facing": -8.343749999999972,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rockies-146-30-6",
+          "sectionId": "146",
+          "row": "30",
+          "seatNumber": "6",
+          "position3D": {
+            "x": 29.56120768463036,
+            "y": 206.89885209982717,
+            "z": 90
+          },
+          "elevation": 90,
+          "distanceFromHomeplate": 209,
+          "angle": -188.13125,
+          "facing": -8.131249999999994,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rockies-146-30-7",
+          "sectionId": "146",
+          "row": "30",
+          "seatNumber": "7",
+          "position3D": {
+            "x": 28.793654566341804,
+            "y": 207.00706619995896,
+            "z": 90
+          },
+          "elevation": 90,
+          "distanceFromHomeplate": 209.00000000000003,
+          "angle": -187.91875,
+          "facing": -7.918749999999989,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rockies-146-30-8",
+          "sectionId": "146",
+          "row": "30",
+          "seatNumber": "8",
+          "position3D": {
+            "x": 28.025705380836857,
+            "y": 207.11243284242144,
+            "z": 90
+          },
+          "elevation": 90,
+          "distanceFromHomeplate": 209,
+          "angle": -187.70624999999998,
+          "facing": -7.706249999999983,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rockies-146-30-9",
+          "sectionId": "146",
+          "row": "30",
+          "seatNumber": "9",
+          "position3D": {
+            "x": 27.25737069153638,
+            "y": 207.2149505778581,
+            "z": 90
+          },
+          "elevation": 90,
+          "distanceFromHomeplate": 209,
+          "angle": -187.49374999999998,
+          "facing": -7.493749999999977,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rockies-146-30-10",
+          "sectionId": "146",
+          "row": "30",
+          "seatNumber": "10",
+          "position3D": {
+            "x": 26.488661067164326,
+            "y": 207.31461799610005,
+            "z": 90
+          },
+          "elevation": 90,
+          "distanceFromHomeplate": 209,
+          "angle": -187.28124999999997,
+          "facing": -7.281249999999972,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rockies-146-30-11",
+          "sectionId": "146",
+          "row": "30",
+          "seatNumber": "11",
+          "position3D": {
+            "x": 25.71958708160149,
+            "y": 207.41143372618566,
+            "z": 90
+          },
+          "elevation": 90,
+          "distanceFromHomeplate": 208.99999999999997,
+          "angle": -187.06875,
+          "facing": -7.068749999999994,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rockies-146-30-12",
+          "sectionId": "146",
+          "row": "30",
+          "seatNumber": "12",
+          "position3D": {
+            "x": 24.95015931374093,
+            "y": 207.50539643637933,
+            "z": 90
+          },
+          "elevation": 90,
+          "distanceFromHomeplate": 209,
+          "angle": -186.85625,
+          "facing": -6.856249999999989,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rockies-146-30-13",
+          "sectionId": "146",
+          "row": "30",
+          "seatNumber": "13",
+          "position3D": {
+            "x": 24.1803883473425,
+            "y": 207.5965048341896,
+            "z": 90
+          },
+          "elevation": 90,
+          "distanceFromHomeplate": 209,
+          "angle": -186.64374999999998,
+          "facing": -6.643749999999983,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rockies-146-30-14",
+          "sectionId": "146",
+          "row": "30",
+          "seatNumber": "14",
+          "position3D": {
+            "x": 23.41028477088631,
+            "y": 207.68475766638727,
+            "z": 90
+          },
+          "elevation": 90,
+          "distanceFromHomeplate": 209,
+          "angle": -186.43124999999998,
+          "facing": -6.431249999999977,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rockies-146-30-15",
+          "sectionId": "146",
+          "row": "30",
+          "seatNumber": "15",
+          "position3D": {
+            "x": 22.639859177428015,
+            "y": 207.77015371902246,
+            "z": 90
+          },
+          "elevation": 90,
+          "distanceFromHomeplate": 208.99999999999997,
+          "angle": -186.21874999999997,
+          "facing": -6.218749999999972,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rockies-146-30-16",
+          "sectionId": "146",
+          "row": "30",
+          "seatNumber": "16",
+          "position3D": {
+            "x": 21.86912216445218,
+            "y": 207.85269181744138,
+            "z": 90
+          },
+          "elevation": 90,
+          "distanceFromHomeplate": 209,
+          "angle": -186.00625,
+          "facing": -6.006249999999994,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        }
+      ],
+      "covered": false,
+      "hasAisleSeats": false,
+      "wheelchairRow": false
+    },
+    {
+      "rowNumber": "31",
+      "sectionId": "146",
+      "seatCount": 16,
+      "elevation": 92.5,
+      "depth": 211.8,
+      "rowSpacing": 36,
+      "seats": [
+        {
+          "id": "rockies-146-31-1",
+          "sectionId": "146",
+          "row": "31",
+          "seatNumber": "1",
+          "position3D": {
+            "x": 33.84002875684084,
+            "y": 209.07915356088515,
+            "z": 92.5
+          },
+          "elevation": 92.5,
+          "distanceFromHomeplate": 211.8,
+          "angle": -189.19375,
+          "facing": -9.193749999999994,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rockies-146-31-2",
+          "sectionId": "146",
+          "row": "31",
+          "seatNumber": "2",
+          "position3D": {
+            "x": 33.064359872892744,
+            "y": 209.20322202632502,
+            "z": 92.5
+          },
+          "elevation": 92.5,
+          "distanceFromHomeplate": 211.8,
+          "angle": -188.98125,
+          "facing": -8.981249999999989,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rockies-146-31-3",
+          "sectionId": "146",
+          "row": "31",
+          "seatNumber": "3",
+          "position3D": {
+            "x": 32.28823617661969,
+            "y": 209.32441282517152,
+            "z": 92.5
+          },
+          "elevation": 92.5,
+          "distanceFromHomeplate": 211.8,
+          "angle": -188.76874999999998,
+          "facing": -8.768749999999983,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rockies-146-31-4",
+          "sectionId": "146",
+          "row": "31",
+          "seatNumber": "4",
+          "position3D": {
+            "x": 31.51166834388591,
+            "y": 209.44272429040103,
+            "z": 92.5
+          },
+          "elevation": 92.5,
+          "distanceFromHomeplate": 211.8,
+          "angle": -188.55624999999998,
+          "facing": -8.556249999999977,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rockies-146-31-5",
+          "sectionId": "146",
+          "row": "31",
+          "seatNumber": "5",
+          "position3D": {
+            "x": 30.734667056665252,
+            "y": 209.5581547945962,
+            "z": 92.5
+          },
+          "elevation": 92.5,
+          "distanceFromHomeplate": 211.8,
+          "angle": -188.34374999999997,
+          "facing": -8.343749999999972,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rockies-146-31-6",
+          "sectionId": "146",
+          "row": "31",
+          "seatNumber": "6",
+          "position3D": {
+            "x": 29.957243002893353,
+            "y": 209.6707027499684,
+            "z": 92.5
+          },
+          "elevation": 92.5,
+          "distanceFromHomeplate": 211.80000000000004,
+          "angle": -188.13125,
+          "facing": -8.131249999999994,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rockies-146-31-7",
+          "sectionId": "146",
+          "row": "31",
+          "seatNumber": "7",
+          "position3D": {
+            "x": 29.179406876321504,
+            "y": 209.78036660837947,
+            "z": 92.5
+          },
+          "elevation": 92.5,
+          "distanceFromHomeplate": 211.80000000000004,
+          "angle": -187.91875,
+          "facing": -7.918749999999989,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rockies-146-31-8",
+          "sectionId": "146",
+          "row": "31",
+          "seatNumber": "8",
+          "position3D": {
+            "x": 28.4011693763696,
+            "y": 209.88714486136297,
+            "z": 92.5
+          },
+          "elevation": 92.5,
+          "distanceFromHomeplate": 211.79999999999998,
+          "angle": -187.70624999999998,
+          "facing": -7.706249999999983,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rockies-146-31-9",
+          "sectionId": "146",
+          "row": "31",
+          "seatNumber": "9",
+          "position3D": {
+            "x": 27.622541207978017,
+            "y": 209.99103604014522,
+            "z": 92.5
+          },
+          "elevation": 92.5,
+          "distanceFromHomeplate": 211.8,
+          "angle": -187.49374999999998,
+          "facing": -7.493749999999977,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rockies-146-31-10",
+          "sectionId": "146",
+          "row": "31",
+          "seatNumber": "10",
+          "position3D": {
+            "x": 26.843533081461267,
+            "y": 210.09203871566504,
+            "z": 92.5
+          },
+          "elevation": 92.5,
+          "distanceFromHomeplate": 211.8,
+          "angle": -187.28124999999997,
+          "facing": -7.281249999999972,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rockies-146-31-11",
+          "sectionId": "146",
+          "row": "31",
+          "seatNumber": "11",
+          "position3D": {
+            "x": 26.064155712359785,
+            "y": 210.1901514985939,
+            "z": 92.5
+          },
+          "elevation": 92.5,
+          "distanceFromHomeplate": 211.79999999999998,
+          "angle": -187.06875,
+          "facing": -7.068749999999994,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rockies-146-31-12",
+          "sectionId": "146",
+          "row": "31",
+          "seatNumber": "12",
+          "position3D": {
+            "x": 25.28441982129344,
+            "y": 210.28537303935474,
+            "z": 92.5
+          },
+          "elevation": 92.5,
+          "distanceFromHomeplate": 211.79999999999998,
+          "angle": -186.85625,
+          "facing": -6.856249999999989,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rockies-146-31-13",
+          "sectionId": "146",
+          "row": "31",
+          "seatNumber": "13",
+          "position3D": {
+            "x": 24.504336133814075,
+            "y": 210.37770202814048,
+            "z": 92.5
+          },
+          "elevation": 92.5,
+          "distanceFromHomeplate": 211.8,
+          "angle": -186.64374999999998,
+          "facing": -6.643749999999983,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rockies-146-31-14",
+          "sectionId": "146",
+          "row": "31",
+          "seatNumber": "14",
+          "position3D": {
+            "x": 23.723915380257036,
+            "y": 210.46713719493218,
+            "z": 92.5
+          },
+          "elevation": 92.5,
+          "distanceFromHomeplate": 211.8,
+          "angle": -186.43124999999998,
+          "facing": -6.431249999999977,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rockies-146-31-15",
+          "sectionId": "146",
+          "row": "31",
+          "seatNumber": "15",
+          "position3D": {
+            "x": 22.943168295594518,
+            "y": 210.55367730951656,
+            "z": 92.5
+          },
+          "elevation": 92.5,
+          "distanceFromHomeplate": 211.79999999999998,
+          "angle": -186.21874999999997,
+          "facing": -6.218749999999972,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rockies-146-31-16",
+          "sectionId": "146",
+          "row": "31",
+          "seatNumber": "16",
+          "position3D": {
+            "x": 22.162105619286944,
+            "y": 210.6373211815028,
+            "z": 92.5
+          },
+          "elevation": 92.5,
+          "distanceFromHomeplate": 211.79999999999998,
+          "angle": -186.00625,
+          "facing": -6.006249999999994,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        }
+      ],
+      "covered": false,
+      "hasAisleSeats": false,
+      "wheelchairRow": false
+    },
+    {
+      "rowNumber": "32",
+      "sectionId": "146",
+      "seatCount": 16,
+      "elevation": 95,
+      "depth": 214.6,
+      "rowSpacing": 36,
+      "seats": [
+        {
+          "id": "rockies-146-32-1",
+          "sectionId": "146",
+          "row": "32",
+          "seatNumber": "1",
+          "position3D": {
+            "x": 34.2873945761003,
+            "y": 211.84318391957484,
+            "z": 95
+          },
+          "elevation": 95,
+          "distanceFromHomeplate": 214.6,
+          "angle": -189.19375,
+          "facing": -9.193749999999994,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rockies-146-32-2",
+          "sectionId": "146",
+          "row": "32",
+          "seatNumber": "2",
+          "position3D": {
+            "x": 33.50147133485733,
+            "y": 211.96889257247093,
+            "z": 95
+          },
+          "elevation": 95,
+          "distanceFromHomeplate": 214.59999999999997,
+          "angle": -188.98125,
+          "facing": -8.981249999999989,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rockies-146-32-3",
+          "sectionId": "146",
+          "row": "32",
+          "seatNumber": "3",
+          "position3D": {
+            "x": 32.715087268661875,
+            "y": 212.091685515967,
+            "z": 95
+          },
+          "elevation": 95,
+          "distanceFromHomeplate": 214.6,
+          "angle": -188.76874999999998,
+          "facing": -8.768749999999983,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rockies-146-32-4",
+          "sectionId": "146",
+          "row": "32",
+          "seatNumber": "4",
+          "position3D": {
+            "x": 31.928253194513292,
+            "y": 212.21156106100122,
+            "z": 95
+          },
+          "elevation": 95,
+          "distanceFromHomeplate": 214.6,
+          "angle": -188.55624999999998,
+          "facing": -8.556249999999977,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rockies-146-32-5",
+          "sectionId": "146",
+          "row": "32",
+          "seatNumber": "5",
+          "position3D": {
+            "x": 31.140979935601333,
+            "y": 212.32851755864183,
+            "z": 95
+          },
+          "elevation": 95,
+          "distanceFromHomeplate": 214.6,
+          "angle": -188.34374999999997,
+          "facing": -8.343749999999972,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rockies-146-32-6",
+          "sectionId": "146",
+          "row": "32",
+          "seatNumber": "6",
+          "position3D": {
+            "x": 30.353278321156342,
+            "y": 212.4425534001096,
+            "z": 95
+          },
+          "elevation": 95,
+          "distanceFromHomeplate": 214.6,
+          "angle": -188.13125,
+          "facing": -8.131249999999994,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rockies-146-32-7",
+          "sectionId": "146",
+          "row": "32",
+          "seatNumber": "7",
+          "position3D": {
+            "x": 29.5651591863012,
+            "y": 212.55366701679995,
+            "z": 95
+          },
+          "elevation": 95,
+          "distanceFromHomeplate": 214.6,
+          "angle": -187.91875,
+          "facing": -7.918749999999989,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rockies-146-32-8",
+          "sectionId": "146",
+          "row": "32",
+          "seatNumber": "8",
+          "position3D": {
+            "x": 28.776633371902342,
+            "y": 212.6618568803045,
+            "z": 95
+          },
+          "elevation": 95,
+          "distanceFromHomeplate": 214.6,
+          "angle": -187.70624999999998,
+          "facing": -7.706249999999983,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rockies-146-32-9",
+          "sectionId": "146",
+          "row": "32",
+          "seatNumber": "9",
+          "position3D": {
+            "x": 27.98771172441965,
+            "y": 212.7671215024323,
+            "z": 95
+          },
+          "elevation": 95,
+          "distanceFromHomeplate": 214.60000000000002,
+          "angle": -187.49374999999998,
+          "facing": -7.493749999999977,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rockies-146-32-10",
+          "sectionId": "146",
+          "row": "32",
+          "seatNumber": "10",
+          "position3D": {
+            "x": 27.1984050957582,
+            "y": 212.86945943523,
+            "z": 95
+          },
+          "elevation": 95,
+          "distanceFromHomeplate": 214.6,
+          "angle": -187.28124999999997,
+          "facing": -7.281249999999972,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rockies-146-32-11",
+          "sectionId": "146",
+          "row": "32",
+          "seatNumber": "11",
+          "position3D": {
+            "x": 26.40872434311808,
+            "y": 212.96886927100212,
+            "z": 95
+          },
+          "elevation": 95,
+          "distanceFromHomeplate": 214.59999999999997,
+          "angle": -187.06875,
+          "facing": -7.068749999999994,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rockies-146-32-12",
+          "sectionId": "146",
+          "row": "32",
+          "seatNumber": "12",
+          "position3D": {
+            "x": 25.618680328845947,
+            "y": 213.06534964233015,
+            "z": 95
+          },
+          "elevation": 95,
+          "distanceFromHomeplate": 214.59999999999997,
+          "angle": -186.85625,
+          "facing": -6.856249999999989,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rockies-146-32-13",
+          "sectionId": "146",
+          "row": "32",
+          "seatNumber": "13",
+          "position3D": {
+            "x": 24.828283920285646,
+            "y": 213.15889922209132,
+            "z": 95
+          },
+          "elevation": 95,
+          "distanceFromHomeplate": 214.6,
+          "angle": -186.64374999999998,
+          "facing": -6.643749999999983,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rockies-146-32-14",
+          "sectionId": "146",
+          "row": "32",
+          "seatNumber": "14",
+          "position3D": {
+            "x": 24.03754598962776,
+            "y": 213.24951672347706,
+            "z": 95
+          },
+          "elevation": 95,
+          "distanceFromHomeplate": 214.59999999999997,
+          "angle": -186.43124999999998,
+          "facing": -6.431249999999977,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rockies-146-32-15",
+          "sectionId": "146",
+          "row": "32",
+          "seatNumber": "15",
+          "position3D": {
+            "x": 23.246477413761014,
+            "y": 213.33720090001063,
+            "z": 95
+          },
+          "elevation": 95,
+          "distanceFromHomeplate": 214.6,
+          "angle": -186.21874999999997,
+          "facing": -6.218749999999972,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rockies-146-32-16",
+          "sectionId": "146",
+          "row": "32",
+          "seatNumber": "16",
+          "position3D": {
+            "x": 22.45508907412171,
+            "y": 213.42195054556421,
+            "z": 95
+          },
+          "elevation": 95,
+          "distanceFromHomeplate": 214.6,
+          "angle": -186.00625,
+          "facing": -6.006249999999994,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        }
+      ],
+      "covered": false,
+      "hasAisleSeats": false,
+      "wheelchairRow": false
+    },
+    {
+      "rowNumber": "33",
+      "sectionId": "146",
+      "seatCount": 16,
+      "elevation": 97.5,
+      "depth": 217.39999999999998,
+      "rowSpacing": 36,
+      "seats": [
+        {
+          "id": "rockies-146-33-1",
+          "sectionId": "146",
+          "row": "33",
+          "seatNumber": "1",
+          "position3D": {
+            "x": 34.73476039535976,
+            "y": 214.6072142782645,
+            "z": 97.5
+          },
+          "elevation": 97.5,
+          "distanceFromHomeplate": 217.39999999999998,
+          "angle": -189.19375,
+          "facing": -9.193749999999994,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rockies-146-33-2",
+          "sectionId": "146",
+          "row": "33",
+          "seatNumber": "2",
+          "position3D": {
+            "x": 33.93858279682191,
+            "y": 214.73456311861688,
+            "z": 97.5
+          },
+          "elevation": 97.5,
+          "distanceFromHomeplate": 217.39999999999998,
+          "angle": -188.98125,
+          "facing": -8.981249999999989,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rockies-146-33-3",
+          "sectionId": "146",
+          "row": "33",
+          "seatNumber": "3",
+          "position3D": {
+            "x": 33.14193836070406,
+            "y": 214.85895820676242,
+            "z": 97.5
+          },
+          "elevation": 97.5,
+          "distanceFromHomeplate": 217.39999999999998,
+          "angle": -188.76874999999998,
+          "facing": -8.768749999999983,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rockies-146-33-4",
+          "sectionId": "146",
+          "row": "33",
+          "seatNumber": "4",
+          "position3D": {
+            "x": 32.344838045140676,
+            "y": 214.9803978316014,
+            "z": 97.5
+          },
+          "elevation": 97.5,
+          "distanceFromHomeplate": 217.39999999999998,
+          "angle": -188.55624999999998,
+          "facing": -8.556249999999977,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rockies-146-33-5",
+          "sectionId": "146",
+          "row": "33",
+          "seatNumber": "5",
+          "position3D": {
+            "x": 31.547292814537414,
+            "y": 215.09888032268748,
+            "z": 97.5
+          },
+          "elevation": 97.5,
+          "distanceFromHomeplate": 217.39999999999998,
+          "angle": -188.34374999999997,
+          "facing": -8.343749999999972,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rockies-146-33-6",
+          "sectionId": "146",
+          "row": "33",
+          "seatNumber": "6",
+          "position3D": {
+            "x": 30.749313639419327,
+            "y": 215.2144040502508,
+            "z": 97.5
+          },
+          "elevation": 97.5,
+          "distanceFromHomeplate": 217.39999999999998,
+          "angle": -188.13125,
+          "facing": -8.131249999999994,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rockies-146-33-7",
+          "sectionId": "146",
+          "row": "33",
+          "seatNumber": "7",
+          "position3D": {
+            "x": 29.9509114962809,
+            "y": 215.32696742522043,
+            "z": 97.5
+          },
+          "elevation": 97.5,
+          "distanceFromHomeplate": 217.39999999999998,
+          "angle": -187.91875,
+          "facing": -7.918749999999989,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rockies-146-33-8",
+          "sectionId": "146",
+          "row": "33",
+          "seatNumber": "8",
+          "position3D": {
+            "x": 29.152097367435083,
+            "y": 215.436568899246,
+            "z": 97.5
+          },
+          "elevation": 97.5,
+          "distanceFromHomeplate": 217.39999999999995,
+          "angle": -187.70624999999998,
+          "facing": -7.706249999999983,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rockies-146-33-9",
+          "sectionId": "146",
+          "row": "33",
+          "seatNumber": "9",
+          "position3D": {
+            "x": 28.352882240861284,
+            "y": 215.54320696471936,
+            "z": 97.5
+          },
+          "elevation": 97.5,
+          "distanceFromHomeplate": 217.39999999999998,
+          "angle": -187.49374999999998,
+          "facing": -7.493749999999977,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rockies-146-33-10",
+          "sectionId": "146",
+          "row": "33",
+          "seatNumber": "10",
+          "position3D": {
+            "x": 27.553277110055138,
+            "y": 215.64688015479496,
+            "z": 97.5
+          },
+          "elevation": 97.5,
+          "distanceFromHomeplate": 217.39999999999998,
+          "angle": -187.28124999999997,
+          "facing": -7.281249999999972,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rockies-146-33-11",
+          "sectionId": "146",
+          "row": "33",
+          "seatNumber": "11",
+          "position3D": {
+            "x": 26.753292973876377,
+            "y": 215.74758704341033,
+            "z": 97.5
+          },
+          "elevation": 97.5,
+          "distanceFromHomeplate": 217.39999999999995,
+          "angle": -187.06875,
+          "facing": -7.068749999999994,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rockies-146-33-12",
+          "sectionId": "146",
+          "row": "33",
+          "seatNumber": "12",
+          "position3D": {
+            "x": 25.952940836398458,
+            "y": 215.84532624530556,
+            "z": 97.5
+          },
+          "elevation": 97.5,
+          "distanceFromHomeplate": 217.39999999999998,
+          "angle": -186.85625,
+          "facing": -6.856249999999989,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rockies-146-33-13",
+          "sectionId": "146",
+          "row": "33",
+          "seatNumber": "13",
+          "position3D": {
+            "x": 25.152231706757217,
+            "y": 215.94009641604217,
+            "z": 97.5
+          },
+          "elevation": 97.5,
+          "distanceFromHomeplate": 217.39999999999998,
+          "angle": -186.64374999999998,
+          "facing": -6.643749999999983,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rockies-146-33-14",
+          "sectionId": "146",
+          "row": "33",
+          "seatNumber": "14",
+          "position3D": {
+            "x": 24.351176598998485,
+            "y": 216.03189625202194,
+            "z": 97.5
+          },
+          "elevation": 97.5,
+          "distanceFromHomeplate": 217.39999999999995,
+          "angle": -186.43124999999998,
+          "facing": -6.431249999999977,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rockies-146-33-15",
+          "sectionId": "146",
+          "row": "33",
+          "seatNumber": "15",
+          "position3D": {
+            "x": 23.549786531927513,
+            "y": 216.1207244905047,
+            "z": 97.5
+          },
+          "elevation": 97.5,
+          "distanceFromHomeplate": 217.39999999999998,
+          "angle": -186.21874999999997,
+          "facing": -6.218749999999972,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rockies-146-33-16",
+          "sectionId": "146",
+          "row": "33",
+          "seatNumber": "16",
+          "position3D": {
+            "x": 22.748072528956474,
+            "y": 216.20657990962562,
+            "z": 97.5
+          },
+          "elevation": 97.5,
+          "distanceFromHomeplate": 217.39999999999998,
+          "angle": -186.00625,
+          "facing": -6.006249999999994,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        }
+      ],
+      "covered": false,
+      "hasAisleSeats": false,
+      "wheelchairRow": false
+    },
+    {
+      "rowNumber": "34",
+      "sectionId": "146",
+      "seatCount": 16,
+      "elevation": 100,
+      "depth": 220.2,
+      "rowSpacing": 36,
+      "seats": [
+        {
+          "id": "rockies-146-34-1",
+          "sectionId": "146",
+          "row": "34",
+          "seatNumber": "1",
+          "position3D": {
+            "x": 35.182126214619224,
+            "y": 217.37124463695423,
+            "z": 100
+          },
+          "elevation": 100,
+          "distanceFromHomeplate": 220.2,
+          "angle": -189.19375,
+          "facing": -9.193749999999994,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rockies-146-34-2",
+          "sectionId": "146",
+          "row": "34",
+          "seatNumber": "2",
+          "position3D": {
+            "x": 34.3756942587865,
+            "y": 217.50023366476282,
+            "z": 100
+          },
+          "elevation": 100,
+          "distanceFromHomeplate": 220.2,
+          "angle": -188.98125,
+          "facing": -8.981249999999989,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rockies-146-34-3",
+          "sectionId": "146",
+          "row": "34",
+          "seatNumber": "3",
+          "position3D": {
+            "x": 33.568789452746245,
+            "y": 217.62623089755792,
+            "z": 100
+          },
+          "elevation": 100,
+          "distanceFromHomeplate": 220.2,
+          "angle": -188.76874999999998,
+          "facing": -8.768749999999983,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rockies-146-34-4",
+          "sectionId": "146",
+          "row": "34",
+          "seatNumber": "4",
+          "position3D": {
+            "x": 32.761422895768064,
+            "y": 217.74923460220162,
+            "z": 100
+          },
+          "elevation": 100,
+          "distanceFromHomeplate": 220.2,
+          "angle": -188.55624999999998,
+          "facing": -8.556249999999977,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rockies-146-34-5",
+          "sectionId": "146",
+          "row": "34",
+          "seatNumber": "5",
+          "position3D": {
+            "x": 31.953605693473502,
+            "y": 217.86924308673315,
+            "z": 100
+          },
+          "elevation": 100,
+          "distanceFromHomeplate": 220.2,
+          "angle": -188.34374999999997,
+          "facing": -8.343749999999972,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rockies-146-34-6",
+          "sectionId": "146",
+          "row": "34",
+          "seatNumber": "6",
+          "position3D": {
+            "x": 31.14534895768232,
+            "y": 217.98625470039204,
+            "z": 100
+          },
+          "elevation": 100,
+          "distanceFromHomeplate": 220.2,
+          "angle": -188.13125,
+          "facing": -8.131249999999994,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rockies-146-34-7",
+          "sectionId": "146",
+          "row": "34",
+          "seatNumber": "7",
+          "position3D": {
+            "x": 30.3366638062606,
+            "y": 218.10026783364094,
+            "z": 100
+          },
+          "elevation": 100,
+          "distanceFromHomeplate": 220.2,
+          "angle": -187.91875,
+          "facing": -7.918749999999989,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rockies-146-34-8",
+          "sectionId": "146",
+          "row": "34",
+          "seatNumber": "8",
+          "position3D": {
+            "x": 29.527561362967827,
+            "y": 218.21128091818755,
+            "z": 100
+          },
+          "elevation": 100,
+          "distanceFromHomeplate": 220.2,
+          "angle": -187.70624999999998,
+          "facing": -7.706249999999983,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rockies-146-34-9",
+          "sectionId": "146",
+          "row": "34",
+          "seatNumber": "9",
+          "position3D": {
+            "x": 28.71805275730292,
+            "y": 218.31929242700647,
+            "z": 100
+          },
+          "elevation": 100,
+          "distanceFromHomeplate": 220.2,
+          "angle": -187.49374999999998,
+          "facing": -7.493749999999977,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rockies-146-34-10",
+          "sectionId": "146",
+          "row": "34",
+          "seatNumber": "10",
+          "position3D": {
+            "x": 27.90814912435208,
+            "y": 218.42430087435994,
+            "z": 100
+          },
+          "elevation": 100,
+          "distanceFromHomeplate": 220.19999999999996,
+          "angle": -187.28124999999997,
+          "facing": -7.281249999999972,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rockies-146-34-11",
+          "sectionId": "146",
+          "row": "34",
+          "seatNumber": "11",
+          "position3D": {
+            "x": 27.097861604634677,
+            "y": 218.52630481581858,
+            "z": 100
+          },
+          "elevation": 100,
+          "distanceFromHomeplate": 220.19999999999996,
+          "angle": -187.06875,
+          "facing": -7.068749999999994,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rockies-146-34-12",
+          "sectionId": "146",
+          "row": "34",
+          "seatNumber": "12",
+          "position3D": {
+            "x": 26.28720134395097,
+            "y": 218.62530284828097,
+            "z": 100
+          },
+          "elevation": 100,
+          "distanceFromHomeplate": 220.19999999999996,
+          "angle": -186.85625,
+          "facing": -6.856249999999989,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rockies-146-34-13",
+          "sectionId": "146",
+          "row": "34",
+          "seatNumber": "13",
+          "position3D": {
+            "x": 25.476179493228795,
+            "y": 218.72129360999307,
+            "z": 100
+          },
+          "elevation": 100,
+          "distanceFromHomeplate": 220.20000000000002,
+          "angle": -186.64374999999998,
+          "facing": -6.643749999999983,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rockies-146-34-14",
+          "sectionId": "146",
+          "row": "34",
+          "seatNumber": "14",
+          "position3D": {
+            "x": 24.66480720836921,
+            "y": 218.81427578056687,
+            "z": 100
+          },
+          "elevation": 100,
+          "distanceFromHomeplate": 220.2,
+          "angle": -186.43124999999998,
+          "facing": -6.431249999999977,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rockies-146-34-15",
+          "sectionId": "146",
+          "row": "34",
+          "seatNumber": "15",
+          "position3D": {
+            "x": 23.853095650094012,
+            "y": 218.9042480809988,
+            "z": 100
+          },
+          "elevation": 100,
+          "distanceFromHomeplate": 220.2,
+          "angle": -186.21874999999997,
+          "facing": -6.218749999999972,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rockies-146-34-16",
+          "sectionId": "146",
+          "row": "34",
+          "seatNumber": "16",
+          "position3D": {
+            "x": 23.041055983791242,
+            "y": 218.99120927368702,
+            "z": 100
+          },
+          "elevation": 100,
+          "distanceFromHomeplate": 220.19999999999996,
+          "angle": -186.00625,
+          "facing": -6.006249999999994,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        }
+      ],
+      "covered": false,
+      "hasAisleSeats": false,
+      "wheelchairRow": false
+    },
+    {
+      "rowNumber": "35",
+      "sectionId": "146",
+      "seatCount": 16,
+      "elevation": 102.5,
+      "depth": 223,
+      "rowSpacing": 36,
+      "seats": [
+        {
+          "id": "rockies-146-35-1",
+          "sectionId": "146",
+          "row": "35",
+          "seatNumber": "1",
+          "position3D": {
+            "x": 35.62949203387869,
+            "y": 220.13527499564393,
+            "z": 102.5
+          },
+          "elevation": 102.5,
+          "distanceFromHomeplate": 223,
+          "angle": -189.19375,
+          "facing": -9.193749999999994,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rockies-146-35-2",
+          "sectionId": "146",
+          "row": "35",
+          "seatNumber": "2",
+          "position3D": {
+            "x": 34.81280572075109,
+            "y": 220.2659042109088,
+            "z": 102.5
+          },
+          "elevation": 102.5,
+          "distanceFromHomeplate": 223.00000000000003,
+          "angle": -188.98125,
+          "facing": -8.981249999999989,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rockies-146-35-3",
+          "sectionId": "146",
+          "row": "35",
+          "seatNumber": "3",
+          "position3D": {
+            "x": 33.995640544788436,
+            "y": 220.39350358835338,
+            "z": 102.5
+          },
+          "elevation": 102.5,
+          "distanceFromHomeplate": 223,
+          "angle": -188.76874999999998,
+          "facing": -8.768749999999983,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rockies-146-35-4",
+          "sectionId": "146",
+          "row": "35",
+          "seatNumber": "4",
+          "position3D": {
+            "x": 33.17800774639545,
+            "y": 220.51807137280184,
+            "z": 102.5
+          },
+          "elevation": 102.5,
+          "distanceFromHomeplate": 223.00000000000003,
+          "angle": -188.55624999999998,
+          "facing": -8.556249999999977,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rockies-146-35-5",
+          "sectionId": "146",
+          "row": "35",
+          "seatNumber": "5",
+          "position3D": {
+            "x": 32.35991857240959,
+            "y": 220.6396058507788,
+            "z": 102.5
+          },
+          "elevation": 102.5,
+          "distanceFromHomeplate": 223,
+          "angle": -188.34374999999997,
+          "facing": -8.343749999999972,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rockies-146-35-6",
+          "sectionId": "146",
+          "row": "35",
+          "seatNumber": "6",
+          "position3D": {
+            "x": 31.541384275945312,
+            "y": 220.7581053505333,
+            "z": 102.5
+          },
+          "elevation": 102.5,
+          "distanceFromHomeplate": 223.00000000000003,
+          "angle": -188.13125,
+          "facing": -8.131249999999994,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rockies-146-35-7",
+          "sectionId": "146",
+          "row": "35",
+          "seatNumber": "7",
+          "position3D": {
+            "x": 30.7224161162403,
+            "y": 220.87356824206145,
+            "z": 102.5
+          },
+          "elevation": 102.5,
+          "distanceFromHomeplate": 222.99999999999997,
+          "angle": -187.91875,
+          "facing": -7.918749999999989,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rockies-146-35-8",
+          "sectionId": "146",
+          "row": "35",
+          "seatNumber": "8",
+          "position3D": {
+            "x": 29.90302535850057,
+            "y": 220.98599293712908,
+            "z": 102.5
+          },
+          "elevation": 102.5,
+          "distanceFromHomeplate": 222.99999999999997,
+          "angle": -187.70624999999998,
+          "facing": -7.706249999999983,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rockies-146-35-9",
+          "sectionId": "146",
+          "row": "35",
+          "seatNumber": "9",
+          "position3D": {
+            "x": 29.083223273744558,
+            "y": 221.0953778892936,
+            "z": 102.5
+          },
+          "elevation": 102.5,
+          "distanceFromHomeplate": 223.00000000000003,
+          "angle": -187.49374999999998,
+          "facing": -7.493749999999977,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rockies-146-35-10",
+          "sectionId": "146",
+          "row": "35",
+          "seatNumber": "10",
+          "position3D": {
+            "x": 28.26302113864902,
+            "y": 221.20172159392493,
+            "z": 102.5
+          },
+          "elevation": 102.5,
+          "distanceFromHomeplate": 223,
+          "angle": -187.28124999999997,
+          "facing": -7.281249999999972,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rockies-146-35-11",
+          "sectionId": "146",
+          "row": "35",
+          "seatNumber": "11",
+          "position3D": {
+            "x": 27.442430235392976,
+            "y": 221.30502258822682,
+            "z": 102.5
+          },
+          "elevation": 102.5,
+          "distanceFromHomeplate": 222.99999999999997,
+          "angle": -187.06875,
+          "facing": -7.068749999999994,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rockies-146-35-12",
+          "sectionId": "146",
+          "row": "35",
+          "seatNumber": "12",
+          "position3D": {
+            "x": 26.62146185150348,
+            "y": 221.4052794512564,
+            "z": 102.5
+          },
+          "elevation": 102.5,
+          "distanceFromHomeplate": 223,
+          "angle": -186.85625,
+          "facing": -6.856249999999989,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rockies-146-35-13",
+          "sectionId": "146",
+          "row": "35",
+          "seatNumber": "13",
+          "position3D": {
+            "x": 25.80012727970037,
+            "y": 221.50249080394394,
+            "z": 102.5
+          },
+          "elevation": 102.5,
+          "distanceFromHomeplate": 223.00000000000003,
+          "angle": -186.64374999999998,
+          "facing": -6.643749999999983,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rockies-146-35-14",
+          "sectionId": "146",
+          "row": "35",
+          "seatNumber": "14",
+          "position3D": {
+            "x": 24.978437817739938,
+            "y": 221.59665530911178,
+            "z": 102.5
+          },
+          "elevation": 102.5,
+          "distanceFromHomeplate": 223,
+          "angle": -186.43124999999998,
+          "facing": -6.431249999999977,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rockies-146-35-15",
+          "sectionId": "146",
+          "row": "35",
+          "seatNumber": "15",
+          "position3D": {
+            "x": 24.156404768260515,
+            "y": 221.68777167149287,
+            "z": 102.5
+          },
+          "elevation": 102.5,
+          "distanceFromHomeplate": 223,
+          "angle": -186.21874999999997,
+          "facing": -6.218749999999972,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rockies-146-35-16",
+          "sectionId": "146",
+          "row": "35",
+          "seatNumber": "16",
+          "position3D": {
+            "x": 23.334039438626007,
+            "y": 221.77583863774845,
+            "z": 102.5
+          },
+          "elevation": 102.5,
+          "distanceFromHomeplate": 222.99999999999997,
+          "angle": -186.00625,
+          "facing": -6.006249999999994,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        }
+      ],
+      "covered": false,
+      "hasAisleSeats": false,
+      "wheelchairRow": false
+    },
+    {
+      "rowNumber": "36",
+      "sectionId": "146",
+      "seatCount": 16,
+      "elevation": 105,
+      "depth": 225.8,
+      "rowSpacing": 36,
+      "seats": [
+        {
+          "id": "rockies-146-36-1",
+          "sectionId": "146",
+          "row": "36",
+          "seatNumber": "1",
+          "position3D": {
+            "x": 36.07685785313815,
+            "y": 222.89930535433365,
+            "z": 105
+          },
+          "elevation": 105,
+          "distanceFromHomeplate": 225.8,
+          "angle": -189.19375,
+          "facing": -9.193749999999994,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rockies-146-36-2",
+          "sectionId": "146",
+          "row": "36",
+          "seatNumber": "2",
+          "position3D": {
+            "x": 35.24991718271568,
+            "y": 223.03157475705473,
+            "z": 105
+          },
+          "elevation": 105,
+          "distanceFromHomeplate": 225.8,
+          "angle": -188.98125,
+          "facing": -8.981249999999989,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rockies-146-36-3",
+          "sectionId": "146",
+          "row": "36",
+          "seatNumber": "3",
+          "position3D": {
+            "x": 34.42249163683062,
+            "y": 223.16077627914888,
+            "z": 105
+          },
+          "elevation": 105,
+          "distanceFromHomeplate": 225.8,
+          "angle": -188.76874999999998,
+          "facing": -8.768749999999983,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rockies-146-36-4",
+          "sectionId": "146",
+          "row": "36",
+          "seatNumber": "4",
+          "position3D": {
+            "x": 33.594592597022846,
+            "y": 223.28690814340206,
+            "z": 105
+          },
+          "elevation": 105,
+          "distanceFromHomeplate": 225.80000000000004,
+          "angle": -188.55624999999998,
+          "facing": -8.556249999999977,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rockies-146-36-5",
+          "sectionId": "146",
+          "row": "36",
+          "seatNumber": "5",
+          "position3D": {
+            "x": 32.766231451345675,
+            "y": 223.40996861482446,
+            "z": 105
+          },
+          "elevation": 105,
+          "distanceFromHomeplate": 225.8,
+          "angle": -188.34374999999997,
+          "facing": -8.343749999999972,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rockies-146-36-6",
+          "sectionId": "146",
+          "row": "36",
+          "seatNumber": "6",
+          "position3D": {
+            "x": 31.937419594208304,
+            "y": 223.52995600067453,
+            "z": 105
+          },
+          "elevation": 105,
+          "distanceFromHomeplate": 225.80000000000004,
+          "angle": -188.13125,
+          "facing": -8.131249999999994,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rockies-146-36-7",
+          "sectionId": "146",
+          "row": "36",
+          "seatNumber": "7",
+          "position3D": {
+            "x": 31.10816842622,
+            "y": 223.646868650482,
+            "z": 105
+          },
+          "elevation": 105,
+          "distanceFromHomeplate": 225.80000000000004,
+          "angle": -187.91875,
+          "facing": -7.918749999999989,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rockies-146-36-8",
+          "sectionId": "146",
+          "row": "36",
+          "seatNumber": "8",
+          "position3D": {
+            "x": 30.278489354033315,
+            "y": 223.76070495607064,
+            "z": 105
+          },
+          "elevation": 105,
+          "distanceFromHomeplate": 225.8,
+          "angle": -187.70624999999998,
+          "facing": -7.706249999999983,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rockies-146-36-9",
+          "sectionId": "146",
+          "row": "36",
+          "seatNumber": "9",
+          "position3D": {
+            "x": 29.448393790186195,
+            "y": 223.87146335158067,
+            "z": 105
+          },
+          "elevation": 105,
+          "distanceFromHomeplate": 225.8,
+          "angle": -187.49374999999998,
+          "facing": -7.493749999999977,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rockies-146-36-10",
+          "sectionId": "146",
+          "row": "36",
+          "seatNumber": "10",
+          "position3D": {
+            "x": 28.617893152945957,
+            "y": 223.97914231348992,
+            "z": 105
+          },
+          "elevation": 105,
+          "distanceFromHomeplate": 225.8,
+          "angle": -187.28124999999997,
+          "facing": -7.281249999999972,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rockies-146-36-11",
+          "sectionId": "146",
+          "row": "36",
+          "seatNumber": "11",
+          "position3D": {
+            "x": 27.786998866151272,
+            "y": 224.08374036063506,
+            "z": 105
+          },
+          "elevation": 105,
+          "distanceFromHomeplate": 225.8,
+          "angle": -187.06875,
+          "facing": -7.068749999999994,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rockies-146-36-12",
+          "sectionId": "146",
+          "row": "36",
+          "seatNumber": "12",
+          "position3D": {
+            "x": 26.95572235905599,
+            "y": 224.18525605423184,
+            "z": 105
+          },
+          "elevation": 105,
+          "distanceFromHomeplate": 225.8,
+          "angle": -186.85625,
+          "facing": -6.856249999999989,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rockies-146-36-13",
+          "sectionId": "146",
+          "row": "36",
+          "seatNumber": "13",
+          "position3D": {
+            "x": 26.124075066171944,
+            "y": 224.28368799789482,
+            "z": 105
+          },
+          "elevation": 105,
+          "distanceFromHomeplate": 225.80000000000004,
+          "angle": -186.64374999999998,
+          "facing": -6.643749999999983,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rockies-146-36-14",
+          "sectionId": "146",
+          "row": "36",
+          "seatNumber": "14",
+          "position3D": {
+            "x": 25.292068427110664,
+            "y": 224.3790348376567,
+            "z": 105
+          },
+          "elevation": 105,
+          "distanceFromHomeplate": 225.8,
+          "angle": -186.43124999999998,
+          "facing": -6.431249999999977,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rockies-146-36-15",
+          "sectionId": "146",
+          "row": "36",
+          "seatNumber": "15",
+          "position3D": {
+            "x": 24.459713886427014,
+            "y": 224.47129526198697,
+            "z": 105
+          },
+          "elevation": 105,
+          "distanceFromHomeplate": 225.8,
+          "angle": -186.21874999999997,
+          "facing": -6.218749999999972,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rockies-146-36-16",
+          "sectionId": "146",
+          "row": "36",
+          "seatNumber": "16",
+          "position3D": {
+            "x": 23.627022893460776,
+            "y": 224.56046800180988,
+            "z": 105
+          },
+          "elevation": 105,
+          "distanceFromHomeplate": 225.8,
+          "angle": -186.00625,
+          "facing": -6.006249999999994,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        }
+      ],
+      "covered": false,
+      "hasAisleSeats": false,
+      "wheelchairRow": false
+    },
+    {
+      "rowNumber": "37",
+      "sectionId": "146",
+      "seatCount": 16,
+      "elevation": 107.5,
+      "depth": 228.6,
+      "rowSpacing": 36,
+      "seats": [
+        {
+          "id": "rockies-146-37-1",
+          "sectionId": "146",
+          "row": "37",
+          "seatNumber": "1",
+          "position3D": {
+            "x": 36.52422367239761,
+            "y": 225.66333571302332,
+            "z": 107.5
+          },
+          "elevation": 107.5,
+          "distanceFromHomeplate": 228.6,
+          "angle": -189.19375,
+          "facing": -9.193749999999994,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rockies-146-37-2",
+          "sectionId": "146",
+          "row": "37",
+          "seatNumber": "2",
+          "position3D": {
+            "x": 35.68702864468027,
+            "y": 225.79724530320064,
+            "z": 107.5
+          },
+          "elevation": 107.5,
+          "distanceFromHomeplate": 228.6,
+          "angle": -188.98125,
+          "facing": -8.981249999999989,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rockies-146-37-3",
+          "sectionId": "146",
+          "row": "37",
+          "seatNumber": "3",
+          "position3D": {
+            "x": 34.849342728872806,
+            "y": 225.9280489699443,
+            "z": 107.5
+          },
+          "elevation": 107.5,
+          "distanceFromHomeplate": 228.6,
+          "angle": -188.76874999999998,
+          "facing": -8.768749999999983,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rockies-146-37-4",
+          "sectionId": "146",
+          "row": "37",
+          "seatNumber": "4",
+          "position3D": {
+            "x": 34.011177447650226,
+            "y": 226.05574491400222,
+            "z": 107.5
+          },
+          "elevation": 107.5,
+          "distanceFromHomeplate": 228.6,
+          "angle": -188.55624999999998,
+          "facing": -8.556249999999977,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rockies-146-37-5",
+          "sectionId": "146",
+          "row": "37",
+          "seatNumber": "5",
+          "position3D": {
+            "x": 33.17254433028175,
+            "y": 226.1803313788701,
+            "z": 107.5
+          },
+          "elevation": 107.5,
+          "distanceFromHomeplate": 228.6,
+          "angle": -188.34374999999997,
+          "facing": -8.343749999999972,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rockies-146-37-6",
+          "sectionId": "146",
+          "row": "37",
+          "seatNumber": "6",
+          "position3D": {
+            "x": 32.333454912471296,
+            "y": 226.30180665081573,
+            "z": 107.5
+          },
+          "elevation": 107.5,
+          "distanceFromHomeplate": 228.60000000000002,
+          "angle": -188.13125,
+          "facing": -8.131249999999994,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rockies-146-37-7",
+          "sectionId": "146",
+          "row": "37",
+          "seatNumber": "7",
+          "position3D": {
+            "x": 31.493920736199698,
+            "y": 226.42016905890247,
+            "z": 107.5
+          },
+          "elevation": 107.5,
+          "distanceFromHomeplate": 228.60000000000002,
+          "angle": -187.91875,
+          "facing": -7.918749999999989,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rockies-146-37-8",
+          "sectionId": "146",
+          "row": "37",
+          "seatNumber": "8",
+          "position3D": {
+            "x": 30.653953349566056,
+            "y": 226.53541697501214,
+            "z": 107.5
+          },
+          "elevation": 107.5,
+          "distanceFromHomeplate": 228.6,
+          "angle": -187.70624999999998,
+          "facing": -7.706249999999983,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rockies-146-37-9",
+          "sectionId": "146",
+          "row": "37",
+          "seatNumber": "9",
+          "position3D": {
+            "x": 29.81356430662783,
+            "y": 226.64754881386776,
+            "z": 107.5
+          },
+          "elevation": 107.5,
+          "distanceFromHomeplate": 228.6,
+          "angle": -187.49374999999998,
+          "facing": -7.493749999999977,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rockies-146-37-10",
+          "sectionId": "146",
+          "row": "37",
+          "seatNumber": "10",
+          "position3D": {
+            "x": 28.972765167242894,
+            "y": 226.75656303305487,
+            "z": 107.5
+          },
+          "elevation": 107.5,
+          "distanceFromHomeplate": 228.6,
+          "angle": -187.28124999999997,
+          "facing": -7.281249999999972,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rockies-146-37-11",
+          "sectionId": "146",
+          "row": "37",
+          "seatNumber": "11",
+          "position3D": {
+            "x": 28.131567496909568,
+            "y": 226.86245813304328,
+            "z": 107.5
+          },
+          "elevation": 107.5,
+          "distanceFromHomeplate": 228.6,
+          "angle": -187.06875,
+          "facing": -7.068749999999994,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rockies-146-37-12",
+          "sectionId": "146",
+          "row": "37",
+          "seatNumber": "12",
+          "position3D": {
+            "x": 27.2899828666085,
+            "y": 226.96523265720722,
+            "z": 107.5
+          },
+          "elevation": 107.5,
+          "distanceFromHomeplate": 228.6,
+          "angle": -186.85625,
+          "facing": -6.856249999999989,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rockies-146-37-13",
+          "sectionId": "146",
+          "row": "37",
+          "seatNumber": "13",
+          "position3D": {
+            "x": 26.44802285264352,
+            "y": 227.06488519184566,
+            "z": 107.5
+          },
+          "elevation": 107.5,
+          "distanceFromHomeplate": 228.60000000000002,
+          "angle": -186.64374999999998,
+          "facing": -6.643749999999983,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rockies-146-37-14",
+          "sectionId": "146",
+          "row": "37",
+          "seatNumber": "14",
+          "position3D": {
+            "x": 25.60569903648139,
+            "y": 227.16141436620157,
+            "z": 107.5
+          },
+          "elevation": 107.5,
+          "distanceFromHomeplate": 228.6,
+          "angle": -186.43124999999998,
+          "facing": -6.431249999999977,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rockies-146-37-15",
+          "sectionId": "146",
+          "row": "37",
+          "seatNumber": "15",
+          "position3D": {
+            "x": 24.763023004593514,
+            "y": 227.25481885248104,
+            "z": 107.5
+          },
+          "elevation": 107.5,
+          "distanceFromHomeplate": 228.6,
+          "angle": -186.21874999999997,
+          "facing": -6.218749999999972,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rockies-146-37-16",
+          "sectionId": "146",
+          "row": "37",
+          "seatNumber": "16",
+          "position3D": {
+            "x": 23.92000634829554,
+            "y": 227.34509736587128,
+            "z": 107.5
+          },
+          "elevation": 107.5,
+          "distanceFromHomeplate": 228.6,
+          "angle": -186.00625,
+          "facing": -6.006249999999994,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        }
+      ],
+      "covered": false,
+      "hasAisleSeats": false,
+      "wheelchairRow": false
+    },
+    {
+      "rowNumber": "38",
+      "sectionId": "146",
+      "seatCount": 16,
+      "elevation": 110,
+      "depth": 231.39999999999998,
+      "rowSpacing": 36,
+      "seats": [
+        {
+          "id": "rockies-146-38-1",
+          "sectionId": "146",
+          "row": "38",
+          "seatNumber": "1",
+          "position3D": {
+            "x": 36.97158949165708,
+            "y": 228.427366071713,
+            "z": 110
+          },
+          "elevation": 110,
+          "distanceFromHomeplate": 231.39999999999998,
+          "angle": -189.19375,
+          "facing": -9.193749999999994,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rockies-146-38-2",
+          "sectionId": "146",
+          "row": "38",
+          "seatNumber": "2",
+          "position3D": {
+            "x": 36.12414010664485,
+            "y": 228.56291584934658,
+            "z": 110
+          },
+          "elevation": 110,
+          "distanceFromHomeplate": 231.39999999999998,
+          "angle": -188.98125,
+          "facing": -8.981249999999989,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rockies-146-38-3",
+          "sectionId": "146",
+          "row": "38",
+          "seatNumber": "3",
+          "position3D": {
+            "x": 35.27619382091499,
+            "y": 228.69532166073978,
+            "z": 110
+          },
+          "elevation": 110,
+          "distanceFromHomeplate": 231.39999999999998,
+          "angle": -188.76874999999998,
+          "facing": -8.768749999999983,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rockies-146-38-4",
+          "sectionId": "146",
+          "row": "38",
+          "seatNumber": "4",
+          "position3D": {
+            "x": 34.427762298277614,
+            "y": 228.8245816846024,
+            "z": 110
+          },
+          "elevation": 110,
+          "distanceFromHomeplate": 231.39999999999998,
+          "angle": -188.55624999999998,
+          "facing": -8.556249999999977,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rockies-146-38-5",
+          "sectionId": "146",
+          "row": "38",
+          "seatNumber": "5",
+          "position3D": {
+            "x": 33.57885720921784,
+            "y": 228.95069414291575,
+            "z": 110
+          },
+          "elevation": 110,
+          "distanceFromHomeplate": 231.4,
+          "angle": -188.34374999999997,
+          "facing": -8.343749999999972,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rockies-146-38-6",
+          "sectionId": "146",
+          "row": "38",
+          "seatNumber": "6",
+          "position3D": {
+            "x": 32.72949023073428,
+            "y": 229.07365730095694,
+            "z": 110
+          },
+          "elevation": 110,
+          "distanceFromHomeplate": 231.39999999999998,
+          "angle": -188.13125,
+          "facing": -8.131249999999994,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rockies-146-38-7",
+          "sectionId": "146",
+          "row": "38",
+          "seatNumber": "7",
+          "position3D": {
+            "x": 31.87967304617939,
+            "y": 229.19346946732296,
+            "z": 110
+          },
+          "elevation": 110,
+          "distanceFromHomeplate": 231.4,
+          "angle": -187.91875,
+          "facing": -7.918749999999989,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rockies-146-38-8",
+          "sectionId": "146",
+          "row": "38",
+          "seatNumber": "8",
+          "position3D": {
+            "x": 31.029417345098796,
+            "y": 229.31012899395367,
+            "z": 110
+          },
+          "elevation": 110,
+          "distanceFromHomeplate": 231.39999999999998,
+          "angle": -187.70624999999998,
+          "facing": -7.706249999999983,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rockies-146-38-9",
+          "sectionId": "146",
+          "row": "38",
+          "seatNumber": "9",
+          "position3D": {
+            "x": 30.178734823069462,
+            "y": 229.42363427615484,
+            "z": 110
+          },
+          "elevation": 110,
+          "distanceFromHomeplate": 231.4,
+          "angle": -187.49374999999998,
+          "facing": -7.493749999999977,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rockies-146-38-10",
+          "sectionId": "146",
+          "row": "38",
+          "seatNumber": "10",
+          "position3D": {
+            "x": 29.32763718153983,
+            "y": 229.53398375261983,
+            "z": 110
+          },
+          "elevation": 110,
+          "distanceFromHomeplate": 231.39999999999998,
+          "angle": -187.28124999999997,
+          "facing": -7.281249999999972,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rockies-146-38-11",
+          "sectionId": "146",
+          "row": "38",
+          "seatNumber": "11",
+          "position3D": {
+            "x": 28.476136127667864,
+            "y": 229.6411759054515,
+            "z": 110
+          },
+          "elevation": 110,
+          "distanceFromHomeplate": 231.39999999999998,
+          "angle": -187.06875,
+          "facing": -7.068749999999994,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rockies-146-38-12",
+          "sectionId": "146",
+          "row": "38",
+          "seatNumber": "12",
+          "position3D": {
+            "x": 27.624243374161008,
+            "y": 229.74520926018263,
+            "z": 110
+          },
+          "elevation": 110,
+          "distanceFromHomeplate": 231.39999999999998,
+          "angle": -186.85625,
+          "facing": -6.856249999999989,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rockies-146-38-13",
+          "sectionId": "146",
+          "row": "38",
+          "seatNumber": "13",
+          "position3D": {
+            "x": 26.77197063911509,
+            "y": 229.8460823857965,
+            "z": 110
+          },
+          "elevation": 110,
+          "distanceFromHomeplate": 231.4,
+          "angle": -186.64374999999998,
+          "facing": -6.643749999999983,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rockies-146-38-14",
+          "sectionId": "146",
+          "row": "38",
+          "seatNumber": "14",
+          "position3D": {
+            "x": 25.919329645852113,
+            "y": 229.94379389474645,
+            "z": 110
+          },
+          "elevation": 110,
+          "distanceFromHomeplate": 231.39999999999998,
+          "angle": -186.43124999999998,
+          "facing": -6.431249999999977,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rockies-146-38-15",
+          "sectionId": "146",
+          "row": "38",
+          "seatNumber": "15",
+          "position3D": {
+            "x": 25.06633212276001,
+            "y": 230.0383424429751,
+            "z": 110
+          },
+          "elevation": 110,
+          "distanceFromHomeplate": 231.39999999999998,
+          "angle": -186.21874999999997,
+          "facing": -6.218749999999972,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rockies-146-38-16",
+          "sectionId": "146",
+          "row": "38",
+          "seatNumber": "16",
+          "position3D": {
+            "x": 24.212989803130302,
+            "y": 230.12972672993268,
+            "z": 110
+          },
+          "elevation": 110,
+          "distanceFromHomeplate": 231.39999999999998,
+          "angle": -186.00625,
+          "facing": -6.006249999999994,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        }
+      ],
+      "covered": false,
+      "hasAisleSeats": false,
+      "wheelchairRow": false
+    },
+    {
+      "rowNumber": "39",
+      "sectionId": "146",
+      "seatCount": 16,
+      "elevation": 112.5,
+      "depth": 234.2,
+      "rowSpacing": 36,
+      "seats": [
+        {
+          "id": "rockies-146-39-1",
+          "sectionId": "146",
+          "row": "39",
+          "seatNumber": "1",
+          "position3D": {
+            "x": 37.41895531091654,
+            "y": 231.19139643040273,
+            "z": 112.5
+          },
+          "elevation": 112.5,
+          "distanceFromHomeplate": 234.2,
+          "angle": -189.19375,
+          "facing": -9.193749999999994,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rockies-146-39-2",
+          "sectionId": "146",
+          "row": "39",
+          "seatNumber": "2",
+          "position3D": {
+            "x": 36.561251568609435,
+            "y": 231.32858639549252,
+            "z": 112.5
+          },
+          "elevation": 112.5,
+          "distanceFromHomeplate": 234.2,
+          "angle": -188.98125,
+          "facing": -8.981249999999989,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rockies-146-39-3",
+          "sectionId": "146",
+          "row": "39",
+          "seatNumber": "3",
+          "position3D": {
+            "x": 35.70304491295718,
+            "y": 231.46259435153524,
+            "z": 112.5
+          },
+          "elevation": 112.5,
+          "distanceFromHomeplate": 234.2,
+          "angle": -188.76874999999998,
+          "facing": -8.768749999999983,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rockies-146-39-4",
+          "sectionId": "146",
+          "row": "39",
+          "seatNumber": "4",
+          "position3D": {
+            "x": 34.844347148905,
+            "y": 231.59341845520262,
+            "z": 112.5
+          },
+          "elevation": 112.5,
+          "distanceFromHomeplate": 234.2,
+          "angle": -188.55624999999998,
+          "facing": -8.556249999999977,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rockies-146-39-5",
+          "sectionId": "146",
+          "row": "39",
+          "seatNumber": "5",
+          "position3D": {
+            "x": 33.98517008815392,
+            "y": 231.7210569069614,
+            "z": 112.5
+          },
+          "elevation": 112.5,
+          "distanceFromHomeplate": 234.2,
+          "angle": -188.34374999999997,
+          "facing": -8.343749999999972,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rockies-146-39-6",
+          "sectionId": "146",
+          "row": "39",
+          "seatNumber": "6",
+          "position3D": {
+            "x": 33.125525548997274,
+            "y": 231.84550795109817,
+            "z": 112.5
+          },
+          "elevation": 112.5,
+          "distanceFromHomeplate": 234.2,
+          "angle": -188.13125,
+          "facing": -8.131249999999994,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rockies-146-39-7",
+          "sectionId": "146",
+          "row": "39",
+          "seatNumber": "7",
+          "position3D": {
+            "x": 32.26542535615909,
+            "y": 231.96676987574347,
+            "z": 112.5
+          },
+          "elevation": 112.5,
+          "distanceFromHomeplate": 234.2,
+          "angle": -187.91875,
+          "facing": -7.918749999999989,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rockies-146-39-8",
+          "sectionId": "146",
+          "row": "39",
+          "seatNumber": "8",
+          "position3D": {
+            "x": 31.40488134063154,
+            "y": 232.0848410128952,
+            "z": 112.5
+          },
+          "elevation": 112.5,
+          "distanceFromHomeplate": 234.19999999999996,
+          "angle": -187.70624999999998,
+          "facing": -7.706249999999983,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rockies-146-39-9",
+          "sectionId": "146",
+          "row": "39",
+          "seatNumber": "9",
+          "position3D": {
+            "x": 30.5439053395111,
+            "y": 232.19971973844196,
+            "z": 112.5
+          },
+          "elevation": 112.5,
+          "distanceFromHomeplate": 234.20000000000002,
+          "angle": -187.49374999999998,
+          "facing": -7.493749999999977,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rockies-146-39-10",
+          "sectionId": "146",
+          "row": "39",
+          "seatNumber": "10",
+          "position3D": {
+            "x": 29.68250919583677,
+            "y": 232.31140447218482,
+            "z": 112.5
+          },
+          "elevation": 112.5,
+          "distanceFromHomeplate": 234.19999999999996,
+          "angle": -187.28124999999997,
+          "facing": -7.281249999999972,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rockies-146-39-11",
+          "sectionId": "146",
+          "row": "39",
+          "seatNumber": "11",
+          "position3D": {
+            "x": 28.820704758426164,
+            "y": 232.41989367785973,
+            "z": 112.5
+          },
+          "elevation": 112.5,
+          "distanceFromHomeplate": 234.2,
+          "angle": -187.06875,
+          "facing": -7.068749999999994,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rockies-146-39-12",
+          "sectionId": "146",
+          "row": "39",
+          "seatNumber": "12",
+          "position3D": {
+            "x": 27.95850388171352,
+            "y": 232.52518586315807,
+            "z": 112.5
+          },
+          "elevation": 112.5,
+          "distanceFromHomeplate": 234.2,
+          "angle": -186.85625,
+          "facing": -6.856249999999989,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rockies-146-39-13",
+          "sectionId": "146",
+          "row": "39",
+          "seatNumber": "13",
+          "position3D": {
+            "x": 27.095918425586664,
+            "y": 232.62727957974738,
+            "z": 112.5
+          },
+          "elevation": 112.5,
+          "distanceFromHomeplate": 234.2,
+          "angle": -186.64374999999998,
+          "facing": -6.643749999999983,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rockies-146-39-14",
+          "sectionId": "146",
+          "row": "39",
+          "seatNumber": "14",
+          "position3D": {
+            "x": 26.23296025522284,
+            "y": 232.72617342329136,
+            "z": 112.5
+          },
+          "elevation": 112.5,
+          "distanceFromHomeplate": 234.19999999999996,
+          "angle": -186.43124999999998,
+          "facing": -6.431249999999977,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rockies-146-39-15",
+          "sectionId": "146",
+          "row": "39",
+          "seatNumber": "15",
+          "position3D": {
+            "x": 25.369641240926512,
+            "y": 232.82186603346918,
+            "z": 112.5
+          },
+          "elevation": 112.5,
+          "distanceFromHomeplate": 234.19999999999996,
+          "angle": -186.21874999999997,
+          "facing": -6.218749999999972,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rockies-146-39-16",
+          "sectionId": "146",
+          "row": "39",
+          "seatNumber": "16",
+          "position3D": {
+            "x": 24.50597325796507,
+            "y": 232.91435609399412,
+            "z": 112.5
+          },
+          "elevation": 112.5,
+          "distanceFromHomeplate": 234.2,
+          "angle": -186.00625,
+          "facing": -6.006249999999994,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        }
+      ],
+      "covered": false,
+      "hasAisleSeats": false,
+      "wheelchairRow": false
+    }
+  ],
+  "seatDistribution": {
+    "standard": 392,
+    "aisle": 56,
+    "wheelchair": 0,
+    "companion": 0,
+    "other": 0
+  }
+};
