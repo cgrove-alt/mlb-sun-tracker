@@ -1,0 +1,8189 @@
+/**
+ * 306 - twins
+ * Generated: 2025-10-23T15:06:02.223Z
+ * Total Seats: 307
+ * Total Rows: 14
+ */
+
+import type { SectionSeatingData } from '@/types/seat';
+
+export const section_306: SectionSeatingData = {
+  "sectionId": "306",
+  "sectionName": "306",
+  "stadiumId": "twins",
+  "totalSeats": 307,
+  "totalRows": 14,
+  "rows": [
+    {
+      "rowNumber": "A",
+      "sectionId": "306",
+      "seatCount": 22,
+      "elevation": 67.5,
+      "depth": 152.8,
+      "rowSpacing": 36,
+      "seats": [
+        {
+          "id": "twins-306-A-1",
+          "sectionId": "306",
+          "row": "A",
+          "seatNumber": "1",
+          "position3D": {
+            "x": -139.9935198474984,
+            "y": 61.23442169815988,
+            "z": 67.5
+          },
+          "elevation": 67.5,
+          "distanceFromHomeplate": 152.8,
+          "angle": -113.625,
+          "facing": 66.375,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "twins-306-A-2",
+          "sectionId": "306",
+          "row": "A",
+          "seatNumber": "2",
+          "position3D": {
+            "x": -140.25937193082927,
+            "y": 60.62300376564417,
+            "z": 67.5
+          },
+          "elevation": 67.5,
+          "distanceFromHomeplate": 152.8,
+          "angle": -113.375,
+          "facing": 66.625,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "twins-306-A-3",
+          "sectionId": "306",
+          "row": "A",
+          "seatNumber": "3",
+          "position3D": {
+            "x": -140.5225536778981,
+            "y": 60.01043165852293,
+            "z": 67.5
+          },
+          "elevation": 67.5,
+          "distanceFromHomeplate": 152.8,
+          "angle": -113.125,
+          "facing": 66.875,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "twins-306-A-4",
+          "sectionId": "306",
+          "row": "A",
+          "seatNumber": "4",
+          "position3D": {
+            "x": -140.78306007810386,
+            "y": 59.396717039285974,
+            "z": 67.5
+          },
+          "elevation": 67.5,
+          "distanceFromHomeplate": 152.8,
+          "angle": -112.875,
+          "facing": 67.125,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "twins-306-A-5",
+          "sectionId": "306",
+          "row": "A",
+          "seatNumber": "5",
+          "position3D": {
+            "x": -141.04088617178007,
+            "y": 58.781871592175236,
+            "z": 67.5
+          },
+          "elevation": 67.5,
+          "distanceFromHomeplate": 152.8,
+          "angle": -112.625,
+          "facing": 67.375,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "twins-306-A-6",
+          "sectionId": "306",
+          "row": "A",
+          "seatNumber": "6",
+          "position3D": {
+            "x": -141.29602705028967,
+            "y": 58.165907022961626,
+            "z": 67.5
+          },
+          "elevation": 67.5,
+          "distanceFromHomeplate": 152.8,
+          "angle": -112.375,
+          "facing": 67.625,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "twins-306-A-7",
+          "sectionId": "306",
+          "row": "A",
+          "seatNumber": "7",
+          "position3D": {
+            "x": -141.54847785611804,
+            "y": 57.54883505872265,
+            "z": 67.5
+          },
+          "elevation": 67.5,
+          "distanceFromHomeplate": 152.8,
+          "angle": -112.125,
+          "facing": 67.875,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "twins-306-A-8",
+          "sectionId": "306",
+          "row": "A",
+          "seatNumber": "8",
+          "position3D": {
+            "x": -141.79823378296584,
+            "y": 56.930667447618895,
+            "z": 67.5
+          },
+          "elevation": 67.5,
+          "distanceFromHomeplate": 152.8,
+          "angle": -111.875,
+          "facing": 68.125,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "twins-306-A-9",
+          "sectionId": "306",
+          "row": "A",
+          "seatNumber": "9",
+          "position3D": {
+            "x": -142.0452900758401,
+            "y": 56.31141595867084,
+            "z": 67.5
+          },
+          "elevation": 67.5,
+          "distanceFromHomeplate": 152.8,
+          "angle": -111.625,
+          "facing": 68.375,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "twins-306-A-10",
+          "sectionId": "306",
+          "row": "A",
+          "seatNumber": "10",
+          "position3D": {
+            "x": -142.28964203114518,
+            "y": 55.691092381534105,
+            "z": 67.5
+          },
+          "elevation": 67.5,
+          "distanceFromHomeplate": 152.8,
+          "angle": -111.375,
+          "facing": 68.625,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "twins-306-A-11",
+          "sectionId": "306",
+          "row": "A",
+          "seatNumber": "11",
+          "position3D": {
+            "x": -142.53128499677217,
+            "y": 55.069708526275264,
+            "z": 67.5
+          },
+          "elevation": 67.5,
+          "distanceFromHomeplate": 152.8,
+          "angle": -111.125,
+          "facing": 68.875,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "twins-306-A-12",
+          "sectionId": "306",
+          "row": "A",
+          "seatNumber": "12",
+          "position3D": {
+            "x": -142.77021437218716,
+            "y": 54.4472762231475,
+            "z": 67.5
+          },
+          "elevation": 67.5,
+          "distanceFromHomeplate": 152.79999999999998,
+          "angle": -110.875,
+          "facing": 69.125,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "twins-306-A-13",
+          "sectionId": "306",
+          "row": "A",
+          "seatNumber": "13",
+          "position3D": {
+            "x": -143.00642560851938,
+            "y": 53.823807322364495,
+            "z": 67.5
+          },
+          "elevation": 67.5,
+          "distanceFromHomeplate": 152.8,
+          "angle": -110.625,
+          "facing": 69.375,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "twins-306-A-14",
+          "sectionId": "306",
+          "row": "A",
+          "seatNumber": "14",
+          "position3D": {
+            "x": -143.23991420864732,
+            "y": 53.19931369387537,
+            "z": 67.5
+          },
+          "elevation": 67.5,
+          "distanceFromHomeplate": 152.79999999999998,
+          "angle": -110.375,
+          "facing": 69.625,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "twins-306-A-15",
+          "sectionId": "306",
+          "row": "A",
+          "seatNumber": "15",
+          "position3D": {
+            "x": -143.47067572728466,
+            "y": 52.573807227138666,
+            "z": 67.5
+          },
+          "elevation": 67.5,
+          "distanceFromHomeplate": 152.8,
+          "angle": -110.125,
+          "facing": 69.875,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "twins-306-A-16",
+          "sectionId": "306",
+          "row": "A",
+          "seatNumber": "16",
+          "position3D": {
+            "x": -143.69870577106465,
+            "y": 51.947299830895865,
+            "z": 67.5
+          },
+          "elevation": 67.5,
+          "distanceFromHomeplate": 152.8,
+          "angle": -109.875,
+          "facing": 70.125,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "twins-306-A-17",
+          "sectionId": "306",
+          "row": "A",
+          "seatNumber": "17",
+          "position3D": {
+            "x": -143.92399999862397,
+            "y": 51.319803432944774,
+            "z": 67.5
+          },
+          "elevation": 67.5,
+          "distanceFromHomeplate": 152.8,
+          "angle": -109.625,
+          "facing": 70.375,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "twins-306-A-18",
+          "sectionId": "306",
+          "row": "A",
+          "seatNumber": "18",
+          "position3D": {
+            "x": -144.1465541206853,
+            "y": 50.691329979912226,
+            "z": 67.5
+          },
+          "elevation": 67.5,
+          "distanceFromHomeplate": 152.8,
+          "angle": -109.375,
+          "facing": 70.625,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "twins-306-A-19",
+          "sectionId": "306",
+          "row": "A",
+          "seatNumber": "19",
+          "position3D": {
+            "x": -144.366363900139,
+            "y": 50.0618914370267,
+            "z": 67.5
+          },
+          "elevation": 67.5,
+          "distanceFromHomeplate": 152.8,
+          "angle": -109.125,
+          "facing": 70.875,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "twins-306-A-20",
+          "sectionId": "306",
+          "row": "A",
+          "seatNumber": "20",
+          "position3D": {
+            "x": -144.58342515212362,
+            "y": 49.43149978789101,
+            "z": 67.5
+          },
+          "elevation": 67.5,
+          "distanceFromHomeplate": 152.8,
+          "angle": -108.875,
+          "facing": 71.125,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "twins-306-A-21",
+          "sectionId": "306",
+          "row": "A",
+          "seatNumber": "21",
+          "position3D": {
+            "x": -144.79773374410587,
+            "y": 48.80016703425334,
+            "z": 67.5
+          },
+          "elevation": 67.5,
+          "distanceFromHomeplate": 152.8,
+          "angle": -108.625,
+          "facing": 71.375,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "twins-306-A-22",
+          "sectionId": "306",
+          "row": "A",
+          "seatNumber": "22",
+          "position3D": {
+            "x": -145.0092855959591,
+            "y": 48.16790519577913,
+            "z": 67.5
+          },
+          "elevation": 67.5,
+          "distanceFromHomeplate": 152.8,
+          "angle": -108.375,
+          "facing": 71.625,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        }
+      ],
+      "covered": false,
+      "hasAisleSeats": false,
+      "wheelchairRow": false
+    },
+    {
+      "rowNumber": "B",
+      "sectionId": "306",
+      "seatCount": 22,
+      "elevation": 70,
+      "depth": 155.6,
+      "rowSpacing": 36,
+      "seats": [
+        {
+          "id": "twins-306-B-1",
+          "sectionId": "306",
+          "row": "B",
+          "seatNumber": "1",
+          "position3D": {
+            "x": -142.55884612742636,
+            "y": 62.356518430848666,
+            "z": 70
+          },
+          "elevation": 70,
+          "distanceFromHomeplate": 155.6,
+          "angle": -113.625,
+          "facing": 66.375,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "twins-306-B-2",
+          "sectionId": "306",
+          "row": "B",
+          "seatNumber": "2",
+          "position3D": {
+            "x": -142.8295698457921,
+            "y": 61.73389650480518,
+            "z": 70
+          },
+          "elevation": 70,
+          "distanceFromHomeplate": 155.6,
+          "angle": -113.375,
+          "facing": 66.625,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "twins-306-B-3",
+          "sectionId": "306",
+          "row": "B",
+          "seatNumber": "3",
+          "position3D": {
+            "x": -143.09757429503233,
+            "y": 61.11009925435973,
+            "z": 70
+          },
+          "elevation": 70,
+          "distanceFromHomeplate": 155.59999999999997,
+          "angle": -113.125,
+          "facing": 66.875,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "twins-306-B-4",
+          "sectionId": "306",
+          "row": "B",
+          "seatNumber": "4",
+          "position3D": {
+            "x": -143.36285437272878,
+            "y": 60.48513855571267,
+            "z": 70
+          },
+          "elevation": 70,
+          "distanceFromHomeplate": 155.6,
+          "angle": -112.875,
+          "facing": 67.125,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "twins-306-B-5",
+          "sectionId": "306",
+          "row": "B",
+          "seatNumber": "5",
+          "position3D": {
+            "x": -143.62540502833102,
+            "y": 59.85902630721509,
+            "z": 70
+          },
+          "elevation": 70,
+          "distanceFromHomeplate": 155.6,
+          "angle": -112.625,
+          "facing": 67.375,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "twins-306-B-6",
+          "sectionId": "306",
+          "row": "B",
+          "seatNumber": "6",
+          "position3D": {
+            "x": -143.88522126325307,
+            "y": 59.231774429141545,
+            "z": 70
+          },
+          "elevation": 70,
+          "distanceFromHomeplate": 155.6,
+          "angle": -112.375,
+          "facing": 67.625,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "twins-306-B-7",
+          "sectionId": "306",
+          "row": "B",
+          "seatNumber": "7",
+          "position3D": {
+            "x": -144.14229813096836,
+            "y": 58.603394863463635,
+            "z": 70
+          },
+          "elevation": 70,
+          "distanceFromHomeplate": 155.6,
+          "angle": -112.125,
+          "facing": 67.875,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "twins-306-B-8",
+          "sectionId": "306",
+          "row": "B",
+          "seatNumber": "8",
+          "position3D": {
+            "x": -144.39663073710392,
+            "y": 57.973899573622376,
+            "z": 70
+          },
+          "elevation": 70,
+          "distanceFromHomeplate": 155.6,
+          "angle": -111.875,
+          "facing": 68.125,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "twins-306-B-9",
+          "sectionId": "306",
+          "row": "B",
+          "seatNumber": "9",
+          "position3D": {
+            "x": -144.64821423953347,
+            "y": 57.34330054430093,
+            "z": 70
+          },
+          "elevation": 70,
+          "distanceFromHomeplate": 155.6,
+          "angle": -111.625,
+          "facing": 68.375,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "twins-306-B-10",
+          "sectionId": "306",
+          "row": "B",
+          "seatNumber": "10",
+          "position3D": {
+            "x": -144.89704384846982,
+            "y": 56.71160978119572,
+            "z": 70
+          },
+          "elevation": 70,
+          "distanceFromHomeplate": 155.6,
+          "angle": -111.375,
+          "facing": 68.625,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "twins-306-B-11",
+          "sectionId": "306",
+          "row": "B",
+          "seatNumber": "11",
+          "position3D": {
+            "x": -145.14311482655594,
+            "y": 56.078839310788155,
+            "z": 70
+          },
+          "elevation": 70,
+          "distanceFromHomeplate": 155.6,
+          "angle": -111.125,
+          "facing": 68.875,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "twins-306-B-12",
+          "sectionId": "306",
+          "row": "B",
+          "seatNumber": "12",
+          "position3D": {
+            "x": -145.38642248895496,
+            "y": 55.445001180116165,
+            "z": 70
+          },
+          "elevation": 70,
+          "distanceFromHomeplate": 155.59999999999997,
+          "angle": -110.875,
+          "facing": 69.125,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "twins-306-B-13",
+          "sectionId": "306",
+          "row": "B",
+          "seatNumber": "13",
+          "position3D": {
+            "x": -145.62696220343986,
+            "y": 54.810107456543946,
+            "z": 70
+          },
+          "elevation": 70,
+          "distanceFromHomeplate": 155.59999999999997,
+          "angle": -110.625,
+          "facing": 69.375,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "twins-306-B-14",
+          "sectionId": "306",
+          "row": "B",
+          "seatNumber": "14",
+          "position3D": {
+            "x": -145.86472939048116,
+            "y": 54.17417022753276,
+            "z": 70
+          },
+          "elevation": 70,
+          "distanceFromHomeplate": 155.6,
+          "angle": -110.375,
+          "facing": 69.625,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "twins-306-B-15",
+          "sectionId": "306",
+          "row": "B",
+          "seatNumber": "15",
+          "position3D": {
+            "x": -146.09971952333436,
+            "y": 53.53720160041084,
+            "z": 70
+          },
+          "elevation": 70,
+          "distanceFromHomeplate": 155.6,
+          "angle": -110.125,
+          "facing": 69.875,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "twins-306-B-16",
+          "sectionId": "306",
+          "row": "B",
+          "seatNumber": "16",
+          "position3D": {
+            "x": -146.33192812812604,
+            "y": 52.89921370214264,
+            "z": 70
+          },
+          "elevation": 70,
+          "distanceFromHomeplate": 155.6,
+          "angle": -109.875,
+          "facing": 70.125,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "twins-306-B-17",
+          "sectionId": "306",
+          "row": "B",
+          "seatNumber": "17",
+          "position3D": {
+            "x": -146.56135078393905,
+            "y": 52.26021867909821,
+            "z": 70
+          },
+          "elevation": 70,
+          "distanceFromHomeplate": 155.59999999999997,
+          "angle": -109.625,
+          "facing": 70.375,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "twins-306-B-18",
+          "sectionId": "306",
+          "row": "B",
+          "seatNumber": "18",
+          "position3D": {
+            "x": -146.7879831228968,
+            "y": 51.620228696821606,
+            "z": 70
+          },
+          "elevation": 70,
+          "distanceFromHomeplate": 155.6,
+          "angle": -109.375,
+          "facing": 70.625,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "twins-306-B-19",
+          "sectionId": "306",
+          "row": "B",
+          "seatNumber": "19",
+          "position3D": {
+            "x": -147.01182083024622,
+            "y": 50.97925593979944,
+            "z": 70
+          },
+          "elevation": 70,
+          "distanceFromHomeplate": 155.59999999999997,
+          "angle": -109.125,
+          "facing": 70.875,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "twins-306-B-20",
+          "sectionId": "306",
+          "row": "B",
+          "seatNumber": "20",
+          "position3D": {
+            "x": -147.23285964444,
+            "y": 50.33731261122933,
+            "z": 70
+          },
+          "elevation": 70,
+          "distanceFromHomeplate": 155.6,
+          "angle": -108.875,
+          "facing": 71.125,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "twins-306-B-21",
+          "sectionId": "306",
+          "row": "B",
+          "seatNumber": "21",
+          "position3D": {
+            "x": -147.45109535721775,
+            "y": 49.694410932786774,
+            "z": 70
+          },
+          "elevation": 70,
+          "distanceFromHomeplate": 155.6,
+          "angle": -108.625,
+          "facing": 71.375,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "twins-306-B-22",
+          "sectionId": "306",
+          "row": "B",
+          "seatNumber": "22",
+          "position3D": {
+            "x": -147.6665238136861,
+            "y": 49.050563144392875,
+            "z": 70
+          },
+          "elevation": 70,
+          "distanceFromHomeplate": 155.6,
+          "angle": -108.375,
+          "facing": 71.625,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        }
+      ],
+      "covered": false,
+      "hasAisleSeats": false,
+      "wheelchairRow": false
+    },
+    {
+      "rowNumber": "C",
+      "sectionId": "306",
+      "seatCount": 22,
+      "elevation": 72.5,
+      "depth": 158.4,
+      "rowSpacing": 36,
+      "seats": [
+        {
+          "id": "twins-306-C-1",
+          "sectionId": "306",
+          "row": "C",
+          "seatNumber": "1",
+          "position3D": {
+            "x": -145.12417240735437,
+            "y": 63.47861516353746,
+            "z": 72.5
+          },
+          "elevation": 72.5,
+          "distanceFromHomeplate": 158.4,
+          "angle": -113.625,
+          "facing": 66.375,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "twins-306-C-2",
+          "sectionId": "306",
+          "row": "C",
+          "seatNumber": "2",
+          "position3D": {
+            "x": -145.39976776075494,
+            "y": 62.844789243966204,
+            "z": 72.5
+          },
+          "elevation": 72.5,
+          "distanceFromHomeplate": 158.4,
+          "angle": -113.375,
+          "facing": 66.625,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "twins-306-C-3",
+          "sectionId": "306",
+          "row": "C",
+          "seatNumber": "3",
+          "position3D": {
+            "x": -145.6725949121666,
+            "y": 62.209766850196544,
+            "z": 72.5
+          },
+          "elevation": 72.5,
+          "distanceFromHomeplate": 158.4,
+          "angle": -113.125,
+          "facing": 66.875,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "twins-306-C-4",
+          "sectionId": "306",
+          "row": "C",
+          "seatNumber": "4",
+          "position3D": {
+            "x": -145.94264866735372,
+            "y": 61.57356007213938,
+            "z": 72.5
+          },
+          "elevation": 72.5,
+          "distanceFromHomeplate": 158.4,
+          "angle": -112.875,
+          "facing": 67.125,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "twins-306-C-5",
+          "sectionId": "306",
+          "row": "C",
+          "seatNumber": "5",
+          "position3D": {
+            "x": -146.20992388488196,
+            "y": 60.93618102225496,
+            "z": 72.5
+          },
+          "elevation": 72.5,
+          "distanceFromHomeplate": 158.4,
+          "angle": -112.625,
+          "facing": 67.375,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "twins-306-C-6",
+          "sectionId": "306",
+          "row": "C",
+          "seatNumber": "6",
+          "position3D": {
+            "x": -146.4744154762165,
+            "y": 60.29764183532147,
+            "z": 72.5
+          },
+          "elevation": 72.5,
+          "distanceFromHomeplate": 158.4,
+          "angle": -112.375,
+          "facing": 67.625,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "twins-306-C-7",
+          "sectionId": "306",
+          "row": "C",
+          "seatNumber": "7",
+          "position3D": {
+            "x": -146.7361184058187,
+            "y": 59.65795466820463,
+            "z": 72.5
+          },
+          "elevation": 72.5,
+          "distanceFromHomeplate": 158.4,
+          "angle": -112.125,
+          "facing": 67.875,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "twins-306-C-8",
+          "sectionId": "306",
+          "row": "C",
+          "seatNumber": "8",
+          "position3D": {
+            "x": -146.99502769124206,
+            "y": 59.017131699625864,
+            "z": 72.5
+          },
+          "elevation": 72.5,
+          "distanceFromHomeplate": 158.4,
+          "angle": -111.875,
+          "facing": 68.125,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "twins-306-C-9",
+          "sectionId": "306",
+          "row": "C",
+          "seatNumber": "9",
+          "position3D": {
+            "x": -147.2511384032269,
+            "y": 58.375185129931026,
+            "z": 72.5
+          },
+          "elevation": 72.5,
+          "distanceFromHomeplate": 158.4,
+          "angle": -111.625,
+          "facing": 68.375,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "twins-306-C-10",
+          "sectionId": "306",
+          "row": "C",
+          "seatNumber": "10",
+          "position3D": {
+            "x": -147.50444566579446,
+            "y": 57.73212718085734,
+            "z": 72.5
+          },
+          "elevation": 72.5,
+          "distanceFromHomeplate": 158.4,
+          "angle": -111.375,
+          "facing": 68.625,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "twins-306-C-11",
+          "sectionId": "306",
+          "row": "C",
+          "seatNumber": "11",
+          "position3D": {
+            "x": -147.75494465633972,
+            "y": 57.08797009530106,
+            "z": 72.5
+          },
+          "elevation": 72.5,
+          "distanceFromHomeplate": 158.4,
+          "angle": -111.125,
+          "facing": 68.875,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "twins-306-C-12",
+          "sectionId": "306",
+          "row": "C",
+          "seatNumber": "12",
+          "position3D": {
+            "x": -148.00263060572283,
+            "y": 56.44272613708484,
+            "z": 72.5
+          },
+          "elevation": 72.5,
+          "distanceFromHomeplate": 158.4,
+          "angle": -110.875,
+          "facing": 69.125,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "twins-306-C-13",
+          "sectionId": "306",
+          "row": "C",
+          "seatNumber": "13",
+          "position3D": {
+            "x": -148.2474987983604,
+            "y": 55.796407590723405,
+            "z": 72.5
+          },
+          "elevation": 72.5,
+          "distanceFromHomeplate": 158.4,
+          "angle": -110.625,
+          "facing": 69.375,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "twins-306-C-14",
+          "sectionId": "306",
+          "row": "C",
+          "seatNumber": "14",
+          "position3D": {
+            "x": -148.48954457231503,
+            "y": 55.14902676119017,
+            "z": 72.5
+          },
+          "elevation": 72.5,
+          "distanceFromHomeplate": 158.4,
+          "angle": -110.375,
+          "facing": 69.625,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "twins-306-C-15",
+          "sectionId": "306",
+          "row": "C",
+          "seatNumber": "15",
+          "position3D": {
+            "x": -148.7287633193841,
+            "y": 54.50059597368301,
+            "z": 72.5
+          },
+          "elevation": 72.5,
+          "distanceFromHomeplate": 158.4,
+          "angle": -110.125,
+          "facing": 69.875,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "twins-306-C-16",
+          "sectionId": "306",
+          "row": "C",
+          "seatNumber": "16",
+          "position3D": {
+            "x": -148.96515048518742,
+            "y": 53.85112757338943,
+            "z": 72.5
+          },
+          "elevation": 72.5,
+          "distanceFromHomeplate": 158.4,
+          "angle": -109.875,
+          "facing": 70.125,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "twins-306-C-17",
+          "sectionId": "306",
+          "row": "C",
+          "seatNumber": "17",
+          "position3D": {
+            "x": -149.19870156925415,
+            "y": 53.20063392525165,
+            "z": 72.5
+          },
+          "elevation": 72.5,
+          "distanceFromHomeplate": 158.4,
+          "angle": -109.625,
+          "facing": 70.375,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "twins-306-C-18",
+          "sectionId": "306",
+          "row": "C",
+          "seatNumber": "18",
+          "position3D": {
+            "x": -149.4294121251083,
+            "y": 52.549127413731,
+            "z": 72.5
+          },
+          "elevation": 72.5,
+          "distanceFromHomeplate": 158.4,
+          "angle": -109.375,
+          "facing": 70.625,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "twins-306-C-19",
+          "sectionId": "306",
+          "row": "C",
+          "seatNumber": "19",
+          "position3D": {
+            "x": -149.6572777603535,
+            "y": 51.89662044257218,
+            "z": 72.5
+          },
+          "elevation": 72.5,
+          "distanceFromHomeplate": 158.4,
+          "angle": -109.125,
+          "facing": 70.875,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "twins-306-C-20",
+          "sectionId": "306",
+          "row": "C",
+          "seatNumber": "20",
+          "position3D": {
+            "x": -149.88229413675643,
+            "y": 51.243125434567645,
+            "z": 72.5
+          },
+          "elevation": 72.5,
+          "distanceFromHomeplate": 158.4,
+          "angle": -108.875,
+          "facing": 71.125,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "twins-306-C-21",
+          "sectionId": "306",
+          "row": "C",
+          "seatNumber": "21",
+          "position3D": {
+            "x": -150.10445697032964,
+            "y": 50.58865483132022,
+            "z": 72.5
+          },
+          "elevation": 72.5,
+          "distanceFromHomeplate": 158.4,
+          "angle": -108.625,
+          "facing": 71.375,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "twins-306-C-22",
+          "sectionId": "306",
+          "row": "C",
+          "seatNumber": "22",
+          "position3D": {
+            "x": -150.3237620314131,
+            "y": 49.93322109300664,
+            "z": 72.5
+          },
+          "elevation": 72.5,
+          "distanceFromHomeplate": 158.4,
+          "angle": -108.375,
+          "facing": 71.625,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        }
+      ],
+      "covered": false,
+      "hasAisleSeats": false,
+      "wheelchairRow": false
+    },
+    {
+      "rowNumber": "D",
+      "sectionId": "306",
+      "seatCount": 22,
+      "elevation": 75,
+      "depth": 161.2,
+      "rowSpacing": 36,
+      "seats": [
+        {
+          "id": "twins-306-D-1",
+          "sectionId": "306",
+          "row": "D",
+          "seatNumber": "1",
+          "position3D": {
+            "x": -147.68949868728234,
+            "y": 64.60071189622624,
+            "z": 75
+          },
+          "elevation": 75,
+          "distanceFromHomeplate": 161.2,
+          "angle": -113.625,
+          "facing": 66.375,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "twins-306-D-2",
+          "sectionId": "306",
+          "row": "D",
+          "seatNumber": "2",
+          "position3D": {
+            "x": -147.96996567571776,
+            "y": 63.955681983127214,
+            "z": 75
+          },
+          "elevation": 75,
+          "distanceFromHomeplate": 161.2,
+          "angle": -113.375,
+          "facing": 66.625,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "twins-306-D-3",
+          "sectionId": "306",
+          "row": "D",
+          "seatNumber": "3",
+          "position3D": {
+            "x": -148.24761552930084,
+            "y": 63.30943444603334,
+            "z": 75
+          },
+          "elevation": 75,
+          "distanceFromHomeplate": 161.2,
+          "angle": -113.125,
+          "facing": 66.875,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "twins-306-D-4",
+          "sectionId": "306",
+          "row": "D",
+          "seatNumber": "4",
+          "position3D": {
+            "x": -148.52244296197864,
+            "y": 62.66198158856608,
+            "z": 75
+          },
+          "elevation": 75,
+          "distanceFromHomeplate": 161.19999999999996,
+          "angle": -112.875,
+          "facing": 67.125,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "twins-306-D-5",
+          "sectionId": "306",
+          "row": "D",
+          "seatNumber": "5",
+          "position3D": {
+            "x": -148.7944427414329,
+            "y": 62.01333573729481,
+            "z": 75
+          },
+          "elevation": 75,
+          "distanceFromHomeplate": 161.2,
+          "angle": -112.625,
+          "facing": 67.375,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "twins-306-D-6",
+          "sectionId": "306",
+          "row": "D",
+          "seatNumber": "6",
+          "position3D": {
+            "x": -149.0636096891799,
+            "y": 61.36350924150139,
+            "z": 75
+          },
+          "elevation": 75,
+          "distanceFromHomeplate": 161.2,
+          "angle": -112.375,
+          "facing": 67.625,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "twins-306-D-7",
+          "sectionId": "306",
+          "row": "D",
+          "seatNumber": "7",
+          "position3D": {
+            "x": -149.32993868066902,
+            "y": 60.712514472945614,
+            "z": 75
+          },
+          "elevation": 75,
+          "distanceFromHomeplate": 161.2,
+          "angle": -112.125,
+          "facing": 67.875,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "twins-306-D-8",
+          "sectionId": "306",
+          "row": "D",
+          "seatNumber": "8",
+          "position3D": {
+            "x": -149.59342464538017,
+            "y": 60.060363825629345,
+            "z": 75
+          },
+          "elevation": 75,
+          "distanceFromHomeplate": 161.20000000000002,
+          "angle": -111.875,
+          "facing": 68.125,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "twins-306-D-9",
+          "sectionId": "306",
+          "row": "D",
+          "seatNumber": "9",
+          "position3D": {
+            "x": -149.85406256692028,
+            "y": 59.407069715561114,
+            "z": 75
+          },
+          "elevation": 75,
+          "distanceFromHomeplate": 161.2,
+          "angle": -111.625,
+          "facing": 68.375,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "twins-306-D-10",
+          "sectionId": "306",
+          "row": "D",
+          "seatNumber": "10",
+          "position3D": {
+            "x": -150.1118474831191,
+            "y": 58.752644580518954,
+            "z": 75
+          },
+          "elevation": 75,
+          "distanceFromHomeplate": 161.2,
+          "angle": -111.375,
+          "facing": 68.625,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "twins-306-D-11",
+          "sectionId": "306",
+          "row": "D",
+          "seatNumber": "11",
+          "position3D": {
+            "x": -150.3667744861235,
+            "y": 58.09710087981395,
+            "z": 75
+          },
+          "elevation": 75,
+          "distanceFromHomeplate": 161.2,
+          "angle": -111.125,
+          "facing": 68.875,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "twins-306-D-12",
+          "sectionId": "306",
+          "row": "D",
+          "seatNumber": "12",
+          "position3D": {
+            "x": -150.61883872249064,
+            "y": 57.44045109405351,
+            "z": 75
+          },
+          "elevation": 75,
+          "distanceFromHomeplate": 161.2,
+          "angle": -110.875,
+          "facing": 69.125,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "twins-306-D-13",
+          "sectionId": "306",
+          "row": "D",
+          "seatNumber": "13",
+          "position3D": {
+            "x": -150.86803539328088,
+            "y": 56.78270772490285,
+            "z": 75
+          },
+          "elevation": 75,
+          "distanceFromHomeplate": 161.19999999999996,
+          "angle": -110.625,
+          "facing": 69.375,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "twins-306-D-14",
+          "sectionId": "306",
+          "row": "D",
+          "seatNumber": "14",
+          "position3D": {
+            "x": -151.11435975414886,
+            "y": 56.123883294847566,
+            "z": 75
+          },
+          "elevation": 75,
+          "distanceFromHomeplate": 161.2,
+          "angle": -110.375,
+          "facing": 69.625,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "twins-306-D-15",
+          "sectionId": "306",
+          "row": "D",
+          "seatNumber": "15",
+          "position3D": {
+            "x": -151.3578071154338,
+            "y": 55.463990346955185,
+            "z": 75
+          },
+          "elevation": 75,
+          "distanceFromHomeplate": 161.2,
+          "angle": -110.125,
+          "facing": 69.875,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "twins-306-D-16",
+          "sectionId": "306",
+          "row": "D",
+          "seatNumber": "16",
+          "position3D": {
+            "x": -151.5983728422488,
+            "y": 54.80304144463621,
+            "z": 75
+          },
+          "elevation": 75,
+          "distanceFromHomeplate": 161.2,
+          "angle": -109.875,
+          "facing": 70.125,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "twins-306-D-17",
+          "sectionId": "306",
+          "row": "D",
+          "seatNumber": "17",
+          "position3D": {
+            "x": -151.83605235456923,
+            "y": 54.141049171405086,
+            "z": 75
+          },
+          "elevation": 75,
+          "distanceFromHomeplate": 161.2,
+          "angle": -109.625,
+          "facing": 70.375,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "twins-306-D-18",
+          "sectionId": "306",
+          "row": "D",
+          "seatNumber": "18",
+          "position3D": {
+            "x": -152.07084112731982,
+            "y": 53.47802613064038,
+            "z": 75
+          },
+          "elevation": 75,
+          "distanceFromHomeplate": 161.20000000000002,
+          "angle": -109.375,
+          "facing": 70.625,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "twins-306-D-19",
+          "sectionId": "306",
+          "row": "D",
+          "seatNumber": "19",
+          "position3D": {
+            "x": -152.30273469046074,
+            "y": 52.81398494534491,
+            "z": 75
+          },
+          "elevation": 75,
+          "distanceFromHomeplate": 161.19999999999996,
+          "angle": -109.125,
+          "facing": 70.875,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "twins-306-D-20",
+          "sectionId": "306",
+          "row": "D",
+          "seatNumber": "20",
+          "position3D": {
+            "x": -152.5317286290728,
+            "y": 52.14893825790596,
+            "z": 75
+          },
+          "elevation": 75,
+          "distanceFromHomeplate": 161.2,
+          "angle": -108.875,
+          "facing": 71.125,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "twins-306-D-21",
+          "sectionId": "306",
+          "row": "D",
+          "seatNumber": "21",
+          "position3D": {
+            "x": -152.75781858344152,
+            "y": 51.48289872985365,
+            "z": 75
+          },
+          "elevation": 75,
+          "distanceFromHomeplate": 161.2,
+          "angle": -108.625,
+          "facing": 71.375,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "twins-306-D-22",
+          "sectionId": "306",
+          "row": "D",
+          "seatNumber": "22",
+          "position3D": {
+            "x": -152.9810002491401,
+            "y": 50.815879041620384,
+            "z": 75
+          },
+          "elevation": 75,
+          "distanceFromHomeplate": 161.2,
+          "angle": -108.375,
+          "facing": 71.625,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        }
+      ],
+      "covered": false,
+      "hasAisleSeats": false,
+      "wheelchairRow": false
+    },
+    {
+      "rowNumber": "E",
+      "sectionId": "306",
+      "seatCount": 22,
+      "elevation": 77.5,
+      "depth": 164,
+      "rowSpacing": 36,
+      "seats": [
+        {
+          "id": "twins-306-E-1",
+          "sectionId": "306",
+          "row": "E",
+          "seatNumber": "1",
+          "position3D": {
+            "x": -150.2548249672103,
+            "y": 65.72280862891505,
+            "z": 77.5
+          },
+          "elevation": 77.5,
+          "distanceFromHomeplate": 164,
+          "angle": -113.625,
+          "facing": 66.375,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "twins-306-E-2",
+          "sectionId": "306",
+          "row": "E",
+          "seatNumber": "2",
+          "position3D": {
+            "x": -150.5401635906806,
+            "y": 65.06657472228824,
+            "z": 77.5
+          },
+          "elevation": 77.5,
+          "distanceFromHomeplate": 164,
+          "angle": -113.375,
+          "facing": 66.625,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "twins-306-E-3",
+          "sectionId": "306",
+          "row": "E",
+          "seatNumber": "3",
+          "position3D": {
+            "x": -150.82263614643512,
+            "y": 64.40910204187016,
+            "z": 77.5
+          },
+          "elevation": 77.5,
+          "distanceFromHomeplate": 164,
+          "angle": -113.125,
+          "facing": 66.875,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "twins-306-E-4",
+          "sectionId": "306",
+          "row": "E",
+          "seatNumber": "4",
+          "position3D": {
+            "x": -151.1022372566036,
+            "y": 63.75040310499279,
+            "z": 77.5
+          },
+          "elevation": 77.5,
+          "distanceFromHomeplate": 164,
+          "angle": -112.875,
+          "facing": 67.125,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "twins-306-E-5",
+          "sectionId": "306",
+          "row": "E",
+          "seatNumber": "5",
+          "position3D": {
+            "x": -151.37896159798385,
+            "y": 63.09049045233467,
+            "z": 77.5
+          },
+          "elevation": 77.5,
+          "distanceFromHomeplate": 164,
+          "angle": -112.625,
+          "facing": 67.375,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "twins-306-E-6",
+          "sectionId": "306",
+          "row": "E",
+          "seatNumber": "6",
+          "position3D": {
+            "x": -151.65280390214335,
+            "y": 62.42937664768132,
+            "z": 77.5
+          },
+          "elevation": 77.5,
+          "distanceFromHomeplate": 164,
+          "angle": -112.375,
+          "facing": 67.625,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "twins-306-E-7",
+          "sectionId": "306",
+          "row": "E",
+          "seatNumber": "7",
+          "position3D": {
+            "x": -151.92375895551936,
+            "y": 61.76707427768661,
+            "z": 77.5
+          },
+          "elevation": 77.5,
+          "distanceFromHomeplate": 164.00000000000003,
+          "angle": -112.125,
+          "facing": 67.875,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "twins-306-E-8",
+          "sectionId": "306",
+          "row": "E",
+          "seatNumber": "8",
+          "position3D": {
+            "x": -152.19182159951828,
+            "y": 61.10359595163284,
+            "z": 77.5
+          },
+          "elevation": 77.5,
+          "distanceFromHomeplate": 164,
+          "angle": -111.875,
+          "facing": 68.125,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "twins-306-E-9",
+          "sectionId": "306",
+          "row": "E",
+          "seatNumber": "9",
+          "position3D": {
+            "x": -152.4569867306137,
+            "y": 60.43895430119122,
+            "z": 77.5
+          },
+          "elevation": 77.5,
+          "distanceFromHomeplate": 164,
+          "angle": -111.625,
+          "facing": 68.375,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "twins-306-E-10",
+          "sectionId": "306",
+          "row": "E",
+          "seatNumber": "10",
+          "position3D": {
+            "x": -152.71924930044378,
+            "y": 59.773161980180575,
+            "z": 77.5
+          },
+          "elevation": 77.5,
+          "distanceFromHomeplate": 164,
+          "angle": -111.375,
+          "facing": 68.625,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "twins-306-E-11",
+          "sectionId": "306",
+          "row": "E",
+          "seatNumber": "11",
+          "position3D": {
+            "x": -152.9786043159073,
+            "y": 59.10623166432685,
+            "z": 77.5
+          },
+          "elevation": 77.5,
+          "distanceFromHomeplate": 164,
+          "angle": -111.125,
+          "facing": 68.875,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "twins-306-E-12",
+          "sectionId": "306",
+          "row": "E",
+          "seatNumber": "12",
+          "position3D": {
+            "x": -153.23504683925847,
+            "y": 58.43817605102218,
+            "z": 77.5
+          },
+          "elevation": 77.5,
+          "distanceFromHomeplate": 164,
+          "angle": -110.875,
+          "facing": 69.125,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "twins-306-E-13",
+          "sectionId": "306",
+          "row": "E",
+          "seatNumber": "13",
+          "position3D": {
+            "x": -153.48857198820141,
+            "y": 57.76900785908231,
+            "z": 77.5
+          },
+          "elevation": 77.5,
+          "distanceFromHomeplate": 164,
+          "angle": -110.625,
+          "facing": 69.375,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "twins-306-E-14",
+          "sectionId": "306",
+          "row": "E",
+          "seatNumber": "14",
+          "position3D": {
+            "x": -153.73917493598273,
+            "y": 57.09873982850497,
+            "z": 77.5
+          },
+          "elevation": 77.5,
+          "distanceFromHomeplate": 164,
+          "angle": -110.375,
+          "facing": 69.625,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "twins-306-E-15",
+          "sectionId": "306",
+          "row": "E",
+          "seatNumber": "15",
+          "position3D": {
+            "x": -153.98685091148351,
+            "y": 56.42738472022736,
+            "z": 77.5
+          },
+          "elevation": 77.5,
+          "distanceFromHomeplate": 164,
+          "angle": -110.125,
+          "facing": 69.875,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "twins-306-E-16",
+          "sectionId": "306",
+          "row": "E",
+          "seatNumber": "16",
+          "position3D": {
+            "x": -154.23159519931022,
+            "y": 55.754955315882995,
+            "z": 77.5
+          },
+          "elevation": 77.5,
+          "distanceFromHomeplate": 164,
+          "angle": -109.875,
+          "facing": 70.125,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "twins-306-E-17",
+          "sectionId": "306",
+          "row": "E",
+          "seatNumber": "17",
+          "position3D": {
+            "x": -154.47340313988437,
+            "y": 55.08146441755853,
+            "z": 77.5
+          },
+          "elevation": 77.5,
+          "distanceFromHomeplate": 164,
+          "angle": -109.625,
+          "facing": 70.375,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "twins-306-E-18",
+          "sectionId": "306",
+          "row": "E",
+          "seatNumber": "18",
+          "position3D": {
+            "x": -154.71227012953133,
+            "y": 54.40692484754977,
+            "z": 77.5
+          },
+          "elevation": 77.5,
+          "distanceFromHomeplate": 164,
+          "angle": -109.375,
+          "facing": 70.625,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "twins-306-E-19",
+          "sectionId": "306",
+          "row": "E",
+          "seatNumber": "19",
+          "position3D": {
+            "x": -154.94819162056802,
+            "y": 53.73134944811766,
+            "z": 77.5
+          },
+          "elevation": 77.5,
+          "distanceFromHomeplate": 164,
+          "angle": -109.125,
+          "facing": 70.875,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "twins-306-E-20",
+          "sectionId": "306",
+          "row": "E",
+          "seatNumber": "20",
+          "position3D": {
+            "x": -155.18116312138923,
+            "y": 53.05475108124428,
+            "z": 77.5
+          },
+          "elevation": 77.5,
+          "distanceFromHomeplate": 164.00000000000003,
+          "angle": -108.875,
+          "facing": 71.125,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "twins-306-E-21",
+          "sectionId": "306",
+          "row": "E",
+          "seatNumber": "21",
+          "position3D": {
+            "x": -155.4111801965534,
+            "y": 52.37714262838709,
+            "z": 77.5
+          },
+          "elevation": 77.5,
+          "distanceFromHomeplate": 164,
+          "angle": -108.625,
+          "facing": 71.375,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "twins-306-E-22",
+          "sectionId": "306",
+          "row": "E",
+          "seatNumber": "22",
+          "position3D": {
+            "x": -155.6382384668671,
+            "y": 51.69853699023414,
+            "z": 77.5
+          },
+          "elevation": 77.5,
+          "distanceFromHomeplate": 164,
+          "angle": -108.375,
+          "facing": 71.625,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        }
+      ],
+      "covered": false,
+      "hasAisleSeats": false,
+      "wheelchairRow": false
+    },
+    {
+      "rowNumber": "F",
+      "sectionId": "306",
+      "seatCount": 22,
+      "elevation": 80,
+      "depth": 166.8,
+      "rowSpacing": 36,
+      "seats": [
+        {
+          "id": "twins-306-F-1",
+          "sectionId": "306",
+          "row": "F",
+          "seatNumber": "1",
+          "position3D": {
+            "x": -152.8201512471383,
+            "y": 66.84490536160385,
+            "z": 80
+          },
+          "elevation": 80,
+          "distanceFromHomeplate": 166.8,
+          "angle": -113.625,
+          "facing": 66.375,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "twins-306-F-2",
+          "sectionId": "306",
+          "row": "F",
+          "seatNumber": "2",
+          "position3D": {
+            "x": -153.11036150564345,
+            "y": 66.17746746144925,
+            "z": 80
+          },
+          "elevation": 80,
+          "distanceFromHomeplate": 166.79999999999998,
+          "angle": -113.375,
+          "facing": 66.625,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "twins-306-F-3",
+          "sectionId": "306",
+          "row": "F",
+          "seatNumber": "3",
+          "position3D": {
+            "x": -153.3976567635694,
+            "y": 65.50876963770696,
+            "z": 80
+          },
+          "elevation": 80,
+          "distanceFromHomeplate": 166.8,
+          "angle": -113.125,
+          "facing": 66.875,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "twins-306-F-4",
+          "sectionId": "306",
+          "row": "F",
+          "seatNumber": "4",
+          "position3D": {
+            "x": -153.68203155122853,
+            "y": 64.8388246214195,
+            "z": 80
+          },
+          "elevation": 80,
+          "distanceFromHomeplate": 166.79999999999998,
+          "angle": -112.875,
+          "facing": 67.125,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "twins-306-F-5",
+          "sectionId": "306",
+          "row": "F",
+          "seatNumber": "5",
+          "position3D": {
+            "x": -153.9634804545348,
+            "y": 64.16764516737453,
+            "z": 80
+          },
+          "elevation": 80,
+          "distanceFromHomeplate": 166.79999999999998,
+          "angle": -112.625,
+          "facing": 67.375,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "twins-306-F-6",
+          "sectionId": "306",
+          "row": "F",
+          "seatNumber": "6",
+          "position3D": {
+            "x": -154.24199811510678,
+            "y": 63.49524405386125,
+            "z": 80
+          },
+          "elevation": 80,
+          "distanceFromHomeplate": 166.8,
+          "angle": -112.375,
+          "facing": 67.625,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "twins-306-F-7",
+          "sectionId": "306",
+          "row": "F",
+          "seatNumber": "7",
+          "position3D": {
+            "x": -154.5175792303697,
+            "y": 62.82163408242761,
+            "z": 80
+          },
+          "elevation": 80,
+          "distanceFromHomeplate": 166.80000000000004,
+          "angle": -112.125,
+          "facing": 67.875,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "twins-306-F-8",
+          "sectionId": "306",
+          "row": "F",
+          "seatNumber": "8",
+          "position3D": {
+            "x": -154.79021855365642,
+            "y": 62.14682807763633,
+            "z": 80
+          },
+          "elevation": 80,
+          "distanceFromHomeplate": 166.8,
+          "angle": -111.875,
+          "facing": 68.125,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "twins-306-F-9",
+          "sectionId": "306",
+          "row": "F",
+          "seatNumber": "9",
+          "position3D": {
+            "x": -155.0599108943071,
+            "y": 61.47083888682131,
+            "z": 80
+          },
+          "elevation": 80,
+          "distanceFromHomeplate": 166.8,
+          "angle": -111.625,
+          "facing": 68.375,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "twins-306-F-10",
+          "sectionId": "306",
+          "row": "F",
+          "seatNumber": "10",
+          "position3D": {
+            "x": -155.32665111776842,
+            "y": 60.7936793798422,
+            "z": 80
+          },
+          "elevation": 80,
+          "distanceFromHomeplate": 166.79999999999998,
+          "angle": -111.375,
+          "facing": 68.625,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "twins-306-F-11",
+          "sectionId": "306",
+          "row": "F",
+          "seatNumber": "11",
+          "position3D": {
+            "x": -155.5904341456911,
+            "y": 60.115362448839754,
+            "z": 80
+          },
+          "elevation": 80,
+          "distanceFromHomeplate": 166.8,
+          "angle": -111.125,
+          "facing": 68.875,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "twins-306-F-12",
+          "sectionId": "306",
+          "row": "F",
+          "seatNumber": "12",
+          "position3D": {
+            "x": -155.8512549560263,
+            "y": 59.43590100799086,
+            "z": 80
+          },
+          "elevation": 80,
+          "distanceFromHomeplate": 166.8,
+          "angle": -110.875,
+          "facing": 69.125,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "twins-306-F-13",
+          "sectionId": "306",
+          "row": "F",
+          "seatNumber": "13",
+          "position3D": {
+            "x": -156.10910858312192,
+            "y": 58.755307993261766,
+            "z": 80
+          },
+          "elevation": 80,
+          "distanceFromHomeplate": 166.79999999999998,
+          "angle": -110.625,
+          "facing": 69.375,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "twins-306-F-14",
+          "sectionId": "306",
+          "row": "F",
+          "seatNumber": "14",
+          "position3D": {
+            "x": -156.3639901178166,
+            "y": 58.07359636216238,
+            "z": 80
+          },
+          "elevation": 80,
+          "distanceFromHomeplate": 166.8,
+          "angle": -110.375,
+          "facing": 69.625,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "twins-306-F-15",
+          "sectionId": "306",
+          "row": "F",
+          "seatNumber": "15",
+          "position3D": {
+            "x": -156.61589470753324,
+            "y": 57.39077909349954,
+            "z": 80
+          },
+          "elevation": 80,
+          "distanceFromHomeplate": 166.8,
+          "angle": -110.125,
+          "facing": 69.875,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "twins-306-F-16",
+          "sectionId": "306",
+          "row": "F",
+          "seatNumber": "16",
+          "position3D": {
+            "x": -156.86481755637163,
+            "y": 56.706869187129776,
+            "z": 80
+          },
+          "elevation": 80,
+          "distanceFromHomeplate": 166.80000000000004,
+          "angle": -109.875,
+          "facing": 70.125,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "twins-306-F-17",
+          "sectionId": "306",
+          "row": "F",
+          "seatNumber": "17",
+          "position3D": {
+            "x": -157.11075392519948,
+            "y": 56.02187966371197,
+            "z": 80
+          },
+          "elevation": 80,
+          "distanceFromHomeplate": 166.80000000000004,
+          "angle": -109.625,
+          "facing": 70.375,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "twins-306-F-18",
+          "sectionId": "306",
+          "row": "F",
+          "seatNumber": "18",
+          "position3D": {
+            "x": -157.35369913174287,
+            "y": 55.33582356445916,
+            "z": 80
+          },
+          "elevation": 80,
+          "distanceFromHomeplate": 166.80000000000004,
+          "angle": -109.375,
+          "facing": 70.625,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "twins-306-F-19",
+          "sectionId": "306",
+          "row": "F",
+          "seatNumber": "19",
+          "position3D": {
+            "x": -157.59364855067528,
+            "y": 54.648713950890404,
+            "z": 80
+          },
+          "elevation": 80,
+          "distanceFromHomeplate": 166.79999999999998,
+          "angle": -109.125,
+          "facing": 70.875,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "twins-306-F-20",
+          "sectionId": "306",
+          "row": "F",
+          "seatNumber": "20",
+          "position3D": {
+            "x": -157.83059761370563,
+            "y": 53.9605639045826,
+            "z": 80
+          },
+          "elevation": 80,
+          "distanceFromHomeplate": 166.8,
+          "angle": -108.875,
+          "facing": 71.125,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "twins-306-F-21",
+          "sectionId": "306",
+          "row": "F",
+          "seatNumber": "21",
+          "position3D": {
+            "x": -158.06454180966531,
+            "y": 53.27138652692054,
+            "z": 80
+          },
+          "elevation": 80,
+          "distanceFromHomeplate": 166.8,
+          "angle": -108.625,
+          "facing": 71.375,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "twins-306-F-22",
+          "sectionId": "306",
+          "row": "F",
+          "seatNumber": "22",
+          "position3D": {
+            "x": -158.29547668459412,
+            "y": 52.581194938847894,
+            "z": 80
+          },
+          "elevation": 80,
+          "distanceFromHomeplate": 166.8,
+          "angle": -108.375,
+          "facing": 71.625,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        }
+      ],
+      "covered": false,
+      "hasAisleSeats": false,
+      "wheelchairRow": false
+    },
+    {
+      "rowNumber": "G",
+      "sectionId": "306",
+      "seatCount": 22,
+      "elevation": 82.5,
+      "depth": 169.6,
+      "rowSpacing": 36,
+      "seats": [
+        {
+          "id": "twins-306-G-1",
+          "sectionId": "306",
+          "row": "G",
+          "seatNumber": "1",
+          "position3D": {
+            "x": -155.38547752706629,
+            "y": 67.96700209429262,
+            "z": 82.5
+          },
+          "elevation": 82.5,
+          "distanceFromHomeplate": 169.6,
+          "angle": -113.625,
+          "facing": 66.375,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "twins-306-G-2",
+          "sectionId": "306",
+          "row": "G",
+          "seatNumber": "2",
+          "position3D": {
+            "x": -155.6805594206063,
+            "y": 67.28836020061027,
+            "z": 82.5
+          },
+          "elevation": 82.5,
+          "distanceFromHomeplate": 169.6,
+          "angle": -113.375,
+          "facing": 66.625,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "twins-306-G-3",
+          "sectionId": "306",
+          "row": "G",
+          "seatNumber": "3",
+          "position3D": {
+            "x": -155.97267738070363,
+            "y": 66.60843723354377,
+            "z": 82.5
+          },
+          "elevation": 82.5,
+          "distanceFromHomeplate": 169.6,
+          "angle": -113.125,
+          "facing": 66.875,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "twins-306-G-4",
+          "sectionId": "306",
+          "row": "G",
+          "seatNumber": "4",
+          "position3D": {
+            "x": -156.26182584585348,
+            "y": 65.9272461378462,
+            "z": 82.5
+          },
+          "elevation": 82.5,
+          "distanceFromHomeplate": 169.6,
+          "angle": -112.875,
+          "facing": 67.125,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "twins-306-G-5",
+          "sectionId": "306",
+          "row": "G",
+          "seatNumber": "5",
+          "position3D": {
+            "x": -156.54799931108573,
+            "y": 65.24479988241438,
+            "z": 82.5
+          },
+          "elevation": 82.5,
+          "distanceFromHomeplate": 169.6,
+          "angle": -112.625,
+          "facing": 67.375,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "twins-306-G-6",
+          "sectionId": "306",
+          "row": "G",
+          "seatNumber": "6",
+          "position3D": {
+            "x": -156.8311923280702,
+            "y": 64.56111146004116,
+            "z": 82.5
+          },
+          "elevation": 82.5,
+          "distanceFromHomeplate": 169.6,
+          "angle": -112.375,
+          "facing": 67.625,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "twins-306-G-7",
+          "sectionId": "306",
+          "row": "G",
+          "seatNumber": "7",
+          "position3D": {
+            "x": -157.11139950522,
+            "y": 63.87619388716859,
+            "z": 82.5
+          },
+          "elevation": 82.5,
+          "distanceFromHomeplate": 169.6,
+          "angle": -112.125,
+          "facing": 67.875,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "twins-306-G-8",
+          "sectionId": "306",
+          "row": "G",
+          "seatNumber": "8",
+          "position3D": {
+            "x": -157.38861550779453,
+            "y": 63.19006020363981,
+            "z": 82.5
+          },
+          "elevation": 82.5,
+          "distanceFromHomeplate": 169.60000000000002,
+          "angle": -111.875,
+          "facing": 68.125,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "twins-306-G-9",
+          "sectionId": "306",
+          "row": "G",
+          "seatNumber": "9",
+          "position3D": {
+            "x": -157.6628350580005,
+            "y": 62.5027234724514,
+            "z": 82.5
+          },
+          "elevation": 82.5,
+          "distanceFromHomeplate": 169.6,
+          "angle": -111.625,
+          "facing": 68.375,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "twins-306-G-10",
+          "sectionId": "306",
+          "row": "G",
+          "seatNumber": "10",
+          "position3D": {
+            "x": -157.93405293509306,
+            "y": 61.81419677950382,
+            "z": 82.5
+          },
+          "elevation": 82.5,
+          "distanceFromHomeplate": 169.6,
+          "angle": -111.375,
+          "facing": 68.625,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "twins-306-G-11",
+          "sectionId": "306",
+          "row": "G",
+          "seatNumber": "11",
+          "position3D": {
+            "x": -158.20226397547484,
+            "y": 61.124493233352645,
+            "z": 82.5
+          },
+          "elevation": 82.5,
+          "distanceFromHomeplate": 169.6,
+          "angle": -111.125,
+          "facing": 68.875,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "twins-306-G-12",
+          "sectionId": "306",
+          "row": "G",
+          "seatNumber": "12",
+          "position3D": {
+            "x": -158.46746307279412,
+            "y": 60.433625964959525,
+            "z": 82.5
+          },
+          "elevation": 82.5,
+          "distanceFromHomeplate": 169.6,
+          "angle": -110.875,
+          "facing": 69.125,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "twins-306-G-13",
+          "sectionId": "306",
+          "row": "G",
+          "seatNumber": "13",
+          "position3D": {
+            "x": -158.72964517804243,
+            "y": 59.74160812744122,
+            "z": 82.5
+          },
+          "elevation": 82.5,
+          "distanceFromHomeplate": 169.6,
+          "angle": -110.625,
+          "facing": 69.375,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "twins-306-G-14",
+          "sectionId": "306",
+          "row": "G",
+          "seatNumber": "14",
+          "position3D": {
+            "x": -158.9888052996504,
+            "y": 59.04845289581977,
+            "z": 82.5
+          },
+          "elevation": 82.5,
+          "distanceFromHomeplate": 169.59999999999997,
+          "angle": -110.375,
+          "facing": 69.625,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "twins-306-G-15",
+          "sectionId": "306",
+          "row": "G",
+          "seatNumber": "15",
+          "position3D": {
+            "x": -159.24493850358294,
+            "y": 58.354173466771705,
+            "z": 82.5
+          },
+          "elevation": 82.5,
+          "distanceFromHomeplate": 169.6,
+          "angle": -110.125,
+          "facing": 69.875,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "twins-306-G-16",
+          "sectionId": "306",
+          "row": "G",
+          "seatNumber": "16",
+          "position3D": {
+            "x": -159.498039913433,
+            "y": 57.65878305837656,
+            "z": 82.5
+          },
+          "elevation": 82.5,
+          "distanceFromHomeplate": 169.59999999999997,
+          "angle": -109.875,
+          "facing": 70.125,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "twins-306-G-17",
+          "sectionId": "306",
+          "row": "G",
+          "seatNumber": "17",
+          "position3D": {
+            "x": -159.74810471051455,
+            "y": 56.9622949098654,
+            "z": 82.5
+          },
+          "elevation": 82.5,
+          "distanceFromHomeplate": 169.6,
+          "angle": -109.625,
+          "facing": 70.375,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "twins-306-G-18",
+          "sectionId": "306",
+          "row": "G",
+          "seatNumber": "18",
+          "position3D": {
+            "x": -159.99512813395435,
+            "y": 56.26472228136854,
+            "z": 82.5
+          },
+          "elevation": 82.5,
+          "distanceFromHomeplate": 169.6,
+          "angle": -109.375,
+          "facing": 70.625,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "twins-306-G-19",
+          "sectionId": "306",
+          "row": "G",
+          "seatNumber": "19",
+          "position3D": {
+            "x": -160.23910548078254,
+            "y": 55.56607845366314,
+            "z": 82.5
+          },
+          "elevation": 82.5,
+          "distanceFromHomeplate": 169.6,
+          "angle": -109.125,
+          "facing": 70.875,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "twins-306-G-20",
+          "sectionId": "306",
+          "row": "G",
+          "seatNumber": "20",
+          "position3D": {
+            "x": -160.480032106022,
+            "y": 54.86637672792091,
+            "z": 82.5
+          },
+          "elevation": 82.5,
+          "distanceFromHomeplate": 169.6,
+          "angle": -108.875,
+          "facing": 71.125,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "twins-306-G-21",
+          "sectionId": "306",
+          "row": "G",
+          "seatNumber": "21",
+          "position3D": {
+            "x": -160.7179034227772,
+            "y": 54.16563042545397,
+            "z": 82.5
+          },
+          "elevation": 82.5,
+          "distanceFromHomeplate": 169.60000000000002,
+          "angle": -108.625,
+          "facing": 71.375,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "twins-306-G-22",
+          "sectionId": "306",
+          "row": "G",
+          "seatNumber": "22",
+          "position3D": {
+            "x": -160.9527149023211,
+            "y": 53.46385288746164,
+            "z": 82.5
+          },
+          "elevation": 82.5,
+          "distanceFromHomeplate": 169.6,
+          "angle": -108.375,
+          "facing": 71.625,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        }
+      ],
+      "covered": false,
+      "hasAisleSeats": false,
+      "wheelchairRow": false
+    },
+    {
+      "rowNumber": "1",
+      "sectionId": "306",
+      "seatCount": 22,
+      "elevation": 85,
+      "depth": 172.4,
+      "rowSpacing": 36,
+      "seats": [
+        {
+          "id": "twins-306-1-1",
+          "sectionId": "306",
+          "row": "1",
+          "seatNumber": "1",
+          "position3D": {
+            "x": -157.95080380699426,
+            "y": 69.08909882698143,
+            "z": 85
+          },
+          "elevation": 85,
+          "distanceFromHomeplate": 172.4,
+          "angle": -113.625,
+          "facing": 66.375,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "twins-306-1-2",
+          "sectionId": "306",
+          "row": "1",
+          "seatNumber": "2",
+          "position3D": {
+            "x": -158.25075733556915,
+            "y": 68.3992529397713,
+            "z": 85
+          },
+          "elevation": 85,
+          "distanceFromHomeplate": 172.4,
+          "angle": -113.375,
+          "facing": 66.625,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "twins-306-1-3",
+          "sectionId": "306",
+          "row": "1",
+          "seatNumber": "3",
+          "position3D": {
+            "x": -158.5476979978379,
+            "y": 67.70810482938059,
+            "z": 85
+          },
+          "elevation": 85,
+          "distanceFromHomeplate": 172.4,
+          "angle": -113.125,
+          "facing": 66.875,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "twins-306-1-4",
+          "sectionId": "306",
+          "row": "1",
+          "seatNumber": "4",
+          "position3D": {
+            "x": -158.84162014047843,
+            "y": 67.01566765427292,
+            "z": 85
+          },
+          "elevation": 85,
+          "distanceFromHomeplate": 172.4,
+          "angle": -112.875,
+          "facing": 67.125,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "twins-306-1-5",
+          "sectionId": "306",
+          "row": "1",
+          "seatNumber": "5",
+          "position3D": {
+            "x": -159.13251816763668,
+            "y": 66.32195459745425,
+            "z": 85
+          },
+          "elevation": 85,
+          "distanceFromHomeplate": 172.4,
+          "angle": -112.625,
+          "facing": 67.375,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "twins-306-1-6",
+          "sectionId": "306",
+          "row": "1",
+          "seatNumber": "6",
+          "position3D": {
+            "x": -159.42038654103362,
+            "y": 65.6269788662211,
+            "z": 85
+          },
+          "elevation": 85,
+          "distanceFromHomeplate": 172.4,
+          "angle": -112.375,
+          "facing": 67.625,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "twins-306-1-7",
+          "sectionId": "306",
+          "row": "1",
+          "seatNumber": "7",
+          "position3D": {
+            "x": -159.70521978007034,
+            "y": 64.93075369190959,
+            "z": 85
+          },
+          "elevation": 85,
+          "distanceFromHomeplate": 172.4,
+          "angle": -112.125,
+          "facing": 67.875,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "twins-306-1-8",
+          "sectionId": "306",
+          "row": "1",
+          "seatNumber": "8",
+          "position3D": {
+            "x": -159.98701246193264,
+            "y": 64.2332923296433,
+            "z": 85
+          },
+          "elevation": 85,
+          "distanceFromHomeplate": 172.4,
+          "angle": -111.875,
+          "facing": 68.125,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "twins-306-1-9",
+          "sectionId": "306",
+          "row": "1",
+          "seatNumber": "9",
+          "position3D": {
+            "x": -160.2657592216939,
+            "y": 63.534608058081496,
+            "z": 85
+          },
+          "elevation": 85,
+          "distanceFromHomeplate": 172.4,
+          "angle": -111.625,
+          "facing": 68.375,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "twins-306-1-10",
+          "sectionId": "306",
+          "row": "1",
+          "seatNumber": "10",
+          "position3D": {
+            "x": -160.54145475241774,
+            "y": 62.83471417916544,
+            "z": 85
+          },
+          "elevation": 85,
+          "distanceFromHomeplate": 172.4,
+          "angle": -111.375,
+          "facing": 68.625,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "twins-306-1-11",
+          "sectionId": "306",
+          "row": "1",
+          "seatNumber": "11",
+          "position3D": {
+            "x": -160.81409380525864,
+            "y": 62.13362401786554,
+            "z": 85
+          },
+          "elevation": 85,
+          "distanceFromHomeplate": 172.4,
+          "angle": -111.125,
+          "facing": 68.875,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "twins-306-1-12",
+          "sectionId": "306",
+          "row": "1",
+          "seatNumber": "12",
+          "position3D": {
+            "x": -161.08367118956195,
+            "y": 61.4313509219282,
+            "z": 85
+          },
+          "elevation": 85,
+          "distanceFromHomeplate": 172.4,
+          "angle": -110.875,
+          "facing": 69.125,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "twins-306-1-13",
+          "sectionId": "306",
+          "row": "1",
+          "seatNumber": "13",
+          "position3D": {
+            "x": -161.35018177296294,
+            "y": 60.72790826162068,
+            "z": 85
+          },
+          "elevation": 85,
+          "distanceFromHomeplate": 172.4,
+          "angle": -110.625,
+          "facing": 69.375,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "twins-306-1-14",
+          "sectionId": "306",
+          "row": "1",
+          "seatNumber": "14",
+          "position3D": {
+            "x": -161.61362048148428,
+            "y": 60.02330942947718,
+            "z": 85
+          },
+          "elevation": 85,
+          "distanceFromHomeplate": 172.4,
+          "angle": -110.375,
+          "facing": 69.625,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "twins-306-1-15",
+          "sectionId": "306",
+          "row": "1",
+          "seatNumber": "15",
+          "position3D": {
+            "x": -161.87398229963267,
+            "y": 59.317567840043885,
+            "z": 85
+          },
+          "elevation": 85,
+          "distanceFromHomeplate": 172.4,
+          "angle": -110.125,
+          "facing": 69.875,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "twins-306-1-16",
+          "sectionId": "306",
+          "row": "1",
+          "seatNumber": "16",
+          "position3D": {
+            "x": -162.1312622704944,
+            "y": 58.610696929623344,
+            "z": 85
+          },
+          "elevation": 85,
+          "distanceFromHomeplate": 172.4,
+          "angle": -109.875,
+          "facing": 70.125,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "twins-306-1-17",
+          "sectionId": "306",
+          "row": "1",
+          "seatNumber": "17",
+          "position3D": {
+            "x": -162.38545549582966,
+            "y": 57.90271015601884,
+            "z": 85
+          },
+          "elevation": 85,
+          "distanceFromHomeplate": 172.4,
+          "angle": -109.625,
+          "facing": 70.375,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "twins-306-1-18",
+          "sectionId": "306",
+          "row": "1",
+          "seatNumber": "18",
+          "position3D": {
+            "x": -162.63655713616586,
+            "y": 57.19362099827793,
+            "z": 85
+          },
+          "elevation": 85,
+          "distanceFromHomeplate": 172.4,
+          "angle": -109.375,
+          "facing": 70.625,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "twins-306-1-19",
+          "sectionId": "306",
+          "row": "1",
+          "seatNumber": "19",
+          "position3D": {
+            "x": -162.8845624108898,
+            "y": 56.48344295643588,
+            "z": 85
+          },
+          "elevation": 85,
+          "distanceFromHomeplate": 172.4,
+          "angle": -109.125,
+          "facing": 70.875,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "twins-306-1-20",
+          "sectionId": "306",
+          "row": "1",
+          "seatNumber": "20",
+          "position3D": {
+            "x": -163.12946659833844,
+            "y": 55.77218955125923,
+            "z": 85
+          },
+          "elevation": 85,
+          "distanceFromHomeplate": 172.40000000000003,
+          "angle": -108.875,
+          "facing": 71.125,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "twins-306-1-21",
+          "sectionId": "306",
+          "row": "1",
+          "seatNumber": "21",
+          "position3D": {
+            "x": -163.37126503588908,
+            "y": 55.05987432398741,
+            "z": 85
+          },
+          "elevation": 85,
+          "distanceFromHomeplate": 172.4,
+          "angle": -108.625,
+          "facing": 71.375,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "twins-306-1-22",
+          "sectionId": "306",
+          "row": "1",
+          "seatNumber": "22",
+          "position3D": {
+            "x": -163.60995312004812,
+            "y": 54.3465108360754,
+            "z": 85
+          },
+          "elevation": 85,
+          "distanceFromHomeplate": 172.4,
+          "angle": -108.375,
+          "facing": 71.625,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        }
+      ],
+      "covered": false,
+      "hasAisleSeats": false,
+      "wheelchairRow": false
+    },
+    {
+      "rowNumber": "2",
+      "sectionId": "306",
+      "seatCount": 22,
+      "elevation": 87.5,
+      "depth": 175.2,
+      "rowSpacing": 36,
+      "seats": [
+        {
+          "id": "twins-306-2-1",
+          "sectionId": "306",
+          "row": "2",
+          "seatNumber": "1",
+          "position3D": {
+            "x": -160.51613008692223,
+            "y": 70.21119555967022,
+            "z": 87.5
+          },
+          "elevation": 87.5,
+          "distanceFromHomeplate": 175.2,
+          "angle": -113.625,
+          "facing": 66.375,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "twins-306-2-2",
+          "sectionId": "306",
+          "row": "2",
+          "seatNumber": "2",
+          "position3D": {
+            "x": -160.82095525053197,
+            "y": 69.5101456789323,
+            "z": 87.5
+          },
+          "elevation": 87.5,
+          "distanceFromHomeplate": 175.2,
+          "angle": -113.375,
+          "facing": 66.625,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "twins-306-2-3",
+          "sectionId": "306",
+          "row": "2",
+          "seatNumber": "3",
+          "position3D": {
+            "x": -161.12271861497214,
+            "y": 68.80777242521738,
+            "z": 87.5
+          },
+          "elevation": 87.5,
+          "distanceFromHomeplate": 175.2,
+          "angle": -113.125,
+          "facing": 66.875,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "twins-306-2-4",
+          "sectionId": "306",
+          "row": "2",
+          "seatNumber": "4",
+          "position3D": {
+            "x": -161.42141443510334,
+            "y": 68.10408917069961,
+            "z": 87.5
+          },
+          "elevation": 87.5,
+          "distanceFromHomeplate": 175.2,
+          "angle": -112.875,
+          "facing": 67.125,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "twins-306-2-5",
+          "sectionId": "306",
+          "row": "2",
+          "seatNumber": "5",
+          "position3D": {
+            "x": -161.71703702418762,
+            "y": 67.3991093124941,
+            "z": 87.5
+          },
+          "elevation": 87.5,
+          "distanceFromHomeplate": 175.2,
+          "angle": -112.625,
+          "facing": 67.375,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "twins-306-2-6",
+          "sectionId": "306",
+          "row": "2",
+          "seatNumber": "6",
+          "position3D": {
+            "x": -162.00958075399703,
+            "y": 66.69284627240101,
+            "z": 87.5
+          },
+          "elevation": 87.5,
+          "distanceFromHomeplate": 175.2,
+          "angle": -112.375,
+          "facing": 67.625,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "twins-306-2-7",
+          "sectionId": "306",
+          "row": "2",
+          "seatNumber": "7",
+          "position3D": {
+            "x": -162.29904005492065,
+            "y": 65.98531349665058,
+            "z": 87.5
+          },
+          "elevation": 87.5,
+          "distanceFromHomeplate": 175.2,
+          "angle": -112.125,
+          "facing": 67.875,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "twins-306-2-8",
+          "sectionId": "306",
+          "row": "2",
+          "seatNumber": "8",
+          "position3D": {
+            "x": -162.58540941607075,
+            "y": 65.27652445564678,
+            "z": 87.5
+          },
+          "elevation": 87.5,
+          "distanceFromHomeplate": 175.2,
+          "angle": -111.875,
+          "facing": 68.125,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "twins-306-2-9",
+          "sectionId": "306",
+          "row": "2",
+          "seatNumber": "9",
+          "position3D": {
+            "x": -162.8686833853873,
+            "y": 64.56649264371158,
+            "z": 87.5
+          },
+          "elevation": 87.5,
+          "distanceFromHomeplate": 175.2,
+          "angle": -111.625,
+          "facing": 68.375,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "twins-306-2-10",
+          "sectionId": "306",
+          "row": "2",
+          "seatNumber": "10",
+          "position3D": {
+            "x": -163.14885656974235,
+            "y": 63.85523157882705,
+            "z": 87.5
+          },
+          "elevation": 87.5,
+          "distanceFromHomeplate": 175.2,
+          "angle": -111.375,
+          "facing": 68.625,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "twins-306-2-11",
+          "sectionId": "306",
+          "row": "2",
+          "seatNumber": "11",
+          "position3D": {
+            "x": -163.4259236350424,
+            "y": 63.142754802378434,
+            "z": 87.5
+          },
+          "elevation": 87.5,
+          "distanceFromHomeplate": 175.2,
+          "angle": -111.125,
+          "facing": 68.875,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "twins-306-2-12",
+          "sectionId": "306",
+          "row": "2",
+          "seatNumber": "12",
+          "position3D": {
+            "x": -163.69987930632976,
+            "y": 62.42907587889686,
+            "z": 87.5
+          },
+          "elevation": 87.5,
+          "distanceFromHomeplate": 175.2,
+          "angle": -110.875,
+          "facing": 69.125,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "twins-306-2-13",
+          "sectionId": "306",
+          "row": "2",
+          "seatNumber": "13",
+          "position3D": {
+            "x": -163.97071836788345,
+            "y": 61.71420839580012,
+            "z": 87.5
+          },
+          "elevation": 87.5,
+          "distanceFromHomeplate": 175.2,
+          "angle": -110.625,
+          "facing": 69.375,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "twins-306-2-14",
+          "sectionId": "306",
+          "row": "2",
+          "seatNumber": "14",
+          "position3D": {
+            "x": -164.2384356633181,
+            "y": 60.998165963134575,
+            "z": 87.5
+          },
+          "elevation": 87.5,
+          "distanceFromHomeplate": 175.2,
+          "angle": -110.375,
+          "facing": 69.625,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "twins-306-2-15",
+          "sectionId": "306",
+          "row": "2",
+          "seatNumber": "15",
+          "position3D": {
+            "x": -164.50302609568237,
+            "y": 60.28096221331605,
+            "z": 87.5
+          },
+          "elevation": 87.5,
+          "distanceFromHomeplate": 175.2,
+          "angle": -110.125,
+          "facing": 69.875,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "twins-306-2-16",
+          "sectionId": "306",
+          "row": "2",
+          "seatNumber": "16",
+          "position3D": {
+            "x": -164.7644846275558,
+            "y": 59.56261080087012,
+            "z": 87.5
+          },
+          "elevation": 87.5,
+          "distanceFromHomeplate": 175.2,
+          "angle": -109.875,
+          "facing": 70.125,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "twins-306-2-17",
+          "sectionId": "306",
+          "row": "2",
+          "seatNumber": "17",
+          "position3D": {
+            "x": -165.02280628114474,
+            "y": 58.84312540217228,
+            "z": 87.5
+          },
+          "elevation": 87.5,
+          "distanceFromHomeplate": 175.2,
+          "angle": -109.625,
+          "facing": 70.375,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "twins-306-2-18",
+          "sectionId": "306",
+          "row": "2",
+          "seatNumber": "18",
+          "position3D": {
+            "x": -165.27798613837737,
+            "y": 58.12251971518731,
+            "z": 87.5
+          },
+          "elevation": 87.5,
+          "distanceFromHomeplate": 175.2,
+          "angle": -109.375,
+          "facing": 70.625,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "twins-306-2-19",
+          "sectionId": "306",
+          "row": "2",
+          "seatNumber": "19",
+          "position3D": {
+            "x": -165.53001934099703,
+            "y": 57.400807459208615,
+            "z": 87.5
+          },
+          "elevation": 87.5,
+          "distanceFromHomeplate": 175.19999999999996,
+          "angle": -109.125,
+          "facing": 70.875,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "twins-306-2-20",
+          "sectionId": "306",
+          "row": "2",
+          "seatNumber": "20",
+          "position3D": {
+            "x": -165.7789010906548,
+            "y": 56.67800237459755,
+            "z": 87.5
+          },
+          "elevation": 87.5,
+          "distanceFromHomeplate": 175.2,
+          "angle": -108.875,
+          "facing": 71.125,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "twins-306-2-21",
+          "sectionId": "306",
+          "row": "2",
+          "seatNumber": "21",
+          "position3D": {
+            "x": -166.02462664900096,
+            "y": 55.95411822252084,
+            "z": 87.5
+          },
+          "elevation": 87.5,
+          "distanceFromHomeplate": 175.2,
+          "angle": -108.625,
+          "facing": 71.375,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "twins-306-2-22",
+          "sectionId": "306",
+          "row": "2",
+          "seatNumber": "22",
+          "position3D": {
+            "x": -166.2671913377751,
+            "y": 55.22916878468915,
+            "z": 87.5
+          },
+          "elevation": 87.5,
+          "distanceFromHomeplate": 175.2,
+          "angle": -108.375,
+          "facing": 71.625,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        }
+      ],
+      "covered": false,
+      "hasAisleSeats": false,
+      "wheelchairRow": false
+    },
+    {
+      "rowNumber": "3",
+      "sectionId": "306",
+      "seatCount": 22,
+      "elevation": 90,
+      "depth": 178,
+      "rowSpacing": 36,
+      "seats": [
+        {
+          "id": "twins-306-3-1",
+          "sectionId": "306",
+          "row": "3",
+          "seatNumber": "1",
+          "position3D": {
+            "x": -163.08145636685023,
+            "y": 71.33329229235902,
+            "z": 90
+          },
+          "elevation": 90,
+          "distanceFromHomeplate": 178,
+          "angle": -113.625,
+          "facing": 66.375,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "twins-306-3-2",
+          "sectionId": "306",
+          "row": "3",
+          "seatNumber": "2",
+          "position3D": {
+            "x": -163.3911531654948,
+            "y": 70.62103841809333,
+            "z": 90
+          },
+          "elevation": 90,
+          "distanceFromHomeplate": 178,
+          "angle": -113.375,
+          "facing": 66.625,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "twins-306-3-3",
+          "sectionId": "306",
+          "row": "3",
+          "seatNumber": "3",
+          "position3D": {
+            "x": -163.69773923210641,
+            "y": 69.9074400210542,
+            "z": 90
+          },
+          "elevation": 90,
+          "distanceFromHomeplate": 178,
+          "angle": -113.125,
+          "facing": 66.875,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "twins-306-3-4",
+          "sectionId": "306",
+          "row": "3",
+          "seatNumber": "4",
+          "position3D": {
+            "x": -164.0012087297283,
+            "y": 69.19251068712632,
+            "z": 90
+          },
+          "elevation": 90,
+          "distanceFromHomeplate": 178,
+          "angle": -112.875,
+          "facing": 67.125,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "twins-306-3-5",
+          "sectionId": "306",
+          "row": "3",
+          "seatNumber": "5",
+          "position3D": {
+            "x": -164.30155588073856,
+            "y": 68.47626402753397,
+            "z": 90
+          },
+          "elevation": 90,
+          "distanceFromHomeplate": 178,
+          "angle": -112.625,
+          "facing": 67.375,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "twins-306-3-6",
+          "sectionId": "306",
+          "row": "3",
+          "seatNumber": "6",
+          "position3D": {
+            "x": -164.59877496696046,
+            "y": 67.75871367858095,
+            "z": 90
+          },
+          "elevation": 90,
+          "distanceFromHomeplate": 178,
+          "angle": -112.375,
+          "facing": 67.625,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "twins-306-3-7",
+          "sectionId": "306",
+          "row": "3",
+          "seatNumber": "7",
+          "position3D": {
+            "x": -164.892860329771,
+            "y": 67.03987330139157,
+            "z": 90
+          },
+          "elevation": 90,
+          "distanceFromHomeplate": 178,
+          "angle": -112.125,
+          "facing": 67.875,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "twins-306-3-8",
+          "sectionId": "306",
+          "row": "3",
+          "seatNumber": "8",
+          "position3D": {
+            "x": -165.18380637020888,
+            "y": 66.31975658165028,
+            "z": 90
+          },
+          "elevation": 90,
+          "distanceFromHomeplate": 178.00000000000003,
+          "angle": -111.875,
+          "facing": 68.125,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "twins-306-3-9",
+          "sectionId": "306",
+          "row": "3",
+          "seatNumber": "9",
+          "position3D": {
+            "x": -165.47160754908072,
+            "y": 65.59837722934168,
+            "z": 90
+          },
+          "elevation": 90,
+          "distanceFromHomeplate": 178,
+          "angle": -111.625,
+          "facing": 68.375,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "twins-306-3-10",
+          "sectionId": "306",
+          "row": "3",
+          "seatNumber": "10",
+          "position3D": {
+            "x": -165.75625838706702,
+            "y": 64.87574897848867,
+            "z": 90
+          },
+          "elevation": 90,
+          "distanceFromHomeplate": 178,
+          "angle": -111.375,
+          "facing": 68.625,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "twins-306-3-11",
+          "sectionId": "306",
+          "row": "3",
+          "seatNumber": "11",
+          "position3D": {
+            "x": -166.0377534648262,
+            "y": 64.15188558689134,
+            "z": 90
+          },
+          "elevation": 90,
+          "distanceFromHomeplate": 178.00000000000003,
+          "angle": -111.125,
+          "facing": 68.875,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "twins-306-3-12",
+          "sectionId": "306",
+          "row": "3",
+          "seatNumber": "12",
+          "position3D": {
+            "x": -166.3160874230976,
+            "y": 63.426800835865535,
+            "z": 90
+          },
+          "elevation": 90,
+          "distanceFromHomeplate": 178,
+          "angle": -110.875,
+          "facing": 69.125,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "twins-306-3-13",
+          "sectionId": "306",
+          "row": "3",
+          "seatNumber": "13",
+          "position3D": {
+            "x": -166.59125496280396,
+            "y": 62.70050852997958,
+            "z": 90
+          },
+          "elevation": 90,
+          "distanceFromHomeplate": 178,
+          "angle": -110.625,
+          "facing": 69.375,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "twins-306-3-14",
+          "sectionId": "306",
+          "row": "3",
+          "seatNumber": "14",
+          "position3D": {
+            "x": -166.86325084515198,
+            "y": 61.97302249679198,
+            "z": 90
+          },
+          "elevation": 90,
+          "distanceFromHomeplate": 178,
+          "angle": -110.375,
+          "facing": 69.625,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "twins-306-3-15",
+          "sectionId": "306",
+          "row": "3",
+          "seatNumber": "15",
+          "position3D": {
+            "x": -167.1320698917321,
+            "y": 61.24435658658823,
+            "z": 90
+          },
+          "elevation": 90,
+          "distanceFromHomeplate": 178,
+          "angle": -110.125,
+          "facing": 69.875,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "twins-306-3-16",
+          "sectionId": "306",
+          "row": "3",
+          "seatNumber": "16",
+          "position3D": {
+            "x": -167.39770698461717,
+            "y": 60.514524672116906,
+            "z": 90
+          },
+          "elevation": 90,
+          "distanceFromHomeplate": 178,
+          "angle": -109.875,
+          "facing": 70.125,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "twins-306-3-17",
+          "sectionId": "306",
+          "row": "3",
+          "seatNumber": "17",
+          "position3D": {
+            "x": -167.66015706645985,
+            "y": 59.78354064832572,
+            "z": 90
+          },
+          "elevation": 90,
+          "distanceFromHomeplate": 178,
+          "angle": -109.625,
+          "facing": 70.375,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "twins-306-3-18",
+          "sectionId": "306",
+          "row": "3",
+          "seatNumber": "18",
+          "position3D": {
+            "x": -167.91941514058888,
+            "y": 59.0514184320967,
+            "z": 90
+          },
+          "elevation": 90,
+          "distanceFromHomeplate": 178,
+          "angle": -109.375,
+          "facing": 70.625,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "twins-306-3-19",
+          "sectionId": "306",
+          "row": "3",
+          "seatNumber": "19",
+          "position3D": {
+            "x": -168.17547627110432,
+            "y": 58.31817196198136,
+            "z": 90
+          },
+          "elevation": 90,
+          "distanceFromHomeplate": 178,
+          "angle": -109.125,
+          "facing": 70.875,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "twins-306-3-20",
+          "sectionId": "306",
+          "row": "3",
+          "seatNumber": "20",
+          "position3D": {
+            "x": -168.42833558297121,
+            "y": 57.58381519793586,
+            "z": 90
+          },
+          "elevation": 90,
+          "distanceFromHomeplate": 178,
+          "angle": -108.875,
+          "facing": 71.125,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "twins-306-3-21",
+          "sectionId": "306",
+          "row": "3",
+          "seatNumber": "21",
+          "position3D": {
+            "x": -168.67798826211285,
+            "y": 56.848362121054286,
+            "z": 90
+          },
+          "elevation": 90,
+          "distanceFromHomeplate": 178,
+          "angle": -108.625,
+          "facing": 71.375,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "twins-306-3-22",
+          "sectionId": "306",
+          "row": "3",
+          "seatNumber": "22",
+          "position3D": {
+            "x": -168.92442955550212,
+            "y": 56.111826733302905,
+            "z": 90
+          },
+          "elevation": 90,
+          "distanceFromHomeplate": 178,
+          "angle": -108.375,
+          "facing": 71.625,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        }
+      ],
+      "covered": false,
+      "hasAisleSeats": false,
+      "wheelchairRow": false
+    },
+    {
+      "rowNumber": "4",
+      "sectionId": "306",
+      "seatCount": 22,
+      "elevation": 92.5,
+      "depth": 180.8,
+      "rowSpacing": 36,
+      "seats": [
+        {
+          "id": "twins-306-4-1",
+          "sectionId": "306",
+          "row": "4",
+          "seatNumber": "1",
+          "position3D": {
+            "x": -165.6467826467782,
+            "y": 72.45538902504781,
+            "z": 92.5
+          },
+          "elevation": 92.5,
+          "distanceFromHomeplate": 180.8,
+          "angle": -113.625,
+          "facing": 66.375,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "twins-306-4-2",
+          "sectionId": "306",
+          "row": "4",
+          "seatNumber": "2",
+          "position3D": {
+            "x": -165.96135108045766,
+            "y": 71.73193115725435,
+            "z": 92.5
+          },
+          "elevation": 92.5,
+          "distanceFromHomeplate": 180.8,
+          "angle": -113.375,
+          "facing": 66.625,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "twins-306-4-3",
+          "sectionId": "306",
+          "row": "4",
+          "seatNumber": "3",
+          "position3D": {
+            "x": -166.27275984924066,
+            "y": 71.007107616891,
+            "z": 92.5
+          },
+          "elevation": 92.5,
+          "distanceFromHomeplate": 180.79999999999998,
+          "angle": -113.125,
+          "facing": 66.875,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "twins-306-4-4",
+          "sectionId": "306",
+          "row": "4",
+          "seatNumber": "4",
+          "position3D": {
+            "x": -166.58100302435324,
+            "y": 70.28093220355304,
+            "z": 92.5
+          },
+          "elevation": 92.5,
+          "distanceFromHomeplate": 180.8,
+          "angle": -112.875,
+          "facing": 67.125,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "twins-306-4-5",
+          "sectionId": "306",
+          "row": "4",
+          "seatNumber": "5",
+          "position3D": {
+            "x": -166.88607473728953,
+            "y": 69.55341874257384,
+            "z": 92.5
+          },
+          "elevation": 92.5,
+          "distanceFromHomeplate": 180.8,
+          "angle": -112.625,
+          "facing": 67.375,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "twins-306-4-6",
+          "sectionId": "306",
+          "row": "4",
+          "seatNumber": "6",
+          "position3D": {
+            "x": -167.1879691799239,
+            "y": 68.82458108476088,
+            "z": 92.5
+          },
+          "elevation": 92.5,
+          "distanceFromHomeplate": 180.8,
+          "angle": -112.375,
+          "facing": 67.625,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "twins-306-4-7",
+          "sectionId": "306",
+          "row": "4",
+          "seatNumber": "7",
+          "position3D": {
+            "x": -167.48668060462134,
+            "y": 68.09443310613256,
+            "z": 92.5
+          },
+          "elevation": 92.5,
+          "distanceFromHomeplate": 180.8,
+          "angle": -112.125,
+          "facing": 67.875,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "twins-306-4-8",
+          "sectionId": "306",
+          "row": "4",
+          "seatNumber": "8",
+          "position3D": {
+            "x": -167.782203324347,
+            "y": 67.36298870765377,
+            "z": 92.5
+          },
+          "elevation": 92.5,
+          "distanceFromHomeplate": 180.8,
+          "angle": -111.875,
+          "facing": 68.125,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "twins-306-4-9",
+          "sectionId": "306",
+          "row": "4",
+          "seatNumber": "9",
+          "position3D": {
+            "x": -168.07453171277413,
+            "y": 66.63026181497177,
+            "z": 92.5
+          },
+          "elevation": 92.5,
+          "distanceFromHomeplate": 180.8,
+          "angle": -111.625,
+          "facing": 68.375,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "twins-306-4-10",
+          "sectionId": "306",
+          "row": "4",
+          "seatNumber": "10",
+          "position3D": {
+            "x": -168.36366020439166,
+            "y": 65.8962663781503,
+            "z": 92.5
+          },
+          "elevation": 92.5,
+          "distanceFromHomeplate": 180.8,
+          "angle": -111.375,
+          "facing": 68.625,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "twins-306-4-11",
+          "sectionId": "306",
+          "row": "4",
+          "seatNumber": "11",
+          "position3D": {
+            "x": -168.64958329460998,
+            "y": 65.16101637140424,
+            "z": 92.5
+          },
+          "elevation": 92.5,
+          "distanceFromHomeplate": 180.8,
+          "angle": -111.125,
+          "facing": 68.875,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "twins-306-4-12",
+          "sectionId": "306",
+          "row": "4",
+          "seatNumber": "12",
+          "position3D": {
+            "x": -168.93229553986544,
+            "y": 64.42452579283422,
+            "z": 92.5
+          },
+          "elevation": 92.5,
+          "distanceFromHomeplate": 180.8,
+          "angle": -110.875,
+          "facing": 69.125,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "twins-306-4-13",
+          "sectionId": "306",
+          "row": "4",
+          "seatNumber": "13",
+          "position3D": {
+            "x": -169.2117915577245,
+            "y": 63.68680866415904,
+            "z": 92.5
+          },
+          "elevation": 92.5,
+          "distanceFromHomeplate": 180.8,
+          "angle": -110.625,
+          "facing": 69.375,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "twins-306-4-14",
+          "sectionId": "306",
+          "row": "4",
+          "seatNumber": "14",
+          "position3D": {
+            "x": -169.48806602698585,
+            "y": 62.947879030449386,
+            "z": 92.5
+          },
+          "elevation": 92.5,
+          "distanceFromHomeplate": 180.8,
+          "angle": -110.375,
+          "facing": 69.625,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "twins-306-4-15",
+          "sectionId": "306",
+          "row": "4",
+          "seatNumber": "15",
+          "position3D": {
+            "x": -169.76111368778183,
+            "y": 62.20775095986041,
+            "z": 92.5
+          },
+          "elevation": 92.5,
+          "distanceFromHomeplate": 180.8,
+          "angle": -110.125,
+          "facing": 69.875,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "twins-306-4-16",
+          "sectionId": "306",
+          "row": "4",
+          "seatNumber": "16",
+          "position3D": {
+            "x": -170.0309293416786,
+            "y": 61.466438543363694,
+            "z": 92.5
+          },
+          "elevation": 92.5,
+          "distanceFromHomeplate": 180.8,
+          "angle": -109.875,
+          "facing": 70.125,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "twins-306-4-17",
+          "sectionId": "306",
+          "row": "4",
+          "seatNumber": "17",
+          "position3D": {
+            "x": -170.29750785177495,
+            "y": 60.72395589447916,
+            "z": 92.5
+          },
+          "elevation": 92.5,
+          "distanceFromHomeplate": 180.8,
+          "angle": -109.625,
+          "facing": 70.375,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "twins-306-4-18",
+          "sectionId": "306",
+          "row": "4",
+          "seatNumber": "18",
+          "position3D": {
+            "x": -170.56084414280042,
+            "y": 59.98031714900609,
+            "z": 92.5
+          },
+          "elevation": 92.5,
+          "distanceFromHomeplate": 180.80000000000004,
+          "angle": -109.375,
+          "facing": 70.625,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "twins-306-4-19",
+          "sectionId": "306",
+          "row": "4",
+          "seatNumber": "19",
+          "position3D": {
+            "x": -170.82093320121157,
+            "y": 59.235536464754105,
+            "z": 92.5
+          },
+          "elevation": 92.5,
+          "distanceFromHomeplate": 180.8,
+          "angle": -109.125,
+          "facing": 70.875,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "twins-306-4-20",
+          "sectionId": "306",
+          "row": "4",
+          "seatNumber": "20",
+          "position3D": {
+            "x": -171.07777007528765,
+            "y": 58.489628021274186,
+            "z": 92.5
+          },
+          "elevation": 92.5,
+          "distanceFromHomeplate": 180.8,
+          "angle": -108.875,
+          "facing": 71.125,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "twins-306-4-21",
+          "sectionId": "306",
+          "row": "4",
+          "seatNumber": "21",
+          "position3D": {
+            "x": -171.33134987522476,
+            "y": 57.742606019587726,
+            "z": 92.5
+          },
+          "elevation": 92.5,
+          "distanceFromHomeplate": 180.80000000000004,
+          "angle": -108.625,
+          "facing": 71.375,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "twins-306-4-22",
+          "sectionId": "306",
+          "row": "4",
+          "seatNumber": "22",
+          "position3D": {
+            "x": -171.58166777322913,
+            "y": 56.99448468191667,
+            "z": 92.5
+          },
+          "elevation": 92.5,
+          "distanceFromHomeplate": 180.80000000000004,
+          "angle": -108.375,
+          "facing": 71.625,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        }
+      ],
+      "covered": false,
+      "hasAisleSeats": false,
+      "wheelchairRow": false
+    },
+    {
+      "rowNumber": "5",
+      "sectionId": "306",
+      "seatCount": 21,
+      "elevation": 95,
+      "depth": 183.6,
+      "rowSpacing": 36,
+      "seats": [
+        {
+          "id": "twins-306-5-1",
+          "sectionId": "306",
+          "row": "5",
+          "seatNumber": "1",
+          "position3D": {
+            "x": -168.21975188431625,
+            "y": 73.56001003248356,
+            "z": 95
+          },
+          "elevation": 95,
+          "distanceFromHomeplate": 183.6,
+          "angle": -113.61904761904762,
+          "facing": 66.38095238095238,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "twins-306-5-2",
+          "sectionId": "306",
+          "row": "5",
+          "seatNumber": "2",
+          "position3D": {
+            "x": -168.5542434368674,
+            "y": 72.790294816172,
+            "z": 95
+          },
+          "elevation": 95,
+          "distanceFromHomeplate": 183.6,
+          "angle": -113.35714285714286,
+          "facing": 66.64285714285714,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "twins-306-5-3",
+          "sectionId": "306",
+          "row": "5",
+          "seatNumber": "3",
+          "position3D": {
+            "x": -168.88521306153396,
+            "y": 72.01905865227813,
+            "z": 95
+          },
+          "elevation": 95,
+          "distanceFromHomeplate": 183.6,
+          "angle": -113.0952380952381,
+          "facing": 66.9047619047619,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "twins-306-5-4",
+          "sectionId": "306",
+          "row": "5",
+          "seatNumber": "4",
+          "position3D": {
+            "x": -169.21265384273119,
+            "y": 71.24631765572191,
+            "z": 95
+          },
+          "elevation": 95,
+          "distanceFromHomeplate": 183.6,
+          "angle": -112.83333333333333,
+          "facing": 67.16666666666667,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "twins-306-5-5",
+          "sectionId": "306",
+          "row": "5",
+          "seatNumber": "5",
+          "position3D": {
+            "x": -169.53655893860923,
+            "y": 70.47208797286676,
+            "z": 95
+          },
+          "elevation": 95,
+          "distanceFromHomeplate": 183.59999999999997,
+          "angle": -112.57142857142857,
+          "facing": 67.42857142857143,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "twins-306-5-6",
+          "sectionId": "306",
+          "row": "5",
+          "seatNumber": "6",
+          "position3D": {
+            "x": -169.85692158119616,
+            "y": 69.69638578118222,
+            "z": 95
+          },
+          "elevation": 95,
+          "distanceFromHomeplate": 183.6,
+          "angle": -112.30952380952381,
+          "facing": 67.69047619047619,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "twins-306-5-7",
+          "sectionId": "306",
+          "row": "5",
+          "seatNumber": "7",
+          "position3D": {
+            "x": -170.17373507653937,
+            "y": 68.91922728890526,
+            "z": 95
+          },
+          "elevation": 95,
+          "distanceFromHomeplate": 183.59999999999997,
+          "angle": -112.04761904761905,
+          "facing": 67.95238095238095,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "twins-306-5-8",
+          "sectionId": "306",
+          "row": "5",
+          "seatNumber": "8",
+          "position3D": {
+            "x": -170.48699280484539,
+            "y": 68.1406287347027,
+            "z": 95
+          },
+          "elevation": 95,
+          "distanceFromHomeplate": 183.59999999999997,
+          "angle": -111.78571428571429,
+          "facing": 68.21428571428571,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "twins-306-5-9",
+          "sectionId": "306",
+          "row": "5",
+          "seatNumber": "9",
+          "position3D": {
+            "x": -170.7966882206181,
+            "y": 67.36060638733126,
+            "z": 95
+          },
+          "elevation": 95,
+          "distanceFromHomeplate": 183.60000000000002,
+          "angle": -111.52380952380952,
+          "facing": 68.47619047619048,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "twins-306-5-10",
+          "sectionId": "306",
+          "row": "5",
+          "seatNumber": "10",
+          "position3D": {
+            "x": -171.10281485279586,
+            "y": 66.57917654529726,
+            "z": 95
+          },
+          "elevation": 95,
+          "distanceFromHomeplate": 183.6,
+          "angle": -111.26190476190476,
+          "facing": 68.73809523809524,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "twins-306-5-11",
+          "sectionId": "306",
+          "row": "5",
+          "seatNumber": "11",
+          "position3D": {
+            "x": -171.40536630488623,
+            "y": 65.79635553651715,
+            "z": 95
+          },
+          "elevation": 95,
+          "distanceFromHomeplate": 183.6,
+          "angle": -111,
+          "facing": 69,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "twins-306-5-12",
+          "sectionId": "306",
+          "row": "5",
+          "seatNumber": "12",
+          "position3D": {
+            "x": -171.70433625510012,
+            "y": 65.0121597179751,
+            "z": 95
+          },
+          "elevation": 95,
+          "distanceFromHomeplate": 183.59999999999997,
+          "angle": -110.73809523809524,
+          "facing": 69.26190476190476,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "twins-306-5-13",
+          "sectionId": "306",
+          "row": "5",
+          "seatNumber": "13",
+          "position3D": {
+            "x": -171.9997184564835,
+            "y": 64.2266054753823,
+            "z": 95
+          },
+          "elevation": 95,
+          "distanceFromHomeplate": 183.6,
+          "angle": -110.47619047619048,
+          "facing": 69.52380952380952,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "twins-306-5-14",
+          "sectionId": "306",
+          "row": "5",
+          "seatNumber": "14",
+          "position3D": {
+            "x": -172.2915067370481,
+            "y": 63.43970922283385,
+            "z": 95
+          },
+          "elevation": 95,
+          "distanceFromHomeplate": 183.60000000000002,
+          "angle": -110.21428571428571,
+          "facing": 69.78571428571429,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "twins-306-5-15",
+          "sectionId": "306",
+          "row": "5",
+          "seatNumber": "15",
+          "position3D": {
+            "x": -172.57969499990034,
+            "y": 62.6514874024661,
+            "z": 95
+          },
+          "elevation": 95,
+          "distanceFromHomeplate": 183.59999999999997,
+          "angle": -109.95238095238095,
+          "facing": 70.04761904761905,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "twins-306-5-16",
+          "sectionId": "306",
+          "row": "5",
+          "seatNumber": "16",
+          "position3D": {
+            "x": -172.86427722336882,
+            "y": 61.861956484113,
+            "z": 95
+          },
+          "elevation": 95,
+          "distanceFromHomeplate": 183.6,
+          "angle": -109.69047619047619,
+          "facing": 70.30952380952381,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "twins-306-5-17",
+          "sectionId": "306",
+          "row": "5",
+          "seatNumber": "17",
+          "position3D": {
+            "x": -173.14524746112988,
+            "y": 61.071132964962246,
+            "z": 95
+          },
+          "elevation": 95,
+          "distanceFromHomeplate": 183.60000000000002,
+          "angle": -109.42857142857143,
+          "facing": 70.57142857142857,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "twins-306-5-18",
+          "sectionId": "306",
+          "row": "5",
+          "seatNumber": "18",
+          "position3D": {
+            "x": -173.4225998423322,
+            "y": 60.27903336920982,
+            "z": 95
+          },
+          "elevation": 95,
+          "distanceFromHomeplate": 183.59999999999997,
+          "angle": -109.16666666666667,
+          "facing": 70.83333333333333,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "twins-306-5-19",
+          "sectionId": "306",
+          "row": "5",
+          "seatNumber": "19",
+          "position3D": {
+            "x": -173.69632857171925,
+            "y": 59.48567424771569,
+            "z": 95
+          },
+          "elevation": 95,
+          "distanceFromHomeplate": 183.6,
+          "angle": -108.9047619047619,
+          "facing": 71.0952380952381,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "twins-306-5-20",
+          "sectionId": "306",
+          "row": "5",
+          "seatNumber": "20",
+          "position3D": {
+            "x": -173.9664279297503,
+            "y": 58.69107217765745,
+            "z": 95
+          },
+          "elevation": 95,
+          "distanceFromHomeplate": 183.6,
+          "angle": -108.64285714285714,
+          "facing": 71.35714285714286,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "twins-306-5-21",
+          "sectionId": "306",
+          "row": "5",
+          "seatNumber": "21",
+          "position3D": {
+            "x": -174.2328922727202,
+            "y": 57.89524376218383,
+            "z": 95
+          },
+          "elevation": 95,
+          "distanceFromHomeplate": 183.60000000000002,
+          "angle": -108.38095238095238,
+          "facing": 71.61904761904762,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        }
+      ],
+      "covered": false,
+      "hasAisleSeats": false,
+      "wheelchairRow": false
+    },
+    {
+      "rowNumber": "6",
+      "sectionId": "306",
+      "seatCount": 22,
+      "elevation": 97.5,
+      "depth": 186.4,
+      "rowSpacing": 36,
+      "seats": [
+        {
+          "id": "twins-306-6-1",
+          "sectionId": "306",
+          "row": "6",
+          "seatNumber": "1",
+          "position3D": {
+            "x": -170.77743520663418,
+            "y": 74.6995824904254,
+            "z": 97.5
+          },
+          "elevation": 97.5,
+          "distanceFromHomeplate": 186.4,
+          "angle": -113.625,
+          "facing": 66.375,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "twins-306-6-2",
+          "sectionId": "306",
+          "row": "6",
+          "seatNumber": "2",
+          "position3D": {
+            "x": -171.10174691038333,
+            "y": 73.95371663557638,
+            "z": 97.5
+          },
+          "elevation": 97.5,
+          "distanceFromHomeplate": 186.4,
+          "angle": -113.375,
+          "facing": 66.625,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "twins-306-6-3",
+          "sectionId": "306",
+          "row": "6",
+          "seatNumber": "3",
+          "position3D": {
+            "x": -171.42280108350917,
+            "y": 73.20644280856462,
+            "z": 97.5
+          },
+          "elevation": 97.5,
+          "distanceFromHomeplate": 186.39999999999998,
+          "angle": -113.125,
+          "facing": 66.875,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "twins-306-6-4",
+          "sectionId": "306",
+          "row": "6",
+          "seatNumber": "4",
+          "position3D": {
+            "x": -171.7405916136031,
+            "y": 72.45777523640645,
+            "z": 97.5
+          },
+          "elevation": 97.5,
+          "distanceFromHomeplate": 186.39999999999998,
+          "angle": -112.875,
+          "facing": 67.125,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "twins-306-6-5",
+          "sectionId": "306",
+          "row": "6",
+          "seatNumber": "5",
+          "position3D": {
+            "x": -172.0551124503914,
+            "y": 71.70772817265356,
+            "z": 97.5
+          },
+          "elevation": 97.5,
+          "distanceFromHomeplate": 186.4,
+          "angle": -112.625,
+          "facing": 67.375,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "twins-306-6-6",
+          "sectionId": "306",
+          "row": "6",
+          "seatNumber": "6",
+          "position3D": {
+            "x": -172.36635760585074,
+            "y": 70.95631589712072,
+            "z": 97.5
+          },
+          "elevation": 97.5,
+          "distanceFromHomeplate": 186.4,
+          "angle": -112.375,
+          "facing": 67.625,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "twins-306-6-7",
+          "sectionId": "306",
+          "row": "6",
+          "seatNumber": "7",
+          "position3D": {
+            "x": -172.674321154322,
+            "y": 70.20355271561453,
+            "z": 97.5
+          },
+          "elevation": 97.5,
+          "distanceFromHomeplate": 186.4,
+          "angle": -112.125,
+          "facing": 67.875,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "twins-306-6-8",
+          "sectionId": "306",
+          "row": "6",
+          "seatNumber": "8",
+          "position3D": {
+            "x": -172.97899723262321,
+            "y": 69.44945295966075,
+            "z": 97.5
+          },
+          "elevation": 97.5,
+          "distanceFromHomeplate": 186.4,
+          "angle": -111.875,
+          "facing": 68.125,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "twins-306-6-9",
+          "sectionId": "306",
+          "row": "6",
+          "seatNumber": "9",
+          "position3D": {
+            "x": -173.28038004016094,
+            "y": 68.69403098623197,
+            "z": 97.5
+          },
+          "elevation": 97.5,
+          "distanceFromHomeplate": 186.4,
+          "angle": -111.625,
+          "facing": 68.375,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "twins-306-6-10",
+          "sectionId": "306",
+          "row": "6",
+          "seatNumber": "10",
+          "position3D": {
+            "x": -173.57846383904098,
+            "y": 67.93730117747354,
+            "z": 97.5
+          },
+          "elevation": 97.5,
+          "distanceFromHomeplate": 186.4,
+          "angle": -111.375,
+          "facing": 68.625,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "twins-306-6-11",
+          "sectionId": "306",
+          "row": "6",
+          "seatNumber": "11",
+          "position3D": {
+            "x": -173.87324295417756,
+            "y": 67.17927794043003,
+            "z": 97.5
+          },
+          "elevation": 97.5,
+          "distanceFromHomeplate": 186.4,
+          "angle": -111.125,
+          "facing": 68.875,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "twins-306-6-12",
+          "sectionId": "306",
+          "row": "6",
+          "seatNumber": "12",
+          "position3D": {
+            "x": -174.16471177340108,
+            "y": 66.41997570677155,
+            "z": 97.5
+          },
+          "elevation": 97.5,
+          "distanceFromHomeplate": 186.39999999999998,
+          "angle": -110.875,
+          "facing": 69.125,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "twins-306-6-13",
+          "sectionId": "306",
+          "row": "6",
+          "seatNumber": "13",
+          "position3D": {
+            "x": -174.4528647475655,
+            "y": 65.65940893251795,
+            "z": 97.5
+          },
+          "elevation": 97.5,
+          "distanceFromHomeplate": 186.4,
+          "angle": -110.625,
+          "facing": 69.375,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "twins-306-6-14",
+          "sectionId": "306",
+          "row": "6",
+          "seatNumber": "14",
+          "position3D": {
+            "x": -174.73769639065355,
+            "y": 64.89759209776419,
+            "z": 97.5
+          },
+          "elevation": 97.5,
+          "distanceFromHomeplate": 186.4,
+          "angle": -110.375,
+          "facing": 69.625,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "twins-306-6-15",
+          "sectionId": "306",
+          "row": "6",
+          "seatNumber": "15",
+          "position3D": {
+            "x": -175.01920127988126,
+            "y": 64.13453970640475,
+            "z": 97.5
+          },
+          "elevation": 97.5,
+          "distanceFromHomeplate": 186.4,
+          "angle": -110.125,
+          "facing": 69.875,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "twins-306-6-16",
+          "sectionId": "306",
+          "row": "6",
+          "seatNumber": "16",
+          "position3D": {
+            "x": -175.29737405580138,
+            "y": 63.370266285857255,
+            "z": 97.5
+          },
+          "elevation": 97.5,
+          "distanceFromHomeplate": 186.4,
+          "angle": -109.875,
+          "facing": 70.125,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "twins-306-6-17",
+          "sectionId": "306",
+          "row": "6",
+          "seatNumber": "17",
+          "position3D": {
+            "x": -175.57220942240517,
+            "y": 62.60478638678603,
+            "z": 97.5
+          },
+          "elevation": 97.5,
+          "distanceFromHomeplate": 186.4,
+          "angle": -109.625,
+          "facing": 70.375,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "twins-306-6-18",
+          "sectionId": "306",
+          "row": "6",
+          "seatNumber": "18",
+          "position3D": {
+            "x": -175.84370214722344,
+            "y": 61.838114582824865,
+            "z": 97.5
+          },
+          "elevation": 97.5,
+          "distanceFromHomeplate": 186.40000000000003,
+          "angle": -109.375,
+          "facing": 70.625,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "twins-306-6-19",
+          "sectionId": "306",
+          "row": "6",
+          "seatNumber": "19",
+          "position3D": {
+            "x": -176.1118470614261,
+            "y": 61.07026547029959,
+            "z": 97.5
+          },
+          "elevation": 97.5,
+          "distanceFromHomeplate": 186.4,
+          "angle": -109.125,
+          "facing": 70.875,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "twins-306-6-20",
+          "sectionId": "306",
+          "row": "6",
+          "seatNumber": "20",
+          "position3D": {
+            "x": -176.37663905992042,
+            "y": 60.30125366795082,
+            "z": 97.5
+          },
+          "elevation": 97.5,
+          "distanceFromHomeplate": 186.4,
+          "angle": -108.875,
+          "facing": 71.125,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "twins-306-6-21",
+          "sectionId": "306",
+          "row": "6",
+          "seatNumber": "21",
+          "position3D": {
+            "x": -176.63807310144853,
+            "y": 59.531093816654604,
+            "z": 97.5
+          },
+          "elevation": 97.5,
+          "distanceFromHomeplate": 186.4,
+          "angle": -108.625,
+          "facing": 71.375,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "twins-306-6-22",
+          "sectionId": "306",
+          "row": "6",
+          "seatNumber": "22",
+          "position3D": {
+            "x": -176.8961442086831,
+            "y": 58.75980057914417,
+            "z": 97.5
+          },
+          "elevation": 97.5,
+          "distanceFromHomeplate": 186.4,
+          "angle": -108.375,
+          "facing": 71.625,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        }
+      ],
+      "covered": false,
+      "hasAisleSeats": false,
+      "wheelchairRow": false
+    },
+    {
+      "rowNumber": "7",
+      "sectionId": "306",
+      "seatCount": 22,
+      "elevation": 100,
+      "depth": 189.2,
+      "rowSpacing": 36,
+      "seats": [
+        {
+          "id": "twins-306-7-1",
+          "sectionId": "306",
+          "row": "7",
+          "seatNumber": "1",
+          "position3D": {
+            "x": -173.34276148656213,
+            "y": 75.82167922311419,
+            "z": 100
+          },
+          "elevation": 100,
+          "distanceFromHomeplate": 189.2,
+          "angle": -113.625,
+          "facing": 66.375,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "twins-306-7-2",
+          "sectionId": "306",
+          "row": "7",
+          "seatNumber": "2",
+          "position3D": {
+            "x": -173.67194482534617,
+            "y": 75.0646093747374,
+            "z": 100
+          },
+          "elevation": 100,
+          "distanceFromHomeplate": 189.2,
+          "angle": -113.375,
+          "facing": 66.625,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "twins-306-7-3",
+          "sectionId": "306",
+          "row": "7",
+          "seatNumber": "3",
+          "position3D": {
+            "x": -173.9978217006434,
+            "y": 74.30611040440142,
+            "z": 100
+          },
+          "elevation": 100,
+          "distanceFromHomeplate": 189.19999999999996,
+          "angle": -113.125,
+          "facing": 66.875,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "twins-306-7-4",
+          "sectionId": "306",
+          "row": "7",
+          "seatNumber": "4",
+          "position3D": {
+            "x": -174.32038590822805,
+            "y": 73.54619675283314,
+            "z": 100
+          },
+          "elevation": 100,
+          "distanceFromHomeplate": 189.2,
+          "angle": -112.875,
+          "facing": 67.125,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "twins-306-7-5",
+          "sectionId": "306",
+          "row": "7",
+          "seatNumber": "5",
+          "position3D": {
+            "x": -174.63963130694233,
+            "y": 72.78488288769341,
+            "z": 100
+          },
+          "elevation": 100,
+          "distanceFromHomeplate": 189.2,
+          "angle": -112.625,
+          "facing": 67.375,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "twins-306-7-6",
+          "sectionId": "306",
+          "row": "7",
+          "seatNumber": "6",
+          "position3D": {
+            "x": -174.95555181881414,
+            "y": 72.02218330330064,
+            "z": 100
+          },
+          "elevation": 100,
+          "distanceFromHomeplate": 189.2,
+          "angle": -112.375,
+          "facing": 67.625,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "twins-306-7-7",
+          "sectionId": "306",
+          "row": "7",
+          "seatNumber": "7",
+          "position3D": {
+            "x": -175.26814142917232,
+            "y": 71.25811252035552,
+            "z": 100
+          },
+          "elevation": 100,
+          "distanceFromHomeplate": 189.2,
+          "angle": -112.125,
+          "facing": 67.875,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "twins-306-7-8",
+          "sectionId": "306",
+          "row": "7",
+          "seatNumber": "8",
+          "position3D": {
+            "x": -175.57739418676132,
+            "y": 70.49268508566422,
+            "z": 100
+          },
+          "elevation": 100,
+          "distanceFromHomeplate": 189.2,
+          "angle": -111.875,
+          "facing": 68.125,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "twins-306-7-9",
+          "sectionId": "306",
+          "row": "7",
+          "seatNumber": "9",
+          "position3D": {
+            "x": -175.88330420385432,
+            "y": 69.72591557186206,
+            "z": 100
+          },
+          "elevation": 100,
+          "distanceFromHomeplate": 189.2,
+          "angle": -111.625,
+          "facing": 68.375,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "twins-306-7-10",
+          "sectionId": "306",
+          "row": "7",
+          "seatNumber": "10",
+          "position3D": {
+            "x": -176.1858656563656,
+            "y": 68.95781857713516,
+            "z": 100
+          },
+          "elevation": 100,
+          "distanceFromHomeplate": 189.2,
+          "angle": -111.375,
+          "facing": 68.625,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "twins-306-7-11",
+          "sectionId": "306",
+          "row": "7",
+          "seatNumber": "11",
+          "position3D": {
+            "x": -176.48507278396133,
+            "y": 68.18840872494293,
+            "z": 100
+          },
+          "elevation": 100,
+          "distanceFromHomeplate": 189.2,
+          "angle": -111.125,
+          "facing": 68.875,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "twins-306-7-12",
+          "sectionId": "306",
+          "row": "7",
+          "seatNumber": "12",
+          "position3D": {
+            "x": -176.7809198901689,
+            "y": 67.41770066374022,
+            "z": 100
+          },
+          "elevation": 100,
+          "distanceFromHomeplate": 189.19999999999996,
+          "angle": -110.875,
+          "facing": 69.125,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "twins-306-7-13",
+          "sectionId": "306",
+          "row": "7",
+          "seatNumber": "13",
+          "position3D": {
+            "x": -177.073401342486,
+            "y": 66.64570906669739,
+            "z": 100
+          },
+          "elevation": 100,
+          "distanceFromHomeplate": 189.2,
+          "angle": -110.625,
+          "facing": 69.375,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "twins-306-7-14",
+          "sectionId": "306",
+          "row": "7",
+          "seatNumber": "14",
+          "position3D": {
+            "x": -177.36251157248736,
+            "y": 65.87244863142158,
+            "z": 100
+          },
+          "elevation": 100,
+          "distanceFromHomeplate": 189.19999999999996,
+          "angle": -110.375,
+          "facing": 69.625,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "twins-306-7-15",
+          "sectionId": "306",
+          "row": "7",
+          "seatNumber": "15",
+          "position3D": {
+            "x": -177.64824507593096,
+            "y": 65.09793407967693,
+            "z": 100
+          },
+          "elevation": 100,
+          "distanceFromHomeplate": 189.2,
+          "angle": -110.125,
+          "facing": 69.875,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "twins-306-7-16",
+          "sectionId": "306",
+          "row": "7",
+          "seatNumber": "16",
+          "position3D": {
+            "x": -177.93059641286274,
+            "y": 64.32218015710403,
+            "z": 100
+          },
+          "elevation": 100,
+          "distanceFromHomeplate": 189.2,
+          "angle": -109.875,
+          "facing": 70.125,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "twins-306-7-17",
+          "sectionId": "306",
+          "row": "7",
+          "seatNumber": "17",
+          "position3D": {
+            "x": -178.20956020772024,
+            "y": 63.54520163293947,
+            "z": 100
+          },
+          "elevation": 100,
+          "distanceFromHomeplate": 189.2,
+          "angle": -109.625,
+          "facing": 70.375,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "twins-306-7-18",
+          "sectionId": "306",
+          "row": "7",
+          "seatNumber": "18",
+          "position3D": {
+            "x": -178.48513114943492,
+            "y": 62.767013299734245,
+            "z": 100
+          },
+          "elevation": 100,
+          "distanceFromHomeplate": 189.2,
+          "angle": -109.375,
+          "facing": 70.625,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "twins-306-7-19",
+          "sectionId": "306",
+          "row": "7",
+          "seatNumber": "19",
+          "position3D": {
+            "x": -178.75730399153335,
+            "y": 61.98762997307232,
+            "z": 100
+          },
+          "elevation": 100,
+          "distanceFromHomeplate": 189.2,
+          "angle": -109.125,
+          "facing": 70.875,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "twins-306-7-20",
+          "sectionId": "306",
+          "row": "7",
+          "seatNumber": "20",
+          "position3D": {
+            "x": -179.02607355223682,
+            "y": 61.207066491289126,
+            "z": 100
+          },
+          "elevation": 100,
+          "distanceFromHomeplate": 189.2,
+          "angle": -108.875,
+          "facing": 71.125,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "twins-306-7-21",
+          "sectionId": "306",
+          "row": "7",
+          "seatNumber": "21",
+          "position3D": {
+            "x": -179.29143471456038,
+            "y": 60.425337715188036,
+            "z": 100
+          },
+          "elevation": 100,
+          "distanceFromHomeplate": 189.2,
+          "angle": -108.625,
+          "facing": 71.375,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "twins-306-7-22",
+          "sectionId": "306",
+          "row": "7",
+          "seatNumber": "22",
+          "position3D": {
+            "x": -179.55338242641008,
+            "y": 59.64245852775792,
+            "z": 100
+          },
+          "elevation": 100,
+          "distanceFromHomeplate": 189.2,
+          "angle": -108.375,
+          "facing": 71.625,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        }
+      ],
+      "covered": false,
+      "hasAisleSeats": false,
+      "wheelchairRow": false
+    }
+  ],
+  "seatDistribution": {
+    "standard": 279,
+    "aisle": 28,
+    "wheelchair": 0,
+    "companion": 0,
+    "other": 0
+  }
+};
