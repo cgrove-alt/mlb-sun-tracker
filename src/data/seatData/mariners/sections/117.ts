@@ -1,0 +1,11218 @@
+/**
+ * Section 117 - mariners
+ * Generated: 2025-10-23T00:32:06.213Z
+ * Total Seats: 410
+ * Total Rows: 41
+ */
+
+import type { SectionSeatingData } from '@/types/seat';
+
+export const section_117: SectionSeatingData = {
+  "sectionId": "117",
+  "sectionName": "Section 117",
+  "stadiumId": "mariners",
+  "totalSeats": 410,
+  "totalRows": 41,
+  "rows": [
+    {
+      "rowNumber": "1",
+      "sectionId": "117",
+      "seatCount": 10,
+      "elevation": 0,
+      "depth": 75,
+      "rowSpacing": 36,
+      "seats": [
+        {
+          "id": "mariners-117-1-1",
+          "sectionId": "117",
+          "row": "1",
+          "seatNumber": "1",
+          "position3D": {
+            "x": 22.740119346642622,
+            "y": 71.46948280280508,
+            "z": 0
+          },
+          "elevation": 0,
+          "distanceFromHomeplate": 75,
+          "angle": 162.35,
+          "facing": 342.35,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "mariners-117-1-2",
+          "sectionId": "117",
+          "row": "1",
+          "seatNumber": "2",
+          "position3D": {
+            "x": 22.490505754762722,
+            "y": 71.54842521603801,
+            "z": 0
+          },
+          "elevation": 0,
+          "distanceFromHomeplate": 75,
+          "angle": 162.55,
+          "facing": 342.55,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "mariners-117-1-3",
+          "sectionId": "117",
+          "row": "1",
+          "seatNumber": "3",
+          "position3D": {
+            "x": 22.240618123167838,
+            "y": 71.62649583428899,
+            "z": 0
+          },
+          "elevation": 0,
+          "distanceFromHomeplate": 75,
+          "angle": 162.75,
+          "facing": 342.75,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "mariners-117-1-4",
+          "sectionId": "117",
+          "row": "1",
+          "seatNumber": "4",
+          "position3D": {
+            "x": 21.9904594966598,
+            "y": 71.70369370629219,
+            "z": 0
+          },
+          "elevation": 0,
+          "distanceFromHomeplate": 75,
+          "angle": 162.95,
+          "facing": 342.95,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "mariners-117-1-5",
+          "sectionId": "117",
+          "row": "1",
+          "seatNumber": "5",
+          "position3D": {
+            "x": 21.740032923342543,
+            "y": 71.78001789141587,
+            "z": 0
+          },
+          "elevation": 0,
+          "distanceFromHomeplate": 75,
+          "angle": 163.15,
+          "facing": 343.15,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "mariners-117-1-6",
+          "sectionId": "117",
+          "row": "1",
+          "seatNumber": "6",
+          "position3D": {
+            "x": 21.489341454584885,
+            "y": 71.85546745967393,
+            "z": 0
+          },
+          "elevation": 0,
+          "distanceFromHomeplate": 75,
+          "angle": 163.35,
+          "facing": 343.35,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "mariners-117-1-7",
+          "sectionId": "117",
+          "row": "1",
+          "seatNumber": "7",
+          "position3D": {
+            "x": 21.238388144983197,
+            "y": 71.93004149173721,
+            "z": 0
+          },
+          "elevation": 0,
+          "distanceFromHomeplate": 75,
+          "angle": 163.55,
+          "facing": 343.55,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "mariners-117-1-8",
+          "sectionId": "117",
+          "row": "1",
+          "seatNumber": "8",
+          "position3D": {
+            "x": 20.9871760523244,
+            "y": 72.00373907894465,
+            "z": 0
+          },
+          "elevation": 0,
+          "distanceFromHomeplate": 75,
+          "angle": 163.75,
+          "facing": 343.75,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "mariners-117-1-9",
+          "sectionId": "117",
+          "row": "1",
+          "seatNumber": "9",
+          "position3D": {
+            "x": 20.73570823754859,
+            "y": 72.0765593233144,
+            "z": 0
+          },
+          "elevation": 0,
+          "distanceFromHomeplate": 75,
+          "angle": 163.95,
+          "facing": 343.95,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "mariners-117-1-10",
+          "sectionId": "117",
+          "row": "1",
+          "seatNumber": "10",
+          "position3D": {
+            "x": 20.48398776471163,
+            "y": 72.14850133755478,
+            "z": 0
+          },
+          "elevation": 0,
+          "distanceFromHomeplate": 75,
+          "angle": 164.15,
+          "facing": 344.15,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        }
+      ],
+      "covered": false,
+      "hasAisleSeats": false,
+      "wheelchairRow": false
+    },
+    {
+      "rowNumber": "2",
+      "sectionId": "117",
+      "seatCount": 10,
+      "elevation": 2.5,
+      "depth": 77.8,
+      "rowSpacing": 36,
+      "seats": [
+        {
+          "id": "mariners-117-2-1",
+          "sectionId": "117",
+          "row": "2",
+          "seatNumber": "1",
+          "position3D": {
+            "x": 23.58908380225061,
+            "y": 74.13767682744313,
+            "z": 2.5
+          },
+          "elevation": 2.5,
+          "distanceFromHomeplate": 77.8,
+          "angle": 162.35,
+          "facing": 342.35,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "mariners-117-2-2",
+          "sectionId": "117",
+          "row": "2",
+          "seatNumber": "2",
+          "position3D": {
+            "x": 23.330151302940532,
+            "y": 74.21956642410343,
+            "z": 2.5
+          },
+          "elevation": 2.5,
+          "distanceFromHomeplate": 77.8,
+          "angle": 162.55,
+          "facing": 342.55,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "mariners-117-2-3",
+          "sectionId": "117",
+          "row": "2",
+          "seatNumber": "3",
+          "position3D": {
+            "x": 23.070934533099436,
+            "y": 74.30055167876911,
+            "z": 2.5
+          },
+          "elevation": 2.5,
+          "distanceFromHomeplate": 77.8,
+          "angle": 162.75,
+          "facing": 342.75,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "mariners-117-2-4",
+          "sectionId": "117",
+          "row": "2",
+          "seatNumber": "4",
+          "position3D": {
+            "x": 22.811436651201763,
+            "y": 74.38063160466042,
+            "z": 2.5
+          },
+          "elevation": 2.5,
+          "distanceFromHomeplate": 77.8,
+          "angle": 162.95,
+          "facing": 342.95,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "mariners-117-2-5",
+          "sectionId": "117",
+          "row": "2",
+          "seatNumber": "5",
+          "position3D": {
+            "x": 22.55166081914733,
+            "y": 74.45980522602872,
+            "z": 2.5
+          },
+          "elevation": 2.5,
+          "distanceFromHomeplate": 77.79999999999998,
+          "angle": 163.15,
+          "facing": 343.15,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "mariners-117-2-6",
+          "sectionId": "117",
+          "row": "2",
+          "seatNumber": "6",
+          "position3D": {
+            "x": 22.29161020222272,
+            "y": 74.53807157816843,
+            "z": 2.5
+          },
+          "elevation": 2.5,
+          "distanceFromHomeplate": 77.8,
+          "angle": 163.35,
+          "facing": 343.35,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "mariners-117-2-7",
+          "sectionId": "117",
+          "row": "2",
+          "seatNumber": "7",
+          "position3D": {
+            "x": 22.031287969062568,
+            "y": 74.61542970742873,
+            "z": 2.5
+          },
+          "elevation": 2.5,
+          "distanceFromHomeplate": 77.8,
+          "angle": 163.55,
+          "facing": 343.55,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "mariners-117-2-8",
+          "sectionId": "117",
+          "row": "2",
+          "seatNumber": "8",
+          "position3D": {
+            "x": 21.770697291611178,
+            "y": 74.69187867122525,
+            "z": 2.5
+          },
+          "elevation": 2.5,
+          "distanceFromHomeplate": 77.8,
+          "angle": 163.75,
+          "facing": 343.75,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "mariners-117-2-9",
+          "sectionId": "117",
+          "row": "2",
+          "seatNumber": "9",
+          "position3D": {
+            "x": 21.509841345083736,
+            "y": 74.76741753805146,
+            "z": 2.5
+          },
+          "elevation": 2.5,
+          "distanceFromHomeplate": 77.8,
+          "angle": 163.95,
+          "facing": 343.95,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "mariners-117-2-10",
+          "sectionId": "117",
+          "row": "2",
+          "seatNumber": "10",
+          "position3D": {
+            "x": 21.248723307927534,
+            "y": 74.84204538749016,
+            "z": 2.5
+          },
+          "elevation": 2.5,
+          "distanceFromHomeplate": 77.8,
+          "angle": 164.15,
+          "facing": 344.15,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        }
+      ],
+      "covered": false,
+      "hasAisleSeats": false,
+      "wheelchairRow": false
+    },
+    {
+      "rowNumber": "3",
+      "sectionId": "117",
+      "seatCount": 10,
+      "elevation": 5,
+      "depth": 80.6,
+      "rowSpacing": 36,
+      "seats": [
+        {
+          "id": "mariners-117-3-1",
+          "sectionId": "117",
+          "row": "3",
+          "seatNumber": "1",
+          "position3D": {
+            "x": 24.4380482578586,
+            "y": 76.80587085208118,
+            "z": 5
+          },
+          "elevation": 5,
+          "distanceFromHomeplate": 80.6,
+          "angle": 162.35,
+          "facing": 342.35,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "mariners-117-3-2",
+          "sectionId": "117",
+          "row": "3",
+          "seatNumber": "2",
+          "position3D": {
+            "x": 24.16979685111834,
+            "y": 76.89070763216884,
+            "z": 5
+          },
+          "elevation": 5,
+          "distanceFromHomeplate": 80.59999999999998,
+          "angle": 162.55,
+          "facing": 342.55,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "mariners-117-3-3",
+          "sectionId": "117",
+          "row": "3",
+          "seatNumber": "3",
+          "position3D": {
+            "x": 23.901250943031034,
+            "y": 76.97460752324923,
+            "z": 5
+          },
+          "elevation": 5,
+          "distanceFromHomeplate": 80.6,
+          "angle": 162.75,
+          "facing": 342.75,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "mariners-117-3-4",
+          "sectionId": "117",
+          "row": "3",
+          "seatNumber": "4",
+          "position3D": {
+            "x": 23.632413805743727,
+            "y": 77.05756950302866,
+            "z": 5
+          },
+          "elevation": 5,
+          "distanceFromHomeplate": 80.6,
+          "angle": 162.95,
+          "facing": 342.95,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "mariners-117-3-5",
+          "sectionId": "117",
+          "row": "3",
+          "seatNumber": "5",
+          "position3D": {
+            "x": 23.36328871495212,
+            "y": 77.13959256064159,
+            "z": 5
+          },
+          "elevation": 5,
+          "distanceFromHomeplate": 80.6,
+          "angle": 163.15,
+          "facing": 343.15,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "mariners-117-3-6",
+          "sectionId": "117",
+          "row": "3",
+          "seatNumber": "6",
+          "position3D": {
+            "x": 23.093878949860557,
+            "y": 77.22067569666291,
+            "z": 5
+          },
+          "elevation": 5,
+          "distanceFromHomeplate": 80.59999999999998,
+          "angle": 163.35,
+          "facing": 343.35,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "mariners-117-3-7",
+          "sectionId": "117",
+          "row": "3",
+          "seatNumber": "7",
+          "position3D": {
+            "x": 22.824187793141938,
+            "y": 77.30081792312026,
+            "z": 5
+          },
+          "elevation": 5,
+          "distanceFromHomeplate": 80.60000000000001,
+          "angle": 163.55,
+          "facing": 343.55,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "mariners-117-3-8",
+          "sectionId": "117",
+          "row": "3",
+          "seatNumber": "8",
+          "position3D": {
+            "x": 22.554218530897955,
+            "y": 77.38001826350585,
+            "z": 5
+          },
+          "elevation": 5,
+          "distanceFromHomeplate": 80.6,
+          "angle": 163.75,
+          "facing": 343.75,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "mariners-117-3-9",
+          "sectionId": "117",
+          "row": "3",
+          "seatNumber": "9",
+          "position3D": {
+            "x": 22.28397445261888,
+            "y": 77.45827575278852,
+            "z": 5
+          },
+          "elevation": 5,
+          "distanceFromHomeplate": 80.59999999999998,
+          "angle": 163.95,
+          "facing": 343.95,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "mariners-117-3-10",
+          "sectionId": "117",
+          "row": "3",
+          "seatNumber": "10",
+          "position3D": {
+            "x": 22.013458851143433,
+            "y": 77.53558943742553,
+            "z": 5
+          },
+          "elevation": 5,
+          "distanceFromHomeplate": 80.6,
+          "angle": 164.15,
+          "facing": 344.15,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        }
+      ],
+      "covered": false,
+      "hasAisleSeats": false,
+      "wheelchairRow": false
+    },
+    {
+      "rowNumber": "4",
+      "sectionId": "117",
+      "seatCount": 10,
+      "elevation": 7.5,
+      "depth": 83.4,
+      "rowSpacing": 36,
+      "seats": [
+        {
+          "id": "mariners-117-4-1",
+          "sectionId": "117",
+          "row": "4",
+          "seatNumber": "1",
+          "position3D": {
+            "x": 25.287012713466595,
+            "y": 79.47406487671925,
+            "z": 7.5
+          },
+          "elevation": 7.5,
+          "distanceFromHomeplate": 83.40000000000002,
+          "angle": 162.35,
+          "facing": 342.35,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "mariners-117-4-2",
+          "sectionId": "117",
+          "row": "4",
+          "seatNumber": "2",
+          "position3D": {
+            "x": 25.00944239929615,
+            "y": 79.56184884023428,
+            "z": 7.5
+          },
+          "elevation": 7.5,
+          "distanceFromHomeplate": 83.4,
+          "angle": 162.55,
+          "facing": 342.55,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "mariners-117-4-3",
+          "sectionId": "117",
+          "row": "4",
+          "seatNumber": "3",
+          "position3D": {
+            "x": 24.731567352962635,
+            "y": 79.64866336772936,
+            "z": 7.5
+          },
+          "elevation": 7.5,
+          "distanceFromHomeplate": 83.39999999999999,
+          "angle": 162.75,
+          "facing": 342.75,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "mariners-117-4-4",
+          "sectionId": "117",
+          "row": "4",
+          "seatNumber": "4",
+          "position3D": {
+            "x": 24.453390960285695,
+            "y": 79.73450740139691,
+            "z": 7.5
+          },
+          "elevation": 7.5,
+          "distanceFromHomeplate": 83.4,
+          "angle": 162.95,
+          "facing": 342.95,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "mariners-117-4-5",
+          "sectionId": "117",
+          "row": "4",
+          "seatNumber": "5",
+          "position3D": {
+            "x": 24.17491661075691,
+            "y": 79.81937989525446,
+            "z": 7.5
+          },
+          "elevation": 7.5,
+          "distanceFromHomeplate": 83.4,
+          "angle": 163.15,
+          "facing": 343.15,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "mariners-117-4-6",
+          "sectionId": "117",
+          "row": "4",
+          "seatNumber": "6",
+          "position3D": {
+            "x": 23.896147697498396,
+            "y": 79.90327981515742,
+            "z": 7.5
+          },
+          "elevation": 7.5,
+          "distanceFromHomeplate": 83.4,
+          "angle": 163.35,
+          "facing": 343.35,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "mariners-117-4-7",
+          "sectionId": "117",
+          "row": "4",
+          "seatNumber": "7",
+          "position3D": {
+            "x": 23.617087617221316,
+            "y": 79.9862061388118,
+            "z": 7.5
+          },
+          "elevation": 7.5,
+          "distanceFromHomeplate": 83.40000000000002,
+          "angle": 163.55,
+          "facing": 343.55,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "mariners-117-4-8",
+          "sectionId": "117",
+          "row": "4",
+          "seatNumber": "8",
+          "position3D": {
+            "x": 23.337739770184736,
+            "y": 80.06815785578647,
+            "z": 7.5
+          },
+          "elevation": 7.5,
+          "distanceFromHomeplate": 83.40000000000002,
+          "angle": 163.75,
+          "facing": 343.75,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "mariners-117-4-9",
+          "sectionId": "117",
+          "row": "4",
+          "seatNumber": "9",
+          "position3D": {
+            "x": 23.05810756015403,
+            "y": 80.14913396752561,
+            "z": 7.5
+          },
+          "elevation": 7.5,
+          "distanceFromHomeplate": 83.4,
+          "angle": 163.95,
+          "facing": 343.95,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "mariners-117-4-10",
+          "sectionId": "117",
+          "row": "4",
+          "seatNumber": "10",
+          "position3D": {
+            "x": 22.778194394359335,
+            "y": 80.22913348736093,
+            "z": 7.5
+          },
+          "elevation": 7.5,
+          "distanceFromHomeplate": 83.4,
+          "angle": 164.15,
+          "facing": 344.15,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        }
+      ],
+      "covered": false,
+      "hasAisleSeats": false,
+      "wheelchairRow": false
+    },
+    {
+      "rowNumber": "5",
+      "sectionId": "117",
+      "seatCount": 10,
+      "elevation": 10,
+      "depth": 86.2,
+      "rowSpacing": 36,
+      "seats": [
+        {
+          "id": "mariners-117-5-1",
+          "sectionId": "117",
+          "row": "5",
+          "seatNumber": "1",
+          "position3D": {
+            "x": 26.135977169074586,
+            "y": 82.14225890135731,
+            "z": 10
+          },
+          "elevation": 10,
+          "distanceFromHomeplate": 86.20000000000002,
+          "angle": 162.35,
+          "facing": 342.35,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "mariners-117-5-2",
+          "sectionId": "117",
+          "row": "5",
+          "seatNumber": "2",
+          "position3D": {
+            "x": 25.849087947473958,
+            "y": 82.2329900482997,
+            "z": 10
+          },
+          "elevation": 10,
+          "distanceFromHomeplate": 86.2,
+          "angle": 162.55,
+          "facing": 342.55,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "mariners-117-5-3",
+          "sectionId": "117",
+          "row": "5",
+          "seatNumber": "3",
+          "position3D": {
+            "x": 25.561883762894233,
+            "y": 82.32271921220948,
+            "z": 10
+          },
+          "elevation": 10,
+          "distanceFromHomeplate": 86.19999999999999,
+          "angle": 162.75,
+          "facing": 342.75,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "mariners-117-5-4",
+          "sectionId": "117",
+          "row": "5",
+          "seatNumber": "4",
+          "position3D": {
+            "x": 25.274368114827663,
+            "y": 82.41144529976515,
+            "z": 10
+          },
+          "elevation": 10,
+          "distanceFromHomeplate": 86.2,
+          "angle": 162.95,
+          "facing": 342.95,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "mariners-117-5-5",
+          "sectionId": "117",
+          "row": "5",
+          "seatNumber": "5",
+          "position3D": {
+            "x": 24.986544506561696,
+            "y": 82.49916722986731,
+            "z": 10
+          },
+          "elevation": 10,
+          "distanceFromHomeplate": 86.2,
+          "angle": 163.15,
+          "facing": 343.15,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "mariners-117-5-6",
+          "sectionId": "117",
+          "row": "5",
+          "seatNumber": "6",
+          "position3D": {
+            "x": 24.69841644513623,
+            "y": 82.58588393365191,
+            "z": 10
+          },
+          "elevation": 10,
+          "distanceFromHomeplate": 86.2,
+          "angle": 163.35,
+          "facing": 343.35,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "mariners-117-5-7",
+          "sectionId": "117",
+          "row": "5",
+          "seatNumber": "7",
+          "position3D": {
+            "x": 24.409987441300686,
+            "y": 82.67159435450331,
+            "z": 10
+          },
+          "elevation": 10,
+          "distanceFromHomeplate": 86.2,
+          "angle": 163.55,
+          "facing": 343.55,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "mariners-117-5-8",
+          "sectionId": "117",
+          "row": "5",
+          "seatNumber": "8",
+          "position3D": {
+            "x": 24.121261009471514,
+            "y": 82.75629744806706,
+            "z": 10
+          },
+          "elevation": 10,
+          "distanceFromHomeplate": 86.2,
+          "angle": 163.75,
+          "facing": 343.75,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "mariners-117-5-9",
+          "sectionId": "117",
+          "row": "5",
+          "seatNumber": "9",
+          "position3D": {
+            "x": 23.832240667689177,
+            "y": 82.83999218226268,
+            "z": 10
+          },
+          "elevation": 10,
+          "distanceFromHomeplate": 86.2,
+          "angle": 163.95,
+          "facing": 343.95,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "mariners-117-5-10",
+          "sectionId": "117",
+          "row": "5",
+          "seatNumber": "10",
+          "position3D": {
+            "x": 23.542929937575238,
+            "y": 82.9226775372963,
+            "z": 10
+          },
+          "elevation": 10,
+          "distanceFromHomeplate": 86.2,
+          "angle": 164.15,
+          "facing": 344.15,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        }
+      ],
+      "covered": false,
+      "hasAisleSeats": false,
+      "wheelchairRow": false
+    },
+    {
+      "rowNumber": "6",
+      "sectionId": "117",
+      "seatCount": 10,
+      "elevation": 12.5,
+      "depth": 89,
+      "rowSpacing": 36,
+      "seats": [
+        {
+          "id": "mariners-117-6-1",
+          "sectionId": "117",
+          "row": "6",
+          "seatNumber": "1",
+          "position3D": {
+            "x": 26.984941624682577,
+            "y": 84.81045292599536,
+            "z": 12.5
+          },
+          "elevation": 12.5,
+          "distanceFromHomeplate": 89.00000000000001,
+          "angle": 162.35,
+          "facing": 342.35,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "mariners-117-6-2",
+          "sectionId": "117",
+          "row": "6",
+          "seatNumber": "2",
+          "position3D": {
+            "x": 26.688733495651768,
+            "y": 84.9041312563651,
+            "z": 12.5
+          },
+          "elevation": 12.5,
+          "distanceFromHomeplate": 88.99999999999999,
+          "angle": 162.55,
+          "facing": 342.55,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "mariners-117-6-3",
+          "sectionId": "117",
+          "row": "6",
+          "seatNumber": "3",
+          "position3D": {
+            "x": 26.392200172825834,
+            "y": 84.9967750566896,
+            "z": 12.5
+          },
+          "elevation": 12.5,
+          "distanceFromHomeplate": 89,
+          "angle": 162.75,
+          "facing": 342.75,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "mariners-117-6-4",
+          "sectionId": "117",
+          "row": "6",
+          "seatNumber": "4",
+          "position3D": {
+            "x": 26.095345269369627,
+            "y": 85.08838319813339,
+            "z": 12.5
+          },
+          "elevation": 12.5,
+          "distanceFromHomeplate": 89,
+          "angle": 162.95,
+          "facing": 342.95,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "mariners-117-6-5",
+          "sectionId": "117",
+          "row": "6",
+          "seatNumber": "5",
+          "position3D": {
+            "x": 25.798172402366486,
+            "y": 85.17895456448016,
+            "z": 12.5
+          },
+          "elevation": 12.5,
+          "distanceFromHomeplate": 89,
+          "angle": 163.15,
+          "facing": 343.15,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "mariners-117-6-6",
+          "sectionId": "117",
+          "row": "6",
+          "seatNumber": "6",
+          "position3D": {
+            "x": 25.500685192774064,
+            "y": 85.2684880521464,
+            "z": 12.5
+          },
+          "elevation": 12.5,
+          "distanceFromHomeplate": 89,
+          "angle": 163.35,
+          "facing": 343.35,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "mariners-117-6-7",
+          "sectionId": "117",
+          "row": "6",
+          "seatNumber": "7",
+          "position3D": {
+            "x": 25.20288726538006,
+            "y": 85.35698257019483,
+            "z": 12.5
+          },
+          "elevation": 12.5,
+          "distanceFromHomeplate": 89,
+          "angle": 163.55,
+          "facing": 343.55,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "mariners-117-6-8",
+          "sectionId": "117",
+          "row": "6",
+          "seatNumber": "8",
+          "position3D": {
+            "x": 24.90478224875829,
+            "y": 85.44443704034765,
+            "z": 12.5
+          },
+          "elevation": 12.5,
+          "distanceFromHomeplate": 89,
+          "angle": 163.75,
+          "facing": 343.75,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "mariners-117-6-9",
+          "sectionId": "117",
+          "row": "6",
+          "seatNumber": "9",
+          "position3D": {
+            "x": 24.606373775224327,
+            "y": 85.53085039699975,
+            "z": 12.5
+          },
+          "elevation": 12.5,
+          "distanceFromHomeplate": 89,
+          "angle": 163.95,
+          "facing": 343.95,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "mariners-117-6-10",
+          "sectionId": "117",
+          "row": "6",
+          "seatNumber": "10",
+          "position3D": {
+            "x": 24.307665480791137,
+            "y": 85.61622158723168,
+            "z": 12.5
+          },
+          "elevation": 12.5,
+          "distanceFromHomeplate": 89,
+          "angle": 164.15,
+          "facing": 344.15,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        }
+      ],
+      "covered": false,
+      "hasAisleSeats": false,
+      "wheelchairRow": false
+    },
+    {
+      "rowNumber": "7",
+      "sectionId": "117",
+      "seatCount": 10,
+      "elevation": 15,
+      "depth": 91.8,
+      "rowSpacing": 36,
+      "seats": [
+        {
+          "id": "mariners-117-7-1",
+          "sectionId": "117",
+          "row": "7",
+          "seatNumber": "1",
+          "position3D": {
+            "x": 27.833906080290568,
+            "y": 87.4786469506334,
+            "z": 15
+          },
+          "elevation": 15,
+          "distanceFromHomeplate": 91.8,
+          "angle": 162.35,
+          "facing": 342.35,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "mariners-117-7-2",
+          "sectionId": "117",
+          "row": "7",
+          "seatNumber": "2",
+          "position3D": {
+            "x": 27.528379043829574,
+            "y": 87.57527246443053,
+            "z": 15
+          },
+          "elevation": 15,
+          "distanceFromHomeplate": 91.8,
+          "angle": 162.55,
+          "facing": 342.55,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "mariners-117-7-3",
+          "sectionId": "117",
+          "row": "7",
+          "seatNumber": "3",
+          "position3D": {
+            "x": 27.222516582757432,
+            "y": 87.67083090116972,
+            "z": 15
+          },
+          "elevation": 15,
+          "distanceFromHomeplate": 91.8,
+          "angle": 162.75,
+          "facing": 342.75,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "mariners-117-7-4",
+          "sectionId": "117",
+          "row": "7",
+          "seatNumber": "4",
+          "position3D": {
+            "x": 26.91632242391159,
+            "y": 87.76532109650164,
+            "z": 15
+          },
+          "elevation": 15,
+          "distanceFromHomeplate": 91.80000000000001,
+          "angle": 162.95,
+          "facing": 342.95,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "mariners-117-7-5",
+          "sectionId": "117",
+          "row": "7",
+          "seatNumber": "5",
+          "position3D": {
+            "x": 26.609800298171272,
+            "y": 87.85874189909302,
+            "z": 15
+          },
+          "elevation": 15,
+          "distanceFromHomeplate": 91.8,
+          "angle": 163.15,
+          "facing": 343.15,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "mariners-117-7-6",
+          "sectionId": "117",
+          "row": "7",
+          "seatNumber": "6",
+          "position3D": {
+            "x": 26.3029539404119,
+            "y": 87.95109217064089,
+            "z": 15
+          },
+          "elevation": 15,
+          "distanceFromHomeplate": 91.8,
+          "angle": 163.35,
+          "facing": 343.35,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "mariners-117-7-7",
+          "sectionId": "117",
+          "row": "7",
+          "seatNumber": "7",
+          "position3D": {
+            "x": 25.99578708945943,
+            "y": 88.04237078588635,
+            "z": 15
+          },
+          "elevation": 15,
+          "distanceFromHomeplate": 91.8,
+          "angle": 163.55,
+          "facing": 343.55,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "mariners-117-7-8",
+          "sectionId": "117",
+          "row": "7",
+          "seatNumber": "8",
+          "position3D": {
+            "x": 25.68830348804507,
+            "y": 88.13257663262826,
+            "z": 15
+          },
+          "elevation": 15,
+          "distanceFromHomeplate": 91.80000000000001,
+          "angle": 163.75,
+          "facing": 343.75,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "mariners-117-7-9",
+          "sectionId": "117",
+          "row": "7",
+          "seatNumber": "9",
+          "position3D": {
+            "x": 25.380506882759473,
+            "y": 88.22170861173682,
+            "z": 15
+          },
+          "elevation": 15,
+          "distanceFromHomeplate": 91.8,
+          "angle": 163.95,
+          "facing": 343.95,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "mariners-117-7-10",
+          "sectionId": "117",
+          "row": "7",
+          "seatNumber": "10",
+          "position3D": {
+            "x": 25.072401024007036,
+            "y": 88.30976563716705,
+            "z": 15
+          },
+          "elevation": 15,
+          "distanceFromHomeplate": 91.79999999999998,
+          "angle": 164.15,
+          "facing": 344.15,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        }
+      ],
+      "covered": false,
+      "hasAisleSeats": false,
+      "wheelchairRow": false
+    },
+    {
+      "rowNumber": "8",
+      "sectionId": "117",
+      "seatCount": 10,
+      "elevation": 17.5,
+      "depth": 94.6,
+      "rowSpacing": 36,
+      "seats": [
+        {
+          "id": "mariners-117-8-1",
+          "sectionId": "117",
+          "row": "8",
+          "seatNumber": "1",
+          "position3D": {
+            "x": 28.682870535898555,
+            "y": 90.14684097527146,
+            "z": 17.5
+          },
+          "elevation": 17.5,
+          "distanceFromHomeplate": 94.6,
+          "angle": 162.35,
+          "facing": 342.35,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "mariners-117-8-2",
+          "sectionId": "117",
+          "row": "8",
+          "seatNumber": "2",
+          "position3D": {
+            "x": 28.36802459200738,
+            "y": 90.24641367249595,
+            "z": 17.5
+          },
+          "elevation": 17.5,
+          "distanceFromHomeplate": 94.6,
+          "angle": 162.55,
+          "facing": 342.55,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "mariners-117-8-3",
+          "sectionId": "117",
+          "row": "8",
+          "seatNumber": "3",
+          "position3D": {
+            "x": 28.05283299268903,
+            "y": 90.34488674564984,
+            "z": 17.5
+          },
+          "elevation": 17.5,
+          "distanceFromHomeplate": 94.6,
+          "angle": 162.75,
+          "facing": 342.75,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "mariners-117-8-4",
+          "sectionId": "117",
+          "row": "8",
+          "seatNumber": "4",
+          "position3D": {
+            "x": 27.737299578453555,
+            "y": 90.44225899486987,
+            "z": 17.5
+          },
+          "elevation": 17.5,
+          "distanceFromHomeplate": 94.6,
+          "angle": 162.95,
+          "facing": 342.95,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "mariners-117-8-5",
+          "sectionId": "117",
+          "row": "8",
+          "seatNumber": "5",
+          "position3D": {
+            "x": 27.42142819397606,
+            "y": 90.53852923370587,
+            "z": 17.5
+          },
+          "elevation": 17.5,
+          "distanceFromHomeplate": 94.6,
+          "angle": 163.15,
+          "facing": 343.15,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "mariners-117-8-6",
+          "sectionId": "117",
+          "row": "8",
+          "seatNumber": "6",
+          "position3D": {
+            "x": 27.105222688049736,
+            "y": 90.63369628913539,
+            "z": 17.5
+          },
+          "elevation": 17.5,
+          "distanceFromHomeplate": 94.6,
+          "angle": 163.35,
+          "facing": 343.35,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "mariners-117-8-7",
+          "sectionId": "117",
+          "row": "8",
+          "seatNumber": "7",
+          "position3D": {
+            "x": 26.788686913538804,
+            "y": 90.72775900157787,
+            "z": 17.5
+          },
+          "elevation": 17.5,
+          "distanceFromHomeplate": 94.6,
+          "angle": 163.55,
+          "facing": 343.55,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "mariners-117-8-8",
+          "sectionId": "117",
+          "row": "8",
+          "seatNumber": "8",
+          "position3D": {
+            "x": 26.471824727331846,
+            "y": 90.82071622490885,
+            "z": 17.5
+          },
+          "elevation": 17.5,
+          "distanceFromHomeplate": 94.6,
+          "angle": 163.75,
+          "facing": 343.75,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "mariners-117-8-9",
+          "sectionId": "117",
+          "row": "8",
+          "seatNumber": "9",
+          "position3D": {
+            "x": 26.15463999029462,
+            "y": 90.91256682647388,
+            "z": 17.5
+          },
+          "elevation": 17.5,
+          "distanceFromHomeplate": 94.6,
+          "angle": 163.95,
+          "facing": 343.95,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "mariners-117-8-10",
+          "sectionId": "117",
+          "row": "8",
+          "seatNumber": "10",
+          "position3D": {
+            "x": 25.837136567222938,
+            "y": 91.00330968710243,
+            "z": 17.5
+          },
+          "elevation": 17.5,
+          "distanceFromHomeplate": 94.6,
+          "angle": 164.15,
+          "facing": 344.15,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        }
+      ],
+      "covered": false,
+      "hasAisleSeats": false,
+      "wheelchairRow": false
+    },
+    {
+      "rowNumber": "9",
+      "sectionId": "117",
+      "seatCount": 10,
+      "elevation": 20,
+      "depth": 97.4,
+      "rowSpacing": 36,
+      "seats": [
+        {
+          "id": "mariners-117-9-1",
+          "sectionId": "117",
+          "row": "9",
+          "seatNumber": "1",
+          "position3D": {
+            "x": 29.531834991506553,
+            "y": 92.81503499990953,
+            "z": 20
+          },
+          "elevation": 20,
+          "distanceFromHomeplate": 97.4,
+          "angle": 162.35,
+          "facing": 342.35,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "mariners-117-9-2",
+          "sectionId": "117",
+          "row": "9",
+          "seatNumber": "2",
+          "position3D": {
+            "x": 29.207670140185193,
+            "y": 92.91755488056137,
+            "z": 20
+          },
+          "elevation": 20,
+          "distanceFromHomeplate": 97.4,
+          "angle": 162.55,
+          "facing": 342.55,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "mariners-117-9-3",
+          "sectionId": "117",
+          "row": "9",
+          "seatNumber": "3",
+          "position3D": {
+            "x": 28.88314940262063,
+            "y": 93.01894259012997,
+            "z": 20
+          },
+          "elevation": 20,
+          "distanceFromHomeplate": 97.4,
+          "angle": 162.75,
+          "facing": 342.75,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "mariners-117-9-4",
+          "sectionId": "117",
+          "row": "9",
+          "seatNumber": "4",
+          "position3D": {
+            "x": 28.558276732995527,
+            "y": 93.11919689323813,
+            "z": 20
+          },
+          "elevation": 20,
+          "distanceFromHomeplate": 97.40000000000002,
+          "angle": 162.95,
+          "facing": 342.95,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "mariners-117-9-5",
+          "sectionId": "117",
+          "row": "9",
+          "seatNumber": "5",
+          "position3D": {
+            "x": 28.233056089780852,
+            "y": 93.21831656831876,
+            "z": 20
+          },
+          "elevation": 20,
+          "distanceFromHomeplate": 97.40000000000002,
+          "angle": 163.15,
+          "facing": 343.15,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "mariners-117-9-6",
+          "sectionId": "117",
+          "row": "9",
+          "seatNumber": "6",
+          "position3D": {
+            "x": 27.90749143568757,
+            "y": 93.31630040762988,
+            "z": 20
+          },
+          "elevation": 20,
+          "distanceFromHomeplate": 97.4,
+          "angle": 163.35,
+          "facing": 343.35,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "mariners-117-9-7",
+          "sectionId": "117",
+          "row": "9",
+          "seatNumber": "7",
+          "position3D": {
+            "x": 27.581586737618178,
+            "y": 93.41314721726941,
+            "z": 20
+          },
+          "elevation": 20,
+          "distanceFromHomeplate": 97.4,
+          "angle": 163.55,
+          "facing": 343.55,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "mariners-117-9-8",
+          "sectionId": "117",
+          "row": "9",
+          "seatNumber": "8",
+          "position3D": {
+            "x": 27.255345966618624,
+            "y": 93.50885581718946,
+            "z": 20
+          },
+          "elevation": 20,
+          "distanceFromHomeplate": 97.4,
+          "angle": 163.75,
+          "facing": 343.75,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "mariners-117-9-9",
+          "sectionId": "117",
+          "row": "9",
+          "seatNumber": "9",
+          "position3D": {
+            "x": 26.92877309782977,
+            "y": 93.60342504121097,
+            "z": 20
+          },
+          "elevation": 20,
+          "distanceFromHomeplate": 97.4,
+          "angle": 163.95,
+          "facing": 343.95,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "mariners-117-9-10",
+          "sectionId": "117",
+          "row": "9",
+          "seatNumber": "10",
+          "position3D": {
+            "x": 26.60187211043884,
+            "y": 93.69685373703781,
+            "z": 20
+          },
+          "elevation": 20,
+          "distanceFromHomeplate": 97.4,
+          "angle": 164.15,
+          "facing": 344.15,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        }
+      ],
+      "covered": false,
+      "hasAisleSeats": false,
+      "wheelchairRow": false
+    },
+    {
+      "rowNumber": "10",
+      "sectionId": "117",
+      "seatCount": 10,
+      "elevation": 22.5,
+      "depth": 100.2,
+      "rowSpacing": 36,
+      "seats": [
+        {
+          "id": "mariners-117-10-1",
+          "sectionId": "117",
+          "row": "10",
+          "seatNumber": "1",
+          "position3D": {
+            "x": 30.38079944711454,
+            "y": 95.48322902454758,
+            "z": 22.5
+          },
+          "elevation": 22.5,
+          "distanceFromHomeplate": 100.20000000000002,
+          "angle": 162.35,
+          "facing": 342.35,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "mariners-117-10-2",
+          "sectionId": "117",
+          "row": "10",
+          "seatNumber": "2",
+          "position3D": {
+            "x": 30.047315688363,
+            "y": 95.58869608862679,
+            "z": 22.5
+          },
+          "elevation": 22.5,
+          "distanceFromHomeplate": 100.2,
+          "angle": 162.55,
+          "facing": 342.55,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "mariners-117-10-3",
+          "sectionId": "117",
+          "row": "10",
+          "seatNumber": "3",
+          "position3D": {
+            "x": 29.71346581255223,
+            "y": 95.69299843461009,
+            "z": 22.5
+          },
+          "elevation": 22.5,
+          "distanceFromHomeplate": 100.19999999999999,
+          "angle": 162.75,
+          "facing": 342.75,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "mariners-117-10-4",
+          "sectionId": "117",
+          "row": "10",
+          "seatNumber": "4",
+          "position3D": {
+            "x": 29.37925388753749,
+            "y": 95.79613479160636,
+            "z": 22.5
+          },
+          "elevation": 22.5,
+          "distanceFromHomeplate": 100.20000000000002,
+          "angle": 162.95,
+          "facing": 342.95,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "mariners-117-10-5",
+          "sectionId": "117",
+          "row": "10",
+          "seatNumber": "5",
+          "position3D": {
+            "x": 29.04468398558564,
+            "y": 95.89810390293161,
+            "z": 22.5
+          },
+          "elevation": 22.5,
+          "distanceFromHomeplate": 100.20000000000002,
+          "angle": 163.15,
+          "facing": 343.15,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "mariners-117-10-6",
+          "sectionId": "117",
+          "row": "10",
+          "seatNumber": "6",
+          "position3D": {
+            "x": 28.709760183325407,
+            "y": 95.99890452612438,
+            "z": 22.5
+          },
+          "elevation": 22.5,
+          "distanceFromHomeplate": 100.2,
+          "angle": 163.35,
+          "facing": 343.35,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "mariners-117-10-7",
+          "sectionId": "117",
+          "row": "10",
+          "seatNumber": "7",
+          "position3D": {
+            "x": 28.37448656169755,
+            "y": 96.09853543296093,
+            "z": 22.5
+          },
+          "elevation": 22.5,
+          "distanceFromHomeplate": 100.20000000000002,
+          "angle": 163.55,
+          "facing": 343.55,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "mariners-117-10-8",
+          "sectionId": "117",
+          "row": "10",
+          "seatNumber": "8",
+          "position3D": {
+            "x": 28.0388672059054,
+            "y": 96.19699540947006,
+            "z": 22.5
+          },
+          "elevation": 22.5,
+          "distanceFromHomeplate": 100.2,
+          "angle": 163.75,
+          "facing": 343.75,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "mariners-117-10-9",
+          "sectionId": "117",
+          "row": "10",
+          "seatNumber": "9",
+          "position3D": {
+            "x": 27.702906205364915,
+            "y": 96.29428325594803,
+            "z": 22.5
+          },
+          "elevation": 22.5,
+          "distanceFromHomeplate": 100.19999999999999,
+          "angle": 163.95,
+          "facing": 343.95,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "mariners-117-10-10",
+          "sectionId": "117",
+          "row": "10",
+          "seatNumber": "10",
+          "position3D": {
+            "x": 27.366607653654743,
+            "y": 96.39039778697318,
+            "z": 22.5
+          },
+          "elevation": 22.5,
+          "distanceFromHomeplate": 100.19999999999999,
+          "angle": 164.15,
+          "facing": 344.15,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        }
+      ],
+      "covered": false,
+      "hasAisleSeats": false,
+      "wheelchairRow": false
+    },
+    {
+      "rowNumber": "11",
+      "sectionId": "117",
+      "seatCount": 10,
+      "elevation": 25,
+      "depth": 103,
+      "rowSpacing": 36,
+      "seats": [
+        {
+          "id": "mariners-117-11-1",
+          "sectionId": "117",
+          "row": "11",
+          "seatNumber": "1",
+          "position3D": {
+            "x": 31.22976390272253,
+            "y": 98.15142304918564,
+            "z": 25
+          },
+          "elevation": 25,
+          "distanceFromHomeplate": 103.00000000000001,
+          "angle": 162.35,
+          "facing": 342.35,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "mariners-117-11-2",
+          "sectionId": "117",
+          "row": "11",
+          "seatNumber": "2",
+          "position3D": {
+            "x": 30.886961236540806,
+            "y": 98.25983729669221,
+            "z": 25
+          },
+          "elevation": 25,
+          "distanceFromHomeplate": 103,
+          "angle": 162.55,
+          "facing": 342.55,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "mariners-117-11-3",
+          "sectionId": "117",
+          "row": "11",
+          "seatNumber": "3",
+          "position3D": {
+            "x": 30.543782222483827,
+            "y": 98.36705427909021,
+            "z": 25
+          },
+          "elevation": 25,
+          "distanceFromHomeplate": 103,
+          "angle": 162.75,
+          "facing": 342.75,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "mariners-117-11-4",
+          "sectionId": "117",
+          "row": "11",
+          "seatNumber": "4",
+          "position3D": {
+            "x": 30.200231042079455,
+            "y": 98.4730726899746,
+            "z": 25
+          },
+          "elevation": 25,
+          "distanceFromHomeplate": 103,
+          "angle": 162.95,
+          "facing": 342.95,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "mariners-117-11-5",
+          "sectionId": "117",
+          "row": "11",
+          "seatNumber": "5",
+          "position3D": {
+            "x": 29.856311881390425,
+            "y": 98.57789123754446,
+            "z": 25
+          },
+          "elevation": 25,
+          "distanceFromHomeplate": 103,
+          "angle": 163.15,
+          "facing": 343.15,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "mariners-117-11-6",
+          "sectionId": "117",
+          "row": "11",
+          "seatNumber": "6",
+          "position3D": {
+            "x": 29.512028930963243,
+            "y": 98.68150864461887,
+            "z": 25
+          },
+          "elevation": 25,
+          "distanceFromHomeplate": 103.00000000000001,
+          "angle": 163.35,
+          "facing": 343.35,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "mariners-117-11-7",
+          "sectionId": "117",
+          "row": "11",
+          "seatNumber": "7",
+          "position3D": {
+            "x": 29.167386385776922,
+            "y": 98.78392364865245,
+            "z": 25
+          },
+          "elevation": 25,
+          "distanceFromHomeplate": 103.00000000000001,
+          "angle": 163.55,
+          "facing": 343.55,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "mariners-117-11-8",
+          "sectionId": "117",
+          "row": "11",
+          "seatNumber": "8",
+          "position3D": {
+            "x": 28.82238844519218,
+            "y": 98.88513500175065,
+            "z": 25
+          },
+          "elevation": 25,
+          "distanceFromHomeplate": 103,
+          "angle": 163.75,
+          "facing": 343.75,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "mariners-117-11-9",
+          "sectionId": "117",
+          "row": "11",
+          "seatNumber": "9",
+          "position3D": {
+            "x": 28.47703931290006,
+            "y": 98.9851414706851,
+            "z": 25
+          },
+          "elevation": 25,
+          "distanceFromHomeplate": 102.99999999999999,
+          "angle": 163.95,
+          "facing": 343.95,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "mariners-117-11-10",
+          "sectionId": "117",
+          "row": "11",
+          "seatNumber": "10",
+          "position3D": {
+            "x": 28.13134319687064,
+            "y": 99.08394183690856,
+            "z": 25
+          },
+          "elevation": 25,
+          "distanceFromHomeplate": 103,
+          "angle": 164.15,
+          "facing": 344.15,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        }
+      ],
+      "covered": false,
+      "hasAisleSeats": false,
+      "wheelchairRow": false
+    },
+    {
+      "rowNumber": "12",
+      "sectionId": "117",
+      "seatCount": 10,
+      "elevation": 27.5,
+      "depth": 105.8,
+      "rowSpacing": 36,
+      "seats": [
+        {
+          "id": "mariners-117-12-1",
+          "sectionId": "117",
+          "row": "12",
+          "seatNumber": "1",
+          "position3D": {
+            "x": 32.07872835833052,
+            "y": 100.8196170738237,
+            "z": 27.5
+          },
+          "elevation": 27.5,
+          "distanceFromHomeplate": 105.80000000000001,
+          "angle": 162.35,
+          "facing": 342.35,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "mariners-117-12-2",
+          "sectionId": "117",
+          "row": "12",
+          "seatNumber": "2",
+          "position3D": {
+            "x": 31.726606784718616,
+            "y": 100.93097850475762,
+            "z": 27.5
+          },
+          "elevation": 27.5,
+          "distanceFromHomeplate": 105.8,
+          "angle": 162.55,
+          "facing": 342.55,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "mariners-117-12-3",
+          "sectionId": "117",
+          "row": "12",
+          "seatNumber": "3",
+          "position3D": {
+            "x": 31.37409863241543,
+            "y": 101.04111012357033,
+            "z": 27.5
+          },
+          "elevation": 27.5,
+          "distanceFromHomeplate": 105.8,
+          "angle": 162.75,
+          "facing": 342.75,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "mariners-117-12-4",
+          "sectionId": "117",
+          "row": "12",
+          "seatNumber": "4",
+          "position3D": {
+            "x": 31.02120819662142,
+            "y": 101.15001058834284,
+            "z": 27.5
+          },
+          "elevation": 27.5,
+          "distanceFromHomeplate": 105.8,
+          "angle": 162.95,
+          "facing": 342.95,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "mariners-117-12-5",
+          "sectionId": "117",
+          "row": "12",
+          "seatNumber": "5",
+          "position3D": {
+            "x": 30.667939777195215,
+            "y": 101.25767857215732,
+            "z": 27.5
+          },
+          "elevation": 27.5,
+          "distanceFromHomeplate": 105.8,
+          "angle": 163.15,
+          "facing": 343.15,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "mariners-117-12-6",
+          "sectionId": "117",
+          "row": "12",
+          "seatNumber": "6",
+          "position3D": {
+            "x": 30.31429767860108,
+            "y": 101.36411276311335,
+            "z": 27.5
+          },
+          "elevation": 27.5,
+          "distanceFromHomeplate": 105.79999999999998,
+          "angle": 163.35,
+          "facing": 343.35,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "mariners-117-12-7",
+          "sectionId": "117",
+          "row": "12",
+          "seatNumber": "7",
+          "position3D": {
+            "x": 29.960286209856296,
+            "y": 101.46931186434396,
+            "z": 27.5
+          },
+          "elevation": 27.5,
+          "distanceFromHomeplate": 105.80000000000001,
+          "angle": 163.55,
+          "facing": 343.55,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "mariners-117-12-8",
+          "sectionId": "117",
+          "row": "12",
+          "seatNumber": "8",
+          "position3D": {
+            "x": 29.605909684478956,
+            "y": 101.57327459403126,
+            "z": 27.5
+          },
+          "elevation": 27.5,
+          "distanceFromHomeplate": 105.80000000000001,
+          "angle": 163.75,
+          "facing": 343.75,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "mariners-117-12-9",
+          "sectionId": "117",
+          "row": "12",
+          "seatNumber": "9",
+          "position3D": {
+            "x": 29.25117242043521,
+            "y": 101.67599968542217,
+            "z": 27.5
+          },
+          "elevation": 27.5,
+          "distanceFromHomeplate": 105.8,
+          "angle": 163.95,
+          "facing": 343.95,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "mariners-117-12-10",
+          "sectionId": "117",
+          "row": "12",
+          "seatNumber": "10",
+          "position3D": {
+            "x": 28.89607874008654,
+            "y": 101.77748588684393,
+            "z": 27.5
+          },
+          "elevation": 27.5,
+          "distanceFromHomeplate": 105.79999999999998,
+          "angle": 164.15,
+          "facing": 344.15,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        }
+      ],
+      "covered": false,
+      "hasAisleSeats": false,
+      "wheelchairRow": false
+    },
+    {
+      "rowNumber": "13",
+      "sectionId": "117",
+      "seatCount": 10,
+      "elevation": 30,
+      "depth": 108.6,
+      "rowSpacing": 36,
+      "seats": [
+        {
+          "id": "mariners-117-13-1",
+          "sectionId": "117",
+          "row": "13",
+          "seatNumber": "1",
+          "position3D": {
+            "x": 32.92769281393851,
+            "y": 103.48781109846175,
+            "z": 30
+          },
+          "elevation": 30,
+          "distanceFromHomeplate": 108.6,
+          "angle": 162.35,
+          "facing": 342.35,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "mariners-117-13-2",
+          "sectionId": "117",
+          "row": "13",
+          "seatNumber": "2",
+          "position3D": {
+            "x": 32.566252332896426,
+            "y": 103.60211971282304,
+            "z": 30
+          },
+          "elevation": 30,
+          "distanceFromHomeplate": 108.6,
+          "angle": 162.55,
+          "facing": 342.55,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "mariners-117-13-3",
+          "sectionId": "117",
+          "row": "13",
+          "seatNumber": "3",
+          "position3D": {
+            "x": 32.20441504234702,
+            "y": 103.71516596805046,
+            "z": 30
+          },
+          "elevation": 30,
+          "distanceFromHomeplate": 108.6,
+          "angle": 162.75,
+          "facing": 342.75,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "mariners-117-13-4",
+          "sectionId": "117",
+          "row": "13",
+          "seatNumber": "4",
+          "position3D": {
+            "x": 31.842185351163387,
+            "y": 103.82694848671107,
+            "z": 30
+          },
+          "elevation": 30,
+          "distanceFromHomeplate": 108.6,
+          "angle": 162.95,
+          "facing": 342.95,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "mariners-117-13-5",
+          "sectionId": "117",
+          "row": "13",
+          "seatNumber": "5",
+          "position3D": {
+            "x": 31.479567673000002,
+            "y": 103.93746590677017,
+            "z": 30
+          },
+          "elevation": 30,
+          "distanceFromHomeplate": 108.6,
+          "angle": 163.15,
+          "facing": 343.15,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "mariners-117-13-6",
+          "sectionId": "117",
+          "row": "13",
+          "seatNumber": "6",
+          "position3D": {
+            "x": 31.11656642623891,
+            "y": 104.04671688160785,
+            "z": 30
+          },
+          "elevation": 30,
+          "distanceFromHomeplate": 108.6,
+          "angle": 163.35,
+          "facing": 343.35,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "mariners-117-13-7",
+          "sectionId": "117",
+          "row": "13",
+          "seatNumber": "7",
+          "position3D": {
+            "x": 30.753186033935666,
+            "y": 104.15470008003548,
+            "z": 30
+          },
+          "elevation": 30,
+          "distanceFromHomeplate": 108.6,
+          "angle": 163.55,
+          "facing": 343.55,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "mariners-117-13-8",
+          "sectionId": "117",
+          "row": "13",
+          "seatNumber": "8",
+          "position3D": {
+            "x": 30.389430923765733,
+            "y": 104.26141418631185,
+            "z": 30
+          },
+          "elevation": 30,
+          "distanceFromHomeplate": 108.6,
+          "angle": 163.75,
+          "facing": 343.75,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "mariners-117-13-9",
+          "sectionId": "117",
+          "row": "13",
+          "seatNumber": "9",
+          "position3D": {
+            "x": 30.025305527970357,
+            "y": 104.36685790015923,
+            "z": 30
+          },
+          "elevation": 30,
+          "distanceFromHomeplate": 108.59999999999998,
+          "angle": 163.95,
+          "facing": 343.95,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "mariners-117-13-10",
+          "sectionId": "117",
+          "row": "13",
+          "seatNumber": "10",
+          "position3D": {
+            "x": 29.660814283302443,
+            "y": 104.47102993677932,
+            "z": 30
+          },
+          "elevation": 30,
+          "distanceFromHomeplate": 108.6,
+          "angle": 164.15,
+          "facing": 344.15,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        }
+      ],
+      "covered": false,
+      "hasAisleSeats": false,
+      "wheelchairRow": false
+    },
+    {
+      "rowNumber": "14",
+      "sectionId": "117",
+      "seatCount": 10,
+      "elevation": 32.5,
+      "depth": 111.4,
+      "rowSpacing": 36,
+      "seats": [
+        {
+          "id": "mariners-117-14-1",
+          "sectionId": "117",
+          "row": "14",
+          "seatNumber": "1",
+          "position3D": {
+            "x": 33.776657269546504,
+            "y": 106.15600512309982,
+            "z": 32.5
+          },
+          "elevation": 32.5,
+          "distanceFromHomeplate": 111.40000000000002,
+          "angle": 162.35,
+          "facing": 342.35,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "mariners-117-14-2",
+          "sectionId": "117",
+          "row": "14",
+          "seatNumber": "2",
+          "position3D": {
+            "x": 33.40589788107423,
+            "y": 106.27326092088848,
+            "z": 32.5
+          },
+          "elevation": 32.5,
+          "distanceFromHomeplate": 111.4,
+          "angle": 162.55,
+          "facing": 342.55,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "mariners-117-14-3",
+          "sectionId": "117",
+          "row": "14",
+          "seatNumber": "3",
+          "position3D": {
+            "x": 33.03473145227863,
+            "y": 106.38922181253058,
+            "z": 32.5
+          },
+          "elevation": 32.5,
+          "distanceFromHomeplate": 111.39999999999999,
+          "angle": 162.75,
+          "facing": 342.75,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "mariners-117-14-4",
+          "sectionId": "117",
+          "row": "14",
+          "seatNumber": "4",
+          "position3D": {
+            "x": 32.66316250570535,
+            "y": 106.50388638507933,
+            "z": 32.5
+          },
+          "elevation": 32.5,
+          "distanceFromHomeplate": 111.4,
+          "angle": 162.95,
+          "facing": 342.95,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "mariners-117-14-5",
+          "sectionId": "117",
+          "row": "14",
+          "seatNumber": "5",
+          "position3D": {
+            "x": 32.291195568804795,
+            "y": 106.61725324138304,
+            "z": 32.5
+          },
+          "elevation": 32.5,
+          "distanceFromHomeplate": 111.4,
+          "angle": 163.15,
+          "facing": 343.15,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "mariners-117-14-6",
+          "sectionId": "117",
+          "row": "14",
+          "seatNumber": "6",
+          "position3D": {
+            "x": 31.91883517387675,
+            "y": 106.72932100010236,
+            "z": 32.5
+          },
+          "elevation": 32.5,
+          "distanceFromHomeplate": 111.4,
+          "angle": 163.35,
+          "facing": 343.35,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "mariners-117-14-7",
+          "sectionId": "117",
+          "row": "14",
+          "seatNumber": "7",
+          "position3D": {
+            "x": 31.546085858015044,
+            "y": 106.84008829572701,
+            "z": 32.5
+          },
+          "elevation": 32.5,
+          "distanceFromHomeplate": 111.4,
+          "angle": 163.55,
+          "facing": 343.55,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "mariners-117-14-8",
+          "sectionId": "117",
+          "row": "14",
+          "seatNumber": "8",
+          "position3D": {
+            "x": 31.172952163052514,
+            "y": 106.94955377859246,
+            "z": 32.5
+          },
+          "elevation": 32.5,
+          "distanceFromHomeplate": 111.4,
+          "angle": 163.75,
+          "facing": 343.75,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "mariners-117-14-9",
+          "sectionId": "117",
+          "row": "14",
+          "seatNumber": "9",
+          "position3D": {
+            "x": 30.799438635505506,
+            "y": 107.05771611489632,
+            "z": 32.5
+          },
+          "elevation": 32.5,
+          "distanceFromHomeplate": 111.4,
+          "angle": 163.95,
+          "facing": 343.95,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "mariners-117-14-10",
+          "sectionId": "117",
+          "row": "14",
+          "seatNumber": "10",
+          "position3D": {
+            "x": 30.425549826518345,
+            "y": 107.1645739867147,
+            "z": 32.5
+          },
+          "elevation": 32.5,
+          "distanceFromHomeplate": 111.39999999999999,
+          "angle": 164.15,
+          "facing": 344.15,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        }
+      ],
+      "covered": false,
+      "hasAisleSeats": false,
+      "wheelchairRow": false
+    },
+    {
+      "rowNumber": "15",
+      "sectionId": "117",
+      "seatCount": 10,
+      "elevation": 35,
+      "depth": 114.19999999999999,
+      "rowSpacing": 36,
+      "seats": [
+        {
+          "id": "mariners-117-15-1",
+          "sectionId": "117",
+          "row": "15",
+          "seatNumber": "1",
+          "position3D": {
+            "x": 34.625621725154495,
+            "y": 108.82419914773786,
+            "z": 35
+          },
+          "elevation": 35,
+          "distanceFromHomeplate": 114.2,
+          "angle": 162.35,
+          "facing": 342.35,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "mariners-117-15-2",
+          "sectionId": "117",
+          "row": "15",
+          "seatNumber": "2",
+          "position3D": {
+            "x": 34.24554342925204,
+            "y": 108.94440212895387,
+            "z": 35
+          },
+          "elevation": 35,
+          "distanceFromHomeplate": 114.19999999999997,
+          "angle": 162.55,
+          "facing": 342.55,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "mariners-117-15-3",
+          "sectionId": "117",
+          "row": "15",
+          "seatNumber": "3",
+          "position3D": {
+            "x": 33.865047862210226,
+            "y": 109.06327765701069,
+            "z": 35
+          },
+          "elevation": 35,
+          "distanceFromHomeplate": 114.19999999999997,
+          "angle": 162.75,
+          "facing": 342.75,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "mariners-117-15-4",
+          "sectionId": "117",
+          "row": "15",
+          "seatNumber": "4",
+          "position3D": {
+            "x": 33.484139660247315,
+            "y": 109.18082428344755,
+            "z": 35
+          },
+          "elevation": 35,
+          "distanceFromHomeplate": 114.19999999999999,
+          "angle": 162.95,
+          "facing": 342.95,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "mariners-117-15-5",
+          "sectionId": "117",
+          "row": "15",
+          "seatNumber": "5",
+          "position3D": {
+            "x": 33.10282346460958,
+            "y": 109.2970405759959,
+            "z": 35
+          },
+          "elevation": 35,
+          "distanceFromHomeplate": 114.2,
+          "angle": 163.15,
+          "facing": 343.15,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "mariners-117-15-6",
+          "sectionId": "117",
+          "row": "15",
+          "seatNumber": "6",
+          "position3D": {
+            "x": 32.72110392151458,
+            "y": 109.41192511859683,
+            "z": 35
+          },
+          "elevation": 35,
+          "distanceFromHomeplate": 114.19999999999997,
+          "angle": 163.35,
+          "facing": 343.35,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "mariners-117-15-7",
+          "sectionId": "117",
+          "row": "15",
+          "seatNumber": "7",
+          "position3D": {
+            "x": 32.33898568209441,
+            "y": 109.52547651141853,
+            "z": 35
+          },
+          "elevation": 35,
+          "distanceFromHomeplate": 114.2,
+          "angle": 163.55,
+          "facing": 343.55,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "mariners-117-15-8",
+          "sectionId": "117",
+          "row": "15",
+          "seatNumber": "8",
+          "position3D": {
+            "x": 31.956473402339288,
+            "y": 109.63769337087305,
+            "z": 35
+          },
+          "elevation": 35,
+          "distanceFromHomeplate": 114.19999999999999,
+          "angle": 163.75,
+          "facing": 343.75,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "mariners-117-15-9",
+          "sectionId": "117",
+          "row": "15",
+          "seatNumber": "9",
+          "position3D": {
+            "x": 31.57357174304065,
+            "y": 109.74857432963337,
+            "z": 35
+          },
+          "elevation": 35,
+          "distanceFromHomeplate": 114.19999999999997,
+          "angle": 163.95,
+          "facing": 343.95,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "mariners-117-15-10",
+          "sectionId": "117",
+          "row": "15",
+          "seatNumber": "10",
+          "position3D": {
+            "x": 31.19028536973424,
+            "y": 109.85811803665007,
+            "z": 35
+          },
+          "elevation": 35,
+          "distanceFromHomeplate": 114.19999999999999,
+          "angle": 164.15,
+          "facing": 344.15,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        }
+      ],
+      "covered": false,
+      "hasAisleSeats": false,
+      "wheelchairRow": false
+    },
+    {
+      "rowNumber": "16",
+      "sectionId": "117",
+      "seatCount": 10,
+      "elevation": 37.5,
+      "depth": 117,
+      "rowSpacing": 36,
+      "seats": [
+        {
+          "id": "mariners-117-16-1",
+          "sectionId": "117",
+          "row": "16",
+          "seatNumber": "1",
+          "position3D": {
+            "x": 35.474586180762486,
+            "y": 111.49239317237591,
+            "z": 37.5
+          },
+          "elevation": 37.5,
+          "distanceFromHomeplate": 117,
+          "angle": 162.35,
+          "facing": 342.35,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "mariners-117-16-2",
+          "sectionId": "117",
+          "row": "16",
+          "seatNumber": "2",
+          "position3D": {
+            "x": 35.08518897742985,
+            "y": 111.6155433370193,
+            "z": 37.5
+          },
+          "elevation": 37.5,
+          "distanceFromHomeplate": 117,
+          "angle": 162.55,
+          "facing": 342.55,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "mariners-117-16-3",
+          "sectionId": "117",
+          "row": "16",
+          "seatNumber": "3",
+          "position3D": {
+            "x": 34.69536427214182,
+            "y": 111.73733350149082,
+            "z": 37.5
+          },
+          "elevation": 37.5,
+          "distanceFromHomeplate": 116.99999999999999,
+          "angle": 162.75,
+          "facing": 342.75,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "mariners-117-16-4",
+          "sectionId": "117",
+          "row": "16",
+          "seatNumber": "4",
+          "position3D": {
+            "x": 34.30511681478929,
+            "y": 111.85776218181581,
+            "z": 37.5
+          },
+          "elevation": 37.5,
+          "distanceFromHomeplate": 117.00000000000001,
+          "angle": 162.95,
+          "facing": 342.95,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "mariners-117-16-5",
+          "sectionId": "117",
+          "row": "16",
+          "seatNumber": "5",
+          "position3D": {
+            "x": 33.91445136041437,
+            "y": 111.97682791060876,
+            "z": 37.5
+          },
+          "elevation": 37.5,
+          "distanceFromHomeplate": 117.00000000000001,
+          "angle": 163.15,
+          "facing": 343.15,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "mariners-117-16-6",
+          "sectionId": "117",
+          "row": "16",
+          "seatNumber": "6",
+          "position3D": {
+            "x": 33.52337266915242,
+            "y": 112.09452923709134,
+            "z": 37.5
+          },
+          "elevation": 37.5,
+          "distanceFromHomeplate": 117,
+          "angle": 163.35,
+          "facing": 343.35,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "mariners-117-16-7",
+          "sectionId": "117",
+          "row": "16",
+          "seatNumber": "7",
+          "position3D": {
+            "x": 33.13188550617379,
+            "y": 112.21086472711006,
+            "z": 37.5
+          },
+          "elevation": 37.5,
+          "distanceFromHomeplate": 117.00000000000001,
+          "angle": 163.55,
+          "facing": 343.55,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "mariners-117-16-8",
+          "sectionId": "117",
+          "row": "16",
+          "seatNumber": "8",
+          "position3D": {
+            "x": 32.73999464162607,
+            "y": 112.32583296315366,
+            "z": 37.5
+          },
+          "elevation": 37.5,
+          "distanceFromHomeplate": 117,
+          "angle": 163.75,
+          "facing": 343.75,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "mariners-117-16-9",
+          "sectionId": "117",
+          "row": "16",
+          "seatNumber": "9",
+          "position3D": {
+            "x": 32.3477048505758,
+            "y": 112.43943254437045,
+            "z": 37.5
+          },
+          "elevation": 37.5,
+          "distanceFromHomeplate": 116.99999999999999,
+          "angle": 163.95,
+          "facing": 343.95,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "mariners-117-16-10",
+          "sectionId": "117",
+          "row": "16",
+          "seatNumber": "10",
+          "position3D": {
+            "x": 31.955020912950147,
+            "y": 112.55166208658545,
+            "z": 37.5
+          },
+          "elevation": 37.5,
+          "distanceFromHomeplate": 116.99999999999999,
+          "angle": 164.15,
+          "facing": 344.15,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        }
+      ],
+      "covered": false,
+      "hasAisleSeats": false,
+      "wheelchairRow": false
+    },
+    {
+      "rowNumber": "17",
+      "sectionId": "117",
+      "seatCount": 10,
+      "elevation": 40,
+      "depth": 119.8,
+      "rowSpacing": 36,
+      "seats": [
+        {
+          "id": "mariners-117-17-1",
+          "sectionId": "117",
+          "row": "17",
+          "seatNumber": "1",
+          "position3D": {
+            "x": 36.32355063637048,
+            "y": 114.16058719701397,
+            "z": 40
+          },
+          "elevation": 40,
+          "distanceFromHomeplate": 119.8,
+          "angle": 162.35,
+          "facing": 342.35,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "mariners-117-17-2",
+          "sectionId": "117",
+          "row": "17",
+          "seatNumber": "2",
+          "position3D": {
+            "x": 35.92483452560766,
+            "y": 114.28668454508473,
+            "z": 40
+          },
+          "elevation": 40,
+          "distanceFromHomeplate": 119.8,
+          "angle": 162.55,
+          "facing": 342.55,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "mariners-117-17-3",
+          "sectionId": "117",
+          "row": "17",
+          "seatNumber": "3",
+          "position3D": {
+            "x": 35.52568068207342,
+            "y": 114.41138934597095,
+            "z": 40
+          },
+          "elevation": 40,
+          "distanceFromHomeplate": 119.8,
+          "angle": 162.75,
+          "facing": 342.75,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "mariners-117-17-4",
+          "sectionId": "117",
+          "row": "17",
+          "seatNumber": "4",
+          "position3D": {
+            "x": 35.12609396933125,
+            "y": 114.53470008018405,
+            "z": 40
+          },
+          "elevation": 40,
+          "distanceFromHomeplate": 119.80000000000001,
+          "angle": 162.95,
+          "facing": 342.95,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "mariners-117-17-5",
+          "sectionId": "117",
+          "row": "17",
+          "seatNumber": "5",
+          "position3D": {
+            "x": 34.72607925621916,
+            "y": 114.65661524522162,
+            "z": 40
+          },
+          "elevation": 40,
+          "distanceFromHomeplate": 119.8,
+          "angle": 163.15,
+          "facing": 343.15,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "mariners-117-17-6",
+          "sectionId": "117",
+          "row": "17",
+          "seatNumber": "6",
+          "position3D": {
+            "x": 34.325641416790255,
+            "y": 114.77713335558583,
+            "z": 40
+          },
+          "elevation": 40,
+          "distanceFromHomeplate": 119.8,
+          "angle": 163.35,
+          "facing": 343.35,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "mariners-117-17-7",
+          "sectionId": "117",
+          "row": "17",
+          "seatNumber": "7",
+          "position3D": {
+            "x": 33.92478533025316,
+            "y": 114.89625294280158,
+            "z": 40
+          },
+          "elevation": 40,
+          "distanceFromHomeplate": 119.8,
+          "angle": 163.55,
+          "facing": 343.55,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "mariners-117-17-8",
+          "sectionId": "117",
+          "row": "17",
+          "seatNumber": "8",
+          "position3D": {
+            "x": 33.523515880912846,
+            "y": 115.01397255543425,
+            "z": 40
+          },
+          "elevation": 40,
+          "distanceFromHomeplate": 119.8,
+          "angle": 163.75,
+          "facing": 343.75,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "mariners-117-17-9",
+          "sectionId": "117",
+          "row": "17",
+          "seatNumber": "9",
+          "position3D": {
+            "x": 33.121837958110945,
+            "y": 115.13029075910752,
+            "z": 40
+          },
+          "elevation": 40,
+          "distanceFromHomeplate": 119.8,
+          "angle": 163.95,
+          "facing": 343.95,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "mariners-117-17-10",
+          "sectionId": "117",
+          "row": "17",
+          "seatNumber": "10",
+          "position3D": {
+            "x": 32.719756456166046,
+            "y": 115.24520613652084,
+            "z": 40
+          },
+          "elevation": 40,
+          "distanceFromHomeplate": 119.8,
+          "angle": 164.15,
+          "facing": 344.15,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        }
+      ],
+      "covered": false,
+      "hasAisleSeats": false,
+      "wheelchairRow": false
+    },
+    {
+      "rowNumber": "18",
+      "sectionId": "117",
+      "seatCount": 10,
+      "elevation": 42.5,
+      "depth": 122.6,
+      "rowSpacing": 36,
+      "seats": [
+        {
+          "id": "mariners-117-18-1",
+          "sectionId": "117",
+          "row": "18",
+          "seatNumber": "1",
+          "position3D": {
+            "x": 37.17251509197847,
+            "y": 116.82878122165202,
+            "z": 42.5
+          },
+          "elevation": 42.5,
+          "distanceFromHomeplate": 122.6,
+          "angle": 162.35,
+          "facing": 342.35,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "mariners-117-18-2",
+          "sectionId": "117",
+          "row": "18",
+          "seatNumber": "2",
+          "position3D": {
+            "x": 36.764480073785464,
+            "y": 116.95782575315013,
+            "z": 42.5
+          },
+          "elevation": 42.5,
+          "distanceFromHomeplate": 122.59999999999998,
+          "angle": 162.55,
+          "facing": 342.55,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "mariners-117-18-3",
+          "sectionId": "117",
+          "row": "18",
+          "seatNumber": "3",
+          "position3D": {
+            "x": 36.35599709200502,
+            "y": 117.08544519045107,
+            "z": 42.5
+          },
+          "elevation": 42.5,
+          "distanceFromHomeplate": 122.6,
+          "angle": 162.75,
+          "facing": 342.75,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "mariners-117-18-4",
+          "sectionId": "117",
+          "row": "18",
+          "seatNumber": "4",
+          "position3D": {
+            "x": 35.947071123873215,
+            "y": 117.21163797855229,
+            "z": 42.5
+          },
+          "elevation": 42.5,
+          "distanceFromHomeplate": 122.60000000000001,
+          "angle": 162.95,
+          "facing": 342.95,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "mariners-117-18-5",
+          "sectionId": "117",
+          "row": "18",
+          "seatNumber": "5",
+          "position3D": {
+            "x": 35.53770715202394,
+            "y": 117.33640257983447,
+            "z": 42.5
+          },
+          "elevation": 42.5,
+          "distanceFromHomeplate": 122.6,
+          "angle": 163.15,
+          "facing": 343.15,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "mariners-117-18-6",
+          "sectionId": "117",
+          "row": "18",
+          "seatNumber": "6",
+          "position3D": {
+            "x": 35.127910164428094,
+            "y": 117.45973747408031,
+            "z": 42.5
+          },
+          "elevation": 42.5,
+          "distanceFromHomeplate": 122.6,
+          "angle": 163.35,
+          "facing": 343.35,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "mariners-117-18-7",
+          "sectionId": "117",
+          "row": "18",
+          "seatNumber": "7",
+          "position3D": {
+            "x": 34.71768515433253,
+            "y": 117.5816411584931,
+            "z": 42.5
+          },
+          "elevation": 42.5,
+          "distanceFromHomeplate": 122.6,
+          "angle": 163.55,
+          "facing": 343.55,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "mariners-117-18-8",
+          "sectionId": "117",
+          "row": "18",
+          "seatNumber": "8",
+          "position3D": {
+            "x": 34.307037120199624,
+            "y": 117.70211214771486,
+            "z": 42.5
+          },
+          "elevation": 42.5,
+          "distanceFromHomeplate": 122.6,
+          "angle": 163.75,
+          "facing": 343.75,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "mariners-117-18-9",
+          "sectionId": "117",
+          "row": "18",
+          "seatNumber": "9",
+          "position3D": {
+            "x": 33.895971065646094,
+            "y": 117.82114897384459,
+            "z": 42.5
+          },
+          "elevation": 42.5,
+          "distanceFromHomeplate": 122.59999999999998,
+          "angle": 163.95,
+          "facing": 343.95,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "mariners-117-18-10",
+          "sectionId": "117",
+          "row": "18",
+          "seatNumber": "10",
+          "position3D": {
+            "x": 33.484491999381945,
+            "y": 117.9387501864562,
+            "z": 42.5
+          },
+          "elevation": 42.5,
+          "distanceFromHomeplate": 122.59999999999998,
+          "angle": 164.15,
+          "facing": 344.15,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        }
+      ],
+      "covered": false,
+      "hasAisleSeats": false,
+      "wheelchairRow": false
+    },
+    {
+      "rowNumber": "19",
+      "sectionId": "117",
+      "seatCount": 10,
+      "elevation": 45,
+      "depth": 125.4,
+      "rowSpacing": 36,
+      "seats": [
+        {
+          "id": "mariners-117-19-1",
+          "sectionId": "117",
+          "row": "19",
+          "seatNumber": "1",
+          "position3D": {
+            "x": 38.021479547586466,
+            "y": 119.49697524629009,
+            "z": 45
+          },
+          "elevation": 45,
+          "distanceFromHomeplate": 125.4,
+          "angle": 162.35,
+          "facing": 342.35,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "mariners-117-19-2",
+          "sectionId": "117",
+          "row": "19",
+          "seatNumber": "2",
+          "position3D": {
+            "x": 37.60412562196328,
+            "y": 119.62896696121557,
+            "z": 45
+          },
+          "elevation": 45,
+          "distanceFromHomeplate": 125.4,
+          "angle": 162.55,
+          "facing": 342.55,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "mariners-117-19-3",
+          "sectionId": "117",
+          "row": "19",
+          "seatNumber": "3",
+          "position3D": {
+            "x": 37.186313501936624,
+            "y": 119.75950103493119,
+            "z": 45
+          },
+          "elevation": 45,
+          "distanceFromHomeplate": 125.39999999999999,
+          "angle": 162.75,
+          "facing": 342.75,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "mariners-117-19-4",
+          "sectionId": "117",
+          "row": "19",
+          "seatNumber": "4",
+          "position3D": {
+            "x": 36.768048278415186,
+            "y": 119.88857587692054,
+            "z": 45
+          },
+          "elevation": 45,
+          "distanceFromHomeplate": 125.40000000000002,
+          "angle": 162.95,
+          "facing": 342.95,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "mariners-117-19-5",
+          "sectionId": "117",
+          "row": "19",
+          "seatNumber": "5",
+          "position3D": {
+            "x": 36.34933504782873,
+            "y": 120.01618991444734,
+            "z": 45
+          },
+          "elevation": 45,
+          "distanceFromHomeplate": 125.4,
+          "angle": 163.15,
+          "facing": 343.15,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "mariners-117-19-6",
+          "sectionId": "117",
+          "row": "19",
+          "seatNumber": "6",
+          "position3D": {
+            "x": 35.930178912065934,
+            "y": 120.14234159257482,
+            "z": 45
+          },
+          "elevation": 45,
+          "distanceFromHomeplate": 125.40000000000002,
+          "angle": 163.35,
+          "facing": 343.35,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "mariners-117-19-7",
+          "sectionId": "117",
+          "row": "19",
+          "seatNumber": "7",
+          "position3D": {
+            "x": 35.510584978411906,
+            "y": 120.26702937418463,
+            "z": 45
+          },
+          "elevation": 45,
+          "distanceFromHomeplate": 125.4,
+          "angle": 163.55,
+          "facing": 343.55,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "mariners-117-19-8",
+          "sectionId": "117",
+          "row": "19",
+          "seatNumber": "8",
+          "position3D": {
+            "x": 35.0905583594864,
+            "y": 120.39025173999546,
+            "z": 45
+          },
+          "elevation": 45,
+          "distanceFromHomeplate": 125.4,
+          "angle": 163.75,
+          "facing": 343.75,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "mariners-117-19-9",
+          "sectionId": "117",
+          "row": "19",
+          "seatNumber": "9",
+          "position3D": {
+            "x": 34.670104173181244,
+            "y": 120.51200718858168,
+            "z": 45
+          },
+          "elevation": 45,
+          "distanceFromHomeplate": 125.4,
+          "angle": 163.95,
+          "facing": 343.95,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "mariners-117-19-10",
+          "sectionId": "117",
+          "row": "19",
+          "seatNumber": "10",
+          "position3D": {
+            "x": 34.24922754259785,
+            "y": 120.6322942363916,
+            "z": 45
+          },
+          "elevation": 45,
+          "distanceFromHomeplate": 125.4,
+          "angle": 164.15,
+          "facing": 344.15,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        }
+      ],
+      "covered": false,
+      "hasAisleSeats": false,
+      "wheelchairRow": false
+    },
+    {
+      "rowNumber": "20",
+      "sectionId": "117",
+      "seatCount": 10,
+      "elevation": 47.5,
+      "depth": 128.2,
+      "rowSpacing": 36,
+      "seats": [
+        {
+          "id": "mariners-117-20-1",
+          "sectionId": "117",
+          "row": "20",
+          "seatNumber": "1",
+          "position3D": {
+            "x": 38.87044400319445,
+            "y": 122.16516927092813,
+            "z": 47.5
+          },
+          "elevation": 47.5,
+          "distanceFromHomeplate": 128.2,
+          "angle": 162.35,
+          "facing": 342.35,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "mariners-117-20-2",
+          "sectionId": "117",
+          "row": "20",
+          "seatNumber": "2",
+          "position3D": {
+            "x": 38.443771170141076,
+            "y": 122.30010816928097,
+            "z": 47.5
+          },
+          "elevation": 47.5,
+          "distanceFromHomeplate": 128.2,
+          "angle": 162.55,
+          "facing": 342.55,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "mariners-117-20-3",
+          "sectionId": "117",
+          "row": "20",
+          "seatNumber": "3",
+          "position3D": {
+            "x": 38.01662991186822,
+            "y": 122.4335568794113,
+            "z": 47.5
+          },
+          "elevation": 47.5,
+          "distanceFromHomeplate": 128.2,
+          "angle": 162.75,
+          "facing": 342.75,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "mariners-117-20-4",
+          "sectionId": "117",
+          "row": "20",
+          "seatNumber": "4",
+          "position3D": {
+            "x": 37.58902543295714,
+            "y": 122.56551377528876,
+            "z": 47.5
+          },
+          "elevation": 47.5,
+          "distanceFromHomeplate": 128.2,
+          "angle": 162.95,
+          "facing": 342.95,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "mariners-117-20-5",
+          "sectionId": "117",
+          "row": "20",
+          "seatNumber": "5",
+          "position3D": {
+            "x": 37.16096294363352,
+            "y": 122.69597724906018,
+            "z": 47.5
+          },
+          "elevation": 47.5,
+          "distanceFromHomeplate": 128.2,
+          "angle": 163.15,
+          "facing": 343.15,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "mariners-117-20-6",
+          "sectionId": "117",
+          "row": "20",
+          "seatNumber": "6",
+          "position3D": {
+            "x": 36.73244765970376,
+            "y": 122.8249457110693,
+            "z": 47.5
+          },
+          "elevation": 47.5,
+          "distanceFromHomeplate": 128.2,
+          "angle": 163.35,
+          "facing": 343.35,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "mariners-117-20-7",
+          "sectionId": "117",
+          "row": "20",
+          "seatNumber": "7",
+          "position3D": {
+            "x": 36.303484802491276,
+            "y": 122.95241758987613,
+            "z": 47.5
+          },
+          "elevation": 47.5,
+          "distanceFromHomeplate": 128.2,
+          "angle": 163.55,
+          "facing": 343.55,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "mariners-117-20-8",
+          "sectionId": "117",
+          "row": "20",
+          "seatNumber": "8",
+          "position3D": {
+            "x": 35.87407959877317,
+            "y": 123.07839133227606,
+            "z": 47.5
+          },
+          "elevation": 47.5,
+          "distanceFromHomeplate": 128.2,
+          "angle": 163.75,
+          "facing": 343.75,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "mariners-117-20-9",
+          "sectionId": "117",
+          "row": "20",
+          "seatNumber": "9",
+          "position3D": {
+            "x": 35.444237280716386,
+            "y": 123.20286540331873,
+            "z": 47.5
+          },
+          "elevation": 47.5,
+          "distanceFromHomeplate": 128.2,
+          "angle": 163.95,
+          "facing": 343.95,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "mariners-117-20-10",
+          "sectionId": "117",
+          "row": "20",
+          "seatNumber": "10",
+          "position3D": {
+            "x": 35.01396308581375,
+            "y": 123.32583828632696,
+            "z": 47.5
+          },
+          "elevation": 47.5,
+          "distanceFromHomeplate": 128.2,
+          "angle": 164.15,
+          "facing": 344.15,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        }
+      ],
+      "covered": false,
+      "hasAisleSeats": false,
+      "wheelchairRow": false
+    },
+    {
+      "rowNumber": "21",
+      "sectionId": "117",
+      "seatCount": 10,
+      "elevation": 50,
+      "depth": 131,
+      "rowSpacing": 36,
+      "seats": [
+        {
+          "id": "mariners-117-21-1",
+          "sectionId": "117",
+          "row": "21",
+          "seatNumber": "1",
+          "position3D": {
+            "x": 39.71940845880244,
+            "y": 124.8333632955662,
+            "z": 50
+          },
+          "elevation": 50,
+          "distanceFromHomeplate": 131,
+          "angle": 162.35,
+          "facing": 342.35,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "mariners-117-21-2",
+          "sectionId": "117",
+          "row": "21",
+          "seatNumber": "2",
+          "position3D": {
+            "x": 39.28341671831889,
+            "y": 124.9712493773464,
+            "z": 50
+          },
+          "elevation": 50,
+          "distanceFromHomeplate": 131,
+          "angle": 162.55,
+          "facing": 342.55,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "mariners-117-21-3",
+          "sectionId": "117",
+          "row": "21",
+          "seatNumber": "3",
+          "position3D": {
+            "x": 38.84694632179982,
+            "y": 125.10761272389144,
+            "z": 50
+          },
+          "elevation": 50,
+          "distanceFromHomeplate": 131,
+          "angle": 162.75,
+          "facing": 342.75,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "mariners-117-21-4",
+          "sectionId": "117",
+          "row": "21",
+          "seatNumber": "4",
+          "position3D": {
+            "x": 38.410002587499115,
+            "y": 125.24245167365702,
+            "z": 50
+          },
+          "elevation": 50,
+          "distanceFromHomeplate": 131,
+          "angle": 162.95,
+          "facing": 342.95,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "mariners-117-21-5",
+          "sectionId": "117",
+          "row": "21",
+          "seatNumber": "5",
+          "position3D": {
+            "x": 37.97259083943831,
+            "y": 125.37576458367306,
+            "z": 50
+          },
+          "elevation": 50,
+          "distanceFromHomeplate": 131,
+          "angle": 163.15,
+          "facing": 343.15,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "mariners-117-21-6",
+          "sectionId": "117",
+          "row": "21",
+          "seatNumber": "6",
+          "position3D": {
+            "x": 37.5347164073416,
+            "y": 125.5075498295638,
+            "z": 50
+          },
+          "elevation": 50,
+          "distanceFromHomeplate": 131,
+          "angle": 163.35,
+          "facing": 343.35,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "mariners-117-21-7",
+          "sectionId": "117",
+          "row": "21",
+          "seatNumber": "7",
+          "position3D": {
+            "x": 37.09638462657065,
+            "y": 125.63780580556768,
+            "z": 50
+          },
+          "elevation": 50,
+          "distanceFromHomeplate": 131,
+          "angle": 163.55,
+          "facing": 343.55,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "mariners-117-21-8",
+          "sectionId": "117",
+          "row": "21",
+          "seatNumber": "8",
+          "position3D": {
+            "x": 36.657600838059956,
+            "y": 125.76653092455666,
+            "z": 50
+          },
+          "elevation": 50,
+          "distanceFromHomeplate": 131,
+          "angle": 163.75,
+          "facing": 343.75,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "mariners-117-21-9",
+          "sectionId": "117",
+          "row": "21",
+          "seatNumber": "9",
+          "position3D": {
+            "x": 36.218370388251536,
+            "y": 125.8937236180558,
+            "z": 50
+          },
+          "elevation": 50,
+          "distanceFromHomeplate": 131,
+          "angle": 163.95,
+          "facing": 343.95,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "mariners-117-21-10",
+          "sectionId": "117",
+          "row": "21",
+          "seatNumber": "10",
+          "position3D": {
+            "x": 35.77869862902965,
+            "y": 126.01938233626235,
+            "z": 50
+          },
+          "elevation": 50,
+          "distanceFromHomeplate": 131,
+          "angle": 164.15,
+          "facing": 344.15,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        }
+      ],
+      "covered": false,
+      "hasAisleSeats": false,
+      "wheelchairRow": false
+    },
+    {
+      "rowNumber": "22",
+      "sectionId": "117",
+      "seatCount": 10,
+      "elevation": 52.5,
+      "depth": 133.8,
+      "rowSpacing": 36,
+      "seats": [
+        {
+          "id": "mariners-117-22-1",
+          "sectionId": "117",
+          "row": "22",
+          "seatNumber": "1",
+          "position3D": {
+            "x": 40.56837291441044,
+            "y": 127.50155732020427,
+            "z": 52.5
+          },
+          "elevation": 52.5,
+          "distanceFromHomeplate": 133.8,
+          "angle": 162.35,
+          "facing": 342.35,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "mariners-117-22-2",
+          "sectionId": "117",
+          "row": "22",
+          "seatNumber": "2",
+          "position3D": {
+            "x": 40.1230622664967,
+            "y": 127.64239058541183,
+            "z": 52.5
+          },
+          "elevation": 52.5,
+          "distanceFromHomeplate": 133.8,
+          "angle": 162.55,
+          "facing": 342.55,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "mariners-117-22-3",
+          "sectionId": "117",
+          "row": "22",
+          "seatNumber": "3",
+          "position3D": {
+            "x": 39.677262731731425,
+            "y": 127.78166856837157,
+            "z": 52.5
+          },
+          "elevation": 52.5,
+          "distanceFromHomeplate": 133.8,
+          "angle": 162.75,
+          "facing": 342.75,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "mariners-117-22-4",
+          "sectionId": "117",
+          "row": "22",
+          "seatNumber": "4",
+          "position3D": {
+            "x": 39.230979742041086,
+            "y": 127.91938957202527,
+            "z": 52.5
+          },
+          "elevation": 52.5,
+          "distanceFromHomeplate": 133.8,
+          "angle": 162.95,
+          "facing": 342.95,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "mariners-117-22-5",
+          "sectionId": "117",
+          "row": "22",
+          "seatNumber": "5",
+          "position3D": {
+            "x": 38.7842187352431,
+            "y": 128.05555191828591,
+            "z": 52.5
+          },
+          "elevation": 52.5,
+          "distanceFromHomeplate": 133.8,
+          "angle": 163.15,
+          "facing": 343.15,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "mariners-117-22-6",
+          "sectionId": "117",
+          "row": "22",
+          "seatNumber": "6",
+          "position3D": {
+            "x": 38.33698515497944,
+            "y": 128.1901539480583,
+            "z": 52.5
+          },
+          "elevation": 52.5,
+          "distanceFromHomeplate": 133.8,
+          "angle": 163.35,
+          "facing": 343.35,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "mariners-117-22-7",
+          "sectionId": "117",
+          "row": "22",
+          "seatNumber": "7",
+          "position3D": {
+            "x": 37.889284450650024,
+            "y": 128.3231940212592,
+            "z": 52.5
+          },
+          "elevation": 52.5,
+          "distanceFromHomeplate": 133.8,
+          "angle": 163.55,
+          "facing": 343.55,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "mariners-117-22-8",
+          "sectionId": "117",
+          "row": "22",
+          "seatNumber": "8",
+          "position3D": {
+            "x": 37.44112207734673,
+            "y": 128.45467051683727,
+            "z": 52.5
+          },
+          "elevation": 52.5,
+          "distanceFromHomeplate": 133.8,
+          "angle": 163.75,
+          "facing": 343.75,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "mariners-117-22-9",
+          "sectionId": "117",
+          "row": "22",
+          "seatNumber": "9",
+          "position3D": {
+            "x": 36.992503495786686,
+            "y": 128.58458183279288,
+            "z": 52.5
+          },
+          "elevation": 52.5,
+          "distanceFromHomeplate": 133.79999999999998,
+          "angle": 163.95,
+          "facing": 343.95,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "mariners-117-22-10",
+          "sectionId": "117",
+          "row": "22",
+          "seatNumber": "10",
+          "position3D": {
+            "x": 36.543434172245554,
+            "y": 128.71292638619775,
+            "z": 52.5
+          },
+          "elevation": 52.5,
+          "distanceFromHomeplate": 133.8,
+          "angle": 164.15,
+          "facing": 344.15,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        }
+      ],
+      "covered": false,
+      "hasAisleSeats": false,
+      "wheelchairRow": false
+    },
+    {
+      "rowNumber": "23",
+      "sectionId": "117",
+      "seatCount": 10,
+      "elevation": 55,
+      "depth": 136.6,
+      "rowSpacing": 36,
+      "seats": [
+        {
+          "id": "mariners-117-23-1",
+          "sectionId": "117",
+          "row": "23",
+          "seatNumber": "1",
+          "position3D": {
+            "x": 41.41733737001842,
+            "y": 130.1697513448423,
+            "z": 55
+          },
+          "elevation": 55,
+          "distanceFromHomeplate": 136.6,
+          "angle": 162.35,
+          "facing": 342.35,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "mariners-117-23-2",
+          "sectionId": "117",
+          "row": "23",
+          "seatNumber": "2",
+          "position3D": {
+            "x": 40.96270781467451,
+            "y": 130.31353179347724,
+            "z": 55
+          },
+          "elevation": 55,
+          "distanceFromHomeplate": 136.6,
+          "angle": 162.55,
+          "facing": 342.55,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "mariners-117-23-3",
+          "sectionId": "117",
+          "row": "23",
+          "seatNumber": "3",
+          "position3D": {
+            "x": 40.507579141663015,
+            "y": 130.45572441285168,
+            "z": 55
+          },
+          "elevation": 55,
+          "distanceFromHomeplate": 136.6,
+          "angle": 162.75,
+          "facing": 342.75,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "mariners-117-23-4",
+          "sectionId": "117",
+          "row": "23",
+          "seatNumber": "4",
+          "position3D": {
+            "x": 40.05195689658304,
+            "y": 130.5963274703935,
+            "z": 55
+          },
+          "elevation": 55,
+          "distanceFromHomeplate": 136.60000000000002,
+          "angle": 162.95,
+          "facing": 342.95,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "mariners-117-23-5",
+          "sectionId": "117",
+          "row": "23",
+          "seatNumber": "5",
+          "position3D": {
+            "x": 39.595846631047884,
+            "y": 130.73533925289877,
+            "z": 55
+          },
+          "elevation": 55,
+          "distanceFromHomeplate": 136.6,
+          "angle": 163.15,
+          "facing": 343.15,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "mariners-117-23-6",
+          "sectionId": "117",
+          "row": "23",
+          "seatNumber": "6",
+          "position3D": {
+            "x": 39.13925390261727,
+            "y": 130.8727580665528,
+            "z": 55
+          },
+          "elevation": 55,
+          "distanceFromHomeplate": 136.6,
+          "angle": 163.35,
+          "facing": 343.35,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "mariners-117-23-7",
+          "sectionId": "117",
+          "row": "23",
+          "seatNumber": "7",
+          "position3D": {
+            "x": 38.682184274729394,
+            "y": 131.0085822369507,
+            "z": 55
+          },
+          "elevation": 55,
+          "distanceFromHomeplate": 136.6,
+          "angle": 163.55,
+          "facing": 343.55,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "mariners-117-23-8",
+          "sectionId": "117",
+          "row": "23",
+          "seatNumber": "8",
+          "position3D": {
+            "x": 38.22464331663351,
+            "y": 131.14281010911785,
+            "z": 55
+          },
+          "elevation": 55,
+          "distanceFromHomeplate": 136.6,
+          "angle": 163.75,
+          "facing": 343.75,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "mariners-117-23-9",
+          "sectionId": "117",
+          "row": "23",
+          "seatNumber": "9",
+          "position3D": {
+            "x": 37.76663660332183,
+            "y": 131.27544004752994,
+            "z": 55
+          },
+          "elevation": 55,
+          "distanceFromHomeplate": 136.59999999999997,
+          "angle": 163.95,
+          "facing": 343.95,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "mariners-117-23-10",
+          "sectionId": "117",
+          "row": "23",
+          "seatNumber": "10",
+          "position3D": {
+            "x": 37.30816971546145,
+            "y": 131.4064704361331,
+            "z": 55
+          },
+          "elevation": 55,
+          "distanceFromHomeplate": 136.6,
+          "angle": 164.15,
+          "facing": 344.15,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        }
+      ],
+      "covered": false,
+      "hasAisleSeats": false,
+      "wheelchairRow": false
+    },
+    {
+      "rowNumber": "24",
+      "sectionId": "117",
+      "seatCount": 10,
+      "elevation": 57.5,
+      "depth": 139.39999999999998,
+      "rowSpacing": 36,
+      "seats": [
+        {
+          "id": "mariners-117-24-1",
+          "sectionId": "117",
+          "row": "24",
+          "seatNumber": "1",
+          "position3D": {
+            "x": 42.266301825626414,
+            "y": 132.83794536948034,
+            "z": 57.5
+          },
+          "elevation": 57.5,
+          "distanceFromHomeplate": 139.39999999999998,
+          "angle": 162.35,
+          "facing": 342.35,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "mariners-117-24-2",
+          "sectionId": "117",
+          "row": "24",
+          "seatNumber": "2",
+          "position3D": {
+            "x": 41.80235336285231,
+            "y": 132.98467300154263,
+            "z": 57.5
+          },
+          "elevation": 57.5,
+          "distanceFromHomeplate": 139.39999999999998,
+          "angle": 162.55,
+          "facing": 342.55,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "mariners-117-24-3",
+          "sectionId": "117",
+          "row": "24",
+          "seatNumber": "3",
+          "position3D": {
+            "x": 41.33789555159461,
+            "y": 133.1297802573318,
+            "z": 57.5
+          },
+          "elevation": 57.5,
+          "distanceFromHomeplate": 139.39999999999998,
+          "angle": 162.75,
+          "facing": 342.75,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "mariners-117-24-4",
+          "sectionId": "117",
+          "row": "24",
+          "seatNumber": "4",
+          "position3D": {
+            "x": 40.87293405112501,
+            "y": 133.2732653687617,
+            "z": 57.5
+          },
+          "elevation": 57.5,
+          "distanceFromHomeplate": 139.39999999999998,
+          "angle": 162.95,
+          "facing": 342.95,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "mariners-117-24-5",
+          "sectionId": "117",
+          "row": "24",
+          "seatNumber": "5",
+          "position3D": {
+            "x": 40.40747452685267,
+            "y": 133.41512658751162,
+            "z": 57.5
+          },
+          "elevation": 57.5,
+          "distanceFromHomeplate": 139.4,
+          "angle": 163.15,
+          "facing": 343.15,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "mariners-117-24-6",
+          "sectionId": "117",
+          "row": "24",
+          "seatNumber": "6",
+          "position3D": {
+            "x": 39.9415226502551,
+            "y": 133.55536218504727,
+            "z": 57.5
+          },
+          "elevation": 57.5,
+          "distanceFromHomeplate": 139.39999999999998,
+          "angle": 163.35,
+          "facing": 343.35,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "mariners-117-24-7",
+          "sectionId": "117",
+          "row": "24",
+          "seatNumber": "7",
+          "position3D": {
+            "x": 39.47508409880876,
+            "y": 133.69397045264222,
+            "z": 57.5
+          },
+          "elevation": 57.5,
+          "distanceFromHomeplate": 139.39999999999998,
+          "angle": 163.55,
+          "facing": 343.55,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "mariners-117-24-8",
+          "sectionId": "117",
+          "row": "24",
+          "seatNumber": "8",
+          "position3D": {
+            "x": 39.00816455592028,
+            "y": 133.83094970139845,
+            "z": 57.5
+          },
+          "elevation": 57.5,
+          "distanceFromHomeplate": 139.4,
+          "angle": 163.75,
+          "facing": 343.75,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "mariners-117-24-9",
+          "sectionId": "117",
+          "row": "24",
+          "seatNumber": "9",
+          "position3D": {
+            "x": 38.54076971085697,
+            "y": 133.966298262267,
+            "z": 57.5
+          },
+          "elevation": 57.5,
+          "distanceFromHomeplate": 139.39999999999995,
+          "angle": 163.95,
+          "facing": 343.95,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "mariners-117-24-10",
+          "sectionId": "117",
+          "row": "24",
+          "seatNumber": "10",
+          "position3D": {
+            "x": 38.072905258677345,
+            "y": 134.10001448606846,
+            "z": 57.5
+          },
+          "elevation": 57.5,
+          "distanceFromHomeplate": 139.39999999999998,
+          "angle": 164.15,
+          "facing": 344.15,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        }
+      ],
+      "covered": false,
+      "hasAisleSeats": false,
+      "wheelchairRow": false
+    },
+    {
+      "rowNumber": "25",
+      "sectionId": "117",
+      "seatCount": 10,
+      "elevation": 60,
+      "depth": 142.2,
+      "rowSpacing": 36,
+      "seats": [
+        {
+          "id": "mariners-117-25-1",
+          "sectionId": "117",
+          "row": "25",
+          "seatNumber": "1",
+          "position3D": {
+            "x": 43.115266281234405,
+            "y": 135.5061393941184,
+            "z": 60
+          },
+          "elevation": 60,
+          "distanceFromHomeplate": 142.2,
+          "angle": 162.35,
+          "facing": 342.35,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "mariners-117-25-2",
+          "sectionId": "117",
+          "row": "25",
+          "seatNumber": "2",
+          "position3D": {
+            "x": 42.64199891103012,
+            "y": 135.65581420960805,
+            "z": 60
+          },
+          "elevation": 60,
+          "distanceFromHomeplate": 142.2,
+          "angle": 162.55,
+          "facing": 342.55,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "mariners-117-25-3",
+          "sectionId": "117",
+          "row": "25",
+          "seatNumber": "3",
+          "position3D": {
+            "x": 42.16821196152622,
+            "y": 135.80383610181192,
+            "z": 60
+          },
+          "elevation": 60,
+          "distanceFromHomeplate": 142.2,
+          "angle": 162.75,
+          "facing": 342.75,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "mariners-117-25-4",
+          "sectionId": "117",
+          "row": "25",
+          "seatNumber": "4",
+          "position3D": {
+            "x": 41.69391120566697,
+            "y": 135.95020326712998,
+            "z": 60
+          },
+          "elevation": 60,
+          "distanceFromHomeplate": 142.2,
+          "angle": 162.95,
+          "facing": 342.95,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "mariners-117-25-5",
+          "sectionId": "117",
+          "row": "25",
+          "seatNumber": "5",
+          "position3D": {
+            "x": 41.21910242265746,
+            "y": 136.09491392212448,
+            "z": 60
+          },
+          "elevation": 60,
+          "distanceFromHomeplate": 142.2,
+          "angle": 163.15,
+          "facing": 343.15,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "mariners-117-25-6",
+          "sectionId": "117",
+          "row": "25",
+          "seatNumber": "6",
+          "position3D": {
+            "x": 40.74379139789294,
+            "y": 136.23796630354175,
+            "z": 60
+          },
+          "elevation": 60,
+          "distanceFromHomeplate": 142.2,
+          "angle": 163.35,
+          "facing": 343.35,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "mariners-117-25-7",
+          "sectionId": "117",
+          "row": "25",
+          "seatNumber": "7",
+          "position3D": {
+            "x": 40.267983922888135,
+            "y": 136.37935866833377,
+            "z": 60
+          },
+          "elevation": 60,
+          "distanceFromHomeplate": 142.2,
+          "angle": 163.55,
+          "facing": 343.55,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "mariners-117-25-8",
+          "sectionId": "117",
+          "row": "25",
+          "seatNumber": "8",
+          "position3D": {
+            "x": 39.791685795207066,
+            "y": 136.51908929367906,
+            "z": 60
+          },
+          "elevation": 60,
+          "distanceFromHomeplate": 142.2,
+          "angle": 163.75,
+          "facing": 343.75,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "mariners-117-25-9",
+          "sectionId": "117",
+          "row": "25",
+          "seatNumber": "9",
+          "position3D": {
+            "x": 39.31490281839212,
+            "y": 136.65715647700407,
+            "z": 60
+          },
+          "elevation": 60,
+          "distanceFromHomeplate": 142.2,
+          "angle": 163.95,
+          "facing": 343.95,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "mariners-117-25-10",
+          "sectionId": "117",
+          "row": "25",
+          "seatNumber": "10",
+          "position3D": {
+            "x": 38.83764080189325,
+            "y": 136.79355853600384,
+            "z": 60
+          },
+          "elevation": 60,
+          "distanceFromHomeplate": 142.2,
+          "angle": 164.15,
+          "facing": 344.15,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        }
+      ],
+      "covered": false,
+      "hasAisleSeats": false,
+      "wheelchairRow": false
+    },
+    {
+      "rowNumber": "26",
+      "sectionId": "117",
+      "seatCount": 10,
+      "elevation": 62.5,
+      "depth": 145,
+      "rowSpacing": 36,
+      "seats": [
+        {
+          "id": "mariners-117-26-1",
+          "sectionId": "117",
+          "row": "26",
+          "seatNumber": "1",
+          "position3D": {
+            "x": 43.9642307368424,
+            "y": 138.17433341875648,
+            "z": 62.5
+          },
+          "elevation": 62.5,
+          "distanceFromHomeplate": 145,
+          "angle": 162.35,
+          "facing": 342.35,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "mariners-117-26-2",
+          "sectionId": "117",
+          "row": "26",
+          "seatNumber": "2",
+          "position3D": {
+            "x": 43.481644459207935,
+            "y": 138.3269554176735,
+            "z": 62.5
+          },
+          "elevation": 62.5,
+          "distanceFromHomeplate": 145,
+          "angle": 162.55,
+          "facing": 342.55,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "mariners-117-26-3",
+          "sectionId": "117",
+          "row": "26",
+          "seatNumber": "3",
+          "position3D": {
+            "x": 42.998528371457816,
+            "y": 138.47789194629203,
+            "z": 62.5
+          },
+          "elevation": 62.5,
+          "distanceFromHomeplate": 145,
+          "angle": 162.75,
+          "facing": 342.75,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "mariners-117-26-4",
+          "sectionId": "117",
+          "row": "26",
+          "seatNumber": "4",
+          "position3D": {
+            "x": 42.51488836020894,
+            "y": 138.62714116549822,
+            "z": 62.5
+          },
+          "elevation": 62.5,
+          "distanceFromHomeplate": 145,
+          "angle": 162.95,
+          "facing": 342.95,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "mariners-117-26-5",
+          "sectionId": "117",
+          "row": "26",
+          "seatNumber": "5",
+          "position3D": {
+            "x": 42.030730318462254,
+            "y": 138.77470125673736,
+            "z": 62.5
+          },
+          "elevation": 62.5,
+          "distanceFromHomeplate": 145,
+          "angle": 163.15,
+          "facing": 343.15,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "mariners-117-26-6",
+          "sectionId": "117",
+          "row": "26",
+          "seatNumber": "6",
+          "position3D": {
+            "x": 41.54606014553078,
+            "y": 138.92057042203626,
+            "z": 62.5
+          },
+          "elevation": 62.5,
+          "distanceFromHomeplate": 145,
+          "angle": 163.35,
+          "facing": 343.35,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "mariners-117-26-7",
+          "sectionId": "117",
+          "row": "26",
+          "seatNumber": "7",
+          "position3D": {
+            "x": 41.06088374696751,
+            "y": 139.06474688402528,
+            "z": 62.5
+          },
+          "elevation": 62.5,
+          "distanceFromHomeplate": 145,
+          "angle": 163.55,
+          "facing": 343.55,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "mariners-117-26-8",
+          "sectionId": "117",
+          "row": "26",
+          "seatNumber": "8",
+          "position3D": {
+            "x": 40.57520703449384,
+            "y": 139.20722888595967,
+            "z": 62.5
+          },
+          "elevation": 62.5,
+          "distanceFromHomeplate": 145,
+          "angle": 163.75,
+          "facing": 343.75,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "mariners-117-26-9",
+          "sectionId": "117",
+          "row": "26",
+          "seatNumber": "9",
+          "position3D": {
+            "x": 40.08903592592727,
+            "y": 139.34801469174116,
+            "z": 62.5
+          },
+          "elevation": 62.5,
+          "distanceFromHomeplate": 145,
+          "angle": 163.95,
+          "facing": 343.95,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "mariners-117-26-10",
+          "sectionId": "117",
+          "row": "26",
+          "seatNumber": "10",
+          "position3D": {
+            "x": 39.60237634510916,
+            "y": 139.48710258593925,
+            "z": 62.5
+          },
+          "elevation": 62.5,
+          "distanceFromHomeplate": 145,
+          "angle": 164.15,
+          "facing": 344.15,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        }
+      ],
+      "covered": false,
+      "hasAisleSeats": false,
+      "wheelchairRow": false
+    },
+    {
+      "rowNumber": "27",
+      "sectionId": "117",
+      "seatCount": 10,
+      "elevation": 65,
+      "depth": 147.8,
+      "rowSpacing": 36,
+      "seats": [
+        {
+          "id": "mariners-117-27-1",
+          "sectionId": "117",
+          "row": "27",
+          "seatNumber": "1",
+          "position3D": {
+            "x": 44.813195192450394,
+            "y": 140.84252744339454,
+            "z": 65
+          },
+          "elevation": 65,
+          "distanceFromHomeplate": 147.8,
+          "angle": 162.35,
+          "facing": 342.35,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "mariners-117-27-2",
+          "sectionId": "117",
+          "row": "27",
+          "seatNumber": "2",
+          "position3D": {
+            "x": 44.32129000738575,
+            "y": 140.99809662573892,
+            "z": 65
+          },
+          "elevation": 65,
+          "distanceFromHomeplate": 147.8,
+          "angle": 162.55,
+          "facing": 342.55,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "mariners-117-27-3",
+          "sectionId": "117",
+          "row": "27",
+          "seatNumber": "3",
+          "position3D": {
+            "x": 43.82884478138942,
+            "y": 141.15194779077217,
+            "z": 65
+          },
+          "elevation": 65,
+          "distanceFromHomeplate": 147.79999999999998,
+          "angle": 162.75,
+          "facing": 342.75,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "mariners-117-27-4",
+          "sectionId": "117",
+          "row": "27",
+          "seatNumber": "4",
+          "position3D": {
+            "x": 43.335865514750914,
+            "y": 141.30407906386648,
+            "z": 65
+          },
+          "elevation": 65,
+          "distanceFromHomeplate": 147.8,
+          "angle": 162.95,
+          "facing": 342.95,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "mariners-117-27-5",
+          "sectionId": "117",
+          "row": "27",
+          "seatNumber": "5",
+          "position3D": {
+            "x": 42.842358214267044,
+            "y": 141.4544885913502,
+            "z": 65
+          },
+          "elevation": 65,
+          "distanceFromHomeplate": 147.8,
+          "angle": 163.15,
+          "facing": 343.15,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "mariners-117-27-6",
+          "sectionId": "117",
+          "row": "27",
+          "seatNumber": "6",
+          "position3D": {
+            "x": 42.34832889316862,
+            "y": 141.60317454053077,
+            "z": 65
+          },
+          "elevation": 65,
+          "distanceFromHomeplate": 147.8,
+          "angle": 163.35,
+          "facing": 343.35,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "mariners-117-27-7",
+          "sectionId": "117",
+          "row": "27",
+          "seatNumber": "7",
+          "position3D": {
+            "x": 41.85378357104689,
+            "y": 141.75013509971683,
+            "z": 65
+          },
+          "elevation": 65,
+          "distanceFromHomeplate": 147.8,
+          "angle": 163.55,
+          "facing": 343.55,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "mariners-117-27-8",
+          "sectionId": "117",
+          "row": "27",
+          "seatNumber": "8",
+          "position3D": {
+            "x": 41.35872827378063,
+            "y": 141.89536847824027,
+            "z": 65
+          },
+          "elevation": 65,
+          "distanceFromHomeplate": 147.8,
+          "angle": 163.75,
+          "facing": 343.75,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "mariners-117-27-9",
+          "sectionId": "117",
+          "row": "27",
+          "seatNumber": "9",
+          "position3D": {
+            "x": 40.86316903346242,
+            "y": 142.03887290647825,
+            "z": 65
+          },
+          "elevation": 65,
+          "distanceFromHomeplate": 147.8,
+          "angle": 163.95,
+          "facing": 343.95,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "mariners-117-27-10",
+          "sectionId": "117",
+          "row": "27",
+          "seatNumber": "10",
+          "position3D": {
+            "x": 40.36711188832506,
+            "y": 142.18064663587464,
+            "z": 65
+          },
+          "elevation": 65,
+          "distanceFromHomeplate": 147.8,
+          "angle": 164.15,
+          "facing": 344.15,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        }
+      ],
+      "covered": false,
+      "hasAisleSeats": false,
+      "wheelchairRow": false
+    },
+    {
+      "rowNumber": "28",
+      "sectionId": "117",
+      "seatCount": 10,
+      "elevation": 67.5,
+      "depth": 150.6,
+      "rowSpacing": 36,
+      "seats": [
+        {
+          "id": "mariners-117-28-1",
+          "sectionId": "117",
+          "row": "28",
+          "seatNumber": "1",
+          "position3D": {
+            "x": 45.66215964805838,
+            "y": 143.51072146803259,
+            "z": 67.5
+          },
+          "elevation": 67.5,
+          "distanceFromHomeplate": 150.6,
+          "angle": 162.35,
+          "facing": 342.35,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "mariners-117-28-2",
+          "sectionId": "117",
+          "row": "28",
+          "seatNumber": "2",
+          "position3D": {
+            "x": 45.16093555556355,
+            "y": 143.66923783380432,
+            "z": 67.5
+          },
+          "elevation": 67.5,
+          "distanceFromHomeplate": 150.59999999999997,
+          "angle": 162.55,
+          "facing": 342.55,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "mariners-117-28-3",
+          "sectionId": "117",
+          "row": "28",
+          "seatNumber": "3",
+          "position3D": {
+            "x": 44.65916119132101,
+            "y": 143.82600363525228,
+            "z": 67.5
+          },
+          "elevation": 67.5,
+          "distanceFromHomeplate": 150.59999999999997,
+          "angle": 162.75,
+          "facing": 342.75,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "mariners-117-28-4",
+          "sectionId": "117",
+          "row": "28",
+          "seatNumber": "4",
+          "position3D": {
+            "x": 44.15684266929287,
+            "y": 143.9810169622347,
+            "z": 67.5
+          },
+          "elevation": 67.5,
+          "distanceFromHomeplate": 150.6,
+          "angle": 162.95,
+          "facing": 342.95,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "mariners-117-28-5",
+          "sectionId": "117",
+          "row": "28",
+          "seatNumber": "5",
+          "position3D": {
+            "x": 43.65398611007183,
+            "y": 144.13427592596307,
+            "z": 67.5
+          },
+          "elevation": 67.5,
+          "distanceFromHomeplate": 150.6,
+          "angle": 163.15,
+          "facing": 343.15,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "mariners-117-28-6",
+          "sectionId": "117",
+          "row": "28",
+          "seatNumber": "6",
+          "position3D": {
+            "x": 43.150597640806446,
+            "y": 144.28577865902525,
+            "z": 67.5
+          },
+          "elevation": 67.5,
+          "distanceFromHomeplate": 150.6,
+          "angle": 163.35,
+          "facing": 343.35,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "mariners-117-28-7",
+          "sectionId": "117",
+          "row": "28",
+          "seatNumber": "7",
+          "position3D": {
+            "x": 42.64668339512625,
+            "y": 144.43552331540832,
+            "z": 67.5
+          },
+          "elevation": 67.5,
+          "distanceFromHomeplate": 150.6,
+          "angle": 163.55,
+          "facing": 343.55,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "mariners-117-28-8",
+          "sectionId": "117",
+          "row": "28",
+          "seatNumber": "8",
+          "position3D": {
+            "x": 42.1422495130674,
+            "y": 144.58350807052085,
+            "z": 67.5
+          },
+          "elevation": 67.5,
+          "distanceFromHomeplate": 150.6,
+          "angle": 163.75,
+          "facing": 343.75,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "mariners-117-28-9",
+          "sectionId": "117",
+          "row": "28",
+          "seatNumber": "9",
+          "position3D": {
+            "x": 41.63730214099756,
+            "y": 144.7297311212153,
+            "z": 67.5
+          },
+          "elevation": 67.5,
+          "distanceFromHomeplate": 150.6,
+          "angle": 163.95,
+          "facing": 343.95,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "mariners-117-28-10",
+          "sectionId": "117",
+          "row": "28",
+          "seatNumber": "10",
+          "position3D": {
+            "x": 41.131847431540955,
+            "y": 144.87419068581,
+            "z": 67.5
+          },
+          "elevation": 67.5,
+          "distanceFromHomeplate": 150.6,
+          "angle": 164.15,
+          "facing": 344.15,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        }
+      ],
+      "covered": false,
+      "hasAisleSeats": false,
+      "wheelchairRow": false
+    },
+    {
+      "rowNumber": "29",
+      "sectionId": "117",
+      "seatCount": 10,
+      "elevation": 70,
+      "depth": 153.39999999999998,
+      "rowSpacing": 36,
+      "seats": [
+        {
+          "id": "mariners-117-29-1",
+          "sectionId": "117",
+          "row": "29",
+          "seatNumber": "1",
+          "position3D": {
+            "x": 46.51112410366637,
+            "y": 146.17891549267063,
+            "z": 70
+          },
+          "elevation": 70,
+          "distanceFromHomeplate": 153.39999999999998,
+          "angle": 162.35,
+          "facing": 342.35,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "mariners-117-29-2",
+          "sectionId": "117",
+          "row": "29",
+          "seatNumber": "2",
+          "position3D": {
+            "x": 46.000581103741354,
+            "y": 146.34037904186974,
+            "z": 70
+          },
+          "elevation": 70,
+          "distanceFromHomeplate": 153.39999999999998,
+          "angle": 162.55,
+          "facing": 342.55,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "mariners-117-29-3",
+          "sectionId": "117",
+          "row": "29",
+          "seatNumber": "3",
+          "position3D": {
+            "x": 45.48947760125261,
+            "y": 146.50005947973239,
+            "z": 70
+          },
+          "elevation": 70,
+          "distanceFromHomeplate": 153.39999999999998,
+          "angle": 162.75,
+          "facing": 342.75,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "mariners-117-29-4",
+          "sectionId": "117",
+          "row": "29",
+          "seatNumber": "4",
+          "position3D": {
+            "x": 44.977819823834835,
+            "y": 146.65795486060293,
+            "z": 70
+          },
+          "elevation": 70,
+          "distanceFromHomeplate": 153.39999999999998,
+          "angle": 162.95,
+          "facing": 342.95,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "mariners-117-29-5",
+          "sectionId": "117",
+          "row": "29",
+          "seatNumber": "5",
+          "position3D": {
+            "x": 44.46561400587661,
+            "y": 146.8140632605759,
+            "z": 70
+          },
+          "elevation": 70,
+          "distanceFromHomeplate": 153.39999999999998,
+          "angle": 163.15,
+          "facing": 343.15,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "mariners-117-29-6",
+          "sectionId": "117",
+          "row": "29",
+          "seatNumber": "6",
+          "position3D": {
+            "x": 43.95286638844428,
+            "y": 146.96838277751974,
+            "z": 70
+          },
+          "elevation": 70,
+          "distanceFromHomeplate": 153.39999999999998,
+          "angle": 163.35,
+          "facing": 343.35,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "mariners-117-29-7",
+          "sectionId": "117",
+          "row": "29",
+          "seatNumber": "7",
+          "position3D": {
+            "x": 43.43958321920562,
+            "y": 147.12091153109984,
+            "z": 70
+          },
+          "elevation": 70,
+          "distanceFromHomeplate": 153.39999999999998,
+          "angle": 163.55,
+          "facing": 343.55,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "mariners-117-29-8",
+          "sectionId": "117",
+          "row": "29",
+          "seatNumber": "8",
+          "position3D": {
+            "x": 42.92577075235417,
+            "y": 147.27164766280146,
+            "z": 70
+          },
+          "elevation": 70,
+          "distanceFromHomeplate": 153.4,
+          "angle": 163.75,
+          "facing": 343.75,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "mariners-117-29-9",
+          "sectionId": "117",
+          "row": "29",
+          "seatNumber": "9",
+          "position3D": {
+            "x": 42.411435248532705,
+            "y": 147.42058933595234,
+            "z": 70
+          },
+          "elevation": 70,
+          "distanceFromHomeplate": 153.39999999999995,
+          "angle": 163.95,
+          "facing": 343.95,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "mariners-117-29-10",
+          "sectionId": "117",
+          "row": "29",
+          "seatNumber": "10",
+          "position3D": {
+            "x": 41.89658297475685,
+            "y": 147.56773473574535,
+            "z": 70
+          },
+          "elevation": 70,
+          "distanceFromHomeplate": 153.39999999999995,
+          "angle": 164.15,
+          "facing": 344.15,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        }
+      ],
+      "covered": false,
+      "hasAisleSeats": false,
+      "wheelchairRow": false
+    },
+    {
+      "rowNumber": "30",
+      "sectionId": "117",
+      "seatCount": 10,
+      "elevation": 72.5,
+      "depth": 156.2,
+      "rowSpacing": 36,
+      "seats": [
+        {
+          "id": "mariners-117-30-1",
+          "sectionId": "117",
+          "row": "30",
+          "seatNumber": "1",
+          "position3D": {
+            "x": 47.36008855927436,
+            "y": 148.8471095173087,
+            "z": 72.5
+          },
+          "elevation": 72.5,
+          "distanceFromHomeplate": 156.2,
+          "angle": 162.35,
+          "facing": 342.35,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "mariners-117-30-2",
+          "sectionId": "117",
+          "row": "30",
+          "seatNumber": "2",
+          "position3D": {
+            "x": 46.84022665191916,
+            "y": 149.01152024993516,
+            "z": 72.5
+          },
+          "elevation": 72.5,
+          "distanceFromHomeplate": 156.2,
+          "angle": 162.55,
+          "facing": 342.55,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "mariners-117-30-3",
+          "sectionId": "117",
+          "row": "30",
+          "seatNumber": "3",
+          "position3D": {
+            "x": 46.319794011184214,
+            "y": 149.17411532421252,
+            "z": 72.5
+          },
+          "elevation": 72.5,
+          "distanceFromHomeplate": 156.2,
+          "angle": 162.75,
+          "facing": 342.75,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "mariners-117-30-4",
+          "sectionId": "117",
+          "row": "30",
+          "seatNumber": "4",
+          "position3D": {
+            "x": 45.7987969783768,
+            "y": 149.3348927589712,
+            "z": 72.5
+          },
+          "elevation": 72.5,
+          "distanceFromHomeplate": 156.20000000000002,
+          "angle": 162.95,
+          "facing": 342.95,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "mariners-117-30-5",
+          "sectionId": "117",
+          "row": "30",
+          "seatNumber": "5",
+          "position3D": {
+            "x": 45.2772419016814,
+            "y": 149.49385059518877,
+            "z": 72.5
+          },
+          "elevation": 72.5,
+          "distanceFromHomeplate": 156.2,
+          "angle": 163.15,
+          "facing": 343.15,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "mariners-117-30-6",
+          "sectionId": "117",
+          "row": "30",
+          "seatNumber": "6",
+          "position3D": {
+            "x": 44.75513513608212,
+            "y": 149.65098689601425,
+            "z": 72.5
+          },
+          "elevation": 72.5,
+          "distanceFromHomeplate": 156.2,
+          "angle": 163.35,
+          "facing": 343.35,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "mariners-117-30-7",
+          "sectionId": "117",
+          "row": "30",
+          "seatNumber": "7",
+          "position3D": {
+            "x": 44.232483043285,
+            "y": 149.80629974679138,
+            "z": 72.5
+          },
+          "elevation": 72.5,
+          "distanceFromHomeplate": 156.20000000000002,
+          "angle": 163.55,
+          "facing": 343.55,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "mariners-117-30-8",
+          "sectionId": "117",
+          "row": "30",
+          "seatNumber": "8",
+          "position3D": {
+            "x": 43.70929199164095,
+            "y": 149.95978725508206,
+            "z": 72.5
+          },
+          "elevation": 72.5,
+          "distanceFromHomeplate": 156.20000000000002,
+          "angle": 163.75,
+          "facing": 343.75,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "mariners-117-30-9",
+          "sectionId": "117",
+          "row": "30",
+          "seatNumber": "9",
+          "position3D": {
+            "x": 43.18556835606786,
+            "y": 150.11144755068943,
+            "z": 72.5
+          },
+          "elevation": 72.5,
+          "distanceFromHomeplate": 156.2,
+          "angle": 163.95,
+          "facing": 343.95,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "mariners-117-30-10",
+          "sectionId": "117",
+          "row": "30",
+          "seatNumber": "10",
+          "position3D": {
+            "x": 42.66131851797276,
+            "y": 150.26127878568073,
+            "z": 72.5
+          },
+          "elevation": 72.5,
+          "distanceFromHomeplate": 156.19999999999996,
+          "angle": 164.15,
+          "facing": 344.15,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        }
+      ],
+      "covered": false,
+      "hasAisleSeats": false,
+      "wheelchairRow": false
+    },
+    {
+      "rowNumber": "31",
+      "sectionId": "117",
+      "seatCount": 10,
+      "elevation": 75,
+      "depth": 159,
+      "rowSpacing": 36,
+      "seats": [
+        {
+          "id": "mariners-117-31-1",
+          "sectionId": "117",
+          "row": "31",
+          "seatNumber": "1",
+          "position3D": {
+            "x": 48.20905301488236,
+            "y": 151.51530354194676,
+            "z": 75
+          },
+          "elevation": 75,
+          "distanceFromHomeplate": 159,
+          "angle": 162.35,
+          "facing": 342.35,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "mariners-117-31-2",
+          "sectionId": "117",
+          "row": "31",
+          "seatNumber": "2",
+          "position3D": {
+            "x": 47.67987220009697,
+            "y": 151.68266145800058,
+            "z": 75
+          },
+          "elevation": 75,
+          "distanceFromHomeplate": 159,
+          "angle": 162.55,
+          "facing": 342.55,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "mariners-117-31-3",
+          "sectionId": "117",
+          "row": "31",
+          "seatNumber": "3",
+          "position3D": {
+            "x": 47.15011042111581,
+            "y": 151.84817116869266,
+            "z": 75
+          },
+          "elevation": 75,
+          "distanceFromHomeplate": 159,
+          "angle": 162.75,
+          "facing": 342.75,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "mariners-117-31-4",
+          "sectionId": "117",
+          "row": "31",
+          "seatNumber": "4",
+          "position3D": {
+            "x": 46.61977413291877,
+            "y": 152.01183065733943,
+            "z": 75
+          },
+          "elevation": 75,
+          "distanceFromHomeplate": 159,
+          "angle": 162.95,
+          "facing": 342.95,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "mariners-117-31-5",
+          "sectionId": "117",
+          "row": "31",
+          "seatNumber": "5",
+          "position3D": {
+            "x": 46.08886979748619,
+            "y": 152.17363792980166,
+            "z": 75
+          },
+          "elevation": 75,
+          "distanceFromHomeplate": 159,
+          "angle": 163.15,
+          "facing": 343.15,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "mariners-117-31-6",
+          "sectionId": "117",
+          "row": "31",
+          "seatNumber": "6",
+          "position3D": {
+            "x": 45.55740388371996,
+            "y": 152.33359101450873,
+            "z": 75
+          },
+          "elevation": 75,
+          "distanceFromHomeplate": 159,
+          "angle": 163.35,
+          "facing": 343.35,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "mariners-117-31-7",
+          "sectionId": "117",
+          "row": "31",
+          "seatNumber": "7",
+          "position3D": {
+            "x": 45.02538286736438,
+            "y": 152.4916879624829,
+            "z": 75
+          },
+          "elevation": 75,
+          "distanceFromHomeplate": 159,
+          "angle": 163.55,
+          "facing": 343.55,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "mariners-117-31-8",
+          "sectionId": "117",
+          "row": "31",
+          "seatNumber": "8",
+          "position3D": {
+            "x": 44.49281323092773,
+            "y": 152.64792684736267,
+            "z": 75
+          },
+          "elevation": 75,
+          "distanceFromHomeplate": 159,
+          "angle": 163.75,
+          "facing": 343.75,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "mariners-117-31-9",
+          "sectionId": "117",
+          "row": "31",
+          "seatNumber": "9",
+          "position3D": {
+            "x": 43.95970146360301,
+            "y": 152.80230576542652,
+            "z": 75
+          },
+          "elevation": 75,
+          "distanceFromHomeplate": 159,
+          "angle": 163.95,
+          "facing": 343.95,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "mariners-117-31-10",
+          "sectionId": "117",
+          "row": "31",
+          "seatNumber": "10",
+          "position3D": {
+            "x": 43.42605406118866,
+            "y": 152.95482283561614,
+            "z": 75
+          },
+          "elevation": 75,
+          "distanceFromHomeplate": 159,
+          "angle": 164.15,
+          "facing": 344.15,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        }
+      ],
+      "covered": false,
+      "hasAisleSeats": false,
+      "wheelchairRow": false
+    },
+    {
+      "rowNumber": "32",
+      "sectionId": "117",
+      "seatCount": 10,
+      "elevation": 77.5,
+      "depth": 161.8,
+      "rowSpacing": 36,
+      "seats": [
+        {
+          "id": "mariners-117-32-1",
+          "sectionId": "117",
+          "row": "32",
+          "seatNumber": "1",
+          "position3D": {
+            "x": 49.05801747049035,
+            "y": 154.18349756658483,
+            "z": 77.5
+          },
+          "elevation": 77.5,
+          "distanceFromHomeplate": 161.8,
+          "angle": 162.35,
+          "facing": 342.35,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "mariners-117-32-2",
+          "sectionId": "117",
+          "row": "32",
+          "seatNumber": "2",
+          "position3D": {
+            "x": 48.51951774827479,
+            "y": 154.35380266606603,
+            "z": 77.5
+          },
+          "elevation": 77.5,
+          "distanceFromHomeplate": 161.8,
+          "angle": 162.55,
+          "facing": 342.55,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "mariners-117-32-3",
+          "sectionId": "117",
+          "row": "32",
+          "seatNumber": "3",
+          "position3D": {
+            "x": 47.98042683104742,
+            "y": 154.5222270131728,
+            "z": 77.5
+          },
+          "elevation": 77.5,
+          "distanceFromHomeplate": 161.8,
+          "angle": 162.75,
+          "facing": 342.75,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "mariners-117-32-4",
+          "sectionId": "117",
+          "row": "32",
+          "seatNumber": "4",
+          "position3D": {
+            "x": 47.44075128746074,
+            "y": 154.6887685557077,
+            "z": 77.5
+          },
+          "elevation": 77.5,
+          "distanceFromHomeplate": 161.80000000000004,
+          "angle": 162.95,
+          "facing": 342.95,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "mariners-117-32-5",
+          "sectionId": "117",
+          "row": "32",
+          "seatNumber": "5",
+          "position3D": {
+            "x": 46.90049769329099,
+            "y": 154.8534252644145,
+            "z": 77.5
+          },
+          "elevation": 77.5,
+          "distanceFromHomeplate": 161.8,
+          "angle": 163.15,
+          "facing": 343.15,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "mariners-117-32-6",
+          "sectionId": "117",
+          "row": "32",
+          "seatNumber": "6",
+          "position3D": {
+            "x": 46.359672631357796,
+            "y": 155.01619513300324,
+            "z": 77.5
+          },
+          "elevation": 77.5,
+          "distanceFromHomeplate": 161.8,
+          "angle": 163.35,
+          "facing": 343.35,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "mariners-117-32-7",
+          "sectionId": "117",
+          "row": "32",
+          "seatNumber": "7",
+          "position3D": {
+            "x": 45.81828269144375,
+            "y": 155.17707617817445,
+            "z": 77.5
+          },
+          "elevation": 77.5,
+          "distanceFromHomeplate": 161.80000000000004,
+          "angle": 163.55,
+          "facing": 343.55,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "mariners-117-32-8",
+          "sectionId": "117",
+          "row": "32",
+          "seatNumber": "8",
+          "position3D": {
+            "x": 45.276334470214515,
+            "y": 155.33606643964328,
+            "z": 77.5
+          },
+          "elevation": 77.5,
+          "distanceFromHomeplate": 161.8,
+          "angle": 163.75,
+          "facing": 343.75,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "mariners-117-32-9",
+          "sectionId": "117",
+          "row": "32",
+          "seatNumber": "9",
+          "position3D": {
+            "x": 44.73383457113816,
+            "y": 155.4931639801636,
+            "z": 77.5
+          },
+          "elevation": 77.5,
+          "distanceFromHomeplate": 161.79999999999998,
+          "angle": 163.95,
+          "facing": 343.95,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "mariners-117-32-10",
+          "sectionId": "117",
+          "row": "32",
+          "seatNumber": "10",
+          "position3D": {
+            "x": 44.190789604404564,
+            "y": 155.64836688555152,
+            "z": 77.5
+          },
+          "elevation": 77.5,
+          "distanceFromHomeplate": 161.8,
+          "angle": 164.15,
+          "facing": 344.15,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        }
+      ],
+      "covered": false,
+      "hasAisleSeats": false,
+      "wheelchairRow": false
+    },
+    {
+      "rowNumber": "33",
+      "sectionId": "117",
+      "seatCount": 10,
+      "elevation": 80,
+      "depth": 164.6,
+      "rowSpacing": 36,
+      "seats": [
+        {
+          "id": "mariners-117-33-1",
+          "sectionId": "117",
+          "row": "33",
+          "seatNumber": "1",
+          "position3D": {
+            "x": 49.90698192609834,
+            "y": 156.85169159122287,
+            "z": 80
+          },
+          "elevation": 80,
+          "distanceFromHomeplate": 164.60000000000002,
+          "angle": 162.35,
+          "facing": 342.35,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "mariners-117-33-2",
+          "sectionId": "117",
+          "row": "33",
+          "seatNumber": "2",
+          "position3D": {
+            "x": 49.35916329645259,
+            "y": 157.02494387413142,
+            "z": 80
+          },
+          "elevation": 80,
+          "distanceFromHomeplate": 164.6,
+          "angle": 162.55,
+          "facing": 342.55,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "mariners-117-33-3",
+          "sectionId": "117",
+          "row": "33",
+          "seatNumber": "3",
+          "position3D": {
+            "x": 48.81074324097901,
+            "y": 157.1962828576529,
+            "z": 80
+          },
+          "elevation": 80,
+          "distanceFromHomeplate": 164.6,
+          "angle": 162.75,
+          "facing": 342.75,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "mariners-117-33-4",
+          "sectionId": "117",
+          "row": "33",
+          "seatNumber": "4",
+          "position3D": {
+            "x": 48.2617284420027,
+            "y": 157.3657064540759,
+            "z": 80
+          },
+          "elevation": 80,
+          "distanceFromHomeplate": 164.6,
+          "angle": 162.95,
+          "facing": 342.95,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "mariners-117-33-5",
+          "sectionId": "117",
+          "row": "33",
+          "seatNumber": "5",
+          "position3D": {
+            "x": 47.71212558909577,
+            "y": 157.53321259902737,
+            "z": 80
+          },
+          "elevation": 80,
+          "distanceFromHomeplate": 164.60000000000002,
+          "angle": 163.15,
+          "facing": 343.15,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "mariners-117-33-6",
+          "sectionId": "117",
+          "row": "33",
+          "seatNumber": "6",
+          "position3D": {
+            "x": 47.16194137899563,
+            "y": 157.69879925149772,
+            "z": 80
+          },
+          "elevation": 80,
+          "distanceFromHomeplate": 164.6,
+          "angle": 163.35,
+          "facing": 343.35,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "mariners-117-33-7",
+          "sectionId": "117",
+          "row": "33",
+          "seatNumber": "7",
+          "position3D": {
+            "x": 46.61118251552312,
+            "y": 157.86246439386593,
+            "z": 80
+          },
+          "elevation": 80,
+          "distanceFromHomeplate": 164.6,
+          "angle": 163.55,
+          "facing": 343.55,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "mariners-117-33-8",
+          "sectionId": "117",
+          "row": "33",
+          "seatNumber": "8",
+          "position3D": {
+            "x": 46.059855709501285,
+            "y": 158.02420603192385,
+            "z": 80
+          },
+          "elevation": 80,
+          "distanceFromHomeplate": 164.6,
+          "angle": 163.75,
+          "facing": 343.75,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "mariners-117-33-9",
+          "sectionId": "117",
+          "row": "33",
+          "seatNumber": "9",
+          "position3D": {
+            "x": 45.5079676786733,
+            "y": 158.18402219490065,
+            "z": 80
+          },
+          "elevation": 80,
+          "distanceFromHomeplate": 164.6,
+          "angle": 163.95,
+          "facing": 343.95,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "mariners-117-33-10",
+          "sectionId": "117",
+          "row": "33",
+          "seatNumber": "10",
+          "position3D": {
+            "x": 44.95552514762046,
+            "y": 158.34191093548688,
+            "z": 80
+          },
+          "elevation": 80,
+          "distanceFromHomeplate": 164.6,
+          "angle": 164.15,
+          "facing": 344.15,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        }
+      ],
+      "covered": false,
+      "hasAisleSeats": false,
+      "wheelchairRow": false
+    },
+    {
+      "rowNumber": "34",
+      "sectionId": "117",
+      "seatCount": 10,
+      "elevation": 82.5,
+      "depth": 167.39999999999998,
+      "rowSpacing": 36,
+      "seats": [
+        {
+          "id": "mariners-117-34-1",
+          "sectionId": "117",
+          "row": "34",
+          "seatNumber": "1",
+          "position3D": {
+            "x": 50.75594638170632,
+            "y": 159.51988561586091,
+            "z": 82.5
+          },
+          "elevation": 82.5,
+          "distanceFromHomeplate": 167.39999999999998,
+          "angle": 162.35,
+          "facing": 342.35,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "mariners-117-34-2",
+          "sectionId": "117",
+          "row": "34",
+          "seatNumber": "2",
+          "position3D": {
+            "x": 50.19880884463039,
+            "y": 159.69608508219682,
+            "z": 82.5
+          },
+          "elevation": 82.5,
+          "distanceFromHomeplate": 167.39999999999995,
+          "angle": 162.55,
+          "facing": 342.55,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "mariners-117-34-3",
+          "sectionId": "117",
+          "row": "34",
+          "seatNumber": "3",
+          "position3D": {
+            "x": 49.641059650910606,
+            "y": 159.870338702133,
+            "z": 82.5
+          },
+          "elevation": 82.5,
+          "distanceFromHomeplate": 167.39999999999998,
+          "angle": 162.75,
+          "facing": 342.75,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "mariners-117-34-4",
+          "sectionId": "117",
+          "row": "34",
+          "seatNumber": "4",
+          "position3D": {
+            "x": 49.08270559654466,
+            "y": 160.04264435244414,
+            "z": 82.5
+          },
+          "elevation": 82.5,
+          "distanceFromHomeplate": 167.4,
+          "angle": 162.95,
+          "facing": 342.95,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "mariners-117-34-5",
+          "sectionId": "117",
+          "row": "34",
+          "seatNumber": "5",
+          "position3D": {
+            "x": 48.52375348490055,
+            "y": 160.2129999336402,
+            "z": 82.5
+          },
+          "elevation": 82.5,
+          "distanceFromHomeplate": 167.39999999999998,
+          "angle": 163.15,
+          "facing": 343.15,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "mariners-117-34-6",
+          "sectionId": "117",
+          "row": "34",
+          "seatNumber": "6",
+          "position3D": {
+            "x": 47.96421012663346,
+            "y": 160.3814033699922,
+            "z": 82.5
+          },
+          "elevation": 82.5,
+          "distanceFromHomeplate": 167.39999999999998,
+          "angle": 163.35,
+          "facing": 343.35,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "mariners-117-34-7",
+          "sectionId": "117",
+          "row": "34",
+          "seatNumber": "7",
+          "position3D": {
+            "x": 47.40408233960249,
+            "y": 160.54785260955745,
+            "z": 82.5
+          },
+          "elevation": 82.5,
+          "distanceFromHomeplate": 167.39999999999998,
+          "angle": 163.55,
+          "facing": 343.55,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "mariners-117-34-8",
+          "sectionId": "117",
+          "row": "34",
+          "seatNumber": "8",
+          "position3D": {
+            "x": 46.84337694878806,
+            "y": 160.71234562420443,
+            "z": 82.5
+          },
+          "elevation": 82.5,
+          "distanceFromHomeplate": 167.39999999999998,
+          "angle": 163.75,
+          "facing": 343.75,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "mariners-117-34-9",
+          "sectionId": "117",
+          "row": "34",
+          "seatNumber": "9",
+          "position3D": {
+            "x": 46.282100786208446,
+            "y": 160.8748804096377,
+            "z": 82.5
+          },
+          "elevation": 82.5,
+          "distanceFromHomeplate": 167.39999999999998,
+          "angle": 163.95,
+          "facing": 343.95,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "mariners-117-34-10",
+          "sectionId": "117",
+          "row": "34",
+          "seatNumber": "10",
+          "position3D": {
+            "x": 45.720260690836355,
+            "y": 161.03545498542223,
+            "z": 82.5
+          },
+          "elevation": 82.5,
+          "distanceFromHomeplate": 167.39999999999995,
+          "angle": 164.15,
+          "facing": 344.15,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        }
+      ],
+      "covered": false,
+      "hasAisleSeats": false,
+      "wheelchairRow": false
+    },
+    {
+      "rowNumber": "35",
+      "sectionId": "117",
+      "seatCount": 10,
+      "elevation": 85,
+      "depth": 170.2,
+      "rowSpacing": 36,
+      "seats": [
+        {
+          "id": "mariners-117-35-1",
+          "sectionId": "117",
+          "row": "35",
+          "seatNumber": "1",
+          "position3D": {
+            "x": 51.604910837314314,
+            "y": 162.18807964049898,
+            "z": 85
+          },
+          "elevation": 85,
+          "distanceFromHomeplate": 170.2,
+          "angle": 162.35,
+          "facing": 342.35,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "mariners-117-35-2",
+          "sectionId": "117",
+          "row": "35",
+          "seatNumber": "2",
+          "position3D": {
+            "x": 51.038454392808205,
+            "y": 162.36722629026227,
+            "z": 85
+          },
+          "elevation": 85,
+          "distanceFromHomeplate": 170.2,
+          "angle": 162.55,
+          "facing": 342.55,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "mariners-117-35-3",
+          "sectionId": "117",
+          "row": "35",
+          "seatNumber": "3",
+          "position3D": {
+            "x": 50.4713760608422,
+            "y": 162.54439454661315,
+            "z": 85
+          },
+          "elevation": 85,
+          "distanceFromHomeplate": 170.2,
+          "angle": 162.75,
+          "facing": 342.75,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "mariners-117-35-4",
+          "sectionId": "117",
+          "row": "35",
+          "seatNumber": "4",
+          "position3D": {
+            "x": 49.90368275108663,
+            "y": 162.71958225081238,
+            "z": 85
+          },
+          "elevation": 85,
+          "distanceFromHomeplate": 170.2,
+          "angle": 162.95,
+          "facing": 342.95,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "mariners-117-35-5",
+          "sectionId": "117",
+          "row": "35",
+          "seatNumber": "5",
+          "position3D": {
+            "x": 49.33538138070534,
+            "y": 162.89278726825307,
+            "z": 85
+          },
+          "elevation": 85,
+          "distanceFromHomeplate": 170.2,
+          "angle": 163.15,
+          "facing": 343.15,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "mariners-117-35-6",
+          "sectionId": "117",
+          "row": "35",
+          "seatNumber": "6",
+          "position3D": {
+            "x": 48.7664788742713,
+            "y": 163.0640074884867,
+            "z": 85
+          },
+          "elevation": 85,
+          "distanceFromHomeplate": 170.2,
+          "angle": 163.35,
+          "facing": 343.35,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "mariners-117-35-7",
+          "sectionId": "117",
+          "row": "35",
+          "seatNumber": "7",
+          "position3D": {
+            "x": 48.19698216368186,
+            "y": 163.23324082524897,
+            "z": 85
+          },
+          "elevation": 85,
+          "distanceFromHomeplate": 170.2,
+          "angle": 163.55,
+          "facing": 343.55,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "mariners-117-35-8",
+          "sectionId": "117",
+          "row": "35",
+          "seatNumber": "8",
+          "position3D": {
+            "x": 47.62689818807484,
+            "y": 163.40048521648507,
+            "z": 85
+          },
+          "elevation": 85,
+          "distanceFromHomeplate": 170.2,
+          "angle": 163.75,
+          "facing": 343.75,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "mariners-117-35-9",
+          "sectionId": "117",
+          "row": "35",
+          "seatNumber": "9",
+          "position3D": {
+            "x": 47.056233893743595,
+            "y": 163.56573862437477,
+            "z": 85
+          },
+          "elevation": 85,
+          "distanceFromHomeplate": 170.19999999999996,
+          "angle": 163.95,
+          "facing": 343.95,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "mariners-117-35-10",
+          "sectionId": "117",
+          "row": "35",
+          "seatNumber": "10",
+          "position3D": {
+            "x": 46.48499623405226,
+            "y": 163.72899903535765,
+            "z": 85
+          },
+          "elevation": 85,
+          "distanceFromHomeplate": 170.2,
+          "angle": 164.15,
+          "facing": 344.15,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        }
+      ],
+      "covered": false,
+      "hasAisleSeats": false,
+      "wheelchairRow": false
+    },
+    {
+      "rowNumber": "36",
+      "sectionId": "117",
+      "seatCount": 10,
+      "elevation": 87.5,
+      "depth": 173,
+      "rowSpacing": 36,
+      "seats": [
+        {
+          "id": "mariners-117-36-1",
+          "sectionId": "117",
+          "row": "36",
+          "seatNumber": "1",
+          "position3D": {
+            "x": 52.45387529292231,
+            "y": 164.85627366513705,
+            "z": 87.5
+          },
+          "elevation": 87.5,
+          "distanceFromHomeplate": 173.00000000000003,
+          "angle": 162.35,
+          "facing": 342.35,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "mariners-117-36-2",
+          "sectionId": "117",
+          "row": "36",
+          "seatNumber": "2",
+          "position3D": {
+            "x": 51.87809994098602,
+            "y": 165.0383674983277,
+            "z": 87.5
+          },
+          "elevation": 87.5,
+          "distanceFromHomeplate": 173,
+          "angle": 162.55,
+          "facing": 342.55,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "mariners-117-36-3",
+          "sectionId": "117",
+          "row": "36",
+          "seatNumber": "3",
+          "position3D": {
+            "x": 51.30169247077381,
+            "y": 165.21845039109326,
+            "z": 87.5
+          },
+          "elevation": 87.5,
+          "distanceFromHomeplate": 172.99999999999997,
+          "angle": 162.75,
+          "facing": 342.75,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "mariners-117-36-4",
+          "sectionId": "117",
+          "row": "36",
+          "seatNumber": "4",
+          "position3D": {
+            "x": 50.7246599056286,
+            "y": 165.39652014918065,
+            "z": 87.5
+          },
+          "elevation": 87.5,
+          "distanceFromHomeplate": 173.00000000000003,
+          "angle": 162.95,
+          "facing": 342.95,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "mariners-117-36-5",
+          "sectionId": "117",
+          "row": "36",
+          "seatNumber": "5",
+          "position3D": {
+            "x": 50.14700927651013,
+            "y": 165.57257460286593,
+            "z": 87.5
+          },
+          "elevation": 87.5,
+          "distanceFromHomeplate": 173,
+          "angle": 163.15,
+          "facing": 343.15,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "mariners-117-36-6",
+          "sectionId": "117",
+          "row": "36",
+          "seatNumber": "6",
+          "position3D": {
+            "x": 49.56874762190914,
+            "y": 165.74661160698122,
+            "z": 87.5
+          },
+          "elevation": 87.5,
+          "distanceFromHomeplate": 173,
+          "angle": 163.35,
+          "facing": 343.35,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "mariners-117-36-7",
+          "sectionId": "117",
+          "row": "36",
+          "seatNumber": "7",
+          "position3D": {
+            "x": 48.98988198776124,
+            "y": 165.91862904094052,
+            "z": 87.5
+          },
+          "elevation": 87.5,
+          "distanceFromHomeplate": 173,
+          "angle": 163.55,
+          "facing": 343.55,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "mariners-117-36-8",
+          "sectionId": "117",
+          "row": "36",
+          "seatNumber": "8",
+          "position3D": {
+            "x": 48.410419427361624,
+            "y": 166.08862480876567,
+            "z": 87.5
+          },
+          "elevation": 87.5,
+          "distanceFromHomeplate": 173,
+          "angle": 163.75,
+          "facing": 343.75,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "mariners-117-36-9",
+          "sectionId": "117",
+          "row": "36",
+          "seatNumber": "9",
+          "position3D": {
+            "x": 47.830367001278745,
+            "y": 166.25659683911186,
+            "z": 87.5
+          },
+          "elevation": 87.5,
+          "distanceFromHomeplate": 172.99999999999997,
+          "angle": 163.95,
+          "facing": 343.95,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "mariners-117-36-10",
+          "sectionId": "117",
+          "row": "36",
+          "seatNumber": "10",
+          "position3D": {
+            "x": 47.24973177726817,
+            "y": 166.42254308529303,
+            "z": 87.5
+          },
+          "elevation": 87.5,
+          "distanceFromHomeplate": 173,
+          "angle": 164.15,
+          "facing": 344.15,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        }
+      ],
+      "covered": false,
+      "hasAisleSeats": false,
+      "wheelchairRow": false
+    },
+    {
+      "rowNumber": "37",
+      "sectionId": "117",
+      "seatCount": 10,
+      "elevation": 90,
+      "depth": 175.8,
+      "rowSpacing": 36,
+      "seats": [
+        {
+          "id": "mariners-117-37-1",
+          "sectionId": "117",
+          "row": "37",
+          "seatNumber": "1",
+          "position3D": {
+            "x": 53.3028397485303,
+            "y": 167.52446768977512,
+            "z": 90
+          },
+          "elevation": 90,
+          "distanceFromHomeplate": 175.80000000000004,
+          "angle": 162.35,
+          "facing": 342.35,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "mariners-117-37-2",
+          "sectionId": "117",
+          "row": "37",
+          "seatNumber": "2",
+          "position3D": {
+            "x": 52.71774548916383,
+            "y": 167.7095087063931,
+            "z": 90
+          },
+          "elevation": 90,
+          "distanceFromHomeplate": 175.8,
+          "angle": 162.55,
+          "facing": 342.55,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "mariners-117-37-3",
+          "sectionId": "117",
+          "row": "37",
+          "seatNumber": "3",
+          "position3D": {
+            "x": 52.13200888070541,
+            "y": 167.8925062355734,
+            "z": 90
+          },
+          "elevation": 90,
+          "distanceFromHomeplate": 175.8,
+          "angle": 162.75,
+          "facing": 342.75,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "mariners-117-37-4",
+          "sectionId": "117",
+          "row": "37",
+          "seatNumber": "4",
+          "position3D": {
+            "x": 51.54563706017057,
+            "y": 168.07345804754888,
+            "z": 90
+          },
+          "elevation": 90,
+          "distanceFromHomeplate": 175.8,
+          "angle": 162.95,
+          "facing": 342.95,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "mariners-117-37-5",
+          "sectionId": "117",
+          "row": "37",
+          "seatNumber": "5",
+          "position3D": {
+            "x": 50.95863717231492,
+            "y": 168.2523619374788,
+            "z": 90
+          },
+          "elevation": 90,
+          "distanceFromHomeplate": 175.8,
+          "angle": 163.15,
+          "facing": 343.15,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "mariners-117-37-6",
+          "sectionId": "117",
+          "row": "37",
+          "seatNumber": "6",
+          "position3D": {
+            "x": 50.37101636954698,
+            "y": 168.4292157254757,
+            "z": 90
+          },
+          "elevation": 90,
+          "distanceFromHomeplate": 175.8,
+          "angle": 163.35,
+          "facing": 343.35,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "mariners-117-37-7",
+          "sectionId": "117",
+          "row": "37",
+          "seatNumber": "7",
+          "position3D": {
+            "x": 49.782781811840614,
+            "y": 168.60401725663206,
+            "z": 90
+          },
+          "elevation": 90,
+          "distanceFromHomeplate": 175.80000000000004,
+          "angle": 163.55,
+          "facing": 343.55,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "mariners-117-37-8",
+          "sectionId": "117",
+          "row": "37",
+          "seatNumber": "8",
+          "position3D": {
+            "x": 49.1939406666484,
+            "y": 168.77676440104628,
+            "z": 90
+          },
+          "elevation": 90,
+          "distanceFromHomeplate": 175.8,
+          "angle": 163.75,
+          "facing": 343.75,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "mariners-117-37-9",
+          "sectionId": "117",
+          "row": "37",
+          "seatNumber": "9",
+          "position3D": {
+            "x": 48.604500108813895,
+            "y": 168.94745505384896,
+            "z": 90
+          },
+          "elevation": 90,
+          "distanceFromHomeplate": 175.8,
+          "angle": 163.95,
+          "facing": 343.95,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "mariners-117-37-10",
+          "sectionId": "117",
+          "row": "37",
+          "seatNumber": "10",
+          "position3D": {
+            "x": 48.014467320484066,
+            "y": 169.1160871352284,
+            "z": 90
+          },
+          "elevation": 90,
+          "distanceFromHomeplate": 175.8,
+          "angle": 164.15,
+          "facing": 344.15,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        }
+      ],
+      "covered": false,
+      "hasAisleSeats": false,
+      "wheelchairRow": false
+    },
+    {
+      "rowNumber": "38",
+      "sectionId": "117",
+      "seatCount": 10,
+      "elevation": 92.5,
+      "depth": 178.6,
+      "rowSpacing": 36,
+      "seats": [
+        {
+          "id": "mariners-117-38-1",
+          "sectionId": "117",
+          "row": "38",
+          "seatNumber": "1",
+          "position3D": {
+            "x": 54.151804204138294,
+            "y": 170.19266171441316,
+            "z": 92.5
+          },
+          "elevation": 92.5,
+          "distanceFromHomeplate": 178.60000000000002,
+          "angle": 162.35,
+          "facing": 342.35,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "mariners-117-38-2",
+          "sectionId": "117",
+          "row": "38",
+          "seatNumber": "2",
+          "position3D": {
+            "x": 53.55739103734163,
+            "y": 170.38064991445853,
+            "z": 92.5
+          },
+          "elevation": 92.5,
+          "distanceFromHomeplate": 178.6,
+          "angle": 162.55,
+          "facing": 342.55,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "mariners-117-38-3",
+          "sectionId": "117",
+          "row": "38",
+          "seatNumber": "3",
+          "position3D": {
+            "x": 52.962325290637004,
+            "y": 170.5665620800535,
+            "z": 92.5
+          },
+          "elevation": 92.5,
+          "distanceFromHomeplate": 178.6,
+          "angle": 162.75,
+          "facing": 342.75,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "mariners-117-38-4",
+          "sectionId": "117",
+          "row": "38",
+          "seatNumber": "4",
+          "position3D": {
+            "x": 52.36661421471253,
+            "y": 170.75039594591712,
+            "z": 92.5
+          },
+          "elevation": 92.5,
+          "distanceFromHomeplate": 178.6,
+          "angle": 162.95,
+          "facing": 342.95,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "mariners-117-38-5",
+          "sectionId": "117",
+          "row": "38",
+          "seatNumber": "5",
+          "position3D": {
+            "x": 51.770265068119706,
+            "y": 170.93214927209166,
+            "z": 92.5
+          },
+          "elevation": 92.5,
+          "distanceFromHomeplate": 178.6,
+          "angle": 163.15,
+          "facing": 343.15,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "mariners-117-38-6",
+          "sectionId": "117",
+          "row": "38",
+          "seatNumber": "6",
+          "position3D": {
+            "x": 51.173285117184804,
+            "y": 171.11181984397018,
+            "z": 92.5
+          },
+          "elevation": 92.5,
+          "distanceFromHomeplate": 178.6,
+          "angle": 163.35,
+          "facing": 343.35,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "mariners-117-38-7",
+          "sectionId": "117",
+          "row": "38",
+          "seatNumber": "7",
+          "position3D": {
+            "x": 50.575681635919985,
+            "y": 171.28940547232355,
+            "z": 92.5
+          },
+          "elevation": 92.5,
+          "distanceFromHomeplate": 178.6,
+          "angle": 163.55,
+          "facing": 343.55,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "mariners-117-38-8",
+          "sectionId": "117",
+          "row": "38",
+          "seatNumber": "8",
+          "position3D": {
+            "x": 49.97746190593517,
+            "y": 171.46490399332686,
+            "z": 92.5
+          },
+          "elevation": 92.5,
+          "distanceFromHomeplate": 178.6,
+          "angle": 163.75,
+          "facing": 343.75,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "mariners-117-38-9",
+          "sectionId": "117",
+          "row": "38",
+          "seatNumber": "9",
+          "position3D": {
+            "x": 49.37863321634904,
+            "y": 171.638313268586,
+            "z": 92.5
+          },
+          "elevation": 92.5,
+          "distanceFromHomeplate": 178.59999999999997,
+          "angle": 163.95,
+          "facing": 343.95,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "mariners-117-38-10",
+          "sectionId": "117",
+          "row": "38",
+          "seatNumber": "10",
+          "position3D": {
+            "x": 48.779202863699965,
+            "y": 171.80963118516377,
+            "z": 92.5
+          },
+          "elevation": 92.5,
+          "distanceFromHomeplate": 178.6,
+          "angle": 164.15,
+          "facing": 344.15,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        }
+      ],
+      "covered": false,
+      "hasAisleSeats": false,
+      "wheelchairRow": false
+    },
+    {
+      "rowNumber": "39",
+      "sectionId": "117",
+      "seatCount": 10,
+      "elevation": 95,
+      "depth": 181.39999999999998,
+      "rowSpacing": 36,
+      "seats": [
+        {
+          "id": "mariners-117-39-1",
+          "sectionId": "117",
+          "row": "39",
+          "seatNumber": "1",
+          "position3D": {
+            "x": 55.00076865974628,
+            "y": 172.86085573905117,
+            "z": 95
+          },
+          "elevation": 95,
+          "distanceFromHomeplate": 181.39999999999998,
+          "angle": 162.35,
+          "facing": 342.35,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "mariners-117-39-2",
+          "sectionId": "117",
+          "row": "39",
+          "seatNumber": "2",
+          "position3D": {
+            "x": 54.39703658551944,
+            "y": 173.05179112252392,
+            "z": 95
+          },
+          "elevation": 95,
+          "distanceFromHomeplate": 181.39999999999998,
+          "angle": 162.55,
+          "facing": 342.55,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "mariners-117-39-3",
+          "sectionId": "117",
+          "row": "39",
+          "seatNumber": "3",
+          "position3D": {
+            "x": 53.7926417005686,
+            "y": 173.2406179245336,
+            "z": 95
+          },
+          "elevation": 95,
+          "distanceFromHomeplate": 181.39999999999998,
+          "angle": 162.75,
+          "facing": 342.75,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "mariners-117-39-4",
+          "sectionId": "117",
+          "row": "39",
+          "seatNumber": "4",
+          "position3D": {
+            "x": 53.18759136925449,
+            "y": 173.42733384428533,
+            "z": 95
+          },
+          "elevation": 95,
+          "distanceFromHomeplate": 181.39999999999998,
+          "angle": 162.95,
+          "facing": 342.95,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "mariners-117-39-5",
+          "sectionId": "117",
+          "row": "39",
+          "seatNumber": "5",
+          "position3D": {
+            "x": 52.58189296392449,
+            "y": 173.6119366067045,
+            "z": 95
+          },
+          "elevation": 95,
+          "distanceFromHomeplate": 181.39999999999998,
+          "angle": 163.15,
+          "facing": 343.15,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "mariners-117-39-6",
+          "sectionId": "117",
+          "row": "39",
+          "seatNumber": "6",
+          "position3D": {
+            "x": 51.975553864822636,
+            "y": 173.79442396246466,
+            "z": 95
+          },
+          "elevation": 95,
+          "distanceFromHomeplate": 181.39999999999998,
+          "angle": 163.35,
+          "facing": 343.35,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "mariners-117-39-7",
+          "sectionId": "117",
+          "row": "39",
+          "seatNumber": "7",
+          "position3D": {
+            "x": 51.36858145999935,
+            "y": 173.97479368801507,
+            "z": 95
+          },
+          "elevation": 95,
+          "distanceFromHomeplate": 181.39999999999998,
+          "angle": 163.55,
+          "facing": 343.55,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "mariners-117-39-8",
+          "sectionId": "117",
+          "row": "39",
+          "seatNumber": "8",
+          "position3D": {
+            "x": 50.76098314522195,
+            "y": 174.15304358560743,
+            "z": 95
+          },
+          "elevation": 95,
+          "distanceFromHomeplate": 181.39999999999998,
+          "angle": 163.75,
+          "facing": 343.75,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "mariners-117-39-9",
+          "sectionId": "117",
+          "row": "39",
+          "seatNumber": "9",
+          "position3D": {
+            "x": 50.15276632388418,
+            "y": 174.32917148332305,
+            "z": 95
+          },
+          "elevation": 95,
+          "distanceFromHomeplate": 181.39999999999995,
+          "angle": 163.95,
+          "facing": 343.95,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "mariners-117-39-10",
+          "sectionId": "117",
+          "row": "39",
+          "seatNumber": "10",
+          "position3D": {
+            "x": 49.54393840691586,
+            "y": 174.50317523509915,
+            "z": 95
+          },
+          "elevation": 95,
+          "distanceFromHomeplate": 181.39999999999998,
+          "angle": 164.15,
+          "facing": 344.15,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        }
+      ],
+      "covered": false,
+      "hasAisleSeats": false,
+      "wheelchairRow": false
+    },
+    {
+      "rowNumber": "40",
+      "sectionId": "117",
+      "seatCount": 10,
+      "elevation": 97.5,
+      "depth": 184.2,
+      "rowSpacing": 36,
+      "seats": [
+        {
+          "id": "mariners-117-40-1",
+          "sectionId": "117",
+          "row": "40",
+          "seatNumber": "1",
+          "position3D": {
+            "x": 55.84973311535427,
+            "y": 175.52904976368924,
+            "z": 97.5
+          },
+          "elevation": 97.5,
+          "distanceFromHomeplate": 184.2,
+          "angle": 162.35,
+          "facing": 342.35,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "mariners-117-40-2",
+          "sectionId": "117",
+          "row": "40",
+          "seatNumber": "2",
+          "position3D": {
+            "x": 55.236682133697244,
+            "y": 175.72293233058934,
+            "z": 97.5
+          },
+          "elevation": 97.5,
+          "distanceFromHomeplate": 184.2,
+          "angle": 162.55,
+          "facing": 342.55,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "mariners-117-40-3",
+          "sectionId": "117",
+          "row": "40",
+          "seatNumber": "3",
+          "position3D": {
+            "x": 54.6229581105002,
+            "y": 175.91467376901375,
+            "z": 97.5
+          },
+          "elevation": 97.5,
+          "distanceFromHomeplate": 184.2,
+          "angle": 162.75,
+          "facing": 342.75,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "mariners-117-40-4",
+          "sectionId": "117",
+          "row": "40",
+          "seatNumber": "4",
+          "position3D": {
+            "x": 54.00856852379646,
+            "y": 176.1042717426536,
+            "z": 97.5
+          },
+          "elevation": 97.5,
+          "distanceFromHomeplate": 184.2,
+          "angle": 162.95,
+          "facing": 342.95,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "mariners-117-40-5",
+          "sectionId": "117",
+          "row": "40",
+          "seatNumber": "5",
+          "position3D": {
+            "x": 53.393520859729286,
+            "y": 176.29172394131737,
+            "z": 97.5
+          },
+          "elevation": 97.5,
+          "distanceFromHomeplate": 184.2,
+          "angle": 163.15,
+          "facing": 343.15,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "mariners-117-40-6",
+          "sectionId": "117",
+          "row": "40",
+          "seatNumber": "6",
+          "position3D": {
+            "x": 52.777822612460476,
+            "y": 176.47702808095917,
+            "z": 97.5
+          },
+          "elevation": 97.5,
+          "distanceFromHomeplate": 184.2,
+          "angle": 163.35,
+          "facing": 343.35,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "mariners-117-40-7",
+          "sectionId": "117",
+          "row": "40",
+          "seatNumber": "7",
+          "position3D": {
+            "x": 52.161481284078725,
+            "y": 176.6601819037066,
+            "z": 97.5
+          },
+          "elevation": 97.5,
+          "distanceFromHomeplate": 184.2,
+          "angle": 163.55,
+          "facing": 343.55,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "mariners-117-40-8",
+          "sectionId": "117",
+          "row": "40",
+          "seatNumber": "8",
+          "position3D": {
+            "x": 51.54450438450873,
+            "y": 176.84118317788807,
+            "z": 97.5
+          },
+          "elevation": 97.5,
+          "distanceFromHomeplate": 184.2,
+          "angle": 163.75,
+          "facing": 343.75,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "mariners-117-40-9",
+          "sectionId": "117",
+          "row": "40",
+          "seatNumber": "9",
+          "position3D": {
+            "x": 50.92689943141933,
+            "y": 177.02002969806014,
+            "z": 97.5
+          },
+          "elevation": 97.5,
+          "distanceFromHomeplate": 184.2,
+          "angle": 163.95,
+          "facing": 343.95,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "mariners-117-40-10",
+          "sectionId": "117",
+          "row": "40",
+          "seatNumber": "10",
+          "position3D": {
+            "x": 50.30867395013176,
+            "y": 177.19671928503453,
+            "z": 97.5
+          },
+          "elevation": 97.5,
+          "distanceFromHomeplate": 184.2,
+          "angle": 164.15,
+          "facing": 344.15,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        }
+      ],
+      "covered": false,
+      "hasAisleSeats": false,
+      "wheelchairRow": false
+    },
+    {
+      "rowNumber": "41",
+      "sectionId": "117",
+      "seatCount": 10,
+      "elevation": 100,
+      "depth": 187,
+      "rowSpacing": 36,
+      "seats": [
+        {
+          "id": "mariners-117-41-1",
+          "sectionId": "117",
+          "row": "41",
+          "seatNumber": "1",
+          "position3D": {
+            "x": 56.69869757096227,
+            "y": 178.1972437883273,
+            "z": 100
+          },
+          "elevation": 100,
+          "distanceFromHomeplate": 187,
+          "angle": 162.35,
+          "facing": 342.35,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "mariners-117-41-2",
+          "sectionId": "117",
+          "row": "41",
+          "seatNumber": "2",
+          "position3D": {
+            "x": 56.07632768187506,
+            "y": 178.3940735386548,
+            "z": 100
+          },
+          "elevation": 100,
+          "distanceFromHomeplate": 187,
+          "angle": 162.55,
+          "facing": 342.55,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "mariners-117-41-3",
+          "sectionId": "117",
+          "row": "41",
+          "seatNumber": "3",
+          "position3D": {
+            "x": 55.453274520431805,
+            "y": 178.58872961349388,
+            "z": 100
+          },
+          "elevation": 100,
+          "distanceFromHomeplate": 187,
+          "angle": 162.75,
+          "facing": 342.75,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "mariners-117-41-4",
+          "sectionId": "117",
+          "row": "41",
+          "seatNumber": "4",
+          "position3D": {
+            "x": 54.82954567833843,
+            "y": 178.78120964102186,
+            "z": 100
+          },
+          "elevation": 100,
+          "distanceFromHomeplate": 187.00000000000003,
+          "angle": 162.95,
+          "facing": 342.95,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "mariners-117-41-5",
+          "sectionId": "117",
+          "row": "41",
+          "seatNumber": "5",
+          "position3D": {
+            "x": 54.205148755534076,
+            "y": 178.97151127593023,
+            "z": 100
+          },
+          "elevation": 100,
+          "distanceFromHomeplate": 187,
+          "angle": 163.15,
+          "facing": 343.15,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "mariners-117-41-6",
+          "sectionId": "117",
+          "row": "41",
+          "seatNumber": "6",
+          "position3D": {
+            "x": 53.580091360098315,
+            "y": 179.15963219945368,
+            "z": 100
+          },
+          "elevation": 100,
+          "distanceFromHomeplate": 187,
+          "angle": 163.35,
+          "facing": 343.35,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "mariners-117-41-7",
+          "sectionId": "117",
+          "row": "41",
+          "seatNumber": "7",
+          "position3D": {
+            "x": 52.9543811081581,
+            "y": 179.34557011939813,
+            "z": 100
+          },
+          "elevation": 100,
+          "distanceFromHomeplate": 187.00000000000003,
+          "angle": 163.55,
+          "facing": 343.55,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "mariners-117-41-8",
+          "sectionId": "117",
+          "row": "41",
+          "seatNumber": "8",
+          "position3D": {
+            "x": 52.32802562379551,
+            "y": 179.52932277016868,
+            "z": 100
+          },
+          "elevation": 100,
+          "distanceFromHomeplate": 187.00000000000003,
+          "angle": 163.75,
+          "facing": 343.75,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "mariners-117-41-9",
+          "sectionId": "117",
+          "row": "41",
+          "seatNumber": "9",
+          "position3D": {
+            "x": 51.70103253895448,
+            "y": 179.71088791279723,
+            "z": 100
+          },
+          "elevation": 100,
+          "distanceFromHomeplate": 187,
+          "angle": 163.95,
+          "facing": 343.95,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "mariners-117-41-10",
+          "sectionId": "117",
+          "row": "41",
+          "seatNumber": "10",
+          "position3D": {
+            "x": 51.07340949334767,
+            "y": 179.89026333496992,
+            "z": 100
+          },
+          "elevation": 100,
+          "distanceFromHomeplate": 187,
+          "angle": 164.15,
+          "facing": 344.15,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        }
+      ],
+      "covered": false,
+      "hasAisleSeats": false,
+      "wheelchairRow": false
+    }
+  ],
+  "seatDistribution": {
+    "standard": 328,
+    "aisle": 82,
+    "wheelchair": 0,
+    "companion": 0,
+    "other": 0
+  }
+};
