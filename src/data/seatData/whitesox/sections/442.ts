@@ -1,0 +1,1405 @@
+/**
+ * 442 - whitesox
+ * Generated: 2025-10-23T15:36:45.031Z
+ * Total Seats: 48
+ * Total Rows: 6
+ */
+
+import type { SectionSeatingData } from '@/types/seat';
+
+export const section_442: SectionSeatingData = {
+  "sectionId": "442",
+  "sectionName": "442",
+  "stadiumId": "whitesox",
+  "totalSeats": 48,
+  "totalRows": 6,
+  "rows": [
+    {
+      "rowNumber": "1",
+      "sectionId": "442",
+      "seatCount": 8,
+      "elevation": 54.5,
+      "depth": 132.8,
+      "rowSpacing": 36,
+      "seats": [
+        {
+          "id": "whitesox-442-1-1",
+          "sectionId": "442",
+          "row": "1",
+          "seatNumber": "1",
+          "position3D": {
+            "x": -109.02380666548183,
+            "y": 75.82644380536149,
+            "z": 54.5
+          },
+          "elevation": 54.5,
+          "distanceFromHomeplate": 132.8,
+          "angle": -124.81875000000001,
+          "facing": 55.18124999999999,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "whitesox-442-1-2",
+          "sectionId": "442",
+          "row": "1",
+          "seatNumber": "2",
+          "position3D": {
+            "x": -109.63233032626556,
+            "y": 74.94392668677426,
+            "z": 54.5
+          },
+          "elevation": 54.5,
+          "distanceFromHomeplate": 132.8,
+          "angle": -124.35625000000002,
+          "facing": 55.64374999999998,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "whitesox-442-1-3",
+          "sectionId": "442",
+          "row": "1",
+          "seatNumber": "3",
+          "position3D": {
+            "x": -110.23371043034193,
+            "y": 74.05652628066974,
+            "z": 54.5
+          },
+          "elevation": 54.5,
+          "distanceFromHomeplate": 132.8,
+          "angle": -123.89375000000001,
+          "facing": 56.10624999999999,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "whitesox-442-1-4",
+          "sectionId": "442",
+          "row": "1",
+          "seatNumber": "4",
+          "position3D": {
+            "x": -110.82790779225463,
+            "y": 73.16430040936295,
+            "z": 54.5
+          },
+          "elevation": 54.5,
+          "distanceFromHomeplate": 132.8,
+          "angle": -123.43125,
+          "facing": 56.568749999999994,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "whitesox-442-1-5",
+          "sectionId": "442",
+          "row": "1",
+          "seatNumber": "5",
+          "position3D": {
+            "x": -111.41488369456941,
+            "y": 72.26730720959218,
+            "z": 54.5
+          },
+          "elevation": 54.5,
+          "distanceFromHomeplate": 132.8,
+          "angle": -122.96875000000001,
+          "facing": 57.031249999999986,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "whitesox-442-1-6",
+          "sectionId": "442",
+          "row": "1",
+          "seatNumber": "6",
+          "position3D": {
+            "x": -111.99459989039654,
+            "y": 71.36560512873127,
+            "z": 54.5
+          },
+          "elevation": 54.5,
+          "distanceFromHomeplate": 132.8,
+          "angle": -122.50625000000001,
+          "facing": 57.49374999999999,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "whitesox-442-1-7",
+          "sectionId": "442",
+          "row": "1",
+          "seatNumber": "7",
+          "position3D": {
+            "x": -112.56701860588313,
+            "y": 70.45925292098097,
+            "z": 54.5
+          },
+          "elevation": 54.5,
+          "distanceFromHomeplate": 132.8,
+          "angle": -122.04375000000002,
+          "facing": 57.95624999999998,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "whitesox-442-1-8",
+          "sectionId": "442",
+          "row": "1",
+          "seatNumber": "8",
+          "position3D": {
+            "x": -113.13210254267443,
+            "y": 69.54830964354056,
+            "z": 54.5
+          },
+          "elevation": 54.5,
+          "distanceFromHomeplate": 132.8,
+          "angle": -121.58125000000001,
+          "facing": 58.41874999999999,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        }
+      ],
+      "covered": true,
+      "overhangHeight": 20,
+      "hasAisleSeats": false,
+      "wheelchairRow": false
+    },
+    {
+      "rowNumber": "2",
+      "sectionId": "442",
+      "seatCount": 8,
+      "elevation": 57,
+      "depth": 135.6,
+      "rowSpacing": 36,
+      "seats": [
+        {
+          "id": "whitesox-442-2-1",
+          "sectionId": "442",
+          "row": "2",
+          "seatNumber": "1",
+          "position3D": {
+            "x": -111.32250138433233,
+            "y": 77.42519412655886,
+            "z": 57
+          },
+          "elevation": 57,
+          "distanceFromHomeplate": 135.6,
+          "angle": -124.81875000000001,
+          "facing": 55.18124999999999,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "whitesox-442-2-2",
+          "sectionId": "442",
+          "row": "2",
+          "seatNumber": "2",
+          "position3D": {
+            "x": -111.94385536326511,
+            "y": 76.52406971932673,
+            "z": 57
+          },
+          "elevation": 57,
+          "distanceFromHomeplate": 135.6,
+          "angle": -124.35625000000002,
+          "facing": 55.64374999999998,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "whitesox-442-2-3",
+          "sectionId": "442",
+          "row": "2",
+          "seatNumber": "3",
+          "position3D": {
+            "x": -112.55791516833106,
+            "y": 75.61795906369589,
+            "z": 57
+          },
+          "elevation": 57,
+          "distanceFromHomeplate": 135.6,
+          "angle": -123.89375000000001,
+          "facing": 56.10624999999999,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "whitesox-442-2-4",
+          "sectionId": "442",
+          "row": "2",
+          "seatNumber": "4",
+          "position3D": {
+            "x": -113.16464078787445,
+            "y": 74.70692120112662,
+            "z": 57
+          },
+          "elevation": 57,
+          "distanceFromHomeplate": 135.6,
+          "angle": -123.43125,
+          "facing": 56.568749999999994,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "whitesox-442-2-5",
+          "sectionId": "442",
+          "row": "2",
+          "seatNumber": "5",
+          "position3D": {
+            "x": -113.7639926881296,
+            "y": 73.79101549413176,
+            "z": 57
+          },
+          "elevation": 57,
+          "distanceFromHomeplate": 135.6,
+          "angle": -122.96875000000001,
+          "facing": 57.031249999999986,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "whitesox-442-2-6",
+          "sectionId": "442",
+          "row": "2",
+          "seatNumber": "6",
+          "position3D": {
+            "x": -114.35593181579645,
+            "y": 72.87030162240933,
+            "z": 57
+          },
+          "elevation": 57,
+          "distanceFromHomeplate": 135.6,
+          "angle": -122.50625000000001,
+          "facing": 57.49374999999999,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "whitesox-442-2-7",
+          "sectionId": "442",
+          "row": "2",
+          "seatNumber": "7",
+          "position3D": {
+            "x": -114.94041960058547,
+            "y": 71.94483957895345,
+            "z": 57
+          },
+          "elevation": 57,
+          "distanceFromHomeplate": 135.6,
+          "angle": -122.04375000000002,
+          "facing": 57.95624999999998,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "whitesox-442-2-8",
+          "sectionId": "442",
+          "row": "2",
+          "seatNumber": "8",
+          "position3D": {
+            "x": -115.51741795773081,
+            "y": 71.01468966614533,
+            "z": 57
+          },
+          "elevation": 57,
+          "distanceFromHomeplate": 135.6,
+          "angle": -121.58125000000001,
+          "facing": 58.41874999999999,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        }
+      ],
+      "covered": true,
+      "overhangHeight": 20,
+      "hasAisleSeats": false,
+      "wheelchairRow": false
+    },
+    {
+      "rowNumber": "3",
+      "sectionId": "442",
+      "seatCount": 8,
+      "elevation": 59.5,
+      "depth": 138.4,
+      "rowSpacing": 36,
+      "seats": [
+        {
+          "id": "whitesox-442-3-1",
+          "sectionId": "442",
+          "row": "3",
+          "seatNumber": "1",
+          "position3D": {
+            "x": -113.62119610318285,
+            "y": 79.02394444775625,
+            "z": 59.5
+          },
+          "elevation": 59.5,
+          "distanceFromHomeplate": 138.4,
+          "angle": -124.81875000000001,
+          "facing": 55.18124999999999,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "whitesox-442-3-2",
+          "sectionId": "442",
+          "row": "3",
+          "seatNumber": "2",
+          "position3D": {
+            "x": -114.2553804002647,
+            "y": 78.1042127518792,
+            "z": 59.5
+          },
+          "elevation": 59.5,
+          "distanceFromHomeplate": 138.4,
+          "angle": -124.35625000000002,
+          "facing": 55.64374999999998,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "whitesox-442-3-3",
+          "sectionId": "442",
+          "row": "3",
+          "seatNumber": "3",
+          "position3D": {
+            "x": -114.8821199063202,
+            "y": 77.17939184672207,
+            "z": 59.5
+          },
+          "elevation": 59.5,
+          "distanceFromHomeplate": 138.4,
+          "angle": -123.89375000000001,
+          "facing": 56.10624999999999,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "whitesox-442-3-4",
+          "sectionId": "442",
+          "row": "3",
+          "seatNumber": "4",
+          "position3D": {
+            "x": -115.50137378349429,
+            "y": 76.2495419928903,
+            "z": 59.5
+          },
+          "elevation": 59.5,
+          "distanceFromHomeplate": 138.4,
+          "angle": -123.43125,
+          "facing": 56.568749999999994,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "whitesox-442-3-5",
+          "sectionId": "442",
+          "row": "3",
+          "seatNumber": "5",
+          "position3D": {
+            "x": -116.11310168168981,
+            "y": 75.31472377867135,
+            "z": 59.5
+          },
+          "elevation": 59.5,
+          "distanceFromHomeplate": 138.4,
+          "angle": -122.96875000000001,
+          "facing": 57.031249999999986,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "whitesox-442-3-6",
+          "sectionId": "442",
+          "row": "3",
+          "seatNumber": "6",
+          "position3D": {
+            "x": -116.71726374119639,
+            "y": 74.37499811608741,
+            "z": 59.5
+          },
+          "elevation": 59.5,
+          "distanceFromHomeplate": 138.4,
+          "angle": -122.50625000000001,
+          "facing": 57.49374999999999,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "whitesox-442-3-7",
+          "sectionId": "442",
+          "row": "3",
+          "seatNumber": "7",
+          "position3D": {
+            "x": -117.31382059528784,
+            "y": 73.43042623692595,
+            "z": 59.5
+          },
+          "elevation": 59.5,
+          "distanceFromHomeplate": 138.4,
+          "angle": -122.04375000000002,
+          "facing": 57.95624999999998,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "whitesox-442-3-8",
+          "sectionId": "442",
+          "row": "3",
+          "seatNumber": "8",
+          "position3D": {
+            "x": -117.90273337278721,
+            "y": 72.48106968875011,
+            "z": 59.5
+          },
+          "elevation": 59.5,
+          "distanceFromHomeplate": 138.4,
+          "angle": -121.58125000000001,
+          "facing": 58.41874999999999,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        }
+      ],
+      "covered": true,
+      "overhangHeight": 20,
+      "hasAisleSeats": false,
+      "wheelchairRow": false
+    },
+    {
+      "rowNumber": "4",
+      "sectionId": "442",
+      "seatCount": 8,
+      "elevation": 62,
+      "depth": 141.2,
+      "rowSpacing": 36,
+      "seats": [
+        {
+          "id": "whitesox-442-4-1",
+          "sectionId": "442",
+          "row": "4",
+          "seatNumber": "1",
+          "position3D": {
+            "x": -115.91989082203337,
+            "y": 80.62269476895362,
+            "z": 62
+          },
+          "elevation": 62,
+          "distanceFromHomeplate": 141.2,
+          "angle": -124.81875000000001,
+          "facing": 55.18124999999999,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "whitesox-442-4-2",
+          "sectionId": "442",
+          "row": "4",
+          "seatNumber": "2",
+          "position3D": {
+            "x": -116.56690543726425,
+            "y": 79.68435578443166,
+            "z": 62
+          },
+          "elevation": 62,
+          "distanceFromHomeplate": 141.2,
+          "angle": -124.35625000000002,
+          "facing": 55.64374999999998,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "whitesox-442-4-3",
+          "sectionId": "442",
+          "row": "4",
+          "seatNumber": "3",
+          "position3D": {
+            "x": -117.20632464430933,
+            "y": 78.74082462974823,
+            "z": 62
+          },
+          "elevation": 62,
+          "distanceFromHomeplate": 141.2,
+          "angle": -123.89375000000001,
+          "facing": 56.10624999999999,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "whitesox-442-4-4",
+          "sectionId": "442",
+          "row": "4",
+          "seatNumber": "4",
+          "position3D": {
+            "x": -117.8381067791141,
+            "y": 77.79216278465397,
+            "z": 62
+          },
+          "elevation": 62,
+          "distanceFromHomeplate": 141.2,
+          "angle": -123.43125,
+          "facing": 56.568749999999994,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "whitesox-442-4-5",
+          "sectionId": "442",
+          "row": "4",
+          "seatNumber": "5",
+          "position3D": {
+            "x": -118.46221067524999,
+            "y": 76.83843206321094,
+            "z": 62
+          },
+          "elevation": 62,
+          "distanceFromHomeplate": 141.2,
+          "angle": -122.96875000000001,
+          "facing": 57.031249999999986,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "whitesox-442-4-6",
+          "sectionId": "442",
+          "row": "4",
+          "seatNumber": "6",
+          "position3D": {
+            "x": -119.0785956665963,
+            "y": 75.87969460976547,
+            "z": 62
+          },
+          "elevation": 62,
+          "distanceFromHomeplate": 141.2,
+          "angle": -122.50625000000001,
+          "facing": 57.49374999999999,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "whitesox-442-4-7",
+          "sectionId": "442",
+          "row": "4",
+          "seatNumber": "7",
+          "position3D": {
+            "x": -119.68722158999017,
+            "y": 74.91601289489843,
+            "z": 62
+          },
+          "elevation": 62,
+          "distanceFromHomeplate": 141.2,
+          "angle": -122.04375000000002,
+          "facing": 57.95624999999998,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "whitesox-442-4-8",
+          "sectionId": "442",
+          "row": "4",
+          "seatNumber": "8",
+          "position3D": {
+            "x": -120.28804878784358,
+            "y": 73.94744971135486,
+            "z": 62
+          },
+          "elevation": 62,
+          "distanceFromHomeplate": 141.2,
+          "angle": -121.58125000000001,
+          "facing": 58.41874999999999,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        }
+      ],
+      "covered": true,
+      "overhangHeight": 20,
+      "hasAisleSeats": false,
+      "wheelchairRow": false
+    },
+    {
+      "rowNumber": "5",
+      "sectionId": "442",
+      "seatCount": 8,
+      "elevation": 64.5,
+      "depth": 144,
+      "rowSpacing": 36,
+      "seats": [
+        {
+          "id": "whitesox-442-5-1",
+          "sectionId": "442",
+          "row": "5",
+          "seatNumber": "1",
+          "position3D": {
+            "x": -118.2185855408839,
+            "y": 82.22144509015101,
+            "z": 64.5
+          },
+          "elevation": 64.5,
+          "distanceFromHomeplate": 144,
+          "angle": -124.81875000000001,
+          "facing": 55.18124999999999,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "whitesox-442-5-2",
+          "sectionId": "442",
+          "row": "5",
+          "seatNumber": "2",
+          "position3D": {
+            "x": -118.87843047426384,
+            "y": 81.26449881698414,
+            "z": 64.5
+          },
+          "elevation": 64.5,
+          "distanceFromHomeplate": 144,
+          "angle": -124.35625000000002,
+          "facing": 55.64374999999998,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "whitesox-442-5-3",
+          "sectionId": "442",
+          "row": "5",
+          "seatNumber": "3",
+          "position3D": {
+            "x": -119.53052938229847,
+            "y": 80.30225741277441,
+            "z": 64.5
+          },
+          "elevation": 64.5,
+          "distanceFromHomeplate": 144,
+          "angle": -123.89375000000001,
+          "facing": 56.10624999999999,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "whitesox-442-5-4",
+          "sectionId": "442",
+          "row": "5",
+          "seatNumber": "4",
+          "position3D": {
+            "x": -120.17483977473394,
+            "y": 79.33478357641765,
+            "z": 64.5
+          },
+          "elevation": 64.5,
+          "distanceFromHomeplate": 144,
+          "angle": -123.43125,
+          "facing": 56.568749999999994,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "whitesox-442-5-5",
+          "sectionId": "442",
+          "row": "5",
+          "seatNumber": "5",
+          "position3D": {
+            "x": -120.8113196688102,
+            "y": 78.36214034775054,
+            "z": 64.5
+          },
+          "elevation": 64.5,
+          "distanceFromHomeplate": 144,
+          "angle": -122.96875000000001,
+          "facing": 57.031249999999986,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "whitesox-442-5-6",
+          "sectionId": "442",
+          "row": "5",
+          "seatNumber": "6",
+          "position3D": {
+            "x": -121.43992759199624,
+            "y": 77.38439110344353,
+            "z": 64.5
+          },
+          "elevation": 64.5,
+          "distanceFromHomeplate": 144,
+          "angle": -122.50625000000001,
+          "facing": 57.49374999999999,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "whitesox-442-5-7",
+          "sectionId": "442",
+          "row": "5",
+          "seatNumber": "7",
+          "position3D": {
+            "x": -122.06062258469254,
+            "y": 76.40159955287092,
+            "z": 64.5
+          },
+          "elevation": 64.5,
+          "distanceFromHomeplate": 144,
+          "angle": -122.04375000000002,
+          "facing": 57.95624999999998,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "whitesox-442-5-8",
+          "sectionId": "442",
+          "row": "5",
+          "seatNumber": "8",
+          "position3D": {
+            "x": -122.67336420289998,
+            "y": 75.41382973395964,
+            "z": 64.5
+          },
+          "elevation": 64.5,
+          "distanceFromHomeplate": 144,
+          "angle": -121.58125000000001,
+          "facing": 58.41874999999999,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        }
+      ],
+      "covered": true,
+      "overhangHeight": 20,
+      "hasAisleSeats": false,
+      "wheelchairRow": false
+    },
+    {
+      "rowNumber": "6",
+      "sectionId": "442",
+      "seatCount": 8,
+      "elevation": 67,
+      "depth": 146.8,
+      "rowSpacing": 36,
+      "seats": [
+        {
+          "id": "whitesox-442-6-1",
+          "sectionId": "442",
+          "row": "6",
+          "seatNumber": "1",
+          "position3D": {
+            "x": -120.51728025973442,
+            "y": 83.8201954113484,
+            "z": 67
+          },
+          "elevation": 67,
+          "distanceFromHomeplate": 146.8,
+          "angle": -124.81875000000001,
+          "facing": 55.18124999999999,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "whitesox-442-6-2",
+          "sectionId": "442",
+          "row": "6",
+          "seatNumber": "2",
+          "position3D": {
+            "x": -121.18995551126343,
+            "y": 82.84464184953661,
+            "z": 67
+          },
+          "elevation": 67,
+          "distanceFromHomeplate": 146.8,
+          "angle": -124.35625000000002,
+          "facing": 55.64374999999998,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "whitesox-442-6-3",
+          "sectionId": "442",
+          "row": "6",
+          "seatNumber": "3",
+          "position3D": {
+            "x": -121.85473412028762,
+            "y": 81.86369019580059,
+            "z": 67
+          },
+          "elevation": 67,
+          "distanceFromHomeplate": 146.8,
+          "angle": -123.89375000000001,
+          "facing": 56.10624999999999,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "whitesox-442-6-4",
+          "sectionId": "442",
+          "row": "6",
+          "seatNumber": "4",
+          "position3D": {
+            "x": -122.51157277035378,
+            "y": 80.87740436818133,
+            "z": 67
+          },
+          "elevation": 67,
+          "distanceFromHomeplate": 146.8,
+          "angle": -123.43125,
+          "facing": 56.568749999999994,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "whitesox-442-6-5",
+          "sectionId": "442",
+          "row": "6",
+          "seatNumber": "5",
+          "position3D": {
+            "x": -123.1604286623704,
+            "y": 79.88584863229015,
+            "z": 67
+          },
+          "elevation": 67,
+          "distanceFromHomeplate": 146.8,
+          "angle": -122.96875000000001,
+          "facing": 57.031249999999986,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "whitesox-442-6-6",
+          "sectionId": "442",
+          "row": "6",
+          "seatNumber": "6",
+          "position3D": {
+            "x": -123.80125951739618,
+            "y": 78.88908759712162,
+            "z": 67
+          },
+          "elevation": 67,
+          "distanceFromHomeplate": 146.8,
+          "angle": -122.50625000000001,
+          "facing": 57.49374999999999,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "whitesox-442-6-7",
+          "sectionId": "442",
+          "row": "6",
+          "seatNumber": "7",
+          "position3D": {
+            "x": -124.4340235793949,
+            "y": 77.88718621084342,
+            "z": 67
+          },
+          "elevation": 67,
+          "distanceFromHomeplate": 146.8,
+          "angle": -122.04375000000002,
+          "facing": 57.95624999999998,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "whitesox-442-6-8",
+          "sectionId": "442",
+          "row": "6",
+          "seatNumber": "8",
+          "position3D": {
+            "x": -125.05867961795637,
+            "y": 76.88020975656443,
+            "z": 67
+          },
+          "elevation": 67,
+          "distanceFromHomeplate": 146.8,
+          "angle": -121.58125000000001,
+          "facing": 58.41874999999999,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        }
+      ],
+      "covered": true,
+      "overhangHeight": 20,
+      "hasAisleSeats": false,
+      "wheelchairRow": false
+    }
+  ],
+  "seatDistribution": {
+    "standard": 36,
+    "aisle": 12,
+    "wheelchair": 0,
+    "companion": 0,
+    "other": 0
+  }
+};
