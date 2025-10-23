@@ -1,6 +1,6 @@
 /**
  * Club 221 - mariners
- * Generated: 2025-10-23T00:32:06.258Z
+ * Generated: 2025-10-23T16:55:02.955Z
  * Total Seats: 156
  * Total Rows: 12
  */

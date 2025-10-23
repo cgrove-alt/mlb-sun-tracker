@@ -1,6 +1,6 @@
 /**
  * Club 306 - brewers
- * Generated: 2025-10-22T22:55:29.699Z
+ * Generated: 2025-10-23T17:05:37.337Z
  * Total Seats: 252
  * Total Rows: 7
  */

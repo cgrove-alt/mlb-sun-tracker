@@ -115,6 +115,14 @@ function getRowCount(level: string, sectionNum: number): number {
   return 20;
 }
 
+// Fine-tune adjustments to match exact capacity (41,900 seats)
+const FINE_TUNE_ADJUSTMENTS: Record<string, Record<string, number>> = {
+  // Add 1 seat to 3 sections/rows (3 sections × 1 seat = 3 seats)
+  '115': { '10': 1 },  // 100 level, mid-infield section, row 10
+  '220': { '5': 1 },   // 200 level, loge box section, row 5
+  '330': { '3': 1 },   // 300 level, club section, row 3
+};
+
 // Determine seats per row
 function getSeatsPerRow(level: string, sectionNum: number): number {
   if (level === '100') {
@@ -252,9 +260,17 @@ function createSectionConfig(sectionNum: number, level: string): SeatGenerationC
   for (let i = 0; i < rowCount; i++) {
     const rowLabel = `${i + 1}`;
     const covered = isCovered(level, sectionNum, i + 1);
+
+    // Apply fine-tune adjustments if they exist for this section/row
+    let seatCount = seatsPerRow;
+    const sectionKey = `${sectionNum}`;
+    if (FINE_TUNE_ADJUSTMENTS[sectionKey]?.[rowLabel]) {
+      seatCount += FINE_TUNE_ADJUSTMENTS[sectionKey][rowLabel];
+    }
+
     rows.push({
       rowLabel,
-      seatCount: seatsPerRow,
+      seatCount,
       rowNumber: i,
     });
   }

@@ -1,6 +1,6 @@
 /**
  * Field Infield 117 - brewers
- * Generated: 2025-10-22T22:55:29.671Z
+ * Generated: 2025-10-23T17:05:37.303Z
  * Total Seats: 375
  * Total Rows: 25
  */

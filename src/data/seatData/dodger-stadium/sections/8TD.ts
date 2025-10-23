@@ -1,6 +1,6 @@
 /**
  * Top Deck 8 - dodger-stadium
- * Generated: 2025-10-22T00:43:37.582Z
+ * Generated: 2025-10-23T16:49:18.818Z
  * Total Seats: 460
  * Total Rows: 23
  */

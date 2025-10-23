@@ -118,6 +118,14 @@ function getRowCount(level: string, sectionNum: number, sectionId?: string): num
   return 20;
 }
 
+// Fine-tune adjustments: Add/subtract seats to specific section rows for exact capacity match
+// Key format: "SECTION-ROW" (e.g., "101-5" = Section 101, Row 5)
+// Value: Number of seats to add (+1) or remove (-1)
+const FINE_TUNE_ADJUSTMENTS: Record<string, number> = {
+  '120-10': +1, // Add 1 seat to Section 120, Row 10
+  '125-15': +1, // Add 1 seat to Section 125, Row 15
+};
+
 // Determine seats per row
 function getSeatsPerRow(level: string, sectionNum: number, sectionId?: string): number {
   // Suite sections (lettered)
@@ -261,9 +269,15 @@ function createSectionConfig(sectionId: string, level: string): SeatGenerationCo
       ? String.fromCharCode(65 + i) // A-Z for suites
       : `${i + 1}`; // Numbers for regular sections
     const covered = isCovered(level, sectionNum, i + 1, sectionId);
+
+    // Apply fine-tune adjustments if applicable
+    const adjustmentKey = `${sectionId}-${i + 1}`;
+    const adjustment = FINE_TUNE_ADJUSTMENTS[adjustmentKey] || 0;
+    const adjustedSeatCount = seatsPerRow + adjustment;
+
     rows.push({
       rowLabel,
-      seatCount: seatsPerRow,
+      seatCount: adjustedSeatCount,
       rowNumber: i,
     });
   }

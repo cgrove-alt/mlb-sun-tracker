@@ -1,6 +1,6 @@
 /**
  * Terrace 209 - cubs
- * Generated: 2025-10-22T01:03:11.934Z
+ * Generated: 2025-10-23T16:50:13.695Z
  * Total Seats: 506
  * Total Rows: 23
  */

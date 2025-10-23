@@ -1,0 +1,2544 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000" class="stadium-map">
+  <defs>
+    <style>
+      .section-path {
+        cursor: pointer;
+        transition: all 0.2s ease;
+      }
+      .section-path:hover {
+        fill-opacity: 0.9;
+        stroke-width: 2;
+        stroke: #ffffff;
+      }
+      .field {
+        fill: #22c55e;
+      }
+    </style>
+  </defs>
+
+  <!-- Baseball field -->
+  <circle cx="500" cy="500" r="150" class="field" fill="#22c55e" opacity="0.3" />
+  <circle cx="500" cy="500" r="120" fill="#a16207" opacity="0.2" />
+
+  <!-- Home plate indicator -->
+  <circle cx="500" cy="580" r="5" fill="#dc2626" />
+
+  <!-- Sections -->
+  
+      <g class="section" data-section-id="1" data-level="field">
+        <path
+          d="
+    M 614.7471102580957 625.4316574370937
+    L 655.2460903491884 669.7016541795972
+    A 230 230 0 0 1 639.5640335382765 682.8165215250713
+    L 603.1560247891608 635.1252550402701
+    A 170 170 0 0 0 614.7471102580957 625.4316574370937
+    Z
+  "
+          fill="#2563eb"
+          fill-opacity="0.6"
+          stroke="#1f2937"
+          stroke-width="1"
+          class="section-path"
+          data-section="1"
+        />
+        <title>1 (0 seats)</title>
+      </g>
+    
+
+      <g class="section" data-section-id="101" data-level="loge">
+        <path
+          d="
+    M 738.849790256771 625.899871700874
+    L 791.9275214249424 653.8776209677349
+    A 330 330 0 0 1 779.2256895444425 675.8778391339586
+    L 728.4573823545438 643.9000502005115
+    A 270 270 0 0 0 738.849790256771 625.899871700874
+    Z
+  "
+          fill="#0891b2"
+          fill-opacity="0.6"
+          stroke="#1f2937"
+          stroke-width="1"
+          class="section-path"
+          data-section="101"
+        />
+        <title>101 (0 seats)</title>
+      </g>
+    
+
+      <g class="section" data-section-id="102" data-level="loge">
+        <path
+          d="
+    M 728.4573823545438 643.9000502005116
+    L 779.2256895444425 675.8778391339586
+    A 330 330 0 0 1 764.8691540933542 696.8357975823276
+    L 716.7111260763807 661.0474707491771
+    A 270 270 0 0 0 728.4573823545438 643.9000502005116
+    Z
+  "
+          fill="#0891b2"
+          fill-opacity="0.6"
+          stroke="#1f2937"
+          stroke-width="1"
+          class="section-path"
+          data-section="102"
+        />
+        <title>102 (0 seats)</title>
+      </g>
+    
+
+      <g class="section" data-section-id="103" data-level="loge">
+        <path
+          d="
+    M 716.7111260763807 661.0474707491771
+    L 764.8691540933542 696.8357975823276
+    A 330 330 0 0 1 748.9429925246541 716.6272985403041
+    L 703.6806302474442 677.2405169875215
+    A 270 270 0 0 0 716.7111260763807 661.0474707491771
+    Z
+  "
+          fill="#0891b2"
+          fill-opacity="0.6"
+          stroke="#1f2937"
+          stroke-width="1"
+          class="section-path"
+          data-section="103"
+        />
+        <title>103 (0 seats)</title>
+      </g>
+    
+
+      <g class="section" data-section-id="104" data-level="loge">
+        <path
+          d="
+    M 703.6806302474442 677.2405169875215
+    L 748.9429925246541 716.6272985403041
+    A 330 330 0 0 1 731.5415839639039 735.1350567131291
+    L 689.443114152285 692.3832282198329
+    A 270 270 0 0 0 703.6806302474442 677.2405169875215
+    Z
+  "
+          fill="#0891b2"
+          fill-opacity="0.6"
+          stroke="#1f2937"
+          stroke-width="1"
+          class="section-path"
+          data-section="104"
+        />
+        <title>104 (0 seats)</title>
+      </g>
+    
+
+      <g class="section" data-section-id="105" data-level="loge">
+        <path
+          d="
+    M 689.443114152285 692.3832282198329
+    L 731.5415839639039 735.1350567131291
+    A 330 330 0 0 1 712.76804991445 752.2493943215763
+    L 674.0829499300046 706.3858680812897
+    A 270 270 0 0 0 689.443114152285 692.3832282198329
+    Z
+  "
+          fill="#0891b2"
+          fill-opacity="0.6"
+          stroke="#1f2937"
+          stroke-width="1"
+          class="section-path"
+          data-section="105"
+        />
+        <title>105 (0 seats)</title>
+      </g>
+    
+
+      <g class="section" data-section-id="106" data-level="loge">
+        <path
+          d="
+    M 674.0829499300046 706.3858680812898
+    L 712.76804991445 752.2493943215763
+    A 330 330 0 0 1 692.7336431549134 767.8688910572382
+    L 657.6911625812927 719.1654563195585
+    A 270 270 0 0 0 674.0829499300046 706.3858680812898
+    Z
+  "
+          fill="#0891b2"
+          fill-opacity="0.6"
+          stroke="#1f2937"
+          stroke-width="1"
+          class="section-path"
+          data-section="106"
+        />
+        <title>106 (0 seats)</title>
+      </g>
+    
+
+      <g class="section" data-section-id="107" data-level="loge">
+        <path
+          d="
+    M 657.6911625812927 719.1654563195585
+    L 692.7336431549134 767.8688910572382
+    A 330 330 0 0 1 671.5570884503888 781.9009851036805
+    L 640.3648905503181 730.6462605393749
+    A 270 270 0 0 0 657.6911625812927 719.1654563195585
+    Z
+  "
+          fill="#0891b2"
+          fill-opacity="0.6"
+          stroke="#1f2937"
+          stroke-width="1"
+          class="section-path"
+          data-section="107"
+        />
+        <title>107 (0 seats)</title>
+      </g>
+    
+
+      <g class="section" data-section-id="108" data-level="loge">
+        <path
+          d="
+    M 640.3648905503181 730.6462605393749
+    L 671.5570884503888 781.9009851036805
+    A 330 330 0 0 1 649.3638789843279 794.2625216617894
+    L 622.2068100780865 740.7602449960095
+    A 270 270 0 0 0 640.3648905503181 730.6462605393749
+    Z
+  "
+          fill="#0891b2"
+          fill-opacity="0.6"
+          stroke="#1f2937"
+          stroke-width="1"
+          class="section-path"
+          data-section="108"
+        />
+        <title>108 (0 seats)</title>
+      </g>
+    
+
+      <g class="section" data-section-id="109" data-level="loge">
+        <path
+          d="
+    M 622.2068100780864 740.7602449960095
+    L 649.3638789843278 794.2625216617894
+    A 330 330 0 0 1 626.2855326804796 804.8802457287246
+    L 603.3245267385743 749.4474737780474
+    A 270 270 0 0 0 622.2068100780864 740.7602449960095
+    Z
+  "
+          fill="#0891b2"
+          fill-opacity="0.6"
+          stroke="#1f2937"
+          stroke-width="1"
+          class="section-path"
+          data-section="109"
+        />
+        <title>109 (0 seats)</title>
+      </g>
+    
+
+      <g class="section" data-section-id="110" data-level="loge">
+        <path
+          d="
+    M 603.3245267385743 749.4474737780474
+    L 626.2855326804796 804.8802457287246
+    A 330 330 0 0 1 602.4588128219596 813.6912362102496
+    L 583.8299377634214 756.6564659902043
+    A 270 270 0 0 0 603.3245267385743 749.4474737780474
+    Z
+  "
+          fill="#0891b2"
+          fill-opacity="0.6"
+          stroke="#1f2937"
+          stroke-width="1"
+          class="section-path"
+          data-section="110"
+        />
+        <title>110 (0 seats)</title>
+      </g>
+    
+
+      <g class="section" data-section-id="111" data-level="loge">
+        <path
+          d="
+    M 583.8299377634214 756.6564659902043
+    L 602.4588128219594 813.6912362102496
+    A 330 330 0 0 1 578.0249175860902 820.6432787938706
+    L 563.8385689340738 762.3445008313487
+    A 270 270 0 0 0 583.8299377634214 756.6564659902043
+    Z
+  "
+          fill="#0891b2"
+          fill-opacity="0.6"
+          stroke="#1f2937"
+          stroke-width="1"
+          class="section-path"
+          data-section="111"
+        />
+        <title>111 (0 seats)</title>
+      </g>
+    
+
+      <g class="section" data-section-id="112" data-level="loge">
+        <path
+          d="
+    M 563.8385689340738 762.3445008313487
+    L 578.0249175860902 820.6432787938706
+    A 330 330 0 0 1 553.1286432978662 825.6951753731211
+    L 543.4688899709815 766.4778707598264
+    A 270 270 0 0 0 563.8385689340738 762.3445008313487
+    Z
+  "
+          fill="#0891b2"
+          fill-opacity="0.6"
+          stroke="#1f2937"
+          stroke-width="1"
+          class="section-path"
+          data-section="112"
+        />
+        <title>112 (0 seats)</title>
+      </g>
+    
+
+      <g class="section" data-section-id="113" data-level="loge">
+        <path
+          d="
+    M 543.4688899709815 766.4778707598264
+    L 553.1286432978662 825.6951753731211
+    A 330 330 0 0 1 527.9175263606406 828.8169881893314
+    L 522.8416124768878 769.0320812458167
+    A 270 270 0 0 0 543.4688899709815 766.4778707598264
+    Z
+  "
+          fill="#0891b2"
+          fill-opacity="0.6"
+          stroke="#1f2937"
+          stroke-width="1"
+          class="section-path"
+          data-section="113"
+        />
+        <title>113 (0 seats)</title>
+      </g>
+    
+
+      <g class="section" data-section-id="114" data-level="loge">
+        <path
+          d="
+    M 522.8416124768878 769.0320812458167
+    L 527.9175263606406 828.8169881893314
+    A 330 330 0 0 1 502.54096894898623 829.9902172440878
+    L 502.0789745946251 769.991995926981
+    A 270 270 0 0 0 522.8416124768878 769.0320812458167
+    Z
+  "
+          fill="#0891b2"
+          fill-opacity="0.6"
+          stroke="#1f2937"
+          stroke-width="1"
+          class="section-path"
+          data-section="114"
+        />
+        <title>114 (0 seats)</title>
+      </g>
+    
+
+      <g class="section" data-section-id="115" data-level="loge">
+        <path
+          d="
+    M 502.0789745946251 769.991995926981
+    L 502.54096894898623 829.9902172440878
+    A 330 330 0 0 1 477.14935364491686 829.2079099310266
+    L 481.3040166185683 769.3519263072036
+    A 270 270 0 0 0 502.0789745946251 769.991995926981
+    Z
+  "
+          fill="#0891b2"
+          fill-opacity="0.6"
+          stroke="#1f2937"
+          stroke-width="1"
+          class="section-path"
+          data-section="115"
+        />
+        <title>115 (0 seats)</title>
+      </g>
+    
+
+      <g class="section" data-section-id="116" data-level="loge">
+        <path
+          d="
+    M 481.30401661856826 769.3519263072035
+    L 477.1493536449168 829.2079099310265
+    A 330 330 0 0 1 451.8931522641712 826.4747022372817
+    L 460.63985185250374 767.1156654668669
+    A 270 270 0 0 0 481.30401661856826 769.3519263072035
+    Z
+  "
+          fill="#0891b2"
+          fill-opacity="0.6"
+          stroke="#1f2937"
+          stroke-width="1"
+          class="section-path"
+          data-section="116"
+        />
+        <title>116 (0 seats)</title>
+      </g>
+    
+
+      <g class="section" data-section-id="117" data-level="loge">
+        <path
+          d="
+    M 460.6398518525036 767.1156654668669
+    L 451.89315226417114 826.4747022372817
+    A 330 330 0 0 1 426.9220341536939 821.8067912704238
+    L 440.20893703484046 763.2964655848922
+    A 270 270 0 0 0 460.6398518525036 767.1156654668669
+    Z
+  "
+          fill="#0891b2"
+          fill-opacity="0.6"
+          stroke="#1f2937"
+          stroke-width="1"
+          class="section-path"
+          data-section="117"
+        />
+        <title>117 (0 seats)</title>
+      </g>
+    
+
+      <g class="section" data-section-id="118" data-level="loge">
+        <path
+          d="
+    M 440.20893703484046 763.2964655848922
+    L 426.9220341536939 821.8067912704238
+    A 330 330 0 0 1 402.38397924458076 815.2318392736963
+    L 420.132346654657 757.9169594057516
+    A 270 270 0 0 0 440.20893703484046 763.2964655848922
+    Z
+  "
+          fill="#0891b2"
+          fill-opacity="0.6"
+          stroke="#1f2937"
+          stroke-width="1"
+          class="section-path"
+          data-section="118"
+        />
+        <title>118 (0 seats)</title>
+      </g>
+    
+
+      <g class="section" data-section-id="119" data-level="loge">
+        <path
+          d="
+    M 420.132346654657 757.9169594057516
+    L 402.38397924458076 815.2318392736963
+    A 330 330 0 0 1 378.42440111657686 806.7888096983608
+    L 400.5290554590174 751.0090261168406
+    A 270 270 0 0 0 420.132346654657 757.9169594057516
+    Z
+  "
+          fill="#0891b2"
+          fill-opacity="0.6"
+          stroke="#1f2937"
+          stroke-width="1"
+          class="section-path"
+          data-section="119"
+        />
+        <title>119 (0 seats)</title>
+      </g>
+    
+
+      <g class="section" data-section-id="120" data-level="loge">
+        <path
+          d="
+    M 400.52905545901734 751.0090261168406
+    L 378.42440111657675 806.7888096983606
+    A 330 330 0 0 1 355.185285270883 796.52773630459
+    L 381.51523340344977 742.6136024310282
+    A 270 270 0 0 0 400.52905545901734 751.0090261168406
+    Z
+  "
+          fill="#0891b2"
+          fill-opacity="0.6"
+          stroke="#1f2937"
+          stroke-width="1"
+          class="section-path"
+          data-section="120"
+        />
+        <title>120 (0 seats)</title>
+      </g>
+    
+
+      <g class="section" data-section-id="121" data-level="loge">
+        <path
+          d="
+    M 381.51523340344977 742.6136024310282
+    L 355.185285270883 796.52773630459
+    A 330 330 0 0 1 332.80434771790664 784.5094266592328
+    L 363.20355722374177 732.7804399939178
+    A 270 270 0 0 0 381.51523340344977 742.6136024310282
+    Z
+  "
+          fill="#0891b2"
+          fill-opacity="0.6"
+          stroke="#1f2937"
+          stroke-width="1"
+          class="section-path"
+          data-section="121"
+        />
+        <title>121 (0 seats)</title>
+      </g>
+    
+
+      <g class="section" data-section-id="122" data-level="loge">
+        <path
+          d="
+    M 363.20355722374177 732.7804399939178
+    L 332.80434771790664 784.5094266592328
+    A 330 330 0 0 1 311.4142188661977 770.8051017875284
+    L 345.7025427087072 721.5678105534323
+    A 270 270 0 0 0 363.20355722374177 732.7804399939178
+    Z
+  "
+          fill="#0891b2"
+          fill-opacity="0.6"
+          stroke="#1f2937"
+          stroke-width="1"
+          class="section-path"
+          data-section="122"
+        />
+        <title>122 (0 seats)</title>
+      </g>
+    
+
+      <g class="section" data-section-id="123" data-level="loge">
+        <path
+          d="
+    M 345.7025427087072 721.5678105534323
+    L 311.4142188661977 770.8051017875284
+    A 330 330 0 0 1 291.1416575488853 755.4959741142175
+    L 329.11590163090614 709.0421606389052
+    A 270 270 0 0 0 345.7025427087072 721.5678105534323
+    Z
+  "
+          fill="#0891b2"
+          fill-opacity="0.6"
+          stroke="#1f2937"
+          stroke-width="1"
+          class="section-path"
+          data-section="123"
+        />
+        <title>123 (0 seats)</title>
+      </g>
+    
+
+      <g class="section" data-section-id="124" data-level="loge">
+        <path
+          d="
+    M 329.11590163090614 709.0421606389052
+    L 291.1416575488853 755.4959741142175
+    A 330 330 0 0 1 272.1067998453233 738.6727661951829
+    L 313.5419271461736 695.2777177960587
+    A 270 270 0 0 0 329.11590163090614 709.0421606389052
+    Z
+  "
+          fill="#0891b2"
+          fill-opacity="0.6"
+          stroke="#1f2937"
+          stroke-width="1"
+          class="section-path"
+          data-section="124"
+        />
+        <title>124 (0 seats)</title>
+      </g>
+    
+
+      <g class="section" data-section-id="125" data-level="loge">
+        <path
+          d="
+    M 313.54192714617375 695.2777177960589
+    L 272.1067998453235 738.6727661951832
+    A 330 330 0 0 1 254.42244714946344 720.4351730916414
+    L 299.07291130410647 680.356050711343
+    A 270 270 0 0 0 313.54192714617375 695.2777177960589
+    Z
+  "
+          fill="#0891b2"
+          fill-opacity="0.6"
+          stroke="#1f2937"
+          stroke-width="1"
+          class="section-path"
+          data-section="125"
+        />
+        <title>125 (0 seats)</title>
+      </g>
+    
+
+      <g class="section" data-section-id="126" data-level="loge">
+        <path
+          d="
+    M 299.07291130410647 680.356050711343
+    L 254.42244714946344 720.4351730916414
+    A 330 330 0 0 1 238.19339770389223 700.8912715728776
+    L 285.7945981213664 664.3655858323544
+    A 270 270 0 0 0 299.07291130410647 680.356050711343
+    Z
+  "
+          fill="#0891b2"
+          fill-opacity="0.6"
+          stroke="#1f2937"
+          stroke-width="1"
+          class="section-path"
+          data-section="126"
+        />
+        <title>126 (0 seats)</title>
+      </g>
+    
+
+      <g class="section" data-section-id="127" data-level="loge">
+        <path
+          d="
+    M 285.7945981213666 664.3655858323548
+    L 238.19339770389251 700.8912715728779
+    A 330 330 0 0 1 223.51582556089278 680.1568796486144
+    L 273.78567545891224 647.4010833488663
+    A 270 270 0 0 0 285.7945981213666 664.3655858323548
+    Z
+  "
+          fill="#0891b2"
+          fill-opacity="0.6"
+          stroke="#1f2937"
+          stroke-width="1"
+          class="section-path"
+          data-section="127"
+        />
+        <title>127 (0 seats)</title>
+      </g>
+    
+
+      <g class="section" data-section-id="128" data-level="loge">
+        <path
+          d="
+    M 273.78567545891224 647.4010833488663
+    L 223.51582556089278 680.1568796486144
+    A 330 330 0 0 1 210.47671065082915 658.3548702264515
+    L 263.11730871431473 629.5630756398239
+    A 270 270 0 0 0 273.78567545891224 647.4010833488663
+    Z
+  "
+          fill="#0891b2"
+          fill-opacity="0.6"
+          stroke="#1f2937"
+          stroke-width="1"
+          class="section-path"
+          data-section="128"
+        />
+        <title>128 (0 seats)</title>
+      </g>
+    
+
+      <g class="section" data-section-id="129" data-level="loge">
+        <path
+          d="
+    M 263.11730871431485 629.5630756398241
+    L 210.47671065082926 658.3548702264517
+    A 330 330 0 0 1 199.1533233353013 635.614442961678
+    L 253.85271909251924 610.9572715141002
+    A 270 270 0 0 0 263.11730871431485 629.5630756398241
+    Z
+  "
+          fill="#0891b2"
+          fill-opacity="0.6"
+          stroke="#1f2937"
+          stroke-width="1"
+          class="section-path"
+          data-section="129"
+        />
+        <title>129 (0 seats)</title>
+      </g>
+    
+
+      <g class="section" data-section-id="130" data-level="loge">
+        <path
+          d="
+    M 253.85271909251924 610.9572715141002
+    L 199.1533233353013 635.614442961678
+    A 330 330 0 0 1 189.61276649962264 612.0703586144982
+    L 246.04680895423672 591.6939297754985
+    A 270 270 0 0 0 253.85271909251924 610.9572715141002
+    Z
+  "
+          fill="#0891b2"
+          fill-opacity="0.6"
+          stroke="#1f2937"
+          stroke-width="1"
+          class="section-path"
+          data-section="130"
+        />
+        <title>130 (0 seats)</title>
+      </g>
+    
+
+      <g class="section" data-section-id="131" data-level="loge">
+        <path
+          d="
+    M 246.04680895423675 591.6939297754986
+    L 189.6127664996227 612.0703586144983
+    A 330 330 0 0 1 181.91157789820704 587.8621404519125
+    L 239.7458364621694 571.8872058242921
+    A 270 270 0 0 0 246.04680895423675 591.6939297754986
+    Z
+  "
+          fill="#0891b2"
+          fill-opacity="0.6"
+          stroke="#1f2937"
+          stroke-width="1"
+          class="section-path"
+          data-section="131"
+        />
+        <title>131 (0 seats)</title>
+      </g>
+    
+
+      <g class="section" data-section-id="132" data-level="loge">
+        <path
+          d="
+    M 239.74583646216945 571.8872058242922
+    L 181.9115778982071 587.8621404519126
+    A 330 330 0 0 1 176.09539510937793 563.133247426772
+    L 234.98714145312744 551.6544751673589
+    A 270 270 0 0 0 239.74583646216945 571.8872058242922
+    Z
+  "
+          fill="#0891b2"
+          fill-opacity="0.6"
+          stroke="#1f2937"
+          stroke-width="1"
+          class="section-path"
+          data-section="132"
+        />
+        <title>132 (0 seats)</title>
+      </g>
+    
+
+      <g class="section" data-section-id="133" data-level="loge">
+        <path
+          d="
+    M 234.98714145312744 551.6544751673589
+    L 176.09539510937793 563.133247426772
+    A 330 330 0 0 1 172.19868508509649 538.0302240337901
+    L 231.7989241605335 531.1156378458282
+    A 270 270 0 0 0 234.98714145312744 551.6544751673589
+    Z
+  "
+          fill="#0891b2"
+          fill-opacity="0.6"
+          stroke="#1f2937"
+          stroke-width="1"
+          class="section-path"
+          data-section="133"
+        />
+        <title>133 (0 seats)</title>
+      </g>
+    
+
+      <g class="section" data-section-id="134" data-level="loge">
+        <path
+          d="
+    M 231.7989241605335 531.1156378458284
+    L 172.19868508509649 538.0302240337902
+    A 330 330 0 0 1 170.24453989830658 512.7018318804996
+    L 230.20007809861448 510.39240790222703
+    A 270 270 0 0 0 231.7989241605335 531.1156378458284
+    Z
+  "
+          fill="#0891b2"
+          fill-opacity="0.6"
+          stroke="#1f2937"
+          stroke-width="1"
+          class="section-path"
+          data-section="134"
+        />
+        <title>134 (0 seats)</title>
+      </g>
+    
+
+      <g class="section" data-section-id="135" data-level="loge">
+        <path
+          d="
+    M 230.20007809861448 510.39240790222715
+    L 170.24453989830658 512.7018318804999
+    A 330 330 0 0 1 170.24453989830658 487.29816811950025
+    L 230.20007809861448 489.6075920977729
+    A 270 270 0 0 0 230.20007809861448 510.39240790222715
+    Z
+  "
+          fill="#0891b2"
+          fill-opacity="0.6"
+          stroke="#1f2937"
+          stroke-width="1"
+          class="section-path"
+          data-section="135"
+        />
+        <title>135 (0 seats)</title>
+      </g>
+    
+
+      <g class="section" data-section-id="136" data-level="loge">
+        <path
+          d="
+    M 230.20007809861448 489.607592097773
+    L 170.24453989830658 487.2981681195004
+    A 330 330 0 0 1 172.19868508509649 461.9697759662097
+    L 231.7989241605335 468.8843621541716
+    A 270 270 0 0 0 230.20007809861448 489.607592097773
+    Z
+  "
+          fill="#0891b2"
+          fill-opacity="0.6"
+          stroke="#1f2937"
+          stroke-width="1"
+          class="section-path"
+          data-section="136"
+        />
+        <title>136 (0 seats)</title>
+      </g>
+    
+
+      <g class="section" data-section-id="137" data-level="loge">
+        <path
+          d="
+    M 231.7989241605335 468.8843621541717
+    L 172.19868508509649 461.96977596620985
+    A 330 330 0 0 1 176.09539510937793 436.8667525732281
+    L 234.98714145312738 448.34552483264116
+    A 270 270 0 0 0 231.7989241605335 468.8843621541717
+    Z
+  "
+          fill="#0891b2"
+          fill-opacity="0.6"
+          stroke="#1f2937"
+          stroke-width="1"
+          class="section-path"
+          data-section="137"
+        />
+        <title>137 (0 seats)</title>
+      </g>
+    
+
+      <g class="section" data-section-id="138" data-level="loge">
+        <path
+          d="
+    M 234.98714145312738 448.3455248326413
+    L 176.09539510937793 436.86675257322827
+    A 330 330 0 0 1 181.91157789820704 412.1378595480876
+    L 239.7458364621694 428.112794175708
+    A 270 270 0 0 0 234.98714145312738 448.3455248326413
+    Z
+  "
+          fill="#0891b2"
+          fill-opacity="0.6"
+          stroke="#1f2937"
+          stroke-width="1"
+          class="section-path"
+          data-section="138"
+        />
+        <title>138 (0 seats)</title>
+      </g>
+    
+
+      <g class="section" data-section-id="139" data-level="loge">
+        <path
+          d="
+    M 239.7458364621694 428.112794175708
+    L 181.91157789820704 412.1378595480876
+    A 330 330 0 0 1 189.6127664996227 387.9296413855016
+    L 246.04680895423678 408.3060702245013
+    A 270 270 0 0 0 239.7458364621694 428.112794175708
+    Z
+  "
+          fill="#0891b2"
+          fill-opacity="0.6"
+          stroke="#1f2937"
+          stroke-width="1"
+          class="section-path"
+          data-section="139"
+        />
+        <title>139 (0 seats)</title>
+      </g>
+    
+
+      <g class="section" data-section-id="140" data-level="loge">
+        <path
+          d="
+    M 246.04680895423664 408.30607022450164
+    L 189.61276649962258 387.929641385502
+    A 330 330 0 0 1 199.1533233353012 364.3855570383222
+    L 253.85271909251915 389.0427284859
+    A 270 270 0 0 0 246.04680895423664 408.30607022450164
+    Z
+  "
+          fill="#0891b2"
+          fill-opacity="0.6"
+          stroke="#1f2937"
+          stroke-width="1"
+          class="section-path"
+          data-section="140"
+        />
+        <title>140 (0 seats)</title>
+      </g>
+    
+
+      <g class="section" data-section-id="141" data-level="loge">
+        <path
+          d="
+    M 253.85271909251915 389.0427284859
+    L 199.1533233353012 364.3855570383222
+    A 330 330 0 0 1 210.47671065082915 341.6451297735485
+    L 263.11730871431473 370.436924360176
+    A 270 270 0 0 0 253.85271909251915 389.0427284859
+    Z
+  "
+          fill="#0891b2"
+          fill-opacity="0.6"
+          stroke="#1f2937"
+          stroke-width="1"
+          class="section-path"
+          data-section="141"
+        />
+        <title>141 (0 seats)</title>
+      </g>
+    
+
+      <g class="section" data-section-id="142" data-level="loge">
+        <path
+          d="
+    M 263.11730871431473 370.43692436017614
+    L 210.4767106508291 341.6451297735486
+    A 330 330 0 0 1 223.51582556089284 319.84312035138555
+    L 273.7856754589123 352.59891665113366
+    A 270 270 0 0 0 263.11730871431473 370.43692436017614
+    Z
+  "
+          fill="#0891b2"
+          fill-opacity="0.6"
+          stroke="#1f2937"
+          stroke-width="1"
+          class="section-path"
+          data-section="142"
+        />
+        <title>142 (0 seats)</title>
+      </g>
+    
+
+      <g class="section" data-section-id="143" data-level="loge">
+        <path
+          d="
+    M 273.7856754589123 352.59891665113366
+    L 223.51582556089284 319.84312035138555
+    A 330 330 0 0 1 238.19339770389246 299.10872842712206
+    L 285.79459812136656 335.63441416764533
+    A 270 270 0 0 0 273.7856754589123 352.59891665113366
+    Z
+  "
+          fill="#0891b2"
+          fill-opacity="0.6"
+          stroke="#1f2937"
+          stroke-width="1"
+          class="section-path"
+          data-section="143"
+        />
+        <title>143 (0 seats)</title>
+      </g>
+    
+
+      <g class="section" data-section-id="144" data-level="loge">
+        <path
+          d="
+    M 285.79459812136645 335.6344141676455
+    L 238.19339770389234 299.1087284271223
+    A 330 330 0 0 1 254.42244714946338 279.56482690835867
+    L 299.0729113041064 319.64394928865704
+    A 270 270 0 0 0 285.79459812136645 335.6344141676455
+    Z
+  "
+          fill="#0891b2"
+          fill-opacity="0.6"
+          stroke="#1f2937"
+          stroke-width="1"
+          class="section-path"
+          data-section="144"
+        />
+        <title>144 (0 seats)</title>
+      </g>
+    
+
+      <g class="section" data-section-id="145" data-level="loge">
+        <path
+          d="
+    M 299.0729113041064 319.64394928865704
+    L 254.42244714946338 279.56482690835867
+    A 330 330 0 0 1 272.1067998453235 261.32723380481684
+    L 313.5419271461738 304.72228220394106
+    A 270 270 0 0 0 299.0729113041064 319.64394928865704
+    Z
+  "
+          fill="#0891b2"
+          fill-opacity="0.6"
+          stroke="#1f2937"
+          stroke-width="1"
+          class="section-path"
+          data-section="145"
+        />
+        <title>145 (0 seats)</title>
+      </g>
+    
+
+      <g class="section" data-section-id="146" data-level="loge">
+        <path
+          d="
+    M 313.54192714617363 304.7222822039412
+    L 272.1067998453233 261.327233804817
+    A 330 330 0 0 1 291.1416575488854 244.50402588578243
+    L 329.1159016309062 290.9578393610947
+    A 270 270 0 0 0 313.54192714617363 304.7222822039412
+    Z
+  "
+          fill="#0891b2"
+          fill-opacity="0.6"
+          stroke="#1f2937"
+          stroke-width="1"
+          class="section-path"
+          data-section="146"
+        />
+        <title>146 (0 seats)</title>
+      </g>
+    
+
+      <g class="section" data-section-id="2" data-level="field">
+        <path
+          d="
+    M 603.1560247891609 635.1252550402701
+    L 639.5640335382765 682.8165215250713
+    A 230 230 0 0 1 622.7793769319019 694.48708080542
+    L 590.7499742540144 643.7513205953104
+    A 170 170 0 0 0 603.1560247891609 635.1252550402701
+    Z
+  "
+          fill="#2563eb"
+          fill-opacity="0.6"
+          stroke="#1f2937"
+          stroke-width="1"
+          class="section-path"
+          data-section="2"
+        />
+        <title>2 (0 seats)</title>
+      </g>
+    
+
+      <g class="section" data-section-id="22" data-level="field">
+        <path
+          d="
+    M 346.52436890582356 573.1110843870084
+    L 292.3564991078789 598.9149965235996
+    A 230 230 0 0 1 284.3934779391522 580.0863761499116
+    L 340.63865760719943 559.1942780238478
+    A 170 170 0 0 0 346.52436890582356 573.1110843870084
+    Z
+  "
+          fill="#2563eb"
+          fill-opacity="0.6"
+          stroke="#1f2937"
+          stroke-width="1"
+          class="section-path"
+          data-section="22"
+        />
+        <title>22 (0 seats)</title>
+      </g>
+    
+
+      <g class="section" data-section-id="23" data-level="field">
+        <path
+          d="
+    M 340.63865760719943 559.1942780238478
+    L 284.3934779391522 580.0863761499116
+    A 230 230 0 0 1 278.1338161610775 560.6250481958856
+    L 336.011951075579 544.8098182317415
+    A 170 170 0 0 0 340.63865760719943 559.1942780238478
+    Z
+  "
+          fill="#2563eb"
+          fill-opacity="0.6"
+          stroke="#1f2937"
+          stroke-width="1"
+          class="section-path"
+          data-section="23"
+        />
+        <title>23 (0 seats)</title>
+      </g>
+    
+
+      <g class="section" data-section-id="24" data-level="field">
+        <path
+          d="
+    M 336.011951075579 544.8098182317415
+    L 278.13381616107745 560.6250481958855
+    A 230 230 0 0 1 273.6269670720527 540.6847632781918
+    L 332.68080174890855 530.0713467708374
+    A 170 170 0 0 0 336.011951075579 544.8098182317415
+    Z
+  "
+          fill="#2563eb"
+          fill-opacity="0.6"
+          stroke="#1f2937"
+          stroke-width="1"
+          class="section-path"
+          data-section="24"
+        />
+        <title>24 (0 seats)</title>
+      </g>
+    
+
+      <g class="section" data-section-id="25" data-level="field">
+        <path
+          d="
+    M 332.68080174890855 530.0713467708374
+    L 273.6269670720527 540.6847632781917
+    A 230 230 0 0 1 270.9085361985001 520.423055924275
+    L 330.67152675541314 515.095302204899
+    A 170 170 0 0 0 332.68080174890855 530.0713467708374
+    Z
+  "
+          fill="#2563eb"
+          fill-opacity="0.6"
+          stroke="#1f2937"
+          stroke-width="1"
+          class="section-path"
+          data-section="25"
+        />
+        <title>25 (0 seats)</title>
+      </g>
+    
+
+      <g class="section" data-section-id="3" data-level="field">
+        <path
+          d="
+    M 590.7499742540144 643.7513205953104
+    L 622.7793769319019 694.48708080542
+    A 230 230 0 0 1 605.024724600554 704.6211309287919
+    L 577.6269703569312 651.241705469107
+    A 170 170 0 0 0 590.7499742540144 643.7513205953104
+    Z
+  "
+          fill="#2563eb"
+          fill-opacity="0.6"
+          stroke="#1f2937"
+          stroke-width="1"
+          class="section-path"
+          data-section="3"
+        />
+        <title>3 (0 seats)</title>
+      </g>
+    
+
+      <g class="section" data-section-id="301" data-level="upper">
+        <path
+          d="
+    M 164.66611879644 656.3687568440599
+    L 110.28765157424112 681.7258525485021
+    A 430 430 0 0 1 84.6518946957006 611.292189394084
+    L 142.60744427304473 595.7630466879327
+    A 370 370 0 0 0 164.66611879644 656.3687568440599
+    Z
+  "
+          fill="#ea580c"
+          fill-opacity="0.6"
+          stroke="#1f2937"
+          stroke-width="1"
+          class="section-path"
+          data-section="301"
+        />
+        <title>301 (0 seats)</title>
+      </g>
+    
+
+      <g class="section" data-section-id="302" data-level="upper">
+        <path
+          d="
+    M 142.60744427304473 595.7630466879327
+    L 84.6518946957006 611.292189394084
+    A 430 430 0 0 1 71.63627982054953 537.4769693814947
+    L 131.40796170605427 532.2476248166349
+    A 370 370 0 0 0 142.60744427304473 595.7630466879327
+    Z
+  "
+          fill="#ea580c"
+          fill-opacity="0.6"
+          stroke="#1f2937"
+          stroke-width="1"
+          class="section-path"
+          data-section="302"
+        />
+        <title>302 (0 seats)</title>
+      </g>
+    
+
+      <g class="section" data-section-id="303" data-level="upper">
+        <path
+          d="
+    M 131.40796170605427 532.2476248166349
+    L 71.63627982054953 537.4769693814947
+    A 430 430 0 0 1 71.63627982054942 462.52303061850716
+    L 131.40796170605415 467.7523751833666
+    A 370 370 0 0 0 131.40796170605427 532.2476248166349
+    Z
+  "
+          fill="#ea580c"
+          fill-opacity="0.6"
+          stroke="#1f2937"
+          stroke-width="1"
+          class="section-path"
+          data-section="303"
+        />
+        <title>303 (0 seats)</title>
+      </g>
+    
+
+      <g class="section" data-section-id="304" data-level="upper">
+        <path
+          d="
+    M 131.40796170605415 467.7523751833666
+    L 71.63627982054942 462.52303061850716
+    A 430 430 0 0 1 84.65189469570021 388.7078106059178
+    L 142.60744427304434 404.2369533120688
+    A 370 370 0 0 0 131.40796170605415 467.7523751833666
+    Z
+  "
+          fill="#ea580c"
+          fill-opacity="0.6"
+          stroke="#1f2937"
+          stroke-width="1"
+          class="section-path"
+          data-section="304"
+        />
+        <title>304 (0 seats)</title>
+      </g>
+    
+
+      <g class="section" data-section-id="305" data-level="upper">
+        <path
+          d="
+    M 142.60744427304434 404.2369533120688
+    L 84.65189469570021 388.7078106059178
+    A 430 430 0 0 1 110.28765157424039 318.2741474514995
+    L 164.66611879643938 343.63124315594143
+    A 370 370 0 0 0 142.60744427304434 404.2369533120688
+    Z
+  "
+          fill="#ea580c"
+          fill-opacity="0.6"
+          stroke="#1f2937"
+          stroke-width="1"
+          class="section-path"
+          data-section="305"
+        />
+        <title>305 (0 seats)</title>
+      </g>
+    
+
+      <g class="section" data-section-id="306" data-level="upper">
+        <path
+          d="
+    M 164.66611879643938 343.63124315594143
+    L 110.28765157424039 318.2741474514995
+    A 430 430 0 0 1 147.76462095573413 253.3621323690493
+    L 196.91374361307356 287.77671855011215
+    A 370 370 0 0 0 164.66611879643938 343.63124315594143
+    Z
+  "
+          fill="#ea580c"
+          fill-opacity="0.6"
+          stroke="#1f2937"
+          stroke-width="1"
+          class="section-path"
+          data-section="306"
+        />
+        <title>306 (0 seats)</title>
+      </g>
+    
+
+      <g class="section" data-section-id="307" data-level="upper">
+        <path
+          d="
+    M 196.91374361307055 287.77671855011647
+    L 147.76462095573066 253.3621323690543
+    A 430 430 0 0 1 195.944084089782 195.9440840897871
+    L 238.37049096097525 238.37049096097962
+    A 370 370 0 0 0 196.91374361307055 287.77671855011647
+    Z
+  "
+          fill="#ea580c"
+          fill-opacity="0.6"
+          stroke="#1f2937"
+          stroke-width="1"
+          class="section-path"
+          data-section="307"
+        />
+        <title>307 (0 seats)</title>
+      </g>
+    
+
+      <g class="section" data-section-id="4" data-level="field">
+        <path
+          d="
+    M 577.6269703569312 651.241705469107
+    L 605.024724600554 704.6211309287919
+    A 230 230 0 0 1 586.4403438862748 713.1386097093217
+    L 563.8906889594205 657.5372332634117
+    A 170 170 0 0 0 577.6269703569312 651.241705469107
+    Z
+  "
+          fill="#2563eb"
+          fill-opacity="0.6"
+          stroke="#1f2937"
+          stroke-width="1"
+          class="section-path"
+          data-section="4"
+        />
+        <title>4 (0 seats)</title>
+      </g>
+    
+
+      <g class="section" data-section-id="410" data-level="other">
+        <path
+          d="
+    M 767.6901125709288 464.75792810058607
+    L 827.1768042533574 456.926356567383
+    A 330 330 0 0 1 827.1768042533574 543.073643432617
+    L 767.6901125709288 535.2420718994139
+    A 270 270 0 0 0 767.6901125709288 464.75792810058607
+    Z
+  "
+          fill="#6b7280"
+          fill-opacity="0.6"
+          stroke="#1f2937"
+          stroke-width="1"
+          class="section-path"
+          data-section="410"
+        />
+        <title>410 (0 seats)</title>
+      </g>
+    
+
+      <g class="section" data-section-id="411" data-level="other">
+        <path
+          d="
+    M 767.6901125709288 464.75792810058607
+    L 827.1768042533574 456.926356567383
+    A 330 330 0 0 1 827.1768042533574 543.073643432617
+    L 767.6901125709288 535.2420718994139
+    A 270 270 0 0 0 767.6901125709288 464.75792810058607
+    Z
+  "
+          fill="#6b7280"
+          fill-opacity="0.6"
+          stroke="#1f2937"
+          stroke-width="1"
+          class="section-path"
+          data-section="411"
+        />
+        <title>411 (0 seats)</title>
+      </g>
+    
+
+      <g class="section" data-section-id="412" data-level="other">
+        <path
+          d="
+    M 767.6901125709288 464.75792810058607
+    L 827.1768042533574 456.926356567383
+    A 330 330 0 0 1 827.1768042533574 543.073643432617
+    L 767.6901125709288 535.2420718994139
+    A 270 270 0 0 0 767.6901125709288 464.75792810058607
+    Z
+  "
+          fill="#6b7280"
+          fill-opacity="0.6"
+          stroke="#1f2937"
+          stroke-width="1"
+          class="section-path"
+          data-section="412"
+        />
+        <title>412 (0 seats)</title>
+      </g>
+    
+
+      <g class="section" data-section-id="413" data-level="other">
+        <path
+          d="
+    M 767.6901125709288 464.75792810058607
+    L 827.1768042533574 456.926356567383
+    A 330 330 0 0 1 827.1768042533574 543.073643432617
+    L 767.6901125709288 535.2420718994139
+    A 270 270 0 0 0 767.6901125709288 464.75792810058607
+    Z
+  "
+          fill="#6b7280"
+          fill-opacity="0.6"
+          stroke="#1f2937"
+          stroke-width="1"
+          class="section-path"
+          data-section="413"
+        />
+        <title>413 (0 seats)</title>
+      </g>
+    
+
+      <g class="section" data-section-id="414" data-level="other">
+        <path
+          d="
+    M 767.6901125709288 464.75792810058607
+    L 827.1768042533574 456.926356567383
+    A 330 330 0 0 1 827.1768042533574 543.073643432617
+    L 767.6901125709288 535.2420718994139
+    A 270 270 0 0 0 767.6901125709288 464.75792810058607
+    Z
+  "
+          fill="#6b7280"
+          fill-opacity="0.6"
+          stroke="#1f2937"
+          stroke-width="1"
+          class="section-path"
+          data-section="414"
+        />
+        <title>414 (0 seats)</title>
+      </g>
+    
+
+      <g class="section" data-section-id="415" data-level="other">
+        <path
+          d="
+    M 767.6901125709288 464.75792810058607
+    L 827.1768042533574 456.926356567383
+    A 330 330 0 0 1 827.1768042533574 543.073643432617
+    L 767.6901125709288 535.2420718994139
+    A 270 270 0 0 0 767.6901125709288 464.75792810058607
+    Z
+  "
+          fill="#6b7280"
+          fill-opacity="0.6"
+          stroke="#1f2937"
+          stroke-width="1"
+          class="section-path"
+          data-section="415"
+        />
+        <title>415 (0 seats)</title>
+      </g>
+    
+
+      <g class="section" data-section-id="416" data-level="other">
+        <path
+          d="
+    M 767.6901125709288 464.75792810058607
+    L 827.1768042533574 456.926356567383
+    A 330 330 0 0 1 827.1768042533574 543.073643432617
+    L 767.6901125709288 535.2420718994139
+    A 270 270 0 0 0 767.6901125709288 464.75792810058607
+    Z
+  "
+          fill="#6b7280"
+          fill-opacity="0.6"
+          stroke="#1f2937"
+          stroke-width="1"
+          class="section-path"
+          data-section="416"
+        />
+        <title>416 (0 seats)</title>
+      </g>
+    
+
+      <g class="section" data-section-id="417" data-level="other">
+        <path
+          d="
+    M 767.6901125709288 464.75792810058607
+    L 827.1768042533574 456.926356567383
+    A 330 330 0 0 1 827.1768042533574 543.073643432617
+    L 767.6901125709288 535.2420718994139
+    A 270 270 0 0 0 767.6901125709288 464.75792810058607
+    Z
+  "
+          fill="#6b7280"
+          fill-opacity="0.6"
+          stroke="#1f2937"
+          stroke-width="1"
+          class="section-path"
+          data-section="417"
+        />
+        <title>417 (0 seats)</title>
+      </g>
+    
+
+      <g class="section" data-section-id="418" data-level="other">
+        <path
+          d="
+    M 767.6901125709288 464.75792810058607
+    L 827.1768042533574 456.926356567383
+    A 330 330 0 0 1 827.1768042533574 543.073643432617
+    L 767.6901125709288 535.2420718994139
+    A 270 270 0 0 0 767.6901125709288 464.75792810058607
+    Z
+  "
+          fill="#6b7280"
+          fill-opacity="0.6"
+          stroke="#1f2937"
+          stroke-width="1"
+          class="section-path"
+          data-section="418"
+        />
+        <title>418 (0 seats)</title>
+      </g>
+    
+
+      <g class="section" data-section-id="419" data-level="other">
+        <path
+          d="
+    M 767.6901125709288 464.75792810058607
+    L 827.1768042533574 456.926356567383
+    A 330 330 0 0 1 827.1768042533574 543.073643432617
+    L 767.6901125709288 535.2420718994139
+    A 270 270 0 0 0 767.6901125709288 464.75792810058607
+    Z
+  "
+          fill="#6b7280"
+          fill-opacity="0.6"
+          stroke="#1f2937"
+          stroke-width="1"
+          class="section-path"
+          data-section="419"
+        />
+        <title>419 (0 seats)</title>
+      </g>
+    
+
+      <g class="section" data-section-id="420" data-level="other">
+        <path
+          d="
+    M 767.6901125709288 464.75792810058607
+    L 827.1768042533574 456.926356567383
+    A 330 330 0 0 1 827.1768042533574 543.073643432617
+    L 767.6901125709288 535.2420718994139
+    A 270 270 0 0 0 767.6901125709288 464.75792810058607
+    Z
+  "
+          fill="#6b7280"
+          fill-opacity="0.6"
+          stroke="#1f2937"
+          stroke-width="1"
+          class="section-path"
+          data-section="420"
+        />
+        <title>420 (0 seats)</title>
+      </g>
+    
+
+      <g class="section" data-section-id="421" data-level="other">
+        <path
+          d="
+    M 767.6901125709288 464.75792810058607
+    L 827.1768042533574 456.926356567383
+    A 330 330 0 0 1 827.1768042533574 543.073643432617
+    L 767.6901125709288 535.2420718994139
+    A 270 270 0 0 0 767.6901125709288 464.75792810058607
+    Z
+  "
+          fill="#6b7280"
+          fill-opacity="0.6"
+          stroke="#1f2937"
+          stroke-width="1"
+          class="section-path"
+          data-section="421"
+        />
+        <title>421 (0 seats)</title>
+      </g>
+    
+
+      <g class="section" data-section-id="422" data-level="other">
+        <path
+          d="
+    M 767.6901125709288 464.75792810058607
+    L 827.1768042533574 456.926356567383
+    A 330 330 0 0 1 827.1768042533574 543.073643432617
+    L 767.6901125709288 535.2420718994139
+    A 270 270 0 0 0 767.6901125709288 464.75792810058607
+    Z
+  "
+          fill="#6b7280"
+          fill-opacity="0.6"
+          stroke="#1f2937"
+          stroke-width="1"
+          class="section-path"
+          data-section="422"
+        />
+        <title>422 (0 seats)</title>
+      </g>
+    
+
+      <g class="section" data-section-id="423" data-level="other">
+        <path
+          d="
+    M 767.6901125709288 464.75792810058607
+    L 827.1768042533574 456.926356567383
+    A 330 330 0 0 1 827.1768042533574 543.073643432617
+    L 767.6901125709288 535.2420718994139
+    A 270 270 0 0 0 767.6901125709288 464.75792810058607
+    Z
+  "
+          fill="#6b7280"
+          fill-opacity="0.6"
+          stroke="#1f2937"
+          stroke-width="1"
+          class="section-path"
+          data-section="423"
+        />
+        <title>423 (0 seats)</title>
+      </g>
+    
+
+      <g class="section" data-section-id="424" data-level="other">
+        <path
+          d="
+    M 767.6901125709288 464.75792810058607
+    L 827.1768042533574 456.926356567383
+    A 330 330 0 0 1 827.1768042533574 543.073643432617
+    L 767.6901125709288 535.2420718994139
+    A 270 270 0 0 0 767.6901125709288 464.75792810058607
+    Z
+  "
+          fill="#6b7280"
+          fill-opacity="0.6"
+          stroke="#1f2937"
+          stroke-width="1"
+          class="section-path"
+          data-section="424"
+        />
+        <title>424 (0 seats)</title>
+      </g>
+    
+
+      <g class="section" data-section-id="425" data-level="other">
+        <path
+          d="
+    M 767.6901125709288 464.75792810058607
+    L 827.1768042533574 456.926356567383
+    A 330 330 0 0 1 827.1768042533574 543.073643432617
+    L 767.6901125709288 535.2420718994139
+    A 270 270 0 0 0 767.6901125709288 464.75792810058607
+    Z
+  "
+          fill="#6b7280"
+          fill-opacity="0.6"
+          stroke="#1f2937"
+          stroke-width="1"
+          class="section-path"
+          data-section="425"
+        />
+        <title>425 (0 seats)</title>
+      </g>
+    
+
+      <g class="section" data-section-id="426" data-level="other">
+        <path
+          d="
+    M 767.6901125709288 464.75792810058607
+    L 827.1768042533574 456.926356567383
+    A 330 330 0 0 1 827.1768042533574 543.073643432617
+    L 767.6901125709288 535.2420718994139
+    A 270 270 0 0 0 767.6901125709288 464.75792810058607
+    Z
+  "
+          fill="#6b7280"
+          fill-opacity="0.6"
+          stroke="#1f2937"
+          stroke-width="1"
+          class="section-path"
+          data-section="426"
+        />
+        <title>426 (0 seats)</title>
+      </g>
+    
+
+      <g class="section" data-section-id="427" data-level="other">
+        <path
+          d="
+    M 767.6901125709288 464.75792810058607
+    L 827.1768042533574 456.926356567383
+    A 330 330 0 0 1 827.1768042533574 543.073643432617
+    L 767.6901125709288 535.2420718994139
+    A 270 270 0 0 0 767.6901125709288 464.75792810058607
+    Z
+  "
+          fill="#6b7280"
+          fill-opacity="0.6"
+          stroke="#1f2937"
+          stroke-width="1"
+          class="section-path"
+          data-section="427"
+        />
+        <title>427 (0 seats)</title>
+      </g>
+    
+
+      <g class="section" data-section-id="428" data-level="other">
+        <path
+          d="
+    M 767.6901125709288 464.75792810058607
+    L 827.1768042533574 456.926356567383
+    A 330 330 0 0 1 827.1768042533574 543.073643432617
+    L 767.6901125709288 535.2420718994139
+    A 270 270 0 0 0 767.6901125709288 464.75792810058607
+    Z
+  "
+          fill="#6b7280"
+          fill-opacity="0.6"
+          stroke="#1f2937"
+          stroke-width="1"
+          class="section-path"
+          data-section="428"
+        />
+        <title>428 (0 seats)</title>
+      </g>
+    
+
+      <g class="section" data-section-id="429" data-level="other">
+        <path
+          d="
+    M 767.6901125709288 464.75792810058607
+    L 827.1768042533574 456.926356567383
+    A 330 330 0 0 1 827.1768042533574 543.073643432617
+    L 767.6901125709288 535.2420718994139
+    A 270 270 0 0 0 767.6901125709288 464.75792810058607
+    Z
+  "
+          fill="#6b7280"
+          fill-opacity="0.6"
+          stroke="#1f2937"
+          stroke-width="1"
+          class="section-path"
+          data-section="429"
+        />
+        <title>429 (0 seats)</title>
+      </g>
+    
+
+      <g class="section" data-section-id="430" data-level="other">
+        <path
+          d="
+    M 767.6901125709288 464.75792810058607
+    L 827.1768042533574 456.926356567383
+    A 330 330 0 0 1 827.1768042533574 543.073643432617
+    L 767.6901125709288 535.2420718994139
+    A 270 270 0 0 0 767.6901125709288 464.75792810058607
+    Z
+  "
+          fill="#6b7280"
+          fill-opacity="0.6"
+          stroke="#1f2937"
+          stroke-width="1"
+          class="section-path"
+          data-section="430"
+        />
+        <title>430 (0 seats)</title>
+      </g>
+    
+
+      <g class="section" data-section-id="431" data-level="other">
+        <path
+          d="
+    M 767.6901125709288 464.75792810058607
+    L 827.1768042533574 456.926356567383
+    A 330 330 0 0 1 827.1768042533574 543.073643432617
+    L 767.6901125709288 535.2420718994139
+    A 270 270 0 0 0 767.6901125709288 464.75792810058607
+    Z
+  "
+          fill="#6b7280"
+          fill-opacity="0.6"
+          stroke="#1f2937"
+          stroke-width="1"
+          class="section-path"
+          data-section="431"
+        />
+        <title>431 (0 seats)</title>
+      </g>
+    
+
+      <g class="section" data-section-id="432" data-level="other">
+        <path
+          d="
+    M 767.6901125709288 464.75792810058607
+    L 827.1768042533574 456.926356567383
+    A 330 330 0 0 1 827.1768042533574 543.073643432617
+    L 767.6901125709288 535.2420718994139
+    A 270 270 0 0 0 767.6901125709288 464.75792810058607
+    Z
+  "
+          fill="#6b7280"
+          fill-opacity="0.6"
+          stroke="#1f2937"
+          stroke-width="1"
+          class="section-path"
+          data-section="432"
+        />
+        <title>432 (0 seats)</title>
+      </g>
+    
+
+      <g class="section" data-section-id="433" data-level="other">
+        <path
+          d="
+    M 767.6901125709288 464.75792810058607
+    L 827.1768042533574 456.926356567383
+    A 330 330 0 0 1 827.1768042533574 543.073643432617
+    L 767.6901125709288 535.2420718994139
+    A 270 270 0 0 0 767.6901125709288 464.75792810058607
+    Z
+  "
+          fill="#6b7280"
+          fill-opacity="0.6"
+          stroke="#1f2937"
+          stroke-width="1"
+          class="section-path"
+          data-section="433"
+        />
+        <title>433 (0 seats)</title>
+      </g>
+    
+
+      <g class="section" data-section-id="434" data-level="other">
+        <path
+          d="
+    M 767.6901125709288 464.75792810058607
+    L 827.1768042533574 456.926356567383
+    A 330 330 0 0 1 827.1768042533574 543.073643432617
+    L 767.6901125709288 535.2420718994139
+    A 270 270 0 0 0 767.6901125709288 464.75792810058607
+    Z
+  "
+          fill="#6b7280"
+          fill-opacity="0.6"
+          stroke="#1f2937"
+          stroke-width="1"
+          class="section-path"
+          data-section="434"
+        />
+        <title>434 (0 seats)</title>
+      </g>
+    
+
+      <g class="section" data-section-id="435" data-level="other">
+        <path
+          d="
+    M 767.6901125709288 464.75792810058607
+    L 827.1768042533574 456.926356567383
+    A 330 330 0 0 1 827.1768042533574 543.073643432617
+    L 767.6901125709288 535.2420718994139
+    A 270 270 0 0 0 767.6901125709288 464.75792810058607
+    Z
+  "
+          fill="#6b7280"
+          fill-opacity="0.6"
+          stroke="#1f2937"
+          stroke-width="1"
+          class="section-path"
+          data-section="435"
+        />
+        <title>435 (0 seats)</title>
+      </g>
+    
+
+      <g class="section" data-section-id="436" data-level="other">
+        <path
+          d="
+    M 767.6901125709288 464.75792810058607
+    L 827.1768042533574 456.926356567383
+    A 330 330 0 0 1 827.1768042533574 543.073643432617
+    L 767.6901125709288 535.2420718994139
+    A 270 270 0 0 0 767.6901125709288 464.75792810058607
+    Z
+  "
+          fill="#6b7280"
+          fill-opacity="0.6"
+          stroke="#1f2937"
+          stroke-width="1"
+          class="section-path"
+          data-section="436"
+        />
+        <title>436 (0 seats)</title>
+      </g>
+    
+
+      <g class="section" data-section-id="437" data-level="other">
+        <path
+          d="
+    M 767.6901125709288 464.75792810058607
+    L 827.1768042533574 456.926356567383
+    A 330 330 0 0 1 827.1768042533574 543.073643432617
+    L 767.6901125709288 535.2420718994139
+    A 270 270 0 0 0 767.6901125709288 464.75792810058607
+    Z
+  "
+          fill="#6b7280"
+          fill-opacity="0.6"
+          stroke="#1f2937"
+          stroke-width="1"
+          class="section-path"
+          data-section="437"
+        />
+        <title>437 (0 seats)</title>
+      </g>
+    
+
+      <g class="section" data-section-id="5" data-level="field">
+        <path
+          d="
+    M 563.8906889594205 657.5372332634117
+    L 586.4403438862748 713.1386097093217
+    A 230 230 0 0 1 567.1730572465044 719.9722263836002
+    L 549.6496510082859 662.5881673270088
+    A 170 170 0 0 0 563.8906889594205 657.5372332634117
+    Z
+  "
+          fill="#2563eb"
+          fill-opacity="0.6"
+          stroke="#1f2937"
+          stroke-width="1"
+          class="section-path"
+          data-section="5"
+        />
+        <title>5 (0 seats)</title>
+      </g>
+    
+
+      <g class="section" data-section-id="509" data-level="other">
+        <path
+          d="
+    M 767.6901125709288 464.75792810058607
+    L 827.1768042533574 456.926356567383
+    A 330 330 0 0 1 827.1768042533574 543.073643432617
+    L 767.6901125709288 535.2420718994139
+    A 270 270 0 0 0 767.6901125709288 464.75792810058607
+    Z
+  "
+          fill="#6b7280"
+          fill-opacity="0.6"
+          stroke="#1f2937"
+          stroke-width="1"
+          class="section-path"
+          data-section="509"
+        />
+        <title>509 (0 seats)</title>
+      </g>
+    
+
+      <g class="section" data-section-id="510" data-level="other">
+        <path
+          d="
+    M 767.6901125709288 464.75792810058607
+    L 827.1768042533574 456.926356567383
+    A 330 330 0 0 1 827.1768042533574 543.073643432617
+    L 767.6901125709288 535.2420718994139
+    A 270 270 0 0 0 767.6901125709288 464.75792810058607
+    Z
+  "
+          fill="#6b7280"
+          fill-opacity="0.6"
+          stroke="#1f2937"
+          stroke-width="1"
+          class="section-path"
+          data-section="510"
+        />
+        <title>510 (0 seats)</title>
+      </g>
+    
+
+      <g class="section" data-section-id="511" data-level="other">
+        <path
+          d="
+    M 767.6901125709288 464.75792810058607
+    L 827.1768042533574 456.926356567383
+    A 330 330 0 0 1 827.1768042533574 543.073643432617
+    L 767.6901125709288 535.2420718994139
+    A 270 270 0 0 0 767.6901125709288 464.75792810058607
+    Z
+  "
+          fill="#6b7280"
+          fill-opacity="0.6"
+          stroke="#1f2937"
+          stroke-width="1"
+          class="section-path"
+          data-section="511"
+        />
+        <title>511 (0 seats)</title>
+      </g>
+    
+
+      <g class="section" data-section-id="512" data-level="other">
+        <path
+          d="
+    M 767.6901125709288 464.75792810058607
+    L 827.1768042533574 456.926356567383
+    A 330 330 0 0 1 827.1768042533574 543.073643432617
+    L 767.6901125709288 535.2420718994139
+    A 270 270 0 0 0 767.6901125709288 464.75792810058607
+    Z
+  "
+          fill="#6b7280"
+          fill-opacity="0.6"
+          stroke="#1f2937"
+          stroke-width="1"
+          class="section-path"
+          data-section="512"
+        />
+        <title>512 (0 seats)</title>
+      </g>
+    
+
+      <g class="section" data-section-id="513" data-level="other">
+        <path
+          d="
+    M 767.6901125709288 464.75792810058607
+    L 827.1768042533574 456.926356567383
+    A 330 330 0 0 1 827.1768042533574 543.073643432617
+    L 767.6901125709288 535.2420718994139
+    A 270 270 0 0 0 767.6901125709288 464.75792810058607
+    Z
+  "
+          fill="#6b7280"
+          fill-opacity="0.6"
+          stroke="#1f2937"
+          stroke-width="1"
+          class="section-path"
+          data-section="513"
+        />
+        <title>513 (0 seats)</title>
+      </g>
+    
+
+      <g class="section" data-section-id="514" data-level="other">
+        <path
+          d="
+    M 767.6901125709288 464.75792810058607
+    L 827.1768042533574 456.926356567383
+    A 330 330 0 0 1 827.1768042533574 543.073643432617
+    L 767.6901125709288 535.2420718994139
+    A 270 270 0 0 0 767.6901125709288 464.75792810058607
+    Z
+  "
+          fill="#6b7280"
+          fill-opacity="0.6"
+          stroke="#1f2937"
+          stroke-width="1"
+          class="section-path"
+          data-section="514"
+        />
+        <title>514 (0 seats)</title>
+      </g>
+    
+
+      <g class="section" data-section-id="515" data-level="other">
+        <path
+          d="
+    M 767.6901125709288 464.75792810058607
+    L 827.1768042533574 456.926356567383
+    A 330 330 0 0 1 827.1768042533574 543.073643432617
+    L 767.6901125709288 535.2420718994139
+    A 270 270 0 0 0 767.6901125709288 464.75792810058607
+    Z
+  "
+          fill="#6b7280"
+          fill-opacity="0.6"
+          stroke="#1f2937"
+          stroke-width="1"
+          class="section-path"
+          data-section="515"
+        />
+        <title>515 (0 seats)</title>
+      </g>
+    
+
+      <g class="section" data-section-id="516" data-level="other">
+        <path
+          d="
+    M 767.6901125709288 464.75792810058607
+    L 827.1768042533574 456.926356567383
+    A 330 330 0 0 1 827.1768042533574 543.073643432617
+    L 767.6901125709288 535.2420718994139
+    A 270 270 0 0 0 767.6901125709288 464.75792810058607
+    Z
+  "
+          fill="#6b7280"
+          fill-opacity="0.6"
+          stroke="#1f2937"
+          stroke-width="1"
+          class="section-path"
+          data-section="516"
+        />
+        <title>516 (0 seats)</title>
+      </g>
+    
+
+      <g class="section" data-section-id="517" data-level="other">
+        <path
+          d="
+    M 767.6901125709288 464.75792810058607
+    L 827.1768042533574 456.926356567383
+    A 330 330 0 0 1 827.1768042533574 543.073643432617
+    L 767.6901125709288 535.2420718994139
+    A 270 270 0 0 0 767.6901125709288 464.75792810058607
+    Z
+  "
+          fill="#6b7280"
+          fill-opacity="0.6"
+          stroke="#1f2937"
+          stroke-width="1"
+          class="section-path"
+          data-section="517"
+        />
+        <title>517 (0 seats)</title>
+      </g>
+    
+
+      <g class="section" data-section-id="518" data-level="other">
+        <path
+          d="
+    M 767.6901125709288 464.75792810058607
+    L 827.1768042533574 456.926356567383
+    A 330 330 0 0 1 827.1768042533574 543.073643432617
+    L 767.6901125709288 535.2420718994139
+    A 270 270 0 0 0 767.6901125709288 464.75792810058607
+    Z
+  "
+          fill="#6b7280"
+          fill-opacity="0.6"
+          stroke="#1f2937"
+          stroke-width="1"
+          class="section-path"
+          data-section="518"
+        />
+        <title>518 (0 seats)</title>
+      </g>
+    
+
+      <g class="section" data-section-id="519" data-level="other">
+        <path
+          d="
+    M 767.6901125709288 464.75792810058607
+    L 827.1768042533574 456.926356567383
+    A 330 330 0 0 1 827.1768042533574 543.073643432617
+    L 767.6901125709288 535.2420718994139
+    A 270 270 0 0 0 767.6901125709288 464.75792810058607
+    Z
+  "
+          fill="#6b7280"
+          fill-opacity="0.6"
+          stroke="#1f2937"
+          stroke-width="1"
+          class="section-path"
+          data-section="519"
+        />
+        <title>519 (0 seats)</title>
+      </g>
+    
+
+      <g class="section" data-section-id="520" data-level="other">
+        <path
+          d="
+    M 767.6901125709288 464.75792810058607
+    L 827.1768042533574 456.926356567383
+    A 330 330 0 0 1 827.1768042533574 543.073643432617
+    L 767.6901125709288 535.2420718994139
+    A 270 270 0 0 0 767.6901125709288 464.75792810058607
+    Z
+  "
+          fill="#6b7280"
+          fill-opacity="0.6"
+          stroke="#1f2937"
+          stroke-width="1"
+          class="section-path"
+          data-section="520"
+        />
+        <title>520 (0 seats)</title>
+      </g>
+    
+
+      <g class="section" data-section-id="521" data-level="other">
+        <path
+          d="
+    M 767.6901125709288 464.75792810058607
+    L 827.1768042533574 456.926356567383
+    A 330 330 0 0 1 827.1768042533574 543.073643432617
+    L 767.6901125709288 535.2420718994139
+    A 270 270 0 0 0 767.6901125709288 464.75792810058607
+    Z
+  "
+          fill="#6b7280"
+          fill-opacity="0.6"
+          stroke="#1f2937"
+          stroke-width="1"
+          class="section-path"
+          data-section="521"
+        />
+        <title>521 (0 seats)</title>
+      </g>
+    
+
+      <g class="section" data-section-id="522" data-level="other">
+        <path
+          d="
+    M 767.6901125709288 464.75792810058607
+    L 827.1768042533574 456.926356567383
+    A 330 330 0 0 1 827.1768042533574 543.073643432617
+    L 767.6901125709288 535.2420718994139
+    A 270 270 0 0 0 767.6901125709288 464.75792810058607
+    Z
+  "
+          fill="#6b7280"
+          fill-opacity="0.6"
+          stroke="#1f2937"
+          stroke-width="1"
+          class="section-path"
+          data-section="522"
+        />
+        <title>522 (0 seats)</title>
+      </g>
+    
+
+      <g class="section" data-section-id="523" data-level="other">
+        <path
+          d="
+    M 767.6901125709288 464.75792810058607
+    L 827.1768042533574 456.926356567383
+    A 330 330 0 0 1 827.1768042533574 543.073643432617
+    L 767.6901125709288 535.2420718994139
+    A 270 270 0 0 0 767.6901125709288 464.75792810058607
+    Z
+  "
+          fill="#6b7280"
+          fill-opacity="0.6"
+          stroke="#1f2937"
+          stroke-width="1"
+          class="section-path"
+          data-section="523"
+        />
+        <title>523 (0 seats)</title>
+      </g>
+    
+
+      <g class="section" data-section-id="524" data-level="other">
+        <path
+          d="
+    M 767.6901125709288 464.75792810058607
+    L 827.1768042533574 456.926356567383
+    A 330 330 0 0 1 827.1768042533574 543.073643432617
+    L 767.6901125709288 535.2420718994139
+    A 270 270 0 0 0 767.6901125709288 464.75792810058607
+    Z
+  "
+          fill="#6b7280"
+          fill-opacity="0.6"
+          stroke="#1f2937"
+          stroke-width="1"
+          class="section-path"
+          data-section="524"
+        />
+        <title>524 (0 seats)</title>
+      </g>
+    
+
+      <g class="section" data-section-id="525" data-level="other">
+        <path
+          d="
+    M 767.6901125709288 464.75792810058607
+    L 827.1768042533574 456.926356567383
+    A 330 330 0 0 1 827.1768042533574 543.073643432617
+    L 767.6901125709288 535.2420718994139
+    A 270 270 0 0 0 767.6901125709288 464.75792810058607
+    Z
+  "
+          fill="#6b7280"
+          fill-opacity="0.6"
+          stroke="#1f2937"
+          stroke-width="1"
+          class="section-path"
+          data-section="525"
+        />
+        <title>525 (0 seats)</title>
+      </g>
+    
+
+      <g class="section" data-section-id="526" data-level="other">
+        <path
+          d="
+    M 767.6901125709288 464.75792810058607
+    L 827.1768042533574 456.926356567383
+    A 330 330 0 0 1 827.1768042533574 543.073643432617
+    L 767.6901125709288 535.2420718994139
+    A 270 270 0 0 0 767.6901125709288 464.75792810058607
+    Z
+  "
+          fill="#6b7280"
+          fill-opacity="0.6"
+          stroke="#1f2937"
+          stroke-width="1"
+          class="section-path"
+          data-section="526"
+        />
+        <title>526 (0 seats)</title>
+      </g>
+    
+
+      <g class="section" data-section-id="527" data-level="other">
+        <path
+          d="
+    M 767.6901125709288 464.75792810058607
+    L 827.1768042533574 456.926356567383
+    A 330 330 0 0 1 827.1768042533574 543.073643432617
+    L 767.6901125709288 535.2420718994139
+    A 270 270 0 0 0 767.6901125709288 464.75792810058607
+    Z
+  "
+          fill="#6b7280"
+          fill-opacity="0.6"
+          stroke="#1f2937"
+          stroke-width="1"
+          class="section-path"
+          data-section="527"
+        />
+        <title>527 (0 seats)</title>
+      </g>
+    
+
+      <g class="section" data-section-id="528" data-level="other">
+        <path
+          d="
+    M 767.6901125709288 464.75792810058607
+    L 827.1768042533574 456.926356567383
+    A 330 330 0 0 1 827.1768042533574 543.073643432617
+    L 767.6901125709288 535.2420718994139
+    A 270 270 0 0 0 767.6901125709288 464.75792810058607
+    Z
+  "
+          fill="#6b7280"
+          fill-opacity="0.6"
+          stroke="#1f2937"
+          stroke-width="1"
+          class="section-path"
+          data-section="528"
+        />
+        <title>528 (0 seats)</title>
+      </g>
+    
+
+      <g class="section" data-section-id="529" data-level="other">
+        <path
+          d="
+    M 767.6901125709288 464.75792810058607
+    L 827.1768042533574 456.926356567383
+    A 330 330 0 0 1 827.1768042533574 543.073643432617
+    L 767.6901125709288 535.2420718994139
+    A 270 270 0 0 0 767.6901125709288 464.75792810058607
+    Z
+  "
+          fill="#6b7280"
+          fill-opacity="0.6"
+          stroke="#1f2937"
+          stroke-width="1"
+          class="section-path"
+          data-section="529"
+        />
+        <title>529 (0 seats)</title>
+      </g>
+    
+
+      <g class="section" data-section-id="530" data-level="other">
+        <path
+          d="
+    M 767.6901125709288 464.75792810058607
+    L 827.1768042533574 456.926356567383
+    A 330 330 0 0 1 827.1768042533574 543.073643432617
+    L 767.6901125709288 535.2420718994139
+    A 270 270 0 0 0 767.6901125709288 464.75792810058607
+    Z
+  "
+          fill="#6b7280"
+          fill-opacity="0.6"
+          stroke="#1f2937"
+          stroke-width="1"
+          class="section-path"
+          data-section="530"
+        />
+        <title>530 (0 seats)</title>
+      </g>
+    
+
+      <g class="section" data-section-id="531" data-level="other">
+        <path
+          d="
+    M 767.6901125709288 464.75792810058607
+    L 827.1768042533574 456.926356567383
+    A 330 330 0 0 1 827.1768042533574 543.073643432617
+    L 767.6901125709288 535.2420718994139
+    A 270 270 0 0 0 767.6901125709288 464.75792810058607
+    Z
+  "
+          fill="#6b7280"
+          fill-opacity="0.6"
+          stroke="#1f2937"
+          stroke-width="1"
+          class="section-path"
+          data-section="531"
+        />
+        <title>531 (0 seats)</title>
+      </g>
+    
+
+      <g class="section" data-section-id="532" data-level="other">
+        <path
+          d="
+    M 767.6901125709288 464.75792810058607
+    L 827.1768042533574 456.926356567383
+    A 330 330 0 0 1 827.1768042533574 543.073643432617
+    L 767.6901125709288 535.2420718994139
+    A 270 270 0 0 0 767.6901125709288 464.75792810058607
+    Z
+  "
+          fill="#6b7280"
+          fill-opacity="0.6"
+          stroke="#1f2937"
+          stroke-width="1"
+          class="section-path"
+          data-section="532"
+        />
+        <title>532 (0 seats)</title>
+      </g>
+    
+
+      <g class="section" data-section-id="533" data-level="other">
+        <path
+          d="
+    M 767.6901125709288 464.75792810058607
+    L 827.1768042533574 456.926356567383
+    A 330 330 0 0 1 827.1768042533574 543.073643432617
+    L 767.6901125709288 535.2420718994139
+    A 270 270 0 0 0 767.6901125709288 464.75792810058607
+    Z
+  "
+          fill="#6b7280"
+          fill-opacity="0.6"
+          stroke="#1f2937"
+          stroke-width="1"
+          class="section-path"
+          data-section="533"
+        />
+        <title>533 (0 seats)</title>
+      </g>
+    
+
+      <g class="section" data-section-id="534" data-level="other">
+        <path
+          d="
+    M 767.6901125709288 464.75792810058607
+    L 827.1768042533574 456.926356567383
+    A 330 330 0 0 1 827.1768042533574 543.073643432617
+    L 767.6901125709288 535.2420718994139
+    A 270 270 0 0 0 767.6901125709288 464.75792810058607
+    Z
+  "
+          fill="#6b7280"
+          fill-opacity="0.6"
+          stroke="#1f2937"
+          stroke-width="1"
+          class="section-path"
+          data-section="534"
+        />
+        <title>534 (0 seats)</title>
+      </g>
+    
+
+      <g class="section" data-section-id="535" data-level="other">
+        <path
+          d="
+    M 767.6901125709288 464.75792810058607
+    L 827.1768042533574 456.926356567383
+    A 330 330 0 0 1 827.1768042533574 543.073643432617
+    L 767.6901125709288 535.2420718994139
+    A 270 270 0 0 0 767.6901125709288 464.75792810058607
+    Z
+  "
+          fill="#6b7280"
+          fill-opacity="0.6"
+          stroke="#1f2937"
+          stroke-width="1"
+          class="section-path"
+          data-section="535"
+        />
+        <title>535 (0 seats)</title>
+      </g>
+    
+
+      <g class="section" data-section-id="536" data-level="other">
+        <path
+          d="
+    M 767.6901125709288 464.75792810058607
+    L 827.1768042533574 456.926356567383
+    A 330 330 0 0 1 827.1768042533574 543.073643432617
+    L 767.6901125709288 535.2420718994139
+    A 270 270 0 0 0 767.6901125709288 464.75792810058607
+    Z
+  "
+          fill="#6b7280"
+          fill-opacity="0.6"
+          stroke="#1f2937"
+          stroke-width="1"
+          class="section-path"
+          data-section="536"
+        />
+        <title>536 (0 seats)</title>
+      </g>
+    
+
+      <g class="section" data-section-id="537" data-level="other">
+        <path
+          d="
+    M 767.6901125709288 464.75792810058607
+    L 827.1768042533574 456.926356567383
+    A 330 330 0 0 1 827.1768042533574 543.073643432617
+    L 767.6901125709288 535.2420718994139
+    A 270 270 0 0 0 767.6901125709288 464.75792810058607
+    Z
+  "
+          fill="#6b7280"
+          fill-opacity="0.6"
+          stroke="#1f2937"
+          stroke-width="1"
+          class="section-path"
+          data-section="537"
+        />
+        <title>537 (0 seats)</title>
+      </g>
+    
+
+  <!-- Legend -->
+  <g transform="translate(800, 50)">
+    <text x="0" y="0" font-size="14" font-weight="bold" fill="#1f2937">Levels</text>
+    <rect x="0" y="10" width="20" height="20" fill="#2563eb" opacity="0.6" />
+    <text x="25" y="25" font-size="12" fill="#1f2937">Field</text>
+    <rect x="0" y="35" width="20" height="20" fill="#7c3aed" opacity="0.6" />
+    <text x="25" y="50" font-size="12" fill="#1f2937">Club</text>
+    <rect x="0" y="60" width="20" height="20" fill="#0891b2" opacity="0.6" />
+    <text x="25" y="75" font-size="12" fill="#1f2937">Loge</text>
+    <rect x="0" y="85" width="20" height="20" fill="#059669" opacity="0.6" />
+    <text x="25" y="100" font-size="12" fill="#1f2937">Reserve</text>
+    <rect x="0" y="110" width="20" height="20" fill="#ea580c" opacity="0.6" />
+    <text x="25" y="125" font-size="12" fill="#1f2937">Upper</text>
+    <rect x="0" y="135" width="20" height="20" fill="#dc2626" opacity="0.6" />
+    <text x="25" y="150" font-size="12" fill="#1f2937">Pavilion</text>
+  </g>
+</svg>

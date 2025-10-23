@@ -1,6 +1,6 @@
 /**
  * Terrace 327 - yankees
- * Generated: 2025-10-22T01:07:01.565Z
+ * Generated: 2025-10-23T16:41:17.854Z
  * Total Seats: 200
  * Total Rows: 10
  */

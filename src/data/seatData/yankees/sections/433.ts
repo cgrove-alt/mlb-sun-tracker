@@ -1,6 +1,6 @@
 /**
  * Grandstand 433 - yankees
- * Generated: 2025-10-22T01:07:01.589Z
+ * Generated: 2025-10-23T16:41:17.883Z
  * Total Seats: 216
  * Total Rows: 12
  */

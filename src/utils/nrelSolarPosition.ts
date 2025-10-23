@@ -5,6 +5,9 @@
  * https://www.nrel.gov/docs/fy08osti/34302.pdf
  */
 
+import { getTimezoneOffset } from './stadiumTimezone';
+import { L_TERMS, B_TERMS, R_TERMS, Y_TERMS, PE_TERMS } from '../data/nrelPeriodicTerms';
+
 interface JulianDate {
   JD: number;
   JDE: number;
@@ -108,113 +111,144 @@ export function computeSunPosition(
 
 /**
  * Calculate Julian Date and related values
- * Reference: NREL SPA Section 3.1
+ * Reference: NREL SPA Section 3.1 (Meeus formula)
  */
 function calculateJulianDate(date: Date): JulianDate {
   // Use UTC time for astronomical calculations
-  const year = date.getUTCFullYear();
-  const month = date.getUTCMonth() + 1;
+  let year = date.getUTCFullYear();
+  let month = date.getUTCMonth() + 1;
   const day = date.getUTCDate();
   const hour = date.getUTCHours() + date.getUTCMinutes() / 60 + date.getUTCSeconds() / 3600;
-  
-  // Julian day calculation
-  const a = Math.floor((14 - month) / 12);
-  const y = year + 4800 - a;
-  const m = month + 12 * a - 3;
-  
-  const JD = day + Math.floor((153 * m + 2) / 5) + 365 * y + 
-             Math.floor(y / 4) - Math.floor(y / 100) + Math.floor(y / 400) - 
-             32045 + hour / 24;
-  
+
+  // Day with decimal hours
+  const dayDecimal = day + hour / 24;
+
+  // Meeus formula adjustment for January/February
+  if (month < 3) {
+    month += 12;
+    year--;
+  }
+
+  // Julian day calculation (Meeus formula)
+  let JD = Math.floor(365.25 * (year + 4716.0)) +
+           Math.floor(30.6001 * (month + 1)) +
+           dayDecimal - 1524.5;
+
+  // Gregorian calendar correction (after October 15, 1582)
+  if (JD > 2299160.0) {
+    const a = Math.floor(year / 100);
+    JD += (2 - a + Math.floor(a / 4));
+  }
+
   // Julian Ephemeris Day
-  const deltaT = calculateDeltaT(year, month); // Simplified delta T calculation
+  const originalYear = date.getUTCFullYear();
+  const originalMonth = date.getUTCMonth() + 1;
+  const deltaT = calculateDeltaT(originalYear, originalMonth);
   const JDE = JD + deltaT / 86400;
-  
+
   // Julian Century and Millennium
   const JC = (JD - 2451545) / 36525;
   const JCE = (JDE - 2451545) / 36525;
   const JME = JCE / 10;
-  
+
   return { JD, JDE, JC, JCE, JME };
 }
 
 /**
- * Calculate Earth's heliocentric position
- * Reference: NREL SPA Section 3.2
+ * Calculate Earth's heliocentric position and convert to geocentric
+ * Reference: NREL SPA Section 3.2 and Appendix A (Tables A4.2)
  */
 function calculateGeocentricPosition(JME: number): GeocentricPosition {
-  // Simplified calculation using mean elements
-  // For full accuracy, use the complete periodic terms from NREL SPA Appendix A
-  
-  // Mean longitude (degrees)
-  const L0 = 280.46646 + 36000.76983 * JME + 0.0003032 * JME * JME;
-  
-  // Mean anomaly (degrees)
-  const M = 357.52911 + 35999.05029 * JME - 0.0001537 * JME * JME;
-  const Mrad = toRadians(M);
-  
-  // Equation of center
-  const C = (1.914602 - 0.004817 * JME - 0.000014 * JME * JME) * Math.sin(Mrad) +
-            (0.019993 - 0.000101 * JME) * Math.sin(2 * Mrad) +
-            0.000289 * Math.sin(3 * Mrad);
-  
-  // True longitude
-  const longitude = normalizeAngle(L0 + C);
-  
-  // True anomaly
-  const v = M + C;
-  
-  // Radius vector (AU)
-  const e = 0.016708634 - 0.000042037 * JME - 0.0000001267 * JME * JME;
-  const radiusVector = (1.000001018 * (1 - e * e)) / (1 + e * Math.cos(toRadians(v)));
-  
-  // Heliocentric latitude (simplified to 0 for basic calculation)
-  const latitude = 0;
-  
-  return { longitude, latitude, radiusVector };
+  // Step 1: Calculate heliocentric longitude using complete periodic terms
+  const L_rad = calculatePeriodicSum(L_TERMS, JME) / 1e8;
+  const heliocentricLongitude = toDegrees(L_rad);
+
+  // Step 2: Calculate heliocentric latitude using complete periodic terms
+  const B_rad = calculatePeriodicSum(B_TERMS, JME) / 1e8;
+  const heliocentricLatitude = toDegrees(B_rad);
+
+  // Step 3: Calculate radius vector using complete periodic terms
+  const R = calculatePeriodicSum(R_TERMS, JME) / 1e8;
+
+  // Step 4: Convert heliocentric to geocentric position
+  // Geocentric longitude = heliocentric longitude + 180°
+  const geocentricLongitude = normalizeAngle(heliocentricLongitude + 180);
+
+  // Geocentric latitude = -heliocentric latitude
+  const geocentricLatitude = -heliocentricLatitude;
+
+  return {
+    longitude: geocentricLongitude,
+    latitude: geocentricLatitude,
+    radiusVector: R
+  };
 }
 
 /**
- * Calculate nutation in longitude and obliquity
- * Reference: NREL SPA Section 3.4
+ * Calculate sum of periodic terms
+ * Each term is calculated as: Σ(A × cos(B + C × JME))
+ * Then combined with powers: (term0 + term1×JME + term2×JME² + ... + termN×JME^N)
+ */
+function calculatePeriodicSum(termArrays: number[][][], JME: number): number {
+  let sum = 0;
+
+  for (let i = 0; i < termArrays.length; i++) {
+    const terms = termArrays[i];
+    let termSum = 0;
+
+    for (const [A, B, C] of terms) {
+      termSum += A * Math.cos(B + C * JME);
+    }
+
+    // Multiply by JME^i for each term array
+    sum += termSum * Math.pow(JME, i);
+  }
+
+  return sum;
+}
+
+/**
+ * Calculate nutation in longitude and obliquity using complete NREL periodic terms
+ * Reference: NREL SPA Section 3.4 and Appendix A (Tables A4.3)
  */
 function calculateNutation(JCE: number): NutationCorrection {
-  // Simplified nutation calculation
-  // For full accuracy, use the complete periodic terms from NREL SPA
-  
-  // Mean elongation of the moon from the sun (degrees)
-  const D = 297.85036 + 445267.111480 * JCE - 0.0019142 * JCE * JCE;
-  
-  // Mean anomaly of the sun (degrees)
-  const M = 357.52772 + 35999.050340 * JCE - 0.0001603 * JCE * JCE;
-  
-  // Mean anomaly of the moon (degrees)
-  const Mp = 134.96298 + 477198.867398 * JCE + 0.0086972 * JCE * JCE;
-  
-  // Moon's argument of latitude (degrees)
-  const F = 93.27191 + 483202.017538 * JCE - 0.0036825 * JCE * JCE;
-  
-  // Longitude of ascending node of moon's mean orbit (degrees)
-  const Omega = 125.04452 - 1934.136261 * JCE + 0.0020708 * JCE * JCE;
-  
-  // Convert to radians
-  const Drad = toRadians(D);
-  const Mrad = toRadians(M);
-  const Mprad = toRadians(Mp);
-  const Frad = toRadians(F);
-  const Omegarad = toRadians(Omega);
-  
-  // Nutation in longitude (arcseconds)
-  const nutationLongitude = -17.20 * Math.sin(Omegarad) - 1.32 * Math.sin(2 * Frad) - 
-                           0.23 * Math.sin(2 * Mprad) + 0.21 * Math.sin(2 * Omegarad);
-  
-  // Nutation in obliquity (arcseconds)
-  const nutationObliquity = 9.20 * Math.cos(Omegarad) + 0.57 * Math.cos(2 * Frad) + 
-                           0.10 * Math.cos(2 * Mprad) - 0.09 * Math.cos(2 * Omegarad);
-  
+  // Calculate fundamental arguments (in degrees)
+  // Mean elongation of the moon from the sun
+  const D = 297.85036 + 445267.111480 * JCE - 0.0019142 * JCE * JCE + JCE * JCE * JCE / 189474;
+
+  // Mean anomaly of the sun (Earth)
+  const M = 357.52772 + 35999.050340 * JCE - 0.0001603 * JCE * JCE - JCE * JCE * JCE / 300000;
+
+  // Mean anomaly of the moon
+  const Mp = 134.96298 + 477198.867398 * JCE + 0.0086972 * JCE * JCE + JCE * JCE * JCE / 56250;
+
+  // Moon's argument of latitude
+  const F = 93.27191 + 483202.017538 * JCE - 0.0036825 * JCE * JCE + JCE * JCE * JCE / 327270;
+
+  // Longitude of ascending node of moon's mean orbit
+  const Omega = 125.04452 - 1934.136261 * JCE + 0.0020708 * JCE * JCE + JCE * JCE * JCE / 450000;
+
+  // Calculate nutation using all 63 periodic terms
+  let nutationLongitude = 0; // in 0.0001 arcseconds
+  let nutationObliquity = 0; // in 0.0001 arcseconds
+
+  for (let i = 0; i < Y_TERMS.length; i++) {
+    const [y0, y1, y2, y3, y4] = Y_TERMS[i];
+    const [pe0, pe1, pe2, pe3] = PE_TERMS[i];
+
+    // Calculate argument for this term
+    const argument = toRadians(
+      y0 * D + y1 * M + y2 * Mp + y3 * F + y4 * Omega
+    );
+
+    // Add periodic term contribution
+    nutationLongitude += (pe0 + pe1 * JCE) * Math.sin(argument);
+    nutationObliquity += (pe2 + pe3 * JCE) * Math.cos(argument);
+  }
+
   return {
-    longitude: nutationLongitude / 3600, // Convert to degrees
-    obliquity: nutationObliquity / 3600  // Convert to degrees
+    longitude: nutationLongitude / 36000000, // Convert from 0.0001 arcseconds to degrees
+    obliquity: nutationObliquity / 36000000  // Convert from 0.0001 arcseconds to degrees
   };
 }
 
@@ -416,33 +450,13 @@ export function getSunPositionNREL(
   azimuthDegrees: number;
   altitudeDegrees: number;
 } {
-  // The input date is in local time, we need UTC for NREL
-  // Use the provided timezone if available, otherwise use browser timezone
-  let timeZoneOffset: number;
-  
-  if (timezone) {
-    // Use proper timezone conversion if timezone is provided
-    // For now, use a simplified approach until the module is properly integrated
-    // This will be replaced with proper timezone handling
-    const month = date.getMonth();
-    if (timezone === 'America/New_York') {
-      timeZoneOffset = (month >= 2 && month <= 10) ? -4 : -5; // EDT/EST
-    } else if (timezone === 'America/Los_Angeles') {
-      timeZoneOffset = (month >= 2 && month <= 10) ? -7 : -8; // PDT/PST
-    } else if (timezone === 'America/Chicago') {
-      timeZoneOffset = (month >= 2 && month <= 10) ? -5 : -6; // CDT/CST
-    } else if (timezone === 'America/Phoenix') {
-      timeZoneOffset = -7; // MST (no DST)
-    } else {
-      // Fallback to browser timezone
-      timeZoneOffset = -date.getTimezoneOffset() / 60;
-    }
-  } else {
-    // Use browser's timezone offset as fallback
-    timeZoneOffset = -date.getTimezoneOffset() / 60;
-  }
-  
-  // NREL needs UTC time, so ensure we're passing UTC
+  // The Date object already represents a specific moment in UTC time
+  // NREL's computeSunPosition will extract the UTC components
+  // We just need to pass the timezone offset for reference (though currently unused)
+  const timeZoneOffset = timezone
+    ? getTimezoneOffset(date, timezone)
+    : -date.getTimezoneOffset() / 60;
+
   const result = computeSunPosition(
     date,
     latitude,

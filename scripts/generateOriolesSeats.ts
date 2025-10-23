@@ -150,6 +150,61 @@ function getSeatsPerRow(level: string, sectionId: string): number {
   return 18; // fallback
 }
 
+// Fine-tune adjustments to hit exact capacity (45,971 seats)
+// Format: { sectionId: { rowLabel: seatAdjustment } }
+// Positive values add seats, negative values remove seats
+// Target: Add 92 seats (45,879 → 45,971)
+const FINE_TUNE_ADJUSTMENTS: Record<string, Record<string, number>> = {
+  // Add 1 seat to rows 15-16 (2 rows) for Field Box sections (2 rows × 46 sections = 92 seats)
+  '4': { '15': 1, '16': 1 },
+  '6': { '15': 1, '16': 1 },
+  '8': { '15': 1, '16': 1 },
+  '10': { '15': 1, '16': 1 },
+  '12': { '15': 1, '16': 1 },
+  '14': { '15': 1, '16': 1 },
+  '16': { '15': 1, '16': 1 },
+  '18': { '15': 1, '16': 1 },
+  '20': { '15': 1, '16': 1 },
+  '22': { '15': 1, '16': 1 },
+  '24': { '15': 1, '16': 1 },
+  '26': { '15': 1, '16': 1 },
+  '28': { '15': 1, '16': 1 },
+  '30': { '15': 1, '16': 1 },
+  '32': { '15': 1, '16': 1 },
+  '34': { '15': 1, '16': 1 },
+  '36': { '15': 1, '16': 1 },
+  '38': { '15': 1, '16': 1 },
+  '40': { '15': 1, '16': 1 },
+  '42': { '15': 1, '16': 1 },
+  '44': { '15': 1, '16': 1 },
+  '46': { '15': 1, '16': 1 },
+  '48': { '15': 1, '16': 1 },
+  '50': { '15': 1, '16': 1 },
+  '52': { '15': 1, '16': 1 },
+  '54': { '15': 1, '16': 1 },
+  '56': { '15': 1, '16': 1 },
+  '58': { '15': 1, '16': 1 },
+  '60': { '15': 1, '16': 1 },
+  '62': { '15': 1, '16': 1 },
+  '64': { '15': 1, '16': 1 },
+  '66': { '15': 1, '16': 1 },
+  '68': { '15': 1, '16': 1 },
+  '70': { '15': 1, '16': 1 },
+  '72': { '15': 1, '16': 1 },
+  '74': { '15': 1, '16': 1 },
+  '76': { '15': 1, '16': 1 },
+  '78': { '15': 1, '16': 1 },
+  '80': { '15': 1, '16': 1 },
+  '82': { '15': 1, '16': 1 },
+  '84': { '15': 1, '16': 1 },
+  '86': { '15': 1, '16': 1 },
+  '88': { '15': 1, '16': 1 },
+  '90': { '15': 1, '16': 1 },
+  '92': { '15': 1, '16': 1 },
+  '94': { '15': 1, '16': 1 },
+};
+// Total added: 46 sections × 2 rows × 1 seat = 92 seats
+
 // Distance from home plate
 function getDistance(level: string, sectionId: string): number {
   const sectionNum = parseInt(sectionId, 10);
@@ -222,10 +277,16 @@ function createSectionConfig(sectionId: string, level: string): SeatGenerationCo
   const rows = [];
   for (let i = 0; i < rowCount; i++) {
     const rowLabel = `${i + 1}`; // Simple numeric rows
+    let adjustedSeatCount = seatsPerRow;
+
+    // Apply fine-tune adjustments if they exist for this section and row
+    if (FINE_TUNE_ADJUSTMENTS[sectionId] && FINE_TUNE_ADJUSTMENTS[sectionId][rowLabel] !== undefined) {
+      adjustedSeatCount += FINE_TUNE_ADJUSTMENTS[sectionId][rowLabel];
+    }
 
     rows.push({
       rowLabel,
-      seatCount: seatsPerRow,
+      seatCount: adjustedSeatCount,
       rowNumber: i,
     });
   }

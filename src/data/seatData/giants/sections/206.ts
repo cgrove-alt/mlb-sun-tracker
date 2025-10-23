@@ -1,6 +1,6 @@
 /**
  * Club 206 - giants
- * Generated: 2025-10-22T00:57:42.854Z
+ * Generated: 2025-10-23T16:48:21.115Z
  * Total Seats: 288
  * Total Rows: 18
  */

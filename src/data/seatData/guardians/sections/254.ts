@@ -1,6 +1,6 @@
 /**
  * Suite 254 - guardians
- * Generated: 2025-10-23T00:11:52.236Z
+ * Generated: 2025-10-23T17:05:33.416Z
  * Total Seats: 30
  * Total Rows: 3
  */

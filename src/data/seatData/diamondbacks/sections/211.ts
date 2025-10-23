@@ -1,6 +1,6 @@
 /**
  * Club 211 - diamondbacks
- * Generated: 2025-10-22T23:53:58.762Z
+ * Generated: 2025-10-23T17:05:48.013Z
  * Total Seats: 539
  * Total Rows: 11
  */

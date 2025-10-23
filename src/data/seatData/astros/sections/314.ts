@@ -1,6 +1,6 @@
 /**
  * View 314 - astros
- * Generated: 2025-10-22T20:52:08.632Z
+ * Generated: 2025-10-23T17:02:36.212Z
  * Total Seats: 225
  * Total Rows: 15
  */

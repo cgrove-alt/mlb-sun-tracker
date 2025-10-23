@@ -1,6 +1,6 @@
 /**
  * Club 312 - brewers
- * Generated: 2025-10-22T22:55:29.703Z
+ * Generated: 2025-10-23T17:05:37.344Z
  * Total Seats: 252
  * Total Rows: 7
  */

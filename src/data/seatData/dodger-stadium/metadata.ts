@@ -1,6 +1,6 @@
 /**
  * Dodger Stadium - Stadium Metadata
- * Generated: 2025-10-22T00:43:37.633Z
+ * Generated: 2025-10-23T16:49:18.850Z
  */
 
 import type { SeatDataMetadata, StadiumSeatingStats } from '@/types/seat';
@@ -8,19 +8,19 @@ import type { SeatDataMetadata, StadiumSeatingStats } from '@/types/seat';
 export const metadata: SeatDataMetadata = {
   stadiumId: 'dodger-stadium',
   stadiumName: 'Dodger Stadium',
-  generatedAt: '2025-10-22T00:43:37.633Z',
+  generatedAt: '2025-10-23T16:49:18.850Z',
   version: '2.0.0',
   dataSource: 'Programmatically generated from official seating parameters',
   totalSections: 195,
-  lastValidated: '2025-10-22T00:43:37.633Z',
+  lastValidated: '2025-10-23T16:49:18.850Z',
 };
 
 export const stats: StadiumSeatingStats = {
-  totalSeats: 55916,
+  totalSeats: 56000,
   totalSections: 195,
   totalRows: 3827,
   levels: {
-    'Field Level': 28156,
+    'Field Level': 28240,
     'Loge Level': 13608,
     'Reserve Level': 12584,
     'Top Deck': 5980,
@@ -28,9 +28,9 @@ export const stats: StadiumSeatingStats = {
     'Infield Reserve': 9196,
   },
   seatDistribution: {
-    standard: 52001,
-    aisle: 2795,
-    wheelchair: 1118,
+    standard: 52080,
+    aisle: 2800,
+    wheelchair: 1120,
   },
   coveredSeats: 5324,
 };

@@ -1,6 +1,6 @@
 /**
  * Yankee Stadium - Stadium Metadata
- * Generated: 2025-10-22T01:07:01.590Z
+ * Generated: 2025-10-23T16:41:17.884Z
  */
 
 import type { SeatDataMetadata, StadiumSeatingStats } from '@/types/seat';
@@ -8,27 +8,27 @@ import type { SeatDataMetadata, StadiumSeatingStats } from '@/types/seat';
 export const metadata: SeatDataMetadata = {
   stadiumId: 'yankees',
   stadiumName: 'Yankee Stadium',
-  generatedAt: '2025-10-22T01:07:01.590Z',
+  generatedAt: '2025-10-23T16:41:17.884Z',
   version: '1.0.0',
   dataSource: 'Generated from official seating charts',
   totalSections: 131,
-  lastValidated: '2025-10-22T01:07:01.590Z',
+  lastValidated: '2025-10-23T16:41:17.884Z',
 };
 
 export const stats: StadiumSeatingStats = {
-  totalSeats: 46700,
+  totalSeats: 46537,
   totalSections: 131,
   totalRows: 2361,
   levels: {
-    'Field Level': 17200,
-    'Main Level': 17020,
+    'Field Level': 17098,
+    'Main Level': 16959,
     'Terrace Level': 6000,
     'Grandstand Level': 6480,
   },
   seatDistribution: {
-    standard: 43431,
-    aisle: 2335,
-    wheelchair: 934,
+    standard: 43279,
+    aisle: 2326,
+    wheelchair: 930,
   },
-  coveredSeats: 28030,
+  coveredSeats: 27928,
 };

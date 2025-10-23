@@ -1,6 +1,6 @@
 /**
  * Club 248 - astros
- * Generated: 2025-10-22T20:52:08.621Z
+ * Generated: 2025-10-23T17:02:36.201Z
  * Total Seats: 130
  * Total Rows: 10
  */

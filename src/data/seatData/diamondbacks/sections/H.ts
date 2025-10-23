@@ -1,6 +1,6 @@
 /**
  * Infield Suite H - diamondbacks
- * Generated: 2025-10-22T23:53:58.704Z
+ * Generated: 2025-10-23T17:05:47.936Z
  * Total Seats: 208
  * Total Rows: 13
  */

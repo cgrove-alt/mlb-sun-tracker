@@ -14,6 +14,7 @@ import {
 import StadiumTitleBlock from './StadiumTitleBlock';
 import { StadiumTitleData } from './StadiumTitleBlock';
 import { SectionSelector } from './SectionSelector';
+import { StadiumMapSVG } from './StadiumMapSVG';
 import './StadiumGuide.css';
 
 interface ComprehensiveStadiumGuideProps {
@@ -129,6 +130,19 @@ const ComprehensiveStadiumGuide: React.FC<ComprehensiveStadiumGuideProps> = ({ s
         data={titleData}
         showBreadcrumb={true}
       />
+
+      {/* Interactive Stadium Map */}
+      <section className="guide-section">
+        <h2>Interactive Stadium Map</h2>
+        <p className="text-gray-600 mb-4">
+          Click any section to view seat-level details and sun exposure information.
+        </p>
+        <StadiumMapSVG
+          stadiumId={stadiumId}
+          className="my-6"
+          showLegend={false}
+        />
+      </section>
 
       {/* Overview Section */}
       <section className="guide-section">

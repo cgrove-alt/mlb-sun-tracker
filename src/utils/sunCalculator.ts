@@ -1,12 +1,13 @@
 // sunCalculator.ts
 import SunCalc from 'suncalc';
-import { computeSunPosition } from './nrelSolarPosition';
+import { getSunPositionNREL } from './nrelSolarPositionOfficial';
 
 interface Stadium {
   id: string;
   name: string;
   latitude: number;
   longitude: number;
+  timezone: string;
   roofType?: 'open' | 'fixed' | 'retractable';
   roofHeight?: number;
   roofOverhang?: number;
@@ -84,35 +85,26 @@ export class SunCalculator {
   calculateSunPosition(date: string | Date, time?: string): SunPosition {
     // Accept either a Date object or date/time strings
     const dateTime = date instanceof Date ? date : new Date(`${date}T${time}`);
-    const useNREL = false; // Force SunCalc for now due to timezone issues with NREL
-    
+    // Use NREL implementation with complete periodic terms
+    // Provides ±0.0003° accuracy (vs SunCalc's ±0.5° accuracy)
+    // (at 100ft distance: 0.0003° error = ~0.006ft vs 0.5° error = ~1ft shadow position)
+    const useNREL = true;
+
     let altitude: number;
     let azimuth: number;
-    
+
     if (useNREL) {
       try {
-        // Use NREL Solar Position Algorithm
-        // IMPORTANT: Use the stadium's timezone, not the local machine's timezone
-        // For now, use PST/PDT offset (-7 or -8 hours) for west coast stadiums
-        // This should ideally use the stadium.timezone field
-        let timeZoneOffset = -dateTime.getTimezoneOffset() / 60;
-        
-        // Override for west coast stadiums (temporary fix)
-        // @ts-ignore - stadium.timezone exists but type def is missing
-        if (this.stadium.timezone === 'America/Los_Angeles') {
-          // Check if date is in PDT (March-November) or PST
-          const month = dateTime.getMonth();
-          timeZoneOffset = (month >= 2 && month <= 10) ? -7 : -8;
-        }
-        
-        const nrelResult = computeSunPosition(
+        // Use NREL Solar Position Algorithm with proper timezone handling
+        // getSunPositionNREL uses stadiumTimezone.ts for accurate DST detection
+        const nrelResult = getSunPositionNREL(
           dateTime,
           this.stadium.latitude,
           this.stadium.longitude,
-          timeZoneOffset
+          this.stadium.timezone
         );
-        altitude = nrelResult.elevation;
-        azimuth = nrelResult.azimuth;
+        altitude = nrelResult.altitudeDegrees;
+        azimuth = nrelResult.azimuthDegrees;
       } catch (error) {
         console.warn('NREL SPA calculation failed, falling back to SunCalc:', error);
         // Fall through to SunCalc

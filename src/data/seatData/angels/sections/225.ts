@@ -1,6 +1,6 @@
 /**
  * Terrace 225 - angels
- * Generated: 2025-10-22T20:29:59.771Z
+ * Generated: 2025-10-23T17:06:05.686Z
  * Total Seats: 198
  * Total Rows: 11
  */

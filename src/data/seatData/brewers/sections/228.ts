@@ -1,6 +1,6 @@
 /**
  * Loge 228 - brewers
- * Generated: 2025-10-22T22:55:29.698Z
+ * Generated: 2025-10-23T17:05:37.336Z
  * Total Seats: 340
  * Total Rows: 20
  */

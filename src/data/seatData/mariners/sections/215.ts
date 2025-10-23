@@ -1,6 +1,6 @@
 /**
  * Club 215 - mariners
- * Generated: 2025-10-23T00:32:06.256Z
+ * Generated: 2025-10-23T16:55:02.952Z
  * Total Seats: 132
  * Total Rows: 12
  */

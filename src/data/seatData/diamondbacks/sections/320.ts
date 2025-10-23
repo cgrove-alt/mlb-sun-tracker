@@ -1,6 +1,6 @@
 /**
  * Upper 320 - diamondbacks
- * Generated: 2025-10-22T23:53:58.792Z
+ * Generated: 2025-10-23T17:05:48.048Z
  * Total Seats: 480
  * Total Rows: 40
  */

@@ -1,6 +1,6 @@
 /**
  * Club 308 - brewers
- * Generated: 2025-10-22T22:55:29.700Z
+ * Generated: 2025-10-23T17:05:37.338Z
  * Total Seats: 252
  * Total Rows: 7
  */

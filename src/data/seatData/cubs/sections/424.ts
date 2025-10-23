@@ -1,6 +1,6 @@
 /**
  * Upper Reserved 424 - cubs
- * Generated: 2025-10-22T01:03:12.042Z
+ * Generated: 2025-10-23T16:50:13.762Z
  * Total Seats: 207
  * Total Rows: 9
  */

@@ -1,6 +1,6 @@
 /**
  * Terrace 204 - cubs
- * Generated: 2025-10-22T01:03:11.925Z
+ * Generated: 2025-10-23T16:50:13.687Z
  * Total Seats: 506
  * Total Rows: 23
  */

@@ -13,32 +13,57 @@ interface SectionPageProps {
   }>;
 }
 
+/**
+ * Map stadium ID to seat data directory name
+ * Most stadiums have matching IDs, except Dodgers
+ */
+function getSeatDataStadiumId(stadiumId: string): string {
+  return stadiumId === 'dodgers' ? 'dodger-stadium' : stadiumId;
+}
+
 export async function generateStaticParams() {
-  // Read actual section files from disk to generate accurate params
-  const sectionsDir = path.join(
-    process.cwd(),
-    'src',
-    'data',
-    'seatData',
-    'dodger-stadium',
-    'sections'
-  );
+  // Generate section pages for all 30 MLB stadiums
+  const allParams: Array<{ stadiumId: string; sectionId: string }> = [];
 
-  try {
-    const sectionFiles = fs
-      .readdirSync(sectionsDir)
-      .filter((f) => f.endsWith('.ts') && f !== '_template.ts')
-      .map((f) => f.replace('.ts', ''));
+  for (const stadium of MLB_STADIUMS) {
+    const seatDataStadiumId = getSeatDataStadiumId(stadium.id);
+    const sectionsDir = path.join(
+      process.cwd(),
+      'src',
+      'data',
+      'seatData',
+      seatDataStadiumId,
+      'sections'
+    );
 
-    return sectionFiles.map((sectionId) => ({
-      stadiumId: 'dodgers',
-      sectionId,
-    }));
-  } catch (error) {
-    console.error('Failed to read section files:', error);
-    // Fallback to empty array if directory doesn't exist
-    return [];
+    try {
+      // Check if directory exists
+      if (fs.existsSync(sectionsDir)) {
+        const sectionFiles = fs
+          .readdirSync(sectionsDir)
+          .filter((f) => f.endsWith('.ts') && f !== '_template.ts')
+          .map((f) => f.replace('.ts', ''));
+
+        // Add all sections for this stadium
+        sectionFiles.forEach((sectionId) => {
+          allParams.push({
+            stadiumId: stadium.id,
+            sectionId,
+          });
+        });
+
+        console.log(`✓ Generated ${sectionFiles.length} section pages for ${stadium.name}`);
+      } else {
+        console.warn(`⚠️  No seat data found for ${stadium.name} at ${sectionsDir}`);
+      }
+    } catch (error) {
+      console.error(`Failed to read sections for ${stadium.name}:`, error);
+    }
   }
+
+  console.log(`\n📊 Total section pages generated: ${allParams.length} across ${MLB_STADIUMS.length} stadiums\n`);
+
+  return allParams;
 }
 
 export async function generateMetadata({ params }: SectionPageProps): Promise<Metadata> {
@@ -91,8 +116,7 @@ export default async function SectionPage({ params }: SectionPageProps) {
   }
 
   // Load section seat data
-  // Map stadiumId to seat data directory name
-  const seatDataStadiumId = stadiumId === 'dodgers' ? 'dodger-stadium' : stadiumId;
+  const seatDataStadiumId = getSeatDataStadiumId(stadiumId);
   const sectionData = await getSeatDataForSection(seatDataStadiumId, sectionId);
 
   if (!sectionData) {

@@ -1,6 +1,6 @@
 /**
  * View 319 - giants
- * Generated: 2025-10-22T00:57:42.891Z
+ * Generated: 2025-10-23T16:48:21.156Z
  * Total Seats: 504
  * Total Rows: 21
  */

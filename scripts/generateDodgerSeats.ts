@@ -161,6 +161,57 @@ function getSeatsPerRow(sectionId: string): number {
   return 8;
 }
 
+// Fine-tune adjustments to hit exact capacity (56,000 seats)
+// Format: { sectionId: { rowLabel: seatAdjustment } }
+// Positive values add seats, negative values remove seats
+// Target: Add 84 seats (55,916 → 56,000)
+const FINE_TUNE_ADJUSTMENTS: Record<string, Record<string, number>> = {
+  // Add 1 seat to rows M-N (2 rows) for Field Level sections (2 rows × 42 sections = 84 seats)
+  '1': { 'M': 1, 'N': 1 },
+  '2': { 'M': 1, 'N': 1 },
+  '3': { 'M': 1, 'N': 1 },
+  '4': { 'M': 1, 'N': 1 },
+  '5': { 'M': 1, 'N': 1 },
+  '6': { 'M': 1, 'N': 1 },
+  '7': { 'M': 1, 'N': 1 },
+  '8': { 'M': 1, 'N': 1 },
+  '9': { 'M': 1, 'N': 1 },
+  '10': { 'M': 1, 'N': 1 },
+  '11': { 'M': 1, 'N': 1 },
+  '12': { 'M': 1, 'N': 1 },
+  '13': { 'M': 1, 'N': 1 },
+  '14': { 'M': 1, 'N': 1 },
+  '15': { 'M': 1, 'N': 1 },
+  '16': { 'M': 1, 'N': 1 },
+  '17': { 'M': 1, 'N': 1 },
+  '18': { 'M': 1, 'N': 1 },
+  '19': { 'M': 1, 'N': 1 },
+  '20': { 'M': 1, 'N': 1 },
+  '21': { 'M': 1, 'N': 1 },
+  '22': { 'M': 1, 'N': 1 },
+  '23': { 'M': 1, 'N': 1 },
+  '24': { 'M': 1, 'N': 1 },
+  '25': { 'M': 1, 'N': 1 },
+  '26': { 'M': 1, 'N': 1 },
+  '27': { 'M': 1, 'N': 1 },
+  '28': { 'M': 1, 'N': 1 },
+  '29': { 'M': 1, 'N': 1 },
+  '30': { 'M': 1, 'N': 1 },
+  '31': { 'M': 1, 'N': 1 },
+  '32': { 'M': 1, 'N': 1 },
+  '33': { 'M': 1, 'N': 1 },
+  '34': { 'M': 1, 'N': 1 },
+  '35': { 'M': 1, 'N': 1 },
+  '36': { 'M': 1, 'N': 1 },
+  '37': { 'M': 1, 'N': 1 },
+  '38': { 'M': 1, 'N': 1 },
+  '39': { 'M': 1, 'N': 1 },
+  '40': { 'M': 1, 'N': 1 },
+  '41': { 'M': 1, 'N': 1 },
+  '42': { 'M': 1, 'N': 1 },
+};
+// Total added: 42 sections × 2 rows × 1 seat = 84 seats
+
 // Determine distance from home plate
 function getDistance(sectionId: string): number {
   // Check specific patterns BEFORE generic digit pattern
@@ -233,9 +284,16 @@ function createSectionConfig(sectionId: string): SeatGenerationConfig {
   const rows = [];
   for (let i = 0; i < rowCount; i++) {
     const rowLabel = String.fromCharCode(65 + i); // A, B, C...
+    let adjustedSeatCount = seatsPerRow;
+
+    // Apply fine-tune adjustments if they exist for this section and row
+    if (FINE_TUNE_ADJUSTMENTS[sectionId] && FINE_TUNE_ADJUSTMENTS[sectionId][rowLabel] !== undefined) {
+      adjustedSeatCount += FINE_TUNE_ADJUSTMENTS[sectionId][rowLabel];
+    }
+
     rows.push({
       rowLabel,
-      seatCount: seatsPerRow,
+      seatCount: adjustedSeatCount,
       rowNumber: i,
     });
   }

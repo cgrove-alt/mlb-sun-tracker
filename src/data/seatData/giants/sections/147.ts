@@ -1,6 +1,6 @@
 /**
  * Arcade 147 - giants
- * Generated: 2025-10-22T00:57:42.848Z
+ * Generated: 2025-10-23T16:48:21.108Z
  * Total Seats: 308
  * Total Rows: 14
  */

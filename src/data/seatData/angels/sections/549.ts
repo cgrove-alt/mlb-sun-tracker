@@ -1,6 +1,6 @@
 /**
  * View 549 - angels
- * Generated: 2025-10-22T20:29:59.815Z
+ * Generated: 2025-10-23T17:06:05.758Z
  * Total Seats: 320
  * Total Rows: 20
  */

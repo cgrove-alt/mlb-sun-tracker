@@ -1,6 +1,6 @@
 /**
  * Loge 140 - redsox
- * Generated: 2025-10-22T01:13:39.199Z
+ * Generated: 2025-10-23T16:37:24.471Z
  * Total Seats: 216
  * Total Rows: 18
  */

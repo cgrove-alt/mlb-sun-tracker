@@ -1,6 +1,6 @@
 /**
  * Pavilion 315 - dodger-stadium
- * Generated: 2025-10-22T00:43:37.509Z
+ * Generated: 2025-10-23T16:49:18.777Z
  * Total Seats: 414
  * Total Rows: 23
  */

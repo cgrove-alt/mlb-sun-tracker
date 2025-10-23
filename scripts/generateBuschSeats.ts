@@ -85,6 +85,64 @@ function getRowCount(level: string, sectionNum: number): number {
   return 15;
 }
 
+// Fine-tune adjustments to hit exact capacity (44,383 seats)
+// Format: { sectionId: { rowLabel: seatAdjustment } }
+// Negative values remove seats, positive values add seats
+// Row labels are letters: A=row 0, B=row 1, ..., M=row 12, N=row 13, O=row 14
+const FINE_TUNE_ADJUSTMENTS: Record<string, Record<string, number>> = {
+  // Remove 1 seat from rows M-O (12-14) for 100-Level sections (3 rows × 47 sections selected = 141 seats)
+  '101': { 'M': -1, 'N': -1, 'O': -1 },
+  '102': { 'M': -1, 'N': -1, 'O': -1 },
+  '103': { 'M': -1, 'N': -1, 'O': -1 },
+  '104': { 'M': -1, 'N': -1, 'O': -1 },
+  '105': { 'M': -1, 'N': -1, 'O': -1 },
+  '106': { 'M': -1, 'N': -1, 'O': -1 },
+  '107': { 'M': -1, 'N': -1, 'O': -1 },
+  '108': { 'M': -1, 'N': -1, 'O': -1 },
+  '109': { 'M': -1, 'N': -1, 'O': -1 },
+  '110': { 'M': -1, 'N': -1, 'O': -1 },
+  '111': { 'M': -1, 'N': -1, 'O': -1 },
+  '112': { 'M': -1, 'N': -1, 'O': -1 },
+  '113': { 'M': -1, 'N': -1, 'O': -1 },
+  '114': { 'M': -1, 'N': -1, 'O': -1 },
+  '115': { 'M': -1, 'N': -1, 'O': -1 },
+  '116': { 'M': -1, 'N': -1, 'O': -1 },
+  '117': { 'M': -1, 'N': -1, 'O': -1 },
+  '118': { 'M': -1, 'N': -1, 'O': -1 },
+  '119': { 'M': -1, 'N': -1, 'O': -1 },
+  '120': { 'M': -1, 'N': -1, 'O': -1 },
+  '121': { 'M': -1, 'N': -1, 'O': -1 },
+  '122': { 'M': -1, 'N': -1, 'O': -1 },
+  '123': { 'M': -1, 'N': -1, 'O': -1 },
+  '124': { 'M': -1, 'N': -1, 'O': -1 },
+  '125': { 'M': -1, 'N': -1, 'O': -1 },
+  '126': { 'M': -1, 'N': -1, 'O': -1 },
+  '127': { 'M': -1, 'N': -1, 'O': -1 },
+  '128': { 'M': -1, 'N': -1, 'O': -1 },
+  '129': { 'M': -1, 'N': -1, 'O': -1 },
+  '130': { 'M': -1, 'N': -1, 'O': -1 },
+  '131': { 'M': -1, 'N': -1, 'O': -1 },
+  '132': { 'M': -1, 'N': -1, 'O': -1 },
+  '133': { 'M': -1, 'N': -1, 'O': -1 },
+  '134': { 'M': -1, 'N': -1, 'O': -1 },
+  '135': { 'M': -1, 'N': -1, 'O': -1 },
+  '136': { 'M': -1, 'N': -1, 'O': -1 },
+  '137': { 'M': -1, 'N': -1, 'O': -1 },
+  '138': { 'M': -1, 'N': -1, 'O': -1 },
+  '139': { 'M': -1, 'N': -1, 'O': -1 },
+  '140': { 'M': -1, 'N': -1, 'O': -1 },
+  '141': { 'M': -1, 'N': -1, 'O': -1 },
+  '142': { 'M': -1, 'N': -1, 'O': -1 },
+  '143': { 'M': -1, 'N': -1, 'O': -1 },
+  '144': { 'M': -1, 'N': -1, 'O': -1 },
+  '145': { 'M': -1, 'N': -1, 'O': -1 },
+  '146': { 'M': -1, 'N': -1, 'O': -1 },
+  '147': { 'M': -1, 'N': -1, 'O': -1 },
+  '148': { 'M': -1, 'N': -1 },
+};
+// Total removed: 141 (100-Level: 46 sections × 3 rows) + 5 (147: 3 rows, 148: 2 rows) = 146 seats
+// Target: 44,526 - 143 = 44,383 seats exactly
+
 // Determine seats per row
 function getSeatsPerRow(level: string, sectionNum: number): number {
   if (level === '100') {
@@ -158,9 +216,16 @@ function createSectionConfig(sectionNum: number, level: string): SeatGenerationC
   const rows = [];
   for (let i = 0; i < rowCount; i++) {
     const rowLabel = String.fromCharCode(65 + i); // A, B, C...
+    let adjustedSeatCount = seatsPerRow;
+
+    // Apply fine-tune adjustments if they exist for this section and row
+    if (FINE_TUNE_ADJUSTMENTS[sectionId] && FINE_TUNE_ADJUSTMENTS[sectionId][rowLabel] !== undefined) {
+      adjustedSeatCount += FINE_TUNE_ADJUSTMENTS[sectionId][rowLabel];
+    }
+
     rows.push({
       rowLabel,
-      seatCount: seatsPerRow,
+      seatCount: adjustedSeatCount,
       rowNumber: i, // 0-based index
     });
   }

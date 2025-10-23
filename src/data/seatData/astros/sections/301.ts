@@ -1,6 +1,6 @@
 /**
  * View 301 - astros
- * Generated: 2025-10-22T20:52:08.626Z
+ * Generated: 2025-10-23T17:02:36.205Z
  * Total Seats: 225
  * Total Rows: 15
  */

@@ -123,6 +123,40 @@ function getSeatsPerRow(sectionId: string): number {
   return 18;
 }
 
+// Fine-tune adjustments to hit exact capacity (41,649 seats)
+// Format: { sectionId: { rowLabel: seatAdjustment } }
+// Positive values add seats, negative values remove seats
+// Target: Add 50 seats (41,599 → 41,649)
+const FINE_TUNE_ADJUSTMENTS: Record<string, Record<string, number>> = {
+  // Add 1 seat to rows 14-15 (2 rows) for Field Level sections (2 rows × 25 sections = 50 seats)
+  '101': { '14': 1, '15': 1 },
+  '102': { '14': 1, '15': 1 },
+  '103': { '14': 1, '15': 1 },
+  '104': { '14': 1, '15': 1 },
+  '105': { '14': 1, '15': 1 },
+  '106': { '14': 1, '15': 1 },
+  '107': { '14': 1, '15': 1 },
+  '108': { '14': 1, '15': 1 },
+  '109': { '14': 1, '15': 1 },
+  '110': { '14': 1, '15': 1 },
+  '111': { '14': 1, '15': 1 },
+  '112': { '14': 1, '15': 1 },
+  '113': { '14': 1, '15': 1 },
+  '114': { '14': 1, '15': 1 },
+  '115': { '14': 1, '15': 1 },
+  '116': { '14': 1, '15': 1 },
+  '117': { '14': 1, '15': 1 },
+  '118': { '14': 1, '15': 1 },
+  '119': { '14': 1, '15': 1 },
+  '120': { '14': 1, '15': 1 },
+  '121': { '14': 1, '15': 1 },
+  '122': { '14': 1, '15': 1 },
+  '123': { '14': 1, '15': 1 },
+  '124': { '14': 1, '15': 1 },
+  '125': { '14': 1, '15': 1 },
+};
+// Total added: 25 sections × 2 rows × 1 seat = 50 seats
+
 // Determine distance from home plate
 function getDistance(sectionId: string): number {
   if (sectionId.match(/^4\d\d$/)) return 240; // Upper Reserved
@@ -188,9 +222,16 @@ function createSectionConfig(sectionId: string): SeatGenerationConfig {
   const rows = [];
   for (let i = 0; i < rowCount; i++) {
     const rowLabel = `${i + 1}`;
+    let adjustedSeatCount = seatsPerRow;
+
+    // Apply fine-tune adjustments if they exist for this section and row
+    if (FINE_TUNE_ADJUSTMENTS[sectionId] && FINE_TUNE_ADJUSTMENTS[sectionId][rowLabel] !== undefined) {
+      adjustedSeatCount += FINE_TUNE_ADJUSTMENTS[sectionId][rowLabel];
+    }
+
     rows.push({
       rowLabel,
-      seatCount: seatsPerRow,
+      seatCount: adjustedSeatCount,
       rowNumber: i, // 0-based index
     });
   }

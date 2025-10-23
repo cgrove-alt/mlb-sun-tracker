@@ -1,6 +1,6 @@
 /**
  * Grandstand 416 - yankees
- * Generated: 2025-10-22T01:07:01.581Z
+ * Generated: 2025-10-23T16:41:17.868Z
  * Total Seats: 216
  * Total Rows: 12
  */

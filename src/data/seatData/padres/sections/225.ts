@@ -1,6 +1,6 @@
 /**
  * 225 - padres
- * Generated: 2025-10-23T01:26:27.305Z
+ * Generated: 2025-10-23T17:00:05.359Z
  * Total Seats: 294
  * Total Rows: 14
  */

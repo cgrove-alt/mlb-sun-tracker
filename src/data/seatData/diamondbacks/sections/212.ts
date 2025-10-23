@@ -1,6 +1,6 @@
 /**
  * Club 212 - diamondbacks
- * Generated: 2025-10-22T23:53:58.763Z
+ * Generated: 2025-10-23T17:05:48.014Z
  * Total Seats: 539
  * Total Rows: 11
  */

@@ -1,6 +1,6 @@
 /**
  * Club 225 - giants
- * Generated: 2025-10-22T00:57:42.866Z
+ * Generated: 2025-10-23T16:48:21.128Z
  * Total Seats: 252
  * Total Rows: 18
  */

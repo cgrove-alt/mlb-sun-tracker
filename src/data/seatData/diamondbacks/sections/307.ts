@@ -1,6 +1,6 @@
 /**
  * Upper 307 - diamondbacks
- * Generated: 2025-10-22T23:53:58.779Z
+ * Generated: 2025-10-23T17:05:48.033Z
  * Total Seats: 320
  * Total Rows: 32
  */

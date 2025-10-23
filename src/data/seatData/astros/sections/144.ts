@@ -1,6 +1,6 @@
 /**
  * Section 144 - astros
- * Generated: 2025-10-22T20:52:08.584Z
+ * Generated: 2025-10-23T17:02:36.154Z
  * Total Seats: 240
  * Total Rows: 16
  */

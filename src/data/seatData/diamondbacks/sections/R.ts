@@ -1,6 +1,6 @@
 /**
  * First Base Box R - diamondbacks
- * Generated: 2025-10-22T23:53:58.709Z
+ * Generated: 2025-10-23T17:05:47.942Z
  * Total Seats: 112
  * Total Rows: 7
  */

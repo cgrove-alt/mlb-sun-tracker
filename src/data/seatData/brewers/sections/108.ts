@@ -1,6 +1,6 @@
 /**
  * Field 108 - brewers
- * Generated: 2025-10-22T22:55:29.663Z
+ * Generated: 2025-10-23T17:05:37.294Z
  * Total Seats: 459
  * Total Rows: 27
  */

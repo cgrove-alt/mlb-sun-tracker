@@ -1,6 +1,6 @@
 /**
  * Club 242 - mariners
- * Generated: 2025-10-23T00:32:06.264Z
+ * Generated: 2025-10-23T16:55:02.961Z
  * Total Seats: 156
  * Total Rows: 12
  */

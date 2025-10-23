@@ -1,6 +1,6 @@
 /**
  * Terrace 406 - brewers
- * Generated: 2025-10-22T22:55:29.721Z
+ * Generated: 2025-10-23T17:05:37.372Z
  * Total Seats: 300
  * Total Rows: 25
  */

@@ -1,6 +1,6 @@
 /**
  * Upper Level 312 - cubs
- * Generated: 2025-10-22T01:03:11.999Z
+ * Generated: 2025-10-23T16:50:13.734Z
  * Total Seats: 276
  * Total Rows: 12
  */

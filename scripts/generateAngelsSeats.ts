@@ -92,6 +92,18 @@ function getRowCount(level: string, sectionNum: number): number {
   return 16;
 }
 
+// Fine-tune adjustments to hit exact capacity (45,517 seats)
+// Format: { sectionId: { rowLabel: seatAdjustment } }
+// Positive values add seats, negative values remove seats
+// Target: Remove 3 seats (45,520 → 45,517)
+const FINE_TUNE_ADJUSTMENTS: Record<string, Record<string, number>> = {
+  // Remove 1 seat from back rows for 3 sections (3 sections × 1 seat = 3 seats)
+  '520': { '20': -1 },
+  '530': { '20': -1 },
+  '540': { '20': -1 },
+};
+// Total removed: 3 seats
+
 // Determine seats per row
 function getSeatsPerRow(level: string, sectionNum: number): number {
   if (level === '100') {
@@ -173,9 +185,16 @@ function createSectionConfig(sectionNum: number, level: string): SeatGenerationC
     const rowLabel = level === '100' && i < 10
       ? String.fromCharCode(65 + i) // A-J for first rows
       : `${i + 1}`; // Numbers for others
+
+    let adjustedSeatCount = seatsPerRow;
+    // Apply fine-tune adjustments if they exist for this section and row
+    if (FINE_TUNE_ADJUSTMENTS[sectionId] && FINE_TUNE_ADJUSTMENTS[sectionId][rowLabel] !== undefined) {
+      adjustedSeatCount += FINE_TUNE_ADJUSTMENTS[sectionId][rowLabel];
+    }
+
     rows.push({
       rowLabel,
-      seatCount: seatsPerRow,
+      seatCount: adjustedSeatCount,
       rowNumber: i,
     });
   }

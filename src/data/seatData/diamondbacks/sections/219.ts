@@ -1,6 +1,6 @@
 /**
  * Club 219 - diamondbacks
- * Generated: 2025-10-22T23:53:58.770Z
+ * Generated: 2025-10-23T17:05:48.021Z
  * Total Seats: 418
  * Total Rows: 11
  */

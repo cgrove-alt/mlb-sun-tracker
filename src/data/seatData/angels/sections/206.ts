@@ -1,6 +1,6 @@
 /**
  * Terrace 206 - angels
- * Generated: 2025-10-22T20:29:59.762Z
+ * Generated: 2025-10-23T17:06:05.673Z
  * Total Seats: 240
  * Total Rows: 16
  */

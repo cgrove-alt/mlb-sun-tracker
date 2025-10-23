@@ -1,6 +1,6 @@
 /**
  * Terrace Box 431 - brewers
- * Generated: 2025-10-22T22:55:29.735Z
+ * Generated: 2025-10-23T17:05:37.392Z
  * Total Seats: 300
  * Total Rows: 25
  */

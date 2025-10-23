@@ -1,6 +1,6 @@
 /**
  * Loge Box 218 - brewers
- * Generated: 2025-10-22T22:55:29.692Z
+ * Generated: 2025-10-23T17:05:37.329Z
  * Total Seats: 210
  * Total Rows: 10
  */

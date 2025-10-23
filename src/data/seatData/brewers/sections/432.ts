@@ -1,6 +1,6 @@
 /**
  * Terrace Box 432 - brewers
- * Generated: 2025-10-22T22:55:29.736Z
+ * Generated: 2025-10-23T17:05:37.393Z
  * Total Seats: 300
  * Total Rows: 25
  */

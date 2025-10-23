@@ -1,6 +1,6 @@
 /**
  * Bleachers 188 - mariners
- * Generated: 2025-10-23T00:32:06.315Z
+ * Generated: 2025-10-23T16:55:03.023Z
  * Total Seats: 272
  * Total Rows: 17
  */

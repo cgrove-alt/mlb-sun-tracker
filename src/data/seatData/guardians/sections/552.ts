@@ -1,6 +1,6 @@
 /**
  * Upper 552 - guardians
- * Generated: 2025-10-23T00:11:52.265Z
+ * Generated: 2025-10-23T17:05:33.449Z
  * Total Seats: 169
  * Total Rows: 13
  */

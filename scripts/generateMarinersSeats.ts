@@ -185,8 +185,23 @@ function getSeatsPerRow(level: string, sectionNum: number): number {
   return 12;
 }
 
+// Fine-tune adjustments to hit exact capacity (47,929 seats)
+// Format: { sectionId: { rowLabel: seatAdjustment } }
+// Positive values add seats, negative values remove seats
+// Target: Add 12 seats (47,917 → 47,929)
+const FINE_TUNE_ADJUSTMENTS: Record<string, Record<string, number>> = {
+  // Add 1 seat to rows 40-41 (2 rows) for 100-Level sections (2 rows × 6 sections = 12 seats)
+  '115': { '40': 1, '41': 1 },
+  '116': { '40': 1, '41': 1 },
+  '117': { '40': 1, '41': 1 },
+  '144': { '40': 1, '41': 1 },
+  '145': { '40': 1, '41': 1 },
+  '146': { '40': 1, '41': 1 },
+};
+// Total added: 6 sections × 2 rows × 1 seat = 12 seats
+
 // Determine distance from home plate
-function getDistance(level: string, sectionNum?: number): number {
+function getDistance(level: string, sectionNum?: number): number{
   if (level === 'bleacher') return 330; // feet (outfield bleachers)
   if (level === 'suite') return 90; // feet (suites close to field)
   if (level === 'diamond-club') return 55; // feet (premium behind home plate)
@@ -288,9 +303,16 @@ function createSectionConfig(sectionId: string, level: string): SeatGenerationCo
   const rows = [];
   for (let i = 0; i < rowCount; i++) {
     const rowLabel = `${i + 1}`; // All sections use numeric row labels
+    let adjustedSeatCount = seatsPerRow;
+
+    // Apply fine-tune adjustments if they exist for this section and row
+    if (FINE_TUNE_ADJUSTMENTS[sectionId] && FINE_TUNE_ADJUSTMENTS[sectionId][rowLabel] !== undefined) {
+      adjustedSeatCount += FINE_TUNE_ADJUSTMENTS[sectionId][rowLabel];
+    }
+
     rows.push({
       rowLabel,
-      seatCount: seatsPerRow,
+      seatCount: adjustedSeatCount,
       rowNumber: i,
     });
   }

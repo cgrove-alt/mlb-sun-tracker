@@ -91,6 +91,20 @@ function getSeatsPerRow(sectionNum: number): number {
   return 36;
 }
 
+// Fine-tune adjustments to hit exact capacity (14,014 seats)
+// Format: { sectionId: { rowLabel: seatAdjustment } }
+// Positive values add seats, negative values remove seats
+// Target: Remove 5 seats (14,019 → 14,014)
+const FINE_TUNE_ADJUSTMENTS: Record<string, Record<string, number>> = {
+  // Remove 1 seat from back rows for 5 sections (5 sections × 1 seat = 5 seats)
+  '104': { 'AH': -1 },
+  '105': { 'AH': -1 },
+  '106': { 'AH': -1 },
+  '107': { 'AG': -1 },
+  '108': { 'AG': -1 },
+};
+// Total removed: 5 seats
+
 // Determine distance from home plate
 function getDistance(sectionNum: number): number {
   // Minor league stadium - closer to field
@@ -135,10 +149,25 @@ function createSectionConfig(sectionNum: number): SeatGenerationConfig {
   // Generate row labels (minor league typically uses letters)
   const rows = [];
   for (let i = 0; i < rowCount; i++) {
-    const rowLabel = String.fromCharCode(65 + i); // A, B, C, etc.
+    let rowLabel: string;
+    if (i < 26) {
+      rowLabel = String.fromCharCode(65 + i); // A-Z
+    } else {
+      // AA, AB, AC, etc. for rows beyond Z
+      const extraRows = i - 26;
+      rowLabel = 'A' + String.fromCharCode(65 + extraRows);
+    }
+
+    let adjustedSeatCount = seatsPerRow;
+
+    // Apply fine-tune adjustments if they exist for this section and row
+    if (FINE_TUNE_ADJUSTMENTS[sectionId] && FINE_TUNE_ADJUSTMENTS[sectionId][rowLabel] !== undefined) {
+      adjustedSeatCount += FINE_TUNE_ADJUSTMENTS[sectionId][rowLabel];
+    }
+
     rows.push({
       rowLabel,
-      seatCount: seatsPerRow,
+      seatCount: adjustedSeatCount,
       rowNumber: i,
     });
   }

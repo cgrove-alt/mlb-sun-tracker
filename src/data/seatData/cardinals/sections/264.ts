@@ -1,6 +1,6 @@
 /**
  * Club 264 - cardinals
- * Generated: 2025-10-22T00:29:14.716Z
+ * Generated: 2025-10-23T16:46:18.287Z
  * Total Seats: 272
  * Total Rows: 17
  */

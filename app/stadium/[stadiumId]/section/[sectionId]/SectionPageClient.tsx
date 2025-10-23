@@ -7,11 +7,20 @@ import type { SectionSeatingData, Seat } from '../../../../../src/types/seat';
 import { SeatGrid } from '../../../../../src/components/SeatGrid';
 import { SeatDetailModal } from '../../../../../src/components/SeatDetailModal';
 import { useSunExposure } from '../../../../../src/hooks/useSunExposure';
+import { SunArcTimeline } from '../../../../../src/components/SunArcTimeline';
 
 interface SectionPageClientProps {
   stadium: Stadium;
   sectionData: SectionSeatingData;
   sectionId: string;
+}
+
+/**
+ * Map stadium ID to seat data directory name
+ * Most stadiums have matching IDs, except Dodgers
+ */
+function getSeatDataStadiumId(stadiumId: string): string {
+  return stadiumId === 'dodgers' ? 'dodger-stadium' : stadiumId;
 }
 
 export default function SectionPageClient({
@@ -23,9 +32,12 @@ export default function SectionPageClient({
   const [filterShaded, setFilterShaded] = useState(false);
   const [filterSunny, setFilterSunny] = useState(false);
 
+  // Map stadium ID to seat data directory name
+  const seatDataStadiumId = getSeatDataStadiumId(stadium.id);
+
   // Load sun exposure data
   const { data: sunExposureData, isLoading: isSunDataLoading, error: sunDataError } = useSunExposure({
-    stadiumId: 'dodger-stadium', // TODO: Map stadium.id to seat data stadium ID
+    stadiumId: seatDataStadiumId,
     gameTime: '13:10', // TODO: Allow user to select game time
     gameDate: new Date(), // TODO: Allow user to select game date
     enabled: true,
@@ -123,6 +135,17 @@ export default function SectionPageClient({
           </div>
         </div>
       </div>
+
+      {/* Sun Arc Timeline */}
+      <SunArcTimeline
+        stadiumLatitude={stadium.latitude}
+        stadiumLongitude={stadium.longitude}
+        stadiumTimezone={stadium.timezone}
+        gameDate={new Date()}
+        gameStartTime="13:10"
+        sectionId={sectionId}
+        className="mb-6"
+      />
 
       {/* Filters */}
       <div className="bg-white rounded-xl shadow-md p-6 mb-6">

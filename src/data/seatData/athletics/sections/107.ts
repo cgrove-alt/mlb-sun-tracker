@@ -1,7 +1,7 @@
 /**
  * Senate 107 - athletics
- * Generated: 2025-10-22T21:08:42.439Z
- * Total Seats: 1320
+ * Generated: 2025-10-23T17:04:25.736Z
+ * Total Seats: 1319
  * Total Rows: 33
  */
 
@@ -11,7 +11,7 @@ export const section_107: SectionSeatingData = {
   "sectionId": "107",
   "sectionName": "Senate 107",
   "stadiumId": "athletics",
-  "totalSeats": 1320,
+  "totalSeats": 1319,
   "totalRows": 33,
   "rows": [
     {
@@ -27393,7 +27393,7 @@ export const section_107: SectionSeatingData = {
       "wheelchairRow": false
     },
     {
-      "rowNumber": "[",
+      "rowNumber": "AA",
       "sectionId": "107",
       "seatCount": 40,
       "elevation": 65,
@@ -27401,9 +27401,9 @@ export const section_107: SectionSeatingData = {
       "rowSpacing": 36,
       "seats": [
         {
-          "id": "athletics-107-[-1",
+          "id": "athletics-107-AA-1",
           "sectionId": "107",
-          "row": "[",
+          "row": "AA",
           "seatNumber": "1",
           "position3D": {
             "x": 90.3997313977443,
@@ -27427,9 +27427,9 @@ export const section_107: SectionSeatingData = {
           "covered": false
         },
         {
-          "id": "athletics-107-[-2",
+          "id": "athletics-107-AA-2",
           "sectionId": "107",
-          "row": "[",
+          "row": "AA",
           "seatNumber": "2",
           "position3D": {
             "x": 90.05960415847977,
@@ -27453,9 +27453,9 @@ export const section_107: SectionSeatingData = {
           "covered": false
         },
         {
-          "id": "athletics-107-[-3",
+          "id": "athletics-107-AA-3",
           "sectionId": "107",
-          "row": "[",
+          "row": "AA",
           "seatNumber": "3",
           "position3D": {
             "x": 89.71837957135969,
@@ -27479,9 +27479,9 @@ export const section_107: SectionSeatingData = {
           "covered": false
         },
         {
-          "id": "athletics-107-[-4",
+          "id": "athletics-107-AA-4",
           "sectionId": "107",
-          "row": "[",
+          "row": "AA",
           "seatNumber": "4",
           "position3D": {
             "x": 89.37606179409794,
@@ -27505,9 +27505,9 @@ export const section_107: SectionSeatingData = {
           "covered": false
         },
         {
-          "id": "athletics-107-[-5",
+          "id": "athletics-107-AA-5",
           "sectionId": "107",
-          "row": "[",
+          "row": "AA",
           "seatNumber": "5",
           "position3D": {
             "x": 89.03265499772853,
@@ -27531,9 +27531,9 @@ export const section_107: SectionSeatingData = {
           "covered": false
         },
         {
-          "id": "athletics-107-[-6",
+          "id": "athletics-107-AA-6",
           "sectionId": "107",
-          "row": "[",
+          "row": "AA",
           "seatNumber": "6",
           "position3D": {
             "x": 88.688163366555,
@@ -27557,9 +27557,9 @@ export const section_107: SectionSeatingData = {
           "covered": false
         },
         {
-          "id": "athletics-107-[-7",
+          "id": "athletics-107-AA-7",
           "sectionId": "107",
-          "row": "[",
+          "row": "AA",
           "seatNumber": "7",
           "position3D": {
             "x": 88.3425910980991,
@@ -27583,9 +27583,9 @@ export const section_107: SectionSeatingData = {
           "covered": false
         },
         {
-          "id": "athletics-107-[-8",
+          "id": "athletics-107-AA-8",
           "sectionId": "107",
-          "row": "[",
+          "row": "AA",
           "seatNumber": "8",
           "position3D": {
             "x": 87.99594240304995,
@@ -27609,9 +27609,9 @@ export const section_107: SectionSeatingData = {
           "covered": false
         },
         {
-          "id": "athletics-107-[-9",
+          "id": "athletics-107-AA-9",
           "sectionId": "107",
-          "row": "[",
+          "row": "AA",
           "seatNumber": "9",
           "position3D": {
             "x": 87.64822150521242,
@@ -27635,9 +27635,9 @@ export const section_107: SectionSeatingData = {
           "covered": false
         },
         {
-          "id": "athletics-107-[-10",
+          "id": "athletics-107-AA-10",
           "sectionId": "107",
-          "row": "[",
+          "row": "AA",
           "seatNumber": "10",
           "position3D": {
             "x": 87.29943264145591,
@@ -27661,9 +27661,9 @@ export const section_107: SectionSeatingData = {
           "covered": false
         },
         {
-          "id": "athletics-107-[-11",
+          "id": "athletics-107-AA-11",
           "sectionId": "107",
-          "row": "[",
+          "row": "AA",
           "seatNumber": "11",
           "position3D": {
             "x": 86.94958006166274,
@@ -27687,9 +27687,9 @@ export const section_107: SectionSeatingData = {
           "covered": false
         },
         {
-          "id": "athletics-107-[-12",
+          "id": "athletics-107-AA-12",
           "sectionId": "107",
-          "row": "[",
+          "row": "AA",
           "seatNumber": "12",
           "position3D": {
             "x": 86.59866802867607,
@@ -27713,9 +27713,9 @@ export const section_107: SectionSeatingData = {
           "covered": false
         },
         {
-          "id": "athletics-107-[-13",
+          "id": "athletics-107-AA-13",
           "sectionId": "107",
-          "row": "[",
+          "row": "AA",
           "seatNumber": "13",
           "position3D": {
             "x": 86.24670081824839,
@@ -27739,9 +27739,9 @@ export const section_107: SectionSeatingData = {
           "covered": false
         },
         {
-          "id": "athletics-107-[-14",
+          "id": "athletics-107-AA-14",
           "sectionId": "107",
-          "row": "[",
+          "row": "AA",
           "seatNumber": "14",
           "position3D": {
             "x": 85.89368271898907,
@@ -27765,9 +27765,9 @@ export const section_107: SectionSeatingData = {
           "covered": false
         },
         {
-          "id": "athletics-107-[-15",
+          "id": "athletics-107-AA-15",
           "sectionId": "107",
-          "row": "[",
+          "row": "AA",
           "seatNumber": "15",
           "position3D": {
             "x": 85.53961803231213,
@@ -27791,9 +27791,9 @@ export const section_107: SectionSeatingData = {
           "covered": false
         },
         {
-          "id": "athletics-107-[-16",
+          "id": "athletics-107-AA-16",
           "sectionId": "107",
-          "row": "[",
+          "row": "AA",
           "seatNumber": "16",
           "position3D": {
             "x": 85.18451107238418,
@@ -27817,9 +27817,9 @@ export const section_107: SectionSeatingData = {
           "covered": false
         },
         {
-          "id": "athletics-107-[-17",
+          "id": "athletics-107-AA-17",
           "sectionId": "107",
-          "row": "[",
+          "row": "AA",
           "seatNumber": "17",
           "position3D": {
             "x": 84.82836616607138,
@@ -27843,9 +27843,9 @@ export const section_107: SectionSeatingData = {
           "covered": false
         },
         {
-          "id": "athletics-107-[-18",
+          "id": "athletics-107-AA-18",
           "sectionId": "107",
-          "row": "[",
+          "row": "AA",
           "seatNumber": "18",
           "position3D": {
             "x": 84.47118765288705,
@@ -27869,9 +27869,9 @@ export const section_107: SectionSeatingData = {
           "covered": false
         },
         {
-          "id": "athletics-107-[-19",
+          "id": "athletics-107-AA-19",
           "sectionId": "107",
-          "row": "[",
+          "row": "AA",
           "seatNumber": "19",
           "position3D": {
             "x": 84.11297988493868,
@@ -27895,9 +27895,9 @@ export const section_107: SectionSeatingData = {
           "covered": false
         },
         {
-          "id": "athletics-107-[-20",
+          "id": "athletics-107-AA-20",
           "sectionId": "107",
-          "row": "[",
+          "row": "AA",
           "seatNumber": "20",
           "position3D": {
             "x": 83.75374722687482,
@@ -27921,9 +27921,9 @@ export const section_107: SectionSeatingData = {
           "covered": false
         },
         {
-          "id": "athletics-107-[-21",
+          "id": "athletics-107-AA-21",
           "sectionId": "107",
-          "row": "[",
+          "row": "AA",
           "seatNumber": "21",
           "position3D": {
             "x": 83.3934940558321,
@@ -27947,9 +27947,9 @@ export const section_107: SectionSeatingData = {
           "covered": false
         },
         {
-          "id": "athletics-107-[-22",
+          "id": "athletics-107-AA-22",
           "sectionId": "107",
-          "row": "[",
+          "row": "AA",
           "seatNumber": "22",
           "position3D": {
             "x": 83.03222476138163,
@@ -27973,9 +27973,9 @@ export const section_107: SectionSeatingData = {
           "covered": false
         },
         {
-          "id": "athletics-107-[-23",
+          "id": "athletics-107-AA-23",
           "sectionId": "107",
-          "row": "[",
+          "row": "AA",
           "seatNumber": "23",
           "position3D": {
             "x": 82.66994374547589,
@@ -27999,9 +27999,9 @@ export const section_107: SectionSeatingData = {
           "covered": false
         },
         {
-          "id": "athletics-107-[-24",
+          "id": "athletics-107-AA-24",
           "sectionId": "107",
-          "row": "[",
+          "row": "AA",
           "seatNumber": "24",
           "position3D": {
             "x": 82.30665542239464,
@@ -28025,9 +28025,9 @@ export const section_107: SectionSeatingData = {
           "covered": false
         },
         {
-          "id": "athletics-107-[-25",
+          "id": "athletics-107-AA-25",
           "sectionId": "107",
-          "row": "[",
+          "row": "AA",
           "seatNumber": "25",
           "position3D": {
             "x": 81.94236421869141,
@@ -28051,9 +28051,9 @@ export const section_107: SectionSeatingData = {
           "covered": false
         },
         {
-          "id": "athletics-107-[-26",
+          "id": "athletics-107-AA-26",
           "sectionId": "107",
-          "row": "[",
+          "row": "AA",
           "seatNumber": "26",
           "position3D": {
             "x": 81.57707457313968,
@@ -28077,9 +28077,9 @@ export const section_107: SectionSeatingData = {
           "covered": false
         },
         {
-          "id": "athletics-107-[-27",
+          "id": "athletics-107-AA-27",
           "sectionId": "107",
-          "row": "[",
+          "row": "AA",
           "seatNumber": "27",
           "position3D": {
             "x": 81.21079093667836,
@@ -28103,9 +28103,9 @@ export const section_107: SectionSeatingData = {
           "covered": false
         },
         {
-          "id": "athletics-107-[-28",
+          "id": "athletics-107-AA-28",
           "sectionId": "107",
-          "row": "[",
+          "row": "AA",
           "seatNumber": "28",
           "position3D": {
             "x": 80.84351777235811,
@@ -28129,9 +28129,9 @@ export const section_107: SectionSeatingData = {
           "covered": false
         },
         {
-          "id": "athletics-107-[-29",
+          "id": "athletics-107-AA-29",
           "sectionId": "107",
-          "row": "[",
+          "row": "AA",
           "seatNumber": "29",
           "position3D": {
             "x": 80.47525955528646,
@@ -28155,9 +28155,9 @@ export const section_107: SectionSeatingData = {
           "covered": false
         },
         {
-          "id": "athletics-107-[-30",
+          "id": "athletics-107-AA-30",
           "sectionId": "107",
-          "row": "[",
+          "row": "AA",
           "seatNumber": "30",
           "position3D": {
             "x": 80.10602077257352,
@@ -28181,9 +28181,9 @@ export const section_107: SectionSeatingData = {
           "covered": false
         },
         {
-          "id": "athletics-107-[-31",
+          "id": "athletics-107-AA-31",
           "sectionId": "107",
-          "row": "[",
+          "row": "AA",
           "seatNumber": "31",
           "position3D": {
             "x": 79.73580592327743,
@@ -28207,9 +28207,9 @@ export const section_107: SectionSeatingData = {
           "covered": false
         },
         {
-          "id": "athletics-107-[-32",
+          "id": "athletics-107-AA-32",
           "sectionId": "107",
-          "row": "[",
+          "row": "AA",
           "seatNumber": "32",
           "position3D": {
             "x": 79.3646195183492,
@@ -28233,9 +28233,9 @@ export const section_107: SectionSeatingData = {
           "covered": false
         },
         {
-          "id": "athletics-107-[-33",
+          "id": "athletics-107-AA-33",
           "sectionId": "107",
-          "row": "[",
+          "row": "AA",
           "seatNumber": "33",
           "position3D": {
             "x": 78.99246608057814,
@@ -28259,9 +28259,9 @@ export const section_107: SectionSeatingData = {
           "covered": false
         },
         {
-          "id": "athletics-107-[-34",
+          "id": "athletics-107-AA-34",
           "sectionId": "107",
-          "row": "[",
+          "row": "AA",
           "seatNumber": "34",
           "position3D": {
             "x": 78.61935014453638,
@@ -28285,9 +28285,9 @@ export const section_107: SectionSeatingData = {
           "covered": false
         },
         {
-          "id": "athletics-107-[-35",
+          "id": "athletics-107-AA-35",
           "sectionId": "107",
-          "row": "[",
+          "row": "AA",
           "seatNumber": "35",
           "position3D": {
             "x": 78.24527625652384,
@@ -28311,9 +28311,9 @@ export const section_107: SectionSeatingData = {
           "covered": false
         },
         {
-          "id": "athletics-107-[-36",
+          "id": "athletics-107-AA-36",
           "sectionId": "107",
-          "row": "[",
+          "row": "AA",
           "seatNumber": "36",
           "position3D": {
             "x": 77.87024897451283,
@@ -28337,9 +28337,9 @@ export const section_107: SectionSeatingData = {
           "covered": false
         },
         {
-          "id": "athletics-107-[-37",
+          "id": "athletics-107-AA-37",
           "sectionId": "107",
-          "row": "[",
+          "row": "AA",
           "seatNumber": "37",
           "position3D": {
             "x": 77.4942728680924,
@@ -28363,9 +28363,9 @@ export const section_107: SectionSeatingData = {
           "covered": false
         },
         {
-          "id": "athletics-107-[-38",
+          "id": "athletics-107-AA-38",
           "sectionId": "107",
-          "row": "[",
+          "row": "AA",
           "seatNumber": "38",
           "position3D": {
             "x": 77.11735251841283,
@@ -28389,9 +28389,9 @@ export const section_107: SectionSeatingData = {
           "covered": false
         },
         {
-          "id": "athletics-107-[-39",
+          "id": "athletics-107-AA-39",
           "sectionId": "107",
-          "row": "[",
+          "row": "AA",
           "seatNumber": "39",
           "position3D": {
             "x": 76.73949251812954,
@@ -28415,9 +28415,9 @@ export const section_107: SectionSeatingData = {
           "covered": false
         },
         {
-          "id": "athletics-107-[-40",
+          "id": "athletics-107-AA-40",
           "sectionId": "107",
-          "row": "[",
+          "row": "AA",
           "seatNumber": "40",
           "position3D": {
             "x": 76.36069747134738,
@@ -28446,7 +28446,7 @@ export const section_107: SectionSeatingData = {
       "wheelchairRow": false
     },
     {
-      "rowNumber": "\\",
+      "rowNumber": "AB",
       "sectionId": "107",
       "seatCount": 40,
       "elevation": 67.5,
@@ -28454,9 +28454,9 @@ export const section_107: SectionSeatingData = {
       "rowSpacing": 36,
       "seats": [
         {
-          "id": "athletics-107-\\-1",
+          "id": "athletics-107-AB-1",
           "sectionId": "107",
-          "row": "\\",
+          "row": "AB",
           "seatNumber": "1",
           "position3D": {
             "x": 92.30574983082927,
@@ -28480,9 +28480,9 @@ export const section_107: SectionSeatingData = {
           "covered": false
         },
         {
-          "id": "athletics-107-\\-2",
+          "id": "athletics-107-AB-2",
           "sectionId": "107",
-          "row": "\\",
+          "row": "AB",
           "seatNumber": "2",
           "position3D": {
             "x": 91.95845123411036,
@@ -28506,9 +28506,9 @@ export const section_107: SectionSeatingData = {
           "covered": false
         },
         {
-          "id": "athletics-107-\\-3",
+          "id": "athletics-107-AB-3",
           "sectionId": "107",
-          "row": "\\",
+          "row": "AB",
           "seatNumber": "3",
           "position3D": {
             "x": 91.61003215268353,
@@ -28532,9 +28532,9 @@ export const section_107: SectionSeatingData = {
           "covered": false
         },
         {
-          "id": "athletics-107-\\-4",
+          "id": "athletics-107-AB-4",
           "sectionId": "107",
-          "row": "\\",
+          "row": "AB",
           "seatNumber": "4",
           "position3D": {
             "x": 91.26049683192528,
@@ -28558,9 +28558,9 @@ export const section_107: SectionSeatingData = {
           "covered": false
         },
         {
-          "id": "athletics-107-\\-5",
+          "id": "athletics-107-AB-5",
           "sectionId": "107",
-          "row": "\\",
+          "row": "AB",
           "seatNumber": "5",
           "position3D": {
             "x": 90.90984953081315,
@@ -28584,9 +28584,9 @@ export const section_107: SectionSeatingData = {
           "covered": false
         },
         {
-          "id": "athletics-107-\\-6",
+          "id": "athletics-107-AB-6",
           "sectionId": "107",
-          "row": "\\",
+          "row": "AB",
           "seatNumber": "6",
           "position3D": {
             "x": 90.55809452187393,
@@ -28610,9 +28610,9 @@ export const section_107: SectionSeatingData = {
           "covered": false
         },
         {
-          "id": "athletics-107-\\-7",
+          "id": "athletics-107-AB-7",
           "sectionId": "107",
-          "row": "\\",
+          "row": "AB",
           "seatNumber": "7",
           "position3D": {
             "x": 90.2052360911313,
@@ -28636,9 +28636,9 @@ export const section_107: SectionSeatingData = {
           "covered": false
         },
         {
-          "id": "athletics-107-\\-8",
+          "id": "athletics-107-AB-8",
           "sectionId": "107",
-          "row": "\\",
+          "row": "AB",
           "seatNumber": "8",
           "position3D": {
             "x": 89.851278538054,
@@ -28662,9 +28662,9 @@ export const section_107: SectionSeatingData = {
           "covered": false
         },
         {
-          "id": "athletics-107-\\-9",
+          "id": "athletics-107-AB-9",
           "sectionId": "107",
-          "row": "\\",
+          "row": "AB",
           "seatNumber": "9",
           "position3D": {
             "x": 89.49622617550303,
@@ -28688,9 +28688,9 @@ export const section_107: SectionSeatingData = {
           "covered": false
         },
         {
-          "id": "athletics-107-\\-10",
+          "id": "athletics-107-AB-10",
           "sectionId": "107",
-          "row": "\\",
+          "row": "AB",
           "seatNumber": "10",
           "position3D": {
             "x": 89.14008332967937,
@@ -28714,9 +28714,9 @@ export const section_107: SectionSeatingData = {
           "covered": false
         },
         {
-          "id": "athletics-107-\\-11",
+          "id": "athletics-107-AB-11",
           "sectionId": "107",
-          "row": "\\",
+          "row": "AB",
           "seatNumber": "11",
           "position3D": {
             "x": 88.78285434007128,
@@ -28740,9 +28740,9 @@ export const section_107: SectionSeatingData = {
           "covered": false
         },
         {
-          "id": "athletics-107-\\-12",
+          "id": "athletics-107-AB-12",
           "sectionId": "107",
-          "row": "\\",
+          "row": "AB",
           "seatNumber": "12",
           "position3D": {
             "x": 88.42454355940116,
@@ -28766,9 +28766,9 @@ export const section_107: SectionSeatingData = {
           "covered": false
         },
         {
-          "id": "athletics-107-\\-13",
+          "id": "athletics-107-AB-13",
           "sectionId": "107",
-          "row": "\\",
+          "row": "AB",
           "seatNumber": "13",
           "position3D": {
             "x": 88.06515535357289,
@@ -28792,9 +28792,9 @@ export const section_107: SectionSeatingData = {
           "covered": false
         },
         {
-          "id": "athletics-107-\\-14",
+          "id": "athletics-107-AB-14",
           "sectionId": "107",
-          "row": "\\",
+          "row": "AB",
           "seatNumber": "14",
           "position3D": {
             "x": 87.70469410161834,
@@ -28818,9 +28818,9 @@ export const section_107: SectionSeatingData = {
           "covered": false
         },
         {
-          "id": "athletics-107-\\-15",
+          "id": "athletics-107-AB-15",
           "sectionId": "107",
-          "row": "\\",
+          "row": "AB",
           "seatNumber": "15",
           "position3D": {
             "x": 87.34316419564401,
@@ -28844,9 +28844,9 @@ export const section_107: SectionSeatingData = {
           "covered": false
         },
         {
-          "id": "athletics-107-\\-16",
+          "id": "athletics-107-AB-16",
           "sectionId": "107",
-          "row": "\\",
+          "row": "AB",
           "seatNumber": "16",
           "position3D": {
             "x": 86.9805700407778,
@@ -28870,9 +28870,9 @@ export const section_107: SectionSeatingData = {
           "covered": false
         },
         {
-          "id": "athletics-107-\\-17",
+          "id": "athletics-107-AB-17",
           "sectionId": "107",
-          "row": "\\",
+          "row": "AB",
           "seatNumber": "17",
           "position3D": {
             "x": 86.61691605511504,
@@ -28896,9 +28896,9 @@ export const section_107: SectionSeatingData = {
           "covered": false
         },
         {
-          "id": "athletics-107-\\-18",
+          "id": "athletics-107-AB-18",
           "sectionId": "107",
-          "row": "\\",
+          "row": "AB",
           "seatNumber": "18",
           "position3D": {
             "x": 86.25220666966479,
@@ -28922,9 +28922,9 @@ export const section_107: SectionSeatingData = {
           "covered": false
         },
         {
-          "id": "athletics-107-\\-19",
+          "id": "athletics-107-AB-19",
           "sectionId": "107",
-          "row": "\\",
+          "row": "AB",
           "seatNumber": "19",
           "position3D": {
             "x": 85.88644632829582,
@@ -28948,9 +28948,9 @@ export const section_107: SectionSeatingData = {
           "covered": false
         },
         {
-          "id": "athletics-107-\\-20",
+          "id": "athletics-107-AB-20",
           "sectionId": "107",
-          "row": "\\",
+          "row": "AB",
           "seatNumber": "20",
           "position3D": {
             "x": 85.51963948768241,
@@ -28974,9 +28974,9 @@ export const section_107: SectionSeatingData = {
           "covered": false
         },
         {
-          "id": "athletics-107-\\-21",
+          "id": "athletics-107-AB-21",
           "sectionId": "107",
-          "row": "\\",
+          "row": "AB",
           "seatNumber": "21",
           "position3D": {
             "x": 85.15179061725023,
@@ -29000,9 +29000,9 @@ export const section_107: SectionSeatingData = {
           "covered": false
         },
         {
-          "id": "athletics-107-\\-22",
+          "id": "athletics-107-AB-22",
           "sectionId": "107",
-          "row": "\\",
+          "row": "AB",
           "seatNumber": "22",
           "position3D": {
             "x": 84.78290419912159,
@@ -29026,9 +29026,9 @@ export const section_107: SectionSeatingData = {
           "covered": false
         },
         {
-          "id": "athletics-107-\\-23",
+          "id": "athletics-107-AB-23",
           "sectionId": "107",
-          "row": "\\",
+          "row": "AB",
           "seatNumber": "23",
           "position3D": {
             "x": 84.41298472806122,
@@ -29052,9 +29052,9 @@ export const section_107: SectionSeatingData = {
           "covered": false
         },
         {
-          "id": "athletics-107-\\-24",
+          "id": "athletics-107-AB-24",
           "sectionId": "107",
-          "row": "\\",
+          "row": "AB",
           "seatNumber": "24",
           "position3D": {
             "x": 84.04203671142102,
@@ -29078,9 +29078,9 @@ export const section_107: SectionSeatingData = {
           "covered": false
         },
         {
-          "id": "athletics-107-\\-25",
+          "id": "athletics-107-AB-25",
           "sectionId": "107",
-          "row": "\\",
+          "row": "AB",
           "seatNumber": "25",
           "position3D": {
             "x": 83.67006466908549,
@@ -29104,9 +29104,9 @@ export const section_107: SectionSeatingData = {
           "covered": false
         },
         {
-          "id": "athletics-107-\\-26",
+          "id": "athletics-107-AB-26",
           "sectionId": "107",
-          "row": "\\",
+          "row": "AB",
           "seatNumber": "26",
           "position3D": {
             "x": 83.29707313341672,
@@ -29130,9 +29130,9 @@ export const section_107: SectionSeatingData = {
           "covered": false
         },
         {
-          "id": "athletics-107-\\-27",
+          "id": "athletics-107-AB-27",
           "sectionId": "107",
-          "row": "\\",
+          "row": "AB",
           "seatNumber": "27",
           "position3D": {
             "x": 82.92306664919869,
@@ -29156,9 +29156,9 @@ export const section_107: SectionSeatingData = {
           "covered": false
         },
         {
-          "id": "athletics-107-\\-28",
+          "id": "athletics-107-AB-28",
           "sectionId": "107",
-          "row": "\\",
+          "row": "AB",
           "seatNumber": "28",
           "position3D": {
             "x": 82.54804977358252,
@@ -29182,9 +29182,9 @@ export const section_107: SectionSeatingData = {
           "covered": false
         },
         {
-          "id": "athletics-107-\\-29",
+          "id": "athletics-107-AB-29",
           "sectionId": "107",
-          "row": "\\",
+          "row": "AB",
           "seatNumber": "29",
           "position3D": {
             "x": 82.17202707603043,
@@ -29208,9 +29208,9 @@ export const section_107: SectionSeatingData = {
           "covered": false
         },
         {
-          "id": "athletics-107-\\-30",
+          "id": "athletics-107-AB-30",
           "sectionId": "107",
-          "row": "\\",
+          "row": "AB",
           "seatNumber": "30",
           "position3D": {
             "x": 81.79500313826028,
@@ -29234,9 +29234,9 @@ export const section_107: SectionSeatingData = {
           "covered": false
         },
         {
-          "id": "athletics-107-\\-31",
+          "id": "athletics-107-AB-31",
           "sectionId": "107",
-          "row": "\\",
+          "row": "AB",
           "seatNumber": "31",
           "position3D": {
             "x": 81.41698255418989,
@@ -29260,9 +29260,9 @@ export const section_107: SectionSeatingData = {
           "covered": false
         },
         {
-          "id": "athletics-107-\\-32",
+          "id": "athletics-107-AB-32",
           "sectionId": "107",
-          "row": "\\",
+          "row": "AB",
           "seatNumber": "32",
           "position3D": {
             "x": 81.03796992988065,
@@ -29286,9 +29286,9 @@ export const section_107: SectionSeatingData = {
           "covered": false
         },
         {
-          "id": "athletics-107-\\-33",
+          "id": "athletics-107-AB-33",
           "sectionId": "107",
-          "row": "\\",
+          "row": "AB",
           "seatNumber": "33",
           "position3D": {
             "x": 80.65796988348188,
@@ -29312,9 +29312,9 @@ export const section_107: SectionSeatingData = {
           "covered": false
         },
         {
-          "id": "athletics-107-\\-34",
+          "id": "athletics-107-AB-34",
           "sectionId": "107",
-          "row": "\\",
+          "row": "AB",
           "seatNumber": "34",
           "position3D": {
             "x": 80.27698704517418,
@@ -29338,9 +29338,9 @@ export const section_107: SectionSeatingData = {
           "covered": false
         },
         {
-          "id": "athletics-107-\\-35",
+          "id": "athletics-107-AB-35",
           "sectionId": "107",
-          "row": "\\",
+          "row": "AB",
           "seatNumber": "35",
           "position3D": {
             "x": 79.89502605711318,
@@ -29364,9 +29364,9 @@ export const section_107: SectionSeatingData = {
           "covered": false
         },
         {
-          "id": "athletics-107-\\-36",
+          "id": "athletics-107-AB-36",
           "sectionId": "107",
-          "row": "\\",
+          "row": "AB",
           "seatNumber": "36",
           "position3D": {
             "x": 79.51209157337303,
@@ -29390,9 +29390,9 @@ export const section_107: SectionSeatingData = {
           "covered": false
         },
         {
-          "id": "athletics-107-\\-37",
+          "id": "athletics-107-AB-37",
           "sectionId": "107",
-          "row": "\\",
+          "row": "AB",
           "seatNumber": "37",
           "position3D": {
             "x": 79.12818825988951,
@@ -29416,9 +29416,9 @@ export const section_107: SectionSeatingData = {
           "covered": false
         },
         {
-          "id": "athletics-107-\\-38",
+          "id": "athletics-107-AB-38",
           "sectionId": "107",
-          "row": "\\",
+          "row": "AB",
           "seatNumber": "38",
           "position3D": {
             "x": 78.74332079440345,
@@ -29442,9 +29442,9 @@ export const section_107: SectionSeatingData = {
           "covered": false
         },
         {
-          "id": "athletics-107-\\-39",
+          "id": "athletics-107-AB-39",
           "sectionId": "107",
-          "row": "\\",
+          "row": "AB",
           "seatNumber": "39",
           "position3D": {
             "x": 78.35749386640335,
@@ -29468,9 +29468,9 @@ export const section_107: SectionSeatingData = {
           "covered": false
         },
         {
-          "id": "athletics-107-\\-40",
+          "id": "athletics-107-AB-40",
           "sectionId": "107",
-          "row": "\\",
+          "row": "AB",
           "seatNumber": "40",
           "position3D": {
             "x": 77.97071217706855,
@@ -29499,7 +29499,7 @@ export const section_107: SectionSeatingData = {
       "wheelchairRow": false
     },
     {
-      "rowNumber": "]",
+      "rowNumber": "AC",
       "sectionId": "107",
       "seatCount": 40,
       "elevation": 70,
@@ -29507,9 +29507,9 @@ export const section_107: SectionSeatingData = {
       "rowSpacing": 36,
       "seats": [
         {
-          "id": "athletics-107-]-1",
+          "id": "athletics-107-AC-1",
           "sectionId": "107",
-          "row": "]",
+          "row": "AC",
           "seatNumber": "1",
           "position3D": {
             "x": 94.21176826391422,
@@ -29533,9 +29533,9 @@ export const section_107: SectionSeatingData = {
           "covered": false
         },
         {
-          "id": "athletics-107-]-2",
+          "id": "athletics-107-AC-2",
           "sectionId": "107",
-          "row": "]",
+          "row": "AC",
           "seatNumber": "2",
           "position3D": {
             "x": 93.85729830974094,
@@ -29559,9 +29559,9 @@ export const section_107: SectionSeatingData = {
           "covered": false
         },
         {
-          "id": "athletics-107-]-3",
+          "id": "athletics-107-AC-3",
           "sectionId": "107",
-          "row": "]",
+          "row": "AC",
           "seatNumber": "3",
           "position3D": {
             "x": 93.50168473400736,
@@ -29585,9 +29585,9 @@ export const section_107: SectionSeatingData = {
           "covered": false
         },
         {
-          "id": "athletics-107-]-4",
+          "id": "athletics-107-AC-4",
           "sectionId": "107",
-          "row": "]",
+          "row": "AC",
           "seatNumber": "4",
           "position3D": {
             "x": 93.14493186975264,
@@ -29611,9 +29611,9 @@ export const section_107: SectionSeatingData = {
           "covered": false
         },
         {
-          "id": "athletics-107-]-5",
+          "id": "athletics-107-AC-5",
           "sectionId": "107",
-          "row": "]",
+          "row": "AC",
           "seatNumber": "5",
           "position3D": {
             "x": 92.78704406389778,
@@ -29637,9 +29637,9 @@ export const section_107: SectionSeatingData = {
           "covered": false
         },
         {
-          "id": "athletics-107-]-6",
+          "id": "athletics-107-AC-6",
           "sectionId": "107",
-          "row": "]",
+          "row": "AC",
           "seatNumber": "6",
           "position3D": {
             "x": 92.42802567719285,
@@ -29663,9 +29663,9 @@ export const section_107: SectionSeatingData = {
           "covered": false
         },
         {
-          "id": "athletics-107-]-7",
+          "id": "athletics-107-AC-7",
           "sectionId": "107",
-          "row": "]",
+          "row": "AC",
           "seatNumber": "7",
           "position3D": {
             "x": 92.0678810841635,
@@ -29689,9 +29689,9 @@ export const section_107: SectionSeatingData = {
           "covered": false
         },
         {
-          "id": "athletics-107-]-8",
+          "id": "athletics-107-AC-8",
           "sectionId": "107",
-          "row": "]",
+          "row": "AC",
           "seatNumber": "8",
           "position3D": {
             "x": 91.70661467305806,
@@ -29715,9 +29715,9 @@ export const section_107: SectionSeatingData = {
           "covered": false
         },
         {
-          "id": "athletics-107-]-9",
+          "id": "athletics-107-AC-9",
           "sectionId": "107",
-          "row": "]",
+          "row": "AC",
           "seatNumber": "9",
           "position3D": {
             "x": 91.34423084579365,
@@ -29741,9 +29741,9 @@ export const section_107: SectionSeatingData = {
           "covered": false
         },
         {
-          "id": "athletics-107-]-10",
+          "id": "athletics-107-AC-10",
           "sectionId": "107",
-          "row": "]",
+          "row": "AC",
           "seatNumber": "10",
           "position3D": {
             "x": 90.98073401790283,
@@ -29767,9 +29767,9 @@ export const section_107: SectionSeatingData = {
           "covered": false
         },
         {
-          "id": "athletics-107-]-11",
+          "id": "athletics-107-AC-11",
           "sectionId": "107",
-          "row": "]",
+          "row": "AC",
           "seatNumber": "11",
           "position3D": {
             "x": 90.61612861847982,
@@ -29793,9 +29793,9 @@ export const section_107: SectionSeatingData = {
           "covered": false
         },
         {
-          "id": "athletics-107-]-12",
+          "id": "athletics-107-AC-12",
           "sectionId": "107",
-          "row": "]",
+          "row": "AC",
           "seatNumber": "12",
           "position3D": {
             "x": 90.25041909012624,
@@ -29819,9 +29819,9 @@ export const section_107: SectionSeatingData = {
           "covered": false
         },
         {
-          "id": "athletics-107-]-13",
+          "id": "athletics-107-AC-13",
           "sectionId": "107",
-          "row": "]",
+          "row": "AC",
           "seatNumber": "13",
           "position3D": {
             "x": 89.88360988889738,
@@ -29845,9 +29845,9 @@ export const section_107: SectionSeatingData = {
           "covered": false
         },
         {
-          "id": "athletics-107-]-14",
+          "id": "athletics-107-AC-14",
           "sectionId": "107",
-          "row": "]",
+          "row": "AC",
           "seatNumber": "14",
           "position3D": {
             "x": 89.51570548424762,
@@ -29871,9 +29871,9 @@ export const section_107: SectionSeatingData = {
           "covered": false
         },
         {
-          "id": "athletics-107-]-15",
+          "id": "athletics-107-AC-15",
           "sectionId": "107",
-          "row": "]",
+          "row": "AC",
           "seatNumber": "15",
           "position3D": {
             "x": 89.14671035897588,
@@ -29897,9 +29897,9 @@ export const section_107: SectionSeatingData = {
           "covered": false
         },
         {
-          "id": "athletics-107-]-16",
+          "id": "athletics-107-AC-16",
           "sectionId": "107",
-          "row": "]",
+          "row": "AC",
           "seatNumber": "16",
           "position3D": {
             "x": 88.77662900917144,
@@ -29923,9 +29923,9 @@ export const section_107: SectionSeatingData = {
           "covered": false
         },
         {
-          "id": "athletics-107-]-17",
+          "id": "athletics-107-AC-17",
           "sectionId": "107",
-          "row": "]",
+          "row": "AC",
           "seatNumber": "17",
           "position3D": {
             "x": 88.40546594415869,
@@ -29949,9 +29949,9 @@ export const section_107: SectionSeatingData = {
           "covered": false
         },
         {
-          "id": "athletics-107-]-18",
+          "id": "athletics-107-AC-18",
           "sectionId": "107",
-          "row": "]",
+          "row": "AC",
           "seatNumber": "18",
           "position3D": {
             "x": 88.03322568644252,
@@ -29975,9 +29975,9 @@ export const section_107: SectionSeatingData = {
           "covered": false
         },
         {
-          "id": "athletics-107-]-19",
+          "id": "athletics-107-AC-19",
           "sectionId": "107",
-          "row": "]",
+          "row": "AC",
           "seatNumber": "19",
           "position3D": {
             "x": 87.65991277165294,
@@ -30001,9 +30001,9 @@ export const section_107: SectionSeatingData = {
           "covered": false
         },
         {
-          "id": "athletics-107-]-20",
+          "id": "athletics-107-AC-20",
           "sectionId": "107",
-          "row": "]",
+          "row": "AC",
           "seatNumber": "20",
           "position3D": {
             "x": 87.28553174849,
@@ -30027,9 +30027,9 @@ export const section_107: SectionSeatingData = {
           "covered": false
         },
         {
-          "id": "athletics-107-]-21",
+          "id": "athletics-107-AC-21",
           "sectionId": "107",
-          "row": "]",
+          "row": "AC",
           "seatNumber": "21",
           "position3D": {
             "x": 86.91008717866836,
@@ -30053,9 +30053,9 @@ export const section_107: SectionSeatingData = {
           "covered": false
         },
         {
-          "id": "athletics-107-]-22",
+          "id": "athletics-107-AC-22",
           "sectionId": "107",
-          "row": "]",
+          "row": "AC",
           "seatNumber": "22",
           "position3D": {
             "x": 86.53358363686155,
@@ -30079,9 +30079,9 @@ export const section_107: SectionSeatingData = {
           "covered": false
         },
         {
-          "id": "athletics-107-]-23",
+          "id": "athletics-107-AC-23",
           "sectionId": "107",
-          "row": "]",
+          "row": "AC",
           "seatNumber": "23",
           "position3D": {
             "x": 86.15602571064655,
@@ -30105,9 +30105,9 @@ export const section_107: SectionSeatingData = {
           "covered": false
         },
         {
-          "id": "athletics-107-]-24",
+          "id": "athletics-107-AC-24",
           "sectionId": "107",
-          "row": "]",
+          "row": "AC",
           "seatNumber": "24",
           "position3D": {
             "x": 85.7774180004474,
@@ -30131,9 +30131,9 @@ export const section_107: SectionSeatingData = {
           "covered": false
         },
         {
-          "id": "athletics-107-]-25",
+          "id": "athletics-107-AC-25",
           "sectionId": "107",
-          "row": "]",
+          "row": "AC",
           "seatNumber": "25",
           "position3D": {
             "x": 85.39776511947959,
@@ -30157,9 +30157,9 @@ export const section_107: SectionSeatingData = {
           "covered": false
         },
         {
-          "id": "athletics-107-]-26",
+          "id": "athletics-107-AC-26",
           "sectionId": "107",
-          "row": "]",
+          "row": "AC",
           "seatNumber": "26",
           "position3D": {
             "x": 85.01707169369375,
@@ -30183,9 +30183,9 @@ export const section_107: SectionSeatingData = {
           "covered": false
         },
         {
-          "id": "athletics-107-]-27",
+          "id": "athletics-107-AC-27",
           "sectionId": "107",
-          "row": "]",
+          "row": "AC",
           "seatNumber": "27",
           "position3D": {
             "x": 84.635342361719,
@@ -30209,9 +30209,9 @@ export const section_107: SectionSeatingData = {
           "covered": false
         },
         {
-          "id": "athletics-107-]-28",
+          "id": "athletics-107-AC-28",
           "sectionId": "107",
-          "row": "]",
+          "row": "AC",
           "seatNumber": "28",
           "position3D": {
             "x": 84.25258177480693,
@@ -30235,9 +30235,9 @@ export const section_107: SectionSeatingData = {
           "covered": false
         },
         {
-          "id": "athletics-107-]-29",
+          "id": "athletics-107-AC-29",
           "sectionId": "107",
-          "row": "]",
+          "row": "AC",
           "seatNumber": "29",
           "position3D": {
             "x": 83.86879459677442,
@@ -30261,9 +30261,9 @@ export const section_107: SectionSeatingData = {
           "covered": false
         },
         {
-          "id": "athletics-107-]-30",
+          "id": "athletics-107-AC-30",
           "sectionId": "107",
-          "row": "]",
+          "row": "AC",
           "seatNumber": "30",
           "position3D": {
             "x": 83.48398550394707,
@@ -30287,9 +30287,9 @@ export const section_107: SectionSeatingData = {
           "covered": false
         },
         {
-          "id": "athletics-107-]-31",
+          "id": "athletics-107-AC-31",
           "sectionId": "107",
-          "row": "]",
+          "row": "AC",
           "seatNumber": "31",
           "position3D": {
             "x": 83.09815918510235,
@@ -30313,9 +30313,9 @@ export const section_107: SectionSeatingData = {
           "covered": false
         },
         {
-          "id": "athletics-107-]-32",
+          "id": "athletics-107-AC-32",
           "sectionId": "107",
-          "row": "]",
+          "row": "AC",
           "seatNumber": "32",
           "position3D": {
             "x": 82.7113203414121,
@@ -30339,9 +30339,9 @@ export const section_107: SectionSeatingData = {
           "covered": false
         },
         {
-          "id": "athletics-107-]-33",
+          "id": "athletics-107-AC-33",
           "sectionId": "107",
-          "row": "]",
+          "row": "AC",
           "seatNumber": "33",
           "position3D": {
             "x": 82.32347368638563,
@@ -30365,9 +30365,9 @@ export const section_107: SectionSeatingData = {
           "covered": false
         },
         {
-          "id": "athletics-107-]-34",
+          "id": "athletics-107-AC-34",
           "sectionId": "107",
-          "row": "]",
+          "row": "AC",
           "seatNumber": "34",
           "position3D": {
             "x": 81.93462394581199,
@@ -30391,9 +30391,9 @@ export const section_107: SectionSeatingData = {
           "covered": false
         },
         {
-          "id": "athletics-107-]-35",
+          "id": "athletics-107-AC-35",
           "sectionId": "107",
-          "row": "]",
+          "row": "AC",
           "seatNumber": "35",
           "position3D": {
             "x": 81.54477585770253,
@@ -30417,9 +30417,9 @@ export const section_107: SectionSeatingData = {
           "covered": false
         },
         {
-          "id": "athletics-107-]-36",
+          "id": "athletics-107-AC-36",
           "sectionId": "107",
-          "row": "]",
+          "row": "AC",
           "seatNumber": "36",
           "position3D": {
             "x": 81.15393417223324,
@@ -30443,9 +30443,9 @@ export const section_107: SectionSeatingData = {
           "covered": false
         },
         {
-          "id": "athletics-107-]-37",
+          "id": "athletics-107-AC-37",
           "sectionId": "107",
-          "row": "]",
+          "row": "AC",
           "seatNumber": "37",
           "position3D": {
             "x": 80.76210365168663,
@@ -30469,9 +30469,9 @@ export const section_107: SectionSeatingData = {
           "covered": false
         },
         {
-          "id": "athletics-107-]-38",
+          "id": "athletics-107-AC-38",
           "sectionId": "107",
-          "row": "]",
+          "row": "AC",
           "seatNumber": "38",
           "position3D": {
             "x": 80.36928907039406,
@@ -30495,9 +30495,9 @@ export const section_107: SectionSeatingData = {
           "covered": false
         },
         {
-          "id": "athletics-107-]-39",
+          "id": "athletics-107-AC-39",
           "sectionId": "107",
-          "row": "]",
+          "row": "AC",
           "seatNumber": "39",
           "position3D": {
             "x": 79.97549521467715,
@@ -30521,9 +30521,9 @@ export const section_107: SectionSeatingData = {
           "covered": false
         },
         {
-          "id": "athletics-107-]-40",
+          "id": "athletics-107-AC-40",
           "sectionId": "107",
-          "row": "]",
+          "row": "AC",
           "seatNumber": "40",
           "position3D": {
             "x": 79.58072688278972,
@@ -30552,7 +30552,7 @@ export const section_107: SectionSeatingData = {
       "wheelchairRow": false
     },
     {
-      "rowNumber": "^",
+      "rowNumber": "AD",
       "sectionId": "107",
       "seatCount": 40,
       "elevation": 72.5,
@@ -30560,9 +30560,9 @@ export const section_107: SectionSeatingData = {
       "rowSpacing": 36,
       "seats": [
         {
-          "id": "athletics-107-^-1",
+          "id": "athletics-107-AD-1",
           "sectionId": "107",
-          "row": "^",
+          "row": "AD",
           "seatNumber": "1",
           "position3D": {
             "x": 96.1177866969992,
@@ -30586,9 +30586,9 @@ export const section_107: SectionSeatingData = {
           "covered": false
         },
         {
-          "id": "athletics-107-^-2",
+          "id": "athletics-107-AD-2",
           "sectionId": "107",
-          "row": "^",
+          "row": "AD",
           "seatNumber": "2",
           "position3D": {
             "x": 95.75614538537155,
@@ -30612,9 +30612,9 @@ export const section_107: SectionSeatingData = {
           "covered": false
         },
         {
-          "id": "athletics-107-^-3",
+          "id": "athletics-107-AD-3",
           "sectionId": "107",
-          "row": "^",
+          "row": "AD",
           "seatNumber": "3",
           "position3D": {
             "x": 95.39333731533122,
@@ -30638,9 +30638,9 @@ export const section_107: SectionSeatingData = {
           "covered": false
         },
         {
-          "id": "athletics-107-^-4",
+          "id": "athletics-107-AD-4",
           "sectionId": "107",
-          "row": "^",
+          "row": "AD",
           "seatNumber": "4",
           "position3D": {
             "x": 95.02936690758001,
@@ -30664,9 +30664,9 @@ export const section_107: SectionSeatingData = {
           "covered": false
         },
         {
-          "id": "athletics-107-^-5",
+          "id": "athletics-107-AD-5",
           "sectionId": "107",
-          "row": "^",
+          "row": "AD",
           "seatNumber": "5",
           "position3D": {
             "x": 94.66423859698241,
@@ -30690,9 +30690,9 @@ export const section_107: SectionSeatingData = {
           "covered": false
         },
         {
-          "id": "athletics-107-^-6",
+          "id": "athletics-107-AD-6",
           "sectionId": "107",
-          "row": "^",
+          "row": "AD",
           "seatNumber": "6",
           "position3D": {
             "x": 94.29795683251179,
@@ -30716,9 +30716,9 @@ export const section_107: SectionSeatingData = {
           "covered": false
         },
         {
-          "id": "athletics-107-^-7",
+          "id": "athletics-107-AD-7",
           "sectionId": "107",
-          "row": "^",
+          "row": "AD",
           "seatNumber": "7",
           "position3D": {
             "x": 93.93052607719572,
@@ -30742,9 +30742,9 @@ export const section_107: SectionSeatingData = {
           "covered": false
         },
         {
-          "id": "athletics-107-^-8",
+          "id": "athletics-107-AD-8",
           "sectionId": "107",
-          "row": "^",
+          "row": "AD",
           "seatNumber": "8",
           "position3D": {
             "x": 93.56195080806212,
@@ -30768,9 +30768,9 @@ export const section_107: SectionSeatingData = {
           "covered": false
         },
         {
-          "id": "athletics-107-^-9",
+          "id": "athletics-107-AD-9",
           "sectionId": "107",
-          "row": "^",
+          "row": "AD",
           "seatNumber": "9",
           "position3D": {
             "x": 93.19223551608428,
@@ -30794,9 +30794,9 @@ export const section_107: SectionSeatingData = {
           "covered": false
         },
         {
-          "id": "athletics-107-^-10",
+          "id": "athletics-107-AD-10",
           "sectionId": "107",
-          "row": "^",
+          "row": "AD",
           "seatNumber": "10",
           "position3D": {
             "x": 92.8213847061263,
@@ -30820,9 +30820,9 @@ export const section_107: SectionSeatingData = {
           "covered": false
         },
         {
-          "id": "athletics-107-^-11",
+          "id": "athletics-107-AD-11",
           "sectionId": "107",
-          "row": "^",
+          "row": "AD",
           "seatNumber": "11",
           "position3D": {
             "x": 92.44940289688837,
@@ -30846,9 +30846,9 @@ export const section_107: SectionSeatingData = {
           "covered": false
         },
         {
-          "id": "athletics-107-^-12",
+          "id": "athletics-107-AD-12",
           "sectionId": "107",
-          "row": "^",
+          "row": "AD",
           "seatNumber": "12",
           "position3D": {
             "x": 92.07629462085136,
@@ -30872,9 +30872,9 @@ export const section_107: SectionSeatingData = {
           "covered": false
         },
         {
-          "id": "athletics-107-^-13",
+          "id": "athletics-107-AD-13",
           "sectionId": "107",
-          "row": "^",
+          "row": "AD",
           "seatNumber": "13",
           "position3D": {
             "x": 91.70206442422192,
@@ -30898,9 +30898,9 @@ export const section_107: SectionSeatingData = {
           "covered": false
         },
         {
-          "id": "athletics-107-^-14",
+          "id": "athletics-107-AD-14",
           "sectionId": "107",
-          "row": "^",
+          "row": "AD",
           "seatNumber": "14",
           "position3D": {
             "x": 91.32671686687692,
@@ -30924,9 +30924,9 @@ export const section_107: SectionSeatingData = {
           "covered": false
         },
         {
-          "id": "athletics-107-^-15",
+          "id": "athletics-107-AD-15",
           "sectionId": "107",
-          "row": "^",
+          "row": "AD",
           "seatNumber": "15",
           "position3D": {
             "x": 90.95025652230777,
@@ -30950,9 +30950,9 @@ export const section_107: SectionSeatingData = {
           "covered": false
         },
         {
-          "id": "athletics-107-^-16",
+          "id": "athletics-107-AD-16",
           "sectionId": "107",
-          "row": "^",
+          "row": "AD",
           "seatNumber": "16",
           "position3D": {
             "x": 90.5726879775651,
@@ -30976,9 +30976,9 @@ export const section_107: SectionSeatingData = {
           "covered": false
         },
         {
-          "id": "athletics-107-^-17",
+          "id": "athletics-107-AD-17",
           "sectionId": "107",
-          "row": "^",
+          "row": "AD",
           "seatNumber": "17",
           "position3D": {
             "x": 90.19401583320239,
@@ -31002,9 +31002,9 @@ export const section_107: SectionSeatingData = {
           "covered": false
         },
         {
-          "id": "athletics-107-^-18",
+          "id": "athletics-107-AD-18",
           "sectionId": "107",
-          "row": "^",
+          "row": "AD",
           "seatNumber": "18",
           "position3D": {
             "x": 89.81424470322027,
@@ -31028,9 +31028,9 @@ export const section_107: SectionSeatingData = {
           "covered": false
         },
         {
-          "id": "athletics-107-^-19",
+          "id": "athletics-107-AD-19",
           "sectionId": "107",
-          "row": "^",
+          "row": "AD",
           "seatNumber": "19",
           "position3D": {
             "x": 89.43337921501009,
@@ -31054,9 +31054,9 @@ export const section_107: SectionSeatingData = {
           "covered": false
         },
         {
-          "id": "athletics-107-^-20",
+          "id": "athletics-107-AD-20",
           "sectionId": "107",
-          "row": "^",
+          "row": "AD",
           "seatNumber": "20",
           "position3D": {
             "x": 89.05142400929762,
@@ -31080,9 +31080,9 @@ export const section_107: SectionSeatingData = {
           "covered": false
         },
         {
-          "id": "athletics-107-^-21",
+          "id": "athletics-107-AD-21",
           "sectionId": "107",
-          "row": "^",
+          "row": "AD",
           "seatNumber": "21",
           "position3D": {
             "x": 88.66838374008653,
@@ -31106,9 +31106,9 @@ export const section_107: SectionSeatingData = {
           "covered": false
         },
         {
-          "id": "athletics-107-^-22",
+          "id": "athletics-107-AD-22",
           "sectionId": "107",
-          "row": "^",
+          "row": "AD",
           "seatNumber": "22",
           "position3D": {
             "x": 88.28426307460154,
@@ -31132,9 +31132,9 @@ export const section_107: SectionSeatingData = {
           "covered": false
         },
         {
-          "id": "athletics-107-^-23",
+          "id": "athletics-107-AD-23",
           "sectionId": "107",
-          "row": "^",
+          "row": "AD",
           "seatNumber": "23",
           "position3D": {
             "x": 87.89906669323189,
@@ -31158,9 +31158,9 @@ export const section_107: SectionSeatingData = {
           "covered": false
         },
         {
-          "id": "athletics-107-^-24",
+          "id": "athletics-107-AD-24",
           "sectionId": "107",
-          "row": "^",
+          "row": "AD",
           "seatNumber": "24",
           "position3D": {
             "x": 87.5127992894738,
@@ -31184,9 +31184,9 @@ export const section_107: SectionSeatingData = {
           "covered": false
         },
         {
-          "id": "athletics-107-^-25",
+          "id": "athletics-107-AD-25",
           "sectionId": "107",
-          "row": "^",
+          "row": "AD",
           "seatNumber": "25",
           "position3D": {
             "x": 87.12546556987368,
@@ -31210,9 +31210,9 @@ export const section_107: SectionSeatingData = {
           "covered": false
         },
         {
-          "id": "athletics-107-^-26",
+          "id": "athletics-107-AD-26",
           "sectionId": "107",
-          "row": "^",
+          "row": "AD",
           "seatNumber": "26",
           "position3D": {
             "x": 86.7370702539708,
@@ -31236,9 +31236,9 @@ export const section_107: SectionSeatingData = {
           "covered": false
         },
         {
-          "id": "athletics-107-^-27",
+          "id": "athletics-107-AD-27",
           "sectionId": "107",
-          "row": "^",
+          "row": "AD",
           "seatNumber": "27",
           "position3D": {
             "x": 86.34761807423934,
@@ -31262,9 +31262,9 @@ export const section_107: SectionSeatingData = {
           "covered": false
         },
         {
-          "id": "athletics-107-^-28",
+          "id": "athletics-107-AD-28",
           "sectionId": "107",
-          "row": "^",
+          "row": "AD",
           "seatNumber": "28",
           "position3D": {
             "x": 85.95711377603135,
@@ -31288,9 +31288,9 @@ export const section_107: SectionSeatingData = {
           "covered": false
         },
         {
-          "id": "athletics-107-^-29",
+          "id": "athletics-107-AD-29",
           "sectionId": "107",
-          "row": "^",
+          "row": "AD",
           "seatNumber": "29",
           "position3D": {
             "x": 85.56556211751841,
@@ -31314,9 +31314,9 @@ export const section_107: SectionSeatingData = {
           "covered": false
         },
         {
-          "id": "athletics-107-^-30",
+          "id": "athletics-107-AD-30",
           "sectionId": "107",
-          "row": "^",
+          "row": "AD",
           "seatNumber": "30",
           "position3D": {
             "x": 85.17296786963387,
@@ -31340,9 +31340,9 @@ export const section_107: SectionSeatingData = {
           "covered": false
         },
         {
-          "id": "athletics-107-^-31",
+          "id": "athletics-107-AD-31",
           "sectionId": "107",
-          "row": "^",
+          "row": "AD",
           "seatNumber": "31",
           "position3D": {
             "x": 84.77933581601484,
@@ -31366,9 +31366,9 @@ export const section_107: SectionSeatingData = {
           "covered": false
         },
         {
-          "id": "athletics-107-^-32",
+          "id": "athletics-107-AD-32",
           "sectionId": "107",
-          "row": "^",
+          "row": "AD",
           "seatNumber": "32",
           "position3D": {
             "x": 84.38467075294356,
@@ -31392,9 +31392,9 @@ export const section_107: SectionSeatingData = {
           "covered": false
         },
         {
-          "id": "athletics-107-^-33",
+          "id": "athletics-107-AD-33",
           "sectionId": "107",
-          "row": "^",
+          "row": "AD",
           "seatNumber": "33",
           "position3D": {
             "x": 83.9889774892894,
@@ -31418,9 +31418,9 @@ export const section_107: SectionSeatingData = {
           "covered": false
         },
         {
-          "id": "athletics-107-^-34",
+          "id": "athletics-107-AD-34",
           "sectionId": "107",
-          "row": "^",
+          "row": "AD",
           "seatNumber": "34",
           "position3D": {
             "x": 83.5922608464498,
@@ -31444,9 +31444,9 @@ export const section_107: SectionSeatingData = {
           "covered": false
         },
         {
-          "id": "athletics-107-^-35",
+          "id": "athletics-107-AD-35",
           "sectionId": "107",
-          "row": "^",
+          "row": "AD",
           "seatNumber": "35",
           "position3D": {
             "x": 83.1945256582919,
@@ -31470,9 +31470,9 @@ export const section_107: SectionSeatingData = {
           "covered": false
         },
         {
-          "id": "athletics-107-^-36",
+          "id": "athletics-107-AD-36",
           "sectionId": "107",
-          "row": "^",
+          "row": "AD",
           "seatNumber": "36",
           "position3D": {
             "x": 82.79577677109346,
@@ -31496,9 +31496,9 @@ export const section_107: SectionSeatingData = {
           "covered": false
         },
         {
-          "id": "athletics-107-^-37",
+          "id": "athletics-107-AD-37",
           "sectionId": "107",
-          "row": "^",
+          "row": "AD",
           "seatNumber": "37",
           "position3D": {
             "x": 82.39601904348376,
@@ -31522,9 +31522,9 @@ export const section_107: SectionSeatingData = {
           "covered": false
         },
         {
-          "id": "athletics-107-^-38",
+          "id": "athletics-107-AD-38",
           "sectionId": "107",
-          "row": "^",
+          "row": "AD",
           "seatNumber": "38",
           "position3D": {
             "x": 81.9952573463847,
@@ -31548,9 +31548,9 @@ export const section_107: SectionSeatingData = {
           "covered": false
         },
         {
-          "id": "athletics-107-^-39",
+          "id": "athletics-107-AD-39",
           "sectionId": "107",
-          "row": "^",
+          "row": "AD",
           "seatNumber": "39",
           "position3D": {
             "x": 81.59349656295097,
@@ -31574,9 +31574,9 @@ export const section_107: SectionSeatingData = {
           "covered": false
         },
         {
-          "id": "athletics-107-^-40",
+          "id": "athletics-107-AD-40",
           "sectionId": "107",
-          "row": "^",
+          "row": "AD",
           "seatNumber": "40",
           "position3D": {
             "x": 81.19074158851092,
@@ -31605,7 +31605,7 @@ export const section_107: SectionSeatingData = {
       "wheelchairRow": false
     },
     {
-      "rowNumber": "_",
+      "rowNumber": "AE",
       "sectionId": "107",
       "seatCount": 40,
       "elevation": 75,
@@ -31613,9 +31613,9 @@ export const section_107: SectionSeatingData = {
       "rowSpacing": 36,
       "seats": [
         {
-          "id": "athletics-107-_-1",
+          "id": "athletics-107-AE-1",
           "sectionId": "107",
-          "row": "_",
+          "row": "AE",
           "seatNumber": "1",
           "position3D": {
             "x": 98.02380513008418,
@@ -31639,9 +31639,9 @@ export const section_107: SectionSeatingData = {
           "covered": false
         },
         {
-          "id": "athletics-107-_-2",
+          "id": "athletics-107-AE-2",
           "sectionId": "107",
-          "row": "_",
+          "row": "AE",
           "seatNumber": "2",
           "position3D": {
             "x": 97.65499246100215,
@@ -31665,9 +31665,9 @@ export const section_107: SectionSeatingData = {
           "covered": false
         },
         {
-          "id": "athletics-107-_-3",
+          "id": "athletics-107-AE-3",
           "sectionId": "107",
-          "row": "_",
+          "row": "AE",
           "seatNumber": "3",
           "position3D": {
             "x": 97.28498989665508,
@@ -31691,9 +31691,9 @@ export const section_107: SectionSeatingData = {
           "covered": false
         },
         {
-          "id": "athletics-107-_-4",
+          "id": "athletics-107-AE-4",
           "sectionId": "107",
-          "row": "_",
+          "row": "AE",
           "seatNumber": "4",
           "position3D": {
             "x": 96.91380194540739,
@@ -31717,9 +31717,9 @@ export const section_107: SectionSeatingData = {
           "covered": false
         },
         {
-          "id": "athletics-107-_-5",
+          "id": "athletics-107-AE-5",
           "sectionId": "107",
-          "row": "_",
+          "row": "AE",
           "seatNumber": "5",
           "position3D": {
             "x": 96.54143313006706,
@@ -31743,9 +31743,9 @@ export const section_107: SectionSeatingData = {
           "covered": false
         },
         {
-          "id": "athletics-107-_-6",
+          "id": "athletics-107-AE-6",
           "sectionId": "107",
-          "row": "_",
+          "row": "AE",
           "seatNumber": "6",
           "position3D": {
             "x": 96.16788798783072,
@@ -31769,9 +31769,9 @@ export const section_107: SectionSeatingData = {
           "covered": false
         },
         {
-          "id": "athletics-107-_-7",
+          "id": "athletics-107-AE-7",
           "sectionId": "107",
-          "row": "_",
+          "row": "AE",
           "seatNumber": "7",
           "position3D": {
             "x": 95.79317107022793,
@@ -31795,9 +31795,9 @@ export const section_107: SectionSeatingData = {
           "covered": false
         },
         {
-          "id": "athletics-107-_-8",
+          "id": "athletics-107-AE-8",
           "sectionId": "107",
-          "row": "_",
+          "row": "AE",
           "seatNumber": "8",
           "position3D": {
             "x": 95.4172869430662,
@@ -31821,9 +31821,9 @@ export const section_107: SectionSeatingData = {
           "covered": false
         },
         {
-          "id": "athletics-107-_-9",
+          "id": "athletics-107-AE-9",
           "sectionId": "107",
-          "row": "_",
+          "row": "AE",
           "seatNumber": "9",
           "position3D": {
             "x": 95.0402401863749,
@@ -31847,9 +31847,9 @@ export const section_107: SectionSeatingData = {
           "covered": false
         },
         {
-          "id": "athletics-107-_-10",
+          "id": "athletics-107-AE-10",
           "sectionId": "107",
-          "row": "_",
+          "row": "AE",
           "seatNumber": "10",
           "position3D": {
             "x": 94.66203539434977,
@@ -31873,9 +31873,9 @@ export const section_107: SectionSeatingData = {
           "covered": false
         },
         {
-          "id": "athletics-107-_-11",
+          "id": "athletics-107-AE-11",
           "sectionId": "107",
-          "row": "_",
+          "row": "AE",
           "seatNumber": "11",
           "position3D": {
             "x": 94.28267717529694,
@@ -31899,9 +31899,9 @@ export const section_107: SectionSeatingData = {
           "covered": false
         },
         {
-          "id": "athletics-107-_-12",
+          "id": "athletics-107-AE-12",
           "sectionId": "107",
-          "row": "_",
+          "row": "AE",
           "seatNumber": "12",
           "position3D": {
             "x": 93.90217015157646,
@@ -31925,9 +31925,9 @@ export const section_107: SectionSeatingData = {
           "covered": false
         },
         {
-          "id": "athletics-107-_-13",
+          "id": "athletics-107-AE-13",
           "sectionId": "107",
-          "row": "_",
+          "row": "AE",
           "seatNumber": "13",
           "position3D": {
             "x": 93.52051895954644,
@@ -31951,9 +31951,9 @@ export const section_107: SectionSeatingData = {
           "covered": false
         },
         {
-          "id": "athletics-107-_-14",
+          "id": "athletics-107-AE-14",
           "sectionId": "107",
-          "row": "_",
+          "row": "AE",
           "seatNumber": "14",
           "position3D": {
             "x": 93.13772824950621,
@@ -31977,9 +31977,9 @@ export const section_107: SectionSeatingData = {
           "covered": false
         },
         {
-          "id": "athletics-107-_-15",
+          "id": "athletics-107-AE-15",
           "sectionId": "107",
-          "row": "_",
+          "row": "AE",
           "seatNumber": "15",
           "position3D": {
             "x": 92.75380268563966,
@@ -32003,9 +32003,9 @@ export const section_107: SectionSeatingData = {
           "covered": false
         },
         {
-          "id": "athletics-107-_-16",
+          "id": "athletics-107-AE-16",
           "sectionId": "107",
-          "row": "_",
+          "row": "AE",
           "seatNumber": "16",
           "position3D": {
             "x": 92.36874694595873,
@@ -32029,9 +32029,9 @@ export const section_107: SectionSeatingData = {
           "covered": false
         },
         {
-          "id": "athletics-107-_-17",
+          "id": "athletics-107-AE-17",
           "sectionId": "107",
-          "row": "_",
+          "row": "AE",
           "seatNumber": "17",
           "position3D": {
             "x": 91.98256572224606,
@@ -32055,9 +32055,9 @@ export const section_107: SectionSeatingData = {
           "covered": false
         },
         {
-          "id": "athletics-107-_-18",
+          "id": "athletics-107-AE-18",
           "sectionId": "107",
-          "row": "_",
+          "row": "AE",
           "seatNumber": "18",
           "position3D": {
             "x": 91.595263719998,
@@ -32081,9 +32081,9 @@ export const section_107: SectionSeatingData = {
           "covered": false
         },
         {
-          "id": "athletics-107-_-19",
+          "id": "athletics-107-AE-19",
           "sectionId": "107",
-          "row": "_",
+          "row": "AE",
           "seatNumber": "19",
           "position3D": {
             "x": 91.20684565836724,
@@ -32107,9 +32107,9 @@ export const section_107: SectionSeatingData = {
           "covered": false
         },
         {
-          "id": "athletics-107-_-20",
+          "id": "athletics-107-AE-20",
           "sectionId": "107",
-          "row": "_",
+          "row": "AE",
           "seatNumber": "20",
           "position3D": {
             "x": 90.81731627010522,
@@ -32133,9 +32133,9 @@ export const section_107: SectionSeatingData = {
           "covered": false
         },
         {
-          "id": "athletics-107-_-21",
+          "id": "athletics-107-AE-21",
           "sectionId": "107",
-          "row": "_",
+          "row": "AE",
           "seatNumber": "21",
           "position3D": {
             "x": 90.42668030150467,
@@ -32159,9 +32159,9 @@ export const section_107: SectionSeatingData = {
           "covered": false
         },
         {
-          "id": "athletics-107-_-22",
+          "id": "athletics-107-AE-22",
           "sectionId": "107",
-          "row": "_",
+          "row": "AE",
           "seatNumber": "22",
           "position3D": {
             "x": 90.03494251234152,
@@ -32185,9 +32185,9 @@ export const section_107: SectionSeatingData = {
           "covered": false
         },
         {
-          "id": "athletics-107-_-23",
+          "id": "athletics-107-AE-23",
           "sectionId": "107",
-          "row": "_",
+          "row": "AE",
           "seatNumber": "23",
           "position3D": {
             "x": 89.64210767581723,
@@ -32211,9 +32211,9 @@ export const section_107: SectionSeatingData = {
           "covered": false
         },
         {
-          "id": "athletics-107-_-24",
+          "id": "athletics-107-AE-24",
           "sectionId": "107",
-          "row": "_",
+          "row": "AE",
           "seatNumber": "24",
           "position3D": {
             "x": 89.2481805785002,
@@ -32237,9 +32237,9 @@ export const section_107: SectionSeatingData = {
           "covered": false
         },
         {
-          "id": "athletics-107-_-25",
+          "id": "athletics-107-AE-25",
           "sectionId": "107",
-          "row": "_",
+          "row": "AE",
           "seatNumber": "25",
           "position3D": {
             "x": 88.85316602026779,
@@ -32263,9 +32263,9 @@ export const section_107: SectionSeatingData = {
           "covered": false
         },
         {
-          "id": "athletics-107-_-26",
+          "id": "athletics-107-AE-26",
           "sectionId": "107",
-          "row": "_",
+          "row": "AE",
           "seatNumber": "26",
           "position3D": {
             "x": 88.45706881424785,
@@ -32289,9 +32289,9 @@ export const section_107: SectionSeatingData = {
           "covered": false
         },
         {
-          "id": "athletics-107-_-27",
+          "id": "athletics-107-AE-27",
           "sectionId": "107",
-          "row": "_",
+          "row": "AE",
           "seatNumber": "27",
           "position3D": {
             "x": 88.05989378675967,
@@ -32315,9 +32315,9 @@ export const section_107: SectionSeatingData = {
           "covered": false
         },
         {
-          "id": "athletics-107-_-28",
+          "id": "athletics-107-AE-28",
           "sectionId": "107",
-          "row": "_",
+          "row": "AE",
           "seatNumber": "28",
           "position3D": {
             "x": 87.66164577725577,
@@ -32341,9 +32341,9 @@ export const section_107: SectionSeatingData = {
           "covered": false
         },
         {
-          "id": "athletics-107-_-29",
+          "id": "athletics-107-AE-29",
           "sectionId": "107",
-          "row": "_",
+          "row": "AE",
           "seatNumber": "29",
           "position3D": {
             "x": 87.26232963826241,
@@ -32367,9 +32367,9 @@ export const section_107: SectionSeatingData = {
           "covered": false
         },
         {
-          "id": "athletics-107-_-30",
+          "id": "athletics-107-AE-30",
           "sectionId": "107",
-          "row": "_",
+          "row": "AE",
           "seatNumber": "30",
           "position3D": {
             "x": 86.86195023532066,
@@ -32393,9 +32393,9 @@ export const section_107: SectionSeatingData = {
           "covered": false
         },
         {
-          "id": "athletics-107-_-31",
+          "id": "athletics-107-AE-31",
           "sectionId": "107",
-          "row": "_",
+          "row": "AE",
           "seatNumber": "31",
           "position3D": {
             "x": 86.46051244692731,
@@ -32419,9 +32419,9 @@ export const section_107: SectionSeatingData = {
           "covered": false
         },
         {
-          "id": "athletics-107-_-32",
+          "id": "athletics-107-AE-32",
           "sectionId": "107",
-          "row": "_",
+          "row": "AE",
           "seatNumber": "32",
           "position3D": {
             "x": 86.05802116447504,
@@ -32445,9 +32445,9 @@ export const section_107: SectionSeatingData = {
           "covered": false
         },
         {
-          "id": "athletics-107-_-33",
+          "id": "athletics-107-AE-33",
           "sectionId": "107",
-          "row": "_",
+          "row": "AE",
           "seatNumber": "33",
           "position3D": {
             "x": 85.65448129219315,
@@ -32471,9 +32471,9 @@ export const section_107: SectionSeatingData = {
           "covered": false
         },
         {
-          "id": "athletics-107-_-34",
+          "id": "athletics-107-AE-34",
           "sectionId": "107",
-          "row": "_",
+          "row": "AE",
           "seatNumber": "34",
           "position3D": {
             "x": 85.24989774708763,
@@ -32497,9 +32497,9 @@ export const section_107: SectionSeatingData = {
           "covered": false
         },
         {
-          "id": "athletics-107-_-35",
+          "id": "athletics-107-AE-35",
           "sectionId": "107",
-          "row": "_",
+          "row": "AE",
           "seatNumber": "35",
           "position3D": {
             "x": 84.84427545888126,
@@ -32523,9 +32523,9 @@ export const section_107: SectionSeatingData = {
           "covered": false
         },
         {
-          "id": "athletics-107-_-36",
+          "id": "athletics-107-AE-36",
           "sectionId": "107",
-          "row": "_",
+          "row": "AE",
           "seatNumber": "36",
           "position3D": {
             "x": 84.43761936995367,
@@ -32549,9 +32549,9 @@ export const section_107: SectionSeatingData = {
           "covered": false
         },
         {
-          "id": "athletics-107-_-37",
+          "id": "athletics-107-AE-37",
           "sectionId": "107",
-          "row": "_",
+          "row": "AE",
           "seatNumber": "37",
           "position3D": {
             "x": 84.0299344352809,
@@ -32575,9 +32575,9 @@ export const section_107: SectionSeatingData = {
           "covered": false
         },
         {
-          "id": "athletics-107-_-38",
+          "id": "athletics-107-AE-38",
           "sectionId": "107",
-          "row": "_",
+          "row": "AE",
           "seatNumber": "38",
           "position3D": {
             "x": 83.62122562237535,
@@ -32601,9 +32601,9 @@ export const section_107: SectionSeatingData = {
           "covered": false
         },
         {
-          "id": "athletics-107-_-39",
+          "id": "athletics-107-AE-39",
           "sectionId": "107",
-          "row": "_",
+          "row": "AE",
           "seatNumber": "39",
           "position3D": {
             "x": 83.2114979112248,
@@ -32627,9 +32627,9 @@ export const section_107: SectionSeatingData = {
           "covered": false
         },
         {
-          "id": "athletics-107-_-40",
+          "id": "athletics-107-AE-40",
           "sectionId": "107",
-          "row": "_",
+          "row": "AE",
           "seatNumber": "40",
           "position3D": {
             "x": 82.8007562942321,
@@ -32658,7 +32658,7 @@ export const section_107: SectionSeatingData = {
       "wheelchairRow": false
     },
     {
-      "rowNumber": "`",
+      "rowNumber": "AF",
       "sectionId": "107",
       "seatCount": 40,
       "elevation": 77.5,
@@ -32666,9 +32666,9 @@ export const section_107: SectionSeatingData = {
       "rowSpacing": 36,
       "seats": [
         {
-          "id": "athletics-107-`-1",
+          "id": "athletics-107-AF-1",
           "sectionId": "107",
-          "row": "`",
+          "row": "AF",
           "seatNumber": "1",
           "position3D": {
             "x": 99.92982356316917,
@@ -32692,9 +32692,9 @@ export const section_107: SectionSeatingData = {
           "covered": false
         },
         {
-          "id": "athletics-107-`-2",
+          "id": "athletics-107-AF-2",
           "sectionId": "107",
-          "row": "`",
+          "row": "AF",
           "seatNumber": "2",
           "position3D": {
             "x": 99.55383953663276,
@@ -32718,9 +32718,9 @@ export const section_107: SectionSeatingData = {
           "covered": false
         },
         {
-          "id": "athletics-107-`-3",
+          "id": "athletics-107-AF-3",
           "sectionId": "107",
-          "row": "`",
+          "row": "AF",
           "seatNumber": "3",
           "position3D": {
             "x": 99.17664247797893,
@@ -32744,9 +32744,9 @@ export const section_107: SectionSeatingData = {
           "covered": false
         },
         {
-          "id": "athletics-107-`-4",
+          "id": "athletics-107-AF-4",
           "sectionId": "107",
-          "row": "`",
+          "row": "AF",
           "seatNumber": "4",
           "position3D": {
             "x": 98.79823698323476,
@@ -32770,9 +32770,9 @@ export const section_107: SectionSeatingData = {
           "covered": false
         },
         {
-          "id": "athletics-107-`-5",
+          "id": "athletics-107-AF-5",
           "sectionId": "107",
-          "row": "`",
+          "row": "AF",
           "seatNumber": "5",
           "position3D": {
             "x": 98.41862766315171,
@@ -32796,9 +32796,9 @@ export const section_107: SectionSeatingData = {
           "covered": false
         },
         {
-          "id": "athletics-107-`-6",
+          "id": "athletics-107-AF-6",
           "sectionId": "107",
-          "row": "`",
+          "row": "AF",
           "seatNumber": "6",
           "position3D": {
             "x": 98.03781914314966,
@@ -32822,9 +32822,9 @@ export const section_107: SectionSeatingData = {
           "covered": false
         },
         {
-          "id": "athletics-107-`-7",
+          "id": "athletics-107-AF-7",
           "sectionId": "107",
-          "row": "`",
+          "row": "AF",
           "seatNumber": "7",
           "position3D": {
             "x": 97.65581606326015,
@@ -32848,9 +32848,9 @@ export const section_107: SectionSeatingData = {
           "covered": false
         },
         {
-          "id": "athletics-107-`-8",
+          "id": "athletics-107-AF-8",
           "sectionId": "107",
-          "row": "`",
+          "row": "AF",
           "seatNumber": "8",
           "position3D": {
             "x": 97.27262307807027,
@@ -32874,9 +32874,9 @@ export const section_107: SectionSeatingData = {
           "covered": false
         },
         {
-          "id": "athletics-107-`-9",
+          "id": "athletics-107-AF-9",
           "sectionId": "107",
-          "row": "`",
+          "row": "AF",
           "seatNumber": "9",
           "position3D": {
             "x": 96.88824485666554,
@@ -32900,9 +32900,9 @@ export const section_107: SectionSeatingData = {
           "covered": false
         },
         {
-          "id": "athletics-107-`-10",
+          "id": "athletics-107-AF-10",
           "sectionId": "107",
-          "row": "`",
+          "row": "AF",
           "seatNumber": "10",
           "position3D": {
             "x": 96.50268608257325,
@@ -32926,9 +32926,9 @@ export const section_107: SectionSeatingData = {
           "covered": false
         },
         {
-          "id": "athletics-107-`-11",
+          "id": "athletics-107-AF-11",
           "sectionId": "107",
-          "row": "`",
+          "row": "AF",
           "seatNumber": "11",
           "position3D": {
             "x": 96.11595145370549,
@@ -32952,9 +32952,9 @@ export const section_107: SectionSeatingData = {
           "covered": false
         },
         {
-          "id": "athletics-107-`-12",
+          "id": "athletics-107-AF-12",
           "sectionId": "107",
-          "row": "`",
+          "row": "AF",
           "seatNumber": "12",
           "position3D": {
             "x": 95.72804568230157,
@@ -32978,9 +32978,9 @@ export const section_107: SectionSeatingData = {
           "covered": false
         },
         {
-          "id": "athletics-107-`-13",
+          "id": "athletics-107-AF-13",
           "sectionId": "107",
-          "row": "`",
+          "row": "AF",
           "seatNumber": "13",
           "position3D": {
             "x": 95.33897349487096,
@@ -33004,9 +33004,9 @@ export const section_107: SectionSeatingData = {
           "covered": false
         },
         {
-          "id": "athletics-107-`-14",
+          "id": "athletics-107-AF-14",
           "sectionId": "107",
-          "row": "`",
+          "row": "AF",
           "seatNumber": "14",
           "position3D": {
             "x": 94.9487396321355,
@@ -33030,9 +33030,9 @@ export const section_107: SectionSeatingData = {
           "covered": false
         },
         {
-          "id": "athletics-107-`-15",
+          "id": "athletics-107-AF-15",
           "sectionId": "107",
-          "row": "`",
+          "row": "AF",
           "seatNumber": "15",
           "position3D": {
             "x": 94.55734884897154,
@@ -33056,9 +33056,9 @@ export const section_107: SectionSeatingData = {
           "covered": false
         },
         {
-          "id": "athletics-107-`-16",
+          "id": "athletics-107-AF-16",
           "sectionId": "107",
-          "row": "`",
+          "row": "AF",
           "seatNumber": "16",
           "position3D": {
             "x": 94.16480591435239,
@@ -33082,9 +33082,9 @@ export const section_107: SectionSeatingData = {
           "covered": false
         },
         {
-          "id": "athletics-107-`-17",
+          "id": "athletics-107-AF-17",
           "sectionId": "107",
-          "row": "`",
+          "row": "AF",
           "seatNumber": "17",
           "position3D": {
             "x": 93.77111561128974,
@@ -33108,9 +33108,9 @@ export const section_107: SectionSeatingData = {
           "covered": false
         },
         {
-          "id": "athletics-107-`-18",
+          "id": "athletics-107-AF-18",
           "sectionId": "107",
-          "row": "`",
+          "row": "AF",
           "seatNumber": "18",
           "position3D": {
             "x": 93.37628273677575,
@@ -33134,9 +33134,9 @@ export const section_107: SectionSeatingData = {
           "covered": false
         },
         {
-          "id": "athletics-107-`-19",
+          "id": "athletics-107-AF-19",
           "sectionId": "107",
-          "row": "`",
+          "row": "AF",
           "seatNumber": "19",
           "position3D": {
             "x": 92.9803121017244,
@@ -33160,9 +33160,9 @@ export const section_107: SectionSeatingData = {
           "covered": false
         },
         {
-          "id": "athletics-107-`-20",
+          "id": "athletics-107-AF-20",
           "sectionId": "107",
-          "row": "`",
+          "row": "AF",
           "seatNumber": "20",
           "position3D": {
             "x": 92.58320853091283,
@@ -33186,9 +33186,9 @@ export const section_107: SectionSeatingData = {
           "covered": false
         },
         {
-          "id": "athletics-107-`-21",
+          "id": "athletics-107-AF-21",
           "sectionId": "107",
-          "row": "`",
+          "row": "AF",
           "seatNumber": "21",
           "position3D": {
             "x": 92.18497686292282,
@@ -33212,9 +33212,9 @@ export const section_107: SectionSeatingData = {
           "covered": false
         },
         {
-          "id": "athletics-107-`-22",
+          "id": "athletics-107-AF-22",
           "sectionId": "107",
-          "row": "`",
+          "row": "AF",
           "seatNumber": "22",
           "position3D": {
             "x": 91.78562195008149,
@@ -33238,9 +33238,9 @@ export const section_107: SectionSeatingData = {
           "covered": false
         },
         {
-          "id": "athletics-107-`-23",
+          "id": "athletics-107-AF-23",
           "sectionId": "107",
-          "row": "`",
+          "row": "AF",
           "seatNumber": "23",
           "position3D": {
             "x": 91.38514865840257,
@@ -33264,9 +33264,9 @@ export const section_107: SectionSeatingData = {
           "covered": false
         },
         {
-          "id": "athletics-107-`-24",
+          "id": "athletics-107-AF-24",
           "sectionId": "107",
-          "row": "`",
+          "row": "AF",
           "seatNumber": "24",
           "position3D": {
             "x": 90.9835618675266,
@@ -33290,9 +33290,9 @@ export const section_107: SectionSeatingData = {
           "covered": false
         },
         {
-          "id": "athletics-107-`-25",
+          "id": "athletics-107-AF-25",
           "sectionId": "107",
-          "row": "`",
+          "row": "AF",
           "seatNumber": "25",
           "position3D": {
             "x": 90.58086647066189,
@@ -33316,9 +33316,9 @@ export const section_107: SectionSeatingData = {
           "covered": false
         },
         {
-          "id": "athletics-107-`-26",
+          "id": "athletics-107-AF-26",
           "sectionId": "107",
-          "row": "`",
+          "row": "AF",
           "seatNumber": "26",
           "position3D": {
             "x": 90.1770673745249,
@@ -33342,9 +33342,9 @@ export const section_107: SectionSeatingData = {
           "covered": false
         },
         {
-          "id": "athletics-107-`-27",
+          "id": "athletics-107-AF-27",
           "sectionId": "107",
-          "row": "`",
+          "row": "AF",
           "seatNumber": "27",
           "position3D": {
             "x": 89.77216949928,
@@ -33368,9 +33368,9 @@ export const section_107: SectionSeatingData = {
           "covered": false
         },
         {
-          "id": "athletics-107-`-28",
+          "id": "athletics-107-AF-28",
           "sectionId": "107",
-          "row": "`",
+          "row": "AF",
           "seatNumber": "28",
           "position3D": {
             "x": 89.36617777848019,
@@ -33394,9 +33394,9 @@ export const section_107: SectionSeatingData = {
           "covered": false
         },
         {
-          "id": "athletics-107-`-29",
+          "id": "athletics-107-AF-29",
           "sectionId": "107",
-          "row": "`",
+          "row": "AF",
           "seatNumber": "29",
           "position3D": {
             "x": 88.95909715900642,
@@ -33420,9 +33420,9 @@ export const section_107: SectionSeatingData = {
           "covered": false
         },
         {
-          "id": "athletics-107-`-30",
+          "id": "athletics-107-AF-30",
           "sectionId": "107",
-          "row": "`",
+          "row": "AF",
           "seatNumber": "30",
           "position3D": {
             "x": 88.55093260100746,
@@ -33446,9 +33446,9 @@ export const section_107: SectionSeatingData = {
           "covered": false
         },
         {
-          "id": "athletics-107-`-31",
+          "id": "athletics-107-AF-31",
           "sectionId": "107",
-          "row": "`",
+          "row": "AF",
           "seatNumber": "31",
           "position3D": {
             "x": 88.1416890778398,
@@ -33472,9 +33472,9 @@ export const section_107: SectionSeatingData = {
           "covered": false
         },
         {
-          "id": "athletics-107-`-32",
+          "id": "athletics-107-AF-32",
           "sectionId": "107",
-          "row": "`",
+          "row": "AF",
           "seatNumber": "32",
           "position3D": {
             "x": 87.7313715760065,
@@ -33498,9 +33498,9 @@ export const section_107: SectionSeatingData = {
           "covered": false
         },
         {
-          "id": "athletics-107-`-33",
+          "id": "athletics-107-AF-33",
           "sectionId": "107",
-          "row": "`",
+          "row": "AF",
           "seatNumber": "33",
           "position3D": {
             "x": 87.31998509509692,
@@ -33524,9 +33524,9 @@ export const section_107: SectionSeatingData = {
           "covered": false
         },
         {
-          "id": "athletics-107-`-34",
+          "id": "athletics-107-AF-34",
           "sectionId": "107",
-          "row": "`",
+          "row": "AF",
           "seatNumber": "34",
           "position3D": {
             "x": 86.90753464772546,
@@ -33550,9 +33550,9 @@ export const section_107: SectionSeatingData = {
           "covered": false
         },
         {
-          "id": "athletics-107-`-35",
+          "id": "athletics-107-AF-35",
           "sectionId": "107",
-          "row": "`",
+          "row": "AF",
           "seatNumber": "35",
           "position3D": {
             "x": 86.49402525947062,
@@ -33576,9 +33576,9 @@ export const section_107: SectionSeatingData = {
           "covered": false
         },
         {
-          "id": "athletics-107-`-36",
+          "id": "athletics-107-AF-36",
           "sectionId": "107",
-          "row": "`",
+          "row": "AF",
           "seatNumber": "36",
           "position3D": {
             "x": 86.07946196881389,
@@ -33602,9 +33602,9 @@ export const section_107: SectionSeatingData = {
           "covered": false
         },
         {
-          "id": "athletics-107-`-37",
+          "id": "athletics-107-AF-37",
           "sectionId": "107",
-          "row": "`",
+          "row": "AF",
           "seatNumber": "37",
           "position3D": {
             "x": 85.66384982707804,
@@ -33628,9 +33628,9 @@ export const section_107: SectionSeatingData = {
           "covered": false
         },
         {
-          "id": "athletics-107-`-38",
+          "id": "athletics-107-AF-38",
           "sectionId": "107",
-          "row": "`",
+          "row": "AF",
           "seatNumber": "38",
           "position3D": {
             "x": 85.24719389836598,
@@ -33654,9 +33654,9 @@ export const section_107: SectionSeatingData = {
           "covered": false
         },
         {
-          "id": "athletics-107-`-39",
+          "id": "athletics-107-AF-39",
           "sectionId": "107",
-          "row": "`",
+          "row": "AF",
           "seatNumber": "39",
           "position3D": {
             "x": 84.82949925949862,
@@ -33680,9 +33680,9 @@ export const section_107: SectionSeatingData = {
           "covered": false
         },
         {
-          "id": "athletics-107-`-40",
+          "id": "athletics-107-AF-40",
           "sectionId": "107",
-          "row": "`",
+          "row": "AF",
           "seatNumber": "40",
           "position3D": {
             "x": 84.41077099995329,
@@ -33711,27 +33711,27 @@ export const section_107: SectionSeatingData = {
       "wheelchairRow": false
     },
     {
-      "rowNumber": "a",
+      "rowNumber": "AG",
       "sectionId": "107",
-      "seatCount": 40,
+      "seatCount": 39,
       "elevation": 80,
       "depth": 149.6,
       "rowSpacing": 36,
       "seats": [
         {
-          "id": "athletics-107-a-1",
+          "id": "athletics-107-AG-1",
           "sectionId": "107",
-          "row": "a",
+          "row": "AG",
           "seatNumber": "1",
           "position3D": {
-            "x": 101.83584199625412,
-            "y": 109.58841765859182,
+            "x": 101.83093758989502,
+            "y": 109.59297490972176,
             "z": 80
           },
           "elevation": 80,
-          "distanceFromHomeplate": 149.59999999999997,
-          "angle": 137.1,
-          "facing": 317.1,
+          "distanceFromHomeplate": 149.6,
+          "angle": 137.10256410256412,
+          "facing": 317.1025641025641,
           "seatType": "aisle",
           "hasArmrests": true,
           "cupHolders": true,
@@ -33745,19 +33745,19 @@ export const section_107: SectionSeatingData = {
           "covered": false
         },
         {
-          "id": "athletics-107-a-2",
+          "id": "athletics-107-AG-2",
           "sectionId": "107",
-          "row": "a",
+          "row": "AG",
           "seatNumber": "2",
           "position3D": {
-            "x": 101.45268661226335,
-            "y": 109.94322343443402,
+            "x": 101.43792514998685,
+            "y": 109.95684308521076,
             "z": 80
           },
           "elevation": 80,
           "distanceFromHomeplate": 149.6,
-          "angle": 137.3,
-          "facing": 317.3,
+          "angle": 137.30769230769232,
+          "facing": 317.3076923076923,
           "seatType": "standard",
           "hasArmrests": true,
           "cupHolders": true,
@@ -33771,19 +33771,19 @@ export const section_107: SectionSeatingData = {
           "covered": false
         },
         {
-          "id": "athletics-107-a-3",
+          "id": "athletics-107-AG-3",
           "sectionId": "107",
-          "row": "a",
+          "row": "AG",
           "seatNumber": "3",
           "position3D": {
-            "x": 101.06829505930277,
-            "y": 110.29668958679456,
+            "x": 101.04361252436831,
+            "y": 110.3193018833301,
             "z": 80
           },
           "elevation": 80,
           "distanceFromHomeplate": 149.6,
-          "angle": 137.5,
-          "facing": 317.5,
+          "angle": 137.51282051282053,
+          "facing": 317.51282051282055,
           "seatType": "standard",
           "hasArmrests": true,
           "cupHolders": true,
@@ -33797,19 +33797,19 @@ export const section_107: SectionSeatingData = {
           "covered": false
         },
         {
-          "id": "athletics-107-a-4",
+          "id": "athletics-107-AG-4",
           "sectionId": "107",
-          "row": "a",
+          "row": "AG",
           "seatNumber": "4",
           "position3D": {
-            "x": 100.68267202106212,
-            "y": 110.64881180879999,
+            "x": 100.64800476716135,
+            "y": 110.68034665824581,
             "z": 80
           },
           "elevation": 80,
           "distanceFromHomeplate": 149.6,
-          "angle": 137.7,
-          "facing": 317.7,
+          "angle": 137.71794871794873,
+          "facing": 317.71794871794873,
           "seatType": "standard",
           "hasArmrests": true,
           "cupHolders": true,
@@ -33823,19 +33823,19 @@ export const section_107: SectionSeatingData = {
           "covered": false
         },
         {
-          "id": "athletics-107-a-5",
+          "id": "athletics-107-AG-5",
           "sectionId": "107",
-          "row": "a",
+          "row": "AG",
           "seatNumber": "5",
           "position3D": {
-            "x": 100.29582219623634,
-            "y": 110.99958580995221,
+            "x": 100.25110694908828,
+            "y": 111.03997278224838,
             "z": 80
           },
           "elevation": 80,
           "distanceFromHomeplate": 149.6,
-          "angle": 137.9,
-          "facing": 317.9,
+          "angle": 137.92307692307693,
+          "facing": 317.9230769230769,
           "seatType": "standard",
           "hasArmrests": true,
           "cupHolders": true,
@@ -33849,19 +33849,19 @@ export const section_107: SectionSeatingData = {
           "covered": false
         },
         {
-          "id": "athletics-107-a-6",
+          "id": "athletics-107-AG-6",
           "sectionId": "107",
-          "row": "a",
+          "row": "AG",
           "seatNumber": "6",
           "position3D": {
-            "x": 99.90775029846859,
-            "y": 111.34900731618063,
+            "x": 99.85292415740686,
+            "y": 111.39817564581188,
             "z": 80
           },
           "elevation": 80,
           "distanceFromHomeplate": 149.6,
-          "angle": 138.1,
-          "facing": 318.1,
+          "angle": 138.12820512820514,
+          "facing": 318.12820512820514,
           "seatType": "standard",
           "hasArmrests": true,
           "cupHolders": true,
@@ -33875,19 +33875,19 @@ export const section_107: SectionSeatingData = {
           "covered": false
         },
         {
-          "id": "athletics-107-a-7",
+          "id": "athletics-107-AG-7",
           "sectionId": "107",
-          "row": "a",
+          "row": "AG",
           "seatNumber": "7",
           "position3D": {
-            "x": 99.51846105629235,
-            "y": 111.69707206989457,
+            "x": 99.45346149584508,
+            "y": 111.754950657653,
             "z": 80
           },
           "elevation": 80,
           "distanceFromHomeplate": 149.6,
-          "angle": 138.3,
-          "facing": 318.3,
+          "angle": 138.33333333333334,
+          "facing": 318.33333333333337,
           "seatType": "standard",
           "hasArmrests": true,
           "cupHolders": true,
@@ -33901,19 +33901,19 @@ export const section_107: SectionSeatingData = {
           "covered": false
         },
         {
-          "id": "athletics-107-a-8",
+          "id": "athletics-107-AG-8",
           "sectionId": "107",
-          "row": "a",
+          "row": "AG",
           "seatNumber": "8",
           "position3D": {
-            "x": 99.12795921307432,
-            "y": 112.0437758300347,
+            "x": 99.05272408453568,
+            "y": 112.11029324479017,
             "z": 80
           },
           "elevation": 80,
           "distanceFromHomeplate": 149.6,
-          "angle": 138.5,
-          "facing": 318.5,
+          "angle": 138.53846153846155,
+          "facing": 318.53846153846155,
           "seatType": "standard",
           "hasArmrests": true,
           "cupHolders": true,
@@ -33927,19 +33927,19 @@ export const section_107: SectionSeatingData = {
           "covered": false
         },
         {
-          "id": "athletics-107-a-9",
+          "id": "athletics-107-AG-9",
           "sectionId": "107",
-          "row": "a",
+          "row": "AG",
           "seatNumber": "9",
           "position3D": {
-            "x": 98.73624952695614,
-            "y": 112.38911437212525,
+            "x": 98.65071705995062,
+            "y": 112.46419885260181,
             "z": 80
           },
           "elevation": 80,
           "distanceFromHomeplate": 149.6,
-          "angle": 138.7,
-          "facing": 318.7,
+          "angle": 138.74358974358975,
+          "facing": 318.7435897435897,
           "seatType": "standard",
           "hasArmrests": true,
           "cupHolders": true,
@@ -33953,19 +33953,19 @@ export const section_107: SectionSeatingData = {
           "covered": false
         },
         {
-          "id": "athletics-107-a-10",
+          "id": "athletics-107-AG-10",
           "sectionId": "107",
-          "row": "a",
+          "row": "AG",
           "seatNumber": "10",
           "position3D": {
-            "x": 98.34333677079671,
-            "y": 112.73308348832505,
+            "x": 98.24744557483515,
+            "y": 112.81666294488505,
             "z": 80
           },
           "elevation": 80,
-          "distanceFromHomeplate": 149.60000000000002,
-          "angle": 138.9,
-          "facing": 318.9,
+          "distanceFromHomeplate": 149.6,
+          "angle": 138.94871794871796,
+          "facing": 318.94871794871796,
           "seatType": "standard",
           "hasArmrests": true,
           "cupHolders": true,
@@ -33979,19 +33979,19 @@ export const section_107: SectionSeatingData = {
           "covered": false
         },
         {
-          "id": "athletics-107-a-11",
+          "id": "athletics-107-AG-11",
           "sectionId": "107",
-          "row": "a",
+          "row": "AG",
           "seatNumber": "11",
           "position3D": {
-            "x": 97.94922573211403,
-            "y": 113.07567898747887,
+            "x": 97.84291479814185,
+            "y": 113.16768100391361,
             "z": 80
           },
           "elevation": 80,
           "distanceFromHomeplate": 149.6,
-          "angle": 139.1,
-          "facing": 319.1,
+          "angle": 139.15384615384616,
+          "facing": 319.1538461538462,
           "seatType": "standard",
           "hasArmrests": true,
           "cupHolders": true,
@@ -34005,19 +34005,19 @@ export const section_107: SectionSeatingData = {
           "covered": false
         },
         {
-          "id": "athletics-107-a-12",
+          "id": "athletics-107-AG-12",
           "sectionId": "107",
-          "row": "a",
+          "row": "AG",
           "seatNumber": "12",
           "position3D": {
-            "x": 97.55392121302665,
-            "y": 113.41689669516879,
+            "x": 97.43712991496427,
+            "y": 113.51724853049589,
             "z": 80
           },
           "elevation": 80,
           "distanceFromHomeplate": 149.6,
-          "angle": 139.3,
-          "facing": 319.3,
+          "angle": 139.35897435897436,
+          "facing": 319.35897435897436,
           "seatType": "standard",
           "hasArmrests": true,
           "cupHolders": true,
@@ -34031,19 +34031,19 @@ export const section_107: SectionSeatingData = {
           "covered": false
         },
         {
-          "id": "athletics-107-a-13",
+          "id": "athletics-107-AG-13",
           "sectionId": "107",
-          "row": "a",
+          "row": "AG",
           "seatNumber": "13",
           "position3D": {
-            "x": 97.15742803019546,
-            "y": 113.75673245376464,
+            "x": 97.03009612647061,
+            "y": 113.86536104403248,
             "z": 80
           },
           "elevation": 80,
-          "distanceFromHomeplate": 149.60000000000002,
-          "angle": 139.5,
-          "facing": 319.5,
+          "distanceFromHomeplate": 149.6,
+          "angle": 139.56410256410257,
+          "facing": 319.56410256410254,
           "seatType": "standard",
           "hasArmrests": true,
           "cupHolders": true,
@@ -34057,19 +34057,19 @@ export const section_107: SectionSeatingData = {
           "covered": false
         },
         {
-          "id": "athletics-107-a-14",
+          "id": "athletics-107-AG-14",
           "sectionId": "107",
-          "row": "a",
+          "row": "AG",
           "seatNumber": "14",
           "position3D": {
-            "x": 96.75975101476479,
-            "y": 114.09518212247495,
+            "x": 96.6218186498369,
+            "y": 114.21201408257376,
             "z": 80
           },
           "elevation": 80,
-          "distanceFromHomeplate": 149.60000000000002,
-          "angle": 139.7,
-          "facing": 319.7,
+          "distanceFromHomeplate": 149.6,
+          "angle": 139.76923076923077,
+          "facing": 319.7692307692308,
           "seatType": "standard",
           "hasArmrests": true,
           "cupHolders": true,
@@ -34083,19 +34083,45 @@ export const section_107: SectionSeatingData = {
           "covered": false
         },
         {
-          "id": "athletics-107-a-15",
+          "id": "athletics-107-AG-15",
           "sectionId": "107",
-          "row": "a",
+          "row": "AG",
           "seatNumber": "15",
           "position3D": {
-            "x": 96.36089501230342,
-            "y": 114.4322415773974,
+            "x": 96.21230271818028,
+            "y": 114.55720320287693,
+            "z": 80
+          },
+          "elevation": 80,
+          "distanceFromHomeplate": 149.6,
+          "angle": 139.97435897435898,
+          "facing": 319.974358974359,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-107-AG-16",
+          "sectionId": "107",
+          "row": "AG",
+          "seatNumber": "16",
+          "position3D": {
+            "x": 95.8015535804918,
+            "y": 114.9009239804631,
             "z": 80
           },
           "elevation": 80,
           "distanceFromHomeplate": 149.60000000000002,
-          "angle": 139.9,
-          "facing": 319.9,
+          "angle": 140.17948717948718,
+          "facing": 320.1794871794872,
           "seatType": "standard",
           "hasArmrests": true,
           "cupHolders": true,
@@ -34109,45 +34135,19 @@ export const section_107: SectionSeatingData = {
           "covered": false
         },
         {
-          "id": "athletics-107-a-16",
+          "id": "athletics-107-AG-17",
           "sectionId": "107",
-          "row": "a",
-          "seatNumber": "16",
-          "position3D": {
-            "x": 95.96086488274602,
-            "y": 114.76790671156881,
-            "z": 80
-          },
-          "elevation": 80,
-          "distanceFromHomeplate": 149.6,
-          "angle": 140.1,
-          "facing": 320.1,
-          "seatType": "standard",
-          "hasArmrests": true,
-          "cupHolders": true,
-          "viewQuality": "good",
-          "accessibility": {
-            "wheelchairAccessible": false,
-            "companionSeat": false,
-            "requiresStairs": false,
-            "elevatorAccess": true
-          },
-          "covered": false
-        },
-        {
-          "id": "athletics-107-a-17",
-          "sectionId": "107",
-          "row": "a",
+          "row": "AG",
           "seatNumber": "17",
           "position3D": {
-            "x": 95.55966550033341,
-            "y": 115.1021734350155,
+            "x": 95.38957650156917,
+            "y": 115.24317200967388,
             "z": 80
           },
           "elevation": 80,
           "distanceFromHomeplate": 149.6,
-          "angle": 140.3,
-          "facing": 320.3,
+          "angle": 140.3846153846154,
+          "facing": 320.38461538461536,
           "seatType": "standard",
           "hasArmrests": true,
           "cupHolders": true,
@@ -34161,19 +34161,19 @@ export const section_107: SectionSeatingData = {
           "covered": false
         },
         {
-          "id": "athletics-107-a-18",
+          "id": "athletics-107-AG-18",
           "sectionId": "107",
-          "row": "a",
+          "row": "AG",
           "seatNumber": "18",
           "position3D": {
-            "x": 95.15730175355348,
-            "y": 115.43503767480291,
+            "x": 94.97637676194937,
+            "y": 115.58394290372794,
             "z": 80
           },
           "elevation": 80,
           "distanceFromHomeplate": 149.6,
-          "angle": 140.5,
-          "facing": 320.5,
+          "angle": 140.5897435897436,
+          "facing": 320.5897435897436,
           "seatType": "standard",
           "hasArmrests": true,
           "cupHolders": true,
@@ -34187,19 +34187,19 @@ export const section_107: SectionSeatingData = {
           "covered": false
         },
         {
-          "id": "athletics-107-a-19",
+          "id": "athletics-107-AG-19",
           "sectionId": "107",
-          "row": "a",
+          "row": "AG",
           "seatNumber": "19",
           "position3D": {
-            "x": 94.75377854508152,
-            "y": 115.76649537508531,
+            "x": 94.56195965784083,
+            "y": 115.92323229477721,
             "z": 80
           },
           "elevation": 80,
           "distanceFromHomeplate": 149.6,
-          "angle": 140.7,
-          "facing": 320.7,
+          "angle": 140.7948717948718,
+          "facing": 320.7948717948718,
           "seatType": "standard",
           "hasArmrests": true,
           "cupHolders": true,
@@ -34213,19 +34213,19 @@ export const section_107: SectionSeatingData = {
           "covered": false
         },
         {
-          "id": "athletics-107-a-20",
+          "id": "athletics-107-AG-20",
           "sectionId": "107",
-          "row": "a",
+          "row": "AG",
           "seatNumber": "20",
           "position3D": {
-            "x": 94.34910079172042,
-            "y": 116.09654249715527,
+            "x": 94.14633050105569,
+            "y": 116.26103583396282,
             "z": 80
           },
           "elevation": 80,
           "distanceFromHomeplate": 149.6,
-          "angle": 140.9,
-          "facing": 320.9,
+          "angle": 141,
+          "facing": 321,
           "seatType": "standard",
           "hasArmrests": true,
           "cupHolders": true,
@@ -34239,19 +34239,19 @@ export const section_107: SectionSeatingData = {
           "covered": false
         },
         {
-          "id": "athletics-107-a-21",
+          "id": "athletics-107-AG-21",
           "sectionId": "107",
-          "row": "a",
+          "row": "AG",
           "seatNumber": "21",
           "position3D": {
-            "x": 93.94327342434096,
-            "y": 116.42517501949273,
+            "x": 93.72949461894152,
+            "y": 116.59734919147094,
             "z": 80
           },
           "elevation": 80,
           "distanceFromHomeplate": 149.6,
-          "angle": 141.1,
-          "facing": 321.1,
+          "angle": 141.2051282051282,
+          "facing": 321.2051282051282,
           "seatType": "standard",
           "hasArmrests": true,
           "cupHolders": true,
@@ -34265,19 +34265,19 @@ export const section_107: SectionSeatingData = {
           "covered": false
         },
         {
-          "id": "athletics-107-a-22",
+          "id": "athletics-107-AG-22",
           "sectionId": "107",
-          "row": "a",
+          "row": "AG",
           "seatNumber": "22",
           "position3D": {
-            "x": 93.53630138782145,
-            "y": 116.75238893781415,
+            "x": 93.31145735431325,
+            "y": 116.93216805658817,
             "z": 80
           },
           "elevation": 80,
           "distanceFromHomeplate": 149.6,
-          "angle": 141.3,
-          "facing": 321.3,
+          "angle": 141.4102564102564,
+          "facing": 321.4102564102564,
           "seatType": "standard",
           "hasArmrests": true,
           "cupHolders": true,
@@ -34291,19 +34291,19 @@ export const section_107: SectionSeatingData = {
           "covered": false
         },
         {
-          "id": "athletics-107-a-23",
+          "id": "athletics-107-AG-23",
           "sectionId": "107",
-          "row": "a",
+          "row": "AG",
           "seatNumber": "23",
           "position3D": {
-            "x": 93.1281896409879,
-            "y": 117.0781802651211,
+            "x": 92.89222406538454,
+            "y": 117.26548813775685,
             "z": 80
           },
           "elevation": 80,
           "distanceFromHomeplate": 149.6,
-          "angle": 141.5,
-          "facing": 321.5,
+          "angle": 141.6153846153846,
+          "facing": 321.61538461538464,
           "seatType": "standard",
           "hasArmrests": true,
           "cupHolders": true,
@@ -34317,19 +34317,19 @@ export const section_107: SectionSeatingData = {
           "covered": false
         },
         {
-          "id": "athletics-107-a-24",
+          "id": "athletics-107-AG-24",
           "sectionId": "107",
-          "row": "a",
+          "row": "AG",
           "seatNumber": "24",
           "position3D": {
-            "x": 92.71894315655298,
-            "y": 117.40254503174918,
+            "x": 92.47180012569916,
+            "y": 117.59730516263006,
             "z": 80
           },
           "elevation": 80,
           "distanceFromHomeplate": 149.6,
-          "angle": 141.7,
-          "facing": 321.7,
+          "angle": 141.82051282051282,
+          "facing": 321.8205128205128,
           "seatType": "standard",
           "hasArmrests": true,
           "cupHolders": true,
@@ -34343,19 +34343,19 @@ export const section_107: SectionSeatingData = {
           "covered": false
         },
         {
-          "id": "athletics-107-a-25",
+          "id": "athletics-107-AG-25",
           "sectionId": "107",
-          "row": "a",
+          "row": "AG",
           "seatNumber": "25",
           "position3D": {
-            "x": 92.30856692105598,
-            "y": 117.72547928541606,
+            "x": 92.05019092406215,
+            "y": 117.9276148781264,
             "z": 80
           },
           "elevation": 80,
           "distanceFromHomeplate": 149.6,
-          "angle": 141.9,
-          "facing": 321.9,
+          "angle": 142.02564102564102,
+          "facing": 322.025641025641,
           "seatType": "standard",
           "hasArmrests": true,
           "cupHolders": true,
@@ -34369,19 +34369,19 @@ export const section_107: SectionSeatingData = {
           "covered": false
         },
         {
-          "id": "athletics-107-a-26",
+          "id": "athletics-107-AG-26",
           "sectionId": "107",
-          "row": "a",
+          "row": "AG",
           "seatNumber": "26",
           "position3D": {
-            "x": 91.89706593480193,
-            "y": 118.04697909126969,
+            "x": 91.62740186447066,
+            "y": 118.25641305048448,
             "z": 80
           },
           "elevation": 80,
           "distanceFromHomeplate": 149.6,
-          "angle": 142.1,
-          "facing": 322.1,
+          "angle": 142.23076923076923,
+          "facing": 322.2307692307692,
           "seatType": "standard",
           "hasArmrests": true,
           "cupHolders": true,
@@ -34395,19 +34395,19 @@ export const section_107: SectionSeatingData = {
           "covered": false
         },
         {
-          "id": "athletics-107-a-27",
+          "id": "athletics-107-AG-27",
           "sectionId": "107",
-          "row": "a",
+          "row": "AG",
           "seatNumber": "27",
           "position3D": {
-            "x": 91.48444521180032,
-            "y": 118.36704053193652,
+            "x": 91.2034383660447,
+            "y": 118.58369546531716,
             "z": 80
           },
           "elevation": 80,
           "distanceFromHomeplate": 149.6,
-          "angle": 142.3,
-          "facing": 322.3,
+          "angle": 142.43589743589743,
+          "facing": 322.43589743589746,
           "seatType": "standard",
           "hasArmrests": true,
           "cupHolders": true,
@@ -34421,19 +34421,19 @@ export const section_107: SectionSeatingData = {
           "covered": false
         },
         {
-          "id": "athletics-107-a-28",
+          "id": "athletics-107-AG-28",
           "sectionId": "107",
-          "row": "a",
+          "row": "AG",
           "seatNumber": "28",
           "position3D": {
-            "x": 91.0707097797046,
-            "y": 118.68565970756877,
+            "x": 90.7783058629578,
+            "y": 118.90945792766563,
             "z": 80
           },
           "elevation": 80,
           "distanceFromHomeplate": 149.6,
-          "angle": 142.5,
-          "facing": 322.5,
+          "angle": 142.64102564102564,
+          "facing": 322.64102564102564,
           "seatType": "standard",
           "hasArmrests": true,
           "cupHolders": true,
@@ -34447,19 +34447,19 @@ export const section_107: SectionSeatingData = {
           "covered": false
         },
         {
-          "id": "athletics-107-a-29",
+          "id": "athletics-107-AG-29",
           "sectionId": "107",
-          "row": "a",
+          "row": "AG",
           "seatNumber": "29",
           "position3D": {
-            "x": 90.6558646797504,
-            "y": 119.00283273589238,
+            "x": 90.35200980436717,
+            "y": 119.23369626205312,
             "z": 80
           },
           "elevation": 80,
           "distanceFromHomeplate": 149.6,
-          "angle": 142.7,
-          "facing": 322.7,
+          "angle": 142.84615384615384,
+          "facing": 322.8461538461538,
           "seatType": "standard",
           "hasArmrests": true,
           "cupHolders": true,
@@ -34473,19 +34473,19 @@ export const section_107: SectionSeatingData = {
           "covered": false
         },
         {
-          "id": "athletics-107-a-30",
+          "id": "athletics-107-AG-30",
           "sectionId": "107",
-          "row": "a",
+          "row": "AG",
           "seatNumber": "30",
           "position3D": {
-            "x": 90.23991496669424,
-            "y": 119.31855575225418,
+            "x": 89.924555654344,
+            "y": 119.55640631253846,
             "z": 80
           },
           "elevation": 80,
           "distanceFromHomeplate": 149.6,
-          "angle": 142.9,
-          "facing": 322.9,
+          "angle": 143.05128205128204,
+          "facing": 323.05128205128204,
           "seatType": "standard",
           "hasArmrests": true,
           "cupHolders": true,
@@ -34499,19 +34499,19 @@ export const section_107: SectionSeatingData = {
           "covered": false
         },
         {
-          "id": "athletics-107-a-31",
+          "id": "athletics-107-AG-31",
           "sectionId": "107",
-          "row": "a",
+          "row": "AG",
           "seatNumber": "31",
           "position3D": {
-            "x": 89.82286570875226,
-            "y": 119.63282490966873,
+            "x": 89.49594889180338,
+            "y": 119.87758394276936,
             "z": 80
           },
           "elevation": 80,
           "distanceFromHomeplate": 149.6,
-          "angle": 143.1,
-          "facing": 323.1,
+          "angle": 143.25641025641025,
+          "facing": 323.2564102564103,
           "seatType": "standard",
           "hasArmrests": true,
           "cupHolders": true,
@@ -34525,19 +34525,19 @@ export const section_107: SectionSeatingData = {
           "covered": false
         },
         {
-          "id": "athletics-107-a-32",
+          "id": "athletics-107-AG-32",
           "sectionId": "107",
-          "row": "a",
+          "row": "AG",
           "seatNumber": "32",
           "position3D": {
-            "x": 89.40472198753794,
-            "y": 119.9456363788656,
+            "x": 89.06619501043409,
+            "y": 120.19722503603536,
             "z": 80
           },
           "elevation": 80,
           "distanceFromHomeplate": 149.6,
-          "angle": 143.3,
-          "facing": 323.3,
+          "angle": 143.46153846153845,
+          "facing": 323.46153846153845,
           "seatType": "standard",
           "hasArmrests": true,
           "cupHolders": true,
@@ -34551,19 +34551,19 @@ export const section_107: SectionSeatingData = {
           "covered": false
         },
         {
-          "id": "athletics-107-a-33",
+          "id": "athletics-107-AG-33",
           "sectionId": "107",
-          "row": "a",
+          "row": "AG",
           "seatNumber": "33",
           "position3D": {
-            "x": 88.98548889800067,
-            "y": 120.2569863483357,
+            "x": 88.63529951862807,
+            "y": 120.51532549532067,
             "z": 80
           },
           "elevation": 80,
           "distanceFromHomeplate": 149.6,
-          "angle": 143.5,
-          "facing": 323.5,
+          "angle": 143.66666666666666,
+          "facing": 323.66666666666663,
           "seatType": "standard",
           "hasArmrests": true,
           "cupHolders": true,
@@ -34577,19 +34577,19 @@ export const section_107: SectionSeatingData = {
           "covered": false
         },
         {
-          "id": "athletics-107-a-34",
+          "id": "athletics-107-AG-34",
           "sectionId": "107",
-          "row": "a",
+          "row": "AG",
           "seatNumber": "34",
           "position3D": {
-            "x": 88.56517154836325,
-            "y": 120.56687102437793,
+            "x": 88.20326793941,
+            "y": 120.83188124335666,
             "z": 80
           },
           "elevation": 80,
           "distanceFromHomeplate": 149.6,
-          "angle": 143.7,
-          "facing": 323.7,
+          "angle": 143.87179487179486,
+          "facing": 323.87179487179486,
           "seatType": "standard",
           "hasArmrests": true,
           "cupHolders": true,
@@ -34603,19 +34603,19 @@ export const section_107: SectionSeatingData = {
           "covered": false
         },
         {
-          "id": "athletics-107-a-35",
+          "id": "athletics-107-AG-35",
           "sectionId": "107",
-          "row": "a",
+          "row": "AG",
           "seatNumber": "35",
           "position3D": {
-            "x": 88.14377506005997,
-            "y": 120.87528663114536,
+            "x": 87.77010581036639,
+            "y": 121.14688822267408,
             "z": 80
           },
           "elevation": 80,
           "distanceFromHomeplate": 149.6,
-          "angle": 143.9,
-          "facing": 323.9,
+          "angle": 144.07692307692307,
+          "facing": 324.0769230769231,
           "seatType": "standard",
           "hasArmrests": true,
           "cupHolders": true,
@@ -34629,19 +34629,19 @@ export const section_107: SectionSeatingData = {
           "covered": false
         },
         {
-          "id": "athletics-107-a-36",
+          "id": "athletics-107-AG-36",
           "sectionId": "107",
-          "row": "a",
+          "row": "AG",
           "seatNumber": "36",
           "position3D": {
-            "x": 87.72130456767408,
-            "y": 121.18222941069106,
+            "x": 87.33581868357463,
+            "y": 121.46034239565512,
             "z": 80
           },
           "elevation": 80,
           "distanceFromHomeplate": 149.6,
-          "angle": 144.1,
-          "facing": 324.1,
+          "angle": 144.28205128205127,
+          "facing": 324.28205128205127,
           "seatType": "standard",
           "hasArmrests": true,
           "cupHolders": true,
@@ -34655,19 +34655,19 @@ export const section_107: SectionSeatingData = {
           "covered": false
         },
         {
-          "id": "athletics-107-a-37",
+          "id": "athletics-107-AG-37",
           "sectionId": "107",
-          "row": "a",
+          "row": "AG",
           "seatNumber": "37",
           "position3D": {
-            "x": 87.29776521887516,
-            "y": 121.48769562301423,
+            "x": 86.9004121255318,
+            "y": 121.77223974458515,
             "z": 80
           },
           "elevation": 80,
           "distanceFromHomeplate": 149.6,
-          "angle": 144.3,
-          "facing": 324.3,
+          "angle": 144.48717948717947,
+          "facing": 324.48717948717945,
           "seatType": "standard",
           "hasArmrests": true,
           "cupHolders": true,
@@ -34681,19 +34681,19 @@ export const section_107: SectionSeatingData = {
           "covered": false
         },
         {
-          "id": "athletics-107-a-38",
+          "id": "athletics-107-AG-38",
           "sectionId": "107",
-          "row": "a",
+          "row": "AG",
           "seatNumber": "38",
           "position3D": {
-            "x": 86.87316217435661,
-            "y": 121.79168154610534,
+            "x": 86.46389171708338,
+            "y": 122.08257627170423,
             "z": 80
           },
           "elevation": 80,
           "distanceFromHomeplate": 149.6,
-          "angle": 144.5,
-          "facing": 324.5,
+          "angle": 144.69230769230768,
+          "facing": 324.6923076923077,
           "seatType": "standard",
           "hasArmrests": true,
           "cupHolders": true,
@@ -34707,45 +34707,19 @@ export const section_107: SectionSeatingData = {
           "covered": false
         },
         {
-          "id": "athletics-107-a-39",
+          "id": "athletics-107-AG-39",
           "sectionId": "107",
-          "row": "a",
+          "row": "AG",
           "seatNumber": "39",
           "position3D": {
-            "x": 86.44750060777243,
-            "y": 122.09418347599194,
+            "x": 86.0262630533517,
+            "y": 122.39134799925824,
             "z": 80
           },
           "elevation": 80,
           "distanceFromHomeplate": 149.6,
-          "angle": 144.7,
-          "facing": 324.7,
-          "seatType": "standard",
-          "hasArmrests": true,
-          "cupHolders": true,
-          "viewQuality": "good",
-          "accessibility": {
-            "wheelchairAccessible": false,
-            "companionSeat": false,
-            "requiresStairs": false,
-            "elevatorAccess": true
-          },
-          "covered": false
-        },
-        {
-          "id": "athletics-107-a-40",
-          "sectionId": "107",
-          "row": "a",
-          "seatNumber": "40",
-          "position3D": {
-            "x": 86.02078570567446,
-            "y": 122.39519772678351,
-            "z": 80
-          },
-          "elevation": 80,
-          "distanceFromHomeplate": 149.6,
-          "angle": 144.9,
-          "facing": 324.9,
+          "angle": 144.89743589743588,
+          "facing": 324.8974358974359,
           "seatType": "aisle",
           "hasArmrests": true,
           "cupHolders": true,
@@ -34765,7 +34739,7 @@ export const section_107: SectionSeatingData = {
     }
   ],
   "seatDistribution": {
-    "standard": 1254,
+    "standard": 1253,
     "aisle": 66,
     "wheelchair": 0,
     "companion": 0,

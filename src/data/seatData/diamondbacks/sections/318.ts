@@ -1,6 +1,6 @@
 /**
  * Upper 318 - diamondbacks
- * Generated: 2025-10-22T23:53:58.789Z
+ * Generated: 2025-10-23T17:05:48.045Z
  * Total Seats: 520
  * Total Rows: 40
  */

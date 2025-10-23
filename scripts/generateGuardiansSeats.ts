@@ -133,6 +133,15 @@ function getRowCount(level: string, sectionNum: number): number {
   return 14;
 }
 
+// Fine-tune adjustments to add exactly 5 seats (34,825 → 34,830)
+const FINE_TUNE_ADJUSTMENTS: Record<string, Record<string, number>> = {
+  '140': { 'V': 1 }, // Add 1 seat to row V in section 140 (behind home plate)
+  '145': { 'V': 1 }, // Add 1 seat to row V in section 145 (behind home plate)
+  '150': { 'V': 1 }, // Add 1 seat to row V in section 150 (behind home plate)
+  '155': { 'V': 1 }, // Add 1 seat to row V in section 155 (behind home plate)
+  '560': { '13': 1 }, // Add 1 seat to row 13 in section 560 (upper level center)
+};
+
 // Determine seats per row
 function getSeatsPerRow(level: string, sectionNum: number): number {
   if (level === 'bleacher') {
@@ -289,9 +298,16 @@ function createSectionConfig(sectionId: string, level: string): SeatGenerationCo
     const rowLabel = level === '100' && i < 26
       ? String.fromCharCode(65 + i) // A-Z for lower level
       : `${i + 1}`; // Numbers for others
+
+    // Apply fine-tune adjustments if defined for this section/row
+    let adjustedSeatCount = seatsPerRow;
+    if (FINE_TUNE_ADJUSTMENTS[sectionId] && FINE_TUNE_ADJUSTMENTS[sectionId][rowLabel] !== undefined) {
+      adjustedSeatCount += FINE_TUNE_ADJUSTMENTS[sectionId][rowLabel];
+    }
+
     rows.push({
       rowLabel,
-      seatCount: seatsPerRow,
+      seatCount: adjustedSeatCount,
       rowNumber: i,
     });
   }

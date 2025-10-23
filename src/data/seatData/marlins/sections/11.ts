@@ -1,6 +1,6 @@
 /**
  * Dugout Club 11 - marlins
- * Generated: 2025-10-23T00:49:17.149Z
+ * Generated: 2025-10-23T16:51:37.414Z
  * Total Seats: 88
  * Total Rows: 4
  */

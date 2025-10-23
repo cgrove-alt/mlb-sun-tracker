@@ -1,6 +1,6 @@
 /**
  * Infield Reserve 9 - dodger-stadium
- * Generated: 2025-10-22T00:43:37.611Z
+ * Generated: 2025-10-23T16:49:18.836Z
  * Total Seats: 484
  * Total Rows: 22
  */

@@ -1,6 +1,6 @@
 /**
  * Club 330 - guardians
- * Generated: 2025-10-23T00:11:52.250Z
+ * Generated: 2025-10-23T17:05:33.431Z
  * Total Seats: 126
  * Total Rows: 9
  */

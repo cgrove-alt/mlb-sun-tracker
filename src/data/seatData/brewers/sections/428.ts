@@ -1,6 +1,6 @@
 /**
  * Terrace Box 428 - brewers
- * Generated: 2025-10-22T22:55:29.734Z
+ * Generated: 2025-10-23T17:05:37.390Z
  * Total Seats: 312
  * Total Rows: 24
  */

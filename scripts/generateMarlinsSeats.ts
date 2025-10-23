@@ -187,6 +187,24 @@ function getSeatsPerRow(level: string, sectionNum: number): number {
   return 18; // fallback
 }
 
+// Fine-tune adjustments to hit exact capacity (37,446 seats)
+// Format: { sectionId: { rowLabel: seatAdjustment } }
+// Positive values add seats, negative values remove seats
+// Target: Add 18 seats (37,428 → 37,446)
+const FINE_TUNE_ADJUSTMENTS: Record<string, Record<string, number>> = {
+  // Add 1 seat to rows 23-24 (2 rows) for Promenade sections (2 rows × 9 sections = 18 seats)
+  '12': { '23': 1, '24': 1 },
+  '13': { '23': 1, '24': 1 },
+  '14': { '23': 1, '24': 1 },
+  '15': { '23': 1, '24': 1 },
+  '16': { '23': 1, '24': 1 },
+  '17': { '23': 1, '24': 1 },
+  '18': { '23': 1, '24': 1 },
+  '22': { '23': 1, '24': 1 },
+  '23': { '23': 1, '24': 1 },
+};
+// Total added: 9 sections × 2 rows × 1 seat = 18 seats
+
 // Determine distance from home plate
 function getDistance(level: string, sectionNum?: number): number {
   if (level === 'promenade') {
@@ -300,9 +318,16 @@ function createSectionConfig(sectionId: string, level: string): SeatGenerationCo
       rowLabel = `${i + 1}`;
     }
 
+    let adjustedSeatCount = seatsPerRow;
+
+    // Apply fine-tune adjustments if they exist for this section and row
+    if (FINE_TUNE_ADJUSTMENTS[sectionId] && FINE_TUNE_ADJUSTMENTS[sectionId][rowLabel] !== undefined) {
+      adjustedSeatCount += FINE_TUNE_ADJUSTMENTS[sectionId][rowLabel];
+    }
+
     rows.push({
       rowLabel,
-      seatCount: seatsPerRow,
+      seatCount: adjustedSeatCount,
       rowNumber: i,
     });
   }

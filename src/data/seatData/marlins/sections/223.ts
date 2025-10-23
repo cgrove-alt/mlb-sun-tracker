@@ -1,6 +1,6 @@
 /**
  * Legends 223 - marlins
- * Generated: 2025-10-23T00:49:17.205Z
+ * Generated: 2025-10-23T16:51:37.473Z
  * Total Seats: 256
  * Total Rows: 16
  */

@@ -1,6 +1,6 @@
 /**
  * Club 221 - diamondbacks
- * Generated: 2025-10-22T23:53:58.772Z
+ * Generated: 2025-10-23T17:05:48.023Z
  * Total Seats: 418
  * Total Rows: 11
  */

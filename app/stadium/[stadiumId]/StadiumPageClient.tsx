@@ -7,6 +7,7 @@ import { getSunPosition } from '../../../src/utils/sunCalculations';
 import { useSunCalculations } from '../../../src/hooks/useSunCalculations';
 import { usePullToRefresh } from '../../../src/hooks/usePullToRefresh';
 import { PullToRefreshIndicator } from '../../../src/components/PullToRefreshIndicator';
+import { SeatSearchBar } from '../../../src/components/SeatSearchBar';
 
 const ComprehensiveStadiumGuide = dynamic(
   () => import('../../../src/components/ComprehensiveStadiumGuide'),
@@ -103,6 +104,14 @@ export default function StadiumPageClient({
         isRefreshing={pullToRefresh.isRefreshing}
         progress={pullToRefresh.progress}
       />
+
+      {/* Search Bar - Prominent at top */}
+      <div className="max-w-4xl mx-auto px-4 py-6">
+        <SeatSearchBar
+          placeholder="Search sections across all 30 MLB stadiums..."
+          className="w-full"
+        />
+      </div>
 
       {/* Stadium Guide - with smaller loading state */}
       <div className="stadium-guide-wrapper">

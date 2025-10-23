@@ -1,6 +1,6 @@
 /**
  * Terrace Box 411 - brewers
- * Generated: 2025-10-22T22:55:29.724Z
+ * Generated: 2025-10-23T17:05:37.377Z
  * Total Seats: 300
  * Total Rows: 25
  */

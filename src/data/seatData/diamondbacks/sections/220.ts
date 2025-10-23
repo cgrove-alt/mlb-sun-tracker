@@ -1,6 +1,6 @@
 /**
  * Club 220 - diamondbacks
- * Generated: 2025-10-22T23:53:58.771Z
+ * Generated: 2025-10-23T17:05:48.022Z
  * Total Seats: 418
  * Total Rows: 11
  */

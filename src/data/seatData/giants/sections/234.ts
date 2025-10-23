@@ -1,6 +1,6 @@
 /**
  * Club 234 - giants
- * Generated: 2025-10-22T00:57:42.873Z
+ * Generated: 2025-10-23T16:48:21.137Z
  * Total Seats: 288
  * Total Rows: 18
  */

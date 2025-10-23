@@ -1,6 +1,6 @@
 /**
  * Club 339 - guardians
- * Generated: 2025-10-23T00:11:52.253Z
+ * Generated: 2025-10-23T17:05:33.434Z
  * Total Seats: 126
  * Total Rows: 9
  */

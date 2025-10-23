@@ -1,6 +1,6 @@
 /**
  * Club 217 - giants
- * Generated: 2025-10-22T00:57:42.861Z
+ * Generated: 2025-10-23T16:48:21.123Z
  * Total Seats: 252
  * Total Rows: 18
  */

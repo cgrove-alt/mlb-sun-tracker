@@ -1,6 +1,6 @@
 /**
  * Terrace 230 - cubs
- * Generated: 2025-10-22T01:03:11.980Z
+ * Generated: 2025-10-23T16:50:13.724Z
  * Total Seats: 506
  * Total Rows: 23
  */

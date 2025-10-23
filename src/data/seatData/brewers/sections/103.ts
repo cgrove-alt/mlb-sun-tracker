@@ -1,6 +1,6 @@
 /**
  * Field 103 - brewers
- * Generated: 2025-10-22T22:55:29.659Z
+ * Generated: 2025-10-23T17:05:37.288Z
  * Total Seats: 420
  * Total Rows: 30
  */

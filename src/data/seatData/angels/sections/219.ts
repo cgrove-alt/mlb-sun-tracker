@@ -1,6 +1,6 @@
 /**
  * Terrace 219 - angels
- * Generated: 2025-10-22T20:29:59.768Z
+ * Generated: 2025-10-23T17:06:05.682Z
  * Total Seats: 198
  * Total Rows: 11
  */

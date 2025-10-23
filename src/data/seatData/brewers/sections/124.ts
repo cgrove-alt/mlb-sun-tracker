@@ -1,6 +1,6 @@
 /**
  * Field 124 - brewers
- * Generated: 2025-10-22T22:55:29.676Z
+ * Generated: 2025-10-23T17:05:37.309Z
  * Total Seats: 459
  * Total Rows: 27
  */

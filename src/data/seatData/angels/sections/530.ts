@@ -1,7 +1,7 @@
 /**
  * View 530 - angels
- * Generated: 2025-10-22T20:29:59.803Z
- * Total Seats: 320
+ * Generated: 2025-10-23T17:06:05.737Z
+ * Total Seats: 319
  * Total Rows: 20
  */
 
@@ -11,7 +11,7 @@ export const section_530: SectionSeatingData = {
   "sectionId": "530",
   "sectionName": "View 530",
   "stadiumId": "angels",
-  "totalSeats": 320,
+  "totalSeats": 319,
   "totalRows": 20,
   "rows": [
     {
@@ -8491,7 +8491,7 @@ export const section_530: SectionSeatingData = {
     {
       "rowNumber": "20",
       "sectionId": "530",
-      "seatCount": 16,
+      "seatCount": 15,
       "elevation": 127.5,
       "depth": 263.2,
       "rowSpacing": 36,
@@ -8502,14 +8502,14 @@ export const section_530: SectionSeatingData = {
           "row": "20",
           "seatNumber": "1",
           "position3D": {
-            "x": -234.76655664072103,
-            "y": 118.99119246002674,
+            "x": -234.7903484760953,
+            "y": 118.94424013996532,
             "z": 127.5
           },
           "elevation": 127.5,
           "distanceFromHomeplate": 263.2,
-          "angle": -116.878125,
-          "facing": 63.121875,
+          "angle": -116.86666666666666,
+          "facing": 63.13333333333334,
           "seatType": "aisle",
           "hasArmrests": true,
           "cupHolders": true,
@@ -8529,14 +8529,14 @@ export const section_530: SectionSeatingData = {
           "row": "20",
           "seatNumber": "2",
           "position3D": {
-            "x": -235.47622308497657,
-            "y": 117.58056115546631,
+            "x": -235.546723973653,
+            "y": 117.43926441050166,
             "z": 127.5
           },
           "elevation": 127.5,
           "distanceFromHomeplate": 263.2,
-          "angle": -116.534375,
-          "facing": 63.465625,
+          "angle": -116.5,
+          "facing": 63.5,
           "seatType": "standard",
           "hasArmrests": true,
           "cupHolders": true,
@@ -8556,14 +8556,14 @@ export const section_530: SectionSeatingData = {
           "row": "20",
           "seatNumber": "3",
           "position3D": {
-            "x": -236.1774136276063,
-            "y": 116.16569757107544,
+            "x": -236.29345289538765,
+            "y": 115.92947907575194,
             "z": 127.5
           },
           "elevation": 127.5,
           "distanceFromHomeplate": 263.2,
-          "angle": -116.190625,
-          "facing": 63.809375,
+          "angle": -116.13333333333333,
+          "facing": 63.866666666666674,
           "seatType": "standard",
           "hasArmrests": true,
           "cupHolders": true,
@@ -8583,14 +8583,14 @@ export const section_530: SectionSeatingData = {
           "row": "20",
           "seatNumber": "4",
           "position3D": {
-            "x": -236.87010302945012,
-            "y": 114.74665263447854,
+            "x": -237.03050465977807,
+            "y": 114.41494596743436,
             "z": 127.5
           },
           "elevation": 127.5,
           "distanceFromHomeplate": 263.2,
-          "angle": -115.846875,
-          "facing": 64.153125,
+          "angle": -115.76666666666667,
+          "facing": 64.23333333333333,
           "seatType": "standard",
           "hasArmrests": true,
           "cupHolders": true,
@@ -8610,14 +8610,14 @@ export const section_530: SectionSeatingData = {
           "row": "20",
           "seatNumber": "5",
           "position3D": {
-            "x": -237.5542663573445,
-            "y": 113.32347742380583,
+            "x": -237.75784908162083,
+            "y": 112.89572711170784,
             "z": 127.5
           },
           "elevation": 127.5,
           "distanceFromHomeplate": 263.2,
-          "angle": -115.503125,
-          "facing": 64.496875,
+          "angle": -115.39999999999999,
+          "facing": 64.60000000000001,
           "seatType": "standard",
           "hasArmrests": true,
           "cupHolders": true,
@@ -8637,14 +8637,14 @@ export const section_530: SectionSeatingData = {
           "row": "20",
           "seatNumber": "6",
           "position3D": {
-            "x": -238.2298789850191,
-            "y": 111.89622316585644,
+            "x": -238.475456373267,
+            "y": 111.37188472663117,
             "z": 127.5
           },
           "elevation": 127.5,
           "distanceFromHomeplate": 263.2,
-          "angle": -115.159375,
-          "facing": 64.840625,
+          "angle": -115.03333333333333,
+          "facing": 64.96666666666667,
           "seatType": "standard",
           "hasArmrests": true,
           "cupHolders": true,
@@ -8664,14 +8664,14 @@ export const section_530: SectionSeatingData = {
           "row": "20",
           "seatNumber": "7",
           "position3D": {
-            "x": -238.89691659398423,
-            "y": 110.46494123425286,
+            "x": -239.18329714584215,
+            "y": 109.84348121961433,
             "z": 127.5
           },
           "elevation": 127.5,
           "distanceFromHomeplate": 263.2,
-          "angle": -114.815625,
-          "facing": 65.184375,
+          "angle": -114.66666666666666,
+          "facing": 65.33333333333334,
           "seatType": "standard",
           "hasArmrests": true,
           "cupHolders": true,
@@ -8691,14 +8691,14 @@ export const section_530: SectionSeatingData = {
           "row": "20",
           "seatNumber": "8",
           "position3D": {
-            "x": -239.55535517440512,
-            "y": 109.02968314759339,
+            "x": -239.88134241044915,
+            "y": 108.31057918486465,
             "z": 127.5
           },
           "elevation": 127.5,
           "distanceFromHomeplate": 263.2,
-          "angle": -114.471875,
-          "facing": 65.528125,
+          "angle": -114.3,
+          "facing": 65.7,
           "seatType": "standard",
           "hasArmrests": true,
           "cupHolders": true,
@@ -8718,14 +8718,14 @@ export const section_530: SectionSeatingData = {
           "row": "20",
           "seatNumber": "9",
           "position3D": {
-            "x": -240.20517102596708,
-            "y": 107.59050056759612,
+            "x": -240.5695635793565,
+            "y": 106.77324140082077,
             "z": 127.5
           },
           "elevation": 127.5,
           "distanceFromHomeplate": 263.2,
-          "angle": -114.128125,
-          "facing": 65.871875,
+          "angle": -113.93333333333334,
+          "facing": 66.06666666666666,
           "seatType": "standard",
           "hasArmrests": true,
           "cupHolders": true,
@@ -8745,14 +8745,14 @@ export const section_530: SectionSeatingData = {
           "row": "20",
           "seatNumber": "10",
           "position3D": {
-            "x": -240.84634075872782,
-            "y": 106.14744529724092,
+            "x": -241.24793246716794,
+            "y": 105.23153082758407,
             "z": 127.5
           },
           "elevation": 127.5,
           "distanceFromHomeplate": 263.2,
-          "angle": -113.784375,
-          "facing": 66.215625,
+          "angle": -113.56666666666666,
+          "facing": 66.43333333333334,
           "seatType": "standard",
           "hasArmrests": true,
           "cupHolders": true,
@@ -8772,14 +8772,14 @@ export const section_530: SectionSeatingData = {
           "row": "20",
           "seatNumber": "11",
           "position3D": {
-            "x": -241.47884129395993,
-            "y": 104.70056927890363,
+            "x": -241.91642129197774,
+            "y": 103.68551060433822,
             "z": 127.5
           },
           "elevation": 127.5,
           "distanceFromHomeplate": 263.2,
-          "angle": -113.440625,
-          "facing": 66.559375,
+          "angle": -113.2,
+          "facing": 66.8,
           "seatType": "standard",
           "hasArmrests": true,
           "cupHolders": true,
@@ -8799,14 +8799,14 @@ export const section_530: SectionSeatingData = {
           "row": "20",
           "seatNumber": "12",
           "position3D": {
-            "x": -242.10264986498132,
-            "y": 103.24992459248703,
+            "x": -242.5750026765079,
+            "y": 102.13524404676474,
             "z": 127.5
           },
           "elevation": 127.5,
           "distanceFromHomeplate": 263.2,
-          "angle": -113.096875,
-          "facing": 66.903125,
+          "angle": -112.83333333333333,
+          "facing": 67.16666666666667,
           "seatType": "standard",
           "hasArmrests": true,
           "cupHolders": true,
@@ -8826,14 +8826,14 @@ export const section_530: SectionSeatingData = {
           "row": "20",
           "seatNumber": "13",
           "position3D": {
-            "x": -242.71774401797472,
-            "y": 101.79556345354591,
+            "x": -243.22364964922957,
+            "y": 100.58079464444901,
             "z": 127.5
           },
           "elevation": 127.5,
           "distanceFromHomeplate": 263.2,
-          "angle": -112.753125,
-          "facing": 67.246875,
+          "angle": -112.46666666666667,
+          "facing": 67.53333333333333,
           "seatType": "standard",
           "hasArmrests": true,
           "cupHolders": true,
@@ -8853,14 +8853,14 @@ export const section_530: SectionSeatingData = {
           "row": "20",
           "seatNumber": "14",
           "position3D": {
-            "x": -243.32410161279583,
-            "y": 100.33753821140817,
+            "x": -243.86233564546757,
+            "y": 99.02222605828099,
             "z": 127.5
           },
           "elevation": 127.5,
           "distanceFromHomeplate": 263.2,
-          "angle": -112.409375,
-          "facing": 67.590625,
+          "angle": -112.1,
+          "facing": 67.9,
           "seatType": "standard",
           "hasArmrests": true,
           "cupHolders": true,
@@ -8880,41 +8880,14 @@ export const section_530: SectionSeatingData = {
           "row": "20",
           "seatNumber": "15",
           "position3D": {
-            "x": -243.9217008237707,
-            "y": 98.87590134728937,
+            "x": -244.49103450848853,
+            "y": 97.45960211784717,
             "z": 127.5
           },
           "elevation": 127.5,
           "distanceFromHomeplate": 263.2,
-          "angle": -112.065625,
-          "facing": 67.934375,
-          "seatType": "standard",
-          "hasArmrests": true,
-          "cupHolders": true,
-          "viewQuality": "good",
-          "accessibility": {
-            "wheelchairAccessible": false,
-            "companionSeat": false,
-            "requiresStairs": true,
-            "elevatorAccess": false
-          },
-          "covered": true,
-          "overhangHeight": 20
-        },
-        {
-          "id": "angels-530-20-16",
-          "sectionId": "530",
-          "row": "20",
-          "seatNumber": "16",
-          "position3D": {
-            "x": -244.51052014048048,
-            "y": 97.41070547240523,
-            "z": 127.5
-          },
-          "elevation": 127.5,
-          "distanceFromHomeplate": 263.2,
-          "angle": -111.721875,
-          "facing": 68.278125,
+          "angle": -111.73333333333333,
+          "facing": 68.26666666666667,
           "seatType": "aisle",
           "hasArmrests": true,
           "cupHolders": true,
@@ -8936,7 +8909,7 @@ export const section_530: SectionSeatingData = {
     }
   ],
   "seatDistribution": {
-    "standard": 280,
+    "standard": 279,
     "aisle": 40,
     "wheelchair": 0,
     "companion": 0,

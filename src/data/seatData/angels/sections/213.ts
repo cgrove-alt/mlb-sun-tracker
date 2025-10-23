@@ -1,6 +1,6 @@
 /**
  * Terrace 213 - angels
- * Generated: 2025-10-22T20:29:59.766Z
+ * Generated: 2025-10-23T17:06:05.678Z
  * Total Seats: 240
  * Total Rows: 16
  */

@@ -1,6 +1,6 @@
 /**
  * Loge Box 143 - dodger-stadium
- * Generated: 2025-10-22T00:43:37.456Z
+ * Generated: 2025-10-23T16:49:18.747Z
  * Total Seats: 168
  * Total Rows: 21
  */

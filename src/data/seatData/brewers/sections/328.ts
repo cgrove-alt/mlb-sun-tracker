@@ -1,6 +1,6 @@
 /**
  * Club 328 - brewers
- * Generated: 2025-10-22T22:55:29.711Z
+ * Generated: 2025-10-23T17:05:37.358Z
  * Total Seats: 266
  * Total Rows: 7
  */

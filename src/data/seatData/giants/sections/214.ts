@@ -1,6 +1,6 @@
 /**
  * Club 214 - giants
- * Generated: 2025-10-22T00:57:42.858Z
+ * Generated: 2025-10-23T16:48:21.121Z
  * Total Seats: 288
  * Total Rows: 18
  */

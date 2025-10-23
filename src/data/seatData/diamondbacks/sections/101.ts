@@ -1,6 +1,6 @@
 /**
  * Section 101 - diamondbacks
- * Generated: 2025-10-22T23:53:58.710Z
+ * Generated: 2025-10-23T17:05:47.943Z
  * Total Seats: 405
  * Total Rows: 27
  */

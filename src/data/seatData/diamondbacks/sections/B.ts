@@ -1,6 +1,6 @@
 /**
  * Third Base Box B - diamondbacks
- * Generated: 2025-10-22T23:53:58.698Z
+ * Generated: 2025-10-23T17:05:47.932Z
  * Total Seats: 112
  * Total Rows: 7
  */

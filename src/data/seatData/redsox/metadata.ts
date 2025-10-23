@@ -1,6 +1,6 @@
 /**
  * Fenway Park - Stadium Metadata
- * Generated: 2025-10-22T01:13:39.251Z
+ * Generated: 2025-10-23T16:37:24.490Z
  */
 
 import type { SeatDataMetadata, StadiumSeatingStats } from '@/types/seat';
@@ -8,27 +8,27 @@ import type { SeatDataMetadata, StadiumSeatingStats } from '@/types/seat';
 export const metadata: SeatDataMetadata = {
   stadiumId: 'redsox',
   stadiumName: 'Fenway Park',
-  generatedAt: '2025-10-22T01:13:39.251Z',
+  generatedAt: '2025-10-23T16:37:24.490Z',
   version: '1.0.0',
   dataSource: 'Generated from official seating charts',
   totalSections: 145,
-  lastValidated: '2025-10-22T01:13:39.251Z',
+  lastValidated: '2025-10-23T16:37:24.490Z',
 };
 
 export const stats: StadiumSeatingStats = {
-  totalSeats: 38130,
+  totalSeats: 37755,
   totalSections: 145,
   totalRows: 2846,
   levels: {
-    'Grandstand': 9909,
-    'Field': 25125,
-    'Loge': 11016,
-    'Bleachers': 14400,
+    'Grandstand': 9738,
+    'Field': 24924,
+    'Loge': 10869,
+    'Bleachers': 14394,
   },
   seatDistribution: {
-    standard: 35460,
-    aisle: 1906,
-    wheelchair: 762,
+    standard: 35112,
+    aisle: 1887,
+    wheelchair: 755,
   },
-  coveredSeats: 9909,
+  coveredSeats: 9738,
 };

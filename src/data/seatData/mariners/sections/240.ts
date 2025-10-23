@@ -1,6 +1,6 @@
 /**
  * Club 240 - mariners
- * Generated: 2025-10-23T00:32:06.263Z
+ * Generated: 2025-10-23T16:55:02.960Z
  * Total Seats: 156
  * Total Rows: 12
  */

@@ -87,10 +87,11 @@ function parseArgs(): { stadiumId: string; gameTime: string; testMode: boolean }
 
 /**
  * Generate weekly dates from March through September 2026
+ * Using official 2026 MLB season dates: Opening Day March 26 - September 27
  */
 function generateWeeklyDates(): Date[] {
   const dates: Date[] = [];
-  const startDate = new Date('2026-03-28'); // First Saturday after Opening Day
+  const startDate = new Date('2026-03-26'); // Opening Day 2026 (Thursday)
   const endDate = new Date('2026-09-27'); // Final day of 2026 regular season
 
   let currentDate = new Date(startDate);

@@ -1,6 +1,6 @@
 /**
  * Reserve 23 - dodger-stadium
- * Generated: 2025-10-22T00:43:37.560Z
+ * Generated: 2025-10-23T16:49:18.807Z
  * Total Seats: 484
  * Total Rows: 22
  */

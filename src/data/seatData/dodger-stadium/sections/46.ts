@@ -1,6 +1,6 @@
 /**
  * Field Box 46 - dodger-stadium
- * Generated: 2025-10-22T00:43:37.405Z
+ * Generated: 2025-10-23T16:49:18.716Z
  * Total Seats: 140
  * Total Rows: 14
  */

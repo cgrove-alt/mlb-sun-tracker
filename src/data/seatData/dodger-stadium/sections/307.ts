@@ -1,6 +1,6 @@
 /**
  * Pavilion 307 - dodger-stadium
- * Generated: 2025-10-22T00:43:37.495Z
+ * Generated: 2025-10-23T16:49:18.769Z
  * Total Seats: 414
  * Total Rows: 23
  */

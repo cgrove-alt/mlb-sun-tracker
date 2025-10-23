@@ -1,6 +1,6 @@
 /**
  * Bleachers 41 - redsox
- * Generated: 2025-10-22T01:13:39.237Z
+ * Generated: 2025-10-23T16:37:24.486Z
  * Total Seats: 720
  * Total Rows: 40
  */

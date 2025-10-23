@@ -29,3 +29,8 @@ yarn-error.log*
 .next/
 out/
 next-env.d.ts
+
+# Build logs and temporary files
+*.log
+build-test.log
+phase1-final-build.log

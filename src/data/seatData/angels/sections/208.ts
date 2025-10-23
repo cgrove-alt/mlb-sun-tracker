@@ -1,6 +1,6 @@
 /**
  * Terrace 208 - angels
- * Generated: 2025-10-22T20:29:59.763Z
+ * Generated: 2025-10-23T17:06:05.675Z
  * Total Seats: 240
  * Total Rows: 16
  */

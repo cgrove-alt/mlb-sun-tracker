@@ -1,6 +1,6 @@
 /**
  * Terrace 447 - cardinals
- * Generated: 2025-10-22T00:29:14.766Z
+ * Generated: 2025-10-23T16:46:18.351Z
  * Total Seats: 280
  * Total Rows: 14
  */
