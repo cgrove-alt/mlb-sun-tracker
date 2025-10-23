@@ -1,0 +1,4215 @@
+/**
+ * 227 - pirates
+ * Generated: 2025-10-23T01:46:29.766Z
+ * Total Seats: 150
+ * Total Rows: 10
+ */
+
+import type { SectionSeatingData } from '@/types/seat';
+
+export const section_227: SectionSeatingData = {
+  "sectionId": "227",
+  "sectionName": "227",
+  "stadiumId": "pirates",
+  "totalSeats": 150,
+  "totalRows": 10,
+  "rows": [
+    {
+      "rowNumber": "A",
+      "sectionId": "227",
+      "seatCount": 15,
+      "elevation": 38,
+      "depth": 95,
+      "rowSpacing": 36,
+      "seats": [
+        {
+          "id": "pirates-227-A-1",
+          "sectionId": "227",
+          "row": "A",
+          "seatNumber": "1",
+          "position3D": {
+            "x": 9.325378889136339,
+            "y": 94.541193712445,
+            "z": 38
+          },
+          "elevation": 38,
+          "distanceFromHomeplate": 94.99999999999999,
+          "angle": -185.63333333333333,
+          "facing": -5.633333333333326,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "pirates-227-A-2",
+          "sectionId": "227",
+          "row": "A",
+          "seatNumber": "2",
+          "position3D": {
+            "x": 8.940289765258793,
+            "y": 94.57838663729261,
+            "z": 38
+          },
+          "elevation": 38,
+          "distanceFromHomeplate": 95.00000000000001,
+          "angle": -185.4,
+          "facing": -5.400000000000006,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "pirates-227-A-3",
+          "sectionId": "227",
+          "row": "A",
+          "seatNumber": "3",
+          "position3D": {
+            "x": 8.55505236932845,
+            "y": 94.61401100766233,
+            "z": 38
+          },
+          "elevation": 38,
+          "distanceFromHomeplate": 95,
+          "angle": -185.16666666666666,
+          "facing": -5.166666666666657,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "pirates-227-A-4",
+          "sectionId": "227",
+          "row": "A",
+          "seatNumber": "4",
+          "position3D": {
+            "x": 8.16967309039321,
+            "y": 94.64806623273454,
+            "z": 38
+          },
+          "elevation": 38,
+          "distanceFromHomeplate": 95,
+          "angle": -184.93333333333334,
+          "facing": -4.933333333333337,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "pirates-227-A-5",
+          "sectionId": "227",
+          "row": "A",
+          "seatNumber": "5",
+          "position3D": {
+            "x": 7.784158319853808,
+            "y": 94.6805517477135,
+            "z": 38
+          },
+          "elevation": 38,
+          "distanceFromHomeplate": 95.00000000000001,
+          "angle": -184.7,
+          "facing": -4.699999999999989,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "pirates-227-A-6",
+          "sectionId": "227",
+          "row": "A",
+          "seatNumber": "6",
+          "position3D": {
+            "x": 7.398514451358737,
+            "y": 94.71146701383648,
+            "z": 38
+          },
+          "elevation": 38,
+          "distanceFromHomeplate": 95,
+          "angle": -184.46666666666667,
+          "facing": -4.466666666666669,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "pirates-227-A-7",
+          "sectionId": "227",
+          "row": "A",
+          "seatNumber": "7",
+          "position3D": {
+            "x": 7.012747880696619,
+            "y": 94.74081151838307,
+            "z": 38
+          },
+          "elevation": 38,
+          "distanceFromHomeplate": 95.00000000000001,
+          "angle": -184.23333333333332,
+          "facing": -4.23333333333332,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "pirates-227-A-8",
+          "sectionId": "227",
+          "row": "A",
+          "seatNumber": "8",
+          "position3D": {
+            "x": 6.626865005691895,
+            "y": 94.7685847746833,
+            "z": 38
+          },
+          "elevation": 38,
+          "distanceFromHomeplate": 95,
+          "angle": -184,
+          "facing": -4,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "pirates-227-A-9",
+          "sectionId": "227",
+          "row": "A",
+          "seatNumber": "9",
+          "position3D": {
+            "x": 6.240872226097459,
+            "y": 94.794786322126,
+            "z": 38
+          },
+          "elevation": 38,
+          "distanceFromHomeplate": 95.00000000000001,
+          "angle": -183.76666666666668,
+          "facing": -3.76666666666668,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "pirates-227-A-10",
+          "sectionId": "227",
+          "row": "A",
+          "seatNumber": "10",
+          "position3D": {
+            "x": 5.854775943489026,
+            "y": 94.81941572616624,
+            "z": 38
+          },
+          "elevation": 38,
+          "distanceFromHomeplate": 95,
+          "angle": -183.53333333333333,
+          "facing": -3.5333333333333314,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "pirates-227-A-11",
+          "sectionId": "227",
+          "row": "A",
+          "seatNumber": "11",
+          "position3D": {
+            "x": 5.468582561158872,
+            "y": 94.84247257833269,
+            "z": 38
+          },
+          "elevation": 38,
+          "distanceFromHomeplate": 94.99999999999999,
+          "angle": -183.3,
+          "facing": -3.3000000000000114,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "pirates-227-A-12",
+          "sectionId": "227",
+          "row": "A",
+          "seatNumber": "12",
+          "position3D": {
+            "x": 5.082298484009648,
+            "y": 94.8639564962343,
+            "z": 38
+          },
+          "elevation": 38,
+          "distanceFromHomeplate": 95,
+          "angle": -183.06666666666666,
+          "facing": -3.066666666666663,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "pirates-227-A-13",
+          "sectionId": "227",
+          "row": "A",
+          "seatNumber": "13",
+          "position3D": {
+            "x": 4.695930118448236,
+            "y": 94.88386712356665,
+            "z": 38
+          },
+          "elevation": 38,
+          "distanceFromHomeplate": 95.00000000000001,
+          "angle": -182.83333333333334,
+          "facing": -2.833333333333343,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "pirates-227-A-14",
+          "sectionId": "227",
+          "row": "A",
+          "seatNumber": "14",
+          "position3D": {
+            "x": 4.309483872279161,
+            "y": 94.9022041301179,
+            "z": 38
+          },
+          "elevation": 38,
+          "distanceFromHomeplate": 95,
+          "angle": -182.6,
+          "facing": -2.5999999999999943,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "pirates-227-A-15",
+          "sectionId": "227",
+          "row": "A",
+          "seatNumber": "15",
+          "position3D": {
+            "x": 3.922966154598829,
+            "y": 94.91896721177423,
+            "z": 38
+          },
+          "elevation": 38,
+          "distanceFromHomeplate": 94.99999999999999,
+          "angle": -182.36666666666667,
+          "facing": -2.3666666666666742,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        }
+      ],
+      "covered": true,
+      "overhangHeight": 20,
+      "hasAisleSeats": false,
+      "wheelchairRow": false
+    },
+    {
+      "rowNumber": "B",
+      "sectionId": "227",
+      "seatCount": 15,
+      "elevation": 40.5,
+      "depth": 97.8,
+      "rowSpacing": 36,
+      "seats": [
+        {
+          "id": "pirates-227-B-1",
+          "sectionId": "227",
+          "row": "B",
+          "seatNumber": "1",
+          "position3D": {
+            "x": 9.600232161658251,
+            "y": 97.32767100081179,
+            "z": 40.5
+          },
+          "elevation": 40.5,
+          "distanceFromHomeplate": 97.8,
+          "angle": -185.63333333333333,
+          "facing": -5.633333333333326,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "pirates-227-B-2",
+          "sectionId": "227",
+          "row": "B",
+          "seatNumber": "2",
+          "position3D": {
+            "x": 9.20379304255063,
+            "y": 97.36596013818124,
+            "z": 40.5
+          },
+          "elevation": 40.5,
+          "distanceFromHomeplate": 97.8,
+          "angle": -185.4,
+          "facing": -5.400000000000006,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "pirates-227-B-3",
+          "sectionId": "227",
+          "row": "B",
+          "seatNumber": "3",
+          "position3D": {
+            "x": 8.80720128126655,
+            "y": 97.40263448999343,
+            "z": 40.5
+          },
+          "elevation": 40.5,
+          "distanceFromHomeplate": 97.80000000000001,
+          "angle": -185.16666666666666,
+          "facing": -5.166666666666657,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "pirates-227-B-4",
+          "sectionId": "227",
+          "row": "B",
+          "seatNumber": "4",
+          "position3D": {
+            "x": 8.410463455162695,
+            "y": 97.43769344801514,
+            "z": 40.5
+          },
+          "elevation": 40.5,
+          "distanceFromHomeplate": 97.8,
+          "angle": -184.93333333333334,
+          "facing": -4.933333333333337,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "pirates-227-B-5",
+          "sectionId": "227",
+          "row": "B",
+          "seatNumber": "5",
+          "position3D": {
+            "x": 8.01358614401792,
+            "y": 97.47113643080398,
+            "z": 40.5
+          },
+          "elevation": 40.5,
+          "distanceFromHomeplate": 97.8,
+          "angle": -184.7,
+          "facing": -4.699999999999989,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "pirates-227-B-6",
+          "sectionId": "227",
+          "row": "B",
+          "seatNumber": "6",
+          "position3D": {
+            "x": 7.616575929925099,
+            "y": 97.50296288371798,
+            "z": 40.5
+          },
+          "elevation": 40.5,
+          "distanceFromHomeplate": 97.8,
+          "angle": -184.46666666666667,
+          "facing": -4.466666666666669,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "pirates-227-B-7",
+          "sectionId": "227",
+          "row": "B",
+          "seatNumber": "7",
+          "position3D": {
+            "x": 7.219439397180309,
+            "y": 97.53317227892488,
+            "z": 40.5
+          },
+          "elevation": 40.5,
+          "distanceFromHomeplate": 97.8,
+          "angle": -184.23333333333332,
+          "facing": -4.23333333333332,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "pirates-227-B-8",
+          "sectionId": "227",
+          "row": "B",
+          "seatNumber": "8",
+          "position3D": {
+            "x": 6.8221831321754465,
+            "y": 97.56176411541081,
+            "z": 40.5
+          },
+          "elevation": 40.5,
+          "distanceFromHomeplate": 97.8,
+          "angle": -184,
+          "facing": -4,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "pirates-227-B-9",
+          "sectionId": "227",
+          "row": "B",
+          "seatNumber": "9",
+          "position3D": {
+            "x": 6.4248137232877,
+            "y": 97.58873791898866,
+            "z": 40.5
+          },
+          "elevation": 40.5,
+          "distanceFromHomeplate": 97.8,
+          "angle": -183.76666666666668,
+          "facing": -3.76666666666668,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "pirates-227-B-10",
+          "sectionId": "227",
+          "row": "B",
+          "seatNumber": "10",
+          "position3D": {
+            "x": 6.027337760770807,
+            "y": 97.61409324230587,
+            "z": 40.5
+          },
+          "elevation": 40.5,
+          "distanceFromHomeplate": 97.8,
+          "angle": -183.53333333333333,
+          "facing": -3.5333333333333314,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "pirates-227-B-11",
+          "sectionId": "227",
+          "row": "B",
+          "seatNumber": "11",
+          "position3D": {
+            "x": 5.629761836645659,
+            "y": 97.63782966485196,
+            "z": 40.5
+          },
+          "elevation": 40.5,
+          "distanceFromHomeplate": 97.8,
+          "angle": -183.3,
+          "facing": -3.3000000000000114,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "pirates-227-B-12",
+          "sectionId": "227",
+          "row": "B",
+          "seatNumber": "12",
+          "position3D": {
+            "x": 5.232092544590985,
+            "y": 97.65994679296541,
+            "z": 40.5
+          },
+          "elevation": 40.5,
+          "distanceFromHomeplate": 97.8,
+          "angle": -183.06666666666666,
+          "facing": -3.066666666666663,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "pirates-227-B-13",
+          "sectionId": "227",
+          "row": "B",
+          "seatNumber": "13",
+          "position3D": {
+            "x": 4.834336479834079,
+            "y": 97.68044425984019,
+            "z": 40.5
+          },
+          "elevation": 40.5,
+          "distanceFromHomeplate": 97.8,
+          "angle": -182.83333333333334,
+          "facing": -2.833333333333343,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "pirates-227-B-14",
+          "sectionId": "227",
+          "row": "B",
+          "seatNumber": "14",
+          "position3D": {
+            "x": 4.436500239041073,
+            "y": 97.69932172553189,
+            "z": 40.5
+          },
+          "elevation": 40.5,
+          "distanceFromHomeplate": 97.8,
+          "angle": -182.6,
+          "facing": -2.5999999999999943,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "pirates-227-B-15",
+          "sectionId": "227",
+          "row": "B",
+          "seatNumber": "15",
+          "position3D": {
+            "x": 4.038590420208058,
+            "y": 97.71657887696337,
+            "z": 40.5
+          },
+          "elevation": 40.5,
+          "distanceFromHomeplate": 97.8,
+          "angle": -182.36666666666667,
+          "facing": -2.3666666666666742,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        }
+      ],
+      "covered": true,
+      "overhangHeight": 20,
+      "hasAisleSeats": false,
+      "wheelchairRow": false
+    },
+    {
+      "rowNumber": "C",
+      "sectionId": "227",
+      "seatCount": 15,
+      "elevation": 43,
+      "depth": 100.6,
+      "rowSpacing": 36,
+      "seats": [
+        {
+          "id": "pirates-227-C-1",
+          "sectionId": "227",
+          "row": "C",
+          "seatNumber": "1",
+          "position3D": {
+            "x": 9.875085434180164,
+            "y": 100.11414828917859,
+            "z": 43
+          },
+          "elevation": 43,
+          "distanceFromHomeplate": 100.59999999999998,
+          "angle": -185.63333333333333,
+          "facing": -5.633333333333326,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "pirates-227-C-2",
+          "sectionId": "227",
+          "row": "C",
+          "seatNumber": "2",
+          "position3D": {
+            "x": 9.467296319842468,
+            "y": 100.15353363906985,
+            "z": 43
+          },
+          "elevation": 43,
+          "distanceFromHomeplate": 100.6,
+          "angle": -185.4,
+          "facing": -5.400000000000006,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "pirates-227-C-3",
+          "sectionId": "227",
+          "row": "C",
+          "seatNumber": "3",
+          "position3D": {
+            "x": 9.059350193204653,
+            "y": 100.19125797232452,
+            "z": 43
+          },
+          "elevation": 43,
+          "distanceFromHomeplate": 100.60000000000001,
+          "angle": -185.16666666666666,
+          "facing": -5.166666666666657,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "pirates-227-C-4",
+          "sectionId": "227",
+          "row": "C",
+          "seatNumber": "4",
+          "position3D": {
+            "x": 8.651253819932178,
+            "y": 100.22732066329573,
+            "z": 43
+          },
+          "elevation": 43,
+          "distanceFromHomeplate": 100.59999999999998,
+          "angle": -184.93333333333334,
+          "facing": -4.933333333333337,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "pirates-227-C-5",
+          "sectionId": "227",
+          "row": "C",
+          "seatNumber": "5",
+          "position3D": {
+            "x": 8.243013968182032,
+            "y": 100.26172111389448,
+            "z": 43
+          },
+          "elevation": 43,
+          "distanceFromHomeplate": 100.6,
+          "angle": -184.7,
+          "facing": -4.699999999999989,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "pirates-227-C-6",
+          "sectionId": "227",
+          "row": "C",
+          "seatNumber": "6",
+          "position3D": {
+            "x": 7.834637408491462,
+            "y": 100.29445875359947,
+            "z": 43
+          },
+          "elevation": 43,
+          "distanceFromHomeplate": 100.6,
+          "angle": -184.46666666666667,
+          "facing": -4.466666666666669,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "pirates-227-C-7",
+          "sectionId": "227",
+          "row": "C",
+          "seatNumber": "7",
+          "position3D": {
+            "x": 7.426130913663998,
+            "y": 100.32553303946669,
+            "z": 43
+          },
+          "elevation": 43,
+          "distanceFromHomeplate": 100.6,
+          "angle": -184.23333333333332,
+          "facing": -4.23333333333332,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "pirates-227-C-8",
+          "sectionId": "227",
+          "row": "C",
+          "seatNumber": "8",
+          "position3D": {
+            "x": 7.017501258658997,
+            "y": 100.35494345613832,
+            "z": 43
+          },
+          "elevation": 43,
+          "distanceFromHomeplate": 100.6,
+          "angle": -184,
+          "facing": -4,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "pirates-227-C-9",
+          "sectionId": "227",
+          "row": "C",
+          "seatNumber": "9",
+          "position3D": {
+            "x": 6.608755220477941,
+            "y": 100.38268951585131,
+            "z": 43
+          },
+          "elevation": 43,
+          "distanceFromHomeplate": 100.60000000000001,
+          "angle": -183.76666666666668,
+          "facing": -3.76666666666668,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "pirates-227-C-10",
+          "sectionId": "227",
+          "row": "C",
+          "seatNumber": "10",
+          "position3D": {
+            "x": 6.199899578052589,
+            "y": 100.4087707584455,
+            "z": 43
+          },
+          "elevation": 43,
+          "distanceFromHomeplate": 100.59999999999998,
+          "angle": -183.53333333333333,
+          "facing": -3.5333333333333314,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "pirates-227-C-11",
+          "sectionId": "227",
+          "row": "C",
+          "seatNumber": "11",
+          "position3D": {
+            "x": 5.7909411121324466,
+            "y": 100.43318675137124,
+            "z": 43
+          },
+          "elevation": 43,
+          "distanceFromHomeplate": 100.59999999999998,
+          "angle": -183.3,
+          "facing": -3.3000000000000114,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "pirates-227-C-12",
+          "sectionId": "227",
+          "row": "C",
+          "seatNumber": "12",
+          "position3D": {
+            "x": 5.381886605172322,
+            "y": 100.45593708969653,
+            "z": 43
+          },
+          "elevation": 43,
+          "distanceFromHomeplate": 100.60000000000001,
+          "angle": -183.06666666666666,
+          "facing": -3.066666666666663,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "pirates-227-C-13",
+          "sectionId": "227",
+          "row": "C",
+          "seatNumber": "13",
+          "position3D": {
+            "x": 4.9727428412199215,
+            "y": 100.47702139611373,
+            "z": 43
+          },
+          "elevation": 43,
+          "distanceFromHomeplate": 100.60000000000001,
+          "angle": -182.83333333333334,
+          "facing": -2.833333333333343,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "pirates-227-C-14",
+          "sectionId": "227",
+          "row": "C",
+          "seatNumber": "14",
+          "position3D": {
+            "x": 4.563516605802985,
+            "y": 100.49643932094588,
+            "z": 43
+          },
+          "elevation": 43,
+          "distanceFromHomeplate": 100.59999999999998,
+          "angle": -182.6,
+          "facing": -2.5999999999999943,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "pirates-227-C-15",
+          "sectionId": "227",
+          "row": "C",
+          "seatNumber": "15",
+          "position3D": {
+            "x": 4.154214685817286,
+            "y": 100.51419054215249,
+            "z": 43
+          },
+          "elevation": 43,
+          "distanceFromHomeplate": 100.59999999999998,
+          "angle": -182.36666666666667,
+          "facing": -2.3666666666666742,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        }
+      ],
+      "covered": true,
+      "overhangHeight": 20,
+      "hasAisleSeats": false,
+      "wheelchairRow": false
+    },
+    {
+      "rowNumber": "D",
+      "sectionId": "227",
+      "seatCount": 15,
+      "elevation": 45.5,
+      "depth": 103.4,
+      "rowSpacing": 36,
+      "seats": [
+        {
+          "id": "pirates-227-D-1",
+          "sectionId": "227",
+          "row": "D",
+          "seatNumber": "1",
+          "position3D": {
+            "x": 10.149938706702077,
+            "y": 102.9006255775454,
+            "z": 45.5
+          },
+          "elevation": 45.5,
+          "distanceFromHomeplate": 103.39999999999999,
+          "angle": -185.63333333333333,
+          "facing": -5.633333333333326,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "pirates-227-D-2",
+          "sectionId": "227",
+          "row": "D",
+          "seatNumber": "2",
+          "position3D": {
+            "x": 9.730799597134308,
+            "y": 102.94110713995849,
+            "z": 45.5
+          },
+          "elevation": 45.5,
+          "distanceFromHomeplate": 103.4,
+          "angle": -185.4,
+          "facing": -5.400000000000006,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "pirates-227-D-3",
+          "sectionId": "227",
+          "row": "D",
+          "seatNumber": "3",
+          "position3D": {
+            "x": 9.311499105142754,
+            "y": 102.97988145465564,
+            "z": 45.5
+          },
+          "elevation": 45.5,
+          "distanceFromHomeplate": 103.40000000000002,
+          "angle": -185.16666666666666,
+          "facing": -5.166666666666657,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "pirates-227-D-4",
+          "sectionId": "227",
+          "row": "D",
+          "seatNumber": "4",
+          "position3D": {
+            "x": 8.892044184701664,
+            "y": 103.01694787857633,
+            "z": 45.5
+          },
+          "elevation": 45.5,
+          "distanceFromHomeplate": 103.39999999999999,
+          "angle": -184.93333333333334,
+          "facing": -4.933333333333337,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "pirates-227-D-5",
+          "sectionId": "227",
+          "row": "D",
+          "seatNumber": "5",
+          "position3D": {
+            "x": 8.472441792346144,
+            "y": 103.052305796985,
+            "z": 45.5
+          },
+          "elevation": 45.5,
+          "distanceFromHomeplate": 103.4,
+          "angle": -184.7,
+          "facing": -4.699999999999989,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "pirates-227-D-6",
+          "sectionId": "227",
+          "row": "D",
+          "seatNumber": "6",
+          "position3D": {
+            "x": 8.052698887057826,
+            "y": 103.08595462348099,
+            "z": 45.5
+          },
+          "elevation": 45.5,
+          "distanceFromHomeplate": 103.40000000000002,
+          "angle": -184.46666666666667,
+          "facing": -4.466666666666669,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "pirates-227-D-7",
+          "sectionId": "227",
+          "row": "D",
+          "seatNumber": "7",
+          "position3D": {
+            "x": 7.632822430147689,
+            "y": 103.11789380000852,
+            "z": 45.5
+          },
+          "elevation": 45.5,
+          "distanceFromHomeplate": 103.4,
+          "angle": -184.23333333333332,
+          "facing": -4.23333333333332,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "pirates-227-D-8",
+          "sectionId": "227",
+          "row": "D",
+          "seatNumber": "8",
+          "position3D": {
+            "x": 7.212819385142548,
+            "y": 103.14812279686583,
+            "z": 45.5
+          },
+          "elevation": 45.5,
+          "distanceFromHomeplate": 103.4,
+          "angle": -184,
+          "facing": -4,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "pirates-227-D-9",
+          "sectionId": "227",
+          "row": "D",
+          "seatNumber": "9",
+          "position3D": {
+            "x": 6.792696717668183,
+            "y": 103.17664111271398,
+            "z": 45.5
+          },
+          "elevation": 45.5,
+          "distanceFromHomeplate": 103.39999999999999,
+          "angle": -183.76666666666668,
+          "facing": -3.76666666666668,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "pirates-227-D-10",
+          "sectionId": "227",
+          "row": "D",
+          "seatNumber": "10",
+          "position3D": {
+            "x": 6.372461395334371,
+            "y": 103.20344827458516,
+            "z": 45.5
+          },
+          "elevation": 45.5,
+          "distanceFromHomeplate": 103.4,
+          "angle": -183.53333333333333,
+          "facing": -3.5333333333333314,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "pirates-227-D-11",
+          "sectionId": "227",
+          "row": "D",
+          "seatNumber": "11",
+          "position3D": {
+            "x": 5.952120387619235,
+            "y": 103.22854383789054,
+            "z": 45.5
+          },
+          "elevation": 45.5,
+          "distanceFromHomeplate": 103.4,
+          "angle": -183.3,
+          "facing": -3.3000000000000114,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "pirates-227-D-12",
+          "sectionId": "227",
+          "row": "D",
+          "seatNumber": "12",
+          "position3D": {
+            "x": 5.53168066575366,
+            "y": 103.25192738642765,
+            "z": 45.5
+          },
+          "elevation": 45.5,
+          "distanceFromHomeplate": 103.40000000000002,
+          "angle": -183.06666666666666,
+          "facing": -3.066666666666663,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "pirates-227-D-13",
+          "sectionId": "227",
+          "row": "D",
+          "seatNumber": "13",
+          "position3D": {
+            "x": 5.111149202605764,
+            "y": 103.27359853238728,
+            "z": 45.5
+          },
+          "elevation": 45.5,
+          "distanceFromHomeplate": 103.40000000000002,
+          "angle": -182.83333333333334,
+          "facing": -2.833333333333343,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "pirates-227-D-14",
+          "sectionId": "227",
+          "row": "D",
+          "seatNumber": "14",
+          "position3D": {
+            "x": 4.690532972564897,
+            "y": 103.2935569163599,
+            "z": 45.5
+          },
+          "elevation": 45.5,
+          "distanceFromHomeplate": 103.4,
+          "angle": -182.6,
+          "facing": -2.5999999999999943,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "pirates-227-D-15",
+          "sectionId": "227",
+          "row": "D",
+          "seatNumber": "15",
+          "position3D": {
+            "x": 4.269838951426515,
+            "y": 103.31180220734164,
+            "z": 45.5
+          },
+          "elevation": 45.5,
+          "distanceFromHomeplate": 103.39999999999999,
+          "angle": -182.36666666666667,
+          "facing": -2.3666666666666742,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        }
+      ],
+      "covered": true,
+      "overhangHeight": 20,
+      "hasAisleSeats": false,
+      "wheelchairRow": false
+    },
+    {
+      "rowNumber": "E",
+      "sectionId": "227",
+      "seatCount": 15,
+      "elevation": 48,
+      "depth": 106.2,
+      "rowSpacing": 36,
+      "seats": [
+        {
+          "id": "pirates-227-E-1",
+          "sectionId": "227",
+          "row": "E",
+          "seatNumber": "1",
+          "position3D": {
+            "x": 10.42479197922399,
+            "y": 105.6871028659122,
+            "z": 48
+          },
+          "elevation": 48,
+          "distanceFromHomeplate": 106.19999999999999,
+          "angle": -185.63333333333333,
+          "facing": -5.633333333333326,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "pirates-227-E-2",
+          "sectionId": "227",
+          "row": "E",
+          "seatNumber": "2",
+          "position3D": {
+            "x": 9.994302874426145,
+            "y": 105.72868064084712,
+            "z": 48
+          },
+          "elevation": 48,
+          "distanceFromHomeplate": 106.20000000000002,
+          "angle": -185.4,
+          "facing": -5.400000000000006,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "pirates-227-E-3",
+          "sectionId": "227",
+          "row": "E",
+          "seatNumber": "3",
+          "position3D": {
+            "x": 9.563648017080856,
+            "y": 105.76850493698673,
+            "z": 48
+          },
+          "elevation": 48,
+          "distanceFromHomeplate": 106.2,
+          "angle": -185.16666666666666,
+          "facing": -5.166666666666657,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "pirates-227-E-4",
+          "sectionId": "227",
+          "row": "E",
+          "seatNumber": "4",
+          "position3D": {
+            "x": 9.132834549471148,
+            "y": 105.80657509385694,
+            "z": 48
+          },
+          "elevation": 48,
+          "distanceFromHomeplate": 106.2,
+          "angle": -184.93333333333334,
+          "facing": -4.933333333333337,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "pirates-227-E-5",
+          "sectionId": "227",
+          "row": "E",
+          "seatNumber": "5",
+          "position3D": {
+            "x": 8.701869616510256,
+            "y": 105.8428904800755,
+            "z": 48
+          },
+          "elevation": 48,
+          "distanceFromHomeplate": 106.2,
+          "angle": -184.7,
+          "facing": -4.699999999999989,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "pirates-227-E-6",
+          "sectionId": "227",
+          "row": "E",
+          "seatNumber": "6",
+          "position3D": {
+            "x": 8.270760365624188,
+            "y": 105.87745049336247,
+            "z": 48
+          },
+          "elevation": 48,
+          "distanceFromHomeplate": 106.20000000000002,
+          "angle": -184.46666666666667,
+          "facing": -4.466666666666669,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "pirates-227-E-7",
+          "sectionId": "227",
+          "row": "E",
+          "seatNumber": "7",
+          "position3D": {
+            "x": 7.839513946631379,
+            "y": 105.91025456055034,
+            "z": 48
+          },
+          "elevation": 48,
+          "distanceFromHomeplate": 106.20000000000002,
+          "angle": -184.23333333333332,
+          "facing": -4.23333333333332,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "pirates-227-E-8",
+          "sectionId": "227",
+          "row": "E",
+          "seatNumber": "8",
+          "position3D": {
+            "x": 7.408137511626099,
+            "y": 105.94130213759334,
+            "z": 48
+          },
+          "elevation": 48,
+          "distanceFromHomeplate": 106.20000000000002,
+          "angle": -184,
+          "facing": -4,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "pirates-227-E-9",
+          "sectionId": "227",
+          "row": "E",
+          "seatNumber": "9",
+          "position3D": {
+            "x": 6.976638214858423,
+            "y": 105.97059270957664,
+            "z": 48
+          },
+          "elevation": 48,
+          "distanceFromHomeplate": 106.19999999999999,
+          "angle": -183.76666666666668,
+          "facing": -3.76666666666668,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "pirates-227-E-10",
+          "sectionId": "227",
+          "row": "E",
+          "seatNumber": "10",
+          "position3D": {
+            "x": 6.545023212616153,
+            "y": 105.99812579072479,
+            "z": 48
+          },
+          "elevation": 48,
+          "distanceFromHomeplate": 106.19999999999999,
+          "angle": -183.53333333333333,
+          "facing": -3.5333333333333314,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "pirates-227-E-11",
+          "sectionId": "227",
+          "row": "E",
+          "seatNumber": "11",
+          "position3D": {
+            "x": 6.113299663106023,
+            "y": 106.02390092440982,
+            "z": 48
+          },
+          "elevation": 48,
+          "distanceFromHomeplate": 106.2,
+          "angle": -183.3,
+          "facing": -3.3000000000000114,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "pirates-227-E-12",
+          "sectionId": "227",
+          "row": "E",
+          "seatNumber": "12",
+          "position3D": {
+            "x": 5.681474726334996,
+            "y": 106.04791768315877,
+            "z": 48
+          },
+          "elevation": 48,
+          "distanceFromHomeplate": 106.20000000000002,
+          "angle": -183.06666666666666,
+          "facing": -3.066666666666663,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "pirates-227-E-13",
+          "sectionId": "227",
+          "row": "E",
+          "seatNumber": "13",
+          "position3D": {
+            "x": 5.249555563991607,
+            "y": 106.07017566866082,
+            "z": 48
+          },
+          "elevation": 48,
+          "distanceFromHomeplate": 106.20000000000002,
+          "angle": -182.83333333333334,
+          "facing": -2.833333333333343,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "pirates-227-E-14",
+          "sectionId": "227",
+          "row": "E",
+          "seatNumber": "14",
+          "position3D": {
+            "x": 4.817549339326809,
+            "y": 106.0906745117739,
+            "z": 48
+          },
+          "elevation": 48,
+          "distanceFromHomeplate": 106.19999999999999,
+          "angle": -182.6,
+          "facing": -2.5999999999999943,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "pirates-227-E-15",
+          "sectionId": "227",
+          "row": "E",
+          "seatNumber": "15",
+          "position3D": {
+            "x": 4.385463217035744,
+            "y": 106.10941387253078,
+            "z": 48
+          },
+          "elevation": 48,
+          "distanceFromHomeplate": 106.20000000000002,
+          "angle": -182.36666666666667,
+          "facing": -2.3666666666666742,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        }
+      ],
+      "covered": true,
+      "overhangHeight": 20,
+      "hasAisleSeats": false,
+      "wheelchairRow": false
+    },
+    {
+      "rowNumber": "F",
+      "sectionId": "227",
+      "seatCount": 15,
+      "elevation": 50.5,
+      "depth": 109,
+      "rowSpacing": 36,
+      "seats": [
+        {
+          "id": "pirates-227-F-1",
+          "sectionId": "227",
+          "row": "F",
+          "seatNumber": "1",
+          "position3D": {
+            "x": 10.699645251745903,
+            "y": 108.47358015427899,
+            "z": 50.5
+          },
+          "elevation": 50.5,
+          "distanceFromHomeplate": 108.99999999999999,
+          "angle": -185.63333333333333,
+          "facing": -5.633333333333326,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "pirates-227-F-2",
+          "sectionId": "227",
+          "row": "F",
+          "seatNumber": "2",
+          "position3D": {
+            "x": 10.257806151717983,
+            "y": 108.51625414173573,
+            "z": 50.5
+          },
+          "elevation": 50.5,
+          "distanceFromHomeplate": 109,
+          "angle": -185.4,
+          "facing": -5.400000000000006,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "pirates-227-F-3",
+          "sectionId": "227",
+          "row": "F",
+          "seatNumber": "3",
+          "position3D": {
+            "x": 9.815796929018958,
+            "y": 108.55712841931783,
+            "z": 50.5
+          },
+          "elevation": 50.5,
+          "distanceFromHomeplate": 109.00000000000001,
+          "angle": -185.16666666666666,
+          "facing": -5.166666666666657,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "pirates-227-F-4",
+          "sectionId": "227",
+          "row": "F",
+          "seatNumber": "4",
+          "position3D": {
+            "x": 9.373624914240631,
+            "y": 108.59620230913752,
+            "z": 50.5
+          },
+          "elevation": 50.5,
+          "distanceFromHomeplate": 108.99999999999999,
+          "angle": -184.93333333333334,
+          "facing": -4.933333333333337,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "pirates-227-F-5",
+          "sectionId": "227",
+          "row": "F",
+          "seatNumber": "5",
+          "position3D": {
+            "x": 8.931297440674369,
+            "y": 108.633475163166,
+            "z": 50.5
+          },
+          "elevation": 50.5,
+          "distanceFromHomeplate": 109,
+          "angle": -184.7,
+          "facing": -4.699999999999989,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "pirates-227-F-6",
+          "sectionId": "227",
+          "row": "F",
+          "seatNumber": "6",
+          "position3D": {
+            "x": 8.48882184419055,
+            "y": 108.66894636324398,
+            "z": 50.5
+          },
+          "elevation": 50.5,
+          "distanceFromHomeplate": 109.00000000000001,
+          "angle": -184.46666666666667,
+          "facing": -4.466666666666669,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "pirates-227-F-7",
+          "sectionId": "227",
+          "row": "F",
+          "seatNumber": "7",
+          "position3D": {
+            "x": 8.046205463115069,
+            "y": 108.70261532109215,
+            "z": 50.5
+          },
+          "elevation": 50.5,
+          "distanceFromHomeplate": 109,
+          "angle": -184.23333333333332,
+          "facing": -4.23333333333332,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "pirates-227-F-8",
+          "sectionId": "227",
+          "row": "F",
+          "seatNumber": "8",
+          "position3D": {
+            "x": 7.603455638109649,
+            "y": 108.73448147832084,
+            "z": 50.5
+          },
+          "elevation": 50.5,
+          "distanceFromHomeplate": 109,
+          "angle": -184,
+          "facing": -4,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "pirates-227-F-9",
+          "sectionId": "227",
+          "row": "F",
+          "seatNumber": "9",
+          "position3D": {
+            "x": 7.160579712048664,
+            "y": 108.7645443064393,
+            "z": 50.5
+          },
+          "elevation": 50.5,
+          "distanceFromHomeplate": 109.00000000000001,
+          "angle": -183.76666666666668,
+          "facing": -3.76666666666668,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "pirates-227-F-10",
+          "sectionId": "227",
+          "row": "F",
+          "seatNumber": "10",
+          "position3D": {
+            "x": 6.7175850298979345,
+            "y": 108.79280330686441,
+            "z": 50.5
+          },
+          "elevation": 50.5,
+          "distanceFromHomeplate": 108.99999999999999,
+          "angle": -183.53333333333333,
+          "facing": -3.5333333333333314,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "pirates-227-F-11",
+          "sectionId": "227",
+          "row": "F",
+          "seatNumber": "11",
+          "position3D": {
+            "x": 6.274478938592811,
+            "y": 108.81925801092909,
+            "z": 50.5
+          },
+          "elevation": 50.5,
+          "distanceFromHomeplate": 109,
+          "angle": -183.3,
+          "facing": -3.3000000000000114,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "pirates-227-F-12",
+          "sectionId": "227",
+          "row": "F",
+          "seatNumber": "12",
+          "position3D": {
+            "x": 5.8312687869163335,
+            "y": 108.84390797988988,
+            "z": 50.5
+          },
+          "elevation": 50.5,
+          "distanceFromHomeplate": 109,
+          "angle": -183.06666666666666,
+          "facing": -3.066666666666663,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "pirates-227-F-13",
+          "sectionId": "227",
+          "row": "F",
+          "seatNumber": "13",
+          "position3D": {
+            "x": 5.38796192537745,
+            "y": 108.86675280493436,
+            "z": 50.5
+          },
+          "elevation": 50.5,
+          "distanceFromHomeplate": 109.00000000000001,
+          "angle": -182.83333333333334,
+          "facing": -2.833333333333343,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "pirates-227-F-14",
+          "sectionId": "227",
+          "row": "F",
+          "seatNumber": "14",
+          "position3D": {
+            "x": 4.944565706088721,
+            "y": 108.88779210718789,
+            "z": 50.5
+          },
+          "elevation": 50.5,
+          "distanceFromHomeplate": 108.99999999999999,
+          "angle": -182.6,
+          "facing": -2.5999999999999943,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "pirates-227-F-15",
+          "sectionId": "227",
+          "row": "F",
+          "seatNumber": "15",
+          "position3D": {
+            "x": 4.501087482644972,
+            "y": 108.9070255377199,
+            "z": 50.5
+          },
+          "elevation": 50.5,
+          "distanceFromHomeplate": 109,
+          "angle": -182.36666666666667,
+          "facing": -2.3666666666666742,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        }
+      ],
+      "covered": true,
+      "overhangHeight": 20,
+      "hasAisleSeats": false,
+      "wheelchairRow": false
+    },
+    {
+      "rowNumber": "G",
+      "sectionId": "227",
+      "seatCount": 15,
+      "elevation": 53,
+      "depth": 111.8,
+      "rowSpacing": 36,
+      "seats": [
+        {
+          "id": "pirates-227-G-1",
+          "sectionId": "227",
+          "row": "G",
+          "seatNumber": "1",
+          "position3D": {
+            "x": 10.974498524267815,
+            "y": 111.26005744264579,
+            "z": 53
+          },
+          "elevation": 53,
+          "distanceFromHomeplate": 111.79999999999998,
+          "angle": -185.63333333333333,
+          "facing": -5.633333333333326,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "pirates-227-G-2",
+          "sectionId": "227",
+          "row": "G",
+          "seatNumber": "2",
+          "position3D": {
+            "x": 10.52130942900982,
+            "y": 111.30382764262436,
+            "z": 53
+          },
+          "elevation": 53,
+          "distanceFromHomeplate": 111.8,
+          "angle": -185.4,
+          "facing": -5.400000000000006,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "pirates-227-G-3",
+          "sectionId": "227",
+          "row": "G",
+          "seatNumber": "3",
+          "position3D": {
+            "x": 10.06794584095706,
+            "y": 111.34575190164892,
+            "z": 53
+          },
+          "elevation": 53,
+          "distanceFromHomeplate": 111.8,
+          "angle": -185.16666666666666,
+          "facing": -5.166666666666657,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "pirates-227-G-4",
+          "sectionId": "227",
+          "row": "G",
+          "seatNumber": "4",
+          "position3D": {
+            "x": 9.614415279010116,
+            "y": 111.38582952441811,
+            "z": 53
+          },
+          "elevation": 53,
+          "distanceFromHomeplate": 111.8,
+          "angle": -184.93333333333334,
+          "facing": -4.933333333333337,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "pirates-227-G-5",
+          "sectionId": "227",
+          "row": "G",
+          "seatNumber": "5",
+          "position3D": {
+            "x": 9.160725264838481,
+            "y": 111.4240598462565,
+            "z": 53
+          },
+          "elevation": 53,
+          "distanceFromHomeplate": 111.8,
+          "angle": -184.7,
+          "facing": -4.699999999999989,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "pirates-227-G-6",
+          "sectionId": "227",
+          "row": "G",
+          "seatNumber": "6",
+          "position3D": {
+            "x": 8.706883322756912,
+            "y": 111.46044223312546,
+            "z": 53
+          },
+          "elevation": 53,
+          "distanceFromHomeplate": 111.80000000000001,
+          "angle": -184.46666666666667,
+          "facing": -4.466666666666669,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "pirates-227-G-7",
+          "sectionId": "227",
+          "row": "G",
+          "seatNumber": "7",
+          "position3D": {
+            "x": 8.252896979598757,
+            "y": 111.49497608163396,
+            "z": 53
+          },
+          "elevation": 53,
+          "distanceFromHomeplate": 111.8,
+          "angle": -184.23333333333332,
+          "facing": -4.23333333333332,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "pirates-227-G-8",
+          "sectionId": "227",
+          "row": "G",
+          "seatNumber": "8",
+          "position3D": {
+            "x": 7.798773764593199,
+            "y": 111.52766081904835,
+            "z": 53
+          },
+          "elevation": 53,
+          "distanceFromHomeplate": 111.8,
+          "angle": -184,
+          "facing": -4,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "pirates-227-G-9",
+          "sectionId": "227",
+          "row": "G",
+          "seatNumber": "9",
+          "position3D": {
+            "x": 7.344521209238905,
+            "y": 111.55849590330196,
+            "z": 53
+          },
+          "elevation": 53,
+          "distanceFromHomeplate": 111.80000000000001,
+          "angle": -183.76666666666668,
+          "facing": -3.76666666666668,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "pirates-227-G-10",
+          "sectionId": "227",
+          "row": "G",
+          "seatNumber": "10",
+          "position3D": {
+            "x": 6.890146847179716,
+            "y": 111.58748082300406,
+            "z": 53
+          },
+          "elevation": 53,
+          "distanceFromHomeplate": 111.8,
+          "angle": -183.53333333333333,
+          "facing": -3.5333333333333314,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "pirates-227-G-11",
+          "sectionId": "227",
+          "row": "G",
+          "seatNumber": "11",
+          "position3D": {
+            "x": 6.435658214079598,
+            "y": 111.61461509744836,
+            "z": 53
+          },
+          "elevation": 53,
+          "distanceFromHomeplate": 111.8,
+          "angle": -183.3,
+          "facing": -3.3000000000000114,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "pirates-227-G-12",
+          "sectionId": "227",
+          "row": "G",
+          "seatNumber": "12",
+          "position3D": {
+            "x": 5.98106284749767,
+            "y": 111.639898276621,
+            "z": 53
+          },
+          "elevation": 53,
+          "distanceFromHomeplate": 111.80000000000001,
+          "angle": -183.06666666666666,
+          "facing": -3.066666666666663,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "pirates-227-G-13",
+          "sectionId": "227",
+          "row": "G",
+          "seatNumber": "13",
+          "position3D": {
+            "x": 5.526368286763292,
+            "y": 111.6633299412079,
+            "z": 53
+          },
+          "elevation": 53,
+          "distanceFromHomeplate": 111.80000000000001,
+          "angle": -182.83333333333334,
+          "facing": -2.833333333333343,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "pirates-227-G-14",
+          "sectionId": "227",
+          "row": "G",
+          "seatNumber": "14",
+          "position3D": {
+            "x": 5.071582072850633,
+            "y": 111.6849097026019,
+            "z": 53
+          },
+          "elevation": 53,
+          "distanceFromHomeplate": 111.8,
+          "angle": -182.6,
+          "facing": -2.5999999999999943,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "pirates-227-G-15",
+          "sectionId": "227",
+          "row": "G",
+          "seatNumber": "15",
+          "position3D": {
+            "x": 4.616711748254201,
+            "y": 111.70463720290904,
+            "z": 53
+          },
+          "elevation": 53,
+          "distanceFromHomeplate": 111.8,
+          "angle": -182.36666666666667,
+          "facing": -2.3666666666666742,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        }
+      ],
+      "covered": true,
+      "overhangHeight": 20,
+      "hasAisleSeats": false,
+      "wheelchairRow": false
+    },
+    {
+      "rowNumber": "H",
+      "sectionId": "227",
+      "seatCount": 15,
+      "elevation": 55.5,
+      "depth": 114.6,
+      "rowSpacing": 36,
+      "seats": [
+        {
+          "id": "pirates-227-H-1",
+          "sectionId": "227",
+          "row": "H",
+          "seatNumber": "1",
+          "position3D": {
+            "x": 11.249351796789728,
+            "y": 114.04653473101258,
+            "z": 55.5
+          },
+          "elevation": 55.5,
+          "distanceFromHomeplate": 114.59999999999998,
+          "angle": -185.63333333333333,
+          "facing": -5.633333333333326,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "pirates-227-H-2",
+          "sectionId": "227",
+          "row": "H",
+          "seatNumber": "2",
+          "position3D": {
+            "x": 10.784812706301658,
+            "y": 114.09140114351297,
+            "z": 55.5
+          },
+          "elevation": 55.5,
+          "distanceFromHomeplate": 114.6,
+          "angle": -185.4,
+          "facing": -5.400000000000006,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "pirates-227-H-3",
+          "sectionId": "227",
+          "row": "H",
+          "seatNumber": "3",
+          "position3D": {
+            "x": 10.32009475289516,
+            "y": 114.13437538398003,
+            "z": 55.5
+          },
+          "elevation": 55.5,
+          "distanceFromHomeplate": 114.6,
+          "angle": -185.16666666666666,
+          "facing": -5.166666666666657,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "pirates-227-H-4",
+          "sectionId": "227",
+          "row": "H",
+          "seatNumber": "4",
+          "position3D": {
+            "x": 9.8552056437796,
+            "y": 114.17545673969872,
+            "z": 55.5
+          },
+          "elevation": 55.5,
+          "distanceFromHomeplate": 114.6,
+          "angle": -184.93333333333334,
+          "facing": -4.933333333333337,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "pirates-227-H-5",
+          "sectionId": "227",
+          "row": "H",
+          "seatNumber": "5",
+          "position3D": {
+            "x": 9.390153089002593,
+            "y": 114.214644529347,
+            "z": 55.5
+          },
+          "elevation": 55.5,
+          "distanceFromHomeplate": 114.6,
+          "angle": -184.7,
+          "facing": -4.699999999999989,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "pirates-227-H-6",
+          "sectionId": "227",
+          "row": "H",
+          "seatNumber": "6",
+          "position3D": {
+            "x": 8.924944801323276,
+            "y": 114.25193810300695,
+            "z": 55.5
+          },
+          "elevation": 55.5,
+          "distanceFromHomeplate": 114.6,
+          "angle": -184.46666666666667,
+          "facing": -4.466666666666669,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "pirates-227-H-7",
+          "sectionId": "227",
+          "row": "H",
+          "seatNumber": "7",
+          "position3D": {
+            "x": 8.459588496082448,
+            "y": 114.28733684217578,
+            "z": 55.5
+          },
+          "elevation": 55.5,
+          "distanceFromHomeplate": 114.6,
+          "angle": -184.23333333333332,
+          "facing": -4.23333333333332,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "pirates-227-H-8",
+          "sectionId": "227",
+          "row": "H",
+          "seatNumber": "8",
+          "position3D": {
+            "x": 7.994091891076749,
+            "y": 114.32084015977586,
+            "z": 55.5
+          },
+          "elevation": 55.5,
+          "distanceFromHomeplate": 114.6,
+          "angle": -184,
+          "facing": -4,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "pirates-227-H-9",
+          "sectionId": "227",
+          "row": "H",
+          "seatNumber": "9",
+          "position3D": {
+            "x": 7.528462706429146,
+            "y": 114.35244750016462,
+            "z": 55.5
+          },
+          "elevation": 55.5,
+          "distanceFromHomeplate": 114.6,
+          "angle": -183.76666666666668,
+          "facing": -3.76666666666668,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "pirates-227-H-10",
+          "sectionId": "227",
+          "row": "H",
+          "seatNumber": "10",
+          "position3D": {
+            "x": 7.062708664461498,
+            "y": 114.38215833914369,
+            "z": 55.5
+          },
+          "elevation": 55.5,
+          "distanceFromHomeplate": 114.59999999999998,
+          "angle": -183.53333333333333,
+          "facing": -3.5333333333333314,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "pirates-227-H-11",
+          "sectionId": "227",
+          "row": "H",
+          "seatNumber": "11",
+          "position3D": {
+            "x": 6.5968374895663855,
+            "y": 114.40997218396764,
+            "z": 55.5
+          },
+          "elevation": 55.5,
+          "distanceFromHomeplate": 114.6,
+          "angle": -183.3,
+          "facing": -3.3000000000000114,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "pirates-227-H-12",
+          "sectionId": "227",
+          "row": "H",
+          "seatNumber": "12",
+          "position3D": {
+            "x": 6.130856908079007,
+            "y": 114.4358885733521,
+            "z": 55.5
+          },
+          "elevation": 55.5,
+          "distanceFromHomeplate": 114.6,
+          "angle": -183.06666666666666,
+          "facing": -3.066666666666663,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "pirates-227-H-13",
+          "sectionId": "227",
+          "row": "H",
+          "seatNumber": "13",
+          "position3D": {
+            "x": 5.664774648149135,
+            "y": 114.45990707748145,
+            "z": 55.5
+          },
+          "elevation": 55.5,
+          "distanceFromHomeplate": 114.60000000000001,
+          "angle": -182.83333333333334,
+          "facing": -2.833333333333343,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "pirates-227-H-14",
+          "sectionId": "227",
+          "row": "H",
+          "seatNumber": "14",
+          "position3D": {
+            "x": 5.198598439612545,
+            "y": 114.4820272980159,
+            "z": 55.5
+          },
+          "elevation": 55.5,
+          "distanceFromHomeplate": 114.6,
+          "angle": -182.6,
+          "facing": -2.5999999999999943,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "pirates-227-H-15",
+          "sectionId": "227",
+          "row": "H",
+          "seatNumber": "15",
+          "position3D": {
+            "x": 4.73233601386343,
+            "y": 114.50224886809818,
+            "z": 55.5
+          },
+          "elevation": 55.5,
+          "distanceFromHomeplate": 114.6,
+          "angle": -182.36666666666667,
+          "facing": -2.3666666666666742,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        }
+      ],
+      "covered": true,
+      "overhangHeight": 20,
+      "hasAisleSeats": false,
+      "wheelchairRow": false
+    },
+    {
+      "rowNumber": "I",
+      "sectionId": "227",
+      "seatCount": 15,
+      "elevation": 58,
+      "depth": 117.4,
+      "rowSpacing": 36,
+      "seats": [
+        {
+          "id": "pirates-227-I-1",
+          "sectionId": "227",
+          "row": "I",
+          "seatNumber": "1",
+          "position3D": {
+            "x": 11.524205069311643,
+            "y": 116.8330120193794,
+            "z": 58
+          },
+          "elevation": 58,
+          "distanceFromHomeplate": 117.39999999999999,
+          "angle": -185.63333333333333,
+          "facing": -5.633333333333326,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "pirates-227-I-2",
+          "sectionId": "227",
+          "row": "I",
+          "seatNumber": "2",
+          "position3D": {
+            "x": 11.048315983593497,
+            "y": 116.87897464440161,
+            "z": 58
+          },
+          "elevation": 58,
+          "distanceFromHomeplate": 117.4,
+          "angle": -185.4,
+          "facing": -5.400000000000006,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "pirates-227-I-3",
+          "sectionId": "227",
+          "row": "I",
+          "seatNumber": "3",
+          "position3D": {
+            "x": 10.572243664833264,
+            "y": 116.92299886631113,
+            "z": 58
+          },
+          "elevation": 58,
+          "distanceFromHomeplate": 117.4,
+          "angle": -185.16666666666666,
+          "facing": -5.166666666666657,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "pirates-227-I-4",
+          "sectionId": "227",
+          "row": "I",
+          "seatNumber": "4",
+          "position3D": {
+            "x": 10.095996008549085,
+            "y": 116.96508395497932,
+            "z": 58
+          },
+          "elevation": 58,
+          "distanceFromHomeplate": 117.39999999999999,
+          "angle": -184.93333333333334,
+          "facing": -4.933333333333337,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "pirates-227-I-5",
+          "sectionId": "227",
+          "row": "I",
+          "seatNumber": "5",
+          "position3D": {
+            "x": 9.619580913166706,
+            "y": 117.00522921243751,
+            "z": 58
+          },
+          "elevation": 58,
+          "distanceFromHomeplate": 117.4,
+          "angle": -184.7,
+          "facing": -4.699999999999989,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "pirates-227-I-6",
+          "sectionId": "227",
+          "row": "I",
+          "seatNumber": "6",
+          "position3D": {
+            "x": 9.143006279889638,
+            "y": 117.04343397288847,
+            "z": 58
+          },
+          "elevation": 58,
+          "distanceFromHomeplate": 117.40000000000002,
+          "angle": -184.46666666666667,
+          "facing": -4.466666666666669,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "pirates-227-I-7",
+          "sectionId": "227",
+          "row": "I",
+          "seatNumber": "7",
+          "position3D": {
+            "x": 8.666280012566139,
+            "y": 117.0796976027176,
+            "z": 58
+          },
+          "elevation": 58,
+          "distanceFromHomeplate": 117.4,
+          "angle": -184.23333333333332,
+          "facing": -4.23333333333332,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "pirates-227-I-8",
+          "sectionId": "227",
+          "row": "I",
+          "seatNumber": "8",
+          "position3D": {
+            "x": 8.1894100175603,
+            "y": 117.11401950050337,
+            "z": 58
+          },
+          "elevation": 58,
+          "distanceFromHomeplate": 117.4,
+          "angle": -184,
+          "facing": -4,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "pirates-227-I-9",
+          "sectionId": "227",
+          "row": "I",
+          "seatNumber": "9",
+          "position3D": {
+            "x": 7.712404203619387,
+            "y": 117.14639909702728,
+            "z": 58
+          },
+          "elevation": 58,
+          "distanceFromHomeplate": 117.4,
+          "angle": -183.76666666666668,
+          "facing": -3.76666666666668,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "pirates-227-I-10",
+          "sectionId": "227",
+          "row": "I",
+          "seatNumber": "10",
+          "position3D": {
+            "x": 7.235270481743281,
+            "y": 117.17683585528333,
+            "z": 58
+          },
+          "elevation": 58,
+          "distanceFromHomeplate": 117.39999999999999,
+          "angle": -183.53333333333333,
+          "facing": -3.5333333333333314,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "pirates-227-I-11",
+          "sectionId": "227",
+          "row": "I",
+          "seatNumber": "11",
+          "position3D": {
+            "x": 6.758016765053174,
+            "y": 117.20532927048693,
+            "z": 58
+          },
+          "elevation": 58,
+          "distanceFromHomeplate": 117.4,
+          "angle": -183.3,
+          "facing": -3.3000000000000114,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "pirates-227-I-12",
+          "sectionId": "227",
+          "row": "I",
+          "seatNumber": "12",
+          "position3D": {
+            "x": 6.2806509686603444,
+            "y": 117.23187887008324,
+            "z": 58
+          },
+          "elevation": 58,
+          "distanceFromHomeplate": 117.40000000000002,
+          "angle": -183.06666666666666,
+          "facing": -3.066666666666663,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "pirates-227-I-13",
+          "sectionId": "227",
+          "row": "I",
+          "seatNumber": "13",
+          "position3D": {
+            "x": 5.8031810095349785,
+            "y": 117.256484213755,
+            "z": 58
+          },
+          "elevation": 58,
+          "distanceFromHomeplate": 117.40000000000002,
+          "angle": -182.83333333333334,
+          "facing": -2.833333333333343,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "pirates-227-I-14",
+          "sectionId": "227",
+          "row": "I",
+          "seatNumber": "14",
+          "position3D": {
+            "x": 5.325614806374458,
+            "y": 117.2791448934299,
+            "z": 58
+          },
+          "elevation": 58,
+          "distanceFromHomeplate": 117.39999999999999,
+          "angle": -182.6,
+          "facing": -2.5999999999999943,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "pirates-227-I-15",
+          "sectionId": "227",
+          "row": "I",
+          "seatNumber": "15",
+          "position3D": {
+            "x": 4.847960279472659,
+            "y": 117.29986053328732,
+            "z": 58
+          },
+          "elevation": 58,
+          "distanceFromHomeplate": 117.4,
+          "angle": -182.36666666666667,
+          "facing": -2.3666666666666742,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        }
+      ],
+      "covered": true,
+      "overhangHeight": 20,
+      "hasAisleSeats": false,
+      "wheelchairRow": false
+    },
+    {
+      "rowNumber": "J",
+      "sectionId": "227",
+      "seatCount": 15,
+      "elevation": 60.5,
+      "depth": 120.2,
+      "rowSpacing": 36,
+      "seats": [
+        {
+          "id": "pirates-227-J-1",
+          "sectionId": "227",
+          "row": "J",
+          "seatNumber": "1",
+          "position3D": {
+            "x": 11.799058341833556,
+            "y": 119.61948930774619,
+            "z": 60.5
+          },
+          "elevation": 60.5,
+          "distanceFromHomeplate": 120.2,
+          "angle": -185.63333333333333,
+          "facing": -5.633333333333326,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "pirates-227-J-2",
+          "sectionId": "227",
+          "row": "J",
+          "seatNumber": "2",
+          "position3D": {
+            "x": 11.311819260885335,
+            "y": 119.66654814529024,
+            "z": 60.5
+          },
+          "elevation": 60.5,
+          "distanceFromHomeplate": 120.20000000000002,
+          "angle": -185.4,
+          "facing": -5.400000000000006,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "pirates-227-J-3",
+          "sectionId": "227",
+          "row": "J",
+          "seatNumber": "3",
+          "position3D": {
+            "x": 10.824392576771364,
+            "y": 119.71162234864224,
+            "z": 60.5
+          },
+          "elevation": 60.5,
+          "distanceFromHomeplate": 120.20000000000002,
+          "angle": -185.16666666666666,
+          "facing": -5.166666666666657,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "pirates-227-J-4",
+          "sectionId": "227",
+          "row": "J",
+          "seatNumber": "4",
+          "position3D": {
+            "x": 10.336786373318569,
+            "y": 119.75471117025991,
+            "z": 60.5
+          },
+          "elevation": 60.5,
+          "distanceFromHomeplate": 120.19999999999999,
+          "angle": -184.93333333333334,
+          "facing": -4.933333333333337,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "pirates-227-J-5",
+          "sectionId": "227",
+          "row": "J",
+          "seatNumber": "5",
+          "position3D": {
+            "x": 9.849008737330818,
+            "y": 119.79581389552801,
+            "z": 60.5
+          },
+          "elevation": 60.5,
+          "distanceFromHomeplate": 120.20000000000002,
+          "angle": -184.7,
+          "facing": -4.699999999999989,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "pirates-227-J-6",
+          "sectionId": "227",
+          "row": "J",
+          "seatNumber": "6",
+          "position3D": {
+            "x": 9.361067758456002,
+            "y": 119.83492984276995,
+            "z": 60.5
+          },
+          "elevation": 60.5,
+          "distanceFromHomeplate": 120.2,
+          "angle": -184.46666666666667,
+          "facing": -4.466666666666669,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "pirates-227-J-7",
+          "sectionId": "227",
+          "row": "J",
+          "seatNumber": "7",
+          "position3D": {
+            "x": 8.872971529049828,
+            "y": 119.87205836325943,
+            "z": 60.5
+          },
+          "elevation": 60.5,
+          "distanceFromHomeplate": 120.20000000000002,
+          "angle": -184.23333333333332,
+          "facing": -4.23333333333332,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "pirates-227-J-8",
+          "sectionId": "227",
+          "row": "J",
+          "seatNumber": "8",
+          "position3D": {
+            "x": 8.384728144043851,
+            "y": 119.90719884123088,
+            "z": 60.5
+          },
+          "elevation": 60.5,
+          "distanceFromHomeplate": 120.20000000000002,
+          "angle": -184,
+          "facing": -4,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "pirates-227-J-9",
+          "sectionId": "227",
+          "row": "J",
+          "seatNumber": "9",
+          "position3D": {
+            "x": 7.896345700809627,
+            "y": 119.94035069388994,
+            "z": 60.5
+          },
+          "elevation": 60.5,
+          "distanceFromHomeplate": 120.2,
+          "angle": -183.76666666666668,
+          "facing": -3.76666666666668,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "pirates-227-J-10",
+          "sectionId": "227",
+          "row": "J",
+          "seatNumber": "10",
+          "position3D": {
+            "x": 7.407832299025062,
+            "y": 119.97151337142297,
+            "z": 60.5
+          },
+          "elevation": 60.5,
+          "distanceFromHomeplate": 120.2,
+          "angle": -183.53333333333333,
+          "facing": -3.5333333333333314,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "pirates-227-J-11",
+          "sectionId": "227",
+          "row": "J",
+          "seatNumber": "11",
+          "position3D": {
+            "x": 6.919196040539962,
+            "y": 120.0006863570062,
+            "z": 60.5
+          },
+          "elevation": 60.5,
+          "distanceFromHomeplate": 120.19999999999999,
+          "angle": -183.3,
+          "facing": -3.3000000000000114,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "pirates-227-J-12",
+          "sectionId": "227",
+          "row": "J",
+          "seatNumber": "12",
+          "position3D": {
+            "x": 6.430445029241682,
+            "y": 120.02786916681436,
+            "z": 60.5
+          },
+          "elevation": 60.5,
+          "distanceFromHomeplate": 120.20000000000002,
+          "angle": -183.06666666666666,
+          "facing": -3.066666666666663,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "pirates-227-J-13",
+          "sectionId": "227",
+          "row": "J",
+          "seatNumber": "13",
+          "position3D": {
+            "x": 5.941587370920821,
+            "y": 120.05306135002854,
+            "z": 60.5
+          },
+          "elevation": 60.5,
+          "distanceFromHomeplate": 120.20000000000002,
+          "angle": -182.83333333333334,
+          "facing": -2.833333333333343,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "pirates-227-J-14",
+          "sectionId": "227",
+          "row": "J",
+          "seatNumber": "14",
+          "position3D": {
+            "x": 5.4526311731363695,
+            "y": 120.0762624888439,
+            "z": 60.5
+          },
+          "elevation": 60.5,
+          "distanceFromHomeplate": 120.19999999999999,
+          "angle": -182.6,
+          "facing": -2.5999999999999943,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "pirates-227-J-15",
+          "sectionId": "227",
+          "row": "J",
+          "seatNumber": "15",
+          "position3D": {
+            "x": 4.963584545081887,
+            "y": 120.09747219847645,
+            "z": 60.5
+          },
+          "elevation": 60.5,
+          "distanceFromHomeplate": 120.2,
+          "angle": -182.36666666666667,
+          "facing": -2.3666666666666742,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        }
+      ],
+      "covered": true,
+      "overhangHeight": 20,
+      "hasAisleSeats": false,
+      "wheelchairRow": false
+    }
+  ],
+  "seatDistribution": {
+    "standard": 130,
+    "aisle": 20,
+    "wheelchair": 0,
+    "companion": 0,
+    "other": 0
+  }
+};
