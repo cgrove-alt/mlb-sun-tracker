@@ -4,6 +4,7 @@ export interface UserPreferences {
   selectedStadiumId?: string;
   selectedLeague?: string;
   selectedMiLBLevel?: string;
+  selectedYear?: number;
   filterCriteria?: SunFilterCriteria;
   viewMode?: 'games' | 'custom';
   lastUsedDate?: string;

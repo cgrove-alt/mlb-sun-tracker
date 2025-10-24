@@ -233,7 +233,7 @@ export const UnifiedGameSelector: React.FC<UnifiedGameSelectorProps> = ({
         const schedule = await milbApi.getTeamScheduleByLevel(
           teamId,
           now.toISOString().split('T')[0],
-          endDate.toISOString().split('T')[0],
+          endDate,
           sportId
         );
 
@@ -549,6 +549,37 @@ export const UnifiedGameSelector: React.FC<UnifiedGameSelectorProps> = ({
           <div className="games-section" role="tabpanel" id="games-panel" aria-labelledby="games-tab">
             {selectedVenue ? (
               <>
+                {/* Year selector for MLB only */}
+                {selectedVenue.league === 'MLB' && (
+                  <div className="control-group">
+                    <label htmlFor="year-select">Season Year:</label>
+                    <div className="year-selector-buttons">
+                      <button
+                        className={`year-button ${selectedYear === 2025 ? 'active' : ''}`}
+                        onClick={() => {
+                          haptic.light();
+                          setSelectedYear(2025);
+                          preferencesStorage.update('selectedYear', 2025);
+                        }}
+                        aria-pressed={selectedYear === 2025}
+                      >
+                        2025 Season
+                      </button>
+                      <button
+                        className={`year-button ${selectedYear === 2026 ? 'active' : ''}`}
+                        onClick={() => {
+                          haptic.light();
+                          setSelectedYear(2026);
+                          preferencesStorage.update('selectedYear', 2026);
+                        }}
+                        aria-pressed={selectedYear === 2026}
+                      >
+                        2026 Season
+                      </button>
+                    </div>
+                  </div>
+                )}
+
                 <div className="control-group">
                   <label htmlFor="game-select">{t('gameSelector.upcomingGames')}:</label>
                   {gamesLoading.loading ? (
