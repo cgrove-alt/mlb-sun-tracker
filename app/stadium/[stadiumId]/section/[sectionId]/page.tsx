@@ -22,6 +22,7 @@ function getSeatDataStadiumId(stadiumId: string): string {
 
 export async function generateStaticParams() {
   // Generate section pages for all 30 MLB stadiums
+  // Use TypeScript source files since JSON files aren't checked in yet
   const allParams: Array<{ stadiumId: string; sectionId: string }> = [];
 
   for (const stadium of MLB_STADIUMS) {
@@ -117,20 +118,8 @@ export default async function SectionPage({ params }: SectionPageProps) {
   // Map stadium ID to seat data directory name
   const seatDataStadiumId = getSeatDataStadiumId(stadiumId);
 
-  // Verify section exists by checking if JSON file exists
-  // Note: We don't load the data here - the client component will do that
-  const sectionPath = path.join(
-    process.cwd(),
-    'public',
-    'data',
-    'seats',
-    seatDataStadiumId,
-    `${sectionId}.json`
-  );
-
-  if (!fs.existsSync(sectionPath)) {
-    notFound();
-  }
+  // Note: We don't verify section exists here to avoid Vercel tracing dependencies
+  // Client component will handle 404s when fetch fails
 
   // Structured data for SEO
   const jsonLd = {
