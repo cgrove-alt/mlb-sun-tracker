@@ -10,6 +10,7 @@ import type {
   StadiumSeatingStats,
   PreComputedSeatExposure,
 } from '@/types/seat';
+import { getSeatDataStadiumId } from '@/utils/stadiumIdMapping';
 
 /**
  * Cache for loaded seat data to avoid repeated imports
@@ -21,12 +22,16 @@ const precomputedCache = new Map<string, Record<string, number>>();
 /**
  * Load seat data for a specific section
  * Fetches JSON from public directory (client-side only)
+ * @param urlStadiumId - The stadium ID as used in URLs (e.g., 'dodgers')
+ * @param sectionId - The section ID
  */
 export async function getSeatDataForSection(
-  stadiumId: string,
+  urlStadiumId: string,
   sectionId: string
 ): Promise<SectionSeatingData | null> {
-  const cacheKey = `${stadiumId}-${sectionId}`;
+  // Map the URL stadium ID to the actual data directory name
+  const seatDataStadiumId = getSeatDataStadiumId(urlStadiumId);
+  const cacheKey = `${seatDataStadiumId}-${sectionId}`;
 
   // Check cache first
   if (seatDataCache.has(cacheKey)) {
@@ -34,18 +39,22 @@ export async function getSeatDataForSection(
   }
 
   try {
-    // Fetch JSON file from public directory
-    const response = await fetch(`/data/seats/${stadiumId}/${sectionId}.json`);
+    // Fetch JSON file from public directory using mapped stadium ID
+    const response = await fetch(`/data/seats/${seatDataStadiumId}/${sectionId}.json`);
 
     if (!response.ok) {
-      console.warn(`Seat data not found for ${stadiumId}/${sectionId} (${response.status})`);
+      console.warn(
+        `Seat data not found for stadium "${urlStadiumId}" (mapped to "${seatDataStadiumId}"), section "${sectionId}" - HTTP ${response.status}`
+      );
       return null;
     }
 
     const sectionData: SectionSeatingData = await response.json();
 
     if (!sectionData) {
-      console.error(`No seat data found for section ${sectionId} at ${stadiumId}`);
+      console.error(
+        `Empty seat data for section ${sectionId} at ${urlStadiumId} (${seatDataStadiumId})`
+      );
       return null;
     }
 
@@ -54,35 +63,41 @@ export async function getSeatDataForSection(
 
     return sectionData;
   } catch (error) {
-    console.warn(`Failed to load seat data for ${stadiumId}/${sectionId}:`, error);
+    console.error(
+      `Failed to load seat data for ${urlStadiumId}/${sectionId} (mapped to ${seatDataStadiumId}/${sectionId}):`,
+      error
+    );
     return null;
   }
 }
 
 /**
  * Load metadata and statistics for a stadium
+ * @param urlStadiumId - The stadium ID as used in URLs
  */
 export async function getStadiumSeatMetadata(
-  stadiumId: string
+  urlStadiumId: string
 ): Promise<{ metadata: SeatDataMetadata; stats: StadiumSeatingStats } | null> {
+  const seatDataStadiumId = getSeatDataStadiumId(urlStadiumId);
+
   // Check cache
-  if (metadataCache.has(stadiumId)) {
-    return metadataCache.get(stadiumId)!;
+  if (metadataCache.has(seatDataStadiumId)) {
+    return metadataCache.get(seatDataStadiumId)!;
   }
 
   try {
-    const module = await import(`../data/seatData/${stadiumId}/metadata.ts`);
+    const module = await import(`../data/seatData/${seatDataStadiumId}/metadata.ts`);
 
     const result = {
       metadata: module.metadata as SeatDataMetadata,
       stats: module.stats as StadiumSeatingStats,
     };
 
-    metadataCache.set(stadiumId, result);
+    metadataCache.set(seatDataStadiumId, result);
 
     return result;
   } catch (error) {
-    console.warn(`Failed to load metadata for ${stadiumId}:`, error);
+    console.warn(`Failed to load metadata for ${urlStadiumId} (${seatDataStadiumId}):`, error);
     return null;
   }
 }
@@ -136,16 +151,18 @@ export async function getPrecomputedExposure(
 
 /**
  * Batch load seat data for multiple sections
+ * @param urlStadiumId - The stadium ID as used in URLs
+ * @param sectionIds - Array of section IDs to load
  */
 export async function getSeatDataForSections(
-  stadiumId: string,
+  urlStadiumId: string,
   sectionIds: string[]
 ): Promise<Map<string, SectionSeatingData>> {
   const results = new Map<string, SectionSeatingData>();
 
   // Load all sections in parallel
   const promises = sectionIds.map(async (sectionId) => {
-    const data = await getSeatDataForSection(stadiumId, sectionId);
+    const data = await getSeatDataForSection(urlStadiumId, sectionId);
     if (data) {
       results.set(sectionId, data);
     }

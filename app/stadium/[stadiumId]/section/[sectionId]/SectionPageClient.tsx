@@ -35,22 +35,27 @@ export default function SectionPageClient({
       setSeatDataError(null);
 
       try {
-        const data = await getSeatDataForSection(seatDataStadiumId, sectionId);
+        // Pass the URL stadium ID (not the mapped one) since getSeatDataForSection will handle the mapping
+        const data = await getSeatDataForSection(stadium.id, sectionId);
         if (data) {
           setSectionData(data);
         } else {
-          setSeatDataError('Seat data not found for this section');
+          // Provide detailed error message
+          const errorMsg = `Seat data not found for Section ${sectionId} at ${stadium.name} (Stadium ID: ${stadium.id})`;
+          console.warn(errorMsg);
+          setSeatDataError(errorMsg);
         }
       } catch (error) {
-        console.error('Failed to load seat data:', error);
-        setSeatDataError('Failed to load seat data');
+        const errorMsg = `Failed to load seat data for Section ${sectionId} at ${stadium.name}: ${error instanceof Error ? error.message : 'Unknown error'}`;
+        console.error(errorMsg, error);
+        setSeatDataError(errorMsg);
       } finally {
         setIsLoadingSeatData(false);
       }
     }
 
     loadSeatData();
-  }, [seatDataStadiumId, sectionId]);
+  }, [stadium.id, sectionId]);
 
   // Load sun exposure data
   const { data: sunExposureData, isLoading: isSunDataLoading, error: sunDataError } = useSunExposure({
@@ -101,7 +106,21 @@ export default function SectionPageClient({
       <div className="container mx-auto px-4 py-8 max-w-7xl">
         <div className="bg-red-50 border border-red-200 rounded-lg p-6">
           <h2 className="text-xl font-semibold text-red-900 mb-2">Error Loading Seat Data</h2>
-          <p className="text-red-700">{seatDataError || 'Section data not found'}</p>
+          <p className="text-red-700 mb-3">{seatDataError || 'Section data not found'}</p>
+
+          <div className="bg-white border border-red-100 rounded p-4 mt-4 mb-4">
+            <p className="text-sm text-gray-600 mb-2">
+              <strong>Stadium:</strong> {stadium.name} ({stadium.id})
+            </p>
+            <p className="text-sm text-gray-600 mb-2">
+              <strong>Section:</strong> {sectionId}
+            </p>
+            <p className="text-xs text-gray-500 mt-3">
+              This section may not have individual seat data available yet.
+              Please check back later or contact support if this issue persists.
+            </p>
+          </div>
+
           <Link
             href={`/stadium/${stadium.id}`}
             className="mt-4 inline-block px-4 py-2 bg-red-600 text-white rounded-lg hover:bg-red-700 transition-colors"
