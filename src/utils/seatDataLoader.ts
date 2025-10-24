@@ -20,7 +20,7 @@ const precomputedCache = new Map<string, Record<string, number>>();
 
 /**
  * Load seat data for a specific section
- * Uses dynamic import for code splitting
+ * Fetches JSON from public directory (client-side only)
  */
 export async function getSeatDataForSection(
   stadiumId: string,
@@ -34,14 +34,15 @@ export async function getSeatDataForSection(
   }
 
   try {
-    // Dynamic import of section data
-    const module = await import(
-      `../data/seatData/${stadiumId}/sections/${sectionId}`
-    );
+    // Fetch JSON file from public directory
+    const response = await fetch(`/data/seats/${stadiumId}/${sectionId}.json`);
 
-    // The module should export a default or named export
-    const sectionData: SectionSeatingData =
-      module.default || module[`section_${sectionId.replace(/-/g, '_')}`];
+    if (!response.ok) {
+      console.warn(`Seat data not found for ${stadiumId}/${sectionId} (${response.status})`);
+      return null;
+    }
+
+    const sectionData: SectionSeatingData = await response.json();
 
     if (!sectionData) {
       console.error(`No seat data found for section ${sectionId} at ${stadiumId}`);
@@ -250,14 +251,7 @@ export function generateSeatCacheKey(
 }
 
 /**
- * Re-export precomputed sun data functions
- * These use the new compressed gzip format for efficient sun exposure queries
+ * Note: Precomputed sun data functions are available in ./precomputedSunLoader
+ * They are not re-exported here to avoid bundling fs in client-side code.
+ * Import them directly when needed in server-side code.
  */
-export {
-  loadPrecomputedSunData,
-  getSunExposureForSeat,
-  getSeatTimeline,
-  getSeatSunSummary,
-  getSectionSunExposure,
-  clearCache as clearPrecomputedCache,
-} from './precomputedSunLoader';

@@ -3,7 +3,6 @@ import { notFound } from 'next/navigation';
 import * as fs from 'fs';
 import * as path from 'path';
 import { MLB_STADIUMS } from '../../../../../src/data/stadiums';
-import { getSeatDataForSection } from '../../../../../src/utils/seatDataLoader';
 import SectionPageClient from './SectionPageClient';
 
 interface SectionPageProps {
@@ -115,11 +114,21 @@ export default async function SectionPage({ params }: SectionPageProps) {
     notFound();
   }
 
-  // Load section seat data
+  // Map stadium ID to seat data directory name
   const seatDataStadiumId = getSeatDataStadiumId(stadiumId);
-  const sectionData = await getSeatDataForSection(seatDataStadiumId, sectionId);
 
-  if (!sectionData) {
+  // Verify section exists by checking if JSON file exists
+  // Note: We don't load the data here - the client component will do that
+  const sectionPath = path.join(
+    process.cwd(),
+    'public',
+    'data',
+    'seats',
+    seatDataStadiumId,
+    `${sectionId}.json`
+  );
+
+  if (!fs.existsSync(sectionPath)) {
     notFound();
   }
 
@@ -165,8 +174,8 @@ export default async function SectionPage({ params }: SectionPageProps) {
 
       <SectionPageClient
         stadium={stadium}
-        sectionData={sectionData}
         sectionId={sectionId}
+        seatDataStadiumId={seatDataStadiumId}
       />
     </div>
   );

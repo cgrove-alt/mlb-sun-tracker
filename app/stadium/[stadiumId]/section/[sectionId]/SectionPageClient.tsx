@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import type { Stadium } from '../../../../../src/data/stadiums';
 import type { SectionSeatingData, Seat } from '../../../../../src/types/seat';
@@ -8,32 +8,49 @@ import { SeatGrid } from '../../../../../src/components/SeatGrid';
 import { SeatDetailModal } from '../../../../../src/components/SeatDetailModal';
 import { useSunExposure } from '../../../../../src/hooks/useSunExposure';
 import { SunArcTimeline } from '../../../../../src/components/SunArcTimeline';
+import { getSeatDataForSection } from '../../../../../src/utils/seatDataLoader';
 
 interface SectionPageClientProps {
   stadium: Stadium;
-  sectionData: SectionSeatingData;
   sectionId: string;
-}
-
-/**
- * Map stadium ID to seat data directory name
- * Most stadiums have matching IDs, except Dodgers
- */
-function getSeatDataStadiumId(stadiumId: string): string {
-  return stadiumId === 'dodgers' ? 'dodger-stadium' : stadiumId;
+  seatDataStadiumId: string;
 }
 
 export default function SectionPageClient({
   stadium,
-  sectionData,
   sectionId,
+  seatDataStadiumId,
 }: SectionPageClientProps) {
+  const [sectionData, setSectionData] = useState<SectionSeatingData | null>(null);
+  const [isLoadingSeatData, setIsLoadingSeatData] = useState(true);
+  const [seatDataError, setSeatDataError] = useState<string | null>(null);
   const [selectedSeat, setSelectedSeat] = useState<Seat | null>(null);
   const [filterShaded, setFilterShaded] = useState(false);
   const [filterSunny, setFilterSunny] = useState(false);
 
-  // Map stadium ID to seat data directory name
-  const seatDataStadiumId = getSeatDataStadiumId(stadium.id);
+  // Load seat data on mount
+  useEffect(() => {
+    async function loadSeatData() {
+      setIsLoadingSeatData(true);
+      setSeatDataError(null);
+
+      try {
+        const data = await getSeatDataForSection(seatDataStadiumId, sectionId);
+        if (data) {
+          setSectionData(data);
+        } else {
+          setSeatDataError('Seat data not found for this section');
+        }
+      } catch (error) {
+        console.error('Failed to load seat data:', error);
+        setSeatDataError('Failed to load seat data');
+      } finally {
+        setIsLoadingSeatData(false);
+      }
+    }
+
+    loadSeatData();
+  }, [seatDataStadiumId, sectionId]);
 
   // Load sun exposure data
   const { data: sunExposureData, isLoading: isSunDataLoading, error: sunDataError } = useSunExposure({
@@ -63,6 +80,38 @@ export default function SectionPageClient({
     setFilterShaded(false);
     setFilterSunny(false);
   };
+
+  // Show loading state
+  if (isLoadingSeatData) {
+    return (
+      <div className="container mx-auto px-4 py-8 max-w-7xl">
+        <div className="flex items-center justify-center min-h-[400px]">
+          <div className="text-center">
+            <div className="inline-block h-12 w-12 animate-spin rounded-full border-4 border-solid border-accent-600 border-r-transparent mb-4"></div>
+            <p className="text-lg text-gray-600">Loading seat data...</p>
+          </div>
+        </div>
+      </div>
+    );
+  }
+
+  // Show error state
+  if (seatDataError || !sectionData) {
+    return (
+      <div className="container mx-auto px-4 py-8 max-w-7xl">
+        <div className="bg-red-50 border border-red-200 rounded-lg p-6">
+          <h2 className="text-xl font-semibold text-red-900 mb-2">Error Loading Seat Data</h2>
+          <p className="text-red-700">{seatDataError || 'Section data not found'}</p>
+          <Link
+            href={`/stadium/${stadium.id}`}
+            className="mt-4 inline-block px-4 py-2 bg-red-600 text-white rounded-lg hover:bg-red-700 transition-colors"
+          >
+            ← Back to Stadium
+          </Link>
+        </div>
+      </div>
+    );
+  }
 
   return (
     <div className="container mx-auto px-4 py-8 max-w-7xl">
