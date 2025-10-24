@@ -41,6 +41,18 @@
   font-size: 16px;
 }
 
+/* Year selector styles */
+.year-selector-buttons {
+  display: flex;
+  gap: 8px;
+  margin-top: 8px;
+}
+
+.year-button {
+  flex: 1;
+  min-width: 120px;
+}
+
 .selector-header {
   display: flex;
   justify-content: center; /* Center the toggle buttons since h3 is hidden */

@@ -36,6 +36,12 @@ export const GameSelector: React.FC<GameSelectorProps> = ({
   const [viewMode, setViewMode] = useState<'games' | 'custom'>(() => {
     return preferencesStorage.get('viewMode', 'games');
   });
+  const [selectedYear, setSelectedYear] = useState<number>(() => {
+    const currentYear = new Date().getFullYear();
+    const savedYear = preferencesStorage.get('selectedYear', currentYear);
+    // Ensure saved year is valid (2025 or 2026)
+    return savedYear === 2026 ? 2026 : currentYear;
+  });
   const [customDate, setCustomDate] = useState<string>(() => {
     return preferencesStorage.get('lastUsedDate', format(new Date(), 'yyyy-MM-dd'));
   });
@@ -63,22 +69,35 @@ export const GameSelector: React.FC<GameSelectorProps> = ({
     try {
       setError(null);
       gamesLoading.setLoading(true);
-      
+
       const today = new Date();
-      // Load games through end of October to ensure we get all remaining regular season games
       const currentYear = today.getFullYear();
-      const endDate = new Date(currentYear, 9, 31); // October 31st (month is 0-indexed)
-      
+
+      // Use selected year for fetching games
+      let startDate: string;
+      let endDate: string;
+
+      if (selectedYear === currentYear) {
+        // For current year, start from today
+        startDate = today.toISOString().split('T')[0];
+        endDate = `${selectedYear}-10-31`;
+      } else {
+        // For future years (2026), fetch entire season
+        startDate = `${selectedYear}-03-01`;
+        endDate = `${selectedYear}-10-31`;
+      }
+
       const allGames = await mlbApi.getSchedule(
-        today.toISOString().split('T')[0],
-        endDate.toISOString().split('T')[0]
+        startDate,
+        endDate,
+        selectedYear
       );
-      
+
       const homeGames = mlbApi.getHomeGamesForStadium(selectedStadium.id, allGames);
 
       setGames(homeGames);
       gamesLoading.setData(homeGames);
-      
+
       if (onGamesLoaded) {
         onGamesLoaded(homeGames);
       }
@@ -90,7 +109,7 @@ export const GameSelector: React.FC<GameSelectorProps> = ({
     } finally {
       gamesLoading.setLoading(false);
     }
-  }, [selectedStadium, gamesLoading, onGamesLoaded]);
+  }, [selectedStadium, selectedYear, gamesLoading, onGamesLoaded]);
 
   useEffect(() => {
     if (selectedStadium && viewMode === 'games') {
@@ -98,17 +117,17 @@ export const GameSelector: React.FC<GameSelectorProps> = ({
       gamesLoading.reset();
       setGames([]);
       setError(null);
-      
+
       // Defer loading to prevent UI blocking
       const timeoutId = setTimeout(() => {
         loadGamesForStadium();
       }, 200);
-      
+
       return () => clearTimeout(timeoutId);
     }
-    // Reset selected game when stadium changes
+    // Reset selected game when stadium or year changes
     setSelectedGameOption(null);
-  }, [selectedStadium, viewMode]); // Remove loadGamesForStadium dependency to avoid loops
+  }, [selectedStadium, selectedYear, viewMode]); // Remove loadGamesForStadium dependency to avoid loops
 
   const handleGameSelect = (gameOption: any) => {
     setSelectedGameOption(gameOption);
@@ -123,8 +142,16 @@ export const GameSelector: React.FC<GameSelectorProps> = ({
   const handleCustomDateTime = () => {
     if (customDate && customTime) {
       const dateTime = new Date(`${customDate}T${customTime}:00`);
+
+      // Validate the date is reasonable (not too far in past or future)
+      const year = dateTime.getFullYear();
+      if (year < 2024 || year > 2030) {
+        setError('Please select a date between 2024 and 2030');
+        return;
+      }
+
       onGameSelect(null, dateTime);
-      
+
       // Save custom date and time to localStorage
       preferencesStorage.update('lastUsedDate', customDate);
       preferencesStorage.update('lastUsedTime', customTime);
@@ -280,6 +307,38 @@ export const GameSelector: React.FC<GameSelectorProps> = ({
         <div className="games-section" role="tabpanel" id="games-panel" aria-labelledby="games-tab">
           {selectedStadium ? (
             <>
+              <div className="control-group">
+                <label htmlFor="year-select">Season Year:</label>
+                <div className="year-selector-buttons">
+                  <ModernButton
+                    variant={selectedYear === 2025 ? 'primary' : 'secondary'}
+                    size="sm"
+                    onClick={() => {
+                      haptic.light();
+                      setSelectedYear(2025);
+                      preferencesStorage.update('selectedYear', 2025);
+                    }}
+                    className="year-button"
+                    aria-pressed={selectedYear === 2025}
+                  >
+                    2025 Season
+                  </ModernButton>
+                  <ModernButton
+                    variant={selectedYear === 2026 ? 'primary' : 'secondary'}
+                    size="sm"
+                    onClick={() => {
+                      haptic.light();
+                      setSelectedYear(2026);
+                      preferencesStorage.update('selectedYear', 2026);
+                    }}
+                    className="year-button"
+                    aria-pressed={selectedYear === 2026}
+                  >
+                    2026 Season
+                  </ModernButton>
+                </div>
+              </div>
+
               <div className="control-group">
                 <label htmlFor="game-select">{t('gameSelector.upcomingGames')}:</label>
                 {gamesLoading.loading ? (

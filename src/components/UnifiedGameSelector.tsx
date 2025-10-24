@@ -41,6 +41,12 @@ export const UnifiedGameSelector: React.FC<UnifiedGameSelectorProps> = ({
   const [selectedMiLBLevel, setSelectedMiLBLevel] = useState<string>(() => {
     return preferencesStorage.get('selectedMiLBLevel', 'AAA');
   });
+  const [selectedYear, setSelectedYear] = useState<number>(() => {
+    const currentYear = new Date().getFullYear();
+    const savedYear = preferencesStorage.get('selectedYear', currentYear);
+    // Ensure saved year is valid (2025 or 2026)
+    return savedYear === 2026 ? 2026 : currentYear;
+  });
   const [viewMode, setViewMode] = useState<'games' | 'custom'>(() => {
     return preferencesStorage.get('viewMode', 'games');
   });
@@ -127,18 +133,41 @@ export const UnifiedGameSelector: React.FC<UnifiedGameSelectorProps> = ({
     try {
       setError(null);
       gamesLoading.setLoading(true);
-      
+
       const now = new Date();
       const currentYear = now.getFullYear();
-      // For MiLB, use 30 days due to API limitation with multiple sport IDs
-      const endDate = selectedVenue.league === 'MiLB' 
-        ? new Date(now.getTime() + 30 * 24 * 60 * 60 * 1000) 
-        : new Date(currentYear, 9, 31); // End of October for MLB
-      
+
+      // Calculate date range based on selected year and league
+      let startDate: string;
+      let endDate: string;
+
+      if (selectedVenue.league === 'MLB') {
+        // For MLB, use selectedYear
+        if (selectedYear === currentYear) {
+          startDate = now.toISOString().split('T')[0];
+          endDate = `${selectedYear}-10-31`;
+        } else {
+          // For future years (2026)
+          startDate = `${selectedYear}-03-01`;
+          endDate = `${selectedYear}-10-31`;
+        }
+      } else if (selectedVenue.league === 'MiLB') {
+        // For MiLB, only use current year (30 day window)
+        startDate = now.toISOString().split('T')[0];
+        const endDateTime = new Date(now.getTime() + 30 * 24 * 60 * 60 * 1000);
+        endDate = endDateTime.toISOString().split('T')[0];
+      } else {
+        // For other leagues (NFL)
+        startDate = now.toISOString().split('T')[0];
+        const endDateTime = new Date(currentYear, 9, 31);
+        endDate = endDateTime.toISOString().split('T')[0];
+      }
+
       if (selectedVenue.league === 'MLB') {
         const schedule = await mlbApi.getSchedule(
-          now.toISOString().split('T')[0],
-          endDate.toISOString().split('T')[0]
+          startDate,
+          endDate,
+          selectedYear
         );
         
         const homeGames = mlbApi.getHomeGamesForStadium(selectedVenue.id, schedule);
@@ -243,7 +272,7 @@ export const UnifiedGameSelector: React.FC<UnifiedGameSelectorProps> = ({
     } finally {
       gamesLoading.setLoading(false);
     }
-  }, [selectedVenue, gamesLoading, onGamesLoaded]);
+  }, [selectedVenue, selectedYear, gamesLoading, onGamesLoaded]);
 
   // Load games when venue changes (MLB, MiLB, and NFL)
   useEffect(() => {
@@ -259,7 +288,7 @@ export const UnifiedGameSelector: React.FC<UnifiedGameSelectorProps> = ({
       return () => clearTimeout(timeoutId);
     }
     setSelectedGameOption(null);
-  }, [selectedVenue, viewMode]);
+  }, [selectedVenue, selectedYear, viewMode]);
 
   const handleLeagueChange = (league: string) => {
     haptic.light();

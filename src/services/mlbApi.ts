@@ -83,10 +83,20 @@ export class MLBApiService {
   });
 
   getSchedule = withCache(
-    async (startDate?: string, endDate?: string): Promise<MLBGame[]> => {
+    async (startDate?: string, endDate?: string, year?: number): Promise<MLBGame[]> => {
     const today = new Date();
-    const defaultStart = startDate || today.toISOString().split('T')[0];
-    const defaultEnd = endDate || new Date(today.getTime() + 180 * 24 * 60 * 60 * 1000).toISOString().split('T')[0];
+    let defaultStart: string;
+    let defaultEnd: string;
+
+    if (year) {
+      // If year is provided, fetch the entire season
+      defaultStart = startDate || `${year}-03-01`; // Start from March 1st
+      defaultEnd = endDate || `${year}-10-31`; // End at October 31st
+    } else {
+      // Default behavior for backward compatibility
+      defaultStart = startDate || today.toISOString().split('T')[0];
+      defaultEnd = endDate || new Date(today.getTime() + 180 * 24 * 60 * 60 * 1000).toISOString().split('T')[0];
+    }
     
     // Validate dates
     if (startDate && !validateDate(startDate)) {
@@ -138,16 +148,26 @@ export class MLBApiService {
     30 * 60 * 1000 // Cache for 30 minutes
   );
 
-  async getTeamSchedule(teamId: number, startDate?: string, endDate?: string): Promise<MLBGame[]> {
+  async getTeamSchedule(teamId: number, startDate?: string, endDate?: string, year?: number): Promise<MLBGame[]> {
     try {
       // Validate team ID
       if (!Number.isInteger(teamId) || teamId < 100 || teamId > 200) {
         throw new Error('Invalid team ID');
       }
-      
+
       const today = new Date();
-      const defaultStart = startDate || today.toISOString().split('T')[0];
-      const defaultEnd = endDate || new Date(today.getTime() + 180 * 24 * 60 * 60 * 1000).toISOString().split('T')[0];
+      let defaultStart: string;
+      let defaultEnd: string;
+
+      if (year) {
+        // If year is provided, fetch the entire season
+        defaultStart = startDate || `${year}-03-01`; // Start from March 1st
+        defaultEnd = endDate || `${year}-10-31`; // End at October 31st
+      } else {
+        // Default behavior for backward compatibility
+        defaultStart = startDate || today.toISOString().split('T')[0];
+        defaultEnd = endDate || new Date(today.getTime() + 180 * 24 * 60 * 60 * 1000).toISOString().split('T')[0];
+      }
       
       // Validate dates
       if (startDate && !validateDate(startDate)) {
