@@ -1,0 +1,218 @@
+{
+  "generated": "2025-10-24T01:01:16.021Z",
+  "version": "1.0.0",
+  "totalStadiums": 30,
+  "totalSeats": 1237974,
+  "stadiums": [
+    {
+      "id": "astros",
+      "name": "Minute Maid Park",
+      "team": "Houston Astros",
+      "seatCount": 72688,
+      "indexFile": "astros-seats.min.json"
+    },
+    {
+      "id": "dodgers",
+      "name": "Dodger Stadium",
+      "team": "Los Angeles Dodgers",
+      "seatCount": 56000,
+      "indexFile": "dodgers-seats.min.json"
+    },
+    {
+      "id": "rockies",
+      "name": "Coors Field",
+      "team": "Colorado Rockies",
+      "seatCount": 50144,
+      "indexFile": "rockies-seats.min.json"
+    },
+    {
+      "id": "bluejays",
+      "name": "Rogers Centre",
+      "team": "Toronto Blue Jays",
+      "seatCount": 49282,
+      "indexFile": "bluejays-seats.min.json"
+    },
+    {
+      "id": "diamondbacks",
+      "name": "Chase Field",
+      "team": "Arizona Diamondbacks",
+      "seatCount": 48686,
+      "indexFile": "diamondbacks-seats.min.json"
+    },
+    {
+      "id": "mariners",
+      "name": "T-Mobile Park",
+      "team": "Seattle Mariners",
+      "seatCount": 47929,
+      "indexFile": "mariners-seats.min.json"
+    },
+    {
+      "id": "yankees",
+      "name": "Yankee Stadium",
+      "team": "New York Yankees",
+      "seatCount": 46537,
+      "indexFile": "yankees-seats.min.json"
+    },
+    {
+      "id": "angels",
+      "name": "Angel Stadium",
+      "team": "Los Angeles Angels",
+      "seatCount": 45517,
+      "indexFile": "angels-seats.min.json"
+    },
+    {
+      "id": "cardinals",
+      "name": "Busch Stadium",
+      "team": "St. Louis Cardinals",
+      "seatCount": 44383,
+      "indexFile": "cardinals-seats.min.json"
+    },
+    {
+      "id": "phillies",
+      "name": "Citizens Bank Park",
+      "team": "Philadelphia Phillies",
+      "seatCount": 42901,
+      "indexFile": "phillies-seats.min.json"
+    },
+    {
+      "id": "reds",
+      "name": "Great American Ball Park",
+      "team": "Cincinnati Reds",
+      "seatCount": 42319,
+      "indexFile": "reds-seats.min.json"
+    },
+    {
+      "id": "orioles",
+      "name": "Oriole Park at Camden Yards",
+      "team": "Baltimore Orioles",
+      "seatCount": 42107,
+      "indexFile": "orioles-seats.min.json"
+    },
+    {
+      "id": "mets",
+      "name": "Citi Field",
+      "team": "New York Mets",
+      "seatCount": 41922,
+      "indexFile": "mets-seats.min.json"
+    },
+    {
+      "id": "brewers",
+      "name": "American Family Field",
+      "team": "Milwaukee Brewers",
+      "seatCount": 41900,
+      "indexFile": "brewers-seats.min.json"
+    },
+    {
+      "id": "cubs",
+      "name": "Wrigley Field",
+      "team": "Chicago Cubs",
+      "seatCount": 41649,
+      "indexFile": "cubs-seats.min.json"
+    },
+    {
+      "id": "giants",
+      "name": "Oracle Park",
+      "team": "San Francisco Giants",
+      "seatCount": 41331,
+      "indexFile": "giants-seats.min.json"
+    },
+    {
+      "id": "nationals",
+      "name": "Nationals Park",
+      "team": "Washington Nationals",
+      "seatCount": 41313,
+      "indexFile": "nationals-seats.min.json"
+    },
+    {
+      "id": "braves",
+      "name": "Truist Park",
+      "team": "Atlanta Braves",
+      "seatCount": 41084,
+      "indexFile": "braves-seats.min.json"
+    },
+    {
+      "id": "tigers",
+      "name": "Comerica Park",
+      "team": "Detroit Tigers",
+      "seatCount": 41083,
+      "indexFile": "tigers-seats.min.json"
+    },
+    {
+      "id": "whitesox",
+      "name": "Guaranteed Rate Field",
+      "team": "Chicago White Sox",
+      "seatCount": 40615,
+      "indexFile": "whitesox-seats.min.json"
+    },
+    {
+      "id": "rangers",
+      "name": "Globe Life Field",
+      "team": "Texas Rangers",
+      "seatCount": 40300,
+      "indexFile": "rangers-seats.min.json"
+    },
+    {
+      "id": "padres",
+      "name": "Petco Park",
+      "team": "San Diego Padres",
+      "seatCount": 40209,
+      "indexFile": "padres-seats.min.json"
+    },
+    {
+      "id": "twins",
+      "name": "Target Field",
+      "team": "Minnesota Twins",
+      "seatCount": 38544,
+      "indexFile": "twins-seats.min.json"
+    },
+    {
+      "id": "pirates",
+      "name": "PNC Park",
+      "team": "Pittsburgh Pirates",
+      "seatCount": 38362,
+      "indexFile": "pirates-seats.min.json"
+    },
+    {
+      "id": "royals",
+      "name": "Kauffman Stadium",
+      "team": "Kansas City Royals",
+      "seatCount": 37903,
+      "indexFile": "royals-seats.min.json"
+    },
+    {
+      "id": "marlins",
+      "name": "loanDepot park",
+      "team": "Miami Marlins",
+      "seatCount": 37446,
+      "indexFile": "marlins-seats.min.json"
+    },
+    {
+      "id": "guardians",
+      "name": "Progressive Field",
+      "team": "Cleveland Guardians",
+      "seatCount": 34110,
+      "indexFile": "guardians-seats.min.json"
+    },
+    {
+      "id": "redsox",
+      "name": "Fenway Park",
+      "team": "Boston Red Sox",
+      "seatCount": 26670,
+      "indexFile": "redsox-seats.min.json"
+    },
+    {
+      "id": "athletics",
+      "name": "Sutter Health Park",
+      "team": "Oakland Athletics",
+      "seatCount": 14014,
+      "indexFile": "athletics-seats.min.json"
+    },
+    {
+      "id": "rays",
+      "name": "George M. Steinbrenner Field",
+      "team": "Tampa Bay Rays",
+      "seatCount": 11026,
+      "indexFile": "rays-seats.min.json"
+    }
+  ]
+}

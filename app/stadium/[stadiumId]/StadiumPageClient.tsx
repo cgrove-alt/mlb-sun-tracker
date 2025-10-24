@@ -8,6 +8,7 @@ import { useSunCalculations } from '../../../src/hooks/useSunCalculations';
 import { usePullToRefresh } from '../../../src/hooks/usePullToRefresh';
 import { PullToRefreshIndicator } from '../../../src/components/PullToRefreshIndicator';
 import { SeatSearchBar } from '../../../src/components/SeatSearchBar';
+import type { Stadium } from '../../../src/data/stadiums';
 
 const ComprehensiveStadiumGuide = dynamic(
   () => import('../../../src/components/ComprehensiveStadiumGuide'),
@@ -19,6 +20,14 @@ const ComprehensiveStadiumGuide = dynamic(
 
 const SeatRecommendationsSection = dynamic(
   () => import('../../../src/components/SeatRecommendationsSection'),
+  {
+    loading: () => <LoadingSpinner />,
+    ssr: false,
+  }
+);
+
+const IndividualSeatRecommendationsSection = dynamic(
+  () => import('../../../src/components/IndividualSeatRecommendationsSection'),
   {
     loading: () => <LoadingSpinner />,
     ssr: false,
@@ -108,7 +117,8 @@ export default function StadiumPageClient({
       {/* Search Bar - Prominent at top */}
       <div className="max-w-4xl mx-auto px-4 py-6">
         <SeatSearchBar
-          placeholder="Search sections across all 30 MLB stadiums..."
+          stadiumId={stadium.id}
+          placeholder={`Search sections or seats at ${stadium.name}...`}
           className="w-full"
         />
       </div>
@@ -151,6 +161,11 @@ export default function StadiumPageClient({
             </p>
           </div>
         )}
+      </div>
+
+      {/* Individual Seat-Level Recommendations */}
+      <div className="mt-8" style={{ display: 'block' }}>
+        <IndividualSeatRecommendationsSection stadiumId={stadium.id} />
       </div>
     </>
   );
