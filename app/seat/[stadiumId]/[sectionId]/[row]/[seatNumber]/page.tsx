@@ -18,70 +18,12 @@ interface SeatPageProps {
 }
 
 /**
- * Generate static paths for all seats across all stadiums
- * This creates ~1.2M static pages at build time
+ * ISR Configuration
+ * - dynamicParams: Allow pages not in generateStaticParams to be generated on-demand
+ * - revalidate: Revalidate cached pages every hour (3600 seconds)
  */
-export async function generateStaticParams(): Promise<SeatPageParams[]> {
-  const params: SeatPageParams[] = [];
-
-  // Read manifest to get list of stadiums with seat data
-  const manifestPath = path.join(process.cwd(), 'public', 'data', 'search', 'seat-indices-manifest.json');
-
-  if (!fs.existsSync(manifestPath)) {
-    console.warn('Seat indices manifest not found, skipping seat page generation');
-    return [];
-  }
-
-  const manifestData = fs.readFileSync(manifestPath, 'utf-8');
-  const manifest = JSON.parse(manifestData);
-
-  console.log(`\n🎫 Generating static params for ${manifest.totalSeats.toLocaleString()} seats across ${manifest.totalStadiums} stadiums...`);
-
-  // Process each stadium
-  for (const stadiumInfo of manifest.stadiums) {
-    const stadiumId = stadiumInfo.id;
-
-    // Map stadium ID to seat data directory name
-    const seatDataStadiumId = stadiumId === 'dodgers' ? 'dodger-stadium' : stadiumId;
-    const seatDataDir = path.join(process.cwd(), 'public', 'data', 'seats', seatDataStadiumId);
-
-    if (!fs.existsSync(seatDataDir)) {
-      console.warn(`⚠️  No seat data directory for ${stadiumInfo.name}`);
-      continue;
-    }
-
-    // Get all section files
-    const sectionFiles = fs.readdirSync(seatDataDir).filter(f => f.endsWith('.json'));
-
-    console.log(`  📍 ${stadiumInfo.name}: ${sectionFiles.length} sections`);
-
-    // Process each section
-    for (const sectionFile of sectionFiles) {
-      try {
-        const sectionPath = path.join(seatDataDir, sectionFile);
-        const sectionData: SectionSeatingData = JSON.parse(fs.readFileSync(sectionPath, 'utf-8'));
-
-        // Generate params for each seat in each row
-        for (const row of sectionData.rows) {
-          for (const seat of row.seats) {
-            params.push({
-              stadiumId,
-              sectionId: sectionData.sectionId,
-              row: seat.row,
-              seatNumber: seat.seatNumber,
-            });
-          }
-        }
-      } catch (error) {
-        console.error(`Error processing ${stadiumId}/${sectionFile}:`, error);
-      }
-    }
-  }
-
-  console.log(`✅ Generated ${params.length.toLocaleString()} seat page params\n`);
-
-  return params;
-}
+export const dynamicParams = true;
+export const revalidate = 3600;
 
 /**
  * Generate metadata for SEO

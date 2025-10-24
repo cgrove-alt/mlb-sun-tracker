@@ -75,15 +75,19 @@ const nextConfig = {
   // Experimental features for better performance
   experimental: {
     // Three.js removed from codebase
-    // Exclude seat data from serverless function tracing
-    // These files are served statically from public/ directory
-    outputFileTracingExcludes: {
-      '/stadium/[stadiumId]/section/[sectionId]': [
-        './public/data/seats/**/*',
-      ],
-    },
   },
-  
+
+  // Exclude seat data from serverless function tracing
+  // These files are served statically from public/ directory
+  outputFileTracingExcludes: {
+    '/stadium/[stadiumId]/section/[sectionId]': [
+      './public/data/seats/**/*',
+    ],
+    '/seat/[stadiumId]/[sectionId]/[row]/[seatNumber]': [
+      './public/data/seats/**/*',
+    ],
+  },
+
   // Output configuration
   output: 'standalone',
   
