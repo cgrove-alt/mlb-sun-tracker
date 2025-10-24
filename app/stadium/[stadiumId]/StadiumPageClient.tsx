@@ -1,13 +1,14 @@
 'use client';
 
 import dynamic from 'next/dynamic';
-import { Suspense, useMemo, useState, useCallback } from 'react';
+import { Suspense, useMemo, useState, useCallback, useEffect } from 'react';
 import { LoadingSpinner } from '../../../src/components/LoadingSpinner';
 import { getSunPosition } from '../../../src/utils/sunCalculations';
 import { useSunCalculations } from '../../../src/hooks/useSunCalculations';
 import { usePullToRefresh } from '../../../src/hooks/usePullToRefresh';
 import { PullToRefreshIndicator } from '../../../src/components/PullToRefreshIndicator';
 import { SeatSearchBar } from '../../../src/components/SeatSearchBar';
+import { useSearchParams } from 'next/navigation';
 import type { Stadium } from '../../../src/data/stadiums';
 
 const ComprehensiveStadiumGuide = dynamic(
@@ -34,6 +35,14 @@ const IndividualSeatRecommendationsSection = dynamic(
   }
 );
 
+const ShadeVisualization = dynamic(
+  () => import('../../../src/components/ShadeVisualization').then(mod => ({ default: mod.ShadeVisualization })),
+  {
+    loading: () => <LoadingSpinner message="Loading shade analysis..." />,
+    ssr: false,
+  }
+);
+
 interface StadiumPageClientProps {
   stadium: any;
   sections: any[];
@@ -52,18 +61,27 @@ export default function StadiumPageClient({
   availableSections
 }: StadiumPageClientProps) {
   const [refreshKey, setRefreshKey] = useState(0);
+  const searchParams = useSearchParams();
+
+  // Check if we're in shade view mode
+  const isShadeView = searchParams.get('view') === 'shade';
+  const timeParam = searchParams.get('time') || '13:00';
+  const [selectedTime, setSelectedTime] = useState(timeParam);
 
   // Debug: Log what's being rendered
   console.log('StadiumPageClient rendering:', {
     stadiumId: stadium?.id,
     useComprehensive,
-    hasGuide: !!guide
+    hasGuide: !!guide,
+    isShadeView,
+    selectedTime
   });
 
   // Calculate sun position once
   const sunPosition = useMemo(() => {
     const gameDateTime = new Date();
-    gameDateTime.setHours(13, 0, 0, 0); // 1:00 PM game time
+    const [hours, minutes] = selectedTime.split(':').map(Number);
+    gameDateTime.setHours(hours, minutes, 0, 0);
 
     return getSunPosition(
       gameDateTime,
@@ -71,7 +89,7 @@ export default function StadiumPageClient({
       stadium.longitude || -74.0060,
       stadium.timezone || 'America/New_York'
     );
-  }, [stadium.id, refreshKey]); // Add refreshKey to recalculate on refresh
+  }, [stadium.id, refreshKey, selectedTime]); // Add selectedTime to recalculate on time change
 
   // Use Web Worker for sun calculations
   const {
@@ -123,19 +141,32 @@ export default function StadiumPageClient({
         />
       </div>
 
-      {/* Stadium Guide - with smaller loading state */}
-      <div className="stadium-guide-wrapper">
-        <Suspense fallback={
-          <div className="flex justify-center items-center p-8">
-            <LoadingSpinner message="Loading stadium guide..." />
-          </div>
-        }>
-          <ComprehensiveStadiumGuide
+      {/* Show Shade Visualization when in shade view mode */}
+      {isShadeView && sectionsWithSunData && (
+        <div className="shade-view-container">
+          <ShadeVisualization
+            sections={sectionsWithSunData}
             stadiumId={stadium.id}
-            availableSections={availableSections}
+            gameTime={selectedTime}
           />
-        </Suspense>
-      </div>
+        </div>
+      )}
+
+      {/* Stadium Guide - Hidden in shade view mode */}
+      {!isShadeView && (
+        <div className="stadium-guide-wrapper">
+          <Suspense fallback={
+            <div className="flex justify-center items-center p-8">
+              <LoadingSpinner message="Loading stadium guide..." />
+            </div>
+          }>
+            <ComprehensiveStadiumGuide
+              stadiumId={stadium.id}
+              availableSections={availableSections}
+            />
+          </Suspense>
+        </div>
+      )}
       
       {/* AI Seat Recommendations Section - Outside Suspense */}
       <div className="mt-8" style={{ display: 'block' }}>

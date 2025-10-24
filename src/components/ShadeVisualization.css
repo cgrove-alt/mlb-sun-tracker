@@ -1,0 +1,348 @@
+.shade-visualization {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+}
+
+/* Shade Summary Section */
+.shade-summary {
+  background: linear-gradient(135deg, #f0fdf4 0%, #dcfce7 100%);
+  border-radius: 20px;
+  padding: 2rem;
+  margin-bottom: 2rem;
+  border: 2px solid #86efac;
+}
+
+.shade-summary-header {
+  margin-bottom: 1.5rem;
+}
+
+.shade-summary-title {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #0f172a;
+  margin-bottom: 1rem;
+}
+
+.shade-summary-stats {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.shade-stat-main {
+  display: flex;
+  align-items: baseline;
+  gap: 1rem;
+}
+
+.shade-stat-number {
+  font-size: 3rem;
+  font-weight: 800;
+  background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.shade-stat-label {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #475569;
+}
+
+.shade-stat-detail {
+  color: #6b7280;
+  font-size: 1rem;
+}
+
+/* Quick Stats Grid */
+.shade-quick-stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 1rem;
+}
+
+.stat-item {
+  background: white;
+  border-radius: 12px;
+  padding: 1rem;
+  text-align: center;
+  border: 2px solid;
+  transition: transform 0.2s;
+}
+
+.stat-item:hover {
+  transform: translateY(-2px);
+}
+
+.stat-item.shade-fully {
+  border-color: #059669;
+  background: linear-gradient(135deg, #f0fdf4 0%, #dcfce7 100%);
+}
+
+.stat-item.shade-mostly {
+  border-color: #10b981;
+  background: linear-gradient(135deg, #f0fdf4 0%, #d1fae5 100%);
+}
+
+.stat-item.shade-partial {
+  border-color: #eab308;
+  background: linear-gradient(135deg, #fefce8 0%, #fef3c7 100%);
+}
+
+.stat-item.shade-sun {
+  border-color: #ef4444;
+  background: linear-gradient(135deg, #fef2f2 0%, #fee2e2 100%);
+}
+
+.stat-icon {
+  display: block;
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+.stat-count {
+  display: block;
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: #0f172a;
+  margin-bottom: 0.25rem;
+}
+
+.stat-label {
+  display: block;
+  font-size: 0.875rem;
+  color: #6b7280;
+}
+
+/* Controls Section */
+.shade-controls {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 2rem;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+}
+
+.filter-buttons {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.filter-btn {
+  padding: 0.5rem 1rem;
+  border: 2px solid #e5e7eb;
+  background: white;
+  border-radius: 8px;
+  font-size: 0.875rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.filter-btn:hover {
+  border-color: #10b981;
+}
+
+.filter-btn.active {
+  background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+  color: white;
+  border-color: #059669;
+}
+
+.sort-controls {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.sort-controls label {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: #475569;
+}
+
+.sort-select {
+  padding: 0.5rem 1rem;
+  border: 2px solid #e5e7eb;
+  border-radius: 8px;
+  background: white;
+  font-size: 0.875rem;
+  cursor: pointer;
+}
+
+/* Sections Grid */
+.shade-sections-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1.5rem;
+}
+
+.shade-section-card {
+  background: white;
+  border: 2px solid #e5e7eb;
+  border-radius: 16px;
+  padding: 1.25rem;
+  text-decoration: none;
+  color: inherit;
+  transition: all 0.3s;
+  cursor: pointer;
+}
+
+.shade-section-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+}
+
+.shade-section-card.shade-fully {
+  border-color: #059669;
+}
+
+.shade-section-card.shade-fully:hover {
+  border-color: #047857;
+  background: linear-gradient(135deg, #f0fdf4 0%, #dcfce7 100%);
+}
+
+.shade-section-card.shade-mostly {
+  border-color: #10b981;
+}
+
+.shade-section-card.shade-mostly:hover {
+  border-color: #059669;
+  background: linear-gradient(135deg, #f0fdf4 0%, #d1fae5 100%);
+}
+
+.shade-section-card.shade-partial {
+  border-color: #eab308;
+}
+
+.shade-section-card.shade-partial:hover {
+  border-color: #ca8a04;
+  background: linear-gradient(135deg, #fefce8 0%, #fef3c7 100%);
+}
+
+.shade-section-card.shade-sun {
+  border-color: #ef4444;
+}
+
+.shade-section-card.shade-sun:hover {
+  border-color: #dc2626;
+  background: linear-gradient(135deg, #fef2f2 0%, #fee2e2 100%);
+}
+
+.section-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.section-name {
+  font-size: 1.125rem;
+  font-weight: 700;
+  color: #0f172a;
+  margin: 0;
+}
+
+.shade-icon {
+  font-size: 1.5rem;
+}
+
+/* Shade Meter */
+.shade-meter {
+  width: 100%;
+  height: 8px;
+  background: #e5e7eb;
+  border-radius: 4px;
+  overflow: hidden;
+  margin-bottom: 1rem;
+}
+
+.shade-meter-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #10b981 0%, #059669 100%);
+  transition: width 0.3s;
+}
+
+.section-card-stats {
+  margin-bottom: 0.75rem;
+}
+
+.shade-label {
+  font-weight: 600;
+  font-size: 0.875rem;
+  margin-bottom: 0.25rem;
+}
+
+.exposure-value {
+  font-size: 0.75rem;
+  color: #6b7280;
+}
+
+.section-meta {
+  display: flex;
+  gap: 1rem;
+  font-size: 0.75rem;
+  color: #9ca3af;
+  border-top: 1px solid #f3f4f6;
+  padding-top: 0.75rem;
+}
+
+.meta-item {
+  display: flex;
+  align-items: center;
+}
+
+/* No Results */
+.no-results {
+  text-align: center;
+  padding: 4rem 2rem;
+  color: #6b7280;
+}
+
+.no-results-icon {
+  font-size: 3rem;
+  display: block;
+  margin-bottom: 1rem;
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+  .shade-summary-title {
+    font-size: 1.5rem;
+  }
+
+  .shade-stat-number {
+    font-size: 2rem;
+  }
+
+  .shade-stat-label {
+    font-size: 1rem;
+  }
+
+  .shade-quick-stats {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .shade-controls {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .filter-buttons {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .sort-controls {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .shade-sections-grid {
+    grid-template-columns: 1fr;
+  }
+}

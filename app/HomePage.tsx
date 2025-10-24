@@ -7,7 +7,7 @@ import { HomePageSkeleton } from '../src/components/SkeletonScreens';
 import { ErrorBoundary } from '../src/components/ErrorBoundary';
 import HomepageSchema from './HomepageSchema';
 import Link from 'next/link';
-import { FindMySeatHero } from '../src/components/FindMySeatHero';
+import { ShadeHero } from '../src/components/ShadeHero';
 
 // Use the unified App component that supports multiple leagues
 const App = dynamic(() => import('../src/UnifiedApp'), {
@@ -22,8 +22,8 @@ export default function HomePage() {
     <>
       <HomepageSchema />
       <main>
-        {/* New Seat-First Hero Section */}
-        <FindMySeatHero />
+        {/* Shade-First Hero Section for Intuitive Shade Discovery */}
+        <ShadeHero />
 
         {/* SEO-optimized content section */}
         <div className="sr-only">
