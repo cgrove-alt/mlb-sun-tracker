@@ -87,7 +87,7 @@ test_stadium "astros" "101" "Minute Maid Park (AL West)"
 echo ""
 test_stadium "phillies" "101" "Citizens Bank Park (NL East)"
 echo ""
-test_stadium "rockies" "101" "Coors Field (NL West)"
+test_stadium "rockies" "105" "Coors Field (NL West)"
 echo ""
 
 echo "======================================"
