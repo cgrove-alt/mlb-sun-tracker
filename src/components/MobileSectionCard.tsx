@@ -52,7 +52,7 @@ export const MobileSectionCard: React.FC<MobileSectionCardProps> = ({
     >
       <div className="mobile-section-header">
         <div className="mobile-section-info">
-          <h3 className="mobile-section-name">Section {section.id}</h3>
+          <h3 className="mobile-section-name">{section.name}</h3>
           <p className="mobile-section-level">{section.level.charAt(0).toUpperCase() + section.level.slice(1)} Level</p>
         </div>
         <div className="mobile-section-sun">
