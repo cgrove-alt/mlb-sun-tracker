@@ -1,6 +1,6 @@
 /**
  * Yankee Stadium - Stadium Metadata
- * Generated: 2025-10-23T16:41:17.884Z
+ * Generated: 2025-10-27T15:17:48.650Z
  */
 
 import type { SeatDataMetadata, StadiumSeatingStats } from '@/types/seat';
@@ -8,11 +8,11 @@ import type { SeatDataMetadata, StadiumSeatingStats } from '@/types/seat';
 export const metadata: SeatDataMetadata = {
   stadiumId: 'yankees',
   stadiumName: 'Yankee Stadium',
-  generatedAt: '2025-10-23T16:41:17.884Z',
+  generatedAt: '2025-10-27T15:17:48.650Z',
   version: '1.0.0',
   dataSource: 'Generated from official seating charts',
   totalSections: 131,
-  lastValidated: '2025-10-23T16:41:17.884Z',
+  lastValidated: '2025-10-27T15:17:48.650Z',
 };
 
 export const stats: StadiumSeatingStats = {

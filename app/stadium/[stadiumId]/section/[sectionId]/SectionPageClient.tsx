@@ -2,6 +2,7 @@
 
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
+import { useRouter, useSearchParams } from 'next/navigation';
 import type { Stadium } from '../../../../../src/data/stadiums';
 import type { SectionSeatingData, Seat } from '../../../../../src/types/seat';
 import { SeatGrid } from '../../../../../src/components/SeatGrid';
@@ -9,6 +10,12 @@ import { SeatDetailModal } from '../../../../../src/components/SeatDetailModal';
 import { useSunExposure } from '../../../../../src/hooks/useSunExposure';
 import { SunArcTimeline } from '../../../../../src/components/SunArcTimeline';
 import { getSeatDataForSection } from '../../../../../src/utils/seatDataLoader';
+import { UnifiedGameSelector } from '../../../../../src/components/UnifiedGameSelector';
+import { getUnifiedVenueById } from '../../../../../src/data/unifiedVenues';
+import type { MLBGame } from '../../../../../src/services/mlbApi';
+import type { MiLBGame } from '../../../../../src/services/milbApi';
+import type { NFLGame } from '../../../../../src/services/nflApi';
+import { format } from 'date-fns';
 
 interface SectionPageClientProps {
   stadium: Stadium;
@@ -21,12 +28,27 @@ export default function SectionPageClient({
   sectionId,
   seatDataStadiumId,
 }: SectionPageClientProps) {
+  const router = useRouter();
+  const searchParams = useSearchParams();
+
   const [sectionData, setSectionData] = useState<SectionSeatingData | null>(null);
   const [isLoadingSeatData, setIsLoadingSeatData] = useState(true);
   const [seatDataError, setSeatDataError] = useState<string | null>(null);
   const [selectedSeat, setSelectedSeat] = useState<Seat | null>(null);
   const [filterShaded, setFilterShaded] = useState(false);
   const [filterSunny, setFilterSunny] = useState(false);
+
+  // Game selection state - check URL params for initial values
+  const [selectedGame, setSelectedGame] = useState<MLBGame | MiLBGame | NFLGame | null>(null);
+  const [gameDateTime, setGameDateTime] = useState<Date | null>(() => {
+    const dateParam = searchParams.get('date');
+    const timeParam = searchParams.get('time');
+    if (dateParam && timeParam) {
+      return new Date(`${dateParam}T${timeParam}:00`);
+    }
+    return null;
+  });
+  const [selectedVenue, setSelectedVenue] = useState(() => getUnifiedVenueById(stadium.id));
 
   // Load seat data on mount
   useEffect(() => {
@@ -57,11 +79,15 @@ export default function SectionPageClient({
     loadSeatData();
   }, [stadium.id, sectionId]);
 
-  // Load sun exposure data
+  // Get game time from selected game or use default
+  const gameTime = gameDateTime ? format(gameDateTime, 'HH:mm') : '13:10';
+  const gameDate = gameDateTime || new Date();
+
+  // Load sun exposure data based on selected game
   const { data: sunExposureData, isLoading: isSunDataLoading, error: sunDataError } = useSunExposure({
     stadiumId: seatDataStadiumId,
-    gameTime: '13:10', // TODO: Allow user to select game time
-    gameDate: new Date(), // TODO: Allow user to select game date
+    gameTime: gameTime,
+    gameDate: gameDate,
     enabled: true,
   });
 
@@ -73,6 +99,37 @@ export default function SectionPageClient({
   // Handle modal close
   const handleCloseModal = () => {
     setSelectedSeat(null);
+  };
+
+  // Handle game selection and update URL
+  const handleGameSelect = (game: MLBGame | MiLBGame | NFLGame | null, dateTime: Date | null) => {
+    setSelectedGame(game);
+    setGameDateTime(dateTime);
+
+    // Update URL with game parameters
+    if (game && dateTime) {
+      const params = new URLSearchParams();
+
+      if ('gamePk' in game) {
+        // MLB/MiLB game
+        params.set('gameId', game.gamePk.toString());
+      } else {
+        // NFL game
+        params.set('gameId', (game as NFLGame).gameId);
+      }
+
+      params.set('date', format(dateTime, 'yyyy-MM-dd'));
+      params.set('time', format(dateTime, 'HH:mm'));
+
+      // Update URL without page reload
+      const newUrl = `${window.location.pathname}?${params.toString()}`;
+      router.push(newUrl, { scroll: false });
+    }
+  };
+
+  // Handle venue change (shouldn't happen on section page, but required by component)
+  const handleVenueChange = (venue: any) => {
+    // Stadium is fixed on this page, so we don't change it
   };
 
   // Calculate selected seat's sun exposure
@@ -204,13 +261,30 @@ export default function SectionPageClient({
         </div>
       </div>
 
+      {/* Game Selector */}
+      <div className="bg-white rounded-xl shadow-md p-6 mb-6">
+        <h2 className="text-lg font-semibold text-gray-900 mb-4">Select Game</h2>
+        <UnifiedGameSelector
+          selectedVenue={selectedVenue}
+          onGameSelect={handleGameSelect}
+          onVenueChange={handleVenueChange}
+        />
+        {selectedGame && (
+          <div className="mt-4 p-3 bg-blue-50 rounded-lg">
+            <p className="text-sm text-blue-800">
+              Selected Game: {gameDate.toLocaleDateString()} at {gameTime}
+            </p>
+          </div>
+        )}
+      </div>
+
       {/* Sun Arc Timeline */}
       <SunArcTimeline
         stadiumLatitude={stadium.latitude}
         stadiumLongitude={stadium.longitude}
         stadiumTimezone={stadium.timezone}
-        gameDate={new Date()}
-        gameStartTime="13:10"
+        gameDate={gameDate}
+        gameStartTime={gameTime}
         sectionId={sectionId}
         className="mb-6"
       />

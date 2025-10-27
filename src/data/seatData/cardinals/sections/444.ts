@@ -1,6 +1,6 @@
 /**
  * Terrace 444 - cardinals
- * Generated: 2025-10-23T16:46:18.349Z
+ * Generated: 2025-10-27T15:18:30.905Z
  * Total Seats: 238
  * Total Rows: 14
  */

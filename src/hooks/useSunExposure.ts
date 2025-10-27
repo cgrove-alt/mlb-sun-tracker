@@ -89,14 +89,37 @@ export function useSunExposure(options: UseSunExposureOptions): UseSunExposureRe
         setIsLoading(true);
         setError(null);
 
-        // Format game time for filename (e.g., "13:10" → "110")
-        const timeStr = gameTime.replace(':', '').replace(/^0/, ''); // "13:10" → "1310" → "110" (remove leading zero from minutes)
-        const filename = `precomputed-sun-${timeStr}pm.json.gz`;
+        // Format game time for filename (e.g., "13:10" → "1310pm", "07:05" → "0705am")
+        const [hours, minutes] = gameTime.split(':');
+        const hourNum = parseInt(hours, 10);
+        const timeStr = hours.padStart(2, '0') + minutes.padStart(2, '0'); // Ensure 4 digits
+        const ampm = hourNum >= 12 ? 'pm' : 'am';
 
-        // Fetch the compressed file
-        const response = await fetch(`/data/sun/${filename}`);
+        // Try test file first (temporary while generating full data)
+        const testFilename = `precomputed-sun-${timeStr}${ampm}-test.json.gz`;
+        const filename = `precomputed-sun-${timeStr}${ampm}.json.gz`;
+
+        // Try to fetch stadium-specific pre-computed file (try test file first)
+        const stadiumTestPath = `/data/sun/${stadiumId}/${testFilename}`;
+        const stadiumPath = `/data/sun/${stadiumId}/${filename}`;
+        const genericPath = `/data/sun/${filename}`;
+
+        let response = await fetch(stadiumTestPath);
         if (!response.ok) {
-          throw new Error(`Failed to load sun data: ${response.statusText}`);
+          // Try non-test file
+          response = await fetch(stadiumPath);
+          if (!response.ok) {
+            // Fallback to generic path if stadium-specific doesn't exist
+            response = await fetch(genericPath);
+            if (!response.ok) {
+              // If no pre-computed data exists, we should calculate in real-time
+              console.warn(`No pre-computed sun data found for ${gameTime}. Would need real-time calculation.`);
+              // For now, return empty data - in production would calculate here
+              setData({});
+              setIsLoading(false);
+              return;
+            }
+          }
         }
 
         const compressedData = await response.arrayBuffer();

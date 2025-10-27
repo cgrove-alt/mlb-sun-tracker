@@ -1,6 +1,6 @@
 /**
  * Busch Stadium - Stadium Metadata
- * Generated: 2025-10-23T16:46:18.356Z
+ * Generated: 2025-10-27T15:18:30.913Z
  */
 
 import type { SeatDataMetadata, StadiumSeatingStats } from '@/types/seat';
@@ -8,11 +8,11 @@ import type { SeatDataMetadata, StadiumSeatingStats } from '@/types/seat';
 export const metadata: SeatDataMetadata = {
   stadiumId: 'cardinals',
   stadiumName: 'Busch Stadium',
-  generatedAt: '2025-10-23T16:46:18.356Z',
+  generatedAt: '2025-10-27T15:18:30.913Z',
   version: '1.0.0',
   dataSource: 'Generated from official seating charts',
   totalSections: 179,
-  lastValidated: '2025-10-23T16:46:18.356Z',
+  lastValidated: '2025-10-27T15:18:30.913Z',
 };
 
 export const stats: StadiumSeatingStats = {

@@ -1,6 +1,6 @@
 /**
  * Main 217 - yankees
- * Generated: 2025-10-23T16:41:17.819Z
+ * Generated: 2025-10-27T15:17:48.592Z
  * Total Seats: 457
  * Total Rows: 23
  */

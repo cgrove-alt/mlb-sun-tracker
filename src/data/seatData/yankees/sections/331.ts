@@ -1,6 +1,6 @@
 /**
  * Terrace 331 - yankees
- * Generated: 2025-10-23T16:41:17.857Z
+ * Generated: 2025-10-27T15:17:48.630Z
  * Total Seats: 200
  * Total Rows: 10
  */

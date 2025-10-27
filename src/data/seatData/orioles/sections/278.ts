@@ -1,6 +1,6 @@
 /**
  * 278 - orioles
- * Generated: 2025-10-23T16:47:22.753Z
+ * Generated: 2025-10-27T15:18:50.078Z
  * Total Seats: 80
  * Total Rows: 10
  */

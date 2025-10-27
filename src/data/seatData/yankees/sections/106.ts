@@ -1,6 +1,6 @@
 /**
  * Field 106 - yankees
- * Generated: 2025-10-23T16:41:17.743Z
+ * Generated: 2025-10-27T15:17:48.538Z
  * Total Seats: 547
  * Total Rows: 25
  */

@@ -1,6 +1,6 @@
 /**
  * Club 244 - cardinals
- * Generated: 2025-10-23T16:46:18.269Z
+ * Generated: 2025-10-27T15:18:30.825Z
  * Total Seats: 272
  * Total Rows: 17
  */

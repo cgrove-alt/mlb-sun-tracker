@@ -1,6 +1,6 @@
 /**
  * Oriole Park at Camden Yards - Stadium Metadata
- * Generated: 2025-10-23T16:47:22.805Z
+ * Generated: 2025-10-27T15:18:50.140Z
  */
 
 import type { SeatDataMetadata, StadiumSeatingStats } from '@/types/seat';
@@ -8,11 +8,11 @@ import type { SeatDataMetadata, StadiumSeatingStats } from '@/types/seat';
 export const metadata: SeatDataMetadata = {
   stadiumId: 'orioles',
   stadiumName: 'Oriole Park at Camden Yards',
-  generatedAt: '2025-10-23T16:47:22.805Z',
+  generatedAt: '2025-10-27T15:18:50.140Z',
   version: '1.0.0',
   dataSource: 'Generated from stadium seating charts and capacity data',
   totalSections: 273,
-  lastValidated: '2025-10-23T16:47:22.805Z'
+  lastValidated: '2025-10-27T15:18:50.140Z'
 };
 
 export const stats: StadiumSeatingStats = {

@@ -33,21 +33,15 @@ export const GameSelector: React.FC<GameSelectorProps> = ({
   const { t } = useTranslation();
   const [games, setGames] = useState<MLBGame[]>([]);
   const gamesLoading = useLoadingState<MLBGame[]>({ minLoadingTime: 500, initialLoading: false });
-  const [viewMode, setViewMode] = useState<'games' | 'custom'>(() => {
-    return preferencesStorage.get('viewMode', 'games');
-  });
+  // Always use real games mode - no custom time selection allowed
+  const viewMode = 'games' as const;
   const [selectedYear, setSelectedYear] = useState<number>(() => {
     const currentYear = new Date().getFullYear();
     const savedYear = preferencesStorage.get('selectedYear', currentYear);
     // Ensure saved year is valid (2025 or 2026)
     return savedYear === 2026 ? 2026 : currentYear;
   });
-  const [customDate, setCustomDate] = useState<string>(() => {
-    return preferencesStorage.get('lastUsedDate', format(new Date(), 'yyyy-MM-dd'));
-  });
-  const [customTime, setCustomTime] = useState<string>(() => {
-    return preferencesStorage.get('lastUsedTime', format(new Date(), 'HH:mm'));
-  });
+  // Custom time selection removed - only real games allowed
   const [selectedGameOption, setSelectedGameOption] = useState<any>(null);
   const [error, setError] = useState<string | null>(null);
   
@@ -139,24 +133,7 @@ export const GameSelector: React.FC<GameSelectorProps> = ({
     }
   };
 
-  const handleCustomDateTime = () => {
-    if (customDate && customTime) {
-      const dateTime = new Date(`${customDate}T${customTime}:00`);
-
-      // Validate the date is reasonable (not too far in past or future)
-      const year = dateTime.getFullYear();
-      if (year < 2024 || year > 2030) {
-        setError('Please select a date between 2024 and 2030');
-        return;
-      }
-
-      onGameSelect(null, dateTime);
-
-      // Save custom date and time to localStorage
-      preferencesStorage.update('lastUsedDate', customDate);
-      preferencesStorage.update('lastUsedTime', customTime);
-    }
-  };
+  // Custom date/time function removed - only real games allowed
 
   const handleKeyDown = (event: React.KeyboardEvent, action: () => void) => {
     if (event.key === 'Enter' || event.key === ' ') {
@@ -165,18 +142,7 @@ export const GameSelector: React.FC<GameSelectorProps> = ({
     }
   };
 
-  const handleTabKeyDown = (event: React.KeyboardEvent, mode: 'games' | 'custom') => {
-    if (event.key === 'Enter' || event.key === ' ') {
-      event.preventDefault();
-      setViewMode(mode);
-      preferencesStorage.update('viewMode', mode);
-    } else if (event.key === 'ArrowLeft' || event.key === 'ArrowRight') {
-      event.preventDefault();
-      const newMode = mode === 'games' ? 'custom' : 'games';
-      setViewMode(newMode);
-      preferencesStorage.update('viewMode', newMode);
-    }
-  };
+  // Tab navigation removed - only games mode available
 
   const formatGameOption = (game: MLBGame) => {
     const gameDate = new Date(game.gameDate);
@@ -247,46 +213,7 @@ export const GameSelector: React.FC<GameSelectorProps> = ({
     <div className="game-selector">
       <div className="selector-header">
         <h3 id="game-selector-title">{t('gameSelector.title')}</h3>
-        <div className="view-mode-toggle" role="tablist" aria-labelledby="game-selector-title">
-          <ModernButton
-            variant={viewMode === 'games' ? 'primary' : 'secondary'}
-            size="md"
-            icon={<CalendarIcon size={18} />}
-            onClick={() => {
-              haptic.light();
-              setViewMode('games');
-              preferencesStorage.update('viewMode', 'games');
-            }}
-            onKeyDown={(e) => handleTabKeyDown(e, 'games')}
-            role="tab"
-            aria-selected={viewMode === 'games'}
-            aria-controls="games-panel"
-            id="games-tab"
-            tabIndex={viewMode === 'games' ? 0 : -1}
-            className="rounded-r-none"
-          >
-            {t('gameSelector.realGames')}
-          </ModernButton>
-          <ModernButton
-            variant={viewMode === 'custom' ? 'primary' : 'secondary'}
-            size="md"
-            icon={<SunIcon size={18} />}
-            onClick={() => {
-              haptic.light();
-              setViewMode('custom');
-              preferencesStorage.update('viewMode', 'custom');
-            }}
-            onKeyDown={(e) => handleTabKeyDown(e, 'custom')}
-            role="tab"
-            aria-selected={viewMode === 'custom'}
-            aria-controls="custom-panel"
-            id="custom-tab"
-            tabIndex={viewMode === 'custom' ? 0 : -1}
-            className="rounded-l-none"
-          >
-            {t('gameSelector.customTime')}
-          </ModernButton>
-        </div>
+        {/* View mode toggle removed - always use real games */}
       </div>
 
       <div className="control-group">
@@ -303,8 +230,8 @@ export const GameSelector: React.FC<GameSelectorProps> = ({
         />
       </div>
 
-      {viewMode === 'games' ? (
-        <div className="games-section" role="tabpanel" id="games-panel" aria-labelledby="games-tab">
+      {/* Always show games panel - custom time removed */}
+      <div className="games-section" role="tabpanel" id="games-panel" aria-labelledby="games-tab">
           {selectedStadium ? (
             <>
               <div className="control-group">
@@ -381,7 +308,6 @@ export const GameSelector: React.FC<GameSelectorProps> = ({
               {games.length === 0 && !gamesLoading.loading && !error && (
                 <div className="no-games">
                   <p>{t('gameSelector.noGamesForStadium')}</p>
-                  <p>{t('gameSelector.tryCustomTime')}</p>
                 </div>
               )}
 
@@ -399,54 +325,6 @@ export const GameSelector: React.FC<GameSelectorProps> = ({
             </div>
           )}
         </div>
-      ) : (
-        <div className="custom-section" role="tabpanel" id="custom-panel" aria-labelledby="custom-tab">
-          <div className="custom-controls">
-            <div className="control-group">
-              <label htmlFor="custom-date">{t('gameSelector.date')}:</label>
-              <input
-                id="custom-date"
-                type="date"
-                value={customDate}
-                onChange={(e) => setCustomDate(e.target.value)}
-                className="date-input"
-                aria-label={t('gameSelector.selectDate')}
-              />
-            </div>
-
-            <div className="control-group">
-              <label htmlFor="custom-time">{t('gameSelector.timeLocal')}:</label>
-              <input
-                id="custom-time"
-                type="time"
-                value={customTime}
-                onChange={(e) => setCustomTime(e.target.value)}
-                className="time-input"
-                aria-label={t('gameSelector.selectTime')}
-              />
-            </div>
-
-            <ModernButton
-              onClick={() => {
-                haptic.medium();
-                handleCustomDateTime();
-              }}
-              onKeyDown={(e) => handleKeyDown(e, handleCustomDateTime)}
-              variant="primary"
-              size="md"
-              disabled={!customDate || !customTime || !selectedStadium}
-              aria-label={t('gameSelector.applyCustomTime')}
-              fullWidth
-            >
-              {t('gameSelector.applyCustomTime')}
-            </ModernButton>
-          </div>
-
-          <div className="custom-info">
-            <p>💡 {t('gameSelector.customTimeInfo')}</p>
-          </div>
-        </div>
-      )}
     </div>
   );
 };

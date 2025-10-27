@@ -375,11 +375,23 @@ function savePrecomputedData(
 ): string {
   log.step('Compressing and saving data...');
 
-  const outputDir = path.join(__dirname, '..', 'src', 'data', 'seatData', stadiumId);
-  const timeStr = gameTime.replace(':', ''); // '13:10' → '1310'
+  // Save to public directory for frontend access
+  const outputDir = path.join(__dirname, '..', 'public', 'data', 'sun', stadiumId);
+
+  // Create directory if it doesn't exist
+  if (!fs.existsSync(outputDir)) {
+    fs.mkdirSync(outputDir, { recursive: true });
+  }
+
+  // Format time for filename (e.g., "13:10" → "1310pm", "11:00" → "1100am")
+  const [hours, minutes] = gameTime.split(':');
+  const hourNum = parseInt(hours, 10);
+  const timeStr = hours.padStart(2, '0') + minutes.padStart(2, '0');
+  const ampm = hourNum >= 12 ? 'pm' : 'am';
+
   const filename = testMode
-    ? `precomputed-sun-${timeStr}pm-test.json.gz`
-    : `precomputed-sun-${timeStr}pm.json.gz`;
+    ? `precomputed-sun-${timeStr}${ampm}-test.json.gz`
+    : `precomputed-sun-${timeStr}${ampm}.json.gz`;
   const outputPath = path.join(outputDir, filename);
 
   // Convert to JSON

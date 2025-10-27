@@ -1,6 +1,6 @@
 /**
  * Terrace 324 - yankees
- * Generated: 2025-10-23T16:41:17.853Z
+ * Generated: 2025-10-27T15:17:48.626Z
  * Total Seats: 200
  * Total Rows: 10
  */

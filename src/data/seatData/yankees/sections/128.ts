@@ -1,6 +1,6 @@
 /**
  * Field 128 - yankees
- * Generated: 2025-10-23T16:41:17.777Z
+ * Generated: 2025-10-27T15:17:48.566Z
  * Total Seats: 497
  * Total Rows: 25
  */

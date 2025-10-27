@@ -47,15 +47,8 @@ export const UnifiedGameSelector: React.FC<UnifiedGameSelectorProps> = ({
     // Ensure saved year is valid (2025 or 2026)
     return savedYear === 2026 ? 2026 : currentYear;
   });
-  const [viewMode, setViewMode] = useState<'games' | 'custom'>(() => {
-    return preferencesStorage.get('viewMode', 'games');
-  });
-  const [customDate, setCustomDate] = useState<string>(() => {
-    return preferencesStorage.get('lastUsedDate', format(new Date(), 'yyyy-MM-dd'));
-  });
-  const [customTime, setCustomTime] = useState<string>(() => {
-    return preferencesStorage.get('lastUsedTime', format(new Date(), 'HH:mm'));
-  });
+  // Always use real games mode - removed custom time option
+  const viewMode = 'games' as const;
   const [selectedGameOption, setSelectedGameOption] = useState<any>(null);
   const [error, setError] = useState<string | null>(null);
   
@@ -142,15 +135,9 @@ export const UnifiedGameSelector: React.FC<UnifiedGameSelectorProps> = ({
       let endDate: string;
 
       if (selectedVenue.league === 'MLB') {
-        // For MLB, use selectedYear
-        if (selectedYear === currentYear) {
-          startDate = now.toISOString().split('T')[0];
-          endDate = `${selectedYear}-10-31`;
-        } else {
-          // For future years (2026)
-          startDate = `${selectedYear}-03-01`;
-          endDate = `${selectedYear}-10-31`;
-        }
+        // For MLB, always fetch the full season from March 1 to October 31
+        startDate = `${selectedYear}-03-01`;
+        endDate = `${selectedYear}-10-31`;
       } else if (selectedVenue.league === 'MiLB') {
         // For MiLB, only use current year (30 day window)
         startDate = now.toISOString().split('T')[0];
@@ -314,13 +301,7 @@ export const UnifiedGameSelector: React.FC<UnifiedGameSelectorProps> = ({
     }
   };
 
-  const handleCustomApply = () => {
-    if (customDate && customTime) {
-      onGameSelect(null, new Date(`${customDate}T${customTime}:00`));
-      preferencesStorage.update('lastUsedDate', customDate);
-      preferencesStorage.update('lastUsedTime', customTime);
-    }
-  };
+  // Custom time functionality removed - only real games allowed
 
   const gameOptions = games.map(game => {
     const gameDate = new Date(game.gameDate);
@@ -333,7 +314,11 @@ export const UnifiedGameSelector: React.FC<UnifiedGameSelectorProps> = ({
     
     if ('teams' in game) {
       // MLB/MiLB game structure
-      label = `${formattedTime} - ${game.teams.away.team.name} @ ${game.teams.home.team.name}`;
+      const mlbGame = game as MLBGame;
+      const dayNightIcon = mlbGame.dayNight === 'day' ? '☀️' : mlbGame.dayNight === 'night' ? '🌙' : '';
+      const opponent = mlbGame.teams.away.team.name;
+      const formattedDate = gameDate.toLocaleDateString('en-US', { month: 'short', day: 'numeric' });
+      label = `${formattedDate} ${formattedTime} ${dayNightIcon} vs ${opponent}`;
       gameId = game.gamePk.toString();
     } else {
       // NFL game structure
@@ -399,78 +384,11 @@ export const UnifiedGameSelector: React.FC<UnifiedGameSelectorProps> = ({
         <div className="selector-header">
           <h3 id="game-selector-title">{t('gameSelector.title')}</h3>
           
-          {(selectedVenue?.league === 'MLB' || selectedVenue?.league === 'MiLB') && (
-            <div className="view-mode-toggle" role="tablist" aria-labelledby="game-selector-title">
-              <button
-                className={`toggle-btn ${viewMode === 'games' ? 'active' : ''}`}
-                onClick={() => {
-                  haptic.light();
-                  setViewMode('games');
-                  preferencesStorage.update('viewMode', 'games');
-                }}
-                role="tab"
-                aria-selected={viewMode === 'games'}
-                aria-controls="games-panel"
-                id="games-tab"
-                tabIndex={viewMode === 'games' ? 0 : -1}
-              >
-                📅 {t('gameSelector.realGames')}
-              </button>
-              <button
-                className={`toggle-btn ${viewMode === 'custom' ? 'active' : ''}`}
-                onClick={() => {
-                  haptic.light();
-                  setViewMode('custom');
-                  preferencesStorage.update('viewMode', 'custom');
-                }}
-                role="tab"
-                aria-selected={viewMode === 'custom'}
-                aria-controls="custom-panel"
-                id="custom-tab"
-                tabIndex={viewMode === 'custom' ? 0 : -1}
-              >
-                🕐 {t('gameSelector.customTime')}
-              </button>
-            </div>
-          )}
+          {/* View mode toggle removed - always showing real games */}
         </div>
       )}
       
-      {/* Show toggle buttons for mobile but without the header wrapper */}
-      {isMobileContext && (selectedVenue?.league === 'MLB' || selectedVenue?.league === 'MiLB') && (
-        <div className="view-mode-toggle mobile-toggle" role="tablist">
-          <button
-            className={`toggle-btn ${viewMode === 'games' ? 'active' : ''}`}
-            onClick={() => {
-              haptic.light();
-              setViewMode('games');
-              preferencesStorage.update('viewMode', 'games');
-            }}
-            role="tab"
-            aria-selected={viewMode === 'games'}
-            aria-controls="games-panel"
-            id="games-tab-mobile"
-            tabIndex={viewMode === 'games' ? 0 : -1}
-          >
-            📅 {t('gameSelector.realGames')}
-          </button>
-          <button
-            className={`toggle-btn ${viewMode === 'custom' ? 'active' : ''}`}
-            onClick={() => {
-              haptic.light();
-              setViewMode('custom');
-              preferencesStorage.update('viewMode', 'custom');
-            }}
-            role="tab"
-            aria-selected={viewMode === 'custom'}
-            aria-controls="custom-panel"
-            id="custom-tab-mobile"
-            tabIndex={viewMode === 'custom' ? 0 : -1}
-          >
-            🕐 {t('gameSelector.customTime')}
-          </button>
-        </div>
-      )}
+      {/* Mobile toggle buttons removed - always showing real games */}
 
       {/* League Selection Dropdown */}
       <div className="control-group">
@@ -544,8 +462,8 @@ export const UnifiedGameSelector: React.FC<UnifiedGameSelectorProps> = ({
       </div>
 
       {(selectedVenue?.league === 'MLB' || selectedVenue?.league === 'MiLB' || selectedVenue?.league === 'NFL') ? (
-        // MLB, MiLB, and NFL venues show games or custom time
-        viewMode === 'games' ? (
+        // MLB, MiLB, and NFL venues show real games only
+        (
           <div className="games-section" role="tabpanel" id="games-panel" aria-labelledby="games-tab">
             {selectedVenue ? (
               <>
@@ -589,8 +507,6 @@ export const UnifiedGameSelector: React.FC<UnifiedGameSelectorProps> = ({
                       <NFLCustomGameSelector
                         selectedVenue={selectedVenue}
                         onGameSelect={onGameSelect}
-                        initialDate={customDate}
-                        initialTime={customTime}
                       />
                     ) : (
                       <div className="error-message" role="alert">
@@ -637,13 +553,11 @@ export const UnifiedGameSelector: React.FC<UnifiedGameSelectorProps> = ({
                     <NFLCustomGameSelector
                       selectedVenue={selectedVenue}
                       onGameSelect={onGameSelect}
-                      initialDate={customDate}
-                      initialTime={customTime}
                     />
                   ) : (
                     <div className="no-games">
                       <p>{t('gameSelector.noGamesForStadium')}</p>
-                      <p>{t('gameSelector.tryCustomTime')}</p>
+                      <p>Please check back later or select a different date range.</p>
                     </div>
                   )
                 )}
@@ -659,88 +573,15 @@ export const UnifiedGameSelector: React.FC<UnifiedGameSelectorProps> = ({
               </div>
             )}
           </div>
-        ) : (
-          // Custom time mode for MLB, MiLB, and NFL
-          <div className="custom-section" role="tabpanel" id="custom-panel" aria-labelledby="custom-tab">
-            <div className="custom-controls">
-              <div className="control-group">
-                <label htmlFor="custom-date">{t('gameSelector.date')}:</label>
-                <input
-                  id="custom-date"
-                  type="date"
-                  value={customDate}
-                  onChange={(e) => setCustomDate(e.target.value)}
-                  className="date-input"
-                  aria-label={t('gameSelector.selectDate')}
-                />
-              </div>
-              <div className="control-group">
-                <label htmlFor="custom-time">{t('gameSelector.timeLocal')}:</label>
-                <input
-                  id="custom-time"
-                  type="time"
-                  value={customTime}
-                  onChange={(e) => setCustomTime(e.target.value)}
-                  className="time-input"
-                  aria-label={t('gameSelector.selectTime')}
-                />
-              </div>
-              <button
-                onClick={() => {
-                  haptic.medium();
-                  handleCustomApply();
-                }}
-                className="apply-custom-btn"
-                disabled={!customDate || !customTime || !selectedVenue}
-                aria-label={t('gameSelector.applyCustomDateTime')}
-              >
-                {t('gameSelector.apply')}
-              </button>
-            </div>
-          </div>
         )
       ) : (
-        // Non-MLB venues only show custom time
+        // Non-MLB venues - not currently supported
         selectedVenue && (
           <div className="custom-section">
             <p className="non-mlb-notice">
-              {selectedLeague} games not available. Use custom date/time for shade calculations.
+              {selectedLeague} real game schedules are not currently available.
+              Please select an MLB, MiLB, or NFL venue to view real game schedules with accurate sun exposure data.
             </p>
-            <div className="custom-controls">
-              <div className="control-group">
-                <label htmlFor="custom-date">{t('gameSelector.date')}:</label>
-                <input
-                  id="custom-date"
-                  type="date"
-                  value={customDate}
-                  onChange={(e) => setCustomDate(e.target.value)}
-                  className="date-input"
-                  aria-label={t('gameSelector.selectDate')}
-                />
-              </div>
-              <div className="control-group">
-                <label htmlFor="custom-time">{t('gameSelector.timeLocal')}:</label>
-                <input
-                  id="custom-time"
-                  type="time"
-                  value={customTime}
-                  onChange={(e) => setCustomTime(e.target.value)}
-                  className="time-input"
-                  aria-label={t('gameSelector.selectTime')}
-                />
-              </div>
-              <button
-                onClick={() => {
-                  haptic.medium();
-                  handleCustomApply();
-                }}
-                className="apply-custom-btn"
-                disabled={!customDate || !customTime || !selectedVenue}
-                aria-label={t('gameSelector.applyCustomDateTime')}
-              >
-                {t('gameSelector.apply')}
-              </button>
-            </div>
           </div>
         )
       )}

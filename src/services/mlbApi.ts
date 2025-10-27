@@ -29,6 +29,11 @@ export interface MLBGame {
   };
   gameType: string;
   scheduledInnings: number;
+  dayNight?: 'day' | 'night'; // Day or Night game (lowercase from API)
+  description?: string; // Game description (e.g., "Spring Training", "Regular Season")
+  seriesDescription?: string; // Series info
+  gamesInSeries?: number; // Number of games in series
+  seriesGameNumber?: number; // Which game in the series
 }
 
 export interface MLBScheduleResponse {
@@ -145,7 +150,7 @@ export class MLBApiService {
     }
     },
     'mlb-schedule',
-    30 * 60 * 1000 // Cache for 30 minutes
+    24 * 60 * 60 * 1000 // Cache for 24 hours since full season data is stable
   );
 
   async getTeamSchedule(teamId: number, startDate?: string, endDate?: string, year?: number): Promise<MLBGame[]> {
