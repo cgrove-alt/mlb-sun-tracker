@@ -20,10 +20,40 @@ const metadataCache = new Map<string, { metadata: SeatDataMetadata; stats: Stadi
 const precomputedCache = new Map<string, Record<string, number>>();
 
 /**
+ * Helper function to strip section suffix and get numeric part
+ * Examples: "1DG" → "1", "48FD" → "48", "101LG" → "101", "10IR" → "10IR" (preserves non-standard suffixes)
+ * @param sectionId - The section ID with or without suffix
+ */
+function getNumericSectionId(sectionId: string): string {
+  // Common suffixes: DG (Dugout), FD (Field), LG (Loge), BL (Baseline), RS (Reserved), TD, IR, etc.
+  // Extract numeric part by removing alphabetic suffixes (but preserve things like "10IR" where needed)
+
+  // First check if it's already just numbers
+  if (/^\d+$/.test(sectionId)) {
+    return sectionId;
+  }
+
+  // Try to extract leading numbers
+  const numericMatch = sectionId.match(/^(\d+)/);
+  if (numericMatch) {
+    // Special case: preserve certain section types that have both numbers and letters
+    // For sections like "10IR", "10RS", "10TD" which exist as full JSON files
+    if (sectionId.match(/^\d+(IR|RS|TD)$/)) {
+      return sectionId; // Keep the full ID
+    }
+    // Otherwise return just the numeric part
+    return numericMatch[1];
+  }
+
+  // If no numeric part found, return as is (shouldn't happen with valid sections)
+  return sectionId;
+}
+
+/**
  * Load seat data for a specific section
  * Fetches JSON from public directory (client-side only)
  * @param urlStadiumId - The stadium ID as used in URLs (e.g., 'dodgers')
- * @param sectionId - The section ID
+ * @param sectionId - The section ID (may include suffix like "1DG", "48FD", etc.)
  */
 export async function getSeatDataForSection(
   urlStadiumId: string,
@@ -31,7 +61,11 @@ export async function getSeatDataForSection(
 ): Promise<SectionSeatingData | null> {
   // Map the URL stadium ID to the actual data directory name
   const seatDataStadiumId = getSeatDataStadiumId(urlStadiumId);
-  const cacheKey = `${seatDataStadiumId}-${sectionId}`;
+
+  // Strip suffix from section ID to get the JSON filename
+  const jsonSectionId = getNumericSectionId(sectionId);
+
+  const cacheKey = `${seatDataStadiumId}-${jsonSectionId}`;
 
   // Check cache first
   if (seatDataCache.has(cacheKey)) {
@@ -39,12 +73,12 @@ export async function getSeatDataForSection(
   }
 
   try {
-    // Fetch JSON file from public directory using mapped stadium ID
-    const response = await fetch(`/data/seats/${seatDataStadiumId}/${sectionId}.json`);
+    // Fetch JSON file from public directory using mapped stadium ID and numeric section ID
+    const response = await fetch(`/data/seats/${seatDataStadiumId}/${jsonSectionId}.json`);
 
     if (!response.ok) {
       console.warn(
-        `Seat data not found for stadium "${urlStadiumId}" (mapped to "${seatDataStadiumId}"), section "${sectionId}" - HTTP ${response.status}`
+        `Seat data not found for stadium "${urlStadiumId}" (mapped to "${seatDataStadiumId}"), section "${sectionId}" (JSON file: ${jsonSectionId}.json) - HTTP ${response.status}`
       );
       return null;
     }
@@ -53,7 +87,7 @@ export async function getSeatDataForSection(
 
     if (!sectionData) {
       console.error(
-        `Empty seat data for section ${sectionId} at ${urlStadiumId} (${seatDataStadiumId})`
+        `Empty seat data for section ${sectionId} (JSON: ${jsonSectionId}) at ${urlStadiumId} (${seatDataStadiumId})`
       );
       return null;
     }
@@ -64,7 +98,7 @@ export async function getSeatDataForSection(
     return sectionData;
   } catch (error) {
     console.error(
-      `Failed to load seat data for ${urlStadiumId}/${sectionId} (mapped to ${seatDataStadiumId}/${sectionId}):`,
+      `Failed to load seat data for ${urlStadiumId}/${sectionId} (mapped to ${seatDataStadiumId}/${jsonSectionId}.json):`,
       error
     );
     return null;
