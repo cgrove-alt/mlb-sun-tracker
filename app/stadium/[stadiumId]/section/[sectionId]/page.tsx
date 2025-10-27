@@ -4,6 +4,7 @@ import * as fs from 'fs';
 import * as path from 'path';
 import { MLB_STADIUMS } from '../../../../../src/data/stadiums';
 import SectionPageClient from './SectionPageClient';
+import { getStadiumSections } from '../../../../../src/data/stadiumSections';
 
 interface SectionPageProps {
   params: Promise<{
@@ -22,42 +23,55 @@ function getSeatDataStadiumId(stadiumId: string): string {
 
 export async function generateStaticParams() {
   // Generate section pages for all 30 MLB stadiums
-  // Use TypeScript source files since JSON files aren't checked in yet
+  // Use stadium sections data which has the correct suffixed IDs
   const allParams: Array<{ stadiumId: string; sectionId: string }> = [];
 
   for (const stadium of MLB_STADIUMS) {
-    const seatDataStadiumId = getSeatDataStadiumId(stadium.id);
-    const sectionsDir = path.join(
-      process.cwd(),
-      'src',
-      'data',
-      'seatData',
-      seatDataStadiumId,
-      'sections'
-    );
-
     try {
-      // Check if directory exists
-      if (fs.existsSync(sectionsDir)) {
-        const sectionFiles = fs
-          .readdirSync(sectionsDir)
-          .filter((f) => f.endsWith('.ts') && f !== '_template.ts')
-          .map((f) => f.replace('.ts', ''));
+      // Get sections from stadiumSections data (includes suffixes like 1DG, 48FD, etc.)
+      const stadiumSectionsData = getStadiumSections(stadium.id);
 
-        // Add all sections for this stadium
-        sectionFiles.forEach((sectionId) => {
+      if (stadiumSectionsData && stadiumSectionsData.length > 0) {
+        // Add all sections for this stadium using their suffixed IDs
+        stadiumSectionsData.forEach((section) => {
           allParams.push({
             stadiumId: stadium.id,
-            sectionId,
+            sectionId: section.id, // This includes suffixes like 1DG, 48FD, 101LG
           });
         });
 
-        console.log(`✓ Generated ${sectionFiles.length} section pages for ${stadium.name}`);
+        console.log(`✓ Generated ${stadiumSectionsData.length} section pages for ${stadium.name}`);
       } else {
-        console.warn(`⚠️  No seat data found for ${stadium.name} at ${sectionsDir}`);
+        // Fallback: check for JSON files to at least generate numeric pages
+        const seatDataStadiumId = getSeatDataStadiumId(stadium.id);
+        const jsonDir = path.join(
+          process.cwd(),
+          'public',
+          'data',
+          'seats',
+          seatDataStadiumId
+        );
+
+        if (fs.existsSync(jsonDir)) {
+          const jsonFiles = fs
+            .readdirSync(jsonDir)
+            .filter((f) => f.endsWith('.json'))
+            .map((f) => f.replace('.json', ''));
+
+          jsonFiles.forEach((sectionId) => {
+            allParams.push({
+              stadiumId: stadium.id,
+              sectionId,
+            });
+          });
+
+          console.log(`⚠️  Using JSON fallback for ${stadium.name}: ${jsonFiles.length} sections`);
+        } else {
+          console.warn(`⚠️  No section data found for ${stadium.name}`);
+        }
       }
     } catch (error) {
-      console.error(`Failed to read sections for ${stadium.name}:`, error);
+      console.error(`Failed to generate sections for ${stadium.name}:`, error);
     }
   }
 
