@@ -10,7 +10,7 @@ import {
   SunIcon,
   CloudIcon,
   DropletIcon
-} from './Icons';
+} from './common/Icons';
 import StadiumTitleBlock from './StadiumTitleBlock';
 import { StadiumTitleData } from './StadiumTitleBlock';
 import { SectionSelector } from './SectionSelector';

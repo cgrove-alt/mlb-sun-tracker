@@ -1,6 +1,6 @@
 import React from 'react';
 import styles from './SectionFilters.module.css';
-import { SunIcon, CloudIcon, PartlyCloudyIcon, FireIcon, MoneyIcon } from '../Icons';
+import { SunIcon, CloudIcon, PartlyCloudyIcon, FireIcon, MoneyIcon } from '../common/Icons';
 
 export interface SectionFilterValues {
   maxSunExposure?: number;

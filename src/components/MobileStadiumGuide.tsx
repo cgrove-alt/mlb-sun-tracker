@@ -6,7 +6,7 @@ import { Stadium } from '../data/stadiums';
 import type { StadiumSection } from '../data/stadiumSectionTypes';
 import { StadiumAmenities } from '../data/stadiumAmenities';
 import { stadiumHistories } from '../data/stadiumDetails';
-import { SunIcon, CloudIcon, DropletIcon, MapPinIcon, ClockIcon, InfoIcon } from './Icons';
+import { SunIcon, CloudIcon, DropletIcon, MapPinIcon, ClockIcon, InfoIcon } from './common/Icons';
 import { SectionShadeSEO } from './SectionShadeSEO';
 import { StadiumShadeQuestions } from './StadiumShadeQuestions';
 import { TableOfContents } from './TableOfContents';

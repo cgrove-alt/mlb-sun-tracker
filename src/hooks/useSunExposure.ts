@@ -24,7 +24,7 @@ interface UseSunExposureOptions {
 }
 
 interface UseSunExposureResult {
-  data: Record<string, boolean> | null;  // Map of seatId → inDirectSun
+  data: Record<string, number> | null;  // Map of seatId → sun exposure percentage (0-100)
   isLoading: boolean;
   error: Error | null;
 }
@@ -72,7 +72,7 @@ function findClosestTimeIndex(targetTime: string, availableTimePoints: string[])
 export function useSunExposure(options: UseSunExposureOptions): UseSunExposureResult {
   const { stadiumId, gameTime = '13:10', gameDate = new Date(), enabled = true } = options;
 
-  const [data, setData] = useState<Record<string, boolean> | null>(null);
+  const [data, setData] = useState<Record<string, number> | null>(null);
   const [isLoading, setIsLoading] = useState<boolean>(true);
   const [error, setError] = useState<Error | null>(null);
 
@@ -134,15 +134,32 @@ export function useSunExposure(options: UseSunExposureOptions): UseSunExposureRe
         const dateIndex = findClosestDateIndex(gameDate, sunData.dates);
         const timeIndex = findClosestTimeIndex(gameTime, sunData.timePoints);
 
-        // Build the exposure map
-        const exposureMap: Record<string, boolean> = {};
+        // Build the exposure map with percentages
+        // NOTE: Current precomputed data format is binary ('0' or '1')
+        // Converting to percentages: '0' = 0%, '1' = 100%
+        // TODO: Update precomputed data generation to store actual percentages (0-9 representing 0%-100%)
+        const exposureMap: Record<string, number> = {};
 
         Object.entries(sunData.seats).forEach(([seatId, seatData]) => {
           const dateTimeline = seatData.timeline[dateIndex];
           if (dateTimeline && dateTimeline[timeIndex]) {
-            exposureMap[seatId] = dateTimeline[timeIndex] === '1';
+            // Convert binary to percentage
+            // '0' = 0% shade (full sun), '1' = 100% shade... wait, that's backwards
+            // Actually: '1' = in sun, '0' = in shade
+            // So: '1' = 100% sun exposure, '0' = 0% sun exposure
+            const char = dateTimeline[timeIndex];
+            if (char === '1') {
+              exposureMap[seatId] = 100; // Full sun
+            } else if (char === '0') {
+              exposureMap[seatId] = 0; // Full shade
+            } else if (char >= '0' && char <= '9') {
+              // Future: Handle granular percentages (0-9 = 0%, 10%, 20%...90%)
+              exposureMap[seatId] = parseInt(char) * 10;
+            } else {
+              exposureMap[seatId] = 0; // Default to shade if invalid
+            }
           } else {
-            exposureMap[seatId] = false; // Default to shade if no data
+            exposureMap[seatId] = 0; // Default to shade if no data
           }
         });
 

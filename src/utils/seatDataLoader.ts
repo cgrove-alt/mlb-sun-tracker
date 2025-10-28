@@ -10,7 +10,7 @@ import type {
   StadiumSeatingStats,
   PreComputedSeatExposure,
 } from '@/types/seat';
-import { getSeatDataStadiumId } from '@/utils/stadiumIdMapping';
+import { toDataStadiumId, stripSectionSuffix } from '@/utils/ids';
 
 /**
  * Cache for loaded seat data to avoid repeated imports
@@ -18,36 +18,6 @@ import { getSeatDataStadiumId } from '@/utils/stadiumIdMapping';
 const seatDataCache = new Map<string, SectionSeatingData>();
 const metadataCache = new Map<string, { metadata: SeatDataMetadata; stats: StadiumSeatingStats }>();
 const precomputedCache = new Map<string, Record<string, number>>();
-
-/**
- * Helper function to strip section suffix and get numeric part
- * Examples: "1DG" → "1", "48FD" → "48", "101LG" → "101", "10IR" → "10IR" (preserves non-standard suffixes)
- * @param sectionId - The section ID with or without suffix
- */
-function getNumericSectionId(sectionId: string): string {
-  // Common suffixes: DG (Dugout), FD (Field), LG (Loge), BL (Baseline), RS (Reserved), TD, IR, etc.
-  // Extract numeric part by removing alphabetic suffixes (but preserve things like "10IR" where needed)
-
-  // First check if it's already just numbers
-  if (/^\d+$/.test(sectionId)) {
-    return sectionId;
-  }
-
-  // Try to extract leading numbers
-  const numericMatch = sectionId.match(/^(\d+)/);
-  if (numericMatch) {
-    // Special case: preserve certain section types that have both numbers and letters
-    // For sections like "10IR", "10RS", "10TD" which exist as full JSON files
-    if (sectionId.match(/^\d+(IR|RS|TD)$/)) {
-      return sectionId; // Keep the full ID
-    }
-    // Otherwise return just the numeric part
-    return numericMatch[1];
-  }
-
-  // If no numeric part found, return as is (shouldn't happen with valid sections)
-  return sectionId;
-}
 
 /**
  * Load seat data for a specific section
@@ -60,10 +30,10 @@ export async function getSeatDataForSection(
   sectionId: string
 ): Promise<SectionSeatingData | null> {
   // Map the URL stadium ID to the actual data directory name
-  const seatDataStadiumId = getSeatDataStadiumId(urlStadiumId);
+  const seatDataStadiumId = toDataStadiumId(urlStadiumId);
 
   // Strip suffix from section ID to get the JSON filename
-  const jsonSectionId = getNumericSectionId(sectionId);
+  const jsonSectionId = stripSectionSuffix(sectionId);
 
   const cacheKey = `${seatDataStadiumId}-${jsonSectionId}`;
 
@@ -112,7 +82,7 @@ export async function getSeatDataForSection(
 export async function getStadiumSeatMetadata(
   urlStadiumId: string
 ): Promise<{ metadata: SeatDataMetadata; stats: StadiumSeatingStats } | null> {
-  const seatDataStadiumId = getSeatDataStadiumId(urlStadiumId);
+  const seatDataStadiumId = toDataStadiumId(urlStadiumId);
 
   // Check cache
   if (metadataCache.has(seatDataStadiumId)) {

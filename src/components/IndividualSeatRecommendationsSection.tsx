@@ -3,8 +3,9 @@
 import { useState, useEffect } from 'react';
 import { useRouter } from 'next/navigation';
 import { SeatRecommendations } from './SeatRecommendations';
-import { LoadingSpinner } from './LoadingSpinner';
+import { LoadingSpinner } from './common/LoadingSpinner';
 import type { Seat, SectionSeatingData } from '../types/seat';
+import { toDataStadiumId } from '../utils/ids';
 
 interface IndividualSeatRecommendationsSectionProps {
   stadiumId: string;
@@ -29,7 +30,7 @@ export function IndividualSeatRecommendationsSection({
       setError(null);
 
       // Map stadium IDs to their data directory names
-      const seatDataStadiumId = stadiumId === 'dodgers' ? 'dodger-stadium' : stadiumId;
+      const seatDataStadiumId = toDataStadiumId(stadiumId);
 
       // Try to load the seat search index for this stadium
       const indexResponse = await fetch(`/data/search/${seatDataStadiumId}-seats.min.json`);

@@ -8,7 +8,7 @@ import { getStadiumSectionsAsync } from '../../../src/data/getStadiumSections';
 import { getStadiumAmenities } from '../../../src/data/stadiumAmenities';
 import { getStadiumGuide } from '../../../src/data/guides';
 import { getCanonicalStadiumId, needsRedirect } from '../../../src/utils/stadiumSlugMapping';
-import { ErrorBoundary } from '../../../src/components/ErrorBoundary';
+import { ErrorBoundary } from '../../../src/components/common/ErrorBoundary';
 import StadiumPageClient from './StadiumPageClient';
 import StadiumPageSSR from './StadiumPageSSR';
 import styles from './StadiumPage.module.css';

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { SunIcon, InfoIcon, ChevronDownIcon, ChevronUpIcon, FireIcon, UmbrellaIcon, ClockIcon, ThermometerIcon, ShadeIcon, PartlyCloudyIcon } from './Icons';
+import { SunIcon, InfoIcon, ChevronDownIcon, ChevronUpIcon, FireIcon, UmbrellaIcon, ClockIcon, ThermometerIcon, ShadeIcon, PartlyCloudyIcon } from './common/Icons';
 import './SunExposureExplanation.css';
 
 export const SunExposureExplanation: React.FC = () => {

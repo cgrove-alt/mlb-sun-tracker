@@ -20,7 +20,7 @@ import { mlbApi } from './services/mlbApi';
 import { weatherApi } from './services/weatherApi';
 import { SunCalculator } from './utils/sunCalculator';
 import { getSunPosition, getSunDescription, getCompassDirection } from './utils/sunCalculations';
-import { SunIcon, MoonIcon } from './components/Icons';
+import { SunIcon, MoonIcon } from './components/common/Icons';
 import { validateStadiumId, validateFilterCriteria, RateLimiter } from './utils/validation';
 import { debounce } from './utils/debounce';
 import './styles/mobile.css';

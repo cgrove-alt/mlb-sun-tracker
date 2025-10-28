@@ -2,7 +2,7 @@
 
 import React, { useEffect } from 'react';
 import type { Seat } from '@/types/seat';
-import { CloudIcon, SunIcon, FireIcon } from './Icons';
+import { CloudIcon, SunIcon, FireIcon } from '../common/Icons';
 
 interface SeatDetailModalProps {
   seat: Seat | null;

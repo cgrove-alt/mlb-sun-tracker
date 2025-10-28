@@ -46,13 +46,13 @@ export function ShadeHero() {
     if (!selectedStadium) return;
 
     setIsSearching(true);
-    // Navigate directly to stadium page with shade view
-    router.push(`/stadium/${selectedStadium}?time=${selectedTime}&view=shade`);
+    // Navigate to seat search page
+    router.push(`/search?stadium=${selectedStadium}&gameTime=${selectedTime}`);
   };
 
   const handleQuickStadiumSelect = (stadiumId: string) => {
     setSelectedStadium(stadiumId);
-    router.push(`/stadium/${stadiumId}?time=${selectedTime}&view=shade`);
+    router.push(`/search?stadium=${stadiumId}&gameTime=${selectedTime}`);
   };
 
   const handleSearchChange = (e: React.ChangeEvent<HTMLInputElement>) => {

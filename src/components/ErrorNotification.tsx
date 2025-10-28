@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { ErrorIcon, WarningIcon, InfoIcon, CloseIcon } from './Icons';
+import { ErrorIcon, WarningIcon, InfoIcon, CloseIcon } from './common/Icons';
 import './ErrorNotification.css';
 
 export interface ErrorNotificationProps {

@@ -4,8 +4,8 @@ import { preferencesStorage } from '../utils/preferences';
 import { Tooltip } from './Tooltip';
 import { useHapticFeedback } from '../hooks/useHapticFeedback';
 import { LazySectionCardModern as LazySectionCard } from './LazySectionCardModern';
-import { ListIcon, SearchIcon, SunIcon, CloudIcon, CloseIcon, BaseballIcon, TicketIcon, CrownIcon, StadiumIcon, FieldLevelIcon, LowerLevelIcon, ClubLevelIcon, UpperLevelIcon, ValuePriceIcon, ModeratePriceIcon, PremiumPriceIcon, LuxuryPriceIcon, MoneyIcon, PartlyCloudyIcon, FireIcon } from './Icons';
-import { LoadingSpinner } from './LoadingSpinner';
+import { ListIcon, SearchIcon, SunIcon, CloudIcon, CloseIcon, BaseballIcon, TicketIcon, CrownIcon, StadiumIcon, FieldLevelIcon, LowerLevelIcon, ClubLevelIcon, UpperLevelIcon, ValuePriceIcon, ModeratePriceIcon, PremiumPriceIcon, LuxuryPriceIcon, MoneyIcon, PartlyCloudyIcon, FireIcon } from './common/Icons';
+import { LoadingSpinner } from './common/LoadingSpinner';
 import SectionFilters, { SectionFilterValues } from './SectionFilters/SectionFilters';
 import './SectionList.css';
 

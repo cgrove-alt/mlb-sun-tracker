@@ -4,7 +4,7 @@ import React, { useState, useCallback, useMemo, useEffect } from 'react';
 import { SeatRecommendationEngine, UserPreferences, RecommendationContext } from '../services/seatRecommendationEngine';
 import { SeatingSectionSun } from '../utils/sunCalculations';
 import { SeatPreferencesForm } from './SeatPreferencesForm';
-import { LoadingSpinner } from './LoadingSpinner';
+import { LoadingSpinner } from './common/LoadingSpinner';
 import { MLB_STADIUMS } from '../data/stadiums';
 import { getStadiumCompleteData } from '../data/stadium-data-aggregator';
 import { weatherApi, WeatherData } from '../services/weatherApi';

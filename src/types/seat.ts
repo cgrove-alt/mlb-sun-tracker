@@ -13,6 +13,7 @@ export interface Seat {
   sectionId: string; // Parent section
   row: string; // Row label (A, B, C... or 1, 2, 3...)
   seatNumber: string; // Seat number within row (1, 2, 3... or 101, 102...)
+  level?: 'field' | 'club' | 'lower' | 'upper'; // Stadium level/deck
 
   // Physical location
   position3D: Vector3D; // 3D coordinates in stadium space
@@ -47,6 +48,7 @@ export interface Seat {
   };
 
   // Pricing and availability
+  price?: 'value' | 'moderate' | 'premium' | 'luxury'; // Price tier
   priceRange?: {
     min: number;
     max: number;

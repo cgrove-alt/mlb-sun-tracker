@@ -5,7 +5,7 @@ import type { Seat, SeatRow } from '@/types/seat';
 
 interface SeatGridProps {
   rows: SeatRow[];
-  sunExposureData: Record<string, boolean> | null; // seatId -> inSun
+  sunExposureData: Record<string, number> | null; // seatId -> sun exposure percentage (0-100)
   onSeatClick?: (seat: Seat) => void;
   filterShaded?: boolean;
   filterSunny?: boolean;
@@ -32,10 +32,9 @@ export const SeatGrid: React.FC<SeatGridProps> = ({
     if (!sunExposureData) return new Map<string, number>();
 
     const map = new Map<string, number>();
-    Object.entries(sunExposureData).forEach(([seatId, inSun]) => {
-      // For now, simplified: inSun = 100%, not inSun = 0%
-      // Future: load full timeline data for accurate percentage
-      map.set(seatId, inSun ? 100 : 0);
+    Object.entries(sunExposureData).forEach(([seatId, percentage]) => {
+      // sunExposureData now contains actual percentages (0-100)
+      map.set(seatId, percentage);
     });
     return map;
   }, [sunExposureData]);

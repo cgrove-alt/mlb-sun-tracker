@@ -5,20 +5,13 @@ import * as path from 'path';
 import { MLB_STADIUMS } from '../../../../../src/data/stadiums';
 import SectionPageClient from './SectionPageClient';
 import { getStadiumSections } from '../../../../../src/data/stadiumSections';
+import { toDataStadiumId } from '../../../../../src/utils/ids';
 
 interface SectionPageProps {
   params: Promise<{
     stadiumId: string;
     sectionId: string;
   }>;
-}
-
-/**
- * Map stadium ID to seat data directory name
- * Most stadiums have matching IDs, except Dodgers
- */
-function getSeatDataStadiumId(stadiumId: string): string {
-  return stadiumId === 'dodgers' ? 'dodger-stadium' : stadiumId;
 }
 
 export async function generateStaticParams() {
@@ -43,7 +36,7 @@ export async function generateStaticParams() {
         console.log(`✓ Generated ${stadiumSectionsData.length} section pages for ${stadium.name}`);
       } else {
         // Fallback: check for JSON files to at least generate numeric pages
-        const seatDataStadiumId = getSeatDataStadiumId(stadium.id);
+        const seatDataStadiumId = toDataStadiumId(stadium.id);
         const jsonDir = path.join(
           process.cwd(),
           'public',
@@ -130,7 +123,7 @@ export default async function SectionPage({ params }: SectionPageProps) {
   }
 
   // Map stadium ID to seat data directory name
-  const seatDataStadiumId = getSeatDataStadiumId(stadiumId);
+  const seatDataStadiumId = toDataStadiumId(stadiumId);
 
   // Note: We don't verify section exists here to avoid Vercel tracing dependencies
   // Client component will handle 404s when fetch fails

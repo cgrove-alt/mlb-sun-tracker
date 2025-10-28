@@ -1,7 +1,7 @@
 import { Metadata } from 'next';
 import { Suspense } from 'react';
 import ComparePageClient from './ComparePageClient';
-import { LoadingSpinner } from '../../src/components/LoadingSpinner';
+import { LoadingSpinner } from '../../src/components/common/LoadingSpinner';
 
 export const metadata: Metadata = {
   title: 'Compare Seats | MLB Sun Tracker',

@@ -1,6 +1,6 @@
 import React from 'react';
-import { StadiumIcon, BaseballIcon, SearchIcon } from './Icons';
-import { LoadingSpinner } from './LoadingSpinner';
+import { StadiumIcon, BaseballIcon, SearchIcon } from './common/Icons';
+import { LoadingSpinner } from './common/LoadingSpinner';
 import './EmptyStates.css';
 
 interface EmptyStateProps {

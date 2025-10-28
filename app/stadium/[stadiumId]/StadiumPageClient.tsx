@@ -2,7 +2,7 @@
 
 import dynamic from 'next/dynamic';
 import { Suspense, useMemo, useState, useCallback, useEffect } from 'react';
-import { LoadingSpinner } from '../../../src/components/LoadingSpinner';
+import { LoadingSpinner } from '../../../src/components/common/LoadingSpinner';
 import { getSunPosition } from '../../../src/utils/sunCalculations';
 import { useSunCalculations } from '../../../src/hooks/useSunCalculations';
 import { usePullToRefresh } from '../../../src/hooks/usePullToRefresh';

@@ -1,7 +1,7 @@
 import React from 'react';
 import { useHapticFeedback } from '../hooks/useHapticFeedback';
 import { LanguageSelector, useTranslation } from '../i18n/i18nContext';
-import { SunIcon, CalendarIcon } from './Icons';
+import { SunIcon, CalendarIcon } from './common/Icons';
 import './Navigation.css';
 
 interface NavigationProps {

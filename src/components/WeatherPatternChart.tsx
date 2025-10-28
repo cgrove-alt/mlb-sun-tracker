@@ -1,7 +1,7 @@
 'use client';
 
 import React from 'react';
-import { SunIcon, CloudIcon, DropletIcon, WindIcon } from './Icons';
+import { SunIcon, CloudIcon, DropletIcon, WindIcon } from './common/Icons';
 import './WeatherPatternChart.css';
 
 interface MonthlyWeatherPattern {

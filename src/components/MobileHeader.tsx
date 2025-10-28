@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { MobileMenuPortal } from './MobileMenuPortal';
-import { BaseballIcon, StadiumIcon, SunIcon, SearchIcon, QuestionIcon, SettingsIcon } from './Icons';
+import { BaseballIcon, StadiumIcon, SunIcon, SearchIcon, QuestionIcon, SettingsIcon } from './common/Icons';
 import './MobileHeader.css';
 
 interface MobileHeaderProps {

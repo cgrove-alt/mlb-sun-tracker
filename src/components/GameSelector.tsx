@@ -11,7 +11,7 @@ import { useTranslation } from '../i18n/i18nContext';
 import { GameSelectorSkeleton, StadiumSelectorSkeleton } from './SkeletonScreens';
 import { useLoadingState } from '../hooks/useLoadingState';
 import { ModernButton } from './ModernButton';
-import { CalendarIcon, BaseballIcon, SunIcon } from './Icons';
+import { CalendarIcon, BaseballIcon, SunIcon } from './common/Icons';
 import './GameSelector.css';
 
 interface GameSelectorProps {

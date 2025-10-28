@@ -3,7 +3,7 @@ import Link from 'next/link';
 import { useIntersectionObserver } from '../hooks/useIntersectionObserver';
 import { useHapticFeedback } from '../hooks/useHapticFeedback';
 import type { StadiumSection } from '../data/stadiumSectionTypes';
-import { CloudIcon, PartlyCloudyIcon, SunIcon, FireIcon, FieldLevelIcon, LowerLevelIcon, ClubLevelIcon, UpperLevelIcon, CrownIcon } from './Icons';
+import { CloudIcon, PartlyCloudyIcon, SunIcon, FireIcon, FieldLevelIcon, LowerLevelIcon, ClubLevelIcon, UpperLevelIcon, CrownIcon } from './common/Icons';
 import { formatPercentageForScreenReader, announceToScreenReader } from '../utils/accessibility';
 
 interface LazySectionCardProps {

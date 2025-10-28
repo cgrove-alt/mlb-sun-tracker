@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import './EnhancedSunFilter.css';
-import { FilterIcon, CloseIcon, ChevronDownIcon } from './Icons';
+import { FilterIcon, CloseIcon, ChevronDownIcon } from './common/Icons';
 
 export interface SunFilterCriteria {
   sunPreference?: 'any' | 'sun' | 'shade';
