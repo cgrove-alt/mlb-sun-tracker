@@ -1,7 +1,7 @@
 // NFL Stadium Section Data
 // Stadium-specific section layouts for NFL venues
 
-import { StadiumSection } from './stadiumSections';
+import type { StadiumSection } from './stadiumSectionTypes';
 
 export interface NFLStadiumSections {
   stadiumId: string;

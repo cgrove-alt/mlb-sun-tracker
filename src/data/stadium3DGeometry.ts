@@ -2,7 +2,7 @@
 // Provides 3D coordinates and obstruction data for all stadium types
 
 import { Stadium } from './stadiums';
-import { StadiumSection } from './stadiumSections';
+import type { StadiumSection } from './stadiumSectionTypes';
 import { getStadiumObstructions } from './stadiumObstructions';
 import { Vector3D } from '../types/stadium-complete';
 import {

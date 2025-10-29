@@ -4,7 +4,7 @@ import * as fs from 'fs';
 import * as path from 'path';
 import { MLB_STADIUMS } from '../../../../../src/data/stadiums';
 import SectionPageClient from './SectionPageClient';
-import { getStadiumSections } from '../../../../../src/data/stadiumSections';
+import { getStadiumSectionIdsForSSG } from '../../../../../src/data/stadiumSectionsMinimal';
 import { toDataStadiumId } from '../../../../../src/utils/ids';
 
 interface SectionPageProps {
@@ -21,19 +21,19 @@ export async function generateStaticParams() {
 
   for (const stadium of MLB_STADIUMS) {
     try {
-      // Get sections from stadiumSections data (includes suffixes like 1DG, 48FD, etc.)
-      const stadiumSectionsData = getStadiumSections(stadium.id);
+      // Get section IDs from minimal data (only IDs, not full section objects)
+      const sectionIds = await getStadiumSectionIdsForSSG(stadium.id);
 
-      if (stadiumSectionsData && stadiumSectionsData.length > 0) {
+      if (sectionIds && sectionIds.length > 0) {
         // Add all sections for this stadium using their suffixed IDs
-        stadiumSectionsData.forEach((section) => {
+        sectionIds.forEach((sectionId) => {
           allParams.push({
             stadiumId: stadium.id,
-            sectionId: section.id, // This includes suffixes like 1DG, 48FD, 101LG
+            sectionId, // This includes suffixes like 1DG, 48FD, 101LG
           });
         });
 
-        console.log(`✓ Generated ${stadiumSectionsData.length} section pages for ${stadium.name}`);
+        console.log(`✓ Generated ${sectionIds.length} section pages for ${stadium.name}`);
       } else {
         // Fallback: check for JSON files to at least generate numeric pages
         const seatDataStadiumId = toDataStadiumId(stadium.id);

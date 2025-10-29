@@ -36,6 +36,26 @@ export const SeatRecommendationsSection: React.FC<SeatRecommendationsSectionProp
   const [showPreferences, setShowPreferences] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
   const [weather, setWeather] = useState<WeatherData | null>(null);
+  const [stadiumData, setStadiumData] = useState<{ sections: any[], obstructions: any[] } | null>(null);
+
+  // Fetch stadium data asynchronously
+  useEffect(() => {
+    const loadStadiumData = async () => {
+      try {
+        const data = await getStadiumCompleteData(stadiumId);
+        if (data) {
+          setStadiumData({
+            sections: data.sections || [],
+            obstructions: data.obstructions || []
+          });
+        }
+      } catch (error) {
+        console.error('Failed to load stadium data:', error);
+        setStadiumData({ sections: [], obstructions: [] });
+      }
+    };
+    loadStadiumData();
+  }, [stadiumId]);
 
   // Fetch weather data for game
   useEffect(() => {
@@ -77,7 +97,7 @@ export const SeatRecommendationsSection: React.FC<SeatRecommendationsSectionProp
   }, [stadiumId, gameDate, gameTime]);
 
   const recommendations = useMemo(() => {
-    if (!sections || sections.length === 0 || !weather) return [];
+    if (!sections || sections.length === 0 || !weather || !stadiumData) return [];
 
     try {
       setIsLoading(true);
@@ -86,14 +106,11 @@ export const SeatRecommendationsSection: React.FC<SeatRecommendationsSectionProp
       const stadium = MLB_STADIUMS.find(s => s.id === stadiumId);
       if (!stadium) return [];
 
-      // Get complete stadium data with sections and obstructions
-      const { sections: detailedSections, obstructions } = getStadiumCompleteData(stadiumId, 'MLB');
-
-      // Create recommendation context
+      // Create recommendation context with loaded stadium data
       const context: RecommendationContext = {
         stadium,
-        sections: detailedSections,
-        obstructions,
+        sections: stadiumData.sections,
+        obstructions: stadiumData.obstructions,
         gameDate,
         gameTime,
         weather
@@ -110,7 +127,7 @@ export const SeatRecommendationsSection: React.FC<SeatRecommendationsSectionProp
         score: rec.score,
         reasoning: rec.reasoning.join(' '),
         sunExposure: rec.estimatedSunExposure,
-        level: detailedSections.find(s => s.id === rec.sectionId)?.level || 'lower',
+        level: stadiumData.sections.find(s => s.id === rec.sectionId)?.level || 'lower',
         priceRange: rec.priceCategory,
         pros: rec.pros,
         cons: rec.cons,
@@ -122,7 +139,7 @@ export const SeatRecommendationsSection: React.FC<SeatRecommendationsSectionProp
     } finally {
       setIsLoading(false);
     }
-  }, [sections, preferences, gameTime, gameDate, stadiumId, weather]);
+  }, [sections, preferences, gameTime, gameDate, stadiumId, weather, stadiumData]);
 
   const handlePreferencesChange = useCallback((newPreferences: UserPreferences) => {
     setPreferences(newPreferences);

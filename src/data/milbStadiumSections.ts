@@ -1,7 +1,7 @@
 // MiLB Stadium Section Data
 // Stadium-specific section layouts for Minor League Baseball venues
 
-import { StadiumSection } from './stadiumSections';
+import type { StadiumSection } from './stadiumSectionTypes';
 
 export interface MiLBStadiumSections {
   stadiumId: string;
