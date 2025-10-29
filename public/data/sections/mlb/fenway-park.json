@@ -1,0 +1,5172 @@
+[
+  {
+    "id": "FB-14",
+    "name": "Field Box 14",
+    "level": "field",
+    "baseAngle": 102,
+    "angleSpan": 8,
+    "rows": [
+      {
+        "rowNumber": "A",
+        "seats": 20,
+        "elevation": 2,
+        "depth": 0,
+        "covered": false
+      },
+      {
+        "rowNumber": "B",
+        "seats": 20,
+        "elevation": 2.4341204441673256,
+        "depth": 2.5,
+        "covered": false
+      },
+      {
+        "rowNumber": "C",
+        "seats": 20,
+        "elevation": 2.8682408883346517,
+        "depth": 5,
+        "covered": false
+      },
+      {
+        "rowNumber": "D",
+        "seats": 20,
+        "elevation": 3.3023613325019774,
+        "depth": 7.5,
+        "covered": false
+      },
+      {
+        "rowNumber": "E",
+        "seats": 19,
+        "elevation": 3.7364817766693035,
+        "depth": 10,
+        "covered": false
+      },
+      {
+        "rowNumber": "F",
+        "seats": 19,
+        "elevation": 4.17060222083663,
+        "depth": 12.5,
+        "covered": false
+      },
+      {
+        "rowNumber": "G",
+        "seats": 19,
+        "elevation": 4.604722665003955,
+        "depth": 15,
+        "covered": false
+      },
+      {
+        "rowNumber": "H",
+        "seats": 18,
+        "elevation": 5.038843109171281,
+        "depth": 17.5,
+        "covered": false
+      },
+      {
+        "rowNumber": "J",
+        "seats": 18,
+        "elevation": 5.472963553338607,
+        "depth": 20,
+        "covered": false
+      },
+      {
+        "rowNumber": "K",
+        "seats": 18,
+        "elevation": 5.907083997505932,
+        "depth": 22.5,
+        "covered": false
+      },
+      {
+        "rowNumber": "L",
+        "seats": 17,
+        "elevation": 6.341204441673258,
+        "depth": 25,
+        "covered": false
+      },
+      {
+        "rowNumber": "M",
+        "seats": 17,
+        "elevation": 6.775324885840584,
+        "depth": 27.5,
+        "covered": false
+      },
+      {
+        "rowNumber": "N",
+        "seats": 17,
+        "elevation": 7.2094453300079095,
+        "depth": 30,
+        "covered": false
+      },
+      {
+        "rowNumber": "P",
+        "seats": 17,
+        "elevation": 7.643565774175236,
+        "depth": 32.5,
+        "covered": false
+      }
+    ],
+    "vertices3D": [
+      {
+        "x": -12,
+        "y": 48,
+        "z": 2
+      },
+      {
+        "x": -4,
+        "y": 48,
+        "z": 2
+      },
+      {
+        "x": -4,
+        "y": 68,
+        "z": 8
+      },
+      {
+        "x": -12,
+        "y": 68,
+        "z": 8
+      }
+    ],
+    "covered": false,
+    "distance": 50,
+    "height": 2,
+    "rake": 10
+  },
+  {
+    "id": "FB-15",
+    "name": "Field Box 15",
+    "level": "field",
+    "baseAngle": 110,
+    "angleSpan": 8,
+    "rows": [
+      {
+        "rowNumber": "A",
+        "seats": 20,
+        "elevation": 2,
+        "depth": 0,
+        "covered": false
+      },
+      {
+        "rowNumber": "B",
+        "seats": 20,
+        "elevation": 2.4341204441673256,
+        "depth": 2.5,
+        "covered": false
+      },
+      {
+        "rowNumber": "C",
+        "seats": 20,
+        "elevation": 2.8682408883346517,
+        "depth": 5,
+        "covered": false
+      },
+      {
+        "rowNumber": "D",
+        "seats": 20,
+        "elevation": 3.3023613325019774,
+        "depth": 7.5,
+        "covered": false
+      },
+      {
+        "rowNumber": "E",
+        "seats": 19,
+        "elevation": 3.7364817766693035,
+        "depth": 10,
+        "covered": false
+      },
+      {
+        "rowNumber": "F",
+        "seats": 19,
+        "elevation": 4.17060222083663,
+        "depth": 12.5,
+        "covered": false
+      },
+      {
+        "rowNumber": "G",
+        "seats": 19,
+        "elevation": 4.604722665003955,
+        "depth": 15,
+        "covered": false
+      },
+      {
+        "rowNumber": "H",
+        "seats": 18,
+        "elevation": 5.038843109171281,
+        "depth": 17.5,
+        "covered": false
+      },
+      {
+        "rowNumber": "J",
+        "seats": 18,
+        "elevation": 5.472963553338607,
+        "depth": 20,
+        "covered": false
+      },
+      {
+        "rowNumber": "K",
+        "seats": 18,
+        "elevation": 5.907083997505932,
+        "depth": 22.5,
+        "covered": false
+      },
+      {
+        "rowNumber": "L",
+        "seats": 17,
+        "elevation": 6.341204441673258,
+        "depth": 25,
+        "covered": false
+      },
+      {
+        "rowNumber": "M",
+        "seats": 17,
+        "elevation": 6.775324885840584,
+        "depth": 27.5,
+        "covered": false
+      },
+      {
+        "rowNumber": "N",
+        "seats": 17,
+        "elevation": 7.2094453300079095,
+        "depth": 30,
+        "covered": false
+      },
+      {
+        "rowNumber": "P",
+        "seats": 17,
+        "elevation": 7.643565774175236,
+        "depth": 32.5,
+        "covered": false
+      }
+    ],
+    "vertices3D": [
+      {
+        "x": -4,
+        "y": 48,
+        "z": 2
+      },
+      {
+        "x": 4,
+        "y": 48,
+        "z": 2
+      },
+      {
+        "x": 4,
+        "y": 68,
+        "z": 8
+      },
+      {
+        "x": -4,
+        "y": 68,
+        "z": 8
+      }
+    ],
+    "covered": false,
+    "distance": 50,
+    "height": 2,
+    "rake": 10
+  },
+  {
+    "id": "FB-16",
+    "name": "Field Box 16",
+    "level": "field",
+    "baseAngle": 118,
+    "angleSpan": 8,
+    "rows": [
+      {
+        "rowNumber": "A",
+        "seats": 20,
+        "elevation": 2,
+        "depth": 0,
+        "covered": false
+      },
+      {
+        "rowNumber": "B",
+        "seats": 20,
+        "elevation": 2.4341204441673256,
+        "depth": 2.5,
+        "covered": false
+      },
+      {
+        "rowNumber": "C",
+        "seats": 20,
+        "elevation": 2.8682408883346517,
+        "depth": 5,
+        "covered": false
+      },
+      {
+        "rowNumber": "D",
+        "seats": 20,
+        "elevation": 3.3023613325019774,
+        "depth": 7.5,
+        "covered": false
+      },
+      {
+        "rowNumber": "E",
+        "seats": 19,
+        "elevation": 3.7364817766693035,
+        "depth": 10,
+        "covered": false
+      },
+      {
+        "rowNumber": "F",
+        "seats": 19,
+        "elevation": 4.17060222083663,
+        "depth": 12.5,
+        "covered": false
+      },
+      {
+        "rowNumber": "G",
+        "seats": 19,
+        "elevation": 4.604722665003955,
+        "depth": 15,
+        "covered": false
+      },
+      {
+        "rowNumber": "H",
+        "seats": 18,
+        "elevation": 5.038843109171281,
+        "depth": 17.5,
+        "covered": false
+      },
+      {
+        "rowNumber": "J",
+        "seats": 18,
+        "elevation": 5.472963553338607,
+        "depth": 20,
+        "covered": false
+      },
+      {
+        "rowNumber": "K",
+        "seats": 18,
+        "elevation": 5.907083997505932,
+        "depth": 22.5,
+        "covered": false
+      },
+      {
+        "rowNumber": "L",
+        "seats": 17,
+        "elevation": 6.341204441673258,
+        "depth": 25,
+        "covered": false
+      },
+      {
+        "rowNumber": "M",
+        "seats": 17,
+        "elevation": 6.775324885840584,
+        "depth": 27.5,
+        "covered": false
+      },
+      {
+        "rowNumber": "N",
+        "seats": 17,
+        "elevation": 7.2094453300079095,
+        "depth": 30,
+        "covered": false
+      },
+      {
+        "rowNumber": "P",
+        "seats": 17,
+        "elevation": 7.643565774175236,
+        "depth": 32.5,
+        "covered": false
+      }
+    ],
+    "vertices3D": [
+      {
+        "x": 4,
+        "y": 48,
+        "z": 2
+      },
+      {
+        "x": 12,
+        "y": 48,
+        "z": 2
+      },
+      {
+        "x": 12,
+        "y": 68,
+        "z": 8
+      },
+      {
+        "x": 4,
+        "y": 68,
+        "z": 8
+      }
+    ],
+    "covered": false,
+    "distance": 50,
+    "height": 2,
+    "rake": 10
+  },
+  {
+    "id": "DB-39",
+    "name": "Dugout Box 39",
+    "level": "field",
+    "baseAngle": 126,
+    "angleSpan": 9,
+    "rows": [
+      {
+        "rowNumber": "A",
+        "seats": 18,
+        "elevation": 2,
+        "depth": 0,
+        "covered": false
+      },
+      {
+        "rowNumber": "B",
+        "seats": 18,
+        "elevation": 2.477022488441362,
+        "depth": 2.5,
+        "covered": false
+      },
+      {
+        "rowNumber": "C",
+        "seats": 18,
+        "elevation": 2.954044976882724,
+        "depth": 5,
+        "covered": false
+      },
+      {
+        "rowNumber": "D",
+        "seats": 18,
+        "elevation": 3.431067465324086,
+        "depth": 7.5,
+        "covered": false
+      },
+      {
+        "rowNumber": "E",
+        "seats": 17,
+        "elevation": 3.9080899537654483,
+        "depth": 10,
+        "covered": false
+      },
+      {
+        "rowNumber": "F",
+        "seats": 17,
+        "elevation": 4.38511244220681,
+        "depth": 12.5,
+        "covered": false
+      },
+      {
+        "rowNumber": "G",
+        "seats": 17,
+        "elevation": 4.862134930648172,
+        "depth": 15,
+        "covered": false
+      },
+      {
+        "rowNumber": "H",
+        "seats": 16,
+        "elevation": 5.339157419089535,
+        "depth": 17.5,
+        "covered": false
+      },
+      {
+        "rowNumber": "J",
+        "seats": 16,
+        "elevation": 5.816179907530897,
+        "depth": 20,
+        "covered": false
+      },
+      {
+        "rowNumber": "K",
+        "seats": 16,
+        "elevation": 6.2932023959722585,
+        "depth": 22.5,
+        "covered": false
+      },
+      {
+        "rowNumber": "L",
+        "seats": 15,
+        "elevation": 6.77022488441362,
+        "depth": 25,
+        "covered": false
+      },
+      {
+        "rowNumber": "M",
+        "seats": 15,
+        "elevation": 7.247247372854982,
+        "depth": 27.5,
+        "covered": false
+      },
+      {
+        "rowNumber": "N",
+        "seats": 15,
+        "elevation": 7.724269861296344,
+        "depth": 30,
+        "covered": false
+      },
+      {
+        "rowNumber": "P",
+        "seats": 15,
+        "elevation": 8.201292349737706,
+        "depth": 32.5,
+        "covered": false
+      },
+      {
+        "rowNumber": "R",
+        "seats": 14,
+        "elevation": 8.67831483817907,
+        "depth": 35,
+        "covered": false
+      }
+    ],
+    "vertices3D": [
+      {
+        "x": 12,
+        "y": 50,
+        "z": 2
+      },
+      {
+        "x": 21,
+        "y": 53,
+        "z": 2
+      },
+      {
+        "x": 24,
+        "y": 74,
+        "z": 10
+      },
+      {
+        "x": 14,
+        "y": 70,
+        "z": 10
+      }
+    ],
+    "covered": false,
+    "distance": 55,
+    "height": 2,
+    "rake": 11
+  },
+  {
+    "id": "DB-40",
+    "name": "Dugout Box 40",
+    "level": "field",
+    "baseAngle": 135,
+    "angleSpan": 9,
+    "rows": [
+      {
+        "rowNumber": "A",
+        "seats": 18,
+        "elevation": 2,
+        "depth": 0,
+        "covered": false
+      },
+      {
+        "rowNumber": "B",
+        "seats": 18,
+        "elevation": 2.477022488441362,
+        "depth": 2.5,
+        "covered": false
+      },
+      {
+        "rowNumber": "C",
+        "seats": 18,
+        "elevation": 2.954044976882724,
+        "depth": 5,
+        "covered": false
+      },
+      {
+        "rowNumber": "D",
+        "seats": 18,
+        "elevation": 3.431067465324086,
+        "depth": 7.5,
+        "covered": false
+      },
+      {
+        "rowNumber": "E",
+        "seats": 17,
+        "elevation": 3.9080899537654483,
+        "depth": 10,
+        "covered": false
+      },
+      {
+        "rowNumber": "F",
+        "seats": 17,
+        "elevation": 4.38511244220681,
+        "depth": 12.5,
+        "covered": false
+      },
+      {
+        "rowNumber": "G",
+        "seats": 17,
+        "elevation": 4.862134930648172,
+        "depth": 15,
+        "covered": false
+      },
+      {
+        "rowNumber": "H",
+        "seats": 16,
+        "elevation": 5.339157419089535,
+        "depth": 17.5,
+        "covered": false
+      },
+      {
+        "rowNumber": "J",
+        "seats": 16,
+        "elevation": 5.816179907530897,
+        "depth": 20,
+        "covered": false
+      },
+      {
+        "rowNumber": "K",
+        "seats": 16,
+        "elevation": 6.2932023959722585,
+        "depth": 22.5,
+        "covered": false
+      },
+      {
+        "rowNumber": "L",
+        "seats": 15,
+        "elevation": 6.77022488441362,
+        "depth": 25,
+        "covered": false
+      },
+      {
+        "rowNumber": "M",
+        "seats": 15,
+        "elevation": 7.247247372854982,
+        "depth": 27.5,
+        "covered": false
+      },
+      {
+        "rowNumber": "N",
+        "seats": 15,
+        "elevation": 7.724269861296344,
+        "depth": 30,
+        "covered": false
+      },
+      {
+        "rowNumber": "P",
+        "seats": 15,
+        "elevation": 8.201292349737706,
+        "depth": 32.5,
+        "covered": false
+      },
+      {
+        "rowNumber": "R",
+        "seats": 14,
+        "elevation": 8.67831483817907,
+        "depth": 35,
+        "covered": false
+      }
+    ],
+    "vertices3D": [
+      {
+        "x": 21,
+        "y": 53,
+        "z": 2
+      },
+      {
+        "x": 30,
+        "y": 58,
+        "z": 2
+      },
+      {
+        "x": 34,
+        "y": 79,
+        "z": 10
+      },
+      {
+        "x": 24,
+        "y": 74,
+        "z": 10
+      }
+    ],
+    "covered": false,
+    "distance": 60,
+    "height": 2,
+    "rake": 11
+  },
+  {
+    "id": "DB-13",
+    "name": "Dugout Box 13",
+    "level": "field",
+    "baseAngle": 94,
+    "angleSpan": 9,
+    "rows": [
+      {
+        "rowNumber": "A",
+        "seats": 18,
+        "elevation": 2,
+        "depth": 0,
+        "covered": false
+      },
+      {
+        "rowNumber": "B",
+        "seats": 18,
+        "elevation": 2.477022488441362,
+        "depth": 2.5,
+        "covered": false
+      },
+      {
+        "rowNumber": "C",
+        "seats": 18,
+        "elevation": 2.954044976882724,
+        "depth": 5,
+        "covered": false
+      },
+      {
+        "rowNumber": "D",
+        "seats": 18,
+        "elevation": 3.431067465324086,
+        "depth": 7.5,
+        "covered": false
+      },
+      {
+        "rowNumber": "E",
+        "seats": 17,
+        "elevation": 3.9080899537654483,
+        "depth": 10,
+        "covered": false
+      },
+      {
+        "rowNumber": "F",
+        "seats": 17,
+        "elevation": 4.38511244220681,
+        "depth": 12.5,
+        "covered": false
+      },
+      {
+        "rowNumber": "G",
+        "seats": 17,
+        "elevation": 4.862134930648172,
+        "depth": 15,
+        "covered": false
+      },
+      {
+        "rowNumber": "H",
+        "seats": 16,
+        "elevation": 5.339157419089535,
+        "depth": 17.5,
+        "covered": false
+      },
+      {
+        "rowNumber": "J",
+        "seats": 16,
+        "elevation": 5.816179907530897,
+        "depth": 20,
+        "covered": false
+      },
+      {
+        "rowNumber": "K",
+        "seats": 16,
+        "elevation": 6.2932023959722585,
+        "depth": 22.5,
+        "covered": false
+      },
+      {
+        "rowNumber": "L",
+        "seats": 15,
+        "elevation": 6.77022488441362,
+        "depth": 25,
+        "covered": false
+      },
+      {
+        "rowNumber": "M",
+        "seats": 15,
+        "elevation": 7.247247372854982,
+        "depth": 27.5,
+        "covered": false
+      },
+      {
+        "rowNumber": "N",
+        "seats": 15,
+        "elevation": 7.724269861296344,
+        "depth": 30,
+        "covered": false
+      },
+      {
+        "rowNumber": "P",
+        "seats": 15,
+        "elevation": 8.201292349737706,
+        "depth": 32.5,
+        "covered": false
+      },
+      {
+        "rowNumber": "R",
+        "seats": 14,
+        "elevation": 8.67831483817907,
+        "depth": 35,
+        "covered": false
+      }
+    ],
+    "vertices3D": [
+      {
+        "x": -12,
+        "y": 50,
+        "z": 2
+      },
+      {
+        "x": -21,
+        "y": 53,
+        "z": 2
+      },
+      {
+        "x": -24,
+        "y": 74,
+        "z": 10
+      },
+      {
+        "x": -14,
+        "y": 70,
+        "z": 10
+      }
+    ],
+    "covered": false,
+    "distance": 55,
+    "height": 2,
+    "rake": 11
+  },
+  {
+    "id": "DB-12",
+    "name": "Dugout Box 12",
+    "level": "field",
+    "baseAngle": 85,
+    "angleSpan": 9,
+    "rows": [
+      {
+        "rowNumber": "A",
+        "seats": 18,
+        "elevation": 2,
+        "depth": 0,
+        "covered": false
+      },
+      {
+        "rowNumber": "B",
+        "seats": 18,
+        "elevation": 2.477022488441362,
+        "depth": 2.5,
+        "covered": false
+      },
+      {
+        "rowNumber": "C",
+        "seats": 18,
+        "elevation": 2.954044976882724,
+        "depth": 5,
+        "covered": false
+      },
+      {
+        "rowNumber": "D",
+        "seats": 18,
+        "elevation": 3.431067465324086,
+        "depth": 7.5,
+        "covered": false
+      },
+      {
+        "rowNumber": "E",
+        "seats": 17,
+        "elevation": 3.9080899537654483,
+        "depth": 10,
+        "covered": false
+      },
+      {
+        "rowNumber": "F",
+        "seats": 17,
+        "elevation": 4.38511244220681,
+        "depth": 12.5,
+        "covered": false
+      },
+      {
+        "rowNumber": "G",
+        "seats": 17,
+        "elevation": 4.862134930648172,
+        "depth": 15,
+        "covered": false
+      },
+      {
+        "rowNumber": "H",
+        "seats": 16,
+        "elevation": 5.339157419089535,
+        "depth": 17.5,
+        "covered": false
+      },
+      {
+        "rowNumber": "J",
+        "seats": 16,
+        "elevation": 5.816179907530897,
+        "depth": 20,
+        "covered": false
+      },
+      {
+        "rowNumber": "K",
+        "seats": 16,
+        "elevation": 6.2932023959722585,
+        "depth": 22.5,
+        "covered": false
+      },
+      {
+        "rowNumber": "L",
+        "seats": 15,
+        "elevation": 6.77022488441362,
+        "depth": 25,
+        "covered": false
+      },
+      {
+        "rowNumber": "M",
+        "seats": 15,
+        "elevation": 7.247247372854982,
+        "depth": 27.5,
+        "covered": false
+      },
+      {
+        "rowNumber": "N",
+        "seats": 15,
+        "elevation": 7.724269861296344,
+        "depth": 30,
+        "covered": false
+      },
+      {
+        "rowNumber": "P",
+        "seats": 15,
+        "elevation": 8.201292349737706,
+        "depth": 32.5,
+        "covered": false
+      },
+      {
+        "rowNumber": "R",
+        "seats": 14,
+        "elevation": 8.67831483817907,
+        "depth": 35,
+        "covered": false
+      }
+    ],
+    "vertices3D": [
+      {
+        "x": -21,
+        "y": 53,
+        "z": 2
+      },
+      {
+        "x": -30,
+        "y": 58,
+        "z": 2
+      },
+      {
+        "x": -34,
+        "y": 79,
+        "z": 10
+      },
+      {
+        "x": -24,
+        "y": 74,
+        "z": 10
+      }
+    ],
+    "covered": false,
+    "distance": 60,
+    "height": 2,
+    "rake": 11
+  },
+  {
+    "id": "LB-101",
+    "name": "Loge Box 101",
+    "level": "lower",
+    "baseAngle": 94,
+    "angleSpan": 9,
+    "rows": [
+      {
+        "rowNumber": "A",
+        "seats": 20,
+        "elevation": 12,
+        "depth": 0,
+        "covered": false
+      },
+      {
+        "rowNumber": "B",
+        "seats": 20,
+        "elevation": 12.584872741294049,
+        "depth": 2.6,
+        "covered": false
+      },
+      {
+        "rowNumber": "C",
+        "seats": 20,
+        "elevation": 13.169745482588098,
+        "depth": 5.2,
+        "covered": false
+      },
+      {
+        "rowNumber": "D",
+        "seats": 20,
+        "elevation": 13.754618223882147,
+        "depth": 7.800000000000001,
+        "covered": false
+      },
+      {
+        "rowNumber": "E",
+        "seats": 19,
+        "elevation": 14.339490965176196,
+        "depth": 10.4,
+        "covered": false
+      },
+      {
+        "rowNumber": "F",
+        "seats": 19,
+        "elevation": 14.924363706470245,
+        "depth": 13,
+        "covered": false
+      },
+      {
+        "rowNumber": "G",
+        "seats": 19,
+        "elevation": 15.509236447764295,
+        "depth": 15.600000000000001,
+        "covered": false
+      },
+      {
+        "rowNumber": "H",
+        "seats": 18,
+        "elevation": 16.094109189058344,
+        "depth": 18.2,
+        "covered": false
+      },
+      {
+        "rowNumber": "J",
+        "seats": 18,
+        "elevation": 16.678981930352393,
+        "depth": 20.8,
+        "covered": false
+      },
+      {
+        "rowNumber": "K",
+        "seats": 18,
+        "elevation": 17.263854671646442,
+        "depth": 23.400000000000002,
+        "covered": false
+      },
+      {
+        "rowNumber": "L",
+        "seats": 17,
+        "elevation": 17.84872741294049,
+        "depth": 26,
+        "covered": false
+      },
+      {
+        "rowNumber": "M",
+        "seats": 17,
+        "elevation": 18.43360015423454,
+        "depth": 28.6,
+        "covered": false
+      }
+    ],
+    "vertices3D": [
+      {
+        "x": -15,
+        "y": 68,
+        "z": 12
+      },
+      {
+        "x": -24,
+        "y": 72,
+        "z": 12
+      },
+      {
+        "x": -27,
+        "y": 96,
+        "z": 22
+      },
+      {
+        "x": -17,
+        "y": 92,
+        "z": 22
+      }
+    ],
+    "covered": false,
+    "distance": 75,
+    "height": 12,
+    "rake": 13
+  },
+  {
+    "id": "LB-102",
+    "name": "Loge Box 102",
+    "level": "lower",
+    "baseAngle": 103,
+    "angleSpan": 9,
+    "rows": [
+      {
+        "rowNumber": "A",
+        "seats": 20,
+        "elevation": 12,
+        "depth": 0,
+        "covered": false
+      },
+      {
+        "rowNumber": "B",
+        "seats": 20,
+        "elevation": 12.584872741294049,
+        "depth": 2.6,
+        "covered": false
+      },
+      {
+        "rowNumber": "C",
+        "seats": 20,
+        "elevation": 13.169745482588098,
+        "depth": 5.2,
+        "covered": false
+      },
+      {
+        "rowNumber": "D",
+        "seats": 20,
+        "elevation": 13.754618223882147,
+        "depth": 7.800000000000001,
+        "covered": false
+      },
+      {
+        "rowNumber": "E",
+        "seats": 19,
+        "elevation": 14.339490965176196,
+        "depth": 10.4,
+        "covered": false
+      },
+      {
+        "rowNumber": "F",
+        "seats": 19,
+        "elevation": 14.924363706470245,
+        "depth": 13,
+        "covered": false
+      },
+      {
+        "rowNumber": "G",
+        "seats": 19,
+        "elevation": 15.509236447764295,
+        "depth": 15.600000000000001,
+        "covered": false
+      },
+      {
+        "rowNumber": "H",
+        "seats": 18,
+        "elevation": 16.094109189058344,
+        "depth": 18.2,
+        "covered": false
+      },
+      {
+        "rowNumber": "J",
+        "seats": 18,
+        "elevation": 16.678981930352393,
+        "depth": 20.8,
+        "covered": false
+      },
+      {
+        "rowNumber": "K",
+        "seats": 18,
+        "elevation": 17.263854671646442,
+        "depth": 23.400000000000002,
+        "covered": false
+      },
+      {
+        "rowNumber": "L",
+        "seats": 17,
+        "elevation": 17.84872741294049,
+        "depth": 26,
+        "covered": false
+      },
+      {
+        "rowNumber": "M",
+        "seats": 17,
+        "elevation": 18.43360015423454,
+        "depth": 28.6,
+        "covered": false
+      }
+    ],
+    "vertices3D": [
+      {
+        "x": -6,
+        "y": 68,
+        "z": 12
+      },
+      {
+        "x": -15,
+        "y": 68,
+        "z": 12
+      },
+      {
+        "x": -17,
+        "y": 92,
+        "z": 22
+      },
+      {
+        "x": -7,
+        "y": 92,
+        "z": 22
+      }
+    ],
+    "covered": false,
+    "distance": 73,
+    "height": 12,
+    "rake": 13
+  },
+  {
+    "id": "LB-103",
+    "name": "Loge Box 103",
+    "level": "lower",
+    "baseAngle": 112,
+    "angleSpan": 9,
+    "rows": [
+      {
+        "rowNumber": "A",
+        "seats": 20,
+        "elevation": 12,
+        "depth": 0,
+        "covered": false
+      },
+      {
+        "rowNumber": "B",
+        "seats": 20,
+        "elevation": 12.584872741294049,
+        "depth": 2.6,
+        "covered": false
+      },
+      {
+        "rowNumber": "C",
+        "seats": 20,
+        "elevation": 13.169745482588098,
+        "depth": 5.2,
+        "covered": false
+      },
+      {
+        "rowNumber": "D",
+        "seats": 20,
+        "elevation": 13.754618223882147,
+        "depth": 7.800000000000001,
+        "covered": false
+      },
+      {
+        "rowNumber": "E",
+        "seats": 19,
+        "elevation": 14.339490965176196,
+        "depth": 10.4,
+        "covered": false
+      },
+      {
+        "rowNumber": "F",
+        "seats": 19,
+        "elevation": 14.924363706470245,
+        "depth": 13,
+        "covered": false
+      },
+      {
+        "rowNumber": "G",
+        "seats": 19,
+        "elevation": 15.509236447764295,
+        "depth": 15.600000000000001,
+        "covered": false
+      },
+      {
+        "rowNumber": "H",
+        "seats": 18,
+        "elevation": 16.094109189058344,
+        "depth": 18.2,
+        "covered": false
+      },
+      {
+        "rowNumber": "J",
+        "seats": 18,
+        "elevation": 16.678981930352393,
+        "depth": 20.8,
+        "covered": false
+      },
+      {
+        "rowNumber": "K",
+        "seats": 18,
+        "elevation": 17.263854671646442,
+        "depth": 23.400000000000002,
+        "covered": false
+      },
+      {
+        "rowNumber": "L",
+        "seats": 17,
+        "elevation": 17.84872741294049,
+        "depth": 26,
+        "covered": false
+      },
+      {
+        "rowNumber": "M",
+        "seats": 17,
+        "elevation": 18.43360015423454,
+        "depth": 28.6,
+        "covered": false
+      }
+    ],
+    "vertices3D": [
+      {
+        "x": 3,
+        "y": 68,
+        "z": 12
+      },
+      {
+        "x": -6,
+        "y": 68,
+        "z": 12
+      },
+      {
+        "x": -7,
+        "y": 92,
+        "z": 22
+      },
+      {
+        "x": 3,
+        "y": 92,
+        "z": 22
+      }
+    ],
+    "covered": false,
+    "distance": 73,
+    "height": 12,
+    "rake": 13
+  },
+  {
+    "id": "LB-104",
+    "name": "Loge Box 104",
+    "level": "lower",
+    "baseAngle": 121,
+    "angleSpan": 9,
+    "rows": [
+      {
+        "rowNumber": "A",
+        "seats": 20,
+        "elevation": 12,
+        "depth": 0,
+        "covered": false
+      },
+      {
+        "rowNumber": "B",
+        "seats": 20,
+        "elevation": 12.584872741294049,
+        "depth": 2.6,
+        "covered": false
+      },
+      {
+        "rowNumber": "C",
+        "seats": 20,
+        "elevation": 13.169745482588098,
+        "depth": 5.2,
+        "covered": false
+      },
+      {
+        "rowNumber": "D",
+        "seats": 20,
+        "elevation": 13.754618223882147,
+        "depth": 7.800000000000001,
+        "covered": false
+      },
+      {
+        "rowNumber": "E",
+        "seats": 19,
+        "elevation": 14.339490965176196,
+        "depth": 10.4,
+        "covered": false
+      },
+      {
+        "rowNumber": "F",
+        "seats": 19,
+        "elevation": 14.924363706470245,
+        "depth": 13,
+        "covered": false
+      },
+      {
+        "rowNumber": "G",
+        "seats": 19,
+        "elevation": 15.509236447764295,
+        "depth": 15.600000000000001,
+        "covered": false
+      },
+      {
+        "rowNumber": "H",
+        "seats": 18,
+        "elevation": 16.094109189058344,
+        "depth": 18.2,
+        "covered": false
+      },
+      {
+        "rowNumber": "J",
+        "seats": 18,
+        "elevation": 16.678981930352393,
+        "depth": 20.8,
+        "covered": false
+      },
+      {
+        "rowNumber": "K",
+        "seats": 18,
+        "elevation": 17.263854671646442,
+        "depth": 23.400000000000002,
+        "covered": false
+      },
+      {
+        "rowNumber": "L",
+        "seats": 17,
+        "elevation": 17.84872741294049,
+        "depth": 26,
+        "covered": false
+      },
+      {
+        "rowNumber": "M",
+        "seats": 17,
+        "elevation": 18.43360015423454,
+        "depth": 28.6,
+        "covered": false
+      }
+    ],
+    "vertices3D": [
+      {
+        "x": 12,
+        "y": 70,
+        "z": 12
+      },
+      {
+        "x": 3,
+        "y": 68,
+        "z": 12
+      },
+      {
+        "x": 3,
+        "y": 92,
+        "z": 22
+      },
+      {
+        "x": 13,
+        "y": 94,
+        "z": 22
+      }
+    ],
+    "covered": false,
+    "distance": 75,
+    "height": 12,
+    "rake": 13
+  },
+  {
+    "id": "GM-1",
+    "name": "Green Monster 1",
+    "level": "field",
+    "baseAngle": 20,
+    "angleSpan": 8,
+    "rows": [
+      {
+        "rowNumber": "A",
+        "seats": 12,
+        "elevation": 37,
+        "depth": 0,
+        "covered": false
+      },
+      {
+        "rowNumber": "B",
+        "seats": 12,
+        "elevation": 37.27834620192013,
+        "depth": 2,
+        "covered": false
+      },
+      {
+        "rowNumber": "C",
+        "seats": 12,
+        "elevation": 37.55669240384026,
+        "depth": 4,
+        "covered": false
+      }
+    ],
+    "vertices3D": [
+      {
+        "x": -90,
+        "y": 150,
+        "z": 37
+      },
+      {
+        "x": -82,
+        "y": 155,
+        "z": 37
+      },
+      {
+        "x": -82,
+        "y": 161,
+        "z": 39
+      },
+      {
+        "x": -90,
+        "y": 156,
+        "z": 39
+      }
+    ],
+    "covered": false,
+    "distance": 310,
+    "height": 37,
+    "rake": 8
+  },
+  {
+    "id": "GM-2",
+    "name": "Green Monster 2",
+    "level": "field",
+    "baseAngle": 28,
+    "angleSpan": 8,
+    "rows": [
+      {
+        "rowNumber": "A",
+        "seats": 12,
+        "elevation": 37,
+        "depth": 0,
+        "covered": false
+      },
+      {
+        "rowNumber": "B",
+        "seats": 12,
+        "elevation": 37.27834620192013,
+        "depth": 2,
+        "covered": false
+      },
+      {
+        "rowNumber": "C",
+        "seats": 12,
+        "elevation": 37.55669240384026,
+        "depth": 4,
+        "covered": false
+      }
+    ],
+    "vertices3D": [
+      {
+        "x": -82,
+        "y": 155,
+        "z": 37
+      },
+      {
+        "x": -74,
+        "y": 160,
+        "z": 37
+      },
+      {
+        "x": -74,
+        "y": 166,
+        "z": 39
+      },
+      {
+        "x": -82,
+        "y": 161,
+        "z": 39
+      }
+    ],
+    "covered": false,
+    "distance": 310,
+    "height": 37,
+    "rake": 8
+  },
+  {
+    "id": "GM-3",
+    "name": "Green Monster 3",
+    "level": "field",
+    "baseAngle": 36,
+    "angleSpan": 8,
+    "rows": [
+      {
+        "rowNumber": "A",
+        "seats": 12,
+        "elevation": 37,
+        "depth": 0,
+        "covered": false
+      },
+      {
+        "rowNumber": "B",
+        "seats": 12,
+        "elevation": 37.27834620192013,
+        "depth": 2,
+        "covered": false
+      },
+      {
+        "rowNumber": "C",
+        "seats": 12,
+        "elevation": 37.55669240384026,
+        "depth": 4,
+        "covered": false
+      }
+    ],
+    "vertices3D": [
+      {
+        "x": -74,
+        "y": 160,
+        "z": 37
+      },
+      {
+        "x": -66,
+        "y": 165,
+        "z": 37
+      },
+      {
+        "x": -66,
+        "y": 171,
+        "z": 39
+      },
+      {
+        "x": -74,
+        "y": 166,
+        "z": 39
+      }
+    ],
+    "covered": false,
+    "distance": 310,
+    "height": 37,
+    "rake": 8
+  },
+  {
+    "id": "IB-70",
+    "name": "Infield Box 70",
+    "level": "field",
+    "baseAngle": 144,
+    "angleSpan": 10,
+    "rows": [
+      {
+        "rowNumber": "A",
+        "seats": 22,
+        "elevation": 2,
+        "depth": 0,
+        "covered": false
+      },
+      {
+        "rowNumber": "B",
+        "seats": 22,
+        "elevation": 2.519779227044398,
+        "depth": 2.5,
+        "covered": false
+      },
+      {
+        "rowNumber": "C",
+        "seats": 22,
+        "elevation": 3.0395584540887963,
+        "depth": 5,
+        "covered": false
+      },
+      {
+        "rowNumber": "D",
+        "seats": 22,
+        "elevation": 3.559337681133195,
+        "depth": 7.5,
+        "covered": false
+      },
+      {
+        "rowNumber": "E",
+        "seats": 21,
+        "elevation": 4.079116908177593,
+        "depth": 10,
+        "covered": false
+      },
+      {
+        "rowNumber": "F",
+        "seats": 21,
+        "elevation": 4.598896135221992,
+        "depth": 12.5,
+        "covered": false
+      },
+      {
+        "rowNumber": "G",
+        "seats": 21,
+        "elevation": 5.11867536226639,
+        "depth": 15,
+        "covered": false
+      },
+      {
+        "rowNumber": "H",
+        "seats": 20,
+        "elevation": 5.638454589310788,
+        "depth": 17.5,
+        "covered": false
+      },
+      {
+        "rowNumber": "J",
+        "seats": 20,
+        "elevation": 6.158233816355186,
+        "depth": 20,
+        "covered": false
+      },
+      {
+        "rowNumber": "K",
+        "seats": 20,
+        "elevation": 6.678013043399584,
+        "depth": 22.5,
+        "covered": false
+      },
+      {
+        "rowNumber": "L",
+        "seats": 19,
+        "elevation": 7.1977922704439825,
+        "depth": 25,
+        "covered": false
+      },
+      {
+        "rowNumber": "M",
+        "seats": 19,
+        "elevation": 7.717571497488381,
+        "depth": 27.5,
+        "covered": false
+      },
+      {
+        "rowNumber": "N",
+        "seats": 19,
+        "elevation": 8.23735072453278,
+        "depth": 30,
+        "covered": false
+      },
+      {
+        "rowNumber": "P",
+        "seats": 19,
+        "elevation": 8.757129951577177,
+        "depth": 32.5,
+        "covered": false
+      },
+      {
+        "rowNumber": "R",
+        "seats": 18,
+        "elevation": 9.276909178621576,
+        "depth": 35,
+        "covered": false
+      },
+      {
+        "rowNumber": "S",
+        "seats": 18,
+        "elevation": 9.796688405665975,
+        "depth": 37.5,
+        "covered": false
+      }
+    ],
+    "vertices3D": [
+      {
+        "x": 30,
+        "y": 58,
+        "z": 2
+      },
+      {
+        "x": 40,
+        "y": 65,
+        "z": 2
+      },
+      {
+        "x": 44,
+        "y": 87,
+        "z": 11
+      },
+      {
+        "x": 33,
+        "y": 79,
+        "z": 11
+      }
+    ],
+    "covered": false,
+    "distance": 62,
+    "height": 2,
+    "rake": 12
+  },
+  {
+    "id": "IB-71",
+    "name": "Infield Box 71",
+    "level": "field",
+    "baseAngle": 154,
+    "angleSpan": 10,
+    "rows": [
+      {
+        "rowNumber": "A",
+        "seats": 22,
+        "elevation": 2,
+        "depth": 0,
+        "covered": false
+      },
+      {
+        "rowNumber": "B",
+        "seats": 22,
+        "elevation": 2.519779227044398,
+        "depth": 2.5,
+        "covered": false
+      },
+      {
+        "rowNumber": "C",
+        "seats": 22,
+        "elevation": 3.0395584540887963,
+        "depth": 5,
+        "covered": false
+      },
+      {
+        "rowNumber": "D",
+        "seats": 22,
+        "elevation": 3.559337681133195,
+        "depth": 7.5,
+        "covered": false
+      },
+      {
+        "rowNumber": "E",
+        "seats": 21,
+        "elevation": 4.079116908177593,
+        "depth": 10,
+        "covered": false
+      },
+      {
+        "rowNumber": "F",
+        "seats": 21,
+        "elevation": 4.598896135221992,
+        "depth": 12.5,
+        "covered": false
+      },
+      {
+        "rowNumber": "G",
+        "seats": 21,
+        "elevation": 5.11867536226639,
+        "depth": 15,
+        "covered": false
+      },
+      {
+        "rowNumber": "H",
+        "seats": 20,
+        "elevation": 5.638454589310788,
+        "depth": 17.5,
+        "covered": false
+      },
+      {
+        "rowNumber": "J",
+        "seats": 20,
+        "elevation": 6.158233816355186,
+        "depth": 20,
+        "covered": false
+      },
+      {
+        "rowNumber": "K",
+        "seats": 20,
+        "elevation": 6.678013043399584,
+        "depth": 22.5,
+        "covered": false
+      },
+      {
+        "rowNumber": "L",
+        "seats": 19,
+        "elevation": 7.1977922704439825,
+        "depth": 25,
+        "covered": false
+      },
+      {
+        "rowNumber": "M",
+        "seats": 19,
+        "elevation": 7.717571497488381,
+        "depth": 27.5,
+        "covered": false
+      },
+      {
+        "rowNumber": "N",
+        "seats": 19,
+        "elevation": 8.23735072453278,
+        "depth": 30,
+        "covered": false
+      },
+      {
+        "rowNumber": "P",
+        "seats": 19,
+        "elevation": 8.757129951577177,
+        "depth": 32.5,
+        "covered": false
+      },
+      {
+        "rowNumber": "R",
+        "seats": 18,
+        "elevation": 9.276909178621576,
+        "depth": 35,
+        "covered": false
+      },
+      {
+        "rowNumber": "S",
+        "seats": 18,
+        "elevation": 9.796688405665975,
+        "depth": 37.5,
+        "covered": false
+      }
+    ],
+    "vertices3D": [
+      {
+        "x": 40,
+        "y": 65,
+        "z": 2
+      },
+      {
+        "x": 50,
+        "y": 74,
+        "z": 2
+      },
+      {
+        "x": 55,
+        "y": 96,
+        "z": 11
+      },
+      {
+        "x": 44,
+        "y": 87,
+        "z": 11
+      }
+    ],
+    "covered": false,
+    "distance": 70,
+    "height": 2,
+    "rake": 12
+  },
+  {
+    "id": "IB-7",
+    "name": "Infield Box 7",
+    "level": "field",
+    "baseAngle": 76,
+    "angleSpan": 10,
+    "rows": [
+      {
+        "rowNumber": "A",
+        "seats": 22,
+        "elevation": 2,
+        "depth": 0,
+        "covered": false
+      },
+      {
+        "rowNumber": "B",
+        "seats": 22,
+        "elevation": 2.519779227044398,
+        "depth": 2.5,
+        "covered": false
+      },
+      {
+        "rowNumber": "C",
+        "seats": 22,
+        "elevation": 3.0395584540887963,
+        "depth": 5,
+        "covered": false
+      },
+      {
+        "rowNumber": "D",
+        "seats": 22,
+        "elevation": 3.559337681133195,
+        "depth": 7.5,
+        "covered": false
+      },
+      {
+        "rowNumber": "E",
+        "seats": 21,
+        "elevation": 4.079116908177593,
+        "depth": 10,
+        "covered": false
+      },
+      {
+        "rowNumber": "F",
+        "seats": 21,
+        "elevation": 4.598896135221992,
+        "depth": 12.5,
+        "covered": false
+      },
+      {
+        "rowNumber": "G",
+        "seats": 21,
+        "elevation": 5.11867536226639,
+        "depth": 15,
+        "covered": false
+      },
+      {
+        "rowNumber": "H",
+        "seats": 20,
+        "elevation": 5.638454589310788,
+        "depth": 17.5,
+        "covered": false
+      },
+      {
+        "rowNumber": "J",
+        "seats": 20,
+        "elevation": 6.158233816355186,
+        "depth": 20,
+        "covered": false
+      },
+      {
+        "rowNumber": "K",
+        "seats": 20,
+        "elevation": 6.678013043399584,
+        "depth": 22.5,
+        "covered": false
+      },
+      {
+        "rowNumber": "L",
+        "seats": 19,
+        "elevation": 7.1977922704439825,
+        "depth": 25,
+        "covered": false
+      },
+      {
+        "rowNumber": "M",
+        "seats": 19,
+        "elevation": 7.717571497488381,
+        "depth": 27.5,
+        "covered": false
+      },
+      {
+        "rowNumber": "N",
+        "seats": 19,
+        "elevation": 8.23735072453278,
+        "depth": 30,
+        "covered": false
+      },
+      {
+        "rowNumber": "P",
+        "seats": 19,
+        "elevation": 8.757129951577177,
+        "depth": 32.5,
+        "covered": false
+      },
+      {
+        "rowNumber": "R",
+        "seats": 18,
+        "elevation": 9.276909178621576,
+        "depth": 35,
+        "covered": false
+      },
+      {
+        "rowNumber": "S",
+        "seats": 18,
+        "elevation": 9.796688405665975,
+        "depth": 37.5,
+        "covered": false
+      }
+    ],
+    "vertices3D": [
+      {
+        "x": -30,
+        "y": 58,
+        "z": 2
+      },
+      {
+        "x": -40,
+        "y": 65,
+        "z": 2
+      },
+      {
+        "x": -44,
+        "y": 87,
+        "z": 11
+      },
+      {
+        "x": -33,
+        "y": 79,
+        "z": 11
+      }
+    ],
+    "covered": false,
+    "distance": 62,
+    "height": 2,
+    "rake": 12
+  },
+  {
+    "id": "IB-6",
+    "name": "Infield Box 6",
+    "level": "field",
+    "baseAngle": 66,
+    "angleSpan": 10,
+    "rows": [
+      {
+        "rowNumber": "A",
+        "seats": 22,
+        "elevation": 2,
+        "depth": 0,
+        "covered": false
+      },
+      {
+        "rowNumber": "B",
+        "seats": 22,
+        "elevation": 2.519779227044398,
+        "depth": 2.5,
+        "covered": false
+      },
+      {
+        "rowNumber": "C",
+        "seats": 22,
+        "elevation": 3.0395584540887963,
+        "depth": 5,
+        "covered": false
+      },
+      {
+        "rowNumber": "D",
+        "seats": 22,
+        "elevation": 3.559337681133195,
+        "depth": 7.5,
+        "covered": false
+      },
+      {
+        "rowNumber": "E",
+        "seats": 21,
+        "elevation": 4.079116908177593,
+        "depth": 10,
+        "covered": false
+      },
+      {
+        "rowNumber": "F",
+        "seats": 21,
+        "elevation": 4.598896135221992,
+        "depth": 12.5,
+        "covered": false
+      },
+      {
+        "rowNumber": "G",
+        "seats": 21,
+        "elevation": 5.11867536226639,
+        "depth": 15,
+        "covered": false
+      },
+      {
+        "rowNumber": "H",
+        "seats": 20,
+        "elevation": 5.638454589310788,
+        "depth": 17.5,
+        "covered": false
+      },
+      {
+        "rowNumber": "J",
+        "seats": 20,
+        "elevation": 6.158233816355186,
+        "depth": 20,
+        "covered": false
+      },
+      {
+        "rowNumber": "K",
+        "seats": 20,
+        "elevation": 6.678013043399584,
+        "depth": 22.5,
+        "covered": false
+      },
+      {
+        "rowNumber": "L",
+        "seats": 19,
+        "elevation": 7.1977922704439825,
+        "depth": 25,
+        "covered": false
+      },
+      {
+        "rowNumber": "M",
+        "seats": 19,
+        "elevation": 7.717571497488381,
+        "depth": 27.5,
+        "covered": false
+      },
+      {
+        "rowNumber": "N",
+        "seats": 19,
+        "elevation": 8.23735072453278,
+        "depth": 30,
+        "covered": false
+      },
+      {
+        "rowNumber": "P",
+        "seats": 19,
+        "elevation": 8.757129951577177,
+        "depth": 32.5,
+        "covered": false
+      },
+      {
+        "rowNumber": "R",
+        "seats": 18,
+        "elevation": 9.276909178621576,
+        "depth": 35,
+        "covered": false
+      },
+      {
+        "rowNumber": "S",
+        "seats": 18,
+        "elevation": 9.796688405665975,
+        "depth": 37.5,
+        "covered": false
+      }
+    ],
+    "vertices3D": [
+      {
+        "x": -40,
+        "y": 65,
+        "z": 2
+      },
+      {
+        "x": -50,
+        "y": 74,
+        "z": 2
+      },
+      {
+        "x": -55,
+        "y": 96,
+        "z": 11
+      },
+      {
+        "x": -44,
+        "y": 87,
+        "z": 11
+      }
+    ],
+    "covered": false,
+    "distance": 70,
+    "height": 2,
+    "rake": 12
+  },
+  {
+    "id": "PB-1",
+    "name": "Pavilion Box 1",
+    "level": "upper",
+    "baseAngle": 80,
+    "angleSpan": 10,
+    "rows": [
+      {
+        "rowNumber": "A",
+        "seats": 24,
+        "elevation": 25,
+        "depth": 0,
+        "covered": false
+      },
+      {
+        "rowNumber": "B",
+        "seats": 24,
+        "elevation": 25.67738130767907,
+        "depth": 2.8,
+        "covered": false
+      },
+      {
+        "rowNumber": "C",
+        "seats": 24,
+        "elevation": 26.35476261535814,
+        "depth": 5.6,
+        "covered": false
+      },
+      {
+        "rowNumber": "D",
+        "seats": 24,
+        "elevation": 27.03214392303721,
+        "depth": 8.399999999999999,
+        "covered": false
+      },
+      {
+        "rowNumber": "E",
+        "seats": 23,
+        "elevation": 27.709525230716277,
+        "depth": 11.2,
+        "covered": false
+      },
+      {
+        "rowNumber": "F",
+        "seats": 23,
+        "elevation": 28.386906538395348,
+        "depth": 14,
+        "covered": false
+      },
+      {
+        "rowNumber": "G",
+        "seats": 23,
+        "elevation": 29.064287846074418,
+        "depth": 16.799999999999997,
+        "covered": false
+      },
+      {
+        "rowNumber": "H",
+        "seats": 22,
+        "elevation": 29.741669153753488,
+        "depth": 19.599999999999998,
+        "covered": false
+      },
+      {
+        "rowNumber": "J",
+        "seats": 22,
+        "elevation": 30.419050461432555,
+        "depth": 22.4,
+        "covered": false
+      },
+      {
+        "rowNumber": "K",
+        "seats": 22,
+        "elevation": 31.096431769111625,
+        "depth": 25.2,
+        "covered": false
+      },
+      {
+        "rowNumber": "L",
+        "seats": 21,
+        "elevation": 31.773813076790695,
+        "depth": 28,
+        "covered": false
+      }
+    ],
+    "vertices3D": [
+      {
+        "x": -35,
+        "y": 92,
+        "z": 25
+      },
+      {
+        "x": -45,
+        "y": 98,
+        "z": 25
+      },
+      {
+        "x": -50,
+        "y": 126,
+        "z": 38
+      },
+      {
+        "x": -38,
+        "y": 120,
+        "z": 38
+      }
+    ],
+    "covered": true,
+    "distance": 95,
+    "height": 25,
+    "rake": 14
+  },
+  {
+    "id": "PB-2",
+    "name": "Pavilion Box 2",
+    "level": "upper",
+    "baseAngle": 90,
+    "angleSpan": 10,
+    "rows": [
+      {
+        "rowNumber": "A",
+        "seats": 24,
+        "elevation": 25,
+        "depth": 0,
+        "covered": false
+      },
+      {
+        "rowNumber": "B",
+        "seats": 24,
+        "elevation": 25.67738130767907,
+        "depth": 2.8,
+        "covered": false
+      },
+      {
+        "rowNumber": "C",
+        "seats": 24,
+        "elevation": 26.35476261535814,
+        "depth": 5.6,
+        "covered": false
+      },
+      {
+        "rowNumber": "D",
+        "seats": 24,
+        "elevation": 27.03214392303721,
+        "depth": 8.399999999999999,
+        "covered": false
+      },
+      {
+        "rowNumber": "E",
+        "seats": 23,
+        "elevation": 27.709525230716277,
+        "depth": 11.2,
+        "covered": false
+      },
+      {
+        "rowNumber": "F",
+        "seats": 23,
+        "elevation": 28.386906538395348,
+        "depth": 14,
+        "covered": false
+      },
+      {
+        "rowNumber": "G",
+        "seats": 23,
+        "elevation": 29.064287846074418,
+        "depth": 16.799999999999997,
+        "covered": false
+      },
+      {
+        "rowNumber": "H",
+        "seats": 22,
+        "elevation": 29.741669153753488,
+        "depth": 19.599999999999998,
+        "covered": false
+      },
+      {
+        "rowNumber": "J",
+        "seats": 22,
+        "elevation": 30.419050461432555,
+        "depth": 22.4,
+        "covered": false
+      },
+      {
+        "rowNumber": "K",
+        "seats": 22,
+        "elevation": 31.096431769111625,
+        "depth": 25.2,
+        "covered": false
+      },
+      {
+        "rowNumber": "L",
+        "seats": 21,
+        "elevation": 31.773813076790695,
+        "depth": 28,
+        "covered": false
+      }
+    ],
+    "vertices3D": [
+      {
+        "x": -25,
+        "y": 92,
+        "z": 25
+      },
+      {
+        "x": -35,
+        "y": 92,
+        "z": 25
+      },
+      {
+        "x": -38,
+        "y": 120,
+        "z": 38
+      },
+      {
+        "x": -27,
+        "y": 120,
+        "z": 38
+      }
+    ],
+    "covered": true,
+    "distance": 94,
+    "height": 25,
+    "rake": 14
+  },
+  {
+    "id": "PB-3",
+    "name": "Pavilion Box 3",
+    "level": "upper",
+    "baseAngle": 100,
+    "angleSpan": 10,
+    "rows": [
+      {
+        "rowNumber": "A",
+        "seats": 24,
+        "elevation": 25,
+        "depth": 0,
+        "covered": false
+      },
+      {
+        "rowNumber": "B",
+        "seats": 24,
+        "elevation": 25.67738130767907,
+        "depth": 2.8,
+        "covered": false
+      },
+      {
+        "rowNumber": "C",
+        "seats": 24,
+        "elevation": 26.35476261535814,
+        "depth": 5.6,
+        "covered": false
+      },
+      {
+        "rowNumber": "D",
+        "seats": 24,
+        "elevation": 27.03214392303721,
+        "depth": 8.399999999999999,
+        "covered": false
+      },
+      {
+        "rowNumber": "E",
+        "seats": 23,
+        "elevation": 27.709525230716277,
+        "depth": 11.2,
+        "covered": false
+      },
+      {
+        "rowNumber": "F",
+        "seats": 23,
+        "elevation": 28.386906538395348,
+        "depth": 14,
+        "covered": false
+      },
+      {
+        "rowNumber": "G",
+        "seats": 23,
+        "elevation": 29.064287846074418,
+        "depth": 16.799999999999997,
+        "covered": false
+      },
+      {
+        "rowNumber": "H",
+        "seats": 22,
+        "elevation": 29.741669153753488,
+        "depth": 19.599999999999998,
+        "covered": false
+      },
+      {
+        "rowNumber": "J",
+        "seats": 22,
+        "elevation": 30.419050461432555,
+        "depth": 22.4,
+        "covered": false
+      },
+      {
+        "rowNumber": "K",
+        "seats": 22,
+        "elevation": 31.096431769111625,
+        "depth": 25.2,
+        "covered": false
+      },
+      {
+        "rowNumber": "L",
+        "seats": 21,
+        "elevation": 31.773813076790695,
+        "depth": 28,
+        "covered": false
+      }
+    ],
+    "vertices3D": [
+      {
+        "x": -15,
+        "y": 92,
+        "z": 25
+      },
+      {
+        "x": -25,
+        "y": 92,
+        "z": 25
+      },
+      {
+        "x": -27,
+        "y": 120,
+        "z": 38
+      },
+      {
+        "x": -16,
+        "y": 120,
+        "z": 38
+      }
+    ],
+    "covered": true,
+    "distance": 94,
+    "height": 25,
+    "rake": 14
+  },
+  {
+    "id": "BL-34",
+    "name": "Bleachers 34",
+    "level": "field",
+    "baseAngle": 200,
+    "angleSpan": 11,
+    "rows": [
+      {
+        "rowNumber": "A",
+        "seats": 26,
+        "elevation": 8,
+        "depth": 0,
+        "covered": false
+      },
+      {
+        "rowNumber": "B",
+        "seats": 26,
+        "elevation": 8.855050358314172,
+        "depth": 2.5,
+        "covered": false
+      },
+      {
+        "rowNumber": "C",
+        "seats": 26,
+        "elevation": 9.710100716628343,
+        "depth": 5,
+        "covered": false
+      },
+      {
+        "rowNumber": "D",
+        "seats": 26,
+        "elevation": 10.565151074942516,
+        "depth": 7.5,
+        "covered": false
+      },
+      {
+        "rowNumber": "E",
+        "seats": 25,
+        "elevation": 11.420201433256686,
+        "depth": 10,
+        "covered": false
+      },
+      {
+        "rowNumber": "F",
+        "seats": 25,
+        "elevation": 12.27525179157086,
+        "depth": 12.5,
+        "covered": false
+      },
+      {
+        "rowNumber": "G",
+        "seats": 25,
+        "elevation": 13.130302149885031,
+        "depth": 15,
+        "covered": false
+      },
+      {
+        "rowNumber": "H",
+        "seats": 24,
+        "elevation": 13.985352508199203,
+        "depth": 17.5,
+        "covered": false
+      },
+      {
+        "rowNumber": "J",
+        "seats": 24,
+        "elevation": 14.840402866513374,
+        "depth": 20,
+        "covered": false
+      },
+      {
+        "rowNumber": "K",
+        "seats": 24,
+        "elevation": 15.695453224827546,
+        "depth": 22.5,
+        "covered": false
+      },
+      {
+        "rowNumber": "L",
+        "seats": 23,
+        "elevation": 16.55050358314172,
+        "depth": 25,
+        "covered": false
+      },
+      {
+        "rowNumber": "M",
+        "seats": 23,
+        "elevation": 17.40555394145589,
+        "depth": 27.5,
+        "covered": false
+      },
+      {
+        "rowNumber": "N",
+        "seats": 23,
+        "elevation": 18.260604299770062,
+        "depth": 30,
+        "covered": false
+      },
+      {
+        "rowNumber": "P",
+        "seats": 23,
+        "elevation": 19.11565465808423,
+        "depth": 32.5,
+        "covered": false
+      },
+      {
+        "rowNumber": "R",
+        "seats": 22,
+        "elevation": 19.970705016398405,
+        "depth": 35,
+        "covered": false
+      },
+      {
+        "rowNumber": "S",
+        "seats": 22,
+        "elevation": 20.82575537471258,
+        "depth": 37.5,
+        "covered": false
+      },
+      {
+        "rowNumber": "T",
+        "seats": 22,
+        "elevation": 21.680805733026748,
+        "depth": 40,
+        "covered": false
+      }
+    ],
+    "vertices3D": [
+      {
+        "x": 15,
+        "y": 195,
+        "z": 8
+      },
+      {
+        "x": 5,
+        "y": 205,
+        "z": 8
+      },
+      {
+        "x": 7,
+        "y": 255,
+        "z": 28
+      },
+      {
+        "x": 18,
+        "y": 245,
+        "z": 28
+      }
+    ],
+    "covered": false,
+    "distance": 200,
+    "height": 8,
+    "rake": 20
+  },
+  {
+    "id": "BL-35",
+    "name": "Bleachers 35",
+    "level": "field",
+    "baseAngle": 211,
+    "angleSpan": 11,
+    "rows": [
+      {
+        "rowNumber": "A",
+        "seats": 26,
+        "elevation": 8,
+        "depth": 0,
+        "covered": false
+      },
+      {
+        "rowNumber": "B",
+        "seats": 26,
+        "elevation": 8.855050358314172,
+        "depth": 2.5,
+        "covered": false
+      },
+      {
+        "rowNumber": "C",
+        "seats": 26,
+        "elevation": 9.710100716628343,
+        "depth": 5,
+        "covered": false
+      },
+      {
+        "rowNumber": "D",
+        "seats": 26,
+        "elevation": 10.565151074942516,
+        "depth": 7.5,
+        "covered": false
+      },
+      {
+        "rowNumber": "E",
+        "seats": 25,
+        "elevation": 11.420201433256686,
+        "depth": 10,
+        "covered": false
+      },
+      {
+        "rowNumber": "F",
+        "seats": 25,
+        "elevation": 12.27525179157086,
+        "depth": 12.5,
+        "covered": false
+      },
+      {
+        "rowNumber": "G",
+        "seats": 25,
+        "elevation": 13.130302149885031,
+        "depth": 15,
+        "covered": false
+      },
+      {
+        "rowNumber": "H",
+        "seats": 24,
+        "elevation": 13.985352508199203,
+        "depth": 17.5,
+        "covered": false
+      },
+      {
+        "rowNumber": "J",
+        "seats": 24,
+        "elevation": 14.840402866513374,
+        "depth": 20,
+        "covered": false
+      },
+      {
+        "rowNumber": "K",
+        "seats": 24,
+        "elevation": 15.695453224827546,
+        "depth": 22.5,
+        "covered": false
+      },
+      {
+        "rowNumber": "L",
+        "seats": 23,
+        "elevation": 16.55050358314172,
+        "depth": 25,
+        "covered": false
+      },
+      {
+        "rowNumber": "M",
+        "seats": 23,
+        "elevation": 17.40555394145589,
+        "depth": 27.5,
+        "covered": false
+      },
+      {
+        "rowNumber": "N",
+        "seats": 23,
+        "elevation": 18.260604299770062,
+        "depth": 30,
+        "covered": false
+      },
+      {
+        "rowNumber": "P",
+        "seats": 23,
+        "elevation": 19.11565465808423,
+        "depth": 32.5,
+        "covered": false
+      },
+      {
+        "rowNumber": "R",
+        "seats": 22,
+        "elevation": 19.970705016398405,
+        "depth": 35,
+        "covered": false
+      },
+      {
+        "rowNumber": "S",
+        "seats": 22,
+        "elevation": 20.82575537471258,
+        "depth": 37.5,
+        "covered": false
+      },
+      {
+        "rowNumber": "T",
+        "seats": 22,
+        "elevation": 21.680805733026748,
+        "depth": 40,
+        "covered": false
+      }
+    ],
+    "vertices3D": [
+      {
+        "x": 5,
+        "y": 205,
+        "z": 8
+      },
+      {
+        "x": -6,
+        "y": 212,
+        "z": 8
+      },
+      {
+        "x": -5,
+        "y": 262,
+        "z": 28
+      },
+      {
+        "x": 7,
+        "y": 255,
+        "z": 28
+      }
+    ],
+    "covered": false,
+    "distance": 208,
+    "height": 8,
+    "rake": 20
+  },
+  {
+    "id": "BL-36",
+    "name": "Bleachers 36",
+    "level": "field",
+    "baseAngle": 222,
+    "angleSpan": 11,
+    "rows": [
+      {
+        "rowNumber": "A",
+        "seats": 26,
+        "elevation": 8,
+        "depth": 0,
+        "covered": false
+      },
+      {
+        "rowNumber": "B",
+        "seats": 26,
+        "elevation": 8.855050358314172,
+        "depth": 2.5,
+        "covered": false
+      },
+      {
+        "rowNumber": "C",
+        "seats": 26,
+        "elevation": 9.710100716628343,
+        "depth": 5,
+        "covered": false
+      },
+      {
+        "rowNumber": "D",
+        "seats": 26,
+        "elevation": 10.565151074942516,
+        "depth": 7.5,
+        "covered": false
+      },
+      {
+        "rowNumber": "E",
+        "seats": 25,
+        "elevation": 11.420201433256686,
+        "depth": 10,
+        "covered": false
+      },
+      {
+        "rowNumber": "F",
+        "seats": 25,
+        "elevation": 12.27525179157086,
+        "depth": 12.5,
+        "covered": false
+      },
+      {
+        "rowNumber": "G",
+        "seats": 25,
+        "elevation": 13.130302149885031,
+        "depth": 15,
+        "covered": false
+      },
+      {
+        "rowNumber": "H",
+        "seats": 24,
+        "elevation": 13.985352508199203,
+        "depth": 17.5,
+        "covered": false
+      },
+      {
+        "rowNumber": "J",
+        "seats": 24,
+        "elevation": 14.840402866513374,
+        "depth": 20,
+        "covered": false
+      },
+      {
+        "rowNumber": "K",
+        "seats": 24,
+        "elevation": 15.695453224827546,
+        "depth": 22.5,
+        "covered": false
+      },
+      {
+        "rowNumber": "L",
+        "seats": 23,
+        "elevation": 16.55050358314172,
+        "depth": 25,
+        "covered": false
+      },
+      {
+        "rowNumber": "M",
+        "seats": 23,
+        "elevation": 17.40555394145589,
+        "depth": 27.5,
+        "covered": false
+      },
+      {
+        "rowNumber": "N",
+        "seats": 23,
+        "elevation": 18.260604299770062,
+        "depth": 30,
+        "covered": false
+      },
+      {
+        "rowNumber": "P",
+        "seats": 23,
+        "elevation": 19.11565465808423,
+        "depth": 32.5,
+        "covered": false
+      },
+      {
+        "rowNumber": "R",
+        "seats": 22,
+        "elevation": 19.970705016398405,
+        "depth": 35,
+        "covered": false
+      },
+      {
+        "rowNumber": "S",
+        "seats": 22,
+        "elevation": 20.82575537471258,
+        "depth": 37.5,
+        "covered": false
+      },
+      {
+        "rowNumber": "T",
+        "seats": 22,
+        "elevation": 21.680805733026748,
+        "depth": 40,
+        "covered": false
+      }
+    ],
+    "vertices3D": [
+      {
+        "x": -6,
+        "y": 212,
+        "z": 8
+      },
+      {
+        "x": -17,
+        "y": 218,
+        "z": 8
+      },
+      {
+        "x": -17,
+        "y": 268,
+        "z": 28
+      },
+      {
+        "x": -5,
+        "y": 262,
+        "z": 28
+      }
+    ],
+    "covered": false,
+    "distance": 215,
+    "height": 8,
+    "rake": 20
+  },
+  {
+    "id": "BL-37",
+    "name": "Bleachers 37",
+    "level": "field",
+    "baseAngle": 233,
+    "angleSpan": 11,
+    "rows": [
+      {
+        "rowNumber": "A",
+        "seats": 26,
+        "elevation": 8,
+        "depth": 0,
+        "covered": false
+      },
+      {
+        "rowNumber": "B",
+        "seats": 26,
+        "elevation": 8.855050358314172,
+        "depth": 2.5,
+        "covered": false
+      },
+      {
+        "rowNumber": "C",
+        "seats": 26,
+        "elevation": 9.710100716628343,
+        "depth": 5,
+        "covered": false
+      },
+      {
+        "rowNumber": "D",
+        "seats": 26,
+        "elevation": 10.565151074942516,
+        "depth": 7.5,
+        "covered": false
+      },
+      {
+        "rowNumber": "E",
+        "seats": 25,
+        "elevation": 11.420201433256686,
+        "depth": 10,
+        "covered": false
+      },
+      {
+        "rowNumber": "F",
+        "seats": 25,
+        "elevation": 12.27525179157086,
+        "depth": 12.5,
+        "covered": false
+      },
+      {
+        "rowNumber": "G",
+        "seats": 25,
+        "elevation": 13.130302149885031,
+        "depth": 15,
+        "covered": false
+      },
+      {
+        "rowNumber": "H",
+        "seats": 24,
+        "elevation": 13.985352508199203,
+        "depth": 17.5,
+        "covered": false
+      },
+      {
+        "rowNumber": "J",
+        "seats": 24,
+        "elevation": 14.840402866513374,
+        "depth": 20,
+        "covered": false
+      },
+      {
+        "rowNumber": "K",
+        "seats": 24,
+        "elevation": 15.695453224827546,
+        "depth": 22.5,
+        "covered": false
+      },
+      {
+        "rowNumber": "L",
+        "seats": 23,
+        "elevation": 16.55050358314172,
+        "depth": 25,
+        "covered": false
+      },
+      {
+        "rowNumber": "M",
+        "seats": 23,
+        "elevation": 17.40555394145589,
+        "depth": 27.5,
+        "covered": false
+      },
+      {
+        "rowNumber": "N",
+        "seats": 23,
+        "elevation": 18.260604299770062,
+        "depth": 30,
+        "covered": false
+      },
+      {
+        "rowNumber": "P",
+        "seats": 23,
+        "elevation": 19.11565465808423,
+        "depth": 32.5,
+        "covered": false
+      },
+      {
+        "rowNumber": "R",
+        "seats": 22,
+        "elevation": 19.970705016398405,
+        "depth": 35,
+        "covered": false
+      },
+      {
+        "rowNumber": "S",
+        "seats": 22,
+        "elevation": 20.82575537471258,
+        "depth": 37.5,
+        "covered": false
+      },
+      {
+        "rowNumber": "T",
+        "seats": 22,
+        "elevation": 21.680805733026748,
+        "depth": 40,
+        "covered": false
+      }
+    ],
+    "vertices3D": [
+      {
+        "x": -17,
+        "y": 218,
+        "z": 8
+      },
+      {
+        "x": -28,
+        "y": 222,
+        "z": 8
+      },
+      {
+        "x": -29,
+        "y": 272,
+        "z": 28
+      },
+      {
+        "x": -17,
+        "y": 268,
+        "z": 28
+      }
+    ],
+    "covered": false,
+    "distance": 220,
+    "height": 8,
+    "rake": 20
+  },
+  {
+    "id": "RF-86",
+    "name": "Right Field Box 86",
+    "level": "field",
+    "baseAngle": 164,
+    "angleSpan": 10,
+    "rows": [
+      {
+        "rowNumber": "A",
+        "seats": 20,
+        "elevation": 5,
+        "depth": 0,
+        "covered": false
+      },
+      {
+        "rowNumber": "B",
+        "seats": 20,
+        "elevation": 5.647047612756301,
+        "depth": 2.5,
+        "covered": false
+      },
+      {
+        "rowNumber": "C",
+        "seats": 20,
+        "elevation": 6.294095225512604,
+        "depth": 5,
+        "covered": false
+      },
+      {
+        "rowNumber": "D",
+        "seats": 20,
+        "elevation": 6.941142838268906,
+        "depth": 7.5,
+        "covered": false
+      },
+      {
+        "rowNumber": "E",
+        "seats": 19,
+        "elevation": 7.588190451025207,
+        "depth": 10,
+        "covered": false
+      },
+      {
+        "rowNumber": "F",
+        "seats": 19,
+        "elevation": 8.235238063781509,
+        "depth": 12.5,
+        "covered": false
+      },
+      {
+        "rowNumber": "G",
+        "seats": 19,
+        "elevation": 8.882285676537812,
+        "depth": 15,
+        "covered": false
+      },
+      {
+        "rowNumber": "H",
+        "seats": 18,
+        "elevation": 9.529333289294113,
+        "depth": 17.5,
+        "covered": false
+      },
+      {
+        "rowNumber": "J",
+        "seats": 18,
+        "elevation": 10.176380902050415,
+        "depth": 20,
+        "covered": false
+      },
+      {
+        "rowNumber": "K",
+        "seats": 18,
+        "elevation": 10.823428514806716,
+        "depth": 22.5,
+        "covered": false
+      },
+      {
+        "rowNumber": "L",
+        "seats": 17,
+        "elevation": 11.470476127563018,
+        "depth": 25,
+        "covered": false
+      },
+      {
+        "rowNumber": "M",
+        "seats": 17,
+        "elevation": 12.11752374031932,
+        "depth": 27.5,
+        "covered": false
+      },
+      {
+        "rowNumber": "N",
+        "seats": 17,
+        "elevation": 12.764571353075622,
+        "depth": 30,
+        "covered": false
+      },
+      {
+        "rowNumber": "P",
+        "seats": 17,
+        "elevation": 13.411618965831924,
+        "depth": 32.5,
+        "covered": false
+      },
+      {
+        "rowNumber": "R",
+        "seats": 16,
+        "elevation": 14.058666578588227,
+        "depth": 35,
+        "covered": false
+      }
+    ],
+    "vertices3D": [
+      {
+        "x": 50,
+        "y": 74,
+        "z": 5
+      },
+      {
+        "x": 60,
+        "y": 84,
+        "z": 5
+      },
+      {
+        "x": 65,
+        "y": 108,
+        "z": 15
+      },
+      {
+        "x": 54,
+        "y": 98,
+        "z": 15
+      }
+    ],
+    "covered": false,
+    "distance": 80,
+    "height": 5,
+    "rake": 15
+  },
+  {
+    "id": "RF-87",
+    "name": "Right Field Box 87",
+    "level": "field",
+    "baseAngle": 174,
+    "angleSpan": 10,
+    "rows": [
+      {
+        "rowNumber": "A",
+        "seats": 20,
+        "elevation": 5,
+        "depth": 0,
+        "covered": false
+      },
+      {
+        "rowNumber": "B",
+        "seats": 20,
+        "elevation": 5.647047612756301,
+        "depth": 2.5,
+        "covered": false
+      },
+      {
+        "rowNumber": "C",
+        "seats": 20,
+        "elevation": 6.294095225512604,
+        "depth": 5,
+        "covered": false
+      },
+      {
+        "rowNumber": "D",
+        "seats": 20,
+        "elevation": 6.941142838268906,
+        "depth": 7.5,
+        "covered": false
+      },
+      {
+        "rowNumber": "E",
+        "seats": 19,
+        "elevation": 7.588190451025207,
+        "depth": 10,
+        "covered": false
+      },
+      {
+        "rowNumber": "F",
+        "seats": 19,
+        "elevation": 8.235238063781509,
+        "depth": 12.5,
+        "covered": false
+      },
+      {
+        "rowNumber": "G",
+        "seats": 19,
+        "elevation": 8.882285676537812,
+        "depth": 15,
+        "covered": false
+      },
+      {
+        "rowNumber": "H",
+        "seats": 18,
+        "elevation": 9.529333289294113,
+        "depth": 17.5,
+        "covered": false
+      },
+      {
+        "rowNumber": "J",
+        "seats": 18,
+        "elevation": 10.176380902050415,
+        "depth": 20,
+        "covered": false
+      },
+      {
+        "rowNumber": "K",
+        "seats": 18,
+        "elevation": 10.823428514806716,
+        "depth": 22.5,
+        "covered": false
+      },
+      {
+        "rowNumber": "L",
+        "seats": 17,
+        "elevation": 11.470476127563018,
+        "depth": 25,
+        "covered": false
+      },
+      {
+        "rowNumber": "M",
+        "seats": 17,
+        "elevation": 12.11752374031932,
+        "depth": 27.5,
+        "covered": false
+      },
+      {
+        "rowNumber": "N",
+        "seats": 17,
+        "elevation": 12.764571353075622,
+        "depth": 30,
+        "covered": false
+      },
+      {
+        "rowNumber": "P",
+        "seats": 17,
+        "elevation": 13.411618965831924,
+        "depth": 32.5,
+        "covered": false
+      },
+      {
+        "rowNumber": "R",
+        "seats": 16,
+        "elevation": 14.058666578588227,
+        "depth": 35,
+        "covered": false
+      }
+    ],
+    "vertices3D": [
+      {
+        "x": 60,
+        "y": 84,
+        "z": 5
+      },
+      {
+        "x": 68,
+        "y": 96,
+        "z": 5
+      },
+      {
+        "x": 74,
+        "y": 120,
+        "z": 15
+      },
+      {
+        "x": 65,
+        "y": 108,
+        "z": 15
+      }
+    ],
+    "covered": false,
+    "distance": 90,
+    "height": 5,
+    "rake": 15
+  },
+  {
+    "id": "RF-88",
+    "name": "Right Field Box 88",
+    "level": "field",
+    "baseAngle": 184,
+    "angleSpan": 10,
+    "rows": [
+      {
+        "rowNumber": "A",
+        "seats": 20,
+        "elevation": 5,
+        "depth": 0,
+        "covered": false
+      },
+      {
+        "rowNumber": "B",
+        "seats": 20,
+        "elevation": 5.647047612756301,
+        "depth": 2.5,
+        "covered": false
+      },
+      {
+        "rowNumber": "C",
+        "seats": 20,
+        "elevation": 6.294095225512604,
+        "depth": 5,
+        "covered": false
+      },
+      {
+        "rowNumber": "D",
+        "seats": 20,
+        "elevation": 6.941142838268906,
+        "depth": 7.5,
+        "covered": false
+      },
+      {
+        "rowNumber": "E",
+        "seats": 19,
+        "elevation": 7.588190451025207,
+        "depth": 10,
+        "covered": false
+      },
+      {
+        "rowNumber": "F",
+        "seats": 19,
+        "elevation": 8.235238063781509,
+        "depth": 12.5,
+        "covered": false
+      },
+      {
+        "rowNumber": "G",
+        "seats": 19,
+        "elevation": 8.882285676537812,
+        "depth": 15,
+        "covered": false
+      },
+      {
+        "rowNumber": "H",
+        "seats": 18,
+        "elevation": 9.529333289294113,
+        "depth": 17.5,
+        "covered": false
+      },
+      {
+        "rowNumber": "J",
+        "seats": 18,
+        "elevation": 10.176380902050415,
+        "depth": 20,
+        "covered": false
+      },
+      {
+        "rowNumber": "K",
+        "seats": 18,
+        "elevation": 10.823428514806716,
+        "depth": 22.5,
+        "covered": false
+      },
+      {
+        "rowNumber": "L",
+        "seats": 17,
+        "elevation": 11.470476127563018,
+        "depth": 25,
+        "covered": false
+      },
+      {
+        "rowNumber": "M",
+        "seats": 17,
+        "elevation": 12.11752374031932,
+        "depth": 27.5,
+        "covered": false
+      },
+      {
+        "rowNumber": "N",
+        "seats": 17,
+        "elevation": 12.764571353075622,
+        "depth": 30,
+        "covered": false
+      },
+      {
+        "rowNumber": "P",
+        "seats": 17,
+        "elevation": 13.411618965831924,
+        "depth": 32.5,
+        "covered": false
+      },
+      {
+        "rowNumber": "R",
+        "seats": 16,
+        "elevation": 14.058666578588227,
+        "depth": 35,
+        "covered": false
+      }
+    ],
+    "vertices3D": [
+      {
+        "x": 68,
+        "y": 96,
+        "z": 5
+      },
+      {
+        "x": 75,
+        "y": 110,
+        "z": 5
+      },
+      {
+        "x": 82,
+        "y": 135,
+        "z": 15
+      },
+      {
+        "x": 74,
+        "y": 120,
+        "z": 15
+      }
+    ],
+    "covered": false,
+    "distance": 103,
+    "height": 5,
+    "rake": 15
+  },
+  {
+    "id": "GS-1",
+    "name": "Grandstand 1",
+    "level": "upper",
+    "baseAngle": 65,
+    "angleSpan": 11,
+    "rows": [
+      {
+        "rowNumber": "A",
+        "seats": 26,
+        "elevation": 30,
+        "depth": 0,
+        "covered": false
+      },
+      {
+        "rowNumber": "B",
+        "seats": 26,
+        "elevation": 30.776457135307563,
+        "depth": 3,
+        "covered": false
+      },
+      {
+        "rowNumber": "C",
+        "seats": 26,
+        "elevation": 31.552914270615126,
+        "depth": 6,
+        "covered": false
+      },
+      {
+        "rowNumber": "D",
+        "seats": 26,
+        "elevation": 32.329371405922686,
+        "depth": 9,
+        "covered": false
+      },
+      {
+        "rowNumber": "E",
+        "seats": 25,
+        "elevation": 33.10582854123025,
+        "depth": 12,
+        "covered": false
+      },
+      {
+        "rowNumber": "F",
+        "seats": 25,
+        "elevation": 33.88228567653781,
+        "depth": 15,
+        "covered": false
+      },
+      {
+        "rowNumber": "G",
+        "seats": 25,
+        "elevation": 34.65874281184537,
+        "depth": 18,
+        "covered": false
+      },
+      {
+        "rowNumber": "H",
+        "seats": 24,
+        "elevation": 35.43519994715294,
+        "depth": 21,
+        "covered": false
+      },
+      {
+        "rowNumber": "J",
+        "seats": 24,
+        "elevation": 36.2116570824605,
+        "depth": 24,
+        "covered": false
+      },
+      {
+        "rowNumber": "K",
+        "seats": 24,
+        "elevation": 36.98811421776806,
+        "depth": 27,
+        "covered": false
+      },
+      {
+        "rowNumber": "L",
+        "seats": 23,
+        "elevation": 37.764571353075624,
+        "depth": 30,
+        "covered": false
+      },
+      {
+        "rowNumber": "M",
+        "seats": 23,
+        "elevation": 38.54102848838318,
+        "depth": 33,
+        "covered": false
+      },
+      {
+        "rowNumber": "N",
+        "seats": 23,
+        "elevation": 39.31748562369074,
+        "depth": 36,
+        "covered": false
+      },
+      {
+        "rowNumber": "P",
+        "seats": 23,
+        "elevation": 40.09394275899831,
+        "depth": 39,
+        "covered": false
+      },
+      {
+        "rowNumber": "R",
+        "seats": 22,
+        "elevation": 40.87039989430587,
+        "depth": 42,
+        "covered": false
+      },
+      {
+        "rowNumber": "S",
+        "seats": 22,
+        "elevation": 41.64685702961343,
+        "depth": 45,
+        "covered": false
+      }
+    ],
+    "vertices3D": [
+      {
+        "x": -55,
+        "y": 98,
+        "z": 30
+      },
+      {
+        "x": -66,
+        "y": 108,
+        "z": 30
+      },
+      {
+        "x": -72,
+        "y": 165,
+        "z": 57
+      },
+      {
+        "x": -60,
+        "y": 155,
+        "z": 57
+      }
+    ],
+    "covered": true,
+    "distance": 103,
+    "height": 30,
+    "rake": 15
+  },
+  {
+    "id": "GS-2",
+    "name": "Grandstand 2",
+    "level": "upper",
+    "baseAngle": 76,
+    "angleSpan": 11,
+    "rows": [
+      {
+        "rowNumber": "A",
+        "seats": 26,
+        "elevation": 30,
+        "depth": 0,
+        "covered": false
+      },
+      {
+        "rowNumber": "B",
+        "seats": 26,
+        "elevation": 30.776457135307563,
+        "depth": 3,
+        "covered": false
+      },
+      {
+        "rowNumber": "C",
+        "seats": 26,
+        "elevation": 31.552914270615126,
+        "depth": 6,
+        "covered": false
+      },
+      {
+        "rowNumber": "D",
+        "seats": 26,
+        "elevation": 32.329371405922686,
+        "depth": 9,
+        "covered": false
+      },
+      {
+        "rowNumber": "E",
+        "seats": 25,
+        "elevation": 33.10582854123025,
+        "depth": 12,
+        "covered": false
+      },
+      {
+        "rowNumber": "F",
+        "seats": 25,
+        "elevation": 33.88228567653781,
+        "depth": 15,
+        "covered": false
+      },
+      {
+        "rowNumber": "G",
+        "seats": 25,
+        "elevation": 34.65874281184537,
+        "depth": 18,
+        "covered": false
+      },
+      {
+        "rowNumber": "H",
+        "seats": 24,
+        "elevation": 35.43519994715294,
+        "depth": 21,
+        "covered": false
+      },
+      {
+        "rowNumber": "J",
+        "seats": 24,
+        "elevation": 36.2116570824605,
+        "depth": 24,
+        "covered": false
+      },
+      {
+        "rowNumber": "K",
+        "seats": 24,
+        "elevation": 36.98811421776806,
+        "depth": 27,
+        "covered": false
+      },
+      {
+        "rowNumber": "L",
+        "seats": 23,
+        "elevation": 37.764571353075624,
+        "depth": 30,
+        "covered": false
+      },
+      {
+        "rowNumber": "M",
+        "seats": 23,
+        "elevation": 38.54102848838318,
+        "depth": 33,
+        "covered": false
+      },
+      {
+        "rowNumber": "N",
+        "seats": 23,
+        "elevation": 39.31748562369074,
+        "depth": 36,
+        "covered": false
+      },
+      {
+        "rowNumber": "P",
+        "seats": 23,
+        "elevation": 40.09394275899831,
+        "depth": 39,
+        "covered": false
+      },
+      {
+        "rowNumber": "R",
+        "seats": 22,
+        "elevation": 40.87039989430587,
+        "depth": 42,
+        "covered": false
+      },
+      {
+        "rowNumber": "S",
+        "seats": 22,
+        "elevation": 41.64685702961343,
+        "depth": 45,
+        "covered": false
+      }
+    ],
+    "vertices3D": [
+      {
+        "x": -44,
+        "y": 96,
+        "z": 30
+      },
+      {
+        "x": -55,
+        "y": 98,
+        "z": 30
+      },
+      {
+        "x": -60,
+        "y": 155,
+        "z": 57
+      },
+      {
+        "x": -48,
+        "y": 153,
+        "z": 57
+      }
+    ],
+    "covered": true,
+    "distance": 100,
+    "height": 30,
+    "rake": 15
+  },
+  {
+    "id": "GS-3",
+    "name": "Grandstand 3",
+    "level": "upper",
+    "baseAngle": 87,
+    "angleSpan": 11,
+    "rows": [
+      {
+        "rowNumber": "A",
+        "seats": 26,
+        "elevation": 30,
+        "depth": 0,
+        "covered": false
+      },
+      {
+        "rowNumber": "B",
+        "seats": 26,
+        "elevation": 30.776457135307563,
+        "depth": 3,
+        "covered": false
+      },
+      {
+        "rowNumber": "C",
+        "seats": 26,
+        "elevation": 31.552914270615126,
+        "depth": 6,
+        "covered": false
+      },
+      {
+        "rowNumber": "D",
+        "seats": 26,
+        "elevation": 32.329371405922686,
+        "depth": 9,
+        "covered": false
+      },
+      {
+        "rowNumber": "E",
+        "seats": 25,
+        "elevation": 33.10582854123025,
+        "depth": 12,
+        "covered": false
+      },
+      {
+        "rowNumber": "F",
+        "seats": 25,
+        "elevation": 33.88228567653781,
+        "depth": 15,
+        "covered": false
+      },
+      {
+        "rowNumber": "G",
+        "seats": 25,
+        "elevation": 34.65874281184537,
+        "depth": 18,
+        "covered": false
+      },
+      {
+        "rowNumber": "H",
+        "seats": 24,
+        "elevation": 35.43519994715294,
+        "depth": 21,
+        "covered": false
+      },
+      {
+        "rowNumber": "J",
+        "seats": 24,
+        "elevation": 36.2116570824605,
+        "depth": 24,
+        "covered": false
+      },
+      {
+        "rowNumber": "K",
+        "seats": 24,
+        "elevation": 36.98811421776806,
+        "depth": 27,
+        "covered": false
+      },
+      {
+        "rowNumber": "L",
+        "seats": 23,
+        "elevation": 37.764571353075624,
+        "depth": 30,
+        "covered": false
+      },
+      {
+        "rowNumber": "M",
+        "seats": 23,
+        "elevation": 38.54102848838318,
+        "depth": 33,
+        "covered": false
+      },
+      {
+        "rowNumber": "N",
+        "seats": 23,
+        "elevation": 39.31748562369074,
+        "depth": 36,
+        "covered": false
+      },
+      {
+        "rowNumber": "P",
+        "seats": 23,
+        "elevation": 40.09394275899831,
+        "depth": 39,
+        "covered": false
+      },
+      {
+        "rowNumber": "R",
+        "seats": 22,
+        "elevation": 40.87039989430587,
+        "depth": 42,
+        "covered": false
+      },
+      {
+        "rowNumber": "S",
+        "seats": 22,
+        "elevation": 41.64685702961343,
+        "depth": 45,
+        "covered": false
+      }
+    ],
+    "vertices3D": [
+      {
+        "x": -33,
+        "y": 94,
+        "z": 30
+      },
+      {
+        "x": -44,
+        "y": 96,
+        "z": 30
+      },
+      {
+        "x": -48,
+        "y": 153,
+        "z": 57
+      },
+      {
+        "x": -36,
+        "y": 151,
+        "z": 57
+      }
+    ],
+    "covered": true,
+    "distance": 98,
+    "height": 30,
+    "rake": 15
+  },
+  {
+    "id": "GS-4",
+    "name": "Grandstand 4",
+    "level": "upper",
+    "baseAngle": 98,
+    "angleSpan": 11,
+    "rows": [
+      {
+        "rowNumber": "A",
+        "seats": 26,
+        "elevation": 30,
+        "depth": 0,
+        "covered": false
+      },
+      {
+        "rowNumber": "B",
+        "seats": 26,
+        "elevation": 30.776457135307563,
+        "depth": 3,
+        "covered": false
+      },
+      {
+        "rowNumber": "C",
+        "seats": 26,
+        "elevation": 31.552914270615126,
+        "depth": 6,
+        "covered": false
+      },
+      {
+        "rowNumber": "D",
+        "seats": 26,
+        "elevation": 32.329371405922686,
+        "depth": 9,
+        "covered": false
+      },
+      {
+        "rowNumber": "E",
+        "seats": 25,
+        "elevation": 33.10582854123025,
+        "depth": 12,
+        "covered": false
+      },
+      {
+        "rowNumber": "F",
+        "seats": 25,
+        "elevation": 33.88228567653781,
+        "depth": 15,
+        "covered": false
+      },
+      {
+        "rowNumber": "G",
+        "seats": 25,
+        "elevation": 34.65874281184537,
+        "depth": 18,
+        "covered": false
+      },
+      {
+        "rowNumber": "H",
+        "seats": 24,
+        "elevation": 35.43519994715294,
+        "depth": 21,
+        "covered": false
+      },
+      {
+        "rowNumber": "J",
+        "seats": 24,
+        "elevation": 36.2116570824605,
+        "depth": 24,
+        "covered": false
+      },
+      {
+        "rowNumber": "K",
+        "seats": 24,
+        "elevation": 36.98811421776806,
+        "depth": 27,
+        "covered": false
+      },
+      {
+        "rowNumber": "L",
+        "seats": 23,
+        "elevation": 37.764571353075624,
+        "depth": 30,
+        "covered": false
+      },
+      {
+        "rowNumber": "M",
+        "seats": 23,
+        "elevation": 38.54102848838318,
+        "depth": 33,
+        "covered": false
+      },
+      {
+        "rowNumber": "N",
+        "seats": 23,
+        "elevation": 39.31748562369074,
+        "depth": 36,
+        "covered": false
+      },
+      {
+        "rowNumber": "P",
+        "seats": 23,
+        "elevation": 40.09394275899831,
+        "depth": 39,
+        "covered": false
+      },
+      {
+        "rowNumber": "R",
+        "seats": 22,
+        "elevation": 40.87039989430587,
+        "depth": 42,
+        "covered": false
+      },
+      {
+        "rowNumber": "S",
+        "seats": 22,
+        "elevation": 41.64685702961343,
+        "depth": 45,
+        "covered": false
+      }
+    ],
+    "vertices3D": [
+      {
+        "x": -22,
+        "y": 92,
+        "z": 30
+      },
+      {
+        "x": -33,
+        "y": 94,
+        "z": 30
+      },
+      {
+        "x": -36,
+        "y": 151,
+        "z": 57
+      },
+      {
+        "x": -24,
+        "y": 149,
+        "z": 57
+      }
+    ],
+    "covered": true,
+    "distance": 96,
+    "height": 30,
+    "rake": 15
+  },
+  {
+    "id": "GS-5",
+    "name": "Grandstand 5",
+    "level": "upper",
+    "baseAngle": 109,
+    "angleSpan": 11,
+    "rows": [
+      {
+        "rowNumber": "A",
+        "seats": 26,
+        "elevation": 30,
+        "depth": 0,
+        "covered": false
+      },
+      {
+        "rowNumber": "B",
+        "seats": 26,
+        "elevation": 30.776457135307563,
+        "depth": 3,
+        "covered": false
+      },
+      {
+        "rowNumber": "C",
+        "seats": 26,
+        "elevation": 31.552914270615126,
+        "depth": 6,
+        "covered": false
+      },
+      {
+        "rowNumber": "D",
+        "seats": 26,
+        "elevation": 32.329371405922686,
+        "depth": 9,
+        "covered": false
+      },
+      {
+        "rowNumber": "E",
+        "seats": 25,
+        "elevation": 33.10582854123025,
+        "depth": 12,
+        "covered": false
+      },
+      {
+        "rowNumber": "F",
+        "seats": 25,
+        "elevation": 33.88228567653781,
+        "depth": 15,
+        "covered": false
+      },
+      {
+        "rowNumber": "G",
+        "seats": 25,
+        "elevation": 34.65874281184537,
+        "depth": 18,
+        "covered": false
+      },
+      {
+        "rowNumber": "H",
+        "seats": 24,
+        "elevation": 35.43519994715294,
+        "depth": 21,
+        "covered": false
+      },
+      {
+        "rowNumber": "J",
+        "seats": 24,
+        "elevation": 36.2116570824605,
+        "depth": 24,
+        "covered": false
+      },
+      {
+        "rowNumber": "K",
+        "seats": 24,
+        "elevation": 36.98811421776806,
+        "depth": 27,
+        "covered": false
+      },
+      {
+        "rowNumber": "L",
+        "seats": 23,
+        "elevation": 37.764571353075624,
+        "depth": 30,
+        "covered": false
+      },
+      {
+        "rowNumber": "M",
+        "seats": 23,
+        "elevation": 38.54102848838318,
+        "depth": 33,
+        "covered": false
+      },
+      {
+        "rowNumber": "N",
+        "seats": 23,
+        "elevation": 39.31748562369074,
+        "depth": 36,
+        "covered": false
+      },
+      {
+        "rowNumber": "P",
+        "seats": 23,
+        "elevation": 40.09394275899831,
+        "depth": 39,
+        "covered": false
+      },
+      {
+        "rowNumber": "R",
+        "seats": 22,
+        "elevation": 40.87039989430587,
+        "depth": 42,
+        "covered": false
+      },
+      {
+        "rowNumber": "S",
+        "seats": 22,
+        "elevation": 41.64685702961343,
+        "depth": 45,
+        "covered": false
+      }
+    ],
+    "vertices3D": [
+      {
+        "x": -11,
+        "y": 92,
+        "z": 30
+      },
+      {
+        "x": -22,
+        "y": 92,
+        "z": 30
+      },
+      {
+        "x": -24,
+        "y": 149,
+        "z": 57
+      },
+      {
+        "x": -12,
+        "y": 149,
+        "z": 57
+      }
+    ],
+    "covered": true,
+    "distance": 96,
+    "height": 30,
+    "rake": 15
+  },
+  {
+    "id": "GS-14",
+    "name": "Grandstand 14",
+    "level": "upper",
+    "baseAngle": 120,
+    "angleSpan": 11,
+    "rows": [
+      {
+        "rowNumber": "A",
+        "seats": 26,
+        "elevation": 30,
+        "depth": 0,
+        "covered": false
+      },
+      {
+        "rowNumber": "B",
+        "seats": 26,
+        "elevation": 30.776457135307563,
+        "depth": 3,
+        "covered": false
+      },
+      {
+        "rowNumber": "C",
+        "seats": 26,
+        "elevation": 31.552914270615126,
+        "depth": 6,
+        "covered": false
+      },
+      {
+        "rowNumber": "D",
+        "seats": 26,
+        "elevation": 32.329371405922686,
+        "depth": 9,
+        "covered": false
+      },
+      {
+        "rowNumber": "E",
+        "seats": 25,
+        "elevation": 33.10582854123025,
+        "depth": 12,
+        "covered": false
+      },
+      {
+        "rowNumber": "F",
+        "seats": 25,
+        "elevation": 33.88228567653781,
+        "depth": 15,
+        "covered": false
+      },
+      {
+        "rowNumber": "G",
+        "seats": 25,
+        "elevation": 34.65874281184537,
+        "depth": 18,
+        "covered": false
+      },
+      {
+        "rowNumber": "H",
+        "seats": 24,
+        "elevation": 35.43519994715294,
+        "depth": 21,
+        "covered": false
+      },
+      {
+        "rowNumber": "J",
+        "seats": 24,
+        "elevation": 36.2116570824605,
+        "depth": 24,
+        "covered": false
+      },
+      {
+        "rowNumber": "K",
+        "seats": 24,
+        "elevation": 36.98811421776806,
+        "depth": 27,
+        "covered": false
+      },
+      {
+        "rowNumber": "L",
+        "seats": 23,
+        "elevation": 37.764571353075624,
+        "depth": 30,
+        "covered": false
+      },
+      {
+        "rowNumber": "M",
+        "seats": 23,
+        "elevation": 38.54102848838318,
+        "depth": 33,
+        "covered": false
+      },
+      {
+        "rowNumber": "N",
+        "seats": 23,
+        "elevation": 39.31748562369074,
+        "depth": 36,
+        "covered": false
+      },
+      {
+        "rowNumber": "P",
+        "seats": 23,
+        "elevation": 40.09394275899831,
+        "depth": 39,
+        "covered": false
+      },
+      {
+        "rowNumber": "R",
+        "seats": 22,
+        "elevation": 40.87039989430587,
+        "depth": 42,
+        "covered": false
+      },
+      {
+        "rowNumber": "S",
+        "seats": 22,
+        "elevation": 41.64685702961343,
+        "depth": 45,
+        "covered": false
+      }
+    ],
+    "vertices3D": [
+      {
+        "x": 0,
+        "y": 92,
+        "z": 30
+      },
+      {
+        "x": -11,
+        "y": 92,
+        "z": 30
+      },
+      {
+        "x": -12,
+        "y": 149,
+        "z": 57
+      },
+      {
+        "x": 0,
+        "y": 149,
+        "z": 57
+      }
+    ],
+    "covered": true,
+    "distance": 96,
+    "height": 30,
+    "rake": 15
+  },
+  {
+    "id": "GS-15",
+    "name": "Grandstand 15",
+    "level": "upper",
+    "baseAngle": 131,
+    "angleSpan": 11,
+    "rows": [
+      {
+        "rowNumber": "A",
+        "seats": 26,
+        "elevation": 30,
+        "depth": 0,
+        "covered": false
+      },
+      {
+        "rowNumber": "B",
+        "seats": 26,
+        "elevation": 30.776457135307563,
+        "depth": 3,
+        "covered": false
+      },
+      {
+        "rowNumber": "C",
+        "seats": 26,
+        "elevation": 31.552914270615126,
+        "depth": 6,
+        "covered": false
+      },
+      {
+        "rowNumber": "D",
+        "seats": 26,
+        "elevation": 32.329371405922686,
+        "depth": 9,
+        "covered": false
+      },
+      {
+        "rowNumber": "E",
+        "seats": 25,
+        "elevation": 33.10582854123025,
+        "depth": 12,
+        "covered": false
+      },
+      {
+        "rowNumber": "F",
+        "seats": 25,
+        "elevation": 33.88228567653781,
+        "depth": 15,
+        "covered": false
+      },
+      {
+        "rowNumber": "G",
+        "seats": 25,
+        "elevation": 34.65874281184537,
+        "depth": 18,
+        "covered": false
+      },
+      {
+        "rowNumber": "H",
+        "seats": 24,
+        "elevation": 35.43519994715294,
+        "depth": 21,
+        "covered": false
+      },
+      {
+        "rowNumber": "J",
+        "seats": 24,
+        "elevation": 36.2116570824605,
+        "depth": 24,
+        "covered": false
+      },
+      {
+        "rowNumber": "K",
+        "seats": 24,
+        "elevation": 36.98811421776806,
+        "depth": 27,
+        "covered": false
+      },
+      {
+        "rowNumber": "L",
+        "seats": 23,
+        "elevation": 37.764571353075624,
+        "depth": 30,
+        "covered": false
+      },
+      {
+        "rowNumber": "M",
+        "seats": 23,
+        "elevation": 38.54102848838318,
+        "depth": 33,
+        "covered": false
+      },
+      {
+        "rowNumber": "N",
+        "seats": 23,
+        "elevation": 39.31748562369074,
+        "depth": 36,
+        "covered": false
+      },
+      {
+        "rowNumber": "P",
+        "seats": 23,
+        "elevation": 40.09394275899831,
+        "depth": 39,
+        "covered": false
+      },
+      {
+        "rowNumber": "R",
+        "seats": 22,
+        "elevation": 40.87039989430587,
+        "depth": 42,
+        "covered": false
+      },
+      {
+        "rowNumber": "S",
+        "seats": 22,
+        "elevation": 41.64685702961343,
+        "depth": 45,
+        "covered": false
+      }
+    ],
+    "vertices3D": [
+      {
+        "x": 11,
+        "y": 94,
+        "z": 30
+      },
+      {
+        "x": 0,
+        "y": 92,
+        "z": 30
+      },
+      {
+        "x": 0,
+        "y": 149,
+        "z": 57
+      },
+      {
+        "x": 12,
+        "y": 151,
+        "z": 57
+      }
+    ],
+    "covered": true,
+    "distance": 98,
+    "height": 30,
+    "rake": 15
+  },
+  {
+    "id": "GS-16",
+    "name": "Grandstand 16",
+    "level": "upper",
+    "baseAngle": 142,
+    "angleSpan": 11,
+    "rows": [
+      {
+        "rowNumber": "A",
+        "seats": 26,
+        "elevation": 30,
+        "depth": 0,
+        "covered": false
+      },
+      {
+        "rowNumber": "B",
+        "seats": 26,
+        "elevation": 30.776457135307563,
+        "depth": 3,
+        "covered": false
+      },
+      {
+        "rowNumber": "C",
+        "seats": 26,
+        "elevation": 31.552914270615126,
+        "depth": 6,
+        "covered": false
+      },
+      {
+        "rowNumber": "D",
+        "seats": 26,
+        "elevation": 32.329371405922686,
+        "depth": 9,
+        "covered": false
+      },
+      {
+        "rowNumber": "E",
+        "seats": 25,
+        "elevation": 33.10582854123025,
+        "depth": 12,
+        "covered": false
+      },
+      {
+        "rowNumber": "F",
+        "seats": 25,
+        "elevation": 33.88228567653781,
+        "depth": 15,
+        "covered": false
+      },
+      {
+        "rowNumber": "G",
+        "seats": 25,
+        "elevation": 34.65874281184537,
+        "depth": 18,
+        "covered": false
+      },
+      {
+        "rowNumber": "H",
+        "seats": 24,
+        "elevation": 35.43519994715294,
+        "depth": 21,
+        "covered": false
+      },
+      {
+        "rowNumber": "J",
+        "seats": 24,
+        "elevation": 36.2116570824605,
+        "depth": 24,
+        "covered": false
+      },
+      {
+        "rowNumber": "K",
+        "seats": 24,
+        "elevation": 36.98811421776806,
+        "depth": 27,
+        "covered": false
+      },
+      {
+        "rowNumber": "L",
+        "seats": 23,
+        "elevation": 37.764571353075624,
+        "depth": 30,
+        "covered": false
+      },
+      {
+        "rowNumber": "M",
+        "seats": 23,
+        "elevation": 38.54102848838318,
+        "depth": 33,
+        "covered": false
+      },
+      {
+        "rowNumber": "N",
+        "seats": 23,
+        "elevation": 39.31748562369074,
+        "depth": 36,
+        "covered": false
+      },
+      {
+        "rowNumber": "P",
+        "seats": 23,
+        "elevation": 40.09394275899831,
+        "depth": 39,
+        "covered": false
+      },
+      {
+        "rowNumber": "R",
+        "seats": 22,
+        "elevation": 40.87039989430587,
+        "depth": 42,
+        "covered": false
+      },
+      {
+        "rowNumber": "S",
+        "seats": 22,
+        "elevation": 41.64685702961343,
+        "depth": 45,
+        "covered": false
+      }
+    ],
+    "vertices3D": [
+      {
+        "x": 22,
+        "y": 96,
+        "z": 30
+      },
+      {
+        "x": 11,
+        "y": 94,
+        "z": 30
+      },
+      {
+        "x": 12,
+        "y": 151,
+        "z": 57
+      },
+      {
+        "x": 24,
+        "y": 153,
+        "z": 57
+      }
+    ],
+    "covered": true,
+    "distance": 100,
+    "height": 30,
+    "rake": 15
+  },
+  {
+    "id": "GS-17",
+    "name": "Grandstand 17",
+    "level": "upper",
+    "baseAngle": 153,
+    "angleSpan": 11,
+    "rows": [
+      {
+        "rowNumber": "A",
+        "seats": 26,
+        "elevation": 30,
+        "depth": 0,
+        "covered": false
+      },
+      {
+        "rowNumber": "B",
+        "seats": 26,
+        "elevation": 30.776457135307563,
+        "depth": 3,
+        "covered": false
+      },
+      {
+        "rowNumber": "C",
+        "seats": 26,
+        "elevation": 31.552914270615126,
+        "depth": 6,
+        "covered": false
+      },
+      {
+        "rowNumber": "D",
+        "seats": 26,
+        "elevation": 32.329371405922686,
+        "depth": 9,
+        "covered": false
+      },
+      {
+        "rowNumber": "E",
+        "seats": 25,
+        "elevation": 33.10582854123025,
+        "depth": 12,
+        "covered": false
+      },
+      {
+        "rowNumber": "F",
+        "seats": 25,
+        "elevation": 33.88228567653781,
+        "depth": 15,
+        "covered": false
+      },
+      {
+        "rowNumber": "G",
+        "seats": 25,
+        "elevation": 34.65874281184537,
+        "depth": 18,
+        "covered": false
+      },
+      {
+        "rowNumber": "H",
+        "seats": 24,
+        "elevation": 35.43519994715294,
+        "depth": 21,
+        "covered": false
+      },
+      {
+        "rowNumber": "J",
+        "seats": 24,
+        "elevation": 36.2116570824605,
+        "depth": 24,
+        "covered": false
+      },
+      {
+        "rowNumber": "K",
+        "seats": 24,
+        "elevation": 36.98811421776806,
+        "depth": 27,
+        "covered": false
+      },
+      {
+        "rowNumber": "L",
+        "seats": 23,
+        "elevation": 37.764571353075624,
+        "depth": 30,
+        "covered": false
+      },
+      {
+        "rowNumber": "M",
+        "seats": 23,
+        "elevation": 38.54102848838318,
+        "depth": 33,
+        "covered": false
+      },
+      {
+        "rowNumber": "N",
+        "seats": 23,
+        "elevation": 39.31748562369074,
+        "depth": 36,
+        "covered": false
+      },
+      {
+        "rowNumber": "P",
+        "seats": 23,
+        "elevation": 40.09394275899831,
+        "depth": 39,
+        "covered": false
+      },
+      {
+        "rowNumber": "R",
+        "seats": 22,
+        "elevation": 40.87039989430587,
+        "depth": 42,
+        "covered": false
+      },
+      {
+        "rowNumber": "S",
+        "seats": 22,
+        "elevation": 41.64685702961343,
+        "depth": 45,
+        "covered": false
+      }
+    ],
+    "vertices3D": [
+      {
+        "x": 33,
+        "y": 100,
+        "z": 30
+      },
+      {
+        "x": 22,
+        "y": 96,
+        "z": 30
+      },
+      {
+        "x": 24,
+        "y": 153,
+        "z": 57
+      },
+      {
+        "x": 36,
+        "y": 157,
+        "z": 57
+      }
+    ],
+    "covered": true,
+    "distance": 104,
+    "height": 30,
+    "rake": 15
+  },
+  {
+    "id": "EMC-406",
+    "name": "EMC Club 406",
+    "level": "club",
+    "baseAngle": 104,
+    "angleSpan": 10,
+    "rows": [
+      {
+        "rowNumber": "A",
+        "seats": 18,
+        "elevation": 35,
+        "depth": 0,
+        "covered": false
+      },
+      {
+        "rowNumber": "B",
+        "seats": 18,
+        "elevation": 35.56136156520795,
+        "depth": 2.7,
+        "covered": false
+      },
+      {
+        "rowNumber": "C",
+        "seats": 18,
+        "elevation": 36.1227231304159,
+        "depth": 5.4,
+        "covered": false
+      },
+      {
+        "rowNumber": "D",
+        "seats": 18,
+        "elevation": 36.68408469562385,
+        "depth": 8.100000000000001,
+        "covered": false
+      },
+      {
+        "rowNumber": "E",
+        "seats": 17,
+        "elevation": 37.2454462608318,
+        "depth": 10.8,
+        "covered": false
+      },
+      {
+        "rowNumber": "F",
+        "seats": 17,
+        "elevation": 37.80680782603975,
+        "depth": 13.5,
+        "covered": false
+      },
+      {
+        "rowNumber": "G",
+        "seats": 17,
+        "elevation": 38.368169391247704,
+        "depth": 16.200000000000003,
+        "covered": false
+      },
+      {
+        "rowNumber": "H",
+        "seats": 16,
+        "elevation": 38.92953095645565,
+        "depth": 18.900000000000002,
+        "covered": false
+      }
+    ],
+    "vertices3D": [
+      {
+        "x": -8,
+        "y": 105,
+        "z": 35
+      },
+      {
+        "x": 2,
+        "y": 105,
+        "z": 35
+      },
+      {
+        "x": 2,
+        "y": 125,
+        "z": 42
+      },
+      {
+        "x": -8,
+        "y": 125,
+        "z": 42
+      }
+    ],
+    "covered": true,
+    "distance": 110,
+    "height": 35,
+    "rake": 12
+  },
+  {
+    "id": "EMC-407",
+    "name": "EMC Club 407",
+    "level": "club",
+    "baseAngle": 114,
+    "angleSpan": 10,
+    "rows": [
+      {
+        "rowNumber": "A",
+        "seats": 18,
+        "elevation": 35,
+        "depth": 0,
+        "covered": false
+      },
+      {
+        "rowNumber": "B",
+        "seats": 18,
+        "elevation": 35.56136156520795,
+        "depth": 2.7,
+        "covered": false
+      },
+      {
+        "rowNumber": "C",
+        "seats": 18,
+        "elevation": 36.1227231304159,
+        "depth": 5.4,
+        "covered": false
+      },
+      {
+        "rowNumber": "D",
+        "seats": 18,
+        "elevation": 36.68408469562385,
+        "depth": 8.100000000000001,
+        "covered": false
+      },
+      {
+        "rowNumber": "E",
+        "seats": 17,
+        "elevation": 37.2454462608318,
+        "depth": 10.8,
+        "covered": false
+      },
+      {
+        "rowNumber": "F",
+        "seats": 17,
+        "elevation": 37.80680782603975,
+        "depth": 13.5,
+        "covered": false
+      },
+      {
+        "rowNumber": "G",
+        "seats": 17,
+        "elevation": 38.368169391247704,
+        "depth": 16.200000000000003,
+        "covered": false
+      },
+      {
+        "rowNumber": "H",
+        "seats": 16,
+        "elevation": 38.92953095645565,
+        "depth": 18.900000000000002,
+        "covered": false
+      }
+    ],
+    "vertices3D": [
+      {
+        "x": 2,
+        "y": 105,
+        "z": 35
+      },
+      {
+        "x": 12,
+        "y": 105,
+        "z": 35
+      },
+      {
+        "x": 12,
+        "y": 125,
+        "z": 42
+      },
+      {
+        "x": 2,
+        "y": 125,
+        "z": 42
+      }
+    ],
+    "covered": true,
+    "distance": 110,
+    "height": 35,
+    "rake": 12
+  },
+  {
+    "id": "MONSTER-SRO",
+    "name": "Monster Standing Room",
+    "level": "standing",
+    "baseAngle": 30,
+    "angleSpan": 15,
+    "rows": [],
+    "vertices3D": [
+      {
+        "x": -85,
+        "y": 165,
+        "z": 40
+      },
+      {
+        "x": -70,
+        "y": 172,
+        "z": 40
+      },
+      {
+        "x": -70,
+        "y": 185,
+        "z": 40
+      },
+      {
+        "x": -85,
+        "y": 178,
+        "z": 40
+      }
+    ],
+    "covered": false,
+    "distance": 315,
+    "height": 40,
+    "rake": 0
+  },
+  {
+    "id": "SAM-DECK",
+    "name": "Sam Deck",
+    "level": "standing",
+    "baseAngle": 165,
+    "angleSpan": 12,
+    "rows": [],
+    "vertices3D": [
+      {
+        "x": 75,
+        "y": 110,
+        "z": 28
+      },
+      {
+        "x": 85,
+        "y": 122,
+        "z": 28
+      },
+      {
+        "x": 88,
+        "y": 138,
+        "z": 28
+      },
+      {
+        "x": 78,
+        "y": 126,
+        "z": 28
+      }
+    ],
+    "covered": false,
+    "distance": 118,
+    "height": 28,
+    "rake": 0
+  },
+  {
+    "id": "COCA-COLA",
+    "name": "Coca-Cola Corner",
+    "level": "standing",
+    "baseAngle": 45,
+    "angleSpan": 10,
+    "rows": [],
+    "vertices3D": [
+      {
+        "x": -60,
+        "y": 165,
+        "z": 25
+      },
+      {
+        "x": -50,
+        "y": 170,
+        "z": 25
+      },
+      {
+        "x": -50,
+        "y": 185,
+        "z": 25
+      },
+      {
+        "x": -60,
+        "y": 180,
+        "z": 25
+      }
+    ],
+    "covered": false,
+    "distance": 310,
+    "height": 25,
+    "rake": 0
+  }
+]

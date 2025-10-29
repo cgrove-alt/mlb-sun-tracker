@@ -1,136 +1,121 @@
 // Stadium Data Aggregator
-// Dynamic loading system for stadium-specific sections and obstructions
-// IMPORTANT: This file uses dynamic imports to prevent bundling all stadium data
+// JSON loading system for stadium-specific sections and obstructions
+// IMPORTANT: This file fetches JSON data on-demand to prevent bundling all stadium data
 
-import { DetailedSection, Obstruction3D, StadiumComplete } from '../types/stadium-complete';
+import { DetailedSection, Obstruction3D } from '../types/stadium-complete';
+
+// Simplified type for loaded stadium data (just sections and obstructions)
+export interface StadiumSectionsData {
+  id: string;
+  sections: DetailedSection[];
+  obstructions: Obstruction3D[];
+}
 
 // Cache for loaded stadium data
-const stadiumDataCache = new Map<string, StadiumComplete>();
+const stadiumDataCache = new Map<string, StadiumSectionsData>();
+
+// Stadium ID to filename mapping
+const STADIUM_FILE_MAP: Record<string, { league: string; file: string }> = {
+  // MLB stadiums
+  'yankees': { league: 'mlb', file: 'yankees' },
+  'red-sox': { league: 'mlb', file: 'fenway-park' },
+  'fenway-park': { league: 'mlb', file: 'fenway-park' },
+  'dodgers': { league: 'mlb', file: 'dodgers' },
+  'cubs': { league: 'mlb', file: 'wrigley-field' },
+  'wrigley-field': { league: 'mlb', file: 'wrigley-field' },
+  'mets': { league: 'mlb', file: 'mets' },
+  'giants': { league: 'mlb', file: 'oracle-park' },
+  'oracle-park': { league: 'mlb', file: 'oracle-park' },
+  'padres': { league: 'mlb', file: 'padres' },
+  'orioles': { league: 'mlb', file: 'orioles' },
+  'pirates': { league: 'mlb', file: 'pnc-park' },
+  'pnc-park': { league: 'mlb', file: 'pnc-park' },
+  'astros': { league: 'mlb', file: 'astros' },
+  'braves': { league: 'mlb', file: 'truist-park' },
+  'truist-park': { league: 'mlb', file: 'truist-park' },
+  'rockies': { league: 'mlb', file: 'rockies' },
+  'twins': { league: 'mlb', file: 'twins' },
+  'reds': { league: 'mlb', file: 'great-american-ballpark' },
+  'great-american-ballpark': { league: 'mlb', file: 'great-american-ballpark' },
+  'guardians': { league: 'mlb', file: 'guardians' },
+  'phillies': { league: 'mlb', file: 'phillies' },
+  'nationals': { league: 'mlb', file: 'nationals' },
+  'rangers': { league: 'mlb', file: 'rangers' },
+  'angels': { league: 'mlb', file: 'angels' },
+  'brewers': { league: 'mlb', file: 'brewers' },
+  'cardinals': { league: 'mlb', file: 'busch-stadium' },
+  'busch-stadium': { league: 'mlb', file: 'busch-stadium' },
+  'diamondbacks': { league: 'mlb', file: 'diamondbacks' },
+  'tigers': { league: 'mlb', file: 'tigers' },
+  'george-m-steinbrenner-field': { league: 'mlb', file: 'george-m-steinbrenner-field' },
+  'whitesox': { league: 'mlb', file: 'whitesox' },
+  'royals': { league: 'mlb', file: 'royals' },
+  'marlins': { league: 'mlb', file: 'marlins' },
+  'bluejays': { league: 'mlb', file: 'bluejays' },
+  'athletics': { league: 'mlb', file: 'athletics' },
+  'mariners': { league: 'mlb', file: 'mariners' },
+  'rays': { league: 'mlb', file: 'rays' },
+  'redsox': { league: 'mlb', file: 'redsox' },
+
+  // MiLB stadiums
+  'las-vegas-aviators': { league: 'milb/aaa', file: 'las-vegas-aviators' },
+
+  // NFL stadiums
+  'sofi-stadium': { league: 'nfl', file: 'sofi-stadium' }
+};
 
 /**
- * Dynamically loads section data for a specific stadium
+ * Fetches JSON data from the public directory
+ * Handles both server-side and client-side environments
+ * @param path Path relative to /data/sections/
+ * @returns Promise<any> The parsed JSON data
+ */
+async function fetchJSON(path: string): Promise<any> {
+  try {
+    // Check if we're on the server (Node.js) or client (browser)
+    if (typeof window === 'undefined') {
+      // Server-side: use fs to read the file
+      const fs = await import('fs');
+      const pathModule = await import('path');
+      const fullPath = pathModule.join(process.cwd(), 'public', 'data', 'sections', path);
+
+      if (!fs.existsSync(fullPath)) {
+        console.warn(`File not found: ${fullPath}`);
+        return null;
+      }
+
+      const fileContent = fs.readFileSync(fullPath, 'utf-8');
+      return JSON.parse(fileContent);
+    } else {
+      // Client-side: use fetch
+      const response = await fetch(`/data/sections/${path}`);
+      if (!response.ok) {
+        throw new Error(`Failed to fetch ${path}: ${response.statusText}`);
+      }
+      return await response.json();
+    }
+  } catch (error) {
+    console.error(`Error loading JSON from ${path}:`, error);
+    return null;
+  }
+}
+
+/**
+ * Loads section data for a specific stadium from JSON
  * @param stadiumId The stadium identifier
  * @returns Promise<DetailedSection[]> The stadium's sections or empty array if not found
  */
 async function loadSections(stadiumId: string): Promise<DetailedSection[]> {
   try {
-    switch (stadiumId) {
-      // MLB stadiums
-      case 'yankees':
-        const { yankeesSections } = await import('./sections/mlb/yankees');
-        return yankeesSections;
-      case 'red-sox':
-      case 'fenway-park':
-        const { fenwayParkSections } = await import('./sections/mlb/fenway-park');
-        return fenwayParkSections;
-      case 'dodgers':
-        const { dodgersSections } = await import('./sections/mlb/dodgers');
-        return dodgersSections;
-      case 'cubs':
-      case 'wrigley-field':
-        const { wrigleyFieldSections } = await import('./sections/mlb/wrigley-field');
-        return wrigleyFieldSections;
-      case 'mets':
-        const { metsSections } = await import('./sections/mlb/mets');
-        return metsSections;
-      case 'giants':
-      case 'oracle-park':
-        const { oracleParkSections } = await import('./sections/mlb/oracle-park');
-        return oracleParkSections;
-      case 'padres':
-        const { padresSections } = await import('./sections/mlb/padres');
-        return padresSections;
-      case 'orioles':
-        const { oriolesSections } = await import('./sections/mlb/orioles');
-        return oriolesSections;
-      case 'pirates':
-      case 'pnc-park':
-        const { pncParkSections } = await import('./sections/mlb/pnc-park');
-        return pncParkSections;
-      case 'astros':
-        const { astrosSections } = await import('./sections/mlb/astros');
-        return astrosSections;
-      case 'braves':
-      case 'truist-park':
-        const { truistParkSections } = await import('./sections/mlb/truist-park');
-        return truistParkSections;
-      case 'rockies':
-        const { rockiesSections } = await import('./sections/mlb/rockies');
-        return rockiesSections;
-      case 'twins':
-        const { twinsSections } = await import('./sections/mlb/twins');
-        return twinsSections;
-      case 'reds':
-      case 'great-american-ballpark':
-        const { greatAmericanBallparkSections } = await import('./sections/mlb/great-american-ballpark');
-        return greatAmericanBallparkSections;
-      case 'guardians':
-        const { guardiansSections } = await import('./sections/mlb/guardians');
-        return guardiansSections;
-      case 'phillies':
-        const { philliesSections } = await import('./sections/mlb/phillies');
-        return philliesSections;
-      case 'nationals':
-        const { nationalsSections } = await import('./sections/mlb/nationals');
-        return nationalsSections;
-      case 'rangers':
-        const { rangersSections } = await import('./sections/mlb/rangers');
-        return rangersSections;
-      case 'angels':
-        const { angelsSections } = await import('./sections/mlb/angels');
-        return angelsSections;
-      case 'brewers':
-        const { brewersSections } = await import('./sections/mlb/brewers');
-        return brewersSections;
-      case 'cardinals':
-      case 'busch-stadium':
-        const { buschstadiumSections } = await import('./sections/mlb/busch-stadium');
-        return buschstadiumSections;
-      case 'diamondbacks':
-        const { diamondbacksSections } = await import('./sections/mlb/diamondbacks');
-        return diamondbacksSections;
-      case 'tigers':
-        const { tigersSections } = await import('./sections/mlb/tigers');
-        return tigersSections;
-      case 'george-m-steinbrenner-field':
-        const { georgeMSteinbrennerFieldSections } = await import('./sections/mlb/george-m-steinbrenner-field');
-        return georgeMSteinbrennerFieldSections;
-      case 'whitesox':
-        const { whitesoxSections } = await import('./sections/mlb/whitesox');
-        return whitesoxSections;
-      case 'royals':
-        const { royalsSections } = await import('./sections/mlb/royals');
-        return royalsSections;
-      case 'marlins':
-        const { marlinsSections } = await import('./sections/mlb/marlins');
-        return marlinsSections;
-      case 'bluejays':
-        const { bluejaysSections } = await import('./sections/mlb/bluejays');
-        return bluejaysSections;
-      case 'athletics':
-        const { athleticsSections } = await import('./sections/mlb/athletics');
-        return athleticsSections;
-      case 'mariners':
-        const { marinersSections } = await import('./sections/mlb/mariners');
-        return marinersSections;
-      case 'rays':
-        const { raysSections } = await import('./sections/mlb/rays');
-        return raysSections;
-
-      // MiLB stadiums
-      case 'las-vegas-aviators':
-        const { lasvegasaviatorsSections } = await import('./sections/milb/aaa/las-vegas-aviators');
-        return lasvegasaviatorsSections;
-
-      // NFL stadiums
-      case 'sofi-stadium':
-        const { sofiStadiumSections } = await import('./sections/nfl/sofi-stadium');
-        return sofiStadiumSections;
-
-      default:
-        console.warn(`No section data found for stadium: ${stadiumId}`);
-        return [];
+    const mapping = STADIUM_FILE_MAP[stadiumId];
+    if (!mapping) {
+      console.warn(`No file mapping found for stadium: ${stadiumId}`);
+      return [];
     }
+
+    const path = `${mapping.league}/${mapping.file}.json`;
+    const data = await fetchJSON(path);
+    return data || [];
   } catch (error) {
     console.error(`Error loading sections for ${stadiumId}:`, error);
     return [];
@@ -138,7 +123,7 @@ async function loadSections(stadiumId: string): Promise<DetailedSection[]> {
 }
 
 /**
- * Dynamically loads obstruction data for a specific stadium
+ * Loads obstruction data for a specific stadium (still using dynamic imports for now)
  * @param stadiumId The stadium identifier
  * @returns Promise<Obstruction3D[]> The stadium's obstructions or empty array if not found
  */
@@ -254,12 +239,12 @@ async function loadObstructions(stadiumId: string): Promise<Obstruction3D[]> {
 }
 
 /**
- * Get complete stadium data including sections and obstructions
- * Uses dynamic imports to load only the requested stadium data
+ * Get stadium sections and obstructions data
+ * Uses JSON loading to avoid bundling all stadium data
  * @param stadiumId The stadium identifier
- * @returns Promise<StadiumComplete | null>
+ * @returns Promise<StadiumSectionsData | null>
  */
-export async function getStadiumCompleteData(stadiumId: string): Promise<StadiumComplete | null> {
+export async function getStadiumCompleteData(stadiumId: string): Promise<StadiumSectionsData | null> {
   if (!stadiumId) {
     console.warn('No stadium ID provided');
     return null;
@@ -281,7 +266,7 @@ export async function getStadiumCompleteData(stadiumId: string): Promise<Stadium
     return null;
   }
 
-  const completeData: StadiumComplete = {
+  const completeData: StadiumSectionsData = {
     id: stadiumId,
     sections,
     obstructions
