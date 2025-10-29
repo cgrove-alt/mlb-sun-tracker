@@ -162,6 +162,7 @@ export default function StadiumPageClient({
           }>
             <ComprehensiveStadiumGuide
               stadiumId={stadium.id}
+              guide={guide}
               availableSections={availableSections}
             />
           </Suspense>

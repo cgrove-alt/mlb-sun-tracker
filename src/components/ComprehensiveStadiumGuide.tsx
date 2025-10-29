@@ -2,7 +2,6 @@
 
 import React from 'react';
 import { StadiumGuide } from '../data/stadiumGuides';
-import { getStadiumGuide } from '../data/guides';
 import Link from 'next/link';
 import {
   MapPinIcon,
@@ -19,6 +18,7 @@ import './StadiumGuide.css';
 
 interface ComprehensiveStadiumGuideProps {
   stadiumId: string;
+  guide?: StadiumGuide | null;
   availableSections?: string[];
 }
 
@@ -81,9 +81,7 @@ function formatSectionText(text: string, stadiumId: string, availableSections?: 
   return parts.length > 0 ? <>{parts}</> : text;
 }
 
-const ComprehensiveStadiumGuide: React.FC<ComprehensiveStadiumGuideProps> = ({ stadiumId, availableSections }) => {
-  const guide = getStadiumGuide(stadiumId);
-  
+const ComprehensiveStadiumGuide: React.FC<ComprehensiveStadiumGuideProps> = ({ stadiumId, guide, availableSections }) => {
   // Debug logging
   if (typeof window !== 'undefined' && guide) {
 

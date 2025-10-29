@@ -4,7 +4,7 @@ import { Suspense } from 'react';
 import * as fs from 'fs';
 import * as path from 'path';
 import { MLB_STADIUMS } from '../../../src/data/stadiums';
-import { getStadiumSectionsAsync } from '../../../src/data/getStadiumSections';
+import type { StadiumSections } from '../../../src/data/getStadiumSections';
 import { getStadiumAmenities } from '../../../src/data/stadiumAmenities';
 import { getStadiumGuide } from '../../../src/data/guides';
 import { getCanonicalStadiumId, needsRedirect } from '../../../src/utils/stadiumSlugMapping';
@@ -149,8 +149,10 @@ export default async function StadiumPage({ params }: StadiumPageProps) {
     notFound();
   }
 
-  // Load sections asynchronously to avoid bundling all section data
-  const sections = await getStadiumSectionsAsync(stadium.id);
+  // Load sections from JSON (server-side)
+  const stadiumSectionsPath = path.join(process.cwd(), 'public', 'data', 'stadium-sections.json');
+  const allSections: StadiumSections[] = JSON.parse(fs.readFileSync(stadiumSectionsPath, 'utf-8'));
+  const sections = allSections.find(s => s.stadiumId === stadium.id)?.sections || [];
   const amenities = getStadiumAmenities(stadium.id);
   // Use the stadium's canonical ID for guide lookup
   const guide = getStadiumGuide(stadium.id) || getStadiumGuide(stadiumId);

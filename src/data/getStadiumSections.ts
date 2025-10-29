@@ -6,54 +6,60 @@ export interface StadiumSections {
 }
 
 /**
- * Get stadium sections data asynchronously with dynamic imports
- * Uses explicit imports to enable true code splitting per stadium
+ * Get stadium sections data asynchronously using JSON (client-side)
+ * For server-side, import JSON directly from public/data/stadium-sections.json
  */
 export async function getStadiumSectionsAsync(stadiumId: string): Promise<StadiumSection[]> {
-  try {
-    let module;
-    // Explicit switch allows webpack to create separate chunks for each stadium
-    switch (stadiumId) {
-      case 'angels': module = await import('./stadiumSections-split/angels'); break;
-      case 'astros': module = await import('./stadiumSections-split/astros'); break;
-      case 'athletics': module = await import('./stadiumSections-split/athletics'); break;
-      case 'bluejays': module = await import('./stadiumSections-split/bluejays'); break;
-      case 'braves': module = await import('./stadiumSections-split/braves'); break;
-      case 'brewers': module = await import('./stadiumSections-split/brewers'); break;
-      case 'cardinals': module = await import('./stadiumSections-split/cardinals'); break;
-      case 'cubs': module = await import('./stadiumSections-split/cubs'); break;
-      case 'diamondbacks': module = await import('./stadiumSections-split/diamondbacks'); break;
-      case 'dodgers': module = await import('./stadiumSections-split/dodgers'); break;
-      case 'giants': module = await import('./stadiumSections-split/giants'); break;
-      case 'guardians': module = await import('./stadiumSections-split/guardians'); break;
-      case 'mariners': module = await import('./stadiumSections-split/mariners'); break;
-      case 'marlins': module = await import('./stadiumSections-split/marlins'); break;
-      case 'mets': module = await import('./stadiumSections-split/mets'); break;
-      case 'nationals': module = await import('./stadiumSections-split/nationals'); break;
-      case 'orioles': module = await import('./stadiumSections-split/orioles'); break;
-      case 'padres': module = await import('./stadiumSections-split/padres'); break;
-      case 'phillies': module = await import('./stadiumSections-split/phillies'); break;
-      case 'pirates': module = await import('./stadiumSections-split/pirates'); break;
-      case 'rangers': module = await import('./stadiumSections-split/rangers'); break;
-      case 'rays': module = await import('./stadiumSections-split/rays'); break;
-      case 'redsox': module = await import('./stadiumSections-split/redsox'); break;
-      case 'reds': module = await import('./stadiumSections-split/reds'); break;
-      case 'rockies': module = await import('./stadiumSections-split/rockies'); break;
-      case 'royals': module = await import('./stadiumSections-split/royals'); break;
-      case 'tigers': module = await import('./stadiumSections-split/tigers'); break;
-      case 'twins': module = await import('./stadiumSections-split/twins'); break;
-      case 'whitesox': module = await import('./stadiumSections-split/whitesox'); break;
-      case 'yankees': module = await import('./stadiumSections-split/yankees'); break;
-      default:
-        console.warn(`No section data found for stadium: ${stadiumId}`);
-        return [];
-    }
-    const data = module.stadiumSections;
-    return (data.sections || []) as StadiumSection[];
-  } catch (error) {
-    console.warn(`Error loading section data for stadium: ${stadiumId}`, error);
-    return [];
+  return fetchStadiumSectionsByIdJson(stadiumId);
+}
+
+/**
+ * Load all stadium sections from JSON (client-side only)
+ * This replaces the heavy stadiumSections.ts import to reduce bundle size
+ */
+let cachedSectionsData: StadiumSections[] | null = null;
+let fetchPromise: Promise<StadiumSections[]> | null = null;
+
+export async function fetchAllStadiumSectionsJson(): Promise<StadiumSections[]> {
+  // Return cached data if available
+  if (cachedSectionsData) {
+    return cachedSectionsData;
   }
+
+  // If fetch is in progress, return the same promise
+  if (fetchPromise) {
+    return fetchPromise;
+  }
+
+  // Client-side: Fetch from static file
+  fetchPromise = fetch('/data/stadium-sections.json')
+    .then((res) => {
+      if (!res.ok) {
+        throw new Error(`Failed to fetch stadium sections: ${res.status}`);
+      }
+      return res.json();
+    })
+    .then((data: StadiumSections[]) => {
+      cachedSectionsData = data;
+      fetchPromise = null;
+      return data;
+    })
+    .catch((err) => {
+      fetchPromise = null;
+      console.error('Failed to load stadium sections from JSON:', err);
+      throw err;
+    });
+
+  return fetchPromise;
+}
+
+/**
+ * Get sections for a specific stadium from JSON
+ */
+export async function fetchStadiumSectionsByIdJson(stadiumId: string): Promise<StadiumSection[]> {
+  const allSections = await fetchAllStadiumSectionsJson();
+  const stadiumData = allSections.find((s) => s.stadiumId === stadiumId);
+  return stadiumData?.sections || [];
 }
 
 /**

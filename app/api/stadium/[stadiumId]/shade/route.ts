@@ -1,6 +1,8 @@
 import { NextRequest, NextResponse } from 'next/server';
+import * as fs from 'fs';
+import * as path from 'path';
 import { MLB_STADIUMS } from '../../../../../src/data/stadiums';
-import { getStadiumSections } from '../../../../../src/data/stadiumSections';
+import type { StadiumSections } from '../../../../../src/data/getStadiumSections';
 import { calculateShadePercentage, generateShadeMatrix } from '../../../../../src/utils/stadiumDataServer';
 
 interface RouteParams {
@@ -27,8 +29,11 @@ export async function GET(request: NextRequest, { params }: RouteParams) {
       { status: 404 }
     );
   }
-  
-  const sections = getStadiumSections(stadium.id);
+
+  // Load sections from JSON (server-side)
+  const stadiumSectionsPath = path.join(process.cwd(), 'public', 'data', 'stadium-sections.json');
+  const allSections: StadiumSections[] = JSON.parse(fs.readFileSync(stadiumSectionsPath, 'utf-8'));
+  const sections = allSections.find(s => s.stadiumId === stadium.id)?.sections || [];
   
   // If specific section requested
   if (section) {
