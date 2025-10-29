@@ -1,8 +1,9 @@
 'use client';
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
-import { getAllLeagues, getLeagueInfo, getVenuesByLeague } from '../data/unifiedVenues';
+import { loadAllUnifiedVenues, getAllLeagues, getLeagueInfo } from '../data/unifiedVenuesLoader';
+import type { UnifiedVenue } from '../data/unifiedVenues';
 
 interface LeagueNavigationProps {
   currentLeague?: string;
@@ -11,7 +12,18 @@ interface LeagueNavigationProps {
 
 const LeagueNavigation: React.FC<LeagueNavigationProps> = ({ currentLeague, className = '' }) => {
   const [isExpanded, setIsExpanded] = useState(false);
+  const [venues, setVenues] = useState<UnifiedVenue[]>([]);
   const leagues = getAllLeagues();
+
+  // Load venues on mount
+  useEffect(() => {
+    loadAllUnifiedVenues().then(setVenues).catch(console.error);
+  }, []);
+
+  // Helper to get venues by league from loaded data
+  const getVenuesByLeague = (league: string) => {
+    return venues.filter(v => v.league === league);
+  };
 
   return (
     <nav className={`league-navigation ${className}`}>

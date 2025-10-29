@@ -1,6 +1,7 @@
 import React from 'react';
 import { Stadium, MLB_STADIUMS } from '../data/stadiums';
-import { UnifiedVenue, getLeagueInfo } from '../data/unifiedVenues';
+import { getLeagueInfo } from '../data/unifiedVenuesLoader';
+import type { UnifiedVenue } from '../data/unifiedVenues';
 import { MLBGame } from '../services/mlbApi';
 import { MiLBGame } from '../services/milbApi';
 import { NFLGame } from '../services/nflApi';

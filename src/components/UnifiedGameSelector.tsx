@@ -5,7 +5,8 @@ import { MLBGame, mlbApi } from '../services/mlbApi';
 import { MiLBGame, milbApi, MILB_LEVELS } from '../services/milbApi';
 import { NFLGame, nflApi } from '../services/nflApi';
 import { Stadium } from '../data/stadiums';
-import { UnifiedVenue, getAllLeagues, getVenuesByLeague, getLeagueInfo, getMiLBVenuesByLevel, getMiLBLevels, isMiLBVenue } from '../data/unifiedVenues';
+import { loadAllUnifiedVenues, getAllLeagues, getLeagueInfo, getMiLBLevels } from '../data/unifiedVenuesLoader';
+import type { UnifiedVenue } from '../data/unifiedVenues';
 import { getTeamIdFromVenueId, getVenueIdFromStringId } from '../data/milbTeamMapping';
 import { preferencesStorage } from '../utils/preferences';
 import { formatDateTimeWithTimezone } from '../utils/timeUtils';
@@ -34,6 +35,7 @@ export const UnifiedGameSelector: React.FC<UnifiedGameSelectorProps> = ({
   const { t } = useTranslation();
   const [games, setGames] = useState<(MLBGame | MiLBGame | NFLGame)[]>([]);
   const [isMobileContext, setIsMobileContext] = useState(false);
+  const [allVenues, setAllVenues] = useState<UnifiedVenue[]>([]);
   const gamesLoading = useLoadingState<(MLBGame | MiLBGame | NFLGame)[]>({ minLoadingTime: 500, initialLoading: false });
   const [selectedLeague, setSelectedLeague] = useState<string>(() => {
     return preferencesStorage.get('selectedLeague', 'MLB');
@@ -59,13 +61,31 @@ export const UnifiedGameSelector: React.FC<UnifiedGameSelectorProps> = ({
       const mobileApp = document.querySelector('.mobile-app');
       setIsMobileContext(!!mobileApp);
     };
-    
+
     checkMobileContext();
     // Also check on resize
     window.addEventListener('resize', checkMobileContext);
     return () => window.removeEventListener('resize', checkMobileContext);
   }, []);
-  
+
+  // Load venues on mount
+  useEffect(() => {
+    loadAllUnifiedVenues().then(setAllVenues).catch(console.error);
+  }, []);
+
+  // Helper functions using loaded venues
+  const getVenuesByLeague = (league: string) => {
+    return allVenues.filter(v => v.league === league);
+  };
+
+  const getMiLBVenuesByLevel = (level: string) => {
+    return allVenues.filter(v => v.league === 'MiLB' && v.level === level);
+  };
+
+  const isMiLBVenue = (venue: UnifiedVenue) => {
+    return venue.league === 'MiLB';
+  };
+
   // Get all leagues and venues
   const leagues = getAllLeagues();
   const venuesInLeague = selectedLeague === 'MiLB' ? getMiLBVenuesByLevel(selectedMiLBLevel) : getVenuesByLeague(selectedLeague);

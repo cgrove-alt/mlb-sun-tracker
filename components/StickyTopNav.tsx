@@ -4,7 +4,8 @@ import React, { useState, useEffect, useRef } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { MLB_STADIUMS } from '../src/data/stadiums';
-import { ALL_UNIFIED_VENUES, getVenuesByLeague } from '../src/data/unifiedVenues';
+import { loadAllUnifiedVenues } from '../src/data/unifiedVenuesLoader';
+import type { UnifiedVenue } from '../src/data/unifiedVenues';
 import { useHapticFeedback } from '../src/hooks/useHapticFeedback';
 import './StickyTopNav.css';
 
@@ -17,15 +18,21 @@ export default function StickyTopNav() {
   const [searchResults, setSearchResults] = useState<Array<{id: string; name: string; team: string; league?: string}>>([]);
   const [showSearchResults, setShowSearchResults] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
+  const [allVenues, setAllVenues] = useState<UnifiedVenue[]>([]);
   const pathname = usePathname();
   const searchRef = useRef<HTMLDivElement>(null);
   const mobileMenuRef = useRef<HTMLDivElement>(null);
   const haptic = useHapticFeedback();
 
-  // Get venues by league
-  const mlbVenues = getVenuesByLeague('MLB');
-  const nflVenues = getVenuesByLeague('NFL');
-  const milbVenues = getVenuesByLeague('MiLB');
+  // Load venues on mount
+  useEffect(() => {
+    loadAllUnifiedVenues().then(setAllVenues).catch(console.error);
+  }, []);
+
+  // Get venues by league from loaded data
+  const mlbVenues = allVenues.filter(v => v.league === 'MLB');
+  const nflVenues = allVenues.filter(v => v.league === 'NFL');
+  const milbVenues = allVenues.filter(v => v.league === 'MiLB');
 
   // Popular stadiums for quick access (top 8 most visited)
   const popularStadiums = [
@@ -94,7 +101,7 @@ export default function StickyTopNav() {
 
   const handleSearch = (query: string) => {
     setSearchQuery(query);
-    
+
     if (query.trim() === '') {
       setSearchResults([]);
       setShowSearchResults(false);
@@ -102,9 +109,9 @@ export default function StickyTopNav() {
     }
 
     const lowerQuery = query.toLowerCase();
-    const results = ALL_UNIFIED_VENUES
-      .filter(venue => 
-        venue.name.toLowerCase().includes(lowerQuery) || 
+    const results = allVenues
+      .filter(venue =>
+        venue.name.toLowerCase().includes(lowerQuery) ||
         venue.team.toLowerCase().includes(lowerQuery) ||
         venue.city.toLowerCase().includes(lowerQuery)
       )
@@ -115,7 +122,7 @@ export default function StickyTopNav() {
         team: venue.team,
         league: venue.league // Include league for routing
       }));
-    
+
     setSearchResults(results);
     setShowSearchResults(results.length > 0);
   };
