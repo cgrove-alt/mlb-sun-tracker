@@ -1,7 +1,7 @@
 'use client';
 
 import { useState, useEffect } from 'react';
-import pako from 'pako';
+import type { DecompressionMessage, DecompressionResult } from '../workers/decompressionWorker';
 
 interface SunExposureData {
   stadiumId: string;
@@ -27,6 +27,47 @@ interface UseSunExposureResult {
   data: Record<string, number> | null;  // Map of seatId → sun exposure percentage (0-100)
   isLoading: boolean;
   error: Error | null;
+}
+
+// Singleton worker instance for decompression
+let decompressionWorker: Worker | null = null;
+let workerIdCounter = 0;
+
+// Get or create the decompression worker
+function getDecompressionWorker(): Worker {
+  if (!decompressionWorker && typeof window !== 'undefined') {
+    decompressionWorker = new Worker(new URL('../workers/decompressionWorker.ts', import.meta.url));
+  }
+  return decompressionWorker!;
+}
+
+// Helper to decompress data using Web Worker (off-main-thread)
+async function decompressData(compressedData: ArrayBuffer): Promise<string> {
+  return new Promise((resolve, reject) => {
+    const worker = getDecompressionWorker();
+    const id = `decompress-${++workerIdCounter}`;
+
+    const handleMessage = (event: MessageEvent<DecompressionResult>) => {
+      if (event.data.id === id) {
+        worker.removeEventListener('message', handleMessage);
+
+        if (event.data.type === 'success' && event.data.data) {
+          resolve(event.data.data);
+        } else {
+          reject(new Error(event.data.error || 'Decompression failed'));
+        }
+      }
+    };
+
+    worker.addEventListener('message', handleMessage);
+
+    const message: DecompressionMessage = {
+      type: 'decompress',
+      data: compressedData,
+      id,
+    };
+    worker.postMessage(message);
+  });
 }
 
 // Helper to find closest date in the precomputed data
@@ -124,8 +165,9 @@ export function useSunExposure(options: UseSunExposureOptions): UseSunExposureRe
 
         const compressedData = await response.arrayBuffer();
 
-        // Decompress using pako
-        const decompressed = pako.ungzip(new Uint8Array(compressedData), { to: 'string' });
+        // Decompress using Web Worker (off-main-thread for better performance)
+        // This prevents UI freezing during 285-407KB decompression
+        const decompressed = await decompressData(compressedData);
         const sunData: SunExposureData = JSON.parse(decompressed);
 
         if (cancelled) return;
