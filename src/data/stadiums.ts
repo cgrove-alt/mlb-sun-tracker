@@ -295,7 +295,7 @@ export const MLB_STADIUMS: Stadium[] = [
   },
   {
     id: 'rays',
-    name: 'George M. Steinbrenner Field', // Temporary home for 2025 season due to Tropicana Field hurricane damage
+    name: 'George M. Steinbrenner Field', // Temporary home for 2025-2026 seasons due to Tropicana Field hurricane damage
     team: 'Tampa Bay Rays',
     city: 'Tampa',
     state: 'FL',

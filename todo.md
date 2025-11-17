@@ -2798,3 +2798,68 @@ Status: ✅ Pushed to GitHub
 *JSON files generated: 153*
 *Bundle size reduced: 428KB*
 
+
+---
+
+# 2026 Data Update Plan
+
+## Overview
+Update all MLB and MiLB stadium and schedule data from 2025 to 2026. This includes hardcoded dates, pre-computed sun data, and all related configurations.
+
+## Phase 1: Update Hardcoded Year References
+- [ ] Update `scripts/precomputeSunData.ts` - Change 2025 dates to 2026 (Opening Day: March 26, 2026; Season End: September 27, 2026)
+- [ ] Update `scripts/generateAllGameTimesData.ts` - Ensure it uses 2026 dates
+- [ ] Update `scripts/verifySunAccuracy.ts` - Change test dates to 2026
+- [ ] Update `scripts/compareNREL.ts` - Change summer solstice date to 2026-06-21
+- [ ] Update `scripts/debugNREL.ts` - Update test date to 2026
+- [ ] Update `src/components/GameSelector.tsx` - Verify year selection logic handles 2026 properly, remove old years
+
+## Phase 2: Update Localization Files (Copyright Year)
+- [ ] Update `locales/en.json` - Change copyright to 2026
+- [ ] Update `locales/es.json` - Change copyright to 2026
+- [ ] Update `locales/ja.json` - Change copyright to 2026
+- [ ] Update `public/locales/en.json` - Change copyright to 2026
+- [ ] Update `public/locales/es.json` - Change copyright to 2026
+- [ ] Update `public/locales/ja.json` - Change copyright to 2026
+
+## Phase 3: Verify Stadium Configuration
+- [ ] Check `src/data/stadiums.ts` - Verify Tampa Bay Rays stadium status for 2026 (currently notes 2025 temporary home)
+- [ ] Verify all stadium coordinates and configurations are still valid for 2026
+- [ ] Check for any new stadiums or relocated teams for 2026
+
+## Phase 4: Regenerate Pre-computed Sun Data
+- [ ] Generate sun data for all 30 MLB stadiums with 6 standard game times each:
+  - [ ] 11:00 AM games
+  - [ ] 1:00 PM games
+  - [ ] 3:00 PM games
+  - [ ] 6:00 PM games
+  - [ ] 7:00 PM games
+  - [ ] 8:00 PM games
+- [ ] Run `scripts/generateAllGameTimesData.ts` to batch generate all data
+- [ ] Verify all ~180 pre-computed files are generated successfully
+
+## Phase 5: Update MiLB Data (if applicable)
+- [ ] Search for MiLB stadium data files
+- [ ] Update any MiLB-specific schedules or configurations
+- [ ] Regenerate MiLB sun data if needed
+
+## Phase 6: Testing and Verification
+- [ ] Run `scripts/verifySunAccuracy.ts` to verify sun calculations for 2026
+- [ ] Test GameSelector component with 2026 dates
+- [ ] Verify MLB API integration works with 2026 season parameter
+- [ ] Build the project and verify no errors
+- [ ] Test the application with 2026 data in browser
+- [ ] Verify all stadium pages load correctly with 2026 data
+
+## Phase 7: Cleanup
+- [ ] Remove old 2024/2025 data files if no longer needed
+- [ ] Clear any cached build artifacts in `/out` directory
+- [ ] Update any documentation referencing old years
+
+## Notes
+- 2026 MLB Season: March 26 (Opening Day) - September 27 (Season End)
+- Total files to update: ~200+ files (including generated data)
+- Priority: Focus on source code updates first, then regenerate all data
+
+## 2026 Update Review
+_To be completed after all tasks are done_
