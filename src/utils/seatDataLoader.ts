@@ -11,6 +11,7 @@ import type {
   PreComputedSeatExposure,
 } from '@/types/seat';
 import { toDataStadiumId, stripSectionSuffix } from '@/utils/ids';
+import { getSeatDataWorker } from './seatDataWorkerClient';
 
 /**
  * Cache for loaded seat data to avoid repeated imports
@@ -43,29 +44,52 @@ export async function getSeatDataForSection(
   }
 
   try {
-    // Fetch JSON file from public directory using mapped stadium ID and numeric section ID
-    const response = await fetch(`/data/seats/${seatDataStadiumId}/${jsonSectionId}.json`);
+    // Use Web Worker for fetching and parsing to avoid blocking main thread
+    const worker = getSeatDataWorker();
+    const url = `/data/seats/${seatDataStadiumId}/${jsonSectionId}.json`;
 
-    if (!response.ok) {
-      console.warn(
-        `Seat data not found for stadium "${urlStadiumId}" (mapped to "${seatDataStadiumId}"), section "${sectionId}" (JSON file: ${jsonSectionId}.json) - HTTP ${response.status}`
-      );
-      return null;
+    try {
+      // Try to fetch using Web Worker (off main thread)
+      const sectionData: SectionSeatingData = await worker.fetchAndParse(url);
+
+      if (!sectionData) {
+        console.error(
+          `Empty seat data for section ${sectionId} (JSON: ${jsonSectionId}) at ${urlStadiumId} (${seatDataStadiumId})`
+        );
+        return null;
+      }
+
+      // Cache the data
+      seatDataCache.set(cacheKey, sectionData);
+
+      return sectionData;
+    } catch (workerError) {
+      // Fallback to main thread if worker fails
+      console.warn('Worker failed, falling back to main thread:', workerError);
+
+      const response = await fetch(url);
+
+      if (!response.ok) {
+        console.warn(
+          `Seat data not found for stadium "${urlStadiumId}" (mapped to "${seatDataStadiumId}"), section "${sectionId}" (JSON file: ${jsonSectionId}.json) - HTTP ${response.status}`
+        );
+        return null;
+      }
+
+      const sectionData: SectionSeatingData = await response.json();
+
+      if (!sectionData) {
+        console.error(
+          `Empty seat data for section ${sectionId} (JSON: ${jsonSectionId}) at ${urlStadiumId} (${seatDataStadiumId})`
+        );
+        return null;
+      }
+
+      // Cache the data
+      seatDataCache.set(cacheKey, sectionData);
+
+      return sectionData;
     }
-
-    const sectionData: SectionSeatingData = await response.json();
-
-    if (!sectionData) {
-      console.error(
-        `Empty seat data for section ${sectionId} (JSON: ${jsonSectionId}) at ${urlStadiumId} (${seatDataStadiumId})`
-      );
-      return null;
-    }
-
-    // Cache the data
-    seatDataCache.set(cacheKey, sectionData);
-
-    return sectionData;
   } catch (error) {
     console.error(
       `Failed to load seat data for ${urlStadiumId}/${sectionId} (mapped to ${seatDataStadiumId}/${jsonSectionId}.json):`,
@@ -163,16 +187,47 @@ export async function getSeatDataForSections(
   sectionIds: string[]
 ): Promise<Map<string, SectionSeatingData>> {
   const results = new Map<string, SectionSeatingData>();
+  const seatDataStadiumId = toDataStadiumId(urlStadiumId);
 
-  // Load all sections in parallel
-  const promises = sectionIds.map(async (sectionId) => {
-    const data = await getSeatDataForSection(urlStadiumId, sectionId);
-    if (data) {
-      results.set(sectionId, data);
-    }
-  });
+  // Build URLs for all sections
+  const urls: string[] = [];
+  const sectionMapping = new Map<string, string>();
 
-  await Promise.all(promises);
+  for (const sectionId of sectionIds) {
+    const jsonSectionId = stripSectionSuffix(sectionId);
+    const url = `/data/seats/${seatDataStadiumId}/${jsonSectionId}.json`;
+    urls.push(url);
+    sectionMapping.set(url, sectionId);
+  }
+
+  try {
+    // Use Web Worker for batch fetching (parallel, off main thread)
+    const worker = getSeatDataWorker();
+    const fetchedData = await worker.batchFetch(urls);
+
+    // Map results back to section IDs
+    fetchedData.forEach((data, url) => {
+      const sectionId = sectionMapping.get(url);
+      if (sectionId && data) {
+        results.set(sectionId, data);
+        // Also cache individual sections
+        const cacheKey = `${seatDataStadiumId}-${stripSectionSuffix(sectionId)}`;
+        seatDataCache.set(cacheKey, data);
+      }
+    });
+  } catch (error) {
+    console.warn('Batch fetch with worker failed, falling back to individual fetches:', error);
+
+    // Fallback to individual fetches
+    const promises = sectionIds.map(async (sectionId) => {
+      const data = await getSeatDataForSection(urlStadiumId, sectionId);
+      if (data) {
+        results.set(sectionId, data);
+      }
+    });
+
+    await Promise.all(promises);
+  }
 
   return results;
 }

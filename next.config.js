@@ -90,7 +90,10 @@ const nextConfig = {
 
   // Output configuration
   output: 'standalone',
-  
+
+  // Enable compression for all responses
+  compress: true,
+
   // Reduce build output verbosity
   onDemandEntries: {
     maxInactiveAge: 25 * 1000,
@@ -115,6 +118,20 @@ const nextConfig = {
           {
             key: 'Cache-Control',
             value: 'public, s-maxage=10, stale-while-revalidate=59',
+          },
+        ],
+      },
+      {
+        // Seat data files - enable compression and long-term caching
+        source: '/data/seats/:path*',
+        headers: [
+          {
+            key: 'Cache-Control',
+            value: 'public, max-age=604800, stale-while-revalidate=86400', // 7 days cache, 1 day stale
+          },
+          {
+            key: 'Content-Encoding',
+            value: 'gzip',
           },
         ],
       },
