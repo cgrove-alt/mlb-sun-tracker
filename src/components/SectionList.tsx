@@ -14,13 +14,15 @@ interface SectionListProps {
   loading?: boolean;
   calculationProgress?: { completed: number; total: number } | null;
   showFilters?: boolean;
+  stadiumId?: string;
 }
 
 export const SectionList: React.FC<SectionListProps> = ({
   sections,
   loading = false,
   calculationProgress,
-  showFilters = false
+  showFilters = false,
+  stadiumId
 }) => {
   const [sortBy, setSortBy] = useState<'name' | 'exposure' | 'level' | 'price'>(() => {
     return preferencesStorage.get('sortBy', 'exposure');
@@ -373,6 +375,7 @@ export const SectionList: React.FC<SectionListProps> = ({
                 inSun={sectionData.inSun}
                 index={index}
                 timeInSun={sectionData.timeInSun}
+                stadiumId={stadiumId}
               />
             ))}
           </div>

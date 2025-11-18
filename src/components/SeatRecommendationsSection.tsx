@@ -8,6 +8,7 @@ import { LoadingSpinner } from './LoadingSpinner';
 import { MLB_STADIUMS } from '../data/stadiums';
 import { getStadiumCompleteData } from '../data/stadium-data-aggregator';
 import { weatherApi, WeatherData } from '../services/weatherApi';
+import { SectionList } from './SectionList';
 
 interface SeatRecommendationsSectionProps {
   sections: SeatingSectionSun[];
@@ -342,6 +343,19 @@ export const SeatRecommendationsSection: React.FC<SeatRecommendationsSectionProp
             <p className="text-sm text-gray-500">Try adjusting your preferences or check back later.</p>
           </div>
         )}
+      </div>
+
+      {/* All Sections with Interactive Cards */}
+      <div className="mt-8">
+        <h3 className="text-xl font-bold text-gray-900 mb-4">
+          All Sections - View Detailed Seat Maps
+        </h3>
+        <SectionList
+          sections={sections}
+          loading={false}
+          showFilters={true}
+          stadiumId={stadiumId}
+        />
       </div>
 
       <style jsx>{`
