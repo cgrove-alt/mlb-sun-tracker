@@ -2,6 +2,7 @@
 
 import { useState, useMemo } from 'react';
 import Link from 'next/link';
+import { format } from 'date-fns';
 import './ShadeVisualization.css';
 
 interface Section {
@@ -17,6 +18,7 @@ interface ShadeVisualizationProps {
   sections: Section[];
   stadiumId: string;
   gameTime: string;
+  gameDate?: Date; // Optional game date for context
 }
 
 const getShadeLevel = (sunExposure: number): {
@@ -36,9 +38,19 @@ const getShadeLevel = (sunExposure: number): {
   }
 };
 
-export function ShadeVisualization({ sections, stadiumId, gameTime }: ShadeVisualizationProps) {
+export function ShadeVisualization({ sections, stadiumId, gameTime, gameDate }: ShadeVisualizationProps) {
   const [filterLevel, setFilterLevel] = useState<string>('all');
   const [sortBy, setSortBy] = useState<'shade' | 'section'>('shade');
+
+  // Format game context for display
+  const gameContext = useMemo(() => {
+    if (gameDate) {
+      const formattedDate = format(gameDate, 'EEEE, MMMM d, yyyy');
+      const formattedTime = format(gameDate, 'h:mm a');
+      return `${formattedDate} · ${formattedTime}`;
+    }
+    return gameTime; // Fallback to just time if no date provided
+  }, [gameDate, gameTime]);
 
   // Process and categorize sections by shade level
   const categorizedSections = useMemo(() => {
@@ -106,7 +118,7 @@ export function ShadeVisualization({ sections, stadiumId, gameTime }: ShadeVisua
       <div className="shade-summary">
         <div className="shade-summary-header">
           <h2 className="shade-summary-title">
-            Shade Analysis for {gameTime}
+            Shade Analysis for {gameContext}
           </h2>
           <div className="shade-summary-stats">
             <div className="shade-stat-main">

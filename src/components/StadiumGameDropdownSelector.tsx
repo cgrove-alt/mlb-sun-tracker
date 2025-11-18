@@ -146,9 +146,10 @@ export function StadiumGameDropdownSelector() {
       const game = option.game;
       const gameDate = new Date(game.gameDate);
       const gameTime = format(gameDate, 'HH:mm');
+      const gameDateStr = format(gameDate, 'yyyy-MM-dd');
 
-      // Navigate to stadium page with game context
-      router.push(`/stadium/${selectedStadium.value}?game=${game.gamePk}&gameTime=${gameTime}`);
+      // Navigate to stadium page with game context (including full date)
+      router.push(`/stadium/${selectedStadium.value}?game=${game.gamePk}&gameDate=${gameDateStr}&gameTime=${gameTime}`);
     }
   };
 

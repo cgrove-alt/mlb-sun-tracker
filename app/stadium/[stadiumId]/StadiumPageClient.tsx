@@ -8,6 +8,7 @@ import { useSunCalculations } from '../../../src/hooks/useSunCalculations';
 import { usePullToRefresh } from '../../../src/hooks/usePullToRefresh';
 import { PullToRefreshIndicator } from '../../../src/components/PullToRefreshIndicator';
 import { SeatSearchBar } from '../../../src/components/SeatSearchBar';
+import { GameContextBanner } from '../../../src/components/GameContextBanner';
 import { useSearchParams } from 'next/navigation';
 import type { Stadium } from '../../../src/data/stadiums';
 
@@ -71,8 +72,25 @@ export default function StadiumPageClient({
 
   // Check if we're in shade view mode
   const isShadeView = searchParams.get('view') === 'shade';
+
+  // Parse game date and time from URL params
+  const gameDateParam = searchParams.get('gameDate');
   const timeParam = gameTime || searchParams.get('time') || '13:00';
   const [selectedTime, setSelectedTime] = useState(timeParam);
+
+  // Create actual game date/time (use game date if provided, otherwise fall back to today)
+  const gameDateTime = useMemo(() => {
+    if (gameDateParam && timeParam) {
+      // Use actual game date from URL
+      const dateTime = new Date(`${gameDateParam}T${timeParam}:00`);
+      return dateTime;
+    }
+    // Fallback to today with selected time
+    const today = new Date();
+    const [hours, minutes] = timeParam.split(':').map(Number);
+    today.setHours(hours, minutes, 0, 0);
+    return today;
+  }, [gameDateParam, timeParam]);
 
   // Debug: Log what's being rendered
   console.log('StadiumPageClient rendering:', {
@@ -83,19 +101,15 @@ export default function StadiumPageClient({
     selectedTime
   });
 
-  // Calculate sun position once
+  // Calculate sun position using actual game date/time
   const sunPosition = useMemo(() => {
-    const gameDateTime = new Date();
-    const [hours, minutes] = selectedTime.split(':').map(Number);
-    gameDateTime.setHours(hours, minutes, 0, 0);
-
     return getSunPosition(
       gameDateTime,
       stadium.latitude || 40.7128,
       stadium.longitude || -74.0060,
       stadium.timezone || 'America/New_York'
     );
-  }, [stadium.id, refreshKey, selectedTime]); // Add selectedTime to recalculate on time change
+  }, [stadium.id, gameDateTime]); // Use gameDateTime which includes correct date
 
   // Use Web Worker for sun calculations
   const {
@@ -138,6 +152,13 @@ export default function StadiumPageClient({
         progress={pullToRefresh.progress}
       />
 
+      {/* Game Context Banner - Show selected game */}
+      {gameId && gameDateParam && (
+        <div className="max-w-4xl mx-auto px-4 pt-4">
+          <GameContextBanner gamePk={gameId} gameDate={gameDateTime} />
+        </div>
+      )}
+
       {/* Search Bar - Prominent at top */}
       <div className="max-w-4xl mx-auto px-4 py-6">
         <SeatSearchBar
@@ -154,6 +175,7 @@ export default function StadiumPageClient({
             sections={sectionsWithSunData}
             stadiumId={stadium.id}
             gameTime={selectedTime}
+            gameDate={gameDateTime}
           />
         </div>
       )}
@@ -185,8 +207,8 @@ export default function StadiumPageClient({
           <SeatRecommendationsSection
             sections={sectionsWithSunData}
             stadiumId={stadium.id}
-            gameTime="13:00"
-            gameDate={new Date()}
+            gameTime={timeParam}
+            gameDate={gameDateTime}
           />
         ) : (
           <div className="text-center p-8 bg-gray-50 rounded-lg">
@@ -204,7 +226,12 @@ export default function StadiumPageClient({
       {/* Section Navigation - Progressive Loading Pattern */}
       {/* Users select a section first, then view seats within that section */}
       <div className="mt-8" style={{ display: 'block' }}>
-        <SectionNavigationGrid stadiumId={stadium.id} sections={sections} />
+        <SectionNavigationGrid
+          stadiumId={stadium.id}
+          sections={sections}
+          gameDate={gameDateParam || undefined}
+          gameTime={timeParam}
+        />
       </div>
     </>
   );

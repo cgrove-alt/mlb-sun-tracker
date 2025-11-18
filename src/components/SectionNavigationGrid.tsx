@@ -19,9 +19,11 @@ interface SectionMetadata {
 interface SectionNavigationGridProps {
   stadiumId: string;
   sections?: any[];
+  gameDate?: string; // Game date in yyyy-MM-dd format
+  gameTime?: string; // Game time in HH:mm format
 }
 
-export function SectionNavigationGrid({ stadiumId, sections = [] }: SectionNavigationGridProps) {
+export function SectionNavigationGrid({ stadiumId, sections = [], gameDate, gameTime }: SectionNavigationGridProps) {
   const [sectionMetadata, setSectionMetadata] = useState<SectionMetadata[]>([]);
   const [isLoading, setIsLoading] = useState(true);
   const [selectedLevel, setSelectedLevel] = useState<string>('all');
@@ -95,6 +97,18 @@ export function SectionNavigationGrid({ stadiumId, sections = [] }: SectionNavig
     ? sectionMetadata
     : sectionMetadata.filter(s => s.level === selectedLevel);
 
+  // Build section URL with optional game context
+  function buildSectionUrl(sectionId: string): string {
+    const baseUrl = `/stadium/${stadiumId}/section/${sectionId}`;
+
+    // Add game context if available
+    if (gameDate && gameTime) {
+      return `${baseUrl}?date=${gameDate}&time=${gameTime}`;
+    }
+
+    return baseUrl;
+  }
+
   if (isLoading) {
     return (
       <div className="section-navigation-grid">
@@ -159,7 +173,7 @@ export function SectionNavigationGrid({ stadiumId, sections = [] }: SectionNavig
           filteredSections.map(section => (
             <Link
               key={section.sectionId}
-              href={`/stadium/${stadiumId}/section/${section.sectionId}`}
+              href={buildSectionUrl(section.sectionId)}
               className="section-card"
             >
               <div className="section-card-header">
