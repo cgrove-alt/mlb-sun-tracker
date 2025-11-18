@@ -228,9 +228,10 @@ export default function StadiumPageClient({
       <div className="mt-8" style={{ display: 'block' }}>
         <SectionNavigationGrid
           stadiumId={stadium.id}
-          sections={sections}
+          sections={sectionsWithSunData && sectionsWithSunData.length > 0 ? sectionsWithSunData : sections}
           gameDate={gameDateParam || undefined}
           gameTime={timeParam}
+          isCalculating={isCalculating}
         />
       </div>
     </>

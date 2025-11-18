@@ -21,16 +21,17 @@ interface SectionNavigationGridProps {
   sections?: any[];
   gameDate?: string; // Game date in yyyy-MM-dd format
   gameTime?: string; // Game time in HH:mm format
+  isCalculating?: boolean; // Is sun exposure being calculated
 }
 
-export function SectionNavigationGrid({ stadiumId, sections = [], gameDate, gameTime }: SectionNavigationGridProps) {
+export function SectionNavigationGrid({ stadiumId, sections = [], gameDate, gameTime, isCalculating = false }: SectionNavigationGridProps) {
   const [sectionMetadata, setSectionMetadata] = useState<SectionMetadata[]>([]);
   const [isLoading, setIsLoading] = useState(true);
   const [selectedLevel, setSelectedLevel] = useState<string>('all');
 
   useEffect(() => {
     loadSectionMetadata();
-  }, [stadiumId]);
+  }, [stadiumId, sections]);
 
   async function loadSectionMetadata() {
     try {
@@ -44,27 +45,34 @@ export function SectionNavigationGrid({ stadiumId, sections = [], gameDate, game
         const data = await response.json();
 
         // Extract section summaries from metadata
-        const sectionList: SectionMetadata[] = Object.entries(data.sections || {}).map(([id, section]: [string, any]) => ({
-          sectionId: id,
-          sectionName: section.name || `Section ${id}`,
-          totalSeats: section.seatCount || 0,
-          rowCount: section.rowCount || 0,
-          priceLevel: section.priceLevel,
-          covered: section.covered || false,
-          averageSunExposure: section.avgSunExposure,
-          level: section.level || 'field',
-        }));
+        const sectionList: SectionMetadata[] = Object.entries(data.sections || {}).map(([id, section]: [string, any]) => {
+          // Find matching section from props (which may have real-time sunExposure)
+          const liveSection = sections.find((s: any) => s.id === id || s.sectionId === id);
+
+          return {
+            sectionId: id,
+            sectionName: section.name || `Section ${id}`,
+            totalSeats: section.seatCount || 0,
+            rowCount: section.rowCount || 0,
+            priceLevel: section.priceLevel,
+            covered: section.covered || false,
+            // Prioritize real-time sun exposure from props over static metadata
+            averageSunExposure: liveSection?.sunExposure ?? section.avgSunExposure,
+            level: section.level || 'field',
+          };
+        });
 
         setSectionMetadata(sectionList);
       } else {
         // Fallback: Create basic metadata from section list
-        const fallbackMetadata = sections.map(section => ({
-          sectionId: section.id,
-          sectionName: section.name || `Section ${section.id}`,
+        const fallbackMetadata = sections.map((section: any) => ({
+          sectionId: section.id || section.sectionId,
+          sectionName: section.name || `Section ${section.id || section.sectionId}`,
           totalSeats: section.seats?.length || 0,
           rowCount: section.rows?.length || 0,
           covered: section.covered || false,
-          level: determineLevel(section.id),
+          averageSunExposure: section.sunExposure, // Use real-time data if available
+          level: determineLevel(section.id || section.sectionId),
         }));
 
         setSectionMetadata(fallbackMetadata);
@@ -96,6 +104,14 @@ export function SectionNavigationGrid({ stadiumId, sections = [], gameDate, game
   const filteredSections = selectedLevel === 'all'
     ? sectionMetadata
     : sectionMetadata.filter(s => s.level === selectedLevel);
+
+  // Calculate sun exposure stats
+  const sunStats = {
+    total: sectionMetadata.length,
+    withData: sectionMetadata.filter(s => s.averageSunExposure !== undefined).length,
+    inShade: sectionMetadata.filter(s => s.averageSunExposure !== undefined && s.averageSunExposure < 50).length,
+    inSun: sectionMetadata.filter(s => s.averageSunExposure !== undefined && s.averageSunExposure >= 50).length,
+  };
 
   // Build section URL with optional game context
   function buildSectionUrl(sectionId: string): string {
@@ -149,6 +165,45 @@ export function SectionNavigationGrid({ stadiumId, sections = [], gameDate, game
           Select a section to view detailed seat information
         </p>
       </div>
+
+      {/* Sun Exposure Stats - Only show if we have game context */}
+      {(gameDate || isCalculating || sunStats.withData > 0) && (
+        <div className="sun-stats-banner">
+          {isCalculating ? (
+            <div className="sun-stats-loading">
+              <span className="loading-spinner"></span>
+              <span>Calculating sun exposure for selected game...</span>
+            </div>
+          ) : sunStats.withData > 0 ? (
+            <>
+              <div className="sun-stats-title">
+                <Sun className="inline-block mr-2 h-5 w-5" />
+                Sun Exposure Analysis
+                {gameDate && gameTime && (
+                  <span className="text-sm font-normal ml-2">for selected game</span>
+                )}
+              </div>
+              <div className="sun-stats-grid">
+                <div className="stat-card shade-card">
+                  <div className="stat-icon">☁️</div>
+                  <div className="stat-value">{sunStats.inShade}</div>
+                  <div className="stat-label">Sections in Shade</div>
+                </div>
+                <div className="stat-card sun-card">
+                  <div className="stat-icon">☀️</div>
+                  <div className="stat-value">{sunStats.inSun}</div>
+                  <div className="stat-label">Sections in Sun</div>
+                </div>
+                <div className="stat-card total-card">
+                  <div className="stat-icon">🏟️</div>
+                  <div className="stat-value">{sunStats.total}</div>
+                  <div className="stat-label">Total Sections</div>
+                </div>
+              </div>
+            </>
+          ) : null}
+        </div>
+      )}
 
       {/* Level Filter */}
       <div className="level-filter">
@@ -234,6 +289,91 @@ export function SectionNavigationGrid({ stadiumId, sections = [], gameDate, game
         .section-subtitle {
           color: #6b7280;
           font-size: 1rem;
+        }
+
+        .sun-stats-banner {
+          background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%);
+          border-radius: 12px;
+          padding: 1.5rem;
+          margin-bottom: 2rem;
+          box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        }
+
+        .sun-stats-loading {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          gap: 0.75rem;
+          font-size: 1rem;
+          color: #78350f;
+        }
+
+        .loading-spinner {
+          width: 20px;
+          height: 20px;
+          border: 3px solid #fbbf24;
+          border-top-color: transparent;
+          border-radius: 50%;
+          animation: spin 1s linear infinite;
+        }
+
+        .sun-stats-title {
+          font-size: 1.25rem;
+          font-weight: 700;
+          color: #78350f;
+          margin-bottom: 1rem;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        }
+
+        .sun-stats-grid {
+          display: grid;
+          grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+          gap: 1rem;
+          max-width: 600px;
+          margin: 0 auto;
+        }
+
+        .stat-card {
+          background: white;
+          border-radius: 8px;
+          padding: 1.25rem;
+          text-align: center;
+          box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+          transition: transform 0.2s;
+        }
+
+        .stat-card:hover {
+          transform: translateY(-2px);
+        }
+
+        .stat-icon {
+          font-size: 2rem;
+          margin-bottom: 0.5rem;
+        }
+
+        .stat-value {
+          font-size: 2rem;
+          font-weight: 700;
+          margin-bottom: 0.25rem;
+        }
+
+        .stat-label {
+          font-size: 0.875rem;
+          color: #6b7280;
+        }
+
+        .shade-card .stat-value {
+          color: #059669;
+        }
+
+        .sun-card .stat-value {
+          color: #dc2626;
+        }
+
+        .total-card .stat-value {
+          color: #2563eb;
         }
 
         .level-filter {

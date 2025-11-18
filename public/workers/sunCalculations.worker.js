@@ -27,17 +27,19 @@ self.addEventListener('message', async (event) => {
 
 function calculateDetailedSectionSunExposure(sections, sunPosition, stadium) {
   const results = [];
-  
+
   for (const section of sections) {
     // Simplified calculation for worker
     const sunExposure = calculateSectionExposure(section, sunPosition, stadium);
+
+    // Return full section object with sunExposure merged in
     results.push({
-      sectionId: section.id,
-      sunExposure,
+      ...section, // Keep all original section properties
+      sunExposure, // Add calculated sun exposure
       shadePercentage: Math.max(0, 100 - sunExposure),
     });
   }
-  
+
   return results;
 }
 
