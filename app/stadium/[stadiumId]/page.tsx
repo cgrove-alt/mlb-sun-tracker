@@ -18,6 +18,10 @@ interface StadiumPageProps {
   params: Promise<{
     stadiumId: string;
   }>;
+  searchParams: Promise<{
+    game?: string;
+    gameTime?: string;
+  }>;
 }
 
 // Helper to get available seat-level sections for a stadium
@@ -123,9 +127,10 @@ export async function generateMetadata({ params }: StadiumPageProps): Promise<Me
   };
 }
 
-export default async function StadiumPage({ params }: StadiumPageProps) {
+export default async function StadiumPage({ params, searchParams }: StadiumPageProps) {
   const { stadiumId } = await params;
-  
+  const { game, gameTime } = await searchParams;
+
   // Check if this slug needs redirect to canonical ID
   if (needsRedirect(stadiumId)) {
     const canonicalId = getCanonicalStadiumId(stadiumId);
@@ -133,7 +138,7 @@ export default async function StadiumPage({ params }: StadiumPageProps) {
       redirect(`/stadium/${canonicalId}`);
     }
   }
-  
+
   // Try to find stadium by ID or by using slug mapping
   let stadium = MLB_STADIUMS.find(s => s.id === stadiumId);
   
@@ -264,6 +269,8 @@ export default async function StadiumPage({ params }: StadiumPageProps) {
             guide={guide}
             useComprehensive={!!guide}
             availableSections={availableSections}
+            gameId={game}
+            gameTime={gameTime}
           />
         </ErrorBoundary>
       </div>

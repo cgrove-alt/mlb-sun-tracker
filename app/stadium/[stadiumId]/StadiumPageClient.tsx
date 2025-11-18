@@ -52,6 +52,8 @@ interface StadiumPageClientProps {
   guide: any;
   useComprehensive?: boolean;
   availableSections?: string[];
+  gameId?: string;
+  gameTime?: string;
 }
 
 export default function StadiumPageClient({
@@ -60,14 +62,16 @@ export default function StadiumPageClient({
   amenities,
   guide,
   useComprehensive = false,
-  availableSections
+  availableSections,
+  gameId,
+  gameTime
 }: StadiumPageClientProps) {
   const [refreshKey, setRefreshKey] = useState(0);
   const searchParams = useSearchParams();
 
   // Check if we're in shade view mode
   const isShadeView = searchParams.get('view') === 'shade';
-  const timeParam = searchParams.get('time') || '13:00';
+  const timeParam = gameTime || searchParams.get('time') || '13:00';
   const [selectedTime, setSelectedTime] = useState(timeParam);
 
   // Debug: Log what's being rendered

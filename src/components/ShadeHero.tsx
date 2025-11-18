@@ -3,6 +3,7 @@
 import { useState, useEffect } from 'react';
 import { useRouter } from 'next/navigation';
 import { MLB_STADIUMS } from '../data/stadiums';
+import { StadiumGameDropdownSelector } from './StadiumGameDropdownSelector';
 import './ShadeHero.css';
 
 interface ShadeLevel {
@@ -77,6 +78,12 @@ export function ShadeHero() {
           <p className="shade-hero-subtitle">
             Instantly discover which seats are in the shade at any MLB stadium
           </p>
+        </div>
+
+        {/* Stadium + Game Dropdown Selector (2026 Games) */}
+        <div className="game-selector-section">
+          <h3 className="selector-section-title">Select Your 2026 Game</h3>
+          <StadiumGameDropdownSelector />
         </div>
 
         {/* Instant Shade Search Bar */}
