@@ -3,6 +3,7 @@
 import React, { useMemo, useCallback } from 'react';
 import { FixedSizeList as List } from 'react-window';
 import type { Seat, SeatRow } from '@/types/seat';
+import { SeatRowSkeleton } from '../common/Skeleton';
 
 interface VirtualizedSeatGridProps {
   rows: SeatRow[];
@@ -10,6 +11,7 @@ interface VirtualizedSeatGridProps {
   onSeatClick?: (seat: Seat) => void;
   filterShaded?: boolean;
   filterSunny?: boolean;
+  showPercentages?: boolean; // Show sun exposure percentage on seat buttons
 }
 
 // Memoized seat button component to prevent unnecessary re-renders
@@ -19,8 +21,9 @@ const SeatButton = React.memo<{
   colorClass: string;
   isDimmed: boolean;
   rowNumber: string;
+  showPercentage: boolean;
   onSeatClick: (seat: Seat) => void;
-}>(({ seat, exposure, colorClass, isDimmed, rowNumber, onSeatClick }) => (
+}>(({ seat, exposure, colorClass, isDimmed, rowNumber, showPercentage, onSeatClick }) => (
   <button
     onClick={() => onSeatClick(seat)}
     className={`
@@ -32,11 +35,17 @@ const SeatButton = React.memo<{
       transition-all duration-200
       cursor-pointer
       min-w-[3rem]
+      flex flex-col items-center gap-0.5
     `}
     aria-label={`Seat ${seat.seatNumber}, Row ${rowNumber}, ${exposure}% sun exposure`}
     title={`Seat ${seat.seatNumber}\n${exposure}% sun exposure`}
   >
-    {seat.seatNumber}
+    <span className="font-bold">{seat.seatNumber}</span>
+    {showPercentage && (
+      <span className="text-[0.6rem] opacity-75 font-normal">
+        {exposure}%
+      </span>
+    )}
   </button>
 ));
 
@@ -57,6 +66,7 @@ export const VirtualizedSeatGrid: React.FC<VirtualizedSeatGridProps> = ({
   onSeatClick,
   filterShaded = false,
   filterSunny = false,
+  showPercentages = false,
 }) => {
   // Calculate sun exposure map once
   const seatExposureMap = useMemo(() => {
@@ -70,12 +80,17 @@ export const VirtualizedSeatGrid: React.FC<VirtualizedSeatGridProps> = ({
   }, [sunExposureData]);
 
   // Memoized functions to avoid recreating on every render
+  // Refined color gradient with more steps for smoother transitions
   const getSeatColorClass = useCallback((exposure: number): string => {
-    if (exposure === 0) return 'bg-gray-200 border-gray-400 text-gray-700'; // Full shade
-    if (exposure < 30) return 'bg-green-100 border-green-400 text-green-800'; // Mostly shade
-    if (exposure < 70) return 'bg-yellow-100 border-yellow-400 text-yellow-800'; // Partial sun
-    if (exposure < 90) return 'bg-orange-100 border-orange-400 text-orange-800'; // Mostly sun
-    return 'bg-red-100 border-red-500 text-red-800'; // Full sun
+    if (exposure === 0) return 'bg-gray-200 border-gray-400 text-gray-700'; // Perfect shade
+    if (exposure < 15) return 'bg-green-50 border-green-300 text-green-900'; // Excellent shade
+    if (exposure < 30) return 'bg-green-100 border-green-400 text-green-800'; // Great shade
+    if (exposure < 45) return 'bg-emerald-100 border-emerald-400 text-emerald-800'; // Good shade
+    if (exposure < 60) return 'bg-yellow-100 border-yellow-400 text-yellow-800'; // Moderate sun
+    if (exposure < 75) return 'bg-amber-100 border-amber-400 text-amber-800'; // Getting sunny
+    if (exposure < 85) return 'bg-orange-100 border-orange-400 text-orange-800'; // Very sunny
+    if (exposure < 95) return 'bg-red-100 border-red-400 text-red-800'; // Intense sun
+    return 'bg-red-200 border-red-500 text-red-900'; // Full blazing sun
   }, []);
 
   const shouldDimSeat = useCallback((exposure: number): boolean => {
@@ -122,6 +137,7 @@ export const VirtualizedSeatGrid: React.FC<VirtualizedSeatGridProps> = ({
                 colorClass={colorClass}
                 isDimmed={isDimmed}
                 rowNumber={row.rowNumber}
+                showPercentage={showPercentages}
                 onSeatClick={handleSeatClick}
               />
             );
@@ -129,12 +145,59 @@ export const VirtualizedSeatGrid: React.FC<VirtualizedSeatGridProps> = ({
         </div>
       </div>
     );
-  }, [rows, seatExposureMap, getSeatColorClass, shouldDimSeat, handleSeatClick]);
+  }, [rows, seatExposureMap, getSeatColorClass, shouldDimSeat, showPercentages, handleSeatClick]);
 
   if (rows.length === 0) {
     return (
       <div className="text-center p-8 text-gray-500">
         <p>No seat data available for this section.</p>
+      </div>
+    );
+  }
+
+  // Show skeleton loading state when sun exposure data is being calculated
+  const isLoadingSunData = sunExposureData === null;
+
+  if (isLoadingSunData) {
+    return (
+      <div className="virtualized-seat-grid-container">
+        {/* Legend - Show even during loading */}
+        <div className="mb-6 p-4 bg-gray-50 rounded-lg">
+          <h3 className="text-sm font-semibold text-gray-700 mb-3">
+            Sun Exposure Heat Map
+          </h3>
+          <div className="flex items-center gap-2 text-sm text-gray-500">
+            <div className="animate-pulse">Calculating sun exposure...</div>
+          </div>
+        </div>
+
+        {/* Skeleton rows */}
+        <div className="virtualized-list-wrapper">
+          <div className="space-y-4">
+            {Array.from({ length: Math.min(rows.length, 6) }).map((_, idx) => (
+              <SeatRowSkeleton
+                key={idx}
+                seatCount={rows[idx]?.seatCount || 12}
+                showPercentages={showPercentages}
+              />
+            ))}
+          </div>
+        </div>
+
+        <style jsx>{`
+          .virtualized-seat-grid-container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+          }
+
+          .virtualized-list-wrapper {
+            background: white;
+            border-radius: 0.75rem;
+            padding: 1rem;
+            border: 1px solid #e5e7eb;
+          }
+        `}</style>
       </div>
     );
   }
@@ -146,31 +209,52 @@ export const VirtualizedSeatGrid: React.FC<VirtualizedSeatGridProps> = ({
 
   return (
     <div className="virtualized-seat-grid-container">
-      {/* Legend */}
+      {/* Legend - Enhanced with more gradient steps */}
       <div className="mb-6 p-4 bg-gray-50 rounded-lg">
-        <h3 className="text-sm font-semibold text-gray-700 mb-3">Sun Exposure Legend</h3>
-        <div className="flex flex-wrap gap-4">
+        <h3 className="text-sm font-semibold text-gray-700 mb-3">Sun Exposure Heat Map</h3>
+        <div className="grid grid-cols-2 md:grid-cols-5 gap-3">
           <div className="flex items-center gap-2">
             <div className="w-6 h-6 rounded border-2 bg-gray-200 border-gray-400" />
-            <span className="text-xs text-gray-600">Full Shade</span>
+            <span className="text-xs text-gray-600">0% Perfect Shade</span>
+          </div>
+          <div className="flex items-center gap-2">
+            <div className="w-6 h-6 rounded border-2 bg-green-50 border-green-300" />
+            <span className="text-xs text-gray-600">1-15% Excellent</span>
           </div>
           <div className="flex items-center gap-2">
             <div className="w-6 h-6 rounded border-2 bg-green-100 border-green-400" />
-            <span className="text-xs text-gray-600">Mostly Shade (&lt;30%)</span>
+            <span className="text-xs text-gray-600">15-30% Great</span>
+          </div>
+          <div className="flex items-center gap-2">
+            <div className="w-6 h-6 rounded border-2 bg-emerald-100 border-emerald-400" />
+            <span className="text-xs text-gray-600">30-45% Good</span>
           </div>
           <div className="flex items-center gap-2">
             <div className="w-6 h-6 rounded border-2 bg-yellow-100 border-yellow-400" />
-            <span className="text-xs text-gray-600">Partial Sun (30-70%)</span>
+            <span className="text-xs text-gray-600">45-60% Moderate</span>
+          </div>
+          <div className="flex items-center gap-2">
+            <div className="w-6 h-6 rounded border-2 bg-amber-100 border-amber-400" />
+            <span className="text-xs text-gray-600">60-75% Sunny</span>
           </div>
           <div className="flex items-center gap-2">
             <div className="w-6 h-6 rounded border-2 bg-orange-100 border-orange-400" />
-            <span className="text-xs text-gray-600">Mostly Sun (70-90%)</span>
+            <span className="text-xs text-gray-600">75-85% Very Sunny</span>
           </div>
           <div className="flex items-center gap-2">
-            <div className="w-6 h-6 rounded border-2 bg-red-100 border-red-500" />
-            <span className="text-xs text-gray-600">Full Sun (&gt;90%)</span>
+            <div className="w-6 h-6 rounded border-2 bg-red-100 border-red-400" />
+            <span className="text-xs text-gray-600">85-95% Intense</span>
+          </div>
+          <div className="flex items-center gap-2">
+            <div className="w-6 h-6 rounded border-2 bg-red-200 border-red-500" />
+            <span className="text-xs text-gray-600">95-100% Blazing</span>
           </div>
         </div>
+        {showPercentages && (
+          <p className="text-xs text-gray-500 mt-2">
+            Percentage shows direct sun exposure during game time
+          </p>
+        )}
       </div>
 
       {/* Virtualized List */}

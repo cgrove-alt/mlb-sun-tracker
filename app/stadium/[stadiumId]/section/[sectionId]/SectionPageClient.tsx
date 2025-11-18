@@ -18,6 +18,7 @@ import { format } from 'date-fns';
 // Lazy load heavy components for better initial load performance
 const UnifiedGameSelector = lazy(() => import('../../../../../src/components/UnifiedGameSelector').then(mod => ({ default: mod.UnifiedGameSelector })));
 const SunArcTimeline = lazy(() => import('../../../../../src/components/SunArcTimeline').then(mod => ({ default: mod.SunArcTimeline })));
+const GameTimeSlider = lazy(() => import('../../../../../src/components/GameTimeSlider').then(mod => ({ default: mod.GameTimeSlider })));
 
 interface SectionPageClientProps {
   stadium: Stadium;
@@ -39,6 +40,7 @@ export default function SectionPageClient({
   const [selectedSeat, setSelectedSeat] = useState<Seat | null>(null);
   const [filterShaded, setFilterShaded] = useState(false);
   const [filterSunny, setFilterSunny] = useState(false);
+  const [timeOffset, setTimeOffset] = useState(0); // Minutes from game start
 
   // Game selection state - check URL params for initial values
   const [selectedGame, setSelectedGame] = useState<MLBGame | MiLBGame | NFLGame | null>(null);
@@ -83,9 +85,20 @@ export default function SectionPageClient({
     loadData();
   }, [stadium.id, sectionId]);
 
-  // Get game time from selected game or use default
-  const gameTime = gameDateTime ? format(gameDateTime, 'HH:mm') : '13:10';
+  // Get game time from selected game or use default, adjusted by time slider offset
+  const baseGameTime = gameDateTime ? format(gameDateTime, 'HH:mm') : '13:10';
   const gameDate = gameDateTime || new Date();
+
+  // Calculate adjusted game time based on slider offset
+  const getAdjustedGameTime = (): string => {
+    const [hours, minutes] = baseGameTime.split(':').map(Number);
+    const totalMinutes = hours * 60 + minutes + timeOffset;
+    const adjustedHours = Math.floor(totalMinutes / 60) % 24;
+    const adjustedMinutes = totalMinutes % 60;
+    return `${adjustedHours.toString().padStart(2, '0')}:${adjustedMinutes.toString().padStart(2, '0')}`;
+  };
+
+  const gameTime = getAdjustedGameTime();
 
   // Load sun exposure data based on selected game
   const { data: sunExposureData, isLoading: isSunDataLoading, error: sunDataError } = useSunExposure({
@@ -145,6 +158,12 @@ export default function SectionPageClient({
   const resetFilters = () => {
     setFilterShaded(false);
     setFilterSunny(false);
+  };
+
+  // Handle time slider change
+  const handleTimeChange = (newOffset: number) => {
+    setTimeOffset(newOffset);
+    // Sun exposure data will automatically recalculate due to gameTime dependency
   };
 
   // Show loading state
@@ -265,6 +284,91 @@ export default function SectionPageClient({
         </div>
       </div>
 
+      {/* Sun Exposure Statistics Banner */}
+      {sunExposureData && !isSunDataLoading && (
+        <div className="bg-gradient-to-r from-amber-50 via-yellow-50 to-orange-50 rounded-2xl shadow-lg p-6 mb-6 border border-amber-200">
+          <div className="flex items-center gap-2 mb-4">
+            <span className="text-2xl">☀️</span>
+            <h2 className="text-xl font-bold text-gray-900">Sun Exposure Analysis</h2>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
+            {/* Shade Percentage */}
+            <div className="bg-white rounded-xl p-4 shadow-sm">
+              <div className="flex items-center gap-2 mb-2">
+                <span className="text-2xl">☁️</span>
+                <div className="text-sm text-gray-600 font-medium">In Shade</div>
+              </div>
+              <div className="text-3xl font-bold text-green-600">
+                {Math.round((Object.values(sunExposureData).filter(v => v < 30).length / Object.keys(sunExposureData).length) * 100)}%
+              </div>
+              <div className="text-xs text-gray-500 mt-1">
+                {Object.values(sunExposureData).filter(v => v < 30).length} of {Object.keys(sunExposureData).length} seats
+              </div>
+            </div>
+
+            {/* Partial Sun */}
+            <div className="bg-white rounded-xl p-4 shadow-sm">
+              <div className="flex items-center gap-2 mb-2">
+                <span className="text-2xl">⛅</span>
+                <div className="text-sm text-gray-600 font-medium">Partial Sun</div>
+              </div>
+              <div className="text-3xl font-bold text-yellow-600">
+                {Math.round((Object.values(sunExposureData).filter(v => v >= 30 && v < 70).length / Object.keys(sunExposureData).length) * 100)}%
+              </div>
+              <div className="text-xs text-gray-500 mt-1">
+                {Object.values(sunExposureData).filter(v => v >= 30 && v < 70).length} seats
+              </div>
+            </div>
+
+            {/* Full Sun */}
+            <div className="bg-white rounded-xl p-4 shadow-sm">
+              <div className="flex items-center gap-2 mb-2">
+                <span className="text-2xl">☀️</span>
+                <div className="text-sm text-gray-600 font-medium">Full Sun</div>
+              </div>
+              <div className="text-3xl font-bold text-red-600">
+                {Math.round((Object.values(sunExposureData).filter(v => v >= 70).length / Object.keys(sunExposureData).length) * 100)}%
+              </div>
+              <div className="text-xs text-gray-500 mt-1">
+                {Object.values(sunExposureData).filter(v => v >= 70).length} seats
+              </div>
+            </div>
+
+            {/* Average Exposure */}
+            <div className="bg-white rounded-xl p-4 shadow-sm">
+              <div className="flex items-center gap-2 mb-2">
+                <span className="text-2xl">📊</span>
+                <div className="text-sm text-gray-600 font-medium">Avg Exposure</div>
+              </div>
+              <div className="text-3xl font-bold text-orange-600">
+                {Math.round(Object.values(sunExposureData).reduce((a, b) => a + b, 0) / Object.keys(sunExposureData).length)}%
+              </div>
+              <div className="text-xs text-gray-500 mt-1">
+                section average
+              </div>
+            </div>
+          </div>
+
+          {/* Recommendation */}
+          <div className="mt-4 p-4 bg-white bg-opacity-60 rounded-lg border border-amber-200">
+            <div className="flex items-start gap-3">
+              <span className="text-xl">💡</span>
+              <div>
+                <div className="font-semibold text-gray-900 mb-1">Shade Seeker Tip:</div>
+                <p className="text-sm text-gray-700">
+                  {Object.values(sunExposureData).filter(v => v < 30).length > sectionData.totalSeats * 0.5
+                    ? `Great news! This section is mostly shaded (${Math.round((Object.values(sunExposureData).filter(v => v < 30).length / Object.keys(sunExposureData).length) * 100)}% of seats). Look for seats highlighted in green on the heat map below.`
+                    : Object.values(sunExposureData).filter(v => v < 30).length > 0
+                    ? `This section has ${Object.values(sunExposureData).filter(v => v < 30).length} shaded seats. Use the filter below to show only shaded seats (<30% sun exposure).`
+                    : 'This section has very limited shade. Consider bringing sun protection (hat, sunscreen, sunglasses) or explore other sections for better shade coverage.'}
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
+
       {/* Game Selector */}
       <div className="bg-white rounded-xl shadow-md p-6 mb-6">
         <h2 className="text-lg font-semibold text-gray-900 mb-4">Select Game</h2>
@@ -301,8 +405,23 @@ export default function SectionPageClient({
           stadiumLongitude={stadium.longitude}
           stadiumTimezone={stadium.timezone}
           gameDate={gameDate}
-          gameStartTime={gameTime}
+          gameStartTime={baseGameTime}
           sectionId={sectionId}
+          className="mb-6"
+        />
+      </Suspense>
+
+      {/* Game Time Slider - Interactive sun exposure timeline */}
+      <Suspense fallback={
+        <div className="bg-white rounded-xl shadow-md p-6 mb-6 animate-pulse">
+          <div className="h-6 bg-gray-200 rounded w-1/3 mb-4"></div>
+          <div className="h-12 bg-gray-200 rounded"></div>
+        </div>
+      }>
+        <GameTimeSlider
+          gameStartTime={baseGameTime}
+          gameDate={gameDate}
+          onTimeChange={handleTimeChange}
           className="mb-6"
         />
       </Suspense>
@@ -342,6 +461,64 @@ export default function SectionPageClient({
           )}
         </div>
       </div>
+
+      {/* Best Seats for Shade - Recommendations */}
+      {sunExposureData && !isSunDataLoading && (
+        <div className="bg-gradient-to-br from-green-50 to-emerald-50 rounded-xl shadow-md p-6 mb-6 border border-green-200">
+          <div className="flex items-center gap-2 mb-4">
+            <span className="text-2xl">🌟</span>
+            <h2 className="text-xl font-bold text-gray-900">Best Seats for Shade</h2>
+          </div>
+
+          <p className="text-sm text-gray-700 mb-4">
+            These seats have the lowest sun exposure in this section. Click any seat to view detailed information.
+          </p>
+
+          <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-3">
+            {/* Find top 10 seats with lowest sun exposure */}
+            {Object.entries(sunExposureData)
+              .sort(([, a], [, b]) => a - b)
+              .slice(0, 10)
+              .map(([seatId, exposure]) => {
+                // Find the actual seat object
+                const seat = sectionData.rows
+                  .flatMap(row => row.seats)
+                  .find(s => s.id === seatId);
+
+                if (!seat) return null;
+
+                return (
+                  <button
+                    key={seatId}
+                    onClick={() => handleSeatClick(seat)}
+                    className="bg-white hover:bg-green-100 border-2 border-green-400 rounded-lg p-3 text-left transition-all hover:shadow-lg hover:scale-105 cursor-pointer"
+                    title={`${exposure}% sun exposure`}
+                  >
+                    <div className="flex flex-col gap-1">
+                      <div className="text-xs text-gray-500 font-medium">
+                        Row {seat.row}
+                      </div>
+                      <div className="text-lg font-bold text-gray-900">
+                        Seat {seat.seatNumber}
+                      </div>
+                      <div className="flex items-center gap-1 mt-1">
+                        <span className="text-xs">☁️</span>
+                        <span className="text-xs font-semibold text-green-700">
+                          {Math.round(exposure)}% sun
+                        </span>
+                      </div>
+                    </div>
+                  </button>
+                );
+              })
+              .filter(Boolean)}
+          </div>
+
+          <div className="mt-4 p-3 bg-white bg-opacity-60 rounded-lg text-xs text-gray-600 border border-green-100">
+            💡 <strong>Pro Tip:</strong> Use the time slider above to see how sun exposure changes throughout the game. Early afternoon games may have different shade patterns than evening games.
+          </div>
+        </div>
+      )}
 
       {/* Seat Grid */}
       <div className="bg-white rounded-xl shadow-md p-6">

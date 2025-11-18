@@ -4,6 +4,7 @@ import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { ChevronRight, Users, Sun, MapPin } from 'lucide-react';
 import { toDataStadiumId } from '../utils/ids';
+import { SectionCardSkeleton } from './common/Skeleton';
 
 interface SectionMetadata {
   sectionId: string;
@@ -128,26 +129,53 @@ export function SectionNavigationGrid({ stadiumId, sections = [], gameDate, game
   if (isLoading) {
     return (
       <div className="section-navigation-grid">
-        <div className="loading-state">
-          <div className="spinner"></div>
-          <p>Loading sections...</p>
+        <div className="section-header">
+          <h2 className="section-title">
+            <MapPin className="inline-block mr-2 h-5 w-5" />
+            Explore Stadium Sections
+          </h2>
+          <p className="section-subtitle">Loading sections...</p>
         </div>
+
+        {/* Skeleton grid */}
+        <div className="sections-grid">
+          {Array.from({ length: 8 }).map((_, idx) => (
+            <SectionCardSkeleton key={idx} />
+          ))}
+        </div>
+
         <style jsx>{`
-          .loading-state {
+          .section-navigation-grid {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem 1rem;
+          }
+          .section-header {
             text-align: center;
-            padding: 3rem;
+            margin-bottom: 2rem;
           }
-          .spinner {
-            width: 40px;
-            height: 40px;
-            border: 4px solid #f3f4f6;
-            border-top-color: #3b82f6;
-            border-radius: 50%;
-            animation: spin 1s linear infinite;
-            margin: 0 auto 1rem;
+          .section-title {
+            font-size: 1.875rem;
+            font-weight: 700;
+            color: #1f2937;
+            margin-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
           }
-          @keyframes spin {
-            to { transform: rotate(360deg); }
+          .section-subtitle {
+            color: #6b7280;
+            font-size: 1rem;
+          }
+          .sections-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 1.5rem;
+          }
+          @media (max-width: 768px) {
+            .sections-grid {
+              grid-template-columns: 1fr;
+            }
           }
         `}</style>
       </div>

@@ -4,11 +4,22 @@ import React, { useEffect } from 'react';
 import type { Seat } from '@/types/seat';
 import { CloudIcon, SunIcon, FireIcon } from '../common/Icons';
 
+interface TimelinePoint {
+  time: string;
+  inSun: boolean;
+  percentage?: number; // Sun exposure percentage at this time
+  inning?: string; // Optional inning label (e.g., "1st", "5th")
+}
+
 interface SeatDetailModalProps {
   seat: Seat | null;
   sunExposure: number; // 0-100 percentage
-  timeline?: Array<{ time: string; inSun: boolean }>; // Optional timeline data
+  timeline?: TimelinePoint[]; // Optional detailed timeline data
+  temperature?: number; // Optional temperature in Fahrenheit
+  humidity?: number; // Optional humidity percentage
+  similarSeats?: Seat[]; // Optional similar seats recommendations
   onClose: () => void;
+  onSeatClick?: (seat: Seat) => void; // Callback when clicking similar seat
 }
 
 /**
@@ -19,8 +30,41 @@ export const SeatDetailModal: React.FC<SeatDetailModalProps> = ({
   seat,
   sunExposure,
   timeline,
+  temperature,
+  humidity,
+  similarSeats,
   onClose,
+  onSeatClick,
 }) => {
+  // Calculate comfort score (0-100, higher is better)
+  const calculateComfortScore = (): number => {
+    let score = 100;
+
+    // Deduct points for sun exposure (max -40)
+    score -= (sunExposure / 100) * 40;
+
+    // Deduct points for high temperature (max -30)
+    if (temperature) {
+      if (temperature > 90) score -= 30;
+      else if (temperature > 85) score -= 20;
+      else if (temperature > 80) score -= 10;
+      else if (temperature < 50) score -= 15; // Too cold
+    }
+
+    // Deduct points for high humidity (max -20)
+    if (humidity) {
+      if (humidity > 80) score -= 20;
+      else if (humidity > 70) score -= 10;
+      else if (humidity > 60) score -= 5;
+    }
+
+    // Bonus points for covered seats
+    if (seat?.covered) score += 10;
+
+    return Math.max(0, Math.min(100, Math.round(score)));
+  };
+
+  const comfortScore = calculateComfortScore();
   // Close on ESC key
   useEffect(() => {
     const handleEscape = (e: KeyboardEvent) => {
@@ -210,37 +254,170 @@ export const SeatDetailModal: React.FC<SeatDetailModalProps> = ({
               </div>
             )}
 
-            {/* Timeline Preview (if available) */}
+            {/* Enhanced Timeline with Detailed Graph */}
             {timeline && timeline.length > 0 && (
-              <div>
-                <div className="text-sm font-semibold text-gray-700 mb-3">
-                  Sun Exposure During Game
+              <div className="bg-gray-50 rounded-xl p-4">
+                <div className="text-sm font-semibold text-gray-700 mb-4">
+                  ☀️ Sun Exposure Timeline
                 </div>
-                <div className="flex gap-1 h-12">
-                  {timeline.map((point, idx) => (
-                    <div
-                      key={idx}
-                      className="flex-1 relative group"
-                      title={`${point.time}: ${point.inSun ? 'In Sun' : 'In Shade'}`}
-                    >
+
+                {/* Area Chart Style Visualization */}
+                <div className="relative h-32 bg-white rounded-lg p-3 border border-gray-200">
+                  {/* Y-axis labels */}
+                  <div className="absolute left-0 top-0 bottom-0 flex flex-col justify-between text-xs text-gray-500 pr-2">
+                    <span>100%</span>
+                    <span>50%</span>
+                    <span>0%</span>
+                  </div>
+
+                  {/* Graph area */}
+                  <div className="ml-8 h-full relative flex items-end gap-0.5">
+                    {timeline.map((point, idx) => {
+                      const percentage = point.percentage ?? (point.inSun ? 100 : 0);
+                      const height = `${percentage}%`;
+                      const colorClass =
+                        percentage === 0 ? 'bg-gray-300' :
+                        percentage < 30 ? 'bg-green-400' :
+                        percentage < 70 ? 'bg-yellow-400' :
+                        percentage < 90 ? 'bg-orange-400' : 'bg-red-400';
+
+                      return (
+                        <div
+                          key={idx}
+                          className="flex-1 relative group"
+                          style={{ height: '100%' }}
+                        >
+                          {/* Bar */}
+                          <div
+                            className={`absolute bottom-0 w-full ${colorClass} transition-all rounded-t`}
+                            style={{ height }}
+                          />
+
+                          {/* Hover tooltip */}
+                          <div className="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none z-10">
+                            <div className="bg-gray-900 text-white text-xs rounded px-2 py-1 whitespace-nowrap shadow-lg">
+                              <div className="font-semibold">{point.time}</div>
+                              <div>{percentage}% sun</div>
+                              {point.inning && <div className="text-gray-300">Inning {point.inning}</div>}
+                            </div>
+                          </div>
+                        </div>
+                      );
+                    })}
+                  </div>
+                </div>
+
+                {/* X-axis labels */}
+                <div className="flex justify-between text-xs text-gray-500 mt-2 ml-8">
+                  <span>{timeline[0]?.time || 'Start'}</span>
+                  {timeline.length > 2 && (
+                    <span>{timeline[Math.floor(timeline.length / 2)]?.time || 'Mid'}</span>
+                  )}
+                  <span>{timeline[timeline.length - 1]?.time || 'End'}</span>
+                </div>
+
+                {/* Summary */}
+                <div className="mt-3 pt-3 border-t border-gray-200 text-sm text-gray-600">
+                  {sunExposure <= 30 && '✓ Mostly shaded throughout the game'}
+                  {sunExposure > 30 && sunExposure <= 70 && '⚠️ Mixed sun and shade during game'}
+                  {sunExposure > 70 && '☀️ High sun exposure - prepare accordingly'}
+                </div>
+              </div>
+            )}
+
+            {/* Comfort Score */}
+            {(temperature || humidity) && (
+              <div className="bg-gradient-to-r from-blue-50 to-indigo-50 rounded-xl p-4">
+                <div className="text-sm font-semibold text-blue-900 mb-3">
+                  🌡️ Comfort Score
+                </div>
+
+                <div className="flex items-center gap-4 mb-3">
+                  <div className="flex-1">
+                    <div className="flex justify-between text-xs text-blue-700 mb-1">
+                      <span>Poor</span>
+                      <span className="font-bold text-lg">{comfortScore}/100</span>
+                      <span>Excellent</span>
+                    </div>
+                    <div className="w-full h-3 bg-blue-200 rounded-full overflow-hidden">
                       <div
-                        className={`h-full ${
-                          point.inSun ? 'bg-orange-400' : 'bg-gray-300'
-                        } transition-colors`}
+                        className={`h-full transition-all ${
+                          comfortScore >= 75 ? 'bg-green-500' :
+                          comfortScore >= 50 ? 'bg-yellow-500' :
+                          comfortScore >= 25 ? 'bg-orange-500' : 'bg-red-500'
+                        }`}
+                        style={{ width: `${comfortScore}%` }}
                       />
-                      {/* Tooltip on hover */}
-                      <div className="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 hidden group-hover:block">
-                        <div className="bg-gray-900 text-white text-xs rounded px-2 py-1 whitespace-nowrap">
-                          {point.time}
+                    </div>
+                  </div>
+                </div>
+
+                <div className="grid grid-cols-2 gap-2 text-xs text-blue-800">
+                  {temperature && (
+                    <div className="flex items-center gap-1">
+                      🌡️ <span>{temperature}°F</span>
+                    </div>
+                  )}
+                  {humidity && (
+                    <div className="flex items-center gap-1">
+                      💧 <span>{humidity}% humidity</span>
+                    </div>
+                  )}
+                  <div className="flex items-center gap-1">
+                    ☀️ <span>{Math.round(sunExposure)}% sun</span>
+                  </div>
+                  {seat?.covered && (
+                    <div className="flex items-center gap-1">
+                      ⛱️ <span>Covered</span>
+                    </div>
+                  )}
+                </div>
+              </div>
+            )}
+
+            {/* Similar Seats Recommendations */}
+            {similarSeats && similarSeats.length > 0 && (
+              <div className="bg-purple-50 rounded-xl p-4">
+                <div className="text-sm font-semibold text-purple-900 mb-3">
+                  🎯 Similar Seats with Better Shade
+                </div>
+
+                <div className="space-y-2">
+                  {similarSeats.slice(0, 3).map((similarSeat, idx) => (
+                    <button
+                      key={similarSeat.id}
+                      onClick={() => onSeatClick?.(similarSeat)}
+                      className="w-full bg-white hover:bg-purple-100 border border-purple-200 rounded-lg p-3 text-left transition-colors"
+                    >
+                      <div className="flex items-center justify-between">
+                        <div>
+                          <div className="text-sm font-semibold text-gray-900">
+                            Section {similarSeat.sectionId}, Row {similarSeat.row}, Seat {similarSeat.seatNumber}
+                          </div>
+                          <div className="text-xs text-gray-600 mt-1">
+                            {similarSeat.viewQuality && (
+                              <span className="capitalize">{similarSeat.viewQuality} view • </span>
+                            )}
+                            Distance: {Math.round(similarSeat.distanceFromHomeplate)}ft
+                          </div>
+                        </div>
+                        <div className="text-right">
+                          <div className="text-xs text-gray-500">Sun exposure</div>
+                          <div className="text-lg font-bold text-green-600">
+                            {/* Placeholder - would need actual similar seat sun exposure */}
+                            Less ☀️
+                          </div>
                         </div>
                       </div>
-                    </div>
+                    </button>
                   ))}
                 </div>
-                <div className="flex justify-between text-xs text-gray-500 mt-2">
-                  <span>Start</span>
-                  <span>End</span>
-                </div>
+
+                {similarSeats.length > 3 && (
+                  <div className="text-xs text-purple-600 mt-2 text-center">
+                    + {similarSeats.length - 3} more similar seats available
+                  </div>
+                )}
               </div>
             )}
 
