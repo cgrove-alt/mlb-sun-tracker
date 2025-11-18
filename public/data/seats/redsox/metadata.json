@@ -1,0 +1,9689 @@
+{
+  "stadiumId": "redsox",
+  "lastUpdated": "2025-11-18T00:19:49.890Z",
+  "totalSections": 111,
+  "totalSeats": 26670,
+  "sections": {
+    "1": {
+      "sectionId": "1",
+      "name": "Grandstand 1",
+      "seatCount": 218,
+      "rowCount": 17,
+      "level": "field",
+      "priceLevel": "premium",
+      "covered": true,
+      "avgSunExposure": 10,
+      "rows": [
+        {
+          "rowNumber": "1",
+          "seatCount": 13
+        },
+        {
+          "rowNumber": "2",
+          "seatCount": 13
+        },
+        {
+          "rowNumber": "3",
+          "seatCount": 13
+        },
+        {
+          "rowNumber": "4",
+          "seatCount": 13
+        },
+        {
+          "rowNumber": "5",
+          "seatCount": 13
+        },
+        {
+          "rowNumber": "6",
+          "seatCount": 13
+        },
+        {
+          "rowNumber": "7",
+          "seatCount": 13
+        },
+        {
+          "rowNumber": "8",
+          "seatCount": 13
+        },
+        {
+          "rowNumber": "9",
+          "seatCount": 13
+        },
+        {
+          "rowNumber": "10",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "11",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "12",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "13",
+          "seatCount": 13
+        },
+        {
+          "rowNumber": "14",
+          "seatCount": 13
+        },
+        {
+          "rowNumber": "15",
+          "seatCount": 13
+        },
+        {
+          "rowNumber": "16",
+          "seatCount": 13
+        },
+        {
+          "rowNumber": "17",
+          "seatCount": 13
+        }
+      ]
+    },
+    "2": {
+      "sectionId": "2",
+      "name": "Grandstand 2",
+      "seatCount": 218,
+      "rowCount": 17,
+      "level": "field",
+      "priceLevel": "premium",
+      "covered": true,
+      "avgSunExposure": 10,
+      "rows": [
+        {
+          "rowNumber": "1",
+          "seatCount": 13
+        },
+        {
+          "rowNumber": "2",
+          "seatCount": 13
+        },
+        {
+          "rowNumber": "3",
+          "seatCount": 13
+        },
+        {
+          "rowNumber": "4",
+          "seatCount": 13
+        },
+        {
+          "rowNumber": "5",
+          "seatCount": 13
+        },
+        {
+          "rowNumber": "6",
+          "seatCount": 13
+        },
+        {
+          "rowNumber": "7",
+          "seatCount": 13
+        },
+        {
+          "rowNumber": "8",
+          "seatCount": 13
+        },
+        {
+          "rowNumber": "9",
+          "seatCount": 13
+        },
+        {
+          "rowNumber": "10",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "11",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "12",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "13",
+          "seatCount": 13
+        },
+        {
+          "rowNumber": "14",
+          "seatCount": 13
+        },
+        {
+          "rowNumber": "15",
+          "seatCount": 13
+        },
+        {
+          "rowNumber": "16",
+          "seatCount": 13
+        },
+        {
+          "rowNumber": "17",
+          "seatCount": 13
+        }
+      ]
+    },
+    "3": {
+      "sectionId": "3",
+      "name": "Grandstand 3",
+      "seatCount": 218,
+      "rowCount": 17,
+      "level": "field",
+      "priceLevel": "premium",
+      "covered": true,
+      "avgSunExposure": 10,
+      "rows": [
+        {
+          "rowNumber": "1",
+          "seatCount": 13
+        },
+        {
+          "rowNumber": "2",
+          "seatCount": 13
+        },
+        {
+          "rowNumber": "3",
+          "seatCount": 13
+        },
+        {
+          "rowNumber": "4",
+          "seatCount": 13
+        },
+        {
+          "rowNumber": "5",
+          "seatCount": 13
+        },
+        {
+          "rowNumber": "6",
+          "seatCount": 13
+        },
+        {
+          "rowNumber": "7",
+          "seatCount": 13
+        },
+        {
+          "rowNumber": "8",
+          "seatCount": 13
+        },
+        {
+          "rowNumber": "9",
+          "seatCount": 13
+        },
+        {
+          "rowNumber": "10",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "11",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "12",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "13",
+          "seatCount": 13
+        },
+        {
+          "rowNumber": "14",
+          "seatCount": 13
+        },
+        {
+          "rowNumber": "15",
+          "seatCount": 13
+        },
+        {
+          "rowNumber": "16",
+          "seatCount": 13
+        },
+        {
+          "rowNumber": "17",
+          "seatCount": 13
+        }
+      ]
+    },
+    "4": {
+      "sectionId": "4",
+      "name": "Grandstand 4",
+      "seatCount": 218,
+      "rowCount": 17,
+      "level": "field",
+      "priceLevel": "premium",
+      "covered": true,
+      "avgSunExposure": 10,
+      "rows": [
+        {
+          "rowNumber": "1",
+          "seatCount": 13
+        },
+        {
+          "rowNumber": "2",
+          "seatCount": 13
+        },
+        {
+          "rowNumber": "3",
+          "seatCount": 13
+        },
+        {
+          "rowNumber": "4",
+          "seatCount": 13
+        },
+        {
+          "rowNumber": "5",
+          "seatCount": 13
+        },
+        {
+          "rowNumber": "6",
+          "seatCount": 13
+        },
+        {
+          "rowNumber": "7",
+          "seatCount": 13
+        },
+        {
+          "rowNumber": "8",
+          "seatCount": 13
+        },
+        {
+          "rowNumber": "9",
+          "seatCount": 13
+        },
+        {
+          "rowNumber": "10",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "11",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "12",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "13",
+          "seatCount": 13
+        },
+        {
+          "rowNumber": "14",
+          "seatCount": 13
+        },
+        {
+          "rowNumber": "15",
+          "seatCount": 13
+        },
+        {
+          "rowNumber": "16",
+          "seatCount": 13
+        },
+        {
+          "rowNumber": "17",
+          "seatCount": 13
+        }
+      ]
+    },
+    "5": {
+      "sectionId": "5",
+      "name": "Grandstand 5",
+      "seatCount": 218,
+      "rowCount": 17,
+      "level": "field",
+      "priceLevel": "premium",
+      "covered": true,
+      "avgSunExposure": 10,
+      "rows": [
+        {
+          "rowNumber": "1",
+          "seatCount": 13
+        },
+        {
+          "rowNumber": "2",
+          "seatCount": 13
+        },
+        {
+          "rowNumber": "3",
+          "seatCount": 13
+        },
+        {
+          "rowNumber": "4",
+          "seatCount": 13
+        },
+        {
+          "rowNumber": "5",
+          "seatCount": 13
+        },
+        {
+          "rowNumber": "6",
+          "seatCount": 13
+        },
+        {
+          "rowNumber": "7",
+          "seatCount": 13
+        },
+        {
+          "rowNumber": "8",
+          "seatCount": 13
+        },
+        {
+          "rowNumber": "9",
+          "seatCount": 13
+        },
+        {
+          "rowNumber": "10",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "11",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "12",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "13",
+          "seatCount": 13
+        },
+        {
+          "rowNumber": "14",
+          "seatCount": 13
+        },
+        {
+          "rowNumber": "15",
+          "seatCount": 13
+        },
+        {
+          "rowNumber": "16",
+          "seatCount": 13
+        },
+        {
+          "rowNumber": "17",
+          "seatCount": 13
+        }
+      ]
+    },
+    "6": {
+      "sectionId": "6",
+      "name": "Grandstand 6",
+      "seatCount": 218,
+      "rowCount": 17,
+      "level": "field",
+      "priceLevel": "premium",
+      "covered": true,
+      "avgSunExposure": 10,
+      "rows": [
+        {
+          "rowNumber": "1",
+          "seatCount": 13
+        },
+        {
+          "rowNumber": "2",
+          "seatCount": 13
+        },
+        {
+          "rowNumber": "3",
+          "seatCount": 13
+        },
+        {
+          "rowNumber": "4",
+          "seatCount": 13
+        },
+        {
+          "rowNumber": "5",
+          "seatCount": 13
+        },
+        {
+          "rowNumber": "6",
+          "seatCount": 13
+        },
+        {
+          "rowNumber": "7",
+          "seatCount": 13
+        },
+        {
+          "rowNumber": "8",
+          "seatCount": 13
+        },
+        {
+          "rowNumber": "9",
+          "seatCount": 13
+        },
+        {
+          "rowNumber": "10",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "11",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "12",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "13",
+          "seatCount": 13
+        },
+        {
+          "rowNumber": "14",
+          "seatCount": 13
+        },
+        {
+          "rowNumber": "15",
+          "seatCount": 13
+        },
+        {
+          "rowNumber": "16",
+          "seatCount": 13
+        },
+        {
+          "rowNumber": "17",
+          "seatCount": 13
+        }
+      ]
+    },
+    "7": {
+      "sectionId": "7",
+      "name": "Grandstand 7",
+      "seatCount": 218,
+      "rowCount": 17,
+      "level": "field",
+      "priceLevel": "premium",
+      "covered": true,
+      "avgSunExposure": 10,
+      "rows": [
+        {
+          "rowNumber": "1",
+          "seatCount": 13
+        },
+        {
+          "rowNumber": "2",
+          "seatCount": 13
+        },
+        {
+          "rowNumber": "3",
+          "seatCount": 13
+        },
+        {
+          "rowNumber": "4",
+          "seatCount": 13
+        },
+        {
+          "rowNumber": "5",
+          "seatCount": 13
+        },
+        {
+          "rowNumber": "6",
+          "seatCount": 13
+        },
+        {
+          "rowNumber": "7",
+          "seatCount": 13
+        },
+        {
+          "rowNumber": "8",
+          "seatCount": 13
+        },
+        {
+          "rowNumber": "9",
+          "seatCount": 13
+        },
+        {
+          "rowNumber": "10",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "11",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "12",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "13",
+          "seatCount": 13
+        },
+        {
+          "rowNumber": "14",
+          "seatCount": 13
+        },
+        {
+          "rowNumber": "15",
+          "seatCount": 13
+        },
+        {
+          "rowNumber": "16",
+          "seatCount": 13
+        },
+        {
+          "rowNumber": "17",
+          "seatCount": 13
+        }
+      ]
+    },
+    "8": {
+      "sectionId": "8",
+      "name": "Grandstand 8",
+      "seatCount": 218,
+      "rowCount": 17,
+      "level": "field",
+      "priceLevel": "premium",
+      "covered": true,
+      "avgSunExposure": 10,
+      "rows": [
+        {
+          "rowNumber": "1",
+          "seatCount": 13
+        },
+        {
+          "rowNumber": "2",
+          "seatCount": 13
+        },
+        {
+          "rowNumber": "3",
+          "seatCount": 13
+        },
+        {
+          "rowNumber": "4",
+          "seatCount": 13
+        },
+        {
+          "rowNumber": "5",
+          "seatCount": 13
+        },
+        {
+          "rowNumber": "6",
+          "seatCount": 13
+        },
+        {
+          "rowNumber": "7",
+          "seatCount": 13
+        },
+        {
+          "rowNumber": "8",
+          "seatCount": 13
+        },
+        {
+          "rowNumber": "9",
+          "seatCount": 13
+        },
+        {
+          "rowNumber": "10",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "11",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "12",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "13",
+          "seatCount": 13
+        },
+        {
+          "rowNumber": "14",
+          "seatCount": 13
+        },
+        {
+          "rowNumber": "15",
+          "seatCount": 13
+        },
+        {
+          "rowNumber": "16",
+          "seatCount": 13
+        },
+        {
+          "rowNumber": "17",
+          "seatCount": 13
+        }
+      ]
+    },
+    "9": {
+      "sectionId": "9",
+      "name": "Grandstand 9",
+      "seatCount": 218,
+      "rowCount": 17,
+      "level": "field",
+      "priceLevel": "premium",
+      "covered": true,
+      "avgSunExposure": 10,
+      "rows": [
+        {
+          "rowNumber": "1",
+          "seatCount": 13
+        },
+        {
+          "rowNumber": "2",
+          "seatCount": 13
+        },
+        {
+          "rowNumber": "3",
+          "seatCount": 13
+        },
+        {
+          "rowNumber": "4",
+          "seatCount": 13
+        },
+        {
+          "rowNumber": "5",
+          "seatCount": 13
+        },
+        {
+          "rowNumber": "6",
+          "seatCount": 13
+        },
+        {
+          "rowNumber": "7",
+          "seatCount": 13
+        },
+        {
+          "rowNumber": "8",
+          "seatCount": 13
+        },
+        {
+          "rowNumber": "9",
+          "seatCount": 13
+        },
+        {
+          "rowNumber": "10",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "11",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "12",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "13",
+          "seatCount": 13
+        },
+        {
+          "rowNumber": "14",
+          "seatCount": 13
+        },
+        {
+          "rowNumber": "15",
+          "seatCount": 13
+        },
+        {
+          "rowNumber": "16",
+          "seatCount": 13
+        },
+        {
+          "rowNumber": "17",
+          "seatCount": 13
+        }
+      ]
+    },
+    "10": {
+      "sectionId": "10",
+      "name": "Field 10",
+      "seatCount": 162,
+      "rowCount": 15,
+      "level": "field",
+      "priceLevel": "premium",
+      "covered": true,
+      "avgSunExposure": 10,
+      "rows": [
+        {
+          "rowNumber": "1",
+          "seatCount": 11
+        },
+        {
+          "rowNumber": "2",
+          "seatCount": 11
+        },
+        {
+          "rowNumber": "3",
+          "seatCount": 11
+        },
+        {
+          "rowNumber": "4",
+          "seatCount": 11
+        },
+        {
+          "rowNumber": "5",
+          "seatCount": 11
+        },
+        {
+          "rowNumber": "6",
+          "seatCount": 11
+        },
+        {
+          "rowNumber": "7",
+          "seatCount": 11
+        },
+        {
+          "rowNumber": "8",
+          "seatCount": 11
+        },
+        {
+          "rowNumber": "9",
+          "seatCount": 11
+        },
+        {
+          "rowNumber": "10",
+          "seatCount": 10
+        },
+        {
+          "rowNumber": "11",
+          "seatCount": 10
+        },
+        {
+          "rowNumber": "12",
+          "seatCount": 10
+        },
+        {
+          "rowNumber": "13",
+          "seatCount": 11
+        },
+        {
+          "rowNumber": "14",
+          "seatCount": 11
+        },
+        {
+          "rowNumber": "15",
+          "seatCount": 11
+        }
+      ]
+    },
+    "11": {
+      "sectionId": "11",
+      "name": "Field 11",
+      "seatCount": 162,
+      "rowCount": 15,
+      "level": "field",
+      "priceLevel": "premium",
+      "covered": true,
+      "avgSunExposure": 10,
+      "rows": [
+        {
+          "rowNumber": "1",
+          "seatCount": 11
+        },
+        {
+          "rowNumber": "2",
+          "seatCount": 11
+        },
+        {
+          "rowNumber": "3",
+          "seatCount": 11
+        },
+        {
+          "rowNumber": "4",
+          "seatCount": 11
+        },
+        {
+          "rowNumber": "5",
+          "seatCount": 11
+        },
+        {
+          "rowNumber": "6",
+          "seatCount": 11
+        },
+        {
+          "rowNumber": "7",
+          "seatCount": 11
+        },
+        {
+          "rowNumber": "8",
+          "seatCount": 11
+        },
+        {
+          "rowNumber": "9",
+          "seatCount": 11
+        },
+        {
+          "rowNumber": "10",
+          "seatCount": 10
+        },
+        {
+          "rowNumber": "11",
+          "seatCount": 10
+        },
+        {
+          "rowNumber": "12",
+          "seatCount": 10
+        },
+        {
+          "rowNumber": "13",
+          "seatCount": 11
+        },
+        {
+          "rowNumber": "14",
+          "seatCount": 11
+        },
+        {
+          "rowNumber": "15",
+          "seatCount": 11
+        }
+      ]
+    },
+    "12": {
+      "sectionId": "12",
+      "name": "Field 12",
+      "seatCount": 162,
+      "rowCount": 15,
+      "level": "field",
+      "priceLevel": "premium",
+      "covered": true,
+      "avgSunExposure": 10,
+      "rows": [
+        {
+          "rowNumber": "1",
+          "seatCount": 11
+        },
+        {
+          "rowNumber": "2",
+          "seatCount": 11
+        },
+        {
+          "rowNumber": "3",
+          "seatCount": 11
+        },
+        {
+          "rowNumber": "4",
+          "seatCount": 11
+        },
+        {
+          "rowNumber": "5",
+          "seatCount": 11
+        },
+        {
+          "rowNumber": "6",
+          "seatCount": 11
+        },
+        {
+          "rowNumber": "7",
+          "seatCount": 11
+        },
+        {
+          "rowNumber": "8",
+          "seatCount": 11
+        },
+        {
+          "rowNumber": "9",
+          "seatCount": 11
+        },
+        {
+          "rowNumber": "10",
+          "seatCount": 10
+        },
+        {
+          "rowNumber": "11",
+          "seatCount": 10
+        },
+        {
+          "rowNumber": "12",
+          "seatCount": 10
+        },
+        {
+          "rowNumber": "13",
+          "seatCount": 11
+        },
+        {
+          "rowNumber": "14",
+          "seatCount": 11
+        },
+        {
+          "rowNumber": "15",
+          "seatCount": 11
+        }
+      ]
+    },
+    "13": {
+      "sectionId": "13",
+      "name": "Field 13",
+      "seatCount": 162,
+      "rowCount": 15,
+      "level": "field",
+      "priceLevel": "premium",
+      "covered": true,
+      "avgSunExposure": 10,
+      "rows": [
+        {
+          "rowNumber": "1",
+          "seatCount": 11
+        },
+        {
+          "rowNumber": "2",
+          "seatCount": 11
+        },
+        {
+          "rowNumber": "3",
+          "seatCount": 11
+        },
+        {
+          "rowNumber": "4",
+          "seatCount": 11
+        },
+        {
+          "rowNumber": "5",
+          "seatCount": 11
+        },
+        {
+          "rowNumber": "6",
+          "seatCount": 11
+        },
+        {
+          "rowNumber": "7",
+          "seatCount": 11
+        },
+        {
+          "rowNumber": "8",
+          "seatCount": 11
+        },
+        {
+          "rowNumber": "9",
+          "seatCount": 11
+        },
+        {
+          "rowNumber": "10",
+          "seatCount": 10
+        },
+        {
+          "rowNumber": "11",
+          "seatCount": 10
+        },
+        {
+          "rowNumber": "12",
+          "seatCount": 10
+        },
+        {
+          "rowNumber": "13",
+          "seatCount": 11
+        },
+        {
+          "rowNumber": "14",
+          "seatCount": 11
+        },
+        {
+          "rowNumber": "15",
+          "seatCount": 11
+        }
+      ]
+    },
+    "14": {
+      "sectionId": "14",
+      "name": "Field 14",
+      "seatCount": 162,
+      "rowCount": 15,
+      "level": "field",
+      "priceLevel": "premium",
+      "covered": true,
+      "avgSunExposure": 10,
+      "rows": [
+        {
+          "rowNumber": "1",
+          "seatCount": 11
+        },
+        {
+          "rowNumber": "2",
+          "seatCount": 11
+        },
+        {
+          "rowNumber": "3",
+          "seatCount": 11
+        },
+        {
+          "rowNumber": "4",
+          "seatCount": 11
+        },
+        {
+          "rowNumber": "5",
+          "seatCount": 11
+        },
+        {
+          "rowNumber": "6",
+          "seatCount": 11
+        },
+        {
+          "rowNumber": "7",
+          "seatCount": 11
+        },
+        {
+          "rowNumber": "8",
+          "seatCount": 11
+        },
+        {
+          "rowNumber": "9",
+          "seatCount": 10
+        },
+        {
+          "rowNumber": "10",
+          "seatCount": 10
+        },
+        {
+          "rowNumber": "11",
+          "seatCount": 10
+        },
+        {
+          "rowNumber": "12",
+          "seatCount": 11
+        },
+        {
+          "rowNumber": "13",
+          "seatCount": 11
+        },
+        {
+          "rowNumber": "14",
+          "seatCount": 11
+        },
+        {
+          "rowNumber": "15",
+          "seatCount": 11
+        }
+      ]
+    },
+    "15": {
+      "sectionId": "15",
+      "name": "Field 15",
+      "seatCount": 162,
+      "rowCount": 15,
+      "level": "field",
+      "priceLevel": "premium",
+      "covered": true,
+      "avgSunExposure": 10,
+      "rows": [
+        {
+          "rowNumber": "1",
+          "seatCount": 11
+        },
+        {
+          "rowNumber": "2",
+          "seatCount": 11
+        },
+        {
+          "rowNumber": "3",
+          "seatCount": 11
+        },
+        {
+          "rowNumber": "4",
+          "seatCount": 11
+        },
+        {
+          "rowNumber": "5",
+          "seatCount": 11
+        },
+        {
+          "rowNumber": "6",
+          "seatCount": 11
+        },
+        {
+          "rowNumber": "7",
+          "seatCount": 11
+        },
+        {
+          "rowNumber": "8",
+          "seatCount": 11
+        },
+        {
+          "rowNumber": "9",
+          "seatCount": 11
+        },
+        {
+          "rowNumber": "10",
+          "seatCount": 10
+        },
+        {
+          "rowNumber": "11",
+          "seatCount": 10
+        },
+        {
+          "rowNumber": "12",
+          "seatCount": 10
+        },
+        {
+          "rowNumber": "13",
+          "seatCount": 11
+        },
+        {
+          "rowNumber": "14",
+          "seatCount": 11
+        },
+        {
+          "rowNumber": "15",
+          "seatCount": 11
+        }
+      ]
+    },
+    "16": {
+      "sectionId": "16",
+      "name": "Field 16",
+      "seatCount": 162,
+      "rowCount": 15,
+      "level": "field",
+      "priceLevel": "premium",
+      "covered": true,
+      "avgSunExposure": 10,
+      "rows": [
+        {
+          "rowNumber": "1",
+          "seatCount": 11
+        },
+        {
+          "rowNumber": "2",
+          "seatCount": 11
+        },
+        {
+          "rowNumber": "3",
+          "seatCount": 11
+        },
+        {
+          "rowNumber": "4",
+          "seatCount": 11
+        },
+        {
+          "rowNumber": "5",
+          "seatCount": 11
+        },
+        {
+          "rowNumber": "6",
+          "seatCount": 11
+        },
+        {
+          "rowNumber": "7",
+          "seatCount": 11
+        },
+        {
+          "rowNumber": "8",
+          "seatCount": 11
+        },
+        {
+          "rowNumber": "9",
+          "seatCount": 11
+        },
+        {
+          "rowNumber": "10",
+          "seatCount": 10
+        },
+        {
+          "rowNumber": "11",
+          "seatCount": 10
+        },
+        {
+          "rowNumber": "12",
+          "seatCount": 10
+        },
+        {
+          "rowNumber": "13",
+          "seatCount": 11
+        },
+        {
+          "rowNumber": "14",
+          "seatCount": 11
+        },
+        {
+          "rowNumber": "15",
+          "seatCount": 11
+        }
+      ]
+    },
+    "17": {
+      "sectionId": "17",
+      "name": "Field 17",
+      "seatCount": 162,
+      "rowCount": 15,
+      "level": "field",
+      "priceLevel": "premium",
+      "covered": true,
+      "avgSunExposure": 10,
+      "rows": [
+        {
+          "rowNumber": "1",
+          "seatCount": 11
+        },
+        {
+          "rowNumber": "2",
+          "seatCount": 11
+        },
+        {
+          "rowNumber": "3",
+          "seatCount": 11
+        },
+        {
+          "rowNumber": "4",
+          "seatCount": 11
+        },
+        {
+          "rowNumber": "5",
+          "seatCount": 11
+        },
+        {
+          "rowNumber": "6",
+          "seatCount": 11
+        },
+        {
+          "rowNumber": "7",
+          "seatCount": 11
+        },
+        {
+          "rowNumber": "8",
+          "seatCount": 11
+        },
+        {
+          "rowNumber": "9",
+          "seatCount": 11
+        },
+        {
+          "rowNumber": "10",
+          "seatCount": 10
+        },
+        {
+          "rowNumber": "11",
+          "seatCount": 10
+        },
+        {
+          "rowNumber": "12",
+          "seatCount": 10
+        },
+        {
+          "rowNumber": "13",
+          "seatCount": 11
+        },
+        {
+          "rowNumber": "14",
+          "seatCount": 11
+        },
+        {
+          "rowNumber": "15",
+          "seatCount": 11
+        }
+      ]
+    },
+    "18": {
+      "sectionId": "18",
+      "name": "Field 18",
+      "seatCount": 162,
+      "rowCount": 15,
+      "level": "field",
+      "priceLevel": "premium",
+      "covered": true,
+      "avgSunExposure": 10,
+      "rows": [
+        {
+          "rowNumber": "1",
+          "seatCount": 11
+        },
+        {
+          "rowNumber": "2",
+          "seatCount": 11
+        },
+        {
+          "rowNumber": "3",
+          "seatCount": 11
+        },
+        {
+          "rowNumber": "4",
+          "seatCount": 11
+        },
+        {
+          "rowNumber": "5",
+          "seatCount": 11
+        },
+        {
+          "rowNumber": "6",
+          "seatCount": 11
+        },
+        {
+          "rowNumber": "7",
+          "seatCount": 11
+        },
+        {
+          "rowNumber": "8",
+          "seatCount": 11
+        },
+        {
+          "rowNumber": "9",
+          "seatCount": 11
+        },
+        {
+          "rowNumber": "10",
+          "seatCount": 10
+        },
+        {
+          "rowNumber": "11",
+          "seatCount": 10
+        },
+        {
+          "rowNumber": "12",
+          "seatCount": 10
+        },
+        {
+          "rowNumber": "13",
+          "seatCount": 11
+        },
+        {
+          "rowNumber": "14",
+          "seatCount": 11
+        },
+        {
+          "rowNumber": "15",
+          "seatCount": 11
+        }
+      ]
+    },
+    "19": {
+      "sectionId": "19",
+      "name": "Field 19",
+      "seatCount": 162,
+      "rowCount": 15,
+      "level": "field",
+      "priceLevel": "premium",
+      "covered": true,
+      "avgSunExposure": 10,
+      "rows": [
+        {
+          "rowNumber": "1",
+          "seatCount": 11
+        },
+        {
+          "rowNumber": "2",
+          "seatCount": 11
+        },
+        {
+          "rowNumber": "3",
+          "seatCount": 11
+        },
+        {
+          "rowNumber": "4",
+          "seatCount": 11
+        },
+        {
+          "rowNumber": "5",
+          "seatCount": 11
+        },
+        {
+          "rowNumber": "6",
+          "seatCount": 11
+        },
+        {
+          "rowNumber": "7",
+          "seatCount": 11
+        },
+        {
+          "rowNumber": "8",
+          "seatCount": 11
+        },
+        {
+          "rowNumber": "9",
+          "seatCount": 11
+        },
+        {
+          "rowNumber": "10",
+          "seatCount": 10
+        },
+        {
+          "rowNumber": "11",
+          "seatCount": 10
+        },
+        {
+          "rowNumber": "12",
+          "seatCount": 10
+        },
+        {
+          "rowNumber": "13",
+          "seatCount": 11
+        },
+        {
+          "rowNumber": "14",
+          "seatCount": 11
+        },
+        {
+          "rowNumber": "15",
+          "seatCount": 11
+        }
+      ]
+    },
+    "20": {
+      "sectionId": "20",
+      "name": "Field 20",
+      "seatCount": 162,
+      "rowCount": 15,
+      "level": "field",
+      "priceLevel": "premium",
+      "covered": true,
+      "avgSunExposure": 10,
+      "rows": [
+        {
+          "rowNumber": "1",
+          "seatCount": 11
+        },
+        {
+          "rowNumber": "2",
+          "seatCount": 11
+        },
+        {
+          "rowNumber": "3",
+          "seatCount": 11
+        },
+        {
+          "rowNumber": "4",
+          "seatCount": 11
+        },
+        {
+          "rowNumber": "5",
+          "seatCount": 11
+        },
+        {
+          "rowNumber": "6",
+          "seatCount": 11
+        },
+        {
+          "rowNumber": "7",
+          "seatCount": 11
+        },
+        {
+          "rowNumber": "8",
+          "seatCount": 11
+        },
+        {
+          "rowNumber": "9",
+          "seatCount": 11
+        },
+        {
+          "rowNumber": "10",
+          "seatCount": 10
+        },
+        {
+          "rowNumber": "11",
+          "seatCount": 10
+        },
+        {
+          "rowNumber": "12",
+          "seatCount": 10
+        },
+        {
+          "rowNumber": "13",
+          "seatCount": 11
+        },
+        {
+          "rowNumber": "14",
+          "seatCount": 11
+        },
+        {
+          "rowNumber": "15",
+          "seatCount": 11
+        }
+      ]
+    },
+    "21": {
+      "sectionId": "21",
+      "name": "Field 21",
+      "seatCount": 162,
+      "rowCount": 15,
+      "level": "field",
+      "priceLevel": "premium",
+      "covered": true,
+      "avgSunExposure": 10,
+      "rows": [
+        {
+          "rowNumber": "1",
+          "seatCount": 11
+        },
+        {
+          "rowNumber": "2",
+          "seatCount": 11
+        },
+        {
+          "rowNumber": "3",
+          "seatCount": 11
+        },
+        {
+          "rowNumber": "4",
+          "seatCount": 11
+        },
+        {
+          "rowNumber": "5",
+          "seatCount": 11
+        },
+        {
+          "rowNumber": "6",
+          "seatCount": 11
+        },
+        {
+          "rowNumber": "7",
+          "seatCount": 11
+        },
+        {
+          "rowNumber": "8",
+          "seatCount": 11
+        },
+        {
+          "rowNumber": "9",
+          "seatCount": 10
+        },
+        {
+          "rowNumber": "10",
+          "seatCount": 10
+        },
+        {
+          "rowNumber": "11",
+          "seatCount": 10
+        },
+        {
+          "rowNumber": "12",
+          "seatCount": 11
+        },
+        {
+          "rowNumber": "13",
+          "seatCount": 11
+        },
+        {
+          "rowNumber": "14",
+          "seatCount": 11
+        },
+        {
+          "rowNumber": "15",
+          "seatCount": 11
+        }
+      ]
+    },
+    "22": {
+      "sectionId": "22",
+      "name": "Field 22",
+      "seatCount": 162,
+      "rowCount": 15,
+      "level": "field",
+      "priceLevel": "premium",
+      "covered": true,
+      "avgSunExposure": 10,
+      "rows": [
+        {
+          "rowNumber": "1",
+          "seatCount": 11
+        },
+        {
+          "rowNumber": "2",
+          "seatCount": 11
+        },
+        {
+          "rowNumber": "3",
+          "seatCount": 11
+        },
+        {
+          "rowNumber": "4",
+          "seatCount": 11
+        },
+        {
+          "rowNumber": "5",
+          "seatCount": 11
+        },
+        {
+          "rowNumber": "6",
+          "seatCount": 11
+        },
+        {
+          "rowNumber": "7",
+          "seatCount": 11
+        },
+        {
+          "rowNumber": "8",
+          "seatCount": 11
+        },
+        {
+          "rowNumber": "9",
+          "seatCount": 10
+        },
+        {
+          "rowNumber": "10",
+          "seatCount": 10
+        },
+        {
+          "rowNumber": "11",
+          "seatCount": 10
+        },
+        {
+          "rowNumber": "12",
+          "seatCount": 11
+        },
+        {
+          "rowNumber": "13",
+          "seatCount": 11
+        },
+        {
+          "rowNumber": "14",
+          "seatCount": 11
+        },
+        {
+          "rowNumber": "15",
+          "seatCount": 11
+        }
+      ]
+    },
+    "23": {
+      "sectionId": "23",
+      "name": "Field 23",
+      "seatCount": 162,
+      "rowCount": 15,
+      "level": "field",
+      "priceLevel": "premium",
+      "covered": true,
+      "avgSunExposure": 10,
+      "rows": [
+        {
+          "rowNumber": "1",
+          "seatCount": 11
+        },
+        {
+          "rowNumber": "2",
+          "seatCount": 11
+        },
+        {
+          "rowNumber": "3",
+          "seatCount": 11
+        },
+        {
+          "rowNumber": "4",
+          "seatCount": 11
+        },
+        {
+          "rowNumber": "5",
+          "seatCount": 11
+        },
+        {
+          "rowNumber": "6",
+          "seatCount": 11
+        },
+        {
+          "rowNumber": "7",
+          "seatCount": 11
+        },
+        {
+          "rowNumber": "8",
+          "seatCount": 11
+        },
+        {
+          "rowNumber": "9",
+          "seatCount": 10
+        },
+        {
+          "rowNumber": "10",
+          "seatCount": 10
+        },
+        {
+          "rowNumber": "11",
+          "seatCount": 10
+        },
+        {
+          "rowNumber": "12",
+          "seatCount": 11
+        },
+        {
+          "rowNumber": "13",
+          "seatCount": 11
+        },
+        {
+          "rowNumber": "14",
+          "seatCount": 11
+        },
+        {
+          "rowNumber": "15",
+          "seatCount": 11
+        }
+      ]
+    },
+    "24": {
+      "sectionId": "24",
+      "name": "Field 24",
+      "seatCount": 162,
+      "rowCount": 15,
+      "level": "field",
+      "priceLevel": "premium",
+      "covered": true,
+      "avgSunExposure": 10,
+      "rows": [
+        {
+          "rowNumber": "1",
+          "seatCount": 11
+        },
+        {
+          "rowNumber": "2",
+          "seatCount": 11
+        },
+        {
+          "rowNumber": "3",
+          "seatCount": 11
+        },
+        {
+          "rowNumber": "4",
+          "seatCount": 11
+        },
+        {
+          "rowNumber": "5",
+          "seatCount": 11
+        },
+        {
+          "rowNumber": "6",
+          "seatCount": 11
+        },
+        {
+          "rowNumber": "7",
+          "seatCount": 11
+        },
+        {
+          "rowNumber": "8",
+          "seatCount": 11
+        },
+        {
+          "rowNumber": "9",
+          "seatCount": 10
+        },
+        {
+          "rowNumber": "10",
+          "seatCount": 10
+        },
+        {
+          "rowNumber": "11",
+          "seatCount": 10
+        },
+        {
+          "rowNumber": "12",
+          "seatCount": 11
+        },
+        {
+          "rowNumber": "13",
+          "seatCount": 11
+        },
+        {
+          "rowNumber": "14",
+          "seatCount": 11
+        },
+        {
+          "rowNumber": "15",
+          "seatCount": 11
+        }
+      ]
+    },
+    "25": {
+      "sectionId": "25",
+      "name": "Field 25",
+      "seatCount": 162,
+      "rowCount": 15,
+      "level": "field",
+      "priceLevel": "premium",
+      "covered": true,
+      "avgSunExposure": 10,
+      "rows": [
+        {
+          "rowNumber": "1",
+          "seatCount": 11
+        },
+        {
+          "rowNumber": "2",
+          "seatCount": 11
+        },
+        {
+          "rowNumber": "3",
+          "seatCount": 11
+        },
+        {
+          "rowNumber": "4",
+          "seatCount": 11
+        },
+        {
+          "rowNumber": "5",
+          "seatCount": 11
+        },
+        {
+          "rowNumber": "6",
+          "seatCount": 11
+        },
+        {
+          "rowNumber": "7",
+          "seatCount": 11
+        },
+        {
+          "rowNumber": "8",
+          "seatCount": 11
+        },
+        {
+          "rowNumber": "9",
+          "seatCount": 11
+        },
+        {
+          "rowNumber": "10",
+          "seatCount": 10
+        },
+        {
+          "rowNumber": "11",
+          "seatCount": 10
+        },
+        {
+          "rowNumber": "12",
+          "seatCount": 10
+        },
+        {
+          "rowNumber": "13",
+          "seatCount": 11
+        },
+        {
+          "rowNumber": "14",
+          "seatCount": 11
+        },
+        {
+          "rowNumber": "15",
+          "seatCount": 11
+        }
+      ]
+    },
+    "26": {
+      "sectionId": "26",
+      "name": "Field 26",
+      "seatCount": 162,
+      "rowCount": 15,
+      "level": "field",
+      "priceLevel": "premium",
+      "covered": true,
+      "avgSunExposure": 10,
+      "rows": [
+        {
+          "rowNumber": "1",
+          "seatCount": 11
+        },
+        {
+          "rowNumber": "2",
+          "seatCount": 11
+        },
+        {
+          "rowNumber": "3",
+          "seatCount": 11
+        },
+        {
+          "rowNumber": "4",
+          "seatCount": 11
+        },
+        {
+          "rowNumber": "5",
+          "seatCount": 11
+        },
+        {
+          "rowNumber": "6",
+          "seatCount": 11
+        },
+        {
+          "rowNumber": "7",
+          "seatCount": 11
+        },
+        {
+          "rowNumber": "8",
+          "seatCount": 11
+        },
+        {
+          "rowNumber": "9",
+          "seatCount": 11
+        },
+        {
+          "rowNumber": "10",
+          "seatCount": 10
+        },
+        {
+          "rowNumber": "11",
+          "seatCount": 10
+        },
+        {
+          "rowNumber": "12",
+          "seatCount": 10
+        },
+        {
+          "rowNumber": "13",
+          "seatCount": 11
+        },
+        {
+          "rowNumber": "14",
+          "seatCount": 11
+        },
+        {
+          "rowNumber": "15",
+          "seatCount": 11
+        }
+      ]
+    },
+    "27": {
+      "sectionId": "27",
+      "name": "Field 27",
+      "seatCount": 162,
+      "rowCount": 15,
+      "level": "field",
+      "priceLevel": "premium",
+      "covered": true,
+      "avgSunExposure": 10,
+      "rows": [
+        {
+          "rowNumber": "1",
+          "seatCount": 11
+        },
+        {
+          "rowNumber": "2",
+          "seatCount": 11
+        },
+        {
+          "rowNumber": "3",
+          "seatCount": 11
+        },
+        {
+          "rowNumber": "4",
+          "seatCount": 11
+        },
+        {
+          "rowNumber": "5",
+          "seatCount": 11
+        },
+        {
+          "rowNumber": "6",
+          "seatCount": 11
+        },
+        {
+          "rowNumber": "7",
+          "seatCount": 11
+        },
+        {
+          "rowNumber": "8",
+          "seatCount": 11
+        },
+        {
+          "rowNumber": "9",
+          "seatCount": 11
+        },
+        {
+          "rowNumber": "10",
+          "seatCount": 10
+        },
+        {
+          "rowNumber": "11",
+          "seatCount": 10
+        },
+        {
+          "rowNumber": "12",
+          "seatCount": 10
+        },
+        {
+          "rowNumber": "13",
+          "seatCount": 11
+        },
+        {
+          "rowNumber": "14",
+          "seatCount": 11
+        },
+        {
+          "rowNumber": "15",
+          "seatCount": 11
+        }
+      ]
+    },
+    "28": {
+      "sectionId": "28",
+      "name": "Field 28",
+      "seatCount": 162,
+      "rowCount": 15,
+      "level": "field",
+      "priceLevel": "premium",
+      "covered": true,
+      "avgSunExposure": 10,
+      "rows": [
+        {
+          "rowNumber": "1",
+          "seatCount": 11
+        },
+        {
+          "rowNumber": "2",
+          "seatCount": 11
+        },
+        {
+          "rowNumber": "3",
+          "seatCount": 11
+        },
+        {
+          "rowNumber": "4",
+          "seatCount": 11
+        },
+        {
+          "rowNumber": "5",
+          "seatCount": 11
+        },
+        {
+          "rowNumber": "6",
+          "seatCount": 11
+        },
+        {
+          "rowNumber": "7",
+          "seatCount": 11
+        },
+        {
+          "rowNumber": "8",
+          "seatCount": 11
+        },
+        {
+          "rowNumber": "9",
+          "seatCount": 11
+        },
+        {
+          "rowNumber": "10",
+          "seatCount": 10
+        },
+        {
+          "rowNumber": "11",
+          "seatCount": 10
+        },
+        {
+          "rowNumber": "12",
+          "seatCount": 10
+        },
+        {
+          "rowNumber": "13",
+          "seatCount": 11
+        },
+        {
+          "rowNumber": "14",
+          "seatCount": 11
+        },
+        {
+          "rowNumber": "15",
+          "seatCount": 11
+        }
+      ]
+    },
+    "29": {
+      "sectionId": "29",
+      "name": "Field 29",
+      "seatCount": 162,
+      "rowCount": 15,
+      "level": "field",
+      "priceLevel": "premium",
+      "covered": true,
+      "avgSunExposure": 10,
+      "rows": [
+        {
+          "rowNumber": "1",
+          "seatCount": 11
+        },
+        {
+          "rowNumber": "2",
+          "seatCount": 11
+        },
+        {
+          "rowNumber": "3",
+          "seatCount": 11
+        },
+        {
+          "rowNumber": "4",
+          "seatCount": 11
+        },
+        {
+          "rowNumber": "5",
+          "seatCount": 11
+        },
+        {
+          "rowNumber": "6",
+          "seatCount": 11
+        },
+        {
+          "rowNumber": "7",
+          "seatCount": 11
+        },
+        {
+          "rowNumber": "8",
+          "seatCount": 11
+        },
+        {
+          "rowNumber": "9",
+          "seatCount": 11
+        },
+        {
+          "rowNumber": "10",
+          "seatCount": 10
+        },
+        {
+          "rowNumber": "11",
+          "seatCount": 10
+        },
+        {
+          "rowNumber": "12",
+          "seatCount": 10
+        },
+        {
+          "rowNumber": "13",
+          "seatCount": 11
+        },
+        {
+          "rowNumber": "14",
+          "seatCount": 11
+        },
+        {
+          "rowNumber": "15",
+          "seatCount": 11
+        }
+      ]
+    },
+    "30": {
+      "sectionId": "30",
+      "name": "Field 30",
+      "seatCount": 162,
+      "rowCount": 15,
+      "level": "field",
+      "priceLevel": "premium",
+      "covered": true,
+      "avgSunExposure": 10,
+      "rows": [
+        {
+          "rowNumber": "1",
+          "seatCount": 11
+        },
+        {
+          "rowNumber": "2",
+          "seatCount": 11
+        },
+        {
+          "rowNumber": "3",
+          "seatCount": 11
+        },
+        {
+          "rowNumber": "4",
+          "seatCount": 11
+        },
+        {
+          "rowNumber": "5",
+          "seatCount": 11
+        },
+        {
+          "rowNumber": "6",
+          "seatCount": 11
+        },
+        {
+          "rowNumber": "7",
+          "seatCount": 11
+        },
+        {
+          "rowNumber": "8",
+          "seatCount": 11
+        },
+        {
+          "rowNumber": "9",
+          "seatCount": 10
+        },
+        {
+          "rowNumber": "10",
+          "seatCount": 10
+        },
+        {
+          "rowNumber": "11",
+          "seatCount": 10
+        },
+        {
+          "rowNumber": "12",
+          "seatCount": 11
+        },
+        {
+          "rowNumber": "13",
+          "seatCount": 11
+        },
+        {
+          "rowNumber": "14",
+          "seatCount": 11
+        },
+        {
+          "rowNumber": "15",
+          "seatCount": 11
+        }
+      ]
+    },
+    "31": {
+      "sectionId": "31",
+      "name": "Field 31",
+      "seatCount": 162,
+      "rowCount": 15,
+      "level": "field",
+      "priceLevel": "premium",
+      "covered": true,
+      "avgSunExposure": 10,
+      "rows": [
+        {
+          "rowNumber": "1",
+          "seatCount": 11
+        },
+        {
+          "rowNumber": "2",
+          "seatCount": 11
+        },
+        {
+          "rowNumber": "3",
+          "seatCount": 11
+        },
+        {
+          "rowNumber": "4",
+          "seatCount": 11
+        },
+        {
+          "rowNumber": "5",
+          "seatCount": 11
+        },
+        {
+          "rowNumber": "6",
+          "seatCount": 11
+        },
+        {
+          "rowNumber": "7",
+          "seatCount": 11
+        },
+        {
+          "rowNumber": "8",
+          "seatCount": 11
+        },
+        {
+          "rowNumber": "9",
+          "seatCount": 10
+        },
+        {
+          "rowNumber": "10",
+          "seatCount": 10
+        },
+        {
+          "rowNumber": "11",
+          "seatCount": 10
+        },
+        {
+          "rowNumber": "12",
+          "seatCount": 11
+        },
+        {
+          "rowNumber": "13",
+          "seatCount": 11
+        },
+        {
+          "rowNumber": "14",
+          "seatCount": 11
+        },
+        {
+          "rowNumber": "15",
+          "seatCount": 11
+        }
+      ]
+    },
+    "32": {
+      "sectionId": "32",
+      "name": "Field 32",
+      "seatCount": 162,
+      "rowCount": 15,
+      "level": "field",
+      "priceLevel": "premium",
+      "covered": true,
+      "avgSunExposure": 10,
+      "rows": [
+        {
+          "rowNumber": "1",
+          "seatCount": 11
+        },
+        {
+          "rowNumber": "2",
+          "seatCount": 11
+        },
+        {
+          "rowNumber": "3",
+          "seatCount": 11
+        },
+        {
+          "rowNumber": "4",
+          "seatCount": 11
+        },
+        {
+          "rowNumber": "5",
+          "seatCount": 11
+        },
+        {
+          "rowNumber": "6",
+          "seatCount": 11
+        },
+        {
+          "rowNumber": "7",
+          "seatCount": 11
+        },
+        {
+          "rowNumber": "8",
+          "seatCount": 11
+        },
+        {
+          "rowNumber": "9",
+          "seatCount": 10
+        },
+        {
+          "rowNumber": "10",
+          "seatCount": 10
+        },
+        {
+          "rowNumber": "11",
+          "seatCount": 10
+        },
+        {
+          "rowNumber": "12",
+          "seatCount": 11
+        },
+        {
+          "rowNumber": "13",
+          "seatCount": 11
+        },
+        {
+          "rowNumber": "14",
+          "seatCount": 11
+        },
+        {
+          "rowNumber": "15",
+          "seatCount": 11
+        }
+      ]
+    },
+    "33": {
+      "sectionId": "33",
+      "name": "Field 33",
+      "seatCount": 162,
+      "rowCount": 15,
+      "level": "field",
+      "priceLevel": "premium",
+      "covered": true,
+      "avgSunExposure": 10,
+      "rows": [
+        {
+          "rowNumber": "1",
+          "seatCount": 11
+        },
+        {
+          "rowNumber": "2",
+          "seatCount": 11
+        },
+        {
+          "rowNumber": "3",
+          "seatCount": 11
+        },
+        {
+          "rowNumber": "4",
+          "seatCount": 11
+        },
+        {
+          "rowNumber": "5",
+          "seatCount": 11
+        },
+        {
+          "rowNumber": "6",
+          "seatCount": 11
+        },
+        {
+          "rowNumber": "7",
+          "seatCount": 11
+        },
+        {
+          "rowNumber": "8",
+          "seatCount": 11
+        },
+        {
+          "rowNumber": "9",
+          "seatCount": 10
+        },
+        {
+          "rowNumber": "10",
+          "seatCount": 10
+        },
+        {
+          "rowNumber": "11",
+          "seatCount": 10
+        },
+        {
+          "rowNumber": "12",
+          "seatCount": 11
+        },
+        {
+          "rowNumber": "13",
+          "seatCount": 11
+        },
+        {
+          "rowNumber": "14",
+          "seatCount": 11
+        },
+        {
+          "rowNumber": "15",
+          "seatCount": 11
+        }
+      ]
+    },
+    "34": {
+      "sectionId": "34",
+      "name": "Bleachers 34",
+      "seatCount": 717,
+      "rowCount": 40,
+      "level": "field",
+      "priceLevel": "premium",
+      "covered": false,
+      "avgSunExposure": 67,
+      "rows": [
+        {
+          "rowNumber": "1",
+          "seatCount": 18
+        },
+        {
+          "rowNumber": "2",
+          "seatCount": 18
+        },
+        {
+          "rowNumber": "3",
+          "seatCount": 18
+        },
+        {
+          "rowNumber": "4",
+          "seatCount": 18
+        },
+        {
+          "rowNumber": "5",
+          "seatCount": 18
+        },
+        {
+          "rowNumber": "6",
+          "seatCount": 18
+        },
+        {
+          "rowNumber": "7",
+          "seatCount": 18
+        },
+        {
+          "rowNumber": "8",
+          "seatCount": 18
+        },
+        {
+          "rowNumber": "9",
+          "seatCount": 17
+        },
+        {
+          "rowNumber": "10",
+          "seatCount": 17
+        },
+        {
+          "rowNumber": "11",
+          "seatCount": 17
+        },
+        {
+          "rowNumber": "12",
+          "seatCount": 18
+        },
+        {
+          "rowNumber": "13",
+          "seatCount": 18
+        },
+        {
+          "rowNumber": "14",
+          "seatCount": 18
+        },
+        {
+          "rowNumber": "15",
+          "seatCount": 18
+        },
+        {
+          "rowNumber": "16",
+          "seatCount": 18
+        },
+        {
+          "rowNumber": "17",
+          "seatCount": 18
+        },
+        {
+          "rowNumber": "18",
+          "seatCount": 18
+        },
+        {
+          "rowNumber": "19",
+          "seatCount": 18
+        },
+        {
+          "rowNumber": "20",
+          "seatCount": 18
+        },
+        {
+          "rowNumber": "21",
+          "seatCount": 18
+        },
+        {
+          "rowNumber": "22",
+          "seatCount": 18
+        },
+        {
+          "rowNumber": "23",
+          "seatCount": 18
+        },
+        {
+          "rowNumber": "24",
+          "seatCount": 18
+        },
+        {
+          "rowNumber": "25",
+          "seatCount": 18
+        },
+        {
+          "rowNumber": "26",
+          "seatCount": 18
+        },
+        {
+          "rowNumber": "27",
+          "seatCount": 18
+        },
+        {
+          "rowNumber": "28",
+          "seatCount": 18
+        },
+        {
+          "rowNumber": "29",
+          "seatCount": 18
+        },
+        {
+          "rowNumber": "30",
+          "seatCount": 18
+        },
+        {
+          "rowNumber": "31",
+          "seatCount": 18
+        },
+        {
+          "rowNumber": "32",
+          "seatCount": 18
+        },
+        {
+          "rowNumber": "33",
+          "seatCount": 18
+        },
+        {
+          "rowNumber": "34",
+          "seatCount": 18
+        },
+        {
+          "rowNumber": "35",
+          "seatCount": 18
+        },
+        {
+          "rowNumber": "36",
+          "seatCount": 18
+        },
+        {
+          "rowNumber": "37",
+          "seatCount": 18
+        },
+        {
+          "rowNumber": "38",
+          "seatCount": 18
+        },
+        {
+          "rowNumber": "39",
+          "seatCount": 18
+        },
+        {
+          "rowNumber": "40",
+          "seatCount": 18
+        }
+      ]
+    },
+    "35": {
+      "sectionId": "35",
+      "name": "Bleachers 35",
+      "seatCount": 720,
+      "rowCount": 40,
+      "level": "field",
+      "priceLevel": "premium",
+      "covered": false,
+      "avgSunExposure": 67,
+      "rows": [
+        {
+          "rowNumber": "1",
+          "seatCount": 18
+        },
+        {
+          "rowNumber": "2",
+          "seatCount": 18
+        },
+        {
+          "rowNumber": "3",
+          "seatCount": 18
+        },
+        {
+          "rowNumber": "4",
+          "seatCount": 18
+        },
+        {
+          "rowNumber": "5",
+          "seatCount": 18
+        },
+        {
+          "rowNumber": "6",
+          "seatCount": 18
+        },
+        {
+          "rowNumber": "7",
+          "seatCount": 18
+        },
+        {
+          "rowNumber": "8",
+          "seatCount": 18
+        },
+        {
+          "rowNumber": "9",
+          "seatCount": 18
+        },
+        {
+          "rowNumber": "10",
+          "seatCount": 18
+        },
+        {
+          "rowNumber": "11",
+          "seatCount": 18
+        },
+        {
+          "rowNumber": "12",
+          "seatCount": 18
+        },
+        {
+          "rowNumber": "13",
+          "seatCount": 18
+        },
+        {
+          "rowNumber": "14",
+          "seatCount": 18
+        },
+        {
+          "rowNumber": "15",
+          "seatCount": 18
+        },
+        {
+          "rowNumber": "16",
+          "seatCount": 18
+        },
+        {
+          "rowNumber": "17",
+          "seatCount": 18
+        },
+        {
+          "rowNumber": "18",
+          "seatCount": 18
+        },
+        {
+          "rowNumber": "19",
+          "seatCount": 18
+        },
+        {
+          "rowNumber": "20",
+          "seatCount": 18
+        },
+        {
+          "rowNumber": "21",
+          "seatCount": 18
+        },
+        {
+          "rowNumber": "22",
+          "seatCount": 18
+        },
+        {
+          "rowNumber": "23",
+          "seatCount": 18
+        },
+        {
+          "rowNumber": "24",
+          "seatCount": 18
+        },
+        {
+          "rowNumber": "25",
+          "seatCount": 18
+        },
+        {
+          "rowNumber": "26",
+          "seatCount": 18
+        },
+        {
+          "rowNumber": "27",
+          "seatCount": 18
+        },
+        {
+          "rowNumber": "28",
+          "seatCount": 18
+        },
+        {
+          "rowNumber": "29",
+          "seatCount": 18
+        },
+        {
+          "rowNumber": "30",
+          "seatCount": 18
+        },
+        {
+          "rowNumber": "31",
+          "seatCount": 18
+        },
+        {
+          "rowNumber": "32",
+          "seatCount": 18
+        },
+        {
+          "rowNumber": "33",
+          "seatCount": 18
+        },
+        {
+          "rowNumber": "34",
+          "seatCount": 18
+        },
+        {
+          "rowNumber": "35",
+          "seatCount": 18
+        },
+        {
+          "rowNumber": "36",
+          "seatCount": 18
+        },
+        {
+          "rowNumber": "37",
+          "seatCount": 18
+        },
+        {
+          "rowNumber": "38",
+          "seatCount": 18
+        },
+        {
+          "rowNumber": "39",
+          "seatCount": 18
+        },
+        {
+          "rowNumber": "40",
+          "seatCount": 18
+        }
+      ]
+    },
+    "36": {
+      "sectionId": "36",
+      "name": "Bleachers 36",
+      "seatCount": 720,
+      "rowCount": 40,
+      "level": "field",
+      "priceLevel": "premium",
+      "covered": false,
+      "avgSunExposure": 67,
+      "rows": [
+        {
+          "rowNumber": "1",
+          "seatCount": 18
+        },
+        {
+          "rowNumber": "2",
+          "seatCount": 18
+        },
+        {
+          "rowNumber": "3",
+          "seatCount": 18
+        },
+        {
+          "rowNumber": "4",
+          "seatCount": 18
+        },
+        {
+          "rowNumber": "5",
+          "seatCount": 18
+        },
+        {
+          "rowNumber": "6",
+          "seatCount": 18
+        },
+        {
+          "rowNumber": "7",
+          "seatCount": 18
+        },
+        {
+          "rowNumber": "8",
+          "seatCount": 18
+        },
+        {
+          "rowNumber": "9",
+          "seatCount": 18
+        },
+        {
+          "rowNumber": "10",
+          "seatCount": 18
+        },
+        {
+          "rowNumber": "11",
+          "seatCount": 18
+        },
+        {
+          "rowNumber": "12",
+          "seatCount": 18
+        },
+        {
+          "rowNumber": "13",
+          "seatCount": 18
+        },
+        {
+          "rowNumber": "14",
+          "seatCount": 18
+        },
+        {
+          "rowNumber": "15",
+          "seatCount": 18
+        },
+        {
+          "rowNumber": "16",
+          "seatCount": 18
+        },
+        {
+          "rowNumber": "17",
+          "seatCount": 18
+        },
+        {
+          "rowNumber": "18",
+          "seatCount": 18
+        },
+        {
+          "rowNumber": "19",
+          "seatCount": 18
+        },
+        {
+          "rowNumber": "20",
+          "seatCount": 18
+        },
+        {
+          "rowNumber": "21",
+          "seatCount": 18
+        },
+        {
+          "rowNumber": "22",
+          "seatCount": 18
+        },
+        {
+          "rowNumber": "23",
+          "seatCount": 18
+        },
+        {
+          "rowNumber": "24",
+          "seatCount": 18
+        },
+        {
+          "rowNumber": "25",
+          "seatCount": 18
+        },
+        {
+          "rowNumber": "26",
+          "seatCount": 18
+        },
+        {
+          "rowNumber": "27",
+          "seatCount": 18
+        },
+        {
+          "rowNumber": "28",
+          "seatCount": 18
+        },
+        {
+          "rowNumber": "29",
+          "seatCount": 18
+        },
+        {
+          "rowNumber": "30",
+          "seatCount": 18
+        },
+        {
+          "rowNumber": "31",
+          "seatCount": 18
+        },
+        {
+          "rowNumber": "32",
+          "seatCount": 18
+        },
+        {
+          "rowNumber": "33",
+          "seatCount": 18
+        },
+        {
+          "rowNumber": "34",
+          "seatCount": 18
+        },
+        {
+          "rowNumber": "35",
+          "seatCount": 18
+        },
+        {
+          "rowNumber": "36",
+          "seatCount": 18
+        },
+        {
+          "rowNumber": "37",
+          "seatCount": 18
+        },
+        {
+          "rowNumber": "38",
+          "seatCount": 18
+        },
+        {
+          "rowNumber": "39",
+          "seatCount": 18
+        },
+        {
+          "rowNumber": "40",
+          "seatCount": 18
+        }
+      ]
+    },
+    "37": {
+      "sectionId": "37",
+      "name": "Bleachers 37",
+      "seatCount": 720,
+      "rowCount": 40,
+      "level": "field",
+      "priceLevel": "premium",
+      "covered": false,
+      "avgSunExposure": 67,
+      "rows": [
+        {
+          "rowNumber": "1",
+          "seatCount": 18
+        },
+        {
+          "rowNumber": "2",
+          "seatCount": 18
+        },
+        {
+          "rowNumber": "3",
+          "seatCount": 18
+        },
+        {
+          "rowNumber": "4",
+          "seatCount": 18
+        },
+        {
+          "rowNumber": "5",
+          "seatCount": 18
+        },
+        {
+          "rowNumber": "6",
+          "seatCount": 18
+        },
+        {
+          "rowNumber": "7",
+          "seatCount": 18
+        },
+        {
+          "rowNumber": "8",
+          "seatCount": 18
+        },
+        {
+          "rowNumber": "9",
+          "seatCount": 18
+        },
+        {
+          "rowNumber": "10",
+          "seatCount": 18
+        },
+        {
+          "rowNumber": "11",
+          "seatCount": 18
+        },
+        {
+          "rowNumber": "12",
+          "seatCount": 18
+        },
+        {
+          "rowNumber": "13",
+          "seatCount": 18
+        },
+        {
+          "rowNumber": "14",
+          "seatCount": 18
+        },
+        {
+          "rowNumber": "15",
+          "seatCount": 18
+        },
+        {
+          "rowNumber": "16",
+          "seatCount": 18
+        },
+        {
+          "rowNumber": "17",
+          "seatCount": 18
+        },
+        {
+          "rowNumber": "18",
+          "seatCount": 18
+        },
+        {
+          "rowNumber": "19",
+          "seatCount": 18
+        },
+        {
+          "rowNumber": "20",
+          "seatCount": 18
+        },
+        {
+          "rowNumber": "21",
+          "seatCount": 18
+        },
+        {
+          "rowNumber": "22",
+          "seatCount": 18
+        },
+        {
+          "rowNumber": "23",
+          "seatCount": 18
+        },
+        {
+          "rowNumber": "24",
+          "seatCount": 18
+        },
+        {
+          "rowNumber": "25",
+          "seatCount": 18
+        },
+        {
+          "rowNumber": "26",
+          "seatCount": 18
+        },
+        {
+          "rowNumber": "27",
+          "seatCount": 18
+        },
+        {
+          "rowNumber": "28",
+          "seatCount": 18
+        },
+        {
+          "rowNumber": "29",
+          "seatCount": 18
+        },
+        {
+          "rowNumber": "30",
+          "seatCount": 18
+        },
+        {
+          "rowNumber": "31",
+          "seatCount": 18
+        },
+        {
+          "rowNumber": "32",
+          "seatCount": 18
+        },
+        {
+          "rowNumber": "33",
+          "seatCount": 18
+        },
+        {
+          "rowNumber": "34",
+          "seatCount": 18
+        },
+        {
+          "rowNumber": "35",
+          "seatCount": 18
+        },
+        {
+          "rowNumber": "36",
+          "seatCount": 18
+        },
+        {
+          "rowNumber": "37",
+          "seatCount": 18
+        },
+        {
+          "rowNumber": "38",
+          "seatCount": 18
+        },
+        {
+          "rowNumber": "39",
+          "seatCount": 18
+        },
+        {
+          "rowNumber": "40",
+          "seatCount": 18
+        }
+      ]
+    },
+    "38": {
+      "sectionId": "38",
+      "name": "Bleachers 38",
+      "seatCount": 720,
+      "rowCount": 40,
+      "level": "field",
+      "priceLevel": "premium",
+      "covered": false,
+      "avgSunExposure": 67,
+      "rows": [
+        {
+          "rowNumber": "1",
+          "seatCount": 18
+        },
+        {
+          "rowNumber": "2",
+          "seatCount": 18
+        },
+        {
+          "rowNumber": "3",
+          "seatCount": 18
+        },
+        {
+          "rowNumber": "4",
+          "seatCount": 18
+        },
+        {
+          "rowNumber": "5",
+          "seatCount": 18
+        },
+        {
+          "rowNumber": "6",
+          "seatCount": 18
+        },
+        {
+          "rowNumber": "7",
+          "seatCount": 18
+        },
+        {
+          "rowNumber": "8",
+          "seatCount": 18
+        },
+        {
+          "rowNumber": "9",
+          "seatCount": 18
+        },
+        {
+          "rowNumber": "10",
+          "seatCount": 18
+        },
+        {
+          "rowNumber": "11",
+          "seatCount": 18
+        },
+        {
+          "rowNumber": "12",
+          "seatCount": 18
+        },
+        {
+          "rowNumber": "13",
+          "seatCount": 18
+        },
+        {
+          "rowNumber": "14",
+          "seatCount": 18
+        },
+        {
+          "rowNumber": "15",
+          "seatCount": 18
+        },
+        {
+          "rowNumber": "16",
+          "seatCount": 18
+        },
+        {
+          "rowNumber": "17",
+          "seatCount": 18
+        },
+        {
+          "rowNumber": "18",
+          "seatCount": 18
+        },
+        {
+          "rowNumber": "19",
+          "seatCount": 18
+        },
+        {
+          "rowNumber": "20",
+          "seatCount": 18
+        },
+        {
+          "rowNumber": "21",
+          "seatCount": 18
+        },
+        {
+          "rowNumber": "22",
+          "seatCount": 18
+        },
+        {
+          "rowNumber": "23",
+          "seatCount": 18
+        },
+        {
+          "rowNumber": "24",
+          "seatCount": 18
+        },
+        {
+          "rowNumber": "25",
+          "seatCount": 18
+        },
+        {
+          "rowNumber": "26",
+          "seatCount": 18
+        },
+        {
+          "rowNumber": "27",
+          "seatCount": 18
+        },
+        {
+          "rowNumber": "28",
+          "seatCount": 18
+        },
+        {
+          "rowNumber": "29",
+          "seatCount": 18
+        },
+        {
+          "rowNumber": "30",
+          "seatCount": 18
+        },
+        {
+          "rowNumber": "31",
+          "seatCount": 18
+        },
+        {
+          "rowNumber": "32",
+          "seatCount": 18
+        },
+        {
+          "rowNumber": "33",
+          "seatCount": 18
+        },
+        {
+          "rowNumber": "34",
+          "seatCount": 18
+        },
+        {
+          "rowNumber": "35",
+          "seatCount": 18
+        },
+        {
+          "rowNumber": "36",
+          "seatCount": 18
+        },
+        {
+          "rowNumber": "37",
+          "seatCount": 18
+        },
+        {
+          "rowNumber": "38",
+          "seatCount": 18
+        },
+        {
+          "rowNumber": "39",
+          "seatCount": 18
+        },
+        {
+          "rowNumber": "40",
+          "seatCount": 18
+        }
+      ]
+    },
+    "39": {
+      "sectionId": "39",
+      "name": "Bleachers 39",
+      "seatCount": 720,
+      "rowCount": 40,
+      "level": "field",
+      "priceLevel": "premium",
+      "covered": false,
+      "avgSunExposure": 67,
+      "rows": [
+        {
+          "rowNumber": "1",
+          "seatCount": 18
+        },
+        {
+          "rowNumber": "2",
+          "seatCount": 18
+        },
+        {
+          "rowNumber": "3",
+          "seatCount": 18
+        },
+        {
+          "rowNumber": "4",
+          "seatCount": 18
+        },
+        {
+          "rowNumber": "5",
+          "seatCount": 18
+        },
+        {
+          "rowNumber": "6",
+          "seatCount": 18
+        },
+        {
+          "rowNumber": "7",
+          "seatCount": 18
+        },
+        {
+          "rowNumber": "8",
+          "seatCount": 18
+        },
+        {
+          "rowNumber": "9",
+          "seatCount": 18
+        },
+        {
+          "rowNumber": "10",
+          "seatCount": 18
+        },
+        {
+          "rowNumber": "11",
+          "seatCount": 18
+        },
+        {
+          "rowNumber": "12",
+          "seatCount": 18
+        },
+        {
+          "rowNumber": "13",
+          "seatCount": 18
+        },
+        {
+          "rowNumber": "14",
+          "seatCount": 18
+        },
+        {
+          "rowNumber": "15",
+          "seatCount": 18
+        },
+        {
+          "rowNumber": "16",
+          "seatCount": 18
+        },
+        {
+          "rowNumber": "17",
+          "seatCount": 18
+        },
+        {
+          "rowNumber": "18",
+          "seatCount": 18
+        },
+        {
+          "rowNumber": "19",
+          "seatCount": 18
+        },
+        {
+          "rowNumber": "20",
+          "seatCount": 18
+        },
+        {
+          "rowNumber": "21",
+          "seatCount": 18
+        },
+        {
+          "rowNumber": "22",
+          "seatCount": 18
+        },
+        {
+          "rowNumber": "23",
+          "seatCount": 18
+        },
+        {
+          "rowNumber": "24",
+          "seatCount": 18
+        },
+        {
+          "rowNumber": "25",
+          "seatCount": 18
+        },
+        {
+          "rowNumber": "26",
+          "seatCount": 18
+        },
+        {
+          "rowNumber": "27",
+          "seatCount": 18
+        },
+        {
+          "rowNumber": "28",
+          "seatCount": 18
+        },
+        {
+          "rowNumber": "29",
+          "seatCount": 18
+        },
+        {
+          "rowNumber": "30",
+          "seatCount": 18
+        },
+        {
+          "rowNumber": "31",
+          "seatCount": 18
+        },
+        {
+          "rowNumber": "32",
+          "seatCount": 18
+        },
+        {
+          "rowNumber": "33",
+          "seatCount": 18
+        },
+        {
+          "rowNumber": "34",
+          "seatCount": 18
+        },
+        {
+          "rowNumber": "35",
+          "seatCount": 18
+        },
+        {
+          "rowNumber": "36",
+          "seatCount": 18
+        },
+        {
+          "rowNumber": "37",
+          "seatCount": 18
+        },
+        {
+          "rowNumber": "38",
+          "seatCount": 18
+        },
+        {
+          "rowNumber": "39",
+          "seatCount": 18
+        },
+        {
+          "rowNumber": "40",
+          "seatCount": 18
+        }
+      ]
+    },
+    "40": {
+      "sectionId": "40",
+      "name": "Bleachers 40",
+      "seatCount": 720,
+      "rowCount": 40,
+      "level": "field",
+      "priceLevel": "premium",
+      "covered": false,
+      "avgSunExposure": 67,
+      "rows": [
+        {
+          "rowNumber": "1",
+          "seatCount": 18
+        },
+        {
+          "rowNumber": "2",
+          "seatCount": 18
+        },
+        {
+          "rowNumber": "3",
+          "seatCount": 18
+        },
+        {
+          "rowNumber": "4",
+          "seatCount": 18
+        },
+        {
+          "rowNumber": "5",
+          "seatCount": 18
+        },
+        {
+          "rowNumber": "6",
+          "seatCount": 18
+        },
+        {
+          "rowNumber": "7",
+          "seatCount": 18
+        },
+        {
+          "rowNumber": "8",
+          "seatCount": 18
+        },
+        {
+          "rowNumber": "9",
+          "seatCount": 18
+        },
+        {
+          "rowNumber": "10",
+          "seatCount": 18
+        },
+        {
+          "rowNumber": "11",
+          "seatCount": 18
+        },
+        {
+          "rowNumber": "12",
+          "seatCount": 18
+        },
+        {
+          "rowNumber": "13",
+          "seatCount": 18
+        },
+        {
+          "rowNumber": "14",
+          "seatCount": 18
+        },
+        {
+          "rowNumber": "15",
+          "seatCount": 18
+        },
+        {
+          "rowNumber": "16",
+          "seatCount": 18
+        },
+        {
+          "rowNumber": "17",
+          "seatCount": 18
+        },
+        {
+          "rowNumber": "18",
+          "seatCount": 18
+        },
+        {
+          "rowNumber": "19",
+          "seatCount": 18
+        },
+        {
+          "rowNumber": "20",
+          "seatCount": 18
+        },
+        {
+          "rowNumber": "21",
+          "seatCount": 18
+        },
+        {
+          "rowNumber": "22",
+          "seatCount": 18
+        },
+        {
+          "rowNumber": "23",
+          "seatCount": 18
+        },
+        {
+          "rowNumber": "24",
+          "seatCount": 18
+        },
+        {
+          "rowNumber": "25",
+          "seatCount": 18
+        },
+        {
+          "rowNumber": "26",
+          "seatCount": 18
+        },
+        {
+          "rowNumber": "27",
+          "seatCount": 18
+        },
+        {
+          "rowNumber": "28",
+          "seatCount": 18
+        },
+        {
+          "rowNumber": "29",
+          "seatCount": 18
+        },
+        {
+          "rowNumber": "30",
+          "seatCount": 18
+        },
+        {
+          "rowNumber": "31",
+          "seatCount": 18
+        },
+        {
+          "rowNumber": "32",
+          "seatCount": 18
+        },
+        {
+          "rowNumber": "33",
+          "seatCount": 18
+        },
+        {
+          "rowNumber": "34",
+          "seatCount": 18
+        },
+        {
+          "rowNumber": "35",
+          "seatCount": 18
+        },
+        {
+          "rowNumber": "36",
+          "seatCount": 18
+        },
+        {
+          "rowNumber": "37",
+          "seatCount": 18
+        },
+        {
+          "rowNumber": "38",
+          "seatCount": 18
+        },
+        {
+          "rowNumber": "39",
+          "seatCount": 18
+        },
+        {
+          "rowNumber": "40",
+          "seatCount": 18
+        }
+      ]
+    },
+    "41": {
+      "sectionId": "41",
+      "name": "Bleachers 41",
+      "seatCount": 720,
+      "rowCount": 40,
+      "level": "field",
+      "priceLevel": "premium",
+      "covered": false,
+      "avgSunExposure": 67,
+      "rows": [
+        {
+          "rowNumber": "1",
+          "seatCount": 18
+        },
+        {
+          "rowNumber": "2",
+          "seatCount": 18
+        },
+        {
+          "rowNumber": "3",
+          "seatCount": 18
+        },
+        {
+          "rowNumber": "4",
+          "seatCount": 18
+        },
+        {
+          "rowNumber": "5",
+          "seatCount": 18
+        },
+        {
+          "rowNumber": "6",
+          "seatCount": 18
+        },
+        {
+          "rowNumber": "7",
+          "seatCount": 18
+        },
+        {
+          "rowNumber": "8",
+          "seatCount": 18
+        },
+        {
+          "rowNumber": "9",
+          "seatCount": 18
+        },
+        {
+          "rowNumber": "10",
+          "seatCount": 18
+        },
+        {
+          "rowNumber": "11",
+          "seatCount": 18
+        },
+        {
+          "rowNumber": "12",
+          "seatCount": 18
+        },
+        {
+          "rowNumber": "13",
+          "seatCount": 18
+        },
+        {
+          "rowNumber": "14",
+          "seatCount": 18
+        },
+        {
+          "rowNumber": "15",
+          "seatCount": 18
+        },
+        {
+          "rowNumber": "16",
+          "seatCount": 18
+        },
+        {
+          "rowNumber": "17",
+          "seatCount": 18
+        },
+        {
+          "rowNumber": "18",
+          "seatCount": 18
+        },
+        {
+          "rowNumber": "19",
+          "seatCount": 18
+        },
+        {
+          "rowNumber": "20",
+          "seatCount": 18
+        },
+        {
+          "rowNumber": "21",
+          "seatCount": 18
+        },
+        {
+          "rowNumber": "22",
+          "seatCount": 18
+        },
+        {
+          "rowNumber": "23",
+          "seatCount": 18
+        },
+        {
+          "rowNumber": "24",
+          "seatCount": 18
+        },
+        {
+          "rowNumber": "25",
+          "seatCount": 18
+        },
+        {
+          "rowNumber": "26",
+          "seatCount": 18
+        },
+        {
+          "rowNumber": "27",
+          "seatCount": 18
+        },
+        {
+          "rowNumber": "28",
+          "seatCount": 18
+        },
+        {
+          "rowNumber": "29",
+          "seatCount": 18
+        },
+        {
+          "rowNumber": "30",
+          "seatCount": 18
+        },
+        {
+          "rowNumber": "31",
+          "seatCount": 18
+        },
+        {
+          "rowNumber": "32",
+          "seatCount": 18
+        },
+        {
+          "rowNumber": "33",
+          "seatCount": 18
+        },
+        {
+          "rowNumber": "34",
+          "seatCount": 18
+        },
+        {
+          "rowNumber": "35",
+          "seatCount": 18
+        },
+        {
+          "rowNumber": "36",
+          "seatCount": 18
+        },
+        {
+          "rowNumber": "37",
+          "seatCount": 18
+        },
+        {
+          "rowNumber": "38",
+          "seatCount": 18
+        },
+        {
+          "rowNumber": "39",
+          "seatCount": 18
+        },
+        {
+          "rowNumber": "40",
+          "seatCount": 18
+        }
+      ]
+    },
+    "42": {
+      "sectionId": "42",
+      "name": "Bleachers 42",
+      "seatCount": 720,
+      "rowCount": 40,
+      "level": "field",
+      "priceLevel": "premium",
+      "covered": false,
+      "avgSunExposure": 67,
+      "rows": [
+        {
+          "rowNumber": "1",
+          "seatCount": 18
+        },
+        {
+          "rowNumber": "2",
+          "seatCount": 18
+        },
+        {
+          "rowNumber": "3",
+          "seatCount": 18
+        },
+        {
+          "rowNumber": "4",
+          "seatCount": 18
+        },
+        {
+          "rowNumber": "5",
+          "seatCount": 18
+        },
+        {
+          "rowNumber": "6",
+          "seatCount": 18
+        },
+        {
+          "rowNumber": "7",
+          "seatCount": 18
+        },
+        {
+          "rowNumber": "8",
+          "seatCount": 18
+        },
+        {
+          "rowNumber": "9",
+          "seatCount": 18
+        },
+        {
+          "rowNumber": "10",
+          "seatCount": 18
+        },
+        {
+          "rowNumber": "11",
+          "seatCount": 18
+        },
+        {
+          "rowNumber": "12",
+          "seatCount": 18
+        },
+        {
+          "rowNumber": "13",
+          "seatCount": 18
+        },
+        {
+          "rowNumber": "14",
+          "seatCount": 18
+        },
+        {
+          "rowNumber": "15",
+          "seatCount": 18
+        },
+        {
+          "rowNumber": "16",
+          "seatCount": 18
+        },
+        {
+          "rowNumber": "17",
+          "seatCount": 18
+        },
+        {
+          "rowNumber": "18",
+          "seatCount": 18
+        },
+        {
+          "rowNumber": "19",
+          "seatCount": 18
+        },
+        {
+          "rowNumber": "20",
+          "seatCount": 18
+        },
+        {
+          "rowNumber": "21",
+          "seatCount": 18
+        },
+        {
+          "rowNumber": "22",
+          "seatCount": 18
+        },
+        {
+          "rowNumber": "23",
+          "seatCount": 18
+        },
+        {
+          "rowNumber": "24",
+          "seatCount": 18
+        },
+        {
+          "rowNumber": "25",
+          "seatCount": 18
+        },
+        {
+          "rowNumber": "26",
+          "seatCount": 18
+        },
+        {
+          "rowNumber": "27",
+          "seatCount": 18
+        },
+        {
+          "rowNumber": "28",
+          "seatCount": 18
+        },
+        {
+          "rowNumber": "29",
+          "seatCount": 18
+        },
+        {
+          "rowNumber": "30",
+          "seatCount": 18
+        },
+        {
+          "rowNumber": "31",
+          "seatCount": 18
+        },
+        {
+          "rowNumber": "32",
+          "seatCount": 18
+        },
+        {
+          "rowNumber": "33",
+          "seatCount": 18
+        },
+        {
+          "rowNumber": "34",
+          "seatCount": 18
+        },
+        {
+          "rowNumber": "35",
+          "seatCount": 18
+        },
+        {
+          "rowNumber": "36",
+          "seatCount": 18
+        },
+        {
+          "rowNumber": "37",
+          "seatCount": 18
+        },
+        {
+          "rowNumber": "38",
+          "seatCount": 18
+        },
+        {
+          "rowNumber": "39",
+          "seatCount": 18
+        },
+        {
+          "rowNumber": "40",
+          "seatCount": 18
+        }
+      ]
+    },
+    "43": {
+      "sectionId": "43",
+      "name": "Bleachers 43",
+      "seatCount": 720,
+      "rowCount": 40,
+      "level": "field",
+      "priceLevel": "premium",
+      "covered": false,
+      "avgSunExposure": 67,
+      "rows": [
+        {
+          "rowNumber": "1",
+          "seatCount": 18
+        },
+        {
+          "rowNumber": "2",
+          "seatCount": 18
+        },
+        {
+          "rowNumber": "3",
+          "seatCount": 18
+        },
+        {
+          "rowNumber": "4",
+          "seatCount": 18
+        },
+        {
+          "rowNumber": "5",
+          "seatCount": 18
+        },
+        {
+          "rowNumber": "6",
+          "seatCount": 18
+        },
+        {
+          "rowNumber": "7",
+          "seatCount": 18
+        },
+        {
+          "rowNumber": "8",
+          "seatCount": 18
+        },
+        {
+          "rowNumber": "9",
+          "seatCount": 18
+        },
+        {
+          "rowNumber": "10",
+          "seatCount": 18
+        },
+        {
+          "rowNumber": "11",
+          "seatCount": 18
+        },
+        {
+          "rowNumber": "12",
+          "seatCount": 18
+        },
+        {
+          "rowNumber": "13",
+          "seatCount": 18
+        },
+        {
+          "rowNumber": "14",
+          "seatCount": 18
+        },
+        {
+          "rowNumber": "15",
+          "seatCount": 18
+        },
+        {
+          "rowNumber": "16",
+          "seatCount": 18
+        },
+        {
+          "rowNumber": "17",
+          "seatCount": 18
+        },
+        {
+          "rowNumber": "18",
+          "seatCount": 18
+        },
+        {
+          "rowNumber": "19",
+          "seatCount": 18
+        },
+        {
+          "rowNumber": "20",
+          "seatCount": 18
+        },
+        {
+          "rowNumber": "21",
+          "seatCount": 18
+        },
+        {
+          "rowNumber": "22",
+          "seatCount": 18
+        },
+        {
+          "rowNumber": "23",
+          "seatCount": 18
+        },
+        {
+          "rowNumber": "24",
+          "seatCount": 18
+        },
+        {
+          "rowNumber": "25",
+          "seatCount": 18
+        },
+        {
+          "rowNumber": "26",
+          "seatCount": 18
+        },
+        {
+          "rowNumber": "27",
+          "seatCount": 18
+        },
+        {
+          "rowNumber": "28",
+          "seatCount": 18
+        },
+        {
+          "rowNumber": "29",
+          "seatCount": 18
+        },
+        {
+          "rowNumber": "30",
+          "seatCount": 18
+        },
+        {
+          "rowNumber": "31",
+          "seatCount": 18
+        },
+        {
+          "rowNumber": "32",
+          "seatCount": 18
+        },
+        {
+          "rowNumber": "33",
+          "seatCount": 18
+        },
+        {
+          "rowNumber": "34",
+          "seatCount": 18
+        },
+        {
+          "rowNumber": "35",
+          "seatCount": 18
+        },
+        {
+          "rowNumber": "36",
+          "seatCount": 18
+        },
+        {
+          "rowNumber": "37",
+          "seatCount": 18
+        },
+        {
+          "rowNumber": "38",
+          "seatCount": 18
+        },
+        {
+          "rowNumber": "39",
+          "seatCount": 18
+        },
+        {
+          "rowNumber": "40",
+          "seatCount": 18
+        }
+      ]
+    },
+    "44": {
+      "sectionId": "44",
+      "name": "Field 44",
+      "seatCount": 162,
+      "rowCount": 15,
+      "level": "field",
+      "priceLevel": "premium",
+      "covered": false,
+      "avgSunExposure": 53,
+      "rows": [
+        {
+          "rowNumber": "1",
+          "seatCount": 11
+        },
+        {
+          "rowNumber": "2",
+          "seatCount": 11
+        },
+        {
+          "rowNumber": "3",
+          "seatCount": 11
+        },
+        {
+          "rowNumber": "4",
+          "seatCount": 11
+        },
+        {
+          "rowNumber": "5",
+          "seatCount": 11
+        },
+        {
+          "rowNumber": "6",
+          "seatCount": 11
+        },
+        {
+          "rowNumber": "7",
+          "seatCount": 11
+        },
+        {
+          "rowNumber": "8",
+          "seatCount": 11
+        },
+        {
+          "rowNumber": "9",
+          "seatCount": 10
+        },
+        {
+          "rowNumber": "10",
+          "seatCount": 10
+        },
+        {
+          "rowNumber": "11",
+          "seatCount": 10
+        },
+        {
+          "rowNumber": "12",
+          "seatCount": 11
+        },
+        {
+          "rowNumber": "13",
+          "seatCount": 11
+        },
+        {
+          "rowNumber": "14",
+          "seatCount": 11
+        },
+        {
+          "rowNumber": "15",
+          "seatCount": 11
+        }
+      ]
+    },
+    "45": {
+      "sectionId": "45",
+      "name": "Field 45",
+      "seatCount": 162,
+      "rowCount": 15,
+      "level": "field",
+      "priceLevel": "premium",
+      "covered": false,
+      "avgSunExposure": 53,
+      "rows": [
+        {
+          "rowNumber": "1",
+          "seatCount": 11
+        },
+        {
+          "rowNumber": "2",
+          "seatCount": 11
+        },
+        {
+          "rowNumber": "3",
+          "seatCount": 11
+        },
+        {
+          "rowNumber": "4",
+          "seatCount": 11
+        },
+        {
+          "rowNumber": "5",
+          "seatCount": 11
+        },
+        {
+          "rowNumber": "6",
+          "seatCount": 11
+        },
+        {
+          "rowNumber": "7",
+          "seatCount": 11
+        },
+        {
+          "rowNumber": "8",
+          "seatCount": 11
+        },
+        {
+          "rowNumber": "9",
+          "seatCount": 10
+        },
+        {
+          "rowNumber": "10",
+          "seatCount": 10
+        },
+        {
+          "rowNumber": "11",
+          "seatCount": 10
+        },
+        {
+          "rowNumber": "12",
+          "seatCount": 11
+        },
+        {
+          "rowNumber": "13",
+          "seatCount": 11
+        },
+        {
+          "rowNumber": "14",
+          "seatCount": 11
+        },
+        {
+          "rowNumber": "15",
+          "seatCount": 11
+        }
+      ]
+    },
+    "46": {
+      "sectionId": "46",
+      "name": "Field 46",
+      "seatCount": 162,
+      "rowCount": 15,
+      "level": "field",
+      "priceLevel": "premium",
+      "covered": false,
+      "avgSunExposure": 53,
+      "rows": [
+        {
+          "rowNumber": "1",
+          "seatCount": 11
+        },
+        {
+          "rowNumber": "2",
+          "seatCount": 11
+        },
+        {
+          "rowNumber": "3",
+          "seatCount": 11
+        },
+        {
+          "rowNumber": "4",
+          "seatCount": 11
+        },
+        {
+          "rowNumber": "5",
+          "seatCount": 11
+        },
+        {
+          "rowNumber": "6",
+          "seatCount": 11
+        },
+        {
+          "rowNumber": "7",
+          "seatCount": 11
+        },
+        {
+          "rowNumber": "8",
+          "seatCount": 11
+        },
+        {
+          "rowNumber": "9",
+          "seatCount": 10
+        },
+        {
+          "rowNumber": "10",
+          "seatCount": 10
+        },
+        {
+          "rowNumber": "11",
+          "seatCount": 10
+        },
+        {
+          "rowNumber": "12",
+          "seatCount": 11
+        },
+        {
+          "rowNumber": "13",
+          "seatCount": 11
+        },
+        {
+          "rowNumber": "14",
+          "seatCount": 11
+        },
+        {
+          "rowNumber": "15",
+          "seatCount": 11
+        }
+      ]
+    },
+    "47": {
+      "sectionId": "47",
+      "name": "Field 47",
+      "seatCount": 162,
+      "rowCount": 15,
+      "level": "field",
+      "priceLevel": "premium",
+      "covered": false,
+      "avgSunExposure": 53,
+      "rows": [
+        {
+          "rowNumber": "1",
+          "seatCount": 11
+        },
+        {
+          "rowNumber": "2",
+          "seatCount": 11
+        },
+        {
+          "rowNumber": "3",
+          "seatCount": 11
+        },
+        {
+          "rowNumber": "4",
+          "seatCount": 11
+        },
+        {
+          "rowNumber": "5",
+          "seatCount": 11
+        },
+        {
+          "rowNumber": "6",
+          "seatCount": 11
+        },
+        {
+          "rowNumber": "7",
+          "seatCount": 11
+        },
+        {
+          "rowNumber": "8",
+          "seatCount": 11
+        },
+        {
+          "rowNumber": "9",
+          "seatCount": 10
+        },
+        {
+          "rowNumber": "10",
+          "seatCount": 10
+        },
+        {
+          "rowNumber": "11",
+          "seatCount": 10
+        },
+        {
+          "rowNumber": "12",
+          "seatCount": 11
+        },
+        {
+          "rowNumber": "13",
+          "seatCount": 11
+        },
+        {
+          "rowNumber": "14",
+          "seatCount": 11
+        },
+        {
+          "rowNumber": "15",
+          "seatCount": 11
+        }
+      ]
+    },
+    "48": {
+      "sectionId": "48",
+      "name": "Field 48",
+      "seatCount": 162,
+      "rowCount": 15,
+      "level": "field",
+      "priceLevel": "premium",
+      "covered": false,
+      "avgSunExposure": 53,
+      "rows": [
+        {
+          "rowNumber": "1",
+          "seatCount": 11
+        },
+        {
+          "rowNumber": "2",
+          "seatCount": 11
+        },
+        {
+          "rowNumber": "3",
+          "seatCount": 11
+        },
+        {
+          "rowNumber": "4",
+          "seatCount": 11
+        },
+        {
+          "rowNumber": "5",
+          "seatCount": 11
+        },
+        {
+          "rowNumber": "6",
+          "seatCount": 11
+        },
+        {
+          "rowNumber": "7",
+          "seatCount": 11
+        },
+        {
+          "rowNumber": "8",
+          "seatCount": 11
+        },
+        {
+          "rowNumber": "9",
+          "seatCount": 10
+        },
+        {
+          "rowNumber": "10",
+          "seatCount": 10
+        },
+        {
+          "rowNumber": "11",
+          "seatCount": 10
+        },
+        {
+          "rowNumber": "12",
+          "seatCount": 11
+        },
+        {
+          "rowNumber": "13",
+          "seatCount": 11
+        },
+        {
+          "rowNumber": "14",
+          "seatCount": 11
+        },
+        {
+          "rowNumber": "15",
+          "seatCount": 11
+        }
+      ]
+    },
+    "49": {
+      "sectionId": "49",
+      "name": "Field 49",
+      "seatCount": 162,
+      "rowCount": 15,
+      "level": "field",
+      "priceLevel": "premium",
+      "covered": false,
+      "avgSunExposure": 53,
+      "rows": [
+        {
+          "rowNumber": "1",
+          "seatCount": 11
+        },
+        {
+          "rowNumber": "2",
+          "seatCount": 11
+        },
+        {
+          "rowNumber": "3",
+          "seatCount": 11
+        },
+        {
+          "rowNumber": "4",
+          "seatCount": 11
+        },
+        {
+          "rowNumber": "5",
+          "seatCount": 11
+        },
+        {
+          "rowNumber": "6",
+          "seatCount": 11
+        },
+        {
+          "rowNumber": "7",
+          "seatCount": 11
+        },
+        {
+          "rowNumber": "8",
+          "seatCount": 11
+        },
+        {
+          "rowNumber": "9",
+          "seatCount": 10
+        },
+        {
+          "rowNumber": "10",
+          "seatCount": 10
+        },
+        {
+          "rowNumber": "11",
+          "seatCount": 10
+        },
+        {
+          "rowNumber": "12",
+          "seatCount": 11
+        },
+        {
+          "rowNumber": "13",
+          "seatCount": 11
+        },
+        {
+          "rowNumber": "14",
+          "seatCount": 11
+        },
+        {
+          "rowNumber": "15",
+          "seatCount": 11
+        }
+      ]
+    },
+    "50": {
+      "sectionId": "50",
+      "name": "Field 50",
+      "seatCount": 162,
+      "rowCount": 15,
+      "level": "field",
+      "priceLevel": "premium",
+      "covered": false,
+      "avgSunExposure": 53,
+      "rows": [
+        {
+          "rowNumber": "1",
+          "seatCount": 11
+        },
+        {
+          "rowNumber": "2",
+          "seatCount": 11
+        },
+        {
+          "rowNumber": "3",
+          "seatCount": 11
+        },
+        {
+          "rowNumber": "4",
+          "seatCount": 11
+        },
+        {
+          "rowNumber": "5",
+          "seatCount": 11
+        },
+        {
+          "rowNumber": "6",
+          "seatCount": 11
+        },
+        {
+          "rowNumber": "7",
+          "seatCount": 11
+        },
+        {
+          "rowNumber": "8",
+          "seatCount": 11
+        },
+        {
+          "rowNumber": "9",
+          "seatCount": 10
+        },
+        {
+          "rowNumber": "10",
+          "seatCount": 10
+        },
+        {
+          "rowNumber": "11",
+          "seatCount": 10
+        },
+        {
+          "rowNumber": "12",
+          "seatCount": 11
+        },
+        {
+          "rowNumber": "13",
+          "seatCount": 11
+        },
+        {
+          "rowNumber": "14",
+          "seatCount": 11
+        },
+        {
+          "rowNumber": "15",
+          "seatCount": 11
+        }
+      ]
+    },
+    "51": {
+      "sectionId": "51",
+      "name": "Field 51",
+      "seatCount": 162,
+      "rowCount": 15,
+      "level": "field",
+      "priceLevel": "standard",
+      "covered": false,
+      "avgSunExposure": 53,
+      "rows": [
+        {
+          "rowNumber": "1",
+          "seatCount": 11
+        },
+        {
+          "rowNumber": "2",
+          "seatCount": 11
+        },
+        {
+          "rowNumber": "3",
+          "seatCount": 11
+        },
+        {
+          "rowNumber": "4",
+          "seatCount": 11
+        },
+        {
+          "rowNumber": "5",
+          "seatCount": 11
+        },
+        {
+          "rowNumber": "6",
+          "seatCount": 11
+        },
+        {
+          "rowNumber": "7",
+          "seatCount": 11
+        },
+        {
+          "rowNumber": "8",
+          "seatCount": 11
+        },
+        {
+          "rowNumber": "9",
+          "seatCount": 10
+        },
+        {
+          "rowNumber": "10",
+          "seatCount": 10
+        },
+        {
+          "rowNumber": "11",
+          "seatCount": 10
+        },
+        {
+          "rowNumber": "12",
+          "seatCount": 11
+        },
+        {
+          "rowNumber": "13",
+          "seatCount": 11
+        },
+        {
+          "rowNumber": "14",
+          "seatCount": 11
+        },
+        {
+          "rowNumber": "15",
+          "seatCount": 11
+        }
+      ]
+    },
+    "52": {
+      "sectionId": "52",
+      "name": "Field 52",
+      "seatCount": 162,
+      "rowCount": 15,
+      "level": "field",
+      "priceLevel": "standard",
+      "covered": false,
+      "avgSunExposure": 53,
+      "rows": [
+        {
+          "rowNumber": "1",
+          "seatCount": 11
+        },
+        {
+          "rowNumber": "2",
+          "seatCount": 11
+        },
+        {
+          "rowNumber": "3",
+          "seatCount": 11
+        },
+        {
+          "rowNumber": "4",
+          "seatCount": 11
+        },
+        {
+          "rowNumber": "5",
+          "seatCount": 11
+        },
+        {
+          "rowNumber": "6",
+          "seatCount": 11
+        },
+        {
+          "rowNumber": "7",
+          "seatCount": 11
+        },
+        {
+          "rowNumber": "8",
+          "seatCount": 11
+        },
+        {
+          "rowNumber": "9",
+          "seatCount": 10
+        },
+        {
+          "rowNumber": "10",
+          "seatCount": 10
+        },
+        {
+          "rowNumber": "11",
+          "seatCount": 10
+        },
+        {
+          "rowNumber": "12",
+          "seatCount": 11
+        },
+        {
+          "rowNumber": "13",
+          "seatCount": 11
+        },
+        {
+          "rowNumber": "14",
+          "seatCount": 11
+        },
+        {
+          "rowNumber": "15",
+          "seatCount": 11
+        }
+      ]
+    },
+    "53": {
+      "sectionId": "53",
+      "name": "Field 53",
+      "seatCount": 162,
+      "rowCount": 15,
+      "level": "field",
+      "priceLevel": "standard",
+      "covered": false,
+      "avgSunExposure": 53,
+      "rows": [
+        {
+          "rowNumber": "1",
+          "seatCount": 11
+        },
+        {
+          "rowNumber": "2",
+          "seatCount": 11
+        },
+        {
+          "rowNumber": "3",
+          "seatCount": 11
+        },
+        {
+          "rowNumber": "4",
+          "seatCount": 11
+        },
+        {
+          "rowNumber": "5",
+          "seatCount": 11
+        },
+        {
+          "rowNumber": "6",
+          "seatCount": 11
+        },
+        {
+          "rowNumber": "7",
+          "seatCount": 11
+        },
+        {
+          "rowNumber": "8",
+          "seatCount": 11
+        },
+        {
+          "rowNumber": "9",
+          "seatCount": 10
+        },
+        {
+          "rowNumber": "10",
+          "seatCount": 10
+        },
+        {
+          "rowNumber": "11",
+          "seatCount": 10
+        },
+        {
+          "rowNumber": "12",
+          "seatCount": 11
+        },
+        {
+          "rowNumber": "13",
+          "seatCount": 11
+        },
+        {
+          "rowNumber": "14",
+          "seatCount": 11
+        },
+        {
+          "rowNumber": "15",
+          "seatCount": 11
+        }
+      ]
+    },
+    "54": {
+      "sectionId": "54",
+      "name": "Field 54",
+      "seatCount": 162,
+      "rowCount": 15,
+      "level": "field",
+      "priceLevel": "standard",
+      "covered": false,
+      "avgSunExposure": 53,
+      "rows": [
+        {
+          "rowNumber": "1",
+          "seatCount": 11
+        },
+        {
+          "rowNumber": "2",
+          "seatCount": 11
+        },
+        {
+          "rowNumber": "3",
+          "seatCount": 11
+        },
+        {
+          "rowNumber": "4",
+          "seatCount": 11
+        },
+        {
+          "rowNumber": "5",
+          "seatCount": 11
+        },
+        {
+          "rowNumber": "6",
+          "seatCount": 11
+        },
+        {
+          "rowNumber": "7",
+          "seatCount": 11
+        },
+        {
+          "rowNumber": "8",
+          "seatCount": 11
+        },
+        {
+          "rowNumber": "9",
+          "seatCount": 10
+        },
+        {
+          "rowNumber": "10",
+          "seatCount": 10
+        },
+        {
+          "rowNumber": "11",
+          "seatCount": 10
+        },
+        {
+          "rowNumber": "12",
+          "seatCount": 11
+        },
+        {
+          "rowNumber": "13",
+          "seatCount": 11
+        },
+        {
+          "rowNumber": "14",
+          "seatCount": 11
+        },
+        {
+          "rowNumber": "15",
+          "seatCount": 11
+        }
+      ]
+    },
+    "55": {
+      "sectionId": "55",
+      "name": "Field 55",
+      "seatCount": 162,
+      "rowCount": 15,
+      "level": "field",
+      "priceLevel": "standard",
+      "covered": false,
+      "avgSunExposure": 53,
+      "rows": [
+        {
+          "rowNumber": "1",
+          "seatCount": 11
+        },
+        {
+          "rowNumber": "2",
+          "seatCount": 11
+        },
+        {
+          "rowNumber": "3",
+          "seatCount": 11
+        },
+        {
+          "rowNumber": "4",
+          "seatCount": 11
+        },
+        {
+          "rowNumber": "5",
+          "seatCount": 11
+        },
+        {
+          "rowNumber": "6",
+          "seatCount": 11
+        },
+        {
+          "rowNumber": "7",
+          "seatCount": 11
+        },
+        {
+          "rowNumber": "8",
+          "seatCount": 11
+        },
+        {
+          "rowNumber": "9",
+          "seatCount": 10
+        },
+        {
+          "rowNumber": "10",
+          "seatCount": 10
+        },
+        {
+          "rowNumber": "11",
+          "seatCount": 10
+        },
+        {
+          "rowNumber": "12",
+          "seatCount": 11
+        },
+        {
+          "rowNumber": "13",
+          "seatCount": 11
+        },
+        {
+          "rowNumber": "14",
+          "seatCount": 11
+        },
+        {
+          "rowNumber": "15",
+          "seatCount": 11
+        }
+      ]
+    },
+    "56": {
+      "sectionId": "56",
+      "name": "Field 56",
+      "seatCount": 162,
+      "rowCount": 15,
+      "level": "field",
+      "priceLevel": "standard",
+      "covered": false,
+      "avgSunExposure": 53,
+      "rows": [
+        {
+          "rowNumber": "1",
+          "seatCount": 11
+        },
+        {
+          "rowNumber": "2",
+          "seatCount": 11
+        },
+        {
+          "rowNumber": "3",
+          "seatCount": 11
+        },
+        {
+          "rowNumber": "4",
+          "seatCount": 11
+        },
+        {
+          "rowNumber": "5",
+          "seatCount": 11
+        },
+        {
+          "rowNumber": "6",
+          "seatCount": 11
+        },
+        {
+          "rowNumber": "7",
+          "seatCount": 11
+        },
+        {
+          "rowNumber": "8",
+          "seatCount": 11
+        },
+        {
+          "rowNumber": "9",
+          "seatCount": 10
+        },
+        {
+          "rowNumber": "10",
+          "seatCount": 10
+        },
+        {
+          "rowNumber": "11",
+          "seatCount": 10
+        },
+        {
+          "rowNumber": "12",
+          "seatCount": 11
+        },
+        {
+          "rowNumber": "13",
+          "seatCount": 11
+        },
+        {
+          "rowNumber": "14",
+          "seatCount": 11
+        },
+        {
+          "rowNumber": "15",
+          "seatCount": 11
+        }
+      ]
+    },
+    "57": {
+      "sectionId": "57",
+      "name": "Field 57",
+      "seatCount": 162,
+      "rowCount": 15,
+      "level": "field",
+      "priceLevel": "standard",
+      "covered": false,
+      "avgSunExposure": 53,
+      "rows": [
+        {
+          "rowNumber": "1",
+          "seatCount": 11
+        },
+        {
+          "rowNumber": "2",
+          "seatCount": 11
+        },
+        {
+          "rowNumber": "3",
+          "seatCount": 11
+        },
+        {
+          "rowNumber": "4",
+          "seatCount": 11
+        },
+        {
+          "rowNumber": "5",
+          "seatCount": 11
+        },
+        {
+          "rowNumber": "6",
+          "seatCount": 11
+        },
+        {
+          "rowNumber": "7",
+          "seatCount": 11
+        },
+        {
+          "rowNumber": "8",
+          "seatCount": 11
+        },
+        {
+          "rowNumber": "9",
+          "seatCount": 10
+        },
+        {
+          "rowNumber": "10",
+          "seatCount": 10
+        },
+        {
+          "rowNumber": "11",
+          "seatCount": 10
+        },
+        {
+          "rowNumber": "12",
+          "seatCount": 11
+        },
+        {
+          "rowNumber": "13",
+          "seatCount": 11
+        },
+        {
+          "rowNumber": "14",
+          "seatCount": 11
+        },
+        {
+          "rowNumber": "15",
+          "seatCount": 11
+        }
+      ]
+    },
+    "58": {
+      "sectionId": "58",
+      "name": "Field 58",
+      "seatCount": 162,
+      "rowCount": 15,
+      "level": "field",
+      "priceLevel": "standard",
+      "covered": false,
+      "avgSunExposure": 53,
+      "rows": [
+        {
+          "rowNumber": "1",
+          "seatCount": 11
+        },
+        {
+          "rowNumber": "2",
+          "seatCount": 11
+        },
+        {
+          "rowNumber": "3",
+          "seatCount": 11
+        },
+        {
+          "rowNumber": "4",
+          "seatCount": 11
+        },
+        {
+          "rowNumber": "5",
+          "seatCount": 11
+        },
+        {
+          "rowNumber": "6",
+          "seatCount": 11
+        },
+        {
+          "rowNumber": "7",
+          "seatCount": 11
+        },
+        {
+          "rowNumber": "8",
+          "seatCount": 11
+        },
+        {
+          "rowNumber": "9",
+          "seatCount": 10
+        },
+        {
+          "rowNumber": "10",
+          "seatCount": 10
+        },
+        {
+          "rowNumber": "11",
+          "seatCount": 10
+        },
+        {
+          "rowNumber": "12",
+          "seatCount": 11
+        },
+        {
+          "rowNumber": "13",
+          "seatCount": 11
+        },
+        {
+          "rowNumber": "14",
+          "seatCount": 11
+        },
+        {
+          "rowNumber": "15",
+          "seatCount": 11
+        }
+      ]
+    },
+    "59": {
+      "sectionId": "59",
+      "name": "Field 59",
+      "seatCount": 162,
+      "rowCount": 15,
+      "level": "field",
+      "priceLevel": "standard",
+      "covered": false,
+      "avgSunExposure": 53,
+      "rows": [
+        {
+          "rowNumber": "1",
+          "seatCount": 11
+        },
+        {
+          "rowNumber": "2",
+          "seatCount": 11
+        },
+        {
+          "rowNumber": "3",
+          "seatCount": 11
+        },
+        {
+          "rowNumber": "4",
+          "seatCount": 11
+        },
+        {
+          "rowNumber": "5",
+          "seatCount": 11
+        },
+        {
+          "rowNumber": "6",
+          "seatCount": 11
+        },
+        {
+          "rowNumber": "7",
+          "seatCount": 11
+        },
+        {
+          "rowNumber": "8",
+          "seatCount": 11
+        },
+        {
+          "rowNumber": "9",
+          "seatCount": 10
+        },
+        {
+          "rowNumber": "10",
+          "seatCount": 10
+        },
+        {
+          "rowNumber": "11",
+          "seatCount": 10
+        },
+        {
+          "rowNumber": "12",
+          "seatCount": 11
+        },
+        {
+          "rowNumber": "13",
+          "seatCount": 11
+        },
+        {
+          "rowNumber": "14",
+          "seatCount": 11
+        },
+        {
+          "rowNumber": "15",
+          "seatCount": 11
+        }
+      ]
+    },
+    "60": {
+      "sectionId": "60",
+      "name": "Field 60",
+      "seatCount": 162,
+      "rowCount": 15,
+      "level": "field",
+      "priceLevel": "standard",
+      "covered": false,
+      "avgSunExposure": 53,
+      "rows": [
+        {
+          "rowNumber": "1",
+          "seatCount": 11
+        },
+        {
+          "rowNumber": "2",
+          "seatCount": 11
+        },
+        {
+          "rowNumber": "3",
+          "seatCount": 11
+        },
+        {
+          "rowNumber": "4",
+          "seatCount": 11
+        },
+        {
+          "rowNumber": "5",
+          "seatCount": 11
+        },
+        {
+          "rowNumber": "6",
+          "seatCount": 11
+        },
+        {
+          "rowNumber": "7",
+          "seatCount": 11
+        },
+        {
+          "rowNumber": "8",
+          "seatCount": 11
+        },
+        {
+          "rowNumber": "9",
+          "seatCount": 10
+        },
+        {
+          "rowNumber": "10",
+          "seatCount": 10
+        },
+        {
+          "rowNumber": "11",
+          "seatCount": 10
+        },
+        {
+          "rowNumber": "12",
+          "seatCount": 11
+        },
+        {
+          "rowNumber": "13",
+          "seatCount": 11
+        },
+        {
+          "rowNumber": "14",
+          "seatCount": 11
+        },
+        {
+          "rowNumber": "15",
+          "seatCount": 11
+        }
+      ]
+    },
+    "90": {
+      "sectionId": "90",
+      "name": "Loge 90",
+      "seatCount": 213,
+      "rowCount": 18,
+      "level": "field",
+      "priceLevel": "standard",
+      "covered": false,
+      "avgSunExposure": 58,
+      "rows": [
+        {
+          "rowNumber": "1",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "2",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "3",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "4",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "5",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "6",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "7",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "8",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "9",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "10",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "11",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "12",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "13",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "14",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "15",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "16",
+          "seatCount": 11
+        },
+        {
+          "rowNumber": "17",
+          "seatCount": 11
+        },
+        {
+          "rowNumber": "18",
+          "seatCount": 11
+        }
+      ]
+    },
+    "91": {
+      "sectionId": "91",
+      "name": "Loge 91",
+      "seatCount": 213,
+      "rowCount": 18,
+      "level": "field",
+      "priceLevel": "standard",
+      "covered": false,
+      "avgSunExposure": 58,
+      "rows": [
+        {
+          "rowNumber": "1",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "2",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "3",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "4",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "5",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "6",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "7",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "8",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "9",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "10",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "11",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "12",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "13",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "14",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "15",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "16",
+          "seatCount": 11
+        },
+        {
+          "rowNumber": "17",
+          "seatCount": 11
+        },
+        {
+          "rowNumber": "18",
+          "seatCount": 11
+        }
+      ]
+    },
+    "92": {
+      "sectionId": "92",
+      "name": "Loge 92",
+      "seatCount": 213,
+      "rowCount": 18,
+      "level": "field",
+      "priceLevel": "standard",
+      "covered": false,
+      "avgSunExposure": 58,
+      "rows": [
+        {
+          "rowNumber": "1",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "2",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "3",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "4",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "5",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "6",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "7",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "8",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "9",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "10",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "11",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "12",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "13",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "14",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "15",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "16",
+          "seatCount": 11
+        },
+        {
+          "rowNumber": "17",
+          "seatCount": 11
+        },
+        {
+          "rowNumber": "18",
+          "seatCount": 11
+        }
+      ]
+    },
+    "93": {
+      "sectionId": "93",
+      "name": "Loge 93",
+      "seatCount": 213,
+      "rowCount": 18,
+      "level": "field",
+      "priceLevel": "standard",
+      "covered": false,
+      "avgSunExposure": 58,
+      "rows": [
+        {
+          "rowNumber": "1",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "2",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "3",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "4",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "5",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "6",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "7",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "8",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "9",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "10",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "11",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "12",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "13",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "14",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "15",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "16",
+          "seatCount": 11
+        },
+        {
+          "rowNumber": "17",
+          "seatCount": 11
+        },
+        {
+          "rowNumber": "18",
+          "seatCount": 11
+        }
+      ]
+    },
+    "94": {
+      "sectionId": "94",
+      "name": "Loge 94",
+      "seatCount": 213,
+      "rowCount": 18,
+      "level": "field",
+      "priceLevel": "standard",
+      "covered": false,
+      "avgSunExposure": 58,
+      "rows": [
+        {
+          "rowNumber": "1",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "2",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "3",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "4",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "5",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "6",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "7",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "8",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "9",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "10",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "11",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "12",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "13",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "14",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "15",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "16",
+          "seatCount": 11
+        },
+        {
+          "rowNumber": "17",
+          "seatCount": 11
+        },
+        {
+          "rowNumber": "18",
+          "seatCount": 11
+        }
+      ]
+    },
+    "95": {
+      "sectionId": "95",
+      "name": "Loge 95",
+      "seatCount": 213,
+      "rowCount": 18,
+      "level": "field",
+      "priceLevel": "standard",
+      "covered": false,
+      "avgSunExposure": 58,
+      "rows": [
+        {
+          "rowNumber": "1",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "2",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "3",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "4",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "5",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "6",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "7",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "8",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "9",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "10",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "11",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "12",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "13",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "14",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "15",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "16",
+          "seatCount": 11
+        },
+        {
+          "rowNumber": "17",
+          "seatCount": 11
+        },
+        {
+          "rowNumber": "18",
+          "seatCount": 11
+        }
+      ]
+    },
+    "96": {
+      "sectionId": "96",
+      "name": "Loge 96",
+      "seatCount": 213,
+      "rowCount": 18,
+      "level": "field",
+      "priceLevel": "standard",
+      "covered": false,
+      "avgSunExposure": 58,
+      "rows": [
+        {
+          "rowNumber": "1",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "2",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "3",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "4",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "5",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "6",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "7",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "8",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "9",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "10",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "11",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "12",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "13",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "14",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "15",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "16",
+          "seatCount": 11
+        },
+        {
+          "rowNumber": "17",
+          "seatCount": 11
+        },
+        {
+          "rowNumber": "18",
+          "seatCount": 11
+        }
+      ]
+    },
+    "97": {
+      "sectionId": "97",
+      "name": "Loge 97",
+      "seatCount": 213,
+      "rowCount": 18,
+      "level": "field",
+      "priceLevel": "standard",
+      "covered": false,
+      "avgSunExposure": 58,
+      "rows": [
+        {
+          "rowNumber": "1",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "2",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "3",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "4",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "5",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "6",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "7",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "8",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "9",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "10",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "11",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "12",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "13",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "14",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "15",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "16",
+          "seatCount": 11
+        },
+        {
+          "rowNumber": "17",
+          "seatCount": 11
+        },
+        {
+          "rowNumber": "18",
+          "seatCount": 11
+        }
+      ]
+    },
+    "98": {
+      "sectionId": "98",
+      "name": "Loge 98",
+      "seatCount": 213,
+      "rowCount": 18,
+      "level": "field",
+      "priceLevel": "standard",
+      "covered": false,
+      "avgSunExposure": 58,
+      "rows": [
+        {
+          "rowNumber": "1",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "2",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "3",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "4",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "5",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "6",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "7",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "8",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "9",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "10",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "11",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "12",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "13",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "14",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "15",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "16",
+          "seatCount": 11
+        },
+        {
+          "rowNumber": "17",
+          "seatCount": 11
+        },
+        {
+          "rowNumber": "18",
+          "seatCount": 11
+        }
+      ]
+    },
+    "99": {
+      "sectionId": "99",
+      "name": "Loge 99",
+      "seatCount": 213,
+      "rowCount": 18,
+      "level": "field",
+      "priceLevel": "standard",
+      "covered": false,
+      "avgSunExposure": 58,
+      "rows": [
+        {
+          "rowNumber": "1",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "2",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "3",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "4",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "5",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "6",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "7",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "8",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "9",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "10",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "11",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "12",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "13",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "14",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "15",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "16",
+          "seatCount": 11
+        },
+        {
+          "rowNumber": "17",
+          "seatCount": 11
+        },
+        {
+          "rowNumber": "18",
+          "seatCount": 11
+        }
+      ]
+    },
+    "100": {
+      "sectionId": "100",
+      "name": "Loge 100",
+      "seatCount": 213,
+      "rowCount": 18,
+      "level": "field",
+      "priceLevel": "field",
+      "covered": false,
+      "avgSunExposure": 58,
+      "rows": [
+        {
+          "rowNumber": "1",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "2",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "3",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "4",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "5",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "6",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "7",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "8",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "9",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "10",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "11",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "12",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "13",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "14",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "15",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "16",
+          "seatCount": 11
+        },
+        {
+          "rowNumber": "17",
+          "seatCount": 11
+        },
+        {
+          "rowNumber": "18",
+          "seatCount": 11
+        }
+      ]
+    },
+    "101": {
+      "sectionId": "101",
+      "name": "Loge 101",
+      "seatCount": 213,
+      "rowCount": 18,
+      "level": "field",
+      "priceLevel": "field",
+      "covered": false,
+      "avgSunExposure": 58,
+      "rows": [
+        {
+          "rowNumber": "1",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "2",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "3",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "4",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "5",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "6",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "7",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "8",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "9",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "10",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "11",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "12",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "13",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "14",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "15",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "16",
+          "seatCount": 11
+        },
+        {
+          "rowNumber": "17",
+          "seatCount": 11
+        },
+        {
+          "rowNumber": "18",
+          "seatCount": 11
+        }
+      ]
+    },
+    "102": {
+      "sectionId": "102",
+      "name": "Loge 102",
+      "seatCount": 213,
+      "rowCount": 18,
+      "level": "field",
+      "priceLevel": "field",
+      "covered": false,
+      "avgSunExposure": 58,
+      "rows": [
+        {
+          "rowNumber": "1",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "2",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "3",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "4",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "5",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "6",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "7",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "8",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "9",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "10",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "11",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "12",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "13",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "14",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "15",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "16",
+          "seatCount": 11
+        },
+        {
+          "rowNumber": "17",
+          "seatCount": 11
+        },
+        {
+          "rowNumber": "18",
+          "seatCount": 11
+        }
+      ]
+    },
+    "103": {
+      "sectionId": "103",
+      "name": "Loge 103",
+      "seatCount": 213,
+      "rowCount": 18,
+      "level": "field",
+      "priceLevel": "field",
+      "covered": false,
+      "avgSunExposure": 58,
+      "rows": [
+        {
+          "rowNumber": "1",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "2",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "3",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "4",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "5",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "6",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "7",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "8",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "9",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "10",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "11",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "12",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "13",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "14",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "15",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "16",
+          "seatCount": 11
+        },
+        {
+          "rowNumber": "17",
+          "seatCount": 11
+        },
+        {
+          "rowNumber": "18",
+          "seatCount": 11
+        }
+      ]
+    },
+    "104": {
+      "sectionId": "104",
+      "name": "Loge 104",
+      "seatCount": 213,
+      "rowCount": 18,
+      "level": "field",
+      "priceLevel": "field",
+      "covered": false,
+      "avgSunExposure": 58,
+      "rows": [
+        {
+          "rowNumber": "1",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "2",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "3",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "4",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "5",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "6",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "7",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "8",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "9",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "10",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "11",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "12",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "13",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "14",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "15",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "16",
+          "seatCount": 11
+        },
+        {
+          "rowNumber": "17",
+          "seatCount": 11
+        },
+        {
+          "rowNumber": "18",
+          "seatCount": 11
+        }
+      ]
+    },
+    "105": {
+      "sectionId": "105",
+      "name": "Loge 105",
+      "seatCount": 213,
+      "rowCount": 18,
+      "level": "field",
+      "priceLevel": "field",
+      "covered": false,
+      "avgSunExposure": 58,
+      "rows": [
+        {
+          "rowNumber": "1",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "2",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "3",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "4",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "5",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "6",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "7",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "8",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "9",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "10",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "11",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "12",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "13",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "14",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "15",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "16",
+          "seatCount": 11
+        },
+        {
+          "rowNumber": "17",
+          "seatCount": 11
+        },
+        {
+          "rowNumber": "18",
+          "seatCount": 11
+        }
+      ]
+    },
+    "106": {
+      "sectionId": "106",
+      "name": "Loge 106",
+      "seatCount": 213,
+      "rowCount": 18,
+      "level": "field",
+      "priceLevel": "field",
+      "covered": false,
+      "avgSunExposure": 58,
+      "rows": [
+        {
+          "rowNumber": "1",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "2",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "3",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "4",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "5",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "6",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "7",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "8",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "9",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "10",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "11",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "12",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "13",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "14",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "15",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "16",
+          "seatCount": 11
+        },
+        {
+          "rowNumber": "17",
+          "seatCount": 11
+        },
+        {
+          "rowNumber": "18",
+          "seatCount": 11
+        }
+      ]
+    },
+    "107": {
+      "sectionId": "107",
+      "name": "Loge 107",
+      "seatCount": 213,
+      "rowCount": 18,
+      "level": "field",
+      "priceLevel": "field",
+      "covered": false,
+      "avgSunExposure": 58,
+      "rows": [
+        {
+          "rowNumber": "1",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "2",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "3",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "4",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "5",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "6",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "7",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "8",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "9",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "10",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "11",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "12",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "13",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "14",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "15",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "16",
+          "seatCount": 11
+        },
+        {
+          "rowNumber": "17",
+          "seatCount": 11
+        },
+        {
+          "rowNumber": "18",
+          "seatCount": 11
+        }
+      ]
+    },
+    "108": {
+      "sectionId": "108",
+      "name": "Loge 108",
+      "seatCount": 213,
+      "rowCount": 18,
+      "level": "field",
+      "priceLevel": "field",
+      "covered": false,
+      "avgSunExposure": 58,
+      "rows": [
+        {
+          "rowNumber": "1",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "2",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "3",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "4",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "5",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "6",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "7",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "8",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "9",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "10",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "11",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "12",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "13",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "14",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "15",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "16",
+          "seatCount": 11
+        },
+        {
+          "rowNumber": "17",
+          "seatCount": 11
+        },
+        {
+          "rowNumber": "18",
+          "seatCount": 11
+        }
+      ]
+    },
+    "109": {
+      "sectionId": "109",
+      "name": "Loge 109",
+      "seatCount": 213,
+      "rowCount": 18,
+      "level": "field",
+      "priceLevel": "field",
+      "covered": false,
+      "avgSunExposure": 58,
+      "rows": [
+        {
+          "rowNumber": "1",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "2",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "3",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "4",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "5",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "6",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "7",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "8",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "9",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "10",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "11",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "12",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "13",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "14",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "15",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "16",
+          "seatCount": 11
+        },
+        {
+          "rowNumber": "17",
+          "seatCount": 11
+        },
+        {
+          "rowNumber": "18",
+          "seatCount": 11
+        }
+      ]
+    },
+    "110": {
+      "sectionId": "110",
+      "name": "Loge 110",
+      "seatCount": 213,
+      "rowCount": 18,
+      "level": "field",
+      "priceLevel": "field",
+      "covered": false,
+      "avgSunExposure": 58,
+      "rows": [
+        {
+          "rowNumber": "1",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "2",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "3",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "4",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "5",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "6",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "7",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "8",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "9",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "10",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "11",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "12",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "13",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "14",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "15",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "16",
+          "seatCount": 11
+        },
+        {
+          "rowNumber": "17",
+          "seatCount": 11
+        },
+        {
+          "rowNumber": "18",
+          "seatCount": 11
+        }
+      ]
+    },
+    "111": {
+      "sectionId": "111",
+      "name": "Loge 111",
+      "seatCount": 213,
+      "rowCount": 18,
+      "level": "field",
+      "priceLevel": "field",
+      "covered": false,
+      "avgSunExposure": 58,
+      "rows": [
+        {
+          "rowNumber": "1",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "2",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "3",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "4",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "5",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "6",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "7",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "8",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "9",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "10",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "11",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "12",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "13",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "14",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "15",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "16",
+          "seatCount": 11
+        },
+        {
+          "rowNumber": "17",
+          "seatCount": 11
+        },
+        {
+          "rowNumber": "18",
+          "seatCount": 11
+        }
+      ]
+    },
+    "112": {
+      "sectionId": "112",
+      "name": "Loge 112",
+      "seatCount": 213,
+      "rowCount": 18,
+      "level": "field",
+      "priceLevel": "field",
+      "covered": false,
+      "avgSunExposure": 58,
+      "rows": [
+        {
+          "rowNumber": "1",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "2",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "3",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "4",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "5",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "6",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "7",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "8",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "9",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "10",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "11",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "12",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "13",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "14",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "15",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "16",
+          "seatCount": 11
+        },
+        {
+          "rowNumber": "17",
+          "seatCount": 11
+        },
+        {
+          "rowNumber": "18",
+          "seatCount": 11
+        }
+      ]
+    },
+    "113": {
+      "sectionId": "113",
+      "name": "Loge 113",
+      "seatCount": 213,
+      "rowCount": 18,
+      "level": "field",
+      "priceLevel": "field",
+      "covered": false,
+      "avgSunExposure": 58,
+      "rows": [
+        {
+          "rowNumber": "1",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "2",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "3",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "4",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "5",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "6",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "7",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "8",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "9",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "10",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "11",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "12",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "13",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "14",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "15",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "16",
+          "seatCount": 11
+        },
+        {
+          "rowNumber": "17",
+          "seatCount": 11
+        },
+        {
+          "rowNumber": "18",
+          "seatCount": 11
+        }
+      ]
+    },
+    "114": {
+      "sectionId": "114",
+      "name": "Loge 114",
+      "seatCount": 213,
+      "rowCount": 18,
+      "level": "field",
+      "priceLevel": "field",
+      "covered": false,
+      "avgSunExposure": 58,
+      "rows": [
+        {
+          "rowNumber": "1",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "2",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "3",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "4",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "5",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "6",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "7",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "8",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "9",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "10",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "11",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "12",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "13",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "14",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "15",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "16",
+          "seatCount": 11
+        },
+        {
+          "rowNumber": "17",
+          "seatCount": 11
+        },
+        {
+          "rowNumber": "18",
+          "seatCount": 11
+        }
+      ]
+    },
+    "115": {
+      "sectionId": "115",
+      "name": "Loge 115",
+      "seatCount": 213,
+      "rowCount": 18,
+      "level": "field",
+      "priceLevel": "field",
+      "covered": false,
+      "avgSunExposure": 58,
+      "rows": [
+        {
+          "rowNumber": "1",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "2",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "3",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "4",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "5",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "6",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "7",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "8",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "9",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "10",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "11",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "12",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "13",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "14",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "15",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "16",
+          "seatCount": 11
+        },
+        {
+          "rowNumber": "17",
+          "seatCount": 11
+        },
+        {
+          "rowNumber": "18",
+          "seatCount": 11
+        }
+      ]
+    },
+    "116": {
+      "sectionId": "116",
+      "name": "Loge 116",
+      "seatCount": 213,
+      "rowCount": 18,
+      "level": "field",
+      "priceLevel": "field",
+      "covered": false,
+      "avgSunExposure": 58,
+      "rows": [
+        {
+          "rowNumber": "1",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "2",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "3",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "4",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "5",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "6",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "7",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "8",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "9",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "10",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "11",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "12",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "13",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "14",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "15",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "16",
+          "seatCount": 11
+        },
+        {
+          "rowNumber": "17",
+          "seatCount": 11
+        },
+        {
+          "rowNumber": "18",
+          "seatCount": 11
+        }
+      ]
+    },
+    "117": {
+      "sectionId": "117",
+      "name": "Loge 117",
+      "seatCount": 213,
+      "rowCount": 18,
+      "level": "field",
+      "priceLevel": "field",
+      "covered": false,
+      "avgSunExposure": 58,
+      "rows": [
+        {
+          "rowNumber": "1",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "2",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "3",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "4",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "5",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "6",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "7",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "8",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "9",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "10",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "11",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "12",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "13",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "14",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "15",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "16",
+          "seatCount": 11
+        },
+        {
+          "rowNumber": "17",
+          "seatCount": 11
+        },
+        {
+          "rowNumber": "18",
+          "seatCount": 11
+        }
+      ]
+    },
+    "118": {
+      "sectionId": "118",
+      "name": "Loge 118",
+      "seatCount": 213,
+      "rowCount": 18,
+      "level": "field",
+      "priceLevel": "field",
+      "covered": false,
+      "avgSunExposure": 58,
+      "rows": [
+        {
+          "rowNumber": "1",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "2",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "3",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "4",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "5",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "6",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "7",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "8",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "9",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "10",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "11",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "12",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "13",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "14",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "15",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "16",
+          "seatCount": 11
+        },
+        {
+          "rowNumber": "17",
+          "seatCount": 11
+        },
+        {
+          "rowNumber": "18",
+          "seatCount": 11
+        }
+      ]
+    },
+    "119": {
+      "sectionId": "119",
+      "name": "Loge 119",
+      "seatCount": 213,
+      "rowCount": 18,
+      "level": "field",
+      "priceLevel": "field",
+      "covered": false,
+      "avgSunExposure": 58,
+      "rows": [
+        {
+          "rowNumber": "1",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "2",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "3",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "4",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "5",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "6",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "7",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "8",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "9",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "10",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "11",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "12",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "13",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "14",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "15",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "16",
+          "seatCount": 11
+        },
+        {
+          "rowNumber": "17",
+          "seatCount": 11
+        },
+        {
+          "rowNumber": "18",
+          "seatCount": 11
+        }
+      ]
+    },
+    "120": {
+      "sectionId": "120",
+      "name": "Loge 120",
+      "seatCount": 213,
+      "rowCount": 18,
+      "level": "field",
+      "priceLevel": "field",
+      "covered": false,
+      "avgSunExposure": 58,
+      "rows": [
+        {
+          "rowNumber": "1",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "2",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "3",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "4",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "5",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "6",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "7",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "8",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "9",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "10",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "11",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "12",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "13",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "14",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "15",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "16",
+          "seatCount": 11
+        },
+        {
+          "rowNumber": "17",
+          "seatCount": 11
+        },
+        {
+          "rowNumber": "18",
+          "seatCount": 11
+        }
+      ]
+    },
+    "121": {
+      "sectionId": "121",
+      "name": "Loge 121",
+      "seatCount": 213,
+      "rowCount": 18,
+      "level": "field",
+      "priceLevel": "field",
+      "covered": false,
+      "avgSunExposure": 58,
+      "rows": [
+        {
+          "rowNumber": "1",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "2",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "3",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "4",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "5",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "6",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "7",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "8",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "9",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "10",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "11",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "12",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "13",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "14",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "15",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "16",
+          "seatCount": 11
+        },
+        {
+          "rowNumber": "17",
+          "seatCount": 11
+        },
+        {
+          "rowNumber": "18",
+          "seatCount": 11
+        }
+      ]
+    },
+    "122": {
+      "sectionId": "122",
+      "name": "Loge 122",
+      "seatCount": 213,
+      "rowCount": 18,
+      "level": "field",
+      "priceLevel": "field",
+      "covered": false,
+      "avgSunExposure": 58,
+      "rows": [
+        {
+          "rowNumber": "1",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "2",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "3",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "4",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "5",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "6",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "7",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "8",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "9",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "10",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "11",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "12",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "13",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "14",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "15",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "16",
+          "seatCount": 11
+        },
+        {
+          "rowNumber": "17",
+          "seatCount": 11
+        },
+        {
+          "rowNumber": "18",
+          "seatCount": 11
+        }
+      ]
+    },
+    "123": {
+      "sectionId": "123",
+      "name": "Loge 123",
+      "seatCount": 213,
+      "rowCount": 18,
+      "level": "field",
+      "priceLevel": "field",
+      "covered": false,
+      "avgSunExposure": 58,
+      "rows": [
+        {
+          "rowNumber": "1",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "2",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "3",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "4",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "5",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "6",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "7",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "8",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "9",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "10",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "11",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "12",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "13",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "14",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "15",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "16",
+          "seatCount": 11
+        },
+        {
+          "rowNumber": "17",
+          "seatCount": 11
+        },
+        {
+          "rowNumber": "18",
+          "seatCount": 11
+        }
+      ]
+    },
+    "124": {
+      "sectionId": "124",
+      "name": "Loge 124",
+      "seatCount": 213,
+      "rowCount": 18,
+      "level": "field",
+      "priceLevel": "field",
+      "covered": false,
+      "avgSunExposure": 58,
+      "rows": [
+        {
+          "rowNumber": "1",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "2",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "3",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "4",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "5",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "6",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "7",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "8",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "9",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "10",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "11",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "12",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "13",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "14",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "15",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "16",
+          "seatCount": 11
+        },
+        {
+          "rowNumber": "17",
+          "seatCount": 11
+        },
+        {
+          "rowNumber": "18",
+          "seatCount": 11
+        }
+      ]
+    },
+    "125": {
+      "sectionId": "125",
+      "name": "Loge 125",
+      "seatCount": 213,
+      "rowCount": 18,
+      "level": "field",
+      "priceLevel": "field",
+      "covered": false,
+      "avgSunExposure": 58,
+      "rows": [
+        {
+          "rowNumber": "1",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "2",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "3",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "4",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "5",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "6",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "7",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "8",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "9",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "10",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "11",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "12",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "13",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "14",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "15",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "16",
+          "seatCount": 11
+        },
+        {
+          "rowNumber": "17",
+          "seatCount": 11
+        },
+        {
+          "rowNumber": "18",
+          "seatCount": 11
+        }
+      ]
+    },
+    "126": {
+      "sectionId": "126",
+      "name": "Loge 126",
+      "seatCount": 213,
+      "rowCount": 18,
+      "level": "field",
+      "priceLevel": "field",
+      "covered": false,
+      "avgSunExposure": 58,
+      "rows": [
+        {
+          "rowNumber": "1",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "2",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "3",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "4",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "5",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "6",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "7",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "8",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "9",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "10",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "11",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "12",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "13",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "14",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "15",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "16",
+          "seatCount": 11
+        },
+        {
+          "rowNumber": "17",
+          "seatCount": 11
+        },
+        {
+          "rowNumber": "18",
+          "seatCount": 11
+        }
+      ]
+    },
+    "127": {
+      "sectionId": "127",
+      "name": "Loge 127",
+      "seatCount": 213,
+      "rowCount": 18,
+      "level": "field",
+      "priceLevel": "field",
+      "covered": false,
+      "avgSunExposure": 58,
+      "rows": [
+        {
+          "rowNumber": "1",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "2",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "3",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "4",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "5",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "6",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "7",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "8",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "9",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "10",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "11",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "12",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "13",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "14",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "15",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "16",
+          "seatCount": 11
+        },
+        {
+          "rowNumber": "17",
+          "seatCount": 11
+        },
+        {
+          "rowNumber": "18",
+          "seatCount": 11
+        }
+      ]
+    },
+    "128": {
+      "sectionId": "128",
+      "name": "Loge 128",
+      "seatCount": 213,
+      "rowCount": 18,
+      "level": "field",
+      "priceLevel": "field",
+      "covered": false,
+      "avgSunExposure": 58,
+      "rows": [
+        {
+          "rowNumber": "1",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "2",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "3",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "4",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "5",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "6",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "7",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "8",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "9",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "10",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "11",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "12",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "13",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "14",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "15",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "16",
+          "seatCount": 11
+        },
+        {
+          "rowNumber": "17",
+          "seatCount": 11
+        },
+        {
+          "rowNumber": "18",
+          "seatCount": 11
+        }
+      ]
+    },
+    "129": {
+      "sectionId": "129",
+      "name": "Loge 129",
+      "seatCount": 213,
+      "rowCount": 18,
+      "level": "field",
+      "priceLevel": "field",
+      "covered": false,
+      "avgSunExposure": 58,
+      "rows": [
+        {
+          "rowNumber": "1",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "2",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "3",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "4",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "5",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "6",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "7",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "8",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "9",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "10",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "11",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "12",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "13",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "14",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "15",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "16",
+          "seatCount": 11
+        },
+        {
+          "rowNumber": "17",
+          "seatCount": 11
+        },
+        {
+          "rowNumber": "18",
+          "seatCount": 11
+        }
+      ]
+    },
+    "130": {
+      "sectionId": "130",
+      "name": "Loge 130",
+      "seatCount": 213,
+      "rowCount": 18,
+      "level": "field",
+      "priceLevel": "field",
+      "covered": false,
+      "avgSunExposure": 58,
+      "rows": [
+        {
+          "rowNumber": "1",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "2",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "3",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "4",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "5",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "6",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "7",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "8",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "9",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "10",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "11",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "12",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "13",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "14",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "15",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "16",
+          "seatCount": 11
+        },
+        {
+          "rowNumber": "17",
+          "seatCount": 11
+        },
+        {
+          "rowNumber": "18",
+          "seatCount": 11
+        }
+      ]
+    },
+    "131": {
+      "sectionId": "131",
+      "name": "Loge 131",
+      "seatCount": 213,
+      "rowCount": 18,
+      "level": "field",
+      "priceLevel": "field",
+      "covered": false,
+      "avgSunExposure": 58,
+      "rows": [
+        {
+          "rowNumber": "1",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "2",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "3",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "4",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "5",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "6",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "7",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "8",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "9",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "10",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "11",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "12",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "13",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "14",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "15",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "16",
+          "seatCount": 11
+        },
+        {
+          "rowNumber": "17",
+          "seatCount": 11
+        },
+        {
+          "rowNumber": "18",
+          "seatCount": 11
+        }
+      ]
+    },
+    "132": {
+      "sectionId": "132",
+      "name": "Loge 132",
+      "seatCount": 213,
+      "rowCount": 18,
+      "level": "field",
+      "priceLevel": "field",
+      "covered": false,
+      "avgSunExposure": 58,
+      "rows": [
+        {
+          "rowNumber": "1",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "2",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "3",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "4",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "5",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "6",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "7",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "8",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "9",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "10",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "11",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "12",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "13",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "14",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "15",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "16",
+          "seatCount": 11
+        },
+        {
+          "rowNumber": "17",
+          "seatCount": 11
+        },
+        {
+          "rowNumber": "18",
+          "seatCount": 11
+        }
+      ]
+    },
+    "133": {
+      "sectionId": "133",
+      "name": "Loge 133",
+      "seatCount": 213,
+      "rowCount": 18,
+      "level": "field",
+      "priceLevel": "field",
+      "covered": false,
+      "avgSunExposure": 58,
+      "rows": [
+        {
+          "rowNumber": "1",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "2",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "3",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "4",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "5",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "6",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "7",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "8",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "9",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "10",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "11",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "12",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "13",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "14",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "15",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "16",
+          "seatCount": 11
+        },
+        {
+          "rowNumber": "17",
+          "seatCount": 11
+        },
+        {
+          "rowNumber": "18",
+          "seatCount": 11
+        }
+      ]
+    },
+    "134": {
+      "sectionId": "134",
+      "name": "Loge 134",
+      "seatCount": 213,
+      "rowCount": 18,
+      "level": "field",
+      "priceLevel": "field",
+      "covered": false,
+      "avgSunExposure": 58,
+      "rows": [
+        {
+          "rowNumber": "1",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "2",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "3",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "4",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "5",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "6",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "7",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "8",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "9",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "10",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "11",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "12",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "13",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "14",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "15",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "16",
+          "seatCount": 11
+        },
+        {
+          "rowNumber": "17",
+          "seatCount": 11
+        },
+        {
+          "rowNumber": "18",
+          "seatCount": 11
+        }
+      ]
+    },
+    "135": {
+      "sectionId": "135",
+      "name": "Loge 135",
+      "seatCount": 213,
+      "rowCount": 18,
+      "level": "field",
+      "priceLevel": "field",
+      "covered": false,
+      "avgSunExposure": 58,
+      "rows": [
+        {
+          "rowNumber": "1",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "2",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "3",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "4",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "5",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "6",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "7",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "8",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "9",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "10",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "11",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "12",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "13",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "14",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "15",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "16",
+          "seatCount": 11
+        },
+        {
+          "rowNumber": "17",
+          "seatCount": 11
+        },
+        {
+          "rowNumber": "18",
+          "seatCount": 11
+        }
+      ]
+    },
+    "136": {
+      "sectionId": "136",
+      "name": "Loge 136",
+      "seatCount": 213,
+      "rowCount": 18,
+      "level": "field",
+      "priceLevel": "field",
+      "covered": false,
+      "avgSunExposure": 58,
+      "rows": [
+        {
+          "rowNumber": "1",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "2",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "3",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "4",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "5",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "6",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "7",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "8",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "9",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "10",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "11",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "12",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "13",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "14",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "15",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "16",
+          "seatCount": 11
+        },
+        {
+          "rowNumber": "17",
+          "seatCount": 11
+        },
+        {
+          "rowNumber": "18",
+          "seatCount": 11
+        }
+      ]
+    },
+    "137": {
+      "sectionId": "137",
+      "name": "Loge 137",
+      "seatCount": 213,
+      "rowCount": 18,
+      "level": "field",
+      "priceLevel": "field",
+      "covered": false,
+      "avgSunExposure": 58,
+      "rows": [
+        {
+          "rowNumber": "1",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "2",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "3",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "4",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "5",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "6",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "7",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "8",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "9",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "10",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "11",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "12",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "13",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "14",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "15",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "16",
+          "seatCount": 11
+        },
+        {
+          "rowNumber": "17",
+          "seatCount": 11
+        },
+        {
+          "rowNumber": "18",
+          "seatCount": 11
+        }
+      ]
+    },
+    "138": {
+      "sectionId": "138",
+      "name": "Loge 138",
+      "seatCount": 213,
+      "rowCount": 18,
+      "level": "field",
+      "priceLevel": "field",
+      "covered": false,
+      "avgSunExposure": 58,
+      "rows": [
+        {
+          "rowNumber": "1",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "2",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "3",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "4",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "5",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "6",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "7",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "8",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "9",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "10",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "11",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "12",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "13",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "14",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "15",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "16",
+          "seatCount": 11
+        },
+        {
+          "rowNumber": "17",
+          "seatCount": 11
+        },
+        {
+          "rowNumber": "18",
+          "seatCount": 11
+        }
+      ]
+    },
+    "139": {
+      "sectionId": "139",
+      "name": "Loge 139",
+      "seatCount": 216,
+      "rowCount": 18,
+      "level": "field",
+      "priceLevel": "field",
+      "covered": false,
+      "avgSunExposure": 58,
+      "rows": [
+        {
+          "rowNumber": "1",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "2",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "3",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "4",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "5",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "6",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "7",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "8",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "9",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "10",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "11",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "12",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "13",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "14",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "15",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "16",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "17",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "18",
+          "seatCount": 12
+        }
+      ]
+    },
+    "140": {
+      "sectionId": "140",
+      "name": "Loge 140",
+      "seatCount": 216,
+      "rowCount": 18,
+      "level": "field",
+      "priceLevel": "field",
+      "covered": false,
+      "avgSunExposure": 58,
+      "rows": [
+        {
+          "rowNumber": "1",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "2",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "3",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "4",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "5",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "6",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "7",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "8",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "9",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "10",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "11",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "12",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "13",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "14",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "15",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "16",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "17",
+          "seatCount": 12
+        },
+        {
+          "rowNumber": "18",
+          "seatCount": 12
+        }
+      ]
+    }
+  },
+  "levels": {
+    "field": 111,
+    "loge": 0,
+    "upper": 0
+  }
+}

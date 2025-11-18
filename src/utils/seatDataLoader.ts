@@ -12,11 +12,11 @@ import type {
 } from '@/types/seat';
 import { toDataStadiumId, stripSectionSuffix } from '@/utils/ids';
 import { getSeatDataWorker } from './seatDataWorkerClient';
+import { seatDataCache } from './seatDataCache';
 
 /**
- * Cache for loaded seat data to avoid repeated imports
+ * Cache for loaded data - using localStorage for seat data, memory for metadata
  */
-const seatDataCache = new Map<string, SectionSeatingData>();
 const metadataCache = new Map<string, { metadata: SeatDataMetadata; stats: StadiumSeatingStats }>();
 const precomputedCache = new Map<string, Record<string, number>>();
 
@@ -36,11 +36,10 @@ export async function getSeatDataForSection(
   // Strip suffix from section ID to get the JSON filename
   const jsonSectionId = stripSectionSuffix(sectionId);
 
-  const cacheKey = `${seatDataStadiumId}-${jsonSectionId}`;
-
-  // Check cache first
-  if (seatDataCache.has(cacheKey)) {
-    return seatDataCache.get(cacheKey)!;
+  // Check localStorage cache first
+  const cachedData = seatDataCache.getSeatData<SectionSeatingData>(seatDataStadiumId, jsonSectionId);
+  if (cachedData) {
+    return cachedData;
   }
 
   try {
@@ -59,8 +58,8 @@ export async function getSeatDataForSection(
         return null;
       }
 
-      // Cache the data
-      seatDataCache.set(cacheKey, sectionData);
+      // Cache the data in localStorage
+      seatDataCache.setSeatData(seatDataStadiumId, jsonSectionId, sectionData);
 
       return sectionData;
     } catch (workerError) {
@@ -85,8 +84,8 @@ export async function getSeatDataForSection(
         return null;
       }
 
-      // Cache the data
-      seatDataCache.set(cacheKey, sectionData);
+      // Cache the data in localStorage
+      seatDataCache.setSeatData(seatDataStadiumId, jsonSectionId, sectionData);
 
       return sectionData;
     }
@@ -210,9 +209,8 @@ export async function getSeatDataForSections(
       const sectionId = sectionMapping.get(url);
       if (sectionId && data) {
         results.set(sectionId, data);
-        // Also cache individual sections
-        const cacheKey = `${seatDataStadiumId}-${stripSectionSuffix(sectionId)}`;
-        seatDataCache.set(cacheKey, data);
+        // Also cache individual sections in localStorage
+        seatDataCache.setSeatData(seatDataStadiumId, stripSectionSuffix(sectionId), data);
       }
     });
   } catch (error) {
@@ -266,7 +264,7 @@ export async function getAvailableSections(stadiumId: string): Promise<string[]>
  * Clear the seat data cache
  */
 export function clearSeatDataCache(): void {
-  seatDataCache.clear();
+  seatDataCache.clearAll();
   metadataCache.clear();
   precomputedCache.clear();
 }
@@ -275,8 +273,10 @@ export function clearSeatDataCache(): void {
  * Get cache statistics
  */
 export function getCacheStats() {
+  const localStorageStats = seatDataCache.getStats();
   return {
-    seatDataEntries: seatDataCache.size,
+    seatDataEntries: localStorageStats.entries,
+    seatDataSize: localStorageStats.totalSize,
     metadataEntries: metadataCache.size,
     precomputedEntries: precomputedCache.size,
   };

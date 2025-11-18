@@ -1,0 +1,1569 @@
+{
+  "stadiumId": "athletics",
+  "lastUpdated": "2025-11-18T00:19:46.382Z",
+  "totalSections": 11,
+  "totalSeats": 14014,
+  "sections": {
+    "101": {
+      "sectionId": "101",
+      "name": "Section 101",
+      "seatCount": 1073,
+      "rowCount": 29,
+      "level": "field",
+      "priceLevel": "field",
+      "covered": false,
+      "avgSunExposure": 57,
+      "rows": [
+        {
+          "rowNumber": "A",
+          "seatCount": 37
+        },
+        {
+          "rowNumber": "B",
+          "seatCount": 37
+        },
+        {
+          "rowNumber": "C",
+          "seatCount": 37
+        },
+        {
+          "rowNumber": "D",
+          "seatCount": 37
+        },
+        {
+          "rowNumber": "E",
+          "seatCount": 37
+        },
+        {
+          "rowNumber": "F",
+          "seatCount": 37
+        },
+        {
+          "rowNumber": "G",
+          "seatCount": 37
+        },
+        {
+          "rowNumber": "H",
+          "seatCount": 37
+        },
+        {
+          "rowNumber": "I",
+          "seatCount": 37
+        },
+        {
+          "rowNumber": "J",
+          "seatCount": 37
+        },
+        {
+          "rowNumber": "K",
+          "seatCount": 37
+        },
+        {
+          "rowNumber": "L",
+          "seatCount": 37
+        },
+        {
+          "rowNumber": "M",
+          "seatCount": 37
+        },
+        {
+          "rowNumber": "N",
+          "seatCount": 37
+        },
+        {
+          "rowNumber": "O",
+          "seatCount": 37
+        },
+        {
+          "rowNumber": "P",
+          "seatCount": 37
+        },
+        {
+          "rowNumber": "Q",
+          "seatCount": 37
+        },
+        {
+          "rowNumber": "R",
+          "seatCount": 37
+        },
+        {
+          "rowNumber": "S",
+          "seatCount": 37
+        },
+        {
+          "rowNumber": "T",
+          "seatCount": 37
+        },
+        {
+          "rowNumber": "U",
+          "seatCount": 37
+        },
+        {
+          "rowNumber": "V",
+          "seatCount": 37
+        },
+        {
+          "rowNumber": "W",
+          "seatCount": 37
+        },
+        {
+          "rowNumber": "X",
+          "seatCount": 37
+        },
+        {
+          "rowNumber": "Y",
+          "seatCount": 37
+        },
+        {
+          "rowNumber": "Z",
+          "seatCount": 37
+        },
+        {
+          "rowNumber": "AA",
+          "seatCount": 37
+        },
+        {
+          "rowNumber": "AB",
+          "seatCount": 37
+        },
+        {
+          "rowNumber": "AC",
+          "seatCount": 37
+        }
+      ]
+    },
+    "102": {
+      "sectionId": "102",
+      "name": "Section 102",
+      "seatCount": 1036,
+      "rowCount": 28,
+      "level": "field",
+      "priceLevel": "field",
+      "covered": false,
+      "avgSunExposure": 57,
+      "rows": [
+        {
+          "rowNumber": "A",
+          "seatCount": 37
+        },
+        {
+          "rowNumber": "B",
+          "seatCount": 37
+        },
+        {
+          "rowNumber": "C",
+          "seatCount": 37
+        },
+        {
+          "rowNumber": "D",
+          "seatCount": 37
+        },
+        {
+          "rowNumber": "E",
+          "seatCount": 37
+        },
+        {
+          "rowNumber": "F",
+          "seatCount": 37
+        },
+        {
+          "rowNumber": "G",
+          "seatCount": 37
+        },
+        {
+          "rowNumber": "H",
+          "seatCount": 37
+        },
+        {
+          "rowNumber": "I",
+          "seatCount": 37
+        },
+        {
+          "rowNumber": "J",
+          "seatCount": 37
+        },
+        {
+          "rowNumber": "K",
+          "seatCount": 37
+        },
+        {
+          "rowNumber": "L",
+          "seatCount": 37
+        },
+        {
+          "rowNumber": "M",
+          "seatCount": 37
+        },
+        {
+          "rowNumber": "N",
+          "seatCount": 37
+        },
+        {
+          "rowNumber": "O",
+          "seatCount": 37
+        },
+        {
+          "rowNumber": "P",
+          "seatCount": 37
+        },
+        {
+          "rowNumber": "Q",
+          "seatCount": 37
+        },
+        {
+          "rowNumber": "R",
+          "seatCount": 37
+        },
+        {
+          "rowNumber": "S",
+          "seatCount": 37
+        },
+        {
+          "rowNumber": "T",
+          "seatCount": 37
+        },
+        {
+          "rowNumber": "U",
+          "seatCount": 37
+        },
+        {
+          "rowNumber": "V",
+          "seatCount": 37
+        },
+        {
+          "rowNumber": "W",
+          "seatCount": 37
+        },
+        {
+          "rowNumber": "X",
+          "seatCount": 37
+        },
+        {
+          "rowNumber": "Y",
+          "seatCount": 37
+        },
+        {
+          "rowNumber": "Z",
+          "seatCount": 37
+        },
+        {
+          "rowNumber": "AA",
+          "seatCount": 37
+        },
+        {
+          "rowNumber": "AB",
+          "seatCount": 37
+        }
+      ]
+    },
+    "103": {
+      "sectionId": "103",
+      "name": "Section 103",
+      "seatCount": 1036,
+      "rowCount": 28,
+      "level": "field",
+      "priceLevel": "field",
+      "covered": false,
+      "avgSunExposure": 57,
+      "rows": [
+        {
+          "rowNumber": "A",
+          "seatCount": 37
+        },
+        {
+          "rowNumber": "B",
+          "seatCount": 37
+        },
+        {
+          "rowNumber": "C",
+          "seatCount": 37
+        },
+        {
+          "rowNumber": "D",
+          "seatCount": 37
+        },
+        {
+          "rowNumber": "E",
+          "seatCount": 37
+        },
+        {
+          "rowNumber": "F",
+          "seatCount": 37
+        },
+        {
+          "rowNumber": "G",
+          "seatCount": 37
+        },
+        {
+          "rowNumber": "H",
+          "seatCount": 37
+        },
+        {
+          "rowNumber": "I",
+          "seatCount": 37
+        },
+        {
+          "rowNumber": "J",
+          "seatCount": 37
+        },
+        {
+          "rowNumber": "K",
+          "seatCount": 37
+        },
+        {
+          "rowNumber": "L",
+          "seatCount": 37
+        },
+        {
+          "rowNumber": "M",
+          "seatCount": 37
+        },
+        {
+          "rowNumber": "N",
+          "seatCount": 37
+        },
+        {
+          "rowNumber": "O",
+          "seatCount": 37
+        },
+        {
+          "rowNumber": "P",
+          "seatCount": 37
+        },
+        {
+          "rowNumber": "Q",
+          "seatCount": 37
+        },
+        {
+          "rowNumber": "R",
+          "seatCount": 37
+        },
+        {
+          "rowNumber": "S",
+          "seatCount": 37
+        },
+        {
+          "rowNumber": "T",
+          "seatCount": 37
+        },
+        {
+          "rowNumber": "U",
+          "seatCount": 37
+        },
+        {
+          "rowNumber": "V",
+          "seatCount": 37
+        },
+        {
+          "rowNumber": "W",
+          "seatCount": 37
+        },
+        {
+          "rowNumber": "X",
+          "seatCount": 37
+        },
+        {
+          "rowNumber": "Y",
+          "seatCount": 37
+        },
+        {
+          "rowNumber": "Z",
+          "seatCount": 37
+        },
+        {
+          "rowNumber": "AA",
+          "seatCount": 37
+        },
+        {
+          "rowNumber": "AB",
+          "seatCount": 37
+        }
+      ]
+    },
+    "104": {
+      "sectionId": "104",
+      "name": "Senate 104",
+      "seatCount": 1393,
+      "rowCount": 34,
+      "level": "field",
+      "priceLevel": "field",
+      "covered": false,
+      "avgSunExposure": 58,
+      "rows": [
+        {
+          "rowNumber": "A",
+          "seatCount": 41
+        },
+        {
+          "rowNumber": "B",
+          "seatCount": 41
+        },
+        {
+          "rowNumber": "C",
+          "seatCount": 41
+        },
+        {
+          "rowNumber": "D",
+          "seatCount": 41
+        },
+        {
+          "rowNumber": "E",
+          "seatCount": 41
+        },
+        {
+          "rowNumber": "F",
+          "seatCount": 41
+        },
+        {
+          "rowNumber": "G",
+          "seatCount": 41
+        },
+        {
+          "rowNumber": "H",
+          "seatCount": 41
+        },
+        {
+          "rowNumber": "I",
+          "seatCount": 41
+        },
+        {
+          "rowNumber": "J",
+          "seatCount": 41
+        },
+        {
+          "rowNumber": "K",
+          "seatCount": 41
+        },
+        {
+          "rowNumber": "L",
+          "seatCount": 41
+        },
+        {
+          "rowNumber": "M",
+          "seatCount": 41
+        },
+        {
+          "rowNumber": "N",
+          "seatCount": 41
+        },
+        {
+          "rowNumber": "O",
+          "seatCount": 41
+        },
+        {
+          "rowNumber": "P",
+          "seatCount": 41
+        },
+        {
+          "rowNumber": "Q",
+          "seatCount": 41
+        },
+        {
+          "rowNumber": "R",
+          "seatCount": 41
+        },
+        {
+          "rowNumber": "S",
+          "seatCount": 41
+        },
+        {
+          "rowNumber": "T",
+          "seatCount": 41
+        },
+        {
+          "rowNumber": "U",
+          "seatCount": 41
+        },
+        {
+          "rowNumber": "V",
+          "seatCount": 41
+        },
+        {
+          "rowNumber": "W",
+          "seatCount": 41
+        },
+        {
+          "rowNumber": "X",
+          "seatCount": 41
+        },
+        {
+          "rowNumber": "Y",
+          "seatCount": 41
+        },
+        {
+          "rowNumber": "Z",
+          "seatCount": 41
+        },
+        {
+          "rowNumber": "AA",
+          "seatCount": 41
+        },
+        {
+          "rowNumber": "AB",
+          "seatCount": 41
+        },
+        {
+          "rowNumber": "AC",
+          "seatCount": 41
+        },
+        {
+          "rowNumber": "AD",
+          "seatCount": 41
+        },
+        {
+          "rowNumber": "AE",
+          "seatCount": 41
+        },
+        {
+          "rowNumber": "AF",
+          "seatCount": 41
+        },
+        {
+          "rowNumber": "AG",
+          "seatCount": 41
+        },
+        {
+          "rowNumber": "AH",
+          "seatCount": 40
+        }
+      ]
+    },
+    "105": {
+      "sectionId": "105",
+      "name": "Senate 105",
+      "seatCount": 1359,
+      "rowCount": 34,
+      "level": "field",
+      "priceLevel": "field",
+      "covered": false,
+      "avgSunExposure": 58,
+      "rows": [
+        {
+          "rowNumber": "A",
+          "seatCount": 40
+        },
+        {
+          "rowNumber": "B",
+          "seatCount": 40
+        },
+        {
+          "rowNumber": "C",
+          "seatCount": 40
+        },
+        {
+          "rowNumber": "D",
+          "seatCount": 40
+        },
+        {
+          "rowNumber": "E",
+          "seatCount": 40
+        },
+        {
+          "rowNumber": "F",
+          "seatCount": 40
+        },
+        {
+          "rowNumber": "G",
+          "seatCount": 40
+        },
+        {
+          "rowNumber": "H",
+          "seatCount": 40
+        },
+        {
+          "rowNumber": "I",
+          "seatCount": 40
+        },
+        {
+          "rowNumber": "J",
+          "seatCount": 40
+        },
+        {
+          "rowNumber": "K",
+          "seatCount": 40
+        },
+        {
+          "rowNumber": "L",
+          "seatCount": 40
+        },
+        {
+          "rowNumber": "M",
+          "seatCount": 40
+        },
+        {
+          "rowNumber": "N",
+          "seatCount": 40
+        },
+        {
+          "rowNumber": "O",
+          "seatCount": 40
+        },
+        {
+          "rowNumber": "P",
+          "seatCount": 40
+        },
+        {
+          "rowNumber": "Q",
+          "seatCount": 40
+        },
+        {
+          "rowNumber": "R",
+          "seatCount": 40
+        },
+        {
+          "rowNumber": "S",
+          "seatCount": 40
+        },
+        {
+          "rowNumber": "T",
+          "seatCount": 40
+        },
+        {
+          "rowNumber": "U",
+          "seatCount": 40
+        },
+        {
+          "rowNumber": "V",
+          "seatCount": 40
+        },
+        {
+          "rowNumber": "W",
+          "seatCount": 40
+        },
+        {
+          "rowNumber": "X",
+          "seatCount": 40
+        },
+        {
+          "rowNumber": "Y",
+          "seatCount": 40
+        },
+        {
+          "rowNumber": "Z",
+          "seatCount": 40
+        },
+        {
+          "rowNumber": "AA",
+          "seatCount": 40
+        },
+        {
+          "rowNumber": "AB",
+          "seatCount": 40
+        },
+        {
+          "rowNumber": "AC",
+          "seatCount": 40
+        },
+        {
+          "rowNumber": "AD",
+          "seatCount": 40
+        },
+        {
+          "rowNumber": "AE",
+          "seatCount": 40
+        },
+        {
+          "rowNumber": "AF",
+          "seatCount": 40
+        },
+        {
+          "rowNumber": "AG",
+          "seatCount": 40
+        },
+        {
+          "rowNumber": "AH",
+          "seatCount": 39
+        }
+      ]
+    },
+    "106": {
+      "sectionId": "106",
+      "name": "Senate 106",
+      "seatCount": 1359,
+      "rowCount": 34,
+      "level": "field",
+      "priceLevel": "field",
+      "covered": false,
+      "avgSunExposure": 58,
+      "rows": [
+        {
+          "rowNumber": "A",
+          "seatCount": 40
+        },
+        {
+          "rowNumber": "B",
+          "seatCount": 40
+        },
+        {
+          "rowNumber": "C",
+          "seatCount": 40
+        },
+        {
+          "rowNumber": "D",
+          "seatCount": 40
+        },
+        {
+          "rowNumber": "E",
+          "seatCount": 40
+        },
+        {
+          "rowNumber": "F",
+          "seatCount": 40
+        },
+        {
+          "rowNumber": "G",
+          "seatCount": 40
+        },
+        {
+          "rowNumber": "H",
+          "seatCount": 40
+        },
+        {
+          "rowNumber": "I",
+          "seatCount": 40
+        },
+        {
+          "rowNumber": "J",
+          "seatCount": 40
+        },
+        {
+          "rowNumber": "K",
+          "seatCount": 40
+        },
+        {
+          "rowNumber": "L",
+          "seatCount": 40
+        },
+        {
+          "rowNumber": "M",
+          "seatCount": 40
+        },
+        {
+          "rowNumber": "N",
+          "seatCount": 40
+        },
+        {
+          "rowNumber": "O",
+          "seatCount": 40
+        },
+        {
+          "rowNumber": "P",
+          "seatCount": 40
+        },
+        {
+          "rowNumber": "Q",
+          "seatCount": 40
+        },
+        {
+          "rowNumber": "R",
+          "seatCount": 40
+        },
+        {
+          "rowNumber": "S",
+          "seatCount": 40
+        },
+        {
+          "rowNumber": "T",
+          "seatCount": 40
+        },
+        {
+          "rowNumber": "U",
+          "seatCount": 40
+        },
+        {
+          "rowNumber": "V",
+          "seatCount": 40
+        },
+        {
+          "rowNumber": "W",
+          "seatCount": 40
+        },
+        {
+          "rowNumber": "X",
+          "seatCount": 40
+        },
+        {
+          "rowNumber": "Y",
+          "seatCount": 40
+        },
+        {
+          "rowNumber": "Z",
+          "seatCount": 40
+        },
+        {
+          "rowNumber": "AA",
+          "seatCount": 40
+        },
+        {
+          "rowNumber": "AB",
+          "seatCount": 40
+        },
+        {
+          "rowNumber": "AC",
+          "seatCount": 40
+        },
+        {
+          "rowNumber": "AD",
+          "seatCount": 40
+        },
+        {
+          "rowNumber": "AE",
+          "seatCount": 40
+        },
+        {
+          "rowNumber": "AF",
+          "seatCount": 40
+        },
+        {
+          "rowNumber": "AG",
+          "seatCount": 40
+        },
+        {
+          "rowNumber": "AH",
+          "seatCount": 39
+        }
+      ]
+    },
+    "107": {
+      "sectionId": "107",
+      "name": "Senate 107",
+      "seatCount": 1319,
+      "rowCount": 33,
+      "level": "field",
+      "priceLevel": "field",
+      "covered": false,
+      "avgSunExposure": 58,
+      "rows": [
+        {
+          "rowNumber": "A",
+          "seatCount": 40
+        },
+        {
+          "rowNumber": "B",
+          "seatCount": 40
+        },
+        {
+          "rowNumber": "C",
+          "seatCount": 40
+        },
+        {
+          "rowNumber": "D",
+          "seatCount": 40
+        },
+        {
+          "rowNumber": "E",
+          "seatCount": 40
+        },
+        {
+          "rowNumber": "F",
+          "seatCount": 40
+        },
+        {
+          "rowNumber": "G",
+          "seatCount": 40
+        },
+        {
+          "rowNumber": "H",
+          "seatCount": 40
+        },
+        {
+          "rowNumber": "I",
+          "seatCount": 40
+        },
+        {
+          "rowNumber": "J",
+          "seatCount": 40
+        },
+        {
+          "rowNumber": "K",
+          "seatCount": 40
+        },
+        {
+          "rowNumber": "L",
+          "seatCount": 40
+        },
+        {
+          "rowNumber": "M",
+          "seatCount": 40
+        },
+        {
+          "rowNumber": "N",
+          "seatCount": 40
+        },
+        {
+          "rowNumber": "O",
+          "seatCount": 40
+        },
+        {
+          "rowNumber": "P",
+          "seatCount": 40
+        },
+        {
+          "rowNumber": "Q",
+          "seatCount": 40
+        },
+        {
+          "rowNumber": "R",
+          "seatCount": 40
+        },
+        {
+          "rowNumber": "S",
+          "seatCount": 40
+        },
+        {
+          "rowNumber": "T",
+          "seatCount": 40
+        },
+        {
+          "rowNumber": "U",
+          "seatCount": 40
+        },
+        {
+          "rowNumber": "V",
+          "seatCount": 40
+        },
+        {
+          "rowNumber": "W",
+          "seatCount": 40
+        },
+        {
+          "rowNumber": "X",
+          "seatCount": 40
+        },
+        {
+          "rowNumber": "Y",
+          "seatCount": 40
+        },
+        {
+          "rowNumber": "Z",
+          "seatCount": 40
+        },
+        {
+          "rowNumber": "AA",
+          "seatCount": 40
+        },
+        {
+          "rowNumber": "AB",
+          "seatCount": 40
+        },
+        {
+          "rowNumber": "AC",
+          "seatCount": 40
+        },
+        {
+          "rowNumber": "AD",
+          "seatCount": 40
+        },
+        {
+          "rowNumber": "AE",
+          "seatCount": 40
+        },
+        {
+          "rowNumber": "AF",
+          "seatCount": 40
+        },
+        {
+          "rowNumber": "AG",
+          "seatCount": 39
+        }
+      ]
+    },
+    "108": {
+      "sectionId": "108",
+      "name": "Senate 108",
+      "seatCount": 1359,
+      "rowCount": 34,
+      "level": "field",
+      "priceLevel": "field",
+      "covered": false,
+      "avgSunExposure": 58,
+      "rows": [
+        {
+          "rowNumber": "A",
+          "seatCount": 40
+        },
+        {
+          "rowNumber": "B",
+          "seatCount": 40
+        },
+        {
+          "rowNumber": "C",
+          "seatCount": 40
+        },
+        {
+          "rowNumber": "D",
+          "seatCount": 40
+        },
+        {
+          "rowNumber": "E",
+          "seatCount": 40
+        },
+        {
+          "rowNumber": "F",
+          "seatCount": 40
+        },
+        {
+          "rowNumber": "G",
+          "seatCount": 40
+        },
+        {
+          "rowNumber": "H",
+          "seatCount": 40
+        },
+        {
+          "rowNumber": "I",
+          "seatCount": 40
+        },
+        {
+          "rowNumber": "J",
+          "seatCount": 40
+        },
+        {
+          "rowNumber": "K",
+          "seatCount": 40
+        },
+        {
+          "rowNumber": "L",
+          "seatCount": 40
+        },
+        {
+          "rowNumber": "M",
+          "seatCount": 40
+        },
+        {
+          "rowNumber": "N",
+          "seatCount": 40
+        },
+        {
+          "rowNumber": "O",
+          "seatCount": 40
+        },
+        {
+          "rowNumber": "P",
+          "seatCount": 40
+        },
+        {
+          "rowNumber": "Q",
+          "seatCount": 40
+        },
+        {
+          "rowNumber": "R",
+          "seatCount": 40
+        },
+        {
+          "rowNumber": "S",
+          "seatCount": 40
+        },
+        {
+          "rowNumber": "T",
+          "seatCount": 40
+        },
+        {
+          "rowNumber": "U",
+          "seatCount": 40
+        },
+        {
+          "rowNumber": "V",
+          "seatCount": 40
+        },
+        {
+          "rowNumber": "W",
+          "seatCount": 40
+        },
+        {
+          "rowNumber": "X",
+          "seatCount": 40
+        },
+        {
+          "rowNumber": "Y",
+          "seatCount": 40
+        },
+        {
+          "rowNumber": "Z",
+          "seatCount": 40
+        },
+        {
+          "rowNumber": "AA",
+          "seatCount": 40
+        },
+        {
+          "rowNumber": "AB",
+          "seatCount": 40
+        },
+        {
+          "rowNumber": "AC",
+          "seatCount": 40
+        },
+        {
+          "rowNumber": "AD",
+          "seatCount": 40
+        },
+        {
+          "rowNumber": "AE",
+          "seatCount": 40
+        },
+        {
+          "rowNumber": "AF",
+          "seatCount": 40
+        },
+        {
+          "rowNumber": "AG",
+          "seatCount": 39
+        },
+        {
+          "rowNumber": "AH",
+          "seatCount": 40
+        }
+      ]
+    },
+    "109": {
+      "sectionId": "109",
+      "name": "Senate 109",
+      "seatCount": 1360,
+      "rowCount": 34,
+      "level": "field",
+      "priceLevel": "field",
+      "covered": false,
+      "avgSunExposure": 58,
+      "rows": [
+        {
+          "rowNumber": "A",
+          "seatCount": 40
+        },
+        {
+          "rowNumber": "B",
+          "seatCount": 40
+        },
+        {
+          "rowNumber": "C",
+          "seatCount": 40
+        },
+        {
+          "rowNumber": "D",
+          "seatCount": 40
+        },
+        {
+          "rowNumber": "E",
+          "seatCount": 40
+        },
+        {
+          "rowNumber": "F",
+          "seatCount": 40
+        },
+        {
+          "rowNumber": "G",
+          "seatCount": 40
+        },
+        {
+          "rowNumber": "H",
+          "seatCount": 40
+        },
+        {
+          "rowNumber": "I",
+          "seatCount": 40
+        },
+        {
+          "rowNumber": "J",
+          "seatCount": 40
+        },
+        {
+          "rowNumber": "K",
+          "seatCount": 40
+        },
+        {
+          "rowNumber": "L",
+          "seatCount": 40
+        },
+        {
+          "rowNumber": "M",
+          "seatCount": 40
+        },
+        {
+          "rowNumber": "N",
+          "seatCount": 40
+        },
+        {
+          "rowNumber": "O",
+          "seatCount": 40
+        },
+        {
+          "rowNumber": "P",
+          "seatCount": 40
+        },
+        {
+          "rowNumber": "Q",
+          "seatCount": 40
+        },
+        {
+          "rowNumber": "R",
+          "seatCount": 40
+        },
+        {
+          "rowNumber": "S",
+          "seatCount": 40
+        },
+        {
+          "rowNumber": "T",
+          "seatCount": 40
+        },
+        {
+          "rowNumber": "U",
+          "seatCount": 40
+        },
+        {
+          "rowNumber": "V",
+          "seatCount": 40
+        },
+        {
+          "rowNumber": "W",
+          "seatCount": 40
+        },
+        {
+          "rowNumber": "X",
+          "seatCount": 40
+        },
+        {
+          "rowNumber": "Y",
+          "seatCount": 40
+        },
+        {
+          "rowNumber": "Z",
+          "seatCount": 40
+        },
+        {
+          "rowNumber": "AA",
+          "seatCount": 40
+        },
+        {
+          "rowNumber": "AB",
+          "seatCount": 40
+        },
+        {
+          "rowNumber": "AC",
+          "seatCount": 40
+        },
+        {
+          "rowNumber": "AD",
+          "seatCount": 40
+        },
+        {
+          "rowNumber": "AE",
+          "seatCount": 40
+        },
+        {
+          "rowNumber": "AF",
+          "seatCount": 40
+        },
+        {
+          "rowNumber": "AG",
+          "seatCount": 40
+        },
+        {
+          "rowNumber": "AH",
+          "seatCount": 40
+        }
+      ]
+    },
+    "110": {
+      "sectionId": "110",
+      "name": "Senate 110",
+      "seatCount": 1360,
+      "rowCount": 34,
+      "level": "field",
+      "priceLevel": "field",
+      "covered": false,
+      "avgSunExposure": 58,
+      "rows": [
+        {
+          "rowNumber": "A",
+          "seatCount": 40
+        },
+        {
+          "rowNumber": "B",
+          "seatCount": 40
+        },
+        {
+          "rowNumber": "C",
+          "seatCount": 40
+        },
+        {
+          "rowNumber": "D",
+          "seatCount": 40
+        },
+        {
+          "rowNumber": "E",
+          "seatCount": 40
+        },
+        {
+          "rowNumber": "F",
+          "seatCount": 40
+        },
+        {
+          "rowNumber": "G",
+          "seatCount": 40
+        },
+        {
+          "rowNumber": "H",
+          "seatCount": 40
+        },
+        {
+          "rowNumber": "I",
+          "seatCount": 40
+        },
+        {
+          "rowNumber": "J",
+          "seatCount": 40
+        },
+        {
+          "rowNumber": "K",
+          "seatCount": 40
+        },
+        {
+          "rowNumber": "L",
+          "seatCount": 40
+        },
+        {
+          "rowNumber": "M",
+          "seatCount": 40
+        },
+        {
+          "rowNumber": "N",
+          "seatCount": 40
+        },
+        {
+          "rowNumber": "O",
+          "seatCount": 40
+        },
+        {
+          "rowNumber": "P",
+          "seatCount": 40
+        },
+        {
+          "rowNumber": "Q",
+          "seatCount": 40
+        },
+        {
+          "rowNumber": "R",
+          "seatCount": 40
+        },
+        {
+          "rowNumber": "S",
+          "seatCount": 40
+        },
+        {
+          "rowNumber": "T",
+          "seatCount": 40
+        },
+        {
+          "rowNumber": "U",
+          "seatCount": 40
+        },
+        {
+          "rowNumber": "V",
+          "seatCount": 40
+        },
+        {
+          "rowNumber": "W",
+          "seatCount": 40
+        },
+        {
+          "rowNumber": "X",
+          "seatCount": 40
+        },
+        {
+          "rowNumber": "Y",
+          "seatCount": 40
+        },
+        {
+          "rowNumber": "Z",
+          "seatCount": 40
+        },
+        {
+          "rowNumber": "AA",
+          "seatCount": 40
+        },
+        {
+          "rowNumber": "AB",
+          "seatCount": 40
+        },
+        {
+          "rowNumber": "AC",
+          "seatCount": 40
+        },
+        {
+          "rowNumber": "AD",
+          "seatCount": 40
+        },
+        {
+          "rowNumber": "AE",
+          "seatCount": 40
+        },
+        {
+          "rowNumber": "AF",
+          "seatCount": 40
+        },
+        {
+          "rowNumber": "AG",
+          "seatCount": 40
+        },
+        {
+          "rowNumber": "AH",
+          "seatCount": 40
+        }
+      ]
+    },
+    "111": {
+      "sectionId": "111",
+      "name": "Senate 111",
+      "seatCount": 1360,
+      "rowCount": 34,
+      "level": "field",
+      "priceLevel": "field",
+      "covered": false,
+      "avgSunExposure": 58,
+      "rows": [
+        {
+          "rowNumber": "A",
+          "seatCount": 40
+        },
+        {
+          "rowNumber": "B",
+          "seatCount": 40
+        },
+        {
+          "rowNumber": "C",
+          "seatCount": 40
+        },
+        {
+          "rowNumber": "D",
+          "seatCount": 40
+        },
+        {
+          "rowNumber": "E",
+          "seatCount": 40
+        },
+        {
+          "rowNumber": "F",
+          "seatCount": 40
+        },
+        {
+          "rowNumber": "G",
+          "seatCount": 40
+        },
+        {
+          "rowNumber": "H",
+          "seatCount": 40
+        },
+        {
+          "rowNumber": "I",
+          "seatCount": 40
+        },
+        {
+          "rowNumber": "J",
+          "seatCount": 40
+        },
+        {
+          "rowNumber": "K",
+          "seatCount": 40
+        },
+        {
+          "rowNumber": "L",
+          "seatCount": 40
+        },
+        {
+          "rowNumber": "M",
+          "seatCount": 40
+        },
+        {
+          "rowNumber": "N",
+          "seatCount": 40
+        },
+        {
+          "rowNumber": "O",
+          "seatCount": 40
+        },
+        {
+          "rowNumber": "P",
+          "seatCount": 40
+        },
+        {
+          "rowNumber": "Q",
+          "seatCount": 40
+        },
+        {
+          "rowNumber": "R",
+          "seatCount": 40
+        },
+        {
+          "rowNumber": "S",
+          "seatCount": 40
+        },
+        {
+          "rowNumber": "T",
+          "seatCount": 40
+        },
+        {
+          "rowNumber": "U",
+          "seatCount": 40
+        },
+        {
+          "rowNumber": "V",
+          "seatCount": 40
+        },
+        {
+          "rowNumber": "W",
+          "seatCount": 40
+        },
+        {
+          "rowNumber": "X",
+          "seatCount": 40
+        },
+        {
+          "rowNumber": "Y",
+          "seatCount": 40
+        },
+        {
+          "rowNumber": "Z",
+          "seatCount": 40
+        },
+        {
+          "rowNumber": "AA",
+          "seatCount": 40
+        },
+        {
+          "rowNumber": "AB",
+          "seatCount": 40
+        },
+        {
+          "rowNumber": "AC",
+          "seatCount": 40
+        },
+        {
+          "rowNumber": "AD",
+          "seatCount": 40
+        },
+        {
+          "rowNumber": "AE",
+          "seatCount": 40
+        },
+        {
+          "rowNumber": "AF",
+          "seatCount": 40
+        },
+        {
+          "rowNumber": "AG",
+          "seatCount": 40
+        },
+        {
+          "rowNumber": "AH",
+          "seatCount": 40
+        }
+      ]
+    }
+  },
+  "levels": {
+    "field": 11,
+    "loge": 0,
+    "upper": 0
+  }
+}

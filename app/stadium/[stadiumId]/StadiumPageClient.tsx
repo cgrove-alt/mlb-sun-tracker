@@ -27,10 +27,12 @@ const SeatRecommendationsSection = dynamic(
   }
 );
 
-const IndividualSeatRecommendationsSection = dynamic(
-  () => import('../../../src/components/IndividualSeatRecommendationsSection'),
+// REMOVED: IndividualSeatRecommendationsSection - Was loading 16-28MB of data
+// Replaced with lightweight SectionNavigationGrid for better performance
+const SectionNavigationGrid = dynamic(
+  () => import('../../../src/components/SectionNavigationGrid'),
   {
-    loading: () => <LoadingSpinner />,
+    loading: () => <LoadingSpinner message="Loading sections..." />,
     ssr: false,
   }
 );
@@ -195,9 +197,10 @@ export default function StadiumPageClient({
         )}
       </div>
 
-      {/* Individual Seat-Level Recommendations */}
+      {/* Section Navigation - Progressive Loading Pattern */}
+      {/* Users select a section first, then view seats within that section */}
       <div className="mt-8" style={{ display: 'block' }}>
-        <IndividualSeatRecommendationsSection stadiumId={stadium.id} />
+        <SectionNavigationGrid stadiumId={stadium.id} sections={sections} />
       </div>
     </>
   );
