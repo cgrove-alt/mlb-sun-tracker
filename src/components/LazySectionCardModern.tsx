@@ -60,7 +60,7 @@ const LazySectionCardModernComponent: React.FC<LazySectionCardProps> = ({
     announceToScreenReader(announcement, 'polite');
   };
 
-  return (
+  const cardContent = (
     <div
       ref={ref}
       className={`
@@ -157,6 +157,14 @@ const LazySectionCardModernComponent: React.FC<LazySectionCardProps> = ({
         </div>
       )}
     </div>
+  );
+
+  return stadiumId ? (
+    <Link href={`/stadium/${stadiumId}/section/${section.id}`} className="block">
+      {cardContent}
+    </Link>
+  ) : (
+    cardContent
   );
 };
 
