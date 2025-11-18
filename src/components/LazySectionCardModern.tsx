@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import Link from 'next/link';
 import { useIntersectionObserver } from '../hooks/useIntersectionObserver';
 import { useHapticFeedback } from '../hooks/useHapticFeedback';
 import type { StadiumSection } from '../data/stadiumSectionTypes';
@@ -11,6 +12,7 @@ interface LazySectionCardProps {
   inSun: boolean;
   index: number;
   timeInSun?: number;
+  stadiumId?: string;
 }
 
 const LazySectionCardModernComponent: React.FC<LazySectionCardProps> = ({
@@ -19,6 +21,7 @@ const LazySectionCardModernComponent: React.FC<LazySectionCardProps> = ({
   inSun,
   index,
   timeInSun,
+  stadiumId,
 }) => {
   const [ref, isIntersecting] = useIntersectionObserver({
     threshold: 0.01,
@@ -99,8 +102,8 @@ const LazySectionCardModernComponent: React.FC<LazySectionCardProps> = ({
             </div>
           </div>
 
-          {/* Level badge - always shown */}
-          <div className="flex flex-wrap gap-2">
+          {/* Level badge and View Seats button */}
+          <div className="flex items-center justify-between gap-2">
             <span className={`
               inline-flex items-center gap-1 px-3 py-1 rounded-full text-xs font-medium
               ${section.level === 'field' ? 'bg-purple-100 text-purple-700' :
@@ -117,6 +120,23 @@ const LazySectionCardModernComponent: React.FC<LazySectionCardProps> = ({
               {section.level === 'suite' && <CrownIcon size={14} />}
               <span>{section.level.charAt(0).toUpperCase() + section.level.slice(1)} Level</span>
             </span>
+
+            {/* View Seats button */}
+            {stadiumId && (
+              <Link
+                href={`/stadium/${stadiumId}/section/${section.id}`}
+                onClick={(e) => {
+                  e.stopPropagation();
+                  haptic.light();
+                }}
+                className="inline-flex items-center gap-1 px-3 py-1 rounded-full text-xs font-medium bg-accent-600 text-white hover:bg-accent-700 transition-colors shadow-sm"
+              >
+                <span>View Seats</span>
+                <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                </svg>
+              </Link>
+            )}
           </div>
 
           {/* Animated hover indicator */}
