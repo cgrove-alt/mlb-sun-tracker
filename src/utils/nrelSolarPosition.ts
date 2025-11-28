@@ -398,6 +398,49 @@ function normalizeAngle(angle: number): number {
 }
 
 /**
+ * Get timezone offset for a given date and IANA timezone string
+ * Uses Intl.DateTimeFormat for accurate DST-aware offset calculation
+ */
+function getTimezoneOffset(date: Date, timezone: string): number {
+  try {
+    // Get formatted time parts in the target timezone
+    const formatter = new Intl.DateTimeFormat('en-US', {
+      timeZone: timezone,
+      year: 'numeric',
+      month: '2-digit',
+      day: '2-digit',
+      hour: '2-digit',
+      minute: '2-digit',
+      second: '2-digit',
+      hour12: false
+    });
+
+    const parts = formatter.formatToParts(date);
+    const getPart = (type: string) => parseInt(parts.find(p => p.type === type)?.value || '0', 10);
+
+    // Create a date object representing the local time in target timezone
+    const tzDate = new Date(
+      getPart('year'),
+      getPart('month') - 1,
+      getPart('day'),
+      getPart('hour'),
+      getPart('minute'),
+      getPart('second')
+    );
+
+    // Calculate offset: UTC time - local time in target timezone
+    const utcTime = date.getTime();
+    const tzTime = tzDate.getTime() + (tzDate.getTimezoneOffset() * 60 * 1000);
+    const offsetMs = tzTime - utcTime;
+
+    return offsetMs / (60 * 60 * 1000); // Convert to hours
+  } catch {
+    // Fallback for unsupported timezones
+    return -date.getTimezoneOffset() / 60;
+  }
+}
+
+/**
  * Backward compatibility wrapper
  * This function provides the same interface as the existing getSunPosition
  * @param date - Date object (local time, will be converted to UTC)
@@ -416,53 +459,31 @@ export function getSunPositionNREL(
   azimuthDegrees: number;
   altitudeDegrees: number;
 } {
-  // The input date is in local time, we need UTC for NREL
-  // Use the provided timezone if available, otherwise use browser timezone
-  let timeZoneOffset: number;
-  
-  if (timezone) {
-    // Use proper timezone conversion if timezone is provided
-    // For now, use a simplified approach until the module is properly integrated
-    // This will be replaced with proper timezone handling
-    const month = date.getMonth();
-    if (timezone === 'America/New_York') {
-      timeZoneOffset = (month >= 2 && month <= 10) ? -4 : -5; // EDT/EST
-    } else if (timezone === 'America/Los_Angeles') {
-      timeZoneOffset = (month >= 2 && month <= 10) ? -7 : -8; // PDT/PST
-    } else if (timezone === 'America/Chicago') {
-      timeZoneOffset = (month >= 2 && month <= 10) ? -5 : -6; // CDT/CST
-    } else if (timezone === 'America/Phoenix') {
-      timeZoneOffset = -7; // MST (no DST)
-    } else {
-      // Fallback to browser timezone
-      timeZoneOffset = -date.getTimezoneOffset() / 60;
-    }
-  } else {
-    // Use browser's timezone offset as fallback
-    timeZoneOffset = -date.getTimezoneOffset() / 60;
-  }
-  
-  // NREL needs UTC time, so ensure we're passing UTC
+  // Calculate timezone offset accurately using Intl API
+  const timeZoneOffset = timezone
+    ? getTimezoneOffset(date, timezone)
+    : -date.getTimezoneOffset() / 60;
+
+  // NREL needs UTC time - the Date object already stores UTC internally
   const result = computeSunPosition(
     date,
     latitude,
     longitude,
     timeZoneOffset
   );
-  
+
   // Convert altitude to radians for compatibility
   const altitudeRadians = toRadians(result.elevation);
-  
+
   // NREL already provides azimuth in correct compass degrees (0=N, 90=E, 180=S, 270=W)
   // For SunCalc compatibility, convert to radians with its convention
   // SunCalc: azimuth in radians where 0 = south, π = north
-  // But for our use, we want to keep compass degrees as primary
-  
+
   // Convert NREL compass azimuth to SunCalc radians
   // NREL: 0=N, 90=E, 180=S, 270=W (degrees)
   // SunCalc: 0=S, π=N (radians, mathematical angle from south)
   const sunCalcAzimuthRad = toRadians((result.azimuth + 180) % 360) - Math.PI;
-  
+
   return {
     azimuth: sunCalcAzimuthRad, // SunCalc-compatible radians
     altitude: altitudeRadians,   // Altitude in radians

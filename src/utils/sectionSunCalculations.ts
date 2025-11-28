@@ -8,8 +8,8 @@ export function isSectionInSun(section: StadiumSection, sunAzimuth: number, sunE
   // If sun is below horizon, no sections are sunny
   if (sunElevation < 0) return false;
 
-  // For covered sections, only high sun angles can penetrate partial canopies
-  if (section.covered && sunElevation < 30) return false;
+  // Covered sections ALWAYS have 0% sun exposure - they have permanent overhead coverage
+  if (section.covered) return false;
 
   // Normalize angles to 0-360 range
   const normalizeAngle = (angle: number) => ((angle % 360) + 360) % 360;
@@ -38,9 +38,8 @@ export function isSectionInSun(section: StadiumSection, sunAzimuth: number, sunE
 export function getSectionSunExposure(section: StadiumSection, sunElevation: number, sunAzimuth: number): number {
   if (sunElevation < 0) return 0;
 
-  // For covered sections, still allow some sun exposure for high sun angles (partial canopies)
-  const coverageReduction = section.covered ? 0.3 : 1.0; // Covered sections get 30% of normal exposure
-  if (section.covered && sunElevation < 30) return 0; // Low sun blocked by canopy
+  // Covered sections ALWAYS have 0% sun exposure - they have permanent overhead coverage
+  if (section.covered) return 0;
 
   // Check if section is actually in sun first
   if (!isSectionInSun(section, sunAzimuth, sunElevation)) return 0;
@@ -88,7 +87,7 @@ export function getSectionSunExposure(section: StadiumSection, sunElevation: num
   }
 
   // Combine all factors with adjusted formula for more realistic values
-  const exposure = elevationFactor * angleFactor * levelMultiplier * middayBoost * coverageReduction * 100;
+  const exposure = elevationFactor * angleFactor * levelMultiplier * middayBoost * 100;
 
   return Math.round(Math.max(0, Math.min(100, exposure)));
 }

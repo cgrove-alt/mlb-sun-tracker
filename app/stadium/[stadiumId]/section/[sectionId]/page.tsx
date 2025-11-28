@@ -18,6 +18,8 @@ import { SeatDetailModal } from '../../../../../src/components/SeatDetailModal';
 import { useSeatLevelSunCalculations, SeatSunExposure } from '../../../../../src/hooks/useSeatLevelSunCalculations';
 import { SunPosition, getSunPosition } from '../../../../../src/utils/sunCalculations';
 import { MLB_STADIUMS } from '../../../../../src/data/stadiums';
+import { getStadiumCompleteData } from '../../../../../src/data/stadium-data-aggregator';
+import { BestShadeTime } from '../../../../../src/components/BestShadeTime';
 
 export default function SectionDetailPage() {
   const params = useParams();
@@ -31,7 +33,15 @@ export default function SectionDetailPage() {
     [stadiumId]
   );
 
-  // For now, use current time. In production, this would come from GameSelector
+  // Get section details from stadium data
+  const section = useMemo(() => {
+    if (!stadiumId) return null;
+    const { sections } = getStadiumCompleteData(stadiumId, 'MLB');
+    return sections.find(s => s.id === sectionId) || null;
+  }, [stadiumId, sectionId]);
+
+  // Date/time state
+  const [selectedDate] = useState(() => new Date().toISOString().split('T')[0]);
   const [gameTime] = useState(() => new Date());
   const sunPosition: SunPosition | null = useMemo(() => {
     if (!stadium) return null;
@@ -166,6 +176,26 @@ export default function SectionDetailPage() {
                 </div>
               </div>
             </div>
+
+            {/* Best Times for Shade */}
+            {section && stadium && (
+              <div className="mb-8">
+                <BestShadeTime
+                  section={{
+                    id: section.id,
+                    name: section.name,
+                    level: section.level as 'field' | 'lower' | 'club' | 'upper' | 'suite',
+                    baseAngle: section.baseAngle,
+                    angleSpan: section.angleSpan,
+                    covered: section.covered,
+                  }}
+                  stadiumLat={stadium.latitude}
+                  stadiumLon={stadium.longitude}
+                  stadiumTimezone={stadium.timezone || 'America/New_York'}
+                  selectedDate={selectedDate}
+                />
+              </div>
+            )}
 
             {/* Best Seats Recommendation */}
             {bestSeats.length > 0 && (
