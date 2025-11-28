@@ -99,17 +99,39 @@ export function useSunCalculations({
     // Simplified calculation for main thread
     // In production, this would import the actual calculation function
     setTimeout(() => {
-      const results = sections.map(section => ({
-        sectionId: section.id,
-        sunExposure: Math.random() * 100,
-        shadePercentage: Math.random() * 100,
-      }));
-      
+      const results = sections.map(section => {
+        // Calculate a basic sun exposure based on section properties
+        let sunExposure = 50; // Base exposure
+
+        // Adjust based on section level
+        if (section.level === 'upper') {
+          sunExposure -= 20; // Upper deck has more roof coverage
+        } else if (section.level === 'suite' || section.level === 'club') {
+          sunExposure -= 30; // Premium sections usually covered
+        }
+
+        // Adjust based on sun position
+        const altitudeFactor = (sunPosition.altitudeDegrees / 90) * 30;
+        sunExposure += altitudeFactor;
+
+        // Ensure within bounds
+        sunExposure = Math.max(0, Math.min(100, sunExposure));
+
+        // Return in SeatingSectionSun format
+        return {
+          section,  // Keep original section object
+          inSun: sunExposure > 50,
+          sunExposure,
+          timeInSun: Math.round(sunExposure * 1.8),  // ~180 minutes * percentage
+          percentageOfGameInSun: sunExposure
+        };
+      });
+
       calculationCache.set(cacheKey, results);
       setData(results);
       setIsLoading(false);
     }, 100);
-  }, [sections, cacheKey]);
+  }, [sections, cacheKey, sunPosition.altitudeDegrees]);
   
   useEffect(() => {
     calculate();
