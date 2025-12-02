@@ -447,6 +447,7 @@ function UnifiedAppContent() {
                   loading={loadingSections}
                   calculationProgress={null}
                   showFilters={true}
+                  stadiumId={selectedVenue?.id}
                 />
               )}
             </div>
