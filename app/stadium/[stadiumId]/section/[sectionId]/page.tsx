@@ -12,7 +12,7 @@
 'use client';
 
 import React, { useState, useMemo } from 'react';
-import { useParams, useRouter } from 'next/navigation';
+import { useParams, useRouter, useSearchParams } from 'next/navigation';
 import { SeatGrid } from '../../../../../src/components/SeatGrid';
 import { SeatDetailModal } from '../../../../../src/components/SeatDetailModal';
 import { useSeatLevelSunCalculations, SeatSunExposure } from '../../../../../src/hooks/useSeatLevelSunCalculations';
@@ -24,6 +24,7 @@ import { BestShadeTime } from '../../../../../src/components/BestShadeTime';
 export default function SectionDetailPage() {
   const params = useParams();
   const router = useRouter();
+  const searchParams = useSearchParams();
   const stadiumId = params.stadiumId as string;
   const sectionId = params.sectionId as string;
 
@@ -40,9 +41,22 @@ export default function SectionDetailPage() {
     return sections.find(s => s.id === sectionId) || null;
   }, [stadiumId, sectionId]);
 
-  // Date/time state
-  const [selectedDate, setSelectedDate] = useState(() => new Date().toISOString().split('T')[0]);
-  const [selectedTime, setSelectedTime] = useState('13:10'); // Default 1:10 PM game time
+  // Date/time state - read from URL params or use defaults
+  const [selectedDate, setSelectedDate] = useState(() => {
+    const dateParam = searchParams.get('date');
+    if (dateParam && /^\d{4}-\d{2}-\d{2}$/.test(dateParam)) {
+      return dateParam;
+    }
+    return new Date().toISOString().split('T')[0];
+  });
+
+  const [selectedTime, setSelectedTime] = useState(() => {
+    const timeParam = searchParams.get('time');
+    if (timeParam && /^\d{2}:\d{2}$/.test(timeParam)) {
+      return timeParam;
+    }
+    return '13:10'; // Default 1:10 PM game time
+  });
 
   // Combine date and time into a single Date object
   const gameTime = useMemo(() => {

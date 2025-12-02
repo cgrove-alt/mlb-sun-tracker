@@ -448,6 +448,8 @@ function UnifiedAppContent() {
                   calculationProgress={null}
                   showFilters={true}
                   stadiumId={selectedVenue?.id}
+                  gameDate={gameDateTime?.toISOString().split('T')[0]}
+                  gameTime={gameDateTime?.toTimeString().slice(0, 5)}
                 />
               )}
             </div>

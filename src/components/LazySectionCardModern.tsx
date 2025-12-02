@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useMemo } from 'react';
 import Link from 'next/link';
 import { useIntersectionObserver } from '../hooks/useIntersectionObserver';
 import { useHapticFeedback } from '../hooks/useHapticFeedback';
@@ -13,6 +13,8 @@ interface LazySectionCardProps {
   index: number;
   timeInSun?: number;
   stadiumId?: string;
+  gameDate?: string;   // yyyy-MM-dd format
+  gameTime?: string;   // HH:mm format
 }
 
 const LazySectionCardModernComponent: React.FC<LazySectionCardProps> = ({
@@ -22,6 +24,8 @@ const LazySectionCardModernComponent: React.FC<LazySectionCardProps> = ({
   index,
   timeInSun,
   stadiumId,
+  gameDate,
+  gameTime,
 }) => {
   const [ref, isIntersecting] = useIntersectionObserver({
     threshold: 0.01,
@@ -30,6 +34,17 @@ const LazySectionCardModernComponent: React.FC<LazySectionCardProps> = ({
   const [isLoaded, setIsLoaded] = useState(false);
   const haptic = useHapticFeedback();
   const roundedExposure = Math.round(sunExposure);
+
+  // Build URL with query parameters for date/time
+  const sectionUrl = useMemo(() => {
+    if (!stadiumId) return '#';
+    const base = `/stadium/${stadiumId}/section/${section.id}`;
+    const params = new URLSearchParams();
+    if (gameDate) params.set('date', gameDate);
+    if (gameTime) params.set('time', gameTime);
+    const queryString = params.toString();
+    return queryString ? `${base}?${queryString}` : base;
+  }, [stadiumId, section.id, gameDate, gameTime]);
 
   useEffect(() => {
     if (isIntersecting && !isLoaded) {
@@ -124,7 +139,7 @@ const LazySectionCardModernComponent: React.FC<LazySectionCardProps> = ({
             {/* View Seats button */}
             {stadiumId && (
               <Link
-                href={`/stadium/${stadiumId}/section/${section.id}`}
+                href={sectionUrl}
                 onClick={(e) => {
                   e.stopPropagation();
                   haptic.light();
@@ -160,7 +175,7 @@ const LazySectionCardModernComponent: React.FC<LazySectionCardProps> = ({
   );
 
   return stadiumId ? (
-    <Link href={`/stadium/${stadiumId}/section/${section.id}`} className="block">
+    <Link href={sectionUrl} className="block">
       {cardContent}
     </Link>
   ) : (
@@ -173,6 +188,8 @@ export const LazySectionCardModern = React.memo(LazySectionCardModernComponent, 
     prevProps.section.id === nextProps.section.id &&
     prevProps.sunExposure === nextProps.sunExposure &&
     prevProps.inSun === nextProps.inSun &&
-    prevProps.index === nextProps.index
+    prevProps.index === nextProps.index &&
+    prevProps.gameDate === nextProps.gameDate &&
+    prevProps.gameTime === nextProps.gameTime
   );
 });

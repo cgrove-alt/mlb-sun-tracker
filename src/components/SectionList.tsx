@@ -15,6 +15,8 @@ interface SectionListProps {
   calculationProgress?: { completed: number; total: number } | null;
   showFilters?: boolean;
   stadiumId?: string;
+  gameDate?: string;   // yyyy-MM-dd format
+  gameTime?: string;   // HH:mm format
 }
 
 export const SectionList: React.FC<SectionListProps> = ({
@@ -22,7 +24,9 @@ export const SectionList: React.FC<SectionListProps> = ({
   loading = false,
   calculationProgress,
   showFilters = false,
-  stadiumId
+  stadiumId,
+  gameDate,
+  gameTime
 }) => {
   const [sortBy, setSortBy] = useState<'name' | 'exposure' | 'level' | 'price'>(() => {
     return preferencesStorage.get('sortBy', 'exposure');
@@ -376,6 +380,8 @@ export const SectionList: React.FC<SectionListProps> = ({
                 index={index}
                 timeInSun={sectionData.timeInSun}
                 stadiumId={stadiumId}
+                gameDate={gameDate}
+                gameTime={gameTime}
               />
             ))}
           </div>

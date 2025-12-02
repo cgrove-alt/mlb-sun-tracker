@@ -390,6 +390,8 @@ export const SeatRecommendationsSection: React.FC<SeatRecommendationsSectionProp
           loading={false}
           showFilters={true}
           stadiumId={stadiumId}
+          gameDate={gameDate instanceof Date ? gameDate.toISOString().split('T')[0] : undefined}
+          gameTime={gameTime}
         />
       </div>
 
