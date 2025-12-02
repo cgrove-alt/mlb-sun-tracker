@@ -67,8 +67,8 @@ export function BestShadeTime({
       }
 
       // Calculate sun exposure for this section at this time
-      const inSun = isSectionInSun(section, sunPos.azimuthDegrees, sunPos.altitudeDegrees);
-      const exposure = getSectionSunExposure(section, sunPos.altitudeDegrees, sunPos.azimuthDegrees);
+      const inSun = isSectionInSun(section, sunPos.azimuthDegrees, sunPos.altitudeDegrees, stadiumOrientation);
+      const exposure = getSectionSunExposure(section, sunPos.altitudeDegrees, sunPos.azimuthDegrees, stadiumOrientation);
 
       return {
         time: `${hour.toString().padStart(2, '0')}:${minute.toString().padStart(2, '0')}`,
@@ -77,7 +77,7 @@ export function BestShadeTime({
         inShade: !inSun || exposure < 30,
       };
     });
-  }, [section, stadiumLat, stadiumLon, stadiumTimezone, selectedDate]);
+  }, [section, stadiumLat, stadiumLon, stadiumTimezone, stadiumOrientation, selectedDate]);
 
   // Find the best times for shade
   const bestTimes = useMemo(() => {
