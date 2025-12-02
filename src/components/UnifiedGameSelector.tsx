@@ -131,9 +131,9 @@ export const UnifiedGameSelector: React.FC<UnifiedGameSelectorProps> = ({
       const now = new Date();
       const currentYear = now.getFullYear();
       // For MiLB, use 30 days due to API limitation with multiple sport IDs
-      const endDate = selectedVenue.league === 'MiLB' 
-        ? new Date(now.getTime() + 30 * 24 * 60 * 60 * 1000) 
-        : new Date(currentYear, 9, 31); // End of October for MLB
+      const endDate = selectedVenue.league === 'MiLB'
+        ? new Date(now.getTime() + 30 * 24 * 60 * 60 * 1000)
+        : new Date(currentYear + 1, 9, 31); // End of October next year for MLB
       
       if (selectedVenue.league === 'MLB') {
         const schedule = await mlbApi.getSchedule(

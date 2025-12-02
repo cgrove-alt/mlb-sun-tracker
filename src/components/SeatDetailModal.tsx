@@ -4,8 +4,8 @@
  * Shows detailed information about a selected seat, including:
  * - Row and seat number
  * - Current sun exposure percentage
- * - Sun exposure timeline throughout the day
- * - Recommendations for similar seats
+ * - 3D coordinates
+ * - Shade/sun recommendations
  */
 
 'use client';
@@ -174,19 +174,6 @@ export function SeatDetailModal({
               </div>
             </div>
 
-            {/* Timeline placeholder */}
-            <div className="bg-gray-800 rounded-lg p-4 mb-6">
-              <div className="text-sm text-gray-400 mb-3">
-                Sun Exposure Timeline
-              </div>
-              <div className="text-center text-gray-500 py-8">
-                Timeline visualization coming soon
-                <div className="text-xs mt-2">
-                  Will show sun exposure throughout the day
-                </div>
-              </div>
-            </div>
-
             {/* Recommendations */}
             <div className="bg-gray-800 rounded-lg p-4">
               <div className="text-sm text-gray-400 mb-3">
@@ -211,15 +198,12 @@ export function SeatDetailModal({
           </div>
 
           {/* Footer */}
-          <div className="bg-gray-800 px-6 py-4 flex justify-end gap-3">
+          <div className="bg-gray-800 px-6 py-4 flex justify-end">
             <button
               onClick={onClose}
               className="px-4 py-2 bg-gray-700 hover:bg-gray-600 text-white rounded-lg transition-colors"
             >
               Close
-            </button>
-            <button className="px-4 py-2 bg-blue-600 hover:bg-blue-500 text-white rounded-lg transition-colors">
-              Find Similar Seats
             </button>
           </div>
         </div>

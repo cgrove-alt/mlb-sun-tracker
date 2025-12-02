@@ -86,7 +86,7 @@ export class MLBApiService {
     async (startDate?: string, endDate?: string): Promise<MLBGame[]> => {
     const today = new Date();
     const defaultStart = startDate || today.toISOString().split('T')[0];
-    const defaultEnd = endDate || new Date(today.getTime() + 180 * 24 * 60 * 60 * 1000).toISOString().split('T')[0];
+    const defaultEnd = endDate || new Date(today.getTime() + 365 * 24 * 60 * 60 * 1000).toISOString().split('T')[0];
     
     // Validate dates
     if (startDate && !validateDate(startDate)) {
@@ -147,7 +147,7 @@ export class MLBApiService {
       
       const today = new Date();
       const defaultStart = startDate || today.toISOString().split('T')[0];
-      const defaultEnd = endDate || new Date(today.getTime() + 180 * 24 * 60 * 60 * 1000).toISOString().split('T')[0];
+      const defaultEnd = endDate || new Date(today.getTime() + 365 * 24 * 60 * 60 * 1000).toISOString().split('T')[0];
       
       // Validate dates
       if (startDate && !validateDate(startDate)) {

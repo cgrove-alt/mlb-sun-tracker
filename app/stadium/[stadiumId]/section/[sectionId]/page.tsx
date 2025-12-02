@@ -41,8 +41,15 @@ export default function SectionDetailPage() {
   }, [stadiumId, sectionId]);
 
   // Date/time state
-  const [selectedDate] = useState(() => new Date().toISOString().split('T')[0]);
-  const [gameTime] = useState(() => new Date());
+  const [selectedDate, setSelectedDate] = useState(() => new Date().toISOString().split('T')[0]);
+  const [selectedTime, setSelectedTime] = useState('13:10'); // Default 1:10 PM game time
+
+  // Combine date and time into a single Date object
+  const gameTime = useMemo(() => {
+    const [year, month, day] = selectedDate.split('-').map(Number);
+    const [hour, minute] = selectedTime.split(':').map(Number);
+    return new Date(year, month - 1, day, hour, minute);
+  }, [selectedDate, selectedTime]);
   const sunPosition: SunPosition | null = useMemo(() => {
     if (!stadium) return null;
     return getSunPosition(gameTime, stadium.latitude, stadium.longitude);
@@ -113,6 +120,44 @@ export default function SectionDetailPage() {
           <h2 className="text-xl text-blue-100">
             {sectionName || `Section ${sectionId}`}
           </h2>
+        </div>
+      </div>
+
+      {/* Date/Time Selector */}
+      <div className="bg-gray-900 border-b border-gray-800">
+        <div className="max-w-7xl mx-auto px-4 py-4">
+          <div className="flex flex-wrap items-center gap-4">
+            <div className="flex items-center gap-2">
+              <label htmlFor="date-select" className="text-sm text-gray-400">Date:</label>
+              <input
+                id="date-select"
+                type="date"
+                value={selectedDate}
+                onChange={(e) => setSelectedDate(e.target.value)}
+                className="bg-gray-800 border border-gray-700 rounded-lg px-3 py-2 text-white text-sm focus:outline-none focus:border-blue-500"
+              />
+            </div>
+            <div className="flex items-center gap-2">
+              <label htmlFor="time-select" className="text-sm text-gray-400">Game Time:</label>
+              <select
+                id="time-select"
+                value={selectedTime}
+                onChange={(e) => setSelectedTime(e.target.value)}
+                className="bg-gray-800 border border-gray-700 rounded-lg px-3 py-2 text-white text-sm focus:outline-none focus:border-blue-500"
+              >
+                <option value="13:10">1:10 PM</option>
+                <option value="14:10">2:10 PM</option>
+                <option value="16:10">4:10 PM</option>
+                <option value="17:10">5:10 PM</option>
+                <option value="18:10">6:10 PM</option>
+                <option value="19:10">7:10 PM</option>
+                <option value="20:10">8:10 PM</option>
+              </select>
+            </div>
+            <div className="text-sm text-gray-500">
+              Sun: {sunPosition ? `${sunPosition.altitudeDegrees.toFixed(1)}° altitude, ${sunPosition.azimuthDegrees.toFixed(1)}° azimuth` : 'N/A'}
+            </div>
+          </div>
         </div>
       </div>
 

@@ -81,9 +81,27 @@ export function useSeatLevelSunCalculations({
       // Get seats as Vector3D for calculations
       const seatPositions = await getSectionSeatsAsVector3D(stadiumId, sectionId);
 
-      // TODO: Integrate with OptimizedShadeCalculator3D
-      // For now, use simplified calculation based on sun angle
-      // This will be replaced with actual 3D ray tracing
+      // Calculate sun direction vector from azimuth and altitude
+      // Sun azimuth: 0=N, 90=E, 180=S, 270=W (compass degrees)
+      // Sun altitude: 0=horizon, 90=directly overhead
+      const azimuthRad = (sunPosition.azimuthDegrees * Math.PI) / 180;
+      const altitudeRad = (sunPosition.altitudeDegrees * Math.PI) / 180;
+
+      // Convert to 3D sun direction vector (pointing FROM sun TO ground)
+      const sunDirX = Math.sin(azimuthRad) * Math.cos(altitudeRad);
+      const sunDirY = Math.cos(azimuthRad) * Math.cos(altitudeRad);
+      const sunDirZ = -Math.sin(altitudeRad); // Negative because sun shines down
+
+      // Get section level for overhang calculation
+      const sectionLevel = sectionData.level || 'lower';
+      const levelModifier = {
+        'field': 1.0,    // Field level - full exposure
+        'lower': 0.9,    // Lower deck - slight overhang protection
+        'club': 0.6,     // Club level - more overhang from upper deck
+        'upper': 0.4,    // Upper deck - significant roof coverage
+        'suite': 0.2,    // Suites - mostly covered
+      }[sectionLevel] || 0.8;
+
       const calculatedSeats: SeatSunExposure[] = [];
 
       for (const row of sectionData.rows) {
@@ -92,18 +110,45 @@ export function useSeatLevelSunCalculations({
           const positionData = seatPositions.find(s => s.id === seat.id);
           if (!positionData) continue;
 
-          // Simplified sun exposure calculation
-          // Higher sun altitude = more exposure
-          // This is a placeholder until we integrate the 3D ray tracer
-          const baseExposure = Math.max(0, sunPosition.altitude * 100);
-          const randomVariation = (Math.random() - 0.5) * 20; // Add some variation
-          const sunExposure = Math.max(0, Math.min(100, baseExposure + randomVariation));
+          const pos = positionData.position;
+
+          // Calculate seat's facing direction (radial from stadium center)
+          // Seats face inward toward the field (center is roughly 0,0)
+          const seatDistance = Math.sqrt(pos.x * pos.x + pos.y * pos.y);
+          const seatFacingX = seatDistance > 0 ? -pos.x / seatDistance : 0;
+          const seatFacingY = seatDistance > 0 ? -pos.y / seatDistance : 0;
+
+          // Calculate dot product between sun direction and seat facing
+          // Positive = sun behind seat (shade), Negative = sun in front (exposed)
+          const dotProduct = sunDirX * seatFacingX + sunDirY * seatFacingY;
+
+          // Base exposure from sun altitude (higher sun = more exposure)
+          const altitudeExposure = Math.max(0, sunPosition.altitudeDegrees / 90) * 100;
+
+          // Direction factor: seats facing away from sun get less exposure
+          // dotProduct ranges from -1 (facing sun) to 1 (facing away from sun)
+          // Map to exposure factor: facing sun = 1.2, facing away = 0.5
+          const directionFactor = 0.85 - (dotProduct * 0.35);
+
+          // Row depth factor: front rows get more sun, back rows get more shade
+          const rowFactor = 1.0 - (row.rowNumber / 30) * 0.3; // Assume ~30 rows max
+
+          // Calculate final exposure with all factors
+          let sunExposure = altitudeExposure * directionFactor * levelModifier * rowFactor;
+
+          // If sun is below horizon, no direct exposure
+          if (sunPosition.altitudeDegrees <= 0) {
+            sunExposure = 0;
+          }
+
+          // Clamp to 0-100 range
+          sunExposure = Math.max(0, Math.min(100, sunExposure));
 
           calculatedSeats.push({
             seatId: seat.id,
             seatNumber: seat.seatNumber,
             rowNumber: row.rowNumber,
-            sunExposure,
+            sunExposure: Math.round(sunExposure * 10) / 10, // Round to 1 decimal
             isInShade: sunExposure < 30,
             position: positionData.position,
           });
