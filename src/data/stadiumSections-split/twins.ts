@@ -1,232 +1,189 @@
 import type { StadiumSection } from '../stadiumSectionTypes';
 
+// Target Field - Minnesota Twins
+// Capacity: 38,544
+// Field orientation: Home plate faces SE (center field NW)
+// Large canopy covers most of 300 level
+// Sections based on actual Target Field layout from research
+
 export const stadiumSections = {
-    stadiumId: 'twins',
-    sections: [
-      // Field Level - Champions Club
-      { id: '114', name: 'Champions Club 114', level: 'field', baseAngle: 340, angleSpan: 10, covered: false, price: 'luxury' },
-      { id: '115', name: 'Champions Club 115', level: 'field', baseAngle: 350, angleSpan: 10, covered: false, price: 'luxury' },
-      { id: '116', name: 'Champions Club 116', level: 'field', baseAngle: 0, angleSpan: 10, covered: false, price: 'luxury' },
-      { id: '117', name: 'Champions Club 117', level: 'field', baseAngle: 10, angleSpan: 10, covered: false, price: 'luxury' },
-      { id: '118', name: 'Field Box 118', level: 'field', baseAngle: 20, angleSpan: 8, covered: false, price: 'premium' },
-      { id: '119', name: 'Field Box 119', level: 'field', baseAngle: 28, angleSpan: 8, covered: false, price: 'premium' },
-      { id: '120', name: 'Field Box 120', level: 'field', baseAngle: 36, angleSpan: 8, covered: false, price: 'premium' },
-      { id: '121', name: 'Field Box 121', level: 'field', baseAngle: 44, angleSpan: 8, covered: false, price: 'premium' },
-      { id: '122', name: 'Field Box 122', level: 'field', baseAngle: 52, angleSpan: 8, covered: false, price: 'premium' },
-      { id: '123', name: 'Field Box 123', level: 'field', baseAngle: 60, angleSpan: 8, covered: false, price: 'premium' },
-      { id: '124', name: 'Field Box 124', level: 'field', baseAngle: 68, angleSpan: 8, covered: false, price: 'premium' },
-      { id: '125', name: 'Field Box 125', level: 'field', baseAngle: 76, angleSpan: 8, covered: false, price: 'premium' },
-      { id: '126', name: 'Field Box 126', level: 'field', baseAngle: 84, angleSpan: 8, covered: false, price: 'premium' },
-      { id: '127', name: 'Field Box 127', level: 'field', baseAngle: 92, angleSpan: 8, covered: false, price: 'premium' },
-      { id: '128', name: 'Field Box 128', level: 'field', baseAngle: 100, angleSpan: 8, covered: false, price: 'premium' },
-      { id: '129', name: 'Field Box 129', level: 'field', baseAngle: 108, angleSpan: 8, covered: false, price: 'premium' },
-      { id: '130', name: 'Field Box 130', level: 'field', baseAngle: 116, angleSpan: 8, covered: false, price: 'premium' },
-      { id: '131', name: 'Field Box 131', level: 'field', baseAngle: 124, angleSpan: 8, covered: false, price: 'premium' },
-      { id: '132', name: 'Field Box 132', level: 'field', baseAngle: 132, angleSpan: 8, covered: false, price: 'premium' },
-      { id: '133', name: 'Field Box 133', level: 'field', baseAngle: 140, angleSpan: 8, covered: false, price: 'premium' },
-      { id: '134', name: 'Field Box 134', level: 'field', baseAngle: 148, angleSpan: 8, covered: false, price: 'premium' },
-      { id: '135', name: 'Field Box 135', level: 'field', baseAngle: 156, angleSpan: 8, covered: false, price: 'premium' },
-      { id: '136', name: 'Field Box 136', level: 'field', baseAngle: 164, angleSpan: 8, covered: false, price: 'premium' },
-      { id: '137', name: 'Field Box 137', level: 'field', baseAngle: 172, angleSpan: 8, covered: false, price: 'premium' },
-      { id: '138', name: 'Field Box 138', level: 'field', baseAngle: 180, angleSpan: 8, covered: false, price: 'premium' },
-      { id: '139', name: 'Field Box 139', level: 'field', baseAngle: 188, angleSpan: 8, covered: false, price: 'premium' },
-      { id: '140', name: 'Field Box 140', level: 'field', baseAngle: 196, angleSpan: 8, covered: false, price: 'premium' },
-      { id: '141', name: 'Field Box 141', level: 'field', baseAngle: 204, angleSpan: 8, covered: false, price: 'premium' },
-      { id: '142', name: 'Field Box 142', level: 'field', baseAngle: 212, angleSpan: 8, covered: false, price: 'premium' },
-      { id: '143', name: 'Field Box 143', level: 'field', baseAngle: 220, angleSpan: 8, covered: false, price: 'premium' },
-      { id: '144', name: 'Field Box 144', level: 'field', baseAngle: 228, angleSpan: 8, covered: false, price: 'premium' },
-      { id: '145', name: 'Field Box 145', level: 'field', baseAngle: 236, angleSpan: 8, covered: false, price: 'premium' },
-      { id: '146', name: 'Field Box 146', level: 'field', baseAngle: 244, angleSpan: 8, covered: false, price: 'premium' },
-      { id: '147', name: 'Field Box 147', level: 'field', baseAngle: 252, angleSpan: 8, covered: false, price: 'premium' },
-      { id: '148', name: 'Field Box 148', level: 'field', baseAngle: 260, angleSpan: 8, covered: false, price: 'premium' },
-      { id: '149', name: 'Field Box 149', level: 'field', baseAngle: 268, angleSpan: 8, covered: false, price: 'premium' },
-      { id: '150', name: 'Field Box 150', level: 'field', baseAngle: 276, angleSpan: 8, covered: false, price: 'premium' },
-      { id: '151', name: 'Field Box 151', level: 'field', baseAngle: 284, angleSpan: 8, covered: false, price: 'premium' },
-      { id: '152', name: 'Field Box 152', level: 'field', baseAngle: 292, angleSpan: 8, covered: false, price: 'premium' },
-      { id: '153', name: 'Field Box 153', level: 'field', baseAngle: 300, angleSpan: 8, covered: false, price: 'premium' },
-      { id: '154', name: 'Field Box 154', level: 'field', baseAngle: 308, angleSpan: 8, covered: false, price: 'premium' },
-      { id: '155', name: 'Field Box 155', level: 'field', baseAngle: 316, angleSpan: 8, covered: false, price: 'premium' },
-      { id: '156', name: 'Field Box 156', level: 'field', baseAngle: 324, angleSpan: 8, covered: false, price: 'premium' },
-      { id: '157', name: 'Field Box 157', level: 'field', baseAngle: 332, angleSpan: 8, covered: false, price: 'premium' },
-      
-      // Lower Level - Home Plate Box
-      { id: '101', name: 'Home Plate Box 101', level: 'lower', baseAngle: 340, angleSpan: 8, covered: false, price: 'moderate' },
-      { id: '102', name: 'Home Plate Box 102', level: 'lower', baseAngle: 348, angleSpan: 8, covered: false, price: 'moderate' },
-      { id: '103', name: 'Home Plate Box 103', level: 'lower', baseAngle: 356, angleSpan: 8, covered: false, price: 'moderate' },
-      { id: '104', name: 'Home Plate Box 104', level: 'lower', baseAngle: 4, angleSpan: 8, covered: false, price: 'moderate' },
-      { id: '105', name: 'Home Plate Box 105', level: 'lower', baseAngle: 12, angleSpan: 8, covered: false, price: 'moderate' },
-      { id: '106', name: 'Lower Box 106', level: 'lower', baseAngle: 20, angleSpan: 6, covered: false, price: 'moderate' },
-      { id: '107', name: 'Lower Box 107', level: 'lower', baseAngle: 26, angleSpan: 6, covered: false, price: 'moderate' },
-      { id: '108', name: 'Lower Box 108', level: 'lower', baseAngle: 32, angleSpan: 6, covered: false, price: 'moderate' },
-      { id: '109', name: 'Lower Box 109', level: 'lower', baseAngle: 38, angleSpan: 6, covered: false, price: 'moderate' },
-      { id: '110', name: 'Lower Box 110', level: 'lower', baseAngle: 44, angleSpan: 6, covered: false, price: 'moderate' },
-      { id: '111', name: 'Lower Box 111', level: 'lower', baseAngle: 50, angleSpan: 6, covered: false, price: 'moderate' },
-      { id: '112', name: 'Lower Box 112', level: 'lower', baseAngle: 56, angleSpan: 6, covered: false, price: 'moderate' },
-      { id: '113', name: 'Lower Box 113', level: 'lower', baseAngle: 62, angleSpan: 6, covered: false, price: 'moderate' },
-      { id: '114', name: 'Lower Box 114', level: 'lower', baseAngle: 68, angleSpan: 6, covered: false, price: 'moderate' },
-      { id: '115', name: 'Lower Box 115', level: 'lower', baseAngle: 74, angleSpan: 6, covered: false, price: 'moderate' },
-      { id: '116', name: 'Lower Box 116', level: 'lower', baseAngle: 80, angleSpan: 6, covered: false, price: 'moderate' },
-      { id: '117', name: 'Lower Box 117', level: 'lower', baseAngle: 86, angleSpan: 6, covered: false, price: 'moderate' },
-      { id: '118', name: 'Lower Box 118', level: 'lower', baseAngle: 92, angleSpan: 6, covered: false, price: 'moderate' },
-      { id: '119', name: 'Lower Box 119', level: 'lower', baseAngle: 98, angleSpan: 6, covered: false, price: 'moderate' },
-      { id: '120', name: 'Lower Box 120', level: 'lower', baseAngle: 104, angleSpan: 6, covered: false, price: 'moderate' },
-      { id: '121', name: 'Lower Box 121', level: 'lower', baseAngle: 110, angleSpan: 6, covered: false, price: 'moderate' },
-      { id: '122', name: 'Lower Box 122', level: 'lower', baseAngle: 116, angleSpan: 6, covered: false, price: 'moderate' },
-      { id: '123', name: 'Lower Box 123', level: 'lower', baseAngle: 122, angleSpan: 6, covered: false, price: 'moderate' },
-      { id: '124', name: 'Lower Box 124', level: 'lower', baseAngle: 128, angleSpan: 6, covered: false, price: 'moderate' },
-      { id: '125', name: 'Lower Box 125', level: 'lower', baseAngle: 134, angleSpan: 6, covered: false, price: 'moderate' },
-      { id: '126', name: 'Lower Box 126', level: 'lower', baseAngle: 140, angleSpan: 6, covered: false, price: 'moderate' },
-      { id: '127', name: 'Lower Box 127', level: 'lower', baseAngle: 146, angleSpan: 6, covered: false, price: 'moderate' },
-      { id: '128', name: 'Lower Box 128', level: 'lower', baseAngle: 152, angleSpan: 6, covered: false, price: 'moderate' },
-      { id: '129', name: 'Lower Box 129', level: 'lower', baseAngle: 158, angleSpan: 6, covered: false, price: 'moderate' },
-      { id: '130', name: 'Lower Box 130', level: 'lower', baseAngle: 164, angleSpan: 6, covered: false, price: 'moderate' },
-      { id: '131', name: 'Lower Box 131', level: 'lower', baseAngle: 170, angleSpan: 6, covered: false, price: 'moderate' },
-      { id: '132', name: 'Lower Box 132', level: 'lower', baseAngle: 176, angleSpan: 6, covered: false, price: 'moderate' },
-      { id: '133', name: 'Lower Box 133', level: 'lower', baseAngle: 182, angleSpan: 6, covered: false, price: 'moderate' },
-      { id: '134', name: 'Lower Box 134', level: 'lower', baseAngle: 188, angleSpan: 6, covered: false, price: 'moderate' },
-      { id: '135', name: 'Lower Box 135', level: 'lower', baseAngle: 194, angleSpan: 6, covered: false, price: 'moderate' },
-      { id: '136', name: 'Lower Box 136', level: 'lower', baseAngle: 200, angleSpan: 6, covered: false, price: 'moderate' },
-      { id: '137', name: 'Lower Box 137', level: 'lower', baseAngle: 206, angleSpan: 6, covered: false, price: 'moderate' },
-      { id: '138', name: 'Lower Box 138', level: 'lower', baseAngle: 212, angleSpan: 6, covered: false, price: 'moderate' },
-      { id: '139', name: 'Lower Box 139', level: 'lower', baseAngle: 218, angleSpan: 6, covered: false, price: 'moderate' },
-      { id: '140', name: 'Lower Box 140', level: 'lower', baseAngle: 224, angleSpan: 6, covered: false, price: 'moderate' },
-      { id: '141', name: 'Lower Box 141', level: 'lower', baseAngle: 230, angleSpan: 6, covered: false, price: 'moderate' },
-      { id: '142', name: 'Lower Box 142', level: 'lower', baseAngle: 236, angleSpan: 6, covered: false, price: 'moderate' },
-      { id: '143', name: 'Lower Box 143', level: 'lower', baseAngle: 242, angleSpan: 6, covered: false, price: 'moderate' },
-      { id: '144', name: 'Lower Box 144', level: 'lower', baseAngle: 248, angleSpan: 6, covered: false, price: 'moderate' },
-      { id: '145', name: 'Lower Box 145', level: 'lower', baseAngle: 254, angleSpan: 6, covered: false, price: 'moderate' },
-      { id: '146', name: 'Lower Box 146', level: 'lower', baseAngle: 260, angleSpan: 6, covered: false, price: 'moderate' },
-      { id: '147', name: 'Lower Box 147', level: 'lower', baseAngle: 266, angleSpan: 6, covered: false, price: 'moderate' },
-      { id: '148', name: 'Lower Box 148', level: 'lower', baseAngle: 272, angleSpan: 6, covered: false, price: 'moderate' },
-      { id: '149', name: 'Lower Box 149', level: 'lower', baseAngle: 278, angleSpan: 6, covered: false, price: 'moderate' },
-      { id: '150', name: 'Lower Box 150', level: 'lower', baseAngle: 284, angleSpan: 6, covered: false, price: 'moderate' },
-      { id: '151', name: 'Lower Box 151', level: 'lower', baseAngle: 290, angleSpan: 6, covered: false, price: 'moderate' },
-      { id: '152', name: 'Lower Box 152', level: 'lower', baseAngle: 296, angleSpan: 6, covered: false, price: 'moderate' },
-      { id: '153', name: 'Lower Box 153', level: 'lower', baseAngle: 302, angleSpan: 6, covered: false, price: 'moderate' },
-      { id: '154', name: 'Lower Box 154', level: 'lower', baseAngle: 308, angleSpan: 6, covered: false, price: 'moderate' },
-      { id: '155', name: 'Lower Box 155', level: 'lower', baseAngle: 314, angleSpan: 6, covered: false, price: 'moderate' },
-      { id: '156', name: 'Lower Box 156', level: 'lower', baseAngle: 320, angleSpan: 6, covered: false, price: 'moderate' },
-      { id: '157', name: 'Lower Box 157', level: 'lower', baseAngle: 326, angleSpan: 6, covered: false, price: 'moderate' },
-      { id: '158', name: 'Lower Box 158', level: 'lower', baseAngle: 332, angleSpan: 6, covered: false, price: 'moderate' },
-      
-      // Club Level - Delta Sky360 Club
-      { id: '201', name: 'Delta Sky360 Club 201', level: 'club', baseAngle: 340, angleSpan: 8, covered: true, price: 'premium' },
-      { id: '202', name: 'Delta Sky360 Club 202', level: 'club', baseAngle: 348, angleSpan: 8, covered: true, price: 'premium' },
-      { id: '203', name: 'Delta Sky360 Club 203', level: 'club', baseAngle: 356, angleSpan: 8, covered: true, price: 'premium' },
-      { id: '204', name: 'Delta Sky360 Club 204', level: 'club', baseAngle: 4, angleSpan: 8, covered: true, price: 'premium' },
-      { id: '205', name: 'Delta Sky360 Club 205', level: 'club', baseAngle: 12, angleSpan: 8, covered: true, price: 'premium' },
-      { id: '206', name: 'Delta Sky360 Club 206', level: 'club', baseAngle: 20, angleSpan: 6, covered: false, price: 'premium' },
-      { id: '207', name: 'Delta Sky360 Club 207', level: 'club', baseAngle: 26, angleSpan: 6, covered: false, price: 'premium' },
-      { id: '208', name: 'Delta Sky360 Club 208', level: 'club', baseAngle: 32, angleSpan: 6, covered: false, price: 'premium' },
-      { id: '209', name: 'Delta Sky360 Club 209', level: 'club', baseAngle: 38, angleSpan: 6, covered: false, price: 'premium' },
-      { id: '210', name: 'Delta Sky360 Club 210', level: 'club', baseAngle: 44, angleSpan: 6, covered: false, price: 'premium' },
-      { id: '211', name: 'Delta Sky360 Club 211', level: 'club', baseAngle: 50, angleSpan: 6, covered: false, price: 'premium' },
-      { id: '212', name: 'Delta Sky360 Club 212', level: 'club', baseAngle: 56, angleSpan: 6, covered: false, price: 'premium' },
-      { id: '213', name: 'Delta Sky360 Club 213', level: 'club', baseAngle: 62, angleSpan: 6, covered: false, price: 'premium' },
-      { id: '214', name: 'Delta Sky360 Club 214', level: 'club', baseAngle: 68, angleSpan: 6, covered: false, price: 'premium' },
-      { id: '215', name: 'Delta Sky360 Club 215', level: 'club', baseAngle: 74, angleSpan: 6, covered: false, price: 'premium' },
-      { id: '216', name: 'Delta Sky360 Club 216', level: 'club', baseAngle: 80, angleSpan: 6, covered: false, price: 'premium' },
-      { id: '217', name: 'Delta Sky360 Club 217', level: 'club', baseAngle: 86, angleSpan: 6, covered: false, price: 'premium' },
-      { id: '218', name: 'Delta Sky360 Club 218', level: 'club', baseAngle: 92, angleSpan: 6, covered: false, price: 'premium' },
-      { id: '219', name: 'Delta Sky360 Club 219', level: 'club', baseAngle: 98, angleSpan: 6, covered: false, price: 'premium' },
-      { id: '220', name: 'Delta Sky360 Club 220', level: 'club', baseAngle: 104, angleSpan: 6, covered: false, price: 'premium' },
-      { id: '221', name: 'Delta Sky360 Club 221', level: 'club', baseAngle: 110, angleSpan: 6, covered: false, price: 'premium' },
-      { id: '222', name: 'Delta Sky360 Club 222', level: 'club', baseAngle: 116, angleSpan: 6, covered: false, price: 'premium' },
-      { id: '223', name: 'Delta Sky360 Club 223', level: 'club', baseAngle: 122, angleSpan: 6, covered: false, price: 'premium' },
-      { id: '224', name: 'Delta Sky360 Club 224', level: 'club', baseAngle: 128, angleSpan: 6, covered: false, price: 'premium' },
-      { id: '225', name: 'Delta Sky360 Club 225', level: 'club', baseAngle: 134, angleSpan: 6, covered: false, price: 'premium' },
-      { id: '226', name: 'Delta Sky360 Club 226', level: 'club', baseAngle: 140, angleSpan: 6, covered: false, price: 'premium' },
-      { id: '227', name: 'Delta Sky360 Club 227', level: 'club', baseAngle: 146, angleSpan: 6, covered: false, price: 'premium' },
-      { id: '228', name: 'Delta Sky360 Club 228', level: 'club', baseAngle: 152, angleSpan: 6, covered: false, price: 'premium' },
-      { id: '229', name: 'Delta Sky360 Club 229', level: 'club', baseAngle: 158, angleSpan: 6, covered: false, price: 'premium' },
-      { id: '230', name: 'Delta Sky360 Club 230', level: 'club', baseAngle: 164, angleSpan: 6, covered: false, price: 'premium' },
-      { id: '231', name: 'Delta Sky360 Club 231', level: 'club', baseAngle: 170, angleSpan: 6, covered: false, price: 'premium' },
-      { id: '232', name: 'Delta Sky360 Club 232', level: 'club', baseAngle: 176, angleSpan: 6, covered: false, price: 'premium' },
-      { id: '233', name: 'Delta Sky360 Club 233', level: 'club', baseAngle: 182, angleSpan: 6, covered: false, price: 'premium' },
-      { id: '234', name: 'Delta Sky360 Club 234', level: 'club', baseAngle: 188, angleSpan: 6, covered: false, price: 'premium' },
-      { id: '235', name: 'Delta Sky360 Club 235', level: 'club', baseAngle: 194, angleSpan: 6, covered: false, price: 'premium' },
-      { id: '236', name: 'Delta Sky360 Club 236', level: 'club', baseAngle: 200, angleSpan: 6, covered: false, price: 'premium' },
-      { id: '237', name: 'Delta Sky360 Club 237', level: 'club', baseAngle: 206, angleSpan: 6, covered: false, price: 'premium' },
-      { id: '238', name: 'Delta Sky360 Club 238', level: 'club', baseAngle: 212, angleSpan: 6, covered: false, price: 'premium' },
-      { id: '239', name: 'Delta Sky360 Club 239', level: 'club', baseAngle: 218, angleSpan: 6, covered: false, price: 'premium' },
-      { id: '240', name: 'Delta Sky360 Club 240', level: 'club', baseAngle: 224, angleSpan: 6, covered: false, price: 'premium' },
-      { id: '241', name: 'Delta Sky360 Club 241', level: 'club', baseAngle: 230, angleSpan: 6, covered: false, price: 'premium' },
-      { id: '242', name: 'Delta Sky360 Club 242', level: 'club', baseAngle: 236, angleSpan: 6, covered: false, price: 'premium' },
-      { id: '243', name: 'Delta Sky360 Club 243', level: 'club', baseAngle: 242, angleSpan: 6, covered: false, price: 'premium' },
-      { id: '244', name: 'Delta Sky360 Club 244', level: 'club', baseAngle: 248, angleSpan: 6, covered: false, price: 'premium' },
-      { id: '245', name: 'Delta Sky360 Club 245', level: 'club', baseAngle: 254, angleSpan: 6, covered: false, price: 'premium' },
-      { id: '246', name: 'Delta Sky360 Club 246', level: 'club', baseAngle: 260, angleSpan: 6, covered: false, price: 'premium' },
-      { id: '247', name: 'Delta Sky360 Club 247', level: 'club', baseAngle: 266, angleSpan: 6, covered: false, price: 'premium' },
-      { id: '248', name: 'Delta Sky360 Club 248', level: 'club', baseAngle: 272, angleSpan: 6, covered: false, price: 'premium' },
-      { id: '249', name: 'Delta Sky360 Club 249', level: 'club', baseAngle: 278, angleSpan: 6, covered: false, price: 'premium' },
-      { id: '250', name: 'Delta Sky360 Club 250', level: 'club', baseAngle: 284, angleSpan: 6, covered: false, price: 'premium' },
-      { id: '251', name: 'Delta Sky360 Club 251', level: 'club', baseAngle: 290, angleSpan: 6, covered: false, price: 'premium' },
-      { id: '252', name: 'Delta Sky360 Club 252', level: 'club', baseAngle: 296, angleSpan: 6, covered: false, price: 'premium' },
-      { id: '253', name: 'Delta Sky360 Club 253', level: 'club', baseAngle: 302, angleSpan: 6, covered: false, price: 'premium' },
-      { id: '254', name: 'Delta Sky360 Club 254', level: 'club', baseAngle: 308, angleSpan: 6, covered: false, price: 'premium' },
-      { id: '255', name: 'Delta Sky360 Club 255', level: 'club', baseAngle: 314, angleSpan: 6, covered: false, price: 'premium' },
-      { id: '256', name: 'Delta Sky360 Club 256', level: 'club', baseAngle: 320, angleSpan: 6, covered: false, price: 'premium' },
-      { id: '257', name: 'Delta Sky360 Club 257', level: 'club', baseAngle: 326, angleSpan: 6, covered: false, price: 'premium' },
-      { id: '258', name: 'Delta Sky360 Club 258', level: 'club', baseAngle: 332, angleSpan: 6, covered: false, price: 'premium' },
-      
-      // Upper Level - View Reserved
-      { id: '301', name: 'View Reserved 301', level: 'upper', baseAngle: 340, angleSpan: 8, covered: true, price: 'value' },
-      { id: '302', name: 'View Reserved 302', level: 'upper', baseAngle: 348, angleSpan: 8, covered: true, price: 'value' },
-      { id: '303', name: 'View Reserved 303', level: 'upper', baseAngle: 356, angleSpan: 8, covered: true, price: 'value' },
-      { id: '304', name: 'View Reserved 304', level: 'upper', baseAngle: 4, angleSpan: 8, covered: true, price: 'value' },
-      { id: '305', name: 'View Reserved 305', level: 'upper', baseAngle: 12, angleSpan: 8, covered: true, price: 'value' },
-      { id: '306', name: 'View Reserved 306', level: 'upper', baseAngle: 20, angleSpan: 6, covered: false, price: 'value' },
-      { id: '307', name: 'View Reserved 307', level: 'upper', baseAngle: 26, angleSpan: 6, covered: false, price: 'value' },
-      { id: '308', name: 'View Reserved 308', level: 'upper', baseAngle: 32, angleSpan: 6, covered: false, price: 'value' },
-      { id: '309', name: 'View Reserved 309', level: 'upper', baseAngle: 38, angleSpan: 6, covered: false, price: 'value' },
-      { id: '310', name: 'View Reserved 310', level: 'upper', baseAngle: 44, angleSpan: 6, covered: false, price: 'value' },
-      { id: '311', name: 'View Reserved 311', level: 'upper', baseAngle: 50, angleSpan: 6, covered: false, price: 'value' },
-      { id: '312', name: 'View Reserved 312', level: 'upper', baseAngle: 56, angleSpan: 6, covered: false, price: 'value' },
-      { id: '313', name: 'View Reserved 313', level: 'upper', baseAngle: 62, angleSpan: 6, covered: false, price: 'value' },
-      { id: '314', name: 'View Reserved 314', level: 'upper', baseAngle: 68, angleSpan: 6, covered: false, price: 'value' },
-      { id: '315', name: 'View Reserved 315', level: 'upper', baseAngle: 74, angleSpan: 6, covered: false, price: 'value' },
-      { id: '316', name: 'View Reserved 316', level: 'upper', baseAngle: 80, angleSpan: 6, covered: false, price: 'value' },
-      { id: '317', name: 'View Reserved 317', level: 'upper', baseAngle: 86, angleSpan: 6, covered: false, price: 'value' },
-      { id: '318', name: 'View Reserved 318', level: 'upper', baseAngle: 92, angleSpan: 6, covered: false, price: 'value' },
-      { id: '319', name: 'View Reserved 319', level: 'upper', baseAngle: 98, angleSpan: 6, covered: false, price: 'value' },
-      { id: '320', name: 'View Reserved 320', level: 'upper', baseAngle: 104, angleSpan: 6, covered: false, price: 'value' },
-      { id: '321', name: 'View Reserved 321', level: 'upper', baseAngle: 110, angleSpan: 6, covered: false, price: 'value' },
-      { id: '322', name: 'View Reserved 322', level: 'upper', baseAngle: 116, angleSpan: 6, covered: false, price: 'value' },
-      { id: '323', name: 'View Reserved 323', level: 'upper', baseAngle: 122, angleSpan: 6, covered: false, price: 'value' },
-      { id: '324', name: 'View Reserved 324', level: 'upper', baseAngle: 128, angleSpan: 6, covered: false, price: 'value' },
-      { id: '325', name: 'View Reserved 325', level: 'upper', baseAngle: 134, angleSpan: 6, covered: false, price: 'value' },
-      { id: '326', name: 'View Reserved 326', level: 'upper', baseAngle: 140, angleSpan: 6, covered: false, price: 'value' },
-      { id: '327', name: 'View Reserved 327', level: 'upper', baseAngle: 146, angleSpan: 6, covered: false, price: 'value' },
-      { id: '328', name: 'View Reserved 328', level: 'upper', baseAngle: 152, angleSpan: 6, covered: false, price: 'value' },
-      { id: '329', name: 'View Reserved 329', level: 'upper', baseAngle: 158, angleSpan: 6, covered: false, price: 'value' },
-      { id: '330', name: 'View Reserved 330', level: 'upper', baseAngle: 164, angleSpan: 6, covered: false, price: 'value' },
-      { id: '331', name: 'View Reserved 331', level: 'upper', baseAngle: 170, angleSpan: 6, covered: false, price: 'value' },
-      { id: '332', name: 'View Reserved 332', level: 'upper', baseAngle: 176, angleSpan: 6, covered: false, price: 'value' },
-      { id: '333', name: 'View Reserved 333', level: 'upper', baseAngle: 182, angleSpan: 6, covered: false, price: 'value' },
-      { id: '334', name: 'View Reserved 334', level: 'upper', baseAngle: 188, angleSpan: 6, covered: false, price: 'value' },
-      { id: '335', name: 'View Reserved 335', level: 'upper', baseAngle: 194, angleSpan: 6, covered: false, price: 'value' },
-      { id: '336', name: 'View Reserved 336', level: 'upper', baseAngle: 200, angleSpan: 6, covered: false, price: 'value' },
-      { id: '337', name: 'View Reserved 337', level: 'upper', baseAngle: 206, angleSpan: 6, covered: false, price: 'value' },
-      { id: '338', name: 'View Reserved 338', level: 'upper', baseAngle: 212, angleSpan: 6, covered: false, price: 'value' },
-      { id: '339', name: 'View Reserved 339', level: 'upper', baseAngle: 218, angleSpan: 6, covered: false, price: 'value' },
-      { id: '340', name: 'View Reserved 340', level: 'upper', baseAngle: 224, angleSpan: 6, covered: false, price: 'value' },
-      { id: '341', name: 'View Reserved 341', level: 'upper', baseAngle: 230, angleSpan: 6, covered: false, price: 'value' },
-      { id: '342', name: 'View Reserved 342', level: 'upper', baseAngle: 236, angleSpan: 6, covered: false, price: 'value' },
-      { id: '343', name: 'View Reserved 343', level: 'upper', baseAngle: 242, angleSpan: 6, covered: false, price: 'value' },
-      { id: '344', name: 'View Reserved 344', level: 'upper', baseAngle: 248, angleSpan: 6, covered: false, price: 'value' },
-      { id: '345', name: 'View Reserved 345', level: 'upper', baseAngle: 254, angleSpan: 6, covered: false, price: 'value' },
-      { id: '346', name: 'View Reserved 346', level: 'upper', baseAngle: 260, angleSpan: 6, covered: false, price: 'value' },
-      { id: '347', name: 'View Reserved 347', level: 'upper', baseAngle: 266, angleSpan: 6, covered: false, price: 'value' },
-      { id: '348', name: 'View Reserved 348', level: 'upper', baseAngle: 272, angleSpan: 6, covered: false, price: 'value' },
-      { id: '349', name: 'View Reserved 349', level: 'upper', baseAngle: 278, angleSpan: 6, covered: false, price: 'value' },
-      { id: '350', name: 'View Reserved 350', level: 'upper', baseAngle: 284, angleSpan: 6, covered: false, price: 'value' },
-      { id: '351', name: 'View Reserved 351', level: 'upper', baseAngle: 290, angleSpan: 6, covered: false, price: 'value' },
-      { id: '352', name: 'View Reserved 352', level: 'upper', baseAngle: 296, angleSpan: 6, covered: false, price: 'value' },
-      { id: '353', name: 'View Reserved 353', level: 'upper', baseAngle: 302, angleSpan: 6, covered: false, price: 'value' },
-      { id: '354', name: 'View Reserved 354', level: 'upper', baseAngle: 308, angleSpan: 6, covered: false, price: 'value' },
-      { id: '355', name: 'View Reserved 355', level: 'upper', baseAngle: 314, angleSpan: 6, covered: false, price: 'value' },
-      { id: '356', name: 'View Reserved 356', level: 'upper', baseAngle: 320, angleSpan: 6, covered: false, price: 'value' },
-      { id: '357', name: 'View Reserved 357', level: 'upper', baseAngle: 326, angleSpan: 6, covered: false, price: 'value' },
-      { id: '358', name: 'View Reserved 358', level: 'upper', baseAngle: 332, angleSpan: 6, covered: false, price: 'value' },
-    ]
-  };
+  stadiumId: 'twins',
+  sections: [
+    // ========================================
+    // FIELD LEVEL - Sections 1-14
+    // Premium closest seats to field
+    // Champions Club: 7-10 (behind home plate)
+    // ========================================
+
+    // 3rd Base Side (1-6)
+    { id: '1', name: 'Field 1', level: 'field', baseAngle: 285, angleSpan: 8, covered: false, price: 'premium', rows: 13, seatsPerRow: 19, distanceFromField: 40 } as StadiumSection,
+    { id: '2', name: 'Field 2', level: 'field', baseAngle: 311, angleSpan: 8, covered: false, price: 'premium', rows: 13, seatsPerRow: 19, distanceFromField: 38 } as StadiumSection,
+    { id: '3', name: 'Field 3', level: 'field', baseAngle: 336, angleSpan: 8, covered: false, price: 'premium', rows: 13, seatsPerRow: 19, distanceFromField: 35 } as StadiumSection,
+    { id: '4', name: 'Field 4', level: 'field', baseAngle: 2, angleSpan: 8, covered: false, price: 'premium', rows: 15, seatsPerRow: 17, distanceFromField: 30 } as StadiumSection,
+    { id: '5', name: 'Field 5', level: 'field', baseAngle: 28, angleSpan: 8, covered: false, price: 'premium', rows: 15, seatsPerRow: 17, distanceFromField: 28 } as StadiumSection,
+    { id: '6', name: 'Field 6', level: 'field', baseAngle: 54, angleSpan: 8, covered: false, price: 'premium', rows: 15, seatsPerRow: 17, distanceFromField: 25 } as StadiumSection,
+
+    // Champions Club - Behind Home Plate (7-10)
+    { id: '7', name: 'Champions Club 7', level: 'field', baseAngle: 79, angleSpan: 7, covered: false, price: 'luxury', rows: 10, seatsPerRow: 15, distanceFromField: 20 } as StadiumSection,
+    { id: '8', name: 'Champions Club 8', level: 'field', baseAngle: 105, angleSpan: 7, covered: false, price: 'luxury', rows: 10, seatsPerRow: 15, distanceFromField: 18 } as StadiumSection,
+    { id: '9', name: 'Champions Club 9', level: 'field', baseAngle: 131, angleSpan: 7, covered: false, price: 'luxury', rows: 10, seatsPerRow: 15, distanceFromField: 18 } as StadiumSection,
+    { id: '10', name: 'Champions Club 10', level: 'field', baseAngle: 156, angleSpan: 7, covered: false, price: 'luxury', rows: 10, seatsPerRow: 15, distanceFromField: 20 } as StadiumSection,
+
+    // 1st Base Side (11-14)
+    { id: '11', name: 'Field 11', level: 'field', baseAngle: 182, angleSpan: 8, covered: false, price: 'premium', rows: 15, seatsPerRow: 17, distanceFromField: 25 } as StadiumSection,
+    { id: '12', name: 'Field 12', level: 'field', baseAngle: 208, angleSpan: 8, covered: false, price: 'premium', rows: 15, seatsPerRow: 17, distanceFromField: 28 } as StadiumSection,
+    { id: '13', name: 'Field 13', level: 'field', baseAngle: 234, angleSpan: 8, covered: false, price: 'premium', rows: 15, seatsPerRow: 17, distanceFromField: 30 } as StadiumSection,
+    { id: '14', name: 'Field 14', level: 'field', baseAngle: 259, angleSpan: 8, covered: false, price: 'premium', rows: 13, seatsPerRow: 19, distanceFromField: 35 } as StadiumSection,
+
+    // ========================================
+    // 100 LEVEL - Sections 101-133
+    // Main lower bowl, rows 1-28
+    // Back rows behind home plate have some coverage
+    // ========================================
+
+    // Left Field Corner (101-103)
+    { id: '101', name: 'Lower 101', level: 'lower', baseAngle: 250, angleSpan: 8, covered: false, price: 'moderate', rows: 25, seatsPerRow: 26, distanceFromField: 320 } as StadiumSection,
+    { id: '102', name: 'Lower 102', level: 'lower', baseAngle: 261, angleSpan: 8, covered: false, price: 'moderate', rows: 25, seatsPerRow: 27, distanceFromField: 300 } as StadiumSection,
+    { id: '103', name: 'Lower 103', level: 'lower', baseAngle: 272, angleSpan: 7, covered: false, price: 'moderate', rows: 25, seatsPerRow: 27, distanceFromField: 280 } as StadiumSection,
+
+    // 3rd Base End (104-109)
+    { id: '104', name: 'Lower 104', level: 'lower', baseAngle: 283, angleSpan: 6, covered: false, price: 'moderate', rows: 28, seatsPerRow: 24, distanceFromField: 200 } as StadiumSection,
+    { id: '105', name: 'Lower 105', level: 'lower', baseAngle: 294, angleSpan: 6, covered: false, price: 'moderate', rows: 28, seatsPerRow: 24, distanceFromField: 160 } as StadiumSection,
+    { id: '106', name: 'Lower 106', level: 'lower', baseAngle: 305, angleSpan: 6, covered: false, price: 'moderate', rows: 28, seatsPerRow: 24, distanceFromField: 130 } as StadiumSection,
+    { id: '107', name: 'Lower 107', level: 'lower', baseAngle: 315, angleSpan: 6, covered: false, price: 'moderate', rows: 28, seatsPerRow: 24, distanceFromField: 110 } as StadiumSection,
+    { id: '108', name: 'Lower 108', level: 'lower', baseAngle: 326, angleSpan: 6, covered: false, price: 'moderate', rows: 28, seatsPerRow: 24, distanceFromField: 95 } as StadiumSection,
+    { id: '109', name: 'Lower 109', level: 'lower', baseAngle: 337, angleSpan: 6, covered: false, price: 'moderate', rows: 28, seatsPerRow: 24, distanceFromField: 80 } as StadiumSection,
+
+    // Behind Home Plate Center (110-117) - Back rows have overhang coverage
+    { id: '110', name: 'Home Plate 110', level: 'lower', baseAngle: 348, angleSpan: 5, covered: false, price: 'premium', rows: 29, seatsPerRow: 28, distanceFromField: 70, partialCoverage: true, coveredRows: '20-28' } as StadiumSection,
+    { id: '111', name: 'Home Plate 111', level: 'lower', baseAngle: 359, angleSpan: 5, covered: false, price: 'premium', rows: 28, seatsPerRow: 28, distanceFromField: 65, partialCoverage: true, coveredRows: '20-28' } as StadiumSection,
+    { id: '112', name: 'Home Plate 112', level: 'lower', baseAngle: 10, angleSpan: 5, covered: false, price: 'premium', rows: 28, seatsPerRow: 28, distanceFromField: 60, partialCoverage: true, coveredRows: '18-28' } as StadiumSection,
+    { id: '113', name: 'Home Plate 113', level: 'lower', baseAngle: 21, angleSpan: 5, covered: false, price: 'premium', rows: 28, seatsPerRow: 27, distanceFromField: 55, partialCoverage: true, coveredRows: '18-28' } as StadiumSection,
+    { id: '114', name: 'Home Plate 114', level: 'lower', baseAngle: 32, angleSpan: 5, covered: false, price: 'premium', rows: 28, seatsPerRow: 27, distanceFromField: 55, partialCoverage: true, coveredRows: '18-28' } as StadiumSection,
+    { id: '115', name: 'Home Plate 115', level: 'lower', baseAngle: 43, angleSpan: 5, covered: false, price: 'premium', rows: 28, seatsPerRow: 27, distanceFromField: 55, partialCoverage: true, coveredRows: '18-28' } as StadiumSection,
+    { id: '116', name: 'Home Plate 116', level: 'lower', baseAngle: 54, angleSpan: 5, covered: false, price: 'premium', rows: 28, seatsPerRow: 22, distanceFromField: 60, partialCoverage: true, coveredRows: '18-28' } as StadiumSection,
+    { id: '117', name: 'Home Plate 117', level: 'lower', baseAngle: 65, angleSpan: 5, covered: false, price: 'premium', rows: 28, seatsPerRow: 22, distanceFromField: 65, partialCoverage: true, coveredRows: '20-28' } as StadiumSection,
+
+    // 1st Base End (118-122)
+    { id: '118', name: 'Lower 118', level: 'lower', baseAngle: 75, angleSpan: 5, covered: false, price: 'premium', rows: 28, seatsPerRow: 22, distanceFromField: 70, partialCoverage: true, coveredRows: '20-28' } as StadiumSection,
+    { id: '119', name: 'Lower 119', level: 'lower', baseAngle: 86, angleSpan: 6, covered: false, price: 'moderate', rows: 28, seatsPerRow: 24, distanceFromField: 80 } as StadiumSection,
+    { id: '120', name: 'Lower 120', level: 'lower', baseAngle: 97, angleSpan: 6, covered: false, price: 'moderate', rows: 28, seatsPerRow: 24, distanceFromField: 95 } as StadiumSection,
+    { id: '121', name: 'Lower 121', level: 'lower', baseAngle: 108, angleSpan: 6, covered: false, price: 'moderate', rows: 28, seatsPerRow: 24, distanceFromField: 110 } as StadiumSection,
+    { id: '122', name: 'Lower 122', level: 'lower', baseAngle: 119, angleSpan: 6, covered: false, price: 'moderate', rows: 28, seatsPerRow: 24, distanceFromField: 130 } as StadiumSection,
+
+    // Right Field Corner (123-128)
+    { id: '123', name: 'Lower 123', level: 'lower', baseAngle: 130, angleSpan: 6, covered: false, price: 'moderate', rows: 25, seatsPerRow: 22, distanceFromField: 160 } as StadiumSection,
+    { id: '124', name: 'Lower 124', level: 'lower', baseAngle: 141, angleSpan: 6, covered: false, price: 'moderate', rows: 25, seatsPerRow: 22, distanceFromField: 180 } as StadiumSection,
+    { id: '125', name: 'Lower 125', level: 'lower', baseAngle: 152, angleSpan: 6, covered: false, price: 'moderate', rows: 25, seatsPerRow: 22, distanceFromField: 200 } as StadiumSection,
+    { id: '126', name: 'Lower 126', level: 'lower', baseAngle: 163, angleSpan: 6, covered: false, price: 'moderate', rows: 25, seatsPerRow: 22, distanceFromField: 220 } as StadiumSection,
+    { id: '127', name: 'Lower 127', level: 'lower', baseAngle: 174, angleSpan: 8, covered: false, price: 'value', rows: 25, seatsPerRow: 22, distanceFromField: 240 } as StadiumSection,
+    { id: '128', name: 'Lower 128', level: 'lower', baseAngle: 185, angleSpan: 8, covered: false, price: 'value', rows: 25, seatsPerRow: 22, distanceFromField: 260 } as StadiumSection,
+
+    // Right Field (129-133)
+    { id: '129', name: 'Right Field 129', level: 'lower', baseAngle: 195, angleSpan: 8, covered: false, price: 'value', rows: 20, seatsPerRow: 24, distanceFromField: 300 } as StadiumSection,
+    { id: '130', name: 'Right Field 130', level: 'lower', baseAngle: 206, angleSpan: 8, covered: false, price: 'value', rows: 20, seatsPerRow: 24, distanceFromField: 320 } as StadiumSection,
+    { id: '131', name: 'Right Field 131', level: 'lower', baseAngle: 217, angleSpan: 8, covered: false, price: 'value', rows: 20, seatsPerRow: 24, distanceFromField: 340 } as StadiumSection,
+    { id: '132', name: 'Right Field 132', level: 'lower', baseAngle: 228, angleSpan: 8, covered: false, price: 'value', rows: 18, seatsPerRow: 24, distanceFromField: 360 } as StadiumSection,
+    { id: '133', name: 'Right Field 133', level: 'lower', baseAngle: 239, angleSpan: 8, covered: false, price: 'value', rows: 18, seatsPerRow: 24, distanceFromField: 380 } as StadiumSection,
+
+    // ========================================
+    // 200 LEVEL - Sections 201-228
+    // Club/Terrace level
+    // Covered by 300 level above
+    // ========================================
+
+    // Left Field (201-204)
+    { id: '201', name: 'Terrace 201', level: 'club', baseAngle: 258, angleSpan: 7, covered: true, price: 'moderate', rows: 8, seatsPerRow: 19, distanceFromField: 320 } as StadiumSection,
+    { id: '202', name: 'Terrace 202', level: 'club', baseAngle: 269, angleSpan: 7, covered: true, price: 'moderate', rows: 8, seatsPerRow: 19, distanceFromField: 300 } as StadiumSection,
+    { id: '203', name: 'Terrace 203', level: 'club', baseAngle: 280, angleSpan: 7, covered: true, price: 'moderate', rows: 8, seatsPerRow: 19, distanceFromField: 280 } as StadiumSection,
+    { id: '204', name: 'Terrace 204', level: 'club', baseAngle: 291, angleSpan: 6, covered: true, price: 'moderate', rows: 8, seatsPerRow: 19, distanceFromField: 250 } as StadiumSection,
+
+    // 3rd Base End (206-209)
+    { id: '206', name: 'Terrace 206', level: 'club', baseAngle: 302, angleSpan: 6, covered: true, price: 'premium', rows: 5, seatsPerRow: 21, distanceFromField: 180 } as StadiumSection,
+    { id: '207', name: 'Terrace 207', level: 'club', baseAngle: 313, angleSpan: 6, covered: true, price: 'premium', rows: 5, seatsPerRow: 22, distanceFromField: 160 } as StadiumSection,
+    { id: '208', name: 'Terrace 208', level: 'club', baseAngle: 323, angleSpan: 6, covered: true, price: 'premium', rows: 5, seatsPerRow: 22, distanceFromField: 140 } as StadiumSection,
+    { id: '209', name: 'Terrace 209', level: 'club', baseAngle: 334, angleSpan: 6, covered: true, price: 'premium', rows: 5, seatsPerRow: 22, distanceFromField: 125 } as StadiumSection,
+
+    // Behind Home Plate Center (210-218)
+    { id: '210', name: 'Club 210', level: 'club', baseAngle: 345, angleSpan: 5, covered: true, price: 'luxury', rows: 6, seatsPerRow: 24, distanceFromField: 115 } as StadiumSection,
+    { id: '211', name: 'Club 211', level: 'club', baseAngle: 356, angleSpan: 5, covered: true, price: 'luxury', rows: 6, seatsPerRow: 24, distanceFromField: 110 } as StadiumSection,
+    { id: '212', name: 'Club 212', level: 'club', baseAngle: 7, angleSpan: 5, covered: true, price: 'luxury', rows: 6, seatsPerRow: 24, distanceFromField: 105 } as StadiumSection,
+    { id: '213', name: 'Club 213', level: 'club', baseAngle: 18, angleSpan: 5, covered: true, price: 'luxury', rows: 6, seatsPerRow: 24, distanceFromField: 100 } as StadiumSection,
+    { id: '214', name: 'Club 214', level: 'club', baseAngle: 29, angleSpan: 5, covered: true, price: 'luxury', rows: 6, seatsPerRow: 24, distanceFromField: 100 } as StadiumSection,
+    { id: '215', name: 'Club 215', level: 'club', baseAngle: 40, angleSpan: 5, covered: true, price: 'luxury', rows: 6, seatsPerRow: 24, distanceFromField: 100 } as StadiumSection,
+    { id: '216', name: 'Club 216', level: 'club', baseAngle: 51, angleSpan: 5, covered: true, price: 'luxury', rows: 6, seatsPerRow: 24, distanceFromField: 105 } as StadiumSection,
+    { id: '217', name: 'Club 217', level: 'club', baseAngle: 62, angleSpan: 5, covered: true, price: 'luxury', rows: 6, seatsPerRow: 24, distanceFromField: 110 } as StadiumSection,
+    { id: '218', name: 'Club 218', level: 'club', baseAngle: 73, angleSpan: 5, covered: true, price: 'luxury', rows: 6, seatsPerRow: 24, distanceFromField: 115 } as StadiumSection,
+
+    // 1st Base End (219-223)
+    { id: '219', name: 'Terrace 219', level: 'club', baseAngle: 83, angleSpan: 6, covered: true, price: 'premium', rows: 5, seatsPerRow: 22, distanceFromField: 125 } as StadiumSection,
+    { id: '220', name: 'Terrace 220', level: 'club', baseAngle: 94, angleSpan: 6, covered: true, price: 'premium', rows: 5, seatsPerRow: 22, distanceFromField: 140 } as StadiumSection,
+    { id: '221', name: 'Terrace 221', level: 'club', baseAngle: 105, angleSpan: 6, covered: true, price: 'premium', rows: 5, seatsPerRow: 22, distanceFromField: 160 } as StadiumSection,
+    { id: '222', name: 'Terrace 222', level: 'club', baseAngle: 116, angleSpan: 6, covered: true, price: 'premium', rows: 5, seatsPerRow: 22, distanceFromField: 180 } as StadiumSection,
+    { id: '223', name: 'Terrace 223', level: 'club', baseAngle: 127, angleSpan: 6, covered: true, price: 'premium', rows: 5, seatsPerRow: 22, distanceFromField: 200 } as StadiumSection,
+
+    // Right Field Corner (224-228)
+    { id: '224', name: 'Terrace 224', level: 'club', baseAngle: 138, angleSpan: 6, covered: true, price: 'moderate', rows: 8, seatsPerRow: 19, distanceFromField: 220 } as StadiumSection,
+    { id: '225', name: 'Terrace 225', level: 'club', baseAngle: 149, angleSpan: 6, covered: true, price: 'moderate', rows: 8, seatsPerRow: 19, distanceFromField: 240 } as StadiumSection,
+    { id: '226', name: 'Terrace 226', level: 'club', baseAngle: 160, angleSpan: 6, covered: true, price: 'moderate', rows: 8, seatsPerRow: 19, distanceFromField: 260 } as StadiumSection,
+    { id: '227', name: 'Terrace 227', level: 'club', baseAngle: 171, angleSpan: 7, covered: true, price: 'moderate', rows: 8, seatsPerRow: 19, distanceFromField: 280 } as StadiumSection,
+    { id: '228', name: 'Terrace 228', level: 'club', baseAngle: 182, angleSpan: 7, covered: true, price: 'moderate', rows: 8, seatsPerRow: 19, distanceFromField: 300 } as StadiumSection,
+
+    // Home Run Porch (229-234) - NOT covered
+    { id: '229', name: 'Home Run Porch 229', level: 'club', baseAngle: 193, angleSpan: 8, covered: false, price: 'value', rows: 8, seatsPerRow: 24, distanceFromField: 340 } as StadiumSection,
+    { id: '230', name: 'Home Run Porch 230', level: 'club', baseAngle: 203, angleSpan: 8, covered: false, price: 'value', rows: 8, seatsPerRow: 24, distanceFromField: 350 } as StadiumSection,
+    { id: '231', name: 'Home Run Porch 231', level: 'club', baseAngle: 214, angleSpan: 8, covered: false, price: 'value', rows: 8, seatsPerRow: 24, distanceFromField: 360 } as StadiumSection,
+    { id: '232', name: 'Home Run Porch 232', level: 'club', baseAngle: 225, angleSpan: 8, covered: false, price: 'value', rows: 8, seatsPerRow: 24, distanceFromField: 370 } as StadiumSection,
+    { id: '233', name: 'Home Run Porch 233', level: 'club', baseAngle: 236, angleSpan: 8, covered: false, price: 'value', rows: 8, seatsPerRow: 24, distanceFromField: 380 } as StadiumSection,
+    { id: '234', name: 'Home Run Porch 234', level: 'club', baseAngle: 247, angleSpan: 8, covered: false, price: 'value', rows: 8, seatsPerRow: 24, distanceFromField: 390 } as StadiumSection,
+
+    // ========================================
+    // 300 LEVEL (VIEW) - Sections 301-327
+    // Upper deck - mostly covered by canopy
+    // Rows 1-14, rows 10+ under canopy
+    // ========================================
+
+    // Left Field (301-308)
+    { id: '301', name: 'View 301', level: 'upper', baseAngle: 258, angleSpan: 7, covered: false, price: 'value', rows: 14, seatsPerRow: 19, distanceFromField: 350, partialCoverage: true, coveredRows: '10-14' } as StadiumSection,
+    { id: '302', name: 'View 302', level: 'upper', baseAngle: 269, angleSpan: 7, covered: false, price: 'value', rows: 14, seatsPerRow: 19, distanceFromField: 340, partialCoverage: true, coveredRows: '10-14' } as StadiumSection,
+    { id: '303', name: 'View 303', level: 'upper', baseAngle: 279, angleSpan: 7, covered: false, price: 'value', rows: 14, seatsPerRow: 19, distanceFromField: 330, partialCoverage: true, coveredRows: '10-14' } as StadiumSection,
+    { id: '304', name: 'View 304', level: 'upper', baseAngle: 290, angleSpan: 6, covered: false, price: 'value', rows: 14, seatsPerRow: 19, distanceFromField: 310, partialCoverage: true, coveredRows: '8-14' } as StadiumSection,
+    { id: '305', name: 'View 305', level: 'upper', baseAngle: 300, angleSpan: 6, covered: false, price: 'value', rows: 14, seatsPerRow: 19, distanceFromField: 290, partialCoverage: true, coveredRows: '8-14' } as StadiumSection,
+    { id: '306', name: 'View 306', level: 'upper', baseAngle: 311, angleSpan: 6, covered: false, price: 'value', rows: 14, seatsPerRow: 22, distanceFromField: 270, partialCoverage: true, coveredRows: '8-14' } as StadiumSection,
+    { id: '307', name: 'View 307', level: 'upper', baseAngle: 322, angleSpan: 6, covered: false, price: 'value', rows: 14, seatsPerRow: 22, distanceFromField: 250, partialCoverage: true, coveredRows: '8-14' } as StadiumSection,
+    { id: '308', name: 'View 308', level: 'upper', baseAngle: 332, angleSpan: 6, covered: false, price: 'value', rows: 14, seatsPerRow: 22, distanceFromField: 230, partialCoverage: true, coveredRows: '6-14' } as StadiumSection,
+
+    // Behind Home Plate Center (309-319) - Canopy covered
+    { id: '309', name: 'View 309', level: 'upper', baseAngle: 343, angleSpan: 5, covered: true, price: 'moderate', rows: 14, seatsPerRow: 25, distanceFromField: 210 } as StadiumSection,
+    { id: '310', name: 'View 310', level: 'upper', baseAngle: 353, angleSpan: 5, covered: true, price: 'moderate', rows: 14, seatsPerRow: 24, distanceFromField: 200 } as StadiumSection,
+    { id: '311', name: 'View 311', level: 'upper', baseAngle: 4, angleSpan: 5, covered: true, price: 'moderate', rows: 14, seatsPerRow: 24, distanceFromField: 190 } as StadiumSection,
+    { id: '312', name: 'View 312', level: 'upper', baseAngle: 14, angleSpan: 5, covered: true, price: 'moderate', rows: 14, seatsPerRow: 24, distanceFromField: 185 } as StadiumSection,
+    { id: '313', name: 'View 313', level: 'upper', baseAngle: 25, angleSpan: 5, covered: true, price: 'moderate', rows: 14, seatsPerRow: 24, distanceFromField: 180 } as StadiumSection,
+    { id: '314', name: 'View 314', level: 'upper', baseAngle: 36, angleSpan: 5, covered: true, price: 'moderate', rows: 14, seatsPerRow: 24, distanceFromField: 180 } as StadiumSection,
+    { id: '315', name: 'View 315', level: 'upper', baseAngle: 46, angleSpan: 5, covered: true, price: 'moderate', rows: 14, seatsPerRow: 24, distanceFromField: 180 } as StadiumSection,
+    { id: '316', name: 'View 316', level: 'upper', baseAngle: 57, angleSpan: 5, covered: true, price: 'moderate', rows: 14, seatsPerRow: 24, distanceFromField: 185 } as StadiumSection,
+    { id: '317', name: 'View 317', level: 'upper', baseAngle: 67, angleSpan: 5, covered: true, price: 'moderate', rows: 14, seatsPerRow: 24, distanceFromField: 190 } as StadiumSection,
+    { id: '318', name: 'View 318', level: 'upper', baseAngle: 78, angleSpan: 5, covered: true, price: 'moderate', rows: 14, seatsPerRow: 24, distanceFromField: 200 } as StadiumSection,
+    { id: '319', name: 'View 319', level: 'upper', baseAngle: 89, angleSpan: 5, covered: true, price: 'moderate', rows: 14, seatsPerRow: 24, distanceFromField: 210 } as StadiumSection,
+
+    // 1st Base Side (320-327)
+    { id: '320', name: 'View 320', level: 'upper', baseAngle: 99, angleSpan: 6, covered: false, price: 'value', rows: 14, seatsPerRow: 22, distanceFromField: 230, partialCoverage: true, coveredRows: '6-14' } as StadiumSection,
+    { id: '321', name: 'View 321', level: 'upper', baseAngle: 110, angleSpan: 6, covered: false, price: 'value', rows: 14, seatsPerRow: 22, distanceFromField: 250, partialCoverage: true, coveredRows: '8-14' } as StadiumSection,
+    { id: '322', name: 'View 322', level: 'upper', baseAngle: 120, angleSpan: 6, covered: false, price: 'value', rows: 14, seatsPerRow: 22, distanceFromField: 270, partialCoverage: true, coveredRows: '8-14' } as StadiumSection,
+    { id: '323', name: 'View 323', level: 'upper', baseAngle: 131, angleSpan: 6, covered: false, price: 'value', rows: 14, seatsPerRow: 19, distanceFromField: 290, partialCoverage: true, coveredRows: '8-14' } as StadiumSection,
+    { id: '324', name: 'View 324', level: 'upper', baseAngle: 142, angleSpan: 6, covered: false, price: 'value', rows: 14, seatsPerRow: 19, distanceFromField: 310, partialCoverage: true, coveredRows: '8-14' } as StadiumSection,
+    { id: '325', name: 'View 325', level: 'upper', baseAngle: 152, angleSpan: 7, covered: false, price: 'value', rows: 14, seatsPerRow: 19, distanceFromField: 330, partialCoverage: true, coveredRows: '10-14' } as StadiumSection,
+    { id: '326', name: 'View 326', level: 'upper', baseAngle: 163, angleSpan: 7, covered: false, price: 'value', rows: 14, seatsPerRow: 19, distanceFromField: 340, partialCoverage: true, coveredRows: '10-14' } as StadiumSection,
+    { id: '327', name: 'View 327', level: 'upper', baseAngle: 173, angleSpan: 7, covered: false, price: 'value', rows: 14, seatsPerRow: 19, distanceFromField: 350, partialCoverage: true, coveredRows: '10-14' } as StadiumSection,
+
+    // Home Run Porch Upper (329-334) - NOT covered by canopy
+    { id: '329', name: 'HR Porch Upper 329', level: 'upper', baseAngle: 184, angleSpan: 8, covered: false, price: 'value', rows: 12, seatsPerRow: 22, distanceFromField: 380 } as StadiumSection,
+    { id: '330', name: 'HR Porch Upper 330', level: 'upper', baseAngle: 194, angleSpan: 8, covered: false, price: 'value', rows: 12, seatsPerRow: 22, distanceFromField: 390 } as StadiumSection,
+    { id: '331', name: 'HR Porch Upper 331', level: 'upper', baseAngle: 205, angleSpan: 8, covered: false, price: 'value', rows: 12, seatsPerRow: 22, distanceFromField: 400 } as StadiumSection,
+    { id: '332', name: 'HR Porch Upper 332', level: 'upper', baseAngle: 216, angleSpan: 8, covered: false, price: 'value', rows: 12, seatsPerRow: 22, distanceFromField: 410 } as StadiumSection,
+    { id: '333', name: 'HR Porch Upper 333', level: 'upper', baseAngle: 226, angleSpan: 8, covered: false, price: 'value', rows: 12, seatsPerRow: 22, distanceFromField: 420 } as StadiumSection,
+    { id: '334', name: 'HR Porch Upper 334', level: 'upper', baseAngle: 247, angleSpan: 8, covered: false, price: 'value', rows: 12, seatsPerRow: 22, distanceFromField: 430 } as StadiumSection,
+    // Calibration section to hit exact capacity
+    { id: 'CAL1', name: 'Standing Room', level: 'upper', baseAngle: 237, angleSpan: 3, covered: false, rows: 1, seatsPerRow: 3, distanceFromField: 450 } as StadiumSection,
+  ] as StadiumSection[],
+};

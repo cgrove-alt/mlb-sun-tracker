@@ -400,21 +400,21 @@ export const MLB_STADIUMS: Stadium[] = [
   },
   {
     id: 'rays',
-    name: 'George M. Steinbrenner Field', // Temporary home for 2025 season due to Tropicana Field hurricane damage
+    name: 'Tropicana Field',
     team: 'Tampa Bay Rays',
-    city: 'Tampa',
+    city: 'St. Petersburg',
     state: 'FL',
-    latitude: 27.9628,
-    longitude: -82.5062,
-    orientation: 45,
-    capacity: 11026,
-    roof: 'open',
+    latitude: 27.7682,
+    longitude: -82.6534,
+    orientation: 315, // Home plate faces NW
+    capacity: 31042,
+    roof: 'fixed', // Non-retractable dome - all seats covered
     timezone: 'America/New_York',
-    roofHeight: 55,
-    roofOverhang: 20,
-    upperDeckHeight: 40,
+    roofHeight: 225, // 225 feet above second base
+    roofOverhang: 0, // Fully enclosed dome
+    upperDeckHeight: 75,
     verified: true,
-    verifiedDate: '2025-11-26'
+    verifiedDate: '2025-12-02'
   },
   {
     id: 'redsox',
