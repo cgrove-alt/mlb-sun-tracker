@@ -167,6 +167,14 @@ async function generateSeatDataForStadium(stadiumId: string): Promise<void> {
   for (const [level, stats] of Object.entries(levelStats)) {
     console.log(`     ${level.padEnd(8)}: ${stats.sections.toString().padStart(3)} sections, ${stats.seats.toLocaleString().padStart(6)} seats`);
   }
+
+  // Validate against official capacity
+  const accuracy = (seatData.totalSeats / stadium.capacity) * 100;
+  if (accuracy < 95 || accuracy > 105) {
+    console.warn(`  ⚠️  Accuracy: ${accuracy.toFixed(1)}% (${seatData.totalSeats.toLocaleString()} generated vs ${stadium.capacity.toLocaleString()} official)`);
+  } else {
+    console.log(`  ✓ Accuracy: ${accuracy.toFixed(1)}% (target: ${stadium.capacity.toLocaleString()})`);
+  }
 }
 
 // Main function

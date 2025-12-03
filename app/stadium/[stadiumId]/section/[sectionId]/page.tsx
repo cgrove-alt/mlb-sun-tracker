@@ -82,6 +82,7 @@ export default function SectionDetailPage() {
     stadiumId,
     sectionId,
     sunPosition: sunPosition || { altitude: 0, azimuth: 0, altitudeDegrees: 0, azimuthDegrees: 0 },
+    stadiumOrientation: stadium?.orientation || 0,
     enabled: !!stadium && !!sunPosition,
   });
 

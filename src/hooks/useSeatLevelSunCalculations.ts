@@ -9,6 +9,8 @@ import { useEffect, useState, useCallback } from 'react';
 import { SunPosition } from '../utils/sunCalculations';
 import { loadSectionSeatData, getSectionSeatsAsVector3D } from '../utils/seatDataLoader';
 import { Vector3D } from '../types/stadium-complete';
+import { MLB_STADIUMS } from '../data/stadiums';
+import { getStadiumCompleteData } from '../data/stadium-data-aggregator';
 
 export interface SeatSunExposure {
   seatId: string;
@@ -23,6 +25,7 @@ interface UseSeatLevelSunCalculationsOptions {
   stadiumId: string;
   sectionId: string;
   sunPosition: SunPosition;
+  stadiumOrientation: number; // Compass bearing of center field direction
   enabled?: boolean;
 }
 
@@ -43,6 +46,7 @@ export function useSeatLevelSunCalculations({
   stadiumId,
   sectionId,
   sunPosition,
+  stadiumOrientation,
   enabled = true,
 }: UseSeatLevelSunCalculationsOptions): UseSeatLevelSunCalculationsResult {
   const [seats, setSeats] = useState<SeatSunExposure[] | null>(null);
@@ -50,8 +54,8 @@ export function useSeatLevelSunCalculations({
   const [error, setError] = useState<Error | null>(null);
   const [sectionName, setSectionName] = useState<string | null>(null);
 
-  // Generate cache key based on stadium, section, and sun position
-  const cacheKey = `${stadiumId}-${sectionId}-${sunPosition.altitude.toFixed(2)}-${sunPosition.azimuth.toFixed(2)}`;
+  // Generate cache key based on stadium, section, sun position, and orientation
+  const cacheKey = `${stadiumId}-${sectionId}-${sunPosition.altitude.toFixed(2)}-${sunPosition.azimuth.toFixed(2)}-${stadiumOrientation}`;
 
   const calculate = useCallback(async () => {
     if (!enabled || !stadiumId || !sectionId) {
@@ -78,29 +82,70 @@ export function useSeatLevelSunCalculations({
 
       setSectionName(sectionData.sectionName);
 
+      // Check if stadium has a fixed roof (dome) - all seats are in full shade
+      const stadium = MLB_STADIUMS.find(s => s.id === stadiumId);
+      const { sections: sectionDefs } = getStadiumCompleteData(stadiumId, 'MLB');
+      const sectionDef = sectionDefs.find(s => s.id === sectionId);
+
+      // If stadium has fixed roof OR section is marked as covered, all seats are shaded
+      if (stadium?.roof === 'fixed' || sectionDef?.covered) {
+        // For domed stadiums or covered sections, all seats have 0% sun exposure
+        const seatPositions = await getSectionSeatsAsVector3D(stadiumId, sectionId);
+        const allShadedSeats: SeatSunExposure[] = [];
+
+        for (const row of sectionData.rows) {
+          for (const seat of row.seats) {
+            const positionData = seatPositions.find(s => s.id === seat.id);
+            if (!positionData) continue;
+
+            allShadedSeats.push({
+              seatId: seat.id,
+              seatNumber: seat.seatNumber,
+              rowNumber: row.rowNumber,
+              sunExposure: 0,
+              isInShade: true,
+              position: positionData.position,
+            });
+          }
+        }
+
+        seatCalculationCache.set(cacheKey, allShadedSeats);
+        setSeats(allShadedSeats);
+        setIsLoading(false);
+        return;
+      }
+
       // Get seats as Vector3D for calculations
       const seatPositions = await getSectionSeatsAsVector3D(stadiumId, sectionId);
 
       // Calculate sun direction vector from azimuth and altitude
       // Sun azimuth: 0=N, 90=E, 180=S, 270=W (compass degrees)
       // Sun altitude: 0=horizon, 90=directly overhead
-      const azimuthRad = (sunPosition.azimuthDegrees * Math.PI) / 180;
+      //
+      // CRITICAL: Convert compass azimuth to stadium-relative coordinates
+      // Seat positions are in stadium-relative coords (0° = behind home plate)
+      // Stadium orientation is the compass bearing of center field
+      // Formula: relativeSunAngle = (compassAzimuth - stadiumOrientation + 180) % 360
+      const relativeSunAzimuth = ((sunPosition.azimuthDegrees - stadiumOrientation + 180) % 360 + 360) % 360;
+      const azimuthRad = (relativeSunAzimuth * Math.PI) / 180;
       const altitudeRad = (sunPosition.altitudeDegrees * Math.PI) / 180;
 
       // Convert to 3D sun direction vector (pointing FROM sun TO ground)
+      // Now in stadium-relative coordinates to match seat positions
       const sunDirX = Math.sin(azimuthRad) * Math.cos(altitudeRad);
       const sunDirY = Math.cos(azimuthRad) * Math.cos(altitudeRad);
       const sunDirZ = -Math.sin(altitudeRad); // Negative because sun shines down
 
       // Get section level for overhang calculation
+      // IMPORTANT: These values must match sectionSunCalculations.ts for consistency
       const sectionLevel = sectionData.level || 'lower';
       const levelModifier = {
         'field': 1.0,    // Field level - full exposure
-        'lower': 0.9,    // Lower deck - slight overhang protection
-        'club': 0.6,     // Club level - more overhang from upper deck
-        'upper': 0.4,    // Upper deck - significant roof coverage
-        'suite': 0.2,    // Suites - mostly covered
-      }[sectionLevel] || 0.8;
+        'lower': 0.95,   // Lower deck - slight overhang protection
+        'club': 0.85,    // Club level - more overhang from upper deck
+        'upper': 1.0,    // Upper deck - often more exposed (no deck above)
+        'suite': 0.75,   // Suites - some protection
+      }[sectionLevel] || 0.9;
 
       const calculatedSeats: SeatSunExposure[] = [];
 
@@ -173,7 +218,7 @@ export function useSeatLevelSunCalculations({
       setError(new Error(`Failed to calculate seat-level sun exposure: ${errorMessage}`));
       setIsLoading(false);
     }
-  }, [stadiumId, sectionId, sunPosition, enabled, cacheKey]);
+  }, [stadiumId, sectionId, sunPosition, stadiumOrientation, enabled, cacheKey]);
 
   useEffect(() => {
     calculate();

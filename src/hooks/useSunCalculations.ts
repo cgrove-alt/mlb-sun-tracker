@@ -1,5 +1,6 @@
-import { useEffect, useState, useRef, useCallback } from 'react';
+import { useEffect, useState, useCallback } from 'react';
 import { SunPosition } from '../utils/sunCalculations';
+import { getSectionSunExposure } from '../utils/sectionSunCalculations';
 
 interface UseSunCalculationsOptions {
   stadium: any;
@@ -27,121 +28,67 @@ export function useSunCalculations({
   const [data, setData] = useState<any[] | null>(null);
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState<Error | null>(null);
-  const workerRef = useRef<Worker | null>(null);
-  
-  // Generate cache key
-  const cacheKey = `${stadium.id}-${sunPosition.altitude}-${sunPosition.azimuth}`;
-  
+
+  // Generate cache key including stadium orientation
+  const cacheKey = `${stadium.id}-${sunPosition.altitudeDegrees.toFixed(1)}-${sunPosition.azimuthDegrees.toFixed(1)}-${stadium.orientation}`;
+
   const calculate = useCallback(() => {
     if (!enabled || !sections.length) {
       return;
     }
-    
+
     // Check cache first
     if (calculationCache.has(cacheKey)) {
       setData(calculationCache.get(cacheKey)!);
       setIsLoading(false);
       return;
     }
-    
+
     setIsLoading(true);
     setError(null);
-    
-    // Use Web Worker if available
-    if (typeof Worker !== 'undefined') {
-      try {
-        workerRef.current = new Worker('/workers/sunCalculations.worker.js');
-        
-        workerRef.current.onmessage = (event) => {
-          const { type, payload } = event.data;
-          
-          if (type === 'SUN_EXPOSURE_RESULT') {
-            // Cache the result
-            calculationCache.set(cacheKey, payload);
-            // Limit cache size
-            if (calculationCache.size > 50) {
-              const firstKey = calculationCache.keys().next().value;
-              if (firstKey !== undefined) {
-                calculationCache.delete(firstKey);
-              }
-            }
-            
-            setData(payload);
-            setIsLoading(false);
-          } else if (type === 'SUN_EXPOSURE_ERROR') {
-            setError(new Error(payload));
-            setIsLoading(false);
-          }
-        };
-        
-        workerRef.current.onerror = (err) => {
-          setError(new Error('Worker error: ' + err.message));
-          setIsLoading(false);
-        };
-        
-        // Send calculation request to worker
-        workerRef.current.postMessage({
-          type: 'CALCULATE_SUN_EXPOSURE',
-          payload: { stadium, sunPosition, sections },
-        });
-      } catch (err) {
-        // Fallback to main thread if worker fails
-        console.warn('Worker not available, falling back to main thread');
-        performMainThreadCalculation();
-      }
-    } else {
-      // No worker support, use main thread
-      performMainThreadCalculation();
-    }
-  }, [stadium, sunPosition, sections, enabled, cacheKey]);
-  
-  const performMainThreadCalculation = useCallback(() => {
-    // Simplified calculation for main thread
-    // In production, this would import the actual calculation function
-    setTimeout(() => {
+
+    try {
+      // Use the CORRECT calculation from sectionSunCalculations.ts
+      // This properly converts sun azimuth to stadium-relative coordinates
+      // and uses section baseAngle to determine sun exposure
       const results = sections.map(section => {
-        // Calculate a basic sun exposure based on section properties
-        let sunExposure = 50; // Base exposure
+        const sunExposure = getSectionSunExposure(
+          section,
+          sunPosition.altitudeDegrees,
+          sunPosition.azimuthDegrees,
+          stadium.orientation
+        );
 
-        // Adjust based on section level
-        if (section.level === 'upper') {
-          sunExposure -= 20; // Upper deck has more roof coverage
-        } else if (section.level === 'suite' || section.level === 'club') {
-          sunExposure -= 30; // Premium sections usually covered
-        }
-
-        // Adjust based on sun position
-        const altitudeFactor = (sunPosition.altitudeDegrees / 90) * 30;
-        sunExposure += altitudeFactor;
-
-        // Ensure within bounds
-        sunExposure = Math.max(0, Math.min(100, sunExposure));
-
-        // Return in SeatingSectionSun format
         return {
-          section,  // Keep original section object
+          section,
           inSun: sunExposure > 50,
           sunExposure,
-          timeInSun: Math.round(sunExposure * 1.8),  // ~180 minutes * percentage
+          timeInSun: Math.round(sunExposure * 1.8),
           percentageOfGameInSun: sunExposure
         };
       });
 
+      // Cache the result
       calculationCache.set(cacheKey, results);
+
+      // Limit cache size
+      if (calculationCache.size > 50) {
+        const firstKey = calculationCache.keys().next().value;
+        if (firstKey !== undefined) {
+          calculationCache.delete(firstKey);
+        }
+      }
+
       setData(results);
       setIsLoading(false);
-    }, 100);
-  }, [sections, cacheKey, sunPosition.altitudeDegrees]);
-  
+    } catch (err) {
+      setError(err instanceof Error ? err : new Error('Calculation failed'));
+      setIsLoading(false);
+    }
+  }, [stadium, sunPosition, sections, enabled, cacheKey]);
+
   useEffect(() => {
     calculate();
-
-    // Cleanup worker on unmount
-    return () => {
-      if (workerRef.current) {
-        workerRef.current.terminate();
-      }
-    };
   }, [calculate]);
 
   // Refetch function that clears cache and recalculates

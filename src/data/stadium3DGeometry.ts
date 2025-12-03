@@ -74,22 +74,27 @@ function generateSectionGeometry(
   baseDistance: number,
   baseHeight: number
 ): SectionGeometry {
+  // Use section's actual row count if specified, otherwise default to 20
+  const rowCount = section.rows ?? 20;
+  const seatsPerRow = section.seatsPerRow ?? 20;
+
   // Define section corners
   const vertices: Vector3D[] = [
     // Front corners
     polarTo3D(section.baseAngle, baseDistance, baseHeight),
     polarTo3D(section.baseAngle + section.angleSpan, baseDistance, baseHeight),
-    // Back corners
-    polarTo3D(section.baseAngle, baseDistance + SECTION_DEPTH, baseHeight + (20 * ROW_HEIGHT)),
-    polarTo3D(section.baseAngle + section.angleSpan, baseDistance + SECTION_DEPTH, baseHeight + (20 * ROW_HEIGHT))
+    // Back corners - use actual row count for height calculation
+    polarTo3D(section.baseAngle, baseDistance + SECTION_DEPTH, baseHeight + (rowCount * ROW_HEIGHT)),
+    polarTo3D(section.baseAngle + section.angleSpan, baseDistance + SECTION_DEPTH, baseHeight + (rowCount * ROW_HEIGHT))
   ];
-  
+
   return {
     id: section.id,
     name: section.name,
     level: section.level,
     vertices,
-    seats: generateSeatsForSection(section, baseDistance, baseHeight),
+    // CRITICAL: Pass actual rows/seatsPerRow from section data
+    seats: generateSeatsForSection(section, baseDistance, baseHeight, rowCount, seatsPerRow),
     baseAngle: section.baseAngle,
     angleSpan: section.angleSpan
   };

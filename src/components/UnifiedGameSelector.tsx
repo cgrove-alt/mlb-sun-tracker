@@ -9,6 +9,7 @@ import { UnifiedVenue, getAllLeagues, getVenuesByLeague, getLeagueInfo, getMiLBV
 import { getTeamIdFromVenueId, getVenueIdFromStringId } from '../data/milbTeamMapping';
 import { preferencesStorage } from '../utils/preferences';
 import { formatDateTimeWithTimezone } from '../utils/timeUtils';
+import { fromZonedTime } from 'date-fns-tz';
 import { formatGameTimeInStadiumTZ } from '../utils/dateTimeUtils';
 import { useHapticFeedback } from '../hooks/useHapticFeedback';
 import { useTranslation } from '../i18n/i18nContext';
@@ -286,8 +287,17 @@ export const UnifiedGameSelector: React.FC<UnifiedGameSelectorProps> = ({
   };
 
   const handleCustomApply = () => {
-    if (customDate && customTime) {
-      onGameSelect(null, new Date(`${customDate}T${customTime}:00`));
+    if (customDate && customTime && selectedVenue) {
+      // CRITICAL: Convert local stadium time to UTC
+      // User enters time in stadium's local timezone (e.g., "15:00" for 3 PM Pacific)
+      // We must convert this to UTC for accurate sun position calculations
+      const stadiumTimezone = selectedVenue.timezone || 'America/New_York';
+      const localDateTimeString = `${customDate}T${customTime}:00`;
+
+      // fromZonedTime converts a local time (in the given timezone) to a UTC Date
+      const utcDate = fromZonedTime(localDateTimeString, stadiumTimezone);
+
+      onGameSelect(null, utcDate);
       preferencesStorage.update('lastUsedDate', customDate);
       preferencesStorage.update('lastUsedTime', customTime);
     }

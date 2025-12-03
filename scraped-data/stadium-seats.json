@@ -1,0 +1,1961 @@
+[
+  {
+    "stadiumId": "rays",
+    "stadiumName": "tropicana-field",
+    "scrapedAt": "2025-12-03T01:00:23.538Z",
+    "source": "rateyourseats",
+    "sections": [
+      {
+        "sectionId": "101",
+        "sectionName": "Section 101 at Tropicana Field",
+        "rows": [],
+        "totalRows": 6,
+        "totalSeats": 132,
+        "firstRow": "EE",
+        "lastRow": "JJ",
+        "rowRanges": [
+          "EE-JJ"
+        ],
+        "rowLabels": [
+          "EE",
+          "FF",
+          "GG",
+          "HH",
+          "II",
+          "JJ"
+        ],
+        "seatsPerRow": 22
+      },
+      {
+        "sectionId": "102",
+        "sectionName": "Section 102 at Tropicana Field",
+        "rows": [],
+        "totalRows": 6,
+        "totalSeats": 132,
+        "firstRow": "EE",
+        "lastRow": "JJ",
+        "rowRanges": [
+          "EE-JJ"
+        ],
+        "rowLabels": [
+          "EE",
+          "FF",
+          "GG",
+          "HH",
+          "II",
+          "JJ"
+        ],
+        "seatsPerRow": 22
+      },
+      {
+        "sectionId": "103",
+        "sectionName": "Section 103 at Tropicana Field",
+        "rows": [],
+        "totalRows": 6,
+        "totalSeats": 132,
+        "firstRow": "EE",
+        "lastRow": "JJ",
+        "rowRanges": [
+          "EE-JJ"
+        ],
+        "rowLabels": [
+          "EE",
+          "FF",
+          "GG",
+          "HH",
+          "II",
+          "JJ"
+        ],
+        "seatsPerRow": 22
+      },
+      {
+        "sectionId": "104",
+        "sectionName": "Section 104 at Tropicana Field",
+        "rows": [],
+        "totalRows": 0,
+        "totalSeats": 0,
+        "firstRow": "",
+        "lastRow": "",
+        "rowRanges": [],
+        "rowLabels": [],
+        "seatsPerRow": 22
+      },
+      {
+        "sectionId": "105",
+        "sectionName": "Section 105 at Tropicana Field",
+        "rows": [],
+        "totalRows": 6,
+        "totalSeats": 132,
+        "firstRow": "EE",
+        "lastRow": "JJ",
+        "rowRanges": [
+          "EE-JJ"
+        ],
+        "rowLabels": [
+          "EE",
+          "FF",
+          "GG",
+          "HH",
+          "II",
+          "JJ"
+        ],
+        "seatsPerRow": 22
+      },
+      {
+        "sectionId": "106",
+        "sectionName": "Section 106 at Tropicana Field",
+        "rows": [],
+        "totalRows": 0,
+        "totalSeats": 0,
+        "firstRow": "",
+        "lastRow": "",
+        "rowRanges": [],
+        "rowLabels": [],
+        "seatsPerRow": 22
+      },
+      {
+        "sectionId": "107",
+        "sectionName": "Section 107 at Tropicana Field",
+        "rows": [],
+        "totalRows": 6,
+        "totalSeats": 132,
+        "firstRow": "EE",
+        "lastRow": "JJ",
+        "rowRanges": [
+          "EE-JJ"
+        ],
+        "rowLabels": [
+          "EE",
+          "FF",
+          "GG",
+          "HH",
+          "II",
+          "JJ"
+        ],
+        "seatsPerRow": 22
+      },
+      {
+        "sectionId": "108",
+        "sectionName": "Section 108 at Tropicana Field",
+        "rows": [],
+        "totalRows": 0,
+        "totalSeats": 0,
+        "firstRow": "",
+        "lastRow": "",
+        "rowRanges": [],
+        "rowLabels": [],
+        "seatsPerRow": 22
+      },
+      {
+        "sectionId": "109",
+        "sectionName": "Section 109 at Tropicana Field",
+        "rows": [],
+        "totalRows": 6,
+        "totalSeats": 132,
+        "firstRow": "EE",
+        "lastRow": "JJ",
+        "rowRanges": [
+          "EE-JJ"
+        ],
+        "rowLabels": [
+          "EE",
+          "FF",
+          "GG",
+          "HH",
+          "II",
+          "JJ"
+        ],
+        "seatsPerRow": 22
+      },
+      {
+        "sectionId": "110",
+        "sectionName": "Section 110 at Tropicana Field",
+        "rows": [],
+        "totalRows": 5,
+        "totalSeats": 110,
+        "firstRow": "FF",
+        "lastRow": "JJ",
+        "rowRanges": [
+          "FF-JJ"
+        ],
+        "rowLabels": [
+          "FF",
+          "GG",
+          "HH",
+          "II",
+          "JJ"
+        ],
+        "seatsPerRow": 22
+      },
+      {
+        "sectionId": "111",
+        "sectionName": "Section 111 at Tropicana Field",
+        "rows": [],
+        "totalRows": 18,
+        "totalSeats": 396,
+        "firstRow": "FF",
+        "lastRow": "JJ",
+        "rowRanges": [
+          "FF-QQ",
+          "EE-JJ"
+        ],
+        "rowLabels": [
+          "FF",
+          "GG",
+          "HH",
+          "II",
+          "JJ",
+          "KK",
+          "LL",
+          "MM",
+          "NN",
+          "OO",
+          "PP",
+          "QQ",
+          "EE",
+          "FF",
+          "GG",
+          "HH",
+          "II",
+          "JJ"
+        ],
+        "seatsPerRow": 22
+      },
+      {
+        "sectionId": "112",
+        "sectionName": "Section 112 at Tropicana Field",
+        "rows": [],
+        "totalRows": 5,
+        "totalSeats": 110,
+        "firstRow": "FF",
+        "lastRow": "JJ",
+        "rowRanges": [
+          "FF-JJ"
+        ],
+        "rowLabels": [
+          "FF",
+          "GG",
+          "HH",
+          "II",
+          "JJ"
+        ],
+        "seatsPerRow": 22
+      },
+      {
+        "sectionId": "113",
+        "sectionName": "Section 113 at Tropicana Field",
+        "rows": [],
+        "totalRows": 18,
+        "totalSeats": 396,
+        "firstRow": "FF",
+        "lastRow": "JJ",
+        "rowRanges": [
+          "FF-QQ",
+          "EE-JJ"
+        ],
+        "rowLabels": [
+          "FF",
+          "GG",
+          "HH",
+          "II",
+          "JJ",
+          "KK",
+          "LL",
+          "MM",
+          "NN",
+          "OO",
+          "PP",
+          "QQ",
+          "EE",
+          "FF",
+          "GG",
+          "HH",
+          "II",
+          "JJ"
+        ],
+        "seatsPerRow": 22
+      },
+      {
+        "sectionId": "114",
+        "sectionName": "Section 114 at Tropicana Field",
+        "rows": [],
+        "totalRows": 5,
+        "totalSeats": 110,
+        "firstRow": "FF",
+        "lastRow": "JJ",
+        "rowRanges": [
+          "FF-JJ"
+        ],
+        "rowLabels": [
+          "FF",
+          "GG",
+          "HH",
+          "II",
+          "JJ"
+        ],
+        "seatsPerRow": 22
+      },
+      {
+        "sectionId": "115",
+        "sectionName": "Section 115 at Tropicana Field",
+        "rows": [],
+        "totalRows": 18,
+        "totalSeats": 396,
+        "firstRow": "FF",
+        "lastRow": "JJ",
+        "rowRanges": [
+          "FF-QQ",
+          "EE-JJ"
+        ],
+        "rowLabels": [
+          "FF",
+          "GG",
+          "HH",
+          "II",
+          "JJ",
+          "KK",
+          "LL",
+          "MM",
+          "NN",
+          "OO",
+          "PP",
+          "QQ",
+          "EE",
+          "FF",
+          "GG",
+          "HH",
+          "II",
+          "JJ"
+        ],
+        "seatsPerRow": 22
+      },
+      {
+        "sectionId": "116",
+        "sectionName": "Section 116 at Tropicana Field",
+        "rows": [],
+        "totalRows": 0,
+        "totalSeats": 0,
+        "firstRow": "",
+        "lastRow": "",
+        "rowRanges": [],
+        "rowLabels": [],
+        "seatsPerRow": 22
+      },
+      {
+        "sectionId": "117",
+        "sectionName": "Section 117 at Tropicana Field",
+        "rows": [],
+        "totalRows": 6,
+        "totalSeats": 132,
+        "firstRow": "EE",
+        "lastRow": "JJ",
+        "rowRanges": [
+          "EE-JJ"
+        ],
+        "rowLabels": [
+          "EE",
+          "FF",
+          "GG",
+          "HH",
+          "II",
+          "JJ"
+        ],
+        "seatsPerRow": 22
+      },
+      {
+        "sectionId": "118",
+        "sectionName": "Section 118 at Tropicana Field",
+        "rows": [],
+        "totalRows": 0,
+        "totalSeats": 0,
+        "firstRow": "",
+        "lastRow": "",
+        "rowRanges": [],
+        "rowLabels": [],
+        "seatsPerRow": 22
+      },
+      {
+        "sectionId": "119",
+        "sectionName": "Section 119 at Tropicana Field",
+        "rows": [],
+        "totalRows": 12,
+        "totalSeats": 264,
+        "firstRow": "B",
+        "lastRow": "JJ",
+        "rowRanges": [
+          "B-G",
+          "EE-JJ"
+        ],
+        "rowLabels": [
+          "B",
+          "C",
+          "D",
+          "E",
+          "F",
+          "G",
+          "EE",
+          "FF",
+          "GG",
+          "HH",
+          "II",
+          "JJ"
+        ],
+        "seatsPerRow": 22
+      },
+      {
+        "sectionId": "120",
+        "sectionName": "Section 120 at Tropicana Field",
+        "rows": [],
+        "totalRows": 6,
+        "totalSeats": 132,
+        "firstRow": "B",
+        "lastRow": "G",
+        "rowRanges": [
+          "B-G"
+        ],
+        "rowLabels": [
+          "B",
+          "C",
+          "D",
+          "E",
+          "F",
+          "G"
+        ],
+        "seatsPerRow": 22
+      },
+      {
+        "sectionId": "121",
+        "sectionName": "Section 121 at Tropicana Field",
+        "rows": [],
+        "totalRows": 6,
+        "totalSeats": 132,
+        "firstRow": "B",
+        "lastRow": "G",
+        "rowRanges": [
+          "B-G"
+        ],
+        "rowLabels": [
+          "B",
+          "C",
+          "D",
+          "E",
+          "F",
+          "G"
+        ],
+        "seatsPerRow": 22
+      },
+      {
+        "sectionId": "122",
+        "sectionName": "Section 122 at Tropicana Field",
+        "rows": [],
+        "totalRows": 10,
+        "totalSeats": 220,
+        "firstRow": "B",
+        "lastRow": "D",
+        "rowRanges": [
+          "B-G",
+          "A-D"
+        ],
+        "rowLabels": [
+          "B",
+          "C",
+          "D",
+          "E",
+          "F",
+          "G",
+          "A",
+          "B",
+          "C",
+          "D"
+        ],
+        "seatsPerRow": 22
+      },
+      {
+        "sectionId": "123",
+        "sectionName": "Section 123 at Tropicana Field",
+        "rows": [],
+        "totalRows": 6,
+        "totalSeats": 132,
+        "firstRow": "B",
+        "lastRow": "G",
+        "rowRanges": [
+          "B-G"
+        ],
+        "rowLabels": [
+          "B",
+          "C",
+          "D",
+          "E",
+          "F",
+          "G"
+        ],
+        "seatsPerRow": 22
+      },
+      {
+        "sectionId": "124",
+        "sectionName": "Section 124 at Tropicana Field",
+        "rows": [],
+        "totalRows": 10,
+        "totalSeats": 220,
+        "firstRow": "B",
+        "lastRow": "D",
+        "rowRanges": [
+          "B-G",
+          "A-D"
+        ],
+        "rowLabels": [
+          "B",
+          "C",
+          "D",
+          "E",
+          "F",
+          "G",
+          "A",
+          "B",
+          "C",
+          "D"
+        ],
+        "seatsPerRow": 22
+      },
+      {
+        "sectionId": "125",
+        "sectionName": "Section 125 at Tropicana Field",
+        "rows": [],
+        "totalRows": 12,
+        "totalSeats": 264,
+        "firstRow": "FF",
+        "lastRow": "QQ",
+        "rowRanges": [
+          "FF-QQ"
+        ],
+        "rowLabels": [
+          "FF",
+          "GG",
+          "HH",
+          "II",
+          "JJ",
+          "KK",
+          "LL",
+          "MM",
+          "NN",
+          "OO",
+          "PP",
+          "QQ"
+        ],
+        "seatsPerRow": 22
+      },
+      {
+        "sectionId": "126",
+        "sectionName": "Section 126 at Tropicana Field",
+        "rows": [],
+        "totalRows": 4,
+        "totalSeats": 88,
+        "firstRow": "A",
+        "lastRow": "D",
+        "rowRanges": [
+          "A-D"
+        ],
+        "rowLabels": [
+          "A",
+          "B",
+          "C",
+          "D"
+        ],
+        "seatsPerRow": 22
+      },
+      {
+        "sectionId": "127",
+        "sectionName": "Section 127 at Tropicana Field",
+        "rows": [],
+        "totalRows": 12,
+        "totalSeats": 264,
+        "firstRow": "FF",
+        "lastRow": "QQ",
+        "rowRanges": [
+          "FF-QQ"
+        ],
+        "rowLabels": [
+          "FF",
+          "GG",
+          "HH",
+          "II",
+          "JJ",
+          "KK",
+          "LL",
+          "MM",
+          "NN",
+          "OO",
+          "PP",
+          "QQ"
+        ],
+        "seatsPerRow": 22
+      },
+      {
+        "sectionId": "128",
+        "sectionName": "Section 128 at Tropicana Field",
+        "rows": [],
+        "totalRows": 0,
+        "totalSeats": 0,
+        "firstRow": "",
+        "lastRow": "",
+        "rowRanges": [],
+        "rowLabels": [],
+        "seatsPerRow": 22
+      },
+      {
+        "sectionId": "129",
+        "sectionName": "Section 129 at Tropicana Field",
+        "rows": [],
+        "totalRows": 0,
+        "totalSeats": 0,
+        "firstRow": "",
+        "lastRow": "",
+        "rowRanges": [],
+        "rowLabels": [],
+        "seatsPerRow": 22
+      },
+      {
+        "sectionId": "130",
+        "sectionName": "Section 130 at Tropicana Field",
+        "rows": [],
+        "totalRows": 0,
+        "totalSeats": 0,
+        "firstRow": "",
+        "lastRow": "",
+        "rowRanges": [],
+        "rowLabels": [],
+        "seatsPerRow": 22
+      },
+      {
+        "sectionId": "131",
+        "sectionName": "Section 131 at Tropicana Field",
+        "rows": [],
+        "totalRows": 0,
+        "totalSeats": 0,
+        "firstRow": "",
+        "lastRow": "",
+        "rowRanges": [],
+        "rowLabels": [],
+        "seatsPerRow": 22
+      },
+      {
+        "sectionId": "132",
+        "sectionName": "Section 132 at Tropicana Field",
+        "rows": [],
+        "totalRows": 0,
+        "totalSeats": 0,
+        "firstRow": "",
+        "lastRow": "",
+        "rowRanges": [],
+        "rowLabels": [],
+        "seatsPerRow": 22
+      },
+      {
+        "sectionId": "133",
+        "sectionName": "Section 133 at Tropicana Field",
+        "rows": [],
+        "totalRows": 133,
+        "totalSeats": 2926,
+        "firstRow": "",
+        "lastRow": "",
+        "rowRanges": [],
+        "rowLabels": [],
+        "seatsPerRow": 22
+      },
+      {
+        "sectionId": "134",
+        "sectionName": "Section 134 at Tropicana Field",
+        "rows": [],
+        "totalRows": 0,
+        "totalSeats": 0,
+        "firstRow": "",
+        "lastRow": "",
+        "rowRanges": [],
+        "rowLabels": [],
+        "seatsPerRow": 22
+      },
+      {
+        "sectionId": "135",
+        "sectionName": "Section 135 at Tropicana Field",
+        "rows": [],
+        "totalRows": 0,
+        "totalSeats": 0,
+        "firstRow": "",
+        "lastRow": "",
+        "rowRanges": [],
+        "rowLabels": [],
+        "seatsPerRow": 22
+      },
+      {
+        "sectionId": "136",
+        "sectionName": "Section 136 at Tropicana Field",
+        "rows": [],
+        "totalRows": 0,
+        "totalSeats": 0,
+        "firstRow": "",
+        "lastRow": "",
+        "rowRanges": [],
+        "rowLabels": [],
+        "seatsPerRow": 22
+      },
+      {
+        "sectionId": "137",
+        "sectionName": "Section 137 at Tropicana Field",
+        "rows": [],
+        "totalRows": 8,
+        "totalSeats": 176,
+        "firstRow": "S",
+        "lastRow": "Z",
+        "rowRanges": [
+          "S-Z"
+        ],
+        "rowLabels": [
+          "S",
+          "T",
+          "U",
+          "V",
+          "W",
+          "X",
+          "Y",
+          "Z"
+        ],
+        "seatsPerRow": 22
+      },
+      {
+        "sectionId": "138",
+        "sectionName": "Section 138 at Tropicana Field",
+        "rows": [],
+        "totalRows": 0,
+        "totalSeats": 0,
+        "firstRow": "",
+        "lastRow": "",
+        "rowRanges": [],
+        "rowLabels": [],
+        "seatsPerRow": 22
+      },
+      {
+        "sectionId": "139",
+        "sectionName": "Section 139 at Tropicana Field",
+        "rows": [],
+        "totalRows": 8,
+        "totalSeats": 176,
+        "firstRow": "S",
+        "lastRow": "Z",
+        "rowRanges": [
+          "S-Z"
+        ],
+        "rowLabels": [
+          "S",
+          "T",
+          "U",
+          "V",
+          "W",
+          "X",
+          "Y",
+          "Z"
+        ],
+        "seatsPerRow": 22
+      },
+      {
+        "sectionId": "140",
+        "sectionName": "Section 140 at Tropicana Field",
+        "rows": [],
+        "totalRows": 0,
+        "totalSeats": 0,
+        "firstRow": "",
+        "lastRow": "",
+        "rowRanges": [],
+        "rowLabels": [],
+        "seatsPerRow": 22
+      },
+      {
+        "sectionId": "141",
+        "sectionName": "Section 141 at Tropicana Field",
+        "rows": [],
+        "totalRows": 141,
+        "totalSeats": 3102,
+        "firstRow": "",
+        "lastRow": "",
+        "rowRanges": [],
+        "rowLabels": [],
+        "seatsPerRow": 22
+      },
+      {
+        "sectionId": "142",
+        "sectionName": "Section 142 at Tropicana Field",
+        "rows": [],
+        "totalRows": 8,
+        "totalSeats": 176,
+        "firstRow": "S",
+        "lastRow": "Z",
+        "rowRanges": [
+          "S-Z"
+        ],
+        "rowLabels": [
+          "S",
+          "T",
+          "U",
+          "V",
+          "W",
+          "X",
+          "Y",
+          "Z"
+        ],
+        "seatsPerRow": 22
+      },
+      {
+        "sectionId": "143",
+        "sectionName": "Section 143 at Tropicana Field",
+        "rows": [],
+        "totalRows": 8,
+        "totalSeats": 176,
+        "firstRow": "S",
+        "lastRow": "Z",
+        "rowRanges": [
+          "S-Z"
+        ],
+        "rowLabels": [
+          "S",
+          "T",
+          "U",
+          "V",
+          "W",
+          "X",
+          "Y",
+          "Z"
+        ],
+        "seatsPerRow": 22
+      },
+      {
+        "sectionId": "144",
+        "sectionName": "Section 144 at Tropicana Field",
+        "rows": [],
+        "totalRows": 8,
+        "totalSeats": 176,
+        "firstRow": "S",
+        "lastRow": "Z",
+        "rowRanges": [
+          "S-Z"
+        ],
+        "rowLabels": [
+          "S",
+          "T",
+          "U",
+          "V",
+          "W",
+          "X",
+          "Y",
+          "Z"
+        ],
+        "seatsPerRow": 22
+      },
+      {
+        "sectionId": "145",
+        "sectionName": "Section 145 at Tropicana Field",
+        "rows": [],
+        "totalRows": 8,
+        "totalSeats": 176,
+        "firstRow": "S",
+        "lastRow": "Z",
+        "rowRanges": [
+          "S-Z"
+        ],
+        "rowLabels": [
+          "S",
+          "T",
+          "U",
+          "V",
+          "W",
+          "X",
+          "Y",
+          "Z"
+        ],
+        "seatsPerRow": 22
+      },
+      {
+        "sectionId": "146",
+        "sectionName": "Section 146 at Tropicana Field",
+        "rows": [],
+        "totalRows": 8,
+        "totalSeats": 176,
+        "firstRow": "S",
+        "lastRow": "Z",
+        "rowRanges": [
+          "S-Z"
+        ],
+        "rowLabels": [
+          "S",
+          "T",
+          "U",
+          "V",
+          "W",
+          "X",
+          "Y",
+          "Z"
+        ],
+        "seatsPerRow": 22
+      },
+      {
+        "sectionId": "147",
+        "sectionName": "Section 147 at Tropicana Field",
+        "rows": [],
+        "totalRows": 0,
+        "totalSeats": 0,
+        "firstRow": "",
+        "lastRow": "",
+        "rowRanges": [],
+        "rowLabels": [],
+        "seatsPerRow": 22
+      },
+      {
+        "sectionId": "148",
+        "sectionName": "Section 148 at Tropicana Field",
+        "rows": [],
+        "totalRows": 0,
+        "totalSeats": 0,
+        "firstRow": "",
+        "lastRow": "",
+        "rowRanges": [],
+        "rowLabels": [],
+        "seatsPerRow": 22
+      },
+      {
+        "sectionId": "149",
+        "sectionName": "Section 149 at Tropicana Field",
+        "rows": [],
+        "totalRows": 0,
+        "totalSeats": 0,
+        "firstRow": "",
+        "lastRow": "",
+        "rowRanges": [],
+        "rowLabels": [],
+        "seatsPerRow": 22
+      },
+      {
+        "sectionId": "150",
+        "sectionName": "Section 150 at Tropicana Field",
+        "rows": [],
+        "totalRows": 0,
+        "totalSeats": 0,
+        "firstRow": "",
+        "lastRow": "",
+        "rowRanges": [],
+        "rowLabels": [],
+        "seatsPerRow": 22
+      },
+      {
+        "sectionId": "203",
+        "sectionName": "Section 203 at Tropicana Field",
+        "rows": [],
+        "totalRows": 0,
+        "totalSeats": 0,
+        "firstRow": "",
+        "lastRow": "",
+        "rowRanges": [],
+        "rowLabels": [],
+        "seatsPerRow": 22
+      },
+      {
+        "sectionId": "204",
+        "sectionName": "Section 204 at Tropicana Field",
+        "rows": [],
+        "totalRows": 0,
+        "totalSeats": 0,
+        "firstRow": "",
+        "lastRow": "",
+        "rowRanges": [],
+        "rowLabels": [],
+        "seatsPerRow": 22
+      },
+      {
+        "sectionId": "205",
+        "sectionName": "Section 205 at Tropicana Field",
+        "rows": [],
+        "totalRows": 0,
+        "totalSeats": 0,
+        "firstRow": "",
+        "lastRow": "",
+        "rowRanges": [],
+        "rowLabels": [],
+        "seatsPerRow": 22
+      },
+      {
+        "sectionId": "206",
+        "sectionName": "Section 206 at Tropicana Field",
+        "rows": [],
+        "totalRows": 0,
+        "totalSeats": 0,
+        "firstRow": "",
+        "lastRow": "",
+        "rowRanges": [],
+        "rowLabels": [],
+        "seatsPerRow": 22
+      },
+      {
+        "sectionId": "207",
+        "sectionName": "Section 207 at Tropicana Field",
+        "rows": [],
+        "totalRows": 7,
+        "totalSeats": 154,
+        "firstRow": "B",
+        "lastRow": "H",
+        "rowRanges": [
+          "B-H"
+        ],
+        "rowLabels": [
+          "B",
+          "C",
+          "D",
+          "E",
+          "F",
+          "G",
+          "H"
+        ],
+        "seatsPerRow": 22
+      },
+      {
+        "sectionId": "208",
+        "sectionName": "Section 208 at Tropicana Field",
+        "rows": [],
+        "totalRows": 0,
+        "totalSeats": 0,
+        "firstRow": "",
+        "lastRow": "",
+        "rowRanges": [],
+        "rowLabels": [],
+        "seatsPerRow": 22
+      },
+      {
+        "sectionId": "209",
+        "sectionName": "Section 209 at Tropicana Field",
+        "rows": [],
+        "totalRows": 12,
+        "totalSeats": 264,
+        "firstRow": "D",
+        "lastRow": "H",
+        "rowRanges": [
+          "D-H",
+          "B-H"
+        ],
+        "rowLabels": [
+          "D",
+          "E",
+          "F",
+          "G",
+          "H",
+          "B",
+          "C",
+          "D",
+          "E",
+          "F",
+          "G",
+          "H"
+        ],
+        "seatsPerRow": 22
+      },
+      {
+        "sectionId": "210",
+        "sectionName": "Section 210 at Tropicana Field",
+        "rows": [],
+        "totalRows": 5,
+        "totalSeats": 110,
+        "firstRow": "D",
+        "lastRow": "H",
+        "rowRanges": [
+          "D-H"
+        ],
+        "rowLabels": [
+          "D",
+          "E",
+          "F",
+          "G",
+          "H"
+        ],
+        "seatsPerRow": 22
+      },
+      {
+        "sectionId": "211",
+        "sectionName": "Section 211 at Tropicana Field",
+        "rows": [],
+        "totalRows": 7,
+        "totalSeats": 154,
+        "firstRow": "B",
+        "lastRow": "H",
+        "rowRanges": [
+          "B-H"
+        ],
+        "rowLabels": [
+          "B",
+          "C",
+          "D",
+          "E",
+          "F",
+          "G",
+          "H"
+        ],
+        "seatsPerRow": 22
+      },
+      {
+        "sectionId": "212",
+        "sectionName": "Section 212 at Tropicana Field",
+        "rows": [],
+        "totalRows": 5,
+        "totalSeats": 110,
+        "firstRow": "D",
+        "lastRow": "H",
+        "rowRanges": [
+          "D-H"
+        ],
+        "rowLabels": [
+          "D",
+          "E",
+          "F",
+          "G",
+          "H"
+        ],
+        "seatsPerRow": 22
+      },
+      {
+        "sectionId": "213",
+        "sectionName": "Section 213 at Tropicana Field",
+        "rows": [],
+        "totalRows": 7,
+        "totalSeats": 154,
+        "firstRow": "B",
+        "lastRow": "H",
+        "rowRanges": [
+          "B-H"
+        ],
+        "rowLabels": [
+          "B",
+          "C",
+          "D",
+          "E",
+          "F",
+          "G",
+          "H"
+        ],
+        "seatsPerRow": 22
+      },
+      {
+        "sectionId": "214",
+        "sectionName": "Section 214 at Tropicana Field",
+        "rows": [],
+        "totalRows": 0,
+        "totalSeats": 0,
+        "firstRow": "",
+        "lastRow": "",
+        "rowRanges": [],
+        "rowLabels": [],
+        "seatsPerRow": 22
+      },
+      {
+        "sectionId": "215",
+        "sectionName": "Section 215 at Tropicana Field",
+        "rows": [],
+        "totalRows": 5,
+        "totalSeats": 110,
+        "firstRow": "D",
+        "lastRow": "H",
+        "rowRanges": [
+          "D-H"
+        ],
+        "rowLabels": [
+          "D",
+          "E",
+          "F",
+          "G",
+          "H"
+        ],
+        "seatsPerRow": 22
+      },
+      {
+        "sectionId": "216",
+        "sectionName": "Section 216 at Tropicana Field",
+        "rows": [],
+        "totalRows": 5,
+        "totalSeats": 110,
+        "firstRow": "D",
+        "lastRow": "H",
+        "rowRanges": [
+          "D-H"
+        ],
+        "rowLabels": [
+          "D",
+          "E",
+          "F",
+          "G",
+          "H"
+        ],
+        "seatsPerRow": 22
+      },
+      {
+        "sectionId": "217",
+        "sectionName": "Section 217 at Tropicana Field",
+        "rows": [],
+        "totalRows": 0,
+        "totalSeats": 0,
+        "firstRow": "",
+        "lastRow": "",
+        "rowRanges": [],
+        "rowLabels": [],
+        "seatsPerRow": 22
+      },
+      {
+        "sectionId": "218",
+        "sectionName": "Section 218 at Tropicana Field",
+        "rows": [],
+        "totalRows": 5,
+        "totalSeats": 110,
+        "firstRow": "D",
+        "lastRow": "H",
+        "rowRanges": [
+          "D-H"
+        ],
+        "rowLabels": [
+          "D",
+          "E",
+          "F",
+          "G",
+          "H"
+        ],
+        "seatsPerRow": 22
+      },
+      {
+        "sectionId": "219",
+        "sectionName": "Section 219 at Tropicana Field",
+        "rows": [],
+        "totalRows": 0,
+        "totalSeats": 0,
+        "firstRow": "",
+        "lastRow": "",
+        "rowRanges": [],
+        "rowLabels": [],
+        "seatsPerRow": 22
+      },
+      {
+        "sectionId": "220",
+        "sectionName": "Section 220 at Tropicana Field",
+        "rows": [],
+        "totalRows": 0,
+        "totalSeats": 0,
+        "firstRow": "",
+        "lastRow": "",
+        "rowRanges": [],
+        "rowLabels": [],
+        "seatsPerRow": 22
+      },
+      {
+        "sectionId": "221",
+        "sectionName": "Section 221 at Tropicana Field",
+        "rows": [],
+        "totalRows": 0,
+        "totalSeats": 0,
+        "firstRow": "",
+        "lastRow": "",
+        "rowRanges": [],
+        "rowLabels": [],
+        "seatsPerRow": 22
+      },
+      {
+        "sectionId": "222",
+        "sectionName": "Section 222 at Tropicana Field",
+        "rows": [],
+        "totalRows": 0,
+        "totalSeats": 0,
+        "firstRow": "",
+        "lastRow": "",
+        "rowRanges": [],
+        "rowLabels": [],
+        "seatsPerRow": 22
+      },
+      {
+        "sectionId": "223",
+        "sectionName": "Section 223 at Tropicana Field",
+        "rows": [],
+        "totalRows": 0,
+        "totalSeats": 0,
+        "firstRow": "",
+        "lastRow": "",
+        "rowRanges": [],
+        "rowLabels": [],
+        "seatsPerRow": 22
+      },
+      {
+        "sectionId": "224",
+        "sectionName": "Section 224 at Tropicana Field",
+        "rows": [],
+        "totalRows": 0,
+        "totalSeats": 0,
+        "firstRow": "",
+        "lastRow": "",
+        "rowRanges": [],
+        "rowLabels": [],
+        "seatsPerRow": 22
+      },
+      {
+        "sectionId": "300",
+        "sectionName": "Section 300 at Tropicana Field",
+        "rows": [],
+        "totalRows": 6,
+        "totalSeats": 132,
+        "firstRow": "E",
+        "lastRow": "J",
+        "rowRanges": [
+          "E-J"
+        ],
+        "rowLabels": [
+          "E",
+          "F",
+          "G",
+          "H",
+          "I",
+          "J"
+        ],
+        "seatsPerRow": 22
+      },
+      {
+        "sectionId": "301",
+        "sectionName": "Section 301 at Tropicana Field",
+        "rows": [],
+        "totalRows": 6,
+        "totalSeats": 132,
+        "firstRow": "E",
+        "lastRow": "J",
+        "rowRanges": [
+          "E-J"
+        ],
+        "rowLabels": [
+          "E",
+          "F",
+          "G",
+          "H",
+          "I",
+          "J"
+        ],
+        "seatsPerRow": 22
+      },
+      {
+        "sectionId": "302",
+        "sectionName": "Section 302 at Tropicana Field",
+        "rows": [],
+        "totalRows": 6,
+        "totalSeats": 132,
+        "firstRow": "E",
+        "lastRow": "J",
+        "rowRanges": [
+          "E-J"
+        ],
+        "rowLabels": [
+          "E",
+          "F",
+          "G",
+          "H",
+          "I",
+          "J"
+        ],
+        "seatsPerRow": 22
+      },
+      {
+        "sectionId": "303",
+        "sectionName": "Section 303 at Tropicana Field",
+        "rows": [],
+        "totalRows": 6,
+        "totalSeats": 132,
+        "firstRow": "E",
+        "lastRow": "J",
+        "rowRanges": [
+          "E-J"
+        ],
+        "rowLabels": [
+          "E",
+          "F",
+          "G",
+          "H",
+          "I",
+          "J"
+        ],
+        "seatsPerRow": 22
+      },
+      {
+        "sectionId": "304",
+        "sectionName": "Section 304 at Tropicana Field",
+        "rows": [],
+        "totalRows": 6,
+        "totalSeats": 132,
+        "firstRow": "E",
+        "lastRow": "J",
+        "rowRanges": [
+          "E-J"
+        ],
+        "rowLabels": [
+          "E",
+          "F",
+          "G",
+          "H",
+          "I",
+          "J"
+        ],
+        "seatsPerRow": 22
+      },
+      {
+        "sectionId": "305",
+        "sectionName": "Section 305 at Tropicana Field",
+        "rows": [],
+        "totalRows": 6,
+        "totalSeats": 132,
+        "firstRow": "E",
+        "lastRow": "J",
+        "rowRanges": [
+          "E-J"
+        ],
+        "rowLabels": [
+          "E",
+          "F",
+          "G",
+          "H",
+          "I",
+          "J"
+        ],
+        "seatsPerRow": 22
+      },
+      {
+        "sectionId": "306",
+        "sectionName": "Section 306 at Tropicana Field",
+        "rows": [],
+        "totalRows": 6,
+        "totalSeats": 132,
+        "firstRow": "E",
+        "lastRow": "J",
+        "rowRanges": [
+          "E-J"
+        ],
+        "rowLabels": [
+          "E",
+          "F",
+          "G",
+          "H",
+          "I",
+          "J"
+        ],
+        "seatsPerRow": 22
+      },
+      {
+        "sectionId": "307",
+        "sectionName": "Section 307 at Tropicana Field",
+        "rows": [],
+        "totalRows": 9,
+        "totalSeats": 198,
+        "firstRow": "A",
+        "lastRow": "I",
+        "rowRanges": [
+          "A-I"
+        ],
+        "rowLabels": [
+          "A",
+          "B",
+          "C",
+          "D",
+          "E",
+          "F",
+          "G",
+          "H",
+          "I"
+        ],
+        "seatsPerRow": 22
+      },
+      {
+        "sectionId": "308",
+        "sectionName": "Section 308 at Tropicana Field",
+        "rows": [],
+        "totalRows": 0,
+        "totalSeats": 0,
+        "firstRow": "",
+        "lastRow": "",
+        "rowRanges": [],
+        "rowLabels": [],
+        "seatsPerRow": 22
+      },
+      {
+        "sectionId": "309",
+        "sectionName": "Section 309 at Tropicana Field",
+        "rows": [],
+        "totalRows": 9,
+        "totalSeats": 198,
+        "firstRow": "A",
+        "lastRow": "I",
+        "rowRanges": [
+          "A-I"
+        ],
+        "rowLabels": [
+          "A",
+          "B",
+          "C",
+          "D",
+          "E",
+          "F",
+          "G",
+          "H",
+          "I"
+        ],
+        "seatsPerRow": 22
+      },
+      {
+        "sectionId": "310",
+        "sectionName": "Section 310 at Tropicana Field",
+        "rows": [],
+        "totalRows": 0,
+        "totalSeats": 0,
+        "firstRow": "",
+        "lastRow": "",
+        "rowRanges": [],
+        "rowLabels": [],
+        "seatsPerRow": 22
+      },
+      {
+        "sectionId": "311",
+        "sectionName": "Section 311 at Tropicana Field",
+        "rows": [],
+        "totalRows": 0,
+        "totalSeats": 0,
+        "firstRow": "",
+        "lastRow": "",
+        "rowRanges": [],
+        "rowLabels": [],
+        "seatsPerRow": 22
+      },
+      {
+        "sectionId": "312",
+        "sectionName": "Section 312 at Tropicana Field",
+        "rows": [],
+        "totalRows": 0,
+        "totalSeats": 0,
+        "firstRow": "",
+        "lastRow": "",
+        "rowRanges": [],
+        "rowLabels": [],
+        "seatsPerRow": 22
+      },
+      {
+        "sectionId": "313",
+        "sectionName": "Section 313 at Tropicana Field",
+        "rows": [],
+        "totalRows": 0,
+        "totalSeats": 0,
+        "firstRow": "",
+        "lastRow": "",
+        "rowRanges": [],
+        "rowLabels": [],
+        "seatsPerRow": 22
+      },
+      {
+        "sectionId": "314",
+        "sectionName": "Section 314 at Tropicana Field",
+        "rows": [],
+        "totalRows": 314,
+        "totalSeats": 6908,
+        "firstRow": "",
+        "lastRow": "",
+        "rowRanges": [],
+        "rowLabels": [],
+        "seatsPerRow": 22
+      },
+      {
+        "sectionId": "315",
+        "sectionName": "Section 315 at Tropicana Field",
+        "rows": [],
+        "totalRows": 9,
+        "totalSeats": 198,
+        "firstRow": "A",
+        "lastRow": "I",
+        "rowRanges": [
+          "A-I"
+        ],
+        "rowLabels": [
+          "A",
+          "B",
+          "C",
+          "D",
+          "E",
+          "F",
+          "G",
+          "H",
+          "I"
+        ],
+        "seatsPerRow": 22
+      },
+      {
+        "sectionId": "316",
+        "sectionName": "Section 316 at Tropicana Field",
+        "rows": [],
+        "totalRows": 9,
+        "totalSeats": 198,
+        "firstRow": "A",
+        "lastRow": "I",
+        "rowRanges": [
+          "A-I"
+        ],
+        "rowLabels": [
+          "A",
+          "B",
+          "C",
+          "D",
+          "E",
+          "F",
+          "G",
+          "H",
+          "I"
+        ],
+        "seatsPerRow": 22
+      },
+      {
+        "sectionId": "317",
+        "sectionName": "Section 317 at Tropicana Field",
+        "rows": [],
+        "totalRows": 9,
+        "totalSeats": 198,
+        "firstRow": "A",
+        "lastRow": "I",
+        "rowRanges": [
+          "A-I"
+        ],
+        "rowLabels": [
+          "A",
+          "B",
+          "C",
+          "D",
+          "E",
+          "F",
+          "G",
+          "H",
+          "I"
+        ],
+        "seatsPerRow": 22
+      },
+      {
+        "sectionId": "318",
+        "sectionName": "Section 318 at Tropicana Field",
+        "rows": [],
+        "totalRows": 9,
+        "totalSeats": 198,
+        "firstRow": "A",
+        "lastRow": "I",
+        "rowRanges": [
+          "A-I"
+        ],
+        "rowLabels": [
+          "A",
+          "B",
+          "C",
+          "D",
+          "E",
+          "F",
+          "G",
+          "H",
+          "I"
+        ],
+        "seatsPerRow": 22
+      },
+      {
+        "sectionId": "319",
+        "sectionName": "Section 319 at Tropicana Field",
+        "rows": [],
+        "totalRows": 0,
+        "totalSeats": 0,
+        "firstRow": "",
+        "lastRow": "",
+        "rowRanges": [],
+        "rowLabels": [],
+        "seatsPerRow": 22
+      },
+      {
+        "sectionId": "320",
+        "sectionName": "Section 320 at Tropicana Field",
+        "rows": [],
+        "totalRows": 0,
+        "totalSeats": 0,
+        "firstRow": "",
+        "lastRow": "",
+        "rowRanges": [],
+        "rowLabels": [],
+        "seatsPerRow": 22
+      },
+      {
+        "sectionId": "321",
+        "sectionName": "Section 321 at Tropicana Field",
+        "rows": [],
+        "totalRows": 0,
+        "totalSeats": 0,
+        "firstRow": "",
+        "lastRow": "",
+        "rowRanges": [],
+        "rowLabels": [],
+        "seatsPerRow": 22
+      },
+      {
+        "sectionId": "322",
+        "sectionName": "Section 322 at Tropicana Field",
+        "rows": [],
+        "totalRows": 0,
+        "totalSeats": 0,
+        "firstRow": "",
+        "lastRow": "",
+        "rowRanges": [],
+        "rowLabels": [],
+        "seatsPerRow": 22
+      },
+      {
+        "sectionId": "323",
+        "sectionName": "Section 323 at Tropicana Field",
+        "rows": [],
+        "totalRows": 0,
+        "totalSeats": 0,
+        "firstRow": "",
+        "lastRow": "",
+        "rowRanges": [],
+        "rowLabels": [],
+        "seatsPerRow": 22
+      },
+      {
+        "sectionId": "324",
+        "sectionName": "Section 324 at Tropicana Field",
+        "rows": [],
+        "totalRows": 0,
+        "totalSeats": 0,
+        "firstRow": "",
+        "lastRow": "",
+        "rowRanges": [],
+        "rowLabels": [],
+        "seatsPerRow": 22
+      },
+      {
+        "sectionId": "341",
+        "sectionName": "Section 341 at Tropicana Field",
+        "rows": [],
+        "totalRows": 0,
+        "totalSeats": 0,
+        "firstRow": "",
+        "lastRow": "",
+        "rowRanges": [],
+        "rowLabels": [],
+        "seatsPerRow": 22
+      },
+      {
+        "sectionId": "343",
+        "sectionName": "Section 343 at Tropicana Field",
+        "rows": [],
+        "totalRows": 0,
+        "totalSeats": 0,
+        "firstRow": "",
+        "lastRow": "",
+        "rowRanges": [],
+        "rowLabels": [],
+        "seatsPerRow": 22
+      },
+      {
+        "sectionId": "345",
+        "sectionName": "Section 345 at Tropicana Field",
+        "rows": [],
+        "totalRows": 0,
+        "totalSeats": 0,
+        "firstRow": "",
+        "lastRow": "",
+        "rowRanges": [],
+        "rowLabels": [],
+        "seatsPerRow": 22
+      },
+      {
+        "sectionId": "347",
+        "sectionName": "Section 347 at Tropicana Field",
+        "rows": [],
+        "totalRows": 0,
+        "totalSeats": 0,
+        "firstRow": "",
+        "lastRow": "",
+        "rowRanges": [],
+        "rowLabels": [],
+        "seatsPerRow": 22
+      },
+      {
+        "sectionId": "349",
+        "sectionName": "Section 349 at Tropicana Field",
+        "rows": [],
+        "totalRows": 0,
+        "totalSeats": 0,
+        "firstRow": "",
+        "lastRow": "",
+        "rowRanges": [],
+        "rowLabels": [],
+        "seatsPerRow": 22
+      },
+      {
+        "sectionId": "351",
+        "sectionName": "Section 351 at Tropicana Field",
+        "rows": [],
+        "totalRows": 0,
+        "totalSeats": 0,
+        "firstRow": "",
+        "lastRow": "",
+        "rowRanges": [],
+        "rowLabels": [],
+        "seatsPerRow": 22
+      },
+      {
+        "sectionId": "353",
+        "sectionName": "Section 353 at Tropicana Field",
+        "rows": [],
+        "totalRows": 0,
+        "totalSeats": 0,
+        "firstRow": "",
+        "lastRow": "",
+        "rowRanges": [],
+        "rowLabels": [],
+        "seatsPerRow": 22
+      },
+      {
+        "sectionId": "355",
+        "sectionName": "Section 355 at Tropicana Field",
+        "rows": [],
+        "totalRows": 0,
+        "totalSeats": 0,
+        "firstRow": "",
+        "lastRow": "",
+        "rowRanges": [],
+        "rowLabels": [],
+        "seatsPerRow": 22
+      },
+      {
+        "sectionId": "106C",
+        "sectionName": "Rays Club 106 at Tropicana Field",
+        "rows": [],
+        "totalRows": 0,
+        "totalSeats": 0,
+        "firstRow": "",
+        "lastRow": "",
+        "rowRanges": [],
+        "rowLabels": [],
+        "seatsPerRow": 22
+      },
+      {
+        "sectionId": "108C",
+        "sectionName": "Rays Club 108 at Tropicana Field",
+        "rows": [],
+        "totalRows": 0,
+        "totalSeats": 0,
+        "firstRow": "",
+        "lastRow": "",
+        "rowRanges": [],
+        "rowLabels": [],
+        "seatsPerRow": 22
+      },
+      {
+        "sectionId": "110C",
+        "sectionName": "Rays Club 110 at Tropicana Field",
+        "rows": [],
+        "totalRows": 0,
+        "totalSeats": 0,
+        "firstRow": "",
+        "lastRow": "",
+        "rowRanges": [],
+        "rowLabels": [],
+        "seatsPerRow": 22
+      },
+      {
+        "sectionId": "112C",
+        "sectionName": "Rays Club 112 at Tropicana Field",
+        "rows": [],
+        "totalRows": 0,
+        "totalSeats": 0,
+        "firstRow": "",
+        "lastRow": "",
+        "rowRanges": [],
+        "rowLabels": [],
+        "seatsPerRow": 22
+      },
+      {
+        "sectionId": "114C",
+        "sectionName": "Rays Club 114 at Tropicana Field",
+        "rows": [],
+        "totalRows": 0,
+        "totalSeats": 0,
+        "firstRow": "",
+        "lastRow": "",
+        "rowRanges": [],
+        "rowLabels": [],
+        "seatsPerRow": 22
+      },
+      {
+        "sectionId": "116C",
+        "sectionName": "Rays Club 116 at Tropicana Field",
+        "rows": [],
+        "totalRows": 0,
+        "totalSeats": 0,
+        "firstRow": "",
+        "lastRow": "",
+        "rowRanges": [],
+        "rowLabels": [],
+        "seatsPerRow": 22
+      },
+      {
+        "sectionId": "118C",
+        "sectionName": "Rays Club 118 at Tropicana Field",
+        "rows": [],
+        "totalRows": 0,
+        "totalSeats": 0,
+        "firstRow": "",
+        "lastRow": "",
+        "rowRanges": [],
+        "rowLabels": [],
+        "seatsPerRow": 22
+      },
+      {
+        "sectionId": "120C",
+        "sectionName": "Rays Club 120 at Tropicana Field",
+        "rows": [],
+        "totalRows": 0,
+        "totalSeats": 0,
+        "firstRow": "",
+        "lastRow": "",
+        "rowRanges": [],
+        "rowLabels": [],
+        "seatsPerRow": 22
+      },
+      {
+        "sectionId": "122C",
+        "sectionName": "Rays Club 122 at Tropicana Field",
+        "rows": [],
+        "totalRows": 0,
+        "totalSeats": 0,
+        "firstRow": "",
+        "lastRow": "",
+        "rowRanges": [],
+        "rowLabels": [],
+        "seatsPerRow": 22
+      },
+      {
+        "sectionId": "124C",
+        "sectionName": "Rays Club 124 at Tropicana Field",
+        "rows": [],
+        "totalRows": 0,
+        "totalSeats": 0,
+        "firstRow": "",
+        "lastRow": "",
+        "rowRanges": [],
+        "rowLabels": [],
+        "seatsPerRow": 22
+      },
+      {
+        "sectionId": "126C",
+        "sectionName": "Rays Club 126 at Tropicana Field",
+        "rows": [],
+        "totalRows": 0,
+        "totalSeats": 0,
+        "firstRow": "",
+        "lastRow": "",
+        "rowRanges": [],
+        "rowLabels": [],
+        "seatsPerRow": 22
+      }
+    ]
+  }
+]
