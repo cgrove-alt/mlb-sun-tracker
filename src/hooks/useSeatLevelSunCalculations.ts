@@ -10,7 +10,8 @@ import { SunPosition } from '../utils/sunCalculations';
 import { loadSectionSeatData, getSectionSeatsAsVector3D } from '../utils/seatDataLoader';
 import { Vector3D } from '../types/stadium-complete';
 import { MLB_STADIUMS } from '../data/stadiums';
-import { getStadiumCompleteData } from '../data/stadium-data-aggregator';
+import { getStadiumCompleteData, getStadiumObstructions } from '../data/stadium-data-aggregator';
+import { isPointInShadow } from '../utils/advancedShadowCalculator';
 
 export interface SeatSunExposure {
   seatId: string;
@@ -118,6 +119,10 @@ export function useSeatLevelSunCalculations({
       // Get seats as Vector3D for calculations
       const seatPositions = await getSectionSeatsAsVector3D(stadiumId, sectionId);
 
+      // Load stadium-specific obstructions for shadow checking
+      const obstructions = getStadiumObstructions(stadiumId, 'MLB');
+      const shadowObstructions = obstructions.filter(o => o.castsShadow);
+
       // Calculate sun direction vector from azimuth and altitude
       // Sun azimuth: 0=N, 90=E, 180=S, 270=W (compass degrees)
       // Sun altitude: 0=horizon, 90=directly overhead
@@ -184,6 +189,16 @@ export function useSeatLevelSunCalculations({
           // If sun is below horizon, no direct exposure
           if (sunPosition.altitudeDegrees <= 0) {
             sunExposure = 0;
+          }
+
+          // Check for stadium-specific obstructions (overhangs, scoreboards, etc.)
+          if (shadowObstructions.length > 0 && sunExposure > 0) {
+            const sunDir: Vector3D = { x: sunDirX, y: sunDirY, z: sunDirZ };
+            const shadowCheck = isPointInShadow(pos, sunDir, shadowObstructions);
+            if (shadowCheck.inShadow) {
+              // Seat is shadowed by an obstruction - drastically reduce exposure
+              sunExposure *= 0.1;
+            }
           }
 
           // Clamp to 0-100 range

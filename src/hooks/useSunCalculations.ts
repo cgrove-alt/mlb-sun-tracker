@@ -1,6 +1,8 @@
 import { useEffect, useState, useCallback } from 'react';
 import { SunPosition } from '../utils/sunCalculations';
 import { getSectionSunExposure } from '../utils/sectionSunCalculations';
+import { getStadiumObstructions } from '../data/stadium-data-aggregator';
+import { calculateObstructionShadow } from '../utils/advancedShadowCalculator';
 
 interface UseSunCalculationsOptions {
   stadium: any;
@@ -48,16 +50,37 @@ export function useSunCalculations({
     setError(null);
 
     try {
+      // Load stadium-specific obstructions (overhangs, scoreboards, light towers)
+      const obstructions = getStadiumObstructions(stadium.id, 'MLB');
+
       // Use the CORRECT calculation from sectionSunCalculations.ts
       // This properly converts sun azimuth to stadium-relative coordinates
       // and uses section baseAngle to determine sun exposure
       const results = sections.map(section => {
-        const sunExposure = getSectionSunExposure(
+        // Base sun exposure from angle calculation
+        let sunExposure = getSectionSunExposure(
           section,
           sunPosition.altitudeDegrees,
           sunPosition.azimuthDegrees,
           stadium.orientation
         );
+
+        // Apply stadium-specific obstruction shadows if available
+        if (obstructions.length > 0 && sunExposure > 0) {
+          const obstructionShadow = calculateObstructionShadow(
+            section,
+            sunPosition.altitudeDegrees,
+            sunPosition.azimuthDegrees,
+            stadium.orientation,
+            obstructions
+          );
+
+          // Reduce exposure based on obstruction shadow percentage
+          // If 50% of sample points are shadowed, reduce exposure by 50%
+          if (obstructionShadow > 0) {
+            sunExposure = Math.round(sunExposure * (1 - obstructionShadow / 100));
+          }
+        }
 
         return {
           section,
