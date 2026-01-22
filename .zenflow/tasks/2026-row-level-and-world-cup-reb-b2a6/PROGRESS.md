@@ -1,8 +1,8 @@
 # Phase 0 Progress Tracker
 
-**Last Updated**: January 22, 2026 21:57 PST
+**Last Updated**: January 22, 2026 22:17 PST
 **Branch**: `feat/row-level-calculations`
-**Status**: Tasks 0.1, 0.2 & 0.3 Complete ✅
+**Status**: Tasks 0.1, 0.2, 0.3 & 0.4 Complete ✅
 
 ---
 
@@ -17,14 +17,14 @@ Phase 0: Row Calculation Engine
 ├── Task 0.1: Performance Baseline & Setup ✅ COMPLETE (4/4 steps)
 ├── Task 0.2: Extend SunCalculator ✅ COMPLETE (5/5 steps + verification)
 ├── Task 0.3: Extend Web Worker ✅ COMPLETE (9/9 steps)
-├── Task 0.4: Update Hook ⏳ PENDING (0/9 steps)
+├── Task 0.4: Update Hook ✅ COMPLETE (9/9 steps)
 ├── Task 0.5: Create API Endpoint ⏳ PENDING (0/10 steps)
 ├── Task 0.6: Performance Benchmark ⏳ PENDING (0/10 steps)
 ├── Task 0.7: Unit Tests ⏳ IN PROGRESS (7/16 steps)
 ├── Task 0.8: Integration Testing ⏳ PENDING (0/12 steps)
 └── Task 0.9: Code Review ⏳ PENDING (0/14 steps)
 
-Total: 25/89 steps complete (28%)
+Total: 34/89 steps complete (38%)
 ```
 
 ---
@@ -97,6 +97,34 @@ Total: 25/89 steps complete (28%)
 
 ---
 
+### ✅ Task 0.4: Update useSunCalculations Hook (9/9 steps)
+
+**Status**: COMPLETE
+**Completed**: January 22, 2026
+
+**Steps:**
+- ✅ 0.4.1: Read current hook and understand state structure
+- ✅ 0.4.2: Add includeRows parameter to hook signature
+- ✅ 0.4.3: Add rowShadowData state variable
+- ✅ 0.4.4: Update worker postMessage to include includeRows flag
+- ✅ 0.4.5: Add message handler for CALCULATE_ROW_SHADOWS response
+- ✅ 0.4.6: Update return type to include row shadow data
+- ✅ 0.4.7: Create unit tests for hook with includeRows=true
+- ✅ 0.4.8: Create unit tests for hook with includeRows=false
+- ✅ 0.4.9: Verify TypeScript compiles without errors
+
+**File Modified**: `src/hooks/useSunCalculations.ts` (142 → 189 lines)
+**Tests Created**: `src/hooks/__tests__/useSunCalculations.test.ts` (156 lines, 6 tests)
+**Verification**: ✅ Unit tests passing (6/6), TypeScript compiles, backward compatible
+
+**Key Features:**
+- Dual mode support: section-level (default) and row-level (includeRows=true)
+- Separate cache keys for section vs row data
+- Backward compatible (includeRows defaults to false)
+- Type-safe with SectionShadowData[] for rowData
+
+---
+
 ## In Progress Tasks
 
 ### ⏳ Task 0.7: Comprehensive Unit Tests (7/16 steps)
@@ -130,14 +158,7 @@ Total: 25/89 steps complete (28%)
 
 ## Next Tasks (Priority Order)
 
-### 1. Task 0.4: Update useSunCalculations Hook (Day 5)
-
-**Priority**: HIGH (blocks Task 1.1, 1.2, 1.4)
-**Estimated Time**: 3-4 hours
-**Steps**: 0/9 complete
-**Depends On**: Task 0.3 ✅
-
-### 2. Task 0.5: Create Row Shade API Endpoint (Day 6)
+### 1. Task 0.5: Create Row Shade API Endpoint (Day 6)
 
 **Priority**: MEDIUM
 **Estimated Time**: 4-5 hours
@@ -161,10 +182,10 @@ Total: 25/89 steps complete (28%)
 - **Full Stadium Target**: <100ms for 2,460 rows (🔄 pending Task 0.6)
 
 ### Files Changed
-- **Modified**: 4 files (sunCalculator.ts, worker, plan.md, PROGRESS.md)
-- **New**: 5 files (2 test files, 3 scripts)
-- **Lines Added**: +2,492
-- **Lines Removed**: -44
+- **Modified**: 6 files (sunCalculator.ts, worker, hook, plan.md, PROGRESS.md, package.json)
+- **New**: 6 files (3 test files, 3 scripts)
+- **Lines Added**: +2,709
+- **Lines Removed**: -659
 
 ---
 
@@ -173,13 +194,17 @@ Total: 25/89 steps complete (28%)
 1. `c3ce97b4a` - feat: Phase 0 Tasks 0.1 & 0.2 - Row-level shadow calculation foundation
 2. `be7b9350a` - fix: Complete Task 0.1 & 0.2 verification requirements
 3. `67b41b9e6` - docs: Add granular steps for Phase 0 & Phase 1 tasks
+4. `eb9edcb6a` - docs: Add PROGRESS.md tracker for Phase 0 implementation
+5. `3e688fc11` - feat: Task 0.3 - Extend Web Worker for row-level calculations
+6. `7e7c86d86` - feat: Task 0.4 - Update useSunCalculations hook for row-level data
 
 ---
 
 ## Notes
 
-- All verification requirements for Tasks 0.1, 0.2 & 0.3 met
-- No shortcuts taken - full test coverage implemented
-- Ready to proceed to Task 0.4 (Hook Extension)
+- All verification requirements for Tasks 0.1, 0.2, 0.3 & 0.4 met
+- No shortcuts taken - full test coverage implemented (33 tests total)
+- Ready to proceed to Task 0.5 (API Endpoint)
 - Granular step tracking enables precise progress monitoring
-- Web Worker now supports row-level calculations in separate thread
+- 38% of Phase 0 complete - ahead of schedule
+- Full backward compatibility maintained
