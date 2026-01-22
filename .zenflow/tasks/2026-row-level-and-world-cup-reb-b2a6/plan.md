@@ -72,20 +72,20 @@ Phase 7: Launch Preparation          (Weeks 9-10) → 6 tasks
 
 ### Phase 0: Row Calculation Engine (Weeks 1-2)
 
-#### [ ] Task 0.1: Performance Baseline & Setup (Day 1 - Jan 23)
-- Measure current build time
-- Benchmark section-level calculations
-- Create development branch
-- **Verification**: Build time <5 min, baseline documented
+#### [x] Task 0.1: Performance Baseline & Setup (Day 1 - Jan 23)
+- ✅ Measure current build time (76.99 seconds)
+- ✅ Benchmark section-level calculations (script created)
+- ✅ Create development branch (`feat/row-level-calculations`)
+- **Verification**: ✅ Build time <5 min (74% under target), baseline documented
 
-#### [ ] Task 0.2: Extend SunCalculator - Core Row Method (Days 1-2)
-- File: `/src/utils/sunCalculator.ts` (476 → ~600 lines)
-- Add RowShadowData interface
-- Implement calculateRowShadow()
-- Implement calculateOverhangShadow()
-- Implement calculateUpperDeckShadowForRow()
-- Implement calculateRowShadows()
-- **Verification**: Unit tests passing, TypeScript compiles
+#### [x] Task 0.2: Extend SunCalculator - Core Row Method (Days 1-2)
+- File: `/src/utils/sunCalculator.ts` (476 → 759 lines)
+- ✅ Add RowShadowData interface (exported)
+- ✅ Implement calculateRowShadow() (110 lines)
+- ✅ Implement calculateOverhangShadow() (30 lines)
+- ✅ Implement calculateUpperDeckShadowForRow() (50 lines)
+- ✅ Implement calculateRowShadows() (40 lines)
+- **Verification**: ✅ Unit tests passing (24/24), TypeScript compiles, smoke test passed
 
 #### [ ] Task 0.3: Extend Web Worker (Days 3-4)
 - File: `/public/workers/sunCalculations.worker.js` (65 → ~200 lines)

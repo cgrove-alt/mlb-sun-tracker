@@ -54,7 +54,7 @@ interface ShadowData {
 }
 
 // Row-level shadow data interfaces
-interface RowShadowData {
+export interface RowShadowData {
   rowNumber: string;
   seats: number;
   elevation: number;      // feet above field
@@ -71,7 +71,7 @@ interface RowShadowData {
   recommendation?: 'excellent' | 'good' | 'fair' | 'poor';
 }
 
-interface SectionShadowData {
+export interface SectionShadowData {
   sectionId: string;
   sectionName: string;
   rows: RowShadowData[];

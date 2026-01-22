@@ -72,17 +72,22 @@
 - TypeScript: (checking devDependencies)
 - suncalc: 1.9.0 (sun position calculations)
 
-### Completed Steps (Task 0.1 & 0.2)
+### Completed Steps (Task 0.1 & 0.2) ✅
 
 1. ✅ Install dependencies (1,020 packages, 18 seconds)
 2. ✅ Measure actual build time (76.99 seconds - EXCELLENT)
 3. ✅ Create development branch (`feat/row-level-calculations`)
-4. ✅ Add RowShadowData TypeScript interfaces
-5. ✅ Implement calculateRowShadow() with full logic
-6. ✅ Implement calculateOverhangShadow() helper
-7. ✅ Implement calculateUpperDeckShadowForRow() helper
-8. ✅ Implement calculateRowShadows() batch method
-9. ✅ Document baseline results (this file)
+4. ✅ Add RowShadowData TypeScript interfaces (exported)
+5. ✅ Implement calculateRowShadow() with full logic (110 lines)
+6. ✅ Implement calculateOverhangShadow() helper (30 lines)
+7. ✅ Implement calculateUpperDeckShadowForRow() helper (50 lines)
+8. ✅ Implement calculateRowShadows() batch method (40 lines)
+9. ✅ Create comprehensive unit tests (27 tests, 100% pass rate)
+10. ✅ Create benchmark script (section-level baseline: 9.75ms)
+11. ✅ Run smoke test (30 rows calculated without errors)
+12. ✅ Document baseline results (this file)
+13. ✅ Export interfaces for external use
+14. ✅ TypeScript compilation successful
 
 ### Next Steps (Task 0.3+)
 
@@ -111,5 +116,22 @@
 - Development branch created
 - TypeScript interfaces defined
 
-**Status**: ✅ **BASELINE ESTABLISHED** - Ready for Task 0.3 (Web Worker)
-**Last Updated**: January 22, 2026 19:18 PST
+**Status**: ✅ **TASKS 0.1 & 0.2 COMPLETE** - Ready for Task 0.3 (Web Worker)
+
+### Verification Summary
+
+**Task 0.1 Verification** ✅
+- ✅ Build time: 76.99s (<5 min target)
+- ✅ Development branch: `feat/row-level-calculations`
+- ✅ Benchmark script: Created and tested
+- ✅ Baseline documented: Yes
+
+**Task 0.2 Verification** ✅
+- ✅ Interfaces exported: RowShadowData, SectionShadowData
+- ✅ Unit tests: 27/27 passing (24 core + 3 smoke tests)
+- ✅ TypeScript compiles: No errors
+- ✅ Smoke test: 30 rows calculated successfully
+- ✅ File size: 759 lines (on target)
+- ✅ Code quality: All functions implemented with proper edge cases
+
+**Last Updated**: January 22, 2026 20:45 PST
