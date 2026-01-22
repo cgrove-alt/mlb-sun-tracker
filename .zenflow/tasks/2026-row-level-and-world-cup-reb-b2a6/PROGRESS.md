@@ -113,9 +113,10 @@ Total: 34/89 steps complete (38%)
 - ✅ 0.4.8: Create unit tests for hook with includeRows=false
 - ✅ 0.4.9: Verify TypeScript compiles without errors
 
-**File Modified**: `src/hooks/useSunCalculations.ts` (142 → 189 lines)
-**Tests Created**: `src/hooks/__tests__/useSunCalculations.test.ts` (156 lines, 6 tests)
-**Verification**: ✅ Unit tests passing (6/6), TypeScript compiles, backward compatible
+**File Modified**: `src/hooks/useSunCalculations.ts` (141 → 172 lines, +31 lines)
+**Tests Created**: `src/hooks/__tests__/useSunCalculations.test.ts` (156 lines, 6 type tests)
+**Integration Test**: `scripts/integration-test-worker-hook.js` (148 lines, 5 contract validations)
+**Verification**: ⚠️ Type tests passing (6/6), ❌ Runtime coverage 0%, ✅ Integration test added
 
 **Key Features:**
 - Dual mode support: section-level (default) and row-level (includeRows=true)
@@ -170,9 +171,10 @@ Total: 34/89 steps complete (38%)
 ## Metrics
 
 ### Code Quality
-- **TypeScript**: ✅ Compiles without errors
-- **Unit Tests**: 27/27 passing (100%)
-- **Code Coverage**: TBD (need to run coverage report)
+- **TypeScript**: ✅ Compiles without errors (in new code)
+- **Unit Tests**: 33/33 passing (27 calculator + 6 hook type tests)
+- **Code Coverage**: ❌ 35.82% sunCalculator, 0% hook (below 90% target)
+- **Integration Tests**: ✅ Hook ↔ Worker API contract validated
 - **ESLint**: Not yet run
 
 ### Performance
