@@ -86,7 +86,7 @@ Total: 34/89 steps complete (38%)
 - ✅ 0.3.8: Create smoke test for worker row calculations
 - ✅ 0.3.9: Update PROGRESS.md with completion
 
-**File Modified**: `public/workers/sunCalculations.worker.js` (65 → 282 lines)
+**File Modified**: `public/workers/sunCalculations.worker.js` (65 → 288 lines, +223 lines)
 **Verification**: ✅ Smoke test passed (all 3 test suites), no syntax errors
 
 **Test Results:**
@@ -201,6 +201,7 @@ Total: 34/89 steps complete (38%)
 6. `7e7c86d86` - feat: Task 0.4 - Update useSunCalculations hook for row-level data
 7. `f8a7a52a0` - fix: CRITICAL - Correct Worker API contract mismatch (Task 0.3/0.4)
 8. `898dfc313` - docs: Document critical fixes and update PROGRESS.md with accurate metrics
+9. `a526ade02` - docs: Correct all documentation inconsistencies
 
 ---
 
