@@ -26,15 +26,22 @@ self.addEventListener('message', async (event) => {
   
   if (type === 'CALCULATE_ROW_SHADOWS') {
     try {
-      const { section, sunAltitude, sunAzimuth, stadiumOrientation } = payload;
-      
-      // Perform row-level shadow calculations
-      const result = calculateRowShadows(section, sunAltitude, sunAzimuth, stadiumOrientation);
-      
-      // Send result back to main thread
+      const { sections, sunPosition, stadium } = payload;
+
+      // Extract sun position values
+      const sunAltitude = sunPosition.altitudeDegrees || sunPosition.altitude;
+      const sunAzimuth = sunPosition.azimuthDegrees || sunPosition.azimuth;
+      const stadiumOrientation = stadium.orientation || 0;
+
+      // Perform row-level shadow calculations for all sections
+      const results = sections.map(section =>
+        calculateRowShadows(section, sunAltitude, sunAzimuth, stadiumOrientation)
+      );
+
+      // Send results back to main thread
       self.postMessage({
         type: 'ROW_SHADOWS_RESULT',
-        payload: result,
+        payload: results,
       });
     } catch (error) {
       self.postMessage({
