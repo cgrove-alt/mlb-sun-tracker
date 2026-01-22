@@ -88,29 +88,30 @@ Phase 7: Launch Preparation          (Weeks 9-10) → 6 tasks
 - **Verification**: ✅ Unit tests passing (24/24), TypeScript compiles, smoke test passed
 
 #### [x] Task 0.3: Extend Web Worker (Days 3-4)
-- File: `/public/workers/sunCalculations.worker.js` (65 → 282 lines)
+- File: `/public/workers/sunCalculations.worker.js` (65 → 288 lines, +223 lines)
 - ✅ Add CALCULATE_ROW_SHADOWS message handler
 - ✅ Port calculateRowShadow() (84 lines)
 - ✅ Port calculateOverhangShadow() (24 lines)
 - ✅ Port calculateUpperDeckShadowForRow() (44 lines)
 - ✅ Port calculateRowShadows() (36 lines)
-- **Verification**: ✅ Smoke test passed (3 test suites), no syntax errors
+- ✅ CRITICAL FIX: Corrected API contract to match hook (commit f8a7a52a0)
+- **Verification**: ✅ Integration test validates API contract (5/5 checks passing)
 
-#### [ ] Task 0.4: Update useSunCalculations Hook (Day 5)
-- File: `/src/hooks/useSunCalculations.ts` (142 → ~180 lines)
+#### [x] Task 0.4: Update useSunCalculations Hook (Day 5)
+- File: `/src/hooks/useSunCalculations.ts` (141 → 172 lines, +31 lines)
 
 **Steps:**
-- [ ] 0.4.1: Read current hook and understand state structure
-- [ ] 0.4.2: Add includeRows parameter to hook signature
-- [ ] 0.4.3: Add rowShadowData state variable
-- [ ] 0.4.4: Update worker postMessage to include includeRows flag
-- [ ] 0.4.5: Add message handler for CALCULATE_ROW_SHADOWS response
-- [ ] 0.4.6: Update return type to include row shadow data
-- [ ] 0.4.7: Create unit tests for hook with includeRows=true
-- [ ] 0.4.8: Create unit tests for hook with includeRows=false
-- [ ] 0.4.9: Verify TypeScript compiles without errors
+- [x] 0.4.1: Read current hook and understand state structure
+- [x] 0.4.2: Add includeRows parameter to hook signature
+- [x] 0.4.3: Add rowShadowData state variable
+- [x] 0.4.4: Update worker postMessage to include includeRows flag
+- [x] 0.4.5: Add message handler for CALCULATE_ROW_SHADOWS response
+- [x] 0.4.6: Update return type to include row shadow data
+- [x] 0.4.7: Create unit tests for hook with includeRows=true
+- [x] 0.4.8: Create unit tests for hook with includeRows=false
+- [x] 0.4.9: Verify TypeScript compiles without errors
 
-**Verification**: ✅ Hook returns row data when includeRows=true, tests passing
+**Verification**: ✅ Integration test validates API contract, type tests passing (6/6)
 
 #### [ ] Task 0.5: Create Row Shade API Endpoint (Day 6)
 - File: `/app/api/stadium/[id]/rows/shade/route.ts` (NEW - 180 lines)
