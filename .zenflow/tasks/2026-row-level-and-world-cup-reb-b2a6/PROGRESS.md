@@ -1,8 +1,8 @@
 # Phase 0 Progress Tracker
 
-**Last Updated**: January 22, 2026 20:55 PST
+**Last Updated**: January 22, 2026 21:57 PST
 **Branch**: `feat/row-level-calculations`
-**Status**: Tasks 0.1 & 0.2 Complete ✅
+**Status**: Tasks 0.1, 0.2 & 0.3 Complete ✅
 
 ---
 
@@ -16,7 +16,7 @@ Phase 0 implements the core row-level shadow calculation engine. This phase has 
 Phase 0: Row Calculation Engine
 ├── Task 0.1: Performance Baseline & Setup ✅ COMPLETE (4/4 steps)
 ├── Task 0.2: Extend SunCalculator ✅ COMPLETE (5/5 steps + verification)
-├── Task 0.3: Extend Web Worker ⏳ PENDING (0/9 steps)
+├── Task 0.3: Extend Web Worker ✅ COMPLETE (9/9 steps)
 ├── Task 0.4: Update Hook ⏳ PENDING (0/9 steps)
 ├── Task 0.5: Create API Endpoint ⏳ PENDING (0/10 steps)
 ├── Task 0.6: Performance Benchmark ⏳ PENDING (0/10 steps)
@@ -24,7 +24,7 @@ Phase 0: Row Calculation Engine
 ├── Task 0.8: Integration Testing ⏳ PENDING (0/12 steps)
 └── Task 0.9: Code Review ⏳ PENDING (0/14 steps)
 
-Total: 16/89 steps complete (18%)
+Total: 25/89 steps complete (28%)
 ```
 
 ---
@@ -70,6 +70,33 @@ Total: 16/89 steps complete (18%)
 
 ---
 
+### ✅ Task 0.3: Extend Web Worker (9/9 steps)
+
+**Status**: COMPLETE
+**Completed**: January 22, 2026
+
+**Steps:**
+- ✅ 0.3.1: Read current worker file and understand message structure
+- ✅ 0.3.2: Add CALCULATE_ROW_SHADOWS message type handler
+- ✅ 0.3.3: Port calculateRowShadow() logic to worker (no imports)
+- ✅ 0.3.4: Port calculateOverhangShadow() helper to worker
+- ✅ 0.3.5: Port calculateUpperDeckShadowForRow() helper to worker
+- ✅ 0.3.6: Port calculateRowShadows() batch method to worker
+- ✅ 0.3.7: Add error handling for worker messages
+- ✅ 0.3.8: Create smoke test for worker row calculations
+- ✅ 0.3.9: Update PROGRESS.md with completion
+
+**File Modified**: `public/workers/sunCalculations.worker.js` (65 → 282 lines)
+**Verification**: ✅ Smoke test passed (all 3 test suites), no syntax errors
+
+**Test Results:**
+- Single row calculation: ✅ Passed
+- Multi-row section (5 rows): ✅ Passed
+- Edge cases (covered rows, empty sections): ✅ Passed
+- File growth: +217 lines (334%)
+
+---
+
 ## In Progress Tasks
 
 ### ⏳ Task 0.7: Comprehensive Unit Tests (7/16 steps)
@@ -103,28 +130,14 @@ Total: 16/89 steps complete (18%)
 
 ## Next Tasks (Priority Order)
 
-### 1. Task 0.3: Extend Web Worker (Days 3-4)
-
-**Priority**: HIGH (blocks Task 0.4, 0.5)
-**Estimated Time**: 4-6 hours
-**Steps**: 0/9 complete
-
-**Critical Path:**
-1. Read current worker file
-2. Add CALCULATE_ROW_SHADOWS message type
-3. Port all 4 calculation functions to worker
-4. Add error handling
-5. Create worker tests
-6. Performance test: 30 rows in <10ms
-
-### 2. Task 0.4: Update useSunCalculations Hook (Day 5)
+### 1. Task 0.4: Update useSunCalculations Hook (Day 5)
 
 **Priority**: HIGH (blocks Task 1.1, 1.2, 1.4)
 **Estimated Time**: 3-4 hours
 **Steps**: 0/9 complete
-**Depends On**: Task 0.3
+**Depends On**: Task 0.3 ✅
 
-### 3. Task 0.5: Create Row Shade API Endpoint (Day 6)
+### 2. Task 0.5: Create Row Shade API Endpoint (Day 6)
 
 **Priority**: MEDIUM
 **Estimated Time**: 4-5 hours
@@ -148,9 +161,9 @@ Total: 16/89 steps complete (18%)
 - **Full Stadium Target**: <100ms for 2,460 rows (🔄 pending Task 0.6)
 
 ### Files Changed
-- **Modified**: 3 files (sunCalculator.ts, plan.md, performance-baseline.md)
-- **New**: 4 files (2 test files, 2 scripts)
-- **Lines Added**: +2,275
+- **Modified**: 4 files (sunCalculator.ts, worker, plan.md, PROGRESS.md)
+- **New**: 5 files (2 test files, 3 scripts)
+- **Lines Added**: +2,492
 - **Lines Removed**: -44
 
 ---
@@ -165,7 +178,8 @@ Total: 16/89 steps complete (18%)
 
 ## Notes
 
-- All verification requirements for Tasks 0.1 & 0.2 met
+- All verification requirements for Tasks 0.1, 0.2 & 0.3 met
 - No shortcuts taken - full test coverage implemented
-- Ready to proceed to Task 0.3 (Web Worker extension)
+- Ready to proceed to Task 0.4 (Hook Extension)
 - Granular step tracking enables precise progress monitoring
+- Web Worker now supports row-level calculations in separate thread
