@@ -107,29 +107,42 @@ The original technical specification (V1.0) contained **10 critical inaccuracies
 
 ---
 
-### 4. Translation File Duplication - 3 Locations
+### 4. Translation File Duplication - 3 Locations + Branding Inconsistency 🚨
 
 **V1.0 Error**:
 ```
 ❌ Only mentioned /messages/ (proposed new location)
 ❌ Didn't document existing duplication
+❌ Assumed files were simple duplicates
 ```
 
-**V2.0 Reality**:
+**V2.0 Reality** (UPDATED after investigation):
 ```
-⚠️ /src/i18n/locales/ - Source of truth (3 files: en, es, ja)
-⚠️ /public/locales/ - Duplicate (3 files)
-⚠️ /locales/ (root) - Triplicate (3 files)
+🚨 /src/i18n/locales/ - Source of truth (535 lines, "The Shadium" branding) ✅ ACTIVE
+⚠️ /public/locales/ - Legacy (531 lines, "MLB Stadium Sun Tracker" branding) ❌ INACTIVE
+⚠️ /locales/ (root) - Duplicate of public (531 lines, old branding) ❌ INACTIVE
 ```
+
+**Critical Finding - Branding Inconsistency**:
+- ❌ Files are **NOT simple duplicates**
+- ❌ **Different branding**: "The Shadium" vs "MLB Stadium Sun Tracker"
+- ❌ **Different content**: 7 differences (title, language keys, social sharing, copyright)
+- ✅ **Active branding**: "The Shadium" (matches domain theshadium.com)
+- ✅ **Source**: `/src/i18n/locales/` loaded by i18nContext.tsx
+- ⚠️ **Legacy files**: `/public/locales/` and `/locales/` appear unused
 
 **Action Required**:
-- Document purpose of each location
-- Establish consolidation or auto-generation strategy
-- Prevent drift between copies
+- ✅ Verify "The Shadium" is displayed in running application
+- ✅ Search codebase for references to `/public/locales/`
+- ✅ Check if `/locales/` (root) is in .gitignore (build output?)
+- ✅ Delete legacy files after thorough verification
+- ✅ Document official branding decision
+- ✅ **See TRANSLATION-FILES-ANALYSIS.md for full investigation**
 
 **Impact**:
-- Added to Phase 5 deliverables
-- Prevents future translation sync issues
+- Phase 5 timeline: 3 days → **3-4 days** (add branding reconciliation)
+- Branding decision required before implementation
+- Legacy file cleanup needed
 
 ---
 
@@ -165,9 +178,10 @@ The original technical specification (V1.0) contained **10 critical inaccuracies
 ❌ Page count: "55 pages" (markdown has no pagination)
 ```
 
-**V2.0 Corrections**:
+**V2.0 Corrections** (UPDATED):
 ```
-✅ Word count: 6,990 words (measured with wc -w)
+✅ spec-corrected.md: 6,172 words (measured with wc -w)
+✅ sunCalculations.worker.js: 64 lines (not 65)
 ✅ sunCalculator.ts: 476 lines (accurate)
 ✅ Page count: Removed (not applicable)
 ```
