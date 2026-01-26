@@ -1,5 +1,5 @@
 // Estadio BBVA (Monterrey) - COMPLETE Section Data for 2026 World Cup
-// Capacity: 53,500 seats (43,000 general, 5,000 club, 324 suites, 5,500 premium)
+// Capacity: 53,500 seats across 100 sections with FULL 360° coverage
 // Distinctive 34-degree rake, first row only 9 meters from field
 // Based on: https://stadiumdb.com/stadiums/mex/estadio_bbva_bancomer
 // Data sources: StadiumDB, SeatPick, WorldCupRadar, Official CF Monterrey site
@@ -67,200 +67,53 @@ function generateVertices(angle: number, angleSpan: number, innerRadius: number,
 }
 
 // Estadio BBVA sections - Complete 100-section coverage for 53,500 capacity
-// Lower Bowl: 40 sections, Middle Bowl: 40 sections, Upper Bowl: 20 sections
+// FULL 360° COVERAGE: Lower Bowl (40×9°), Middle Bowl (40×9°), Upper Bowl (20×18°)
 export const estadiobbvaSections: DetailedSection[] = [
-  // ===== LOWER BOWL (Platea) - 40 sections, ~21,500 seats =====
-  // East sideline sections 101-110 (3.6° each = 36° total)
-  ...Array.from({ length: 10 }, (_, i) => ({
+  // ===== LOWER BOWL (Platea) - 40 sections (9° each = 360° FULL COVERAGE), ~21,500 seats =====
+  ...Array.from({ length: 40 }, (_, i) => ({
     id: `${101 + i}`,
     name: `Platea ${101 + i}`,
     level: 'lower' as const,
-    baseAngle: i * 3.6,
-    angleSpan: 3.6,
-    rows: generateRows(1, 24, 28 + (i % 3), 0, 34, false),
-    vertices3D: generateVertices(i * 3.6, 3.6, 60, 72, 0, 18),
+    baseAngle: i * 9,
+    angleSpan: 9,
+    rows: generateRows(1, 24, 28 + (i % 4), 0, 34, false),
+    vertices3D: generateVertices(i * 9, 9, 60, 72, 0, 18),
     covered: false,
     distance: 60,
     height: 0,
     rake: 34,
-    price: (i >= 4 && i <= 6) ? 'luxury' as const : 'premium' as const
+    price: (i >= 15 && i <= 25) ? 'luxury' as const : (i % 2 === 0) ? 'premium' as const : 'moderate' as const
   })),
 
-  // South end sections 111-120 (3.6° each = 36° total)
-  ...Array.from({ length: 10 }, (_, i) => ({
-    id: `${111 + i}`,
-    name: `Platea Sur ${111 + i}`,
-    level: 'lower' as const,
-    baseAngle: 36 + i * 3.6,
-    angleSpan: 3.6,
-    rows: generateRows(1, 22, 26 + (i % 3), 0, 32, false),
-    vertices3D: generateVertices(36 + i * 3.6, 3.6, 60, 72, 0, 16),
-    covered: false,
-    distance: 65,
-    height: 0,
-    rake: 32,
-    price: 'moderate' as const
-  })),
-
-  // West sideline sections 121-130 (3.6° each = 36° total)
-  ...Array.from({ length: 10 }, (_, i) => ({
-    id: `${121 + i}`,
-    name: `Platea ${121 + i}`,
-    level: 'lower' as const,
-    baseAngle: 72 + i * 3.6,
-    angleSpan: 3.6,
-    rows: generateRows(1, 24, 28 + (i % 3), 0, 34, false),
-    vertices3D: generateVertices(72 + i * 3.6, 3.6, 60, 72, 0, 18),
-    covered: false,
-    distance: 60,
-    height: 0,
-    rake: 34,
-    price: (i >= 4 && i <= 6) ? 'luxury' as const : 'premium' as const
-  })),
-
-  // North end sections 131-140 (3.6° each = 36° total)
-  ...Array.from({ length: 10 }, (_, i) => ({
-    id: `${131 + i}`,
-    name: `Platea Norte ${131 + i}`,
-    level: 'lower' as const,
-    baseAngle: 108 + i * 3.6,
-    angleSpan: 3.6,
-    rows: generateRows(1, 22, 26 + (i % 3), 0, 32, false),
-    vertices3D: generateVertices(108 + i * 3.6, 3.6, 60, 72, 0, 16),
-    covered: false,
-    distance: 65,
-    height: 0,
-    rake: 32,
-    price: 'moderate' as const
-  })),
-
-  // ===== MIDDLE BOWL (Platea Alta) - 40 sections, ~21,000 seats =====
-  // East sideline sections 201-210 (3.6° each = 36° total)
-  ...Array.from({ length: 10 }, (_, i) => ({
+  // ===== MIDDLE BOWL (Platea Alta) - 40 sections (9° each = 360° FULL COVERAGE), ~21,500 seats =====
+  ...Array.from({ length: 40 }, (_, i) => ({
     id: `${201 + i}`,
     name: `Platea Alta ${201 + i}`,
     level: 'club' as const,
-    baseAngle: i * 3.6,
-    angleSpan: 3.6,
-    rows: generateRows(25, 45, 30 + (i % 3), 20, 34, true),
-    vertices3D: generateVertices(i * 3.6, 3.6, 74, 92, 18, 40),
+    baseAngle: i * 9,
+    angleSpan: 9,
+    rows: generateRows(25, 46, 28 + (i % 4), 20, 34, true),
+    vertices3D: generateVertices(i * 9, 9, 74, 88, 18, 38),
     covered: true,
-    distance: 85,
+    distance: 78,
     height: 20,
     rake: 34,
-    price: (i >= 4 && i <= 6) ? 'luxury' as const : 'moderate' as const
+    price: (i >= 15 && i <= 25) ? 'luxury' as const : (i % 2 === 0) ? 'moderate' as const : 'value' as const
   })),
 
-  // South end sections 211-220 (3.6° each = 36° total)
-  ...Array.from({ length: 10 }, (_, i) => ({
-    id: `${211 + i}`,
-    name: `Platea Alta Sur ${211 + i}`,
-    level: 'club' as const,
-    baseAngle: 36 + i * 3.6,
-    angleSpan: 3.6,
-    rows: generateRows(23, 42, 28 + (i % 3), 18, 32, true),
-    vertices3D: generateVertices(36 + i * 3.6, 3.6, 74, 92, 16, 36),
-    covered: true,
-    distance: 90,
-    height: 18,
-    rake: 32,
-    price: 'value' as const
-  })),
-
-  // West sideline sections 221-230 (3.6° each = 36° total)
-  ...Array.from({ length: 10 }, (_, i) => ({
-    id: `${221 + i}`,
-    name: `Platea Alta ${221 + i}`,
-    level: 'club' as const,
-    baseAngle: 72 + i * 3.6,
-    angleSpan: 3.6,
-    rows: generateRows(25, 45, 30 + (i % 3), 20, 34, true),
-    vertices3D: generateVertices(72 + i * 3.6, 3.6, 74, 92, 18, 40),
-    covered: true,
-    distance: 85,
-    height: 20,
-    rake: 34,
-    price: (i >= 4 && i <= 6) ? 'luxury' as const : 'moderate' as const
-  })),
-
-  // North end sections 231-240 (3.6° each = 36° total)
-  ...Array.from({ length: 10 }, (_, i) => ({
-    id: `${231 + i}`,
-    name: `Platea Alta Norte ${231 + i}`,
-    level: 'club' as const,
-    baseAngle: 108 + i * 3.6,
-    angleSpan: 3.6,
-    rows: generateRows(23, 42, 28 + (i % 3), 18, 32, true),
-    vertices3D: generateVertices(108 + i * 3.6, 3.6, 74, 92, 16, 36),
-    covered: true,
-    distance: 90,
-    height: 18,
-    rake: 32,
-    price: 'value' as const
-  })),
-
-  // ===== UPPER BOWL (Graderia) - 20 sections, ~11,000 seats =====
-  // East sections 301-305 (7.2° each = 36° total)
-  ...Array.from({ length: 5 }, (_, i) => ({
+  // ===== UPPER BOWL (Graderia) - 20 sections (18° each = 360° FULL COVERAGE), ~10,500 seats =====
+  ...Array.from({ length: 20 }, (_, i) => ({
     id: `${301 + i}`,
     name: `Graderia ${301 + i}`,
     level: 'upper' as const,
-    baseAngle: i * 7.2,
-    angleSpan: 7.2,
-    rows: generateRows(46, 68, 32 + (i % 2), 42, 34, true),
-    vertices3D: generateVertices(i * 7.2, 7.2, 94, 116, 40, 62),
+    baseAngle: i * 18,
+    angleSpan: 18,
+    rows: generateRows(47, 64, 30 + (i % 3), 40, 36, true),
+    vertices3D: generateVertices(i * 18, 18, 90, 108, 38, 58),
     covered: true,
-    distance: 105,
-    height: 42,
-    rake: 34,
-    price: 'value' as const
-  })),
-
-  // South sections 306-310 (7.2° each = 36° total)
-  ...Array.from({ length: 5 }, (_, i) => ({
-    id: `${306 + i}`,
-    name: `Graderia Sur ${306 + i}`,
-    level: 'upper' as const,
-    baseAngle: 36 + i * 7.2,
-    angleSpan: 7.2,
-    rows: generateRows(43, 64, 30 + (i % 2), 38, 32, true),
-    vertices3D: generateVertices(36 + i * 7.2, 7.2, 94, 116, 36, 58),
-    covered: true,
-    distance: 110,
-    height: 38,
-    rake: 32,
-    price: 'value' as const
-  })),
-
-  // West sections 311-315 (7.2° each = 36° total)
-  ...Array.from({ length: 5 }, (_, i) => ({
-    id: `${311 + i}`,
-    name: `Graderia ${311 + i}`,
-    level: 'upper' as const,
-    baseAngle: 72 + i * 7.2,
-    angleSpan: 7.2,
-    rows: generateRows(46, 68, 32 + (i % 2), 42, 34, true),
-    vertices3D: generateVertices(72 + i * 7.2, 7.2, 94, 116, 40, 62),
-    covered: true,
-    distance: 105,
-    height: 42,
-    rake: 34,
-    price: 'value' as const
-  })),
-
-  // North sections 316-320 (7.2° each = 36° total)
-  ...Array.from({ length: 5 }, (_, i) => ({
-    id: `${316 + i}`,
-    name: `Graderia Norte ${316 + i}`,
-    level: 'upper' as const,
-    baseAngle: 108 + i * 7.2,
-    angleSpan: 7.2,
-    rows: generateRows(43, 64, 30 + (i % 2), 38, 32, true),
-    vertices3D: generateVertices(108 + i * 7.2, 7.2, 94, 116, 36, 58),
-    covered: true,
-    distance: 110,
-    height: 38,
-    rake: 32,
+    distance: 95,
+    height: 40,
+    rake: 36,
     price: 'value' as const
   }))
 ];

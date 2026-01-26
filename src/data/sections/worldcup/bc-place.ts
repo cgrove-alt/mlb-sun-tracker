@@ -1,5 +1,6 @@
 // BC Place (Vancouver) - COMPLETE Section Data for 2026 World Cup
-// Capacity: 54,000 seats across 100 sections with retractable roof
+// Capacity: 54,000 seats across 100 sections with FULL 360° coverage
+// Retractable roof stadium, will host 7 World Cup matches including knockout rounds
 // Based on: https://stadiumdb.com/stadiums/can/bc_place
 // Data sources: StadiumDB, FourFourTwo, SeatGeek
 
@@ -66,200 +67,53 @@ function generateVertices(angle: number, angleSpan: number, innerRadius: number,
 }
 
 // BC Place sections - Complete 100-section coverage for 54,000 capacity
-// Lower Bowl: 40 sections, Upper Bowl: 40 sections, Club: 20 sections
+// FULL 360° COVERAGE: Lower Bowl (50×7.2°), Upper Bowl (30×9°), Club (20×18°)
 export const bcplaceSections: DetailedSection[] = [
-  // ===== LOWER BOWL - 40 sections, ~21,600 seats =====
-  // East sections 101-110 (3.6° each = 36° total)
-  ...Array.from({ length: 10 }, (_, i) => ({
+  // ===== LOWER BOWL - 50 sections (7.2° each = 360° FULL COVERAGE), ~21,600 seats =====
+  ...Array.from({ length: 50 }, (_, i) => ({
     id: `${101 + i}`,
     name: `Lower ${101 + i}`,
     level: 'lower' as const,
-    baseAngle: i * 3.6,
-    angleSpan: 3.6,
-    rows: generateRows(1, 25, 26 + (i % 3), 0, 22, true),
-    vertices3D: generateVertices(i * 3.6, 3.6, 70, 88, 0, 15),
+    baseAngle: i * 7.2,
+    angleSpan: 7.2,
+    rows: generateRows(1, 24, 22 + (i % 4), 0, 22, true),
+    vertices3D: generateVertices(i * 7.2, 7.2, 70, 88, 0, 15),
     covered: true,
-    distance: 70,
+    distance: 72,
     height: 0,
     rake: 22,
-    price: (i >= 4 && i <= 6) ? 'luxury' as const : 'premium' as const
+    price: (i >= 20 && i <= 30) ? 'luxury' as const : (i % 2 === 0) ? 'premium' as const : 'moderate' as const
   })),
 
-  // South sections 111-120 (3.6° each = 36° total)
-  ...Array.from({ length: 10 }, (_, i) => ({
-    id: `${111 + i}`,
-    name: `Lower South ${111 + i}`,
-    level: 'lower' as const,
-    baseAngle: 36 + i * 3.6,
-    angleSpan: 3.6,
-    rows: generateRows(1, 22, 24 + (i % 3), 0, 20, true),
-    vertices3D: generateVertices(36 + i * 3.6, 3.6, 70, 88, 0, 13),
-    covered: true,
-    distance: 75,
-    height: 0,
-    rake: 20,
-    price: 'moderate' as const
-  })),
-
-  // West sections 121-130 (3.6° each = 36° total)
-  ...Array.from({ length: 10 }, (_, i) => ({
-    id: `${121 + i}`,
-    name: `Lower ${121 + i}`,
-    level: 'lower' as const,
-    baseAngle: 72 + i * 3.6,
-    angleSpan: 3.6,
-    rows: generateRows(1, 25, 26 + (i % 3), 0, 22, true),
-    vertices3D: generateVertices(72 + i * 3.6, 3.6, 70, 88, 0, 15),
-    covered: true,
-    distance: 70,
-    height: 0,
-    rake: 22,
-    price: (i >= 4 && i <= 6) ? 'luxury' as const : 'premium' as const
-  })),
-
-  // North sections 131-140 (3.6° each = 36° total)
-  ...Array.from({ length: 10 }, (_, i) => ({
-    id: `${131 + i}`,
-    name: `Lower North ${131 + i}`,
-    level: 'lower' as const,
-    baseAngle: 108 + i * 3.6,
-    angleSpan: 3.6,
-    rows: generateRows(1, 22, 24 + (i % 3), 0, 20, true),
-    vertices3D: generateVertices(108 + i * 3.6, 3.6, 70, 88, 0, 13),
-    covered: true,
-    distance: 75,
-    height: 0,
-    rake: 20,
-    price: 'moderate' as const
-  })),
-
-  // ===== UPPER BOWL - 40 sections, ~21,600 seats =====
-  // East sections 201-210 (3.6° each = 36° total)
-  ...Array.from({ length: 10 }, (_, i) => ({
+  // ===== UPPER BOWL - 30 sections (12° each = 360° FULL COVERAGE), ~21,600 seats =====
+  ...Array.from({ length: 30 }, (_, i) => ({
     id: `${201 + i}`,
     name: `Upper ${201 + i}`,
     level: 'upper' as const,
-    baseAngle: i * 3.6,
-    angleSpan: 3.6,
-    rows: generateRows(26, 45, 28 + (i % 3), 18, 30, true),
-    vertices3D: generateVertices(i * 3.6, 3.6, 90, 118, 15, 35),
-    covered: true,
-    distance: 95,
-    height: 18,
-    rake: 30,
-    price: (i >= 4 && i <= 6) ? 'moderate' as const : 'value' as const
-  })),
-
-  // South sections 211-220 (3.6° each = 36° total)
-  ...Array.from({ length: 10 }, (_, i) => ({
-    id: `${211 + i}`,
-    name: `Upper South ${211 + i}`,
-    level: 'upper' as const,
-    baseAngle: 36 + i * 3.6,
-    angleSpan: 3.6,
-    rows: generateRows(23, 40, 26 + (i % 3), 16, 28, true),
-    vertices3D: generateVertices(36 + i * 3.6, 3.6, 90, 118, 13, 32),
+    baseAngle: i * 12,
+    angleSpan: 12,
+    rows: generateRows(25, 48, 28 + (i % 4), 18, 30, true),
+    vertices3D: generateVertices(i * 12, 12, 90, 118, 15, 35),
     covered: true,
     distance: 100,
-    height: 16,
-    rake: 28,
-    price: 'value' as const
-  })),
-
-  // West sections 221-230 (3.6° each = 36° total)
-  ...Array.from({ length: 10 }, (_, i) => ({
-    id: `${221 + i}`,
-    name: `Upper ${221 + i}`,
-    level: 'upper' as const,
-    baseAngle: 72 + i * 3.6,
-    angleSpan: 3.6,
-    rows: generateRows(26, 45, 28 + (i % 3), 18, 30, true),
-    vertices3D: generateVertices(72 + i * 3.6, 3.6, 90, 118, 15, 35),
-    covered: true,
-    distance: 95,
     height: 18,
     rake: 30,
-    price: (i >= 4 && i <= 6) ? 'moderate' as const : 'value' as const
+    price: (i >= 12 && i <= 18) ? 'moderate' as const : 'value' as const
   })),
 
-  // North sections 231-240 (3.6° each = 36° total)
-  ...Array.from({ length: 10 }, (_, i) => ({
-    id: `${231 + i}`,
-    name: `Upper North ${231 + i}`,
-    level: 'upper' as const,
-    baseAngle: 108 + i * 3.6,
-    angleSpan: 3.6,
-    rows: generateRows(23, 40, 26 + (i % 3), 16, 28, true),
-    vertices3D: generateVertices(108 + i * 3.6, 3.6, 90, 118, 13, 32),
-    covered: true,
-    distance: 100,
-    height: 16,
-    rake: 28,
-    price: 'value' as const
-  })),
-
-  // ===== CLUB LEVEL - 20 sections, ~10,800 seats =====
-  // East Club sections 301-305 (7.2° each = 36° total)
-  ...Array.from({ length: 5 }, (_, i) => ({
+  // ===== CLUB LEVEL - 20 sections (18° each = 360° FULL COVERAGE), ~10,800 seats =====
+  ...Array.from({ length: 20 }, (_, i) => ({
     id: `${301 + i}`,
-    name: `Club East ${301 + i}`,
+    name: `Club ${301 + i}`,
     level: 'club' as const,
-    baseAngle: i * 7.2,
-    angleSpan: 7.2,
-    rows: generateRows(1, 10, 34 + (i % 2), 15, 20, true),
-    vertices3D: generateVertices(i * 7.2, 7.2, 88, 100, 15, 22),
+    baseAngle: i * 18,
+    angleSpan: 18,
+    rows: generateRows(1, 10, 34 + (i % 3), 15, 20, true),
+    vertices3D: generateVertices(i * 18, 18, 88, 100, 15, 22),
     covered: true,
-    distance: 85,
+    distance: 88,
     height: 15,
     rake: 20,
-    price: 'luxury' as const
-  })),
-
-  // South Club sections 306-310 (7.2° each = 36° total)
-  ...Array.from({ length: 5 }, (_, i) => ({
-    id: `${306 + i}`,
-    name: `Club South ${306 + i}`,
-    level: 'club' as const,
-    baseAngle: 36 + i * 7.2,
-    angleSpan: 7.2,
-    rows: generateRows(1, 10, 32 + (i % 2), 13, 18, true),
-    vertices3D: generateVertices(36 + i * 7.2, 7.2, 88, 100, 13, 20),
-    covered: true,
-    distance: 90,
-    height: 13,
-    rake: 18,
-    price: 'luxury' as const
-  })),
-
-  // West Club sections 311-315 (7.2° each = 36° total)
-  ...Array.from({ length: 5 }, (_, i) => ({
-    id: `${311 + i}`,
-    name: `Club West ${311 + i}`,
-    level: 'club' as const,
-    baseAngle: 72 + i * 7.2,
-    angleSpan: 7.2,
-    rows: generateRows(1, 10, 34 + (i % 2), 15, 20, true),
-    vertices3D: generateVertices(72 + i * 7.2, 7.2, 88, 100, 15, 22),
-    covered: true,
-    distance: 85,
-    height: 15,
-    rake: 20,
-    price: 'luxury' as const
-  })),
-
-  // North Club sections 316-320 (7.2° each = 36° total)
-  ...Array.from({ length: 5 }, (_, i) => ({
-    id: `${316 + i}`,
-    name: `Club North ${316 + i}`,
-    level: 'club' as const,
-    baseAngle: 108 + i * 7.2,
-    angleSpan: 7.2,
-    rows: generateRows(1, 10, 32 + (i % 2), 13, 18, true),
-    vertices3D: generateVertices(108 + i * 7.2, 7.2, 88, 100, 13, 20),
-    covered: true,
-    distance: 90,
-    height: 13,
-    rake: 18,
     price: 'luxury' as const
   }))
 ];
