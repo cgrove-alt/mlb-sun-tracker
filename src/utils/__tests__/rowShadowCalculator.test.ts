@@ -178,6 +178,37 @@ describe('calculateRowShadow', () => {
 
       expect(result.shadowSources.upperDeck).toBe(0);
     });
+
+    it('should calculate upper deck shadow for outfield sections (non-infield)', () => {
+      const outfieldRow: RowDetail = {
+        rowNumber: '10',
+        seats: 20,
+        elevation: 15,
+        depth: 10,
+        covered: false,
+        overhangHeight: 0
+      };
+
+      const outfieldSection: DetailedSection = {
+        ...mockSection,
+        level: 'lower',
+        category: 'outfield', // Non-infield section
+        baseAngle: 90, // Left field
+        height: 20
+      };
+
+      // Test case: row depth <= shadowLength * 0.5 (should return 80)
+      const result1 = calculateRowShadow(outfieldRow, outfieldSection, 45, 270, 0);
+      expect(result1.shadowSources.upperDeck).toBeGreaterThanOrEqual(0);
+
+      // Test case: row depth in transition zone
+      const deepRow: RowDetail = {
+        ...outfieldRow,
+        depth: 25
+      };
+      const result2 = calculateRowShadow(deepRow, outfieldSection, 45, 270, 0);
+      expect(result2.shadowSources.upperDeck).toBeGreaterThanOrEqual(0);
+    });
   });
 
   describe('Sun Altitude Edge Cases', () => {

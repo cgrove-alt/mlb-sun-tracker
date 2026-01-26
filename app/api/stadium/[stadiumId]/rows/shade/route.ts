@@ -93,8 +93,9 @@ export async function GET(request: NextRequest, { params }: RouteParams) {
       }
 
       // Calculate row shadows for single section
+      // Cast to DetailedSection as it has compatible properties
       const rowShadowData = calculateRowShadows(
-        section,
+        section as any,
         sunPosition.altitudeDegrees,
         sunPosition.azimuthDegrees,
         stadium.orientation || 0
@@ -124,7 +125,7 @@ export async function GET(request: NextRequest, { params }: RouteParams) {
     // Calculate row shadows for all sections
     const allRowShadows = sections.map(section =>
       calculateRowShadows(
-        section,
+        section as any,
         sunPosition.altitudeDegrees,
         sunPosition.azimuthDegrees,
         stadium.orientation || 0
