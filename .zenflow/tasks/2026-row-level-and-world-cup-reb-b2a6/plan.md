@@ -71,51 +71,118 @@ Phase 7: Launch Preparation          (Weeks 9-10) → 6 tasks
 ### [ ] Step: Implementation
 <!-- Next active step -->
 
-Implementing Phase 0 row-level calculation engine.
+Implementing 2026 Row-Level and World Cup features across 7 phases.
 
-**Phase 0 Progress**: 34/89 steps complete (38%)
+**Overall Progress**: 34/127+ steps complete across all phases
 
-#### Completed Tasks ✅
+---
 
-- **Task 0.1** (4/4 steps): Performance Baseline & Setup
-  - Build time: 76.99s (74% under target)
-  - Branch created: `feat/row-level-calculations`
+## PHASE 0: Row Calculation Engine (Weeks 1-2) - 38% COMPLETE
 
-- **Task 0.2** (5/5 steps): Extend SunCalculator
-  - File: `src/utils/sunCalculator.ts` (476→759 lines)
-  - Functions: calculateRowShadow(), calculateOverhangShadow(), calculateUpperDeckShadowForRow(), calculateRowShadows()
-  - Tests: 27/27 passing
+#### ✅ Completed Tasks (4/9)
 
-- **Task 0.3** (9/9 steps): Extend Web Worker
-  - File: `public/workers/sunCalculations.worker.js` (65→288 lines)
-  - Message handler: CALCULATE_ROW_SHADOWS
-  - Verification: Integration test (5/5 checks passing)
+- **Task 0.1** (4/4): Performance Baseline - Build: 76.99s, Branch: `feat/row-level-calculations`
+- **Task 0.2** (5/5): SunCalculator - File: `sunCalculator.ts` (476→759 lines), Tests: 27/27 ✅
+- **Task 0.3** (9/9): Web Worker - File: `sunCalculations.worker.js` (65→288 lines), Integration: 5/5 ✅
+- **Task 0.4** (9/9): Hook Update - File: `useSunCalculations.ts` (141→172 lines), Tests: 6/6 ✅
 
-- **Task 0.4** (9/9 steps): Update useSunCalculations Hook
-  - File: `src/hooks/useSunCalculations.ts` (141→172 lines)
-  - Feature: includeRows parameter
-  - Tests: 6 type tests passing
-
-#### Current Task 🔄
+#### 🔄 Current Task
 
 **Task 0.5: Create Row Shade API Endpoint** (0/10 steps)
-- [ ] 0.5.1: Check existing API structure
-- [ ] 0.5.2: Create route.ts with Next.js 15 App Router
-- [ ] 0.5.3: Implement GET handler
-- [ ] 0.5.4: Add query parameter validation
-- [ ] 0.5.5: Import calculateRowShadows()
-- [ ] 0.5.6: Add caching headers
-- [ ] 0.5.7: Add error handling
-- [ ] 0.5.8: Create API route tests
-- [ ] 0.5.9: Test manually with curl
-- [ ] 0.5.10: Measure response time
+- [ ] 0.5.1-10: API route creation, validation, caching, testing
 
-#### Remaining Tasks ⏳
+#### ⏳ Remaining Phase 0 Tasks (5/9)
 
-- **Task 0.6** (0/10 steps): Performance Benchmark & Validation
-- **Task 0.7** (7/16 steps): Comprehensive Unit Tests
-- **Task 0.8** (0/12 steps): Integration Testing
-- **Task 0.9** (0/14 steps): Code Review & Refactoring
+- **Task 0.6** (0/10): Performance Benchmark - Yankees Stadium 2,460 rows <100ms
+- **Task 0.7** (7/16): Unit Tests - Achieve >90% coverage
+- **Task 0.8** (0/12): Integration Testing - E2E validation
+- **Task 0.9** (0/14): Code Review - ESLint, docs, PR creation
+
+---
+
+## PHASE 1: Row-Level UI (Weeks 2-3) - 0% COMPLETE
+
+#### ⏳ All Tasks Pending (0/5)
+
+- **Task 1.1** (0/12): Create RowBreakdownView Component - Desktop table + mobile list
+- **Task 1.2** (0/11): Update LazySectionCardModern - Row summary, expand/collapse
+- **Task 1.3** (0/11): Add Row-Level Filters - Filter bar, URL persistence
+- **Task 1.4** (0/11): Integration - Section/row toggle, responsive testing
+- **Task 1.5** (0/12): E2E Testing - Playwright tests, visual regression
+
+---
+
+## PHASE 2: World Cup Existing Stadiums (Weeks 3-4) - 0% COMPLETE
+
+#### ⏳ All Tasks Pending (0/5)
+
+- **Task 2.1**: MetLife Stadium - Add 2026 WC metadata, verify rows
+- **Task 2.2**: AT&T Stadium - Add metadata, verify rows
+- **Task 2.3**: Mercedes-Benz Stadium - Add metadata, verify rows
+- **Task 2.4**: Levi's Stadium - Add metadata, verify rows
+- **Task 2.5**: Hard Rock Stadium - Add metadata, verify rows
+
+---
+
+## PHASE 3: World Cup New Stadiums (Weeks 4-6) - 0% COMPLETE
+
+#### ⏳ All Tasks Pending (0/4)
+
+- **Task 3.1**: BMO Field (Toronto) - Create stadium data, generate rows
+- **Task 3.2**: BC Place (Vancouver) - Create stadium data, generate rows
+- **Task 3.3**: Estadio Akron (Guadalajara) - Create stadium data, generate rows
+- **Task 3.4**: Estadio BBVA (Monterrey) - Create stadium data, generate rows
+
+---
+
+## PHASE 4: World Cup UI & Schedule (Weeks 6-7) - 0% COMPLETE
+
+#### ⏳ All Tasks Pending (0/6)
+
+- **Task 4.1**: Create WorldCupBadge Component
+- **Task 4.2**: Update Stadium Cards with WC Indicator
+- **Task 4.3**: Create WC Schedule Page
+- **Task 4.4**: Match Countdown Timer
+- **Task 4.5**: Create WC Landing Page
+- **Task 4.6**: E2E Testing for WC Features
+
+---
+
+## PHASE 5: Multi-Language (Weeks 7-8) - 0% COMPLETE
+
+#### ⏳ All Tasks Pending (0/5)
+
+- **Task 5.1**: Add French Translations - 5 days
+- **Task 5.2**: Update i18n Components
+- **Task 5.3**: Test Language Switching
+- **Task 5.4**: Add Language Selector UI
+- **Task 5.5**: Verify All Translations
+
+---
+
+## PHASE 6: Testing & Optimization (Weeks 8-9) - 0% COMPLETE
+
+#### ⏳ All Tasks Pending (0/6)
+
+- **Task 6.1**: Full Regression Testing
+- **Task 6.2**: Performance Optimization
+- **Task 6.3**: Lighthouse Audits - Target >90
+- **Task 6.4**: Cross-Browser Testing
+- **Task 6.5**: Accessibility Audit
+- **Task 6.6**: Load Testing
+
+---
+
+## PHASE 7: Launch Preparation (Weeks 9-10) - 0% COMPLETE
+
+#### ⏳ All Tasks Pending (0/6)
+
+- **Task 7.1**: Production Deployment Plan
+- **Task 7.2**: Monitoring & Analytics Setup
+- **Task 7.3**: Create Marketing Materials
+- **Task 7.4**: SEO Optimization
+- **Task 7.5**: Soft Launch to Beta Users
+- **Task 7.6**: Full Production Launch
 
 ---
 
