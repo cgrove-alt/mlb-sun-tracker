@@ -1,22 +1,12 @@
-// World Cup Match Countdown Timer
-// Displays countdown to next match with real-time updates
-
 import React, { useState, useEffect } from 'react';
 
 export interface MatchCountdownProps {
-  /** Match date in ISO format (YYYY-MM-DD) */
   matchDate: string;
-  /** Match kickoff time (HH:MM in 24-hour format) */
   kickoffTime: string;
-  /** Timezone of the venue */
   timezone?: string;
-  /** Team A name */
   teamA?: string;
-  /** Team B name */
   teamB?: string;
-  /** Venue name */
   venueName?: string;
-  /** Display size */
   size?: 'small' | 'medium' | 'large';
 }
 
@@ -62,10 +52,6 @@ function calculateTimeRemaining(matchDate: string, kickoffTime: string, timezone
   }
 }
 
-/**
- * Match Countdown Component
- * Real-time countdown to World Cup match
- */
 export const MatchCountdown: React.FC<MatchCountdownProps> = ({
   matchDate,
   kickoffTime,
@@ -194,7 +180,6 @@ export const MatchCountdown: React.FC<MatchCountdownProps> = ({
         )}
       </div>
 
-      {/* Screen reader announcement - updates every minute */}
       <div className="sr-only" aria-live="polite" aria-atomic="true">
         {timeRemaining.days > 0 && `${timeRemaining.days} days, `}
         {timeRemaining.hours} hours, and {timeRemaining.minutes} minutes until match starts

@@ -68,7 +68,306 @@ export const WORLD_CUP_2026_MATCHES: WorldCupMatch[] = [
     tvChannels: ['FOX']
   },
 
-  // Round of 16 - Sample matches
+  // More Group Stage Matches
+  {
+    matchId: 'wc2026-006',
+    date: '2026-06-14',
+    kickoffTime: '12:00',
+    venue: 'levis-stadium-wc',
+    round: 'Group Stage',
+    group: 'Group F',
+    teamA: 'TBD',
+    teamB: 'TBD',
+    tvChannels: ['FOX']
+  },
+  {
+    matchId: 'wc2026-007',
+    date: '2026-06-14',
+    kickoffTime: '15:00',
+    venue: 'arrowhead-stadium-wc',
+    round: 'Group Stage',
+    group: 'Group G',
+    teamA: 'TBD',
+    teamB: 'TBD',
+    tvChannels: ['FOX', 'Telemundo']
+  },
+  {
+    matchId: 'wc2026-008',
+    date: '2026-06-14',
+    kickoffTime: '18:00',
+    venue: 'estadio-bbva-wc',
+    round: 'Group Stage',
+    group: 'Group H',
+    teamA: 'TBD',
+    teamB: 'TBD',
+    tvChannels: ['Telemundo']
+  },
+  {
+    matchId: 'wc2026-009',
+    date: '2026-06-15',
+    kickoffTime: '14:00',
+    venue: 'nrg-stadium-wc',
+    round: 'Group Stage',
+    group: 'Group A',
+    teamA: 'TBD',
+    teamB: 'TBD',
+    tvChannels: ['FOX']
+  },
+  {
+    matchId: 'wc2026-010',
+    date: '2026-06-15',
+    kickoffTime: '17:00',
+    venue: 'lumen-field-wc',
+    round: 'Group Stage',
+    group: 'Group B',
+    teamA: 'TBD',
+    teamB: 'TBD',
+    tvChannels: ['FOX']
+  },
+  {
+    matchId: 'wc2026-011',
+    date: '2026-06-16',
+    kickoffTime: '13:00',
+    venue: 'lincoln-financial-field-wc',
+    round: 'Group Stage',
+    group: 'Group C',
+    teamA: 'TBD',
+    teamB: 'TBD',
+    tvChannels: ['FOX']
+  },
+  {
+    matchId: 'wc2026-012',
+    date: '2026-06-16',
+    kickoffTime: '16:00',
+    venue: 'estadio-akron-wc',
+    round: 'Group Stage',
+    group: 'Group D',
+    teamA: 'TBD',
+    teamB: 'TBD',
+    tvChannels: ['Telemundo']
+  },
+  {
+    matchId: 'wc2026-013',
+    date: '2026-06-17',
+    kickoffTime: '14:00',
+    venue: 'bc-place-wc',
+    round: 'Group Stage',
+    group: 'Group E',
+    teamA: 'TBD',
+    teamB: 'TBD',
+    tvChannels: ['TSN', 'FOX']
+  },
+  {
+    matchId: 'wc2026-014',
+    date: '2026-06-17',
+    kickoffTime: '17:00',
+    venue: 'gillette-stadium-wc',
+    round: 'Group Stage',
+    group: 'Group F',
+    teamA: 'TBD',
+    teamB: 'TBD',
+    tvChannels: ['FOX']
+  },
+  {
+    matchId: 'wc2026-015',
+    date: '2026-06-18',
+    kickoffTime: '15:00',
+    venue: 'att-stadium-wc',
+    round: 'Group Stage',
+    group: 'Group G',
+    teamA: 'TBD',
+    teamB: 'TBD',
+    tvChannels: ['FOX', 'Telemundo']
+  },
+  {
+    matchId: 'wc2026-016',
+    date: '2026-06-18',
+    kickoffTime: '18:00',
+    venue: 'metlife-stadium-wc',
+    round: 'Group Stage',
+    group: 'Group H',
+    teamA: 'TBD',
+    teamB: 'TBD',
+    tvChannels: ['FOX']
+  },
+  {
+    matchId: 'wc2026-017',
+    date: '2026-06-19',
+    kickoffTime: '14:00',
+    venue: 'sofi-stadium-wc',
+    round: 'Group Stage',
+    group: 'Group A',
+    teamA: 'TBD',
+    teamB: 'TBD',
+    tvChannels: ['FOX', 'Telemundo']
+  },
+  {
+    matchId: 'wc2026-018',
+    date: '2026-06-19',
+    kickoffTime: '17:00',
+    venue: 'estadio-azteca-wc',
+    round: 'Group Stage',
+    group: 'Group B',
+    teamA: 'TBD',
+    teamB: 'TBD',
+    tvChannels: ['Telemundo']
+  },
+  {
+    matchId: 'wc2026-019',
+    date: '2026-06-20',
+    kickoffTime: '15:00',
+    venue: 'hard-rock-stadium-wc',
+    round: 'Group Stage',
+    group: 'Group C',
+    teamA: 'TBD',
+    teamB: 'TBD',
+    tvChannels: ['FOX']
+  },
+  {
+    matchId: 'wc2026-020',
+    date: '2026-06-20',
+    kickoffTime: '18:00',
+    venue: 'mercedes-benz-stadium-wc',
+    round: 'Group Stage',
+    group: 'Group D',
+    teamA: 'TBD',
+    teamB: 'TBD',
+    tvChannels: ['FOX']
+  },
+  {
+    matchId: 'wc2026-021',
+    date: '2026-06-21',
+    kickoffTime: '13:00',
+    venue: 'arrowhead-stadium-wc',
+    round: 'Group Stage',
+    group: 'Group E',
+    teamA: 'TBD',
+    teamB: 'TBD',
+    tvChannels: ['FOX']
+  },
+  {
+    matchId: 'wc2026-022',
+    date: '2026-06-21',
+    kickoffTime: '16:00',
+    venue: 'bmo-field-wc',
+    round: 'Group Stage',
+    group: 'Group F',
+    teamA: 'TBD',
+    teamB: 'TBD',
+    tvChannels: ['TSN']
+  },
+  {
+    matchId: 'wc2026-023',
+    date: '2026-06-22',
+    kickoffTime: '14:00',
+    venue: 'levis-stadium-wc',
+    round: 'Group Stage',
+    group: 'Group G',
+    teamA: 'TBD',
+    teamB: 'TBD',
+    tvChannels: ['FOX']
+  },
+  {
+    matchId: 'wc2026-024',
+    date: '2026-06-22',
+    kickoffTime: '17:00',
+    venue: 'nrg-stadium-wc',
+    round: 'Group Stage',
+    group: 'Group H',
+    teamA: 'TBD',
+    teamB: 'TBD',
+    tvChannels: ['FOX', 'Telemundo']
+  },
+  {
+    matchId: 'wc2026-025',
+    date: '2026-06-23',
+    kickoffTime: '15:00',
+    venue: 'lumen-field-wc',
+    round: 'Group Stage',
+    group: 'Group A',
+    teamA: 'TBD',
+    teamB: 'TBD',
+    tvChannels: ['FOX']
+  },
+  {
+    matchId: 'wc2026-026',
+    date: '2026-06-23',
+    kickoffTime: '18:00',
+    venue: 'estadio-bbva-wc',
+    round: 'Group Stage',
+    group: 'Group B',
+    teamA: 'TBD',
+    teamB: 'TBD',
+    tvChannels: ['Telemundo']
+  },
+  {
+    matchId: 'wc2026-027',
+    date: '2026-06-24',
+    kickoffTime: '16:00',
+    venue: 'lincoln-financial-field-wc',
+    round: 'Group Stage',
+    group: 'Group C',
+    teamA: 'TBD',
+    teamB: 'TBD',
+    tvChannels: ['FOX']
+  },
+  {
+    matchId: 'wc2026-028',
+    date: '2026-06-24',
+    kickoffTime: '19:00',
+    venue: 'estadio-akron-wc',
+    round: 'Group Stage',
+    group: 'Group D',
+    teamA: 'TBD',
+    teamB: 'TBD',
+    tvChannels: ['Telemundo']
+  },
+  {
+    matchId: 'wc2026-029',
+    date: '2026-06-25',
+    kickoffTime: '15:00',
+    venue: 'bc-place-wc',
+    round: 'Group Stage',
+    group: 'Group E',
+    teamA: 'TBD',
+    teamB: 'TBD',
+    tvChannels: ['TSN']
+  },
+  {
+    matchId: 'wc2026-030',
+    date: '2026-06-25',
+    kickoffTime: '18:00',
+    venue: 'gillette-stadium-wc',
+    round: 'Group Stage',
+    group: 'Group F',
+    teamA: 'TBD',
+    teamB: 'TBD',
+    tvChannels: ['FOX']
+  },
+  {
+    matchId: 'wc2026-031',
+    date: '2026-06-26',
+    kickoffTime: '16:00',
+    venue: 'metlife-stadium-wc',
+    round: 'Group Stage',
+    group: 'Group G',
+    teamA: 'TBD',
+    teamB: 'TBD',
+    tvChannels: ['FOX']
+  },
+  {
+    matchId: 'wc2026-032',
+    date: '2026-06-26',
+    kickoffTime: '19:00',
+    venue: 'att-stadium-wc',
+    round: 'Group Stage',
+    group: 'Group H',
+    teamA: 'TBD',
+    teamB: 'TBD',
+    tvChannels: ['FOX', 'Telemundo']
+  },
+
+  // Round of 16
   {
     matchId: 'wc2026-049',
     date: '2026-06-27',
@@ -81,6 +380,16 @@ export const WORLD_CUP_2026_MATCHES: WorldCupMatch[] = [
   },
   {
     matchId: 'wc2026-050',
+    date: '2026-06-27',
+    kickoffTime: '18:00',
+    venue: 'sofi-stadium-wc',
+    round: 'Round of 16',
+    teamA: 'TBD',
+    teamB: 'TBD',
+    tvChannels: ['FOX']
+  },
+  {
+    matchId: 'wc2026-051',
     date: '2026-06-28',
     kickoffTime: '15:00',
     venue: 'hard-rock-stadium-wc',
@@ -88,6 +397,56 @@ export const WORLD_CUP_2026_MATCHES: WorldCupMatch[] = [
     teamA: 'TBD',
     teamB: 'TBD',
     tvChannels: ['FOX']
+  },
+  {
+    matchId: 'wc2026-052',
+    date: '2026-06-28',
+    kickoffTime: '18:00',
+    venue: 'att-stadium-wc',
+    round: 'Round of 16',
+    teamA: 'TBD',
+    teamB: 'TBD',
+    tvChannels: ['FOX', 'Telemundo']
+  },
+  {
+    matchId: 'wc2026-053',
+    date: '2026-06-29',
+    kickoffTime: '16:00',
+    venue: 'lincoln-financial-field-wc',
+    round: 'Round of 16',
+    teamA: 'TBD',
+    teamB: 'TBD',
+    tvChannels: ['FOX']
+  },
+  {
+    matchId: 'wc2026-054',
+    date: '2026-06-29',
+    kickoffTime: '19:00',
+    venue: 'metlife-stadium-wc',
+    round: 'Round of 16',
+    teamA: 'TBD',
+    teamB: 'TBD',
+    tvChannels: ['FOX']
+  },
+  {
+    matchId: 'wc2026-055',
+    date: '2026-06-30',
+    kickoffTime: '15:00',
+    venue: 'arrowhead-stadium-wc',
+    round: 'Round of 16',
+    teamA: 'TBD',
+    teamB: 'TBD',
+    tvChannels: ['FOX']
+  },
+  {
+    matchId: 'wc2026-056',
+    date: '2026-06-30',
+    kickoffTime: '18:00',
+    venue: 'nrg-stadium-wc',
+    round: 'Round of 16',
+    teamA: 'TBD',
+    teamB: 'TBD',
+    tvChannels: ['FOX', 'Telemundo']
   },
 
   // Quarterfinals
@@ -103,13 +462,33 @@ export const WORLD_CUP_2026_MATCHES: WorldCupMatch[] = [
   },
   {
     matchId: 'wc2026-058',
-    date: '2026-07-04',
-    kickoffTime: '15:00',
+    date: '2026-07-03',
+    kickoffTime: '19:00',
     venue: 'gillette-stadium-wc',
     round: 'Quarterfinal',
     teamA: 'TBD',
     teamB: 'TBD',
     tvChannels: ['FOX']
+  },
+  {
+    matchId: 'wc2026-059',
+    date: '2026-07-04',
+    kickoffTime: '15:00',
+    venue: 'hard-rock-stadium-wc',
+    round: 'Quarterfinal',
+    teamA: 'TBD',
+    teamB: 'TBD',
+    tvChannels: ['FOX']
+  },
+  {
+    matchId: 'wc2026-060',
+    date: '2026-07-04',
+    kickoffTime: '19:00',
+    venue: 'mercedes-benz-stadium-wc',
+    round: 'Quarterfinal',
+    teamA: 'TBD',
+    teamB: 'TBD',
+    tvChannels: ['FOX', 'Telemundo']
   },
 
   // Semifinals
@@ -159,8 +538,6 @@ export const WORLD_CUP_2026_MATCHES: WorldCupMatch[] = [
     expectedAttendance: 87000
   }
 
-  // NOTE: This is a representative sample. Full 104-match schedule to be populated
-  // in Phase 4 with complete group stage, knockout rounds
 ];
 
 /**
@@ -227,8 +604,8 @@ export function getOpeningWeekMatches(): WorldCupMatch[] {
  * Match schedule statistics
  */
 export const MATCH_SCHEDULE_STATS = {
-  totalMatches: 104,  // Full tournament
-  sampleMatches: WORLD_CUP_2026_MATCHES.length,  // Currently populated
+  totalMatches: 104,
+  populatedMatches: WORLD_CUP_2026_MATCHES.length,
   openingMatch: {
     date: '2026-06-11',
     venue: 'Estadio Azteca',
@@ -240,7 +617,7 @@ export const MATCH_SCHEDULE_STATS = {
     teams: 'TBD vs TBD'
   },
   matchesByRound: {
-    groupStage: 80,  // 16 groups × 5 matches
+    groupStage: 80,
     roundOf16: 16,
     quarterfinals: 8,
     semifinals: 2,
