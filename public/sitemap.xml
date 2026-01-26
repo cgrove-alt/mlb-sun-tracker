@@ -46,6 +46,16 @@
     <priority>0.5</priority>
   </url>
   <url>
+    <loc>https://theshadium.com/worldcup2026</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://theshadium.com/worldcup2026/schedule</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
     <loc>https://theshadium.com/league/mlb</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>

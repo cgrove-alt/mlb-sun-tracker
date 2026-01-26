@@ -107,10 +107,10 @@ export function WorldCupLandingClient() {
               <MatchCountdown
                 matchDate={nextMatch.date}
                 kickoffTime={nextMatch.kickoffTime}
-                timezone={ALL_WORLD_CUP_VENUES.find(v => v.id === nextMatch.venue)?.timezone}
+                timezone={ALL_WORLD_CUP_VENUES.find(v => v.id === nextMatch.venue)?.timezone || 'UTC'}
                 teamA={nextMatch.teamA}
                 teamB={nextMatch.teamB}
-                venueName={ALL_WORLD_CUP_VENUES.find(v => v.id === nextMatch.venue)?.commonName}
+                venueName={ALL_WORLD_CUP_VENUES.find(v => v.id === nextMatch.venue)?.commonName || 'TBD'}
                 size="large"
               />
             </div>
@@ -138,7 +138,7 @@ export function WorldCupLandingClient() {
               <div className="space-y-2 text-gray-700">
                 <p><strong>Date:</strong> {WORLD_CUP_2026_INFO.final.date}</p>
                 <p><strong>Venue:</strong> {WORLD_CUP_2026_INFO.final.city}</p>
-                <p><strong>Stadium:</strong> MetLife Stadium</p>
+                <p><strong>Stadium:</strong> {ALL_WORLD_CUP_VENUES.find(v => v.id === WORLD_CUP_2026_INFO.final.venue)?.commonName || 'MetLife Stadium'}</p>
               </div>
             </div>
           </div>

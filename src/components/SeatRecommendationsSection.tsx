@@ -359,6 +359,7 @@ export const SeatRecommendationsSection: React.FC<SeatRecommendationsSectionProp
           showFilters={true}
           rowData={rowData}
           showRowToggle={!!rowData && rowData.length > 0}
+          stadiumId={stadiumId}
         />
       </div>
 

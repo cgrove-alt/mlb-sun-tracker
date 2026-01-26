@@ -479,6 +479,7 @@ function UnifiedAppContent() {
                   showFilters={true}
                   rowData={rowShadowData}
                   showRowToggle={!!rowShadowData && rowShadowData.length > 0}
+                  stadiumId={selectedVenue?.id}
                 />
               )}
             </div>

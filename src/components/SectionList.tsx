@@ -17,6 +17,9 @@ interface SectionListProps {
   showFilters?: boolean;
   rowData?: SectionShadowData[] | null;
   showRowToggle?: boolean;
+  stadiumId?: string;
+  worldCupMatchCount?: number;
+  worldCupCountry?: 'USA' | 'Mexico' | 'Canada';
 }
 
 export const SectionList: React.FC<SectionListProps> = ({
@@ -25,7 +28,10 @@ export const SectionList: React.FC<SectionListProps> = ({
   calculationProgress,
   showFilters = false,
   rowData = null,
-  showRowToggle = false
+  showRowToggle = false,
+  stadiumId,
+  worldCupMatchCount,
+  worldCupCountry
 }) => {
   const [sortBy, setSortBy] = useState<'name' | 'exposure' | 'level' | 'price'>(() => {
     return preferencesStorage.get('sortBy', 'exposure');
@@ -411,6 +417,9 @@ export const SectionList: React.FC<SectionListProps> = ({
                 index={index}
                 timeInSun={sectionData.timeInSun}
                 rowData={showRowLevel ? getRowDataForSection(sectionData.section.id) : undefined}
+                stadiumId={stadiumId}
+                worldCupMatchCount={worldCupMatchCount}
+                worldCupCountry={worldCupCountry}
               />
             ))}
           </div>

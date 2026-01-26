@@ -403,6 +403,15 @@ export default function StickyTopNav() {
               </Link>
 
               <Link
+                href="/worldcup2026"
+                className={`nav-link-primary ${pathname?.startsWith('/worldcup2026') ? 'active' : ''}`}
+                onClick={closeMobileMenu}
+                aria-current={pathname?.startsWith('/worldcup2026') ? 'page' : undefined}
+              >
+                ⚽ World Cup 2026
+              </Link>
+
+              <Link
                 href="/blog"
                 className={`nav-link-primary ${pathname?.startsWith('/blog') ? 'active' : ''}`}
                 onClick={closeMobileMenu}

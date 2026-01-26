@@ -118,10 +118,10 @@ export function WorldCupScheduleClient() {
             <MatchCountdown
               matchDate={nextMatch.date}
               kickoffTime={nextMatch.kickoffTime}
-              timezone={getWorldCupVenueById(nextMatch.venue)?.timezone}
+              timezone={getWorldCupVenueById(nextMatch.venue)?.timezone || 'UTC'}
               teamA={nextMatch.teamA}
               teamB={nextMatch.teamB}
-              venueName={getWorldCupVenueById(nextMatch.venue)?.commonName}
+              venueName={getWorldCupVenueById(nextMatch.venue)?.commonName || 'TBD'}
               size="large"
             />
           </div>

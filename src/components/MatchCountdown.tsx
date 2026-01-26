@@ -28,13 +28,14 @@ interface TimeRemaining {
   isPast: boolean;
 }
 
-/**
- * Calculate time remaining until match
- */
 function calculateTimeRemaining(matchDate: string, kickoffTime: string): TimeRemaining {
   const [hours, minutes] = kickoffTime.split(':').map(Number);
-  const matchDateTime = new Date(matchDate);
-  matchDateTime.setHours(hours, minutes, 0, 0);
+  const matchDateTimeStr = `${matchDate}T${kickoffTime}:00`;
+  const matchDateTime = new Date(matchDateTimeStr);
+
+  if (isNaN(matchDateTime.getTime())) {
+    return { days: 0, hours: 0, minutes: 0, seconds: 0, isPast: true };
+  }
 
   const now = new Date();
   const diff = matchDateTime.getTime() - now.getTime();
@@ -182,7 +183,7 @@ export const MatchCountdown: React.FC<MatchCountdownProps> = ({
 
       {/* Kickoff time */}
       <div className={`text-center mt-2 ${config.venue} text-gray-500`}>
-        Kickoff: {kickoffTime} {timezone && `(${timezone})`}
+        Kickoff: {kickoffTime} {timezone ? `${timezone}` : 'local time'}
       </div>
     </div>
   );
