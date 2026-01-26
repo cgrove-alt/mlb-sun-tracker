@@ -68,6 +68,26 @@ Phase 7: Launch Preparation          (Weeks 9-10) → 6 tasks
 
 ---
 
+### [ ] Step: Implementation
+<!-- Next active step -->
+
+Implementing Phase 0 row-level calculation engine.
+
+**Current Status**: Tasks 0.1-0.4 complete (38% of Phase 0)
+**Next Task**: Task 0.5 - Create Row Shade API Endpoint
+
+**Completed**:
+- ✅ Task 0.1: Performance baseline established
+- ✅ Task 0.2: Core row calculation functions implemented
+- ✅ Task 0.3: Web Worker extended for row calculations
+- ✅ Task 0.4: Hook updated to support row-level data
+- ✅ Critical bug fixed: Worker API contract mismatch
+
+**In Progress**:
+- 🔄 Task 0.5: Create Row Shade API Endpoint (0/10 steps)
+
+---
+
 ## Implementation Tasks
 
 ### Phase 0: Row Calculation Engine (Weeks 1-2)
