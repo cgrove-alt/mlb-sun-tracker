@@ -1,5 +1,6 @@
 import React, { useMemo } from 'react';
 import { getWorldCupVenueById } from '../data/worldcup2026/venues';
+import { useTranslation } from '../i18n/i18nContext';
 
 export interface WorldCupBadgeProps {
   stadiumId?: string;
@@ -16,6 +17,7 @@ export const WorldCupBadge: React.FC<WorldCupBadgeProps> = ({
   showMatchCount = true,
   country: providedCountry
 }) => {
+  const { t } = useTranslation();
   const venueData = useMemo(() => {
     if (!stadiumId) return null;
 
@@ -48,9 +50,9 @@ export const WorldCupBadge: React.FC<WorldCupBadgeProps> = ({
   return (
     <div className={`inline-flex items-center gap-1.5 rounded-full font-semibold ${bgColor} ${sizeClass}`}>
       <span className="inline-block w-1.5 h-1.5 bg-white rounded-full animate-pulse" />
-      <span>World Cup 2026</span>
+      <span>{t('worldcup.badge.worldCupVenue')}</span>
       {showMatchCount && matchCount > 0 && (
-        <span className="opacity-90">• {matchCount} {matchCount === 1 ? 'match' : 'matches'}</span>
+        <span className="opacity-90">• {matchCount} {matchCount === 1 ? t('worldcup.badge.match') : t('worldcup.badge.matches')}</span>
       )}
     </div>
   );

@@ -18,6 +18,7 @@ import CookieBannerModern from '../components/CookieBannerModern';
 import DataRetentionInitializer from '../components/DataRetentionInitializer';
 import SkipLinks from '../components/SkipLinks';
 import ServiceWorkerRegistration from '../components/ServiceWorkerRegistration';
+import { I18nProvider } from '../src/i18n/i18nContext';
 
 const inter = Inter({ 
   subsets: ['latin'],
@@ -175,19 +176,21 @@ export default function RootLayout({
         <WebApplicationSchema />
       </head>
       <body className={inter.className}>
-        <SkipLinks />
-        <CSSOptimizer />
-        <Suspense fallback={null}>
-          <GoogleAnalyticsLazy />
-        </Suspense>
-        <ServiceWorkerRegistration />
-        <DataRetentionInitializer />
-        <StickyTopNav />
-        <main id="main-content" tabIndex={-1}>
-          <div id="root" className="page-transition">{children}</div>
-        </main>
-        <FooterModern />
-        <CookieBannerModern />
+        <I18nProvider>
+          <SkipLinks />
+          <CSSOptimizer />
+          <Suspense fallback={null}>
+            <GoogleAnalyticsLazy />
+          </Suspense>
+          <ServiceWorkerRegistration />
+          <DataRetentionInitializer />
+          <StickyTopNav />
+          <main id="main-content" tabIndex={-1}>
+            <div id="root" className="page-transition">{children}</div>
+          </main>
+          <FooterModern />
+          <CookieBannerModern />
+        </I18nProvider>
       </body>
     </html>
   );

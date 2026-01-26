@@ -15,12 +15,14 @@ import {
 import type { WorldCupMatch } from '../../../src/data/worldcup2026/types';
 import { WORLD_CUP_2026_INFO } from '../../../src/data/worldcup2026/types';
 import { MatchCountdown } from '../../../src/components/MatchCountdown';
+import { useTranslation } from '../../../src/i18n/i18nContext';
 import Link from 'next/link';
 
 type RoundFilter = 'All' | 'Group Stage' | 'Round of 16' | 'Quarterfinal' | 'Semifinal' | 'Third Place' | 'Final';
 type CountryFilter = 'All' | 'USA' | 'Mexico' | 'Canada';
 
 export function WorldCupScheduleClient() {
+  const { t } = useTranslation();
   const [roundFilter, setRoundFilter] = useState<RoundFilter>('All');
   const [countryFilter, setCountryFilter] = useState<CountryFilter>('All');
   const [searchQuery, setSearchQuery] = useState('');
@@ -96,13 +98,13 @@ export function WorldCupScheduleClient() {
       <div className="bg-gradient-to-r from-purple-600 to-blue-600 text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
           <h1 className="text-4xl md:text-5xl font-bold mb-4">
-            FIFA World Cup 2026 Schedule
+            {t('worldcup.schedule.title')}
           </h1>
           <p className="text-xl text-purple-100 mb-2">
-            {WORLD_CUP_2026_INFO.totalMatches} matches across {WORLD_CUP_2026_INFO.totalVenues} venues
+            {t('worldcup.schedule.matchCount', { count: WORLD_CUP_2026_INFO.totalMatches })}
           </p>
           <p className="text-lg text-purple-200">
-            {WORLD_CUP_2026_INFO.startDate} to {WORLD_CUP_2026_INFO.endDate}
+            {WORLD_CUP_2026_INFO.startDate} {t('worldcup.countdown.until')} {WORLD_CUP_2026_INFO.endDate}
           </p>
         </div>
       </div>
@@ -119,7 +121,7 @@ export function WorldCupScheduleClient() {
               </div>
               <div className="ml-3">
                 <p className="text-sm text-blue-800 font-medium">
-                  <strong>Time Zone Notice:</strong> All kickoff times are displayed in the venue&apos;s local timezone. Countdowns show time remaining in your current timezone.
+                  {t('worldcup.schedule.timezoneNote')}
                 </p>
               </div>
             </div>
@@ -129,7 +131,7 @@ export function WorldCupScheduleClient() {
         {/* Next Match Countdown */}
         {nextMatch && (
           <div className="mb-8">
-            <h2 className="text-2xl font-bold text-gray-900 mb-4">Next Match</h2>
+            <h2 className="text-2xl font-bold text-gray-900 mb-4">{t('worldcup.nextMatch')}</h2>
             <MatchCountdown
               matchDate={nextMatch.date}
               kickoffTime={nextMatch.kickoffTime}
@@ -144,54 +146,54 @@ export function WorldCupScheduleClient() {
 
         {/* Filters */}
         <div className="bg-white rounded-xl shadow-lg p-6 mb-8">
-          <h2 className="text-xl font-bold text-gray-900 mb-4">Filter Matches</h2>
+          <h2 className="text-xl font-bold text-gray-900 mb-4">{t('worldcup.filterByCountry')}</h2>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
             {/* Round Filter */}
             <div>
               <label className="block text-sm font-medium text-gray-700 mb-2">
-                Round
+                {t('worldcup.schedule.round')}
               </label>
               <select
                 value={roundFilter}
                 onChange={(e) => setRoundFilter(e.target.value as RoundFilter)}
                 className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent"
               >
-                <option value="All">All Rounds</option>
-                <option value="Group Stage">Group Stage</option>
-                <option value="Round of 16">Round of 16</option>
-                <option value="Quarterfinal">Quarterfinals</option>
-                <option value="Semifinal">Semifinals</option>
-                <option value="Third Place">Third Place</option>
-                <option value="Final">Final</option>
+                <option value="All">{t('worldcup.schedule.rounds.all')}</option>
+                <option value="Group Stage">{t('worldcup.schedule.rounds.groupStage')}</option>
+                <option value="Round of 16">{t('worldcup.schedule.rounds.roundOf16')}</option>
+                <option value="Quarterfinal">{t('worldcup.schedule.rounds.quarterFinals')}</option>
+                <option value="Semifinal">{t('worldcup.schedule.rounds.semiFinals')}</option>
+                <option value="Third Place">{t('worldcup.schedule.rounds.thirdPlace')}</option>
+                <option value="Final">{t('worldcup.schedule.rounds.final')}</option>
               </select>
             </div>
 
             {/* Country Filter */}
             <div>
               <label className="block text-sm font-medium text-gray-700 mb-2">
-                Country
+                {t('worldcup.hostCountries')}
               </label>
               <select
                 value={countryFilter}
                 onChange={(e) => setCountryFilter(e.target.value as CountryFilter)}
                 className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent"
               >
-                <option value="All">All Countries</option>
-                <option value="USA">USA</option>
-                <option value="Mexico">Mexico</option>
-                <option value="Canada">Canada</option>
+                <option value="All">{t('worldcup.countries.all')}</option>
+                <option value="USA">{t('worldcup.countries.usa')}</option>
+                <option value="Mexico">{t('worldcup.countries.mexico')}</option>
+                <option value="Canada">{t('worldcup.countries.canada')}</option>
               </select>
             </div>
 
             {/* Search */}
             <div>
               <label className="block text-sm font-medium text-gray-700 mb-2">
-                Search
+                {t('sections.search')}
               </label>
               <input
                 type="text"
-                placeholder="Team, city, or venue..."
+                placeholder={t('worldcup.schedule.searchMatches')}
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
                 className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent"
@@ -201,7 +203,7 @@ export function WorldCupScheduleClient() {
 
           {/* Results count */}
           <div className="mt-4 text-sm text-gray-600">
-            Showing {filteredMatches.length} of {allMatches.length} matches
+            {t('sections.summaryStats.searchResults', { shown: filteredMatches.length, total: allMatches.length })}
           </div>
         </div>
 
@@ -248,7 +250,7 @@ export function WorldCupScheduleClient() {
                                 <span>{venue.city}, {venue.country}</span>
                               </div>
                               <div>
-                                Kickoff: {match.kickoffTime} ({venue.timezone})
+                                {t('worldcup.schedule.kickoff')}: {match.kickoffTime} ({venue.timezone})
                               </div>
                             </div>
                           )}
@@ -261,7 +263,7 @@ export function WorldCupScheduleClient() {
                               href={`/stadium/${venue.id}`}
                               className="px-4 py-2 bg-purple-600 text-white text-center rounded-lg hover:bg-purple-700 transition-colors font-medium"
                             >
-                              Find Shaded Seats
+                              {t('worldcup.subtitle')}
                             </Link>
                           )}
 
@@ -279,7 +281,7 @@ export function WorldCupScheduleClient() {
 
           {filteredMatches.length === 0 && (
             <div className="text-center py-12">
-              <p className="text-xl text-gray-600">No matches found matching your filters</p>
+              <p className="text-xl text-gray-600">{t('worldcup.schedule.noMatches')}</p>
             </div>
           )}
         </div>
@@ -288,9 +290,7 @@ export function WorldCupScheduleClient() {
         {allMatches.length < WORLD_CUP_2026_INFO.totalMatches && (
           <div className="mt-8 p-4 bg-yellow-50 border border-yellow-200 rounded-lg">
             <p className="text-sm text-yellow-800">
-              <strong>Note:</strong> Showing {allMatches.length} of 104 total matches.
-              Additional group stage matches will be added as the official schedule is finalized.
-              Team assignments will be updated as qualification concludes.
+              {t('worldcup.schedule.matchCount', { count: allMatches.length })} {t('worldcup.stats.totalMatches').toLowerCase()}.
             </p>
           </div>
         )}

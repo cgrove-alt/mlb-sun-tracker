@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { useTranslation } from '../i18n/i18nContext';
 
 export interface MatchCountdownProps {
   matchDate: string;
@@ -61,6 +62,7 @@ export const MatchCountdown: React.FC<MatchCountdownProps> = ({
   venueName,
   size = 'medium'
 }) => {
+  const { t } = useTranslation();
   const [timeRemaining, setTimeRemaining] = useState<TimeRemaining>(
     calculateTimeRemaining(matchDate, kickoffTime, timezone)
   );
@@ -76,7 +78,7 @@ export const MatchCountdown: React.FC<MatchCountdownProps> = ({
   if (timeRemaining.isPast) {
     return (
       <div className="text-center p-4 bg-gray-100 rounded-lg">
-        <p className="text-sm text-gray-600">Match completed</p>
+        <p className="text-sm text-gray-600">{t('worldcup.countdown.matchEnded')}</p>
       </div>
     );
   }
@@ -128,7 +130,7 @@ export const MatchCountdown: React.FC<MatchCountdownProps> = ({
             {timeRemaining.days}
           </div>
           <div className={`${config.label} text-gray-600 uppercase tracking-wide`}>
-            {timeRemaining.days === 1 ? 'Day' : 'Days'}
+            {t('worldcup.countdown.days')}
           </div>
         </div>
 
@@ -138,7 +140,7 @@ export const MatchCountdown: React.FC<MatchCountdownProps> = ({
             {String(timeRemaining.hours).padStart(2, '0')}
           </div>
           <div className={`${config.label} text-gray-600 uppercase tracking-wide`}>
-            {timeRemaining.hours === 1 ? 'Hour' : 'Hours'}
+            {t('worldcup.countdown.hours')}
           </div>
         </div>
 
@@ -148,7 +150,7 @@ export const MatchCountdown: React.FC<MatchCountdownProps> = ({
             {String(timeRemaining.minutes).padStart(2, '0')}
           </div>
           <div className={`${config.label} text-gray-600 uppercase tracking-wide`}>
-            {timeRemaining.minutes === 1 ? 'Min' : 'Mins'}
+            {t('worldcup.countdown.minutes')}
           </div>
         </div>
 
@@ -158,7 +160,7 @@ export const MatchCountdown: React.FC<MatchCountdownProps> = ({
             {String(timeRemaining.seconds).padStart(2, '0')}
           </div>
           <div className={`${config.label} text-gray-600 uppercase tracking-wide`}>
-            {timeRemaining.seconds === 1 ? 'Sec' : 'Secs'}
+            {t('worldcup.countdown.seconds')}
           </div>
         </div>
       </div>
@@ -172,17 +174,17 @@ export const MatchCountdown: React.FC<MatchCountdownProps> = ({
 
       {/* Kickoff time with timezone clarification */}
       <div className={`text-center mt-2 ${config.venue} text-gray-500`}>
-        <div>Kickoff: {kickoffTime}</div>
+        <div>{t('worldcup.schedule.kickoff')}: {kickoffTime}</div>
         {timezone && (
           <div className="text-xs mt-1">
-            ({timezone} - venue local time)
+            ({timezone} - {t('worldcup.schedule.localTime')})
           </div>
         )}
       </div>
 
       <div className="sr-only" aria-live="polite" aria-atomic="true">
-        {timeRemaining.days > 0 && `${timeRemaining.days} days, `}
-        {timeRemaining.hours} hours, and {timeRemaining.minutes} minutes until match starts
+        {timeRemaining.days > 0 && `${timeRemaining.days} ${t('worldcup.countdown.days')}, `}
+        {timeRemaining.hours} {t('worldcup.countdown.hours')}, {t('game.at')} {timeRemaining.minutes} {t('worldcup.countdown.minutes')}
       </div>
     </div>
   );
