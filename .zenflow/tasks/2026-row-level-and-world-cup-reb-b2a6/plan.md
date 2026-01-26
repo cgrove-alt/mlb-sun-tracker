@@ -73,18 +73,49 @@ Phase 7: Launch Preparation          (Weeks 9-10) → 6 tasks
 
 Implementing Phase 0 row-level calculation engine.
 
-**Current Status**: Tasks 0.1-0.4 complete (38% of Phase 0)
-**Next Task**: Task 0.5 - Create Row Shade API Endpoint
+**Phase 0 Progress**: 34/89 steps complete (38%)
 
-**Completed**:
-- ✅ Task 0.1: Performance baseline established
-- ✅ Task 0.2: Core row calculation functions implemented
-- ✅ Task 0.3: Web Worker extended for row calculations
-- ✅ Task 0.4: Hook updated to support row-level data
-- ✅ Critical bug fixed: Worker API contract mismatch
+#### Completed Tasks ✅
 
-**In Progress**:
-- 🔄 Task 0.5: Create Row Shade API Endpoint (0/10 steps)
+- **Task 0.1** (4/4 steps): Performance Baseline & Setup
+  - Build time: 76.99s (74% under target)
+  - Branch created: `feat/row-level-calculations`
+
+- **Task 0.2** (5/5 steps): Extend SunCalculator
+  - File: `src/utils/sunCalculator.ts` (476→759 lines)
+  - Functions: calculateRowShadow(), calculateOverhangShadow(), calculateUpperDeckShadowForRow(), calculateRowShadows()
+  - Tests: 27/27 passing
+
+- **Task 0.3** (9/9 steps): Extend Web Worker
+  - File: `public/workers/sunCalculations.worker.js` (65→288 lines)
+  - Message handler: CALCULATE_ROW_SHADOWS
+  - Verification: Integration test (5/5 checks passing)
+
+- **Task 0.4** (9/9 steps): Update useSunCalculations Hook
+  - File: `src/hooks/useSunCalculations.ts` (141→172 lines)
+  - Feature: includeRows parameter
+  - Tests: 6 type tests passing
+
+#### Current Task 🔄
+
+**Task 0.5: Create Row Shade API Endpoint** (0/10 steps)
+- [ ] 0.5.1: Check existing API structure
+- [ ] 0.5.2: Create route.ts with Next.js 15 App Router
+- [ ] 0.5.3: Implement GET handler
+- [ ] 0.5.4: Add query parameter validation
+- [ ] 0.5.5: Import calculateRowShadows()
+- [ ] 0.5.6: Add caching headers
+- [ ] 0.5.7: Add error handling
+- [ ] 0.5.8: Create API route tests
+- [ ] 0.5.9: Test manually with curl
+- [ ] 0.5.10: Measure response time
+
+#### Remaining Tasks ⏳
+
+- **Task 0.6** (0/10 steps): Performance Benchmark & Validation
+- **Task 0.7** (7/16 steps): Comprehensive Unit Tests
+- **Task 0.8** (0/12 steps): Integration Testing
+- **Task 0.9** (0/14 steps): Code Review & Refactoring
 
 ---
 
