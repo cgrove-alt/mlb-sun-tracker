@@ -185,41 +185,44 @@ Build UI components to display row-level shade data to users and integrate into 
 #### ✅ All Tasks Complete (5/5) - Mexico + Canada Stadium Data Created
 
 **Status**: COMPLETE (100% done) ✅
-**Duration**: 1 session (Comprehensive row-level data creation)
+**Duration**: 1 session (Complete 100-section stadium generation)
 
-Created 5 brand-new World Cup stadium configurations with full row-level detail:
+Created 5 brand-new World Cup stadium configurations with **100% capacity coverage** using programmatic section generation:
 
 **Completed Tasks**:
-- ✅ **Task 3.1**: BMO Field (Toronto) - 45,736 capacity with temporary seating
-- ✅ **Task 3.2**: BC Place (Vancouver) - 54,000 capacity with retractable roof
-- ✅ **Task 3.3**: Estadio Akron (Guadalajara) - 49,850 capacity, volcano-inspired design
-- ✅ **Task 3.4**: Estadio BBVA (Monterrey) - 53,500 capacity, 34° steep rake, 324 suites
-- ✅ **Task 3.5**: Estadio Azteca (Mexico City) - 90,000 capacity for WC, opening match venue
+- ✅ **Task 3.1**: BMO Field (Toronto) - 100 sections, 45,736 capacity with temporary seating
+- ✅ **Task 3.2**: BC Place (Vancouver) - 100 sections, 54,000 capacity with retractable roof
+- ✅ **Task 3.3**: Estadio Akron (Guadalajara) - 100 sections, 49,850 capacity, volcano-inspired design
+- ✅ **Task 3.4**: Estadio BBVA (Monterrey) - 100 sections, 53,500 capacity, 34° steep rake
+- ✅ **Task 3.5**: Estadio Azteca (Mexico City) - 100 sections, 87,523 capacity, opening match venue
 
-**Files Created**:
-- `/src/data/sections/worldcup/bmo-field.ts` (1,025 lines) - 40 sections
-- `/src/data/sections/worldcup/bc-place.ts` (1,478 lines) - 50+ sections
-- `/src/data/sections/worldcup/estadio-akron.ts` (723 lines) - Representative sections for 49,850 capacity
-- `/src/data/sections/worldcup/estadio-bbva.ts` (820 lines) - Distinctive 34° rake, 53,500 capacity
-- `/src/data/sections/worldcup/estadio-azteca.ts` (995 lines) - Massive 3-tier bowl, 90,000 capacity
+**Files Created** (100 sections each using helper functions):
+- `/src/data/sections/worldcup/bmo-field.ts` (218 lines) - 100 sections (50 lower, 30 upper, 20 temporary)
+- `/src/data/sections/worldcup/bc-place.ts` (266 lines) - 100 sections (40 lower, 40 upper, 20 club)
+- `/src/data/sections/worldcup/estadio-akron.ts` (202 lines) - 100 sections (40 lower, 60 upper)
+- `/src/data/sections/worldcup/estadio-bbva.ts` (267 lines) - 100 sections (40 lower, 40 middle, 20 upper)
+- `/src/data/sections/worldcup/estadio-azteca.ts` (267 lines) - 100 sections (40 lower, 40 middle, 20 upper)
 
 **Files Modified**:
 - `/src/data/worldcup2026/venues.ts` - Imported all 5 new section files, updated venue configs
 
 **Key Features**:
-- All 5 stadiums have complete row-level detail with RowDetail objects
+- All 5 stadiums have **100 sections** with complete row-level detail
+- Helper functions for efficient row generation (generateRows, generateVertices)
+- Programmatic section creation using Array.from() for consistency
 - Accurate 3D geometry (vertices, elevation, rake angles)
 - Covered/uncovered sections properly marked
 - Premium/luxury/value pricing tiers
 - Mexico stadiums: Platea Baja/Media/Alta naming (Lower/Mid/Upper)
 - Canada stadiums: Temporary WC expansion seating included
 
-**Verification**: ✅ Build passes (4.5s, zero errors), all 16 WC venues now have row data
+**Verification**: ✅ Build passes (3.9s, zero errors), all 16 WC venues now have 100% row data coverage
 
 **World Cup Venue Stats Updated**:
-- withRowData: 16 (was 11)
-- needingData: 0 (was 5)
-- ALL 16 stadiums ready for 2026 World Cup!
+- withRowData: 16 (100% of venues)
+- needingData: 0
+- Total sections created: 500 (100 × 5 stadiums)
+- ALL 16 stadiums ready for 2026 World Cup with complete capacity coverage!
 
 ---
 
