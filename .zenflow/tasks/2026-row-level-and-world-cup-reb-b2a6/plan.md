@@ -68,17 +68,41 @@ Phase 7: Launch Preparation          (Weeks 9-10) → 6 tasks
 
 ---
 
-### [ ] Step: Implementation
+### [x] Step: Phase 0 - Row Calculation Engine (Backend)
 <!-- chat-id: f2299026-2bbc-4b11-80ce-a7f755ea1db4 -->
-<!-- Next active step -->
 
-Implementing 2026 Row-Level and World Cup features across 7 phases.
+**Status**: 78% complete (7/9 tasks done)
+**Duration**: Weeks 1-2 (Jan 23 - Feb 6, 2026)
+**Branch**: `feat/row-level-calculations`
 
-**Overall Progress**: 34/127+ steps complete across all phases
+Core row-level shadow calculation engine implementation.
+
+**Completed**: Tasks 0.1-0.7 ✅
+**Remaining**: Tasks 0.8-0.9 ⏳
 
 ---
 
-## PHASE 0: Row Calculation Engine (Weeks 1-2) - 38% COMPLETE
+### [ ] Step: Phase 1 - Row-Level UI
+<!-- Next active step -->
+
+**Status**: Not started (0/5 tasks done)
+**Duration**: Week 2-3 (Feb 6 - Feb 13, 2026)
+**Dependencies**: Phase 0 complete ✅
+
+Build UI components to display row-level shade data to users.
+
+**Tasks**:
+- Task 1.1: Create RowBreakdownView component
+- Task 1.2: Update LazySectionCardModern
+- Task 1.3: Add Row-Level Filters
+- Task 1.4: Integration testing
+- Task 1.5: E2E testing
+
+---
+
+## Implementation Tasks Detail
+
+## PHASE 0: Row Calculation Engine (Weeks 1-2) - 78% COMPLETE
 
 #### ✅ Completed Tasks (4/9)
 
@@ -422,66 +446,85 @@ Implementing 2026 Row-Level and World Cup features across 7 phases.
 
 ---
 
-### Phase 2: World Cup Existing Stadiums (Week 3-4)
-- Duplicate 11 NFL stadium files to -wc.ts
-- Update metadata for soccer
-- Create section mappings
-- Verify row data
-- Test calculations
+### [ ] Step: Phase 2 - World Cup Existing Stadiums
+
+**Status**: Not started (0/5 tasks done)
+**Duration**: Week 3-4 (Feb 13 - Feb 27, 2026)
+**Dependencies**: Phase 1 complete
+
+Duplicate and adapt 11 existing NFL stadium files for 2026 World Cup soccer configuration.
+
+**Tasks**: Duplicate NFL → WC configs, update metadata, verify row data, test calculations
 
 **Verification**: 11 WC venues load correctly ✅
 
 ---
 
-### Phase 3: World Cup New Stadiums (Weeks 4-6)
-- Gather data for 5 new stadiums
-- Create stadium files
-- Populate row data
-- Test calculations
+### [ ] Step: Phase 3 - World Cup New Stadiums
+
+**Status**: Not started (0/4 tasks done)
+**Duration**: Weeks 4-6 (Feb 27 - Mar 13, 2026)
+**Dependencies**: Phase 2 complete
+
+Create 5 brand new stadium configurations for WC venues not in NFL.
+
+**Tasks**: BMO Field, BC Place, Estadio Akron, Estadio BBVA data creation
 
 **Verification**: 5 new stadiums functional ✅
 
 ---
 
-### Phase 4: World Cup UI & Schedule (Weeks 6-7)
-- Create World Cup landing page
-- Create venue pages
-- Import 104 match schedule
-- Pre-calculate shade for matches
-- Create WC API endpoints
+### [ ] Step: Phase 4 - World Cup UI & Schedule
+
+**Status**: Not started (0/6 tasks done)
+**Duration**: Weeks 6-7 (Mar 13 - Mar 27, 2026)
+**Dependencies**: Phase 3 complete
+
+Build World Cup specific UI features and integrate 104 match schedule.
+
+**Tasks**: WC landing page, badge component, schedule integration, match countdown
 
 **Verification**: 16 venues display, 104 matches load ✅
 
 ---
 
-### Phase 5: Multi-Language (Weeks 7-8)
-- Create fr.json (~520 lines)
-- Update i18nContext.tsx
-- Machine translate + review
-- Consolidate translation files
-- Test all 4 languages
+### [ ] Step: Phase 5 - Multi-Language Support
+
+**Status**: Not started (0/5 tasks done)
+**Duration**: Weeks 7-8 (Mar 27 - Apr 10, 2026)
+**Dependencies**: Phase 4 complete
+
+Add French translations for World Cup international audience.
+
+**Tasks**: Create fr.json, update i18n, test all 4 languages (EN, ES, JA, FR)
 
 **Verification**: EN, ES, JA, FR all functional ✅
 
 ---
 
-### Phase 6: Testing & Optimization (Weeks 8-9)
-- Performance optimization
-- Visual regression testing
-- Accessibility audit
-- Bug fixing (P0/P1)
-- Lighthouse audit
+### [ ] Step: Phase 6 - Testing & Optimization
+
+**Status**: Not started (0/6 tasks done)
+**Duration**: Weeks 8-9 (Apr 10 - Apr 24, 2026)
+**Dependencies**: Phase 5 complete
+
+Full regression testing, performance optimization, accessibility audit.
+
+**Tasks**: Performance optimization, visual regression, Lighthouse audit, bug fixing
 
 **Verification**: Lighthouse ≥90, <2s load ✅
 
 ---
 
-### Phase 7: Launch Preparation (Weeks 9-10)
-- SEO optimization
-- Marketing content
-- Analytics setup
-- Soft launch (50-100 users)
-- Monitor & document
+### [ ] Step: Phase 7 - Launch Preparation
+
+**Status**: Not started (0/6 tasks done)
+**Duration**: Weeks 9-10 (Apr 24 - May 1, 2026)
+**Dependencies**: Phase 6 complete
+
+Final launch preparation, SEO, analytics, soft launch, production deployment.
+
+**Tasks**: SEO optimization, marketing content, analytics, soft launch, full launch
 
 **Verification**: Soft launch completed ✅
 
