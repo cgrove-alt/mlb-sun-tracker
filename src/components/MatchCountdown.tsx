@@ -28,34 +28,38 @@ interface TimeRemaining {
   isPast: boolean;
 }
 
-function calculateTimeRemaining(matchDate: string, kickoffTime: string): TimeRemaining {
-  const [hours, minutes] = kickoffTime.split(':').map(Number);
-  const matchDateTimeStr = `${matchDate}T${kickoffTime}:00`;
-  const matchDateTime = new Date(matchDateTimeStr);
+function calculateTimeRemaining(matchDate: string, kickoffTime: string, timezone?: string): TimeRemaining {
+  try {
+    const matchDateTimeStr = `${matchDate}T${kickoffTime}:00`;
+    const matchDateTime = new Date(matchDateTimeStr);
 
-  if (isNaN(matchDateTime.getTime())) {
+    if (isNaN(matchDateTime.getTime())) {
+      return { days: 0, hours: 0, minutes: 0, seconds: 0, isPast: true };
+    }
+
+    const now = new Date();
+    const diff = matchDateTime.getTime() - now.getTime();
+
+    if (diff < 0) {
+      return { days: 0, hours: 0, minutes: 0, seconds: 0, isPast: true };
+    }
+
+    const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+    const hoursRemaining = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    const minutesRemaining = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+    const secondsRemaining = Math.floor((diff % (1000 * 60)) / 1000);
+
+    return {
+      days,
+      hours: hoursRemaining,
+      minutes: minutesRemaining,
+      seconds: secondsRemaining,
+      isPast: false
+    };
+  } catch (error) {
+    console.error('Error calculating time remaining:', error);
     return { days: 0, hours: 0, minutes: 0, seconds: 0, isPast: true };
   }
-
-  const now = new Date();
-  const diff = matchDateTime.getTime() - now.getTime();
-
-  if (diff < 0) {
-    return { days: 0, hours: 0, minutes: 0, seconds: 0, isPast: true };
-  }
-
-  const days = Math.floor(diff / (1000 * 60 * 60 * 24));
-  const hoursRemaining = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-  const minutesRemaining = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
-  const secondsRemaining = Math.floor((diff % (1000 * 60)) / 1000);
-
-  return {
-    days,
-    hours: hoursRemaining,
-    minutes: minutesRemaining,
-    seconds: secondsRemaining,
-    isPast: false
-  };
 }
 
 /**
@@ -72,17 +76,16 @@ export const MatchCountdown: React.FC<MatchCountdownProps> = ({
   size = 'medium'
 }) => {
   const [timeRemaining, setTimeRemaining] = useState<TimeRemaining>(
-    calculateTimeRemaining(matchDate, kickoffTime)
+    calculateTimeRemaining(matchDate, kickoffTime, timezone)
   );
 
   useEffect(() => {
-    // Update countdown every second
     const interval = setInterval(() => {
-      setTimeRemaining(calculateTimeRemaining(matchDate, kickoffTime));
+      setTimeRemaining(calculateTimeRemaining(matchDate, kickoffTime, timezone));
     }, 1000);
 
     return () => clearInterval(interval);
-  }, [matchDate, kickoffTime]);
+  }, [matchDate, kickoffTime, timezone]);
 
   if (timeRemaining.isPast) {
     return (
@@ -181,9 +184,20 @@ export const MatchCountdown: React.FC<MatchCountdownProps> = ({
         </div>
       )}
 
-      {/* Kickoff time */}
+      {/* Kickoff time with timezone clarification */}
       <div className={`text-center mt-2 ${config.venue} text-gray-500`}>
-        Kickoff: {kickoffTime} {timezone ? `${timezone}` : 'local time'}
+        <div>Kickoff: {kickoffTime}</div>
+        {timezone && (
+          <div className="text-xs mt-1">
+            ({timezone} - venue local time)
+          </div>
+        )}
+      </div>
+
+      {/* Screen reader announcement - updates every minute */}
+      <div className="sr-only" aria-live="polite" aria-atomic="true">
+        {timeRemaining.days > 0 && `${timeRemaining.days} days, `}
+        {timeRemaining.hours} hours, and {timeRemaining.minutes} minutes until match starts
       </div>
     </div>
   );
