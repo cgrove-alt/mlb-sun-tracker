@@ -6,6 +6,7 @@ import type { RowShadowData } from '../utils/sunCalculator';
 import { CloudIcon, PartlyCloudyIcon, SunIcon, FireIcon, FieldLevelIcon, LowerLevelIcon, ClubLevelIcon, UpperLevelIcon, CrownIcon } from './Icons';
 import { formatPercentageForScreenReader, announceToScreenReader } from '../utils/accessibility';
 import { RowBreakdownView } from './RowBreakdownView';
+import { WorldCupBadge } from './WorldCupBadge';
 
 interface LazySectionCardProps {
   section: StadiumSection;
@@ -14,6 +15,9 @@ interface LazySectionCardProps {
   index: number;
   timeInSun?: number;
   rowData?: RowShadowData[];
+  stadiumId?: string;
+  worldCupMatchCount?: number;
+  worldCupCountry?: 'USA' | 'Mexico' | 'Canada';
 }
 
 const LazySectionCardModernComponent: React.FC<LazySectionCardProps> = ({
@@ -23,6 +27,9 @@ const LazySectionCardModernComponent: React.FC<LazySectionCardProps> = ({
   index,
   timeInSun,
   rowData,
+  stadiumId,
+  worldCupMatchCount,
+  worldCupCountry,
 }) => {
   const [ref, isIntersecting] = useIntersectionObserver({
     threshold: 0.01,
@@ -131,7 +138,7 @@ const LazySectionCardModernComponent: React.FC<LazySectionCardProps> = ({
             </div>
           </div>
 
-          {/* Level badge - always shown */}
+          {/* Badges - Level badge and World Cup badge */}
           <div className="flex flex-wrap gap-2">
             <span className={`
               inline-flex items-center gap-1 px-3 py-1 rounded-full text-xs font-medium
@@ -149,6 +156,13 @@ const LazySectionCardModernComponent: React.FC<LazySectionCardProps> = ({
               {section.level === 'suite' && <CrownIcon size={14} />}
               <span>{section.level.charAt(0).toUpperCase() + section.level.slice(1)} Level</span>
             </span>
+            <WorldCupBadge
+              stadiumId={stadiumId}
+              matchCount={worldCupMatchCount}
+              variant="small"
+              showMatchCount={false}
+              country={worldCupCountry}
+            />
           </div>
 
           {/* Row summary if available */}

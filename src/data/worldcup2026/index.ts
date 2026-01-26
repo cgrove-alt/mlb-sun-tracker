@@ -10,6 +10,9 @@ export type {
 
 export { WORLD_CUP_2026_INFO } from './types';
 
+// Re-export for convenience
+export { WORLD_CUP_2026_INFO as WC_INFO } from './types';
+
 export {
   WORLD_CUP_USA_VENUES,
   WORLD_CUP_MEXICO_VENUES,
