@@ -16,6 +16,13 @@ import { gillettestadiumSections } from '../sections/nfl/gillette-stadium';
 import { nrgstadiumSections } from '../sections/nfl/nrg-stadium';
 import { lumenfieldSections } from '../sections/nfl/lumen-field';
 
+// Import World Cup specific stadium sections (Mexico + Canada)
+import { estadioaztecaSections } from '../sections/worldcup/estadio-azteca';
+import { estadioakronSections } from '../sections/worldcup/estadio-akron';
+import { estadiobbvaSections } from '../sections/worldcup/estadio-bbva';
+import { bcplaceSections } from '../sections/worldcup/bc-place';
+import { bmofieldSections } from '../sections/worldcup/bmo-field';
+
 /**
  * World Cup 2026 USA Venues (11 stadiums)
  * All adapted from existing NFL stadium configurations with row-level data
@@ -301,8 +308,7 @@ export const WORLD_CUP_USA_VENUES: WorldCupVenue[] = [
 
 /**
  * World Cup 2026 Mexico Venues (3 stadiums)
- * These require new data entry (not in current NFL database)
- * PLACEHOLDER - TO BE IMPLEMENTED IN PHASE 3
+ * Complete with row-level data for accurate sun calculations
  */
 export const WORLD_CUP_MEXICO_VENUES: WorldCupVenue[] = [
   {
@@ -315,14 +321,14 @@ export const WORLD_CUP_MEXICO_VENUES: WorldCupVenue[] = [
     longitude: -99.1506,
     timezone: 'America/Mexico_City',
     capacity: 87523,
-    soccerCapacity: 87523,
+    soccerCapacity: 90000,  // Expanded for World Cup
     basedOnNFLStadium: false,
     fieldOrientation: 0,
     fieldDimensions: {
       length: 105,
       width: 68
     },
-    sections: [],  // TO BE POPULATED IN PHASE 3
+    sections: estadioaztecaSections,
     openingYear: 1966,
     surfaceType: 'grass',
     roof: 'open',
@@ -345,7 +351,7 @@ export const WORLD_CUP_MEXICO_VENUES: WorldCupVenue[] = [
       length: 105,
       width: 68
     },
-    sections: [],  // TO BE POPULATED IN PHASE 3
+    sections: estadioakronSections,
     openingYear: 2010,
     surfaceType: 'grass',
     roof: 'open',
@@ -368,7 +374,7 @@ export const WORLD_CUP_MEXICO_VENUES: WorldCupVenue[] = [
       length: 105,
       width: 68
     },
-    sections: [],  // TO BE POPULATED IN PHASE 3
+    sections: estadiobbvaSections,
     openingYear: 2015,
     surfaceType: 'grass',
     roof: 'open',
@@ -378,8 +384,7 @@ export const WORLD_CUP_MEXICO_VENUES: WorldCupVenue[] = [
 
 /**
  * World Cup 2026 Canada Venues (2 stadiums)
- * These require new data entry (not in current NFL database)
- * PLACEHOLDER - TO BE IMPLEMENTED IN PHASE 3
+ * Complete with row-level data for accurate sun calculations
  */
 export const WORLD_CUP_CANADA_VENUES: WorldCupVenue[] = [
   {
@@ -392,14 +397,14 @@ export const WORLD_CUP_CANADA_VENUES: WorldCupVenue[] = [
     longitude: -123.1120,
     timezone: 'America/Vancouver',
     capacity: 54500,
-    soccerCapacity: 54500,
+    soccerCapacity: 54000,
     basedOnNFLStadium: false,
     fieldOrientation: 0,
     fieldDimensions: {
       length: 110,
       width: 70
     },
-    sections: [],  // TO BE POPULATED IN PHASE 3
+    sections: bcplaceSections,
     openingYear: 1983,
     surfaceType: 'artificial',
     roof: 'retractable',
@@ -415,14 +420,14 @@ export const WORLD_CUP_CANADA_VENUES: WorldCupVenue[] = [
     longitude: -79.4187,
     timezone: 'America/Toronto',
     capacity: 30000,
-    soccerCapacity: 45500,  // Expanded for World Cup
+    soccerCapacity: 45736,  // Expanded for World Cup with temporary seating
     basedOnNFLStadium: false,
     fieldOrientation: 0,
     fieldDimensions: {
       length: 110,
       width: 70
     },
-    sections: [],  // TO BE POPULATED IN PHASE 3
+    sections: bmofieldSections,
     openingYear: 2007,
     surfaceType: 'grass',
     roof: 'open',
@@ -468,8 +473,8 @@ export const WORLD_CUP_VENUE_STATS = {
   usa: 11,
   mexico: 3,
   canada: 2,
-  withRowData: 11,  // USA stadiums (based on NFL)
-  needingData: 5,   // Mexico + Canada stadiums
+  withRowData: 16,  // ALL stadiums now have row-level data
+  needingData: 0,   // Phase 3 complete!
   totalMatches: 104,
   totalCapacity: ALL_WORLD_CUP_VENUES.reduce((sum, v) => sum + v.soccerCapacity, 0)
 };
