@@ -391,19 +391,30 @@
   "emptyStates": {
     "noStadium": {
       "title": "Selecciona un Estadio",
-      "description": "Elige entre 30 estadios MLB para analizar patrones de exposición al sol"
+      "description": "Elige entre 30 estadios MLB para analizar patrones de exposición al sol",
+      "message": "Selecciona un estadio MLB para comenzar con el análisis de exposición al sol."
     },
     "noGame": {
       "title": "Selecciona un Juego o Fecha",
-      "description": "Elige un juego real o establece cualquier fecha y hora personalizada"
+      "description": "Elige un juego real o establece cualquier fecha y hora personalizada",
+      "message": "Elige un juego o establece un horario personalizado para ver el análisis del sol."
     },
     "noSections": {
       "title": "No se Encontraron Secciones",
-      "description": "Intenta ajustar tus filtros o criterios de búsqueda"
+      "description": "Intenta ajustar tus filtros o criterios de búsqueda",
+      "message": "Intenta ajustar tus filtros para ver más opciones de asientos."
     },
     "noResults": {
       "title": "Sin Resultados",
       "description": "Ninguna sección coincide con tus criterios actuales"
+    },
+    "loading": {
+      "title": "Calculando...",
+      "message": "Analizando la exposición al sol para todas las secciones del estadio."
+    },
+    "error": {
+      "title": "Algo salió mal",
+      "message": "Por favor intenta de nuevo."
     }
   },
   "errors": {
@@ -506,6 +517,86 @@
       "twins": "Campo Target",
       "whitesox": "Campo Guaranteed Rate",
       "yankees": "Estadio Yankee"
+    }
+  },
+  "worldcup": {
+    "title": "Copa Mundial FIFA 2026",
+    "subtitle": "Encuentra los mejores asientos con sombra en los estadios de la Copa Mundial",
+    "description": "Encuentra los mejores asientos con sombra en 16 estadios de América del Norte",
+    "venues": "Estadios de la Copa Mundial",
+    "allVenues": "Todos los Estadios",
+    "venueCount": "{count} estadios",
+    "totalMatches": "Partidos Totales",
+    "hostCountries": "Países Anfitriones",
+    "nextMatch": "Próximo Partido",
+    "viewSchedule": "Ver Calendario",
+    "filterByCountry": "Filtrar por País",
+    "countries": {
+      "all": "Todos los Países",
+      "usa": "Estados Unidos",
+      "mexico": "México",
+      "canada": "Canadá"
+    },
+    "stats": {
+      "totalVenues": "Estadios Totales",
+      "totalCapacity": "Capacidad Total",
+      "totalMatches": "Partidos Totales",
+      "usaVenues": "Estadios en EE.UU.",
+      "mexicoVenues": "Estadios en México",
+      "canadaVenues": "Estadios en Canadá"
+    },
+    "schedule": {
+      "title": "Calendario de la Copa Mundial 2026",
+      "filterByRound": "Filtrar por Ronda",
+      "filterByCountry": "Filtrar por País",
+      "searchMatches": "Buscar partidos...",
+      "rounds": {
+        "all": "Todas las Rondas",
+        "groupStage": "Fase de Grupos",
+        "roundOf32": "Ronda de 32",
+        "roundOf16": "Octavos de Final",
+        "quarterFinals": "Cuartos de Final",
+        "semiFinals": "Semifinales",
+        "thirdPlace": "Tercer Lugar",
+        "final": "Final"
+      },
+      "matchInfo": "Información del Partido",
+      "kickoff": "Inicio",
+      "localTime": "Hora Local",
+      "round": "Ronda",
+      "noMatches": "No se encontraron partidos",
+      "matchCount": "{count} partido(s)",
+      "viewVenue": "Ver Estadio",
+      "timezoneNote": "Todos los horarios se muestran en la zona horaria del estadio"
+    },
+    "countdown": {
+      "title": "Cuenta Regresiva al Partido",
+      "days": "días",
+      "hours": "horas",
+      "minutes": "minutos",
+      "seconds": "segundos",
+      "matchStarted": "El partido ha comenzado",
+      "matchEnded": "El partido ha terminado",
+      "nextMatchIn": "Próximo partido en",
+      "until": "hasta"
+    },
+    "badge": {
+      "worldCupVenue": "Estadio de la Copa Mundial",
+      "matches": "partidos",
+      "match": "partido"
+    },
+    "info": {
+      "tournamentDates": "Fechas del Torneo",
+      "participatingTeams": "Equipos Participantes",
+      "teams": "equipos",
+      "firstWorldCup": "Primera Copa Mundial con 48 equipos",
+      "threeCountries": "Co-organizada por tres países",
+      "historicEvent": "Evento histórico en América del Norte"
+    },
+    "navigation": {
+      "landing": "Copa Mundial 2026",
+      "schedule": "Calendario",
+      "venues": "Estadios"
     }
   },
   "footer": {

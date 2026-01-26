@@ -391,19 +391,30 @@
   "emptyStates": {
     "noStadium": {
       "title": "スタジアムを選択",
-      "description": "30のMLBスタジアムから選択して日照パターンを分析"
+      "description": "30のMLBスタジアムから選択して日照パターンを分析",
+      "message": "MLBスタジアムを選択して日照分析を開始してください。"
     },
     "noGame": {
       "title": "試合または日付を選択",
-      "description": "実際の試合を選択するか、任意の日時を設定"
+      "description": "実際の試合を選択するか、任意の日時を設定",
+      "message": "試合を選択するか、カスタム時間を設定して太陽の分析を見る。"
     },
     "noSections": {
       "title": "セクションが見つかりません",
-      "description": "フィルタや検索条件を調整してみてください"
+      "description": "フィルタや検索条件を調整してみてください",
+      "message": "フィルタを調整して、より多くの座席オプションを表示してください。"
     },
     "noResults": {
       "title": "結果なし",
       "description": "現在の条件に一致するセクションはありません"
+    },
+    "loading": {
+      "title": "計算中...",
+      "message": "すべてのスタジアムセクションの日照を分析しています。"
+    },
+    "error": {
+      "title": "エラーが発生しました",
+      "message": "もう一度お試しください。"
     }
   },
   "errors": {
@@ -506,6 +517,86 @@
       "twins": "ターゲット・フィールド",
       "whitesox": "ギャランティード・レート・フィールド",
       "yankees": "ヤンキー・スタジアム"
+    }
+  },
+  "worldcup": {
+    "title": "FIFAワールドカップ2026",
+    "subtitle": "ワールドカップスタジアムで最高の日陰席を見つける",
+    "description": "北米の16スタジアムで最高の日陰席を見つける",
+    "venues": "ワールドカップ会場",
+    "allVenues": "すべての会場",
+    "venueCount": "{count}会場",
+    "totalMatches": "総試合数",
+    "hostCountries": "開催国",
+    "nextMatch": "次の試合",
+    "viewSchedule": "スケジュールを見る",
+    "filterByCountry": "国でフィルター",
+    "countries": {
+      "all": "すべての国",
+      "usa": "アメリカ",
+      "mexico": "メキシコ",
+      "canada": "カナダ"
+    },
+    "stats": {
+      "totalVenues": "総会場数",
+      "totalCapacity": "総収容人数",
+      "totalMatches": "総試合数",
+      "usaVenues": "アメリカの会場",
+      "mexicoVenues": "メキシコの会場",
+      "canadaVenues": "カナダの会場"
+    },
+    "schedule": {
+      "title": "ワールドカップ2026スケジュール",
+      "filterByRound": "ラウンドでフィルター",
+      "filterByCountry": "国でフィルター",
+      "searchMatches": "試合を検索...",
+      "rounds": {
+        "all": "すべてのラウンド",
+        "groupStage": "グループステージ",
+        "roundOf32": "ラウンド32",
+        "roundOf16": "ラウンド16",
+        "quarterFinals": "準々決勝",
+        "semiFinals": "準決勝",
+        "thirdPlace": "3位決定戦",
+        "final": "決勝"
+      },
+      "matchInfo": "試合情報",
+      "kickoff": "キックオフ",
+      "localTime": "現地時間",
+      "round": "ラウンド",
+      "noMatches": "試合が見つかりません",
+      "matchCount": "{count}試合",
+      "viewVenue": "会場を見る",
+      "timezoneNote": "すべての時間は会場のタイムゾーンで表示されます"
+    },
+    "countdown": {
+      "title": "試合までのカウントダウン",
+      "days": "日",
+      "hours": "時間",
+      "minutes": "分",
+      "seconds": "秒",
+      "matchStarted": "試合が開始されました",
+      "matchEnded": "試合が終了しました",
+      "nextMatchIn": "次の試合まで",
+      "until": "まで"
+    },
+    "badge": {
+      "worldCupVenue": "ワールドカップ会場",
+      "matches": "試合",
+      "match": "試合"
+    },
+    "info": {
+      "tournamentDates": "大会日程",
+      "participatingTeams": "参加チーム",
+      "teams": "チーム",
+      "firstWorldCup": "48チームが参加する初のワールドカップ",
+      "threeCountries": "3か国共同開催",
+      "historicEvent": "北米での歴史的なイベント"
+    },
+    "navigation": {
+      "landing": "ワールドカップ2026",
+      "schedule": "スケジュール",
+      "venues": "会場"
     }
   },
   "footer": {

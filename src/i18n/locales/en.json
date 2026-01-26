@@ -519,6 +519,86 @@
       "yankees": "Yankee Stadium"
     }
   },
+  "worldcup": {
+    "title": "FIFA World Cup 2026",
+    "subtitle": "Find the best shaded seats at World Cup stadiums",
+    "description": "Find the best shaded seats at 16 stadiums across North America",
+    "venues": "World Cup Venues",
+    "allVenues": "All Venues",
+    "venueCount": "{count} venues",
+    "totalMatches": "Total Matches",
+    "hostCountries": "Host Countries",
+    "nextMatch": "Next Match",
+    "viewSchedule": "View Schedule",
+    "filterByCountry": "Filter by Country",
+    "countries": {
+      "all": "All Countries",
+      "usa": "United States",
+      "mexico": "Mexico",
+      "canada": "Canada"
+    },
+    "stats": {
+      "totalVenues": "Total Venues",
+      "totalCapacity": "Total Capacity",
+      "totalMatches": "Total Matches",
+      "usaVenues": "USA Venues",
+      "mexicoVenues": "Mexico Venues",
+      "canadaVenues": "Canada Venues"
+    },
+    "schedule": {
+      "title": "World Cup 2026 Schedule",
+      "filterByRound": "Filter by Round",
+      "filterByCountry": "Filter by Country",
+      "searchMatches": "Search matches...",
+      "rounds": {
+        "all": "All Rounds",
+        "groupStage": "Group Stage",
+        "roundOf32": "Round of 32",
+        "roundOf16": "Round of 16",
+        "quarterFinals": "Quarter Finals",
+        "semiFinals": "Semi Finals",
+        "thirdPlace": "Third Place",
+        "final": "Final"
+      },
+      "matchInfo": "Match Info",
+      "kickoff": "Kickoff",
+      "localTime": "Local Time",
+      "round": "Round",
+      "noMatches": "No matches found",
+      "matchCount": "{count} match(es)",
+      "viewVenue": "View Venue",
+      "timezoneNote": "All times shown in venue timezone"
+    },
+    "countdown": {
+      "title": "Countdown to Match",
+      "days": "days",
+      "hours": "hours",
+      "minutes": "minutes",
+      "seconds": "seconds",
+      "matchStarted": "Match started",
+      "matchEnded": "Match ended",
+      "nextMatchIn": "Next match in",
+      "until": "until"
+    },
+    "badge": {
+      "worldCupVenue": "World Cup Venue",
+      "matches": "matches",
+      "match": "match"
+    },
+    "info": {
+      "tournamentDates": "Tournament Dates",
+      "participatingTeams": "Participating Teams",
+      "teams": "teams",
+      "firstWorldCup": "First World Cup with 48 teams",
+      "threeCountries": "Co-hosted by three countries",
+      "historicEvent": "Historic event in North America"
+    },
+    "navigation": {
+      "landing": "World Cup 2026",
+      "schedule": "Schedule",
+      "venues": "Venues"
+    }
+  },
   "footer": {
     "disclaimer": "Sun calculations are approximate and may vary based on stadium architecture and weather conditions.",
     "weatherCredit": "Weather data provided by",

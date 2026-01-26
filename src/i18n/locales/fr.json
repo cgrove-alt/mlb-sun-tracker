@@ -1,0 +1,616 @@
+{
+  "app": {
+    "title": "The Shadium",
+    "subtitle": "Découvrez quels sièges seront au soleil pendant les matchs de baseball",
+    "loading": "Chargement...",
+    "error": "Erreur",
+    "retry": "Réessayer",
+    "cancel": "Annuler",
+    "create": "Créer",
+    "save": "Enregistrer",
+    "delete": "Supprimer",
+    "export": "Exporter",
+    "import": "Importer",
+    "edit": "Modifier",
+    "close": "Fermer",
+    "clear": "Effacer",
+    "clearAll": "Tout effacer",
+    "apply": "Appliquer",
+    "reset": "Réinitialiser",
+    "confirm": "Confirmer",
+    "yes": "Oui",
+    "no": "Non",
+    "any": "Tous",
+    "none": "Aucun",
+    "required": "Obligatoire",
+    "optional": "Optionnel",
+    "language": "Langue",
+    "selectLanguage": "Sélectionner la langue"
+  },
+  "navigation": {
+    "breadcrumb": "Fil d'Ariane de navigation",
+    "currentPage": "Page actuelle",
+    "home": "Accueil",
+    "back": "Retour",
+    "next": "Suivant",
+    "previous": "Précédent",
+    "sunTracker": "Suivi du Soleil",
+    "smartItinerary": "Itinéraire Intelligent"
+  },
+  "breadcrumb": {
+    "label": "Fil d'Ariane de sélection actuelle",
+    "selectStadium": "Sélectionner un stade",
+    "backToStadium": "Retour à la sélection du stade",
+    "selectDifferentStadium": "Sélectionner un autre stade",
+    "backToGame": "Retour à la sélection du match",
+    "selectDifferentGame": "Sélectionner un autre match ou horaire",
+    "customTime": "Horaire personnalisé"
+  },
+  "stadium": {
+    "select": "Sélectionner un stade",
+    "selectStadium": "Sélectionnez un stade",
+    "selectedStadium": "Stade sélectionné",
+    "noStadium": "Aucun stade sélectionné",
+    "stadiumName": "Nom du stade",
+    "location": "Lieu",
+    "capacity": "Capacité",
+    "opened": "Ouvert",
+    "surface": "Surface",
+    "roof": "Toit",
+    "roofTypes": {
+      "open": "Ouvert",
+      "fixed": "Fixe",
+      "retractable": "Rétractable"
+    },
+    "totalStadiums": "Stades totaux",
+    "stadiumsViewed": "stades consultés",
+    "favorites": "favoris"
+  },
+  "game": {
+    "selectGame": "Sélectionner un match",
+    "selectDate": "Sélectionner une date",
+    "noGames": "Aucun match trouvé",
+    "upcomingGames": "Matchs à venir",
+    "customDateTime": "Date et heure personnalisées",
+    "gameTime": "Heure du match",
+    "gameDate": "Date du match",
+    "matchup": "Confrontation",
+    "venue": "Stade",
+    "gameDetails": "Détails du match",
+    "homeTeam": "Équipe à domicile",
+    "awayTeam": "Équipe visiteuse",
+    "firstPitch": "Premier lancer",
+    "status": "Statut",
+    "scheduled": "Programmé",
+    "inProgress": "En cours",
+    "final": "Terminé",
+    "postponed": "Reporté",
+    "cancelled": "Annulé",
+    "at": "à"
+  },
+  "gameSelector": {
+    "title": "Sélectionner un match ou un horaire",
+    "realGames": "Matchs réels",
+    "customTime": "Horaire personnalisé",
+    "stadium": "Stade",
+    "chooseStadium": "Choisissez un stade...",
+    "selectStadium": "Sélectionner un stade MLB",
+    "upcomingGames": "Matchs à domicile à venir",
+    "loadingGames": "Chargement des matchs...",
+    "chooseGame": "Choisissez un match...",
+    "noGamesFound": "Aucun match à venir trouvé",
+    "selectGame": "Sélectionner un match à venir",
+    "noGamesForStadium": "Aucun match à domicile à venir trouvé pour ce stade.",
+    "tryCustomTime": "Essayez de sélectionner \"Horaire personnalisé\" pour analyser n'importe quelle date et heure.",
+    "foundGames": "{count} matchs à domicile à venir trouvés",
+    "selectStadiumPrompt": "Veuillez sélectionner un stade pour voir les matchs à venir.",
+    "date": "Date",
+    "timeLocal": "Heure (locale)",
+    "selectDate": "Sélectionner la date pour l'analyse d'horaire personnalisé",
+    "selectTime": "Sélectionner l'heure pour l'analyse d'horaire personnalisé",
+    "applyCustomTime": "Appliquer l'horaire personnalisé",
+    "customTimeInfo": "Utilisez l'horaire personnalisé pour analyser l'exposition au soleil à n'importe quelle date et heure, même pendant la morte-saison."
+  },
+  "sun": {
+    "position": "Position du soleil",
+    "information": "Informations sur le soleil",
+    "condition": "Condition",
+    "direction": "Direction",
+    "elevation": "Élévation",
+    "azimuth": "Azimut",
+    "altitude": "Altitude",
+    "exposure": "Exposition au soleil",
+    "sunExposure": "Exposition au soleil",
+    "inSun": "Au soleil",
+    "inShade": "À l'ombre",
+    "partialSun": "Soleil partiel",
+    "description": {
+      "daytime": "Jour",
+      "nighttime": "Nuit",
+      "sunrise": "Lever du soleil",
+      "sunset": "Coucher du soleil",
+      "twilight": "Crépuscule",
+      "dawn": "Aube",
+      "dusk": "Tombée de la nuit"
+    },
+    "compass": {
+      "north": "Nord",
+      "northeast": "Nord-Est",
+      "east": "Est",
+      "southeast": "Sud-Est",
+      "south": "Sud",
+      "southwest": "Sud-Ouest",
+      "west": "Ouest",
+      "northwest": "Nord-Ouest"
+    },
+    "preferences": {
+      "title": "Préférence de soleil",
+      "description": "Filtrer les sections en fonction de la quantité de lumière directe du soleil qu'elles reçoivent pendant le match",
+      "any": "Tous (sans préférence)",
+      "avoid": "Éviter le soleil (≤20% d'exposition)",
+      "prefer": "Préférer le soleil (≥60% d'exposition)",
+      "custom": "Plage personnalisée",
+      "minExposure": "Exposition minimale",
+      "maxExposure": "Exposition maximale",
+      "percentage": "%"
+    }
+  },
+  "weather": {
+    "forecast": "Prévisions météorologiques",
+    "conditions": "Conditions",
+    "temperature": "Température",
+    "humidity": "Humidité",
+    "windSpeed": "Vitesse du vent",
+    "windDirection": "Direction du vent",
+    "cloudCover": "Couverture nuageuse",
+    "precipitation": "Précipitations",
+    "precipitationChance": "Probabilité de précipitations",
+    "uvIndex": "Indice UV",
+    "visibility": "Visibilité",
+    "pressure": "Pression",
+    "feelsLike": "Ressenti",
+    "loading": "Chargement des données météorologiques...",
+    "error": "Impossible de charger les prévisions météorologiques. Les calculs du soleil continueront sans données météorologiques.",
+    "impact": "Impact météorologique",
+    "forGameTime": "Pour l'heure du match",
+    "wind": "Vent",
+    "rainChance": "Probabilité de pluie",
+    "sunVisibility": "Visibilité du soleil",
+    "sunExposureAdjustment": "{percentage}% de l'exposition solaire normale",
+    "gameDayForecast": "Prévisions du jour du match",
+    "uvLevels": {
+      "low": "Faible",
+      "moderate": "Modéré",
+      "high": "Élevé",
+      "veryHigh": "Très élevé",
+      "extreme": "Extrême"
+    },
+    "visibility": {
+      "excellent": "Excellente",
+      "good": "Bonne",
+      "poor": "Faible",
+      "blocked": "Bloquée"
+    },
+    "conditions": {
+      "clear": "Dégagé",
+      "cloudy": "Nuageux",
+      "partlyCloudy": "Partiellement nuageux",
+      "overcast": "Couvert",
+      "rain": "Pluie",
+      "snow": "Neige",
+      "thunderstorm": "Orage",
+      "fog": "Brouillard",
+      "mist": "Brume",
+      "drizzle": "Bruine"
+    }
+  },
+  "sections": {
+    "title": "Sections du stade",
+    "list": "Liste des sections",
+    "search": "Rechercher des sections",
+    "searchPlaceholder": "Rechercher par nom ou numéro de section...",
+    "filter": "Filtrer",
+    "sort": "Trier",
+    "sortBy": "Trier par",
+    "sortOptions": {
+      "name": "Nom",
+      "sunExposure": "Exposition au soleil",
+      "level": "Niveau",
+      "price": "Prix"
+    },
+    "totalSections": "Sections totales",
+    "matchingFilters": "Correspondant aux filtres",
+    "noResults": "Aucune section ne correspond à vos critères",
+    "clearFilters": "Effacer les filtres pour voir toutes les sections",
+    "section": "Section",
+    "sectionInfo": "Informations sur la section",
+    "level": "Niveau",
+    "levels": {
+      "field": "Niveau du terrain",
+      "lower": "Niveau inférieur",
+      "club": "Niveau club",
+      "upper": "Niveau supérieur",
+      "suite": "Suites"
+    },
+    "coverage": "Couverture",
+    "covered": "Couvert",
+    "uncovered": "Découvert",
+    "price": "Prix",
+    "priceRange": "Gamme de prix",
+    "priceRanges": {
+      "value": "Économique",
+      "moderate": "Modéré",
+      "premium": "Premium",
+      "luxury": "Luxe"
+    },
+    "calculating": "Calcul de l'exposition au soleil pour toutes les sections...",
+    "listLabel": "Liste des sections du stade",
+    "summaryStats": {
+      "sunny": "{count} ensoleillé",
+      "shaded": "{count} ombragé",
+      "searchResults": "{shown} sur {total} affichés"
+    },
+    "searchLabel": "Rechercher des sections du stade",
+    "clearSearch": "Effacer la recherche",
+    "sortingOptions": "Options de tri des sections",
+    "sortBySun": "Trier par exposition au soleil",
+    "sortByName": "Trier par nom de section",
+    "sortByLevel": "Trier par niveau de siège",
+    "sortByPrice": "Trier par gamme de prix",
+    "descending": "décroissant",
+    "ascending": "croissant",
+    "sortLabels": {
+      "sun": "Soleil",
+      "name": "Nom",
+      "level": "Niveau",
+      "price": "Prix"
+    },
+    "noSearchResults": "Aucune section trouvée correspondant à \"{term}\".",
+    "tryDifferentSearch": "Essayez un autre terme de recherche ou effacez la recherche pour voir toutes les sections.",
+    "noFilterResults": "Aucune section ne correspond à vos critères de filtrage.",
+    "tryAdjustFilters": "Essayez d'ajuster vos filtres pour voir plus de résultats.",
+    "coveredSection": "Section couverte",
+    "levelSeating": "sièges de niveau",
+    "sunExposure": "exposition au soleil",
+    "sunExposureTooltip": "Le pourcentage de temps que cette section reçoit la lumière directe du soleil pendant le match, en tenant compte des conditions météorologiques",
+    "weatherAdjusted": "Les conditions météorologiques réduisent l'exposition au soleil pour cette section",
+    "weatherAdjustedLabel": "Exposition au soleil ajustée selon la météo",
+    "angleRangeTooltip": "La plage de direction de la boussole vers laquelle cette section est orientée (0° = Nord, 90° = Est, 180° = Sud, 270° = Ouest). Cela aide à déterminer le moment de l'exposition au soleil.",
+    "angleRangeLabel": "Plage d'angle de {start} à {end} degrés",
+    "rowCount": "Environ {count} rangées",
+    "rows": "rangées"
+  },
+  "filter": {
+    "title": "Filtre de section",
+    "options": "Options de filtrage",
+    "seatingLevel": {
+      "title": "Niveau de siège",
+      "description": "Filtrer par niveau de siège dans le stade (niveau du terrain le plus proche de l'action, niveau supérieur le plus haut)"
+    },
+    "coverage": {
+      "title": "Couverture",
+      "description": "Filtrer selon que les sections sont couvertes par un toit ou un auvent, offrant une protection contre le soleil et les intempéries",
+      "any": "Tous",
+      "covered": "Sections couvertes uniquement",
+      "uncovered": "Sections découvertes uniquement"
+    },
+    "priceRange": {
+      "title": "Gamme de prix",
+      "description": "Filtrer par gamme de prix typique pour les billets dans différentes sections (économique = budget, luxe = prix premium)"
+    }
+  },
+  "recommendations": {
+    "title": "Recommandations intelligentes de sièges",
+    "nightGame": {
+      "title": "Match nocturne",
+      "description": "Comme il s'agit d'un match nocturne, l'exposition au soleil ne sera pas une préoccupation pour aucun siège. Concentrez-vous sur d'autres facteurs comme les lignes de vue et les commodités."
+    },
+    "coveredStadium": {
+      "title": "Stade couvert",
+      "description": "Ce stade a un toit fixe, donc tous les sièges sont protégés de la lumière directe du soleil et des intempéries."
+    },
+    "avoidSun": {
+      "title": "Pour éviter le soleil",
+      "firstBaseSide": "Choisissez des sièges du côté du premier but ou dans des sections ombragées.",
+      "thirdBaseSide": "Choisissez des sièges du côté du troisième but ou dans des sections ombragées.",
+      "retractableRoof": "Le toit rétractable peut également offrir une couverture."
+    },
+    "sunLovers": {
+      "title": "Pour les amateurs de soleil",
+      "rightField": "Les sièges du champ droit auront probablement la plus grande exposition au soleil.",
+      "leftField": "Les sièges du champ gauche auront probablement la plus grande exposition au soleil."
+    },
+    "highSun": {
+      "title": "Soleil haut",
+      "description": "Avec le soleil haut dans le ciel, les sièges du niveau supérieur peuvent offrir plus d'ombre grâce aux auvents."
+    },
+    "weather": {
+      "title": "Considérations météorologiques"
+    }
+  },
+  "profile": {
+    "menu": "Menu de profil",
+    "loggedInAs": "Connecté en tant que",
+    "current": "Profil actuel",
+    "switchProfile": "Changer de profil",
+    "createNew": "Créer un nouveau profil",
+    "createProfile": "Créer un profil",
+    "profileName": "Nom du profil",
+    "email": "E-mail",
+    "emailOptional": "E-mail (Optionnel)",
+    "profileNamePlaceholder": "Entrez le nom du profil",
+    "emailPlaceholder": "Entrez l'adresse e-mail",
+    "profileNameHelp": "Ceci sera affiché comme nom de votre profil",
+    "emailHelp": "Utilisé pour l'identification du profil et l'exportation de données",
+    "profileNameRequired": "Le nom du profil est obligatoire",
+    "createSuccess": "Profil créé avec succès",
+    "deleteProfile": "Supprimer le profil",
+    "deleteConfirm": "Êtes-vous sûr de vouloir supprimer le profil \"{name}\" ?",
+    "exportProfile": "Exporter le profil",
+    "importProfile": "Importer le profil",
+    "importError": "Échec de l'importation du profil. Veuillez vérifier le format du fichier.",
+    "stats": {
+      "stadiumsViewed": "stades consultés",
+      "favorites": "favoris",
+      "gamesAnalyzed": "matchs analysés",
+      "totalSessions": "sessions totales"
+    }
+  },
+  "sharing": {
+    "share": "Partager",
+    "shareButton": "Bouton de partage",
+    "shareMenu": "Menu de partage",
+    "copyLink": "Copier le lien",
+    "linkCopied": "Lien copié dans le presse-papiers !",
+    "shareVia": "Partager via",
+    "shareTitle": "Découvrez The Shadium - Trouvez les meilleurs sièges à l'ombre à {stadium}",
+    "shareDescription": "Découvrez quels sièges seront au soleil à {stadium} le {date}. The Shadium vous aide à trouver les sièges parfaits !",
+    "email": "E-mail",
+    "twitter": "Twitter",
+    "facebook": "Facebook",
+    "whatsapp": "WhatsApp",
+    "linkedin": "LinkedIn",
+    "reddit": "Reddit"
+  },
+  "favorites": {
+    "add": "Ajouter aux favoris",
+    "remove": "Retirer des favoris",
+    "addedToFavorites": "Ajouté aux favoris",
+    "removedFromFavorites": "Retiré des favoris",
+    "yourFavorites": "Vos favoris",
+    "noFavorites": "Aucun favori pour le moment"
+  },
+  "tooltips": {
+    "sunDirection": "La direction de la boussole où se trouve le soleil (0° = Nord, 90° = Est, 180° = Sud, 270° = Ouest)",
+    "sunElevation": "L'angle du soleil au-dessus de l'horizon (0° = horizon, 90° = directement au-dessus). Les valeurs négatives indiquent que le soleil est sous l'horizon.",
+    "sunExposure": "Pourcentage de temps que cette section reçoit la lumière directe du soleil pendant le match",
+    "sectionLevel": "Le niveau de siège dans le stade",
+    "coverage": "Si cette section est couverte par un toit ou un auvent",
+    "priceRange": "Gamme de prix typique pour les billets dans cette section"
+  },
+  "emptyStates": {
+    "noStadium": {
+      "title": "Choisissez votre stade",
+      "description": "Choisissez parmi 30 stades MLB pour analyser les modèles d'exposition au soleil",
+      "message": "Sélectionnez un stade MLB pour commencer l'analyse de l'exposition au soleil."
+    },
+    "noGame": {
+      "title": "Sélectionner l'heure du match",
+      "description": "Choisissez un vrai match ou définissez n'importe quelle date et heure personnalisées",
+      "message": "Choisissez un match ou définissez un horaire personnalisé pour voir l'analyse du soleil."
+    },
+    "noSections": {
+      "title": "Aucune section trouvée",
+      "description": "Essayez d'ajuster vos filtres ou critères de recherche",
+      "message": "Essayez d'ajuster vos filtres pour voir plus d'options de sièges."
+    },
+    "noResults": {
+      "title": "Aucun résultat",
+      "description": "Aucune section ne correspond à vos critères actuels"
+    },
+    "loading": {
+      "title": "Calcul en cours...",
+      "message": "Analyse de l'exposition au soleil pour toutes les sections du stade."
+    },
+    "error": {
+      "title": "Une erreur s'est produite",
+      "message": "Veuillez réessayer."
+    }
+  },
+  "errors": {
+    "generic": "Une erreur s'est produite. Veuillez réessayer.",
+    "network": "Erreur réseau. Veuillez vérifier votre connexion.",
+    "notFound": "La ressource demandée n'a pas été trouvée.",
+    "timeout": "La demande a expiré. Veuillez réessayer.",
+    "validation": "Veuillez vérifier votre saisie et réessayer.",
+    "stadiumLoad": "Échec du chargement des données du stade.",
+    "gameLoad": "Échec du chargement des données du match.",
+    "weatherLoad": "Échec du chargement des données météorologiques.",
+    "sunCalculation": "Échec du calcul de l'exposition au soleil.",
+    "profileCreate": "Échec de la création du profil.",
+    "profileDelete": "Échec de la suppression du profil.",
+    "profileImport": "Échec de l'importation du profil.",
+    "profileExport": "Échec de l'exportation du profil.",
+    "webglNotSupported": "WebGL n'est pas pris en charge par ce navigateur.",
+    "threejsLoad": "Échec du chargement des graphiques 3D.",
+    "containerNotFound": "Élément conteneur introuvable."
+  },
+  "accessibility": {
+    "skipToContent": "Passer au contenu principal",
+    "skipToNavigation": "Passer à la navigation",
+    "menu": "Menu",
+    "menuExpanded": "Menu développé",
+    "menuCollapsed": "Menu réduit",
+    "searchResults": "Résultats de recherche",
+    "loading": "Chargement",
+    "error": "Erreur",
+    "required": "Champ obligatoire",
+    "optional": "Champ optionnel",
+    "clickToExpand": "Cliquer pour développer",
+    "clickToCollapse": "Cliquer pour réduire",
+    "pressEnterToActivate": "Appuyez sur Entrée pour activer",
+    "pressSpaceToActivate": "Appuyez sur Espace pour activer",
+    "useArrowKeysToNavigate": "Utilisez les touches fléchées pour naviguer",
+    "screenReaderOnly": "Contenu pour lecteur d'écran uniquement"
+  },
+  "mlb": {
+    "teams": {
+      "angels": "Angels de Los Angeles",
+      "astros": "Astros de Houston",
+      "athletics": "Athletics d'Oakland",
+      "bluejays": "Blue Jays de Toronto",
+      "braves": "Braves d'Atlanta",
+      "brewers": "Brewers de Milwaukee",
+      "cardinals": "Cardinals de Saint-Louis",
+      "cubs": "Cubs de Chicago",
+      "diamondbacks": "Diamondbacks de l'Arizona",
+      "dodgers": "Dodgers de Los Angeles",
+      "giants": "Giants de San Francisco",
+      "guardians": "Guardians de Cleveland",
+      "mariners": "Mariners de Seattle",
+      "marlins": "Marlins de Miami",
+      "mets": "Mets de New York",
+      "nationals": "Nationals de Washington",
+      "orioles": "Orioles de Baltimore",
+      "padres": "Padres de San Diego",
+      "phillies": "Phillies de Philadelphie",
+      "pirates": "Pirates de Pittsburgh",
+      "rangers": "Rangers du Texas",
+      "rays": "Rays de Tampa Bay",
+      "redsox": "Red Sox de Boston",
+      "reds": "Reds de Cincinnati",
+      "rockies": "Rockies du Colorado",
+      "royals": "Royals de Kansas City",
+      "tigers": "Tigers de Détroit",
+      "twins": "Twins du Minnesota",
+      "whitesox": "White Sox de Chicago",
+      "yankees": "Yankees de New York"
+    },
+    "stadiums": {
+      "angels": "Angel Stadium",
+      "astros": "Minute Maid Park",
+      "athletics": "Sutter Health Park",
+      "bluejays": "Rogers Centre",
+      "braves": "Truist Park",
+      "brewers": "American Family Field",
+      "cardinals": "Busch Stadium",
+      "cubs": "Wrigley Field",
+      "diamondbacks": "Chase Field",
+      "dodgers": "Dodger Stadium",
+      "giants": "Oracle Park",
+      "guardians": "Progressive Field",
+      "mariners": "T-Mobile Park",
+      "marlins": "loanDepot park",
+      "mets": "Citi Field",
+      "nationals": "Nationals Park",
+      "orioles": "Oriole Park at Camden Yards",
+      "padres": "Petco Park",
+      "phillies": "Citizens Bank Park",
+      "pirates": "PNC Park",
+      "rangers": "Globe Life Field",
+      "rays": "Tropicana Field",
+      "redsox": "Fenway Park",
+      "reds": "Great American Ball Park",
+      "rockies": "Coors Field",
+      "royals": "Kauffman Stadium",
+      "tigers": "Comerica Park",
+      "twins": "Target Field",
+      "whitesox": "Guaranteed Rate Field",
+      "yankees": "Yankee Stadium"
+    }
+  },
+  "worldcup": {
+    "title": "Coupe du Monde FIFA 2026",
+    "subtitle": "Trouvez les meilleurs sièges à l'ombre dans les stades de la Coupe du Monde",
+    "description": "Trouvez les meilleurs sièges à l'ombre dans 16 stades à travers l'Amérique du Nord",
+    "venues": "Stades de la Coupe du Monde",
+    "allVenues": "Tous les stades",
+    "venueCount": "{count} stades",
+    "totalMatches": "Matchs totaux",
+    "hostCountries": "Pays hôtes",
+    "nextMatch": "Prochain match",
+    "viewSchedule": "Voir le calendrier",
+    "filterByCountry": "Filtrer par pays",
+    "countries": {
+      "all": "Tous les pays",
+      "usa": "États-Unis",
+      "mexico": "Mexique",
+      "canada": "Canada"
+    },
+    "stats": {
+      "totalVenues": "Stades totaux",
+      "totalCapacity": "Capacité totale",
+      "totalMatches": "Matchs totaux",
+      "usaVenues": "Stades aux États-Unis",
+      "mexicoVenues": "Stades au Mexique",
+      "canadaVenues": "Stades au Canada"
+    },
+    "schedule": {
+      "title": "Calendrier de la Coupe du Monde 2026",
+      "filterByRound": "Filtrer par tour",
+      "filterByCountry": "Filtrer par pays",
+      "searchMatches": "Rechercher des matchs...",
+      "rounds": {
+        "all": "Tous les tours",
+        "groupStage": "Phase de groupes",
+        "roundOf32": "Huitièmes de finale",
+        "roundOf16": "Huitièmes de finale",
+        "quarterFinals": "Quarts de finale",
+        "semiFinals": "Demi-finales",
+        "thirdPlace": "Match pour la 3e place",
+        "final": "Finale"
+      },
+      "matchInfo": "Information sur le match",
+      "kickoff": "Coup d'envoi",
+      "localTime": "Heure locale",
+      "round": "Tour",
+      "noMatches": "Aucun match trouvé",
+      "matchCount": "{count} match(s)",
+      "viewVenue": "Voir le stade",
+      "timezoneNote": "Tous les horaires sont affichés dans le fuseau horaire du stade"
+    },
+    "countdown": {
+      "title": "Compte à rebours jusqu'au match",
+      "days": "jours",
+      "hours": "heures",
+      "minutes": "minutes",
+      "seconds": "secondes",
+      "matchStarted": "Le match a commencé",
+      "matchEnded": "Le match est terminé",
+      "nextMatchIn": "Prochain match dans",
+      "until": "jusqu'à"
+    },
+    "badge": {
+      "worldCupVenue": "Stade de la Coupe du Monde",
+      "matches": "matchs",
+      "match": "match"
+    },
+    "info": {
+      "tournamentDates": "Dates du tournament",
+      "participatingTeams": "Équipes participantes",
+      "teams": "équipes",
+      "firstWorldCup": "Première Coupe du Monde avec 48 équipes",
+      "threeCountries": "Co-organisée par trois pays",
+      "historicEvent": "Événement historique en Amérique du Nord"
+    },
+    "navigation": {
+      "landing": "Coupe du Monde 2026",
+      "schedule": "Calendrier",
+      "venues": "Stades"
+    }
+  },
+  "footer": {
+    "disclaimer": "Les calculs du soleil sont approximatifs et peuvent varier en fonction de l'architecture du stade et des conditions météorologiques.",
+    "weatherCredit": "Données météorologiques fournies par",
+    "openMeteo": "Open-Meteo.com",
+    "copyright": "© 2024 The Shadium"
+  },
+  "offline": {
+    "message": "Vous êtes hors ligne - Utilisation des données en cache",
+    "backOnline": "De retour en ligne !",
+    "syncing": "Synchronisation de vos données...",
+    "cacheUsage": "Cache : {percentage}%",
+    "dataAvailable": "Données du stade disponibles hors ligne",
+    "willSyncWhenOnline": "Les modifications seront synchronisées lorsque vous serez de nouveau en ligne"
+  }
+}
