@@ -2,8 +2,10 @@ import React, { useState, useEffect } from 'react';
 import { useIntersectionObserver } from '../hooks/useIntersectionObserver';
 import { useHapticFeedback } from '../hooks/useHapticFeedback';
 import type { StadiumSection } from '../data/stadiumSectionTypes';
+import type { RowShadowData } from '../utils/sunCalculator';
 import { CloudIcon, PartlyCloudyIcon, SunIcon, FireIcon, FieldLevelIcon, LowerLevelIcon, ClubLevelIcon, UpperLevelIcon, CrownIcon } from './Icons';
 import { formatPercentageForScreenReader, announceToScreenReader } from '../utils/accessibility';
+import { RowBreakdownView } from './RowBreakdownView';
 
 interface LazySectionCardProps {
   section: StadiumSection;
@@ -11,6 +13,7 @@ interface LazySectionCardProps {
   inSun: boolean;
   index: number;
   timeInSun?: number;
+  rowData?: RowShadowData[];
 }
 
 const LazySectionCardModernComponent: React.FC<LazySectionCardProps> = ({
@@ -19,12 +22,14 @@ const LazySectionCardModernComponent: React.FC<LazySectionCardProps> = ({
   inSun,
   index,
   timeInSun,
+  rowData,
 }) => {
   const [ref, isIntersecting] = useIntersectionObserver({
     threshold: 0.01,
     rootMargin: '200px',
   });
   const [isLoaded, setIsLoaded] = useState(false);
+  const [isExpanded, setIsExpanded] = useState(false);
   const haptic = useHapticFeedback();
   const roundedExposure = Math.round(sunExposure);
 
@@ -52,10 +57,37 @@ const LazySectionCardModernComponent: React.FC<LazySectionCardProps> = ({
   };
 
   const handleClick = () => {
-    haptic.light();
-    const announcement = `Selected section ${section.name}. ${formatPercentageForScreenReader(roundedExposure)}`;
-    announceToScreenReader(announcement, 'polite');
+    if (rowData && rowData.length > 0) {
+      setIsExpanded(!isExpanded);
+      haptic.light();
+      const announcement = isExpanded
+        ? `Collapsed row details for section ${section.name}`
+        : `Expanded row details for section ${section.name}`;
+      announceToScreenReader(announcement, 'polite');
+    } else {
+      haptic.light();
+      const announcement = `Selected section ${section.name}. ${formatPercentageForScreenReader(roundedExposure)}`;
+      announceToScreenReader(announcement, 'polite');
+    }
   };
+
+  // Calculate row summary
+  const getRowSummary = () => {
+    if (!rowData || rowData.length === 0) return null;
+
+    // Sort by coverage descending to get best rows
+    const sortedByCoverage = [...rowData].sort((a, b) => b.coverage - a.coverage);
+    const bestRows = sortedByCoverage.slice(0, Math.min(5, rowData.length));
+    const worstRows = sortedByCoverage.slice(-Math.min(5, rowData.length)).reverse();
+
+    return {
+      bestRows: bestRows.map(r => r.rowNumber).join(', '),
+      worstRows: worstRows.map(r => r.rowNumber).join(', '),
+      totalRows: rowData.length,
+    };
+  };
+
+  const rowSummary = getRowSummary();
 
   return (
     <div
@@ -119,6 +151,47 @@ const LazySectionCardModernComponent: React.FC<LazySectionCardProps> = ({
             </span>
           </div>
 
+          {/* Row summary if available */}
+          {rowSummary && (
+            <div className="mt-2 text-xs text-gray-700 space-y-1 bg-white/40 rounded-lg p-2">
+              <div>
+                <span className="font-medium">Best shade rows:</span> {rowSummary.bestRows}
+              </div>
+              <div>
+                <span className="font-medium">Most sun rows:</span> {rowSummary.worstRows}
+              </div>
+            </div>
+          )}
+
+          {/* View Row Details button */}
+          {rowData && rowData.length > 0 && (
+            <div className="mt-2">
+              <button
+                className="w-full px-3 py-2 text-sm font-medium text-accent-700 bg-accent-50 rounded-lg hover:bg-accent-100 transition-colors border border-accent-200"
+                onClick={(e) => {
+                  e.stopPropagation();
+                  handleClick();
+                }}
+                aria-expanded={isExpanded}
+                aria-label={isExpanded ? 'Hide row details' : 'View row details'}
+              >
+                {isExpanded ? 'Hide Row Details' : 'View Row Details'}
+              </button>
+            </div>
+          )}
+
+          {/* Expanded row breakdown */}
+          {isExpanded && rowData && (
+            <div className="mt-4 -mx-5 -mb-5 px-5 pb-5 pt-4 bg-white/60 border-t border-gray-200">
+              <RowBreakdownView
+                sectionId={section.id}
+                sectionName={section.name}
+                rows={rowData}
+                onClose={() => setIsExpanded(false)}
+              />
+            </div>
+          )}
+
           {/* Animated hover indicator */}
           <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-accent-400 to-accent-600 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left" />
         </div>
@@ -145,6 +218,7 @@ export const LazySectionCardModern = React.memo(LazySectionCardModernComponent, 
     prevProps.section.id === nextProps.section.id &&
     prevProps.sunExposure === nextProps.sunExposure &&
     prevProps.inSun === nextProps.inSun &&
-    prevProps.index === nextProps.index
+    prevProps.index === nextProps.index &&
+    prevProps.rowData === nextProps.rowData
   );
 });

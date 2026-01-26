@@ -7,6 +7,7 @@ import { LazySectionCardModern as LazySectionCard } from './LazySectionCardModer
 import { ListIcon, SearchIcon, SunIcon, CloudIcon, CloseIcon, BaseballIcon, TicketIcon, CrownIcon, StadiumIcon, FieldLevelIcon, LowerLevelIcon, ClubLevelIcon, UpperLevelIcon, ValuePriceIcon, ModeratePriceIcon, PremiumPriceIcon, LuxuryPriceIcon, MoneyIcon, PartlyCloudyIcon, FireIcon } from './Icons';
 import { LoadingSpinner } from './LoadingSpinner';
 import SectionFilters, { SectionFilterValues } from './SectionFilters/SectionFilters';
+import type { SectionShadowData } from '../utils/sunCalculator';
 import './SectionList.css';
 
 interface SectionListProps {
@@ -14,13 +15,17 @@ interface SectionListProps {
   loading?: boolean;
   calculationProgress?: { completed: number; total: number } | null;
   showFilters?: boolean;
+  rowData?: SectionShadowData[] | null;
+  showRowToggle?: boolean;
 }
 
 export const SectionList: React.FC<SectionListProps> = ({
   sections,
   loading = false,
   calculationProgress,
-  showFilters = false
+  showFilters = false,
+  rowData = null,
+  showRowToggle = false
 }) => {
   const [sortBy, setSortBy] = useState<'name' | 'exposure' | 'level' | 'price'>(() => {
     return preferencesStorage.get('sortBy', 'exposure');
@@ -36,8 +41,16 @@ export const SectionList: React.FC<SectionListProps> = ({
     priceRange: []
   });
   const [filtersExpanded, setFiltersExpanded] = useState(true);
+  const [showRowLevel, setShowRowLevel] = useState(false);
   const haptic = useHapticFeedback();
   const sectionListRef = useRef<HTMLDivElement>(null);
+
+  // Helper to find row data for a section
+  const getRowDataForSection = useCallback((sectionId: string) => {
+    if (!rowData) return undefined;
+    const sectionRowData = rowData.find(rd => rd.sectionId === sectionId);
+    return sectionRowData?.rows;
+  }, [rowData]);
 
   // Debounce search term
   useEffect(() => {
@@ -276,6 +289,30 @@ export const SectionList: React.FC<SectionListProps> = ({
           />
         )}
         
+        {/* Row-level toggle */}
+        {showRowToggle && rowData && rowData.length > 0 && (
+          <div className="row-level-toggle" style={{ padding: '12px 0', borderBottom: '1px solid #e5e7eb' }}>
+            <button
+              onClick={() => {
+                haptic.light();
+                setShowRowLevel(!showRowLevel);
+              }}
+              className={`px-4 py-2 rounded-lg font-medium transition-all ${
+                showRowLevel
+                  ? 'bg-accent-600 text-white'
+                  : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
+              }`}
+              aria-pressed={showRowLevel}
+              aria-label={showRowLevel ? 'Switch to section view' : 'Switch to row-level view'}
+            >
+              {showRowLevel ? '📊 Viewing Row Details' : '🎯 Show Row Details'}
+            </button>
+            <span className="ml-3 text-sm text-gray-600">
+              {showRowLevel ? 'Expand sections to see row-by-row shade data' : 'Click to enable detailed row view'}
+            </span>
+          </div>
+        )}
+
         <div className="search-and-sort">
           <div className="search-section">
             <label htmlFor="section-search" className="search-label">
@@ -373,6 +410,7 @@ export const SectionList: React.FC<SectionListProps> = ({
                 inSun={sectionData.inSun}
                 index={index}
                 timeInSun={sectionData.timeInSun}
+                rowData={showRowLevel ? getRowDataForSection(sectionData.section.id) : undefined}
               />
             ))}
           </div>
