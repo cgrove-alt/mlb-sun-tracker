@@ -280,13 +280,13 @@ Created complete World Cup UI with landing page, schedule, badges, and countdown
 **Production Readiness Fixes** (Third commit):
 - ✅ Added prominent timezone disclaimer - Blue info banner on both WC pages explains time display
 - ✅ Removed non-working E2E tests - Created `docs/WORLD_CUP_TESTING.md` manual guide instead
-- ✅ Populated match data - Increased from 13 to 39 matches (Group Stage through Final)
+- ✅ Populated match data - Increased from 13 to 48 matches (Group Stage through Final)
 - ✅ Removed code comments - Cleaned up file headers per style guide
 - ✅ Created production checklist - `docs/PRODUCTION_READINESS.md` with complete sign-off
 
 **Known Limitations** (Documented & Mitigated):
 - ℹ️ **Timezone Display**: Kickoff in venue time, countdown in user time. **Mitigated**: Blue banner explains this clearly
-- ℹ️ **Match Data**: 39/104 matches (37.5% coverage). **Plan**: Add remaining as official schedule released
+- ℹ️ **Match Data**: 48/104 matches (46.2% coverage). **Plan**: Add remaining as official schedule released
 - ℹ️ **Desktop Nav**: Link in mobile menu only (intentional per design)
 - ℹ️ **Testing**: Manual guide provided (automated tests had timeout issues)
 

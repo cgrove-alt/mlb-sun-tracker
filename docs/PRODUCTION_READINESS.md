@@ -8,7 +8,7 @@
 - [x] **Navigation Links** - Mobile menu has "⚽ World Cup 2026" link
 - [x] **Error Handling** - Null checks and fallback values throughout
 - [x] **Timezone Disclaimer** - Prominent blue notice banner on both pages explaining time display
-- [x] **Match Data** - 39 matches populated (Group Stage + Round of 16 + Quarterfinals + Semis + Final)
+- [x] **Match Data** - 48 matches populated (Group Stage + Round of 16 + Quarterfinals + Semis + Final)
 - [x] **Code Style** - Removed file header comments per style guide
 - [x] **Manual Testing Guide** - Created `docs/WORLD_CUP_TESTING.md` with comprehensive checklist
 - [x] **Build Success** - Zero errors, zero warnings (5.7s build time)
@@ -32,7 +32,7 @@
 
 ### Known Limitations (Documented)
 - ⚠️ **Timezone Display**: Kickoff times in venue timezone, countdown in user timezone (clearly explained in blue banner)
-- ⚠️ **Match Data**: 39/104 matches populated (clearly stated with disclaimer)
+- ⚠️ **Match Data**: 48/104 matches populated (clearly stated with disclaimer)
 - ℹ️ **Desktop Nav**: World Cup link in hamburger menu only (intentional per site design)
 
 ## 📋 Pre-Launch Checklist

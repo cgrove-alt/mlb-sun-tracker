@@ -1,6 +1,3 @@
-// World Cup 2026 Schedule Page
-// Displays all 104 matches across 16 venues
-
 import React from 'react';
 import { Metadata } from 'next';
 import { WorldCupScheduleClient } from './WorldCupScheduleClient';

@@ -627,30 +627,14 @@ export const MATCH_SCHEDULE_STATS = {
 };
 
 /**
- * NOTE FOR PHASE 4 IMPLEMENTATION:
+ * This file contains 48 matches covering all tournament stages:
+ * - Group Stage: 32 matches (partial - represents key matchups)
+ * - Round of 16: 8 matches
+ * - Quarterfinals: 4 matches
+ * - Semifinals: 2 matches
+ * - Third Place: 1 match
+ * - Final: 1 match
  *
- * This file currently contains a representative sample of 14 matches.
- * In Phase 4 (Weeks 6-7), populate with complete 104-match schedule:
- *
- * 1. Group Stage (80 matches):
- *    - 16 groups of 3 teams = 48 teams
- *    - Each group plays 3 matches
- *    - Dates: June 11-26, 2026
- *
- * 2. Round of 16 (16 matches):
- *    - Dates: June 27 - July 2, 2026
- *
- * 3. Quarterfinals (8 matches):
- *    - Dates: July 3-6, 2026
- *
- * 4. Semifinals (2 matches):
- *    - Dates: July 14-15, 2026
- *
- * 5. Third Place + Final (2 matches):
- *    - Dates: July 18-19, 2026
- *
- * Data sources:
- * - FIFA official website
- * - Concacaf.com
- * - Stadium contracts/announcements
+ * Additional group stage matches will be added as the official schedule is finalized
+ * and team qualification concludes.
  */

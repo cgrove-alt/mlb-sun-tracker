@@ -59,7 +59,7 @@ E2E automated tests were removed due to timeout issues. Use this manual testing 
   - [ ] Kickoff time with timezone
   - [ ] "Find Shaded Seats" button
 - [ ] Clicking "Find Shaded Seats" navigates to correct stadium page
-- [ ] Disclaimer shown about sample match data (13/104)
+- [ ] Disclaimer shown about sample match data (48/104)
 
 ### Responsive Design
 - [ ] Desktop: Full-width match cards
@@ -142,7 +142,7 @@ E2E automated tests were removed due to timeout issues. Use this manual testing 
 ## Known Issues
 
 - **Timezone Display**: Kickoff times show in venue local time, countdown in user's timezone. Timezone notice banner clarifies this.
-- **Match Data**: Only 13/104 matches populated with sample data
+- **Match Data**: Only 48/104 matches populated with sample data
 - **Desktop Nav**: World Cup link only in mobile hamburger menu (intentional per design)
 
 ## Testing Sign-off

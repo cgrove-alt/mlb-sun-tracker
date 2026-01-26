@@ -1,6 +1,3 @@
-// World Cup 2026 Landing Page
-// Main entry point for World Cup features
-
 import React from 'react';
 import { Metadata } from 'next';
 import { WorldCupLandingClient } from './WorldCupLandingClient';
