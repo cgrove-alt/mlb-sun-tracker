@@ -190,11 +190,11 @@ Build UI components to display row-level shade data to users and integrate into 
 Created 5 brand-new World Cup stadium configurations with **FULL 360° GEOMETRIC COVERAGE** and **100%+ CAPACITY COVERAGE**:
 
 **Completed Tasks**:
-- ✅ **Task 3.1**: BMO Field (Toronto) - 100 sections, **106.8% capacity** (48,840 / 45,736 seats)
-- ✅ **Task 3.2**: BC Place (Vancouver) - 100 sections, **100.8% capacity** (54,420 / 54,000 seats)
-- ✅ **Task 3.3**: Estadio Akron (Guadalajara) - 100 sections, **123.9% capacity** (61,760 / 49,850 seats)
-- ✅ **Task 3.4**: Estadio BBVA (Monterrey) - 100 sections, **122.4% capacity** (65,460 / 53,500 seats)
-- ✅ **Task 3.5**: Estadio Azteca (Mexico City) - 100 sections, **101.6% capacity** (88,960 / 87,523 seats)
+- ✅ **Task 3.1**: BMO Field (Toronto) - 100 sections, **105.2% capacity** (48,115 / 45,736 seats)
+- ✅ **Task 3.2**: BC Place (Vancouver) - 100 sections, **101.2% capacity** (54,660 / 54,000 seats)
+- ✅ **Task 3.3**: Estadio Akron (Guadalajara) - 100 sections, **121.6% capacity** (60,630 / 49,850 seats)
+- ✅ **Task 3.4**: Estadio BBVA (Monterrey) - 100 sections, **120.6% capacity** (64,540 / 53,500 seats)
+- ✅ **Task 3.5**: Estadio Azteca (Mexico City) - 100 sections, **100.5% capacity** (87,960 / 87,523 seats)
 
 **Files Created** (100 sections each with FULL 360° coverage):
 - `/src/data/sections/worldcup/bmo-field.ts` (120 lines) - 50×7.2° + 30×12° + 20×18° = **360°**
@@ -220,9 +220,9 @@ Created 5 brand-new World Cup stadium configurations with **FULL 360° GEOMETRIC
 
 **World Cup Venue Stats**:
 - Total sections: 500 (100 × 5 stadiums)
-- Total seats: **319,440** across all 5 stadiums
+- Total seats: **315,905** across all 5 stadiums
 - Target capacity: 290,609
-- **Overall coverage: 109.9%**
+- **Overall coverage: 108.7%**
 - Geometric coverage: **100% (full 360°)** for all stadiums
 - ALL 16 World Cup 2026 venues ready with complete data!
 
