@@ -2,7 +2,7 @@
 module.exports = {
   preset: 'ts-jest',
   testEnvironment: 'jsdom',
-  roots: ['<rootDir>/src', '<rootDir>/components'],
+  roots: ['<rootDir>/src', '<rootDir>/components', '<rootDir>/app'],
   testMatch: [
     '**/__tests__/**/*.ts?(x)',
     '**/?(*.)+(spec|test).ts?(x)'
@@ -41,6 +41,11 @@ module.exports = {
       statements: 70
     }
   },
-  setupFilesAfterEnv: ['<rootDir>/src/setupTests.ts'],
-  testTimeout: 10000
+  setupFilesAfterEnv: [
+    '<rootDir>/jest.setup.js'
+  ],
+  testTimeout: 10000,
+  testEnvironmentOptions: {
+    customExportConditions: ['node', 'node-addons']
+  }
 };
