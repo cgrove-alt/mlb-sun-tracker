@@ -19,8 +19,9 @@ import MobileApp from './MobileApp';
 
 import { I18nProvider, useTranslation } from './i18n/i18nContext';
 import { getSunPosition, getSunDescription, getCompassDirection, SeatingSectionSun, calculateGameSunExposure } from './utils/sunCalculations';
-import { SunCalculator } from './utils/sunCalculator';
+import { SunCalculator, SectionShadowData, calculateRowShadows } from './utils/sunCalculator';
 import { getStadiumSectionsAsync } from './data/getStadiumSections';
+import { getStadiumCompleteData } from './data/stadium-data-aggregator';
 import { getVenueSections } from './data/venueSections';
 import { MLBGame, mlbApi } from './services/mlbApi';
 import { NFLGame } from './services/nflApi';
@@ -46,6 +47,7 @@ function UnifiedAppContent() {
   const [detailedSections, setDetailedSections] = useState<SeatingSectionSun[]>([]);
   const [shadedSections, setShadedSections] = useState<ShadedVenueSection[]>([]);
   const [gameExposureData, setGameExposureData] = useState<Map<string, number> | null>(null);
+  const [rowShadowData, setRowShadowData] = useState<SectionShadowData[] | null>(null);
   const [loadingSections, setLoadingSections] = useState(false);
   const [calculationInProgress, setCalculationInProgress] = useState(false);
   const [changingVenue, setChangingVenue] = useState(false);
@@ -238,7 +240,35 @@ function UnifiedAppContent() {
           if (isCancelled) return;
 
           setDetailedSections(detailedSectionData);
-          
+
+          // Calculate row-level shade data for MLB stadiums
+          try {
+            const { sections: detailedSectionsWithRows } = getStadiumCompleteData(selectedVenue.id, 'MLB');
+            if (detailedSectionsWithRows && detailedSectionsWithRows.length > 0) {
+              const sunPos = getSunPosition(gameDateTime, legacyStadium!.latitude, legacyStadium!.longitude, legacyStadium!.timezone);
+              const rowDataResults: SectionShadowData[] = [];
+
+              for (const section of detailedSectionsWithRows) {
+                if (section.rows && section.rows.length > 0) {
+                  const sectionRowData = calculateRowShadows(
+                    section,
+                    sunPos.altitude,
+                    sunPos.azimuth,
+                    legacyStadium!.orientation || 0
+                  );
+                  rowDataResults.push(sectionRowData);
+                }
+              }
+
+              if (rowDataResults.length > 0) {
+                setRowShadowData(rowDataResults);
+              }
+            }
+          } catch (error) {
+            console.warn('Could not load row-level data:', error);
+            // Continue without row data
+          }
+
           // Calculate game exposure - pass sections to avoid bundling
           const exposureMap = calculateGameSunExposure(legacyStadium!, gameDateTime, gameDuration, sections);
           setGameExposureData(exposureMap);
@@ -447,6 +477,8 @@ function UnifiedAppContent() {
                   loading={loadingSections}
                   calculationProgress={null}
                   showFilters={true}
+                  rowData={rowShadowData}
+                  showRowToggle={!!rowShadowData && rowShadowData.length > 0}
                 />
               )}
             </div>

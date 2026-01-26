@@ -108,8 +108,11 @@ Build UI components to display row-level shade data to users and integrate into 
 - `/src/components/SectionList.tsx` (386 → 417 lines) - Added rowData/showRowToggle props, toggle button, helper function
 - `/app/stadium/[stadiumId]/StadiumPageClient.tsx` - Set `includeRows: true`, extract rowData from hook
 - `/src/components/SeatRecommendationsSection.tsx` - Added SectionList display with rowData integration
+- `/src/UnifiedApp.tsx` - **CRITICAL: Added row calculations to main game selector page**
 
 **Integration Complete**:
+- ✅ **UnifiedApp (main page)**: Calculates row-level data using `calculateRowShadows()`, passes to SectionList
+- ✅ **Section cards on main page**: Clickable to show row breakdown
 - ✅ StadiumPageClient calls `useSunCalculations` with `includeRows: true`
 - ✅ rowData extracted from hook and passed to SeatRecommendationsSection
 - ✅ SectionList receives rowData and showRowToggle props
@@ -119,7 +122,7 @@ Build UI components to display row-level shade data to users and integrate into 
 - ✅ No emojis in toggle buttons (text only)
 - ✅ E2E tests enforce feature presence (fail if broken)
 
-**Verification**: ✅ Build passes (5.0s), all integrations wired, strict E2E tests in place
+**Verification**: ✅ Build passes (4.1s), all integrations wired including main game selector page, strict E2E tests in place
 
 **Known Limitation**: Row data will only display when stadium data files contain `rows` arrays with RowDetail objects. Current stadium data files need to be updated with row-level information in Phase 0 Task 0.6-0.9.
 
