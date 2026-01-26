@@ -1,6 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { MLB_STADIUMS } from '../../../../../../src/data/stadiums';
-import { getStadiumSections } from '../../../../../../src/data/stadiumSections';
+import { getStadiumSections } from '../../../../../../src/data/stadium-data-aggregator';
 import { calculateRowShadows } from '../../../../../../src/utils/sunCalculator';
 import { getSunPosition } from '../../../../../../src/utils/sunCalculations';
 
@@ -60,8 +60,8 @@ export async function GET(request: NextRequest, { params }: RouteParams) {
     );
   }
 
-  // Get stadium sections
-  const sections = getStadiumSections(stadium.id);
+  // Get stadium sections with row data
+  const sections = getStadiumSections(stadium.id, 'MLB');
 
   if (!sections || sections.length === 0) {
     return NextResponse.json(
@@ -93,9 +93,8 @@ export async function GET(request: NextRequest, { params }: RouteParams) {
       }
 
       // Calculate row shadows for single section
-      // Cast to DetailedSection as it has compatible properties
       const rowShadowData = calculateRowShadows(
-        section as any,
+        section,
         sunPosition.altitudeDegrees,
         sunPosition.azimuthDegrees,
         stadium.orientation || 0
@@ -125,7 +124,7 @@ export async function GET(request: NextRequest, { params }: RouteParams) {
     // Calculate row shadows for all sections
     const allRowShadows = sections.map(section =>
       calculateRowShadows(
-        section as any,
+        section,
         sunPosition.altitudeDegrees,
         sunPosition.azimuthDegrees,
         stadium.orientation || 0

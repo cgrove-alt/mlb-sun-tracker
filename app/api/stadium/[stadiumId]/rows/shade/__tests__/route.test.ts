@@ -21,8 +21,8 @@ jest.mock('../../../../../../../src/data/stadiums', () => ({
   ],
 }));
 
-jest.mock('../../../../../../../src/data/stadiumSections', () => ({
-  getStadiumSections: jest.fn((stadiumId: string) => {
+jest.mock('../../../../../../../src/data/stadium-data-aggregator', () => ({
+  getStadiumSections: jest.fn((stadiumId: string, league: string) => {
     if (stadiumId === 'yankee-stadium') {
       return [
         {
@@ -318,7 +318,7 @@ describe('GET /api/stadium/[stadiumId]/rows/shade', () => {
 
   describe('Edge Cases', () => {
     it('should handle stadium with no sections', async () => {
-      const { getStadiumSections } = require('../../../../../../../src/data/stadiumSections');
+      const { getStadiumSections } = require('../../../../../../../src/data/stadium-data-aggregator');
       getStadiumSections.mockReturnValueOnce([]);
 
       const request = createRequest('/api/stadium/yankee-stadium/rows/shade');
