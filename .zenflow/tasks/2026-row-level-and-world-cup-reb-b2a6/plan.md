@@ -84,28 +84,44 @@ Core row-level shadow calculation engine implementation.
 
 ### [x] Step: Phase 1 - Row-Level UI
 <!-- chat-id: 6112db13-8bd3-4d16-a19e-7e7870ef34fe -->
-<!-- Completed: January 26, 2026 -->
+<!-- Completed: January 26, 2026 (Fixed & Fully Integrated) -->
 
 **Status**: COMPLETE (5/5 tasks done) ✅
 **Duration**: Week 2-3 (Feb 6 - Feb 13, 2026)
 **Dependencies**: Phase 0 complete ✅
 
-Build UI components to display row-level shade data to users.
+Build UI components to display row-level shade data to users and integrate into stadium pages.
 
 **Completed Tasks**:
 - ✅ Task 1.1: Create RowBreakdownView component - Desktop table + mobile cards with sorting/filtering
 - ✅ Task 1.2: Update LazySectionCardModern - Row summary, expand/collapse functionality
 - ✅ Task 1.3: Add Row-Level Filters - Built into RowBreakdownView (recommendation filter)
-- ✅ Task 1.4: Integration testing - Build successful, components integrated
-- ✅ Task 1.5: E2E testing - Playwright tests created for row-level features
+- ✅ Task 1.4: Integration - StadiumPageClient, SeatRecommendationsSection, SectionList all wired up
+- ✅ Task 1.5: E2E testing - Strict Playwright tests that fail when features don't work
+
+**Files Created**:
+- `/src/components/RowBreakdownView.tsx` (248 lines) - Desktop table & mobile card view
+- `/tests/row-level-ui.spec.ts` (174 lines) - 9 strict E2E tests
 
 **Files Modified**:
-- `/src/components/RowBreakdownView.tsx` (NEW - 248 lines)
-- `/src/components/LazySectionCardModern.tsx` (150 → 200+ lines)
-- `/src/components/SectionList.tsx` (386 → 415 lines)
-- `/tests/row-level-ui.spec.ts` (NEW - E2E tests)
+- `/src/components/LazySectionCardModern.tsx` (150 → 183 lines) - Added rowData prop, row summary display, expand/collapse
+- `/src/components/SectionList.tsx` (386 → 417 lines) - Added rowData/showRowToggle props, toggle button, helper function
+- `/app/stadium/[stadiumId]/StadiumPageClient.tsx` - Set `includeRows: true`, extract rowData from hook
+- `/src/components/SeatRecommendationsSection.tsx` - Added SectionList display with rowData integration
 
-**Verification**: ✅ Build passes, TypeScript compiles, components ready for integration
+**Integration Complete**:
+- ✅ StadiumPageClient calls `useSunCalculations` with `includeRows: true`
+- ✅ rowData extracted from hook and passed to SeatRecommendationsSection
+- ✅ SectionList receives rowData and showRowToggle props
+- ✅ Row toggle button displays when rowData available
+- ✅ Section cards show row summary (best/worst rows)
+- ✅ Expand section shows RowBreakdownView with filtering
+- ✅ No emojis in toggle buttons (text only)
+- ✅ E2E tests enforce feature presence (fail if broken)
+
+**Verification**: ✅ Build passes (5.0s), all integrations wired, strict E2E tests in place
+
+**Known Limitation**: Row data will only display when stadium data files contain `rows` arrays with RowDetail objects. Current stadium data files need to be updated with row-level information in Phase 0 Task 0.6-0.9.
 
 ---
 

@@ -61,9 +61,10 @@ export default function StadiumPageClient({
     );
   }, [stadium.id, refreshKey]); // Add refreshKey to recalculate on refresh
 
-  // Use Web Worker for sun calculations
+  // Use Web Worker for sun calculations with row-level data
   const {
     data: sectionsWithSunData,
+    rowData,
     isLoading: isCalculating,
     refetch: refetchSunData,
   } = useSunCalculations({
@@ -71,6 +72,7 @@ export default function StadiumPageClient({
     sunPosition,
     sections,
     enabled: !!sections.length,
+    includeRows: true, // Enable row-level calculations
   });
 
   // Pull-to-refresh handler
@@ -127,6 +129,7 @@ export default function StadiumPageClient({
             stadiumId={stadium.id}
             gameTime="13:00"
             gameDate={new Date()}
+            rowData={rowData}
           />
         ) : (
           <div className="text-center p-8 bg-gray-50 rounded-lg">

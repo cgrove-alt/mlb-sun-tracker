@@ -305,10 +305,10 @@ export const SectionList: React.FC<SectionListProps> = ({
               aria-pressed={showRowLevel}
               aria-label={showRowLevel ? 'Switch to section view' : 'Switch to row-level view'}
             >
-              {showRowLevel ? '📊 Viewing Row Details' : '🎯 Show Row Details'}
+              {showRowLevel ? 'Viewing Row Details' : 'Show Row Details'}
             </button>
             <span className="ml-3 text-sm text-gray-600">
-              {showRowLevel ? 'Expand sections to see row-by-row shade data' : 'Click to enable detailed row view'}
+              {showRowLevel ? 'Expand sections to see row-by-row shade data' : 'Click to enable detailed row-level view'}
             </span>
           </div>
         )}
