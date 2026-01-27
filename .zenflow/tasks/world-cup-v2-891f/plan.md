@@ -102,6 +102,7 @@ Document data sources and create collection methodology for 30 MLB stadiums.
 ---
 
 ### [ ] Step 1.3: Tier 1 MLB Stadiums - Row-Level Data
+<!-- chat-id: 000f1fe1-2f95-42da-84fe-f33b1b849dd5 -->
 **Duration:** 5 days | **Priority:** P0
 
 Collect and validate row-level data for top 10 MLB stadiums.
