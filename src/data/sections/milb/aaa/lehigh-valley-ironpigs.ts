@@ -1634,7 +1634,8 @@ export const lehighvalleyironpigsSections: DetailedSection[] = [
     covered: false,
     distance: 172,
     height: 12,
-    rake: 0
+    rake: 0,
+    lastUpdated: '2025-01-27'
   }
 ];
 

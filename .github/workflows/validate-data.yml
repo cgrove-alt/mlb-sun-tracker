@@ -123,3 +123,8 @@ jobs:
           else
             echo "✓ Good obstruction coverage"
           fi
+
+      - name: Check data freshness
+        run: |
+          echo "Checking data freshness..."
+          npm run check-data-freshness || echo "⚠️  Warning: Some stadium data is outdated"

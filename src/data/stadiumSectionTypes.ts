@@ -12,9 +12,11 @@ export interface StadiumSection {
   partialCoverage?: boolean; // Whether section has partial coverage (e.g., back rows only)
   coveredRows?: string; // Which rows are covered (e.g., "M-Z" or "last 5 rows")
   price?: 'value' | 'moderate' | 'premium' | 'luxury';
+  lastUpdated?: string; // ISO 8601 timestamp of last section data update
 }
 
 export interface StadiumSections {
   stadiumId: string;
   sections: StadiumSection[];
+  lastUpdated?: string; // ISO 8601 timestamp of last data update
 }

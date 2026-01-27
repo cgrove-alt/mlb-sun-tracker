@@ -9,6 +9,8 @@ import { usePullToRefresh } from '../../../src/hooks/usePullToRefresh';
 import { PullToRefreshIndicator } from '../../../src/components/PullToRefreshIndicator';
 import { StadiumDiagram, SectionShadeData } from '../../../src/components/StadiumDiagram/StadiumDiagram';
 import { getStadiumCompleteData } from '../../../src/data/stadium-data-aggregator';
+import { DataFreshness } from '../../../src/components/DataFreshness';
+import { getStadiumLastUpdated } from '../../../src/data/stadium-data-freshness';
 
 const ComprehensiveStadiumGuide = dynamic(
   () => import('../../../src/components/ComprehensiveStadiumGuide'),
@@ -161,6 +163,15 @@ export default function StadiumPageClient({
             stadiumId={stadium.id}
           />
         </Suspense>
+      </div>
+
+      {/* Data Freshness Indicator */}
+      <div className="container mx-auto px-4 mt-6 max-w-5xl">
+        <DataFreshness
+          lastUpdated={getStadiumLastUpdated(stadium.id) || undefined}
+          stadiumName={stadium.name}
+          showReportLink={true}
+        />
       </div>
 
       {/* Stadium Diagram - Interactive shade visualization */}
