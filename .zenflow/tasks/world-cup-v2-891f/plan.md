@@ -395,17 +395,26 @@ Created complete match data for all 104 World Cup 2026 matches with timezone han
 
 ---
 
-### [ ] Step 3.2: Match Schedule Page UI
-**Duration:** 3 days | **Priority:** P0
+### [x] Step 3.2: Match Schedule Page UI
+<!-- chat-id: 8acac34f-f01a-429e-9ea1-ce209fed43ce -->
+**Duration:** 3 hours | **Priority:** P0
+**Status:** ✅ COMPLETE
 
-Build match schedule grid with filtering and shade finder integration.
+Build match schedule grid with enhanced filtering, sorting, and shade finder integration.
 
 **Verification:**
-- [ ] All 104 matches displayed
-- [ ] Filters work correctly
-- [ ] Links pre-fill venue/time
+- [x] ✅ All 104 matches displayed
+- [x] ✅ Filters work correctly (Round with R32, Country, Venue, Date Range, Search, Clear All)
+- [x] ✅ Sortable columns (Date, Venue, Round) with asc/desc toggle
+- [x] ✅ Countdown timers on every match card
+- [x] ✅ "Find Shaded Seats" links pre-fill venue/date/time correctly
+- [x] ✅ Responsive layout (mobile stacked, desktop horizontal)
+- [x] ✅ Zero TypeScript errors
+- [x] ✅ Successful production build
 
-**Details:** See `implementation-plan.md` Step 3.2
+**Summary:** Enhanced World Cup schedule page with 8 filter options (round with R32, country, venue, date range, search), 3 sortable columns (date, venue, round), live countdown timers on all match cards, smart shade finder links with date/time pre-fill, dual-action buttons (shade finder + venue info), rich match cards with icons and badges, fully responsive mobile-optimized layout, and comprehensive test suite. Zero TypeScript errors, successful build. See `step-3.2-summary.md` for complete report.
+
+**Details:** See `implementation-plan.md` Step 3.2 and `step-3.2-summary.md`
 
 ---
 
