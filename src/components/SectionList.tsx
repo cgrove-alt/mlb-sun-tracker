@@ -9,6 +9,7 @@ import { LoadingSpinner } from './LoadingSpinner';
 import SectionFilters, { SectionFilterValues } from './SectionFilters/SectionFilters';
 import { SectionComparison } from './SectionComparison/SectionComparison';
 import type { SectionShadowData } from '../utils/sunCalculator';
+import VirtualScroll from './VirtualScroll';
 import './SectionList.css';
 
 interface SectionListProps {
@@ -395,6 +396,28 @@ export const SectionList: React.FC<SectionListProps> = ({
     return sections.filter(s => selectedSections.has(s.section.id));
   }, [sections, selectedSections]);
 
+  // Use virtual scrolling for better performance on mobile with many sections
+  const useVirtualScrolling = sortedSections.length > 60;
+
+  // Render a single section card (used by both normal and virtual rendering)
+  const renderSectionCard = useCallback((sectionData: SeatingSectionSun, index: number) => (
+    <LazySectionCard
+      key={`${sectionData.section.id}-${index}`}
+      section={sectionData.section}
+      sunExposure={sectionData.sunExposure}
+      inSun={sectionData.inSun}
+      index={index}
+      timeInSun={sectionData.timeInSun}
+      rowData={showRowLevel ? getRowDataForSection(sectionData.section.id) : undefined}
+      stadiumId={stadiumId}
+      worldCupMatchCount={worldCupMatchCount}
+      worldCupCountry={worldCupCountry}
+      comparisonMode={comparisonMode}
+      isSelected={selectedSections.has(sectionData.section.id)}
+      onToggleSelection={handleToggleSelection}
+    />
+  ), [showRowLevel, getRowDataForSection, stadiumId, worldCupMatchCount, worldCupCountry, comparisonMode, selectedSections, handleToggleSelection]);
+
   if (loading) {
     return (
       <div className="section-list loading">
@@ -603,26 +626,27 @@ export const SectionList: React.FC<SectionListProps> = ({
             </>
           )}
         </div>
+      ) : useVirtualScrolling ? (
+        <div className="section-list-container" role="list" aria-labelledby="sections-title">
+          <VirtualScroll
+            items={sortedSections}
+            itemHeight={350}
+            renderItem={(sectionData, index) => (
+              <div className="section-grid-virtual-item">
+                {renderSectionCard(sectionData, index)}
+              </div>
+            )}
+            containerHeight={typeof window !== 'undefined' ? Math.min(window.innerHeight - 400, 800) : 600}
+            overscan={3}
+            getItemKey={(sectionData, index) => `${sectionData.section.id}-${index}`}
+            className="section-virtual-scroll"
+            style={{ width: '100%' }}
+          />
+        </div>
       ) : (
         <div className="section-list-container" role="list" aria-labelledby="sections-title">
           <div className="section-grid">
-            {sortedSections.map((sectionData, index) => (
-              <LazySectionCard
-                key={`${sectionData.section.id}-${index}`}
-                section={sectionData.section}
-                sunExposure={sectionData.sunExposure}
-                inSun={sectionData.inSun}
-                index={index}
-                timeInSun={sectionData.timeInSun}
-                rowData={showRowLevel ? getRowDataForSection(sectionData.section.id) : undefined}
-                stadiumId={stadiumId}
-                worldCupMatchCount={worldCupMatchCount}
-                worldCupCountry={worldCupCountry}
-                comparisonMode={comparisonMode}
-                isSelected={selectedSections.has(sectionData.section.id)}
-                onToggleSelection={handleToggleSelection}
-              />
-            ))}
+            {sortedSections.map((sectionData, index) => renderSectionCard(sectionData, index))}
           </div>
         </div>
       )}

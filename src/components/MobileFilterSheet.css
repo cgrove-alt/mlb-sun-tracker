@@ -101,9 +101,9 @@ body.mobile-filter-open {
   position: fixed;
   inset: 0;
   background: rgba(0, 0, 0, 0.5);
-  backdrop-filter: blur(4px);
-  -webkit-backdrop-filter: blur(4px);
-  animation: fadeIn 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  animation: fadeIn 0.2s cubic-bezier(0.16, 1, 0.3, 1);
   z-index: 9998; /* Just below the sheet container */
   pointer-events: auto; /* Capture clicks to close */
   touch-action: none; /* Prevent scroll through overlay */
@@ -119,8 +119,8 @@ body.mobile-filter-open {
   }
   to {
     opacity: 1;
-    backdrop-filter: blur(4px);
-    -webkit-backdrop-filter: blur(4px);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
   }
 }
 
@@ -145,7 +145,7 @@ body.mobile-filter-open {
   border-radius: 24px 24px 0 0;
   display: flex;
   flex-direction: column;
-  animation: slideUp 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  animation: slideUp 0.2s cubic-bezier(0.16, 1, 0.3, 1);
   box-shadow: 0 -2px 16px rgba(0, 0, 0, 0.12);
   z-index: 10000;
   pointer-events: auto; /* Enable interaction */
@@ -203,8 +203,8 @@ body.mobile-filter-open {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 36px;
-  height: 36px;
+  width: 44px;
+  height: 44px;
   background: #ffffff;
   border: 1.5px solid #cbd5e1;
   border-radius: 50%;
@@ -566,11 +566,11 @@ body.mobile-filter-open {
 
 .mobile-filter-btn {
   flex: 1;
-  min-height: 40px;
-  padding: 8px 12px;
+  min-height: 48px;
+  padding: 12px 16px;
   border: none;
   border-radius: var(--radius-md);
-  font-size: 14px;
+  font-size: 15px;
   font-weight: var(--font-weight-semibold);
   cursor: pointer;
   transition: background-color var(--transition-base), box-shadow var(--transition-base), transform var(--transition-base);

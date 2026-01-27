@@ -19,6 +19,10 @@ export const MobileFilterSheet: React.FC<MobileFilterSheetProps> = ({
 }) => {
   const [isOpen, setIsOpen] = useState(false);
   const [localFilters, setLocalFilters] = useState<SunFilterCriteria>(currentFilters);
+  const [touchStart, setTouchStart] = useState<number>(0);
+  const [touchEnd, setTouchEnd] = useState<number>(0);
+  const [isDragging, setIsDragging] = useState(false);
+  const [dragOffset, setDragOffset] = useState<number>(0);
 
   // Simple body scroll lock when filter is open
   React.useEffect(() => {
@@ -61,6 +65,39 @@ export const MobileFilterSheet: React.FC<MobileFilterSheetProps> = ({
     setLocalFilters({});
     onFilterChange({});
     setIsOpen(false);
+  };
+
+  // Handle swipe-to-close gesture
+  const handleTouchStart = (e: React.TouchEvent) => {
+    setTouchStart(e.targetTouches[0].clientY);
+    setIsDragging(true);
+  };
+
+  const handleTouchMove = (e: React.TouchEvent) => {
+    if (!isDragging) return;
+    const currentTouch = e.targetTouches[0].clientY;
+    const diff = currentTouch - touchStart;
+
+    // Only allow downward dragging
+    if (diff > 0) {
+      setDragOffset(diff);
+      setTouchEnd(currentTouch);
+    }
+  };
+
+  const handleTouchEnd = () => {
+    setIsDragging(false);
+    const swipeDistance = touchEnd - touchStart;
+
+    // Close if swiped down more than 100px
+    if (swipeDistance > 100) {
+      setIsOpen(false);
+    }
+
+    // Reset drag offset
+    setDragOffset(0);
+    setTouchStart(0);
+    setTouchEnd(0);
   };
 
   const activeFilterCount = Object.keys(currentFilters).filter(key => {
@@ -134,7 +171,17 @@ export const MobileFilterSheet: React.FC<MobileFilterSheetProps> = ({
       <MobileFilterPortal isOpen={isOpen}>
         <div className="mobile-filter-sheet">
           <div className="mobile-filter-overlay" onClick={() => setIsOpen(false)} />
-          <div className="mobile-filter-content" onClick={(e) => e.stopPropagation()}>
+          <div
+            className="mobile-filter-content"
+            onClick={(e) => e.stopPropagation()}
+            onTouchStart={handleTouchStart}
+            onTouchMove={handleTouchMove}
+            onTouchEnd={handleTouchEnd}
+            style={{
+              transform: `translateY(${dragOffset}px)`,
+              transition: isDragging ? 'none' : 'transform 0.2s cubic-bezier(0.16, 1, 0.3, 1)'
+            }}
+          >
             <div className="mobile-filter-header">
               <h2>Filter Sections</h2>
               <button 
