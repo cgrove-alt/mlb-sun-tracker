@@ -131,7 +131,7 @@ describe('Stadium Timezone Utilities', () => {
       const winterDate = new Date('2025-12-21');
 
       const summerOffset = getStadiumOffset('yankees', summerDate);
-      const winterOffset = getStadiumOffset('yankees', winterDate');
+      const winterOffset = getStadiumOffset('yankees', winterDate);
 
       // EDT is -4, EST is -5
       expect(summerOffset).toBe(-4);

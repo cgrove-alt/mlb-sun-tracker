@@ -444,3 +444,93 @@ export function calculateGameSunExposure(
 
 // Export the new 3D shade calculation function
 export { getShadedSections } from './getShadedSections';
+
+// Additional utility functions for testing and compatibility
+
+export function calculateSunExposure(
+  date: Date,
+  latitude: number,
+  longitude: number,
+  sectionAngle: number
+): number {
+  // Calculate sun exposure percentage based on sun position and section orientation
+  const sunPos = getSunPosition(date, latitude, longitude);
+
+  if (sunPos.altitude <= 0) {
+    return 0; // Sun is below horizon
+  }
+
+  // Calculate angle difference between sun azimuth and section orientation
+  const angleDiff = Math.abs(sunPos.azimuthDegrees - sectionAngle);
+  const normalizedAngle = Math.min(angleDiff, 360 - angleDiff);
+
+  // Maximum exposure when sun is directly facing the section (angle = 0)
+  // Minimum when sun is behind (angle = 180)
+  const exposureFromAngle = Math.max(0, 100 - (normalizedAngle / 180) * 100);
+
+  // Factor in sun altitude (higher sun = more exposure)
+  const altitudeFactor = Math.sin(sunPos.altitude);
+
+  return exposureFromAngle * altitudeFactor;
+}
+
+export function getSunriseSunsetTimes(date: Date, latitude: number, longitude: number): {
+  sunrise: Date;
+  sunset: Date;
+  dayLength: number;
+} {
+  const sunTimes = getSunTimes(date, latitude, longitude);
+  const dayLength = (sunTimes.sunset.getTime() - sunTimes.sunrise.getTime()) / (1000 * 60 * 60);
+
+  return {
+    sunrise: sunTimes.sunrise,
+    sunset: sunTimes.sunset,
+    dayLength,
+  };
+}
+
+export function getGameDaylight(
+  gameDate: Date,
+  latitude: number,
+  longitude: number
+): {
+  isDaytime: boolean;
+  minutesUntilSunset: number;
+  sunPosition: SunPosition;
+} {
+  const sunPos = getSunPosition(gameDate, latitude, longitude);
+  const sunTimes = getSunTimes(gameDate, latitude, longitude);
+
+  const isDaytime = sunPos.altitude > 0;
+  const minutesUntilSunset = Math.max(0, (sunTimes.sunset.getTime() - gameDate.getTime()) / (1000 * 60));
+
+  return {
+    isDaytime,
+    minutesUntilSunset,
+    sunPosition: sunPos,
+  };
+}
+
+export function calculateHourlyShadePercentage(
+  startDate: Date,
+  latitude: number,
+  longitude: number,
+  sectionAngle: number,
+  hours: number = 3
+): number[] {
+  const percentages: number[] = [];
+
+  for (let i = 0; i < hours; i++) {
+    const currentTime = new Date(startDate.getTime() + i * 60 * 60 * 1000);
+    const sunPos = getSunPosition(currentTime, latitude, longitude);
+
+    if (sunPos.altitude <= 0) {
+      percentages.push(100); // Full shade when sun is down
+    } else {
+      const exposure = calculateSunExposure(currentTime, latitude, longitude, sectionAngle);
+      percentages.push(Math.max(0, 100 - exposure));
+    }
+  }
+
+  return percentages;
+}

@@ -69,6 +69,10 @@ jest.mock('../../../../../../../src/data/stadium-data-aggregator', () => ({
     }
     return [];
   }),
+  hasSpecificData: jest.fn((stadiumId: string) => ({
+    hasSections: stadiumId === 'yankee-stadium',
+    hasObstructions: stadiumId === 'yankee-stadium',
+  })),
 }));
 
 jest.mock('../../../../../../../src/utils/sunCalculations', () => ({
