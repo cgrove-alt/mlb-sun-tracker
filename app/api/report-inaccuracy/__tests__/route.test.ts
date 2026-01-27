@@ -1,9 +1,19 @@
 /**
  * API Route Tests for Report Inaccuracy Endpoint
+ * @jest-environment node
  */
 
 import { NextRequest } from 'next/server';
 import { POST, GET } from '../route';
+
+// Mock fetch for Airtable API calls
+global.fetch = jest.fn(() =>
+  Promise.resolve({
+    ok: true,
+    status: 200,
+    json: async () => ({ id: 'test-id' }),
+  } as Response)
+) as jest.Mock;
 
 // Mock environment variables
 const originalEnv = process.env;
