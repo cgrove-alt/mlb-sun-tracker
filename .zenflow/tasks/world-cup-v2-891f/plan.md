@@ -295,15 +295,19 @@ Add one-click filter presets and improve mobile filter drawer.
 
 ---
 
-### [ ] Step 2.5: Integrate Stadium Diagram into Stadium Detail Page
+### [x] Step 2.5: Integrate Stadium Diagram into Stadium Detail Page
+<!-- chat-id: 90db247e-b416-4780-b4e7-9a5634fc202e -->
 **Duration:** 1 day | **Priority:** P0
+**Status:** ✅ COMPLETE
 
 Add diagram to stadium pages with bidirectional selection sync.
 
 **Verification:**
-- [ ] Diagram integrated on all stadium pages
-- [ ] Bidirectional selection works
-- [ ] Responsive layout
+- [x] ✅ Diagram integrated on all stadium pages
+- [x] ✅ Bidirectional selection works (diagram→list with scroll-to-section)
+- [x] ✅ Responsive layout (mobile: stacked, desktop: max-width constraint)
+
+**Summary:** Integrated StadiumDiagram component into StadiumPageClient with bidirectional selection sync. Clicking diagram sections scrolls to and highlights corresponding section cards. Added responsive wrapper styling, highlight-flash animation (2s pulse), and comprehensive integration tests. Zero TypeScript errors, successful production build (907 kB stadium pages). Created StadiumPageClient.integration.test.tsx with 7 test suites covering rendering, selection sync, responsive layout, shade data conversion, and pull-to-refresh integration.
 
 **Details:** See `implementation-plan.md` Step 2.5
 

@@ -172,6 +172,7 @@ const LazySectionCardModernComponent: React.FC<LazySectionCardProps> = ({
       `}
       data-exposure={roundedExposure}
       data-section={section.id}
+      data-section-id={section.id}
       role="listitem"
       tabIndex={0}
       onClick={handleClick}
