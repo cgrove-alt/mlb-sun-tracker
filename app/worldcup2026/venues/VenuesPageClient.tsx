@@ -10,6 +10,7 @@ import {
 } from '../../../src/data/worldcup2026/venues';
 import { getMatchesByVenue } from '../../../src/data/worldcup2026/matches';
 import { VenueCard } from '../../../src/components/worldcup/VenueCard';
+import { ClimateMessaging } from '../../../src/components/worldcup/ClimateMessaging';
 import { useTranslation } from '../../../src/i18n/i18nContext';
 
 type CountryFilter = 'All' | 'USA' | 'Mexico' | 'Canada';
@@ -149,6 +150,13 @@ export function VenuesPageClient() {
           </div>
         </div>
 
+        {/* Climate Messaging - Show for specific country filter */}
+        {countryFilter !== 'All' && (
+          <div className="mb-8">
+            <ClimateMessaging country={countryFilter} variant="detailed" />
+          </div>
+        )}
+
         {/* Results Count & Compare Button */}
         <div className="mb-6 flex items-center justify-between">
           <p className="text-gray-700">
@@ -181,6 +189,12 @@ export function VenuesPageClient() {
                     </p>
                   </div>
                 </div>
+
+                {/* Climate Messaging for each country */}
+                <div className="mb-6">
+                  <ClimateMessaging country={country} variant="compact" />
+                </div>
+
                 <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
                   {venuesByCountry[country].map(venue => (
                     <VenueCard

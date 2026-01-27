@@ -5,6 +5,7 @@ import Link from 'next/link';
 import { WorldCupVenue } from '../../../../src/data/worldcup2026/types';
 import { getMatchesByVenue } from '../../../../src/data/worldcup2026/matches';
 import { MatchCountdown } from '../../../../src/components/MatchCountdown';
+import { ClimateMessaging } from '../../../../src/components/worldcup/ClimateMessaging';
 import { useTranslation } from '../../../../src/i18n/i18nContext';
 
 interface VenuePageClientProps {
@@ -99,6 +100,11 @@ export function VenuePageClient({ venue }: VenuePageClientProps) {
       </div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+        {/* Climate Messaging */}
+        <div className="mb-8">
+          <ClimateMessaging country={venue.country as 'USA' | 'Mexico' | 'Canada'} variant="detailed" />
+        </div>
+
         {/* Venue Details Grid */}
         <div className="grid md:grid-cols-3 gap-6 mb-8">
           {/* Stadium Info */}

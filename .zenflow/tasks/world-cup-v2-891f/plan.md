@@ -454,17 +454,25 @@ Build tool to compare 2-4 World Cup venues side-by-side.
 
 ---
 
-### [ ] Step 3.5: Country-Specific Features & Branding
+### [x] Step 3.5: Country-Specific Features & Branding
+<!-- chat-id: f86c2212-ea73-4eda-80f0-3cf5f04e0365 -->
 **Duration:** 1 day | **Priority:** P2
+**Status:** ✅ COMPLETE
 
 Add country filters and regional climate messaging.
 
 **Verification:**
-- [ ] Country filters work
-- [ ] Climate messaging displays
-- [ ] Venues grouped by country
+- [x] ✅ Country filters work correctly (USA/Mexico/Canada with venue counts)
+- [x] ✅ Climate messaging displays appropriately (detailed for filtered, compact for grouped)
+- [x] ✅ Venues grouped by country (pre-existing feature verified)
+- [x] ✅ i18n strings extracted (worldcup-strings.ts created)
+- [x] ✅ Comprehensive tests created (55+ test cases)
+- [x] ✅ TypeScript compilation passes
+- [x] ✅ Production build succeeds
 
-**Details:** See `implementation-plan.md` Step 3.5
+**Summary:** Created ClimateMessaging component with country-specific climate warnings and tips for USA (summer heat), Mexico (high altitude), and Canada (mild climate). Integrated into venues listing page (filtered and grouped views) and individual venue pages. Extracted all World Cup strings to i18n constants file to prepare for future Spanish/French translations. Zero TypeScript errors, minimal bundle impact (~3KB Brotli). See `step-3.5-summary.md` for complete report.
+
+**Details:** See `implementation-plan.md` Step 3.5 and `step-3.5-summary.md`
 
 ---
 
