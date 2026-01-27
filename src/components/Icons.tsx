@@ -325,3 +325,38 @@ export const TrophyIcon: React.FC<IconProps> = ({ size = 24, color = 'currentCol
     <path d="M8 9h8" fill={color} opacity="0.2"/>
   </svg>
 );
+
+// Social & Sharing Icons
+export const Share2Icon: React.FC<IconProps> = ({ size = 24, color = 'currentColor', className }) => (
+  <svg width={size} height={size} viewBox="0 0 24 24" fill="none" className={className}>
+    <circle cx="18" cy="5" r="3" stroke={color} strokeWidth="2"/>
+    <circle cx="6" cy="12" r="3" stroke={color} strokeWidth="2"/>
+    <circle cx="18" cy="19" r="3" stroke={color} strokeWidth="2"/>
+    <path d="M8.59 13.51l6.83 3.98M15.41 6.51l-6.82 3.98" stroke={color} strokeWidth="2"/>
+  </svg>
+);
+
+export const TwitterIcon: React.FC<IconProps> = ({ size = 24, color = 'currentColor', className }) => (
+  <svg width={size} height={size} viewBox="0 0 24 24" fill={color} className={className}>
+    <path d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z"/>
+  </svg>
+);
+
+export const FacebookIcon: React.FC<IconProps> = ({ size = 24, color = 'currentColor', className }) => (
+  <svg width={size} height={size} viewBox="0 0 24 24" fill="none" className={className}>
+    <path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z" stroke={color} strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+  </svg>
+);
+
+export const LinkIcon: React.FC<IconProps> = ({ size = 24, color = 'currentColor', className }) => (
+  <svg width={size} height={size} viewBox="0 0 24 24" fill="none" className={className}>
+    <path d="M10 13a5 5 0 007.54.54l3-3a5 5 0 00-7.07-7.07l-1.72 1.71" stroke={color} strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+    <path d="M14 11a5 5 0 00-7.54-.54l-3 3a5 5 0 007.07 7.07l1.71-1.71" stroke={color} strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+  </svg>
+);
+
+export const CheckIcon: React.FC<IconProps> = ({ size = 24, color = 'currentColor', className }) => (
+  <svg width={size} height={size} viewBox="0 0 24 24" fill="none" className={className}>
+    <path d="M20 6L9 17l-5-5" stroke={color} strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+  </svg>
+);
