@@ -18,6 +18,7 @@ import CookieBannerModern from '../components/CookieBannerModern';
 import DataRetentionInitializer from '../components/DataRetentionInitializer';
 import SkipLinks from '../components/SkipLinks';
 import ServiceWorkerRegistration from '../components/ServiceWorkerRegistration';
+import WebVitalsMonitor from '../components/WebVitalsMonitor';
 import { I18nProvider } from '../src/i18n/i18nContext';
 
 const inter = Inter({ 
@@ -183,6 +184,7 @@ export default function RootLayout({
             <GoogleAnalyticsLazy />
           </Suspense>
           <ServiceWorkerRegistration />
+          <WebVitalsMonitor />
           <DataRetentionInitializer />
           <StickyTopNav />
           <main id="main-content" tabIndex={-1}>

@@ -6,7 +6,10 @@ const withBundleAnalyzer = require('@next/bundle-analyzer')({
 const nextConfig = {
   // Enable React strict mode for better debugging
   reactStrictMode: true,
-  
+
+  // Enable compression
+  compress: true,
+
   // Optimize production builds
   compiler: {
     // Remove console logs in production
@@ -74,7 +77,8 @@ const nextConfig = {
   
   // Experimental features for better performance
   experimental: {
-    // Three.js removed from codebase
+    // Optimize package imports to reduce bundle size
+    optimizePackageImports: ['lucide-react', 'date-fns'],
   },
   
   // Output configuration
