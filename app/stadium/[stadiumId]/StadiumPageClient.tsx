@@ -11,6 +11,7 @@ import { StadiumDiagram, SectionShadeData } from '../../../src/components/Stadiu
 import { getStadiumCompleteData } from '../../../src/data/stadium-data-aggregator';
 import { DataFreshness } from '../../../src/components/DataFreshness';
 import { getStadiumLastUpdated } from '../../../src/data/stadium-data-freshness';
+import { ReportInaccuracyButton } from '../../../src/components/ReportInaccuracy/ReportInaccuracyButton';
 
 const ComprehensiveStadiumGuide = dynamic(
   () => import('../../../src/components/ComprehensiveStadiumGuide'),
@@ -45,6 +46,7 @@ export default function StadiumPageClient({
 }: StadiumPageClientProps) {
   const [refreshKey, setRefreshKey] = useState(0);
   const [selectedSectionId, setSelectedSectionId] = useState<string | undefined>(undefined);
+  const [showReportModal, setShowReportModal] = useState(false);
   const sectionListRef = useRef<HTMLDivElement>(null);
 
   // Debug: Log what's being rendered
@@ -171,7 +173,20 @@ export default function StadiumPageClient({
           lastUpdated={getStadiumLastUpdated(stadium.id) || undefined}
           stadiumName={stadium.name}
           showReportLink={true}
+          onReportClick={() => setShowReportModal(true)}
         />
+      </div>
+
+      {/* Report Inaccuracy Button - Floating on mobile, inline on desktop */}
+      <div className="container mx-auto px-4 mt-4 max-w-5xl">
+        <div className="flex justify-end">
+          <ReportInaccuracyButton
+            stadiumId={stadium.id}
+            stadiumName={stadium.name}
+            variant="secondary"
+            size="md"
+          />
+        </div>
       </div>
 
       {/* Stadium Diagram - Interactive shade visualization */}
