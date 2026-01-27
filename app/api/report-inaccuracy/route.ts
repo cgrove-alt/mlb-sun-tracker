@@ -199,6 +199,24 @@ export async function POST(request: NextRequest) {
       // In production, you might want to queue this for retry
     }
 
+    // Track in analytics system
+    try {
+      await fetch(`${request.nextUrl.origin}/api/admin/analytics/user-feedback`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          stadiumId: payload.stadium,
+          stadiumName: payload.stadiumName,
+          section: payload.section,
+          issueType: payload.issueType,
+          description: payload.description,
+        }),
+      });
+    } catch (analyticsError) {
+      console.error('Failed to track in analytics:', analyticsError);
+      // Don't fail the request
+    }
+
     return NextResponse.json(
       {
         success: true,
