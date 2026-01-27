@@ -266,6 +266,18 @@ export const ChevronUpIcon: React.FC<IconProps> = ({ size = 24, color = 'current
   </svg>
 );
 
+export const ChevronLeftIcon: React.FC<IconProps> = ({ size = 24, color = 'currentColor', className }) => (
+  <svg width={size} height={size} viewBox="0 0 24 24" fill="none" className={className}>
+    <path d="M15 18l-6-6 6-6" stroke={color} strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+  </svg>
+);
+
+export const ChevronRightIcon: React.FC<IconProps> = ({ size = 24, color = 'currentColor', className }) => (
+  <svg width={size} height={size} viewBox="0 0 24 24" fill="none" className={className}>
+    <path d="M9 18l6-6-6-6" stroke={color} strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+  </svg>
+);
+
 export const FilterIcon: React.FC<IconProps> = ({ size = 24, color = 'currentColor', className }) => (
   <svg width={size} height={size} viewBox="0 0 24 24" fill="none" className={className}>
     <path d="M22 3H2l8 9.46V19l4 2v-8.54L22 3z" stroke={color} strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
@@ -299,5 +311,17 @@ export const SettingsIcon: React.FC<IconProps> = ({ size = 24, color = 'currentC
   <svg width={size} height={size} viewBox="0 0 24 24" fill="none" className={className}>
     <circle cx="12" cy="12" r="3" stroke={color} strokeWidth="2"/>
     <path d="M12 1v6m0 6v10M5.64 5.64l4.24 4.24m4.24 4.24l4.24 4.24M1 12h6m6 0h10M5.64 18.36l4.24-4.24m4.24-4.24l4.24-4.24" stroke={color} strokeWidth="2" strokeLinecap="round"/>
+  </svg>
+);
+
+export const TrophyIcon: React.FC<IconProps> = ({ size = 24, color = 'currentColor', className }) => (
+  <svg width={size} height={size} viewBox="0 0 24 24" fill="none" className={className}>
+    <path d="M6 9H4a2 2 0 0 0-2 2v1a2 2 0 0 0 2 2h2" stroke={color} strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+    <path d="M18 9h2a2 2 0 0 1 2 2v1a2 2 0 0 1-2 2h-2" stroke={color} strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+    <path d="M6 9V6a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v3" stroke={color} strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+    <path d="M6 9v5a6 6 0 0 0 12 0V9" stroke={color} strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+    <path d="M9 22h6" stroke={color} strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+    <path d="M12 18v4" stroke={color} strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+    <path d="M8 9h8" fill={color} opacity="0.2"/>
   </svg>
 );

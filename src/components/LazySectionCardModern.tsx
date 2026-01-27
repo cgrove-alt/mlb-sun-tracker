@@ -18,6 +18,9 @@ interface LazySectionCardProps {
   stadiumId?: string;
   worldCupMatchCount?: number;
   worldCupCountry?: 'USA' | 'Mexico' | 'Canada';
+  comparisonMode?: boolean;
+  isSelected?: boolean;
+  onToggleSelection?: (sectionId: string) => void;
 }
 
 const LazySectionCardModernComponent: React.FC<LazySectionCardProps> = ({
@@ -30,6 +33,9 @@ const LazySectionCardModernComponent: React.FC<LazySectionCardProps> = ({
   stadiumId,
   worldCupMatchCount,
   worldCupCountry,
+  comparisonMode = false,
+  isSelected = false,
+  onToggleSelection,
 }) => {
   const [intersectionRef, isIntersecting] = useIntersectionObserver({
     threshold: 0.01,
@@ -94,7 +100,12 @@ const LazySectionCardModernComponent: React.FC<LazySectionCardProps> = ({
     return 'from-red-100 to-orange-100 border-red-300';
   };
 
-  const handleClick = () => {
+  const handleClick = (e: React.MouseEvent) => {
+    // Don't handle click if it's on the checkbox
+    if (comparisonMode && onToggleSelection) {
+      return; // Let checkbox handle the event
+    }
+
     if (rowData && rowData.length > 0) {
       // Store scroll position before expansion
       const currentScrollY = window.scrollY;
@@ -120,6 +131,13 @@ const LazySectionCardModernComponent: React.FC<LazySectionCardProps> = ({
       haptic.light();
       const announcement = `Selected section ${section.name}. ${formatPercentageForScreenReader(roundedExposure)}`;
       announceToScreenReader(announcement, 'polite');
+    }
+  };
+
+  const handleCheckboxClick = (e: React.MouseEvent) => {
+    e.stopPropagation();
+    if (onToggleSelection) {
+      onToggleSelection(section.id);
     }
   };
 
@@ -164,6 +182,31 @@ const LazySectionCardModernComponent: React.FC<LazySectionCardProps> = ({
       
       {isLoaded ? (
         <div className="relative p-5 space-y-3">
+          {/* Comparison mode checkbox */}
+          {comparisonMode && onToggleSelection && (
+            <div className="absolute top-3 right-3 z-10">
+              <button
+                onClick={handleCheckboxClick}
+                className={`
+                  w-8 h-8 rounded-md border-2 flex items-center justify-center
+                  transition-all min-w-[44px] min-h-[44px] md:min-w-[32px] md:min-h-[32px]
+                  ${isSelected
+                    ? 'bg-blue-600 border-blue-600'
+                    : 'bg-white border-gray-300 hover:border-blue-400'
+                  }
+                `}
+                aria-label={isSelected ? `Deselect section ${section.name}` : `Select section ${section.name}`}
+                aria-pressed={isSelected}
+              >
+                {isSelected && (
+                  <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                    <path d="M16 6L8 14L4 10" stroke="white" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"/>
+                  </svg>
+                )}
+              </button>
+            </div>
+          )}
+
           {/* Header with section name and sun indicator */}
           <div className="flex items-start justify-between gap-4">
             <div className="flex-1">
@@ -251,7 +294,7 @@ const LazySectionCardModernComponent: React.FC<LazySectionCardProps> = ({
                 className="w-full px-4 py-3 text-sm font-semibold text-accent-700 bg-accent-50 rounded-xl hover:bg-accent-100 active:bg-accent-200 transition-all border-2 border-accent-300 hover:border-accent-400 flex items-center justify-center gap-2 min-h-[44px]"
                 onClick={(e) => {
                   e.stopPropagation();
-                  handleClick();
+                  handleClick(e as any);
                 }}
                 aria-expanded={isExpanded}
                 aria-label={isExpanded ? 'Hide row details' : 'View row details'}
