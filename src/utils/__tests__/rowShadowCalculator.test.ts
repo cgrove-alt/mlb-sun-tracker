@@ -192,7 +192,6 @@ describe('calculateRowShadow', () => {
       const outfieldSection: DetailedSection = {
         ...mockSection,
         level: 'lower',
-        category: 'outfield', // Non-infield section
         baseAngle: 90, // Left field
         height: 20
       };

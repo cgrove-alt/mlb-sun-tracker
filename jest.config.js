@@ -46,6 +46,7 @@ module.exports = {
   ],
   testTimeout: 10000,
   testEnvironmentOptions: {
-    customExportConditions: ['node', 'node-addons']
+    customExportConditions: ['node', 'node-addons'],
+    url: 'http://localhost:3000'
   }
 };

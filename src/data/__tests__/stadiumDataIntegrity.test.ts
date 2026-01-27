@@ -163,7 +163,7 @@ function validateObstruction(obstruction: any, fileName: string): string[] {
 
 describe('Stadium Data Integrity Tests', () => {
   describe('Section Files Validation', () => {
-    const sectionsDir = path.join(__dirname, '../../sections');
+    const sectionsDir = path.join(__dirname, '../sections');
     const sectionFiles = fs.existsSync(sectionsDir) ? findTsFiles(sectionsDir) : [];
     
     test('All section files exist', () => {
@@ -210,7 +210,7 @@ describe('Stadium Data Integrity Tests', () => {
   });
   
   describe('Obstruction Files Validation', () => {
-    const obstructionsDir = path.join(__dirname, '../../obstructions');
+    const obstructionsDir = path.join(__dirname, '../obstructions');
     const obstructionFiles = fs.existsSync(obstructionsDir) ? findTsFiles(obstructionsDir) : [];
     
     test('All obstruction files exist', () => {

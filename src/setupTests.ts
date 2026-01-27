@@ -75,23 +75,6 @@ global.fetch = jest.fn(() =>
   } as Response)
 );
 
-// Mock window.location
-delete (window as any).location;
-(window as any).location = {
-  href: 'http://localhost:3000',
-  hostname: 'localhost',
-  pathname: '/',
-  search: '',
-  hash: '',
-  reload: jest.fn(),
-  replace: jest.fn(),
-  assign: jest.fn(),
-  origin: 'http://localhost:3000',
-  protocol: 'http:',
-  host: 'localhost:3000',
-  port: '3000'
-};
-
 // Mock localStorage
 const localStorageMock = {
   getItem: jest.fn(),

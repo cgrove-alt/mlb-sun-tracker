@@ -108,9 +108,9 @@ describe('World Cup 2026 Venues', () => {
   });
 
   describe('getReadyWorldCupVenues', () => {
-    test('returns 11 venues with section data', () => {
+    test('returns 16 venues with section data', () => {
       const readyVenues = getReadyWorldCupVenues();
-      expect(readyVenues).toHaveLength(11);
+      expect(readyVenues).toHaveLength(16);
     });
 
     test('all ready venues have sections array with data', () => {
@@ -120,11 +120,12 @@ describe('World Cup 2026 Venues', () => {
       });
     });
 
-    test('all ready venues are USA stadiums', () => {
+    test('all ready venues include USA, Mexico, and Canada stadiums', () => {
       const readyVenues = getReadyWorldCupVenues();
-      readyVenues.forEach(venue => {
-        expect(venue.country).toBe('USA');
-      });
+      const countries = readyVenues.map(v => v.country);
+      expect(countries).toContain('USA');
+      expect(countries).toContain('Mexico');
+      expect(countries).toContain('Canada');
     });
   });
 
@@ -154,30 +155,38 @@ describe('World Cup 2026 Venues', () => {
     });
   });
 
-  describe('Mexico/Canada Venue Placeholders', () => {
-    test('Mexico venues have empty sections arrays (Phase 3)', () => {
+  describe('Mexico/Canada Venues - Phase 3 Complete', () => {
+    test('Mexico venues have full section data (100 sections each)', () => {
       WORLD_CUP_MEXICO_VENUES.forEach(venue => {
-        expect(venue.sections).toHaveLength(0);
+        expect(venue.sections).toHaveLength(100);
         expect(venue.basedOnNFLStadium).toBe(false);
+        venue.sections.forEach(section => {
+          expect(section.rows).toBeDefined();
+          expect(section.rows.length).toBeGreaterThan(0);
+        });
       });
     });
 
-    test('Canada venues have empty sections arrays (Phase 3)', () => {
+    test('Canada venues have full section data (100 sections each)', () => {
       WORLD_CUP_CANADA_VENUES.forEach(venue => {
-        expect(venue.sections).toHaveLength(0);
+        expect(venue.sections).toHaveLength(100);
         expect(venue.basedOnNFLStadium).toBe(false);
+        venue.sections.forEach(section => {
+          expect(section.rows).toBeDefined();
+          expect(section.rows.length).toBeGreaterThan(0);
+        });
       });
     });
   });
 
   describe('WORLD_CUP_VENUE_STATS', () => {
-    test('statistics match actual data', () => {
+    test('statistics match actual data (Phase 3 complete)', () => {
       expect(WORLD_CUP_VENUE_STATS.total).toBe(16);
       expect(WORLD_CUP_VENUE_STATS.usa).toBe(11);
       expect(WORLD_CUP_VENUE_STATS.mexico).toBe(3);
       expect(WORLD_CUP_VENUE_STATS.canada).toBe(2);
-      expect(WORLD_CUP_VENUE_STATS.withRowData).toBe(11);
-      expect(WORLD_CUP_VENUE_STATS.needingData).toBe(5);
+      expect(WORLD_CUP_VENUE_STATS.withRowData).toBe(16);
+      expect(WORLD_CUP_VENUE_STATS.needingData).toBe(0);
     });
 
     test('total capacity is positive number', () => {
