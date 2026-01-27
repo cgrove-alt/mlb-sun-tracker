@@ -38,7 +38,7 @@ export default function HomePage() {
               Find Your Shade
             </h1>
             <p className="hero-subheadline max-w-prose">
-              Avoid the sun and enjoy the game in comfort at any MLB, NFL, or MiLB stadium
+              Avoid the sun and enjoy the game in comfort at any MLB, NFL, MiLB, or World Cup 2026 stadium
             </p>
             <button 
               onClick={handleCTAClick}
@@ -46,6 +46,44 @@ export default function HomePage() {
             >
               Select Your Stadium
             </button>
+          </div>
+        </section>
+
+        {/* World Cup 2026 Feature Section */}
+        <section className="worldcup-feature-section">
+          <div className="worldcup-container">
+            <div className="worldcup-badge">
+              <span className="worldcup-badge-icon">⚽</span>
+              <span className="worldcup-badge-text">FIFA World Cup 2026</span>
+            </div>
+            <h2 className="worldcup-headline">
+              Find the Best Shaded Seats at All 16 World Cup Venues
+            </h2>
+            <p className="worldcup-description">
+              USA • Mexico • Canada | 48 Matches | 16 Stadiums | Row-Level Shade Analysis
+            </p>
+            <div className="worldcup-cta-group">
+              <Link href="/worldcup2026" className="worldcup-cta-primary">
+                Explore World Cup Venues
+              </Link>
+              <Link href="/worldcup2026/schedule" className="worldcup-cta-secondary">
+                View Match Schedule
+              </Link>
+            </div>
+            <div className="worldcup-highlights">
+              <div className="highlight-card">
+                <div className="highlight-number">16</div>
+                <div className="highlight-label">Stadiums</div>
+              </div>
+              <div className="highlight-card">
+                <div className="highlight-number">48</div>
+                <div className="highlight-label">Matches</div>
+              </div>
+              <div className="highlight-card">
+                <div className="highlight-number">3</div>
+                <div className="highlight-label">Countries</div>
+              </div>
+            </div>
           </div>
         </section>
 
@@ -280,6 +318,208 @@ export default function HomePage() {
           #app-section { transition: none; }
           .hero-section { animation: none; }
           .hero-section::after { animation: none; }
+        }
+
+        /* World Cup Feature Section */
+        .worldcup-feature-section {
+          background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 50%, #ec4899 100%);
+          padding: 4rem 2rem;
+          position: relative;
+          overflow: hidden;
+        }
+
+        .worldcup-feature-section::before {
+          content: '';
+          position: absolute;
+          top: 0;
+          left: 0;
+          right: 0;
+          bottom: 0;
+          background: linear-gradient(to bottom, rgba(0, 0, 0, 0.05) 0%, rgba(0, 0, 0, 0.1) 100%);
+          z-index: 1;
+        }
+
+        .worldcup-container {
+          position: relative;
+          z-index: 2;
+          max-width: 1200px;
+          margin: 0 auto;
+          text-align: center;
+          color: white;
+        }
+
+        .worldcup-badge {
+          display: inline-flex;
+          align-items: center;
+          gap: 0.5rem;
+          background: rgba(255, 255, 255, 0.2);
+          backdrop-filter: blur(8px);
+          padding: 0.5rem 1.25rem;
+          border-radius: 9999px;
+          margin-bottom: 1.5rem;
+          border: 1px solid rgba(255, 255, 255, 0.3);
+          animation: fadeInUp 0.6s ease-out;
+        }
+
+        .worldcup-badge-icon {
+          font-size: 1.25rem;
+        }
+
+        .worldcup-badge-text {
+          font-weight: 600;
+          font-size: 0.875rem;
+          text-transform: uppercase;
+          letter-spacing: 0.05em;
+        }
+
+        .worldcup-headline {
+          font-size: clamp(1.75rem, 4vw, 3rem);
+          font-weight: 700;
+          margin-bottom: 1rem;
+          line-height: 1.2;
+          max-width: 800px;
+          margin-left: auto;
+          margin-right: auto;
+          animation: fadeInUp 0.7s ease-out;
+        }
+
+        .worldcup-description {
+          font-size: clamp(1rem, 2vw, 1.25rem);
+          margin-bottom: 2rem;
+          opacity: 0.95;
+          font-weight: 400;
+          animation: fadeInUp 0.8s ease-out;
+        }
+
+        .worldcup-cta-group {
+          display: flex;
+          gap: 1rem;
+          justify-content: center;
+          flex-wrap: wrap;
+          margin-bottom: 3rem;
+          animation: fadeInUp 0.9s ease-out;
+        }
+
+        .worldcup-cta-primary,
+        .worldcup-cta-secondary {
+          padding: 0.875rem 2rem;
+          border-radius: 12px;
+          font-weight: 600;
+          font-size: 1rem;
+          text-decoration: none;
+          transition: all 0.2s ease;
+          display: inline-block;
+        }
+
+        .worldcup-cta-primary {
+          background: white;
+          color: #6366f1;
+          box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        }
+
+        .worldcup-cta-primary:hover {
+          transform: translateY(-2px);
+          box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.2);
+        }
+
+        .worldcup-cta-secondary {
+          background: rgba(255, 255, 255, 0.15);
+          color: white;
+          border: 1px solid rgba(255, 255, 255, 0.3);
+          backdrop-filter: blur(8px);
+        }
+
+        .worldcup-cta-secondary:hover {
+          background: rgba(255, 255, 255, 0.25);
+          transform: translateY(-2px);
+        }
+
+        .worldcup-highlights {
+          display: grid;
+          grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+          gap: 1.5rem;
+          max-width: 600px;
+          margin: 0 auto;
+          animation: fadeInUp 1s ease-out;
+        }
+
+        .highlight-card {
+          background: rgba(255, 255, 255, 0.1);
+          backdrop-filter: blur(8px);
+          border: 1px solid rgba(255, 255, 255, 0.2);
+          border-radius: 16px;
+          padding: 1.5rem 1rem;
+          transition: all 0.2s ease;
+        }
+
+        .highlight-card:hover {
+          background: rgba(255, 255, 255, 0.15);
+          transform: translateY(-4px);
+        }
+
+        .highlight-number {
+          font-size: 2.5rem;
+          font-weight: 700;
+          line-height: 1;
+          margin-bottom: 0.5rem;
+        }
+
+        .highlight-label {
+          font-size: 0.875rem;
+          text-transform: uppercase;
+          letter-spacing: 0.05em;
+          opacity: 0.9;
+          font-weight: 500;
+        }
+
+        @media (max-width: 768px) {
+          .worldcup-feature-section {
+            padding: 3rem 1.5rem;
+          }
+
+          .worldcup-cta-group {
+            flex-direction: column;
+            align-items: stretch;
+          }
+
+          .worldcup-cta-primary,
+          .worldcup-cta-secondary {
+            width: 100%;
+            text-align: center;
+          }
+
+          .worldcup-highlights {
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1rem;
+          }
+
+          .highlight-card {
+            padding: 1rem 0.5rem;
+          }
+
+          .highlight-number {
+            font-size: 2rem;
+          }
+
+          .highlight-label {
+            font-size: 0.75rem;
+          }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+          .worldcup-badge,
+          .worldcup-headline,
+          .worldcup-description,
+          .worldcup-cta-group,
+          .worldcup-highlights {
+            animation: none;
+          }
+
+          .worldcup-cta-primary,
+          .worldcup-cta-secondary,
+          .highlight-card {
+            transition: none;
+          }
         }
       `}</style>
     </>
