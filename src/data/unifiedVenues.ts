@@ -4,7 +4,7 @@
 export interface UnifiedVenue {
   id: string;
   name: string;
-  league: 'MLB' | 'NFL' | 'MiLB';
+  league: 'MLB' | 'NFL' | 'MiLB' | 'WorldCup';
   team: string;
   alternateTeams?: string[];
   city: string;
@@ -31,13 +31,14 @@ export interface UnifiedVenue {
     endZone1Angle: number;
     endZone2Angle: number;
   };
-  venueType: 'baseball' | 'football';
+  venueType: 'baseball' | 'football' | 'soccer';
   surface?: string;
   opened?: number;
   address?: string;
   features?: string[];
   level?: string; // For MiLB
-  sport?: 'baseball' | 'football';
+  sport?: 'baseball' | 'football' | 'soccer';
+  country?: string; // For World Cup
 }
 
 export const ALL_UNIFIED_VENUES: UnifiedVenue[] = [
@@ -6462,7 +6463,7 @@ export function convertToLegacyStadium(venue: UnifiedVenue): any {
 }
 
 // League-related exports
-export const ALL_LEAGUES = ['MLB', 'NFL', 'MiLB'] as const;
+export const ALL_LEAGUES = ['MLB', 'NFL', 'MiLB', 'WorldCup'] as const;
 
 export function getAllLeagues() {
   return ALL_LEAGUES;
@@ -6470,23 +6471,29 @@ export function getAllLeagues() {
 
 export function getLeagueInfo(league: string) {
   const leagueInfo: Record<string, any> = {
-    MLB: { 
-      name: 'Major League Baseball', 
+    MLB: {
+      name: 'Major League Baseball',
       sport: 'baseball',
       season: { start: 'April', end: 'October' },
       typicalGameTimes: ['12:00', '13:00', '19:00']
     },
-    NFL: { 
-      name: 'National Football League', 
+    NFL: {
+      name: 'National Football League',
       sport: 'football',
       season: { start: 'September', end: 'February' },
       typicalGameTimes: ['13:00', '16:00', '20:00']
     },
-    MiLB: { 
-      name: 'Minor League Baseball', 
+    MiLB: {
+      name: 'Minor League Baseball',
       sport: 'baseball',
       season: { start: 'April', end: 'September' },
       typicalGameTimes: ['12:00', '18:00', '19:00']
+    },
+    WorldCup: {
+      name: 'FIFA World Cup 2026',
+      sport: 'soccer',
+      season: { start: 'June 2026', end: 'July 2026' },
+      typicalGameTimes: ['12:00', '15:00', '18:00', '20:00']
     }
   };
   return leagueInfo[league] || null;
@@ -6511,3 +6518,9 @@ export function isMiLBVenue(venue: UnifiedVenue): boolean {
 export function getVenueSport(venue: UnifiedVenue): string {
   return venue.venueType || 'baseball'; // Default to baseball if not specified
 }
+
+// Add World Cup venues to unified system
+import { WORLD_CUP_UNIFIED_VENUES } from './worldCupVenuesUnified';
+
+// Append World Cup venues to all venues
+ALL_UNIFIED_VENUES.push(...WORLD_CUP_UNIFIED_VENUES);

@@ -26,6 +26,7 @@ import { getVenueSections } from './data/venueSections';
 import { MLBGame, mlbApi } from './services/mlbApi';
 import { NFLGame } from './services/nflApi';
 import { MiLBGame } from './services/milbApi';
+import { WorldCupGame } from './services/worldCupApi';
 import { generateBaseballSections } from './utils/generateBaseballSections';
 import { WeatherForecast, weatherApi } from './services/weatherApi';
 import { formatDateTimeWithTimezone } from './utils/timeUtils';
@@ -38,9 +39,9 @@ import { getUnifiedVenueShade, ShadedVenueSection } from './utils/getUnifiedVenu
 function UnifiedAppContent() {
   const { t } = useTranslation();
   const [selectedVenue, setSelectedVenue] = useState<UnifiedVenue | null>(null);
-  const [selectedGame, setSelectedGame] = useState<MLBGame | MiLBGame | NFLGame | null>(null);
+  const [selectedGame, setSelectedGame] = useState<MLBGame | MiLBGame | NFLGame | WorldCupGame | null>(null);
   const [gameDateTime, setGameDateTime] = useState<Date | null>(null);
-  const [stadiumGames, setStadiumGames] = useState<(MLBGame | MiLBGame | NFLGame)[]>([]);
+  const [stadiumGames, setStadiumGames] = useState<(MLBGame | MiLBGame | NFLGame | WorldCupGame)[]>([]);
   const [sunPosition, setSunPosition] = useState<any>(null);
   const [weatherForecast, setWeatherForecast] = useState<WeatherForecast | null>(null);
   const [loadingWeather, setLoadingWeather] = useState(false);
@@ -137,12 +138,21 @@ function UnifiedAppContent() {
   };
 
   // Handle game/time selection
-  const handleGameSelect = (game: MLBGame | MiLBGame | NFLGame | null, dateTime: Date | null) => {
+  const handleGameSelect = (game: MLBGame | MiLBGame | NFLGame | WorldCupGame | null, dateTime: Date | null) => {
     setSelectedGame(game);
     setGameDateTime(dateTime);
-    
+
     if (game && selectedVenue) {
-      trackGameSelection(selectedVenue.name, new Date(game.gameDate).toISOString());
+      let gameDate: Date;
+      if ('gameDate' in game) {
+        gameDate = new Date(game.gameDate);
+      } else if ('date' in game && 'time' in game) {
+        const wcGame = game as WorldCupGame;
+        gameDate = new Date(`${wcGame.date}T${wcGame.time}`);
+      } else {
+        gameDate = new Date();
+      }
+      trackGameSelection(selectedVenue.name, gameDate.toISOString());
     }
   };
 
