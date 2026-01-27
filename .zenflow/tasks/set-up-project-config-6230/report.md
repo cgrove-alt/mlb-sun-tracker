@@ -72,3 +72,35 @@ Test in a fresh worktree:
 4. Start `npm run dev` and check http://localhost:3000
 
 If verification_script fails due to test issues, adjust configuration.
+
+---
+
+## Issue Resolution: npm ci Failure
+
+### Problem
+GitHub workflow failed with `npm ci` error:
+```
+npm error `npm ci` can only install packages when your package.json and package-lock.json are in sync
+npm error Missing: @testing-library/dom@10.4.1 from lock file
+npm error Invalid: lock file's browserslist@4.25.3 does not satisfy browserslist@4.28.1
+```
+
+### Root Cause
+**package-lock.json was out of sync with package.json**. The lock file was missing transitive dependencies from `@testing-library/react` (16.3.2) and `webpack` (5.104.1), and had version mismatches for several packages including:
+- `browserslist`: 4.25.3 → 4.28.1
+- `caniuse-lite`: 1.0.30001737 → 1.0.30001766
+- `electron-to-chromium`: 1.5.209 → 1.5.279
+- `terser-webpack-plugin`: 5.3.14 → 5.3.16
+
+This typically occurs when package.json dependencies are updated without regenerating the lock file via `npm install`.
+
+### Fix Applied
+1. Ran `npm install` to regenerate package-lock.json with proper dependency resolution
+2. Verified fix by running `npm ci` successfully in clean environment
+3. Committed synchronized lock file (commit: 7b3906337)
+
+### Verification
+✓ `npm ci` now completes successfully
+✓ All 1084 packages install correctly
+✓ Lock file contains all required transitive dependencies
+✓ Version conflicts resolved
