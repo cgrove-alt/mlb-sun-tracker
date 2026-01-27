@@ -149,11 +149,19 @@ export function VenuesPageClient() {
           </div>
         </div>
 
-        {/* Results Count */}
-        <div className="mb-6">
+        {/* Results Count & Compare Button */}
+        <div className="mb-6 flex items-center justify-between">
           <p className="text-gray-700">
             Showing <span className="font-bold text-purple-600">{filteredVenues.length}</span> venue{filteredVenues.length !== 1 ? 's' : ''}
           </p>
+          <Link
+            href="/worldcup2026/compare"
+            className="inline-flex items-center gap-2 px-5 py-3 bg-purple-600 hover:bg-purple-700 text-white font-semibold rounded-lg transition-colors shadow-md"
+          >
+            <span>⚖️</span>
+            Compare Venues
+            <span>→</span>
+          </Link>
         </div>
 
         {/* Venues Grid - Grouped by Country */}

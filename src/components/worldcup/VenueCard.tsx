@@ -7,9 +7,12 @@ import { WorldCupVenue } from '../../data/worldcup2026/types';
 interface VenueCardProps {
   venue: WorldCupVenue;
   matchCount?: number;
+  isCompareMode?: boolean;
+  isSelected?: boolean;
+  onToggleSelect?: (venueId: string) => void;
 }
 
-export function VenueCard({ venue, matchCount }: VenueCardProps) {
+export function VenueCard({ venue, matchCount, isCompareMode = false, isSelected = false, onToggleSelect }: VenueCardProps) {
   const getCountryFlag = (country: string) => {
     const flags = {
       'USA': '🇺🇸',
@@ -31,11 +34,34 @@ export function VenueCard({ venue, matchCount }: VenueCardProps) {
     return 'Open Air';
   };
 
-  return (
-    <Link
-      href={`/worldcup2026/venues/${venue.id}`}
-      className="block bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden group border border-gray-200 hover:border-purple-400"
-    >
+  const handleCheckboxClick = (e: React.MouseEvent) => {
+    if (isCompareMode && onToggleSelect) {
+      e.preventDefault();
+      e.stopPropagation();
+      onToggleSelect(venue.id);
+    }
+  };
+
+  const cardContent = (
+    <>
+      {/* Comparison Checkbox */}
+      {isCompareMode && (
+        <div className="absolute top-4 right-4 z-10">
+          <label
+            className="flex items-center justify-center w-10 h-10 bg-white rounded-lg shadow-lg cursor-pointer hover:bg-purple-50 transition-colors"
+            onClick={handleCheckboxClick}
+          >
+            <input
+              type="checkbox"
+              checked={isSelected}
+              onChange={() => {}}
+              className="w-5 h-5 text-purple-600 border-gray-300 rounded focus:ring-purple-500 cursor-pointer"
+              aria-label={`Select ${venue.commonName} for comparison`}
+            />
+          </label>
+        </div>
+      )}
+
       {/* Header with Country Flag */}
       <div className="bg-gradient-to-r from-purple-600 to-blue-600 px-6 py-4">
         <div className="flex items-start justify-between">
@@ -101,11 +127,40 @@ export function VenueCard({ venue, matchCount }: VenueCardProps) {
 
         {/* CTA */}
         <div className="flex gap-2">
-          <div className="flex-1 bg-purple-600 text-white rounded-lg px-4 py-3 text-center font-semibold group-hover:bg-purple-700 transition-colors">
-            View Details →
-          </div>
+          {!isCompareMode && (
+            <div className="flex-1 bg-purple-600 text-white rounded-lg px-4 py-3 text-center font-semibold group-hover:bg-purple-700 transition-colors">
+              View Details →
+            </div>
+          )}
+          {isCompareMode && (
+            <div className="flex-1 bg-purple-100 text-purple-700 rounded-lg px-4 py-3 text-center font-semibold">
+              {isSelected ? '✓ Selected for Comparison' : 'Click to Select'}
+            </div>
+          )}
         </div>
       </div>
+    </>
+  );
+
+  if (isCompareMode) {
+    return (
+      <div
+        onClick={handleCheckboxClick}
+        className={`block bg-white rounded-xl shadow-lg transition-all duration-300 overflow-hidden cursor-pointer border-2 ${
+          isSelected ? 'border-purple-600 shadow-purple-200' : 'border-gray-200 hover:border-purple-400'
+        }`}
+      >
+        {cardContent}
+      </div>
+    );
+  }
+
+  return (
+    <Link
+      href={`/worldcup2026/venues/${venue.id}`}
+      className="block bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden group border border-gray-200 hover:border-purple-400"
+    >
+      {cardContent}
     </Link>
   );
 }
