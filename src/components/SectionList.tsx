@@ -42,10 +42,26 @@ export const SectionList: React.FC<SectionListProps> = ({
   });
   const [searchTerm, setSearchTerm] = useState<string>('');
   const [debouncedSearchTerm, setDebouncedSearchTerm] = useState<string>('');
-  const [filters, setFilters] = useState<SectionFilterValues>({
-    maxSunExposure: undefined,
-    sectionType: [],
-    priceRange: []
+  const [filters, setFilters] = useState<SectionFilterValues>(() => {
+    // Initialize filters from URL params
+    if (typeof window === 'undefined') {
+      return {
+        maxSunExposure: undefined,
+        sectionType: [],
+        priceRange: []
+      };
+    }
+
+    const params = new URLSearchParams(window.location.search);
+    const maxSunParam = params.get('maxSun');
+    const sectionTypeParam = params.get('sectionType');
+    const priceRangeParam = params.get('priceRange');
+
+    return {
+      maxSunExposure: maxSunParam ? parseInt(maxSunParam) : undefined,
+      sectionType: sectionTypeParam ? sectionTypeParam.split(',').filter(Boolean) : [],
+      priceRange: priceRangeParam ? priceRangeParam.split(',').filter(Boolean) : []
+    };
   });
   const [filtersExpanded, setFiltersExpanded] = useState(true);
   const [showRowLevel, setShowRowLevel] = useState(false);
@@ -90,6 +106,45 @@ export const SectionList: React.FC<SectionListProps> = ({
 
     window.history.replaceState({}, '', newUrl);
   }, [selectedSections, comparisonMode]);
+
+  // Update URL when filters change
+  useEffect(() => {
+    if (typeof window === 'undefined') return;
+
+    const params = new URLSearchParams(window.location.search);
+
+    // Preserve comparison params
+    const compareParam = params.get('compare');
+
+    // Clear all filter params first
+    params.delete('maxSun');
+    params.delete('sectionType');
+    params.delete('priceRange');
+
+    // Add filter params if they have values
+    if (filters.maxSunExposure !== undefined && filters.maxSunExposure !== 100) {
+      params.set('maxSun', filters.maxSunExposure.toString());
+    }
+
+    if (filters.sectionType.length > 0) {
+      params.set('sectionType', filters.sectionType.join(','));
+    }
+
+    if (filters.priceRange.length > 0) {
+      params.set('priceRange', filters.priceRange.join(','));
+    }
+
+    // Restore comparison params
+    if (compareParam && comparisonMode) {
+      params.set('compare', compareParam);
+    }
+
+    const newUrl = params.toString()
+      ? `${window.location.pathname}?${params.toString()}`
+      : window.location.pathname;
+
+    window.history.replaceState({}, '', newUrl);
+  }, [filters, comparisonMode]);
 
   // Helper to find row data for a section
   const getRowDataForSection = useCallback((sectionId: string) => {

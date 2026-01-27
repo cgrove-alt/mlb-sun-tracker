@@ -103,7 +103,7 @@ body.mobile-filter-open {
   background: rgba(0, 0, 0, 0.5);
   backdrop-filter: blur(4px);
   -webkit-backdrop-filter: blur(4px);
-  animation: fadeIn var(--transition-fast);
+  animation: fadeIn 0.3s cubic-bezier(0.16, 1, 0.3, 1);
   z-index: 9998; /* Just below the sheet container */
   pointer-events: auto; /* Capture clicks to close */
   touch-action: none; /* Prevent scroll through overlay */
@@ -112,8 +112,16 @@ body.mobile-filter-open {
 }
 
 @keyframes fadeIn {
-  from { opacity: 0; }
-  to { opacity: 1; }
+  from {
+    opacity: 0;
+    backdrop-filter: blur(0px);
+    -webkit-backdrop-filter: blur(0px);
+  }
+  to {
+    opacity: 1;
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+  }
 }
 
 @keyframes pulse {
@@ -137,7 +145,7 @@ body.mobile-filter-open {
   border-radius: 24px 24px 0 0;
   display: flex;
   flex-direction: column;
-  animation: slideUp 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  animation: slideUp 0.35s cubic-bezier(0.16, 1, 0.3, 1);
   box-shadow: 0 -2px 16px rgba(0, 0, 0, 0.12);
   z-index: 10000;
   pointer-events: auto; /* Enable interaction */
@@ -150,9 +158,22 @@ body.mobile-filter-open {
 @keyframes slideUp {
   from {
     transform: translateY(100%);
+    opacity: 0;
   }
   to {
     transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideDown {
+  from {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  to {
+    transform: translateY(100%);
+    opacity: 0;
   }
 }
 
