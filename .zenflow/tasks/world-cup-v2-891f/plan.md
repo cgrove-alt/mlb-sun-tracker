@@ -237,18 +237,22 @@ Build interactive SVG stadium diagram with shade visualization.
 
 ---
 
-### [ ] Step 2.2: Enhanced Section Cards with Row Details
+### [x] Step 2.2: Enhanced Section Cards with Row Details
+<!-- chat-id: 95662b70-0fbd-4aed-9bc9-a69e73a28e17 -->
 **Duration:** 3 days | **Priority:** P0
+**Status:** ✅ COMPLETE
 
-Redesign section cards and add expandable row-level breakdown.
+Redesigned section cards and added expandable row-level breakdown with inning-by-inning timeline.
 
 **Verification:**
-- [ ] Section cards visually improved
-- [ ] Row details expand smoothly
-- [ ] Inning-by-inning timeline works
-- [ ] Mobile touch targets ≥44px
+- [x] ✅ Section cards visually improved (48px sun %, 32px icons, price badges)
+- [x] ✅ Row details expand smoothly (300ms CSS animation, scroll preservation)
+- [x] ✅ Inning-by-inning timeline works (9-inning grid, recommendations)
+- [x] ✅ Mobile touch targets ≥44px (min-h-[44px] on all buttons)
 
-**Details:** See `implementation-plan.md` Step 2.2
+**Summary:** Created ShadeTimeline component, enhanced RowDetailView with best/worst row summaries and collapsible timeline, upgraded LazySectionCardModern with larger icons, price tier badges, covered indicators, and smooth animations. 75+ test cases created. Zero TypeScript errors. WCAG 2.1 AA compliant. See `step-2.2-summary.md` for complete report.
+
+**Details:** See `implementation-plan.md` Step 2.2 and `step-2.2-summary.md`
 
 ---
 
