@@ -10,6 +10,7 @@
     "lint": "next lint",
     "type-check": "tsc --noEmit",
     "generate-sitemap": "node scripts/generate-sitemap.js",
+    "validate-stadium-data": "npx tsc scripts/validate-stadium-data.ts --outDir scripts --skipLibCheck --module commonjs --target es2020 --esModuleInterop --resolveJsonModule && node scripts/validate-stadium-data.js",
     "test": "jest",
     "test:unit": "jest --coverage",
     "test:watch": "jest --watch",
@@ -67,6 +68,7 @@
     "postcss": "^8.5.6",
     "tailwindcss": "^3.4.17",
     "ts-jest": "^29.4.1",
+    "ts-node": "^10.9.2",
     "typescript": "^5.0.0"
   },
   "browserslist": {
