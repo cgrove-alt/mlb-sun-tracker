@@ -29,3 +29,7 @@ yarn-error.log*
 .next/
 out/
 next-env.d.ts
+
+# TypeScript
+tsconfig.tsbuildinfo
+*.tsbuildinfo
