@@ -79,7 +79,8 @@ Create validation tooling and CI/CD infrastructure for stadium data quality.
 
 ---
 
-### [ ] Step 1.2: MLB Stadium Data Research & Collection Plan
+### [x] Step 1.2: MLB Stadium Data Research & Collection Plan
+<!-- chat-id: 7d1495dc-1bc2-4599-abd1-e78909187f73 -->
 **Duration:** 2 days | **Priority:** P0
 
 Document data sources and create collection methodology for 30 MLB stadiums.
@@ -91,10 +92,10 @@ Document data sources and create collection methodology for 30 MLB stadiums.
 - Create data collection template
 
 **Verification:**
-- [ ] Data source list compiled
-- [ ] Stadium priority tiers defined
-- [ ] Methodology documented
-- [ ] Collection template created
+- [x] Data source list compiled
+- [x] Stadium priority tiers defined
+- [x] Methodology documented
+- [x] Collection template created
 
 **Details:** See `implementation-plan.md` Step 1.2
 
