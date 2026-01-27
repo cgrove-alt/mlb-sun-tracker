@@ -174,6 +174,12 @@ export default function RootLayout({
         <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
         <link rel="dns-prefetch" href="https://api.open-meteo.com" />
         <link rel="dns-prefetch" href="https://statsapi.mlb.com" />
+
+        {/* Preload critical CSS - inline first paint CSS */}
+        <style dangerouslySetInnerHTML={{ __html: `
+          body { margin: 0; font-family: system-ui, -apple-system, sans-serif; }
+          .page-transition { min-height: 100vh; }
+        ` }} />
         <WebApplicationSchema />
       </head>
       <body className={inter.className}>

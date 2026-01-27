@@ -26,21 +26,25 @@ const nextConfig = {
         ...config.optimization,
         splitChunks: {
           chunks: 'all',
+          maxInitialRequests: 25,
+          maxAsyncRequests: 25,
+          minSize: 20000,
           cacheGroups: {
             default: false,
             vendors: false,
-            // Split vendor code
+            // Split vendor code more aggressively
             vendor: {
               name: 'vendor',
               chunks: 'all',
               test: /node_modules/,
               priority: 20,
+              maxSize: 300000, // Split vendor chunks larger than 300KB
             },
-            // Split large data files
+            // Split large data files - only load when needed
             data: {
               name: 'data',
               test: /[\\/]src[\\/]data[\\/]/,
-              chunks: 'all',
+              chunks: 'async', // Changed from 'all' to 'async' - only load when needed
               priority: 25,
               enforce: true,
             },
@@ -52,6 +56,14 @@ const nextConfig = {
               priority: 10,
               reuseExistingChunk: true,
               enforce: true,
+              maxSize: 200000, // Split common chunks larger than 200KB
+            },
+            // React/Next.js framework chunks
+            react: {
+              test: /[\\/]node_modules[\\/](react|react-dom|scheduler)[\\/]/,
+              name: 'react',
+              chunks: 'all',
+              priority: 30,
             },
           },
         },
@@ -90,7 +102,7 @@ const nextConfig = {
     pagesBufferLength: 2,
   },
   
-  // Headers for caching
+  // Headers for caching and performance
   async headers() {
     return [
       {
@@ -108,6 +120,23 @@ const nextConfig = {
           {
             key: 'Cache-Control',
             value: 'public, s-maxage=10, stale-while-revalidate=59',
+          },
+        ],
+      },
+      {
+        source: '/:path*',
+        headers: [
+          {
+            key: 'X-DNS-Prefetch-Control',
+            value: 'on',
+          },
+          {
+            key: 'X-Frame-Options',
+            value: 'SAMEORIGIN',
+          },
+          {
+            key: 'X-Content-Type-Options',
+            value: 'nosniff',
           },
         ],
       },
