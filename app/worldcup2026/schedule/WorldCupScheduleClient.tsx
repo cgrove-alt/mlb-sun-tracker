@@ -260,7 +260,7 @@ export function WorldCupScheduleClient() {
                         <div className="flex flex-col gap-2">
                           {venue && (
                             <Link
-                              href={`/stadium/${venue.id}`}
+                              href={venue.nflStadiumId ? `/venue/${venue.nflStadiumId}` : `/venue/${venue.id}`}
                               className="px-4 py-2 bg-purple-600 text-white text-center rounded-lg hover:bg-purple-700 transition-colors font-medium"
                             >
                               {t('worldcup.subtitle')}

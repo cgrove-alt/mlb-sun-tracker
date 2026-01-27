@@ -297,7 +297,7 @@ export function WorldCupLandingClient() {
 
                     {/* CTA Button */}
                     <Link
-                      href={`/stadium/${venue.id}`}
+                      href={venue.nflStadiumId ? `/venue/${venue.nflStadiumId}` : `/venue/${venue.id}`}
                       className="block w-full px-4 py-2 bg-purple-600 text-white text-center rounded-lg hover:bg-purple-700 transition-colors font-medium"
                     >
                       {t('worldcup.subtitle')}
