@@ -212,6 +212,7 @@ Create side-by-side layout with bidirectional selection sync.
 ---
 
 ### [x] Step: Phase 5 - Navigation & Entry Point
+<!-- chat-id: 922867db-5ebf-4b7b-be8f-5b3de79536ad -->
 
 Create the stadium/game selector bar and fix entry point.
 
