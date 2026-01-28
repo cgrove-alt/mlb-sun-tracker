@@ -192,6 +192,7 @@ export const DesktopShadeApp = forwardRef<DesktopShadeAppRef, DesktopShadeAppPro
   }, [hasDetailedSections, stadiumCompleteData?.sections, sections]);
 
   // Use Web Worker for sun calculations
+  // Only include row calculations when we have detailed sections with actual row arrays
   const {
     data: sectionsWithSunData,
     rowData,
@@ -201,7 +202,7 @@ export const DesktopShadeApp = forwardRef<DesktopShadeAppRef, DesktopShadeAppPro
     sunPosition: sunPosition || defaultSunPosition,
     sections: sectionsForCalc,
     enabled: !!selectedVenue && !!sunPosition && sectionsForCalc.length > 0,
-    includeRows: true,
+    includeRows: hasDetailedSections, // Only request row data when detailed sections exist
   });
 
   // Convert sun calculations to shade data for diagram
@@ -442,7 +443,7 @@ export const DesktopShadeApp = forwardRef<DesktopShadeAppRef, DesktopShadeAppPro
                 <div className={styles.panelPlaceholder}>
                   <LoadingSpinner message="Loading stadium diagram..." />
                 </div>
-              ) : stadiumCompleteData && stadiumCompleteData.sections.length > 0 ? (
+              ) : hasDetailedSections && stadiumCompleteData && stadiumCompleteData.sections.length > 0 ? (
                 <StadiumDiagram
                   sections={stadiumCompleteData.sections}
                   shadeData={shadeData}
@@ -453,7 +454,7 @@ export const DesktopShadeApp = forwardRef<DesktopShadeAppRef, DesktopShadeAppPro
                 <div className={styles.panelPlaceholder}>
                   <span className={styles.placeholderLabel}>Stadium Diagram</span>
                   <span className={styles.placeholderSubtext}>
-                    No diagram available for this venue
+                    {selectedVenue ? 'Diagram not available for this venue' : 'No diagram available for this venue'}
                   </span>
                 </div>
               )}
