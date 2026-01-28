@@ -6,8 +6,16 @@ import { HorizontalFilterPills, FilterValues } from '../HorizontalFilterPills';
 import { MainContentLayout } from '../MainContentLayout';
 import { StadiumGameBar } from '../StadiumGameBar';
 import { SkeletonLoader } from '../SkeletonLoader';
+import { StadiumDiagram, SectionShadeData } from '../StadiumDiagram/StadiumDiagram';
+import { SectionList } from '../SectionList';
+import { LoadingSpinner } from '../LoadingSpinner';
 import { LeagueId, DesktopShadeAppProps, DesktopShadeAppRef, LEAGUE_TABS } from '../../types/desktop-app';
 import { UnifiedVenue, getVenuesByLeague } from '../../data/unifiedVenues';
+import { getStadiumSectionsAsync } from '../../data/getStadiumSections';
+import { getStadiumCompleteData } from '../../data/stadium-data-aggregator';
+import { getSunPosition } from '../../utils/sunCalculations';
+import { useSunCalculations } from '../../hooks/useSunCalculations';
+import type { StadiumSection } from '../../data/stadiumSectionTypes';
 import styles from './DesktopShadeApp.module.css';
 
 /**
@@ -62,11 +70,16 @@ export const DesktopShadeApp = forwardRef<DesktopShadeAppRef, DesktopShadeAppPro
   const [isLoading, setIsLoading] = useState(false);
   // Selected section for bidirectional sync between diagram and cards
   const [selectedSectionId, setSelectedSectionId] = useState<string | null>(null);
+  // Sections data for the selected venue
+  const [sections, setSections] = useState<StadiumSection[]>([]);
+  const [sectionsLoading, setSectionsLoading] = useState(false);
   const loadingTimeoutRef = useRef<number | null>(null);
   // Ref for the stadium selector bar (for scroll-to)
   const selectorBarRef = useRef<HTMLDivElement>(null);
   // Ref for screen reader announcements
   const announcerRef = useRef<HTMLDivElement>(null);
+  // Ref to the section list for scroll-to-section
+  const sectionListRef = useRef<HTMLDivElement>(null);
 
   // Get venues for the selected league
   const venues = useMemo(() => {
@@ -78,6 +91,111 @@ export const DesktopShadeApp = forwardRef<DesktopShadeAppRef, DesktopShadeAppPro
     };
     return getVenuesByLeague(leagueMap[selectedLeague]);
   }, [selectedLeague]);
+
+  // Load sections when venue changes
+  useEffect(() => {
+    if (!selectedVenue) {
+      setSections([]);
+      return;
+    }
+
+    let cancelled = false;
+    setSectionsLoading(true);
+
+    getStadiumSectionsAsync(selectedVenue.id)
+      .then((loadedSections) => {
+        if (!cancelled) {
+          setSections(loadedSections);
+          setSectionsLoading(false);
+        }
+      })
+      .catch((error) => {
+        console.error('Error loading sections:', error);
+        if (!cancelled) {
+          setSections([]);
+          setSectionsLoading(false);
+        }
+      });
+
+    return () => {
+      cancelled = true;
+    };
+  }, [selectedVenue?.id]);
+
+  // Calculate sun position for the selected game time
+  const sunPosition = useMemo(() => {
+    if (!selectedVenue) return null;
+
+    const gameDateTime = selectedGameTime || new Date();
+    // Default to 1 PM if no game time selected
+    if (!selectedGameTime) {
+      gameDateTime.setHours(13, 0, 0, 0);
+    }
+
+    return getSunPosition(
+      gameDateTime,
+      selectedVenue.latitude,
+      selectedVenue.longitude,
+      selectedVenue.timezone
+    );
+  }, [selectedVenue, selectedGameTime]);
+
+  // Create stadium object for useSunCalculations
+  const stadiumForCalc = useMemo(() => {
+    if (!selectedVenue) return null;
+    return {
+      id: selectedVenue.id,
+      latitude: selectedVenue.latitude,
+      longitude: selectedVenue.longitude,
+      timezone: selectedVenue.timezone,
+      orientation: selectedVenue.orientation,
+      roofHeight: selectedVenue.roofHeight,
+      roofOverhang: selectedVenue.roofOverhang,
+      upperDeckHeight: selectedVenue.upperDeckHeight,
+    };
+  }, [selectedVenue]);
+
+  // Default sun position fallback (1 PM, roughly overhead)
+  const defaultSunPosition = useMemo(() => ({
+    altitude: Math.PI / 4, // 45 degrees in radians
+    azimuth: Math.PI, // 180 degrees in radians (south)
+    altitudeDegrees: 45,
+    azimuthDegrees: 180,
+  }), []);
+
+  // Use Web Worker for sun calculations
+  const {
+    data: sectionsWithSunData,
+    rowData,
+    isLoading: isCalculatingSun,
+  } = useSunCalculations({
+    stadium: stadiumForCalc || { id: '', latitude: 0, longitude: 0, timezone: 'UTC' },
+    sunPosition: sunPosition || defaultSunPosition,
+    sections,
+    enabled: !!selectedVenue && !!sunPosition && sections.length > 0,
+    includeRows: true,
+  });
+
+  // Get complete 3D stadium data for diagram
+  const stadiumCompleteData = useMemo(() => {
+    if (!selectedVenue) return null;
+    try {
+      const leagueForData = selectedLeague === 'WorldCup' ? 'MLB' : selectedLeague;
+      return getStadiumCompleteData(selectedVenue.id, leagueForData as 'MLB' | 'MiLB' | 'NFL');
+    } catch (error) {
+      console.error('Error loading complete stadium data:', error);
+      return null;
+    }
+  }, [selectedVenue?.id, selectedLeague]);
+
+  // Convert sun calculations to shade data for diagram
+  const shadeData: SectionShadeData[] = useMemo(() => {
+    if (!sectionsWithSunData) return [];
+    return sectionsWithSunData.map((sectionData: any) => ({
+      sectionId: sectionData.section?.id || sectionData.sectionId,
+      shadePercentage: 100 - (sectionData.sunExposure ?? 50), // Convert sun exposure to shade
+    }));
+  }, [sectionsWithSunData]);
 
   // Update URL when filters change
   useEffect(() => {
@@ -185,10 +303,18 @@ export const DesktopShadeApp = forwardRef<DesktopShadeAppRef, DesktopShadeAppPro
     scrollToSelector,
   }), [scrollToSelector]);
 
-  // Handle section selection from diagram (click on diagram → highlight card)
+  // Handle section selection from diagram (click on diagram → highlight card + scroll)
   const handleDiagramSectionSelect = useCallback((sectionId: string) => {
     setSelectedSectionId(sectionId);
     announce(`Selected ${sectionId}`);
+
+    // Scroll to the section card in the list
+    if (sectionListRef.current) {
+      const sectionCard = sectionListRef.current.querySelector(`[data-section-id="${sectionId}"]`);
+      if (sectionCard) {
+        sectionCard.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      }
+    }
   }, [announce]);
 
   // Handle section selection from card (click on card → highlight diagram)
@@ -242,61 +368,82 @@ export const DesktopShadeApp = forwardRef<DesktopShadeAppRef, DesktopShadeAppPro
         {/* Side-by-side layout with bidirectional sync */}
         <MainContentLayout
           scrollToSectionId={selectedSectionId}
-          isLoading={isLoading}
+          isLoading={isLoading || sectionsLoading || isCalculatingSun}
           diagramContent={
-            /* Stadium Diagram - will be wired up in Phase 5 with real data */
             <div className={styles.diagramWrapper}>
-              <div className={styles.panelPlaceholder}>
-                <span className={styles.placeholderLabel}>Stadium Diagram</span>
-                <span className={styles.placeholderSubtext}>
-                  {selectedSectionId
-                    ? `Selected: ${selectedSectionId}`
-                    : 'Click a section to select'}
-                </span>
-                {/* Demo: clickable section buttons for testing sync */}
-                <div className={styles.demoSections}>
-                  {['Section 101', 'Section 102', 'Section 103'].map((id) => (
-                    <button
-                      key={id}
-                      onClick={() => handleDiagramSectionSelect(id)}
-                      className={`${styles.demoSectionBtn} ${
-                        selectedSectionId === id ? styles.demoSectionBtnActive : ''
-                      }`}
-                    >
-                      {id}
-                    </button>
-                  ))}
+              {!selectedVenue ? (
+                <div className={styles.panelPlaceholder}>
+                  <span className={styles.placeholderLabel}>Stadium Diagram</span>
+                  <span className={styles.placeholderSubtext}>
+                    Select a venue to view the stadium map
+                  </span>
                 </div>
-              </div>
+              ) : sectionsLoading || isCalculatingSun ? (
+                <div className={styles.panelPlaceholder}>
+                  <LoadingSpinner message="Loading stadium diagram..." />
+                </div>
+              ) : stadiumCompleteData && stadiumCompleteData.sections.length > 0 ? (
+                <StadiumDiagram
+                  sections={stadiumCompleteData.sections}
+                  shadeData={shadeData}
+                  selectedSectionId={selectedSectionId || undefined}
+                  onSectionSelect={handleDiagramSectionSelect}
+                />
+              ) : (
+                <div className={styles.panelPlaceholder}>
+                  <span className={styles.placeholderLabel}>Stadium Diagram</span>
+                  <span className={styles.placeholderSubtext}>
+                    No diagram available for this venue
+                  </span>
+                </div>
+              )}
             </div>
           }
           cardsContent={
-            /* Section Cards - will be wired up in Phase 5 with real data */
-            <div className={styles.cardsWrapper}>
-              <div className={styles.panelPlaceholder}>
-                <span className={styles.placeholderLabel}>Section Cards</span>
-                <span className={styles.placeholderSubtext}>
-                  {selectedSectionId
-                    ? `Highlighted: ${selectedSectionId}`
-                    : 'Click a card to select'}
-                </span>
-                {/* Demo: clickable card buttons for testing sync */}
-                <div className={styles.demoCards}>
-                  {['Section 101', 'Section 102', 'Section 103'].map((id) => (
-                    <button
-                      key={id}
-                      onClick={() => handleCardSectionSelect(id)}
-                      data-section-id={id}
-                      className={`${styles.demoCardBtn} ${
-                        selectedSectionId === id ? styles.demoCardBtnActive : ''
-                      }`}
-                    >
-                      {id}
-                      {selectedSectionId === id && ' ✓'}
-                    </button>
-                  ))}
+            <div className={styles.cardsWrapper} ref={sectionListRef}>
+              {!selectedVenue ? (
+                <div className={styles.panelPlaceholder}>
+                  <span className={styles.placeholderLabel}>Section Cards</span>
+                  <span className={styles.placeholderSubtext}>
+                    Select a venue to view seating sections
+                  </span>
                 </div>
-              </div>
+              ) : sectionsLoading || isCalculatingSun ? (
+                <div className={styles.panelPlaceholder}>
+                  <LoadingSpinner message="Calculating sun exposure..." />
+                </div>
+              ) : sectionsWithSunData && sectionsWithSunData.length > 0 ? (
+                <SectionList
+                  sections={sectionsWithSunData}
+                  loading={false}
+                  showFilters={false}
+                  rowData={rowData}
+                  showRowToggle={!!rowData && rowData.length > 0}
+                  stadiumId={selectedVenue.id}
+                  highlightedSectionId={selectedSectionId}
+                  onSectionSelect={handleCardSectionSelect}
+                />
+              ) : sections.length > 0 ? (
+                <SectionList
+                  sections={sections.map(s => ({
+                    section: s,
+                    sunExposure: 50,
+                    inSun: false,
+                  }))}
+                  loading={false}
+                  showFilters={false}
+                  stadiumId={selectedVenue.id}
+                  highlightedSectionId={selectedSectionId}
+                  onSectionSelect={handleCardSectionSelect}
+                />
+              ) : (
+                <div className={styles.panelPlaceholder}>
+                  <span className={styles.placeholderLabel}>Section Cards</span>
+                  <span className={styles.placeholderSubtext}>
+                    No section data available for this venue
+                  </span>
+                </div>
+              )}
             </div>
           }
         />

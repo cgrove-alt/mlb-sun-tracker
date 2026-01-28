@@ -361,3 +361,45 @@ Run comprehensive verification as VERIFICATION AGENT.
 **Recommendation: ✅ APPROVE**
 
 See `verification-report.md` for full details.
+
+---
+
+### [x] Step: Bug Fix - Wire Up Real Section Data
+
+**Problem:** The DesktopShadeApp was showing placeholder demo content (Section 101, 102, 103) instead of actual stadium sections and rows. The diagram and section cards panels had demo buttons that were never replaced with real data integration.
+
+**Root Cause:** During Phase 4 (Stadium Diagram Integration), placeholder content was added with comments "will be wired up in Phase 5 with real data". However, Phase 5 only added the StadiumGameBar component - the actual StadiumDiagram and SectionList components were never wired up to real data.
+
+**Solution:** Updated `src/components/DesktopShadeApp/DesktopShadeApp.tsx` to:
+
+1. **Added section data loading:**
+   - Import `getStadiumSectionsAsync` from `../../data/getStadiumSections`
+   - Added `sections` and `sectionsLoading` state
+   - Added `useEffect` to load sections when venue changes
+
+2. **Added sun position calculations:**
+   - Import `getSunPosition` from `../../utils/sunCalculations`
+   - Import `useSunCalculations` hook from `../../hooks/useSunCalculations`
+   - Calculate sun position based on venue coordinates and game time
+   - Use Web Worker for shade calculations
+
+3. **Added 3D stadium data:**
+   - Import `getStadiumCompleteData` from `../../data/stadium-data-aggregator`
+   - Load complete 3D stadium data for diagram rendering
+   - Convert sun calculations to shade percentages for diagram
+
+4. **Wired up real components:**
+   - Import `StadiumDiagram` and `SectionList` components
+   - Replace placeholder diagram with real `StadiumDiagram`
+   - Replace placeholder cards with real `SectionList`
+   - Added proper loading states during data fetching
+
+5. **Maintained bidirectional sync:**
+   - Section selection from diagram highlights card and scrolls to it
+   - Section selection from card highlights diagram section
+   - Added `sectionListRef` for scroll-to-section functionality
+
+**Verification:**
+- TypeScript: ✅ No errors
+- Production build: ✅ Successful
+- All existing tests pass
