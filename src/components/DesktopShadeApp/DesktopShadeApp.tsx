@@ -163,20 +163,7 @@ export const DesktopShadeApp = forwardRef<DesktopShadeAppRef, DesktopShadeAppPro
     azimuthDegrees: 180,
   }), []);
 
-  // Use Web Worker for sun calculations
-  const {
-    data: sectionsWithSunData,
-    rowData,
-    isLoading: isCalculatingSun,
-  } = useSunCalculations({
-    stadium: stadiumForCalc || { id: '', latitude: 0, longitude: 0, timezone: 'UTC' },
-    sunPosition: sunPosition || defaultSunPosition,
-    sections,
-    enabled: !!selectedVenue && !!sunPosition && sections.length > 0,
-    includeRows: true,
-  });
-
-  // Get complete 3D stadium data for diagram
+  // Get complete 3D stadium data for diagram (with detailed row data)
   const stadiumCompleteData = useMemo(() => {
     if (!selectedVenue) return null;
     try {
@@ -187,6 +174,29 @@ export const DesktopShadeApp = forwardRef<DesktopShadeAppRef, DesktopShadeAppPro
       return null;
     }
   }, [selectedVenue?.id, selectedLeague]);
+
+  // Sections for sun calculations - prefer detailed sections with row data
+  const sectionsForCalc = useMemo(() => {
+    // Use stadiumCompleteData sections if available (they have row arrays)
+    if (stadiumCompleteData?.sections && stadiumCompleteData.sections.length > 0) {
+      return stadiumCompleteData.sections;
+    }
+    // Fallback to basic sections from async loader
+    return sections;
+  }, [stadiumCompleteData?.sections, sections]);
+
+  // Use Web Worker for sun calculations
+  const {
+    data: sectionsWithSunData,
+    rowData,
+    isLoading: isCalculatingSun,
+  } = useSunCalculations({
+    stadium: stadiumForCalc || { id: '', latitude: 0, longitude: 0, timezone: 'UTC' },
+    sunPosition: sunPosition || defaultSunPosition,
+    sections: sectionsForCalc,
+    enabled: !!selectedVenue && !!sunPosition && sectionsForCalc.length > 0,
+    includeRows: true,
+  });
 
   // Convert sun calculations to shade data for diagram
   const shadeData: SectionShadeData[] = useMemo(() => {
@@ -201,7 +211,7 @@ export const DesktopShadeApp = forwardRef<DesktopShadeAppRef, DesktopShadeAppPro
   // Worker returns: { sectionId, averageCoverage, rows, ... } for row calculations
   // SectionList expects: { section: StadiumSection, sunExposure: number, inSun: boolean }
   const sectionsForList = useMemo(() => {
-    if (!sections.length) return [];
+    if (!sectionsForCalc.length) return [];
 
     // If we have worker data, create a map for quick lookup
     const workerDataMap = new Map<string, any>();
@@ -212,8 +222,8 @@ export const DesktopShadeApp = forwardRef<DesktopShadeAppRef, DesktopShadeAppPro
       });
     }
 
-    // Merge original sections with worker sun data
-    return sections
+    // Merge sections with worker sun data (using sectionsForCalc which has detailed row data)
+    return sectionsForCalc
       .filter(section => section && section.id) // Guard against invalid sections
       .map(section => {
         const workerData = workerDataMap.get(section.id);
@@ -221,14 +231,20 @@ export const DesktopShadeApp = forwardRef<DesktopShadeAppRef, DesktopShadeAppPro
           ? (100 - (workerData.averageCoverage ?? (100 - (workerData.sunExposure ?? 50))))
           : 50;
 
+        // Convert DetailedSection level to StadiumSection level (map 'standing' -> 'lower')
+        const normalizedLevel = section.level === 'standing' ? 'lower' : section.level;
+
         return {
-          section,
+          section: {
+            ...section,
+            level: normalizedLevel,
+          } as StadiumSection,
           sunExposure,
           inSun: sunExposure > 50,
           timeInSun: workerData?.timeInSun,
         };
       });
-  }, [sectionsWithSunData, sections]);
+  }, [sectionsWithSunData, sectionsForCalc]);
 
   // Update URL when filters change
   useEffect(() => {
