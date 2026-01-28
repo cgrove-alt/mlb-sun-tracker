@@ -235,6 +235,8 @@ export const SectionList: React.FC<SectionListProps> = ({
   const filteredSections = useMemo(() => {
     return sections.filter(sectionData => {
       const section = sectionData.section;
+      // Guard against malformed data - section must exist with valid id
+      if (!section || !section.id) return false;
       const exposure = sectionData.sunExposure;
 
       // Text search filter
@@ -399,33 +401,37 @@ export const SectionList: React.FC<SectionListProps> = ({
 
   // Get selected section data for comparison
   const selectedSectionData = useMemo(() => {
-    return sections.filter(s => selectedSections.has(s.section.id));
+    return sections.filter(s => s.section?.id && selectedSections.has(s.section.id));
   }, [sections, selectedSections]);
 
   // Use virtual scrolling for better performance on mobile with many sections
   const useVirtualScrolling = sortedSections.length > 60;
 
   // Render a single section card (used by both normal and virtual rendering)
-  const renderSectionCard = useCallback((sectionData: SeatingSectionSun, index: number) => (
-    <LazySectionCard
-      key={`${sectionData.section.id}-${index}`}
-      section={sectionData.section}
-      sunExposure={sectionData.sunExposure}
-      inSun={sectionData.inSun}
-      index={index}
-      timeInSun={sectionData.timeInSun}
-      rowData={showRowLevel ? getRowDataForSection(sectionData.section.id) : undefined}
-      stadiumId={stadiumId}
-      worldCupMatchCount={worldCupMatchCount}
-      worldCupCountry={worldCupCountry}
-      comparisonMode={comparisonMode}
-      isSelected={selectedSections.has(sectionData.section.id)}
-      onToggleSelection={handleToggleSelection}
-      showExpandIndicator={true}
-      isHighlighted={highlightedSectionId === sectionData.section.id}
-      onCardSelect={onSectionSelect}
-    />
-  ), [showRowLevel, getRowDataForSection, stadiumId, worldCupMatchCount, worldCupCountry, comparisonMode, selectedSections, handleToggleSelection, highlightedSectionId, onSectionSelect]);
+  const renderSectionCard = useCallback((sectionData: SeatingSectionSun, index: number) => {
+    // Guard against malformed data
+    if (!sectionData.section?.id) return null;
+    return (
+      <LazySectionCard
+        key={`${sectionData.section.id}-${index}`}
+        section={sectionData.section}
+        sunExposure={sectionData.sunExposure}
+        inSun={sectionData.inSun}
+        index={index}
+        timeInSun={sectionData.timeInSun}
+        rowData={showRowLevel ? getRowDataForSection(sectionData.section.id) : undefined}
+        stadiumId={stadiumId}
+        worldCupMatchCount={worldCupMatchCount}
+        worldCupCountry={worldCupCountry}
+        comparisonMode={comparisonMode}
+        isSelected={selectedSections.has(sectionData.section.id)}
+        onToggleSelection={handleToggleSelection}
+        showExpandIndicator={true}
+        isHighlighted={highlightedSectionId === sectionData.section.id}
+        onCardSelect={onSectionSelect}
+      />
+    );
+  }, [showRowLevel, getRowDataForSection, stadiumId, worldCupMatchCount, worldCupCountry, comparisonMode, selectedSections, handleToggleSelection, highlightedSectionId, onSectionSelect]);
 
   if (loading) {
     return (

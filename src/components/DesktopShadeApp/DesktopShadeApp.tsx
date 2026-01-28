@@ -194,9 +194,42 @@ export const DesktopShadeApp = forwardRef<DesktopShadeAppRef, DesktopShadeAppPro
     if (!sectionsWithSunData) return [];
     return sectionsWithSunData.map((sectionData: any) => ({
       sectionId: sectionData.section?.id || sectionData.sectionId,
-      shadePercentage: 100 - (sectionData.sunExposure ?? 50), // Convert sun exposure to shade
+      shadePercentage: 100 - (sectionData.sunExposure ?? sectionData.averageCoverage ?? 50),
     }));
   }, [sectionsWithSunData]);
+
+  // Transform worker data into SeatingSectionSun format for SectionList
+  // Worker returns: { sectionId, averageCoverage, rows, ... } for row calculations
+  // SectionList expects: { section: StadiumSection, sunExposure: number, inSun: boolean }
+  const sectionsForList = useMemo(() => {
+    if (!sections.length) return [];
+
+    // If we have worker data, create a map for quick lookup
+    const workerDataMap = new Map<string, any>();
+    if (sectionsWithSunData) {
+      sectionsWithSunData.forEach((data: any) => {
+        const id = data.sectionId || data.section?.id;
+        if (id) workerDataMap.set(id, data);
+      });
+    }
+
+    // Merge original sections with worker sun data
+    return sections
+      .filter(section => section && section.id) // Guard against invalid sections
+      .map(section => {
+        const workerData = workerDataMap.get(section.id);
+        const sunExposure = workerData
+          ? (100 - (workerData.averageCoverage ?? (100 - (workerData.sunExposure ?? 50))))
+          : 50;
+
+        return {
+          section,
+          sunExposure,
+          inSun: sunExposure > 50,
+          timeInSun: workerData?.timeInSun,
+        };
+      });
+  }, [sectionsWithSunData, sections]);
 
   // Update URL when filters change
   useEffect(() => {
@@ -413,26 +446,13 @@ export const DesktopShadeApp = forwardRef<DesktopShadeAppRef, DesktopShadeAppPro
                 <div className={styles.panelPlaceholder}>
                   <LoadingSpinner message="Calculating sun exposure..." />
                 </div>
-              ) : sectionsWithSunData && sectionsWithSunData.length > 0 ? (
+              ) : sectionsForList.length > 0 ? (
                 <SectionList
-                  sections={sectionsWithSunData}
+                  sections={sectionsForList}
                   loading={false}
                   showFilters={false}
                   rowData={rowData}
                   showRowToggle={!!rowData && rowData.length > 0}
-                  stadiumId={selectedVenue.id}
-                  highlightedSectionId={selectedSectionId}
-                  onSectionSelect={handleCardSectionSelect}
-                />
-              ) : sections.length > 0 ? (
-                <SectionList
-                  sections={sections.map(s => ({
-                    section: s,
-                    sunExposure: 50,
-                    inSun: false,
-                  }))}
-                  loading={false}
-                  showFilters={false}
                   stadiumId={selectedVenue.id}
                   highlightedSectionId={selectedSectionId}
                   onSectionSelect={handleCardSectionSelect}
