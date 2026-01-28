@@ -3,7 +3,6 @@
 import React, { useState, useEffect, useCallback } from 'react';
 import { HelmetProvider } from 'react-helmet-async';
 import Link from 'next/link';
-import './App.css';
 import { UnifiedVenue, ALL_UNIFIED_VENUES, convertToLegacyStadium } from './data/unifiedVenues';
 import { UnifiedGameSelector } from './components/UnifiedGameSelector';
 import { WeatherDisplay } from './components/WeatherDisplay';

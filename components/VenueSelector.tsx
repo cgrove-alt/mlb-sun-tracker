@@ -1,6 +1,7 @@
 'use client';
 
-import { useState, useMemo } from 'react';
+import { useState, useMemo, useEffect } from 'react';
+import { useRouter, useSearchParams } from 'next/navigation';
 import { UnifiedVenue } from '../src/data/unifiedVenues';
 import dynamic from 'next/dynamic';
 import { HomePageSkeleton } from '../src/components/SkeletonScreens';
@@ -16,8 +17,12 @@ interface VenueSelectorProps {
 }
 
 export default function VenueSelector({ venues }: VenueSelectorProps) {
-  const [selectedVenue, setSelectedVenue] = useState<string | null>(null);
+  const router = useRouter();
+  const searchParams = useSearchParams();
   const [searchTerm, setSearchTerm] = useState('');
+
+  // Check if a venue is already selected from URL
+  const selectedVenue = searchParams.get('venue') || searchParams.get('stadium');
 
   const filteredVenues = useMemo(() => {
     if (!searchTerm) return venues.slice(0, 20); // Show top 20 initially
@@ -29,7 +34,7 @@ export default function VenueSelector({ venues }: VenueSelectorProps) {
     );
   }, [venues, searchTerm]);
 
-  // If venue selected, show full app
+  // If venue selected in URL, show full app
   if (selectedVenue) {
     return <UnifiedApp />;
   }
@@ -51,7 +56,10 @@ export default function VenueSelector({ venues }: VenueSelectorProps) {
         {filteredVenues.map((venue) => (
           <button
             key={venue.id}
-            onClick={() => setSelectedVenue(venue.id)}
+            onClick={() => {
+              // Update URL to pass venue selection to UnifiedApp
+              router.push(`/?venue=${venue.id}`);
+            }}
             className="venue-card"
             aria-label={`Select ${venue.name}`}
           >
