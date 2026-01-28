@@ -53,7 +53,7 @@ describe('World Cup 2026 Matches', () => {
 
     test('all dates are between tournament start and end', () => {
       const tournamentStart = new Date('2026-06-11');
-      const tournamentEnd = new Date('2026-07-19');
+      const tournamentEnd = new Date('2026-07-26'); // Updated to include third place match
 
       WORLD_CUP_2026_MATCHES.forEach(match => {
         const matchDate = new Date(match.date);
@@ -65,7 +65,7 @@ describe('World Cup 2026 Matches', () => {
 
   describe('Match Rounds', () => {
     test('all rounds are valid tournament rounds', () => {
-      const validRounds = ['Group Stage', 'Round of 16', 'Quarterfinal', 'Semifinal', 'Third Place', 'Final'];
+      const validRounds = ['Group Stage', 'Round of 32', 'Round of 16', 'Quarterfinal', 'Semifinal', 'Third Place', 'Final'];
 
       WORLD_CUP_2026_MATCHES.forEach(match => {
         expect(validRounds).toContain(match.round);
@@ -79,7 +79,7 @@ describe('World Cup 2026 Matches', () => {
     });
 
     test('final match is July 19, 2026', () => {
-      const finalMatch = WORLD_CUP_2026_MATCHES.find(m => m.matchId === 'wc2026-064');
+      const finalMatch = WORLD_CUP_2026_MATCHES.find(m => m.matchId === 'wc2026-104'); // Updated match ID
       expect(finalMatch).toBeDefined();
       expect(finalMatch?.date).toBe('2026-07-19');
       expect(finalMatch?.round).toBe('Final');
@@ -181,9 +181,15 @@ describe('World Cup 2026 Matches', () => {
       expect(sorted[0].matchId).toBe('wc2026-001');
     });
 
-    test('final match is last', () => {
+    test('matches are sorted correctly with third place last', () => {
       const sorted = getAllMatchesSorted();
-      expect(sorted[sorted.length - 1].matchId).toBe('wc2026-064');
+      // Third place match (wc2026-103) is on July 26, which is last
+      expect(sorted[sorted.length - 1].matchId).toBe('wc2026-103');
+      expect(sorted[sorted.length - 1].round).toBe('Third Place');
+      // Final (wc2026-104) is on July 19, before semifinals
+      const finalMatch = sorted.find(m => m.matchId === 'wc2026-104');
+      expect(finalMatch?.round).toBe('Final');
+      expect(finalMatch?.date).toBe('2026-07-19');
     });
   });
 
@@ -247,9 +253,10 @@ describe('World Cup 2026 Matches', () => {
     });
 
     test('matches by round breakdown is correct', () => {
-      expect(MATCH_SCHEDULE_STATS.matchesByRound.groupStage).toBe(80);
-      expect(MATCH_SCHEDULE_STATS.matchesByRound.roundOf16).toBe(16);
-      expect(MATCH_SCHEDULE_STATS.matchesByRound.quarterfinals).toBe(8);
+      expect(MATCH_SCHEDULE_STATS.matchesByRound.groupStage).toBe(72); // Updated for 48-team format
+      expect(MATCH_SCHEDULE_STATS.matchesByRound.roundOf32).toBe(16); // New round
+      expect(MATCH_SCHEDULE_STATS.matchesByRound.roundOf16).toBe(8);
+      expect(MATCH_SCHEDULE_STATS.matchesByRound.quarterfinals).toBe(4);
       expect(MATCH_SCHEDULE_STATS.matchesByRound.semifinals).toBe(2);
       expect(MATCH_SCHEDULE_STATS.matchesByRound.thirdPlace).toBe(1);
       expect(MATCH_SCHEDULE_STATS.matchesByRound.final).toBe(1);

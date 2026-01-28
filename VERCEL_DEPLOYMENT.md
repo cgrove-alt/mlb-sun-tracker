@@ -322,6 +322,8 @@ Before deploying:
 - [ ] Review environment variables
 - [ ] Test on preview deployment
 - [ ] Update documentation if needed
+- [ ] Run data validation: `npm run validate-stadium-data`
+- [ ] Check data freshness: `npm run check-data-freshness`
 
 ## 🚀 Quick Deploy
 
@@ -330,7 +332,23 @@ Before deploying:
 npm run build && vercel --prod
 ```
 
+## 📖 Complete Deployment Guide
+
+For comprehensive deployment instructions, troubleshooting, and post-deployment verification, see:
+
+**[DEPLOYMENT_GUIDE.md](DEPLOYMENT_GUIDE.md)**
+
+This guide includes:
+- Pre-deployment checklist with all quality checks
+- Detailed smoke tests for critical user flows
+- Performance verification procedures
+- Rollback procedures
+- Monitoring setup
+- Security checklist
+- Post-launch tasks and success metrics
+
 ---
 
-*Last Updated: December 2024*
+*Last Updated: January 2026*
+*Version: 0.2.0*
 *Deployed at [theshadium.com](https://theshadium.com)*

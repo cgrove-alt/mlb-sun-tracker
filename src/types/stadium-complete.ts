@@ -45,17 +45,20 @@ export interface DetailedSection {
   partialCoverage?: CoverageDetail;
   accessibility?: AccessibilityInfo;
   price?: 'value' | 'moderate' | 'premium' | 'luxury';
-  
+
   // Additional detail
   distance: number; // Distance from home plate in feet
   height: number; // Height above field level
   rake: number; // Seating rake angle in degrees
   seatWidth?: number; // Average seat width in inches
   rowSpacing?: number; // Space between rows in inches
-  
+
   // View quality
   viewQuality?: 'excellent' | 'good' | 'fair' | 'obstructed';
   obstructedSeats?: string[]; // List of seats with obstructed views
+
+  // Data freshness
+  lastUpdated?: string; // ISO 8601 timestamp of last section data update
 }
 
 export interface MaterialProperties {
@@ -128,31 +131,32 @@ export interface StadiumComplete {
   league: 'MLB' | 'MiLB' | 'NFL';
   city: string;
   state: string;
-  
+
   // Location data
   latitude: number;
   longitude: number;
   elevation: number; // Feet above sea level
   timezone: string;
-  
+
   // Detailed sections with full 3D data
   sections: DetailedSection[];
-  
+
   // 3D obstruction models
   obstructions: Obstruction3D[];
-  
+
   // Stadium 3D geometry
   geometry: StadiumGeometry3D;
-  
+
   // Unique features
   features?: UniqueFeature[];
-  
+
   // Metadata
   capacity: number;
   opened: number; // Year opened
   renovated?: number[]; // Years of major renovations
   surface: 'grass' | 'turf' | 'hybrid';
-  
+  lastUpdated?: string; // ISO 8601 timestamp of last data update
+
   // Sun exposure factors
   climateZone?: 'hot-dry' | 'hot-humid' | 'temperate' | 'cold';
   typicalCloudCover?: number; // 0-100 percentage

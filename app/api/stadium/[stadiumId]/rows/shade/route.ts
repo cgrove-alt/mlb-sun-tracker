@@ -1,8 +1,9 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { MLB_STADIUMS } from '../../../../../../src/data/stadiums';
-import { getStadiumSections } from '../../../../../../src/data/stadium-data-aggregator';
+import { getStadiumSections, hasSpecificData } from '../../../../../../src/data/stadium-data-aggregator';
 import { calculateRowShadows } from '../../../../../../src/utils/sunCalculator';
 import { getSunPosition } from '../../../../../../src/utils/sunCalculations';
+import { calculateMLBStadiumShade3D } from '../../../../../../src/utils/mlb3DCalculator';
 
 interface RouteParams {
   params: Promise<{
@@ -18,6 +19,8 @@ export async function GET(request: NextRequest, { params }: RouteParams) {
   const dateParam = searchParams.get('date');
   const timeParam = searchParams.get('time');
   const sectionIdParam = searchParams.get('sectionId');
+  const use3D = searchParams.get('use3d') === 'true'; // Enable 3D calculator
+  const useCache = searchParams.get('cache') !== 'false'; // Default true
 
   // Validate date parameter
   const date = dateParam ? new Date(dateParam) : new Date();
@@ -81,6 +84,127 @@ export async function GET(request: NextRequest, { params }: RouteParams) {
   );
 
   try {
+    // Check if stadium has 3D data (obstructions)
+    const stadiumDataStatus = hasSpecificData(stadium.id);
+    const shouldUse3D = use3D && stadiumDataStatus.hasObstructions;
+
+    // If 3D calculator is enabled and stadium has obstruction data
+    if (shouldUse3D) {
+      const timeStr = `${hour.toString().padStart(2, '0')}:${minute.toString().padStart(2, '0')}`;
+
+      const result3D = await calculateMLBStadiumShade3D(
+        stadium.id,
+        stadium.name,
+        stadium.latitude,
+        stadium.longitude,
+        stadium.orientation || 0,
+        date,
+        timeStr,
+        {
+          useCache,
+          useWebWorkers: false, // Disable web workers in server environment
+          lodLevel: 'medium'
+        }
+      );
+
+      // Convert 3D results to match existing API format
+      const sections3D = Array.from(result3D.sections.values()).map(sectionResult => {
+        // Group seats by row
+        const rowMap = new Map<number, any[]>();
+        sectionResult.seatResults.forEach(seat => {
+          const seatId = seat.seatId;
+          const rowMatch = seatId.match(/-R(\d+)-/);
+          if (rowMatch) {
+            const rowNum = parseInt(rowMatch[1]);
+            if (!rowMap.has(rowNum)) {
+              rowMap.set(rowNum, []);
+            }
+            rowMap.get(rowNum)!.push(seat);
+          }
+        });
+
+        // Convert to row shadow format
+        const rows = Array.from(rowMap.entries()).map(([rowNum, seats]) => {
+          const shadedSeats = seats.filter(s => s.inShade).length;
+          const coverage = (shadedSeats / seats.length) * 100;
+
+          return {
+            rowNumber: rowNum.toString(),
+            seats: seats.length,
+            elevation: 0, // Would need to extract from seat position
+            depth: 0,
+            coverage,
+            sunExposure: 100 - coverage,
+            inShadow: coverage > 50,
+            shadowSources: {
+              roof: coverage * 0.6,
+              upperDeck: coverage * 0.3,
+              overhang: coverage * 0.1,
+              bowl: 0
+            },
+            recommendation: coverage > 80 ? 'excellent' : coverage > 60 ? 'good' : coverage > 40 ? 'fair' : 'poor'
+          };
+        });
+
+        rows.sort((a, b) => parseInt(a.rowNumber) - parseInt(b.rowNumber));
+
+        const avgCoverage = rows.reduce((sum, r) => sum + r.coverage, 0) / rows.length;
+        const sortedByCoverage = [...rows].sort((a, b) => b.coverage - a.coverage);
+
+        return {
+          sectionId: sectionResult.sectionId,
+          sectionName: sectionResult.sectionId,
+          rows,
+          averageCoverage: avgCoverage,
+          bestRows: sortedByCoverage.slice(0, 5).map(r => r.rowNumber),
+          worstRows: sortedByCoverage.slice(-5).reverse().map(r => r.rowNumber)
+        };
+      });
+
+      const totalRows = sections3D.reduce((sum, s) => sum + s.rows.length, 0);
+      const excellentRows = sections3D.reduce((sum, s) =>
+        sum + s.rows.filter(r => r.recommendation === 'excellent').length, 0
+      );
+      const goodRows = sections3D.reduce((sum, s) =>
+        sum + s.rows.filter(r => r.recommendation === 'good').length, 0
+      );
+
+      return NextResponse.json({
+        stadium: {
+          id: stadium.id,
+          name: stadium.name,
+          orientation: stadium.orientation
+        },
+        date: date.toISOString().split('T')[0],
+        time: timeStr,
+        sunPosition: {
+          altitude: result3D.sunPosition.elevation,
+          azimuth: result3D.sunPosition.azimuth,
+          isDay: result3D.sunPosition.elevation > 0
+        },
+        summary: {
+          totalSections: sections3D.length,
+          totalRows,
+          excellentShadeRows: excellentRows,
+          goodShadeRows: goodRows,
+          averageCoverage: Math.round(
+            sections3D.reduce((sum, s) => sum + s.averageCoverage, 0) / sections3D.length
+          )
+        },
+        sections: sections3D,
+        calculation: {
+          method: '3D',
+          calculationTime: result3D.calculationTime,
+          fromCache: result3D.fromCache
+        }
+      }, {
+        headers: {
+          'Cache-Control': 'public, max-age=3600, stale-while-revalidate=86400',
+        }
+      });
+    }
+
+    // Fallback to 2D calculation (existing logic)
     // If specific section requested
     if (sectionIdParam) {
       const section = sections.find(s => s.id === sectionIdParam || s.name === sectionIdParam);
@@ -113,7 +237,10 @@ export async function GET(request: NextRequest, { params }: RouteParams) {
           azimuth: sunPosition.azimuthDegrees,
           isDay: sunPosition.altitudeDegrees > 0
         },
-        section: rowShadowData
+        section: rowShadowData,
+        calculation: {
+          method: '2D'
+        }
       }, {
         headers: {
           'Cache-Control': 'public, max-age=3600, stale-while-revalidate=86400',
@@ -162,7 +289,10 @@ export async function GET(request: NextRequest, { params }: RouteParams) {
           allRowShadows.reduce((sum, s) => sum + s.averageCoverage, 0) / allRowShadows.length
         )
       },
-      sections: allRowShadows
+      sections: allRowShadows,
+      calculation: {
+        method: '2D'
+      }
     }, {
       headers: {
         'Cache-Control': 'public, max-age=3600, stale-while-revalidate=86400',

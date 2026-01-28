@@ -1,15 +1,9 @@
-import '../src/styles/base.css'; // Import tokens and base styles first
-import './globals.css';
-import '../src/styles/typography.css';
-import '../src/styles/heading-safety.css';
-import '../src/styles/vertical-rhythm.css';
-import '../src/styles/mobile-optimizations.css';
-import '../src/styles/accessibility-fixes.css';
+// NO CSS imports - all critical CSS inlined below to eliminate render-blocking
+// Non-critical CSS loaded via dynamic import in components
 import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
 import { Suspense } from 'react';
 import GoogleAnalyticsLazy from '../components/GoogleAnalyticsLazy';
-import { CriticalStylesInline } from './critical-styles-inline';
 import { CSSOptimizer } from '../components/CSSOptimizer';
 import StickyTopNav from '../components/StickyTopNav';
 import { WebApplicationSchema } from '../components/SafeSchema';
@@ -18,6 +12,7 @@ import CookieBannerModern from '../components/CookieBannerModern';
 import DataRetentionInitializer from '../components/DataRetentionInitializer';
 import SkipLinks from '../components/SkipLinks';
 import ServiceWorkerRegistration from '../components/ServiceWorkerRegistration';
+import WebVitalsMonitor from '../components/WebVitalsMonitor';
 import { I18nProvider } from '../src/i18n/i18nContext';
 
 const inter = Inter({ 
@@ -151,7 +146,6 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
-        <CriticalStylesInline />
         <link rel="icon" href="/favicon.ico" />
         <link rel="apple-touch-icon" href="/logo192.png" />
         <meta name="theme-color" content="#1e40af" />
@@ -170,9 +164,14 @@ export default function RootLayout({
 
         {/* Resource hints for performance */}
         <link rel="preconnect" href="https://www.googletagmanager.com" />
+        <link rel="preconnect" href="https://api.open-meteo.com" />
         <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
         <link rel="dns-prefetch" href="https://api.open-meteo.com" />
         <link rel="dns-prefetch" href="https://statsapi.mlb.com" />
+
+        {/* Comprehensive Critical CSS inlined - eliminates render-blocking */}
+        <style dangerouslySetInnerHTML={{ __html: `:root{--ink-900:#0B1220;--ink-800:#1B2432;--ink-700:#334155;--ondark-900:#FFFFFF;--paper:#FFFFFF;--accent-600:#1D4ED8;--accent-700:#1E40AF;--focus-ring:#1D4ED8}*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}html{font-size:16px;font-feature-settings:"kern","liga";text-rendering:optimizeLegibility;scroll-behavior:smooth}body{margin:0;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Oxygen,Ubuntu,Cantarell,sans-serif;line-height:1.5;color:#1B2432;background:#FFFFFF;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;-webkit-tap-highlight-color:transparent}#main-content,main{display:block}h1{color:#1B2432;font-weight:700;line-height:1.1;font-size:clamp(2.5rem,6vw,5rem);margin:0;letter-spacing:-0.02em}h2{color:#1B2432;font-weight:600;line-height:1.3;font-size:clamp(1.5rem,3vw,2rem);margin:0}p{font-size:1rem;line-height:1.6;color:#334155;margin:0}button{font-family:inherit;font-size:16px;min-height:44px;min-width:44px;border:none;cursor:pointer}a{color:#1D4ED8;text-decoration:none;text-underline-offset:2px}.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}.hero-section{position:relative;width:100%;min-height:100vh;display:flex;align-items:center;justify-content:center;overflow:hidden;padding:2rem 1rem}.hero-background{position:absolute;top:0;left:0;right:0;bottom:0;z-index:0}.hero-gradient{position:absolute;top:0;left:0;right:0;bottom:0;background:linear-gradient(135deg,#0f766e 0%,#0891b2 50%,#0c4a6e 100%)}.hero-content{position:relative;z-index:2;width:100%;max-width:900px;text-align:center;color:white}.hero-cta-primary{display:inline-flex;align-items:center;gap:0.625rem;background:white;color:#0f766e;padding:1rem 2.5rem;font-size:1.125rem;font-weight:600;border-radius:12px;box-shadow:0 4px 14px rgba(0,0,0,0.15);min-height:44px;transition:transform 0.2s ease}.hero-cta-primary:hover{transform:translateY(-3px);box-shadow:0 8px 20px rgba(0,0,0,0.25)}.skeleton{background:linear-gradient(90deg,#f0f0f0 25%,#e0e0e0 50%,#f0f0f0 75%);background-size:200% 100%;animation:loading 1.5s ease-in-out infinite}@keyframes loading{0%{background-position:200% 0}100%{background-position:-200% 0}}.page-transition{min-height:100vh;background:#fff}` }} />
+
         <WebApplicationSchema />
       </head>
       <body className={inter.className}>
@@ -183,6 +182,7 @@ export default function RootLayout({
             <GoogleAnalyticsLazy />
           </Suspense>
           <ServiceWorkerRegistration />
+          <WebVitalsMonitor />
           <DataRetentionInitializer />
           <StickyTopNav />
           <main id="main-content" tabIndex={-1}>

@@ -407,7 +407,7 @@ export function getVenueSections(venueId: string): any[] {
   if (VENUE_SECTIONS[venueId]) {
     return VENUE_SECTIONS[venueId];
   }
-  
+
   // Then check NFL sections
   if (NFL_SECTIONS[venueId]) {
     const nflSections = NFL_SECTIONS[venueId];
@@ -417,7 +417,7 @@ export function getVenueSections(venueId: string): any[] {
     }
     return nflSections;
   }
-  
+
   // Check if this is a MiLB venue with custom layout
   const venue = ALL_UNIFIED_VENUES.find(v => v.id === venueId);
   if (venue && venue.league === 'MiLB') {
@@ -426,6 +426,6 @@ export function getVenueSections(venueId: string): any[] {
       return integratedVenue.sections;
     }
   }
-  
+
   return [];
 }

@@ -7,7 +7,9 @@ import { LazySectionCardModern as LazySectionCard } from './LazySectionCardModer
 import { ListIcon, SearchIcon, SunIcon, CloudIcon, CloseIcon, BaseballIcon, TicketIcon, CrownIcon, StadiumIcon, FieldLevelIcon, LowerLevelIcon, ClubLevelIcon, UpperLevelIcon, ValuePriceIcon, ModeratePriceIcon, PremiumPriceIcon, LuxuryPriceIcon, MoneyIcon, PartlyCloudyIcon, FireIcon } from './Icons';
 import { LoadingSpinner } from './LoadingSpinner';
 import SectionFilters, { SectionFilterValues } from './SectionFilters/SectionFilters';
+import { SectionComparison } from './SectionComparison/SectionComparison';
 import type { SectionShadowData } from '../utils/sunCalculator';
+import VirtualScroll from './VirtualScroll';
 import './SectionList.css';
 
 interface SectionListProps {
@@ -41,15 +43,109 @@ export const SectionList: React.FC<SectionListProps> = ({
   });
   const [searchTerm, setSearchTerm] = useState<string>('');
   const [debouncedSearchTerm, setDebouncedSearchTerm] = useState<string>('');
-  const [filters, setFilters] = useState<SectionFilterValues>({
-    maxSunExposure: undefined,
-    sectionType: [],
-    priceRange: []
+  const [filters, setFilters] = useState<SectionFilterValues>(() => {
+    // Initialize filters from URL params
+    if (typeof window === 'undefined') {
+      return {
+        maxSunExposure: undefined,
+        sectionType: [],
+        priceRange: []
+      };
+    }
+
+    const params = new URLSearchParams(window.location.search);
+    const maxSunParam = params.get('maxSun');
+    const sectionTypeParam = params.get('sectionType');
+    const priceRangeParam = params.get('priceRange');
+
+    return {
+      maxSunExposure: maxSunParam ? parseInt(maxSunParam) : undefined,
+      sectionType: sectionTypeParam ? sectionTypeParam.split(',').filter(Boolean) : [],
+      priceRange: priceRangeParam ? priceRangeParam.split(',').filter(Boolean) : []
+    };
   });
   const [filtersExpanded, setFiltersExpanded] = useState(true);
   const [showRowLevel, setShowRowLevel] = useState(false);
+  const [comparisonMode, setComparisonMode] = useState(false);
+  const [selectedSections, setSelectedSections] = useState<Set<string>>(new Set());
+  const [showComparison, setShowComparison] = useState(false);
   const haptic = useHapticFeedback();
   const sectionListRef = useRef<HTMLDivElement>(null);
+
+  // Initialize comparison mode from URL params
+  useEffect(() => {
+    if (typeof window === 'undefined') return;
+
+    const params = new URLSearchParams(window.location.search);
+    const compareSections = params.get('compare');
+
+    if (compareSections) {
+      const sectionIds = compareSections.split(',').filter(Boolean);
+      if (sectionIds.length > 0) {
+        setSelectedSections(new Set(sectionIds));
+        setComparisonMode(true);
+        setShowComparison(true);
+      }
+    }
+  }, []);
+
+  // Update URL when comparison selections change
+  useEffect(() => {
+    if (typeof window === 'undefined') return;
+
+    const params = new URLSearchParams(window.location.search);
+
+    if (selectedSections.size > 0 && comparisonMode) {
+      params.set('compare', Array.from(selectedSections).join(','));
+    } else {
+      params.delete('compare');
+    }
+
+    const newUrl = params.toString()
+      ? `${window.location.pathname}?${params.toString()}`
+      : window.location.pathname;
+
+    window.history.replaceState({}, '', newUrl);
+  }, [selectedSections, comparisonMode]);
+
+  // Update URL when filters change
+  useEffect(() => {
+    if (typeof window === 'undefined') return;
+
+    const params = new URLSearchParams(window.location.search);
+
+    // Preserve comparison params
+    const compareParam = params.get('compare');
+
+    // Clear all filter params first
+    params.delete('maxSun');
+    params.delete('sectionType');
+    params.delete('priceRange');
+
+    // Add filter params if they have values
+    if (filters.maxSunExposure !== undefined && filters.maxSunExposure !== 100) {
+      params.set('maxSun', filters.maxSunExposure.toString());
+    }
+
+    if (filters.sectionType.length > 0) {
+      params.set('sectionType', filters.sectionType.join(','));
+    }
+
+    if (filters.priceRange.length > 0) {
+      params.set('priceRange', filters.priceRange.join(','));
+    }
+
+    // Restore comparison params
+    if (compareParam && comparisonMode) {
+      params.set('compare', compareParam);
+    }
+
+    const newUrl = params.toString()
+      ? `${window.location.pathname}?${params.toString()}`
+      : window.location.pathname;
+
+    window.history.replaceState({}, '', newUrl);
+  }, [filters, comparisonMode]);
 
   // Helper to find row data for a section
   const getRowDataForSection = useCallback((sectionId: string) => {
@@ -241,8 +337,86 @@ export const SectionList: React.FC<SectionListProps> = ({
     }
   };
 
+  const handleToggleComparisonMode = () => {
+    haptic.light();
+    setComparisonMode(!comparisonMode);
+    if (comparisonMode) {
+      // Clear selections when exiting comparison mode
+      setSelectedSections(new Set());
+      setShowComparison(false);
+    }
+  };
+
+  const handleToggleSelection = (sectionId: string) => {
+    haptic.light();
+    setSelectedSections(prev => {
+      const newSet = new Set(prev);
+      if (newSet.has(sectionId)) {
+        newSet.delete(sectionId);
+      } else {
+        // Limit to 4 sections
+        if (newSet.size >= 4) {
+          // Remove the oldest selection (first item)
+          const firstId = Array.from(newSet)[0];
+          newSet.delete(firstId);
+        }
+        newSet.add(sectionId);
+      }
+      return newSet;
+    });
+  };
+
+  const handleShowComparison = () => {
+    haptic.light();
+    setShowComparison(true);
+  };
+
+  const handleCloseComparison = () => {
+    haptic.light();
+    setShowComparison(false);
+  };
+
+  const handleRemoveFromComparison = (sectionId: string) => {
+    setSelectedSections(prev => {
+      const newSet = new Set(prev);
+      newSet.delete(sectionId);
+      // Close comparison if no sections left
+      if (newSet.size === 0) {
+        setShowComparison(false);
+      }
+      return newSet;
+    });
+  };
+
   const sunnyCount = filteredSections.filter(s => s.inSun).length;
   const shadyCount = filteredSections.length - sunnyCount;
+
+  // Get selected section data for comparison
+  const selectedSectionData = useMemo(() => {
+    return sections.filter(s => selectedSections.has(s.section.id));
+  }, [sections, selectedSections]);
+
+  // Use virtual scrolling for better performance on mobile with many sections
+  const useVirtualScrolling = sortedSections.length > 60;
+
+  // Render a single section card (used by both normal and virtual rendering)
+  const renderSectionCard = useCallback((sectionData: SeatingSectionSun, index: number) => (
+    <LazySectionCard
+      key={`${sectionData.section.id}-${index}`}
+      section={sectionData.section}
+      sunExposure={sectionData.sunExposure}
+      inSun={sectionData.inSun}
+      index={index}
+      timeInSun={sectionData.timeInSun}
+      rowData={showRowLevel ? getRowDataForSection(sectionData.section.id) : undefined}
+      stadiumId={stadiumId}
+      worldCupMatchCount={worldCupMatchCount}
+      worldCupCountry={worldCupCountry}
+      comparisonMode={comparisonMode}
+      isSelected={selectedSections.has(sectionData.section.id)}
+      onToggleSelection={handleToggleSelection}
+    />
+  ), [showRowLevel, getRowDataForSection, stadiumId, worldCupMatchCount, worldCupCountry, comparisonMode, selectedSections, handleToggleSelection]);
 
   if (loading) {
     return (
@@ -295,6 +469,53 @@ export const SectionList: React.FC<SectionListProps> = ({
           />
         )}
         
+        {/* Comparison mode toggle */}
+        <div className="comparison-mode-bar" style={{ padding: '12px 0', borderBottom: '1px solid #e5e7eb', display: 'flex', alignItems: 'center', gap: '12px', flexWrap: 'wrap' }}>
+          <button
+            onClick={handleToggleComparisonMode}
+            className={`px-4 py-2 rounded-lg font-medium transition-all min-h-[44px] ${
+              comparisonMode
+                ? 'bg-blue-600 text-white hover:bg-blue-700'
+                : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
+            }`}
+            aria-pressed={comparisonMode}
+            aria-label={comparisonMode ? 'Exit comparison mode' : 'Enter comparison mode'}
+          >
+            {comparisonMode ? '✓ Comparison Mode' : 'Compare Sections'}
+          </button>
+
+          {comparisonMode && (
+            <>
+              <span className="text-sm text-gray-600">
+                {selectedSections.size === 0
+                  ? 'Select 2-4 sections to compare'
+                  : `${selectedSections.size} section${selectedSections.size > 1 ? 's' : ''} selected (max 4)`}
+              </span>
+              {selectedSections.size >= 2 && (
+                <button
+                  onClick={handleShowComparison}
+                  className="px-4 py-2 bg-green-600 text-white rounded-lg font-medium hover:bg-green-700 transition-all min-h-[44px]"
+                  aria-label="Show section comparison"
+                >
+                  Compare Now ({selectedSections.size})
+                </button>
+              )}
+              {selectedSections.size > 0 && (
+                <button
+                  onClick={() => {
+                    haptic.light();
+                    setSelectedSections(new Set());
+                  }}
+                  className="px-3 py-2 text-sm text-gray-600 hover:text-gray-900 transition-colors min-h-[44px]"
+                  aria-label="Clear all selections"
+                >
+                  Clear All
+                </button>
+              )}
+            </>
+          )}
+        </div>
+
         {/* Row-level toggle */}
         {showRowToggle && rowData && rowData.length > 0 && (
           <div className="row-level-toggle" style={{ padding: '12px 0', borderBottom: '1px solid #e5e7eb' }}>
@@ -405,25 +626,38 @@ export const SectionList: React.FC<SectionListProps> = ({
             </>
           )}
         </div>
+      ) : useVirtualScrolling ? (
+        <div className="section-list-container" role="list" aria-labelledby="sections-title">
+          <VirtualScroll
+            items={sortedSections}
+            itemHeight={350}
+            renderItem={(sectionData, index) => (
+              <div className="section-grid-virtual-item">
+                {renderSectionCard(sectionData, index)}
+              </div>
+            )}
+            containerHeight={typeof window !== 'undefined' ? Math.min(window.innerHeight - 400, 800) : 600}
+            overscan={3}
+            getItemKey={(sectionData, index) => `${sectionData.section.id}-${index}`}
+            className="section-virtual-scroll"
+            style={{ width: '100%' }}
+          />
+        </div>
       ) : (
         <div className="section-list-container" role="list" aria-labelledby="sections-title">
           <div className="section-grid">
-            {sortedSections.map((sectionData, index) => (
-              <LazySectionCard
-                key={`${sectionData.section.id}-${index}`}
-                section={sectionData.section}
-                sunExposure={sectionData.sunExposure}
-                inSun={sectionData.inSun}
-                index={index}
-                timeInSun={sectionData.timeInSun}
-                rowData={showRowLevel ? getRowDataForSection(sectionData.section.id) : undefined}
-                stadiumId={stadiumId}
-                worldCupMatchCount={worldCupMatchCount}
-                worldCupCountry={worldCupCountry}
-              />
-            ))}
+            {sortedSections.map((sectionData, index) => renderSectionCard(sectionData, index))}
           </div>
         </div>
+      )}
+
+      {/* Section Comparison Modal */}
+      {showComparison && selectedSectionData.length >= 2 && (
+        <SectionComparison
+          selectedSections={selectedSectionData}
+          onClose={handleCloseComparison}
+          onRemoveSection={handleRemoveFromComparison}
+        />
       )}
     </div>
   );

@@ -84,7 +84,8 @@
   color: white;
   border: none;
   border-radius: var(--radius-md);
-  padding: var(--spacing-2) var(--spacing-4);
+  padding: 12px 20px;
+  min-height: 44px;
   font-size: var(--font-size-sm);
   font-weight: var(--font-weight-semibold);
   cursor: pointer;
@@ -131,7 +132,9 @@
 .toast-action-dismiss {
   background: transparent;
   border: none;
-  padding: var(--spacing-2);
+  padding: 12px;
+  min-width: 44px;
+  min-height: 44px;
   cursor: pointer;
   color: var(--color-gray-500);
   transition: all 0.2s ease;

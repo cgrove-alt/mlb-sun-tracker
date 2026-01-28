@@ -1,12 +1,17 @@
 'use client';
 
 import dynamic from 'next/dynamic';
-import { Suspense, useMemo, useState, useCallback } from 'react';
+import { Suspense, useMemo, useState, useCallback, useRef } from 'react';
 import { LoadingSpinner } from '../../../src/components/LoadingSpinner';
 import { getSunPosition } from '../../../src/utils/sunCalculations';
 import { useSunCalculations } from '../../../src/hooks/useSunCalculations';
 import { usePullToRefresh } from '../../../src/hooks/usePullToRefresh';
 import { PullToRefreshIndicator } from '../../../src/components/PullToRefreshIndicator';
+import { StadiumDiagram, SectionShadeData } from '../../../src/components/StadiumDiagram/StadiumDiagram';
+import { getStadiumCompleteData } from '../../../src/data/stadium-data-aggregator';
+import { DataFreshness } from '../../../src/components/DataFreshness';
+import { getStadiumLastUpdated } from '../../../src/data/stadium-data-freshness';
+import { ReportInaccuracyButton } from '../../../src/components/ReportInaccuracy/ReportInaccuracyButton';
 
 const ComprehensiveStadiumGuide = dynamic(
   () => import('../../../src/components/ComprehensiveStadiumGuide'),
@@ -40,6 +45,9 @@ export default function StadiumPageClient({
   useComprehensive = false
 }: StadiumPageClientProps) {
   const [refreshKey, setRefreshKey] = useState(0);
+  const [selectedSectionId, setSelectedSectionId] = useState<string | undefined>(undefined);
+  const [showReportModal, setShowReportModal] = useState(false);
+  const sectionListRef = useRef<HTMLDivElement>(null);
 
   // Debug: Log what's being rendered
   console.log('StadiumPageClient rendering:', {
@@ -95,6 +103,48 @@ export default function StadiumPageClient({
     enabled: typeof window !== 'undefined' && window.innerWidth < 768,
   });
 
+  // Get complete stadium data with 3D vertices for diagram
+  const stadiumCompleteData = useMemo(() => {
+    try {
+      return getStadiumCompleteData(stadium.id, 'MLB');
+    } catch (error) {
+      console.error('Error loading complete stadium data:', error);
+      return null;
+    }
+  }, [stadium.id]);
+
+  // Convert sun calculations to shade data for diagram
+  const shadeData: SectionShadeData[] = useMemo(() => {
+    if (!sectionsWithSunData) return [];
+    return sectionsWithSunData.map(sectionData => ({
+      sectionId: sectionData.section.id,
+      shadePercentage: 100 - sectionData.sunExposure // Convert sun exposure to shade
+    }));
+  }, [sectionsWithSunData]);
+
+  // Handle section selection from diagram
+  const handleDiagramSectionSelect = useCallback((sectionId: string) => {
+    setSelectedSectionId(sectionId);
+
+    // Scroll to the section card in the list
+    if (sectionListRef.current) {
+      const sectionCard = sectionListRef.current.querySelector(`[data-section-id="${sectionId}"]`);
+      if (sectionCard) {
+        sectionCard.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        // Flash the card to draw attention
+        sectionCard.classList.add('highlight-flash');
+        setTimeout(() => {
+          sectionCard.classList.remove('highlight-flash');
+        }, 2000);
+      }
+    }
+  }, []);
+
+  // Handle section selection from list (for future bidirectional sync)
+  const handleListSectionSelect = useCallback((sectionId: string) => {
+    setSelectedSectionId(sectionId);
+  }, []);
+
   return (
     <>
       {/* Pull-to-refresh indicator */}
@@ -116,9 +166,50 @@ export default function StadiumPageClient({
           />
         </Suspense>
       </div>
-      
+
+      {/* Data Freshness Indicator */}
+      <div className="container mx-auto px-4 mt-6 max-w-5xl">
+        <DataFreshness
+          lastUpdated={getStadiumLastUpdated(stadium.id) || undefined}
+          stadiumName={stadium.name}
+          showReportLink={true}
+          onReportClick={() => setShowReportModal(true)}
+        />
+      </div>
+
+      {/* Report Inaccuracy Button - Floating on mobile, inline on desktop */}
+      <div className="container mx-auto px-4 mt-4 max-w-5xl">
+        <div className="flex justify-end">
+          <ReportInaccuracyButton
+            stadiumId={stadium.id}
+            stadiumName={stadium.name}
+            variant="secondary"
+            size="md"
+          />
+        </div>
+      </div>
+
+      {/* Stadium Diagram - Interactive shade visualization */}
+      {stadiumCompleteData && stadiumCompleteData.sections.length > 0 && !isCalculating && (
+        <div className="stadium-diagram-wrapper mt-8 mb-8">
+          <div className="diagram-header mb-4">
+            <h2 className="text-2xl font-bold text-gray-900">Interactive Stadium Map</h2>
+            <p className="text-sm text-gray-600 mt-1">
+              Click any section to see detailed shade information and scroll to its details below
+            </p>
+          </div>
+          <StadiumDiagram
+            sections={stadiumCompleteData.sections}
+            shadeData={shadeData}
+            selectedSectionId={selectedSectionId}
+            onSectionSelect={handleDiagramSectionSelect}
+            className="max-w-5xl mx-auto"
+          />
+        </div>
+      )}
+
       {/* AI Seat Recommendations Section - Outside Suspense */}
-      <div className="mt-8" style={{ display: 'block' }}>
+      <div className="mt-8" style={{ display: 'block' }} ref={sectionListRef}>
         {isCalculating ? (
           <div className="flex justify-center items-center p-8">
             <LoadingSpinner message="Calculating sun exposure..." />

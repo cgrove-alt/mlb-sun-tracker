@@ -53,7 +53,7 @@ export interface WorldCupMatch {
   venue: string;                   // Stadium ID (WorldCupVenue.id)
 
   // Match details
-  round: 'Group Stage' | 'Round of 16' | 'Quarterfinal' | 'Semifinal' | 'Third Place' | 'Final';
+  round: 'Group Stage' | 'Round of 32' | 'Round of 16' | 'Quarterfinal' | 'Semifinal' | 'Third Place' | 'Final';
   group?: string;                  // "Group A" (if group stage)
   teamA: string;                   // "Mexico" or "TBD"
   teamB: string;                   // "USA" or "TBD"
@@ -88,7 +88,7 @@ export interface WorldCupCity {
 
 export const WORLD_CUP_2026_INFO = {
   startDate: '2026-06-11',
-  endDate: '2026-07-19',
+  endDate: '2026-07-26',
   totalMatches: 104,
   totalVenues: 16,
   totalCountries: 3,
@@ -103,5 +103,10 @@ export const WORLD_CUP_2026_INFO = {
     date: '2026-07-19',
     venue: 'metlife-stadium-wc',
     city: 'East Rutherford, NJ'
+  },
+  thirdPlaceMatch: {
+    date: '2026-07-26',
+    venue: 'hard-rock-stadium-wc',
+    city: 'Miami Gardens, FL'
   }
 } as const;
