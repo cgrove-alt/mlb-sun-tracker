@@ -11,7 +11,7 @@ import { LoadingSpinner } from '../LoadingSpinner';
 import { LeagueId, DesktopShadeAppProps, DesktopShadeAppRef, LEAGUE_TABS } from '../../types/desktop-app';
 import { UnifiedVenue, getVenuesByLeague } from '../../data/unifiedVenues';
 import { getStadiumSectionsAsync } from '../../data/getStadiumSections';
-import { getStadiumCompleteData } from '../../data/stadium-data-aggregator';
+import { getStadiumCompleteData, hasSpecificData } from '../../data/stadium-data-aggregator';
 import { getSunPosition } from '../../utils/sunCalculations';
 import { useSunCalculations } from '../../hooks/useSunCalculations';
 import type { StadiumSection } from '../../data/stadiumSectionTypes';
@@ -175,15 +175,21 @@ export const DesktopShadeApp = forwardRef<DesktopShadeAppRef, DesktopShadeAppPro
     }
   }, [selectedVenue?.id, selectedLeague]);
 
-  // Sections for sun calculations - prefer detailed sections with row data
+  // Check if we have real detailed data (not generated generic sections)
+  const hasDetailedSections = useMemo(() => {
+    if (!selectedVenue) return false;
+    return hasSpecificData(selectedVenue.id).hasSections;
+  }, [selectedVenue?.id]);
+
+  // Sections for sun calculations - use detailed sections only if real data exists
   const sectionsForCalc = useMemo(() => {
-    // Use stadiumCompleteData sections if available (they have row arrays)
-    if (stadiumCompleteData?.sections && stadiumCompleteData.sections.length > 0) {
+    // Only use stadiumCompleteData if we have real detailed sections (not generic)
+    if (hasDetailedSections && stadiumCompleteData?.sections && stadiumCompleteData.sections.length > 0) {
       return stadiumCompleteData.sections;
     }
-    // Fallback to basic sections from async loader
+    // Use real sections from async loader for stadiums without detailed registry data
     return sections;
-  }, [stadiumCompleteData?.sections, sections]);
+  }, [hasDetailedSections, stadiumCompleteData?.sections, sections]);
 
   // Use Web Worker for sun calculations
   const {
@@ -199,11 +205,14 @@ export const DesktopShadeApp = forwardRef<DesktopShadeAppRef, DesktopShadeAppPro
   });
 
   // Convert sun calculations to shade data for diagram
+  // Worker returns: averageCoverage (shade %), sunExposure (sun %)
   const shadeData: SectionShadeData[] = useMemo(() => {
     if (!sectionsWithSunData) return [];
     return sectionsWithSunData.map((sectionData: any) => ({
       sectionId: sectionData.section?.id || sectionData.sectionId,
-      shadePercentage: 100 - (sectionData.sunExposure ?? sectionData.averageCoverage ?? 50),
+      // averageCoverage is already shade percentage (from row calculations)
+      // sunExposure needs to be inverted to get shade
+      shadePercentage: sectionData.averageCoverage ?? (100 - (sectionData.sunExposure ?? 50)),
     }));
   }, [sectionsWithSunData]);
 
@@ -227,8 +236,10 @@ export const DesktopShadeApp = forwardRef<DesktopShadeAppRef, DesktopShadeAppPro
       .filter(section => section && section.id) // Guard against invalid sections
       .map(section => {
         const workerData = workerDataMap.get(section.id);
+        // averageCoverage is shade %, sunExposure is sun %
+        // We want sun exposure for display (higher = more sun)
         const sunExposure = workerData
-          ? (100 - (workerData.averageCoverage ?? (100 - (workerData.sunExposure ?? 50))))
+          ? (workerData.sunExposure ?? (100 - (workerData.averageCoverage ?? 50)))
           : 50;
 
         // Convert DetailedSection level to StadiumSection level (map 'standing' -> 'lower')
