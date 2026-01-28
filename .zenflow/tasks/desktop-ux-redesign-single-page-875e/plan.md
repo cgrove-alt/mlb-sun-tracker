@@ -1,7 +1,8 @@
-# Spec and build
+# Desktop UX Redesign - Single Page App Layout
 
 ## Configuration
-- **Artifacts Path**: {@artifacts_path} → `.zenflow/tasks/{task_id}`
+- **Artifacts Path**: `.zenflow/tasks/desktop-ux-redesign-single-page-875e`
+- **Technical Spec**: `spec.md`
 
 ---
 
@@ -18,47 +19,190 @@ Do not make assumptions on important decisions — get clarification first.
 
 ## Workflow Steps
 
-### [ ] Step: Technical Specification
+### [x] Step: Technical Specification
 
-Assess the task's difficulty, as underestimating it leads to poor outcomes.
-- easy: Straightforward implementation, trivial bug fix or feature
-- medium: Moderate complexity, some edge cases or caveats to consider
-- hard: Complex logic, many caveats, architectural considerations, or high-risk changes
+**Difficulty Assessment: HARD**
 
-Create a technical specification for the task that is appropriate for the complexity level:
-- Review the existing codebase architecture and identify reusable components.
-- Define the implementation approach based on established patterns in the project.
-- Identify all source code files that will be created or modified.
-- Define any necessary data model, API, or interface changes.
-- Describe verification steps using the project's test and lint commands.
-
-Save the output to `{@artifacts_path}/spec.md` with:
-- Technical context (language, dependencies)
-- Implementation approach
+Created comprehensive technical specification in `spec.md` including:
+- Current problem analysis with root causes
+- Solution architecture with component hierarchy
+- Reusable components identified
+- New components to create
+- Data flow changes
 - Source code structure changes
-- Data model / API / interface changes
+- API/interface changes
 - Verification approach
-
-If the task is complex enough, create a detailed implementation plan based on `{@artifacts_path}/spec.md`:
-- Break down the work into concrete tasks (incrementable, testable milestones)
-- Each task should reference relevant contracts and include verification steps
-- Replace the Implementation step below with the planned tasks
-
-Rule of thumb for step size: each step should represent a coherent unit of work (e.g., implement a component, add an API endpoint, write tests for a module). Avoid steps that are too granular (single function).
-
-Save to `{@artifacts_path}/plan.md`. If the feature is trivial and doesn't warrant this breakdown, keep the Implementation step below as is.
+- Risk analysis
+- 6-phase implementation plan
 
 ---
 
-### [ ] Step: Implementation
+### [ ] Step: Phase 1 - Core Desktop Layout Component
 
-Implement the task according to the technical specification and general engineering best practices.
+Create the foundational layout structure for the new desktop experience.
 
-1. Break the task into steps where possible.
-2. Implement the required changes in the codebase.
-3. Add and run relevant tests and linters.
-4. Perform basic manual verification if applicable.
-5. After completion, write a report to `{@artifacts_path}/report.md` describing:
-   - What was implemented
-   - How the solution was tested
-   - The biggest issues or challenges encountered
+**Tasks:**
+- [ ] Create `src/components/DesktopShadeApp/DesktopShadeApp.tsx` - main container component
+- [ ] Create `src/components/DesktopShadeApp/DesktopShadeApp.module.css` - layout styles
+- [ ] Create `src/components/LeagueTabs/LeagueTabs.tsx` - tab navigation for MLB/MiLB/NFL/WorldCup
+- [ ] Create `src/components/LeagueTabs/LeagueTabs.module.css` - tab styles
+- [ ] Add TypeScript types in `src/types/desktop-app.ts`
+- [ ] Wire up basic state management (selectedLeague, selectedVenue)
+- [ ] Run type-check, lint, and tests
+
+**Acceptance Criteria:**
+- League tabs render and switch between leagues
+- Basic container layout displays correctly
+- No TypeScript errors
+- All existing tests pass
+
+---
+
+### [ ] Step: Phase 2 - Horizontal Filter System
+
+Replace cramped sidebar filters with horizontal filter pills.
+
+**Tasks:**
+- [ ] Create `src/components/HorizontalFilterPills/HorizontalFilterPills.tsx`
+- [ ] Create `src/components/HorizontalFilterPills/HorizontalFilterPills.module.css`
+- [ ] Extract filter logic from existing `SectionFilters/SectionFilters.tsx`
+- [ ] Add dropdown popovers for filter options (Sun Exposure, Level, Price)
+- [ ] Add "Clear Filters" button
+- [ ] Connect to existing filter state via URL params
+- [ ] Run type-check, lint, and tests
+
+**Acceptance Criteria:**
+- Horizontal pills display and are interactive
+- Filter selections persist to URL
+- "Clear Filters" resets all filters
+- Responsive on desktop widths
+
+---
+
+### [ ] Step: Phase 3 - Enhanced Section Cards
+
+Improve section cards with clear expand/collapse indicators and highlight support.
+
+**Tasks:**
+- [ ] Modify `src/components/LazySectionCardModern.tsx`:
+  - Add `showExpandIndicator` prop with chevron icon
+  - Add `isHighlighted` prop for diagram sync
+  - Improve expand/collapse visual feedback
+- [ ] Add CSS styles for highlighted state
+- [ ] Add animation for expand/collapse indicator
+- [ ] Ensure accessibility (aria-expanded, focus states)
+- [ ] Run type-check, lint, and tests
+
+**Acceptance Criteria:**
+- Cards show clear expand/collapse chevron
+- Highlighted cards have visible border/background
+- Expand animation is smooth
+- Keyboard accessible
+
+---
+
+### [ ] Step: Phase 4 - Stadium Diagram Integration
+
+Create side-by-side layout with bidirectional selection sync.
+
+**Tasks:**
+- [ ] Create `src/components/MainContentLayout/MainContentLayout.tsx` - 40/60 split layout
+- [ ] Create `src/components/MainContentLayout/MainContentLayout.module.css`
+- [ ] Wrap existing `StadiumDiagram` in left panel
+- [ ] Modify `SectionList.tsx`:
+  - Add `highlightedSectionId` prop
+  - Add `onSectionSelect` callback
+  - Scroll to highlighted section
+- [ ] Implement bidirectional sync in `DesktopShadeApp`:
+  - Diagram click → update state → highlight card
+  - Card click → update state → highlight diagram section
+- [ ] Run type-check, lint, and tests
+
+**Acceptance Criteria:**
+- Layout displays 40/60 split correctly
+- Clicking diagram section highlights corresponding card
+- Clicking card highlights diagram section
+- Smooth scroll to selected card
+
+---
+
+### [ ] Step: Phase 5 - Navigation & Entry Point
+
+Create the stadium/game selector bar and fix entry point.
+
+**Tasks:**
+- [ ] Create `src/components/StadiumGameBar/StadiumGameBar.tsx` - full-width selector
+- [ ] Create `src/components/StadiumGameBar/StadiumGameBar.module.css`
+- [ ] Extract venue/game selection logic from `UnifiedGameSelector.tsx`
+- [ ] Load ALL venues (remove 50 venue limit):
+  - Modify `components/VenueDataProvider.tsx` to pass all venues
+  - Or load venues directly in DesktopShadeApp
+- [ ] Use react-select async for venue search (performance)
+- [ ] Modify `src/components/HeroSection/HeroSection.tsx`:
+  - "Find Your Shade" should scroll to and open venue selector
+  - Remove smooth scroll, use direct interaction
+- [ ] Update `app/HomePage.tsx` to render DesktopShadeApp for desktop
+- [ ] Run type-check, lint, and tests
+
+**Acceptance Criteria:**
+- All 250+ venues accessible via search
+- "Find Your Shade" opens selector directly
+- Stadium and game dropdowns work correctly
+- MiLB level selector shows when MiLB tab selected
+
+---
+
+### [ ] Step: Phase 6 - Polish & Responsive
+
+Final polish, responsive testing, and performance optimization.
+
+**Tasks:**
+- [ ] Fine-tune responsive breakpoints:
+  - Desktop: Full side-by-side layout
+  - Tablet (768-1024px): Stacked layout or reduced diagram
+  - Mobile (<768px): Keep existing MobileApp
+- [ ] Add loading skeletons for layout transitions
+- [ ] Performance optimization:
+  - Virtualize venue dropdown for large lists
+  - Lazy load stadium diagram sections
+  - Optimize re-renders with React.memo
+- [ ] Accessibility review:
+  - Keyboard navigation through tabs
+  - Screen reader announcements for selections
+  - Focus management
+- [ ] Cross-browser testing (Chrome, Firefox, Safari)
+- [ ] Run full test suite
+- [ ] Build production bundle
+
+**Acceptance Criteria:**
+- All responsive breakpoints work correctly
+- Mobile still uses MobileApp
+- Performance benchmarks met:
+  - Initial load < 3s
+  - Tab switch < 500ms
+  - Search < 100ms
+- No accessibility violations
+- Production build succeeds
+
+---
+
+### [ ] Step: Verification
+
+Run comprehensive verification as VERIFICATION AGENT.
+
+**Tasks:**
+- [ ] Run automated checks:
+  - `npm run type-check`
+  - `npm run lint`
+  - `npm run test`
+  - `npm run build`
+- [ ] Manual code review against spec.md
+- [ ] Security review (no new vulnerabilities)
+- [ ] Performance testing with Lighthouse
+- [ ] Create verification report in `verification-report.md`
+
+**Acceptance Criteria:**
+- All automated checks pass
+- No critical issues found
+- Performance benchmarks met
+- Verification report complete with APPROVE/CONDITIONAL/REJECT
