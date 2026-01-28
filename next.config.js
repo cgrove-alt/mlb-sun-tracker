@@ -91,6 +91,8 @@ const nextConfig = {
   experimental: {
     // Optimize package imports to reduce bundle size
     optimizePackageImports: ['lucide-react', 'date-fns'],
+    // Enable optimized CSS with critters
+    optimizeCss: true,
   },
   
   // Output configuration

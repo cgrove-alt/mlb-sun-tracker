@@ -171,9 +171,14 @@ export default function RootLayout({
 
         {/* Resource hints for performance */}
         <link rel="preconnect" href="https://www.googletagmanager.com" />
+        <link rel="preconnect" href="https://api.open-meteo.com" />
         <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
         <link rel="dns-prefetch" href="https://api.open-meteo.com" />
         <link rel="dns-prefetch" href="https://statsapi.mlb.com" />
+
+        {/* Preload critical resources */}
+        <link rel="modulepreload" href="/_next/static/chunks/vendor-react.js" as="script" />
+        <link rel="modulepreload" href="/_next/static/chunks/common.js" as="script" />
 
         {/* Preload critical CSS - inline first paint CSS */}
         <style dangerouslySetInnerHTML={{ __html: `
