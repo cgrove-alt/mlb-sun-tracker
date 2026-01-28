@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useRef, useEffect } from 'react';
+import React, { useRef, useEffect, memo } from 'react';
 import styles from './MainContentLayout.module.css';
 
 export interface MainContentLayoutProps {
@@ -12,6 +12,8 @@ export interface MainContentLayoutProps {
   className?: string;
   /** ID of section to scroll to in cards panel */
   scrollToSectionId?: string | null;
+  /** Whether content is loading */
+  isLoading?: boolean;
 }
 
 /**
@@ -22,11 +24,12 @@ export interface MainContentLayoutProps {
  *
  * Responsive: Stacks vertically on tablet/mobile
  */
-export const MainContentLayout: React.FC<MainContentLayoutProps> = ({
+const MainContentLayoutComponent: React.FC<MainContentLayoutProps> = ({
   diagramContent,
   cardsContent,
   className = '',
   scrollToSectionId,
+  isLoading = false,
 }) => {
   const cardsPanelRef = useRef<HTMLDivElement>(null);
 
@@ -49,7 +52,7 @@ export const MainContentLayout: React.FC<MainContentLayoutProps> = ({
   }, [scrollToSectionId]);
 
   return (
-    <div className={`${styles.container} ${className}`}>
+    <div className={`${styles.container} ${className} ${isLoading ? styles.loading : ''}`}>
       {/* Left Panel: Stadium Diagram (40%) */}
       <div className={styles.diagramPanel} role="region" aria-label="Stadium diagram">
         {diagramContent}
@@ -67,5 +70,8 @@ export const MainContentLayout: React.FC<MainContentLayoutProps> = ({
     </div>
   );
 };
+
+// Memoize to prevent unnecessary re-renders when parent state changes
+export const MainContentLayout = memo(MainContentLayoutComponent);
 
 export default MainContentLayout;

@@ -5,7 +5,8 @@ import { LeagueTabs } from '../LeagueTabs';
 import { HorizontalFilterPills, FilterValues } from '../HorizontalFilterPills';
 import { MainContentLayout } from '../MainContentLayout';
 import { StadiumGameBar } from '../StadiumGameBar';
-import { LeagueId, DesktopShadeAppProps, DesktopShadeAppRef } from '../../types/desktop-app';
+import { SkeletonLoader } from '../SkeletonLoader';
+import { LeagueId, DesktopShadeAppProps, DesktopShadeAppRef, LEAGUE_TABS } from '../../types/desktop-app';
 import { UnifiedVenue, getVenuesByLeague } from '../../data/unifiedVenues';
 import styles from './DesktopShadeApp.module.css';
 
@@ -51,10 +52,13 @@ export const DesktopShadeApp = forwardRef<DesktopShadeAppRef, DesktopShadeAppPro
   const [selectedVenue, setSelectedVenue] = useState<UnifiedVenue | null>(null);
   const [selectedGameTime, setSelectedGameTime] = useState<Date | null>(null);
   const [filters, setFilters] = useState<FilterValues>(getInitialFilters);
+  const [isLoading, setIsLoading] = useState(false);
   // Selected section for bidirectional sync between diagram and cards
   const [selectedSectionId, setSelectedSectionId] = useState<string | null>(null);
   // Ref for the stadium selector bar (for scroll-to)
   const selectorBarRef = useRef<HTMLDivElement>(null);
+  // Ref for screen reader announcements
+  const announcerRef = useRef<HTMLDivElement>(null);
 
   // Get venues for the selected league
   const venues = useMemo(() => {
@@ -103,20 +107,42 @@ export const DesktopShadeApp = forwardRef<DesktopShadeAppRef, DesktopShadeAppPro
     setFilters(newFilters);
   }, []);
 
+  // Announce message to screen readers
+  const announce = useCallback((message: string) => {
+    if (announcerRef.current) {
+      announcerRef.current.textContent = message;
+      // Clear after announcement to allow repeat announcements
+      setTimeout(() => {
+        if (announcerRef.current) {
+          announcerRef.current.textContent = '';
+        }
+      }, 1000);
+    }
+  }, []);
+
   // Handle league change - clear venue and section selection when switching leagues
   const handleLeagueChange = useCallback((league: LeagueId) => {
     setSelectedLeague(league);
     setSelectedVenue(null);
     setSelectedSectionId(null);
     setSelectedGameTime(null);
-  }, []);
+    // Announce league change to screen readers
+    const leagueLabel = LEAGUE_TABS.find(t => t.id === league)?.label || league;
+    announce(`Switched to ${leagueLabel}`);
+  }, [announce]);
 
   // Handle venue change
   const handleVenueChange = useCallback((venue: UnifiedVenue | null) => {
+    setIsLoading(true);
     setSelectedVenue(venue);
     setSelectedSectionId(null);
     setSelectedGameTime(null);
-  }, []);
+    if (venue) {
+      announce(`Selected ${venue.name}`);
+    }
+    // Simulate loading transition
+    setTimeout(() => setIsLoading(false), 300);
+  }, [announce]);
 
   // Handle game/time selection
   const handleGameSelect = useCallback((game: any, dateTime: Date | null) => {
@@ -143,15 +169,26 @@ export const DesktopShadeApp = forwardRef<DesktopShadeAppRef, DesktopShadeAppPro
   // Handle section selection from diagram (click on diagram → highlight card)
   const handleDiagramSectionSelect = useCallback((sectionId: string) => {
     setSelectedSectionId(sectionId);
-  }, []);
+    announce(`Selected ${sectionId}`);
+  }, [announce]);
 
   // Handle section selection from card (click on card → highlight diagram)
   const handleCardSectionSelect = useCallback((sectionId: string) => {
     setSelectedSectionId(sectionId);
-  }, []);
+    announce(`Selected ${sectionId}`);
+  }, [announce]);
 
   return (
     <div className={`${styles.container} ${className}`}>
+      {/* Screen reader announcer for live updates */}
+      <div
+        ref={announcerRef}
+        role="status"
+        aria-live="polite"
+        aria-atomic="true"
+        className={styles.srOnly}
+      />
+
       {/* League Tabs */}
       <LeagueTabs
         selectedLeague={selectedLeague}
@@ -181,6 +218,7 @@ export const DesktopShadeApp = forwardRef<DesktopShadeAppRef, DesktopShadeAppPro
         {/* Side-by-side layout with bidirectional sync */}
         <MainContentLayout
           scrollToSectionId={selectedSectionId}
+          isLoading={isLoading}
           diagramContent={
             /* Stadium Diagram - will be wired up in Phase 5 with real data */
             <div className={styles.diagramWrapper}>

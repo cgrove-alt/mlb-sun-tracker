@@ -1,7 +1,7 @@
 'use client';
 
-import React, { useState, useEffect, useRef, useCallback } from 'react';
-import { SunIcon, CloudIcon, PartlyCloudyIcon, MoneyIcon, CloseIcon } from '../Icons';
+import React, { useState, useEffect, useRef, useCallback, memo } from 'react';
+import { SunIcon, MoneyIcon, CloseIcon } from '../Icons';
 import styles from './HorizontalFilterPills.module.css';
 
 /**
@@ -53,7 +53,7 @@ const PRICE_RANGES = [
  * - Clear all button
  * - URL param persistence (handled by parent)
  */
-export const HorizontalFilterPills: React.FC<HorizontalFilterPillsProps> = ({
+const HorizontalFilterPillsComponent: React.FC<HorizontalFilterPillsProps> = ({
   filters,
   onChange,
   className = '',
@@ -403,5 +403,8 @@ export const HorizontalFilterPills: React.FC<HorizontalFilterPillsProps> = ({
     </div>
   );
 };
+
+// Memoize to prevent unnecessary re-renders when parent state changes
+export const HorizontalFilterPills = memo(HorizontalFilterPillsComponent);
 
 export default HorizontalFilterPills;
