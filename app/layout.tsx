@@ -180,10 +180,20 @@ export default function RootLayout({
         <link rel="modulepreload" href="/_next/static/chunks/vendor-react.js" as="script" />
         <link rel="modulepreload" href="/_next/static/chunks/common.js" as="script" />
 
-        {/* Preload critical CSS - inline first paint CSS */}
+        {/* Critical inline CSS for first paint - prevent FOUC */}
         <style dangerouslySetInnerHTML={{ __html: `
-          body { margin: 0; font-family: system-ui, -apple-system, sans-serif; }
-          .page-transition { min-height: 100vh; }
+          * { margin: 0; padding: 0; box-sizing: border-box; }
+          html { font-size: 16px; }
+          body {
+            margin: 0;
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.5;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+          }
+          .page-transition { min-height: 100vh; background: #fff; }
+          /* Hide non-critical content during initial load */
+          .defer-load { visibility: hidden; }
         ` }} />
         <WebApplicationSchema />
       </head>
