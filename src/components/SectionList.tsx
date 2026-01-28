@@ -22,6 +22,10 @@ interface SectionListProps {
   stadiumId?: string;
   worldCupMatchCount?: number;
   worldCupCountry?: 'USA' | 'Mexico' | 'Canada';
+  /** ID of section to highlight (for diagram sync) */
+  highlightedSectionId?: string | null;
+  /** Callback when a section card is selected */
+  onSectionSelect?: (sectionId: string) => void;
 }
 
 export const SectionList: React.FC<SectionListProps> = ({
@@ -33,7 +37,9 @@ export const SectionList: React.FC<SectionListProps> = ({
   showRowToggle = false,
   stadiumId,
   worldCupMatchCount,
-  worldCupCountry
+  worldCupCountry,
+  highlightedSectionId = null,
+  onSectionSelect,
 }) => {
   const [sortBy, setSortBy] = useState<'name' | 'exposure' | 'level' | 'price'>(() => {
     return preferencesStorage.get('sortBy', 'exposure');
@@ -415,8 +421,11 @@ export const SectionList: React.FC<SectionListProps> = ({
       comparisonMode={comparisonMode}
       isSelected={selectedSections.has(sectionData.section.id)}
       onToggleSelection={handleToggleSelection}
+      showExpandIndicator={true}
+      isHighlighted={highlightedSectionId === sectionData.section.id}
+      onCardSelect={onSectionSelect}
     />
-  ), [showRowLevel, getRowDataForSection, stadiumId, worldCupMatchCount, worldCupCountry, comparisonMode, selectedSections, handleToggleSelection]);
+  ), [showRowLevel, getRowDataForSection, stadiumId, worldCupMatchCount, worldCupCountry, comparisonMode, selectedSections, handleToggleSelection, highlightedSectionId, onSectionSelect]);
 
   if (loading) {
     return (

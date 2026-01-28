@@ -1,0 +1,62 @@
+/* MainContentLayout - 40/60 Split Layout */
+
+.container {
+  display: flex;
+  flex: 1;
+  gap: 0;
+  min-height: 400px;
+  width: 100%;
+}
+
+/* Stadium Diagram Panel (40%) */
+.diagramPanel {
+  width: 40%;
+  min-width: 300px;
+  border-right: 1px solid #e2e8f0;
+  background: #fafafa;
+  overflow: hidden;
+  position: sticky;
+  top: 0;
+  align-self: flex-start;
+  max-height: calc(100vh - 200px);
+}
+
+/* Section Cards Panel (60%) */
+.cardsPanel {
+  width: 60%;
+  flex: 1;
+  background: #ffffff;
+  overflow-y: auto;
+  max-height: calc(100vh - 200px);
+  padding: 16px;
+}
+
+/* Responsive: Stack panels on tablet */
+@media (max-width: 1024px) {
+  .container {
+    flex-direction: column;
+  }
+
+  .diagramPanel {
+    width: 100%;
+    min-width: 0;
+    min-height: 300px;
+    max-height: 400px;
+    border-right: none;
+    border-bottom: 1px solid #e2e8f0;
+    position: relative;
+  }
+
+  .cardsPanel {
+    width: 100%;
+    min-height: 300px;
+    max-height: none;
+  }
+}
+
+/* Responsive: Reduce padding on mobile */
+@media (max-width: 768px) {
+  .cardsPanel {
+    padding: 12px;
+  }
+}

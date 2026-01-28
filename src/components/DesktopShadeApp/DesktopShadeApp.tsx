@@ -3,6 +3,7 @@
 import React, { useState, useMemo, useEffect, useCallback } from 'react';
 import { LeagueTabs } from '../LeagueTabs';
 import { HorizontalFilterPills, FilterValues } from '../HorizontalFilterPills';
+import { MainContentLayout } from '../MainContentLayout';
 import { LeagueId, DesktopShadeAppProps } from '../../types/desktop-app';
 import { UnifiedVenue, getVenuesByLeague } from '../../data/unifiedVenues';
 import styles from './DesktopShadeApp.module.css';
@@ -48,6 +49,8 @@ export const DesktopShadeApp: React.FC<DesktopShadeAppProps> = ({
   const [selectedLeague, setSelectedLeague] = useState<LeagueId>(initialLeague);
   const [selectedVenue, setSelectedVenue] = useState<UnifiedVenue | null>(null);
   const [filters, setFilters] = useState<FilterValues>(getInitialFilters);
+  // Selected section for bidirectional sync between diagram and cards
+  const [selectedSectionId, setSelectedSectionId] = useState<string | null>(null);
 
   // Get venues for the selected league
   const venues = useMemo(() => {
@@ -96,10 +99,21 @@ export const DesktopShadeApp: React.FC<DesktopShadeAppProps> = ({
     setFilters(newFilters);
   }, []);
 
-  // Handle league change - clear venue selection when switching leagues
+  // Handle league change - clear venue and section selection when switching leagues
   const handleLeagueChange = useCallback((league: LeagueId) => {
     setSelectedLeague(league);
     setSelectedVenue(null);
+    setSelectedSectionId(null);
+  }, []);
+
+  // Handle section selection from diagram (click on diagram → highlight card)
+  const handleDiagramSectionSelect = useCallback((sectionId: string) => {
+    setSelectedSectionId(sectionId);
+  }, []);
+
+  // Handle section selection from card (click on card → highlight diagram)
+  const handleCardSectionSelect = useCallback((sectionId: string) => {
+    setSelectedSectionId(sectionId);
   }, []);
 
   return (
@@ -130,24 +144,66 @@ export const DesktopShadeApp: React.FC<DesktopShadeAppProps> = ({
           />
         </div>
 
-        {/* Placeholder: Side-by-side layout (Phase 4) */}
-        <div className={styles.contentLayout}>
-          {/* Left: Stadium diagram (40%) */}
-          <div className={styles.diagramPanel}>
-            <div className={styles.panelPlaceholder}>
-              <span className={styles.placeholderLabel}>Stadium Diagram</span>
-              <span className={styles.placeholderSubtext}>40% width</span>
+        {/* Side-by-side layout with bidirectional sync */}
+        <MainContentLayout
+          scrollToSectionId={selectedSectionId}
+          diagramContent={
+            /* Stadium Diagram - will be wired up in Phase 5 with real data */
+            <div className={styles.diagramWrapper}>
+              <div className={styles.panelPlaceholder}>
+                <span className={styles.placeholderLabel}>Stadium Diagram</span>
+                <span className={styles.placeholderSubtext}>
+                  {selectedSectionId
+                    ? `Selected: ${selectedSectionId}`
+                    : 'Click a section to select'}
+                </span>
+                {/* Demo: clickable section buttons for testing sync */}
+                <div className={styles.demoSections}>
+                  {['Section 101', 'Section 102', 'Section 103'].map((id) => (
+                    <button
+                      key={id}
+                      onClick={() => handleDiagramSectionSelect(id)}
+                      className={`${styles.demoSectionBtn} ${
+                        selectedSectionId === id ? styles.demoSectionBtnActive : ''
+                      }`}
+                    >
+                      {id}
+                    </button>
+                  ))}
+                </div>
+              </div>
             </div>
-          </div>
-
-          {/* Right: Section cards (60%) */}
-          <div className={styles.cardsPanel}>
-            <div className={styles.panelPlaceholder}>
-              <span className={styles.placeholderLabel}>Section Cards</span>
-              <span className={styles.placeholderSubtext}>60% width</span>
+          }
+          cardsContent={
+            /* Section Cards - will be wired up in Phase 5 with real data */
+            <div className={styles.cardsWrapper}>
+              <div className={styles.panelPlaceholder}>
+                <span className={styles.placeholderLabel}>Section Cards</span>
+                <span className={styles.placeholderSubtext}>
+                  {selectedSectionId
+                    ? `Highlighted: ${selectedSectionId}`
+                    : 'Click a card to select'}
+                </span>
+                {/* Demo: clickable card buttons for testing sync */}
+                <div className={styles.demoCards}>
+                  {['Section 101', 'Section 102', 'Section 103'].map((id) => (
+                    <button
+                      key={id}
+                      onClick={() => handleCardSectionSelect(id)}
+                      data-section-id={id}
+                      className={`${styles.demoCardBtn} ${
+                        selectedSectionId === id ? styles.demoCardBtnActive : ''
+                      }`}
+                    >
+                      {id}
+                      {selectedSectionId === id && ' ✓'}
+                    </button>
+                  ))}
+                </div>
+              </div>
             </div>
-          </div>
-        </div>
+          }
+        />
       </div>
     </div>
   );
