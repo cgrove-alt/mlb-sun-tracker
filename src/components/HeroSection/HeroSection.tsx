@@ -4,7 +4,7 @@ import React from 'react';
 import { SearchIcon } from '../Icons';
 
 interface HeroSectionProps {
-  onGetStarted: () => void;
+  onGetStarted?: () => void;
 }
 
 export const HeroSection: React.FC<HeroSectionProps> = ({ onGetStarted }) => {
@@ -32,7 +32,17 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onGetStarted }) => {
 
         <div className="hero-cta-group">
           <button
-            onClick={onGetStarted}
+            onClick={() => {
+              if (onGetStarted) {
+                onGetStarted();
+              } else {
+                // Default behavior: scroll to app section
+                const appElement = document.getElementById('app-section');
+                if (appElement) {
+                  appElement.scrollIntoView({ behavior: 'smooth' });
+                }
+              }
+            }}
             className="hero-cta-primary"
             aria-label="Get started finding shaded seats"
           >

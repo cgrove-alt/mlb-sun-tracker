@@ -1,3 +1,5 @@
+'use client';
+
 import React, { useState, useEffect, useCallback } from 'react';
 import { HelmetProvider } from 'react-helmet-async';
 import Link from 'next/link';
