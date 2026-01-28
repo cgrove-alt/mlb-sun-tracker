@@ -40,12 +40,13 @@ export default function GoogleAnalyticsLazy() {
       });
     };
 
-    // Use requestIdleCallback if available, otherwise setTimeout
+    // Defer GA loading until after page is fully interactive
+    // Use requestIdleCallback with longer timeout to not block interactivity
     const idleCallback = (window as any).requestIdleCallback;
     if (idleCallback) {
-      idleCallback(loadGA, { timeout: 2000 });
+      idleCallback(loadGA, { timeout: 5000 }); // Increased from 2000 to 5000
     } else {
-      setTimeout(loadGA, 2000);
+      setTimeout(loadGA, 5000); // Increased from 2000 to 5000
     }
   }, []);
 

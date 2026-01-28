@@ -60,12 +60,12 @@ function UnifiedAppContent() {
   // Load venue from URL parameters on mount
   useEffect(() => {
     if (typeof window === 'undefined') return;
-    
+
     const urlParams = new URLSearchParams(window.location.search);
     const venueParam = urlParams.get('venue');
     const stadiumParam = urlParams.get('stadium');
     const datetimeParam = urlParams.get('datetime');
-    
+
     // Check for venue parameter (for MiLB/NFL venues)
     if (venueParam) {
       const venue = ALL_UNIFIED_VENUES.find(v => v.id === venueParam);
@@ -80,7 +80,7 @@ function UnifiedAppContent() {
         setSelectedVenue(venue);
       }
     }
-    
+
     // If datetime is provided, set it
     if (datetimeParam) {
       try {

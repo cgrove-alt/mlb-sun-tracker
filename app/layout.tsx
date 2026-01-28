@@ -1,10 +1,6 @@
-import '../src/styles/base.css'; // Import tokens and base styles first
+// Critical CSS only - optimized loading order
+import '../src/styles/base.css';
 import './globals.css';
-import '../src/styles/typography.css';
-import '../src/styles/heading-safety.css';
-import '../src/styles/vertical-rhythm.css';
-import '../src/styles/mobile-optimizations.css';
-import '../src/styles/accessibility-fixes.css';
 import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
 import { Suspense } from 'react';
@@ -182,19 +178,83 @@ export default function RootLayout({
 
         {/* Critical inline CSS for first paint - prevent FOUC */}
         <style dangerouslySetInnerHTML={{ __html: `
-          * { margin: 0; padding: 0; box-sizing: border-box; }
-          html { font-size: 16px; }
+          /* CSS Reset - Critical */
+          *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+          /* Critical Typography - Above the fold */
+          html {
+            font-size: 16px;
+            font-feature-settings: "kern", "liga";
+            text-rendering: optimizeLegibility;
+          }
+
           body {
             margin: 0;
-            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
             line-height: 1.5;
+            color: #1B2432;
+            background: #FFFFFF;
             -webkit-font-smoothing: antialiased;
             -moz-osx-font-smoothing: grayscale;
+            -webkit-tap-highlight-color: transparent;
           }
+
+          /* Critical Layout - Above the fold */
+          #main-content { display: block; }
           .page-transition { min-height: 100vh; background: #fff; }
+
+          /* Critical Typography for Hero/Header */
+          h1 {
+            color: #1B2432;
+            font-weight: 600;
+            line-height: 1.25;
+            font-size: clamp(1.75rem, 2vw + 1rem, 2.5rem);
+          }
+
+          h2 {
+            color: #1B2432;
+            font-weight: 600;
+            line-height: 1.375;
+            font-size: clamp(1.5rem, 1.5vw + 0.875rem, 2rem);
+          }
+
+          p {
+            font-size: 1rem;
+            line-height: 1.6;
+            color: #334155;
+          }
+
+          /* Critical Button Styles */
+          button {
+            font-family: inherit;
+            font-size: 16px;
+            min-height: 44px;
+            min-width: 44px;
+          }
+
+          /* Critical Links */
+          a {
+            color: #2563EB;
+            text-underline-offset: 2px;
+          }
+
+          /* Critical Accessibility */
+          .sr-only {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            white-space: nowrap;
+            border: 0;
+          }
+
           /* Hide non-critical content during initial load */
           .defer-load { visibility: hidden; }
         ` }} />
+
         <WebApplicationSchema />
       </head>
       <body className={inter.className}>
