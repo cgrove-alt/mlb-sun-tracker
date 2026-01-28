@@ -96,6 +96,7 @@ export const DesktopShadeApp = forwardRef<DesktopShadeAppRef, DesktopShadeAppPro
   useEffect(() => {
     if (!selectedVenue) {
       setSections([]);
+      setSectionsLoading(false);
       return;
     }
 
