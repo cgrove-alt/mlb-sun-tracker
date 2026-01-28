@@ -1,0 +1,50 @@
+.tabsContainer {
+  display: flex;
+  align-items: center;
+  gap: 0;
+  background: #f8fafc;
+  border-bottom: 1px solid #e2e8f0;
+  padding: 0 24px;
+}
+
+.tab {
+  padding: 16px 24px;
+  font-size: 14px;
+  font-weight: 500;
+  color: #64748b;
+  background: transparent;
+  border: none;
+  border-bottom: 2px solid transparent;
+  cursor: pointer;
+  transition: color 0.2s, border-color 0.2s;
+  white-space: nowrap;
+}
+
+.tab:hover {
+  color: #334155;
+}
+
+.tab:focus-visible {
+  outline: 2px solid #3b82f6;
+  outline-offset: -2px;
+}
+
+.tabActive {
+  color: #1e40af;
+  border-bottom-color: #3b82f6;
+  font-weight: 600;
+}
+
+/* Responsive: stack tabs on smaller screens */
+@media (max-width: 640px) {
+  .tabsContainer {
+    padding: 0 16px;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .tab {
+    padding: 12px 16px;
+    font-size: 13px;
+  }
+}
