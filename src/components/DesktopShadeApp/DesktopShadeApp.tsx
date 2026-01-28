@@ -63,13 +63,12 @@ export const DesktopShadeApp = forwardRef<DesktopShadeAppRef, DesktopShadeAppPro
   const [selectedVenue, setSelectedVenue] = useState<UnifiedVenue | null>(null);
   const [selectedGameTime, setSelectedGameTime] = useState<Date | null>(null);
   const [filters, setFilters] = useState<FilterValues>(getInitialFilters);
-  const [isLoading, setIsLoading] = useState(false);
-  // Selected section for bidirectional sync between diagram and cards
+  // Selected section for card highlight
+
   const [selectedSectionId, setSelectedSectionId] = useState<string | null>(null);
   // Sections data for the selected venue
   const [sections, setSections] = useState<StadiumSection[]>([]);
   const [sectionsLoading, setSectionsLoading] = useState(false);
-  const loadingTimeoutRef = useRef<number | null>(null);
   // Ref for the stadium selector bar (for scroll-to)
   const selectorBarRef = useRef<HTMLDivElement>(null);
   // Ref for screen reader announcements
@@ -268,31 +267,17 @@ export const DesktopShadeApp = forwardRef<DesktopShadeAppRef, DesktopShadeAppPro
 
   // Handle venue change
   const handleVenueChange = useCallback((venue: UnifiedVenue | null) => {
-    if (loadingTimeoutRef.current !== null) {
-      window.clearTimeout(loadingTimeoutRef.current);
-    }
-    setIsLoading(true);
     setSelectedVenue(venue);
     setSelectedSectionId(null);
     setSelectedGameTime(null);
     if (venue) {
       announce(`Selected ${venue.name}`);
     }
-    loadingTimeoutRef.current = window.setTimeout(() => {
-      setIsLoading(false);
-      loadingTimeoutRef.current = null;
-    }, 300);
   }, [announce]);
 
   // Handle game/time selection
   const handleGameSelect = useCallback((game: any, dateTime: Date | null) => {
     setSelectedGameTime(dateTime);
-  }, []);
-
-  useEffect(() => () => {
-    if (loadingTimeoutRef.current !== null) {
-      window.clearTimeout(loadingTimeoutRef.current);
-    }
   }, []);
 
   // Scroll to and focus the stadium selector bar
