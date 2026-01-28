@@ -55,6 +55,7 @@ const LeagueTabsComponent: React.FC<LeagueTabsProps> = ({
         <button
           key={tab.id}
           ref={(el) => { tabRefs.current[index] = el; }}
+          id={`tab-${tab.id}`}
           role="tab"
           tabIndex={selectedLeague === tab.id ? 0 : -1}
           aria-selected={selectedLeague === tab.id}

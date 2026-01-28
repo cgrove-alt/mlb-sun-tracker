@@ -62,6 +62,7 @@ export const DesktopShadeApp = forwardRef<DesktopShadeAppRef, DesktopShadeAppPro
   const [isLoading, setIsLoading] = useState(false);
   // Selected section for bidirectional sync between diagram and cards
   const [selectedSectionId, setSelectedSectionId] = useState<string | null>(null);
+  const loadingTimeoutRef = useRef<number | null>(null);
   // Ref for the stadium selector bar (for scroll-to)
   const selectorBarRef = useRef<HTMLDivElement>(null);
   // Ref for screen reader announcements
@@ -140,6 +141,9 @@ export const DesktopShadeApp = forwardRef<DesktopShadeAppRef, DesktopShadeAppPro
 
   // Handle venue change
   const handleVenueChange = useCallback((venue: UnifiedVenue | null) => {
+    if (loadingTimeoutRef.current !== null) {
+      window.clearTimeout(loadingTimeoutRef.current);
+    }
     setIsLoading(true);
     setSelectedVenue(venue);
     setSelectedSectionId(null);
@@ -147,13 +151,21 @@ export const DesktopShadeApp = forwardRef<DesktopShadeAppRef, DesktopShadeAppPro
     if (venue) {
       announce(`Selected ${venue.name}`);
     }
-    // Simulate loading transition
-    setTimeout(() => setIsLoading(false), 300);
+    loadingTimeoutRef.current = window.setTimeout(() => {
+      setIsLoading(false);
+      loadingTimeoutRef.current = null;
+    }, 300);
   }, [announce]);
 
   // Handle game/time selection
   const handleGameSelect = useCallback((game: any, dateTime: Date | null) => {
     setSelectedGameTime(dateTime);
+  }, []);
+
+  useEffect(() => () => {
+    if (loadingTimeoutRef.current !== null) {
+      window.clearTimeout(loadingTimeoutRef.current);
+    }
   }, []);
 
   // Scroll to and focus the stadium selector bar
@@ -203,7 +215,12 @@ export const DesktopShadeApp = forwardRef<DesktopShadeAppRef, DesktopShadeAppPro
       />
 
       {/* Main content area */}
-      <div className={styles.mainContent} role="tabpanel" id={`panel-${selectedLeague}`}>
+      <div
+        className={styles.mainContent}
+        role="tabpanel"
+        id={`panel-${selectedLeague}`}
+        aria-labelledby={`tab-${selectedLeague}`}
+      >
         {/* Stadium/Game Selector Bar */}
         <div ref={selectorBarRef} className={styles.selectorBar}>
           <StadiumGameBar
