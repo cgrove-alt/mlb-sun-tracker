@@ -1,10 +1,11 @@
 'use client';
 
-import React, { useState, useMemo, useEffect, useCallback } from 'react';
+import React, { useState, useMemo, useEffect, useCallback, useRef, forwardRef, useImperativeHandle } from 'react';
 import { LeagueTabs } from '../LeagueTabs';
 import { HorizontalFilterPills, FilterValues } from '../HorizontalFilterPills';
 import { MainContentLayout } from '../MainContentLayout';
-import { LeagueId, DesktopShadeAppProps } from '../../types/desktop-app';
+import { StadiumGameBar } from '../StadiumGameBar';
+import { LeagueId, DesktopShadeAppProps, DesktopShadeAppRef } from '../../types/desktop-app';
 import { UnifiedVenue, getVenuesByLeague } from '../../data/unifiedVenues';
 import styles from './DesktopShadeApp.module.css';
 
@@ -41,16 +42,19 @@ function getInitialFilters(): FilterValues {
  * - State management for selected league, venue, and filters
  * - Layout structure for subsequent phases (diagram, cards)
  */
-export const DesktopShadeApp: React.FC<DesktopShadeAppProps> = ({
+export const DesktopShadeApp = forwardRef<DesktopShadeAppRef, DesktopShadeAppProps>(({
   initialLeague = 'MLB',
   className = '',
-}) => {
+}, ref) => {
   // Core state
   const [selectedLeague, setSelectedLeague] = useState<LeagueId>(initialLeague);
   const [selectedVenue, setSelectedVenue] = useState<UnifiedVenue | null>(null);
+  const [selectedGameTime, setSelectedGameTime] = useState<Date | null>(null);
   const [filters, setFilters] = useState<FilterValues>(getInitialFilters);
   // Selected section for bidirectional sync between diagram and cards
   const [selectedSectionId, setSelectedSectionId] = useState<string | null>(null);
+  // Ref for the stadium selector bar (for scroll-to)
+  const selectorBarRef = useRef<HTMLDivElement>(null);
 
   // Get venues for the selected league
   const venues = useMemo(() => {
@@ -104,7 +108,37 @@ export const DesktopShadeApp: React.FC<DesktopShadeAppProps> = ({
     setSelectedLeague(league);
     setSelectedVenue(null);
     setSelectedSectionId(null);
+    setSelectedGameTime(null);
   }, []);
+
+  // Handle venue change
+  const handleVenueChange = useCallback((venue: UnifiedVenue | null) => {
+    setSelectedVenue(venue);
+    setSelectedSectionId(null);
+    setSelectedGameTime(null);
+  }, []);
+
+  // Handle game/time selection
+  const handleGameSelect = useCallback((game: any, dateTime: Date | null) => {
+    setSelectedGameTime(dateTime);
+  }, []);
+
+  // Scroll to and focus the stadium selector bar
+  const scrollToSelector = useCallback(() => {
+    if (selectorBarRef.current) {
+      selectorBarRef.current.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      // Focus the first focusable element in the selector bar
+      const focusable = selectorBarRef.current.querySelector('input, button, [tabindex]:not([tabindex="-1"])') as HTMLElement;
+      if (focusable) {
+        setTimeout(() => focusable.focus(), 500); // After scroll completes
+      }
+    }
+  }, []);
+
+  // Expose scrollToSelector method via ref
+  useImperativeHandle(ref, () => ({
+    scrollToSelector,
+  }), [scrollToSelector]);
 
   // Handle section selection from diagram (click on diagram → highlight card)
   const handleDiagramSectionSelect = useCallback((sectionId: string) => {
@@ -126,14 +160,14 @@ export const DesktopShadeApp: React.FC<DesktopShadeAppProps> = ({
 
       {/* Main content area */}
       <div className={styles.mainContent} role="tabpanel" id={`panel-${selectedLeague}`}>
-        {/* Placeholder: Stadium/Game selector bar (Phase 5) */}
-        <div className={styles.selectorBar}>
-          <div className={styles.selectorPlaceholder}>
-            <span className={styles.placeholderLabel}>Stadium Selector</span>
-            <span className={styles.placeholderInfo}>
-              {venues.length} {selectedLeague} venues available
-            </span>
-          </div>
+        {/* Stadium/Game Selector Bar */}
+        <div ref={selectorBarRef} className={styles.selectorBar}>
+          <StadiumGameBar
+            selectedLeague={selectedLeague}
+            selectedVenue={selectedVenue}
+            onVenueChange={handleVenueChange}
+            onGameSelect={handleGameSelect}
+          />
         </div>
 
         {/* Horizontal Filter Pills (Phase 2) */}
@@ -207,6 +241,8 @@ export const DesktopShadeApp: React.FC<DesktopShadeAppProps> = ({
       </div>
     </div>
   );
-};
+});
+
+DesktopShadeApp.displayName = 'DesktopShadeApp';
 
 export default DesktopShadeApp;

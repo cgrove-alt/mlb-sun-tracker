@@ -208,29 +208,62 @@ Create side-by-side layout with bidirectional selection sync.
 
 ---
 
-### [ ] Step: Phase 5 - Navigation & Entry Point
+### [x] Step: Phase 5 - Navigation & Entry Point
 
 Create the stadium/game selector bar and fix entry point.
 
 **Tasks:**
-- [ ] Create `src/components/StadiumGameBar/StadiumGameBar.tsx` - full-width selector
-- [ ] Create `src/components/StadiumGameBar/StadiumGameBar.module.css`
-- [ ] Extract venue/game selection logic from `UnifiedGameSelector.tsx`
-- [ ] Load ALL venues (remove 50 venue limit):
-  - Modify `components/VenueDataProvider.tsx` to pass all venues
-  - Or load venues directly in DesktopShadeApp
-- [ ] Use react-select async for venue search (performance)
-- [ ] Modify `src/components/HeroSection/HeroSection.tsx`:
-  - "Find Your Shade" should scroll to and open venue selector
-  - Remove smooth scroll, use direct interaction
-- [ ] Update `app/HomePage.tsx` to render DesktopShadeApp for desktop
-- [ ] Run type-check, lint, and tests
+- [x] Create `src/components/StadiumGameBar/StadiumGameBar.tsx` - full-width selector
+- [x] Create `src/components/StadiumGameBar/StadiumGameBar.module.css`
+- [x] Extract venue/game selection logic from `UnifiedGameSelector.tsx`
+- [x] Load ALL venues (remove 50 venue limit):
+  - Modified `components/VenueDataProvider.tsx` to pass all venues
+- [x] Use react-select async for venue search (performance)
+- [x] Modify `src/components/HeroSection/HeroSection.tsx`:
+  - "Find Your Shade" now scrolls to and focuses venue selector
+- [x] Update `app/HomePage.tsx` to render DesktopShadeApp for desktop
+- [x] Run type-check, lint, and tests
 
 **Acceptance Criteria:**
-- All 250+ venues accessible via search
-- "Find Your Shade" opens selector directly
-- Stadium and game dropdowns work correctly
-- MiLB level selector shows when MiLB tab selected
+- [x] All 250+ venues accessible via search
+- [x] "Find Your Shade" opens selector directly
+- [x] Stadium and game dropdowns work correctly
+- [x] MiLB level selector shows when MiLB tab selected
+
+**Implementation Notes:**
+- Created `src/components/StadiumGameBar/` with:
+  - `StadiumGameBar.tsx` - Full-width stadium/game selector bar component
+  - `StadiumGameBar.module.css` - Responsive styles for the selector bar
+  - `index.ts` - Clean exports
+- StadiumGameBar features:
+  - Uses `react-select/async` (`AsyncSelect`) for efficient venue search across 250+ venues
+  - MiLB level selector (AAA, AA, A+, A) shown when MiLB league is selected
+  - Game selector loads upcoming games for MLB/MiLB/NFL venues
+  - Custom time selector as fallback (always available for WorldCup)
+  - View mode toggle between "Games" and "Custom Time"
+  - Responsive layout adapts to mobile/tablet screens
+- Modified `components/VenueDataProvider.tsx`:
+  - Removed 50-venue limit - now passes `ALL_UNIFIED_VENUES` to client
+  - AsyncSelect handles large venue lists efficiently via search
+- Updated `src/types/desktop-app.ts`:
+  - Added `DesktopShadeAppRef` interface for exposing `scrollToSelector` method
+- Updated `src/components/DesktopShadeApp/DesktopShadeApp.tsx`:
+  - Converted to `forwardRef` to expose `scrollToSelector` via ref
+  - Integrated `StadiumGameBar` component replacing placeholder
+  - Added `selectedGameTime` state for tracking selected game/custom time
+  - Added `handleVenueChange` and `handleGameSelect` callbacks
+- Created `app/HomePageClient.tsx`:
+  - Client component that handles desktop vs. mobile layout detection
+  - Passes `onGetStarted` handler to HeroSection
+  - On desktop, scrolls to and focuses the StadiumGameBar venue selector
+  - On mobile, falls back to scrolling to #app-section
+- Updated `app/HomePage.tsx`:
+  - Renders `HomePageClient` for interactive elements
+  - Mobile venue selector (VenueDataProvider) hidden on desktop via CSS
+- Verification results:
+  - TypeScript: ✅ No errors (`npm run type-check`)
+  - ESLint: ✅ No new warnings in Phase 5 files
+  - Production build: ✅ Successful (`npm run build`)
 
 ---
 

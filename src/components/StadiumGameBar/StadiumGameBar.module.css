@@ -1,0 +1,227 @@
+.container {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 16px 24px;
+  background: #ffffff;
+  border-bottom: 1px solid #e2e8f0;
+  flex-wrap: wrap;
+}
+
+/* Selector group */
+.selectorGroup {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.venueGroup {
+  flex: 1;
+  min-width: 280px;
+  max-width: 400px;
+}
+
+.selectorLabel {
+  font-size: 13px;
+  font-weight: 600;
+  color: #64748b;
+  white-space: nowrap;
+}
+
+/* Select widths */
+.levelSelect {
+  min-width: 180px;
+}
+
+.venueSelect {
+  flex: 1;
+  min-width: 200px;
+}
+
+.gameSelect {
+  min-width: 280px;
+}
+
+/* View toggle buttons */
+.viewToggle {
+  display: flex;
+  background: #f1f5f9;
+  border-radius: 8px;
+  padding: 4px;
+}
+
+.toggleBtn {
+  padding: 8px 14px;
+  font-size: 13px;
+  font-weight: 500;
+  color: #64748b;
+  background: transparent;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+}
+
+.toggleBtn:hover {
+  color: #1e293b;
+  background: rgba(255, 255, 255, 0.5);
+}
+
+.toggleBtnActive {
+  color: #1e293b;
+  background: #ffffff;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+/* Custom time group */
+.customTimeGroup {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.dateTimeInput {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.dateInput,
+.timeInput {
+  padding: 10px 12px;
+  font-size: 14px;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  background: #ffffff;
+  color: #1e293b;
+  min-height: 44px;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.dateInput:focus,
+.timeInput:focus {
+  outline: none;
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.2);
+}
+
+.dateInput {
+  width: 150px;
+}
+
+.timeInput {
+  width: 110px;
+}
+
+.applyBtn {
+  padding: 10px 20px;
+  font-size: 14px;
+  font-weight: 600;
+  color: #ffffff;
+  background: #3b82f6;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  min-height: 44px;
+  transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+.applyBtn:hover:not(:disabled) {
+  background: #2563eb;
+}
+
+.applyBtn:active:not(:disabled) {
+  transform: scale(0.98);
+}
+
+.applyBtn:disabled {
+  background: #94a3b8;
+  cursor: not-allowed;
+}
+
+/* World Cup note */
+.wcNote {
+  font-size: 13px;
+  color: #64748b;
+  margin-right: 8px;
+}
+
+/* Venue count badge */
+.venueCount {
+  font-size: 12px;
+  font-weight: 500;
+  color: #94a3b8;
+  background: #f8fafc;
+  padding: 6px 12px;
+  border-radius: 9999px;
+  white-space: nowrap;
+  margin-left: auto;
+}
+
+/* Responsive - Tablet */
+@media (max-width: 1024px) {
+  .container {
+    padding: 12px 16px;
+    gap: 12px;
+  }
+
+  .venueGroup {
+    min-width: 100%;
+    max-width: none;
+    order: -1;
+  }
+
+  .selectorGroup {
+    flex: 1;
+    min-width: 150px;
+  }
+}
+
+/* Responsive - Mobile */
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 12px;
+  }
+
+  .selectorGroup,
+  .venueGroup {
+    width: 100%;
+    max-width: none;
+    min-width: 0;
+  }
+
+  .viewToggle {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .toggleBtn {
+    flex: 1;
+    text-align: center;
+  }
+
+  .customTimeGroup {
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .dateInput,
+  .timeInput {
+    flex: 1;
+    min-width: 0;
+    width: auto;
+  }
+
+  .applyBtn {
+    flex: 1;
+  }
+
+  .venueCount {
+    text-align: center;
+    margin-left: 0;
+  }
+}

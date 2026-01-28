@@ -55,6 +55,13 @@ export interface LeagueTabsProps {
 }
 
 /**
+ * Ref handle for DesktopShadeApp
+ */
+export interface DesktopShadeAppRef {
+  scrollToSelector: () => void;
+}
+
+/**
  * Props for DesktopShadeApp component
  */
 export interface DesktopShadeAppProps {
