@@ -49,34 +49,21 @@
   border-bottom: 1px solid #e2e8f0;
 }
 
-/* Main Content Layout - Side by Side */
+/* Main Content Layout */
 .contentLayout {
   flex: 1;
   display: flex;
-  gap: 0;
+  flex-direction: column;
   min-height: 400px;
 }
 
-/* Stadium Diagram Panel (40%) */
-.diagramPanel {
-  width: 40%;
-  min-width: 300px;
-  border-right: 1px solid #e2e8f0;
-  background: #fafafa;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-/* Section Cards Panel (60%) */
+/* Section Cards Panel - now full width since diagram removed */
 .cardsPanel {
-  width: 60%;
   flex: 1;
   background: #ffffff;
   overflow-y: auto;
   display: flex;
-  align-items: center;
-  justify-content: center;
+  flex-direction: column;
 }
 
 /* Panel Placeholder Styling */
@@ -96,23 +83,25 @@
   color: #94a3b8;
 }
 
-/* Wrappers for MainContentLayout panels */
-.diagramWrapper {
-  width: 100%;
-  height: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 16px;
-}
-
+/* Cards wrapper - full width container for SectionList */
 .cardsWrapper {
   width: 100%;
-  height: 100%;
+  flex: 1;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
+  padding: 16px 24px;
+  overflow-y: auto;
+}
+
+/* Center placeholder content only */
+.cardsWrapper .panelPlaceholder {
+  margin: auto;
+}
+
+/* Ensure SectionList takes full space */
+.cardsWrapper > :global(.section-list) {
+  flex: 1;
+  width: 100%;
 }
 
 /* Demo section buttons (temporary for testing bidirectional sync) */
@@ -156,23 +145,10 @@
   border-color: #2563eb;
 }
 
-/* Responsive: Stack panels on tablet */
+/* Responsive: Adjust padding on tablet */
 @media (max-width: 1024px) {
-  .contentLayout {
-    flex-direction: column;
-  }
-
-  .diagramPanel {
-    width: 100%;
-    min-width: 0;
-    min-height: 300px;
-    border-right: none;
-    border-bottom: 1px solid #e2e8f0;
-  }
-
-  .cardsPanel {
-    width: 100%;
-    min-height: 300px;
+  .cardsWrapper {
+    padding: 12px 16px;
   }
 }
 
