@@ -67,24 +67,47 @@ Create the foundational layout structure for the new desktop experience.
 
 ---
 
-### [ ] Step: Phase 2 - Horizontal Filter System
+### [x] Step: Phase 2 - Horizontal Filter System
 
 Replace cramped sidebar filters with horizontal filter pills.
 
 **Tasks:**
-- [ ] Create `src/components/HorizontalFilterPills/HorizontalFilterPills.tsx`
-- [ ] Create `src/components/HorizontalFilterPills/HorizontalFilterPills.module.css`
-- [ ] Extract filter logic from existing `SectionFilters/SectionFilters.tsx`
-- [ ] Add dropdown popovers for filter options (Sun Exposure, Level, Price)
-- [ ] Add "Clear Filters" button
-- [ ] Connect to existing filter state via URL params
-- [ ] Run type-check, lint, and tests
+- [x] Create `src/components/HorizontalFilterPills/HorizontalFilterPills.tsx`
+- [x] Create `src/components/HorizontalFilterPills/HorizontalFilterPills.module.css`
+- [x] Extract filter logic from existing `SectionFilters/SectionFilters.tsx`
+- [x] Add dropdown popovers for filter options (Sun Exposure, Level, Price)
+- [x] Add "Clear Filters" button
+- [x] Connect to existing filter state via URL params
+- [x] Run type-check, lint, and tests
 
 **Acceptance Criteria:**
-- Horizontal pills display and are interactive
-- Filter selections persist to URL
-- "Clear Filters" resets all filters
-- Responsive on desktop widths
+- [x] Horizontal pills display and are interactive
+- [x] Filter selections persist to URL
+- [x] "Clear Filters" resets all filters
+- [x] Responsive on desktop widths
+
+**Implementation Notes:**
+- Created `src/components/HorizontalFilterPills/` with:
+  - `HorizontalFilterPills.tsx` - Main component with dropdown popovers
+  - `HorizontalFilterPills.module.css` - Horizontal pill layout styles
+  - `index.ts` - Exports for clean imports
+- Features implemented:
+  - Three filter pills: Sun Exposure, Level (Section Type), and Price Range
+  - Each pill opens a dropdown popover with selectable options
+  - Sun Exposure: Single-select presets (All, Mostly Shaded, Balanced, Some Sun)
+  - Level/Price: Multi-select checkboxes for multiple selections
+  - Active filter badges below the pills showing current selections
+  - "Clear All" button with count when filters are active
+  - Individual badge removal by clicking × on each badge
+- URL param persistence:
+  - `maxSun` - Sun exposure percentage (25, 50, 75)
+  - `sectionType` - Comma-separated section types (covered,field,lower,club,upper)
+  - `priceRange` - Comma-separated price ranges (value,moderate,premium,luxury)
+- Integrated into `DesktopShadeApp.tsx`:
+  - Filter state initialized from URL params on mount
+  - URL updated via `history.replaceState` when filters change
+- Responsive: Dropdowns convert to bottom sheet on mobile (<768px)
+- Accessibility: Keyboard support (Escape closes dropdowns), ARIA attributes, focus states
 
 ---
 

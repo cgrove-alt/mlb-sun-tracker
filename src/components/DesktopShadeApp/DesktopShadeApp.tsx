@@ -1,18 +1,44 @@
 'use client';
 
-import React, { useState, useMemo } from 'react';
+import React, { useState, useMemo, useEffect, useCallback } from 'react';
 import { LeagueTabs } from '../LeagueTabs';
+import { HorizontalFilterPills, FilterValues } from '../HorizontalFilterPills';
 import { LeagueId, DesktopShadeAppProps } from '../../types/desktop-app';
-import { UnifiedVenue, getVenuesByLeague, getMiLBVenuesByLevel } from '../../data/unifiedVenues';
+import { UnifiedVenue, getVenuesByLeague } from '../../data/unifiedVenues';
 import styles from './DesktopShadeApp.module.css';
+
+/**
+ * Initialize filters from URL params
+ */
+function getInitialFilters(): FilterValues {
+  if (typeof window === 'undefined') {
+    return {
+      maxSunExposure: undefined,
+      sectionType: [],
+      priceRange: [],
+    };
+  }
+
+  const params = new URLSearchParams(window.location.search);
+  const maxSunParam = params.get('maxSun');
+  const sectionTypeParam = params.get('sectionType');
+  const priceRangeParam = params.get('priceRange');
+
+  return {
+    maxSunExposure: maxSunParam ? parseInt(maxSunParam, 10) : undefined,
+    sectionType: sectionTypeParam ? sectionTypeParam.split(',').filter(Boolean) : [],
+    priceRange: priceRangeParam ? priceRangeParam.split(',').filter(Boolean) : [],
+  };
+}
 
 /**
  * DesktopShadeApp - Main container for the desktop shade finder experience
  *
  * Provides:
  * - League tabs at top (MLB | MiLB | NFL | World Cup 2026)
- * - State management for selected league and venue
- * - Layout structure for subsequent phases (filters, diagram, cards)
+ * - Horizontal filter pills with dropdown popovers
+ * - State management for selected league, venue, and filters
+ * - Layout structure for subsequent phases (diagram, cards)
  */
 export const DesktopShadeApp: React.FC<DesktopShadeAppProps> = ({
   initialLeague = 'MLB',
@@ -21,10 +47,10 @@ export const DesktopShadeApp: React.FC<DesktopShadeAppProps> = ({
   // Core state
   const [selectedLeague, setSelectedLeague] = useState<LeagueId>(initialLeague);
   const [selectedVenue, setSelectedVenue] = useState<UnifiedVenue | null>(null);
+  const [filters, setFilters] = useState<FilterValues>(getInitialFilters);
 
   // Get venues for the selected league
   const venues = useMemo(() => {
-    // Map league ID to the format expected by getVenuesByLeague
     const leagueMap: Record<LeagueId, string> = {
       MLB: 'MLB',
       MiLB: 'MiLB',
@@ -34,11 +60,47 @@ export const DesktopShadeApp: React.FC<DesktopShadeAppProps> = ({
     return getVenuesByLeague(leagueMap[selectedLeague]);
   }, [selectedLeague]);
 
+  // Update URL when filters change
+  useEffect(() => {
+    if (typeof window === 'undefined') return;
+
+    const params = new URLSearchParams(window.location.search);
+
+    // Clear existing filter params
+    params.delete('maxSun');
+    params.delete('sectionType');
+    params.delete('priceRange');
+
+    // Add filter params if they have values
+    if (filters.maxSunExposure !== undefined && filters.maxSunExposure !== 100) {
+      params.set('maxSun', filters.maxSunExposure.toString());
+    }
+
+    if (filters.sectionType.length > 0) {
+      params.set('sectionType', filters.sectionType.join(','));
+    }
+
+    if (filters.priceRange.length > 0) {
+      params.set('priceRange', filters.priceRange.join(','));
+    }
+
+    const newUrl = params.toString()
+      ? `${window.location.pathname}?${params.toString()}`
+      : window.location.pathname;
+
+    window.history.replaceState({}, '', newUrl);
+  }, [filters]);
+
+  // Handle filter changes
+  const handleFilterChange = useCallback((newFilters: FilterValues) => {
+    setFilters(newFilters);
+  }, []);
+
   // Handle league change - clear venue selection when switching leagues
-  const handleLeagueChange = (league: LeagueId) => {
+  const handleLeagueChange = useCallback((league: LeagueId) => {
     setSelectedLeague(league);
     setSelectedVenue(null);
-  };
+  }, []);
 
   return (
     <div className={`${styles.container} ${className}`}>
@@ -48,7 +110,7 @@ export const DesktopShadeApp: React.FC<DesktopShadeAppProps> = ({
         onLeagueChange={handleLeagueChange}
       />
 
-      {/* Main content area - placeholder for future phases */}
+      {/* Main content area */}
       <div className={styles.mainContent} role="tabpanel" id={`panel-${selectedLeague}`}>
         {/* Placeholder: Stadium/Game selector bar (Phase 5) */}
         <div className={styles.selectorBar}>
@@ -60,9 +122,12 @@ export const DesktopShadeApp: React.FC<DesktopShadeAppProps> = ({
           </div>
         </div>
 
-        {/* Placeholder: Horizontal filters (Phase 2) */}
+        {/* Horizontal Filter Pills (Phase 2) */}
         <div className={styles.filterBar}>
-          <span className={styles.placeholderLabel}>Filter Pills</span>
+          <HorizontalFilterPills
+            filters={filters}
+            onChange={handleFilterChange}
+          />
         </div>
 
         {/* Placeholder: Side-by-side layout (Phase 4) */}
