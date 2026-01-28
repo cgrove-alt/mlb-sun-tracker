@@ -32,13 +32,13 @@ const nextConfig = {
           cacheGroups: {
             default: false,
             vendors: false,
-            // Split vendor code more aggressively
+            // Split vendor code - only load when components need it
             vendor: {
               name: 'vendor',
-              chunks: 'all',
+              chunks: 'async', // Changed: only load vendor code for async chunks
               test: /node_modules/,
               priority: 20,
-              maxSize: 300000, // Split vendor chunks larger than 300KB
+              maxSize: 200000, // Smaller chunks for better lazy loading
             },
             // Split large data files - only load when needed
             data: {
@@ -48,15 +48,15 @@ const nextConfig = {
               priority: 25,
               enforce: true,
             },
-            // Common chunks
+            // Common chunks - shared between async loaded components
             common: {
               name: 'common',
               minChunks: 2,
-              chunks: 'all',
+              chunks: 'async', // Changed: only share between async chunks
               priority: 10,
               reuseExistingChunk: true,
               enforce: true,
-              maxSize: 200000, // Split common chunks larger than 200KB
+              maxSize: 150000, // Smaller for faster loading
             },
             // React/Next.js framework chunks
             react: {

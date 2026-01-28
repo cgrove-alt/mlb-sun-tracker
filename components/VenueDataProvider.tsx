@@ -3,9 +3,12 @@ import { ALL_UNIFIED_VENUES } from '../src/data/unifiedVenues';
 import VenueSelector from './VenueSelector';
 
 export default async function VenueDataProvider() {
-  // In production, this would fetch from API
-  // For now, directly use the data (will be optimized by Next.js)
-  const venues = ALL_UNIFIED_VENUES;
+  // Only send top 50 popular venues to client initially
+  // This reduces payload from 6526 venues to 50
+  // Full search will lazy load more data as needed
+  const topVenues = ALL_UNIFIED_VENUES
+    .filter(v => v.league === 'MLB' || v.league === 'NFL') // Popular leagues first
+    .slice(0, 50);
 
-  return <VenueSelector venues={venues} />;
+  return <VenueSelector venues={topVenues} />;
 }
