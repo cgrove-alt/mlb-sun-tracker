@@ -38,6 +38,7 @@ Created comprehensive technical specification in `spec.md` including:
 ---
 
 ### [x] Step: Phase 1 - Core Desktop Layout Component
+<!-- chat-id: a3a9b241-54f9-49ab-b2f2-258b9a15c919 -->
 
 Create the foundational layout structure for the new desktop experience.
 
@@ -112,6 +113,7 @@ Replace cramped sidebar filters with horizontal filter pills.
 ---
 
 ### [x] Step: Phase 3 - Enhanced Section Cards
+<!-- chat-id: ac8e9097-2f7b-40fd-ad50-c2484f67f425 -->
 
 Improve section cards with clear expand/collapse indicators and highlight support.
 

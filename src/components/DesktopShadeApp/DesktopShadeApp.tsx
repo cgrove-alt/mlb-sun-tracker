@@ -13,6 +13,13 @@ import styles from './DesktopShadeApp.module.css';
 /**
  * Initialize filters from URL params
  */
+function parseMaxSun(value: string | null): number | undefined {
+  if (!value) return undefined;
+  const parsed = parseInt(value, 10);
+  if (!Number.isFinite(parsed) || parsed < 0 || parsed > 100) return undefined;
+  return parsed;
+}
+
 function getInitialFilters(): FilterValues {
   if (typeof window === 'undefined') {
     return {
@@ -28,7 +35,7 @@ function getInitialFilters(): FilterValues {
   const priceRangeParam = params.get('priceRange');
 
   return {
-    maxSunExposure: maxSunParam ? parseInt(maxSunParam, 10) : undefined,
+    maxSunExposure: parseMaxSun(maxSunParam),
     sectionType: sectionTypeParam ? sectionTypeParam.split(',').filter(Boolean) : [],
     priceRange: priceRangeParam ? priceRangeParam.split(',').filter(Boolean) : [],
   };

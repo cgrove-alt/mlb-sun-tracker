@@ -19,12 +19,11 @@ export interface HorizontalFilterPillsProps {
   className?: string;
 }
 
-// Filter option configurations
 const SUN_PRESETS = [
-  { label: 'All Sun Levels', value: 100, icon: '🌤️' },
-  { label: 'Mostly Shaded (≤25%)', value: 25, icon: '☁️' },
-  { label: 'Balanced (≤50%)', value: 50, icon: '⛅' },
-  { label: 'Some Sun (≤75%)', value: 75, icon: '☀️' },
+  { label: 'All Sun Levels', value: 100 },
+  { label: 'Mostly Shaded (25%)', value: 25 },
+  { label: 'Balanced (50%)', value: 50 },
+  { label: 'Some Sun (75%)', value: 75 },
 ];
 
 const SECTION_TYPES = [
@@ -222,7 +221,6 @@ const HorizontalFilterPillsComponent: React.FC<HorizontalFilterPillsProps> = ({
                       (filters.maxSunExposure === undefined && preset.value === 100)
                     }
                   >
-                    <span className={styles.optionIcon}>{preset.icon}</span>
                     <span>{preset.label}</span>
                   </button>
                 ))}
@@ -246,7 +244,7 @@ const HorizontalFilterPillsComponent: React.FC<HorizontalFilterPillsProps> = ({
           </button>
 
           {openDropdown === 'level' && (
-            <div className={styles.dropdown} role="listbox">
+            <div className={styles.dropdown} role="listbox" aria-multiselectable="true">
               <div className={styles.dropdownHeader}>
                 <span>Section Level</span>
                 {hasLevelFilter && (
@@ -301,7 +299,7 @@ const HorizontalFilterPillsComponent: React.FC<HorizontalFilterPillsProps> = ({
           </button>
 
           {openDropdown === 'price' && (
-            <div className={styles.dropdown} role="listbox">
+            <div className={styles.dropdown} role="listbox" aria-multiselectable="true">
               <div className={styles.dropdownHeader}>
                 <span>Price Range</span>
                 {hasPriceFilter && (
