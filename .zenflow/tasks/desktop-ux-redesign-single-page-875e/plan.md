@@ -111,25 +111,45 @@ Replace cramped sidebar filters with horizontal filter pills.
 
 ---
 
-### [ ] Step: Phase 3 - Enhanced Section Cards
+### [x] Step: Phase 3 - Enhanced Section Cards
 
 Improve section cards with clear expand/collapse indicators and highlight support.
 
 **Tasks:**
-- [ ] Modify `src/components/LazySectionCardModern.tsx`:
+- [x] Modify `src/components/LazySectionCardModern.tsx`:
   - Add `showExpandIndicator` prop with chevron icon
   - Add `isHighlighted` prop for diagram sync
   - Improve expand/collapse visual feedback
-- [ ] Add CSS styles for highlighted state
-- [ ] Add animation for expand/collapse indicator
-- [ ] Ensure accessibility (aria-expanded, focus states)
-- [ ] Run type-check, lint, and tests
+- [x] Add CSS styles for highlighted state
+- [x] Add animation for expand/collapse indicator
+- [x] Ensure accessibility (aria-expanded, focus states)
+- [x] Run type-check, lint, and tests
 
 **Acceptance Criteria:**
-- Cards show clear expand/collapse chevron
-- Highlighted cards have visible border/background
-- Expand animation is smooth
-- Keyboard accessible
+- [x] Cards show clear expand/collapse chevron
+- [x] Highlighted cards have visible border/background
+- [x] Expand animation is smooth
+- [x] Keyboard accessible
+
+**Implementation Notes:**
+- Modified `src/components/LazySectionCardModern.tsx` with the following enhancements:
+  - Added `showExpandIndicator` prop (boolean) - shows persistent chevron indicator next to section name
+  - Added `isHighlighted` prop (boolean) - for bidirectional diagram sync highlighting
+  - Added `onCardSelect` callback prop - notifies parent when card is clicked for selection
+- Visual changes:
+  - Chevron indicator appears next to section name when expandable (rotates 180° on expand)
+  - Highlighted state: `ring-4 ring-blue-500 shadow-2xl scale-[1.02] z-10` - prominent blue ring with slight scale
+  - Smooth 300ms transitions on all state changes
+- Accessibility improvements:
+  - Dynamic `role` attribute: `button` for expandable cards, `article` for non-expandable
+  - `aria-expanded` attribute correctly set only on expandable cards (role="button")
+  - Added `onKeyDown` handler for Enter/Space key support
+  - Updated `aria-label` to include highlighted state
+- Updated React.memo comparison to include new props (`isHighlighted`, `showExpandIndicator`, `isSelected`)
+- All verification checks pass:
+  - TypeScript compilation: ✅ No errors
+  - ESLint: ✅ No new warnings in modified file
+  - Production build: ✅ Successful
 
 ---
 

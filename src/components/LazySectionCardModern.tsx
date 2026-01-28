@@ -21,6 +21,12 @@ interface LazySectionCardProps {
   comparisonMode?: boolean;
   isSelected?: boolean;
   onToggleSelection?: (sectionId: string) => void;
+  /** Show persistent expand/collapse indicator chevron */
+  showExpandIndicator?: boolean;
+  /** Highlight this card (for diagram sync) */
+  isHighlighted?: boolean;
+  /** Callback when card is clicked for selection (diagram sync) */
+  onCardSelect?: (sectionId: string) => void;
 }
 
 const LazySectionCardModernComponent: React.FC<LazySectionCardProps> = ({
@@ -36,6 +42,9 @@ const LazySectionCardModernComponent: React.FC<LazySectionCardProps> = ({
   comparisonMode = false,
   isSelected = false,
   onToggleSelection,
+  showExpandIndicator = false,
+  isHighlighted = false,
+  onCardSelect,
 }) => {
   const [intersectionRef, isIntersecting] = useIntersectionObserver({
     threshold: 0.01,
@@ -106,6 +115,11 @@ const LazySectionCardModernComponent: React.FC<LazySectionCardProps> = ({
       return; // Let checkbox handle the event
     }
 
+    // Notify parent of card selection (for diagram sync)
+    if (onCardSelect) {
+      onCardSelect(section.id);
+    }
+
     if (rowData && rowData.length > 0) {
       // Store scroll position before expansion
       const currentScrollY = window.scrollY;
@@ -159,6 +173,10 @@ const LazySectionCardModernComponent: React.FC<LazySectionCardProps> = ({
 
   const rowSummary = getRowSummary();
 
+  // Determine if card has expandable content
+  const hasExpandableContent = rowData && rowData.length > 0;
+  const shouldShowExpandIndicator = showExpandIndicator || hasExpandableContent;
+
   return (
     <div
       ref={intersectionRef}
@@ -169,14 +187,23 @@ const LazySectionCardModernComponent: React.FC<LazySectionCardProps> = ({
         bg-gradient-to-br hover:shadow-card-hover hover:-translate-y-1 cursor-pointer
         backdrop-blur-sm border-[3px] shadow-lg
         ${isExpanded ? 'ring-4 ring-accent-300 shadow-2xl' : ''}
+        ${isHighlighted ? 'ring-4 ring-blue-500 shadow-2xl scale-[1.02] z-10' : ''}
       `}
       data-exposure={roundedExposure}
       data-section={section.id}
       data-section-id={section.id}
-      role="listitem"
+      data-highlighted={isHighlighted}
+      role={hasExpandableContent ? 'button' : 'article'}
       tabIndex={0}
       onClick={handleClick}
-      aria-label={`Section ${section.name}, ${formatPercentageForScreenReader(roundedExposure)}, ${section.level} level${section.covered ? ', covered section' : ''}`}
+      onKeyDown={(e) => {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          handleClick(e as unknown as React.MouseEvent);
+        }
+      }}
+      aria-label={`Section ${section.name}, ${formatPercentageForScreenReader(roundedExposure)}, ${section.level} level${section.covered ? ', covered section' : ''}${isHighlighted ? ', currently selected' : ''}`}
+      aria-expanded={hasExpandableContent ? isExpanded : undefined}
     >
       {/* Glass morphism overlay effect */}
       <div className="absolute inset-0 bg-white/30 backdrop-blur-xs opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
@@ -211,9 +238,25 @@ const LazySectionCardModernComponent: React.FC<LazySectionCardProps> = ({
           {/* Header with section name and sun indicator */}
           <div className="flex items-start justify-between gap-4">
             <div className="flex-1">
-              <h3 className="text-xl font-bold text-gray-900 group-hover:text-accent-600 transition-colors">
-                {section.name}
-              </h3>
+              <div className="flex items-center gap-2">
+                <h3 className="text-xl font-bold text-gray-900 group-hover:text-accent-600 transition-colors">
+                  {section.name}
+                </h3>
+                {/* Expand indicator chevron */}
+                {shouldShowExpandIndicator && (
+                  <span
+                    className={`
+                      inline-flex items-center justify-center w-6 h-6 rounded-full
+                      bg-gray-200/70 text-gray-600 transition-all duration-300
+                      group-hover:bg-accent-100 group-hover:text-accent-600
+                      ${isExpanded ? 'rotate-180' : 'rotate-0'}
+                    `}
+                    aria-hidden="true"
+                  >
+                    <ChevronDownIcon size={16} />
+                  </span>
+                )}
+              </div>
               {section.covered && (
                 <div className="flex items-center gap-1 mt-1 text-sm text-gray-700">
                   <UmbrellaIcon size={16} color="#059669" />
@@ -353,6 +396,9 @@ export const LazySectionCardModern = React.memo(LazySectionCardModernComponent, 
     prevProps.sunExposure === nextProps.sunExposure &&
     prevProps.inSun === nextProps.inSun &&
     prevProps.index === nextProps.index &&
-    prevProps.rowData === nextProps.rowData
+    prevProps.rowData === nextProps.rowData &&
+    prevProps.isHighlighted === nextProps.isHighlighted &&
+    prevProps.showExpandIndicator === nextProps.showExpandIndicator &&
+    prevProps.isSelected === nextProps.isSelected
   );
 });
