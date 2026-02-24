@@ -5,7 +5,6 @@
 import { DetailedSection, Obstruction3D } from '../types/stadium-complete';
 
 // Lazy import maps: stadium ID → dynamic import function
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
 const SECTION_IMPORTS: Record<string, () => Promise<Record<string, any>>> = {
   // MLB
   'yankees': () => import('./sections/mlb/yankees'),
@@ -44,7 +43,6 @@ const SECTION_IMPORTS: Record<string, () => Promise<Record<string, any>>> = {
   'sofi-stadium': () => import('./sections/nfl/sofi-stadium'),
 };
 
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
 const OBSTRUCTION_IMPORTS: Record<string, () => Promise<Record<string, any>>> = {
   'yankees': () => import('./obstructions/mlb/yankees-obstructions'),
   'red-sox': () => import('./obstructions/mlb/redsox-obstructions'),
