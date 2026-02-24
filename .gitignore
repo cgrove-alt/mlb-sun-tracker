@@ -25,7 +25,14 @@ npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 
+# Generated seat data (served from public/data/seatData/ only)
+src/data/seatData/
+
+# Test output
+.test-output/
+
 # Next.js
 .next/
+_next/
 out/
 next-env.d.ts

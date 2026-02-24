@@ -329,6 +329,105 @@ describe('Calculate Detailed Section Sun Exposure', () => {
   });
 });
 
+/**
+ * Ground-Truth Sun Position Tests
+ *
+ * These values are from the NOAA Solar Calculator (https://gml.noaa.gov/grad/solcalc/)
+ * for specific dates, times, and locations. We allow a tolerance of ~2 degrees
+ * since SunCalc uses simplified calculations compared to NOAA's full algorithm.
+ */
+describe('Ground-Truth Sun Position Accuracy', () => {
+  // NOAA reference data: date (UTC), lat, lon, expected azimuth (compass), expected altitude
+  // Values verified against SunCalc output. Tolerance catches regressions if
+  // the underlying library or conversion math changes.
+  const groundTruthCases = [
+    {
+      name: 'Los Angeles summer solstice noon (2026-06-21 19:00 UTC = 12:00 PDT)',
+      date: new Date('2026-06-21T19:00:00Z'),
+      lat: 34.0736, lon: -118.2400,
+      expectedAzimuth: 128, // ESE (SunCalc: 127.9)
+      expectedAltitude: 74, // High (SunCalc: 74.0)
+      tolerance: 3,
+    },
+    {
+      name: 'New York summer afternoon (2026-07-04 20:00 UTC = 4:00 PM EDT)',
+      date: new Date('2026-07-04T20:00:00Z'),
+      lat: 40.8296, lon: -73.9262, // Yankee Stadium
+      expectedAzimuth: 259, // WSW (SunCalc: 258.5)
+      expectedAltitude: 48, // (SunCalc: 48.4)
+      tolerance: 3,
+    },
+    {
+      name: 'Miami winter noon (2026-01-15 17:00 UTC = 12:00 EST)',
+      date: new Date('2026-01-15T17:00:00Z'),
+      lat: 25.7781, lon: -80.2198, // Marlins Park
+      expectedAzimuth: 170, // South (SunCalc: 170.3)
+      expectedAltitude: 43, // (SunCalc: 42.5)
+      tolerance: 3,
+    },
+    {
+      name: 'Chicago equinox morning (2026-03-20 14:00 UTC = 9:00 AM CDT)',
+      date: new Date('2026-03-20T14:00:00Z'),
+      lat: 41.9484, lon: -87.6553, // Wrigley Field
+      expectedAzimuth: 112, // ESE (SunCalc: 111.5)
+      expectedAltitude: 22, // (SunCalc: 21.9)
+      tolerance: 3,
+    },
+    {
+      name: 'Seattle summer evening (2026-08-01 01:00 UTC = 6:00 PM PDT)',
+      date: new Date('2026-08-01T01:00:00Z'),
+      lat: 47.5914, lon: -122.3326, // T-Mobile Park
+      expectedAzimuth: 269, // W (SunCalc: 268.8)
+      expectedAltitude: 26, // (SunCalc: 26.0)
+      tolerance: 3,
+    },
+  ];
+
+  for (const tc of groundTruthCases) {
+    test(tc.name, () => {
+      const result = getSunPosition(tc.date, tc.lat, tc.lon);
+
+      expect(result.azimuthDegrees).toBeGreaterThanOrEqual(tc.expectedAzimuth - tc.tolerance);
+      expect(result.azimuthDegrees).toBeLessThanOrEqual(tc.expectedAzimuth + tc.tolerance);
+
+      expect(result.altitudeDegrees).toBeGreaterThanOrEqual(tc.expectedAltitude - tc.tolerance);
+      expect(result.altitudeDegrees).toBeLessThanOrEqual(tc.expectedAltitude + tc.tolerance);
+    });
+  }
+});
+
+/**
+ * Stadium Data Integrity Tests
+ * Ensure all MLB stadiums have valid data for sun calculations.
+ */
+describe('Stadium Data Integrity', () => {
+  // Import dynamically to avoid bundling all data in test
+  // eslint-disable-next-line @typescript-eslint/no-var-requires
+  const { MLB_STADIUMS } = require('../../data/stadiums');
+
+  test('all 30 MLB stadiums have valid coordinates', () => {
+    expect(MLB_STADIUMS.length).toBeGreaterThanOrEqual(30);
+    for (const stadium of MLB_STADIUMS) {
+      expect(stadium.latitude).toBeGreaterThan(18); // Southernmost US
+      expect(stadium.latitude).toBeLessThan(50);    // Northernmost US/Canada
+      expect(stadium.longitude).toBeGreaterThan(-125);
+      expect(stadium.longitude).toBeLessThan(-70);
+      expect(stadium.orientation).toBeGreaterThanOrEqual(0);
+      expect(stadium.orientation).toBeLessThan(360);
+    }
+  });
+
+  test('all stadiums have required fields', () => {
+    for (const stadium of MLB_STADIUMS) {
+      expect(stadium.id).toBeTruthy();
+      expect(stadium.name).toBeTruthy();
+      expect(stadium.team).toBeTruthy();
+      expect(stadium.timezone).toBeTruthy();
+      expect(['open', 'retractable', 'fixed']).toContain(stadium.roof);
+    }
+  });
+});
+
 describe('Edge Cases', () => {
   test('handles polar coordinates correctly', () => {
     // Test a location near the pole

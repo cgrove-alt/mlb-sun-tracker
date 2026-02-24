@@ -49,32 +49,36 @@ export default function HomePage() {
           </div>
         </section>
 
-        {/* SEO-optimized content section */}
-        <div className="sr-only">
-          <h2>Find Shaded Seats at MLB, MiLB & NFL Stadiums - Are My Seats in the Shade?</h2>
-          <p>
-            Wondering "are my seats in the shade?" or "are my seats shaded?" at your favorite sports venue? 
-            The Shadium helps you find the best shaded seats at over 250 stadiums including all 30 MLB ballparks, 
-            120 MiLB stadiums, and 32 NFL venues. Our real-time sun tracking technology shows you exactly which 
-            sections will be in the shade during any game time.
-          </p>
-          
-          <h3>Check If Your Seats Are Shaded at These Popular Venues</h3>
-          <ul>
-            <li><Link href="/stadium/yankees">Are my seats shaded at Yankee Stadium? (MLB)</Link></li>
-            <li><Link href="/stadium/dodgers">Find shaded seats at Dodger Stadium (MLB)</Link></li>
-            <li><Link href="/venue/metlife-stadium">Shaded sections at MetLife Stadium (NFL)</Link></li>
-            <li><Link href="/venue/las-vegas-ballpark">Las Vegas Ballpark shade finder (MiLB)</Link></li>
-            <li><Link href="/venue/sofi-stadium">SoFi Stadium sun exposure guide (NFL)</Link></li>
-          </ul>
-          
-          <h3>How to Know If Your Seats Are in the Shade</h3>
-          <p>
-            Simply select your stadium from our database of 250+ MLB, MiLB, and NFL venues and choose your 
-            game time to see which sections are shaded. Our advanced calculations consider sun angle, stadium 
-            orientation, roof coverage, and time of day to show you exactly where the shade will be during your game.
-          </p>
-        </div>
+        {/* Featured stadiums - visible SSR content for SEO and fast FCP */}
+        {!showApp && (
+          <section className="featured-section">
+            <h2 className="featured-heading">Popular Stadiums</h2>
+            <p className="featured-subtext">
+              Find the best shaded seats at over 250 MLB, NFL, and MiLB venues
+            </p>
+            <div className="featured-grid">
+              {[
+                { id: 'yankees', name: 'Yankee Stadium', team: 'New York Yankees', league: 'MLB' },
+                { id: 'dodgers', name: 'Dodger Stadium', team: 'Los Angeles Dodgers', league: 'MLB' },
+                { id: 'cubs', name: 'Wrigley Field', team: 'Chicago Cubs', league: 'MLB' },
+                { id: 'redsox', name: 'Fenway Park', team: 'Boston Red Sox', league: 'MLB' },
+                { id: 'giants', name: 'Oracle Park', team: 'San Francisco Giants', league: 'MLB' },
+                { id: 'rangers', name: 'Globe Life Field', team: 'Texas Rangers', league: 'MLB' },
+              ].map(s => (
+                <Link key={s.id} href={`/stadium/${s.id}`} className="featured-card">
+                  <span className="featured-league">{s.league}</span>
+                  <h3 className="featured-name">{s.name}</h3>
+                  <p className="featured-team">{s.team}</p>
+                </Link>
+              ))}
+            </div>
+            <div style={{ textAlign: 'center', marginTop: '2rem' }}>
+              <button onClick={handleCTAClick} className="hero-cta-button" style={{ background: '#0f766e', color: 'white' }}>
+                Browse All Stadiums
+              </button>
+            </div>
+          </section>
+        )}
 
         <div id="app-section" className={showApp ? 'app-visible' : 'app-hidden'}>
           <ErrorBoundary level="section">
@@ -272,6 +276,74 @@ export default function HomePage() {
           }
         }
         
+        /* Featured stadiums section */
+        .featured-section {
+          max-width: 1100px;
+          margin: 0 auto;
+          padding: 4rem 2rem;
+        }
+
+        .featured-heading {
+          font-size: clamp(1.5rem, 3vw, 2rem);
+          font-weight: 700;
+          text-align: center;
+          margin-bottom: 0.5rem;
+          color: #0B1220;
+        }
+
+        .featured-subtext {
+          text-align: center;
+          color: #334155;
+          margin-bottom: 2rem;
+          font-size: 1.05rem;
+        }
+
+        .featured-grid {
+          display: grid;
+          grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+          gap: 1rem;
+        }
+
+        .featured-card {
+          display: block;
+          padding: 1.25rem;
+          border: 1px solid #e2e8f0;
+          border-radius: 12px;
+          text-decoration: none;
+          color: inherit;
+          transition: box-shadow 0.2s, transform 0.2s;
+        }
+
+        .featured-card:hover {
+          box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+          transform: translateY(-2px);
+        }
+
+        .featured-league {
+          display: inline-block;
+          font-size: 0.75rem;
+          font-weight: 600;
+          text-transform: uppercase;
+          color: #0f766e;
+          background: #f0fdfa;
+          padding: 0.125rem 0.5rem;
+          border-radius: 4px;
+          margin-bottom: 0.5rem;
+        }
+
+        .featured-name {
+          font-size: 1.125rem;
+          font-weight: 600;
+          margin: 0.25rem 0;
+          color: #0B1220;
+        }
+
+        .featured-team {
+          font-size: 0.875rem;
+          color: #64748b;
+          margin: 0;
+        }
+
         /* Accessibility: reduce motion */
         @media (prefers-reduced-motion: reduce) {
           .hero-content { animation: none; }
@@ -280,6 +352,7 @@ export default function HomePage() {
           #app-section { transition: none; }
           .hero-section { animation: none; }
           .hero-section::after { animation: none; }
+          .featured-card { transition: none; }
         }
       `}</style>
     </>

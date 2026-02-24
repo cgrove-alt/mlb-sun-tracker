@@ -123,36 +123,30 @@ export default async function StadiumPage({ params }: StadiumPageProps) {
   // Use the stadium's canonical ID for guide lookup
   const guide = getStadiumGuide(stadium.id) || getStadiumGuide(stadiumId);
 
+  // Count covered sections for dynamic FAQ answers
+  const coveredSections = sections.filter((s: any) => s.covered);
+  const coveredCount = coveredSections.length;
+  const roofDesc = stadium.roof === 'fixed' ? 'a fixed roof (fully covered)' :
+    stadium.roof === 'retractable' ? 'a retractable roof' : 'an open-air design';
+
   // Structured data for better SEO
   const jsonLd = {
     '@context': 'https://schema.org',
-    '@type': 'Article',
-    headline: `Shaded Seats at ${stadium.name} - Complete Guide`,
+    '@type': 'WebPage',
+    name: `Shaded Seats at ${stadium.name} - Shade Guide`,
     description: `Find the best shaded seats at ${stadium.name}. Real-time shade calculations for ${stadium.team} games.`,
-    author: {
-      '@type': 'Organization',
-      name: 'The Shadium',
-    },
-    publisher: {
-      '@type': 'Organization',
-      name: 'The Shadium',
-      logo: {
-        '@type': 'ImageObject',
-        url: 'https://theshadium.com/logo512.png',
-      },
-    },
-    datePublished: '2024-01-01',
-    dateModified: new Date().toISOString(),
-    mainEntityOfPage: {
-      '@type': 'WebPage',
-      '@id': `https://theshadium.com/stadium/${stadiumId}`,
-    },
+    url: `https://theshadium.com/stadium/${stadiumId}`,
     about: {
       '@type': 'StadiumOrArena',
       name: stadium.name,
       address: {
         '@type': 'PostalAddress',
         addressLocality: stadium.city,
+      },
+      geo: {
+        '@type': 'GeoCoordinates',
+        latitude: stadium.latitude,
+        longitude: stadium.longitude,
       },
     },
   };
@@ -166,15 +160,15 @@ export default async function StadiumPage({ params }: StadiumPageProps) {
         name: `What are the best shaded seats at ${stadium.name}?`,
         acceptedAnswer: {
           '@type': 'Answer',
-          text: `The best shaded seats at ${stadium.name} vary by game time. For day games, sections on the third base side and upper deck typically offer more shade. Use The Shadium to check real-time shade for your specific game.`,
+          text: `${stadium.name} has ${coveredCount} covered sections. For day games, the upper deck and club level sections typically offer the most shade. Use The Shadium's real-time calculator to check shade for your specific game time.`,
         },
       },
       {
         '@type': 'Question',
-        name: `Which sections at ${stadium.name} have covered seating?`,
+        name: `Does ${stadium.name} have a roof?`,
         acceptedAnswer: {
           '@type': 'Answer',
-          text: `${stadium.name} has covered seating in select premium areas and upper deck sections. Check The Shadium for detailed coverage information for each section.`,
+          text: `${stadium.name} has ${roofDesc}. ${stadium.roof === 'fixed' ? 'All seats are shaded regardless of weather or time.' : 'Shade coverage varies by section, time of day, and season.'}`,
         },
       },
       {
@@ -182,7 +176,7 @@ export default async function StadiumPage({ params }: StadiumPageProps) {
         name: `How can I avoid sun at ${stadium.name} during day games?`,
         acceptedAnswer: {
           '@type': 'Answer',
-          text: `To avoid sun at ${stadium.name}, choose seats on the third base side, in the upper deck, or in club level sections. The Shadium provides real-time calculations showing exactly which seats will be shaded during your game.`,
+          text: `For day games at ${stadium.name}, choose upper deck or club level sections for the most shade. The stadium orientation is ${stadium.orientation}°, so the third base side generally gets afternoon shade first. Use The Shadium for real-time shade predictions.`,
         },
       },
     ],

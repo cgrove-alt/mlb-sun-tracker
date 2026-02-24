@@ -1,5 +1,5 @@
 import React from 'react';
-import { Helmet } from 'react-helmet-async';
+import Head from 'next/head';
 import { Stadium } from '../data/stadiums';
 import { MLBGame } from '../services/mlbApi';
 import { MiLBGame } from '../services/milbApi';
@@ -123,29 +123,27 @@ export const SEOHelmet: React.FC<SEOHelmetProps> = ({ stadium, game, pageType = 
 
   return (
     <>
-      <Helmet>
+      <Head>
         <title>{getTitle()}</title>
         <meta name="description" content={getDescription()} />
         <link rel="canonical" href={getCanonicalUrl()} />
-        
+
         {/* Open Graph Tags */}
         <meta property="og:title" content={getTitle()} />
         <meta property="og:description" content={getDescription()} />
         <meta property="og:url" content={getCanonicalUrl()} />
         <meta property="og:type" content={pageType === 'home' ? 'website' : 'article'} />
-        
+
         {/* Twitter Card Tags */}
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content={getTitle()} />
         <meta name="twitter:description" content={getDescription()} />
-        
+
         {/* Basic Structured Data */}
         {structuredData && (
-          <script type="application/ld+json">
-            {JSON.stringify(structuredData)}
-          </script>
+          <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }} />
         )}
-      </Helmet>
+      </Head>
       
       {/* Additional Schema Components */}
       {pageType === 'stadium' && stadium && (

@@ -6,6 +6,9 @@ const withBundleAnalyzer = require('@next/bundle-analyzer')({
 const nextConfig = {
   // Enable React strict mode for better debugging
   reactStrictMode: true,
+
+  // Allow dev origins for preview tools
+  allowedDevOrigins: ['http://127.0.0.1:3000'],
   
   // Optimize production builds
   compiler: {
@@ -72,13 +75,7 @@ const nextConfig = {
     imageSizes: [16, 32, 48, 64, 96, 128, 256, 384],
   },
   
-  // Experimental features for better performance
-  experimental: {
-    // Three.js removed from codebase
-  },
-  
-  // Output configuration
-  output: 'standalone',
+  experimental: {},
   
   // Reduce build output verbosity
   onDemandEntries: {

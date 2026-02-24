@@ -177,13 +177,9 @@ export function calculateDetailedSectionSunExposure(
   let weatherMultiplier = 1.0;
   if (weather) {
     const { cloudCover, conditions, precipitationProbability } = weather;
-    // Log in development
-    if (typeof window !== 'undefined' && window.location.hostname === 'localhost') {
 
-    }
-    
     // Reduce sun exposure based on weather conditions
-    if ((precipitationProbability && precipitationProbability > 70) || 
+    if ((precipitationProbability && precipitationProbability > 70) ||
         conditions.some(c => c.main === 'Rain' || c.main === 'Snow' || c.main === 'Drizzle')) {
       weatherMultiplier = 0.1; // Heavy rain/snow/drizzle blocks most sun
     } else if (precipitationProbability && precipitationProbability > 30) {
@@ -196,16 +192,6 @@ export function calculateDetailedSectionSunExposure(
       weatherMultiplier = 0.8; // Partly cloudy
     } else if (cloudCover > 15) {
       weatherMultiplier = 0.9; // Light clouds
-    }
-    
-    // Log in development
-    if (typeof window !== 'undefined' && window.location.hostname === 'localhost') {
-
-    }
-  } else {
-    // Log in development
-    if (typeof window !== 'undefined' && window.location.hostname === 'localhost') {
-
     }
   }
 
@@ -237,10 +223,6 @@ export function filterSectionsBySunExposure(
     priceRange?: Array<'value' | 'moderate' | 'premium' | 'luxury'>;
   }
 ): SeatingSectionSun[] {
-  // Debug logging
-  if (typeof window !== 'undefined' && window.location.hostname === 'localhost' && (criteria.minExposure !== undefined || criteria.maxExposure !== undefined)) {
-  }
-  
   const filteredResults = sectionSunData.filter(item => {
     const { section, sunExposure } = item;
     
@@ -269,10 +251,6 @@ export function filterSectionsBySunExposure(
     
     return true;
   });
-  
-  // Debug logging for results
-  if (typeof window !== 'undefined' && window.location.hostname === 'localhost' && (criteria.minExposure !== undefined || criteria.maxExposure !== undefined)) {
-  }
   
   return filteredResults;
 }
@@ -442,5 +420,3 @@ export function calculateGameSunExposure(
   return exposureMap;
 }
 
-// Export the new 3D shade calculation function
-export { getShadedSections } from './getShadedSections';
