@@ -624,3 +624,29 @@
   width: 100% !important;
   box-sizing: border-box;
 }
+
+/* Virtual scroll optimizations */
+.section-virtual-scroll {
+  width: 100%;
+  /* Smooth scrolling */
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+}
+
+.section-grid-virtual-item {
+  padding: 0 8px;
+  margin-bottom: 16px;
+}
+
+/* Ensure virtual scroll container performs well on mobile */
+@media (max-width: 768px) {
+  .section-virtual-scroll {
+    /* Hardware acceleration */
+    transform: translate3d(0, 0, 0);
+    -webkit-transform: translate3d(0, 0, 0);
+    /* Better touch scrolling on iOS */
+    -webkit-overflow-scrolling: touch;
+    /* Prevent momentum scroll from going too far */
+    overscroll-behavior-y: contain;
+  }
+}

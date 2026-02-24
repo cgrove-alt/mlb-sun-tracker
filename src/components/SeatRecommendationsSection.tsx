@@ -5,24 +5,26 @@ import { SeatRecommendationEngine, UserPreferences, RecommendationContext } from
 import { SeatingSectionSun } from '../utils/sunCalculations';
 import { SeatPreferencesForm } from './SeatPreferencesForm';
 import { LoadingSpinner } from './LoadingSpinner';
+import { SectionList } from './SectionList';
 import { MLB_STADIUMS } from '../data/stadiums';
 import { getStadiumCompleteData } from '../data/stadium-data-aggregator';
 import { weatherApi, WeatherData } from '../services/weatherApi';
-import { SectionList } from './SectionList';
-import { StadiumShadeDiagram } from './StadiumShadeDiagram';
+import type { SectionShadowData } from '../utils/sunCalculator';
 
 interface SeatRecommendationsSectionProps {
   sections: SeatingSectionSun[];
   stadiumId: string;
   gameTime?: string;
   gameDate?: Date;
+  rowData?: SectionShadowData[] | null;
 }
 
 export const SeatRecommendationsSection: React.FC<SeatRecommendationsSectionProps> = ({
   sections,
   stadiumId,
   gameTime = '13:00',
-  gameDate = new Date()
+  gameDate = new Date(),
+  rowData = null
 }) => {
   const [preferences, setPreferences] = useState<UserPreferences>({
     sunPreference: 'neutral',
@@ -191,42 +193,8 @@ export const SeatRecommendationsSection: React.FC<SeatRecommendationsSectionProp
     );
   }
 
-  // Prepare sections for the shade diagram with sun exposure data
-  const diagramSections = useMemo(() => {
-    // Use the sections with sun data directly - they have nested section object
-    return sections.map(s => ({
-      id: s.section.id,
-      name: s.section.name,
-      level: s.section.level as 'field' | 'lower' | 'club' | 'upper' | 'suite',
-      baseAngle: s.section.baseAngle,
-      angleSpan: s.section.angleSpan,
-      covered: s.section.covered,
-      sunExposure: s.sunExposure
-    }));
-  }, [sections]);
-
-  // Get stadium orientation for sun direction
-  const stadium = useMemo(() =>
-    MLB_STADIUMS.find(s => s.id === stadiumId),
-  [stadiumId]);
-
   return (
     <div className="seat-recommendations-section">
-      {/* Stadium Shade Overview Diagram */}
-      <div className="mb-8 p-4 bg-white rounded-xl border border-gray-200">
-        <h2 className="text-xl font-bold text-gray-900 mb-4 text-center">
-          Stadium Shade Overview
-        </h2>
-        <StadiumShadeDiagram
-          sections={diagramSections}
-          stadiumOrientation={stadium?.orientation ?? 0}
-          size={280}
-        />
-        <p className="text-xs text-gray-500 text-center mt-2">
-          Click any section for details. Diagram shows shade conditions for your selected time.
-        </p>
-      </div>
-
       <div className="recommendations-header">
         <div className="flex items-center justify-between mb-6">
           <div>
@@ -380,18 +348,18 @@ export const SeatRecommendationsSection: React.FC<SeatRecommendationsSectionProp
         )}
       </div>
 
-      {/* All Sections with Interactive Cards */}
-      <div className="mt-8">
-        <h3 className="text-xl font-bold text-gray-900 mb-4">
-          All Sections - View Detailed Seat Maps
-        </h3>
+      {/* All Sections List with Row-Level Data */}
+      <div className="mt-12 pt-8 border-t border-gray-200">
+        <h2 className="text-2xl font-bold text-gray-900 mb-6">
+          All Sections
+        </h2>
         <SectionList
           sections={sections}
           loading={false}
           showFilters={true}
+          rowData={rowData}
+          showRowToggle={!!rowData && rowData.length > 0}
           stadiumId={stadiumId}
-          gameDate={gameDate instanceof Date ? gameDate.toISOString().split('T')[0] : undefined}
-          gameTime={gameTime}
         />
       </div>
 

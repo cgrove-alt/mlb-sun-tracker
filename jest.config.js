@@ -2,7 +2,7 @@
 module.exports = {
   preset: 'ts-jest',
   testEnvironment: 'jsdom',
-  roots: ['<rootDir>/src', '<rootDir>/components'],
+  roots: ['<rootDir>/src', '<rootDir>/components', '<rootDir>/app', '<rootDir>/scripts'],
   testMatch: [
     '**/__tests__/**/*.ts?(x)',
     '**/?(*.)+(spec|test).ts?(x)'
@@ -22,7 +22,8 @@ module.exports = {
     }]
   },
   moduleNameMapper: {
-    '^@/(.*)$': '<rootDir>/src/$1',
+    '^@/src/(.*)$': '<rootDir>/src/$1',
+    '^@/(.*)$': '<rootDir>/$1',
     '\\.(css|less|scss|sass)$': '<rootDir>/src/__mocks__/styleMock.js',
     '\\.(jpg|jpeg|png|gif|svg)$': '<rootDir>/src/__mocks__/fileMock.js'
   },
@@ -41,6 +42,12 @@ module.exports = {
       statements: 70
     }
   },
-  setupFilesAfterEnv: ['<rootDir>/src/setupTests.ts'],
-  testTimeout: 10000
+  setupFilesAfterEnv: [
+    '<rootDir>/jest.setup.js'
+  ],
+  testTimeout: 10000,
+  testEnvironmentOptions: {
+    customExportConditions: ['node', 'node-addons'],
+    url: 'http://localhost:3000'
+  }
 };

@@ -7,6 +7,7 @@ import { generateBaseballSections } from './utils/generateBaseballSections';
 import { MLBGame } from './services/mlbApi';
 import { MiLBGame } from './services/milbApi';
 import { NFLGame } from './services/nflApi';
+import { WorldCupGame } from './services/worldCupApi';
 import { SeatingSectionSun } from './utils/sunCalculations';
 import { UnifiedGameSelector } from './components/UnifiedGameSelector';
 import { MobileGameScheduler } from './components/MobileGameScheduler';
@@ -33,8 +34,8 @@ const weatherLoadRateLimiter = new RateLimiter(10, 60000); // 10 requests per mi
 const MobileApp: React.FC = () => {
   const [selectedVenue, setSelectedVenue] = useState<UnifiedVenue | null>(null);
   const [selectedStadium, setSelectedStadium] = useState<Stadium | null>(null);
-  const [games, setGames] = useState<(MLBGame | MiLBGame | NFLGame)[]>([]);
-  const [selectedGame, setSelectedGame] = useState<MLBGame | MiLBGame | NFLGame | null>(null);
+  const [games, setGames] = useState<(MLBGame | MiLBGame | NFLGame | WorldCupGame)[]>([]);
+  const [selectedGame, setSelectedGame] = useState<MLBGame | MiLBGame | NFLGame | WorldCupGame | null>(null);
   const [gameDateTime, setGameDateTime] = useState<Date | null>(null);
   const [allSections, setAllSections] = useState<SeatingSectionSun[]>([]);
   const [filteredSections, setFilteredSections] = useState<SeatingSectionSun[]>([]);
@@ -84,7 +85,7 @@ const MobileApp: React.FC = () => {
     }
   }, [allSections, filterCriteria]);
 
-  const handleGamesLoaded = (loadedGames: (MLBGame | MiLBGame | NFLGame)[]) => {
+  const handleGamesLoaded = (loadedGames: (MLBGame | MiLBGame | NFLGame | WorldCupGame)[]) => {
     setGames(loadedGames);
   };
 
@@ -217,7 +218,7 @@ const MobileApp: React.FC = () => {
     setGameDateTime(null);
   }, []);
 
-  const handleGameSelect = useCallback((game: MLBGame | MiLBGame | NFLGame | null, dateTime: Date | null) => {
+  const handleGameSelect = useCallback((game: MLBGame | MiLBGame | NFLGame | WorldCupGame | null, dateTime: Date | null) => {
     setSelectedGame(game);
     setGameDateTime(dateTime);
   }, []);

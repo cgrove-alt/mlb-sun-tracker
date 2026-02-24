@@ -4,13 +4,14 @@ import { UnifiedVenue, getLeagueInfo } from '../data/unifiedVenues';
 import { MLBGame } from '../services/mlbApi';
 import { MiLBGame } from '../services/milbApi';
 import { NFLGame } from '../services/nflApi';
+import { WorldCupGame } from '../services/worldCupApi';
 import { formatDateTimeWithTimezone } from '../utils/timeUtils';
 import './Breadcrumb.css';
 
 interface BreadcrumbProps {
   selectedVenue?: UnifiedVenue | null;
   selectedStadium?: Stadium | null;
-  selectedGame?: MLBGame | MiLBGame | NFLGame | null;
+  selectedGame?: MLBGame | MiLBGame | NFLGame | WorldCupGame | null;
   gameDateTime?: Date | null;
   selectedLeague?: string;
   selectedMiLBLevel?: string;
@@ -18,7 +19,7 @@ interface BreadcrumbProps {
   onMiLBLevelChange?: (level: string) => void;
   onVenueChange?: (venue: UnifiedVenue | null) => void;
   onStadiumChange?: (stadium: Stadium | null) => void;
-  onGameSelect?: (game: MLBGame | MiLBGame | NFLGame | null, dateTime: Date | null) => void;
+  onGameSelect?: (game: MLBGame | MiLBGame | NFLGame | WorldCupGame | null, dateTime: Date | null) => void;
 }
 
 export const Breadcrumb: React.FC<BreadcrumbProps> = ({

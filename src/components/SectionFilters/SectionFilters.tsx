@@ -1,6 +1,7 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styles from './SectionFilters.module.css';
 import { SunIcon, CloudIcon, PartlyCloudyIcon, FireIcon, MoneyIcon } from '../Icons';
+import { FilterPresets } from '../FilterPresets/FilterPresets';
 
 export interface SectionFilterValues {
   maxSunExposure?: number;
@@ -21,27 +22,40 @@ export const SectionFilters: React.FC<SectionFiltersProps> = ({
   isExpanded = true,
   onToggleExpand
 }) => {
+  const [activePreset, setActivePreset] = useState<string | null>(null);
+
+  const handlePresetSelect = (presetFilters: SectionFilterValues, presetId: string) => {
+    setActivePreset(presetId);
+    onChange(presetFilters);
+  };
+
+  const handleFilterChange = (newFilters: SectionFilterValues) => {
+    // Clear active preset when manually adjusting filters
+    setActivePreset(null);
+    onChange(newFilters);
+  };
+
   const toggleFilter = (category: 'sectionType' | 'priceRange', value: string) => {
     const currentValues = filters[category];
     const newValues = currentValues.includes(value)
       ? currentValues.filter(v => v !== value)
       : [...currentValues, value];
 
-    onChange({
+    handleFilterChange({
       ...filters,
       [category]: newValues
     });
   };
 
   const handleSliderChange = (value: number) => {
-    onChange({
+    handleFilterChange({
       ...filters,
       maxSunExposure: value === 100 ? undefined : value
     });
   };
 
   const handlePresetClick = (value: number) => {
-    onChange({
+    handleFilterChange({
       ...filters,
       maxSunExposure: value === 100 ? undefined : value
     });
@@ -49,12 +63,12 @@ export const SectionFilters: React.FC<SectionFiltersProps> = ({
 
   const clearCategory = (category: 'sunExposure' | 'sectionType' | 'priceRange') => {
     if (category === 'sunExposure') {
-      onChange({
+      handleFilterChange({
         ...filters,
         maxSunExposure: undefined
       });
     } else {
-      onChange({
+      handleFilterChange({
         ...filters,
         [category]: []
       });
@@ -62,6 +76,7 @@ export const SectionFilters: React.FC<SectionFiltersProps> = ({
   };
 
   const clearAllFilters = () => {
+    setActivePreset(null);
     onChange({
       maxSunExposure: undefined,
       sectionType: [],
@@ -137,6 +152,13 @@ export const SectionFilters: React.FC<SectionFiltersProps> = ({
 
       {isExpanded && (
         <div className={styles.filtersContent}>
+          {/* Filter Presets */}
+          <FilterPresets
+            currentFilters={filters}
+            onPresetSelect={handlePresetSelect}
+            activePreset={activePreset}
+          />
+
           {/* Sun Exposure Slider */}
           <div className={styles.filterGroup}>
             <div className={styles.groupHeader}>

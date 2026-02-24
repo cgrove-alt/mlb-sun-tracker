@@ -30,7 +30,9 @@ const staticPages = [
   'guide/best-shaded-seats-mlb',
   'guide/how-to-find-shaded-seats',
   'guide/avoid-sun-baseball-games',
-  'seats-shade-finder'
+  'seats-shade-finder',
+  'worldcup2026',
+  'worldcup2026/schedule'
 ];
 
 // League pages

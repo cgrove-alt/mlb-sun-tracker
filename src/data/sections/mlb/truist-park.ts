@@ -198,6 +198,24 @@ export const truistParkSections: DetailedSection[] = [
     height: 0,
     rake: 20
   },
+  {
+    id: '16',
+    name: 'Field Level 16',
+    level: 'field',
+    baseAngle: 69,
+    angleSpan: 8,
+    rows: generateRows('A', 'Z', 22, 0, 20, false),
+    vertices3D: [
+      { x: 18, y: 62, z: 0 },
+      { x: 26, y: 64, z: 0 },
+      { x: 28, y: 94, z: 13 },
+      { x: 20, y: 92, z: 13 }
+    ] as Vector3D[],
+    covered: false,
+    distance: 69,
+    height: 0,
+    rake: 20
+  },
   // Field Level - First Base Side
   {
     id: '101',
@@ -308,6 +326,78 @@ export const truistParkSections: DetailedSection[] = [
     height: 0,
     rake: 21
   },
+  {
+    id: '9',
+    name: 'Field Level 9',
+    level: 'field',
+    baseAngle: 354,
+    angleSpan: 9,
+    rows: generateRows('A', 'AA', 24, 0, 21, false),
+    vertices3D: [
+      { x: -45, y: 80, z: 0 },
+      { x: -54, y: 90, z: 0 },
+      { x: -60, y: 121, z: 14 },
+      { x: -50, y: 111, z: 14 }
+    ] as Vector3D[],
+    covered: false,
+    distance: 88,
+    height: 0,
+    rake: 21
+  },
+  {
+    id: '8',
+    name: 'Field Level 8',
+    level: 'field',
+    baseAngle: 345,
+    angleSpan: 9,
+    rows: generateRows('A', 'Z', 22, 0, 20, false),
+    vertices3D: [
+      { x: -54, y: 90, z: 0 },
+      { x: -62, y: 102, z: 0 },
+      { x: -68, y: 132, z: 13 },
+      { x: -60, y: 121, z: 13 }
+    ] as Vector3D[],
+    covered: false,
+    distance: 96,
+    height: 0,
+    rake: 20
+  },
+  {
+    id: '7',
+    name: 'Field Level 7',
+    level: 'field',
+    baseAngle: 336,
+    angleSpan: 9,
+    rows: generateRows('A', 'Z', 22, 0, 20, false),
+    vertices3D: [
+      { x: -62, y: 102, z: 0 },
+      { x: -70, y: 115, z: 0 },
+      { x: -76, y: 145, z: 13 },
+      { x: -68, y: 132, z: 13 }
+    ] as Vector3D[],
+    covered: false,
+    distance: 105,
+    height: 0,
+    rake: 20
+  },
+  {
+    id: '6',
+    name: 'Field Level 6',
+    level: 'field',
+    baseAngle: 327,
+    angleSpan: 9,
+    rows: generateRows('A', 'T', 20, 0, 20, false),
+    vertices3D: [
+      { x: -70, y: 115, z: 0 },
+      { x: -77, y: 129, z: 0 },
+      { x: -83, y: 158, z: 11 },
+      { x: -76, y: 145, z: 11 }
+    ] as Vector3D[],
+    covered: false,
+    distance: 118,
+    height: 0,
+    rake: 20
+  },
   // ========== TERRACE LEVEL ==========
   {
     id: '210',
@@ -346,6 +436,78 @@ export const truistParkSections: DetailedSection[] = [
     rake: 24
   },
   {
+    id: '212',
+    name: 'Terrace Level 212',
+    level: 'lower',
+    baseAngle: 57,
+    angleSpan: 10,
+    rows: generateRows(1, 32, 24, 17, 24, false),
+    vertices3D: [
+      { x: 8, y: 90, z: 17 },
+      { x: 18, y: 92, z: 17 },
+      { x: 20, y: 130, z: 40 },
+      { x: 8, y: 128, z: 40 }
+    ] as Vector3D[],
+    covered: false,
+    distance: 97,
+    height: 17,
+    rake: 24
+  },
+  {
+    id: '213',
+    name: 'Terrace Level 213',
+    level: 'lower',
+    baseAngle: 67,
+    angleSpan: 10,
+    rows: generateRows(1, 32, 24, 17, 24, false),
+    vertices3D: [
+      { x: 18, y: 92, z: 17 },
+      { x: 28, y: 98, z: 17 },
+      { x: 32, y: 136, z: 40 },
+      { x: 20, y: 130, z: 40 }
+    ] as Vector3D[],
+    covered: false,
+    distance: 100,
+    height: 17,
+    rake: 24
+  },
+  {
+    id: '214',
+    name: 'Terrace Level 214',
+    level: 'lower',
+    baseAngle: 77,
+    angleSpan: 10,
+    rows: generateRows(1, 32, 24, 17, 24, false),
+    vertices3D: [
+      { x: 28, y: 98, z: 17 },
+      { x: 38, y: 105, z: 17 },
+      { x: 43, y: 143, z: 40 },
+      { x: 32, y: 136, z: 40 }
+    ] as Vector3D[],
+    covered: false,
+    distance: 104,
+    height: 17,
+    rake: 24
+  },
+  {
+    id: '215',
+    name: 'Terrace Level 215',
+    level: 'lower',
+    baseAngle: 87,
+    angleSpan: 10,
+    rows: generateRows(1, 32, 24, 17, 24, false),
+    vertices3D: [
+      { x: 38, y: 105, z: 17 },
+      { x: 48, y: 113, z: 17 },
+      { x: 54, y: 151, z: 40 },
+      { x: 43, y: 143, z: 40 }
+    ] as Vector3D[],
+    covered: false,
+    distance: 109,
+    height: 17,
+    rake: 24
+  },
+  {
     id: '227',
     name: 'Terrace Level 227',
     level: 'lower',
@@ -378,6 +540,78 @@ export const truistParkSections: DetailedSection[] = [
     ] as Vector3D[],
     covered: false,
     distance: 108,
+    height: 17,
+    rake: 24
+  },
+  {
+    id: '236',
+    name: 'Terrace Level 236',
+    level: 'lower',
+    baseAngle: 350,
+    angleSpan: 10,
+    rows: generateRows(1, 32, 24, 17, 24, false),
+    vertices3D: [
+      { x: -48, y: 105, z: 17 },
+      { x: -58, y: 115, z: 17 },
+      { x: -65, y: 155, z: 40 },
+      { x: -54, y: 145, z: 40 }
+    ] as Vector3D[],
+    covered: false,
+    distance: 110,
+    height: 17,
+    rake: 24
+  },
+  {
+    id: '237',
+    name: 'Terrace Level 237',
+    level: 'lower',
+    baseAngle: 340,
+    angleSpan: 10,
+    rows: generateRows(1, 32, 24, 17, 24, false),
+    vertices3D: [
+      { x: -58, y: 115, z: 17 },
+      { x: -67, y: 127, z: 17 },
+      { x: -75, y: 167, z: 40 },
+      { x: -65, y: 155, z: 40 }
+    ] as Vector3D[],
+    covered: false,
+    distance: 120,
+    height: 17,
+    rake: 24
+  },
+  {
+    id: '238',
+    name: 'Terrace Level 238',
+    level: 'lower',
+    baseAngle: 330,
+    angleSpan: 10,
+    rows: generateRows(1, 32, 24, 17, 24, false),
+    vertices3D: [
+      { x: -67, y: 127, z: 17 },
+      { x: -75, y: 140, z: 17 },
+      { x: -84, y: 180, z: 40 },
+      { x: -75, y: 167, z: 40 }
+    ] as Vector3D[],
+    covered: false,
+    distance: 130,
+    height: 17,
+    rake: 24
+  },
+  {
+    id: '239',
+    name: 'Terrace Level 239',
+    level: 'lower',
+    baseAngle: 320,
+    angleSpan: 10,
+    rows: generateRows(1, 32, 24, 17, 24, false),
+    vertices3D: [
+      { x: -75, y: 140, z: 17 },
+      { x: -83, y: 154, z: 17 },
+      { x: -92, y: 194, z: 40 },
+      { x: -84, y: 180, z: 40 }
+    ] as Vector3D[],
+    covered: false,
+    distance: 142,
     height: 17,
     rake: 24
   },
@@ -436,6 +670,96 @@ export const truistParkSections: DetailedSection[] = [
     height: 32,
     rake: 26
   },
+  {
+    id: 'DC-304',
+    name: 'Delta Club 304',
+    level: 'club',
+    baseAngle: 65,
+    angleSpan: 10,
+    rows: generateRows(1, 15, 20, 32, 26, true),
+    vertices3D: [
+      { x: 15, y: 115, z: 32 },
+      { x: 25, y: 118, z: 32 },
+      { x: 27, y: 148, z: 48 },
+      { x: 15, y: 145, z: 48 }
+    ] as Vector3D[],
+    covered: true,
+    distance: 127,
+    height: 32,
+    rake: 26
+  },
+  {
+    id: 'DC-305',
+    name: 'Delta Club 305',
+    level: 'club',
+    baseAngle: 75,
+    angleSpan: 10,
+    rows: generateRows(1, 15, 20, 32, 26, true),
+    vertices3D: [
+      { x: 25, y: 118, z: 32 },
+      { x: 35, y: 122, z: 32 },
+      { x: 38, y: 152, z: 48 },
+      { x: 27, y: 148, z: 48 }
+    ] as Vector3D[],
+    covered: true,
+    distance: 130,
+    height: 32,
+    rake: 26
+  },
+  {
+    id: 'DC-325',
+    name: 'Delta Club 325',
+    level: 'club',
+    baseAngle: 25,
+    angleSpan: 10,
+    rows: generateRows(1, 15, 20, 32, 26, true),
+    vertices3D: [
+      { x: -15, y: 115, z: 32 },
+      { x: -25, y: 118, z: 32 },
+      { x: -27, y: 148, z: 48 },
+      { x: -15, y: 145, z: 48 }
+    ] as Vector3D[],
+    covered: true,
+    distance: 127,
+    height: 32,
+    rake: 26
+  },
+  {
+    id: 'DC-326',
+    name: 'Delta Club 326',
+    level: 'club',
+    baseAngle: 15,
+    angleSpan: 10,
+    rows: generateRows(1, 15, 20, 32, 26, true),
+    vertices3D: [
+      { x: -25, y: 118, z: 32 },
+      { x: -35, y: 122, z: 32 },
+      { x: -38, y: 152, z: 48 },
+      { x: -27, y: 148, z: 48 }
+    ] as Vector3D[],
+    covered: true,
+    distance: 130,
+    height: 32,
+    rake: 26
+  },
+  {
+    id: 'DC-327',
+    name: 'Delta Club 327',
+    level: 'club',
+    baseAngle: 5,
+    angleSpan: 10,
+    rows: generateRows(1, 15, 20, 32, 26, true),
+    vertices3D: [
+      { x: -35, y: 122, z: 32 },
+      { x: -45, y: 128, z: 32 },
+      { x: -49, y: 158, z: 48 },
+      { x: -38, y: 152, z: 48 }
+    ] as Vector3D[],
+    covered: true,
+    distance: 133,
+    height: 32,
+    rake: 26
+  },
   // ========== PAVILION LEVEL ==========
   {
     id: '401',
@@ -488,6 +812,114 @@ export const truistParkSections: DetailedSection[] = [
     ] as Vector3D[],
     covered: true,
     distance: 158,
+    height: 40,
+    rake: 28
+  },
+  {
+    id: '404',
+    name: 'Pavilion Level 404',
+    level: 'upper',
+    baseAngle: 63,
+    angleSpan: 11,
+    rows: generateRows(1, 28, 26, 40, 28, true),
+    vertices3D: [
+      { x: 13, y: 130, z: 40 },
+      { x: 24, y: 132, z: 40 },
+      { x: 27, y: 187, z: 78 },
+      { x: 15, y: 185, z: 78 }
+    ] as Vector3D[],
+    covered: true,
+    distance: 160,
+    height: 40,
+    rake: 28
+  },
+  {
+    id: '405',
+    name: 'Pavilion Level 405',
+    level: 'upper',
+    baseAngle: 74,
+    angleSpan: 11,
+    rows: generateRows(1, 28, 26, 40, 28, true),
+    vertices3D: [
+      { x: 24, y: 132, z: 40 },
+      { x: 35, y: 136, z: 40 },
+      { x: 39, y: 191, z: 78 },
+      { x: 27, y: 187, z: 78 }
+    ] as Vector3D[],
+    covered: true,
+    distance: 164,
+    height: 40,
+    rake: 28
+  },
+  {
+    id: '406',
+    name: 'Pavilion Level 406',
+    level: 'upper',
+    baseAngle: 85,
+    angleSpan: 11,
+    rows: generateRows(1, 28, 26, 40, 28, true),
+    vertices3D: [
+      { x: 35, y: 136, z: 40 },
+      { x: 46, y: 142, z: 40 },
+      { x: 51, y: 197, z: 78 },
+      { x: 39, y: 191, z: 78 }
+    ] as Vector3D[],
+    covered: true,
+    distance: 168,
+    height: 40,
+    rake: 28
+  },
+  {
+    id: '433',
+    name: 'Pavilion Level 433',
+    level: 'upper',
+    baseAngle: 347,
+    angleSpan: 11,
+    rows: generateRows(1, 28, 26, 40, 28, true),
+    vertices3D: [
+      { x: -46, y: 142, z: 40 },
+      { x: -57, y: 150, z: 40 },
+      { x: -63, y: 207, z: 78 },
+      { x: -51, y: 197, z: 78 }
+    ] as Vector3D[],
+    covered: true,
+    distance: 172,
+    height: 40,
+    rake: 28
+  },
+  {
+    id: '434',
+    name: 'Pavilion Level 434',
+    level: 'upper',
+    baseAngle: 336,
+    angleSpan: 11,
+    rows: generateRows(1, 28, 26, 40, 28, true),
+    vertices3D: [
+      { x: -57, y: 150, z: 40 },
+      { x: -67, y: 160, z: 40 },
+      { x: -74, y: 217, z: 78 },
+      { x: -63, y: 207, z: 78 }
+    ] as Vector3D[],
+    covered: true,
+    distance: 178,
+    height: 40,
+    rake: 28
+  },
+  {
+    id: '435',
+    name: 'Pavilion Level 435',
+    level: 'upper',
+    baseAngle: 325,
+    angleSpan: 11,
+    rows: generateRows(1, 28, 26, 40, 28, true),
+    vertices3D: [
+      { x: -67, y: 160, z: 40 },
+      { x: -76, y: 172, z: 40 },
+      { x: -84, y: 229, z: 78 },
+      { x: -74, y: 217, z: 78 }
+    ] as Vector3D[],
+    covered: true,
+    distance: 185,
     height: 40,
     rake: 28
   },
