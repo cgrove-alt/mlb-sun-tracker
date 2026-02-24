@@ -7,6 +7,9 @@ const nextConfig = {
   // Enable React strict mode for better debugging
   reactStrictMode: true,
 
+  // Allow dev origins for preview tools
+  allowedDevOrigins: ['http://127.0.0.1:3000'],
+
   // Enable compression
   compress: true,
 

@@ -65,9 +65,9 @@ export const GameSelector: React.FC<GameSelectorProps> = ({
       gamesLoading.setLoading(true);
       
       const today = new Date();
-      // Load games through end of October to ensure we get all remaining regular season games
+      // Load games through end of October next year to include 2026 schedule
       const currentYear = today.getFullYear();
-      const endDate = new Date(currentYear, 9, 31); // October 31st (month is 0-indexed)
+      const endDate = new Date(currentYear + 1, 9, 31); // October 31st next year
       
       const allGames = await mlbApi.getSchedule(
         today.toISOString().split('T')[0],

@@ -137,7 +137,7 @@ export default function VenueSelector({ venues }: VenueSelectorProps) {
 
         .venue-location {
           font-size: 0.875rem;
-          color: #94a3b8;
+          color: #64748b;
           margin-bottom: 1rem;
         }
 
