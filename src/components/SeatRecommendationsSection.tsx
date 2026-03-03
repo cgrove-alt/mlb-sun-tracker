@@ -197,6 +197,17 @@ export const SeatRecommendationsSection: React.FC<SeatRecommendationsSectionProp
 
   return (
     <div className="seat-recommendations-section">
+      {/* Screen reader shade summary */}
+      <div aria-live="polite" className="sr-only">
+        {sections.length > 0 && (
+          <p>
+            Shade analysis complete. {sections.filter(s => s.sunExposure < 30).length} sections are mostly shaded,
+            {sections.filter(s => s.sunExposure >= 70).length} sections are mostly sunny,
+            out of {sections.length} total sections.
+          </p>
+        )}
+      </div>
+
       <div className="recommendations-header">
         <div className="flex items-center justify-between mb-6">
           <div>

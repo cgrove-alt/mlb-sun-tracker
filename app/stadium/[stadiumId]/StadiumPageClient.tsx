@@ -12,6 +12,9 @@ import { getStadiumCompleteData } from '../../../src/data/stadium-data-aggregato
 import { DataFreshness } from '../../../src/components/DataFreshness';
 import { getStadiumLastUpdated } from '../../../src/data/stadium-data-freshness';
 import { ReportInaccuracyButton } from '../../../src/components/ReportInaccuracy/ReportInaccuracyButton';
+import { TimeSlider } from '../../../src/components/TimeSlider/TimeSlider';
+import { FindMyShadeWizard } from '../../../src/components/FindMyShade/FindMyShadeWizard';
+import { SectionDetailSheet } from '../../../src/components/SectionDetailSheet';
 
 const ComprehensiveStadiumGuide = dynamic(
   () => import('../../../src/components/ComprehensiveStadiumGuide'),
@@ -47,6 +50,8 @@ export default function StadiumPageClient({
   const [refreshKey, setRefreshKey] = useState(0);
   const [selectedSectionId, setSelectedSectionId] = useState<string | undefined>(undefined);
   const [showReportModal, setShowReportModal] = useState(false);
+  const [gameHour, setGameHour] = useState(13);
+  const [mobileSheetSection, setMobileSheetSection] = useState<string | null>(null);
   const sectionListRef = useRef<HTMLDivElement>(null);
 
   // Debug: Log what's being rendered
@@ -56,10 +61,12 @@ export default function StadiumPageClient({
     hasGuide: !!guide
   });
 
-  // Calculate sun position once
+  // Calculate sun position based on selected game hour
   const sunPosition = useMemo(() => {
     const gameDateTime = new Date();
-    gameDateTime.setHours(13, 0, 0, 0); // 1:00 PM game time
+    const hours = Math.floor(gameHour);
+    const minutes = Math.round((gameHour - hours) * 60);
+    gameDateTime.setHours(hours, minutes, 0, 0);
 
     return getSunPosition(
       gameDateTime,
@@ -67,7 +74,7 @@ export default function StadiumPageClient({
       stadium.longitude || -74.0060,
       stadium.timezone || 'America/New_York'
     );
-  }, [stadium.id, refreshKey]); // Add refreshKey to recalculate on refresh
+  }, [stadium.id, refreshKey, gameHour]);
 
   // Use Web Worker for sun calculations with row-level data
   const {
@@ -134,12 +141,17 @@ export default function StadiumPageClient({
   const handleDiagramSectionSelect = useCallback((sectionId: string) => {
     setSelectedSectionId(sectionId);
 
-    // Scroll to the section card in the list
+    // On mobile, show bottom sheet instead of scrolling
+    if (typeof window !== 'undefined' && window.innerWidth < 768) {
+      setMobileSheetSection(sectionId);
+      return;
+    }
+
+    // On desktop, scroll to the section card in the list
     if (sectionListRef.current) {
       const sectionCard = sectionListRef.current.querySelector(`[data-section-id="${sectionId}"]`);
       if (sectionCard) {
         sectionCard.scrollIntoView({ behavior: 'smooth', block: 'center' });
-        // Flash the card to draw attention
         sectionCard.classList.add('highlight-flash');
         setTimeout(() => {
           sectionCard.classList.remove('highlight-flash');
@@ -197,8 +209,36 @@ export default function StadiumPageClient({
         </div>
       </div>
 
+      {/* Find My Shade Wizard */}
+      <div className="container mx-auto px-4 mt-6 max-w-5xl">
+        <FindMyShadeWizard
+          stadiumId={stadium.id}
+          onViewOnMap={(sectionId) => {
+            setSelectedSectionId(sectionId);
+            const diagramEl = document.querySelector('.stadium-diagram-wrapper');
+            if (diagramEl) diagramEl.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          }}
+        />
+      </div>
+
+      {/* Stadium Diagram - Skeleton while loading */}
+      {(!stadiumCompleteData || stadiumCompleteData.sections.length === 0) && (
+        <div className="stadium-diagram-wrapper mt-8 mb-8">
+          <div style={{
+            height: '300px', background: '#f1f5f9', borderRadius: '0.5rem',
+            display: 'flex', alignItems: 'center', justifyContent: 'center',
+          }}>
+            <div style={{
+              width: '200px', height: '140px', borderRadius: '50%',
+              background: 'linear-gradient(135deg, #e2e8f0, #f1f5f9)',
+              animation: 'pulse 1.5s ease-in-out infinite',
+            }} />
+          </div>
+        </div>
+      )}
+
       {/* Stadium Diagram - Interactive shade visualization */}
-      {stadiumCompleteData && stadiumCompleteData.sections.length > 0 && !isCalculating && (
+      {stadiumCompleteData && stadiumCompleteData.sections.length > 0 && (
         <div className="stadium-diagram-wrapper mt-8 mb-8">
           <div className="diagram-header mb-4">
             <h2 className="text-2xl font-bold text-gray-900">Interactive Stadium Map</h2>
@@ -206,13 +246,32 @@ export default function StadiumPageClient({
               Click any section to see detailed shade information and scroll to its details below
             </p>
           </div>
-          <StadiumDiagram
-            sections={stadiumCompleteData.sections}
-            shadeData={shadeData}
-            selectedSectionId={selectedSectionId}
-            onSectionSelect={handleDiagramSectionSelect}
-            className="max-w-5xl mx-auto"
+          <TimeSlider
+            value={gameHour}
+            onChange={setGameHour}
+            stadiumTimezone={stadium.timezone}
+            disabled={isCalculating}
           />
+          <div style={{ position: 'relative', marginTop: '1rem' }}>
+            <StadiumDiagram
+              sections={stadiumCompleteData.sections}
+              shadeData={shadeData}
+              selectedSectionId={selectedSectionId}
+              onSectionSelect={handleDiagramSectionSelect}
+              sunAzimuthDegrees={sunPosition.azimuthDegrees}
+              className="max-w-5xl mx-auto"
+            />
+            {isCalculating && (
+              <div style={{
+                position: 'absolute', inset: 0,
+                display: 'flex', alignItems: 'center', justifyContent: 'center',
+                background: 'rgba(255,255,255,0.7)', borderRadius: '0.5rem',
+                zIndex: 10
+              }}>
+                <span style={{ fontSize: '0.875rem', color: '#6b7280', fontWeight: 500 }}>Updating shade...</span>
+              </div>
+            )}
+          </div>
         </div>
       )}
 
@@ -226,7 +285,7 @@ export default function StadiumPageClient({
           <SeatRecommendationsSection
             sections={sectionsWithSunData}
             stadiumId={stadium.id}
-            gameTime="13:00"
+            gameTime={`${Math.floor(gameHour)}:${Math.round((gameHour - Math.floor(gameHour)) * 60).toString().padStart(2, '0')}`}
             gameDate={new Date()}
             rowData={rowData}
             selectedSectionId={selectedSectionId}
@@ -250,6 +309,29 @@ export default function StadiumPageClient({
           </div>
         )}
       </div>
+
+      {/* Mobile Section Detail Bottom Sheet */}
+      {mobileSheetSection && (() => {
+        const shadeEntry = shadeData.find(d => d.sectionId === mobileSheetSection);
+        const sectionInfo = stadiumCompleteData?.sections.find(s => s.id === mobileSheetSection);
+        const sectionRowData = rowData?.find(r => r.sectionId === mobileSheetSection) || null;
+        return (
+          <SectionDetailSheet
+            isOpen={!!mobileSheetSection}
+            onClose={() => setMobileSheetSection(null)}
+            sectionName={sectionInfo?.name || mobileSheetSection}
+            shadePercentage={shadeEntry?.shadePercentage ?? 50}
+            rowData={sectionRowData}
+            onSeeDetails={() => {
+              setMobileSheetSection(null);
+              if (sectionListRef.current) {
+                const card = sectionListRef.current.querySelector(`[data-section-id="${mobileSheetSection}"]`);
+                if (card) card.scrollIntoView({ behavior: 'smooth', block: 'center' });
+              }
+            }}
+          />
+        );
+      })()}
     </>
   );
 }

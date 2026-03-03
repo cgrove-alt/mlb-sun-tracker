@@ -9,6 +9,16 @@ import { HeroSection } from '../src/components/HeroSection/HeroSection';
 import { HowItWorks } from '../src/components/HowItWorks/HowItWorks';
 import { WorldCupShowcase } from '../src/components/WorldCupShowcase/WorldCupShowcase';
 import VenueDataProvider from '../components/VenueDataProvider';
+import { TodaysGames } from '../src/components/TodaysGames/TodaysGames';
+
+const POPULAR_STADIUMS = [
+  { id: 'yankees', name: 'Yankee Stadium', team: 'NY Yankees' },
+  { id: 'dodgers', name: 'Dodger Stadium', team: 'LA Dodgers' },
+  { id: 'cubs', name: 'Wrigley Field', team: 'Chicago Cubs' },
+  { id: 'redsox', name: 'Fenway Park', team: 'Boston Red Sox' },
+  { id: 'giants', name: 'Oracle Park', team: 'SF Giants' },
+  { id: 'braves', name: 'Truist Park', team: 'Atlanta Braves' },
+];
 
 export default function HomePage() {
   return (
@@ -20,6 +30,36 @@ export default function HomePage() {
 
         {/* How It Works - Can be Server Component */}
         <HowItWorks />
+
+        {/* Today's Games */}
+        <ErrorBoundary level="section">
+          <TodaysGames />
+        </ErrorBoundary>
+
+        {/* Popular Stadiums */}
+        <section style={{ padding: '2rem 1rem', background: '#f8fafc' }}>
+          <div style={{ maxWidth: '1200px', margin: '0 auto' }}>
+            <h2 style={{ fontSize: '1.75rem', fontWeight: 700, color: '#1f2937', marginBottom: '1.5rem', textAlign: 'center' }}>
+              Popular Stadiums
+            </h2>
+            <div style={{
+              display: 'grid',
+              gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))',
+              gap: '1rem',
+            }}>
+              {POPULAR_STADIUMS.map(s => (
+                <Link key={s.id} href={`/stadium/${s.id}`} style={{
+                  display: 'block', background: 'white', border: '1px solid #e2e8f0',
+                  borderRadius: '0.75rem', padding: '1.25rem', textDecoration: 'none',
+                  color: 'inherit', transition: 'box-shadow 0.2s',
+                }}>
+                  <div style={{ fontWeight: 600, fontSize: '1.0625rem', color: '#1f2937' }}>{s.name}</div>
+                  <div style={{ fontSize: '0.8125rem', color: '#6b7280', marginTop: '0.25rem' }}>{s.team}</div>
+                </Link>
+              ))}
+            </div>
+          </div>
+        </section>
 
         {/* World Cup Showcase - Can be Server Component */}
         <WorldCupShowcase openingMatchDate={new Date('2026-06-11T12:00:00-07:00')} />
