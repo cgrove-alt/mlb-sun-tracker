@@ -1,74 +1,64 @@
-# World Cup 2026 — Complete Venue Data & Feature Sprint
+# SEO & AEO Sprint - Implementation Plan
 
-## Task 1: Verify & Fix World Cup Venue Data
-- [x] Check field orientations for Estadio Azteca, Estadio Akron, Estadio BBVA against reference values (~350°, ~15°, ~350°)
-- [x] Fix any orientation discrepancies (Azteca 0→350°, Akron 0→15°, BBVA 0→350°)
+## Task 1: Fix Schema.org Structured Data on Venue Pages
+- [x] Remove `verification.other` block (lines 124-159) from `generateMetadata()` in `app/venue/[venueId]/page.tsx`
+- [x] Add `generateStadiumOrArenaSchema()` to `src/utils/seoSchema.ts`
+- [x] Add `generateVenueFAQSchema()` to `src/utils/seoSchema.ts`
+- [x] Render `<SafeSchema>` in venue page body for Article, StadiumOrArena, FAQPage, and BreadcrumbList schemas
 
-## Task 2: Pre-compute Shade Guides
-- [x] Create `src/data/worldcup2026/shadeGuides.ts` with VenueShadeGuide and KickoffShadeAnalysis interfaces
-- [x] Write computation logic using getSunPosition + calculateRowShadows for 11 open-air venues at 4 kickoff times
-- [x] Store pre-computed results as static data (roofed venues get shadeScore=10)
+## Task 2: Dynamic Sitemap via Next.js App Router
+- [x] Create `app/sitemap.ts` with `MetadataRoute.Sitemap` export
+- [x] Include static pages, league pages, all venue pages, stadium pages, WC venue pages, guide pages
 
-## Task 3: Fix Match Schedule (Critical Bug)
-- [x] Fix R32 dates: July 4-11 → June 28-July 3
-- [x] Fix R16 dates: July 13-16 → July 4-7 (with correct venue assignments per FIFA)
-- [x] Fix QF dates: July 17-18 → July 9-11 (Foxborough, LA, KC, Miami)
-- [x] Fix SF dates: July 21-22 → July 14-15
-- [x] Fix 3rd Place date: July 26 → July 18
-- [x] Update `types.ts`: thirdPlaceMatch.date → '2026-07-18', endDate → '2026-07-19'
-- [x] Fix schedule page max date filter from 07-26 to 07-19
+## Task 3: Dynamic robots.txt with AI Bot Access
+- [x] Create `app/robots.ts` with `MetadataRoute.Robots` export
+- [x] Allow AI bots (GPTBot, ChatGPT-User, PerplexityBot, ClaudeBot, etc.)
+- [x] Keep blocking bad bots (AhrefsBot, SemrushBot, etc.)
+- [x] Rename `public/robots.txt` to `public/robots.txt.bak`
 
-## Task 4: Improve World Cup Venue Detail Pages
-- [x] Create `src/components/worldcup/ShadeAnalysisSection.tsx` — 4 kickoff time cards
-- [x] Create `src/data/worldcup2026/weatherAverages.ts` — static weather data per venue city
-- [x] Create `src/components/worldcup/ShadeTipCards.tsx` — contextual shade tips
-- [x] Add shade analysis, weather, and tips sections to VenuePageClient.tsx
-- [x] Fix schema rendering in venue page.tsx (moved to `<script type="application/ld+json">`)
+## Task 4: AEO "Quick Facts" Section on Venue Pages
+- [x] Create `src/components/VenueQuickFacts.tsx` with semantic `<dl>` layout
+- [x] Render `<VenueQuickFacts>` in venue page body
 
-## Task 5: World Cup Landing Page Upgrade
-- [x] Create `src/components/worldcup/MatchShadeFinder.tsx` — match shade lookup tool
-- [x] Create `src/components/worldcup/WorldCupFAQ.tsx` — FAQ section with 8 Q&As
-- [x] Add shadeScore prop to VenueCard.tsx and display badge
-- [x] Replace hardcoded shade scores in VenueComparisonCard.tsx with real data from shadeGuides
-- [x] Add shade indicators to WorldCupScheduleClient.tsx for daytime matches at open-air venues
-- [x] Integrate MatchShadeFinder and FAQ into WorldCupLandingClient.tsx
-- [x] Add shade score badges to landing page venue grid
+## Task 5: Meta Tags Audit
+- [x] Add `og:image` to World Cup venue metadata (was missing from /venue/[venueId] WC branch)
+- [x] Verify homepage/layout OG tags are consistent (already good — title, description, og:image, twitter:card all present)
 
-## Task 6: World Cup SEO
-- [x] Add FAQPage JSON-LD schema to landing page (app/worldcup2026/page.tsx)
-- [x] Add SportsEvent schema for key matches on schedule page (opening, semifinals, 3rd place, final)
-- [x] Update sitemap generator to include all WC URLs (16 venue pages + compare + venues listing)
+## Task 6: Internal Linking (Nearby Venues)
+- [x] Create `src/utils/getNearbyVenues.ts`
+- [x] Create `src/components/NearbyVenues.tsx`
+- [x] Render `<NearbyVenues>` at bottom of venue page
+
+## Task 7: Long-Tail Sub-Pages
+- [x] Create `app/venue/[venueId]/shade-guide/page.tsx`
+- [x] Create `app/venue/[venueId]/best-seats/page.tsx`
+- [x] Create `app/venue/[venueId]/weather/page.tsx`
+- [x] Add sub-pages to sitemap in `app/sitemap.ts`
+
+---
 
 ## Review
 
 ### Changes Summary
 
 **New files (8):**
-1. `src/data/worldcup2026/shadeGuides.ts` — Pre-computed shade data for all 16 venues (1164 lines, generated from real NREL sun calculations)
-2. `src/data/worldcup2026/weatherAverages.ts` — Static June/July weather averages for 16 venue cities
-3. `src/data/worldcup2026/faqData.ts` — FAQ Q&A data (shared between server and client components)
-4. `src/components/worldcup/ShadeAnalysisSection.tsx` — Shade analysis with 4 kickoff time cards, weather context
-5. `src/components/worldcup/ShadeTipCards.tsx` — 2-3 contextual shade tips per venue
-6. `src/components/worldcup/MatchShadeFinder.tsx` — "Find Shade at Your Match" tool with match dropdown
-7. `src/components/worldcup/WorldCupFAQ.tsx` — Accordion FAQ component
-8. `scripts/generate-shade-guides.ts` — Build-time shade computation script
+1. `app/sitemap.ts` — Dynamic sitemap via Next.js MetadataRoute, auto-generates entries from ALL_UNIFIED_VENUES, ALL_WORLD_CUP_VENUES, and MLB_STADIUMS. Includes sub-pages.
+2. `app/robots.ts` — Dynamic robots.txt allowing AI bots (GPTBot, ChatGPT-User, PerplexityBot, ClaudeBot, Google-Extended, Applebot-Extended) while blocking bad bots.
+3. `src/components/VenueQuickFacts.tsx` — Server component with semantic `<dl>` showing Capacity, Roof Type, Field Orientation, Location, League, Home Team, Sport, Timezone.
+4. `src/utils/getNearbyVenues.ts` — Finds 5 closest venues using haversine distance from `venueDistance.ts`.
+5. `src/components/NearbyVenues.tsx` — Server component rendering linked list of nearby venues with league badges and distances.
+6. `app/venue/[venueId]/shade-guide/page.tsx` — Shade analysis at 1 PM, 4 PM, 7 PM using real `getSunPosition()` calculations. Shows shaded/sunny sides per game time.
+7. `app/venue/[venueId]/best-seats/page.tsx` — Ranked seating areas by shade coverage at 1 PM reference time.
+8. `app/venue/[venueId]/weather/page.tsx` — Weather averages (WC venues from weatherAverages.ts, others from latitude estimates), climate zone, game day tips.
 
-**Modified files (11):**
-1. `src/data/worldcup2026/venues.ts` — Fixed Mexican venue orientations (Azteca 350°, Akron 15°, BBVA 350°)
-2. `src/data/worldcup2026/matches.ts` — Fixed all knockout dates (R32, R16, QF, SF, 3rd Place)
-3. `src/data/worldcup2026/types.ts` — Fixed endDate and thirdPlaceMatch date
-4. `app/worldcup2026/venues/[venueId]/VenuePageClient.tsx` — Added shade analysis, weather, tips sections
-5. `app/worldcup2026/venues/[venueId]/page.tsx` — Fixed schema rendering (moved to proper `<script>` tags)
-6. `app/worldcup2026/WorldCupLandingClient.tsx` — Added MatchShadeFinder, FAQ, shade scores on venue cards
-7. `app/worldcup2026/page.tsx` — Added FAQPage JSON-LD schema
-8. `app/worldcup2026/schedule/page.tsx` — Added SportsEvent schema for key matches
-9. `app/worldcup2026/schedule/WorldCupScheduleClient.tsx` — Added shade indicators, fixed date filter max
-10. `src/components/worldcup/VenueCard.tsx` — Added shadeScore prop with badge display
-11. `src/components/worldcup/VenueComparisonCard.tsx` — Replaced hardcoded shade scores with real data
-12. `scripts/generate-sitemap.js` — Added 18 WC URLs (16 venues + compare + venues listing)
+**Modified files (3):**
+1. `app/venue/[venueId]/page.tsx` — Removed broken `verification.other` schema; added SafeSchema for Article, StadiumOrArena, FAQPage, BreadcrumbList; added VenueQuickFacts and NearbyVenues; added og:image + twitter to WC venue metadata.
+2. `src/utils/seoSchema.ts` — Added `generateStadiumOrArenaSchema()`, `generateVenueFAQSchema()`, `generateArticleSchema()`.
+3. `public/robots.txt` → renamed to `public/robots.txt.bak`.
 
 ### Verification
 - `npx tsc --noEmit` — zero TypeScript errors
-- `npm run build` — 287 static pages generated, all 16 WC venue pages present
-- Sitemap generator produces 253 total URLs including all WC pages
-- Shade scores verified: open venues 6-9/10, roofed venues 10/10, computed from real sun positions
+- `npm run build` — 883 static pages generated successfully
+- `/sitemap.xml` and `/robots.txt` routes present as dynamic (○ Static)
+- All 3 sub-page routes generating for all venues (shade-guide, best-seats, weather)
+- Schema data now in proper `<script type="application/ld+json">` tags via SafeSchema
