@@ -5,6 +5,12 @@ import { getVenueSections } from '../../../src/data/venueSections';
 import { generateBaseballSections } from '../../../src/utils/generateBaseballSections';
 import ComprehensiveStadiumGuide from '../../../src/components/ComprehensiveStadiumGuide';
 import { ALL_WORLD_CUP_VENUES, getWorldCupVenueById } from '../../../src/data/worldcup2026/venues';
+import { MLB_STADIUMS } from '../../../src/data/stadiums';
+import { getStadiumSectionsAsync } from '../../../src/data/getStadiumSections';
+import { getStadiumAmenities } from '../../../src/data/stadiumAmenities';
+import { getStadiumGuide } from '../../../src/data/guides';
+import { ErrorBoundary } from '../../../src/components/ErrorBoundary';
+import StadiumPageClient from '../../stadium/[stadiumId]/StadiumPageClient';
 
 interface VenuePageProps {
   params: Promise<{
@@ -171,6 +177,29 @@ export default async function VenuePage({ params }: VenuePageProps) {
     stadiumIdToUse = worldCupVenue.nflStadiumId;
   } else if (venue) {
     stadiumIdToUse = venue.id;
+  }
+
+  // Check if this is an MLB stadium — if so, render StadiumPageClient with sun calculations
+  const mlbStadium = MLB_STADIUMS.find(s => s.id === stadiumIdToUse);
+
+  if (mlbStadium) {
+    const sections = await getStadiumSectionsAsync(mlbStadium.id);
+    const amenities = getStadiumAmenities(mlbStadium.id);
+    const guide = getStadiumGuide(mlbStadium.id) || getStadiumGuide(venueId);
+
+    return (
+      <div>
+        <ErrorBoundary level="section" resetKeys={[venueId]}>
+          <StadiumPageClient
+            stadium={mlbStadium}
+            sections={sections}
+            amenities={amenities}
+            guide={guide}
+            useComprehensive={!!guide}
+          />
+        </ErrorBoundary>
+      </div>
+    );
   }
 
   return (

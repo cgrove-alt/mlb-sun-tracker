@@ -1,6 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { MLB_STADIUMS } from '../../../../../src/data/stadiums';
-import { getStadiumSections } from '../../../../../src/data/stadiumSections';
+import { getStadiumSectionsAsync } from '../../../../../src/data/getStadiumSections';
 import { calculateShadePercentage, generateShadeMatrix } from '../../../../../src/utils/stadiumDataServer';
 
 interface RouteParams {
@@ -28,7 +28,14 @@ export async function GET(request: NextRequest, { params }: RouteParams) {
     );
   }
   
-  const sections = getStadiumSections(stadium.id);
+  const sections = await getStadiumSectionsAsync(stadium.id);
+
+  if (!sections || sections.length === 0) {
+    return NextResponse.json(
+      { error: 'No section data available for this stadium' },
+      { status: 404 }
+    );
+  }
   
   // If specific section requested
   if (section) {

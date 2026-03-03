@@ -1107,3 +1107,44 @@ The site now presents as a **professional, trustworthy tool** rather than a hobb
 
 **The site is now production-ready with a premium, professional user experience.**
 
+---
+
+# Fix Broken Sun Exposure Calculations - COMPLETED
+
+## Tasks
+
+- [x] 1. Fix web worker — port real calculations, return correct `SeatingSectionSun[]` format
+- [x] 2. Fix `useSunCalculations` hook — handle combined worker result, fix main thread fallback
+- [x] 3. Fix shade API — use `getStadiumSectionsAsync` instead of sync stub
+- [x] 4. Fix venue page — render `StadiumPageClient` for MLB venues
+
+## Review
+
+### Changes Made
+
+**Fix 1: Web Worker** (`public/workers/sunCalculations.worker.js`)
+- Replaced fake `calculateSectionExposure()` heuristic with proper `isSectionInSun()` and `getSectionSunExposure()` ported from `sectionSunCalculations.ts`
+- `calculateDetailedSectionSunExposure()` now returns `{ section, inSun, sunExposure }` format (matching `SeatingSectionSun` interface)
+- `CALCULATE_ROW_SHADOWS` handler now returns combined `{ sections, rowShadows }` payload
+
+**Fix 2: useSunCalculations hook** (`src/hooks/useSunCalculations.ts`)
+- `ROW_SHADOWS_RESULT` handler splits combined payload into `setData(sections)` and `setRowData(rowShadows)`
+- Cache read handles both combined format and legacy array format
+- Main thread fallback calls real `calculateDetailedSectionSunExposure()` instead of `Math.random()`
+- Cache type changed from `Map<string, any[]>` to `Map<string, any>` to support combined format
+
+**Fix 3: Shade API** (`app/api/stadium/[stadiumId]/shade/route.ts`)
+- Changed import from `getStadiumSections` (sync stub returning `[]`) to `getStadiumSectionsAsync` (loads real data)
+- Added empty sections validation with descriptive 404 response
+
+**Fix 4: Venue Page** (`app/venue/[venueId]/page.tsx`)
+- Added imports for MLB_STADIUMS, getStadiumSectionsAsync, getStadiumAmenities, getStadiumGuide, ErrorBoundary, StadiumPageClient
+- MLB venues now load sections/amenities/guide and render StadiumPageClient (same as stadium page)
+- Non-MLB venues keep existing ComprehensiveStadiumGuide behavior
+
+**Bonus: Installed missing `lucide-react` dependency** (pre-existing build blocker)
+
+### Build Status
+- TypeScript: No new errors
+- Build: Successful (all static pages generated)
+

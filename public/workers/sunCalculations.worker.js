@@ -33,15 +33,18 @@ self.addEventListener('message', async (event) => {
       const sunAzimuth = sunPosition.azimuthDegrees || sunPosition.azimuth;
       const stadiumOrientation = stadium.orientation || 0;
 
+      // Calculate section-level sun exposure
+      const sectionResults = calculateDetailedSectionSunExposure(sections, sunPosition, stadium);
+
       // Perform row-level shadow calculations for all sections
-      const results = sections.map(section =>
+      const rowResults = sections.map(section =>
         calculateRowShadows(section, sunAltitude, sunAzimuth, stadiumOrientation)
       );
 
-      // Send results back to main thread
+      // Send combined results back to main thread
       self.postMessage({
         type: 'ROW_SHADOWS_RESULT',
-        payload: results,
+        payload: { sections: sectionResults, rowShadows: rowResults },
       });
     } catch (error) {
       self.postMessage({
@@ -53,42 +56,64 @@ self.addEventListener('message', async (event) => {
 });
 
 function calculateDetailedSectionSunExposure(sections, sunPosition, stadium) {
-  const results = [];
-  
-  for (const section of sections) {
-    // Simplified calculation for worker
-    const sunExposure = calculateSectionExposure(section, sunPosition, stadium);
-    results.push({
-      sectionId: section.id,
-      sunExposure,
-      shadePercentage: Math.max(0, 100 - sunExposure),
-    });
-  }
-  
-  return results;
+  const sunAzimuth = sunPosition.azimuthDegrees || sunPosition.azimuth;
+  const sunElevation = sunPosition.altitudeDegrees || sunPosition.altitude;
+
+  return sections.map(section => {
+    const inSun = isSectionInSun(section, sunAzimuth, sunElevation);
+    const sunExposure = getSectionSunExposure(section, sunElevation, sunAzimuth);
+    return { section, inSun: inSun && sunExposure > 10, sunExposure };
+  });
 }
 
-function calculateSectionExposure(section, sunPosition, stadium) {
-  // Basic sun exposure calculation
-  const { altitude, azimuth } = sunPosition;
-  
-  // Simple heuristic based on section location and sun position
-  let exposure = 50; // Base exposure
-  
-  // Adjust based on altitude (higher sun = more exposure)
-  exposure += (altitude / 90) * 30;
-  
-  // Adjust based on section position relative to sun
-  if (section.level === 'upper') {
-    exposure -= 20; // Upper deck has more roof coverage
-  }
-  
-  if (section.side === 'third-base' || section.side === 'left-field') {
-    exposure -= 15; // These sides get afternoon shade
-  }
-  
-  // Ensure within 0-100 range
-  return Math.max(0, Math.min(100, exposure));
+// Ported from src/utils/sectionSunCalculations.ts
+function isSectionInSun(section, sunAzimuth, sunElevation) {
+  if (sunElevation < 0) return false;
+  if (section.covered && sunElevation < 30) return false;
+
+  const normalizeAngle = (angle) => ((angle % 360) + 360) % 360;
+  const sunAngle = normalizeAngle(sunAzimuth);
+  const sectionLocation = normalizeAngle(section.baseAngle + section.angleSpan / 2);
+
+  let angleDiff = Math.abs(sunAngle - sectionLocation);
+  if (angleDiff > 180) angleDiff = 360 - angleDiff;
+
+  return angleDiff <= 90;
+}
+
+// Ported from src/utils/sectionSunCalculations.ts
+function getSectionSunExposure(section, sunElevation, sunAzimuth) {
+  if (sunElevation < 0) return 0;
+
+  const coverageReduction = section.covered ? 0.3 : 1.0;
+  if (section.covered && sunElevation < 30) return 0;
+  if (!isSectionInSun(section, sunAzimuth, sunElevation)) return 0;
+
+  const elevationFactor = Math.min(sunElevation / 90, 1);
+
+  const normalizeAngle = (angle) => ((angle % 360) + 360) % 360;
+  const sectionLocation = normalizeAngle(section.baseAngle + section.angleSpan / 2);
+  const sunAngle = normalizeAngle(sunAzimuth);
+
+  let angleDiff = Math.abs(sunAngle - sectionLocation);
+  if (angleDiff > 180) angleDiff = 360 - angleDiff;
+
+  const angleFactor = Math.max(0, (90 - angleDiff) / 90);
+
+  let levelMultiplier = 1.0;
+  if (section.level === 'field') levelMultiplier = 1.0;
+  else if (section.level === 'lower') levelMultiplier = 0.95;
+  else if (section.level === 'club') levelMultiplier = 0.85;
+  else if (section.level === 'upper') levelMultiplier = 1.0;
+  else if (section.level === 'suite') levelMultiplier = 0.75;
+
+  let middayBoost = 1.0;
+  if (sunElevation > 60) middayBoost = 1.4;
+  else if (sunElevation > 45) middayBoost = 1.25;
+  else if (sunElevation > 30) middayBoost = 1.1;
+
+  const exposure = elevationFactor * angleFactor * levelMultiplier * middayBoost * coverageReduction * 100;
+  return Math.round(Math.max(0, Math.min(100, exposure)));
 }
 
 // ============================================================================
