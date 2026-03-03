@@ -1109,6 +1109,35 @@ The site now presents as a **professional, trustworthy tool** rather than a hobb
 
 ---
 
+# Error Handling & Robustness for Sun Exposure Calculations - COMPLETED
+
+## Tasks
+- [x] Fix 1: Worker — add error logging in catch blocks
+- [x] Fix 2: Shade API — month bug (0-indexed → 1-indexed), try/catch, error logging
+- [x] Fix 3: useSunCalculations hook — fall back to main thread on worker error
+- [x] Fix 4: StadiumPageClient — use error state, retry button
+- [x] Fix 5: Update test mocks — add `error: null` to all mock return values
+
+## Review
+
+### Changes Made
+
+**Fix 1** (`public/workers/sunCalculations.worker.js`): Added `console.error` in both catch blocks so worker failures are visible in DevTools.
+
+**Fix 2** (`app/api/stadium/[stadiumId]/shade/route.ts`): Fixed month default from `getMonth()` (0-indexed) to `getMonth() + 1` (1-indexed). Wrapped entire handler in try/catch returning 500. Added `console.warn` before each 404 and `console.error` in catch.
+
+**Fix 3** (`src/hooks/useSunCalculations.ts`): Worker error/onerror handlers now log the error and call `performMainThreadCalculation()` instead of just setting error state. Moved `performMainThreadCalculation` above `calculate` so it can be in the dependency array.
+
+**Fix 4** (`app/stadium/[stadiumId]/StadiumPageClient.tsx`): Destructured `error: sunCalcError`. Added `useEffect` to log errors. Fallback block shows error message and "Retry Calculation" button.
+
+**Fix 5** (`app/stadium/[stadiumId]/__tests__/StadiumPageClient.integration.test.tsx`): Added `error: null` to all 4 mock return values.
+
+### Build Status
+- TypeScript: Clean (zero errors)
+- Test suite: Pre-existing environment issue (React DOM config), unrelated to changes
+
+---
+
 # Fix Broken Sun Exposure Calculations - COMPLETED
 
 ## Tasks

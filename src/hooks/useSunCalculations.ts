@@ -38,6 +38,20 @@ export function useSunCalculations({
   // Generate cache key
   const cacheKey = `${stadium.id}-${sunPosition.altitude}-${sunPosition.azimuth}-${includeRows ? 'rows' : 'sections'}`;
 
+  const performMainThreadCalculation = useCallback(() => {
+    setTimeout(() => {
+      try {
+        const results = calculateDetailedSectionSunExposure(stadium, sunPosition, undefined, sections);
+        calculationCache.set(cacheKey, results);
+        setData(results);
+      } catch (err) {
+        console.warn('[useSunCalculations] Main thread calculation failed:', err);
+        setError(new Error('Calculation failed'));
+      }
+      setIsLoading(false);
+    }, 0);
+  }, [stadium, sunPosition, sections, cacheKey]);
+
   const calculate = useCallback(() => {
     if (!enabled || !sections.length) {
       return;
@@ -102,14 +116,16 @@ export function useSunCalculations({
             }
             setIsLoading(false);
           } else if (type === 'SUN_EXPOSURE_ERROR' || type === 'ROW_SHADOWS_ERROR') {
-            setError(new Error(payload));
-            setIsLoading(false);
+            console.warn(`[useSunCalculations] Worker error (${type}):`, payload);
+            console.warn('[useSunCalculations] Falling back to main thread');
+            performMainThreadCalculation();
           }
         };
 
         workerRef.current.onerror = (err) => {
-          setError(new Error('Worker error: ' + err.message));
-          setIsLoading(false);
+          console.warn('[useSunCalculations] Worker onerror:', err.message);
+          console.warn('[useSunCalculations] Falling back to main thread');
+          performMainThreadCalculation();
         };
 
         // Send calculation request to worker
@@ -126,28 +142,14 @@ export function useSunCalculations({
         }
       } catch (err) {
         // Fallback to main thread if worker fails
-        console.warn('Worker not available, falling back to main thread');
+        console.warn('[useSunCalculations] Worker not available, falling back to main thread');
         performMainThreadCalculation();
       }
     } else {
       // No worker support, use main thread
       performMainThreadCalculation();
     }
-  }, [stadium, sunPosition, sections, enabled, includeRows, cacheKey]);
-  
-  const performMainThreadCalculation = useCallback(() => {
-    setTimeout(() => {
-      try {
-        const results = calculateDetailedSectionSunExposure(stadium, sunPosition, undefined, sections);
-        calculationCache.set(cacheKey, results);
-        setData(results);
-      } catch (err) {
-        console.warn('Main thread calculation failed:', err);
-        setError(new Error('Calculation failed'));
-      }
-      setIsLoading(false);
-    }, 0);
-  }, [stadium, sunPosition, sections, cacheKey]);
+  }, [stadium, sunPosition, sections, enabled, includeRows, cacheKey, performMainThreadCalculation]);
   
   useEffect(() => {
     calculate();

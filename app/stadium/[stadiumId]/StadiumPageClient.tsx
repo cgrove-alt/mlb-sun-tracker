@@ -1,7 +1,7 @@
 'use client';
 
 import dynamic from 'next/dynamic';
-import { Suspense, useMemo, useState, useCallback, useRef } from 'react';
+import { Suspense, useMemo, useState, useCallback, useRef, useEffect } from 'react';
 import { LoadingSpinner } from '../../../src/components/LoadingSpinner';
 import { getSunPosition } from '../../../src/utils/sunCalculations';
 import { useSunCalculations } from '../../../src/hooks/useSunCalculations';
@@ -74,6 +74,7 @@ export default function StadiumPageClient({
     data: sectionsWithSunData,
     rowData,
     isLoading: isCalculating,
+    error: sunCalcError,
     refetch: refetchSunData,
   } = useSunCalculations({
     stadium,
@@ -82,6 +83,13 @@ export default function StadiumPageClient({
     enabled: !!sections.length,
     includeRows: true, // Enable row-level calculations
   });
+
+  // Log sun calculation errors
+  useEffect(() => {
+    if (sunCalcError) {
+      console.error('[StadiumPageClient] Sun calculation error:', sunCalcError.message);
+    }
+  }, [sunCalcError]);
 
   // Pull-to-refresh handler
   const handleRefresh = useCallback(async () => {
@@ -225,12 +233,19 @@ export default function StadiumPageClient({
         ) : (
           <div className="text-center p-8 bg-gray-50 rounded-lg">
             <div className="text-gray-600 mb-2">
-              ⚠️ AI Recommendations Unavailable
+              AI Recommendations Unavailable
             </div>
-            <p className="text-sm text-gray-500">
-              Sun exposure data could not be calculated for this stadium.
-              Basic section information is still available above.
+            <p className="text-sm text-gray-500 mb-4">
+              {sunCalcError
+                ? `Calculation error: ${sunCalcError.message}`
+                : 'Sun exposure data could not be calculated for this stadium. Basic section information is still available above.'}
             </p>
+            <button
+              onClick={() => refetchSunData()}
+              className="px-4 py-2 bg-teal-600 text-white text-sm rounded-lg hover:bg-teal-700 transition-colors"
+            >
+              Retry Calculation
+            </button>
           </div>
         )}
       </div>

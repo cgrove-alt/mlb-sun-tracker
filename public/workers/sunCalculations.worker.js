@@ -17,6 +17,7 @@ self.addEventListener('message', async (event) => {
         payload: result,
       });
     } catch (error) {
+      console.error('[Worker] CALCULATE_SUN_EXPOSURE failed:', error);
       self.postMessage({
         type: 'SUN_EXPOSURE_ERROR',
         payload: error.message,
@@ -47,6 +48,7 @@ self.addEventListener('message', async (event) => {
         payload: { sections: sectionResults, rowShadows: rowResults },
       });
     } catch (error) {
+      console.error('[Worker] CALCULATE_ROW_SHADOWS failed:', error);
       self.postMessage({
         type: 'ROW_SHADOWS_ERROR',
         payload: error.message,
