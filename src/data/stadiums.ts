@@ -174,7 +174,7 @@ export const MLB_STADIUMS: Stadium[] = [
     orientation: 60,
     capacity: 34830,
     roof: 'open',
-    timezone: 'America/Chicago'
+    timezone: 'America/New_York'
   },
   {
     id: 'mariners',
@@ -291,7 +291,7 @@ export const MLB_STADIUMS: Stadium[] = [
     orientation: 46,
     capacity: 40300,
     roof: 'retractable',
-    timezone: 'America/Denver'
+    timezone: 'America/Chicago'
   },
   {
     id: 'rays',
@@ -330,7 +330,7 @@ export const MLB_STADIUMS: Stadium[] = [
     orientation: 105,
     capacity: 42319,
     roof: 'open',
-    timezone: 'America/Chicago'
+    timezone: 'America/New_York'
   },
   {
     id: 'rockies',
@@ -369,7 +369,7 @@ export const MLB_STADIUMS: Stadium[] = [
     orientation: 145,
     capacity: 41083,
     roof: 'open',
-    timezone: 'America/Chicago'
+    timezone: 'America/Detroit'
   },
   {
     id: 'twins',

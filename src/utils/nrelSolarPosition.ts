@@ -43,7 +43,7 @@ interface TopocentricPosition {
  * @param date - Date object (in UTC)
  * @param latitude - Observer latitude in degrees (-90 to 90)
  * @param longitude - Observer longitude in degrees (-180 to 180)
- * @param timeZoneOffset - Time zone offset from UTC in hours (used for local calculations if needed)
+ * @param timeZoneOffset - Unused — function uses date.getUTC*() directly. Pass 0.
  * @param elevation - Observer elevation above sea level in meters (default: 0)
  * @param pressure - Atmospheric pressure in millibars (default: 1013.25)
  * @param temperature - Temperature in Celsius (default: 20)
@@ -65,7 +65,8 @@ export function computeSunPosition(
   const julian = calculateJulianDate(date);
   
   // Step 2: Calculate Earth heliocentric longitude, latitude, and radius vector
-  const geocentric = calculateGeocentricPosition(julian.JME);
+  // Note: The simplified Meeus formulas use Julian centuries (JCE), not millennia
+  const geocentric = calculateGeocentricPosition(julian.JCE);
   
   // Step 3: Calculate the nutation in longitude and obliquity
   const nutation = calculateNutation(julian.JCE);
@@ -94,7 +95,7 @@ export function computeSunPosition(
     latitude,
     longitude,
     elevation,
-    julian.JD,
+    geocentric.radiusVector,
     pressure,
     temperature
   );
@@ -122,9 +123,11 @@ function calculateJulianDate(date: Date): JulianDate {
   const y = year + 4800 - a;
   const m = month + 12 * a - 3;
   
-  const JD = day + Math.floor((153 * m + 2) / 5) + 365 * y + 
-             Math.floor(y / 4) - Math.floor(y / 100) + Math.floor(y / 400) - 
-             32045 + hour / 24;
+  // The proleptic Gregorian JDN formula gives the JD at noon (12h UT).
+  // To get JD at arbitrary hour, offset by -0.5 to start at midnight.
+  const JD = day + Math.floor((153 * m + 2) / 5) + 365 * y +
+             Math.floor(y / 4) - Math.floor(y / 100) + Math.floor(y / 400) -
+             32045.5 + hour / 24;
   
   // Julian Ephemeris Day
   const deltaT = calculateDeltaT(year, month); // Simplified delta T calculation
@@ -142,30 +145,30 @@ function calculateJulianDate(date: Date): JulianDate {
  * Calculate Earth's heliocentric position
  * Reference: NREL SPA Section 3.2
  */
-function calculateGeocentricPosition(JME: number): GeocentricPosition {
-  // Simplified calculation using mean elements
+function calculateGeocentricPosition(JCE: number): GeocentricPosition {
+  // Simplified calculation using mean elements (Meeus formulas, Julian centuries)
   // For full accuracy, use the complete periodic terms from NREL SPA Appendix A
-  
+
   // Mean longitude (degrees)
-  const L0 = 280.46646 + 36000.76983 * JME + 0.0003032 * JME * JME;
-  
+  const L0 = 280.46646 + 36000.76983 * JCE + 0.0003032 * JCE * JCE;
+
   // Mean anomaly (degrees)
-  const M = 357.52911 + 35999.05029 * JME - 0.0001537 * JME * JME;
+  const M = 357.52911 + 35999.05029 * JCE - 0.0001537 * JCE * JCE;
   const Mrad = toRadians(M);
-  
+
   // Equation of center
-  const C = (1.914602 - 0.004817 * JME - 0.000014 * JME * JME) * Math.sin(Mrad) +
-            (0.019993 - 0.000101 * JME) * Math.sin(2 * Mrad) +
+  const C = (1.914602 - 0.004817 * JCE - 0.000014 * JCE * JCE) * Math.sin(Mrad) +
+            (0.019993 - 0.000101 * JCE) * Math.sin(2 * Mrad) +
             0.000289 * Math.sin(3 * Mrad);
-  
+
   // True longitude
   const longitude = normalizeAngle(L0 + C);
-  
+
   // True anomaly
   const v = M + C;
-  
+
   // Radius vector (AU)
-  const e = 0.016708634 - 0.000042037 * JME - 0.0000001267 * JME * JME;
+  const e = 0.016708634 - 0.000042037 * JCE - 0.0000001267 * JCE * JCE;
   const radiusVector = (1.000001018 * (1 - e * e)) / (1 + e * Math.cos(toRadians(v)));
   
   // Heliocentric latitude (simplified to 0 for basic calculation)
@@ -278,35 +281,43 @@ function calculateTopocentricPosition(
   latitude: number,
   longitude: number,
   elevation: number,
-  JD: number,
+  radiusVector: number,
   pressure: number,
   temperature: number
 ): TopocentricPosition {
-  // Calculate parallax correction
+  // Equatorial horizontal parallax of the sun (NREL SPA eq. 3.12.1)
+  const xiDeg = 8.794 / (3600 * radiusVector); // degrees
+  const sinXi = Math.sin(toRadians(xiDeg));
+
+  // Observer's geocentric position (NREL SPA eq. 3.12.2-3.12.3)
   const earthRadius = 6378.14; // km
   const u = Math.atan(0.99664719 * Math.tan(toRadians(latitude)));
   const x = Math.cos(u) + elevation * Math.cos(toRadians(latitude)) / earthRadius / 1000;
   const y = 0.99664719 * Math.sin(u) + elevation * Math.sin(toRadians(latitude)) / earthRadius / 1000;
-  
-  // Parallax in right ascension
+
+  // Local hour angle (before parallax): H = GAST + longitude_east - RA
+  // longitude follows standard convention (negative for west)
+  const localHA = normalizeAngle(siderealTime + longitude - equatorial.rightAscension);
+
+  // Parallax in right ascension (NREL SPA eq. 3.12.4)
   const parallaxRA = Math.atan2(
-    -x * Math.sin(toRadians(siderealTime - equatorial.rightAscension)),
-    Math.cos(toRadians(equatorial.declination)) - 
-    x * Math.cos(toRadians(siderealTime - equatorial.rightAscension))
+    -x * sinXi * Math.sin(toRadians(localHA)),
+    Math.cos(toRadians(equatorial.declination)) -
+    x * sinXi * Math.cos(toRadians(localHA))
   );
-  
+
   // Topocentric right ascension
   const topoRA = equatorial.rightAscension + toDegrees(parallaxRA);
-  
-  // Topocentric declination
+
+  // Topocentric declination (NREL SPA eq. 3.12.5)
   const topoDec = toDegrees(Math.atan2(
-    (Math.sin(toRadians(equatorial.declination)) - y) * Math.cos(parallaxRA),
-    Math.cos(toRadians(equatorial.declination)) - 
-    x * Math.cos(toRadians(siderealTime - equatorial.rightAscension))
+    (Math.sin(toRadians(equatorial.declination)) - y * sinXi) * Math.cos(parallaxRA),
+    Math.cos(toRadians(equatorial.declination)) -
+    x * sinXi * Math.cos(toRadians(localHA))
   ));
-  
-  // Local hour angle
-  const hourAngle = normalizeAngle(siderealTime - longitude - topoRA);
+
+  // Topocentric local hour angle
+  const hourAngle = normalizeAngle(localHA - toDegrees(parallaxRA));
   
   // Topocentric zenith angle
   const latRad = toRadians(latitude);
@@ -398,8 +409,8 @@ function normalizeAngle(angle: number): number {
 }
 
 /**
- * Backward compatibility wrapper
- * This function provides the same interface as the existing getSunPosition
+ * @deprecated Use computeSunPosition() directly with timezone-corrected Date instead.
+ * Callers should apply timezone correction before calling computeSunPosition().
  * @param date - Date object (local time, will be converted to UTC)
  * @param latitude - Observer latitude in degrees
  * @param longitude - Observer longitude in degrees

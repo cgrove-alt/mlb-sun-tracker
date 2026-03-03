@@ -1,6 +1,7 @@
 // sunCalculator.ts
 import SunCalc from 'suncalc';
 import { computeSunPosition } from './nrelSolarPosition';
+import { getTimezoneOffset } from './stadiumTimezone';
 import type { RowDetail, DetailedSection } from '../types/stadium-complete';
 
 interface Stadium {
@@ -8,11 +9,12 @@ interface Stadium {
   name: string;
   latitude: number;
   longitude: number;
-  roofType?: 'open' | 'fixed' | 'retractable';
+  roof: 'open' | 'fixed' | 'retractable';
   roofHeight?: number;
   roofOverhang?: number;
   upperDeckHeight?: number;
   orientation?: number;
+  timezone?: string;
   sections?: Section[];
 }
 
@@ -112,56 +114,25 @@ export class SunCalculator {
   calculateSunPosition(date: string | Date, time?: string): SunPosition {
     // Accept either a Date object or date/time strings
     const dateTime = date instanceof Date ? date : new Date(`${date}T${time}`);
-    const useNREL = false; // Force SunCalc for now due to timezone issues with NREL
-    
-    let altitude: number;
-    let azimuth: number;
-    
-    if (useNREL) {
-      try {
-        // Use NREL Solar Position Algorithm
-        // IMPORTANT: Use the stadium's timezone, not the local machine's timezone
-        // For now, use PST/PDT offset (-7 or -8 hours) for west coast stadiums
-        // This should ideally use the stadium.timezone field
-        let timeZoneOffset = -dateTime.getTimezoneOffset() / 60;
-        
-        // Override for west coast stadiums (temporary fix)
-        // @ts-ignore - stadium.timezone exists but type def is missing
-        if (this.stadium.timezone === 'America/Los_Angeles') {
-          // Check if date is in PDT (March-November) or PST
-          const month = dateTime.getMonth();
-          timeZoneOffset = (month >= 2 && month <= 10) ? -7 : -8;
-        }
-        
-        const nrelResult = computeSunPosition(
-          dateTime,
-          this.stadium.latitude,
-          this.stadium.longitude,
-          timeZoneOffset
-        );
-        altitude = nrelResult.elevation;
-        azimuth = nrelResult.azimuth;
-      } catch (error) {
-        console.warn('NREL SPA calculation failed, falling back to SunCalc:', error);
-        // Fall through to SunCalc
-        const sunPos = SunCalc.getPosition(
-          dateTime,
-          this.stadium.latitude,
-          this.stadium.longitude
-        );
-        altitude = sunPos.altitude * 180 / Math.PI;
-        azimuth = (sunPos.azimuth * 180 / Math.PI + 180) % 360;
-      }
-    } else {
-      // Use original SunCalc implementation
-      const sunPos = SunCalc.getPosition(
-        dateTime,
-        this.stadium.latitude,
-        this.stadium.longitude
-      );
-      altitude = sunPos.altitude * 180 / Math.PI;
-      azimuth = (sunPos.azimuth * 180 / Math.PI + 180) % 360;
+
+    // Timezone correction: adjust from browser-local to stadium-local
+    let correctedDate = dateTime;
+    if (this.stadium.timezone) {
+      const browserOffsetHours = -dateTime.getTimezoneOffset() / 60;
+      const stadiumOffsetHours = getTimezoneOffset(dateTime, this.stadium.timezone);
+      const correctionMs = (browserOffsetHours - stadiumOffsetHours) * 3600000;
+      correctedDate = new Date(dateTime.getTime() + correctionMs);
     }
+
+    // Use NREL SPA for sun position
+    const nrelResult = computeSunPosition(
+      correctedDate,
+      this.stadium.latitude,
+      this.stadium.longitude,
+      0
+    );
+    const altitude = nrelResult.elevation;
+    const azimuth = nrelResult.azimuth;
     
     // Get sun times (still using SunCalc for these)
     const sunTimes = SunCalc.getTimes(
@@ -293,7 +264,7 @@ export class SunCalculator {
     if (sunAltitude <= 0) return 0;
     
     // Fixed roof stadiums always have 100% coverage
-    if (this.stadium.roofType === 'fixed') return 100;
+    if (this.stadium.roof === 'fixed') return 100;
     
     // For covered sections, they MUST always have complete coverage
     // This is a critical fix - covered sections have permanent overhead protection
@@ -302,7 +273,7 @@ export class SunCalculator {
     }
     
     // For retractable roofs when closed, all sections are covered
-    if (this.stadium.roofType === 'retractable') {
+    if (this.stadium.roof === 'retractable') {
       // Assume roof is closed for this calculation (can be made dynamic later)
       // For now, check if there's overhang shadow for open roof scenario
       if (this.stadiumGeometry.roofOverhang && sunAltitude > 0) {

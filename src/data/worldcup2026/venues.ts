@@ -365,7 +365,7 @@ export const WORLD_CUP_MEXICO_VENUES: WorldCupVenue[] = [
     country: 'Mexico',
     latitude: 25.7236,
     longitude: -100.2446,
-    timezone: 'America/Mexico_City',
+    timezone: 'America/Monterrey',
     capacity: 53500,
     soccerCapacity: 53500,
     basedOnNFLStadium: false,
