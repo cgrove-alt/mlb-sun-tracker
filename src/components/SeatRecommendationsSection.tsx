@@ -17,6 +17,7 @@ interface SeatRecommendationsSectionProps {
   gameTime?: string;
   gameDate?: Date;
   rowData?: SectionShadowData[] | null;
+  selectedSectionId?: string;
 }
 
 export const SeatRecommendationsSection: React.FC<SeatRecommendationsSectionProps> = ({
@@ -24,7 +25,8 @@ export const SeatRecommendationsSection: React.FC<SeatRecommendationsSectionProp
   stadiumId,
   gameTime = '13:00',
   gameDate = new Date(),
-  rowData = null
+  rowData = null,
+  selectedSectionId
 }) => {
   const [preferences, setPreferences] = useState<UserPreferences>({
     sunPreference: 'neutral',
@@ -360,6 +362,7 @@ export const SeatRecommendationsSection: React.FC<SeatRecommendationsSectionProp
           rowData={rowData}
           showRowToggle={!!rowData && rowData.length > 0}
           stadiumId={stadiumId}
+          selectedSectionId={selectedSectionId}
         />
       </div>
 

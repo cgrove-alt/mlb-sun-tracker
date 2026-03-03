@@ -20,6 +20,7 @@ interface SectionListProps {
   rowData?: SectionShadowData[] | null;
   showRowToggle?: boolean;
   stadiumId?: string;
+  selectedSectionId?: string;
   worldCupMatchCount?: number;
   worldCupCountry?: 'USA' | 'Mexico' | 'Canada';
 }
@@ -32,6 +33,7 @@ export const SectionList: React.FC<SectionListProps> = ({
   rowData = null,
   showRowToggle = false,
   stadiumId,
+  selectedSectionId,
   worldCupMatchCount,
   worldCupCountry
 }) => {
@@ -71,6 +73,13 @@ export const SectionList: React.FC<SectionListProps> = ({
   const [showComparison, setShowComparison] = useState(false);
   const haptic = useHapticFeedback();
   const sectionListRef = useRef<HTMLDivElement>(null);
+
+  // Auto-expand row details when a section is selected via diagram click
+  useEffect(() => {
+    if (selectedSectionId && rowData && rowData.length > 0) {
+      setShowRowLevel(true);
+    }
+  }, [selectedSectionId, rowData]);
 
   // Initialize comparison mode from URL params
   useEffect(() => {

@@ -14,6 +14,7 @@ export interface Stadium {
   roofHeight?: number; // Height of roof/overhang in feet
   roofOverhang?: number; // Horizontal overhang distance in feet
   upperDeckHeight?: number; // Height of upper deck in feet
+  upperDeckOverhang?: number; // Horizontal distance upper deck extends over lower sections (feet)
 }
 
 export const MLB_STADIUMS: Stadium[] = [
@@ -31,7 +32,8 @@ export const MLB_STADIUMS: Stadium[] = [
     timezone: 'America/Los_Angeles',
     roofHeight: 120,
     roofOverhang: 40,
-    upperDeckHeight: 80
+    upperDeckHeight: 80,
+    upperDeckOverhang: 22
   },
   {
     id: 'astros',
@@ -44,7 +46,11 @@ export const MLB_STADIUMS: Stadium[] = [
     orientation: 20,
     capacity: 41168,
     roof: 'retractable',
-    timezone: 'America/Chicago'
+    timezone: 'America/Chicago',
+    roofHeight: 142,
+    roofOverhang: 55,
+    upperDeckHeight: 75,
+    upperDeckOverhang: 20
   },
   {
     id: 'athletics',
@@ -57,7 +63,11 @@ export const MLB_STADIUMS: Stadium[] = [
     orientation: 330,
     capacity: 14014,
     roof: 'open',
-    timezone: 'America/Los_Angeles'
+    timezone: 'America/Los_Angeles',
+    roofHeight: 85,
+    roofOverhang: 15,
+    upperDeckHeight: 50,
+    upperDeckOverhang: 12
   },
   {
     id: 'bluejays',
@@ -70,7 +80,11 @@ export const MLB_STADIUMS: Stadium[] = [
     orientation: 15,
     capacity: 49282,
     roof: 'retractable',
-    timezone: 'America/Toronto'
+    timezone: 'America/Toronto',
+    roofHeight: 160,
+    roofOverhang: 60,
+    upperDeckHeight: 85,
+    upperDeckOverhang: 30
   },
   {
     id: 'braves',
@@ -83,7 +97,11 @@ export const MLB_STADIUMS: Stadium[] = [
     orientation: 45,
     capacity: 41084,
     roof: 'open',
-    timezone: 'America/New_York'
+    timezone: 'America/New_York',
+    roofHeight: 115,
+    roofOverhang: 35,
+    upperDeckHeight: 72,
+    upperDeckOverhang: 20
   },
   {
     id: 'brewers',
@@ -96,7 +114,11 @@ export const MLB_STADIUMS: Stadium[] = [
     orientation: 357,
     capacity: 41900,
     roof: 'retractable',
-    timezone: 'America/Chicago'
+    timezone: 'America/Chicago',
+    roofHeight: 145,
+    roofOverhang: 50,
+    upperDeckHeight: 80,
+    upperDeckOverhang: 25
   },
   {
     id: 'cardinals',
@@ -109,7 +131,11 @@ export const MLB_STADIUMS: Stadium[] = [
     orientation: 92,
     capacity: 44494,
     roof: 'open',
-    timezone: 'America/Chicago'
+    timezone: 'America/Chicago',
+    roofHeight: 110,
+    roofOverhang: 30,
+    upperDeckHeight: 70,
+    upperDeckOverhang: 18
   },
   {
     id: 'cubs',
@@ -122,7 +148,11 @@ export const MLB_STADIUMS: Stadium[] = [
     orientation: 13,
     capacity: 41649,
     roof: 'open',
-    timezone: 'America/Chicago'
+    timezone: 'America/Chicago',
+    roofHeight: 95,
+    roofOverhang: 20,
+    upperDeckHeight: 65,
+    upperDeckOverhang: 15
   },
   {
     id: 'diamondbacks',
@@ -135,7 +165,11 @@ export const MLB_STADIUMS: Stadium[] = [
     orientation: 23,
     capacity: 48686,
     roof: 'retractable',
-    timezone: 'America/Phoenix'
+    timezone: 'America/Phoenix',
+    roofHeight: 150,
+    roofOverhang: 55,
+    upperDeckHeight: 82,
+    upperDeckOverhang: 28
   },
   {
     id: 'dodgers',
@@ -148,7 +182,11 @@ export const MLB_STADIUMS: Stadium[] = [
     orientation: 25,
     capacity: 56000,
     roof: 'open',
-    timezone: 'America/Los_Angeles'
+    timezone: 'America/Los_Angeles',
+    roofHeight: 130,
+    roofOverhang: 35,
+    upperDeckHeight: 90,
+    upperDeckOverhang: 30
   },
   {
     id: 'giants',
@@ -161,7 +199,11 @@ export const MLB_STADIUMS: Stadium[] = [
     orientation: 87,
     capacity: 41915,
     roof: 'open',
-    timezone: 'America/Los_Angeles'
+    timezone: 'America/Los_Angeles',
+    roofHeight: 110,
+    roofOverhang: 25,
+    upperDeckHeight: 68,
+    upperDeckOverhang: 18
   },
   {
     id: 'guardians',
@@ -174,7 +216,11 @@ export const MLB_STADIUMS: Stadium[] = [
     orientation: 60,
     capacity: 34830,
     roof: 'open',
-    timezone: 'America/New_York'
+    timezone: 'America/New_York',
+    roofHeight: 105,
+    roofOverhang: 28,
+    upperDeckHeight: 68,
+    upperDeckOverhang: 20
   },
   {
     id: 'mariners',
@@ -187,7 +233,11 @@ export const MLB_STADIUMS: Stadium[] = [
     orientation: 318,
     capacity: 47929,
     roof: 'retractable',
-    timezone: 'America/Los_Angeles'
+    timezone: 'America/Los_Angeles',
+    roofHeight: 140,
+    roofOverhang: 50,
+    upperDeckHeight: 78,
+    upperDeckOverhang: 25
   },
   {
     id: 'marlins',
@@ -200,7 +250,11 @@ export const MLB_STADIUMS: Stadium[] = [
     orientation: 40,
     capacity: 37446,
     roof: 'retractable',
-    timezone: 'America/New_York'
+    timezone: 'America/New_York',
+    roofHeight: 135,
+    roofOverhang: 50,
+    upperDeckHeight: 75,
+    upperDeckOverhang: 22
   },
   {
     id: 'mets',
@@ -213,7 +267,11 @@ export const MLB_STADIUMS: Stadium[] = [
     orientation: 90,
     capacity: 41922,
     roof: 'open',
-    timezone: 'America/New_York'
+    timezone: 'America/New_York',
+    roofHeight: 115,
+    roofOverhang: 30,
+    upperDeckHeight: 72,
+    upperDeckOverhang: 22
   },
   {
     id: 'nationals',
@@ -226,7 +284,11 @@ export const MLB_STADIUMS: Stadium[] = [
     orientation: 87,
     capacity: 41313,
     roof: 'open',
-    timezone: 'America/New_York'
+    timezone: 'America/New_York',
+    roofHeight: 108,
+    roofOverhang: 28,
+    upperDeckHeight: 70,
+    upperDeckOverhang: 18
   },
   {
     id: 'orioles',
@@ -239,7 +301,11 @@ export const MLB_STADIUMS: Stadium[] = [
     orientation: 58,
     capacity: 45971,
     roof: 'open',
-    timezone: 'America/New_York'
+    timezone: 'America/New_York',
+    roofHeight: 100,
+    roofOverhang: 25,
+    upperDeckHeight: 65,
+    upperDeckOverhang: 16
   },
   {
     id: 'padres',
@@ -252,7 +318,11 @@ export const MLB_STADIUMS: Stadium[] = [
     orientation: 25,
     capacity: 40209,
     roof: 'open',
-    timezone: 'America/Los_Angeles'
+    timezone: 'America/Los_Angeles',
+    roofHeight: 105,
+    roofOverhang: 22,
+    upperDeckHeight: 62,
+    upperDeckOverhang: 16
   },
   {
     id: 'phillies',
@@ -265,7 +335,11 @@ export const MLB_STADIUMS: Stadium[] = [
     orientation: 59,
     capacity: 42792,
     roof: 'open',
-    timezone: 'America/New_York'
+    timezone: 'America/New_York',
+    roofHeight: 112,
+    roofOverhang: 30,
+    upperDeckHeight: 72,
+    upperDeckOverhang: 20
   },
   {
     id: 'pirates',
@@ -278,7 +352,11 @@ export const MLB_STADIUMS: Stadium[] = [
     orientation: 25,
     capacity: 38362,
     roof: 'open',
-    timezone: 'America/New_York'
+    timezone: 'America/New_York',
+    roofHeight: 98,
+    roofOverhang: 22,
+    upperDeckHeight: 60,
+    upperDeckOverhang: 14
   },
   {
     id: 'rangers',
@@ -291,7 +369,11 @@ export const MLB_STADIUMS: Stadium[] = [
     orientation: 46,
     capacity: 40300,
     roof: 'retractable',
-    timezone: 'America/Chicago'
+    timezone: 'America/Chicago',
+    roofHeight: 155,
+    roofOverhang: 60,
+    upperDeckHeight: 85,
+    upperDeckOverhang: 32
   },
   {
     id: 'rays',
@@ -304,7 +386,11 @@ export const MLB_STADIUMS: Stadium[] = [
     orientation: 316,
     capacity: 11026,
     roof: 'open',
-    timezone: 'America/New_York'
+    timezone: 'America/New_York',
+    roofHeight: 88,
+    roofOverhang: 18,
+    upperDeckHeight: 55,
+    upperDeckOverhang: 12
   },
   {
     id: 'redsox',
@@ -317,7 +403,11 @@ export const MLB_STADIUMS: Stadium[] = [
     orientation: 52,
     capacity: 37755,
     roof: 'open',
-    timezone: 'America/New_York'
+    timezone: 'America/New_York',
+    roofHeight: 90,
+    roofOverhang: 15,
+    upperDeckHeight: 58,
+    upperDeckOverhang: 10
   },
   {
     id: 'reds',
@@ -330,7 +420,11 @@ export const MLB_STADIUMS: Stadium[] = [
     orientation: 105,
     capacity: 42319,
     roof: 'open',
-    timezone: 'America/New_York'
+    timezone: 'America/New_York',
+    roofHeight: 105,
+    roofOverhang: 25,
+    upperDeckHeight: 65,
+    upperDeckOverhang: 18
   },
   {
     id: 'rockies',
@@ -343,7 +437,11 @@ export const MLB_STADIUMS: Stadium[] = [
     orientation: 40,
     capacity: 50144,
     roof: 'open',
-    timezone: 'America/Denver'
+    timezone: 'America/Denver',
+    roofHeight: 115,
+    roofOverhang: 30,
+    upperDeckHeight: 75,
+    upperDeckOverhang: 22
   },
   {
     id: 'royals',
@@ -356,7 +454,11 @@ export const MLB_STADIUMS: Stadium[] = [
     orientation: 58,
     capacity: 37903,
     roof: 'open',
-    timezone: 'America/Chicago'
+    timezone: 'America/Chicago',
+    roofHeight: 100,
+    roofOverhang: 20,
+    upperDeckHeight: 60,
+    upperDeckOverhang: 14
   },
   {
     id: 'tigers',
@@ -369,7 +471,11 @@ export const MLB_STADIUMS: Stadium[] = [
     orientation: 145,
     capacity: 41083,
     roof: 'open',
-    timezone: 'America/Detroit'
+    timezone: 'America/Detroit',
+    roofHeight: 110,
+    roofOverhang: 28,
+    upperDeckHeight: 70,
+    upperDeckOverhang: 20
   },
   {
     id: 'twins',
@@ -382,7 +488,11 @@ export const MLB_STADIUMS: Stadium[] = [
     orientation: 0,
     capacity: 38544,
     roof: 'open',
-    timezone: 'America/Chicago'
+    timezone: 'America/Chicago',
+    roofHeight: 108,
+    roofOverhang: 25,
+    upperDeckHeight: 68,
+    upperDeckOverhang: 18
   },
   {
     id: 'whitesox',
@@ -395,7 +505,11 @@ export const MLB_STADIUMS: Stadium[] = [
     orientation: 90,
     capacity: 40615,
     roof: 'open',
-    timezone: 'America/Chicago'
+    timezone: 'America/Chicago',
+    roofHeight: 110,
+    roofOverhang: 30,
+    upperDeckHeight: 72,
+    upperDeckOverhang: 22
   },
   {
     id: 'yankees',
@@ -408,6 +522,10 @@ export const MLB_STADIUMS: Stadium[] = [
     orientation: 55,
     capacity: 46537,
     roof: 'open',
-    timezone: 'America/New_York'
+    timezone: 'America/New_York',
+    roofHeight: 120,
+    roofOverhang: 32,
+    upperDeckHeight: 75,
+    upperDeckOverhang: 24
   }
 ];

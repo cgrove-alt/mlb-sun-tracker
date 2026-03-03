@@ -229,6 +229,7 @@ export default function StadiumPageClient({
             gameTime="13:00"
             gameDate={new Date()}
             rowData={rowData}
+            selectedSectionId={selectedSectionId}
           />
         ) : (
           <div className="text-center p-8 bg-gray-50 rounded-lg">
