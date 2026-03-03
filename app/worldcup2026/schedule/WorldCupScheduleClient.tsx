@@ -15,6 +15,7 @@ import {
 import type { WorldCupMatch } from '../../../src/data/worldcup2026/types';
 import { WORLD_CUP_2026_INFO } from '../../../src/data/worldcup2026/types';
 import { MatchCountdown } from '../../../src/components/MatchCountdown';
+import { getKickoffShade } from '../../../src/data/worldcup2026/shadeGuides';
 import { useTranslation } from '../../../src/i18n/i18nContext';
 import Link from 'next/link';
 
@@ -300,7 +301,7 @@ export function WorldCupScheduleClient() {
                 value={startDate}
                 onChange={(e) => setStartDate(e.target.value)}
                 min="2026-06-11"
-                max="2026-07-26"
+                max="2026-07-19"
                 className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent"
               />
             </div>
@@ -315,7 +316,7 @@ export function WorldCupScheduleClient() {
                 value={endDate}
                 onChange={(e) => setEndDate(e.target.value)}
                 min="2026-06-11"
-                max="2026-07-26"
+                max="2026-07-19"
                 className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent"
               />
             </div>
@@ -423,7 +424,23 @@ export function WorldCupScheduleClient() {
                                 </svg>
                                 <div className="flex-1 min-w-0">
                                   <div className="font-medium truncate">{venue.commonName}</div>
-                                  <div className="text-xs text-gray-500">{venue.city}, {venue.country}</div>
+                                  <div className="flex items-center gap-2">
+                                    <span className="text-xs text-gray-500">{venue.city}, {venue.country}</span>
+                                    {(() => {
+                                      const hour = parseInt(match.kickoffTime.split(':')[0]);
+                                      const closestTime = hour <= 13 ? '12:00' : hour <= 16 ? '15:00' : hour <= 19 ? '18:00' : '21:00';
+                                      const shade = venue.roof !== 'open' ? null : getKickoffShade(venue.id, closestTime);
+                                      return shade && shade.shadePct < 100 ? (
+                                        <span className={`text-xs px-1.5 py-0.5 rounded font-medium ${
+                                          shade.shadePct >= 70 ? 'bg-green-100 text-green-700' :
+                                          shade.shadePct >= 50 ? 'bg-blue-100 text-blue-700' :
+                                          'bg-yellow-100 text-yellow-700'
+                                        }`}>
+                                          {shade.shadePct}% shade
+                                        </span>
+                                      ) : null;
+                                    })()}
+                                  </div>
                                 </div>
                               </div>
                               <div className="flex items-center gap-2">

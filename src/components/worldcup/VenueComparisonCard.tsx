@@ -3,6 +3,7 @@
 import React from 'react';
 import Link from 'next/link';
 import { WorldCupVenue } from '../../data/worldcup2026/types';
+import { getShadeGuide } from '../../data/worldcup2026/shadeGuides';
 import { CloseIcon } from '../Icons';
 
 interface VenueComparisonCardProps {
@@ -45,14 +46,8 @@ export function VenueComparisonCard({
     return 'Open Air';
   };
 
-  const getShadeScore = () => {
-    // Calculate shade score based on roof type
-    if (venue.roof === 'fixed') return 100; // Best shade
-    if (venue.roof === 'retractable') return 75; // Good shade option
-    return 25; // Open air - least shade
-  };
-
-  const shadeScore = getShadeScore();
+  const shadeGuide = getShadeGuide(venue.id);
+  const shadeScore = shadeGuide ? shadeGuide.shadeScore * 10 : (venue.roof === 'fixed' ? 100 : venue.roof === 'retractable' ? 75 : 25);
   const getShadeLabel = () => {
     if (shadeScore >= 75) return 'Excellent Shade';
     if (shadeScore >= 50) return 'Good Shade';

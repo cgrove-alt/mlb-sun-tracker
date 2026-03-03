@@ -323,7 +323,7 @@ export const WORLD_CUP_MEXICO_VENUES: WorldCupVenue[] = [
     capacity: 87523,
     soccerCapacity: 90000,  // Expanded for World Cup
     basedOnNFLStadium: false,
-    fieldOrientation: 0,
+    fieldOrientation: 350,
     fieldDimensions: {
       length: 105,
       width: 68
@@ -346,7 +346,7 @@ export const WORLD_CUP_MEXICO_VENUES: WorldCupVenue[] = [
     capacity: 49850,
     soccerCapacity: 49850,
     basedOnNFLStadium: false,
-    fieldOrientation: 0,
+    fieldOrientation: 15,
     fieldDimensions: {
       length: 105,
       width: 68
@@ -369,7 +369,7 @@ export const WORLD_CUP_MEXICO_VENUES: WorldCupVenue[] = [
     capacity: 53500,
     soccerCapacity: 53500,
     basedOnNFLStadium: false,
-    fieldOrientation: 0,
+    fieldOrientation: 350,
     fieldDimensions: {
       length: 105,
       width: 68

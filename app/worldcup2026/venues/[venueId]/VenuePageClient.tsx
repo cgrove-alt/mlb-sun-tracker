@@ -6,6 +6,8 @@ import { WorldCupVenue } from '../../../../src/data/worldcup2026/types';
 import { getMatchesByVenue } from '../../../../src/data/worldcup2026/matches';
 import { MatchCountdown } from '../../../../src/components/MatchCountdown';
 import { ClimateMessaging } from '../../../../src/components/worldcup/ClimateMessaging';
+import ShadeAnalysisSection from '../../../../src/components/worldcup/ShadeAnalysisSection';
+import ShadeTipCards from '../../../../src/components/worldcup/ShadeTipCards';
 import { useTranslation } from '../../../../src/i18n/i18nContext';
 
 interface VenuePageClientProps {
@@ -179,6 +181,20 @@ export function VenuePageClient({ venue }: VenuePageClientProps) {
             </div>
           </div>
         </div>
+
+        {/* Shade Analysis */}
+        <ShadeAnalysisSection
+          venueId={venue.id}
+          venueName={venue.commonName}
+          roofType={venue.roof}
+        />
+
+        {/* Shade Tips */}
+        <ShadeTipCards
+          roofType={venue.roof}
+          city={venue.city}
+          country={venue.country}
+        />
 
         {/* Match Schedule */}
         <div className="bg-white rounded-xl shadow-lg p-6 mb-8">

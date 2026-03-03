@@ -56,6 +56,62 @@ export const metadata: Metadata = {
   }
 };
 
+const keyMatchSchemas = [
+  {
+    '@type': 'SportsEvent',
+    name: 'FIFA World Cup 2026 Opening Match',
+    startDate: '2026-06-11T17:00:00-05:00',
+    location: { '@type': 'StadiumOrArena', name: 'Estadio Azteca', address: { '@type': 'PostalAddress', addressLocality: 'Mexico City', addressCountry: 'MX' } },
+    sport: 'Soccer',
+    eventStatus: 'https://schema.org/EventScheduled'
+  },
+  {
+    '@type': 'SportsEvent',
+    name: 'FIFA World Cup 2026 Semifinal 1',
+    startDate: '2026-07-14T20:00:00-05:00',
+    location: { '@type': 'StadiumOrArena', name: 'AT&T Stadium', address: { '@type': 'PostalAddress', addressLocality: 'Arlington', addressCountry: 'US' } },
+    sport: 'Soccer',
+    eventStatus: 'https://schema.org/EventScheduled'
+  },
+  {
+    '@type': 'SportsEvent',
+    name: 'FIFA World Cup 2026 Semifinal 2',
+    startDate: '2026-07-15T20:00:00-04:00',
+    location: { '@type': 'StadiumOrArena', name: 'Mercedes-Benz Stadium', address: { '@type': 'PostalAddress', addressLocality: 'Atlanta', addressCountry: 'US' } },
+    sport: 'Soccer',
+    eventStatus: 'https://schema.org/EventScheduled'
+  },
+  {
+    '@type': 'SportsEvent',
+    name: 'FIFA World Cup 2026 Third Place Match',
+    startDate: '2026-07-18T17:00:00-04:00',
+    location: { '@type': 'StadiumOrArena', name: 'Hard Rock Stadium', address: { '@type': 'PostalAddress', addressLocality: 'Miami Gardens', addressCountry: 'US' } },
+    sport: 'Soccer',
+    eventStatus: 'https://schema.org/EventScheduled'
+  },
+  {
+    '@type': 'SportsEvent',
+    name: 'FIFA World Cup 2026 Final',
+    startDate: '2026-07-19T15:00:00-04:00',
+    location: { '@type': 'StadiumOrArena', name: 'MetLife Stadium', address: { '@type': 'PostalAddress', addressLocality: 'East Rutherford', addressCountry: 'US' } },
+    sport: 'Soccer',
+    eventStatus: 'https://schema.org/EventScheduled'
+  }
+];
+
 export default function WorldCupSchedulePage() {
-  return <WorldCupScheduleClient />;
+  return (
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            '@context': 'https://schema.org',
+            '@graph': keyMatchSchemas
+          })
+        }}
+      />
+      <WorldCupScheduleClient />
+    </>
+  );
 }

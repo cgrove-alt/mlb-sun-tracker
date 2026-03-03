@@ -72,59 +72,6 @@ export async function generateMetadata({ params }: VenuePageProps): Promise<Meta
       'venue:capacity': venue.soccerCapacity.toString(),
       'venue:matches': venue.hostMatches.toString(),
     },
-    // Schema.org structured data
-    verification: {
-      other: {
-        'structured-data': JSON.stringify({
-          '@context': 'https://schema.org',
-          '@type': 'Article',
-          headline: `${venue.commonName} - FIFA World Cup 2026 Shade Guide`,
-          description,
-          author: {
-            '@type': 'Organization',
-            name: 'The Shadium'
-          },
-          publisher: {
-            '@type': 'Organization',
-            name: 'The Shadium',
-            logo: {
-              '@type': 'ImageObject',
-              url: 'https://theshadium.com/logo512.png'
-            }
-          },
-          datePublished: '2025-01-01',
-          dateModified: new Date().toISOString(),
-          mainEntityOfPage: {
-            '@type': 'WebPage',
-            '@id': `https://theshadium.com/worldcup2026/venues/${venueId}`
-          },
-          about: {
-            '@type': 'StadiumOrArena',
-            name: venue.commonName,
-            address: {
-              '@type': 'PostalAddress',
-              addressLocality: venue.city,
-              addressCountry: venue.country
-            },
-            geo: {
-              '@type': 'GeoCoordinates',
-              latitude: venue.latitude,
-              longitude: venue.longitude
-            }
-          },
-          event: {
-            '@type': 'SportsEvent',
-            name: 'FIFA World Cup 2026',
-            startDate: '2026-06-11',
-            endDate: '2026-07-19',
-            location: {
-              '@type': 'StadiumOrArena',
-              name: venue.commonName
-            }
-          }
-        })
-      }
-    }
   };
 }
 
@@ -136,5 +83,53 @@ export default async function WorldCupVenuePage({ params }: VenuePageProps) {
     notFound();
   }
 
-  return <VenuePageClient venue={venue} />;
+  const articleSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'Article',
+    headline: `${venue.commonName} - FIFA World Cup 2026 Shade Guide`,
+    description: `Find the best shaded seats at ${venue.commonName} for FIFA World Cup 2026 in ${venue.city}, ${venue.country}.`,
+    author: { '@type': 'Organization', name: 'The Shadium' },
+    publisher: {
+      '@type': 'Organization',
+      name: 'The Shadium',
+      logo: { '@type': 'ImageObject', url: 'https://theshadium.com/logo512.png' }
+    },
+    datePublished: '2025-01-01',
+    dateModified: '2026-03-03',
+    mainEntityOfPage: {
+      '@type': 'WebPage',
+      '@id': `https://theshadium.com/worldcup2026/venues/${venueId}`
+    },
+    about: {
+      '@type': 'StadiumOrArena',
+      name: venue.commonName,
+      address: {
+        '@type': 'PostalAddress',
+        addressLocality: venue.city,
+        addressCountry: venue.country
+      },
+      geo: {
+        '@type': 'GeoCoordinates',
+        latitude: venue.latitude,
+        longitude: venue.longitude
+      }
+    },
+    event: {
+      '@type': 'SportsEvent',
+      name: 'FIFA World Cup 2026',
+      startDate: '2026-06-11',
+      endDate: '2026-07-19',
+      location: { '@type': 'StadiumOrArena', name: venue.commonName }
+    }
+  };
+
+  return (
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }}
+      />
+      <VenuePageClient venue={venue} />
+    </>
+  );
 }
