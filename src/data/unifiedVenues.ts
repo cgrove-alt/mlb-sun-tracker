@@ -6454,6 +6454,7 @@ export function convertToLegacyStadium(venue: UnifiedVenue): any {
     capacity: venue.capacity,
     roof: venue.roof,
     roofHeight: venue.roofHeight,
+    roofOverhang: venue.roofOverhang,
     upperDeckHeight: venue.upperDeckHeight,
     timezone: venue.timezone,
     opened: venue.opened,

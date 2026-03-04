@@ -254,7 +254,7 @@ function generateGenericSections(stadium: UnifiedStadium): StadiumSection[] {
         baseAngle,
         angleSpan: angleStep,
         rows: level === 'field' ? 10 : 20,
-        covered: stadium.roof === 'fixed' || stadium.roof === 'retractable',
+        covered: stadium.roof === 'fixed',
         price: getPriceCategory(level)
       });
       

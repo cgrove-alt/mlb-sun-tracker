@@ -54,6 +54,14 @@
 - [x] 7.3 aria-live region in SeatRecommendationsSection for shade summary
 - [x] 7.4 Non-color text labels ("Score: 8") on all Shade Score badges in tooltips and results
 
+## Shade Calculation Bug Fixes
+- [x] Bug 1: Worker `calculateDetailedSectionSunExposure()` now checks `stadium.roof === 'fixed'` and returns 0 exposure
+- [x] Bug 2: Worker `getSectionSunExposure()` now accepts `stadium` param, checks fixed roof, applies -15 retractable shade
+- [x] Bug 3: `stadium` threaded through `calculateRowShadows()` → `calculateRowShadow()`, roof shadow checks stadium-level roof type
+- [x] Bug 4: `convertToLegacyStadium()` now includes `roofOverhang` field
+- [x] Bug 5: `generateGenericSections()` only marks `covered: true` for `fixed` roof (not `retractable`)
+- [x] Production build passes
+
 ## Final
 - [x] TypeScript check passes (`npx tsc --noEmit`)
 - [x] Production build succeeds (`npm run build`)

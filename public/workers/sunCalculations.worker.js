@@ -39,7 +39,7 @@ self.addEventListener('message', async (event) => {
 
       // Perform row-level shadow calculations for all sections
       const rowResults = sections.map(section =>
-        calculateRowShadows(section, sunAltitude, sunAzimuth, stadiumOrientation)
+        calculateRowShadows(section, sunAltitude, sunAzimuth, stadiumOrientation, stadium)
       );
 
       // Send combined results back to main thread
@@ -61,9 +61,14 @@ function calculateDetailedSectionSunExposure(sections, sunPosition, stadium) {
   const sunAzimuth = sunPosition.azimuthDegrees || sunPosition.azimuth;
   const sunElevation = sunPosition.altitudeDegrees || sunPosition.altitude;
 
+  // Fixed roof = all sections fully shaded (matches sunCalculations.ts line 176)
+  if (stadium && stadium.roof === 'fixed') {
+    return sections.map(section => ({ section, inSun: false, sunExposure: 0 }));
+  }
+
   return sections.map(section => {
     const inSun = isSectionInSun(section, sunAzimuth, sunElevation);
-    const sunExposure = getSectionSunExposure(section, sunElevation, sunAzimuth);
+    const sunExposure = getSectionSunExposure(section, sunElevation, sunAzimuth, stadium);
     return { section, inSun: inSun && sunExposure > 10, sunExposure };
   });
 }
@@ -84,8 +89,9 @@ function isSectionInSun(section, sunAzimuth, sunElevation) {
 }
 
 // Ported from src/utils/sectionSunCalculations.ts
-function getSectionSunExposure(section, sunElevation, sunAzimuth) {
+function getSectionSunExposure(section, sunElevation, sunAzimuth, stadium) {
   if (sunElevation < 0) return 0;
+  if (stadium && stadium.roof === 'fixed') return 0;
 
   const coverageReduction = section.covered ? 0.3 : 1.0;
   if (section.covered && sunElevation < 30) return 0;
@@ -114,7 +120,13 @@ function getSectionSunExposure(section, sunElevation, sunAzimuth) {
   else if (sunElevation > 45) middayBoost = 1.25;
   else if (sunElevation > 30) middayBoost = 1.1;
 
-  const exposure = elevationFactor * angleFactor * levelMultiplier * middayBoost * coverageReduction * 100;
+  let exposure = elevationFactor * angleFactor * levelMultiplier * middayBoost * coverageReduction * 100;
+
+  // Retractable roof structural shade (matches getUnifiedVenueShade.ts:201)
+  if (stadium && stadium.roof === 'retractable') {
+    exposure = Math.max(0, exposure - 15);
+  }
+
   return Math.round(Math.max(0, Math.min(100, exposure)));
 }
 
@@ -122,7 +134,7 @@ function getSectionSunExposure(section, sunElevation, sunAzimuth) {
 // ROW-LEVEL SHADOW CALCULATIONS
 // ============================================================================
 
-function calculateRowShadow(row, section, sunAltitude, sunAzimuth, stadiumOrientation = 0) {
+function calculateRowShadow(row, section, sunAltitude, sunAzimuth, stadiumOrientation = 0, stadium = null) {
   // 1. If row is explicitly covered (roof/overhang), return 100% shade
   if (row.covered === true) {
     return {
@@ -164,8 +176,8 @@ function calculateRowShadow(row, section, sunAltitude, sunAzimuth, stadiumOrient
     sunAzimuth
   );
 
-  // 6. Calculate roof shadow (if section has fixed roof)
-  const roofShadow = section.covered ? 100 : 0;
+  // 6. Calculate roof shadow (check stadium-level roof type, not just section.covered)
+  const roofShadow = (stadium && stadium.roof === 'fixed') ? 100 : (section.covered ? 100 : 0);
 
   // 7. Bowl shadow (minimal, only for very low sun)
   const bowlShadow = sunAltitude < 15 ? (15 - sunAltitude) * 3 : 0;
@@ -278,7 +290,7 @@ function calculateUpperDeckShadowForRow(rowElevation, rowDepth, section, sunAlti
   return 0;
 }
 
-function calculateRowShadows(section, sunAltitude, sunAzimuth, stadiumOrientation = 0) {
+function calculateRowShadows(section, sunAltitude, sunAzimuth, stadiumOrientation = 0, stadium = null) {
   // If no rows, return empty
   if (!section.rows || section.rows.length === 0) {
     return {
@@ -293,7 +305,7 @@ function calculateRowShadows(section, sunAltitude, sunAzimuth, stadiumOrientatio
 
   // Calculate shadow for each row
   const rowShadows = section.rows.map(row =>
-    calculateRowShadow(row, section, sunAltitude, sunAzimuth, stadiumOrientation)
+    calculateRowShadow(row, section, sunAltitude, sunAzimuth, stadiumOrientation, stadium)
   );
 
   // Calculate section average
