@@ -386,18 +386,9 @@ export default function StickyTopNav() {
               </Link>
 
               <Link
-                href="/#app-section"
+                href="/#shade-finder"
                 className="nav-link-primary"
-                onClick={() => {
-                  closeMobileMenu();
-                  // Trigger the stadium selector to show
-                  if (typeof window !== 'undefined') {
-                    setTimeout(() => {
-                      const button = document.querySelector('.hero-cta-button') as HTMLButtonElement;
-                      if (button) button.click();
-                    }, 100);
-                  }
-                }}
+                onClick={closeMobileMenu}
               >
                 🎯 Shade Finder Tool
               </Link>

@@ -6,10 +6,6 @@ import { SearchIcon } from '../Icons';
 import { ALL_UNIFIED_VENUES } from '../../data/unifiedVenues';
 import Link from 'next/link';
 
-interface HeroSectionProps {
-  onGetStarted?: () => void;
-}
-
 const POPULAR_VENUES = [
   { id: 'yankees', label: 'Yankees' },
   { id: 'dodgers', label: 'Dodgers' },
@@ -19,7 +15,7 @@ const POPULAR_VENUES = [
   { id: 'braves', label: 'Braves' },
 ];
 
-export const HeroSection: React.FC<HeroSectionProps> = ({ onGetStarted }) => {
+export const HeroSection: React.FC = () => {
   const router = useRouter();
   const [searchQuery, setSearchQuery] = useState('');
   const [showDropdown, setShowDropdown] = useState(false);
@@ -118,33 +114,24 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onGetStarted }) => {
 
         {/* Browse links */}
         <div className="hero-browse">
-          <Link href="/mlb" className="hero-browse-link">MLB</Link>
+          <Link href="/league/mlb" className="hero-browse-link">MLB</Link>
           <span className="hero-browse-divider">|</span>
-          <Link href="/nfl" className="hero-browse-link">NFL</Link>
+          <Link href="/league/nfl" className="hero-browse-link">NFL</Link>
           <span className="hero-browse-divider">|</span>
-          <Link href="/world-cup-2026" className="hero-browse-link">World Cup 2026</Link>
+          <Link href="/worldcup2026" className="hero-browse-link">World Cup 2026</Link>
           <span className="hero-browse-divider">|</span>
-          <Link href="/milb" className="hero-browse-link">MiLB</Link>
+          <Link href="/league/milb" className="hero-browse-link">MiLB</Link>
         </div>
 
         <div className="hero-cta-group">
-          <button
-            onClick={() => {
-              if (onGetStarted) {
-                onGetStarted();
-              } else {
-                const appElement = document.getElementById('app-section');
-                if (appElement) {
-                  appElement.scrollIntoView({ behavior: 'smooth' });
-                }
-              }
-            }}
+          <a
+            href="#shade-finder"
             className="hero-cta-primary"
-            aria-label="Get started finding shaded seats"
+            aria-label="Find your shade at any stadium"
           >
             <SearchIcon size={20} color="currentColor" />
-            <span>Browse All Stadiums</span>
-          </button>
+            <span>Find Your Shade</span>
+          </a>
         </div>
 
         <div className="hero-stats">

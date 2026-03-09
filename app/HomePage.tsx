@@ -1,14 +1,12 @@
 // Server Component - Statically generated at build time
-import { Suspense } from 'react';
 import PWAInstallPrompt from '../components/PWAInstallPrompt';
-import { HomePageSkeleton } from '../src/components/SkeletonScreens';
 import { ErrorBoundary } from '../src/components/ErrorBoundary';
 import HomepageSchema from './HomepageSchema';
 import Link from 'next/link';
 import { HeroSection } from '../src/components/HeroSection/HeroSection';
 import { HowItWorks } from '../src/components/HowItWorks/HowItWorks';
 import { WorldCupShowcase } from '../src/components/WorldCupShowcase/WorldCupShowcase';
-import VenueDataProvider from '../components/VenueDataProvider';
+import { ShadeFinder } from '../src/components/ShadeFinder/ShadeFinder';
 import { TodaysGames } from '../src/components/TodaysGames/TodaysGames';
 
 const POPULAR_STADIUMS = [
@@ -25,16 +23,19 @@ export default function HomePage() {
     <>
       <HomepageSchema />
       <main>
-        {/* Hero Section - Client Component but minimal JS */}
+        {/* Hero Section — CTA scrolls to #shade-finder */}
         <HeroSection />
 
-        {/* How It Works - Can be Server Component */}
-        <HowItWorks />
+        {/* Guided Shade Finder — league → stadium → go */}
+        <ShadeFinder />
 
         {/* Today's Games */}
         <ErrorBoundary level="section">
           <TodaysGames />
         </ErrorBoundary>
+
+        {/* How It Works — educational, below interactive content */}
+        <HowItWorks />
 
         {/* Popular Stadiums */}
         <section style={{ padding: '2rem 1rem', background: '#f8fafc' }}>
@@ -61,10 +62,10 @@ export default function HomePage() {
           </div>
         </section>
 
-        {/* World Cup Showcase - Can be Server Component */}
+        {/* World Cup Showcase */}
         <WorldCupShowcase openingMatchDate={new Date('2026-06-11T12:00:00-07:00')} />
 
-        {/* SEO Content - Server rendered */}
+        {/* SEO Content — Server rendered */}
         <div className="sr-only">
           <h2>Find Shaded Seats at MLB, MiLB & NFL Stadiums - Are My Seats in the Shade?</h2>
           <p>
@@ -89,15 +90,6 @@ export default function HomePage() {
             game time to see which sections are shaded. Our advanced calculations consider sun angle, stadium
             orientation, roof coverage, and time of day to show you exactly where the shade will be during your game.
           </p>
-        </div>
-
-        {/* Venue Selector - Server fetches data, client handles interaction */}
-        <div id="app-section">
-          <ErrorBoundary level="section">
-            <Suspense fallback={<HomePageSkeleton />}>
-              <VenueDataProvider />
-            </Suspense>
-          </ErrorBoundary>
         </div>
 
         <PWAInstallPrompt />

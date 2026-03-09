@@ -1,51 +1,38 @@
-# Site Audit: Shade Calculation Fixes & UX Improvements
+# Find Your Shade UX Overhaul
 
-## Phase 1: Calculation Bug Fixes
-
-- [x] **1.1** Fix double-counting stadiumOrientation in `calculateRowShadow()` — remove `+ stadiumOrientation` from sectionAngle calc in both `sunCalculator.ts:523` and `sunCalculations.worker.js:154`
-- [x] **1.2** Fix retractable roof logic — update comment in `sunCalculator.ts:283-298`, replace flat `-15` penalty in worker with overhang-based shadow calc
-- [x] **1.3** Fix worker `calculateUpperDeckShadowForRow()` — add `stadium` param, use `stadium.upperDeckHeight`/`stadium.upperDeckOverhang` when available
-- [x] **1.4** Remove `console.log` in `StadiumPageClient.tsx:57-62`
-- [x] **1.5** Add `@deprecated` to dead `calculateSunnySections` function in `sunCalculations.ts:73-142`
-
-## Phase 2: UX Improvements
-
-- [x] **2.1** Reorder stadium page: Shade Summary > Diagram > FindMyShade > Recommendations > Guide > DataFreshness
-- [x] **2.2** Create `ShadeSummaryBanner.tsx` — compact at-a-glance shade stats from existing shadeData
-- [x] **2.3** Enhance tooltip on diagram — reorder text, add SVG drop shadow filter, increase tooltip rect size
-- [x] **2.4** Default time slider to current hour if daytime (10–21), else 13
-- [x] **2.5** Add shade timeline to `SectionDetailSheet` — 3-block timeline at game start, +1.5hr, +3hr
-
-## Phase 3: Minor Polish
-
-- [x] **3.1** Update FindMyShade trigger text to "Find My Perfect Shade Seat"
+## Tasks
+- [x] Task 1: Fix broken hero browse links (`/mlb` → `/league/mlb`, etc.)
+- [x] Task 2: Fix broken "Shade Finder Tool" nav link in StickyTopNav
+- [x] Task 3: Build guided ShadeFinder component (league → stadium → go)
+- [x] Task 4: Change hero CTA to scroll to `#shade-finder`
+- [x] Task 5: Replace VenueSelector with ShadeFinder on homepage, reorder sections
+- [x] Task 6: Add CTA to HowItWorks section
+- [x] Task 7: CSS cleanup — rename dead `.hero-cta-button` references
+- [x] Bonus: Fix HeroSection test file (removed `onGetStarted` prop)
 
 ## Review
 
 ### Changes Summary
 
 **New file (1):**
-1. `src/components/ShadeSummaryBanner.tsx` — Compact at-a-glance shade banner showing average shade score, % of sections in shade, best shade section, and sun direction. Derived from existing `shadeData` array with no new API calls.
+1. `src/components/ShadeFinder/ShadeFinder.tsx` — Guided 2-step picker: league buttons (2x2 mobile, 4-across desktop) → searchable stadium dropdown → Go button navigates to `/stadium/{id}` or `/venue/{id}`. Uses existing `getVenuesByLeague()` data. Styled with JSX CSS, mobile-first, 48px touch targets, reduced-motion support.
 
 **Modified files (7):**
 
-1. `src/utils/sunCalculator.ts` — **Bug fix:** Removed `+ stadiumOrientation` from `calculateRowShadow()` sectionAngle (baseAngle is already absolute). **Bug fix:** Clarified retractable roof comment to document OPEN model (was misleading "assume closed").
+1. `src/components/HeroSection/HeroSection.tsx` — Fixed 4 broken browse hrefs (`/mlb` → `/league/mlb`, `/nfl` → `/league/nfl`, `/world-cup-2026` → `/worldcup2026`, `/milb` → `/league/milb`). Changed CTA from `<button>` scrolling to `#app-section` to `<a href="#shade-finder">` with text "Find Your Shade". Removed unused `onGetStarted` prop and `HeroSectionProps` interface.
 
-2. `public/workers/sunCalculations.worker.js` — **Bug fix:** Removed `+ stadiumOrientation` from `calculateRowShadow()` (parity with TS). **Bug fix:** Replaced flat `-15` retractable roof penalty with proper overhang trig matching `sunCalculator.ts`. **Bug fix:** Added `stadium` param to `calculateUpperDeckShadowForRow()` to use real `upperDeckHeight`/`upperDeckOverhang` instead of always falling back to heuristic.
+2. `components/StickyTopNav.tsx` — Changed "Shade Finder Tool" link from `/#app-section` to `/#shade-finder`. Removed broken `setTimeout`/`querySelector('.hero-cta-button')` hack.
 
-3. `app/stadium/[stadiumId]/StadiumPageClient.tsx` — Removed debug `console.log`. Added `ShadeSummaryBanner` import + rendering. Reordered page: Banner > Diagram > FindMyShade > Recommendations > Guide > DataFreshness. Added `getDefaultGameHour()` for smart time default. Passed new shade timeline props to `SectionDetailSheet`.
+3. `app/HomePage.tsx` — Replaced `VenueDataProvider` + `#app-section` with `ShadeFinder` component. Removed `Suspense`, `HomePageSkeleton`, `VenueDataProvider` imports. Reordered: Hero → ShadeFinder → TodaysGames → HowItWorks → Popular Stadiums → WorldCup.
 
-4. `src/utils/sunCalculations.ts` — Added `@deprecated` JSDoc to `calculateSunnySections()` pointing to `calculateDetailedSectionSunExposure`.
+4. `src/components/HowItWorks/HowItWorks.tsx` — Added "Find Your Shade" `<a href="#shade-finder">` CTA button below methodology paragraph with gradient styling.
 
-5. `src/components/StadiumDiagram/SectionPolygon.tsx` — Tooltip reordered: shade % shown first and larger. Tooltip rect widened (40→50) and taller (22→26). Uses `filter="url(#tooltip-shadow)"` for drop shadow.
+5. `app/critical-styles-inline.tsx` — Renamed `.hero-cta-button` → `.hero-cta-primary` (2 occurrences).
 
-6. `src/components/StadiumDiagram/StadiumDiagram.tsx` — Added `<defs>` with `<filter id="tooltip-shadow">` SVG drop shadow.
+6. `src/styles/mobile-optimizations.css` — Renamed `.hero-cta-button` → `.hero-cta-primary` (1 occurrence).
 
-7. `src/components/SectionDetailSheet.tsx` — Added shade timeline: 3 blocks showing shade % at game start, +1.5hr, +3hr. Uses `getSunPosition()` + section angle for each time point. New optional props: `gameHour`, `stadiumLat`, `stadiumLng`, `stadiumTimezone`, `sectionBaseAngle`.
-
-8. `src/components/FindMyShade/FindMyShadeWizard.tsx` — Trigger text updated to "Find My Perfect Shade Seat".
+7. `src/components/HeroSection/__tests__/HeroSection.test.tsx` — Updated tests: removed `onGetStarted` prop, changed CTA assertions from `getByRole('button')` to `getByRole('link')` with `href="#shade-finder"`.
 
 ### Verification
 - `npx tsc --noEmit` — zero TypeScript errors
-- `npm run build` — production build succeeds (548 files compressed)
-- Audit confirmed worker ↔ TS parity on all 3 critical calculation fixes
+- `npm run build` — production build succeeds (536 files compressed)
