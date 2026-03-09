@@ -279,10 +279,9 @@ export class SunCalculator {
       return 100; // Covered sections provide COMPLETE protection from direct sun
     }
     
-    // For retractable roofs when closed, all sections are covered
+    // For retractable roofs, model as OPEN (typical for fair-weather MLB games).
+    // The retracted roof panels still cast overhang shadow from structural edges.
     if (this.stadium.roof === 'retractable') {
-      // Assume roof is closed for this calculation (can be made dynamic later)
-      // For now, check if there's overhang shadow for open roof scenario
       if (this.stadiumGeometry.roofOverhang && sunAltitude > 0) {
         // Calculate shadow cast by roof overhang
         const shadowLength = this.stadiumGeometry.roofHeight / Math.tan(sunAltitude * Math.PI / 180);
@@ -520,7 +519,8 @@ export function calculateRowShadow(
   }
 
   // 2. Calculate base sun exposure based on section angle
-  const sectionAngle = (section.baseAngle || 0) + stadiumOrientation;
+  // baseAngle is already in absolute compass coordinates — do NOT add stadiumOrientation
+  const sectionAngle = section.baseAngle || 0;
   const angleDiff = Math.abs(((sectionAngle - sunAzimuth + 180) % 360) - 180);
   let baseSunExposure = Math.max(0, 100 - angleDiff);
 

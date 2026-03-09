@@ -15,6 +15,19 @@ import { ReportInaccuracyButton } from '../../../src/components/ReportInaccuracy
 import { TimeSlider } from '../../../src/components/TimeSlider/TimeSlider';
 import { FindMyShadeWizard } from '../../../src/components/FindMyShade/FindMyShadeWizard';
 import { SectionDetailSheet } from '../../../src/components/SectionDetailSheet';
+import { ShadeSummaryBanner } from '../../../src/components/ShadeSummaryBanner';
+
+// Smart default: current hour if daytime (10 AM–9 PM), else 1 PM
+function getDefaultGameHour(): number {
+  const now = new Date();
+  const h = now.getHours();
+  const m = now.getMinutes();
+  if (h >= 10 && h <= 21) {
+    // Round to nearest half-hour
+    return h + (m >= 30 ? 0.5 : 0);
+  }
+  return 13;
+}
 
 const ComprehensiveStadiumGuide = dynamic(
   () => import('../../../src/components/ComprehensiveStadiumGuide'),
@@ -50,16 +63,9 @@ export default function StadiumPageClient({
   const [refreshKey, setRefreshKey] = useState(0);
   const [selectedSectionId, setSelectedSectionId] = useState<string | undefined>(undefined);
   const [showReportModal, setShowReportModal] = useState(false);
-  const [gameHour, setGameHour] = useState(13);
+  const [gameHour, setGameHour] = useState(getDefaultGameHour);
   const [mobileSheetSection, setMobileSheetSection] = useState<string | null>(null);
   const sectionListRef = useRef<HTMLDivElement>(null);
-
-  // Debug: Log what's being rendered
-  console.log('StadiumPageClient rendering:', {
-    stadiumId: stadium?.id,
-    useComprehensive,
-    hasGuide: !!guide
-  });
 
   // Calculate sun position based on selected game hour
   const sunPosition = useMemo(() => {
@@ -174,54 +180,17 @@ export default function StadiumPageClient({
         progress={pullToRefresh.progress}
       />
 
-      {/* Stadium Guide - with smaller loading state */}
-      <div className="stadium-guide-wrapper">
-        <Suspense fallback={
-          <div className="flex justify-center items-center p-8">
-            <LoadingSpinner message="Loading stadium guide..." />
-          </div>
-        }>
-          <ComprehensiveStadiumGuide
-            stadiumId={stadium.id}
-          />
-        </Suspense>
-      </div>
-
-      {/* Data Freshness Indicator */}
-      <div className="container mx-auto px-4 mt-6 max-w-5xl">
-        <DataFreshness
-          lastUpdated={getStadiumLastUpdated(stadium.id) || undefined}
-          stadiumName={stadium.name}
-          showReportLink={true}
-          onReportClick={() => setShowReportModal(true)}
-        />
-      </div>
-
-      {/* Report Inaccuracy Button - Floating on mobile, inline on desktop */}
-      <div className="container mx-auto px-4 mt-4 max-w-5xl">
-        <div className="flex justify-end">
-          <ReportInaccuracyButton
-            stadiumId={stadium.id}
-            stadiumName={stadium.name}
-            variant="secondary"
-            size="md"
+      {/* 1. Shade Summary Banner — at-a-glance shade stats */}
+      {shadeData.length > 0 && (
+        <div className="container mx-auto px-4 mt-6 max-w-5xl">
+          <ShadeSummaryBanner
+            shadeData={shadeData}
+            sunAzimuthDegrees={sunPosition.azimuthDegrees}
           />
         </div>
-      </div>
+      )}
 
-      {/* Find My Shade Wizard */}
-      <div className="container mx-auto px-4 mt-6 max-w-5xl">
-        <FindMyShadeWizard
-          stadiumId={stadium.id}
-          onViewOnMap={(sectionId) => {
-            setSelectedSectionId(sectionId);
-            const diagramEl = document.querySelector('.stadium-diagram-wrapper');
-            if (diagramEl) diagramEl.scrollIntoView({ behavior: 'smooth', block: 'start' });
-          }}
-        />
-      </div>
-
-      {/* Stadium Diagram - Skeleton while loading */}
+      {/* 2. Time Slider + Stadium Diagram — the core interactive map */}
       {(!stadiumCompleteData || stadiumCompleteData.sections.length === 0) && (
         <div className="stadium-diagram-wrapper mt-8 mb-8">
           <div style={{
@@ -237,7 +206,6 @@ export default function StadiumPageClient({
         </div>
       )}
 
-      {/* Stadium Diagram - Interactive shade visualization */}
       {stadiumCompleteData && stadiumCompleteData.sections.length > 0 && (
         <div className="stadium-diagram-wrapper mt-8 mb-8">
           <div className="diagram-header mb-4">
@@ -275,7 +243,19 @@ export default function StadiumPageClient({
         </div>
       )}
 
-      {/* AI Seat Recommendations Section - Outside Suspense */}
+      {/* 3. Find My Shade Wizard */}
+      <div className="container mx-auto px-4 mt-6 max-w-5xl">
+        <FindMyShadeWizard
+          stadiumId={stadium.id}
+          onViewOnMap={(sectionId) => {
+            setSelectedSectionId(sectionId);
+            const diagramEl = document.querySelector('.stadium-diagram-wrapper');
+            if (diagramEl) diagramEl.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          }}
+        />
+      </div>
+
+      {/* 4. AI Seat Recommendations */}
       <div className="mt-8" style={{ display: 'block' }} ref={sectionListRef}>
         {isCalculating ? (
           <div className="flex justify-center items-center p-8">
@@ -310,6 +290,40 @@ export default function StadiumPageClient({
         )}
       </div>
 
+      {/* 5. Comprehensive Stadium Guide — moved below interactive content */}
+      <div className="stadium-guide-wrapper">
+        <Suspense fallback={
+          <div className="flex justify-center items-center p-8">
+            <LoadingSpinner message="Loading stadium guide..." />
+          </div>
+        }>
+          <ComprehensiveStadiumGuide
+            stadiumId={stadium.id}
+          />
+        </Suspense>
+      </div>
+
+      {/* 6. Data Freshness + Report Inaccuracy — bottom of page */}
+      <div className="container mx-auto px-4 mt-6 max-w-5xl">
+        <DataFreshness
+          lastUpdated={getStadiumLastUpdated(stadium.id) || undefined}
+          stadiumName={stadium.name}
+          showReportLink={true}
+          onReportClick={() => setShowReportModal(true)}
+        />
+      </div>
+
+      <div className="container mx-auto px-4 mt-4 max-w-5xl">
+        <div className="flex justify-end">
+          <ReportInaccuracyButton
+            stadiumId={stadium.id}
+            stadiumName={stadium.name}
+            variant="secondary"
+            size="md"
+          />
+        </div>
+      </div>
+
       {/* Mobile Section Detail Bottom Sheet */}
       {mobileSheetSection && (() => {
         const shadeEntry = shadeData.find(d => d.sectionId === mobileSheetSection);
@@ -322,6 +336,11 @@ export default function StadiumPageClient({
             sectionName={sectionInfo?.name || mobileSheetSection}
             shadePercentage={shadeEntry?.shadePercentage ?? 50}
             rowData={sectionRowData}
+            gameHour={gameHour}
+            stadiumLat={stadium.latitude}
+            stadiumLng={stadium.longitude}
+            stadiumTimezone={stadium.timezone}
+            sectionBaseAngle={sectionInfo?.baseAngle}
             onSeeDetails={() => {
               setMobileSheetSection(null);
               if (sectionListRef.current) {

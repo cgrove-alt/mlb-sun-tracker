@@ -122,9 +122,22 @@ function getSectionSunExposure(section, sunElevation, sunAzimuth, stadium) {
 
   let exposure = elevationFactor * angleFactor * levelMultiplier * middayBoost * coverageReduction * 100;
 
-  // Retractable roof structural shade (matches getUnifiedVenueShade.ts:201)
+  // Retractable roof: model as OPEN (typical for fair-weather MLB games).
+  // Retracted roof panels still cast overhang shadow from structural edges.
   if (stadium && stadium.roof === 'retractable') {
-    exposure = Math.max(0, exposure - 15);
+    const roofHeight = stadium.roofHeight || 150;
+    const roofOverhang = stadium.roofOverhang || 50;
+    if (roofOverhang > 0 && sunElevation > 0) {
+      const shadowLength = roofHeight / Math.tan(sunElevation * Math.PI / 180);
+      if (shadowLength > 0 && shadowLength <= roofOverhang) {
+        // Full shadow from overhang — zero out exposure
+        exposure = 0;
+      } else if (shadowLength > 0 && shadowLength < roofOverhang * 2) {
+        // Partial shadow from overhang
+        const reduction = Math.max(50, 100 - ((shadowLength - roofOverhang) / roofOverhang) * 50);
+        exposure = Math.max(0, exposure * (1 - reduction / 100));
+      }
+    }
   }
 
   return Math.round(Math.max(0, Math.min(100, exposure)));
@@ -151,7 +164,8 @@ function calculateRowShadow(row, section, sunAltitude, sunAzimuth, stadiumOrient
   }
 
   // 2. Calculate base sun exposure based on section angle
-  const sectionAngle = (section.baseAngle || 0) + stadiumOrientation;
+  // baseAngle is already in absolute compass coordinates — do NOT add stadiumOrientation
+  const sectionAngle = section.baseAngle || 0;
   const angleDiff = Math.abs(((sectionAngle - sunAzimuth + 180) % 360) - 180);
   let baseSunExposure = Math.max(0, 100 - angleDiff);
 
@@ -173,7 +187,8 @@ function calculateRowShadow(row, section, sunAltitude, sunAzimuth, stadiumOrient
     row.depth,
     section,
     sunAltitude,
-    sunAzimuth
+    sunAzimuth,
+    stadium
   );
 
   // 6. Calculate roof shadow (check stadium-level roof type, not just section.covered)
@@ -245,14 +260,14 @@ function calculateOverhangShadow(rowDepth, overhangHeight, sunAltitude) {
   return 0;
 }
 
-function calculateUpperDeckShadowForRow(rowElevation, rowDepth, section, sunAltitude, sunAzimuth) {
+function calculateUpperDeckShadowForRow(rowElevation, rowDepth, section, sunAltitude, sunAzimuth, stadium) {
   // Only lower/field level sections get upper deck shadow
   if (section.level === 'upper' || section.level === 'suite') {
     return 0;
   }
 
-  // Upper deck typical height: 40-60 feet above field
-  const upperDeckHeight = (section.height || 0) + 40;
+  // Use real stadium geometry when available, fall back to heuristic
+  const upperDeckHeight = (stadium && stadium.upperDeckHeight) || ((section.height || 0) + 40);
   const heightDifference = upperDeckHeight - rowElevation;
 
   // If row is higher than or equal to upper deck, no shadow
@@ -263,7 +278,10 @@ function calculateUpperDeckShadowForRow(rowElevation, rowDepth, section, sunAlti
 
   // Calculate shadow length from upper deck
   const sunAltitudeRad = sunAltitude * Math.PI / 180;
-  const shadowLength = heightDifference / Math.tan(sunAltitudeRad);
+  const trigShadowLength = heightDifference / Math.tan(sunAltitudeRad);
+  // Add physical overhang distance to trigonometric shadow reach
+  const overhangOffset = (stadium && stadium.upperDeckOverhang) || 0;
+  const shadowLength = trigShadowLength + overhangOffset;
 
   // Check if section is behind home plate (gets more upper deck shadow)
   const sectionAngle = section.baseAngle || 0;

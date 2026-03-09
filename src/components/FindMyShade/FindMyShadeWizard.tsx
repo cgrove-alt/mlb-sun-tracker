@@ -72,7 +72,7 @@ export const FindMyShadeWizard: React.FC<FindMyShadeWizardProps> = ({
         aria-expanded={isOpen}
         aria-controls="find-my-shade-wizard"
       >
-        <span>Find My Shade</span>
+        <span>Find My Perfect Shade Seat</span>
         <span className={`${styles.triggerIcon} ${isOpen ? styles.triggerIconOpen : ''}`}>
           {isOpen ? '▲' : '▼'}
         </span>

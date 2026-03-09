@@ -111,6 +111,13 @@ export const StadiumDiagram: React.FC<StadiumDiagramProps> = ({
         role="img"
         aria-label="Interactive stadium seating diagram showing shade coverage"
       >
+        {/* SVG filters */}
+        <defs>
+          <filter id="tooltip-shadow" x="-20%" y="-20%" width="140%" height="140%">
+            <feDropShadow dx="0" dy="1" stdDeviation="1.5" floodOpacity="0.2" />
+          </filter>
+        </defs>
+
         {/* Field outline (center reference) */}
         <circle
           cx="0"

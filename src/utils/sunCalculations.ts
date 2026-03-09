@@ -69,6 +69,10 @@ export function getSunTimes(date: Date, latitude: number, longitude: number) {
   return SunCalc.getTimes(date, latitude, longitude);
 }
 
+/**
+ * @deprecated Use `calculateDetailedSectionSunExposure` instead. This function uses a hardcoded
+ * list of 9 generic sections that don't match real stadium layouts and produces inaccurate results.
+ */
 // Calculate which sections of the stadium will be in sun
 export function calculateSunnySections(
   stadium: Stadium,

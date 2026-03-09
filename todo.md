@@ -1,99 +1,51 @@
-# UX Improvements & Shade Score System - Implementation Plan
+# Site Audit: Shade Calculation Fixes & UX Improvements
 
-## Phase 1: Foundation
+## Phase 1: Calculation Bug Fixes
 
-### Task 1: Shade Score Utility
-- [x] 1.1 Create `src/utils/shadeScore.ts` with `ShadeScoreResult` interface
-- [x] 1.2 Implement `calculateShadeScore(sunExposure)` — converts 0-100 sun exposure to 1-10 score
-- [x] 1.3 Define `SHADE_SCORE_BANDS` constant array (10 bands with label, color, emoji, recommendation)
-- [x] 1.4 Implement `calculateStadiumShadeScore()` — averages section exposures
-- [x] 1.5 Implement `calculateGameShadeScore()` — averages time samples
-- [x] 1.6 Implement `getShadeScoreColor(score)` and `getShadeScoreTextColor(score)` for WCAG AA
-- [x] 1.7 Verify TypeScript compiles clean
+- [x] **1.1** Fix double-counting stadiumOrientation in `calculateRowShadow()` — remove `+ stadiumOrientation` from sectionAngle calc in both `sunCalculator.ts:523` and `sunCalculations.worker.js:154`
+- [x] **1.2** Fix retractable roof logic — update comment in `sunCalculator.ts:283-298`, replace flat `-15` penalty in worker with overhang-based shadow calc
+- [x] **1.3** Fix worker `calculateUpperDeckShadowForRow()` — add `stadium` param, use `stadium.upperDeckHeight`/`stadium.upperDeckOverhang` when available
+- [x] **1.4** Remove `console.log` in `StadiumPageClient.tsx:57-62`
+- [x] **1.5** Add `@deprecated` to dead `calculateSunnySections` function in `sunCalculations.ts:73-142`
 
-## Phase 2: Features (parallel)
+## Phase 2: UX Improvements
 
-### Task 2: Find My Shade Wizard
-- [x] 2.1 Create `FindMyShade.module.css` — collapsible card, step layout, mobile-first
-- [x] 2.2 Create `StepGameTime.tsx` — date input + time select (default: today 1 PM)
-- [x] 2.3 Create `StepShadePreference.tsx` — 3 large tappable buttons mapping to UserPreferences.sunPreference
-- [x] 2.4 Create `StepBudget.tsx` — 3 price tier buttons (Value / Mid-Range / Premium)
-- [x] 2.5 Create `WizardResults.tsx` — calls recommendSeats(), shows top 3 with Shade Score badge
-- [x] 2.6 Create `FindMyShadeWizard.tsx` — 4-step state machine, collapsible card container
-- [x] 2.7 Wire wizard into `StadiumPageClient.tsx` above diagram section
+- [x] **2.1** Reorder stadium page: Shade Summary > Diagram > FindMyShade > Recommendations > Guide > DataFreshness
+- [x] **2.2** Create `ShadeSummaryBanner.tsx` — compact at-a-glance shade stats from existing shadeData
+- [x] **2.3** Enhance tooltip on diagram — reorder text, add SVG drop shadow filter, increase tooltip rect size
+- [x] **2.4** Default time slider to current hour if daytime (10–21), else 13
+- [x] **2.5** Add shade timeline to `SectionDetailSheet` — 3-block timeline at game start, +1.5hr, +3hr
 
-### Task 3: Interactive Shade Map Overhaul
-- [x] 3.1 Create `TimeSlider.tsx` + `TimeSlider.module.css` — range input, 30-min steps, ARIA, debounced onChange
-- [x] 3.2 Wire time state into `StadiumPageClient.tsx` — replace hardcoded `setHours(13)` with `gameHour` state
-- [x] 3.3 Add Shade Score to tooltips in `SectionPolygon.tsx`
-- [x] 3.4 Add sun direction arrow to `StadiumDiagram.tsx` — new `sunAzimuthDegrees` prop
-- [x] 3.5 Update `ShadeColorScale.tsx` — 10-band legend using `SHADE_SCORE_BANDS`
-- [x] 3.6 Update `SectionPolygon.tsx` colors to use 10-band `getShadeScoreColor()`
-- [x] 3.7 Replace diagram hide with loading overlay in `StadiumPageClient.tsx`
+## Phase 3: Minor Polish
 
-### Task 4: Homepage Improvements
-- [x] 4.1 Add search bar to `HeroSection.tsx` — venue search with dropdown, popular chips, browse links
-- [x] 4.2 Create `TodaysGames.tsx` — horizontal scrollable cards using MLBApiService.getSchedule()
-- [x] 4.3 Add TodaysGames + Popular Stadiums grid to `HomePage.tsx`
-
-## Phase 3: Polish
-
-### Task 5: Mobile Refinements
-- [x] 5.1 Create `SectionDetailSheet.tsx` — mobile bottom sheet for section tap (reuse MobileFilterSheet pattern)
-- [x] 5.2 Wire bottom sheet into `StadiumPageClient.tsx` on mobile section click
-- [x] 5.3 Wizard steps are full-width with 48px+ touch targets (built into CSS module)
-- [x] 5.4 TimeSlider 44px thumb on mobile (built into CSS module)
-
-### Task 6: Loading States
-- [x] 6.1 Add skeleton placeholder for diagram before data loads
-- [x] 6.2 Add skeleton for TodaysGames while API loads (built into component)
-
-### Task 7: Accessibility
-- [x] 7.1 Enhanced ARIA labels on `SectionPolygon.tsx` — "Section X, Shade Score Y out of 10, Z% shade"
-- [x] 7.2 Wizard uses fieldset/legend for step form groups, radio groups for preferences
-- [x] 7.3 aria-live region in SeatRecommendationsSection for shade summary
-- [x] 7.4 Non-color text labels ("Score: 8") on all Shade Score badges in tooltips and results
-
-## Shade Calculation Bug Fixes
-- [x] Bug 1: Worker `calculateDetailedSectionSunExposure()` now checks `stadium.roof === 'fixed'` and returns 0 exposure
-- [x] Bug 2: Worker `getSectionSunExposure()` now accepts `stadium` param, checks fixed roof, applies -15 retractable shade
-- [x] Bug 3: `stadium` threaded through `calculateRowShadows()` → `calculateRowShadow()`, roof shadow checks stadium-level roof type
-- [x] Bug 4: `convertToLegacyStadium()` now includes `roofOverhang` field
-- [x] Bug 5: `generateGenericSections()` only marks `covered: true` for `fixed` roof (not `retractable`)
-- [x] Production build passes
-
-## Final
-- [x] TypeScript check passes (`npx tsc --noEmit`)
-- [x] Production build succeeds (`npm run build`)
-
----
+- [x] **3.1** Update FindMyShade trigger text to "Find My Perfect Shade Seat"
 
 ## Review
 
 ### Changes Summary
 
-**New files (11):**
-1. `src/utils/shadeScore.ts` — Universal 1-10 Shade Score system with `calculateShadeScore()`, `SHADE_SCORE_BANDS`, color utilities, and WCAG-compliant text colors
-2. `src/components/TimeSlider/TimeSlider.tsx` — Range slider for game time (30-min steps), debounced, ARIA slider role, keyboard navigation (Home/End/Arrow)
-3. `src/components/TimeSlider/TimeSlider.module.css` — Sunrise-to-sunset gradient track, 44px mobile touch thumb, touch-action: none
-4. `src/components/FindMyShade/FindMyShadeWizard.tsx` — 4-step state machine in collapsible card (game time, shade pref, budget, results)
-5. `src/components/FindMyShade/StepGameTime.tsx` — Date input + time select with fieldset/legend
-6. `src/components/FindMyShade/StepShadePreference.tsx` — 3 tappable buttons (Maximum Shade / Some Shade / Don't Care) with radio group ARIA
-7. `src/components/FindMyShade/StepBudget.tsx` — 4 tappable buttons (Value / Mid-Range / Premium / Any)
-8. `src/components/FindMyShade/WizardResults.tsx` — Calls SeatRecommendationEngine, shows top 3 with Shade Score badge + "View on Map" button
-9. `src/components/FindMyShade/FindMyShade.module.css` — Mobile-first layout, 48px+ touch targets, responsive grid
-10. `src/components/TodaysGames/TodaysGames.tsx` — Horizontal scrollable game cards from MLBApiService, Shade Score badges, skeleton loading
-11. `src/components/SectionDetailSheet.tsx` — Mobile bottom sheet with swipe-to-close, Shade Score badge, sun exposure bar, best rows
+**New file (1):**
+1. `src/components/ShadeSummaryBanner.tsx` — Compact at-a-glance shade banner showing average shade score, % of sections in shade, best shade section, and sun direction. Derived from existing `shadeData` array with no new API calls.
 
-**Modified files (6):**
-1. `app/stadium/[stadiumId]/StadiumPageClient.tsx` — Added gameHour state replacing hardcoded 1 PM, TimeSlider above diagram, FindMyShadeWizard, loading overlay instead of hide, diagram skeleton, mobile bottom sheet on section click
-2. `src/components/StadiumDiagram/SectionPolygon.tsx` — Switched from 5-band getShadeColor() to 10-band getShadeScoreColor(), added Shade Score badge in tooltip, enhanced ARIA labels with score out of 10
-3. `src/components/StadiumDiagram/StadiumDiagram.tsx` — Added sunAzimuthDegrees prop, sun direction arrow with compass label on SVG border
-4. `src/components/StadiumDiagram/ShadeColorScale.tsx` — Switched from 5-band SHADE_COLORS to 10-band SHADE_SCORE_BANDS with score numbers
-5. `src/components/HeroSection/HeroSection.tsx` — Added search bar with venue filter dropdown, popular stadium chips, browse league links
-6. `app/HomePage.tsx` — Added TodaysGames section and Popular Stadiums grid between HowItWorks and WorldCupShowcase
-7. `src/components/SeatRecommendationsSection.tsx` — Added aria-live polite region announcing shade analysis summary
+**Modified files (7):**
+
+1. `src/utils/sunCalculator.ts` — **Bug fix:** Removed `+ stadiumOrientation` from `calculateRowShadow()` sectionAngle (baseAngle is already absolute). **Bug fix:** Clarified retractable roof comment to document OPEN model (was misleading "assume closed").
+
+2. `public/workers/sunCalculations.worker.js` — **Bug fix:** Removed `+ stadiumOrientation` from `calculateRowShadow()` (parity with TS). **Bug fix:** Replaced flat `-15` retractable roof penalty with proper overhang trig matching `sunCalculator.ts`. **Bug fix:** Added `stadium` param to `calculateUpperDeckShadowForRow()` to use real `upperDeckHeight`/`upperDeckOverhang` instead of always falling back to heuristic.
+
+3. `app/stadium/[stadiumId]/StadiumPageClient.tsx` — Removed debug `console.log`. Added `ShadeSummaryBanner` import + rendering. Reordered page: Banner > Diagram > FindMyShade > Recommendations > Guide > DataFreshness. Added `getDefaultGameHour()` for smart time default. Passed new shade timeline props to `SectionDetailSheet`.
+
+4. `src/utils/sunCalculations.ts` — Added `@deprecated` JSDoc to `calculateSunnySections()` pointing to `calculateDetailedSectionSunExposure`.
+
+5. `src/components/StadiumDiagram/SectionPolygon.tsx` — Tooltip reordered: shade % shown first and larger. Tooltip rect widened (40→50) and taller (22→26). Uses `filter="url(#tooltip-shadow)"` for drop shadow.
+
+6. `src/components/StadiumDiagram/StadiumDiagram.tsx` — Added `<defs>` with `<filter id="tooltip-shadow">` SVG drop shadow.
+
+7. `src/components/SectionDetailSheet.tsx` — Added shade timeline: 3 blocks showing shade % at game start, +1.5hr, +3hr. Uses `getSunPosition()` + section angle for each time point. New optional props: `gameHour`, `stadiumLat`, `stadiumLng`, `stadiumTimezone`, `sectionBaseAngle`.
+
+8. `src/components/FindMyShade/FindMyShadeWizard.tsx` — Trigger text updated to "Find My Perfect Shade Seat".
 
 ### Verification
 - `npx tsc --noEmit` — zero TypeScript errors
-- `npm run build` — production build succeeds with compression complete
+- `npm run build` — production build succeeds (548 files compressed)
+- Audit confirmed worker ↔ TS parity on all 3 critical calculation fixes

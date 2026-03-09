@@ -100,32 +100,45 @@ export const SectionPolygon: React.FC<SectionPolygonProps> = ({
         }}
       />
 
-      {/* Section label */}
+      {/* Section tooltip */}
       {(isHovered || isSelected || isFocused) && (
         <>
-          {/* Background for label */}
+          {/* Background for tooltip — wider for readability, with drop shadow */}
           <rect
-            x={centroid.x - 20}
-            y={centroid.y - 10}
-            width="40"
-            height="22"
-            fill="rgba(255, 255, 255, 0.95)"
+            x={centroid.x - 25}
+            y={centroid.y - 12}
+            width="50"
+            height="26"
+            fill="rgba(255, 255, 255, 0.97)"
             stroke="#1F2937"
             strokeWidth="0.3"
-            rx="2"
+            rx="3"
+            filter="url(#tooltip-shadow)"
             aria-hidden="true"
           />
+          {/* Shade percentage — shown first and prominently */}
+          <text
+            x={centroid.x - 8}
+            y={centroid.y - 4}
+            textAnchor="middle"
+            fontSize="5.5"
+            fill="#1F2937"
+            fontWeight="700"
+            aria-hidden="true"
+          >
+            {Math.round(shadePercentage)}% shade
+          </text>
           {/* Shade Score badge */}
           <circle
-            cx={centroid.x + 14}
-            cy={centroid.y - 4}
+            cx={centroid.x + 18}
+            cy={centroid.y - 6}
             r="5"
             fill={fillColor}
             aria-hidden="true"
           />
           <text
-            x={centroid.x + 14}
-            y={centroid.y - 2.5}
+            x={centroid.x + 18}
+            y={centroid.y - 4.5}
             textAnchor="middle"
             fontSize="4"
             fill={textOnBadge}
@@ -134,28 +147,16 @@ export const SectionPolygon: React.FC<SectionPolygonProps> = ({
           >
             {shadeResult.score}
           </text>
-          {/* Section name */}
-          <text
-            x={centroid.x - 3}
-            y={centroid.y - 3}
-            textAnchor="middle"
-            fontSize="5"
-            fill="#1F2937"
-            fontWeight="600"
-            aria-hidden="true"
-          >
-            {section.name}
-          </text>
-          {/* Shade info */}
+          {/* Section name + score label */}
           <text
             x={centroid.x}
-            y={centroid.y + 5}
+            y={centroid.y + 6}
             textAnchor="middle"
             fontSize="3.5"
             fill="#6B7280"
             aria-hidden="true"
           >
-            Score: {shadeResult.score} | {Math.round(shadePercentage)}% shade
+            {section.name} | Score: {shadeResult.score}/10
           </text>
         </>
       )}
