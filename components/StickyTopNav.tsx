@@ -385,13 +385,18 @@ export default function StickyTopNav() {
                 🏠 Home
               </Link>
 
-              <Link
+              <a
                 href="/#shade-finder"
                 className="nav-link-primary"
-                onClick={closeMobileMenu}
+                onClick={() => {
+                  document.body.style.overflow = '';
+                  document.body.style.position = '';
+                  document.body.classList.remove('sticky-nav-menu-open');
+                  closeMobileMenu();
+                }}
               >
                 🎯 Shade Finder Tool
-              </Link>
+              </a>
 
               <Link
                 href="/worldcup2026"

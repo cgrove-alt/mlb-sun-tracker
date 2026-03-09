@@ -104,7 +104,7 @@ export const ShadeFinder: React.FC = () => {
         .shade-finder {
           padding: 4rem 1.5rem;
           background: linear-gradient(to bottom, #ffffff 0%, #f0fdfa 100%);
-          scroll-margin-top: 60px;
+          scroll-margin-top: 72px;
         }
 
         .shade-finder-container {
