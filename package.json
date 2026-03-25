@@ -27,6 +27,8 @@
     "playwright:install": "playwright install"
   },
   "dependencies": {
+    "@tanstack/react-table": "^8.21.3",
+    "@types/three": "^0.178.1",
     "axios": "^1.10.0",
     "date-fns": "^4.1.0",
     "date-fns-tz": "^3.2.0",
