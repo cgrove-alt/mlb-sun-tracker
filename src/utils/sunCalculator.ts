@@ -1,27 +1,19 @@
 // sunCalculator.ts
 import SunCalc from 'suncalc';
 import { computeSunPosition } from './nrelSolarPosition';
-import { getTimezoneOffset } from './stadiumTimezone';
+import { altitudeFactor } from '../lib/sunMath';
 import type { RowDetail, DetailedSection } from '../types/stadium-complete';
-
-export interface RowShadowGeometry {
-  roofHeight?: number;
-  roofOverhang?: number;
-  upperDeckHeight?: number;
-  upperDeckOverhang?: number;
-}
 
 interface Stadium {
   id: string;
   name: string;
   latitude: number;
   longitude: number;
-  roof: 'open' | 'fixed' | 'retractable';
+  roofType?: 'open' | 'fixed' | 'retractable';
   roofHeight?: number;
   roofOverhang?: number;
   upperDeckHeight?: number;
   orientation?: number;
-  timezone?: string;
   sections?: Section[];
 }
 
@@ -118,28 +110,43 @@ export class SunCalculator {
     };
   }
 
+  /**
+   * Calculate sun position for a given time at this stadium.
+   *
+   * IMPORTANT: When passing date strings, `new Date('YYYY-MM-DDTHH:MM:SS')` is interpreted
+   * in the runtime's local timezone (UTC on the server). This produces the wrong UTC instant
+   * for a stadium-local time. Use `createStadiumDate(localTimeStr, stadium.timezone)` from
+   * `stadiumTimezone.ts` to construct the Date before calling this method.
+   */
   calculateSunPosition(date: string | Date, time?: string): SunPosition {
-    // Accept either a Date object or date/time strings
+    // Accept either a Date object or date/time strings.
+    // WARNING: passing `date + time` strings without timezone-aware construction will be wrong
+    // on the server. Prefer passing a pre-constructed UTC Date via createStadiumDate().
     const dateTime = date instanceof Date ? date : new Date(`${date}T${time}`);
 
-    // Timezone correction: adjust from browser-local to stadium-local
-    let correctedDate = dateTime;
-    if (this.stadium.timezone) {
-      const browserOffsetHours = -dateTime.getTimezoneOffset() / 60;
-      const stadiumOffsetHours = getTimezoneOffset(dateTime, this.stadium.timezone);
-      const correctionMs = (browserOffsetHours - stadiumOffsetHours) * 3600000;
-      correctedDate = new Date(dateTime.getTime() + correctionMs);
-    }
+    let altitude: number;
+    let azimuth: number;
 
-    // Use NREL SPA for sun position
-    const nrelResult = computeSunPosition(
-      correctedDate,
-      this.stadium.latitude,
-      this.stadium.longitude,
-      0
-    );
-    const altitude = nrelResult.elevation;
-    const azimuth = nrelResult.azimuth;
+    // Use NREL SPA — reads date.getUTC*() directly; no browser-offset correction needed.
+    try {
+      const nrelResult = computeSunPosition(
+        dateTime,
+        this.stadium.latitude,
+        this.stadium.longitude,
+        0 // timeZoneOffset unused by NREL; Date must be proper UTC
+      );
+      altitude = nrelResult.elevation;
+      azimuth = nrelResult.azimuth;
+    } catch (error) {
+      console.warn('NREL SPA calculation failed, falling back to SunCalc:', error);
+      const sunPos = SunCalc.getPosition(
+        dateTime,
+        this.stadium.latitude,
+        this.stadium.longitude
+      );
+      altitude = sunPos.altitude * 180 / Math.PI;
+      azimuth = (sunPos.azimuth * 180 / Math.PI + 180) % 360;
+    }
     
     // Get sun times (still using SunCalc for these)
     const sunTimes = SunCalc.getTimes(
@@ -235,13 +242,9 @@ export class SunCalculator {
       baseSunExposure = 100 * Math.cos((angleDiff / 90) * Math.PI / 2);
     }
     
-    // Apply altitude factor (low sun = less exposure)
-    if (sunAltitude < 0) {
-      baseSunExposure = 0;
-    } else if (sunAltitude < 30) {
-      baseSunExposure *= (sunAltitude / 30);
-    }
-    
+    // Apply altitude factor — physically correct sin(altitude) via canonical helper
+    baseSunExposure *= altitudeFactor(sunAltitude);
+
     // Calculate shadow coverage from structures
     const roofShadow = this.calculateRoofShadow(section, sunAltitude, sunAzimuth);
     const upperDeckShadow = section.level === 'field' || section.level === 'lower' 
@@ -271,7 +274,7 @@ export class SunCalculator {
     if (sunAltitude <= 0) return 0;
     
     // Fixed roof stadiums always have 100% coverage
-    if (this.stadium.roof === 'fixed') return 100;
+    if (this.stadium.roofType === 'fixed') return 100;
     
     // For covered sections, they MUST always have complete coverage
     // This is a critical fix - covered sections have permanent overhead protection
@@ -279,9 +282,10 @@ export class SunCalculator {
       return 100; // Covered sections provide COMPLETE protection from direct sun
     }
     
-    // For retractable roofs, model as OPEN (typical for fair-weather MLB games).
-    // The retracted roof panels still cast overhang shadow from structural edges.
-    if (this.stadium.roof === 'retractable') {
+    // For retractable roofs when closed, all sections are covered
+    if (this.stadium.roofType === 'retractable') {
+      // Assume roof is closed for this calculation (can be made dynamic later)
+      // For now, check if there's overhang shadow for open roof scenario
       if (this.stadiumGeometry.roofOverhang && sunAltitude > 0) {
         // Calculate shadow cast by roof overhang
         const shadowLength = this.stadiumGeometry.roofHeight / Math.tan(sunAltitude * Math.PI / 180);
@@ -499,8 +503,7 @@ export function calculateRowShadow(
   section: DetailedSection,
   sunAltitude: number,
   sunAzimuth: number,
-  stadiumOrientation: number = 0,
-  stadiumGeometry?: RowShadowGeometry
+  stadiumOrientation: number = 0
 ): RowShadowData {
 
   // 1. If row is explicitly covered (roof/overhang), return 100% shade
@@ -519,25 +522,17 @@ export function calculateRowShadow(
   }
 
   // 2. Calculate base sun exposure based on section angle
-  // baseAngle is already in absolute compass coordinates — do NOT add stadiumOrientation
-  const sectionAngle = section.baseAngle || 0;
+  const sectionAngle = (section.baseAngle || 0) + stadiumOrientation;
   const angleDiff = Math.abs(((sectionAngle - sunAzimuth + 180) % 360) - 180);
   let baseSunExposure = Math.max(0, 100 - angleDiff);
 
-  // 3. Apply altitude factor (low sun = less exposure)
-  if (sunAltitude < 30) {
-    baseSunExposure *= (sunAltitude / 30);
-  }
+  // 3. Apply altitude factor — physically correct sin(altitude) via canonical helper
+  baseSunExposure *= altitudeFactor(sunAltitude);
 
   // 4. Calculate overhang shadow (depth-dependent)
-  // Use row-level overhang if available, otherwise use stadium-level roof data for nearby rows
-  const effectiveOverhangHeight = row.overhangHeight ||
-    (stadiumGeometry?.roofOverhang && stadiumGeometry?.roofHeight
-      ? stadiumGeometry.roofHeight - row.elevation
-      : 0);
   const overhangShadow = calculateOverhangShadow(
     row.depth,
-    row.covered ? effectiveOverhangHeight : (row.overhangHeight || 0),
+    row.overhangHeight || 0,
     sunAltitude
   );
 
@@ -547,8 +542,7 @@ export function calculateRowShadow(
     row.depth,
     section,
     sunAltitude,
-    sunAzimuth,
-    stadiumGeometry
+    sunAzimuth
   );
 
   // 6. Calculate roof shadow (if section has fixed roof)
@@ -646,8 +640,7 @@ function calculateUpperDeckShadowForRow(
   rowDepth: number,
   section: DetailedSection,
   sunAltitude: number,
-  sunAzimuth: number,
-  stadiumGeometry?: RowShadowGeometry
+  sunAzimuth: number
 ): number {
 
   // Only lower/field level sections get upper deck shadow
@@ -655,8 +648,8 @@ function calculateUpperDeckShadowForRow(
     return 0;
   }
 
-  // Use real stadium geometry when available, fall back to heuristic
-  const upperDeckHeight = stadiumGeometry?.upperDeckHeight || ((section.height || 0) + 40);
+  // Upper deck typical height: 40-60 feet above field
+  const upperDeckHeight = (section.height || 0) + 40;
   const heightDifference = upperDeckHeight - rowElevation;
 
   // If row is higher than or equal to upper deck, no shadow
@@ -667,10 +660,7 @@ function calculateUpperDeckShadowForRow(
 
   // Calculate shadow length from upper deck
   const sunAltitudeRad = sunAltitude * Math.PI / 180;
-  const trigShadowLength = heightDifference / Math.tan(sunAltitudeRad);
-  // Add physical overhang distance to trigonometric shadow reach
-  const overhangOffset = stadiumGeometry?.upperDeckOverhang || 0;
-  const shadowLength = trigShadowLength + overhangOffset;
+  const shadowLength = heightDifference / Math.tan(sunAltitudeRad);
 
   // Check if section is behind home plate (gets more upper deck shadow)
   const sectionAngle = section.baseAngle || 0;
@@ -709,8 +699,7 @@ export function calculateRowShadows(
   section: DetailedSection,
   sunAltitude: number,
   sunAzimuth: number,
-  stadiumOrientation: number = 0,
-  stadiumGeometry?: RowShadowGeometry
+  stadiumOrientation: number = 0
 ): SectionShadowData {
 
   // If no rows, return empty
@@ -727,7 +716,7 @@ export function calculateRowShadows(
 
   // Calculate shadow for each row
   const rowShadows: RowShadowData[] = section.rows.map(row =>
-    calculateRowShadow(row, section, sunAltitude, sunAzimuth, stadiumOrientation, stadiumGeometry)
+    calculateRowShadow(row, section, sunAltitude, sunAzimuth, stadiumOrientation)
   );
 
   // Calculate section average

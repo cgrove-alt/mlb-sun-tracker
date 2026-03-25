@@ -65,6 +65,61 @@ function rayBoxIntersect(
   return !((tmin > tzmax) || (tzmin > tmax));
 }
 
+// Level-based distances and heights for generating sample points
+// These approximate typical MLB stadium geometry
+const LEVEL_CONFIG = {
+  field: { distance: 60, height: 0 },
+  lower: { distance: 120, height: 15 },
+  club: { distance: 150, height: 35 },
+  upper: { distance: 180, height: 55 },
+  suite: { distance: 140, height: 45 },
+};
+
+// Generate sample points for a section using baseAngle
+// Used when vertices3D is not available
+export function getSectionSamplePointsFromAngle(
+  baseAngle: number,
+  angleSpan: number = 10,
+  level: string = 'lower'
+): Vector3D[] {
+  const config = LEVEL_CONFIG[level as keyof typeof LEVEL_CONFIG] || LEVEL_CONFIG.lower;
+  const toRad = (deg: number) => (deg * Math.PI) / 180;
+
+  // Sample points: front-left, front-center, front-right, back-left, back-center, back-right
+  const frontDistance = config.distance;
+  const backDistance = config.distance + 20; // Rows go back about 20m
+  const frontHeight = config.height;
+  const backHeight = config.height + 10; // Rows rise about 10m
+
+  const angles = [
+    baseAngle - angleSpan / 4,
+    baseAngle,
+    baseAngle + angleSpan / 4,
+  ];
+
+  const points: Vector3D[] = [];
+
+  // Front row points
+  for (const angle of angles) {
+    points.push({
+      x: Math.sin(toRad(angle)) * frontDistance,
+      y: Math.cos(toRad(angle)) * frontDistance,
+      z: frontHeight,
+    });
+  }
+
+  // Back row points
+  for (const angle of angles) {
+    points.push({
+      x: Math.sin(toRad(angle)) * backDistance,
+      y: Math.cos(toRad(angle)) * backDistance,
+      z: backHeight,
+    });
+  }
+
+  return points;
+}
+
 // Calculate sun ray direction from sun position
 function getSunRayDirection(sunPosition: SunPosition): Vector3D {
   // Convert spherical coordinates to Cartesian
@@ -79,7 +134,8 @@ function getSunRayDirection(sunPosition: SunPosition): Vector3D {
 }
 
 // Check if a point is in shadow from any obstruction
-function isPointInShadow(
+// Exported for use in seat-level calculations
+export function isPointInShadow(
   point: Vector3D,
   sunDirection: Vector3D,
   obstructions: Obstruction3D[]
@@ -112,6 +168,75 @@ function isPointInShadow(
     inShadow: obstructionIds.length > 0,
     obstructionIds
   };
+}
+
+// Simple section type for sections with only baseAngle
+interface SimpleSectionInput {
+  id: string;
+  baseAngle: number;
+  angleSpan?: number;
+  level?: string;
+  covered?: boolean;
+}
+
+// Calculate obstruction shadow percentage for a section using baseAngle
+// Returns shadow percentage from obstructions (0-100)
+// This is used to MODIFY the sun exposure from the angle-based calculation
+export function calculateObstructionShadow(
+  section: SimpleSectionInput,
+  sunAltitudeDegrees: number,
+  sunAzimuthDegrees: number,
+  stadiumOrientation: number,
+  obstructions: Obstruction3D[]
+): number {
+  // Early exit: no sun = no obstruction check needed
+  if (sunAltitudeDegrees <= 0) {
+    return 0; // No shadow from obstructions (sun isn't shining anyway)
+  }
+
+  // Covered sections are already handled by the main calculation
+  if (section.covered) {
+    return 0;
+  }
+
+  // Skip if no obstructions that cast shadows
+  const shadowObstructions = obstructions.filter(o => o.castsShadow);
+  if (shadowObstructions.length === 0) {
+    return 0;
+  }
+
+  // Convert sun position to stadium-relative direction
+  // Sun azimuth is compass (0=N, 90=E, 180=S, 270=W)
+  // Stadium orientation is compass bearing of center field
+  // We need to convert to stadium-relative coordinates
+  const relativeSunAzimuth = ((sunAzimuthDegrees - stadiumOrientation + 180) % 360 + 360) % 360;
+  const azimuthRad = (relativeSunAzimuth * Math.PI) / 180;
+  const altitudeRad = (sunAltitudeDegrees * Math.PI) / 180;
+
+  // Sun direction vector (pointing FROM sun TO ground)
+  const sunDirection: Vector3D = {
+    x: Math.sin(azimuthRad) * Math.cos(altitudeRad),
+    y: Math.cos(azimuthRad) * Math.cos(altitudeRad),
+    z: -Math.sin(altitudeRad),
+  };
+
+  // Generate sample points for this section
+  const samplePoints = getSectionSamplePointsFromAngle(
+    section.baseAngle,
+    section.angleSpan || 10,
+    section.level || 'lower'
+  );
+
+  // Check each sample point for obstruction shadow
+  let shadowedPoints = 0;
+  for (const point of samplePoints) {
+    const shadowCheck = isPointInShadow(point, sunDirection, shadowObstructions);
+    if (shadowCheck.inShadow) {
+      shadowedPoints++;
+    }
+  }
+
+  return Math.round((shadowedPoints / samplePoints.length) * 100);
 }
 
 // Calculate shadow coverage for a section

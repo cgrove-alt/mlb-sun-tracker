@@ -1,7 +1,6 @@
 'use client';
 
 import React, { useState, useEffect, useCallback } from 'react';
-import { HelmetProvider } from 'react-helmet-async';
 import Link from 'next/link';
 import { UnifiedVenue, ALL_UNIFIED_VENUES, convertToLegacyStadium } from './data/unifiedVenues';
 import { UnifiedGameSelector } from './components/UnifiedGameSelector';
@@ -516,28 +515,24 @@ function UnifiedApp() {
 
   if (isMobile) {
     return (
-      <HelmetProvider>
-        <ErrorBoundary>
-          <I18nProvider>
-            <ErrorProvider>
-              <MobileApp />
-            </ErrorProvider>
-          </I18nProvider>
-        </ErrorBoundary>
-      </HelmetProvider>
+      <ErrorBoundary>
+        <I18nProvider>
+          <ErrorProvider>
+            <MobileApp />
+          </ErrorProvider>
+        </I18nProvider>
+      </ErrorBoundary>
     );
   }
 
   return (
-    <HelmetProvider>
-      <ErrorBoundary>
-        <I18nProvider>
-          <ErrorProvider>
-            <UnifiedAppContent />
-          </ErrorProvider>
-        </I18nProvider>
-      </ErrorBoundary>
-    </HelmetProvider>
+    <ErrorBoundary>
+      <I18nProvider>
+        <ErrorProvider>
+          <UnifiedAppContent />
+        </ErrorProvider>
+      </I18nProvider>
+    </ErrorBoundary>
   );
 }
 

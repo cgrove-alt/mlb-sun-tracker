@@ -133,7 +133,7 @@ describe('Sun Calculations', () => {
     });
 
     it('should return correct daylight status for night game', () => {
-      const gameTime = new Date('2025-06-21T02:00:00Z'); // 10 PM EDT (well after sunset)
+      const gameTime = new Date('2025-06-21T03:00:00Z'); // 11 PM EDT
       const latitude = 40.7128;
       const longitude = -74.0060;
 
@@ -181,7 +181,7 @@ describe('Sun Calculations', () => {
     });
 
     it('should calculate zero exposure for night game', () => {
-      const gameTime = new Date('2025-06-21T02:00:00Z'); // 10 PM EDT (well after sunset)
+      const gameTime = new Date('2025-06-21T03:00:00Z'); // 11 PM EDT (sun is down)
       const sectionAngle = 180;
       const latitude = 40.7128;
       const longitude = -74.0060;

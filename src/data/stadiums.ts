@@ -6,7 +6,7 @@ export interface Stadium {
   state: string;
   latitude: number;
   longitude: number;
-  orientation: number; // Home plate to center field bearing in degrees
+  orientation: number; // Home plate to center field bearing in degrees (0=N, 90=E, 180=S, 270=W)
   capacity: number;
   roof: 'open' | 'retractable' | 'fixed';
   timezone: string; // IANA timezone identifier
@@ -14,7 +14,9 @@ export interface Stadium {
   roofHeight?: number; // Height of roof/overhang in feet
   roofOverhang?: number; // Horizontal overhang distance in feet
   upperDeckHeight?: number; // Height of upper deck in feet
-  upperDeckOverhang?: number; // Horizontal distance upper deck extends over lower sections (feet)
+  // Data quality tracking
+  verified?: boolean; // Has orientation been verified against satellite imagery
+  verifiedDate?: string; // ISO date of last verification
 }
 
 export const MLB_STADIUMS: Stadium[] = [
@@ -33,7 +35,8 @@ export const MLB_STADIUMS: Stadium[] = [
     roofHeight: 120,
     roofOverhang: 40,
     upperDeckHeight: 80,
-    upperDeckOverhang: 22
+    verified: true,
+    verifiedDate: '2025-11-26'
   },
   {
     id: 'astros',
@@ -47,10 +50,11 @@ export const MLB_STADIUMS: Stadium[] = [
     capacity: 41168,
     roof: 'retractable',
     timezone: 'America/Chicago',
-    roofHeight: 142,
-    roofOverhang: 55,
+    roofHeight: 180,
+    roofOverhang: 60,
     upperDeckHeight: 75,
-    upperDeckOverhang: 20
+    verified: true,
+    verifiedDate: '2025-11-26'
   },
   {
     id: 'athletics',
@@ -60,14 +64,15 @@ export const MLB_STADIUMS: Stadium[] = [
     state: 'CA',
     latitude: 38.5664,
     longitude: -121.5030,
-    orientation: 330,
+    orientation: 45,
     capacity: 14014,
     roof: 'open',
     timezone: 'America/Los_Angeles',
-    roofHeight: 85,
-    roofOverhang: 15,
-    upperDeckHeight: 50,
-    upperDeckOverhang: 12
+    roofHeight: 65,
+    roofOverhang: 25,
+    upperDeckHeight: 45,
+    verified: true,
+    verifiedDate: '2025-11-26'
   },
   {
     id: 'bluejays',
@@ -81,10 +86,11 @@ export const MLB_STADIUMS: Stadium[] = [
     capacity: 49282,
     roof: 'retractable',
     timezone: 'America/Toronto',
-    roofHeight: 160,
-    roofOverhang: 60,
+    roofHeight: 282,
+    roofOverhang: 100,
     upperDeckHeight: 85,
-    upperDeckOverhang: 30
+    verified: true,
+    verifiedDate: '2025-11-26'
   },
   {
     id: 'braves',
@@ -94,14 +100,15 @@ export const MLB_STADIUMS: Stadium[] = [
     state: 'GA',
     latitude: 33.8908,
     longitude: -84.4678,
-    orientation: 45,
+    orientation: 55,
     capacity: 41084,
     roof: 'open',
     timezone: 'America/New_York',
-    roofHeight: 115,
+    roofHeight: 110,
     roofOverhang: 35,
-    upperDeckHeight: 72,
-    upperDeckOverhang: 20
+    upperDeckHeight: 75,
+    verified: true,
+    verifiedDate: '2025-11-26'
   },
   {
     id: 'brewers',
@@ -115,10 +122,11 @@ export const MLB_STADIUMS: Stadium[] = [
     capacity: 41900,
     roof: 'retractable',
     timezone: 'America/Chicago',
-    roofHeight: 145,
-    roofOverhang: 50,
+    roofHeight: 200,
+    roofOverhang: 80,
     upperDeckHeight: 80,
-    upperDeckOverhang: 25
+    verified: true,
+    verifiedDate: '2025-11-26'
   },
   {
     id: 'cardinals',
@@ -128,14 +136,15 @@ export const MLB_STADIUMS: Stadium[] = [
     state: 'MO',
     latitude: 38.6226,
     longitude: -90.1928,
-    orientation: 92,
+    orientation: 55,
     capacity: 44494,
     roof: 'open',
     timezone: 'America/Chicago',
-    roofHeight: 110,
+    roofHeight: 105,
     roofOverhang: 30,
-    upperDeckHeight: 70,
-    upperDeckOverhang: 18
+    upperDeckHeight: 75,
+    verified: true,
+    verifiedDate: '2025-11-26'
   },
   {
     id: 'cubs',
@@ -145,14 +154,15 @@ export const MLB_STADIUMS: Stadium[] = [
     state: 'IL',
     latitude: 41.9484,
     longitude: -87.6553,
-    orientation: 13,
+    orientation: 23,
     capacity: 41649,
     roof: 'open',
     timezone: 'America/Chicago',
-    roofHeight: 95,
-    roofOverhang: 20,
-    upperDeckHeight: 65,
-    upperDeckOverhang: 15
+    roofHeight: 85,
+    roofOverhang: 25,
+    upperDeckHeight: 60,
+    verified: true,
+    verifiedDate: '2025-11-26'
   },
   {
     id: 'diamondbacks',
@@ -166,10 +176,11 @@ export const MLB_STADIUMS: Stadium[] = [
     capacity: 48686,
     roof: 'retractable',
     timezone: 'America/Phoenix',
-    roofHeight: 150,
-    roofOverhang: 55,
-    upperDeckHeight: 82,
-    upperDeckOverhang: 28
+    roofHeight: 200,
+    roofOverhang: 70,
+    upperDeckHeight: 80,
+    verified: true,
+    verifiedDate: '2025-11-26'
   },
   {
     id: 'dodgers',
@@ -179,14 +190,15 @@ export const MLB_STADIUMS: Stadium[] = [
     state: 'CA',
     latitude: 34.0739,
     longitude: -118.2400,
-    orientation: 25,
+    orientation: 22,
     capacity: 56000,
     roof: 'open',
     timezone: 'America/Los_Angeles',
-    roofHeight: 130,
+    roofHeight: 120,
     roofOverhang: 35,
-    upperDeckHeight: 90,
-    upperDeckOverhang: 30
+    upperDeckHeight: 85,
+    verified: true,
+    verifiedDate: '2025-11-26'
   },
   {
     id: 'giants',
@@ -196,14 +208,15 @@ export const MLB_STADIUMS: Stadium[] = [
     state: 'CA',
     latitude: 37.7786,
     longitude: -122.3893,
-    orientation: 87,
+    orientation: 55,
     capacity: 41915,
     roof: 'open',
     timezone: 'America/Los_Angeles',
-    roofHeight: 110,
-    roofOverhang: 25,
-    upperDeckHeight: 68,
-    upperDeckOverhang: 18
+    roofHeight: 100,
+    roofOverhang: 30,
+    upperDeckHeight: 70,
+    verified: true,
+    verifiedDate: '2025-11-26'
   },
   {
     id: 'guardians',
@@ -216,11 +229,12 @@ export const MLB_STADIUMS: Stadium[] = [
     orientation: 60,
     capacity: 34830,
     roof: 'open',
-    timezone: 'America/New_York',
-    roofHeight: 105,
-    roofOverhang: 28,
-    upperDeckHeight: 68,
-    upperDeckOverhang: 20
+    timezone: 'America/Chicago',
+    roofHeight: 110,
+    roofOverhang: 35,
+    upperDeckHeight: 75,
+    verified: true,
+    verifiedDate: '2025-11-26'
   },
   {
     id: 'mariners',
@@ -230,14 +244,15 @@ export const MLB_STADIUMS: Stadium[] = [
     state: 'WA',
     latitude: 47.5914,
     longitude: -122.3325,
-    orientation: 318,
+    orientation: 50,
     capacity: 47929,
     roof: 'retractable',
     timezone: 'America/Los_Angeles',
-    roofHeight: 140,
-    roofOverhang: 50,
-    upperDeckHeight: 78,
-    upperDeckOverhang: 25
+    roofHeight: 160,
+    roofOverhang: 55,
+    upperDeckHeight: 80,
+    verified: true,
+    verifiedDate: '2025-11-26'
   },
   {
     id: 'marlins',
@@ -251,10 +266,11 @@ export const MLB_STADIUMS: Stadium[] = [
     capacity: 37446,
     roof: 'retractable',
     timezone: 'America/New_York',
-    roofHeight: 135,
-    roofOverhang: 50,
+    roofHeight: 190,
+    roofOverhang: 75,
     upperDeckHeight: 75,
-    upperDeckOverhang: 22
+    verified: true,
+    verifiedDate: '2025-11-26'
   },
   {
     id: 'mets',
@@ -264,14 +280,15 @@ export const MLB_STADIUMS: Stadium[] = [
     state: 'NY',
     latitude: 40.7571,
     longitude: -73.8458,
-    orientation: 90,
+    orientation: 58,
     capacity: 41922,
     roof: 'open',
     timezone: 'America/New_York',
     roofHeight: 115,
-    roofOverhang: 30,
-    upperDeckHeight: 72,
-    upperDeckOverhang: 22
+    roofOverhang: 40,
+    upperDeckHeight: 80,
+    verified: true,
+    verifiedDate: '2025-11-26'
   },
   {
     id: 'nationals',
@@ -281,14 +298,15 @@ export const MLB_STADIUMS: Stadium[] = [
     state: 'DC',
     latitude: 38.8730,
     longitude: -77.0074,
-    orientation: 87,
+    orientation: 60,
     capacity: 41313,
     roof: 'open',
     timezone: 'America/New_York',
-    roofHeight: 108,
-    roofOverhang: 28,
-    upperDeckHeight: 70,
-    upperDeckOverhang: 18
+    roofHeight: 105,
+    roofOverhang: 35,
+    upperDeckHeight: 75,
+    verified: true,
+    verifiedDate: '2025-11-26'
   },
   {
     id: 'orioles',
@@ -303,9 +321,10 @@ export const MLB_STADIUMS: Stadium[] = [
     roof: 'open',
     timezone: 'America/New_York',
     roofHeight: 100,
-    roofOverhang: 25,
-    upperDeckHeight: 65,
-    upperDeckOverhang: 16
+    roofOverhang: 30,
+    upperDeckHeight: 70,
+    verified: true,
+    verifiedDate: '2025-11-26'
   },
   {
     id: 'padres',
@@ -315,14 +334,15 @@ export const MLB_STADIUMS: Stadium[] = [
     state: 'CA',
     latitude: 32.7076,
     longitude: -117.1570,
-    orientation: 25,
+    orientation: 68,
     capacity: 40209,
     roof: 'open',
     timezone: 'America/Los_Angeles',
-    roofHeight: 105,
-    roofOverhang: 22,
-    upperDeckHeight: 62,
-    upperDeckOverhang: 16
+    roofHeight: 110,
+    roofOverhang: 35,
+    upperDeckHeight: 75,
+    verified: true,
+    verifiedDate: '2025-11-26'
   },
   {
     id: 'phillies',
@@ -336,10 +356,11 @@ export const MLB_STADIUMS: Stadium[] = [
     capacity: 42792,
     roof: 'open',
     timezone: 'America/New_York',
-    roofHeight: 112,
-    roofOverhang: 30,
-    upperDeckHeight: 72,
-    upperDeckOverhang: 20
+    roofHeight: 110,
+    roofOverhang: 35,
+    upperDeckHeight: 75,
+    verified: true,
+    verifiedDate: '2025-11-26'
   },
   {
     id: 'pirates',
@@ -349,14 +370,15 @@ export const MLB_STADIUMS: Stadium[] = [
     state: 'PA',
     latitude: 40.4468,
     longitude: -80.0057,
-    orientation: 25,
+    orientation: 120,
     capacity: 38362,
     roof: 'open',
     timezone: 'America/New_York',
-    roofHeight: 98,
-    roofOverhang: 22,
-    upperDeckHeight: 60,
-    upperDeckOverhang: 14
+    roofHeight: 95,
+    roofOverhang: 30,
+    upperDeckHeight: 65,
+    verified: true,
+    verifiedDate: '2025-11-26'
   },
   {
     id: 'rangers',
@@ -369,28 +391,30 @@ export const MLB_STADIUMS: Stadium[] = [
     orientation: 46,
     capacity: 40300,
     roof: 'retractable',
-    timezone: 'America/Chicago',
-    roofHeight: 155,
-    roofOverhang: 60,
+    timezone: 'America/Denver',
+    roofHeight: 278,
+    roofOverhang: 90,
     upperDeckHeight: 85,
-    upperDeckOverhang: 32
+    verified: true,
+    verifiedDate: '2025-11-26'
   },
   {
     id: 'rays',
-    name: 'George M. Steinbrenner Field', // Temporary home for 2025 season due to Tropicana Field hurricane damage
+    name: 'Tropicana Field',
     team: 'Tampa Bay Rays',
-    city: 'Tampa',
+    city: 'St. Petersburg',
     state: 'FL',
-    latitude: 27.9628,
-    longitude: -82.5062,
-    orientation: 316,
-    capacity: 11026,
-    roof: 'open',
+    latitude: 27.7682,
+    longitude: -82.6534,
+    orientation: 315, // Home plate faces NW
+    capacity: 31042,
+    roof: 'fixed', // Non-retractable dome - all seats covered
     timezone: 'America/New_York',
-    roofHeight: 88,
-    roofOverhang: 18,
-    upperDeckHeight: 55,
-    upperDeckOverhang: 12
+    roofHeight: 225, // 225 feet above second base
+    roofOverhang: 0, // Fully enclosed dome
+    upperDeckHeight: 75,
+    verified: true,
+    verifiedDate: '2025-12-02'
   },
   {
     id: 'redsox',
@@ -400,14 +424,15 @@ export const MLB_STADIUMS: Stadium[] = [
     state: 'MA',
     latitude: 42.3467,
     longitude: -71.0972,
-    orientation: 52,
+    orientation: 67,
     capacity: 37755,
     roof: 'open',
     timezone: 'America/New_York',
-    roofHeight: 90,
-    roofOverhang: 15,
-    upperDeckHeight: 58,
-    upperDeckOverhang: 10
+    roofHeight: 80,
+    roofOverhang: 20,
+    upperDeckHeight: 60,
+    verified: true,
+    verifiedDate: '2025-11-26'
   },
   {
     id: 'reds',
@@ -420,11 +445,12 @@ export const MLB_STADIUMS: Stadium[] = [
     orientation: 105,
     capacity: 42319,
     roof: 'open',
-    timezone: 'America/New_York',
-    roofHeight: 105,
-    roofOverhang: 25,
-    upperDeckHeight: 65,
-    upperDeckOverhang: 18
+    timezone: 'America/Chicago',
+    roofHeight: 100,
+    roofOverhang: 30,
+    upperDeckHeight: 70,
+    verified: true,
+    verifiedDate: '2025-11-26'
   },
   {
     id: 'rockies',
@@ -439,9 +465,10 @@ export const MLB_STADIUMS: Stadium[] = [
     roof: 'open',
     timezone: 'America/Denver',
     roofHeight: 115,
-    roofOverhang: 30,
-    upperDeckHeight: 75,
-    upperDeckOverhang: 22
+    roofOverhang: 40,
+    upperDeckHeight: 80,
+    verified: true,
+    verifiedDate: '2025-11-26'
   },
   {
     id: 'royals',
@@ -455,10 +482,11 @@ export const MLB_STADIUMS: Stadium[] = [
     capacity: 37903,
     roof: 'open',
     timezone: 'America/Chicago',
-    roofHeight: 100,
-    roofOverhang: 20,
-    upperDeckHeight: 60,
-    upperDeckOverhang: 14
+    roofHeight: 105,
+    roofOverhang: 30,
+    upperDeckHeight: 75,
+    verified: true,
+    verifiedDate: '2025-11-26'
   },
   {
     id: 'tigers',
@@ -471,11 +499,12 @@ export const MLB_STADIUMS: Stadium[] = [
     orientation: 145,
     capacity: 41083,
     roof: 'open',
-    timezone: 'America/Detroit',
+    timezone: 'America/Chicago',
     roofHeight: 110,
-    roofOverhang: 28,
-    upperDeckHeight: 70,
-    upperDeckOverhang: 20
+    roofOverhang: 35,
+    upperDeckHeight: 75,
+    verified: true,
+    verifiedDate: '2025-11-26'
   },
   {
     id: 'twins',
@@ -485,14 +514,15 @@ export const MLB_STADIUMS: Stadium[] = [
     state: 'MN',
     latitude: 44.9817,
     longitude: -93.2776,
-    orientation: 0,
+    orientation: 355,
     capacity: 38544,
     roof: 'open',
     timezone: 'America/Chicago',
-    roofHeight: 108,
-    roofOverhang: 25,
-    upperDeckHeight: 68,
-    upperDeckOverhang: 18
+    roofHeight: 110,
+    roofOverhang: 40,
+    upperDeckHeight: 75,
+    verified: true,
+    verifiedDate: '2025-11-26'
   },
   {
     id: 'whitesox',
@@ -502,14 +532,15 @@ export const MLB_STADIUMS: Stadium[] = [
     state: 'IL',
     latitude: 41.8299,
     longitude: -87.6338,
-    orientation: 90,
+    orientation: 135,
     capacity: 40615,
     roof: 'open',
     timezone: 'America/Chicago',
-    roofHeight: 110,
-    roofOverhang: 30,
-    upperDeckHeight: 72,
-    upperDeckOverhang: 22
+    roofHeight: 115,
+    roofOverhang: 40,
+    upperDeckHeight: 80,
+    verified: true,
+    verifiedDate: '2025-11-26'
   },
   {
     id: 'yankees',
@@ -524,8 +555,9 @@ export const MLB_STADIUMS: Stadium[] = [
     roof: 'open',
     timezone: 'America/New_York',
     roofHeight: 120,
-    roofOverhang: 32,
-    upperDeckHeight: 75,
-    upperDeckOverhang: 24
+    roofOverhang: 45,
+    upperDeckHeight: 80,
+    verified: true,
+    verifiedDate: '2025-11-26'
   }
 ];

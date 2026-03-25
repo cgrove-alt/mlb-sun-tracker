@@ -226,6 +226,15 @@ export const HeroSection: React.FC = () => {
           }
         }
 
+        @keyframes slideUp {
+          from {
+            transform: translateY(30px);
+          }
+          to {
+            transform: translateY(0);
+          }
+        }
+
         .hero-badge {
           display: inline-flex;
           align-items: center;
@@ -405,7 +414,7 @@ export const HeroSection: React.FC = () => {
           gap: 1rem;
           justify-content: center;
           margin-bottom: 4rem;
-          animation: fadeInUp 0.8s ease-out 0.4s both;
+          animation: slideUp 0.8s ease-out 0.4s both;
         }
 
         .hero-cta-primary {

@@ -1,0 +1,36 @@
+export const MLB_TEAM_TO_STADIUM: Record<number, string> = {
+  110: 'orioles',
+  111: 'redsox',
+  147: 'yankees',
+  139: 'rays',
+  141: 'bluejays',
+  145: 'whitesox',
+  114: 'guardians',
+  116: 'tigers',
+  118: 'royals',
+  142: 'twins',
+  117: 'astros',
+  108: 'angels',
+  133: 'athletics',
+  136: 'mariners',
+  140: 'rangers',
+  144: 'braves',
+  146: 'marlins',
+  121: 'mets',
+  143: 'phillies',
+  120: 'nationals',
+  112: 'cubs',
+  113: 'reds',
+  158: 'brewers',
+  134: 'pirates',
+  138: 'cardinals',
+  109: 'diamondbacks',
+  115: 'rockies',
+  119: 'dodgers',
+  135: 'padres',
+  137: 'giants',
+};
+
+export const MLB_STADIUM_TO_TEAM: Record<string, number> = Object.fromEntries(
+  Object.entries(MLB_TEAM_TO_STADIUM).map(([k, v]) => [v, Number(k)])
+);
