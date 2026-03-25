@@ -1,6 +1,7 @@
 import { Stadium } from '../data/stadiums';
 import type { StadiumSection } from '../data/stadiumSectionTypes';
-import { getSunPosition } from './sunCalculations';
+import { computeSunPosition } from './nrelSolarPosition';
+import { createStadiumDate } from './stadiumTimezone';
 import { getSectionSunExposure } from './sectionSunCalculations';
 
 // Server-side shade calculation for static generation
@@ -21,42 +22,55 @@ export interface SeasonalShadePattern {
   recommendation: string;
 }
 
-// Calculate shade percentage using real SunCalc-based sun position
+/**
+ * Calculate shade percentage for a section using real NREL SPA solar position.
+ *
+ * Replaces the previous hardcoded `sunAngle = isSummer ? 70 : 45` lookup table
+ * with an actual solar position algorithm that uses the stadium's lat/lon and timezone.
+ *
+ * `month` (1–12) and `hour` (0–23, stadium local time) are used to construct a
+ * representative date (15th of the month) at the given hour.
+ */
 export function calculateShadePercentage(
   stadium: Stadium,
   section: StadiumSection,
   hour: number,
   month: number
 ): number {
-  // Fixed roof stadiums are always 100% shade
+  // Fixed-roof stadiums are always fully shaded
   if (stadium.roof === 'fixed') return 100;
 
-  // Covered sections always get full shade (upper deck, club level overhangs)
-  if (section.covered && section.level !== 'field') {
-    if (section.level === 'upper' || section.level === 'club') {
-      return 100;
-    }
+  // Covered upper/club sections have permanent overhead protection
+  if (section.covered && (section.level === 'upper' || section.level === 'club')) {
+    return 100;
   }
 
-  // Build a representative date for this month/hour (use 15th of month, 2026 season)
-  const date = new Date(2026, month - 1, 15, hour, 0, 0);
+  // Construct a representative UTC instant: 15th of month at given hour in stadium timezone.
+  // Year 2026 is used as the reference year for all ephemeris calculations.
+  const localTimeStr = `2026-${String(month).padStart(2, '0')}-15 ${String(hour).padStart(2, '0')}:00:00`;
+  const timezone = stadium.timezone || 'America/New_York';
+  const utcDate = createStadiumDate(localTimeStr, timezone);
 
-  // Get actual sun position using SunCalc
-  const sunPosition = getSunPosition(date, stadium.latitude, stadium.longitude, stadium.timezone);
+  // Compute real solar position using NREL SPA
+  let sunAltitudeDeg: number;
+  let sunAzimuthDeg: number;
+  try {
+    const result = computeSunPosition(utcDate, stadium.latitude, stadium.longitude, 0);
+    sunAltitudeDeg = result.elevation;
+    sunAzimuthDeg = result.azimuth;
+  } catch {
+    // If NREL fails, sun is treated as below horizon → full shade
+    return 100;
+  }
 
-  // Sun below horizon = 100% shade
-  if (sunPosition.altitudeDegrees <= 0) return 100;
+  // Sun below horizon → full shade
+  if (sunAltitudeDeg <= 0) return 100;
 
-  // Use the same calculation pipeline as the stadium pages
-  const sunExposure = getSectionSunExposure(
-    section,
-    sunPosition.altitudeDegrees,
-    sunPosition.azimuthDegrees,
-    stadium.orientation
-  );
+  // Calculate sun exposure using the same pipeline as the client-side path
+  const sunExposure = getSectionSunExposure(section, sunAltitudeDeg, sunAzimuthDeg, stadium.orientation);
 
   // Shade is the inverse of sun exposure
-  return Math.round(Math.max(0, Math.min(100, 100 - sunExposure)));
+  return Math.round(100 - sunExposure);
 }
 
 // Generate comprehensive shade data for all common scenarios

@@ -2,6 +2,7 @@
 // Separated from stadiumSections.ts to prevent bundling 3.3 MB of data in client bundle
 
 import type { StadiumSection } from '../data/stadiumSectionTypes';
+import { altitudeFactor } from '../lib/sunMath';
 
 // Normalize angles to 0-360 range
 const normalizeAngle = (angle: number) => ((angle % 360) + 360) % 360;
@@ -68,8 +69,8 @@ export function getSectionSunExposure(
   // Check if section is actually in sun first
   if (!isSectionInSun(section, sunAzimuth, sunElevation, stadiumOrientation)) return 0;
 
-  // Base exposure calculation based on sun elevation
-  const elevationFactor = Math.min(sunElevation / 90, 1); // Normalize to 0-1, cap at 1
+  // Base exposure calculation based on sun elevation — physically correct sin(altitude)
+  const elevationFactor = altitudeFactor(sunElevation);
 
   // Convert sun azimuth to stadium-relative coordinates for angle comparison
   const relativeSunAngle = normalizeAngle(sunAzimuth - stadiumOrientation + 180);
@@ -98,18 +99,8 @@ export function getSectionSunExposure(
     levelMultiplier = 0.75; // Suites often have more protection
   }
 
-  // Enhance exposure for high sun angles (midday sun is stronger)
-  let middayBoost = 1.0;
-  if (sunElevation > 60) {
-    middayBoost = 1.4; // Strong midday sun
-  } else if (sunElevation > 45) {
-    middayBoost = 1.25; // Moderate afternoon sun
-  } else if (sunElevation > 30) {
-    middayBoost = 1.1; // Lower angle sun
-  }
-
-  // Combine all factors with adjusted formula for more realistic values
-  const exposure = elevationFactor * angleFactor * levelMultiplier * middayBoost * 100;
+  // Combine all factors — no middayBoost needed since sin(altitude) is already correct
+  const exposure = elevationFactor * angleFactor * levelMultiplier * 100;
 
   return Math.round(Math.max(0, Math.min(100, exposure)));
 }
