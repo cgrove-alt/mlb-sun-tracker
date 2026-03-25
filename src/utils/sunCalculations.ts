@@ -6,6 +6,7 @@ import { WeatherData } from '../services/weatherApi';
 import { getVenueSections } from '../data/venueSections';
 import { SunCalculator } from './sunCalculator';
 import { computeSunPosition } from './nrelSolarPosition';
+import { altitudeFactor } from '../lib/sunMath';
 
 export interface SunPosition {
   azimuth: number; // Sun azimuth in radians
@@ -485,9 +486,9 @@ export function calculateSunExposure(
   const exposureFromAngle = Math.max(0, 100 - (normalizedAngle / 180) * 100);
 
   // Factor in sun altitude (higher sun = more exposure)
-  const altitudeFactor = Math.sin(sunPos.altitude);
+  const altWeight = altitudeFactor(sunPos.altitudeDegrees);
 
-  return exposureFromAngle * altitudeFactor;
+  return exposureFromAngle * altWeight;
 }
 
 export function getSunriseSunsetTimes(date: Date, latitude: number, longitude: number): {
