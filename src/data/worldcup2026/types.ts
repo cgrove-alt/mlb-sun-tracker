@@ -88,7 +88,7 @@ export interface WorldCupCity {
 
 export const WORLD_CUP_2026_INFO = {
   startDate: '2026-06-11',
-  endDate: '2026-07-26',
+  endDate: '2026-07-19',
   totalMatches: 104,
   totalVenues: 16,
   totalCountries: 3,
@@ -105,7 +105,7 @@ export const WORLD_CUP_2026_INFO = {
     city: 'East Rutherford, NJ'
   },
   thirdPlaceMatch: {
-    date: '2026-07-26',
+    date: '2026-07-18',
     venue: 'hard-rock-stadium-wc',
     city: 'Miami Gardens, FL'
   }

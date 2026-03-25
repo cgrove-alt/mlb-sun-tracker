@@ -1,5 +1,5 @@
 import { useEffect, useState, useRef, useCallback } from 'react';
-import { SunPosition } from '../utils/sunCalculations';
+import { SunPosition, calculateDetailedSectionSunExposure } from '../utils/sunCalculations';
 import type { SectionShadowData } from '../utils/sunCalculator';
 
 interface UseSunCalculationsOptions {
@@ -18,8 +18,9 @@ interface UseSunCalculationsResult {
   refetch: () => void;
 }
 
-// Cache for calculation results
-const calculationCache = new Map<string, any[]>();
+// Cache for calculation results (stores arrays or combined { sections, rowShadows } objects)
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+const calculationCache = new Map<string, any>();
 
 export function useSunCalculations({
   stadium,
@@ -37,6 +38,20 @@ export function useSunCalculations({
   // Generate cache key
   const cacheKey = `${stadium.id}-${sunPosition.altitude}-${sunPosition.azimuth}-${includeRows ? 'rows' : 'sections'}`;
 
+  const performMainThreadCalculation = useCallback(() => {
+    setTimeout(() => {
+      try {
+        const results = calculateDetailedSectionSunExposure(stadium, sunPosition, undefined, sections);
+        calculationCache.set(cacheKey, results);
+        setData(results);
+      } catch (err) {
+        console.warn('[useSunCalculations] Main thread calculation failed:', err);
+        setError(new Error('Calculation failed'));
+      }
+      setIsLoading(false);
+    }, 0);
+  }, [stadium, sunPosition, sections, cacheKey]);
+
   const calculate = useCallback(() => {
     if (!enabled || !sections.length) {
       return;
@@ -45,10 +60,11 @@ export function useSunCalculations({
     // Check cache first
     if (calculationCache.has(cacheKey)) {
       const cached = calculationCache.get(cacheKey)!;
-      setData(cached);
-      // If includeRows, the cached data contains row information
-      if (includeRows) {
-        setRowData(cached as SectionShadowData[]);
+      if (includeRows && cached && cached.sections && cached.rowShadows) {
+        setData(cached.sections);
+        setRowData(cached.rowShadows);
+      } else {
+        setData(cached);
       }
       setIsLoading(false);
       return;
@@ -79,7 +95,7 @@ export function useSunCalculations({
             setData(payload);
             setIsLoading(false);
           } else if (type === 'ROW_SHADOWS_RESULT') {
-            // Handle row-level calculation results
+            // Handle combined section + row results from worker
             calculationCache.set(cacheKey, payload);
             // Limit cache size
             if (calculationCache.size > 50) {
@@ -89,18 +105,27 @@ export function useSunCalculations({
               }
             }
 
-            setRowData(payload);
-            setData(payload); // Also set in data for compatibility
+            // Split combined payload: { sections: SeatingSectionSun[], rowShadows: SectionShadowData[] }
+            if (payload && payload.sections && payload.rowShadows) {
+              setData(payload.sections);
+              setRowData(payload.rowShadows);
+            } else {
+              // Fallback for old format (array of row shadows only)
+              setRowData(payload);
+              setData(payload);
+            }
             setIsLoading(false);
           } else if (type === 'SUN_EXPOSURE_ERROR' || type === 'ROW_SHADOWS_ERROR') {
-            setError(new Error(payload));
-            setIsLoading(false);
+            console.warn(`[useSunCalculations] Worker error (${type}):`, payload);
+            console.warn('[useSunCalculations] Falling back to main thread');
+            performMainThreadCalculation();
           }
         };
 
         workerRef.current.onerror = (err) => {
-          setError(new Error('Worker error: ' + err.message));
-          setIsLoading(false);
+          console.warn('[useSunCalculations] Worker onerror:', err.message);
+          console.warn('[useSunCalculations] Falling back to main thread');
+          performMainThreadCalculation();
         };
 
         // Send calculation request to worker
@@ -117,30 +142,14 @@ export function useSunCalculations({
         }
       } catch (err) {
         // Fallback to main thread if worker fails
-        console.warn('Worker not available, falling back to main thread');
+        console.warn('[useSunCalculations] Worker not available, falling back to main thread');
         performMainThreadCalculation();
       }
     } else {
       // No worker support, use main thread
       performMainThreadCalculation();
     }
-  }, [stadium, sunPosition, sections, enabled, includeRows, cacheKey]);
-  
-  const performMainThreadCalculation = useCallback(() => {
-    // Simplified calculation for main thread
-    // In production, this would import the actual calculation function
-    setTimeout(() => {
-      const results = sections.map(section => ({
-        sectionId: section.id,
-        sunExposure: Math.random() * 100,
-        shadePercentage: Math.random() * 100,
-      }));
-      
-      calculationCache.set(cacheKey, results);
-      setData(results);
-      setIsLoading(false);
-    }, 100);
-  }, [sections, cacheKey]);
+  }, [stadium, sunPosition, sections, enabled, includeRows, cacheKey, performMainThreadCalculation]);
   
   useEffect(() => {
     calculate();

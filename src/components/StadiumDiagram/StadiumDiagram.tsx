@@ -14,7 +14,14 @@ interface StadiumDiagramProps {
   shadeData: SectionShadeData[];
   selectedSectionId?: string;
   onSectionSelect?: (sectionId: string) => void;
+  sunAzimuthDegrees?: number;
   className?: string;
+}
+
+// Get compass direction from azimuth
+function getCompassDir(deg: number): string {
+  const dirs = ['N', 'NE', 'E', 'SE', 'S', 'SW', 'W', 'NW'];
+  return dirs[Math.round(deg / 45) % 8];
 }
 
 // Project 3D coordinates to 2D for SVG rendering (top-down view)
@@ -66,6 +73,7 @@ export const StadiumDiagram: React.FC<StadiumDiagramProps> = ({
   shadeData,
   selectedSectionId,
   onSectionSelect,
+  sunAzimuthDegrees,
   className = '',
 }) => {
   const [hoveredSectionId, setHoveredSectionId] = useState<string | null>(null);
@@ -103,6 +111,13 @@ export const StadiumDiagram: React.FC<StadiumDiagramProps> = ({
         role="img"
         aria-label="Interactive stadium seating diagram showing shade coverage"
       >
+        {/* SVG filters */}
+        <defs>
+          <filter id="tooltip-shadow" x="-20%" y="-20%" width="140%" height="140%">
+            <feDropShadow dx="0" dy="1" stdDeviation="1.5" floodOpacity="0.2" />
+          </filter>
+        </defs>
+
         {/* Field outline (center reference) */}
         <circle
           cx="0"
@@ -124,6 +139,29 @@ export const StadiumDiagram: React.FC<StadiumDiagramProps> = ({
         >
           ⚾
         </text>
+
+        {/* Sun direction arrow */}
+        {sunAzimuthDegrees !== undefined && (() => {
+          const cx = bounds.minX + bounds.width / 2;
+          const cy = bounds.minY + bounds.height / 2;
+          const radius = Math.max(bounds.width, bounds.height) * 0.45;
+          // Convert azimuth (0=N clockwise) to SVG angle (0=right, counter-clockwise)
+          const rad = ((sunAzimuthDegrees - 90) * Math.PI) / 180;
+          const sx = cx + Math.cos(rad) * radius;
+          const sy = cy + Math.sin(rad) * radius;
+          const compassDir = getCompassDir(sunAzimuthDegrees);
+          return (
+            <g aria-label={`Sun direction: ${compassDir}`}>
+              <circle cx={sx} cy={sy} r="6" fill="#fbbf24" stroke="#f59e0b" strokeWidth="1" />
+              <text x={sx} y={sy + 1.5} textAnchor="middle" fontSize="5" fill="#92400e" aria-hidden="true">
+                ☀
+              </text>
+              <text x={sx} y={sy + 10} textAnchor="middle" fontSize="4" fill="#6b7280" fontWeight="500">
+                Sun: {compassDir}
+              </text>
+            </g>
+          );
+        })()}
 
         {/* Render all sections */}
         {sections.map(section => {

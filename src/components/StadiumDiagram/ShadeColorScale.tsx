@@ -1,5 +1,5 @@
 import React from 'react';
-import { SHADE_COLORS } from './shadeColors';
+import { SHADE_SCORE_BANDS } from '../../utils/shadeScore';
 import styles from './ShadeColorScale.module.css';
 
 interface ShadeColorScaleProps {
@@ -8,21 +8,19 @@ interface ShadeColorScaleProps {
 
 export const ShadeColorScale: React.FC<ShadeColorScaleProps> = ({ className = '' }) => {
   return (
-    <div className={`${styles.container} ${className}`} role="img" aria-label="Shade coverage color scale legend">
-      <h3 className={styles.title}>Shade Coverage</h3>
+    <div className={`${styles.container} ${className}`} role="img" aria-label="Shade Score color scale legend">
+      <h3 className={styles.title}>Shade Score</h3>
       <div className={styles.scale}>
-        {SHADE_COLORS.map((color, index) => (
-          <div key={index} className={styles.colorItem}>
+        {SHADE_SCORE_BANDS.map((band) => (
+          <div key={band.score} className={styles.colorItem}>
             <div
               className={styles.colorBox}
-              style={{ backgroundColor: color.fill }}
-              aria-hidden="true"
-            />
+              style={{ backgroundColor: band.color, color: band.textColor, display: 'flex', alignItems: 'center', justifyContent: 'center', fontWeight: 700, fontSize: '0.875rem' }}
+            >
+              {band.score}
+            </div>
             <div className={styles.labelContainer}>
-              <span className={styles.label}>{color.label}</span>
-              <span className={styles.range}>
-                {color.range.min}% - {color.range.max === 100 ? '100%' : `${color.range.max}%`}
-              </span>
+              <span className={styles.label}>{band.label}</span>
             </div>
           </div>
         ))}

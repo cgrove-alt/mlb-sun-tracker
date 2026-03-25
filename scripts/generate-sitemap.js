@@ -20,6 +20,15 @@ const mlbVenues = venuesArray.filter(v => v.league === 'MLB').map(v => v.id);
 const nflVenues = venuesArray.filter(v => v.league === 'NFL').map(v => v.id);
 const milbVenues = venuesArray.filter(v => v.league === 'MiLB').map(v => v.id);
 
+// World Cup venue IDs (all 16 venues)
+const worldCupVenueIds = [
+  'metlife-stadium-wc', 'sofi-stadium-wc', 'att-stadium-wc', 'mercedes-benz-stadium-wc',
+  'arrowhead-stadium-wc', 'hard-rock-stadium-wc', 'lincoln-financial-field-wc', 'levis-stadium-wc',
+  'gillette-stadium-wc', 'nrg-stadium-wc', 'lumen-field-wc',
+  'estadio-azteca-wc', 'estadio-akron-wc', 'estadio-bbva-wc',
+  'bc-place-wc', 'bmo-field-wc'
+];
+
 // Static pages
 const staticPages = [
   '',
@@ -32,7 +41,9 @@ const staticPages = [
   'guide/avoid-sun-baseball-games',
   'seats-shade-finder',
   'worldcup2026',
-  'worldcup2026/schedule'
+  'worldcup2026/schedule',
+  'worldcup2026/compare',
+  'worldcup2026/venues'
 ];
 
 // League pages
@@ -119,6 +130,16 @@ milbVenues.forEach(venue => {
   </url>`;
 });
 
+// Add World Cup venue pages
+worldCupVenueIds.forEach(venueId => {
+  stadiumsSitemap += `
+  <url>
+    <loc>${baseUrl}/worldcup2026/venues/${venueId}</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>`;
+});
+
 stadiumsSitemap += `
 </urlset>`;
 
@@ -174,7 +195,7 @@ fs.writeFileSync(path.join(publicDir, 'sitemap-index.xml'), sitemapIndex);
 
 // Calculate stats
 const mainUrls = staticPages.length + leaguePages.length;
-const stadiumUrls = (mlbVenues.length * 2) + nflVenues.length + milbVenues.length;
+const stadiumUrls = (mlbVenues.length * 2) + nflVenues.length + milbVenues.length + worldCupVenueIds.length;
 const guideUrls = guidePaths.length + 1; // +1 for /blog
 const totalUrls = mainUrls + stadiumUrls + guideUrls;
 
@@ -184,6 +205,7 @@ console.log(`  Stadiums sitemap: ${stadiumUrls} URLs`);
 console.log(`    - ${mlbVenues.length} MLB stadiums (x2 for old/new URLs)`);
 console.log(`    - ${nflVenues.length} NFL venues`);
 console.log(`    - ${milbVenues.length} MiLB stadiums`);
+console.log(`    - ${worldCupVenueIds.length} World Cup venues`);
 console.log(`  Guides sitemap: ${guideUrls} URLs`);
 console.log(`✓ Saved to: ${publicDir}/`);
 console.log(`  - sitemap.xml`);

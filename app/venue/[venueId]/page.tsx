@@ -5,6 +5,22 @@ import { getVenueSections } from '../../../src/data/venueSections';
 import { generateBaseballSections } from '../../../src/utils/generateBaseballSections';
 import ComprehensiveStadiumGuide from '../../../src/components/ComprehensiveStadiumGuide';
 import { ALL_WORLD_CUP_VENUES, getWorldCupVenueById } from '../../../src/data/worldcup2026/venues';
+import { MLB_STADIUMS } from '../../../src/data/stadiums';
+import { getStadiumSectionsAsync } from '../../../src/data/getStadiumSections';
+import { getStadiumAmenities } from '../../../src/data/stadiumAmenities';
+import { getStadiumGuide } from '../../../src/data/guides';
+import { ErrorBoundary } from '../../../src/components/ErrorBoundary';
+import StadiumPageClient from '../../stadium/[stadiumId]/StadiumPageClient';
+import { SafeSchema } from '../../../components/SafeSchema';
+import {
+  generateArticleSchema,
+  generateStadiumOrArenaSchema,
+  generateVenueFAQSchema,
+  generateBreadcrumbSchema,
+} from '../../../src/utils/seoSchema';
+import VenueQuickFacts from '../../../src/components/VenueQuickFacts';
+import NearbyVenues from '../../../src/components/NearbyVenues';
+import { getNearbyVenues } from '../../../src/utils/getNearbyVenues';
 
 interface VenuePageProps {
   params: Promise<{
@@ -60,6 +76,20 @@ export async function generateMetadata({ params }: VenuePageProps): Promise<Meta
         description,
         url: `https://theshadium.com/venue/${venueId}`,
         type: 'article',
+        images: [
+          {
+            url: 'https://theshadium.com/logo512.png',
+            width: 512,
+            height: 512,
+            alt: `${worldCupVenue.commonName} World Cup 2026 Shade Guide`,
+          },
+        ],
+      },
+      twitter: {
+        card: 'summary_large_image',
+        title,
+        description,
+        images: ['https://theshadium.com/logo512.png'],
       },
     };
   }
@@ -114,43 +144,6 @@ export async function generateMetadata({ params }: VenuePageProps): Promise<Meta
       'venue:city': venue!.city,
       'venue:state': venue!.state,
     },
-    // Structured data for venue
-    verification: {
-      other: {
-        'structured-data': JSON.stringify({
-          '@context': 'https://schema.org',
-          '@type': 'Article',
-          headline: `Shaded Seats at ${venue!.name} - Complete Guide`,
-          description: `Find the best shaded seats at ${venue!.name}. Real-time shade calculations for ${venue!.team} games.`,
-          author: {
-            '@type': 'Organization',
-            name: 'The Shadium'
-          },
-          publisher: {
-            '@type': 'Organization',
-            name: 'The Shadium',
-            logo: {
-              '@type': 'ImageObject',
-              url: 'https://theshadium.com/logo512.png'
-            }
-          },
-          datePublished: '2024-01-01',
-          dateModified: new Date().toISOString(),
-          mainEntityOfPage: {
-            '@type': 'WebPage',
-            '@id': `https://theshadium.com/venue/${venueId}`
-          },
-          about: {
-            '@type': venue!.venueType === 'baseball' ? 'StadiumOrArena' : 'SportsComplex',
-            name: venue!.name,
-            address: {
-              '@type': 'PostalAddress',
-              addressLocality: venue!.city
-            }
-          }
-        })
-      }
-    }
   };
 }
 
@@ -173,11 +166,117 @@ export default async function VenuePage({ params }: VenuePageProps) {
     stadiumIdToUse = venue.id;
   }
 
+  // Check if this is an MLB stadium — if so, render StadiumPageClient with sun calculations
+  const mlbStadium = MLB_STADIUMS.find(s => s.id === stadiumIdToUse);
+
+  // Build schema data for the current venue
+  const schemaVenueName = venue ? venue.name : worldCupVenue!.commonName;
+  const schemaVenueData = venue
+    ? {
+        name: venue.name,
+        id: venue.id,
+        city: venue.city,
+        state: venue.state,
+        latitude: venue.latitude,
+        longitude: venue.longitude,
+        capacity: venue.capacity,
+      }
+    : {
+        name: worldCupVenue!.commonName,
+        id: worldCupVenue!.id,
+        city: worldCupVenue!.city,
+        country: worldCupVenue!.country,
+        latitude: worldCupVenue!.latitude,
+        longitude: worldCupVenue!.longitude,
+        capacity: worldCupVenue!.soccerCapacity,
+      };
+
+  const leagueLabel = venue ? venue.league : 'World Cup 2026';
+  const leagueUrl = venue
+    ? `https://theshadium.com/league/${venue.league.toLowerCase()}`
+    : 'https://theshadium.com/worldcup2026';
+
+  const breadcrumbItems = [
+    { name: 'Home', url: 'https://theshadium.com/' },
+    { name: leagueLabel, url: leagueUrl },
+    { name: schemaVenueName, url: `https://theshadium.com/venue/${venueId}` },
+  ];
+
+  const articleSchema = generateArticleSchema({
+    name: schemaVenueName,
+    id: venueId,
+    team: venue?.team,
+  });
+  const stadiumSchema = generateStadiumOrArenaSchema(schemaVenueData);
+  const faqSchema = generateVenueFAQSchema(schemaVenueName);
+  const breadcrumbSchema = generateBreadcrumbSchema(breadcrumbItems);
+
+  // Quick Facts data
+  const quickFactsProps = venue
+    ? {
+        name: venue.name,
+        capacity: venue.capacity,
+        roof: venue.roof || 'open',
+        orientation: venue.orientation,
+        city: venue.city,
+        state: venue.state,
+        league: venue.league,
+        team: venue.team,
+        timezone: venue.timezone,
+        venueType: venue.venueType,
+      }
+    : {
+        name: worldCupVenue!.commonName,
+        capacity: worldCupVenue!.soccerCapacity,
+        roof: worldCupVenue!.roof,
+        orientation: worldCupVenue!.fieldOrientation,
+        city: worldCupVenue!.city,
+        country: worldCupVenue!.country,
+        league: 'World Cup 2026',
+        team: worldCupVenue!.fifaName,
+        timezone: worldCupVenue!.timezone,
+        venueType: 'soccer',
+      };
+
+  const nearbyVenues = getNearbyVenues(venueId, 5);
+
+  if (mlbStadium) {
+    const sections = await getStadiumSectionsAsync(mlbStadium.id);
+    const amenities = getStadiumAmenities(mlbStadium.id);
+    const guide = getStadiumGuide(mlbStadium.id) || getStadiumGuide(venueId);
+
+    return (
+      <div>
+        <SafeSchema schema={articleSchema} />
+        <SafeSchema schema={stadiumSchema} />
+        <SafeSchema schema={faqSchema} />
+        <SafeSchema schema={breadcrumbSchema} />
+        <VenueQuickFacts {...quickFactsProps} />
+        <ErrorBoundary level="section" resetKeys={[venueId]}>
+          <StadiumPageClient
+            stadium={mlbStadium}
+            sections={sections}
+            amenities={amenities}
+            guide={guide}
+            useComprehensive={!!guide}
+          />
+        </ErrorBoundary>
+        <NearbyVenues venues={nearbyVenues} />
+      </div>
+    );
+  }
+
   return (
     <div>
+      <SafeSchema schema={articleSchema} />
+      <SafeSchema schema={stadiumSchema} />
+      <SafeSchema schema={faqSchema} />
+      <SafeSchema schema={breadcrumbSchema} />
+      <VenueQuickFacts {...quickFactsProps} />
       <ComprehensiveStadiumGuide
         stadiumId={stadiumIdToUse}
       />
+      <NearbyVenues venues={nearbyVenues} />
     </div>
   );
 }

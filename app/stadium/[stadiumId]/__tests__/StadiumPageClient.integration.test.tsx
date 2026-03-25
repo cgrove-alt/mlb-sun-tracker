@@ -22,6 +22,7 @@ jest.mock('../../../../src/hooks/useSunCalculations', () => ({
     ],
     rowData: null,
     isLoading: false,
+    error: null,
     refetch: jest.fn()
   }))
 }));
@@ -127,6 +128,7 @@ describe('StadiumPageClient - Diagram Integration', () => {
         data: null,
         rowData: null,
         isLoading: true,
+        error: null,
         refetch: jest.fn()
       });
 
@@ -263,6 +265,7 @@ describe('StadiumPageClient - Diagram Integration', () => {
         ],
         rowData: null,
         isLoading: false,
+        error: null,
         refetch: jest.fn()
       });
 
@@ -294,6 +297,7 @@ describe('StadiumPageClient - Diagram Integration', () => {
         ],
         rowData: null,
         isLoading: false,
+        error: null,
         refetch: mockRefetch
       });
 

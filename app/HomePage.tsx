@@ -1,30 +1,71 @@
 // Server Component - Statically generated at build time
-import { Suspense } from 'react';
 import PWAInstallPrompt from '../components/PWAInstallPrompt';
-import { HomePageSkeleton } from '../src/components/SkeletonScreens';
 import { ErrorBoundary } from '../src/components/ErrorBoundary';
 import HomepageSchema from './HomepageSchema';
 import Link from 'next/link';
 import { HeroSection } from '../src/components/HeroSection/HeroSection';
 import { HowItWorks } from '../src/components/HowItWorks/HowItWorks';
 import { WorldCupShowcase } from '../src/components/WorldCupShowcase/WorldCupShowcase';
-import VenueDataProvider from '../components/VenueDataProvider';
+import { ShadeFinder } from '../src/components/ShadeFinder/ShadeFinder';
+import { TodaysGames } from '../src/components/TodaysGames/TodaysGames';
+
+const POPULAR_STADIUMS = [
+  { id: 'yankees', name: 'Yankee Stadium', team: 'NY Yankees' },
+  { id: 'dodgers', name: 'Dodger Stadium', team: 'LA Dodgers' },
+  { id: 'cubs', name: 'Wrigley Field', team: 'Chicago Cubs' },
+  { id: 'redsox', name: 'Fenway Park', team: 'Boston Red Sox' },
+  { id: 'giants', name: 'Oracle Park', team: 'SF Giants' },
+  { id: 'braves', name: 'Truist Park', team: 'Atlanta Braves' },
+];
 
 export default function HomePage() {
   return (
     <>
       <HomepageSchema />
       <main>
-        {/* Hero Section - Client Component but minimal JS */}
+        {/* Hero Section — CTA scrolls to #shade-finder */}
         <HeroSection />
 
-        {/* How It Works - Can be Server Component */}
+        {/* Guided Shade Finder — league → stadium → go */}
+        <ShadeFinder />
+
+        {/* Today's Games */}
+        <ErrorBoundary level="section">
+          <TodaysGames />
+        </ErrorBoundary>
+
+        {/* How It Works — educational, below interactive content */}
         <HowItWorks />
 
-        {/* World Cup Showcase - Can be Server Component */}
+        {/* Popular Stadiums */}
+        <section style={{ padding: '2rem 1rem', background: '#f8fafc' }}>
+          <div style={{ maxWidth: '1200px', margin: '0 auto' }}>
+            <h2 style={{ fontSize: '1.75rem', fontWeight: 700, color: '#1f2937', marginBottom: '1.5rem', textAlign: 'center' }}>
+              Popular Stadiums
+            </h2>
+            <div style={{
+              display: 'grid',
+              gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))',
+              gap: '1rem',
+            }}>
+              {POPULAR_STADIUMS.map(s => (
+                <Link key={s.id} href={`/stadium/${s.id}`} style={{
+                  display: 'block', background: 'white', border: '1px solid #e2e8f0',
+                  borderRadius: '0.75rem', padding: '1.25rem', textDecoration: 'none',
+                  color: 'inherit', transition: 'box-shadow 0.2s',
+                }}>
+                  <div style={{ fontWeight: 600, fontSize: '1.0625rem', color: '#1f2937' }}>{s.name}</div>
+                  <div style={{ fontSize: '0.8125rem', color: '#6b7280', marginTop: '0.25rem' }}>{s.team}</div>
+                </Link>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* World Cup Showcase */}
         <WorldCupShowcase openingMatchDate={new Date('2026-06-11T12:00:00-07:00')} />
 
-        {/* SEO Content - Server rendered */}
+        {/* SEO Content — Server rendered */}
         <div className="sr-only">
           <h2>Find Shaded Seats at MLB, MiLB & NFL Stadiums - Are My Seats in the Shade?</h2>
           <p>
@@ -49,15 +90,6 @@ export default function HomePage() {
             game time to see which sections are shaded. Our advanced calculations consider sun angle, stadium
             orientation, roof coverage, and time of day to show you exactly where the shade will be during your game.
           </p>
-        </div>
-
-        {/* Venue Selector - Server fetches data, client handles interaction */}
-        <div id="app-section">
-          <ErrorBoundary level="section">
-            <Suspense fallback={<HomePageSkeleton />}>
-              <VenueDataProvider />
-            </Suspense>
-          </ErrorBoundary>
         </div>
 
         <PWAInstallPrompt />

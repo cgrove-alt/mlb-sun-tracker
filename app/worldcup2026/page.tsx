@@ -1,6 +1,7 @@
 import React from 'react';
 import { Metadata } from 'next';
 import { WorldCupLandingClient } from './WorldCupLandingClient';
+import { WORLD_CUP_FAQ_DATA } from '../../src/data/worldcup2026/faqData';
 
 export const metadata: Metadata = {
   title: 'FIFA World Cup 2026 Shaded Seats | Find the Best Stadium Seats',
@@ -142,6 +143,25 @@ export default function WorldCupLandingPage() {
                 item: 'https://theshadium.com/worldcup2026'
               }
             ]
+          })
+        }}
+      />
+
+      {/* Schema.org JSON-LD for FAQPage */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            '@context': 'https://schema.org',
+            '@type': 'FAQPage',
+            mainEntity: WORLD_CUP_FAQ_DATA.map(faq => ({
+              '@type': 'Question',
+              name: faq.question,
+              acceptedAnswer: {
+                '@type': 'Answer',
+                text: faq.answer
+              }
+            }))
           })
         }}
       />

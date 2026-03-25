@@ -1,6 +1,6 @@
 import React from 'react';
 import { DetailedSection } from '../../types/stadium-complete';
-import { getShadeColor } from './shadeColors';
+import { calculateShadeScore, getShadeScoreColor, getShadeScoreTextColor } from '../../utils/shadeScore';
 
 interface SectionPolygonProps {
   section: DetailedSection;
@@ -53,8 +53,11 @@ export const SectionPolygon: React.FC<SectionPolygonProps> = ({
   centroid.x /= section.vertices3D.length;
   centroid.y /= section.vertices3D.length;
 
-  // Get shade color
-  const color = getShadeColor(shadePercentage);
+  // Get shade score (sunExposure = 100 - shadePercentage)
+  const sunExposure = 100 - shadePercentage;
+  const shadeResult = calculateShadeScore(sunExposure);
+  const fillColor = getShadeScoreColor(shadeResult.score);
+  const textOnBadge = getShadeScoreTextColor(shadeResult.score);
 
   // Determine stroke color and width
   const getStrokeStyle = () => {
@@ -79,7 +82,7 @@ export const SectionPolygon: React.FC<SectionPolygonProps> = ({
     <g>
       <polygon
         points={points}
-        fill={color.fill}
+        fill={fillColor}
         {...strokeStyle}
         opacity={opacity}
         onClick={onClick}
@@ -90,50 +93,70 @@ export const SectionPolygon: React.FC<SectionPolygonProps> = ({
         onKeyDown={onKeyDown}
         tabIndex={0}
         role="button"
-        aria-label={`Section ${section.name}, ${Math.round(shadePercentage)}% shade coverage`}
+        aria-label={`Section ${section.name}, Shade Score ${shadeResult.score} out of 10, ${Math.round(shadePercentage)}% shade coverage`}
         style={{
           cursor: 'pointer',
           transition: 'all 0.2s ease',
         }}
       />
 
-      {/* Section label */}
+      {/* Section tooltip */}
       {(isHovered || isSelected || isFocused) && (
         <>
-          {/* Background for label */}
+          {/* Background for tooltip — wider for readability, with drop shadow */}
           <rect
-            x={centroid.x - 15}
-            y={centroid.y - 8}
-            width="30"
-            height="16"
-            fill="rgba(255, 255, 255, 0.95)"
+            x={centroid.x - 25}
+            y={centroid.y - 12}
+            width="50"
+            height="26"
+            fill="rgba(255, 255, 255, 0.97)"
             stroke="#1F2937"
             strokeWidth="0.3"
-            rx="2"
+            rx="3"
+            filter="url(#tooltip-shadow)"
             aria-hidden="true"
           />
-          {/* Section name */}
+          {/* Shade percentage — shown first and prominently */}
           <text
-            x={centroid.x}
-            y={centroid.y - 1}
+            x={centroid.x - 8}
+            y={centroid.y - 4}
             textAnchor="middle"
-            fontSize="5"
+            fontSize="5.5"
             fill="#1F2937"
-            fontWeight="600"
+            fontWeight="700"
             aria-hidden="true"
           >
-            {section.name}
+            {Math.round(shadePercentage)}% shade
           </text>
-          {/* Shade percentage */}
+          {/* Shade Score badge */}
+          <circle
+            cx={centroid.x + 18}
+            cy={centroid.y - 6}
+            r="5"
+            fill={fillColor}
+            aria-hidden="true"
+          />
+          <text
+            x={centroid.x + 18}
+            y={centroid.y - 4.5}
+            textAnchor="middle"
+            fontSize="4"
+            fill={textOnBadge}
+            fontWeight="700"
+            aria-hidden="true"
+          >
+            {shadeResult.score}
+          </text>
+          {/* Section name + score label */}
           <text
             x={centroid.x}
-            y={centroid.y + 5}
+            y={centroid.y + 6}
             textAnchor="middle"
             fontSize="3.5"
             fill="#6B7280"
             aria-hidden="true"
           >
-            {Math.round(shadePercentage)}%
+            {section.name} | Score: {shadeResult.score}/10
           </text>
         </>
       )}

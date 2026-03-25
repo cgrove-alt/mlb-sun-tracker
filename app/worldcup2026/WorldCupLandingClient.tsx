@@ -20,6 +20,9 @@ import { WorldCupHero } from '../../src/components/worldcup/WorldCupHero';
 import { VenueCarousel } from '../../src/components/worldcup/VenueCarousel';
 import { KeyDatesTimeline } from '../../src/components/worldcup/KeyDatesTimeline';
 import { TravelGuide } from '../../src/components/worldcup/TravelGuide';
+import MatchShadeFinder from '../../src/components/worldcup/MatchShadeFinder';
+import WorldCupFAQ from '../../src/components/worldcup/WorldCupFAQ';
+import { getShadeGuide } from '../../src/data/worldcup2026/shadeGuides';
 import { useTranslation } from '../../src/i18n/i18nContext';
 import Link from 'next/link';
 
@@ -46,6 +49,11 @@ export function WorldCupLandingClient() {
       <WorldCupHero />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        {/* Match Shade Finder Tool */}
+        <div className="mb-12">
+          <MatchShadeFinder />
+        </div>
+
         {/* Featured Venue Carousel */}
         <div className="mb-12">
           <h2 className="text-3xl font-bold text-gray-900 mb-6 text-center">
@@ -178,6 +186,18 @@ export function WorldCupLandingClient() {
                       <span className="px-2 py-1 bg-purple-100 text-purple-700 text-xs rounded-full">
                         {venue.sections.length} {t('sections.title').toLowerCase()}
                       </span>
+                      {(() => {
+                        const guide = getShadeGuide(venue.id);
+                        return guide ? (
+                          <span className={`px-2 py-1 text-xs rounded-full font-medium ${
+                            guide.shadeScore >= 8 ? 'bg-green-100 text-green-700' :
+                            guide.shadeScore >= 5 ? 'bg-blue-100 text-blue-700' :
+                            'bg-yellow-100 text-yellow-700'
+                          }`}>
+                            Shade: {guide.shadeScore}/10
+                          </span>
+                        ) : null;
+                      })()}
                     </div>
 
                     {/* CTA Button */}
@@ -192,6 +212,11 @@ export function WorldCupLandingClient() {
               );
             })}
           </div>
+        </div>
+
+        {/* FAQ Section */}
+        <div className="mt-12">
+          <WorldCupFAQ />
         </div>
 
         {/* Why This Matters Section */}

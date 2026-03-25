@@ -7,12 +7,13 @@ import { WorldCupVenue } from '../../data/worldcup2026/types';
 interface VenueCardProps {
   venue: WorldCupVenue;
   matchCount?: number;
+  shadeScore?: number;
   isCompareMode?: boolean;
   isSelected?: boolean;
   onToggleSelect?: (venueId: string) => void;
 }
 
-export function VenueCard({ venue, matchCount, isCompareMode = false, isSelected = false, onToggleSelect }: VenueCardProps) {
+export function VenueCard({ venue, matchCount, shadeScore, isCompareMode = false, isSelected = false, onToggleSelect }: VenueCardProps) {
   const getCountryFlag = (country: string) => {
     const flags = {
       'USA': '🇺🇸',
@@ -94,6 +95,17 @@ export function VenueCard({ venue, matchCount, isCompareMode = false, isSelected
             </div>
           </div>
         </div>
+
+        {/* Shade Score Badge */}
+        {shadeScore !== undefined && (
+          <div className={`mb-4 rounded-lg p-2 text-center text-sm font-semibold ${
+            shadeScore >= 8 ? 'bg-green-50 text-green-700' :
+            shadeScore >= 5 ? 'bg-blue-50 text-blue-700' :
+            'bg-yellow-50 text-yellow-700'
+          }`}>
+            Shade: {shadeScore}/10
+          </div>
+        )}
 
         {/* Stadium Details */}
         <div className="space-y-2 text-sm text-gray-700 mb-4">

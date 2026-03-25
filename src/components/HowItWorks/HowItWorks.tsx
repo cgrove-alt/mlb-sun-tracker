@@ -74,6 +74,9 @@ export const HowItWorks: React.FC = () => {
               Learn more about our methodology →
             </a>
           </p>
+          <a href="#shade-finder" className="how-it-works-cta">
+            Find Your Shade
+          </a>
         </div>
       </div>
 
@@ -220,6 +223,28 @@ export const HowItWorks: React.FC = () => {
         .learn-more-link:hover {
           color: #0891b2;
           text-decoration: underline;
+        }
+
+        .how-it-works-cta {
+          display: inline-flex;
+          align-items: center;
+          gap: 0.5rem;
+          margin-top: 1.5rem;
+          padding: 0.875rem 2rem;
+          background: linear-gradient(135deg, #0f766e 0%, #0891b2 100%);
+          color: white;
+          font-size: 1.0625rem;
+          font-weight: 600;
+          border-radius: 12px;
+          text-decoration: none;
+          transition: all 0.2s ease;
+          box-shadow: 0 4px 14px rgba(15, 118, 110, 0.3);
+          min-height: 48px;
+        }
+
+        .how-it-works-cta:hover {
+          transform: translateY(-2px);
+          box-shadow: 0 8px 20px rgba(15, 118, 110, 0.4);
         }
 
         /* Tablet responsive */

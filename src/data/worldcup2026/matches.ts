@@ -899,11 +899,11 @@ export const WORLD_CUP_2026_MATCHES: WorldCupMatch[] = [
   // ============================================================
   // ROUND OF 32 - 16 MATCHES (TOP 2 FROM EACH GROUP + 8 BEST 3RD)
   // ============================================================
-  // July 4-7, 2026
+  // June 28-July 3, 2026
 
   {
     matchId: 'wc2026-073',
-    date: '2026-07-04',
+    date: '2026-06-28',
     kickoffTime: '15:00',
     venue: 'sofi-stadium-wc',
     round: 'Round of 32',
@@ -913,7 +913,7 @@ export const WORLD_CUP_2026_MATCHES: WorldCupMatch[] = [
   },
   {
     matchId: 'wc2026-074',
-    date: '2026-07-04',
+    date: '2026-06-28',
     kickoffTime: '18:00',
     venue: 'metlife-stadium-wc',
     round: 'Round of 32',
@@ -923,8 +923,8 @@ export const WORLD_CUP_2026_MATCHES: WorldCupMatch[] = [
   },
   {
     matchId: 'wc2026-075',
-    date: '2026-07-05',
-    kickoffTime: '15:00',
+    date: '2026-06-28',
+    kickoffTime: '21:00',
     venue: 'att-stadium-wc',
     round: 'Round of 32',
     teamA: 'TBD',
@@ -933,8 +933,8 @@ export const WORLD_CUP_2026_MATCHES: WorldCupMatch[] = [
   },
   {
     matchId: 'wc2026-076',
-    date: '2026-07-05',
-    kickoffTime: '18:00',
+    date: '2026-06-29',
+    kickoffTime: '15:00',
     venue: 'mercedes-benz-stadium-wc',
     round: 'Round of 32',
     teamA: 'TBD',
@@ -943,8 +943,8 @@ export const WORLD_CUP_2026_MATCHES: WorldCupMatch[] = [
   },
   {
     matchId: 'wc2026-077',
-    date: '2026-07-06',
-    kickoffTime: '15:00',
+    date: '2026-06-29',
+    kickoffTime: '18:00',
     venue: 'hard-rock-stadium-wc',
     round: 'Round of 32',
     teamA: 'TBD',
@@ -953,8 +953,8 @@ export const WORLD_CUP_2026_MATCHES: WorldCupMatch[] = [
   },
   {
     matchId: 'wc2026-078',
-    date: '2026-07-06',
-    kickoffTime: '18:00',
+    date: '2026-06-29',
+    kickoffTime: '21:00',
     venue: 'nrg-stadium-wc',
     round: 'Round of 32',
     teamA: 'TBD',
@@ -963,7 +963,7 @@ export const WORLD_CUP_2026_MATCHES: WorldCupMatch[] = [
   },
   {
     matchId: 'wc2026-079',
-    date: '2026-07-07',
+    date: '2026-06-30',
     kickoffTime: '15:00',
     venue: 'arrowhead-stadium-wc',
     round: 'Round of 32',
@@ -973,7 +973,7 @@ export const WORLD_CUP_2026_MATCHES: WorldCupMatch[] = [
   },
   {
     matchId: 'wc2026-080',
-    date: '2026-07-07',
+    date: '2026-06-30',
     kickoffTime: '18:00',
     venue: 'lincoln-financial-field-wc',
     round: 'Round of 32',
@@ -983,8 +983,8 @@ export const WORLD_CUP_2026_MATCHES: WorldCupMatch[] = [
   },
   {
     matchId: 'wc2026-081',
-    date: '2026-07-08',
-    kickoffTime: '15:00',
+    date: '2026-06-30',
+    kickoffTime: '21:00',
     venue: 'gillette-stadium-wc',
     round: 'Round of 32',
     teamA: 'TBD',
@@ -993,8 +993,8 @@ export const WORLD_CUP_2026_MATCHES: WorldCupMatch[] = [
   },
   {
     matchId: 'wc2026-082',
-    date: '2026-07-08',
-    kickoffTime: '18:00',
+    date: '2026-07-01',
+    kickoffTime: '15:00',
     venue: 'levis-stadium-wc',
     round: 'Round of 32',
     teamA: 'TBD',
@@ -1003,8 +1003,8 @@ export const WORLD_CUP_2026_MATCHES: WorldCupMatch[] = [
   },
   {
     matchId: 'wc2026-083',
-    date: '2026-07-09',
-    kickoffTime: '15:00',
+    date: '2026-07-01',
+    kickoffTime: '18:00',
     venue: 'lumen-field-wc',
     round: 'Round of 32',
     teamA: 'TBD',
@@ -1013,8 +1013,8 @@ export const WORLD_CUP_2026_MATCHES: WorldCupMatch[] = [
   },
   {
     matchId: 'wc2026-084',
-    date: '2026-07-09',
-    kickoffTime: '18:00',
+    date: '2026-07-01',
+    kickoffTime: '21:00',
     venue: 'estadio-azteca-wc',
     round: 'Round of 32',
     teamA: 'TBD',
@@ -1023,7 +1023,7 @@ export const WORLD_CUP_2026_MATCHES: WorldCupMatch[] = [
   },
   {
     matchId: 'wc2026-085',
-    date: '2026-07-10',
+    date: '2026-07-02',
     kickoffTime: '15:00',
     venue: 'estadio-bbva-wc',
     round: 'Round of 32',
@@ -1033,7 +1033,7 @@ export const WORLD_CUP_2026_MATCHES: WorldCupMatch[] = [
   },
   {
     matchId: 'wc2026-086',
-    date: '2026-07-10',
+    date: '2026-07-02',
     kickoffTime: '18:00',
     venue: 'estadio-akron-wc',
     round: 'Round of 32',
@@ -1043,7 +1043,7 @@ export const WORLD_CUP_2026_MATCHES: WorldCupMatch[] = [
   },
   {
     matchId: 'wc2026-087',
-    date: '2026-07-11',
+    date: '2026-07-03',
     kickoffTime: '15:00',
     venue: 'bc-place-wc',
     round: 'Round of 32',
@@ -1053,7 +1053,7 @@ export const WORLD_CUP_2026_MATCHES: WorldCupMatch[] = [
   },
   {
     matchId: 'wc2026-088',
-    date: '2026-07-11',
+    date: '2026-07-03',
     kickoffTime: '18:00',
     venue: 'bmo-field-wc',
     round: 'Round of 32',
@@ -1065,13 +1065,13 @@ export const WORLD_CUP_2026_MATCHES: WorldCupMatch[] = [
   // ============================================================
   // ROUND OF 16 - 8 MATCHES
   // ============================================================
-  // July 13-15, 2026
+  // July 4-7, 2026
 
   {
     matchId: 'wc2026-089',
-    date: '2026-07-13',
+    date: '2026-07-04',
     kickoffTime: '15:00',
-    venue: 'sofi-stadium-wc',
+    venue: 'lincoln-financial-field-wc',
     round: 'Round of 16',
     teamA: 'TBD',
     teamB: 'TBD',
@@ -1079,9 +1079,9 @@ export const WORLD_CUP_2026_MATCHES: WorldCupMatch[] = [
   },
   {
     matchId: 'wc2026-090',
-    date: '2026-07-13',
+    date: '2026-07-04',
     kickoffTime: '19:00',
-    venue: 'metlife-stadium-wc',
+    venue: 'sofi-stadium-wc',
     round: 'Round of 16',
     teamA: 'TBD',
     teamB: 'TBD',
@@ -1089,7 +1089,27 @@ export const WORLD_CUP_2026_MATCHES: WorldCupMatch[] = [
   },
   {
     matchId: 'wc2026-091',
-    date: '2026-07-14',
+    date: '2026-07-05',
+    kickoffTime: '15:00',
+    venue: 'metlife-stadium-wc',
+    round: 'Round of 16',
+    teamA: 'TBD',
+    teamB: 'TBD',
+    tvChannels: ['FOX', 'Telemundo', 'TSN']
+  },
+  {
+    matchId: 'wc2026-092',
+    date: '2026-07-05',
+    kickoffTime: '19:00',
+    venue: 'estadio-azteca-wc',
+    round: 'Round of 16',
+    teamA: 'TBD',
+    teamB: 'TBD',
+    tvChannels: ['FOX', 'Telemundo', 'TSN']
+  },
+  {
+    matchId: 'wc2026-093',
+    date: '2026-07-06',
     kickoffTime: '15:00',
     venue: 'att-stadium-wc',
     round: 'Round of 16',
@@ -1098,30 +1118,10 @@ export const WORLD_CUP_2026_MATCHES: WorldCupMatch[] = [
     tvChannels: ['FOX', 'Telemundo', 'TSN']
   },
   {
-    matchId: 'wc2026-092',
-    date: '2026-07-14',
-    kickoffTime: '19:00',
-    venue: 'mercedes-benz-stadium-wc',
-    round: 'Round of 16',
-    teamA: 'TBD',
-    teamB: 'TBD',
-    tvChannels: ['FOX', 'Telemundo', 'TSN']
-  },
-  {
-    matchId: 'wc2026-093',
-    date: '2026-07-15',
-    kickoffTime: '15:00',
-    venue: 'hard-rock-stadium-wc',
-    round: 'Round of 16',
-    teamA: 'TBD',
-    teamB: 'TBD',
-    tvChannels: ['FOX', 'Telemundo', 'TSN']
-  },
-  {
     matchId: 'wc2026-094',
-    date: '2026-07-15',
+    date: '2026-07-06',
     kickoffTime: '19:00',
-    venue: 'nrg-stadium-wc',
+    venue: 'lumen-field-wc',
     round: 'Round of 16',
     teamA: 'TBD',
     teamB: 'TBD',
@@ -1129,9 +1129,9 @@ export const WORLD_CUP_2026_MATCHES: WorldCupMatch[] = [
   },
   {
     matchId: 'wc2026-095',
-    date: '2026-07-16',
+    date: '2026-07-07',
     kickoffTime: '15:00',
-    venue: 'arrowhead-stadium-wc',
+    venue: 'mercedes-benz-stadium-wc',
     round: 'Round of 16',
     teamA: 'TBD',
     teamB: 'TBD',
@@ -1139,9 +1139,9 @@ export const WORLD_CUP_2026_MATCHES: WorldCupMatch[] = [
   },
   {
     matchId: 'wc2026-096',
-    date: '2026-07-16',
+    date: '2026-07-07',
     kickoffTime: '19:00',
-    venue: 'lincoln-financial-field-wc',
+    venue: 'bc-place-wc',
     round: 'Round of 16',
     teamA: 'TBD',
     teamB: 'TBD',
@@ -1151,11 +1151,21 @@ export const WORLD_CUP_2026_MATCHES: WorldCupMatch[] = [
   // ============================================================
   // QUARTERFINALS - 4 MATCHES
   // ============================================================
-  // July 17-18, 2026
+  // July 9-11, 2026
 
   {
     matchId: 'wc2026-097',
-    date: '2026-07-17',
+    date: '2026-07-09',
+    kickoffTime: '16:00',
+    venue: 'gillette-stadium-wc',
+    round: 'Quarterfinal',
+    teamA: 'TBD',
+    teamB: 'TBD',
+    tvChannels: ['FOX', 'Telemundo', 'TSN']
+  },
+  {
+    matchId: 'wc2026-098',
+    date: '2026-07-10',
     kickoffTime: '16:00',
     venue: 'sofi-stadium-wc',
     round: 'Quarterfinal',
@@ -1164,20 +1174,10 @@ export const WORLD_CUP_2026_MATCHES: WorldCupMatch[] = [
     tvChannels: ['FOX', 'Telemundo', 'TSN']
   },
   {
-    matchId: 'wc2026-098',
-    date: '2026-07-17',
-    kickoffTime: '20:00',
-    venue: 'gillette-stadium-wc',
-    round: 'Quarterfinal',
-    teamA: 'TBD',
-    teamB: 'TBD',
-    tvChannels: ['FOX', 'Telemundo', 'TSN']
-  },
-  {
     matchId: 'wc2026-099',
-    date: '2026-07-18',
+    date: '2026-07-11',
     kickoffTime: '16:00',
-    venue: 'hard-rock-stadium-wc',
+    venue: 'arrowhead-stadium-wc',
     round: 'Quarterfinal',
     teamA: 'TBD',
     teamB: 'TBD',
@@ -1185,9 +1185,9 @@ export const WORLD_CUP_2026_MATCHES: WorldCupMatch[] = [
   },
   {
     matchId: 'wc2026-100',
-    date: '2026-07-18',
+    date: '2026-07-11',
     kickoffTime: '20:00',
-    venue: 'mercedes-benz-stadium-wc',
+    venue: 'hard-rock-stadium-wc',
     round: 'Quarterfinal',
     teamA: 'TBD',
     teamB: 'TBD',
@@ -1197,11 +1197,11 @@ export const WORLD_CUP_2026_MATCHES: WorldCupMatch[] = [
   // ============================================================
   // SEMIFINALS - 2 MATCHES
   // ============================================================
-  // July 21-22, 2026
+  // July 14-15, 2026
 
   {
     matchId: 'wc2026-101',
-    date: '2026-07-21',
+    date: '2026-07-14',
     kickoffTime: '20:00',
     venue: 'att-stadium-wc',
     round: 'Semifinal',
@@ -1211,7 +1211,7 @@ export const WORLD_CUP_2026_MATCHES: WorldCupMatch[] = [
   },
   {
     matchId: 'wc2026-102',
-    date: '2026-07-22',
+    date: '2026-07-15',
     kickoffTime: '20:00',
     venue: 'mercedes-benz-stadium-wc',
     round: 'Semifinal',
@@ -1223,11 +1223,11 @@ export const WORLD_CUP_2026_MATCHES: WorldCupMatch[] = [
   // ============================================================
   // THIRD PLACE MATCH - 1 MATCH
   // ============================================================
-  // July 26, 2026
+  // July 18, 2026
 
   {
     matchId: 'wc2026-103',
-    date: '2026-07-26',
+    date: '2026-07-18',
     kickoffTime: '17:00',
     venue: 'hard-rock-stadium-wc',
     round: 'Third Place',
