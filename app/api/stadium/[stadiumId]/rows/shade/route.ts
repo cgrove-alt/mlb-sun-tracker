@@ -1,7 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { MLB_STADIUMS } from '../../../../../../src/data/stadiums';
 import { getStadiumSections, hasSpecificData } from '../../../../../../src/data/stadium-data-aggregator';
-import { calculateRowShadows, RowShadowGeometry } from '../../../../../../src/utils/sunCalculator';
+import { calculateRowShadows } from '../../../../../../src/utils/sunCalculator';
 import { getSunPosition } from '../../../../../../src/utils/sunCalculations';
 import { calculateMLBStadiumShade3D } from '../../../../../../src/utils/mlb3DCalculator';
 
@@ -83,13 +83,6 @@ export async function GET(request: NextRequest, { params }: RouteParams) {
     stadium.longitude,
     stadium.timezone
   );
-
-  const stadiumGeometry: RowShadowGeometry = {
-    roofHeight: stadium.roofHeight,
-    roofOverhang: stadium.roofOverhang,
-    upperDeckHeight: stadium.upperDeckHeight,
-    upperDeckOverhang: stadium.upperDeckOverhang,
-  };
 
   try {
     // Check if stadium has 3D data (obstructions)
@@ -229,8 +222,7 @@ export async function GET(request: NextRequest, { params }: RouteParams) {
         section,
         sunPosition.altitudeDegrees,
         sunPosition.azimuthDegrees,
-        stadium.orientation || 0,
-        stadiumGeometry
+        stadium.orientation || 0
       );
 
       return NextResponse.json({
@@ -263,8 +255,7 @@ export async function GET(request: NextRequest, { params }: RouteParams) {
         section,
         sunPosition.altitudeDegrees,
         sunPosition.azimuthDegrees,
-        stadium.orientation || 0,
-        stadiumGeometry
+        stadium.orientation || 0
       )
     );
 
