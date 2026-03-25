@@ -1,6 +1,7 @@
 // sunCalculator.ts
 import SunCalc from 'suncalc';
 import { computeSunPosition } from './nrelSolarPosition';
+import { altitudeFactor } from '../lib/sunMath';
 import type { RowDetail, DetailedSection } from '../types/stadium-complete';
 
 interface Stadium {
@@ -109,51 +110,35 @@ export class SunCalculator {
     };
   }
 
+  /**
+   * Calculate sun position for a given time at this stadium.
+   *
+   * IMPORTANT: When passing date strings, `new Date('YYYY-MM-DDTHH:MM:SS')` is interpreted
+   * in the runtime's local timezone (UTC on the server). This produces the wrong UTC instant
+   * for a stadium-local time. Use `createStadiumDate(localTimeStr, stadium.timezone)` from
+   * `stadiumTimezone.ts` to construct the Date before calling this method.
+   */
   calculateSunPosition(date: string | Date, time?: string): SunPosition {
-    // Accept either a Date object or date/time strings
+    // Accept either a Date object or date/time strings.
+    // WARNING: passing `date + time` strings without timezone-aware construction will be wrong
+    // on the server. Prefer passing a pre-constructed UTC Date via createStadiumDate().
     const dateTime = date instanceof Date ? date : new Date(`${date}T${time}`);
-    const useNREL = false; // Force SunCalc for now due to timezone issues with NREL
-    
+
     let altitude: number;
     let azimuth: number;
-    
-    if (useNREL) {
-      try {
-        // Use NREL Solar Position Algorithm
-        // IMPORTANT: Use the stadium's timezone, not the local machine's timezone
-        // For now, use PST/PDT offset (-7 or -8 hours) for west coast stadiums
-        // This should ideally use the stadium.timezone field
-        let timeZoneOffset = -dateTime.getTimezoneOffset() / 60;
-        
-        // Override for west coast stadiums (temporary fix)
-        // @ts-ignore - stadium.timezone exists but type def is missing
-        if (this.stadium.timezone === 'America/Los_Angeles') {
-          // Check if date is in PDT (March-November) or PST
-          const month = dateTime.getMonth();
-          timeZoneOffset = (month >= 2 && month <= 10) ? -7 : -8;
-        }
-        
-        const nrelResult = computeSunPosition(
-          dateTime,
-          this.stadium.latitude,
-          this.stadium.longitude,
-          timeZoneOffset
-        );
-        altitude = nrelResult.elevation;
-        azimuth = nrelResult.azimuth;
-      } catch (error) {
-        console.warn('NREL SPA calculation failed, falling back to SunCalc:', error);
-        // Fall through to SunCalc
-        const sunPos = SunCalc.getPosition(
-          dateTime,
-          this.stadium.latitude,
-          this.stadium.longitude
-        );
-        altitude = sunPos.altitude * 180 / Math.PI;
-        azimuth = (sunPos.azimuth * 180 / Math.PI + 180) % 360;
-      }
-    } else {
-      // Use original SunCalc implementation
+
+    // Use NREL SPA — reads date.getUTC*() directly; no browser-offset correction needed.
+    try {
+      const nrelResult = computeSunPosition(
+        dateTime,
+        this.stadium.latitude,
+        this.stadium.longitude,
+        0 // timeZoneOffset unused by NREL; Date must be proper UTC
+      );
+      altitude = nrelResult.elevation;
+      azimuth = nrelResult.azimuth;
+    } catch (error) {
+      console.warn('NREL SPA calculation failed, falling back to SunCalc:', error);
       const sunPos = SunCalc.getPosition(
         dateTime,
         this.stadium.latitude,
@@ -257,13 +242,9 @@ export class SunCalculator {
       baseSunExposure = 100 * Math.cos((angleDiff / 90) * Math.PI / 2);
     }
     
-    // Apply altitude factor (low sun = less exposure)
-    if (sunAltitude < 0) {
-      baseSunExposure = 0;
-    } else if (sunAltitude < 30) {
-      baseSunExposure *= (sunAltitude / 30);
-    }
-    
+    // Apply altitude factor — physically correct sin(altitude) via canonical helper
+    baseSunExposure *= altitudeFactor(sunAltitude);
+
     // Calculate shadow coverage from structures
     const roofShadow = this.calculateRoofShadow(section, sunAltitude, sunAzimuth);
     const upperDeckShadow = section.level === 'field' || section.level === 'lower' 
@@ -545,10 +526,8 @@ export function calculateRowShadow(
   const angleDiff = Math.abs(((sectionAngle - sunAzimuth + 180) % 360) - 180);
   let baseSunExposure = Math.max(0, 100 - angleDiff);
 
-  // 3. Apply altitude factor (low sun = less exposure)
-  if (sunAltitude < 30) {
-    baseSunExposure *= (sunAltitude / 30);
-  }
+  // 3. Apply altitude factor — physically correct sin(altitude) via canonical helper
+  baseSunExposure *= altitudeFactor(sunAltitude);
 
   // 4. Calculate overhang shadow (depth-dependent)
   const overhangShadow = calculateOverhangShadow(

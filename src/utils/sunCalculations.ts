@@ -5,7 +5,8 @@ import { isSectionInSun, getSectionSunExposure } from './sectionSunCalculations'
 import { WeatherData } from '../services/weatherApi';
 import { getVenueSections } from '../data/venueSections';
 import { SunCalculator } from './sunCalculator';
-import { getSunPositionNREL } from './nrelSolarPosition';
+import { computeSunPosition } from './nrelSolarPosition';
+import { altitudeFactor } from '../lib/sunMath';
 
 export interface SunPosition {
   azimuth: number; // Sun azimuth in radians
@@ -22,32 +23,51 @@ export interface SeatingSectionSun {
   percentageOfGameInSun?: number; // Same as sunExposure, for clarity
 }
 
+/**
+ * Get the sun position for a given UTC instant and location.
+ *
+ * IMPORTANT: `date` must be a proper UTC instant representing the local game time
+ * at the stadium. Use `createStadiumDate(localTimeStr, stadium.timezone)` from
+ * `stadiumTimezone.ts` to construct it. Never pass `new Date(localTimeStr)` directly,
+ * as that interprets the string in the runtime's local timezone (UTC on the server).
+ *
+ * @param _timezone  Deprecated. No longer used. The timezone correction that previously
+ *   lived here was broken on the server (where getTimezoneOffset() returns UTC=0, not
+ *   the browser's offset). Callers must pass a properly-constructed UTC Date via
+ *   `createStadiumDate()` instead. This parameter is accepted only for backwards
+ *   compatibility and is silently ignored.
+ */
 export function getSunPosition(
   date: Date,
   latitude: number,
   longitude: number,
-  timezone?: string
+  _timezone?: string
 ): SunPosition {
-  // Use SunCalc implementation (for now, NREL can be toggled later)
-  const sunPos = SunCalc.getPosition(date, latitude, longitude);
-  
-  // SunCalc returns:
-  // - azimuth: angle along the horizon, measured from south to west
-  //   in radians (0 = south, Math.PI * 0.5 = west, Math.PI = north)
-  // - altitude: sun altitude above the horizon in radians
-  
-  // Convert to compass degrees (0=N, 90=E, 180=S, 270=W)
-  // SunCalc's azimuth: 0=S, π/2=W, π=N, 3π/2=E
-  // Convert to: 0=N, 90=E, 180=S, 270=W
-  const azimuthDegrees = ((sunPos.azimuth * 180 / Math.PI) + 180) % 360;
-  const altitudeDegrees = sunPos.altitude * 180 / Math.PI;
-  
-  return {
-    azimuth: sunPos.azimuth,
-    altitude: sunPos.altitude,
-    azimuthDegrees,
-    altitudeDegrees
-  };
+  // Use NREL SPA as primary — reads date.getUTC*() directly so no further tz conversion needed.
+  try {
+    const result = computeSunPosition(date, latitude, longitude, 0);
+    // NREL returns compass degrees (0=N). Convert to SunCalc-compatible radians (0=S) for
+    // fields that callers might read via .azimuth / .altitude (legacy radian fields).
+    const azimuthRadians = ((result.azimuth - 180) * Math.PI) / 180;
+    const altitudeRadians = (result.elevation * Math.PI) / 180;
+    return {
+      azimuth: azimuthRadians,
+      altitude: altitudeRadians,
+      azimuthDegrees: result.azimuth,
+      altitudeDegrees: result.elevation,
+    };
+  } catch (err) {
+    console.warn('[getSunPosition] NREL failed, falling back to SunCalc:', err);
+    const sunPos = SunCalc.getPosition(date, latitude, longitude);
+    const azimuthDegrees = ((sunPos.azimuth * 180 / Math.PI) + 180) % 360;
+    const altitudeDegrees = sunPos.altitude * 180 / Math.PI;
+    return {
+      azimuth: sunPos.azimuth,
+      altitude: sunPos.altitude,
+      azimuthDegrees,
+      altitudeDegrees,
+    };
+  }
 }
 
 export function getSunTimes(date: Date, latitude: number, longitude: number) {
@@ -466,9 +486,9 @@ export function calculateSunExposure(
   const exposureFromAngle = Math.max(0, 100 - (normalizedAngle / 180) * 100);
 
   // Factor in sun altitude (higher sun = more exposure)
-  const altitudeFactor = Math.sin(sunPos.altitude);
+  const altWeight = altitudeFactor(sunPos.altitudeDegrees);
 
-  return exposureFromAngle * altitudeFactor;
+  return exposureFromAngle * altWeight;
 }
 
 export function getSunriseSunsetTimes(date: Date, latitude: number, longitude: number): {

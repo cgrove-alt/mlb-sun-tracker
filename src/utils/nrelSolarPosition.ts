@@ -1,9 +1,9 @@
 /**
- * NREL Solar Position Algorithm Implementation
- * Based on: Reda, I.; Andreas, A. (2003). Solar Position Algorithm for Solar Radiation Applications.
- * NREL Report No. TP-560-34302, Revised January 2008.
- * https://www.nrel.gov/docs/fy08osti/34302.pdf
+ * Solar Position — backed by SunCalc (Meeus-based, accurate to ~0.3°).
+ * The NREL SPA helper functions below remain for reference but computeSunPosition
+ * now delegates to SunCalc which is already a project dependency.
  */
+import SunCalc from 'suncalc';
 
 interface JulianDate {
   JD: number;
@@ -58,51 +58,16 @@ export function computeSunPosition(
   pressure: number = 1013.25,
   temperature: number = 20
 ): { zenith: number; azimuth: number; elevation: number } {
-  // NREL algorithm expects UTC time
-  // The input date should already be in UTC for accurate calculations
-  
-  // Step 1: Calculate Julian and Julian Ephemeris Day, Century, and Millennium
-  const julian = calculateJulianDate(date);
-  
-  // Step 2: Calculate Earth heliocentric longitude, latitude, and radius vector
-  const geocentric = calculateGeocentricPosition(julian.JME);
-  
-  // Step 3: Calculate the nutation in longitude and obliquity
-  const nutation = calculateNutation(julian.JCE);
-  
-  // Step 4: Calculate the true obliquity of the ecliptic
-  const meanObliquity = calculateMeanObliquity(julian.JME);
-  const trueObliquity = meanObliquity + nutation.obliquity;
-  
-  // Step 5: Calculate the aberration correction
-  const aberration = -20.4898 / (3600 * geocentric.radiusVector);
-  
-  // Step 6: Calculate the apparent sun longitude
-  const apparentLongitude = geocentric.longitude + nutation.longitude + aberration;
-  
-  // Step 7: Calculate the apparent sidereal time at Greenwich
-  const meanSiderealTime = calculateMeanSiderealTime(julian.JD, julian.JC);
-  const apparentSiderealTime = meanSiderealTime + nutation.longitude * Math.cos(toRadians(trueObliquity));
-  
-  // Step 8: Calculate the sun's geocentric equatorial coordinates
-  const equatorial = calculateEquatorialCoordinates(apparentLongitude, trueObliquity, geocentric.latitude);
-  
-  // Step 9: Calculate the sun's topocentric equatorial coordinates
-  const topocentric = calculateTopocentricPosition(
-    equatorial,
-    apparentSiderealTime,
-    latitude,
-    longitude,
-    elevation,
-    julian.JD,
-    pressure,
-    temperature
-  );
-  
+  // SunCalc (Meeus-based) provides ~0.3° accuracy, well within our ±1° requirement.
+  // It reads UTC values from the Date object directly — callers must pass a UTC Date.
+  const pos = SunCalc.getPosition(date, latitude, longitude);
+  const altitudeDeg = pos.altitude * (180 / Math.PI);
+  // SunCalc azimuth: 0=S, positive=W (clockwise). Convert to compass: 0=N, 90=E, 180=S, 270=W.
+  const compassAzimuth = ((pos.azimuth * (180 / Math.PI)) + 180 + 360) % 360;
   return {
-    zenith: topocentric.zenith,
-    azimuth: topocentric.azimuth,
-    elevation: topocentric.elevation
+    zenith: 90 - altitudeDeg,
+    azimuth: compassAzimuth,
+    elevation: altitudeDeg,
   };
 }
 
@@ -122,9 +87,9 @@ function calculateJulianDate(date: Date): JulianDate {
   const y = year + 4800 - a;
   const m = month + 12 * a - 3;
   
-  const JD = day + Math.floor((153 * m + 2) / 5) + 365 * y + 
-             Math.floor(y / 4) - Math.floor(y / 100) + Math.floor(y / 400) - 
-             32045 + hour / 24;
+  const JD = day + Math.floor((153 * m + 2) / 5) + 365 * y +
+             Math.floor(y / 4) - Math.floor(y / 100) + Math.floor(y / 400) -
+             32045.5 + hour / 24;
   
   // Julian Ephemeris Day
   const deltaT = calculateDeltaT(year, month); // Simplified delta T calculation
@@ -142,30 +107,32 @@ function calculateJulianDate(date: Date): JulianDate {
  * Calculate Earth's heliocentric position
  * Reference: NREL SPA Section 3.2
  */
-function calculateGeocentricPosition(JME: number): GeocentricPosition {
+// JC = Julian Centuries since J2000.0 (same as JCE for our purposes here)
+// Using Meeus Ch.25 simplified solar position formula, which expects Julian Centuries (T)
+function calculateGeocentricPosition(JC: number): GeocentricPosition {
   // Simplified calculation using mean elements
   // For full accuracy, use the complete periodic terms from NREL SPA Appendix A
-  
-  // Mean longitude (degrees)
-  const L0 = 280.46646 + 36000.76983 * JME + 0.0003032 * JME * JME;
-  
+
+  // Mean longitude (degrees) — Meeus Ch.25, T = Julian Centuries
+  const L0 = 280.46646 + 36000.76983 * JC + 0.0003032 * JC * JC;
+
   // Mean anomaly (degrees)
-  const M = 357.52911 + 35999.05029 * JME - 0.0001537 * JME * JME;
+  const M = 357.52911 + 35999.05029 * JC - 0.0001537 * JC * JC;
   const Mrad = toRadians(M);
-  
+
   // Equation of center
-  const C = (1.914602 - 0.004817 * JME - 0.000014 * JME * JME) * Math.sin(Mrad) +
-            (0.019993 - 0.000101 * JME) * Math.sin(2 * Mrad) +
+  const C = (1.914602 - 0.004817 * JC - 0.000014 * JC * JC) * Math.sin(Mrad) +
+            (0.019993 - 0.000101 * JC) * Math.sin(2 * Mrad) +
             0.000289 * Math.sin(3 * Mrad);
-  
+
   // True longitude
   const longitude = normalizeAngle(L0 + C);
-  
+
   // True anomaly
   const v = M + C;
-  
+
   // Radius vector (AU)
-  const e = 0.016708634 - 0.000042037 * JME - 0.0000001267 * JME * JME;
+  const e = 0.016708634 - 0.000042037 * JC - 0.0000001267 * JC * JC;
   const radiusVector = (1.000001018 * (1 - e * e)) / (1 + e * Math.cos(toRadians(v)));
   
   // Heliocentric latitude (simplified to 0 for basic calculation)
@@ -282,31 +249,16 @@ function calculateTopocentricPosition(
   pressure: number,
   temperature: number
 ): TopocentricPosition {
-  // Calculate parallax correction
-  const earthRadius = 6378.14; // km
-  const u = Math.atan(0.99664719 * Math.tan(toRadians(latitude)));
-  const x = Math.cos(u) + elevation * Math.cos(toRadians(latitude)) / earthRadius / 1000;
-  const y = 0.99664719 * Math.sin(u) + elevation * Math.sin(toRadians(latitude)) / earthRadius / 1000;
+  // The Sun's topocentric parallax is < 9 arcseconds (0.003°), negligible for our ±1° tolerance.
+  // Skip the correction and use geocentric equatorial coordinates as topocentric directly.
+  // (The old parallax code was incorrectly using the Greenwich hour angle instead of the
+  //  local hour angle, and was missing the solar equatorial horizontal parallax factor ~4e-5.)
+  const topoRA = equatorial.rightAscension;
+  const topoDec = equatorial.declination;
   
-  // Parallax in right ascension
-  const parallaxRA = Math.atan2(
-    -x * Math.sin(toRadians(siderealTime - equatorial.rightAscension)),
-    Math.cos(toRadians(equatorial.declination)) - 
-    x * Math.cos(toRadians(siderealTime - equatorial.rightAscension))
-  );
-  
-  // Topocentric right ascension
-  const topoRA = equatorial.rightAscension + toDegrees(parallaxRA);
-  
-  // Topocentric declination
-  const topoDec = toDegrees(Math.atan2(
-    (Math.sin(toRadians(equatorial.declination)) - y) * Math.cos(parallaxRA),
-    Math.cos(toRadians(equatorial.declination)) - 
-    x * Math.cos(toRadians(siderealTime - equatorial.rightAscension))
-  ));
-  
-  // Local hour angle
-  const hourAngle = normalizeAngle(siderealTime - longitude - topoRA);
+  // Local hour angle: H = GST + longitude - α  (Meeus Ch.13, positive east convention)
+  // longitude is negative for western locations (e.g. -73.93 for New York)
+  const hourAngle = normalizeAngle(siderealTime + longitude - topoRA);
   
   // Topocentric zenith angle
   const latRad = toRadians(latitude);
