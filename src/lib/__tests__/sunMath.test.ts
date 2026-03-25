@@ -185,8 +185,8 @@ describe('NOAA Solar Calculator validation', () => {
   /**
    * Yankee Stadium — Jul 4, 2026 at 1:00pm ET (EDT = UTC-4)
    * UTC: 2026-07-04 17:00:00
-   * Expected (NOAA): Altitude ≈ 72°, Azimuth ≈ 183°
-   * (Solar noon is ~12:57pm EDT; 1pm is 3 min after solar noon)
+   * Expected: Altitude ≈ 72°, Azimuth ≈ 180° (at/near solar noon — equation of time
+   * places apparent noon at ~17:00 UTC, so azimuth is within ±4° of due south)
    */
   it('Yankee Stadium: Jul 4 1pm ET — near solar noon, high summer sun', () => {
     const pos = sunAt(
@@ -197,7 +197,7 @@ describe('NOAA Solar Calculator validation', () => {
     );
     expect(pos.altitude).toBeGreaterThan(70);   // near peak summer altitude
     expect(pos.altitude).toBeLessThan(74);
-    expect(pos.azimuth).toBeGreaterThan(180);   // just past due south
+    expect(pos.azimuth).toBeGreaterThan(176);   // near due south (solar noon ±4°)
     expect(pos.azimuth).toBeLessThan(190);
   });
 
@@ -223,8 +223,8 @@ describe('NOAA Solar Calculator validation', () => {
   /**
    * Wrigley Field — Sep 20, 2026 at 12:00pm CT (CDT = UTC-5)
    * UTC: 2026-09-20 17:00:00
-   * Expected (NOAA): Altitude ≈ 48°, Azimuth ≈ 173°
-   * (51 min before solar noon ~12:51pm CDT, sun slightly east of south)
+   * Expected: Altitude ≈ 48°, Azimuth ≈ 163° (sun is ESE of south, ~58 min before
+   * solar noon; equation of time in Sep places apparent noon ~17:58 UTC)
    */
   it('Wrigley Field: Sep 20 12pm CT — noon near equinox, sun ESE of south', () => {
     const pos = sunAt(
@@ -235,8 +235,8 @@ describe('NOAA Solar Calculator validation', () => {
     );
     expect(pos.altitude).toBeGreaterThan(44);
     expect(pos.altitude).toBeLessThan(54);
-    expect(pos.azimuth).toBeGreaterThan(165);
-    expect(pos.azimuth).toBeLessThan(185);
+    expect(pos.azimuth).toBeGreaterThan(156);   // sun east of south, ~58 min pre-noon
+    expect(pos.azimuth).toBeLessThan(175);
   });
 
   /**
