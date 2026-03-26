@@ -19,7 +19,6 @@ interface UseSunCalculationsResult {
 }
 
 // Cache for calculation results (stores arrays or combined { sections, rowShadows } objects)
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
 const calculationCache = new Map<string, any>();
 
 export function useSunCalculations({
