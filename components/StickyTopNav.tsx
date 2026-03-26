@@ -385,26 +385,21 @@ export default function StickyTopNav() {
                 🏠 Home
               </Link>
 
-              <a
-                href="/#shade-finder"
+              <Link
+                href="/#app-section"
                 className="nav-link-primary"
                 onClick={() => {
-                  document.body.style.overflow = '';
-                  document.body.style.position = '';
-                  document.body.classList.remove('sticky-nav-menu-open');
                   closeMobileMenu();
+                  // Trigger the stadium selector to show
+                  if (typeof window !== 'undefined') {
+                    setTimeout(() => {
+                      const button = document.querySelector('.hero-cta-button') as HTMLButtonElement;
+                      if (button) button.click();
+                    }, 100);
+                  }
                 }}
               >
                 🎯 Shade Finder Tool
-              </a>
-
-              <Link
-                href="/worldcup2026"
-                className={`nav-link-primary ${pathname?.startsWith('/worldcup2026') ? 'active' : ''}`}
-                onClick={closeMobileMenu}
-                aria-current={pathname?.startsWith('/worldcup2026') ? 'page' : undefined}
-              >
-                ⚽ World Cup 2026
               </Link>
 
               <Link

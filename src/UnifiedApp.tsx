@@ -1,7 +1,7 @@
-'use client';
-
 import React, { useState, useEffect, useCallback } from 'react';
+import { HelmetProvider } from 'react-helmet-async';
 import Link from 'next/link';
+import './App.css';
 import { UnifiedVenue, ALL_UNIFIED_VENUES, convertToLegacyStadium } from './data/unifiedVenues';
 import { UnifiedGameSelector } from './components/UnifiedGameSelector';
 import { WeatherDisplay } from './components/WeatherDisplay';
@@ -19,14 +19,12 @@ import MobileApp from './MobileApp';
 
 import { I18nProvider, useTranslation } from './i18n/i18nContext';
 import { getSunPosition, getSunDescription, getCompassDirection, SeatingSectionSun, calculateGameSunExposure } from './utils/sunCalculations';
-import { SunCalculator, SectionShadowData, calculateRowShadows } from './utils/sunCalculator';
+import { SunCalculator } from './utils/sunCalculator';
 import { getStadiumSectionsAsync } from './data/getStadiumSections';
-import { getStadiumCompleteData } from './data/stadium-data-aggregator';
 import { getVenueSections } from './data/venueSections';
 import { MLBGame, mlbApi } from './services/mlbApi';
 import { NFLGame } from './services/nflApi';
 import { MiLBGame } from './services/milbApi';
-import { WorldCupGame } from './services/worldCupApi';
 import { generateBaseballSections } from './utils/generateBaseballSections';
 import { WeatherForecast, weatherApi } from './services/weatherApi';
 import { formatDateTimeWithTimezone } from './utils/timeUtils';
@@ -39,16 +37,15 @@ import { getUnifiedVenueShade, ShadedVenueSection } from './utils/getUnifiedVenu
 function UnifiedAppContent() {
   const { t } = useTranslation();
   const [selectedVenue, setSelectedVenue] = useState<UnifiedVenue | null>(null);
-  const [selectedGame, setSelectedGame] = useState<MLBGame | MiLBGame | NFLGame | WorldCupGame | null>(null);
+  const [selectedGame, setSelectedGame] = useState<MLBGame | MiLBGame | NFLGame | null>(null);
   const [gameDateTime, setGameDateTime] = useState<Date | null>(null);
-  const [stadiumGames, setStadiumGames] = useState<(MLBGame | MiLBGame | NFLGame | WorldCupGame)[]>([]);
+  const [stadiumGames, setStadiumGames] = useState<(MLBGame | MiLBGame | NFLGame)[]>([]);
   const [sunPosition, setSunPosition] = useState<any>(null);
   const [weatherForecast, setWeatherForecast] = useState<WeatherForecast | null>(null);
   const [loadingWeather, setLoadingWeather] = useState(false);
   const [detailedSections, setDetailedSections] = useState<SeatingSectionSun[]>([]);
   const [shadedSections, setShadedSections] = useState<ShadedVenueSection[]>([]);
   const [gameExposureData, setGameExposureData] = useState<Map<string, number> | null>(null);
-  const [rowShadowData, setRowShadowData] = useState<SectionShadowData[] | null>(null);
   const [loadingSections, setLoadingSections] = useState(false);
   const [calculationInProgress, setCalculationInProgress] = useState(false);
   const [changingVenue, setChangingVenue] = useState(false);
@@ -60,12 +57,12 @@ function UnifiedAppContent() {
   // Load venue from URL parameters on mount
   useEffect(() => {
     if (typeof window === 'undefined') return;
-
+    
     const urlParams = new URLSearchParams(window.location.search);
     const venueParam = urlParams.get('venue');
     const stadiumParam = urlParams.get('stadium');
     const datetimeParam = urlParams.get('datetime');
-
+    
     // Check for venue parameter (for MiLB/NFL venues)
     if (venueParam) {
       const venue = ALL_UNIFIED_VENUES.find(v => v.id === venueParam);
@@ -80,7 +77,7 @@ function UnifiedAppContent() {
         setSelectedVenue(venue);
       }
     }
-
+    
     // If datetime is provided, set it
     if (datetimeParam) {
       try {
@@ -138,21 +135,12 @@ function UnifiedAppContent() {
   };
 
   // Handle game/time selection
-  const handleGameSelect = (game: MLBGame | MiLBGame | NFLGame | WorldCupGame | null, dateTime: Date | null) => {
+  const handleGameSelect = (game: MLBGame | MiLBGame | NFLGame | null, dateTime: Date | null) => {
     setSelectedGame(game);
     setGameDateTime(dateTime);
-
+    
     if (game && selectedVenue) {
-      let gameDate: Date;
-      if ('gameDate' in game) {
-        gameDate = new Date(game.gameDate);
-      } else if ('date' in game && 'time' in game) {
-        const wcGame = game as WorldCupGame;
-        gameDate = new Date(`${wcGame.date}T${wcGame.time}`);
-      } else {
-        gameDate = new Date();
-      }
-      trackGameSelection(selectedVenue.name, gameDate.toISOString());
+      trackGameSelection(selectedVenue.name, new Date(game.gameDate).toISOString());
     }
   };
 
@@ -250,35 +238,7 @@ function UnifiedAppContent() {
           if (isCancelled) return;
 
           setDetailedSections(detailedSectionData);
-
-          // Calculate row-level shade data for MLB stadiums
-          try {
-            const { sections: detailedSectionsWithRows } = getStadiumCompleteData(selectedVenue.id, 'MLB');
-            if (detailedSectionsWithRows && detailedSectionsWithRows.length > 0) {
-              const sunPos = getSunPosition(gameDateTime, legacyStadium!.latitude, legacyStadium!.longitude, legacyStadium!.timezone);
-              const rowDataResults: SectionShadowData[] = [];
-
-              for (const section of detailedSectionsWithRows) {
-                if (section.rows && section.rows.length > 0) {
-                  const sectionRowData = calculateRowShadows(
-                    section,
-                    sunPos.altitude,
-                    sunPos.azimuth,
-                    legacyStadium!.orientation || 0
-                  );
-                  rowDataResults.push(sectionRowData);
-                }
-              }
-
-              if (rowDataResults.length > 0) {
-                setRowShadowData(rowDataResults);
-              }
-            }
-          } catch (error) {
-            console.warn('Could not load row-level data:', error);
-            // Continue without row data
-          }
-
+          
           // Calculate game exposure - pass sections to avoid bundling
           const exposureMap = calculateGameSunExposure(legacyStadium!, gameDateTime, gameDuration, sections);
           setGameExposureData(exposureMap);
@@ -487,9 +447,6 @@ function UnifiedAppContent() {
                   loading={loadingSections}
                   calculationProgress={null}
                   showFilters={true}
-                  rowData={rowShadowData}
-                  showRowToggle={!!rowShadowData && rowShadowData.length > 0}
-                  stadiumId={selectedVenue?.id}
                 />
               )}
             </div>
@@ -515,24 +472,28 @@ function UnifiedApp() {
 
   if (isMobile) {
     return (
-      <ErrorBoundary>
-        <I18nProvider>
-          <ErrorProvider>
-            <MobileApp />
-          </ErrorProvider>
-        </I18nProvider>
-      </ErrorBoundary>
+      <HelmetProvider>
+        <ErrorBoundary>
+          <I18nProvider>
+            <ErrorProvider>
+              <MobileApp />
+            </ErrorProvider>
+          </I18nProvider>
+        </ErrorBoundary>
+      </HelmetProvider>
     );
   }
 
   return (
-    <ErrorBoundary>
-      <I18nProvider>
-        <ErrorProvider>
-          <UnifiedAppContent />
-        </ErrorProvider>
-      </I18nProvider>
-    </ErrorBoundary>
+    <HelmetProvider>
+      <ErrorBoundary>
+        <I18nProvider>
+          <ErrorProvider>
+            <UnifiedAppContent />
+          </ErrorProvider>
+        </I18nProvider>
+      </ErrorBoundary>
+    </HelmetProvider>
   );
 }
 

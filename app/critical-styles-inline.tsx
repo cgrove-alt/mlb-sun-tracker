@@ -82,7 +82,7 @@ export const CriticalStylesInline = () => {
       font-weight: 300;
     }
 
-    .hero-cta-primary {
+    .hero-cta-button {
       background: linear-gradient(135deg, #ff6b6b 0%, #ff8e53 100%);
       color: white;
       border: none;
@@ -141,7 +141,7 @@ export const CriticalStylesInline = () => {
         padding: 1.5rem;
       }
 
-      .hero-cta-primary {
+      .hero-cta-button {
         padding: 1rem 2rem;
         font-size: 1.1rem;
         min-height: 56px;

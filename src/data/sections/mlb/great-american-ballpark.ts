@@ -3,8 +3,53 @@
 // Home of the Cincinnati Reds
 
 import { DetailedSection, Vector3D, RowDetail } from '../../../types/stadium-complete';
-import { generateRows } from '../../../utils/rowGenerator';
 
+// Helper to generate row details
+function generateRows(
+  startRow: number | string,
+  endRow: number | string,
+  seatsPerRow: number,
+  baseElevation: number,
+  rake: number,
+  covered: boolean = false
+): RowDetail[] {
+  const rows: RowDetail[] = [];
+  const rowHeight = 2.5;
+  const rowDepth = 2.8;
+  
+  const isLetterRows = typeof startRow === 'string';
+  
+  if (isLetterRows) {
+    const startCode = (startRow as string).charCodeAt(0);
+    const endCode = (endRow as string).charCodeAt(0);
+    
+    for (let i = startCode; i <= endCode; i++) {
+      const rowNum = i - startCode;
+      rows.push({
+        rowNumber: String.fromCharCode(i),
+        seats: seatsPerRow,
+        elevation: baseElevation + (rowNum * rowHeight * Math.sin(rake * Math.PI / 180)),
+        depth: rowNum * rowDepth,
+        covered: covered,
+        overhangHeight: covered ? 29 - (rowNum * 0.3) : undefined
+      });
+    }
+  } else {
+    for (let i = startRow as number; i <= (endRow as number); i++) {
+      const rowNum = i - (startRow as number);
+      rows.push({
+        rowNumber: i.toString(),
+        seats: seatsPerRow,
+        elevation: baseElevation + (rowNum * rowHeight * Math.sin(rake * Math.PI / 180)),
+        depth: rowNum * rowDepth,
+        covered: covered,
+        overhangHeight: covered ? 29 - (rowNum * 0.3) : undefined
+      });
+    }
+  }
+  
+  return rows;
+}
 
 // Great American Ball Park Sections - Comprehensive Layout
 export const greatAmericanBallparkSections: DetailedSection[] = [

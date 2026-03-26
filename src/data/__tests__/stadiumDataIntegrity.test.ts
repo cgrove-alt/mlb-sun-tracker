@@ -163,7 +163,7 @@ function validateObstruction(obstruction: any, fileName: string): string[] {
 
 describe('Stadium Data Integrity Tests', () => {
   describe('Section Files Validation', () => {
-    const sectionsDir = path.join(__dirname, '../sections');
+    const sectionsDir = path.join(__dirname, '../../sections');
     const sectionFiles = fs.existsSync(sectionsDir) ? findTsFiles(sectionsDir) : [];
     
     test('All section files exist', () => {
@@ -210,7 +210,7 @@ describe('Stadium Data Integrity Tests', () => {
   });
   
   describe('Obstruction Files Validation', () => {
-    const obstructionsDir = path.join(__dirname, '../obstructions');
+    const obstructionsDir = path.join(__dirname, '../../obstructions');
     const obstructionFiles = fs.existsSync(obstructionsDir) ? findTsFiles(obstructionsDir) : [];
     
     test('All obstruction files exist', () => {
@@ -258,7 +258,7 @@ describe('Stadium Data Integrity Tests', () => {
   
   describe('Data Consistency Checks', () => {
     test('No duplicate section IDs within files', () => {
-      const sectionsDir = path.join(__dirname, '../sections');
+      const sectionsDir = path.join(__dirname, '../../sections');
       if (!fs.existsSync(sectionsDir)) return;
       
       const sectionFiles = findTsFiles(sectionsDir);
@@ -291,7 +291,7 @@ describe('Stadium Data Integrity Tests', () => {
     
     test('All sections have unique 3D positions', () => {
       // Sections should not overlap exactly in 3D space
-      const sectionsDir = path.join(__dirname, '../sections');
+      const sectionsDir = path.join(__dirname, '../../sections');
       if (!fs.existsSync(sectionsDir)) return;
       
       const sectionFiles = findTsFiles(sectionsDir);
@@ -318,7 +318,7 @@ describe('Stadium Data Integrity Tests', () => {
   
   describe('Performance Validation', () => {
     test('Section files are not too large', () => {
-      const sectionsDir = path.join(__dirname, '../sections');
+      const sectionsDir = path.join(__dirname, '../../sections');
       if (!fs.existsSync(sectionsDir)) return;
       
       const sectionFiles = findTsFiles(sectionsDir);
@@ -340,7 +340,7 @@ describe('Stadium Data Integrity Tests', () => {
     });
     
     test('Obstruction complexity is reasonable', () => {
-      const obstructionsDir = path.join(__dirname, '../obstructions');
+      const obstructionsDir = path.join(__dirname, '../../obstructions');
       if (!fs.existsSync(obstructionsDir)) return;
       
       const obstructionFiles = findTsFiles(obstructionsDir);
