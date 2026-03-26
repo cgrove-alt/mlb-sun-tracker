@@ -111,7 +111,7 @@ export const TodaysGames: React.FC = () => {
                   <div style={{ fontSize: '0.8125rem', color: '#6b7280' }}>
                     {timeStr}
                   </div>
-                  <div style={{ fontSize: '0.75rem', color: '#9ca3af' }}>
+                  <div style={{ fontSize: '0.75rem', color: '#6b7280' }}>
                     {game.venue.name}
                   </div>
                 </Link>

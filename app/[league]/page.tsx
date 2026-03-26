@@ -67,7 +67,7 @@ export default async function LeaguePage({ params }: Props) {
                       <div className="font-medium text-gray-900 group-hover:text-blue-700">{stadium.name}</div>
                       <div className="text-sm text-gray-500">{stadium.team} • {stadium.city}, {stadium.state}</div>
                     </div>
-                    <div className="flex items-center gap-3 text-sm text-gray-400">
+                    <div className="flex items-center gap-3 text-sm text-gray-500">
                       <span className="capitalize">{stadium.roof === 'retractable' ? '🔄 Retractable' : stadium.roof === 'fixed' ? '🏛 Covered' : '☀️ Open'}</span>
                       <span>→</span>
                     </div>
