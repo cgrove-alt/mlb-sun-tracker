@@ -5,6 +5,9 @@ export const metadata: Metadata = {
   title: 'How to Find Shaded Seats at Baseball Games | The Shadium Guide',
   description: 'Complete guide to finding seats in the shade at MLB stadiums. Learn how to avoid sun exposure, pick the best shaded sections, and stay cool during baseball games.',
   keywords: ['seats in the shade', 'shaded seats baseball', 'how to find shade at stadium', 'MLB shade guide', 'avoid sun at baseball game'],
+  alternates: {
+    canonical: 'https://theshadium.com/guide/how-to-find-shaded-seats',
+  },
   openGraph: {
     title: 'How to Find Shaded Seats at Baseball Games',
     description: 'Your complete guide to finding cool, shaded seats at any MLB stadium',

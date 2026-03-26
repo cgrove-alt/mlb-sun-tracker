@@ -14,6 +14,9 @@ export const metadata: Metadata = {
     'baseball game comfort',
     'MLB stadium guides'
   ],
+  alternates: {
+    canonical: 'https://theshadium.com/blog',
+  },
   openGraph: {
     title: 'Baseball Shade Blog | The Shadium',
     description: 'Expert tips on finding shaded seats at MLB stadiums',

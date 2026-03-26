@@ -90,8 +90,8 @@ export const metadata: Metadata = {
     type: 'website',
     locale: 'en_US',
     url: process.env.NEXT_PUBLIC_SITE_URL || 'https://theshadium.com/',
-    title: 'The Shadium - Find Seats in the Shade at MLB Stadiums',
-    description: 'Find seats in the shade at any MLB stadium. Real-time sun tracking helps you avoid sun exposure and stay cool. Shade maps for all 30 MLB ballparks.',
+    title: 'The Shadium - Find Seats in the Shade at MLB, MiLB & NFL Stadiums',
+    description: 'Find seats in the shade at any MLB, MiLB, or NFL stadium. Real-time sun tracking helps you avoid sun exposure and stay cool. Shade maps for 250+ sports venues.',
     siteName: 'The Shadium',
     images: [
       {
@@ -105,15 +105,14 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'The Shadium - Find Seats in the Shade at MLB Stadiums',
-    description: 'Find seats in the shade at any MLB stadium. Real-time sun tracking helps you avoid sun exposure and stay cool during baseball games.',
+    title: 'The Shadium - Find Seats in the Shade at MLB, MiLB & NFL Stadiums',
+    description: 'Find seats in the shade at any MLB, MiLB, or NFL stadium. Real-time sun tracking helps you avoid sun exposure and stay cool during games.',
     images: ['https://theshadium.com/logo512.png'],
     creator: '@theshadium',
     site: '@theshadium',
   },
-  alternates: {
-    canonical: 'https://theshadium.com/',
-  },
+  // No global canonical here — each page sets its own via alternates.canonical
+  // in its generateMetadata() or metadata export.
   robots: {
     index: true,
     follow: true,

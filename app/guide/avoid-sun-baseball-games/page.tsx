@@ -5,6 +5,9 @@ export const metadata: Metadata = {
   title: 'How to Avoid Sun at Baseball Games | Sun Protection Guide',
   description: 'Essential tips for avoiding sun exposure at baseball stadiums. Learn how to stay cool, find shade, and protect yourself during MLB games.',
   keywords: ['avoid sun baseball', 'sun protection stadium', 'baseball game shade tips', 'stay cool baseball game', 'MLB sun exposure'],
+  alternates: {
+    canonical: 'https://theshadium.com/guide/avoid-sun-baseball-games',
+  },
   openGraph: {
     title: 'How to Avoid Sun at Baseball Games',
     description: 'Complete guide to sun protection and finding shade at MLB stadiums',

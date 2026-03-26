@@ -5,6 +5,9 @@ export const metadata: Metadata = {
   title: 'Best Shaded Seats at Every MLB Stadium | The Shadium',
   description: 'Comprehensive guide to the best seats in the shade at all 30 MLB stadiums. Find cool, comfortable seating with shade coverage at every ballpark.',
   keywords: ['best shaded seats MLB', 'shade seating guide', 'MLB stadium shade map', 'coolest seats baseball', 'shaded sections every stadium'],
+  alternates: {
+    canonical: 'https://theshadium.com/guide/best-shaded-seats-mlb',
+  },
   openGraph: {
     title: 'Best Shaded Seats at Every MLB Stadium',
     description: 'Find the best seats in the shade at all 30 MLB ballparks',
