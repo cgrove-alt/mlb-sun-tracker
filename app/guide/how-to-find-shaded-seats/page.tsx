@@ -1,6 +1,62 @@
 import { Metadata } from 'next';
 import Link from 'next/link';
 
+const howToJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'HowTo',
+  name: 'How to Find Shaded Seats at Baseball Games',
+  description: 'A step-by-step guide to finding seats in the shade at MLB stadiums so you can avoid sun exposure and stay comfortable during baseball games.',
+  totalTime: 'PT5M',
+  step: [
+    {
+      '@type': 'HowToStep',
+      position: 1,
+      name: 'Check Your Game Time',
+      text: 'Day games (1–4 PM starts) have the most direct sun exposure. Evening games (6–7 PM starts) are easier to shade-plan because the sun is lower. Knowing your start time is the first input for finding shaded seats.',
+    },
+    {
+      '@type': 'HowToStep',
+      position: 2,
+      name: 'Know Your Stadium\'s Orientation',
+      text: 'Every MLB ballpark is built at a different compass angle. The orientation determines which side of the stadium gets afternoon shade. Use The Shadium to look up your stadium\'s orientation automatically.',
+    },
+    {
+      '@type': 'HowToStep',
+      position: 3,
+      name: 'Consider the Season',
+      text: 'The sun\'s arc changes throughout the year. In summer the sun rises higher, shrinking shadows. In April and September the sun is lower, creating longer shadows that reach more sections. Enter your exact game date for the most accurate prediction.',
+    },
+    {
+      '@type': 'HowToStep',
+      position: 4,
+      name: 'Target the Upper Deck',
+      text: 'Upper deck seats are partially sheltered by the deck overhang above them. Even in open-air stadiums, the back rows of upper deck sections are often in shade during afternoon games.',
+    },
+    {
+      '@type': 'HowToStep',
+      position: 5,
+      name: 'Favor the Third-Base Side for Afternoon Games',
+      text: 'For most stadiums with a northeast orientation (the MLB standard), the third-base side receives shade from the upper deck in the afternoon. The first-base side tends to be sunny until later in the game.',
+    },
+    {
+      '@type': 'HowToStep',
+      position: 6,
+      name: 'Use The Shadium for Real-Time Shade Calculations',
+      text: 'Enter your stadium, date, and game time at theshadium.com. The tool calculates the exact sun position and shows section-by-section shade coverage so you can pick your seat with confidence.',
+    },
+  ],
+};
+
+const breadcrumbJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://theshadium.com/' },
+    { '@type': 'ListItem', position: 2, name: 'Guides', item: 'https://theshadium.com/guide' },
+    { '@type': 'ListItem', position: 3, name: 'How to Find Shaded Seats', item: 'https://theshadium.com/guide/how-to-find-shaded-seats' },
+  ],
+};
+
 export const metadata: Metadata = {
   title: 'How to Find Shaded Seats at Baseball Games | The Shadium Guide',
   description: 'Complete guide to finding seats in the shade at MLB stadiums. Learn how to avoid sun exposure, pick the best shaded sections, and stay cool during baseball games.',
@@ -18,6 +74,8 @@ export const metadata: Metadata = {
 export default function HowToFindShadedSeatsPage() {
   return (
     <main className="guide-page">
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(howToJsonLd) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }} />
       <div className="guide-container">
         <nav className="flex flex-wrap items-center gap-3 text-sm text-ink-700 mb-6" aria-label="Breadcrumb">
           <Link href="/" className="hover:underline">Home</Link>

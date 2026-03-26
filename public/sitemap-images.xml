@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+  <url>
+    <loc>https://theshadium.com/</loc>
+    <image:image>
+      <image:loc>https://theshadium.com/logo512.png</image:loc>
+      <image:title>The Shadium - Find Seats in the Shade at MLB, MiLB &amp; NFL Stadiums</image:title>
+      <image:caption>The Shadium logo — real-time shade calculations for 250+ sports venues</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://theshadium.com/og-image.png</image:loc>
+      <image:title>Find Seats in the Shade at MLB, MiLB &amp; NFL Stadiums</image:title>
+      <image:caption>The Shadium — section-by-section shade maps for every MLB ballpark, MiLB stadium, and NFL venue</image:caption>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://theshadium.com/guide/how-to-find-shaded-seats</loc>
+    <image:image>
+      <image:loc>https://theshadium.com/logo512.png</image:loc>
+      <image:title>How to Find Shaded Seats at Baseball Games</image:title>
+      <image:caption>Guide to finding seats in the shade at MLB stadiums</image:caption>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://theshadium.com/guide/best-shaded-seats-mlb</loc>
+    <image:image>
+      <image:loc>https://theshadium.com/logo512.png</image:loc>
+      <image:title>Best Shaded Seats at Every MLB Stadium</image:title>
+      <image:caption>Stadium-by-stadium shade guide for all 30 MLB ballparks</image:caption>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://theshadium.com/guide/avoid-sun-baseball-games</loc>
+    <image:image>
+      <image:loc>https://theshadium.com/logo512.png</image:loc>
+      <image:title>How to Avoid Sun at Baseball Games</image:title>
+      <image:caption>Sun protection and shade guide for MLB baseball games</image:caption>
+    </image:image>
+  </url>
+</urlset>

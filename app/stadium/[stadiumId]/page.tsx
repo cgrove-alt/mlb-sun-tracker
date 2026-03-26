@@ -132,6 +132,7 @@ export default async function StadiumPage({ params }: StadiumPageProps) {
     author: {
       '@type': 'Organization',
       name: 'The Shadium',
+      url: 'https://theshadium.com',
     },
     publisher: {
       '@type': 'Organization',
@@ -149,12 +150,39 @@ export default async function StadiumPage({ params }: StadiumPageProps) {
     },
     about: {
       '@type': 'StadiumOrArena',
+      '@id': `https://theshadium.com/stadium/${stadiumId}#stadium`,
       name: stadium.name,
       address: {
         '@type': 'PostalAddress',
         addressLocality: stadium.city,
+        addressRegion: stadium.state,
+        addressCountry: 'US',
       },
     },
+  };
+
+  // Standalone StadiumOrArena entity — gives Google a precise geographic entity to associate with this page
+  const stadiumJsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'StadiumOrArena',
+    '@id': `https://theshadium.com/stadium/${stadiumId}#stadium`,
+    name: stadium.name,
+    alternateName: `${stadium.team} Stadium`,
+    description: `${stadium.name} is the home stadium of the ${stadium.team}, located in ${stadium.city}, ${stadium.state}.`,
+    sport: 'Baseball',
+    url: `https://theshadium.com/stadium/${stadiumId}`,
+    address: {
+      '@type': 'PostalAddress',
+      addressLocality: stadium.city,
+      addressRegion: stadium.state,
+      addressCountry: 'US',
+    },
+    geo: {
+      '@type': 'GeoCoordinates',
+      latitude: stadium.latitude,
+      longitude: stadium.longitude,
+    },
+    maximumAttendeeCapacity: stadium.capacity,
   };
 
   const faqJsonLd = {
@@ -188,10 +216,6 @@ export default async function StadiumPage({ params }: StadiumPageProps) {
     ],
   };
 
-  // Check if we should render SSR version (for bots and no-JS users)
-  const isBot = false; // In production, detect bots via user-agent
-  const preferSSR = process.env.NODE_ENV === 'production';
-
   return (
     <div className={`${styles.pageContainer} ${killOverhang.killOverhang}`}>
       <script
@@ -201,21 +225,24 @@ export default async function StadiumPage({ params }: StadiumPageProps) {
       />
       <script
         type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(stadiumJsonLd) }}
+        suppressHydrationWarning
+      />
+      <script
+        type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
         suppressHydrationWarning
       />
 
-      {/* Server-side rendered content for SEO and no-JS users */}
-      <noscript>
-        <div className={styles.contentSection}>
-          <StadiumPageSSR
-            stadium={stadium}
-            sections={sections}
-            amenities={amenities}
-            guide={guide}
-          />
-        </div>
-      </noscript>
+      {/* SEO content — always rendered so Googlebot indexes it */}
+      <div className={styles.contentSection}>
+        <StadiumPageSSR
+          stadium={stadium}
+          sections={sections}
+          amenities={amenities}
+          guide={guide}
+        />
+      </div>
       
       {/* Main content in grid */}
       <div className={styles.contentWrapper} suppressHydrationWarning>

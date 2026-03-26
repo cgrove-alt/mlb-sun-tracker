@@ -1,6 +1,62 @@
 import { Metadata } from 'next';
 import Link from 'next/link';
 
+const howToJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'HowTo',
+  name: 'How to Avoid Sun at Baseball Games',
+  description: 'A complete guide to sun protection and staying comfortable during MLB baseball games, including how to choose shaded seats and what gear to bring.',
+  totalTime: 'PT10M',
+  step: [
+    {
+      '@type': 'HowToStep',
+      position: 1,
+      name: 'Choose Your Game Time Wisely',
+      text: 'Evening games (7 PM) have minimal sun exposure. Late afternoon starts (4 PM) see the sun set during the game. Day games (1 PM) require the most planning — sun is at peak intensity from the first pitch through the 5th or 6th inning.',
+    },
+    {
+      '@type': 'HowToStep',
+      position: 2,
+      name: 'Select Shaded Seats Before You Buy',
+      text: 'Use The Shadium to find sections with shade coverage for your specific stadium, date, and game time. Look for upper deck sections with overhead coverage, club level seats, sections behind home plate, and the third-base side for afternoon shade at most parks.',
+    },
+    {
+      '@type': 'HowToStep',
+      position: 3,
+      name: 'Check the UV Index and Weather Forecast',
+      text: 'A UV index above 3 requires sun protection. Cloud cover can provide significant shade even without covered seating. Check the forecast the morning of the game and adjust your protection plan accordingly.',
+    },
+    {
+      '@type': 'HowToStep',
+      position: 4,
+      name: 'Pack Essential Sun Protection Gear',
+      text: 'Bring SPF 30+ broad-spectrum sunscreen, a wide-brimmed hat, UV-blocking sunglasses, light long-sleeve clothing in breathable fabric, and a refillable water bottle. Apply sunscreen 30 minutes before first pitch.',
+    },
+    {
+      '@type': 'HowToStep',
+      position: 5,
+      name: 'Reapply Sunscreen Every Two Innings',
+      text: 'Sunscreen wears off with sweat and time. Reapply every 2 hours — roughly every 2 innings. Use this as a reminder to also hydrate with water. Reapplication is the most commonly skipped but most effective protection step.',
+    },
+    {
+      '@type': 'HowToStep',
+      position: 6,
+      name: 'Take Shade Breaks on the Concourse',
+      text: 'Between innings, the covered concourse provides full shade. Use these breaks to cool down, reapply sunscreen, and rehydrate. Most stadiums have standing areas and food concessions in the shade.',
+    },
+  ],
+};
+
+const breadcrumbJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://theshadium.com/' },
+    { '@type': 'ListItem', position: 2, name: 'Guides', item: 'https://theshadium.com/guide' },
+    { '@type': 'ListItem', position: 3, name: 'Avoid Sun at Baseball Games', item: 'https://theshadium.com/guide/avoid-sun-baseball-games' },
+  ],
+};
+
 export const metadata: Metadata = {
   title: 'How to Avoid Sun at Baseball Games | Sun Protection Guide',
   description: 'Essential tips for avoiding sun exposure at baseball stadiums. Learn how to stay cool, find shade, and protect yourself during MLB games.',
@@ -18,6 +74,8 @@ export const metadata: Metadata = {
 export default function AvoidSunBaseballGamesPage() {
   return (
     <main className="guide-page">
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(howToJsonLd) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }} />
       <div className="guide-container">
         <nav className="flex flex-wrap items-center gap-3 text-sm text-ink-700 mb-6" aria-label="Breadcrumb">
           <Link href="/" className="hover:underline">Home</Link>

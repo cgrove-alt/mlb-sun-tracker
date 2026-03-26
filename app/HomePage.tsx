@@ -35,7 +35,7 @@ export default function HomePage() {
         <section className="hero-section">
           <div className="hero-content">
             <h1 className="hero-headline h1 break-words md:break-normal">
-              Find Your Shade
+              Find Seats in the Shade
             </h1>
             <p className="hero-subheadline max-w-prose">
               Avoid the sun and enjoy the game in comfort at any MLB, NFL, or MiLB stadium
