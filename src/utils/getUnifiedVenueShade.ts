@@ -110,13 +110,22 @@ function calculateSectionShade(
       angleDiff = 360 - angleDiff;
     }
     
-    // Base shade based on sun angle
+    // Base shade based on sun angle AND altitude
+    // Physical principle: shadow length = structure_height / tan(altitude)
+    // Lower sun → longer shadows → more shade for sections behind structures
+    const altitude = sunPos.altitudeDegrees;
+    const tanAlt = Math.max(0.05, Math.tan(altitude * Math.PI / 180)); // min 0.05 prevents div-by-zero at horizon
+    const shadowFactor = Math.min(3.0, 1.0 / tanAlt); // 3.0x at ~18°, 1.0x at 45°, 0.36x at 70°
+
     if (angleDiff > 90) {
-      // Section is facing away from sun
-      shadePercentage = Math.min(80, 30 + (angleDiff - 90) * 0.5);
+      // Section faces away from sun — structural shadows reach it
+      // More shade when: sun is low (long shadows) AND section is further behind sun
+      const azimuthComponent = (angleDiff - 90) / 90; // 0 at 90°, 1.0 at 180° (directly behind sun)
+      shadePercentage = Math.min(85, 55 * azimuthComponent * Math.min(2.0, shadowFactor));
     } else {
-      // Section is facing sun
-      shadePercentage = Math.max(0, 30 - angleDiff * 0.3);
+      // Section faces toward sun — essentially in direct sunlight
+      // Small residual for diffuse/atmospheric light, decreases as section faces more directly toward sun
+      shadePercentage = Math.max(0, 5 * (1 - angleDiff / 90));
     }
     
     // Apply upper deck bonus

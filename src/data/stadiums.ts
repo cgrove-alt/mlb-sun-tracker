@@ -122,7 +122,10 @@ export const MLB_STADIUMS: Stadium[] = [
     orientation: 13,
     capacity: 41649,
     roof: 'open',
-    timezone: 'America/Chicago'
+    timezone: 'America/Chicago',
+    upperDeckHeight: 52, // Low classic ballpark (1914) — original grandstands were 56 ft; upper deck base ~52 ft
+    roofHeight: 65,
+    roofOverhang: 22
   },
   {
     id: 'diamondbacks',
@@ -210,7 +213,7 @@ export const MLB_STADIUMS: Stadium[] = [
     state: 'NY',
     latitude: 40.7571,
     longitude: -73.8458,
-    orientation: 90,
+    orientation: 35, // NNE — confirmed north-northeast orientation (was incorrectly set to 90/due-East)
     capacity: 41922,
     roof: 'open',
     timezone: 'America/New_York'
@@ -317,7 +320,10 @@ export const MLB_STADIUMS: Stadium[] = [
     orientation: 52,
     capacity: 37755,
     roof: 'open',
-    timezone: 'America/New_York'
+    timezone: 'America/New_York',
+    upperDeckHeight: 50, // Low classic ballpark (1912) — Green Monster seats at ~43 ft; upper deck base ~50 ft
+    roofHeight: 65,
+    roofOverhang: 22
   },
   {
     id: 'reds',
@@ -392,7 +398,7 @@ export const MLB_STADIUMS: Stadium[] = [
     state: 'IL',
     latitude: 41.8299,
     longitude: -87.6338,
-    orientation: 90,
+    orientation: 120, // ESE/SE — confirmed southeast-facing orientation (was incorrectly set to 90/due-East)
     capacity: 40615,
     roof: 'open',
     timezone: 'America/Chicago'

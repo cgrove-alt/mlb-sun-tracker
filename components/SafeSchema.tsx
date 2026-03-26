@@ -36,11 +36,6 @@ export const WebApplicationSchema = () => {
       "name": "The Shadium",
       "url": "https://theshadium.com"
     },
-    "aggregateRating": {
-      "@type": "AggregateRating",
-      "ratingValue": "4.8",
-      "ratingCount": "256"
-    },
     "featureList": [
       "Real-time sun tracking",
       "Shade calculations for 250+ sports venues",

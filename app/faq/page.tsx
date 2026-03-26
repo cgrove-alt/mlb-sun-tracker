@@ -5,6 +5,9 @@ export const metadata: Metadata = {
   title: 'FAQ - Frequently Asked Questions | The Shadium',
   description: 'Find answers to common questions about finding seats in the shade at MLB stadiums, using The Shadium, and understanding sun exposure at baseball games.',
   keywords: ['MLB shade FAQ', 'baseball sun questions', 'stadium shade help', 'shadium FAQ'],
+  alternates: {
+    canonical: 'https://theshadium.com/faq',
+  },
 };
 
 const faqs = [

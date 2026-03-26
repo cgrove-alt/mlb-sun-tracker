@@ -1,0 +1,1 @@
+[     950ms] [WARNING] WARNING: L.esri.BasemapLayer uses data services that are in mature support and are not being updated. Please use L.esri.Vector.vectorBasemapLayer instead. More info: https://esriurl.com/esri-leaflet-basemap @ https://unpkg.com/esri-leaflet@3.0.14/dist/esri-leaflet.js:10

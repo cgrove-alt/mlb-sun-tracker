@@ -5,6 +5,9 @@ export const metadata: Metadata = {
   title: 'Baseball Shade Guides | The Shadium',
   description: 'Complete guides for finding seats in the shade at MLB stadiums. Learn how to avoid sun exposure and stay comfortable at baseball games.',
   keywords: ['baseball shade guide', 'MLB shade tips', 'stadium sun protection', 'shaded seats guide'],
+  alternates: {
+    canonical: 'https://theshadium.com/guide',
+  },
 };
 
 const guides = [

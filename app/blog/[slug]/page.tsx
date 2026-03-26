@@ -42,6 +42,9 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
       images: post.image ? [post.image] : [],
       url: `https://theshadium.com/blog/${slug}`,
     },
+    alternates: {
+      canonical: `https://theshadium.com/blog/${slug}`,
+    },
     twitter: {
       card: 'summary_large_image',
       title: post.title,
