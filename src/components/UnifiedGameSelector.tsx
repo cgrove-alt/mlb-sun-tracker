@@ -4,13 +4,11 @@ import { format } from 'date-fns';
 import { MLBGame, mlbApi } from '../services/mlbApi';
 import { MiLBGame, milbApi, MILB_LEVELS } from '../services/milbApi';
 import { NFLGame, nflApi } from '../services/nflApi';
-import { WorldCupGame, worldCupApi } from '../services/worldCupApi';
 import { Stadium } from '../data/stadiums';
 import { UnifiedVenue, getAllLeagues, getVenuesByLeague, getLeagueInfo, getMiLBVenuesByLevel, getMiLBLevels, isMiLBVenue } from '../data/unifiedVenues';
 import { getTeamIdFromVenueId, getVenueIdFromStringId } from '../data/milbTeamMapping';
 import { preferencesStorage } from '../utils/preferences';
 import { formatDateTimeWithTimezone } from '../utils/timeUtils';
-import { fromZonedTime } from 'date-fns-tz';
 import { formatGameTimeInStadiumTZ } from '../utils/dateTimeUtils';
 import { useHapticFeedback } from '../hooks/useHapticFeedback';
 import { useTranslation } from '../i18n/i18nContext';
@@ -21,9 +19,9 @@ import './GameSelector.css';
 
 interface UnifiedGameSelectorProps {
   selectedVenue: UnifiedVenue | null;
-  onGameSelect: (game: MLBGame | MiLBGame | NFLGame | WorldCupGame | null, dateTime: Date | null) => void;
+  onGameSelect: (game: MLBGame | MiLBGame | NFLGame | null, dateTime: Date | null) => void;
   onVenueChange: (venue: UnifiedVenue | null) => void;
-  onGamesLoaded?: (games: (MLBGame | MiLBGame | NFLGame | WorldCupGame)[]) => void;
+  onGamesLoaded?: (games: (MLBGame | MiLBGame | NFLGame)[]) => void;
 }
 
 export const UnifiedGameSelector: React.FC<UnifiedGameSelectorProps> = ({
@@ -34,9 +32,9 @@ export const UnifiedGameSelector: React.FC<UnifiedGameSelectorProps> = ({
 }) => {
   const haptic = useHapticFeedback();
   const { t } = useTranslation();
-  const [games, setGames] = useState<(MLBGame | MiLBGame | NFLGame | WorldCupGame)[]>([]);
+  const [games, setGames] = useState<(MLBGame | MiLBGame | NFLGame)[]>([]);
   const [isMobileContext, setIsMobileContext] = useState(false);
-  const gamesLoading = useLoadingState<(MLBGame | MiLBGame | NFLGame | WorldCupGame)[]>({ minLoadingTime: 500, initialLoading: false });
+  const gamesLoading = useLoadingState<(MLBGame | MiLBGame | NFLGame)[]>({ minLoadingTime: 500, initialLoading: false });
   const [selectedLeague, setSelectedLeague] = useState<string>(() => {
     return preferencesStorage.get('selectedLeague', 'MLB');
   });
@@ -89,10 +87,9 @@ export const UnifiedGameSelector: React.FC<UnifiedGameSelectorProps> = ({
   const leagueOptions = leagues.map(league => {
     const info = getLeagueInfo(league);
     const venues = getVenuesByLeague(league);
-    const icon = league === 'MLB' ? '⚾' : league === 'MiLB' ? '⚾' : league === 'NFL' ? '🏈' : league === 'WorldCup' ? '⚽' : '🏟️';
     return {
       value: league,
-      label: `${icon} ${info?.name || league} (${venues.length})`,
+      label: `${league === 'MLB' ? '⚾' : league === 'MiLB' ? '⚾' : league === 'NFL' ? '🏈' : '🏟️'} ${info?.name || league} (${venues.length})`,
     };
   });
 
@@ -134,9 +131,9 @@ export const UnifiedGameSelector: React.FC<UnifiedGameSelectorProps> = ({
       const now = new Date();
       const currentYear = now.getFullYear();
       // For MiLB, use 30 days due to API limitation with multiple sport IDs
-      const endDate = selectedVenue.league === 'MiLB'
-        ? new Date(now.getTime() + 30 * 24 * 60 * 60 * 1000)
-        : new Date(currentYear + 1, 9, 31); // End of October next year for MLB
+      const endDate = selectedVenue.league === 'MiLB' 
+        ? new Date(now.getTime() + 30 * 24 * 60 * 60 * 1000) 
+        : new Date(currentYear, 9, 31); // End of October for MLB
       
       if (selectedVenue.league === 'MLB') {
         const schedule = await mlbApi.getSchedule(
@@ -225,22 +222,12 @@ export const UnifiedGameSelector: React.FC<UnifiedGameSelectorProps> = ({
 
         setGames(nflGames);
         gamesLoading.setData(nflGames);
-
+        
         if (onGamesLoaded) {
           onGamesLoaded(nflGames);
         }
-      } else if (selectedVenue.league === 'WorldCup') {
-
-        const worldCupMatches = await worldCupApi.getGamesForVenue(selectedVenue.id);
-
-        setGames(worldCupMatches);
-        gamesLoading.setData(worldCupMatches);
-
-        if (onGamesLoaded) {
-          onGamesLoaded(worldCupMatches);
-        }
       }
-
+      
     } catch (error) {
       console.error('[GameSelector] Error loading games:', error);
       
@@ -299,58 +286,33 @@ export const UnifiedGameSelector: React.FC<UnifiedGameSelectorProps> = ({
   };
 
   const handleCustomApply = () => {
-    if (customDate && customTime && selectedVenue) {
-      // CRITICAL: Convert local stadium time to UTC
-      // User enters time in stadium's local timezone (e.g., "15:00" for 3 PM Pacific)
-      // We must convert this to UTC for accurate sun position calculations
-      const stadiumTimezone = selectedVenue.timezone || 'America/New_York';
-      const localDateTimeString = `${customDate}T${customTime}:00`;
-
-      // fromZonedTime converts a local time (in the given timezone) to a UTC Date
-      const utcDate = fromZonedTime(localDateTimeString, stadiumTimezone);
-
-      onGameSelect(null, utcDate);
+    if (customDate && customTime) {
+      onGameSelect(null, new Date(`${customDate}T${customTime}:00`));
       preferencesStorage.update('lastUsedDate', customDate);
       preferencesStorage.update('lastUsedTime', customTime);
     }
   };
 
   const gameOptions = games.map(game => {
-    // Handle different date formats
-    let gameDate: Date;
-    if ('gameDate' in game) {
-      gameDate = new Date(game.gameDate);
-    } else if ('date' in game && 'time' in game) {
-      // World Cup format
-      const wcGame = game as WorldCupGame;
-      gameDate = new Date(`${wcGame.date}T${wcGame.time}`);
-    } else {
-      gameDate = new Date();
-    }
-
+    const gameDate = new Date(game.gameDate);
     const venueTimezone = selectedVenue?.timezone || 'America/New_York';
     const formattedTime = formatGameTimeInStadiumTZ(gameDate, venueTimezone, true);
-
+    
     // Handle different game structures
     let label: string;
     let gameId: string;
-
+    
     if ('teams' in game) {
       // MLB/MiLB game structure
       label = `${formattedTime} - ${game.teams.away.team.name} @ ${game.teams.home.team.name}`;
       gameId = game.gamePk.toString();
-    } else if ('matchId' in game) {
-      // World Cup structure
-      const wcGame = game as WorldCupGame;
-      label = `${formattedTime} - ${wcGame.homeTeam} vs ${wcGame.awayTeam}`;
-      gameId = wcGame.matchId;
     } else {
       // NFL game structure
       const nflGame = game as NFLGame;
       label = `${formattedTime} - ${nflGame.awayTeam.name} @ ${nflGame.homeTeam.name}`;
       gameId = nflGame.gameId;
     }
-
+    
     return {
       value: gameId,
       label: label,

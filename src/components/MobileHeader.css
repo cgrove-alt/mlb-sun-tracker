@@ -1,4 +1,5 @@
 /* Modern Mobile Header - 2025 Design */
+@import './MobileMenu.css';
 
 .mobile-header {
   position: sticky;

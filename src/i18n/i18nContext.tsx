@@ -1,5 +1,3 @@
-'use client';
-
 import React, { createContext, useContext, useState, useEffect, ReactNode } from 'react';
 import { translations, SupportedLanguage, TranslationKeys } from './translations';
 
@@ -20,8 +18,7 @@ interface I18nContextType {
 const SUPPORTED_LANGUAGES = [
   { code: 'en' as const, name: 'English', nativeName: 'English' },
   { code: 'es' as const, name: 'Spanish', nativeName: 'Español' },
-  { code: 'ja' as const, name: 'Japanese', nativeName: '日本語' },
-  { code: 'fr' as const, name: 'French', nativeName: 'Français' }
+  { code: 'ja' as const, name: 'Japanese', nativeName: '日本語' }
 ];
 
 // Default language
@@ -81,10 +78,7 @@ const detectLanguage = (): SupportedLanguage => {
   if (browserLanguage.startsWith('ja')) {
     return 'ja';
   }
-  if (browserLanguage.startsWith('fr')) {
-    return 'fr';
-  }
-
+  
   return DEFAULT_LANGUAGE;
 };
 
@@ -260,10 +254,9 @@ export const formatNumber = (
   const localeMap = {
     en: 'en-US',
     es: 'es-ES',
-    ja: 'ja-JP',
-    fr: 'fr-FR'
+    ja: 'ja-JP'
   };
-
+  
   return new Intl.NumberFormat(localeMap[language], options).format(num);
 };
 
@@ -276,10 +269,9 @@ export const formatDate = (
   const localeMap = {
     en: 'en-US',
     es: 'es-ES',
-    ja: 'ja-JP',
-    fr: 'fr-FR'
+    ja: 'ja-JP'
   };
-
+  
   return new Intl.DateTimeFormat(localeMap[language], options).format(date);
 };
 

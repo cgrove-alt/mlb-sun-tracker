@@ -5,28 +5,22 @@ import { SeatRecommendationEngine, UserPreferences, RecommendationContext } from
 import { SeatingSectionSun } from '../utils/sunCalculations';
 import { SeatPreferencesForm } from './SeatPreferencesForm';
 import { LoadingSpinner } from './LoadingSpinner';
-import { SectionList } from './SectionList';
 import { MLB_STADIUMS } from '../data/stadiums';
 import { getStadiumCompleteData } from '../data/stadium-data-aggregator';
 import { weatherApi, WeatherData } from '../services/weatherApi';
-import type { SectionShadowData } from '../utils/sunCalculator';
 
 interface SeatRecommendationsSectionProps {
   sections: SeatingSectionSun[];
   stadiumId: string;
   gameTime?: string;
   gameDate?: Date;
-  rowData?: SectionShadowData[] | null;
-  selectedSectionId?: string;
 }
 
 export const SeatRecommendationsSection: React.FC<SeatRecommendationsSectionProps> = ({
   sections,
   stadiumId,
   gameTime = '13:00',
-  gameDate = new Date(),
-  rowData = null,
-  selectedSectionId
+  gameDate = new Date()
 }) => {
   const [preferences, setPreferences] = useState<UserPreferences>({
     sunPreference: 'neutral',
@@ -197,17 +191,6 @@ export const SeatRecommendationsSection: React.FC<SeatRecommendationsSectionProp
 
   return (
     <div className="seat-recommendations-section">
-      {/* Screen reader shade summary */}
-      <div aria-live="polite" className="sr-only">
-        {sections.length > 0 && (
-          <p>
-            Shade analysis complete. {sections.filter(s => s.sunExposure < 30).length} sections are mostly shaded,
-            {sections.filter(s => s.sunExposure >= 70).length} sections are mostly sunny,
-            out of {sections.length} total sections.
-          </p>
-        )}
-      </div>
-
       <div className="recommendations-header">
         <div className="flex items-center justify-between mb-6">
           <div>
@@ -359,22 +342,6 @@ export const SeatRecommendationsSection: React.FC<SeatRecommendationsSectionProp
             <p className="text-sm text-gray-500">Try adjusting your preferences or check back later.</p>
           </div>
         )}
-      </div>
-
-      {/* All Sections List with Row-Level Data */}
-      <div className="mt-12 pt-8 border-t border-gray-200">
-        <h2 className="text-2xl font-bold text-gray-900 mb-6">
-          All Sections
-        </h2>
-        <SectionList
-          sections={sections}
-          loading={false}
-          showFilters={true}
-          rowData={rowData}
-          showRowToggle={!!rowData && rowData.length > 0}
-          stadiumId={stadiumId}
-          selectedSectionId={selectedSectionId}
-        />
       </div>
 
       <style jsx>{`

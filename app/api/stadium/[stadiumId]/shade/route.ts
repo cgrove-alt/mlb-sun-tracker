@@ -1,7 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { MLB_STADIUMS } from '../../../../../src/data/stadiums';
 import { getStadiumSections } from '../../../../../src/data/stadiumSections';
-import { calculateShadePercentage } from '../../../../../src/utils/stadiumDataServer';
+import { calculateShadePercentage, generateShadeMatrix } from '../../../../../src/utils/stadiumDataServer';
 
 interface RouteParams {
   params: Promise<{
