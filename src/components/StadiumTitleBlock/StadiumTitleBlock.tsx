@@ -336,7 +336,7 @@ const StadiumTitleBlock: React.FC<StadiumTitleBlockProps> = ({
         <div className={styles.enhancedInfo}>
           {weatherInfo && (
             <div className={styles.weatherCard}>
-              <span className={styles.weatherIcon}>
+              <span className={styles.weatherIcon} aria-label={weatherInfo.condition || 'Weather'} role="img">
                 {weatherInfo.icon || '☀️'}
               </span>
               <div className={styles.weatherDetails}>

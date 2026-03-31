@@ -404,20 +404,19 @@ function UnifiedAppContent() {
 
                 {sunPosition && (
                   <div className="sun-info">
-                    <h3>
+                    <h2>
                       Sun Information
                       {selectedVenue?.roofHeight && (
                         <span className="enhanced-indicator" title="Using enhanced shadow calculations with venue geometry">
                           ✨ Enhanced
                         </span>
                       )}
-                    </h3>
+                    </h2>
                     <div className="sun-position">
                       <p>
                         {sunPosition.altitudeDegrees > 0 ? (
                           <>
-                            <SunIcon size={20} /> Sun is {getSunDescription(sunPosition.altitudeDegrees)}
-                            at {sunPosition.altitudeDegrees.toFixed(1)}° elevation
+                            <SunIcon size={20} /> {getSunDescription(sunPosition)} at {sunPosition.altitudeDegrees.toFixed(1)}° elevation
                           </>
                         ) : (
                           <>

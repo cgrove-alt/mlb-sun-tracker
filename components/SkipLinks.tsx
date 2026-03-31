@@ -29,12 +29,12 @@ export default function SkipLinks() {
       >
         Skip to navigation
       </a>
-      <a 
-        href="#footer" 
+      <a
+        href="#search-controls"
         className="skip-link"
-        onClick={(e) => handleSkipClick(e, 'footer')}
+        onClick={(e) => handleSkipClick(e, 'search-controls')}
       >
-        Skip to footer
+        Skip to search
       </a>
     </nav>
   );

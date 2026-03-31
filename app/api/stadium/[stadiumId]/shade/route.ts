@@ -28,61 +28,69 @@ export async function GET(request: NextRequest, { params }: RouteParams) {
     );
   }
   
-  const sections = getStadiumSections(stadium.id);
-  
-  // If specific section requested
-  if (section) {
-    const sectionData = sections.find(s => s.name === section || s.id === section);
-    
-    if (!sectionData) {
-      return NextResponse.json(
-        { error: 'Section not found' },
-        { status: 404 }
-      );
+  try {
+    const sections = getStadiumSections(stadium.id);
+
+    // If specific section requested
+    if (section) {
+      const sectionData = sections.find(s => s.name === section || s.id === section);
+
+      if (!sectionData) {
+        return NextResponse.json(
+          { error: 'Section not found' },
+          { status: 404 }
+        );
+      }
+
+      const shadePercentage = calculateShadePercentage(stadium, sectionData, hour, month);
+
+      return NextResponse.json({
+        stadium: stadium.name,
+        section: sectionData.name,
+        shadePercentage,
+        hour: `${hour}:00`,
+        month,
+        covered: sectionData.covered,
+        level: sectionData.level,
+        recommendation: getShadeRecommendation(shadePercentage)
+      });
     }
-    
-    const shadePercentage = calculateShadePercentage(stadium, sectionData, hour, month);
-    
+
+    // Return shade data for all sections
+    const shadeData = sections.map(sectionData => ({
+      section: sectionData.name,
+      level: sectionData.level,
+      covered: sectionData.covered,
+      shadePercentage: calculateShadePercentage(stadium, sectionData, hour, month),
+      recommendation: getShadeRecommendation(
+        calculateShadePercentage(stadium, sectionData, hour, month)
+      )
+    }));
+
+    // Sort by shade percentage
+    shadeData.sort((a, b) => b.shadePercentage - a.shadePercentage);
+
     return NextResponse.json({
       stadium: stadium.name,
-      section: sectionData.name,
-      shadePercentage,
+      stadiumId: stadium.id,
+      orientation: stadium.orientation,
       hour: `${hour}:00`,
       month,
-      covered: sectionData.covered,
-      level: sectionData.level,
-      recommendation: getShadeRecommendation(shadePercentage)
+      totalSections: shadeData.length,
+      shadedSections: shadeData.filter(s => s.shadePercentage >= 50).length,
+      sections: shadeData
+    }, {
+      headers: {
+        'Cache-Control': 'public, s-maxage=3600, stale-while-revalidate=86400',
+      }
     });
+  } catch (error) {
+    console.error('Shade calculation error:', error);
+    return NextResponse.json(
+      { error: 'Failed to calculate shade data' },
+      { status: 500 }
+    );
   }
-  
-  // Return shade data for all sections
-  const shadeData = sections.map(sectionData => ({
-    section: sectionData.name,
-    level: sectionData.level,
-    covered: sectionData.covered,
-    shadePercentage: calculateShadePercentage(stadium, sectionData, hour, month),
-    recommendation: getShadeRecommendation(
-      calculateShadePercentage(stadium, sectionData, hour, month)
-    )
-  }));
-  
-  // Sort by shade percentage
-  shadeData.sort((a, b) => b.shadePercentage - a.shadePercentage);
-  
-  return NextResponse.json({
-    stadium: stadium.name,
-    stadiumId: stadium.id,
-    orientation: stadium.orientation,
-    hour: `${hour}:00`,
-    month,
-    totalSections: shadeData.length,
-    shadedSections: shadeData.filter(s => s.shadePercentage >= 50).length,
-    sections: shadeData
-  }, {
-    headers: {
-      'Cache-Control': 'public, s-maxage=3600, stale-while-revalidate=86400',
-    }
-  });
 }
 
 function getShadeRecommendation(shadePercentage: number): string {
