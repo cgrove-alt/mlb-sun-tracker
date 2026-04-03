@@ -310,7 +310,7 @@ button, a, .clickable {
   position: fixed;
   top: 20px;
   right: 20px;
-  background: #4caf50;
+  background: #2e7d32;
   color: white;
   padding: 16px;
   border-radius: 8px;
@@ -339,12 +339,11 @@ button, a, .clickable {
 .update-available p {
   margin: 0 0 12px 0;
   font-size: 16px; /* Better readability */
-  opacity: 0.9;
 }
 
 .update-available button {
   background: white;
-  color: #4caf50;
+  color: #2e7d32;
   border: none;
   padding: 8px 16px;
   border-radius: 4px;
