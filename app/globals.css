@@ -331,6 +331,12 @@ button, a, .clickable {
   }
 }
 
+.update-available,
+.update-available h4,
+.update-available p {
+  color: #ffffff !important;
+}
+
 .update-available h4 {
   margin: 0 0 8px 0;
   font-size: 16px;
