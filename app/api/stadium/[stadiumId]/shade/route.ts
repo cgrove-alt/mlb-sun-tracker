@@ -14,9 +14,25 @@ export async function GET(request: NextRequest, { params }: RouteParams) {
   
   // Get query parameters
   const searchParams = request.nextUrl.searchParams;
-  const month = parseInt(searchParams.get('month') || new Date().getMonth().toString());
-  const hour = parseInt(searchParams.get('hour') || '13');
+  const monthParam = searchParams.get('month');
+  const hourParam = searchParams.get('hour');
+  const month = parseInt(monthParam ?? new Date().getMonth().toString());
+  const hour = parseInt(hourParam ?? '13');
   const section = searchParams.get('section');
+
+  // Validate month (0-11) and hour (0-23)
+  if (monthParam !== null && (isNaN(month) || month < 0 || month > 11)) {
+    return NextResponse.json(
+      { error: 'Invalid month: must be an integer between 0 (January) and 11 (December)' },
+      { status: 400 }
+    );
+  }
+  if (hourParam !== null && (isNaN(hour) || hour < 0 || hour > 23)) {
+    return NextResponse.json(
+      { error: 'Invalid hour: must be an integer between 0 and 23' },
+      { status: 400 }
+    );
+  }
   
   // Find stadium
   const stadium = MLB_STADIUMS.find(s => s.id === stadiumId);

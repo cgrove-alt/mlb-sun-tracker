@@ -45,7 +45,9 @@ function getShadeRecommendation(orientation: number, month: number, timeOfDay: s
 
 // Get seasonal shade pattern
 function getSeasonalPattern(month: number) {
-  if (month >= 3 && month <= 5) return 'Spring: Sun angle is moderate, shade increases throughout the game';
+  if (month === 3) return 'April: Sun sits lower on the horizon — most stadiums see more natural shade, especially during afternoon games';
+  if (month === 4) return 'May: Sun angle climbs rapidly, shrinking shade coverage; evening games retain more shade than day games';
+  if (month === 5) return 'June: Highest sun angle of the season near the summer solstice — minimal shade during day games, covered seats strongly recommended';
   if (month >= 6 && month <= 8) return 'Summer: High sun angle, limited shade except in covered areas';
   if (month >= 9 && month <= 10) return 'Fall: Lower sun angle provides more natural shade';
   return 'Check specific game time for shade availability';
@@ -55,9 +57,9 @@ export default function StadiumPageSSR({ stadium, sections, amenities, guide }: 
 
   // Pre-calculate shade data for common scenarios
   const months = [
-    { num: 3, name: 'April', pattern: 'Early season - moderate sun exposure' },
-    { num: 4, name: 'May', pattern: 'Spring games - increasing temperatures' },
-    { num: 5, name: 'June', pattern: 'Early summer - high sun angle' },
+    { num: 3, name: 'April', pattern: 'Lower sun angle — more shade available, especially in afternoon games' },
+    { num: 4, name: 'May', pattern: 'Sun angle rising — shade coverage decreases, evening games best for comfort' },
+    { num: 5, name: 'June', pattern: 'Near summer solstice — fewest shaded seats, covered sections essential' },
     { num: 6, name: 'July', pattern: 'Peak summer - maximum sun exposure' },
     { num: 7, name: 'August', pattern: 'Late summer - intense afternoon sun' },
     { num: 8, name: 'September', pattern: 'Early fall - decreasing sun angle' },

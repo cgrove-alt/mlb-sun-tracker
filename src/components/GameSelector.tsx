@@ -174,8 +174,28 @@ export const GameSelector: React.FC<GameSelectorProps> = ({
     };
   };
 
-  const gameOptions = games.map(formatGameOption);
-  
+  // Group game options by month for easier navigation
+  const gameOptions = React.useMemo(() => {
+    const monthNames = [
+      'January', 'February', 'March', 'April', 'May', 'June',
+      'July', 'August', 'September', 'October', 'November', 'December'
+    ];
+    const grouped: Record<string, { label: string; options: ReturnType<typeof formatGameOption>[] }> = {};
+
+    games.forEach(game => {
+      const gameDate = new Date(game.gameDate);
+      const monthKey = `${gameDate.getFullYear()}-${gameDate.getMonth()}`;
+      const monthName = monthNames[gameDate.getMonth()];
+
+      if (!grouped[monthKey]) {
+        grouped[monthKey] = { label: monthName, options: [] };
+      }
+      grouped[monthKey].options.push(formatGameOption(game));
+    });
+
+    return Object.values(grouped);
+  }, [games, stadiums]);
+
   // Custom styles to ensure dropdown text is always visible
   const customSelectStyles = {
     control: (provided: any) => ({

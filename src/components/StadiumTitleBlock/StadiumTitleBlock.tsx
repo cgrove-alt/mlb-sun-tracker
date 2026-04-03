@@ -206,9 +206,9 @@ const StadiumTitleBlock: React.FC<StadiumTitleBlockProps> = ({
             </button>
             {showShareMenu && (
               <div className={styles.shareMenu}>
-                <button onClick={() => handleShare('twitter')}>Twitter</button>
-                <button onClick={() => handleShare('facebook')}>Facebook</button>
-                <button onClick={() => handleShare('copy')}>Copy Link</button>
+                <button onClick={() => handleShare('twitter')} aria-label="Share on Twitter" title="Share on Twitter">Twitter</button>
+                <button onClick={() => handleShare('facebook')} aria-label="Share on Facebook" title="Share on Facebook">Facebook</button>
+                <button onClick={() => handleShare('copy')} aria-label="Copy link to clipboard" title="Copy link to clipboard">Copy Link</button>
               </div>
             )}
           </div>
