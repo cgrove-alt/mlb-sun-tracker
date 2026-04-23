@@ -12,15 +12,18 @@ import { weatherApi, WeatherData } from '../services/weatherApi';
 interface SeatRecommendationsSectionProps {
   sections: SeatingSectionSun[];
   stadiumId: string;
-  gameTime?: string;
-  gameDate?: Date;
+  // gameTime and gameDate MUST come from the user's real selected game.
+  // This component does not invent defaults — callers are responsible for
+  // sourcing these from the real schedule API.
+  gameTime: string;
+  gameDate: Date;
 }
 
 export const SeatRecommendationsSection: React.FC<SeatRecommendationsSectionProps> = ({
   sections,
   stadiumId,
-  gameTime = '13:00',
-  gameDate = new Date()
+  gameTime,
+  gameDate,
 }) => {
   const [preferences, setPreferences] = useState<UserPreferences>({
     sunPreference: 'neutral',
@@ -36,28 +39,37 @@ export const SeatRecommendationsSection: React.FC<SeatRecommendationsSectionProp
   const [showPreferences, setShowPreferences] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
   const [weather, setWeather] = useState<WeatherData | null>(null);
+  const [weatherLoading, setWeatherLoading] = useState(true);
+  const [weatherError, setWeatherError] = useState(false);
 
   // Fetch weather data for game
   useEffect(() => {
     const fetchWeather = async () => {
-      try {
-        const stadium = MLB_STADIUMS.find(s => s.id === stadiumId);
-        if (stadium) {
-          // Get forecast and extract weather for game time
-          const forecast = await weatherApi.getWeatherForecast(
-            stadium.latitude,
-            stadium.longitude
-          );
-          const gameDateTime = new Date(gameDate);
-          const [hours, minutes] = gameTime.split(':').map(Number);
-          gameDateTime.setHours(hours, minutes, 0, 0);
+      const stadium = MLB_STADIUMS.find(s => s.id === stadiumId);
+      if (!stadium) {
+        setWeatherLoading(false);
+        return;
+      }
 
-          const weatherData = weatherApi.getWeatherForTime(forecast, gameDateTime);
-          setWeather(weatherData);
-        }
+      setWeatherLoading(true);
+      setWeatherError(false);
+
+      try {
+        const forecast = await weatherApi.getWeatherForecast(
+          stadium.latitude,
+          stadium.longitude
+        );
+        const gameDateTime = new Date(gameDate);
+        const [hours, minutes] = gameTime.split(':').map(Number);
+        gameDateTime.setHours(hours, minutes, 0, 0);
+
+        const weatherData = weatherApi.getWeatherForTime(forecast, gameDateTime);
+        setWeather(weatherData);
       } catch (error) {
         console.error('Failed to fetch weather:', error);
-        // Use default weather if fetch fails
+        // Fall back to neutral assumptions so recommendations still generate,
+        // but flag the error so the UI shows it transparently.
+        setWeatherError(true);
         setWeather({
           temperature: 72,
           feelsLike: 72,
@@ -71,6 +83,8 @@ export const SeatRecommendationsSection: React.FC<SeatRecommendationsSectionProp
           uvIndex: 5,
           conditions: [{ id: 800, main: 'Clear', description: 'clear sky', icon: '01d' }]
         });
+      } finally {
+        setWeatherLoading(false);
       }
     };
     fetchWeather();
@@ -240,6 +254,26 @@ export const SeatRecommendationsSection: React.FC<SeatRecommendationsSectionProp
           </div>
         </div>
       </div>
+
+      {/* Weather status — visible so users know if recommendations use real data */}
+      {weatherLoading && (
+        <div
+          className="mb-6 rounded-lg border border-blue-200 bg-blue-50 p-3 flex items-center gap-3 animate-pulse"
+          role="status"
+          aria-live="polite"
+        >
+          <div className="h-4 w-4 rounded-full bg-blue-300" aria-hidden="true"></div>
+          <span className="text-sm text-blue-800">Loading weather forecast for your game…</span>
+        </div>
+      )}
+      {!weatherLoading && weatherError && (
+        <div
+          className="mb-6 rounded-lg border border-amber-300 bg-amber-50 p-3 text-sm text-amber-900"
+          role="alert"
+        >
+          <strong>Weather data unavailable.</strong> Recommendations below use neutral weather assumptions — cloud cover and UV may not match actual game-day conditions.
+        </div>
+      )}
 
       {/* Preferences Form */}
       {showPreferences && (

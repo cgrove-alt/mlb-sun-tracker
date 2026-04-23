@@ -1,3 +1,8 @@
+// NOTE: `orientation` is the single most important geometric input to our shade
+// calculations. The provenance (measured vs estimated vs unverified) of each
+// stadium's orientation is tracked in `stadiumOrientationProvenance.ts`. When
+// editing a value here, update the matching provenance entry so the audit
+// trail stays honest.
 export interface Stadium {
   id: string;
   name: string;
@@ -6,7 +11,7 @@ export interface Stadium {
   state: string;
   latitude: number;
   longitude: number;
-  orientation: number; // Home plate to center field bearing in degrees
+  orientation: number; // Home plate to center field bearing in degrees — see stadiumOrientationProvenance.ts
   capacity: number;
   roof: 'open' | 'retractable' | 'fixed';
   timezone: string; // IANA timezone identifier

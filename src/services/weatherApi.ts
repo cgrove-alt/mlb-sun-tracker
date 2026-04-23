@@ -325,24 +325,16 @@ export class WeatherApiService {
     };
   }
 
-  // Public methods for testing and enhanced functionality
+  // Public methods — propagate errors so UI can show a visible fallback state.
+  // (Previously these swallowed errors and returned mock data silently, which
+  // misled users about whether shade/weather calculations reflected reality.)
   async getCurrentWeather(latitude: number, longitude: number): Promise<WeatherData> {
-    try {
-      const forecast = await this.getForecast(latitude, longitude);
-      return forecast.current;
-    } catch (error) {
-      console.warn('Failed to fetch current weather, returning fallback data:', error);
-      return this.getMockWeather().current;
-    }
+    const forecast = await this.getForecast(latitude, longitude);
+    return forecast.current;
   }
-  
+
   async getWeatherForecast(latitude: number, longitude: number): Promise<WeatherForecast> {
-    try {
-      return await this.getForecast(latitude, longitude);
-    } catch (error) {
-      console.warn('Failed to fetch weather forecast, returning fallback data:', error);
-      return this.getMockWeather();
-    }
+    return await this.getForecast(latitude, longitude);
   }
   
   mapWeatherCode(code: number): WeatherCondition {

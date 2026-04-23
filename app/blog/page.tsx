@@ -25,12 +25,25 @@ export const metadata: Metadata = {
   },
 };
 
+const breadcrumbJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://theshadium.com/' },
+    { '@type': 'ListItem', position: 2, name: 'Blog', item: 'https://theshadium.com/blog' },
+  ],
+};
+
 export default function BlogPage() {
   const posts = getAllPosts();
   const categories = getCategories();
-  
+
   return (
     <main className="blog-page">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
+      />
       <div className="blog-container">
         <nav className="flex flex-wrap items-center gap-3 text-sm text-ink-700 mb-6" aria-label="Breadcrumb">
           <Link href="/" className="hover:underline">Home</Link>

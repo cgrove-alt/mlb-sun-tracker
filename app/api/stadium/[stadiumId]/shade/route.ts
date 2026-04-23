@@ -23,27 +23,27 @@ export async function GET(request: NextRequest, { params }: RouteParams) {
   // Validate month (0-11) and hour (0-23)
   if (monthParam !== null && (isNaN(month) || month < 0 || month > 11)) {
     return NextResponse.json(
-      { error: 'Invalid month: must be an integer between 0 (January) and 11 (December)' },
+      { error: 'Invalid month: must be an integer between 0 (January) and 11 (December)', code: 'INVALID_MONTH' },
       { status: 400 }
     );
   }
   if (hourParam !== null && (isNaN(hour) || hour < 0 || hour > 23)) {
     return NextResponse.json(
-      { error: 'Invalid hour: must be an integer between 0 and 23' },
+      { error: 'Invalid hour: must be an integer between 0 and 23', code: 'INVALID_HOUR' },
       { status: 400 }
     );
   }
-  
+
   // Find stadium
   const stadium = MLB_STADIUMS.find(s => s.id === stadiumId);
-  
+
   if (!stadium) {
     return NextResponse.json(
-      { error: 'Stadium not found' },
+      { error: 'Stadium not found', code: 'STADIUM_NOT_FOUND', stadiumId },
       { status: 404 }
     );
   }
-  
+
   try {
     const sections = getStadiumSections(stadium.id);
 
@@ -53,7 +53,7 @@ export async function GET(request: NextRequest, { params }: RouteParams) {
 
       if (!sectionData) {
         return NextResponse.json(
-          { error: 'Section not found' },
+          { error: 'Section not found', code: 'SECTION_NOT_FOUND', sectionId: section },
           { status: 404 }
         );
       }
@@ -103,7 +103,11 @@ export async function GET(request: NextRequest, { params }: RouteParams) {
   } catch (error) {
     console.error('Shade calculation error:', error);
     return NextResponse.json(
-      { error: 'Failed to calculate shade data' },
+      {
+        error: 'Failed to calculate shade data',
+        code: 'CALCULATION_FAILED',
+        message: error instanceof Error ? error.message : 'Unknown error',
+      },
       { status: 500 }
     );
   }

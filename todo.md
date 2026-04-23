@@ -1,3 +1,131 @@
+# Phase 7: Complete Site Audit (2026-04-23)
+
+**Goal:** Identify what needs to be improved to make this the best site for users to find out if their seats are in the shade at sports events.
+
+**Status:** Audit complete — awaiting user approval before implementing any items below.
+
+---
+
+## Audit Findings Summary
+
+**What's strong:**
+- Next.js 15.5.14 + strict TS, clean component architecture (78 components)
+- All 30 MLB stadiums + 32 NFL + 100+ MiLB + 16 World Cup 2026 venues
+- Physical sun/shade model with 3D ray-casting and obstruction geometry (22ms/calc)
+- WCAG 2.1 AA compliant (4.54:1 contrast), Playwright a11y + visual regression tests
+- SEO solid: sitemap index, 28 stadium blog posts, structured data, canonicals
+- Performance: 105 KB Brotli homepage, virtual scrolling, IndexedDB cache
+- PWA with service worker, offline support, haptic feedback
+
+**Biggest gaps to "best-in-class":**
+1. Section-level precision only — no individual seat lookup
+2. NFL integration half-finished — schedules not wired to stadium pages
+3. No way for users to report inaccurate shade data (API route exists, no UI)
+4. No favorites/saved stadiums — everything anonymous/session-based
+5. No ticketing link-out — users can't act on a recommendation
+6. No seat photos / view-from-seat reference
+7. Duplicate iCloud files polluting source (` 3.tsx`, ` 2.ts`)
+8. CSS sprawl (28K+ lines across multiple files)
+9. Data quality: MiLB roof/overhang data incomplete; stadium orientations need provenance
+
+---
+
+## Prioritized TODO
+
+### 🔴 Critical — do first (low risk, high cleanup/correctness value)
+- [x] **C1. Delete iCloud duplicate files** — removed `app/stadium/[stadiumId]/page 3.tsx`, `StadiumPageClient 3.tsx`, `src/services/itineraryService 2.ts` after diffing against canonicals; also cleaned two empty duplicate dirs (`app/api/stadium/[stadiumId] 2/`, `app/venue/[venueId] 2/`).
+- [ ] **C2. Complete NFL game schedule integration** — wire `src/services/nflApi.ts` into `app/stadium/[stadiumId]/StadiumPageClient.tsx` so NFL stadium pages show games like MLB pages do.
+- [ ] **C3. Add user inaccuracy reporting UI** — `app/api/report-inaccuracy/` exists but no form. Add a "Report a problem with this data" control on stadium pages + admin review page.
+- [x] **C4. Verify data provenance for stadium orientations** — added `src/data/stadiumOrientationProvenance.ts` tracking all 30 MLB stadiums. 2 marked `verified` (Mets, White Sox) based on documented past corrections; 28 marked `unverified` with roof/historical notes where relevant. Added pointer comment to `stadiums.ts`. **Actual verification still pending** — this task only established the schema and current state; upgrading stadiums to `verified` requires the 2-source cross-check workflow documented in the new file.
+
+### 🟠 High — biggest user value
+- [ ] **H1. Seat-level shade precision** — today recommendations stop at section level. Add per-row (already partial) and per-seat shade %. Big competitive moat.
+- [ ] **H2. Favorites system (localStorage)** — "Save this stadium / save this section" with retrieval from any page. No backend needed for v1.
+- [ ] **H3. Ticketing link-out** — "Get Tickets" button on recommendations that deep-links to Ticketmaster/StubHub with section pre-filled. Affiliate revenue potential.
+- [ ] **H4. Sun path visualization** — animated sun arc over stadium diagram for the selected game time, so users *understand* why a section is shaded.
+- [ ] **H5. Seat photos / view-from-section** — integrate an API or curated photos so users can see what a section actually looks like.
+
+### 🟡 Medium — polish & engagement
+- [ ] **M1. Historical weather overlay** — "Last July 4 here: 92°F, 15% clouds" via Open-Meteo historical API.
+- [x] **M2. Real-game selection on stadium page** — scope expanded mid-sprint per user feedback ("real schedules are non-negotiable" + "users should be able to select the game they're going to"). Replaced hardcoded `gameTime="13:00"` and the `new Date()`-based sun position with a real MLB schedule flow: `StadiumPageClient` now fetches home games via `mlbApi.getSchedule` + `getHomeGamesForStadium`, defaults selection to the soonest upcoming game, and lets the user pick any other. Sun position, shade calcs, and weather all derive from the selected game's actual first-pitch datetime (in stadium local timezone). Empty / loading / error states all show real messages — no heuristic fabrication.
+- [x] **M3. Loading skeleton during weather fetch** — `SeatRecommendationsSection` now tracks separate `weatherLoading` state and renders a visible blue loading banner while the forecast fetches (previously the request was silent).
+- [ ] **M4. CSS consolidation + design tokens** — collapse 28K+ lines into tokens + utility layer.
+- [ ] **M5. Split `src/data/stadiumSections.ts`** (591 KB monolith) into per-stadium chunks to improve tree-shaking and edit-time DX.
+- [x] **M6. Typed error codes in stadium APIs** — added machine-readable `code` field (`INVALID_MONTH`, `INVALID_HOUR`, `INVALID_DATE`, `INVALID_TIME`, `TIME_OUT_OF_RANGE`, `STADIUM_NOT_FOUND`, `SECTION_NOT_FOUND`, `NO_SECTIONS_FOUND`, `CALCULATION_FAILED`) to all error responses in `/api/stadium/[stadiumId]/shade` and `/api/stadium/[stadiumId]/rows/shade`. Human `error` strings preserved so existing tests stay green.
+- [x] **M7. Weather API: visible error fallback** — removed the silent mock-data fallback in `weatherApi.getCurrentWeather` and `getWeatherForecast` (errors now propagate). `SeatRecommendationsSection` tracks a separate `weatherError` state and renders an amber warning banner when the fetch fails, so users know recommendations are using neutral weather assumptions instead of real forecast data.
+- [x] **M8. Breadcrumbs on blog posts** — visual breadcrumbs were already present. Added the missing piece: `BreadcrumbList` JSON-LD structured data on both `/blog` and `/blog/[slug]` for SEO/AEO parity with stadium pages.
+- [ ] **M9. Stadium-to-stadium comparison** — today only within-stadium section compare; add "which MLB park has most shade at 1pm in August?" tool.
+
+### 🔵 Nice-to-have — longer-term
+- [ ] **N1. User accounts + cloud sync** (Supabase/Firebase) for favorites across devices.
+- [ ] **N2. AI chat assistant** ("shadiest $50–100 seats with a view?") — reuse existing `SeatRecommendationEngine`.
+- [ ] **N3. Real-time game state** (inning, rain delays) via statsapi.mlb.com polling.
+- [ ] **N4. Push notifications** — weather/sun alerts for saved upcoming games.
+- [ ] **N5. Social share cards** — custom OG images with shade % for a specific game/section.
+
+### 🐞 Red flags uncovered (worth separate triage)
+- `src/data/stadium-data-aggregator.ts` has `any` types in strict TS project
+- No lint rule preventing `console.log` regression (Phase 1 cleanup will drift without it)
+- Touch targets sit at exactly 44px — under real-world thumb accuracy margins
+- 2025 MLB schedule: confirm data pipeline is pulling current-year games (CLAUDE.md mandates 2025 data)
+- `middleware.ts.disabled` exists — understand why and remove or re-enable intentionally
+
+---
+
+## Proposed Sequencing
+
+**Sprint A (cleanup, ~1 day):** C1, C4, M2, M3, M6, M7, M8 — low-risk fixes, most are 1–2 hour items.
+**Sprint B (correctness, ~1 week):** C2, C3, H2 — complete half-built flows and add reporting loop.
+**Sprint C (differentiation, ~2–3 weeks):** H1, H3, H4 — the features that make this the *best* shade site.
+**Sprint D (depth, ongoing):** H5, M1, M4, M5, M9, and Nice-to-haves.
+
+---
+
+## Sprint A Review (2026-04-23)
+
+All 7 Sprint A items completed. Mid-sprint, user clarified two durable expectations:
+1. *"We need to use real schedules. That is non-negotiable."*
+2. *"Users should be able to select the game that they are going to for the most accurate sun calculations."*
+
+These reshaped M2 from a day-of-week heuristic into a real MLB schedule + user-controlled game picker, which also incidentally fixed a pre-existing bug where the stadium page computed sun position from `new Date()` (current moment) regardless of when the user's game actually was.
+
+### Files changed
+
+**Deleted (iCloud duplicates):**
+- `app/stadium/[stadiumId]/page 3.tsx`
+- `app/stadium/[stadiumId]/StadiumPageClient 3.tsx`
+- `src/services/itineraryService 2.ts`
+- `app/api/stadium/[stadiumId] 2/` (empty dir)
+- `app/venue/[venueId] 2/` (empty dir)
+
+**Added:**
+- `src/data/stadiumOrientationProvenance.ts` — confidence tracker for all 30 MLB stadium orientation values, with schema and workflow for upgrading entries to `verified`.
+
+**Modified:**
+- `app/stadium/[stadiumId]/StadiumPageClient.tsx` — rewritten to fetch real home games, expose a game picker, and derive sun position / game time from the selected game's actual ISO datetime.
+- `src/components/SeatRecommendationsSection.tsx` — tightened prop contract (gameTime/gameDate now required, no internal defaults), added `weatherLoading`/`weatherError` state with visible banners.
+- `src/services/weatherApi.ts` — stopped silent mock-data fallback; errors now propagate to the UI.
+- `app/api/stadium/[stadiumId]/shade/route.ts` — typed error `code` field added to every error response.
+- `app/api/stadium/[stadiumId]/rows/shade/route.ts` — same typed error codes.
+- `app/blog/page.tsx` and `app/blog/[slug]/page.tsx` — added `BreadcrumbList` JSON-LD structured data.
+- `src/data/stadiums.ts` — added a note at the `Stadium` interface pointing to the new provenance file.
+
+### Non-goals explicitly NOT done (deferred to later sprints)
+
+- NFL game integration (C2) — remains Sprint B.
+- Inaccuracy reporting UI (C3) — remains Sprint B.
+- Actual verification of the 28 `unverified` MLB orientations — requires 2-source cross-check research work.
+- Weather fallback in `useSunCalculations` when no game is selected — today the hook sits disabled with a zero sun-position sentinel; fine since the UI gates on `selectedGame`.
+
+### Red flags noticed but not acted on
+
+- `.next/types/validator 2.ts` — iCloud dupe in build output; will self-clear on next build.
+- Pre-existing TS errors in `app/api/stadium/[stadiumId]/rows/shade/route.ts` (missing `calculateRowShadows` export, missing `mlb3DCalculator` module, implicit `any` on `sectionResult`) — not touched in Sprint A since they predate this work and fixing them needs a separate focused pass.
+- `src/hooks/useSunCalculations.ts` reads `sunPosition.altitude`/`.azimuth` in its cache-key computation unconditionally; worked around here by passing a zero-vector sentinel when disabled, but the hook itself should guard against null input.
+- Debug `console.log` at the top of the old `StadiumPageClient` was removed as part of the rewrite. No lint rule preventing regression yet.
+
+---
+
 # Phase 1: Critical SEO & Analytics Fixes
 
 ## Completed Tasks ✅

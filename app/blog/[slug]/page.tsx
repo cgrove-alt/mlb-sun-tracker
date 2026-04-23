@@ -80,8 +80,22 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
   // Convert markdown to HTML using marked
   const htmlContent = await marked.parse(post.content);
 
+  const breadcrumbJsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://theshadium.com/' },
+      { '@type': 'ListItem', position: 2, name: 'Blog', item: 'https://theshadium.com/blog' },
+      { '@type': 'ListItem', position: 3, name: post.title, item: `https://theshadium.com/blog/${slug}` },
+    ],
+  };
+
   return (
     <main className="blog-post-page">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
+      />
       <article className="blog-post">
         <div className="post-container">
           <nav className="flex flex-wrap items-center gap-3 text-sm text-ink-700 mb-6" aria-label="Breadcrumb">
