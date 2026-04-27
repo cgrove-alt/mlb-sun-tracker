@@ -151,14 +151,15 @@ const CookieBannerModern: React.FC = () => {
         'ad_personalization': 'denied'
       });
       
+      // Re-fire a config command so the next pageview hits with the
+      // freshly-granted consent; only matters when the user just toggled
+      // analytics ON (not when downgrading to denied).
       if (prefs.performance) {
         (window as any).gtag('config', process.env.NEXT_PUBLIC_GA_ID, {
           page_path: window.location.pathname,
         });
       }
     }
-    
-    localStorage.setItem('ga_opt_out', (!prefs.performance).toString());
   };
 
   const handleAcceptAll = () => {
