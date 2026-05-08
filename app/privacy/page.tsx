@@ -187,7 +187,7 @@ export default function PrivacyPage() {
           <li>Contact us to request account deletion</li>
         </ul>
 
-        <h3 className="h3">Regional Rights</h3>
+        <h3 id="california" className="h3">Regional Rights</h3>
         <ul>
           <li><strong>GDPR (EU):</strong> Right to access, rectification, erasure, and data portability</li>
           <li><strong>CCPA (California):</strong> Right to know, delete, and opt-out of sale</li>

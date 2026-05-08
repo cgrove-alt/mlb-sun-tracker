@@ -1369,3 +1369,52 @@ Verified plan before execution; each item has been grep-checked for safety.
 - Resolve the lockfiles workspace-root warning (Next.js inferred a different root because of the CloudDocs path).
 - Audit the sister route `app/api/stadium/[stadiumId]/rows/shade/` for callers — appears similarly unwired.
 
+---
+
+# Phase 1 Quick Wins — Audit Cleanup (2026-05-08)
+
+**Goal:** Highest-impact, lowest-effort fixes from the Shadium audit. Sibling sprint to Phase 2 (SEO/AEO) and Phase 3 (technical cleanup).
+
+## Plan
+
+- [x] **1. FAQPage JSON-LD on /app/faq/page.tsx** — generated from existing `faqs` array via `SafeSchema`.
+- [x] **2. Remove `axios` and `next-pwa` from package.json** — verified zero source imports; vulns dropped 24 → 13.
+- [x] **3. Delete stale next-pwa artifacts in public/** — `sw-custom.js`, `sw-init.js`, `sw-extensions.js`, `workbox-40bcce23.js`, and `workers/` (the active hand-rolled SW at `public/sw.js` is kept).
+- [x] **4. Delete /test-cookies internal route** — `app/test-cookies/page.tsx`.
+- [x] **5. robots.txt** — single `Sitemap: …/sitemap-index.xml` directive (the index already lists all sub-sitemaps).
+- [x] **6. Privacy `#california` anchor** — added `id="california"` to the Regional Rights `<h3>` so the footer link resolves.
+
+## Verification
+- [x] `npm run build` clean — 271/271 static pages, no errors.
+- [x] Rebased onto origin/main (Phase 2 + Phase 3 landed during this work). Conflict surface: `package.json` (joined Phase 3's removals with mine), regenerated sitemap files (took upstream + rebuilt), `todo.md` (appended this section after Phase 3's review).
+
+## Review
+
+All 6 items shipped + one root-cause expansion.
+
+### Files changed (after rebase)
+
+**Modified**
+- `app/faq/page.tsx` — `FAQPage` JSON-LD via `SafeSchema`. Schema reuses the same `faqs` array the page renders, so there's a single source of truth for ~23 Q&As.
+- `package.json` — removed `axios` and `next-pwa` (joined with Phase 3's other dep removals during rebase).
+- `src/utils/serviceWorkerRegistration.ts` — removed stale "from next-pwa" comment.
+- `app/stadium/[stadiumId]/StadiumPageClient.tsx` — dropped the dead `useSunCalculations` hook usage. `sections` flows directly to `SeatRecommendationsSection` (which already pulls real shade data via `getStadiumCompleteData` — the worker output was naive heuristics that were being discarded). Removed the unused `getSunPosition`/`SunPosition`/`ZERO_SUN_POSITION`/`isCalculating`/`refetchSunData` wiring and the "Calculating sun exposure…" loading branch.
+- `public/robots.txt` — collapsed 3 `Sitemap:` directives into a single `sitemap-index.xml` reference.
+- `app/privacy/page.tsx` — `id="california"` on the Regional Rights `<h3>` so the footer's `/privacy#california` link resolves.
+
+**Deleted**
+- `app/test-cookies/page.tsx`
+- `public/sw-custom.js`, `public/sw-init.js`, `public/sw-extensions.js`, `public/workbox-40bcce23.js`
+- `public/workers/sunCalculations.worker.js`
+- `src/hooks/useSunCalculations.ts`
+
+### Scope expansion (root-cause fix)
+
+Audit item 3 listed `public/workers/` as "leftover next-pwa". On inspection it was actively referenced by `useSunCalculations` (used in the live `StadiumPageClient`). Blindly deleting the directory would have made `sectionsWithSunData` permanently null and routed every stadium page to the "Recommendations unavailable" branch.
+
+The hook's worker output was already useless: it returned `{sectionId, sunExposure, shadePercentage}` from a naive heuristic, and `SeatRecommendationsSection` then re-derives shade properly via `SeatRecommendationEngine` + `getStadiumCompleteData` — the worker output was passed in but functionally ignored. The root-cause fix was to delete the dead hook + its only consumer wiring at the same time as the worker file. No regression: the recommendation section still gets the same `sections` it would have eventually been given.
+
+### Items NOT done (intentional)
+
+- Pre-existing "Next.js inferred your workspace root" warning is unrelated to these changes (lockfile placement).
+- Did not audit other dev-only test pages — `/test-cookies` was the only one named in the audit.

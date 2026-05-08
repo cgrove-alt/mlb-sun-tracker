@@ -3,8 +3,6 @@
 import dynamic from 'next/dynamic';
 import { Suspense, useMemo, useState, useCallback, useEffect } from 'react';
 import { LoadingSpinner } from '../../../src/components/LoadingSpinner';
-import { getSunPosition, SunPosition } from '../../../src/utils/sunCalculations';
-import { useSunCalculations } from '../../../src/hooks/useSunCalculations';
 import { usePullToRefresh } from '../../../src/hooks/usePullToRefresh';
 import { PullToRefreshIndicator } from '../../../src/components/PullToRefreshIndicator';
 import { formatInTimeZone } from '../../../src/utils/dateTimeUtils';
@@ -33,15 +31,6 @@ interface StadiumPageClientProps {
   guide: any;
   useComprehensive?: boolean;
 }
-
-// Dummy sunPosition used only when no game is selected, so `useSunCalculations`
-// has a stable object to read before being disabled via `enabled: false`.
-const ZERO_SUN_POSITION: SunPosition = {
-  azimuth: 0,
-  altitude: 0,
-  azimuthDegrees: 0,
-  altitudeDegrees: 0,
-};
 
 export default function StadiumPageClient({
   stadium,
@@ -107,38 +96,11 @@ export default function StadiumPageClient({
     return formatInTimeZone(gameDateTime, stadiumTz, 'HH:mm');
   }, [gameDateTime, stadiumTz]);
 
-  // Sun position for the user's selected game time — NOT for "now".
-  // Before this fix, the page computed sun position from new Date() so every
-  // future game showed shade for the current moment.
-  const sunPosition = useMemo(() => {
-    if (!gameDateTime) return null;
-    return getSunPosition(
-      gameDateTime,
-      stadium.latitude || 40.7128,
-      stadium.longitude || -74.0060,
-      stadiumTz
-    );
-  }, [stadium.id, gameDateTime, stadiumTz]);
-
-  const {
-    data: sectionsWithSunData,
-    isLoading: isCalculating,
-    refetch: refetchSunData,
-  } = useSunCalculations({
-    stadium,
-    sunPosition: sunPosition ?? ZERO_SUN_POSITION,
-    sections,
-    enabled: !!sections.length && !!sunPosition,
-  });
-
   // Pull-to-refresh handler
   const handleRefresh = useCallback(async () => {
     await new Promise((resolve) => setTimeout(resolve, 300));
     setRefreshKey((prev) => prev + 1);
-    if (refetchSunData) {
-      await refetchSunData();
-    }
-  }, [refetchSunData]);
+  }, []);
 
   const pullToRefresh = usePullToRefresh({
     onRefresh: handleRefresh,
@@ -268,16 +230,9 @@ export default function StadiumPageClient({
               recommendations for your specific first-pitch time.
             </p>
           </div>
-        ) : isCalculating ? (
-          <div className="flex justify-center items-center p-8">
-            <LoadingSpinner message="Calculating sun exposure for your game..." />
-          </div>
-        ) : sectionsWithSunData &&
-          sectionsWithSunData.length > 0 &&
-          gameTimeStr &&
-          gameDateTime ? (
+        ) : sections.length > 0 && gameTimeStr && gameDateTime ? (
           <SeatRecommendationsSection
-            sections={sectionsWithSunData}
+            sections={sections}
             stadiumId={stadium.id}
             gameTime={gameTimeStr}
             gameDate={gameDateTime}
@@ -288,8 +243,7 @@ export default function StadiumPageClient({
               Recommendations unavailable
             </div>
             <p className="text-sm text-gray-500">
-              We couldn't calculate sun exposure for this game. Basic section
-              information is still available above.
+              Basic section information is still available above.
             </p>
           </div>
         )}

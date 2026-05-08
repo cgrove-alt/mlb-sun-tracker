@@ -27,7 +27,6 @@ export function register(config?: SWConfig) {
     }
 
     window.addEventListener('load', () => {
-      // Use the auto-generated service worker from next-pwa
       const swUrl = `${process.env.PUBLIC_URL || ''}/sw.js`;
 
       if (isLocalhost) {

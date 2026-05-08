@@ -93,10 +93,8 @@ Disallow: /
 # User-agent: Claude-Web
 # Disallow: /
 
-# Sitemap location
-Sitemap: https://theshadium.com/sitemap.xml
-Sitemap: https://theshadium.com/sitemap-stadiums.xml
-Sitemap: https://theshadium.com/sitemap-guides.xml
+# Sitemap location — index references all sub-sitemaps (stadiums, guides, images)
+Sitemap: https://theshadium.com/sitemap-index.xml
 
 # Legal notice
 # Unauthorized data scraping is prohibited.

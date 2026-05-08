@@ -1,5 +1,6 @@
 import { Metadata } from 'next';
 import Link from 'next/link';
+import { SafeSchema } from '../../components/SafeSchema';
 
 export const metadata: Metadata = {
   title: 'FAQ - Frequently Asked Questions | The Shadium',
@@ -126,9 +127,25 @@ const faqs = [
   }
 ];
 
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: faqs.flatMap((category) =>
+    category.questions.map((item) => ({
+      '@type': 'Question',
+      name: item.q,
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: item.a,
+      },
+    }))
+  ),
+};
+
 export default function FAQPage() {
   return (
     <main className="guide-page">
+      <SafeSchema schema={faqSchema} />
       <div className="guide-container">
         <nav className="flex flex-wrap items-center gap-3 text-sm text-ink-700 mb-6" aria-label="Breadcrumb">
           <Link href="/" className="hover:underline">Home</Link>
