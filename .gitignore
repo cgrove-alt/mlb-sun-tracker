@@ -29,3 +29,12 @@ yarn-error.log*
 .next/
 out/
 next-env.d.ts
+
+# build/test artifacts
+.test-output/
+.playwright-mcp/
+*.tsbuildinfo
+bundle-analysis.txt
+test-results.json
+*_analysis.txt
+stadium_verification*.log

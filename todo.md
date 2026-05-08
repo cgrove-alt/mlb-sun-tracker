@@ -1278,3 +1278,94 @@ The site now presents as a **professional, trustworthy tool** rather than a hobb
 
 **The site is now production-ready with a premium, professional user experience.**
 
+---
+
+## Phase 3 Technical Cleanup — Audit Sprint 7B (2026-05-08)
+
+Verified plan before execution; each item has been grep-checked for safety.
+
+### 1. Remove unused npm dependencies
+- [ ] Remove `node-fetch` (zero refs anywhere)
+- [ ] Remove `react-window` and `react-window-infinite-loader` (zero refs)
+- [ ] Remove `@types/react-window` and `@types/react-window-infinite-loader` (devDeps)
+- [ ] Remove `three` and `@types/three` (only consumer is orphan `src/hooks/useMobileWebGL.ts`; next.config notes "Three.js removed")
+- [ ] **Skip** `react-helmet-async` — used by `src/UnifiedApp.tsx` (reachable from `app/HomePage.tsx` via dynamic import)
+- [ ] **Skip** `react-select` — used by `src/components/UnifiedGameSelector.tsx` (reachable via UnifiedApp)
+- [ ] **Skip** `web-vitals` — referenced in `lib/analytics.ts` (dynamic import inside `trackWebVitals`)
+
+### 2. Delete orphan code that becomes deletable after dep removal
+- [ ] Delete `src/hooks/useMobileWebGL.ts` (only self-references; only `three` consumer)
+
+### 3. Delete CRA migration leftovers
+- [ ] `index.html`, `404.html` (root)
+- [ ] `_next/` and `404/` directories (committed stale build output)
+- [ ] `package-cra-backup.json`, `package-nextjs.json`, `tsconfig-nextjs.json`
+- [ ] `migrate-to-nextjs.sh`, `deploy-nextjs.sh`, `deploy.sh`
+- [ ] `public/index.html`, `public/privacy.html`, `public/terms.html`
+- [ ] `test-gpc.html`
+
+### 4. Delete duplicate components
+- [ ] `components/CookieBanner.tsx` + `styles/CookieBanner.module.css` (only Modern variant is mounted)
+- [ ] `components/Footer.tsx` + `styles/Footer.module.css` (only FooterModern is mounted)
+- [ ] `src/components/PWAInstallToast.tsx` + `src/components/PWAInstallToast.css` (PWAInstallPrompt is the one mounted)
+- [ ] **Skip** `components/GoogleAnalyticsOptOut.tsx` — actually imported by `app/privacy-rights/page.tsx`
+
+### 5. Analytics
+- Verified `lib/analytics.ts` is used by `app/api/metrics/route.ts` — keep
+- Verified `src/utils/analytics.ts` is used by `src/UnifiedApp.tsx` — keep
+- `trackEvent` calls gtag without an explicit consent guard, but the recently-fixed GA loader (`GoogleAnalyticsLazy.tsx`) sets Consent Mode v2 defaults to `denied`, which buffers events at the gtag layer until consent grants. No code change required.
+
+### 6. .gitignore
+- [ ] Add `.test-output/`, `.playwright-mcp/`, `*.tsbuildinfo`, `bundle-analysis.txt`, `test-results.json`, `*_analysis.txt`, `stadium_verification*.log`
+
+### 7. /api/stadium/[stadiumId]/shade
+- [ ] Delete — zero client callers found via grep across entire repo
+
+### 8. middleware.ts.disabled
+- [ ] Activate (rename to `middleware.ts`) — adds CSP that vercel.json lacks; other security headers already present in vercel.json will be set redundantly but not in conflict (middleware skips API routes via matcher)
+
+### 9. Build + commit
+- [x] `npm run build` clean (`✓ Compiled successfully in 2.2s`, 272/272 static pages)
+- [x] Commit + push
+
+---
+
+## Review — Phase 3 Technical Cleanup (2026-05-08)
+
+### What changed
+
+**Dependencies removed (7):** `node-fetch`, `react-window`, `react-window-infinite-loader`, `three`, `@types/three`, `@types/react-window`, `@types/react-window-infinite-loader`. Lockfile rewritten by npm. Verified zero references in `app/`, `src/`, `components/`, `lib/`, `hooks/`, `utils/`, `scripts/`.
+
+**Dependencies kept (with rationale):**
+- `react-helmet-async`, `react-select` — both reachable from the app via `app/HomePage.tsx → src/UnifiedApp.tsx → SEOHelmet/UnifiedGameSelector`
+- `web-vitals` — referenced by a `lib/analytics.ts` dynamic import; kept conservatively (the calling function `trackWebVitals` has no callers, but per the audit's strict "zero imports" rule, kept until the dead code in `lib/analytics.ts` is also pruned in a follow-up)
+
+**Files deleted (24):**
+- 12 CRA migration leftovers (root html files, abandoned configs, deploy scripts, public html)
+- 2 stale committed build dirs at root: `_next/` (~50 chunked CSS/JS files), `404/`
+- 4 duplicate UI files: `components/CookieBanner.tsx` + `styles/CookieBanner.module.css`, `components/Footer.tsx` + `styles/Footer.module.css`
+- 2 unused PWA files: `src/components/PWAInstallToast.tsx` + `.css`
+- 1 orphan hook: `src/hooks/useMobileWebGL.ts` (Three.js, no callers)
+- 1 dead API route: `app/api/stadium/[stadiumId]/shade/route.ts` (zero clients, repo-wide grep)
+
+**File renamed:**
+- `middleware.ts.disabled` → `middleware.ts`. Activates Content-Security-Policy header on all non-API routes. Other security headers it sets are redundant with `vercel.json` but not in conflict — the middleware overrides on its matched routes.
+
+**.gitignore:** Added `.test-output/`, `.playwright-mcp/`, `*.tsbuildinfo`, `bundle-analysis.txt`, `test-results.json`, `*_analysis.txt`, `stadium_verification*.log`. (Existing tracked files matching these patterns were left in place — gitignore only affects new files.)
+
+### Items NOT done (per audit instructions)
+
+- **`GoogleAnalyticsOptOut.tsx`** — instruction was "if never imported, delete it." It IS imported by `app/privacy-rights/page.tsx:9`. Kept.
+- **`src/utils/analytics.ts` consent guard** — `trackEvent` calls `gtag` without an explicit consent check, but the GA loader (`GoogleAnalyticsLazy.tsx`, fixed in commit 50e5df31d) sets Consent Mode v2 default `analytics_storage: 'denied'`, so gtag buffers events at the SDK layer until consent is granted. Adding a redundant guard would add complexity without changing behavior. Left as-is.
+
+### Verification
+
+- `npm run build` → `✓ Compiled successfully in 2.2s`, 272/272 static pages generated, no module-not-found errors.
+- All grep verifications were repo-wide (excluding `node_modules`/`.next`) before deletion.
+
+### Possible follow-ups (not in scope)
+
+- Prune the `lib/analytics.ts:trackWebVitals` dead function and remove the `web-vitals` dep entirely.
+- Resolve the lockfiles workspace-root warning (Next.js inferred a different root because of the CloudDocs path).
+- Audit the sister route `app/api/stadium/[stadiumId]/rows/shade/` for callers — appears similarly unwired.
+
