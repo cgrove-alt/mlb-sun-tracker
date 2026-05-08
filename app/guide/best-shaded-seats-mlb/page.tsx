@@ -58,9 +58,56 @@ const breadcrumbJsonLd = {
   ],
 };
 
+const howToJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'HowTo',
+  name: 'How to Pick the Best Shaded Seats at Any MLB Stadium',
+  description: 'A practical guide to choosing the best shaded sections at all 30 MLB ballparks based on stadium orientation, deck coverage, and game time.',
+  totalTime: 'PT8M',
+  step: [
+    {
+      '@type': 'HowToStep',
+      position: 1,
+      name: 'Apply the Universal Shade Rules',
+      text: 'Before looking up a specific stadium, apply the four rules that hold across MLB: upper deck sections often have overhead coverage, the third-base line gets afternoon shade first, club level seats are usually covered, and sections behind home plate are shaded by the upper deck overhang.',
+    },
+    {
+      '@type': 'HowToStep',
+      position: 2,
+      name: 'Look Up Your Specific Stadium',
+      text: 'Each ballpark has unique shade patterns. For example, Yankee Stadium upper-deck sections 314-320 along the third-base line shade earliest, Fenway Grandstand sections sit under cover, and Petco Park benefits from the Western Metal Supply building on the left-field side.',
+    },
+    {
+      '@type': 'HowToStep',
+      position: 3,
+      name: 'Account for Climate and Roof Type',
+      text: 'For hot-climate parks (Chase Field, Globe Life Field, loanDepot park, Minute Maid Park), prioritize games when the retractable roof will be closed. For coastal parks like Oracle Park, the bay breeze helps but shade still matters mid-afternoon.',
+    },
+    {
+      '@type': 'HowToStep',
+      position: 4,
+      name: 'Match the Game Time to a Strategy',
+      text: 'For 1:00 PM games, prioritize upper-deck roof coverage and lower-numbered sections (typically third-base side). For 4:00 PM games, the third-base side and behind-home-plate sections shade first. For 7:00 PM games, focus on outfield sections to avoid the setting sun in the early innings.',
+    },
+    {
+      '@type': 'HowToStep',
+      position: 5,
+      name: 'Find Budget-Friendly Shade',
+      text: 'Shade does not require expensive seats. Upper-deck outfield sections are often the cheapest tickets and have the best overhead coverage. Bleacher sections under overhangs and shaded standing-room areas along the concourse can deliver shade at the lowest price.',
+    },
+    {
+      '@type': 'HowToStep',
+      position: 6,
+      name: 'Verify with The Shadium for Your Exact Game',
+      text: 'Stadium layouts and sun angles change throughout the season. Enter your stadium, date, and first-pitch time at theshadium.com to see which sections are projected to be in shade for your specific game.',
+    },
+  ],
+};
+
 export default function BestShadedSeatsMLBPage() {
   return (
     <main className="guide-page">
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(howToJsonLd) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }} />
       <div className="guide-container">
         <nav className="flex flex-wrap items-center gap-3 text-sm text-ink-700 mb-6" aria-label="Breadcrumb">

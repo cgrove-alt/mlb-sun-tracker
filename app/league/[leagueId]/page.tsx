@@ -72,8 +72,66 @@ export default async function LeaguePage({ params }: LeaguePageProps) {
     notFound();
   }
 
+  const pageUrl = `https://theshadium.com/league/${leagueId}`;
+  const collectionJsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'CollectionPage',
+    name: `${league.name} Stadium Shade Guide`,
+    description: `Find shaded seats at all ${venues.length} ${league.name} venues. Complete sun exposure analysis, shade maps, and seating recommendations for every ${league.sport} venue.`,
+    url: pageUrl,
+    isPartOf: {
+      '@type': 'WebSite',
+      name: 'The Shadium',
+      url: 'https://theshadium.com',
+    },
+    about: {
+      '@type': 'SportsOrganization',
+      name: league.name,
+      sport: league.sport,
+    },
+    mainEntity: {
+      '@type': 'ItemList',
+      name: `${league.name} Venues`,
+      numberOfItems: venues.length,
+      itemListElement: venues.map((venue, index) => ({
+        '@type': 'ListItem',
+        position: index + 1,
+        url: `https://theshadium.com/venue/${venue.id}`,
+        name: venue.name,
+        item: {
+          '@type': venue.venueType === 'baseball' ? 'StadiumOrArena' : 'SportsComplex',
+          '@id': `https://theshadium.com/venue/${venue.id}`,
+          name: venue.name,
+          url: `https://theshadium.com/venue/${venue.id}`,
+          address: {
+            '@type': 'PostalAddress',
+            addressLocality: venue.city,
+            addressRegion: venue.state,
+          },
+        },
+      })),
+    },
+  };
+
+  const breadcrumbJsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://theshadium.com/' },
+      { '@type': 'ListItem', position: 2, name: league.name, item: pageUrl },
+    ],
+  };
+
   return (
     <div className="league-page">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(collectionJsonLd) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
+      />
       <div className="container mx-auto px-4 py-8">
         <nav className="flex flex-wrap items-center gap-3 text-sm text-ink-700 mb-6" aria-label="Breadcrumb">
           <Link href="/" className="hover:underline">Home</Link>

@@ -37,7 +37,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
       title: post.title,
       description: post.description,
       type: 'article',
-      publishedTime: post.date,
+      publishedTime: post.dateISO,
       authors: [post.author],
       images: post.image ? [post.image] : [],
       url: `https://theshadium.com/blog/${slug}`,
@@ -90,8 +90,47 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
     ],
   };
 
+  const postUrl = `https://theshadium.com/blog/${slug}`;
+  const postImage = post.image
+    ? (post.image.startsWith('http') ? post.image : `https://theshadium.com${post.image}`)
+    : 'https://theshadium.com/logo512.png';
+
+  const blogPostingJsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'BlogPosting',
+    headline: post.title,
+    description: post.description,
+    image: [postImage],
+    datePublished: post.dateISO,
+    dateModified: post.dateISO,
+    author: {
+      '@type': 'Organization',
+      name: post.author || 'The Shadium',
+      url: 'https://theshadium.com',
+    },
+    publisher: {
+      '@type': 'Organization',
+      name: 'The Shadium',
+      logo: {
+        '@type': 'ImageObject',
+        url: 'https://theshadium.com/logo512.png',
+      },
+    },
+    mainEntityOfPage: {
+      '@type': 'WebPage',
+      '@id': postUrl,
+    },
+    url: postUrl,
+    keywords: post.tags.join(', '),
+    articleSection: post.category,
+  };
+
   return (
     <main className="blog-post-page">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(blogPostingJsonLd) }}
+      />
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}

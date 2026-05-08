@@ -11,6 +11,7 @@ export interface BlogPost {
   title: string;
   description: string;
   date: string;
+  dateISO: string;
   author: string;
   category: string;
   tags: string[];
@@ -39,11 +40,14 @@ export function getPostBySlug(slug: string): BlogPost | null {
     
     const stats = readingTime(content);
     
+    const rawDate = data.date ? new Date(data.date) : null;
+
     return {
       slug: realSlug,
       title: data.title || 'Untitled',
       description: data.description || '',
-      date: data.date ? format(new Date(data.date), 'MMMM d, yyyy') : '',
+      date: rawDate ? format(rawDate, 'MMMM d, yyyy') : '',
+      dateISO: rawDate ? rawDate.toISOString() : '',
       author: data.author || 'The Shadium Team',
       category: data.category || 'general',
       tags: data.tags || [],

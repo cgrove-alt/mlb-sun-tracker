@@ -3,11 +3,16 @@ import type { Metadata } from 'next';
 import styles from '../../styles/Legal.module.css';
 
 export const metadata: Metadata = {
-  title: 'Accessibility Statement | The Shadium',
-  description: 'The Shadium is committed to ensuring digital accessibility for people with disabilities. Learn about our accessibility features and how to report issues.',
+  title: 'Accessibility Statement | WCAG 2.1 AA Compliance | The Shadium',
+  description: 'The Shadium is built to WCAG 2.1 Level AA standards. Read our accessibility statement, supported browsers and assistive technologies, known issues, and how to report a problem.',
+  alternates: {
+    canonical: 'https://theshadium.com/accessibility',
+  },
   openGraph: {
     title: 'Accessibility Statement | The Shadium',
-    description: 'Our commitment to digital accessibility and WCAG compliance for all users.',
+    description: 'WCAG 2.1 AA compliance, supported assistive technology, and accessibility feedback contacts.',
+    url: 'https://theshadium.com/accessibility',
+    type: 'website',
   },
 };
 
