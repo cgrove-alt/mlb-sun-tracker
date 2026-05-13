@@ -57,9 +57,9 @@ export const MLB_STADIUMS: Stadium[] = [
     team: 'Oakland Athletics',
     city: 'Sacramento',
     state: 'CA',
-    latitude: 38.5664,
-    longitude: -121.5030,
-    orientation: 330,
+    latitude: 38.5803,
+    longitude: -121.5132,
+    orientation: 20, // NNE — verified via Esri World Imagery 2026-05-13 (Sutter Health Park; prior 330° was the old Oakland Coliseum's orientation)
     capacity: 14014,
     roof: 'open',
     timezone: 'America/Los_Angeles'
@@ -283,7 +283,7 @@ export const MLB_STADIUMS: Stadium[] = [
     state: 'PA',
     latitude: 40.4468,
     longitude: -80.0057,
-    orientation: 25,
+    orientation: 55, // NE — verified via Esri World Imagery 2026-05-13 (diamond HP→CF bearing measured ~48–55°; PNC famously oriented to point home-plate view at downtown skyline)
     capacity: 38362,
     roof: 'open',
     timezone: 'America/New_York'
@@ -307,9 +307,9 @@ export const MLB_STADIUMS: Stadium[] = [
     team: 'Tampa Bay Rays',
     city: 'Tampa',
     state: 'FL',
-    latitude: 27.9628,
-    longitude: -82.5062,
-    orientation: 316,
+    latitude: 27.9799,
+    longitude: -82.5061,
+    orientation: 60, // NE — verified via Esri World Imagery 2026-05-13 (Steinbrenner Field; prior 316° was Tropicana Field's orientation and didn't transfer to the temporary venue)
     capacity: 11026,
     roof: 'open',
     timezone: 'America/New_York'
@@ -390,7 +390,7 @@ export const MLB_STADIUMS: Stadium[] = [
     state: 'MN',
     latitude: 44.9817,
     longitude: -93.2776,
-    orientation: 0,
+    orientation: 40, // NE — verified via Esri World Imagery 2026-05-13 (diamond HP→CF bearing ~39°; prior 0°/due-north was an initialization default)
     capacity: 38544,
     roof: 'open',
     timezone: 'America/Chicago'
