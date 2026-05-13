@@ -17,30 +17,60 @@ interface StadiumPageSSRProps {
   guide: any;
 }
 
-// Helper to get shade recommendation based on time and month
-function getShadeRecommendation(orientation: number, month: number, timeOfDay: string) {
-  const isEarlyGame = timeOfDay === 'early';
-  const isSummer = month >= 5 && month <= 8;
-  
-  // Orientation-based recommendations
-  const facesNorth = orientation >= 315 || orientation <= 45;
-  const facesEast = orientation > 45 && orientation <= 135;
-  const facesSouth = orientation > 135 && orientation <= 225;
-  const facesWest = orientation > 225 && orientation < 315;
-  
-  if (isEarlyGame) {
-    if (facesEast) return 'Third base side recommended for morning shade';
-    if (facesWest) return 'First base side recommended for morning shade';
-    if (facesNorth) return 'Behind home plate offers consistent shade';
-    if (facesSouth) return 'Upper deck sections provide best shade coverage';
-  } else {
-    if (facesEast) return 'First base side recommended for afternoon shade';
-    if (facesWest) return 'Third base side recommended for afternoon shade';
-    if (facesNorth) return 'Outfield sections may have more shade';
-    if (facesSouth) return 'Club level and upper deck offer shade protection';
+// Compass bearing of a side of the stadium from home plate, derived from the
+// stadium's HP→CF orientation. Mirrors the convention in
+// src/utils/sectionSunCalculations.ts.
+function compassOf(orientation: number, side: 'firstBase' | 'thirdBase' | 'behindHome' | 'centerField'): number {
+  const offset = side === 'firstBase' ? 90
+               : side === 'thirdBase' ? -90
+               : side === 'behindHome' ? 180
+               : 0; // centerField
+  return ((orientation + offset) % 360 + 360) % 360;
+}
+
+// A section located at compass `sectionCompass` is in its own shadow when
+// the sun is "behind" the seats — i.e. on the same compass side as the
+// section relative to the field center. Returns the name of the side most
+// likely to be shaded for a given (orientation, approximate sun azimuth).
+function shadedSide(orientation: number, sunCompass: number): 'First base side' | 'Third base side' | 'Behind home plate' | 'Outfield (center field)' {
+  const sides = [
+    { name: 'First base side' as const,        compass: compassOf(orientation, 'firstBase') },
+    { name: 'Third base side' as const,        compass: compassOf(orientation, 'thirdBase') },
+    { name: 'Behind home plate' as const,      compass: compassOf(orientation, 'behindHome') },
+    { name: 'Outfield (center field)' as const, compass: compassOf(orientation, 'centerField') },
+  ];
+  let best = sides[0];
+  let bestDiff = 360;
+  for (const s of sides) {
+    let d = Math.abs(sunCompass - s.compass);
+    if (d > 180) d = 360 - d;
+    if (d < bestDiff) { bestDiff = d; best = s; }
   }
-  
-  return isSummer ? 'Upper deck and covered sections recommended during summer' : 'Check real-time shade for specific sections';
+  return best.name;
+}
+
+// Approximate sun azimuth in Northern-Hemisphere summer (June–August) at
+// mid-latitudes (35–45°N), measured in compass degrees. Reasonable for
+// the static SEO recommendations; the live shade widget on this page uses
+// the exact SunCalc-based calculation.
+const APPROX_SUN_AZIMUTH: Record<'morning' | 'midday' | 'afternoon' | 'evening', number> = {
+  morning: 90,    // 9–10am: ~E
+  midday: 180,    // 1pm: ~S
+  afternoon: 240, // 4pm: ~WSW
+  evening: 280,   // 7pm: ~W
+};
+
+function getShadeRecommendation(orientation: number, _month: number, timeOfDay: string) {
+  const bucket: keyof typeof APPROX_SUN_AZIMUTH =
+    timeOfDay === 'early' ? 'morning' :
+    timeOfDay === 'evening' ? 'evening' :
+    timeOfDay === 'midday' ? 'midday' :
+    'afternoon';
+  const side = shadedSide(orientation, APPROX_SUN_AZIMUTH[bucket]);
+  if (side === 'Behind home plate' || side === 'Outfield (center field)') {
+    return `${side} typically has the most shade for ${bucket} games`;
+  }
+  return `${side} recommended for ${bucket} shade`;
 }
 
 // Get seasonal shade pattern
@@ -66,9 +96,18 @@ export default function StadiumPageSSR({ stadium, sections, amenities, guide }: 
     { num: 9, name: 'October', pattern: 'Playoff season - comfortable temperatures' },
   ];
 
+  // Derive the per-time-bucket "what's the sun like" tagline from the
+  // stadium's actual orientation so it matches the recommendations below.
+  const litSideAt = (bucket: keyof typeof APPROX_SUN_AZIMUTH) => {
+    // The "lit" side at sunset is the side opposite the shaded side.
+    const sun = APPROX_SUN_AZIMUTH[bucket];
+    // Section is LIT when sun is OPPOSITE side (sun shines toward seats);
+    // i.e. when sun compass is ~180° away from section compass.
+    return shadedSide(stadium.orientation, (sun + 180) % 360);
+  };
   const gameTimes = [
     { id: 'day', label: '1:00 PM', recommendation: 'Maximum sun exposure - shade essential' },
-    { id: 'afternoon', label: '4:00 PM', recommendation: 'Afternoon sun on first base side' },
+    { id: 'afternoon', label: '4:00 PM', recommendation: `Afternoon sun on the ${litSideAt('afternoon').toLowerCase().replace(/ side$/, '')} side` },
     { id: 'evening', label: '7:00 PM', recommendation: 'Sunset glare possible in outfield sections' },
   ];
 
@@ -188,12 +227,12 @@ export default function StadiumPageSSR({ stadium, sections, amenities, guide }: 
                     <ul>
                       <li>Upper deck sections (maximum elevation)</li>
                       <li>Covered/Club level areas</li>
-                      <li>{stadium.orientation < 180 ? 'Third base side' : 'First base side'}</li>
+                      <li>{shadedSide(stadium.orientation, APPROX_SUN_AZIMUTH.midday)}</li>
                     </ul>
                   )}
                   {time.id === 'afternoon' && (
                     <ul>
-                      <li>Third base line sections</li>
+                      <li>{shadedSide(stadium.orientation, APPROX_SUN_AZIMUTH.afternoon)}</li>
                       <li>Behind home plate (upper levels)</li>
                       <li>Covered concourse areas</li>
                     </ul>
