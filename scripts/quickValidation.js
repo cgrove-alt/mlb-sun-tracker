@@ -9,14 +9,14 @@ console.log('🌞 Sun Calculation Improvements Summary\n');
 console.log('=' .repeat(60));
 
 const improvements = {
-  'Timezone Handling': {
-    description: 'Fixed NREL to use stadium-specific timezones instead of browser timezone',
-    files: ['src/utils/stadiumTimezone.ts', 'src/utils/nrelSolarPosition.ts'],
-    impact: 'Accurate sun positions for all stadium locations'
+  'Sun Position Algorithm': {
+    description: 'Consolidated on SunCalc (UTC-correct, accurate to ~1 arcminute). Removed the NREL fork and its hardcoded LA-only DST workaround; SunCalc takes a UTC Date and lat/lon, eliminating tz-offset bugs.',
+    files: ['src/utils/sunCalculations.ts', 'src/utils/sunCalculator.ts'],
+    impact: 'Single source of truth for sun position; correct for every IANA timezone, including DST transitions'
   },
   'Azimuth Calculations': {
-    description: 'Corrected azimuth normalization and removed double transformation',
-    files: ['src/utils/sunCalculations.ts', 'src/utils/nrelSolarPosition.ts'],
+    description: 'Single SunCalc → compass conversion, applied in one place',
+    files: ['src/utils/sunCalculations.ts'],
     impact: 'Consistent compass bearings (0°=N, 90°=E, 180°=S, 270°=W)'
   },
   'Section Sun Logic': {
@@ -30,14 +30,14 @@ const improvements = {
     impact: 'Covered sections now guaranteed 0% sun exposure'
   },
   'Atmospheric Refraction': {
-    description: 'Added Bennett\'s formula for refraction correction near horizon',
-    files: ['src/utils/shadeCalculation3D.ts'],
-    impact: 'More accurate sun positions at sunrise/sunset (±0.5° improvement)'
+    description: 'Single refraction model — SunCalc\'s built-in correction. Removed the double-applied Koomen formula that was biasing low-sun results.',
+    files: ['src/utils/sunCalculations.ts'],
+    impact: 'No more double-correction near horizon; consistent sun positions across all code paths'
   },
   'Stadium Orientations': {
-    description: 'Validated and corrected stadium orientations against verified data',
-    files: ['src/utils/validateStadiumOrientations.ts'],
-    impact: 'Accurate field orientations for all 30 MLB stadiums'
+    description: 'Provenance-tracked orientations; verified entries cross-checked against stadiums.ts',
+    files: ['src/data/stadiumOrientationProvenance.ts'],
+    impact: 'Audit trail for all 30 MLB stadiums; verified set grows as cross-checks complete'
   }
 };
 

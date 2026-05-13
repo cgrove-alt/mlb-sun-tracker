@@ -5,7 +5,6 @@ import { isSectionInSun, getSectionSunExposure } from './sectionSunCalculations'
 import { WeatherData } from '../services/weatherApi';
 import { getVenueSections } from '../data/venueSections';
 import { SunCalculator } from './sunCalculator';
-import { getSunPositionNREL } from './nrelSolarPosition';
 
 export interface SunPosition {
   azimuth: number; // Sun azimuth in radians
@@ -54,77 +53,6 @@ export function getSunTimes(date: Date, latitude: number, longitude: number) {
   return SunCalc.getTimes(date, latitude, longitude);
 }
 
-// Calculate which sections of the stadium will be in sun
-export function calculateSunnySections(
-  stadium: Stadium,
-  sunPosition: SunPosition
-): Map<string, boolean> {
-  const sunnySections = new Map<string, boolean>();
-  
-  // If sun is below horizon, no sections are sunny
-  if (sunPosition.altitudeDegrees < 0) {
-    return sunnySections;
-  }
-  
-  // For stadiums with fixed roofs, no sections are sunny
-  if (stadium.roof === 'fixed') {
-    return sunnySections;
-  }
-  
-  // Calculate relative sun angle to stadium orientation
-  const relativeSunAngle = (sunPosition.azimuthDegrees - stadium.orientation + 360) % 360;
-  
-  // Define section angles relative to home plate
-  const sections = [
-    { name: 'Home Plate', startAngle: 170, endAngle: 190 },
-    { name: 'First Base Line', startAngle: 0, endAngle: 90 },
-    { name: 'Third Base Line', startAngle: 270, endAngle: 360 },
-    { name: 'Right Field', startAngle: 315, endAngle: 45 },
-    { name: 'Center Field', startAngle: 340, endAngle: 20 },
-    { name: 'Left Field', startAngle: 135, endAngle: 225 },
-    { name: 'Upper Deck - First Base', startAngle: 0, endAngle: 90 },
-    { name: 'Upper Deck - Third Base', startAngle: 270, endAngle: 360 },
-    { name: 'Upper Deck - Outfield', startAngle: 315, endAngle: 225 }
-  ];
-  
-  // Calculate shadow length based on sun altitude (for future enhancements)
-  // const shadowLength = 1 / Math.tan(sunPosition.altitude);
-  
-  sections.forEach(section => {
-    // Check if sun angle falls within section's range
-    let inSun = false;
-    
-    if (section.startAngle > section.endAngle) {
-      // Section crosses 0 degrees (wraps around north)
-      inSun = relativeSunAngle >= section.startAngle || relativeSunAngle <= section.endAngle;
-    } else {
-      inSun = relativeSunAngle >= section.startAngle && relativeSunAngle <= section.endAngle;
-    }
-    
-    // Consider sun altitude - lower sections might be shaded by upper deck
-    if (inSun && section.name.includes('Lower') && sunPosition.altitudeDegrees < 30) {
-      inSun = false;
-    }
-    
-    // Additional check: sections facing away from sun are shaded
-    // Calculate if section is on the opposite side from the sun
-    const sectionMidAngle = section.startAngle > section.endAngle 
-      ? ((section.startAngle + section.endAngle + 360) / 2) % 360
-      : (section.startAngle + section.endAngle) / 2;
-    
-    const angleDiff = Math.abs(relativeSunAngle - sectionMidAngle);
-    const normalizedDiff = angleDiff > 180 ? 360 - angleDiff : angleDiff;
-    
-    // If section is more than 90 degrees away from sun azimuth, it's likely shaded
-    if (normalizedDiff > 90) {
-      inSun = false;
-    }
-    
-    sunnySections.set(section.name, inSun);
-  });
-  
-  return sunnySections;
-}
 
 // Calculate detailed section-level sun exposure for all sections in a stadium
 export function calculateDetailedSectionSunExposure(
@@ -133,13 +61,8 @@ export function calculateDetailedSectionSunExposure(
   weather?: WeatherData,
   sections?: StadiumSection[]
 ): SeatingSectionSun[] {
-  // Add atmospheric refraction correction for low sun angles
-  let correctedAltitude = sunPosition.altitudeDegrees;
-  if (sunPosition.altitudeDegrees >= -0.575 && sunPosition.altitudeDegrees < 5) {
-    // Apply refraction correction for sun near horizon
-    const refraction = 1.02 / Math.tan((sunPosition.altitudeDegrees + 10.3 / (sunPosition.altitudeDegrees + 5.11)) * Math.PI / 180);
-    correctedAltitude = sunPosition.altitudeDegrees + refraction / 60;
-  }
+  // SunCalc already applies atmospheric refraction internally; do not
+  // double-correct here.
 
   // Use provided sections or fall back to venue sections
   let stadiumSections = sections;
@@ -297,88 +220,6 @@ export function getCompassDirection(azimuthDegrees: number): string {
   const directions = ['N', 'NE', 'E', 'SE', 'S', 'SW', 'W', 'NW'];
   const index = Math.round(azimuthDegrees / 45) % 8;
   return directions[index];
-}
-
-// Enhanced sun exposure calculation using advanced shadow calculations
-export function calculateEnhancedSectionSunExposure(
-  stadium: Stadium,
-  date: Date,
-  weather?: WeatherData,
-  sections?: StadiumSection[]
-): SeatingSectionSun[] {
-  const calculator = new SunCalculator(stadium);
-
-  // Use provided sections or fall back to venue sections
-  let stadiumSections = sections;
-  if (!stadiumSections || stadiumSections.length === 0) {
-    // Try venue sections (for MiLB and NFL venues)
-    stadiumSections = getVenueSections(stadium.id);
-  }
-
-  // Safety check to prevent performance issues
-  if (stadiumSections.length > 250) {
-    // Log warning in development
-    if (typeof window !== 'undefined' && window.location.hostname === 'localhost') {
-      console.warn(`[calculateEnhancedSectionSunExposure] Large number of sections (${stadiumSections.length}) for stadium ${stadium.id}. Processing may be slow.`);
-    }
-  }
-  
-  // Get sun position for the given time
-  const dateStr = date.toISOString().split('T')[0];
-  const timeStr = date.toTimeString().split(' ')[0];
-  const sunPos = calculator.calculateSunPosition(dateStr, timeStr);
-  
-  // If stadium has a fixed roof, no sections get sun
-  if (stadium.roof === 'fixed') {
-    return stadiumSections.map(section => ({
-      section,
-      inSun: false,
-      sunExposure: 0
-    }));
-  }
-  
-  // Calculate shadows for all sections
-  const shadowData = calculator.calculateShadows(
-    sunPos,
-    stadiumSections.map(s => ({
-      ...s,
-      side: getSectionSide(s),
-      angle: getSectionAngle(s, stadium.orientation)
-    }))
-  );
-  
-  // Apply weather impact
-  let weatherMultiplier = 1.0;
-  if (weather) {
-    const { cloudCover, conditions, precipitationProbability } = weather;
-    
-    if ((precipitationProbability && precipitationProbability > 70) || 
-        conditions.some(c => c.main === 'Rain' || c.main === 'Snow' || c.main === 'Drizzle')) {
-      weatherMultiplier = 0.1;
-    } else if (precipitationProbability && precipitationProbability > 30) {
-      weatherMultiplier = 0.4;
-    } else if (cloudCover > 80) {
-      weatherMultiplier = 0.4;
-    } else if (cloudCover > 60) {
-      weatherMultiplier = 0.6;
-    } else if (cloudCover > 40) {
-      weatherMultiplier = 0.8;
-    } else if (cloudCover > 15) {
-      weatherMultiplier = 0.9;
-    }
-  }
-  
-  // Combine section data with shadow calculations
-  return stadiumSections.map((section, index) => {
-    const shadow = shadowData[index];
-    const adjustedExposure = Math.round(shadow.sunExposure * weatherMultiplier);
-    
-    return {
-      section,
-      inSun: adjustedExposure > 20,
-      sunExposure: adjustedExposure
-    };
-  });
 }
 
 // Helper function to determine section side

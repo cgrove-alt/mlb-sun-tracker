@@ -1,6 +1,5 @@
 // sunCalculator.ts
 import SunCalc from 'suncalc';
-import { computeSunPosition } from './nrelSolarPosition';
 
 interface Stadium {
   id: string;
@@ -82,64 +81,25 @@ export class SunCalculator {
   }
 
   calculateSunPosition(date: string | Date, time?: string): SunPosition {
-    // Accept either a Date object or date/time strings
+    // SunCalc takes a UTC Date and the stadium's lat/lon and returns the
+    // correct sun position regardless of the user's machine timezone. The
+    // caller is responsible for passing a Date that represents the desired
+    // wall-clock moment at the stadium (e.g. via `toZonedTime` / a real game
+    // start time). No DST workaround is needed here.
     const dateTime = date instanceof Date ? date : new Date(`${date}T${time}`);
-    const useNREL = false; // Force SunCalc for now due to timezone issues with NREL
-    
-    let altitude: number;
-    let azimuth: number;
-    
-    if (useNREL) {
-      try {
-        // Use NREL Solar Position Algorithm
-        // IMPORTANT: Use the stadium's timezone, not the local machine's timezone
-        // For now, use PST/PDT offset (-7 or -8 hours) for west coast stadiums
-        // This should ideally use the stadium.timezone field
-        let timeZoneOffset = -dateTime.getTimezoneOffset() / 60;
-        
-        // Override for west coast stadiums (temporary fix)
-        // @ts-ignore - stadium.timezone exists but type def is missing
-        if (this.stadium.timezone === 'America/Los_Angeles') {
-          // Check if date is in PDT (March-November) or PST
-          const month = dateTime.getMonth();
-          timeZoneOffset = (month >= 2 && month <= 10) ? -7 : -8;
-        }
-        
-        const nrelResult = computeSunPosition(
-          dateTime,
-          this.stadium.latitude,
-          this.stadium.longitude,
-          timeZoneOffset
-        );
-        altitude = nrelResult.elevation;
-        azimuth = nrelResult.azimuth;
-      } catch (error) {
-        console.warn('NREL SPA calculation failed, falling back to SunCalc:', error);
-        // Fall through to SunCalc
-        const sunPos = SunCalc.getPosition(
-          dateTime,
-          this.stadium.latitude,
-          this.stadium.longitude
-        );
-        altitude = sunPos.altitude * 180 / Math.PI;
-        azimuth = (sunPos.azimuth * 180 / Math.PI + 180) % 360;
-      }
-    } else {
-      // Use original SunCalc implementation
-      const sunPos = SunCalc.getPosition(
-        dateTime,
-        this.stadium.latitude,
-        this.stadium.longitude
-      );
-      altitude = sunPos.altitude * 180 / Math.PI;
-      azimuth = (sunPos.azimuth * 180 / Math.PI + 180) % 360;
-    }
-    
-    // Get sun times (still using SunCalc for these)
+
+    const sunPos = SunCalc.getPosition(
+      dateTime,
+      this.stadium.latitude,
+      this.stadium.longitude,
+    );
+    const altitude = (sunPos.altitude * 180) / Math.PI;
+    const azimuth = ((sunPos.azimuth * 180) / Math.PI + 180) % 360;
+
     const sunTimes = SunCalc.getTimes(
       dateTime,
       this.stadium.latitude,
-      this.stadium.longitude
+      this.stadium.longitude,
     );
     
     return {
@@ -474,4 +434,160 @@ export function calculateGameSunExposure(
       ...exposure
     };
   });
+}
+
+// --------------------------------------------------------------------------
+// Row-level shade calculation
+// --------------------------------------------------------------------------
+
+// Minimal shape required to compute row shade. Matches DetailedSection from
+// src/types/stadium-complete.ts, but stays loose so the route doesn't have to
+// pass a fully-populated DetailedSection in test mocks.
+export interface RowShadowInputRow {
+  rowNumber: string;
+  seats: number;
+  elevation: number;
+  depth: number;
+  covered?: boolean;
+  overhangHeight?: number;
+}
+
+export interface RowShadowInputSection {
+  id: string;
+  name: string;
+  level?: 'field' | 'lower' | 'club' | 'upper' | 'suite' | 'standing';
+  baseAngle: number;
+  angleSpan?: number;
+  covered?: boolean;
+  rows: RowShadowInputRow[];
+}
+
+export interface RowShadowRow {
+  rowNumber: string;
+  seats: number;
+  elevation: number;
+  depth: number;
+  coverage: number;          // 0..100, fraction of row in shadow
+  sunExposure: number;       // 0..100, equals 100 - coverage
+  inShadow: boolean;         // coverage >= 50
+  shadowSources: {
+    roof: number;
+    upperDeck: number;
+    overhang: number;
+    bowl: number;
+  };
+  recommendation: 'excellent' | 'good' | 'fair' | 'poor';
+}
+
+export interface RowShadowResult {
+  sectionId: string;
+  sectionName: string;
+  rows: RowShadowRow[];
+  averageCoverage: number;
+  bestRows: string[];
+  worstRows: string[];
+}
+
+function recommendForCoverage(coverage: number): RowShadowRow['recommendation'] {
+  if (coverage >= 80) return 'excellent';
+  if (coverage >= 60) return 'good';
+  if (coverage >= 40) return 'fair';
+  return 'poor';
+}
+
+// 2D row-level shade model.
+// - Covered rows (or covered sections) are fully shaded.
+// - Below-horizon sun → fully shaded by night.
+// - Otherwise: if the section is on the opposite side of the bowl from the
+//   sun, the row's overhang (if any) projects shadow onto the row; back rows
+//   (greater depth) reach shadow at higher sun altitudes than front rows.
+//   If the section is on the same side as the sun, the bowl itself provides
+//   only minor shadow at low altitudes.
+//
+// This is intentionally a simple 2D model — the 3D path in mlb3DCalculator.ts
+// handles ray-cast obstructions when stadium has obstruction data.
+export function calculateRowShadows(
+  section: RowShadowInputSection,
+  sunAltitudeDeg: number,
+  sunAzimuthDeg: number,
+  _stadiumOrientation: number,
+): RowShadowResult {
+  const rows = section.rows ?? [];
+  const sectionAngle = ((section.baseAngle + (section.angleSpan ?? 0) / 2) % 360 + 360) % 360;
+  const sunAz = ((sunAzimuthDeg % 360) + 360) % 360;
+  let angleDiff = Math.abs(sunAz - sectionAngle);
+  if (angleDiff > 180) angleDiff = 360 - angleDiff;
+  const sunOnOppositeSide = angleDiff > 90;
+
+  const altRad = sunAltitudeDeg * Math.PI / 180;
+  const tanAlt = Math.tan(altRad);
+
+  const rowResults: RowShadowRow[] = rows.map((row) => {
+    let coverage = 0;
+    const sources = { roof: 0, upperDeck: 0, overhang: 0, bowl: 0 };
+
+    if (section.covered === true || row.covered === true) {
+      coverage = 100;
+      sources.roof = 100;
+    } else if (sunAltitudeDeg <= 0) {
+      coverage = 100;
+      sources.bowl = 100;
+    } else if (sunOnOppositeSide && row.overhangHeight && row.overhangHeight > 0 && tanAlt > 0) {
+      // Sun shines across the bowl into the front of the section; the
+      // overhang above this row blocks part of that incoming light.
+      const shadowLength = row.overhangHeight / tanAlt;
+      const depth = Math.max(row.depth, 0.001);
+      if (shadowLength >= depth) {
+        coverage = 100;
+      } else if (shadowLength > 0) {
+        coverage = Math.min(100, (shadowLength / depth) * 100);
+      }
+      sources.overhang = coverage;
+    } else if (!sunOnOppositeSide) {
+      // Sun behind the section. Bowl/upper rows provide some back-shadow
+      // mostly at low altitudes; this fades to ~0 above 30°.
+      const lowSunFactor = Math.max(0, (30 - sunAltitudeDeg) / 30);
+      coverage = lowSunFactor * 25;
+      sources.bowl = coverage;
+    } else {
+      // Sun on opposite side, no overhang data: only a small bowl contribution.
+      coverage = 5;
+      sources.bowl = coverage;
+    }
+
+    const clamped = Math.max(0, Math.min(100, Math.round(coverage)));
+    return {
+      rowNumber: row.rowNumber,
+      seats: row.seats,
+      elevation: row.elevation,
+      depth: row.depth,
+      coverage: clamped,
+      sunExposure: 100 - clamped,
+      inShadow: clamped >= 50,
+      shadowSources: {
+        roof: Math.round(sources.roof),
+        upperDeck: Math.round(sources.upperDeck),
+        overhang: Math.round(sources.overhang),
+        bowl: Math.round(sources.bowl),
+      },
+      recommendation: recommendForCoverage(clamped),
+    };
+  });
+
+  const averageCoverage = rowResults.length
+    ? Math.round(rowResults.reduce((sum, r) => sum + r.coverage, 0) / rowResults.length)
+    : 0;
+
+  const byCoverageDesc = [...rowResults].sort((a, b) => b.coverage - a.coverage);
+  const bestRows = byCoverageDesc.slice(0, 5).map((r) => r.rowNumber);
+  const worstRows = byCoverageDesc.slice(-5).reverse().map((r) => r.rowNumber);
+
+  return {
+    sectionId: section.id,
+    sectionName: section.name,
+    rows: rowResults,
+    averageCoverage,
+    bestRows,
+    worstRows,
+  };
 }

@@ -4,12 +4,10 @@ import { isSectionInSun, getSectionSunExposure } from './sectionSunCalculations'
 import { WeatherData } from '../services/weatherApi';
 import { getVenueSections } from '../data/venueSections';
 import { processInChunks } from './performanceUtils';
-import { 
-  SunPosition, 
-  SeatingSectionSun, 
-  getSunPosition,
+import {
+  SunPosition,
+  SeatingSectionSun,
   calculateDetailedSectionSunExposure as originalCalculateDetailedSectionSunExposure,
-  calculateEnhancedSectionSunExposure as originalCalculateEnhancedSectionSunExposure
 } from './sunCalculations';
 
 // Optimized version that processes sections in chunks

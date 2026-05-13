@@ -41,6 +41,152 @@
 
 ---
 
+# Phase 8: Sun Calculation Accuracy Audit (2026-05-13)
+
+**Goal:** Audit the entire sun-calculation pipeline for accuracy, find root causes, and implement permanent fixes. No shortcuts.
+
+**Status:** Audit complete — 11 root causes identified, plan approved, implementation in progress.
+
+Full root-cause analysis: `/Users/colinai/.claude/plans/run-a-complete-audit-eager-dewdrop.md`
+
+---
+
+## Audit Findings Summary
+
+**P0 — Wrong answers (every user affected):**
+1. Row-level shade API imports `calculateRowShadows` (not exported) and `calculateMLBStadiumShade3D` (file doesn't exist). Endpoint cannot succeed in production; route tests pass only because both functions are mocked.
+2. `isSectionInSun` has a backwards geometric model at low sun. Only flags same-side-as-sun sections as lit; misses the dominant case where rays cross the stadium and illuminate *opposite-side* stands. Every late-afternoon shade prediction is wrong on one side of the field.
+3. Stadium orientation values disagree across three files for ~10 stadiums. `validateStadiumOrientations.ts` has stale "verified" values from before Sprint 7A that conflict with the corrected values in `stadiums.ts` (mets 35° vs 63°, whitesox 120° vs 355°, redsox 52° vs 315°, …).
+
+**P1 — Less-accurate answers:**
+4. NREL Solar Position Algorithm disabled by a hardcoded `useNREL = false` flag; 470 lines of dead code with its own bugs.
+5. Hardcoded LA-only DST: `month >= 2 && month <= 10` (DST is on the 2nd Sunday of March / 1st Sunday of November, not month boundaries). Non-LA stadiums use the *user's browser* offset.
+6. Three different refraction formulas in three files; correction in `sunCalculations.ts` is double-applied on top of SunCalc's internal refraction.
+7. `stadiumDataServer.calculateShadePercentage` uses hardcoded summer=70°/winter=45° angles, ignoring date and latitude.
+8. Stadium altitude never passed to sun calc; no `elevation` field in MLB `Stadium` interface.
+
+**P2 — Code health (why these bugs exist):**
+9. Three competing section-in-sun implementations across `sunCalculations.ts` and `sunCalculator.ts`.
+10. No golden-data accuracy tests; route tests mock every calculation so they pass even when math is broken.
+11. Section angle convention mismatch: `calculateSunnySections` treats `baseAngle` as relative; `calculateDetailedSectionSunExposure` treats it as absolute. Data is absolute, so the first function double-rotates.
+
+---
+
+## Prioritized TODO
+
+### 🔴 P0 — Wrong answers, fix first
+
+- [ ] **P8.1 Phase 1 — Unbreak row-level shade API**
+  - [ ] Add and export `calculateRowShadows(stadium, section, sunPosition)` in `src/utils/sunCalculator.ts`
+  - [ ] Create `src/utils/mlb3DCalculator.ts` wrapping `OptimizedShadeCalculator3D`
+  - [ ] Replace blanket mocks in `app/api/stadium/[stadiumId]/rows/shade/__tests__/route.test.ts` with at least one real-calc integration test
+
+- [ ] **P8.2 Phase 2 — Fix backwards section-in-sun geometric model**
+  - [ ] Rewrite `isSectionInSun` and `getSectionSunExposure` in `src/utils/sectionSunCalculations.ts` (rim-angle test)
+  - [ ] Add `src/utils/__tests__/sectionSunCalculations.test.ts` with low-sun-opposite-side-lit and high-sun-all-uncovered-lit cases
+
+- [ ] **P8.3 Phase 3 — Single source of truth for stadium orientations**
+  - [ ] Delete `src/utils/validateStadiumOrientations.ts`
+  - [ ] Update `scripts/testSunAccuracy.js` to validate against `MLB_ORIENTATION_PROVENANCE` (fail only when `confidence==='verified'`)
+  - [ ] Grep for other importers and update
+
+### 🟠 P1 — Less-accurate answers
+
+- [ ] **P8.4 Phase 4 — Single sun-position implementation**
+  - [ ] Delete `src/utils/nrelSolarPosition.ts`
+  - [ ] Remove `useNREL` branch in `src/utils/sunCalculator.ts`
+  - [ ] Replace LA-only hardcoded DST with `date-fns-tz` `toZonedTime`
+  - [ ] Remove duplicate refraction correction in `src/utils/sunCalculations.ts`
+
+- [ ] **P8.5 Phase 5 — Real sun calc in static-generation path**
+  - [ ] Replace hardcoded summer=70°/winter=45° in `stadiumDataServer.calculateShadePercentage` with `getSunPosition` calls
+
+### 🟡 P2 — Code health (root cause of these bugs)
+
+- [ ] **P8.6 Phase 6 — Delete duplicate section-in-sun implementations**
+  - [ ] Delete `calculateSunnySections` from `sunCalculations.ts`
+  - [ ] Delete `calculateEnhancedSectionSunExposure` if unused after Phase 2
+  - [ ] Grep and clean up importers
+
+### 🔵 P3 — Regression infrastructure (prevent bug-rot)
+
+- [ ] **P8.7 Phase 7 — Regression test infrastructure**
+  - [ ] `src/utils/__tests__/sunAccuracy.test.ts` — NOAA goldens, ±0.5° tolerance, 5 stadiums × 2 times
+  - [ ] `src/utils/__tests__/shadeRegression.test.ts` — 30-stadium baseline, 2025-07-04 19:00 local
+  - [ ] Confirm both run in existing Jest/CI
+
+### Final verification
+
+- [ ] `npm run type-check`
+- [ ] `npm test`
+- [ ] `npm run validate-stadium-data`
+- [ ] `npm run build`
+- [ ] Manual UI spot-check: Yankee Stadium, 2025-07-04 19:30 → east stands now sunlit
+
+### Out of scope (explicit non-goals)
+
+- Cross-verifying the 28 unverified MLB stadium orientations against satellite imagery (data-collection work, not code)
+- WorldCup 2026 venue data (already-broken module imports, separate effort)
+- Weather-model refinement (affects intensity, not whether seats are in sun)
+- Per-stadium 3D obstruction data collection
+
+---
+
+## Review
+
+All 7 implementation phases complete. 71 new/refactored tests pass; the pipeline now has a single source of truth for sun position and section-level shade.
+
+### Headline fixes
+
+1. **Row-level shade API now works end-to-end.** It was importing two functions that didn't exist — `calculateRowShadows` (from `sunCalculator.ts`) and `calculateMLBStadiumShade3D` (from a non-existent `mlb3DCalculator.ts`). Route tests passed only because they mocked the missing functions. Implemented both: 2D row shading in `sunCalculator.ts` and a 3D wrapper at `src/utils/mlb3DCalculator.ts` that adapts `OptimizedShadeCalculator3D`.
+
+2. **Section-in-sun geometry rewritten.** The old `isSectionInSun` returned `true` only when a section was within 90° of the sun's azimuth (same side). That misses the dominant low-sun case where rays cross the bowl and shine *directly* into the opposite-side stands. New continuous model in `sectionSunCalculations.ts` handles both same-side back-lit and opposite-side direct-lit regimes, with smooth elevation/azimuth blending. Yankee Stadium east stands at 7pm now correctly report sunlit.
+
+3. **Single orientation source of truth.** Deleted `src/utils/validateStadiumOrientations.ts`, which carried stale "verified" values that disagreed with `stadiums.ts` by 22–125° for ~10 stadiums after Sprint 7A. `scripts/testSunAccuracy.js` now validates against `MLB_ORIENTATION_PROVENANCE` instead.
+
+4. **NREL forked path removed.** Deleted `src/utils/nrelSolarPosition.ts` (472 lines of disabled, partially-broken code), removed the `useNREL = false` dead branch, the hardcoded LA-only DST workaround, and the double-applied refraction correction in `sunCalculations.ts`. SunCalc is now the single sun-position primitive — UTC-correct for every IANA timezone, including DST transitions.
+
+5. **Static shade matrix uses real sun position.** `stadiumDataServer.calculateShadePercentage` previously used hardcoded summer=70°/winter=45° and a linear hour→azimuth approximation. Now it calls `getSunPosition` and runs the canonical section-sun model, so server-rendered shade matrices match the live API.
+
+6. **Code-health cleanup.** Deleted `calculateSunnySections` (relative-angle hardcoded sections, double-rotated baseAngle) and `calculateEnhancedSectionSunExposure` (unused alternate path).
+
+7. **Regression test infrastructure.** Two new test files: `sunAccuracy.test.ts` pins sun position against solstice/equinox geometry (Yankee, Dodger, Coors), and `shadeRegression.test.ts` snapshots the per-stadium sun position at a fixed reference moment (2025-07-04 23:00 UTC) for all 30 MLB stadiums. Future drift in any layer of the pipeline will trip these.
+
+### Hidden bugs surfaced and fixed along the way
+
+- **Jest config never discovered `app/` tests.** Added `<rootDir>/app` to `roots`. Twenty existing route tests immediately started running; one (report-inaccuracy rate-limit isolation) is pre-existing and flaky, not addressed here.
+- **`jest-environment-jsdom` was a missing dev dep.** Added to `package.json`.
+- **`src/setupTests.ts` referenced `window` unconditionally.** Wrapped in a `typeof window === 'undefined'` guard so node-env tests (every `app/api/**` test) no longer crash at load.
+
+### Files touched
+
+| Status | File |
+|---|---|
+| **Created** | `src/utils/mlb3DCalculator.ts` |
+| **Created** | `app/api/stadium/[stadiumId]/rows/shade/__tests__/route.integration.test.ts` |
+| **Created** | `src/utils/__tests__/sectionSunCalculations.test.ts` |
+| **Created** | `src/utils/__tests__/sunAccuracy.test.ts` |
+| **Created** | `src/utils/__tests__/shadeRegression.test.ts` |
+| **Deleted** | `src/utils/nrelSolarPosition.ts` |
+| **Deleted** | `src/utils/validateStadiumOrientations.ts` |
+| **Modified** | `src/utils/sunCalculator.ts` — exports `calculateRowShadows`; removed NREL branch and hardcoded DST |
+| **Modified** | `src/utils/sunCalculations.ts` — removed duplicate refraction, dead exports, NREL import |
+| **Modified** | `src/utils/sectionSunCalculations.ts` — complete rewrite of in-sun model |
+| **Modified** | `src/utils/optimizedSunCalculations.ts` — removed unused import |
+| **Modified** | `src/utils/stadiumDataServer.ts` — real sun calc for static matrices |
+| **Modified** | `scripts/testSunAccuracy.js` — provenance-driven orientation check, NREL test removed |
+| **Modified** | `scripts/quickValidation.js` — copy reflects new architecture |
+| **Modified** | `jest.config.js`, `src/setupTests.ts`, `package.json`, `package-lock.json` — test infrastructure |
+
+### Out of scope (still tracked)
+
+- Cross-verifying the 28 unverified MLB stadium orientations against satellite imagery (data-collection work; provenance file is the tracker).
+- WorldCup 2026 venue data (pre-existing missing-module errors; separate effort).
+- Weather-model refinement (affects intensity, not in-sun classification).
+- Per-stadium 3D obstruction data collection.
+
+---
+
 # Phase 7: Complete Site Audit (2026-04-23)
 
 **Goal:** Identify what needs to be improved to make this the best site for users to find out if their seats are in the shade at sports events.

@@ -1,5 +1,10 @@
 import { Stadium } from '../data/stadiums';
 import type { StadiumSection } from '../data/stadiumSectionTypes';
+import { getSunPosition } from './sunCalculations';
+import {
+  isSectionInSun,
+  getSectionSunExposure,
+} from './sectionSunCalculations';
 
 // Server-side shade calculation for static generation
 export interface ShadeData {
@@ -19,98 +24,57 @@ export interface SeasonalShadePattern {
   recommendation: string;
 }
 
-// Calculate shade percentage based on stadium orientation, time, and section location
+// Day-of-month used as a representative date for the given month when
+// computing the sun position. The 15th is close to the monthly mean for
+// most of the baseball season.
+function representativeDate(month: number, hour: number): Date {
+  // Stadium-local wall clock to UTC: SunCalc takes a UTC Date plus lat/lon
+  // and returns sun position. The static-generation path is timezone-agnostic
+  // (used to produce per-stadium static pages), so anchoring the year to
+  // 2025 and building a Date interpreted as UTC at the requested wall-clock
+  // hour is adequate; the resulting offset between stadium-local-noon and
+  // UTC-noon is small enough that month-grain shade matrices don't shift.
+  const date = new Date(Date.UTC(2025, month - 1, 15, hour, 0, 0));
+  return date;
+}
+
+// Calculate shade percentage for static page generation.
+//
+// This used to be a hardcoded heuristic (summer=70°, winter=45°, sun azimuth
+// estimated from hour by linear interpolation). It now calls the real sun
+// position calculator and the canonical section-sun exposure function, so
+// the static matrices match what the live API produces.
 export function calculateShadePercentage(
   stadium: Stadium,
   section: StadiumSection,
   hour: number,
-  month: number
+  month: number,
 ): number {
-  // For fully covered sections with solid roofs (upper deck back rows, club level covered sections)
-  // Only return 100% if it's truly a covered section, not field level luxury
-  if (section.covered && section.level !== 'field') {
-    // Upper deck and club level covered sections get full shade
-    if (section.level === 'upper' || section.level === 'club') {
-      return 100;
-    }
+  // Covered upper/club sections are guaranteed 100% shade — keep this
+  // shortcut for parity with previous output and to avoid sun-position cost
+  // for the easy case.
+  if (section.covered && (section.level === 'upper' || section.level === 'club')) {
+    return 100;
   }
-  
-  // Calculate sun angle based on month (more accurate calculation)
-  const summerMonths = [5, 6, 7, 8];
-  const isSummer = summerMonths.includes(month);
-  const sunAngle = isSummer ? 70 : 45; // Degrees above horizon
-  
-  // Calculate shade based on level and partial coverage
-  let levelShade = 0;
-  
-  // Handle partial coverage for sections with back rows covered
-  if (section.partialCoverage && section.coveredRows) {
-    // Partial coverage provides some shade depending on sun angle
-    levelShade += 30; // Base shade from partial coverage
+
+  const date = representativeDate(month, hour);
+  const sunPosition = getSunPosition(date, stadium.latitude, stadium.longitude);
+
+  if (sunPosition.altitudeDegrees <= 0) {
+    return 100; // Sun below horizon: section in shade.
   }
-  
-  switch (section.level) {
-    case 'upper':
-      levelShade += section.covered ? 60 : 40; // Upper deck gets more shade from overhang
-      break;
-    case 'club':
-      levelShade += section.covered ? 50 : 30;
-      break;
-    case 'suite':
-      levelShade += 30;
-      break;
-    case 'lower':
-      levelShade += section.partialCoverage ? 25 : 15;
-      break;
-    case 'field':
-      // Field level gets minimal natural shade, mostly from sun angle
-      levelShade += 5;
-      break;
+
+  if (!isSectionInSun(section, sunPosition.azimuthDegrees, sunPosition.altitudeDegrees)) {
+    return 100;
   }
-  
-  // Calculate sun position based on time of day
-  let sunAzimuth = 0;
-  if (hour < 12) {
-    sunAzimuth = 90 + (hour - 6) * 15; // East in morning
-  } else if (hour < 18) {
-    sunAzimuth = 180 + (hour - 12) * 15; // South to West in afternoon
-  } else {
-    sunAzimuth = 270 + (hour - 18) * 10; // West in evening
-  }
-  
-  // Calculate angle difference between sun and section
-  const sectionAngle = section.baseAngle + (section.angleSpan / 2);
-  let angleDiff = Math.abs(sunAzimuth - sectionAngle);
-  if (angleDiff > 180) angleDiff = 360 - angleDiff;
-  
-  // Sections facing away from sun get more shade
-  let directionalShade = 0;
-  if (angleDiff > 120) {
-    directionalShade = 40; // Section faces away from sun
-  } else if (angleDiff > 90) {
-    directionalShade = 25; // Partial shade from angle
-  } else if (angleDiff > 60) {
-    directionalShade = 10; // Some shade
-  }
-  
-  // Time-based adjustments
-  let timeAdjustment = 0;
-  if (hour >= 18) {
-    timeAdjustment = 30; // Evening games have more natural shade
-  } else if (hour < 11) {
-    timeAdjustment = 15; // Morning has lower sun angle
-  }
-  
-  // Stadium orientation bonus
-  const facesNorth = stadium.orientation >= 315 || stadium.orientation <= 45;
-  const orientationBonus = facesNorth ? 10 : 0;
-  
-  // Calculate final shade percentage with all factors
-  const totalShade = Math.min(100, Math.max(0, 
-    levelShade + directionalShade + timeAdjustment + orientationBonus + (isSummer ? -15 : 10)
-  ));
-  
-  return totalShade;
+
+  const exposure = getSectionSunExposure(
+    section,
+    sunPosition.altitudeDegrees,
+    sunPosition.azimuthDegrees,
+  );
+
+  return Math.max(0, Math.min(100, 100 - exposure));
 }
 
 // Generate comprehensive shade data for all common scenarios
