@@ -179,10 +179,10 @@ export const MLB_STADIUMS: Stadium[] = [
     state: 'OH',
     latitude: 41.4962,
     longitude: -81.6852,
-    orientation: 60,
+    orientation: 356, // N — corrected 2026-05-13. Great-circle bearing between OSM polygon's identified HP and CF wall vertices = 355.9°. Polygon-PCA gave 356.3°. Cleveland's downtown skyline is north of the stadium and visible beyond CF per Wikipedia, geometrically consistent with CF=N. Previous 60° was wrong.
     capacity: 34830,
     roof: 'open',
-    timezone: 'America/Chicago'
+    timezone: 'America/New_York' // Eastern Time — was incorrectly 'America/Chicago' (Central). Cleveland observes Eastern Time year-round.
   },
   {
     id: 'mariners',
