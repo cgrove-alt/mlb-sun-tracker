@@ -8,6 +8,7 @@ import { LoadingSpinner } from './LoadingSpinner';
 import { MLB_STADIUMS } from '../data/stadiums';
 import { getStadiumCompleteData } from '../data/stadium-data-aggregator';
 import { weatherApi, WeatherData } from '../services/weatherApi';
+import { stadiumLocalDateAndTimeToUTC } from '../utils/stadiumTime';
 
 interface SeatRecommendationsSectionProps {
   sections: SeatingSectionSun[];
@@ -59,9 +60,16 @@ export const SeatRecommendationsSection: React.FC<SeatRecommendationsSectionProp
           stadium.latitude,
           stadium.longitude
         );
-        const gameDateTime = new Date(gameDate);
+        // gameTime is the wall-clock HH:MM at the stadium. Convert it to a
+        // real UTC instant using the stadium's IANA timezone — using the
+        // browser's tz here would mismatch by the user-to-stadium offset.
         const [hours, minutes] = gameTime.split(':').map(Number);
-        gameDateTime.setHours(hours, minutes, 0, 0);
+        const gameDateTime = stadiumLocalDateAndTimeToUTC(
+          gameDate,
+          hours,
+          minutes,
+          stadium.timezone || 'UTC',
+        );
 
         const weatherData = weatherApi.getWeatherForTime(forecast, gameDateTime);
         setWeather(weatherData);

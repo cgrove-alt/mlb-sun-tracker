@@ -9,6 +9,7 @@ import { WeatherData } from './weatherApi';
 import { calculateSectionShadow } from '../utils/advancedShadowCalculator';
 import { getSunPosition } from '../utils/sunCalculations';
 import { getSeasonalRecommendations } from '../utils/seasonalSunAnalysis';
+import { stadiumLocalDateAndTimeToUTC } from '../utils/stadiumTime';
 
 export interface UserPreferences {
   sunPreference: 'love-sun' | 'prefer-sun' | 'neutral' | 'prefer-shade' | 'need-shade';
@@ -69,11 +70,19 @@ export class SeatRecommendationEngine {
     const { stadium, sections, obstructions, gameDate, gameTime, weather } = context;
     const recommendations: SeatRecommendation[] = [];
     
-    // Calculate sun position for game time
+    // Calculate sun position for game time. gameTime is wall-clock HH:MM at
+    // the stadium; convert to a real UTC instant using the stadium's IANA
+    // timezone so SunCalc receives the correct moment. Previously this
+    // path passed `stadium.timezone` to `getSunPosition`, which silently
+    // ignored the argument — a hidden bypass of any fix.
     const [hours, minutes] = gameTime.split(':').map(Number);
-    const gameDateTime = new Date(gameDate);
-    gameDateTime.setHours(hours, minutes, 0, 0);
-    const sunPosition = getSunPosition(gameDateTime, stadium.latitude, stadium.longitude, stadium.timezone);
+    const gameDateTime = stadiumLocalDateAndTimeToUTC(
+      gameDate,
+      hours,
+      minutes,
+      stadium.timezone || 'UTC',
+    );
+    const sunPosition = getSunPosition(gameDateTime, stadium.latitude, stadium.longitude);
     
     // Score each section
     sections.forEach(section => {

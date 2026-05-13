@@ -8,6 +8,31 @@ import { DetailedSection, Obstruction3D } from '../types/stadium-complete';
 import { getSunPosition, SunPosition } from './sunCalculations';
 import { calculateSectionShadow, calculateAllShadows } from './advancedShadowCalculator';
 import { addMonths, setDate, setHours, setMinutes, startOfMonth, endOfMonth } from 'date-fns';
+import { stadiumLocalToUTC } from './stadiumTime';
+
+/**
+ * Build a UTC Date for the given calendar moment at the stadium's wall
+ * clock. Without this conversion, `new Date(y, m, d, hour)` returns a Date
+ * in the *runtime's* timezone (UTC on Vercel), so a "noon" sun calculation
+ * for Chicago becomes 7 AM Chicago — meaningfully wrong for every
+ * non-UTC park. Always pass `stadium.timezone` (we default to UTC only as
+ * a fallback for malformed data).
+ */
+function stadiumMomentUTC(
+  year: number,
+  monthIdxZeroBased: number,
+  day: number,
+  hour: number,
+  minute: number,
+  timezone: string,
+): Date {
+  const month = monthIdxZeroBased + 1;
+  const d = day.toString().padStart(2, '0');
+  const m = month.toString().padStart(2, '0');
+  const h = hour.toString().padStart(2, '0');
+  const mi = minute.toString().padStart(2, '0');
+  return stadiumLocalToUTC(`${year}-${m}-${d}`, `${h}:${mi}`, timezone);
+}
 
 export interface SeasonalSunData {
   month: string;
@@ -115,21 +140,22 @@ export function analyzeMonth(
   let totalNoonElevation = 0;
   let daysAnalyzed = 0;
   
+  const tz = stadium.timezone || 'UTC';
+
   // Sample every 3rd day of the month for efficiency
   for (let day = 1; day <= monthEnd.getDate(); day += 3) {
     const date = new Date(year, month, day);
     const sunTimes = getSunTimes(date, stadium.latitude, stadium.longitude);
-    
+
     totalSunrise += sunTimes.sunrise.getHours() + sunTimes.sunrise.getMinutes() / 60;
     totalSunset += sunTimes.sunset.getHours() + sunTimes.sunset.getMinutes() / 60;
     totalDaylight += sunTimes.daylightHours;
-    
-    // Calculate noon sun elevation
-    const noonDate = new Date(date);
-    noonDate.setHours(12, 0, 0, 0);
-    const noonSun = getSunPosition(noonDate, stadium.latitude, stadium.longitude, stadium.timezone);
+
+    // Sun elevation at stadium-local noon for this date.
+    const noonDate = stadiumMomentUTC(year, month, day, 12, 0, tz);
+    const noonSun = getSunPosition(noonDate, stadium.latitude, stadium.longitude);
     totalNoonElevation += noonSun.altitudeDegrees;
-    
+
     daysAnalyzed++;
   }
   
@@ -138,13 +164,12 @@ export function analyzeMonth(
   const avgDaylightHours = totalDaylight / daysAnalyzed;
   const avgNoonElevation = totalNoonElevation / daysAnalyzed;
   
-  // Calculate average game time sun exposure (1 PM - 4 PM)
-  const gameStartDate = new Date(year, month, 15, 13, 0, 0); // Mid-month at 1 PM
+  // Calculate average game time sun exposure (1 PM - 4 PM at the stadium).
   const gameTimeExposures: Map<string, number[]> = new Map();
-  
+
   for (let hour = 13; hour <= 16; hour++) {
-    const gameDate = new Date(year, month, 15, hour, 0, 0);
-    const sunPos = getSunPosition(gameDate, stadium.latitude, stadium.longitude, stadium.timezone);
+    const gameDate = stadiumMomentUTC(year, month, 15, hour, 0, tz);
+    const sunPos = getSunPosition(gameDate, stadium.latitude, stadium.longitude);
     const shadows = calculateAllShadows(sections, sunPos, obstructions);
     
     shadows.forEach((shadow, sectionId) => {
@@ -212,24 +237,42 @@ export function analyzeFullYear(
   
   // Calculate solstice and equinox data
   const solarDates = getSolarKeyDates(year);
-  
-  const summerSolsticeNoon = new Date(solarDates.summerSolstice);
-  summerSolsticeNoon.setHours(12, 0, 0, 0);
-  const summerSun = getSunPosition(summerSolsticeNoon, stadium.latitude, stadium.longitude, stadium.timezone);
+  const tz = stadium.timezone || 'UTC';
+
+  // Solstice / equinox sun positions at stadium-local solar noon.
+  const summerSolsticeNoon = stadiumMomentUTC(
+    solarDates.summerSolstice.getFullYear(),
+    solarDates.summerSolstice.getMonth(),
+    solarDates.summerSolstice.getDate(),
+    12, 0, tz,
+  );
+  const summerSun = getSunPosition(summerSolsticeNoon, stadium.latitude, stadium.longitude);
   const summerTimes = getSunTimes(solarDates.summerSolstice, stadium.latitude, stadium.longitude);
-  
-  const winterSolsticeNoon = new Date(solarDates.winterSolstice);
-  winterSolsticeNoon.setHours(12, 0, 0, 0);
-  const winterSun = getSunPosition(winterSolsticeNoon, stadium.latitude, stadium.longitude, stadium.timezone);
+
+  const winterSolsticeNoon = stadiumMomentUTC(
+    solarDates.winterSolstice.getFullYear(),
+    solarDates.winterSolstice.getMonth(),
+    solarDates.winterSolstice.getDate(),
+    12, 0, tz,
+  );
+  const winterSun = getSunPosition(winterSolsticeNoon, stadium.latitude, stadium.longitude);
   const winterTimes = getSunTimes(solarDates.winterSolstice, stadium.latitude, stadium.longitude);
-  
-  const springEquinoxNoon = new Date(solarDates.springEquinox);
-  springEquinoxNoon.setHours(12, 0, 0, 0);
-  const springSun = getSunPosition(springEquinoxNoon, stadium.latitude, stadium.longitude, stadium.timezone);
-  
-  const fallEquinoxNoon = new Date(solarDates.fallEquinox);
-  fallEquinoxNoon.setHours(12, 0, 0, 0);
-  const fallSun = getSunPosition(fallEquinoxNoon, stadium.latitude, stadium.longitude, stadium.timezone);
+
+  const springEquinoxNoon = stadiumMomentUTC(
+    solarDates.springEquinox.getFullYear(),
+    solarDates.springEquinox.getMonth(),
+    solarDates.springEquinox.getDate(),
+    12, 0, tz,
+  );
+  const springSun = getSunPosition(springEquinoxNoon, stadium.latitude, stadium.longitude);
+
+  const fallEquinoxNoon = stadiumMomentUTC(
+    solarDates.fallEquinox.getFullYear(),
+    solarDates.fallEquinox.getMonth(),
+    solarDates.fallEquinox.getDate(),
+    12, 0, tz,
+  );
+  const fallSun = getSunPosition(fallEquinoxNoon, stadium.latitude, stadium.longitude);
   
   return {
     stadium: stadium.name,
@@ -275,11 +318,12 @@ export function generateSectionHeatmap(
   sections.forEach(section => {
     const monthlyExposure: number[] = [];
     
+    const tz = stadium.timezone || 'UTC';
     // Calculate exposure for each month
     for (let month = 0; month < 12; month++) {
-      // Use mid-month, 2 PM as representative time
-      const date = new Date(year, month, 15, 14, 0, 0);
-      const sunPos = getSunPosition(date, stadium.latitude, stadium.longitude, stadium.timezone);
+      // Use mid-month, 2 PM stadium-local as representative time.
+      const date = stadiumMomentUTC(year, month, 15, 14, 0, tz);
+      const sunPos = getSunPosition(date, stadium.latitude, stadium.longitude);
       const shadow = calculateSectionShadow(section, sunPos, obstructions);
       monthlyExposure.push(shadow.sunExposure);
     }
@@ -317,15 +361,23 @@ export function getSeasonalRecommendations(
   alternativeDates?: Date[];
 } {
   const [startHour, startMinute] = gameStartTime.split(':').map(Number);
-  const gameStart = new Date(date);
-  gameStart.setHours(startHour, startMinute, 0, 0);
-  
+  const tz = stadium.timezone || 'UTC';
+  // gameStartTime is wall-clock at the stadium; convert via the stadium tz.
+  const gameStart = stadiumMomentUTC(
+    date.getFullYear(),
+    date.getMonth(),
+    date.getDate(),
+    startHour,
+    startMinute,
+    tz,
+  );
+
   // Calculate sun exposure for game duration
   const exposureMap = new Map<string, number[]>();
-  
+
   for (let hour = 0; hour < gameDuration; hour++) {
     const gameTime = new Date(gameStart.getTime() + hour * 3600000);
-    const sunPos = getSunPosition(gameTime, stadium.latitude, stadium.longitude, stadium.timezone);
+    const sunPos = getSunPosition(gameTime, stadium.latitude, stadium.longitude);
     const shadows = calculateAllShadows(sections, sunPos, obstructions);
     
     shadows.forEach((shadow, sectionId) => {
@@ -414,9 +466,10 @@ export function compareMonths(
     let minExposure = 100;
     let maxExposure = 0;
     
+    const tz = stadium.timezone || 'UTC';
     for (let hour = 11; hour <= 19; hour++) {
-      const date = new Date(year, month, 15, hour, 0, 0);
-      const sunPos = getSunPosition(date, stadium.latitude, stadium.longitude, stadium.timezone);
+      const date = stadiumMomentUTC(year, month, 15, hour, 0, tz);
+      const sunPos = getSunPosition(date, stadium.latitude, stadium.longitude);
       
       // Simple average across all sections
       const avgExposure = sunPos.altitudeDegrees > 0 ? 

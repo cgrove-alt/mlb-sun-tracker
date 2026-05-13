@@ -80,13 +80,15 @@ export class SunCalculator {
     };
   }
 
-  calculateSunPosition(date: string | Date, time?: string): SunPosition {
-    // SunCalc takes a UTC Date and the stadium's lat/lon and returns the
-    // correct sun position regardless of the user's machine timezone. The
-    // caller is responsible for passing a Date that represents the desired
-    // wall-clock moment at the stadium (e.g. via `toZonedTime` / a real game
-    // start time). No DST workaround is needed here.
-    const dateTime = date instanceof Date ? date : new Date(`${date}T${time}`);
+  /**
+   * Compute sun position for a UTC instant at this stadium's lat/lon.
+   * Caller MUST pass a Date whose .getTime() is the correct UTC moment —
+   * use src/utils/stadiumTime.ts#stadiumLocalToUTC to convert a stadium-
+   * local wall-clock time to UTC. String inputs are no longer accepted
+   * because they cannot be parsed safely without timezone information.
+   */
+  calculateSunPosition(date: Date): SunPosition {
+    const dateTime = date;
 
     const sunPos = SunCalc.getPosition(
       dateTime,
@@ -349,50 +351,11 @@ export class SunCalculator {
     };
   }
 
-  getSunPath(date: string, hourInterval: number = 0.5): Array<SunPosition & { time: string }> {
-    const path: Array<SunPosition & { time: string }> = [];
-    const dateObj = new Date(date);
-    
-    const times = SunCalc.getTimes(dateObj, this.stadium.latitude, this.stadium.longitude);
-    const sunrise = times.sunrise.getHours() + times.sunrise.getMinutes() / 60;
-    const sunset = times.sunset.getHours() + times.sunset.getMinutes() / 60;
-    
-    for (let hour = Math.floor(sunrise); hour <= Math.ceil(sunset); hour += hourInterval) {
-      const time = `${Math.floor(hour).toString().padStart(2, '0')}:${Math.round((hour % 1) * 60).toString().padStart(2, '0')}:00`;
-      const position = this.calculateSunPosition(date, time);
-      
-      if (position.altitude > 0) {
-        path.push({
-          time,
-          ...position
-        });
-      }
-    }
-    
-    return path;
-  }
-
-  getOptimalSections(date: string, time: string, preference: 'shade' | 'sun' = 'shade'): Array<Section & ShadowData> {
-    const sunPos = this.calculateSunPosition(date, time);
-    const sections = this.stadium.sections || [];
-    
-    const sectionsWithShadow = sections.map(section => {
-      const shadow = this.calculateSectionShadow(section, sunPos.altitude, sunPos.azimuth);
-      return {
-        ...section,
-        ...shadow
-      };
-    });
-    
-    return sectionsWithShadow.sort((a, b) => {
-      if (preference === 'shade') {
-        return b.coverage - a.coverage;
-      } else if (preference === 'sun') {
-        return b.sunExposure - a.sunExposure;
-      }
-      return 0;
-    });
-  }
+  // getSunPath and getOptimalSections were removed: they accepted string
+  // date/time inputs with no timezone, which produced the same wrong-by-tz
+  // bug the rest of the codebase just stamped out. Neither had any
+  // production callers. If we need a sun-path visualization later, build
+  // it on top of stadiumLocalToUTC so the iteration is timezone-aware.
 }
 
 export function formatSunPosition(position: SunPosition): {

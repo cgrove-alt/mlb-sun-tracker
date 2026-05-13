@@ -4,6 +4,7 @@ import { getStadiumSections, hasSpecificData } from '../../../../../../src/data/
 import { calculateRowShadows } from '../../../../../../src/utils/sunCalculator';
 import { getSunPosition } from '../../../../../../src/utils/sunCalculations';
 import { calculateMLBStadiumShade3D } from '../../../../../../src/utils/mlb3DCalculator';
+import { stadiumLocalDateAndTimeToUTC } from '../../../../../../src/utils/stadiumTime';
 
 interface RouteParams {
   params: Promise<{
@@ -73,9 +74,13 @@ export async function GET(request: NextRequest, { params }: RouteParams) {
     );
   }
 
-  // Calculate sun position
-  const targetDate = new Date(date);
-  targetDate.setHours(hour, minute, 0, 0);
+  // Convert the request's wall-clock time (interpreted in the stadium's
+  // local timezone) to the corresponding UTC instant before computing the
+  // sun position. SunCalc takes a UTC Date plus lat/lon; doing setHours
+  // here without timezone-awareness was a bug that put afternoon queries
+  // hours off for every non-UTC stadium.
+  const stadiumTimezone = stadium.timezone || 'UTC';
+  const targetDate = stadiumLocalDateAndTimeToUTC(date, hour, minute, stadiumTimezone);
 
   const sunPosition = getSunPosition(
     targetDate,
@@ -90,16 +95,13 @@ export async function GET(request: NextRequest, { params }: RouteParams) {
 
     // If 3D calculator is enabled and stadium has obstruction data
     if (shouldUse3D) {
-      const timeStr = `${hour.toString().padStart(2, '0')}:${minute.toString().padStart(2, '0')}`;
-
       const result3D = await calculateMLBStadiumShade3D(
         stadium.id,
         stadium.name,
         stadium.latitude,
         stadium.longitude,
         stadium.orientation || 0,
-        date,
-        timeStr,
+        targetDate,
         {
           useCache,
           useWebWorkers: false, // Disable web workers in server environment
@@ -176,7 +178,7 @@ export async function GET(request: NextRequest, { params }: RouteParams) {
           orientation: stadium.orientation
         },
         date: date.toISOString().split('T')[0],
-        time: timeStr,
+        time: `${hour.toString().padStart(2, '0')}:${minute.toString().padStart(2, '0')}`,
         sunPosition: {
           altitude: result3D.sunPosition.elevation,
           azimuth: result3D.sunPosition.azimuth,

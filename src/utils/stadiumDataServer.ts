@@ -5,6 +5,7 @@ import {
   isSectionInSun,
   getSectionSunExposure,
 } from './sectionSunCalculations';
+import { stadiumLocalToUTC } from './stadiumTime';
 
 // Server-side shade calculation for static generation
 export interface ShadeData {
@@ -26,16 +27,15 @@ export interface SeasonalShadePattern {
 
 // Day-of-month used as a representative date for the given month when
 // computing the sun position. The 15th is close to the monthly mean for
-// most of the baseball season.
-function representativeDate(month: number, hour: number): Date {
-  // Stadium-local wall clock to UTC: SunCalc takes a UTC Date plus lat/lon
-  // and returns sun position. The static-generation path is timezone-agnostic
-  // (used to produce per-stadium static pages), so anchoring the year to
-  // 2025 and building a Date interpreted as UTC at the requested wall-clock
-  // hour is adequate; the resulting offset between stadium-local-noon and
-  // UTC-noon is small enough that month-grain shade matrices don't shift.
-  const date = new Date(Date.UTC(2025, month - 1, 15, hour, 0, 0));
-  return date;
+// most of the baseball season. `hour` is interpreted as wall-clock time
+// in the stadium's local timezone — the conversion to UTC for SunCalc
+// happens via stadiumLocalToUTC. Without that conversion, the static
+// matrix would compute sun position for the wrong real-world moment by
+// the stadium's UTC offset (5+ hours for West Coast parks).
+function representativeDate(month: number, hour: number, timezone: string): Date {
+  const monthStr = month.toString().padStart(2, '0');
+  const hourStr = hour.toString().padStart(2, '0');
+  return stadiumLocalToUTC(`2025-${monthStr}-15`, `${hourStr}:00`, timezone);
 }
 
 // Calculate shade percentage for static page generation.
@@ -57,7 +57,7 @@ export function calculateShadePercentage(
     return 100;
   }
 
-  const date = representativeDate(month, hour);
+  const date = representativeDate(month, hour, stadium.timezone || 'UTC');
   const sunPosition = getSunPosition(date, stadium.latitude, stadium.longitude);
 
   if (sunPosition.altitudeDegrees <= 0) {

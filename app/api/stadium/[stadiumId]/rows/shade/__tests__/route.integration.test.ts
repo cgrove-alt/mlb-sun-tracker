@@ -120,6 +120,27 @@ describe('GET /api/stadium/[stadiumId]/rows/shade — real-calc integration', ()
     expect(section320.rows.every((r: { sunExposure: number }) => r.sunExposure === 0)).toBe(true);
   });
 
+  // PRIMARY REGRESSION for the timezone fix.
+  // `time=19:30` MUST be interpreted as 19:30 in the stadium's local timezone
+  // (America/New_York → EDT in July), not 19:30 UTC. Pre-fix the route did
+  // setHours(19, 30) on Vercel's UTC runtime, which produced 15:30 ET — a
+  // midday-sun answer for a query that meant sunset.
+  it('interprets ?time as stadium-local, not server UTC', async () => {
+    const req = createRequest(
+      '/api/stadium/yankees/rows/shade?date=2025-07-04&time=19:30',
+    );
+    const res = await GET(req, createParams('yankees'));
+    const data = await res.json();
+    // 19:30 EDT on July 4 ≈ 23:30 UTC. At Yankee Stadium the sun should
+    // be in the west (azimuth roughly 280–300°) and low (elevation under 15°).
+    // Pre-fix the API returned ~midday sun (azimuth ~230°, altitude ~60°)
+    // because it computed for 19:30 UTC = 15:30 ET.
+    expect(data.sunPosition.azimuth).toBeGreaterThan(270);
+    expect(data.sunPosition.azimuth).toBeLessThan(310);
+    expect(data.sunPosition.altitude).toBeGreaterThan(0);
+    expect(data.sunPosition.altitude).toBeLessThan(20);
+  });
+
   it('reports all rows fully shaded at night', async () => {
     // Local midnight ET — sun well below horizon.
     const req = createRequest(

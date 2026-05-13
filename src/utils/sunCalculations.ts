@@ -21,13 +21,24 @@ export interface SeatingSectionSun {
   percentageOfGameInSun?: number; // Same as sunExposure, for clarity
 }
 
+/**
+ * Compute sun position for a UTC instant.
+ *
+ * The `date` argument MUST be a Date whose .getTime() is the correct UTC
+ * moment. Callers that have a stadium-local wall-clock time should convert
+ * first via `src/utils/stadiumTime.ts#stadiumLocalToUTC` — passing a
+ * `setHours()`-built or `new Date("YYYY-MM-DDTHH:MM")`-parsed Date here is
+ * the bug class that put the API hours-off for every non-UTC stadium.
+ *
+ * (Historically this function accepted an optional `timezone` parameter
+ * that was silently ignored. Removed to force callers to do the
+ * conversion themselves and fail at the type level if they forget.)
+ */
 export function getSunPosition(
   date: Date,
   latitude: number,
   longitude: number,
-  timezone?: string
 ): SunPosition {
-  // Use SunCalc implementation (for now, NREL can be toggled later)
   const sunPos = SunCalc.getPosition(date, latitude, longitude);
   
   // SunCalc returns:

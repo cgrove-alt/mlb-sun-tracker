@@ -72,8 +72,12 @@ export async function calculateMLBStadiumShade3D(
   latitude: number,
   longitude: number,
   _orientation: number,
-  date: Date,
-  timeStr: string,
+  /** UTC instant to compute the sun position for. Callers MUST do the
+   *  stadium-local-time → UTC conversion themselves (see
+   *  src/utils/stadiumTime.ts). Passing a Date that was constructed via
+   *  `setHours()` on Vercel runtime is the bug that this signature change
+   *  prevents — the timeStr form has been removed for that reason. */
+  targetUtc: Date,
   options: MLBStadiumShade3DOptions = {},
 ): Promise<MLBStadiumShade3DResult> {
   const { useCache = true, lodLevel = 'medium' } = options;
@@ -90,12 +94,7 @@ export async function calculateMLBStadiumShade3D(
     throw new Error(`Stadium ${stadiumId} not found in MLB_STADIUMS`);
   }
 
-  // Combine date + HH:MM into a single Date. The route already validated
-  // timeStr matches /^\d{1,2}:\d{2}$/.
-  const [hourStr, minuteStr] = timeStr.split(':');
-  const targetDate = new Date(date);
-  targetDate.setHours(parseInt(hourStr, 10), parseInt(minuteStr, 10), 0, 0);
-
+  const targetDate = targetUtc;
   const cacheKey = `${stadiumId}|${targetDate.toISOString()}|${lodLevel}`;
   if (useCache && resultCache.has(cacheKey)) {
     const cached = resultCache.get(cacheKey)!;
