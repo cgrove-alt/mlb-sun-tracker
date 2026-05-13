@@ -72,7 +72,7 @@ export const MLB_STADIUMS: Stadium[] = [
     state: 'ON',
     latitude: 43.6414,
     longitude: -79.3894,
-    orientation: 15,
+    orientation: 0, // N — confirmed 2026-05-13. Multiple authoritative sources: "Rogers Centre is one of the few major league parks where the batter faces north when hitting" (intheballparks.com / shadedseats). Geometric check: "Throughout the afternoon the sun rotates from above home plate down the third base side… 3rd base side is the shade side, 1st base side is sunny" — sun moves E→W during day; if afternoon sun is on 3B side, 3B is W and 1B is E (catcher's right when facing N). Consistent with HP→CF=N. Independent OSM building polygon axis: 354° N (well-matched). Previous 15° was approximately right but the published source explicitly says "north."
     capacity: 49282,
     roof: 'retractable',
     timezone: 'America/Toronto'
@@ -98,7 +98,7 @@ export const MLB_STADIUMS: Stadium[] = [
     state: 'WI',
     latitude: 43.0280,
     longitude: -87.9712,
-    orientation: 357,
+    orientation: 135, // SE — corrected 2026-05-13. shadedseats.com explicitly states "Miller Park has a similar orientation to ballparks in Cincinnati and Chicago with home plate facing southeast." This matches: Reds at 105° (ESE) and Whitesox at 120° (SE) are nearby in compass terms. OSM pitch polygon PCA principal axis also gave 132°/312° (SE/NW), confirming the diamond's long axis runs SE-NW. The fan-shaped roof's closed panel parks over home plate (upper-left/NW area in N-up imagery), with the field opening SE. Previous 357° (N) was a 138° error — likely a sign convention or HP/CF swap.
     capacity: 41900,
     roof: 'retractable',
     timezone: 'America/Chicago'
@@ -140,7 +140,7 @@ export const MLB_STADIUMS: Stadium[] = [
     state: 'AZ',
     latitude: 33.4455,
     longitude: -112.0667,
-    orientation: 23,
+    orientation: 0, // N — confirmed 2026-05-13. shadedseats.com explicitly states "Chase Field is oriented to the north. This means that home plate faces toward the north direction. Each morning the sun rises over the right field corner, swings around home plate at mid-day and sets behind the left field wall." Geometric check matches: with HP→CF=N, RF (east of CF) catches sunrise and LF (west of CF) catches sunset.
     capacity: 48686,
     roof: 'retractable',
     timezone: 'America/Phoenix'
