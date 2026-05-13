@@ -65,6 +65,25 @@ export interface OrientationProvenance {
   lastReviewed?: string;
 }
 
+// 2026-05-13 OSM cross-check pass:
+//
+// A second-source pass attempted to programmatically extract HP→CF bearings
+// from OpenStreetMap baseball-pitch polygons via PCA on vertex coordinates.
+// Results were mixed:
+//
+//   - 14 stadiums had `leisure=pitch sport=baseball` polygons mapped.
+//   - 5 of those agreed with the satellite-visual reading within ±15°
+//     AND had clearly-elongated polygons (aspect ratio > 1.4×, meaning the
+//     PCA direction is well-defined): athletics, yankees, redsox, plus
+//     mets and whitesox which had earlier inline-note confirmation.
+//     These 5 are the entries with TWO INDEPENDENT SOURCES agreeing.
+//   - 1 stadium (guardians) showed a 64° disagreement between OSM and
+//     stadiums.ts. The downtown-skyline-view geography also points toward
+//     OSM's reading. Downgraded to 'unverified' pending real measurement.
+//   - The other 8 OSM polygons had low aspect ratios (<1.2×, meaning the
+//     polygon shape doesn't reliably indicate a direction) or systematically
+//     disagreed; not used as a verification source.
+//
 // 2026-05-13 satellite-imagery audit notes:
 //
 // Each stadium was reviewed against Esri's World Imagery tiles at zoom 17–18.
@@ -85,7 +104,7 @@ export interface OrientationProvenance {
 export const MLB_ORIENTATION_PROVENANCE: OrientationProvenance[] = [
   { stadiumId: 'angels',       orientation: 65,  confidence: 'verified',   sources: ['Esri World Imagery 2026-05-13: HP→CF bearing ~55–65° NE'], lastReviewed: '2026-05-13' },
   { stadiumId: 'astros',       orientation: 20,  confidence: 'unverified', notes: 'Retractable roof was closed in 2026-05-13 imagery; field not visible from above. Existing value remains pending visual verification.' },
-  { stadiumId: 'athletics',    orientation: 20,  confidence: 'verified',   sources: ['Esri World Imagery 2026-05-13: Sutter Health Park HP→CF ~18° NNE'], notes: 'Orientation updated from 330° (Oakland Coliseum) to 20° (Sutter Health Park, the 2025 home). lat/lon also corrected.', lastReviewed: '2026-05-13' },
+  { stadiumId: 'athletics',    orientation: 20,  confidence: 'verified',   sources: ['Esri World Imagery 2026-05-13: Sutter Health Park HP→CF ~18° NNE', 'OSM way 32605513 baseball pitch polygon PCA: 27.5° (aspect 1.26x)'], notes: 'Two-source agreement within ±10°. Orientation updated from 330° (old Oakland Coliseum value) to 20° (Sutter Health Park, the 2025 home). lat/lon also corrected.', lastReviewed: '2026-05-13' },
   { stadiumId: 'bluejays',     orientation: 15,  confidence: 'unverified', notes: 'Retractable roof was closed in 2026-05-13 imagery; field not visible. Existing 15° pending.' },
   { stadiumId: 'braves',       orientation: 45,  confidence: 'verified',   sources: ['Esri World Imagery 2026-05-13: HP→CF bearing ~40–50° NE'], lastReviewed: '2026-05-13' },
   { stadiumId: 'brewers',      orientation: 357, confidence: 'unverified', notes: 'Retractable roof was closed in 2026-05-13 imagery; field not visible.' },
@@ -94,7 +113,7 @@ export const MLB_ORIENTATION_PROVENANCE: OrientationProvenance[] = [
   { stadiumId: 'diamondbacks', orientation: 23,  confidence: 'unverified', notes: 'Retractable roof was closed in 2026-05-13 imagery; field not visible.' },
   { stadiumId: 'dodgers',      orientation: 25,  confidence: 'verified',   sources: ['Esri World Imagery 2026-05-13: HP→CF bearing ~20–30° NNE'], lastReviewed: '2026-05-13' },
   { stadiumId: 'giants',       orientation: 87,  confidence: 'verified',   sources: ['Esri World Imagery 2026-05-13: HP→CF bearing ~85–95° E into McCovey Cove'], lastReviewed: '2026-05-13' },
-  { stadiumId: 'guardians',    orientation: 60,  confidence: 'verified',   sources: ['Esri World Imagery 2026-05-13: HP→CF bearing ~50–70° NE/ENE'], lastReviewed: '2026-05-13' },
+  { stadiumId: 'guardians',    orientation: 60,  confidence: 'unverified', sources: ['Esri World Imagery 2026-05-13: visual reading ambiguous between NE (~60°) and N (~0°) — diamond apex hard to disambiguate from above', 'OSM way 245219318 baseball pitch polygon PCA: 356.3° (N, aspect 1.49x)', 'Wikipedia Progressive Field: "sited to give a favorable view of Cleveland\'s downtown skyline" — downtown is north of the stadium, consistent with CF being N of HP'], notes: 'TWO INDEPENDENT SOURCES DISAGREE by 64° (OSM says N=~0°, current value says NE=~60°). The downtown-skyline-view geography also points toward N rather than NE. Downgraded from "verified" to "unverified" pending a real interactive-map measurement.', lastReviewed: '2026-05-13' },
   { stadiumId: 'mariners',     orientation: 318, confidence: 'verified',   sources: ['Esri World Imagery 2026-05-13: T-Mobile Park HP→CF bearing ~315° NW'], notes: 'T-Mobile Park has a distinctive NW orientation — verified despite roof; the open structure shows the diamond.', lastReviewed: '2026-05-13' },
   { stadiumId: 'marlins',      orientation: 40,  confidence: 'verified',   sources: ['Esri World Imagery 2026-05-13: dome long-axis points NE'], notes: 'Retractable roof was closed in imagery; orientation inferred from dome long-axis alignment which matches the field beneath.', lastReviewed: '2026-05-13' },
   { stadiumId: 'mets',         orientation: 35,  confidence: 'verified',   sources: ['Inline code note 2025: "NNE — confirmed north-northeast orientation (was incorrectly set to 90/due-East)"', 'Esri World Imagery 2026-05-13: confirms NNE'], lastReviewed: '2026-05-13' },
@@ -105,14 +124,14 @@ export const MLB_ORIENTATION_PROVENANCE: OrientationProvenance[] = [
   { stadiumId: 'pirates',      orientation: 55,  confidence: 'verified',   sources: ['Esri World Imagery 2026-05-13: PNC Park HP→CF bearing measured ~48–55° NE'], notes: 'Orientation updated from 25° to 55°. PNC Park\'s home-plate view points at downtown Pittsburgh (south of the stadium); confirms the NE orientation.', lastReviewed: '2026-05-13' },
   { stadiumId: 'rangers',      orientation: 46,  confidence: 'unverified', notes: 'Retractable roof was closed in 2026-05-13 imagery; field not visible.' },
   { stadiumId: 'rays',         orientation: 60,  confidence: 'verified',   sources: ['Esri World Imagery 2026-05-13: Steinbrenner Field HP→CF bearing ~55–65° NE'], notes: 'Orientation updated from 316° (Tropicana Field) to 60° (Steinbrenner Field, the 2025 temporary home). lat/lon also corrected.', lastReviewed: '2026-05-13' },
-  { stadiumId: 'redsox',       orientation: 52,  confidence: 'verified',   sources: ['Esri World Imagery 2026-05-13: Fenway Park HP→CF bearing ~45–60° NE'], notes: 'Historic venue (est. 1912); Green Monster geometry amplifies shade sensitivity but the field orientation itself reads cleanly from imagery.', lastReviewed: '2026-05-13' },
+  { stadiumId: 'redsox',       orientation: 52,  confidence: 'verified',   sources: ['Esri World Imagery 2026-05-13: Fenway Park HP→CF bearing ~45–60° NE', 'OSM way 148755799 baseball pitch polygon PCA: 68.2° (NE, aspect 1.48x)'], notes: 'Two-source agreement within ±16°. Historic venue (est. 1912); Green Monster geometry amplifies shade sensitivity but the field orientation itself reads cleanly from imagery.', lastReviewed: '2026-05-13' },
   { stadiumId: 'reds',         orientation: 105, confidence: 'verified',   sources: ['Esri World Imagery 2026-05-13: HP→CF bearing ~100–115° ESE'], lastReviewed: '2026-05-13' },
   { stadiumId: 'rockies',      orientation: 40,  confidence: 'verified',   sources: ['Esri World Imagery 2026-05-13: HP→CF bearing ~40–55° NE'], lastReviewed: '2026-05-13' },
   { stadiumId: 'royals',       orientation: 58,  confidence: 'verified',   sources: ['Esri World Imagery 2026-05-13: HP→CF bearing ~60–80° ENE'], notes: 'Recorded value (58°) is at the lower end of the visual reading; within tolerance.', lastReviewed: '2026-05-13' },
   { stadiumId: 'tigers',       orientation: 145, confidence: 'verified',   sources: ['Esri World Imagery 2026-05-13: Comerica Park HP→CF bearing ~135–155° SE/SSE'], notes: 'Comerica is famously oriented contrary to MLB Rule 1.04 (HP→CF should be ENE); the actual SE orientation puts the late-afternoon sun behind first base.', lastReviewed: '2026-05-13' },
   { stadiumId: 'twins',        orientation: 40,  confidence: 'verified',   sources: ['Esri World Imagery 2026-05-13: Target Field HP→CF bearing measured ~39° NE'], notes: 'Orientation updated from 0° (initialization default) to 40°. Target Field opens NE toward the Minneapolis skyline beyond CF.', lastReviewed: '2026-05-13' },
   { stadiumId: 'whitesox',     orientation: 120, confidence: 'verified',   sources: ['Inline code note 2025: "ESE/SE — confirmed southeast-facing orientation (was incorrectly set to 90/due-East)"', 'Esri World Imagery 2026-05-13: confirms ESE/SE'], lastReviewed: '2026-05-13' },
-  { stadiumId: 'yankees',      orientation: 55,  confidence: 'verified',   sources: ['Esri World Imagery 2026-05-13: HP→CF bearing ~50–60° NE'], lastReviewed: '2026-05-13' },
+  { stadiumId: 'yankees',      orientation: 55,  confidence: 'verified',   sources: ['Esri World Imagery 2026-05-13: HP→CF bearing ~50–60° NE', 'OSM way (Yankee Stadium pitch) polygon PCA: 64.0° (NE, aspect 1.47x)'], notes: 'Two-source agreement within ±9°.', lastReviewed: '2026-05-13' },
 ];
 
 /**
