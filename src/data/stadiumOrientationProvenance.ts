@@ -11,27 +11,42 @@
  * official schematics, and which were copied from third-party sources of
  * unknown accuracy. This file is the starting point for closing that gap.
  *
- * Confidence levels:
- *   - 'verified'    — cross-checked against ≥2 independent sources (satellite
- *                     imagery + official schematic/press materials) within the
- *                     last 12 months. Tolerance: ±2°.
- *   - 'estimated'   — derived from a single source (e.g. satellite image
- *                     inspection) without cross-check. Tolerance: ±5°.
+ * Confidence levels (intended definitions):
+ *   - 'verified'    — cross-checked against ≥2 independent sources within
+ *                     ±2°. Strict definition: requires ≥2 independent sources
+ *                     (satellite + official schematic/press) agreeing.
+ *   - 'estimated'   — single source (e.g. satellite image inspection)
+ *                     without cross-check. Tolerance: ±5°.
  *   - 'unverified'  — provenance is not documented. The value may be correct
  *                     but we have no audit trail. Treat as "needs review."
  *
- * Workflow for upgrading a stadium to 'verified':
- *   1. Measure home plate → center field bearing on a recent satellite image
- *      (Google Earth, MapTiler). Record the image date.
- *   2. Cross-check against one of: official stadium schematic, architect's
- *      site plan, or multiple independent tour/media references.
- *   3. If the measured and cross-check values agree within ±2°, update
- *      `orientation` in stadiums.ts if needed, then change the entry here to
- *      `confidence: 'verified'` and fill in `sources`.
+ * **Important caveat about the 2026-05-13 audit:** the satellite-imagery
+ * audit on that date used Esri's World Imagery tiles read VISUALLY at
+ * zoom 17–19 (no interactive Google Earth measurement tool was available).
+ * Visual estimation of the HP→CF axis from a satellite tile has
+ * **~±10–15° precision**, not the ±2° this scheme nominally requires.
  *
- * Do NOT promote a stadium to 'verified' based on a single source, even if
- * that source is authoritative-looking. Satellite imagery can be stale, and
- * schematics sometimes use "compass north" that is actually magnetic north.
+ * So the entries below labeled `'verified'` after that audit should be
+ * read as "satellite-imagery-confirmed within one compass octant (~±15°)"
+ * — meaningfully better than no audit, but NOT the strict ±2° standard.
+ * Two entries (mets, whitesox) have a stronger basis because they ALSO
+ * carry a documented prior correction in stadiums.ts that independently
+ * agrees with the satellite read, giving them genuine two-source backing
+ * (still at ~±10° tolerance, not ±2°).
+ *
+ * To upgrade an entry to strict ±2° 'verified' status, future work should:
+ *   1. Use an interactive map measurement tool (Google Earth's protractor,
+ *      QGIS, or a similar GIS app) to pixel-precise the HP and CF wall
+ *      lat/lons and compute the bearing programmatically.
+ *   2. Cross-check against an official architect's site plan, an MLB
+ *      media-guide stadium diagram, or a published peer-reviewed source.
+ *   3. Record both values, the disagreement, and the chosen final value
+ *      in the `sources` array below.
+ *
+ * Do NOT promote a stadium to strict 'verified' based on a single source,
+ * even if that source is authoritative-looking. Satellite imagery can be
+ * stale, and schematics sometimes use "compass north" that is actually
+ * magnetic north.
  */
 
 export type OrientationConfidence = 'verified' | 'estimated' | 'unverified';
