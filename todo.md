@@ -41,6 +41,64 @@
 
 ---
 
+# Phase 8B: Convention-Inversion Hotfix (2026-05-13, later)
+
+**Trigger:** A user at Guaranteed Rate Field reported the site said "shade on third base side" but reality was "shade on first base side" — a 180° error in which side of the bowl the system marks as shaded.
+
+**Status:** All 7 implementation tasks complete; 76 sun-calc tests pass. Awaiting deploy + production verification.
+
+## Root cause
+
+`section.baseAngle` is stored **stadium-local** (0 = 1B direction, 90 = CF, 180 = 3B, 270 = behind home) — measured CCW from +x in (x, y) stadium coordinates where +x = 1B direction, +y = CF direction. The Phase 8 / Phase 2 rewrite of `isSectionInSun` and `getSectionSunExposure` compared `section.baseAngle` directly against `sunAzimuth` (which IS absolute compass). Every stadium not oriented to compass 90°/270° therefore had a shade prediction rotated by `(stadium.orientation + 90 − 2·baseAngle)` — for several orientations (Rate Field's 120° among them) this landed at a full 180° inversion of the cardinal sides.
+
+A second bug was uncovered in flight: `SECTION_REGISTRY` in `stadium-data-aggregator.ts` used keys like `'white-sox'` / `'red-sox'` / `'blue-jays'` while `MLB_STADIUMS` define IDs without dashes (`'whitesox'`, `'redsox'`, `'bluejays'`). So for those three teams, `getStadiumSections()` was silently falling back to generic uniform-45°-step sections instead of the real per-stadium section data — compounding the convention bug into garbage output specifically for Rate Field / Fenway / Rogers Centre.
+
+## Fix
+
+- Add `stadiumOrientation` as a required parameter to `isSectionInSun` and `getSectionSunExposure`; convert `baseAngle` to compass via `(stadiumOrientation + 90 − baseAngle) mod 360` inside.
+- Same conversion applied in `calculateRowShadows` (which previously discarded its `_stadiumOrientation` parameter behind an underscore-prefix).
+- All three call sites (`sunCalculations.ts`, `optimizedSunCalculations.ts`, `stadiumDataServer.ts`) now pass `stadium.orientation`.
+- Type comment in `stadiumSectionTypes.ts` rewritten to describe the **actual** convention (the prior comment was wrong by 90°).
+- `getUnifiedVenueShade.ts` formula fixed (`baseAngle + orientation` → `orientation + 90 − baseAngle`); related "third base bonus" rewritten to use stadium-local baseAngle range (135°–225°) instead of a hardcoded compass slice.
+- `SECTION_REGISTRY` and `OBSTRUCTION_REGISTRY` keys dashes removed for `whitesox`, `redsox`, `bluejays` so those stadiums now load their real per-park section data.
+
+## Regression coverage
+
+`src/utils/__tests__/sectionSunCalculations.test.ts` rewritten with physically-grounded cases:
+
+- **Rate Field, orientation 120°, evening west sun (azimuth 280°, elevation 8°):** asserts 3B side exposure > 1B side exposure (the user's case).
+- **Citi Field, orientation 35°, same sun:** asserts 1B side exposure > 3B side exposure (cross-stadium check — direction flips with orientation).
+- **30-stadium consistency test:** for every MLB orientation, the section located at compass ENE (~100°, opposite the sun) must report higher exposure than the section located at compass W (~280°, sun behind). Catches any future off-by-orientation bug at any park.
+- **Compass-conversion unit tests:** `sectionCompassAngle` pinned at all four cardinal positions for both Rate Field (orientation 120°) and Citi Field (35°).
+
+## Files touched
+
+| Status | File |
+|---|---|
+| Modified | `src/utils/sectionSunCalculations.ts` — add `stadiumOrientation` param, apply convention conversion |
+| Modified | `src/utils/sunCalculator.ts` (`calculateRowShadows`) — use the previously-ignored `stadiumOrientation` parameter |
+| Modified | `src/utils/sunCalculations.ts` — pass `stadium.orientation` to section helpers |
+| Modified | `src/utils/optimizedSunCalculations.ts` — same |
+| Modified | `src/utils/stadiumDataServer.ts` — same |
+| Modified | `src/utils/getUnifiedVenueShade.ts` — fix formula + stadium-local 3B bonus |
+| Modified | `src/data/stadiumSectionTypes.ts` — correct the type comment |
+| Modified | `src/data/stadium-data-aggregator.ts` — fix `SECTION_REGISTRY` / `OBSTRUCTION_REGISTRY` key dashes for whitesox/redsox/bluejays |
+| Modified | `src/utils/__tests__/sectionSunCalculations.test.ts` — rewrite with physically-grounded cases |
+
+## Verification (pre-deploy)
+
+- `npx tsc --noEmit -p .` — clean for all touched files.
+- `npx jest --testPathPatterns="(sectionSunCalculations|sunAccuracy|shadeRegression|rows/shade)"` — 76/76 tests pass.
+- Local end-to-end with real Rate Field section data: at evening west sun, the sections most-shaded by my model are the ones at compass ~190°–230° (i.e. compass WNW–SW), which is the bowl half facing **away** from the W sun. Those sections cover both "behind home plate on the 1B side" (BL-146, BL-147) and the Party Deck — exactly the seating areas a fan would call "the shaded side."
+
+## Out of scope (still tracked)
+
+- Cross-verifying the 28 unverified MLB stadium orientations against satellite imagery (data work).
+- Per-stadium 3D obstruction data collection.
+- Section data completeness — Rate Field's lower bowl behind home plate (baseAngle ~270°) has no sections in the data; that's a data-coverage gap to be backfilled separately.
+
+---
+
 # Phase 8: Sun Calculation Accuracy Audit (2026-05-13)
 
 **Goal:** Audit the entire sun-calculation pipeline for accuracy, find root causes, and implement permanent fixes. No shortcuts.

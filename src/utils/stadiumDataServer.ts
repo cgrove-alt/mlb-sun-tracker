@@ -64,7 +64,12 @@ export function calculateShadePercentage(
     return 100; // Sun below horizon: section in shade.
   }
 
-  if (!isSectionInSun(section, sunPosition.azimuthDegrees, sunPosition.altitudeDegrees)) {
+  if (!isSectionInSun(
+    section,
+    sunPosition.azimuthDegrees,
+    sunPosition.altitudeDegrees,
+    stadium.orientation,
+  )) {
     return 100;
   }
 
@@ -72,6 +77,7 @@ export function calculateShadePercentage(
     section,
     sunPosition.altitudeDegrees,
     sunPosition.azimuthDegrees,
+    stadium.orientation,
   );
 
   return Math.max(0, Math.min(100, 100 - exposure));

@@ -101,7 +101,10 @@ function calculateSectionShade(
     shadePercentage = 100;
   } else {
     // Calculate based on sun angle relative to section
-    const sectionAngle = (section.baseAngle + venue.orientation) % 360;
+    // section.baseAngle is stadium-local (0 = 1B, 90 = CF, 180 = 3B, 270 = behind home).
+    // Convert to compass bearing for comparison against the (compass) sun azimuth.
+    // See src/utils/sectionSunCalculations.ts for the convention.
+    const sectionAngle = ((venue.orientation + 90 - section.baseAngle) % 360 + 360) % 360;
     const sunAngle = sunPos.azimuthDegrees;
     
     // Calculate angle difference
@@ -184,11 +187,12 @@ function getSportSpecificShadeBonus(
       bonus += footballModifier.endZoneShade;
     }
   } else if (venue.sport === 'baseball') {
-    // Baseball-specific logic
+    // Baseball-specific logic. The "third base side" is a stadium-local
+    // concept — at all parks, it sits around baseAngle 180° (range
+    // roughly 135°–225° spans LF foul line through deep LF).
     const baseballModifier = modifier as typeof SPORT_SHADE_MODIFIERS.baseball;
-    const sectionAngle = (section.baseAngle + venue.orientation) % 360;
-    // Third base side typically gets more afternoon shade
-    if (sectionAngle >= 180 && sectionAngle <= 270) {
+    const normalizedBase = ((section.baseAngle % 360) + 360) % 360;
+    if (normalizedBase >= 135 && normalizedBase <= 225) {
       bonus += baseballModifier.homeAngleBonus;
     }
   }

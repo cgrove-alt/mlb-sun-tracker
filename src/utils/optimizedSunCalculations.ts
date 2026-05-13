@@ -60,19 +60,20 @@ export async function calculateDetailedSectionSunExposureOptimized(
     }
   }
   
-  // Don't adjust sun azimuth - isSectionInSun expects absolute compass degrees
-  // and the section angles are already in absolute compass coordinates
+  // sunAzimuth is absolute compass; section.baseAngle is stadium-local. The
+  // section helpers do the conversion internally given `stadium.orientation`.
   const sunAzimuth = sunPosition.azimuthDegrees;
-  
+  const orientation = stadium.orientation;
+
   let processedCount = 0;
-  
+
   // Process sections in chunks
   const results = await processInChunks(
     stadiumSections,
     50, // Process 50 sections at a time
     (section) => {
-      const inSun = isSectionInSun(section, sunAzimuth, sunPosition.altitudeDegrees);
-      let sunExposure = getSectionSunExposure(section, sunPosition.altitudeDegrees, sunAzimuth);
+      const inSun = isSectionInSun(section, sunAzimuth, sunPosition.altitudeDegrees, orientation);
+      let sunExposure = getSectionSunExposure(section, sunPosition.altitudeDegrees, sunAzimuth, orientation);
       sunExposure = sunExposure * weatherMultiplier;
 
       processedCount++;

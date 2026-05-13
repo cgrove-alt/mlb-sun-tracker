@@ -92,8 +92,9 @@ export function calculateDetailedSectionSunExposure(
     return sectionSunData;
   }
   
-  // Don't adjust sun azimuth - isSectionInSun expects absolute compass degrees
-  // and the section angles are already in absolute compass coordinates
+  // sunAzimuth is absolute compass; section.baseAngle is stadium-local. The
+  // section helpers take `stadium.orientation` and do the conversion
+  // internally. See src/utils/sectionSunCalculations.ts for the convention.
   const sunAzimuth = sunPosition.azimuthDegrees;
   
   // Calculate weather impact on sun exposure
@@ -133,8 +134,8 @@ export function calculateDetailedSectionSunExposure(
   }
 
   stadiumSections.forEach(section => {
-    const inSun = isSectionInSun(section, sunAzimuth, sunPosition.altitudeDegrees);
-    let sunExposure = getSectionSunExposure(section, sunPosition.altitudeDegrees, sunAzimuth);
+    const inSun = isSectionInSun(section, sunAzimuth, sunPosition.altitudeDegrees, stadium.orientation);
+    let sunExposure = getSectionSunExposure(section, sunPosition.altitudeDegrees, sunAzimuth, stadium.orientation);
     
     // Apply weather impact to sun exposure
     sunExposure = sunExposure * weatherMultiplier;

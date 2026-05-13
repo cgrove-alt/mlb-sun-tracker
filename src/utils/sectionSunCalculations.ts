@@ -1,22 +1,37 @@
 // Sun calculation functions for stadium sections.
 //
-// Geometric model (replaces the same-side-only heuristic that was here before):
+// Coordinate convention (CRITICAL — see also stadiumSectionTypes.ts):
 //
-//   - Below horizon: no direct sun anywhere.
-//   - Covered section: a partial canopy lets some light through only at very
-//     high sun (>60°); below that, treat as shaded.
-//   - High sun (≥30° elevation): every uncovered seat receives direct light.
-//     Azimuth controls intensity, not whether the seat is in sun.
-//   - Low sun (<30°): direction matters.
-//       * Sun on the opposite side of the bowl from the section
-//         (|sun_az − section_az| > 90°): rays cross the field and shine
-//         DIRECTLY into the seats. This is the dominant late-afternoon case.
-//         The previous implementation reported these sections as shaded — a
-//         physics bug that affected every late-game shade prediction.
-//       * Sun on the same side as the section (≤ 90°): sun is behind the
-//         spectators, mostly absorbed by the bowl structure. Some
-//         back-lighting reaches lower rows, but most of the section is in
-//         shadow.
+//   `section.baseAngle` is a STADIUM-LOCAL angle, NOT a compass bearing.
+//   It is measured CCW from +x (first base direction) in the stadium's own
+//   frame: 0 = 1B, 90 = CF, 180 = 3B, 270 = behind home plate.
+//
+//   `sunAzimuth` is an ABSOLUTE compass bearing (0 = N, 90 = E, …).
+//
+//   To compare, the section's baseAngle must be converted to compass:
+//       sectionCompass = (stadiumOrientation + 90 − baseAngle) mod 360
+//   where `stadiumOrientation` is the compass bearing from home plate to
+//   center field. Derivation:
+//       1B  (baseAngle 0)   → compass orientation + 90  (catcher's right)
+//       CF  (baseAngle 90)  → compass orientation       (straight ahead)
+//       3B  (baseAngle 180) → compass orientation − 90  (catcher's left)
+//       HP  (baseAngle 270) → compass orientation + 180 (behind catcher)
+//
+// Physics:
+//
+//   A section located at compass position θ around the bowl has seats that
+//   face INWARD toward the field — i.e. the seat normal points (θ + 180°)
+//   compass. Sunlight on the seat is direct when |sunAzimuth − seatNormal| <
+//   90°, which is equivalent to |sunAzimuth − θ| > 90°. So:
+//
+//     - Section "opposite" the sun in compass terms (angleDiff > 90°) is
+//       facing toward the sun and receives direct light. This is the dominant
+//       late-afternoon case (rays cross the bowl into the seats).
+//     - Section "same side" as the sun (angleDiff ≤ 90°) has the sun behind
+//       the spectators; most of the light is absorbed by the bowl structure.
+//     - High sun (≥ ~30°): every uncovered seat receives direct light;
+//       azimuth controls intensity, not whether the seat is lit.
+//     - Below horizon: no direct sun anywhere.
 
 import type { StadiumSection } from '../data/stadiumSectionTypes';
 
@@ -27,8 +42,16 @@ function angleDiffDeg(a: number, b: number): number {
   return diff > 180 ? 360 - diff : diff;
 }
 
-function sectionCenterAngle(section: StadiumSection): number {
-  return normalizeAngle(section.baseAngle + section.angleSpan / 2);
+/**
+ * Convert a stadium-local section center angle into an absolute compass
+ * bearing. See file-header convention block.
+ */
+export function sectionCompassAngle(
+  section: Pick<StadiumSection, 'baseAngle' | 'angleSpan'>,
+  stadiumOrientation: number,
+): number {
+  const sectionCenter = section.baseAngle + section.angleSpan / 2;
+  return normalizeAngle(stadiumOrientation + 90 - sectionCenter);
 }
 
 function levelMultiplier(level: StadiumSection['level']): number {
@@ -56,11 +79,16 @@ function levelMultiplier(level: StadiumSection['level']): number {
  *
  * Section-level binary; the per-row `calculateRowShadows` handles per-row
  * structural shade.
+ *
+ * @param stadiumOrientation Compass bearing from home plate to center field.
+ *   Required to convert `section.baseAngle` (stadium-local) to absolute
+ *   compass for comparison with `sunAzimuth`. See file-header for details.
  */
 export function isSectionInSun(
   section: StadiumSection,
   sunAzimuth: number,
   sunElevation: number,
+  stadiumOrientation: number,
 ): boolean {
   if (sunElevation <= 0) return false;
   if (section.covered) {
@@ -69,7 +97,10 @@ export function isSectionInSun(
     return sunElevation > 60;
   }
   // Uncovered, above the horizon: at least part of the section is in sun.
-  // The intensity question is `getSectionSunExposure`.
+  // The intensity question is `getSectionSunExposure`. `stadiumOrientation`
+  // is unused for the binary answer but kept in the signature so every
+  // caller is forced to pass it (this is the parameter the bug fix added).
+  void stadiumOrientation;
   return true;
 }
 
@@ -78,19 +109,24 @@ export function isSectionInSun(
  *
  * The shape of this curve matters more than its absolute scale: callers use
  * it both to rank sections (higher = sunnier) and as a heuristic gate
- * (exposure > 10 means "in sun"). The model below handles both regimes
- * sensibly (see file-header comment).
+ * (exposure > 10 means "in sun"). The model handles high-sun, low-sun,
+ * opposite-side, and same-side regimes; see file-header for the physics.
+ *
+ * @param stadiumOrientation Compass bearing from home plate to center field.
+ *   Required to convert `section.baseAngle` (stadium-local) to absolute
+ *   compass for comparison with `sunAzimuth`.
  */
 export function getSectionSunExposure(
   section: StadiumSection,
   sunElevation: number,
   sunAzimuth: number,
+  stadiumOrientation: number,
 ): number {
   if (sunElevation <= 0) return 0;
   if (section.covered && sunElevation <= 60) return 0;
 
-  const sectionAngle = sectionCenterAngle(section);
-  const angleDiff = angleDiffDeg(sunAzimuth, sectionAngle);
+  const sectionCompass = sectionCompassAngle(section, stadiumOrientation);
+  const angleDiff = angleDiffDeg(sunAzimuth, sectionCompass);
   const sunOnOppositeSide = angleDiff > 90;
   const level = levelMultiplier(section.level);
   // Partial canopy at very high sun: 30% throughput.

@@ -87,7 +87,7 @@ import { raysObstructions } from './obstructions/mlb/rays-obstructions';
 const SECTION_REGISTRY: Record<string, DetailedSection[]> = {
   // MLB
   'yankees': yankeesSections,
-  'red-sox': redsoxSections || fenwayParkSections,
+  'redsox': redsoxSections || fenwayParkSections,
   'dodgers': dodgersSections,
   'cubs': cubsSections || wrigleyFieldSections,
   'mets': metsSections,
@@ -110,10 +110,10 @@ const SECTION_REGISTRY: Record<string, DetailedSection[]> = {
   'diamondbacks': diamondbacksSections,
   'tigers': tigersSections,
   'rays': raysSections || georgeMSteinbrennerFieldSections,
-  'white-sox': whitesoxSections,
+  'whitesox': whitesoxSections,
   'royals': royalsSections,
   'marlins': marlinsSections,
-  'blue-jays': bluejaysSections,
+  'bluejays': bluejaysSections,
   'athletics': athleticsSections,
   'mariners': marinersSections,
   
@@ -130,7 +130,7 @@ const SECTION_REGISTRY: Record<string, DetailedSection[]> = {
 const OBSTRUCTION_REGISTRY: Record<string, Obstruction3D[]> = {
   // MLB
   'yankees': yankeeStadiumObstructions,
-  'red-sox': redsoxObstructions,
+  'redsox': redsoxObstructions,
   'dodgers': dodgersObstructions,
   'cubs': cubsObstructions,
   'mets': metsObstructions,
@@ -152,10 +152,10 @@ const OBSTRUCTION_REGISTRY: Record<string, Obstruction3D[]> = {
   'cardinals': cardinalsObstructions,
   'diamondbacks': diamondbacksObstructions,
   'tigers': tigersObstructions,
-  'white-sox': whitesoxObstructions,
+  'whitesox': whitesoxObstructions,
   'royals': royalsObstructions,
   'marlins': marlinsObstructions,
-  'blue-jays': bluejaysObstructions,
+  'bluejays': bluejaysObstructions,
   'athletics': athleticsObstructions,
   'mariners': marinersObstructions,
   'rays': raysObstructions,

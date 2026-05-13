@@ -510,12 +510,16 @@ export function calculateRowShadows(
   section: RowShadowInputSection,
   sunAltitudeDeg: number,
   sunAzimuthDeg: number,
-  _stadiumOrientation: number,
+  stadiumOrientation: number,
 ): RowShadowResult {
   const rows = section.rows ?? [];
-  const sectionAngle = ((section.baseAngle + (section.angleSpan ?? 0) / 2) % 360 + 360) % 360;
+  // section.baseAngle is stadium-local (0 = 1B, 90 = CF, 180 = 3B, 270 = behind home).
+  // Convert to compass bearing before comparing against the (compass) sun azimuth.
+  // See src/utils/sectionSunCalculations.ts for the convention block.
+  const sectionLocal = section.baseAngle + (section.angleSpan ?? 0) / 2;
+  const sectionCompass = ((stadiumOrientation + 90 - sectionLocal) % 360 + 360) % 360;
   const sunAz = ((sunAzimuthDeg % 360) + 360) % 360;
-  let angleDiff = Math.abs(sunAz - sectionAngle);
+  let angleDiff = Math.abs(sunAz - sectionCompass);
   if (angleDiff > 180) angleDiff = 360 - angleDiff;
   const sunOnOppositeSide = angleDiff > 90;
 
