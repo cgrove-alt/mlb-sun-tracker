@@ -46,7 +46,7 @@ export const MLB_STADIUMS: Stadium[] = [
     state: 'TX',
     latitude: 29.7570,
     longitude: -95.3555,
-    orientation: 20,
+    orientation: 340, // NNW — corrected 2026-05-13. Esri imagery shows the diamond through partial roof opening: HP at lower-right of the visible field (~SE side), CF at upper-left (~NW side). Visual HP→CF bearing ~328°; OSM pitch polygon vertex analysis gives 346°. Houston's Crawford Boxes in LF align with Crawford Street (downtown Houston grid), geometrically consistent with HP→CF being NNW. Previous 20° (NNE) was wrong.
     capacity: 41168,
     roof: 'retractable',
     timezone: 'America/Chicago'
