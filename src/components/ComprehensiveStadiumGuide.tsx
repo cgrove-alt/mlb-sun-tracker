@@ -3,6 +3,7 @@
 import React from 'react';
 import { StadiumGuide } from '../data/stadiumGuides';
 import { getStadiumGuide } from '../data/guides';
+import { MLB_STADIUMS } from '../data/stadiums';
 import Link from 'next/link';
 import {
   MapPinIcon,
@@ -21,6 +22,7 @@ interface ComprehensiveStadiumGuideProps {
 
 const ComprehensiveStadiumGuide: React.FC<ComprehensiveStadiumGuideProps> = ({ stadiumId }) => {
   const guide = getStadiumGuide(stadiumId);
+  const stadium = MLB_STADIUMS.find((s) => s.id === stadiumId);
   
   // Debug logging
   if (typeof window !== 'undefined' && guide) {
@@ -56,8 +58,8 @@ const ComprehensiveStadiumGuide: React.FC<ComprehensiveStadiumGuideProps> = ({ s
         state: guide.neighborhood.name.split(',')[1]?.trim() || ''
       },
       capacity: guide.capacity,
-      orientation: 0, // This would need to come from stadium data
-      roofType: 'open', // This would need to come from stadium data
+      orientation: stadium?.orientation ?? 0,
+      roofType: stadium?.roof ?? 'open',
       yearBuilt: guide.opened
     }
   };
