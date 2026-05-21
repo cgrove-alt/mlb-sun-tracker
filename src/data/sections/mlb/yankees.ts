@@ -1,1229 +1,383 @@
-// Yankee Stadium - Comprehensive Section Data
-// Auto-generated with accurate 3D geometry for sun calculations
+// Yankee Stadium — New York Yankees
+//
+// Real per-section seating data, authored 2026-05-21 from MLB.com Yankees
+// interactive seating map, StubHub, shadedseats.com, RateYourSeats Shaded &
+// Covered Seating page, RateYourSeats Yankee Stadium sections list, and
+// FromThisSeat seating chart breakdown. Cross-referenced with Google Maps
+// satellite imagery at 40.8296°N, -73.9262°W.
+//
+// Verified compass orientation: HP→CF = 55° NE.
+//   • Independently confirmed by shadedseats narrative ("sun rises behind HP,
+//     sets behind 1B on July 1"), Baseball Almanac AL orientation page, and
+//     satellite-imagery surveys (Yankee Stadium aligns closest to MLB Rule
+//     1.04's ENE recommendation).
+//   • LF foul pole ≈ compass 10° (N), RF foul pole ≈ compass 100° (E),
+//     behind HP ≈ compass 235° (SW).
+//
+// Convention (see sectionSunCalculations.ts header):
+//   baseAngle is STADIUM-LOCAL — 0=1B, 90=CF, 180=3B, 270=behind HP.
+//   Research input is compass bearing from HP. Conversion:
+//     local_center = (orientation + 90 − compass) mod 360
+//     baseAngle    = (local_center − angleSpan/2) mod 360
+//   Built-in below as `convertCompass(...)`.
+//
+// Yankee Stadium quirks baked into the data:
+//   • Field/Legends Suite (11–29 with letter sub-sections 14A/B, 15A/B,
+//     17A/B, 21A/B, 24A/B, 27A/B): premium field-level behind HP, NOT covered
+//     in majority — the Legends Suite Club building behind provides only
+//     marginal back-row coverage.
+//   • Lower Box 103–105 are deep-RF chairback OF seats; 134–136 are the LF
+//     mirror. 106–107 / 132–133 are narrow foul-pole transition sections.
+//     Section 122 sits directly behind HP at compass ~235°.
+//   • Field MVP infield sections 115–125 marked covered=true (back rows
+//     under Legends Suite Club + upper-deck overhang). 114B and 126–129 also
+//     covered (their back rows fall under the Main Level overhang). 108–114A
+//     and 130–136 are NOT majority-covered.
+//   • RF Bleachers 201–204 marked covered=true — the Bleacher Café roof and
+//     Mohegan Sun Sports Bar structure shade portions in the afternoon.
+//     Mohegan Sun and Bleacher Café themselves are indoor/covered club spaces.
+//   • LF Bleachers 235–239 marked covered=false — shadedseats: "fully exposed
+//     and endure relentless sun throughout the game."
+//   • Main Level 205–234: marked covered=true. Per RateYourSeats, ~the last
+//     10 of ~25 rows are under cover, plus the upper-deck overhang above
+//     creates significant overhead structure. Sections 215/216 are the
+//     premium Champions Suite (indoor club, level=suite). 217–221B is the
+//     H&R Block / Delta Sky360° Suite area directly behind HP at Main Level
+//     (level=suite). 230–233 marked as Audi Club Section adjacent to the
+//     dedicated Audi Yankees Club lounge.
+//   • Terrace 305–334: all covered=true. Jim Beam Suites 317–321 marked
+//     level=suite (premium club behind HP). All other Terrace sections are
+//     covered by the Grandstand frieze and concourse structure overhead.
+//   • Grandstand 405–434B: all covered=true. The decorative iconic frieze
+//     caps the back rows of every Grandstand section; the upper-deck
+//     structure shadows most rows.
+//   • Mohegan Sun Sports Bar / Bleacher Café / Audi Yankees Club / Pepsi
+//     Lounge are standalone non-numbered ticketed areas; included with
+//     slugged IDs.
+//   • Pepsi Lounge: indoor lounge on the Main Level concourse behind HP
+//     (compass ~235°, level=club, span=30° wide because the lounge covers a
+//     larger angular footprint than a single bowl wedge).
 
 import { DetailedSection, Vector3D, RowDetail } from '../../../types/stadium-complete';
 
-// Helper function to generate rows
+const ORIENTATION_DEG = 55;
+
+function normalize(deg: number): number {
+  return ((deg % 360) + 360) % 360;
+}
+
+/** Convert a research compass bearing (FROM home plate TO section center)
+ *  to the calculator's stadium-local baseAngle convention (start of section). */
+function convertCompass(compassCenter: number, angleSpan: number): number {
+  const localCenter = normalize(ORIENTATION_DEG + 90 - compassCenter);
+  return normalize(localCenter - angleSpan / 2);
+}
+
 function generateRows(
-  startRow: number | string,
-  endRow: number | string,
+  count: number,
   seatsPerRow: number,
   baseElevation: number,
   rake: number,
-  covered: boolean = false
+  covered: boolean,
 ): RowDetail[] {
   const rows: RowDetail[] = [];
   const rowHeight = 2.5;
   const rowDepth = 2.8;
-  
-  const isLetterRows = typeof startRow === 'string';
-  
-  if (isLetterRows) {
-    const startCode = (startRow as string).charCodeAt(0);
-    const endCode = (endRow as string).charCodeAt(0);
-    
-    for (let i = startCode; i <= endCode; i++) {
-      const rowNum = i - startCode;
-      rows.push({
-        rowNumber: String.fromCharCode(i),
-        seats: seatsPerRow - Math.floor(rowNum * 0.2),
-        elevation: baseElevation + (rowNum * rowHeight * Math.sin(rake * Math.PI / 180)),
-        depth: rowNum * rowDepth,
-        covered: covered,
-        overhangHeight: covered ? 30 - (rowNum * 0.3) : undefined
-      });
-    }
-  } else {
-    for (let i = startRow as number; i <= (endRow as number); i++) {
-      const rowNum = i - (startRow as number);
-      rows.push({
-        rowNumber: i.toString(),
-        seats: seatsPerRow - Math.floor(rowNum * 0.2),
-        elevation: baseElevation + (rowNum * rowHeight * Math.sin(rake * Math.PI / 180)),
-        depth: rowNum * rowDepth,
-        covered: covered,
-        overhangHeight: covered ? 30 - (rowNum * 0.3) : undefined
-      });
-    }
+  for (let i = 1; i <= count; i++) {
+    const rowNum = i - 1;
+    rows.push({
+      rowNumber: i.toString(),
+      seats: Math.max(4, seatsPerRow - Math.floor(rowNum * 0.2)),
+      elevation: baseElevation + rowNum * rowHeight * Math.sin((rake * Math.PI) / 180),
+      depth: rowNum * rowDepth,
+      covered,
+      overhangHeight: covered ? Math.max(8, 30 - rowNum * 0.3) : undefined,
+    });
   }
-  
   return rows;
 }
 
-export const yankeesSections: DetailedSection[] = [
-  {
-    id: '100',
-    name: 'Field Level 100',
-    level: 'field',
-    baseAngle: 40,
-    angleSpan: 5,
-    rows: generateRows('A', 'N', 18, 0, 18, false),
-    vertices3D: [
-      { x: 38, y: 32, z: 0 },
-      { x: 35, y: 35, z: 0 },
-      { x: 48, y: 48, z: 8 },
-      { x: 52, y: 44, z: 8 }
-    ] as Vector3D[],
-    covered: false,
-    distance: 55,
-    height: 0,
-    rake: 18
-  },
-  {
-    id: '101',
-    name: 'Field Level 101',
-    level: 'field',
-    baseAngle: 45,
-    angleSpan: 5,
-    rows: generateRows('A', 'N', 18, 0, 18, false),
-    vertices3D: [
-      { x: 35, y: 35, z: 0 },
-      { x: 32, y: 38, z: 0 },
-      { x: 44, y: 52, z: 8 },
-      { x: 48, y: 48, z: 8 }
-    ] as Vector3D[],
-    covered: false,
-    distance: 55,
-    height: 0,
-    rake: 18
-  },
-  {
-    id: '102',
-    name: 'Field Level 102',
-    level: 'field',
-    baseAngle: 50,
-    angleSpan: 5,
-    rows: generateRows('A', 'N', 18, 0, 18, false),
-    vertices3D: [
-      { x: 32, y: 38, z: 0 },
-      { x: 29, y: 41, z: 0 },
-      { x: 39, y: 56, z: 8 },
-      { x: 44, y: 52, z: 8 }
-    ] as Vector3D[],
-    covered: false,
-    distance: 55,
-    height: 0,
-    rake: 18
-  },
-  {
-    id: '103',
-    name: 'Field Level 103',
-    level: 'field',
-    baseAngle: 55,
-    angleSpan: 5,
-    rows: generateRows('A', 'N', 18, 0, 18, false),
-    vertices3D: [
-      { x: 29, y: 41, z: 0 },
-      { x: 25, y: 43, z: 0 },
-      { x: 34, y: 59, z: 8 },
-      { x: 39, y: 56, z: 8 }
-    ] as Vector3D[],
-    covered: false,
-    distance: 55,
-    height: 0,
-    rake: 18
-  },
-  {
-    id: '104',
-    name: 'Field Level 104',
-    level: 'field',
-    baseAngle: 60,
-    angleSpan: 5,
-    rows: generateRows('A', 'N', 18, 0, 18, false),
-    vertices3D: [
-      { x: 25, y: 43, z: 0 },
-      { x: 21, y: 45, z: 0 },
-      { x: 29, y: 62, z: 8 },
-      { x: 34, y: 59, z: 8 }
-    ] as Vector3D[],
-    covered: false,
-    distance: 55,
-    height: 0,
-    rake: 18
-  },
-  {
-    id: '105',
-    name: 'Field Level 105',
-    level: 'field',
-    baseAngle: 65,
-    angleSpan: 5,
-    rows: generateRows('A', 'N', 18, 0, 18, false),
-    vertices3D: [
-      { x: 21, y: 45, z: 0 },
-      { x: 17, y: 47, z: 0 },
-      { x: 23, y: 64, z: 8 },
-      { x: 29, y: 62, z: 8 }
-    ] as Vector3D[],
-    covered: false,
-    distance: 55,
-    height: 0,
-    rake: 18
-  },
-  {
-    id: '110',
-    name: 'Field Level 110',
-    level: 'field',
-    baseAngle: 75,
-    angleSpan: 8,
-    rows: generateRows('A', 'V', 22, 0, 20, false),
-    vertices3D: [
-      { x: 14, y: 53, z: 0 },
-      { x: 7, y: 55, z: 0 },
-      { x: 10, y: 84, z: 12 },
-      { x: 22, y: 82, z: 12 }
-    ] as Vector3D[],
-    covered: false,
-    distance: 65,
-    height: 0,
-    rake: 20
-  },
-  {
-    id: '111',
-    name: 'Field Level 111',
-    level: 'field',
-    baseAngle: 83,
-    angleSpan: 8,
-    rows: generateRows('A', 'V', 22, 0, 20, false),
-    vertices3D: [
-      { x: 7, y: 55, z: 0 },
-      { x: -1, y: 55, z: 0 },
-      { x: -1, y: 85, z: 12 },
-      { x: 10, y: 84, z: 12 }
-    ] as Vector3D[],
-    covered: false,
-    distance: 65,
-    height: 0,
-    rake: 20
-  },
-  {
-    id: '112',
-    name: 'Field Level 112',
-    level: 'field',
-    baseAngle: 91,
-    angleSpan: 8,
-    rows: generateRows('A', 'V', 22, 0, 20, false),
-    vertices3D: [
-      { x: -1, y: 55, z: 0 },
-      { x: -9, y: 54, z: 0 },
-      { x: -13, y: 84, z: 12 },
-      { x: -1, y: 85, z: 12 }
-    ] as Vector3D[],
-    covered: false,
-    distance: 65,
-    height: 0,
-    rake: 20
-  },
-  {
-    id: '113',
-    name: 'Field Level 113',
-    level: 'field',
-    baseAngle: 99,
-    angleSpan: 8,
-    rows: generateRows('A', 'V', 22, 0, 20, false),
-    vertices3D: [
-      { x: -9, y: 54, z: 0 },
-      { x: -16, y: 53, z: 0 },
-      { x: -25, y: 81, z: 12 },
-      { x: -13, y: 84, z: 12 }
-    ] as Vector3D[],
-    covered: false,
-    distance: 65,
-    height: 0,
-    rake: 20
-  },
-  {
-    id: '114',
-    name: 'Field Level 114',
-    level: 'field',
-    baseAngle: 107,
-    angleSpan: 8,
-    rows: generateRows('A', 'V', 22, 0, 20, false),
-    vertices3D: [
-      { x: -16, y: 53, z: 0 },
-      { x: -23, y: 50, z: 0 },
-      { x: -36, y: 77, z: 12 },
-      { x: -25, y: 81, z: 12 }
-    ] as Vector3D[],
-    covered: false,
-    distance: 65,
-    height: 0,
-    rake: 20
-  },
-  {
-    id: '115',
-    name: 'Field Level 115',
-    level: 'field',
-    baseAngle: 115,
-    angleSpan: 8,
-    rows: generateRows('A', 'V', 22, 0, 20, false),
-    vertices3D: [
-      { x: -23, y: 50, z: 0 },
-      { x: -30, y: 46, z: 0 },
-      { x: -46, y: 71, z: 12 },
-      { x: -36, y: 77, z: 12 }
-    ] as Vector3D[],
-    covered: false,
-    distance: 65,
-    height: 0,
-    rake: 20
-  },
-  {
-    id: '116',
-    name: 'Field Level 116',
-    level: 'field',
-    baseAngle: 35,
-    angleSpan: 8,
-    rows: generateRows('A', 'V', 22, 0, 20, false),
-    vertices3D: [
-      { x: 45, y: 32, z: 0 },
-      { x: 40, y: 38, z: 0 },
-      { x: 62, y: 58, z: 12 },
-      { x: 70, y: 49, z: 12 }
-    ] as Vector3D[],
-    covered: false,
-    distance: 65,
-    height: 0,
-    rake: 20
-  },
-  {
-    id: '117',
-    name: 'Field Level 117',
-    level: 'field',
-    baseAngle: 27,
-    angleSpan: 8,
-    rows: generateRows('A', 'V', 22, 0, 20, false),
-    vertices3D: [
-      { x: 49, y: 25, z: 0 },
-      { x: 45, y: 32, z: 0 },
-      { x: 70, y: 49, z: 12 },
-      { x: 76, y: 39, z: 12 }
-    ] as Vector3D[],
-    covered: false,
-    distance: 65,
-    height: 0,
-    rake: 20
-  },
-  {
-    id: '118',
-    name: 'Field Level 118',
-    level: 'field',
-    baseAngle: 19,
-    angleSpan: 8,
-    rows: generateRows('A', 'V', 22, 0, 20, false),
-    vertices3D: [
-      { x: 52, y: 18, z: 0 },
-      { x: 49, y: 25, z: 0 },
-      { x: 76, y: 39, z: 12 },
-      { x: 80, y: 28, z: 12 }
-    ] as Vector3D[],
-    covered: false,
-    distance: 65,
-    height: 0,
-    rake: 20
-  },
-  {
-    id: '119',
-    name: 'Field Level 119',
-    level: 'field',
-    baseAngle: 11,
-    angleSpan: 8,
-    rows: generateRows('A', 'V', 22, 0, 20, false),
-    vertices3D: [
-      { x: 54, y: 10, z: 0 },
-      { x: 52, y: 18, z: 0 },
-      { x: 80, y: 28, z: 12 },
-      { x: 83, y: 16, z: 12 }
-    ] as Vector3D[],
-    covered: false,
-    distance: 65,
-    height: 0,
-    rake: 20
-  },
-  {
-    id: '120',
-    name: 'Field Level 120',
-    level: 'field',
-    baseAngle: 3,
-    angleSpan: 8,
-    rows: generateRows('A', 'V', 22, 0, 20, false),
-    vertices3D: [
-      { x: 55, y: 3, z: 0 },
-      { x: 54, y: 10, z: 0 },
-      { x: 83, y: 16, z: 12 },
-      { x: 85, y: 4, z: 12 }
-    ] as Vector3D[],
-    covered: false,
-    distance: 65,
-    height: 0,
-    rake: 20
-  },
-  {
-    id: '121',
-    name: 'Field Level 121',
-    level: 'field',
-    baseAngle: 355,
-    angleSpan: 8,
-    rows: generateRows('A', 'V', 22, 0, 20, false),
-    vertices3D: [
-      { x: 55, y: -5, z: 0 },
-      { x: 55, y: 3, z: 0 },
-      { x: 85, y: 4, z: 12 },
-      { x: 85, y: -7, z: 12 }
-    ] as Vector3D[],
-    covered: false,
-    distance: 65,
-    height: 0,
-    rake: 20
-  },
-  {
-    id: '130',
-    name: 'Lower Level 130',
-    level: 'lower',
-    baseAngle: 20,
-    angleSpan: 5,
-    rows: generateRows('1', '32', 24, 15, 24, false),
-    vertices3D: [
-      { x: 80, y: 29, z: 15 },
-      { x: 77, y: 36, z: 15 },
-      { x: 113, y: 53, z: 38 },
-      { x: 117, y: 43, z: 38 }
-    ] as Vector3D[],
-    covered: false,
-    distance: 95,
-    height: 15,
-    rake: 24
-  },
-  {
-    id: '131',
-    name: 'Lower Level 131',
-    level: 'lower',
-    baseAngle: 25,
-    angleSpan: 5,
-    rows: generateRows('1', '32', 24, 15, 24, false),
-    vertices3D: [
-      { x: 77, y: 36, z: 15 },
-      { x: 74, y: 42, z: 15 },
-      { x: 108, y: 62, z: 38 },
-      { x: 113, y: 53, z: 38 }
-    ] as Vector3D[],
-    covered: false,
-    distance: 95,
-    height: 15,
-    rake: 24
-  },
-  {
-    id: '132',
-    name: 'Lower Level 132',
-    level: 'lower',
-    baseAngle: 30,
-    angleSpan: 5,
-    rows: generateRows('1', '32', 24, 15, 24, false),
-    vertices3D: [
-      { x: 74, y: 42, z: 15 },
-      { x: 70, y: 49, z: 15 },
-      { x: 102, y: 72, z: 38 },
-      { x: 108, y: 62, z: 38 }
-    ] as Vector3D[],
-    covered: false,
-    distance: 95,
-    height: 15,
-    rake: 24
-  },
-  {
-    id: '133',
-    name: 'Lower Level 133',
-    level: 'lower',
-    baseAngle: 35,
-    angleSpan: 5,
-    rows: generateRows('1', '32', 24, 15, 24, false),
-    vertices3D: [
-      { x: 70, y: 49, z: 15 },
-      { x: 65, y: 55, z: 15 },
-      { x: 96, y: 80, z: 38 },
-      { x: 102, y: 72, z: 38 }
-    ] as Vector3D[],
-    covered: false,
-    distance: 95,
-    height: 15,
-    rake: 24
-  },
-  {
-    id: '134',
-    name: 'Lower Level 134',
-    level: 'lower',
-    baseAngle: 40,
-    angleSpan: 5,
-    rows: generateRows('1', '32', 24, 15, 24, false),
-    vertices3D: [
-      { x: 65, y: 55, z: 15 },
-      { x: 60, y: 60, z: 15 },
-      { x: 88, y: 88, z: 38 },
-      { x: 96, y: 80, z: 38 }
-    ] as Vector3D[],
-    covered: false,
-    distance: 95,
-    height: 15,
-    rake: 24
-  },
-  {
-    id: '135',
-    name: 'Lower Level 135',
-    level: 'lower',
-    baseAngle: 45,
-    angleSpan: 5,
-    rows: generateRows('1', '32', 24, 15, 24, false),
-    vertices3D: [
-      { x: 60, y: 60, z: 15 },
-      { x: 55, y: 65, z: 15 },
-      { x: 80, y: 96, z: 38 },
-      { x: 88, y: 88, z: 38 }
-    ] as Vector3D[],
-    covered: false,
-    distance: 95,
-    height: 15,
-    rake: 24
-  },
-  {
-    id: '136',
-    name: 'Lower Level 136',
-    level: 'lower',
-    baseAngle: 50,
-    angleSpan: 5,
-    rows: generateRows('1', '32', 24, 15, 24, false),
-    vertices3D: [
-      { x: 55, y: 65, z: 15 },
-      { x: 49, y: 70, z: 15 },
-      { x: 72, y: 102, z: 38 },
-      { x: 80, y: 96, z: 38 }
-    ] as Vector3D[],
-    covered: false,
-    distance: 95,
-    height: 15,
-    rake: 24
-  },
-  {
-    id: '137',
-    name: 'Lower Level 137',
-    level: 'lower',
-    baseAngle: 55,
-    angleSpan: 5,
-    rows: generateRows('1', '32', 24, 15, 24, false),
-    vertices3D: [
-      { x: 49, y: 70, z: 15 },
-      { x: 43, y: 74, z: 15 },
-      { x: 63, y: 108, z: 38 },
-      { x: 72, y: 102, z: 38 }
-    ] as Vector3D[],
-    covered: false,
-    distance: 95,
-    height: 15,
-    rake: 24
-  },
-  {
-    id: '138',
-    name: 'Lower Level 138',
-    level: 'lower',
-    baseAngle: 60,
-    angleSpan: 5,
-    rows: generateRows('1', '32', 24, 15, 24, false),
-    vertices3D: [
-      { x: 43, y: 74, z: 15 },
-      { x: 36, y: 77, z: 15 },
-      { x: 53, y: 113, z: 38 },
-      { x: 63, y: 108, z: 38 }
-    ] as Vector3D[],
-    covered: false,
-    distance: 95,
-    height: 15,
-    rake: 24
-  },
-  {
-    id: '139',
-    name: 'Lower Level 139',
-    level: 'lower',
-    baseAngle: 65,
-    angleSpan: 5,
-    rows: generateRows('1', '32', 24, 15, 24, false),
-    vertices3D: [
-      { x: 36, y: 77, z: 15 },
-      { x: 29, y: 80, z: 15 },
-      { x: 43, y: 117, z: 38 },
-      { x: 53, y: 113, z: 38 }
-    ] as Vector3D[],
-    covered: false,
-    distance: 95,
-    height: 15,
-    rake: 24
-  },
-  {
-    id: '140',
-    name: 'Lower Level 140',
-    level: 'lower',
-    baseAngle: 70,
-    angleSpan: 5,
-    rows: generateRows('1', '32', 24, 15, 24, false),
-    vertices3D: [
-      { x: 29, y: 80, z: 15 },
-      { x: 22, y: 82, z: 15 },
-      { x: 32, y: 121, z: 38 },
-      { x: 43, y: 117, z: 38 }
-    ] as Vector3D[],
-    covered: false,
-    distance: 95,
-    height: 15,
-    rake: 24
-  },
-  {
-    id: '141',
-    name: 'Lower Level 141',
-    level: 'lower',
-    baseAngle: 75,
-    angleSpan: 5,
-    rows: generateRows('1', '32', 24, 15, 24, false),
-    vertices3D: [
-      { x: 22, y: 82, z: 15 },
-      { x: 15, y: 84, z: 15 },
-      { x: 22, y: 123, z: 38 },
-      { x: 32, y: 121, z: 38 }
-    ] as Vector3D[],
-    covered: false,
-    distance: 95,
-    height: 15,
-    rake: 24
-  },
-  {
-    id: '142',
-    name: 'Lower Level 142',
-    level: 'lower',
-    baseAngle: 80,
-    angleSpan: 5,
-    rows: generateRows('1', '32', 24, 15, 24, false),
-    vertices3D: [
-      { x: 15, y: 84, z: 15 },
-      { x: 7, y: 85, z: 15 },
-      { x: 11, y: 125, z: 38 },
-      { x: 22, y: 123, z: 38 }
-    ] as Vector3D[],
-    covered: false,
-    distance: 95,
-    height: 15,
-    rake: 24
-  },
-  {
-    id: '143',
-    name: 'Lower Level 143',
-    level: 'lower',
-    baseAngle: 85,
-    angleSpan: 5,
-    rows: generateRows('1', '32', 24, 15, 24, false),
-    vertices3D: [
-      { x: 7, y: 85, z: 15 },
-      { x: 0, y: 85, z: 15 },
-      { x: 0, y: 125, z: 38 },
-      { x: 11, y: 125, z: 38 }
-    ] as Vector3D[],
-    covered: false,
-    distance: 95,
-    height: 15,
-    rake: 24
-  },
-  {
-    id: 'CL-300',
-    name: 'Club Level 300',
-    level: 'club',
-    baseAngle: 35,
-    angleSpan: 5,
-    rows: generateRows('A', 'L', 20, 30, 26, true),
-    vertices3D: [
-      { x: 102, y: 72, z: 30 },
-      { x: 96, y: 80, z: 30 },
-      { x: 115, y: 96, z: 45 },
-      { x: 123, y: 86, z: 45 }
-    ] as Vector3D[],
-    covered: true,
-    distance: 135,
-    height: 30,
-    rake: 26
-  },
-  {
-    id: 'CL-301',
-    name: 'Club Level 301',
-    level: 'club',
-    baseAngle: 40,
-    angleSpan: 5,
-    rows: generateRows('A', 'L', 20, 30, 26, true),
-    vertices3D: [
-      { x: 96, y: 80, z: 30 },
-      { x: 88, y: 88, z: 30 },
-      { x: 106, y: 106, z: 45 },
-      { x: 115, y: 96, z: 45 }
-    ] as Vector3D[],
-    covered: true,
-    distance: 135,
-    height: 30,
-    rake: 26
-  },
-  {
-    id: 'CL-302',
-    name: 'Club Level 302',
-    level: 'club',
-    baseAngle: 45,
-    angleSpan: 5,
-    rows: generateRows('A', 'L', 20, 30, 26, true),
-    vertices3D: [
-      { x: 88, y: 88, z: 30 },
-      { x: 80, y: 96, z: 30 },
-      { x: 96, y: 115, z: 45 },
-      { x: 106, y: 106, z: 45 }
-    ] as Vector3D[],
-    covered: true,
-    distance: 135,
-    height: 30,
-    rake: 26
-  },
-  {
-    id: 'CL-303',
-    name: 'Club Level 303',
-    level: 'club',
-    baseAngle: 50,
-    angleSpan: 5,
-    rows: generateRows('A', 'L', 20, 30, 26, true),
-    vertices3D: [
-      { x: 80, y: 96, z: 30 },
-      { x: 72, y: 102, z: 30 },
-      { x: 86, y: 123, z: 45 },
-      { x: 96, y: 115, z: 45 }
-    ] as Vector3D[],
-    covered: true,
-    distance: 135,
-    height: 30,
-    rake: 26
-  },
-  {
-    id: 'CL-304',
-    name: 'Club Level 304',
-    level: 'club',
-    baseAngle: 55,
-    angleSpan: 5,
-    rows: generateRows('A', 'L', 20, 30, 26, true),
-    vertices3D: [
-      { x: 72, y: 102, z: 30 },
-      { x: 63, y: 108, z: 30 },
-      { x: 75, y: 130, z: 45 },
-      { x: 86, y: 123, z: 45 }
-    ] as Vector3D[],
-    covered: true,
-    distance: 135,
-    height: 30,
-    rake: 26
-  },
-  {
-    id: 'CL-305',
-    name: 'Club Level 305',
-    level: 'club',
-    baseAngle: 60,
-    angleSpan: 5,
-    rows: generateRows('A', 'L', 20, 30, 26, true),
-    vertices3D: [
-      { x: 63, y: 108, z: 30 },
-      { x: 53, y: 113, z: 30 },
-      { x: 63, y: 136, z: 45 },
-      { x: 75, y: 130, z: 45 }
-    ] as Vector3D[],
-    covered: true,
-    distance: 135,
-    height: 30,
-    rake: 26
-  },
-  {
-    id: 'CL-306',
-    name: 'Club Level 306',
-    level: 'club',
-    baseAngle: 65,
-    angleSpan: 5,
-    rows: generateRows('A', 'L', 20, 30, 26, true),
-    vertices3D: [
-      { x: 53, y: 113, z: 30 },
-      { x: 43, y: 117, z: 30 },
-      { x: 51, y: 141, z: 45 },
-      { x: 63, y: 136, z: 45 }
-    ] as Vector3D[],
-    covered: true,
-    distance: 135,
-    height: 30,
-    rake: 26
-  },
-  {
-    id: 'CL-307',
-    name: 'Club Level 307',
-    level: 'club',
-    baseAngle: 70,
-    angleSpan: 5,
-    rows: generateRows('A', 'L', 20, 30, 26, true),
-    vertices3D: [
-      { x: 43, y: 117, z: 30 },
-      { x: 32, y: 121, z: 30 },
-      { x: 39, y: 145, z: 45 },
-      { x: 51, y: 141, z: 45 }
-    ] as Vector3D[],
-    covered: true,
-    distance: 135,
-    height: 30,
-    rake: 26
-  },
-  {
-    id: '400',
-    name: 'Upper Level 400',
-    level: 'upper',
-    baseAngle: 25,
-    angleSpan: 5,
-    rows: generateRows('1', '35', 26, 40, 28, false),
-    vertices3D: [
-      { x: 136, y: 63, z: 40 },
-      { x: 130, y: 75, z: 40 },
-      { x: 173, y: 100, z: 78 },
-      { x: 181, y: 85, z: 78 }
-    ] as Vector3D[],
-    covered: false,
-    distance: 175,
-    height: 40,
-    rake: 28
-  },
-  {
-    id: '401',
-    name: 'Upper Level 401',
-    level: 'upper',
-    baseAngle: 30,
-    angleSpan: 5,
-    rows: generateRows('1', '35', 26, 40, 28, false),
-    vertices3D: [
-      { x: 130, y: 75, z: 40 },
-      { x: 123, y: 86, z: 40 },
-      { x: 164, y: 115, z: 78 },
-      { x: 173, y: 100, z: 78 }
-    ] as Vector3D[],
-    covered: false,
-    distance: 175,
-    height: 40,
-    rake: 28
-  },
-  {
-    id: '402',
-    name: 'Upper Level 402',
-    level: 'upper',
-    baseAngle: 35,
-    angleSpan: 5,
-    rows: generateRows('1', '35', 26, 40, 28, true),
-    vertices3D: [
-      { x: 123, y: 86, z: 40 },
-      { x: 115, y: 96, z: 40 },
-      { x: 153, y: 129, z: 78 },
-      { x: 164, y: 115, z: 78 }
-    ] as Vector3D[],
-    covered: true,
-    distance: 175,
-    height: 40,
-    rake: 28
-  },
-  {
-    id: '403',
-    name: 'Upper Level 403',
-    level: 'upper',
-    baseAngle: 40,
-    angleSpan: 5,
-    rows: generateRows('1', '35', 26, 40, 28, true),
-    vertices3D: [
-      { x: 115, y: 96, z: 40 },
-      { x: 106, y: 106, z: 40 },
-      { x: 141, y: 141, z: 78 },
-      { x: 153, y: 129, z: 78 }
-    ] as Vector3D[],
-    covered: true,
-    distance: 175,
-    height: 40,
-    rake: 28
-  },
-  {
-    id: '404',
-    name: 'Upper Level 404',
-    level: 'upper',
-    baseAngle: 45,
-    angleSpan: 5,
-    rows: generateRows('1', '35', 26, 40, 28, true),
-    vertices3D: [
-      { x: 106, y: 106, z: 40 },
-      { x: 96, y: 115, z: 40 },
-      { x: 129, y: 153, z: 78 },
-      { x: 141, y: 141, z: 78 }
-    ] as Vector3D[],
-    covered: true,
-    distance: 175,
-    height: 40,
-    rake: 28
-  },
-  {
-    id: '405',
-    name: 'Upper Level 405',
-    level: 'upper',
-    baseAngle: 50,
-    angleSpan: 5,
-    rows: generateRows('1', '35', 26, 40, 28, true),
-    vertices3D: [
-      { x: 96, y: 115, z: 40 },
-      { x: 86, y: 123, z: 40 },
-      { x: 115, y: 164, z: 78 },
-      { x: 129, y: 153, z: 78 }
-    ] as Vector3D[],
-    covered: true,
-    distance: 175,
-    height: 40,
-    rake: 28
-  },
-  {
-    id: '406',
-    name: 'Upper Level 406',
-    level: 'upper',
-    baseAngle: 55,
-    angleSpan: 5,
-    rows: generateRows('1', '35', 26, 40, 28, true),
-    vertices3D: [
-      { x: 86, y: 123, z: 40 },
-      { x: 75, y: 130, z: 40 },
-      { x: 100, y: 173, z: 78 },
-      { x: 115, y: 164, z: 78 }
-    ] as Vector3D[],
-    covered: true,
-    distance: 175,
-    height: 40,
-    rake: 28
-  },
-  {
-    id: '407',
-    name: 'Upper Level 407',
-    level: 'upper',
-    baseAngle: 60,
-    angleSpan: 5,
-    rows: generateRows('1', '35', 26, 40, 28, true),
-    vertices3D: [
-      { x: 75, y: 130, z: 40 },
-      { x: 63, y: 136, z: 40 },
-      { x: 85, y: 181, z: 78 },
-      { x: 100, y: 173, z: 78 }
-    ] as Vector3D[],
-    covered: true,
-    distance: 175,
-    height: 40,
-    rake: 28
-  },
-  {
-    id: '408',
-    name: 'Upper Level 408',
-    level: 'upper',
-    baseAngle: 65,
-    angleSpan: 5,
-    rows: generateRows('1', '35', 26, 40, 28, true),
-    vertices3D: [
-      { x: 63, y: 136, z: 40 },
-      { x: 51, y: 141, z: 40 },
-      { x: 68, y: 188, z: 78 },
-      { x: 85, y: 181, z: 78 }
-    ] as Vector3D[],
-    covered: true,
-    distance: 175,
-    height: 40,
-    rake: 28
-  },
-  {
-    id: '409',
-    name: 'Upper Level 409',
-    level: 'upper',
-    baseAngle: 70,
-    angleSpan: 5,
-    rows: generateRows('1', '35', 26, 40, 28, true),
-    vertices3D: [
-      { x: 51, y: 141, z: 40 },
-      { x: 39, y: 145, z: 40 },
-      { x: 52, y: 193, z: 78 },
-      { x: 68, y: 188, z: 78 }
-    ] as Vector3D[],
-    covered: true,
-    distance: 175,
-    height: 40,
-    rake: 28
-  },
-  {
-    id: '410',
-    name: 'Upper Level 410',
-    level: 'upper',
-    baseAngle: 75,
-    angleSpan: 5,
-    rows: generateRows('1', '35', 26, 40, 28, false),
-    vertices3D: [
-      { x: 39, y: 145, z: 40 },
-      { x: 26, y: 148, z: 40 },
-      { x: 35, y: 197, z: 78 },
-      { x: 52, y: 193, z: 78 }
-    ] as Vector3D[],
-    covered: false,
-    distance: 175,
-    height: 40,
-    rake: 28
-  },
-  {
-    id: '411',
-    name: 'Upper Level 411',
-    level: 'upper',
-    baseAngle: 80,
-    angleSpan: 5,
-    rows: generateRows('1', '35', 26, 40, 28, false),
-    vertices3D: [
-      { x: 26, y: 148, z: 40 },
-      { x: 13, y: 149, z: 40 },
-      { x: 17, y: 199, z: 78 },
-      { x: 35, y: 197, z: 78 }
-    ] as Vector3D[],
-    covered: false,
-    distance: 175,
-    height: 40,
-    rake: 28
-  },
-  {
-    id: 'BL-140',
-    name: 'Bleachers 140',
-    level: 'field',
-    baseAngle: 125,
-    angleSpan: 12,
-    rows: generateRows('A', 'T', 24, 8, 20, false),
-    vertices3D: [
-      { x: -115, y: 164, z: 8 },
-      { x: -146, y: 136, z: 8 },
-      { x: -179, y: 167, z: 25 },
-      { x: -141, y: 201, z: 25 }
-    ] as Vector3D[],
-    covered: false,
-    distance: 220,
-    height: 8,
-    rake: 20
-  },
-  {
-    id: 'BL-141',
-    name: 'Bleachers 141',
-    level: 'field',
-    baseAngle: 140,
-    angleSpan: 12,
-    rows: generateRows('A', 'T', 24, 8, 20, false),
-    vertices3D: [
-      { x: -153, y: 129, z: 8 },
-      { x: -177, y: 94, z: 8 },
-      { x: -216, y: 115, z: 25 },
-      { x: -188, y: 157, z: 25 }
-    ] as Vector3D[],
-    covered: false,
-    distance: 220,
-    height: 8,
-    rake: 20
-  },
-  {
-    id: 'BL-142',
-    name: 'Bleachers 142',
-    level: 'field',
-    baseAngle: 155,
-    angleSpan: 12,
-    rows: generateRows('A', 'T', 24, 8, 20, false),
-    vertices3D: [
-      { x: -181, y: 85, z: 8 },
-      { x: -195, y: 45, z: 8 },
-      { x: -239, y: 55, z: 25 },
-      { x: -222, y: 104, z: 25 }
-    ] as Vector3D[],
-    covered: false,
-    distance: 220,
-    height: 8,
-    rake: 20
-  },
-  {
-    id: 'BL-143',
-    name: 'Bleachers 143',
-    level: 'field',
-    baseAngle: 170,
-    angleSpan: 12,
-    rows: generateRows('A', 'T', 24, 8, 20, false),
-    vertices3D: [
-      { x: -197, y: 35, z: 8 },
-      { x: -200, y: -7, z: 8 },
-      { x: -245, y: -9, z: 25 },
-      { x: -241, y: 43, z: 25 }
-    ] as Vector3D[],
-    covered: false,
-    distance: 220,
-    height: 8,
-    rake: 20
-  },
-  {
-    id: 'BL-144',
-    name: 'Bleachers 144',
-    level: 'field',
-    baseAngle: 345,
-    angleSpan: 12,
-    rows: generateRows('A', 'T', 24, 8, 20, false),
-    vertices3D: [
-      { x: 193, y: -52, z: 8 },
-      { x: 200, y: -10, z: 8 },
-      { x: 245, y: -13, z: 25 },
-      { x: 237, y: -63, z: 25 }
-    ] as Vector3D[],
-    covered: false,
-    distance: 220,
-    height: 8,
-    rake: 20
-  },
-  {
-    id: 'BL-145',
-    name: 'Bleachers 145',
-    level: 'field',
-    baseAngle: 330,
-    angleSpan: 12,
-    rows: generateRows('A', 'T', 24, 8, 20, false),
-    vertices3D: [
-      { x: 173, y: -100, z: 8 },
-      { x: 190, y: -62, z: 8 },
-      { x: 233, y: -76, z: 25 },
-      { x: 212, y: -123, z: 25 }
-    ] as Vector3D[],
-    covered: false,
-    distance: 220,
-    height: 8,
-    rake: 20
-  },
-  {
-    id: 'BL-146',
-    name: 'Bleachers 146',
-    level: 'field',
-    baseAngle: 315,
-    angleSpan: 12,
-    rows: generateRows('A', 'T', 24, 8, 20, false),
-    vertices3D: [
-      { x: 141, y: -141, z: 8 },
-      { x: 168, y: -109, z: 8 },
-      { x: 205, y: -133, z: 25 },
-      { x: 173, y: -173, z: 25 }
-    ] as Vector3D[],
-    covered: false,
-    distance: 220,
-    height: 8,
-    rake: 20
-  },
-  {
-    id: 'BL-147',
-    name: 'Bleachers 147',
-    level: 'field',
-    baseAngle: 300,
-    angleSpan: 12,
-    rows: generateRows('A', 'T', 24, 8, 20, false),
-    vertices3D: [
-      { x: 100, y: -173, z: 8 },
-      { x: 134, y: -149, z: 8 },
-      { x: 164, y: -182, z: 25 },
-      { x: 123, y: -212, z: 25 }
-    ] as Vector3D[],
-    covered: false,
-    distance: 220,
-    height: 8,
-    rake: 20
-  },
-  {
-    id: 'SUITE-1',
-    name: 'Suite 1',
-    level: 'suite',
-    baseAngle: 45,
-    angleSpan: 5,
-    rows: generateRows('1', '1', 20, 35, 0, true),
-    vertices3D: [
-      { x: 99, y: 99, z: 35 },
-      { x: 90, y: 107, z: 35 },
-      { x: 103, y: 123, z: 35 },
-      { x: 113, y: 113, z: 35 }
-    ] as Vector3D[],
-    covered: true,
-    distance: 150,
-    height: 35,
-    rake: 0
-  },
-  {
-    id: 'SUITE-2',
-    name: 'Suite 2',
-    level: 'suite',
-    baseAngle: 50,
-    angleSpan: 5,
-    rows: generateRows('1', '1', 20, 35, 0, true),
-    vertices3D: [
-      { x: 90, y: 107, z: 35 },
-      { x: 80, y: 115, z: 35 },
-      { x: 92, y: 131, z: 35 },
-      { x: 103, y: 123, z: 35 }
-    ] as Vector3D[],
-    covered: true,
-    distance: 150,
-    height: 35,
-    rake: 0
-  },
-  {
-    id: 'SUITE-3',
-    name: 'Suite 3',
-    level: 'suite',
-    baseAngle: 55,
-    angleSpan: 5,
-    rows: generateRows('1', '1', 20, 35, 0, true),
-    vertices3D: [
-      { x: 80, y: 115, z: 35 },
-      { x: 70, y: 121, z: 35 },
-      { x: 80, y: 139, z: 35 },
-      { x: 92, y: 131, z: 35 }
-    ] as Vector3D[],
-    covered: true,
-    distance: 150,
-    height: 35,
-    rake: 0
-  },
-  {
-    id: 'SUITE-4',
-    name: 'Suite 4',
-    level: 'suite',
-    baseAngle: 60,
-    angleSpan: 5,
-    rows: generateRows('1', '1', 20, 35, 0, true),
-    vertices3D: [
-      { x: 70, y: 121, z: 35 },
-      { x: 59, y: 127, z: 35 },
-      { x: 68, y: 145, z: 35 },
-      { x: 80, y: 139, z: 35 }
-    ] as Vector3D[],
-    covered: true,
-    distance: 150,
-    height: 35,
-    rake: 0
-  },
-  {
-    id: 'PARTY-DECK',
-    name: 'Party Deck',
-    level: 'standing',
-    baseAngle: 185,
-    angleSpan: 20,
-    rows: [],
-    vertices3D: [
-      { x: -244, y: -21, z: 25 },
-      { x: -222, y: -104, z: 25 },
-      { x: -240, y: -112, z: 25 },
-      { x: -264, y: -23, z: 25 }
-    ] as Vector3D[],
-    covered: false,
-    distance: 255,
-    height: 25,
-    rake: 0
+function rowsFor(level: DetailedSection['level'], covered: boolean, baseElev: number): RowDetail[] {
+  switch (level) {
+    case 'field':
+      return generateRows(8, 18, baseElev, 12, covered);
+    case 'lower':
+      return generateRows(30, 20, baseElev, 18, covered);
+    case 'club':
+      return generateRows(15, 16, baseElev, 25, covered);
+    case 'upper':
+      return generateRows(25, 18, baseElev, 30, covered);
+    case 'suite':
+      return generateRows(4, 10, baseElev, 0, covered);
+    case 'standing':
+      return [];
+    default:
+      return generateRows(15, 18, baseElev, 20, covered);
   }
+}
+
+function rakeFor(level: DetailedSection['level']): number {
+  switch (level) {
+    case 'field': return 12;
+    case 'lower': return 18;
+    case 'club':  return 25;
+    case 'upper': return 30;
+    case 'suite': return 0;
+    case 'standing': return 0;
+    default: return 20;
+  }
+}
+
+function vertices(
+  baseAngle: number,
+  angleSpan: number,
+  distance: number,
+  height: number,
+): Vector3D[] {
+  const toRad = (deg: number) => (deg * Math.PI) / 180;
+  const inner = Math.max(10, distance - 15);
+  const outer = distance + 15;
+  const topZ = height + 8;
+  return [
+    { x: Math.round(inner * Math.cos(toRad(baseAngle))),               y: Math.round(inner * Math.sin(toRad(baseAngle))),               z: height },
+    { x: Math.round(inner * Math.cos(toRad(baseAngle + angleSpan))),   y: Math.round(inner * Math.sin(toRad(baseAngle + angleSpan))),   z: height },
+    { x: Math.round(outer * Math.cos(toRad(baseAngle + angleSpan))),   y: Math.round(outer * Math.sin(toRad(baseAngle + angleSpan))),   z: topZ  },
+    { x: Math.round(outer * Math.cos(toRad(baseAngle))),               y: Math.round(outer * Math.sin(toRad(baseAngle))),               z: topZ  },
+  ];
+}
+
+interface SectionInput {
+  id: string;
+  name: string;
+  level: DetailedSection['level'];
+  compass: number;
+  span: number;
+  covered: boolean;
+  distance: number;
+  height: number;
+}
+
+const SECTIONS: SectionInput[] = [
+  // Field / Legends Suite — premium field-level between dugouts behind HP
+  { id: '11',  name: 'Field Box 11',       level: 'field', compass: 165, span: 8, covered: false, distance: 130, height: 4 },
+  { id: '12',  name: 'Field Box 12',       level: 'field', compass: 175, span: 7, covered: false, distance: 115, height: 4 },
+  { id: '13',  name: 'Field Box 13',       level: 'field', compass: 185, span: 6, covered: false, distance: 100, height: 4 },
+  { id: '14A', name: 'Legends Suite 14A',  level: 'field', compass: 195, span: 5, covered: false, distance: 90,  height: 4 },
+  { id: '14B', name: 'Legends Suite 14B',  level: 'field', compass: 200, span: 5, covered: false, distance: 85,  height: 6 },
+  { id: '15A', name: 'Legends Suite 15A',  level: 'field', compass: 205, span: 5, covered: false, distance: 78,  height: 4 },
+  { id: '15B', name: 'Legends Suite 15B',  level: 'field', compass: 209, span: 5, covered: false, distance: 75,  height: 6 },
+  { id: '16',  name: 'Legends Suite 16',   level: 'field', compass: 215, span: 5, covered: false, distance: 68,  height: 4 },
+  { id: '17A', name: 'Legends Suite 17A',  level: 'field', compass: 220, span: 5, covered: false, distance: 62,  height: 4 },
+  { id: '17B', name: 'Legends Suite 17B',  level: 'field', compass: 225, span: 5, covered: false, distance: 58,  height: 6 },
+  { id: '18',  name: 'Legends Suite 18',   level: 'field', compass: 230, span: 5, covered: false, distance: 50,  height: 4 },
+  { id: '19',  name: 'Legends Suite 19',   level: 'field', compass: 234, span: 5, covered: false, distance: 45,  height: 4 },
+  { id: '20',  name: 'Legends Suite 20',   level: 'field', compass: 238, span: 5, covered: false, distance: 45,  height: 4 },
+  { id: '21A', name: 'Legends Suite 21A',  level: 'field', compass: 241, span: 4, covered: false, distance: 50,  height: 4 },
+  { id: '21B', name: 'Legends Suite 21B',  level: 'field', compass: 244, span: 4, covered: false, distance: 55,  height: 6 },
+  { id: '22',  name: 'Legends Suite 22',   level: 'field', compass: 248, span: 5, covered: false, distance: 58,  height: 4 },
+  { id: '23',  name: 'Legends Suite 23',   level: 'field', compass: 254, span: 5, covered: false, distance: 65,  height: 4 },
+  { id: '24A', name: 'Legends Suite 24A',  level: 'field', compass: 259, span: 5, covered: false, distance: 72,  height: 4 },
+  { id: '24B', name: 'Legends Suite 24B',  level: 'field', compass: 263, span: 5, covered: false, distance: 76,  height: 6 },
+  { id: '25',  name: 'Legends Suite 25',   level: 'field', compass: 267, span: 5, covered: false, distance: 82,  height: 4 },
+  { id: '26',  name: 'Legends Suite 26',   level: 'field', compass: 273, span: 5, covered: false, distance: 90,  height: 4 },
+  { id: '27A', name: 'Legends Suite 27A',  level: 'field', compass: 278, span: 5, covered: false, distance: 95,  height: 4 },
+  { id: '27B', name: 'Legends Suite 27B',  level: 'field', compass: 283, span: 5, covered: false, distance: 100, height: 6 },
+  { id: '28',  name: 'Field Box 28',       level: 'field', compass: 293, span: 6, covered: false, distance: 110, height: 4 },
+  { id: '29',  name: 'Field Box 29',       level: 'field', compass: 305, span: 7, covered: false, distance: 125, height: 4 },
+
+  // Lower Box — wraps from RF foul pole through HP to LF foul pole
+  { id: '103',  name: 'Lower Field Outfield 103',                       level: 'lower', compass: 75,  span: 7, covered: false, distance: 395, height: 14 },
+  { id: '104',  name: 'Lower Field Outfield 104 (Judge\'s Chambers area)', level: 'lower', compass: 82,  span: 7, covered: false, distance: 385, height: 14 },
+  { id: '105',  name: 'Lower Field Outfield 105',                       level: 'lower', compass: 89,  span: 7, covered: false, distance: 370, height: 14 },
+  { id: '106',  name: 'Foul Pole Lower 106',                            level: 'lower', compass: 95,  span: 4, covered: false, distance: 345, height: 12 },
+  { id: '107',  name: 'Foul Pole Lower 107',                            level: 'lower', compass: 99,  span: 4, covered: false, distance: 335, height: 12 },
+  { id: '108',  name: 'Lower Box 108', level: 'lower', compass: 107, span: 8, covered: false, distance: 310, height: 12 },
+  { id: '109',  name: 'Lower Box 109', level: 'lower', compass: 116, span: 8, covered: false, distance: 285, height: 12 },
+  { id: '110',  name: 'Lower Box 110', level: 'lower', compass: 125, span: 8, covered: false, distance: 255, height: 13 },
+  { id: '111',  name: 'Lower Box 111', level: 'lower', compass: 134, span: 8, covered: false, distance: 230, height: 13 },
+  { id: '112',  name: 'Lower Box 112', level: 'lower', compass: 143, span: 8, covered: false, distance: 205, height: 14 },
+  { id: '113',  name: 'Lower Box 113', level: 'lower', compass: 152, span: 8, covered: false, distance: 185, height: 14 },
+  { id: '114A', name: 'Lower Box 114A', level: 'lower', compass: 159, span: 4, covered: false, distance: 170, height: 14 },
+  { id: '114B', name: 'Lower Box 114B', level: 'lower', compass: 164, span: 4, covered: true,  distance: 165, height: 16 },
+  { id: '115',  name: 'Field MVP 115',  level: 'lower', compass: 172, span: 8, covered: true, distance: 150, height: 14 },
+  { id: '116',  name: 'Field MVP 116',  level: 'lower', compass: 181, span: 8, covered: true, distance: 135, height: 14 },
+  { id: '117A', name: 'Field MVP 117A', level: 'lower', compass: 188, span: 4, covered: true, distance: 125, height: 14 },
+  { id: '117B', name: 'Field MVP 117B', level: 'lower', compass: 192, span: 4, covered: true, distance: 120, height: 16 },
+  { id: '118',  name: 'Field MVP 118',  level: 'lower', compass: 200, span: 8, covered: true, distance: 110, height: 14 },
+  { id: '119',  name: 'Field MVP 119',  level: 'lower', compass: 209, span: 8, covered: true, distance: 100, height: 14 },
+  { id: '120A', name: 'Field MVP 120A', level: 'lower', compass: 216, span: 4, covered: true, distance: 92,  height: 14 },
+  { id: '120B', name: 'Field MVP 120B', level: 'lower', compass: 220, span: 4, covered: true, distance: 90,  height: 16 },
+  { id: '121A', name: 'Field MVP 121A', level: 'lower', compass: 226, span: 4, covered: true, distance: 85,  height: 14 },
+  { id: '121B', name: 'Field MVP 121B', level: 'lower', compass: 230, span: 4, covered: true, distance: 83,  height: 16 },
+  { id: '122',  name: 'Field MVP 122',  level: 'lower', compass: 235, span: 7, covered: true, distance: 82,  height: 14 }, // directly behind HP
+  { id: '123',  name: 'Field MVP 123',  level: 'lower', compass: 243, span: 7, covered: true, distance: 85,  height: 14 },
+  { id: '124',  name: 'Field MVP 124',  level: 'lower', compass: 251, span: 7, covered: true, distance: 90,  height: 14 },
+  { id: '125',  name: 'Field MVP 125',  level: 'lower', compass: 259, span: 7, covered: true, distance: 100, height: 14 },
+  { id: '126',  name: 'Lower Box 126',  level: 'lower', compass: 267, span: 8, covered: true, distance: 110, height: 14 },
+  { id: '127A', name: 'Lower Box 127A', level: 'lower', compass: 274, span: 4, covered: true, distance: 120, height: 14 },
+  { id: '127B', name: 'Lower Box 127B', level: 'lower', compass: 278, span: 4, covered: true, distance: 125, height: 16 },
+  { id: '128',  name: 'Lower Box 128',  level: 'lower', compass: 286, span: 8, covered: true, distance: 135, height: 14 },
+  { id: '129',  name: 'Lower Box 129',  level: 'lower', compass: 295, span: 8, covered: true, distance: 150, height: 14 },
+  { id: '130',  name: 'Lower Box 130',  level: 'lower', compass: 304, span: 8, covered: false, distance: 170, height: 14 },
+  { id: '131',  name: 'Lower Box 131',  level: 'lower', compass: 313, span: 8, covered: false, distance: 185, height: 14 },
+  { id: '132',  name: 'Foul Pole Lower 132', level: 'lower', compass: 322, span: 4, covered: false, distance: 215, height: 12 },
+  { id: '133',  name: 'Foul Pole Lower 133', level: 'lower', compass: 327, span: 4, covered: false, distance: 240, height: 12 },
+  { id: '134',  name: 'Lower Field Outfield 134', level: 'lower', compass: 335, span: 7, covered: false, distance: 270, height: 12 },
+  { id: '135',  name: 'Lower Field Outfield 135', level: 'lower', compass: 345, span: 7, covered: false, distance: 310, height: 14 },
+  { id: '136',  name: 'Lower Field Outfield 136', level: 'lower', compass: 355, span: 7, covered: false, distance: 360, height: 14 },
+
+  // RF Bleachers — under partial shade from CF Bleacher Café roof
+  { id: '201', name: 'Bleachers 201', level: 'lower', compass: 95, span: 7, covered: true, distance: 410, height: 32 },
+  { id: '202', name: 'Bleachers 202', level: 'lower', compass: 87, span: 7, covered: true, distance: 415, height: 32 },
+  { id: '203', name: 'Bleachers 203', level: 'lower', compass: 80, span: 7, covered: true, distance: 410, height: 32 },
+  { id: '204', name: 'Bleachers 204', level: 'lower', compass: 73, span: 7, covered: true, distance: 400, height: 32 },
+
+  // CF outfield indoor clubs
+  { id: 'MOHEGAN-SUN',   name: 'Mohegan Sun Sports Bar', level: 'club', compass: 60, span: 14, covered: true, distance: 410, height: 30 },
+  { id: 'BLEACHER-CAFE', name: 'Bleacher Café',          level: 'club', compass: 55, span: 12, covered: true, distance: 400, height: 40 },
+
+  // Main Level 205–234 (covered: under upper deck + back rows under roof)
+  { id: '205',  name: 'Main Level 205',  level: 'club', compass: 100, span: 9, covered: true, distance: 305, height: 35 },
+  { id: '206',  name: 'Main Level 206',  level: 'club', compass: 109, span: 9, covered: true, distance: 290, height: 35 },
+  { id: '207',  name: 'Main Level 207',  level: 'club', compass: 118, span: 9, covered: true, distance: 270, height: 35 },
+  { id: '208',  name: 'Main Level 208',  level: 'club', compass: 127, span: 9, covered: true, distance: 250, height: 35 },
+  { id: '209',  name: 'Main Level 209',  level: 'club', compass: 136, span: 9, covered: true, distance: 230, height: 35 },
+  { id: '210',  name: 'Main Level 210',  level: 'club', compass: 145, span: 9, covered: true, distance: 210, height: 35 },
+  { id: '211',  name: 'Main Level 211',  level: 'club', compass: 154, span: 9, covered: true, distance: 195, height: 35 },
+  { id: '212',  name: 'Main Level 212',  level: 'club', compass: 163, span: 9, covered: true, distance: 180, height: 35 },
+  { id: '213',  name: 'Main Level 213',  level: 'club', compass: 172, span: 9, covered: true, distance: 170, height: 35 },
+  { id: '214A', name: 'Main Level 214A', level: 'club', compass: 180, span: 5, covered: true, distance: 160, height: 35 },
+  { id: '214B', name: 'Main Level 214B', level: 'club', compass: 184, span: 5, covered: true, distance: 158, height: 35 },
+  { id: '215',  name: 'Champions Suite 215', level: 'suite', compass: 192, span: 9, covered: true, distance: 150, height: 35 },
+  { id: '216',  name: 'Champions Suite 216', level: 'suite', compass: 201, span: 9, covered: true, distance: 142, height: 35 },
+  { id: '217',  name: 'Main Level 217',  level: 'suite', compass: 210, span: 9, covered: true, distance: 135, height: 35 },
+  { id: '218A', name: 'Main Level 218A', level: 'suite', compass: 217, span: 5, covered: true, distance: 128, height: 35 },
+  { id: '218B', name: 'Main Level 218B', level: 'suite', compass: 221, span: 5, covered: true, distance: 125, height: 35 },
+  { id: '219',  name: 'Main Level 219',  level: 'suite', compass: 226, span: 8, covered: true, distance: 122, height: 35 },
+  { id: '220A', name: 'Main Level 220A', level: 'suite', compass: 231, span: 4, covered: true, distance: 120, height: 35 },
+  { id: '220B', name: 'Main Level 220B', level: 'suite', compass: 235, span: 4, covered: true, distance: 118, height: 35 },
+  { id: '220C', name: 'Main Level 220C', level: 'suite', compass: 239, span: 4, covered: true, distance: 120, height: 35 },
+  { id: '221A', name: 'Main Level 221A', level: 'suite', compass: 244, span: 5, covered: true, distance: 125, height: 35 },
+  { id: '221B', name: 'Main Level 221B', level: 'suite', compass: 248, span: 5, covered: true, distance: 128, height: 35 },
+  { id: '222',  name: 'Main Level 222',  level: 'club', compass: 254, span: 8, covered: true, distance: 135, height: 35 },
+  { id: '223',  name: 'Main Level 223',  level: 'club', compass: 263, span: 9, covered: true, distance: 142, height: 35 },
+  { id: '224',  name: 'Main Level 224',  level: 'club', compass: 272, span: 9, covered: true, distance: 150, height: 35 },
+  { id: '225',  name: 'Main Level 225',  level: 'club', compass: 281, span: 9, covered: true, distance: 165, height: 35 },
+  { id: '226',  name: 'Main Level 226',  level: 'club', compass: 290, span: 9, covered: true, distance: 180, height: 35 },
+  { id: '227A', name: 'Main Level 227A', level: 'club', compass: 297, span: 5, covered: true, distance: 190, height: 35 },
+  { id: '227B', name: 'Main Level 227B', level: 'club', compass: 301, span: 5, covered: true, distance: 195, height: 35 },
+  { id: '228',  name: 'Main Level 228',  level: 'club', compass: 308, span: 9, covered: true, distance: 210, height: 35 },
+  { id: '229',  name: 'Main Level 229',  level: 'club', compass: 317, span: 9, covered: true, distance: 230, height: 35 },
+  { id: '230',  name: 'Audi Club Section 230',  level: 'club', compass: 326, span: 9, covered: true, distance: 250, height: 35 },
+  { id: '231',  name: 'Audi Club Section 231',  level: 'club', compass: 335, span: 9, covered: true, distance: 270, height: 35 },
+  { id: '232A', name: 'Audi Club Section 232A', level: 'club', compass: 343, span: 4, covered: true, distance: 280, height: 35 },
+  { id: '232B', name: 'Audi Club Section 232B', level: 'club', compass: 347, span: 4, covered: true, distance: 285, height: 35 },
+  { id: '233A', name: 'Audi Club Section 233A', level: 'club', compass: 354, span: 4, covered: true, distance: 295, height: 35 },
+  { id: '233B', name: 'Audi Club Section 233B', level: 'club', compass: 358, span: 4, covered: true, distance: 300, height: 35 },
+  { id: '234',  name: 'Main Level 234',  level: 'club', compass: 5, span: 9, covered: true, distance: 305, height: 35 },
+
+  // LF Bleachers — shadedseats: "fully exposed and endure relentless sun"
+  { id: '235', name: 'Bleachers 235', level: 'lower', compass: 13, span: 7, covered: false, distance: 360, height: 32 },
+  { id: '236', name: 'Bleachers 236', level: 'lower', compass: 21, span: 7, covered: false, distance: 370, height: 32 },
+  { id: '237', name: 'Bleachers 237', level: 'lower', compass: 29, span: 7, covered: false, distance: 380, height: 32 },
+  { id: '238', name: 'Bleachers 238', level: 'lower', compass: 37, span: 7, covered: false, distance: 390, height: 32 },
+  { id: '239', name: 'Bleachers 239', level: 'lower', compass: 45, span: 7, covered: false, distance: 400, height: 32 },
+
+  // Indoor LF club lounge on 200-level
+  { id: 'AUDI-CLUB', name: 'Audi Yankees Club (LF Suite Lounge)', level: 'suite', compass: 302, span: 5, covered: true, distance: 360, height: 38 },
+
+  // Terrace 305–334 (all covered)
+  { id: '305',  name: 'Terrace 305',  level: 'club', compass: 100, span: 9, covered: true, distance: 290, height: 55 },
+  { id: '306',  name: 'Terrace 306',  level: 'club', compass: 109, span: 9, covered: true, distance: 275, height: 55 },
+  { id: '307',  name: 'Terrace 307',  level: 'club', compass: 118, span: 9, covered: true, distance: 255, height: 55 },
+  { id: '308',  name: 'Terrace 308',  level: 'club', compass: 127, span: 9, covered: true, distance: 235, height: 55 },
+  { id: '309',  name: 'Terrace 309',  level: 'club', compass: 136, span: 9, covered: true, distance: 215, height: 55 },
+  { id: '310',  name: 'Terrace 310',  level: 'club', compass: 145, span: 9, covered: true, distance: 195, height: 55 },
+  { id: '311',  name: 'Terrace 311',  level: 'club', compass: 154, span: 9, covered: true, distance: 180, height: 55 },
+  { id: '312',  name: 'Terrace 312',  level: 'club', compass: 163, span: 9, covered: true, distance: 168, height: 55 },
+  { id: '313',  name: 'Terrace 313',  level: 'club', compass: 172, span: 9, covered: true, distance: 158, height: 55 },
+  { id: '314',  name: 'Terrace 314',  level: 'club', compass: 181, span: 9, covered: true, distance: 150, height: 55 },
+  { id: '315',  name: 'Terrace 315',  level: 'club', compass: 190, span: 9, covered: true, distance: 142, height: 55 },
+  { id: '316',  name: 'Terrace 316',  level: 'club', compass: 199, span: 9, covered: true, distance: 135, height: 55 },
+  { id: '317',  name: 'Jim Beam Suite 317',  level: 'suite', compass: 208, span: 9, covered: true, distance: 128, height: 55 },
+  { id: '318',  name: 'Jim Beam Suite 318',  level: 'suite', compass: 217, span: 9, covered: true, distance: 122, height: 55 },
+  { id: '319',  name: 'Jim Beam Suite 319',  level: 'suite', compass: 226, span: 8, covered: true, distance: 118, height: 55 },
+  { id: '320A', name: 'Jim Beam Suite 320A', level: 'suite', compass: 232, span: 4, covered: true, distance: 116, height: 55 },
+  { id: '320B', name: 'Jim Beam Suite 320B', level: 'suite', compass: 235, span: 4, covered: true, distance: 115, height: 55 },
+  { id: '320C', name: 'Jim Beam Suite 320C', level: 'suite', compass: 239, span: 4, covered: true, distance: 116, height: 55 },
+  { id: '321',  name: 'Jim Beam Suite 321',  level: 'suite', compass: 244, span: 8, covered: true, distance: 120, height: 55 },
+  { id: '322',  name: 'Terrace 322',  level: 'club', compass: 253, span: 9, covered: true, distance: 125, height: 55 },
+  { id: '323',  name: 'Terrace 323',  level: 'club', compass: 262, span: 9, covered: true, distance: 135, height: 55 },
+  { id: '324',  name: 'Terrace 324',  level: 'club', compass: 271, span: 9, covered: true, distance: 145, height: 55 },
+  { id: '325',  name: 'Terrace 325',  level: 'club', compass: 280, span: 9, covered: true, distance: 158, height: 55 },
+  { id: '326',  name: 'Terrace 326',  level: 'club', compass: 289, span: 9, covered: true, distance: 170, height: 55 },
+  { id: '327',  name: 'Terrace 327',  level: 'club', compass: 298, span: 9, covered: true, distance: 185, height: 55 },
+  { id: '328',  name: 'Terrace 328',  level: 'club', compass: 307, span: 9, covered: true, distance: 200, height: 55 },
+  { id: '329',  name: 'Terrace 329',  level: 'club', compass: 316, span: 9, covered: true, distance: 220, height: 55 },
+  { id: '330',  name: 'Terrace 330',  level: 'club', compass: 325, span: 9, covered: true, distance: 240, height: 55 },
+  { id: '331',  name: 'Terrace 331',  level: 'club', compass: 334, span: 9, covered: true, distance: 260, height: 55 },
+  { id: '332A', name: 'Terrace 332A', level: 'club', compass: 341, span: 4, covered: true, distance: 275, height: 55 },
+  { id: '332B', name: 'Terrace 332B', level: 'club', compass: 345, span: 4, covered: true, distance: 280, height: 55 },
+  { id: '333',  name: 'Terrace 333',  level: 'club', compass: 352, span: 9, covered: true, distance: 290, height: 55 },
+  { id: '334',  name: 'Terrace 334',  level: 'club', compass: 1, span: 9, covered: true, distance: 300, height: 55 },
+
+  // Grandstand 405–434B (iconic frieze caps back rows everywhere — all covered)
+  { id: '405',  name: 'Grandstand 405',  level: 'upper', compass: 100, span: 9, covered: true, distance: 290, height: 80 },
+  { id: '406',  name: 'Grandstand 406',  level: 'upper', compass: 109, span: 9, covered: true, distance: 275, height: 80 },
+  { id: '407A', name: 'Grandstand 407A', level: 'upper', compass: 116, span: 5, covered: true, distance: 260, height: 80 },
+  { id: '407B', name: 'Grandstand 407B', level: 'upper', compass: 120, span: 5, covered: true, distance: 255, height: 80 },
+  { id: '408',  name: 'Grandstand 408',  level: 'upper', compass: 127, span: 9, covered: true, distance: 240, height: 80 },
+  { id: '409',  name: 'Grandstand 409',  level: 'upper', compass: 136, span: 9, covered: true, distance: 220, height: 80 },
+  { id: '410',  name: 'Grandstand 410',  level: 'upper', compass: 145, span: 9, covered: true, distance: 200, height: 80 },
+  { id: '411',  name: 'Grandstand 411',  level: 'upper', compass: 154, span: 9, covered: true, distance: 185, height: 80 },
+  { id: '412',  name: 'Grandstand 412',  level: 'upper', compass: 163, span: 9, covered: true, distance: 172, height: 80 },
+  { id: '413',  name: 'Grandstand 413',  level: 'upper', compass: 172, span: 9, covered: true, distance: 160, height: 80 },
+  { id: '414',  name: 'Grandstand 414',  level: 'upper', compass: 181, span: 9, covered: true, distance: 150, height: 80 },
+  { id: '415',  name: 'Grandstand 415',  level: 'upper', compass: 190, span: 9, covered: true, distance: 142, height: 80 },
+  { id: '416',  name: 'Grandstand 416',  level: 'upper', compass: 199, span: 9, covered: true, distance: 135, height: 80 },
+  { id: '417',  name: 'Grandstand 417',  level: 'upper', compass: 208, span: 9, covered: true, distance: 128, height: 80 },
+  { id: '418',  name: 'Grandstand 418',  level: 'upper', compass: 217, span: 9, covered: true, distance: 122, height: 80 },
+  { id: '419',  name: 'Grandstand 419',  level: 'upper', compass: 226, span: 8, covered: true, distance: 118, height: 80 },
+  { id: '420A', name: 'Grandstand 420A', level: 'upper', compass: 232, span: 4, covered: true, distance: 115, height: 80 },
+  { id: '420B', name: 'Grandstand 420B', level: 'upper', compass: 235, span: 4, covered: true, distance: 114, height: 80 },
+  { id: '420C', name: 'Grandstand 420C', level: 'upper', compass: 239, span: 4, covered: true, distance: 115, height: 80 },
+  { id: '421',  name: 'Grandstand 421',  level: 'upper', compass: 244, span: 8, covered: true, distance: 120, height: 80 },
+  { id: '422',  name: 'Grandstand 422',  level: 'upper', compass: 253, span: 9, covered: true, distance: 128, height: 80 },
+  { id: '423',  name: 'Grandstand 423',  level: 'upper', compass: 262, span: 9, covered: true, distance: 135, height: 80 },
+  { id: '424',  name: 'Grandstand 424',  level: 'upper', compass: 271, span: 9, covered: true, distance: 145, height: 80 },
+  { id: '425',  name: 'Grandstand 425',  level: 'upper', compass: 280, span: 9, covered: true, distance: 158, height: 80 },
+  { id: '426',  name: 'Grandstand 426',  level: 'upper', compass: 289, span: 9, covered: true, distance: 170, height: 80 },
+  { id: '427',  name: 'Grandstand 427',  level: 'upper', compass: 298, span: 9, covered: true, distance: 185, height: 80 },
+  { id: '428',  name: 'Grandstand 428',  level: 'upper', compass: 307, span: 9, covered: true, distance: 200, height: 80 },
+  { id: '429',  name: 'Grandstand 429',  level: 'upper', compass: 316, span: 9, covered: true, distance: 220, height: 80 },
+  { id: '430',  name: 'Grandstand 430',  level: 'upper', compass: 325, span: 9, covered: true, distance: 240, height: 80 },
+  { id: '431A', name: 'Grandstand 431A', level: 'upper', compass: 332, span: 5, covered: true, distance: 255, height: 80 },
+  { id: '431B', name: 'Grandstand 431B', level: 'upper', compass: 336, span: 5, covered: true, distance: 260, height: 80 },
+  { id: '432A', name: 'Grandstand 432A', level: 'upper', compass: 343, span: 4, covered: true, distance: 275, height: 80 },
+  { id: '432B', name: 'Grandstand 432B', level: 'upper', compass: 347, span: 4, covered: true, distance: 280, height: 80 },
+  { id: '433',  name: 'Grandstand 433',  level: 'upper', compass: 354, span: 9, covered: true, distance: 290, height: 80 },
+  { id: '434A', name: 'Grandstand 434A', level: 'upper', compass: 1, span: 5, covered: true, distance: 300, height: 80 },
+  { id: '434B', name: 'Grandstand 434B', level: 'upper', compass: 5, span: 5, covered: true, distance: 305, height: 80 },
+
+  // Pepsi Lounge — indoor lounge on Main Level concourse behind HP
+  { id: 'PEPSI-LOUNGE', name: 'Pepsi Lounge', level: 'club', compass: 235, span: 30, covered: true, distance: 200, height: 45 },
 ];
 
-// Export section map for easy lookup
-export const yankeesSectionMap = new Map(
-  yankeesSections.map(section => [section.id, section])
-);
+export const yankeesSections: DetailedSection[] = SECTIONS.map((s) => {
+  const baseAngle = convertCompass(s.compass, s.span);
+  return {
+    id: s.id,
+    name: s.name,
+    level: s.level,
+    baseAngle,
+    angleSpan: s.span,
+    rows: rowsFor(s.level, s.covered, s.height),
+    vertices3D: vertices(baseAngle, s.span, s.distance, s.height),
+    covered: s.covered,
+    distance: s.distance,
+    height: s.height,
+    rake: rakeFor(s.level),
+  };
+});
+
+export const yankeesSectionMap = new Map(yankeesSections.map((s) => [s.id, s]));
