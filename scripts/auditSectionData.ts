@@ -187,14 +187,14 @@ function detectDuplicateFiles(): Array<{ a: string; b: string; reason: 'bytes' |
     bodyMap.get(bodyH)!.push(f);
   }
   const dups: Array<{ a: string; b: string; reason: 'bytes' | 'body' }> = [];
-  for (const [, group] of fullByteMap) {
+  fullByteMap.forEach((group) => {
     if (group.length > 1) {
       for (let i = 1; i < group.length; i++) {
         dups.push({ a: group[0], b: group[i], reason: 'bytes' });
       }
     }
-  }
-  for (const [, group] of bodyMap) {
+  });
+  bodyMap.forEach((group) => {
     if (group.length > 1) {
       // Don't double-report exact-byte dupes.
       for (let i = 1; i < group.length; i++) {
@@ -203,7 +203,7 @@ function detectDuplicateFiles(): Array<{ a: string; b: string; reason: 'bytes' |
         }
       }
     }
-  }
+  });
   return dups;
 }
 
