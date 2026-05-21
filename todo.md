@@ -1622,3 +1622,236 @@ The hook's worker output was already useless: it returned `{sectionId, sunExposu
 
 - Pre-existing "Next.js inferred your workspace root" warning is unrelated to these changes (lockfile placement).
 - Did not audit other dev-only test pages — `/test-cookies` was the only one named in the audit.
+
+---
+
+# Section-Level Sun Exposure Audit (2026-05-21)
+
+## Why this audit exists
+
+The previous audits fixed:
+1. The 180° shade-side inversion (baseAngle was treated as compass, but is stadium-local).
+2. The timezone-as-server-UTC bug.
+3. All 30 stadium orientations (verified against satellite imagery + authoritative sources).
+
+What was **not** verified: the per-section data itself. The shade output for each individual section/row depends on that section's `baseAngle`, `angleSpan`, `vertices3D`, `covered` flag, `level`, and row geometry. If those are wrong, the per-section recommendations on the stadium page are wrong even when the orientation and timezone are right.
+
+## Discovery (pre-plan reconnaissance)
+
+- All 30 MLB stadiums have section data registered in `SECTION_REGISTRY` in `src/data/stadium-data-aggregator.ts`. ✓
+- Every stadium's section file has **exactly 65 sections, 20 with `covered: true`**. The section IDs are stylized (100-series field, 130-series lower, 230-series upper, etc.) — the same template applied to all 30 stadiums. The per-stadium variation is in `baseAngle` and `vertices3D`.
+- Domed/retractable-roof stadiums (rays, astros, brewers, bluejays, diamondbacks, marlins, rangers, mariners) share the same 20-covered template — so Tropicana is **not** marked fully-covered at the section level. That may or may not be a bug depending on whether shade calculation reads `stadium.roof` separately.
+- The bowl-position template makes the system a *region model* rather than a literal seating map: each stadium's bowl is divided into ~65 angular wedges. That is acceptable for shade modeling but the per-stadium tuning needs to be sane.
+
+## What "no shortcuts" means here
+
+Audit must produce a per-stadium pass/fail for each invariant, not a summary "looks reasonable." Each finding must include the data path that proves it. Fixes target the underlying section file, not symptom-suppressing logic in the shade calculator.
+
+## Plan
+
+### Phase 1 — Static section-data audit (read-only) [~60 min]
+
+- [ ] **1.1** Write `scripts/auditSectionData.ts` that, for every MLB stadium, loads its sections and reports:
+  - section count, level distribution (field/lower/upper/club/suite)
+  - covered count and percentage
+  - baseAngle distribution (gaps, clusters, overlaps; max gap in degrees around the 360° bowl)
+  - angleSpan sum (should be ≤360° with reasonable overlap allowed for tiered levels)
+  - vertices3D bounding box vs. baseAngle direction (sanity check that vertices point in the same direction as baseAngle)
+  - row count and elevation/depth ranges
+- [ ] **1.2** Identify any stadiums whose section data is the literal byte-copy of another stadium's (would indicate the auto-generation didn't actually customize that stadium).
+- [ ] **1.3** Flag specific structural anomalies:
+  - any stadium where baseAngle distribution has a gap > 30° (suggests missing sections on one side of the bowl)
+  - any stadium where all `covered: true` sections cluster in one angular region (suggests the overhang model is rotationally wrong)
+  - any stadium where `vertices3D` direction doesn't match `baseAngle` direction within ±15° (indicates auto-gen mismatch)
+
+### Phase 2 — Coverage-vs-roof correctness [~30 min]
+
+- [ ] **2.1** For each stadium with `roof: 'fixed'` (rays/Tropicana — domed permanently), verify that the shade pipeline treats every section as covered. Either (a) all sections have `covered: true` in data, or (b) the shade calculator reads `stadium.roof === 'fixed'` and overrides per-section coverage to 100%.
+- [ ] **2.2** For each stadium with `roof: 'retractable'` (astros, brewers, bluejays, diamondbacks, marlins, rangers, mariners), determine whether the API exposes a way for the consumer to say "roof is closed this game." If not, document the limitation. If yes, verify the closed-roof path treats all sections as covered.
+- [ ] **2.3** Verify upper-deck overhang coverage is rotationally consistent: the back rows of lower-bowl sections under an upper-deck overhang should be marked covered, not the upper-deck sections themselves. (The upper deck sees sky.)
+
+### Phase 3 — Per-stadium sun-exposure smoke at canonical times [~45 min]
+
+- [ ] **3.1** Extend `scripts/auditSectionData.ts` (or add `scripts/auditSectionShade.ts`) to, for each of the 30 stadiums, run `calculateShadePercentage` or equivalent at:
+  - solar noon local time on 2025-06-21 (summer solstice — sun nearly overhead)
+  - 19:00 stadium-local on 2025-07-04 (typical evening game, sun in west)
+  - 13:00 stadium-local on 2025-04-15 (typical day game in spring)
+- [ ] **3.2** For each (stadium, time) pair, assert the invariant: at evening west sun (low elevation, azimuth ~280°), the section with the lowest sun exposure is on the compass-west side of the bowl, and the section with the highest sun exposure is on the compass-east side. Confirm physics consistency for every stadium.
+- [ ] **3.3** Flag any stadium where the section pole-difference (max minus min exposure) is below 20 percentage points at evening sun — that would indicate the section model isn't differentiating bowl sides correctly.
+
+### Phase 4 — Ground-truth spot checks [~30 min]
+
+For three stadiums with known-distinctive section geometry, write physically-grounded tests:
+
+- [ ] **4.1** **Fenway Park (Red Sox)** — Bleachers behind LF (sections 32-43) face the infield from beyond LF wall. At evening west sun, they should be in shade (sun behind them). At morning east sun, they should be lit. Confirm both.
+- [ ] **4.2** **Wrigley Field (Cubs)** — Bleachers in LF/CF/RF have no overhang and no roof. They should never have a "covered" coverage at the section level; their only shade comes from sun angle.
+- [ ] **4.3** **Yankee Stadium (Yankees)** — At 4pm ET on 2025-08-15, the 3B-side stands should be more lit than the 1B-side stands (afternoon sun from the WSW, 3B at Yankee Stadium is at compass ~325° NW, 1B at compass ~145° SE, sun shines into the 1B side which gets the rays first but with low elevation 1B side gets blocked by 3B grandstand shadow). Compute the expected answer geometrically first, then assert it.
+
+### Phase 5 — Fix root causes (only if Phase 1-4 surface real bugs) [~variable]
+
+- [ ] **5.1** For each anomaly identified, fix at the data layer (the section file). Do not paper over with overrides in the calculator.
+- [ ] **5.2** If domed (`roof: 'fixed'`) stadiums need the always-covered override and it's not present, add it in `src/utils/sectionSunCalculations.ts` and document.
+- [ ] **5.3** If any per-stadium section file is a near-duplicate of another (auto-gen leak), regenerate that stadium's sections with its actual orientation/geometry.
+
+### Phase 6 — Regression tests [~30 min]
+
+- [ ] **6.1** Add `src/utils/__tests__/sectionDataInvariants.test.ts` that runs the Phase 1 static checks at test time, asserting for all 30 stadiums:
+  - section count > 0 and within sane range
+  - baseAngle max gap ≤ 30°
+  - covered sections present
+  - level distribution covers field+lower+upper at minimum
+- [ ] **6.2** Add `src/utils/__tests__/sectionShadeConsistency.test.ts` that for all 30 stadiums asserts the evening-west-sun pole-difference invariant (Phase 3.2).
+- [ ] **6.3** Add Fenway / Wrigley / Yankees physically-grounded shade tests from Phase 4.
+
+### Phase 7 — Production verification [after deploy]
+
+- [ ] **7.1** For 5 representative stadiums (open-air east-facing, open-air west-facing, retractable-roof east, retractable-roof west, fixed-dome), hit the production API at evening sunset and confirm:
+  - section recommendations on the page match physical intuition (sun-side vs shade-side correctly labeled)
+  - section list order (most-shaded first) is plausible
+- [ ] **7.2** Document the verification in a review section at the bottom of this todo.
+
+## Critical files
+
+| Phase | File | Action |
+|---|---|---|
+| 1 | `scripts/auditSectionData.ts` | NEW — static audit script |
+| 1 | `src/data/sections/mlb/*.ts` (30 files) | READ — survey only |
+| 2 | `src/utils/sectionSunCalculations.ts` | READ — verify roof-type override behavior |
+| 2 | `src/utils/stadiumDataServer.ts` (`calculateShadePercentage`) | READ — verify per-section roof handling |
+| 3 | `scripts/auditSectionShade.ts` (or extend 1) | NEW — runtime smoke audit |
+| 5 | `src/data/sections/mlb/*.ts` | EDIT — only if anomalies found |
+| 5 | `src/utils/sectionSunCalculations.ts` | EDIT — only if dome handling missing |
+| 6 | `src/utils/__tests__/sectionDataInvariants.test.ts` | NEW |
+| 6 | `src/utils/__tests__/sectionShadeConsistency.test.ts` | NEW |
+
+## Verification
+
+- `npx tsc --noEmit -p .` clean for touched files
+- `npx jest --testPathPatterns="(sectionData|sectionShade|sectionSun|rows/shade)"` — all green
+- Phase 3 audit script: all 30 stadiums pass the evening-west-sun physics invariant
+- Phase 7 production smoke: 5 stadiums verified visually post-deploy
+
+## Out of scope
+
+- Replacing the stylized 65-section template with each stadium's actual section IDs (e.g., Fenway's literal "Right Field Box 87" naming) — that's a content/data-collection project, not a calculation correctness project.
+- Per-section row-level geometry verification beyond what the calculator already uses.
+- MiLB / NFL section data (this audit is scoped to MLB per the user's request).
+
+## Phase 1 Findings (2026-05-21)
+
+Tool: `scripts/auditSectionData.ts` (NEW). Run with `npx tsx scripts/auditSectionData.ts`.
+
+### Pass
+
+- ✅ **Section data registered for all 30 MLB stadiums.** No stadium falls back to the generic 45°-step generator. (`hasSpecificData(...).hasSections === true` for every team id.)
+- ✅ **No domed stadium needs the always-covered override.** Zero MLB stadiums currently have `roof: 'fixed'`. (The previously-domed Tropicana entry was replaced by Steinbrenner Field's open-air data during the orientation audit.)
+- ✅ **Vertex/baseAngle convention is self-consistent.** For all 1,950 sections across all 30 stadiums, the centroid of `vertices3D` agrees with `baseAngle + angleSpan/2` to within 15°. No stadium has any vertex-vs-angle mismatch.
+- ✅ **Calculator conversion produces correct east/west shade for every stadium.** Empirically verified by running `getSectionSunExposure` against the real per-stadium section data at evening west sun (az 280°, el 8°) and comparing east-half (sun-facing) vs west-half (shadow-cast) section exposures. All 30 stadiums show east-half exposure > west-half exposure by ≥27 percentage points. This confirms the `(stadiumOrientation + 90 − baseAngle) mod 360` conversion in `sectionSunCalculations.ts` is correct for the actual section data, and that the Phase A fix from the prior audit is not undermined by the section data convention.
+- ✅ **No stadium ID is missing from the registry.** Every team-id in `MLB_STADIUMS` has a non-fallback entry in `SECTION_REGISTRY`.
+
+### Acceptable abstractions (flagged but not bugs)
+
+- 🟡 **65-section template across all 30 stadiums.** Every stadium has identically 65 sections (26 field + 14 lower + 8 club + 12 upper + 4 suite + 1 standing), with identically 20 covered sections (30.8%). This is a region-model abstraction — real stadiums vary widely in section count. Acceptable for sun calculations; misleading if used for literal seat-finding.
+- 🟡 **115° empty wedge behind home plate in every stadium.** All 30 stadiums have a single ~115° gap in `baseAngle` distribution. The gap is positioned (in stadium-local terms) over the "behind home plate" arc — modern stadiums largely have press box / club lounge in this area rather than seating, so this is a reasonable modeling choice. Stadiums whose upper deck genuinely wraps behind HP (Fenway, Wrigley) are slightly under-modeled but the impact on stadium-page shade output is small because the missing sections are upper-deck premium and overhang-covered anyway.
+- 🟡 **5 bowl-template equivalence groups** (11 of 30 section files share a bowl body with another file):
+  - `dodgers ≡ padres ≡ pirates` (3 files share one body)
+  - `giants ≡ nationals` (2 files)
+  - `marlins ≡ rockies` (2 files)
+  - `mets ≡ whitesox` (2 files)
+  - `orioles ≡ royals` (2 files)
+  These are NOT a sun-calc bug — `baseAngle` is stadium-local, so the calculator's per-stadium `orientation` rotates the shared bowl onto the correct compass frame. The duplicates simply mean the per-stadium tuning step did not differentiate bowl shape for these stadium pairs. Two of the five groups (`dodgers/padres/pirates` and `mets/whitesox`) pair stadiums of materially different orientations and physical bowl design (PNC vs Dodger Stadium; Citi Field vs Rate Field) — fixing those would mean hand-tuning the per-stadium bowl, which is out of Phase 5 scope.
+- 🟡 **Section IDs are stylized (100s, 130s, 230s, etc.).** Section IDs do not correspond to the real-world Yankee Stadium / Fenway / etc. section labels. This is by design and documented in the audit plan as out of scope.
+
+### Open issues for later phases
+
+- Phase 2 should still verify that **retractable-roof stadiums** (astros, brewers, bluejays, diamondbacks, marlins, rangers, mariners) handle a closed-roof game correctly. The audit confirms no stadium has any roof-closure data wired into the section model, so retractable roofs are always treated as open — this is a known limitation; the question is whether it surfaces user-visible incorrectness.
+- Phase 3 should run the full sun-exposure smoke at solar noon and 13:00 to confirm physical sanity at high-sun and midday, not just evening sunset.
+- Phase 4 ground-truth spot checks (Fenway / Wrigley / Yankees) remain valuable for catching subtle per-stadium issues that east-vs-west averaging would miss.
+
+### Conclusion (revised after user feedback)
+
+**Phase 1 is GREEN for the *region-model* bowl** — the calculator + the 65-section template produce physically correct east-lit / west-shaded results for every MLB stadium at evening sun. But the template is **not real section data**. User's directive: each stadium must have its actual sections at their actual locations. The 65-section template is unacceptable.
+
+## Phase 1.5 — Reality of section data in the repo (2026-05-21)
+
+Two parallel section-file directories exist:
+
+**A. Team-id files** (`yankees.ts`, `redsox.ts`, `whitesox.ts`, …)  — 30 files, each is the 65-section template auto-generated by `scripts/generate-all-sections.ts`. Section IDs are stylized (100s, 130s, 230s). Convention: stadium-local (0=1B, 90=CF, 180=3B, 270=behind HP). This is what `SECTION_REGISTRY` currently uses.
+
+**B. Stadium-name files** (`fenway-park.ts`, `dodger-stadium.ts`, `wrigley-field.ts`, `pnc-park.ts`, `great-american-ballpark.ts`, `oracle-park.ts`, `truist-park.ts`, plus four more) — 7+ files, each contains *hand-authored real seating data*:
+  - Fenway: 42 sections with real IDs (`FB-14` Field Box 14, `DB-39` Dugout Box, `GM-1..3` Green Monster, `IB-70` Infield Box, `PB-1..2` Premium Box…).
+  - Dodger Stadium: 23 sections (`dugout-club`, `field-level-1b`, `left-pavilion-lower`, `tommy-lasorda-trattoria`, etc.).
+  - Wrigley Field: 37 sections.
+  - PNC Park: 35 sections.
+  - Great American Ball Park: 40 sections.
+
+`SECTION_REGISTRY` falls back to these only when the team-id file is missing — and since team-id files exist for all 30 stadiums, **the real data is dead code**.
+
+### Two further obstacles
+
+1. **Inconsistent baseAngle conventions across the stadium-name files:**
+   - `fenway-park.ts` looks like *compass-bearing* (FB-15 baseAngle=110° matches the file-comment orientation 110° → "behind HP looking toward CF"). Note: the file's stated orientation (110°) is also stale — current verified value is 52°.
+   - `dodger-stadium.ts` uses *0=behind HP, clockwise* (dugout-club at 0, field-level-1b at 45, right-pavilion at 90, left-pavilion at 225, field-level-3b at 315).
+   - Neither matches the calculator's required convention (stadium-local: 0=1B, 90=CF, 180=3B, 270=behind HP).
+
+2. **23 of 30 stadiums have no real seating data at all** in the repo. To honor "no shortcuts," they need to be hand-authored from publicly available seating charts (MLB.com seating maps, StubHub interactive maps, official team pages).
+
+## Revised plan — Real Per-Stadium Section Data
+
+This is no longer a 1-session audit. It is a research / data-collection project. Honest scoping below.
+
+### Phase 2 — Methodology + Rate Field proof of concept [~3 hrs]
+
+The Rate Field complaint started this whole effort. Build the real-section-data pipeline end-to-end for Rate Field first; commit that and verify it on prod before scaling.
+
+- [ ] **2.1** Define the canonical baseAngle convention for hand-authored real data and document it at the top of `src/data/sections/mlb/_README.md`. Convention: **stadium-local, 0=1B, 90=CF, 180=3B, 270=behind HP** — same as the calculator already expects.
+- [ ] **2.2** Pull Rate Field's actual seating map from MLB.com (Guaranteed Rate Field interactive seat map) or shadedseats.com. Catalog every published section ID and its physical location relative to home plate.
+- [ ] **2.3** Author `src/data/sections/mlb/whitesox-real.ts` with the real section data: per-section `baseAngle` (stadium-local), `angleSpan`, `level`, `covered` (true for sections under overhang or upper-deck overhang's lower-bowl back rows), `distance`, `height`, `rake`, and `vertices3D` derived from baseAngle/angleSpan/distance/height.
+- [ ] **2.4** Switch `SECTION_REGISTRY['whitesox']` to point at the real data.
+- [ ] **2.5** Add a Rate-Field-specific shade integration test: at 4:00 PM CT and 7:00 PM CT on 2025-07-04, assert that the specific real-named sections on the 1B side report higher coverage (more shaded) than the corresponding sections on the 3B side. This is the user's original failure mode pinned in a test.
+- [ ] **2.6** Commit; deploy; verify on production at theshadium.com/stadium/whitesox.
+
+### Phase 3 — Hand-author real data for the 6 stadiums that already have a stadium-name file [~3 hrs]
+
+For Fenway, Dodger Stadium, Wrigley, PNC, Great American, Oracle, Truist — rewrite each in the canonical stadium-local convention and switch the registry. Each stadium gets:
+- a real section list (the existing stadium-name file is a starting point but must be re-conventioned, and IDs/coverage must be cross-checked against the current public seating chart)
+- a per-stadium shade integration test that asserts a known physical truth (Fenway: bleachers in shade at evening west sun; Wrigley: bleachers without overhang never coverage=100 from structural shade; etc.)
+
+### Phase 4 — Hand-author real data for the remaining 23 stadiums [~12–18 hrs over multiple sessions]
+
+For each of: angels, astros, athletics, bluejays, braves (already has truist?), brewers, cardinals, cubs (already has wrigley?), diamondbacks, dodgers (already has dodger-stadium?), guardians, mariners, marlins, mets, nationals, orioles, padres, phillies, pirates (already has pnc?), rangers, rays, reds (already has GAB?), redsox (already has fenway?), rockies, royals, tigers, twins, yankees.
+
+This is research-intensive. Each stadium needs:
+1. Section list from MLB.com / StubHub / authoritative seating chart.
+2. Per-section angular position from home plate (read off the seating chart's compass orientation + section position).
+3. Per-section coverage (from observed photos / official seating chart legends).
+4. Distance, height, rake (estimated by tier; refined where photos exist).
+
+Estimated 30–60 minutes per stadium = 12–24 hours of research work. Not doable in one session. Must be tracked and resumed across sessions.
+
+### Phase 5 — Verification [~2 hrs]
+
+- [ ] Per-stadium physics smoke (east-lit/west-shaded at evening sun, all-sections-shaded at midnight, etc.)
+- [ ] Per-stadium ground-truth spot checks against known shade scenarios from shadedseats.com or similar sources.
+- [ ] Cross-validate against the user's original Rate Field complaint scenario.
+- [ ] Production deploy verification on 5 representative stadiums.
+
+## Critical files (revised)
+
+| Phase | File | Action |
+|---|---|---|
+| 2 | `src/data/sections/mlb/_README.md` | NEW — document the canonical convention |
+| 2 | `src/data/sections/mlb/whitesox.ts` | REPLACE — real Rate Field section data |
+| 2 | `src/data/stadium-data-aggregator.ts` | EDIT — registry continues to point at team-id file |
+| 2 | `app/api/stadium/[stadiumId]/rows/shade/__tests__/whitesox.integration.test.ts` | NEW — pin Rate Field shade direction |
+| 3–4 | `src/data/sections/mlb/{team}.ts` × 29 | REPLACE per stadium |
+| 3–4 | `app/api/stadium/[stadiumId]/rows/shade/__tests__/{team}.integration.test.ts` × per priority stadiums | NEW |
+
+## Check-in: scope confirmation
+
+Before grinding through 12–24 hours of per-stadium research, I want to confirm the methodology with you:
+
+1. **Source of truth for each stadium's sections:** propose **MLB.com seating chart + StubHub interactive seat map** as primary, **shadedseats.com / intheballparks.com** as cross-reference. OK?
+2. **Stadium-local convention** (0=1B, 90=CF, 180=3B, 270=behind HP) is what the calculator expects and what we should use for all new real data. OK?
+3. **Phase 2 first** (just Rate Field) — prove the pipeline on the user's original complaint stadium before scaling. After Rate Field is shipped and verified, I'll resume with Phase 3 (the 6 stadiums that already have starter files) in this or a follow-up session, then Phase 4 (23 fresh stadiums) across multiple sessions. OK?
+4. **Estimated total effort: 17–27 hours** of focused research + author + verify work. This will span multiple sessions; I'll commit progress per stadium so nothing is lost.
