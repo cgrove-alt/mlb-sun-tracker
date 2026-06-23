@@ -3,7 +3,28 @@
 **Goal:** Complete website audit. (1) Ensure sun-exposure calculations are accurate — find root causes
 of inaccuracy and implement permanent fixes. (2) Audit UX for intuitiveness. No shortcuts.
 
-**Status:** Audit complete, plan written — AWAITING YOUR VERIFICATION before any code changes.
+**Status:** ✅ COMPLETE — both tracks shipped to `main` and verified live in production.
+
+## Shipped & verified in production (2026-06-23)
+
+All Phase 9 work merged to `main` across 5 PRs and auto-deployed to production (theshadium.com) via
+Vercel GitHub integration. Production `main` HEAD at verification: **`7bfdd3923`** (Merge PR #60).
+
+| PR | Scope |
+|----|-------|
+| #57 | Track A — sun-exposure accuracy: engine fixes + 15 orientation corrections (8 gross) + harness |
+| #58 | Track B — UX quick wins: game-window shade, fidelity disclosure, hero-focus, off-season, reset-filters, roof badge |
+| #59 | Build health — parked unrelated untracked WIP (`_wip/`) so `type-check`/`build` are green |
+| #60 | PWA — silent auto-update; removed the "Update Available" popup; reconciled SW registration paths |
+
+**Production verification (black-box against the live site, 2026-06-23):** `https://theshadium.com/stadium/mariners`
+returns HTTP 200 and shows **"🧭 45° orientation"** — the *corrected* Mariners value (old deploy = 318° NW),
+confirming Track A is live; and the page renders the verbatim **"Seating layout is approximate — the shaded vs
+sunny side is accurate, but individual section details are modeled, not from this park's real seating map"**
+note from the new `FidelityNotice`/`stadiumDataFidelity.ts`, confirming Track B is live. Both changes belong to
+the `7bfdd3923` lineage, so that commit's deploy is serving real users. (Authoritative Vercel-dashboard "READY"
+label not read — would require interactive `vercel login`; the served-content evidence is conclusive that the
+deploy succeeded and is current.)
 
 ## Context
 
