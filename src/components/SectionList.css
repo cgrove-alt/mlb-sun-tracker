@@ -251,6 +251,30 @@
   margin: 8px 0;
 }
 
+.reset-filters-btn {
+  margin-top: 16px;
+  padding: 10px 20px;
+  min-height: 44px;
+  touch-action: manipulation;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #fff;
+  background: #0052CC;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.15s ease;
+}
+
+.reset-filters-btn:hover {
+  background: #003d99;
+}
+
+.reset-filters-btn:focus-visible {
+  outline: 3px solid #0052CC;
+  outline-offset: 2px;
+}
+
 .section-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));

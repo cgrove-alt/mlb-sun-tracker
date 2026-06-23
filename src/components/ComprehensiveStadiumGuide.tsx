@@ -14,6 +14,7 @@ import {
 } from './Icons';
 import StadiumTitleBlock from './StadiumTitleBlock';
 import { StadiumTitleData } from './StadiumTitleBlock';
+import { FidelityNotice } from './FidelityNotice';
 import './StadiumGuide.css';
 
 interface ComprehensiveStadiumGuideProps {
@@ -70,6 +71,8 @@ const ComprehensiveStadiumGuide: React.FC<ComprehensiveStadiumGuideProps> = ({ s
         data={titleData}
         showBreadcrumb={true}
       />
+
+      <FidelityNotice stadiumId={stadiumId} />
 
       {/* Overview Section */}
       <section className="guide-section">

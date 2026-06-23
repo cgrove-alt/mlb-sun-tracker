@@ -37,9 +37,9 @@ describe('classifyFidelity', () => {
 
 describe('getStadiumDataFidelity (real data)', () => {
   it('classifies the three authored parks as real', () => {
-    for (const id of REAL_DATA_STADIUMS) {
+    Array.from(REAL_DATA_STADIUMS).forEach((id) => {
       expect(getStadiumDataFidelity(id)).toBe('real');
-    }
+    });
   });
 
   it('classifies a known template park as approximate', () => {

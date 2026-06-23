@@ -19,12 +19,17 @@ export default function HomePage() {
 
   const handleCTAClick = () => {
     setShowApp(true);
+    // After the app reveals, land the user directly on the stadium picker and
+    // focus it so the next step is obvious — not the top of a section that can
+    // look empty. Falls back to the app section if the dynamic app hasn't
+    // finished mounting yet (focus is then simply skipped, no harm).
     setTimeout(() => {
-      const appElement = document.getElementById('app-section');
-      if (appElement) {
-        appElement.scrollIntoView({ behavior: 'smooth' });
-      }
-    }, 100);
+      const venueInput = document.getElementById('venue-select');
+      const target = venueInput?.closest('.control-group') || document.getElementById('app-section');
+      const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      target?.scrollIntoView({ behavior: reduceMotion ? 'auto' : 'smooth', block: 'center' });
+      venueInput?.focus({ preventScroll: true });
+    }, 200);
   };
 
   return (

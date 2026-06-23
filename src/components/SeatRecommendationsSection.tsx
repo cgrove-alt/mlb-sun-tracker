@@ -4,6 +4,7 @@ import React, { useState, useCallback, useMemo, useEffect } from 'react';
 import { SeatRecommendationEngine, UserPreferences, RecommendationContext } from '../services/seatRecommendationEngine';
 import { SeatingSectionSun } from '../utils/sunCalculations';
 import { SeatPreferencesForm } from './SeatPreferencesForm';
+import { GameWindowShade } from './GameWindowShade';
 import { LoadingSpinner } from './LoadingSpinner';
 import { MLB_STADIUMS } from '../data/stadiums';
 import { getStadiumCompleteData } from '../data/stadium-data-aggregator';
@@ -262,6 +263,9 @@ export const SeatRecommendationsSection: React.FC<SeatRecommendationsSectionProp
           </div>
         </div>
       </div>
+
+      {/* Whole-game-window shade: how sun/shade migrates across the game (A5). */}
+      <GameWindowShade stadiumId={stadiumId} gameTime={gameTime} gameDate={gameDate} />
 
       {/* Weather status — visible so users know if recommendations use real data */}
       {weatherLoading && (

@@ -9,6 +9,7 @@ import { SectionList } from './components/SectionList';
 import { EmptyState } from './components/EmptyStates';
 import { ErrorProvider, useError } from './components/ErrorNotification';
 import { Breadcrumb } from './components/Breadcrumb';
+import { FidelityNotice } from './components/FidelityNotice';
 import { LoadingSpinner } from './components/LoadingSpinner';
 import { VenueChangeSkeleton } from './components/SkeletonScreens';
 import { SunIcon, CloudIcon, ChartIcon, InfoIcon, MoonIcon, StadiumIcon, ShadeIcon, PartlyCloudyIcon, RainIcon } from './components/Icons';
@@ -329,6 +330,12 @@ function UnifiedAppContent() {
             onVenueChange={handleVenueChange}
             onGamesLoaded={setStadiumGames}
           />
+
+          {/* Honest disclosure for MLB parks whose seating data is templated.
+              Gated to MLB — the fidelity classifier is MLB-specific. */}
+          {selectedVenue?.league === 'MLB' && (
+            <FidelityNotice stadiumId={selectedVenue.id} />
+          )}
 
           {!selectedVenue && (
             <EmptyState 
