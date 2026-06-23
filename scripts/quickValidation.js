@@ -35,9 +35,9 @@ const improvements = {
     impact: 'No more double-correction near horizon; consistent sun positions across all code paths'
   },
   'Stadium Orientations': {
-    description: 'Provenance-tracked orientations; verified entries cross-checked against stadiums.ts',
+    description: 'Provenance-tracked orientations with honest precisionDeg; verified entries cross-checked against stadiums.ts',
     files: ['src/data/stadiumOrientationProvenance.ts'],
-    impact: 'Audit trail for all 30 MLB stadiums; verified set grows as cross-checks complete'
+    impact: 'Audit trail for all 30 MLB stadiums; 10 multi-source verified, 19 satellite-estimated (±15°), 1 unverified — verified set grows as GIS cross-checks complete'
   }
 };
 
@@ -59,7 +59,7 @@ const accuracyMetrics = [
   { metric: 'Covered Section Shade', before: '~85% accuracy', after: '100% accuracy', improvement: '15%' },
   { metric: 'Low Sun Angles', before: '±2° error', after: '±0.5° with refraction', improvement: '75%' },
   { metric: 'Section Exposure Logic', before: 'Incorrect opposites', after: 'Geometrically correct', improvement: '100%' },
-  { metric: 'Stadium Orientations', before: 'Some incorrect', after: 'All verified', improvement: '100%' }
+  { metric: 'Stadium Orientations', before: 'Some incorrect', after: '10 multi-source verified, 19 single-source estimated, 1 unverified', improvement: 'honest provenance' }
 ];
 
 // Calculate max column widths
@@ -86,7 +86,7 @@ const summary = [
   '3. Section sun exposure logic corrected for geometric accuracy',
   '4. Covered sections guaranteed 100% shade coverage',
   '5. Atmospheric refraction applied for low sun angles',
-  '6. All stadium orientations verified against satellite imagery',
+  '6. Stadium orientations carry honest provenance + precision (10 multi-source verified, 19 satellite-estimated, 1 unverified)',
   '7. Comprehensive test suite added for validation',
   '8. Performance optimizations with spatial indexing maintained'
 ];
