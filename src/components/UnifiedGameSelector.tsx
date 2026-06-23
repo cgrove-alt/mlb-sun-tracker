@@ -584,6 +584,17 @@ export const UnifiedGameSelector: React.FC<UnifiedGameSelectorProps> = ({
                     <div className="no-games">
                       <p>{t('gameSelector.noGamesForStadium')}</p>
                       <p>{t('gameSelector.tryCustomTime')}</p>
+                      <button
+                        type="button"
+                        className="apply-custom-btn"
+                        onClick={() => {
+                          haptic.light();
+                          setViewMode('custom');
+                          preferencesStorage.update('viewMode', 'custom');
+                        }}
+                      >
+                        🕐 {t('gameSelector.customTime')}
+                      </button>
                     </div>
                   )
                 )}

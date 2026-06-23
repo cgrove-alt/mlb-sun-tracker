@@ -78,16 +78,26 @@ final out. A single-instant answer is precisely accurate for a moment that's wro
 
 ---
 
-## TRACK B — UX quick wins
+## TRACK B — UX quick wins ✅ COMPLETE
 
-- [ ] **Hero → app:** CTA scrolls into an empty-looking app; make the venue selector immediately visible/auto-focused (`HomePage.tsx`, `UnifiedGameSelector.tsx`).
-- [ ] **Off-season dead-end:** when a venue has no upcoming games, prominently surface the custom date/time picker instead of a generic empty state (`UnifiedApp.tsx`/`EmptyStates.tsx`).
-- [ ] **Reset filters:** add a "Reset filters" button + clearer zero-results explanation in `SectionList.tsx`.
-- [ ] **Weather copy:** clarify sun position is still accurate when the >7-day forecast is unavailable (`WeatherDisplay.tsx`).
-- [ ] **Roofed vs shaded:** distinct roof icon/label so permanently-covered sections read differently from sun-shaded ones.
-- [ ] **Surface game-window shade (A5):** have the app request `window` and show shade *migration* — e.g. "shaded at first pitch → sunny by the 7th" and a small timeline — instead of a single-instant verdict. This is where the A5 accuracy gain becomes user-visible.
-- [ ] **Disclose fidelity:** subtle "approximate seating data" note on `approximate` stadiums, reading `getStadiumDataFidelity` from A3.
-- [ ] Run the `web-design-guidelines` review over touched components.
+- [x] **Hero → app:** `HomePage.tsx` CTA now scrolls to and focuses the stadium picker (`#venue-select`, centered) instead of the app-section top, falling back gracefully if the dynamic app hasn't mounted. The next step is now obvious.
+- [x] **Off-season dead-end:** the MLB/MiLB "no games" message in `UnifiedGameSelector.tsx` now has a "🕐 Custom time" button that switches to the custom date/time tab (reuses in-scope `setViewMode`/`haptic`/`apply-custom-btn`).
+- [x] **Reset filters:** added "Reset search & filters" button + clearer zero-results copy in `SectionList.tsx` (resets `searchTerm` + `filters`); styled `.reset-filters-btn` in `SectionList.css`.
+- [x] **Weather copy:** already correct — `WeatherDisplay.tsx:96` already states "Sun position calculations are still accurate and based on astronomical data." No change needed.
+- [x] **Roofed vs shaded:** added a distinct teal `UmbrellaIcon` "Covered (roof)" badge in `LazySectionCardModern.tsx` (was only in the aria-label), so permanent-shade sections read differently from sun-angle shade.
+- [x] **Surface game-window shade (A5):** new `GameWindowShade.tsx` shows shade *migration* ("starts sunny → ends shaded", per-progression counts + the most-dramatic transitioning sections). Computed **client-side** with the same pure functions the API uses and the same first-pitch instant the weather panel derives (`stadiumLocalDateAndTimeToUTC`) — no HTTP round-trip, no timezone/date drift (the route's date-string handling has a latent western-tz off-by-one I sidestepped). Guards night games. Wired into `SeatRecommendationsSection.tsx`. Verified: evening game → 49 sun→shade sections; day game → stable; night → renders nothing.
+- [x] **Disclose fidelity:** new reusable `FidelityNotice.tsx` (reads `getStadiumDataFidelity`/`fidelityNote` from A3); wired into both flows — `UnifiedApp.tsx` (gated `league==='MLB'`) + `ComprehensiveStadiumGuide.tsx`. Renders nothing for real-data parks.
+- [x] Fixed a Track-A carryover: `stadiumDataFidelity.test.ts` iterated a `ReadonlySet` (tsc-target error, passed only in Jest) → `Array.from`. Restores `npm run type-check` for that file.
+- [x] Ran the `web-design-guidelines` review over touched components. Findings were minor; applied the two worthwhile fixes: HomePage CTA scroll now honors `prefers-reduced-motion`, and `.reset-filters-btn` got `touch-action: manipulation`. All buttons are native `<button>` with hover/focus states; new panels use `aria-labelledby`/`role`, AA contrast, and text+color (not color-only).
+
+## Review — Track B complete (2026-06-23)
+
+All 7 UX quick wins shipped (weather copy was already correct). Each change is a minimal, surgical insertion into
+a confirmed-live component — no refactors, no dead-code edits. New components: `FidelityNotice.tsx` (A3 disclosure,
+both flows), `GameWindowShade.tsx` (A5 payoff, client-side compute). Edits: `HomePage.tsx` (CTA focus + reduced-motion),
+`UnifiedGameSelector.tsx` (off-season → custom-time button), `SectionList.tsx`/`.css` (reset-filters), `LazySectionCardModern.tsx`
+(covered-roof badge), `UnifiedApp.tsx` + `ComprehensiveStadiumGuide.tsx` (fidelity wiring). Plus a Track-A `tsc` carryover fix.
+All touched files type-check clean; game-window output sanity-verified for evening/day/night.
 
 ### Documented follow-ups (NOT this pass)
 Game-selection persistence per venue; smarter contextual empty states; mobile menu scroll-lock on iOS; UV

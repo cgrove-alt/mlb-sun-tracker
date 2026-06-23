@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useIntersectionObserver } from '../hooks/useIntersectionObserver';
 import { useHapticFeedback } from '../hooks/useHapticFeedback';
 import type { StadiumSection } from '../data/stadiumSectionTypes';
-import { CloudIcon, PartlyCloudyIcon, SunIcon, FireIcon, FieldLevelIcon, LowerLevelIcon, ClubLevelIcon, UpperLevelIcon, CrownIcon } from './Icons';
+import { CloudIcon, PartlyCloudyIcon, SunIcon, FireIcon, FieldLevelIcon, LowerLevelIcon, ClubLevelIcon, UpperLevelIcon, CrownIcon, UmbrellaIcon } from './Icons';
 import { formatPercentageForScreenReader, announceToScreenReader } from '../utils/accessibility';
 
 interface LazySectionCardProps {
@@ -117,6 +117,13 @@ const LazySectionCardModernComponent: React.FC<LazySectionCardProps> = ({
               {section.level === 'suite' && <CrownIcon size={14} />}
               <span>{section.level.charAt(0).toUpperCase() + section.level.slice(1)} Level</span>
             </span>
+            {/* Covered = permanent shade from a roof/overhang, distinct from sun-angle shade */}
+            {section.covered && (
+              <span className="inline-flex items-center gap-1 px-3 py-1 rounded-full text-xs font-medium bg-teal-100 text-teal-700">
+                <UmbrellaIcon size={14} />
+                <span>Covered (roof)</span>
+              </span>
+            )}
           </div>
 
           {/* Animated hover indicator */}

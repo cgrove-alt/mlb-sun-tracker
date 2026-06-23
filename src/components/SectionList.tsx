@@ -353,14 +353,24 @@ export const SectionList: React.FC<SectionListProps> = ({
           {debouncedSearchTerm ? (
             <>
               <p>No sections found matching "{debouncedSearchTerm}".</p>
-              <p>Try a different search term or clear the search to see all sections.</p>
+              <p>Try a different search term, or reset to see every section.</p>
             </>
           ) : (
             <>
-              <p>No sections match your filter criteria.</p>
-              <p>Try adjusting your filters to see more results.</p>
+              <p>No sections match your current filters.</p>
+              <p>Your filters may be too restrictive — reset them to see every section.</p>
             </>
           )}
+          <button
+            type="button"
+            className="reset-filters-btn"
+            onClick={() => {
+              setSearchTerm('');
+              setFilters({ maxSunExposure: undefined, sectionType: [], priceRange: [] });
+            }}
+          >
+            Reset search &amp; filters
+          </button>
         </div>
       ) : (
         <div className="section-list-container" role="list" aria-labelledby="sections-title">
