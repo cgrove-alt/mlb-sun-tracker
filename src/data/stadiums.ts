@@ -30,7 +30,7 @@ export const MLB_STADIUMS: Stadium[] = [
     state: 'CA',
     latitude: 33.8003,
     longitude: -117.8827,
-    orientation: 65,
+    orientation: 50, // ENE — refined 2026-06-23 from 65°. Sources split: ballparks.com 45° vs shadedseats ENE (~65°); ~50° is the midpoint. Estimated, needs GIS. See provenance.
     capacity: 45517,
     roof: 'open',
     timezone: 'America/Los_Angeles',
@@ -85,7 +85,7 @@ export const MLB_STADIUMS: Stadium[] = [
     state: 'GA',
     latitude: 33.8908,
     longitude: -84.4678,
-    orientation: 45,
+    orientation: 135, // SE — corrected 2026-06-23 from 45°. Wikipedia "southeast orientation" + sun pattern (rises over LF, sets behind HP) confirm SE. See provenance.
     capacity: 41084,
     roof: 'open',
     timezone: 'America/New_York'
@@ -111,7 +111,7 @@ export const MLB_STADIUMS: Stadium[] = [
     state: 'MO',
     latitude: 38.6226,
     longitude: -90.1928,
-    orientation: 92,
+    orientation: 60, // ENE — corrected 2026-06-23 from 92° (~32° off). ballparks.com 60° + "field points northeast" + Gateway Arch/skyline beyond CF to the east confirm ENE. See provenance.
     capacity: 44494,
     roof: 'open',
     timezone: 'America/Chicago'
@@ -124,7 +124,7 @@ export const MLB_STADIUMS: Stadium[] = [
     state: 'IL',
     latitude: 41.9484,
     longitude: -87.6553,
-    orientation: 13,
+    orientation: 30, // NE — corrected 2026-06-23 from 13°. ballparks.com 30° + Hardball Times "oriented toward the northeast" + sun pattern confirm NE (the old 13° was too far north). See provenance.
     capacity: 41649,
     roof: 'open',
     timezone: 'America/Chicago',
@@ -192,7 +192,7 @@ export const MLB_STADIUMS: Stadium[] = [
     state: 'WA',
     latitude: 47.5914,
     longitude: -122.3325,
-    orientation: 318,
+    orientation: 45, // NE — corrected 2026-06-23 from 318° (NW, wrong quadrant). ballparks.com (Safeco 45°) + andrewclem (NE) + sun pattern (rises over CF) confirm NE. See provenance.
     capacity: 47929,
     roof: 'retractable',
     timezone: 'America/Los_Angeles'
@@ -205,7 +205,7 @@ export const MLB_STADIUMS: Stadium[] = [
     state: 'FL',
     latitude: 25.7781,
     longitude: -80.2197,
-    orientation: 40,
+    orientation: 135, // SE — corrected 2026-06-23 from 40° (NE). The 40° was a roof-closed dome-axis inference; published sources + sun pattern (identical to Brewers) put HP→CF at SE. See stadiumOrientationProvenance.ts.
     capacity: 37446,
     roof: 'retractable',
     timezone: 'America/New_York'
@@ -231,7 +231,7 @@ export const MLB_STADIUMS: Stadium[] = [
     state: 'DC',
     latitude: 38.8730,
     longitude: -77.0074,
-    orientation: 87,
+    orientation: 30, // NNE — corrected 2026-06-23 from 87° (nearly due E, wrong sub-quadrant). ballparks.com 30° + andrewclem NNE + sun pattern (rises behind RF, 3B is shade side) confirm NNE. See provenance.
     capacity: 41313,
     roof: 'open',
     timezone: 'America/New_York'
@@ -244,7 +244,7 @@ export const MLB_STADIUMS: Stadium[] = [
     state: 'MD',
     latitude: 39.2838,
     longitude: -76.6218,
-    orientation: 58,
+    orientation: 30, // NNE — corrected 2026-06-23 from 58° (~28° off). ballparks.com 30° + andrewclem NNE + sun pattern (rises over RF, 3B shade side) confirm NNE. See provenance.
     capacity: 45971,
     roof: 'open',
     timezone: 'America/New_York'
@@ -257,7 +257,7 @@ export const MLB_STADIUMS: Stadium[] = [
     state: 'CA',
     latitude: 32.7076,
     longitude: -117.1570,
-    orientation: 25,
+    orientation: 0, // N — corrected 2026-06-23 from 25°. Petco famously faces due north (batter faces north, shares orientation with Cleveland/Arizona); sun pattern confirms. See stadiumOrientationProvenance.ts.
     capacity: 40209,
     roof: 'open',
     timezone: 'America/Los_Angeles'
@@ -270,7 +270,7 @@ export const MLB_STADIUMS: Stadium[] = [
     state: 'PA',
     latitude: 39.9061,
     longitude: -75.1665,
-    orientation: 59,
+    orientation: 18, // NNE — corrected 2026-06-23 from 59° (ENE, ~41° off). ballparks.com 15° + andrewclem NNE + sun pattern ("oriented to the north", rises over RF) confirm near-north NNE. See provenance.
     capacity: 42792,
     roof: 'open',
     timezone: 'America/New_York'
@@ -283,7 +283,7 @@ export const MLB_STADIUMS: Stadium[] = [
     state: 'PA',
     latitude: 40.4468,
     longitude: -80.0057,
-    orientation: 55, // NE — verified via Esri World Imagery 2026-05-13 (diamond HP→CF bearing measured ~48–55°; PNC famously oriented to point home-plate view at downtown skyline)
+    orientation: 120, // ESE — corrected 2026-06-23 from 55° (NE, wrong quadrant). ballparks.com (PNC 120°) + andrewclem (ESE) + sun pattern (sets behind HP) + skyline beyond CF to the SE confirm ESE. The old "NE" misread the skyline geometry. See provenance.
     capacity: 38362,
     roof: 'open',
     timezone: 'America/New_York'
@@ -338,7 +338,7 @@ export const MLB_STADIUMS: Stadium[] = [
     state: 'OH',
     latitude: 39.0979,
     longitude: -84.5080,
-    orientation: 105,
+    orientation: 115, // ESE — refined 2026-06-23 from 105°. ballparks.com 120° + andrewclem ESE (~112°) + sun pattern (sets behind HP) center on ~115°. See provenance.
     capacity: 42319,
     roof: 'open',
     timezone: 'America/Chicago'
@@ -351,7 +351,7 @@ export const MLB_STADIUMS: Stadium[] = [
     state: 'CO',
     latitude: 39.7559,
     longitude: -104.9942,
-    orientation: 40,
+    orientation: 0, // N — corrected 2026-06-23 from 40°. ballparks.com (Coors 0°) + andrewclem (N) + sun pattern ("oriented to the north", rises over RF, sets behind LF) confirm due north. See provenance.
     capacity: 50144,
     roof: 'open',
     timezone: 'America/Denver'
@@ -364,7 +364,7 @@ export const MLB_STADIUMS: Stadium[] = [
     state: 'MO',
     latitude: 39.0517,
     longitude: -94.4803,
-    orientation: 58,
+    orientation: 48, // NE — refined 2026-06-23 from 58°. ballparks.com 45° + andrewclem NE + sun pattern (rises over CF, sets near LF foul pole) center on ~45–50°. See provenance.
     capacity: 37903,
     roof: 'open',
     timezone: 'America/Chicago'
@@ -390,7 +390,7 @@ export const MLB_STADIUMS: Stadium[] = [
     state: 'MN',
     latitude: 44.9817,
     longitude: -93.2776,
-    orientation: 40, // NE — verified via Esri World Imagery 2026-05-13 (diamond HP→CF bearing ~39°; prior 0°/due-north was an initialization default)
+    orientation: 90, // E — corrected 2026-06-23 from 40° (NE, wrong sub-quadrant). ballparks.com (Target 90°) + sun pattern ("faces east", sets behind HP near 3B) confirm due east. The old satellite ~39° read appears to have been wrong. See provenance.
     capacity: 38544,
     roof: 'open',
     timezone: 'America/Chicago'

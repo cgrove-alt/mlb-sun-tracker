@@ -99,11 +99,17 @@ describe('GET /api/stadium/[stadiumId]/rows/shade — real-calc integration', ()
     expect(row1.coverage).toBeLessThan(20); // front row mostly lit
 
     // The back rows have a 15 ft overhang; at ~7° elevation the shadow runs
-    // long, so they should be heavily shaded.
+    // long, so they should be heavily shaded — but the sunset sun (az ~288°)
+    // rakes in ~62° off the seats' SW facing, so the overhang is azimuth-
+    // projected (opp ≈ 0.73) rather than slammed to a flat 100% the way the
+    // pre-Phase-9 hard >90° branch did. Heavily shaded (~75%), and far more
+    // shaded than the lit front row, is the physically-correct result.
     const row20 = section130.rows.find(
       (r: { rowNumber: string }) => r.rowNumber === '20',
     );
-    expect(row20.coverage).toBeGreaterThan(80);
+    expect(row20.coverage).toBeGreaterThan(70);
+    expect(row20.coverage).toBeLessThan(95);
+    expect(row20.coverage).toBeGreaterThan(row1.coverage + 40);
   });
 
   it('reports covered sections as 100% shaded regardless of time', async () => {
@@ -182,5 +188,63 @@ describe('GET /api/stadium/[stadiumId]/rows/shade — real-calc integration', ()
         expect(row.coverage + row.sunExposure).toBe(100);
       }
     }
+  });
+
+  // --- Whole-game-window mode (Phase 9 A5) -------------------------------
+
+  it('returns single-instant shape unchanged when ?window is absent', async () => {
+    const req = createRequest('/api/stadium/yankees/rows/shade?date=2025-07-04&time=19:00');
+    const res = await GET(req, createParams('yankees'));
+    const data = await res.json();
+    expect(data.calculation.method).toBe('2D');
+    expect(data).not.toHaveProperty('window');
+    expect(data).toHaveProperty('sunPosition.azimuth');
+  });
+
+  it('aggregates shade across the game when ?window is set', async () => {
+    const req = createRequest(
+      '/api/stadium/yankees/rows/shade?date=2025-07-04&time=18:00&window=180&step=30',
+    );
+    const res = await GET(req, createParams('yankees'));
+    expect(res.status).toBe(200);
+    const data = await res.json();
+
+    expect(data.calculation.method).toBe('2D-window');
+    expect(data.window).toMatchObject({ windowMinutes: 180, stepMinutes: 30, samples: 7 });
+
+    const section130 = data.sections.find(
+      (s: { sectionId: string }) => s.sectionId === '130',
+    );
+    expect(section130).toBeDefined();
+    // One timeline point per sample, ordered from first pitch.
+    expect(section130.timeline).toHaveLength(7);
+    expect(section130.timeline[0].minutesFromStart).toBe(0);
+    expect(section130.timeline[6].minutesFromStart).toBe(180);
+    expect(['shaded-all', 'sunny-all', 'sun-to-shade', 'shade-to-sun', 'mixed'])
+      .toContain(section130.progression);
+
+    // As the sun sets over a 6→9pm window, the east bowl's back rows get
+    // progressively more shaded — coverage at the final out ≥ first pitch.
+    const row20 = section130.rows.find((r: { rowNumber: string }) => r.rowNumber === '20');
+    expect(row20.coverageEnd).toBeGreaterThanOrEqual(row20.coverageStart);
+    expect(row20.coverageMin).toBeLessThanOrEqual(row20.coverageAvg);
+    expect(row20.coverageAvg).toBeLessThanOrEqual(row20.coverageMax);
+
+    // Window summary buckets every section by progression.
+    const { shadedAllSections, sunToShadeSections, shadeToSunSections, sunnyAllSections } =
+      data.summary;
+    expect(
+      shadedAllSections + sunToShadeSections + shadeToSunSections + sunnyAllSections,
+    ).toBeLessThanOrEqual(data.summary.totalSections);
+  });
+
+  it('caps the window at 300 minutes and the step at 15–60', async () => {
+    const req = createRequest(
+      '/api/stadium/yankees/rows/shade?date=2025-07-04&time=13:00&window=999&step=1',
+    );
+    const res = await GET(req, createParams('yankees'));
+    const data = await res.json();
+    expect(data.window.windowMinutes).toBe(300);
+    expect(data.window.stepMinutes).toBe(15);
   });
 });

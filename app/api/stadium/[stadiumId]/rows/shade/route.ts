@@ -1,7 +1,12 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { MLB_STADIUMS } from '../../../../../../src/data/stadiums';
 import { getStadiumSections, hasSpecificData } from '../../../../../../src/data/stadium-data-aggregator';
-import { calculateRowShadows } from '../../../../../../src/utils/sunCalculator';
+import {
+  calculateRowShadows,
+  calculateGameWindowShade,
+  gameWindowOffsets,
+  type SunSample,
+} from '../../../../../../src/utils/sunCalculator';
 import { getSunPosition } from '../../../../../../src/utils/sunCalculations';
 import { calculateMLBStadiumShade3D } from '../../../../../../src/utils/mlb3DCalculator';
 import { stadiumLocalDateAndTimeToUTC } from '../../../../../../src/utils/stadiumTime';
@@ -22,6 +27,23 @@ export async function GET(request: NextRequest, { params }: RouteParams) {
   const sectionIdParam = searchParams.get('sectionId');
   const use3D = searchParams.get('use3d') === 'true'; // Enable 3D calculator
   const useCache = searchParams.get('cache') !== 'false'; // Default true
+
+  // Opt-in whole-game-window mode. When `window` is present, shade is sampled
+  // across the game (first pitch → first pitch + window minutes) instead of a
+  // single instant. Absent → byte-identical single-instant behavior.
+  const windowParam = searchParams.get('window');
+  const stepParam = searchParams.get('step');
+  const useWindow = windowParam !== null;
+  let windowMinutes = 180; // ~2h40 pitch-clock game + margin
+  let stepMinutes = 30;
+  if (useWindow) {
+    const w = parseInt(windowParam as string, 10);
+    if (!Number.isNaN(w)) windowMinutes = Math.min(300, Math.max(0, w));
+    if (stepParam) {
+      const st = parseInt(stepParam, 10);
+      if (!Number.isNaN(st)) stepMinutes = Math.min(60, Math.max(15, st));
+    }
+  }
 
   // Validate date parameter
   const date = dateParam ? new Date(dateParam) : new Date();
@@ -203,6 +225,81 @@ export async function GET(request: NextRequest, { params }: RouteParams) {
         headers: {
           'Cache-Control': 'public, max-age=3600, stale-while-revalidate=86400',
         }
+      });
+    }
+
+    // Whole-game-window mode (opt-in, 2D only). Samples the sun across the
+    // game and aggregates shade migration per section/row. The 3D path above
+    // stays single-instant (windowed ray-casting is out of scope).
+    if (useWindow) {
+      // Sun position depends on the absolute instant, so each sample is just
+      // first-pitch UTC plus elapsed real minutes — no per-sample timezone
+      // conversion needed (and DST-safe, since we add real elapsed time).
+      const offsets = gameWindowOffsets(windowMinutes, stepMinutes);
+      const sunSamples: SunSample[] = offsets.map((m) => {
+        const sampleDate = new Date(targetDate.getTime() + m * 60_000);
+        const sp = getSunPosition(sampleDate, stadium.latitude, stadium.longitude);
+        return {
+          minutesFromStart: m,
+          altitudeDegrees: sp.altitudeDegrees,
+          azimuthDegrees: sp.azimuthDegrees,
+        };
+      });
+
+      const windowMeta = {
+        startTime: `${hour.toString().padStart(2, '0')}:${minute.toString().padStart(2, '0')}`,
+        windowMinutes,
+        stepMinutes,
+        samples: offsets.length,
+      };
+
+      if (sectionIdParam) {
+        const section = sections.find(s => s.id === sectionIdParam || s.name === sectionIdParam);
+        if (!section) {
+          return NextResponse.json(
+            { error: 'Section not found', code: 'SECTION_NOT_FOUND', sectionId: sectionIdParam },
+            { status: 404 }
+          );
+        }
+        const sectionWindow = calculateGameWindowShade(section, sunSamples, stadium.orientation || 0);
+        return NextResponse.json({
+          stadium: { id: stadium.id, name: stadium.name, orientation: stadium.orientation },
+          date: date.toISOString().split('T')[0],
+          time: windowMeta.startTime,
+          window: windowMeta,
+          section: sectionWindow,
+          calculation: { method: '2D-window' },
+        }, {
+          headers: { 'Cache-Control': 'public, max-age=3600, stale-while-revalidate=86400' },
+        });
+      }
+
+      const sectionWindows = sections.map(section =>
+        calculateGameWindowShade(section, sunSamples, stadium.orientation || 0)
+      );
+      const countBy = (p: string) =>
+        sectionWindows.filter(s => s.progression === p).length;
+
+      return NextResponse.json({
+        stadium: { id: stadium.id, name: stadium.name, orientation: stadium.orientation },
+        date: date.toISOString().split('T')[0],
+        time: windowMeta.startTime,
+        window: windowMeta,
+        summary: {
+          totalSections: sectionWindows.length,
+          totalRows: sectionWindows.reduce((sum, s) => sum + s.rows.length, 0),
+          shadedAllSections: countBy('shaded-all'),
+          sunToShadeSections: countBy('sun-to-shade'),
+          shadeToSunSections: countBy('shade-to-sun'),
+          sunnyAllSections: countBy('sunny-all'),
+          averageCoverage: Math.round(
+            sectionWindows.reduce((sum, s) => sum + s.averageCoverage, 0) / sectionWindows.length
+          ),
+        },
+        sections: sectionWindows,
+        calculation: { method: '2D-window' },
+      }, {
+        headers: { 'Cache-Control': 'public, max-age=3600, stale-while-revalidate=86400' },
       });
     }
 

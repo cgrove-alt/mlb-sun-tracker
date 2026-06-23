@@ -1,5 +1,6 @@
 // sunCalculator.ts
 import SunCalc from 'suncalc';
+import type { CoverageDetail } from '../types/stadium-complete';
 
 interface Stadium {
   id: string;
@@ -422,6 +423,14 @@ export interface RowShadowInputSection {
   baseAngle: number;
   angleSpan?: number;
   covered?: boolean;
+  /**
+   * Optional partial/translucent canopy (mesh, fabric, glass) covering some
+   * rows. When present it lets a non-solid roof shade those rows by less than
+   * 100% instead of the all-or-nothing `covered` flag. Flows through from
+   * DetailedSection; absent on plain test mocks, so behavior is unchanged for
+   * sections that only set `covered`.
+   */
+  partialCoverage?: CoverageDetail;
   rows: RowShadowInputRow[];
 }
 
@@ -458,14 +467,54 @@ function recommendForCoverage(coverage: number): RowShadowRow['recommendation'] 
   return 'poor';
 }
 
+// Opacity (0..1) of any roof/canopy directly over this row.
+//   - A solid structural roof (section.covered or row.covered) is fully
+//     opaque: 1.0 — preserves the original binary behavior.
+//   - A `partialCoverage` canopy shades only its `coveredRows`, and only as
+//     much as its material lets through: mesh ~0.5, fabric ~0.7, glass ~0.1,
+//     solid 1.0. A full canopy (type 'full' / no coveredRows listed) covers
+//     every row.
+//   - Otherwise 0 (open to the sky).
+// Mesh/fabric canopies (common over modern club levels and shade structures)
+// no longer get forced to 100% shade.
+function canopyOpacity(section: RowShadowInputSection, row: RowShadowInputRow): number {
+  if (section.covered === true || row.covered === true) return 1;
+
+  const pc = section.partialCoverage;
+  if (pc) {
+    const coversThisRow =
+      pc.type === 'full' || !pc.coveredRows || pc.coveredRows.length === 0
+        ? true
+        : pc.coveredRows.includes(row.rowNumber);
+    if (coversThisRow) {
+      switch (pc.material) {
+        case 'mesh': return 0.5;
+        case 'fabric': return 0.7;
+        case 'glass': return 0.1;
+        case 'solid': return 1;
+        default: return 1; // material unspecified → treat as solid
+      }
+    }
+  }
+  return 0;
+}
+
 // 2D row-level shade model.
-// - Covered rows (or covered sections) are fully shaded.
 // - Below-horizon sun → fully shaded by night.
-// - Otherwise: if the section is on the opposite side of the bowl from the
-//   sun, the row's overhang (if any) projects shadow onto the row; back rows
-//   (greater depth) reach shadow at higher sun altitudes than front rows.
-//   If the section is on the same side as the sun, the bowl itself provides
-//   only minor shadow at low altitudes.
+// - A roof/canopy over the row contributes `canopyOpacity * 100` (solid roof
+//   = 100; mesh/fabric/glass less).
+// - Structural bowl shade blends two regimes by a CONTINUOUS incidence factor
+//   `opp = (1 - cos(angleDiff)) / 2`, where angleDiff is between the sun and
+//   the section's compass facing:
+//     · opp → 1 when the sun is across the bowl shining into the seat faces:
+//       the row's overhang projects shadow onto it (back rows, greater depth,
+//       reach shadow at higher sun altitudes than front rows).
+//     · opp → 0 when the sun is behind the section: only the minor bowl
+//       back-shadow at low altitudes applies.
+//   Blending by `opp` (instead of a hard >90° branch) removes the old
+//   discontinuity at the 90° boundary AND azimuth-projects the overhang —
+//   when the sun rakes along the section edge the overhang blocks less than
+//   when it shines head-on.
 //
 // This is intentionally a simple 2D model — the 3D path in mlb3DCalculator.ts
 // handles ray-cast obstructions when stadium has obstruction data.
@@ -484,7 +533,9 @@ export function calculateRowShadows(
   const sunAz = ((sunAzimuthDeg % 360) + 360) % 360;
   let angleDiff = Math.abs(sunAz - sectionCompass);
   if (angleDiff > 180) angleDiff = 360 - angleDiff;
-  const sunOnOppositeSide = angleDiff > 90;
+  // Continuous incidence: 1 = sun across the bowl into the seat faces,
+  // 0 = sun directly behind the section. Replaces the old hard >90° branch.
+  const opp = (1 - Math.cos(angleDiff * Math.PI / 180)) / 2;
 
   const altRad = sunAltitudeDeg * Math.PI / 180;
   const tanAlt = Math.tan(altRad);
@@ -493,33 +544,31 @@ export function calculateRowShadows(
     let coverage = 0;
     const sources = { roof: 0, upperDeck: 0, overhang: 0, bowl: 0 };
 
-    if (section.covered === true || row.covered === true) {
-      coverage = 100;
-      sources.roof = 100;
-    } else if (sunAltitudeDeg <= 0) {
+    const canopyCoverage = canopyOpacity(section, row) * 100;
+
+    if (sunAltitudeDeg <= 0) {
+      // Night: fully shaded regardless of geometry.
       coverage = 100;
       sources.bowl = 100;
-    } else if (sunOnOppositeSide && row.overhangHeight && row.overhangHeight > 0 && tanAlt > 0) {
-      // Sun shines across the bowl into the front of the section; the
-      // overhang above this row blocks part of that incoming light.
-      const shadowLength = row.overhangHeight / tanAlt;
-      const depth = Math.max(row.depth, 0.001);
-      if (shadowLength >= depth) {
-        coverage = 100;
-      } else if (shadowLength > 0) {
-        coverage = Math.min(100, (shadowLength / depth) * 100);
-      }
-      sources.overhang = coverage;
-    } else if (!sunOnOppositeSide) {
-      // Sun behind the section. Bowl/upper rows provide some back-shadow
-      // mostly at low altitudes; this fades to ~0 above 30°.
-      const lowSunFactor = Math.max(0, (30 - sunAltitudeDeg) / 30);
-      coverage = lowSunFactor * 25;
-      sources.bowl = coverage;
     } else {
-      // Sun on opposite side, no overhang data: only a small bowl contribution.
-      coverage = 5;
-      sources.bowl = coverage;
+      // Overhang projection (front-incidence regime), scaled by how head-on
+      // the sun is (opp). Back rows reach shadow at higher altitudes.
+      let overhangCoverage = 0;
+      if (row.overhangHeight && row.overhangHeight > 0 && tanAlt > 0) {
+        const shadowLength = row.overhangHeight / tanAlt;
+        const depth = Math.max(row.depth, 0.001);
+        overhangCoverage = Math.min(100, (shadowLength / depth) * 100);
+      }
+      // Bowl back-shadow (behind regime), fades to ~0 above 30°.
+      const lowSunFactor = Math.max(0, (30 - sunAltitudeDeg) / 30);
+      const bowlCoverage = lowSunFactor * 25;
+
+      const structural = opp * overhangCoverage + (1 - opp) * bowlCoverage;
+      coverage = Math.max(structural, canopyCoverage);
+
+      sources.overhang = Math.round(opp * overhangCoverage);
+      sources.bowl = Math.round((1 - opp) * bowlCoverage);
+      sources.roof = Math.round(canopyCoverage);
     }
 
     const clamped = Math.max(0, Math.min(100, Math.round(coverage)));
@@ -557,4 +606,167 @@ export function calculateRowShadows(
     bestRows,
     worstRows,
   };
+}
+
+// --------------------------------------------------------------------------
+// Whole-game-window shade
+// --------------------------------------------------------------------------
+//
+// A single instant is precisely accurate for one moment, but the sun sweeps
+// ~15°/hr in azimuth, so a ~3-hour game's shade map changes completely from
+// first pitch to final out. These helpers run the SAME `calculateRowShadows`
+// at several sampled times across the game and aggregate, so the answer is
+// "how shade migrates through the game" rather than "shade at first pitch."
+//
+// The sun positions are computed by the caller (the route, via getSunPosition
+// over the stadium's timezone) and passed in as samples — this module stays
+// pure and time-zone-agnostic.
+
+export interface SunSample {
+  /** Minutes after first pitch this sample represents. */
+  minutesFromStart: number;
+  altitudeDegrees: number;
+  azimuthDegrees: number;
+}
+
+export interface RowWindowShade {
+  rowNumber: string;
+  seats: number;
+  elevation: number;
+  depth: number;
+  coverageStart: number;   // coverage at first pitch
+  coverageEnd: number;     // coverage at the last sample
+  coverageAvg: number;     // mean coverage across the window
+  coverageMin: number;
+  coverageMax: number;
+  timeline: { minutesFromStart: number; coverage: number }[];
+  recommendation: RowShadowRow['recommendation']; // from coverageAvg
+}
+
+/** How a section's shade evolves across the game window. */
+export type ShadeProgression =
+  | 'shaded-all'   // in shade the whole game
+  | 'sunny-all'    // in sun the whole game
+  | 'sun-to-shade' // starts sunny, ends shaded
+  | 'shade-to-sun' // starts shaded, ends sunny
+  | 'mixed';       // dips in/out without a clean trend
+
+export interface SectionWindowShade {
+  sectionId: string;
+  sectionName: string;
+  rows: RowWindowShade[];
+  averageCoverage: number; // mean of rows' coverageAvg
+  startCoverage: number;   // section-average coverage at first pitch
+  endCoverage: number;     // section-average coverage at the last sample
+  coverageMin: number;     // lowest section-average across the window
+  coverageMax: number;     // highest section-average across the window
+  progression: ShadeProgression;
+  timeline: { minutesFromStart: number; coverage: number }[]; // section avg per sample
+  bestRows: string[];
+  worstRows: string[];
+}
+
+function mean(xs: number[]): number {
+  return xs.length ? xs.reduce((s, x) => s + x, 0) / xs.length : 0;
+}
+
+function classifyProgression(timeline: { coverage: number }[]): ShadeProgression {
+  if (timeline.length === 0) return 'mixed';
+  const cov = timeline.map((t) => t.coverage);
+  const first = cov[0];
+  const last = cov[cov.length - 1];
+  const lo = Math.min(...cov);
+  const hi = Math.max(...cov);
+  if (lo >= 50) return 'shaded-all';
+  if (hi < 50) return 'sunny-all';
+  if (last - first > 10) return 'sun-to-shade';
+  if (first - last > 10) return 'shade-to-sun';
+  return 'mixed';
+}
+
+/**
+ * Shade for one section across a game window. Calls `calculateRowShadows`
+ * once per sample (no duplicated math) and aggregates per row + per section.
+ * `sunSamples` must be ordered by `minutesFromStart` ascending; the first is
+ * treated as first pitch. With a single sample this degrades to a one-instant
+ * result expressed in the window shape.
+ */
+export function calculateGameWindowShade(
+  section: RowShadowInputSection,
+  sunSamples: SunSample[],
+  stadiumOrientation: number,
+): SectionWindowShade {
+  const samples = sunSamples.length
+    ? sunSamples
+    : [{ minutesFromStart: 0, altitudeDegrees: 0, azimuthDegrees: 0 }];
+
+  const perSample = samples.map((s) => ({
+    minutesFromStart: s.minutesFromStart,
+    result: calculateRowShadows(section, s.altitudeDegrees, s.azimuthDegrees, stadiumOrientation),
+  }));
+
+  // Section-average timeline (one point per sample).
+  const timeline = perSample.map((p) => ({
+    minutesFromStart: p.minutesFromStart,
+    coverage: p.result.averageCoverage,
+  }));
+
+  // Rows align positionally across samples (same section.rows order each call).
+  const rowCount = section.rows.length;
+  const rows: RowWindowShade[] = [];
+  for (let i = 0; i < rowCount; i++) {
+    const rowTimeline = perSample.map((p) => ({
+      minutesFromStart: p.minutesFromStart,
+      coverage: p.result.rows[i].coverage,
+    }));
+    const cov = rowTimeline.map((t) => t.coverage);
+    const base = perSample[0].result.rows[i];
+    const avg = Math.round(mean(cov));
+    rows.push({
+      rowNumber: base.rowNumber,
+      seats: base.seats,
+      elevation: base.elevation,
+      depth: base.depth,
+      coverageStart: cov[0],
+      coverageEnd: cov[cov.length - 1],
+      coverageAvg: avg,
+      coverageMin: Math.min(...cov),
+      coverageMax: Math.max(...cov),
+      timeline: rowTimeline,
+      recommendation: recommendForCoverage(avg),
+    });
+  }
+
+  const byAvgDesc = [...rows].sort((a, b) => b.coverageAvg - a.coverageAvg);
+  const tlCov = timeline.map((t) => t.coverage);
+
+  return {
+    sectionId: section.id,
+    sectionName: section.name,
+    rows,
+    averageCoverage: Math.round(mean(rows.map((r) => r.coverageAvg))),
+    startCoverage: timeline[0].coverage,
+    endCoverage: timeline[timeline.length - 1].coverage,
+    coverageMin: tlCov.length ? Math.min(...tlCov) : 0,
+    coverageMax: tlCov.length ? Math.max(...tlCov) : 0,
+    progression: classifyProgression(timeline),
+    timeline,
+    bestRows: byAvgDesc.slice(0, 5).map((r) => r.rowNumber),
+    worstRows: byAvgDesc.slice(-5).reverse().map((r) => r.rowNumber),
+  };
+}
+
+/**
+ * Build the ordered list of minute-offsets to sample across a game window.
+ * `windowMinutes` total length, `stepMinutes` between samples; always includes
+ * both endpoints (0 and windowMinutes). Defaults: 180-minute window
+ * (a typical ~2h40 pitch-clock game + margin), 30-minute step → 7 samples.
+ */
+export function gameWindowOffsets(windowMinutes = 180, stepMinutes = 30): number[] {
+  const w = Math.max(0, windowMinutes);
+  const step = Math.max(1, stepMinutes);
+  const offsets: number[] = [];
+  for (let m = 0; m < w; m += step) offsets.push(m);
+  offsets.push(w); // always include the final out
+  return offsets;
 }

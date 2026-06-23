@@ -26,6 +26,19 @@ import {
   hasSpecificData,
 } from '../src/data/stadium-data-aggregator';
 import type { DetailedSection } from '../src/types/stadium-complete';
+import {
+  classifyFidelity,
+  type DataFidelity,
+} from '../src/data/stadiumDataFidelity';
+import {
+  getOrientationProvenance,
+  getOrientationPrecision,
+} from '../src/data/stadiumOrientationProvenance';
+
+// --strict makes the script exit non-zero on HARD data errors (missing
+// sections, duplicate files, vertex-convention mismatches). Low fidelity and
+// low orientation precision are reported as warnings, not failures.
+const STRICT = process.argv.includes('--strict');
 
 // ---- helpers ----
 
@@ -78,6 +91,9 @@ interface StadiumAudit {
   orientation: number;
   roof: Stadium['roof'];
   hasSections: boolean;
+  fidelity: DataFidelity;
+  orientationConfidence: string;
+  orientationPrecisionDeg: number;
   sectionCount: number;
   byLevel: Record<string, number>;
   coveredCount: number;
@@ -133,6 +149,7 @@ function auditStadium(stadium: Stadium): StadiumAudit {
   }
 
   const gap = maxAngularGap(angles);
+  const prov = getOrientationProvenance(stadium.id);
 
   return {
     id: stadium.id,
@@ -140,6 +157,9 @@ function auditStadium(stadium: Stadium): StadiumAudit {
     orientation: stadium.orientation,
     roof: stadium.roof,
     hasSections: has.hasSections,
+    fidelity: classifyFidelity(sections, stadium.id, has.hasSections),
+    orientationConfidence: prov?.confidence ?? 'unverified',
+    orientationPrecisionDeg: getOrientationPrecision(stadium.id),
     sectionCount: sections.length,
     byLevel,
     coveredCount,
@@ -218,25 +238,21 @@ function main(): void {
 
   // Header
   console.log(
-    'id            | sections | covered % |    levels                   ' +
-    '| baseAng min/max | max-gap | vertex-mismatch'
+    'id            | fidelity     | orient(±°)   | sections | covered % ' +
+    '| max-gap | vertex-mismatch'
   );
-  console.log('-'.repeat(140));
+  console.log('-'.repeat(120));
 
   for (const a of audits) {
-    const levels = Object.entries(a.byLevel)
-      .map(([k, v]) => `${k}=${v}`)
-      .join(' ')
-      .padEnd(28);
     const mismatchSummary =
       a.vertexBaseAngleMismatches.length === 0
         ? '✓'
         : `✗ ${a.vertexBaseAngleMismatches.length}`;
+    const orient = `${a.orientationConfidence}/±${a.orientationPrecisionDeg}°`;
     console.log(
-      `${a.id.padEnd(13)} |   ${String(a.sectionCount).padStart(4)}   ` +
+      `${a.id.padEnd(13)} | ${a.fidelity.padEnd(12)} | ${orient.padEnd(12)} ` +
+      `|   ${String(a.sectionCount).padStart(4)}   ` +
       `|   ${fmt(a.coveredPercent, 1)}% ` +
-      `| ${levels} ` +
-      `| ${fmt(a.baseAngleMin)}/${fmt(a.baseAngleMax)} ` +
       `|  ${fmt(a.baseAngleMaxGap)}° ` +
       `| ${mismatchSummary}`
     );
@@ -308,6 +324,49 @@ function main(): void {
   console.log(`  Total sections across MLB:        ${sectionsSum}`);
   const rowsSum = audits.reduce((a, b) => a + b.totalRows, 0);
   console.log(`  Total rows across MLB:            ${rowsSum}`);
+
+  // ---- fidelity + orientation-precision distribution (Phase 9 A3/A4) ----
+  console.log('');
+  console.log('-'.repeat(80));
+  console.log('Data quality (Phase 9):');
+  console.log('-'.repeat(80));
+  const byFidelity = (f: DataFidelity) => audits.filter(a => a.fidelity === f);
+  console.log(`  Section fidelity:   real=${byFidelity('real').length}  partial=${byFidelity('partial').length}  approximate=${byFidelity('approximate').length}`);
+  const verified = audits.filter(a => a.orientationConfidence === 'verified');
+  const estimated = audits.filter(a => a.orientationConfidence === 'estimated');
+  const unverified = audits.filter(a => a.orientationConfidence === 'unverified');
+  console.log(`  Orientation conf.:  verified=${verified.length}  estimated=${estimated.length}  unverified=${unverified.length}`);
+  const surveyGrade = audits.filter(a => a.orientationPrecisionDeg <= 2);
+  console.log(`  Survey-grade (±≤2°): ${surveyGrade.length} / ${audits.length}  (goal: re-measure all 30 to ±2° GIS)`);
+  const approx = byFidelity('approximate').map(a => a.id);
+  if (approx.length) {
+    console.log(`  ⚠️  approximate-fidelity parks (UI should disclose): ${approx.join(', ')}`);
+  }
+
+  // ---- hard errors vs warnings; strict exit ----
+  const hardErrors: string[] = [];
+  for (const a of audits) {
+    if (!a.hasSections) hardErrors.push(`${a.id}: no registered section data (generic fallback)`);
+    if (a.vertexBaseAngleMismatches.length > 0) hardErrors.push(`${a.id}: ${a.vertexBaseAngleMismatches.length} vertex/baseAngle convention mismatch(es)`);
+    if (a.totalRows === 0) hardErrors.push(`${a.id}: zero rows (angles-only)`);
+  }
+  for (const d of dups.filter(x => x.reason === 'bytes')) {
+    hardErrors.push(`byte-identical section files: ${d.a} ≡ ${d.b}`);
+  }
+
+  console.log('');
+  console.log('='.repeat(80));
+  if (hardErrors.length === 0) {
+    console.log('✅ No hard data errors (sections present, conventions consistent, no byte-dupes).');
+  } else {
+    console.log(`❌ ${hardErrors.length} hard data error(s):`);
+    for (const e of hardErrors) console.log(`   • ${e}`);
+  }
+  console.log('='.repeat(80));
+
+  if (STRICT && hardErrors.length > 0) {
+    process.exit(1);
+  }
 }
 
 main();
