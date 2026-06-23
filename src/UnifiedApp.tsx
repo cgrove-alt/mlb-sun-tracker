@@ -31,7 +31,6 @@ import { WeatherForecast, weatherApi } from './services/weatherApi';
 import { formatDateTimeWithTimezone } from './utils/timeUtils';
 import { performanceMonitor, trackWebVitals } from './utils/performanceMonitor';
 import { OfflineIndicator } from './components/OfflineIndicator';
-import * as serviceWorkerRegistration from './utils/serviceWorkerRegistration';
 import { trackStadiumSelection, trackGameSelection } from './utils/analytics';
 import { getUnifiedVenueShade, ShadedVenueSection } from './utils/getUnifiedVenueShade';
 

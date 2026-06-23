@@ -26,6 +26,13 @@ export default function ServiceWorkerRegistration() {
     const SW_VERSION_KEY = 'shadium_sw_version';
     const CURRENT_SW_VERSION = 'v2';
 
+    // Whether a service worker already controls this page at mount. A later
+    // `controllerchange` then means a NEW worker took over (a genuine update),
+    // not the first-ever install — so we only auto-refresh in that case, and
+    // never on a brand-new visit (which would be a pointless reload).
+    const hadController = !!navigator.serviceWorker.controller;
+    let reloading = false;
+
     async function registerSW() {
       // If this is the first time a user runs v2, clean up the old v1 Workbox SW
       // (which had a stale precache manifest causing InvalidStateError).
@@ -46,25 +53,15 @@ export default function ServiceWorkerRegistration() {
 
         console.log('Service Worker registered with scope:', registration.scope);
 
-        // Periodically check for SW updates (every 60 s)
+        // Periodically check for SW updates (every 60 s). When a new sw.js is
+        // found, the worker calls skipWaiting()/clients.claim() and takes over
+        // immediately, which fires the `controllerchange` handler below — that
+        // performs the silent refresh. No user prompt is involved.
         const updateInterval = setInterval(() => {
           registration.update().catch(() => {
             // Update checks may fail offline — that's fine
           });
         }, 60_000);
-
-        // Handle the new SW installing
-        registration.addEventListener('updatefound', () => {
-          const newWorker = registration.installing;
-          if (!newWorker) return;
-
-          newWorker.addEventListener('statechange', () => {
-            if (newWorker.state === 'installed' && navigator.serviceWorker.controller) {
-              console.log('New service worker available');
-              window.dispatchEvent(new Event('sw-update-available'));
-            }
-          });
-        });
 
         // Clean up interval if the component ever unmounts (SSR safety)
         return () => clearInterval(updateInterval);
@@ -89,9 +86,14 @@ export default function ServiceWorkerRegistration() {
       window.addEventListener('load', registerSW, { once: true });
     }
 
-    // Handle controller change (SW activated after update)
+    // Silent auto-update: when a new service worker takes control of the page,
+    // refresh once so the page runs the new version. Guarded so it never fires
+    // on the first install and never loops. Users never see a prompt or have to
+    // choose to update.
     navigator.serviceWorker.addEventListener('controllerchange', () => {
-      console.log('Service Worker controller changed');
+      if (!hadController || reloading) return;
+      reloading = true;
+      window.location.reload();
     });
   }, []);
 

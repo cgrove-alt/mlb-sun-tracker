@@ -13,7 +13,9 @@ interface BeforeInstallPromptEvent extends Event {
 export default function PWAInstallPrompt() {
   const [deferredPrompt, setDeferredPrompt] = useState<BeforeInstallPromptEvent | null>(null);
   const [showPrompt, setShowPrompt] = useState(false);
-  const [showUpdatePrompt, setShowUpdatePrompt] = useState(false);
+  // Update notifications are intentionally NOT handled here. The app
+  // auto-updates silently — see components/ServiceWorkerRegistration.tsx, the
+  // single owner of service-worker registration + update behavior.
 
   useEffect(() => {
     // Handle PWA install prompt
@@ -28,24 +30,10 @@ export default function PWAInstallPrompt() {
     };
 
 
-    // Handle service worker updates
-    const handleServiceWorkerUpdate = () => {
-      setShowUpdatePrompt(true);
-    };
-
     window.addEventListener('beforeinstallprompt', handleBeforeInstallPrompt);
-
-    // Check for service worker updates
-    if ('serviceWorker' in navigator) {
-      navigator.serviceWorker.addEventListener('controllerchange', handleServiceWorkerUpdate);
-    }
 
     return () => {
       window.removeEventListener('beforeinstallprompt', handleBeforeInstallPrompt);
-      
-      if ('serviceWorker' in navigator) {
-        navigator.serviceWorker.removeEventListener('controllerchange', handleServiceWorkerUpdate);
-      }
     };
   }, []);
 
@@ -70,22 +58,6 @@ export default function PWAInstallPrompt() {
     setDeferredPrompt(null);
   };
 
-  const handleUpdateClick = () => {
-    if ('serviceWorker' in navigator) {
-      navigator.serviceWorker.getRegistration().then((registration) => {
-        if (registration?.waiting) {
-          registration.waiting.postMessage({ type: 'SKIP_WAITING' });
-        }
-      });
-    }
-    setShowUpdatePrompt(false);
-    window.location.reload();
-  };
-
-  const handleDismissUpdate = () => {
-    setShowUpdatePrompt(false);
-  };
-
   return (
     <>
       {/* PWA Install Prompt */}
@@ -95,19 +67,6 @@ export default function PWAInstallPrompt() {
           <button onClick={handleInstallClick}>Install</button>
           <button className="close-btn" onClick={handleDismissInstall}>
             ✕
-          </button>
-        </div>
-      )}
-
-
-      {/* Update Available Notification */}
-      {showUpdatePrompt && (
-        <div className="update-available">
-          <h4>🔄 Update Available</h4>
-          <p>A new version of The Shadium is available!</p>
-          <button onClick={handleUpdateClick}>Update Now</button>
-          <button className="dismiss-btn" onClick={handleDismissUpdate}>
-            Later
           </button>
         </div>
       )}
