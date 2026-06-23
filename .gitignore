@@ -38,3 +38,6 @@ bundle-analysis.txt
 test-results.json
 *_analysis.txt
 stadium_verification*.log
+
+# Parked half-built WIP (World Cup 2026, admin) — moved out of the build 2026-06-23, see _wip/README.md
+_wip/
