@@ -52,6 +52,21 @@ new "🧭 N° orientation"). **15/15 match the corrected value exactly — no st
 Conclusion: the entire Track A orientation correction set is serving in production — the parks whose shade maps
 were rotated 40–95° off now show real users the correct sun/shade sides.
 
+### Fidelity disclosure verification — correctly scoped on all 30 parks live (2026-06-23)
+
+Black-box checked every MLB stadium page for the `FidelityNotice` disclosure (verbatim *"Seating layout is
+approximate — the shaded vs sunny side is accurate, but individual section details are modeled, not from this
+park's real seating map."*). All HTTP 200. **Result: 27/27 approximate parks show it, 3/3 real parks correctly
+omit it — exactly matching `STADIUM_DATA_FIDELITY` (3 real / 27 approximate). No false positives, no misses.**
+
+- **Shows disclosure (27 approximate):** angels, astros, athletics, bluejays, braves, brewers, cardinals, cubs,
+  diamondbacks, dodgers, giants, guardians, mariners, marlins, mets, nationals, orioles, padres, phillies,
+  pirates, rangers, rays, reds, rockies, royals, tigers, twins.
+- **No disclosure (3 real, negative control):** yankees ✓, redsox ✓, whitesox ✓.
+
+Confirms both halves of the Track B fidelity feature live: the `getStadiumDataFidelity` classifier and the UI
+disclosure, correctly suppressed on parks with real authored seating maps.
+
 ## Context
 
 Phases 7–8 already removed the real *bugs* (the row-shade API now works, the section-in-sun geometry was
