@@ -447,7 +447,7 @@ export const kauffmanStadiumSections: DetailedSection[] = [
   },
   // Craft & Draft
   {
-    id: 'craft-and-draft',
+    id: 'craft-and-draft-2',
     name: 'Craft & Draft',
     level: 'field',
     baseAngle: 225,
@@ -468,7 +468,7 @@ export const kauffmanStadiumSections: DetailedSection[] = [
   },
   // Crown Club
   {
-    id: 'crown-club',
+    id: 'crown-club-2',
     name: 'Crown Club',
     level: 'club',
     baseAngle: 0,

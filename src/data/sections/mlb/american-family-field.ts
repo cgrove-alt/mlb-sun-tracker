@@ -426,7 +426,7 @@ export const americanFamilyFieldSections: DetailedSection[] = [
   },
   // Brewers Bar
   {
-    id: 'brewers-bar',
+    id: 'brewers-bar-2',
     name: 'Brewers Bar',
     level: 'club',
     baseAngle: 315,
@@ -468,7 +468,7 @@ export const americanFamilyFieldSections: DetailedSection[] = [
   },
   // Uecker Seats
   {
-    id: 'uecker-seats',
+    id: 'uecker-seats-2',
     name: 'Uecker Seats',
     level: 'upper',
     baseAngle: 135,

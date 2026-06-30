@@ -1,14 +1,17 @@
 import React from 'react';
-import { render, screen, waitFor } from '@testing-library/react';
+import { render, screen, waitFor, act } from '@testing-library/react';
 import '@testing-library/jest-dom';
 import OptimizedImage from '../OptimizedImage';
 
 // Mock Next.js Image component
 jest.mock('next/image', () => ({
   __esModule: true,
-  default: (props: any) => {
+  default: ({ fill, ...props }: any) => {
+    // Next's <Image fill> is a special boolean prop, not a DOM attribute — React
+    // drops a boolean `fill` off a raw <img>. Mirror it as a string attribute so
+    // tests can assert the component opted into fill mode.
     // eslint-disable-next-line jsx-a11y/alt-text
-    return <img {...props} />;
+    return <img {...props} {...(fill ? { fill: 'true' } : {})} />;
   },
 }));
 
@@ -34,6 +37,28 @@ describe('OptimizedImage', () => {
     });
   });
 
+  // OptimizedImage lazy-loads the <img> only once it scrolls into view (unless
+  // `priority`). Tests that assert on the rendered <img> must first simulate the
+  // element entering the viewport, exactly as the component's IntersectionObserver
+  // callback would. Wrapped in act() so the resulting state update + re-render flush.
+  const enterView = () =>
+    act(() => {
+      observerCallback(
+        [
+          {
+            isIntersecting: true,
+            target: document.body,
+            boundingClientRect: {} as DOMRectReadOnly,
+            intersectionRatio: 1,
+            intersectionRect: {} as DOMRectReadOnly,
+            rootBounds: null,
+            time: Date.now(),
+          },
+        ],
+        mockObserver
+      );
+    });
+
   it('renders with basic props', () => {
     render(
       <OptimizedImage
@@ -44,7 +69,7 @@ describe('OptimizedImage', () => {
       />
     );
 
-    // Image should be in placeholder state initially
+    enterView();
     const container = screen.getByRole('img').parentElement;
     expect(container).toHaveClass('image-container');
   });
@@ -109,6 +134,7 @@ describe('OptimizedImage', () => {
       />
     );
 
+    enterView();
     const container = screen.getByRole('img').parentElement;
     expect(container).toHaveClass('image-container', 'custom-class');
   });
@@ -121,6 +147,7 @@ describe('OptimizedImage', () => {
       />
     );
 
+    enterView();
     const img = screen.getByRole('img');
     expect(img).toHaveAttribute('fill', 'true');
     expect(img.style.objectFit).toBe('cover');
@@ -137,6 +164,7 @@ describe('OptimizedImage', () => {
       />
     );
 
+    enterView();
     const img = screen.getByRole('img');
     expect(img).toHaveAttribute('quality', '85');
   });
@@ -155,6 +183,7 @@ describe('OptimizedImage', () => {
       />
     );
 
+    enterView();
     const img = screen.getByRole('img');
     expect(img).toHaveAttribute('blurDataURL', blurDataURL);
   });
@@ -170,6 +199,7 @@ describe('OptimizedImage', () => {
       />
     );
 
+    enterView();
     const img = screen.getByRole('img');
     expect(img).toHaveAttribute('blurDataURL');
     expect(img.getAttribute('blurDataURL')).toContain('data:image/svg+xml;base64');
@@ -188,6 +218,7 @@ describe('OptimizedImage', () => {
       />
     );
 
+    enterView();
     const img = screen.getByRole('img');
     expect(img).toHaveAttribute('sizes', sizes);
   });
@@ -264,21 +295,7 @@ describe('OptimizedImage', () => {
       />
     );
 
-    // Simulate intersection to load image
-    observerCallback(
-      [
-        {
-          isIntersecting: true,
-          target: document.body,
-          boundingClientRect: {} as DOMRectReadOnly,
-          intersectionRatio: 1,
-          intersectionRect: {} as DOMRectReadOnly,
-          rootBounds: null,
-          time: Date.now(),
-        },
-      ],
-      mockObserver
-    );
+    enterView();
 
     const img = screen.getByRole('img');
     expect(img).toHaveAttribute('loading', 'lazy');

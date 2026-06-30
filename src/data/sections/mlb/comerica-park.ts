@@ -467,7 +467,7 @@ export const comericaParkSections: DetailedSection[] = [
   },
   // Pepsi Porch
   {
-    id: 'pepsi-porch',
+    id: 'pepsi-porch-2',
     name: 'Pepsi Porch',
     level: 'upper',
     baseAngle: 90,

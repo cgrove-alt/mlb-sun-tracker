@@ -404,7 +404,7 @@ export const nationalsParkSections: DetailedSection[] = [
   },
   // PNC Diamond Club
   {
-    id: 'pnc-diamond-club',
+    id: 'pnc-diamond-club-2',
     name: 'PNC Diamond Club',
     level: 'field',
     baseAngle: 0,
@@ -442,7 +442,7 @@ export const nationalsParkSections: DetailedSection[] = [
   },
   // Norfolk Southern Club
   {
-    id: 'norfolk-southern-club',
+    id: 'norfolk-southern-club-2',
     name: 'Norfolk Southern Club',
     level: 'club',
     baseAngle: 45,

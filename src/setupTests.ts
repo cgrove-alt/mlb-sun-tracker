@@ -43,25 +43,29 @@ Object.defineProperty(window, 'matchMedia', {
   })),
 });
 
-// Mock navigator
-Object.defineProperty(window, 'navigator', {
+// Mock ONLY navigator.serviceWorker — do NOT replace the whole navigator.
+// Previously this spread `...window.navigator` into a new object, but Navigator
+// properties (userAgent, onLine, language, …) are prototype getters that a
+// spread does NOT copy, leaving them undefined. react-dom reads
+// `navigator.userAgent.indexOf(...)` at import time and crashed every suite that
+// imports @testing-library/react. Defining just serviceWorker on the real
+// navigator preserves userAgent et al.
+Object.defineProperty(window.navigator, 'serviceWorker', {
+  configurable: true,
   writable: true,
   value: {
-    ...window.navigator,
-    serviceWorker: {
-      register: jest.fn(() => Promise.resolve({
-        scope: '/',
-        installing: null,
-        waiting: null,
-        active: null,
-        addEventListener: jest.fn(),
-        update: jest.fn(() => Promise.resolve()),
-      })),
+    register: jest.fn(() => Promise.resolve({
+      scope: '/',
+      installing: null,
+      waiting: null,
+      active: null,
       addEventListener: jest.fn(),
-      removeEventListener: jest.fn(),
-      getRegistration: jest.fn(() => Promise.resolve(undefined)),
-      controller: null,
-    },
+      update: jest.fn(() => Promise.resolve()),
+    })),
+    addEventListener: jest.fn(),
+    removeEventListener: jest.fn(),
+    getRegistration: jest.fn(() => Promise.resolve(undefined)),
+    controller: null,
   },
 });
 

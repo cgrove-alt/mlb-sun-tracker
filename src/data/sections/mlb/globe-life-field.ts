@@ -421,7 +421,7 @@ export const globeLifeFieldSections: DetailedSection[] = [
   },
   // Karbach Sky Porch
   {
-    id: 'karbach-sky-porch',
+    id: 'karbach-sky-porch-2',
     name: 'Karbach Sky Porch',
     level: 'upper',
     baseAngle: 225,
@@ -442,7 +442,7 @@ export const globeLifeFieldSections: DetailedSection[] = [
   },
   // Captain Morgan Club
   {
-    id: 'captain-morgan-club',
+    id: 'captain-morgan-club-2',
     name: 'Captain Morgan Club',
     level: 'club',
     baseAngle: 315,
