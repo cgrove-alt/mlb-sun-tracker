@@ -106,6 +106,16 @@ type-check clean.**
 
 Net win beyond the green count: a 401-check integrity guard that had been silently scanning nothing is live again.
 
+### Final green verification on main (2026-06-23)
+
+Verified the whole pipeline on `main` HEAD `16677ebf0`:
+
+- **`npm test`** → 15 suites / **666 tests pass**, 0 failures.
+- **`npm run build`** → ✓ Compiled successfully (~2.7s), **272/272 static pages** generated, compression complete, exit 0.
+- **`npm run type-check`** → clean.
+
+Build, tests, and types all green on main, with Phase 9 shipped and verified live in production.
+
 ## Context
 
 Phases 7–8 already removed the real *bugs* (the row-shade API now works, the section-in-sun geometry was
