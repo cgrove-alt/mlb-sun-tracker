@@ -26,6 +26,32 @@ the `7bfdd3923` lineage, so that commit's deploy is serving real users. (Authori
 label not read — would require interactive `vercel login`; the served-content evidence is conclusive that the
 deploy succeeded and is current.)
 
+### Full orientation verification — all 15 corrected parks live (2026-06-23)
+
+Black-box verified every corrected stadium page on `theshadium.com/stadium/<id>` (all HTTP 200, each showing the
+new "🧭 N° orientation"). **15/15 match the corrected value exactly — no stale data.**
+
+8 gross (wrong-quadrant) errors:
+
+| Park | Old | Live | | Park | Old | Live |
+|------|-----|------|-|------|-----|------|
+| mariners | 318° NW | **45°** ✓ | | nationals | 87° E | **30°** ✓ |
+| pirates | 55° NE | **120°** ✓ | | rockies | 40° NE | **0°** ✓ |
+| marlins | 40° NE | **135°** ✓ | | twins | 40° NE | **90°** ✓ |
+| padres | 25° | **0°** ✓ | | braves | 45° NE | **135°** ✓ |
+
+7 within-quadrant refines:
+
+| Park | Old | Live | | Park | Old | Live |
+|------|-----|------|-|------|-----|------|
+| phillies | 59° | **18°** ✓ | | cubs | 13° | **30°** ✓ |
+| orioles | 58° | **30°** ✓ | | royals | 58° | **48°** ✓ |
+| cardinals | 92° | **60°** ✓ | | angels | 65° | **50°** ✓ |
+| reds | 105° | **115°** ✓ | | | | |
+
+Conclusion: the entire Track A orientation correction set is serving in production — the parks whose shade maps
+were rotated 40–95° off now show real users the correct sun/shade sides.
+
 ## Context
 
 Phases 7–8 already removed the real *bugs* (the row-shade API now works, the section-in-sun geometry was
