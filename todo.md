@@ -85,6 +85,27 @@ behaves (panel shows because the sun is up at first pitch). The same page also v
 🧭 30° orientation and the ✓ Covered roof badges. **All three Phase 9 user-facing features now confirmed serving
 in production: corrected orientations, fidelity disclosure, and the game-window shade panel.**
 
+### Test-suite debt fixed — full suite 0 failures (PR #65, 2026-06-23)
+
+Running the full suite surfaced 5 failing suites *unrelated to Phase 9* (pre-existing infra/data debt + 2
+untracked WIP). Root-caused and fixed each (no shortcuts) → **`npm test`: 15 suites / 666 tests, all green;
+type-check clean.**
+
+- **`src/setupTests.ts`** — mocked `navigator` via `{ ...window.navigator }`, which drops prototype getters like
+  `userAgent`. react-dom reads `navigator.userAgent.indexOf(...)` at import, crashing EVERY suite importing
+  `@testing-library/react`. Now defines only `serviceWorker` on the real navigator.
+- **`jest.config.js`** — `jsx: 'react'` (classic) needed `import React` in every component → "React is not
+  defined". Switched to `jsx: 'react-jsx'` (automatic runtime), matching Next's build.
+- **`OptimizedImage.test.tsx`** — 8 tests asserted on the lazy `<img>` without simulating viewport entry; added
+  an `act()`-wrapped `enterView()` helper + fixed the `next/image` mock to expose the boolean `fill` prop.
+- **`stadiumDataIntegrity.test.ts`** — resolved `../../sections` (→ nonexistent `src/sections`) so it scanned
+  **0 files**. Fixed the path → its 401-check data-integrity guard reactivated and immediately caught real
+  **duplicate section IDs**, which were deduped in 6 orphan (0-importer) stadium-name data files.
+- 2 remaining failures were **untracked WIP** tests (`report-inaccuracy`, `StadiumPageClient.integration`),
+  parked in `_wip/` with the other untracked WIP — they don't affect CI.
+
+Net win beyond the green count: a 401-check integrity guard that had been silently scanning nothing is live again.
+
 ## Context
 
 Phases 7–8 already removed the real *bugs* (the row-shade API now works, the section-in-sun geometry was
