@@ -67,6 +67,24 @@ omit it — exactly matching `STADIUM_DATA_FIDELITY` (3 real / 27 approximate). 
 Confirms both halves of the Track B fidelity feature live: the `getStadiumDataFidelity` classifier and the UI
 disclosure, correctly suppressed on parks with real authored seating maps.
 
+### Game-window shade panel verification — live via headless browser (2026-06-23)
+
+The `GameWindowShade` panel (A5 payoff) is client-rendered — it needs a selected game + client compute — so
+WebFetch can't see it. Verified instead with a real headless browser (Playwright/Chromium) against production.
+On `theshadium.com/stadium/cubs` the **"☀️ How shade moves during the game"** panel rendered with correct
+computed data for the auto-selected (evening) Cubs game:
+
+```
+20 shaded all game · 44 sun → shade · 0 shade → sun · 1 sunny all game   (= 65 sections, Wrigley template)
+Good if you stay late (starts sunny → ends shaded): Field Level 100/101/102/103 — 100% sun at first pitch …
+```
+
+Confirms the full A5 chain live: the component mounts for the real game, computes the window client-side
+(progression sums to the park's section count), surfaces the "stay late → get shade" insight, and the night-guard
+behaves (panel shows because the sun is up at first pitch). The same page also visually shows the corrected
+🧭 30° orientation and the ✓ Covered roof badges. **All three Phase 9 user-facing features now confirmed serving
+in production: corrected orientations, fidelity disclosure, and the game-window shade panel.**
+
 ## Context
 
 Phases 7–8 already removed the real *bugs* (the row-shade API now works, the section-in-sun geometry was
