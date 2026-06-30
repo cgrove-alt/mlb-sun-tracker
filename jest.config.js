@@ -10,7 +10,12 @@ module.exports = {
   transform: {
     '^.+\\.tsx?$': ['ts-jest', {
       tsconfig: {
-        jsx: 'react',
+        // 'react-jsx' = the automatic JSX runtime (react/jsx-runtime), matching
+        // how Next.js builds these components. The old 'react' (classic) runtime
+        // compiled JSX to React.createElement and required `import React` in every
+        // component — which the components don't do — causing
+        // "ReferenceError: React is not defined" in component render tests.
+        jsx: 'react-jsx',
         esModuleInterop: true,
         allowSyntheticDefaultImports: true,
         moduleResolution: 'node',

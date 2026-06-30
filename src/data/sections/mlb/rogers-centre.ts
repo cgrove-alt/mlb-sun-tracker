@@ -404,7 +404,7 @@ export const rogersCentreSections: DetailedSection[] = [
   },
   // WestJet Flight Deck
   {
-    id: 'westjet-flight-deck',
+    id: 'westjet-flight-deck-2',
     name: 'WestJet Flight Deck',
     level: 'upper',
     baseAngle: 135,
