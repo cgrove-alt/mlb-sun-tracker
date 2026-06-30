@@ -129,6 +129,11 @@ black-box). Project `mlb-sun-tracker` → `theshadium.com`:
 
 No caveats this time — the dashboard/API confirms current main is the live, READY production deployment.
 
+Re-verified after the docs merge: production deployment for `749ed34b0` (the new main HEAD, the todo.md docs
+commit) is **readyState: READY**, target production, aliased to `theshadium.com` — **created 12:04:20, 3 seconds
+after** the `749ed34b0` commit at **12:04:17**. Same auto-deploy signature; current main is live. (Docs-only
+change, so no user-facing difference vs `eb0f4cafd`.)
+
 ## Context
 
 Phases 7–8 already removed the real *bugs* (the row-shade API now works, the section-in-sun geometry was
