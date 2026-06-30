@@ -116,6 +116,19 @@ Verified the whole pipeline on `main` HEAD `16677ebf0`:
 
 Build, tests, and types all green on main, with Phase 9 shipped and verified live in production.
 
+### Authoritative production deploy verification — Vercel API (2026-06-30)
+
+With the Vercel CLI authenticated (`vercel login`), confirmed the production deploy via the API (not just
+black-box). Project `mlb-sun-tracker` → `theshadium.com`:
+
+- Latest production deployment **readyState: READY**, target: production, aliased to `theshadium.com` + `www.theshadium.com`.
+- Deployment **created 11:47:37**, exactly **3 seconds after** the `eb0f4cafd` (main HEAD, Merge #67) commit at
+  **11:47:34** — i.e. it IS the GitHub-integration auto-deploy of current main, not an older build.
+- The full series of today's merges (#57–#67) shows as a clean run of **● Ready** production deployments.
+- Black-box content check still passes (Mariners 🧭 45°, fidelity note serving).
+
+No caveats this time — the dashboard/API confirms current main is the live, READY production deployment.
+
 ## Context
 
 Phases 7–8 already removed the real *bugs* (the row-shade API now works, the section-in-sun geometry was
