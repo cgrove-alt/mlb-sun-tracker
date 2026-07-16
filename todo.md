@@ -2305,3 +2305,15 @@ External SEO/GEO/UX audit remediation for theshadium.com. Phased, with approval 
 - stadiums.html: "Browse by League" + links to all 3 league pages (not a redirect).
 - yankees.html: "Same-division stadiums" → redsox/orioles/rays/bluejays. durham-bulls.html: "Nearby stadiums".
 - Blog: yankee/dodger/petco/camden/steinbrenner posts have the guide callout; general post does not. First-person voice confirmed.
+
+## Phase 7 — GEO / AI-search optimization (DONE, verified via build)
+
+- [x] **/how-it-works methodology page** (app/how-it-works/page.tsx): explains the 4 inputs — NREL Solar Position Algorithm, per-venue orientation/geometry, Open-Meteo weather, MLB StatsAPI schedule — with an honest Accuracy & Limitations section. Linked from the footer ("How It Works") and from every venue page's answer-first block. Added to the sitemap.
+- [x] **Answer-first summary** on every venue page (src/components/ShadeAnswer.tsx): 2-3 sentences directly answering "where are the shaded seats at {venue}?" from real orientation (domes get a "fixed roof → every seat shaded" message), before any tables. On MLB via StadiumPageSSR; on MiLB/NFL via ComprehensiveStadiumGuide (gated so it isn't duplicated on MLB pages).
+- [x] **llms.txt** at public/llms.txt: what The Shadium is, 182-venue coverage (30 MLB / 120 MiLB / 32 NFL), methodology URL, and the /stadium/{id}, /league/{x}, /stadiums URL patterns.
+- [x] **Shortened covered-seating FAQ**: now a by-level count summary (kept as the schema/FAQ text) plus an expandable `<details>` full list, instead of a long inline section list.
+- [x] **Meta keywords removed**: deleted the keyword arrays from the stadium (x2), league, and site-wide layout metadata. Confirmed 0 `<meta name="keywords">` on index/stadium/league.
+- [x] **Keyword-stuffing toned down**: rewrote the homepage sr-only block into natural language (removed the repeated "are my seats shaded?" phrasing) and corrected the inaccurate "250+/over 250" venue count to "180+" across layout, footer, nav, SafeSchema, SEOHelmet, and seats-shade-finder.
+
+### Verified (prerendered HTML)
+- how-it-works.html has NREL SPA + Open-Meteo + MLB StatsAPI + Accuracy sections. yankees/durham-bulls answer-first blocks present; rays shows the dome message. llms.txt served. Covered FAQ shows summary + "See the full covered-section list". 0 keyword metas. Homepage: 0 "250+", 11 "180+".

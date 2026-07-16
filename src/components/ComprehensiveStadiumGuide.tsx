@@ -15,6 +15,7 @@ import {
 import StadiumTitleBlock from './StadiumTitleBlock';
 import { StadiumTitleData } from './StadiumTitleBlock';
 import { FidelityNotice } from './FidelityNotice';
+import { ShadeAnswer } from './ShadeAnswer';
 import './StadiumGuide.css';
 
 interface ComprehensiveStadiumGuideProps {
@@ -80,6 +81,12 @@ const ComprehensiveStadiumGuide: React.FC<ComprehensiveStadiumGuideProps> = ({ s
           data={titleData}
           showBreadcrumb={true}
         />
+      )}
+
+      {/* Answer-first summary — only when standalone (MLB pages get it from
+          StadiumPageSSR instead, so it isn't duplicated). */}
+      {showTitleBlock && venue && (
+        <ShadeAnswer name={venue.name} orientation={venue.orientation} roof={venue.roof} />
       )}
 
       <FidelityNotice stadiumId={stadiumId} />

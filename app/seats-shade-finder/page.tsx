@@ -4,7 +4,7 @@ import { MLB_STADIUMS } from '../../src/data/stadiums';
 
 export const metadata: Metadata = {
   title: 'Are My Seats in the Shade? MLB, MiLB & NFL Stadium Shade Finder | The Shadium',
-  description: 'Find out if your seats are shaded at any MLB, MiLB, or NFL stadium. Check shade coverage for specific sections at 250+ venues, find the best shaded seats, and avoid sun exposure during games.',
+  description: 'Find out if your seats are shaded at any MLB, MiLB, or NFL stadium. Check shade coverage for specific sections at 180+ venues, find the best shaded seats, and avoid sun exposure during games.',
   keywords: [
     'are my seats in the shade',
     'are my seats shaded',
@@ -43,7 +43,7 @@ export default function SeatsShadeFinderPage() {
         <div className="rounded-xl border bg-white p-4 md:p-5 shadow-sm mb-8 overflow-hidden stack">
           <p className="text-lg text-ink-700 mb-4 max-w-prose">
             Wondering "are my seats shaded?" We've got you covered! The Shadium provides real-time shade 
-            information for every section at over 250 sports venues including all 30 MLB stadiums, 120 MiLB 
+            information for every section at over 180 sports venues including all 30 MLB stadiums, 120 MiLB 
             ballparks, and 32 NFL venues. Simply select your stadium below to check if your seats will be 
             in the shade during your game.
           </p>
@@ -91,7 +91,7 @@ export default function SeatsShadeFinderPage() {
             <li className="flex">
               <span className="font-bold text-blue-600 mr-3">1.</span>
               <div>
-                <strong>Select Your Stadium:</strong> Choose from our database of 250+ MLB, MiLB, and NFL venues.
+                <strong>Select Your Stadium:</strong> Choose from our database of 180+ MLB, MiLB, and NFL venues.
               </div>
             </li>
             <li className="flex">

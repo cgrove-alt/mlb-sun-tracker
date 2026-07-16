@@ -54,16 +54,6 @@ export async function generateMetadata({ params }: LeaguePageProps): Promise<Met
   return {
     title,
     description,
-    keywords: [
-      `${league.name} stadium shade`,
-      `${league.sport} stadium shade guide`,
-      `${leagueKey} shaded seats`,
-      `${league.sport} sun exposure`,
-      `best shaded seats ${league.sport}`,
-      `${league.name} venue shade map`,
-      `${league.sport} stadium sun tracker`,
-      `avoid sun ${league.sport} games`
-    ],
     alternates: {
       canonical: `https://theshadium.com/league/${leagueId}`,
     },

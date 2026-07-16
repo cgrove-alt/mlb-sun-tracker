@@ -7,6 +7,7 @@ import type { StadiumSection } from '../../../src/data/stadiumSectionTypes';
 import { StadiumAmenities } from '../../../src/data/stadiumAmenities';
 import StadiumTitleBlock from '../../../src/components/StadiumTitleBlock';
 import { StadiumTitleData } from '../../../src/components/StadiumTitleBlock';
+import { ShadeAnswer } from '../../../src/components/ShadeAnswer';
 import { stadiumHistories } from '../../../src/data/stadiumDetails';
 import styles from './StadiumPageSSR.module.css';
 
@@ -169,6 +170,9 @@ export default function StadiumPageSSR({ stadium, sections, amenities, guide }: 
           })()}
         </div>
       </section>
+
+      {/* Answer-first summary — directly answers "where are the shaded seats" */}
+      <ShadeAnswer name={stadium.name} orientation={stadium.orientation} roof={stadium.roof} />
 
       {/* Best Shaded Sections */}
       <section className={styles.section}>
@@ -395,12 +399,23 @@ export default function StadiumPageSSR({ stadium, sections, amenities, guide }: 
             <h3>Which sections have covered seating?</h3>
             <p>
               {coveredSections.length > 0
-                ? `Fully covered (all rows) at ${stadium.name}: ${coveredSections.map(s => s.name).join(', ')}.`
-                : `${stadium.name} has limited fully covered seating — check club level and premium indoor areas.`}
+                ? `${coveredSections.length} section${coveredSections.length === 1 ? '' : 's'} at ${stadium.name} ${coveredSections.length === 1 ? 'is' : 'are'} fully covered (all rows) — mostly indoor, suite, and club-level spaces`
+                : `${stadium.name} has limited fully covered seating`}
               {partialSections.length > 0
-                ? ` Additional sections are covered in their back rows only, under the deck overhang and roof: ${partialSections.slice(0, 8).map(s => s.name).join(', ')}${partialSections.length > 8 ? ', and more' : ''}.`
-                : ''}
+                ? `, and ${partialSections.length} more are shaded in their back rows only, under the upper-deck overhang and roof. Field-level and open bleacher sections are exposed.`
+                : '. Field-level and open bleacher sections are exposed.'}
             </p>
+            {(coveredSections.length > 0 || partialSections.length > 0) && (
+              <details>
+                <summary>See the full covered-section list</summary>
+                {coveredSections.length > 0 && (
+                  <p><strong>Fully covered (all rows):</strong> {coveredSections.map(s => s.name).join(', ')}.</p>
+                )}
+                {partialSections.length > 0 && (
+                  <p><strong>Back rows only (overhang/roof):</strong> {partialSections.map(s => s.name).join(', ')}.</p>
+                )}
+              </details>
+            )}
           </div>
           
           <div className={styles.faqItem}>

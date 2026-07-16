@@ -44,6 +44,7 @@ try {
 // Static pages
 const staticPages = [
   '',
+  'how-it-works',
   'faq',
   'privacy',
   'terms',

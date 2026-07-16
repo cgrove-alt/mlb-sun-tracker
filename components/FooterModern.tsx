@@ -15,7 +15,7 @@ const FooterModern: React.FC = () => {
             <h3 className="text-lg font-bold text-ink-900 mb-2">The Shadium</h3>
             <p className="text-sm text-ink-700 mb-3">
               Find seats in the shade at any MLB, MiLB, or NFL stadium. Real-time sun tracking
-              for 250+ venues.
+              for 180+ venues.
             </p>
             <p className="text-xs text-ink-600">
               © {currentYear} The Shadium™. All rights reserved.
@@ -29,6 +29,7 @@ const FooterModern: React.FC = () => {
               <ul className="space-y-1.5">
                 <li><Link href="/guide" className="text-sm text-ink-700 hover:text-primary-600 transition-colors">Shade Guide</Link></li>
                 <li><Link href="/stadiums" className="text-sm text-ink-700 hover:text-primary-600 transition-colors">All Stadiums</Link></li>
+                <li><Link href="/how-it-works" className="text-sm text-ink-700 hover:text-primary-600 transition-colors">How It Works</Link></li>
                 <li><Link href="/faq" className="text-sm text-ink-700 hover:text-primary-600 transition-colors">FAQ</Link></li>
                 <li><Link href="/contact" className="text-sm text-ink-700 hover:text-primary-600 transition-colors">Contact</Link></li>
               </ul>

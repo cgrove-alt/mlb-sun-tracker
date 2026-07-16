@@ -33,7 +33,7 @@ export const SEOHelmet: React.FC<SEOHelmetProps> = ({ stadium, game, pageType = 
     if (pageType === 'stadium' && stadium) {
       return `Discover the best seats at ${stadium.name} with our sun exposure analysis. View real-time weather, seating sections, and make informed decisions for your next ${stadium.team} game.`;
     }
-    return 'Find the best shaded seats at MLB, MiLB, and NFL stadiums. The Shadium analyzes sun exposure, weather conditions, and seating sections across 250+ sports venues to help you avoid the heat and enjoy the game in comfort.';
+    return 'Find the best shaded seats at MLB, MiLB, and NFL stadiums. The Shadium analyzes sun exposure, weather conditions, and seating sections across 180+ sports venues to help you avoid the heat and enjoy the game in comfort.';
   };
 
   // Generate canonical URL

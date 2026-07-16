@@ -47,20 +47,6 @@ export async function generateMetadata({ params }: StadiumPageProps): Promise<Me
     return {
       title,
       description,
-      keywords: [
-        `shaded seats at ${stadium.name}`,
-        `${stadium.name} shaded seats`,
-        `${stadium.name} shade guide`,
-        `best shaded seats ${stadium.name}`,
-        `${stadium.name} sun exposure`,
-        `where to sit in shade at ${stadium.name}`,
-        `${stadium.team} stadium shade`,
-        `${stadium.name} covered seats`,
-        `${stadium.name} day game seats`,
-        `avoid sun at ${stadium.name}`,
-        `${stadium.city} baseball shade`,
-        'MLB stadium shade map'
-      ],
       alternates: {
         canonical: `https://theshadium.com/stadium/${stadiumId}`,
       },
@@ -112,19 +98,6 @@ export async function generateMetadata({ params }: StadiumPageProps): Promise<Me
   return {
     title,
     description,
-    keywords: [
-      `shaded seats at ${venue.name}`,
-      `${venue.name} shaded seats`,
-      `${venue.name} shade guide`,
-      `best shaded seats ${venue.name}`,
-      `${venue.name} sun exposure`,
-      `where to sit in shade at ${venue.name}`,
-      `${venue.team} ${venue.venueType} stadium shade`,
-      `${venue.name} covered seats`,
-      `avoid sun at ${venue.name}`,
-      `${venue.city} ${venue.venueType} shade`,
-      `${venue.league} stadium shade map`
-    ],
     alternates: {
       canonical: `https://theshadium.com/stadium/${venue.id}`,
     },

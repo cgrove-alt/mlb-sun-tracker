@@ -56,15 +56,14 @@ export default function HomePage() {
 
         {/* SEO-optimized content section */}
         <div className="sr-only">
-          <h2>Find Shaded Seats at MLB, MiLB & NFL Stadiums - Are My Seats in the Shade?</h2>
+          <h2>Find Shaded Seats at MLB, MiLB &amp; NFL Stadiums</h2>
           <p>
-            Wondering "are my seats in the shade?" or "are my seats shaded?" at your favorite sports venue? 
-            The Shadium helps you find the best shaded seats at over 250 stadiums including all 30 MLB ballparks, 
-            120 MiLB stadiums, and 32 NFL venues. Our real-time sun tracking technology shows you exactly which 
-            sections will be in the shade during any game time.
+            The Shadium helps you find the best shaded seats at 180+ venues across Major League
+            Baseball (all 30 ballparks), Minor League Baseball (120 parks), and the NFL (32 stadiums).
+            Pick your stadium and game time to see which sections will be in the shade.
           </p>
-          
-          <h3>Check If Your Seats Are Shaded at These Popular Venues</h3>
+
+          <h3>Popular venue shade guides</h3>
           <ul>
             <li><Link href="/stadium/yankees">Are my seats shaded at Yankee Stadium? (MLB)</Link></li>
             <li><Link href="/stadium/dodgers">Find shaded seats at Dodger Stadium (MLB)</Link></li>
@@ -73,11 +72,11 @@ export default function HomePage() {
             <li><Link href="/stadium/sofi-stadium-rams">SoFi Stadium sun exposure guide (NFL)</Link></li>
           </ul>
           
-          <h3>How to Know If Your Seats Are in the Shade</h3>
+          <h3>How it works</h3>
           <p>
-            Simply select your stadium from our database of 250+ MLB, MiLB, and NFL venues and choose your 
-            game time to see which sections are shaded. Our advanced calculations consider sun angle, stadium 
-            orientation, roof coverage, and time of day to show you exactly where the shade will be during your game.
+            Choose your stadium and game time, and The Shadium factors in the sun&apos;s angle, the
+            stadium&apos;s orientation, roof and overhang coverage, and the weather to show where the
+            shade will be. <Link href="/how-it-works">Read the full methodology</Link>.
           </p>
         </div>
 
