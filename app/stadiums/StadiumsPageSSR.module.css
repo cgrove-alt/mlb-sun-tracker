@@ -47,7 +47,7 @@
 .statNumber {
   font-size: 2rem;
   font-weight: bold;
-  color: #2196f3;
+  color: #1565c0;
 }
 
 .statLabel {
@@ -154,7 +154,7 @@
 }
 
 .teamBadge {
-  background: #2196f3;
+  background: #1565c0;
   color: white;
   padding: 0.25rem 0.5rem;
   border-radius: 4px;
@@ -194,7 +194,7 @@
 .shadeStat strong {
   display: block;
   font-size: 1.25rem;
-  color: #2196f3;
+  color: #1565c0;
 }
 
 .shadeStat span {
@@ -229,7 +229,7 @@
 .viewGuide {
   display: block;
   text-align: center;
-  color: #2196f3;
+  color: #1565c0;
   font-weight: 600;
   margin-top: auto;
   padding-top: 1rem;
@@ -296,7 +296,7 @@
   .stadiumCard:active {
     transform: scale(0.98);
     background: #f0f4f8;
-    border-color: #2196f3;
+    border-color: #1565c0;
   }
 
   /* Larger text for mobile readability */
