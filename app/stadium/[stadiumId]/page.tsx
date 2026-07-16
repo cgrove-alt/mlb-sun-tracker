@@ -10,6 +10,7 @@ import { bestShadedSideForDayGame } from '../../../src/utils/shadeSide';
 import { STADIUM_WIKIPEDIA } from '../../../src/data/stadiumWikipedia';
 import { ErrorBoundary } from '../../../src/components/ErrorBoundary';
 import ComprehensiveStadiumGuide from '../../../src/components/ComprehensiveStadiumGuide';
+import { ShadeDataVerified } from '../../../src/components/ShadeDataVerified';
 import StadiumPageClient from './StadiumPageClient';
 import StadiumPageSSR from './StadiumPageSSR';
 import styles from './StadiumPage.module.css';
@@ -334,6 +335,7 @@ export default async function StadiumPage({ params }: StadiumPageProps) {
           />
         ))}
         <ComprehensiveStadiumGuide stadiumId={venue.id} />
+        <ShadeDataVerified />
       </div>
     );
   }
@@ -393,6 +395,8 @@ export default async function StadiumPage({ params }: StadiumPageProps) {
           />
         </ErrorBoundary>
       </div>
+
+      <ShadeDataVerified />
     </div>
   );
 }

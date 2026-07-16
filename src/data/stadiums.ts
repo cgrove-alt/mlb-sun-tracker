@@ -54,8 +54,8 @@ export const MLB_STADIUMS: Stadium[] = [
   {
     id: 'athletics',
     name: 'Sutter Health Park',
-    team: 'Oakland Athletics',
-    city: 'Sacramento',
+    team: 'Athletics', // Dropped "Oakland" — the franchise's official name is now just "Athletics" while based in West Sacramento (Sutter Health Park, 2025-2027).
+    city: 'West Sacramento',
     state: 'CA',
     latitude: 38.5803,
     longitude: -121.5132,
@@ -303,15 +303,15 @@ export const MLB_STADIUMS: Stadium[] = [
   },
   {
     id: 'rays',
-    name: 'George M. Steinbrenner Field', // Temporary home for 2025 season due to Tropicana Field hurricane damage
+    name: 'Tropicana Field', // Rays returned to Tropicana Field for 2026 after Hurricane Milton roof repairs (reopened Apr 6, 2026). 2025 was played at Steinbrenner Field.
     team: 'Tampa Bay Rays',
-    city: 'Tampa',
+    city: 'St. Petersburg',
     state: 'FL',
-    latitude: 27.9799,
-    longitude: -82.5061,
-    orientation: 60, // NE — verified via Esri World Imagery 2026-05-13 (Steinbrenner Field; prior 316° was Tropicana Field's orientation and didn't transfer to the temporary venue)
-    capacity: 11026,
-    roof: 'open',
+    latitude: 27.7683,
+    longitude: -82.6534,
+    orientation: 316, // fixed-roof dome — orientation is nominal; roof:'fixed' means all seats are shaded regardless of sun position
+    capacity: 25000,
+    roof: 'fixed',
     timezone: 'America/New_York'
   },
   {
@@ -397,7 +397,7 @@ export const MLB_STADIUMS: Stadium[] = [
   },
   {
     id: 'whitesox',
-    name: 'Guaranteed Rate Field',
+    name: 'Rate Field', // Renamed from "Guaranteed Rate Field" in 2025.
     team: 'Chicago White Sox',
     city: 'Chicago',
     state: 'IL',

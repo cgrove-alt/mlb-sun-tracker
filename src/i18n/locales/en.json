@@ -457,7 +457,7 @@
     "teams": {
       "angels": "Los Angeles Angels",
       "astros": "Houston Astros",
-      "athletics": "Oakland Athletics",
+      "athletics": "Athletics",
       "bluejays": "Toronto Blue Jays",
       "braves": "Atlanta Braves",
       "brewers": "Milwaukee Brewers",
@@ -515,7 +515,7 @@
       "royals": "Kauffman Stadium",
       "tigers": "Comerica Park",
       "twins": "Target Field",
-      "whitesox": "Guaranteed Rate Field",
+      "whitesox": "Rate Field",
       "yankees": "Yankee Stadium"
     }
   },

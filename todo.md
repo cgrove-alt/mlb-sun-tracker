@@ -2273,3 +2273,23 @@ External SEO/GEO/UX audit remediation for theshadium.com. Phased, with approval 
 - MiLB (durham-bulls) & NFL (sofi-stadium-rams): full 5-schema set (were empty before); MiLB correctly has no Wikipedia sameAs.
 - Blog: WebApplication, BlogPosting, BreadcrumbList.
 - NOTE: Google Rich Results Test remains a manual post-deploy step (see AUDIT-RESULTS checklist).
+
+## Phase 5 — Freshness & 2026 factual updates (DONE, verified via build)
+
+### Web research (2026)
+- **Rays:** returned to **Tropicana Field** (St. Petersburg, FL) for 2026 — reopened Apr 6, 2026 after Hurricane Milton roof repairs (2025 was Steinbrenner Field). Source: ESPN.
+- **Athletics:** at **Sutter Health Park** (West Sacramento, CA) 2025-2027; official name is just **"Athletics"** (no city). Sources: Wikipedia, MLB.com.
+
+### Fix
+- [x] Rate Field rename: whitesox `name` "Guaranteed Rate Field" → "Rate Field" in stadiums.ts, unifiedVenues.ts, guide, locale. Kept the old name as a searchable alias in the guide overview ("Rate Field (formerly Guaranteed Rate Field)"). Slug is `whitesox` (unchanged) so no redirect needed.
+- [x] Rays → Tropicana Field 2026: name, city (St. Petersburg), lat/lon, orientation 316, capacity 25000, **roof 'fixed'** (dome — the shade calc already treats fixed roofs as fully shaded) in stadiums.ts + unifiedVenues.ts.
+- [x] Athletics: dropped "Oakland" → team "Athletics", city "West Sacramento", across stadiums.ts, unifiedVenues.ts (incl. 4 alternateTeams), guides, locale, detailedStadiums, milbStadiums parentOrg.
+- [x] "Shade data last verified: May 21, 2026" line on every venue page — new `src/data/shadeDataVerified.ts` field + `<ShadeDataVerified/>` component, rendered on both MLB and MiLB/NFL branches.
+- [x] 24-hour → 12-hour: league page `typicalGameTimes` now rendered via `to12Hour()` (e.g. "1:00 PM", "7:00 PM"). (The MobileStadiumGuide already displayed 12-hour labels.)
+- [x] Capitalization: "baseball Shade Tips" → "Baseball Shade Tips" and "Sport: Baseball" via `titleCase()`.
+
+### Verified (prerendered HTML)
+- rays.html: "Tropicana Field" + "St. Petersburg", no "Steinbrenner". athletics.html: "Sutter Health Park", no "Oakland Athletics". whitesox.html: "Rate Field" (+ intentional "formerly Guaranteed Rate Field" alias).
+- league/mlb.html: "Baseball Shade Tips", "Sport: Baseball", times show "1:00 PM"/"7:00 PM" ("13:00"/"19:00" remain only as React keys, not visible text).
+- yankees.html + durham-bulls.html: "Shade data last verified: May 21, 2026".
+- Tests: 80/80 (sections + sun calc). Venue-data audit: 182 venues, 0 malformed.

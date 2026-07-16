@@ -459,7 +459,7 @@ export const DETAILED_STADIUMS: DetailedStadium[] = [
   {
     id: 'athletics',
     name: 'Oakland Coliseum',
-    team: 'Oakland Athletics',
+    team: 'Athletics',
     city: 'Oakland',
     state: 'CA',
     latitude: 37.7516,

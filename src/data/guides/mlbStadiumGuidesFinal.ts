@@ -276,7 +276,7 @@ export const mlbStadiumGuidesFinal: Record<string, StadiumGuide> = {
   'athletics': {
     id: 'athletics',
     name: 'Oakland Coliseum',
-    team: 'Oakland Athletics',
+    team: 'Athletics',
     opened: 1966,
     capacity: 46847,
     overview: {
