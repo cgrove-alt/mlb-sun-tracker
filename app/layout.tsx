@@ -51,21 +51,13 @@ export const metadata: Metadata = {
     title: 'The Shadium - Find Seats in the Shade at MLB, MiLB & NFL Stadiums',
     description: 'Find seats in the shade at any MLB, MiLB, or NFL stadium. Real-time sun tracking helps you avoid sun exposure and stay cool. Shade maps for 180+ sports venues.',
     siteName: 'The Shadium',
-    images: [
-      {
-        url: 'https://theshadium.com/logo512.png',
-        width: 512,
-        height: 512,
-        alt: 'The Shadium Logo',
-        type: 'image/png',
-      },
-    ],
+    // OG image comes from the opengraph-image.tsx file convention (root default
+    // + per-venue / per-league / per-post overrides) — not a hardcoded logo.
   },
   twitter: {
     card: 'summary_large_image',
     title: 'The Shadium - Find Seats in the Shade at MLB, MiLB & NFL Stadiums',
     description: 'Find seats in the shade at any MLB, MiLB, or NFL stadium. Real-time sun tracking helps you avoid sun exposure and stay cool during games.',
-    images: ['https://theshadium.com/logo512.png'],
     creator: '@theshadium',
     site: '@theshadium',
   },

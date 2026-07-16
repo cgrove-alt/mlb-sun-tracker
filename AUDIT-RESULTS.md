@@ -59,7 +59,7 @@ All eight phases are implemented, each as its own commit, and verified against t
 ## Remaining known issues / scoped follow-ups
 
 1. **Seating-bowl on MiLB/NFL** — the SVG bowl is MLB-only for now (verified section geometry). Extending to the 152 MiLB/NFL pages needs sections loaded into `ComprehensiveStadiumGuide` and a MiLB `baseAngle` data-quality audit. Est. ~0.5 day.
-2. **OG images are venue-only** — homepage, league, and blog pages still use the default image. Adding `opengraph-image.tsx` to those routes is a small follow-up.
+2. ~~OG images are venue-only~~ **DONE** — added branded `opengraph-image.tsx` for the homepage (root default, also inherited by /faq, /guide, etc.), each league, and every blog post (shared `src/lib/ogCard.tsx`). Removed the hardcoded logo512 from the layout and the broken blog featured-image references. 217 OG images total.
 3. **Partial-coverage back-row cutoff is modeled** (back ~40% of rows), not individually surveyed per section; White Sox/Fenway use a generic rule vs. Yankees' section-by-section research.
 4. **`sameAs` Wikipedia is MLB-only** ("where available"); MiLB/NFL can be added to `src/data/stadiumWikipedia.ts` over time.
 5. **Interactive game-time bowl** — the current bowl is a static 1 PM snapshot; a game-time-interactive version tied to the picker is a larger client-side lift (not built).

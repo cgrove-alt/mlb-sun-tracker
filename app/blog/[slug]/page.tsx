@@ -34,13 +34,14 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
     description: post.description,
     keywords: post.tags,
     authors: [{ name: post.author }],
+    // OG/twitter images come from the per-post opengraph-image.tsx (the frontmatter
+    // `image` paths point to a non-existent public/images/blog/ directory).
     openGraph: {
       title: post.title,
       description: post.description,
       type: 'article',
       publishedTime: post.dateISO,
       authors: [post.author],
-      images: post.image ? [post.image] : [],
       url: `https://theshadium.com/blog/${slug}`,
     },
     alternates: {
@@ -50,7 +51,6 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
       card: 'summary_large_image',
       title: post.title,
       description: post.description,
-      images: post.image ? [post.image] : [],
     },
   };
 }
