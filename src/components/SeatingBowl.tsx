@@ -63,11 +63,13 @@ export function SeatingBowl({
   orientation,
   roof,
   name,
+  sport = 'baseball',
 }: {
   sections: StadiumSection[];
   orientation: number;
   roof?: string;
   name: string;
+  sport?: 'baseball' | 'football';
 }) {
   const drawable = sections.filter(
     (s) => typeof s.baseAngle === 'number' && typeof s.angleSpan === 'number' && s.angleSpan > 0,
@@ -139,11 +141,11 @@ export function SeatingBowl({
             Field
           </text>
           {wedges}
-          {/* orientation labels */}
-          {label(0, '1B')}
-          {label(90, 'CF')}
-          {label(180, '3B')}
-          {label(270, 'Home')}
+          {/* orientation labels (baseball diamond only) */}
+          {sport === 'baseball' && label(0, '1B')}
+          {sport === 'baseball' && label(90, 'CF')}
+          {sport === 'baseball' && label(180, '3B')}
+          {sport === 'baseball' && label(270, 'Home')}
         </svg>
 
         <ul style={{ listStyle: 'none', padding: 0, margin: 0, fontSize: '0.9rem' }}>
