@@ -46,8 +46,11 @@ for (const stadium of MLB_STADIUMS) {
   const fieldCovered = field.filter((s) => s.covered);
 
   const flags: string[] = [];
-  if (fieldCovered.length > 0) {
-    flags.push(`field-covered (${fieldCovered.length}/${field.length} field sections fully covered)`);
+  // A few inner field-level sections under a press-box / deck overhang is normal
+  // (e.g. Fenway FB-39..50). Only flag when the MAJORITY of field seating is
+  // marked fully covered, which is architecturally implausible.
+  if (field.length >= 4 && pct(fieldCovered.length, field.length) > 40) {
+    flags.push(`field-covered (${fieldCovered.length}/${field.length} = ${pct(fieldCovered.length, field.length)}% of field sections fully covered)`);
   }
   if (upper.length >= 5 && upperCovered.length === upper.length) {
     flags.push(`all-upper-covered (100% of ${upper.length} upper-deck sections fully covered)`);

@@ -2244,3 +2244,9 @@ External SEO/GEO/UX audit remediation for theshadium.com. Phased, with approval 
 
 ### Deferred to Phase 4
 - The JSON-LD FAQ in `page.tsx` still hardcodes a "third base" answer — will be regenerated from the (now-correct) on-page FAQ content in Phase 4 (Structured Data).
+
+## Phase 3 follow-up — White Sox fixed; Fenway found to be a false positive
+
+- **White Sox (Rate Field):** applied the 3-tier model. The file's OWN header documented that the 500 upper deck is sheltered "row 9 and above" and lower 111-155 are covered in their "back rows only (front rows are not covered in reality)" — the binary flag had forced all of it to "guaranteed shade." Now: club+suite = fully covered; lower + upper (500s) = partial (back rows only); field/outfield/standing = exposed. Rendered HTML: 32 Covered / 81 back-rows / 24 Exposed; "Upper Reserved 506" now shows "◐ back rows only". Updated whitesox.test.ts (64/64 section tests pass).
+- **Red Sox (Fenway):** on inspection, the flagged "12 field sections covered" is DOCUMENTED and defensible — inner Field Box 39-50 sit under the press-box overhang, the Grandstand is genuinely roofed, EMC Club is indoor. Fenway is only 31% covered with a researched, balanced mix. Blanket reclassification would have DEGRADED good data, so I reverted it and left Fenway's researched data intact.
+- **Audit heuristic refined:** `scripts/auditSuspiciousCoverage.ts` now only flags `field-covered` when >40% of field seating is fully covered (a few inner field boxes under an overhang is normal). Re-run: 0 suspicious stadiums (White Sox fixed, Fenway legitimately not flagged).
