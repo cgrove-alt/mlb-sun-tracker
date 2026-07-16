@@ -191,7 +191,7 @@ const StadiumTitleBlock: React.FC<StadiumTitleBlockProps> = ({
             aria-label={isFavorite ? 'Remove from favorites' : 'Add to favorites'}
             title={isFavorite ? 'Remove from favorites' : 'Add to favorites'}
           >
-            {isFavorite ? '⭐' : '☆'}
+            <span aria-hidden="true">{isFavorite ? '⭐' : '☆'}</span>
           </button>
 
           {/* Share Button */}
@@ -202,7 +202,7 @@ const StadiumTitleBlock: React.FC<StadiumTitleBlockProps> = ({
               aria-label="Share stadium"
               title="Share"
             >
-              📤
+              <span aria-hidden="true">📤</span>
             </button>
             {showShareMenu && (
               <div className={styles.shareMenu}>
@@ -220,7 +220,7 @@ const StadiumTitleBlock: React.FC<StadiumTitleBlockProps> = ({
             aria-label={isExpanded ? 'Show less details' : 'Show more details'}
             title={isExpanded ? 'Show less' : 'Show more'}
           >
-            {isExpanded ? '−' : '+'}
+            <span aria-hidden="true">{isExpanded ? '−' : '+'}</span>
           </button>
         </div>
       </div>

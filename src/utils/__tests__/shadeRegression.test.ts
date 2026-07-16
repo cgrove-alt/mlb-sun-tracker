@@ -49,7 +49,7 @@ const BASELINE: Record<string, { altitudeDeg: number; azimuthDeg: number }> = {
   phillies:      { altitudeDeg: 15.41, azimuthDeg: 287.10 },
   pirates:       { altitudeDeg: 19.12, azimuthDeg: 284.12 },
   rangers:       { altitudeDeg: 31.08, azimuthDeg: 278.67 },
-  rays:          { altitudeDeg: 17.77, azimuthDeg: 286.92 },
+  rays:          { altitudeDeg: 17.84, azimuthDeg: 286.93 }, // Tropicana Field, St. Petersburg (2026 return; updated from Steinbrenner Field coords)
   redsox:        { altitudeDeg: 13.25, azimuthDeg: 288.94 },
   reds:          { altitudeDeg: 22.18, azimuthDeg: 282.03 },
   rockies:       { altitudeDeg: 37.96, azimuthDeg: 269.49 },
