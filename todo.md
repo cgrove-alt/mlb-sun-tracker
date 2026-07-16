@@ -2293,3 +2293,15 @@ External SEO/GEO/UX audit remediation for theshadium.com. Phased, with approval 
 - league/mlb.html: "Baseball Shade Tips", "Sport: Baseball", times show "1:00 PM"/"7:00 PM" ("13:00"/"19:00" remain only as React keys, not visible text).
 - yankees.html + durham-bulls.html: "Shade data last verified: May 21, 2026".
 - Tests: 80/80 (sections + sun calc). Venue-data audit: 182 venues, 0 malformed.
+
+## Phase 6 — Internal linking & architecture (DONE, verified via build)
+
+- [x] **/stadiums is now a true all-leagues index** (was a redirect to /league/mlb). Renders the pre-existing StadiumsPageSSR with a new "Browse by League" section linking to /league/mlb, /league/milb, /league/nfl, plus the MLB stadiums-by-division list. Self-canonical to /stadiums. Fixed a latent bug: the division grouping keyed on short team names ("Yankees") while stadium.team is the full name, so every team fell through to a default division — now uses a shared id-keyed map (src/data/mlbDivisions.ts).
+- [x] **Blog → stadium contextual link.** New src/utils/venueForPost.ts matches each post to its venue by id / slugified name / slugified team against the post's tags+slug. A prominent "Planning a visit? See our full {Venue} shade guide" callout renders after the header. Match rate: 30/30 venue posts (camden-yards→orioles, steinbrenner-field→rays, etc.); the 1 general post correctly gets no callout.
+- [x] **First-person voice.** Fixed third-person tool references in blog posts ("their shade map"/"their detailed shade map"/"Check their details" → "our ..."). Preserved legitimate "their" (Las Vegas move, price, sun's peak).
+- [x] **Nearby / same-division block** on every venue page (src/components/RelatedStadiums.tsx): MLB venues show their 4 division-mates; MiLB/NFL venues show the 4 nearest same-league venues by great-circle distance. Rendered on both branches.
+
+### Verified (prerendered HTML)
+- stadiums.html: "Browse by League" + links to all 3 league pages (not a redirect).
+- yankees.html: "Same-division stadiums" → redsox/orioles/rays/bluejays. durham-bulls.html: "Nearby stadiums".
+- Blog: yankee/dodger/petco/camden/steinbrenner posts have the guide callout; general post does not. First-person voice confirmed.

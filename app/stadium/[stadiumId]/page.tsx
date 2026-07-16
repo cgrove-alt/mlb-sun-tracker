@@ -11,6 +11,7 @@ import { STADIUM_WIKIPEDIA } from '../../../src/data/stadiumWikipedia';
 import { ErrorBoundary } from '../../../src/components/ErrorBoundary';
 import ComprehensiveStadiumGuide from '../../../src/components/ComprehensiveStadiumGuide';
 import { ShadeDataVerified } from '../../../src/components/ShadeDataVerified';
+import { RelatedStadiums } from '../../../src/components/RelatedStadiums';
 import StadiumPageClient from './StadiumPageClient';
 import StadiumPageSSR from './StadiumPageSSR';
 import styles from './StadiumPage.module.css';
@@ -335,6 +336,7 @@ export default async function StadiumPage({ params }: StadiumPageProps) {
           />
         ))}
         <ComprehensiveStadiumGuide stadiumId={venue.id} />
+        <RelatedStadiums venueId={venue.id} />
         <ShadeDataVerified />
       </div>
     );
@@ -396,6 +398,7 @@ export default async function StadiumPage({ params }: StadiumPageProps) {
         </ErrorBoundary>
       </div>
 
+      <RelatedStadiums venueId={stadium.id} />
       <ShadeDataVerified />
     </div>
   );

@@ -1,57 +1,22 @@
 import React from 'react';
 import Link from 'next/link';
 import { MLB_STADIUMS } from '../../src/data/stadiums';
+import { MLB_DIVISIONS, DIVISION_ORDER } from '../../src/data/mlbDivisions';
 import styles from './StadiumsPageSSR.module.css';
 
+const LEAGUES = [
+  { id: 'mlb', name: 'MLB', label: 'Major League Baseball', count: 30 },
+  { id: 'milb', name: 'MiLB', label: 'Minor League Baseball', count: 120 },
+  { id: 'nfl', name: 'NFL', label: 'National Football League', count: 32 },
+];
+
 export default function StadiumsPageSSR() {
-  // Group stadiums by division
-  const divisions: Record<string, typeof MLB_STADIUMS> = {
-    'AL East': [],
-    'AL Central': [],
-    'AL West': [],
-    'NL East': [],
-    'NL Central': [],
-    'NL West': [],
-  };
-
-  // Division mapping
-  const teamDivisions: Record<string, string> = {
-    'Orioles': 'AL East',
-    'Red Sox': 'AL East',
-    'Yankees': 'AL East',
-    'Rays': 'AL East',
-    'Blue Jays': 'AL East',
-    'Guardians': 'AL Central',
-    'White Sox': 'AL Central',
-    'Tigers': 'AL Central',
-    'Royals': 'AL Central',
-    'Twins': 'AL Central',
-    'Astros': 'AL West',
-    'Athletics': 'AL West',
-    'Angels': 'AL West',
-    'Mariners': 'AL West',
-    'Rangers': 'AL West',
-    'Braves': 'NL East',
-    'Marlins': 'NL East',
-    'Mets': 'NL East',
-    'Phillies': 'NL East',
-    'Nationals': 'NL East',
-    'Brewers': 'NL Central',
-    'Cardinals': 'NL Central',
-    'Cubs': 'NL Central',
-    'Reds': 'NL Central',
-    'Pirates': 'NL Central',
-    'Diamondbacks': 'NL West',
-    'Rockies': 'NL West',
-    'Dodgers': 'NL West',
-    'Padres': 'NL West',
-    'Giants': 'NL West',
-  };
-
-  // Group stadiums
+  // Group stadiums by division using the shared, id-keyed division map.
+  const divisions: Record<string, typeof MLB_STADIUMS> = {};
+  for (const d of DIVISION_ORDER) divisions[d] = [];
   MLB_STADIUMS.forEach(stadium => {
-    const division = teamDivisions[stadium.team] || 'NL West';
-    if (divisions[division]) {
+    const division = MLB_DIVISIONS[stadium.id];
+    if (division && divisions[division]) {
       divisions[division].push(stadium);
     }
   });
@@ -61,25 +26,42 @@ export default function StadiumsPageSSR() {
       <div className={styles.container}>
         {/* Hero Section */}
         <section className={styles.hero}>
-          <h1>MLB Stadium Shade Guides</h1>
+          <h1>All Stadium Shade Guides</h1>
           <p className={styles.lead}>
-            Find the best shaded seats at all 30 Major League Baseball stadiums. 
-            Each guide includes detailed shade analysis, covered sections, and seasonal recommendations.
+            Find the best shaded seats at 180+ venues across Major League Baseball,
+            Minor League Baseball, and the NFL. Each guide includes detailed shade
+            analysis, covered sections, and seasonal recommendations.
           </p>
-          
+
           <div className={styles.statsGrid}>
             <div className={styles.stat}>
-              <span className={styles.statNumber}>30</span>
-              <span className={styles.statLabel}>MLB Stadiums</span>
+              <span className={styles.statNumber}>182</span>
+              <span className={styles.statLabel}>Venues</span>
             </div>
             <div className={styles.stat}>
-              <span className={styles.statNumber}>5,000+</span>
-              <span className={styles.statLabel}>Sections Analyzed</span>
+              <span className={styles.statNumber}>3</span>
+              <span className={styles.statLabel}>Leagues (MLB, MiLB, NFL)</span>
             </div>
             <div className={styles.stat}>
               <span className={styles.statNumber}>Real-time</span>
               <span className={styles.statLabel}>Shade Calculations</span>
             </div>
+          </div>
+        </section>
+
+        {/* Browse by League */}
+        <section className={styles.quickLinks}>
+          <h2>Browse by League</h2>
+          <div className={styles.popularGrid}>
+            {LEAGUES.map((league) => (
+              <Link key={league.id} href={`/league/${league.id}`} className={styles.popularCard}>
+                <h3>{league.name}</h3>
+                <p className={styles.team}>{league.label}</p>
+                <div className={styles.cardStats}>
+                  <span>{league.count} venues →</span>
+                </div>
+              </Link>
+            ))}
           </div>
         </section>
 
