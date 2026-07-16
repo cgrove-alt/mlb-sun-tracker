@@ -16,7 +16,7 @@ import StadiumTitleBlock from './StadiumTitleBlock';
 import { StadiumTitleData } from './StadiumTitleBlock';
 import { FidelityNotice } from './FidelityNotice';
 import { ShadeAnswer } from './ShadeAnswer';
-import { SeatingBowl } from './SeatingBowl';
+import { InteractiveSeatingBowl } from './InteractiveSeatingBowl';
 import { generateBaseballSections } from '../utils/generateBaseballSections';
 import { getVenueSections } from '../data/venueSections';
 import type { StadiumSection } from '../data/stadiumSectionTypes';
@@ -102,11 +102,14 @@ const ComprehensiveStadiumGuide: React.FC<ComprehensiveStadiumGuideProps> = ({ s
         <ShadeAnswer name={venue.name} orientation={venue.orientation} roof={venue.roof} />
       )}
 
-      {/* At-a-glance seating bowl (approximate — generated geometry for non-MLB) */}
+      {/* Interactive at-a-glance seating bowl (approximate — generated geometry for non-MLB) */}
       {showTitleBlock && venue && bowlSections.length >= 6 && (
-        <SeatingBowl
+        <InteractiveSeatingBowl
           sections={bowlSections}
           orientation={venue.orientation}
+          latitude={venue.latitude}
+          longitude={venue.longitude}
+          timezone={venue.timezone}
           roof={venue.roof}
           name={venue.name}
           sport={venue.venueType === 'football' ? 'football' : 'baseball'}

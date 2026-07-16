@@ -62,7 +62,7 @@ All eight phases are implemented, each as its own commit, and verified against t
 2. ~~OG images are venue-only~~ **DONE** — added branded `opengraph-image.tsx` for the homepage (root default, also inherited by /faq, /guide, etc.), each league, and every blog post (shared `src/lib/ogCard.tsx`). Removed the hardcoded logo512 from the layout and the broken blog featured-image references. 217 OG images total.
 3. **Partial-coverage back-row cutoff is modeled** (back ~40% of rows), not individually surveyed per section; White Sox/Fenway use a generic rule vs. Yankees' section-by-section research.
 4. **`sameAs` Wikipedia is MLB-only** ("where available"); MiLB/NFL can be added to `src/data/stadiumWikipedia.ts` over time.
-5. **Interactive game-time bowl** — the current bowl is a static 1 PM snapshot; a game-time-interactive version tied to the picker is a larger client-side lift (not built).
+5. ~~Interactive game-time bowl~~ **DONE** — `InteractiveSeatingBowl.tsx` replaces the static bowl: a date picker + time slider recolor every section by its **real** sun exposure (`getSunPosition` + `getSectionSunExposure`, timezone-correct) with a live sun readout. It server-renders a deterministic default (6:30 PM, when the shade split is clearest) and becomes interactive on hydration. Works on MLB/MiLB/NFL; fixed-roof venues show fully shaded.
 
 ---
 

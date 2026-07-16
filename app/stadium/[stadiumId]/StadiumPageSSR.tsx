@@ -8,7 +8,7 @@ import { StadiumAmenities } from '../../../src/data/stadiumAmenities';
 import StadiumTitleBlock from '../../../src/components/StadiumTitleBlock';
 import { StadiumTitleData } from '../../../src/components/StadiumTitleBlock';
 import { ShadeAnswer } from '../../../src/components/ShadeAnswer';
-import { SeatingBowl } from '../../../src/components/SeatingBowl';
+import { InteractiveSeatingBowl } from '../../../src/components/InteractiveSeatingBowl';
 import { stadiumHistories } from '../../../src/data/stadiumDetails';
 import styles from './StadiumPageSSR.module.css';
 
@@ -175,8 +175,16 @@ export default function StadiumPageSSR({ stadium, sections, amenities, guide }: 
       {/* Answer-first summary — directly answers "where are the shaded seats" */}
       <ShadeAnswer name={stadium.name} orientation={stadium.orientation} roof={stadium.roof} />
 
-      {/* At-a-glance color-coded seating bowl */}
-      <SeatingBowl sections={sections} orientation={stadium.orientation} roof={stadium.roof} name={stadium.name} />
+      {/* Interactive at-a-glance seating bowl (pick a date/time) */}
+      <InteractiveSeatingBowl
+        sections={sections}
+        orientation={stadium.orientation}
+        latitude={stadium.latitude}
+        longitude={stadium.longitude}
+        timezone={stadium.timezone}
+        roof={stadium.roof}
+        name={stadium.name}
+      />
 
       {/* Best Shaded Sections */}
       <section className={styles.section}>
