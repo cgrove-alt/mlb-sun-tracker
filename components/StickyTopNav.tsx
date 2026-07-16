@@ -338,7 +338,7 @@ export default function StickyTopNav() {
                     {nflVenues.map((venue) => (
                       <Link
                         key={venue.id}
-                        href={`/venue/${venue.id}`}
+                        href={`/stadium/${venue.id}`}
                         className="mobile-venue-link"
                         onClick={closeMobileMenu}
                       >

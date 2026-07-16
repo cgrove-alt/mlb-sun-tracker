@@ -96,13 +96,13 @@ export default async function LeaguePage({ params }: LeaguePageProps) {
       itemListElement: venues.map((venue, index) => ({
         '@type': 'ListItem',
         position: index + 1,
-        url: `https://theshadium.com/venue/${venue.id}`,
+        url: `https://theshadium.com/stadium/${venue.id}`,
         name: venue.name,
         item: {
           '@type': venue.venueType === 'baseball' ? 'StadiumOrArena' : 'SportsComplex',
-          '@id': `https://theshadium.com/venue/${venue.id}`,
+          '@id': `https://theshadium.com/stadium/${venue.id}`,
           name: venue.name,
-          url: `https://theshadium.com/venue/${venue.id}`,
+          url: `https://theshadium.com/stadium/${venue.id}`,
           address: {
             '@type': 'PostalAddress',
             addressLocality: venue.city,

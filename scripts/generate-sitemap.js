@@ -101,17 +101,18 @@ mainSitemap += `
 let stadiumsSitemap = `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">`;
 
+// All venues live under the single canonical /stadium/ URL pattern.
+// The former /venue/ URLs 301-redirect here and are intentionally omitted.
 mlbVenues.forEach(venue => {
   stadiumsSitemap += urlEntry(`${baseUrl}/stadium/${venue}`, { changefreq: 'weekly', priority: '0.9' });
-  stadiumsSitemap += urlEntry(`${baseUrl}/venue/${venue}`, { changefreq: 'weekly', priority: '0.9' });
 });
 
 nflVenues.forEach(venue => {
-  stadiumsSitemap += urlEntry(`${baseUrl}/venue/${venue}`, { changefreq: 'weekly', priority: '0.8' });
+  stadiumsSitemap += urlEntry(`${baseUrl}/stadium/${venue}`, { changefreq: 'weekly', priority: '0.8' });
 });
 
 milbVenues.forEach(venue => {
-  stadiumsSitemap += urlEntry(`${baseUrl}/venue/${venue}`, { changefreq: 'weekly', priority: '0.7' });
+  stadiumsSitemap += urlEntry(`${baseUrl}/stadium/${venue}`, { changefreq: 'weekly', priority: '0.7' });
 });
 
 stadiumsSitemap += `
@@ -177,7 +178,7 @@ fs.writeFileSync(path.join(publicDir, 'sitemap-index.xml'), sitemapIndex);
 
 // Calculate stats
 const mainUrls = staticPages.length + leaguePages.length;
-const stadiumUrls = (mlbVenues.length * 2) + nflVenues.length + milbVenues.length;
+const stadiumUrls = mlbVenues.length + nflVenues.length + milbVenues.length;
 const guideUrls = guidePaths.length + 1; // +1 for /blog
 const blogUrls = blogPosts.length;
 const totalUrls = mainUrls + stadiumUrls + guideUrls + blogUrls;
@@ -185,7 +186,7 @@ const totalUrls = mainUrls + stadiumUrls + guideUrls + blogUrls;
 console.log(`✓ Sitemaps generated with ${totalUrls} total URLs (build date: ${buildDate})`);
 console.log(`  Main sitemap: ${mainUrls} URLs (static + league pages)`);
 console.log(`  Stadiums sitemap: ${stadiumUrls} URLs`);
-console.log(`    - ${mlbVenues.length} MLB stadiums (x2 for old/new URLs)`);
+console.log(`    - ${mlbVenues.length} MLB stadiums (/stadium/)`);
 console.log(`    - ${nflVenues.length} NFL venues`);
 console.log(`    - ${milbVenues.length} MiLB stadiums`);
 console.log(`  Guides sitemap: ${guideUrls} URLs`);

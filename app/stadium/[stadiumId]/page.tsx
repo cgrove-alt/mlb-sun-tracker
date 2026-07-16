@@ -1,12 +1,13 @@
 import { Metadata } from 'next';
 import { notFound, redirect } from 'next/navigation';
-import { Suspense } from 'react';
 import { MLB_STADIUMS } from '../../../src/data/stadiums';
 import { getStadiumSectionsAsync } from '../../../src/data/getStadiumSections';
 import { getStadiumAmenities } from '../../../src/data/stadiumAmenities';
 import { getStadiumGuide } from '../../../src/data/guides';
 import { getCanonicalStadiumId, needsRedirect } from '../../../src/utils/stadiumSlugMapping';
+import { ALL_UNIFIED_VENUES, getUnifiedVenueById } from '../../../src/data/unifiedVenues';
 import { ErrorBoundary } from '../../../src/components/ErrorBoundary';
+import ComprehensiveStadiumGuide from '../../../src/components/ComprehensiveStadiumGuide';
 import StadiumPageClient from './StadiumPageClient';
 import StadiumPageSSR from './StadiumPageSSR';
 import styles from './StadiumPage.module.css';
@@ -18,82 +19,143 @@ interface StadiumPageProps {
   }>;
 }
 
+// /stadium/[stadiumId] is the single canonical URL for every venue.
+// MLB parks (30) render the rich SSR + client experience; all other
+// venues (MiLB + NFL) render the comprehensive guide. The former /venue/
+// route now 301-redirects here (see next.config.js).
 export async function generateStaticParams() {
-  return MLB_STADIUMS.map((stadium) => ({
-    stadiumId: stadium.id,
-  }));
+  const ids = new Set<string>([
+    ...MLB_STADIUMS.map((stadium) => stadium.id),
+    ...ALL_UNIFIED_VENUES.map((venue) => venue.id),
+  ]);
+  return Array.from(ids).map((stadiumId) => ({ stadiumId }));
 }
 
 export async function generateMetadata({ params }: StadiumPageProps): Promise<Metadata> {
   const { stadiumId } = await params;
   const stadium = MLB_STADIUMS.find(s => s.id === stadiumId);
-  
-  if (!stadium) {
+
+  if (stadium) {
+    // SEO-optimized title targeting "shaded seats at [stadium]"
+    const title = `Shaded Seats at ${stadium.name} - ${stadium.team} | The Shadium`;
+    const description = `Find the best shaded seats at ${stadium.name}. Complete guide to avoiding sun exposure during ${stadium.team} games. Real-time shade calculations for every section, best seats for day games, covered seating areas, and sun protection tips.`;
+
+    return {
+      title,
+      description,
+      keywords: [
+        `shaded seats at ${stadium.name}`,
+        `${stadium.name} shaded seats`,
+        `${stadium.name} shade guide`,
+        `best shaded seats ${stadium.name}`,
+        `${stadium.name} sun exposure`,
+        `where to sit in shade at ${stadium.name}`,
+        `${stadium.team} stadium shade`,
+        `${stadium.name} covered seats`,
+        `${stadium.name} day game seats`,
+        `avoid sun at ${stadium.name}`,
+        `${stadium.city} baseball shade`,
+        'MLB stadium shade map'
+      ],
+      alternates: {
+        canonical: `https://theshadium.com/stadium/${stadiumId}`,
+      },
+      openGraph: {
+        title: `Shaded Seats at ${stadium.name} | The Shadium`,
+        description: `Find the best shaded seats at ${stadium.name}. Complete shade guide for ${stadium.team} games with real-time sun tracking.`,
+        type: 'article',
+        url: `https://theshadium.com/stadium/${stadiumId}`,
+        images: [
+          {
+            url: 'https://theshadium.com/logo512.png',
+            width: 512,
+            height: 512,
+            alt: `Shaded Seats at ${stadium.name}`,
+          }
+        ],
+      },
+      twitter: {
+        card: 'summary_large_image',
+        title: `Shaded Seats at ${stadium.name}`,
+        description: `Find the best shaded seats at ${stadium.name} for ${stadium.team} games. Real-time shade tracking.`,
+        images: ['https://theshadium.com/logo512.png'],
+      },
+      robots: {
+        index: true,
+        follow: true,
+        googleBot: {
+          index: true,
+          follow: true,
+          'max-image-preview': 'large',
+          'max-snippet': -1,
+        },
+      },
+    };
+  }
+
+  // Non-MLB venues (MiLB / NFL) now live under /stadium/ as well.
+  const venue = getUnifiedVenueById(stadiumId);
+
+  if (!venue) {
     return {
       title: 'Stadium Not Found | The Shadium',
     };
   }
 
-  // SEO-optimized title targeting "shaded seats at [stadium]"
-  const title = `Shaded Seats at ${stadium.name} - ${stadium.team} | The Shadium`;
-  const description = `Find the best shaded seats at ${stadium.name}. Complete guide to avoiding sun exposure during ${stadium.team} games. Real-time shade calculations for every section, best seats for day games, covered seating areas, and sun protection tips.`;
+  const title = `Shaded Seats at ${venue.name} - ${venue.team} | The Shadium`;
+  const description = `Find the best shaded seats at ${venue.name}. Complete guide to avoiding sun exposure during ${venue.team} games. Real-time shade calculations for every section, best seats for day games, covered seating areas, and sun protection tips.`;
 
   return {
     title,
     description,
     keywords: [
-      `shaded seats at ${stadium.name}`,
-      `${stadium.name} shaded seats`,
-      `${stadium.name} shade guide`,
-      `best shaded seats ${stadium.name}`,
-      `${stadium.name} sun exposure`,
-      `where to sit in shade at ${stadium.name}`,
-      `${stadium.team} stadium shade`,
-      `${stadium.name} covered seats`,
-      `${stadium.name} day game seats`,
-      `avoid sun at ${stadium.name}`,
-      `${stadium.city} baseball shade`,
-      'MLB stadium shade map'
+      `shaded seats at ${venue.name}`,
+      `${venue.name} shaded seats`,
+      `${venue.name} shade guide`,
+      `best shaded seats ${venue.name}`,
+      `${venue.name} sun exposure`,
+      `where to sit in shade at ${venue.name}`,
+      `${venue.team} ${venue.venueType} stadium shade`,
+      `${venue.name} covered seats`,
+      `avoid sun at ${venue.name}`,
+      `${venue.city} ${venue.venueType} shade`,
+      `${venue.league} stadium shade map`
     ],
     alternates: {
-      canonical: `https://theshadium.com/stadium/${stadiumId}`,
+      canonical: `https://theshadium.com/stadium/${venue.id}`,
     },
     openGraph: {
-      title: `Shaded Seats at ${stadium.name} | The Shadium`,
-      description: `Find the best shaded seats at ${stadium.name}. Complete shade guide for ${stadium.team} games with real-time sun tracking.`,
+      title,
+      description,
+      url: `https://theshadium.com/stadium/${venue.id}`,
       type: 'article',
-      url: `https://theshadium.com/stadium/${stadiumId}`,
       images: [
         {
           url: 'https://theshadium.com/logo512.png',
           width: 512,
           height: 512,
-          alt: `Shaded Seats at ${stadium.name}`,
-        }
+          alt: `${venue.name} Shade Guide`,
+        },
       ],
     },
     twitter: {
       card: 'summary_large_image',
-      title: `Shaded Seats at ${stadium.name}`,
-      description: `Find the best shaded seats at ${stadium.name} for ${stadium.team} games. Real-time shade tracking.`,
+      title,
+      description,
       images: ['https://theshadium.com/logo512.png'],
     },
-    robots: {
-      index: true,
-      follow: true,
-      googleBot: {
-        index: true,
-        follow: true,
-        'max-image-preview': 'large',
-        'max-snippet': -1,
-      },
+    other: {
+      'venue:league': venue.league,
+      'venue:sport': venue.venueType,
+      'venue:city': venue.city,
+      'venue:state': venue.state,
     },
   };
 }
 
 export default async function StadiumPage({ params }: StadiumPageProps) {
   const { stadiumId } = await params;
-  
+
   // Check if this slug needs redirect to canonical ID
   if (needsRedirect(stadiumId)) {
     const canonicalId = getCanonicalStadiumId(stadiumId);
@@ -101,10 +163,10 @@ export default async function StadiumPage({ params }: StadiumPageProps) {
       redirect(`/stadium/${canonicalId}`);
     }
   }
-  
-  // Try to find stadium by ID or by using slug mapping
+
+  // Try to find MLB stadium by ID or by using slug mapping
   let stadium = MLB_STADIUMS.find(s => s.id === stadiumId);
-  
+
   // If not found directly, try using the slug mapping
   if (!stadium) {
     const canonicalId = getCanonicalStadiumId(stadiumId);
@@ -112,9 +174,19 @@ export default async function StadiumPage({ params }: StadiumPageProps) {
       stadium = MLB_STADIUMS.find(s => s.id === canonicalId);
     }
   }
-  
+
+  // Non-MLB venues (MiLB / NFL) render the comprehensive guide.
   if (!stadium) {
-    notFound();
+    const venue = getUnifiedVenueById(stadiumId);
+    if (!venue) {
+      notFound();
+    }
+
+    return (
+      <div className={styles.pageContainer}>
+        <ComprehensiveStadiumGuide stadiumId={venue.id} />
+      </div>
+    );
   }
 
   // Load sections asynchronously to avoid bundling all section data
@@ -243,7 +315,7 @@ export default async function StadiumPage({ params }: StadiumPageProps) {
           guide={guide}
         />
       </div>
-      
+
       {/* Main content in grid */}
       <div className={styles.contentWrapper} suppressHydrationWarning>
         <ErrorBoundary level="section" resetKeys={[stadiumId]}>

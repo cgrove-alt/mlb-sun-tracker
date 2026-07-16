@@ -68,9 +68,9 @@ export default function HomePage() {
           <ul>
             <li><Link href="/stadium/yankees">Are my seats shaded at Yankee Stadium? (MLB)</Link></li>
             <li><Link href="/stadium/dodgers">Find shaded seats at Dodger Stadium (MLB)</Link></li>
-            <li><Link href="/venue/metlife-stadium">Shaded sections at MetLife Stadium (NFL)</Link></li>
-            <li><Link href="/venue/las-vegas-ballpark">Las Vegas Ballpark shade finder (MiLB)</Link></li>
-            <li><Link href="/venue/sofi-stadium">SoFi Stadium sun exposure guide (NFL)</Link></li>
+            <li><Link href="/stadium/metlife-stadium-giants">Shaded sections at MetLife Stadium (NFL)</Link></li>
+            <li><Link href="/stadium/las-vegas-aviators">Las Vegas Ballpark shade finder (MiLB)</Link></li>
+            <li><Link href="/stadium/sofi-stadium-rams">SoFi Stadium sun exposure guide (NFL)</Link></li>
           </ul>
           
           <h3>How to Know If Your Seats Are in the Shade</h3>

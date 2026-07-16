@@ -303,7 +303,7 @@ const MobileApp: React.FC = () => {
               
               <section className="mobile-section">
                 <div className="mobile-stadium-guide-link">
-                  <a href={`/venue/${selectedVenue.id}`} className="mobile-guide-button">
+                  <a href={`/stadium/${selectedVenue.id}`} className="mobile-guide-button">
                     <div>
                       <div className="guide-title">View {selectedVenue.name} Shade Guide</div>
                       <p className="mobile-guide-description">

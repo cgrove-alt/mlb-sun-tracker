@@ -2160,3 +2160,37 @@ Before grinding through 12–24 hours of per-stadium research, I want to confirm
 2. **Stadium-local convention** (0=1B, 90=CF, 180=3B, 270=behind HP) is what the calculator expects and what we should use for all new real data. OK?
 3. **Phase 2 first** (just Rate Field) — prove the pipeline on the user's original complaint stadium before scaling. After Rate Field is shipped and verified, I'll resume with Phase 3 (the 6 stadiums that already have starter files) in this or a follow-up session, then Phase 4 (23 fresh stadiums) across multiple sessions. OK?
 4. **Estimated total effort: 17–27 hours** of focused research + author + verify work. This will span multiple sessions; I'll commit progress per stadium so nothing is lost.
+
+---
+
+# 🔧 AUDIT-FIXES (branch: audit-fixes) — started 2026-07-16
+
+External SEO/GEO/UX audit remediation for theshadium.com. Phased, with approval gate + commit after each phase. No deploy without explicit approval.
+
+## Phase 1 — URL Duplication (IN PROGRESS: investigation done, awaiting approval)
+
+### What I found (differs from audit's assumptions — read before approving)
+- **Two routes exist:** `app/stadium/[stadiumId]` and `app/venue/[venueId]`. Confirmed.
+- **They are NOT symmetric duplicates.**
+  - `/stadium/{id}` serves **only the 30 MLB stadiums** (`src/data/stadiums.ts` → `MLB_STADIUMS`), using richer SSR + client components + guides/amenities/sections.
+  - `/venue/{id}` serves **all 182 venues** (30 MLB + 120 MiLB + 32 NFL) from `src/data/unifiedVenues.ts` → `ALL_UNIFIED_VENUES`, using the simpler `ComprehensiveStadiumGuide`.
+- **True duplication = the 30 MLB parks** (each at both `/stadium/{id}` and `/venue/{id}`, both self-canonical). The other **152 venues (MiLB+NFL) exist ONLY at `/venue/`.** Audit's "500+ dupes" is an overestimate (~30 pairs; slug-alias redirects add some).
+- **Sitemap actively advertises the dupes:** `scripts/generate-sitemap.js` writes `public/sitemap-stadiums.xml` listing BOTH `/stadium/{id}` and `/venue/{id}` for every MLB venue (lines 104-106).
+- **Mechanics:** `next.config.js` has no `redirects()` yet. robots.txt + sitemaps served from `public/` (correct). Stale dead copies of `robots.txt`/`sitemap.xml` also sit at repo root (not served). `/venue/` is linked internally in 7 files: HomePage.tsx, league page + LeagueClient.tsx, StickyTopNav.tsx, src/UnifiedApp.tsx, src/MobileApp.tsx.
+
+### Decision needed: canonical strategy
+- **Option A (recommended, matches audit intent):** Extend `/stadium/[stadiumId]` to serve ALL 182 venues (MLB via MLB_STADIUMS, non-MLB via unified venues). Then 301 every `/venue/:id` → `/stadium/:id`, delete `/venue/`, update all links + sitemap. Delivers the single `/stadium/` pattern the audit asked for. Bigger lift; the 152 moved venues temporarily inherit Phase 2's double-render until Phase 2 runs.
+- **Option B (lighter):** Only 301 the 30 MLB `/venue/` dupes → `/stadium/`; keep `/venue/` for MiLB/NFL. Less work but two URL namespaces remain — does NOT fully deliver "single pattern."
+
+### Phase 1 tasks (Option A) — DONE, verified via prod build + live server
+- [x] Extend `/stadium/[stadiumId]` route + generateStaticParams to resolve all 182 venues (MLB rich path; MiLB/NFL via ComprehensiveStadiumGuide). Build prerendered **182** stadium pages.
+- [x] Add `async redirects()` in next.config.js: `/venue/:venueId` → `/stadium/:venueId` with explicit `statusCode: 301`. Verified live: `/venue/yankees` and `/venue/durham-bulls` both return HTTP 301 to `/stadium/...`.
+- [x] Update internal links `/venue/` → `/stadium/` (HomePage, LeagueClient, league page schema, StickyTopNav, UnifiedApp, MobileApp). Zero `/venue/` links remain (only a doc comment).
+- [x] Deleted dead `app/venue/[venueId]` route (redirect supersedes it). Confirmed absent from build.
+- [x] **Bonus root-cause fix:** 3 HomePage links pointed to non-existent IDs (`metlife-stadium`, `las-vegas-ballpark`, `sofi-stadium`) — already 404 before this work. Corrected to real IDs (`metlife-stadium-giants`, `las-vegas-aviators`, `sofi-stadium-rams`), all verified 200.
+- [x] Rewrote `scripts/generate-sitemap.js` to emit only `/stadium/` URLs. Regenerated: **182** `/stadium/` URLs, **zero** `/venue/`.
+- [x] Verified served `public/robots.txt` allows crawling + references `sitemap-index.xml`.
+
+### Phase 1 — items to flag to user (not changed without approval)
+- Stale, UNSERVED legacy files at repo root: `/robots.txt` and `/sitemap.xml` (Next serves the `public/` copies, not these). Recommend deleting to avoid confusion — awaiting approval.
+- Pre-existing data bug (Phase 2/3 territory, NOT touched): `ComprehensiveStadiumGuide` hardcodes `league: 'MLB'` and reads orientation/roof only from `MLB_STADIUMS`, so MiLB/NFL title blocks show wrong league + orientation 0.
