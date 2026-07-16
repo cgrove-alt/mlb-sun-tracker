@@ -2217,3 +2217,30 @@ External SEO/GEO/UX audit remediation for theshadium.com. Phased, with approval 
 
 ### Decision noted (open to change at review)
 - Kept BOTH content bodies (SSR shade guide + editorial guide) with a single shared header, rather than deleting the editorial guide. This is the minimal, no-content-loss fix and satisfies "one H1 + single source of truth." Some shade-content overlap remains; can fully collapse to one guide if preferred.
+
+## Phase 3 — Data accuracy / shade model (DONE, verified via build + tests)
+
+### Root cause (confirmed)
+- Shade was binary: each section had a single `covered` boolean. `StadiumPageSSR` derived rating/notes from it (covered→"Guaranteed shade", else level-based). The canonical Yankees data marked whole bowl levels `covered:true` (Field MVP 115-125, Main Level 200s, Terrace 300s, Grandstand 400s) and even RF Bleachers 201-204 — so field/bleacher seats read as "guaranteed shade."
+- FAQ used a naive `orientation < 180 ? 'third base' : 'first base'` → recommended THIRD base for Yankees (east-facing, orientation 55°), when the compass model (`shadedSide`) correctly gives FIRST base for a 1 PM game.
+- Month recommendations called `getShadeRecommendation(orientation, month, 'early')` — always the morning bucket → identical string ("Outfield… morning games") repeated for all 7 months.
+
+### Fix
+- [x] **3-tier model.** `sections/mlb/yankees.ts`: added `classifyCoverage()` → Full (indoor/suite), Partial (back rows only, under deck overhang / Grandstand roof), Exposed. `generateRows` now marks only the back ~40% of rows covered for partial sections; emits `partialCoverage: CoverageDetail` with `coveredRows`. Projected `partialCoverage`/`coveredRows` through `stadiumSections-split/yankees.ts`.
+- [x] **Yankees corrections.** RF Bleachers 201-204 → Exposed; Field MVP 115-125, Main Level, Terrace, Grandstand → Partial (back rows); indoor suites/clubs (Champions/Jim Beam/Mohegan/Bleacher Café/Audi/Pepsi) stay Fully covered. This also corrects the live shade engine (uses `section.covered`) and the /rows/shade API (uses per-row `covered`).
+- [x] **StadiumPageSSR 3-tier rendering:** table "Coverage" column (✓ Covered / ◐ back rows / — Exposed), tiered rating/best-time/notes, tiered "best shaded" cards.
+- [x] **FAQ orientation-derived:** replaced the naive ternary with `shadedSide(orientation, midday)` → Yankees now recommends the first base side for 1 PM. Covered-seating answer now distinguishes fully-covered vs back-rows-only.
+- [x] **Month recs de-duplicated:** removed the identical always-morning line; made `getSeasonalPattern` distinct for July/Aug/Sept.
+- [x] Updated `sections/mlb/__tests__/yankees.test.ts` to the corrected 3-tier expectations (22/22 pass).
+
+### Verified
+- Prerendered yankees.html: 28 "✓ Covered", 109 "◐ back rows", 53 "— Exposed"; Field MVP 115 = back-rows-only; Bleachers 201 = Exposed; FAQ = "the first base side falls into shade first"; July/Aug/Sept month text distinct.
+- Tests: 92/92 across sections + sectionSunCalculations + rows API. Build exit 0.
+
+### Step 6 — suspicious stadiums to REVIEW (NOT modified) — via scripts/auditSuspiciousCoverage.ts
+- **whitesox (Guaranteed Rate Field):** 82% of 132 sections fully covered; **100% of 36 upper-deck sections fully covered** — the classic "entire upper deck = guaranteed shade" error.
+- **redsox (Fenway Park):** 12 of 82 field-level sections marked fully covered — implausible for open field seating.
+- (Only MLB stadiums scanned. MiLB/NFL not yet audited for coverage.)
+
+### Deferred to Phase 4
+- The JSON-LD FAQ in `page.tsx` still hardcodes a "third base" answer — will be regenerated from the (now-correct) on-page FAQ content in Phase 4 (Structured Data).

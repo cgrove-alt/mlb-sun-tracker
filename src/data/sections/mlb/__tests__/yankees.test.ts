@@ -117,49 +117,60 @@ describe('yankeesSections — Yankee Stadium real seating data', () => {
     });
   });
 
-  describe('coverage matches real Yankee Stadium architecture', () => {
-    it('marks every Grandstand (400s) section covered (iconic frieze caps back rows)', () => {
+  // Three-tier coverage model (audit Phase 3): only indoor/suite spaces are
+  // fully covered; open-bowl sections with overhead structure are covered in
+  // their BACK ROWS only (partialCoverage); bleachers and field are exposed.
+  describe('coverage matches real Yankee Stadium architecture (3-tier)', () => {
+    const isPartial = (id: string) => {
+      const s = sectionById(id);
+      return s.covered === false && s.partialCoverage != null;
+    };
+    const isExposed = (id: string) => {
+      const s = sectionById(id);
+      return s.covered === false && s.partialCoverage == null;
+    };
+
+    it('Grandstand (400s) is partial — frieze/roof caps the back rows only', () => {
       const grandstand = yankeesSections.filter((s) => s.level === 'upper');
       expect(grandstand.length).toBeGreaterThan(30);
-      expect(grandstand.every((s) => s.covered)).toBe(true);
+      expect(grandstand.every((s) => !s.covered && s.partialCoverage != null)).toBe(true);
     });
 
-    it('marks every Terrace (300s) section covered (concourse + frieze overhead)', () => {
+    it('Terrace (300s) is partial — concourse + frieze shade the back rows', () => {
       const terrace = yankeesSections.filter(
         (s) => s.level === 'club' && /^3\d\d/.test(s.id),
       );
       expect(terrace.length).toBeGreaterThan(20);
-      expect(terrace.every((s) => s.covered)).toBe(true);
+      expect(terrace.every((s) => !s.covered && s.partialCoverage != null)).toBe(true);
     });
 
-    it('marks Field MVP 115-125 covered (back rows under Legends Suite Club + Main overhang)', () => {
+    it('Field MVP 115-125 is partial (back rows only), NOT fully covered', () => {
       for (const id of ['115', '116', '117A', '117B', '118', '119',
                         '120A', '120B', '121A', '121B', '122', '123', '124', '125']) {
-        const sec = sectionById(id);
-        expect(sec).toBeDefined();
-        expect(sec.covered).toBe(true);
+        expect(sectionById(id)).toBeDefined();
+        expect(isPartial(id)).toBe(true);
       }
     });
 
-    it('marks LF Bleachers 235-239 NOT covered ("fully exposed" per shadedseats)', () => {
+    it('LF Bleachers 235-239 are fully exposed ("relentless sun" per shadedseats)', () => {
       ['235', '236', '237', '238', '239'].forEach((id) => {
-        expect(sectionById(id).covered).toBe(false);
+        expect(isExposed(id)).toBe(true);
       });
     });
 
-    it('marks RF Bleachers 201-204 covered (under Bleacher Café roof)', () => {
+    it('RF Bleachers 201-204 are exposed (NOT covered — audit correction)', () => {
       ['201', '202', '203', '204'].forEach((id) => {
-        expect(sectionById(id).covered).toBe(true);
+        expect(isExposed(id)).toBe(true);
       });
     });
 
-    it('marks Field/Legends Suite 11-29 NOT covered (Legends Club provides only marginal back-row shade)', () => {
+    it('Field/Legends Suite 11-29 are exposed (field-level, open to the sky)', () => {
       ['11', '12', '13', '14A', '14B', '20', '21A', '21B', '27A', '27B', '28', '29'].forEach((id) => {
-        expect(sectionById(id).covered).toBe(false);
+        expect(isExposed(id)).toBe(true);
       });
     });
 
-    it('marks Champions Suite 215/216 covered (premium indoor club)', () => {
+    it('Champions Suite 215/216 stay fully covered (premium indoor club)', () => {
       ['215', '216'].forEach((id) => {
         const sec = sectionById(id);
         expect(sec.covered).toBe(true);
@@ -167,7 +178,7 @@ describe('yankeesSections — Yankee Stadium real seating data', () => {
       });
     });
 
-    it('marks Jim Beam Suites 317-321 as covered suite-level', () => {
+    it('Jim Beam Suites 317-321 stay fully covered suite-level', () => {
       ['317', '318', '319', '320A', '320B', '320C', '321'].forEach((id) => {
         const sec = sectionById(id);
         expect(sec.covered).toBe(true);
@@ -175,7 +186,7 @@ describe('yankeesSections — Yankee Stadium real seating data', () => {
       });
     });
 
-    it('marks Mohegan Sun, Bleacher Café, Audi Yankees Club, Pepsi Lounge all covered', () => {
+    it('Mohegan Sun, Bleacher Café, Audi Yankees Club, Pepsi Lounge stay fully covered', () => {
       ['MOHEGAN-SUN', 'BLEACHER-CAFE', 'AUDI-CLUB', 'PEPSI-LOUNGE'].forEach((id) => {
         expect(sectionById(id).covered).toBe(true);
       });
