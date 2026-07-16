@@ -2250,3 +2250,26 @@ External SEO/GEO/UX audit remediation for theshadium.com. Phased, with approval 
 - **White Sox (Rate Field):** applied the 3-tier model. The file's OWN header documented that the 500 upper deck is sheltered "row 9 and above" and lower 111-155 are covered in their "back rows only (front rows are not covered in reality)" — the binary flag had forced all of it to "guaranteed shade." Now: club+suite = fully covered; lower + upper (500s) = partial (back rows only); field/outfield/standing = exposed. Rendered HTML: 32 Covered / 81 back-rows / 24 Exposed; "Upper Reserved 506" now shows "◐ back rows only". Updated whitesox.test.ts (64/64 section tests pass).
 - **Red Sox (Fenway):** on inspection, the flagged "12 field sections covered" is DOCUMENTED and defensible — inner Field Box 39-50 sit under the press-box overhang, the Grandstand is genuinely roofed, EMC Club is indoor. Fenway is only 31% covered with a researched, balanced mix. Blanket reclassification would have DEGRADED good data, so I reverted it and left Fenway's researched data intact.
 - **Audit heuristic refined:** `scripts/auditSuspiciousCoverage.ts` now only flags `field-covered` when >40% of field seating is fully covered (a few inner field boxes under an overhang is normal). Re-run: 0 suspicious stadiums (White Sox fixed, Fenway legitimately not flagged).
+
+## Phase 4 — Structured Data (DONE, validated via scripts/validateSchema.js)
+
+### Findings
+- The suspected JSON-LD-in-`<meta>` bug lived in the OLD `/venue/` route (`verification.other['structured-data']`), which Phase 1 deleted — so it's already gone. All schema is now emitted as `<script type="application/ld+json">`.
+- Blog posts already had proper BlogPosting (real datePublished/dateModified) + BreadcrumbList. WebApplication was already site-wide via layout.
+- Gaps: homepage had only FAQPage (no Organization/WebSite/SearchAction); stadium pages had a hardcoded `datePublished: '2024-01-01'`, a hardcoded "third base" FAQ, no BreadcrumbList, no Wikipedia sameAs; and **MiLB/NFL `/stadium/` pages emitted no schema at all**.
+
+### Fix
+- [x] Homepage: added Organization + WebSite with a `SearchAction` (sitelinks search box). Fixed the wrong "third base side" Yankees answer → east-facing → first base.
+- [x] Stadium page: new shared `buildVenueSchemas()` used by BOTH the MLB and MiLB/NFL branches → every venue page now emits Article + StadiumOrArena + FAQPage + BreadcrumbList. MiLB/NFL pages previously had none.
+- [x] Real dates: `datePublished` = 2025-04-01 (replaces 2024-01-01), `dateModified` stamped at build.
+- [x] FAQ answers now orientation-derived via `src/utils/shadeSide.ts` (shared helper) — Yankees → first base side.
+- [x] StadiumOrArena carries PostalAddress + GeoCoordinates + capacity, and `sameAs` → Wikipedia for the 30 MLB parks (`src/data/stadiumWikipedia.ts`; MiLB/NFL omitted "where available").
+- [x] BreadcrumbList: Home > {League} Stadiums > Venue.
+- [x] Added `scripts/validateSchema.js` (structural JSON-LD lint).
+
+### Validated (scripts/validateSchema.js — all ✓, 0 issues)
+- Homepage: WebApplication, Organization, WebSite(SearchAction), FAQPage.
+- MLB (yankees): WebApplication, Article (2025-04-01, sameAs Yankee_Stadium), StadiumOrArena, FAQPage (first base), BreadcrumbList.
+- MiLB (durham-bulls) & NFL (sofi-stadium-rams): full 5-schema set (were empty before); MiLB correctly has no Wikipedia sameAs.
+- Blog: WebApplication, BlogPosting, BreadcrumbList.
+- NOTE: Google Rich Results Test remains a manual post-deploy step (see AUDIT-RESULTS checklist).

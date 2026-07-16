@@ -6,6 +6,8 @@ import { getStadiumAmenities } from '../../../src/data/stadiumAmenities';
 import { getStadiumGuide } from '../../../src/data/guides';
 import { getCanonicalStadiumId, needsRedirect } from '../../../src/utils/stadiumSlugMapping';
 import { ALL_UNIFIED_VENUES, getUnifiedVenueById } from '../../../src/data/unifiedVenues';
+import { bestShadedSideForDayGame } from '../../../src/utils/shadeSide';
+import { STADIUM_WIKIPEDIA } from '../../../src/data/stadiumWikipedia';
 import { ErrorBoundary } from '../../../src/components/ErrorBoundary';
 import ComprehensiveStadiumGuide from '../../../src/components/ComprehensiveStadiumGuide';
 import StadiumPageClient from './StadiumPageClient';
@@ -153,6 +155,131 @@ export async function generateMetadata({ params }: StadiumPageProps): Promise<Me
   };
 }
 
+// Real publish date for the stadium-guide content (replaces the old hardcoded
+// "2024-01-01"). dateModified is stamped at build time.
+const CONTENT_PUBLISHED = '2025-04-01';
+
+interface VenueSchemaInput {
+  id: string;
+  name: string;
+  team: string;
+  league: string;
+  sport: string;
+  city: string;
+  state: string;
+  latitude?: number;
+  longitude?: number;
+  capacity?: number;
+  orientation: number;
+}
+
+// Single source of the JSON-LD for a venue page — used by both the MLB and the
+// MiLB/NFL branches so every venue page emits Article + StadiumOrArena +
+// FAQPage + BreadcrumbList as proper <script type="application/ld+json">.
+function buildVenueSchemas(v: VenueSchemaInput): Record<string, unknown>[] {
+  const url = `https://theshadium.com/stadium/${v.id}`;
+  const stadiumNodeId = `${url}#stadium`;
+  const shadeSide = bestShadedSideForDayGame(v.orientation);
+  const wikipedia = STADIUM_WIKIPEDIA[v.id];
+
+  const article: Record<string, unknown> = {
+    '@context': 'https://schema.org',
+    '@type': 'Article',
+    headline: `Shaded Seats at ${v.name} - Complete Guide`,
+    description: `Find the best shaded seats at ${v.name}. Real-time shade calculations for ${v.team} games.`,
+    author: { '@type': 'Organization', name: 'The Shadium', url: 'https://theshadium.com' },
+    publisher: {
+      '@type': 'Organization',
+      name: 'The Shadium',
+      logo: { '@type': 'ImageObject', url: 'https://theshadium.com/logo512.png' },
+    },
+    datePublished: CONTENT_PUBLISHED,
+    dateModified: new Date().toISOString(),
+    mainEntityOfPage: { '@type': 'WebPage', '@id': url },
+    about: {
+      '@type': 'StadiumOrArena',
+      '@id': stadiumNodeId,
+      name: v.name,
+      address: {
+        '@type': 'PostalAddress',
+        addressLocality: v.city,
+        addressRegion: v.state,
+        addressCountry: 'US',
+      },
+    },
+  };
+
+  const stadium: Record<string, unknown> = {
+    '@context': 'https://schema.org',
+    '@type': 'StadiumOrArena',
+    '@id': stadiumNodeId,
+    name: v.name,
+    alternateName: `${v.team} Stadium`,
+    description: `${v.name} is the home venue of the ${v.team}, located in ${v.city}, ${v.state}.`,
+    sport: v.sport,
+    url,
+    address: {
+      '@type': 'PostalAddress',
+      addressLocality: v.city,
+      addressRegion: v.state,
+      addressCountry: 'US',
+    },
+    ...(v.latitude != null && v.longitude != null
+      ? { geo: { '@type': 'GeoCoordinates', latitude: v.latitude, longitude: v.longitude } }
+      : {}),
+    ...(v.capacity ? { maximumAttendeeCapacity: v.capacity } : {}),
+    ...(wikipedia ? { sameAs: [wikipedia] } : {}),
+  };
+
+  const faq: Record<string, unknown> = {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: [
+      {
+        '@type': 'Question',
+        name: `What are the best shaded seats at ${v.name}?`,
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: `For a 1 PM game at ${v.name}, the ${shadeSide} falls into shade first, so seats there and in the back rows of the upper deck stay coolest. Use The Shadium to check real-time shade for your specific game time.`,
+        },
+      },
+      {
+        '@type': 'Question',
+        name: `Which sections at ${v.name} have covered seating?`,
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: `${v.name} has fully covered seating in its indoor and premium areas, plus back-row (overhang) shade in parts of the main and upper levels. Check The Shadium for section-by-section coverage.`,
+        },
+      },
+      {
+        '@type': 'Question',
+        name: `How can I avoid sun at ${v.name} during day games?`,
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: `To avoid sun at ${v.name}, choose seats on the ${shadeSide}, the back rows under the upper-deck overhang, or any fully covered section. The Shadium shows exactly which seats will be shaded for your game.`,
+        },
+      },
+    ],
+  };
+
+  const breadcrumb: Record<string, unknown> = {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://theshadium.com/' },
+      {
+        '@type': 'ListItem',
+        position: 2,
+        name: `${v.league} Stadiums`,
+        item: `https://theshadium.com/league/${v.league.toLowerCase()}`,
+      },
+      { '@type': 'ListItem', position: 3, name: v.name, item: url },
+    ],
+  };
+
+  return [article, stadium, faq, breadcrumb];
+}
+
 export default async function StadiumPage({ params }: StadiumPageProps) {
   const { stadiumId } = await params;
 
@@ -182,8 +309,30 @@ export default async function StadiumPage({ params }: StadiumPageProps) {
       notFound();
     }
 
+    const venueSchemas = buildVenueSchemas({
+      id: venue.id,
+      name: venue.name,
+      team: venue.team,
+      league: venue.league,
+      sport: venue.venueType === 'football' ? 'American Football' : 'Baseball',
+      city: venue.city,
+      state: venue.state,
+      latitude: venue.latitude,
+      longitude: venue.longitude,
+      capacity: venue.capacity,
+      orientation: venue.orientation,
+    });
+
     return (
       <div className={styles.pageContainer}>
+        {venueSchemas.map((schema, i) => (
+          <script
+            key={i}
+            type="application/ld+json"
+            dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
+            suppressHydrationWarning
+          />
+        ))}
         <ComprehensiveStadiumGuide stadiumId={venue.id} />
       </div>
     );
@@ -195,116 +344,32 @@ export default async function StadiumPage({ params }: StadiumPageProps) {
   // Use the stadium's canonical ID for guide lookup
   const guide = getStadiumGuide(stadium.id) || getStadiumGuide(stadiumId);
 
-  // Structured data for better SEO
-  const jsonLd = {
-    '@context': 'https://schema.org',
-    '@type': 'Article',
-    headline: `Shaded Seats at ${stadium.name} - Complete Guide`,
-    description: `Find the best shaded seats at ${stadium.name}. Real-time shade calculations for ${stadium.team} games.`,
-    author: {
-      '@type': 'Organization',
-      name: 'The Shadium',
-      url: 'https://theshadium.com',
-    },
-    publisher: {
-      '@type': 'Organization',
-      name: 'The Shadium',
-      logo: {
-        '@type': 'ImageObject',
-        url: 'https://theshadium.com/logo512.png',
-      },
-    },
-    datePublished: '2024-01-01',
-    dateModified: new Date().toISOString(),
-    mainEntityOfPage: {
-      '@type': 'WebPage',
-      '@id': `https://theshadium.com/stadium/${stadiumId}`,
-    },
-    about: {
-      '@type': 'StadiumOrArena',
-      '@id': `https://theshadium.com/stadium/${stadiumId}#stadium`,
-      name: stadium.name,
-      address: {
-        '@type': 'PostalAddress',
-        addressLocality: stadium.city,
-        addressRegion: stadium.state,
-        addressCountry: 'US',
-      },
-    },
-  };
-
-  // Standalone StadiumOrArena entity — gives Google a precise geographic entity to associate with this page
-  const stadiumJsonLd = {
-    '@context': 'https://schema.org',
-    '@type': 'StadiumOrArena',
-    '@id': `https://theshadium.com/stadium/${stadiumId}#stadium`,
+  // Structured data (Article + StadiumOrArena + FAQPage + BreadcrumbList),
+  // built from the same helper the MiLB/NFL branch uses.
+  const venueSchemas = buildVenueSchemas({
+    id: stadiumId,
     name: stadium.name,
-    alternateName: `${stadium.team} Stadium`,
-    description: `${stadium.name} is the home stadium of the ${stadium.team}, located in ${stadium.city}, ${stadium.state}.`,
+    team: stadium.team,
+    league: 'MLB',
     sport: 'Baseball',
-    url: `https://theshadium.com/stadium/${stadiumId}`,
-    address: {
-      '@type': 'PostalAddress',
-      addressLocality: stadium.city,
-      addressRegion: stadium.state,
-      addressCountry: 'US',
-    },
-    geo: {
-      '@type': 'GeoCoordinates',
-      latitude: stadium.latitude,
-      longitude: stadium.longitude,
-    },
-    maximumAttendeeCapacity: stadium.capacity,
-  };
-
-  const faqJsonLd = {
-    '@context': 'https://schema.org',
-    '@type': 'FAQPage',
-    mainEntity: [
-      {
-        '@type': 'Question',
-        name: `What are the best shaded seats at ${stadium.name}?`,
-        acceptedAnswer: {
-          '@type': 'Answer',
-          text: `The best shaded seats at ${stadium.name} vary by game time. For day games, sections on the third base side and upper deck typically offer more shade. Use The Shadium to check real-time shade for your specific game.`,
-        },
-      },
-      {
-        '@type': 'Question',
-        name: `Which sections at ${stadium.name} have covered seating?`,
-        acceptedAnswer: {
-          '@type': 'Answer',
-          text: `${stadium.name} has covered seating in select premium areas and upper deck sections. Check The Shadium for detailed coverage information for each section.`,
-        },
-      },
-      {
-        '@type': 'Question',
-        name: `How can I avoid sun at ${stadium.name} during day games?`,
-        acceptedAnswer: {
-          '@type': 'Answer',
-          text: `To avoid sun at ${stadium.name}, choose seats on the third base side, in the upper deck, or in club level sections. The Shadium provides real-time calculations showing exactly which seats will be shaded during your game.`,
-        },
-      },
-    ],
-  };
+    city: stadium.city,
+    state: stadium.state,
+    latitude: stadium.latitude,
+    longitude: stadium.longitude,
+    capacity: stadium.capacity,
+    orientation: stadium.orientation,
+  });
 
   return (
     <div className={`${styles.pageContainer} ${killOverhang.killOverhang}`}>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-        suppressHydrationWarning
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(stadiumJsonLd) }}
-        suppressHydrationWarning
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
-        suppressHydrationWarning
-      />
+      {venueSchemas.map((schema, i) => (
+        <script
+          key={i}
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
+          suppressHydrationWarning
+        />
+      ))}
 
       {/* SEO content — always rendered so Googlebot indexes it */}
       <div className={styles.contentSection}>

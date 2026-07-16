@@ -1,5 +1,41 @@
+// Organization identity for the site (audit Phase 4).
+const organizationSchema = {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "The Shadium",
+  "url": "https://theshadium.com",
+  "logo": "https://theshadium.com/logo512.png",
+  "description": "The Shadium finds the shaded seats at MLB, MiLB, and NFL venues using stadium orientation, geometry, and real-time sun position.",
+};
+
+// WebSite node with a SearchAction so search engines can surface a sitelinks
+// search box (audit Phase 4).
+const webSiteSchema = {
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "The Shadium",
+  "url": "https://theshadium.com",
+  "potentialAction": {
+    "@type": "SearchAction",
+    "target": {
+      "@type": "EntryPoint",
+      "urlTemplate": "https://theshadium.com/stadiums?q={search_term_string}",
+    },
+    "query-input": "required name=search_term_string",
+  },
+};
+
 export default function HomepageSchema() {
   return (
+    <>
+    <script
+      type="application/ld+json"
+      dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }}
+    />
+    <script
+      type="application/ld+json"
+      dangerouslySetInnerHTML={{ __html: JSON.stringify(webSiteSchema) }}
+    />
     <script
       type="application/ld+json"
       dangerouslySetInnerHTML={{
@@ -20,7 +56,7 @@ export default function HomepageSchema() {
               "name": "Are my seats shaded at Yankee Stadium?",
               "acceptedAnswer": {
                 "@type": "Answer",
-                "text": "To check if your Yankee Stadium seats are shaded, use our shade calculator. Generally, upper deck sections on the third base side (300-level) and seats behind home plate offer the best shade coverage during day games."
+                "text": "To check if your Yankee Stadium seats are shaded, use our shade calculator. Because Yankee Stadium faces east, the first base side falls into shade first for day games; the back rows of the upper deck (under the Grandstand roof) and covered premium sections offer the most reliable shade."
               }
             },
             {
@@ -59,5 +95,6 @@ export default function HomepageSchema() {
         })
       }}
     />
+    </>
   );
 }
