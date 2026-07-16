@@ -2194,3 +2194,26 @@ External SEO/GEO/UX audit remediation for theshadium.com. Phased, with approval 
 ### Phase 1 — items to flag to user (not changed without approval)
 - Stale, UNSERVED legacy files at repo root: `/robots.txt` and `/sitemap.xml` (Next serves the `public/` copies, not these). Recommend deleting to avoid confusion — awaiting approval.
 - Pre-existing data bug (Phase 2/3 territory, NOT touched): `ComprehensiveStadiumGuide` hardcodes `league: 'MLB'` and reads orientation/roof only from `MLB_STADIUMS`, so MiLB/NFL title blocks show wrong league + orientation 0.
+
+## Phase 2 — Double-render bug (DONE, verified via prod build HTML)
+
+### Root cause (confirmed)
+- `/stadium/[stadiumId]/page.tsx` rendered TWO full guides: `StadiumPageSSR` **and** `StadiumPageClient` → the latter embeds `ComprehensiveStadiumGuide`.
+- Each renders a `StadiumTitleBlock`, and `StadiumTitleBlock` emits an `<h1>` (line 182) → **two H1s**.
+- The two title blocks used DIFFERENT data sources:
+  - SSR: `MLB_STADIUMS` record → "New York, NY", capacity 46,537 (canonical, correct).
+  - Comprehensive: `guide.neighborhood.name.split(',')` + hardcoded `league:'MLB'` + `guide.capacity` → "South Bronx," (no state, trailing comma via `{city}, {state}`), capacity 47,309.
+- `MLB_STADIUMS` and `ALL_UNIFIED_VENUES` **agree** — the guide free-text was the only rogue source.
+
+### Fix (minimal, non-lossy)
+- [x] `ComprehensiveStadiumGuide`: header facts now come from the structured `getUnifiedVenueById()` record (single source of truth) instead of parsed guide free-text. Fixes trailing-comma/missing-state, conflicting capacity, and the hardcoded `MLB` league (MiLB/NFL now correct).
+- [x] Added `showTitleBlock?: boolean` (default true). `StadiumPageClient` passes `showTitleBlock={false}` so the embedded guide no longer renders a second H1 — `StadiumPageSSR` provides the single page H1.
+- [x] Added `scripts/auditVenueData.js` and ran it: **182 venues, 0** missing/malformed city/state/capacity/orientation.
+
+### Verified (prerendered HTML)
+- MLB (yankees): exactly **1** H1 ("Yankee Stadium"); header "New York, NY" + 46,537; no "47,309"; JSON-LD addressRegion "NY".
+- MiLB (durham-bulls): exactly **1** H1; header "Durham, NC" + league "MiLB" (0 "MLB" labels).
+- Remaining "South Bronx" strings are legit editorial copy ("Located in the South Bronx, …", "Neighborhood: South Bronx"), not the broken location field.
+
+### Decision noted (open to change at review)
+- Kept BOTH content bodies (SSR shade guide + editorial guide) with a single shared header, rather than deleting the editorial guide. This is the minimal, no-content-loss fix and satisfies "one H1 + single source of truth." Some shade-content overlap remains; can fully collapse to one guide if preferred.

@@ -134,7 +134,9 @@ export default function StadiumPageClient({
             </div>
           }
         >
-          <ComprehensiveStadiumGuide stadiumId={stadium.id} />
+          {/* Title block suppressed — StadiumPageSSR above renders the single
+              page H1/header from the canonical stadium record. */}
+          <ComprehensiveStadiumGuide stadiumId={stadium.id} showTitleBlock={false} />
         </Suspense>
       </div>
 
