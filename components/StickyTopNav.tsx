@@ -256,7 +256,7 @@ export default function StickyTopNav() {
                 <form onSubmit={handleSearchSubmit}>
                   <input
                     type="search"
-                    placeholder="Search 250+ stadiums: Yankee Stadium, Dodgers..."
+                    placeholder="Search 180+ stadiums: Yankee Stadium, Dodgers..."
                     value={searchQuery}
                     onChange={(e) => handleSearch(e.target.value)}
                     className="mobile-search-input"
@@ -338,7 +338,7 @@ export default function StickyTopNav() {
                     {nflVenues.map((venue) => (
                       <Link
                         key={venue.id}
-                        href={`/venue/${venue.id}`}
+                        href={`/stadium/${venue.id}`}
                         className="mobile-venue-link"
                         onClick={closeMobileMenu}
                       >

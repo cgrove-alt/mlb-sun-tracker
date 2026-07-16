@@ -1354,12 +1354,12 @@ export const mlbStadiumGuidesRemainder: Record<string, StadiumGuide> = {
 
   'whitesox': {
     id: 'whitesox',
-    name: 'Guaranteed Rate Field',
+    name: 'Rate Field',
     team: 'Chicago White Sox',
     opened: 1991,
     capacity: 40615,
     overview: {
-      description: "Guaranteed Rate Field on Chicago's South Side has undergone significant renovations to modernize the ballpark experience. Known for its unique features like the exploding scoreboard and shower in the bleachers, it offers great views of the Chicago skyline.",
+      description: "Rate Field (formerly Guaranteed Rate Field) on Chicago's South Side has undergone significant renovations to modernize the ballpark experience. Known for its unique features like the exploding scoreboard and shower in the bleachers, it offers great views of the Chicago skyline.",
       highlights: [
         'Exploding scoreboard with fireworks',
         'Chicago skyline views',

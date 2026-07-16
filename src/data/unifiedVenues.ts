@@ -107,8 +107,8 @@ export const ALL_UNIFIED_VENUES: UnifiedVenue[] = [
     "id": "athletics",
     "name": "Sutter Health Park",
     "league": "MLB",
-    "team": "Oakland Athletics",
-    "city": "Sacramento",
+    "team": "Athletics",
+    "city": "West Sacramento",
     "state": "CA",
     "latitude": 38.5664,
     "longitude": -121.503,
@@ -675,16 +675,16 @@ export const ALL_UNIFIED_VENUES: UnifiedVenue[] = [
   },
   {
     "id": "rays",
-    "name": "George M. Steinbrenner Field",
+    "name": "Tropicana Field",
     "league": "MLB",
     "team": "Tampa Bay Rays",
-    "city": "Tampa",
+    "city": "St. Petersburg",
     "state": "FL",
-    "latitude": 27.9628,
-    "longitude": -82.5062,
+    "latitude": 27.7683,
+    "longitude": -82.6534,
     "orientation": 316,
-    "capacity": 11026,
-    "roof": "open",
+    "capacity": 25000,
+    "roof": "fixed",
     "timezone": "America/New_York",
     "seatingGeometry": {
       "bowlShape": "diamond",
@@ -885,7 +885,7 @@ export const ALL_UNIFIED_VENUES: UnifiedVenue[] = [
   },
   {
     "id": "whitesox",
-    "name": "Guaranteed Rate Field",
+    "name": "Rate Field",
     "league": "MLB",
     "team": "Chicago White Sox",
     "city": "Chicago",
@@ -2908,7 +2908,7 @@ export const ALL_UNIFIED_VENUES: UnifiedVenue[] = [
     "league": "MiLB",
     "team": "Las Vegas Aviators",
     "alternateTeams": [
-      "Oakland Athletics"
+      "Athletics"
     ],
     "city": "Las Vegas",
     "state": "NV",
@@ -4060,7 +4060,7 @@ export const ALL_UNIFIED_VENUES: UnifiedVenue[] = [
     "league": "MiLB",
     "team": "Midland RockHounds",
     "alternateTeams": [
-      "Oakland Athletics"
+      "Athletics"
     ],
     "city": "Midland",
     "state": "TX",
@@ -4924,7 +4924,7 @@ export const ALL_UNIFIED_VENUES: UnifiedVenue[] = [
     "league": "MiLB",
     "team": "Lansing Lugnuts",
     "alternateTeams": [
-      "Oakland Athletics"
+      "Athletics"
     ],
     "city": "Lansing",
     "state": "MI",
@@ -5572,7 +5572,7 @@ export const ALL_UNIFIED_VENUES: UnifiedVenue[] = [
     "league": "MiLB",
     "team": "Stockton Ports",
     "alternateTeams": [
-      "Oakland Athletics"
+      "Athletics"
     ],
     "city": "Stockton",
     "state": "CA",

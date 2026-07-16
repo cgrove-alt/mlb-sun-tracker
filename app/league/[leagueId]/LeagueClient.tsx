@@ -98,7 +98,7 @@ export default function LeagueClient({ leagueName, venues }: LeagueClientProps) 
         {filtered.map((venue) => (
           <Link
             key={venue.id}
-            href={`/venue/${venue.id}`}
+            href={`/stadium/${venue.id}`}
             className={styles.card}
           >
             <div className={styles.cardHead}>

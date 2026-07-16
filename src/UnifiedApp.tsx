@@ -360,7 +360,7 @@ function UnifiedAppContent() {
                       }
                     </p>
                     <Link 
-                      href={`/venue/${selectedVenue.id}`}
+                      href={`/stadium/${selectedVenue.id}`}
                       style={{
                         color: '#2196f3',
                         textDecoration: 'none',

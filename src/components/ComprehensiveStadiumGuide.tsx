@@ -3,7 +3,7 @@
 import React from 'react';
 import { StadiumGuide } from '../data/stadiumGuides';
 import { getStadiumGuide } from '../data/guides';
-import { MLB_STADIUMS } from '../data/stadiums';
+import { getUnifiedVenueById } from '../data/unifiedVenues';
 import Link from 'next/link';
 import {
   MapPinIcon,
@@ -15,15 +15,24 @@ import {
 import StadiumTitleBlock from './StadiumTitleBlock';
 import { StadiumTitleData } from './StadiumTitleBlock';
 import { FidelityNotice } from './FidelityNotice';
+import { ShadeAnswer } from './ShadeAnswer';
 import './StadiumGuide.css';
 
 interface ComprehensiveStadiumGuideProps {
   stadiumId: string;
+  // When false, the guide's own title block (H1) is suppressed — used on MLB
+  // stadium pages where StadiumPageSSR already renders the single H1/header.
+  showTitleBlock?: boolean;
 }
 
-const ComprehensiveStadiumGuide: React.FC<ComprehensiveStadiumGuideProps> = ({ stadiumId }) => {
+const ComprehensiveStadiumGuide: React.FC<ComprehensiveStadiumGuideProps> = ({ stadiumId, showTitleBlock = true }) => {
   const guide = getStadiumGuide(stadiumId);
-  const stadium = MLB_STADIUMS.find((s) => s.id === stadiumId);
+  // The structured venue record is the single source of truth for header
+  // facts (location, capacity, orientation, league). Previously these came
+  // from the guide's free-text neighborhood string, which produced the
+  // "South Bronx," (missing state) bug, a hardcoded 'MLB' league for MiLB/NFL,
+  // and a capacity that conflicted with the canonical value.
+  const venue = getUnifiedVenueById(stadiumId);
   
   // Debug logging
   if (typeof window !== 'undefined' && guide) {
@@ -46,31 +55,39 @@ const ComprehensiveStadiumGuide: React.FC<ComprehensiveStadiumGuideProps> = ({ s
   const titleData: StadiumTitleData = {
     purpose: 'shade-guide',
     stadium: {
-      name: guide.name,
+      name: venue?.name ?? guide.name,
       id: stadiumId
     },
     team: {
-      name: guide.team,
-      league: 'MLB' // Comprehensive guides are currently only for MLB
+      name: venue?.team ?? guide.team,
+      league: venue?.league ?? 'MLB'
     },
     quickFacts: {
       location: {
-        city: guide.neighborhood.name.split(',')[0] || guide.neighborhood.name,
-        state: guide.neighborhood.name.split(',')[1]?.trim() || ''
+        city: venue?.city ?? (guide.neighborhood.name.split(',')[0] || guide.neighborhood.name),
+        state: venue?.state ?? (guide.neighborhood.name.split(',')[1]?.trim() || '')
       },
-      capacity: guide.capacity,
-      orientation: stadium?.orientation ?? 0,
-      roofType: stadium?.roof ?? 'open',
-      yearBuilt: guide.opened
+      capacity: venue?.capacity ?? guide.capacity,
+      orientation: venue?.orientation ?? 0,
+      roofType: venue?.roof ?? 'open',
+      yearBuilt: venue?.opened ?? guide.opened
     }
   };
 
   return (
     <div className="stadium-guide comprehensive">
-      <StadiumTitleBlock
-        data={titleData}
-        showBreadcrumb={true}
-      />
+      {showTitleBlock && (
+        <StadiumTitleBlock
+          data={titleData}
+          showBreadcrumb={true}
+        />
+      )}
+
+      {/* Answer-first summary — only when standalone (MLB pages get it from
+          StadiumPageSSR instead, so it isn't duplicated). */}
+      {showTitleBlock && venue && (
+        <ShadeAnswer name={venue.name} orientation={venue.orientation} roof={venue.roof} />
+      )}
 
       <FidelityNotice stadiumId={stadiumId} />
 

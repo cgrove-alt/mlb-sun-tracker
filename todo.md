@@ -2160,3 +2160,160 @@ Before grinding through 12–24 hours of per-stadium research, I want to confirm
 2. **Stadium-local convention** (0=1B, 90=CF, 180=3B, 270=behind HP) is what the calculator expects and what we should use for all new real data. OK?
 3. **Phase 2 first** (just Rate Field) — prove the pipeline on the user's original complaint stadium before scaling. After Rate Field is shipped and verified, I'll resume with Phase 3 (the 6 stadiums that already have starter files) in this or a follow-up session, then Phase 4 (23 fresh stadiums) across multiple sessions. OK?
 4. **Estimated total effort: 17–27 hours** of focused research + author + verify work. This will span multiple sessions; I'll commit progress per stadium so nothing is lost.
+
+---
+
+# 🔧 AUDIT-FIXES (branch: audit-fixes) — started 2026-07-16
+
+External SEO/GEO/UX audit remediation for theshadium.com. Phased, with approval gate + commit after each phase. No deploy without explicit approval.
+
+## Phase 1 — URL Duplication (IN PROGRESS: investigation done, awaiting approval)
+
+### What I found (differs from audit's assumptions — read before approving)
+- **Two routes exist:** `app/stadium/[stadiumId]` and `app/venue/[venueId]`. Confirmed.
+- **They are NOT symmetric duplicates.**
+  - `/stadium/{id}` serves **only the 30 MLB stadiums** (`src/data/stadiums.ts` → `MLB_STADIUMS`), using richer SSR + client components + guides/amenities/sections.
+  - `/venue/{id}` serves **all 182 venues** (30 MLB + 120 MiLB + 32 NFL) from `src/data/unifiedVenues.ts` → `ALL_UNIFIED_VENUES`, using the simpler `ComprehensiveStadiumGuide`.
+- **True duplication = the 30 MLB parks** (each at both `/stadium/{id}` and `/venue/{id}`, both self-canonical). The other **152 venues (MiLB+NFL) exist ONLY at `/venue/`.** Audit's "500+ dupes" is an overestimate (~30 pairs; slug-alias redirects add some).
+- **Sitemap actively advertises the dupes:** `scripts/generate-sitemap.js` writes `public/sitemap-stadiums.xml` listing BOTH `/stadium/{id}` and `/venue/{id}` for every MLB venue (lines 104-106).
+- **Mechanics:** `next.config.js` has no `redirects()` yet. robots.txt + sitemaps served from `public/` (correct). Stale dead copies of `robots.txt`/`sitemap.xml` also sit at repo root (not served). `/venue/` is linked internally in 7 files: HomePage.tsx, league page + LeagueClient.tsx, StickyTopNav.tsx, src/UnifiedApp.tsx, src/MobileApp.tsx.
+
+### Decision needed: canonical strategy
+- **Option A (recommended, matches audit intent):** Extend `/stadium/[stadiumId]` to serve ALL 182 venues (MLB via MLB_STADIUMS, non-MLB via unified venues). Then 301 every `/venue/:id` → `/stadium/:id`, delete `/venue/`, update all links + sitemap. Delivers the single `/stadium/` pattern the audit asked for. Bigger lift; the 152 moved venues temporarily inherit Phase 2's double-render until Phase 2 runs.
+- **Option B (lighter):** Only 301 the 30 MLB `/venue/` dupes → `/stadium/`; keep `/venue/` for MiLB/NFL. Less work but two URL namespaces remain — does NOT fully deliver "single pattern."
+
+### Phase 1 tasks (Option A) — DONE, verified via prod build + live server
+- [x] Extend `/stadium/[stadiumId]` route + generateStaticParams to resolve all 182 venues (MLB rich path; MiLB/NFL via ComprehensiveStadiumGuide). Build prerendered **182** stadium pages.
+- [x] Add `async redirects()` in next.config.js: `/venue/:venueId` → `/stadium/:venueId` with explicit `statusCode: 301`. Verified live: `/venue/yankees` and `/venue/durham-bulls` both return HTTP 301 to `/stadium/...`.
+- [x] Update internal links `/venue/` → `/stadium/` (HomePage, LeagueClient, league page schema, StickyTopNav, UnifiedApp, MobileApp). Zero `/venue/` links remain (only a doc comment).
+- [x] Deleted dead `app/venue/[venueId]` route (redirect supersedes it). Confirmed absent from build.
+- [x] **Bonus root-cause fix:** 3 HomePage links pointed to non-existent IDs (`metlife-stadium`, `las-vegas-ballpark`, `sofi-stadium`) — already 404 before this work. Corrected to real IDs (`metlife-stadium-giants`, `las-vegas-aviators`, `sofi-stadium-rams`), all verified 200.
+- [x] Rewrote `scripts/generate-sitemap.js` to emit only `/stadium/` URLs. Regenerated: **182** `/stadium/` URLs, **zero** `/venue/`.
+- [x] Verified served `public/robots.txt` allows crawling + references `sitemap-index.xml`.
+
+### Phase 1 — items to flag to user (not changed without approval)
+- Stale, UNSERVED legacy files at repo root: `/robots.txt` and `/sitemap.xml` (Next serves the `public/` copies, not these). Recommend deleting to avoid confusion — awaiting approval.
+- Pre-existing data bug (Phase 2/3 territory, NOT touched): `ComprehensiveStadiumGuide` hardcodes `league: 'MLB'` and reads orientation/roof only from `MLB_STADIUMS`, so MiLB/NFL title blocks show wrong league + orientation 0.
+
+## Phase 2 — Double-render bug (DONE, verified via prod build HTML)
+
+### Root cause (confirmed)
+- `/stadium/[stadiumId]/page.tsx` rendered TWO full guides: `StadiumPageSSR` **and** `StadiumPageClient` → the latter embeds `ComprehensiveStadiumGuide`.
+- Each renders a `StadiumTitleBlock`, and `StadiumTitleBlock` emits an `<h1>` (line 182) → **two H1s**.
+- The two title blocks used DIFFERENT data sources:
+  - SSR: `MLB_STADIUMS` record → "New York, NY", capacity 46,537 (canonical, correct).
+  - Comprehensive: `guide.neighborhood.name.split(',')` + hardcoded `league:'MLB'` + `guide.capacity` → "South Bronx," (no state, trailing comma via `{city}, {state}`), capacity 47,309.
+- `MLB_STADIUMS` and `ALL_UNIFIED_VENUES` **agree** — the guide free-text was the only rogue source.
+
+### Fix (minimal, non-lossy)
+- [x] `ComprehensiveStadiumGuide`: header facts now come from the structured `getUnifiedVenueById()` record (single source of truth) instead of parsed guide free-text. Fixes trailing-comma/missing-state, conflicting capacity, and the hardcoded `MLB` league (MiLB/NFL now correct).
+- [x] Added `showTitleBlock?: boolean` (default true). `StadiumPageClient` passes `showTitleBlock={false}` so the embedded guide no longer renders a second H1 — `StadiumPageSSR` provides the single page H1.
+- [x] Added `scripts/auditVenueData.js` and ran it: **182 venues, 0** missing/malformed city/state/capacity/orientation.
+
+### Verified (prerendered HTML)
+- MLB (yankees): exactly **1** H1 ("Yankee Stadium"); header "New York, NY" + 46,537; no "47,309"; JSON-LD addressRegion "NY".
+- MiLB (durham-bulls): exactly **1** H1; header "Durham, NC" + league "MiLB" (0 "MLB" labels).
+- Remaining "South Bronx" strings are legit editorial copy ("Located in the South Bronx, …", "Neighborhood: South Bronx"), not the broken location field.
+
+### Decision noted (open to change at review)
+- Kept BOTH content bodies (SSR shade guide + editorial guide) with a single shared header, rather than deleting the editorial guide. This is the minimal, no-content-loss fix and satisfies "one H1 + single source of truth." Some shade-content overlap remains; can fully collapse to one guide if preferred.
+
+## Phase 3 — Data accuracy / shade model (DONE, verified via build + tests)
+
+### Root cause (confirmed)
+- Shade was binary: each section had a single `covered` boolean. `StadiumPageSSR` derived rating/notes from it (covered→"Guaranteed shade", else level-based). The canonical Yankees data marked whole bowl levels `covered:true` (Field MVP 115-125, Main Level 200s, Terrace 300s, Grandstand 400s) and even RF Bleachers 201-204 — so field/bleacher seats read as "guaranteed shade."
+- FAQ used a naive `orientation < 180 ? 'third base' : 'first base'` → recommended THIRD base for Yankees (east-facing, orientation 55°), when the compass model (`shadedSide`) correctly gives FIRST base for a 1 PM game.
+- Month recommendations called `getShadeRecommendation(orientation, month, 'early')` — always the morning bucket → identical string ("Outfield… morning games") repeated for all 7 months.
+
+### Fix
+- [x] **3-tier model.** `sections/mlb/yankees.ts`: added `classifyCoverage()` → Full (indoor/suite), Partial (back rows only, under deck overhang / Grandstand roof), Exposed. `generateRows` now marks only the back ~40% of rows covered for partial sections; emits `partialCoverage: CoverageDetail` with `coveredRows`. Projected `partialCoverage`/`coveredRows` through `stadiumSections-split/yankees.ts`.
+- [x] **Yankees corrections.** RF Bleachers 201-204 → Exposed; Field MVP 115-125, Main Level, Terrace, Grandstand → Partial (back rows); indoor suites/clubs (Champions/Jim Beam/Mohegan/Bleacher Café/Audi/Pepsi) stay Fully covered. This also corrects the live shade engine (uses `section.covered`) and the /rows/shade API (uses per-row `covered`).
+- [x] **StadiumPageSSR 3-tier rendering:** table "Coverage" column (✓ Covered / ◐ back rows / — Exposed), tiered rating/best-time/notes, tiered "best shaded" cards.
+- [x] **FAQ orientation-derived:** replaced the naive ternary with `shadedSide(orientation, midday)` → Yankees now recommends the first base side for 1 PM. Covered-seating answer now distinguishes fully-covered vs back-rows-only.
+- [x] **Month recs de-duplicated:** removed the identical always-morning line; made `getSeasonalPattern` distinct for July/Aug/Sept.
+- [x] Updated `sections/mlb/__tests__/yankees.test.ts` to the corrected 3-tier expectations (22/22 pass).
+
+### Verified
+- Prerendered yankees.html: 28 "✓ Covered", 109 "◐ back rows", 53 "— Exposed"; Field MVP 115 = back-rows-only; Bleachers 201 = Exposed; FAQ = "the first base side falls into shade first"; July/Aug/Sept month text distinct.
+- Tests: 92/92 across sections + sectionSunCalculations + rows API. Build exit 0.
+
+### Step 6 — suspicious stadiums to REVIEW (NOT modified) — via scripts/auditSuspiciousCoverage.ts
+- **whitesox (Guaranteed Rate Field):** 82% of 132 sections fully covered; **100% of 36 upper-deck sections fully covered** — the classic "entire upper deck = guaranteed shade" error.
+- **redsox (Fenway Park):** 12 of 82 field-level sections marked fully covered — implausible for open field seating.
+- (Only MLB stadiums scanned. MiLB/NFL not yet audited for coverage.)
+
+### Deferred to Phase 4
+- The JSON-LD FAQ in `page.tsx` still hardcodes a "third base" answer — will be regenerated from the (now-correct) on-page FAQ content in Phase 4 (Structured Data).
+
+## Phase 3 follow-up — White Sox fixed; Fenway found to be a false positive
+
+- **White Sox (Rate Field):** applied the 3-tier model. The file's OWN header documented that the 500 upper deck is sheltered "row 9 and above" and lower 111-155 are covered in their "back rows only (front rows are not covered in reality)" — the binary flag had forced all of it to "guaranteed shade." Now: club+suite = fully covered; lower + upper (500s) = partial (back rows only); field/outfield/standing = exposed. Rendered HTML: 32 Covered / 81 back-rows / 24 Exposed; "Upper Reserved 506" now shows "◐ back rows only". Updated whitesox.test.ts (64/64 section tests pass).
+- **Red Sox (Fenway):** on inspection, the flagged "12 field sections covered" is DOCUMENTED and defensible — inner Field Box 39-50 sit under the press-box overhang, the Grandstand is genuinely roofed, EMC Club is indoor. Fenway is only 31% covered with a researched, balanced mix. Blanket reclassification would have DEGRADED good data, so I reverted it and left Fenway's researched data intact.
+- **Audit heuristic refined:** `scripts/auditSuspiciousCoverage.ts` now only flags `field-covered` when >40% of field seating is fully covered (a few inner field boxes under an overhang is normal). Re-run: 0 suspicious stadiums (White Sox fixed, Fenway legitimately not flagged).
+
+## Phase 4 — Structured Data (DONE, validated via scripts/validateSchema.js)
+
+### Findings
+- The suspected JSON-LD-in-`<meta>` bug lived in the OLD `/venue/` route (`verification.other['structured-data']`), which Phase 1 deleted — so it's already gone. All schema is now emitted as `<script type="application/ld+json">`.
+- Blog posts already had proper BlogPosting (real datePublished/dateModified) + BreadcrumbList. WebApplication was already site-wide via layout.
+- Gaps: homepage had only FAQPage (no Organization/WebSite/SearchAction); stadium pages had a hardcoded `datePublished: '2024-01-01'`, a hardcoded "third base" FAQ, no BreadcrumbList, no Wikipedia sameAs; and **MiLB/NFL `/stadium/` pages emitted no schema at all**.
+
+### Fix
+- [x] Homepage: added Organization + WebSite with a `SearchAction` (sitelinks search box). Fixed the wrong "third base side" Yankees answer → east-facing → first base.
+- [x] Stadium page: new shared `buildVenueSchemas()` used by BOTH the MLB and MiLB/NFL branches → every venue page now emits Article + StadiumOrArena + FAQPage + BreadcrumbList. MiLB/NFL pages previously had none.
+- [x] Real dates: `datePublished` = 2025-04-01 (replaces 2024-01-01), `dateModified` stamped at build.
+- [x] FAQ answers now orientation-derived via `src/utils/shadeSide.ts` (shared helper) — Yankees → first base side.
+- [x] StadiumOrArena carries PostalAddress + GeoCoordinates + capacity, and `sameAs` → Wikipedia for the 30 MLB parks (`src/data/stadiumWikipedia.ts`; MiLB/NFL omitted "where available").
+- [x] BreadcrumbList: Home > {League} Stadiums > Venue.
+- [x] Added `scripts/validateSchema.js` (structural JSON-LD lint).
+
+### Validated (scripts/validateSchema.js — all ✓, 0 issues)
+- Homepage: WebApplication, Organization, WebSite(SearchAction), FAQPage.
+- MLB (yankees): WebApplication, Article (2025-04-01, sameAs Yankee_Stadium), StadiumOrArena, FAQPage (first base), BreadcrumbList.
+- MiLB (durham-bulls) & NFL (sofi-stadium-rams): full 5-schema set (were empty before); MiLB correctly has no Wikipedia sameAs.
+- Blog: WebApplication, BlogPosting, BreadcrumbList.
+- NOTE: Google Rich Results Test remains a manual post-deploy step (see AUDIT-RESULTS checklist).
+
+## Phase 5 — Freshness & 2026 factual updates (DONE, verified via build)
+
+### Web research (2026)
+- **Rays:** returned to **Tropicana Field** (St. Petersburg, FL) for 2026 — reopened Apr 6, 2026 after Hurricane Milton roof repairs (2025 was Steinbrenner Field). Source: ESPN.
+- **Athletics:** at **Sutter Health Park** (West Sacramento, CA) 2025-2027; official name is just **"Athletics"** (no city). Sources: Wikipedia, MLB.com.
+
+### Fix
+- [x] Rate Field rename: whitesox `name` "Guaranteed Rate Field" → "Rate Field" in stadiums.ts, unifiedVenues.ts, guide, locale. Kept the old name as a searchable alias in the guide overview ("Rate Field (formerly Guaranteed Rate Field)"). Slug is `whitesox` (unchanged) so no redirect needed.
+- [x] Rays → Tropicana Field 2026: name, city (St. Petersburg), lat/lon, orientation 316, capacity 25000, **roof 'fixed'** (dome — the shade calc already treats fixed roofs as fully shaded) in stadiums.ts + unifiedVenues.ts.
+- [x] Athletics: dropped "Oakland" → team "Athletics", city "West Sacramento", across stadiums.ts, unifiedVenues.ts (incl. 4 alternateTeams), guides, locale, detailedStadiums, milbStadiums parentOrg.
+- [x] "Shade data last verified: May 21, 2026" line on every venue page — new `src/data/shadeDataVerified.ts` field + `<ShadeDataVerified/>` component, rendered on both MLB and MiLB/NFL branches.
+- [x] 24-hour → 12-hour: league page `typicalGameTimes` now rendered via `to12Hour()` (e.g. "1:00 PM", "7:00 PM"). (The MobileStadiumGuide already displayed 12-hour labels.)
+- [x] Capitalization: "baseball Shade Tips" → "Baseball Shade Tips" and "Sport: Baseball" via `titleCase()`.
+
+### Verified (prerendered HTML)
+- rays.html: "Tropicana Field" + "St. Petersburg", no "Steinbrenner". athletics.html: "Sutter Health Park", no "Oakland Athletics". whitesox.html: "Rate Field" (+ intentional "formerly Guaranteed Rate Field" alias).
+- league/mlb.html: "Baseball Shade Tips", "Sport: Baseball", times show "1:00 PM"/"7:00 PM" ("13:00"/"19:00" remain only as React keys, not visible text).
+- yankees.html + durham-bulls.html: "Shade data last verified: May 21, 2026".
+- Tests: 80/80 (sections + sun calc). Venue-data audit: 182 venues, 0 malformed.
+
+## Phase 6 — Internal linking & architecture (DONE, verified via build)
+
+- [x] **/stadiums is now a true all-leagues index** (was a redirect to /league/mlb). Renders the pre-existing StadiumsPageSSR with a new "Browse by League" section linking to /league/mlb, /league/milb, /league/nfl, plus the MLB stadiums-by-division list. Self-canonical to /stadiums. Fixed a latent bug: the division grouping keyed on short team names ("Yankees") while stadium.team is the full name, so every team fell through to a default division — now uses a shared id-keyed map (src/data/mlbDivisions.ts).
+- [x] **Blog → stadium contextual link.** New src/utils/venueForPost.ts matches each post to its venue by id / slugified name / slugified team against the post's tags+slug. A prominent "Planning a visit? See our full {Venue} shade guide" callout renders after the header. Match rate: 30/30 venue posts (camden-yards→orioles, steinbrenner-field→rays, etc.); the 1 general post correctly gets no callout.
+- [x] **First-person voice.** Fixed third-person tool references in blog posts ("their shade map"/"their detailed shade map"/"Check their details" → "our ..."). Preserved legitimate "their" (Las Vegas move, price, sun's peak).
+- [x] **Nearby / same-division block** on every venue page (src/components/RelatedStadiums.tsx): MLB venues show their 4 division-mates; MiLB/NFL venues show the 4 nearest same-league venues by great-circle distance. Rendered on both branches.
+
+### Verified (prerendered HTML)
+- stadiums.html: "Browse by League" + links to all 3 league pages (not a redirect).
+- yankees.html: "Same-division stadiums" → redsox/orioles/rays/bluejays. durham-bulls.html: "Nearby stadiums".
+- Blog: yankee/dodger/petco/camden/steinbrenner posts have the guide callout; general post does not. First-person voice confirmed.
+
+## Phase 7 — GEO / AI-search optimization (DONE, verified via build)
+
+- [x] **/how-it-works methodology page** (app/how-it-works/page.tsx): explains the 4 inputs — NREL Solar Position Algorithm, per-venue orientation/geometry, Open-Meteo weather, MLB StatsAPI schedule — with an honest Accuracy & Limitations section. Linked from the footer ("How It Works") and from every venue page's answer-first block. Added to the sitemap.
+- [x] **Answer-first summary** on every venue page (src/components/ShadeAnswer.tsx): 2-3 sentences directly answering "where are the shaded seats at {venue}?" from real orientation (domes get a "fixed roof → every seat shaded" message), before any tables. On MLB via StadiumPageSSR; on MiLB/NFL via ComprehensiveStadiumGuide (gated so it isn't duplicated on MLB pages).
+- [x] **llms.txt** at public/llms.txt: what The Shadium is, 182-venue coverage (30 MLB / 120 MiLB / 32 NFL), methodology URL, and the /stadium/{id}, /league/{x}, /stadiums URL patterns.
+- [x] **Shortened covered-seating FAQ**: now a by-level count summary (kept as the schema/FAQ text) plus an expandable `<details>` full list, instead of a long inline section list.
+- [x] **Meta keywords removed**: deleted the keyword arrays from the stadium (x2), league, and site-wide layout metadata. Confirmed 0 `<meta name="keywords">` on index/stadium/league.
+- [x] **Keyword-stuffing toned down**: rewrote the homepage sr-only block into natural language (removed the repeated "are my seats shaded?" phrasing) and corrected the inaccurate "250+/over 250" venue count to "180+" across layout, footer, nav, SafeSchema, SEOHelmet, and seats-shade-finder.
+
+### Verified (prerendered HTML)
+- how-it-works.html has NREL SPA + Open-Meteo + MLB StatsAPI + Accuracy sections. yankees/durham-bulls answer-first blocks present; rays shows the dome message. llms.txt served. Covered FAQ shows summary + "See the full covered-section list". 0 keyword metas. Homepage: 0 "250+", 11 "180+".

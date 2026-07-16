@@ -2,6 +2,7 @@ import { Metadata } from 'next';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import { getPostBySlug, getAllPosts, getRelatedPosts } from '@/lib/blog';
+import { findVenueForPost } from '@/src/utils/venueForPost';
 import { marked } from 'marked';
 import '../blog-post.css';
 
@@ -63,6 +64,8 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
   }
 
   const relatedPosts = getRelatedPosts(slug);
+  // Match this post to the venue it's about, to link to that venue's guide.
+  const matchedVenue = findVenueForPost(post);
   
   // Generate table of contents from content
   const headings = post.content.match(/^#{2,3}\s.+$/gm) || [];
@@ -171,6 +174,25 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
             <div className="post-image">
               <img src={post.image} alt={post.title} />
             </div>
+          )}
+
+          {matchedVenue && (
+            <aside
+              className="stadium-guide-callout"
+              style={{
+                margin: '1.5rem 0',
+                padding: '1rem 1.25rem',
+                borderRadius: '0.75rem',
+                border: '1px solid #bfdbfe',
+                background: '#eff6ff',
+              }}
+            >
+              <strong>📍 Planning a visit?</strong> See our full{' '}
+              <Link href={`/stadium/${matchedVenue.id}`} style={{ fontWeight: 600, textDecoration: 'underline' }}>
+                {matchedVenue.name} shade guide
+              </Link>{' '}
+              for live, section-by-section shade at your game time.
+            </aside>
           )}
 
           <div className="post-layout">

@@ -29,49 +29,7 @@ const inter = Inter({
 export const metadata: Metadata = {
   metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || 'https://theshadium.com/'),
   title: 'The Shadium - Find Seats in the Shade at MLB, MiLB & NFL Stadiums | Avoid Sun Exposure',
-  description: 'Find seats in the shade at any MLB, MiLB, or NFL stadium. The Shadium helps you locate shaded seating sections, avoid sun exposure, and stay cool during games. Real-time sun tracking for 250+ sports venues including all 30 MLB ballparks, 120 MiLB stadiums, and 32 NFL venues.',
-  keywords: [
-    // Primary queries
-    'are my seats in the shade',
-    'are my seats shaded',
-    'shaded seats at',
-    'seats in the shade',
-    'shaded seats',
-    'MLB stadium shade',
-    'MiLB stadium shade',
-    'NFL stadium shade',
-    'baseball shade seating',
-    'football stadium sun',
-    
-    // Question-based queries
-    'will my seats be in the sun',
-    'which seats are shaded',
-    'where are shaded seats',
-    'how to find shaded seats',
-    'best seats to avoid sun',
-    
-    // Stadium-specific
-    'yankee stadium shaded seats',
-    'dodger stadium shade',
-    'fenway park shaded sections',
-    'wrigley field sun exposure',
-    
-    // General terms
-    'avoid sun at stadium',
-    'shadium',
-    'shady seats',
-    'stadium sun exposure',
-    'cool seats baseball',
-    'shade finder',
-    'MLB sun tracker',
-    'baseball game shade',
-    'stadium shade map',
-    'where to sit in shade',
-    'best shaded seats',
-    'covered seats MLB',
-    'stadium sun map',
-    'day game shade'
-  ],
+  description: 'Find seats in the shade at any MLB, MiLB, or NFL stadium. The Shadium helps you locate shaded seating sections, avoid sun exposure, and stay cool during games. Real-time sun tracking for 180+ sports venues including all 30 MLB ballparks, 120 MiLB stadiums, and 32 NFL venues.',
   authors: [{ name: 'The Shadium Team' }],
   creator: 'The Shadium',
   publisher: 'The Shadium',
@@ -91,7 +49,7 @@ export const metadata: Metadata = {
     locale: 'en_US',
     url: process.env.NEXT_PUBLIC_SITE_URL || 'https://theshadium.com/',
     title: 'The Shadium - Find Seats in the Shade at MLB, MiLB & NFL Stadiums',
-    description: 'Find seats in the shade at any MLB, MiLB, or NFL stadium. Real-time sun tracking helps you avoid sun exposure and stay cool. Shade maps for 250+ sports venues.',
+    description: 'Find seats in the shade at any MLB, MiLB, or NFL stadium. Real-time sun tracking helps you avoid sun exposure and stay cool. Shade maps for 180+ sports venues.',
     siteName: 'The Shadium',
     images: [
       {

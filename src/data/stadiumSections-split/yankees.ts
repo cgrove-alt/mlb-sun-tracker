@@ -43,6 +43,8 @@ export const stadiumSections = {
     angleSpan: s.angleSpan,
     rows: s.rows.length,
     covered: s.covered,
+    partialCoverage: Boolean(s.partialCoverage),
+    coveredRows: s.partialCoverage ? 'back rows only' : undefined,
     price: priceFor(s.level),
   })),
 };

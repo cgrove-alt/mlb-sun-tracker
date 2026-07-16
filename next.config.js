@@ -86,6 +86,20 @@ const nextConfig = {
     pagesBufferLength: 2,
   },
   
+  // Permanent 301 redirects — /venue/* was consolidated into the single
+  // canonical /stadium/* URL pattern (audit Phase 1). statusCode: 301 is used
+  // explicitly instead of `permanent: true` (which emits 308) to match the
+  // audit's requirement and long-standing SEO expectations.
+  async redirects() {
+    return [
+      {
+        source: '/venue/:venueId',
+        destination: '/stadium/:venueId',
+        statusCode: 301,
+      },
+    ];
+  },
+
   // Headers for caching
   async headers() {
     return [

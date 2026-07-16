@@ -38,7 +38,16 @@
 //   • Upper-deck sections all `covered: true`; per RateYourSeats, "row 9 and
 //     above" of the 500 level is sheltered.
 
-import { DetailedSection, Vector3D, RowDetail } from '../../../types/stadium-complete';
+import { DetailedSection, Vector3D, RowDetail, CoverageDetail } from '../../../types/stadium-complete';
+
+// Three-tier coverage model (audit Phase 3). NOTE: unlike Yankee Stadium, Rate
+// Field's sections are reclassified by a generic architectural rule rather than
+// section-by-section research — only indoor/suite spaces are fully covered, the
+// open bowl (lower/club/upper) is shaded in its BACK ROWS only under the deck
+// overhang, and field/standing areas are exposed. Back-row percentages are
+// modeled, not individually measured. This replaces the prior data that marked
+// 100% of the upper deck as fully (guaranteed) shaded.
+type SectionCoverage = 'full' | 'partial' | 'none';
 
 const ORIENTATION_DEG = 120;
 
@@ -58,13 +67,16 @@ function generateRows(
   seatsPerRow: number,
   baseElevation: number,
   rake: number,
-  covered: boolean,
+  coverage: SectionCoverage,
 ): RowDetail[] {
   const rows: RowDetail[] = [];
   const rowHeight = 2.5;
   const rowDepth = 2.8;
+  // Partial coverage shades only the back ~40% of rows under the deck overhang.
+  const firstCoveredRow = coverage === 'partial' ? Math.ceil(count * 0.6) + 1 : 1;
   for (let i = 1; i <= count; i++) {
     const rowNum = i - 1;
+    const covered = coverage === 'full' || (coverage === 'partial' && i >= firstCoveredRow);
     rows.push({
       rowNumber: i.toString(),
       seats: Math.max(4, seatsPerRow - Math.floor(rowNum * 0.2)),
@@ -77,23 +89,38 @@ function generateRows(
   return rows;
 }
 
-function rowsFor(level: DetailedSection['level'], covered: boolean, baseElev: number): RowDetail[] {
+function rowsFor(level: DetailedSection['level'], coverage: SectionCoverage, baseElev: number): RowDetail[] {
   switch (level) {
     case 'field':
-      return generateRows(8, 18, baseElev, 12, covered);
+      return generateRows(8, 18, baseElev, 12, coverage);
     case 'lower':
-      return generateRows(30, 20, baseElev, 18, covered);
+      return generateRows(30, 20, baseElev, 18, coverage);
     case 'club':
-      return generateRows(15, 16, baseElev, 25, covered);
+      return generateRows(15, 16, baseElev, 25, coverage);
     case 'upper':
-      return generateRows(25, 18, baseElev, 30, covered);
+      return generateRows(25, 18, baseElev, 30, coverage);
     case 'suite':
-      return generateRows(4, 10, baseElev, 0, covered);
+      return generateRows(4, 10, baseElev, 0, coverage);
     case 'standing':
       return [];
     default:
-      return generateRows(15, 18, baseElev, 20, covered);
+      return generateRows(15, 18, baseElev, 20, coverage);
   }
+}
+
+// Coverage classification (see header note). This file's own documentation
+// states lower-bowl 111-155 are covered in their BACK ROWS only ("front rows
+// are not covered in reality") and the 500 upper deck is sheltered "row 9 and
+// above" — i.e. both are partial, not fully covered. The binary `covered` flag
+// could not express that; the 3-tier model now does.
+//   • suite + club  → fully covered (indoor / under the upper deck, no back-row caveat)
+//   • field + standing → exposed (open to the sky)
+//   • lower + upper (covered) → partial (back rows only, under the overhang/roof)
+function coverageKind(s: SectionInput): SectionCoverage {
+  if (s.level === 'suite' || s.level === 'club') return 'full';
+  if (s.level === 'field' || s.level === 'standing') return 'none';
+  if (s.covered) return 'partial';
+  return 'none';
 }
 
 function rakeFor(level: DetailedSection['level']): number {
@@ -296,15 +323,28 @@ const SECTIONS: SectionInput[] = [
 
 export const whitesoxSections: DetailedSection[] = SECTIONS.map((s) => {
   const baseAngle = convertCompass(s.compass, s.span);
+  const coverage = coverageKind(s);
+  const rows = rowsFor(s.level, coverage, s.height);
+  const coveredRowNums = rows.filter((r) => r.covered).map((r) => r.rowNumber);
+  const partialCoverage: CoverageDetail | undefined =
+    coverage === 'partial'
+      ? {
+          type: 'partial',
+          coveredRows: coveredRowNums,
+          coveragePercentage: rows.length ? Math.round((coveredRowNums.length / rows.length) * 100) : 0,
+          overhangHeight: 20,
+        }
+      : undefined;
   return {
     id: s.id,
     name: s.name,
     level: s.level,
     baseAngle,
     angleSpan: s.span,
-    rows: rowsFor(s.level, s.covered, s.height),
+    rows,
     vertices3D: vertices(baseAngle, s.span, s.distance, s.height),
-    covered: s.covered,
+    covered: coverage === 'full',
+    partialCoverage,
     distance: s.distance,
     height: s.height,
     rake: rakeFor(s.level),

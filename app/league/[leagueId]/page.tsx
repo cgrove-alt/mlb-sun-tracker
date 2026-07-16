@@ -9,6 +9,21 @@ import {
 } from '../../../src/data/unifiedVenues';
 import LeagueClient from './LeagueClient';
 
+// Format a 24-hour "HH:MM" string as 12-hour with AM/PM for display.
+function to12Hour(time: string): string {
+  const [h, m = '00'] = time.split(':');
+  const hour = parseInt(h, 10);
+  if (Number.isNaN(hour)) return time;
+  const period = hour >= 12 ? 'PM' : 'AM';
+  const h12 = hour % 12 === 0 ? 12 : hour % 12;
+  return `${h12}:${m.padStart(2, '0')} ${period}`;
+}
+
+// Capitalize the first letter for display (e.g. "baseball" -> "Baseball").
+function titleCase(s: string): string {
+  return s ? s.charAt(0).toUpperCase() + s.slice(1) : s;
+}
+
 interface LeaguePageProps {
   params: Promise<{
     leagueId: string;
@@ -39,16 +54,6 @@ export async function generateMetadata({ params }: LeaguePageProps): Promise<Met
   return {
     title,
     description,
-    keywords: [
-      `${league.name} stadium shade`,
-      `${league.sport} stadium shade guide`,
-      `${leagueKey} shaded seats`,
-      `${league.sport} sun exposure`,
-      `best shaded seats ${league.sport}`,
-      `${league.name} venue shade map`,
-      `${league.sport} stadium sun tracker`,
-      `avoid sun ${league.sport} games`
-    ],
     alternates: {
       canonical: `https://theshadium.com/league/${leagueId}`,
     },
@@ -96,13 +101,13 @@ export default async function LeaguePage({ params }: LeaguePageProps) {
       itemListElement: venues.map((venue, index) => ({
         '@type': 'ListItem',
         position: index + 1,
-        url: `https://theshadium.com/venue/${venue.id}`,
+        url: `https://theshadium.com/stadium/${venue.id}`,
         name: venue.name,
         item: {
           '@type': venue.venueType === 'baseball' ? 'StadiumOrArena' : 'SportsComplex',
-          '@id': `https://theshadium.com/venue/${venue.id}`,
+          '@id': `https://theshadium.com/stadium/${venue.id}`,
           name: venue.name,
-          url: `https://theshadium.com/venue/${venue.id}`,
+          url: `https://theshadium.com/stadium/${venue.id}`,
           address: {
             '@type': 'PostalAddress',
             addressLocality: venue.city,
@@ -152,7 +157,7 @@ export default async function LeaguePage({ params }: LeaguePageProps) {
           <div className="rounded-xl border bg-blue-50 p-4 md:p-5 shadow-sm">
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6 text-sm">
               <div>
-                <strong>Sport:</strong> {league.sport}
+                <strong>Sport:</strong> {titleCase(league.sport)}
               </div>
               <div>
                 <strong>Season:</strong> {league.season.start} - {league.season.end}
@@ -178,7 +183,7 @@ export default async function LeaguePage({ params }: LeaguePageProps) {
 
         <section className="mb-8 mt-10">
           <h2 className="text-2xl font-semibold mb-4">
-            {league.sport} Shade Tips
+            {titleCase(league.sport)} Shade Tips
           </h2>
           <div className="rounded-xl border bg-gray-50 p-4 md:p-5 shadow-sm">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6 stack">
@@ -187,7 +192,7 @@ export default async function LeaguePage({ params }: LeaguePageProps) {
                 <ul className="space-y-1">
                   {league.typicalGameTimes.map((time: string) => (
                     <li key={time} className="text-ink-700">
-                      • {time} - {
+                      • {to12Hour(time)} - {
                         parseInt(time.split(':')[0]) < 15 ? 'Day game (more sun exposure)' :
                         parseInt(time.split(':')[0]) < 18 ? 'Afternoon (moderate shade)' :
                         'Evening (better shade coverage)'

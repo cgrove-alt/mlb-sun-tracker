@@ -107,24 +107,31 @@ describe('whitesoxSections — Rate Field real seating data', () => {
     });
   });
 
-  describe('coverage matches real Rate Field architecture', () => {
-    it('marks every 500-level (upper deck) section covered', () => {
+  // Three-tier coverage model (audit Phase 3). This file's header documents that
+  // the 500 upper deck is sheltered "row 9 and above" and lower 111-155 are
+  // covered in their BACK ROWS only ("front rows are not covered in reality") —
+  // i.e. both are PARTIAL, not fully covered. Club/suite stay fully covered.
+  describe('coverage matches real Rate Field architecture (3-tier)', () => {
+    it('marks every 500-level (upper deck) section partial — back rows only, NOT fully covered', () => {
       const upper = whitesoxSections.filter((s) => s.level === 'upper');
       expect(upper.length).toBeGreaterThan(30);
-      expect(upper.every((s) => s.covered)).toBe(true);
+      expect(upper.every((s) => !s.covered && s.partialCoverage != null)).toBe(true);
     });
 
-    it('marks every 300-level (club) section covered', () => {
+    it('marks every 300-level (club) section fully covered (under the upper deck)', () => {
       const club = whitesoxSections.filter((s) => s.level === 'club');
       expect(club.length).toBeGreaterThan(20);
       expect(club.every((s) => s.covered)).toBe(true);
     });
 
-    it('marks Lower Box 111-155 covered (under upper-deck overhang)', () => {
+    it('marks Lower Box 111-155 partial — back rows under the upper-deck overhang', () => {
       for (let id = 111; id <= 155; id++) {
         const sec = sectionById(String(id));
         expect(sec).toBeDefined();
-        expect(sec.covered).toBe(true);
+        expect(sec.covered).toBe(false);
+        expect(sec.partialCoverage).not.toBeNull();
+        expect(sec.rows.some((r) => r.covered)).toBe(true);   // back rows covered
+        expect(sec.rows.some((r) => !r.covered)).toBe(true);  // front rows exposed
       }
     });
 
@@ -169,20 +176,24 @@ describe('whitesoxSections — Rate Field real seating data', () => {
       expect(avg).toBeGreaterThan(25);
     });
 
-    it('Covered Lower Box sections (1B side and 3B side alike) read as fully shaded', () => {
-      // Both 1B side (compass W half) and 3B side (compass E half) Lower Box
-      // sections sit under the upper-deck overhang. The section-level model
-      // treats overhang as full shade at low sun, so both sides come out at
-      // exposure=0. Row-level refinement (calculateRowShadows) would
-      // differentiate within-section, but is not the section-level concern.
+    it('Lower Box 117 (1B) and 149 (3B) are partial — back rows covered, front rows exposed', () => {
+      // Under the 3-tier model these sit under the upper-deck overhang with only
+      // their BACK ROWS covered, so the section carries partialCoverage and its
+      // rows are a mix of covered (back) and exposed (front).
       const lb1b = sectionById('117'); // 1B-side Lower Box, compass ~215° SSW
       const lb3b = sectionById('149'); // 3B-side Lower Box, compass ~30°  NE
-      expect(getSectionSunExposure(asSS(lb1b), sunEl, sunAz, ORIENTATION)).toBe(0);
-      expect(getSectionSunExposure(asSS(lb3b), sunEl, sunAz, ORIENTATION)).toBe(0);
+      for (const s of [lb1b, lb3b]) {
+        expect(s.covered).toBe(false);
+        expect(s.partialCoverage).not.toBeNull();
+        expect(s.rows.some((r) => r.covered)).toBe(true);
+        expect(s.rows.some((r) => !r.covered)).toBe(true);
+      }
     });
 
-    it('aggregate uncovered-east exposure > uncovered-west exposure (physics holds)', () => {
-      const uncov = whitesoxSections.filter((s) => !s.covered && s.level !== 'standing');
+    it('aggregate exposed-east exposure > exposed-west exposure (physics holds)', () => {
+      // Only fully-exposed sections (no full or partial coverage) — the partial
+      // bowl sections are excluded so this measures open-air sun geometry.
+      const uncov = whitesoxSections.filter((s) => !s.covered && s.partialCoverage == null && s.level !== 'standing');
       const split = uncov.map((s) => ({
         compass: sectionCompassAngle(asSS(s), ORIENTATION),
         exp: getSectionSunExposure(asSS(s), sunEl, sunAz, ORIENTATION),
