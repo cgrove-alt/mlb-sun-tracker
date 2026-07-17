@@ -21,14 +21,17 @@
 //
 // Fenway-specific architecture baked into the data:
 //   • Field Box (FB-1 through FB-82): 82 sections wrapping the entire bowl
-//     foul-line to foul-line. FB-39 through FB-50 marked covered=true —
-//     consistently shaded by the press-box / Pavilion stack overhead per
-//     shadedseats ("upper rows of FB-39-50 are shaded for 1pm games"). All
-//     other FB sections uncovered.
+//     foul-line to foul-line. FB-39 through FB-50 are NOT covered structures
+//     (RateYourSeats lists Fenway's covered seating as the Pavilion Boxes,
+//     HPPC, Dell/EMC Club, and all Grandstand but GS33 — no Field Box). They
+//     get press-box/Pavilion-stack SHADE for afternoon day games, so they are
+//     covered=false here and flagged day-shade (partial) in the split UI file.
+//     All other FB sections uncovered.
 //   • Loge Box (LB-98 through LB-165, skipping LB-156 — no such section
-//     published): 67 sections in the second tier. LB-123 through LB-136
-//     marked covered=true (consistently shaded behind HP); others
-//     uncovered.
+//     published): 67 sections in the second tier. LB-123 through LB-136 get
+//     day-game shade behind HP but are NOT covered structures (not in the
+//     RateYourSeats covered list) — covered=false, flagged day-shade (partial)
+//     in the split UI file. Others uncovered.
 //   • Grandstand (GS-1 through GS-33): 33 iconic wooden-seat sections.
 //     ALL covered=true EXCEPT GS-33 (per RateYourSeats: "all Grandstand
 //     sections except GS33 are covered"). GS-33 sits at the LF/Green
@@ -58,7 +61,9 @@
 //     behind HP. Covered, level=club, height=0.
 //   • Standing areas (Hornitos Cantina, Coca-Cola Corner SRO, Green Monster
 //     SRO, Right Field Roof Box/Deck SRO, Roof Deck Tables, First/Third
-//     Base Pavilion SRO, general SRO): mixed coverage per location.
+//     Base Pavilion SRO, general SRO): mixed coverage per location. First/Third
+//     Base Pavilion SRO sit under the Pavilion roof (covered=true); the general
+//     SRO is not a covered structure (covered=false, day-shade partial in UI).
 //
 // Section count: 275, far exceeding the typical MLB bowl. This is real for
 // Fenway because of dense sub-sectioning of the Field Box and Loge Box
@@ -195,18 +200,18 @@ const SECTIONS: SectionInput[] = [
   { id: 'FB-36', name: 'Field Box 36', level: 'field', compass: 218, span: 3, covered: false, distance: 80,  height: 8 },
   { id: 'FB-37', name: 'Field Box 37', level: 'field', compass: 221, span: 3, covered: false, distance: 80,  height: 8 },
   { id: 'FB-38', name: 'Field Box 38', level: 'field', compass: 225, span: 3, covered: false, distance: 80,  height: 8 },
-  { id: 'FB-39', name: 'Field Box 39', level: 'field', compass: 228, span: 3, covered: true,  distance: 80,  height: 8 },
-  { id: 'FB-40', name: 'Field Box 40', level: 'field', compass: 232, span: 3, covered: true,  distance: 80,  height: 8 },
-  { id: 'FB-41', name: 'Field Box 41', level: 'field', compass: 235, span: 3, covered: true,  distance: 80,  height: 8 },
-  { id: 'FB-42', name: 'Field Box 42', level: 'field', compass: 239, span: 3, covered: true,  distance: 80,  height: 8 },
-  { id: 'FB-43', name: 'Field Box 43', level: 'field', compass: 242, span: 3, covered: true,  distance: 80,  height: 8 },
-  { id: 'FB-44', name: 'Field Box 44', level: 'field', compass: 246, span: 3, covered: true,  distance: 80,  height: 8 },
-  { id: 'FB-45', name: 'Field Box 45', level: 'field', compass: 249, span: 3, covered: true,  distance: 80,  height: 8 },
-  { id: 'FB-46', name: 'Field Box 46', level: 'field', compass: 252, span: 3, covered: true,  distance: 81,  height: 8 },
-  { id: 'FB-47', name: 'Field Box 47', level: 'field', compass: 256, span: 3, covered: true,  distance: 82,  height: 8 },
-  { id: 'FB-48', name: 'Field Box 48', level: 'field', compass: 259, span: 3, covered: true,  distance: 84,  height: 8 },
-  { id: 'FB-49', name: 'Field Box 49', level: 'field', compass: 263, span: 3, covered: true,  distance: 86,  height: 8 },
-  { id: 'FB-50', name: 'Field Box 50', level: 'field', compass: 266, span: 3, covered: true,  distance: 88,  height: 8 },
+  { id: 'FB-39', name: 'Field Box 39', level: 'field', compass: 228, span: 3, covered: false,  distance: 80,  height: 8 },
+  { id: 'FB-40', name: 'Field Box 40', level: 'field', compass: 232, span: 3, covered: false,  distance: 80,  height: 8 },
+  { id: 'FB-41', name: 'Field Box 41', level: 'field', compass: 235, span: 3, covered: false,  distance: 80,  height: 8 },
+  { id: 'FB-42', name: 'Field Box 42', level: 'field', compass: 239, span: 3, covered: false,  distance: 80,  height: 8 },
+  { id: 'FB-43', name: 'Field Box 43', level: 'field', compass: 242, span: 3, covered: false,  distance: 80,  height: 8 },
+  { id: 'FB-44', name: 'Field Box 44', level: 'field', compass: 246, span: 3, covered: false,  distance: 80,  height: 8 },
+  { id: 'FB-45', name: 'Field Box 45', level: 'field', compass: 249, span: 3, covered: false,  distance: 80,  height: 8 },
+  { id: 'FB-46', name: 'Field Box 46', level: 'field', compass: 252, span: 3, covered: false,  distance: 81,  height: 8 },
+  { id: 'FB-47', name: 'Field Box 47', level: 'field', compass: 256, span: 3, covered: false,  distance: 82,  height: 8 },
+  { id: 'FB-48', name: 'Field Box 48', level: 'field', compass: 259, span: 3, covered: false,  distance: 84,  height: 8 },
+  { id: 'FB-49', name: 'Field Box 49', level: 'field', compass: 263, span: 3, covered: false,  distance: 86,  height: 8 },
+  { id: 'FB-50', name: 'Field Box 50', level: 'field', compass: 266, span: 3, covered: false,  distance: 88,  height: 8 },
   { id: 'FB-51', name: 'Field Box 51', level: 'field', compass: 270, span: 3, covered: false, distance: 90,  height: 8 },
   { id: 'FB-52', name: 'Field Box 52', level: 'field', compass: 273, span: 3, covered: false, distance: 92,  height: 8 },
   { id: 'FB-53', name: 'Field Box 53', level: 'field', compass: 277, span: 3, covered: false, distance: 95,  height: 8 },
@@ -266,20 +271,20 @@ const SECTIONS: SectionInput[] = [
   { id: 'LB-120', name: 'Loge Box 120', level: 'lower', compass: 185, span: 4, covered: false, distance: 128, height: 22 },
   { id: 'LB-121', name: 'Loge Box 121', level: 'lower', compass: 189, span: 4, covered: false, distance: 122, height: 22 },
   { id: 'LB-122', name: 'Loge Box 122', level: 'lower', compass: 193, span: 4, covered: false, distance: 118, height: 22 },
-  { id: 'LB-123', name: 'Loge Box 123', level: 'lower', compass: 197, span: 4, covered: true,  distance: 115, height: 22 },
-  { id: 'LB-124', name: 'Loge Box 124', level: 'lower', compass: 201, span: 4, covered: true,  distance: 112, height: 22 },
-  { id: 'LB-125', name: 'Loge Box 125', level: 'lower', compass: 205, span: 4, covered: true,  distance: 110, height: 22 },
-  { id: 'LB-126', name: 'Loge Box 126', level: 'lower', compass: 209, span: 4, covered: true,  distance: 108, height: 22 },
-  { id: 'LB-127', name: 'Loge Box 127', level: 'lower', compass: 213, span: 4, covered: true,  distance: 106, height: 22 },
-  { id: 'LB-128', name: 'Loge Box 128', level: 'lower', compass: 217, span: 4, covered: true,  distance: 105, height: 22 },
-  { id: 'LB-129', name: 'Loge Box 129', level: 'lower', compass: 221, span: 4, covered: true,  distance: 104, height: 22 },
-  { id: 'LB-130', name: 'Loge Box 130', level: 'lower', compass: 225, span: 4, covered: true,  distance: 103, height: 22 },
-  { id: 'LB-131', name: 'Loge Box 131', level: 'lower', compass: 229, span: 4, covered: true,  distance: 102, height: 22 },
-  { id: 'LB-132', name: 'Loge Box 132', level: 'lower', compass: 233, span: 4, covered: true,  distance: 102, height: 22 },
-  { id: 'LB-133', name: 'Loge Box 133', level: 'lower', compass: 237, span: 4, covered: true,  distance: 103, height: 22 },
-  { id: 'LB-134', name: 'Loge Box 134', level: 'lower', compass: 241, span: 4, covered: true,  distance: 104, height: 22 },
-  { id: 'LB-135', name: 'Loge Box 135', level: 'lower', compass: 245, span: 4, covered: true,  distance: 105, height: 22 },
-  { id: 'LB-136', name: 'Loge Box 136', level: 'lower', compass: 249, span: 4, covered: true,  distance: 107, height: 22 },
+  { id: 'LB-123', name: 'Loge Box 123', level: 'lower', compass: 197, span: 4, covered: false,  distance: 115, height: 22 },
+  { id: 'LB-124', name: 'Loge Box 124', level: 'lower', compass: 201, span: 4, covered: false,  distance: 112, height: 22 },
+  { id: 'LB-125', name: 'Loge Box 125', level: 'lower', compass: 205, span: 4, covered: false,  distance: 110, height: 22 },
+  { id: 'LB-126', name: 'Loge Box 126', level: 'lower', compass: 209, span: 4, covered: false,  distance: 108, height: 22 },
+  { id: 'LB-127', name: 'Loge Box 127', level: 'lower', compass: 213, span: 4, covered: false,  distance: 106, height: 22 },
+  { id: 'LB-128', name: 'Loge Box 128', level: 'lower', compass: 217, span: 4, covered: false,  distance: 105, height: 22 },
+  { id: 'LB-129', name: 'Loge Box 129', level: 'lower', compass: 221, span: 4, covered: false,  distance: 104, height: 22 },
+  { id: 'LB-130', name: 'Loge Box 130', level: 'lower', compass: 225, span: 4, covered: false,  distance: 103, height: 22 },
+  { id: 'LB-131', name: 'Loge Box 131', level: 'lower', compass: 229, span: 4, covered: false,  distance: 102, height: 22 },
+  { id: 'LB-132', name: 'Loge Box 132', level: 'lower', compass: 233, span: 4, covered: false,  distance: 102, height: 22 },
+  { id: 'LB-133', name: 'Loge Box 133', level: 'lower', compass: 237, span: 4, covered: false,  distance: 103, height: 22 },
+  { id: 'LB-134', name: 'Loge Box 134', level: 'lower', compass: 241, span: 4, covered: false,  distance: 104, height: 22 },
+  { id: 'LB-135', name: 'Loge Box 135', level: 'lower', compass: 245, span: 4, covered: false,  distance: 105, height: 22 },
+  { id: 'LB-136', name: 'Loge Box 136', level: 'lower', compass: 249, span: 4, covered: false,  distance: 107, height: 22 },
   { id: 'LB-137', name: 'Loge Box 137', level: 'lower', compass: 253, span: 4, covered: false, distance: 110, height: 22 },
   { id: 'LB-138', name: 'Loge Box 138', level: 'lower', compass: 257, span: 4, covered: false, distance: 114, height: 22 },
   { id: 'LB-139', name: 'Loge Box 139', level: 'lower', compass: 261, span: 4, covered: false, distance: 118, height: 22 },
@@ -460,7 +465,7 @@ const SECTIONS: SectionInput[] = [
   { id: 'ROOF-DECK-TABLES',     name: 'Roof Deck Tables',             level: 'standing', compass: 78,  span: 8,  covered: false, distance: 310, height: 65 },
   { id: 'FIRST-BASE-PAV-SRO',   name: 'First Base Pavilion SRO',      level: 'standing', compass: 192, span: 10, covered: true,  distance: 175, height: 65 },
   { id: 'THIRD-BASE-PAV-SRO',   name: 'Third Base Pavilion SRO',      level: 'standing', compass: 272, span: 10, covered: true,  distance: 175, height: 65 },
-  { id: 'SRO',                  name: 'Standing Room Only (general)', level: 'standing', compass: 232, span: 30, covered: true,  distance: 200, height: 50 },
+  { id: 'SRO',                  name: 'Standing Room Only (general)', level: 'standing', compass: 232, span: 30, covered: false,  distance: 200, height: 50 },
 ];
 
 export const redsoxSections: DetailedSection[] = SECTIONS.map((s) => {

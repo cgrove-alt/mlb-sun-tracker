@@ -174,19 +174,22 @@ describe('redsoxSections — Fenway Park real seating data', () => {
       expect(sspc.every((s) => !s.covered)).toBe(true);
     });
 
-    it('marks Field Box 39-50 covered (only inner FB sections under press box)', () => {
+    it('marks Field Box 39-50 NOT covered structures (day-shade, not covered per RateYourSeats)', () => {
+      // Field Box gets press-box/Pavilion-stack shade for day games but is not a
+      // covered structure — RateYourSeats' covered list is PB / HPPC / EMCC /
+      // Grandstand-except-GS33 only. Reclassified to covered=false; the split UI
+      // marks FB-39..50 as partial (day-game shade).
       for (let n = 39; n <= 50; n++) {
-        expect(sectionById(`FB-${n}`).covered).toBe(true);
+        expect(sectionById(`FB-${n}`).covered).toBe(false);
       }
-      // Sections outside that range NOT covered.
       ['FB-38', 'FB-51', 'FB-1', 'FB-82'].forEach((id) => {
         expect(sectionById(id).covered).toBe(false);
       });
     });
 
-    it('marks Loge Box 123-136 covered (consistently shaded behind HP)', () => {
+    it('marks Loge Box 123-136 NOT covered structures (day-shade, not covered per RateYourSeats)', () => {
       for (let n = 123; n <= 136; n++) {
-        expect(sectionById(`LB-${n}`).covered).toBe(true);
+        expect(sectionById(`LB-${n}`).covered).toBe(false);
       }
       ['LB-122', 'LB-137', 'LB-98', 'LB-165'].forEach((id) => {
         expect(sectionById(id).covered).toBe(false);
