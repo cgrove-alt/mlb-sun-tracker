@@ -1,10 +1,11 @@
 import { Metadata } from 'next';
+import { VENUE_COUNT } from '../../src/data/venueCount';
 import Link from 'next/link';
 import { MLB_STADIUMS } from '../../src/data/stadiums';
 
 export const metadata: Metadata = {
   title: 'Are My Seats in the Shade? MLB, MiLB & NFL Stadium Shade Finder | The Shadium',
-  description: 'Find out if your seats are shaded at any MLB, MiLB, or NFL stadium. Check shade coverage for specific sections at 180+ venues, find the best shaded seats, and avoid sun exposure during games.',
+  description: `Find out if your seats are shaded at any MLB, MiLB, or NFL stadium. Check shade coverage for specific sections at ${VENUE_COUNT} venues, find the best shaded seats, and avoid sun exposure during games.`,
   keywords: [
     'are my seats in the shade',
     'are my seats shaded',
@@ -91,7 +92,7 @@ export default function SeatsShadeFinderPage() {
             <li className="flex">
               <span className="font-bold text-blue-600 mr-3">1.</span>
               <div>
-                <strong>Select Your Stadium:</strong> Choose from our database of 180+ MLB, MiLB, and NFL venues.
+                <strong>Select Your Stadium:</strong> Choose from our database of {VENUE_COUNT} MLB, MiLB, and NFL venues.
               </div>
             </li>
             <li className="flex">

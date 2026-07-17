@@ -1,4 +1,5 @@
 import React from 'react';
+import { VENUE_COUNT } from '../data/venueCount';
 import { Helmet } from 'react-helmet-async';
 import { Stadium } from '../data/stadiums';
 import { MLBGame } from '../services/mlbApi';
@@ -33,7 +34,7 @@ export const SEOHelmet: React.FC<SEOHelmetProps> = ({ stadium, game, pageType = 
     if (pageType === 'stadium' && stadium) {
       return `Discover the best seats at ${stadium.name} with our sun exposure analysis. View real-time weather, seating sections, and make informed decisions for your next ${stadium.team} game.`;
     }
-    return 'Find the best shaded seats at MLB, MiLB, and NFL stadiums. The Shadium analyzes sun exposure, weather conditions, and seating sections across 180+ sports venues to help you avoid the heat and enjoy the game in comfort.';
+    return `Find the best shaded seats at MLB, MiLB, and NFL stadiums. The Shadium analyzes sun exposure, weather conditions, and seating sections across ${VENUE_COUNT} sports venues to help you avoid the heat and enjoy the game in comfort.`;
   };
 
   // Generate canonical URL

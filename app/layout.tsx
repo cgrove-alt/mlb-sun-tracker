@@ -6,6 +6,7 @@ import '../src/styles/vertical-rhythm.css';
 import '../src/styles/mobile-optimizations.css';
 import '../src/styles/accessibility-fixes.css';
 import type { Metadata } from 'next';
+import { VENUE_COUNT } from '../src/data/venueCount';
 import { Inter } from 'next/font/google';
 import { Suspense } from 'react';
 import GoogleAnalyticsLazy from '../components/GoogleAnalyticsLazy';
@@ -29,7 +30,7 @@ const inter = Inter({
 export const metadata: Metadata = {
   metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || 'https://theshadium.com/'),
   title: 'The Shadium - Find Seats in the Shade at MLB, MiLB & NFL Stadiums | Avoid Sun Exposure',
-  description: 'Find seats in the shade at any MLB, MiLB, or NFL stadium. The Shadium helps you locate shaded seating sections, avoid sun exposure, and stay cool during games. Real-time sun tracking for 180+ sports venues including all 30 MLB ballparks, 120 MiLB stadiums, and 32 NFL venues.',
+  description: `Find seats in the shade at any MLB, MiLB, or NFL stadium. The Shadium helps you locate shaded seating sections, avoid sun exposure, and stay cool during games. Real-time sun tracking for ${VENUE_COUNT} sports venues including all 30 MLB ballparks, 120 MiLB stadiums, and 32 NFL venues.`,
   authors: [{ name: 'The Shadium Team' }],
   creator: 'The Shadium',
   publisher: 'The Shadium',
@@ -49,7 +50,7 @@ export const metadata: Metadata = {
     locale: 'en_US',
     url: process.env.NEXT_PUBLIC_SITE_URL || 'https://theshadium.com/',
     title: 'The Shadium - Find Seats in the Shade at MLB, MiLB & NFL Stadiums',
-    description: 'Find seats in the shade at any MLB, MiLB, or NFL stadium. Real-time sun tracking helps you avoid sun exposure and stay cool. Shade maps for 180+ sports venues.',
+    description: `Find seats in the shade at any MLB, MiLB, or NFL stadium. Real-time sun tracking helps you avoid sun exposure and stay cool. Shade maps for ${VENUE_COUNT} sports venues.`,
     siteName: 'The Shadium',
     // OG image comes from the opengraph-image.tsx file convention (root default
     // + per-venue / per-league / per-post overrides) — not a hardcoded logo.

@@ -2,6 +2,7 @@
 
 import React from 'react';
 import Link from 'next/link';
+import { VENUE_COUNT } from '../src/data/venueCount';
 
 const FooterModern: React.FC = () => {
   const currentYear = new Date().getFullYear();
@@ -15,7 +16,7 @@ const FooterModern: React.FC = () => {
             <h3 className="text-lg font-bold text-ink-900 mb-2">The Shadium</h3>
             <p className="text-sm text-ink-700 mb-3">
               Find seats in the shade at any MLB, MiLB, or NFL stadium. Real-time sun tracking
-              for 180+ venues.
+              for {VENUE_COUNT} venues.
             </p>
             <p className="text-xs text-ink-600">
               © {currentYear} The Shadium™. All rights reserved.
