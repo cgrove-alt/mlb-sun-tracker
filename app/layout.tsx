@@ -27,6 +27,12 @@ const inter = Inter({
   adjustFontFallback: true, // Reduces layout shift
 });
 
+// Build identifier stamped on every page (audit follow-up). Lets any bare-URL
+// verification grep for the current deploy's git SHA and instantly detect stale
+// edge/CDN cache serving an old build. Vercel sets VERCEL_GIT_COMMIT_SHA at
+// build time; falls back to 'dev' locally.
+const BUILD_ID = (process.env.VERCEL_GIT_COMMIT_SHA || process.env.NEXT_PUBLIC_BUILD_ID || 'dev').slice(0, 12);
+
 export const metadata: Metadata = {
   metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || 'https://theshadium.com/'),
   title: 'The Shadium - Find Seats in the Shade at MLB, MiLB & NFL Stadiums | Avoid Sun Exposure',
@@ -104,6 +110,9 @@ export default function RootLayout({
         <link rel="icon" href="/favicon.ico" />
         <link rel="apple-touch-icon" href="/logo192.png" />
         <meta name="theme-color" content="#1e40af" />
+
+        {/* Build/deploy identity — for stale-cache detection on bare URLs */}
+        <meta name="x-build-id" content={BUILD_ID} />
 
         {/* Google AdSense Verification */}
         <meta name="google-adsense-account" content="ca-pub-3681192675377295" />
