@@ -5,6 +5,7 @@ import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { MLB_STADIUMS } from '../src/data/stadiums';
 import { ALL_UNIFIED_VENUES, getVenuesByLeague } from '../src/data/unifiedVenues';
+import { VENUE_COUNT } from '../src/data/venueCount';
 import { useHapticFeedback } from '../src/hooks/useHapticFeedback';
 import './StickyTopNav.css';
 
@@ -256,7 +257,7 @@ export default function StickyTopNav() {
                 <form onSubmit={handleSearchSubmit}>
                   <input
                     type="search"
-                    placeholder="Search 180+ stadiums: Yankee Stadium, Dodgers..."
+                    placeholder={`Search ${VENUE_COUNT} stadiums: Yankee Stadium, Dodgers...`}
                     value={searchQuery}
                     onChange={(e) => handleSearch(e.target.value)}
                     className="mobile-search-input"

@@ -80,8 +80,16 @@ function getSeasonalPattern(month: number) {
 type ShadeTier = 'covered' | 'partial' | 'exposed';
 
 function shadeTierOf(section: StadiumSection): ShadeTier {
-  if (section.covered) return 'covered';
+  // Explicit back-rows classification (researched venues: Yankees, White Sox) wins.
   if (section.partialCoverage) return 'partial';
+  if (section.covered) {
+    // Only indoor suite/club spaces are fully covered. A covered OPEN-BOWL
+    // section (field/lower/upper) is shaded in its back rows only, under the
+    // deck overhang — so it is Partial, not fully covered. This applies the
+    // Phase-3 three-tier model to EVERY venue, not just the two with
+    // hand-authored partialCoverage data.
+    return section.level === 'suite' || section.level === 'club' ? 'covered' : 'partial';
+  }
   return 'exposed';
 }
 

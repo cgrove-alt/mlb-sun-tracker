@@ -1,5 +1,6 @@
 import { ImageResponse } from 'next/og';
 import { ogCard, OG_SIZE, OG_CONTENT_TYPE } from '../src/lib/ogCard';
+import { VENUE_COUNT } from '../src/data/venueCount';
 
 // Site-wide default OG image (homepage + any route without its own
 // opengraph-image). Replaces the generic logo512.png.
@@ -12,7 +13,7 @@ export default function Image() {
     ogCard({
       eyebrow: 'THE SHADIUM',
       title: 'Find the shaded seats',
-      subtitle: '180+ MLB, MiLB & NFL venues · real-time sun tracking',
+      subtitle: `${VENUE_COUNT} MLB, MiLB & NFL venues · real-time sun tracking`,
     }),
     { ...OG_SIZE },
   );

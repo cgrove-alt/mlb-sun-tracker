@@ -1,11 +1,11 @@
 import { Metadata } from 'next';
 import Link from 'next/link';
 import { SafeSchema } from '../../components/SafeSchema';
+import { VENUE_COUNT, MLB_COUNT, MILB_COUNT, NFL_COUNT } from '../../src/data/venueCount';
 
 export const metadata: Metadata = {
   title: 'FAQ - Frequently Asked Questions | The Shadium',
-  description: 'Find answers to common questions about finding seats in the shade at MLB stadiums, using The Shadium, and understanding sun exposure at baseball games.',
-  keywords: ['MLB shade FAQ', 'baseball sun questions', 'stadium shade help', 'shadium FAQ'],
+  description: 'Answers to common questions about finding shaded seats at MLB, MiLB, and NFL venues, using The Shadium, and understanding sun exposure at games.',
   alternates: {
     canonical: 'https://theshadium.com/faq',
   },
@@ -16,12 +16,12 @@ const faqs = [
     category: "Finding Shaded Seats",
     questions: [
       {
-        q: "How do I find seats in the shade at MLB stadiums?",
-        a: "Use The Shadium's real-time sun tracker. Select your stadium and game time, and we'll show you which sections will be shaded. Generally, upper deck sections with overhead coverage and third base side seats offer more shade for day games."
+        q: "How do I find seats in the shade at a stadium?",
+        a: "Use The Shadium's real-time sun tracker. Select your venue and game time, and we'll show you which sections will be shaded. The shaded side depends on each venue's orientation — The Shadium calculates it per stadium rather than assuming a fixed side. Generally, the back rows of the upper deck under overhead coverage stay coolest for day games."
       },
       {
-        q: "Which MLB stadiums have the most shaded seats?",
-        a: "Stadiums with retractable or fixed roofs like Chase Field (Arizona), Globe Life Field (Texas), and Marlins Park (Miami) offer the most shade. For open-air stadiums, look for sections under upper deck overhangs."
+        q: "Which stadiums have the most shaded seats?",
+        a: "Venues with retractable or fixed roofs like Chase Field (Arizona), Globe Life Field (Texas), loanDepot park (Miami), and domed venues offer the most shade. For open-air stadiums, look for sections under upper deck overhangs — those back rows stay shaded longest."
       },
       {
         q: "Do shaded seats cost more?",
@@ -45,8 +45,8 @@ const faqs = [
         a: "The Shadium uses precise solar calculations based on stadium coordinates, date, and time. Our predictions are highly accurate for clear days. Cloud cover can provide additional shade beyond our predictions."
       },
       {
-        q: "Does The Shadium work for all MLB stadiums?",
-        a: "Yes! The Shadium covers all 30 MLB stadiums with detailed section-by-section shade analysis for any game date and time."
+        q: "Which venues does The Shadium cover?",
+        a: `The Shadium covers ${VENUE_COUNT} venues across three leagues — all ${MLB_COUNT} MLB ballparks, ${MILB_COUNT} Minor League Baseball parks, and ${NFL_COUNT} NFL stadiums — with section-by-section shade analysis for any game date and time.`
       },
       {
         q: "Can I save my favorite shaded sections?",
@@ -159,8 +159,8 @@ export default function FAQPage() {
               Frequently Asked Questions
             </h1>
             <p className="text-base text-ink-700 mt-2 max-w-prose">
-              Everything you need to know about finding seats in the shade at MLB stadiums 
-              and using The Shadium to enhance your baseball experience.
+              Everything you need to know about finding seats in the shade across
+              MLB, MiLB, and NFL venues and using The Shadium to plan a cooler visit.
             </p>
           </div>
         </div>

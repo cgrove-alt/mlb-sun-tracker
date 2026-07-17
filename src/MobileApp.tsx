@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useCallback } from 'react';
+import { VENUE_COUNT } from './data/venueCount';
 import { Stadium, MLB_STADIUMS } from './data/stadiums';
 import { UnifiedVenue, ALL_UNIFIED_VENUES, convertToLegacyStadium } from './data/unifiedVenues';
 import { getStadiumSectionsAsync } from './data/getStadiumSections';
@@ -273,7 +274,7 @@ const MobileApp: React.FC = () => {
                         ☀️ Real-time sun tracking
                       </span>
                       <span style={{padding: '4px 8px', background: '#f3e5f5', borderRadius: '12px', fontSize: '0.8rem', color: '#7b1fa2'}}>
-                        🏟️ 180+ venues
+                        🏟️ {VENUE_COUNT} venues
                       </span>
                       <span style={{padding: '4px 8px', background: '#e8f5e9', borderRadius: '12px', fontSize: '0.8rem', color: '#388e3c'}}>
                         📊 Detailed analysis

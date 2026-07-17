@@ -3,6 +3,7 @@ import Link from 'next/link';
 import { MLB_STADIUMS } from '../../src/data/stadiums';
 import { MLB_DIVISIONS, DIVISION_ORDER } from '../../src/data/mlbDivisions';
 import styles from './StadiumsPageSSR.module.css';
+import { VENUE_COUNT } from '../../src/data/venueCount';
 
 const LEAGUES = [
   { id: 'mlb', name: 'MLB', label: 'Major League Baseball', count: 30 },
@@ -28,7 +29,7 @@ export default function StadiumsPageSSR() {
         <section className={styles.hero}>
           <h1>All Stadium Shade Guides</h1>
           <p className={styles.lead}>
-            Find the best shaded seats at 180+ venues across Major League Baseball,
+            Find the best shaded seats at {VENUE_COUNT} venues across Major League Baseball,
             Minor League Baseball, and the NFL. Each guide includes detailed shade
             analysis, covered sections, and seasonal recommendations.
           </p>

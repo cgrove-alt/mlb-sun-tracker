@@ -2,6 +2,7 @@
 
 import { Suspense, useState } from 'react';
 import dynamic from 'next/dynamic';
+import { VENUE_COUNT, MLB_COUNT, MILB_COUNT, NFL_COUNT } from '../src/data/venueCount';
 import PWAInstallPrompt from '../components/PWAInstallPrompt';
 import { HomePageSkeleton } from '../src/components/SkeletonScreens';
 import { ErrorBoundary } from '../src/components/ErrorBoundary';
@@ -58,8 +59,8 @@ export default function HomePage() {
         <div className="sr-only">
           <h2>Find Shaded Seats at MLB, MiLB &amp; NFL Stadiums</h2>
           <p>
-            The Shadium helps you find the best shaded seats at 180+ venues across Major League
-            Baseball (all 30 ballparks), Minor League Baseball (120 parks), and the NFL (32 stadiums).
+            The Shadium helps you find the best shaded seats at {VENUE_COUNT} venues across Major League
+            Baseball (all {MLB_COUNT} ballparks), Minor League Baseball ({MILB_COUNT} parks), and the NFL ({NFL_COUNT} stadiums).
             Pick your stadium and game time to see which sections will be in the shade.
           </p>
 
