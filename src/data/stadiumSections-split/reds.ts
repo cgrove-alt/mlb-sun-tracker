@@ -111,12 +111,15 @@ export const stadiumSections = {
       { id: '172', name: 'Infield Box 172', level: 'lower', baseAngle: 326, angleSpan: 6, covered: false, price: 'moderate' },
       { id: '173', name: 'Infield Box 173', level: 'lower', baseAngle: 332, angleSpan: 6, covered: false, price: 'moderate' },
       
-      // Pavilion
-      { id: '416', name: 'Pavilion 416', level: 'upper', baseAngle: 340, angleSpan: 8, covered: true, price: 'value' },
-      { id: '417', name: 'Pavilion 417', level: 'upper', baseAngle: 348, angleSpan: 8, covered: true, price: 'value' },
-      { id: '418', name: 'Pavilion 418', level: 'upper', baseAngle: 356, angleSpan: 8, covered: true, price: 'value' },
-      { id: '419', name: 'Pavilion 419', level: 'upper', baseAngle: 4, angleSpan: 8, covered: true, price: 'value' },
-      { id: '420', name: 'Pavilion 420', level: 'upper', baseAngle: 12, angleSpan: 8, covered: true, price: 'value' },
+      // Pavilion — open-roof 400 level; the only covered GABP seats are the top
+      // rows of the 500 (View) level under the roof and the 300 club overhang, not
+      // this level (rateyourseats.com/great-american-ball-park). 416-420 were
+      // wrongly flagged covered while 421-443 were open — corrected to Exposed.
+      { id: '416', name: 'Pavilion 416', level: 'upper', baseAngle: 340, angleSpan: 8, covered: false, price: 'value' },
+      { id: '417', name: 'Pavilion 417', level: 'upper', baseAngle: 348, angleSpan: 8, covered: false, price: 'value' },
+      { id: '418', name: 'Pavilion 418', level: 'upper', baseAngle: 356, angleSpan: 8, covered: false, price: 'value' },
+      { id: '419', name: 'Pavilion 419', level: 'upper', baseAngle: 4, angleSpan: 8, covered: false, price: 'value' },
+      { id: '420', name: 'Pavilion 420', level: 'upper', baseAngle: 12, angleSpan: 8, covered: false, price: 'value' },
       { id: '421', name: 'Pavilion 421', level: 'upper', baseAngle: 20, angleSpan: 6, covered: false, price: 'value' },
       { id: '422', name: 'Pavilion 422', level: 'upper', baseAngle: 26, angleSpan: 6, covered: false, price: 'value' },
       { id: '423', name: 'Pavilion 423', level: 'upper', baseAngle: 32, angleSpan: 6, covered: false, price: 'value' },
