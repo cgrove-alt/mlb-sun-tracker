@@ -31,6 +31,8 @@ const inter = Inter({
 // verification grep for the current deploy's git SHA and instantly detect stale
 // edge/CDN cache serving an old build. Vercel sets VERCEL_GIT_COMMIT_SHA at
 // build time; falls back to 'dev' locally.
+// Note: prefer merge-commit (not squash) PR merges — a squash whose tree matches
+// an already-built preview is deduped by Vercel and skips the production deploy.
 const BUILD_ID = (process.env.VERCEL_GIT_COMMIT_SHA || process.env.NEXT_PUBLIC_BUILD_ID || 'dev').slice(0, 12);
 
 export const metadata: Metadata = {
