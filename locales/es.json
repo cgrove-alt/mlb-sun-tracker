@@ -442,7 +442,7 @@
     "teams": {
       "angels": "Angelinos de Los Ángeles",
       "astros": "Astros de Houston",
-      "athletics": "Atléticos de Oakland",
+      "athletics": "Atléticos",
       "bluejays": "Azulejos de Toronto",
       "braves": "Bravos de Atlanta",
       "brewers": "Cerveceros de Milwaukee",
@@ -500,7 +500,7 @@
       "royals": "Estadio Kauffman",
       "tigers": "Parque Comerica",
       "twins": "Campo Target",
-      "whitesox": "Campo Guaranteed Rate",
+      "whitesox": "Rate Field",
       "yankees": "Estadio Yankee"
     }
   },

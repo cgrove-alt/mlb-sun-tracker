@@ -105,7 +105,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
     description: post.description,
     image: [postImage],
     datePublished: post.dateISO,
-    dateModified: post.dateISO,
+    dateModified: post.dateModifiedISO || post.dateISO,
     author: {
       '@type': 'Organization',
       name: post.author || 'The Shadium',
@@ -153,11 +153,14 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
               <Link href={`/blog/category/${post.category}`} className="post-category">
                 {post.category.replace(/-/g, ' ')}
               </Link>
-              <span className="post-date">{new Date(post.date).toLocaleDateString('en-US', { 
-                year: 'numeric', 
-                month: 'long', 
-                day: 'numeric' 
+              <span className="post-date">{new Date(post.date).toLocaleDateString('en-US', {
+                year: 'numeric',
+                month: 'long',
+                day: 'numeric'
               })}</span>
+              {post.dateModified && (
+                <span className="post-updated">Updated {post.dateModified}</span>
+              )}
               <span className="post-reading-time">{post.readingTime}</span>
             </div>
             
