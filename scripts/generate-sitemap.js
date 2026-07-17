@@ -32,8 +32,11 @@ try {
       const raw = fs.readFileSync(fullPath, 'utf-8');
       const { data } = matter(raw);
       const slug = f.replace(/\.mdx$/, '');
-      const dateISO = data.date
-        ? new Date(data.date).toISOString().split('T')[0]
+      // Prefer dateModified (correction date) over the original publish date so
+      // Google sees an accurate lastmod for posts we substantively updated.
+      const effective = data.dateModified || data.date;
+      const dateISO = effective
+        ? new Date(effective).toISOString().split('T')[0]
         : new Date(fs.statSync(fullPath).mtime).toISOString().split('T')[0];
       return { slug, lastmod: dateISO };
     });

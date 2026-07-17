@@ -6,12 +6,23 @@ import readingTime from 'reading-time';
 
 const postsDirectory = path.join(process.cwd(), 'content/blog');
 
+// Parse a frontmatter date. Bare "YYYY-MM-DD" values are parsed as LOCAL noon so
+// the displayed calendar date can't shift a day under a non-UTC build timezone
+// (new Date("2026-07-17") is UTC midnight, which renders as the 16th in EDT/PDT).
+function parseFrontmatterDate(value: unknown): Date | null {
+  if (!value) return null;
+  const s = String(value);
+  return /^\d{4}-\d{2}-\d{2}$/.test(s) ? new Date(`${s}T12:00:00`) : new Date(s);
+}
+
 export interface BlogPost {
   slug: string;
   title: string;
   description: string;
   date: string;
   dateISO: string;
+  dateModified?: string;
+  dateModifiedISO?: string;
   author: string;
   category: string;
   tags: string[];
@@ -40,7 +51,9 @@ export function getPostBySlug(slug: string): BlogPost | null {
     
     const stats = readingTime(content);
     
-    const rawDate = data.date ? new Date(data.date) : null;
+    const rawDate = parseFrontmatterDate(data.date);
+    // Optional correction date — only present on posts we substantively updated.
+    const rawModified = parseFrontmatterDate(data.dateModified);
 
     return {
       slug: realSlug,
@@ -48,6 +61,8 @@ export function getPostBySlug(slug: string): BlogPost | null {
       description: data.description || '',
       date: rawDate ? format(rawDate, 'MMMM d, yyyy') : '',
       dateISO: rawDate ? rawDate.toISOString() : '',
+      dateModified: rawModified ? format(rawModified, 'MMMM d, yyyy') : undefined,
+      dateModifiedISO: rawModified ? rawModified.toISOString() : undefined,
       author: data.author || 'The Shadium Team',
       category: data.category || 'general',
       tags: data.tags || [],

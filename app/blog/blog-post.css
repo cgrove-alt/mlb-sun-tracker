@@ -45,6 +45,11 @@
   flex-wrap: wrap;
 }
 
+.post-updated {
+  font-weight: 600;
+  color: var(--accent-700);
+}
+
 .post-category {
   color: var(--accent-600);
   text-decoration: none;

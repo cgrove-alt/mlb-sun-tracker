@@ -96,6 +96,33 @@ function shadeTierOf(section: StadiumSection): ShadeTier {
   return 'exposed';
 }
 
+// Seating-level display order + labels for the mobile "All Sections" card view.
+const LEVEL_ORDER: Array<StadiumSection['level']> = ['field', 'lower', 'club', 'upper', 'suite'];
+const LEVEL_LABEL: Record<StadiumSection['level'], string> = {
+  field: 'Field Level',
+  lower: 'Lower Level',
+  club: 'Club Level',
+  upper: 'Upper Level',
+  suite: 'Suites',
+};
+
+// Shared per-section display data so the desktop table and the mobile cards
+// stay identical (single source of the tier → rating/coverage/notes mapping).
+function sectionRowData(section: StadiumSection) {
+  const tier = shadeTierOf(section);
+  const shadeRating = tier === 'covered' ? 5 : tier === 'partial' ? 3 : section.level === 'upper' ? 2 : 1;
+  const coverageLabel = tier === 'covered' ? '✓ Covered' :
+    tier === 'partial' ? `◐ ${section.coveredRows || 'back rows'}` : '— Exposed';
+  const bestTime = tier === 'covered' ? 'All day' :
+    tier === 'partial' ? 'Day games (back rows)' : 'Evening games';
+  const notes = tier === 'covered' ? 'Guaranteed shade — fully covered' :
+    tier === 'partial' ? 'Overhang shade in the back rows only; front rows exposed' :
+    section.level === 'upper' ? 'Exposed — some relief from self-shading late in the game' :
+    'Exposed — little to no shade';
+  const stars = '★'.repeat(shadeRating) + '☆'.repeat(5 - shadeRating);
+  return { shadeRating, coverageLabel, bestTime, notes, stars };
+}
+
 export default function StadiumPageSSR({ stadium, sections, amenities, guide }: StadiumPageSSRProps) {
 
   // Pre-calculate shade data for common scenarios
@@ -293,7 +320,9 @@ export default function StadiumPageSSR({ stadium, sections, amenities, guide }: 
       <section className={styles.section}>
         <div className={styles.container}>
           <h2>All Sections Shade Analysis</h2>
-          <div className={styles.sectionsTableWrapper}>
+
+          {/* Desktop: full table (hidden < 768px) */}
+          <div className={`${styles.sectionsTableWrapper} ${styles.desktopOnly}`}>
             <table className={styles.sectionsTable}>
               <thead>
                 <tr>
@@ -307,30 +336,14 @@ export default function StadiumPageSSR({ stadium, sections, amenities, guide }: 
               </thead>
               <tbody>
                 {sections.map(section => {
-                  const tier = shadeTierOf(section);
-                  const shadeRating = tier === 'covered' ? 5 :
-                                     tier === 'partial' ? 3 :
-                                     section.level === 'upper' ? 2 : 1;
-                  const coverageLabel = tier === 'covered' ? '✓ Covered' :
-                                        tier === 'partial' ? `◐ ${section.coveredRows || 'back rows'}` :
-                                        '— Exposed';
-                  const bestTime = tier === 'covered' ? 'All day' :
-                                  tier === 'partial' ? 'Day games (back rows)' :
-                                  'Evening games';
-                  const notes = tier === 'covered' ? 'Guaranteed shade — fully covered' :
-                                tier === 'partial' ? 'Overhang shade in the back rows only; front rows exposed' :
-                                section.level === 'upper' ? 'Exposed — some relief from self-shading late in the game' :
-                                'Exposed — little to no shade';
-
+                  const { shadeRating, coverageLabel, bestTime, notes, stars } = sectionRowData(section);
                   return (
                     <tr key={section.id}>
                       <td>{section.name}</td>
                       <td>{section.level}</td>
                       <td>{coverageLabel}</td>
                       <td>
-                        <span className={`${styles.rating} ${styles[`rating${shadeRating}`]}`}>
-                          {'★'.repeat(shadeRating)}{'☆'.repeat(5 - shadeRating)}
-                        </span>
+                        <span className={`${styles.rating} ${styles[`rating${shadeRating}`]}`}>{stars}</span>
                       </td>
                       <td>{bestTime}</td>
                       <td>{notes}</td>
@@ -339,6 +352,38 @@ export default function StadiumPageSSR({ stadium, sections, amenities, guide }: 
                 })}
               </tbody>
             </table>
+          </div>
+
+          {/* Mobile: collapsible cards grouped by seating level (shown < 768px).
+              Uses native <details> so it works without JS and stays crawlable. */}
+          <div className={styles.mobileOnly}>
+            {LEVEL_ORDER.map(level => {
+              const levelSections = sections.filter(s => s.level === level);
+              if (!levelSections.length) return null;
+              return (
+                <details key={level} className={styles.levelGroup} open>
+                  <summary className={styles.levelSummary}>
+                    <span>{LEVEL_LABEL[level]}</span>
+                    <span className={styles.levelCount}>{levelSections.length} sections</span>
+                  </summary>
+                  <ul className={styles.sectionCards}>
+                    {levelSections.map(section => {
+                      const { shadeRating, coverageLabel, bestTime, notes, stars } = sectionRowData(section);
+                      return (
+                        <li key={section.id} className={styles.sectionCard}>
+                          <div className={styles.sectionCardHead}>
+                            <span className={styles.sectionCardName}>{section.name}</span>
+                            <span className={`${styles.rating} ${styles[`rating${shadeRating}`]}`}>{stars}</span>
+                          </div>
+                          <div className={styles.sectionCardMeta}>{coverageLabel} · {bestTime}</div>
+                          <p className={styles.sectionCardNotes}>{notes}</p>
+                        </li>
+                      );
+                    })}
+                  </ul>
+                </details>
+              );
+            })}
           </div>
         </div>
       </section>
