@@ -16,6 +16,10 @@ import StadiumTitleBlock from './StadiumTitleBlock';
 import { StadiumTitleData } from './StadiumTitleBlock';
 import { FidelityNotice } from './FidelityNotice';
 import { ShadeAnswer } from './ShadeAnswer';
+import { InteractiveSeatingBowl } from './InteractiveSeatingBowl';
+import { generateBaseballSections } from '../utils/generateBaseballSections';
+import { getVenueSections } from '../data/venueSections';
+import type { StadiumSection } from '../data/stadiumSectionTypes';
 import './StadiumGuide.css';
 
 interface ComprehensiveStadiumGuideProps {
@@ -74,6 +78,15 @@ const ComprehensiveStadiumGuide: React.FC<ComprehensiveStadiumGuideProps> = ({ s
     }
   };
 
+  // Approximate seating-bowl geometry for non-MLB venues: MiLB uses a generated
+  // ring; NFL uses the venueSections layout. This is generated data (not the
+  // section-by-section research MLB parks have), so the bowl is an approximation.
+  const bowlSections: StadiumSection[] = venue
+    ? ((venue.league === 'MiLB'
+        ? generateBaseballSections(venue)
+        : getVenueSections(venue.id)) as unknown as StadiumSection[])
+    : [];
+
   return (
     <div className="stadium-guide comprehensive">
       {showTitleBlock && (
@@ -87,6 +100,20 @@ const ComprehensiveStadiumGuide: React.FC<ComprehensiveStadiumGuideProps> = ({ s
           StadiumPageSSR instead, so it isn't duplicated). */}
       {showTitleBlock && venue && (
         <ShadeAnswer name={venue.name} orientation={venue.orientation} roof={venue.roof} />
+      )}
+
+      {/* Interactive at-a-glance seating bowl (approximate — generated geometry for non-MLB) */}
+      {showTitleBlock && venue && bowlSections.length >= 6 && (
+        <InteractiveSeatingBowl
+          sections={bowlSections}
+          orientation={venue.orientation}
+          latitude={venue.latitude}
+          longitude={venue.longitude}
+          timezone={venue.timezone}
+          roof={venue.roof}
+          name={venue.name}
+          sport={venue.venueType === 'football' ? 'football' : 'baseball'}
+        />
       )}
 
       <FidelityNotice stadiumId={stadiumId} />

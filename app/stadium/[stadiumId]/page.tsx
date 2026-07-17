@@ -50,25 +50,18 @@ export async function generateMetadata({ params }: StadiumPageProps): Promise<Me
       alternates: {
         canonical: `https://theshadium.com/stadium/${stadiumId}`,
       },
+      // openGraph/twitter images come from the per-venue opengraph-image.tsx in
+      // this route segment (audit Phase 8) — do not hardcode logo512 here.
       openGraph: {
         title: `Shaded Seats at ${stadium.name} | The Shadium`,
         description: `Find the best shaded seats at ${stadium.name}. Complete shade guide for ${stadium.team} games with real-time sun tracking.`,
         type: 'article',
         url: `https://theshadium.com/stadium/${stadiumId}`,
-        images: [
-          {
-            url: 'https://theshadium.com/logo512.png',
-            width: 512,
-            height: 512,
-            alt: `Shaded Seats at ${stadium.name}`,
-          }
-        ],
       },
       twitter: {
         card: 'summary_large_image',
         title: `Shaded Seats at ${stadium.name}`,
         description: `Find the best shaded seats at ${stadium.name} for ${stadium.team} games. Real-time shade tracking.`,
-        images: ['https://theshadium.com/logo512.png'],
       },
       robots: {
         index: true,
@@ -101,25 +94,17 @@ export async function generateMetadata({ params }: StadiumPageProps): Promise<Me
     alternates: {
       canonical: `https://theshadium.com/stadium/${venue.id}`,
     },
+    // openGraph/twitter images come from opengraph-image.tsx (audit Phase 8).
     openGraph: {
       title,
       description,
       url: `https://theshadium.com/stadium/${venue.id}`,
       type: 'article',
-      images: [
-        {
-          url: 'https://theshadium.com/logo512.png',
-          width: 512,
-          height: 512,
-          alt: `${venue.name} Shade Guide`,
-        },
-      ],
     },
     twitter: {
       card: 'summary_large_image',
       title,
       description,
-      images: ['https://theshadium.com/logo512.png'],
     },
     other: {
       'venue:league': venue.league,
