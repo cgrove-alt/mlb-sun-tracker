@@ -95,7 +95,7 @@ async function main() {
   }
 
   console.log(`\n${'='.repeat(60)}`);
-  console.log(`Audited OPEN-roof MLB venues (excluded researched: ${[...RESEARCHED].join(', ')}; retractable/fixed roofs skipped).`);
+  console.log(`Audited OPEN-roof MLB venues (excluded researched: ${Array.from(RESEARCHED).join(', ')}; retractable/fixed roofs skipped).`);
   console.log(`${venuesWithFlags} open-roof venue(s) with likely-wrong covered flags; ${totalFlags} suspicious open-air section(s).`);
   process.exit(venuesWithFlags ? 1 : 0);
 }
