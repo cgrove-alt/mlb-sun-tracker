@@ -80,6 +80,9 @@ function getSeasonalPattern(month: number) {
 type ShadeTier = 'covered' | 'partial' | 'exposed';
 
 function shadeTierOf(section: StadiumSection): ShadeTier {
+  // Research-set full coverage wins (e.g. Angel Stadium Terrace — fully under
+  // the deck overhangs, not just back rows).
+  if (section.fullyCovered) return 'covered';
   // Explicit back-rows classification (researched venues: Yankees, White Sox) wins.
   if (section.partialCoverage) return 'partial';
   if (section.covered) {

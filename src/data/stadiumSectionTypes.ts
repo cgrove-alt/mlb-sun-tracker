@@ -20,6 +20,10 @@ export interface StadiumSection {
   angleSpan: number; // How many degrees this section spans
   rows?: number; // Number of rows in section
   covered: boolean; // Whether section has overhead coverage
+  // Genuinely fully covered (all rows shaded), even at a bowl level where the
+  // generic 3-tier rule would otherwise assume back-rows-only. Set from research
+  // (e.g. Angel Stadium's Terrace level is fully under the deck overhangs).
+  fullyCovered?: boolean;
   partialCoverage?: boolean; // Whether section has partial coverage (e.g., back rows only)
   coveredRows?: string; // Which rows are covered (e.g., "M-Z" or "last 5 rows")
   price?: 'value' | 'moderate' | 'premium' | 'luxury';

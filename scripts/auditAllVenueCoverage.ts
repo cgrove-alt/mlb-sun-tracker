@@ -23,7 +23,7 @@ type DetailedSection = StadiumSection;
 
 // Excluded: hand-researched (yankees, whitesox) or reviewed-and-documented
 // (redsox — Fenway's Pavilion/field-box coverage is intentional, see Phase 3).
-const RESEARCHED = new Set(['yankees', 'whitesox', 'redsox']);
+const RESEARCHED = new Set(['yankees', 'whitesox', 'redsox', 'angels']);
 // HIGH-CONFIDENCE open-air names (full sun). Deliberately excludes "deck"
 // (Upper Deck / Top Deck are normal covered-back-row levels, not sun decks).
 const OPEN_AIR_NAME = /bleacher|pavilion|lawn|berm|porch|rooftop|patio|sun deck|home run porch|batter'?s eye/i;
