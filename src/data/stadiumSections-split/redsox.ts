@@ -17,6 +17,19 @@ import { redsoxSections } from '../sections/mlb/redsox';
 
 type Level = StadiumSection['level'];
 
+// Field/Loge infield boxes + general SRO that are NOT covered structures (no
+// roof/overhang) but sit in the shadow of the stacked press-box / Pavilion for
+// afternoon day games. Per RateYourSeats, Fenway's COVERED seating is only the
+// Pavilion Boxes, Home Plate Pavilion Club, Dell Technologies (EMC) Club, and
+// all Grandstand except GS33 — Field Box and Loge Box are not covered. So these
+// are marked covered:false at the source and rendered as PARTIAL (day-game
+// shade), not as covered structures and not as fully exposed.
+const DAY_SHADED = new Set<string>([
+  ...Array.from({ length: 12 }, (_, i) => `FB-${39 + i}`), // FB-39..50
+  ...Array.from({ length: 14 }, (_, i) => `LB-${123 + i}`), // LB-123..136
+  'SRO',
+]);
+
 function projectLevel(level: string): Level {
   return (level === 'standing' ? 'field' : level) as Level;
 }
@@ -43,6 +56,10 @@ export const stadiumSections = {
     angleSpan: s.angleSpan,
     rows: s.rows.length,
     covered: s.covered,
+    // Day-game shade from the press-box/Pavilion stack — shaded but not covered.
+    ...(DAY_SHADED.has(s.id)
+      ? { partialCoverage: true, coveredRows: 'day games only (press-box shade)' }
+      : {}),
     price: priceFor(s.level),
   })),
 };

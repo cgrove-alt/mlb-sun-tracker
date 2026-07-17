@@ -34,7 +34,33 @@ const ROOF = new Map(MLB_STADIUMS.map((s) => [s.id, s.roof]));
 //            exposed, and that is already covered:false.
 const REVIEWED_OK = new Set(['redsox']);
 
-type Sec = { name?: string; level?: string; covered?: boolean; fullyCovered?: boolean; partialCoverage?: unknown };
+// Second-pass allow-list: for venues with a documented, section-level covered
+// list, a predicate returning whether a section is EXPECTED to be a covered
+// structure per research. Any covered=true section OUTSIDE the list (or any
+// listed section NOT covered) is flagged — this catches mislabeled non-open-air
+// NAMES (Field Box, Loge Box, general SRO) that the name pass above can't see.
+const RESEARCHED_COVERED: Record<string, (s: Sec) => boolean> = {
+  // Fenway Park — rateyourseats.com/fenway-park documents covered seating as:
+  // all Pavilion Boxes (PB), Home Plate Pavilion Club (HPPC), Dell/EMC Club
+  // (EMCC), and all Grandstand (GS) except GS-33. Plus the two Pavilion-level
+  // SRO (under the Pavilion roof) and the indoor Royal Rooters Club. Everything
+  // else — Field Box, Loge Box, Monster, Bleachers, RF Box/Roof, SSPC, Pavilion
+  // Reserved, general SRO — is NOT a covered structure.
+  redsox: (s) => {
+    const id = s.id || '';
+    return (
+      /^PB-\d+$/.test(id) ||
+      /^HPPC-\d+$/.test(id) ||
+      /^EMCC-\d+$/.test(id) ||
+      /^GS-(?:[1-9]|1\d|2\d|3[0-2])$/.test(id) || // Grandstand 1-32 (not GS-33)
+      id === 'FIRST-BASE-PAV-SRO' ||
+      id === 'THIRD-BASE-PAV-SRO' ||
+      id === 'ROYAL-ROOTERS'
+    );
+  },
+};
+
+type Sec = { id?: string; name?: string; level?: string; covered?: boolean; fullyCovered?: boolean; partialCoverage?: unknown };
 
 // Mirror of StadiumPageSSR.shadeTierOf.
 function tier(s: Sec): 'covered' | 'partial' | 'exposed' {
@@ -73,24 +99,54 @@ async function main() {
     }
   }
 
+  // --- Pass 2: cross-reference covered=true flags against researched lists. ---
+  const coveredFindings: Array<{ id: string; section: string; issue: string }> = [];
+  for (const v of ALL_UNIFIED_VENUES) {
+    const pred = RESEARCHED_COVERED[v.id];
+    if (!pred) continue;
+    const secs = await sectionsFor(v);
+    for (const s of secs) {
+      if (!s?.name) continue;
+      const isCovered = s.covered === true;
+      const expected = pred(s);
+      if (isCovered && !expected) {
+        coveredFindings.push({ id: v.id, section: s.name, issue: 'covered=true but NOT in researched covered list' });
+      } else if (!isCovered && expected) {
+        coveredFindings.push({ id: v.id, section: s.name, issue: 'researched-covered but covered=false' });
+      }
+    }
+  }
+
   console.log(`Scanned ${ALL_UNIFIED_VENUES.length} venues (MLB + MiLB + NFL).`);
   console.log(`Skipped ${roofDependentSkipped} retractable/fixed-roof park(s) (coverage is roof-state, not overhang) and ${reviewedSkipped} verified-exception park(s).\n`);
+
+  console.log('── Pass 1: open-air NAMES rendering above Exposed ──');
   if (!findings.length) {
-    console.log('✓ No open-air sections rendering above Exposed.');
-    process.exit(0);
+    console.log('✓ No open-air-named sections rendering above Exposed.\n');
+  } else {
+    const byVenue = new Map<string, typeof findings>();
+    for (const f of findings) {
+      const arr = byVenue.get(f.id) ?? [];
+      arr.push(f);
+      byVenue.set(f.id, arr);
+    }
+    console.log(`⚠ ${findings.length} open-air section(s) above Exposed across ${byVenue.size} venue(s):`);
+    for (const [id, arr] of Array.from(byVenue.entries())) {
+      console.log(`  [${arr[0].league}] ${id} (${arr[0].name}):`);
+      for (const f of arr) console.log(`      • ${f.section} -> ${f.tier} (should be Exposed)`);
+    }
+    console.log('');
   }
-  const byVenue = new Map<string, typeof findings>();
-  for (const f of findings) {
-    const arr = byVenue.get(f.id) ?? [];
-    arr.push(f);
-    byVenue.set(f.id, arr);
+
+  console.log(`── Pass 2: covered flags vs researched lists (${Object.keys(RESEARCHED_COVERED).join(', ')}) ──`);
+  if (!coveredFindings.length) {
+    console.log('✓ All covered flags match the researched covered lists.');
+  } else {
+    console.log(`⚠ ${coveredFindings.length} covered-flag mismatch(es):`);
+    for (const f of coveredFindings) console.log(`  [${f.id}] ${f.section} — ${f.issue}`);
   }
-  console.log(`⚠ ${findings.length} open-air section(s) above Exposed across ${byVenue.size} venue(s):\n`);
-  for (const [id, arr] of Array.from(byVenue.entries())) {
-    console.log(`  [${arr[0].league}] ${id} (${arr[0].name}):`);
-    for (const f of arr) console.log(`      • ${f.section} -> ${f.tier} (should be Exposed)`);
-  }
-  process.exit(1);
+
+  process.exit(findings.length || coveredFindings.length ? 1 : 0);
 }
 
 main();
