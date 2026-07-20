@@ -1,24 +1,28 @@
 import React from 'react';
-import { getStadiumDataFidelity, fidelityNote } from '../data/stadiumDataFidelity';
 import { InfoIcon } from './Icons';
 
 interface FidelityNoticeProps {
-  /** Canonical MLB stadium id. Pass null/undefined to render nothing. */
-  stadiumId: string | null | undefined;
+  /**
+   * Precomputed fidelity note text. Pass null/undefined to render nothing.
+   * Compute it with `fidelityNote(getStadiumDataFidelity(id))` from
+   * src/data/stadiumDataFidelity.ts — do that on the server (or in an
+   * already-deferred client tree) so the fidelity classifier (which pulls the
+   * full stadium-data-aggregator) never lands in a page's first-load bundle.
+   */
+  note: string | null | undefined;
 }
 
 /**
  * Subtle, honest disclosure for stadiums whose per-section seating data is
  * approximate (the auto-generated bowl template) rather than a real seating
- * map. Renders nothing for parks with real data. Single source of truth:
- * src/data/stadiumDataFidelity.ts.
+ * map. Renders nothing for parks with real data. Purely presentational now —
+ * the fidelity classification lives in src/data/stadiumDataFidelity.ts and is
+ * passed in as `note` by the caller.
  *
- * NOTE: the fidelity classifier is MLB-specific, so only render this in MLB
- * contexts (gate non-MLB callers, e.g. by venue.league === 'MLB').
+ * NOTE: the fidelity classifier is MLB-specific, so callers should only supply
+ * a note in MLB contexts (gate non-MLB callers, e.g. by venue.league === 'MLB').
  */
-export const FidelityNotice: React.FC<FidelityNoticeProps> = ({ stadiumId }) => {
-  if (!stadiumId) return null;
-  const note = fidelityNote(getStadiumDataFidelity(stadiumId));
+export const FidelityNotice: React.FC<FidelityNoticeProps> = ({ note }) => {
   if (!note) return null;
   return (
     <div

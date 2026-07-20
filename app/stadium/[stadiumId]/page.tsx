@@ -4,6 +4,11 @@ import { MLB_STADIUMS } from '../../../src/data/stadiums';
 import { getStadiumSectionsAsync } from '../../../src/data/getStadiumSections';
 import { getStadiumAmenities } from '../../../src/data/stadiumAmenities';
 import { getStadiumGuide } from '../../../src/data/guides';
+// R1: computed server-side so the venue page ships only the current venue's
+// guide/section/fidelity data — these full datasets never reach the client.
+import { getStadiumDataFidelity, fidelityNote } from '../../../src/data/stadiumDataFidelity';
+import { generateBaseballSections } from '../../../src/utils/generateBaseballSections';
+import { getVenueSections } from '../../../src/data/venueSections';
 import { getCanonicalStadiumId, needsRedirect } from '../../../src/utils/stadiumSlugMapping';
 import { ALL_UNIFIED_VENUES, getUnifiedVenueById } from '../../../src/data/unifiedVenues';
 import { bestShadedSideForDayGame } from '../../../src/utils/shadeSide';
@@ -283,6 +288,12 @@ export default async function StadiumPage({ params }: StadiumPageProps) {
       orientation: venue.orientation,
     });
 
+    // Per-venue data computed on the server (guide + approximate bowl geometry +
+    // fidelity note) so ComprehensiveStadiumGuide ships none of the full datasets.
+    const venueBowlSections = venue.league === 'MiLB'
+      ? generateBaseballSections(venue)
+      : getVenueSections(venue.id);
+
     return (
       <div className={styles.pageContainer}>
         {venueSchemas.map((schema, i) => (
@@ -293,7 +304,12 @@ export default async function StadiumPage({ params }: StadiumPageProps) {
             suppressHydrationWarning
           />
         ))}
-        <ComprehensiveStadiumGuide stadiumId={venue.id} />
+        <ComprehensiveStadiumGuide
+          stadiumId={venue.id}
+          guide={getStadiumGuide(venue.id)}
+          bowlSections={venueBowlSections as any}
+          fidelityNote={fidelityNote(getStadiumDataFidelity(venue.id))}
+        />
         <RelatedStadiums venueId={venue.id} />
         <ShadeDataVerified />
       </div>
@@ -305,6 +321,9 @@ export default async function StadiumPage({ params }: StadiumPageProps) {
   const amenities = getStadiumAmenities(stadium.id);
   // Use the stadium's canonical ID for guide lookup
   const guide = getStadiumGuide(stadium.id) || getStadiumGuide(stadiumId);
+  // Fidelity note computed on the server (was computed inside FidelityNotice,
+  // which pulled the full stadium-data-aggregator into the client first-load).
+  const fidelityNoteText = fidelityNote(getStadiumDataFidelity(stadium.id));
 
   // Structured data (Article + StadiumOrArena + FAQPage + BreadcrumbList),
   // built from the same helper the MiLB/NFL branch uses.
@@ -351,6 +370,7 @@ export default async function StadiumPage({ params }: StadiumPageProps) {
             sections={sections}
             amenities={amenities}
             guide={guide}
+            fidelityNote={fidelityNoteText}
             useComprehensive={!!guide}
           />
         </ErrorBoundary>
