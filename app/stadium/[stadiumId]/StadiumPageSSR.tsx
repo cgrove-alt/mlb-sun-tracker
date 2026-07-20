@@ -108,8 +108,8 @@ const LEVEL_LABEL: Record<StadiumSection['level'], string> = {
 
 // Shared per-section display data so the desktop table and the mobile cards
 // stay identical (single source of the tier → rating/coverage/notes mapping).
-function sectionRowData(section: StadiumSection) {
-  const tier = shadeTierOf(section);
+function sectionRowData(section: StadiumSection, domed = false) {
+  const tier = domed ? 'covered' : shadeTierOf(section);
   const shadeRating = tier === 'covered' ? 5 : tier === 'partial' ? 3 : section.level === 'upper' ? 2 : 1;
   const coverageLabel = tier === 'covered' ? '✓ Covered' :
     tier === 'partial' ? `◐ ${section.coveredRows || 'back rows'}` : '— Exposed';
@@ -124,6 +124,12 @@ function sectionRowData(section: StadiumSection) {
 }
 
 export default function StadiumPageSSR({ stadium, sections, amenities, guide }: StadiumPageSSRProps) {
+
+  // A fixed-roof (domed) stadium shades every seat regardless of sun angle, so
+  // shade is roof-dependent, not section- or orientation-dependent. Treat every
+  // section as covered and suppress the sun-angle / orientation copy below.
+  const isDome = stadium.roof === 'fixed';
+  const tierOf = (s: StadiumSection): ShadeTier => (isDome ? 'covered' : shadeTierOf(s));
 
   // Pre-calculate shade data for common scenarios
   const months = [
@@ -151,10 +157,10 @@ export default function StadiumPageSSR({ stadium, sections, amenities, guide }: 
     { id: 'evening', label: '7:00 PM', recommendation: 'Sunset glare possible in outfield sections' },
   ];
 
-  // Group sections by shade characteristics (3-tier model)
-  const coveredSections = sections.filter(s => shadeTierOf(s) === 'covered');
-  const partialSections = sections.filter(s => shadeTierOf(s) === 'partial');
-  const upperDeckSections = sections.filter(s => s.level === 'upper' && shadeTierOf(s) === 'exposed');
+  // Group sections by shade characteristics (3-tier model; a dome makes all covered)
+  const coveredSections = sections.filter(s => tierOf(s) === 'covered');
+  const partialSections = sections.filter(s => tierOf(s) === 'partial');
+  const upperDeckSections = sections.filter(s => s.level === 'upper' && tierOf(s) === 'exposed');
   const clubSections = sections.filter(s => s.level === 'club');
   const fieldSections = sections.filter(s => s.level === 'field');
 
@@ -228,7 +234,9 @@ export default function StadiumPageSSR({ stadium, sections, amenities, guide }: 
       <section className={styles.section}>
         <div className={styles.container}>
           <h2>Best Shaded Seats at {stadium.name}</h2>
-          <p>Based on stadium orientation and historical data, these sections offer the most shade:</p>
+          <p>{isDome
+            ? `${stadium.name} has a fixed roof, so every seat is shaded from direct sun. These fully covered sections are a representative sample:`
+            : 'Based on stadium orientation and historical data, these sections offer the most shade:'}</p>
           
           <div className={styles.sectionsGrid}>
             {bestShadedSections.map((section, idx) => (
@@ -237,15 +245,15 @@ export default function StadiumPageSSR({ stadium, sections, amenities, guide }: 
                 <h3>{section.name}</h3>
                 <ul className={styles.sectionFeatures}>
                   <li>Level: {section.level}</li>
-                  {shadeTierOf(section) === 'covered' && <li className={styles.covered}>✓ Covered</li>}
-                  {shadeTierOf(section) === 'partial' && <li className={styles.covered}>◐ Covered {section.coveredRows || 'back rows only'}</li>}
+                  {tierOf(section) === 'covered' && <li className={styles.covered}>✓ Covered</li>}
+                  {tierOf(section) === 'partial' && <li className={styles.covered}>◐ Covered {section.coveredRows || 'back rows only'}</li>}
                   {section.price && <li>Price: {section.price}</li>}
                   {section.rows && <li>Rows: {section.rows}</li>}
                 </ul>
-                {shadeTierOf(section) === 'covered' && (
+                {tierOf(section) === 'covered' && (
                   <p className={styles.sectionNote}>Guaranteed shade — fully covered seating</p>
                 )}
-                {shadeTierOf(section) === 'partial' && (
+                {tierOf(section) === 'partial' && (
                   <p className={styles.sectionNote}>Shade in the {section.coveredRows || 'back rows'} under the overhang; front rows exposed</p>
                 )}
               </div>
@@ -258,8 +266,12 @@ export default function StadiumPageSSR({ stadium, sections, amenities, guide }: 
       <section className={styles.section}>
         <div className={styles.container}>
           <h2>Seasonal Shade Patterns</h2>
+          {isDome ? (
+          <p>{stadium.name} has a fixed roof and is climate-controlled, so shade doesn&apos;t vary by month or game time — every seat is protected from sun and rain all season.</p>
+          ) : (
+          <>
           <p>Shade availability varies significantly throughout the baseball season:</p>
-          
+
           <div className={styles.monthsGrid}>
             {months.map(month => (
               <div key={month.num} className={styles.monthCard}>
@@ -274,6 +286,8 @@ export default function StadiumPageSSR({ stadium, sections, amenities, guide }: 
               </div>
             ))}
           </div>
+          </>
+          )}
         </div>
       </section>
 
@@ -281,6 +295,9 @@ export default function StadiumPageSSR({ stadium, sections, amenities, guide }: 
       <section className={styles.section}>
         <div className={styles.container}>
           <h2>Shade by Game Time</h2>
+          {isDome ? (
+          <p>With a fixed roof, {stadium.name} shades every seat at any start time — 1 PM day games are as protected as 7 PM night games.</p>
+          ) : (
           <div className={styles.timeGrid}>
             {gameTimes.map(time => (
               <div key={time.id} className={styles.timeCard}>
@@ -313,6 +330,7 @@ export default function StadiumPageSSR({ stadium, sections, amenities, guide }: 
               </div>
             ))}
           </div>
+          )}
         </div>
       </section>
 
@@ -336,7 +354,7 @@ export default function StadiumPageSSR({ stadium, sections, amenities, guide }: 
               </thead>
               <tbody>
                 {sections.map(section => {
-                  const { shadeRating, coverageLabel, bestTime, notes, stars } = sectionRowData(section);
+                  const { shadeRating, coverageLabel, bestTime, notes, stars } = sectionRowData(section, isDome);
                   return (
                     <tr key={section.id}>
                       <td>{section.name}</td>
@@ -368,7 +386,7 @@ export default function StadiumPageSSR({ stadium, sections, amenities, guide }: 
                   </summary>
                   <ul className={styles.sectionCards}>
                     {levelSections.map(section => {
-                      const { shadeRating, coverageLabel, bestTime, notes, stars } = sectionRowData(section);
+                      const { shadeRating, coverageLabel, bestTime, notes, stars } = sectionRowData(section, isDome);
                       return (
                         <li key={section.id} className={styles.sectionCard}>
                           <div className={styles.sectionCardHead}>
@@ -460,7 +478,9 @@ export default function StadiumPageSSR({ stadium, sections, amenities, guide }: 
           
           <div className={styles.faqItem}>
             <h3>What are the best shaded seats at {stadium.name} for a 1 PM game?</h3>
-            <p>For a 1 PM game, the {dayGameShadeSide} falls into shade first, so seats there and up in the back rows of the upper deck stay coolest.{coveredSections.length > 0 ? ` Fully covered sections like ${coveredSections.slice(0, 3).map(s => s.name).join(', ')} offer guaranteed shade all day.` : ''}</p>
+            <p>{isDome
+              ? `${stadium.name} has a fixed roof, so every seat is shaded for a 1 PM game — no section is exposed to direct sun regardless of where you sit.`
+              : `For a 1 PM game, the ${dayGameShadeSide} falls into shade first, so seats there and up in the back rows of the upper deck stay coolest.${coveredSections.length > 0 ? ` Fully covered sections like ${coveredSections.slice(0, 3).map(s => s.name).join(', ')} offer guaranteed shade all day.` : ''}`}</p>
           </div>
 
           <div className={styles.faqItem}>

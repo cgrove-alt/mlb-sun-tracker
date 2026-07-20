@@ -17,6 +17,9 @@ const StadiumTitleBlock: React.FC<StadiumTitleBlockProps> = ({
 }) => {
   const { purpose, stadium, team, quickFacts } = data;
   const { location, capacity, orientation, roofType, yearBuilt } = quickFacts;
+  // A fixed-roof (domed) stadium is shaded everywhere regardless of sun angle,
+  // so orientation / "shaded side" facts are not applicable and are suppressed.
+  const domed = roofType === 'fixed';
 
   // State for expandable sections
   const [isExpanded, setIsExpanded] = useState(false);
@@ -255,10 +258,12 @@ const StadiumTitleBlock: React.FC<StadiumTitleBlockProps> = ({
           <span className={styles.factText}>{capacity.toLocaleString()} {getCapacityLabel(team.league)}</span>
         </div>
 
-        <div className={styles.factPill}>
-          <span className={styles.factIcon} aria-hidden="true">🧭</span>
-          <span className={styles.factText}>{orientation}° orientation</span>
-        </div>
+        {!domed && (
+          <div className={styles.factPill}>
+            <span className={styles.factIcon} aria-hidden="true">🧭</span>
+            <span className={styles.factText}>{orientation}° orientation</span>
+          </div>
+        )}
 
         <div className={styles.factPill}>
           <span className={styles.factIcon} aria-hidden="true">☀️</span>
@@ -292,7 +297,7 @@ const StadiumTitleBlock: React.FC<StadiumTitleBlockProps> = ({
                 <dt>Seating Capacity</dt>
                 <dd>{capacity.toLocaleString()}</dd>
                 <dt>Field Orientation</dt>
-                <dd>{orientation}° (Home to Center)</dd>
+                <dd>{domed ? 'N/A — fixed roof' : `${orientation}° (Home to Center)`}</dd>
               </dl>
             </div>
 
@@ -324,7 +329,7 @@ const StadiumTitleBlock: React.FC<StadiumTitleBlockProps> = ({
                 <dt>Covered Sections</dt>
                 <dd>{roofType !== 'open' ? 'All sections (roof)' : 'Upper deck overhang'}</dd>
                 <dt>Shade Direction</dt>
-                <dd>{orientation < 90 || orientation > 270 ? 'Third base side' : 'First base side'}</dd>
+                <dd>{domed ? 'All seats shaded (roof)' : (orientation < 90 || orientation > 270 ? 'Third base side' : 'First base side')}</dd>
               </dl>
             </div>
           </div>
@@ -398,7 +403,7 @@ const StadiumTitleBlock: React.FC<StadiumTitleBlockProps> = ({
       <div className={styles.srOnly} aria-live="polite">
         {stadium.name} stadium information: Home of the {team.name} in {team.league}.
         Located in {location.city}, {location.state} with a capacity of {capacity.toLocaleString()} seats.
-        The stadium has {getRoofTypeDisplay(roofType).toLowerCase()} and faces {orientation} degrees.
+        The stadium has {getRoofTypeDisplay(roofType).toLowerCase()}{domed ? ', so every seat is shaded regardless of field orientation' : ` and faces ${orientation} degrees`}.
         {yearBuilt && ` Built in ${yearBuilt}.`}
       </div>
     </div>

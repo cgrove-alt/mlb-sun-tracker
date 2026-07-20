@@ -1,5 +1,8 @@
-// George M. Steinbrenner Field - Comprehensive Section Data
-// Auto-generated with accurate 3D geometry for sun calculations
+// Tropicana Field (Tampa Bay Rays) - Section Data
+// The Rays returned to Tropicana Field, a fixed-roof DOME, for 2026. Because the
+// roof covers every seat, shade is not section- or sun-angle-dependent — the
+// stadium page applies the roofed-stadium treatment (all sections shaded). (2025
+// was played at Steinbrenner Field, which is now only the Tampa Tarpons' venue.)
 
 import { DetailedSection, Vector3D, RowDetail } from '../../../types/stadium-complete';
 

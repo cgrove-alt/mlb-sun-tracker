@@ -1,6 +1,6 @@
 import type { StadiumSection } from '../stadiumSectionTypes';
 
-export const stadiumSections = // Sutter Health Park (Oakland Athletics - Open Air)
+export const stadiumSections = // Sutter Health Park (Athletics - Open Air)
   {
     stadiumId: 'athletics',
     sections: [

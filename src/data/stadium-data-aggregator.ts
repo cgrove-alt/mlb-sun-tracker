@@ -27,7 +27,6 @@ import { brewersSections } from './sections/mlb/brewers';
 import { buschstadiumSections } from './sections/mlb/busch-stadium';
 import { diamondbacksSections } from './sections/mlb/diamondbacks';
 import { tigersSections } from './sections/mlb/tigers';
-import { georgeMSteinbrennerFieldSections } from './sections/mlb/george-m-steinbrenner-field';
 import { whitesoxSections } from './sections/mlb/whitesox';
 import { royalsSections } from './sections/mlb/royals';
 import { marlinsSections } from './sections/mlb/marlins';
@@ -109,7 +108,10 @@ const SECTION_REGISTRY: Record<string, DetailedSection[]> = {
   'cardinals': cardinalsSections || buschstadiumSections,
   'diamondbacks': diamondbacksSections,
   'tigers': tigersSections,
-  'rays': raysSections || georgeMSteinbrennerFieldSections,
+  // Rays returned to Tropicana Field (fixed-roof dome) for 2026. The Steinbrenner
+  // Field fallback (their 2025 temporary home) is intentionally removed — that
+  // venue is now only the Tampa Tarpons' (MiLB) home, not the Rays'.
+  'rays': raysSections,
   'whitesox': whitesoxSections,
   'royals': royalsSections,
   'marlins': marlinsSections,
