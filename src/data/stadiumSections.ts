@@ -5205,7 +5205,7 @@ export const stadiumSections: StadiumSections[] = [
     ]
   },
 
-  // Sutter Health Park (Oakland Athletics - Open Air)
+  // Sutter Health Park (Athletics - Open Air)
   {
     stadiumId: 'athletics',
     sections: [

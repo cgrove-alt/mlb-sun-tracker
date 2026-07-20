@@ -1,6 +1,6 @@
 import { DetailedSection, RowDetail, Vector3D } from '../../../types/stadium-complete';
 
-// Sutter Health Park - Sacramento River Cats / Oakland Athletics (2025-2027)
+// Sutter Health Park - Sacramento River Cats / Athletics (2025-2027)
 // Opened: 2000
 // Capacity: 14,014 (expanded for MLB)
 // Orientation: 82° (Home plate to center field)

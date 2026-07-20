@@ -458,16 +458,20 @@ export const DETAILED_STADIUMS: DetailedStadium[] = [
   },
   {
     id: 'athletics',
-    name: 'Oakland Coliseum',
+    // Updated 2026-07-20: the Athletics play at Sutter Health Park (West
+    // Sacramento) for 2025-2027. Identity synced to the live data in stadiums.ts.
+    // (NOTE: the seatingSections below are legacy Oakland Coliseum geometry — this
+    // DETAILED_STADIUMS dataset is not consumed by any page or the aggregator.)
+    name: 'Sutter Health Park',
     team: 'Athletics',
-    city: 'Oakland',
+    city: 'West Sacramento',
     state: 'CA',
-    latitude: 37.7516,
-    longitude: -122.2006,
-    orientation: 330,
-    capacity: 46847,
+    latitude: 38.5803,
+    longitude: -121.5132,
+    orientation: 20,
+    capacity: 14014,
     roof: 'open',
-    specialFeatures: ['Foul Territory', 'Mt. Davis', 'Drummers'],
+    specialFeatures: ['Intimate MiLB-scale park', 'River Cats shared tenant'],
     seatingSections: [
       {
         id: 'field_level',
