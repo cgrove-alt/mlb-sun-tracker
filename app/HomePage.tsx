@@ -3,7 +3,6 @@
 import { Suspense, useState } from 'react';
 import dynamic from 'next/dynamic';
 import { VENUE_COUNT, MLB_COUNT, MILB_COUNT, NFL_COUNT } from '../src/data/venueCount';
-import PWAInstallPrompt from '../components/PWAInstallPrompt';
 import { HomePageSkeleton } from '../src/components/SkeletonScreens';
 import { ErrorBoundary } from '../src/components/ErrorBoundary';
 import HomepageSchema from './HomepageSchema';
@@ -13,6 +12,11 @@ import Link from 'next/link';
 const App = dynamic(() => import('../src/UnifiedApp'), {
   ssr: false,
   loading: () => <HomePageSkeleton />,
+});
+
+// Below-the-fold, non-critical: defer so it never competes with initial paint.
+const PWAInstallPrompt = dynamic(() => import('../components/PWAInstallPrompt'), {
+  ssr: false,
 });
 
 export default function HomePage() {

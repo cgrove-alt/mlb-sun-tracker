@@ -1,10 +1,9 @@
 import '../src/styles/base.css'; // Import tokens and base styles first
 import './globals.css';
-import '../src/styles/typography.css';
-import '../src/styles/heading-safety.css';
-import '../src/styles/vertical-rhythm.css';
-import '../src/styles/mobile-optimizations.css';
-import '../src/styles/accessibility-fixes.css';
+// Perf: the five small global stylesheets (typography, heading-safety,
+// vertical-rhythm, mobile-optimizations, accessibility-fixes) are consolidated
+// into one file to cut render-blocking CSS round-trips. Cascade order preserved.
+import '../src/styles/app-utilities.css';
 import type { Metadata } from 'next';
 import { VENUE_COUNT } from '../src/data/venueCount';
 import { Inter } from 'next/font/google';
@@ -15,7 +14,7 @@ import { CSSOptimizer } from '../components/CSSOptimizer';
 import StickyTopNav from '../components/StickyTopNav';
 import { WebApplicationSchema } from '../components/SafeSchema';
 import FooterModern from '../components/FooterModern';
-import CookieBannerModern from '../components/CookieBannerModern';
+import CookieBannerLazy from '../components/CookieBannerLazy';
 import DataRetentionInitializer from '../components/DataRetentionInitializer';
 import SkipLinks from '../components/SkipLinks';
 import ServiceWorkerRegistration from '../components/ServiceWorkerRegistration';
@@ -148,7 +147,7 @@ export default function RootLayout({
           <div id="root" className="page-transition">{children}</div>
         </main>
         <FooterModern />
-        <CookieBannerModern />
+        <CookieBannerLazy />
       </body>
     </html>
   );

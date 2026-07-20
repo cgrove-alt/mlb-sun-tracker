@@ -265,7 +265,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
                   <article key={relatedPost.slug} className="related-post-card">
                     {relatedPost.image && (
                       <Link href={`/blog/${relatedPost.slug}`} className="related-post-image">
-                        <img src={relatedPost.image} alt={relatedPost.title} />
+                        <img src={relatedPost.image} alt={relatedPost.title} loading="lazy" decoding="async" />
                       </Link>
                     )}
                     <div className="related-post-content">
