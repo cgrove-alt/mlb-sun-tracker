@@ -2333,3 +2333,11 @@ External SEO/GEO/UX audit remediation for theshadium.com. Phased, with approval 
 - [x] **Monster Seats + RF Roof Box** — already covered=false → render Exposed. The "good shade after 2nd inning" reading was stale-build text (not in the current renderer). No change needed.
 - [x] **Audit second pass** — auditCoverageContradictions.ts now cross-references covered=true vs a researched covered list (redsox), catching mislabeled non-open-air names. Both passes clean.
 - [x] Verified live: FB/LB/SRO render "◐ day games only (press-box shade)", Monster Seats Exposed, x-build-id current, H1=1.
+
+### Rays domed treatment + 2026 venue verification (PR #77, merged, live 1f84a68d33f2)
+
+- [x] **Task 1 — Rays domed treatment.** Venue was already Tropicana Field/roof:'fixed', but the page rendered an open-air sun model. Added roof-aware `isDome`/`tierOf` in StadiumPageSSR (fixed roof → every section covered): All-Sections table, best-shaded, groupings now all shaded (0 Exposed); seasonal/game-time/1PM-FAQ show climate-controlled notes. StadiumTitleBlock suppresses the orientation chip + "faces N degrees" copy for a dome (Field Orientation → "N/A — fixed roof"). InteractiveSeatingBowl + ShadeAnswer were already dome-aware.
+- [x] **Task 2 — Athletics.** Already correct (Sutter Health Park, "Athletics", open-air). Removed stale "Oakland Athletics" comments on Sutter section files; synced the unused DETAILED_STADIUMS 'athletics' record (was Oakland Coliseum) to Sutter Health Park. No user-facing "Oakland" strings remain for the current A's.
+- [x] **Task 3 — full 2026 scan.** All 30 teams' venues correct; no other franchise changed homes.
+- [x] **Task 4 — Steinbrenner decoupled.** Removed the aggregator `|| georgeMSteinbrennerFieldSections` fallback + unused import; fixed sections/mlb/rays.ts header to Tropicana; provenance rays 60°(Steinbrenner)→316° nominal (dome). Steinbrenner Field kept as the Tampa Tarpons (MiLB) venue.
+- [x] **Task 5 — live verify.** Bare /stadium/rays: x-build-id=1f84a68d33f2, H1 "Tropicana Field", 0 orientation chip, 0 "faces 316 degrees", 0 Exposed sections, seating bowl "Shaded (128) / Full sun (0)", domed copy throughout.
