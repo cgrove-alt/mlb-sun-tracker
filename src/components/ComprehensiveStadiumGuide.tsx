@@ -2,7 +2,6 @@
 
 import React from 'react';
 import { StadiumGuide } from '../data/stadiumGuides';
-import { getStadiumGuide } from '../data/guides';
 import { getUnifiedVenueById } from '../data/unifiedVenues';
 import Link from 'next/link';
 import {
@@ -17,20 +16,35 @@ import { StadiumTitleData } from './StadiumTitleBlock';
 import { FidelityNotice } from './FidelityNotice';
 import { ShadeAnswer } from './ShadeAnswer';
 import { InteractiveSeatingBowl } from './InteractiveSeatingBowl';
-import { generateBaseballSections } from '../utils/generateBaseballSections';
-import { getVenueSections } from '../data/venueSections';
 import type { StadiumSection } from '../data/stadiumSectionTypes';
 import './StadiumGuide.css';
 
 interface ComprehensiveStadiumGuideProps {
   stadiumId: string;
+  // R1: guide + bowl sections + fidelity note are passed in by the server (or an
+  // already-deferred client tree) instead of being looked up here. This keeps
+  // ComprehensiveStadiumGuide — which renders ssr:true and is therefore in the
+  // venue page's first-load bundle — from statically importing the full guides
+  // (3.1 MB), venueSections (0.73 MB) and stadium-data-aggregator (2.25 MB)
+  // datasets. The page loads only the current venue's data.
+  guide: StadiumGuide | undefined;
+  // Approximate seating-bowl geometry (generated for non-MLB); only used when
+  // showTitleBlock is true. Computed by the caller from the single venue.
+  bowlSections?: StadiumSection[];
+  // Precomputed fidelity note (see FidelityNotice). null/undefined = no note.
+  fidelityNote?: string | null;
   // When false, the guide's own title block (H1) is suppressed — used on MLB
   // stadium pages where StadiumPageSSR already renders the single H1/header.
   showTitleBlock?: boolean;
 }
 
-const ComprehensiveStadiumGuide: React.FC<ComprehensiveStadiumGuideProps> = ({ stadiumId, showTitleBlock = true }) => {
-  const guide = getStadiumGuide(stadiumId);
+const ComprehensiveStadiumGuide: React.FC<ComprehensiveStadiumGuideProps> = ({
+  stadiumId,
+  guide,
+  bowlSections: bowlSectionsProp,
+  fidelityNote,
+  showTitleBlock = true,
+}) => {
   // The structured venue record is the single source of truth for header
   // facts (location, capacity, orientation, league). Previously these came
   // from the guide's free-text neighborhood string, which produced the
@@ -78,14 +92,10 @@ const ComprehensiveStadiumGuide: React.FC<ComprehensiveStadiumGuideProps> = ({ s
     }
   };
 
-  // Approximate seating-bowl geometry for non-MLB venues: MiLB uses a generated
-  // ring; NFL uses the venueSections layout. This is generated data (not the
-  // section-by-section research MLB parks have), so the bowl is an approximation.
-  const bowlSections: StadiumSection[] = venue
-    ? ((venue.league === 'MiLB'
-        ? generateBaseballSections(venue)
-        : getVenueSections(venue.id)) as unknown as StadiumSection[])
-    : [];
+  // Approximate seating-bowl geometry for non-MLB venues (MiLB generated ring,
+  // NFL venueSections layout). Computed by the caller from the single venue so
+  // the full venueSections dataset never enters this first-load component.
+  const bowlSections: StadiumSection[] = bowlSectionsProp ?? [];
 
   return (
     <div className="stadium-guide comprehensive">
@@ -116,7 +126,7 @@ const ComprehensiveStadiumGuide: React.FC<ComprehensiveStadiumGuideProps> = ({ s
         />
       )}
 
-      <FidelityNotice stadiumId={stadiumId} />
+      <FidelityNotice note={fidelityNote} />
 
       {/* Overview Section */}
       <section className="guide-section">

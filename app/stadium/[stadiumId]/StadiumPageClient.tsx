@@ -29,6 +29,9 @@ interface StadiumPageClientProps {
   sections: any[];
   amenities: any;
   guide: any;
+  // R1: precomputed fidelity note from the server, forwarded to the guide so no
+  // first-load client component imports the stadium-data-aggregator.
+  fidelityNote?: string | null;
   useComprehensive?: boolean;
 }
 
@@ -37,6 +40,7 @@ export default function StadiumPageClient({
   sections,
   amenities,
   guide,
+  fidelityNote,
   useComprehensive = false
 }: StadiumPageClientProps) {
   const [refreshKey, setRefreshKey] = useState(0);
@@ -136,7 +140,12 @@ export default function StadiumPageClient({
         >
           {/* Title block suppressed — StadiumPageSSR above renders the single
               page H1/header from the canonical stadium record. */}
-          <ComprehensiveStadiumGuide stadiumId={stadium.id} showTitleBlock={false} />
+          <ComprehensiveStadiumGuide
+            stadiumId={stadium.id}
+            guide={guide}
+            fidelityNote={fidelityNote}
+            showTitleBlock={false}
+          />
         </Suspense>
       </div>
 
