@@ -7,8 +7,6 @@ import { getStadiumGuide } from '../../../src/data/guides';
 // R1: computed server-side so the venue page ships only the current venue's
 // guide/section/fidelity data — these full datasets never reach the client.
 import { getStadiumDataFidelity, fidelityNote } from '../../../src/data/stadiumDataFidelity';
-import { generateBaseballSections } from '../../../src/utils/generateBaseballSections';
-import { getVenueSections } from '../../../src/data/venueSections';
 import { getCanonicalStadiumId, needsRedirect } from '../../../src/utils/stadiumSlugMapping';
 import { ALL_UNIFIED_VENUES, getUnifiedVenueById } from '../../../src/data/unifiedVenues';
 import { bestShadedSideForDayGame } from '../../../src/utils/shadeSide';
@@ -288,12 +286,6 @@ export default async function StadiumPage({ params }: StadiumPageProps) {
       orientation: venue.orientation,
     });
 
-    // Per-venue data computed on the server (guide + approximate bowl geometry +
-    // fidelity note) so ComprehensiveStadiumGuide ships none of the full datasets.
-    const venueBowlSections = venue.league === 'MiLB'
-      ? generateBaseballSections(venue)
-      : getVenueSections(venue.id);
-
     return (
       <div className={styles.pageContainer}>
         {venueSchemas.map((schema, i) => (
@@ -307,7 +299,6 @@ export default async function StadiumPage({ params }: StadiumPageProps) {
         <ComprehensiveStadiumGuide
           stadiumId={venue.id}
           guide={getStadiumGuide(venue.id)}
-          bowlSections={venueBowlSections as any}
           fidelityNote={fidelityNote(getStadiumDataFidelity(venue.id))}
         />
         <RelatedStadiums venueId={venue.id} />
