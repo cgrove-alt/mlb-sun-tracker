@@ -17,44 +17,23 @@ const nextConfig = {
   
   // Webpack optimizations
   webpack: (config, { dev, isServer }) => {
-    // Optimize bundle splitting
+    // Bundle splitting: use Next.js's built-in splitChunks defaults.
+    //
+    // The previous hand-rolled cacheGroups forced EVERY src/data/* module into a
+    // single enforced `data` chunk (`name:'data'`, `enforce:true`) and hoisted
+    // any module shared by ≥2 chunks into an enforced global `common` chunk.
+    // Because a few always-needed data files (e.g. venueCount) load on first
+    // paint, webpack marked the whole merged blob — all ~240 venues' section and
+    // guide data — as a first-load dependency, defeating the per-venue dynamic
+    // imports in getStadiumSections.ts. Deleting the custom group but keeping the
+    // greedy `common` group just relocated the bloat into `common` (first-load on
+    // every page, including static ones). Next's default splitChunks keeps
+    // dynamic imports as on-demand async chunks and only hoists genuinely-shared,
+    // size-appropriate modules, so a page loads only the venue data it needs
+    // without taxing unrelated static pages.
     if (!dev && !isServer) {
       config.optimization = {
         ...config.optimization,
-        splitChunks: {
-          chunks: 'all',
-          cacheGroups: {
-            default: false,
-            vendors: false,
-            // Split vendor code
-            vendor: {
-              name: 'vendor',
-              chunks: 'all',
-              test: /node_modules/,
-              priority: 20,
-            },
-            // Split large data files
-            data: {
-              name: 'data',
-              test: /[\\/]src[\\/]data[\\/]/,
-              chunks: 'all',
-              priority: 25,
-              enforce: true,
-            },
-            // Common chunks
-            common: {
-              name: 'common',
-              minChunks: 2,
-              chunks: 'all',
-              priority: 10,
-              reuseExistingChunk: true,
-              enforce: true,
-            },
-          },
-        },
-        runtimeChunk: {
-          name: 'runtime',
-        },
         moduleIds: 'deterministic',
       };
     }
