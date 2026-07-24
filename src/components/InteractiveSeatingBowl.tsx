@@ -224,10 +224,10 @@ export function InteractiveSeatingBowl({
 
       <div style={{ display: 'flex', flexWrap: 'wrap', gap: '1.5rem', alignItems: 'center' }}>
         <svg
-          viewBox="0 0 340 340"
+          viewBox="-18 -18 376 376"
           role="img"
           aria-label={`${name} seating bowl, sections colored by shade at ${fmt12(timeStr)}. A full text breakdown follows.`}
-          style={{ width: '100%', maxWidth: 340, height: 'auto' }}
+          style={{ width: '100%', maxWidth: 376, height: 'auto' }}
         >
           <circle cx={cx} cy={cy} r={rIn - 6} fill="#eaf4e6" stroke="#cbd5e1" strokeWidth={1} />
           <text x={cx} y={cy} fontSize={12} fill="#94a3b8" textAnchor="middle" dominantBaseline="middle">
