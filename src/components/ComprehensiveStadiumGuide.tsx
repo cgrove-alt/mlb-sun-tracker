@@ -15,7 +15,6 @@ import StadiumTitleBlock from './StadiumTitleBlock';
 import { StadiumTitleData } from './StadiumTitleBlock';
 import { FidelityNotice } from './FidelityNotice';
 import { ShadeAnswer } from './ShadeAnswer';
-import { InteractiveSeatingBowl } from './InteractiveSeatingBowl';
 import type { StadiumSection } from '../data/stadiumSectionTypes';
 import './StadiumGuide.css';
 
@@ -28,9 +27,6 @@ interface ComprehensiveStadiumGuideProps {
   // (3.1 MB), venueSections (0.73 MB) and stadium-data-aggregator (2.25 MB)
   // datasets. The page loads only the current venue's data.
   guide: StadiumGuide | undefined;
-  // Approximate seating-bowl geometry (generated for non-MLB); only used when
-  // showTitleBlock is true. Computed by the caller from the single venue.
-  bowlSections?: StadiumSection[];
   // Precomputed fidelity note (see FidelityNotice). null/undefined = no note.
   fidelityNote?: string | null;
   // When false, the guide's own title block (H1) is suppressed — used on MLB
@@ -41,7 +37,6 @@ interface ComprehensiveStadiumGuideProps {
 const ComprehensiveStadiumGuide: React.FC<ComprehensiveStadiumGuideProps> = ({
   stadiumId,
   guide,
-  bowlSections: bowlSectionsProp,
   fidelityNote,
   showTitleBlock = true,
 }) => {
@@ -92,11 +87,6 @@ const ComprehensiveStadiumGuide: React.FC<ComprehensiveStadiumGuideProps> = ({
     }
   };
 
-  // Approximate seating-bowl geometry for non-MLB venues (MiLB generated ring,
-  // NFL venueSections layout). Computed by the caller from the single venue so
-  // the full venueSections dataset never enters this first-load component.
-  const bowlSections: StadiumSection[] = bowlSectionsProp ?? [];
-
   return (
     <div className="stadium-guide comprehensive">
       {showTitleBlock && (
@@ -112,19 +102,12 @@ const ComprehensiveStadiumGuide: React.FC<ComprehensiveStadiumGuideProps> = ({
         <ShadeAnswer name={venue.name} orientation={venue.orientation} roof={venue.roof} />
       )}
 
-      {/* Interactive at-a-glance seating bowl (approximate — generated geometry for non-MLB) */}
-      {showTitleBlock && venue && bowlSections.length >= 6 && (
-        <InteractiveSeatingBowl
-          sections={bowlSections}
-          orientation={venue.orientation}
-          latitude={venue.latitude}
-          longitude={venue.longitude}
-          timezone={venue.timezone}
-          roof={venue.roof}
-          name={venue.name}
-          sport={venue.venueType === 'football' ? 'football' : 'baseball'}
-        />
-      )}
+      {/* The interactive shade diagram is intentionally NOT rendered for MiLB/NFL
+          venues: their section geometry is a generated template (MiLB) or has
+          unmeasured/zero orientation (many NFL), so a section-level shade diagram
+          there would imply accuracy the data can't support. These venues rely on
+          the structural section table instead, which is orientation-independent
+          and honest everywhere. The diagram is MLB-only (see StadiumPageSSR). */}
 
       <FidelityNotice note={fidelityNote} />
 

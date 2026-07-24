@@ -5,13 +5,12 @@ import { isSectionInSun, getSectionSunExposure } from './sectionSunCalculations'
 import { WeatherData } from '../services/weatherApi';
 import { getVenueSections } from '../data/venueSections';
 import { SunCalculator } from './sunCalculator';
-
-export interface SunPosition {
-  azimuth: number; // Sun azimuth in radians
-  altitude: number; // Sun altitude in radians
-  azimuthDegrees: number; // Sun azimuth in degrees (0-360)
-  altitudeDegrees: number; // Sun altitude in degrees
-}
+// getSunPosition lives in a leaf module (no data-layer imports) so first-load
+// components can use it without pulling venueSections in via this file. Re-export
+// keeps existing `import { getSunPosition } from './sunCalculations'` callers working.
+import { getSunPosition, type SunPosition } from './sunPosition';
+export { getSunPosition };
+export type { SunPosition };
 
 export interface SeatingSectionSun {
   section: StadiumSection;
@@ -19,45 +18,6 @@ export interface SeatingSectionSun {
   sunExposure: number; // 0-100, percentage of game time in sun
   timeInSun?: number; // Total minutes in sun during game
   percentageOfGameInSun?: number; // Same as sunExposure, for clarity
-}
-
-/**
- * Compute sun position for a UTC instant.
- *
- * The `date` argument MUST be a Date whose .getTime() is the correct UTC
- * moment. Callers that have a stadium-local wall-clock time should convert
- * first via `src/utils/stadiumTime.ts#stadiumLocalToUTC` — passing a
- * `setHours()`-built or `new Date("YYYY-MM-DDTHH:MM")`-parsed Date here is
- * the bug class that put the API hours-off for every non-UTC stadium.
- *
- * (Historically this function accepted an optional `timezone` parameter
- * that was silently ignored. Removed to force callers to do the
- * conversion themselves and fail at the type level if they forget.)
- */
-export function getSunPosition(
-  date: Date,
-  latitude: number,
-  longitude: number,
-): SunPosition {
-  const sunPos = SunCalc.getPosition(date, latitude, longitude);
-  
-  // SunCalc returns:
-  // - azimuth: angle along the horizon, measured from south to west
-  //   in radians (0 = south, Math.PI * 0.5 = west, Math.PI = north)
-  // - altitude: sun altitude above the horizon in radians
-  
-  // Convert to compass degrees (0=N, 90=E, 180=S, 270=W)
-  // SunCalc's azimuth: 0=S, π/2=W, π=N, 3π/2=E
-  // Convert to: 0=N, 90=E, 180=S, 270=W
-  const azimuthDegrees = ((sunPos.azimuth * 180 / Math.PI) + 180) % 360;
-  const altitudeDegrees = sunPos.altitude * 180 / Math.PI;
-  
-  return {
-    azimuth: sunPos.azimuth,
-    altitude: sunPos.altitude,
-    azimuthDegrees,
-    altitudeDegrees
-  };
 }
 
 export function getSunTimes(date: Date, latitude: number, longitude: number) {

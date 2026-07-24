@@ -9,6 +9,8 @@ import StadiumTitleBlock from '../../../src/components/StadiumTitleBlock';
 import { StadiumTitleData } from '../../../src/components/StadiumTitleBlock';
 import { ShadeAnswer } from '../../../src/components/ShadeAnswer';
 import { InteractiveSeatingBowl } from '../../../src/components/InteractiveSeatingBowl';
+import { shadeTierOf, type ShadeTier } from '../../../src/utils/sectionShadeTier';
+import { getOrientationProvenance, getOrientationPrecision } from '../../../src/data/stadiumOrientationProvenance';
 import { stadiumHistories } from '../../../src/data/stadiumDetails';
 import styles from './StadiumPageSSR.module.css';
 
@@ -74,27 +76,8 @@ function getSeasonalPattern(month: number) {
   return 'Check specific game time for shade availability';
 }
 
-// Three-tier shade model (audit Phase 3): a section is fully Covered
-// (indoor/roofed), Partial (only its back rows sit under an overhang / roof),
-// or Exposed (open to the sky). Replaces the old binary covered/uncovered.
-type ShadeTier = 'covered' | 'partial' | 'exposed';
-
-function shadeTierOf(section: StadiumSection): ShadeTier {
-  // Research-set full coverage wins (e.g. Angel Stadium Terrace — fully under
-  // the deck overhangs, not just back rows).
-  if (section.fullyCovered) return 'covered';
-  // Explicit back-rows classification (researched venues: Yankees, White Sox) wins.
-  if (section.partialCoverage) return 'partial';
-  if (section.covered) {
-    // Only indoor suite/club spaces are fully covered. A covered OPEN-BOWL
-    // section (field/lower/upper) is shaded in its back rows only, under the
-    // deck overhang — so it is Partial, not fully covered. This applies the
-    // Phase-3 three-tier model to EVERY venue, not just the two with
-    // hand-authored partialCoverage data.
-    return section.level === 'suite' || section.level === 'club' ? 'covered' : 'partial';
-  }
-  return 'exposed';
-}
+// Three-tier structural shade model — now shared with the MLB shade diagram so
+// the two can never disagree. See src/utils/sectionShadeTier.ts.
 
 // Seating-level display order + labels for the mobile "All Sections" card view.
 const LEVEL_ORDER: Array<StadiumSection['level']> = ['field', 'lower', 'club', 'upper', 'suite'];
@@ -130,6 +113,13 @@ export default function StadiumPageSSR({ stadium, sections, amenities, guide }: 
   // section as covered and suppress the sun-angle / orientation copy below.
   const isDome = stadium.roof === 'fixed';
   const tierOf = (s: StadiumSection): ShadeTier => (isDome ? 'covered' : shadeTierOf(s));
+  // Lower-confidence disclaimer for parks whose orientation is only estimated
+  // (±15–20°): the diagram still helps, but the sun/shade boundary is fuzzier.
+  const orientPrec = getOrientationPrecision(stadium.id);
+  const orientProv = getOrientationProvenance(stadium.id);
+  const orientationNote = (orientProv?.confidence !== 'verified' || orientPrec > 12)
+    ? `Heads up: ${stadium.name}'s orientation is approximate (±${orientPrec}°), so sections right at the sun/shade edge are less certain here.`
+    : null;
 
   // Pre-calculate shade data for common scenarios
   const months = [
@@ -218,17 +208,6 @@ export default function StadiumPageSSR({ stadium, sections, amenities, guide }: 
 
       {/* Answer-first summary — directly answers "where are the shaded seats" */}
       <ShadeAnswer name={stadium.name} orientation={stadium.orientation} roof={stadium.roof} />
-
-      {/* Interactive at-a-glance seating bowl (pick a date/time) */}
-      <InteractiveSeatingBowl
-        sections={sections}
-        orientation={stadium.orientation}
-        latitude={stadium.latitude}
-        longitude={stadium.longitude}
-        timezone={stadium.timezone}
-        roof={stadium.roof}
-        name={stadium.name}
-      />
 
       {/* Best Shaded Sections */}
       <section className={styles.section}>
@@ -517,6 +496,19 @@ export default function StadiumPageSSR({ stadium, sections, amenities, guide }: 
           </div>
         </div>
       </section>
+
+      {/* Interactive section-level shade guide — placed below the section tables
+          (below the fold) so it is never the LCP element. MLB only. */}
+      <InteractiveSeatingBowl
+        sections={sections}
+        orientation={stadium.orientation}
+        latitude={stadium.latitude}
+        longitude={stadium.longitude}
+        timezone={stadium.timezone}
+        roof={stadium.roof}
+        name={stadium.name}
+        orientationNote={orientationNote}
+      />
 
       {/* Final CTA */}
       <section className={styles.stadiumCta}>
