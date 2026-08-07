@@ -5,7 +5,26 @@ export function middleware(request: NextRequest) {
   // Create response
   const response = NextResponse.next();
 
-  // Security headers that apply to all requests (mobile and desktop)
+  // Next.js's dev server compiles with eval-based source maps and React Refresh,
+  // so 'unsafe-eval' is required for HMR to work locally. Production ships no
+  // eval'd code, and allowing it there would defeat much of the point of having
+  // a CSP — so it is scoped to development only.
+  const isDev = process.env.NODE_ENV !== 'production';
+  const scriptSrc = [
+    "script-src 'self' 'unsafe-inline'",
+    isDev ? "'unsafe-eval'" : '',
+    'https://www.googletagmanager.com https://www.google-analytics.com https://www.google.com',
+  ]
+    .filter(Boolean)
+    .join(' ');
+
+  // Security headers that apply to all requests (mobile and desktop).
+  //
+  // This middleware is the source of truth for security headers on HTML routes.
+  // `vercel.json` repeats a subset for paths the matcher below excludes (static
+  // assets); the two previously disagreed on X-Frame-Options (DENY here,
+  // SAMEORIGIN there), which left the effective policy depending on which layer
+  // won. They are now both DENY, matching `frame-ancestors 'none'` in the CSP.
   const headers = {
     // Prevent clickjacking attacks
     'X-Frame-Options': 'DENY',
@@ -25,7 +44,7 @@ export function middleware(request: NextRequest) {
     // Content Security Policy
     'Content-Security-Policy': [
       "default-src 'self'",
-      "script-src 'self' 'unsafe-inline' 'unsafe-eval' https://www.googletagmanager.com https://www.google-analytics.com https://www.google.com",
+      scriptSrc,
       "style-src 'self' 'unsafe-inline' https://fonts.googleapis.com",
       "img-src 'self' data: https: blob: https://www.google-analytics.com https://www.googletagmanager.com",
       "font-src 'self' https://fonts.gstatic.com",

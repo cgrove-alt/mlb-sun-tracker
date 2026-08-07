@@ -108,8 +108,8 @@ interface StadiumAudit {
   zeroVertexSections: number;
 }
 
-function auditStadium(stadium: Stadium): StadiumAudit {
-  const sections = getStadiumSections(stadium.id, 'MLB');
+async function auditStadium(stadium: Stadium): Promise<StadiumAudit> {
+  const sections = await getStadiumSections(stadium.id, 'MLB');
   const has = hasSpecificData(stadium.id);
   const byLevel: Record<string, number> = {};
   let coveredCount = 0;
@@ -229,12 +229,12 @@ function detectDuplicateFiles(): Array<{ a: string; b: string; reason: 'bytes' |
 
 // ---- main ----
 
-function main(): void {
+async function main(): Promise<void> {
   console.log('🔍 Phase 1 Section Data Audit — MLB');
   console.log('='.repeat(80));
   console.log('');
 
-  const audits = MLB_STADIUMS.map(auditStadium);
+  const audits = await Promise.all(MLB_STADIUMS.map(auditStadium));
 
   // Header
   console.log(

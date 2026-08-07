@@ -1,6 +1,10 @@
 'use client';
 
 import dynamic from 'next/dynamic';
+import type { Stadium } from '../../../src/data/stadiums';
+import type { StadiumSection } from '../../../src/data/stadiumSectionTypes';
+import type { StadiumAmenities } from '../../../src/data/stadiumAmenities';
+import type { StadiumGuide } from '../../../src/data/stadiumGuides';
 import { Suspense, useMemo, useState, useCallback, useEffect } from 'react';
 import { LoadingSpinner } from '../../../src/components/LoadingSpinner';
 import { usePullToRefresh } from '../../../src/hooks/usePullToRefresh';
@@ -25,10 +29,13 @@ const SeatRecommendationsSection = dynamic(
 );
 
 interface StadiumPageClientProps {
-  stadium: any;
-  sections: any[];
-  amenities: any;
-  guide: any;
+  // These were all `any`, which meant the whole venue page rendered against
+  // untyped data — a renamed field on Stadium or StadiumSection would compile
+  // fine here and only fail in the browser.
+  stadium: Stadium;
+  sections: StadiumSection[];
+  amenities: StadiumAmenities | null;
+  guide: StadiumGuide | undefined;
   // R1: precomputed fidelity note from the server, forwarded to the guide so no
   // first-load client component imports the stadium-data-aggregator.
   fidelityNote?: string | null;

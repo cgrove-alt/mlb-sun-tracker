@@ -1,3 +1,219 @@
+# Phase 11: HIGH Priority Fixes from July 2026 Audit (2026-08-07)
+
+**Goal:** Fix all 25 HIGH issues (H1–H25) from `AUDIT-REPORT-JULY-2026.md`, plus the shade-API
+validation gap the audit tracks as M59. Root causes only, no suppressions.
+
+**Status:** ✅ COMPLETE — 22 real issues fixed, 3 found to be false positives (evidence below).
+Build, type-check, 783 tests and lint all green.
+
+Every issue was re-verified against the code before being fixed. That mattered: three audit claims
+did not survive contact with the evidence, and one "cosmetic" fix surfaced a genuine latent bug.
+
+## Tasks
+
+- [x] **H9/H10 — code splitting.** 988 KB all-stadium chunk → ~16 KB per stadium.
+- [x] **H2 — `StadiumPageSSR` needlessly `'use client'`.**
+- [x] **H11 + L44 — `Math.random()` in render paths.** Seeded PRNG keyed on stadium id.
+- [x] **H12/H13/H19/H20 — SSR crashes and module-level side effects.**
+- [x] **H7 — `unsafe-eval` in CSP** (dev only now). **H25 — X-Frame-Options conflict.**
+- [x] **H1 — nested `<main>` landmarks** (11 files).
+- [x] **M59 — shade API parameter validation** + investigated the "returns empty" claim.
+- [x] **H8 — NFL obstruction key mismatches.** 23/32 venues resolved → 32/32.
+- [x] **H14 — sun angle geometry.** Real accuracy bug in the main UI path.
+- [x] **H21 — `window.open` without `noopener`** (2 components).
+- [x] **H16/H17 — scroll state in `useState`** → `useRef`.
+- [x] **H5/H22 — `any` props/generics.** Surfaced a real type bug.
+- [x] **H23 — swallowed errors in MobileApp.**
+- [x] **H18 — hardcoded per-stadium weather.**
+- [x] **H15 — duplicate ErrorBoundary CSS.**
+- [x] **H4 — duplicated select styles.**
+- [x] **H3 — nuclear `KillOverhang` CSS.**
+- [x] **H24 — thin homepage.**
+- [x] **H6 — GA secret** — verified NOT exposed; added a tripwire.
+
+## Review
+
+### H9 / H10 · Code splitting — the headline fix
+
+`src/data/stadium-data-aggregator.ts` statically imported all 30 MLB section files plus 29
+obstruction files, so *any* consumer pulled *every* stadium. Webpack emitted one **988 KB** chunk
+containing all parks, fetched as soon as `SeatRecommendationsSection` mounted on a venue page — to
+render recommendations for a single stadium.
+
+Fixed by converting both registries to per-stadium dynamic imports and making the accessors async.
+`hasSpecificData` stays synchronous because it only needs the loader maps' **keys**, which cost no
+data at all. Consumers converted: the shade API route, `mlb3DCalculator`, `GameWindowShade`,
+`SeatRecommendationsSection`, and two audit scripts.
+
+Two supporting fixes were needed to actually get the win:
+
+- `stadiumDataFidelity.ts` computed `STADIUM_DATA_FIDELITY` for all 30 stadiums **at module scope**,
+  which forced the whole registry just to derive 30 enum values. It is now a checked-in table with a
+  drift test that recomputes each entry from the real section data (same pattern as the timezone
+  guard). The aggregator is reached only through a dynamic import in `computeStadiumDataFidelity`.
+- `src/data/stadiumLoader.ts` (H9) had 30 "dynamic imports" that all pulled the same 577 KB monolith.
+  It had **zero importers** — deleted rather than fixed.
+
+**Measured:** largest client chunk 988 KB → 328 KB (and that one is venue *metadata*, not sections);
+64 per-stadium section chunks now emitted at ~16 KB each. First-load JS unchanged (166 → 167 kB), so
+this is a pure reduction in on-demand payload — roughly **98% less** section data per venue visit.
+
+### H14 · Sun angle geometry — a real accuracy bug
+
+`sectionSunCalculations.ts` documents the canonical convention: `baseAngle` is **stadium-local**
+(0 = 1B, 90 = CF, 180 = 3B, 270 = behind home) and must be converted with
+`(orientation + 90 − baseAngle) mod 360` before being compared against a compass sun azimuth.
+`calculateRowShadows` — the function behind the API and the regression tests — follows it.
+
+`sunCalculations.ts` did not. Its `getSectionAngle` took `stadiumOrientation`, ignored it, and
+returned the raw local angle with a comment claiming angles were "already in absolute compass
+coordinates". That value feeds the `SunCalculator` class, which is what **UnifiedApp and MobileApp**
+use for the main shade display — so on that path a park's orientation had no effect on which side of
+the bowl was reported shaded. Now delegates to the canonical `sectionCompassAngle`.
+
+Covered by `sectionAngleConvention.test.ts`, including a test asserting that different orientations
+produce *different* bearings — which is exactly what the old code failed.
+
+### H8 · NFL obstruction keys — 9 silent lookup failures
+
+Nine keys did not match any current venue id: seven pre-rename names (Paul Brown → Paycor, FedEx
+Field → Northwest, TIAA Bank → EverBank, Cleveland Browns Stadium → Huntington Bank Field,
+Mercedes-Benz Superdome → Caesars Superdome, Arrowhead → GEHA Field, and an `m-and-t` spelling), plus
+MetLife and SoFi keyed by bare venue name while the venue data uses one id per tenant.
+
+Every one failed *silently* — `getStadiumObstructions` returned `[]`, so those stadiums were modelled
+as having no obstructions rather than raising anything. **23/32 → 32/32 venues** now resolve. The two
+shared venues alias one object rather than duplicating data, so they cannot drift.
+
+### H1 · Nested `<main>` landmarks
+
+`app/layout.tsx:146` wraps all children in `<main>`, and 11 pages rendered their own — every one
+nested. Converted the child elements to `<div>`, dropping a duplicated `id="main-content"` on the way.
+Exactly one `<main>` remains in the codebase.
+
+### H7 / H25 · CSP and header conflict
+
+`'unsafe-eval'` is now scoped to development, where Next.js needs it for HMR; production ships
+without it. Separately, middleware set `X-Frame-Options: DENY` while `vercel.json` set `SAMEORIGIN`,
+so the effective policy depended on which layer won — both are now `DENY`, matching
+`frame-ancestors 'none'` in the CSP, with middleware documented as the source of truth.
+
+### H11 / L44 · Non-deterministic render output
+
+`stadiumSectionGenerator.ts` and `stadiumLayoutEnhancer.ts` used `Math.random()` to decide whether a
+park has a berm and what its berm/party-deck is called — facts about a venue that changed on every
+reload and differed between server and client. New `src/utils/seededRandom.ts` (FNV-1a + mulberry32)
+seeds them on the stadium id, preserving the varied distribution while making output stable.
+`TableOfContents` used `Math.random()` for heading ids, which broke copied anchors; now index-based.
+
+### H12 / H13 / H19 / H20 · SSR and module-level side effects
+
+- `pwa.ts` — `export const pwaManager = new PWAInstallManager()` runs at import, so the constructor
+  touched `sessionStorage`/`window.matchMedia` during SSR. Guarded, along with the three helpers.
+- `apiCache.ts` — a module-level `setInterval` started a 10-minute timer in every server process,
+  never cleared. Now browser-only.
+- `EnhancedSunFilter.tsx` — read `window.innerWidth` directly in render (SSR crash, then a
+  server/client layout disagreement). There was already an effect computing this and throwing it
+  away; it now drives real state that starts `false` so both renders agree.
+- `ModernLoadingStates.tsx` — module-scope `<style>` injection with no dedup, appending a tag per hot
+  reload. It was also dead: `@keyframes animation-delay-200 { animation-delay: 200ms }` styles
+  nothing. Removed rather than guarded.
+
+### M59 · Shade API — validation added, "returns empty" disproved
+
+**The "returns empty for all requests" premise is false.** Verified against a running server: every
+valid request returns full data (`yankees` → 184 sections / 3456 rows, 756 KB; all 30 stadiums
+produce rows; `sectionId` and `window` modes work). Nothing was broken there to fix.
+
+The real defect was the opposite of empty — it answered *too* readily:
+
+| Request | Before | After |
+|---|---|---|
+| `?month=99&hour=abc` | 200 with **default** date/time data | 400 `UNKNOWN_PARAMETER` |
+| `?date=1900-01-01`, `?date=2999-01-01` | 200 | 400 `DATE_OUT_OF_RANGE` |
+| `?window=abc`, `?step=abc` | 200, silently used the default | 400 `INVALID_WINDOW` / `INVALID_STEP` |
+
+There is no `month` or `hour` parameter on this endpoint (it takes `date` and `time`; `time` already
+enforced hour 0–23). Rather than invent parameters, unknown ones are now rejected with the allowed
+list, so the typo'd request the audit describes fails loudly instead of silently answering for the
+wrong moment. Out-of-*range* `window`/`step` still **clamp** — that is a separately tested contract,
+deliberately preserved.
+
+### H5 / H22 · `any` types — one hid a real bug
+
+Typing `StadiumPageClient`'s four `any` props immediately produced a type error:
+`SeatRecommendationsSection` declared `sections: SeatingSectionSun[]` while every caller passed
+`StadiumSection[]`. The prop is only used for length checks, so the declared type was simply wrong —
+and only stayed hidden because the parent's props were `any`. `StaggeredListTransition` is now
+generic over its item type instead of `any[]`.
+
+### H18 · Hardcoded weather
+
+`MobileStadiumGuide` showed a `monthlyAverages` table identical for every stadium — Phoenix in July
+read the same as Seattle and Detroit — rendered beside the venue name as though it described that
+park. Real per-park climate normals need a data source this repo does not have, and inventing 30
+parks' numbers would be worse than showing none, so the block and its state are removed.
+
+### H23 · Swallowed errors
+
+`MobileApp` declared an `error` state that nothing ever set and nothing rendered. A failed forecast
+was `console.error`'d and then looked identical to "no weather yet", while the shade numbers quietly
+fell back to clear-sky assumptions. The catch now sets it, a successful load clears it, and it
+renders as a `role="alert"` banner.
+
+### H3 / H4 / H15 / H16 / H17 / H21 / H24 · The rest
+
+- **H3** — `KillOverhang.module.css` applied `* { transform: none !important }` to every descendant,
+  flattening CSS transforms on the seating bowl and shade diagram (a CSS declaration overrides an SVG
+  presentation attribute) and every hover/entrance animation. Rewritten to target the specific
+  containers and the inline negative-margin / `translateY(-` patterns that caused the overhang.
+- **H4** — `GameSelector` is **not** redundant (still used by `SmartItinerariesPage` and
+  `PreferencesPanel`) and the two selectors differ substantially. The genuine duplication was a
+  byte-identical 38-line `customSelectStyles`, now `src/components/selectStyles.ts`.
+- **H15** — two stylesheets defined the same `.error-boundary-*` classes: one imported by the
+  component, one via `@import` in `globals.css`, winner decided by load order. Deleted the orphan
+  (verified every class the component uses survives) and removed the import.
+- **H16/H17** — `lastScrollY` in `useState` re-rendered on every scroll pixel and, as an effect
+  dependency, re-attached the scroll listener each time. Now a `useRef`.
+- **H21** — `window.open(...)` for social sharing without `noopener,noreferrer` (reverse tabnabbing),
+  in `StadiumTitleBlock` **and** `ShareButton`.
+- **H24** — the homepage's venue counts, methodology and popular-venue links were in an `sr-only`
+  div: crawlers and screen readers got them, sighted users saw only a headline and a button. Same
+  markup, now a visible section.
+
+### False positives (verified, not fixed)
+
+Reported honestly rather than changed for appearance:
+
+1. **H6 — "GA Measurement Protocol secret in client code."** `GA_API_SECRET` has no `NEXT_PUBLIC_`
+   prefix, so Next.js never inlines it, and `lib/analytics.ts` is imported only by
+   `app/api/metrics/route.ts`. Grepping the built output confirms `api_secret` appears in
+   `.next/server/app/api/metrics/route.js` and in **no** client chunk. Added a `typeof window` throw
+   in the backend constructor so a future client import fails loudly instead of leaking.
+2. **M59 — "Shade API returns empty for all requests."** Disproved above.
+3. **H4 — "Delete `GameSelector.tsx`."** Still has two live consumers; deleting it would break them.
+
+### Verification
+
+| Check | Result |
+|---|---|
+| `npm run build` | ✅ exit 0, compiled successfully |
+| `npx jest` | ✅ 783 passed / 783, 22 suites |
+| `npx tsc --noEmit` | ✅ exit 0 |
+| `npx eslint --ext .ts,.tsx .` | ✅ exit 0 — 0 errors, 147 pre-existing warnings |
+| Largest client chunk | ✅ 988 KB → 328 KB; 64 per-stadium chunks ~16 KB |
+| NFL obstruction lookups | ✅ 23/32 → 32/32 |
+| Shade API (live server) | ✅ valid requests return full data; 4 invalid classes now 400 |
+
+### Notes / follow-ups (not done here)
+
+- `KillOverhang` and the homepage section are visual changes verified only by a green build and
+  type-check — worth a quick look in a browser before release.
+- 147 ESLint warnings remain as a visible, separate backlog (mostly `react/no-unescaped-entities`).
+- The MEDIUM (77) and LOW (59) audit findings are untouched.
+
+---
+
 # Phase 10: Critical Bug Fixes from July 2026 Audit (2026-08-07)
 
 **Goal:** Fix all 14 CRITICAL issues from `AUDIT-REPORT-JULY-2026.md` (C1–C14). Root causes only,

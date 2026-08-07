@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useCallback } from 'react';
+import { customSelectStyles } from './selectStyles';
 import Select from 'react-select';
 import { format } from 'date-fns';
 import { MLBGame, mlbApi } from '../services/mlbApi';
@@ -321,44 +322,6 @@ export const UnifiedGameSelector: React.FC<UnifiedGameSelectorProps> = ({
   });
 
   // Custom styles to ensure dropdown text is always visible
-  const customSelectStyles = {
-    control: (provided: any) => ({
-      ...provided,
-      backgroundColor: 'white',
-      color: '#000',
-    }),
-    singleValue: (provided: any) => ({
-      ...provided,
-      color: '#000',
-      fontWeight: 600,
-      opacity: 1,
-    }),
-    placeholder: (provided: any) => ({
-      ...provided,
-      color: '#666',
-      fontWeight: 500,
-      opacity: 1,
-    }),
-    option: (provided: any, state: any) => ({
-      ...provided,
-      color: state.isSelected ? 'white' : '#000',
-      backgroundColor: state.isSelected ? '#1a237e' : state.isFocused ? '#f5f5f5' : 'white',
-      fontWeight: state.isSelected ? 600 : 500,
-      opacity: 1,
-      '&:hover': {
-        backgroundColor: '#f5f5f5',
-      },
-    }),
-    menu: (provided: any) => ({
-      ...provided,
-      backgroundColor: 'white',
-    }),
-    input: (provided: any) => ({
-      ...provided,
-      color: '#000',
-      opacity: 1,
-    }),
-  };
 
   const formatOptionLabel = (option: any) => {
     return <span style={{ color: '#000', fontWeight: 600 }}>{option.label}</span>;

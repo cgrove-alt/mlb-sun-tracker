@@ -168,20 +168,8 @@ export const EmptyState: React.FC<{
   );
 };
 
-// Add CSS for animation delays
-const styles = `
-  @keyframes animation-delay-200 {
-    animation-delay: 200ms;
-  }
-  
-  @keyframes animation-delay-400 {
-    animation-delay: 400ms;
-  }
-`;
-
-// Inject styles
-if (typeof document !== 'undefined') {
-  const styleSheet = document.createElement('style');
-  styleSheet.textContent = styles;
-  document.head.appendChild(styleSheet);
-}
+// NOTE: a module-level <style> injection used to live here. It was dead code —
+// `@keyframes animation-delay-200 { animation-delay: 200ms }` defines a keyframe
+// set containing a property that has no meaning inside keyframes, so it styled
+// nothing. It also had no dedup guard, so every hot reload appended another
+// <style> tag to <head>. Removed rather than guarded.

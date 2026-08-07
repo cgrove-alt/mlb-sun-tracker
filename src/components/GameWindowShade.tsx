@@ -1,8 +1,9 @@
 'use client';
 
-import React, { useMemo } from 'react';
+import React, { useEffect, useMemo, useState } from 'react';
 import { MLB_STADIUMS } from '../data/stadiums';
 import { getStadiumSections } from '../data/stadium-data-aggregator';
+import type { DetailedSection } from '../types/stadium-complete';
 import {
   calculateGameWindowShade,
   gameWindowOffsets,
@@ -45,9 +46,31 @@ export const GameWindowShade: React.FC<GameWindowShadeProps> = ({
   gameDate,
   windowMinutes = 180,
 }) => {
+  // Section data is fetched per-stadium on demand. It used to be a static
+  // import, which pulled every park's sections (~988 KB) into this component's
+  // chunk to render one stadium's summary.
+  const [sections, setSections] = useState<DetailedSection[] | null>(null);
+
+  useEffect(() => {
+    let cancelled = false;
+    getStadiumSections(stadiumId, 'MLB')
+      .then((loaded) => {
+        if (!cancelled) setSections(loaded);
+      })
+      .catch(() => {
+        // Nothing renders without sections; failing silently keeps this
+        // supplementary panel from breaking the page.
+        if (!cancelled) setSections([]);
+      });
+    return () => {
+      cancelled = true;
+    };
+  }, [stadiumId]);
+
   const model = useMemo(() => {
     const stadium = MLB_STADIUMS.find((s) => s.id === stadiumId);
     if (!stadium) return null;
+    if (!sections) return null; // still loading
 
     const [h, m] = gameTime.split(':').map(Number);
     if (Number.isNaN(h) || Number.isNaN(m)) return null;
@@ -65,7 +88,6 @@ export const GameWindowShade: React.FC<GameWindowShadeProps> = ({
     const sunUp = samples.some((s) => s.altitudeDegrees > 3);
     if (!sunUp) return { night: true } as const;
 
-    const sections = getStadiumSections(stadiumId, 'MLB');
     const windows = sections.map((s) => calculateGameWindowShade(s, samples, stadium.orientation || 0));
 
     const count = (p: SectionWindowShade['progression']) =>
@@ -92,7 +114,7 @@ export const GameWindowShade: React.FC<GameWindowShadeProps> = ({
       becomesShaded,
       becomesSunny,
     };
-  }, [stadiumId, gameTime, gameDate, windowMinutes]);
+  }, [stadiumId, gameTime, gameDate, windowMinutes, sections]);
 
   if (!model || model.night) return null;
 

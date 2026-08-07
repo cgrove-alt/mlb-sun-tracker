@@ -1,5 +1,9 @@
-'use client';
-
+// Deliberately a SERVER component: this renders the largest chunk of the venue
+// page (header, sections table, FAQ) and uses no state, effects or handlers.
+// It was marked 'use client', which forced the whole subtree to hydrate on the
+// client for nothing. The two genuinely interactive children
+// (StadiumTitleBlock, InteractiveSeatingBowl) carry their own 'use client', so
+// they still hydrate — only they do.
 import React from 'react';
 import Link from 'next/link';
 import { Stadium } from '../../../src/data/stadiums';

@@ -122,12 +122,12 @@ export const ShareButton: React.FC<ShareButtonProps> = ({
   const shareViaTwitter = () => {
     const text = encodeURIComponent(generateShareText());
     const url = encodeURIComponent(generateShareUrl());
-    window.open(`https://twitter.com/intent/tweet?text=${text}&url=${url}`);
+    window.open(`https://twitter.com/intent/tweet?text=${text}&url=${url}`, '_blank', 'noopener,noreferrer');
   };
 
   const shareViaFacebook = () => {
     const url = encodeURIComponent(generateShareUrl());
-    window.open(`https://www.facebook.com/sharer/sharer.php?u=${url}`);
+    window.open(`https://www.facebook.com/sharer/sharer.php?u=${url}`, '_blank', 'noopener,noreferrer');
   };
 
   const handleKeyDown = (event: React.KeyboardEvent, action: () => void) => {

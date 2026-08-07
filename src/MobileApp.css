@@ -606,3 +606,18 @@
     overscroll-behavior-y: auto; /* Allow default overscroll */
   }
 }
+/* Error banner — surfaced when a forecast fetch fails so the user knows the
+   shade numbers fell back to clear-sky assumptions (see MobileApp `error`). */
+.mobile-error-banner {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 14px;
+  border: 1px solid #f5c26b;
+  border-left: 4px solid #e0891a;
+  border-radius: 8px;
+  background: #fff8ec;
+  color: #7a4a06;
+  font-size: 0.9rem;
+  line-height: 1.4;
+}

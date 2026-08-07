@@ -17,11 +17,47 @@ interface RouteParams {
   }>;
 }
 
+// Every query parameter this endpoint understands. Anything else is rejected
+// rather than ignored: a request like `?month=99&hour=abc` used to return a
+// perfectly healthy 200 computed from the *default* date and time, so a caller
+// with a typo'd or made-up parameter silently got data for the wrong moment and
+// had no way to tell. Failing loudly is the only way that surfaces.
+const ALLOWED_PARAMS = new Set([
+  'date',
+  'time',
+  'sectionId',
+  'use3d',
+  'cache',
+  'window',
+  'step',
+]);
+
+// Sun-position maths stays well-behaved far outside these bounds, but a request
+// for a 19th- or 30th-century ballgame is a caller bug, not a real query.
+const MIN_YEAR = 1990;
+const MAX_YEAR = 2050;
+
 export async function GET(request: NextRequest, { params }: RouteParams) {
   const { stadiumId } = await params;
 
   // Get query parameters
   const searchParams = request.nextUrl.searchParams;
+
+  // Reject unknown parameters before doing any work.
+  const unknownParams = Array.from(new Set(
+    Array.from(searchParams.keys()).filter(k => !ALLOWED_PARAMS.has(k))
+  ));
+  if (unknownParams.length > 0) {
+    return NextResponse.json(
+      {
+        error: `Unknown query parameter(s): ${unknownParams.join(', ')}`,
+        code: 'UNKNOWN_PARAMETER',
+        unknownParams,
+        allowedParams: Array.from(ALLOWED_PARAMS),
+      },
+      { status: 400 }
+    );
+  }
   const dateParam = searchParams.get('date');
   const timeParam = searchParams.get('time');
   const sectionIdParam = searchParams.get('sectionId');
@@ -37,11 +73,29 @@ export async function GET(request: NextRequest, { params }: RouteParams) {
   let windowMinutes = 180; // ~2h40 pitch-clock game + margin
   let stepMinutes = 30;
   if (useWindow) {
-    const w = parseInt(windowParam as string, 10);
-    if (!Number.isNaN(w)) windowMinutes = Math.min(300, Math.max(0, w));
-    if (stepParam) {
-      const st = parseInt(stepParam, 10);
-      if (!Number.isNaN(st)) stepMinutes = Math.min(60, Math.max(15, st));
+    // Out-of-range values are deliberately CLAMPED (window→0-300, step→15-60);
+    // that is the documented contract. But a non-numeric value is a caller
+    // error, not a value to clamp — it used to fall through to the default and
+    // return a window the caller never asked for.
+    if (windowParam !== '') {
+      const w = Number(windowParam);
+      if (!Number.isFinite(w)) {
+        return NextResponse.json(
+          { error: 'Invalid window parameter. Must be a number of minutes (0-300)', code: 'INVALID_WINDOW' },
+          { status: 400 }
+        );
+      }
+      windowMinutes = Math.min(300, Math.max(0, Math.trunc(w)));
+    }
+    if (stepParam !== null && stepParam !== '') {
+      const st = Number(stepParam);
+      if (!Number.isFinite(st)) {
+        return NextResponse.json(
+          { error: 'Invalid step parameter. Must be a number of minutes (15-60)', code: 'INVALID_STEP' },
+          { status: 400 }
+        );
+      }
+      stepMinutes = Math.min(60, Math.max(15, Math.trunc(st)));
     }
   }
 
@@ -50,6 +104,21 @@ export async function GET(request: NextRequest, { params }: RouteParams) {
   if (isNaN(date.getTime())) {
     return NextResponse.json(
       { error: 'Invalid date parameter. Use ISO 8601 format (YYYY-MM-DD)', code: 'INVALID_DATE' },
+      { status: 400 }
+    );
+  }
+
+  // `new Date()` happily accepts '1900-01-01' and '2999-01-01'. Both parse, both
+  // produce a sun position, and both are nonsense for a ballgame — so bound the
+  // range instead of silently answering.
+  const year = date.getUTCFullYear();
+  if (year < MIN_YEAR || year > MAX_YEAR) {
+    return NextResponse.json(
+      {
+        error: `Date out of range. Year must be between ${MIN_YEAR} and ${MAX_YEAR}`,
+        code: 'DATE_OUT_OF_RANGE',
+        year,
+      },
       { status: 400 }
     );
   }
@@ -86,8 +155,9 @@ export async function GET(request: NextRequest, { params }: RouteParams) {
     );
   }
 
-  // Get stadium sections with row data
-  const sections = getStadiumSections(stadium.id, 'MLB');
+  // Get stadium sections with row data. Loaded per-stadium on demand, so the
+  // server only ever materialises the requested park's sections.
+  const sections = await getStadiumSections(stadium.id, 'MLB');
 
   if (!sections || sections.length === 0) {
     return NextResponse.json(

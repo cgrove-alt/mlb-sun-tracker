@@ -106,9 +106,15 @@ const MobileApp: React.FC = () => {
         selectedVenue.longitude
       );
       setWeatherForecast(forecast);
+      setError(null);
     } catch (err) {
       console.error('Error loading weather:', err);
       setWeatherForecast(null);
+      // The `error` state existed but nothing ever set it and nothing rendered
+      // it, so a failed forecast looked identical to "no weather yet" — the
+      // shade numbers silently fell back to clear-sky assumptions with no
+      // indication to the user.
+      setError('Weather forecast unavailable — shade estimates assume clear skies.');
     } finally {
       setIsWeatherLoading(false);
     }
@@ -247,8 +253,16 @@ const MobileApp: React.FC = () => {
         shadedSectionsCount={filteredSections.filter(s => !s.inSun).length}
       />
       
-      <main className="mobile-main" id="main-content">
+      <div className="mobile-main">
         <div className="mobile-content">
+          {error && (
+            <div className="mobile-section" role="alert" aria-live="polite">
+              <div className="mobile-error-banner">
+                <span aria-hidden="true">⚠️</span> {error}
+              </div>
+            </div>
+          )}
+
           {/* Unified Venue and Game Selection */}
           <section className="mobile-section" id="venue-selector">
             <UnifiedGameSelector
@@ -423,7 +437,7 @@ const MobileApp: React.FC = () => {
             </>
           )}
         </div>
-      </main>
+      </div>
       
       <footer className="mobile-footer">
         <div className="mobile-footer-content">

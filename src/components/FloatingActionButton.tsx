@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import './FloatingActionButton.css';
 
 interface FABAction {
@@ -36,7 +36,9 @@ export const FloatingActionButton: React.FC<FloatingActionButtonProps> = ({
 }) => {
   const [isOpen, setIsOpen] = useState(false);
   const [isVisible, setIsVisible] = useState(showAfterScroll === 0);
-  const [lastScrollY, setLastScrollY] = useState(0);
+  // See StickyNavigation: a ref, not state — this value is never rendered, and
+  // as an effect dependency it re-attached the scroll listener on every scroll.
+  const lastScrollY = useRef(0);
 
   useEffect(() => {
     if (!hideOnScroll && showAfterScroll === 0) return;
@@ -51,19 +53,19 @@ export const FloatingActionButton: React.FC<FloatingActionButtonProps> = ({
       
       // Hide on scroll down, show on scroll up
       if (hideOnScroll) {
-        if (currentScrollY > lastScrollY && currentScrollY > 100) {
+        if (currentScrollY > lastScrollY.current && currentScrollY > 100) {
           setIsVisible(false);
         } else {
           setIsVisible(true);
         }
       }
       
-      setLastScrollY(currentScrollY);
+      lastScrollY.current = currentScrollY;
     };
 
     window.addEventListener('scroll', handleScroll, { passive: true });
     return () => window.removeEventListener('scroll', handleScroll);
-  }, [hideOnScroll, showAfterScroll, lastScrollY]);
+  }, [hideOnScroll, showAfterScroll]);
 
   const handleMainClick = () => {
     if (actions && actions.length > 0) {

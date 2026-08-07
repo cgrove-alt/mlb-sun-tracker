@@ -1,4 +1,21 @@
-/* Kill Overhang Utility - Neutralizes ALL negative margins and transforms */
+/* Kill Overhang Utility — neutralizes the negative-margin / translate "overhang"
+   patterns that pulled venue-page sections up over each other.
+
+   This file used to do that with universal selectors:
+
+       .killOverhang *            { margin-top: 0 !important; transform: none !important }
+       .killOverhang *:hover      { transform: none !important }
+       @media (max-width: 768px) { .killOverhang * { ... } }
+
+   `* { transform: none !important }` applies to EVERY descendant, so it also
+   flattened things that were never the problem: CSS transforms on the seating
+   bowl and shade diagram (a CSS `transform` declaration overrides an SVG
+   presentation attribute), every hover lift, and every entrance animation on the
+   page. `transition-property` was likewise overridden globally, so components
+   could not animate transform even where it was wanted.
+
+   The rules below target the specific structures and the specific inline
+   patterns that caused the overhang, and leave everything else alone. */
 
 .killOverhang {
   /* Force reset all positioning */
@@ -6,64 +23,7 @@
   overflow: visible !important;
 }
 
-/* Strong, page-scoped neutralizers for main sections */
-.killOverhang :global(main) :global(.section),
-.killOverhang :global(main) :global([data-test="overview-section"]),
-.killOverhang :global(main) :global(.guide-section) {
-  margin-top: 0 !important;
-  transform: none !important;
-  top: auto !important;
-  position: static !important;
-  z-index: auto !important;
-}
-
-/* Kill ALL negative margins everywhere */
-.killOverhang *,
-.killOverhang *::before,
-.killOverhang *::after {
-  margin-top: 0 !important;
-  margin-left: 0 !important;
-  margin-right: 0 !important;
-  /* Allow positive bottom margins for spacing */
-  /* REMOVED min-height: 0 - was breaking header text display */
-}
-
-/* Kill ALL transforms */
-.killOverhang *,
-.killOverhang *:hover,
-.killOverhang *:focus,
-.killOverhang *:active {
-  transform: none !important;
-  transition-property: background-color, border-color, color, fill, stroke, opacity, box-shadow !important;
-  /* Explicitly exclude transform from transitions */
-}
-
-/* Force static positioning on problematic elements */
-.killOverhang .guide-section,
-.killOverhang [class*="guide-section"],
-.killOverhang .overview,
-.killOverhang [class*="overview"],
-.killOverhang .card,
-.killOverhang [class*="card"] {
-  position: relative !important;
-  z-index: 1 !important;
-  margin-top: 0 !important;
-  transform: none !important;
-}
-
-/* Ensure headers don't have z-index tricks */
-.killOverhang h1,
-.killOverhang h2,
-.killOverhang h3,
-.killOverhang header,
-.killOverhang [class*="header"] {
-  position: relative !important;
-  z-index: 1 !important;
-  margin-top: 0 !important;
-  transform: none !important;
-}
-
-/* Override any --overhang custom properties */
+/* Neutralize any --overhang custom properties consumed by descendants. */
 .killOverhang {
   --overhang: 0 !important;
   --overhang-top: 0 !important;
@@ -74,27 +34,53 @@
   --section-overhang: 0 !important;
 }
 
-/* Specific overrides for common problem patterns */
+/* Strong, page-scoped neutralizers for the main content sections. */
+.killOverhang :global(main) :global(.section),
+.killOverhang :global(main) :global([data-test="overview-section"]),
+.killOverhang :global(main) :global(.guide-section) {
+  margin-top: 0 !important;
+  transform: none !important;
+  top: auto !important;
+  position: static !important;
+  z-index: auto !important;
+}
+
+/* Section / card containers: the elements that actually carried the overhang. */
+.killOverhang :global(.guide-section),
+.killOverhang :global([class*="guide-section"]),
+.killOverhang :global(.overview),
+.killOverhang :global([class*="overview"]),
+.killOverhang :global(.card),
+.killOverhang :global([class*="card"]) {
+  position: relative !important;
+  z-index: 1 !important;
+  margin-top: 0 !important;
+  transform: none !important;
+}
+
+/* Headings and headers must not be pulled up over the block above them. */
+.killOverhang h1,
+.killOverhang h2,
+.killOverhang h3,
+.killOverhang header,
+.killOverhang :global([class*="header"]) {
+  position: relative !important;
+  z-index: 1 !important;
+  margin-top: 0 !important;
+  transform: none !important;
+}
+
+/* The inline-style patterns that produced the overhang in the first place.
+   This is the targeted replacement for the old universal rules: it still
+   catches an element that hard-codes a negative margin or a translateY, but
+   leaves elements that legitimately animate or transform untouched. */
 .killOverhang [style*="margin-top: -"],
 .killOverhang [style*="margin-left: -"],
 .killOverhang [style*="margin-right: -"],
-.killOverhang [style*="transform: translateY"] {
-  margin: 0 !important;
-  transform: none !important;
-}
-
-/* Ensure hover states don't introduce transforms */
-.killOverhang *:hover {
+.killOverhang [style*="margin: -"],
+.killOverhang [style*="transform: translateY(-"] {
   margin-top: 0 !important;
+  margin-left: 0 !important;
+  margin-right: 0 !important;
   transform: none !important;
-  /* Allow box-shadow changes for hover feedback */
-  transition: box-shadow 0.2s ease, background-color 0.2s ease !important;
-}
-
-/* Mobile specific overrides */
-@media (max-width: 768px) {
-  .killOverhang * {
-    margin-top: 0 !important;
-    transform: none !important;
-  }
 }

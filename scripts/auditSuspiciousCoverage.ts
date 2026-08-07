@@ -29,10 +29,11 @@ interface Finding {
 
 const findings: Finding[] = [];
 
+async function collectFindings(): Promise<void> {
 for (const stadium of MLB_STADIUMS) {
   let sections: DetailedSection[] = [];
   try {
-    sections = getStadiumSections(stadium.id, 'MLB');
+    sections = await getStadiumSections(stadium.id, 'MLB');
   } catch {
     continue;
   }
@@ -72,6 +73,9 @@ for (const stadium of MLB_STADIUMS) {
     });
   }
 }
+}
+
+collectFindings().then(() => {
 
 console.log(`Scanned ${MLB_STADIUMS.length} MLB stadiums.\n`);
 if (!findings.length) {
@@ -84,3 +88,4 @@ if (!findings.length) {
   }
   console.log('\nThese are flagged for manual review only. No shade data was rewritten.');
 }
+});

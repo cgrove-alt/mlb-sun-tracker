@@ -71,23 +71,26 @@ export const CrossfadeTransition: React.FC<CrossfadeTransitionProps> = ({
   );
 };
 
-interface StaggeredListTransitionProps {
-  items: any[];
-  renderItem: (item: any, index: number) => ReactNode;
-  keyExtractor: (item: any, index: number) => string | number;
+// Generic over the item type: `any[]` here meant `renderItem`/`keyExtractor`
+// received untyped items, so every call site silently lost type-checking on the
+// data it was rendering.
+interface StaggeredListTransitionProps<T> {
+  items: T[];
+  renderItem: (item: T, index: number) => ReactNode;
+  keyExtractor: (item: T, index: number) => string | number;
   staggerDelay?: number;
   duration?: number;
   className?: string;
 }
 
-export const StaggeredListTransition: React.FC<StaggeredListTransitionProps> = ({
+export const StaggeredListTransition = <T,>({
   items,
   renderItem,
   keyExtractor,
   staggerDelay = 50,
   duration = 300,
   className = ''
-}) => {
+}: StaggeredListTransitionProps<T>) => {
   return (
     <TransitionGroup className={`staggered-list ${className}`}>
       {items.map((item, index) => (

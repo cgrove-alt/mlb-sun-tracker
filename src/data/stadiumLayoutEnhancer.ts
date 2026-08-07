@@ -1,6 +1,7 @@
 // Stadium Layout Enhancer
 // Transforms existing venue layouts with real stadium characteristics
 
+import { seededPick } from '../utils/seededRandom';
 import { RealStadiumLayout, RealStadiumSection, calculateSectionAngle, calculateSunExposure } from './realStadiumSections';
 import { VenueLayout, VenueSection } from './milbVenueLayouts';
 import { MiLBStadium } from './milbStadiums';
@@ -374,13 +375,16 @@ function generateBermName(stadium: MiLBStadium): string {
     'Outfield Berm', 'Family Berm', 'Picnic Hill', 'Lawn Seating',
     'Grass Berm', 'Community Berm', 'Kids Berm', 'Fan Zone Berm'
   ];
-  return bermNames[Math.floor(Math.random() * bermNames.length)];
+  // A park's berm has ONE name. Picking at random meant the server and client
+  // rendered different names (hydration mismatch) and the name changed on every
+  // reload; seeding on the stadium id keeps the variety but makes it stable.
+  return seededPick(bermNames, `berm:${stadium.id}`);
 }
 
 function generatePartyDeckName(stadium: MiLBStadium): string {
   const teamName = stadium.team.split(' ').pop() || 'Team';
   const deckTypes = ['Party Deck', 'Social Deck', 'Fun Zone', 'Celebration Deck'];
-  return `${teamName} ${deckTypes[Math.floor(Math.random() * deckTypes.length)]}`;
+  return `${teamName} ${seededPick(deckTypes, `deck:${stadium.id}`)}`;
 }
 
 function getUniqueWallName(stadiumId: string): string {

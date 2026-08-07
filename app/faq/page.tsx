@@ -144,7 +144,7 @@ const faqSchema = {
 
 export default function FAQPage() {
   return (
-    <main className="guide-page">
+    <div className="guide-page">
       <SafeSchema schema={faqSchema} />
       <div className="guide-container">
         <nav className="flex flex-wrap items-center gap-3 text-sm text-ink-700 mb-6" aria-label="Breadcrumb">
@@ -232,6 +232,6 @@ export default function FAQPage() {
           </section>
         </article>
       </div>
-    </main>
+    </div>
   );
 }

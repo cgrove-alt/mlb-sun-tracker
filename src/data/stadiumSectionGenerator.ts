@@ -1,6 +1,7 @@
 // Stadium Section Generator
 // Intelligent fallback system for generating realistic section layouts when real data is unavailable
 
+import { seededRandom } from '../utils/seededRandom';
 import { RealStadiumSection, RealStadiumLayout, calculateSectionAngle, calculateSunExposure, PRICE_TIERS } from './realStadiumSections';
 import { MiLBStadium } from './milbStadiums';
 
@@ -48,9 +49,13 @@ function generateSectionsBasedOnCapacity(
 ): RealStadiumSection[] {
   const sections: RealStadiumSection[] = [];
   const { capacity, level, orientation } = stadium;
-  
+
+  // Seeded on the stadium id so row/seat counts are stable across renders and
+  // identical on server and client (these values reach the DOM).
+  const rand = seededRandom(`sections:${stadium.id}`);
+
   // Determine section configuration based on capacity
-  const config = getStadiumConfiguration(capacity, level);
+  const config = getStadiumConfiguration(capacity, level, stadium.id);
   
   // Generate home plate premium sections
   const premiumSections = Math.floor(config.premiumPercentage * 10);
@@ -62,8 +67,8 @@ function generateSectionsBasedOnCapacity(
       level: 'field',
       baseAngle: calculateSectionAngle(orientation, 'home', angle),
       angleSpan: 10,
-      rows: quality === 'high' ? 12 + Math.floor(Math.random() * 4) : 12,
-      seatsPerRow: quality === 'high' ? 18 + Math.floor(Math.random() * 4) : 20,
+      rows: quality === 'high' ? 12 + Math.floor(rand() * 4) : 12,
+      seatsPerRow: quality === 'high' ? 18 + Math.floor(rand() * 4) : 20,
       covered: false,
       price: PRICE_TIERS[level].field,
       accessibility: i % 2 === 0 ? 'full' : 'partial',
@@ -83,8 +88,8 @@ function generateSectionsBasedOnCapacity(
       level: 'lower',
       baseAngle: calculateSectionAngle(orientation, 'first-base', angle),
       angleSpan: 12,
-      rows: 16 + (quality === 'high' ? Math.floor(Math.random() * 6) : 4),
-      seatsPerRow: 20 + (quality === 'high' ? Math.floor(Math.random() * 4) : 0),
+      rows: 16 + (quality === 'high' ? Math.floor(rand() * 6) : 4),
+      seatsPerRow: 20 + (quality === 'high' ? Math.floor(rand() * 4) : 0),
       covered: false,
       price: PRICE_TIERS[level].lower,
       sunExposure: calculateSunExposure(calculateSectionAngle(orientation, 'first-base', angle), false)
@@ -100,8 +105,8 @@ function generateSectionsBasedOnCapacity(
       level: 'lower',
       baseAngle: calculateSectionAngle(orientation, 'third-base', angle),
       angleSpan: 12,
-      rows: 16 + (quality === 'high' ? Math.floor(Math.random() * 6) : 4),
-      seatsPerRow: 20 + (quality === 'high' ? Math.floor(Math.random() * 4) : 0),
+      rows: 16 + (quality === 'high' ? Math.floor(rand() * 6) : 4),
+      seatsPerRow: 20 + (quality === 'high' ? Math.floor(rand() * 4) : 0),
       covered: false,
       price: PRICE_TIERS[level].lower,
       sunExposure: calculateSunExposure(calculateSectionAngle(orientation, 'third-base', angle), false)
@@ -183,7 +188,14 @@ interface StadiumConfiguration {
   hasUpperDeck: boolean;
 }
 
-function getStadiumConfiguration(capacity: number, level: string): StadiumConfiguration {
+function getStadiumConfiguration(
+  capacity: number,
+  level: string,
+  stadiumId: string,
+): StadiumConfiguration {
+  // Whether a park has a berm is a *fact about the park*, so it must not change
+  // between server render, client hydration, and the next reload.
+  const rand = seededRandom(`config:${stadiumId}`);
   // AAA stadiums (6,000-16,000)
   if (level === 'AAA') {
     return {
@@ -191,7 +203,7 @@ function getStadiumConfiguration(capacity: number, level: string): StadiumConfig
       baselinePercentage: 0.50,
       hasOutfieldSeating: true,
       hasOutfieldBleachers: capacity < 10000,
-      hasBerm: capacity < 12000 && Math.random() > 0.5,
+      hasBerm: capacity < 12000 && rand() > 0.5,
       hasClubLevel: capacity > 8000,
       hasUpperDeck: capacity > 12000
     };
@@ -204,7 +216,7 @@ function getStadiumConfiguration(capacity: number, level: string): StadiumConfig
       baselinePercentage: 0.45,
       hasOutfieldSeating: true,
       hasOutfieldBleachers: true,
-      hasBerm: Math.random() > 0.4,
+      hasBerm: rand() > 0.4,
       hasClubLevel: capacity > 7000,
       hasUpperDeck: false
     };
@@ -216,7 +228,7 @@ function getStadiumConfiguration(capacity: number, level: string): StadiumConfig
     baselinePercentage: 0.40,
     hasOutfieldSeating: capacity > 3000,
     hasOutfieldBleachers: true,
-    hasBerm: Math.random() > 0.3,
+    hasBerm: rand() > 0.3,
     hasClubLevel: capacity > 5000,
     hasUpperDeck: false
   };

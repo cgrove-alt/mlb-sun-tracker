@@ -36,14 +36,14 @@ export interface MLBStadiumShade3DResult {
 const calculatorCache = new Map<string, OptimizedShadeCalculator3D>();
 const resultCache = new Map<string, MLBStadiumShade3DResult>();
 
-function getOrBuildCalculator(stadium: Stadium): OptimizedShadeCalculator3D {
+async function getOrBuildCalculator(stadium: Stadium): Promise<OptimizedShadeCalculator3D> {
   const cached = calculatorCache.get(stadium.id);
   if (cached) return cached;
 
   // getStadium3DModel takes the simpler StadiumSection shape; map the
   // detailed sections down to it so seat geometry is generated consistently
   // by the model builder.
-  const detailed = getStadiumSections(stadium.id, 'MLB');
+  const detailed = await getStadiumSections(stadium.id, 'MLB');
   const simpleSections = detailed.map((s) => ({
     id: s.id,
     name: s.name,
@@ -106,7 +106,7 @@ export async function calculateMLBStadiumShade3D(
   const sunPos = getSunPosition(targetDate, latitude, longitude);
   const sunPosition3D = createSunPosition(sunPos.azimuthDegrees, sunPos.altitudeDegrees);
 
-  const calculator = getOrBuildCalculator(stadium);
+  const calculator = await getOrBuildCalculator(stadium);
   const sections = calculator.calculateAllSectionsShade(sunPosition3D);
 
   const result: MLBStadiumShade3DResult = {

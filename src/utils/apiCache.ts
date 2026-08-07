@@ -96,10 +96,17 @@ class APICache {
 // Global cache instance
 export const apiCache = new APICache();
 
-// Clean up expired entries every 10 minutes
-setInterval(() => {
-  apiCache.cleanup();
-}, 10 * 60 * 1000);
+// Clean up expired entries every 10 minutes.
+//
+// This runs at module import. On the server that meant every render process
+// started a 10-minute timer that nothing ever cleared — one per import, kept
+// alive for the life of the process, holding the cache in memory. The cache
+// only serves browser requests, so the timer belongs in the browser.
+if (typeof window !== 'undefined') {
+  setInterval(() => {
+    apiCache.cleanup();
+  }, 10 * 60 * 1000);
+}
 
 // Higher-order function to add caching to API calls
 export function withCache<T extends (...args: any[]) => Promise<any>>(

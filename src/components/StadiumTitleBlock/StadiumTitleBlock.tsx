@@ -114,10 +114,21 @@ const StadiumTitleBlock: React.FC<StadiumTitleBlockProps> = ({
 
     switch (platform) {
       case 'twitter':
-        window.open(`https://twitter.com/intent/tweet?text=${encodeURIComponent(text)}&url=${encodeURIComponent(url)}`, '_blank');
+        // 'noopener,noreferrer': without noopener the opened page gets a live
+        // window.opener handle back to this tab and can navigate it somewhere
+        // hostile (reverse tabnabbing).
+        window.open(
+          `https://twitter.com/intent/tweet?text=${encodeURIComponent(text)}&url=${encodeURIComponent(url)}`,
+          '_blank',
+          'noopener,noreferrer',
+        );
         break;
       case 'facebook':
-        window.open(`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(url)}`, '_blank');
+        window.open(
+          `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(url)}`,
+          '_blank',
+          'noopener,noreferrer',
+        );
         break;
       case 'copy':
         navigator.clipboard.writeText(url);

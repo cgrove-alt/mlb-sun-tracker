@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import './StickyNavigation.css';
 
 interface StickyNavigationProps {
@@ -21,7 +21,11 @@ export const StickyNavigation: React.FC<StickyNavigationProps> = ({
   const [scrollProgress, setScrollProgress] = useState(0);
   const [isScrolled, setIsScrolled] = useState(false);
   const [isVisible, setIsVisible] = useState(true);
-  const [lastScrollY, setLastScrollY] = useState(0);
+  // `lastScrollY` is only ever read by the next scroll event — it is never
+  // rendered. Holding it in state re-rendered the whole nav on every scroll
+  // pixel AND, because it was an effect dependency, tore down and re-attached
+  // the scroll listener each time. A ref keeps the value without either cost.
+  const lastScrollY = useRef(0);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -33,18 +37,18 @@ export const StickyNavigation: React.FC<StickyNavigationProps> = ({
       setIsScrolled(currentScrollY > 10);
       
       // Hide/show navigation based on scroll direction
-      if (currentScrollY > lastScrollY && currentScrollY > 100) {
+      if (currentScrollY > lastScrollY.current && currentScrollY > 100) {
         setIsVisible(false);
       } else {
         setIsVisible(true);
       }
       
-      setLastScrollY(currentScrollY);
+      lastScrollY.current = currentScrollY;
     };
 
     window.addEventListener('scroll', handleScroll, { passive: true });
     return () => window.removeEventListener('scroll', handleScroll);
-  }, [lastScrollY]);
+  }, []);
 
   return (
     <nav 

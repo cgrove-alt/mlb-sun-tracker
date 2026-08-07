@@ -23,8 +23,12 @@
  * client bundle.
  */
 
-import { MLB_STADIUMS } from './stadiums';
-import { getStadiumSections, hasSpecificData } from './stadium-data-aggregator';
+// NOTE: this module deliberately does NOT import `stadium-data-aggregator`.
+// Doing so used to drag all 30 MLB section files (~988 KB) into the bundle of
+// every client component that wanted a one-word fidelity label, because
+// STADIUM_DATA_FIDELITY was computed at module scope over every stadium. The
+// classification is now a checked-in table (see below) and the aggregator is
+// only reached through a dynamic import in `computeStadiumDataFidelity`.
 import type { DetailedSection } from '../types/stadium-complete';
 
 export type DataFidelity = 'real' | 'partial' | 'approximate';
@@ -83,17 +87,72 @@ export function classifyFidelity(
   return 'partial';
 }
 
-/** Fidelity for one stadium, computed from its current section data. */
+/**
+ * Fidelity for every MLB stadium.
+ *
+ * This is a checked-in table rather than a runtime computation. Deriving it by
+ * calling classifyFidelity() over all 30 stadiums meant importing every section
+ * file just to produce 30 enum values — which is what put ~988 KB of section
+ * data into the client bundle of anything that rendered a fidelity notice.
+ *
+ * `stadiumDataFidelity.test.ts` recomputes this from the real section data and
+ * fails if it drifts, so hand-authoring a new park's seating map surfaces as a
+ * failing test telling you to update this table.
+ */
+export const STADIUM_DATA_FIDELITY: Record<string, DataFidelity> = {
+  angels: 'approximate',
+  astros: 'approximate',
+  athletics: 'approximate',
+  bluejays: 'approximate',
+  braves: 'approximate',
+  brewers: 'approximate',
+  cardinals: 'approximate',
+  cubs: 'approximate',
+  diamondbacks: 'approximate',
+  dodgers: 'approximate',
+  giants: 'approximate',
+  guardians: 'approximate',
+  mariners: 'approximate',
+  marlins: 'approximate',
+  mets: 'approximate',
+  nationals: 'approximate',
+  orioles: 'approximate',
+  padres: 'approximate',
+  phillies: 'approximate',
+  pirates: 'approximate',
+  rangers: 'approximate',
+  rays: 'approximate',
+  reds: 'approximate',
+  redsox: 'real',
+  rockies: 'approximate',
+  royals: 'approximate',
+  tigers: 'approximate',
+  twins: 'approximate',
+  whitesox: 'real',
+  yankees: 'real',
+};
+
+/**
+ * Fidelity for one stadium. Reads the table above — cheap, synchronous, and
+ * safe to call from a client component.
+ */
 export function getStadiumDataFidelity(stadiumId: string): DataFidelity {
-  const sections = getStadiumSections(stadiumId, 'MLB');
+  return STADIUM_DATA_FIDELITY[stadiumId] ?? 'approximate';
+}
+
+/**
+ * Recompute one stadium's fidelity from its actual section data.
+ *
+ * The aggregator is pulled in via a dynamic import so it never enters the
+ * static graph of anything importing this module. Used by the drift test and
+ * available to node-side tooling; the UI should use getStadiumDataFidelity().
+ */
+export async function computeStadiumDataFidelity(stadiumId: string): Promise<DataFidelity> {
+  const { getStadiumSections, hasSpecificData } = await import('./stadium-data-aggregator');
+  const sections = await getStadiumSections(stadiumId, 'MLB');
   const has = hasSpecificData(stadiumId).hasSections;
   return classifyFidelity(sections, stadiumId, has);
 }
-
-/** Precomputed fidelity for every MLB stadium (single source for UI + audit). */
-export const STADIUM_DATA_FIDELITY: Record<string, DataFidelity> = Object.fromEntries(
-  MLB_STADIUMS.map((s) => [s.id, getStadiumDataFidelity(s.id)]),
-);
 
 /** User-facing note for a fidelity level (used by the UI disclosure in Track B). */
 export function fidelityNote(fidelity: DataFidelity): string | null {

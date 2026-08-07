@@ -2,17 +2,26 @@
 
 import React, { useState, useCallback, useMemo, useEffect } from 'react';
 import { SeatRecommendationEngine, UserPreferences, RecommendationContext } from '../services/seatRecommendationEngine';
-import { SeatingSectionSun } from '../utils/sunCalculations';
+import type { StadiumSection } from '../data/stadiumSectionTypes';
 import { SeatPreferencesForm } from './SeatPreferencesForm';
 import { GameWindowShade } from './GameWindowShade';
 import { LoadingSpinner } from './LoadingSpinner';
 import { MLB_STADIUMS } from '../data/stadiums';
 import { getStadiumCompleteData } from '../data/stadium-data-aggregator';
+import type { DetailedSection, Obstruction3D } from '../types/stadium-complete';
 import { weatherApi, WeatherData } from '../services/weatherApi';
 import { stadiumLocalDateAndTimeToUTC } from '../utils/stadiumTime';
 
+type StadiumData = { sections: DetailedSection[]; obstructions: Obstruction3D[] };
+
 interface SeatRecommendationsSectionProps {
-  sections: SeatingSectionSun[];
+  // Only used as a "does this venue have section data at all" check (see the
+  // length guards below); the data the recommendations are actually built from
+  // is loaded per-stadium into `stadiumData`. This was typed
+  // `SeatingSectionSun[]` while every caller passes raw `StadiumSection[]` —
+  // a mismatch that only stayed hidden because StadiumPageClient typed its
+  // props `any`.
+  sections: StadiumSection[];
   stadiumId: string;
   // gameTime and gameDate MUST come from the user's real selected game.
   // This component does not invent defaults — callers are responsible for
@@ -42,6 +51,26 @@ export const SeatRecommendationsSection: React.FC<SeatRecommendationsSectionProp
   const [weather, setWeather] = useState<WeatherData | null>(null);
   const [weatherLoading, setWeatherLoading] = useState(true);
   const [weatherError, setWeatherError] = useState(false);
+
+  // Per-stadium section + obstruction data, fetched on demand. This was a
+  // static import of the aggregator, which meant loading every park's data
+  // (~988 KB) to make recommendations for one stadium.
+  const [stadiumData, setStadiumData] = useState<StadiumData | null>(null);
+
+  useEffect(() => {
+    let cancelled = false;
+    getStadiumCompleteData(stadiumId, 'MLB')
+      .then(data => {
+        if (!cancelled) setStadiumData(data);
+      })
+      .catch(error => {
+        console.error('Failed to load stadium section data:', error);
+        if (!cancelled) setStadiumData({ sections: [], obstructions: [] });
+      });
+    return () => {
+      cancelled = true;
+    };
+  }, [stadiumId]);
 
   // Fetch weather data for game
   useEffect(() => {
@@ -104,15 +133,14 @@ export const SeatRecommendationsSection: React.FC<SeatRecommendationsSectionProp
   // there was never a loading window to represent: the only real async work is
   // the weather fetch above, and `weatherLoading` already tracks that.
   const recommendations = useMemo(() => {
-    if (!sections || sections.length === 0 || !weather) return [];
+    if (!sections || sections.length === 0 || !weather || !stadiumData) return [];
 
     try {
       // Get stadium data
       const stadium = MLB_STADIUMS.find(s => s.id === stadiumId);
       if (!stadium) return [];
 
-      // Get complete stadium data with sections and obstructions
-      const { sections: detailedSections, obstructions } = getStadiumCompleteData(stadiumId, 'MLB');
+      const { sections: detailedSections, obstructions } = stadiumData;
 
       // Create recommendation context
       const context: RecommendationContext = {
@@ -145,7 +173,7 @@ export const SeatRecommendationsSection: React.FC<SeatRecommendationsSectionProp
       console.error('Failed to generate AI recommendations:', error);
       return [];
     }
-  }, [sections, preferences, gameTime, gameDate, stadiumId, weather]);
+  }, [sections, preferences, gameTime, gameDate, stadiumId, weather, stadiumData]);
 
   const handlePreferencesChange = useCallback((newPreferences: UserPreferences) => {
     setPreferences(newPreferences);
@@ -300,7 +328,7 @@ export const SeatRecommendationsSection: React.FC<SeatRecommendationsSectionProp
 
       {/* Recommendations */}
       <div className="recommendations-content">
-        {weatherLoading ? (
+        {weatherLoading || !stadiumData ? (
           <div className="flex justify-center py-8">
             <LoadingSpinner message="Generating personalized recommendations..." />
           </div>

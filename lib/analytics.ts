@@ -25,6 +25,23 @@ class GoogleAnalyticsBackend implements AnalyticsBackend {
   private apiSecret: string;
 
   constructor(measurementId: string, apiSecret: string) {
+    // The Measurement Protocol api_secret is a SERVER credential. It is read
+    // from `GA_API_SECRET` (deliberately no NEXT_PUBLIC_ prefix, so Next.js
+    // never inlines it into a client bundle) and this module is imported only
+    // by `app/api/metrics/route.ts`.
+    //
+    // This tripwire makes that constraint enforceable rather than conventional:
+    // if a client component ever imports this module, the secret would be
+    // compiled into the browser bundle and readable in DevTools. Fail loudly
+    // instead of leaking quietly.
+    if (typeof window !== 'undefined') {
+      throw new Error(
+        'GoogleAnalyticsBackend is server-only: it holds the GA Measurement ' +
+        'Protocol api_secret. Send metrics via /api/metrics instead of ' +
+        'importing lib/analytics from client code.'
+      );
+    }
+
     this.measurementId = measurementId;
     this.apiSecret = apiSecret;
   }

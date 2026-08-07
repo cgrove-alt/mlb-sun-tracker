@@ -6,7 +6,11 @@
 /* Import existing styles from CRA */
 @import url('../src/index.css');
 @import url('../src/App.css');
-@import url('../components/ErrorBoundary.css');
+/* ErrorBoundary styles are imported by src/components/ErrorBoundary.tsx itself.
+   A second, older copy (components/ErrorBoundary.css, 116 lines) used to be
+   pulled in here as well, so two different stylesheets defined the same
+   .error-boundary-* classes and the winner depended on load order. Deleted; the
+   component-scoped 192-line file is the single source. */
 
 /* Import critical design system files */
 @import url('../src/styles/tokens.css');
@@ -1643,5 +1647,78 @@ section strong {
     font-size: 1.1rem !important; /* ~17.6px */
     margin-top: 1.75rem !important;
     margin-bottom: 0.75rem !important;
+  }
+}
+/* Homepage intro — previously `sr-only`, so the venue counts, methodology and
+   popular-venue links reached crawlers and screen readers but never sighted
+   users (audit H24). Now a visible section. */
+.home-intro {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 2.5rem 1.25rem 1rem;
+}
+
+.home-intro__title {
+  font-size: clamp(1.35rem, 3.2vw, 1.9rem);
+  font-weight: 700;
+  line-height: 1.25;
+  margin: 0 0 0.75rem;
+}
+
+.home-intro__lead {
+  max-width: 68ch;
+  margin: 0 0 2rem;
+  line-height: 1.65;
+  color: #334155;
+}
+
+.home-intro__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.75rem 2.5rem;
+}
+
+.home-intro__subtitle {
+  font-size: 1.05rem;
+  font-weight: 650;
+  margin: 0 0 0.6rem;
+}
+
+.home-intro__col p {
+  margin: 0;
+  line-height: 1.65;
+  color: #334155;
+}
+
+.home-intro__links {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.home-intro__links li + li {
+  margin-top: 0.45rem;
+}
+
+.home-intro__links a,
+.home-intro__col p a {
+  color: #1d4ed8;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.home-intro__links a:hover,
+.home-intro__col p a:hover {
+  color: #1e3a8a;
+}
+
+@media (prefers-color-scheme: dark) {
+  .home-intro__lead,
+  .home-intro__col p {
+    color: #cbd5e1;
+  }
+  .home-intro__links a,
+  .home-intro__col p a {
+    color: #93c5fd;
   }
 }

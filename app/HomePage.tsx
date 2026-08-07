@@ -40,7 +40,7 @@ export default function HomePage() {
   return (
     <>
       <HomepageSchema />
-      <main>
+      <div>
         {/* Hero Section */}
         <section className="hero-section">
           <div className="hero-content">
@@ -59,31 +59,47 @@ export default function HomePage() {
           </div>
         </section>
 
-        {/* SEO-optimized content section */}
-        <div className="sr-only">
-          <h2>Find Shaded Seats at MLB, MiLB &amp; NFL Stadiums</h2>
-          <p>
+        {/*
+          This section used to be `className="sr-only"` — the venue counts, the
+          methodology summary and the popular-venue links were written for
+          crawlers and screen readers but hidden from sighted users, leaving the
+          homepage as just a headline, one line of copy and a button. It is real
+          content that answers "what is this and does it cover my team", so it
+          is now visible to everyone. The markup is unchanged, only the
+          presentation.
+        */}
+        <section className="home-intro" aria-labelledby="home-intro-title">
+          <h2 id="home-intro-title" className="home-intro__title">
+            Find Shaded Seats at MLB, MiLB &amp; NFL Stadiums
+          </h2>
+          <p className="home-intro__lead">
             The Shadium helps you find the best shaded seats at {VENUE_COUNT} venues across Major League
             Baseball (all {MLB_COUNT} ballparks), Minor League Baseball ({MILB_COUNT} parks), and the NFL ({NFL_COUNT} stadiums).
             Pick your stadium and game time to see which sections will be in the shade.
           </p>
 
-          <h3>Popular venue shade guides</h3>
-          <ul>
-            <li><Link href="/stadium/yankees">Are my seats shaded at Yankee Stadium? (MLB)</Link></li>
-            <li><Link href="/stadium/dodgers">Find shaded seats at Dodger Stadium (MLB)</Link></li>
-            <li><Link href="/stadium/metlife-stadium-giants">Shaded sections at MetLife Stadium (NFL)</Link></li>
-            <li><Link href="/stadium/las-vegas-aviators">Las Vegas Ballpark shade finder (MiLB)</Link></li>
-            <li><Link href="/stadium/sofi-stadium-rams">SoFi Stadium sun exposure guide (NFL)</Link></li>
-          </ul>
-          
-          <h3>How it works</h3>
-          <p>
-            Choose your stadium and game time, and The Shadium factors in the sun&apos;s angle, the
-            stadium&apos;s orientation, roof and overhang coverage, and the weather to show where the
-            shade will be. <Link href="/how-it-works">Read the full methodology</Link>.
-          </p>
-        </div>
+          <div className="home-intro__grid">
+            <div className="home-intro__col">
+              <h3 className="home-intro__subtitle">Popular venue shade guides</h3>
+              <ul className="home-intro__links">
+                <li><Link href="/stadium/yankees">Are my seats shaded at Yankee Stadium? (MLB)</Link></li>
+                <li><Link href="/stadium/dodgers">Find shaded seats at Dodger Stadium (MLB)</Link></li>
+                <li><Link href="/stadium/metlife-stadium-giants">Shaded sections at MetLife Stadium (NFL)</Link></li>
+                <li><Link href="/stadium/las-vegas-aviators">Las Vegas Ballpark shade finder (MiLB)</Link></li>
+                <li><Link href="/stadium/sofi-stadium-rams">SoFi Stadium sun exposure guide (NFL)</Link></li>
+              </ul>
+            </div>
+
+            <div className="home-intro__col">
+              <h3 className="home-intro__subtitle">How it works</h3>
+              <p>
+                Choose your stadium and game time, and The Shadium factors in the sun&apos;s angle, the
+                stadium&apos;s orientation, roof and overhang coverage, and the weather to show where the
+                shade will be. <Link href="/how-it-works">Read the full methodology</Link>.
+              </p>
+            </div>
+          </div>
+        </section>
 
         <div id="app-section" className={showApp ? 'app-visible' : 'app-hidden'}>
           <ErrorBoundary level="section">
@@ -93,7 +109,7 @@ export default function HomePage() {
           </ErrorBoundary>
         </div>
         <PWAInstallPrompt />
-      </main>
+      </div>
 
       <style jsx>{`
         .hero-section {

@@ -649,7 +649,7 @@ export const NFL_OBSTRUCTIONS: Record<string, Obstruction[]> = {
       opacity: 0.8
     }
   ],
-  'metlife-stadium': [
+  'metlife-stadium-giants': [
     {
       id: 'upper-tier-overhang',
       type: 'upper_deck',
@@ -660,7 +660,7 @@ export const NFL_OBSTRUCTIONS: Record<string, Obstruction[]> = {
       opacity: 0.85
     }
   ],
-  'paul-brown-stadium': [
+  'paycor-stadium': [
     {
       id: 'club-level-overhang',
       type: 'overhang',
@@ -671,7 +671,7 @@ export const NFL_OBSTRUCTIONS: Record<string, Obstruction[]> = {
       opacity: 0.8
     }
   ],
-  'm-and-t-bank-stadium': [
+  'm-t-bank-stadium': [
     {
       id: 'upper-deck-structure',
       type: 'upper_deck',
@@ -693,7 +693,7 @@ export const NFL_OBSTRUCTIONS: Record<string, Obstruction[]> = {
       opacity: 0.9
     }
   ],
-  'cleveland-browns-stadium': [
+  'huntington-bank-field': [
     {
       id: 'dawg-pound-overhang',
       type: 'overhang',
@@ -737,7 +737,7 @@ export const NFL_OBSTRUCTIONS: Record<string, Obstruction[]> = {
       opacity: 1
     }
   ],
-  'tiaa-bank-field': [
+  'everbank-stadium': [
     {
       id: 'pools-cabanas',
       type: 'structure',
@@ -770,7 +770,7 @@ export const NFL_OBSTRUCTIONS: Record<string, Obstruction[]> = {
       opacity: 0.6
     }
   ],
-  'arrowhead-stadium': [
+  'geha-field-arrowhead': [
     {
       id: 'upper-deck-spiral',
       type: 'upper_deck',
@@ -781,7 +781,7 @@ export const NFL_OBSTRUCTIONS: Record<string, Obstruction[]> = {
       opacity: 0.85
     }
   ],
-  'sofi-stadium': [
+  'sofi-stadium-chargers': [
     {
       id: 'translucent-canopy',
       type: 'roof',
@@ -833,7 +833,7 @@ export const NFL_OBSTRUCTIONS: Record<string, Obstruction[]> = {
       opacity: 0.85
     }
   ],
-  'fedex-field': [
+  'northwest-stadium': [
     {
       id: 'upper-deck-structure',
       type: 'upper_deck',
@@ -908,7 +908,7 @@ export const NFL_OBSTRUCTIONS: Record<string, Obstruction[]> = {
       opacity: 0.8
     }
   ],
-  'mercedes-benz-superdome': [
+  'caesars-superdome': [
     {
       id: 'dome-roof',
       type: 'roof',
@@ -984,6 +984,14 @@ export const NFL_OBSTRUCTIONS: Record<string, Obstruction[]> = {
     }
   ]
 };
+
+// MetLife Stadium and SoFi Stadium each host two franchises, so the venue data
+// carries a separate id per team. Obstructions are a property of the building,
+// not the tenant, so the second id reuses the same entry rather than a copy that
+// could drift. Before this, the file keyed them by bare venue name and BOTH
+// team lookups missed, silently returning no obstructions.
+NFL_OBSTRUCTIONS['metlife-stadium-jets'] = NFL_OBSTRUCTIONS['metlife-stadium-giants'];
+NFL_OBSTRUCTIONS['sofi-stadium-rams'] = NFL_OBSTRUCTIONS['sofi-stadium-chargers'];
 
 // Get obstructions for any stadium
 export function getStadiumObstructions(stadiumId: string): Obstruction[] {

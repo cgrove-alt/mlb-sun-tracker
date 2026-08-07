@@ -42,7 +42,7 @@ const breadcrumbJsonLd = {
 
 export default function GuidesPage() {
   return (
-    <main className="guide-page">
+    <div className="guide-page">
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }} />
       <div className="guide-container">
         <nav className="flex flex-wrap items-center gap-3 text-sm text-ink-700 mb-6" aria-label="Breadcrumb">
@@ -84,6 +84,6 @@ export default function GuidesPage() {
           </Link>
         </section>
       </div>
-    </main>
+    </div>
   );
 }

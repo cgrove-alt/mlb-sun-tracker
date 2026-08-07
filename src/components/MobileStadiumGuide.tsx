@@ -31,25 +31,17 @@ interface WeatherData {
 const MobileStadiumGuide: React.FC<MobileStadiumGuideProps> = ({ stadium, sections, amenities }) => {
   const [selectedMonth, setSelectedMonth] = useState(new Date().getMonth());
   const [selectedTime, setSelectedTime] = useState('13:00');
-  const [averageWeather, setAverageWeather] = useState<WeatherData | null>(null);
   const [expandedSection, setExpandedSection] = useState<string | null>(null);
   const [filterCriteria, setFilterCriteria] = useState<SunFilterCriteria>({});
   const [filteredSections, setFilteredSections] = useState(sections);
   const guideContentRef = useRef<HTMLDivElement>(null);
 
-  useEffect(() => {
-    const monthlyAverages: Record<number, WeatherData> = {
-      3: { temperature: 65, conditions: 'Partly Cloudy', cloudCover: 30 },
-      4: { temperature: 72, conditions: 'Clear', cloudCover: 15 },
-      5: { temperature: 78, conditions: 'Clear', cloudCover: 10 },
-      6: { temperature: 85, conditions: 'Clear', cloudCover: 5 },
-      7: { temperature: 87, conditions: 'Clear', cloudCover: 10 },
-      8: { temperature: 82, conditions: 'Partly Cloudy', cloudCover: 20 },
-      9: { temperature: 73, conditions: 'Partly Cloudy', cloudCover: 25 },
-    };
-    
-    setAverageWeather(monthlyAverages[selectedMonth] || monthlyAverages[6]);
-  }, [selectedMonth]);
+  // REMOVED: a hardcoded `monthlyAverages` table that reported the SAME
+  // temperature, sky condition and cloud cover for every stadium — Phoenix in
+  // July read identically to Seattle and Detroit. It was rendered next to the
+  // venue name as though it described that park, so it actively misinformed.
+  // Real per-park climate normals would need a climate data source; until there
+  // is one, showing nothing beats showing invented numbers.
 
   // Filter sections based on criteria
   useEffect(() => {
@@ -200,22 +192,6 @@ const MobileStadiumGuide: React.FC<MobileStadiumGuideProps> = ({ stadium, sectio
             ))}
           </select>
         </div>
-        {averageWeather && (
-          <div className="weather-info">
-            <div className="weather-stat">
-              <SunIcon size={24} />
-              <span>{averageWeather.temperature}°F</span>
-            </div>
-            <div className="weather-stat">
-              <CloudIcon size={24} />
-              <span>{averageWeather.conditions}</span>
-            </div>
-            <div className="weather-stat">
-              <DropletIcon size={24} />
-              <span>{averageWeather.cloudCover}% clouds</span>
-            </div>
-          </div>
-        )}
       </div>
 
       {/* Are My Seats Shaded FAQ */}

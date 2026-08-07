@@ -73,7 +73,7 @@ export const metadata: Metadata = {
 
 export default function HowToFindShadedSeatsPage() {
   return (
-    <main className="guide-page">
+    <div className="guide-page">
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(howToJsonLd) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }} />
       <div className="guide-container">
@@ -205,6 +205,6 @@ export default function HowToFindShadedSeatsPage() {
           </div>
         </article>
       </div>
-    </main>
+    </div>
   );
 }

@@ -1,7 +1,7 @@
 import SunCalc from 'suncalc';
 import { Stadium } from '../data/stadiums';
 import type { StadiumSection } from '../data/stadiumSectionTypes';
-import { isSectionInSun, getSectionSunExposure } from './sectionSunCalculations';
+import { isSectionInSun, getSectionSunExposure, sectionCompassAngle } from './sectionSunCalculations';
 import { WeatherData } from '../services/weatherApi';
 import { getVenueSections } from '../data/venueSections';
 import { SunCalculator } from './sunCalculator';
@@ -208,11 +208,22 @@ function getSectionSide(section: StadiumSection): 'home' | 'first' | 'third' | '
   }
 }
 
-// Helper function to calculate section angle
+// Helper function to calculate section angle.
+//
+// `section.baseAngle` is STADIUM-LOCAL (0 = 1B, 90 = CF, 180 = 3B, 270 = behind
+// home), not a compass bearing — see the convention block at the top of
+// sectionSunCalculations.ts, which is the single source of truth and which
+// calculateRowShadows() already follows.
+//
+// This function used to return the raw local angle and ignore
+// `stadiumOrientation` entirely, on the mistaken comment that base angles were
+// "already in absolute compass coordinates". Everything downstream (the
+// SunCalculator class, and therefore the main UnifiedApp/MobileApp shade
+// display) then compared a stadium-local angle against a compass sun azimuth,
+// so a park's orientation had no effect on which side of the bowl was reported
+// shaded. Converting here makes this path agree with the API/regression path.
 function getSectionAngle(section: StadiumSection, stadiumOrientation: number): number {
-  // Section angles are already in absolute compass coordinates
-  // Just return the section's center angle
-  return (section.baseAngle + section.angleSpan / 2) % 360;
+  return sectionCompassAngle(section, stadiumOrientation);
 }
 
 // Calculate sun exposure for entire game duration

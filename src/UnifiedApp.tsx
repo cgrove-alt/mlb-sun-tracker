@@ -306,7 +306,7 @@ function UnifiedAppContent() {
       <OfflineIndicator />
       {/* Duplicate header removed - StickyTopNav in layout.tsx provides global navigation */}
 
-      <main className="App-main">
+      <div className="App-main">
         <div className="sun-tracker-container">
           {changingVenue && (
             <VenueChangeSkeleton venueName={selectedVenue?.name} />
@@ -458,7 +458,7 @@ function UnifiedAppContent() {
             </div>
           )}
         </div>
-      </main>
+      </div>
     </div>
   );
 }

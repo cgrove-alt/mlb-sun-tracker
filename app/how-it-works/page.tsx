@@ -11,7 +11,7 @@ export const metadata: Metadata = {
 
 export default function HowItWorksPage() {
   return (
-    <main style={{ maxWidth: 820, margin: '0 auto', padding: '2rem 1.25rem', lineHeight: 1.65 }}>
+    <div style={{ maxWidth: 820, margin: '0 auto', padding: '2rem 1.25rem', lineHeight: 1.65 }}>
       <nav aria-label="Breadcrumb" style={{ fontSize: '0.875rem', marginBottom: '1rem' }}>
         <Link href="/">Home</Link> / <span>How It Works</span>
       </nav>
@@ -91,6 +91,6 @@ export default function HowItWorksPage() {
       <p>
         Ready to check your seats? <Link href="/stadiums">Browse all stadium shade guides →</Link>
       </p>
-    </main>
+    </div>
   );
 }

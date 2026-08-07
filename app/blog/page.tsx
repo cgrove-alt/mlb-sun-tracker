@@ -39,7 +39,7 @@ export default function BlogPage() {
   const categories = getCategories();
 
   return (
-    <main className="blog-page">
+    <div className="blog-page">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
@@ -155,6 +155,6 @@ export default function BlogPage() {
           </aside>
         </div>
       </div>
-    </main>
+    </div>
   );
 }

@@ -37,12 +37,15 @@ export const TableOfContents: React.FC<TableOfContentsProps> = ({
     const container = containerRef?.current || document;
     const elements = container.querySelectorAll(selector);
     
-    const items: TocItem[] = Array.from(elements).map((elem) => {
+    const items: TocItem[] = Array.from(elements).map((elem, index) => {
       const heading = elem as HTMLHeadingElement;
       if (!heading.id) {
+        // Fall back to the heading's position, not Math.random(): a random id
+        // changes on every run, so the anchor a reader copied stops resolving
+        // and the id differs between server-rendered and client markup.
         heading.id = heading.textContent?.toLowerCase()
           .replace(/[^\w\s-]/g, '')
-          .replace(/\s+/g, '-') || `heading-${Math.random()}`;
+          .replace(/\s+/g, '-') || `heading-${index + 1}`;
       }
       
       return {

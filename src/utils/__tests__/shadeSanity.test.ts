@@ -99,12 +99,12 @@ describe('the model differentiates bowl sides for every park at evening sun', ()
   const date = new Date('2025-07-04');
 
   for (const stadium of MLB_STADIUMS) {
-    it(`${stadium.id}: real sections show a meaningful sun/shade spread`, () => {
+    it(`${stadium.id}: real sections show a meaningful sun/shade spread`, async () => {
       const utc = stadiumLocalDateAndTimeToUTC(date, 19, 0, stadium.timezone || 'UTC');
       const sun = getSunPosition(utc, stadium.latitude, stadium.longitude);
       if (sun.altitudeDegrees <= 0) return;
 
-      const sections = getStadiumSections(stadium.id, 'MLB');
+      const sections = await getStadiumSections(stadium.id, 'MLB');
       const exposures = sections.map((s) => {
         const r = calculateRowShadows(s, sun.altitudeDegrees, sun.azimuthDegrees, stadium.orientation || 0);
         return 100 - r.averageCoverage;

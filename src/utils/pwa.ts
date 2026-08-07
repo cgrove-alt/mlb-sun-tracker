@@ -26,6 +26,12 @@ class PWAInstallManager implements PWAManager {
   private installKey = 'pwa_installed';
 
   constructor() {
+    // `export const pwaManager = new PWAInstallManager()` runs at module import,
+    // which on the server means this constructor executes during SSR where
+    // `sessionStorage`, `window` and `document` do not exist. Guard the whole
+    // browser-only body rather than each API.
+    if (typeof window === 'undefined') return;
+
     // Check if already installed
     if (this.isStandalone()) {
       sessionStorage.setItem(this.installKey, 'true');
@@ -148,10 +154,12 @@ class PWAInstallManager implements PWAManager {
   }
 
   private isDismissedThisSession(): boolean {
+    if (typeof window === 'undefined') return false;
     return sessionStorage.getItem(this.sessionKey) === 'true';
   }
 
   private isAlreadyInstalled(): boolean {
+    if (typeof window === 'undefined') return false;
     // Check if already installed
     return (
       sessionStorage.getItem(this.installKey) === 'true' ||
@@ -160,6 +168,7 @@ class PWAInstallManager implements PWAManager {
   }
 
   private isStandalone(): boolean {
+    if (typeof window === 'undefined' || typeof document === 'undefined') return false;
     // Check if app is running in standalone mode (already installed)
     return (
       window.matchMedia('(display-mode: standalone)').matches ||

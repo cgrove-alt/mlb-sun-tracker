@@ -106,19 +106,22 @@ export const EnhancedSunFilter: React.FC<EnhancedSunFilterProps> = ({
     setActiveChips(chips);
   }, [sunPreference, customMin, customMax, selectedLevels, coveredPreference, selectedPriceRanges]);
 
-  // Check if mobile on mount and resize
+  // Track a narrow viewport in state.
+  //
+  // This effect used to compute `mobile` and throw it away, while the render
+  // path below read `window.innerWidth` directly. That crashed during SSR
+  // (no `window`) and, once past that, made the server and client disagree
+  // about which layout to render. Starting at `false` means the server and the
+  // first client render always agree; the effect then corrects it on mount.
+  const [isNarrowViewport, setIsNarrowViewport] = useState(false);
+
   useEffect(() => {
-    const checkMobile = () => {
-      const mobile = window.innerWidth < 768;
-      if (mobile !== isMobile) {
-        // Mobile state changed, could trigger re-render if needed
-      }
-    };
-    
+    const checkMobile = () => setIsNarrowViewport(window.innerWidth < 768);
+
     checkMobile();
     window.addEventListener('resize', checkMobile);
     return () => window.removeEventListener('resize', checkMobile);
-  }, [isMobile]);
+  }, []);
 
   // Handle drawer backdrop click
   useEffect(() => {
@@ -538,7 +541,7 @@ export const EnhancedSunFilter: React.FC<EnhancedSunFilterProps> = ({
   );
 
   // Mobile drawer version
-  if (isMobile || window.innerWidth < 768) {
+  if (isMobile || isNarrowViewport) {
     return (
       <>
         {/* Filter chips */}

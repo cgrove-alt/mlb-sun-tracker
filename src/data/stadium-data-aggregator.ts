@@ -3,164 +3,133 @@
 
 import { DetailedSection, Obstruction3D, StadiumComplete } from '../types/stadium-complete';
 
-// Import MLB sections
-import { yankeesSections } from './sections/mlb/yankees';
-import { fenwayParkSections } from './sections/mlb/fenway-park';
-import { dodgersSections } from './sections/mlb/dodgers';
-import { wrigleyFieldSections } from './sections/mlb/wrigley-field';
-import { metsSections } from './sections/mlb/mets';
-import { oracleParkSections } from './sections/mlb/oracle-park';
-import { padresSections } from './sections/mlb/padres';
-import { oriolesSections } from './sections/mlb/orioles';
-import { pncParkSections } from './sections/mlb/pnc-park';
-import { astrosSections } from './sections/mlb/astros';
-import { truistParkSections } from './sections/mlb/truist-park';
-import { rockiesSections } from './sections/mlb/rockies';
-import { twinsSections } from './sections/mlb/twins';
-import { greatAmericanBallparkSections } from './sections/mlb/great-american-ballpark';
-import { guardiansSections } from './sections/mlb/guardians';
-import { philliesSections } from './sections/mlb/phillies';
-import { nationalsSections } from './sections/mlb/nationals';
-import { rangersSections } from './sections/mlb/rangers';
-import { angelsSections } from './sections/mlb/angels';
-import { brewersSections } from './sections/mlb/brewers';
-import { buschstadiumSections } from './sections/mlb/busch-stadium';
-import { diamondbacksSections } from './sections/mlb/diamondbacks';
-import { tigersSections } from './sections/mlb/tigers';
-import { whitesoxSections } from './sections/mlb/whitesox';
-import { royalsSections } from './sections/mlb/royals';
-import { marlinsSections } from './sections/mlb/marlins';
-import { bluejaysSections } from './sections/mlb/bluejays';
-import { athleticsSections } from './sections/mlb/athletics';
-import { marinersSections } from './sections/mlb/mariners';
-import { raysSections } from './sections/mlb/rays';
-import { cubsSections } from './sections/mlb/cubs';
-import { giantsSections } from './sections/mlb/giants';
-import { redsoxSections } from './sections/mlb/redsox';
-import { redsSections } from './sections/mlb/reds';
-import { cardinalsSections } from './sections/mlb/cardinals';
-import { bravesSections } from './sections/mlb/braves';
-import { piratesSections } from './sections/mlb/pirates';
 
 // Import MiLB sections
-import { lasvegasaviatorsSections } from './sections/milb/aaa/las-vegas-aviators';
 // Import other MiLB stadiums as they're created...
 
 // Import NFL sections
-import { sofiStadiumSections } from './sections/nfl/sofi-stadium';
 // Import other NFL stadiums as they're created...
 
 // Import obstructions
-import { yankeeStadiumObstructions } from './obstructions/mlb/yankees-obstructions';
-import { redsoxObstructions } from './obstructions/mlb/redsox-obstructions';
-import { dodgersObstructions } from './obstructions/mlb/dodgers-obstructions';
-import { cubsObstructions } from './obstructions/mlb/cubs-obstructions';
-import { metsObstructions } from './obstructions/mlb/mets-obstructions';
-import { giantsObstructions } from './obstructions/mlb/giants-obstructions';
-import { padresObstructions } from './obstructions/mlb/padres-obstructions';
-import { oriolesObstructions } from './obstructions/mlb/orioles-obstructions';
-import { piratesObstructions } from './obstructions/mlb/pirates-obstructions';
-import { astrosObstructions } from './obstructions/mlb/astros-obstructions';
-import { bravesObstructions } from './obstructions/mlb/braves-obstructions';
-import { rockiesObstructions } from './obstructions/mlb/rockies-obstructions';
-import { twinsObstructions } from './obstructions/mlb/twins-obstructions';
-import { redsObstructions } from './obstructions/mlb/reds-obstructions';
-import { guardiansObstructions } from './obstructions/mlb/guardians-obstructions';
-import { philliesObstructions } from './obstructions/mlb/phillies-obstructions';
-import { nationalsObstructions } from './obstructions/mlb/nationals-obstructions';
-import { rangersObstructions } from './obstructions/mlb/rangers-obstructions';
-import { angelsObstructions } from './obstructions/mlb/angels-obstructions';
-import { brewersObstructions } from './obstructions/mlb/brewers-obstructions';
-import { cardinalsObstructions } from './obstructions/mlb/cardinals-obstructions';
-import { diamondbacksObstructions } from './obstructions/mlb/diamondbacks-obstructions';
-import { tigersObstructions } from './obstructions/mlb/tigers-obstructions';
-import { whitesoxObstructions } from './obstructions/mlb/whitesox-obstructions';
-import { royalsObstructions } from './obstructions/mlb/royals-obstructions';
-import { marlinsObstructions } from './obstructions/mlb/marlins-obstructions';
-import { bluejaysObstructions } from './obstructions/mlb/bluejays-obstructions';
-import { athleticsObstructions } from './obstructions/mlb/athletics-obstructions';
-import { marinersObstructions } from './obstructions/mlb/mariners-obstructions';
-import { raysObstructions } from './obstructions/mlb/rays-obstructions';
 
 // Section data registry
-const SECTION_REGISTRY: Record<string, DetailedSection[]> = {
+// ---------------------------------------------------------------------------
+// Lazy per-stadium data loaders.
+//
+// These used to be 69 static imports feeding two eagerly-populated registries.
+// Because every export of this module then depended on all of them, ANY caller
+// pulled all 30 MLB section files plus 29 obstruction files — one ~988 KB chunk
+// containing every stadium — just to read one stadium's sections.
+//
+// As dynamic imports, webpack emits one small chunk per stadium and only the
+// requested park is fetched. `hasSpecificData` deliberately reads the KEYS of
+// these maps, which costs no data at all.
+// ---------------------------------------------------------------------------
+
+type SectionLoader = () => Promise<DetailedSection[]>;
+type ObstructionLoader = () => Promise<Obstruction3D[]>;
+
+const SECTION_LOADERS: Record<string, SectionLoader> = {
+
   // MLB
-  'yankees': yankeesSections,
-  'redsox': redsoxSections || fenwayParkSections,
-  'dodgers': dodgersSections,
-  'cubs': cubsSections || wrigleyFieldSections,
-  'mets': metsSections,
-  'giants': giantsSections || oracleParkSections,
-  'padres': padresSections,
-  'orioles': oriolesSections,
-  'pirates': piratesSections || pncParkSections,
-  'astros': astrosSections,
-  'braves': bravesSections || truistParkSections,
-  'rockies': rockiesSections,
-  'twins': twinsSections,
-  'reds': redsSections || greatAmericanBallparkSections,
-  'guardians': guardiansSections,
-  'phillies': philliesSections,
-  'nationals': nationalsSections,
-  'rangers': rangersSections,
-  'angels': angelsSections,
-  'brewers': brewersSections,
-  'cardinals': cardinalsSections || buschstadiumSections,
-  'diamondbacks': diamondbacksSections,
-  'tigers': tigersSections,
+  'yankees': () => import('./sections/mlb/yankees').then(m => m.yankeesSections),
+  'redsox': () =>
+    import('./sections/mlb/redsox').then(
+      m => m.redsoxSections ?? import('./sections/mlb/fenway-park').then(f => f.fenwayParkSections),
+    ),
+  'dodgers': () => import('./sections/mlb/dodgers').then(m => m.dodgersSections),
+  'cubs': () =>
+    import('./sections/mlb/cubs').then(
+      m => m.cubsSections ?? import('./sections/mlb/wrigley-field').then(f => f.wrigleyFieldSections),
+    ),
+  'mets': () => import('./sections/mlb/mets').then(m => m.metsSections),
+  'giants': () =>
+    import('./sections/mlb/giants').then(
+      m => m.giantsSections ?? import('./sections/mlb/oracle-park').then(f => f.oracleParkSections),
+    ),
+  'padres': () => import('./sections/mlb/padres').then(m => m.padresSections),
+  'orioles': () => import('./sections/mlb/orioles').then(m => m.oriolesSections),
+  'pirates': () =>
+    import('./sections/mlb/pirates').then(
+      m => m.piratesSections ?? import('./sections/mlb/pnc-park').then(f => f.pncParkSections),
+    ),
+  'astros': () => import('./sections/mlb/astros').then(m => m.astrosSections),
+  'braves': () =>
+    import('./sections/mlb/braves').then(
+      m => m.bravesSections ?? import('./sections/mlb/truist-park').then(f => f.truistParkSections),
+    ),
+  'rockies': () => import('./sections/mlb/rockies').then(m => m.rockiesSections),
+  'twins': () => import('./sections/mlb/twins').then(m => m.twinsSections),
+  'reds': () =>
+    import('./sections/mlb/reds').then(
+      m => m.redsSections ?? import('./sections/mlb/great-american-ballpark').then(f => f.greatAmericanBallparkSections),
+    ),
+  'guardians': () => import('./sections/mlb/guardians').then(m => m.guardiansSections),
+  'phillies': () => import('./sections/mlb/phillies').then(m => m.philliesSections),
+  'nationals': () => import('./sections/mlb/nationals').then(m => m.nationalsSections),
+  'rangers': () => import('./sections/mlb/rangers').then(m => m.rangersSections),
+  'angels': () => import('./sections/mlb/angels').then(m => m.angelsSections),
+  'brewers': () => import('./sections/mlb/brewers').then(m => m.brewersSections),
+  'cardinals': () =>
+    import('./sections/mlb/cardinals').then(
+      m => m.cardinalsSections ?? import('./sections/mlb/busch-stadium').then(f => f.buschstadiumSections),
+    ),
+  'diamondbacks': () => import('./sections/mlb/diamondbacks').then(m => m.diamondbacksSections),
+  'tigers': () => import('./sections/mlb/tigers').then(m => m.tigersSections),
   // Rays returned to Tropicana Field (fixed-roof dome) for 2026. The Steinbrenner
   // Field fallback (their 2025 temporary home) is intentionally removed — that
   // venue is now only the Tampa Tarpons' (MiLB) home, not the Rays'.
-  'rays': raysSections,
-  'whitesox': whitesoxSections,
-  'royals': royalsSections,
-  'marlins': marlinsSections,
-  'bluejays': bluejaysSections,
-  'athletics': athleticsSections,
-  'mariners': marinersSections,
+  'rays': () => import('./sections/mlb/rays').then(m => m.raysSections),
+  'whitesox': () => import('./sections/mlb/whitesox').then(m => m.whitesoxSections),
+  'royals': () => import('./sections/mlb/royals').then(m => m.royalsSections),
+  'marlins': () => import('./sections/mlb/marlins').then(m => m.marlinsSections),
+  'bluejays': () => import('./sections/mlb/bluejays').then(m => m.bluejaysSections),
+  'athletics': () => import('./sections/mlb/athletics').then(m => m.athleticsSections),
+  'mariners': () => import('./sections/mlb/mariners').then(m => m.marinersSections),
   
   // MiLB
-  'las-vegas-aviators': lasvegasaviatorsSections,
+  'las-vegas-aviators': () => import('./sections/milb/aaa/las-vegas-aviators').then(m => m.lasvegasaviatorsSections),
   
   // NFL
-  'sofi-stadium': sofiStadiumSections,
+  'sofi-stadium': () => import('./sections/nfl/sofi-stadium').then(m => m.sofiStadiumSections),
   
   // Add more as they're created...
 };
 
 // Obstruction data registry
-const OBSTRUCTION_REGISTRY: Record<string, Obstruction3D[]> = {
+const OBSTRUCTION_LOADERS: Record<string, ObstructionLoader> = {
+
   // MLB
-  'yankees': yankeeStadiumObstructions,
-  'redsox': redsoxObstructions,
-  'dodgers': dodgersObstructions,
-  'cubs': cubsObstructions,
-  'mets': metsObstructions,
-  'giants': giantsObstructions,
-  'padres': padresObstructions,
-  'orioles': oriolesObstructions,
-  'pirates': piratesObstructions,
-  'astros': astrosObstructions,
-  'braves': bravesObstructions,
-  'rockies': rockiesObstructions,
-  'twins': twinsObstructions,
-  'reds': redsObstructions,
-  'guardians': guardiansObstructions,
-  'phillies': philliesObstructions,
-  'nationals': nationalsObstructions,
-  'rangers': rangersObstructions,
-  'angels': angelsObstructions,
-  'brewers': brewersObstructions,
-  'cardinals': cardinalsObstructions,
-  'diamondbacks': diamondbacksObstructions,
-  'tigers': tigersObstructions,
-  'whitesox': whitesoxObstructions,
-  'royals': royalsObstructions,
-  'marlins': marlinsObstructions,
-  'bluejays': bluejaysObstructions,
-  'athletics': athleticsObstructions,
-  'mariners': marinersObstructions,
-  'rays': raysObstructions,
+  'yankees': () => import('./obstructions/mlb/yankees-obstructions').then(m => m.yankeeStadiumObstructions),
+  'redsox': () => import('./obstructions/mlb/redsox-obstructions').then(m => m.redsoxObstructions),
+  'dodgers': () => import('./obstructions/mlb/dodgers-obstructions').then(m => m.dodgersObstructions),
+  'cubs': () => import('./obstructions/mlb/cubs-obstructions').then(m => m.cubsObstructions),
+  'mets': () => import('./obstructions/mlb/mets-obstructions').then(m => m.metsObstructions),
+  'giants': () => import('./obstructions/mlb/giants-obstructions').then(m => m.giantsObstructions),
+  'padres': () => import('./obstructions/mlb/padres-obstructions').then(m => m.padresObstructions),
+  'orioles': () => import('./obstructions/mlb/orioles-obstructions').then(m => m.oriolesObstructions),
+  'pirates': () => import('./obstructions/mlb/pirates-obstructions').then(m => m.piratesObstructions),
+  'astros': () => import('./obstructions/mlb/astros-obstructions').then(m => m.astrosObstructions),
+  'braves': () => import('./obstructions/mlb/braves-obstructions').then(m => m.bravesObstructions),
+  'rockies': () => import('./obstructions/mlb/rockies-obstructions').then(m => m.rockiesObstructions),
+  'twins': () => import('./obstructions/mlb/twins-obstructions').then(m => m.twinsObstructions),
+  'reds': () => import('./obstructions/mlb/reds-obstructions').then(m => m.redsObstructions),
+  'guardians': () => import('./obstructions/mlb/guardians-obstructions').then(m => m.guardiansObstructions),
+  'phillies': () => import('./obstructions/mlb/phillies-obstructions').then(m => m.philliesObstructions),
+  'nationals': () => import('./obstructions/mlb/nationals-obstructions').then(m => m.nationalsObstructions),
+  'rangers': () => import('./obstructions/mlb/rangers-obstructions').then(m => m.rangersObstructions),
+  'angels': () => import('./obstructions/mlb/angels-obstructions').then(m => m.angelsObstructions),
+  'brewers': () => import('./obstructions/mlb/brewers-obstructions').then(m => m.brewersObstructions),
+  'cardinals': () => import('./obstructions/mlb/cardinals-obstructions').then(m => m.cardinalsObstructions),
+  'diamondbacks': () => import('./obstructions/mlb/diamondbacks-obstructions').then(m => m.diamondbacksObstructions),
+  'tigers': () => import('./obstructions/mlb/tigers-obstructions').then(m => m.tigersObstructions),
+  'whitesox': () => import('./obstructions/mlb/whitesox-obstructions').then(m => m.whitesoxObstructions),
+  'royals': () => import('./obstructions/mlb/royals-obstructions').then(m => m.royalsObstructions),
+  'marlins': () => import('./obstructions/mlb/marlins-obstructions').then(m => m.marlinsObstructions),
+  'bluejays': () => import('./obstructions/mlb/bluejays-obstructions').then(m => m.bluejaysObstructions),
+  'athletics': () => import('./obstructions/mlb/athletics-obstructions').then(m => m.athleticsObstructions),
+  'mariners': () => import('./obstructions/mlb/mariners-obstructions').then(m => m.marinersObstructions),
+  'rays': () => import('./obstructions/mlb/rays-obstructions').then(m => m.raysObstructions),
   
   // MiLB - to be added
   // NFL - to be added
@@ -376,38 +345,68 @@ function generateGenericObstructions(league: 'MLB' | 'MiLB' | 'NFL'): Obstructio
   return obstructions;
 }
 
+// In-process memo so repeated lookups for the same park don't re-await the
+// dynamic import (the module itself is cached by the bundler; this just avoids
+// re-entering the promise machinery on every render/request).
+const sectionCache = new Map<string, DetailedSection[]>();
+const obstructionCache = new Map<string, Obstruction3D[]>();
+
 // Main function to get complete stadium data
-export function getStadiumCompleteData(
+export async function getStadiumCompleteData(
   stadiumId: string,
   league: 'MLB' | 'MiLB' | 'NFL'
-): { sections: DetailedSection[], obstructions: Obstruction3D[] } {
-  // Try to get specific sections
-  const sections = SECTION_REGISTRY[stadiumId] || generateGenericSections(stadiumId, league);
-  
-  // Try to get specific obstructions
-  const obstructions = OBSTRUCTION_REGISTRY[stadiumId] || generateGenericObstructions(league);
-  
+): Promise<{ sections: DetailedSection[], obstructions: Obstruction3D[] }> {
+  const [sections, obstructions] = await Promise.all([
+    getStadiumSections(stadiumId, league),
+    getStadiumObstructions(stadiumId, league),
+  ]);
   return { sections, obstructions };
 }
 
 // Get sections only
-export function getStadiumSections(stadiumId: string, league: 'MLB' | 'MiLB' | 'NFL'): DetailedSection[] {
-  return SECTION_REGISTRY[stadiumId] || generateGenericSections(stadiumId, league);
+export async function getStadiumSections(
+  stadiumId: string,
+  league: 'MLB' | 'MiLB' | 'NFL'
+): Promise<DetailedSection[]> {
+  const cached = sectionCache.get(stadiumId);
+  if (cached) return cached;
+
+  const loader = SECTION_LOADERS[stadiumId];
+  const sections = loader
+    ? await loader()
+    : generateGenericSections(stadiumId, league);
+
+  sectionCache.set(stadiumId, sections);
+  return sections;
 }
 
 // Get obstructions only
-export function getStadiumObstructions(stadiumId: string, league: 'MLB' | 'MiLB' | 'NFL'): Obstruction3D[] {
-  return OBSTRUCTION_REGISTRY[stadiumId] || generateGenericObstructions(league);
+export async function getStadiumObstructions(
+  stadiumId: string,
+  league: 'MLB' | 'MiLB' | 'NFL'
+): Promise<Obstruction3D[]> {
+  const cached = obstructionCache.get(stadiumId);
+  if (cached) return cached;
+
+  const loader = OBSTRUCTION_LOADERS[stadiumId];
+  const obstructions = loader
+    ? await loader()
+    : generateGenericObstructions(league);
+
+  obstructionCache.set(stadiumId, obstructions);
+  return obstructions;
 }
 
-// Check if stadium has specific data
+// Check if stadium has specific data.
+// Stays synchronous on purpose: it only needs to know WHICH ids are registered,
+// which is a property of the loader maps' keys and costs no data loading.
 export function hasSpecificData(stadiumId: string): {
   hasSections: boolean;
   hasObstructions: boolean;
 } {
   return {
-    hasSections: !!SECTION_REGISTRY[stadiumId],
-    hasObstructions: !!OBSTRUCTION_REGISTRY[stadiumId]
+    hasSections: !!SECTION_LOADERS[stadiumId],
+    hasObstructions: !!OBSTRUCTION_LOADERS[stadiumId]
   };
 }
 
@@ -419,9 +418,9 @@ export function getCoverageStats(): {
   coveragePercentage: number;
 } {
   const totalStadiums = 187; // 31 MLB + 122 MiLB + 34 NFL
-  const stadiumsWithSections = Object.keys(SECTION_REGISTRY).length;
-  const stadiumsWithObstructions = Object.keys(OBSTRUCTION_REGISTRY).length;
-  
+  const stadiumsWithSections = Object.keys(SECTION_LOADERS).length;
+  const stadiumsWithObstructions = Object.keys(OBSTRUCTION_LOADERS).length;
+
   return {
     totalStadiums,
     stadiumsWithSections,
@@ -430,5 +429,6 @@ export function getCoverageStats(): {
   };
 }
 
-// Export registries for direct access if needed
-export { SECTION_REGISTRY, OBSTRUCTION_REGISTRY };
+/** Registered stadium ids, without loading any section data. */
+export const REGISTERED_SECTION_IDS: readonly string[] = Object.keys(SECTION_LOADERS);
+export const REGISTERED_OBSTRUCTION_IDS: readonly string[] = Object.keys(OBSTRUCTION_LOADERS);

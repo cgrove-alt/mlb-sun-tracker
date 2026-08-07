@@ -7,6 +7,7 @@
 import {
   classifyFidelity,
   getStadiumDataFidelity,
+  computeStadiumDataFidelity,
   STADIUM_DATA_FIDELITY,
   REAL_DATA_STADIUMS,
   fidelityNote,
@@ -58,6 +59,22 @@ describe('STADIUM_DATA_FIDELITY map', () => {
     const vals = Object.values(STADIUM_DATA_FIDELITY);
     expect(vals.filter((v) => v === 'real')).toHaveLength(3);
     expect(vals.filter((v) => v === 'approximate')).toHaveLength(MLB_STADIUMS.length - 3);
+  });
+
+  // STADIUM_DATA_FIDELITY is a checked-in table so that rendering a fidelity
+  // notice does not pull every stadium's section file into the bundle. That
+  // trade is only safe if the table cannot silently go stale: this recomputes
+  // each entry from the real section data and fails on any drift.
+  it('matches the value recomputed from the real section data', async () => {
+    const computed = await Promise.all(
+      MLB_STADIUMS.map(async (s) => [s.id, await computeStadiumDataFidelity(s.id)] as const),
+    );
+
+    const drifted = computed.filter(([id, value]) => STADIUM_DATA_FIDELITY[id] !== value);
+
+    expect(
+      drifted.map(([id, value]) => `${id}: table=${STADIUM_DATA_FIDELITY[id]} actual=${value}`),
+    ).toEqual([]);
   });
 });
 
