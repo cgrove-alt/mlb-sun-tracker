@@ -256,7 +256,10 @@ export class SeatRecommendationEngine {
       case 'third-base':
         // Third base side: 270-360 degrees
         if (angle >= 270 && angle <= 360) viewScore = 100;
-        else if (angle >= 240 && angle <= 30) viewScore = 70;
+        // Wider band 240°–30°, which wraps through 0°/360°. This needs `||`:
+        // with `&&` no angle can satisfy both bounds, so this branch was dead
+        // and every near-third-base section fell through to the 30 fallback.
+        else if (angle >= 240 || angle <= 30) viewScore = 70;
         else viewScore = 30;
         break;
       

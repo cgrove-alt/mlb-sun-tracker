@@ -299,7 +299,7 @@ export const MLB_STADIUMS: Stadium[] = [
     orientation: 46,
     capacity: 40300,
     roof: 'retractable',
-    timezone: 'America/Denver'
+    timezone: 'America/Chicago' // Central Time — was incorrectly 'America/Denver' (Mountain). Arlington, TX (DFW metroplex) observes Central; only El Paso/Hudspeth counties are Mountain.
   },
   {
     id: 'rays',
@@ -341,7 +341,7 @@ export const MLB_STADIUMS: Stadium[] = [
     orientation: 115, // ESE — refined 2026-06-23 from 105°. ballparks.com 120° + andrewclem ESE (~112°) + sun pattern (sets behind HP) center on ~115°. See provenance.
     capacity: 42319,
     roof: 'open',
-    timezone: 'America/Chicago'
+    timezone: 'America/New_York' // Eastern Time — was incorrectly 'America/Chicago' (Central). All of Ohio observes Eastern.
   },
   {
     id: 'rockies',
@@ -380,7 +380,7 @@ export const MLB_STADIUMS: Stadium[] = [
     orientation: 145,
     capacity: 41083,
     roof: 'open',
-    timezone: 'America/Chicago'
+    timezone: 'America/New_York' // Eastern Time — was incorrectly 'America/Chicago' (Central). Detroit and all of Michigan's Lower Peninsula observe Eastern; only 4 western UP counties are Central.
   },
   {
     id: 'twins',

@@ -39,7 +39,6 @@ export const SeatRecommendationsSection: React.FC<SeatRecommendationsSectionProp
     gameTimePreference: 'any'
   });
   const [showPreferences, setShowPreferences] = useState(false);
-  const [isLoading, setIsLoading] = useState(false);
   const [weather, setWeather] = useState<WeatherData | null>(null);
   const [weatherLoading, setWeatherLoading] = useState(true);
   const [weatherError, setWeatherError] = useState(false);
@@ -99,12 +98,15 @@ export const SeatRecommendationsSection: React.FC<SeatRecommendationsSectionProp
     fetchWeather();
   }, [stadiumId, gameDate, gameTime]);
 
+  // Pure derivation — no state updates in here. `useMemo` runs during render,
+  // so calling a setter inside it updates state while rendering, which React
+  // either warns about or drops. The computation below is fully synchronous, so
+  // there was never a loading window to represent: the only real async work is
+  // the weather fetch above, and `weatherLoading` already tracks that.
   const recommendations = useMemo(() => {
     if (!sections || sections.length === 0 || !weather) return [];
 
     try {
-      setIsLoading(true);
-
       // Get stadium data
       const stadium = MLB_STADIUMS.find(s => s.id === stadiumId);
       if (!stadium) return [];
@@ -142,8 +144,6 @@ export const SeatRecommendationsSection: React.FC<SeatRecommendationsSectionProp
     } catch (error) {
       console.error('Failed to generate AI recommendations:', error);
       return [];
-    } finally {
-      setIsLoading(false);
     }
   }, [sections, preferences, gameTime, gameDate, stadiumId, weather]);
 
@@ -300,7 +300,7 @@ export const SeatRecommendationsSection: React.FC<SeatRecommendationsSectionProp
 
       {/* Recommendations */}
       <div className="recommendations-content">
-        {isLoading ? (
+        {weatherLoading ? (
           <div className="flex justify-center py-8">
             <LoadingSpinner message="Generating personalized recommendations..." />
           </div>

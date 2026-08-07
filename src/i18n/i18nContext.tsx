@@ -201,14 +201,28 @@ export const LanguageSelector: React.FC<LanguageSelectorProps> = ({
             {t('app.language')}
           </span>
         )}
-        <div className="language-buttons" role="radiogroup" aria-label={t('app.selectLanguage')} aria-labelledby={showLabel ? "language-selector-label" : undefined}>
+        {/*
+          Label the group exactly once. When both aria-label and aria-labelledby
+          are present, aria-labelledby wins and the aria-label string is silently
+          discarded — two competing accessible names for one element. So use the
+          visible label when there is one, and fall back to aria-label otherwise.
+
+          Each option carries aria-checked, the correct state for role="radio".
+          aria-pressed (a toggle-button state, unsupported by this role) was also
+          set, giving assistive tech two conflicting state models per control.
+        */}
+        <div
+          className="language-buttons"
+          role="radiogroup"
+          aria-label={showLabel ? undefined : t('app.selectLanguage')}
+          aria-labelledby={showLabel ? 'language-selector-label' : undefined}
+        >
           {supportedLanguages.map((lang) => (
             <button
               key={lang.code}
               type="button"
               className={`language-button ${language === lang.code ? 'active' : ''}`}
               onClick={() => setLanguage(lang.code)}
-              aria-pressed={language === lang.code}
               role="radio"
               aria-checked={language === lang.code}
               title={`${lang.name} (${lang.nativeName})`}

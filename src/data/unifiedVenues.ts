@@ -385,7 +385,7 @@ export const ALL_UNIFIED_VENUES: UnifiedVenue[] = [
     "orientation": 356,
     "capacity": 34830,
     "roof": "open",
-    "timezone": "America/Chicago",
+    "timezone": "America/New_York",
     "seatingGeometry": {
       "bowlShape": "diamond",
       "fieldDimensions": {
@@ -655,7 +655,7 @@ export const ALL_UNIFIED_VENUES: UnifiedVenue[] = [
     "orientation": 46,
     "capacity": 40300,
     "roof": "retractable",
-    "timezone": "America/Denver",
+    "timezone": "America/Chicago",
     "seatingGeometry": {
       "bowlShape": "diamond",
       "fieldDimensions": {
@@ -745,7 +745,7 @@ export const ALL_UNIFIED_VENUES: UnifiedVenue[] = [
     "orientation": 115,
     "capacity": 42319,
     "roof": "open",
-    "timezone": "America/Chicago",
+    "timezone": "America/New_York",
     "seatingGeometry": {
       "bowlShape": "diamond",
       "fieldDimensions": {
@@ -835,7 +835,7 @@ export const ALL_UNIFIED_VENUES: UnifiedVenue[] = [
     "orientation": 145,
     "capacity": 41083,
     "roof": "open",
-    "timezone": "America/Chicago",
+    "timezone": "America/New_York",
     "seatingGeometry": {
       "bowlShape": "diamond",
       "fieldDimensions": {

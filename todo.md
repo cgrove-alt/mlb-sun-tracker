@@ -1,3 +1,171 @@
+# Phase 10: Critical Bug Fixes from July 2026 Audit (2026-08-07)
+
+**Goal:** Fix all 14 CRITICAL issues from `AUDIT-REPORT-JULY-2026.md` (C1–C14). Root causes only,
+no suppressions, no shortcuts.
+
+**Status:** ✅ COMPLETE — all 14 fixed and verified. Build, type-check, 733 tests, and lint all green.
+
+Every issue was independently re-verified against the code before being fixed, rather than trusting
+the audit report: a full timezone audit of all 396 venue records, ESLint, and two purpose-built AST
+scanners (Rules-of-Hooks, and a client/server import-boundary walk).
+
+## Tasks
+
+- [x] **C1–C7 — Wrong timezones (7 records, 4 stadiums).** Audited all 396 venue records across
+      `stadiums.ts`, `unifiedVenues.ts`, `venues.ts`, `nflStadiums.ts`, `milbStadiums.ts` against
+      state/city → IANA rules (incl. every split-timezone state). Exactly 7 were wrong; the other
+      389 were correct.
+  - [x] `stadiums.ts` Rangers `America/Denver` → `America/Chicago`
+  - [x] `stadiums.ts` Reds `America/Chicago` → `America/New_York`
+  - [x] `stadiums.ts` Tigers `America/Chicago` → `America/New_York`
+  - [x] `unifiedVenues.ts` Rangers / Guardians / Reds / Tigers — same four corrections
+- [x] **C8 — Rules of Hooks:** `useLoadingState.ts` called a hook inside a `forEach`.
+- [x] **C9 — Rules of Hooks:** `useHapticFeedback.ts` called a hook from a plain function.
+- [x] **C10 — setState inside useMemo:** `SeatRecommendationsSection.tsx`.
+- [x] **C11 — Missing `'use client'`:** `FilterDrawer.tsx`.
+- [x] **C12 — Missing `'use client'`:** `StadiumTitleBlock.tsx`.
+- [x] **C13 — Contradictory ARIA:** `SectionShadeSEO.tsx` (`sr-only` + `aria-hidden`).
+- [x] **C14 — Impossible boolean:** `seatRecommendationEngine.ts` third-base band.
+- [x] Extra ARIA contradiction found independently in `i18n/i18nContext.tsx`.
+- [x] Add `.eslintrc.json` (the repo had none).
+- [x] Add regression tests for the timezone data, the third-base scoring band, and the multi-key loading hook.
+
+## Review
+
+### C1–C7 · Wrong timezones — 4 stadiums, 7 records
+
+`src/data/stadiums.ts` and `src/data/unifiedVenues.ts` both hold MLB venue data, and both are read at
+runtime. Four stadiums carried a timezone from the wrong zone, so `getTimezoneOffset()` returned an
+offset one hour off, and every downstream solar-position and shade calculation for those parks was
+shifted by an hour.
+
+| Stadium | Was | Now | Why |
+|---|---|---|---|
+| Rangers (Globe Life Field) | `America/Denver` | `America/Chicago` | Arlington TX is Central; only El Paso/Hudspeth counties are Mountain |
+| Reds (Great American Ball Park) | `America/Chicago` | `America/New_York` | All of Ohio is Eastern |
+| Tigers (Comerica Park) | `America/Chicago` | `America/New_York` | Michigan's Lower Peninsula is Eastern |
+| Guardians (Progressive Field) | `America/Chicago` | `America/New_York` | Cleveland OH is Eastern (`unifiedVenues.ts` only) |
+
+**Root cause of the recurrence:** the same MLB data lives in two files with no consistency check. The
+Guardians timezone had already been fixed in `stadiums.ts` — with an explanatory comment — but the
+copy in `unifiedVenues.ts` was never updated, so the bug stayed live on every code path reading the
+unified data. Fixing the four values alone would have left that failure mode intact, so
+`src/data/__tests__/stadiumTimezones.test.ts` now asserts that **every** MLB stadium's timezone
+matches across both files. That test fails on any future drift.
+
+Scope was verified rather than assumed: all 396 records were audited, and the remaining 389 are
+correct — including the genuinely tricky ones (Arizona on non-DST `America/Phoenix`, Toronto on
+`America/Toronto`, and MiLB parks in split-timezone states).
+
+### C8 · Hook inside a loop — `src/hooks/useLoadingState.ts`
+
+`useMultipleLoadingStates` called `useLoadingState()` once per key inside `keys.forEach(...)`, with an
+`eslint-disable-next-line react-hooks/rules-of-hooks` on the line above — the violation was known and
+silenced rather than fixed. React identifies hooks purely by call order, so the moment `keys` grew or
+shrank between renders, every later hook shifted position: React throws "Rendered fewer hooks than
+expected", or silently hands back another key's state.
+
+Rewritten so all keys share **one** `useState` holding a map, with per-key controls looked up by name.
+The hook count is now constant regardless of `keys.length`, and the suppression comment is gone.
+
+### C9 · Hook called from a plain function — `src/hooks/useHapticFeedback.ts`
+
+`enhancePropsWithHaptic()` called `useHapticFeedback()` but was named like an ordinary helper, which
+invites calls from event handlers, loops and conditionals — all illegal. Renamed to `useHapticProps`
+so it *is* a custom hook: the `use` prefix makes the constraint explicit and lets the linter enforce
+it at every call site. No callers needed updating (it had none).
+
+### C10 · setState inside useMemo — `src/components/SeatRecommendationsSection.tsx`
+
+`setIsLoading(true)` and `setIsLoading(false)` were called inside a `useMemo` callback. `useMemo` runs
+*during* render, so these updated state while rendering — which React warns about and drops.
+
+The deeper problem: the memo body is fully synchronous, so there was never a loading window to show.
+`isLoading` was dead state, and because the memo returned early when `weather` was still null, the UI
+showed "No recommendations available" during the weather fetch instead of a spinner. Removed the
+`isLoading` state entirely and drove the spinner from `weatherLoading`, which tracks the one genuinely
+async operation. This fixes the render-phase mutation and the wrong empty-state message together.
+
+### C11 / C12 · Missing `'use client'`
+
+`FilterDrawer.tsx` (`useEffect`, `useRef`, context) and `StadiumTitleBlock.tsx` (`useState`,
+`useCallback`, `window`, `navigator.clipboard`) both use client-only APIs without the directive.
+
+These do not break the build *today* only because every current importer happens to sit inside a
+client boundary — `StadiumTitleBlock` is imported by `StadiumPageSSR.tsx`, which is itself marked
+`'use client'`. Audit item H2 proposes removing that directive as a perf win; doing so would have
+broken the build. Adding the directive to the two leaf components makes them correct independently of
+who imports them.
+
+### C13 · Contradictory ARIA — `src/components/SectionShadeSEO.tsx`
+
+The container had both `className="sr-only"` (visually hidden, still in the accessibility tree) and
+`aria-hidden="true"` (removed from that tree). Together they hid the content from everyone — sighted
+users and screen reader users alike. Dropped `aria-hidden`, keeping the intended behaviour: non-visual,
+crawlable content that screen readers can reach.
+
+### Extra · Contradictory ARIA — `src/i18n/i18nContext.tsx`
+
+Found independently via the new ESLint config, not listed in the audit. Two problems on the language
+selector:
+
+- Each option had `role="radio"` with `aria-checked` **and** `aria-pressed`. `aria-pressed` is a
+  toggle-button state unsupported by `role="radio"`, giving assistive tech two conflicting state
+  models for one control. Removed `aria-pressed`.
+- The `radiogroup` set both `aria-label` and `aria-labelledby`. When both are present
+  `aria-labelledby` wins and the `aria-label` is silently discarded. Now uses the visible label when
+  one is shown, and falls back to `aria-label` otherwise.
+
+### C14 · Impossible boolean — `src/services/seatRecommendationEngine.ts`
+
+The third-base wide band read `angle >= 240 && angle <= 30`. No number satisfies both bounds, so the
+branch was unreachable and every section in 240°–269° or 0°–30° scored the 30 fallback instead of the
+intended 70 — quietly degrading third-base recommendations. The band wraps through 0°/360°, so it
+needs `||`, matching the first-base band directly above it which already used that form.
+
+Locked in by `src/services/__tests__/seatRecommendationEngine.viewScore.test.ts`. The test was
+confirmed meaningful by reverting the fix: 9 assertions fail against the old condition and all pass
+against the new one.
+
+The C8 rewrite is covered the same way by `src/hooks/__tests__/useMultipleLoadingStates.test.ts`,
+which renders the hook with a growing, shrinking and reordered key set. Restoring the old
+implementation fails 3 of its 6 tests — including both "Rendered more hooks than during the previous
+render" crash paths — so the tests demonstrably pin the bug, not just the new code.
+
+### Supporting · ESLint configuration
+
+The repo had **no** ESLint config, so `npm run lint` (`next lint`) only ever printed an interactive
+setup prompt and never linted anything. That is precisely why a Rules-of-Hooks violation carrying its
+own suppression comment, and a contradictory ARIA pair, survived in the codebase.
+
+Added `.eslintrc.json` extending `next/core-web-vitals`, with the rules that catch these bug classes
+(`react-hooks/rules-of-hooks`, the `jsx-a11y` role/ARIA rules) set to **error** so they cannot
+regress. It also surfaced a pre-existing backlog of ~148 findings — overwhelmingly typographic
+(`react/no-unescaped-entities`: raw `'`/`"` in JSX text, no runtime effect). Those are set to **warn**:
+left visible rather than disabled, and deliberately **not** fixed here, since they are outside the
+scope of the critical bugs and would have buried the real changes.
+
+### Verification
+
+| Check | Result |
+|---|---|
+| `npm run build` | ✅ exit 0, compiled successfully, 0 errors |
+| `npx jest` | ✅ 733 passed / 733, 19 suites |
+| `npx tsc --noEmit` | ✅ exit 0 |
+| `npx eslint --ext .ts,.tsx .` | ✅ exit 0 — 0 errors, 148 pre-existing warnings |
+| Timezone audit (396 records) | ✅ 0 wrong offsets, 0 invalid, 0 unresolved |
+| AST Rules-of-Hooks scan | ✅ 0 (was 2) |
+| Client/server boundary scan | ✅ 0 real violations |
+
+### Notes / follow-ups (not done here)
+
+- The two-file MLB data duplication (audit M71) is now *guarded* by a consistency test, but not
+  *removed*. Making one file the generated artifact of the other is still the real fix.
+- Audit H2 (`StadiumPageSSR.tsx` needlessly `'use client'`) is now unblocked by the C11/C12 fixes.
+- 148 ESLint warnings remain as a visible, separate backlog.
+
+---
+
 # Phase 9: Full Audit — Sun-Exposure Accuracy + UX (2026-06-23)
 
 **Goal:** Complete website audit. (1) Ensure sun-exposure calculations are accurate — find root causes

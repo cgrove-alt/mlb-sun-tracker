@@ -1,3 +1,5 @@
+'use client';
+
 import React, { useEffect, useRef } from 'react';
 import s from './FilterDrawer.module.css';
 import { useFilters } from '@/src/filters/FiltersContext';

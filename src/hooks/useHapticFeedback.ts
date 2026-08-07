@@ -100,13 +100,20 @@ export const useHapticFeedback = () => {
   };
 };
 
-// Helper function to enhance props with haptic feedback
-export function enhancePropsWithHaptic<P extends object>(
+// Enhances props with haptic feedback.
+//
+// This is a custom hook (not a plain helper) because it calls useHapticFeedback().
+// It was previously named `enhancePropsWithHaptic`, which read as an ordinary
+// function and so invited calls from event handlers, loops and conditionals —
+// any of which break the Rules of Hooks. The `use` prefix makes the constraint
+// explicit and lets the linter enforce it: call this at the top level of a
+// component, never conditionally.
+export function useHapticProps<P extends object>(
   props: P,
   hapticType: keyof ReturnType<typeof useHapticFeedback> = 'tap'
 ): P {
   const haptic = useHapticFeedback();
-  
+
   const handleInteraction = (originalHandler?: Function) => {
     return (...args: any[]) => {
       if (typeof haptic[hapticType] === 'function') {

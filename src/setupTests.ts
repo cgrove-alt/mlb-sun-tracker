@@ -8,7 +8,6 @@ import '@testing-library/jest-dom';
 // The DOM mocks below are jsdom-only.
 if (typeof window === 'undefined') {
   // Nothing else in this file applies; bail out for node-env tests.
-  // eslint-disable-next-line @typescript-eslint/no-empty-function
   (() => {})();
 } else {
 

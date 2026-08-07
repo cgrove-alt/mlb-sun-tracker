@@ -16,8 +16,12 @@ export const SectionShadeSEO: React.FC<SectionShadeSEOProps> = ({ stadium }) => 
     { level: 'Upper Deck', sections: ['301', '302', '303', '304', '305'] },
   ];
 
+  // `sr-only` hides this visually but keeps it in the accessibility tree;
+  // `aria-hidden="true"` removed it from that tree as well, so the content
+  // reached nobody — neither sighted users nor screen reader users. Keeping
+  // `sr-only` alone preserves the intent (crawlable, non-visual content).
   return (
-    <div className="sr-only" aria-hidden="true">
+    <div className="sr-only">
       <h2>Are My Seats in the Shade at {stadium.name}?</h2>
       
       <h3>Quick Shade Guide for {stadium.name} Sections</h3>
