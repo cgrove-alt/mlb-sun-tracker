@@ -1,5 +1,14 @@
 'use client';
 
+// Global Privacy Control is a real, shipping browser API but is not yet in
+// TypeScript's DOM lib, so it has to be declared rather than cast away with
+// `as any` at each use site.
+declare global {
+  interface Navigator {
+    readonly globalPrivacyControl?: boolean;
+  }
+}
+
 import { useState, useEffect } from 'react';
 import { cookieConsent } from '../utils/cookies';
 
@@ -27,7 +36,7 @@ export function useGlobalPrivacyControl(): GPCStatus {
     // Check if GPC is supported and enabled
     const checkGPC = () => {
       // Check for the standard GPC signal
-      const gpcEnabled = !!(navigator as any).globalPrivacyControl;
+      const gpcEnabled = !!navigator.globalPrivacyControl;
       
       // Check if the browser supports GPC (has the property, even if false)
       const gpcSupported = 'globalPrivacyControl' in navigator;
@@ -92,7 +101,7 @@ export function useGlobalPrivacyControl(): GPCStatus {
  */
 export function checkGlobalPrivacyControl(): boolean {
   if (typeof window === 'undefined') return false;
-  return !!(navigator as any).globalPrivacyControl;
+  return !!navigator.globalPrivacyControl;
 }
 
 /**

@@ -3,7 +3,7 @@
 
 import { RealStadiumLayout } from './realStadiumSections';
 import { MiLBStadium, AAA_STADIUMS, AA_STADIUMS } from './milbStadiums';
-import { VenueLayout, getVenueLayout } from './milbVenueLayouts';
+import { getVenueLayout } from './milbVenueLayouts';
 import { enhanceStadiumLayout } from './stadiumLayoutEnhancer';
 
 // Import existing hand-crafted layouts

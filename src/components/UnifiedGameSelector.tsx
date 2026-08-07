@@ -1,19 +1,18 @@
 import React, { useState, useEffect, useCallback } from 'react';
 import { customSelectStyles } from './selectStyles';
+import { groupOptionsByMonth } from './groupOptionsByMonth';
 import Select from 'react-select';
 import { format } from 'date-fns';
 import { MLBGame, mlbApi } from '../services/mlbApi';
 import { MiLBGame, milbApi, MILB_LEVELS } from '../services/milbApi';
 import { NFLGame, nflApi } from '../services/nflApi';
-import { Stadium } from '../data/stadiums';
 import { UnifiedVenue, getAllLeagues, getVenuesByLeague, getLeagueInfo, getMiLBVenuesByLevel, getMiLBLevels, isMiLBVenue } from '../data/unifiedVenues';
 import { getTeamIdFromVenueId, getVenueIdFromStringId } from '../data/milbTeamMapping';
 import { preferencesStorage } from '../utils/preferences';
-import { formatDateTimeWithTimezone } from '../utils/timeUtils';
 import { formatGameTimeInStadiumTZ } from '../utils/dateTimeUtils';
 import { useHapticFeedback } from '../hooks/useHapticFeedback';
 import { useTranslation } from '../i18n/i18nContext';
-import { GameSelectorSkeleton, StadiumSelectorSkeleton } from './SkeletonScreens';
+import { GameSelectorSkeleton } from './SkeletonScreens';
 import { useLoadingState } from '../hooks/useLoadingState';
 import NFLCustomGameSelector from './NFLCustomGameSelector';
 import './GameSelector.css';
@@ -294,32 +293,41 @@ export const UnifiedGameSelector: React.FC<UnifiedGameSelectorProps> = ({
     }
   };
 
-  const gameOptions = games.map(game => {
-    const gameDate = new Date(game.gameDate);
+  // Games grouped by month, so a full home schedule (78+ entries) is navigable
+  // instead of one flat list. react-select renders `{ label, options }` entries
+  // as group headings. GameSelector.tsx has always done this; this component —
+  // the one the app actually renders — did a flat `.map()`.
+  //
+  // Memoized: this used to rebuild every option object on every render (parent
+  // re-render, filter change, scroll), which also gave react-select a brand-new
+  // options array each time.
+  const gameOptions = React.useMemo(() => {
     const venueTimezone = selectedVenue?.timezone || 'America/New_York';
-    const formattedTime = formatGameTimeInStadiumTZ(gameDate, venueTimezone, true);
-    
-    // Handle different game structures
-    let label: string;
-    let gameId: string;
-    
-    if ('teams' in game) {
-      // MLB/MiLB game structure
-      label = `${formattedTime} - ${game.teams.away.team.name} @ ${game.teams.home.team.name}`;
-      gameId = game.gamePk.toString();
-    } else {
-      // NFL game structure
-      const nflGame = game as NFLGame;
-      label = `${formattedTime} - ${nflGame.awayTeam.name} @ ${nflGame.homeTeam.name}`;
-      gameId = nflGame.gameId;
-    }
-    
-    return {
-      value: gameId,
-      label: label,
-      game: game
+
+    const buildOption = (game: typeof games[number]) => {
+      const gameDate = new Date(game.gameDate);
+      const formattedTime = formatGameTimeInStadiumTZ(gameDate, venueTimezone, true);
+
+      // Handle different game structures
+      let label: string;
+      let gameId: string;
+
+      if ('teams' in game) {
+        // MLB/MiLB game structure
+        label = `${formattedTime} - ${game.teams.away.team.name} @ ${game.teams.home.team.name}`;
+        gameId = game.gamePk.toString();
+      } else {
+        // NFL game structure
+        const nflGame = game as NFLGame;
+        label = `${formattedTime} - ${nflGame.awayTeam.name} @ ${nflGame.homeTeam.name}`;
+        gameId = nflGame.gameId;
+      }
+
+      return { value: gameId, label, game };
     };
-  });
+
+    return groupOptionsByMonth(games, game => new Date(game.gameDate), buildOption);
+  }, [games, selectedVenue?.timezone]);
 
   // Custom styles to ensure dropdown text is always visible
 

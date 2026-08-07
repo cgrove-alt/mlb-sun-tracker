@@ -4,7 +4,7 @@ import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { ModernButton } from '../src/components/ModernButton';
 import { useGlobalPrivacyControl } from '../hooks/useGlobalPrivacyControl';
-import { cookieConsent, cookiesEnabled } from '../utils/cookies';
+import { cookieConsent } from '../utils/cookies';
 import { useHapticFeedback } from '../src/hooks/useHapticFeedback';
 
 interface CookiePreferences {

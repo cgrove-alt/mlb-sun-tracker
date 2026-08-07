@@ -1,4 +1,4 @@
-import React, { useState, useMemo, useEffect } from 'react';
+import React, { useState, useMemo } from 'react';
 import { Stadium } from '../data/stadiums';
 import { MobileStadiumCardSkeleton } from './SkeletonScreens';
 import { useLoadingState } from '../hooks/useLoadingState';

@@ -187,16 +187,19 @@ export const GA_MEASUREMENT_ID = 'G-JXGEKF957C';
 /**
  * Cookie consent specific functions
  */
+/** Shape stored in the consent cookie. */
+export interface CookiePreferences {
+  necessary: boolean;
+  performance: boolean;
+  functional: boolean;
+  timestamp: number;
+}
+
 export const cookieConsent = {
   /**
    * Set cookie consent preferences
    */
-  setConsent(preferences: {
-    necessary: boolean;
-    performance: boolean;
-    functional: boolean;
-    timestamp: number;
-  }): boolean {
+  setConsent(preferences: CookiePreferences): boolean {
     return setCookie(COOKIE_NAMES.CONSENT, preferences, {
       expires: 365, // 1 year
       sameSite: 'lax'
@@ -206,8 +209,8 @@ export const cookieConsent = {
   /**
    * Get cookie consent preferences
    */
-  getConsent(): any {
-    return getCookie(COOKIE_NAMES.CONSENT);
+  getConsent(): CookiePreferences | null {
+    return getCookie(COOKIE_NAMES.CONSENT) as CookiePreferences | null;
   },
 
   /**

@@ -1,6 +1,6 @@
 import React from 'react';
 import styles from './SectionFilters.module.css';
-import { SunIcon, CloudIcon, PartlyCloudyIcon, FireIcon, MoneyIcon } from '../Icons';
+import { MoneyIcon } from '../Icons';
 
 export interface SectionFilterValues {
   maxSunExposure?: number;
@@ -128,6 +128,7 @@ export const SectionFilters: React.FC<SectionFiltersProps> = ({
               onClick={onToggleExpand}
               aria-expanded={isExpanded}
               aria-label={isExpanded ? 'Collapse filters' : 'Expand filters'}
+          title={isExpanded ? 'Collapse filters' : 'Expand filters'}
             >
               {isExpanded ? '−' : '+'}
             </button>

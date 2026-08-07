@@ -76,6 +76,7 @@ export default function StadiumImageGallery({
             className="lightbox-close"
             onClick={handleClose}
             aria-label="Close lightbox"
+          title="Close lightbox"
           >
             ×
           </button>

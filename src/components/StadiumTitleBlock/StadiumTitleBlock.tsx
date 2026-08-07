@@ -1,7 +1,6 @@
 'use client';
 
 import React, { useState, useCallback } from 'react';
-import Link from 'next/link';
 import Breadcrumb from '../Breadcrumb/Breadcrumb';
 import { StadiumTitleBlockProps } from './StadiumTitleBlock.types';
 import styles from './StadiumTitleBlock.module.css';

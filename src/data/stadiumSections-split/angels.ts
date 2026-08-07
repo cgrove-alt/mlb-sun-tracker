@@ -1,4 +1,3 @@
-import type { StadiumSection } from '../stadiumSectionTypes';
 
 // Angel Stadium coverage — researched 2026-07-17 from shadedseats.com,
 // RateYourSeats, and Shady-Seats shade guides. Orientation 65° (HP faces ENE);

@@ -56,6 +56,7 @@ export default function MobileStepper({
             disabled={disablePrev || activeStep === 0}
             type="button"
             aria-label={prevLabel}
+          title={prevLabel}
           >
             {prevLabel}
           </button>
@@ -66,6 +67,7 @@ export default function MobileStepper({
             disabled={disableNext || activeStep === steps - 1}
             type="button"
             aria-label={nextLabel}
+          title={nextLabel}
           >
             {nextLabel}
           </button>

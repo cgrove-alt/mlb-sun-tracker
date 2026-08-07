@@ -11,8 +11,7 @@ import { getSunPosition } from './sunCalculations';
 import { WeatherData } from '../services/weatherApi';
 import { 
   ShadeCalculator3D,
-  createSunPosition,
-  SectionShadeResult
+  createSunPosition
 } from './shadeCalculation3DOptimized';
 import { getStadium3DModel, AnyStadium } from '../data/stadium3DGeometry';
 import { getStadiumObstructions } from '../data/stadiumObstructions';

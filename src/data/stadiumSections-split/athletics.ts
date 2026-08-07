@@ -1,4 +1,3 @@
-import type { StadiumSection } from '../stadiumSectionTypes';
 
 export const stadiumSections = // Sutter Health Park (Athletics - Open Air)
   {

@@ -63,7 +63,8 @@ export const HapticSettings: React.FC<HapticSettingsProps> = ({ onClose }) => {
       <div className="haptic-settings-header">
         <h3>Haptic Feedback Settings</h3>
         {onClose && (
-          <button className="close-button" onClick={onClose} aria-label="Close">
+          <button className="close-button" onClick={onClose} aria-label="Close"
+          title="Close">
             ×
           </button>
         )}

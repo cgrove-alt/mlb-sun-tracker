@@ -1,15 +1,13 @@
 import { Stadium } from '../data/stadiums';
-import { StadiumAmenity, getStadiumAmenities, calculateProximity } from '../data/stadiumAmenities';
+import { StadiumAmenity, getStadiumAmenities } from '../data/stadiumAmenities';
 import { 
   SmartItinerary, 
   ItineraryRecommendation, 
   ItineraryPreferences, 
-  ItineraryTimeSlot,
-  getOptimalActivityTime,
-  RECOMMENDATION_TEMPLATES
+  ItineraryTimeSlot
 } from '../data/itineraryTypes';
 import { WeatherForecast } from './weatherApi';
-import { getSunPosition, calculateDetailedSectionSunExposure, filterSectionsBySunExposure } from '../utils/sunCalculations';
+import { getSunPosition, calculateDetailedSectionSunExposure } from '../utils/sunCalculations';
 import { MLBGame } from './mlbApi';
 import { MiLBGame } from './milbApi';
 import { NFLGame } from './nflApi';

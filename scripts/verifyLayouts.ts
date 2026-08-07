@@ -1,6 +1,5 @@
 // Script to verify all MiLB stadiums have venue-specific layouts
 import { generateLayoutReport, getLayoutCoverage, validateAllLayouts, getVenuesNeedingLayouts } from '../src/data/venueLayoutIntegration';
-import { milbLevelClassifications } from '../src/data/venueCorrections';
 import { allVenueLayouts } from '../src/data';
 
 console.log('MiLB Venue Layout Verification\n');

@@ -16,7 +16,12 @@ const validateEmail = (email: string): boolean => {
   return emailRegex.test(email);
 };
 
-const validatePayload = (payload: any): { valid: boolean; error?: string } => {
+// The payload is untrusted request JSON. Typing it as the already-declared
+// ReportInaccuracyPayload documents the expected shape while the runtime checks
+// below still do the actual validating; `any` gave neither.
+const validatePayload = (
+  payload: ReportInaccuracyPayload,
+): { valid: boolean; error?: string } => {
   // Required fields
   if (!payload.stadium || typeof payload.stadium !== 'string') {
     return { valid: false, error: 'Stadium ID is required' };

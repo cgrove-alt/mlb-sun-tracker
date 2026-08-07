@@ -1,8 +1,25 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { analytics } from '@/lib/analytics';
 
+// Web Vitals payload as posted by the client reporter.
+interface StoredMetric {
+  timestamp: number;
+  serverTimestamp: string;
+  country: string;
+  city: string;
+  userAgent: string;
+  url?: string;
+  LCP?: number;
+  FID?: number;
+  CLS?: number;
+  FCP?: number;
+  TTFB?: number;
+  INP?: number;
+  [key: string]: unknown;
+}
+
 // In-memory storage for development only
-const metricsStore: any[] = [];
+const metricsStore: StoredMetric[] = [];
 const MAX_METRICS = 1000;
 
 export async function POST(request: NextRequest) {
@@ -186,9 +203,14 @@ export async function GET(request: NextRequest) {
     return sorted[index];
   };
 
-  const lcpValues = recentMetrics.map(m => m.LCP).filter(Boolean);
-  const fidValues = recentMetrics.map(m => m.FID).filter(Boolean);
-  const clsValues = recentMetrics.map(m => m.CLS).filter(Boolean);
+  // `.filter(Boolean)` was doing double damage here: it does not narrow the
+  // type (so the array stayed `(number | undefined)[]`, invisible while the
+  // store was `any[]`), and it discards legitimate ZERO readings — a CLS of 0
+  // is a perfect score, and dropping those inflated every CLS percentile.
+  const isNumber = (v: number | undefined): v is number => typeof v === 'number' && Number.isFinite(v);
+  const lcpValues = recentMetrics.map(m => m.LCP).filter(isNumber);
+  const fidValues = recentMetrics.map(m => m.FID).filter(isNumber);
+  const clsValues = recentMetrics.map(m => m.CLS).filter(isNumber);
 
   const percentiles = {
     LCP: {

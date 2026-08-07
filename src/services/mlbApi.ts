@@ -1,5 +1,5 @@
 import { withCache } from '../utils/apiCache';
-import { withRetry, createRetryableFetch } from '../utils/retryUtils';
+import { createRetryableFetch } from '../utils/retryUtils';
 import { validateDate, sanitizeApiUrl } from '../utils/validation';
 
 export interface MLBGame {

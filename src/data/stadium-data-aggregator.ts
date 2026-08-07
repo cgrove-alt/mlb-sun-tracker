@@ -1,7 +1,7 @@
 // Stadium Data Aggregator
 // Central system for loading stadium-specific sections and obstructions
 
-import { DetailedSection, Obstruction3D, StadiumComplete } from '../types/stadium-complete';
+import { DetailedSection, Obstruction3D } from '../types/stadium-complete';
 
 
 // Import MiLB sections

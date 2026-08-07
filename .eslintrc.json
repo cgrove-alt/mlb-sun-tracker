@@ -11,7 +11,15 @@
   //           deliberately NOT addressed here. Left visible rather than disabled.
   "root": true,
   "extends": ["next/core-web-vitals"],
+  "plugins": ["unused-imports"],
   "rules": {
+    // Unused imports are auto-fixable and safe to strip: the plugin removes
+    // only unused *bindings* and leaves side-effect imports (`import './x.css'`)
+    // alone. Kept as a warning so it never blocks a build, but it is now
+    // visible and `eslint --fix` cleans it up.
+    "unused-imports/no-unused-imports": "warn",
+    "@typescript-eslint/no-unused-vars": "off",
+
     // --- correctness: must stay errors ---
     "react-hooks/rules-of-hooks": "error",
     "jsx-a11y/role-supports-aria-props": "error",

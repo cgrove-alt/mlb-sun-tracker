@@ -8,12 +8,17 @@ import { WeatherDisplay } from './components/WeatherDisplay';
 import { SectionList } from './components/SectionList';
 import { EmptyState } from './components/EmptyStates';
 import { ErrorProvider, useError } from './components/ErrorNotification';
-import { Breadcrumb } from './components/Breadcrumb';
+// Renamed from './components/Breadcrumb': a file Breadcrumb.tsx and a directory
+// Breadcrumb/ both existed, so this specifier resolved to the FILE by extension
+// precedence — silently, and the two components have incompatible props (this
+// one is the stateful venue/game navigator; Breadcrumb/ takes an items array).
+// Deleting either would have swapped implementations without a type error.
+import { Breadcrumb } from './components/NavigationBreadcrumb';
 import { FidelityNotice } from './components/FidelityNotice';
 import { getStadiumDataFidelity, fidelityNote } from './data/stadiumDataFidelity';
 import { LoadingSpinner } from './components/LoadingSpinner';
 import { VenueChangeSkeleton } from './components/SkeletonScreens';
-import { SunIcon, CloudIcon, ChartIcon, InfoIcon, MoonIcon, StadiumIcon, ShadeIcon, PartlyCloudyIcon, RainIcon } from './components/Icons';
+import { SunIcon, MoonIcon } from './components/Icons';
 import { ErrorBoundary } from './components/ErrorBoundary';
 import { SEOHelmet } from './components/SEOHelmet';
 import { SunExposureExplanation } from './components/SunExposureExplanation';
@@ -24,13 +29,11 @@ import { getSunPosition, getSunDescription, getCompassDirection, SeatingSectionS
 import { SunCalculator } from './utils/sunCalculator';
 import { getStadiumSectionsAsync } from './data/getStadiumSections';
 import { getVenueSections } from './data/venueSections';
-import { MLBGame, mlbApi } from './services/mlbApi';
+import { MLBGame } from './services/mlbApi';
 import { NFLGame } from './services/nflApi';
 import { MiLBGame } from './services/milbApi';
 import { generateBaseballSections } from './utils/generateBaseballSections';
 import { WeatherForecast, weatherApi } from './services/weatherApi';
-import { formatDateTimeWithTimezone } from './utils/timeUtils';
-import { performanceMonitor, trackWebVitals } from './utils/performanceMonitor';
 import { OfflineIndicator } from './components/OfflineIndicator';
 import { trackStadiumSelection, trackGameSelection } from './utils/analytics';
 import { getUnifiedVenueShade, ShadedVenueSection } from './utils/getUnifiedVenueShade';

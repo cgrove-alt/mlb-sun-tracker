@@ -5,7 +5,6 @@
 // (StadiumTitleBlock, InteractiveSeatingBowl) carry their own 'use client', so
 // they still hydrate — only they do.
 import React from 'react';
-import Link from 'next/link';
 import { Stadium } from '../../../src/data/stadiums';
 import type { StadiumSection } from '../../../src/data/stadiumSectionTypes';
 import { StadiumAmenities } from '../../../src/data/stadiumAmenities';
@@ -14,6 +13,7 @@ import { StadiumTitleData } from '../../../src/components/StadiumTitleBlock';
 import { ShadeAnswer } from '../../../src/components/ShadeAnswer';
 import { InteractiveSeatingBowl } from '../../../src/components/InteractiveSeatingBowl';
 import { shadeTierOf, type ShadeTier } from '../../../src/utils/sectionShadeTier';
+import { buildSeasonalShadeCopy } from '../../../src/utils/seasonalShade';
 import { getOrientationProvenance, getOrientationPrecision } from '../../../src/data/stadiumOrientationProvenance';
 import { stadiumHistories } from '../../../src/data/stadiumDetails';
 import styles from './StadiumPageSSR.module.css';
@@ -68,17 +68,6 @@ const APPROX_SUN_AZIMUTH: Record<'morning' | 'midday' | 'afternoon' | 'evening',
   evening: 280,   // 7pm: ~W
 };
 
-// Get seasonal shade pattern
-function getSeasonalPattern(month: number) {
-  if (month === 3) return 'April: Sun sits lower on the horizon — most stadiums see more natural shade, especially during afternoon games';
-  if (month === 4) return 'May: Sun angle climbs rapidly, shrinking shade coverage; evening games retain more shade than day games';
-  if (month === 5) return 'June: Highest sun angle of the season near the summer solstice — minimal shade during day games, covered seats strongly recommended';
-  if (month === 6) return 'July: Peak sun — day games see the least shade of the year; covered or back-row seats essential';
-  if (month === 7) return 'August: Still-intense afternoon sun; upper-deck back rows and covered sections stay coolest';
-  if (month === 8) return 'September: Sun angle dropping — natural shade returns, especially for late-afternoon starts';
-  if (month >= 9 && month <= 10) return 'Fall: Lower sun angle provides more natural shade across the bowl';
-  return 'Check specific game time for shade availability';
-}
 
 // Three-tier structural shade model — now shared with the MLB shade diagram so
 // the two can never disagree. See src/utils/sectionShadeTier.ts.
@@ -125,16 +114,17 @@ export default function StadiumPageSSR({ stadium, sections, amenities, guide }: 
     ? `Heads up: ${stadium.name}'s orientation is approximate (±${orientPrec}°), so sections right at the sun/shade edge are less certain here.`
     : null;
 
-  // Pre-calculate shade data for common scenarios
-  const months = [
-    { num: 3, name: 'April', pattern: 'Lower sun angle — more shade available, especially in afternoon games' },
-    { num: 4, name: 'May', pattern: 'Sun angle rising — shade coverage decreases, evening games best for comfort' },
-    { num: 5, name: 'June', pattern: 'Near summer solstice — fewest shaded seats, covered sections essential' },
-    { num: 6, name: 'July', pattern: 'Peak summer - maximum sun exposure' },
-    { num: 7, name: 'August', pattern: 'Late summer - intense afternoon sun' },
-    { num: 8, name: 'September', pattern: 'Early fall - decreasing sun angle' },
-    { num: 9, name: 'October', pattern: 'Playoff season - comfortable temperatures' },
-  ];
+  // Seasonal copy computed from THIS park's latitude, not a fixed table.
+  // Every venue used to print the same sentence per month, which said nothing
+  // about the park: April's sun peaks at 52° in Seattle and 74° in Miami, and a
+  // 20 ft deck lip correspondingly shades ~15 ft of seating in one and ~6 ft in
+  // the other. See src/utils/seasonalShade.ts.
+  const months = buildSeasonalShadeCopy(
+    stadium.latitude,
+    stadium.longitude,
+    stadium.name,
+    [3, 4, 5, 6, 7, 8, 9],
+  ).map(m => ({ num: m.month, name: m.name, pattern: m.note, peakAltitudeDeg: m.peakAltitudeDeg }));
 
   // Derive the per-time-bucket "what's the sun like" tagline from the
   // stadium's actual orientation so it matches the recommendations below.
@@ -261,9 +251,9 @@ export default function StadiumPageSSR({ stadium, sections, amenities, guide }: 
                 <h3>{month.name}</h3>
                 <p className={styles.monthPattern}>{month.pattern}</p>
                 <div className={styles.monthRecommendations}>
-                  <h4>Recommendations:</h4>
+                  <h4>Peak sun angle:</h4>
                   <ul>
-                    <li>{getSeasonalPattern(month.num)}</li>
+                    <li>{Math.round(month.peakAltitudeDeg)}° above the horizon at midday</li>
                   </ul>
                 </div>
               </div>

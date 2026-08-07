@@ -4,7 +4,7 @@ import React, { useMemo, useState } from 'react';
 import type { StadiumSection } from '../data/stadiumSectionTypes';
 import { getSunPosition } from '../utils/sunPosition';
 import { getSectionSunExposure } from '../utils/sectionSunCalculations';
-import { shadeTierOf, reconciledExposure, type ShadeTier } from '../utils/sectionShadeTier';
+import { reconciledExposure } from '../utils/sectionShadeTier';
 import { stadiumLocalToUTC } from '../utils/stadiumTime';
 
 // MLB-only, SECTION-LEVEL shade guide. Draws the seating bowl as a ring of

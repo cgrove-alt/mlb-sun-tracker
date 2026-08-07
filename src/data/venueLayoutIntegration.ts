@@ -1,8 +1,8 @@
 // Integration system for venue-specific layouts
 // This module handles merging venue data with specific seating layouts
 
-import { VenueLayout, getVenueLayout as getLayoutFromBase, allMilbLayouts } from './milbVenueLayouts';
-import { aPlusVenueLayouts, aVenueLayouts, allLowerLevelLayouts } from './milbVenueLayoutsLower';
+import { VenueLayout, allMilbLayouts } from './milbVenueLayouts';
+import { allLowerLevelLayouts } from './milbVenueLayoutsLower';
 import { applyVenueCorrections, milbLevelClassifications } from './venueCorrections';
 
 // Combine all layouts

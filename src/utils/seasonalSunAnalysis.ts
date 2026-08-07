@@ -5,9 +5,9 @@
 
 import { Stadium } from '../data/stadiums';
 import { DetailedSection, Obstruction3D } from '../types/stadium-complete';
-import { getSunPosition, SunPosition } from './sunCalculations';
+import { getSunPosition } from './sunCalculations';
 import { calculateSectionShadow, calculateAllShadows } from './advancedShadowCalculator';
-import { addMonths, setDate, setHours, setMinutes, startOfMonth, endOfMonth } from 'date-fns';
+import { startOfMonth, endOfMonth } from 'date-fns';
 import { stadiumLocalToUTC } from './stadiumTime';
 
 /**

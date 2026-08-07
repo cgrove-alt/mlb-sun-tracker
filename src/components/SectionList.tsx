@@ -1,10 +1,10 @@
-import React, { useState, useEffect, useRef, useMemo, useCallback } from 'react';
+import React, { useState, useEffect, useRef, useMemo } from 'react';
 import { SeatingSectionSun } from '../utils/sunCalculations';
 import { preferencesStorage } from '../utils/preferences';
 import { Tooltip } from './Tooltip';
 import { useHapticFeedback } from '../hooks/useHapticFeedback';
 import { LazySectionCardModern as LazySectionCard } from './LazySectionCardModern';
-import { ListIcon, SearchIcon, SunIcon, CloudIcon, CloseIcon, BaseballIcon, TicketIcon, CrownIcon, StadiumIcon, FieldLevelIcon, LowerLevelIcon, ClubLevelIcon, UpperLevelIcon, ValuePriceIcon, ModeratePriceIcon, PremiumPriceIcon, LuxuryPriceIcon, MoneyIcon, PartlyCloudyIcon, FireIcon } from './Icons';
+import { ListIcon, SearchIcon, SunIcon, CloudIcon, CloseIcon, CrownIcon, StadiumIcon, FieldLevelIcon, LowerLevelIcon, ClubLevelIcon, UpperLevelIcon, ValuePriceIcon, ModeratePriceIcon, PremiumPriceIcon, LuxuryPriceIcon, MoneyIcon, PartlyCloudyIcon, FireIcon } from './Icons';
 import { LoadingSpinner } from './LoadingSpinner';
 import SectionFilters, { SectionFilterValues } from './SectionFilters/SectionFilters';
 import './SectionList.css';
@@ -161,7 +161,9 @@ export const SectionList: React.FC<SectionListProps> = ({
 
   const sortedSections = useMemo(() => {
     return [...filteredSections].sort((a, b) => {
-    let aValue: any, bValue: any;
+    // Comparands are always a string (name/level) or a number (exposure/price
+    // rank); `any` here disabled checking on every branch of the switch below.
+    let aValue: string | number, bValue: string | number;
     
     switch (sortBy) {
       case 'name':
@@ -191,9 +193,11 @@ export const SectionList: React.FC<SectionListProps> = ({
         : bValue.localeCompare(aValue);
     }
     
-    return sortOrder === 'asc' 
-      ? aValue - bValue
-      : bValue - aValue;
+    // Both are numbers here (exposure / price rank); the string branch above
+    // has already returned.
+    const aNum = typeof aValue === 'number' ? aValue : 0;
+    const bNum = typeof bValue === 'number' ? bValue : 0;
+    return sortOrder === 'asc' ? aNum - bNum : bNum - aNum;
     });
   }, [filteredSections, sortBy, sortOrder]);
 

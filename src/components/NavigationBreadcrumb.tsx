@@ -1,5 +1,5 @@
 import React from 'react';
-import { Stadium, MLB_STADIUMS } from '../data/stadiums';
+import { Stadium } from '../data/stadiums';
 import { UnifiedVenue, getLeagueInfo } from '../data/unifiedVenues';
 import { MLBGame } from '../services/mlbApi';
 import { MiLBGame } from '../services/milbApi';

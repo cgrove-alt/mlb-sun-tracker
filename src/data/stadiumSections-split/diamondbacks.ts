@@ -1,4 +1,3 @@
-import type { StadiumSection } from '../stadiumSectionTypes';
 
 export const stadiumSections = {
     stadiumId: 'diamondbacks',

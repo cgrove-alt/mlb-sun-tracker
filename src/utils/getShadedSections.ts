@@ -3,12 +3,11 @@
 
 import { Stadium, MLB_STADIUMS } from '../data/stadiums';
 import type { StadiumSection } from '../data/stadiumSectionTypes';
-import { getSunPosition, SunPosition as LegacySunPosition } from './sunCalculations';
+import { getSunPosition } from './sunCalculations';
 import { WeatherData } from '../services/weatherApi';
 import { 
   ShadeCalculator3D, 
-  createSunPosition,
-  SectionShadeResult
+  createSunPosition
 } from './shadeCalculation3DOptimized';
 import { getStadium3DModel } from '../data/stadium3DGeometry';
 

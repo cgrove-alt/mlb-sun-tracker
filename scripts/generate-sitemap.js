@@ -170,6 +170,12 @@ const sitemapIndex = `<?xml version="1.0" encoding="UTF-8"?>
     <loc>${baseUrl}/sitemap-blog.xml</loc>
     <lastmod>${buildDate}</lastmod>
   </sitemap>
+  <!-- sitemap-images.xml is checked in rather than generated here, but it was
+       omitted from this index, so crawlers had no way to discover it. -->
+  <sitemap>
+    <loc>${baseUrl}/sitemap-images.xml</loc>
+    <lastmod>${buildDate}</lastmod>
+  </sitemap>
 </sitemapindex>`;
 
 // Write sitemaps

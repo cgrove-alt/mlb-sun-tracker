@@ -61,6 +61,7 @@ export const ErrorNotification: React.FC<ErrorNotificationProps> = ({
           className="error-notification-close"
           onClick={handleClose}
           aria-label="Close notification"
+          title="Close notification"
         >
           <CloseIcon size={16} />
         </button>

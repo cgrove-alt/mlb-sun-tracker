@@ -134,6 +134,7 @@ export default function MobileNav({
         onClick={handleOpen}
         type="button"
         aria-label={menuLabel}
+          title={menuLabel}
         aria-expanded={isOpen}
         aria-controls="mobile-nav-drawer"
       >
@@ -173,6 +174,7 @@ export default function MobileNav({
               onClick={handleClose}
               type="button"
               aria-label="Close menu"
+          title="Close menu"
             >
               <svg
                 width="24"
@@ -220,6 +222,7 @@ export function MenuTrigger({
       onClick={onClick}
       type="button"
       aria-label={label}
+          title={label}
     >
       <svg
         width="20"

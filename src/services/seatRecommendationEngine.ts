@@ -4,11 +4,10 @@
  */
 
 import { Stadium } from '../data/stadiums';
-import { DetailedSection, Obstruction3D, RowDetail } from '../types/stadium-complete';
+import { DetailedSection, Obstruction3D } from '../types/stadium-complete';
 import { WeatherData } from './weatherApi';
 import { calculateSectionShadow } from '../utils/advancedShadowCalculator';
 import { getSunPosition } from '../utils/sunCalculations';
-import { getSeasonalRecommendations } from '../utils/seasonalSunAnalysis';
 import { stadiumLocalDateAndTimeToUTC } from '../utils/stadiumTime';
 
 export interface UserPreferences {

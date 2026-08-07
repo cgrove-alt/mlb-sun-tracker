@@ -2,7 +2,7 @@
 // Inglewood, CA - Opened 2020 - Capacity 70,240 (expandable to 100,240)
 // Home to LA Rams and LA Chargers
 
-import { DetailedSection, Vector3D, RowDetail } from '../../../types/stadium-complete';
+import { DetailedSection, RowDetail } from '../../../types/stadium-complete';
 
 // Helper to generate row details for football stadium
 function generateRows(

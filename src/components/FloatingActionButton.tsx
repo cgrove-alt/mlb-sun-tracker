@@ -110,6 +110,10 @@ export const FloatingActionButton: React.FC<FloatingActionButtonProps> = ({
                   className="fab-action__button"
                   onClick={() => handleActionClick(action)}
                   aria-label={action.label}
+                  // The star / share / plus actions are icon-only. `aria-label`
+                  // told screen readers what they do; sighted mouse users had
+                  // nothing on hover. `title` gives them the same information.
+                  title={action.label}
                 >
                   {action.icon}
                 </button>

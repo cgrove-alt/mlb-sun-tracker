@@ -78,6 +78,41 @@ export default function HomePage() {
             Pick your stadium and game time to see which sections will be in the shade.
           </p>
 
+          {/* What the tool actually accounts for — i.e. why its answer differs
+              from the usual "just sit on the third-base side" advice. */}
+          <ul className="home-features">
+            <li className="home-features__item">
+              <span className="home-features__icon" aria-hidden="true">🧭</span>
+              <span>
+                <strong>Every park&apos;s real orientation.</strong> Shade depends on which way home
+                plate faces, and that differs at every venue — we use each park&apos;s measured
+                bearing instead of assuming a side.
+              </span>
+            </li>
+            <li className="home-features__item">
+              <span className="home-features__icon" aria-hidden="true">🕐</span>
+              <span>
+                <strong>Your actual first pitch.</strong> Sun position is computed for the real game
+                time in the stadium&apos;s own timezone, so a 1:05pm start and a 7:10pm start give
+                different answers.
+              </span>
+            </li>
+            <li className="home-features__item">
+              <span className="home-features__icon" aria-hidden="true">🏟️</span>
+              <span>
+                <strong>Roofs, decks and overhangs.</strong> Coverage is modeled per section, so you
+                can see which back rows sit under an overhang and stay shaded longest.
+              </span>
+            </li>
+            <li className="home-features__item">
+              <span className="home-features__icon" aria-hidden="true">🌤️</span>
+              <span>
+                <strong>Game-day weather.</strong> Forecast cloud cover is folded in, because an
+                overcast afternoon changes what a &quot;sunny seat&quot; actually means.
+              </span>
+            </li>
+          </ul>
+
           <div className="home-intro__grid">
             <div className="home-intro__col">
               <h3 className="home-intro__subtitle">Popular venue shade guides</h3>

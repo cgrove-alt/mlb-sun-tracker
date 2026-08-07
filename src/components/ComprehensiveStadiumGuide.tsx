@@ -3,9 +3,7 @@
 import React from 'react';
 import { StadiumGuide } from '../data/stadiumGuides';
 import { getUnifiedVenueById } from '../data/unifiedVenues';
-import Link from 'next/link';
 import {
-  MapPinIcon,
   ClockIcon,
   SunIcon,
   CloudIcon,
@@ -15,7 +13,6 @@ import StadiumTitleBlock from './StadiumTitleBlock';
 import { StadiumTitleData } from './StadiumTitleBlock';
 import { FidelityNotice } from './FidelityNotice';
 import { ShadeAnswer } from './ShadeAnswer';
-import type { StadiumSection } from '../data/stadiumSectionTypes';
 import './StadiumGuide.css';
 
 interface ComprehensiveStadiumGuideProps {

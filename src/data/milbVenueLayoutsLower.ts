@@ -1,7 +1,7 @@
 // Lower level MiLB venue layouts (A+ and A levels)
 // Consolidated from multiple files for A+ (High-A) and A (Low-A) venues
 
-import { VenueLayout, VenueSection } from './milbVenueLayouts';
+import { VenueLayout } from './milbVenueLayouts';
 
 // A+ (High-A) Stadium Layouts - All A+ venues consolidated
 export const aPlusVenueLayouts: VenueLayout[] = [

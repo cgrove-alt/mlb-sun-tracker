@@ -3,7 +3,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { MLB_STADIUMS } from '../src/data/stadiums';
 import { ALL_UNIFIED_VENUES, getVenuesByLeague } from '../src/data/unifiedVenues';
 import { VENUE_COUNT } from '../src/data/venueCount';
 import { useHapticFeedback } from '../src/hooks/useHapticFeedback';
@@ -155,7 +154,8 @@ export default function StickyTopNav() {
                     className="search-input"
                     aria-label="Search stadiums"
                   />
-                  <button type="submit" className="search-button" aria-label="Search">
+                  <button type="submit" className="search-button" aria-label="Search"
+          title="Search">
                     <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
                       <circle cx="8" cy="8" r="6.5" stroke="currentColor" strokeWidth="1.5"/>
                       <path d="M13 13L16.5 16.5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/>
@@ -214,6 +214,7 @@ export default function StickyTopNav() {
             className="mobile-menu-close"
             onClick={closeMobileMenu}
             aria-label="Close menu"
+          title="Close menu"
           >
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
               <path d="M18 6L6 18M6 6L18 18" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>

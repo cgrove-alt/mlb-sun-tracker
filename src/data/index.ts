@@ -9,8 +9,8 @@ export { aaaVenueLayouts, aaVenueLayouts } from './milbVenueLayouts';
 export { aPlusVenueLayouts, aVenueLayouts, allLowerLevelLayouts, getLowerLevelVenueLayout } from './milbVenueLayoutsLower';
 export * from './venueLayoutIntegration';
 
-import { allMilbLayouts, aaaVenueLayouts, aaVenueLayouts, type VenueSection as VenueSectionType } from './milbVenueLayouts';
-import { allLowerLevelLayouts, aPlusVenueLayouts, aVenueLayouts } from './milbVenueLayoutsLower';
+import { allMilbLayouts, type VenueSection as VenueSectionType } from './milbVenueLayouts';
+import { allLowerLevelLayouts } from './milbVenueLayoutsLower';
 import { integrateVenueLayout, getLayoutCoverage, validateAllLayouts } from './venueLayoutIntegration';
 
 // Combine all venue layouts from consolidated files

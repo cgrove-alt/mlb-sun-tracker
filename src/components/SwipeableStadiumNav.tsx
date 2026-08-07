@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect } from 'react';
 import { Stadium } from '../data/stadiums';
 import { useSwipeableCarousel } from '../hooks/useSwipeGesture';
 import { useHapticFeedback } from '../hooks/useHapticFeedback';

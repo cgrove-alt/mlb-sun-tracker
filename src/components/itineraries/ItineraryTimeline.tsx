@@ -1,7 +1,6 @@
 import React from 'react';
 import { SmartItinerary, ItineraryRecommendation } from '../../data/itineraryTypes';
 import { Stadium } from '../../data/stadiums';
-import { formatTimeWithTimezone } from '../../utils/timeUtils';
 import { useTranslation } from '../../i18n/i18nContext';
 import './ItineraryTimeline.css';
 

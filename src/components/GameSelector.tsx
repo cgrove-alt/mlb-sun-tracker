@@ -1,18 +1,18 @@
 import React, { useState, useEffect, useCallback } from 'react';
 import { customSelectStyles } from './selectStyles';
+import { groupOptionsByMonth } from './groupOptionsByMonth';
 import Select from 'react-select';
 import { format } from 'date-fns';
 import { MLBGame, mlbApi } from '../services/mlbApi';
 import { Stadium } from '../data/stadiums';
 import { preferencesStorage } from '../utils/preferences';
-import { formatDateTimeWithTimezone } from '../utils/timeUtils';
 import { formatGameTimeInStadiumTZ } from '../utils/dateTimeUtils';
 import { useHapticFeedback } from '../hooks/useHapticFeedback';
 import { useTranslation } from '../i18n/i18nContext';
-import { GameSelectorSkeleton, StadiumSelectorSkeleton } from './SkeletonScreens';
+import { GameSelectorSkeleton } from './SkeletonScreens';
 import { useLoadingState } from '../hooks/useLoadingState';
 import { ModernButton } from './ModernButton';
-import { CalendarIcon, BaseballIcon, SunIcon } from './Icons';
+import { CalendarIcon, SunIcon } from './Icons';
 import './GameSelector.css';
 
 interface GameSelectorProps {
@@ -175,27 +175,13 @@ export const GameSelector: React.FC<GameSelectorProps> = ({
     };
   };
 
-  // Group game options by month for easier navigation
-  const gameOptions = React.useMemo(() => {
-    const monthNames = [
-      'January', 'February', 'March', 'April', 'May', 'June',
-      'July', 'August', 'September', 'October', 'November', 'December'
-    ];
-    const grouped: Record<string, { label: string; options: ReturnType<typeof formatGameOption>[] }> = {};
-
-    games.forEach(game => {
-      const gameDate = new Date(game.gameDate);
-      const monthKey = `${gameDate.getFullYear()}-${gameDate.getMonth()}`;
-      const monthName = monthNames[gameDate.getMonth()];
-
-      if (!grouped[monthKey]) {
-        grouped[monthKey] = { label: monthName, options: [] };
-      }
-      grouped[monthKey].options.push(formatGameOption(game));
-    });
-
-    return Object.values(grouped);
-  }, [games, stadiums]);
+  // Group game options by month for easier navigation (shared with
+  // UnifiedGameSelector via groupOptionsByMonth).
+  const gameOptions = React.useMemo(
+    () => groupOptionsByMonth(games, game => new Date(game.gameDate), formatGameOption),
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    [games, stadiums],
+  );
 
   // Custom styles to ensure dropdown text is always visible
 

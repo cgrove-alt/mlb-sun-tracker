@@ -1,6 +1,5 @@
 // Script to update venues.ts with all NFL stadiums
 import fs from 'fs';
-import path from 'path';
 
 // Read the generated NFL venues
 const nflVenuesRaw = fs.readFileSync('./nfl-venues-generated.json', 'utf8');

@@ -5,7 +5,6 @@
 
 import * as fs from 'fs';
 import * as path from 'path';
-import { DetailedSection, Obstruction3D, Vector3D } from '../../types/stadium-complete';
 
 // Helper to recursively find all TypeScript files in a directory
 function findTsFiles(dir: string): string[] {

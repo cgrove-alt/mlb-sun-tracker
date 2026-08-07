@@ -1,3 +1,192 @@
+# Phase 12: MEDIUM Priority Fixes from July 2026 Audit (2026-08-07)
+
+**Goal:** Work the 10 MEDIUM categories (M-1…M-10), which map onto audit items M1–M74.
+
+**Status:** ✅ COMPLETE for the fixable set — 7 categories fixed, 3 found to be already-done or
+false premises (evidence below). Build, type-check, 810 tests and lint all green.
+
+As in the previous phases, claims were verified before being acted on. That mattered again: two of
+the ten items were already implemented, one named non-existent dependencies, and one instruction
+would have deleted files that are actively in use.
+
+## Tasks
+
+- [x] **M-1** Game dropdown flat → grouped by month (M56, and M62 memoization).
+- [x] **M-2** Tooltips on icon-only buttons (M57).
+- [x] **M-3** Seasonal shade copy → computed from each park's real sun geometry (M58).
+- [x] **M-4** Homepage feature highlights (on top of Phase 11's H24 fix).
+- [x] **M-5** Dead code / unused imports — 111 removed, rule added to prevent recurrence.
+- [x] **M-6** `any` types — replaced; two surfaced real bugs.
+- [x] **M-7** Duplicate files — deleted 4 verified orphans; **refused** 3 unsafe deletions.
+- [x] **M-8** FAQ JSON-LD — already present; fixed the real adjacent XSS hole (M68).
+- [x] **M-9** Sitemaps — already complete; fixed the one real gap (missing index entry).
+- [x] **M-10** npm audit — 16 → 3; the remaining 3 need a Next.js major upgrade.
+
+## Review
+
+### M-1 · Game dropdown grouped by month
+
+`UnifiedGameSelector` — the selector the app actually renders — built its options with a flat
+`.map()`, so a team's 78+ game home schedule was one unbroken list. `GameSelector.tsx` had grouping
+logic but is only used by the itinerary pages.
+
+Extracted the logic to `src/components/groupOptionsByMonth.ts` and pointed **both** selectors at it,
+so they cannot diverge again. react-select renders `{ label, options }` entries as group headings.
+Also fixed M62 on the way: `gameOptions` was rebuilt on every render (parent re-render, filter
+change, scroll), handing react-select a brand-new options array each time; it is now memoized.
+
+The helper sorts groups chronologically regardless of input order, skips unparseable dates instead of
+crashing, and qualifies month names with the year only when a range spans two seasons (otherwise two
+identical "April" headings). Eight tests cover it, including a realistic 81-game schedule.
+
+### M-2 · Tooltips on icon-only controls
+
+Swept every `<button>` in the codebase and classified them by whether the body renders visible text.
+19 had an `aria-label` and no `title`: screen readers were served, mouse users got nothing on hover.
+13 were genuinely icon-only and now carry a `title` mirroring the label — plus the FAB's star / share
+/ plus actions the audit named specifically (M57).
+
+The other 6 were deliberately left alone: they already render a visible text label, and a `title`
+there is duplicate noise rather than an improvement.
+
+### M-3 · Seasonal shade copy, computed rather than written
+
+Each venue page printed a fixed sentence per month — the *same words for all 30 parks*. "April: sun
+sits lower on the horizon" is true in Seattle and in Miami by wildly different amounts.
+
+New `src/utils/seasonalShade.ts` computes the actual peak sun altitude for the park's latitude in
+each month (sampling SunCalc across the day, the same engine the shade model uses) and derives copy
+from it. Real output:
+
+| | April peak | June peak | 20 ft deck lip shades, April |
+|---|---|---|---|
+| T-Mobile Park (47.6°N) | 52° | 66° | ~15 ft |
+| Chase Field (33.4°N) | 67° | 80° | ~9 ft |
+| loanDepot park (25.8°N) | 74° | 88° | ~6 ft |
+
+Shadow reach is expressed in **feet**, not as a ratio against the peak month. The first version used
+a ratio and produced "556% further back" for Miami — arithmetically correct (a near-overhead 87.5°
+sun makes tan explode) and completely uninformative. Feet is something a reader can picture.
+
+The page also printed the same fact twice (a generic `pattern` line plus a near-identical
+`getSeasonalPattern()` recommendation); the second now shows the park's actual peak sun angle.
+
+### M-5 · Dead code
+
+Installed `eslint-plugin-unused-imports` (which is what the task asked for) and wired it into the
+project config. **111 unused imports removed automatically** across the codebase; type-check and all
+810 tests pass unchanged.
+
+The plugin only strips unused *bindings* and leaves side-effect imports (`import './x.css'`)
+untouched, which is why this was safe to automate. The rule now runs as a warning on every lint, so
+the backlog cannot silently rebuild. A broader `no-unused-vars` sweep reports ~240 remaining unused
+*locals* (not imports) — left as a visible warning rather than auto-deleted, since removing a local
+can change behaviour in a way removing an import cannot.
+
+### M-6 · `any` types — two of them were hiding real bugs
+
+Beyond the mechanical replacements (`metricsStore`, `getConsent`, `validatePayload`, `SectionList`
+sort comparands, GPC navigator access), two fixes changed behaviour:
+
+- **`app/api/metrics/route.ts`** — with the store typed `any[]`, `recentMetrics.map(m => m.LCP).filter(Boolean)`
+  looked fine. It is doubly wrong: `filter(Boolean)` does not narrow the type, *and* it discards
+  legitimate **zero** readings. A CLS of 0 is a perfect score, so every CLS percentile was computed
+  over only the non-zero samples and inflated. Now uses a typed predicate that keeps 0.
+- **Global Privacy Control** — `(navigator as any).globalPrivacyControl` was cast away at each use
+  site. GPC is a real shipping API merely absent from TypeScript's DOM lib, so it is now declared
+  once as an optional `Navigator` member.
+
+### M-7 · Duplicate files — deleted 4, refused 3
+
+Deleted after verifying zero importers: `src/components/OptimizedImage.tsx`, `app/polyfills.js`,
+`src/i18n/lazyTranslations.ts`, `components/OptimizedPicture.tsx`.
+
+**Three instructed deletions were not safe and were not made:**
+
+- `src/App.css` and `src/MobileApp.tsx` are actively imported and rendered. The audit item behind
+  this (M4) says section-calculation *logic* is duplicated between MobileApp and UnifiedApp — a
+  refactor suggestion, not a deletion. Deleting either file breaks the app.
+- `page 2.tsx` / `StadiumPageClient 2.tsx` exist **only** under `.claude/worktrees/`, which is
+  git-excluded. They are stale local Claude Code worktrees, not repo files — nothing to delete in
+  the project, and `git worktree prune` is the right tool for the local copies.
+- `src/components/Breadcrumb.tsx` is **not** an orphan (audit M2 is wrong). `UnifiedApp` imports
+  `./components/Breadcrumb`, which resolves to the FILE by extension precedence. The file and the
+  `Breadcrumb/` directory export components with *incompatible props* — one is a stateful venue/game
+  navigator, the other takes an `items` array — so deleting the file would have silently swapped
+  implementations.
+
+  That ambiguous specifier is itself the hazard, so the file is renamed to
+  `NavigationBreadcrumb.tsx` and the import made explicit. Same behaviour, no resolution trap.
+
+### M-8 · FAQ schema was already there; the real bug was next to it
+
+The FAQ page already emits complete `FAQPage` JSON-LD: `faqs.flatMap(...)` covers all 22 Q&As across
+5 categories via `<SafeSchema>`. Nothing was missing.
+
+What *was* wrong is audit item M68, in the component that renders it. `SafeSchema` injected
+`JSON.stringify(schema)` through `dangerouslySetInnerHTML`. `JSON.stringify` escapes quotes and
+backslashes but **not `</script>`** — inside a `<script>` element the HTML parser ends the block at
+that byte sequence regardless of JSON context, so any schema value containing it (an FAQ answer, a
+venue name) would close the tag early and the remainder would parse as live markup. Now escapes
+`<`, `>`, `&` and U+2028/U+2029 as `\uXXXX`, which is still valid JSON that parses back identically.
+
+(Writing that fix produced a small object lesson: the first version embedded literal U+2028/U+2029
+characters in the regex, which broke the source file — because they are line terminators, which is
+precisely why they need escaping.)
+
+### M-9 · Sitemaps were already complete; one real gap
+
+`scripts/generate-sitemap.js` already generates stadium URLs dynamically from `unifiedVenues` at
+build time. Checked against the data: **182 venues, 182 stadium URLs, 0 missing.** The "200+ pages
+missing" premise does not hold — 247 URLs are published across the sitemaps.
+
+The one real defect: `sitemap-images.xml` exists on disk but was absent from `sitemap-index.xml`, so
+crawlers had no way to discover it. Added to the index generator.
+
+### M-10 · Dependencies
+
+**`axios` and `next-pwa` are not dependencies of this project** — neither appears in `package.json`,
+so there was nothing to remove or replace.
+
+`npm audit fix` (non-breaking) took the tree from **16 vulnerabilities to 3**, with no `package.json`
+changes — lockfile only. Build and all tests pass on the updated tree.
+
+The remaining 3 all require a **major** upgrade and were deliberately not forced:
+
+| Package | Fix requires | Note |
+|---|---|---|
+| `next` | 15.5.23 → **16.3.0** | major framework migration |
+| `postcss` | — | transitively fixed by the same Next 16 bump |
+| `sharp` | 0.34.5 → **0.35.3** | inherited via Next's `optionalDependencies: sharp ^0.34.3` |
+
+Bumping our direct `sharp` alone would leave Next's own 0.34.x copy in the tree — two versions, same
+vulnerability. Our only direct use is a guarded `require` in `scripts/generate-webp.js`, a build-time
+script. So all three genuinely resolve to "upgrade to Next 16", which is a migration needing its own
+verification pass (React version, API changes, 810 tests, e2e) and an explicit go-ahead — not
+something to force through at the end of an unrelated batch.
+
+### Verification
+
+| Check | Result |
+|---|---|
+| `npm run build` | ✅ exit 0, compiled successfully |
+| `npx jest` | ✅ 810 passed / 810, 25 suites |
+| `npx tsc --noEmit` | ✅ exit 0 |
+| `npx eslint --ext .ts,.tsx .` | ✅ exit 0 — 0 errors, 144 warnings |
+| `npm audit` | ✅ 16 → 3 (all 3 need Next 16) |
+| Sitemap coverage | ✅ 182/182 venues; index now lists all 5 sitemaps |
+| Unused imports | ✅ 111 removed, 0 remaining |
+
+### Notes / follow-ups (not done here)
+
+- **Next.js 15 → 16** upgrade clears the last 3 advisories. Wants its own branch and verification pass.
+- The homepage and seasonal-copy changes are verified by build + type-check only; worth a browser look.
+- ~240 unused *locals* remain as lint warnings (distinct from imports, not auto-removable safely).
+- Audit MEDIUM items outside these 10 categories — M60/M61/M63/M64/M65 (perf), M66/M67/M69
+  (privacy/serverless), M70–M74 (architecture/content) — are untouched, as are all 59 LOW items.
+
+---
+
 # Phase 11: HIGH Priority Fixes from July 2026 Audit (2026-08-07)
 
 **Goal:** Fix all 25 HIGH issues (H1–H25) from `AUDIT-REPORT-JULY-2026.md`, plus the shade-API
