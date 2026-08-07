@@ -21,7 +21,7 @@ export default function AccessibilityPage() {
     <div className={styles.legalContainer}>
       <div className={styles.legalContent}>
         <h1>Accessibility Statement</h1>
-        <p className={styles.lastUpdated}>Last Updated: January 2025</p>
+        <p className={styles.lastUpdated}>Last Updated: August 2025</p>
         <p className={styles.effectiveDate}>WCAG 2.1 Level AA Compliance</p>
 
         <div className={styles.tableOfContents}>
@@ -187,7 +187,7 @@ export default function AccessibilityPage() {
             <li>Alternative text for all images is being added</li>
           </ul>
           <p>
-            <strong>Upcoming Features (Q1 2025):</strong>
+            <strong>Planned improvements:</strong>
           </p>
           <ul>
             <li>Color-blind friendly visualization modes with patterns</li>

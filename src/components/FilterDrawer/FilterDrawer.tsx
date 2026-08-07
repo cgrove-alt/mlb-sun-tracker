@@ -36,9 +36,12 @@ export default function FilterDrawer() {
 
   return (
     <>
+      {/* Always aria-hidden: a decorative scrim, never a control. It was
+          aria-hidden={!open} — i.e. EXPOSED to assistive tech exactly when the
+          drawer was open, which is the one time it must not be. */}
       <div
         className={`${s.scrim} ${open ? s.scrimOpen : ''}`}
-        aria-hidden={!open}
+        aria-hidden="true"
         onClick={() => setOpen(false)}
       />
       <aside

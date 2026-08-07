@@ -1,3 +1,4 @@
+import { onActivateKeyDown } from '../../utils/keyboardActivation';
 import React from 'react';
 import styles from './SectionLabel.module.css';
 
@@ -81,6 +82,10 @@ export const SectionLabel: React.FC<SectionLabelProps> = ({
       onClick={onClick}
       tabIndex={isInteractive ? tabIndex ?? 0 : undefined}
       role={isInteractive ? 'button' : undefined}
+      // Advertising role="button" and taking focus without handling Enter/Space
+      // is worse than not being interactive at all: the control announces itself
+      // as a button, accepts focus, then does nothing when activated.
+      onKeyDown={onClick ? onActivateKeyDown(onClick as () => void) : undefined}
       aria-label={ariaLabel}
       style={onClick ? { cursor: 'pointer' } : undefined}
     >

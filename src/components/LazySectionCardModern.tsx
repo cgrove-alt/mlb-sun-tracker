@@ -1,3 +1,4 @@
+import { onActivateKeyDown } from '../utils/keyboardActivation';
 import React, { useState, useEffect } from 'react';
 import { useIntersectionObserver } from '../hooks/useIntersectionObserver';
 import { useHapticFeedback } from '../hooks/useHapticFeedback';
@@ -69,9 +70,12 @@ const LazySectionCardModernComponent: React.FC<LazySectionCardProps> = ({
       `}
       data-exposure={roundedExposure}
       data-section={section.id}
-      role="listitem"
+      // Was role="listitem" with tabIndex and onClick: focusable and clickable,
+      // but announced as a plain list item and unresponsive to Enter/Space.
+      role="button"
       tabIndex={0}
       onClick={handleClick}
+      onKeyDown={onActivateKeyDown(handleClick)}
       aria-label={`Section ${section.name}, ${formatPercentageForScreenReader(roundedExposure)}, ${section.level} level${section.covered ? ', covered section' : ''}`}
     >
       {/* Glass morphism overlay effect */}

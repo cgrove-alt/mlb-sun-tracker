@@ -1,6 +1,7 @@
 'use client';
 
 import { useState, useCallback } from 'react';
+import { useEscapeKey } from '../src/hooks/useEscapeKey';
 import OptimizedImage from './OptimizedImage';
 
 interface StadiumImage {
@@ -27,6 +28,10 @@ export default function StadiumImageGallery({
   const handleClose = useCallback(() => {
     setSelectedImage(null);
   }, []);
+
+  // Escape closes the overlay. It could previously only be dismissed by
+  // clicking, so keyboard users had no way out once it opened.
+  useEscapeKey(selectedImage !== null, handleClose);
 
   const handlePrevious = useCallback(() => {
     setSelectedImage((prev) =>
@@ -69,9 +74,17 @@ export default function StadiumImageGallery({
         </div>
       </div>
 
-      {/* Lightbox Modal */}
+      {/* Lightbox Modal. The root IS the dialog (clicking outside the content
+          closes it), so it is labelled as one rather than aria-hidden. Escape is
+          wired up via useEscapeKey above. */}
       {selectedImage !== null && (
-        <div className="lightbox" onClick={handleClose}>
+        <div
+          className="lightbox"
+          onClick={handleClose}
+          role="dialog"
+          aria-modal="true"
+          aria-label="Image viewer"
+        >
           <button
             className="lightbox-close"
             onClick={handleClose}

@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
+import { useEscapeKey } from '../hooks/useEscapeKey';
 import './FloatingActionButton.css';
 
 interface FABAction {
@@ -67,6 +68,11 @@ export const FloatingActionButton: React.FC<FloatingActionButtonProps> = ({
     return () => window.removeEventListener('scroll', handleScroll);
   }, [hideOnScroll, showAfterScroll]);
 
+  // Escape closes this overlay. Previously it could only be dismissed by
+  // clicking the backdrop — a pointer-only affordance, so keyboard users had
+  // no way out once it opened.
+  useEscapeKey(isOpen, () => setIsOpen(false));
+
   const handleMainClick = () => {
     if (actions && actions.length > 0) {
       setIsOpen(!isOpen);
@@ -92,7 +98,7 @@ export const FloatingActionButton: React.FC<FloatingActionButtonProps> = ({
 
   return (
     <>
-      {isOpen && <div className="fab-backdrop" onClick={handleBackdropClick} />}
+      {isOpen && <div className="fab-backdrop" onClick={handleBackdropClick} aria-hidden="true" />}
       
       <div className={`fab-container fab-container--${position} ${!isVisible ? 'fab-container--hidden' : ''}`}>
         {actions && actions.length > 0 && (

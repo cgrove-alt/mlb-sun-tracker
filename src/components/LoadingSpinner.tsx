@@ -13,7 +13,12 @@ export const LoadingSpinner: React.FC<LoadingSpinnerProps> = ({
   fullScreen = false
 }) => {
   const spinnerContent = (
-    <div className={`loading-spinner-container ${size}`}>
+    <div
+      className={`loading-spinner-container ${size}`}
+      role="status"
+      aria-live="polite"
+      aria-label={message || 'Loading'}
+    >
       <div className="loading-spinner-wrapper">
         <svg className="loading-spinner" viewBox="0 0 50 50">
           <circle

@@ -1,4 +1,5 @@
 import React, { useState, useMemo } from 'react';
+import { useEscapeKey } from '../hooks/useEscapeKey';
 import { Stadium } from '../data/stadiums';
 import { MobileStadiumCardSkeleton } from './SkeletonScreens';
 import { useLoadingState } from '../hooks/useLoadingState';
@@ -40,6 +41,11 @@ export const MobileStadiumSelector: React.FC<MobileStadiumSelectorProps> = ({
     setSearchQuery('');
   };
 
+  // Escape closes this overlay. Previously it could only be dismissed by
+  // clicking the backdrop — a pointer-only affordance, so keyboard users had
+  // no way out once it opened.
+  useEscapeKey(isOpen, () => setIsOpen(false));
+
   return (
     <div className="mobile-stadium-selector">
       <button 
@@ -60,7 +66,7 @@ export const MobileStadiumSelector: React.FC<MobileStadiumSelectorProps> = ({
 
       {isOpen && (
         <div className="mobile-stadium-modal">
-          <div className="mobile-stadium-modal-overlay" onClick={() => setIsOpen(false)} />
+          <div className="mobile-stadium-modal-overlay" onClick={() => setIsOpen(false)} aria-hidden="true" />
           <div className="mobile-stadium-modal-content">
             <div className="mobile-stadium-modal-header">
               <h2>Select Stadium</h2>

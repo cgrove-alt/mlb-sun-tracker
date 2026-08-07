@@ -133,7 +133,7 @@ export const MobileFilterSheet: React.FC<MobileFilterSheetProps> = ({
 
       <MobileFilterPortal isOpen={isOpen}>
         <div className="mobile-filter-sheet">
-          <div className="mobile-filter-overlay" onClick={() => setIsOpen(false)} />
+          <div className="mobile-filter-overlay" onClick={() => setIsOpen(false)} aria-hidden="true" />
           <div className="mobile-filter-content" onClick={(e) => e.stopPropagation()}>
             <div className="mobile-filter-header">
               <h2>Filter Sections</h2>

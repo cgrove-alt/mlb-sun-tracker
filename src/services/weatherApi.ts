@@ -205,7 +205,10 @@ export class WeatherApiService {
       windSpeed: hourly.wind_speed_10m[index] || 0,
       windDirection: hourly.wind_direction_10m[index] || 0,
       cloudCover: hourly.cloud_cover[index] || 0,
-      visibility: hourly.visibility[index] / 1000 || 10, // Convert m to km
+      // `?? `, not `||`: visibility 0 is dense fog, a real and important reading.
+      // With `||` it fell through to the 10 km default, so the worst visibility
+      // the API can report was silently rewritten as the clearest.
+      visibility: (hourly.visibility[index] ?? 10000) / 1000, // Convert m to km
       uvIndex: hourly.uv_index[index] || 0,
       conditions: [this.getWeatherCondition(hourly.weather_code[index] || 0, hourly.is_day[index])],
       precipitationProbability: hourly.precipitation_probability[index] || 0,

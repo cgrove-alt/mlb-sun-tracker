@@ -14,7 +14,7 @@ export default function Disclaimer() {
   return (
     <div className="page-container prose prose-slate max-w-prose mx-auto px-4 py-8 stack">
       <h1 className="h1 break-words md:break-normal">Legal Disclaimers</h1>
-      <p className="text-sm text-gray-600">Last Updated: January 2025</p>
+      <p className="text-sm text-gray-600">Last Updated: August 2025</p>
 
       <nav className="bg-gray-50 p-4 rounded-lg">
         <h2 className="h3 mb-2">Important Disclaimers</h2>

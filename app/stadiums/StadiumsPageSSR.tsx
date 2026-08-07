@@ -36,7 +36,9 @@ export default function StadiumsPageSSR() {
 
           <div className={styles.statsGrid}>
             <div className={styles.stat}>
-              <span className={styles.statNumber}>182</span>
+              {/* Was hardcoded 182: it silently goes stale the moment a venue
+                  is added or removed. VENUE_COUNT is derived from the data. */}
+              <span className={styles.statNumber}>{VENUE_COUNT}</span>
               <span className={styles.statLabel}>Venues</span>
             </div>
             <div className={styles.stat}>

@@ -1,5 +1,6 @@
 'use client';
 
+import { onActivateKeyDown } from '../utils/keyboardActivation';
 import React, { useState, useEffect, useRef } from 'react';
 import Link from 'next/link';
 import { Stadium } from '../data/stadiums';
@@ -161,7 +162,17 @@ const MobileStadiumGuide: React.FC<MobileStadiumGuideProps> = ({ stadium, sectio
         <div className="shaded-sections-list">
           {bestShadedSections.map(section => (
             <div key={section.id} className="shaded-section-item">
-              <div className="section-header" onClick={() => toggleSection(section.id)}>
+              {/* Accordion toggle: needs to be operable by keyboard, and to
+                  report its expanded state to assistive tech. */}
+              <div
+                className="section-header"
+                onClick={() => toggleSection(section.id)}
+                onKeyDown={onActivateKeyDown(() => toggleSection(section.id))}
+                role="button"
+                tabIndex={0}
+                aria-expanded={expandedSection === section.id}
+                aria-label={`${expandedSection === section.id ? 'Collapse' : 'Expand'} details for ${section.name}`}
+              >
                 <h3>{section.name}</h3>
                 <span className="expand-icon">{expandedSection === section.id ? '−' : '+'}</span>
               </div>

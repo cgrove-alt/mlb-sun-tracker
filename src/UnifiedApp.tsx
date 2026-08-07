@@ -1,5 +1,4 @@
 import React, { useState, useEffect, useCallback } from 'react';
-import { HelmetProvider } from 'react-helmet-async';
 import Link from 'next/link';
 import './App.css';
 import { UnifiedVenue, ALL_UNIFIED_VENUES, convertToLegacyStadium } from './data/unifiedVenues';
@@ -20,7 +19,6 @@ import { LoadingSpinner } from './components/LoadingSpinner';
 import { VenueChangeSkeleton } from './components/SkeletonScreens';
 import { SunIcon, MoonIcon } from './components/Icons';
 import { ErrorBoundary } from './components/ErrorBoundary';
-import { SEOHelmet } from './components/SEOHelmet';
 import { SunExposureExplanation } from './components/SunExposureExplanation';
 import MobileApp from './MobileApp';
 
@@ -300,12 +298,6 @@ function UnifiedAppContent() {
 
   return (
     <div className="App">
-      <SEOHelmet
-        stadium={legacyStadium}
-        game={selectedGame}
-        pageType={selectedGame ? 'game' : selectedVenue ? 'stadium' : 'home'}
-        shadedSectionsCount={detailedSections.filter(s => !s.inSun).length}
-      />
       <OfflineIndicator />
       {/* Duplicate header removed - StickyTopNav in layout.tsx provides global navigation */}
 
@@ -481,7 +473,6 @@ function UnifiedApp() {
 
   if (isMobile) {
     return (
-      <HelmetProvider>
         <ErrorBoundary>
           <I18nProvider>
             <ErrorProvider>
@@ -489,12 +480,10 @@ function UnifiedApp() {
             </ErrorProvider>
           </I18nProvider>
         </ErrorBoundary>
-      </HelmetProvider>
     );
   }
 
   return (
-    <HelmetProvider>
       <ErrorBoundary>
         <I18nProvider>
           <ErrorProvider>
@@ -502,7 +491,6 @@ function UnifiedApp() {
           </ErrorProvider>
         </I18nProvider>
       </ErrorBoundary>
-    </HelmetProvider>
   );
 }
 

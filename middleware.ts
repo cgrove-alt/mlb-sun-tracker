@@ -39,7 +39,10 @@ export function middleware(request: NextRequest) {
     'Referrer-Policy': 'strict-origin-when-cross-origin',
     
     // Permissions Policy (formerly Feature Policy)
-    'Permissions-Policy': 'camera=(), microphone=(), geolocation=(self), interest-cohort=()',
+    // 'interest-cohort=()' opted out of FLoC, which Google abandoned in 2022 and
+    // no browser implements; the directive is now a no-op that some browsers warn
+    // about. Its successor is the Topics API, opted out of via 'browsing-topics'.
+    'Permissions-Policy': 'camera=(), microphone=(), geolocation=(self), browsing-topics=()',
     
     // Content Security Policy
     'Content-Security-Policy': [

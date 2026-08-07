@@ -1,4 +1,4 @@
-import React, { useState, useRef, useEffect } from 'react';
+import React, { useState, useRef, useEffect, useId } from 'react';
 import './Tooltip.css';
 
 interface TooltipProps {
@@ -16,6 +16,9 @@ export const Tooltip: React.FC<TooltipProps> = ({
   delay = 300,
   className = ''
 }) => {
+  // A hardcoded id="tooltip" is not unique: render two tooltips and every
+  // aria-describedby points at whichever one happens to be first in the DOM.
+  const tooltipId = useId();
   const [isVisible, setIsVisible] = useState(false);
   const [actualPosition, setActualPosition] = useState(position);
   const triggerRef = useRef<HTMLDivElement>(null);
@@ -100,13 +103,13 @@ export const Tooltip: React.FC<TooltipProps> = ({
       onFocus={showTooltip}
       onBlur={hideTooltip}
       onKeyDown={handleKeyDown}
-      aria-describedby={isVisible ? 'tooltip' : undefined}
+      aria-describedby={isVisible ? tooltipId : undefined}
     >
       {children}
       {isVisible && (
         <div
           ref={tooltipRef}
-          id="tooltip"
+          id={tooltipId}
           className={`tooltip tooltip-${actualPosition}`}
           role="tooltip"
           aria-live="polite"

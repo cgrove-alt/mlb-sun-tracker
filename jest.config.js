@@ -27,7 +27,11 @@ module.exports = {
     }]
   },
   moduleNameMapper: {
-    '^@/(.*)$': '<rootDir>/src/$1',
+    // Must match tsconfig's `"@/*": ["./*"]` — the project ROOT, not src/.
+    // These disagreed, so any module importing '@/lib/...' (e.g. app/blog/page)
+    // could not be required from a test at all, which is a large part of why
+    // page-level components had no tests.
+    '^@/(.*)$': '<rootDir>/$1',
     '\\.(css|less|scss|sass)$': '<rootDir>/src/__mocks__/styleMock.js',
     '\\.(jpg|jpeg|png|gif|svg)$': '<rootDir>/src/__mocks__/fileMock.js'
   },

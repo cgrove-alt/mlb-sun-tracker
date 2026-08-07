@@ -427,7 +427,7 @@ export default function StickyTopNav() {
       </div>
 
       {isMenuOpen && (
-        <div className="sticky-nav-mobile-overlay" onClick={closeMobileMenu} />
+        <div className="sticky-nav-mobile-overlay" onClick={closeMobileMenu} aria-hidden="true" />
       )}
     </>
   );

@@ -14,7 +14,7 @@ export default function PrivacyPage() {
   return (
     <div className="page-container prose prose-slate max-w-prose mx-auto px-4 py-8 stack">
       <h1 className="h1 break-words md:break-normal">Privacy Policy</h1>
-      <p className="text-sm text-gray-600">Last Updated: January 2025</p>
+      <p className="text-sm text-gray-600">Last Updated: August 2025</p>
       <p className="text-sm text-gray-600">Effective Date: January 1, 2025</p>
       
       <nav className="bg-gray-50 p-4 rounded-lg">
@@ -187,10 +187,14 @@ export default function PrivacyPage() {
           <li>Contact us to request account deletion</li>
         </ul>
 
-        <h3 id="california" className="h3">Regional Rights</h3>
+        {/* The footer links to both /privacy#california and /privacy#gdpr.
+            Only `california` existed — and it sat on the generic "Regional
+            Rights" heading — so the EU link silently landed at the top of the
+            page. Each jurisdiction now has its own anchor on its own entry. */}
+        <h3 className="h3">Regional Rights</h3>
         <ul>
-          <li><strong>GDPR (EU):</strong> Right to access, rectification, erasure, and data portability</li>
-          <li><strong>CCPA (California):</strong> Right to know, delete, and opt-out of sale</li>
+          <li id="gdpr"><strong>GDPR (EU):</strong> Right to access, rectification, erasure, and data portability</li>
+          <li id="california"><strong>CCPA (California):</strong> Right to know, delete, and opt-out of sale</li>
           <li><strong>Other Jurisdictions:</strong> Rights as provided by applicable local laws</li>
         </ul>
       </section>

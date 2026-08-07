@@ -1,6 +1,7 @@
 'use client';
 
 import React, { useState, useEffect } from 'react';
+import { useEscapeKey } from '../src/hooks/useEscapeKey';
 import Link from 'next/link';
 import { ModernButton } from '../src/components/ModernButton';
 import { useGlobalPrivacyControl } from '../hooks/useGlobalPrivacyControl';
@@ -17,6 +18,10 @@ interface CookiePreferences {
 const CookieBannerModern: React.FC = () => {
   const [showBanner, setShowBanner] = useState(false);
   const [showPreferences, setShowPreferences] = useState(false);
+
+  // Escape closes the overlay. It could previously only be dismissed by
+  // clicking, so keyboard users had no way out once it opened.
+  useEscapeKey(showPreferences, () => setShowPreferences(false));
   const [showGPCNotice, setShowGPCNotice] = useState(false);
   const [cookiesAvailable, setCookiesAvailable] = useState(true);
   const [preferences, setPreferences] = useState<CookiePreferences>({
@@ -304,6 +309,7 @@ const CookieBannerModern: React.FC = () => {
           <div
             className="fixed inset-0 bg-black/30 backdrop-blur-sm z-40"
             onClick={() => setShowPreferences(false)}
+            aria-hidden="true"
           />
           <div className="fixed inset-0 z-50 flex items-center justify-center p-4 pointer-events-none">
             <div className="bg-white/95 backdrop-blur-md border-2 border-ink-200 rounded-2xl shadow-2xl max-w-2xl w-full max-h-[90vh] overflow-y-auto pointer-events-auto">

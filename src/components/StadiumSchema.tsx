@@ -161,7 +161,7 @@ export const ShadeFAQSchema: React.FC = () => {
         "name": "Which MLB stadiums have the most shaded seats?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Stadiums with retractable or fixed roofs like Chase Field, Globe Life Field, and Marlins Park offer the most shade. For open-air stadiums, look for sections under upper deck overhangs."
+          "text": "Stadiums with retractable or fixed roofs like Chase Field, Globe Life Field, and loanDepot park offer the most shade. For open-air stadiums, look for sections under upper deck overhangs."
         }
       },
       {

@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useEscapeKey } from '../hooks/useEscapeKey';
 import { Stadium } from '../data/stadiums';
 import { MLBGame } from '../services/mlbApi';
 import { MiLBGame } from '../services/milbApi';
@@ -22,6 +23,9 @@ export const ShareButton: React.FC<ShareButtonProps> = ({
 }) => {
   const [showCopyFeedback, setShowCopyFeedback] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  // Escape closes the share menu regardless of what holds focus.
+  useEscapeKey(isMenuOpen, () => setIsMenuOpen(false));
 
   const generateShareUrl = () => {
     const params = new URLSearchParams();
@@ -210,17 +214,16 @@ export const ShareButton: React.FC<ShareButtonProps> = ({
         </div>
       )}
       
-      {/* Backdrop to close menu when clicking outside */}
+      {/* Backdrop to close the menu when clicking outside.
+          It previously carried BOTH tabIndex={0} and aria-hidden="true": in the
+          tab order but hidden from assistive tech, so keyboard users tabbed onto
+          an element that announced nothing. Its Escape handler also only fired
+          while that invisible element happened to hold focus. It is now purely
+          decorative, and Escape is handled at the component level below. */}
       {isMenuOpen && (
-        <div 
+        <div
           className="share-menu-backdrop"
           onClick={() => setIsMenuOpen(false)}
-          onKeyDown={(e) => {
-            if (e.key === 'Escape') {
-              setIsMenuOpen(false);
-            }
-          }}
-          tabIndex={0}
           aria-hidden="true"
         />
       )}

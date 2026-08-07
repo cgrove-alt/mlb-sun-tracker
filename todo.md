@@ -1,3 +1,143 @@
+# Phase 13: LOW Priority Fixes from July 2026 Audit (2026-08-07)
+
+**Goal:** Work the 5 LOW categories (L-1…L-5), covering audit items L1–L54.
+
+**Status:** ✅ COMPLETE. Build, type-check, **900 tests** and lint all green.
+
+This was the final batch of the July 2026 audit programme (Phases 10–13: CRITICAL → HIGH → MEDIUM →
+LOW). Two fixes here found real defects rather than cosmetic ones: a weather reading that silently
+inverted its worst-case value, and a jest/tsconfig disagreement that made an entire class of test
+impossible to write.
+
+## Tasks
+
+- [x] **L-1** Keyboard support for clickable non-buttons (L3, L8, L15, L16 + sweep).
+- [x] **L-2** Page-level smoke tests (L38, L39) — and the config bug that blocked them.
+- [x] **L-3** Stale content (L20, L34, L35, L36, L37).
+- [x] **L-4** Broken footer anchor.
+- [x] **L-5** Deprecated APIs (L26, L27, L29) + L5, L9, L33.
+
+## Review
+
+### L-1 · Keyboard support — classify before "fixing"
+
+A sweep found 15 clickable `<div>`/`<span>` elements. Blanket-adding `role="button"`, `tabIndex={0}`
+and a key handler to all of them would have been wrong: most are **modal backdrops**, and putting a
+backdrop in the tab order creates a focus stop that announces nothing. They need the opposite
+treatment. So each was classified:
+
+**Genuine controls** — given full keyboard support via a new shared
+`src/utils/keyboardActivation.ts` (Enter/Space, `preventDefault` on Space so the page doesn't scroll,
+and a guard so a nested `<button>`/`<a>` doesn't double-fire):
+
+- `SectionLabel` (audit L3) — had `role="button"` and `tabIndex` but **no key handler**, which is
+  worse than being non-interactive: it announces itself as a button, takes focus, then ignores Enter.
+- `LazySectionCardModern` — same shape, and additionally announced as `role="listitem"` while being
+  clickable; now a button.
+- `MobileStadiumGuide` accordion header — plus `aria-expanded` so its state is reported.
+
+**Decorative click-catchers** — marked `aria-hidden="true"` and deliberately left unfocusable:
+CookieBannerModern, MobileFilterSheet, StickyTopNav, MobileStadiumSelector, FloatingActionButton,
+and FilterDrawer. FilterDrawer's scrim had `aria-hidden={!open}` — i.e. it was **exposed** to
+assistive tech exactly when the drawer was open, the one moment it must not be.
+
+`ShareButton`'s backdrop was audit **L8** precisely: `tabIndex={0}` *and* `aria-hidden="true"`
+together, so keyboard users tabbed onto an element that announced nothing, and its Escape handler
+only fired while that invisible element held focus.
+
+Which exposed the actual gap: several overlays could only be dismissed by *clicking* a backdrop — a
+pointer-only affordance. A keyboard user who opened them had no way out. New `useEscapeKey` hook
+wired into CookieBannerModern, StadiumImageGallery (audit L16), MobileStadiumSelector,
+FloatingActionButton and ShareButton (audit L15). The gallery lightbox is also now labelled
+`role="dialog"` / `aria-modal` rather than treated as a backdrop, since it *is* the dialog.
+
+### L-2 · Page tests — and why there were none
+
+Added `app/__tests__/pageSmoke.test.tsx`: every static page route is rendered and asserted to
+produce markup, contain a heading, and — a regression guard for the Phase 11 `<main>` fix — **not**
+render its own `<main>` landmark. 18 routes × 4 assertions = 72 tests.
+
+Writing them surfaced the reason none existed. `jest.config.js` mapped `@/(.*)` to
+`<rootDir>/src/$1`, while `tsconfig.json` maps `"@/*": ["./*"]` — the project **root**. Every
+`@/lib/...` import (e.g. `app/blog/page`) was therefore unresolvable from a test, and `@/src/...`
+resolved to `src/src/...`. Any attempt to test those modules failed with a config error rather than a
+useful message. Aligned jest to tsconfig.
+
+### L-3 · Stale content
+
+- "Marlins Park" → "loanDepot park" in the MLB guide and in `StadiumSchema` (renamed in 2021, and the
+  schema copy was being served to search engines as structured data).
+- "Last Updated: January 2025" → August 2025 across the six legal pages.
+- "Upcoming Features (Q1 2025)" → an undated "Planned improvements" heading, so it cannot go stale
+  again on a date rather than on its content.
+- `public/manifest.json` described the app as MLB-only; it now names MLB, MiLB and NFL.
+- `StadiumsPageSSR` printed a hardcoded `182` venue count next to a `{VENUE_COUNT}` that was already
+  derived two lines above (audit L20). Now both derive.
+
+### L-4 · Broken footer anchor
+
+The footer's "EU Privacy Rights" linked to `/privacy#gdpr`, and no element on that page had
+`id="gdpr"`. The link *appeared* to work — it navigated to /privacy — while dropping the reader at
+the top of a long policy instead of the section they asked for. Worse, the GDPR text existed all
+along, as a list item under a "Regional Rights" heading that carried `id="california"`.
+
+Each jurisdiction now has its own anchor on its own entry. `app/__tests__/internalAnchors.test.tsx`
+walks the footer's `#fragment` links, resolves each against the ids the target page actually renders,
+and also checks the privacy page's own table of contents. Confirmed meaningful by reverting the fix:
+2 tests fail without it.
+
+### L-5 · Deprecated APIs
+
+**`react-helmet-async` (L26)** — a Create React App leftover. `SEOHelmet` was still rendered by both
+`UnifiedApp` and `MobileApp`, emitting title, description, canonical, OpenGraph and Twitter tags on
+the client. In the App Router that is redundant at best: `app/layout.tsx` and `app/page.tsx` already
+export full `Metadata` (verified: title, description, `metadataBase`, openGraph, twitter, per-page
+`alternates.canonical`), which Next renders server-side. The Helmet copies could only ever duplicate
+those tags after hydration. Removed the component, the `HelmetProvider` wrappers, and the dependency.
+
+**FLoC opt-out (L29)** — `Permissions-Policy: interest-cohort=()` opted out of a proposal Google
+abandoned in 2022; no browser implements it, and it is now a no-op some browsers warn about. Replaced
+with its successor, `browsing-topics=()`.
+
+**`target: "es5"` (L27)** — with a browserslist of "last 2 versions" and an explicit `not ie 11`,
+es5 was downleveling for browsers the project doesn't support. Raised to `es2020`; build and all 900
+tests pass.
+
+Three more genuine defects fixed while in the area:
+
+- **`weatherApi` visibility (L33)** — `hourly.visibility[index] / 1000 || 10`. Visibility of 0 is
+  dense fog, a real and safety-relevant reading; `||` treated it as absent and substituted the 10 km
+  default, so **the worst visibility the API can report was silently rewritten as the clearest**.
+  Now `??` on the raw value.
+- **`Tooltip` (L9)** — `id="tooltip"` hardcoded. Render two tooltips and every `aria-describedby`
+  points at whichever is first in the DOM. Now `useId()`.
+- **`LoadingSpinner` (L5)** — no `role`/label, so screen reader users got silence during loads. Now
+  `role="status"` with `aria-live` and a label.
+
+### Verification
+
+| Check | Result |
+|---|---|
+| `npm run build` | ✅ exit 0, compiled successfully |
+| `npx jest` | ✅ **900 passed / 900**, 28 suites (was 810 / 25) |
+| `npx tsc --noEmit` | ✅ exit 0 |
+| `npx eslint --ext .ts,.tsx .` | ✅ exit 0 — 0 errors, 144 warnings |
+| Clickable non-buttons | ✅ all classified: controls keyboard-operable, backdrops aria-hidden |
+| Footer anchors | ✅ all resolve; guarded by test |
+
+### Notes / follow-ups (not done here)
+
+- **Next.js 15 → 16** remains the one outstanding item from the whole programme: it clears the last
+  3 npm advisories (`next`, `postcss`, `sharp`). Wants its own branch and verification pass.
+- Visual changes across Phases 11–13 (KillOverhang CSS, homepage sections, seasonal copy) are
+  verified by build and type-check only — worth a browser pass before release.
+- Remaining LOW items not in these five categories: L1 (SVG icons `aria-hidden`), L4/L7/L10/L11
+  (chart and virtual-scroll ARIA), L14, L17, L18, L21/L22 (schema dates from `new Date()`), L24,
+  L25, L30–L32 (unguarded `JSON.parse` of localStorage), L41, L42. Plus the MEDIUM items outside the
+  ten categories worked in Phase 12.
+
+---
+
 # Phase 12: MEDIUM Priority Fixes from July 2026 Audit (2026-08-07)
 
 **Goal:** Work the 10 MEDIUM categories (M-1…M-10), which map onto audit items M1–M74.

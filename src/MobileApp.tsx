@@ -15,7 +15,6 @@ import { SunFilterCriteria } from './components/EnhancedSunFilter';
 import { MobileSectionCard } from './components/MobileSectionCard';
 import { WeatherDisplay } from './components/WeatherDisplay';
 import { EmptyState } from './components/EmptyStates';
-import { SEOHelmet } from './components/SEOHelmet';
 import { weatherApi } from './services/weatherApi';
 import { SunCalculator } from './utils/sunCalculator';
 import { getSunPosition, getSunDescription, getCompassDirection } from './utils/sunCalculations';
@@ -244,12 +243,6 @@ const MobileApp: React.FC = () => {
       <a href="#venue-selector" className="skip-link">Skip to venue selector</a>
       <a href="#results" className="skip-link">Skip to results</a>
       
-      <SEOHelmet 
-        stadium={selectedStadium}
-        game={selectedGame}
-        pageType={selectedGame ? 'game' : selectedVenue ? 'stadium' : 'home'}
-        shadedSectionsCount={filteredSections.filter(s => !s.inSun).length}
-      />
       
       <div className="mobile-main">
         <div className="mobile-content">
