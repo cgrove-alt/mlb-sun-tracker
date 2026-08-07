@@ -1,78 +1,30 @@
-// Sun calculation functions for stadium sections.
+// Section-level sun exposure.
 //
-// Coordinate convention (CRITICAL — see also stadiumSectionTypes.ts):
+// The coordinate convention and the physics both live in
+// `src/utils/bowlGeometry.ts` — read that file's header before changing
+// anything here. In short:
 //
-//   `section.baseAngle` is a STADIUM-LOCAL angle, NOT a compass bearing.
-//   It is measured CCW from +x (first base direction) in the stadium's own
-//   frame: 0 = 1B, 90 = CF, 180 = 3B, 270 = behind home plate.
+//   `section.baseAngle` is STADIUM-LOCAL (0 = 1B, 90 = CF, 180 = 3B,
+//   270 = behind home). `sunAzimuth` is an absolute compass bearing. They can
+//   only be compared after converting the section with
+//   `sectionCompassAngle(section, stadiumOrientation)`.
 //
-//   `sunAzimuth` is an ABSOLUTE compass bearing (0 = N, 90 = E, …).
+//   A grandstand shades its own seats: the stands on the SAME compass side as
+//   the sun sit in their own structure's shadow, and the stands ACROSS the
+//   bowl take the light in the face.
 //
-//   To compare, the section's baseAngle must be converted to compass:
-//       sectionCompass = (stadiumOrientation + 90 − baseAngle) mod 360
-//   where `stadiumOrientation` is the compass bearing from home plate to
-//   center field. Derivation:
-//       1B  (baseAngle 0)   → compass orientation + 90  (catcher's right)
-//       CF  (baseAngle 90)  → compass orientation       (straight ahead)
-//       3B  (baseAngle 180) → compass orientation − 90  (catcher's left)
-//       HP  (baseAngle 270) → compass orientation + 180 (behind catcher)
-//
-// Physics:
-//
-//   A section located at compass position θ around the bowl has seats that
-//   face INWARD toward the field — i.e. the seat normal points (θ + 180°)
-//   compass. Sunlight on the seat is direct when |sunAzimuth − seatNormal| <
-//   90°, which is equivalent to |sunAzimuth − θ| > 90°. So:
-//
-//     - Section "opposite" the sun in compass terms (angleDiff > 90°) is
-//       facing toward the sun and receives direct light. This is the dominant
-//       late-afternoon case (rays cross the bowl into the seats).
-//     - Section "same side" as the sun (angleDiff ≤ 90°) has the sun behind
-//       the spectators; most of the light is absorbed by the bowl structure.
-//     - High sun (≥ ~30°): every uncovered seat receives direct light;
-//       azimuth controls intensity, not whether the seat is lit.
-//     - Below horizon: no direct sun anywhere.
+// This module is the section-level (not row-level) model. It answers "how much
+// of this section is in direct sun right now" and is what the venue-page shade
+// diagram draws.
 
 import type { StadiumSection } from '../data/stadiumSectionTypes';
+import {
+  sectionCompassAngle,
+  directSunPercent,
+  type SeatingLevel,
+} from './bowlGeometry';
 
-const normalizeAngle = (angle: number): number => ((angle % 360) + 360) % 360;
-
-function angleDiffDeg(a: number, b: number): number {
-  const diff = Math.abs(normalizeAngle(a) - normalizeAngle(b));
-  return diff > 180 ? 360 - diff : diff;
-}
-
-/**
- * Convert a stadium-local section center angle into an absolute compass
- * bearing. See file-header convention block.
- */
-export function sectionCompassAngle(
-  section: Pick<StadiumSection, 'baseAngle' | 'angleSpan'>,
-  stadiumOrientation: number,
-): number {
-  const sectionCenter = section.baseAngle + section.angleSpan / 2;
-  return normalizeAngle(stadiumOrientation + 90 - sectionCenter);
-}
-
-function levelMultiplier(level: StadiumSection['level']): number {
-  // Upper rows are generally more exposed (less overhang); suites tend to be
-  // recessed. These match the previous file's level weightings so that
-  // numbers across the codebase stay comparable.
-  switch (level) {
-    case 'field':
-      return 1.0;
-    case 'lower':
-      return 0.95;
-    case 'club':
-      return 0.85;
-    case 'upper':
-      return 1.0;
-    case 'suite':
-      return 0.75;
-    default:
-      return 1.0;
-  }
-}
+export { sectionCompassAngle };
 
 /**
  * Is this section receiving any meaningful direct sunlight right now?
@@ -82,7 +34,7 @@ function levelMultiplier(level: StadiumSection['level']): number {
  *
  * @param stadiumOrientation Compass bearing from home plate to center field.
  *   Required to convert `section.baseAngle` (stadium-local) to absolute
- *   compass for comparison with `sunAzimuth`. See file-header for details.
+ *   compass for comparison with `sunAzimuth`. See bowlGeometry.ts.
  */
 export function isSectionInSun(
   section: StadiumSection,
@@ -107,14 +59,32 @@ export function isSectionInSun(
 /**
  * What fraction (0–100) of this section is in direct sun?
  *
- * The shape of this curve matters more than its absolute scale: callers use
- * it both to rank sections (higher = sunnier) and as a heuristic gate
- * (exposure > 10 means "in sun"). The model handles high-sun, low-sun,
- * opposite-side, and same-side regimes; see file-header for the physics.
+ * REWRITTEN 2026-08-07. The previous implementation pointed the right way but
+ * said almost nothing:
+ *
+ *   - Its elevation term was `min(sunElevation / 45, 1)`, so at ANY sun
+ *     altitude at or above 45° both regimes saturated to 1 and every open
+ *     section in the park returned an identical number. Azimuth then dropped
+ *     out too, because the azimuth blend faded toward 1.0 as the sun rose.
+ *     Result: for 1 PM and 4 PM starts — the games where shade matters most —
+ *     the venue-page diagram was completely orientation-blind, painting the
+ *     whole bowl one colour.
+ *   - Its azimuth term was a bathtub: `azimuthFactor` reached 1.0 at BOTH 0°
+ *     (sun directly behind the seats) and 180° (sun straight across), with its
+ *     minimum at 90°. So the model's idea of the shadiest seat in the park was
+ *     the one at right angles to the sun, not the one with the sun behind it.
+ *   - It branched hard at `angleDiff > 90`, with different elevation AND
+ *     azimuth formulas either side. Two sections 2° apart across that boundary
+ *     differed by roughly 3×, a visible seam across the diagram.
+ *
+ * All three are gone: exposure is now `directSunPercent` from bowlGeometry,
+ * which is continuous in azimuth, keeps a real (if damped) sun/shade split at
+ * high sun, and models the actual shading structure per seating level.
+ *
+ * Geometry only — cloud cover dims the sun but does not move the shadow line,
+ * so weather is applied by callers, not folded in here.
  *
  * @param stadiumOrientation Compass bearing from home plate to center field.
- *   Required to convert `section.baseAngle` (stadium-local) to absolute
- *   compass for comparison with `sunAzimuth`.
  */
 export function getSectionSunExposure(
   section: StadiumSection,
@@ -125,38 +95,16 @@ export function getSectionSunExposure(
   if (sunElevation <= 0) return 0;
   if (section.covered && sunElevation <= 60) return 0;
 
-  const sectionCompass = sectionCompassAngle(section, stadiumOrientation);
-  const angleDiff = angleDiffDeg(sunAzimuth, sectionCompass);
-  const sunOnOppositeSide = angleDiff > 90;
-  const level = levelMultiplier(section.level);
-  // Partial canopy at very high sun: 30% throughput.
+  const exposure = directSunPercent({
+    sunAltitudeDeg: sunElevation,
+    sunAzimuthDeg: sunAzimuth,
+    sectionCompassDeg: sectionCompassAngle(section, stadiumOrientation),
+    level: section.level as SeatingLevel,
+  });
+
+  // A partial canopy at very high sun still lets some direct light past its
+  // edges — 30% throughput, unchanged from the previous model.
   const coverageThroughput = section.covered ? 0.3 : 1.0;
 
-  // Elevation factor: fraction of the section illuminated, before azimuth.
-  // Opposite-side stands receive horizontal cross-bowl rays even at the
-  // horizon, so the floor is higher than for same-side.
-  let elevationFactor: number;
-  if (sunOnOppositeSide) {
-    elevationFactor = 0.4 + 0.6 * Math.min(sunElevation / 45, 1);
-  } else {
-    const baseElev = Math.min(sunElevation / 45, 1);
-    elevationFactor = baseElev * (0.4 + 0.6 * baseElev);
-  }
-
-  // Azimuth factor: directional intensity within the chosen regime.
-  let azimuthFactor: number;
-  if (sunOnOppositeSide) {
-    const oppositeStrength = (angleDiff - 90) / 90; // 0 at 90°, 1 at 180°
-    azimuthFactor = 0.6 + 0.4 * oppositeStrength;
-  } else {
-    const sameStrength = (90 - angleDiff) / 90; // 1 when sun directly behind
-    azimuthFactor = 0.4 + 0.6 * sameStrength;
-  }
-
-  // Sun becomes effectively overhead at high elevations; dampen azimuth.
-  const azimuthBlend = Math.max(0, 1 - sunElevation / 75);
-  const finalAzimuthFactor = azimuthBlend * azimuthFactor + (1 - azimuthBlend) * 1.0;
-
-  const exposure = 100 * elevationFactor * finalAzimuthFactor * level * coverageThroughput;
-  return Math.round(Math.max(0, Math.min(100, exposure)));
+  return Math.round(Math.max(0, Math.min(100, exposure * coverageThroughput)));
 }

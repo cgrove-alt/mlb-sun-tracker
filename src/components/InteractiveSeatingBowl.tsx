@@ -31,9 +31,20 @@ const cy = 170;
 const rIn = 80;
 const rOut = 150;
 
+// Coordinates are ROUNDED before they reach the SVG path string.
+//
+// Math.cos/Math.sin are not required to be bit-identical across JavaScript
+// engines, and Node (which renders this on the server) and Chrome (which
+// hydrates it) disagree in the last ulp — e.g. 302.44213892883903 server-side
+// vs 302.4421389288391 in the browser. React compared the two `d` strings,
+// found them different, and logged a hydration mismatch for the shade diagram
+// on every venue page, warning that it "won't be patched up". Three decimals
+// is far below one screen pixel at this viewBox and is engine-independent.
+const round3 = (n: number) => Math.round(n * 1000) / 1000;
+
 function pt(r: number, localDeg: number): [number, number] {
   const a = (localDeg * Math.PI) / 180;
-  return [cx + r * Math.cos(a), cy - r * Math.sin(a)];
+  return [round3(cx + r * Math.cos(a)), round3(cy - r * Math.sin(a))];
 }
 
 function wedgePath(a0: number, a1: number): string {

@@ -189,10 +189,14 @@ const MobileApp: React.FC = () => {
           section.name.toLowerCase().includes('first') || section.name.toLowerCase().includes('1b') || section.name.toLowerCase().includes('right') ? 'first' :
           section.name.toLowerCase().includes('behind') || section.name.toLowerCase().includes('home') || section.name.toLowerCase().includes('backstop') ? 'home' : 'outfield';
         
+        // Pass the stadium-LOCAL baseAngle (carried through by the spread) and
+        // let SunCalculator convert it with the park's orientation. This used to
+        // set `angle: section.baseAngle`, handing a local angle to a field
+        // documented as a compass bearing, so orientation was discarded and the
+        // mobile shade list was identical for every park.
         const sectionWithGeometry = {
           ...section,
           side,
-          angle: section.baseAngle || 0,
           depth: 50 // Default depth
         };
         

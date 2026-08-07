@@ -95,41 +95,82 @@ function generateSectionGeometry(
   };
 }
 
+/**
+ * Axis-aligned bounding box enclosing an annular wedge (an arc segment of the
+ * bowl) between two angles, two radii and two heights.
+ *
+ * These boxes used to be built as
+ *     min: polarTo3D(angle - half, rInner, zLow)
+ *     max: polarTo3D(angle + half, rOuter, zHigh)
+ * which is not a bounding box at all — it is two arbitrary corner points, and
+ * for most angles the "min" corner has a LARGER x or y than the "max" corner.
+ * 15 of the 21 obstructions a typical park generated were inverted this way.
+ * An inverted box makes the ray/slab intersection test compute a nonsense
+ * interval, so roughly three quarters of the stadium's obstruction geometry
+ * was invisible to the 3D shade calculation.
+ *
+ * Sampling the arc (rather than taking only its endpoints) also catches the
+ * case where the wedge crosses an axis and its extreme x or y lies in the
+ * middle of the arc, not at either end.
+ */
+function arcBoundingBox(
+  angleStartDeg: number,
+  angleEndDeg: number,
+  innerRadius: number,
+  outerRadius: number,
+  zMin: number,
+  zMax: number,
+): { min: Vector3D; max: Vector3D } {
+  const min = { x: Infinity, y: Infinity, z: Math.min(zMin, zMax) };
+  const max = { x: -Infinity, y: -Infinity, z: Math.max(zMin, zMax) };
+  const steps = 12;
+  for (let i = 0; i <= steps; i++) {
+    const a = angleStartDeg + ((angleEndDeg - angleStartDeg) * i) / steps;
+    for (const r of [innerRadius, outerRadius]) {
+      const p = polarTo3D(a, r, 0);
+      min.x = Math.min(min.x, p.x);
+      min.y = Math.min(min.y, p.y);
+      max.x = Math.max(max.x, p.x);
+      max.y = Math.max(max.y, p.y);
+    }
+  }
+  return { min, max };
+}
+
 // Generate obstructions for a stadium
 function generateStadiumObstructions(stadium: Stadium | AnyStadium): Obstruction[] {
   const obstructions: Obstruction[] = [];
-  
+
   // Roof overhang (if applicable)
   if (stadium.roofOverhang && stadium.roofOverhang > 0) {
     const roofHeight = stadium.roofHeight || 120;
-    
+
     // Create roof segments around the stadium
     for (let angle = 0; angle < 360; angle += 30) {
       const innerRadius = 200;
       const outerRadius = innerRadius + stadium.roofOverhang;
-      
+
       obstructions.push({
         id: `roof-segment-${angle}`,
         type: 'roof',
-        boundingBox: {
-          min: polarTo3D(angle - 15, innerRadius, roofHeight - 10),
-          max: polarTo3D(angle + 15, outerRadius, roofHeight)
-        },
+        boundingBox: arcBoundingBox(
+          angle - 15, angle + 15, innerRadius, outerRadius, roofHeight - 10, roofHeight,
+        ),
         opacity: 1
       });
     }
   }
-  
+
   // Upper deck overhang
   if (stadium.upperDeckHeight) {
     for (let angle = 0; angle < 360; angle += 45) {
       obstructions.push({
         id: `upper-deck-${angle}`,
         type: 'upper_deck',
-        boundingBox: {
-          min: polarTo3D(angle - 22.5, 150, stadium.upperDeckHeight - 5),
-          max: polarTo3D(angle + 22.5, 180, stadium.upperDeckHeight)
-        },
+        boundingBox: arcBoundingBox(
+          angle - 22.5, angle + 22.5, 150, 180,
+          stadium.upperDeckHeight - 5, stadium.upperDeckHeight,
+        ),
         opacity: 0.9
       });
     }

@@ -8,6 +8,7 @@ import {
   SunPosition,
   SeatingSectionSun,
   calculateDetailedSectionSunExposure as originalCalculateDetailedSectionSunExposure,
+  cloudTransmissionFactor,
 } from './sunCalculations';
 
 // Optimized version that processes sections in chunks
@@ -39,27 +40,12 @@ export async function calculateDetailedSectionSunExposureOptimized(
     return originalCalculateDetailedSectionSunExposure(stadium, sunPosition, weather, stadiumSections);
   }
   
-  // Calculate weather impact
-  let weatherMultiplier = 1.0;
-  if (weather) {
-    const { cloudCover, conditions, precipitationProbability } = weather;
-    
-    if ((precipitationProbability && precipitationProbability > 70) || 
-        conditions.some(c => c.main === 'Rain' || c.main === 'Snow' || c.main === 'Drizzle')) {
-      weatherMultiplier = 0.1;
-    } else if (precipitationProbability && precipitationProbability > 30) {
-      weatherMultiplier = 0.4;
-    } else if (cloudCover > 80) {
-      weatherMultiplier = 0.4;
-    } else if (cloudCover > 60) {
-      weatherMultiplier = 0.6;
-    } else if (cloudCover > 40) {
-      weatherMultiplier = 0.8;
-    } else if (cloudCover > 15) {
-      weatherMultiplier = 0.9;
-    }
-  }
-  
+  // Cloud transmission is reported separately from the geometry — see the
+  // SeatingSectionSun docs in sunCalculations.ts. Kept identical to the
+  // synchronous path so the two never diverge.
+  const cloudTransmission = weather ? cloudTransmissionFactor(weather) : 1.0;
+
+
   // sunAzimuth is absolute compass; section.baseAngle is stadium-local. The
   // section helpers do the conversion internally given `stadium.orientation`.
   const sunAzimuth = sunPosition.azimuthDegrees;
@@ -73,8 +59,7 @@ export async function calculateDetailedSectionSunExposureOptimized(
     50, // Process 50 sections at a time
     (section) => {
       const inSun = isSectionInSun(section, sunAzimuth, sunPosition.altitudeDegrees, orientation);
-      let sunExposure = getSectionSunExposure(section, sunPosition.altitudeDegrees, sunAzimuth, orientation);
-      sunExposure = sunExposure * weatherMultiplier;
+      const sunExposure = getSectionSunExposure(section, sunPosition.altitudeDegrees, sunAzimuth, orientation);
 
       processedCount++;
       if (onProgress) {
@@ -84,7 +69,8 @@ export async function calculateDetailedSectionSunExposureOptimized(
       return {
         section,
         inSun: inSun && sunExposure > 10,
-        sunExposure: Math.round(sunExposure)
+        sunExposure: Math.round(sunExposure),
+        effectiveSunExposure: Math.round(sunExposure * cloudTransmission)
       };
     },
     10 // 10ms delay between chunks

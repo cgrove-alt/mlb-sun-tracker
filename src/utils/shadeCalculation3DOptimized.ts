@@ -2,6 +2,14 @@
 // Performance-optimized version with spatial indexing and parallel processing
 
 import { Vector3D } from '../types/stadium-complete';
+import {
+  sectionCompassAngle,
+  sunIncidence,
+  shadowReachFt,
+  BOWL_DEFAULTS,
+  structuralShadeFraction,
+  type SeatingLevel,
+} from './bowlGeometry';
 
 // Core interfaces for 3D shade calculation
 export interface Seat {
@@ -87,7 +95,29 @@ export class OptimizedShadeCalculator3D {
   private workerPool?: Worker[];
   
   constructor(stadium: Stadium3DModel, useWebWorkers: boolean = false) {
-    this.stadium = stadium;
+    // Defence in depth: obstruction bounding boxes arrive from several data
+    // sources, and a box whose `min` exceeds its `max` on any axis silently
+    // breaks the ray/slab test — the obstruction simply stops casting shade,
+    // with no error anywhere. Normalise on the way in so a bad box can never
+    // quietly cost a fan their shade again.
+    this.stadium = {
+      ...stadium,
+      obstructions: stadium.obstructions.map(obs => ({
+        ...obs,
+        boundingBox: {
+          min: {
+            x: Math.min(obs.boundingBox.min.x, obs.boundingBox.max.x),
+            y: Math.min(obs.boundingBox.min.y, obs.boundingBox.max.y),
+            z: Math.min(obs.boundingBox.min.z, obs.boundingBox.max.z),
+          },
+          max: {
+            x: Math.max(obs.boundingBox.min.x, obs.boundingBox.max.x),
+            y: Math.max(obs.boundingBox.min.y, obs.boundingBox.max.y),
+            z: Math.max(obs.boundingBox.min.z, obs.boundingBox.max.z),
+          },
+        },
+      })),
+    };
     this.seatCache = new Map();
     this.sunDirectionCache = new Map();
     this.useWebWorkers = useWebWorkers && typeof Worker !== 'undefined';
@@ -320,22 +350,46 @@ export class OptimizedShadeCalculator3D {
     return result;
   }
   
-  // Calculate sun ray direction with caching
+  /**
+   * Unit vector pointing FROM a seat TOWARD the sun, in the stadium's own
+   * local coordinate frame. Cached by sun position.
+   *
+   * REWRITTEN 2026-08-07. The previous version was wrong three ways at once,
+   * which left the whole ray-cast occlusion path unable to find a roof:
+   *
+   *  1. It returned the direction sunlight TRAVELS (note the leading minus on
+   *     every component, including `z: -sin(elevation)`). Callers then cast
+   *     that ray from the seat, i.e. downward into the ground. An obstruction
+   *     ABOVE a seat — which is the only kind that can shade it — sits behind
+   *     that ray and was never intersected. Occlusion testing has to march
+   *     from the seat toward the light source.
+   *  2. It mixed frames. The 3D model is built by `polarTo3D` in STADIUM-LOCAL
+   *     polar coordinates (+x toward first base, +y toward center field), but
+   *     this used the absolute COMPASS azimuth, so the sun was placed as if
+   *     every park were oriented identically.
+   *  3. It swapped the axes: `polarTo3D` uses x = d·cos(angle), y = d·sin(angle),
+   *     while this used x = −sin, y = −cos — a reflection plus a 90° rotation
+   *     on top of the other two errors.
+   */
   private getSunRayDirection(sunPos: SunPosition): Vector3D {
-    const cacheKey = `${sunPos.azimuth}-${sunPos.elevation}`;
+    const cacheKey = `${sunPos.azimuth}-${sunPos.elevation}-${this.stadium.orientation}`;
     if (this.sunDirectionCache.has(cacheKey)) {
       return this.sunDirectionCache.get(cacheKey)!;
     }
-    
-    const azimuthRad = sunPos.azimuthRadians;
+
+    // Compass bearing → stadium-local angle, the same conversion the section
+    // geometry uses: local = orientation + 90 − compass.
+    const localDeg = ((this.stadium.orientation + 90 - sunPos.azimuth) % 360 + 360) % 360;
+    const localRad = localDeg * Math.PI / 180;
     const elevationRad = sunPos.elevationRadians;
-    
+    const horizontal = Math.cos(elevationRad);
+
     const direction = {
-      x: -Math.sin(azimuthRad) * Math.cos(elevationRad),
-      y: -Math.cos(azimuthRad) * Math.cos(elevationRad),
-      z: -Math.sin(elevationRad)
+      x: horizontal * Math.cos(localRad),
+      y: horizontal * Math.sin(localRad),
+      z: Math.sin(elevationRad)
     };
-    
+
     this.sunDirectionCache.set(cacheKey, direction);
     return direction;
   }
@@ -367,15 +421,55 @@ export class OptimizedShadeCalculator3D {
         break;
     }
     
+    // The ray-cast alone cannot find the dominant shade mechanism in a
+    // ballpark. `generateStadiumObstructions` models only a roof ring and a
+    // ring of upper-deck slabs; the grandstand structure that rises BEHIND
+    // each section — the thing that actually puts the sun-side half of every
+    // bowl in shadow — is not in the obstruction set at all. So a request for
+    // `?use3d=true`, advertised as the most precise method available, returned
+    // LESS shade than the plain 2D path. Combine the ray-cast with the same
+    // analytic bowl model the rest of the site uses, per seat.
+    const sectionCompassDeg = sectionCompassAngle(
+      { baseAngle: section.baseAngle, angleSpan: section.angleSpan },
+      this.stadium.orientation,
+    );
+    const { sunBehind } = sunIncidence(sunPosition.azimuth, sectionCompassDeg);
+    const backReachFt = shadowReachFt(
+      BOWL_DEFAULTS.backStructureHeightFt[(section.level as SeatingLevel)] ?? 45,
+      sunPosition.elevation,
+    );
+    // Seats are laid out radially outward from home plate, so the largest
+    // radius in the section is its back row — where the structure behind it
+    // starts throwing shadow forward.
+    const radial = (s: Seat) => Math.hypot(s.position.x, s.position.y);
+    const maxRadiusFt = section.seats.length ? Math.max(...section.seats.map(radial)) : 0;
+    const EDGE_SOFTEN_FT = 3;
+
+    const bowlShadeForSeat = (seat: Seat): number => {
+      if (!Number.isFinite(backReachFt)) return sunBehind;
+      const distanceFromBackFt = maxRadiusFt - radial(seat);
+      const frac = Math.max(0, Math.min(1, (backReachFt - distanceFromBackFt) / EDGE_SOFTEN_FT));
+      return sunBehind * frac;
+    };
+
     const seatResults: ShadeResult[] = [];
     let seatsInShade = 0;
     let sampledSeats = 0;
-    
+
     for (let i = 0; i < section.seats.length; i += sampleRate) {
       const seat = section.seats[i];
-      const result = this.isSeatInShadeOptimized(seat, sunRayDirection);
+      const cast = this.isSeatInShadeOptimized(seat, sunRayDirection);
+      // Two descriptions of the same physical occlusion at different
+      // fidelities — take the stronger, never the sum, so nothing is
+      // double-counted.
+      const shadeFraction = Math.max(cast.shadeFraction, bowlShadeForSeat(seat));
+      const result: ShadeResult = {
+        ...cast,
+        shadeFraction,
+        inShade: shadeFraction > 0.5,
+      };
       seatResults.push(result);
-      
+
       if (result.inShade) {
         seatsInShade += sampleRate;
       }
@@ -481,14 +575,30 @@ export class OptimizedShadeCalculator3D {
       }
     }
     
-    // Consider sun angle relative to section
-    const sectionAzimuth = (section.baseAngle + section.angleSpan / 2) * Math.PI / 180;
-    const sunAzimuthAdjusted = sunPosition.azimuthRadians - (this.stadium.orientation * Math.PI / 180);
-    const angleDiff = Math.abs(sunAzimuthAdjusted - sectionAzimuth);
-    
-    const naturalShade = angleDiff > Math.PI / 2 ? 0.7 : 0;
+    // Structural (non-ray-cast) shade from the bowl itself.
+    //
+    // REWRITTEN 2026-08-07. This used to compute
+    //     angleDiff = |(sunAzimuthRad − orientationRad) − sectionBaseAngleRad|
+    // and then apply `angleDiff > π/2 ? 0.7 : 0`. Three defects:
+    //   - the conversion between compass and stadium-local was wrong (a bare
+    //     subtraction of the orientation, missing the 90° term and the sign
+    //     flip that `sectionCompassAngle` applies);
+    //   - `angleDiff` was never wrapped into [0, 180], so it could exceed π
+    //     and the comparison meant nothing for half the bowl;
+    //   - the branch was INVERTED — it awarded 0.7 shade to sections more than
+    //     90° from the sun, which are the ones with the light in their faces.
+    const sectionCompassDeg = sectionCompassAngle(
+      { baseAngle: section.baseAngle, angleSpan: section.angleSpan },
+      this.stadium.orientation,
+    );
+    const naturalShade = structuralShadeFraction({
+      sunAltitudeDeg: sunPosition.elevation,
+      sunAzimuthDeg: sunPosition.azimuth,
+      sectionCompassDeg,
+      level: section.level as SeatingLevel,
+    });
     const obstructionShade = (shadedSamples / samplePoints.length);
-    
+
     return Math.min(1, naturalShade + obstructionShade) * 100;
   }
   

@@ -3,20 +3,29 @@
 
 import { Stadium, MLB_STADIUMS } from '../data/stadiums';
 import type { StadiumSection } from '../data/stadiumSectionTypes';
-import { getSunPosition } from './sunCalculations';
+import { cloudTransmissionFactor, getSunPosition } from './sunCalculations';
 import { WeatherData } from '../services/weatherApi';
 import { 
   ShadeCalculator3D, 
   createSunPosition
 } from './shadeCalculation3DOptimized';
 import { getStadium3DModel } from '../data/stadium3DGeometry';
+import { horizonBlockFactor } from './bowlGeometry';
 
 export interface ShadedSection {
   section: StadiumSection;
+  /**
+   * GEOMETRIC shade, 0–100. Cloud cover is reported separately in
+   * `effectiveSunPercent` rather than added here: clouds dim the sun, they do
+   * not move the shadow line, and adding them made an exposed seat read as a
+   * shaded one whenever the forecast was grey.
+   */
   shadePercentage: number;
   isFullyShaded: boolean;
   isPartiallyShaded: boolean;
   isInSun: boolean;
+  /** Direct sun still reaching the section after cloud cover, 0–100. */
+  effectiveSunPercent: number;
 }
 
 // Performance optimization: Cache calculators
@@ -55,7 +64,8 @@ export function getShadedSections(
       shadePercentage: 100,
       isFullyShaded: true,
       isPartiallyShaded: false,
-      isInSun: false
+      isInSun: false,
+      effectiveSunPercent: 0
     }));
   }
 
@@ -69,10 +79,8 @@ export function getShadedSections(
   const shadeResults = calculator.calculateAllSectionsShade(sunPosition3D);
 
   // Apply weather adjustments
-  let weatherMultiplier = 1.0;
-  if (weather) {
-    weatherMultiplier = calculateWeatherMultiplier(weather);
-  }
+  const weatherMultiplier = weather ? cloudTransmissionFactor(weather) : 1.0;
+  const skyVisibility = horizonBlockFactor(sunPos.altitudeDegrees);
 
   // Convert results to expected format
   const shadedSections: ShadedSection[] = [];
@@ -86,23 +94,22 @@ export function getShadedSections(
         shadePercentage: 0,
         isFullyShaded: false,
         isPartiallyShaded: false,
-        isInSun: true
+        isInSun: true,
+        effectiveSunPercent: Math.round(100 * weatherMultiplier * skyVisibility)
       });
       continue;
     }
     
-    // Apply weather impact
-    const adjustedShadePercentage = Math.min(
-      100,
-      shadeResult.percentageInShade + (100 - shadeResult.percentageInShade) * (1 - weatherMultiplier)
-    );
-    
+    // Geometry stays geometry; cloud cover is reported alongside it.
+    const shade = shadeResult.percentageInShade;
+
     shadedSections.push({
       section,
-      shadePercentage: Math.round(adjustedShadePercentage),
-      isFullyShaded: adjustedShadePercentage >= 95,
-      isPartiallyShaded: adjustedShadePercentage > 5 && adjustedShadePercentage < 95,
-      isInSun: adjustedShadePercentage < 50
+      shadePercentage: Math.round(shade),
+      isFullyShaded: shade >= 95,
+      isPartiallyShaded: shade > 5 && shade < 95,
+      isInSun: shade < 50,
+      effectiveSunPercent: Math.round((100 - shade) * weatherMultiplier * skyVisibility)
     });
   }
   
@@ -128,13 +135,15 @@ export function getShadedSectionsQuick(
       shadePercentage: 100,
       isFullyShaded: true,
       isPartiallyShaded: false,
-      isInSun: false
+      isInSun: false,
+      effectiveSunPercent: 0
     }));
   }
 
   const calculator = getCalculatorForStadium(stadium, stadiumSections);
   const sunPosition3D = createSunPosition(sunPos.azimuthDegrees, sunPos.altitudeDegrees);
-  const weatherMultiplier = weather ? calculateWeatherMultiplier(weather) : 1.0;
+  const weatherMultiplier = weather ? cloudTransmissionFactor(weather) : 1.0;
+  const skyVisibility = horizonBlockFactor(sunPos.altitudeDegrees);
 
   const shadedSectionsList: ShadedSection[] = [];
 
@@ -145,43 +154,18 @@ export function getShadedSectionsQuick(
     if (!section) continue;
 
     const estimatedShade = calculator.estimateSectionShade(sectionGeometry, sunPosition3D);
-    const adjustedShade = Math.min(
-      100,
-      estimatedShade + (100 - estimatedShade) * (1 - weatherMultiplier)
-    );
 
     shadedSectionsList.push({
       section,
-      shadePercentage: Math.round(adjustedShade),
-      isFullyShaded: adjustedShade >= 95,
-      isPartiallyShaded: adjustedShade > 5 && adjustedShade < 95,
-      isInSun: adjustedShade < 50
+      shadePercentage: Math.round(estimatedShade),
+      isFullyShaded: estimatedShade >= 95,
+      isPartiallyShaded: estimatedShade > 5 && estimatedShade < 95,
+      isInSun: estimatedShade < 50,
+      effectiveSunPercent: Math.round((100 - estimatedShade) * weatherMultiplier * skyVisibility)
     });
   }
 
   return shadedSectionsList;
-}
-
-// Calculate weather impact multiplier
-function calculateWeatherMultiplier(weather: WeatherData): number {
-  const { cloudCover, conditions, precipitationProbability } = weather;
-  
-  if ((precipitationProbability && precipitationProbability > 70) || 
-      conditions.some(c => c.main === 'Rain' || c.main === 'Snow')) {
-    return 0.1;
-  } else if (precipitationProbability && precipitationProbability > 30) {
-    return 0.4;
-  } else if (cloudCover > 80) {
-    return 0.4;
-  } else if (cloudCover > 60) {
-    return 0.6;
-  } else if (cloudCover > 40) {
-    return 0.8;
-  } else if (cloudCover > 15) {
-    return 0.9;
-  }
-  
-  return 1.0;
 }
 
 // Get shaded sections for a specific time range

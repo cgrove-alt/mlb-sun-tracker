@@ -14,10 +14,18 @@ import {
   type SunSample,
 } from '../sunCalculator';
 
-// East-facing section with a back-row overhang. With stadium orientation 0,
-// sectionLocal = baseAngle = 90 → sectionCompass = (0 + 90 - 90) = 0, so the
-// seats face compass 180. Sun azimuth 0 is directly behind (opp=0, sunny);
-// azimuth 180 shines across the bowl into the seats (opp=1, overhang shades).
+// An open lower-bowl section, three rows deep, no overhang — so its coverage
+// is driven purely by the structure BEHIND the seats and the sun's bearing.
+//
+// With stadium orientation 0, sectionCompass = (0 + 90 − baseAngle) = 0, so
+// this section sits on the north side of the bowl and its seats face south.
+//
+// NOTE: this fixture's comments used to say "sun azimuth 0 is directly behind
+// (sunny); azimuth 180 shines across the bowl into the seats (shaded)" — which
+// is the sun/shade relationship backwards, and the assertions below were
+// written to match. A grandstand shades its own seats: with the sun at azimuth
+// 0 it is behind this section and these seats are SHADED; at azimuth 180 it
+// crosses the bowl into their faces and they are LIT. See bowlGeometry.ts.
 const SECTION: RowShadowInputSection = {
   id: 'T1',
   name: 'Test Section',
@@ -26,16 +34,20 @@ const SECTION: RowShadowInputSection = {
   angleSpan: 0,
   covered: false,
   rows: [
-    { rowNumber: '1', seats: 20, elevation: 30, depth: 10, covered: false, overhangHeight: 15 },
+    { rowNumber: '1',  seats: 20, elevation: 10, depth: 10, covered: false, overhangHeight: 0 },
+    { rowNumber: '10', seats: 20, elevation: 30, depth: 30, covered: false, overhangHeight: 0 },
+    { rowNumber: '20', seats: 20, elevation: 50, depth: 50, covered: false, overhangHeight: 0 },
   ],
 };
 
-// Low sun (10°) so the overhang shadow runs long; azimuth sweeps from behind
-// the section to across the bowl, so coverage should rise through the game.
+// A 60° sun, high enough that the structure behind only reaches partway across
+// the deck (45 ft of structure throws ~26 ft of shadow), so the rows separate.
+// The azimuth sweeps from across the bowl round to behind the section, which is
+// a genuine sun→shade game: lit at first pitch, shaded by the final out.
 const SAMPLES: SunSample[] = [
-  { minutesFromStart: 0,   altitudeDegrees: 10, azimuthDegrees: 0 },   // sun behind → sunny
-  { minutesFromStart: 90,  altitudeDegrees: 10, azimuthDegrees: 90 },  // side-on
-  { minutesFromStart: 180, altitudeDegrees: 10, azimuthDegrees: 180 }, // across bowl → shaded
+  { minutesFromStart: 0,   altitudeDegrees: 60, azimuthDegrees: 180 }, // across bowl → lit
+  { minutesFromStart: 90,  altitudeDegrees: 60, azimuthDegrees: 90 },  // side-on
+  { minutesFromStart: 180, altitudeDegrees: 60, azimuthDegrees: 0 },   // sun behind → shaded
 ];
 
 describe('gameWindowOffsets', () => {
@@ -67,13 +79,21 @@ describe('calculateGameWindowShade', () => {
   });
 
   it('aggregates per-row coverage with avg bounded by min/max', () => {
-    const row = result.rows[0];
-    expect(row.coverageMin).toBeLessThanOrEqual(row.coverageAvg);
-    expect(row.coverageAvg).toBeLessThanOrEqual(row.coverageMax);
-    expect(row.coverageStart).toBe(row.timeline[0].coverage);
-    expect(row.coverageEnd).toBe(row.timeline[row.timeline.length - 1].coverage);
-    // Across the window the back row goes from lit to overhang-shaded.
-    expect(row.coverageEnd).toBeGreaterThan(row.coverageStart + 40);
+    const backRow = result.rows[result.rows.length - 1];
+    expect(backRow.coverageMin).toBeLessThanOrEqual(backRow.coverageAvg);
+    expect(backRow.coverageAvg).toBeLessThanOrEqual(backRow.coverageMax);
+    expect(backRow.coverageStart).toBe(backRow.timeline[0].coverage);
+    expect(backRow.coverageEnd).toBe(backRow.timeline[backRow.timeline.length - 1].coverage);
+    // Across the window the back row goes from lit to shaded by the structure
+    // behind it, which is the shadow fans watch creep down the bowl.
+    expect(backRow.coverageEnd).toBeGreaterThan(backRow.coverageStart + 40);
+  });
+
+  it('shades the back rows before the front rows', () => {
+    // The structure behind the seats casts forward, so the shadow line starts
+    // at the back wall and moves toward the field as the sun drops.
+    const [front, , back] = result.rows;
+    expect(back.coverageEnd).toBeGreaterThan(front.coverageEnd);
   });
 
   it('reports section coverageMin/Max spanning the window', () => {

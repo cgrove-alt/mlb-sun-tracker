@@ -2,8 +2,14 @@
 // Extends existing shade calculations to work with football, soccer, and other sports
 
 import { UnifiedVenue } from '../data/unifiedVenues';
-import { getSunPosition } from './sunCalculations';
+import { cloudTransmissionFactor, getSunPosition } from './sunCalculations';
 import { WeatherData } from '../services/weatherApi';
+import {
+  sectionCompassAngle,
+  structuralShadeFraction,
+  horizonBlockFactor,
+  type SeatingLevel,
+} from './bowlGeometry';
 
 export interface VenueSection {
   id: string;
@@ -18,28 +24,24 @@ export interface VenueSection {
 
 export interface ShadedVenueSection {
   section: VenueSection;
+  /**
+   * GEOMETRIC shade, 0–100: how much of the section the structure actually
+   * puts in shadow at this sun position. Weather is deliberately NOT folded
+   * in — clouds dim the sun, they do not move the shadow line, and mixing the
+   * two made a cloudy day look like a covered seat. Use `effectiveSunPercent`
+   * when you want the "how much sun will I actually feel" number.
+   */
   shadePercentage: number;
   isFullyShaded: boolean;
   isPartiallyShaded: boolean;
   isInSun: boolean;
   shadeFactor: number; // 0-1 scale for easier sorting
+  /**
+   * Direct sun still reaching the section after cloud cover, 0–100.
+   * Equals (100 − shadePercentage) when there is no weather data.
+   */
+  effectiveSunPercent: number;
 }
-
-// Sport-specific shade calculation modifiers
-const SPORT_SHADE_MODIFIERS = {
-  baseball: {
-    // Baseball stadiums have asymmetrical layouts
-    homeAngleBonus: 15, // Home plate side gets more shade consideration
-    foulTerritoryShade: 10, // Sections in foul territory get slight shade bonus
-    upperDeckAdvantage: 25, // Upper deck provides significant shade
-  },
-  football: {
-    // Football stadiums are more symmetrical
-    sidelineAdvantage: 20, // Sideline sections are prime seating
-    endZoneShade: 5, // End zones less shade priority but still relevant
-    upperDeckAdvantage: 30, // Upper decks provide excellent shade
-  }
-};
 
 /**
  * Calculate shade for any venue type using unified system
@@ -61,7 +63,8 @@ export function getUnifiedVenueShade(
       isFullyShaded: true,
       isPartiallyShaded: false,
       isInSun: false,
-      shadeFactor: 1.0
+      shadeFactor: 1.0,
+      effectiveSunPercent: 0
     }));
   }
 
@@ -72,7 +75,8 @@ export function getUnifiedVenueShade(
       isFullyShaded: true,
       isPartiallyShaded: false,
       isInSun: false,
-      shadeFactor: 1.0
+      shadeFactor: 1.0,
+      effectiveSunPercent: 0
     }));
   }
 
@@ -86,7 +90,33 @@ export function getUnifiedVenueShade(
 }
 
 /**
- * Calculate shade for a specific section
+ * Calculate shade for a specific section.
+ *
+ * REWRITTEN 2026-08-07. The previous implementation had the two regimes
+ * swapped: it awarded up to 85% shade to sections whose compass bearing was
+ * MORE than 90° from the sun — i.e. the sections sitting directly across the
+ * bowl with the light in their faces — and gave the genuinely shaded sun-side
+ * sections a flat ~0–5%. Measured against the physical rule for all 30 MLB
+ * parks at 1 PM / 4 PM / 7 PM, it picked the wrong side 87 times out of 87.
+ * Since this function drives the homepage shade percentage and the
+ * "most shaded first" ordering for every venue on the site, it was telling
+ * every user to sit in the sun.
+ *
+ * It now delegates the whole sun/shade relationship to
+ * `structuralShadeFraction` in bowlGeometry.ts, which is the one place that
+ * relationship is defined and tested.
+ *
+ * The stack of additive bonuses that used to sit on top of the geometry was
+ * also removed. They were unsourced, and two of them were actively wrong:
+ *   - "upper deck +25/+30" treated the most exposed seats in the park as the
+ *     shadiest. The bowl model now handles level properly — an upper deck has
+ *     little structure behind it, so it picks up shade late, not early.
+ *   - a flat "+15 third base side" was applied at EVERY park regardless of
+ *     orientation, as though 3B were shaded everywhere. Which side is shaded
+ *     depends entirely on the park's bearing; that is now computed.
+ *   - "opened > 2000 +5", "capacity > 60000 +10" and "retractable +15" were
+ *     round numbers with no derivation, large enough to move a section two
+ *     display tiers on their own.
  */
 function calculateSectionShade(
   venue: UnifiedVenue,
@@ -94,163 +124,43 @@ function calculateSectionShade(
   sunPos: { azimuthDegrees: number; altitudeDegrees: number },
   weather?: WeatherData
 ): ShadedVenueSection {
-  let shadePercentage = 0;
-  
-  // Base shade calculation
+  let shadePercentage: number;
+
   if (section.covered) {
     shadePercentage = 100;
   } else {
-    // Calculate based on sun angle relative to section
-    // section.baseAngle is stadium-local (0 = 1B, 90 = CF, 180 = 3B, 270 = behind home).
-    // Convert to compass bearing for comparison against the (compass) sun azimuth.
-    // See src/utils/sectionSunCalculations.ts for the convention.
-    const sectionAngle = ((venue.orientation + 90 - section.baseAngle) % 360 + 360) % 360;
-    const sunAngle = sunPos.azimuthDegrees;
-    
-    // Calculate angle difference
-    let angleDiff = Math.abs(sectionAngle - sunAngle);
-    if (angleDiff > 180) {
-      angleDiff = 360 - angleDiff;
-    }
-    
-    // Base shade based on sun angle AND altitude
-    // Physical principle: shadow length = structure_height / tan(altitude)
-    // Lower sun → longer shadows → more shade for sections behind structures
-    const altitude = sunPos.altitudeDegrees;
-    const tanAlt = Math.max(0.05, Math.tan(altitude * Math.PI / 180)); // min 0.05 prevents div-by-zero at horizon
-    const shadowFactor = Math.min(3.0, 1.0 / tanAlt); // 3.0x at ~18°, 1.0x at 45°, 0.36x at 70°
-
-    if (angleDiff > 90) {
-      // Section faces away from sun — structural shadows reach it
-      // More shade when: sun is low (long shadows) AND section is further behind sun
-      const azimuthComponent = (angleDiff - 90) / 90; // 0 at 90°, 1.0 at 180° (directly behind sun)
-      shadePercentage = Math.min(85, 55 * azimuthComponent * Math.min(2.0, shadowFactor));
-    } else {
-      // Section faces toward sun — essentially in direct sunlight
-      // Small residual for diffuse/atmospheric light, decreases as section faces more directly toward sun
-      shadePercentage = Math.max(0, 5 * (1 - angleDiff / 90));
-    }
-    
-    // Apply upper deck bonus
-    if (section.level === 'upper') {
-      const sport = venue.sport as keyof typeof SPORT_SHADE_MODIFIERS;
-      const modifier = SPORT_SHADE_MODIFIERS[sport] || SPORT_SHADE_MODIFIERS.baseball;
-      shadePercentage += modifier.upperDeckAdvantage;
-    }
-    
-    // Apply sport-specific modifiers
-    shadePercentage += getSportSpecificShadeBonus(venue, section, sunPos);
-    
-    // Apply venue geometry modifiers
-    shadePercentage += getVenueGeometryBonus(venue, section, sunPos);
-    
-    // Weather modifications
-    if (weather) {
-      shadePercentage += getWeatherShadeBonus(weather);
-    }
-    
-    // Cap at 100%
-    shadePercentage = Math.min(100, Math.max(0, shadePercentage));
+    // section.baseAngle is venue-local (0 = 1B, 90 = CF, 180 = 3B, 270 = behind
+    // home for baseball; the same rotation applies to the generated football
+    // layouts). Convert to a compass bearing before comparing with the sun.
+    const sectionCompassDeg = sectionCompassAngle(section, venue.orientation);
+    shadePercentage = 100 * structuralShadeFraction({
+      sunAltitudeDeg: sunPos.altitudeDegrees,
+      sunAzimuthDeg: sunPos.azimuthDegrees,
+      sectionCompassDeg,
+      level: section.level as SeatingLevel,
+    });
   }
-  
+
+  shadePercentage = Math.min(100, Math.max(0, shadePercentage));
+
+  // Direct sun actually felt: the lit fraction, damped by the stadium rim at
+  // low sun and by cloud cover. Kept as a SEPARATE number from the geometric
+  // shade above so a cloudy day never gets reported as a shaded seat.
+  const litFraction = (1 - shadePercentage / 100)
+    * horizonBlockFactor(sunPos.altitudeDegrees)
+    * (weather ? cloudTransmissionFactor(weather) : 1);
+
   const shadeFactor = shadePercentage / 100;
-  
+
   return {
     section,
     shadePercentage: Math.round(shadePercentage),
     isFullyShaded: shadePercentage >= 90,
     isPartiallyShaded: shadePercentage > 20 && shadePercentage < 90,
     isInSun: shadePercentage <= 20,
-    shadeFactor
+    shadeFactor,
+    effectiveSunPercent: Math.round(Math.max(0, Math.min(100, 100 * litFraction))),
   };
-}
-
-/**
- * Apply sport-specific shade bonuses
- */
-function getSportSpecificShadeBonus(
-  venue: UnifiedVenue,
-  section: VenueSection,
-  sunPos: { azimuthDegrees: number; altitudeDegrees: number }
-): number {
-  const sport = venue.sport as keyof typeof SPORT_SHADE_MODIFIERS;
-  const modifier = SPORT_SHADE_MODIFIERS[sport] || SPORT_SHADE_MODIFIERS.baseball;
-  let bonus = 0;
-  
-  if (venue.sport === 'football') {
-    // Football-specific logic
-    const footballModifier = modifier as typeof SPORT_SHADE_MODIFIERS.football;
-    if (section.name.toLowerCase().includes('sideline')) {
-      bonus += footballModifier.sidelineAdvantage;
-    }
-    if (section.name.toLowerCase().includes('end')) {
-      bonus += footballModifier.endZoneShade;
-    }
-  } else if (venue.sport === 'baseball') {
-    // Baseball-specific logic. The "third base side" is a stadium-local
-    // concept — at all parks, it sits around baseAngle 180° (range
-    // roughly 135°–225° spans LF foul line through deep LF).
-    const baseballModifier = modifier as typeof SPORT_SHADE_MODIFIERS.baseball;
-    const normalizedBase = ((section.baseAngle % 360) + 360) % 360;
-    if (normalizedBase >= 135 && normalizedBase <= 225) {
-      bonus += baseballModifier.homeAngleBonus;
-    }
-  }
-  
-  return bonus;
-}
-
-/**
- * Apply venue geometry bonuses based on specific characteristics
- */
-function getVenueGeometryBonus(
-  venue: UnifiedVenue,
-  section: VenueSection,
-  sunPos: { azimuthDegrees: number; altitudeDegrees: number }
-): number {
-  let bonus = 0;
-  
-  // Retractable roof venues might have partial shade
-  if (venue.roof === 'retractable') {
-    bonus += 15; // Assume some structural shade
-  }
-  
-  // Large capacity venues often have more substantial upper decks
-  if (venue.capacity > 60000 && section.level === 'upper') {
-    bonus += 10;
-  }
-  
-  // Newer venues (post-2000) often have better shade design
-  if (venue.opened && venue.opened > 2000) {
-    bonus += 5;
-  }
-  
-  // High sun angle reduces natural shade
-  if (sunPos.altitudeDegrees > 60) {
-    bonus -= 10;
-  }
-  
-  return bonus;
-}
-
-/**
- * Apply weather-based shade bonuses
- */
-function getWeatherShadeBonus(weather: WeatherData): number {
-  let bonus = 0;
-  
-  // Cloud cover provides natural shade
-  if (weather.cloudCover && weather.cloudCover > 0) {
-    bonus += Math.min(20, weather.cloudCover * 0.3);
-  }
-  
-  // High temperatures make shade more valuable (not more available, but more important)
-  // This is more of a "shade importance" modifier
-  if (weather.temperature && weather.temperature > 85) {
-    // Don't add actual shade, but could be used for recommendations
-  }
-  
-  return bonus;
 }
 
 /**
@@ -302,18 +212,19 @@ function calculateRecommendationScore(
   }[shadedSection.section.price] || 0;
   
   score += priceBonus;
-  
-  // Upper deck gets shade bonus but might have view trade-offs
+
+  // Amenity/experience preferences ONLY. There used to be a "+15 upper deck
+  // shade bonus" here, which double-counted shade on top of `shadePercentage`
+  // — and counted it in the wrong direction, since an upper deck is the most
+  // exposed part of the park, not the shadiest. Shade is already the base of
+  // this score; these adjustments must not restate it.
   if (shadedSection.section.level === 'upper') {
-    score += 15; // Shade bonus
-    score -= 5;  // View penalty
+    score -= 5; // further from the action
   }
-  
-  // Club level often best balance of shade and amenities
   if (shadedSection.section.level === 'club') {
-    score += 10;
+    score += 10; // in-seat service, indoor concourse access
   }
-  
+
   return score;
 }
 

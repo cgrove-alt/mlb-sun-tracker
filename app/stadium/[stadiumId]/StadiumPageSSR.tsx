@@ -40,12 +40,16 @@ function compassOf(orientation: number, side: 'firstBase' | 'thirdBase' | 'behin
 // the sun is "behind" the seats — i.e. on the same compass side as the
 // section relative to the field center. Returns the name of the side most
 // likely to be shaded for a given (orientation, approximate sun azimuth).
-function shadedSide(orientation: number, sunCompass: number): 'First base side' | 'Third base side' | 'Behind home plate' | 'Outfield (center field)' {
+// The names read after a definite article ("the {name} falls into shade
+// first"), which is how every caller renders them. "Behind home plate" and
+// "Outfield (center field)" did not, and produced "the behind home plate falls
+// into shade first" on every park whose home-plate side shades first.
+function shadedSide(orientation: number, sunCompass: number): 'First base side' | 'Third base side' | 'Seating behind home plate' | 'Outfield seating beyond center field' {
   const sides = [
     { name: 'First base side' as const,        compass: compassOf(orientation, 'firstBase') },
     { name: 'Third base side' as const,        compass: compassOf(orientation, 'thirdBase') },
-    { name: 'Behind home plate' as const,      compass: compassOf(orientation, 'behindHome') },
-    { name: 'Outfield (center field)' as const, compass: compassOf(orientation, 'centerField') },
+    { name: 'Seating behind home plate' as const, compass: compassOf(orientation, 'behindHome') },
+    { name: 'Outfield seating beyond center field' as const, compass: compassOf(orientation, 'centerField') },
   ];
   let best = sides[0];
   let bestDiff = 360;
@@ -137,7 +141,11 @@ export default function StadiumPageSSR({ stadium, sections, amenities, guide }: 
   };
   const gameTimes = [
     { id: 'day', label: '1:00 PM', recommendation: 'Maximum sun exposure - shade essential' },
-    { id: 'afternoon', label: '4:00 PM', recommendation: `Afternoon sun on the ${litSideAt('afternoon').toLowerCase().replace(/ side$/, '')} side` },
+    // Reads as "Afternoon sun on the third base side" / "…on the seating
+    // behind home plate". The old form stripped a trailing " side" and then
+    // re-appended one, which only worked for the two base-line labels and
+    // rendered "on the behind home plate side" for the rest.
+    { id: 'afternoon', label: '4:00 PM', recommendation: `Afternoon sun on the ${litSideAt('afternoon').toLowerCase()}` },
     { id: 'evening', label: '7:00 PM', recommendation: 'Sunset glare possible in outfield sections' },
   ];
 

@@ -19,12 +19,18 @@ const compassOf = (
 // Approximate midday (1 PM) sun azimuth in NH summer at mid-latitudes: ~S.
 const MIDDAY_SUN_AZIMUTH = 180;
 
+// Every caller renders this as "the {phrase} falls into shade first" or
+// "Shade first on the {phrase}", so the phrases have to read grammatically
+// after a definite article. The bare labels used to be "behind home plate" and
+// "outfield (center field)", which produced "the behind home plate falls into
+// shade first" on the venue page, the OG image and the JSON-LD FAQ answer for
+// every park whose home-plate side shades first.
 export function bestShadedSideForDayGame(orientation: number): string {
   const sides = [
     { name: 'first base side', compass: compassOf(orientation, 'firstBase') },
     { name: 'third base side', compass: compassOf(orientation, 'thirdBase') },
-    { name: 'behind home plate', compass: compassOf(orientation, 'behindHome') },
-    { name: 'outfield (center field)', compass: compassOf(orientation, 'centerField') },
+    { name: 'seating behind home plate', compass: compassOf(orientation, 'behindHome') },
+    { name: 'outfield seating beyond center field', compass: compassOf(orientation, 'centerField') },
   ];
   let best = sides[0];
   let bestDiff = 360;

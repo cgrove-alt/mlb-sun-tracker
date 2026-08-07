@@ -213,15 +213,23 @@ function UnifiedAppContent() {
           const gameDuration = 3;
           
           const detailedSectionData: SeatingSectionSun[] = sections.map((section) => {
-            const side: 'home' | 'first' | 'third' | 'outfield' = 
-              section.baseAngle >= 315 || section.baseAngle < 45 ? 'home' :
-              section.baseAngle >= 45 && section.baseAngle < 135 ? 'first' :
-              section.baseAngle >= 135 && section.baseAngle < 225 ? 'third' : 'outfield';
-            
+            // Stadium-local convention: 0 = 1B, 90 = CF, 180 = 3B, 270 = behind
+            // home plate. This mapping used to start `home` at 315–45°, which is
+            // the 1B corner, so every section was labelled a quarter-turn wrong.
+            const local = ((section.baseAngle % 360) + 360) % 360;
+            const side: 'home' | 'first' | 'third' | 'outfield' =
+              local >= 315 || local < 45 ? 'first' :
+              local < 135 ? 'outfield' :
+              local < 225 ? 'third' : 'home';
+
+            // Pass the stadium-LOCAL baseAngle (carried through by the spread)
+            // and let SunCalculator convert it with the park's orientation.
+            // This used to set `angle: section.baseAngle`, handing a local angle
+            // to a field documented as a compass bearing, which discarded every
+            // park's orientation.
             const sectionWithGeometry = {
               ...section,
               side,
-              angle: section.baseAngle || 0,
               depth: 50 // Default depth
             };
             

@@ -1,7 +1,7 @@
 import SunCalc from 'suncalc';
 import { Stadium } from '../data/stadiums';
 import type { StadiumSection } from '../data/stadiumSectionTypes';
-import { isSectionInSun, getSectionSunExposure, sectionCompassAngle } from './sectionSunCalculations';
+import { isSectionInSun, getSectionSunExposure } from './sectionSunCalculations';
 import { WeatherData } from '../services/weatherApi';
 import { getVenueSections } from '../data/venueSections';
 import { SunCalculator } from './sunCalculator';
@@ -15,7 +15,19 @@ export type { SunPosition };
 export interface SeatingSectionSun {
   section: StadiumSection;
   inSun: boolean;
-  sunExposure: number; // 0-100, percentage of game time in sun
+  /**
+   * GEOMETRIC sun exposure, 0–100: how much of the section the structure
+   * leaves in direct sun at this sun position.
+   *
+   * Weather is deliberately NOT folded in. Whether a seat is in shadow is a
+   * property of the ballpark and the sun's position; cloud cover dims the
+   * light without moving the shadow line. Mixing them meant a cloudy forecast
+   * could report an exposed seat as "95% shaded" — and a fan who booked on
+   * that and got a clear day sat in full sun all afternoon.
+   */
+  sunExposure: number;
+  /** Sun actually felt after cloud cover — `sunExposure` × cloud transmission. */
+  effectiveSunExposure?: number;
   timeInSun?: number; // Total minutes in sun during game
   percentageOfGameInSun?: number; // Same as sunExposure, for clarity
 }
@@ -68,57 +80,46 @@ export function calculateDetailedSectionSunExposure(
   // internally. See src/utils/sectionSunCalculations.ts for the convention.
   const sunAzimuth = sunPosition.azimuthDegrees;
   
-  // Calculate weather impact on sun exposure
-  let weatherMultiplier = 1.0;
-  if (weather) {
-    const { cloudCover, conditions, precipitationProbability } = weather;
-    // Log in development
-    if (typeof window !== 'undefined' && window.location.hostname === 'localhost') {
-
-    }
-    
-    // Reduce sun exposure based on weather conditions
-    if ((precipitationProbability && precipitationProbability > 70) || 
-        conditions.some(c => c.main === 'Rain' || c.main === 'Snow' || c.main === 'Drizzle')) {
-      weatherMultiplier = 0.1; // Heavy rain/snow/drizzle blocks most sun
-    } else if (precipitationProbability && precipitationProbability > 30) {
-      weatherMultiplier = 0.4; // Light rain likely
-    } else if (cloudCover > 80) {
-      weatherMultiplier = 0.4; // Heavy clouds
-    } else if (cloudCover > 60) {
-      weatherMultiplier = 0.6; // Mostly cloudy
-    } else if (cloudCover > 40) {
-      weatherMultiplier = 0.8; // Partly cloudy
-    } else if (cloudCover > 15) {
-      weatherMultiplier = 0.9; // Light clouds
-    }
-    
-    // Log in development
-    if (typeof window !== 'undefined' && window.location.hostname === 'localhost') {
-
-    }
-  } else {
-    // Log in development
-    if (typeof window !== 'undefined' && window.location.hostname === 'localhost') {
-
-    }
-  }
+  // Cloud transmission is an INTENSITY term, reported alongside the geometry
+  // rather than baked into it. See the SeatingSectionSun docs above.
+  const cloudTransmission = weather ? cloudTransmissionFactor(weather) : 1.0;
 
   stadiumSections.forEach(section => {
     const inSun = isSectionInSun(section, sunAzimuth, sunPosition.altitudeDegrees, stadium.orientation);
-    let sunExposure = getSectionSunExposure(section, sunPosition.altitudeDegrees, sunAzimuth, stadium.orientation);
-    
-    // Apply weather impact to sun exposure
-    sunExposure = sunExposure * weatherMultiplier;
-    
+    const sunExposure = getSectionSunExposure(section, sunPosition.altitudeDegrees, sunAzimuth, stadium.orientation);
+
     sectionSunData.push({
       section,
-      inSun: inSun && sunExposure > 10, // Consider it "in sun" only if meaningful exposure after weather
-      sunExposure: Math.round(sunExposure)
+      // "In sun" is a question about the shadow line, so it is answered from
+      // geometry. It used to also require `sunExposure > 10` AFTER the weather
+      // multiplier, which made an exposed seat report as shaded on an overcast
+      // forecast.
+      inSun: inSun && sunExposure > 10,
+      sunExposure: Math.round(sunExposure),
+      effectiveSunExposure: Math.round(sunExposure * cloudTransmission),
     });
   });
-  
+
   return sectionSunData;
+}
+
+/**
+ * Fraction of direct sunlight reaching the ground through the sky, 0–1.
+ * Shared by the section-level paths so the thresholds stay in one place.
+ */
+export function cloudTransmissionFactor(weather: WeatherData): number {
+  const { cloudCover, conditions, precipitationProbability } = weather;
+
+  if ((precipitationProbability && precipitationProbability > 70) ||
+      conditions.some(c => c.main === 'Rain' || c.main === 'Snow' || c.main === 'Drizzle')) {
+    return 0.1; // heavy rain/snow blocks most sun
+  }
+  if (precipitationProbability && precipitationProbability > 30) return 0.4;
+  if (cloudCover > 80) return 0.4;
+  if (cloudCover > 60) return 0.6;
+  if (cloudCover > 40) return 0.8;
+  if (cloudCover > 15) return 0.9;
+  return 1.0;
 }
 
 // Filter sections based on sun exposure criteria
@@ -208,24 +209,6 @@ function getSectionSide(section: StadiumSection): 'home' | 'first' | 'third' | '
   }
 }
 
-// Helper function to calculate section angle.
-//
-// `section.baseAngle` is STADIUM-LOCAL (0 = 1B, 90 = CF, 180 = 3B, 270 = behind
-// home), not a compass bearing — see the convention block at the top of
-// sectionSunCalculations.ts, which is the single source of truth and which
-// calculateRowShadows() already follows.
-//
-// This function used to return the raw local angle and ignore
-// `stadiumOrientation` entirely, on the mistaken comment that base angles were
-// "already in absolute compass coordinates". Everything downstream (the
-// SunCalculator class, and therefore the main UnifiedApp/MobileApp shade
-// display) then compared a stadium-local angle against a compass sun azimuth,
-// so a park's orientation had no effect on which side of the bowl was reported
-// shaded. Converting here makes this path agree with the API/regression path.
-function getSectionAngle(section: StadiumSection, stadiumOrientation: number): number {
-  return sectionCompassAngle(section, stadiumOrientation);
-}
-
 // Calculate sun exposure for entire game duration
 export function calculateGameSunExposure(
   stadium: Stadium,
@@ -252,10 +235,11 @@ export function calculateGameSunExposure(
   }
 
   stadiumSections.forEach(section => {
+    // `baseAngle` (stadium-local) rides along on the spread; SunCalculator
+    // converts it to a compass bearing itself using `stadium.orientation`.
     const sectionWithGeometry = {
       ...section,
       side: getSectionSide(section),
-      angle: getSectionAngle(section, stadium.orientation),
       depth: 50 // Default depth in feet
     };
     

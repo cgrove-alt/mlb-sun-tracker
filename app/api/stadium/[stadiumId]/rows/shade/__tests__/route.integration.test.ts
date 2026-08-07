@@ -28,8 +28,13 @@ jest.mock('../../../../../../../src/data/stadiums', () => ({
 }));
 
 jest.mock('../../../../../../../src/data/stadium-data-aggregator', () => ({
-  // Two real-shaped sections: one east-side open lower bowl with a back-row
-  // overhang, and one fully covered upper section.
+  // Three real-shaped sections: an open lower bowl ACROSS the bowl from the
+  // evening sun (with a back-row overhang), its mirror image with the sun
+  // BEHIND it, and one fully covered upper section.
+  //
+  // With orientation 55°, sectionCompass = 55 + 90 − (baseAngle + span/2):
+  //   '130' baseAngle  90 → compass  45° (NE) — sun at ~292° shines into it.
+  //   '129' baseAngle 203 → compass 292° (WNW) — sun sits directly behind it.
   getStadiumSections: jest.fn((stadiumId: string) => {
     if (stadiumId !== 'yankees') return [];
     return [
@@ -44,6 +49,19 @@ jest.mock('../../../../../../../src/data/stadium-data-aggregator', () => ({
           { rowNumber: '1',  seats: 20, elevation: 10, depth: 2.5,  covered: false, overhangHeight: 0 },
           { rowNumber: '10', seats: 20, elevation: 30, depth: 25,   covered: false, overhangHeight: 15 },
           { rowNumber: '20', seats: 20, elevation: 50, depth: 50,   covered: false, overhangHeight: 15 },
+        ],
+      },
+      {
+        id: '129',
+        name: 'Section 129',
+        level: 'lower',
+        baseAngle: 203,
+        angleSpan: 20,
+        covered: false,
+        rows: [
+          { rowNumber: '1',  seats: 20, elevation: 10, depth: 2.5, covered: false, overhangHeight: 0 },
+          { rowNumber: '10', seats: 20, elevation: 30, depth: 25,  covered: false, overhangHeight: 0 },
+          { rowNumber: '20', seats: 20, elevation: 50, depth: 50,  covered: false, overhangHeight: 0 },
         ],
       },
       {
@@ -73,10 +91,10 @@ const createParams = (stadiumId: string) => ({
 });
 
 describe('GET /api/stadium/[stadiumId]/rows/shade — real-calc integration', () => {
-  it('returns real coverage for an east section at low west-sunset', async () => {
-    // 2025-07-04 23:30 UTC ≈ 19:30 ET on July 4. Sun is in the west at ~7° at
-    // Yankee Stadium. Section 130 is on the east side (baseAngle 90), so the
-    // sun shines across the bowl into its front rows.
+  it('returns real coverage for a cross-bowl section at low west-sunset', async () => {
+    // 2025-07-04 19:30 ET. Sun is WNW (az ~292°) at ~9° above the horizon at
+    // Yankee Stadium. Section 130 sits at compass 45°, so the sun crosses the
+    // bowl and shines into those seats.
     const req = createRequest(
       '/api/stadium/yankees/rows/shade?date=2025-07-04&time=19:30',
     );
@@ -85,31 +103,52 @@ describe('GET /api/stadium/[stadiumId]/rows/shade — real-calc integration', ()
     const data = await res.json();
 
     expect(data.sunPosition.isDay).toBe(true);
-    // Front row of the east section should NOT be in deep shadow — sun is
-    // coming across the bowl directly into the seats. Pre-Phase 1, this code
-    // path was unreachable (route imported a non-existent function).
     const section130 = data.sections.find(
       (s: { sectionId: string }) => s.sectionId === '130',
     );
     expect(section130).toBeDefined();
+
+    // Front row: open to the sky with the sun in its face, so it is the
+    // brightest seat in the park at this moment. It is not 0% shaded, because
+    // a 9° sun is below the far grandstand's rim (~12° from mid-bowl) and that
+    // structure clips part of the light. See BOWL_DEFAULTS.rimAngleDeg.
     const row1 = section130.rows.find(
       (r: { rowNumber: string }) => r.rowNumber === '1',
     );
     expect(row1).toBeDefined();
-    expect(row1.coverage).toBeLessThan(20); // front row mostly lit
+    expect(row1.coverage).toBeLessThan(35);
 
-    // The back rows have a 15 ft overhang; at ~7° elevation the shadow runs
-    // long, so they should be heavily shaded — but the sunset sun (az ~288°)
-    // rakes in ~62° off the seats' SW facing, so the overhang is azimuth-
-    // projected (opp ≈ 0.73) rather than slammed to a flat 100% the way the
-    // pre-Phase-9 hard >90° branch did. Heavily shaded (~75%), and far more
-    // shaded than the lit front row, is the physically-correct result.
+    // Back rows sit under a 15 ft overhang. At 9° the lip throws its shadow
+    // ~91 ft back, far beyond this 50 ft deck, so they are fully shaded.
     const row20 = section130.rows.find(
       (r: { rowNumber: string }) => r.rowNumber === '20',
     );
-    expect(row20.coverage).toBeGreaterThan(70);
-    expect(row20.coverage).toBeLessThan(95);
+    expect(row20.coverage).toBeGreaterThanOrEqual(95);
     expect(row20.coverage).toBeGreaterThan(row1.coverage + 40);
+  });
+
+  it('reports the section with the sun BEHIND it as the shaded one', async () => {
+    // The sign check, run through the live route rather than the unit layer.
+    // Section 129 sits at compass 292° — the same bearing as the sun — so the
+    // grandstand behind those seats blocks it and they are in deep shade.
+    // Section 130 sits across the bowl at compass 45° and is lit.
+    //
+    // Getting this backwards is the defect this whole audit was about: three
+    // of the site's four shade models had it inverted, and the site spent that
+    // time recommending the sunny side.
+    const req = createRequest(
+      '/api/stadium/yankees/rows/shade?date=2025-07-04&time=19:30',
+    );
+    const data = await (await GET(req, createParams('yankees'))).json();
+
+    const sunBehind = data.sections.find((s: { sectionId: string }) => s.sectionId === '129');
+    const sunFacing = data.sections.find((s: { sectionId: string }) => s.sectionId === '130');
+    expect(sunBehind).toBeDefined();
+    expect(sunFacing).toBeDefined();
+
+    const frontRow = (s: any) => s.rows.find((r: { rowNumber: string }) => r.rowNumber === '1').coverage;
+    expect(frontRow(sunBehind)).toBeGreaterThan(frontRow(sunFacing) + 40);
+    expect(sunBehind.averageCoverage).toBeGreaterThan(sunFacing.averageCoverage);
   });
 
   it('reports covered sections as 100% shaded regardless of time', async () => {
