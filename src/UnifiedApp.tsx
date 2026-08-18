@@ -15,7 +15,7 @@ import { ErrorProvider, useError } from './components/ErrorNotification';
 import { Breadcrumb } from './components/NavigationBreadcrumb';
 import { FidelityNotice } from './components/FidelityNotice';
 import { getStadiumDataFidelity, fidelityNote } from './data/stadiumDataFidelity';
-import { canPublishSeatLevelShade } from './data/stadiumShadeConfidence';
+import { canPublishVenueSeatShade } from './data/stadiumShadeConfidence';
 import { LoadingSpinner } from './components/LoadingSpinner';
 import { VenueChangeSkeleton } from './components/SkeletonScreens';
 import { SunIcon, MoonIcon } from './components/Icons';
@@ -56,8 +56,9 @@ function UnifiedAppContent() {
 
   // Convert unified venue to legacy stadium format for compatibility
   const legacyStadium = selectedVenue ? convertToLegacyStadium(selectedVenue) : null;
-  const seatShadePublished = selectedVenue?.league !== 'MLB'
-    || canPublishSeatLevelShade(selectedVenue.id);
+  const seatShadePublished = selectedVenue
+    ? canPublishVenueSeatShade(selectedVenue)
+    : false;
 
   // Load venue from URL parameters on mount
   useEffect(() => {
@@ -181,7 +182,7 @@ function UnifiedAppContent() {
         if (isCancelled) return;
         setSunPosition(formattedPosition);
 
-        if (selectedVenue.league === 'MLB' && !canPublishSeatLevelShade(selectedVenue.id)) {
+        if (!canPublishVenueSeatShade(selectedVenue)) {
           setDetailedSections([]);
           setShadedSections([]);
           setGameExposureData(null);
@@ -454,7 +455,7 @@ function UnifiedAppContent() {
                 )}
               </div>
 
-              {!seatShadePublished && selectedVenue.league === 'MLB' && (
+              {!seatShadePublished && (
                 <section
                   role="status"
                   aria-labelledby="desktop-shade-results-paused"

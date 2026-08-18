@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { bestShadedSideForDayGame } from '../utils/shadeSide';
+import { bestShadedSideForDayGame, type ShadeVenueType } from '../utils/shadeSide';
 
 // "Answer-first" summary at the top of every venue page (audit Phase 7):
 // Answer-first summary that states the strongest conclusion the available data
@@ -9,12 +9,14 @@ export function ShadeAnswer({
   name,
   orientation,
   roof,
+  venueType = 'baseball',
 }: {
   name: string;
   orientation: number;
   roof?: string;
+  venueType?: ShadeVenueType;
 }) {
-  const side = bestShadedSideForDayGame(orientation);
+  const side = bestShadedSideForDayGame(orientation, venueType);
   const domed = roof === 'fixed';
 
   return (

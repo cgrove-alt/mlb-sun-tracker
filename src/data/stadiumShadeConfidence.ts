@@ -93,6 +93,22 @@ export function canPublishSeatLevelShade(stadiumId: string): boolean {
 }
 
 /**
+ * Whether a venue may show section-level shade percentages.
+ *
+ * Fixed roofs are a physical constant — every seat is shaded — so they do
+ * not wait on row-geometry evidence. Open and retractable bowls still need
+ * the measurement gate. Homepage used to treat "not MLB" as published,
+ * which printed baseball-convention shade % for every NFL/MiLB park.
+ */
+export function canPublishVenueSeatShade(venue: {
+  id: string;
+  roof?: string;
+}): boolean {
+  if (venue.roof === 'fixed') return true;
+  return canPublishSeatLevelShade(venue.id);
+}
+
+/**
  * @deprecated The name survives for compatibility with existing API clients.
  * Membership is derived from evidence and is not a manual allowlist. Remote
  * metric reconstruction plus a passing observation holdout can qualify.

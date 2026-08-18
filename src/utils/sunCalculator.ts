@@ -4,6 +4,8 @@ import type { CoverageDetail } from '../types/stadium-complete';
 import { getSunPosition } from './sunPosition';
 import {
   sectionCompassAngle,
+  venueSectionCompassAngle,
+  sectionAngleConventionFor,
   sunIncidence,
   backStructureShadeFraction,
   overhangShadeFraction,
@@ -12,6 +14,7 @@ import {
   normalizeAngle,
   BOWL_DEFAULTS,
   type SeatingLevel,
+  type SectionAngleConvention,
 } from './bowlGeometry';
 
 interface Stadium {
@@ -19,12 +22,17 @@ interface Stadium {
   name: string;
   latitude: number;
   longitude: number;
+  roof?: 'open' | 'fixed' | 'retractable';
   roofType?: 'open' | 'fixed' | 'retractable';
   roofHeight?: number;
   roofOverhang?: number;
   upperDeckHeight?: number;
   orientation?: number;
   sections?: Section[];
+  league?: string;
+  venueType?: string;
+  sport?: string;
+  sectionAngleConvention?: SectionAngleConvention;
 }
 
 interface Section {
@@ -264,8 +272,10 @@ export class SunCalculator {
   private calculateRoofShadow(section: Section, sunAltitude: number): number {
     if (sunAltitude <= 0) return 0;
 
-    // Fixed roof stadiums always have 100% coverage
-    if (this.stadium.roofType === 'fixed') return 100;
+    // Fixed roof stadiums always have 100% coverage. Accept both `roof`
+    // (the field stadiums.ts / unifiedVenues actually store) and the
+    // legacy `roofType` alias — callers used to set only one of them.
+    if ((this.stadium.roofType ?? this.stadium.roof) === 'fixed') return 100;
 
     // Covered sections have permanent overhead protection.
     if (section.covered === true) return 100;
@@ -290,9 +300,10 @@ export class SunCalculator {
    */
   private getSectionCompassAngle(section: Section): number {
     if (section.baseAngle !== undefined) {
-      return sectionCompassAngle(
+      return venueSectionCompassAngle(
         { baseAngle: section.baseAngle, angleSpan: section.angleSpan },
         this.stadiumGeometry.orientation,
+        sectionAngleConventionFor(this.stadium),
       );
     }
     if (section.angle !== undefined) {

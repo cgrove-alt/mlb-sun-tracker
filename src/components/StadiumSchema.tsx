@@ -1,6 +1,6 @@
 import React from 'react';
 import { Stadium } from '../data/stadiums';
-import { canPublishSeatLevelShade } from '../data/stadiumShadeConfidence';
+import { canPublishVenueSeatShade } from '../data/stadiumShadeConfidence';
 
 interface StadiumSchemaProps {
   stadium: Stadium;
@@ -15,7 +15,7 @@ export const StadiumSchema: React.FC<StadiumSchemaProps> = ({
   shadedSectionsCount,
   totalSections = 0 // Default to 0 if not provided
 }) => {
-  const seatShadePublished = canPublishSeatLevelShade(stadium.id);
+  const seatShadePublished = canPublishVenueSeatShade(stadium);
   
   const schemaData = {
     "@context": "https://schema.org",

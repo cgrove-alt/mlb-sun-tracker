@@ -190,6 +190,49 @@ export async function GET(request: NextRequest, { params }: RouteParams) {
   // pass the explicit publication gate;
   // never let a precise-looking synthetic result escape through either 2D or
   // 3D mode.
+  // A permanent roof is a physical constant. Publish 100% shade without
+  // inventing per-row geometry from the unvalidated bowl model.
+  if (stadium.roof === 'fixed') {
+    const sections = await getStadiumSections(stadium.id, 'MLB');
+    const shaded = (sections ?? []).map((section) => ({
+      sectionId: section.id,
+      sectionName: section.name,
+      rows: [],
+      averageCoverage: 100,
+      bestRows: [] as string[],
+      worstRows: [] as string[],
+    }));
+    return NextResponse.json({
+      stadium: { id: stadium.id, name: stadium.name, orientation: stadium.orientation },
+      date: calendarDate,
+      time: `${hour.toString().padStart(2, '0')}:${minute.toString().padStart(2, '0')}`,
+      sunPosition: {
+        altitude: sunPosition.altitudeDegrees,
+        azimuth: sunPosition.azimuthDegrees,
+        isDay: sunPosition.altitudeDegrees > 0,
+        utc: targetDate.toISOString(),
+      },
+      shadeStatus: publicShadeStatus({
+        stadiumId: stadium.id,
+        roof: stadium.roof,
+        sunAboveHorizon: sunPosition.altitudeDegrees > 0,
+      }),
+      summary: {
+        totalSections: shaded.length,
+        totalRows: 0,
+        excellentShadeRows: 0,
+        goodShadeRows: 0,
+        averageCoverage: 100,
+        reason: 'fixed-roof',
+      },
+      sections: shaded,
+      calculation: { method: 'fixed-roof' },
+      publicationState: 'published',
+    }, {
+      headers: { 'Cache-Control': 'public, max-age=3600, stale-while-revalidate=86400' },
+    });
+  }
+
   if (!canPublishSeatLevelShade(stadium.id)) {
     const code = use3D ? 'UNVALIDATED_3D_GEOMETRY' : 'UNVALIDATED_SEAT_GEOMETRY';
     return NextResponse.json(

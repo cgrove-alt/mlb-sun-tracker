@@ -17,7 +17,7 @@ import { shadeTierOf, type ShadeTier } from '../../../src/utils/sectionShadeTier
 import { buildSeasonalShadeCopy } from '../../../src/utils/seasonalShade';
 import { getOrientationProvenance, getOrientationPrecision } from '../../../src/data/stadiumOrientationProvenance';
 import { stadiumHistories } from '../../../src/data/stadiumDetails';
-import { canPublishSeatLevelShade } from '../../../src/data/stadiumShadeConfidence';
+import { canPublishVenueSeatShade } from '../../../src/data/stadiumShadeConfidence';
 import styles from './StadiumPageSSR.module.css';
 
 interface StadiumPageSSRProps {
@@ -120,7 +120,7 @@ export default function StadiumPageSSR({ stadium, sections, amenities, guide }: 
   // shade is roof-dependent, not section- or orientation-dependent. Treat every
   // section as covered and suppress the sun-angle / orientation copy below.
   const isDome = stadium.roof === 'fixed';
-  const seatShadePublished = canPublishSeatLevelShade(stadium.id);
+  const seatShadePublished = canPublishVenueSeatShade(stadium);
   const tierOf = (s: StadiumSection): ShadeTier => (isDome ? 'covered' : shadeTierOf(s));
   // Lower-confidence disclaimer for parks whose orientation is only estimated
   // (±15–20°): the diagram still helps, but the sun/shade boundary is fuzzier.

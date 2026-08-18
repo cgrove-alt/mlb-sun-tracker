@@ -96,7 +96,12 @@ const ComprehensiveStadiumGuide: React.FC<ComprehensiveStadiumGuideProps> = ({
       {/* Answer-first summary — only when standalone (MLB pages get it from
           StadiumPageSSR instead, so it isn't duplicated). */}
       {showTitleBlock && venue && (
-        <ShadeAnswer name={venue.name} orientation={venue.orientation} roof={venue.roof} />
+        <ShadeAnswer
+          name={venue.name}
+          orientation={venue.orientation}
+          roof={venue.roof}
+          venueType={venue.venueType === 'football' ? 'football' : 'baseball'}
+        />
       )}
 
       {/* The interactive shade diagram is intentionally NOT rendered for MiLB/NFL

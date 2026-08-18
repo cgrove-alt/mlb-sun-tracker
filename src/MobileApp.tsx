@@ -21,7 +21,7 @@ import { getSunPosition, getSunDescription, getCompassDirection } from './utils/
 import { SunIcon, MoonIcon } from './components/Icons';
 import { FidelityNotice } from './components/FidelityNotice';
 import { getStadiumDataFidelity, fidelityNote } from './data/stadiumDataFidelity';
-import { canPublishSeatLevelShade } from './data/stadiumShadeConfidence';
+import { canPublishVenueSeatShade } from './data/stadiumShadeConfidence';
 import { validateFilterCriteria, RateLimiter } from './utils/validation';
 import { debounce } from './utils/debounce';
 import './styles/mobile.css';
@@ -47,8 +47,9 @@ const MobileApp: React.FC = () => {
   const [sunPosition, setSunPosition] = useState<any>(null);
 
   const [isCalculating, setIsCalculating] = useState(false);
-  const seatShadePublished = selectedVenue?.league !== 'MLB'
-    || canPublishSeatLevelShade(selectedVenue.id);
+  const seatShadePublished = selectedVenue
+    ? canPublishVenueSeatShade(selectedVenue)
+    : false;
 
   // Convert unified venue to legacy stadium when needed
   useEffect(() => {
@@ -166,7 +167,7 @@ const MobileApp: React.FC = () => {
         azimuthDegrees: position.azimuthDegrees
       });
 
-      if (selectedVenue.league === 'MLB' && !canPublishSeatLevelShade(selectedVenue.id)) {
+      if (!canPublishVenueSeatShade(selectedVenue)) {
         setAllSections([]);
         setFilteredSections([]);
         return;
