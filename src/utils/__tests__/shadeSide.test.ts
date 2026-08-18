@@ -7,8 +7,10 @@ describe('bestShadedSideForDayGame — baseball', () => {
     expect(bestShadedSideForDayGame(55)).toBe('first base side');
   });
 
-  it('picks third base when HP→CF faces north (Rogers Centre / Petco / Coors)', () => {
-    expect(bestShadedSideForDayGame(0)).toBe('third base side');
+  it('picks seating behind home when HP→CF faces north (Rogers Centre / Petco / Coors)', () => {
+    // 1 PM sun is ~south. A north-facing diamond puts the sun behind home;
+    // third base becomes the shade side later as the sun moves west.
+    expect(bestShadedSideForDayGame(0)).toBe('seating behind home plate');
   });
 
   it('does not invent baseball sides for football', () => {

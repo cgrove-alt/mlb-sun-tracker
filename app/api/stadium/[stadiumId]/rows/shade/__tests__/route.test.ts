@@ -30,11 +30,31 @@ jest.mock('../../../../../../../src/data/stadiums', () => ({
       longitude: -73.9262,
       orientation: 63,
     },
+    {
+      id: 'rays',
+      name: 'Tropicana Field',
+      latitude: 27.7683,
+      longitude: -82.6534,
+      orientation: 316,
+      roof: 'fixed',
+      timezone: 'America/New_York',
+    },
   ],
 }));
 
 jest.mock('../../../../../../../src/data/stadium-data-aggregator', () => ({
   getStadiumSections: jest.fn((stadiumId: string, league: string) => {
+    if (stadiumId === 'rays') {
+      return [
+        {
+          id: 'section-101',
+          name: 'Section 101',
+          level: 'lower',
+          baseAngle: 0,
+          rows: [],
+        },
+      ];
+    }
     if (stadiumId === 'yankee-stadium') {
       return [
         {
@@ -170,6 +190,28 @@ describe('GET /api/stadium/[stadiumId]/rows/shade', () => {
         publicationState: 'withheld',
       });
       expect(data).not.toHaveProperty('sections');
+    });
+
+    it('publishes 100% shade for a fixed-roof park without row geometry', async () => {
+      jest.mocked(canPublishSeatLevelShade).mockReturnValue(false);
+      jest.mocked(hasPublishedMeasuredShadeRuntime).mockReturnValue(false);
+      const response = await GET(
+        createRequest('/api/stadium/rays/rows/shade?date=2025-07-15&time=13:00'),
+        createParams('rays'),
+      );
+      const data = await response.json();
+
+      expect(response.status).toBe(200);
+      expect(data.calculation.method).toBe('fixed-roof');
+      expect(data.summary.averageCoverage).toBe(100);
+      expect(data.summary.reason).toBe('fixed-roof');
+      expect(data.sections).toEqual([
+        expect.objectContaining({
+          sectionId: 'section-101',
+          averageCoverage: 100,
+          rows: [],
+        }),
+      ]);
     });
   });
 
