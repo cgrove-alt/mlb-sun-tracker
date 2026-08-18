@@ -11,7 +11,7 @@ export interface NFLStadium {
   state: string;
   latitude: number;
   longitude: number;
-  orientation: number; // Field orientation in degrees (0=North)
+  orientation: number; // Field long-axis compass bearing, degrees clockwise from north (0=N). End zones sit at orientation and orientation+180.
   capacity: number;
   opened: number;
   surface: 'grass' | 'turf' | 'hybrid';
@@ -33,16 +33,16 @@ export const NFL_STADIUMS: NFLStadium[] = [
     division: 'East',
     city: 'Orchard Park',
     state: 'NY',
-    latitude: 42.7738,
-    longitude: -78.7870,
-    orientation: 50, // Northeast-Southwest
-    capacity: 71608,
-    opened: 1973,
-    surface: 'turf',
+    latitude: 42.77306,
+    longitude: -78.79222,
+    orientation: 0, // N-S — 2026 stadium (west of Abbott). The demolished New Era / Ralph Wilson bowl was ~302°.
+    capacity: 60108,
+    opened: 2026,
+    surface: 'grass',
     roof: 'open',
     timezone: 'America/New_York',
-    elevation: 600,
-    features: ['Wind-prone', 'Lake effect weather']
+    elevation: 770,
+    features: ['Canopy covers ~65% of seats', 'North-south field to cut Lake Erie wind', 'Lake effect weather']
   },
   {
     id: 'hard-rock-stadium',
@@ -54,7 +54,7 @@ export const NFL_STADIUMS: NFLStadium[] = [
     state: 'FL',
     latitude: 25.9580,
     longitude: -80.2389,
-    orientation: 0, // North-South
+    orientation: 302, // NW-SE — OSM pitch 127.2° agrees with Bliss 302.1° (same undirected axis)
     capacity: 65326,
     opened: 1987,
     surface: 'grass',
@@ -74,7 +74,7 @@ export const NFL_STADIUMS: NFLStadium[] = [
     state: 'MA',
     latitude: 42.0909,
     longitude: -71.2643,
-    orientation: 0, // North-South
+    orientation: 343, // NNW-SSE — OSM pitch 152.4° agrees with Bliss 343°
     capacity: 65878,
     opened: 2002,
     surface: 'turf',
@@ -93,7 +93,7 @@ export const NFL_STADIUMS: NFLStadium[] = [
     state: 'NJ',
     latitude: 40.8128,
     longitude: -74.0742,
-    orientation: 23, // NNE-SSW
+    orientation: 346, // NNW-SSE — OSM pitch 171.7° agrees with Bliss 345.5°
     capacity: 82500,
     opened: 2010,
     surface: 'turf',
@@ -114,7 +114,7 @@ export const NFL_STADIUMS: NFLStadium[] = [
     state: 'MD',
     latitude: 39.2780,
     longitude: -76.6227,
-    orientation: 22, // NNE-SSW
+    orientation: 290, // WNW-ESE — OSM pitch 104.6° agrees with Bliss 289.5°
     capacity: 71008,
     opened: 1998,
     surface: 'grass',
@@ -133,7 +133,7 @@ export const NFL_STADIUMS: NFLStadium[] = [
     state: 'OH',
     latitude: 39.0954,
     longitude: -84.5160,
-    orientation: 13, // NNE-SSW
+    orientation: 321, // NW-SE — OSM pitch 146.5° agrees with Bliss 320.6°
     capacity: 65515,
     opened: 2000,
     surface: 'turf',
@@ -152,7 +152,7 @@ export const NFL_STADIUMS: NFLStadium[] = [
     state: 'OH',
     latitude: 41.5061,
     longitude: -81.6995,
-    orientation: 287, // WNW-ESE
+    orientation: 56, // NE-SW — OSM pitch 50.4° agrees with Bliss 56.1°
     capacity: 67431,
     opened: 1999,
     surface: 'grass',
@@ -171,7 +171,7 @@ export const NFL_STADIUMS: NFLStadium[] = [
     state: 'PA',
     latitude: 40.4468,
     longitude: -80.0158,
-    orientation: 275, // W-E
+    orientation: 334, // NNW-SSE — OSM pitch 165.6° agrees with Bliss 333.9°
     capacity: 68400,
     opened: 2001,
     surface: 'grass',
@@ -192,7 +192,7 @@ export const NFL_STADIUMS: NFLStadium[] = [
     state: 'TX',
     latitude: 29.6847,
     longitude: -95.4107,
-    orientation: 0, // North-South
+    orientation: 358, // N-S — OSM stadium/practice axis ~173° agrees with Bliss 358.2°
     capacity: 72220,
     opened: 2002,
     surface: 'turf',
@@ -212,7 +212,7 @@ export const NFL_STADIUMS: NFLStadium[] = [
     state: 'IN',
     latitude: 39.7601,
     longitude: -86.1639,
-    orientation: 0, // North-South
+    orientation: 27, // NNE-SSW — indoor; Bliss 26.6°. OSM building outline is ~8° (weak).
     capacity: 67000,
     opened: 2008,
     surface: 'turf',
@@ -232,7 +232,7 @@ export const NFL_STADIUMS: NFLStadium[] = [
     state: 'FL',
     latitude: 30.3239,
     longitude: -81.6373,
-    orientation: 22, // NNE-SSW
+    orientation: 17, // NNE-SSW — OSM pitch 14.9° agrees with Bliss 16.7°
     capacity: 69132,
     opened: 1995,
     surface: 'grass',
@@ -251,7 +251,7 @@ export const NFL_STADIUMS: NFLStadium[] = [
     state: 'TN',
     latitude: 36.1665,
     longitude: -86.7713,
-    orientation: 0, // North-South
+    orientation: 335, // NNW-SSE — OSM pitch 161.0° agrees with Bliss 334.6°
     capacity: 69143,
     opened: 1999,
     surface: 'grass',
@@ -272,7 +272,7 @@ export const NFL_STADIUMS: NFLStadium[] = [
     state: 'CO',
     latitude: 39.7439,
     longitude: -105.0200,
-    orientation: 0, // North-South
+    orientation: 0, // N-S — OSM pitch 175.0° + Bliss 0° + vizual-statistix "perfectly N-S"
     capacity: 76125,
     opened: 2001,
     surface: 'grass',
@@ -291,7 +291,7 @@ export const NFL_STADIUMS: NFLStadium[] = [
     state: 'MO',
     latitude: 39.0489,
     longitude: -94.4839,
-    orientation: 0, // North-South
+    orientation: 316, // NW-SE — OSM way 65960009 (named GEHA Field) 142.8° agrees with Bliss 316.3°
     capacity: 76416,
     opened: 1972,
     surface: 'grass',
@@ -310,7 +310,7 @@ export const NFL_STADIUMS: NFLStadium[] = [
     state: 'NV',
     latitude: 36.0909,
     longitude: -115.1833,
-    orientation: 0, // North-South
+    orientation: 26, // NNE-SSW — OSM indoor pitch 25.8° (named Las Vegas Raiders). Bliss seating-chart 0° disagrees.
     capacity: 65000,
     opened: 2020,
     surface: 'grass',
@@ -330,7 +330,7 @@ export const NFL_STADIUMS: NFLStadium[] = [
     state: 'CA',
     latitude: 33.9535,
     longitude: -118.3392,
-    orientation: 90, // East-West
+    orientation: 338, // NNW-SSE — OSM stadium outline 152.0° agrees with Bliss 338.2°. Previous 90° was leftover E-W.
     capacity: 70240,
     opened: 2020,
     surface: 'turf',
@@ -352,7 +352,7 @@ export const NFL_STADIUMS: NFLStadium[] = [
     state: 'TX',
     latitude: 32.7473,
     longitude: -97.0945,
-    orientation: 340, // NNW-SSE
+    orientation: 68, // ENE-WSW — OSM stadium 65.8° agrees with Bliss 68°. Previous 340° was perpendicular.
     capacity: 80000,
     opened: 2009,
     surface: 'turf',
@@ -372,7 +372,7 @@ export const NFL_STADIUMS: NFLStadium[] = [
     state: 'NJ',
     latitude: 40.8128,
     longitude: -74.0742,
-    orientation: 23, // NNE-SSW
+    orientation: 346, // NNW-SSE — same measurement as Jets / MetLife
     capacity: 82500,
     opened: 2010,
     surface: 'turf',
@@ -391,7 +391,7 @@ export const NFL_STADIUMS: NFLStadium[] = [
     state: 'PA',
     latitude: 39.9008,
     longitude: -75.1675,
-    orientation: 5, // N-S
+    orientation: 351, // N-S — OSM pitch 167.2° agrees with Bliss 351°
     capacity: 69596,
     opened: 2003,
     surface: 'hybrid',
@@ -410,7 +410,7 @@ export const NFL_STADIUMS: NFLStadium[] = [
     state: 'MD',
     latitude: 38.9076,
     longitude: -76.8645,
-    orientation: 58, // ENE-WSW
+    orientation: 295, // WNW-ESE — OSM pitch 124.5° agrees with Bliss 295°
     capacity: 67617,
     opened: 1997,
     surface: 'grass',
@@ -431,7 +431,7 @@ export const NFL_STADIUMS: NFLStadium[] = [
     state: 'IL',
     latitude: 41.8623,
     longitude: -87.6167,
-    orientation: 0, // North-South
+    orientation: 354, // N-S — OSM pitch 170.6° agrees with Bliss 353.9° + vizual-statistix within 5° of N-S
     capacity: 61500,
     opened: 1924,
     surface: 'grass',
@@ -450,7 +450,7 @@ export const NFL_STADIUMS: NFLStadium[] = [
     state: 'MI',
     latitude: 42.3400,
     longitude: -83.0456,
-    orientation: 45, // NE-SW
+    orientation: 64, // ENE-WSW — indoor; Bliss 63.7°. OSM building outline (~32°) is not the field.
     capacity: 65000,
     opened: 2002,
     surface: 'turf',
@@ -470,7 +470,7 @@ export const NFL_STADIUMS: NFLStadium[] = [
     state: 'WI',
     latitude: 44.5013,
     longitude: -88.0622,
-    orientation: 45, // NE-SW
+    orientation: 0, // N-S — OSM pitch 174.2° + Bliss 0° + vizual-statistix "perfectly N-S". Previous 45° was wrong.
     capacity: 81441,
     opened: 1957,
     surface: 'hybrid',
@@ -489,7 +489,7 @@ export const NFL_STADIUMS: NFLStadium[] = [
     state: 'MN',
     latitude: 44.9738,
     longitude: -93.2575,
-    orientation: 88, // E-W
+    orientation: 310, // NW-SE — Bliss 309.9° for U.S. Bank. Previous 88° was leftover TCF Bank Stadium (Bliss TCF=90).
     capacity: 66655,
     opened: 2016,
     surface: 'turf',
@@ -511,7 +511,7 @@ export const NFL_STADIUMS: NFLStadium[] = [
     state: 'GA',
     latitude: 33.7554,
     longitude: -84.4009,
-    orientation: 0, // North-South
+    orientation: 71, // ENE-WSW — Bliss 70.9° + OSM field-shaped way 68.4°. Georgia Dome was E-W; this building is not.
     capacity: 71000,
     opened: 2017,
     surface: 'turf',
@@ -531,7 +531,7 @@ export const NFL_STADIUMS: NFLStadium[] = [
     state: 'NC',
     latitude: 35.2258,
     longitude: -80.8528,
-    orientation: 75, // ENE-WSW
+    orientation: 322, // NW-SE — OSM on-field pitch 150.5° agrees with Bliss 322.4°
     capacity: 75523,
     opened: 1996,
     surface: 'grass',
@@ -550,7 +550,7 @@ export const NFL_STADIUMS: NFLStadium[] = [
     state: 'LA',
     latitude: 29.9511,
     longitude: -90.0812,
-    orientation: 0, // North-South
+    orientation: 30, // NNE-SSW — indoor; Bliss 30° from seating-chart. Dome outline is circular (no axis).
     capacity: 73208,
     opened: 1975,
     surface: 'turf',
@@ -570,7 +570,7 @@ export const NFL_STADIUMS: NFLStadium[] = [
     state: 'FL',
     latitude: 27.9759,
     longitude: -82.5033,
-    orientation: 0, // North-South
+    orientation: 0, // N-S — OSM pitch 6.4° + Bliss 0° + vizual-statistix "perfectly N-S"
     capacity: 69218,
     opened: 1998,
     surface: 'grass',
@@ -591,7 +591,7 @@ export const NFL_STADIUMS: NFLStadium[] = [
     state: 'AZ',
     latitude: 33.5276,
     longitude: -112.2626,
-    orientation: 0, // North-South
+    orientation: 330, // NW-SE — OSM grass-growing / roll-out field 144.0° agrees with Bliss 330°
     capacity: 63400,
     opened: 2006,
     surface: 'grass',
@@ -611,7 +611,7 @@ export const NFL_STADIUMS: NFLStadium[] = [
     state: 'CA',
     latitude: 33.9535,
     longitude: -118.3392,
-    orientation: 90, // East-West
+    orientation: 338, // NNW-SSE — same measurement as Chargers / SoFi
     capacity: 70240,
     opened: 2020,
     surface: 'turf',
@@ -631,7 +631,7 @@ export const NFL_STADIUMS: NFLStadium[] = [
     state: 'CA',
     latitude: 37.4033,
     longitude: -121.9694,
-    orientation: 310, // NW-SE
+    orientation: 330, // NW-SE — OSM practice/stadium axis ~147–158° agrees with Bliss 330° + shadedseats NW-SE
     capacity: 68500,
     opened: 2014,
     surface: 'grass',
@@ -650,7 +650,7 @@ export const NFL_STADIUMS: NFLStadium[] = [
     state: 'WA',
     latitude: 47.5952,
     longitude: -122.3316,
-    orientation: 0, // North-South
+    orientation: 0, // N-S — OSM pitch 5.6° + Bliss 0° + vizual-statistix "perfectly N-S"
     capacity: 69000,
     opened: 2002,
     surface: 'turf',

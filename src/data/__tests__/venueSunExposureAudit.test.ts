@@ -18,7 +18,8 @@ import { NFL_STADIUMS } from '../nflStadiums';
 import { ALL_MILB_STADIUMS } from '../milbStadiums';
 import { ALL_UNIFIED_VENUES } from '../unifiedVenues';
 import { canPublishVenueSeatShade } from '../stadiumShadeConfidence';
-import { MLB_ORIENTATION_PROVENANCE } from '../stadiumOrientationProvenance';
+import { MLB_ORIENTATION_PROVENANCE, getOrientationProvenance } from '../stadiumOrientationProvenance';
+import { NFL_ORIENTATION_PROVENANCE } from '../nflOrientationProvenance';
 import { SunCalculator } from '../../utils/sunCalculator';
 import { getUnifiedVenueShade } from '../../utils/getUnifiedVenueShade';
 import {
@@ -102,6 +103,56 @@ describe('every venue has a consistent, valid shade-input record', () => {
       expect(provenance).toBeDefined();
       expect(provenance!.orientation).toBe(stadium.orientation);
     }
+  });
+
+  it('keeps NFL field-axis provenance in lockstep with nflStadiums.ts', () => {
+    expect(NFL_ORIENTATION_PROVENANCE).toHaveLength(32);
+    const ids = NFL_ORIENTATION_PROVENANCE.map((p) => p.stadiumId);
+    expect(new Set(ids).size).toBe(32);
+    for (const stadium of NFL_STADIUMS) {
+      const provenance = getOrientationProvenance(stadium.id);
+      expect(provenance).toBeDefined();
+      expect(provenance!.orientation).toBe(stadium.orientation);
+      expect(provenance!.precisionDeg).toBeDefined();
+      expect(provenance!.sources?.length).toBeGreaterThan(0);
+    }
+  });
+
+  it('treats a 0° NFL orientation as a documented N-S axis, not a missing default', () => {
+    const northSouth = NFL_STADIUMS.filter((s) => s.orientation === 0);
+    expect(northSouth.map((s) => s.id).sort()).toEqual([
+      'empower-field',
+      'highmark-stadium',
+      'lambeau-field',
+      'lumen-field',
+      'raymond-james-stadium',
+    ]);
+    for (const stadium of northSouth) {
+      const provenance = getOrientationProvenance(stadium.id)!;
+      expect(provenance.confidence).toBe('verified');
+      expect(provenance.notes ?? '').toMatch(/measured N-S|published N-S|perfectly N-S|north-south/i);
+    }
+  });
+
+  it('keeps shared NFL sites on the same measured axis', () => {
+    const jets = NFL_STADIUMS.find((s) => s.id === 'metlife-stadium-jets')!;
+    const giants = NFL_STADIUMS.find((s) => s.id === 'metlife-stadium-giants')!;
+    const chargers = NFL_STADIUMS.find((s) => s.id === 'sofi-stadium-chargers')!;
+    const rams = NFL_STADIUMS.find((s) => s.id === 'sofi-stadium-rams')!;
+    expect(jets.orientation).toBe(giants.orientation);
+    expect(chargers.orientation).toBe(rams.orientation);
+    expect(jets.latitude).toBe(giants.latitude);
+    expect(chargers.latitude).toBe(rams.latitude);
+  });
+
+  it('places the 2026 Bills home at the new Highmark site, not the demolished bowl', () => {
+    const highmark = NFL_STADIUMS.find((s) => s.id === 'highmark-stadium')!;
+    expect(highmark.latitude).toBeCloseTo(42.77306, 5);
+    expect(highmark.longitude).toBeCloseTo(-78.79222, 5);
+    expect(highmark.opened).toBe(2026);
+    expect(highmark.capacity).toBe(60108);
+    expect(highmark.surface).toBe('grass');
+    expect(highmark.orientation).toBe(0);
   });
 
   it('uses the geographically correct IANA zones for known edge cities', () => {
@@ -188,6 +239,21 @@ describe('NFL shade math no longer uses the baseball rotation', () => {
       expect(convention).toBe('compass-from-north');
       expect(venueSectionCompassAngle({ baseAngle: 0, angleSpan: 0 }, venue.orientation, convention)).toBe(0);
     }
+  });
+});
+
+describe('published football shade-side claims stay directionally true', () => {
+  it.each([
+    ['highmark-stadium', 'south end zone'],
+    ['lambeau-field', 'south end zone'],
+    ['empower-field', 'south end zone'],
+    ['lumen-field', 'south end zone'],
+    ['raymond-james-stadium', 'south end zone'],
+    ['sofi-stadium-rams', 'south end zone'],
+    ['at-t-stadium', 'south sideline'],
+  ] as const)('%s day-game shade side is %s', (id, side) => {
+    const stadium = NFL_STADIUMS.find((s) => s.id === id)!;
+    expect(bestShadedSideForDayGame(stadium.orientation, 'football')).toBe(side);
   });
 });
 

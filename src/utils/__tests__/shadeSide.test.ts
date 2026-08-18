@@ -25,7 +25,13 @@ describe('bestShadedSideForDayGame — football', () => {
     expect(bestShadedSideForDayGame(0, 'football')).toBe('south end zone');
   });
 
-  it('names the south sideline on an east-west field (SoFi)', () => {
+  it('names the south sideline on an east-west field', () => {
     expect(bestShadedSideForDayGame(90, 'football')).toBe('south sideline');
+  });
+
+  it('names the south end zone for SoFi\'s NNW-SSE axis, not a leftover E-W sideline', () => {
+    // SoFi is 338°, not the leftover 90° east-west placeholder that used to
+    // produce "south sideline".
+    expect(bestShadedSideForDayGame(338, 'football')).toBe('south end zone');
   });
 });

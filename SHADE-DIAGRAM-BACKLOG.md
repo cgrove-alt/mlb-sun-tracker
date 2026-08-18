@@ -13,22 +13,23 @@ below — do NOT re-enable the diagram for a league until its item is complete a
 
 ## Backlog items
 
-### 1. NFL — measure real stadium orientations (blocking)
-- **Problem:** 14 of 32 NFL venues have `orientation: 0` (an unset default); the rest are
-  ungraded (no provenance). With a wrong/absent orientation the sun-vs-shade call is invalid.
-- **Work:** measure HP→CF-equivalent (field long-axis) bearing for all 32 NFL venues from
-  satellite imagery (Esri/OSM), record in a provenance file like
-  `stadiumOrientationProvenance.ts` with `precisionDeg` + source count.
-- **Done when:** 0 venues at the default; each has a documented confidence.
+### 1. NFL — measure real stadium orientations (done 2026-08-18)
+- **Was:** 14 of 32 NFL venues had `orientation: 0` as an unset default; several others
+  were leftover E-W / previous-building values (SoFi 90°, U.S. Bank 88° / TCF, Lambeau 45°,
+  Mercedes-Benz 0° / Georgia Dome, AT&T 340° perpendicular).
+- **Now:** every franchise id has a row in `nflOrientationProvenance.ts`. Open-air parks
+  are multi-source (OSM pitch PCA + Bliss azimuth, plus vizual-statistix where the 2015
+  building still exists). `0°` remains only where the field is actually N–S (Highmark 2026,
+  Empower, Lambeau, Raymond James, Lumen). Highmark lat/lon/capacity/opened moved to the
+  2026 stadium west of Abbott Road.
+- **Still not done:** this does **not** unlock NFL section-level shade %. Section rings
+  are still generic. See item 2 (convention already fixed) and the seating-geometry work.
 
-### 2. NFL — fix the section angle convention (blocking)
-- **Problem:** `NFL_SECTIONS` `baseAngle` is documented as "angle from north (0-360)", a
-  different convention than the baseball stadium-local frame (`0=1B … 270=HP`) that
-  `sectionCompassAngle` / `getSectionSunExposure` assume. Feeding NFL angles into the
-  baseball model mis-rotates every section.
-- **Work:** either convert NFL section angles to the stadium-local convention, or add an
-  NFL-aware compass mapping and select it by venue type.
-- **Done when:** an NFL worked example (verified orientation) matches known reality.
+### 2. NFL — fix the section angle convention (done 2026-08-18)
+- **Was:** live math ran every football `baseAngle` through the baseball
+  `(orientation + 90 − local)` converter, rotating every NFL bowl.
+- **Now:** `sectionAngleConventionFor` uses `compass-from-north` for NFL / football.
+  Still do **not** publish section % — generic rings plus unmeasured bowl geometry.
 
 ### 3. MiLB — build real per-venue section layouts (blocking)
 - **Problem:** MiLB sections come from `generateBaseballSections`, a single generic template
