@@ -1038,6 +1038,65 @@ OVERRIDES = {
             {"id": "wisconsin-beach", "name": "Beach Area", "level": "standing", "compassOffset": 30, "span": 12},
         ],
     },
+    "columbia-fireflies": {
+        "officialUrl": "https://www.milb.com/columbia/ballpark/seating-chart",
+        "geometryUrl": "https://img.mlbstatic.com/milb-images/image/upload/t_w2208/milb/telm5n9odzxglcgny1gz.jpg",
+        "notes": "Segra Park official seating chart: reserved/dugout/prime/home-plate 101-112, Home Run Porch 113-115, Coors Light On Deck 201-203, suites 1-16, plus 4 Topps tables, Bullpen Boxes, CAE First Class, Lexington Medical Center Picnic Pavilion, Lawn, Bowtie Bar, SCU Kids Zone, and BMW of Columbia.",
+        "bands": [
+            {"ids": [str(n) for n in range(101, 116)], "level": "lower", "namePrefix": "Section"},
+            {"ids": ["201", "202", "203"], "level": "club", "namePrefix": "On Deck", "startOffset": 160, "endOffset": 200},
+            {"ids": [str(n) for n in range(1, 17)], "level": "suite", "namePrefix": "Suite", "startOffset": 100, "endOffset": 260},
+        ],
+        "named": [
+            {"id": "columbia-4-topps", "name": "4 Topps", "level": "standing", "compassOffset": 180, "span": 10},
+            {"id": "columbia-bullpen-boxes", "name": "Bullpen Boxes", "level": "field", "compassOffset": 60, "span": 12},
+            {"id": "columbia-cae-first-class", "name": "CAE First Class", "level": "club", "compassOffset": 140, "span": 8},
+            {"id": "columbia-picnic-pavilion", "name": "Lexington Medical Center Picnic Pavilion", "level": "standing", "compassOffset": 280, "span": 16},
+            {"id": "columbia-lawn", "name": "Lawn", "level": "standing", "compassOffset": 0, "span": 28},
+            {"id": "columbia-bowtie-bar", "name": "Bowtie Bar", "level": "standing", "compassOffset": 300, "span": 10},
+            {"id": "columbia-scu-kids-zone", "name": "SCU Kids Zone", "level": "standing", "compassOffset": 40, "span": 10},
+            {"id": "columbia-bmw", "name": "BMW of Columbia", "level": "suite", "compassOffset": 100, "span": 8},
+        ],
+    },
+    "winston-salem-dash": {
+        "officialUrl": "https://www.milb.com/winston-salem/ballpark",
+        "notes": "Truist Stadium ballpark guide publishes landmarks 105, 109, 110-113 plus Lowes Foods Landing, On-Deck Lounge, Flow Club Wings/Tables, Party Decks, Suites, Foothills Flight Deck, Womble Carlyle Club, Wicked Weed Center Field Bar, and The Brewpen. Intermediate numbers are not invented.",
+        "inventoryStatus": "partial",
+        "bands": [
+            {"ids": ["105", "109", "110", "111", "112", "113"], "level": "lower", "namePrefix": "Section"},
+        ],
+        "named": [
+            {"id": "winston-lowes-foods-landing", "name": "Lowes Foods Landing", "level": "club", "compassOffset": 200, "span": 12},
+            {"id": "winston-on-deck-lounge", "name": "On-Deck Lounge", "level": "club", "compassOffset": 190, "span": 10},
+            {"id": "winston-flow-club-wings", "name": "Flow Club Wings", "level": "club", "compassOffset": 180, "span": 12},
+            {"id": "winston-flow-club-tables", "name": "Flow Club Tables", "level": "club", "compassOffset": 170, "span": 10},
+            {"id": "winston-party-decks", "name": "Party Decks", "level": "club", "compassOffset": 90, "span": 12},
+            {"id": "winston-suites", "name": "Luxury Suites", "level": "suite", "compassOffset": 180, "span": 16},
+            {"id": "winston-foothills-flight-deck", "name": "Foothills Flight Deck", "level": "club", "compassOffset": 40, "span": 10},
+            {"id": "winston-womble-carlyle-club", "name": "Womble Carlyle Club", "level": "club", "compassOffset": 160, "span": 10},
+            {"id": "winston-wicked-weed-cf-bar", "name": "Wicked Weed Center Field Bar", "level": "standing", "compassOffset": 0, "span": 12},
+            {"id": "winston-brewpen", "name": "The Brewpen", "level": "standing", "compassOffset": 320, "span": 10},
+        ],
+    },
+    "jersey-shore-blueclaws": {
+        "officialUrl": "https://www.milb.com/jersey-shore/ballpark/seating-chart",
+        "geometryUrl": "https://img.mlbstatic.com/milb-images/image/upload/t_w2208/milb/x7e5jdgivh70hxvwqwpf.jpg",
+        "notes": "ShoreTown Ballpark official seating chart: reserved 101-115, Champions Club, Luxury Suites, 1B/3B Party Decks, 1B/3B Picnic Areas, Standing Room Only berms, Fire Pits, and Chick-fil-A Fan Zone.",
+        "bands": [
+            {"ids": [str(n) for n in range(101, 116)], "level": "lower", "namePrefix": "Section"},
+        ],
+        "named": [
+            {"id": "jersey-shore-champions-club", "name": "Champions Club", "level": "club", "compassOffset": 180, "span": 14},
+            {"id": "jersey-shore-luxury-suites", "name": "Luxury Suites", "level": "suite", "compassOffset": 180, "span": 18},
+            {"id": "jersey-shore-1b-party-deck", "name": "1B Party Deck", "level": "club", "compassOffset": 120, "span": 10},
+            {"id": "jersey-shore-3b-party-deck", "name": "3B Party Deck", "level": "club", "compassOffset": 240, "span": 10},
+            {"id": "jersey-shore-1b-picnic", "name": "1B Picnic Area", "level": "standing", "compassOffset": 60, "span": 14},
+            {"id": "jersey-shore-3b-picnic", "name": "3B Picnic Area", "level": "standing", "compassOffset": 300, "span": 14},
+            {"id": "jersey-shore-sro", "name": "Standing Room Only", "level": "standing", "compassOffset": 0, "span": 36},
+            {"id": "jersey-shore-fire-pits", "name": "Fire Pits", "level": "standing", "compassOffset": 320, "span": 12},
+            {"id": "jersey-shore-chick-fil-a-fan-zone", "name": "Chick-fil-A Fan Zone", "level": "standing", "compassOffset": 340, "span": 10},
+        ],
+    },
 }
 
 
