@@ -58,7 +58,8 @@ export const SOURCE_BACKED_INVENTORY_STADIUMS: ReadonlySet<string> = new Set([
   'durham-bulls', 'erie-seawolves', 'fort-wayne-tincaps', 'fresno-grizzlies',
   'frisco-roughriders',
   'greenville-drive',
-  'gwinnett-stripers', 'harrisburg-senators', 'hartford-yard-goats',
+  'gwinnett-stripers', 'harrisburg-senators',
+  'hickory-crawdads', 'hartford-yard-goats',
   'indianapolis-indians',
   'inland-empire-66ers', 'iowa-cubs', 'jacksonville-jumbo-shrimp',
   'las-vegas-aviators', 'lehigh-valley-ironpigs', 'louisville-bats',
@@ -74,6 +75,7 @@ export const SOURCE_BACKED_INVENTORY_STADIUMS: ReadonlySet<string> = new Set([
   'st-paul-saints', 'syracuse-mets', 'toledo-mud-hens', 'vancouver-canadians',
   'myrtle-beach-pelicans',
   'great-lakes-loons',
+  'wisconsin-timber-rattlers',
   'worcester-red-sox',
 ]);
 

@@ -997,6 +997,47 @@ OVERRIDES = {
             {"id": "reading-geico-phunland", "name": "GEICO Phunland", "level": "standing", "compassOffset": 70, "span": 12},
         ],
     },
+    "hickory-crawdads": {
+        "officialUrl": "https://www.milb.com/hickory/tickets",
+        "geometryUrl": "https://img.mlbstatic.com/milb-images/image/upload/t_w2208/milb/vjz5qjlrulwvinkrce9s.jpg",
+        "notes": "L.P. Frans Stadium official seating chart: outfield/dugout/home-plate 101-116, upper 201-212, suites ST1-ST6, plus Crawdads Cafe, Carolina Brewery Party Porch, Black's Tire Picnic Deck, Unifour Hydraulics Picnic Pavilion, Arrow Exterminators VIP Seats, Peoples Bank Party Patios, and Grass.",
+        "bands": [
+            {"ids": [str(n) for n in range(101, 117)], "level": "lower", "namePrefix": "Section"},
+            {"ids": [str(n) for n in range(201, 213)], "level": "upper", "namePrefix": "Section", "startOffset": 100, "endOffset": 260},
+            {"ids": [f"ST{n}" for n in range(1, 7)], "level": "suite", "namePrefix": "Suite", "startOffset": 120, "endOffset": 240},
+        ],
+        "named": [
+            {"id": "hickory-crawdads-cafe", "name": "Crawdads Cafe", "level": "club", "compassOffset": 40, "span": 12},
+            {"id": "hickory-party-porch", "name": "Carolina Brewery Party Porch", "level": "club", "compassOffset": 50, "span": 10},
+            {"id": "hickory-blacks-tire-picnic-deck", "name": "Black's Tire Picnic Deck", "level": "standing", "compassOffset": 60, "span": 12},
+            {"id": "hickory-unifour-picnic-pavilion", "name": "Unifour Hydraulics Picnic Pavilion", "level": "standing", "compassOffset": 70, "span": 12},
+            {"id": "hickory-arrow-vip-seats", "name": "Arrow Exterminators VIP Seats", "level": "field", "compassOffset": 80, "span": 8},
+            {"id": "hickory-peoples-bank-party-patios", "name": "Peoples Bank Party Patios", "level": "club", "compassOffset": 270, "span": 12},
+            {"id": "hickory-grass", "name": "Grass", "level": "standing", "compassOffset": 280, "span": 14},
+        ],
+    },
+    "wisconsin-timber-rattlers": {
+        "officialUrl": "https://www.milb.com/wisconsin/ballpark/seating-chart",
+        "geometryUrl": "https://img.mlbstatic.com/milb-images/image/upload/t_w2208/milb/qwsfebeqqdxmkzmjcjoy.jpg",
+        "notes": "Neuroscience Group Field official stadium map: bowl 100-116 (Diamond 100-102, box through 110, reserved bleacher 111-116), plus Party Deck, Miller Lite Home Run Porch, TLC Picnic Pavilion, Leinie's Legends Lodge, Fox Club, Left Field Lofts, Left Field Bar Top, AYCE bar top, patio tables, grass berms, beer garden, and beach.",
+        "bands": [
+            {"ids": [str(n) for n in range(100, 117)], "level": "lower", "namePrefix": "Section"},
+        ],
+        "named": [
+            {"id": "wisconsin-party-deck", "name": "Party Deck", "level": "club", "compassOffset": 40, "span": 14},
+            {"id": "wisconsin-miller-lite-hr-porch", "name": "Miller Lite Home Run Porch", "level": "standing", "compassOffset": 50, "span": 12},
+            {"id": "wisconsin-tlc-picnic-pavilion", "name": "TLC Sign Picnic Pavilion", "level": "standing", "compassOffset": 70, "span": 14},
+            {"id": "wisconsin-leinies-legends-lodge", "name": "Leinie's Legends Lodge", "level": "club", "compassOffset": 90, "span": 10},
+            {"id": "wisconsin-fox-club", "name": "The Fox Club", "level": "club", "compassOffset": 180, "span": 14},
+            {"id": "wisconsin-left-field-lofts", "name": "Left Field Lofts", "level": "suite", "compassOffset": 300, "span": 12},
+            {"id": "wisconsin-lf-bar-top", "name": "Left Field Bar Top Seats", "level": "standing", "compassOffset": 280, "span": 10},
+            {"id": "wisconsin-ayce-bar-top", "name": "All-You-Can-Eat Bar Top Seats", "level": "standing", "compassOffset": 80, "span": 10},
+            {"id": "wisconsin-patio-tables", "name": "Patio Tables", "level": "standing", "compassOffset": 290, "span": 10},
+            {"id": "wisconsin-grass-seating", "name": "Grass Seating", "level": "standing", "compassOffset": 0, "span": 36},
+            {"id": "wisconsin-beer-garden", "name": "Beer Garden Area", "level": "standing", "compassOffset": 320, "span": 14},
+            {"id": "wisconsin-beach", "name": "Beach Area", "level": "standing", "compassOffset": 30, "span": 12},
+        ],
+    },
 }
 
 
