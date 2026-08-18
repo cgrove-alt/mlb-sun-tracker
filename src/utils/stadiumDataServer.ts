@@ -6,6 +6,13 @@ import {
   getSectionSunExposure,
 } from './sectionSunCalculations';
 import { stadiumLocalToUTC } from './stadiumTime';
+import { canPublishSeatLevelShade } from '../data/stadiumShadeConfidence';
+
+function assertSeatLevelShadePublished(stadium: Stadium): void {
+  if (!canPublishSeatLevelShade(stadium.id)) {
+    throw new Error(`Seat-level shade output is withheld for ${stadium.id}: metric geometry has not passed independent observation validation.`);
+  }
+}
 
 // Server-side shade calculation for static generation
 export interface ShadeData {
@@ -50,9 +57,8 @@ export function calculateShadePercentage(
   hour: number,
   month: number,
 ): number {
-  // Covered upper/club sections are guaranteed 100% shade — keep this
-  // shortcut for parity with previous output and to avoid sun-position cost
-  // for the easy case.
+  assertSeatLevelShadePublished(stadium);
+  // Field-validated fully covered sections can use this shortcut.
   if (section.covered && (section.level === 'upper' || section.level === 'club')) {
     return 100;
   }
@@ -182,6 +188,7 @@ export interface TimeRecommendation {
 }
 
 export function getTimeRecommendations(stadium: Stadium): TimeRecommendation[] {
+  assertSeatLevelShadePublished(stadium);
   const recommendations: TimeRecommendation[] = [];
   
   // Day game (1 PM)
@@ -206,7 +213,7 @@ export function getTimeRecommendations(stadium: Stadium): TimeRecommendation[] {
   recommendations.push({
     time: '7:00 PM',
     hour: 19,
-    generalAdvice: 'Most sections in shade by first pitch. Watch for sunset glare.',
+    generalAdvice: 'Low western sun can create glare before sunset; use only validated section results.',
     bestLevels: ['Any Level (except outfield)', 'Behind Home Plate', 'Baseline Sections'],
     avoidAreas: ['Outfield Sections (sunset glare)', 'Sections 301-310 (if facing west)']
   });
@@ -219,6 +226,7 @@ export function generateStaticShadeReport(
   stadium: Stadium,
   sections: StadiumSection[]
 ): string {
+  assertSeatLevelShadePublished(stadium);
   const coveredCount = sections.filter(s => s.covered).length;
   const upperCount = sections.filter(s => s.level === 'upper').length;
   
@@ -226,8 +234,8 @@ export function generateStaticShadeReport(
   
   report += `Stadium Orientation: ${stadium.orientation}°\n`;
   report += `Roof Type: ${stadium.roof === 'open' ? 'Open Air' : stadium.roof === 'retractable' ? 'Retractable' : 'Fixed Roof'}\n`;
-  report += `Covered Sections: ${coveredCount} sections with guaranteed shade\n`;
-  report += `Upper Deck Sections: ${upperCount} sections with natural shade coverage\n\n`;
+  report += `Validated Covered Sections: ${coveredCount}\n`;
+  report += `Validated Upper Deck Sections: ${upperCount}\n\n`;
   
   report += `Best Times for Shade:\n`;
   report += `- Day Games (1 PM): Upper deck and covered sections only\n`;

@@ -285,7 +285,7 @@ const MobileStadiumGuide: React.FC<MobileStadiumGuideProps> = ({ stadium, sectio
           Check Sun Exposure for a Game
         </Link>
         <p className="cta-text">
-          Get real-time sun tracking for any {stadium.team} game
+          Review date-specific sun position and the available data confidence for any {stadium.team} game
         </p>
       </div>
       

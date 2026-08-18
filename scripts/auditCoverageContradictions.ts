@@ -8,7 +8,7 @@
  * shade the seating tips say those seats don't have.
  *
  * Runs across ALL leagues using the SAME section sources the pages render from:
- *   MLB  -> getStadiumSectionsAsync (stadiumSections-split/*)
+ *   MLB  -> getStadiumSectionsAsync (shared per-park DetailedSection modules)
  *   MiLB -> generateBaseballSections(venue)
  *   NFL  -> getVenueSections(venue.id)
  *
@@ -27,38 +27,14 @@ const INDOOR_OK = /club|suite|lounge|indoor|cafe|café|bar|grill|restaurant/i;
 // an open-air-NAMED section reading "covered" is roof-state, not a data error.
 const ROOF = new Map(MLB_STADIUMS.map((s) => [s.id, s.roof]));
 
-// Verified-correct exceptions on OPEN-roof parks (real overhang, not a bug):
-//   redsox — Fenway's Pavilion level sits under the stadium roof; Pavilion Box &
-//            First/Third-Base Pavilion SRO rows B+ are genuinely covered
-//            (rateyourseats.com/fenway-park). Only the LF Pavilion Reserved is
-//            exposed, and that is already covered:false.
-const REVIEWED_OK = new Set(['redsox']);
+const REVIEWED_OK = new Set<string>();
 
 // Second-pass allow-list: for venues with a documented, section-level covered
 // list, a predicate returning whether a section is EXPECTED to be a covered
 // structure per research. Any covered=true section OUTSIDE the list (or any
 // listed section NOT covered) is flagged — this catches mislabeled non-open-air
 // NAMES (Field Box, Loge Box, general SRO) that the name pass above can't see.
-const RESEARCHED_COVERED: Record<string, (s: Sec) => boolean> = {
-  // Fenway Park — rateyourseats.com/fenway-park documents covered seating as:
-  // all Pavilion Boxes (PB), Home Plate Pavilion Club (HPPC), Dell/EMC Club
-  // (EMCC), and all Grandstand (GS) except GS-33. Plus the two Pavilion-level
-  // SRO (under the Pavilion roof) and the indoor Royal Rooters Club. Everything
-  // else — Field Box, Loge Box, Monster, Bleachers, RF Box/Roof, SSPC, Pavilion
-  // Reserved, general SRO — is NOT a covered structure.
-  redsox: (s) => {
-    const id = s.id || '';
-    return (
-      /^PB-\d+$/.test(id) ||
-      /^HPPC-\d+$/.test(id) ||
-      /^EMCC-\d+$/.test(id) ||
-      /^GS-(?:[1-9]|1\d|2\d|3[0-2])$/.test(id) || // Grandstand 1-32 (not GS-33)
-      id === 'FIRST-BASE-PAV-SRO' ||
-      id === 'THIRD-BASE-PAV-SRO' ||
-      id === 'ROYAL-ROOTERS'
-    );
-  },
-};
+const RESEARCHED_COVERED: Record<string, (s: Sec) => boolean> = {};
 
 type Sec = { id?: string; name?: string; level?: string; covered?: boolean; fullyCovered?: boolean; partialCoverage?: unknown };
 

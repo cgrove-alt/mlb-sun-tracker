@@ -91,15 +91,11 @@ const nextConfig = {
           },
         ],
       },
-      {
-        source: '/api/:path*',
-        headers: [
-          {
-            key: 'Cache-Control',
-            value: 'public, s-maxage=10, stale-while-revalidate=59',
-          },
-        ],
-      },
+      // API handlers own their cache policy. A blanket public-cache header
+      // here used to overwrite security- and trust-sensitive responses,
+      // including the 409 that withholds unvalidated row-level shade data.
+      // Weather and validated shade success responses set explicit public
+      // caching in their route handlers; everything else stays fail-safe.
     ];
   },
 };

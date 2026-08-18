@@ -2,8 +2,8 @@
 /**
  * Comprehensive MLB coverage audit (audit follow-up).
  *
- * For every MLB venue EXCEPT the two with hand-researched, section-by-section
- * data (yankees, whitesox), report the coverage landscape and flag covered=true
+ * For every MLB venue outside the legacy manually reviewed set, report the
+ * coverage landscape and flag covered=true
  * flags that are most likely wrong:
  *   - open-air by NAME     (bleacher/pavilion/lawn/berm/porch/deck/rooftop/outfield)
  *   - open-air by GEOMETRY (section center in the outfield arc, ~CF ± 55°) and
@@ -13,9 +13,8 @@
  * Run: npx tsx scripts/auditAllVenueCoverage.ts
  */
 import { MLB_STADIUMS } from '../src/data/stadiums';
-// Use the SAME loader the stadium page uses (stadiumSections-split/*), not the
-// aggregator — the aggregator returns 65-section placeholder templates for most
-// venues, which is not what is rendered.
+// Use the same per-stadium dynamic loader as the rendered stadium page. It now
+// resolves to the same DetailedSection modules used by the aggregator/API.
 import { getStadiumSectionsAsync } from '../src/data/getStadiumSections';
 import type { StadiumSection } from '../src/data/stadiumSectionTypes';
 

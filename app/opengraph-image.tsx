@@ -12,8 +12,8 @@ export default function Image() {
   return new ImageResponse(
     ogCard({
       eyebrow: 'THE SHADIUM',
-      title: 'Find the shaded seats',
-      subtitle: `${VENUE_COUNT} MLB, MiLB & NFL venues · real-time sun tracking`,
+      title: 'Plan for stadium sun',
+      subtitle: `${VENUE_COUNT} MLB, MiLB & NFL venues · solar context with confidence disclosed`,
     }),
     { ...OG_SIZE },
   );

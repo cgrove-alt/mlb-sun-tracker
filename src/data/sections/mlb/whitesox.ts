@@ -102,7 +102,7 @@ function rowsFor(level: DetailedSection['level'], coverage: SectionCoverage, bas
     case 'suite':
       return generateRows(4, 10, baseElev, 0, coverage);
     case 'standing':
-      return [];
+      return generateRows(1, 30, baseElev, 0, coverage);
     default:
       return generateRows(15, 18, baseElev, 20, coverage);
   }
@@ -165,10 +165,8 @@ interface SectionInput {
 }
 
 // Source-of-truth section table (compass bearings from HP).
-// Order: lower (RF outfield → RF line → behind HP → 3B line → LF foul → LF
-// outfield → LCF bleachers), then field (Scout Seats), then standing (Miller
-// Lite), then suite (Guaranteed Rate Club), then club (300s), then upper
-// (500s).
+// Order: lower bowl, then the seven named seating products printed on the
+// official 2026 chart, then the 300-level club ring and 500-level upper deck.
 const SECTIONS: SectionInput[] = [
   // Outfield Reserved — deep RF chairbacks beyond the visitor bullpen
   { id: '100', name: 'Outfield Reserved 100', level: 'lower', compass: 153, span: 7, covered: false, distance: 380, height: 15 },
@@ -241,18 +239,15 @@ const SECTIONS: SectionInput[] = [
   { id: '163', name: 'Bleachers 163', level: 'lower', compass: 114, span: 5, covered: false, distance: 430, height: 17 },
   { id: '164', name: 'Bleachers 164', level: 'lower', compass: 119, span: 5, covered: false, distance: 435, height: 17 },
 
-  // Scout Seats — field-level premium boxes in front of Lower Box 130/131/133/134
-  { id: 'SCOUT-130', name: 'Scout Seats 130', level: 'field', compass: 292, span: 4, covered: false, distance: 58, height: 4 },
-  { id: 'SCOUT-131', name: 'Scout Seats 131', level: 'field', compass: 296, span: 4, covered: false, distance: 55, height: 4 },
-  { id: 'SCOUT-133', name: 'Scout Seats 133', level: 'field', compass: 304, span: 4, covered: false, distance: 55, height: 4 },
-  { id: 'SCOUT-134', name: 'Scout Seats 134', level: 'field', compass: 308, span: 4, covered: false, distance: 58, height: 4 },
-
-  // Miller Lite Landing — standing-room at RF foul pole (sections 106/107 area)
-  { id: 'MLL',     name: 'Miller Lite Landing',     level: 'standing', compass: 160, span: 12, covered: false, distance: 350, height: 18 },
-  { id: 'MLL-SRO', name: 'Miller Lite Landing SRO', level: 'standing', compass: 160, span: 8,  covered: false, distance: 360, height: 22 },
-
-  // Guaranteed Rate Club — small 200-level club directly behind HP
-  { id: 'GRC', name: 'Guaranteed Rate Club', level: 'suite', compass: 300, span: 28, covered: true, distance: 70, height: 32 },
+  // Named seating products printed on the current official chart. Keep the
+  // chart's names instead of legacy acronyms or invented per-section Scout IDs.
+  { id: 'CIBC-SCOUT-CLUB', name: 'CIBC Scout Club', level: 'club', compass: 300, span: 28, covered: false, distance: 62, height: 8 },
+  { id: 'MILLER-LITE-LANDING', name: 'Miller Lite Landing', level: 'standing', compass: 160, span: 12, covered: false, distance: 350, height: 18 },
+  { id: 'LEINENKUGELS-CRAFT-LODGE', name: "Leinenkugel's Craft Lodge", level: 'club', compass: 158, span: 8, covered: false, distance: 365, height: 24 },
+  { id: 'PATIO', name: 'Patio', level: 'standing', compass: 153, span: 7, covered: false, distance: 410, height: 18 },
+  { id: 'RATE-CLUB', name: 'Rate Club', level: 'club', compass: 300, span: 28, covered: false, distance: 82, height: 32 },
+  { id: 'STADIUM-CLUB', name: 'Stadium Club', level: 'club', compass: 182, span: 18, covered: false, distance: 385, height: 48 },
+  { id: 'FAN-DECK', name: 'Fan Deck', level: 'standing', compass: 120, span: 18, covered: false, distance: 440, height: 24 },
 
   // 300-level Club — covered (under upper deck)
   { id: '311', name: 'Club 311', level: 'club', compass: 168, span: 9, covered: true, distance: 340, height: 38 },
@@ -267,7 +262,7 @@ const SECTIONS: SectionInput[] = [
   { id: '328', name: 'Club 328', level: 'club', compass: 258, span: 7, covered: true, distance: 120, height: 38 },
   { id: '329', name: 'Club 329', level: 'club', compass: 268, span: 6, covered: true, distance: 100, height: 38 },
   { id: '330', name: 'Club 330', level: 'club', compass: 282, span: 6, covered: true, distance: 88,  height: 38 },
-  { id: '334', name: 'Club 334', level: 'club', compass: 295, span: 5, covered: true, distance: 78,  height: 38 },
+  { id: '334A', name: 'Club 334A', level: 'club', compass: 295, span: 5, covered: true, distance: 78,  height: 38 },
   { id: '335', name: 'Club 335', level: 'club', compass: 300, span: 5, covered: true, distance: 75,  height: 38 },
   { id: '336', name: 'Club 336', level: 'club', compass: 305, span: 5, covered: true, distance: 78,  height: 38 },
   { id: '338', name: 'Club 338', level: 'club', compass: 318, span: 6, covered: true, distance: 88,  height: 38 },

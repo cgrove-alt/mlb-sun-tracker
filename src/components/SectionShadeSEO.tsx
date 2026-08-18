@@ -10,12 +10,6 @@ interface SectionShadeSEOProps {
  * This content is hidden visually but visible to search engines
  */
 export const SectionShadeSEO: React.FC<SectionShadeSEOProps> = ({ stadium }) => {
-  const popularSections = [
-    { level: 'Field Level', sections: ['101', '102', '103', '104', '105'] },
-    { level: 'Club Level', sections: ['201', '202', '203', '204', '205'] },
-    { level: 'Upper Deck', sections: ['301', '302', '303', '304', '305'] },
-  ];
-
   // `sr-only` hides this visually but keeps it in the accessibility tree;
   // `aria-hidden="true"` removed it from that tree as well, so the content
   // reached nobody — neither sighted users nor screen reader users. Keeping
@@ -26,66 +20,41 @@ export const SectionShadeSEO: React.FC<SectionShadeSEOProps> = ({ stadium }) => 
       
       <h3>Quick Shade Guide for {stadium.name} Sections</h3>
       <p>
-        Wondering "are my seats shaded" at {stadium.name}? Our real-time shade tracker shows you exactly 
-        which seats are in the shade for any {stadium.team} game. Whether you're sitting in the field level, 
-        club level, or upper deck, we'll help you find shaded seats and avoid sun exposure.
+        The published seating map establishes section identities at {stadium.name}. It does not establish
+        remotely measured row elevations, overhang depths, or obstruction geometry, so exact seat-level shade
+        results are not currently published.
       </p>
 
-      {popularSections.map(level => (
-        <div key={level.level}>
-          <h4>Are {level.level} Seats Shaded at {stadium.name}?</h4>
-          <p>
-            {level.level} sections {level.sections.join(', ')} at {stadium.name} have varying shade coverage 
-            throughout the game. Sections on the third base side typically get shade earlier, while first 
-            base side sections may have afternoon shade. Use our shade calculator to check if your specific 
-            seats in {level.level} will be shaded during your game.
-          </p>
-        </div>
-      ))}
-
-      <h3>Best Shaded Seats at {stadium.name} by Game Time</h3>
-      
-      <h4>Day Games (12:00 PM - 4:00 PM)</h4>
+      <h3>What Can Be Verified?</h3>
       <p>
-        For day games at {stadium.name}, the best shaded seats are typically found in the upper deck 
-        sections on the third base side. These seats get shade from the stadium overhang and are 
-        protected from direct sunlight. Field level seats behind home plate may also have shade 
-        depending on the time of year.
-      </p>
-
-      <h4>Evening Games (6:00 PM - 8:00 PM)</h4>
-      <p>
-        Evening games at {stadium.name} start with sun exposure on the first base side. As the game 
-        progresses, more sections become shaded. By the middle innings, most of the stadium is in 
-        shade except for outfield sections.
+        Date, time, location, and astronomical sun position can be calculated. A permanent fixed roof
+        also supports a venue-level conclusion that the seating bowl is protected from direct sun.
+        Section and row boundaries require physical measurements and independent shadow observations.
       </p>
 
       <h3>Covered Seating Areas at {stadium.name}</h3>
       <p>
         {stadium.roof === 'fixed' ? 
-          `${stadium.name} has a fixed roof, so all seats are protected from sun and rain.` :
+          `${stadium.name} has a fixed roof, so the seating bowl is protected from direct sun.` :
           stadium.roof === 'retractable' ?
-          `${stadium.name} features a retractable roof. When closed, all seats are shaded. When open, use our tool to find shaded sections.` :
-          `${stadium.name} has covered seating in premium areas and upper deck overhangs. These permanently shaded seats are ideal for hot sunny days.`
+          `${stadium.name} has a retractable roof, so direct-sun exposure depends on the confirmed roof state for that event.` :
+          `The current public source does not provide enough measured geometry to certify a row-by-row covered-seat list at ${stadium.name}.`
         }
       </p>
 
-      <h3>Tips for Finding Shaded Seats at {stadium.name}</h3>
+      <h3>Before Buying Tickets</h3>
       <ul>
-        <li>Third base side sections typically get shade first during day games</li>
-        <li>Upper deck seats often have overhead coverage providing shade</li>
-        <li>Club level seats may have shade from luxury box overhangs</li>
-        <li>Behind home plate sections can offer shade from the press box overhang</li>
-        <li>Check game time - afternoon games have different shade patterns than evening games</li>
-        <li>Consider the season - sun angles change throughout the baseball season</li>
+        <li>Confirm roof state and covered-seat details with the venue.</li>
+        <li>Treat solar orientation as context, not a row guarantee.</li>
+        <li>Use sun protection for daytime games when coverage is uncertain.</li>
       </ul>
 
       <h3>Common "Are My Seats Shaded" Questions for {stadium.name}</h3>
       <p>
         "Are my seats in section 115 shaded?" "Will I be in the sun in the bleachers?" 
         "Which side of {stadium.name} has shade?" These are common questions fans ask when 
-        buying tickets for {stadium.team} games. Our shade calculator answers all these 
-        questions with real-time, accurate shade predictions for every section.
+        buying tickets for {stadium.team} games. Those questions need measured stadium geometry;
+        the site withholds precise answers until that evidence is available.
       </p>
     </div>
   );

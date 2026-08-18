@@ -1,8 +1,17 @@
 import { SHADE_DATA_VERIFIED_ISO, SHADE_DATA_VERIFIED_LABEL } from '../data/shadeDataVerified';
 
-// "Shade data last verified" line shown on every venue page (audit Phase 5),
-// driven by a real dataset field so it stays honest and updates in one place.
-export function ShadeDataVerified() {
+// Source-review date. This deliberately does not call the shade geometry
+// "verified": reviewing a seating chart validates inventory provenance, not
+// row/overhang/obstruction measurements.
+export function ShadeDataVerified({ verifiedOn }: { verifiedOn?: string }) {
+  const verifiedIso = verifiedOn ?? SHADE_DATA_VERIFIED_ISO;
+  const verifiedLabel = verifiedOn
+    ? new Intl.DateTimeFormat('en-US', {
+        dateStyle: 'long',
+        timeZone: 'UTC',
+      }).format(new Date(`${verifiedOn}T00:00:00Z`))
+    : SHADE_DATA_VERIFIED_LABEL;
+
   return (
     <p
       className="shade-data-verified"
@@ -15,8 +24,8 @@ export function ShadeDataVerified() {
         textAlign: 'center',
       }}
     >
-      Shade data last verified:{' '}
-      <time dateTime={SHADE_DATA_VERIFIED_ISO}>{SHADE_DATA_VERIFIED_LABEL}</time>
+      {verifiedOn ? 'Section source last reviewed:' : 'Venue dataset last reviewed:'}{' '}
+      <time dateTime={verifiedIso}>{verifiedLabel}</time>
     </p>
   );
 }

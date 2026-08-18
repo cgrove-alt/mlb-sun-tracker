@@ -142,7 +142,7 @@ export default function BlogPage() {
 
             <div className="sidebar-widget rounded-xl border bg-white p-4 md:p-5 shadow-sm stack">
               <h3>Newsletter</h3>
-              <p>Get weekly tips on finding the best shaded seats at MLB stadiums.</p>
+              <p>Get weekly sun-safety tips and updates on stadium shade data quality.</p>
               <form className="newsletter-form">
                 <input 
                   type="email" 

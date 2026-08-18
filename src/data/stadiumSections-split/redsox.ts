@@ -1,34 +1,12 @@
-// Fenway Park section list — projected from the canonical real seating data
+// Fenway Park section list — projected from the current club-linked product data
 // in `src/data/sections/mlb/redsox.ts` so the stadium page UI and
 // /api/stadium/redsox/rows/shade endpoint share one source of truth.
-// Authored 2026-05-21.
-//
-// Previously this file contained a stylized template that did not match
-// Fenway's actual section IDs. Replaced with a projection of the real
-// 275-section dataset (Field Box FB-1..82, Loge Box LB-98..165, Grandstand
-// GS-1..33, Bleachers BL-34..43, Monster Seats M-1..10, Right Field Box
-// RB-87..97, Right Field Roof Box RR-23/25/.../43, EMC Club EMCC-1..6,
-// Home Plate Pavilion Club HPPC-1..5, State Street Pavilion Club
-// SSPC-1..14, Pavilion Box PB-1..14, Pavilion Reserved PR-15/16/18/20,
-// Royal Rooters Club, plus 9 standing/specialty areas).
+// The active inventory contains all 483 products in the current live viewer.
 
 import type { StadiumSection } from '../stadiumSectionTypes';
 import { redsoxSections } from '../sections/mlb/redsox';
 
 type Level = StadiumSection['level'];
-
-// Field/Loge infield boxes + general SRO that are NOT covered structures (no
-// roof/overhang) but sit in the shadow of the stacked press-box / Pavilion for
-// afternoon day games. Per RateYourSeats, Fenway's COVERED seating is only the
-// Pavilion Boxes, Home Plate Pavilion Club, Dell Technologies (EMC) Club, and
-// all Grandstand except GS33 — Field Box and Loge Box are not covered. So these
-// are marked covered:false at the source and rendered as PARTIAL (day-game
-// shade), not as covered structures and not as fully exposed.
-const DAY_SHADED = new Set<string>([
-  ...Array.from({ length: 12 }, (_, i) => `FB-${39 + i}`), // FB-39..50
-  ...Array.from({ length: 14 }, (_, i) => `LB-${123 + i}`), // LB-123..136
-  'SRO',
-]);
 
 function projectLevel(level: string): Level {
   return (level === 'standing' ? 'field' : level) as Level;
@@ -56,10 +34,6 @@ export const stadiumSections = {
     angleSpan: s.angleSpan,
     rows: s.rows.length,
     covered: s.covered,
-    // Day-game shade from the press-box/Pavilion stack — shaded but not covered.
-    ...(DAY_SHADED.has(s.id)
-      ? { partialCoverage: true, coveredRows: 'day games only (press-box shade)' }
-      : {}),
     price: priceFor(s.level),
   })),
 };

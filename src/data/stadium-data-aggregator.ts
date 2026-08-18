@@ -38,42 +38,24 @@ const SECTION_LOADERS: Record<string, SectionLoader> = {
       m => m.redsoxSections ?? import('./sections/mlb/fenway-park').then(f => f.fenwayParkSections),
     ),
   'dodgers': () => import('./sections/mlb/dodgers').then(m => m.dodgersSections),
-  'cubs': () =>
-    import('./sections/mlb/cubs').then(
-      m => m.cubsSections ?? import('./sections/mlb/wrigley-field').then(f => f.wrigleyFieldSections),
-    ),
+  'cubs': () => import('./sections/mlb/cubs').then(m => m.cubsSections),
   'mets': () => import('./sections/mlb/mets').then(m => m.metsSections),
-  'giants': () =>
-    import('./sections/mlb/giants').then(
-      m => m.giantsSections ?? import('./sections/mlb/oracle-park').then(f => f.oracleParkSections),
-    ),
+  'giants': () => import('./sections/mlb/giants').then(m => m.giantsSections),
   'padres': () => import('./sections/mlb/padres').then(m => m.padresSections),
   'orioles': () => import('./sections/mlb/orioles').then(m => m.oriolesSections),
-  'pirates': () =>
-    import('./sections/mlb/pirates').then(
-      m => m.piratesSections ?? import('./sections/mlb/pnc-park').then(f => f.pncParkSections),
-    ),
+  'pirates': () => import('./sections/mlb/pirates').then(m => m.piratesSections),
   'astros': () => import('./sections/mlb/astros').then(m => m.astrosSections),
-  'braves': () =>
-    import('./sections/mlb/braves').then(
-      m => m.bravesSections ?? import('./sections/mlb/truist-park').then(f => f.truistParkSections),
-    ),
+  'braves': () => import('./sections/mlb/braves').then(m => m.bravesSections),
   'rockies': () => import('./sections/mlb/rockies').then(m => m.rockiesSections),
   'twins': () => import('./sections/mlb/twins').then(m => m.twinsSections),
-  'reds': () =>
-    import('./sections/mlb/reds').then(
-      m => m.redsSections ?? import('./sections/mlb/great-american-ballpark').then(f => f.greatAmericanBallparkSections),
-    ),
+  'reds': () => import('./sections/mlb/reds').then(m => m.redsSections),
   'guardians': () => import('./sections/mlb/guardians').then(m => m.guardiansSections),
   'phillies': () => import('./sections/mlb/phillies').then(m => m.philliesSections),
   'nationals': () => import('./sections/mlb/nationals').then(m => m.nationalsSections),
   'rangers': () => import('./sections/mlb/rangers').then(m => m.rangersSections),
   'angels': () => import('./sections/mlb/angels').then(m => m.angelsSections),
   'brewers': () => import('./sections/mlb/brewers').then(m => m.brewersSections),
-  'cardinals': () =>
-    import('./sections/mlb/cardinals').then(
-      m => m.cardinalsSections ?? import('./sections/mlb/busch-stadium').then(f => f.buschstadiumSections),
-    ),
+  'cardinals': () => import('./sections/mlb/cardinals').then(m => m.cardinalsSections),
   'diamondbacks': () => import('./sections/mlb/diamondbacks').then(m => m.diamondbacksSections),
   'tigers': () => import('./sections/mlb/tigers').then(m => m.tigersSections),
   // Rays returned to Tropicana Field (fixed-roof dome) for 2026. The Steinbrenner

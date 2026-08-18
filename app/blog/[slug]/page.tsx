@@ -194,7 +194,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
               <Link href={`/stadium/${matchedVenue.id}`} style={{ fontWeight: 600, textDecoration: 'underline' }}>
                 {matchedVenue.name} shade guide
               </Link>{' '}
-              for live, section-by-section shade at your game time.
+              for sun-position context and the current section-data confidence status.
             </aside>
           )}
 
@@ -289,7 +289,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
 
           <div className="post-cta">
             <h2>Find Your Perfect Shaded Seat</h2>
-            <p>Ready to put these tips into action? Use The Shadium's real-time sun tracker to find the best shaded seats at any MLB stadium.</p>
+            <p>Ready to put these tips into action? Use The Shadium to review solar context, roof status, and the available stadium evidence.</p>
             <Link href="/" className="cta-button primary">
               Check Shade Coverage Now →
             </Link>

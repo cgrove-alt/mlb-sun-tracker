@@ -48,7 +48,7 @@ export async function generateMetadata({ params }: LeaguePageProps): Promise<Met
   }
 
   const title = `${league.name} Stadium Shade Guide | The Shadium`;
-  const description = `Find shaded seats at all ${league.name} stadiums. Complete sun exposure analysis, shade maps, and seating recommendations for every ${league.sport} venue.`;
+  const description = `Review sun-position context, roof information, and disclosed data confidence for every ${league.name} ${league.sport} venue.`;
 
   return {
     title,
@@ -81,7 +81,7 @@ export default async function LeaguePage({ params }: LeaguePageProps) {
     '@context': 'https://schema.org',
     '@type': 'CollectionPage',
     name: `${league.name} Stadium Shade Guide`,
-    description: `Find shaded seats at all ${venues.length} ${league.name} venues. Complete sun exposure analysis, shade maps, and seating recommendations for every ${league.sport} venue.`,
+    description: `Review sun-position context, roof information, and disclosed data confidence for all ${venues.length} ${league.name} ${league.sport} venues.`,
     url: pageUrl,
     isPartOf: {
       '@type': 'WebSite',
@@ -149,7 +149,7 @@ export default async function LeaguePage({ params }: LeaguePageProps) {
               {league.name} Stadium Shade Guide
             </h1>
             <p className="text-base text-ink-700 mt-2 max-w-prose">
-              Find the best shaded seats at all {venues.length} {league.name} venues
+              Review sun context and measurement status for all {venues.length} {league.name} venues
             </p>
           </div>
         </div>

@@ -98,32 +98,17 @@ const MONTH_NAMES = [
  */
 export function seasonalShadeNote(
   facts: SeasonalSunFacts,
-  seasonPeakDeg: number,
   stadiumName: string,
 ): string {
   const name = MONTH_NAMES[facts.month];
   const deg = Math.round(facts.peakAltitudeDeg);
   const below = Math.round(facts.degreesBelowPeakMonth);
-  const reachFt = Math.round(overhangShadowReachFt(facts.peakAltitudeDeg));
-  const peakReachFt = Math.round(overhangShadowReachFt(seasonPeakDeg));
-  const extraFt = reachFt - peakReachFt;
+  const seasonContext = below <= 1
+    ? 'the season high'
+    : `${below}° below the season high`;
 
-  if (below <= 1) {
-    return `${name}: the sun reaches about ${deg}° over ${stadiumName} — its highest of the season. ` +
-      `A ${REFERENCE_OVERHANG_FT} ft deck lip throws only ~${reachFt} ft of shade at that angle, the shortest ` +
-      `shadow of the year, so at a day game only genuinely covered seats stay out of the sun.`;
-  }
-
-  if (below >= 15) {
-    return `${name}: the sun tops out near ${deg}°, about ${below}° lower than midsummer. ` +
-      `The same ${REFERENCE_OVERHANG_FT} ft deck lip now reaches ~${reachFt} ft back into the bowl ` +
-      `(${extraFt} ft more than at the season's peak), so distinctly more rows sit in shade — ` +
-      `most noticeably for afternoon starts.`;
-  }
-
-  return `${name}: the sun peaks around ${deg}°, roughly ${below}° off its summer high. ` +
-    `A ${REFERENCE_OVERHANG_FT} ft deck lip shades about ${reachFt} ft of seating (${extraFt} ft more than at peak), ` +
-    `so covered and back-row seats fall into shade earlier in the afternoon.`;
+  return `${name}: the sun peaks near ${deg}° above ${stadiumName}, ${seasonContext}. ` +
+    'This is verified solar-position context only; translating it into exact section or row shade requires measured stadium geometry.';
 }
 
 /** Build the whole season's per-month copy for one venue. */
@@ -135,11 +120,10 @@ export function buildSeasonalShadeCopy(
   year = 2025,
 ): Array<{ month: number; name: string; peakAltitudeDeg: number; note: string }> {
   const facts = seasonalSunFacts(latitude, longitude, months, year);
-  const seasonPeak = Math.max(...facts.map(f => f.peakAltitudeDeg));
   return facts.map(f => ({
     month: f.month,
     name: MONTH_NAMES[f.month],
     peakAltitudeDeg: f.peakAltitudeDeg,
-    note: seasonalShadeNote(f, seasonPeak, stadiumName),
+    note: seasonalShadeNote(f, stadiumName),
   }));
 }

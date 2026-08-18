@@ -123,13 +123,12 @@ export default function AvoidSunBaseballGamesPage() {
               <li><strong>Day games (1 PM):</strong> Maximum exposure - plan carefully</li>
             </ul>
 
-            <h3>2. Select Shaded Seats</h3>
-            <p>Use The Shadium to find sections with shade coverage for your specific game time.</p>
+            <h3>2. Confirm Covered Seating</h3>
+            <p>Use The Shadium to review the available evidence, then confirm exact covered rows with the venue.</p>
             <ul>
-              <li>Upper deck sections with overhead coverage</li>
-              <li>Club level seats (usually covered)</li>
-              <li>Sections behind home plate under upper deck</li>
-              <li>Third base side for afternoon shade</li>
+              <li>Do not infer coverage from a seating level alone</li>
+              <li>Confirm retractable-roof state for the event</li>
+              <li>Treat unvalidated seating as exposed when sun avoidance matters</li>
             </ul>
 
             <h3>3. Check the Weather</h3>
@@ -249,7 +248,7 @@ export default function AvoidSunBaseballGamesPage() {
           <section>
             <h2>Related Guides</h2>
             <ul>
-              <li><Link href="/guide/best-shaded-seats-mlb">Best Shaded Seats at Every Stadium</Link></li>
+              <li><Link href="/guide/best-shaded-seats-mlb">MLB Shade Data Trust Guide</Link></li>
               <li><Link href="/guide/how-to-find-shaded-seats">How to Find Shaded Seats</Link></li>
               <li><Link href="/guide">View All Guides</Link></li>
             </ul>

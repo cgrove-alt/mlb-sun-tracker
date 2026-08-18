@@ -1,5 +1,6 @@
 import React from 'react';
 import { Stadium } from '../data/stadiums';
+import { canPublishSeatLevelShade } from '../data/stadiumShadeConfidence';
 
 interface StadiumSchemaProps {
   stadium: Stadium;
@@ -14,6 +15,7 @@ export const StadiumSchema: React.FC<StadiumSchemaProps> = ({
   shadedSectionsCount,
   totalSections = 0 // Default to 0 if not provided
 }) => {
+  const seatShadePublished = canPublishSeatLevelShade(stadium.id);
   
   const schemaData = {
     "@context": "https://schema.org",
@@ -45,7 +47,7 @@ export const StadiumSchema: React.FC<StadiumSchemaProps> = ({
           "name": "Total Seating Sections",
           "value": totalSections
         },
-        ...(shadedSectionsCount !== undefined ? [{
+        ...(seatShadePublished && shadedSectionsCount !== undefined ? [{
           "@type": "PropertyValue",
           "name": "Shaded Sections Available",
           "value": shadedSectionsCount
@@ -67,7 +69,9 @@ export const StadiumSchema: React.FC<StadiumSchemaProps> = ({
       "additionalProperty": {
         "@type": "PropertyValue",
         "name": "Shade Information",
-        "description": `Find seats in the shade at ${stadium.name}. ${shadedSectionsCount ? `${shadedSectionsCount} sections with shade coverage available.` : 'Real-time shade calculations available.'}`
+        "description": seatShadePublished
+          ? `Measured shade results are available for ${stadium.name}.`
+          : `Solar-position context is available for ${stadium.name}; exact seat-level shade is withheld pending measured-geometry validation.`
       }
     }
   };
@@ -92,7 +96,7 @@ export const StadiumShadeGuideSchema: React.FC<StadiumShadeGuideSchemaProps> = (
     "@context": "https://schema.org",
     "@type": "Article",
     "headline": `${stadium.name} Shade Guide - Find Seats in the Shade`,
-    "description": `Complete guide to finding shaded seats at ${stadium.name}. Learn which sections offer the best shade coverage for day games and how to avoid sun exposure.`,
+    "description": `Source-backed section inventory, solar-position context, and measurement status for ${stadium.name}.`,
     "keywords": `${stadium.name} shade, ${stadium.team} shaded seats, seats in the shade ${stadium.city}`,
     "author": {
       "@type": "Organization",
@@ -129,7 +133,7 @@ export const StadiumShadeGuideSchema: React.FC<StadiumShadeGuideSchemaProps> = (
       "itemListElement": {
         "@type": "PropertyValue",
         "name": "Shade Coverage",
-        "description": `Section ${section.name} shade information and sun exposure details`
+        "description": `Section ${section.name} identity from the published inventory; exact row shade is not asserted without validated geometry.`
       }
     }))
   };
@@ -153,7 +157,7 @@ export const ShadeFAQSchema: React.FC = () => {
         "name": "How do I find seats in the shade at MLB stadiums?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Use The Shadium's real-time sun tracker to see which sections will be shaded during your specific game time. Generally, upper deck sections with overhead coverage and third base side seats offer more shade for day games."
+          "text": "Use the published section inventory and astronomical sun-position context as planning aids. Exact sections and rows are withheld until physical stadium geometry is measured and independently validated."
         }
       },
       {
@@ -161,7 +165,7 @@ export const ShadeFAQSchema: React.FC = () => {
         "name": "Which MLB stadiums have the most shaded seats?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Stadiums with retractable or fixed roofs like Chase Field, Globe Life Field, and loanDepot park offer the most shade. For open-air stadiums, look for sections under upper deck overhangs."
+          "text": "A permanent fixed roof blocks direct sun. Retractable-roof results depend on the confirmed event roof state; open-air row coverage requires measured overhang and obstruction geometry."
         }
       },
       {
@@ -169,7 +173,7 @@ export const ShadeFAQSchema: React.FC = () => {
         "name": "Do shaded seats cost more at baseball games?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Not necessarily. Shade depends on time of day and stadium orientation, not ticket pricing. Some affordable upper deck seats offer excellent shade coverage."
+          "text": "Ticket price does not verify shade. Confirm covered-seat information with the venue before buying."
         }
       },
       {
@@ -177,7 +181,7 @@ export const ShadeFAQSchema: React.FC = () => {
         "name": "What time of day has the least sun at baseball stadiums?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Evening games starting at 7 PM or later have minimal sun exposure. For day games, the sun is typically less intense after 4 PM as it begins to set."
+          "text": "The sun is below the horizon at night. Before sunset, exposure depends on date, location, orientation, roof state, and measured stadium geometry."
         }
       },
       {
@@ -185,7 +189,7 @@ export const ShadeFAQSchema: React.FC = () => {
         "name": "How accurate is The Shadium's shade prediction?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "The Shadium uses precise solar calculations based on stadium coordinates, date, and time to predict shade patterns. Weather conditions like clouds can provide additional shade beyond our predictions."
+          "text": "Astronomical sun position can be calculated from coordinates, date, and time. Exact seat-level shade is not published for a park until remotely reconstructed row, overhang, and obstruction geometry passes independent observation validation."
         }
       }
     ]

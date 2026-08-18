@@ -18,8 +18,8 @@ const guides = [
     featured: true,
   },
   {
-    title: "Best Shaded Seats at Every MLB Stadium",
-    description: "Stadium-by-stadium breakdown of the best sections for shade coverage at all 30 MLB ballparks.",
+    title: "MLB Shade Data Trust Guide",
+    description: "What is source-backed, what remains modeled, and why exact section rankings are paused.",
     href: "/guide/best-shaded-seats-mlb",
     featured: true,
   },
@@ -77,10 +77,10 @@ export default function GuidesPage() {
         </section>
 
         <section className="guide-cta">
-          <h2 className="h2 break-words md:break-normal">Ready to Find Your Perfect Shaded Seat?</h2>
-          <p className="max-w-prose">Use The Shadium's real-time sun tracker to see exactly which seats will be shaded during your game.</p>
+          <h2 className="h2 break-words md:break-normal">Review the Evidence for Your Stadium</h2>
+          <p className="max-w-prose">See source-backed section inventory, solar context, and the field-level validation status.</p>
           <Link href="/" className="cta-button primary">
-            Check Shade Coverage →
+            View Stadium Context →
           </Link>
         </section>
       </div>

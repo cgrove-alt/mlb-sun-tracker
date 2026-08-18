@@ -15,6 +15,7 @@ import { ErrorProvider, useError } from './components/ErrorNotification';
 import { Breadcrumb } from './components/NavigationBreadcrumb';
 import { FidelityNotice } from './components/FidelityNotice';
 import { getStadiumDataFidelity, fidelityNote } from './data/stadiumDataFidelity';
+import { canPublishSeatLevelShade } from './data/stadiumShadeConfidence';
 import { LoadingSpinner } from './components/LoadingSpinner';
 import { VenueChangeSkeleton } from './components/SkeletonScreens';
 import { SunIcon, MoonIcon } from './components/Icons';
@@ -55,6 +56,8 @@ function UnifiedAppContent() {
 
   // Convert unified venue to legacy stadium format for compatibility
   const legacyStadium = selectedVenue ? convertToLegacyStadium(selectedVenue) : null;
+  const seatShadePublished = selectedVenue?.league !== 'MLB'
+    || canPublishSeatLevelShade(selectedVenue.id);
 
   // Load venue from URL parameters on mount
   useEffect(() => {
@@ -177,6 +180,13 @@ function UnifiedAppContent() {
         
         if (isCancelled) return;
         setSunPosition(formattedPosition);
+
+        if (selectedVenue.league === 'MLB' && !canPublishSeatLevelShade(selectedVenue.id)) {
+          setDetailedSections([]);
+          setShadedSections([]);
+          setGameExposureData(null);
+          return;
+        }
         
         // Get sections based on venue type
         let sections: any[] = [];
@@ -444,13 +454,32 @@ function UnifiedAppContent() {
                 )}
               </div>
 
-              {selectedVenue && gameDateTime && detailedSections.length > 0 && (
+              {!seatShadePublished && selectedVenue.league === 'MLB' && (
+                <section
+                  role="status"
+                  aria-labelledby="desktop-shade-results-paused"
+                  style={{
+                    margin: '1rem 0',
+                    padding: '1rem',
+                    border: '1px solid #f5c96a',
+                    borderLeft: '4px solid #b45309',
+                    borderRadius: '8px',
+                    background: '#fffbeb',
+                    color: '#78350f',
+                  }}
+                >
+                  <h2 id="desktop-shade-results-paused" style={{ marginTop: 0 }}>Section results paused</h2>
+                  <p style={{ marginBottom: 0 }}>Sun position and weather remain available, but section percentages and rankings are withheld until measured stadium geometry passes independent shadow validation.</p>
+                </section>
+              )}
+
+              {seatShadePublished && selectedVenue && gameDateTime && detailedSections.length > 0 && (
                 <>
                   <SunExposureExplanation />
                 </>
               )}
 
-              {detailedSections.length > 0 && (
+              {seatShadePublished && detailedSections.length > 0 && (
                 <SectionList
                   sections={detailedSections}
                   loading={loadingSections}

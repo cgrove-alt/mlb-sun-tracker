@@ -12,6 +12,8 @@
     "generate-sitemap": "node scripts/generate-sitemap.js",
     "validate-stadium-data": "tsx scripts/auditSectionData.ts --strict",
     "check-data-freshness": "tsx scripts/auditSectionData.ts",
+    "audit-remote-geometry": "tsx scripts/auditRemoteGeometrySources.ts",
+    "build-mlb-observation-candidates": "tsx scripts/buildMlbObservationCandidates.ts",
     "test": "jest",
     "test:unit": "jest --coverage",
     "test:watch": "jest --watch",

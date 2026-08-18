@@ -5,12 +5,8 @@
 //
 // Previously this file contained a stylized template (Legends 011-013,
 // generic Box 100s, Bleachers, etc.) that did not match Yankee Stadium's
-// actual section IDs. Replaced with a projection of the real 184-section
-// dataset (Field Box / Legends Suite with letter sub-sections, Lower Box
-// 103-136, Field MVP, RF Bleachers 201-204, Main Level 205-234 including
-// Champions Suite 215-216 and Audi Club 230-233, LF Bleachers 235-239,
-// Terrace 305-334 including Jim Beam Suites 317-321, Grandstand 405-434B,
-// plus Mohegan Sun Sports Bar, Bleacher Café, Audi Yankees Club, Pepsi Lounge).
+// actual live product IDs. It now projects all 222 current IOMEDIA products,
+// including zero-padded field IDs and accessibility/standing variants.
 
 import type { StadiumSection } from '../stadiumSectionTypes';
 import { yankeesSections } from '../sections/mlb/yankees';

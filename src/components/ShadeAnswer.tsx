@@ -2,9 +2,9 @@ import Link from 'next/link';
 import { bestShadedSideForDayGame } from '../utils/shadeSide';
 
 // "Answer-first" summary at the top of every venue page (audit Phase 7):
-// 2-3 sentences that directly answer "where are the shaded seats at {name}?"
-// from the venue's real orientation, before any tables. Optimized for AI search
-// / featured snippets.
+// Answer-first summary that states the strongest conclusion the available data
+// supports. Orientation is useful context, but it cannot identify exact rows
+// without measured metric geometry.
 export function ShadeAnswer({
   name,
   orientation,
@@ -40,10 +40,10 @@ export function ShadeAnswer({
           </>
         ) : (
           <>
-            For a day game at <strong>{name}</strong>, the <strong>{side}</strong> falls
-            into shade first. The coolest seats are on that side, in the back rows under
-            the upper-deck overhang, and in any fully covered or club-level sections.
-            Evening games leave most of the park shaded by first pitch.
+            For a day game at <strong>{name}</strong>, the orientation model indicates the{' '}
+            <strong>{side}</strong> is more likely to self-shade first. Exact sections,
+            rows, and transition times are not published until metric geometry has
+            been measured and independently validated.
           </>
         )}{' '}
         <Link href="/how-it-works" style={{ fontWeight: 600, textDecoration: 'underline' }}>

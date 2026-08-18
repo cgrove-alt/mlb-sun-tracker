@@ -205,7 +205,7 @@ export const MLB_STADIUMS: Stadium[] = [
     state: 'FL',
     latitude: 25.7781,
     longitude: -80.2197,
-    orientation: 135, // SE — corrected 2026-06-23 from 40° (NE). The 40° was a roof-closed dome-axis inference; published sources + sun pattern (identical to Brewers) put HP→CF at SE. See stadiumOrientationProvenance.ts.
+    orientation: 129.036, // ESE. Measured from the official 2021 Miami-Dade open-roof orthophoto with opposite infield-edge and mound holdouts. Uncertainty is 0.815 degrees. See stadiumOrientationProvenance.ts.
     capacity: 37446,
     roof: 'retractable',
     timezone: 'America/New_York'

@@ -55,7 +55,7 @@ export const ShareButton: React.FC<ShareButtonProps> = ({
 
   const generateShareText = () => {
     if (!selectedStadium || !gameDateTime) {
-      return 'Check out The Shadium - Find the best shaded seats at MLB, MiLB & NFL stadiums!';
+      return 'Check out The Shadium for stadium sun context and data-confidence details.';
     }
     
     // Format date and time with stadium's local timezone
@@ -78,9 +78,9 @@ export const ShareButton: React.FC<ShareButtonProps> = ({
         awayTeamName = nflGame.awayTeam.name;
       }
       
-      return `Check out The Shadium for ${awayTeamName} @ ${homeTeamName} at ${selectedStadium.name} on ${dateTimeStr} - Find the best shaded seats!`;
+      return `Review sun context and data confidence for ${awayTeamName} @ ${homeTeamName} at ${selectedStadium.name} on ${dateTimeStr}.`;
     } else {
-      return `Check out The Shadium for ${selectedStadium.name} on ${dateTimeStr} - Find the best shaded seats!`;
+      return `Review sun context and data confidence for ${selectedStadium.name} on ${dateTimeStr}.`;
     }
   };
 
@@ -107,7 +107,7 @@ export const ShareButton: React.FC<ShareButtonProps> = ({
     if (typeof navigator.share === 'function') {
       try {
         await navigator.share({
-          title: 'The Shadium - Find the best shaded seats',
+          title: 'The Shadium - Stadium sun context',
           text: generateShareText(),
           url: generateShareUrl()
         });
@@ -118,7 +118,7 @@ export const ShareButton: React.FC<ShareButtonProps> = ({
   };
 
   const shareViaEmail = () => {
-    const subject = encodeURIComponent('The Shadium - Find the best shaded seats');
+    const subject = encodeURIComponent('The Shadium - Stadium sun context');
     const body = encodeURIComponent(`${generateShareText()}\n\n${generateShareUrl()}`);
     window.open(`mailto:?subject=${subject}&body=${body}`);
   };

@@ -1,15 +1,15 @@
 /**
  * Stadium Data Fidelity (Phase 9 A3)
  *
- * One source of truth for "how real is this stadium's per-section seating
- * data." The shade engine is physically correct, but its precision is capped
- * by the section data feeding it: a few parks have hand-authored real seating
- * maps, most still use the auto-generated 65-section bowl template. This flag
+ * One source of truth for the provenance of a stadium's section inventory.
+ * Every MLB park now has source-backed section identity; the classifier still
+ * detects a regression
+ * to the old 65-section template or generic fallback. This flag
  * lets the UI disclose that honestly ("approximate seating data") and lets the
  * audit harness count low-fidelity parks — both read the SAME classifier here.
  *
- *   - 'real'        — hand-authored from a real seating map (per-section IDs,
- *                     varied spans, measured coverage). The allowlist below.
+ *   - 'source-backed' — section IDs come from a published seating map. This
+ *                       does not imply surveyed row or obstruction geometry.
  *   - 'approximate' — the auto-generated template (uniform angular wedges, no
  *                     real section identities) or the generic fallback. The
  *                     bowl SIDE (sun vs shade) is still physically correct, but
@@ -31,17 +31,19 @@
 // only reached through a dynamic import in `computeStadiumDataFidelity`.
 import type { DetailedSection } from '../types/stadium-complete';
 
-export type DataFidelity = 'real' | 'partial' | 'approximate';
+export type DataFidelity = 'source-backed' | 'partial' | 'approximate';
 
 /**
- * Parks whose section files have been replaced with hand-authored real seating
- * data (see the 2026-05-21 section audit + the "Real X section data" commits).
- * Extend this as more parks are re-authored.
+ * Parks whose section identities and placement come from a published club
+ * chart or club-linked public 3-D map. Row elevation and rake remain modeled;
+ * see `stadiumSectionProvenance.ts` for that explicit boundary.
  */
-export const REAL_DATA_STADIUMS: ReadonlySet<string> = new Set([
-  'yankees', // 184 real sections
-  'redsox',  // 277 real sections (Fenway)
-  'whitesox', // 132 real sections (Rate Field)
+export const SOURCE_BACKED_INVENTORY_STADIUMS: ReadonlySet<string> = new Set([
+  'angels', 'astros', 'athletics', 'bluejays', 'braves', 'brewers',
+  'cardinals', 'cubs', 'diamondbacks', 'dodgers', 'giants', 'guardians',
+  'mariners', 'marlins', 'mets', 'nationals', 'orioles', 'padres',
+  'phillies', 'pirates', 'rangers', 'rays', 'reds', 'redsox', 'rockies',
+  'royals', 'tigers', 'twins', 'whitesox', 'yankees',
 ]);
 
 function stdev(xs: number[]): number {
@@ -69,7 +71,6 @@ export function classifyFidelity(
   stadiumId: string,
   hasSpecific: boolean,
 ): DataFidelity {
-  if (REAL_DATA_STADIUMS.has(stadiumId)) return 'real';
   // No registered file → the generic 45°-wedge fallback generator.
   if (!hasSpecific || sections.length === 0) return 'approximate';
 
@@ -78,12 +79,13 @@ export function classifyFidelity(
   // of these parks share an identical section body.)
   if (sections.length === TEMPLATE_SECTION_COUNT) return 'approximate';
 
+  if (SOURCE_BACKED_INVENTORY_STADIUMS.has(stadiumId)) return 'source-backed';
+
   // Any other generator whose wedges are perfectly uniform — real maps vary.
   const spans = sections.map((s) => s.angleSpan);
   if (stdev(spans) < 0.5 && new Set(spans).size <= 2) return 'approximate';
 
-  // Registered, park-specific counts, not yet on the real allowlist: a
-  // partially hand-authored file. (Currently none — it's 3 real + 27 template.)
+  // Registered, park-specific counts not yet backed by checked provenance.
   return 'partial';
 }
 
@@ -100,36 +102,36 @@ export function classifyFidelity(
  * failing test telling you to update this table.
  */
 export const STADIUM_DATA_FIDELITY: Record<string, DataFidelity> = {
-  angels: 'approximate',
-  astros: 'approximate',
-  athletics: 'approximate',
-  bluejays: 'approximate',
-  braves: 'approximate',
-  brewers: 'approximate',
-  cardinals: 'approximate',
-  cubs: 'approximate',
-  diamondbacks: 'approximate',
-  dodgers: 'approximate',
-  giants: 'approximate',
-  guardians: 'approximate',
-  mariners: 'approximate',
-  marlins: 'approximate',
-  mets: 'approximate',
-  nationals: 'approximate',
-  orioles: 'approximate',
-  padres: 'approximate',
-  phillies: 'approximate',
-  pirates: 'approximate',
-  rangers: 'approximate',
-  rays: 'approximate',
-  reds: 'approximate',
-  redsox: 'real',
-  rockies: 'approximate',
-  royals: 'approximate',
-  tigers: 'approximate',
-  twins: 'approximate',
-  whitesox: 'real',
-  yankees: 'real',
+  angels: 'source-backed',
+  astros: 'source-backed',
+  athletics: 'source-backed',
+  bluejays: 'source-backed',
+  braves: 'source-backed',
+  brewers: 'source-backed',
+  cardinals: 'source-backed',
+  cubs: 'source-backed',
+  diamondbacks: 'source-backed',
+  dodgers: 'source-backed',
+  giants: 'source-backed',
+  guardians: 'source-backed',
+  mariners: 'source-backed',
+  marlins: 'source-backed',
+  mets: 'source-backed',
+  nationals: 'source-backed',
+  orioles: 'source-backed',
+  padres: 'source-backed',
+  phillies: 'source-backed',
+  pirates: 'source-backed',
+  rangers: 'source-backed',
+  rays: 'source-backed',
+  reds: 'source-backed',
+  redsox: 'source-backed',
+  rockies: 'source-backed',
+  royals: 'source-backed',
+  tigers: 'source-backed',
+  twins: 'source-backed',
+  whitesox: 'source-backed',
+  yankees: 'source-backed',
 };
 
 /**
@@ -157,12 +159,12 @@ export async function computeStadiumDataFidelity(stadiumId: string): Promise<Dat
 /** User-facing note for a fidelity level (used by the UI disclosure in Track B). */
 export function fidelityNote(fidelity: DataFidelity): string | null {
   switch (fidelity) {
-    case 'real':
-      return null; // no disclaimer needed
+    case 'source-backed':
+      return 'Section inventory is source-backed. Metric row, overhang, and obstruction geometry has not passed remote reconstruction and independent observation validation; exact seat-level shade results are unavailable.';
     case 'partial':
       return 'Seating data is partially hand-verified; some sections are approximate.';
     case 'approximate':
-      return 'Seating layout is approximate — the shaded vs sunny side is accurate, but individual section details are modeled, not from this park’s real seating map.';
+      return 'Seating layout is approximate. Individual section placement and metric shade geometry are modeled and have not passed independent observation validation.';
     default:
       return null;
   }
