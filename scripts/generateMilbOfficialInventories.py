@@ -938,6 +938,65 @@ OVERRIDES = {
             {"id": "great-lakes-cove-bar", "name": "The Cove Bar", "level": "standing", "compassOffset": 250, "span": 8},
         ],
     },
+    "inland-empire-66ers": {
+        "officialUrl": "https://www.milb.com/inland-empire/ballpark",
+        "geometryUrl": "https://img.mlbstatic.com/milb-images/image/upload/t_w2208/milb/xokpmtfeei0oslurmsdr.jpg",
+        "notes": "San Manuel Stadium official seating chart: odds 101-123 and evens 102-108 plus 116-122 (110/112/114 occupied by Toyota Redlands Garage and not invented), terrace 201-209 odds and 202-208 evens, luxury suites 300-301/304-305/318-323, plus Super Box, Omnitrans Home Run Hill, Patio Parties, Skybox Terraces, Party Suite, and Hospitality Suite.",
+        "bands": [
+            {
+                "ids": [str(n) for n in range(101, 124, 2)]
+                + [str(n) for n in list(range(102, 110, 2)) + list(range(116, 124, 2))],
+                "level": "lower",
+                "namePrefix": "Section",
+            },
+            {
+                "ids": [str(n) for n in range(201, 210, 2)] + [str(n) for n in range(202, 209, 2)],
+                "level": "upper",
+                "namePrefix": "Section",
+                "startOffset": 100,
+                "endOffset": 260,
+            },
+            {
+                "ids": ["300", "301", "304", "305"] + [str(n) for n in range(318, 324)],
+                "level": "suite",
+                "namePrefix": "Suite",
+                "startOffset": 100,
+                "endOffset": 260,
+            },
+        ],
+        "named": [
+            {"id": "inland-empire-super-box", "name": "Super Box", "level": "club", "compassOffset": 0, "span": 14},
+            {"id": "inland-empire-home-run-hill", "name": "Omnitrans Home Run Hill", "level": "standing", "compassOffset": 300, "span": 16},
+            {"id": "inland-empire-patio-parties-lf", "name": "Patio Parties (LF)", "level": "club", "compassOffset": 280, "span": 10},
+            {"id": "inland-empire-patio-parties-rf", "name": "Patio Parties (RF)", "level": "club", "compassOffset": 80, "span": 10},
+            {"id": "inland-empire-skybox-terrace-3b", "name": "Skybox Terrace (3B)", "level": "club", "compassOffset": 250, "span": 8},
+            {"id": "inland-empire-skybox-terrace-1b", "name": "Skybox Terrace (1B)", "level": "club", "compassOffset": 110, "span": 8},
+            {"id": "inland-empire-party-suite", "name": "Party Suite", "level": "suite", "compassOffset": 200, "span": 8},
+            {"id": "inland-empire-hospitality-suite", "name": "Hospitality Suite", "level": "suite", "compassOffset": 220, "span": 8},
+        ],
+    },
+    "reading-fightin-phils": {
+        "officialUrl": "https://www.milb.com/reading/tickets",
+        "geometryUrl": "https://img.mlbstatic.com/milb-images/image/upload/t_w2208/milb/sli2c2akqynww3bd4dxc.jpg",
+        "notes": "FirstEnergy Stadium official ballpark diagram: Box 1-9, Left 1-8, Right 1-6, Deck Box 1-5, plus Seidel Auto Group Deck, Blue Marsh Insurance Foul Porch, Pool Pavilion, Savage 61 products, Penn State Health picnic, Tompkins VIST Bank Plaza, and GEICO Phunland.",
+        "bands": [
+            {"ids": [str(n) for n in range(1, 10)], "level": "lower", "namePrefix": "Box"},
+            {"ids": [f"LEFT{n}" for n in range(1, 9)], "level": "lower", "namePrefix": "Left", "startOffset": 220, "endOffset": 280},
+            {"ids": [f"RIGHT{n}" for n in range(1, 7)], "level": "lower", "namePrefix": "Right", "startOffset": 80, "endOffset": 140},
+            {"ids": [f"DECK{n}" for n in range(1, 6)], "level": "field", "namePrefix": "Deck Box", "startOffset": 300, "endOffset": 340},
+        ],
+        "named": [
+            {"id": "reading-seidel-deck", "name": "Seidel Auto Group Deck", "level": "standing", "compassOffset": 310, "span": 18},
+            {"id": "reading-foul-porch", "name": "Blue Marsh Insurance Foul Porch", "level": "standing", "compassOffset": 280, "span": 12},
+            {"id": "reading-pool-pavilion", "name": "Reading Hospital Tower Health Pool Pavilion", "level": "club", "compassOffset": 40, "span": 16},
+            {"id": "reading-savage-61-loge", "name": "Savage 61 Loge Box", "level": "club", "compassOffset": 120, "span": 8},
+            {"id": "reading-savage-61-dugout-suite", "name": "Savage 61 Dugout Suite", "level": "suite", "compassOffset": 110, "span": 8},
+            {"id": "reading-savage-61-ram-club", "name": "Savage 61 Ram Club Box Seats", "level": "club", "compassOffset": 100, "span": 8},
+            {"id": "reading-penn-state-picnic", "name": "Penn State Health St. Joseph '67 Club Picnic Area", "level": "standing", "compassOffset": 260, "span": 14},
+            {"id": "reading-vist-bank-plaza", "name": "Tompkins VIST Bank Plaza", "level": "standing", "compassOffset": 90, "span": 14},
+            {"id": "reading-geico-phunland", "name": "GEICO Phunland", "level": "standing", "compassOffset": 70, "span": 12},
+        ],
+    },
 }
 
 
