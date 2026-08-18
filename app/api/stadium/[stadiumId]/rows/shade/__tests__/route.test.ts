@@ -7,6 +7,18 @@
 
 import { NextRequest } from 'next/server';
 import { GET } from '../route';
+import { canPublishSeatLevelShade } from '../../../../../../../src/data/stadiumShadeConfidence';
+import { hasPublishedMeasuredShadeRuntime } from '../../../../../../../src/data/publishedShadeRuntime';
+
+jest.mock('../../../../../../../src/data/stadiumShadeConfidence', () => ({
+  canPublishSeatLevelShade: jest.fn(() => true),
+  getStadiumShadeConfidence: jest.fn(() => ({ fieldValidation: 'validated' })),
+  publicShadeStatus: jest.fn(() => 'uncertain'),
+}));
+
+jest.mock('../../../../../../../src/data/publishedShadeRuntime', () => ({
+  hasPublishedMeasuredShadeRuntime: jest.fn(() => true),
+}));
 
 // Mock dependencies
 jest.mock('../../../../../../../src/data/stadiums', () => ({
@@ -116,6 +128,49 @@ describe('GET /api/stadium/[stadiumId]/rows/shade', () => {
 
   beforeEach(() => {
     jest.clearAllMocks();
+    jest.mocked(canPublishSeatLevelShade).mockReturnValue(true);
+    jest.mocked(hasPublishedMeasuredShadeRuntime).mockReturnValue(true);
+  });
+
+  describe('Trust boundary (409)', () => {
+    it.each([
+      ['2D', '', 'UNVALIDATED_SEAT_GEOMETRY'],
+      ['3D', '?use3d=true', 'UNVALIDATED_3D_GEOMETRY'],
+    ])('withholds %s row output when physical geometry is unvalidated', async (_label, query, code) => {
+      jest.mocked(canPublishSeatLevelShade).mockReturnValue(false);
+      const response = await GET(
+        createRequest(`/api/stadium/yankee-stadium/rows/shade${query}`),
+        createParams('yankee-stadium'),
+      );
+      const data = await response.json();
+
+      expect(response.status).toBe(409);
+      expect(response.headers.get('Cache-Control')).toBe('no-store');
+      expect(data).toMatchObject({
+        code,
+        publicationState: 'withheld',
+        shadeStatus: 'uncertain',
+      });
+      expect(data).not.toHaveProperty('sections');
+      expect(data).not.toHaveProperty('section');
+    });
+
+    it('withholds row output when evidence passes but no measured runtime exists', async () => {
+      jest.mocked(hasPublishedMeasuredShadeRuntime).mockReturnValue(false);
+      const response = await GET(
+        createRequest('/api/stadium/yankee-stadium/rows/shade'),
+        createParams('yankee-stadium'),
+      );
+      const data = await response.json();
+
+      expect(response.status).toBe(409);
+      expect(response.headers.get('Cache-Control')).toBe('no-store');
+      expect(data).toMatchObject({
+        code: 'MEASURED_SHADE_RUNTIME_UNAVAILABLE',
+        publicationState: 'withheld',
+      });
+      expect(data).not.toHaveProperty('sections');
+    });
   });
 
   describe('Valid Requests', () => {

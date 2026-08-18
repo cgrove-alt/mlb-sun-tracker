@@ -9,7 +9,18 @@ import {
 } from '../../../../../../src/utils/sunCalculator';
 import { getSunPosition } from '../../../../../../src/utils/sunCalculations';
 import { calculateMLBStadiumShade3D } from '../../../../../../src/utils/mlb3DCalculator';
-import { stadiumLocalDateAndTimeToUTC } from '../../../../../../src/utils/stadiumTime';
+import {
+  calendarDateAndTimeToUTC,
+  formatStadiumLocal,
+  isIsoDateOnly,
+  stadiumLocalDateAndTimeToUTC,
+} from '../../../../../../src/utils/stadiumTime';
+import {
+  canPublishSeatLevelShade,
+  getStadiumShadeConfidence,
+  publicShadeStatus,
+} from '../../../../../../src/data/stadiumShadeConfidence';
+import { hasPublishedMeasuredShadeRuntime } from '../../../../../../src/data/publishedShadeRuntime';
 
 interface RouteParams {
   params: Promise<{
@@ -99,31 +110,9 @@ export async function GET(request: NextRequest, { params }: RouteParams) {
     }
   }
 
-  // Validate date parameter
-  const date = dateParam ? new Date(dateParam) : new Date();
-  if (isNaN(date.getTime())) {
-    return NextResponse.json(
-      { error: 'Invalid date parameter. Use ISO 8601 format (YYYY-MM-DD)', code: 'INVALID_DATE' },
-      { status: 400 }
-    );
-  }
-
-  // `new Date()` happily accepts '1900-01-01' and '2999-01-01'. Both parse, both
-  // produce a sun position, and both are nonsense for a ballgame — so bound the
-  // range instead of silently answering.
-  const year = date.getUTCFullYear();
-  if (year < MIN_YEAR || year > MAX_YEAR) {
-    return NextResponse.json(
-      {
-        error: `Date out of range. Year must be between ${MIN_YEAR} and ${MAX_YEAR}`,
-        code: 'DATE_OUT_OF_RANGE',
-        year,
-      },
-      { status: 400 }
-    );
-  }
-
-  // Validate time parameter (24-hour format HH:MM)
+  // Validate time parameter (24-hour format HH:MM) before the date, so a
+  // request with both wrong can still get a precise error for whichever we
+  // check first. Time is independent of timezone.
   let hour = 13; // Default 1pm
   let minute = 0;
   if (timeParam) {
@@ -134,8 +123,8 @@ export async function GET(request: NextRequest, { params }: RouteParams) {
         { status: 400 }
       );
     }
-    hour = parseInt(timeMatch[1]);
-    minute = parseInt(timeMatch[2]);
+    hour = parseInt(timeMatch[1], 10);
+    minute = parseInt(timeMatch[2], 10);
 
     if (hour < 0 || hour > 23 || minute < 0 || minute > 59) {
       return NextResponse.json(
@@ -145,7 +134,10 @@ export async function GET(request: NextRequest, { params }: RouteParams) {
     }
   }
 
-  // Find stadium
+  // Find stadium before converting the date: YYYY-MM-DD is a calendar date in
+  // the stadium's timezone, not a UTC midnight instant. Parsing it with
+  // `new Date('YYYY-MM-DD')` is UTC midnight, which is the previous evening
+  // in every US park and silently shifted every dated query by 24 hours.
   const stadium = MLB_STADIUMS.find(s => s.id === stadiumId);
 
   if (!stadium) {
@@ -155,8 +147,96 @@ export async function GET(request: NextRequest, { params }: RouteParams) {
     );
   }
 
-  // Get stadium sections with row data. Loaded per-stadium on demand, so the
-  // server only ever materialises the requested park's sections.
+  const stadiumTimezone = stadium.timezone || 'UTC';
+  let calendarDate: string;
+  let targetDate: Date;
+
+  if (dateParam) {
+    if (!isIsoDateOnly(dateParam)) {
+      return NextResponse.json(
+        { error: 'Invalid date parameter. Use ISO 8601 format (YYYY-MM-DD)', code: 'INVALID_DATE' },
+        { status: 400 }
+      );
+    }
+    const year = parseInt(dateParam.slice(0, 4), 10);
+    if (year < MIN_YEAR || year > MAX_YEAR) {
+      return NextResponse.json(
+        {
+          error: `Date out of range. Year must be between ${MIN_YEAR} and ${MAX_YEAR}`,
+          code: 'DATE_OUT_OF_RANGE',
+          year,
+        },
+        { status: 400 }
+      );
+    }
+    calendarDate = dateParam;
+    targetDate = calendarDateAndTimeToUTC(dateParam, hour, minute, stadiumTimezone);
+  } else {
+    // No date → "today at this stadium" at the requested (or default) clock.
+    targetDate = stadiumLocalDateAndTimeToUTC(new Date(), hour, minute, stadiumTimezone);
+    calendarDate = formatStadiumLocal(targetDate, stadiumTimezone, 'yyyy-MM-dd');
+  }
+
+  const sunPosition = getSunPosition(
+    targetDate,
+    stadium.latitude,
+    stadium.longitude
+  );
+
+  // Hard publication boundary: this endpoint emits row rankings and exact
+  // percentages. Published seating charts establish section identity, not the
+  // metric row/overhang/obstruction geometry those outputs require. Withhold
+  // the entire result until remote measurement and independent observations
+  // pass the explicit publication gate;
+  // never let a precise-looking synthetic result escape through either 2D or
+  // 3D mode.
+  if (!canPublishSeatLevelShade(stadium.id)) {
+    const code = use3D ? 'UNVALIDATED_3D_GEOMETRY' : 'UNVALIDATED_SEAT_GEOMETRY';
+    return NextResponse.json(
+      {
+        error: use3D
+          ? 'Measured 3D shade geometry is not available for this stadium.'
+          : 'Measured seat-level shade geometry is not available for this stadium.',
+        code,
+        stadium: { id: stadium.id, name: stadium.name },
+        shadeStatus: publicShadeStatus({
+          stadiumId: stadium.id,
+          roof: stadium.roof,
+          sunAboveHorizon: sunPosition.altitudeDegrees > 0,
+        }),
+        confidence: getStadiumShadeConfidence(stadium.id),
+        publicationState: 'withheld',
+      },
+      { status: 409, headers: { 'Cache-Control': 'no-store' } },
+    );
+  }
+
+  // Passing evidence is necessary but not sufficient. The legacy calculators
+  // below synthesize physical seats and obstructions from defaults. Keep them
+  // unreachable in production until this park has a separate measured-only
+  // runtime implementation bound to the validated geometry artifact. This
+  // second latch prevents a future evidence promotion from silently exposing
+  // precise-looking output from the old estimators.
+  if (!hasPublishedMeasuredShadeRuntime(stadium.id)) {
+    return NextResponse.json(
+      {
+        error: 'Validated geometry is not connected to a measured shade runtime for this stadium.',
+        code: 'MEASURED_SHADE_RUNTIME_UNAVAILABLE',
+        stadium: { id: stadium.id, name: stadium.name },
+        shadeStatus: publicShadeStatus({
+          stadiumId: stadium.id,
+          roof: stadium.roof,
+          sunAboveHorizon: sunPosition.altitudeDegrees > 0,
+        }),
+        confidence: getStadiumShadeConfidence(stadium.id),
+        publicationState: 'withheld',
+      },
+      { status: 409, headers: { 'Cache-Control': 'no-store' } },
+    );
+  }
+
+  // Get stadium sections with row data only after the publication gate passes.
+  // This also makes the fail-closed path independent of the synthetic fixtures.
   const sections = await getStadiumSections(stadium.id, 'MLB');
 
   if (!sections || sections.length === 0) {
@@ -165,20 +245,6 @@ export async function GET(request: NextRequest, { params }: RouteParams) {
       { status: 404 }
     );
   }
-
-  // Convert the request's wall-clock time (interpreted in the stadium's
-  // local timezone) to the corresponding UTC instant before computing the
-  // sun position. SunCalc takes a UTC Date plus lat/lon; doing setHours
-  // here without timezone-awareness was a bug that put afternoon queries
-  // hours off for every non-UTC stadium.
-  const stadiumTimezone = stadium.timezone || 'UTC';
-  const targetDate = stadiumLocalDateAndTimeToUTC(date, hour, minute, stadiumTimezone);
-
-  const sunPosition = getSunPosition(
-    targetDate,
-    stadium.latitude,
-    stadium.longitude
-  );
 
   try {
     // Check if stadium has 3D data (obstructions)
@@ -269,12 +335,13 @@ export async function GET(request: NextRequest, { params }: RouteParams) {
           name: stadium.name,
           orientation: stadium.orientation
         },
-        date: date.toISOString().split('T')[0],
+        date: calendarDate,
         time: `${hour.toString().padStart(2, '0')}:${minute.toString().padStart(2, '0')}`,
         sunPosition: {
           altitude: result3D.sunPosition.elevation,
           azimuth: result3D.sunPosition.azimuth,
-          isDay: result3D.sunPosition.elevation > 0
+          isDay: result3D.sunPosition.elevation > 0,
+          utc: targetDate.toISOString(),
         },
         summary: {
           totalSections: sections3D.length,
@@ -334,7 +401,7 @@ export async function GET(request: NextRequest, { params }: RouteParams) {
         const sectionWindow = calculateGameWindowShade(section, sunSamples, stadium.orientation || 0);
         return NextResponse.json({
           stadium: { id: stadium.id, name: stadium.name, orientation: stadium.orientation },
-          date: date.toISOString().split('T')[0],
+          date: calendarDate,
           time: windowMeta.startTime,
           window: windowMeta,
           section: sectionWindow,
@@ -352,7 +419,7 @@ export async function GET(request: NextRequest, { params }: RouteParams) {
 
       return NextResponse.json({
         stadium: { id: stadium.id, name: stadium.name, orientation: stadium.orientation },
-        date: date.toISOString().split('T')[0],
+        date: calendarDate,
         time: windowMeta.startTime,
         window: windowMeta,
         summary: {
@@ -399,12 +466,13 @@ export async function GET(request: NextRequest, { params }: RouteParams) {
           name: stadium.name,
           orientation: stadium.orientation
         },
-        date: date.toISOString().split('T')[0],
+        date: calendarDate,
         time: `${hour.toString().padStart(2, '0')}:${minute.toString().padStart(2, '0')}`,
         sunPosition: {
           altitude: sunPosition.altitudeDegrees,
           azimuth: sunPosition.azimuthDegrees,
-          isDay: sunPosition.altitudeDegrees > 0
+          isDay: sunPosition.altitudeDegrees > 0,
+          utc: targetDate.toISOString(),
         },
         section: rowShadowData,
         calculation: {
@@ -442,12 +510,13 @@ export async function GET(request: NextRequest, { params }: RouteParams) {
         name: stadium.name,
         orientation: stadium.orientation
       },
-      date: date.toISOString().split('T')[0],
+      date: calendarDate,
       time: `${hour.toString().padStart(2, '0')}:${minute.toString().padStart(2, '0')}`,
       sunPosition: {
         altitude: sunPosition.altitudeDegrees,
         azimuth: sunPosition.azimuthDegrees,
-        isDay: sunPosition.altitudeDegrees > 0
+        isDay: sunPosition.altitudeDegrees > 0,
+        utc: targetDate.toISOString(),
       },
       summary: {
         totalSections: sections.length,

@@ -1,13 +1,13 @@
 // Stadium-local time → UTC conversion utilities.
 //
 // Context: every shade query is fundamentally "what does the sun look like
-// at the stadium at HH:MM local time on date YYYY-MM-DD?" SunCalc needs a
-// UTC Date plus lat/lon. The conversion from local wall-clock time at the
-// stadium to UTC depends on the stadium's IANA timezone, including DST
-// transitions. Doing this naively with `new Date('2025-07-04T19:30')` or
-// `date.setHours(19, 30)` produces a Date in the *runtime's* timezone
-// (UTC on Vercel) — which is wrong by the stadium's UTC offset, for every
-// stadium not in UTC.
+// at the stadium at HH:MM local time on date YYYY-MM-DD?" The solar-position
+// calculator needs a UTC Date plus lat/lon. The conversion from local
+// wall-clock time at the stadium to UTC depends on the stadium's IANA
+// timezone, including DST transitions. Doing this naively with
+// `new Date('2025-07-04T19:30')` or `date.setHours(19, 30)` produces a Date
+// in the *runtime's* timezone (UTC on Vercel) — which is wrong by the
+// stadium's UTC offset, for every stadium not in UTC.
 //
 // This file centralizes the conversion so we have one place to test, one
 // place to fix when DST rules change, and one signature for every caller.
@@ -16,11 +16,43 @@ import { fromZonedTime, toZonedTime, formatInTimeZone } from 'date-fns-tz';
 
 export type IanaTimezone = string;
 
+const ISO_DATE_ONLY = /^(\d{4})-(\d{2})-(\d{2})$/;
+
+/** True when `value` is a calendar date `YYYY-MM-DD` with no time or zone. */
+export function isIsoDateOnly(value: string): boolean {
+  return ISO_DATE_ONLY.test(value);
+}
+
+/**
+ * Convert a stadium-local calendar date + clock hour/minute to the UTC instant.
+ *
+ * Use this whenever the date originated as a `YYYY-MM-DD` string (query
+ * parameter, `<input type="date">`, a test fixture). Do NOT pass
+ * `new Date('YYYY-MM-DD')` into `stadiumLocalDateAndTimeToUTC` — ES5 parses
+ * date-only ISO strings as UTC midnight, which is the previous evening in
+ * every US stadium timezone, silently shifting the calculation by one day.
+ */
+export function calendarDateAndTimeToUTC(
+  dateStr: string,
+  hour: number,
+  minute: number,
+  timezone: IanaTimezone,
+): Date {
+  if (!Number.isInteger(hour) || hour < 0 || hour > 23) {
+    throw new Error(`calendarDateAndTimeToUTC: invalid hour ${hour}`);
+  }
+  if (!Number.isInteger(minute) || minute < 0 || minute > 59) {
+    throw new Error(`calendarDateAndTimeToUTC: invalid minute ${minute}`);
+  }
+  const timeStr = `${hour.toString().padStart(2, '0')}:${minute.toString().padStart(2, '0')}`;
+  return stadiumLocalToUTC(dateStr, timeStr, timezone);
+}
+
 /**
  * Convert a stadium-local wall-clock moment (date + time + timezone) to the
  * UTC Date instant. Use this for every time input that originates as a
  * stadium-local value (game start time, an HH:MM query parameter, a static
- * "1pm representative hour", etc.) before handing it to SunCalc.
+ * "1pm representative hour", etc.) before handing it to the solar calculator.
  *
  * @param dateStr ISO date string YYYY-MM-DD interpreted in the stadium's timezone.
  * @param timeStr 24-hour HH:MM string interpreted in the stadium's timezone.
@@ -63,10 +95,13 @@ export function stadiumLocalToUTC(
 }
 
 /**
- * Combine an already-parsed `dateOnly` Date (whose date part is the desired
- * local date, time portion ignored) and an HH:MM local-time string into a
- * UTC Date. Useful in the route handlers that have already validated the
- * date and time separately.
+ * Combine a real UTC instant with a stadium-local clock time.
+ *
+ * The calendar date is the stadium-local date of `dateOnly` — correct for
+ * "the game Date from the MLB API, at this HH:MM". It is NOT correct for
+ * date-only strings: `new Date('YYYY-MM-DD')` is UTC midnight, which is the
+ * previous evening in every US park. Use `calendarDateAndTimeToUTC` for
+ * those.
  */
 export function stadiumLocalDateAndTimeToUTC(
   dateOnly: Date,

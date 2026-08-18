@@ -14,7 +14,7 @@ export default function Disclaimer() {
   return (
     <div className="page-container prose prose-slate max-w-prose mx-auto px-4 py-8 stack">
       <h1 className="h1 break-words md:break-normal">Legal Disclaimers</h1>
-      <p className="text-sm text-gray-600">Last Updated: August 2025</p>
+      <p className="text-sm text-gray-600">Last Updated: August 7, 2026</p>
 
       <nav className="bg-gray-50 p-4 rounded-lg">
         <h2 className="h3 mb-2">Important Disclaimers</h2>
@@ -35,14 +35,14 @@ export default function Disclaimer() {
         <div className="bg-red-50 border border-red-200 p-6 rounded-lg">
           <h3 className="h4 text-red-800">⚠️ IMPORTANT NOTICE</h3>
           <p className="text-red-700">
-            <strong>All shade calculations provided by The Shadium are ESTIMATES ONLY and 
-            should not be solely relied upon for ticket purchasing decisions.</strong>
+            <strong>Exact MLB seat-level shade outputs are currently withheld because physical
+            metric row, overhang, and obstruction geometry has not passed independent observation validation.</strong>
           </p>
         </div>
         
         <p>
-          While we strive to provide accurate sun and shade calculations, actual conditions 
-          at stadiums may vary significantly from our predictions due to numerous factors:
+          Astronomical sun position and source-backed section identity are separate from stadium
+          shadow geometry. Do not treat orientation context as a seat or row guarantee.
         </p>
         
         <h3 className="h3">Factors Affecting Accuracy:</h3>
@@ -219,13 +219,14 @@ export default function Disclaimer() {
         </div>
         
         <div className="bg-amber-50 border border-amber-200 p-4 rounded-lg mb-4">
-          <h4 className="font-semibold text-amber-900">NREL Solar Position Algorithm</h4>
+          <h4 className="font-semibold text-amber-900">NOAA Solar Calculator</h4>
           <p className="text-sm mt-2">
-            Sun position calculations based on peer-reviewed research.
+            Sun position calculations based on Jean Meeus, Astronomical Algorithms,
+            as implemented by NOAA GML.
           </p>
           <p className="text-xs text-amber-700 mt-2">
-            Reda, I.; Andreas, A. (2003). Solar Position Algorithm for Solar Radiation Applications. 
-            NREL Report No. TP-560-34302.
+            NOAA Global Monitoring Laboratory Solar Calculator.
+            https://gml.noaa.gov/grad/solcalc/
           </p>
         </div>
 

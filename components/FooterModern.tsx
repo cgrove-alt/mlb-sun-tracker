@@ -15,8 +15,7 @@ const FooterModern: React.FC = () => {
           <div>
             <h3 className="text-lg font-bold text-ink-900 mb-2">The Shadium</h3>
             <p className="text-sm text-ink-700 mb-3">
-              Find seats in the shade at any MLB, MiLB, or NFL stadium. Real-time sun tracking
-              for {VENUE_COUNT} venues.
+              Review stadium sun context, roof information, and data confidence across {VENUE_COUNT} venues.
             </p>
             <p className="text-xs text-ink-600">
               © {currentYear} The Shadium™. All rights reserved.
@@ -82,7 +81,7 @@ const FooterModern: React.FC = () => {
         <div className="mt-4 pt-4 border-t border-ink-100">
           <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2">
             <p className="text-xs text-ink-600">
-              ⚾ MLB data: MLB Advanced Media • 🌤️ Weather: Open-Meteo • ☀️ Sun: NREL SPA
+              ⚾ MLB data: MLB Advanced Media • 🌤️ Weather: Open-Meteo • ☀️ Sun: NOAA Solar Calculator
             </p>
             <p className="text-xs text-ink-600">
               Not affiliated with MLB, MiLB, or NFL. Calculations are estimates.

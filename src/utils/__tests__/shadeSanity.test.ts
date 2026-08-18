@@ -21,7 +21,7 @@ import {
   type SunSample,
 } from '../sunCalculator';
 import { getSunPosition } from '../sunCalculations';
-import { stadiumLocalDateAndTimeToUTC } from '../stadiumTime';
+import { calendarDateAndTimeToUTC } from '../stadiumTime';
 import { MLB_STADIUMS } from '../../data/stadiums';
 import { getStadiumSections } from '../../data/stadium-data-aggregator';
 
@@ -71,11 +71,10 @@ describe('continuity (guards the removed 90° discontinuity)', () => {
 
 describe('sunny side faces the sun (all 30 stadiums)', () => {
   // 2025-07-04 19:00 local — evening, sun in the west everywhere.
-  const date = new Date('2025-07-04');
 
   for (const stadium of MLB_STADIUMS) {
     it(`${stadium.id}: section facing the sun is more lit than the opposite section`, () => {
-      const utc = stadiumLocalDateAndTimeToUTC(date, 19, 0, stadium.timezone || 'UTC');
+      const utc = calendarDateAndTimeToUTC('2025-07-04', 19, 0, stadium.timezone || 'UTC');
       const sun = getSunPosition(utc, stadium.latitude, stadium.longitude);
       if (sun.altitudeDegrees <= 0) return; // sun down (high-latitude edge) — skip
 
@@ -96,11 +95,9 @@ describe('sunny side faces the sun (all 30 stadiums)', () => {
 });
 
 describe('the model differentiates bowl sides for every park at evening sun', () => {
-  const date = new Date('2025-07-04');
-
   for (const stadium of MLB_STADIUMS) {
     it(`${stadium.id}: real sections show a meaningful sun/shade spread`, async () => {
-      const utc = stadiumLocalDateAndTimeToUTC(date, 19, 0, stadium.timezone || 'UTC');
+      const utc = calendarDateAndTimeToUTC('2025-07-04', 19, 0, stadium.timezone || 'UTC');
       const sun = getSunPosition(utc, stadium.latitude, stadium.longitude);
       if (sun.altitudeDegrees <= 0) return;
 
@@ -110,6 +107,12 @@ describe('the model differentiates bowl sides for every park at evening sun', ()
         return 100 - r.averageCoverage;
       });
       const spread = Math.max(...exposures) - Math.min(...exposures);
+      if (stadium.roof === 'fixed') {
+        // Tropicana Field's opaque permanent roof makes every seat shaded;
+        // azimuth must not manufacture a sunny side inside a dome.
+        expect(spread).toBe(0);
+        return;
+      }
       // A working directional model must separate the sunny and shaded halves.
       expect(spread).toBeGreaterThan(15);
     });
@@ -120,7 +123,7 @@ describe('whole-game-window shade migrates monotonically as the sun sets', () =>
   it('a shaded-side open section gains coverage from afternoon to evening', () => {
     // Yankee Stadium, 16:00 first pitch + 3h → sun drops from ~mid-sky to low.
     const stadium = MLB_STADIUMS.find((s) => s.id === 'yankees')!;
-    const utc = stadiumLocalDateAndTimeToUTC(new Date('2025-07-04'), 16, 0, stadium.timezone!);
+    const utc = calendarDateAndTimeToUTC('2025-07-04', 16, 0, stadium.timezone!);
 
     const offsets = gameWindowOffsets(180, 30);
     const samples: SunSample[] = offsets.map((m) => {

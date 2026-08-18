@@ -7,6 +7,7 @@ import { MLBGame, mlbApi } from '../services/mlbApi';
 import { Stadium } from '../data/stadiums';
 import { preferencesStorage } from '../utils/preferences';
 import { formatGameTimeInStadiumTZ } from '../utils/dateTimeUtils';
+import { stadiumLocalToUTC } from '../utils/stadiumTime';
 import { useHapticFeedback } from '../hooks/useHapticFeedback';
 import { useTranslation } from '../i18n/i18nContext';
 import { GameSelectorSkeleton } from './SkeletonScreens';
@@ -122,8 +123,12 @@ export const GameSelector: React.FC<GameSelectorProps> = ({
   };
 
   const handleCustomDateTime = () => {
-    if (customDate && customTime) {
-      const dateTime = new Date(`${customDate}T${customTime}:00`);
+    if (customDate && customTime && selectedStadium) {
+      const dateTime = stadiumLocalToUTC(
+        customDate,
+        customTime,
+        selectedStadium.timezone || 'America/New_York',
+      );
       onGameSelect(null, dateTime);
       
       // Save custom date and time to localStorage

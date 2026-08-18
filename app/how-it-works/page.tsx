@@ -5,7 +5,7 @@ import { SHADE_DATA_VERIFIED_LABEL } from '../../src/data/shadeDataVerified';
 export const metadata: Metadata = {
   title: 'How The Shadium Calculates Shade | Methodology',
   description:
-    'How The Shadium calculates shaded seats: the NREL Solar Position Algorithm for sun position, per-venue orientation and geometry, Open-Meteo weather, and MLB schedule data — plus an honest look at accuracy and limitations.',
+    'How The Shadium separates astronomical sun position, source-backed seating inventory, modeled stadium geometry, weather, and MLB schedule data — including the publication boundary.',
   alternates: { canonical: 'https://theshadium.com/how-it-works' },
 };
 
@@ -18,31 +18,29 @@ export default function HowItWorksPage() {
 
       <h1>How The Shadium calculates shade</h1>
       <p>
-        The Shadium predicts which seats will be in the sun or shade for a specific game by
-        combining four inputs: where the sun is in the sky, how each venue is built and
-        oriented, the weather, and the real game schedule. Here is exactly how each piece works.
+        The Shadium separates four inputs: where the sun is in the sky, what is known about
+        the venue, the weather, and the real game schedule. A reliable sun position does not
+        make unmeasured stadium geometry reliable, so each field has its own confidence status.
       </p>
 
-      <h2>1. Sun position — NREL Solar Position Algorithm</h2>
+      <h2>1. Sun position — NOAA Solar Calculator</h2>
       <p>
         For any date, time, and location we compute the sun&apos;s <strong>azimuth</strong>
-        (compass direction) and <strong>elevation</strong> (height above the horizon) using a
-        solar position algorithm based on the{' '}
-        <a href="https://midcdmc.nrel.gov/spa/" target="_blank" rel="noopener noreferrer">
-          NREL Solar Position Algorithm
+        (compass direction) and <strong>elevation</strong> (height above the horizon) using the{' '}
+        <a href="https://gml.noaa.gov/grad/solcalc/" target="_blank" rel="noopener noreferrer">
+          NOAA Global Monitoring Laboratory Solar Calculator
         </a>
-        . This tells us the precise direction sunlight is coming from at first pitch and
-        throughout the game.
+        , based on Jean Meeus&apos;s <em>Astronomical Algorithms</em>, including atmospheric
+        refraction. This tells us the apparent direction sunlight is coming from at first pitch
+        and throughout the game. Typical agreement with NREL SPA is within 0.01°.
       </p>
 
       <h2>2. Stadium orientation &amp; geometry</h2>
       <p>
-        Each venue has a verified <strong>orientation</strong> — the compass bearing from home
-        plate to center field — plus per-section geometry (which way a section faces, its
-        distance from the field, and the height of the deck or roof above it). Combining the
-        sun&apos;s direction with a section&apos;s orientation tells us whether that section is
-        facing into the sun or shaded by the structure around it. Sections under an overhang or
-        roof are modeled as covered in their back rows.
+        MLB section identities come from published club charts or club-linked maps. Orientation
+        has a recorded precision range. Horizontal placement, row elevations and depths,
+        overhang dimensions, and obstruction meshes are separate fields; the current MLB row
+        and obstruction geometry is modeled rather than surveyed.
       </p>
 
       <h2>3. Weather — Open-Meteo</h2>
@@ -64,21 +62,20 @@ export default function HowItWorksPage() {
       <h2>Accuracy &amp; limitations (the honest part)</h2>
       <ul>
         <li>
-          Our section-level model is an <strong>approximation</strong>. It captures which side of
-          the park shades first and which levels have overhead cover, but real bowls curve and
-          individual rows vary — treat results as a strong guide, not a guarantee.
+          Exact MLB section and row results are <strong>not currently published</strong>. The
+          internal geometry model is useful for engineering, but it has not passed the measured-
+          geometry and independent shadow-observation release gate.
         </li>
         <li>
-          Overhang and roof coverage is <strong>modeled by row</strong>: we mark the back rows of
-          covered levels as shaded and the front rows as exposed. The exact cutoff row differs by
-          venue and isn&apos;t individually surveyed for every section.
+          A published seating map proves section identity and order; it does not prove row depth,
+          rake, elevation, overhang depth, roof height, or the shadow boundary.
         </li>
         <li>
           Weather changes fast. A forecast is not a measurement, and passing clouds or an
           open/closed retractable roof can change conditions at game time.
         </li>
         <li>
-          Venue data was last verified on <strong>{SHADE_DATA_VERIFIED_LABEL}</strong>. Teams
+          The general venue dataset was last reviewed on <strong>{SHADE_DATA_VERIFIED_LABEL}</strong>. Teams
           rename parks, tarp sections, and occasionally change home venues — we update as we learn
           of changes.
         </li>
@@ -89,7 +86,7 @@ export default function HowItWorksPage() {
       </ul>
 
       <p>
-        Ready to check your seats? <Link href="/stadiums">Browse all stadium shade guides →</Link>
+        Ready to review the evidence? <Link href="/stadiums">Browse all stadium sun guides →</Link>
       </p>
     </div>
   );
