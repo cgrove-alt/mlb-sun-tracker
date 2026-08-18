@@ -549,6 +549,28 @@ export const MILB_OFFICIAL_INVENTORIES: Record<string, OfficialInventory> = {
       { id: "oklahoma-city-lawn", name: "Lawn", level: "standing", compassOffset: 0, span: 28 },
     ],
   },
+  "omaha-storm-chasers": {
+    stadiumId: "omaha-storm-chasers",
+    league: 'MiLB',
+    orientation: 135,
+    angleConvention: 'baseball-local',
+    sourceKind: "official-static-chart",
+    officialUrl: "https://www.milb.com/omaha/ballpark/guide",
+    inventoryNotes: "Werner Park fan guide publishes landmarks 100, 102, 103, 108, 112, 114-116, 120, 121, 124-125 plus Home Run Porch, CKF Party Decks, Hy-Vee Pavilion, Centris Family Fun Zone, Big Top Tent, Omaha Steaks Field Level Suite, Berm, and VIP Club. Intermediate numbers are not invented.",
+    bands: [
+      { ids: ["100", "102", "103", "108", "112", "114", "115", "116", "120", "121", "124", "125"], level: "lower", namePrefix: "Section" },
+    ],
+    named: [
+      { id: "omaha-home-run-porch", name: "Home Run Porch", level: "standing", compassOffset: 270, span: 16 },
+      { id: "ckf-party-decks", name: "CKF Party Decks", level: "club", compassOffset: 180, span: 14 },
+      { id: "hy-vee-pavilion", name: "Hy-Vee Pavilion", level: "standing", compassOffset: 40, span: 14 },
+      { id: "centris-family-fun-zone", name: "Centris Family Fun Zone", level: "standing", compassOffset: 300, span: 14 },
+      { id: "omaha-big-top-tent", name: "Big Top Party Tent", level: "standing", compassOffset: 290, span: 16 },
+      { id: "omaha-steaks-field-suite", name: "Omaha Steaks Field Level Suite", level: "suite", compassOffset: 250, span: 10 },
+      { id: "omaha-berm", name: "Berm", level: "standing", compassOffset: 0, span: 28 },
+      { id: "omaha-vip-club", name: "VIP Club", level: "club", compassOffset: 180, span: 12 },
+    ],
+  },
   "portland-sea-dogs": {
     stadiumId: "portland-sea-dogs",
     league: 'MiLB',
