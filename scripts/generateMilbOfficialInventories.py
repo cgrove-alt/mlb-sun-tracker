@@ -338,13 +338,57 @@ OVERRIDES = {
         "named": [{"id": "party-deck", "name": "Party Deck", "level": "club", "compassOffset": 90, "span": 14}],
     },
     "oklahoma-city-dodgers": {
-        "officialUrl": "https://www.milb.com/oklahoma-city/tickets",
-        "notes": "Chickasaw Bricktown Ballpark club page publishes 100-112, 200-203, and the outfield Lawn.",
+        "officialUrl": "https://www.milb.com/oklahoma-city/ballpark/seating-map",
+        "notes": "Chickasaw Bricktown seating map: Home Plate 108-112, Dugout 104-107 and 113-116, Field 100-103 and 117-120, Terrace 200-203, Lawn.",
         "bands": [
-            {"ids": [str(n) for n in range(100, 113)], "level": "lower", "namePrefix": "Section"},
-            {"ids": [str(n) for n in range(200, 204)], "level": "club", "namePrefix": "Section", "startOffset": 80, "endOffset": 280},
+            {"ids": [str(n) for n in range(100, 121)], "level": "lower", "namePrefix": "Section"},
+            {"ids": [str(n) for n in range(200, 204)], "level": "club", "namePrefix": "Terrace", "startOffset": 80, "endOffset": 280},
         ],
         "named": [{"id": "lawn", "name": "Lawn", "level": "standing", "compassOffset": 0, "span": 28}],
+    },
+    "toledo-mud-hens": {
+        "officialUrl": "https://www.milb.com/toledo/ballpark/seating-map",
+        "notes": "Fifth Third Field official seating-map section views: 101-119, Home Run Terrace 120-122, club 201-219.",
+        "bands": [
+            {"ids": [str(n) for n in range(101, 120)], "level": "lower", "namePrefix": "Section"},
+            {"ids": ["120", "121", "122"], "level": "field", "namePrefix": "Home Run Terrace", "startOffset": 40, "endOffset": 80},
+            {"ids": [str(n) for n in range(201, 220)], "level": "club", "namePrefix": "Section", "startOffset": 74, "endOffset": 286},
+        ],
+        "named": [],
+    },
+    "dayton-dragons": {
+        "officialUrl": "https://www.milb.com/dayton/ballpark/seatingchart",
+        "notes": "Day Air Ballpark official section-view chart: reserved 104-116, club 201-210, Lawn A and Lawn D. 101-103 are not published on the club page.",
+        "bands": [
+            {"ids": [str(n) for n in range(104, 117)], "level": "lower", "namePrefix": "Section"},
+            {"ids": [str(n) for n in range(201, 211)], "level": "club", "namePrefix": "Section", "startOffset": 74, "endOffset": 286},
+        ],
+        "named": [
+            {"id": "lawn-a", "name": "Lawn A", "level": "standing", "compassOffset": 20, "span": 16},
+            {"id": "lawn-d", "name": "Lawn D", "level": "standing", "compassOffset": 340, "span": 16},
+        ],
+    },
+    "frisco-roughriders": {
+        "officialUrl": "https://www.milb.com/frisco/tickets",
+        "notes": "Riders Field club page publishes 100-103, 105-108, and 109-118.",
+        "bands": [
+            {"ids": [str(n) for n in list(range(100, 104)) + list(range(105, 119))], "level": "lower", "namePrefix": "Section"},
+        ],
+        "named": [],
+    },
+    "indianapolis-indians": {
+        "officialUrl": "https://www.milb.com/indianapolis/ballpark/faq",
+        "notes": "Victory Field FAQ publishes box 105-119 (last four rows shade first on the 3B side). Pricing page adds Lawn, The Landing, Elements Financial Club, and Knot Hole. Reserved IDs outside 105-119 are not invented.",
+        "inventoryStatus": "partial",
+        "bands": [
+            {"ids": [str(n) for n in range(105, 120)], "level": "lower", "namePrefix": "Box"},
+        ],
+        "named": [
+            {"id": "lawn", "name": "Lawn", "level": "standing", "compassOffset": 0, "span": 40},
+            {"id": "the-landing", "name": "The Landing", "level": "club", "compassOffset": 40, "span": 14},
+            {"id": "elements-financial-club", "name": "Elements Financial Club", "level": "club", "compassOffset": 180, "span": 14},
+            {"id": "knot-hole-gang", "name": "Knot Hole Gang", "level": "standing", "compassOffset": 270, "span": 12},
+        ],
     },
     "somerset-patriots": {
         "officialUrl": "https://www.milb.com/somerset/tickets",
@@ -466,11 +510,12 @@ def emit_provenance(park: dict) -> str:
     notes_line = f", inventoryNotes: {json.dumps(notes)}" if notes else ""
     geom = park.get("geometryUrl")
     geom_line = f", geometryUrl: {json.dumps(geom)}" if geom else ""
+    status = park.get("inventoryStatus", "reconciled")
     return (
         f"  {json.dumps(park['stadiumId'])}: {{ stadiumId: {json.dumps(park['stadiumId'])}, "
         f"sourceKind: 'official-static-chart', officialUrl: {json.dumps(park['officialUrl'])}"
         f"{geom_line}, sectionIdentity: 'source-backed', rowGeometry: 'modeled', "
-        f"inventoryStatus: 'reconciled', currentInventoryCount: {count}, "
+        f"inventoryStatus: {json.dumps(status)}, currentInventoryCount: {count}, "
         f"sourceProductCount: {count}{notes_line}, reviewedOn: '2026-08-18' }}"
     )
 

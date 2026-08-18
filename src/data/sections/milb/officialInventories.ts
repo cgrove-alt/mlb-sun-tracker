@@ -18,6 +18,23 @@ export const MILB_OFFICIAL_INVENTORIES: Record<string, OfficialInventory> = {
       { id: "bully-hill-party-deck", name: "Bully Hill Party Deck", level: "club", compassOffset: 90, span: 16 },
     ],
   },
+  "dayton-dragons": {
+    stadiumId: "dayton-dragons",
+    league: 'MiLB',
+    orientation: 87,
+    angleConvention: 'baseball-local',
+    sourceKind: "official-static-chart",
+    officialUrl: "https://www.milb.com/dayton/ballpark/seatingchart",
+    inventoryNotes: "Day Air Ballpark official section-view chart: reserved 104-116, club 201-210, Lawn A and Lawn D. 101-103 are not published on the club page.",
+    bands: [
+      { ids: ["104", "105", "106", "107", "108", "109", "110", "111", "112", "113", "114", "115", "116"], level: "lower", namePrefix: "Section" },
+      { ids: ["201", "202", "203", "204", "205", "206", "207", "208", "209", "210"], level: "club", namePrefix: "Section", startOffset: 74, endOffset: 286 },
+    ],
+    named: [
+      { id: "lawn-a", name: "Lawn A", level: "standing", compassOffset: 20, span: 16 },
+      { id: "lawn-d", name: "Lawn D", level: "standing", compassOffset: 340, span: 16 },
+    ],
+  },
   "durham-bulls": {
     stadiumId: "durham-bulls",
     league: 'MiLB',
@@ -50,6 +67,37 @@ export const MILB_OFFICIAL_INVENTORIES: Record<string, OfficialInventory> = {
     ],
     named: [
       { id: "party-deck", name: "Party Deck", level: "club", compassOffset: 90, span: 14 },
+    ],
+  },
+  "frisco-roughriders": {
+    stadiumId: "frisco-roughriders",
+    league: 'MiLB',
+    orientation: 83,
+    angleConvention: 'baseball-local',
+    sourceKind: "official-static-chart",
+    officialUrl: "https://www.milb.com/frisco/tickets",
+    inventoryNotes: "Riders Field club page publishes 100-103, 105-108, and 109-118.",
+    bands: [
+      { ids: ["100", "101", "102", "103", "105", "106", "107", "108", "109", "110", "111", "112", "113", "114", "115", "116", "117", "118"], level: "lower", namePrefix: "Section" },
+    ],
+    named: [],
+  },
+  "indianapolis-indians": {
+    stadiumId: "indianapolis-indians",
+    league: 'MiLB',
+    orientation: 40,
+    angleConvention: 'baseball-local',
+    sourceKind: "official-static-chart",
+    officialUrl: "https://www.milb.com/indianapolis/ballpark/faq",
+    inventoryNotes: "Victory Field FAQ publishes box 105-119 (last four rows shade first on the 3B side). Pricing page adds Lawn, The Landing, Elements Financial Club, and Knot Hole. Reserved IDs outside 105-119 are not invented.",
+    bands: [
+      { ids: ["105", "106", "107", "108", "109", "110", "111", "112", "113", "114", "115", "116", "117", "118", "119"], level: "lower", namePrefix: "Box" },
+    ],
+    named: [
+      { id: "lawn", name: "Lawn", level: "standing", compassOffset: 0, span: 40 },
+      { id: "the-landing", name: "The Landing", level: "club", compassOffset: 40, span: 14 },
+      { id: "elements-financial-club", name: "Elements Financial Club", level: "club", compassOffset: 180, span: 14 },
+      { id: "knot-hole-gang", name: "Knot Hole Gang", level: "standing", compassOffset: 270, span: 12 },
     ],
   },
   "jacksonville-jumbo-shrimp": {
@@ -118,11 +166,11 @@ export const MILB_OFFICIAL_INVENTORIES: Record<string, OfficialInventory> = {
     orientation: 70,
     angleConvention: 'baseball-local',
     sourceKind: "official-static-chart",
-    officialUrl: "https://www.milb.com/oklahoma-city/tickets",
-    inventoryNotes: "Chickasaw Bricktown Ballpark club page publishes 100-112, 200-203, and the outfield Lawn.",
+    officialUrl: "https://www.milb.com/oklahoma-city/ballpark/seating-map",
+    inventoryNotes: "Chickasaw Bricktown seating map: Home Plate 108-112, Dugout 104-107 and 113-116, Field 100-103 and 117-120, Terrace 200-203, Lawn.",
     bands: [
-      { ids: ["100", "101", "102", "103", "104", "105", "106", "107", "108", "109", "110", "111", "112"], level: "lower", namePrefix: "Section" },
-      { ids: ["200", "201", "202", "203"], level: "club", namePrefix: "Section", startOffset: 80, endOffset: 280 },
+      { ids: ["100", "101", "102", "103", "104", "105", "106", "107", "108", "109", "110", "111", "112", "113", "114", "115", "116", "117", "118", "119", "120"], level: "lower", namePrefix: "Section" },
+      { ids: ["200", "201", "202", "203"], level: "club", namePrefix: "Terrace", startOffset: 80, endOffset: 280 },
     ],
     named: [
       { id: "lawn", name: "Lawn", level: "standing", compassOffset: 0, span: 28 },
@@ -158,5 +206,20 @@ export const MILB_OFFICIAL_INVENTORIES: Record<string, OfficialInventory> = {
     named: [
       { id: "standing-room", name: "Standing Room", level: "standing", compassOffset: 20, span: 16 },
     ],
+  },
+  "toledo-mud-hens": {
+    stadiumId: "toledo-mud-hens",
+    league: 'MiLB',
+    orientation: 58,
+    angleConvention: 'baseball-local',
+    sourceKind: "official-static-chart",
+    officialUrl: "https://www.milb.com/toledo/ballpark/seating-map",
+    inventoryNotes: "Fifth Third Field official seating-map section views: 101-119, Home Run Terrace 120-122, club 201-219.",
+    bands: [
+      { ids: ["101", "102", "103", "104", "105", "106", "107", "108", "109", "110", "111", "112", "113", "114", "115", "116", "117", "118", "119"], level: "lower", namePrefix: "Section" },
+      { ids: ["120", "121", "122"], level: "field", namePrefix: "Home Run Terrace", startOffset: 40, endOffset: 80 },
+      { ids: ["201", "202", "203", "204", "205", "206", "207", "208", "209", "210", "211", "212", "213", "214", "215", "216", "217", "218", "219"], level: "club", namePrefix: "Section", startOffset: 74, endOffset: 286 },
+    ],
+    named: [],
   },
 };
