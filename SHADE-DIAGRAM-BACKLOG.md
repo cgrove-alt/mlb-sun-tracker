@@ -43,7 +43,7 @@ below — do NOT re-enable the diagram for a league until its item is complete a
   where CF actually faces north (Syracuse, Rome, Lansing).
 - **Still blocking diagrams:** the live path no longer emits `generateBaseballSections`
   or Field-100 clones. Parks without a transcribed official chart now return empty
-  (fail closed). Sixty-six parks have source-backed inventories (Akron,
+  (fail closed). Sixty-eight parks have source-backed inventories (Akron,
   Albuquerque [partial], Asheville, Beloit, Birmingham, Bowling Green, Brooklyn,
   Buffalo, Charleston, Charlotte, Columbia, Columbus Clippers, Dayton, Durham,
   Erie, Fort Myers, Fort Wayne [partial], Fredericksburg, Fresno [partial],
@@ -51,12 +51,12 @@ below — do NOT re-enable the diagram for a league until its item is complete a
   Hartford, Hickory, Hudson Valley, Indianapolis [partial], Inland Empire, Iowa,
   Jacksonville, Jersey Shore, Lakeland, Las Vegas, Lehigh Valley, Louisville,
   Memphis [partial], Midland [partial], Montgomery, Myrtle Beach, Nashville,
-  New Hampshire [partial], Norfolk, Oklahoma City, Omaha [partial], Pensacola,
-  Portland, Reading, Richmond, Rocket City, Rome, Round Rock [partial],
-  Sacramento, Salem, Salt Lake, Somerset, Springfield, St. Paul, Syracuse,
-  Tampa, Toledo, Vancouver [partial], Winston-Salem [partial], Wisconsin,
-  Worcester [partial]). The other 54 still need official chart IDs — do **not**
-  fill them with a template.
+  New Hampshire [partial], Norfolk, Northwest Arkansas, Oklahoma City,
+  Omaha [partial], Pensacola, Portland, Reading, Richmond, Rocket City, Rome,
+  Round Rock [partial], Sacramento, Salem, Salt Lake, Somerset, Springfield,
+  St. Paul, Syracuse, Tampa, Toledo, Vancouver [partial], Visalia,
+  Winston-Salem [partial], Wisconsin, Worcester [partial]). The other 52 still
+  need official chart IDs — do **not** fill them with a template.
   Do **not** publish section %.
 - **Work remaining:** transcribe the remaining official club charts / maps into
   `MILB_OFFICIAL_INVENTORIES` the same way, unique except shared bowls (Roger Dean).

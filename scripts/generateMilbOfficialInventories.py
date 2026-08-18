@@ -1317,6 +1317,48 @@ OVERRIDES = {
             {"id": "springfield-the-perch", "name": "The Perch", "level": "club", "compassOffset": 120, "span": 10},
         ],
     },
+    "visalia-rawhide": {
+        "officialUrl": "https://www.milb.com/visalia/ballpark/seating-chart",
+        "geometryUrl": "https://img.mlbstatic.com/milb-images/image/upload/t_w2208/milb/ti7pas2it08cutpsmds2.jpg",
+        "notes": "Valley Strong Ballpark official seating chart: odd field 101-107 and even 102-108; Kaweah Health grandstand odds 201-209 / evens 200-210; lettered A-H and J-O; RF line odds 113-127 (no 109/111); plus Family Pavilion, Equity Saloon, Fan Dugout, Skyboxes, 4Creeks Pasture, Toyota Terrace, Kids Corral, Dog Park, Hall of Fame Club, The Lookout.",
+        "bands": [
+            {"ids": ["101", "102", "103", "104", "105", "106", "107", "108"], "level": "field", "namePrefix": "Section"},
+            {"ids": [str(n) for n in range(113, 128, 2)], "level": "field", "namePrefix": "Section", "startOffset": 20, "endOffset": 80},
+            {"ids": [str(n) for n in range(200, 211, 2)] + [str(n) for n in range(201, 210, 2)], "level": "lower", "namePrefix": "Section", "startOffset": 80, "endOffset": 280},
+            {"ids": [chr(c) for c in range(ord("A"), ord("H") + 1)] + [chr(c) for c in range(ord("J"), ord("O") + 1)], "level": "upper", "namePrefix": "Section", "startOffset": 70, "endOffset": 290},
+        ],
+        "named": [
+            {"id": "visalia-adventist-family-pavilion", "name": "Adventist Health Family Pavilion", "level": "standing", "compassOffset": 280, "span": 14},
+            {"id": "visalia-equity-saloon", "name": "Equity Saloon", "level": "club", "compassOffset": 270, "span": 10},
+            {"id": "visalia-autograph-alley", "name": "Autograph Alley", "level": "standing", "compassOffset": 250, "span": 8},
+            {"id": "visalia-fan-dugout", "name": "Fan Dugout", "level": "field", "compassOffset": 240, "span": 8},
+            {"id": "visalia-allstate-skyboxes", "name": "Allstate Team Guillen Skyboxes", "level": "suite", "compassOffset": 220, "span": 16},
+            {"id": "visalia-4creeks-pasture", "name": "4Creeks Pasture", "level": "standing", "compassOffset": 20, "span": 24},
+            {"id": "visalia-toyota-terrace", "name": "Toyota Terrace", "level": "club", "compassOffset": 50, "span": 12},
+            {"id": "visalia-kids-corral", "name": "Kids Corral", "level": "standing", "compassOffset": 60, "span": 10},
+            {"id": "visalia-dog-park", "name": "Dog Park", "level": "standing", "compassOffset": 40, "span": 10},
+            {"id": "visalia-michelob-hof-club", "name": "Michelob Ultra Hall of Fame Club", "level": "club", "compassOffset": 70, "span": 16},
+            {"id": "visalia-the-lookout", "name": "The Lookout", "level": "standing", "compassOffset": 55, "span": 8},
+        ],
+    },
+    "northwest-arkansas-naturals": {
+        "officialUrl": "https://www.milb.com/northwest-arkansas/tickets/single-game-tickets",
+        "geometryUrl": "https://img.mlbstatic.com/milb-images/image/upload/t_w2208/milb/juinspi3gp0vwozdw5cy.jpg",
+        "notes": "Arvest Ballpark official seating map: Reserved 101-104 and 118-120, Dugout Premium 105-107 and 113-117, Home Plate Premium 108-112, plus Suite Level, Cherokee Casino Home Plate Deck, Bud Light Home Run Porch, Right Field Patio, Grass Berm, Bullpen Party Bar, and McNaughton Community Room. Simmons Foods Family Section is published as a product within 114.",
+        "bands": [
+            {"ids": [str(n) for n in range(101, 121)], "level": "lower", "namePrefix": "Section"},
+        ],
+        "named": [
+            {"id": "nwa-suite-level", "name": "Suite Level", "level": "suite", "compassOffset": 180, "span": 40},
+            {"id": "nwa-cherokee-home-plate-deck", "name": "Cherokee Casino Home Plate Deck", "level": "club", "compassOffset": 180, "span": 12},
+            {"id": "nwa-simmons-family-section", "name": "Simmons Foods Family Section", "level": "lower", "compassOffset": 100, "span": 8},
+            {"id": "nwa-bud-light-hr-porch", "name": "Bud Light Home Run Porch", "level": "standing", "compassOffset": 40, "span": 14},
+            {"id": "nwa-rf-patio", "name": "Right Field Patio", "level": "club", "compassOffset": 300, "span": 12},
+            {"id": "nwa-grass-berm", "name": "Grass Berm", "level": "standing", "compassOffset": 0, "span": 40},
+            {"id": "nwa-bullpen-party-bar", "name": "Bullpen Party Bar", "level": "standing", "compassOffset": 280, "span": 12},
+            {"id": "nwa-mcnaughton-community-room", "name": "McNaughton Real Estate Community Room", "level": "club", "compassOffset": 180, "span": 10},
+        ],
+    },
 }
 
 
