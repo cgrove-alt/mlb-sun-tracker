@@ -160,7 +160,11 @@ async function main(): Promise<void> {
   const results: AuditResult[] = [];
 
   for (const stadium of MLB_STADIUMS) {
-    results.push(await auditStadium('MLB', stadium, await getStadiumSections(stadium.id, 'MLB')));
+    results.push(await auditStadium(
+      'MLB',
+      stadium,
+      (await getStadiumSections(stadium.id, 'MLB')) as unknown as StadiumSection[],
+    ));
   }
   const milbStadiums = [...AAA_STADIUMS, ...AA_STADIUMS, ...HIGH_A_STADIUMS, ...LOW_A_STADIUMS];
   for (const stadium of milbStadiums) {

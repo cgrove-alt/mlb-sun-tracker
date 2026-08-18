@@ -98,7 +98,7 @@ function sectionsCacheKey(stadium: UnifiedStadium, sections: StadiumSection[]): 
     section.angleSpan,
     section.level,
     section.covered,
-    section.rows?.length ?? 0,
+    section.rows ?? 0,
   ].join(':')).join('|');
   return `${stadium.type}-${stadium.id}-${geometry}`;
 }
@@ -228,7 +228,6 @@ export function getUnifiedShadedSections(
 function getStadiumSectionsForType(stadium: UnifiedStadium): StadiumSection[] {
   // For MLB, return empty array - caller should provide sections
   if (stadium.type === 'MLB') {
-    console.warn('[getStadiumSectionsForType] MLB stadium sections should be provided by caller to avoid bundle bloat');
     return [];
   }
 
@@ -339,7 +338,12 @@ export async function getAllStadiumsShadedSections(
       const unified = mlbToUnified(stadium);
       const { getStadiumSections } = await import('../data/stadium-data-aggregator');
       const sections = await getStadiumSections(stadium.id, 'MLB');
-      const shadedSections = getUnifiedShadedSections(unified, gameDateTime, undefined, sections);
+      const shadedSections = getUnifiedShadedSections(
+        unified,
+        gameDateTime,
+        undefined,
+        sections as unknown as StadiumSection[],
+      );
       results.set(`mlb-${stadium.id}`, shadedSections);
     }
   }
