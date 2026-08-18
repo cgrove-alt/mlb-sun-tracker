@@ -217,7 +217,7 @@ export const NFL_STADIUMS: NFLStadium[] = [
     opened: 2008,
     surface: 'turf',
     roof: 'retractable',
-    timezone: 'America/New_York',
+    timezone: 'America/Indiana/Indianapolis',
     elevation: 717,
     roofHeight: 184,
     features: ['Window wall', 'Downtown location']

@@ -1,5 +1,12 @@
 // Auto-generated unified venues data
 // Generated on 2025-08-02T19:14:52.611Z
+//
+// Shade-critical fields (lat/lon, orientation, timezone, roof, capacity)
+// are overlaid at export time from stadiums.ts / nflStadiums.ts /
+// milbStadiums.ts so this dump cannot silently drift from the authored
+// sources. See applyCanonicalVenueGeometry.
+
+import { applyCanonicalVenueGeometry } from './syncVenueGeometry';
 
 export interface UnifiedVenue {
   id: string;
@@ -40,7 +47,7 @@ export interface UnifiedVenue {
   sport?: 'baseball' | 'football';
 }
 
-export const ALL_UNIFIED_VENUES: UnifiedVenue[] = [
+const RAW_UNIFIED_VENUES: UnifiedVenue[] = [
   {
     "id": "angels",
     "name": "Angel Stadium",
@@ -6432,6 +6439,8 @@ export const ALL_UNIFIED_VENUES: UnifiedVenue[] = [
   }
 ];
 
+export const ALL_UNIFIED_VENUES: UnifiedVenue[] = applyCanonicalVenueGeometry(RAW_UNIFIED_VENUES);
+
 export function getUnifiedVenueById(id: string): UnifiedVenue | null {
   return ALL_UNIFIED_VENUES.find(venue => venue.id === id) || null;
 }
@@ -6452,12 +6461,23 @@ export function convertToLegacyStadium(venue: UnifiedVenue): any {
     orientation: venue.orientation,
     capacity: venue.capacity,
     roof: venue.roof,
+    // SunCalculator historically checked only `roofType`. Homepage/mobile
+    // passed this helper, so Tropicana and every NFL dome skipped the
+    // 100% shade shortcut and were modelled as open bowls.
+    roofType: venue.roof,
     roofHeight: venue.roofHeight,
+    roofOverhang: venue.roofOverhang,
     upperDeckHeight: venue.upperDeckHeight,
     timezone: venue.timezone,
     opened: venue.opened,
     surface: venue.surface,
-    features: venue.features
+    features: venue.features,
+    venueType: venue.venueType,
+    league: venue.league,
+    sport: venue.sport,
+    sectionAngleConvention: venue.league === 'NFL' || venue.venueType === 'football'
+      ? 'compass-from-north'
+      : 'baseball-local',
   };
 }
 

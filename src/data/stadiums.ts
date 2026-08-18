@@ -380,7 +380,7 @@ export const MLB_STADIUMS: Stadium[] = [
     orientation: 145,
     capacity: 41083,
     roof: 'open',
-    timezone: 'America/New_York' // Eastern Time — was incorrectly 'America/Chicago' (Central). Detroit and all of Michigan's Lower Peninsula observe Eastern; only 4 western UP counties are Central.
+    timezone: 'America/Detroit' // Eastern Time — was incorrectly 'America/Chicago' (Central). America/Detroit is the IANA zone for Detroit; America/New_York matches today's offset but is the wrong zone identity.
   },
   {
     id: 'twins',
