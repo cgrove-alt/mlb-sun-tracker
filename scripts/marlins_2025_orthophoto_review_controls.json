@@ -1,0 +1,47 @@
+{
+  "schemaVersion": 1,
+  "artifactKind": "marlins-2025-orthophoto-manual-geometry-review-controls",
+  "controlVersion": "marlins-2025-orthophoto-manual-geometry-review-controls-v1",
+  "stadiumId": "marlins",
+  "sourceLock": {
+    "mosaicManifestPath": "tmp/lidar/marlins-2025-woolpert-orthophoto-native.json",
+    "mosaicManifestSha256": "565168b815df1dab5fcf63b704a41f0f4c1224961fe88d3426493c70817e8b79",
+    "mosaicArtifactVersion": "sha256:07d0b6262aee4680303ef64be66d4698c75ed7a8295d8288ea08033655f8fe27",
+    "rasterPath": "tmp/lidar/marlins-2025-woolpert-orthophoto-native.png",
+    "rasterSha256": "03915db69defca4c0befe8664559ec4dc5fb3eef8e3c441831ba6bc422dfa29f",
+    "itemMetadataPath": "tmp/lidar/marlins-2025-woolpert-orthophoto-nw-item-metadata.xml",
+    "itemMetadataSha256": "7b2a0a7718069894260fda4a59f713272d63c9eb2d3ae9bb3f86349effcc2d5e"
+  },
+  "reviewProcedure": {
+    "completeRasterReviewed": true,
+    "fullStadiumEnvelopeReviewed": true,
+    "nativeRasterDimensionsPixels": [
+      5000,
+      5000
+    ],
+    "reviewScope": "Plan-view visual interpretation only. No height, underside, hidden-row, or acquisition-time inference is permitted."
+  },
+  "observations": {
+    "stadiumOpeningVisuallyCovered": true,
+    "roofStateInterpretation": "closed",
+    "exteriorPanelTopSurfacesVisible": true,
+    "completeUnoccludedIndividualPanelOutlinesVisible": false,
+    "seatingBowlVisible": false,
+    "seatRowsVisible": false,
+    "roofUndersidesVisible": false,
+    "panelHeightsMeasured": false,
+    "gameSpecificPanelPositionEstablished": false,
+    "tileSpecificAcquisitionDateEstablished": false,
+    "tileSpecificAcquisitionTimeEstablished": false
+  },
+  "claimBoundary": {
+    "establishesClosedRoofVisualStateWithinPublishedAcquisitionDateSet": true,
+    "establishesCurrentRowPersistence": false,
+    "establishesMetricSeatOrRowGeometry": false,
+    "establishesMetricRoofHeight": false,
+    "establishesRoofUndersideGeometry": false,
+    "establishesCompletePanelShape": false,
+    "establishesExactShadowTimestamp": false,
+    "eligibleAsIndependentShadeHoldout": false
+  }
+}

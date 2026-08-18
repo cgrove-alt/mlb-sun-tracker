@@ -1,0 +1,52 @@
+{
+  "schemaVersion": 1,
+  "artifactKind": "rockies-2019-shade-structure-review-controls",
+  "analysisVersion": "rockies-2019-shade-structure-review-controls-v1",
+  "reviewedOn": "2026-08-11",
+  "permitRecordNumber": "2019-SUDP-0000843",
+  "permitScopeText": "Two new shade structures not over utilities for Coors Field: Entrance B and Picnic area.",
+  "candidates": [
+    {
+      "objectId": 1253752,
+      "candidateId": "GATE_B_SHADE_STRUCTURE",
+      "permitLocation": "Entrance B",
+      "orthophotoCrops": {
+        "2018": "tmp/lidar/rockies-drcog-orthophoto-2018/coors-gate-b-permitted-shade-candidate.json",
+        "2020": "tmp/lidar/rockies-drcog-orthophoto-2020/coors-gate-b-permitted-shade-candidate.json",
+        "2022": "tmp/lidar/rockies-drcog-orthophoto-2022/coors-gate-b-permitted-shade-candidate.json"
+      },
+      "review": {
+        "visibleIn2018": false,
+        "visibleIn2020": true,
+        "visibleIn2022": true,
+        "locationIdentity": "The footprint covers a permanent roof over the Gate B entry lanes in the right-field corner.",
+        "permitAttribution": "high-confidence-location-and-epoch-match",
+        "limitation": "The public permit site plan is unavailable, so the permit attribution is not an as-built plan match."
+      }
+    },
+    {
+      "objectId": 1387826,
+      "candidateId": "COORS_OUTFIELD_PICNIC_NEW_SHELTER",
+      "permitLocation": "Picnic area",
+      "orthophotoCrops": {
+        "2018": "tmp/lidar/rockies-drcog-orthophoto-2018/coors-outfield-picnic-change-region.json",
+        "2020": "tmp/lidar/rockies-drcog-orthophoto-2020/coors-outfield-picnic-change-region.json",
+        "2022": "tmp/lidar/rockies-drcog-orthophoto-2022/coors-outfield-picnic-change-region.json"
+      },
+      "review": {
+        "visibleIn2018": false,
+        "visibleIn2020": true,
+        "visibleIn2022": true,
+        "locationIdentity": "The footprint is the second permanent pavilion in the official Coors Outfield Picnic Area imagery.",
+        "permitAttribution": "high-confidence-location-and-epoch-match",
+        "limitation": "The public permit site plan is unavailable, so the permit attribution is not an as-built plan match."
+      }
+    }
+  ],
+  "reviewBoundary": {
+    "establishesPresenceAcrossImageryEpochs": true,
+    "establishesPermitAttributionAsInference": true,
+    "establishesAsBuiltPlanIdentity": false,
+    "establishesExactRowShadeGeometry": false
+  }
+}

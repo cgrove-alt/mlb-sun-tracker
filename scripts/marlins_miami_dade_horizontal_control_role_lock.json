@@ -1,0 +1,102 @@
+{
+  "schemaVersion": 1,
+  "artifactKind": "marlins-miami-dade-horizontal-control-role-lock",
+  "lockedAt": "2026-08-12T00:35:05Z",
+  "lockedBeforeAnyCurrentRasterOrLidarControlResidualWasInspected": true,
+  "sourceManifest": "tmp/lidar/marlins-miami-dade-bp-horizontal-controls-2026/manifest.json",
+  "coordinateReferenceSystem": {
+    "sourceDatum": "NAD83(HARN)",
+    "sourceSheetLabels": [
+      "NAD 83/90",
+      "NAD 83 (1990)"
+    ],
+    "sourceStatePlaneZone": "Florida East 0901",
+    "sourceHorizontalUnit": "US survey foot",
+    "targetDatum": "NAD83(2011)",
+    "targetCoordinateReferenceSystem": "EPSG:6438",
+    "transformationAuthority": "NOAA NGS NCAT NADCON 5"
+  },
+  "partitionRule": "Training controls may be used to estimate a rigid horizontal registration. Final holdout coordinates and current-sensor localizations cannot be inspected until the method and training transform are frozen. A missing or ambiguous locked control fails the run and cannot be replaced within this role lock.",
+  "controls": [
+    {
+      "id": "BP-2",
+      "role": "training",
+      "sheetSha256": "67ec31964338ea3afe05be8ba3cdb9ab42bc02a9ddcd9676d759395df95c6b2b",
+      "sourceLatitudeDms": "N254645.118122",
+      "sourceLongitudeDms": "W0801051.622800",
+      "sourceNorthingUsSurveyFeet": 526278.3274,
+      "sourceEastingUsSurveyFeet": 925671.9275,
+      "mark": "brass disk stamped BP-2 in the north concrete sidewalk of the Port bridge"
+    },
+    {
+      "id": "BP-3",
+      "role": "training",
+      "sheetSha256": "347d6eac0fd3275e63950b94e367bea8fdb7fffd065b466f4a0a8c9fcb9853cb",
+      "sourceLatitudeDms": "N254647.850096",
+      "sourceLongitudeDms": "W0801058.063748",
+      "sourceNorthingUsSurveyFeet": 526550.4997,
+      "sourceEastingUsSurveyFeet": 925081.4372,
+      "mark": "brass disk stamped BP-3 in the north concrete sidewalk of the Port bridge"
+    },
+    {
+      "id": "TATO",
+      "role": "training",
+      "sheetSha256": "183b6c97b7e9da03ccc9ac3472d6dff502798e80e87eaabae9502506d664e730",
+      "sourceLatitudeDms": "N254622.930988",
+      "sourceLongitudeDms": "W0801106.118906",
+      "sourceNorthingUsSurveyFeet": 524030.0261,
+      "sourceEastingUsSurveyFeet": 924360.668,
+      "mark": "brass disk stamped TATO in a Bayfront Park sidewalk north of the east end of Chopin Plaza"
+    },
+    {
+      "id": "AUSTIN",
+      "role": "final-holdout",
+      "sheetSha256": "83376bc0edca227ab3e798836cba74815bb590738748802345ed324cb45e12c4",
+      "sourceLatitudeDms": "N254517.70826",
+      "sourceLongitudeDms": "W0801519.45948",
+      "sourceNorthingUsSurveyFeet": 517307.958,
+      "sourceEastingUsSurveyFeet": 901238.467,
+      "mark": "concrete monument with a brass disk stamped AUSTIN in the Alhambra Circle median"
+    },
+    {
+      "id": "NICOLAS",
+      "role": "final-holdout",
+      "sheetSha256": "572c53f02312c9b74017f46df4bf86bd63676c8a838d2ce66ba12afe4c1c4674",
+      "sourceLatitudeDms": "N254803.75723",
+      "sourceLongitudeDms": "W0801333.95244",
+      "sourceNorthingUsSurveyFeet": 534128.233,
+      "sourceEastingUsSurveyFeet": 910786.456,
+      "mark": "concrete monument with a brass disk stamped NICOLAS south of NW 27th Street"
+    },
+    {
+      "id": "HERMAN_AZMK",
+      "role": "final-holdout",
+      "sheetSha256": "304bbe5726bf40f97990b18bdcefeffdc2a75e06de10e8ccea02cf018ee188ed",
+      "sourceLatitudeDms": "N254858.491604",
+      "sourceLongitudeDms": "W0801524.674596",
+      "sourceNorthingUsSurveyFeet": 539596.0402,
+      "sourceEastingUsSurveyFeet": 900635.8749,
+      "mark": "brass disk stamped HERMAN AZIMUTH set in concrete near NW 46th Street and NW 37th Avenue"
+    }
+  ],
+  "excludedControls": [
+    {
+      "id": "PULSE",
+      "reason": "Sheet datum is labeled NAD83(1993); the exact realization mapping has not been established."
+    },
+    {
+      "id": "RR SPIKE",
+      "reason": "The mark is a railroad spike rather than a stamped disk or concrete monument, so durability and unique current recovery are weaker."
+    }
+  ],
+  "publication": {
+    "eligible": false,
+    "blockers": [
+      "NCAT_TRANSFORMS_NOT_YET_PRESERVED",
+      "COUNTY_CONTROL_ACCURACY_NOT_ESTABLISHED",
+      "CURRENT_MONUMENT_RECOVERY_NOT_ESTABLISHED",
+      "TRAINING_TRANSFORM_NOT_FROZEN",
+      "FINAL_HOLDOUTS_NOT_EVALUATED"
+    ]
+  }
+}

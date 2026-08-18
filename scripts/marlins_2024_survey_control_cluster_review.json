@@ -1,0 +1,86 @@
+{
+  "schemaVersion": 1,
+  "artifactKind": "marlins-2024-survey-control-cluster-review",
+  "artifactVersion": "sha256:f4d6d37bf13744c8d80dad72a4b64c25a14ce6521dee240684d2e94c0784b25d",
+  "reviewStatus": "locked-exploratory-one-axis-control-review",
+  "stadiumId": "marlins",
+  "coordinateReferenceSystem": {
+    "horizontal": "EPSG:6438",
+    "vertical": "NAVD88 Geoid18",
+    "linearUnit": "US survey foot"
+  },
+  "inputs": {
+    "surveyReport": {
+      "path": "tmp/lidar/marlins-usgs-fl-miamidade-d23/reports/FL_MiamiDade_D23_Survey_Report.pdf",
+      "sha256": "444aa1107193263a3897b895c7568896887d411943a5ef9a8d62306e98ac6d68"
+    },
+    "surveyPointsMetadata": {
+      "path": "tmp/lidar/marlins-usgs-fl-miamidade-d23/reports/FL_MiamiDade_D23_Survey_Points.xml",
+      "sha256": "b9e8fc13c41a4485573b3559a412dc7cf414de8b8a479aaf44db7cf45d5593a6"
+    },
+    "lidar": {
+      "path": "tmp/lidar/marlins-usgs-fl-miamidade-d23/USGS_LPC_FL_MiamiDade_D23_LID2024_318450_0901.laz",
+      "sha256": "95aa01776d224df20f0c61b20b95c3ab34ed811f7234ec31e363507e7b2c7543"
+    },
+    "orthophotoCrop": {
+      "path": "tmp/lidar/marlins-2025-woolpert-gs0071-0072-native.png",
+      "sha256": "1caad54633b43ae0ea3f79c6facb85275e46bccee46947308d82d9e8ba15ffbe"
+    },
+    "groundReviewImage": {
+      "path": "tmp/lidar/marlins-gs0071-0072-ground-review-2026-08-11.png",
+      "sha256": "cc279dbf02903f79d527155e2d23c64e760d6d525268352a9401e4bbfbad355f"
+    },
+    "orthophotoPlanFrameAudit": {
+      "path": "tmp/lidar/marlins-2025-orthophoto-current-geometry-audit-v1-2026.json",
+      "sha256": "8e85a88dd67f69830179ce10bb0e3b7b0818ae9910eacdd68ae2d719bbdba011",
+      "artifactVersion": "sha256:3e675d80dccdaa237f73827b871f3e53acf132a4077605b5c30a473cd7c7e11b"
+    }
+  },
+  "surveyControls": [
+    {
+      "pointId": "GS0071",
+      "sourceRole": "supplemental ground control",
+      "analysisRole": "training",
+      "eastingUsSurveyFeet": 918386.701,
+      "northingUsSurveyFeet": 527579.788,
+      "orthometricHeightUsSurveyFeet": 8.325,
+      "sampleRadiusUsSurveyFeet": 3.0
+    },
+    {
+      "pointId": "GS0072",
+      "sourceRole": "independent non-vegetated vertical accuracy checkpoint, urban terrain",
+      "analysisRole": "holdout",
+      "eastingUsSurveyFeet": 918384.512,
+      "northingUsSurveyFeet": 527643.161,
+      "orthometricHeightUsSurveyFeet": 8.458,
+      "sampleRadiusUsSurveyFeet": 3.0
+    }
+  ],
+  "crossTrackReview": {
+    "feature": "grass-side edge of the nearly north-south sidewalk",
+    "axis": "easting",
+    "training": {
+      "pointId": "GS0071",
+      "orthophotoEdgeEastingUsSurveyFeet": 918384.625,
+      "lidarEdgeEastingUsSurveyFeet": 918383.625
+    },
+    "diagnosticHoldout": {
+      "pointId": "GS0072",
+      "orthophotoEdgeEastingUsSurveyFeet": 918382.125,
+      "lidarEdgeEastingUsSurveyFeet": 918381.375
+    },
+    "selectionMethod": "manual review of orthophoto and class-2 LiDAR intensity cross-track profiles",
+    "edgeSelectionUncertainty95Feet": null,
+    "northingCorrespondenceIdentifiable": false,
+    "orientationIdentifiable": false,
+    "holdoutBlindLockedBeforeInspection": false
+  },
+  "limitations": [
+    "The survey points are tripod locations on continuous surfaces, not visible permanent horizontal monuments.",
+    "The reviewed sidewalk edge constrains easting only.",
+    "Automated northing registration was unstable and repeatedly reached the search boundary.",
+    "The horizontal diagnostic holdout was inspected before this lock and is not a strict final holdout.",
+    "The point-sheet coordinate labels say meters, while the report coordinate-system sections and metadata specify US survey feet. Values are interpreted as US survey feet."
+  ],
+  "publicationEligible": false
+}

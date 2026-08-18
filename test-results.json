@@ -1,7 +1,17 @@
 {
   "config": {
-    "configFile": "/Users/sygrovefamily/mlb-sun-tracker/playwright.config.ts",
-    "rootDir": "/Users/sygrovefamily/mlb-sun-tracker/tests",
+    "argv": [
+      "/usr/local/bin/node",
+      "/Users/colinai/projects/mlb-sun-tracker/node_modules/.bin/playwright",
+      "test",
+      "tests/a11y-local.spec.ts",
+      "tests/trust-boundary-local.spec.ts",
+      "tests/visual-local.spec.ts",
+      "--project=chromium"
+    ],
+    "configFile": "/Users/colinai/projects/mlb-sun-tracker/playwright.config.ts",
+    "rootDir": "/Users/colinai/projects/mlb-sun-tracker/tests",
+    "failOnFlakyTests": false,
     "forbidOnly": false,
     "fullyParallel": true,
     "globalSetup": null,
@@ -11,9 +21,92 @@
     "grepInvert": null,
     "maxFailures": 0,
     "metadata": {
-      "actualWorkers": 4
+      "actualWorkers": 5
     },
     "preserveOutput": "always",
+    "projects": [
+      {
+        "outputDir": "/Users/colinai/projects/mlb-sun-tracker/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 5
+        },
+        "id": "chromium",
+        "name": "chromium",
+        "testDir": "/Users/colinai/projects/mlb-sun-tracker/tests",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 30000
+      },
+      {
+        "outputDir": "/Users/colinai/projects/mlb-sun-tracker/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 5
+        },
+        "id": "firefox",
+        "name": "firefox",
+        "testDir": "/Users/colinai/projects/mlb-sun-tracker/tests",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 30000
+      },
+      {
+        "outputDir": "/Users/colinai/projects/mlb-sun-tracker/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 5
+        },
+        "id": "webkit",
+        "name": "webkit",
+        "testDir": "/Users/colinai/projects/mlb-sun-tracker/tests",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 30000
+      },
+      {
+        "outputDir": "/Users/colinai/projects/mlb-sun-tracker/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 5
+        },
+        "id": "Mobile Chrome",
+        "name": "Mobile Chrome",
+        "testDir": "/Users/colinai/projects/mlb-sun-tracker/tests",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 30000
+      },
+      {
+        "outputDir": "/Users/colinai/projects/mlb-sun-tracker/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 5
+        },
+        "id": "Mobile Safari",
+        "name": "Mobile Safari",
+        "testDir": "/Users/colinai/projects/mlb-sun-tracker/tests",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 30000
+      }
+    ],
+    "quiet": false,
     "reporter": [
       [
         "html",
@@ -34,94 +127,12 @@
       "max": 5,
       "threshold": 300000
     },
-    "quiet": false,
-    "projects": [
-      {
-        "outputDir": "/Users/sygrovefamily/mlb-sun-tracker/test-results",
-        "repeatEach": 1,
-        "retries": 0,
-        "metadata": {
-          "actualWorkers": 4
-        },
-        "id": "chromium",
-        "name": "chromium",
-        "testDir": "/Users/sygrovefamily/mlb-sun-tracker/tests",
-        "testIgnore": [],
-        "testMatch": [
-          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
-        ],
-        "timeout": 30000
-      },
-      {
-        "outputDir": "/Users/sygrovefamily/mlb-sun-tracker/test-results",
-        "repeatEach": 1,
-        "retries": 0,
-        "metadata": {
-          "actualWorkers": 4
-        },
-        "id": "firefox",
-        "name": "firefox",
-        "testDir": "/Users/sygrovefamily/mlb-sun-tracker/tests",
-        "testIgnore": [],
-        "testMatch": [
-          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
-        ],
-        "timeout": 30000
-      },
-      {
-        "outputDir": "/Users/sygrovefamily/mlb-sun-tracker/test-results",
-        "repeatEach": 1,
-        "retries": 0,
-        "metadata": {
-          "actualWorkers": 4
-        },
-        "id": "webkit",
-        "name": "webkit",
-        "testDir": "/Users/sygrovefamily/mlb-sun-tracker/tests",
-        "testIgnore": [],
-        "testMatch": [
-          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
-        ],
-        "timeout": 30000
-      },
-      {
-        "outputDir": "/Users/sygrovefamily/mlb-sun-tracker/test-results",
-        "repeatEach": 1,
-        "retries": 0,
-        "metadata": {
-          "actualWorkers": 4
-        },
-        "id": "Mobile Chrome",
-        "name": "Mobile Chrome",
-        "testDir": "/Users/sygrovefamily/mlb-sun-tracker/tests",
-        "testIgnore": [],
-        "testMatch": [
-          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
-        ],
-        "timeout": 30000
-      },
-      {
-        "outputDir": "/Users/sygrovefamily/mlb-sun-tracker/test-results",
-        "repeatEach": 1,
-        "retries": 0,
-        "metadata": {
-          "actualWorkers": 4
-        },
-        "id": "Mobile Safari",
-        "name": "Mobile Safari",
-        "testDir": "/Users/sygrovefamily/mlb-sun-tracker/tests",
-        "testIgnore": [],
-        "testMatch": [
-          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
-        ],
-        "timeout": 30000
-      }
-    ],
     "shard": null,
+    "tags": [],
     "updateSnapshots": "missing",
     "updateSourceMethod": "patch",
-    "version": "1.55.0",
-    "workers": 4,
+    "version": "1.62.1",
+    "workers": 5,
     "webServer": {
       "command": "npm run dev",
       "url": "http://localhost:3000",
@@ -162,12 +173,12 @@
                       "workerIndex": 0,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 3322,
+                      "duration": 2677,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2025-10-08T01:30:57.137Z",
+                      "startTime": "2026-08-08T03:59:01.936Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -196,7 +207,7 @@
                       "workerIndex": 1,
                       "parallelIndex": 1,
                       "status": "passed",
-                      "duration": 11669,
+                      "duration": 7255,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
@@ -204,30 +215,30 @@
                       "steps": [
                         {
                           "title": "Testing contrast on /",
-                          "duration": 2739
+                          "duration": 1996
                         },
                         {
                           "title": "Testing contrast on /stadiums",
-                          "duration": 3790
+                          "duration": 1210
                         },
                         {
                           "title": "Testing contrast on /league/mlb",
-                          "duration": 1118
+                          "duration": 1236
                         },
                         {
                           "title": "Testing contrast on /seats-shade-finder",
-                          "duration": 1575
+                          "duration": 868
                         },
                         {
                           "title": "Testing contrast on /guide",
-                          "duration": 982
+                          "duration": 832
                         },
                         {
                           "title": "Testing contrast on /faq",
-                          "duration": 1259
+                          "duration": 792
                         }
                       ],
-                      "startTime": "2025-10-08T01:30:57.141Z",
+                      "startTime": "2026-08-08T03:59:01.933Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -256,12 +267,12 @@
                       "workerIndex": 2,
                       "parallelIndex": 2,
                       "status": "passed",
-                      "duration": 2890,
+                      "duration": 1933,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2025-10-08T01:30:57.143Z",
+                      "startTime": "2026-08-08T03:59:01.955Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -290,12 +301,12 @@
                       "workerIndex": 3,
                       "parallelIndex": 3,
                       "status": "passed",
-                      "duration": 2486,
+                      "duration": 2596,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2025-10-08T01:30:57.137Z",
+                      "startTime": "2026-08-08T03:59:01.917Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -321,15 +332,15 @@
                   "projectName": "chromium",
                   "results": [
                     {
-                      "workerIndex": 3,
-                      "parallelIndex": 3,
+                      "workerIndex": 4,
+                      "parallelIndex": 4,
                       "status": "passed",
-                      "duration": 3120,
+                      "duration": 1979,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2025-10-08T01:31:00.919Z",
+                      "startTime": "2026-08-08T03:59:01.937Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -358,12 +369,12 @@
                       "workerIndex": 2,
                       "parallelIndex": 2,
                       "status": "passed",
-                      "duration": 2594,
+                      "duration": 1109,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2025-10-08T01:31:01.399Z",
+                      "startTime": "2026-08-08T03:59:04.188Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -379,13 +390,253 @@
           ]
         }
       ]
+    },
+    {
+      "title": "trust-boundary-local.spec.ts",
+      "file": "trust-boundary-local.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [],
+      "suites": [
+        {
+          "title": "MLB shade trust boundary (production runtime)",
+          "file": "trust-boundary-local.spec.ts",
+          "line": 3,
+          "column": 6,
+          "specs": [
+            {
+              "title": "renders the remote-measurement disclosure without browser failures",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 4,
+                      "parallelIndex": 4,
+                      "status": "passed",
+                      "duration": 1337,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-08-08T03:59:04.247Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "c840dcce22962e351d1c-0cc373c900dee2688494",
+              "file": "trust-boundary-local.spec.ts",
+              "line": 4,
+              "column": 7
+            },
+            {
+              "title": "withholds precise 2D and 3D API payloads for every unvalidated park",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 3,
+                      "parallelIndex": 3,
+                      "status": "passed",
+                      "duration": 56,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-08-08T03:59:04.843Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "c840dcce22962e351d1c-41affc045aa48f46d8ff",
+              "file": "trust-boundary-local.spec.ts",
+              "line": 42,
+              "column": 7
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "visual-local.spec.ts",
+      "file": "visual-local.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [],
+      "suites": [
+        {
+          "title": "Visual Overflow Tests (Local)",
+          "file": "visual-local.spec.ts",
+          "line": 3,
+          "column": 6,
+          "specs": [
+            {
+              "title": "no horizontal overflow at mobile viewport",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 3,
+                      "parallelIndex": 3,
+                      "status": "passed",
+                      "duration": 11997,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "steps": [
+                        {
+                          "title": "Testing /",
+                          "duration": 883
+                        },
+                        {
+                          "title": "Testing /league/mlb",
+                          "duration": 882
+                        },
+                        {
+                          "title": "Testing /league/nfl",
+                          "duration": 885
+                        },
+                        {
+                          "title": "Testing /league/milb",
+                          "duration": 885
+                        },
+                        {
+                          "title": "Testing /seats-shade-finder",
+                          "duration": 631
+                        },
+                        {
+                          "title": "Testing /stadiums",
+                          "duration": 580
+                        },
+                        {
+                          "title": "Testing /guide",
+                          "duration": 570
+                        },
+                        {
+                          "title": "Testing /faq",
+                          "duration": 589
+                        },
+                        {
+                          "title": "Testing /blog",
+                          "duration": 601
+                        },
+                        {
+                          "title": "Testing /contact",
+                          "duration": 578
+                        },
+                        {
+                          "title": "Testing /privacy",
+                          "duration": 598
+                        },
+                        {
+                          "title": "Testing /terms",
+                          "duration": 574
+                        },
+                        {
+                          "title": "Testing /guide/how-to-find-shaded-seats",
+                          "duration": 578
+                        },
+                        {
+                          "title": "Testing /guide/best-shaded-seats-mlb",
+                          "duration": 577
+                        },
+                        {
+                          "title": "Testing /guide/avoid-sun-baseball-games",
+                          "duration": 577
+                        },
+                        {
+                          "title": "Testing /stadium/yankees",
+                          "duration": 956
+                        },
+                        {
+                          "title": "Testing /stadium/dodgers",
+                          "duration": 936
+                        }
+                      ],
+                      "startTime": "2026-08-08T03:59:04.920Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "45f1badc6d8d56ccf599-bbcd08ad923cc7c47853",
+              "file": "visual-local.spec.ts",
+              "line": 4,
+              "column": 7
+            },
+            {
+              "title": "no text overflow in cards and headers",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 994,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-08-08T03:59:04.927Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "45f1badc6d8d56ccf599-8c17ccf2925feaec1954",
+              "file": "visual-local.spec.ts",
+              "line": 72,
+              "column": 7
+            }
+          ]
+        }
+      ]
     }
   ],
   "errors": [],
   "stats": {
-    "startTime": "2025-10-08T01:30:56.402Z",
-    "duration": 13774.853000000001,
-    "expected": 6,
+    "startTime": "2026-08-08T03:59:01.568Z",
+    "duration": 15381.423,
+    "expected": 10,
     "skipped": 0,
     "unexpected": 0,
     "flaky": 0
