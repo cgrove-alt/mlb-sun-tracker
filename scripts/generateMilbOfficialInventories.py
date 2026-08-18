@@ -896,6 +896,48 @@ OVERRIDES = {
             {"id": "syracuse-315-bullpen-bar", "name": "315 Bullpen Bar", "level": "standing", "compassOffset": 50, "span": 10},
         ],
     },
+    "myrtle-beach-pelicans": {
+        "officialUrl": "https://www.milb.com/myrtle-beach/ballpark/seating-map",
+        "geometryUrl": "https://img.mlbstatic.com/milb-images/image/upload/t_w2208/milb/fk1qgjguidg1onqxycmk.jpg",
+        "notes": "Pelicans Ballpark official seating chart: lower 102-107, 109-111, 113-117 (101/108/112 not labeled), High Tide 206-214, Budweiser Bowtie outfield 301-304, plus Pepsi Pavilion, D.N. Mason Roofing Field Suite, Sun Cruiser Beach, Shelby Rally Deck, and Suite Level.",
+        "bands": [
+            {
+                "ids": ["102", "103", "104", "105", "106", "107", "109", "110", "111", "113", "114", "115", "116", "117"],
+                "level": "lower",
+                "namePrefix": "Section",
+            },
+            {"ids": [str(n) for n in range(206, 215)], "level": "upper", "namePrefix": "Section", "startOffset": 120, "endOffset": 240},
+            {"ids": ["301", "302", "303", "304"], "level": "field", "namePrefix": "Outfield Deck", "startOffset": 40, "endOffset": 80},
+        ],
+        "named": [
+            {"id": "myrtle-beach-pepsi-pavilion", "name": "Pepsi Pavilion", "level": "standing", "compassOffset": 280, "span": 16},
+            {"id": "myrtle-beach-field-suite", "name": "D.N. Mason Roofing Field Suite", "level": "suite", "compassOffset": 90, "span": 10},
+            {"id": "myrtle-beach-sun-cruiser-beach", "name": "Sun Cruiser Beach", "level": "standing", "compassOffset": 30, "span": 14},
+            {"id": "myrtle-beach-shelby-rally-deck", "name": "The Shelby Rally Deck", "level": "club", "compassOffset": 50, "span": 12},
+            {"id": "myrtle-beach-suite-level", "name": "Suite Level", "level": "suite", "compassOffset": 180, "span": 20},
+        ],
+    },
+    "great-lakes-loons": {
+        "officialUrl": "https://www.milb.com/great-lakes/ballpark/seating-chart",
+        "geometryUrl": "https://img.mlbstatic.com/milb-images/image/upload/t_w2208/milb/uvwrhttqmqxiz9rmrhod.jpg",
+        "notes": "Dow Diamond official seating chart: reserved 101-113, Shoreline Box, The Dock, nightly suites 1-12, Tri-Star Club Level, Lasorda's Landing, Pier 47, Northern Lights Pavilion, The Peninsula, Lawn, Lou E's Lookout, and The Cove Bar.",
+        "bands": [
+            {"ids": [str(n) for n in range(101, 114)], "level": "lower", "namePrefix": "Section"},
+            {"ids": [str(n) for n in range(1, 13)], "level": "suite", "namePrefix": "Suite", "startOffset": 100, "endOffset": 260},
+        ],
+        "named": [
+            {"id": "great-lakes-shoreline-box", "name": "Shoreline Box", "level": "field", "compassOffset": 90, "span": 14},
+            {"id": "great-lakes-the-dock", "name": "The Dock", "level": "field", "compassOffset": 180, "span": 10},
+            {"id": "great-lakes-tri-star-club", "name": "Tri-Star Club Level", "level": "club", "compassOffset": 180, "span": 14},
+            {"id": "great-lakes-lasordas-landing", "name": "Lasorda's Landing", "level": "club", "compassOffset": 70, "span": 10},
+            {"id": "great-lakes-pier-47", "name": "Pier 47", "level": "club", "compassOffset": 270, "span": 12},
+            {"id": "great-lakes-northern-lights-pavilion", "name": "Northern Lights Pavilion", "level": "standing", "compassOffset": 40, "span": 18},
+            {"id": "great-lakes-the-peninsula", "name": "The Peninsula", "level": "standing", "compassOffset": 320, "span": 12},
+            {"id": "great-lakes-lawn", "name": "Lawn Seating", "level": "standing", "compassOffset": 0, "span": 40},
+            {"id": "great-lakes-lou-es-lookout", "name": "Lou E's Lookout", "level": "standing", "compassOffset": 300, "span": 10},
+            {"id": "great-lakes-cove-bar", "name": "The Cove Bar", "level": "standing", "compassOffset": 250, "span": 8},
+        ],
+    },
 }
 
 

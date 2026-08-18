@@ -70,6 +70,8 @@ export const SOURCE_BACKED_INVENTORY_STADIUMS: ReadonlySet<string> = new Set([
   'salem-red-sox',
   'somerset-patriots',
   'st-paul-saints', 'syracuse-mets', 'toledo-mud-hens', 'vancouver-canadians',
+  'myrtle-beach-pelicans',
+  'great-lakes-loons',
   'worcester-red-sox',
 ]);
 
