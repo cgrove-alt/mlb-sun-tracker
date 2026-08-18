@@ -376,6 +376,66 @@ OVERRIDES = {
         ],
         "named": [],
     },
+    "charlotte-knights": {
+        "officialUrl": "https://www.milb.com/charlotte-knights/tickets/season-memberships",
+        "notes": "Truist Field season-membership and group pages: Field Box 101-108 and 114-122, Home Plate Club 109-113, club 202-205, Home Run HR1-HR7, Home Run Porch SRO.",
+        "bands": [
+            {"ids": [str(n) for n in range(101, 123)], "level": "lower", "namePrefix": "Section"},
+            {"ids": ["202", "203", "204", "205"], "level": "club", "namePrefix": "Club", "startOffset": 160, "endOffset": 200},
+            {"ids": ["HR1", "HR2", "HR3", "HR4", "HR5", "HR6", "HR7"], "level": "field", "namePrefix": "Home Run", "startOffset": 20, "endOffset": 70},
+        ],
+        "named": [
+            {"id": "home-run-porch", "name": "Home Run Porch", "level": "standing", "compassOffset": 0, "span": 20},
+            {"id": "budweiser-home-plate-club", "name": "Budweiser Home Plate Club", "level": "club", "compassOffset": 180, "span": 14},
+        ],
+    },
+    "gwinnett-stripers": {
+        "officialUrl": "https://www.milb.com/gwinnett/ballpark/seating-map",
+        "geometryUrl": "https://img.mlbstatic.com/milb-images/image/upload/milb/uwaomcxntbcjpi8nmwgt.pdf",
+        "notes": "Gwinnett Field official seating PDF: Homeplate Club 1-7, reserve 100-102, infield 103-106, dugout 107-114, RF 115/117/119/121, LF 116/118/120/122, suites 1-19, Super Suite, berm, party docks, Coca-Cola Front Porch.",
+        "bands": [
+            {"ids": ["1", "2", "3", "4", "5", "6", "7"], "level": "field", "namePrefix": "Homeplate Club"},
+            {"ids": [str(n) for n in range(100, 123)], "level": "lower", "namePrefix": "Section"},
+        ],
+        "named": [
+            {"id": "the-berm", "name": "The Berm", "level": "standing", "compassOffset": 0, "span": 40},
+            {"id": "first-base-party-dock", "name": "First Base Party Dock", "level": "club", "compassOffset": 40, "span": 12},
+            {"id": "third-base-party-dock", "name": "Third Base Party Dock", "level": "club", "compassOffset": 250, "span": 12},
+            {"id": "coca-cola-front-porch", "name": "Coca-Cola Front Porch", "level": "club", "compassOffset": 180, "span": 12},
+            {"id": "super-suite", "name": "Super Suite", "level": "suite", "compassOffset": 50, "span": 10},
+        ],
+    },
+    "columbus-clippers": {
+        "officialUrl": "https://www.milb.com/columbus/ballpark/a-z-guide",
+        "notes": "Huntington Park A-Z guide: reserved 1-3 and 21-25, box 4-9 and 15-20, home/club 10-14, bleachers 27-31, Loge A-E. Picnic terrace sits in the published gap at 26.",
+        "bands": [
+            {"ids": [str(n) for n in list(range(1, 26)) + list(range(27, 32))], "level": "lower", "namePrefix": "Section"},
+        ],
+        "named": [
+            {"id": "loge-a", "name": "Loge A", "level": "club", "compassOffset": 170, "span": 8},
+            {"id": "loge-b", "name": "Loge B", "level": "club", "compassOffset": 178, "span": 8},
+            {"id": "loge-c", "name": "Loge C", "level": "club", "compassOffset": 186, "span": 8},
+            {"id": "loge-d", "name": "Loge D", "level": "club", "compassOffset": 194, "span": 8},
+            {"id": "loge-e", "name": "Loge E", "level": "club", "compassOffset": 202, "span": 8},
+            {"id": "tansky-club", "name": "Tansky Club", "level": "club", "compassOffset": 180, "span": 12},
+            {"id": "aep-power-pavilion", "name": "AEP Power Pavilion", "level": "standing", "compassOffset": 270, "span": 16},
+            {"id": "picnic-terrace", "name": "Picnic Terrace", "level": "standing", "compassOffset": 250, "span": 14},
+            {"id": "pedialyte-porch", "name": "Pedialyte Porch", "level": "standing", "compassOffset": 40, "span": 14},
+        ],
+    },
+    "worcester-red-sox": {
+        "officialUrl": "https://www.milb.com/worcester/ballpark/accessibility",
+        "notes": "Polar Park accessibility + fan guide list field 2-6, 8-13, 16; Worcester Wall 101; DCU Club 202, 206, 207; UDG Berm. Other numbered products are not invented.",
+        "inventoryStatus": "partial",
+        "bands": [
+            {"ids": ["2", "3", "4", "5", "6", "8", "9", "10", "11", "12", "13", "16"], "level": "field", "namePrefix": "Section"},
+            {"ids": ["101"], "level": "lower", "namePrefix": "Worcester Wall", "startOffset": 250, "endOffset": 270},
+            {"ids": ["202", "206", "207"], "level": "club", "namePrefix": "DCU Club", "startOffset": 160, "endOffset": 210},
+        ],
+        "named": [
+            {"id": "udg-berm", "name": "University Dental Group Berm", "level": "standing", "compassOffset": 0, "span": 28},
+        ],
+    },
     "indianapolis-indians": {
         "officialUrl": "https://www.milb.com/indianapolis/ballpark/faq",
         "notes": "Victory Field FAQ publishes box 105-119 (last four rows shade first on the 3B side). Pricing page adds Lawn, The Landing, Elements Financial Club, and Knot Hole. Reserved IDs outside 105-119 are not invented.",
