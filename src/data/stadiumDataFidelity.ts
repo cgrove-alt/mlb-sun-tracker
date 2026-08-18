@@ -65,7 +65,8 @@ export const SOURCE_BACKED_INVENTORY_STADIUMS: ReadonlySet<string> = new Set([
   'richmond-flying-squirrels',
   'rocket-city-trash-pandas', 'sacramento-river-cats', 'salem-red-sox',
   'somerset-patriots',
-  'st-paul-saints', 'toledo-mud-hens', 'worcester-red-sox',
+  'st-paul-saints', 'toledo-mud-hens', 'vancouver-canadians',
+  'worcester-red-sox',
 ]);
 
 function stdev(xs: number[]): number {

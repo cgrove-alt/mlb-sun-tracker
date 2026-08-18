@@ -725,6 +725,16 @@ OVERRIDES = {
             {"id": "hartford-dugout-suites", "name": "Dugout Suites", "level": "suite", "compassOffset": 140, "span": 12},
         ],
     },
+    "vancouver-canadians": {
+        "officialUrl": "https://www.milb.com/vancouver/ballpark/a-z-guide",
+        "notes": "Nat Bailey Stadium A-Z: Reserved Grandstand 1-15; box first six rows in A-B, E-J, and O-W. Netting copy names endpoints A-R and reserved 2-8; letters C-D and K-N are not invented from that span.",
+        "inventoryStatus": "partial",
+        "bands": [
+            {"ids": ["A", "B", "E", "F", "G", "H", "I", "J", "O", "P", "Q", "R", "S", "T", "U", "V", "W"], "level": "field", "namePrefix": "Box"},
+            {"ids": [str(n) for n in range(1, 16)], "level": "lower", "namePrefix": "Reserved Grandstand", "startOffset": 74, "endOffset": 286},
+        ],
+        "named": [],
+    },
 }
 
 
