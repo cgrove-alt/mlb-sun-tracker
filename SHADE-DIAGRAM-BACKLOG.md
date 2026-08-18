@@ -32,11 +32,18 @@ below — do NOT re-enable the diagram for a league until its item is complete a
   Still do **not** publish section % — generic rings plus unmeasured bowl geometry.
 
 ### 3. MiLB — build real per-venue section layouts (blocking)
-- **Problem:** MiLB sections come from `generateBaseballSections`, a single generic template
-  emitted identically for all 120 venues; positions are not measured. Orientations are also
-  mostly shared defaults (28 unique across 120).
-- **Work:** author per-venue MiLB section geometry (angular position + coverage) like the
-  MLB `stadiumSections-split/*` files, and measure per-venue orientations.
+- **Orientations (done 2026-08-18):** every MiLB id has a row in
+  `milbOrientationProvenance.ts`. Coordinates were re-pinned to the current 2026 home
+  (MLB Stats API / Wikipedia / Nominatim) — leftover venueIds still pointed at Kodak
+  Smokies Stadium, Smith's Ballpark, Trustmark Park, Polar Park-as-DCU-Center, and
+  Coolray-as-airport. HP→CF was read from north-up Esri tiles; Clem / Harbor Park /
+  First Horizon published bearings lock the verified AAA subset. `0°` remains only
+  where CF actually faces north (Syracuse, Rome, Lansing).
+- **Still blocking diagrams:** MiLB sections still come from `generateBaseballSections`,
+  a single generic template emitted identically for all 120 venues. Do **not** publish
+  section % — orientations only fix FAQ / OG shade-side copy.
+- **Work remaining:** author per-venue MiLB section geometry (angular position + coverage)
+  like the MLB `stadiumSections-split/*` files.
 - **Done when:** MiLB venues have real, non-template sections + measured orientation; the
   `baseAngle/angleSpan` coverage script passes with real (not generated) data.
 

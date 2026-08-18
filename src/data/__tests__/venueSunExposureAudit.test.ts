@@ -20,6 +20,7 @@ import { ALL_UNIFIED_VENUES } from '../unifiedVenues';
 import { canPublishVenueSeatShade } from '../stadiumShadeConfidence';
 import { MLB_ORIENTATION_PROVENANCE, getOrientationProvenance } from '../stadiumOrientationProvenance';
 import { NFL_ORIENTATION_PROVENANCE } from '../nflOrientationProvenance';
+import { MILB_ORIENTATION_PROVENANCE } from '../milbOrientationProvenance';
 import { SunCalculator } from '../../utils/sunCalculator';
 import { getUnifiedVenueShade } from '../../utils/getUnifiedVenueShade';
 import {
@@ -110,6 +111,19 @@ describe('every venue has a consistent, valid shade-input record', () => {
     const ids = NFL_ORIENTATION_PROVENANCE.map((p) => p.stadiumId);
     expect(new Set(ids).size).toBe(32);
     for (const stadium of NFL_STADIUMS) {
+      const provenance = getOrientationProvenance(stadium.id);
+      expect(provenance).toBeDefined();
+      expect(provenance!.orientation).toBe(stadium.orientation);
+      expect(provenance!.precisionDeg).toBeDefined();
+      expect(provenance!.sources?.length).toBeGreaterThan(0);
+    }
+  });
+
+  it('keeps MiLB HP→CF provenance in lockstep with milbStadiums.ts', () => {
+    expect(MILB_ORIENTATION_PROVENANCE).toHaveLength(120);
+    const ids = MILB_ORIENTATION_PROVENANCE.map((p) => p.stadiumId);
+    expect(new Set(ids).size).toBe(120);
+    for (const stadium of ALL_MILB_STADIUMS) {
       const provenance = getOrientationProvenance(stadium.id);
       expect(provenance).toBeDefined();
       expect(provenance!.orientation).toBe(stadium.orientation);
