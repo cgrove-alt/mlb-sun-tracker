@@ -52,12 +52,14 @@ export const SOURCE_BACKED_INVENTORY_STADIUMS: ReadonlySet<string> = new Set([
   'metlife-stadium-giants', 'metlife-stadium-jets', 'nissan-stadium', 'northwest-stadium',
   'nrg-stadium', 'paycor-stadium', 'raymond-james-stadium', 'sofi-stadium-chargers',
   'sofi-stadium-rams', 'soldier-field', 'state-farm-stadium', 'us-bank-stadium',
+  'birmingham-barons',
   'buffalo-bisons', 'charlotte-knights', 'columbus-clippers', 'dayton-dragons',
   'durham-bulls', 'erie-seawolves', 'frisco-roughriders', 'gwinnett-stripers',
   'indianapolis-indians', 'iowa-cubs', 'jacksonville-jumbo-shrimp',
   'las-vegas-aviators', 'louisville-bats', 'memphis-redbirds',
-  'montgomery-biscuits', 'nashville-sounds', 'norfolk-tides',
-  'oklahoma-city-dodgers', 'salem-red-sox', 'somerset-patriots',
+  'montgomery-biscuits', 'nashville-sounds', 'new-hampshire-fisher-cats',
+  'norfolk-tides', 'oklahoma-city-dodgers', 'richmond-flying-squirrels',
+  'rocket-city-trash-pandas', 'salem-red-sox', 'somerset-patriots',
   'st-paul-saints', 'toledo-mud-hens', 'worcester-red-sox',
 ]);
 

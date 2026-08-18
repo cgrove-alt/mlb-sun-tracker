@@ -1,6 +1,22 @@
 import type { OfficialInventory } from '../officialTypes';
 
 export const MILB_OFFICIAL_INVENTORIES: Record<string, OfficialInventory> = {
+  "birmingham-barons": {
+    stadiumId: "birmingham-barons",
+    league: 'MiLB',
+    orientation: 58,
+    angleConvention: 'baseball-local',
+    sourceKind: "official-static-chart",
+    officialUrl: "https://www.milb.com/birmingham/tickets/season-tickets",
+    inventoryNotes: "Regions Field season-ticket copy: Baseline Box 101-102 and 114-119, Dugout Premium 103-105 and 111-113, Field Reserved 106-110. Batter's Box and Pearl Club are named products. Numbers outside 101-119 are not invented.",
+    bands: [
+      { ids: ["101", "102", "103", "104", "105", "106", "107", "108", "109", "110", "111", "112", "113", "114", "115", "116", "117", "118", "119"], level: "lower", namePrefix: "Section" },
+    ],
+    named: [
+      { id: "birmingham-batters-box", name: "Batter's Box", level: "club", compassOffset: 180, span: 10 },
+      { id: "pearl-club", name: "Pearl Club", level: "club", compassOffset: 180, span: 14 },
+    ],
+  },
   "buffalo-bisons": {
     stadiumId: "buffalo-bisons",
     league: 'MiLB',
@@ -277,6 +293,19 @@ export const MILB_OFFICIAL_INVENTORIES: Record<string, OfficialInventory> = {
       { id: "vanderbilt-health-picnic-place", name: "Vanderbilt Health Picnic Place", level: "standing", compassOffset: 320, span: 16 },
     ],
   },
+  "new-hampshire-fisher-cats": {
+    stadiumId: "new-hampshire-fisher-cats",
+    league: 'MiLB',
+    orientation: 45,
+    angleConvention: 'baseball-local',
+    sourceKind: "official-static-chart",
+    officialUrl: "https://www.milb.com/new-hampshire/tickets/group-outings",
+    inventoryNotes: "Delta Dental Stadium group pricing publishes reserved 102, 103-104/114-115, 105-106/112-113, and 107-111. Section 101 and IDs past 115 are not invented.",
+    bands: [
+      { ids: ["102", "103", "104", "105", "106", "107", "108", "109", "110", "111", "112", "113", "114", "115"], level: "lower", namePrefix: "Section" },
+    ],
+    named: [],
+  },
   "norfolk-tides": {
     stadiumId: "norfolk-tides",
     league: 'MiLB',
@@ -304,6 +333,44 @@ export const MILB_OFFICIAL_INVENTORIES: Record<string, OfficialInventory> = {
     ],
     named: [
       { id: "oklahoma-city-lawn", name: "Lawn", level: "standing", compassOffset: 0, span: 28 },
+    ],
+  },
+  "richmond-flying-squirrels": {
+    stadiumId: "richmond-flying-squirrels",
+    league: 'MiLB',
+    orientation: 98,
+    angleConvention: 'baseball-local',
+    sourceKind: "official-static-chart",
+    officialUrl: "https://www.milb.com/richmond/ballpark/a-z",
+    inventoryNotes: "CarMax Park A-Z: drink-rail seats at the top of reserved 101-118. Knot Hole bleachers, Bon Secours Lawn, Legacy Club, The Patio past 101, and The Yard Club.",
+    bands: [
+      { ids: ["101", "102", "103", "104", "105", "106", "107", "108", "109", "110", "111", "112", "113", "114", "115", "116", "117", "118"], level: "lower", namePrefix: "Section" },
+    ],
+    named: [
+      { id: "richmond-knot-hole", name: "The Knot Hole", level: "standing", compassOffset: 0, span: 20 },
+      { id: "richmond-lawn", name: "Bon Secours Lawn", level: "standing", compassOffset: 20, span: 18 },
+      { id: "richmond-legacy-club", name: "Legacy Club", level: "club", compassOffset: 180, span: 14 },
+      { id: "richmond-patio", name: "The Patio", level: "club", compassOffset: 250, span: 12 },
+      { id: "richmond-yard-club", name: "The Yard Club", level: "club", compassOffset: 40, span: 10 },
+    ],
+  },
+  "rocket-city-trash-pandas": {
+    stadiumId: "rocket-city-trash-pandas",
+    league: 'MiLB',
+    orientation: 65,
+    angleConvention: 'baseball-local',
+    sourceKind: "official-static-chart",
+    officialUrl: "https://www.milb.com/rocket-city/ballpark/guide",
+    inventoryNotes: "Toyota Field A-Z SECTIONS: 1-5 first base, 6-10 home (netted), 11-18 third base. ADA also publishes club 22 and 26. Rock Porch, Berm, SportsMED Stadium Club, and Four Tops. 19-21 and 23-25 are not invented.",
+    bands: [
+      { ids: ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18"], level: "lower", namePrefix: "Section" },
+      { ids: ["22", "26"], level: "club", namePrefix: "Club", startOffset: 160, endOffset: 200 },
+    ],
+    named: [
+      { id: "rocket-city-berm", name: "Berm", level: "standing", compassOffset: 0, span: 28 },
+      { id: "rock-porch", name: "Rock Porch", level: "standing", compassOffset: 40, span: 16 },
+      { id: "sportsmed-stadium-club", name: "SportsMED Stadium Club", level: "club", compassOffset: 150, span: 14 },
+      { id: "rocket-city-four-tops", name: "Four Tops", level: "club", compassOffset: 90, span: 12 },
     ],
   },
   "salem-red-sox": {

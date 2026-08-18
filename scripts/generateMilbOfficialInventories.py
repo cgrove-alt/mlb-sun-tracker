@@ -542,6 +542,54 @@ OVERRIDES = {
             {"id": "memphis-owners-seats", "name": "Owner's Seats", "level": "club", "compassOffset": 180, "span": 10},
         ],
     },
+    "birmingham-barons": {
+        "officialUrl": "https://www.milb.com/birmingham/tickets/season-tickets",
+        "notes": "Regions Field season-ticket copy: Baseline Box 101-102 and 114-119, Dugout Premium 103-105 and 111-113, Field Reserved 106-110. Batter's Box and Pearl Club are named products. Numbers outside 101-119 are not invented.",
+        "bands": [
+            {"ids": [str(n) for n in range(101, 120)], "level": "lower", "namePrefix": "Section"},
+        ],
+        "named": [
+            {"id": "birmingham-batters-box", "name": "Batter's Box", "level": "club", "compassOffset": 180, "span": 10},
+            {"id": "pearl-club", "name": "Pearl Club", "level": "club", "compassOffset": 180, "span": 14},
+        ],
+    },
+    "richmond-flying-squirrels": {
+        "officialUrl": "https://www.milb.com/richmond/ballpark/a-z",
+        "notes": "CarMax Park A-Z: drink-rail seats at the top of reserved 101-118. Knot Hole bleachers, Bon Secours Lawn, Legacy Club, The Patio past 101, and The Yard Club.",
+        "bands": [
+            {"ids": [str(n) for n in range(101, 119)], "level": "lower", "namePrefix": "Section"},
+        ],
+        "named": [
+            {"id": "richmond-knot-hole", "name": "The Knot Hole", "level": "standing", "compassOffset": 0, "span": 20},
+            {"id": "richmond-lawn", "name": "Bon Secours Lawn", "level": "standing", "compassOffset": 20, "span": 18},
+            {"id": "richmond-legacy-club", "name": "Legacy Club", "level": "club", "compassOffset": 180, "span": 14},
+            {"id": "richmond-patio", "name": "The Patio", "level": "club", "compassOffset": 250, "span": 12},
+            {"id": "richmond-yard-club", "name": "The Yard Club", "level": "club", "compassOffset": 40, "span": 10},
+        ],
+    },
+    "rocket-city-trash-pandas": {
+        "officialUrl": "https://www.milb.com/rocket-city/ballpark/guide",
+        "notes": "Toyota Field A-Z SECTIONS: 1-5 first base, 6-10 home (netted), 11-18 third base. ADA also publishes club 22 and 26. Rock Porch, Berm, SportsMED Stadium Club, and Four Tops. 19-21 and 23-25 are not invented.",
+        "bands": [
+            {"ids": [str(n) for n in range(1, 19)], "level": "lower", "namePrefix": "Section"},
+            {"ids": ["22", "26"], "level": "club", "namePrefix": "Club", "startOffset": 160, "endOffset": 200},
+        ],
+        "named": [
+            {"id": "rocket-city-berm", "name": "Berm", "level": "standing", "compassOffset": 0, "span": 28},
+            {"id": "rock-porch", "name": "Rock Porch", "level": "standing", "compassOffset": 40, "span": 16},
+            {"id": "sportsmed-stadium-club", "name": "SportsMED Stadium Club", "level": "club", "compassOffset": 150, "span": 14},
+            {"id": "rocket-city-four-tops", "name": "Four Tops", "level": "club", "compassOffset": 90, "span": 12},
+        ],
+    },
+    "new-hampshire-fisher-cats": {
+        "officialUrl": "https://www.milb.com/new-hampshire/tickets/group-outings",
+        "notes": "Delta Dental Stadium group pricing publishes reserved 102, 103-104/114-115, 105-106/112-113, and 107-111. Section 101 and IDs past 115 are not invented.",
+        "inventoryStatus": "partial",
+        "bands": [
+            {"ids": [str(n) for n in range(102, 116)], "level": "lower", "namePrefix": "Section"},
+        ],
+        "named": [],
+    },
 }
 
 
