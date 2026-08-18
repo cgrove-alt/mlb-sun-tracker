@@ -306,10 +306,10 @@ OVERRIDES = {
         ],
         "named": [
             {"id": "pool-area", "name": "Pool Area", "level": "club", "compassOffset": 20, "span": 16},
-            {"id": "berm", "name": "Grass Berm", "level": "standing", "compassOffset": 0, "span": 28},
-            {"id": "home-run-porch", "name": "Home Run Porch", "level": "standing", "compassOffset": 40, "span": 18},
+            {"id": "las-vegas-berm", "name": "Grass Berm", "level": "standing", "compassOffset": 0, "span": 28},
+            {"id": "las-vegas-home-run-porch", "name": "Home Run Porch", "level": "standing", "compassOffset": 40, "span": 18},
             {"id": "las-vegas-club", "name": "Las Vegas Club", "level": "club", "compassOffset": 180, "span": 14},
-            {"id": "party-deck", "name": "Party Deck", "level": "club", "compassOffset": 90, "span": 14},
+            {"id": "las-vegas-party-deck", "name": "Party Deck", "level": "club", "compassOffset": 90, "span": 14},
         ],
     },
     "jacksonville-jumbo-shrimp": {
@@ -335,7 +335,7 @@ OVERRIDES = {
             {"ids": [str(n) for n in range(102, 118)], "level": "lower", "namePrefix": "Section"},
             {"ids": [str(n) for n in range(201, 212)], "level": "club", "namePrefix": "Club"},
         ],
-        "named": [{"id": "party-deck", "name": "Party Deck", "level": "club", "compassOffset": 90, "span": 14}],
+        "named": [{"id": "erie-party-deck", "name": "Party Deck", "level": "club", "compassOffset": 90, "span": 14}],
     },
     "oklahoma-city-dodgers": {
         "officialUrl": "https://www.milb.com/oklahoma-city/ballpark/seating-map",
@@ -344,7 +344,7 @@ OVERRIDES = {
             {"ids": [str(n) for n in range(100, 121)], "level": "lower", "namePrefix": "Section"},
             {"ids": [str(n) for n in range(200, 204)], "level": "club", "namePrefix": "Terrace", "startOffset": 80, "endOffset": 280},
         ],
-        "named": [{"id": "lawn", "name": "Lawn", "level": "standing", "compassOffset": 0, "span": 28}],
+        "named": [{"id": "oklahoma-city-lawn", "name": "Lawn", "level": "standing", "compassOffset": 0, "span": 28}],
     },
     "toledo-mud-hens": {
         "officialUrl": "https://www.milb.com/toledo/ballpark/seating-map",
@@ -385,7 +385,7 @@ OVERRIDES = {
             {"ids": ["HR1", "HR2", "HR3", "HR4", "HR5", "HR6", "HR7"], "level": "field", "namePrefix": "Home Run", "startOffset": 20, "endOffset": 70},
         ],
         "named": [
-            {"id": "home-run-porch", "name": "Home Run Porch", "level": "standing", "compassOffset": 0, "span": 20},
+            {"id": "charlotte-home-run-porch", "name": "Home Run Porch", "level": "standing", "compassOffset": 0, "span": 20},
             {"id": "budweiser-home-plate-club", "name": "Budweiser Home Plate Club", "level": "club", "compassOffset": 180, "span": 14},
         ],
     },
@@ -444,7 +444,7 @@ OVERRIDES = {
             {"ids": [str(n) for n in range(105, 120)], "level": "lower", "namePrefix": "Box"},
         ],
         "named": [
-            {"id": "lawn", "name": "Lawn", "level": "standing", "compassOffset": 0, "span": 40},
+            {"id": "indianapolis-lawn", "name": "Lawn", "level": "standing", "compassOffset": 0, "span": 40},
             {"id": "the-landing", "name": "The Landing", "level": "club", "compassOffset": 40, "span": 14},
             {"id": "elements-financial-club", "name": "Elements Financial Club", "level": "club", "compassOffset": 180, "span": 14},
             {"id": "knot-hole-gang", "name": "Knot Hole Gang", "level": "standing", "compassOffset": 270, "span": 12},
