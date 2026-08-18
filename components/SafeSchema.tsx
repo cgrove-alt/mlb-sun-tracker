@@ -46,7 +46,7 @@ export const WebApplicationSchema = () => {
     "@type": "WebApplication",
     "name": "The Shadium",
     "alternateName": "Shadium Sports Venue Shade Finder",
-    "description": `Find seats in the shade at any MLB, MiLB, or NFL stadium. Real-time sun tracking and shade calculations for ${VENUE_COUNT} sports venues including all 30 MLB ballparks, 120 MiLB stadiums, and 32 NFL venues.`,
+    "description": `Stadium seating inventory, astronomical sun-position context, roof information, and measurement-confidence disclosures for ${VENUE_COUNT} sports venues.`,
     "url": "https://theshadium.com",
     "applicationCategory": "SportsApplication",
     "operatingSystem": "All",
@@ -61,9 +61,9 @@ export const WebApplicationSchema = () => {
       "url": "https://theshadium.com"
     },
     "featureList": [
-      "Real-time sun tracking",
-      `Shade calculations for ${VENUE_COUNT} sports venues`,
-      "Section-by-section shade analysis",
+      "Date-specific solar position",
+      `Data-confidence disclosures for ${VENUE_COUNT} sports venues`,
+      "Source-backed section inventories where available",
       "Weather integration",
       "Mobile-friendly interface",
       "30 MLB stadiums coverage",

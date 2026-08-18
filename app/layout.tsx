@@ -37,7 +37,7 @@ const BUILD_ID = (process.env.VERCEL_GIT_COMMIT_SHA || process.env.NEXT_PUBLIC_B
 export const metadata: Metadata = {
   metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || 'https://theshadium.com/'),
   title: 'The Shadium - Find Seats in the Shade at MLB, MiLB & NFL Stadiums | Avoid Sun Exposure',
-  description: `Find seats in the shade at any MLB, MiLB, or NFL stadium. The Shadium helps you locate shaded seating sections, avoid sun exposure, and stay cool during games. Real-time sun tracking for ${VENUE_COUNT} sports venues including all 30 MLB ballparks, 120 MiLB stadiums, and 32 NFL venues.`,
+  description: `Review stadium seating inventory, astronomical sun-position context, roof information, and measurement confidence across ${VENUE_COUNT} sports venues.`,
   authors: [{ name: 'The Shadium Team' }],
   creator: 'The Shadium',
   publisher: 'The Shadium',
@@ -57,7 +57,7 @@ export const metadata: Metadata = {
     locale: 'en_US',
     url: process.env.NEXT_PUBLIC_SITE_URL || 'https://theshadium.com/',
     title: 'The Shadium - Find Seats in the Shade at MLB, MiLB & NFL Stadiums',
-    description: `Find seats in the shade at any MLB, MiLB, or NFL stadium. Real-time sun tracking helps you avoid sun exposure and stay cool. Shade maps for ${VENUE_COUNT} sports venues.`,
+    description: `Stadium sun-position context, roof information, and data-confidence disclosures for ${VENUE_COUNT} sports venues.`,
     siteName: 'The Shadium',
     // OG image comes from the opengraph-image.tsx file convention (root default
     // + per-venue / per-league / per-post overrides) — not a hardcoded logo.
@@ -65,7 +65,7 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
     title: 'The Shadium - Find Seats in the Shade at MLB, MiLB & NFL Stadiums',
-    description: 'Find seats in the shade at any MLB, MiLB, or NFL stadium. Real-time sun tracking helps you avoid sun exposure and stay cool during games.',
+    description: 'Review stadium solar context and data confidence before relying on any seat-level shade claim.',
     creator: '@theshadium',
     site: '@theshadium',
   },
@@ -117,15 +117,6 @@ export default function RootLayout({
 
         {/* Google AdSense Verification */}
         <meta name="google-adsense-account" content="ca-pub-3681192675377295" />
-
-        {/* Font preloading for Inter */}
-        <link
-          rel="preload"
-          href="/_next/static/media/inter-latin.woff2"
-          as="font"
-          type="font/woff2"
-          crossOrigin="anonymous"
-        />
 
         {/* Resource hints for performance */}
         <link rel="preconnect" href="https://www.googletagmanager.com" />

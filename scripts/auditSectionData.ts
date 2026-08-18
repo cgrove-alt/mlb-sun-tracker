@@ -34,6 +34,10 @@ import {
   getOrientationProvenance,
   getOrientationPrecision,
 } from '../src/data/stadiumOrientationProvenance';
+import {
+  STADIUM_GEOMETRY_EVIDENCE,
+  auditStadiumGeometryEvidenceRegistry,
+} from '../src/data/stadiumGeometryEvidence';
 
 // --strict makes the script exit non-zero on HARD data errors (missing
 // sections, duplicate files, vertex-convention mismatches). Low fidelity and
@@ -121,7 +125,10 @@ async function auditStadium(stadium: Stadium): Promise<StadiumAudit> {
 
   for (const s of sections) {
     byLevel[s.level] = (byLevel[s.level] ?? 0) + 1;
-    if (s.covered) coveredCount++;
+    // Count sections with any modeled overhead. `covered` means the whole
+    // section; `partialCoverage` represents the back-row overhang used by the
+    // shade engine and must not be reported as "zero overhang modeling."
+    if (s.covered || s.partialCoverage?.coveredRows?.length) coveredCount++;
     totalRows += s.rows?.length ?? 0;
     angles.push(s.baseAngle);
     if (!s.vertices3D || s.vertices3D.length === 0) {
@@ -238,7 +245,7 @@ async function main(): Promise<void> {
 
   // Header
   console.log(
-    'id            | fidelity     | orient(±°)   | sections | covered % ' +
+    'id            | fidelity     | orient(±°)   | sections | overhead % ' +
     '| max-gap | vertex-mismatch'
   );
   console.log('-'.repeat(120));
@@ -331,7 +338,7 @@ async function main(): Promise<void> {
   console.log('Data quality (Phase 9):');
   console.log('-'.repeat(80));
   const byFidelity = (f: DataFidelity) => audits.filter(a => a.fidelity === f);
-  console.log(`  Section fidelity:   real=${byFidelity('real').length}  partial=${byFidelity('partial').length}  approximate=${byFidelity('approximate').length}`);
+  console.log(`  Section fidelity:   source-backed=${byFidelity('source-backed').length}  partial=${byFidelity('partial').length}  approximate=${byFidelity('approximate').length}`);
   const verified = audits.filter(a => a.orientationConfidence === 'verified');
   const estimated = audits.filter(a => a.orientationConfidence === 'estimated');
   const unverified = audits.filter(a => a.orientationConfidence === 'unverified');
@@ -343,6 +350,12 @@ async function main(): Promise<void> {
     console.log(`  ⚠️  approximate-fidelity parks (UI should disclose): ${approx.join(', ')}`);
   }
 
+  // Geometry evidence is a publication control, not just documentation. A
+  // broken source reference or unsupported measured claim must fail CI before
+  // it can affect any row/seat answer.
+  const geometryEvidenceErrors = auditStadiumGeometryEvidenceRegistry();
+  console.log(`  Geometry evidence:  ${Object.keys(STADIUM_GEOMETRY_EVIDENCE).length} registered candidate park(s), ${geometryEvidenceErrors.length} integrity error(s)`);
+
   // ---- hard errors vs warnings; strict exit ----
   const hardErrors: string[] = [];
   for (const a of audits) {
@@ -352,6 +365,9 @@ async function main(): Promise<void> {
   }
   for (const d of dups.filter(x => x.reason === 'bytes')) {
     hardErrors.push(`byte-identical section files: ${d.a} ≡ ${d.b}`);
+  }
+  for (const error of geometryEvidenceErrors) {
+    hardErrors.push(`geometry evidence: ${error}`);
   }
 
   console.log('');

@@ -135,7 +135,7 @@ export const MobileHeader: React.FC<MobileHeaderProps> = ({
               </a>
               <a href="/guide/best-shaded-seats-mlb" className="mobile-menu-item" onClick={() => setMenuOpen(false)}>
                 <span className="mobile-menu-icon"><BaseballIcon size={20} /></span>
-                <span>Best Shaded Seats</span>
+                <span>MLB Data Trust Guide</span>
               </a>
               <a href="/faq" className="mobile-menu-item" onClick={() => setMenuOpen(false)}>
                 <span className="mobile-menu-icon"><QuestionIcon size={20} /></span>

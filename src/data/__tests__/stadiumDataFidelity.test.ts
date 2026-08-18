@@ -9,7 +9,7 @@ import {
   getStadiumDataFidelity,
   computeStadiumDataFidelity,
   STADIUM_DATA_FIDELITY,
-  REAL_DATA_STADIUMS,
+  SOURCE_BACKED_INVENTORY_STADIUMS,
   fidelityNote,
 } from '../stadiumDataFidelity';
 import { MLB_STADIUMS } from '../stadiums';
@@ -17,9 +17,9 @@ import { MLB_STADIUMS } from '../stadiums';
 const span = (n: number) => Array.from({ length: n }, (_, i) => ({ angleSpan: 5 + (i % 3) }));
 
 describe('classifyFidelity', () => {
-  it('returns real for allowlisted hand-authored parks', () => {
-    expect(classifyFidelity(span(184), 'yankees', true)).toBe('real');
-    expect(classifyFidelity(span(277), 'redsox', true)).toBe('real');
+  it('returns source-backed for allowlisted published inventories', () => {
+    expect(classifyFidelity(span(184), 'yankees', true)).toBe('source-backed');
+    expect(classifyFidelity(span(277), 'redsox', true)).toBe('source-backed');
   });
 
   it('returns approximate for the 65-section template signature', () => {
@@ -36,15 +36,15 @@ describe('classifyFidelity', () => {
   });
 });
 
-describe('getStadiumDataFidelity (real data)', () => {
-  it('classifies the three authored parks as real', () => {
-    Array.from(REAL_DATA_STADIUMS).forEach((id) => {
-      expect(getStadiumDataFidelity(id)).toBe('real');
+describe('getStadiumDataFidelity (source-backed inventory)', () => {
+  it('classifies every published inventory as source-backed', () => {
+    Array.from(SOURCE_BACKED_INVENTORY_STADIUMS).forEach((id) => {
+      expect(getStadiumDataFidelity(id)).toBe('source-backed');
     });
   });
 
-  it('classifies a known template park as approximate', () => {
-    expect(getStadiumDataFidelity('dodgers')).toBe('approximate');
+  it('keeps an unknown park approximate', () => {
+    expect(getStadiumDataFidelity('not-a-park')).toBe('approximate');
   });
 });
 
@@ -55,10 +55,10 @@ describe('STADIUM_DATA_FIDELITY map', () => {
     );
   });
 
-  it('currently has exactly 3 real and the rest approximate', () => {
+  it('has source-backed section inventory for every MLB park', () => {
     const vals = Object.values(STADIUM_DATA_FIDELITY);
-    expect(vals.filter((v) => v === 'real')).toHaveLength(3);
-    expect(vals.filter((v) => v === 'approximate')).toHaveLength(MLB_STADIUMS.length - 3);
+    expect(vals.filter((v) => v === 'source-backed')).toHaveLength(MLB_STADIUMS.length);
+    expect(vals.filter((v) => v === 'approximate')).toHaveLength(0);
   });
 
   // STADIUM_DATA_FIDELITY is a checked-in table so that rendering a fidelity
@@ -79,8 +79,8 @@ describe('STADIUM_DATA_FIDELITY map', () => {
 });
 
 describe('fidelityNote', () => {
-  it('has no disclaimer for real, a disclosure for approximate', () => {
-    expect(fidelityNote('real')).toBeNull();
+  it('discloses the geometry boundary for source-backed and approximate data', () => {
+    expect(fidelityNote('source-backed')).toMatch(/independent observation validation/i);
     expect(fidelityNote('approximate')).toMatch(/approximate/i);
     expect(fidelityNote('partial')).toMatch(/partial/i);
   });

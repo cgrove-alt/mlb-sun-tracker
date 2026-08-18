@@ -14,6 +14,7 @@ import { STADIUM_WIKIPEDIA } from '../../../src/data/stadiumWikipedia';
 import { ErrorBoundary } from '../../../src/components/ErrorBoundary';
 import ComprehensiveStadiumGuide from '../../../src/components/ComprehensiveStadiumGuide';
 import { ShadeDataVerified } from '../../../src/components/ShadeDataVerified';
+import { getStadiumSectionProvenance } from '../../../src/data/stadiumSectionProvenance';
 import { RelatedStadiums } from '../../../src/components/RelatedStadiums';
 import StadiumPageClient from './StadiumPageClient';
 import StadiumPageSSR from './StadiumPageSSR';
@@ -45,7 +46,7 @@ export async function generateMetadata({ params }: StadiumPageProps): Promise<Me
   if (stadium) {
     // SEO-optimized title targeting "shaded seats at [stadium]"
     const title = `Shaded Seats at ${stadium.name} - ${stadium.team} | The Shadium`;
-    const description = `Find the best shaded seats at ${stadium.name}. Complete guide to avoiding sun exposure during ${stadium.team} games. Real-time shade calculations for every section, best seats for day games, covered seating areas, and sun protection tips.`;
+    const description = `Source-backed section inventory and solar-orientation context for ${stadium.name}. Exact row-level shade results are withheld until remotely reconstructed metric geometry is independently validated.`;
 
     return {
       title,
@@ -57,14 +58,14 @@ export async function generateMetadata({ params }: StadiumPageProps): Promise<Me
       // this route segment (audit Phase 8) — do not hardcode logo512 here.
       openGraph: {
         title: `Shaded Seats at ${stadium.name} | The Shadium`,
-        description: `Find the best shaded seats at ${stadium.name}. Complete shade guide for ${stadium.team} games with real-time sun tracking.`,
+        description,
         type: 'article',
         url: `https://theshadium.com/stadium/${stadiumId}`,
       },
       twitter: {
         card: 'summary_large_image',
         title: `Shaded Seats at ${stadium.name}`,
-        description: `Find the best shaded seats at ${stadium.name} for ${stadium.team} games. Real-time shade tracking.`,
+        description,
       },
       robots: {
         index: true,
@@ -89,7 +90,7 @@ export async function generateMetadata({ params }: StadiumPageProps): Promise<Me
   }
 
   const title = `Shaded Seats at ${venue.name} - ${venue.team} | The Shadium`;
-  const description = `Find the best shaded seats at ${venue.name}. Complete guide to avoiding sun exposure during ${venue.team} games. Real-time shade calculations for every section, best seats for day games, covered seating areas, and sun protection tips.`;
+  const description = `Review section inventory, solar context, roof type, and measurement status for ${venue.name}.`;
 
   return {
     title,
@@ -149,7 +150,7 @@ function buildVenueSchemas(v: VenueSchemaInput): Record<string, unknown>[] {
     '@context': 'https://schema.org',
     '@type': 'Article',
     headline: `Shaded Seats at ${v.name} - Complete Guide`,
-    description: `Find the best shaded seats at ${v.name}. Real-time shade calculations for ${v.team} games.`,
+    description: `Solar-orientation context and seating inventory for ${v.name}; measurement limits are disclosed before any seat-level result.`,
     author: { '@type': 'Organization', name: 'The Shadium', url: 'https://theshadium.com' },
     publisher: {
       '@type': 'Organization',
@@ -203,7 +204,7 @@ function buildVenueSchemas(v: VenueSchemaInput): Record<string, unknown>[] {
         name: `What are the best shaded seats at ${v.name}?`,
         acceptedAnswer: {
           '@type': 'Answer',
-          text: `For a 1 PM game at ${v.name}, the ${shadeSide} falls into shade first, so seats there and in the back rows of the upper deck stay coolest. Use The Shadium to check real-time shade for your specific game time.`,
+          text: `The orientation model suggests the ${shadeSide} may self-shade first at ${v.name}. Exact sections and rows require measured geometry and are not published without independent validation.`,
         },
       },
       {
@@ -211,7 +212,7 @@ function buildVenueSchemas(v: VenueSchemaInput): Record<string, unknown>[] {
         name: `Which sections at ${v.name} have covered seating?`,
         acceptedAnswer: {
           '@type': 'Answer',
-          text: `${v.name} has fully covered seating in its indoor and premium areas, plus back-row (overhang) shade in parts of the main and upper levels. Check The Shadium for section-by-section coverage.`,
+          text: `A seating chart alone cannot verify row-by-row roof or overhang coverage at ${v.name}. Consult the venue for current roof and covered-area information.`,
         },
       },
       {
@@ -219,7 +220,7 @@ function buildVenueSchemas(v: VenueSchemaInput): Record<string, unknown>[] {
         name: `How can I avoid sun at ${v.name} during day games?`,
         acceptedAnswer: {
           '@type': 'Answer',
-          text: `To avoid sun at ${v.name}, choose seats on the ${shadeSide}, the back rows under the upper-deck overhang, or any fully covered section. The Shadium shows exactly which seats will be shaded for your game.`,
+          text: `Use the solar-orientation context for ${v.name} as a broad planning aid, then confirm covered seating with the venue. Exact seat-level shade is withheld without validated metric geometry.`,
         },
       },
     ],
@@ -368,7 +369,7 @@ export default async function StadiumPage({ params }: StadiumPageProps) {
       </div>
 
       <RelatedStadiums venueId={stadium.id} />
-      <ShadeDataVerified />
+      <ShadeDataVerified verifiedOn={getStadiumSectionProvenance(stadium.id)?.reviewedOn} />
     </div>
   );
 }

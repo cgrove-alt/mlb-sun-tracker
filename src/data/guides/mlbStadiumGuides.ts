@@ -2536,7 +2536,7 @@ export const mlbStadiumGuides: Record<string, StadiumGuide> = {
         'Third base side gets shade first',
         'Upper levels provide shade to lower sections',
         'Coastal breeze keeps temperatures comfortable',
-        'Seek Press Level for guaranteed shade'
+        'Press Level is a commonly covered area; verify the exact seat with the venue'
       ],
       sunProtection: {
         sunscreenStations: ['Section 107', 'Section 207', 'Section 307'],

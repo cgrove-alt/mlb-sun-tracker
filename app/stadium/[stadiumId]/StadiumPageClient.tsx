@@ -11,6 +11,7 @@ import { usePullToRefresh } from '../../../src/hooks/usePullToRefresh';
 import { PullToRefreshIndicator } from '../../../src/components/PullToRefreshIndicator';
 import { formatInTimeZone } from '../../../src/utils/dateTimeUtils';
 import { mlbApi, MLBGame } from '../../../src/services/mlbApi';
+import { canPublishSeatLevelShade } from '../../../src/data/stadiumShadeConfidence';
 
 const ComprehensiveStadiumGuide = dynamic(
   () => import('../../../src/components/ComprehensiveStadiumGuide'),
@@ -55,6 +56,7 @@ export default function StadiumPageClient({
   const [selectedGame, setSelectedGame] = useState<MLBGame | null>(null);
   const [gamesLoading, setGamesLoading] = useState(true);
   const [gamesError, setGamesError] = useState<string | null>(null);
+  const seatShadePublished = canPublishSeatLevelShade(stadium.id);
 
   const stadiumTz: string = stadium?.timezone || 'America/New_York';
 
@@ -62,6 +64,12 @@ export default function StadiumPageClient({
   // The user picks which game they're going to; all shade/weather math
   // downstream is tied to the actual first-pitch datetime of that game.
   useEffect(() => {
+    if (!seatShadePublished) {
+      setGamesLoading(false);
+      setGames([]);
+      setSelectedGame(null);
+      return;
+    }
     let cancelled = false;
     const loadGames = async () => {
       setGamesLoading(true);
@@ -92,7 +100,7 @@ export default function StadiumPageClient({
     return () => {
       cancelled = true;
     };
-  }, [stadium.id, refreshKey]);
+  }, [seatShadePublished, stadium.id, refreshKey]);
 
   // The datetime of the user's selected game (or null if none selected yet).
   const gameDateTime = useMemo(
@@ -136,8 +144,10 @@ export default function StadiumPageClient({
         progress={pullToRefresh.progress}
       />
 
-      {/* Stadium Guide */}
-      <div className="stadium-guide-wrapper">
+      {/* The legacy guide data contains free-text shade tips that have not been
+          tied to measured geometry. Keep the useful component available for a
+          future validated park, but do not render those claims before then. */}
+      {seatShadePublished ? <div className="stadium-guide-wrapper">
         <Suspense
           fallback={
             <div className="flex justify-center items-center p-8">
@@ -154,8 +164,31 @@ export default function StadiumPageClient({
             showTitleBlock={false}
           />
         </Suspense>
-      </div>
+      </div> : (
+        <section className="mt-6 p-5 rounded-lg border border-slate-300 bg-slate-50 text-slate-800" role="note">
+          <h2 className="text-lg font-semibold mb-2">Legacy shade guide withheld</h2>
+          <p className="text-sm leading-6">Older free-text section tips are hidden because they were not linked to remotely measured geometry or independent shadow observations.</p>
+        </section>
+      )}
 
+      {!seatShadePublished ? (
+        <section
+          aria-labelledby="seat-recommendations-paused"
+          className="mt-8 mb-6 p-5 rounded-lg border border-amber-300 bg-amber-50 text-amber-950"
+          role="status"
+        >
+          <h2 id="seat-recommendations-paused" className="text-lg font-semibold mb-2">
+            Seat-level recommendations paused
+          </h2>
+          <p className="text-sm leading-6">
+            Published maps identify the sections, but they do not provide the measured row,
+            overhang, and obstruction geometry required for trustworthy seat recommendations.
+            The game picker and rankings will remain unavailable until that geometry passes
+            independent shadow validation.
+          </p>
+        </section>
+      ) : (
+      <>
       {/* Game picker — user selects which game they're attending so shade and
           weather are calculated for the real first-pitch time. */}
       <section
@@ -244,8 +277,7 @@ export default function StadiumPageClient({
         {!selectedGame ? (
           <div className="text-center p-8 bg-gray-50 rounded-lg">
             <p className="text-sm text-gray-600">
-              Select a game above to see section-by-section shade
-              recommendations for your specific first-pitch time.
+              Select a game above to view the available validated stadium information.
             </p>
           </div>
         ) : sections.length > 0 && gameTimeStr && gameDateTime ? (
@@ -266,6 +298,8 @@ export default function StadiumPageClient({
           </div>
         )}
       </div>
+      </>
+      )}
     </>
   );
 }

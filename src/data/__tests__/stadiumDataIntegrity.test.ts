@@ -5,6 +5,8 @@
 
 import * as fs from 'fs';
 import * as path from 'path';
+import { MLB_STADIUMS } from '../stadiums';
+import { getStadiumSections } from '../stadium-data-aggregator';
 
 // Helper to recursively find all TypeScript files in a directory
 function findTsFiles(dir: string): string[] {
@@ -48,7 +50,7 @@ function validateSection(section: any, fileName: string): string[] {
   if (!section.level) errors.push(`${fileName}: Missing section level`);
   
   // Level validation
-  const validLevels = ['field', 'lower', 'club', 'upper', 'suite', 'terrace', 'mezzanine'];
+  const validLevels = ['field', 'lower', 'club', 'upper', 'suite', 'standing', 'terrace', 'mezzanine'];
   if (section.level && !validLevels.includes(section.level)) {
     errors.push(`${fileName}: Invalid level '${section.level}' in section ${section.id}`);
   }
@@ -288,30 +290,26 @@ describe('Stadium Data Integrity Tests', () => {
       expect(duplicates).toEqual([]);
     });
     
-    test('All sections have unique 3D positions', () => {
-      // Sections should not overlap exactly in 3D space
-      const sectionsDir = path.join(__dirname, '../sections');
-      if (!fs.existsSync(sectionsDir)) return;
-      
-      const sectionFiles = findTsFiles(sectionsDir);
-      const overlaps: string[] = [];
-      
-      sectionFiles.forEach(filePath => {
-        const fileContent = fs.readFileSync(filePath, 'utf-8');
-        const fileName = path.basename(filePath);
-        
-        // This is a simplified check - in production we'd parse the actual data
-        // For now, we just ensure the file has vertex definitions
-        const hasVertices = fileContent.includes('vertices3D');
-        if (!hasVertices && !fileName.includes('index')) {
-          overlaps.push(`${fileName}: Missing vertices3D definitions`);
+    test('All MLB sections have valid, non-collapsed 3D positions', async () => {
+      const errors: string[] = [];
+
+      for (const stadium of MLB_STADIUMS) {
+        const sections = await getStadiumSections(stadium.id, 'MLB');
+        for (const section of sections) {
+          if (section.vertices3D.length !== 4 || !section.vertices3D.every(isValidVector3D)) {
+            errors.push(`${stadium.id}/${section.id}: invalid vertices3D`);
+            continue;
+          }
+          const uniqueVertices = new Set(
+            section.vertices3D.map((vertex) => `${vertex.x.toFixed(6)},${vertex.y.toFixed(6)},${vertex.z.toFixed(6)}`),
+          );
+          if (uniqueVertices.size < 4) {
+            errors.push(`${stadium.id}/${section.id}: collapsed 3D wedge`);
+          }
         }
-      });
-      
-      if (overlaps.length > 0) {
-        console.warn('Position issues found:', overlaps);
       }
-      expect(overlaps.length).toBeLessThan(10); // Allow some legacy files
+
+      expect(errors).toEqual([]);
     });
   });
   

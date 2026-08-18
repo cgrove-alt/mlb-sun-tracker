@@ -5,7 +5,7 @@ const organizationSchema = {
   "name": "The Shadium",
   "url": "https://theshadium.com",
   "logo": "https://theshadium.com/logo512.png",
-  "description": "The Shadium finds the shaded seats at MLB, MiLB, and NFL venues using stadium orientation, geometry, and real-time sun position.",
+  "description": "The Shadium provides stadium seating inventories, astronomical sun-position context, and explicit measurement-confidence disclosures.",
 };
 
 // WebSite node with a SearchAction so search engines can surface a sitelinks
@@ -48,7 +48,7 @@ export default function HomepageSchema() {
               "name": "How do I know if my seats are in the shade?",
               "acceptedAnswer": {
                 "@type": "Answer",
-                "text": "Simply select your stadium and game time on The Shadium. Our tool will show you exactly which sections are shaded throughout the game. Look for your section number to see if your seats will be in the shade."
+                "text": "Select a stadium and game time to view astronomical sun-position context and the current measurement status. Exact sections and rows are withheld until remotely reconstructed metric geometry is independently validated."
               }
             },
             {
@@ -56,7 +56,7 @@ export default function HomepageSchema() {
               "name": "Are my seats shaded at Yankee Stadium?",
               "acceptedAnswer": {
                 "@type": "Answer",
-                "text": "To check if your Yankee Stadium seats are shaded, use our shade calculator. Because Yankee Stadium faces east, the first base side falls into shade first for day games; the back rows of the upper deck (under the Grandstand roof) and covered premium sections offer the most reliable shade."
+                "text": "Yankee Stadium's orientation provides broad solar context, but the site does not currently publish exact shaded rows because its metric row, overhang, and obstruction geometry has not passed independent observation validation."
               }
             },
             {
@@ -64,7 +64,7 @@ export default function HomepageSchema() {
               "name": "Which MLB stadium seats have the most shade?",
               "acceptedAnswer": {
                 "@type": "Answer",
-                "text": "Stadiums with retractable roofs like Minute Maid Park and T-Mobile Park offer complete shade when closed. For open-air stadiums, upper deck seats under overhangs typically provide the most consistent shade."
+                "text": "A permanent fixed roof blocks direct sun. Retractable-roof results depend on the confirmed roof state, and open-air row coverage requires measured overhang and obstruction geometry."
               }
             },
             {
@@ -72,7 +72,7 @@ export default function HomepageSchema() {
               "name": "Are field level seats ever shaded?",
               "acceptedAnswer": {
                 "@type": "Answer",
-                "text": "Yes, field level seats can be shaded depending on the stadium, time of day, and season. Seats behind home plate often get shade from upper deck overhangs, while seats along the baselines may get shade later in the game."
+                "text": "Field-level exposure depends on the stadium's measured structures, date, and time. The site does not infer an exact field-level result from a seating chart alone."
               }
             },
             {
@@ -80,7 +80,7 @@ export default function HomepageSchema() {
               "name": "How accurate is The Shadium's shade prediction?",
               "acceptedAnswer": {
                 "@type": "Answer",
-                "text": "The Shadium uses precise sun position calculations accurate within 2 degrees. We factor in stadium orientation, overhang structures, and real-time sun tracking to provide highly accurate shade predictions for every MLB game."
+                "text": "Astronomical sun position is calculated separately from stadium geometry. Exact seat-level MLB predictions are currently withheld because row, overhang, and obstruction measurements have not passed independent observation validation."
               }
             },
             {

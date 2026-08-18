@@ -17,11 +17,11 @@ const faqs = [
     questions: [
       {
         q: "How do I find seats in the shade at a stadium?",
-        a: "Use The Shadium's real-time sun tracker. Select your venue and game time, and we'll show you which sections will be shaded. The shaded side depends on each venue's orientation — The Shadium calculates it per stadium rather than assuming a fixed side. Generally, the back rows of the upper deck under overhead coverage stay coolest for day games."
+        a: "Select your venue and game time to review astronomical sun position, source-backed section inventory, roof context, and measurement status. Exact sections and rows are withheld until remotely reconstructed metric geometry is independently validated."
       },
       {
         q: "Which stadiums have the most shaded seats?",
-        a: "Venues with retractable or fixed roofs like Chase Field (Arizona), Globe Life Field (Texas), loanDepot park (Miami), and domed venues offer the most shade. For open-air stadiums, look for sections under upper deck overhangs — those back rows stay shaded longest."
+        a: "A permanent fixed roof blocks direct sun. Retractable-roof exposure depends on the confirmed event roof state; open-air row coverage requires measured overhang and obstruction geometry."
       },
       {
         q: "Do shaded seats cost more?",
@@ -33,7 +33,7 @@ const faqs = [
       },
       {
         q: "How do I know which side of the stadium gets shade first?",
-        a: "Generally, the third base side gets shade first during afternoon games as the sun moves from east to west. However, this varies by stadium orientation, which is why The Shadium calculates shade for each specific stadium."
+        a: "There is no universal base-side rule. Orientation provides broad solar context, while the actual boundary depends on measured roofs, overhangs, decks, and other obstructions."
       }
     ]
   },
@@ -42,11 +42,11 @@ const faqs = [
     questions: [
       {
         q: "How accurate are The Shadium's shade predictions?",
-        a: "The Shadium uses precise solar calculations based on stadium coordinates, date, and time. Our predictions are highly accurate for clear days. Cloud cover can provide additional shade beyond our predictions."
+        a: "Astronomical sun position is calculated separately from stadium structures. Exact MLB seat-level predictions are currently withheld because metric row, overhang, and obstruction geometry has not passed independent observation validation."
       },
       {
         q: "Which venues does The Shadium cover?",
-        a: `The Shadium covers ${VENUE_COUNT} venues across three leagues — all ${MLB_COUNT} MLB ballparks, ${MILB_COUNT} Minor League Baseball parks, and ${NFL_COUNT} NFL stadiums — with section-by-section shade analysis for any game date and time.`
+        a: `The Shadium covers ${VENUE_COUNT} venues across three leagues — all ${MLB_COUNT} MLB ballparks, ${MILB_COUNT} Minor League Baseball parks, and ${NFL_COUNT} NFL stadiums — and discloses the measurement status before publishing seat-level conclusions.`
       },
       {
         q: "Can I save my favorite shaded sections?",
@@ -88,7 +88,7 @@ const faqs = [
     questions: [
       {
         q: "How far in advance can I check shade patterns?",
-        a: "You can check shade patterns for any future date. Sun positions are predictable, so planning months ahead is perfectly accurate."
+        a: "Astronomical sun positions can be calculated for future dates. Future seat-level shade still depends on validated stadium geometry and, at retractable-roof parks, the event's actual roof state."
       },
       {
         q: "Should I still bring sun protection to shaded seats?",
@@ -109,7 +109,7 @@ const faqs = [
     questions: [
       {
         q: "How does The Shadium calculate shade?",
-        a: "We use astronomical algorithms to calculate the sun's exact position based on stadium GPS coordinates, date, and time. We then model how stadium structures cast shadows on each section."
+        a: "We calculate astronomical sun position from stadium coordinates, date, and time. Stadium structures are a separate geometry problem; exact seat-level outputs remain withheld until measured geometry passes independent validation."
       },
       {
         q: "Why do shade patterns change throughout the season?",
@@ -220,7 +220,7 @@ export default function FAQPage() {
               </li>
               <li>
                 <Link href="/guide/best-shaded-seats-mlb">
-                  Best Shaded Seats at Every MLB Stadium
+                  MLB Shade Data Trust Guide
                 </Link>
               </li>
               <li>

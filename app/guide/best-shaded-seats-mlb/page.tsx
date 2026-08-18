@@ -2,51 +2,18 @@ import { Metadata } from 'next';
 import Link from 'next/link';
 
 export const metadata: Metadata = {
-  title: 'Best Shaded Seats at Every MLB Stadium | The Shadium',
-  description: 'Comprehensive guide to the best seats in the shade at all 30 MLB stadiums. Find cool, comfortable seating with shade coverage at every ballpark.',
+  title: 'MLB Shade Data Trust Guide | The Shadium',
+  description: 'What is source-backed, what remains modeled, and why exact MLB section and row rankings are paused.',
   keywords: ['best shaded seats MLB', 'shade seating guide', 'MLB stadium shade map', 'coolest seats baseball', 'shaded sections every stadium'],
   alternates: {
     canonical: 'https://theshadium.com/guide/best-shaded-seats-mlb',
   },
   openGraph: {
-    title: 'Best Shaded Seats at Every MLB Stadium',
-    description: 'Find the best seats in the shade at all 30 MLB ballparks',
+    title: 'MLB Shade Data Trust Guide',
+    description: 'Understand the evidence and measurement boundary behind MLB shade information.',
     type: 'article',
   },
 };
-
-const stadiumShadeData = [
-  {
-    name: "Yankee Stadium",
-    team: "New York Yankees",
-    bestSections: ["214-220", "314-320", "420B-427"],
-    tips: "Upper deck sections along third base line offer best shade for day games"
-  },
-  {
-    name: "Fenway Park",
-    team: "Boston Red Sox",
-    bestSections: ["Pavilion Box 1-6", "Grandstand 1-15", "Upper Bleacher 35-40"],
-    tips: "Green Monster seats can be very hot; prefer Grandstand sections under cover"
-  },
-  {
-    name: "Dodger Stadium",
-    team: "Los Angeles Dodgers",
-    bestSections: ["Top Deck 1-13", "Reserve 1-15", "Loge 137-167"],
-    tips: "Third base side gets afternoon shade; Top Deck has overhead coverage"
-  },
-  {
-    name: "Oracle Park",
-    team: "San Francisco Giants",
-    bestSections: ["Club Level 201-234", "View Box VB301-VB334", "Upper Box 301-336"],
-    tips: "Bay breeze keeps temperatures cool; Club Level has overhead protection"
-  },
-  {
-    name: "Petco Park",
-    team: "San Diego Padres",
-    bestSections: ["Upper 300-327", "Toyota Terrace Level", "Field Box 101-115"],
-    tips: "Western Metal Supply building provides shade for nearby sections"
-  },
-];
 
 const breadcrumbJsonLd = {
   '@context': 'https://schema.org',
@@ -54,52 +21,52 @@ const breadcrumbJsonLd = {
   itemListElement: [
     { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://theshadium.com/' },
     { '@type': 'ListItem', position: 2, name: 'Guides', item: 'https://theshadium.com/guide' },
-    { '@type': 'ListItem', position: 3, name: 'Best Shaded Seats at Every MLB Stadium', item: 'https://theshadium.com/guide/best-shaded-seats-mlb' },
+    { '@type': 'ListItem', position: 3, name: 'MLB Shade Data Trust Guide', item: 'https://theshadium.com/guide/best-shaded-seats-mlb' },
   ],
 };
 
 const howToJsonLd = {
   '@context': 'https://schema.org',
   '@type': 'HowTo',
-  name: 'How to Pick the Best Shaded Seats at Any MLB Stadium',
-  description: 'A practical guide to choosing the best shaded sections at all 30 MLB ballparks based on stadium orientation, deck coverage, and game time.',
+  name: 'How to Evaluate MLB Shade Information',
+  description: 'A practical guide to separating source-backed inventory and solar context from unvalidated physical shade geometry.',
   totalTime: 'PT8M',
   step: [
     {
       '@type': 'HowToStep',
       position: 1,
-      name: 'Apply the Universal Shade Rules',
-      text: 'Before looking up a specific stadium, apply the four rules that hold across MLB: upper deck sections often have overhead coverage, the third-base line gets afternoon shade first, club level seats are usually covered, and sections behind home plate are shaded by the upper deck overhang.',
+      name: 'Reject Universal Section Rules',
+      text: 'A level or base-side label does not prove shade. Each park requires measured metric geometry.',
     },
     {
       '@type': 'HowToStep',
       position: 2,
-      name: 'Look Up Your Specific Stadium',
-      text: 'Each ballpark has unique shade patterns. For example, Yankee Stadium upper-deck sections 314-320 along the third-base line shade earliest, Fenway Grandstand sections sit under cover, and Petco Park benefits from the Western Metal Supply building on the left-field side.',
+      name: 'Check Section Provenance',
+      text: 'Confirm that section identity comes from a published venue map, while keeping that fact separate from row and obstruction measurements.',
     },
     {
       '@type': 'HowToStep',
       position: 3,
       name: 'Account for Climate and Roof Type',
-      text: 'For hot-climate parks (Chase Field, Globe Life Field, loanDepot park, Minute Maid Park), prioritize games when the retractable roof will be closed. For coastal parks like Oracle Park, the bay breeze helps but shade still matters mid-afternoon.',
+      text: 'A permanent roof blocks direct sun. At retractable-roof parks, use only a confirmed event roof state.',
     },
     {
       '@type': 'HowToStep',
       position: 4,
-      name: 'Match the Game Time to a Strategy',
-      text: 'For 1:00 PM games, prioritize upper-deck roof coverage and lower-numbered sections (typically third-base side). For 4:00 PM games, the third-base side and behind-home-plate sections shade first. For 7:00 PM games, focus on outfield sections to avoid the setting sun in the early innings.',
+      name: 'Calculate Solar Context',
+      text: 'Date, time, and coordinates determine astronomical sun position. They do not determine the row-level shadow boundary by themselves.',
     },
     {
       '@type': 'HowToStep',
       position: 5,
-      name: 'Find Budget-Friendly Shade',
-      text: 'Shade does not require expensive seats. Upper-deck outfield sections are often the cheapest tickets and have the best overhead coverage. Bleacher sections under overhangs and shaded standing-room areas along the concourse can deliver shade at the lowest price.',
+      name: 'Confirm Physical Coverage',
+      text: 'Ask the venue to confirm roof, overhang, and covered-seat details before purchasing tickets based on a shade claim.',
     },
     {
       '@type': 'HowToStep',
       position: 6,
-      name: 'Verify with The Shadium for Your Exact Game',
-      text: 'Stadium layouts and sun angles change throughout the season. Enter your stadium, date, and first-pitch time at theshadium.com to see which sections are projected to be in shade for your specific game.',
+      name: 'Respect the Publication Gate',
+      text: 'Exact section and row results stay withheld until measured geometry passes independent shadow validation.',
     },
   ],
 };
@@ -115,56 +82,40 @@ export default function BestShadedSeatsMLBPage() {
           <span aria-hidden="true">/</span>
           <Link href="/guide" className="hover:underline">Guides</Link>
           <span aria-hidden="true">/</span>
-          <span className="truncate">Best Shaded Seats MLB</span>
+          <span className="truncate">MLB Shade Data Trust Guide</span>
         </nav>
 
         <div className="flex min-w-0 items-center justify-between py-4 mb-6">
           <div className="min-w-0">
             <h1 className="text-balance font-semibold text-ink-800 text-[clamp(1.75rem,2vw+1rem,2.5rem)] truncate md:whitespace-normal">
-              Best Shaded Seats at Every MLB Stadium
+              MLB Shade Data Trust Guide
             </h1>
             <p className="text-base text-ink-700 mt-2 max-w-prose">
-              Finding seats in the shade can make or break your baseball experience, especially during hot summer day games. 
-              This comprehensive guide covers the best shaded seating options at all 30 MLB stadiums.
+              Shade information affects real ticket decisions and health planning. This guide explains what
+              the site can support today and what it refuses to publish without better evidence.
             </p>
           </div>
         </div>
 
         <article className="prose prose-slate max-w-prose stack">
           <section>
-            <h2>Quick Shade Rules for Any Stadium</h2>
+            <h2>Rules for Trustworthy Shade Information</h2>
             <ul>
-              <li><strong>Upper Deck Advantage:</strong> Higher sections often have overhead coverage</li>
-              <li><strong>Third Base Line:</strong> Gets shade first during afternoon games</li>
-              <li><strong>Club Level:</strong> Premium sections usually feature covered seating</li>
-              <li><strong>Behind Home Plate:</strong> Often shaded by upper deck overhang</li>
+              <li><strong>Identity is not geometry:</strong> A published section map does not measure rows or overhangs.</li>
+              <li><strong>Solar position is not a shadow boundary:</strong> Structures must be measured separately.</li>
+              <li><strong>Roof state matters:</strong> Retractable-roof results are event-dependent.</li>
+              <li><strong>Precise outputs need validation:</strong> Independent shadow observations are required.</li>
             </ul>
           </section>
 
           <section>
-            <h2>Stadium-by-Stadium Shade Guide</h2>
-            {stadiumShadeData.map((stadium, index) => (
-              <div key={index} className="stadium-shade-card">
-                <div className="stadium-shade-header">
-                  <h3>{stadium.name}</h3>
-                  <p className="team-name">{stadium.team}</p>
-                </div>
-                <div className="stadium-shade-content">
-                  <div className="shade-info">
-                    <h4>Best Shaded Sections</h4>
-                    <div className="sections-wrapper">
-                      {stadium.bestSections.map((section, i) => (
-                        <span key={i} className="section-tag">{section}</span>
-                      ))}
-                    </div>
-                  </div>
-                  <div className="shade-tip">
-                    <h4>Pro Tips</h4>
-                    <p>{stadium.tips}</p>
-                  </div>
-                </div>
-              </div>
-            ))}
+            <h2>Current MLB Publication Status</h2>
+            <div className="stadium-shade-card">
+              <h3>Exact section and row rankings are paused</h3>
+              <p>All 30 parks have source-backed section inventories. None currently has complete remotely measured row,
+              overhang, and obstruction geometry plus the independent shadow-observation holdout required by
+              the seat-level publication gate.</p>
+            </div>
           </section>
 
           <section>
@@ -187,52 +138,49 @@ export default function BestShadedSeatsMLBPage() {
           </section>
 
           <section>
-            <h2>Time-Based Shade Strategy</h2>
+            <h2>Time-Based Solar Context</h2>
             
             <h3>1:00 PM Games</h3>
-            <p>Maximum sun exposure. Prioritize:</p>
+            <p>The sun is generally high. Plan conservatively:</p>
             <ul>
-              <li>Upper deck sections with roof coverage</li>
-              <li>Sections 1-15 (typically third base side)</li>
-              <li>Club level with overhead protection</li>
+              <li>Confirm covered seating with the venue</li>
+              <li>Bring sun protection when coverage is uncertain</li>
             </ul>
 
             <h3>4:00 PM Games</h3>
             <p>Transitional lighting. Consider:</p>
             <ul>
-              <li>Third base side for earlier shade</li>
-              <li>Upper deck for consistent coverage</li>
-              <li>Behind home plate sections</li>
+              <li>Use the calculated sun bearing as orientation context only</li>
+              <li>Do not infer row coverage from a section name</li>
             </ul>
 
             <h3>7:00 PM Games</h3>
             <p>Less shade needed, but first innings can be sunny:</p>
             <ul>
-              <li>Outfield sections to avoid setting sun</li>
-              <li>First base side after 2nd inning</li>
+              <li>Check the actual sunset time</li>
+              <li>Expect possible low western glare before sunset</li>
             </ul>
           </section>
 
           <section>
-            <h2>Budget-Friendly Shade Options</h2>
+            <h2>Buying Tickets Conservatively</h2>
             <p>
-              You don't need expensive seats to stay cool. Many affordable sections offer excellent shade:
+              Ticket price and level do not prove shade. Before purchasing:
             </p>
             <ul>
-              <li><strong>Upper deck outfield:</strong> Often cheapest seats with overhead coverage</li>
-              <li><strong>Bleacher sections under overhangs:</strong> Great value with shade</li>
-              <li><strong>Standing room areas:</strong> Find shaded spots along concourses</li>
+              <li>Ask the venue which exact rows are physically covered</li>
+              <li>Confirm retractable-roof plans close to game time</li>
+              <li>Choose a ticket with a flexible exchange policy when heat risk is high</li>
             </ul>
           </section>
 
           <section className="cta-section">
-            <h2>Get Real-Time Shade Information</h2>
+            <h2>Review the Available Evidence</h2>
             <p>
-              Stadium layouts and sun angles change throughout the season. Use The Shadium to see 
-              exactly which seats will be shaded for your specific game.
+              Review source-backed inventory, astronomical sun context, roof status, and measurement limits.
             </p>
             <Link href="/" className="cta-btn">
-              Check Shade for Your Game →
+              View Stadium Context →
             </Link>
           </section>
 

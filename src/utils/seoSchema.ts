@@ -3,7 +3,7 @@ export const generateStadiumSchema = (stadiumName: string, stadiumId: string) =>
     "@context": "https://schema.org",
     "@type": "SportsEvent",
     "name": `${stadiumName} Shade Guide`,
-    "description": `Find the best shaded seats at ${stadiumName}. Real-time sun exposure calculations and section-by-section shade analysis.`,
+    "description": `Source-backed section inventory, solar-position context, and measurement status for ${stadiumName}.`,
     "location": {
       "@type": "StadiumOrArena",
       "name": stadiumName,
@@ -65,14 +65,14 @@ export const generateHowToSchema = () => {
       },
       {
         "@type": "HowToStep",
-        "name": "View Shade Results",
-        "text": "See which sections will be in shade during your game",
+        "name": "Review Measurement Status",
+        "text": "See which fields are source-backed, modeled, or independently validated",
         "image": "https://theshadium.com/logo192.png"
       },
       {
         "@type": "HowToStep",
-        "name": "Choose Your Section",
-        "text": "Select from the shaded sections based on your preferences",
+        "name": "Confirm Physical Coverage",
+        "text": "Confirm exact covered-row information with the venue when seat geometry is unvalidated",
         "image": "https://theshadium.com/logo192.png"
       }
     ]

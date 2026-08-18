@@ -11,11 +11,13 @@ import { StadiumAmenities } from '../../../src/data/stadiumAmenities';
 import StadiumTitleBlock from '../../../src/components/StadiumTitleBlock';
 import { StadiumTitleData } from '../../../src/components/StadiumTitleBlock';
 import { ShadeAnswer } from '../../../src/components/ShadeAnswer';
+import { ShadeConfidenceNotice } from '../../../src/components/ShadeConfidenceNotice';
 import { InteractiveSeatingBowl } from '../../../src/components/InteractiveSeatingBowl';
 import { shadeTierOf, type ShadeTier } from '../../../src/utils/sectionShadeTier';
 import { buildSeasonalShadeCopy } from '../../../src/utils/seasonalShade';
 import { getOrientationProvenance, getOrientationPrecision } from '../../../src/data/stadiumOrientationProvenance';
 import { stadiumHistories } from '../../../src/data/stadiumDetails';
+import { canPublishSeatLevelShade } from '../../../src/data/stadiumShadeConfidence';
 import styles from './StadiumPageSSR.module.css';
 
 interface StadiumPageSSRProps {
@@ -88,14 +90,23 @@ const LEVEL_LABEL: Record<StadiumSection['level'], string> = {
 
 // Shared per-section display data so the desktop table and the mobile cards
 // stay identical (single source of the tier → rating/coverage/notes mapping).
-function sectionRowData(section: StadiumSection, domed = false) {
+function sectionRowData(section: StadiumSection, domed = false, geometryValidated = false) {
+  if (!domed && !geometryValidated) {
+    return {
+      shadeRating: 0,
+      coverageLabel: 'Unverified',
+      bestTime: '—',
+      notes: 'Section identity is source-backed; row and overhang geometry has not passed independent observation validation.',
+      stars: 'Not rated',
+    };
+  }
   const tier = domed ? 'covered' : shadeTierOf(section);
   const shadeRating = tier === 'covered' ? 5 : tier === 'partial' ? 3 : section.level === 'upper' ? 2 : 1;
   const coverageLabel = tier === 'covered' ? '✓ Covered' :
     tier === 'partial' ? `◐ ${section.coveredRows || 'back rows'}` : '— Exposed';
   const bestTime = tier === 'covered' ? 'All day' :
     tier === 'partial' ? 'Day games (back rows)' : 'Evening games';
-  const notes = tier === 'covered' ? 'Guaranteed shade — fully covered' :
+  const notes = tier === 'covered' ? (domed ? 'Permanent roof blocks direct sun' : 'Field-validated covered seating') :
     tier === 'partial' ? 'Overhang shade in the back rows only; front rows exposed' :
     section.level === 'upper' ? 'Exposed — some relief from self-shading late in the game' :
     'Exposed — little to no shade';
@@ -109,6 +120,7 @@ export default function StadiumPageSSR({ stadium, sections, amenities, guide }: 
   // shade is roof-dependent, not section- or orientation-dependent. Treat every
   // section as covered and suppress the sun-angle / orientation copy below.
   const isDome = stadium.roof === 'fixed';
+  const seatShadePublished = canPublishSeatLevelShade(stadium.id);
   const tierOf = (s: StadiumSection): ShadeTier => (isDome ? 'covered' : shadeTierOf(s));
   // Lower-confidence disclaimer for parks whose orientation is only estimated
   // (±15–20°): the diagram still helps, but the sun/shade boundary is fuzzier.
@@ -210,17 +222,19 @@ export default function StadiumPageSSR({ stadium, sections, amenities, guide }: 
 
       {/* Answer-first summary — directly answers "where are the shaded seats" */}
       <ShadeAnswer name={stadium.name} orientation={stadium.orientation} roof={stadium.roof} />
+      <ShadeConfidenceNotice stadiumId={stadium.id} roof={stadium.roof} />
 
       {/* Best Shaded Sections */}
       <section className={styles.section}>
         <div className={styles.container}>
-          <h2>Best Shaded Seats at {stadium.name}</h2>
-          <p>{isDome
-            ? `${stadium.name} has a fixed roof, so every seat is shaded from direct sun. These fully covered sections are a representative sample:`
-            : 'Based on stadium orientation and historical data, these sections offer the most shade:'}</p>
-          
-          <div className={styles.sectionsGrid}>
-            {bestShadedSections.map((section, idx) => (
+          <h2>{isDome ? `Direct Sun at ${stadium.name}` : `Seat-Level Shade at ${stadium.name}`}</h2>
+          {isDome ? (
+            <p>{stadium.name} has a permanent roof, so direct sunlight does not reach the seating bowl. We do not rank rows because detailed row geometry is not needed for that roof-level result.</p>
+          ) : seatShadePublished ? (
+            <>
+              <p>These sections passed the measured-geometry publication gate:</p>
+              <div className={styles.sectionsGrid}>
+              {bestShadedSections.map((section, idx) => (
               <div key={section.id} className={styles.sectionCard}>
                 <div className={styles.sectionRank}>#{idx + 1}</div>
                 <h3>{section.name}</h3>
@@ -232,26 +246,33 @@ export default function StadiumPageSSR({ stadium, sections, amenities, guide }: 
                   {section.rows && <li>Rows: {section.rows}</li>}
                 </ul>
                 {tierOf(section) === 'covered' && (
-                  <p className={styles.sectionNote}>Guaranteed shade — fully covered seating</p>
+                  <p className={styles.sectionNote}>Field-validated covered seating</p>
                 )}
                 {tierOf(section) === 'partial' && (
                   <p className={styles.sectionNote}>Shade in the {section.coveredRows || 'back rows'} under the overhang; front rows exposed</p>
                 )}
               </div>
-            ))}
-          </div>
+              ))}
+              </div>
+            </>
+          ) : (
+            <div className={styles.sectionCard} role="status">
+              <h3>Recommendations paused</h3>
+              <p>We have the published section inventory and are locating remote metric sources for row depths, elevations, overhangs, and obstruction geometry. We will not rank sections or rows until reconstructed measurements pass independent shadow validation.</p>
+            </div>
+          )}
         </div>
       </section>
 
       {/* Seasonal Shade Patterns */}
       <section className={styles.section}>
         <div className={styles.container}>
-          <h2>Seasonal Shade Patterns</h2>
+          <h2>Seasonal Sun Position</h2>
           {isDome ? (
           <p>{stadium.name} has a fixed roof and is climate-controlled, so shade doesn&apos;t vary by month or game time — every seat is protected from sun and rain all season.</p>
           ) : (
           <>
-          <p>Shade availability varies significantly throughout the baseball season:</p>
+          <p>The sun&apos;s path changes throughout the season. These astronomical values do not identify exact shaded rows:</p>
 
           <div className={styles.monthsGrid}>
             {months.map(month => (
@@ -275,42 +296,42 @@ export default function StadiumPageSSR({ stadium, sections, amenities, guide }: 
       {/* Game Time Recommendations */}
       <section className={styles.section}>
         <div className={styles.container}>
-          <h2>Shade by Game Time</h2>
+          <h2>Sun Context by Game Time</h2>
           {isDome ? (
           <p>With a fixed roof, {stadium.name} shades every seat at any start time — 1 PM day games are as protected as 7 PM night games.</p>
           ) : (
+          <>
+          <p>These are broad solar-orientation notes, not section or row recommendations.</p>
           <div className={styles.timeGrid}>
             {gameTimes.map(time => (
               <div key={time.id} className={styles.timeCard}>
                 <h3>{time.label} Games</h3>
                 <p>{time.recommendation}</p>
                 <div className={styles.timeSections}>
-                  <h4>Best Sections:</h4>
+                  <h4>Orientation-only context:</h4>
                   {time.id === 'day' && (
                     <ul>
-                      <li>Upper deck sections (maximum elevation)</li>
-                      <li>Covered/Club level areas</li>
-                      <li>{shadedSide(stadium.orientation, APPROX_SUN_AZIMUTH.midday)}</li>
+                      <li>{shadedSide(stadium.orientation, APPROX_SUN_AZIMUTH.midday)} is oriented to self-shade earlier in the model.</li>
+                      <li>Exact section boundaries require measured geometry.</li>
                     </ul>
                   )}
                   {time.id === 'afternoon' && (
                     <ul>
-                      <li>{shadedSide(stadium.orientation, APPROX_SUN_AZIMUTH.afternoon)}</li>
-                      <li>Behind home plate (upper levels)</li>
-                      <li>Covered concourse areas</li>
+                      <li>{shadedSide(stadium.orientation, APPROX_SUN_AZIMUTH.afternoon)} is oriented to self-shade earlier in the model.</li>
+                      <li>Roof state can change the result at retractable-roof parks.</li>
                     </ul>
                   )}
                   {time.id === 'evening' && (
                     <ul>
-                      <li>Most sections have shade by first pitch</li>
-                      <li>Avoid outfield for sunset glare</li>
-                      <li>Any covered section for guaranteed comfort</li>
+                      <li>Low western sun can create glare before sunset.</li>
+                      <li>No exact shade time is published without independent observation validation.</li>
                     </ul>
                   )}
                 </div>
               </div>
             ))}
           </div>
+          </>
           )}
         </div>
       </section>
@@ -318,7 +339,10 @@ export default function StadiumPageSSR({ stadium, sections, amenities, guide }: 
       {/* Section Details Table */}
       <section className={styles.section}>
         <div className={styles.container}>
-          <h2>All Sections Shade Analysis</h2>
+          <h2>{isDome ? 'Section Inventory and Roof Status' : 'Section Inventory and Measurement Status'}</h2>
+          <p>{isDome
+            ? 'The section names below are source-backed; the permanent-roof result applies throughout the seating bowl.'
+            : 'Section names are source-backed. Shade ratings are withheld until metric geometry is remotely measured and independently validated.'}</p>
 
           {/* Desktop: full table (hidden < 768px) */}
           <div className={`${styles.sectionsTableWrapper} ${styles.desktopOnly}`}>
@@ -335,7 +359,7 @@ export default function StadiumPageSSR({ stadium, sections, amenities, guide }: 
               </thead>
               <tbody>
                 {sections.map(section => {
-                  const { shadeRating, coverageLabel, bestTime, notes, stars } = sectionRowData(section, isDome);
+                  const { shadeRating, coverageLabel, bestTime, notes, stars } = sectionRowData(section, isDome, seatShadePublished);
                   return (
                     <tr key={section.id}>
                       <td>{section.name}</td>
@@ -367,7 +391,7 @@ export default function StadiumPageSSR({ stadium, sections, amenities, guide }: 
                   </summary>
                   <ul className={styles.sectionCards}>
                     {levelSections.map(section => {
-                      const { shadeRating, coverageLabel, bestTime, notes, stars } = sectionRowData(section, isDome);
+                      const { shadeRating, coverageLabel, bestTime, notes, stars } = sectionRowData(section, isDome, seatShadePublished);
                       return (
                         <li key={section.id} className={styles.sectionCard}>
                           <div className={styles.sectionCardHead}>
@@ -429,7 +453,7 @@ export default function StadiumPageSSR({ stadium, sections, amenities, guide }: 
             <div className={styles.amenitiesGrid}>
               <div className={styles.amenityCategory}>
                 <h3>Covered Concourse Areas</h3>
-                <p>All club level and upper deck concourses provide shade and climate-controlled areas.</p>
+                <p>Concourse coverage and access can vary. Confirm current shelter and access information in the club&apos;s official venue guide.</p>
               </div>
               <div className={styles.amenityCategory}>
                 <h3>Indoor Spaces</h3>
@@ -461,20 +485,21 @@ export default function StadiumPageSSR({ stadium, sections, amenities, guide }: 
             <h3>What are the best shaded seats at {stadium.name} for a 1 PM game?</h3>
             <p>{isDome
               ? `${stadium.name} has a fixed roof, so every seat is shaded for a 1 PM game — no section is exposed to direct sun regardless of where you sit.`
-              : `For a 1 PM game, the ${dayGameShadeSide} falls into shade first, so seats there and up in the back rows of the upper deck stay coolest.${coveredSections.length > 0 ? ` Fully covered sections like ${coveredSections.slice(0, 3).map(s => s.name).join(', ')} offer guaranteed shade all day.` : ''}`}</p>
+              : seatShadePublished
+                ? `Measured geometry indicates the ${dayGameShadeSide} self-shades first for this solar position.`
+                : `The orientation model suggests the ${dayGameShadeSide} may self-shade first, but we do not publish section or row recommendations without measured, independently validated geometry.`}</p>
           </div>
 
           <div className={styles.faqItem}>
             <h3>Which sections have covered seating?</h3>
             <p>
-              {coveredSections.length > 0
-                ? `${coveredSections.length} section${coveredSections.length === 1 ? '' : 's'} at ${stadium.name} ${coveredSections.length === 1 ? 'is' : 'are'} fully covered (all rows) — mostly indoor, suite, and club-level spaces`
-                : `${stadium.name} has limited fully covered seating`}
-              {partialSections.length > 0
-                ? `, and ${partialSections.length} more are shaded in their back rows only, under the upper-deck overhang and roof. Field-level and open bleacher sections are exposed.`
-                : '. Field-level and open bleacher sections are exposed.'}
+              {isDome
+                ? `${stadium.name}'s permanent roof blocks direct sunlight throughout the seating bowl.`
+                : seatShadePublished
+                  ? 'The validated section measurements are listed in the table above.'
+                  : 'The published seating map confirms section identities, but it does not provide the row-by-row overhang dimensions needed to verify a covered-row list. We therefore do not publish one.'}
             </p>
-            {(coveredSections.length > 0 || partialSections.length > 0) && (
+            {seatShadePublished && (coveredSections.length > 0 || partialSections.length > 0) && (
               <details>
                 <summary>See the full covered-section list</summary>
                 {coveredSections.length > 0 && (
@@ -489,19 +514,19 @@ export default function StadiumPageSSR({ stadium, sections, amenities, guide }: 
           
           <div className={styles.faqItem}>
             <h3>How early does shade reach the lower bowl?</h3>
-            <p>For day games, shade typically reaches the field level sections by the 5th-6th inning. Evening games (7 PM starts) usually have most of the stadium in shade by first pitch, except for outfield sections which may experience sunset glare.</p>
+            <p>We do not publish an inning or clock-time estimate for the lower bowl until the park&apos;s row and obstruction geometry has been measured and checked against independent shadow observations.</p>
           </div>
           
           <div className={styles.faqItem}>
             <h3>Are there shaded standing room areas?</h3>
-            <p>Yes, the upper deck concourse and club level concourses offer shaded standing room areas with views of the field. These are great options for escaping the sun during day games.</p>
+            <p>Standing-room and concourse access can change by event and ticket type. Check the club&apos;s current venue guide; this model does not certify those spaces as shade shelters.</p>
           </div>
         </div>
       </section>
 
       {/* Interactive section-level shade guide — placed below the section tables
           (below the fold) so it is never the LCP element. MLB only. */}
-      <InteractiveSeatingBowl
+      {seatShadePublished ? <InteractiveSeatingBowl
         sections={sections}
         orientation={stadium.orientation}
         latitude={stadium.latitude}
@@ -510,17 +535,24 @@ export default function StadiumPageSSR({ stadium, sections, amenities, guide }: 
         roof={stadium.roof}
         name={stadium.name}
         orientationNote={orientationNote}
-      />
+      /> : (
+        <section className={styles.section} aria-labelledby="interactive-model-paused">
+          <div className={styles.container}>
+            <h2 id="interactive-model-paused">Interactive shade model paused</h2>
+            <p>The colored section model is hidden because its precise boundaries would imply more measurement confidence than the current data supports.</p>
+          </div>
+        </section>
+      )}
 
       {/* Final CTA */}
       <section className={styles.stadiumCta}>
         <div className={styles.container}>
           <h2>Plan Your Visit to {stadium.name}</h2>
-          <p>Remember, shade patterns change throughout the season and even during the game. For the most accurate, real-time shade information for your specific game, use our interactive shade tracker.</p>
+          <p>Browse the source-backed section inventory and solar-orientation context. Exact seat-level shade results will return only after measured geometry passes independent validation.</p>
           
           <div className={styles.ctaButtons}>
             <a href={`/?stadium=${stadium.id}`} className={`${styles.btn} ${styles.btnPrimary}`}>
-              Check Real-Time Shade
+              View Stadium Context
             </a>
             <a href="/stadiums" className={`${styles.btn} ${styles.btnSecondary}`}>
               View All Stadiums

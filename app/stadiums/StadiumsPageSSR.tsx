@@ -27,11 +27,11 @@ export default function StadiumsPageSSR() {
       <div className={styles.container}>
         {/* Hero Section */}
         <section className={styles.hero}>
-          <h1>All Stadium Shade Guides</h1>
+          <h1>All Stadium Sun Guides</h1>
           <p className={styles.lead}>
-            Find the best shaded seats at {VENUE_COUNT} venues across Major League Baseball,
-            Minor League Baseball, and the NFL. Each guide includes detailed shade
-            analysis, covered sections, and seasonal recommendations.
+            Review seating inventory, roof type, orientation, solar context, and measurement
+            confidence at {VENUE_COUNT} venues across Major League Baseball, Minor League Baseball,
+            and the NFL.
           </p>
 
           <div className={styles.statsGrid}>
@@ -46,8 +46,8 @@ export default function StadiumsPageSSR() {
               <span className={styles.statLabel}>Leagues (MLB, MiLB, NFL)</span>
             </div>
             <div className={styles.stat}>
-              <span className={styles.statNumber}>Real-time</span>
-              <span className={styles.statLabel}>Shade Calculations</span>
+              <span className={styles.statNumber}>Field-level</span>
+              <span className={styles.statLabel}>Confidence Disclosures</span>
             </div>
           </div>
         </section>
@@ -135,19 +135,7 @@ export default function StadiumsPageSSR() {
                         </div>
                       </div>
                       
-                      <div className={styles.shadeRating}>
-                        <span className={styles.ratingLabel}>Shade Rating:</span>
-                        <div className={styles.ratingBar}>
-                          <div
-                            className={styles.ratingFill}
-                            style={{
-                              width: `${stadium.roof !== 'open' ? '100%' : '60%'}`
-                            }}
-                          />
-                        </div>
-                      </div>
-                      
-                      <span className={styles.viewGuide}>View Shade Guide →</span>
+                      <span className={styles.viewGuide}>View Data Status →</span>
                     </Link>
                   );
                 })}
@@ -171,7 +159,8 @@ export default function StadiumsPageSSR() {
               <h3>☀️ Time of Day Matters</h3>
               <p>
                 Day games (1 PM starts) have maximum sun exposure. 
-                Evening games (7 PM starts) typically have most seats in shade by first pitch.
+                Sun position depends on the actual date, time, and location. Before sunset,
+                exact seat exposure still depends on measured stadium structures.
               </p>
             </div>
             <div className={styles.infoCard}>
@@ -182,10 +171,10 @@ export default function StadiumsPageSSR() {
               </p>
             </div>
             <div className={styles.infoCard}>
-              <h3>🎯 Best Shade Strategies</h3>
+              <h3>🎯 Conservative Planning</h3>
               <p>
-                Upper deck sections, third base side (for day games), and any covered sections 
-                typically offer the best shade protection.
+                Confirm exact covered rows and retractable-roof state with the venue. Bring sun
+                protection whenever seat coverage has not been verified.
               </p>
             </div>
           </div>

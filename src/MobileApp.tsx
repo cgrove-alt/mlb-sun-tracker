@@ -19,6 +19,9 @@ import { weatherApi } from './services/weatherApi';
 import { SunCalculator } from './utils/sunCalculator';
 import { getSunPosition, getSunDescription, getCompassDirection } from './utils/sunCalculations';
 import { SunIcon, MoonIcon } from './components/Icons';
+import { FidelityNotice } from './components/FidelityNotice';
+import { getStadiumDataFidelity, fidelityNote } from './data/stadiumDataFidelity';
+import { canPublishSeatLevelShade } from './data/stadiumShadeConfidence';
 import { validateFilterCriteria, RateLimiter } from './utils/validation';
 import { debounce } from './utils/debounce';
 import './styles/mobile.css';
@@ -44,6 +47,8 @@ const MobileApp: React.FC = () => {
   const [sunPosition, setSunPosition] = useState<any>(null);
 
   const [isCalculating, setIsCalculating] = useState(false);
+  const seatShadePublished = selectedVenue?.league !== 'MLB'
+    || canPublishSeatLevelShade(selectedVenue.id);
 
   // Convert unified venue to legacy stadium when needed
   useEffect(() => {
@@ -160,6 +165,12 @@ const MobileApp: React.FC = () => {
         altitudeDegrees: position.altitudeDegrees,
         azimuthDegrees: position.azimuthDegrees
       });
+
+      if (selectedVenue.league === 'MLB' && !canPublishSeatLevelShade(selectedVenue.id)) {
+        setAllSections([]);
+        setFilteredSections([]);
+        return;
+      }
       
       // Get sections based on venue type
       let sections: any[] = [];
@@ -268,6 +279,12 @@ const MobileApp: React.FC = () => {
             />
           </section>
 
+          {selectedVenue?.league === 'MLB' && (
+            <section className="mobile-section">
+              <FidelityNotice note={fidelityNote(getStadiumDataFidelity(selectedVenue.id))} />
+            </section>
+          )}
+
           {/* Empty State Info Box */}
           {!selectedVenue && (
             <section className="mobile-section">
@@ -280,13 +297,13 @@ const MobileApp: React.FC = () => {
                     </p>
                     <div style={{display: 'flex', gap: '8px', justifyContent: 'center', flexWrap: 'wrap'}}>
                       <span style={{padding: '4px 8px', background: '#e3f2fd', borderRadius: '12px', fontSize: '0.8rem', color: '#1976d2'}}>
-                        ☀️ Real-time sun tracking
+                        ☀️ Date-specific solar position
                       </span>
                       <span style={{padding: '4px 8px', background: '#f3e5f5', borderRadius: '12px', fontSize: '0.8rem', color: '#7b1fa2'}}>
                         🏟️ {VENUE_COUNT} venues
                       </span>
                       <span style={{padding: '4px 8px', background: '#e8f5e9', borderRadius: '12px', fontSize: '0.8rem', color: '#388e3c'}}>
-                        📊 Detailed analysis
+                        📊 Confidence disclosed
                       </span>
                     </div>
                   </div>
@@ -315,9 +332,9 @@ const MobileApp: React.FC = () => {
                 <div className="mobile-stadium-guide-link">
                   <a href={`/stadium/${selectedVenue.id}`} className="mobile-guide-button">
                     <div>
-                      <div className="guide-title">View {selectedVenue.name} Shade Guide</div>
+                      <div className="guide-title">View {selectedVenue.name} Sun Guide</div>
                       <p className="mobile-guide-description">
-                        Discover the best shaded sections, weather patterns, and tips
+                        Review solar context, measurement status, and sun-safety tips
                       </p>
                     </div>
                     <svg width="20" height="20" viewBox="0 0 20 20" fill="currentColor" className="guide-arrow">
@@ -378,6 +395,14 @@ const MobileApp: React.FC = () => {
 
           {/* Filter and Results */}
           {gameDateTime && selectedVenue && (
+            !seatShadePublished ? (
+              <section className="mobile-section" id="results" role="status" aria-labelledby="mobile-shade-results-paused">
+                <div className="mobile-error-banner" style={{ background: '#fffbeb', color: '#78350f', borderColor: '#f5c96a' }}>
+                  <h2 id="mobile-shade-results-paused" className="mobile-section-title">Section results paused</h2>
+                  <p>Sun position and weather remain available. Section percentages, filters, and rankings are withheld until measured geometry passes independent shadow validation.</p>
+                </div>
+              </section>
+            ) : (
             <>
               <section className="mobile-section mobile-filter-section">
                 <MobileFilterSheet
@@ -430,6 +455,7 @@ const MobileApp: React.FC = () => {
                 )}
               </section>
             </>
+            )
           )}
         </div>
       </div>

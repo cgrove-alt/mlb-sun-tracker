@@ -73,9 +73,9 @@ export default function HomePage() {
             Find Shaded Seats at MLB, MiLB &amp; NFL Stadiums
           </h2>
           <p className="home-intro__lead">
-            The Shadium helps you find the best shaded seats at {VENUE_COUNT} venues across Major League
+            The Shadium provides sun-position context and seating information for {VENUE_COUNT} venues across Major League
             Baseball (all {MLB_COUNT} ballparks), Minor League Baseball ({MILB_COUNT} parks), and the NFL ({NFL_COUNT} stadiums).
-            Pick your stadium and game time to see which sections will be in the shade.
+            Pick your stadium and game time to see the available evidence and its measurement limits.
           </p>
 
           {/* What the tool actually accounts for — i.e. why its answer differs
@@ -84,9 +84,8 @@ export default function HomePage() {
             <li className="home-features__item">
               <span className="home-features__icon" aria-hidden="true">🧭</span>
               <span>
-                <strong>Every park&apos;s real orientation.</strong> Shade depends on which way home
-                plate faces, and that differs at every venue — we use each park&apos;s measured
-                bearing instead of assuming a side.
+                <strong>Park-specific orientation.</strong> Direction differs by venue and its
+                recorded precision is disclosed rather than treated as exact.
               </span>
             </li>
             <li className="home-features__item">
@@ -100,8 +99,8 @@ export default function HomePage() {
             <li className="home-features__item">
               <span className="home-features__icon" aria-hidden="true">🏟️</span>
               <span>
-                <strong>Roofs, decks and overhangs.</strong> Coverage is modeled per section, so you
-                can see which back rows sit under an overhang and stay shaded longest.
+                <strong>Geometry confidence.</strong> Source-backed section identity is kept separate
+                from modeled rows, roofs, decks, and overhangs. Unvalidated seat-level results are withheld.
               </span>
             </li>
             <li className="home-features__item">
@@ -128,9 +127,8 @@ export default function HomePage() {
             <div className="home-intro__col">
               <h3 className="home-intro__subtitle">How it works</h3>
               <p>
-                Choose your stadium and game time, and The Shadium factors in the sun&apos;s angle, the
-                stadium&apos;s orientation, roof and overhang coverage, and the weather to show where the
-                shade will be. <Link href="/how-it-works">Read the full methodology</Link>.
+                Choose a stadium and game time to see sun angle, orientation context, roof status,
+                weather, and the field-level data confidence. <Link href="/how-it-works">Read the full methodology</Link>.
               </p>
             </div>
           </div>

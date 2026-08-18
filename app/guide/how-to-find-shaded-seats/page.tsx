@@ -24,25 +24,25 @@ const howToJsonLd = {
       '@type': 'HowToStep',
       position: 3,
       name: 'Consider the Season',
-      text: 'The sun\'s arc changes throughout the year. In summer the sun rises higher, shrinking shadows. In April and September the sun is lower, creating longer shadows that reach more sections. Enter your exact game date for the most accurate prediction.',
+      text: 'The sun\'s arc changes throughout the year. Date-specific solar position is reliable context, but it does not identify exact shaded rows without measured stadium geometry.',
     },
     {
       '@type': 'HowToStep',
       position: 4,
-      name: 'Target the Upper Deck',
-      text: 'Upper deck seats are partially sheltered by the deck overhang above them. Even in open-air stadiums, the back rows of upper deck sections are often in shade during afternoon games.',
+      name: 'Confirm Physical Coverage',
+      text: 'Do not infer coverage from a level name. Confirm roof and overhang coverage with the venue unless measured row geometry is available.',
     },
     {
       '@type': 'HowToStep',
       position: 5,
-      name: 'Favor the Third-Base Side for Afternoon Games',
-      text: 'For most stadiums with a northeast orientation (the MLB standard), the third-base side receives shade from the upper deck in the afternoon. The first-base side tends to be sunny until later in the game.',
+      name: 'Treat Orientation as Context',
+      text: 'Orientation indicates broad solar direction, but structures determine the actual shadow boundary. Do not treat a base side as a universal shade rule.',
     },
     {
       '@type': 'HowToStep',
       position: 6,
-      name: 'Use The Shadium for Real-Time Shade Calculations',
-      text: 'Enter your stadium, date, and game time at theshadium.com. The tool calculates the exact sun position and shows section-by-section shade coverage so you can pick your seat with confidence.',
+      name: 'Check the Publication Status',
+      text: 'Enter your stadium, date, and game time at theshadium.com, then read the measurement notice. Exact section and row results are withheld until remotely reconstructed metric geometry passes independent validation.',
     },
   ],
 };
@@ -122,43 +122,43 @@ export default function HowToFindShadedSeatsPage() {
                 <strong>Consider the Season:</strong> Sun angle changes throughout the baseball season
               </li>
               <li>
-                <strong>Upper Deck Advantage:</strong> Upper deck seats often have overhead coverage
+                <strong>Confirm Coverage:</strong> A level label alone does not prove that a row sits under an overhang
               </li>
               <li>
-                <strong>Third Base Side:</strong> Generally gets shade earlier in day games
+                <strong>Use Orientation Carefully:</strong> It is broad context, not a universal section rule
               </li>
             </ol>
           </section>
 
           <section>
-            <h2>Best Shaded Sections by Time</h2>
+            <h2>What Game Time Can and Cannot Tell You</h2>
             <h3>Day Games (1:00 PM starts)</h3>
             <ul>
-              <li>Look for sections behind home plate under the upper deck</li>
-              <li>Third base side typically gets shade by the 3rd inning</li>
-              <li>Club level seats often have overhead protection</li>
+              <li>The sun is usually high, so unverified coverage should be treated conservatively</li>
+              <li>Confirm any roof or overhang claim with the venue</li>
+              <li>Do not rely on a section-level result without measured geometry</li>
             </ul>
 
             <h3>Evening Games (7:00 PM starts)</h3>
             <ul>
-              <li>First base side may have lingering sun in early innings</li>
-              <li>Outfield sections face less direct sun</li>
-              <li>Most seats are shaded by the 3rd inning</li>
+              <li>Low western sun may still create glare before sunset</li>
+              <li>Check the actual sunset time for the game date</li>
+              <li>Nighttime can be verified once the sun is below the horizon</li>
             </ul>
           </section>
 
           <section>
             <h2>Stadium-Specific Shade Patterns</h2>
             <p>
-              Every MLB stadium is oriented differently, affecting shade patterns. Use The Shadium's 
-              real-time sun tracker to see exactly which sections will be shaded during your game.
+              Every MLB stadium is oriented differently, but orientation is only one input. The Shadium
+              shows solar context and withholds exact sections until metric geometry is remotely reconstructed and validated.
             </p>
             
             <div className="cta-box">
-              <h3>Find Your Perfect Shaded Seat</h3>
-              <p>Use our interactive tool to check shade coverage for any MLB game</p>
+              <h3>Review Your Stadium&apos;s Evidence</h3>
+              <p>Check section provenance, solar context, roof status, and the measurement boundary.</p>
               <Link href="/" className="cta-button">
-                Check Shade Now →
+                Review Stadium Data →
               </Link>
             </div>
           </section>
@@ -180,27 +180,27 @@ export default function HowToFindShadedSeatsPage() {
             <h3>Do shaded seats cost more?</h3>
             <p>
               Not necessarily. Shade depends on time of day and stadium orientation, not ticket pricing. 
-              Some affordable upper deck seats offer excellent shade coverage.
+              Ticket price does not verify shade; confirm covered-seat information with the venue.
             </p>
 
             <h3>How accurate are shade predictions?</h3>
             <p>
-              The Shadium uses precise sun calculations based on stadium coordinates, date, and time. 
-              Weather conditions like clouds can provide additional shade beyond our predictions.
+              Astronomical sun position is calculated from coordinates, date, and time. Exact seat-level
+              shade is withheld until row, overhang, and obstruction geometry passes independent validation.
             </p>
 
             <h3>What if my section gets partial shade?</h3>
             <p>
-              Partial shade means some rows will be shaded while others won't. Generally, higher row 
-              numbers in a section get shade first as the sun moves across the sky.
+              A partial-shade label is not published for MLB sections without measured row and overhang
+              geometry. Confirm coverage with the venue instead of assuming higher rows are shaded.
             </p>
           </section>
 
           <div className="guide-footer">
-            <h2>Ready to Find Your Shaded Seats?</h2>
-            <p>Don't let the sun ruin your baseball experience. Use The Shadium to find the perfect seats in the shade.</p>
+            <h2>Ready to Review Your Stadium?</h2>
+            <p>Use the available evidence conservatively and bring sun protection whenever seat coverage is uncertain.</p>
             <Link href="/" className="cta-button primary">
-              Start Finding Shade
+              Review Stadium Data
             </Link>
           </div>
         </article>

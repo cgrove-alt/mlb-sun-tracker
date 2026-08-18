@@ -6,16 +6,15 @@ interface FidelityNoticeProps {
    * Precomputed fidelity note text. Pass null/undefined to render nothing.
    * Compute it with `fidelityNote(getStadiumDataFidelity(id))` from
    * src/data/stadiumDataFidelity.ts — do that on the server (or in an
-   * already-deferred client tree) so the fidelity classifier (which pulls the
-   * full stadium-data-aggregator) never lands in a page's first-load bundle.
+   * already-deferred client tree) so the fidelity classifier never lands in a
+   * page's first-load bundle.
    */
   note: string | null | undefined;
 }
 
 /**
- * Subtle, honest disclosure for stadiums whose per-section seating data is
- * approximate (the auto-generated bowl template) rather than a real seating
- * map. Renders nothing for parks with real data. Purely presentational now —
+ * Honest disclosure of the boundary between source-backed section identities
+ * and modeled physical geometry. Purely presentational —
  * the fidelity classification lives in src/data/stadiumDataFidelity.ts and is
  * passed in as `note` by the caller.
  *
