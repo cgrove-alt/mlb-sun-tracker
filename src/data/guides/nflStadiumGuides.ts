@@ -196,10 +196,11 @@ export const nflStadiumGuides: Record<string, StadiumGuide> = {
     },
     history: {
       timeline: [
-        { year: 1973, event: 'Stadium opens as Rich Stadium' },
-        { year: 1988, event: 'Renamed Ralph Wilson Stadium' },
-        { year: 2016, event: 'Becomes New Era Field' },
-        { year: 2020, event: 'Renamed Highmark Stadium' }
+        { year: 1973, event: 'Previous stadium opens as Rich Stadium' },
+        { year: 1988, event: 'Previous stadium renamed Ralph Wilson Stadium' },
+        { year: 2016, event: 'Previous stadium becomes New Era Field' },
+        { year: 2020, event: 'Previous stadium renamed Highmark Stadium' },
+        { year: 2026, event: 'New Highmark Stadium opens west of Abbott Road; old bowl demolished' }
       ],
       notableGames: [
         { date: '1993-01-03', description: 'The Comeback - Bills overcome 32-point deficit vs Oilers' },
