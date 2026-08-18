@@ -835,6 +835,67 @@ OVERRIDES = {
             {"id": "omaha-vip-club", "name": "VIP Club", "level": "club", "compassOffset": 180, "span": 12},
         ],
     },
+    "pensacola-blue-wahoos": {
+        "officialUrl": "https://www.milb.com/pensacola/tickets",
+        "geometryUrl": "https://img.mlbstatic.com/milb-images/image/upload/t_w2208/milb/qzzq9ep9yyopjrltrgmk.jpg",
+        "notes": "Admiral Fetterman Field / Blue Wahoos Stadium official stadium map: Box 100-110, Reserved 111-117, RF bleachers 118 & 120 (119 not labeled), plus Left Field Party Deck, Hancock Whitney Club, Cox Clubhouse, Bubba's Sandtrap, Publix Party Porch, Hill-Kelly Hill, Coors Light Cold Zone, Pepsi Pirate Deck, and Season Ticket Member Lounge.",
+        "bands": [
+            {"ids": [str(n) for n in range(100, 111)], "level": "field", "namePrefix": "Box"},
+            {"ids": [str(n) for n in range(111, 118)], "level": "lower", "namePrefix": "Reserved"},
+            {"ids": ["118", "120"], "level": "lower", "namePrefix": "Bleachers", "startOffset": 40, "endOffset": 70},
+        ],
+        "named": [
+            {"id": "pensacola-left-field-party-deck", "name": "Left Field Party Deck", "level": "club", "compassOffset": 270, "span": 14},
+            {"id": "pensacola-hancock-whitney-club", "name": "Hancock Whitney Club", "level": "club", "compassOffset": 200, "span": 16},
+            {"id": "pensacola-cox-clubhouse", "name": "Cox Clubhouse", "level": "club", "compassOffset": 180, "span": 12},
+            {"id": "pensacola-bubbas-sandtrap", "name": "Bubba's Sandtrap", "level": "standing", "compassOffset": 170, "span": 10},
+            {"id": "pensacola-publix-party-porch", "name": "Publix Party Porch", "level": "club", "compassOffset": 90, "span": 12},
+            {"id": "pensacola-hill-kelly-hill", "name": "Hill-Kelly Hill", "level": "standing", "compassOffset": 20, "span": 18},
+            {"id": "pensacola-coors-light-cold-zone", "name": "Coors Light Cold Zone", "level": "standing", "compassOffset": 50, "span": 10},
+            {"id": "pensacola-pepsi-pirate-deck", "name": "Pepsi Pirate Deck", "level": "club", "compassOffset": 0, "span": 12},
+            {"id": "pensacola-season-ticket-member-lounge", "name": "Season Ticket Member Lounge", "level": "club", "compassOffset": 140, "span": 10},
+        ],
+    },
+    "syracuse-mets": {
+        "officialUrl": "https://www.milb.com/syracuse/tickets",
+        "geometryUrl": "https://img.mlbstatic.com/milb-images/image/upload/t_w2208/milb/nkdyyzfwg56rhplkgjgo.jpg",
+        "notes": "NBT Bank Stadium official seating chart: lower 101-117; club 200-205, 207-213, 215-221 (206 and 214 not labeled); upper reserved 300-303 and 315-321; suites Seaver plus S303-S314 (prefixed to avoid colliding with upper 303) and 415-420; Berm, Metropolitan Club, Salt City Deck, 1B Sky/Patio, 3B Patio, Piazza Lounge, and 315 Bullpen Bar.",
+        "bands": [
+            {"ids": [str(n) for n in range(101, 118)], "level": "lower", "namePrefix": "Section"},
+            {
+                "ids": [str(n) for n in list(range(200, 206)) + list(range(207, 214)) + list(range(215, 222))],
+                "level": "club",
+                "namePrefix": "Section",
+                "startOffset": 74,
+                "endOffset": 286,
+            },
+            {
+                "ids": [str(n) for n in list(range(300, 304)) + list(range(315, 322))],
+                "level": "upper",
+                "namePrefix": "Upper Reserved",
+                "startOffset": 62,
+                "endOffset": 298,
+            },
+            {
+                "ids": [f"S{n}" for n in range(303, 315)] + [str(n) for n in range(415, 421)],
+                "level": "suite",
+                "namePrefix": "Suite",
+                "startOffset": 100,
+                "endOffset": 260,
+            },
+        ],
+        "named": [
+            {"id": "syracuse-seaver-suite", "name": "Seaver Suite", "level": "suite", "compassOffset": 240, "span": 8},
+            {"id": "syracuse-berm", "name": "Berm Area", "level": "standing", "compassOffset": 0, "span": 28},
+            {"id": "syracuse-metropolitan-club", "name": "Metropolitan Club", "level": "club", "compassOffset": 280, "span": 14},
+            {"id": "syracuse-salt-city-deck", "name": "Salt City Deck", "level": "club", "compassOffset": 300, "span": 12},
+            {"id": "syracuse-1b-sky", "name": "1B Sky", "level": "club", "compassOffset": 250, "span": 8},
+            {"id": "syracuse-1b-patio", "name": "1B Patio", "level": "club", "compassOffset": 255, "span": 8},
+            {"id": "syracuse-3b-patio", "name": "3B Patio", "level": "club", "compassOffset": 100, "span": 8},
+            {"id": "syracuse-piazza-lounge", "name": "Piazza Lounge", "level": "club", "compassOffset": 90, "span": 10},
+            {"id": "syracuse-315-bullpen-bar", "name": "315 Bullpen Bar", "level": "standing", "compassOffset": 50, "span": 10},
+        ],
+    },
 }
 
 
