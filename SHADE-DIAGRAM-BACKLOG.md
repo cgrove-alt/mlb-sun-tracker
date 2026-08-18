@@ -43,13 +43,14 @@ below — do NOT re-enable the diagram for a league until its item is complete a
   where CF actually faces north (Syracuse, Rome, Lansing).
 - **Still blocking diagrams:** the live path no longer emits `generateBaseballSections`
   or Field-100 clones. Parks without a transcribed official chart now return empty
-  (fail closed). Twenty-eight parks have source-backed inventories (Buffalo,
-  Birmingham, Charlotte, Columbus Clippers, Dayton, Durham, Erie, Frisco,
-  Greenville, Gwinnett, Indianapolis [partial], Iowa, Jacksonville, Las Vegas,
-  Louisville, Memphis [partial], Montgomery, Nashville, New Hampshire
-  [partial], Norfolk, Oklahoma City, Richmond, Rocket City, Salem, Somerset,
-  St. Paul, Toledo, Worcester [partial]). The other 92 still need official
-  chart IDs — do **not** fill them with a template.
+  (fail closed). Thirty-six parks have source-backed inventories (Asheville,
+  Birmingham, Bowling Green, Brooklyn, Buffalo, Charlotte, Columbus Clippers,
+  Dayton, Durham, Erie, Fort Wayne [partial], Frisco, Greenville, Gwinnett,
+  Harrisburg, Hartford, Indianapolis [partial], Iowa, Jacksonville, Las Vegas,
+  Louisville, Memphis [partial], Montgomery, Nashville, New Hampshire [partial],
+  Norfolk, Oklahoma City, Portland, Richmond, Rocket City, Sacramento, Salem,
+  Somerset, St. Paul, Toledo, Worcester [partial]). The other 84 still need
+  official chart IDs — do **not** fill them with a template.
   Do **not** publish section %.
 - **Work remaining:** transcribe the remaining official club charts / maps into
   `MILB_OFFICIAL_INVENTORIES` the same way, unique except shared bowls (Roger Dean).
