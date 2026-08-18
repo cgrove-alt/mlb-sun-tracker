@@ -162,6 +162,22 @@ export const MILB_OFFICIAL_INVENTORIES: Record<string, OfficialInventory> = {
       { id: "knot-hole-gang", name: "Knot Hole Gang", level: "standing", compassOffset: 270, span: 12 },
     ],
   },
+  "iowa-cubs": {
+    stadiumId: "iowa-cubs",
+    league: 'MiLB',
+    orientation: 39,
+    angleConvention: 'baseball-local',
+    sourceKind: "official-static-chart",
+    officialUrl: "https://www.milb.com/iowa/tickets/season-tickets",
+    inventoryNotes: "Principal Park official products: Diamond Flex lower A-Z; Diamond F-T and Bullpen AA/D/E/U-X are ticket-product subsets of that lettered field; Reserved Grandstand 4-16; Upper Diamond 10 and Upper Home Dugout 6; Club Box AA-B and W-ZZ. Club-box letters are prefixed so they do not collide with field letters.",
+    bands: [
+      { ids: ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z", "AA"], level: "field", namePrefix: "Section" },
+      { ids: ["4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16"], level: "lower", namePrefix: "Reserved Grandstand", startOffset: 74, endOffset: 286 },
+      { ids: ["iowa-upper-6", "iowa-upper-10"], level: "upper", namePrefix: "Upper", startOffset: 160, endOffset: 200 },
+      { ids: ["iowa-club-AA", "iowa-club-A", "iowa-club-B", "iowa-club-W", "iowa-club-X", "iowa-club-Y", "iowa-club-Z", "iowa-club-ZZ"], level: "club", namePrefix: "Club Box", startOffset: 150, endOffset: 210 },
+    ],
+    named: [],
+  },
   "jacksonville-jumbo-shrimp": {
     stadiumId: "jacksonville-jumbo-shrimp",
     league: 'MiLB',
@@ -194,6 +210,40 @@ export const MILB_OFFICIAL_INVENTORIES: Record<string, OfficialInventory> = {
       { id: "las-vegas-party-deck", name: "Party Deck", level: "club", compassOffset: 90, span: 14 },
     ],
   },
+  "louisville-bats": {
+    stadiumId: "louisville-bats",
+    league: 'MiLB',
+    orientation: 49,
+    angleConvention: 'baseball-local',
+    sourceKind: "official-static-chart",
+    officialUrl: "https://www.milb.com/louisville/tickets/seatingchart",
+    inventoryNotes: "Louisville Slugger Field official pricing chart: Backstop 1-2, RF reserved 105-108, away dugout 109-111, home plate 112-118, home dugout 119-123, LF reserved 124-136, club 208-224. 101-104 are not published.",
+    bands: [
+      { ids: ["1", "2"], level: "field", namePrefix: "Backstop", startOffset: 172, endOffset: 188 },
+      { ids: ["105", "106", "107", "108", "109", "110", "111", "112", "113", "114", "115", "116", "117", "118", "119", "120", "121", "122", "123", "124", "125", "126", "127", "128", "129", "130", "131", "132", "133", "134", "135", "136"], level: "lower", namePrefix: "Section" },
+      { ids: ["208", "209", "210", "211", "212", "213", "214", "215", "216", "217", "218", "219", "220", "221", "222", "223", "224"], level: "club", namePrefix: "Club", startOffset: 74, endOffset: 286 },
+    ],
+    named: [],
+  },
+  "memphis-redbirds": {
+    stadiumId: "memphis-redbirds",
+    league: 'MiLB',
+    orientation: 45,
+    angleConvention: 'baseball-local',
+    sourceKind: "official-static-chart",
+    officialUrl: "https://www.milb.com/memphis/tickets/flex-plans",
+    inventoryNotes: "AutoZone Park official products: A-Z landmark Section 100, Dugout Flex 101-112, Ballpark Pass 114-115, Coors Light Chill Zone 213/215/217/219. Left and right Bluffs, Party Deck, and Owner's Seats. Other 100/200 IDs are not invented.",
+    bands: [
+      { ids: ["100", "101", "102", "103", "104", "105", "106", "107", "108", "109", "110", "111", "112", "114", "115"], level: "lower", namePrefix: "Section" },
+      { ids: ["213", "215", "217", "219"], level: "club", namePrefix: "Chill Zone", startOffset: 40, endOffset: 80 },
+    ],
+    named: [
+      { id: "memphis-left-bluff", name: "Left Field Bluff", level: "standing", compassOffset: 300, span: 18 },
+      { id: "memphis-right-bluff", name: "Right Field Bluff", level: "standing", compassOffset: 60, span: 18 },
+      { id: "memphis-party-deck", name: "Party Deck", level: "club", compassOffset: 90, span: 14 },
+      { id: "memphis-owners-seats", name: "Owner's Seats", level: "club", compassOffset: 180, span: 10 },
+    ],
+  },
   "montgomery-biscuits": {
     stadiumId: "montgomery-biscuits",
     league: 'MiLB',
@@ -207,6 +257,24 @@ export const MILB_OFFICIAL_INVENTORIES: Record<string, OfficialInventory> = {
     ],
     named: [
       { id: "outfield-lawn", name: "Outfield Lawn", level: "standing", compassOffset: 0, span: 30 },
+    ],
+  },
+  "nashville-sounds": {
+    stadiumId: "nashville-sounds",
+    league: 'MiLB',
+    orientation: 150,
+    angleConvention: 'baseball-local',
+    sourceKind: "official-static-chart",
+    officialUrl: "https://www.milb.com/nashville/ballpark/ballparkguide",
+    inventoryNotes: "First Horizon Park A-Z: reserved 100-110 on 3B, 111-115 behind home (netted), 116-124 on 1B. ADA also publishes club 206. Grass berm plus Coors Light Home Run Porch and Vanderbilt Health Picnic Place. Club 207-210 is not invented.",
+    bands: [
+      { ids: ["100", "101", "102", "103", "104", "105", "106", "107", "108", "109", "110", "111", "112", "113", "114", "115", "116", "117", "118", "119", "120", "121", "122", "123", "124"], level: "lower", namePrefix: "Section" },
+      { ids: ["206"], level: "club", namePrefix: "Club", startOffset: 176, endOffset: 184 },
+    ],
+    named: [
+      { id: "nashville-grass-berm", name: "Grass Berm", level: "standing", compassOffset: 0, span: 28 },
+      { id: "nashville-home-run-porch", name: "Coors Light Home Run Porch", level: "standing", compassOffset: 40, span: 16 },
+      { id: "vanderbilt-health-picnic-place", name: "Vanderbilt Health Picnic Place", level: "standing", compassOffset: 320, span: 16 },
     ],
   },
   "norfolk-tides": {
@@ -267,6 +335,23 @@ export const MILB_OFFICIAL_INVENTORIES: Record<string, OfficialInventory> = {
     ],
     named: [
       { id: "standing-room", name: "Standing Room", level: "standing", compassOffset: 20, span: 16 },
+    ],
+  },
+  "st-paul-saints": {
+    stadiumId: "st-paul-saints",
+    league: 'MiLB',
+    orientation: 65,
+    angleConvention: 'baseball-local',
+    sourceKind: "official-static-chart",
+    officialUrl: "https://www.milb.com/st-paul/tickets/season-ticket-memberships",
+    geometryUrl: "https://issuu.com/stpaulsaints/docs/2025_chs_field_seating_map",
+    inventoryNotes: "CHS Field season memberships: Outfield 101-102 and 116-118, Infield 103-104 and 114-115, Dugout 105-106 and 112-113, Home Plate Reserved 107-111. Premium: Capitol Box and Securian Financial Club. Suite numbers are not invented.",
+    bands: [
+      { ids: ["101", "102", "103", "104", "105", "106", "107", "108", "109", "110", "111", "112", "113", "114", "115", "116", "117", "118"], level: "lower", namePrefix: "Section" },
+    ],
+    named: [
+      { id: "st-paul-capitol-box", name: "Capitol Box", level: "club", compassOffset: 180, span: 12 },
+      { id: "securian-financial-club", name: "Securian Financial Club", level: "club", compassOffset: 180, span: 14 },
     ],
   },
   "toledo-mud-hens": {

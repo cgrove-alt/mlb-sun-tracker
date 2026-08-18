@@ -54,9 +54,11 @@ export const SOURCE_BACKED_INVENTORY_STADIUMS: ReadonlySet<string> = new Set([
   'sofi-stadium-rams', 'soldier-field', 'state-farm-stadium', 'us-bank-stadium',
   'buffalo-bisons', 'charlotte-knights', 'columbus-clippers', 'dayton-dragons',
   'durham-bulls', 'erie-seawolves', 'frisco-roughriders', 'gwinnett-stripers',
-  'indianapolis-indians', 'jacksonville-jumbo-shrimp', 'las-vegas-aviators',
-  'montgomery-biscuits', 'norfolk-tides', 'oklahoma-city-dodgers',
-  'salem-red-sox', 'somerset-patriots', 'toledo-mud-hens', 'worcester-red-sox',
+  'indianapolis-indians', 'iowa-cubs', 'jacksonville-jumbo-shrimp',
+  'las-vegas-aviators', 'louisville-bats', 'memphis-redbirds',
+  'montgomery-biscuits', 'nashville-sounds', 'norfolk-tides',
+  'oklahoma-city-dodgers', 'salem-red-sox', 'somerset-patriots',
+  'st-paul-saints', 'toledo-mud-hens', 'worcester-red-sox',
 ]);
 
 function stdev(xs: number[]): number {
