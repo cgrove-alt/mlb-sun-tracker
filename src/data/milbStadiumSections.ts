@@ -2,6 +2,7 @@
 // Stadium-specific section layouts for Minor League Baseball venues
 
 import { StadiumSection } from './stadiumSections';
+import { getOfficialDetailedSections } from './officialSectionRegistry';
 
 export interface MiLBStadiumSections {
   stadiumId: string;
@@ -223,13 +224,16 @@ export const MILB_STADIUM_SECTIONS: MiLBStadiumSections[] = [
 
 // Get sections for a specific MiLB stadium
 export function getMiLBStadiumSections(stadiumId: string): StadiumSection[] {
-  const stadiumData = MILB_STADIUM_SECTIONS.find(s => s.stadiumId === stadiumId);
-  
-  // Return specific sections if we have them
-  if (stadiumData) {
-    return stadiumData.sections;
-  }
-  
-  // Otherwise generate generic sections
-  return generateMiLBSections(stadiumId, {});
+  const official = getOfficialDetailedSections(stadiumId);
+  if (!official) return [];
+  return official.map((section) => ({
+    id: section.id,
+    name: section.name,
+    level: section.level === 'standing' ? 'lower' : section.level,
+    baseAngle: section.baseAngle,
+    angleSpan: section.angleSpan,
+    rows: section.rows?.length,
+    covered: section.covered,
+    price: section.price,
+  }));
 }

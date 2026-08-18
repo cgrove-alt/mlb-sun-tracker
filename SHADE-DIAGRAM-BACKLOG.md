@@ -22,14 +22,16 @@ below — do NOT re-enable the diagram for a league until its item is complete a
   building still exists). `0°` remains only where the field is actually N–S (Highmark 2026,
   Empower, Lambeau, Raymond James, Lumen). Highmark lat/lon/capacity/opened moved to the
   2026 stadium west of Abbott Road.
-- **Still not done:** this does **not** unlock NFL section-level shade %. Section rings
-  are still generic. See item 2 (convention already fixed) and the seating-geometry work.
+- **Still not done:** this does **not** unlock NFL section-level shade %. Official
+  section IDs are now sourced; row/3-D geometry is still modeled. See item 2.
 
 ### 2. NFL — fix the section angle convention (done 2026-08-18)
 - **Was:** live math ran every football `baseAngle` through the baseball
   `(orientation + 90 − local)` converter, rotating every NFL bowl.
 - **Now:** `sectionAngleConventionFor` uses `compass-from-north` for NFL / football.
-  Still do **not** publish section % — generic rings plus unmeasured bowl geometry.
+  Club-linked IOMEDIA / official static charts replaced the generic 101–136 ring
+  for every franchise id. Still do **not** publish section % — unmeasured bowl
+  geometry and the venue publication gate remain.
 
 ### 3. MiLB — build real per-venue section layouts (blocking)
 - **Orientations (done 2026-08-18):** every MiLB id has a row in
@@ -39,13 +41,16 @@ below — do NOT re-enable the diagram for a league until its item is complete a
   Coolray-as-airport. HP→CF was read from north-up Esri tiles; Clem / Harbor Park /
   First Horizon published bearings lock the verified AAA subset. `0°` remains only
   where CF actually faces north (Syracuse, Rome, Lansing).
-- **Still blocking diagrams:** MiLB sections still come from `generateBaseballSections`,
-  a single generic template emitted identically for all 120 venues. Do **not** publish
-  section % — orientations only fix FAQ / OG shade-side copy.
-- **Work remaining:** author per-venue MiLB section geometry (angular position + coverage)
-  like the MLB `stadiumSections-split/*` files.
-- **Done when:** MiLB venues have real, non-template sections + measured orientation; the
-  `baseAngle/angleSpan` coverage script passes with real (not generated) data.
+- **Still blocking diagrams:** the live path no longer emits `generateBaseballSections`
+  or Field-100 clones. Parks without a transcribed official chart now return empty
+  (fail closed). Ten parks have source-backed inventories (Buffalo, Durham, Erie,
+  Jacksonville, Las Vegas, Montgomery, Norfolk, Oklahoma City, Salem, Somerset).
+  The other 110 still need official chart IDs — do **not** fill them with a template.
+  Do **not** publish section %.
+- **Work remaining:** transcribe the remaining official club charts / maps into
+  `MILB_OFFICIAL_INVENTORIES` the same way, unique except shared bowls (Roger Dean).
+- **Done when:** all 120 MiLB ids have real, non-template sections + measured
+  orientation; the coverage script passes with official (not generated) data.
 
 ### 4. Re-enable + verify (per league, after its data is fixed)
 - Gate the diagram on a data-quality check (real per-venue sections AND measured, non-default

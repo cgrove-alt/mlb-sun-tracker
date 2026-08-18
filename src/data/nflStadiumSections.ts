@@ -2,6 +2,7 @@
 // Stadium-specific section layouts for NFL venues
 
 import { StadiumSection } from './stadiumSections';
+import { getOfficialDetailedSections } from './officialSectionRegistry';
 
 export interface NFLStadiumSections {
   stadiumId: string;
@@ -225,13 +226,16 @@ export const NFL_STADIUM_SECTIONS: NFLStadiumSections[] = [
 
 // Get sections for a specific NFL stadium
 export function getNFLStadiumSections(stadiumId: string): StadiumSection[] {
-  const stadiumData = NFL_STADIUM_SECTIONS.find(s => s.stadiumId === stadiumId);
-  
-  // Return specific sections if we have them
-  if (stadiumData) {
-    return stadiumData.sections;
-  }
-  
-  // Otherwise generate generic sections
-  return generateNFLSections(stadiumId, {});
+  const official = getOfficialDetailedSections(stadiumId);
+  if (!official) return [];
+  return official.map((section) => ({
+    id: section.id,
+    name: section.name,
+    level: section.level === 'standing' ? 'lower' : section.level,
+    baseAngle: section.baseAngle,
+    angleSpan: section.angleSpan,
+    rows: section.rows?.length,
+    covered: section.covered,
+    price: section.price,
+  }));
 }

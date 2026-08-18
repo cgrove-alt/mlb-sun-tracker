@@ -31,7 +31,6 @@ import { getVenueSections } from './data/venueSections';
 import { MLBGame } from './services/mlbApi';
 import { NFLGame } from './services/nflApi';
 import { MiLBGame } from './services/milbApi';
-import { generateBaseballSections } from './utils/generateBaseballSections';
 import { WeatherForecast, weatherApi } from './services/weatherApi';
 import { OfflineIndicator } from './components/OfflineIndicator';
 import { trackStadiumSelection, trackGameSelection } from './utils/analytics';
@@ -189,22 +188,9 @@ function UnifiedAppContent() {
           return;
         }
         
-        // Get sections based on venue type
-        let sections: any[] = [];
-        if (selectedVenue.league === 'MLB') {
-          // Use async MLB sections to avoid bundling all stadiums
-          sections = await getStadiumSectionsAsync(selectedVenue.id);
-        } else if (selectedVenue.league === 'MiLB') {
-          // Get MiLB sections - will use custom layouts if available
-          sections = getVenueSections(selectedVenue.id);
-          // Fall back to generated sections if no custom layout
-          if (!sections || sections.length === 0) {
-            sections = generateBaseballSections(selectedVenue);
-          }
-        } else {
-          // Use generated sections for other sports
-          sections = getVenueSections(selectedVenue.id);
-        }
+        const sections = selectedVenue.league === 'MLB'
+          ? await getStadiumSectionsAsync(selectedVenue.id)
+          : getVenueSections(selectedVenue.id);
         
         // Calculate shade for unified venues
         const shadeResults = getUnifiedVenueShade(

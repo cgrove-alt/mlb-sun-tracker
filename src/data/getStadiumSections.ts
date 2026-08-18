@@ -31,6 +31,10 @@ function toPageSections(sections: readonly DetailedSection[]): StadiumSection[] 
  */
 export async function getStadiumSectionsAsync(stadiumId: string): Promise<StadiumSection[]> {
   try {
+    const { getOfficialDetailedSections } = await import('./officialSectionRegistry');
+    const official = getOfficialDetailedSections(stadiumId);
+    if (official) return toPageSections(official);
+
     // Explicit imports preserve one chunk per stadium while keeping the page,
     // row API, 3-D calculator and fidelity audit on the same DetailedSection
     // source. The former `stadiumSections-split` tree was an independent,

@@ -1,0 +1,554 @@
+#!/usr/bin/env python3
+"""Build MiLB official inventories from club seating-diagram pages and charts."""
+
+from __future__ import annotations
+
+import json
+import re
+import sys
+import urllib.request
+from concurrent.futures import ThreadPoolExecutor, as_completed
+from pathlib import Path
+
+ROOT = Path("/workspace")
+UA = {
+    "User-Agent": (
+        "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 "
+        "(KHTML, like Gecko) Chrome/126.0.0.0 Safari/537.36"
+    )
+}
+
+# Club slugs verified against milb.com (not city-name collisions).
+SLUGS = {
+    "buffalo-bisons": "buffalo",
+    "charlotte-knights": "charlotte-knights",
+    "columbus-clippers": "columbus",
+    "durham-bulls": "durham",
+    "gwinnett-stripers": "gwinnett",
+    "indianapolis-indians": "indianapolis",
+    "iowa-cubs": "iowa",
+    "jacksonville-jumbo-shrimp": "jacksonville",
+    "lehigh-valley-ironpigs": "lehigh-valley",
+    "louisville-bats": "louisville",
+    "memphis-redbirds": "memphis",
+    "nashville-sounds": "nashville",
+    "norfolk-tides": "norfolk",
+    "omaha-storm-chasers": "omaha",
+    "rochester-red-wings": "rochester",
+    "scranton-railriders": "scranton-wb",
+    "st-paul-saints": "st-paul",
+    "syracuse-mets": "syracuse",
+    "toledo-mud-hens": "toledo",
+    "worcester-red-sox": "worcester",
+    "albuquerque-isotopes": "albuquerque",
+    "el-paso-chihuahuas": "el-paso",
+    "las-vegas-aviators": "las-vegas",
+    "oklahoma-city-dodgers": "oklahoma-city",
+    "reno-aces": "reno",
+    "round-rock-express": "round-rock",
+    "sacramento-river-cats": "sacramento",
+    "salt-lake-bees": "salt-lake",
+    "sugar-land-space-cowboys": "sugar-land",
+    "tacoma-rainiers": "tacoma",
+    "akron-rubberducks": "akron",
+    "altoona-curve": "altoona",
+    "binghamton-rumble-ponies": "binghamton",
+    "bowie-baysox": "bowie",
+    "erie-seawolves": "erie",
+    "harrisburg-senators": "harrisburg",
+    "hartford-yard-goats": "hartford",
+    "new-hampshire-fisher-cats": "new-hampshire",
+    "portland-sea-dogs": "portland",
+    "reading-fightin-phils": "reading",
+    "richmond-flying-squirrels": "richmond",
+    "somerset-patriots": "somerset",
+    "birmingham-barons": "birmingham",
+    "biloxi-shuckers": "biloxi",
+    "chattanooga-lookouts": "chattanooga",
+    "columbus-clingstones": "clingstones",
+    "montgomery-biscuits": "montgomery",
+    "pensacola-blue-wahoos": "pensacola",
+    "rocket-city-trash-pandas": "rocket-city",
+    "knoxville-smokies": "knoxville",
+    "amarillo-sod-poodles": "amarillo",
+    "arkansas-travelers": "arkansas",
+    "corpus-christi-hooks": "corpus-christi",
+    "frisco-roughriders": "frisco",
+    "midland-rockhounds": "midland",
+    "northwest-arkansas-naturals": "northwest-arkansas",
+    "san-antonio-missions": "san-antonio",
+    "springfield-cardinals": "springfield",
+    "tulsa-drillers": "tulsa",
+    "wichita-wind-surge": "wichita",
+    "aberdeen-ironbirds": "aberdeen",
+    "asheville-tourists": "asheville",
+    "bowling-green-hot-rods": "bowling-green",
+    "brooklyn-cyclones": "brooklyn",
+    "greensboro-grasshoppers": "greensboro",
+    "greenville-drive": "greenville",
+    "hickory-crawdads": "hickory",
+    "hudson-valley-renegades": "hudson-valley",
+    "jersey-shore-blueclaws": "jersey-shore",
+    "rome-braves": "rome",
+    "wilmington-blue-rocks": "wilmington",
+    "winston-salem-dash": "winston-salem",
+    "beloit-sky-carp": "beloit",
+    "cedar-rapids-kernels": "cedar-rapids",
+    "dayton-dragons": "dayton",
+    "fort-wayne-tincaps": "fort-wayne",
+    "great-lakes-loons": "great-lakes",
+    "lake-county-captains": "lake-county",
+    "lansing-lugnuts": "lansing",
+    "peoria-chiefs": "peoria",
+    "quad-cities-river-bandits": "quad-cities",
+    "south-bend-cubs": "south-bend",
+    "west-michigan-whitecaps": "west-michigan",
+    "wisconsin-timber-rattlers": "wisconsin",
+    "eugene-emeralds": "eugene",
+    "everett-aquasox": "everett",
+    "hillsboro-hops": "hillsboro",
+    "spokane-indians": "spokane",
+    "tri-city-dust-devils": "tri-city-dust-devils",
+    "vancouver-canadians": "vancouver",
+    "fresno-grizzlies": "fresno",
+    "inland-empire-66ers": "inland-empire",
+    "lake-elsinore-storm": "lake-elsinore",
+    "modesto-nuts": "modesto",
+    "rancho-cucamonga-quakes": "rancho-cucamonga",
+    "san-jose-giants": "san-jose",
+    "stockton-ports": "stockton",
+    "visalia-rawhide": "visalia",
+    "augusta-greenjackets": "augusta",
+    "carolina-mudcats": "carolina",
+    "charleston-riverdogs": "charleston",
+    "columbia-fireflies": "columbia",
+    "delmarva-shorebirds": "delmarva",
+    "down-east-wood-ducks": "down-east",
+    "fayetteville-woodpeckers": "fayetteville",
+    "fredericksburg-nationals": "fredericksburg",
+    "kannapolis-cannon-ballers": "kannapolis",
+    "lynchburg-hillcats": "lynchburg",
+    "myrtle-beach-pelicans": "myrtle-beach",
+    "salem-red-sox": "salem",
+    "bradenton-marauders": "bradenton",
+    "clearwater-threshers": "clearwater",
+    "daytona-tortugas": "daytona",
+    "dunedin-blue-jays": "dunedin",
+    "fort-myers-mighty-mussels": "fort-myers",
+    "jupiter-hammerheads": "jupiter",
+    "lakeland-flying-tigers": "lakeland",
+    "palm-beach-cardinals": "jupiter",
+    "st-lucie-mets": "st-lucie",
+    "tampa-tarpons": "tampa",
+}
+
+PATHS = (
+    "/tickets/seating-diagram",
+    "/ballpark/seating-map",
+    "/tickets/seating-map",
+    "/ballpark/information/seating-map",
+    "/tickets",
+)
+
+NAMED = re.compile(
+    r"\b("
+    r"Blue Monster|Green Monster|Party Deck|Picnic (?:Area|Pavilion|Patio|Deck)|"
+    r"Grass Berm|Berm|Home Run (?:Porch|Patio|Deck|Hill)|"
+    r"Pool(?: Area| Deck)?|Beer Garden|Right Field (?:Pavilion|Porch|Deck)|"
+    r"Left Field (?:Pavilion|Porch|Deck)|Dugout (?:Club|Box)|"
+    r"Jackie Robinson Deck|Tobacco Road|PNC Triangle Club|"
+    r"Bully Hill(?: Party Deck)?|Las Vegas Club|Home Run Porch|"
+    r"Tiki (?:Deck|Bar)|Cabana|Hot Tub|Drink Rail|"
+    r"Skyline (?:Deck|Porch|Club)|Family Deck|Boardwalk|"
+    r"Funnville|Kids Zone"
+    r")\b",
+    re.I,
+)
+RANGE = re.compile(r"(?:sections?|secs?\.?)\s+(\d{2,3})\s*(?:-|–|to)\s*(\d{2,3})", re.I)
+BARE = re.compile(r"(?:section|sec\.?)\s+(\d{2,3})\b", re.I)
+
+
+def parse_stadiums() -> list[dict]:
+    text = (ROOT / "src/data/milbStadiums.ts").read_text()
+    out, cur = [], None
+    for line in text.splitlines():
+        mid = re.search(r"id:\s*'([^']+)'", line)
+        if mid and "venueId" not in line:
+            if cur and cur.get("name"):
+                out.append(cur)
+            cur = {"id": mid.group(1)}
+            continue
+        if not cur:
+            continue
+        for key in ("name", "team"):
+            m = re.search(rf"{key}:\s*'([^']+)'", line)
+            if m:
+                cur[key] = m.group(1)
+        ori = re.search(r"orientation:\s*(\d+)", line)
+        if ori:
+            cur["orientation"] = int(ori.group(1))
+        if line.strip() == "}," and cur.get("name"):
+            out.append(cur)
+            cur = None
+    if cur and cur.get("name") and cur.get("id"):
+        out.append(cur)
+    seen, uniq = set(), []
+    for s in out:
+        if s["id"] in seen or not s.get("team"):
+            continue
+        seen.add(s["id"])
+        uniq.append(s)
+    return uniq
+
+
+def fetch(url: str) -> tuple[int | None, str, str]:
+    req = urllib.request.Request(url, headers=UA)
+    try:
+        with urllib.request.urlopen(req, timeout=18) as resp:
+            return resp.status, resp.geturl(), resp.read().decode("utf-8", "ignore")
+    except Exception:
+        return None, url, ""
+
+
+def expand_ranges(ranges: list[tuple[int, int]]) -> list[str]:
+    ids: list[int] = []
+    for a, b in ranges:
+        lo, hi = (a, b) if a <= b else (b, a)
+        if hi - lo > 80 or hi > 799:
+            continue
+        ids.extend(range(lo, hi + 1))
+    return [str(n) for n in sorted(set(ids))]
+
+
+def consecutive_runs(nums: list[int], min_len: int = 6) -> list[list[int]]:
+    if not nums:
+        return []
+    nums = sorted(set(nums))
+    runs, run = [], [nums[0]]
+    for n in nums[1:]:
+        if n == run[-1] + 1:
+            run.append(n)
+        else:
+            if len(run) >= min_len:
+                runs.append(run)
+            run = [n]
+    if len(run) >= min_len:
+        runs.append(run)
+    return runs
+
+
+def collect(stadium: dict) -> dict:
+    slug = SLUGS.get(stadium["id"])
+    rec = {
+        "stadiumId": stadium["id"],
+        "name": stadium["name"],
+        "team": stadium["team"],
+        "orientation": stadium.get("orientation", 0),
+        "slug": slug,
+        "officialUrl": None,
+        "ranges": [],
+        "named": [],
+        "verified": False,
+    }
+    if not slug:
+        return rec
+    for path in PATHS:
+        url = f"https://www.milb.com/{slug}{path}"
+        status, final, html = fetch(url)
+        if status != 200 or not html:
+            continue
+        if stadium["team"].split()[0].lower() not in html.lower() and stadium["name"].split()[0].lower() not in html.lower():
+            continue
+        rec["verified"] = True
+        rec["officialUrl"] = rec["officialUrl"] or final
+        rec["ranges"].extend((int(a), int(b)) for a, b in RANGE.findall(html))
+        rec["named"].extend(m.group(0) for m in NAMED.finditer(html))
+        singles = [int(n) for n in BARE.findall(html)]
+        for run in consecutive_runs(singles, 8):
+            rec["ranges"].append((run[0], run[-1]))
+        if "seating" in path or rec["ranges"] or rec["named"]:
+            break
+    rec["named"] = sorted(set(rec["named"]))
+    rec["ranges"] = sorted(set(map(tuple, rec["ranges"])))
+    return rec
+
+
+# Hand-transcribed from club-published charts / FAQs. These win over page regex.
+OVERRIDES = {
+    "buffalo-bisons": {
+        "officialUrl": "https://www.milb.com/buffalo/tickets/seating-diagram",
+        "geometryUrl": "https://img.mlbstatic.com/milb-images/image/private/t_w2208/milb/f90jhubwo9m6lmshtxpw.jpg",
+        "notes": "Sahlen Field official 3-D diagram: 100-126 and 128 in the lower horseshoe, 201-222 under the roof, Bully Hill Party Deck past 128. FAQ reserved 100-120 / accessible 123-124 is a ticket-product subset of the same chart.",
+        "bands": [
+            {"ids": [str(n) for n in list(range(100, 127)) + [128]], "level": "lower", "namePrefix": "Reserved"},
+            {"ids": [str(n) for n in range(201, 223)], "level": "upper", "namePrefix": "Section", "startOffset": 74, "endOffset": 286},
+        ],
+        "named": [{"id": "bully-hill-party-deck", "name": "Bully Hill Party Deck", "level": "club", "compassOffset": 90, "span": 16}],
+    },
+    "durham-bulls": {
+        "officialUrl": "https://www.milb.com/durham/ballpark/seating-map",
+        "notes": "Club seating map + DBAP products: 100-level horseshoe, even 200s, Blue Monster.",
+        "bands": [
+            {"ids": [str(n) for n in list(range(100, 111)) + list(range(113, 119))], "level": "lower", "namePrefix": "Section"},
+            {"ids": ["202", "204", "206", "208", "210"], "level": "upper", "namePrefix": "Section", "startOffset": 74, "endOffset": 286},
+        ],
+        "named": [
+            {"id": "blue-monster", "name": "Blue Monster", "level": "club", "compassOffset": 270, "span": 18},
+            {"id": "pnc-triangle-club", "name": "PNC Triangle Club", "level": "club", "compassOffset": 180, "span": 12},
+            {"id": "jackie-robinson-deck", "name": "Jackie Robinson Deck", "level": "standing", "compassOffset": 20, "span": 20},
+        ],
+    },
+    "las-vegas-aviators": {
+        "officialUrl": "https://www.milb.com/las-vegas/tickets",
+        "notes": "Las Vegas Ballpark official products: 101-117 field, pool, berm, Home Run Porch, Las Vegas Club.",
+        "bands": [
+            {"ids": [str(n) for n in range(101, 118)], "level": "field", "namePrefix": "Section"},
+        ],
+        "named": [
+            {"id": "pool-area", "name": "Pool Area", "level": "club", "compassOffset": 20, "span": 16},
+            {"id": "berm", "name": "Grass Berm", "level": "standing", "compassOffset": 0, "span": 28},
+            {"id": "home-run-porch", "name": "Home Run Porch", "level": "standing", "compassOffset": 40, "span": 18},
+            {"id": "las-vegas-club", "name": "Las Vegas Club", "level": "club", "compassOffset": 180, "span": 14},
+            {"id": "party-deck", "name": "Party Deck", "level": "club", "compassOffset": 90, "span": 14},
+        ],
+    },
+    "jacksonville-jumbo-shrimp": {
+        "officialUrl": "https://www.milb.com/jacksonville/tickets",
+        "notes": "Club ticket page lists 102-113 and 118-120 as published reserved products.",
+        "bands": [
+            {"ids": [str(n) for n in list(range(102, 114)) + list(range(118, 121))], "level": "lower", "namePrefix": "Section"},
+        ],
+        "named": [],
+    },
+    "norfolk-tides": {
+        "officialUrl": "https://www.milb.com/norfolk/tickets",
+        "notes": "Harbor Park club page publishes reserved 200-223.",
+        "bands": [
+            {"ids": [str(n) for n in range(200, 224)], "level": "upper", "namePrefix": "Section", "startOffset": 74, "endOffset": 286},
+        ],
+        "named": [],
+    },
+    "erie-seawolves": {
+        "officialUrl": "https://www.milb.com/erie/tickets",
+        "notes": "UPMC Park club tickets page publishes reserved 102-117 and club 201-211 plus the Party Deck.",
+        "bands": [
+            {"ids": [str(n) for n in range(102, 118)], "level": "lower", "namePrefix": "Section"},
+            {"ids": [str(n) for n in range(201, 212)], "level": "club", "namePrefix": "Club"},
+        ],
+        "named": [{"id": "party-deck", "name": "Party Deck", "level": "club", "compassOffset": 90, "span": 14}],
+    },
+    "oklahoma-city-dodgers": {
+        "officialUrl": "https://www.milb.com/oklahoma-city/tickets",
+        "notes": "Chickasaw Bricktown Ballpark club page publishes 100-112, 200-203, and the outfield Lawn.",
+        "bands": [
+            {"ids": [str(n) for n in range(100, 113)], "level": "lower", "namePrefix": "Section"},
+            {"ids": [str(n) for n in range(200, 204)], "level": "club", "namePrefix": "Section", "startOffset": 80, "endOffset": 280},
+        ],
+        "named": [{"id": "lawn", "name": "Lawn", "level": "standing", "compassOffset": 0, "span": 28}],
+    },
+    "somerset-patriots": {
+        "officialUrl": "https://www.milb.com/somerset/tickets",
+        "notes": "TD Bank Ballpark club page publishes 101-122 and 201-218 plus standing room.",
+        "bands": [
+            {"ids": [str(n) for n in range(101, 123)], "level": "lower", "namePrefix": "Section"},
+            {"ids": [str(n) for n in range(201, 219)], "level": "upper", "namePrefix": "Section", "startOffset": 74, "endOffset": 286},
+        ],
+        "named": [{"id": "standing-room", "name": "Standing Room", "level": "standing", "compassOffset": 20, "span": 16}],
+    },
+    "montgomery-biscuits": {
+        "officialUrl": "https://www.milb.com/montgomery/tickets",
+        "notes": "Montgomery Riverwalk Stadium club page publishes reserved 101-117 and the Outfield Lawn.",
+        "bands": [
+            {"ids": [str(n) for n in range(101, 118)], "level": "lower", "namePrefix": "Section"},
+        ],
+        "named": [{"id": "outfield-lawn", "name": "Outfield Lawn", "level": "standing", "compassOffset": 0, "span": 30}],
+    },
+    "salem-red-sox": {
+        "officialUrl": "https://www.milb.com/salem/tickets",
+        "notes": "Salem Memorial Ballpark club page publishes 101-105 and 113-117 plus the Green Monster.",
+        "bands": [
+            {"ids": [str(n) for n in list(range(101, 106)) + list(range(113, 118))], "level": "lower", "namePrefix": "Section"},
+        ],
+        "named": [{"id": "green-monster", "name": "Green Monster", "level": "club", "compassOffset": 270, "span": 18}],
+    },
+}
+
+
+def bands_from_ranges(ranges: list[tuple[int, int]]) -> list[dict]:
+    ids = [int(x) for x in expand_ranges(ranges)]
+    groups = {"field": [], "lower": [], "club": [], "upper": []}
+    for n in ids:
+        if n < 100:
+            groups["field"].append(str(n))
+        elif n < 200:
+            groups["lower"].append(str(n))
+        elif n < 300:
+            groups["club"].append(str(n))
+        else:
+            groups["upper"].append(str(n))
+    bands = []
+    for level, tokens in groups.items():
+        if len(tokens) < 3:
+            continue
+        bands.append(
+            {
+                "ids": tokens,
+                "level": "field" if level == "field" else level,
+                "namePrefix": "Section",
+            }
+        )
+    return bands
+
+
+def named_places(names: list[str]) -> list[dict]:
+    out, seen = [], set()
+    for raw in names:
+        key = re.sub(r"[^a-z0-9]+", "-", raw.lower()).strip("-")
+        if key in seen or key in {"berm", "pool", "club"} and raw.lower() == "club":
+            continue
+        seen.add(key)
+        level = "standing"
+        offset = 0
+        low = raw.lower()
+        if "monster" in low:
+            level, offset = "club", 270
+        elif "pool" in low or "cabana" in low or "tiki" in low:
+            level, offset = "club", 20
+        elif "party" in low or "club" in low:
+            level, offset = "club", 180
+        elif "picnic" in low or "porch" in low or "pavilion" in low:
+            level, offset = "standing", 40
+        elif "berm" in low or "lawn" in low:
+            level, offset = "standing", 0
+        out.append({"id": key, "name": raw, "level": level, "compassOffset": offset, "span": 14})
+    return out
+
+
+def emit_inventory(park: dict) -> str:
+    bands = []
+    for band in park["bands"]:
+        extra = ""
+        if band.get("startOffset") is not None:
+            extra += f", startOffset: {band['startOffset']}, endOffset: {band.get('endOffset', 298)}"
+        bands.append(
+            f"      {{ ids: {json.dumps(band['ids'])}, level: {json.dumps(band['level'])}, "
+            f"namePrefix: {json.dumps(band.get('namePrefix') or 'Section')}{extra} }}"
+        )
+    named = []
+    for place in park.get("named") or []:
+        named.append(
+            f"      {{ id: {json.dumps(place['id'])}, name: {json.dumps(place['name'])}, "
+            f"level: {json.dumps(place['level'])}, compassOffset: {place.get('compassOffset', 90)}, "
+            f"span: {place.get('span', 10)} }}"
+        )
+    notes = park.get("notes")
+    notes_line = f"\n    inventoryNotes: {json.dumps(notes)}," if notes else ""
+    geom = park.get("geometryUrl")
+    geom_line = f"\n    geometryUrl: {json.dumps(geom)}," if geom else ""
+    named_block = ("[\n" + ",\n".join(named) + ",\n    ]") if named else "[]"
+    return (
+        f"  {json.dumps(park['stadiumId'])}: {{\n"
+        f"    stadiumId: {json.dumps(park['stadiumId'])},\n"
+        f"    league: 'MiLB',\n"
+        f"    orientation: {park['orientation']},\n"
+        f"    angleConvention: 'baseball-local',\n"
+        f"    sourceKind: {json.dumps(park.get('sourceKind', 'official-static-chart'))},\n"
+        f"    officialUrl: {json.dumps(park['officialUrl'])},{geom_line}{notes_line}\n"
+        f"    bands: [\n" + ",\n".join(bands) + ",\n    ],\n"
+        f"    named: {named_block},\n"
+        f"  }}"
+    )
+
+
+def emit_provenance(park: dict) -> str:
+    count = sum(len(b["ids"]) for b in park["bands"]) + len(park.get("named") or [])
+    notes = park.get("notes")
+    notes_line = f", inventoryNotes: {json.dumps(notes)}" if notes else ""
+    geom = park.get("geometryUrl")
+    geom_line = f", geometryUrl: {json.dumps(geom)}" if geom else ""
+    return (
+        f"  {json.dumps(park['stadiumId'])}: {{ stadiumId: {json.dumps(park['stadiumId'])}, "
+        f"sourceKind: 'official-static-chart', officialUrl: {json.dumps(park['officialUrl'])}"
+        f"{geom_line}, sectionIdentity: 'source-backed', rowGeometry: 'modeled', "
+        f"inventoryStatus: 'reconciled', currentInventoryCount: {count}, "
+        f"sourceProductCount: {count}{notes_line}, reviewedOn: '2026-08-18' }}"
+    )
+
+
+def main() -> None:
+    stadiums = parse_stadiums()
+    print(f"parsed {len(stadiums)} MiLB stadiums", flush=True)
+    overrides_only = "--overrides-only" in sys.argv
+    collected = {}
+    if not overrides_only:
+        with ThreadPoolExecutor(max_workers=8) as pool:
+            futs = {pool.submit(collect, s): s for s in stadiums}
+            for fut in as_completed(futs):
+                rec = fut.result()
+                collected[rec["stadiumId"]] = rec
+                print(f"  {rec['stadiumId']}: verified={rec['verified']} ranges={rec['ranges']} named={rec['named'][:4]}", flush=True)
+
+    parks = []
+    missing = []
+    for s in stadiums:
+        rec = collected.get(s["id"], {})
+        if s["id"] in OVERRIDES:
+            inv = {
+                "stadiumId": s["id"],
+                "orientation": s.get("orientation", 0),
+                **OVERRIDES[s["id"]],
+            }
+            parks.append(inv)
+            continue
+        if overrides_only:
+            missing.append(s["id"])
+            continue
+        bands = bands_from_ranges(rec.get("ranges") or [])
+        named = named_places(rec.get("named") or [])
+        # Named-only hits are usually page chrome ("Kids Zone", "Pool"), not an inventory.
+        if not bands:
+            missing.append(s["id"])
+            continue
+        parks.append(
+            {
+                "stadiumId": s["id"],
+                "orientation": s.get("orientation", 0),
+                "officialUrl": rec.get("officialUrl") or f"https://www.milb.com/{SLUGS.get(s['id'], s['id'])}/tickets",
+                "notes": "Section IDs transcribed from the club MiLB.com seating / tickets page.",
+                "bands": bands,
+                "named": named,
+            }
+        )
+
+    # Shared bowl: Roger Dean
+    jup = next((p for p in parks if p["stadiumId"] == "jupiter-hammerheads"), None)
+    if jup and not any(p["stadiumId"] == "palm-beach-cardinals" for p in parks):
+        copy = dict(jup)
+        copy["stadiumId"] = "palm-beach-cardinals"
+        parks.append(copy)
+
+    parks.sort(key=lambda p: p["stadiumId"])
+    (ROOT / "tmp/milb-official-collect.json").write_text(
+        json.dumps({"parks": parks, "missing": missing}, indent=2)
+    )
+    print(f"inventories={len(parks)} missing={len(missing)} {missing}", flush=True)
+
+    inv = (
+        "import type { OfficialInventory } from '../officialTypes';\n\n"
+        "export const MILB_OFFICIAL_INVENTORIES: Record<string, OfficialInventory> = {\n"
+        + ",\n".join(emit_inventory(p) for p in parks)
+        + ",\n};\n"
+    )
+    (ROOT / "src/data/sections/milb/officialInventories.ts").write_text(inv)
+    prov = (
+        "import type { StadiumSectionProvenance } from './stadiumSectionProvenance';\n\n"
+        "export const MILB_SECTION_PROVENANCE: Record<string, StadiumSectionProvenance> = {\n"
+        + ",\n".join(emit_provenance(p) for p in parks)
+        + ",\n};\n"
+    )
+    (ROOT / "src/data/milbSectionProvenance.ts").write_text(prov)
+    print("wrote official MiLB modules")
+
+
+if __name__ == "__main__":
+    main()

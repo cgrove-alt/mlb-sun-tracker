@@ -2,6 +2,12 @@
 // Central system for loading stadium-specific sections and obstructions
 
 import { DetailedSection, Obstruction3D } from '../types/stadium-complete';
+import {
+  getOfficialDetailedSections,
+  hasOfficialInventory,
+  OFFICIAL_MILB_SECTION_IDS,
+  OFFICIAL_NFL_SECTION_IDS,
+} from './officialSectionRegistry';
 
 
 // Import MiLB sections
@@ -68,14 +74,6 @@ const SECTION_LOADERS: Record<string, SectionLoader> = {
   'bluejays': () => import('./sections/mlb/bluejays').then(m => m.bluejaysSections),
   'athletics': () => import('./sections/mlb/athletics').then(m => m.athleticsSections),
   'mariners': () => import('./sections/mlb/mariners').then(m => m.marinersSections),
-  
-  // MiLB
-  'las-vegas-aviators': () => import('./sections/milb/aaa/las-vegas-aviators').then(m => m.lasvegasaviatorsSections),
-  
-  // NFL
-  'sofi-stadium': () => import('./sections/nfl/sofi-stadium').then(m => m.sofiStadiumSections),
-  
-  // Add more as they're created...
 };
 
 // Obstruction data registry
@@ -353,10 +351,17 @@ export async function getStadiumSections(
   const cached = sectionCache.get(stadiumId);
   if (cached) return cached;
 
+  const official = getOfficialDetailedSections(stadiumId);
+  if (official) {
+    sectionCache.set(stadiumId, official);
+    return official;
+  }
+
   const loader = SECTION_LOADERS[stadiumId];
-  const sections = loader
-    ? await loader()
-    : generateGenericSections(stadiumId, league);
+  if (!loader) {
+    return [];
+  }
+  const sections = await loader();
 
   sectionCache.set(stadiumId, sections);
   return sections;
@@ -371,9 +376,10 @@ export async function getStadiumObstructions(
   if (cached) return cached;
 
   const loader = OBSTRUCTION_LOADERS[stadiumId];
-  const obstructions = loader
-    ? await loader()
-    : generateGenericObstructions(league);
+  if (!loader) {
+    return [];
+  }
+  const obstructions = await loader();
 
   obstructionCache.set(stadiumId, obstructions);
   return obstructions;
@@ -387,7 +393,7 @@ export function hasSpecificData(stadiumId: string): {
   hasObstructions: boolean;
 } {
   return {
-    hasSections: !!SECTION_LOADERS[stadiumId],
+    hasSections: !!SECTION_LOADERS[stadiumId] || hasOfficialInventory(stadiumId),
     hasObstructions: !!OBSTRUCTION_LOADERS[stadiumId]
   };
 }
@@ -400,7 +406,11 @@ export function getCoverageStats(): {
   coveragePercentage: number;
 } {
   const totalStadiums = 187; // 31 MLB + 122 MiLB + 34 NFL
-  const stadiumsWithSections = Object.keys(SECTION_LOADERS).length;
+  const stadiumsWithSections = new Set([
+    ...Object.keys(SECTION_LOADERS),
+    ...OFFICIAL_MILB_SECTION_IDS,
+    ...OFFICIAL_NFL_SECTION_IDS,
+  ]).size;
   const stadiumsWithObstructions = Object.keys(OBSTRUCTION_LOADERS).length;
 
   return {
@@ -412,5 +422,9 @@ export function getCoverageStats(): {
 }
 
 /** Registered stadium ids, without loading any section data. */
-export const REGISTERED_SECTION_IDS: readonly string[] = Object.keys(SECTION_LOADERS);
+export const REGISTERED_SECTION_IDS: readonly string[] = [
+  ...Object.keys(SECTION_LOADERS),
+  ...OFFICIAL_MILB_SECTION_IDS,
+  ...OFFICIAL_NFL_SECTION_IDS,
+];
 export const REGISTERED_OBSTRUCTION_IDS: readonly string[] = Object.keys(OBSTRUCTION_LOADERS);

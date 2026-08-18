@@ -44,6 +44,17 @@ export const SOURCE_BACKED_INVENTORY_STADIUMS: ReadonlySet<string> = new Set([
   'mariners', 'marlins', 'mets', 'nationals', 'orioles', 'padres',
   'phillies', 'pirates', 'rangers', 'rays', 'reds', 'redsox', 'rockies',
   'royals', 'tigers', 'twins', 'whitesox', 'yankees',
+  'acrisure-stadium', 'allegiant-stadium', 'at-t-stadium', 'bank-of-america-stadium',
+  'caesars-superdome', 'empower-field', 'everbank-stadium', 'ford-field',
+  'geha-field-arrowhead', 'gillette-stadium', 'hard-rock-stadium', 'highmark-stadium',
+  'huntington-bank-field', 'lambeau-field', 'levis-stadium', 'lincoln-financial-field',
+  'lucas-oil-stadium', 'lumen-field', 'm-t-bank-stadium', 'mercedes-benz-stadium',
+  'metlife-stadium-giants', 'metlife-stadium-jets', 'nissan-stadium', 'northwest-stadium',
+  'nrg-stadium', 'paycor-stadium', 'raymond-james-stadium', 'sofi-stadium-chargers',
+  'sofi-stadium-rams', 'soldier-field', 'state-farm-stadium', 'us-bank-stadium',
+  'buffalo-bisons', 'durham-bulls', 'erie-seawolves', 'jacksonville-jumbo-shrimp',
+  'las-vegas-aviators', 'montgomery-biscuits', 'norfolk-tides', 'oklahoma-city-dodgers',
+  'salem-red-sox', 'somerset-patriots',
 ]);
 
 function stdev(xs: number[]): number {
@@ -139,6 +150,7 @@ export const STADIUM_DATA_FIDELITY: Record<string, DataFidelity> = {
  * safe to call from a client component.
  */
 export function getStadiumDataFidelity(stadiumId: string): DataFidelity {
+  if (SOURCE_BACKED_INVENTORY_STADIUMS.has(stadiumId)) return 'source-backed';
   return STADIUM_DATA_FIDELITY[stadiumId] ?? 'approximate';
 }
 

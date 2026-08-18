@@ -4,7 +4,6 @@ import { Stadium } from './data/stadiums';
 import { UnifiedVenue, convertToLegacyStadium } from './data/unifiedVenues';
 import { getStadiumSectionsAsync } from './data/getStadiumSections';
 import { getVenueSections } from './data/venueSections';
-import { generateBaseballSections } from './utils/generateBaseballSections';
 import { MLBGame } from './services/mlbApi';
 import { MiLBGame } from './services/milbApi';
 import { NFLGame } from './services/nflApi';
@@ -173,21 +172,9 @@ const MobileApp: React.FC = () => {
         return;
       }
       
-      // Get sections based on venue type
-      let sections: any[] = [];
-      if (selectedVenue.league === 'MLB') {
-        // Use async MLB sections to avoid bundling all stadiums
-        sections = await getStadiumSectionsAsync(selectedVenue.id);
-      } else if (selectedVenue.league === 'MiLB') {
-        // Get MiLB sections - will use custom layouts if available
-        sections = getVenueSections(selectedVenue.id);
-        // Fall back to generated sections if no custom layout
-        if (!sections || sections.length === 0) {
-          sections = generateBaseballSections(selectedVenue);
-        }
-      } else {
-        sections = getVenueSections(selectedVenue.id);
-      }
+      const sections = selectedVenue.league === 'MLB'
+        ? await getStadiumSectionsAsync(selectedVenue.id)
+        : getVenueSections(selectedVenue.id);
       const gameDate = gameDateTime;
       
       // Use the same time-based calculation as desktop
