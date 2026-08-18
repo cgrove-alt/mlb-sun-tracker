@@ -735,6 +735,88 @@ OVERRIDES = {
         ],
         "named": [],
     },
+    "lehigh-valley-ironpigs": {
+        "officialUrl": "https://www.milb.com/lehigh-valley/tickets/map",
+        "geometryUrl": "https://img.mlbstatic.com/milb-images/image/upload/v1779121987/milb/w8jgjdepszi3mogvubwm.png",
+        "notes": "Coca-Cola Park official 2026 stadium map: field 101-120, mid 201-212, upper 301-302 and 304-320 (303 is not labeled), BSI Dugout Suites, PenTeleData Party Porches, PNC Club, Picnic Patio, Tiki Terrace & Oasis, Pig Pen, Capital BLUE Lawn, Keystone Cabana, Bacon Strip, and KLYR.",
+        "bands": [
+            {"ids": [str(n) for n in range(101, 121)], "level": "lower", "namePrefix": "Section"},
+            {"ids": [str(n) for n in range(201, 213)], "level": "club", "namePrefix": "Section", "startOffset": 74, "endOffset": 286},
+            {"ids": [str(n) for n in list(range(301, 303)) + list(range(304, 321))], "level": "upper", "namePrefix": "Section", "startOffset": 62, "endOffset": 298},
+        ],
+        "named": [
+            {"id": "lehigh-bsi-dugout-suites", "name": "BSI Dugout Suites", "level": "suite", "compassOffset": 180, "span": 12},
+            {"id": "lehigh-party-porch-1b", "name": "PenTeleData Party Porch (1B)", "level": "club", "compassOffset": 90, "span": 10},
+            {"id": "lehigh-party-porch-3b", "name": "PenTeleData Party Porch (3B)", "level": "club", "compassOffset": 270, "span": 10},
+            {"id": "lehigh-pnc-club", "name": "PNC Club", "level": "club", "compassOffset": 180, "span": 16},
+            {"id": "lehigh-picnic-patio", "name": "Picnic Patio", "level": "standing", "compassOffset": 280, "span": 16},
+            {"id": "lehigh-tiki-terrace", "name": "Tiki Terrace & Oasis", "level": "club", "compassOffset": 300, "span": 14},
+            {"id": "lehigh-pig-pen", "name": "The Pig Pen", "level": "standing", "compassOffset": 310, "span": 10},
+            {"id": "lehigh-capital-blue-lawn", "name": "Capital BLUE Lawn", "level": "standing", "compassOffset": 0, "span": 28},
+            {"id": "lehigh-keystone-cabana", "name": "Keystone Cabana", "level": "club", "compassOffset": 20, "span": 10},
+            {"id": "lehigh-bacon-strip", "name": "Bacon Strip", "level": "standing", "compassOffset": 50, "span": 14},
+            {"id": "lehigh-klyr", "name": "KLYR", "level": "club", "compassOffset": 40, "span": 8},
+        ],
+    },
+    "midland-rockhounds": {
+        "officialUrl": "https://www.milb.com/midland/tickets/group-tickets",
+        "geometryUrl": "https://img.mlbstatic.com/milb-images/image/upload/milb/ygk4uymlnbohqkz2yvs2.pdf",
+        "notes": "Momentum Bank Ballpark official group pricing publishes Outfield 1-3 and 19-20 plus Field 4-5 and 17-18. Sections 6-16 are not invented.",
+        "inventoryStatus": "partial",
+        "bands": [
+            {"ids": ["1", "2", "3", "4", "5", "17", "18", "19", "20"], "level": "lower", "namePrefix": "Section"},
+        ],
+        "named": [],
+    },
+    "fresno-grizzlies": {
+        "officialUrl": "https://www.milb.com/fresno/ballpark/a-z-guide",
+        "notes": "Chukchansi Park A-Z publishes restroom/ATM/exit landmarks in 107-109, 111-113, 115-116, 118-121, 123-127, club 214 and 224, plus Kodiak Club, Dugout Club, and Tulare Plaza. Intermediate numbers (110, 114, 117, 122, and other 200s) are not invented.",
+        "inventoryStatus": "partial",
+        "bands": [
+            {
+                "ids": ["107", "108", "109", "111", "112", "113", "115", "116", "118", "119", "120", "121", "123", "124", "125", "126", "127"],
+                "level": "lower",
+                "namePrefix": "Section",
+            },
+            {"ids": ["214", "224"], "level": "club", "namePrefix": "Section", "startOffset": 160, "endOffset": 200},
+        ],
+        "named": [
+            {"id": "fresno-kodiak-club", "name": "Kodiak Club", "level": "club", "compassOffset": 180, "span": 14},
+            {"id": "fresno-dugout-club", "name": "Dugout Club", "level": "club", "compassOffset": 140, "span": 12},
+            {"id": "tulare-plaza", "name": "Tulare Plaza", "level": "standing", "compassOffset": 90, "span": 12},
+        ],
+    },
+    "albuquerque-isotopes": {
+        "officialUrl": "https://www.milb.com/albuquerque/ballpark/a-z",
+        "notes": "Isotopes Park A-Z publishes landmarks 102, 104, 115, 118, 120, 122, 123, club 201/203/205, Pepsi Porch, Smith's Picnic Pavilion, Tecate Terrace, Miller Lite Stadium Club, Tequila Herradura Fiesta Deck, Berm, and Orbit's O-Zone. Intermediate numbers are not invented.",
+        "inventoryStatus": "partial",
+        "bands": [
+            {"ids": ["102", "104", "115", "118", "120", "122", "123"], "level": "lower", "namePrefix": "Section"},
+            {"ids": ["201", "203", "205"], "level": "club", "namePrefix": "Section", "startOffset": 240, "endOffset": 280},
+        ],
+        "named": [
+            {"id": "albuquerque-pepsi-porch", "name": "Pepsi Porch", "level": "club", "compassOffset": 270, "span": 12},
+            {"id": "smiths-picnic-pavilion", "name": "Smith's Picnic Pavilion", "level": "standing", "compassOffset": 40, "span": 18},
+            {"id": "tecate-terrace", "name": "Tecate Terrace", "level": "suite", "compassOffset": 180, "span": 12},
+            {"id": "miller-lite-stadium-club", "name": "Miller Lite Stadium Club", "level": "club", "compassOffset": 180, "span": 14},
+            {"id": "tequila-herradura-fiesta-deck", "name": "Tequila Herradura Fiesta Deck", "level": "club", "compassOffset": 90, "span": 12},
+            {"id": "albuquerque-berm", "name": "Berm", "level": "standing", "compassOffset": 0, "span": 28},
+            {"id": "orbits-o-zone", "name": "Orbit's O-Zone", "level": "standing", "compassOffset": 10, "span": 14},
+        ],
+    },
+    "round-rock-express": {
+        "officialUrl": "https://www.milb.com/round-rock/ballpark/faqs",
+        "notes": "Dell Diamond FAQs publish restroom/elevator landmarks in 111, 114, 116, 118, 119, 120, 122, 124 plus Intel Club, Home Run Porch, and Picnic Area. Intermediate numbers are not invented.",
+        "inventoryStatus": "partial",
+        "bands": [
+            {"ids": ["111", "114", "116", "118", "119", "120", "122", "124"], "level": "lower", "namePrefix": "Section"},
+        ],
+        "named": [
+            {"id": "round-rock-intel-club", "name": "Intel Club", "level": "club", "compassOffset": 180, "span": 14},
+            {"id": "round-rock-home-run-porch", "name": "Home Run Porch", "level": "standing", "compassOffset": 0, "span": 18},
+            {"id": "round-rock-picnic-area", "name": "Picnic Area", "level": "standing", "compassOffset": 40, "span": 16},
+        ],
+    },
 }
 
 
