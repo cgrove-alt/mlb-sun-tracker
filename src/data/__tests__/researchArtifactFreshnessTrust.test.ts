@@ -60,7 +60,7 @@ describe('research artifact freshness trust boundary', () => {
       path: derivedPath,
       resolvedPath: derivedPath,
       sha256: sha256(derivedRaw),
-      artifactVersion: derived.artifactVersion,
+      artifactVersion: derived.artifactVersion as string | null,
       inputCount: 1,
       freshInputCount: 1,
       allInputsFresh: true,
