@@ -44,8 +44,7 @@ export function calculateDetailedSectionSunExposure(
   weather?: WeatherData,
   sections?: StadiumSection[]
 ): SeatingSectionSun[] {
-  // SunCalc already applies atmospheric refraction internally; do not
-  // double-correct here.
+  // Apparent altitude already includes NOAA refraction (see solarPosition.ts).
 
   // Use provided sections or fall back to venue sections
   let stadiumSections = sections;

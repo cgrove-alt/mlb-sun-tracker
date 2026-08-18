@@ -13,7 +13,9 @@
 import {
   stadiumLocalToUTC,
   stadiumLocalDateAndTimeToUTC,
+  calendarDateAndTimeToUTC,
   formatStadiumLocal,
+  isIsoDateOnly,
 } from '../stadiumTime';
 
 describe('stadiumLocalToUTC', () => {
@@ -106,5 +108,44 @@ describe('formatStadiumLocal', () => {
     const utc = new Date('2025-07-05T00:30:00Z');
     expect(formatStadiumLocal(utc, 'America/New_York')).toBe('2025-07-04 20:30');
     expect(formatStadiumLocal(utc, 'America/Los_Angeles')).toBe('2025-07-04 17:30');
+  });
+});
+
+describe('calendarDateAndTimeToUTC', () => {
+  it('treats YYYY-MM-DD as a stadium calendar date, not UTC midnight', () => {
+    const utc = calendarDateAndTimeToUTC('2025-07-04', 19, 30, 'America/New_York');
+    expect(utc.toISOString()).toBe('2025-07-04T23:30:00.000Z');
+  });
+
+  it('does not shift by a day in Pacific Time', () => {
+    const utc = calendarDateAndTimeToUTC('2025-07-04', 19, 0, 'America/Los_Angeles');
+    expect(utc.toISOString()).toBe('2025-07-05T02:00:00.000Z');
+  });
+
+  it('is 24 hours later than feeding new Date(YYYY-MM-DD) into stadiumLocalDateAndTimeToUTC', () => {
+    // ES5 parses date-only ISO as UTC midnight = previous evening in the US.
+    // That path is for real UTC instants (MLB API timestamps), not calendar dates.
+    const viaDateObject = stadiumLocalDateAndTimeToUTC(
+      new Date('2025-07-04'),
+      19,
+      30,
+      'America/New_York',
+    );
+    const viaCalendar = calendarDateAndTimeToUTC('2025-07-04', 19, 30, 'America/New_York');
+    expect(viaDateObject.toISOString()).toBe('2025-07-03T23:30:00.000Z');
+    expect(viaCalendar.toISOString()).toBe('2025-07-04T23:30:00.000Z');
+    expect(viaCalendar.getTime() - viaDateObject.getTime()).toBe(24 * 60 * 60 * 1000);
+  });
+
+  it('rejects a non-integer hour', () => {
+    expect(() => calendarDateAndTimeToUTC('2025-07-04', 19.5, 0, 'America/New_York')).toThrow(/invalid hour/);
+  });
+});
+
+describe('isIsoDateOnly', () => {
+  it('accepts YYYY-MM-DD and rejects timestamps', () => {
+    expect(isIsoDateOnly('2025-07-04')).toBe(true);
+    expect(isIsoDateOnly('2025-07-04T19:30:00Z')).toBe(false);
+    expect(isIsoDateOnly('07/04/2025')).toBe(false);
   });
 });

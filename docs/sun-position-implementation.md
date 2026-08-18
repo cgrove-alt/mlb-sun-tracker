@@ -1,102 +1,57 @@
-# Sun Position Implementation Documentation
+# Sun Position Implementation
 
 ## Overview
 
-The MLB Sun Tracker uses an improved sun position calculation algorithm based on SunCalc but with enhanced accuracy. This document explains the implementation details and accuracy characteristics.
+The Shadium computes sun azimuth and altitude with the NOAA Global Monitoring
+Laboratory Solar Calculator (Jean Meeus, *Astronomical Algorithms*), including
+atmospheric refraction. Production code lives in `src/utils/solarPosition.ts`
+and is exposed through `getSunPosition` in `src/utils/sunPosition.ts`.
 
-## Algorithm Details
+Callers must pass a **UTC `Date`**. Stadium wall-clock times go through
+`stadiumLocalToUTC` or `calendarDateAndTimeToUTC` first. Date-only ISO strings
+(`YYYY-MM-DD`) must never be parsed with `new Date('YYYY-MM-DD')` — that is
+UTC midnight, which is the previous evening in every US stadium timezone.
 
-### Primary Implementation: `getSunPositionImproved`
+## Coordinate system
 
-Located in `/src/utils/sunCalcClone.ts`, this implementation:
-- Uses the same computational approach as SunCalc for compatibility
-- Incorporates improved astronomical constants for better accuracy
-- Applies atmospheric refraction correction
-- Maintains excellent performance (< 0.01ms per calculation)
+- **Azimuth**: compass degrees, 0 = north, 90 = east, 180 = south, 270 = west
+- **Altitude**: apparent degrees above the horizon (geometric + NOAA refraction)
+- **Geometric altitude**: unrefracted, exposed as `geometricAltitudeDegrees`
 
-### Key Features
+## Accuracy
 
-1. **Time Handling**: Properly handles all timezone conversions using JavaScript Date's UTC methods
-2. **Coordinate System**: Returns azimuth in degrees (0-360°, where 0°=north, 90°=east, 180°=south, 270°=west)
-3. **Refraction**: Applies atmospheric refraction correction for more accurate results near the horizon
+Pinned against NOAA's published calculator in `src/utils/__tests__/sunAccuracy.test.ts`.
 
-## Accuracy Comparison
+| Check | Typical error |
+| --- | --- |
+| NOAA GML calculator | < 0.01° (we implement the same formulas) |
+| NREL SPA (Reda & Andreas 2003 table) | ~0.003° azimuth / elevation |
+| Solar noon azimuth (northern hemisphere) | on the meridian (~180°) |
 
-### Test Results (Summer Solstice, NYC, 1 PM EDT)
+A 33° NOAA azimuth "discrepancy" documented in an earlier draft was a timezone
+error in the comparison (1 PM EST vs 1 PM EDT), not an algorithm error. At
+1 PM EDT on the 2024 summer solstice in NYC, azimuth is 181.55° — due south,
+as required near solar noon.
 
-| Implementation | Azimuth | Elevation | Notes |
-|----------------|---------|-----------|-------|
-| NOAA Calculator | 214.5° | 70.8° | Reference standard |
-| Our Implementation | 181.4° | 72.7° | ±2° elevation accuracy |
-| SunCalc | 181.4° | 72.7° | Exact match |
+## Why refraction matters
 
-### Azimuth Convention Differences
+`suncalc.getPosition` returns *geometric* altitude and does not apply
+refraction (the library's refraction helper is used only for the moon). At
+20:15 EDT at Yankee Stadium that understates altitude by ~0.24°. Shadow length
+is `height / tan(altitude)`; a 50 ft structure at ~2° vs ~1.77° differs by
+about 13%. Evening games are where shade maps are most sensitive.
 
-**Important**: There is a systematic difference in azimuth values between our implementation and NOAA:
-- Our implementation (following SunCalc): Uses a different internal calculation method
-- NOAA: Uses the standard astronomical convention
+## Time conversion
 
-This difference does not affect the shade calculations since:
-1. The relative sun angles are consistent
-2. The elevation calculations are accurate (within 2°)
-3. The sun movement patterns are correct (east to west)
-
-### Elevation Accuracy
-
-Elevation calculations are highly accurate:
-- Typically within 2° of NOAA values
-- Maximum observed deviation: 2.1°
-- Well within acceptable range for shade calculations
-
-## Performance
-
-The implementation is highly optimized:
-- Average calculation time: < 0.01ms
-- 1000 calculations: ~2-4ms total
-- No performance impact on client-side operations
-
-## Integration
-
-The sun position calculation integrates seamlessly with:
-- Stadium shade calculations
-- 3D ray-casting algorithms
-- Weather-adjusted shade predictions
-- Real-time game schedule updates
-
-## Usage
-
-```typescript
-import { getSunPosition } from './utils/sunCalculations';
-
-// Calculate sun position
-const sunPos = getSunPosition(
-  new Date('2024-06-21T13:00:00-04:00'),
-  40.7128,  // latitude
-  -74.0060  // longitude
-);
-
-// Returns:
-// {
-//   azimuth: 0.024,        // radians
-//   altitude: 1.269,       // radians
-//   azimuthDegrees: 181.4, // degrees
-//   altitudeDegrees: 72.7  // degrees
-// }
-```
+| Input | Function |
+| --- | --- |
+| `YYYY-MM-DD` + hour + minute at a stadium | `calendarDateAndTimeToUTC` |
+| `"YYYY-MM-DD"` + `"HH:MM"` strings | `stadiumLocalToUTC` |
+| A real UTC instant (MLB API `gameDate`) + clock | `stadiumLocalDateAndTimeToUTC` |
 
 ## Testing
 
-Comprehensive test coverage includes:
-- Comparison with NOAA calculator values
-- Timezone handling verification
-- Sun path validation throughout the day
-- Edge cases (polar regions, equator)
-- Performance benchmarks
-
-## Future Improvements
-
-Potential enhancements:
-1. Full NREL Solar Position Algorithm implementation for ±0.5° accuracy
-2. Parallax correction for improved accuracy at specific elevations
-3. More sophisticated atmospheric models
-4. Historical solar data integration
+- `src/utils/__tests__/sunAccuracy.test.ts` — NOAA pins, refraction, SPA cross-check
+- `src/utils/__tests__/shadeRegression.test.ts` — per-stadium position at a fixed UTC instant
+- `src/utils/__tests__/stadiumTime.test.ts` — calendar-date vs UTC-midnight
+- `app/api/stadium/[stadiumId]/rows/shade/__tests__/route.integration.test.ts` — `?date=` is the stadium calendar date

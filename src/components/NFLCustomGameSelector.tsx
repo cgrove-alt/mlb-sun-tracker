@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { format } from 'date-fns';
+import { stadiumLocalToUTC } from '../utils/stadiumTime';
 import './NFLCustomGameSelector.css';
 
 interface NFLCustomGameSelectorProps {
@@ -20,7 +21,11 @@ const NFLCustomGameSelector: React.FC<NFLCustomGameSelectorProps> = ({
 
   const handleApply = () => {
     if (gameDate && gameTime && selectedVenue) {
-      const dateTime = new Date(`${gameDate}T${gameTime}:00`);
+      const dateTime = stadiumLocalToUTC(
+        gameDate,
+        gameTime,
+        selectedVenue.timezone || 'UTC',
+      );
       onGameSelect(null, dateTime);
     }
   };

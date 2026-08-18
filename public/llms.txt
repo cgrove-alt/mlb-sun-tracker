@@ -2,7 +2,7 @@
 
 > The Shadium finds the shaded seats at sports venues. Pick a stadium and a game, and it shows which sections and seats will be in sun or shade at that game's real first-pitch time.
 
-The Shadium calculates shade from the sun's position (NREL Solar Position Algorithm), each venue's verified orientation and per-section geometry, cloud-cover weather from Open-Meteo, and official MLB schedule data. See the full methodology, including accuracy and limitations, at https://theshadium.com/how-it-works.
+The Shadium calculates shade from the sun's position (NOAA Solar Calculator), each venue's verified orientation and per-section geometry, cloud-cover weather from Open-Meteo, and official MLB schedule data. See the full methodology, including accuracy and limitations, at https://theshadium.com/how-it-works.
 
 ## Coverage
 

@@ -2,6 +2,7 @@
 // Uses real NFL schedule data from ESPN API
 
 import { nflApiClient } from './nflApiClient';
+import { calendarDateAndTimeToUTC, isIsoDateOnly } from '../utils/stadiumTime';
 
 export interface NFLGame {
   gameId: string;
@@ -207,12 +208,15 @@ class NFLApiService {
     return upcomingGames.slice(0, 8);
   }
 
-  // Convert game time to full datetime
-  getGameDateTime(game: NFLGame): Date {
+  // Convert game time to a UTC instant. `gameDate` is a stadium-local
+  // calendar date (YYYY-MM-DD) or a full ISO timestamp; `gameTime` is
+  // wall-clock HH:MM at the venue.
+  getGameDateTime(game: NFLGame, timezone: string): Date {
     const [hours, minutes] = game.gameTime.split(':').map(Number);
-    const gameDate = new Date(game.gameDate);
-    gameDate.setHours(hours, minutes, 0, 0);
-    return gameDate;
+    if (isIsoDateOnly(game.gameDate)) {
+      return calendarDateAndTimeToUTC(game.gameDate, hours, minutes, timezone);
+    }
+    return new Date(game.gameDate);
   }
 
   // Get typical game times for NFL

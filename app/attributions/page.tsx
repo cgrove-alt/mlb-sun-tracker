@@ -15,44 +15,46 @@ export default function AttributionsPage() {
     <div className="page-container prose prose-slate max-w-prose mx-auto px-4 py-8 stack">
       <h1 className="h1 break-words md:break-normal">Technology & Attributions</h1>
       <p className="text-lg text-gray-600">
-        The Shadium combines advanced solar calculations with real-time weather and sports data 
-        to provide accurate shade predictions. Here are the technologies and data sources we use.
+        The Shadium combines solar calculations with weather, schedule, and venue-source data.
+        Each source supports a different claim; none is presented as proof of unmeasured seat geometry.
       </p>
 
       <section className="stack">
         <h2 className="h2">🌞 Solar Position Calculations</h2>
         
         <div className="bg-amber-50 border border-amber-200 p-6 rounded-lg">
-          <h3 className="h3 text-amber-900">NREL Solar Position Algorithm</h3>
+          <h3 className="h3 text-amber-900">NOAA Solar Calculator</h3>
           <p>
-            Our sun position calculations are powered by the National Renewable Energy Laboratory's 
-            Solar Position Algorithm (SPA), which provides solar zenith and azimuth angles with 
-            uncertainties of ±0.0003° for the period from year -2000 to 6000.
+            Sun position is computed with the NOAA Global Monitoring Laboratory Solar Calculator
+            (Jean Meeus, <em>Astronomical Algorithms</em>), including atmospheric refraction so
+            evening shade uses the sun as it appears in the sky. Typical agreement with the
+            NREL Solar Position Algorithm is within 0.01°.
           </p>
           
           <div className="mt-4 p-4 bg-white rounded-md">
             <p className="font-semibold">Academic Citation:</p>
             <p className="text-sm italic">
-              Reda, I.; Andreas, A. (2003). Solar Position Algorithm for Solar Radiation Applications. 
-              NREL Report No. TP-560-34302, Revised January 2008.
+              Meeus, J. (1998). Astronomical Algorithms (2nd ed.). Willmann-Bell.
+              Implemented following NOAA GML Solar Calculator,
+              https://gml.noaa.gov/grad/solcalc/.
             </p>
             <p className="text-sm mt-2">
               <a 
-                href="https://www.nrel.gov/docs/fy08osti/34302.pdf" 
+                href="https://gml.noaa.gov/grad/solcalc/" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="text-blue-600 hover:underline"
               >
-                📄 View Original Paper (PDF)
+                NOAA Solar Calculator
               </a>
               {' | '}
               <a 
-                href="https://midcdmz.nrel.gov/spa/" 
+                href="https://gml.noaa.gov/grad/solcalc/calcdetails.html" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="text-blue-600 hover:underline"
               >
-                🔗 NREL SPA Documentation
+                Calculation details
               </a>
             </p>
           </div>
@@ -183,8 +185,8 @@ export default function AttributionsPage() {
           
           <ol className="list-decimal list-inside space-y-3 mt-4">
             <li>
-              <strong>Solar Position:</strong> Calculate sun's azimuth and elevation angles using 
-              NREL SPA for the specific date, time, and stadium location.
+              <strong>Solar Position:</strong> Calculate the sun's azimuth and elevation using the
+              NOAA Solar Calculator (Meeus) for the specific date, time, and stadium location.
             </li>
             <li>
               <strong>Shadow Projection:</strong> Project shadows from stadium structures (roof, 

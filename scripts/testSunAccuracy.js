@@ -57,8 +57,11 @@ try {
   const coveredSections = sections.filter(s => s.covered === true);
   console.log(`Found ${coveredSections.length} covered sections at Yankee Stadium`);
   
-  // Test at noon on summer solstice (highest sun)
-  const summerNoon = calculator.calculateSunPosition('2024-06-21', '12:00:00');
+  // Test at noon on summer solstice (highest sun), stadium-local.
+  const { calendarDateAndTimeToUTC } = require('../src/utils/stadiumTime');
+  const summerNoon = calculator.calculateSunPosition(
+    calendarDateAndTimeToUTC('2024-06-21', 12, 0, yankees.timezone || 'America/New_York'),
+  );
   const shadows = calculator.calculateShadows(summerNoon, coveredSections);
   
   let allCovered = true;
@@ -169,8 +172,8 @@ console.log('📈 Test Summary');
 console.log('='.repeat(60));
 
 const improvements = [
-  '✅ Consolidated on SunCalc with UTC-correct inputs',
-  '✅ Removed disabled NREL fork and hardcoded LA-only DST',
+  '✅ NOAA GML solar position (Meeus) with atmospheric refraction',
+  '✅ YYYY-MM-DD query dates interpreted in the stadium timezone',
   '✅ Section-in-sun model now handles cross-bowl illumination',
   '✅ Single refraction model (no double-correction)',
   '✅ Covered sections guaranteed 0% direct sun',

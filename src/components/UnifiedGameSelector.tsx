@@ -10,6 +10,7 @@ import { UnifiedVenue, getAllLeagues, getVenuesByLeague, getLeagueInfo, getMiLBV
 import { getTeamIdFromVenueId, getVenueIdFromStringId } from '../data/milbTeamMapping';
 import { preferencesStorage } from '../utils/preferences';
 import { formatGameTimeInStadiumTZ } from '../utils/dateTimeUtils';
+import { stadiumLocalToUTC } from '../utils/stadiumTime';
 import { useHapticFeedback } from '../hooks/useHapticFeedback';
 import { useTranslation } from '../i18n/i18nContext';
 import { GameSelectorSkeleton } from './SkeletonScreens';
@@ -286,8 +287,11 @@ export const UnifiedGameSelector: React.FC<UnifiedGameSelectorProps> = ({
   };
 
   const handleCustomApply = () => {
-    if (customDate && customTime) {
-      onGameSelect(null, new Date(`${customDate}T${customTime}:00`));
+    if (customDate && customTime && selectedVenue) {
+      onGameSelect(
+        null,
+        stadiumLocalToUTC(customDate, customTime, selectedVenue.timezone || 'UTC'),
+      );
       preferencesStorage.update('lastUsedDate', customDate);
       preferencesStorage.update('lastUsedTime', customTime);
     }

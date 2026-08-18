@@ -1,6 +1,7 @@
 // sunCalculator.ts
 import SunCalc from 'suncalc';
 import type { CoverageDetail } from '../types/stadium-complete';
+import { getSunPosition } from './sunPosition';
 import {
   sectionCompassAngle,
   sunIncidence,
@@ -121,13 +122,13 @@ export class SunCalculator {
   calculateSunPosition(date: Date): SunPosition {
     const dateTime = date;
 
-    const sunPos = SunCalc.getPosition(
+    const sunPos = getSunPosition(
       dateTime,
       this.stadium.latitude,
       this.stadium.longitude,
     );
-    const altitude = (sunPos.altitude * 180) / Math.PI;
-    const azimuth = ((sunPos.azimuth * 180) / Math.PI + 180) % 360;
+    const altitude = sunPos.altitudeDegrees;
+    const azimuth = sunPos.azimuthDegrees;
 
     const sunTimes = SunCalc.getTimes(
       dateTime,

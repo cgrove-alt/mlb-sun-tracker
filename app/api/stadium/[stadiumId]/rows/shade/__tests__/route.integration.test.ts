@@ -13,6 +13,16 @@
 import { NextRequest } from 'next/server';
 import { GET } from '../route';
 
+jest.mock('../../../../../../../src/data/stadiumShadeConfidence', () => ({
+  canPublishSeatLevelShade: jest.fn(() => true),
+  getStadiumShadeConfidence: jest.fn(() => ({ fieldValidation: 'validated' })),
+  publicShadeStatus: jest.fn(() => 'uncertain'),
+}));
+
+jest.mock('../../../../../../../src/data/publishedShadeRuntime', () => ({
+  hasPublishedMeasuredShadeRuntime: jest.fn(() => true),
+}));
+
 jest.mock('../../../../../../../src/data/stadiums', () => ({
   MLB_STADIUMS: [
     {
@@ -184,6 +194,19 @@ describe('GET /api/stadium/[stadiumId]/rows/shade — real-calc integration', ()
     expect(data.sunPosition.azimuth).toBeLessThan(310);
     expect(data.sunPosition.altitude).toBeGreaterThan(0);
     expect(data.sunPosition.altitude).toBeLessThan(20);
+  });
+
+  it('treats ?date=YYYY-MM-DD as the stadium calendar date, not UTC midnight', async () => {
+    // `new Date('2025-07-04')` is 2025-07-04T00:00:00Z = 20:00 EDT on July 3.
+    // Combining that with time=19:30 used to compute July 3 19:30 — 24 hours
+    // early. Consecutive July evenings look similar enough that azimuth
+    // assertions would not catch it; pin the UTC instant.
+    const req = createRequest(
+      '/api/stadium/yankees/rows/shade?date=2025-07-04&time=19:30',
+    );
+    const data = await (await GET(req, createParams('yankees'))).json();
+    expect(data.date).toBe('2025-07-04');
+    expect(data.sunPosition.utc).toBe('2025-07-04T23:30:00.000Z');
   });
 
   it('reports all rows fully shaded at night', async () => {

@@ -16,6 +16,16 @@
 import { NextRequest } from 'next/server';
 import { GET } from '../route';
 
+jest.mock('../../../../../../../src/data/stadiumShadeConfidence', () => ({
+  canPublishSeatLevelShade: jest.fn(() => true),
+  getStadiumShadeConfidence: jest.fn(() => ({ fieldValidation: 'validated' })),
+  publicShadeStatus: jest.fn(() => 'uncertain'),
+}));
+
+jest.mock('../../../../../../../src/data/publishedShadeRuntime', () => ({
+  hasPublishedMeasuredShadeRuntime: jest.fn(() => true),
+}));
+
 jest.mock('../../../../../../../src/data/stadiums', () => ({
   MLB_STADIUMS: [
     {

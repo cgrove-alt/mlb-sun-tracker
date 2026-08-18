@@ -5,10 +5,11 @@
 
 import { Stadium } from '../data/stadiums';
 import { DetailedSection, Obstruction3D } from '../types/stadium-complete';
-import { getSunPosition } from './sunCalculations';
+import { getSunPosition, getSunTimes } from './sunCalculations';
 import { calculateSectionShadow, calculateAllShadows } from './advancedShadowCalculator';
 import { startOfMonth, endOfMonth } from 'date-fns';
 import { stadiumLocalToUTC } from './stadiumTime';
+import { formatInTimeZone } from 'date-fns-tz';
 
 /**
  * Build a UTC Date for the given calendar moment at the stadium's wall
@@ -97,27 +98,19 @@ export function getSolarKeyDates(year: number): {
 /**
  * Calculate sunrise and sunset times for a date
  */
-function getSunTimes(date: Date, latitude: number, longitude: number): {
+function getSunTimesForDate(date: Date, latitude: number, longitude: number): {
   sunrise: Date;
   sunset: Date;
   daylightHours: number;
 } {
-  // Simplified calculation - in production would use more accurate algorithm
-  const julianDay = Math.floor((date.getTime() - new Date(date.getFullYear(), 0, 0).getTime()) / 86400000);
-  const P = Math.asin(0.39795 * Math.cos(0.98563 * (julianDay - 173) * Math.PI / 180));
-  
-  const sunrise = -Math.acos(-Math.tan(latitude * Math.PI / 180) * Math.tan(P)) * 12 / Math.PI + 12;
-  const sunset = Math.acos(-Math.tan(latitude * Math.PI / 180) * Math.tan(P)) * 12 / Math.PI + 12;
-  
-  const sunriseTime = new Date(date);
-  sunriseTime.setHours(Math.floor(sunrise), (sunrise % 1) * 60, 0, 0);
-  
-  const sunsetTime = new Date(date);
-  sunsetTime.setHours(Math.floor(sunset), (sunset % 1) * 60, 0, 0);
-  
-  const daylightHours = sunset - sunrise;
-  
-  return { sunrise: sunriseTime, sunset: sunsetTime, daylightHours };
+  const times = getSunTimes(date, latitude, longitude);
+  const daylightHours = (times.sunset.getTime() - times.sunrise.getTime()) / 3600000;
+  return { sunrise: times.sunrise, sunset: times.sunset, daylightHours };
+}
+
+function localClockHours(utc: Date, timezone: string): number {
+  const [h, m] = formatInTimeZone(utc, timezone, 'HH:mm').split(':').map(Number);
+  return h + m / 60;
 }
 
 /**
@@ -145,10 +138,10 @@ export function analyzeMonth(
   // Sample every 3rd day of the month for efficiency
   for (let day = 1; day <= monthEnd.getDate(); day += 3) {
     const date = new Date(year, month, day);
-    const sunTimes = getSunTimes(date, stadium.latitude, stadium.longitude);
+    const sunTimes = getSunTimesForDate(date, stadium.latitude, stadium.longitude);
 
-    totalSunrise += sunTimes.sunrise.getHours() + sunTimes.sunrise.getMinutes() / 60;
-    totalSunset += sunTimes.sunset.getHours() + sunTimes.sunset.getMinutes() / 60;
+    totalSunrise += localClockHours(sunTimes.sunrise, tz);
+    totalSunset += localClockHours(sunTimes.sunset, tz);
     totalDaylight += sunTimes.daylightHours;
 
     // Sun elevation at stadium-local noon for this date.
@@ -247,7 +240,7 @@ export function analyzeFullYear(
     12, 0, tz,
   );
   const summerSun = getSunPosition(summerSolsticeNoon, stadium.latitude, stadium.longitude);
-  const summerTimes = getSunTimes(solarDates.summerSolstice, stadium.latitude, stadium.longitude);
+  const summerTimes = getSunTimesForDate(solarDates.summerSolstice, stadium.latitude, stadium.longitude);
 
   const winterSolsticeNoon = stadiumMomentUTC(
     solarDates.winterSolstice.getFullYear(),
@@ -256,7 +249,7 @@ export function analyzeFullYear(
     12, 0, tz,
   );
   const winterSun = getSunPosition(winterSolsticeNoon, stadium.latitude, stadium.longitude);
-  const winterTimes = getSunTimes(solarDates.winterSolstice, stadium.latitude, stadium.longitude);
+  const winterTimes = getSunTimesForDate(solarDates.winterSolstice, stadium.latitude, stadium.longitude);
 
   const springEquinoxNoon = stadiumMomentUTC(
     solarDates.springEquinox.getFullYear(),
@@ -409,7 +402,7 @@ export function getSeasonalRecommendations(
   
   if (preference === 'shade') {
     if (avgExposure < 30) {
-      reasoning += 'most sections have good shade coverage due to low sun angle.';
+      reasoning += 'a low sun angle creates longer modeled shadows; measured geometry is still required for section claims.';
     } else if (avgExposure < 60) {
       reasoning += 'there are several well-shaded sections available.';
     } else {
