@@ -590,6 +590,18 @@ OVERRIDES = {
         ],
         "named": [],
     },
+    "greenville-drive": {
+        "officialUrl": "https://www.milb.com/greenville/ballpark/ticketpricesandballparkmap",
+        "notes": "Fluor Field official price map: Reserved 101-102 and 114-115, Dugout 103-106 and 110-113, Home Plate 107-109, Pesky's Porch 116-120, Green Monster, Sam Adams Deck, Lawn & Deck.",
+        "bands": [
+            {"ids": [str(n) for n in range(101, 121)], "level": "lower", "namePrefix": "Section"},
+        ],
+        "named": [
+            {"id": "greenville-green-monster", "name": "Green Monster", "level": "club", "compassOffset": 270, "span": 18},
+            {"id": "sam-adams-deck", "name": "Sam Adams Deck", "level": "club", "compassOffset": 40, "span": 14},
+            {"id": "greenville-lawn", "name": "Lawn & Deck", "level": "standing", "compassOffset": 0, "span": 24},
+        ],
+    },
 }
 
 
