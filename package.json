@@ -14,6 +14,7 @@
     "check-data-freshness": "tsx scripts/auditSectionData.ts",
     "audit-remote-geometry": "tsx scripts/auditRemoteGeometrySources.ts",
     "build-mlb-observation-candidates": "tsx scripts/buildMlbObservationCandidates.ts",
+    "audit-sun-exposure": "tsx validate-all-stadiums.ts",
     "test": "jest",
     "test:unit": "jest --coverage",
     "test:watch": "jest --watch",

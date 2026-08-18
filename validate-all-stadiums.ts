@@ -1,281 +1,188 @@
-// Comprehensive Stadium Sun Exposure Validation Test Suite
-// Tests all MLB, MiLB, and NFL stadiums for accurate sun calculations
-
-import { MLB_STADIUMS } from './src/data/stadiums';
-import { AAA_STADIUMS, AA_STADIUMS, HIGH_A_STADIUMS, LOW_A_STADIUMS } from './src/data/milbStadiums';
-import { NFL_STADIUMS } from './src/data/nflStadiums';
-import { getUnifiedShadedSections } from './src/utils/unifiedStadiumShade';
+/**
+ * Full stadium sun-exposure audit.
+ *
+ * This intentionally tests every registered MLB, MiLB, and NFL venue. It uses
+ * stadium-local wall-clock times, passes each venue's actual section list into
+ * the production section-level calculator, and validates a directional
+ * physics invariant independently of the venue's section numbering.
+ *
+ * Run: npx tsx validate-all-stadiums.ts
+ */
+import { MLB_STADIUMS, type Stadium } from './src/data/stadiums';
+import {
+  AAA_STADIUMS,
+  AA_STADIUMS,
+  HIGH_A_STADIUMS,
+  LOW_A_STADIUMS,
+  type MiLBStadium,
+} from './src/data/milbStadiums';
+import { NFL_STADIUMS, type NFLStadium } from './src/data/nflStadiums';
+import type { StadiumSection } from './src/data/stadiumSectionTypes';
+import { getStadiumSections } from './src/data/stadium-data-aggregator';
 import { getMiLBStadiumSections } from './src/data/milbStadiumSections';
 import { getNFLStadiumSections } from './src/data/nflStadiumSections';
-import { getStadiumSections } from './src/data/stadiumSections';
-import { getStadiumObstructions } from './src/data/stadiumObstructions';
+import { calculateDetailedSectionSunExposure, getSunPosition } from './src/utils/sunCalculations';
+import { getSectionSunExposure } from './src/utils/sectionSunCalculations';
+import { calendarDateAndTimeToUTC } from './src/utils/stadiumTime';
 
-interface ValidationResult {
-  stadiumId: string;
-  stadiumName: string;
-  league: string;
-  passed: boolean;
-  issues: string[];
+type AuditedStadium = Stadium | MiLBStadium | NFLStadium;
+type League = 'MLB' | 'MiLB' | 'NFL';
+
+interface AuditResult {
+  league: League;
+  stadium: AuditedStadium;
   sectionCount: number;
-  obstructionCount: number;
-  avgShadePercentage: number;
+  issues: string[];
 }
 
-// Validate stadium data integrity
-function validateStadiumData(stadium: any, league: string): string[] {
+const normalizeAngle = (degrees: number): number => ((degrees % 360) + 360) % 360;
+
+function validateMetadata(stadium: AuditedStadium): string[] {
   const issues: string[] = [];
-  
-  // Check required fields
-  if (!stadium.id) issues.push('Missing stadium ID');
-  if (!stadium.name) issues.push('Missing stadium name');
-  if (!stadium.latitude || stadium.latitude < -90 || stadium.latitude > 90) {
-    issues.push(`Invalid latitude: ${stadium.latitude}`);
+  if (!stadium.id || !stadium.name) issues.push('missing id or name');
+  if (!Number.isFinite(stadium.latitude) || stadium.latitude < -90 || stadium.latitude > 90) {
+    issues.push(`invalid latitude (${stadium.latitude})`);
   }
-  if (!stadium.longitude || stadium.longitude < -180 || stadium.longitude > 180) {
-    issues.push(`Invalid longitude: ${stadium.longitude}`);
+  if (!Number.isFinite(stadium.longitude) || stadium.longitude < -180 || stadium.longitude > 180) {
+    issues.push(`invalid longitude (${stadium.longitude})`);
   }
-  if (stadium.orientation === undefined || stadium.orientation < 0 || stadium.orientation >= 360) {
-    issues.push(`Invalid orientation: ${stadium.orientation}`);
+  if (!Number.isFinite(stadium.orientation) || stadium.orientation < 0 || stadium.orientation >= 360) {
+    issues.push(`invalid orientation (${stadium.orientation})`);
   }
-  if (!stadium.capacity || stadium.capacity < 1000) {
-    issues.push(`Suspicious capacity: ${stadium.capacity}`);
-  }
-  
+  if (!stadium.timezone) issues.push('missing IANA timezone');
   return issues;
 }
 
-// Validate section data
-function validateSections(sections: any[]): string[] {
+function validateSections(sections: StadiumSection[]): string[] {
   const issues: string[] = [];
-  
-  if (!sections || sections.length === 0) {
-    issues.push('No sections defined');
-    return issues;
-  }
-  
-  const angleSet = new Set<number>();
-  
+  if (!sections.length) return ['no section geometry'];
+
+  const ids = new Set<string>();
   for (const section of sections) {
-    // Check for invalid angles
-    if (section.baseAngle < 0 || section.baseAngle >= 360) {
-      issues.push(`Section ${section.id}: Invalid angle ${section.baseAngle}`);
+    if (!section.id || ids.has(section.id)) issues.push(`duplicate or missing section id (${section.id})`);
+    ids.add(section.id);
+    if (!Number.isFinite(section.baseAngle) || section.baseAngle < 0 || section.baseAngle >= 360) {
+      issues.push(`invalid base angle for ${section.id} (${section.baseAngle})`);
     }
-    
-    // Check for duplicate angles
-    if (angleSet.has(section.baseAngle)) {
-      issues.push(`Section ${section.id}: Duplicate angle ${section.baseAngle}`);
-    }
-    angleSet.add(section.baseAngle);
-    
-    // Check angle span
-    if (!section.angleSpan || section.angleSpan <= 0 || section.angleSpan > 360) {
-      issues.push(`Section ${section.id}: Invalid angle span ${section.angleSpan}`);
-    }
-    
-    // Check level
-    if (!['field', 'lower', 'club', 'upper', 'suite'].includes(section.level)) {
-      issues.push(`Section ${section.id}: Invalid level ${section.level}`);
+    if (!Number.isFinite(section.angleSpan) || section.angleSpan <= 0 || section.angleSpan > 360) {
+      issues.push(`invalid angle span for ${section.id} (${section.angleSpan})`);
     }
   }
-  
   return issues;
 }
 
-// Test sun calculations for a stadium
-async function testSunCalculations(
-  stadium: any,
-  sections: any[],
-  league: string
-): Promise<{ avgShade: number; issues: string[] }> {
+function directionalInvariant(stadium: AuditedStadium, at: Date): string | null {
+  if (stadium.roof === 'fixed') return null;
+  const sun = getSunPosition(at, stadium.latitude, stadium.longitude);
+  if (sun.altitudeDegrees <= 0) return null;
+
+  // Solve sectionCompassAngle(section, orientation) = sun.azimuth. This
+  // creates a lower-bowl section with its grandstand directly behind it. The
+  // opposite section must receive more direct sunlight.
+  const sunSideBaseAngle = normalizeAngle(stadium.orientation + 90 - sun.azimuthDegrees);
+  const crossBowlBaseAngle = normalizeAngle(sunSideBaseAngle + 180);
+  const sunSide = {
+    id: 'audit-sun-side',
+    name: 'audit sun-side',
+    baseAngle: sunSideBaseAngle,
+    angleSpan: 0,
+    level: 'lower',
+    covered: false,
+  } as StadiumSection;
+  const crossBowl = {
+    ...sunSide,
+    id: 'audit-cross-bowl',
+    baseAngle: crossBowlBaseAngle,
+  };
+  const shadedExposure = getSectionSunExposure(
+    sunSide,
+    sun.altitudeDegrees,
+    sun.azimuthDegrees,
+    stadium.orientation,
+  );
+  const sunnyExposure = getSectionSunExposure(
+    crossBowl,
+    sun.altitudeDegrees,
+    sun.azimuthDegrees,
+    stadium.orientation,
+  );
+  return sunnyExposure > shadedExposure
+    ? null
+    : `directional invariant failed at ${sun.altitudeDegrees.toFixed(1)}° sun: ` +
+      `sun-side=${shadedExposure}, cross-bowl=${sunnyExposure}`;
+}
+
+function validateExposureOutput(
+  stadium: AuditedStadium,
+  sections: StadiumSection[],
+  at: Date,
+): string[] {
+  const output = calculateDetailedSectionSunExposure(
+    stadium as Stadium,
+    getSunPosition(at, stadium.latitude, stadium.longitude),
+    undefined,
+    sections,
+  );
   const issues: string[] = [];
-  let totalShade = 0;
-  
-  try {
-    // Test for 1 PM in July (peak sun)
-    const testDate = new Date(2025, 6, 15, 13, 0, 0);
-    
-    // Convert to unified format
-    const unifiedStadium = {
-      ...stadium,
-      type: league as 'MLB' | 'MiLB' | 'NFL'
-    };
-    
-    // Get shaded sections
-    const shadedSections = getUnifiedShadedSections(
-      unifiedStadium,
-      testDate
-    );
-    
-    if (!shadedSections || shadedSections.length === 0) {
-      issues.push('No shade calculations returned');
-      return { avgShade: 0, issues };
-    }
-    
-    // Calculate average shade
-    for (const section of shadedSections) {
-      if (section.shadePercentage < 0 || section.shadePercentage > 100) {
-        issues.push(`Section ${section.section.id}: Invalid shade ${section.shadePercentage}%`);
-      }
-      totalShade += section.shadePercentage;
-    }
-    
-    const avgShade = totalShade / shadedSections.length;
-    
-    // Check for suspicious patterns
-    if (avgShade === 0) {
-      issues.push('All sections show 0% shade (suspicious)');
-    }
-    if (avgShade === 100) {
-      issues.push('All sections show 100% shade (suspicious)');
-    }
-    
-    return { avgShade, issues };
-  } catch (error) {
-    issues.push(`Calculation error: ${error}`);
-    return { avgShade: 0, issues };
+  if (output.length !== sections.length) {
+    issues.push(`calculator returned ${output.length}/${sections.length} sections`);
   }
+  for (const result of output) {
+    if (!Number.isFinite(result.sunExposure) || result.sunExposure < 0 || result.sunExposure > 100) {
+      issues.push(`invalid exposure for ${result.section.id} (${result.sunExposure})`);
+    }
+    if (stadium.roof === 'fixed' && result.sunExposure !== 0) {
+      issues.push(`fixed-roof section ${result.section.id} reports ${result.sunExposure}% direct sun`);
+    }
+  }
+  return issues;
 }
 
-// Main validation function
-async function validateAllStadiums() {
-  console.log('Stadium Sun Exposure Validation Report');
-  console.log('=' .repeat(60));
-  console.log(`Date: ${new Date().toISOString()}`);
-  console.log();
-  
-  const results: ValidationResult[] = [];
-  
-  // Validate MLB Stadiums
-  console.log('Validating MLB Stadiums...');
+async function auditStadium(
+  league: League,
+  stadium: AuditedStadium,
+  sections: StadiumSection[],
+): Promise<AuditResult> {
+  const issues = [...validateMetadata(stadium), ...validateSections(sections)];
+  const moments = [
+    calendarDateAndTimeToUTC('2025-07-15', 13, 0, stadium.timezone),
+    calendarDateAndTimeToUTC('2025-07-15', 17, 0, stadium.timezone),
+  ];
+  for (const at of moments) {
+    issues.push(...validateExposureOutput(stadium, sections, at));
+    const directionalIssue = directionalInvariant(stadium, at);
+    if (directionalIssue) issues.push(directionalIssue);
+  }
+  return { league, stadium, sectionCount: sections.length, issues };
+}
+
+async function main(): Promise<void> {
+  const results: AuditResult[] = [];
+
   for (const stadium of MLB_STADIUMS) {
-    const sections = getStadiumSections(stadium.id);
-    const obstructions = getStadiumObstructions(stadium.id);
-    
-    const dataIssues = validateStadiumData(stadium, 'MLB');
-    const sectionIssues = validateSections(sections);
-    const { avgShade, issues: calcIssues } = await testSunCalculations(stadium, sections, 'MLB');
-    
-    results.push({
-      stadiumId: stadium.id,
-      stadiumName: stadium.name,
-      league: 'MLB',
-      passed: dataIssues.length === 0 && sectionIssues.length === 0 && calcIssues.length === 0,
-      issues: [...dataIssues, ...sectionIssues, ...calcIssues],
-      sectionCount: sections.length,
-      obstructionCount: obstructions.length,
-      avgShadePercentage: avgShade
-    });
+    results.push(await auditStadium('MLB', stadium, await getStadiumSections(stadium.id, 'MLB')));
   }
-  
-  // Validate MiLB Stadiums (sample - top 10)
-  console.log('Validating MiLB Stadiums...');
-  const MILB_STADIUMS = [...AAA_STADIUMS, ...AA_STADIUMS, ...HIGH_A_STADIUMS, ...LOW_A_STADIUMS];
-  const milbSample = MILB_STADIUMS.slice(0, 10);
-  for (const stadium of milbSample) {
-    const sections = getMiLBStadiumSections(stadium.id);
-    const obstructions = getStadiumObstructions(stadium.id);
-    
-    const dataIssues = validateStadiumData(stadium, 'MiLB');
-    const sectionIssues = validateSections(sections);
-    const { avgShade, issues: calcIssues } = await testSunCalculations(stadium, sections, 'MiLB');
-    
-    results.push({
-      stadiumId: stadium.id,
-      stadiumName: stadium.name,
-      league: 'MiLB',
-      passed: dataIssues.length === 0 && sectionIssues.length === 0 && calcIssues.length === 0,
-      issues: [...dataIssues, ...sectionIssues, ...calcIssues],
-      sectionCount: sections.length,
-      obstructionCount: obstructions.length,
-      avgShadePercentage: avgShade
-    });
+  const milbStadiums = [...AAA_STADIUMS, ...AA_STADIUMS, ...HIGH_A_STADIUMS, ...LOW_A_STADIUMS];
+  for (const stadium of milbStadiums) {
+    results.push(await auditStadium('MiLB', stadium, getMiLBStadiumSections(stadium.id)));
   }
-  
-  // Validate NFL Stadiums (sample - top 10)
-  console.log('Validating NFL Stadiums...');
-  const nflSample = NFL_STADIUMS.slice(0, 10);
-  for (const stadium of nflSample) {
-    const sections = getNFLStadiumSections(stadium.id);
-    const obstructions = getStadiumObstructions(stadium.id);
-    
-    const dataIssues = validateStadiumData(stadium, 'NFL');
-    const sectionIssues = validateSections(sections);
-    const { avgShade, issues: calcIssues } = await testSunCalculations(stadium, sections, 'NFL');
-    
-    results.push({
-      stadiumId: stadium.id,
-      stadiumName: stadium.name,
-      league: 'NFL',
-      passed: dataIssues.length === 0 && sectionIssues.length === 0 && calcIssues.length === 0,
-      issues: [...dataIssues, ...sectionIssues, ...calcIssues],
-      sectionCount: sections.length,
-      obstructionCount: obstructions.length,
-      avgShadePercentage: avgShade
-    });
+  for (const stadium of NFL_STADIUMS) {
+    results.push(await auditStadium('NFL', stadium, getNFLStadiumSections(stadium.id)));
   }
-  
-  // Generate Report
-  console.log('\n' + '=' .repeat(60));
-  console.log('VALIDATION SUMMARY');
-  console.log('=' .repeat(60));
-  
-  const mlbResults = results.filter(r => r.league === 'MLB');
-  const milbResults = results.filter(r => r.league === 'MiLB');
-  const nflResults = results.filter(r => r.league === 'NFL');
-  
-  console.log(`\nMLB Stadiums: ${mlbResults.filter(r => r.passed).length}/${mlbResults.length} passed`);
-  console.log(`MiLB Stadiums: ${milbResults.filter(r => r.passed).length}/${milbResults.length} passed`);
-  console.log(`NFL Stadiums: ${nflResults.filter(r => r.passed).length}/${nflResults.length} passed`);
-  
-  // Show failed stadiums
-  const failed = results.filter(r => !r.passed);
-  if (failed.length > 0) {
-    console.log('\n' + '=' .repeat(60));
-    console.log('FAILED VALIDATIONS');
-    console.log('=' .repeat(60));
-    
-    for (const result of failed) {
-      console.log(`\n${result.league} - ${result.stadiumName} (${result.stadiumId})`);
-      console.log(`  Sections: ${result.sectionCount}, Obstructions: ${result.obstructionCount}`);
-      console.log(`  Avg Shade: ${result.avgShadePercentage.toFixed(1)}%`);
-      console.log('  Issues:');
-      for (const issue of result.issues) {
-        console.log(`    - ${issue}`);
-      }
-    }
+
+  console.log('Full stadium sun-exposure audit');
+  console.log('='.repeat(72));
+  for (const result of results) {
+    const status = result.issues.length ? `FAIL: ${result.issues.join('; ')}` : 'PASS';
+    console.log(`${result.league.padEnd(4)} ${result.stadium.id.padEnd(28)} ${String(result.sectionCount).padStart(4)} sections  ${status}`);
   }
-  
-  // Show statistics
-  console.log('\n' + '=' .repeat(60));
-  console.log('STATISTICS');
-  console.log('=' .repeat(60));
-  
-  const avgSections = results.reduce((sum, r) => sum + r.sectionCount, 0) / results.length;
-  const avgObstructions = results.reduce((sum, r) => sum + r.obstructionCount, 0) / results.length;
-  const avgShade = results.reduce((sum, r) => sum + r.avgShadePercentage, 0) / results.length;
-  
-  console.log(`\nAverage sections per stadium: ${avgSections.toFixed(1)}`);
-  console.log(`Average obstructions per stadium: ${avgObstructions.toFixed(1)}`);
-  console.log(`Average shade percentage (1 PM July): ${avgShade.toFixed(1)}%`);
-  
-  // Detailed stats by league
-  for (const league of ['MLB', 'MiLB', 'NFL']) {
-    const leagueResults = results.filter(r => r.league === league);
-    if (leagueResults.length > 0) {
-      const leagueAvgSections = leagueResults.reduce((sum, r) => sum + r.sectionCount, 0) / leagueResults.length;
-      const leagueAvgObstructions = leagueResults.reduce((sum, r) => sum + r.obstructionCount, 0) / leagueResults.length;
-      const leagueAvgShade = leagueResults.reduce((sum, r) => sum + r.avgShadePercentage, 0) / leagueResults.length;
-      
-      console.log(`\n${league} Averages:`);
-      console.log(`  Sections: ${leagueAvgSections.toFixed(1)}`);
-      console.log(`  Obstructions: ${leagueAvgObstructions.toFixed(1)}`);
-      console.log(`  Shade: ${leagueAvgShade.toFixed(1)}%`);
-    }
-  }
-  
-  console.log('\n' + '=' .repeat(60));
-  console.log('Validation Complete');
+  const failures = results.filter((result) => result.issues.length);
+  console.log('='.repeat(72));
+  console.log(`Audited ${results.length} stadiums: ${results.length - failures.length} passed, ${failures.length} failed.`);
+  if (failures.length) process.exitCode = 1;
 }
 
-// Run validation
-validateAllStadiums().catch(console.error);
+main().catch((error) => {
+  console.error(error);
+  process.exitCode = 1;
+});

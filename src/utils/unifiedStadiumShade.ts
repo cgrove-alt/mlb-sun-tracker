@@ -89,9 +89,23 @@ function nflToUnified(stadium: NFLStadium): UnifiedStadium {
 // Cache for unified calculators
 const unifiedCalculatorCache = new Map<string, ShadeCalculator3D>();
 
+function sectionsCacheKey(stadium: UnifiedStadium, sections: StadiumSection[]): string {
+  // The 3D model embeds the full section geometry. Caching only by stadium id
+  // reused stale geometry when a caller provided a filtered or refreshed list.
+  const geometry = sections.map((section) => [
+    section.id,
+    section.baseAngle,
+    section.angleSpan,
+    section.level,
+    section.covered,
+    section.rows?.length ?? 0,
+  ].join(':')).join('|');
+  return `${stadium.type}-${stadium.id}-${geometry}`;
+}
+
 // Get or create calculator for any stadium type
 export function getUnifiedCalculator(stadium: UnifiedStadium, sections: StadiumSection[]): ShadeCalculator3D {
-  const cacheKey = `${stadium.type}-${stadium.id}`;
+  const cacheKey = sectionsCacheKey(stadium, sections);
   
   if (unifiedCalculatorCache.has(cacheKey)) {
     return unifiedCalculatorCache.get(cacheKey)!;
@@ -113,14 +127,17 @@ export function getUnifiedCalculator(stadium: UnifiedStadium, sections: StadiumS
 // Unified shaded sections interface
 export interface UnifiedShadedSection {
   section: StadiumSection;
+  /** Structural shade from stadium geometry, unaffected by weather. */
   shadePercentage: number;
   isFullyShaded: boolean;
   isPartiallyShaded: boolean;
   isInSun: boolean;
   stadiumType: 'MLB' | 'MiLB' | 'NFL';
+  /** Direct sun still felt after weather attenuation, 0–100. */
+  effectiveSunPercent: number;
 }
 
-// Calculate shaded sections for any stadium type
+// Calculate shaded sections for any stadium type.
 export function getUnifiedShadedSections(
   stadium: UnifiedStadium,
   gameDateTime: Date,
@@ -132,7 +149,17 @@ export function getUnifiedShadedSections(
 
   // Use provided sections or get appropriate sections for stadium type
   const stadiumSections = sections || getStadiumSectionsForType(stadium);
-  
+
+  // MLB geometry is loaded asynchronously by callers to avoid a large browser
+  // bundle. Returning an empty result when it was omitted made a real stadium
+  // look like it had no seats and let validation falsely pass.
+  if (stadiumSections.length === 0) {
+    throw new Error(
+      `No section geometry supplied for ${stadium.type} stadium '${stadium.id}'. ` +
+      'Load the stadium sections before calculating shade.',
+    );
+  }
+
   // Early return for night games or fixed roof
   if (sunPos.altitudeDegrees <= 0 || stadium.roof === 'fixed') {
     return stadiumSections.map(section => ({
@@ -141,7 +168,8 @@ export function getUnifiedShadedSections(
       isFullyShaded: true,
       isPartiallyShaded: false,
       isInSun: false,
-      stadiumType: stadium.type
+      stadiumType: stadium.type,
+      effectiveSunPercent: 0,
     }));
   }
   
@@ -154,10 +182,11 @@ export function getUnifiedShadedSections(
   // Calculate shade
   const shadeResults = calculator.calculateAllSectionsShade(sunPosition3D);
 
-  // Apply weather adjustments
-  let weatherMultiplier = 1.0;
+  // Weather attenuates direct sunlight but cannot move the shadow line. Keep
+  // it separate so cloudy weather cannot be reported as structural shade.
+  let weatherTransmission = 1.0;
   if (weather) {
-    weatherMultiplier = calculateWeatherMultiplier(weather);
+    weatherTransmission = calculateWeatherMultiplier(weather);
   }
 
   // Convert results
@@ -172,23 +201,22 @@ export function getUnifiedShadedSections(
         isFullyShaded: false,
         isPartiallyShaded: false,
         isInSun: true,
-        stadiumType: stadium.type
+        stadiumType: stadium.type,
+        effectiveSunPercent: Math.round(100 * weatherTransmission),
       });
       continue;
     }
     
-    const adjustedShadePercentage = Math.min(
-      100,
-      shadeResult.percentageInShade + (100 - shadeResult.percentageInShade) * (1 - weatherMultiplier)
-    );
-    
+    const shadePercentage = Math.min(100, Math.max(0, shadeResult.percentageInShade));
+
     shadedSections.push({
       section,
-      shadePercentage: Math.round(adjustedShadePercentage),
-      isFullyShaded: adjustedShadePercentage >= 95,
-      isPartiallyShaded: adjustedShadePercentage > 5 && adjustedShadePercentage < 95,
-      isInSun: adjustedShadePercentage < 50,
-      stadiumType: stadium.type
+      shadePercentage: Math.round(shadePercentage),
+      isFullyShaded: shadePercentage >= 95,
+      isPartiallyShaded: shadePercentage > 5 && shadePercentage < 95,
+      isInSun: shadePercentage < 50,
+      stadiumType: stadium.type,
+      effectiveSunPercent: Math.round((100 - shadePercentage) * weatherTransmission),
     });
   }
   
@@ -309,7 +337,9 @@ export async function getAllStadiumsShadedSections(
   if (includeTypes.includes('MLB')) {
     for (const stadium of MLB_STADIUMS) {
       const unified = mlbToUnified(stadium);
-      const shadedSections = getUnifiedShadedSections(unified, gameDateTime);
+      const { getStadiumSections } = await import('../data/stadium-data-aggregator');
+      const sections = await getStadiumSections(stadium.id, 'MLB');
+      const shadedSections = getUnifiedShadedSections(unified, gameDateTime, undefined, sections);
       results.set(`mlb-${stadium.id}`, shadedSections);
     }
   }
