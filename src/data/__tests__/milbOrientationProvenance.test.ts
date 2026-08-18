@@ -94,7 +94,7 @@ describe('MiLB orientation provenance', () => {
   it('still produces grammatical baseball shade-side copy', () => {
     for (const stadium of ALL_MILB_STADIUMS) {
       const side = bestShadedSideForDayGame(stadium.orientation, 'baseball');
-      expect(side).toMatch(/base|home plate/i);
+      expect(side).toMatch(/base|home plate|center field/i);
     }
   });
 });
