@@ -1,0 +1,225 @@
+/**
+ * Complete sun-exposure audit for every venue the site ships.
+ *
+ * These assertions lock the root causes found in the 2026-08-18 audit:
+ *   1. Dual metadata sources drifted (orientation / lat / lon / roof / tz).
+ *   2. NFL sections use compass-from-north but were fed through the baseball
+ *      local-angle converter, rotating every football bowl.
+ *   3. SunCalculator only honored `roofType`, while callers set `roof`, so
+ *      every dome was modelled as an open bowl.
+ *   4. Homepage published NFL/MiLB section percentages despite unmeasured
+ *      geometry — the same honesty gate MLB already used.
+ *
+ * @jest-environment node
+ */
+
+import { MLB_STADIUMS } from '../stadiums';
+import { NFL_STADIUMS } from '../nflStadiums';
+import { ALL_MILB_STADIUMS } from '../milbStadiums';
+import { ALL_UNIFIED_VENUES } from '../unifiedVenues';
+import { canPublishVenueSeatShade } from '../stadiumShadeConfidence';
+import { MLB_ORIENTATION_PROVENANCE } from '../stadiumOrientationProvenance';
+import { SunCalculator } from '../../utils/sunCalculator';
+import { getUnifiedVenueShade } from '../../utils/getUnifiedVenueShade';
+import {
+  sectionAngleConventionFor,
+  venueSectionCompassAngle,
+} from '../../utils/bowlGeometry';
+import { getSunPosition } from '../../utils/sunPosition';
+import { calendarDateAndTimeToUTC } from '../../utils/stadiumTime';
+import { bestShadedSideForDayGame } from '../../utils/shadeSide';
+
+const unifiedById = new Map(ALL_UNIFIED_VENUES.map((v) => [v.id, v]));
+
+function assertValidIana(timezone: string): void {
+  expect(() => new Intl.DateTimeFormat('en-US', { timeZone: timezone })).not.toThrow();
+}
+
+describe('every venue has a consistent, valid shade-input record', () => {
+  it('covers 30 MLB + 32 NFL + 120 MiLB in the unified list', () => {
+    expect(MLB_STADIUMS).toHaveLength(30);
+    expect(NFL_STADIUMS).toHaveLength(32);
+    expect(ALL_MILB_STADIUMS).toHaveLength(120);
+    expect(ALL_UNIFIED_VENUES.filter((v) => v.league === 'MLB')).toHaveLength(30);
+    expect(ALL_UNIFIED_VENUES.filter((v) => v.league === 'NFL')).toHaveLength(32);
+    expect(ALL_UNIFIED_VENUES.filter((v) => v.league === 'MiLB')).toHaveLength(120);
+  });
+
+  it.each(MLB_STADIUMS.map((s) => [s.id] as const))(
+    'MLB %s matches stadiums.ts on shade-critical fields',
+    (id) => {
+      const src = MLB_STADIUMS.find((s) => s.id === id)!;
+      const unified = unifiedById.get(id);
+      expect(unified).toBeDefined();
+      expect(unified).toMatchObject({
+        latitude: src.latitude,
+        longitude: src.longitude,
+        orientation: src.orientation,
+        timezone: src.timezone,
+        roof: src.roof,
+      });
+      assertValidIana(src.timezone);
+    },
+  );
+
+  it.each(NFL_STADIUMS.map((s) => [s.id] as const))(
+    'NFL %s matches nflStadiums.ts on shade-critical fields',
+    (id) => {
+      const src = NFL_STADIUMS.find((s) => s.id === id)!;
+      const unified = unifiedById.get(id);
+      expect(unified).toBeDefined();
+      expect(unified).toMatchObject({
+        latitude: src.latitude,
+        longitude: src.longitude,
+        orientation: src.orientation,
+        timezone: src.timezone,
+        roof: src.roof,
+      });
+      assertValidIana(src.timezone);
+    },
+  );
+
+  it.each(ALL_MILB_STADIUMS.map((s) => [s.id] as const))(
+    'MiLB %s matches milbStadiums.ts on shade-critical fields',
+    (id) => {
+      const src = ALL_MILB_STADIUMS.find((s) => s.id === id)!;
+      const unified = unifiedById.get(id);
+      expect(unified).toBeDefined();
+      expect(unified).toMatchObject({
+        latitude: src.latitude,
+        longitude: src.longitude,
+        orientation: src.orientation,
+        timezone: src.timezone,
+        roof: src.roof ?? 'open',
+      });
+      assertValidIana(src.timezone);
+    },
+  );
+
+  it('keeps MLB orientation provenance in lockstep with stadiums.ts', () => {
+    for (const stadium of MLB_STADIUMS) {
+      const provenance = MLB_ORIENTATION_PROVENANCE.find((p) => p.stadiumId === stadium.id);
+      expect(provenance).toBeDefined();
+      expect(provenance!.orientation).toBe(stadium.orientation);
+    }
+  });
+
+  it('uses the geographically correct IANA zones for known edge cities', () => {
+    expect(MLB_STADIUMS.find((s) => s.id === 'tigers')!.timezone).toBe('America/Detroit');
+    expect(MLB_STADIUMS.find((s) => s.id === 'rangers')!.timezone).toBe('America/Chicago');
+    expect(MLB_STADIUMS.find((s) => s.id === 'reds')!.timezone).toBe('America/New_York');
+    expect(MLB_STADIUMS.find((s) => s.id === 'guardians')!.timezone).toBe('America/New_York');
+    expect(MLB_STADIUMS.find((s) => s.id === 'diamondbacks')!.timezone).toBe('America/Phoenix');
+    expect(MLB_STADIUMS.find((s) => s.id === 'bluejays')!.timezone).toBe('America/Toronto');
+    expect(NFL_STADIUMS.find((s) => s.id === 'lucas-oil-stadium')!.timezone)
+      .toBe('America/Indiana/Indianapolis');
+    expect(NFL_STADIUMS.find((s) => s.id === 'ford-field')!.timezone).toBe('America/Detroit');
+  });
+
+  it('classifies MLB roofs against the known 2026 inventory', () => {
+    const byRoof = (roof: string) => MLB_STADIUMS.filter((s) => s.roof === roof).map((s) => s.id).sort();
+    expect(byRoof('fixed')).toEqual(['rays']);
+    expect(byRoof('retractable')).toEqual([
+      'astros', 'bluejays', 'brewers', 'diamondbacks', 'mariners', 'marlins', 'rangers',
+    ]);
+    expect(byRoof('open')).toHaveLength(22);
+  });
+});
+
+describe('publication gate is league-agnostic', () => {
+  it('withholds open/retractable section % for every unvalidated venue', () => {
+    for (const venue of ALL_UNIFIED_VENUES) {
+      if (venue.roof === 'fixed') {
+        expect(canPublishVenueSeatShade(venue)).toBe(true);
+      } else {
+        expect(canPublishVenueSeatShade(venue)).toBe(false);
+      }
+    }
+  });
+});
+
+describe('fixed-roof shortcut honors the field callers actually set', () => {
+  const openSection = {
+    id: 'open',
+    name: 'Open',
+    level: 'lower' as const,
+    baseAngle: 0,
+    covered: false,
+    depth: 50,
+  };
+
+  it('SunCalculator treats `roof: fixed` the same as `roofType: fixed`', () => {
+    const viaRoof = new SunCalculator({
+      id: 'dome',
+      name: 'Dome',
+      latitude: 27.77,
+      longitude: -82.65,
+      roof: 'fixed',
+    } as any);
+    const viaType = new SunCalculator({
+      id: 'dome',
+      name: 'Dome',
+      latitude: 27.77,
+      longitude: -82.65,
+      roofType: 'fixed',
+    } as any);
+    const sun = { altitude: 45, azimuth: 180 } as any;
+    expect(viaRoof.calculateShadows(sun, [openSection])[0].sunExposure).toBe(0);
+    expect(viaType.calculateShadows(sun, [openSection])[0].sunExposure).toBe(0);
+  });
+
+  it('getUnifiedVenueShade returns 100% for every fixed-roof venue', () => {
+    const utc = calendarDateAndTimeToUTC('2025-09-14', 13, 0, 'America/Chicago');
+    for (const venue of ALL_UNIFIED_VENUES.filter((v) => v.roof === 'fixed')) {
+      const results = getUnifiedVenueShade(venue, utc, [{
+        id: 'x', name: 'x', level: 'lower', baseAngle: 0, angleSpan: 10,
+        covered: false, price: 'moderate', venueType: venue.venueType,
+      }]);
+      expect(results[0].shadePercentage).toBe(100);
+      expect(results[0].effectiveSunPercent).toBe(0);
+    }
+  });
+});
+
+describe('NFL shade math no longer uses the baseball rotation', () => {
+  it('keeps a north-endzone section on the north side of the bowl', () => {
+    for (const venue of ALL_UNIFIED_VENUES.filter((v) => v.league === 'NFL')) {
+      const convention = sectionAngleConventionFor(venue);
+      expect(convention).toBe('compass-from-north');
+      expect(venueSectionCompassAngle({ baseAngle: 0, angleSpan: 0 }, venue.orientation, convention)).toBe(0);
+    }
+  });
+});
+
+describe('published baseball shade-side claims stay directionally true', () => {
+  // Sourced notes already sitting in stadiums.ts / provenance.
+  it.each([
+    // 1 PM sun is ~south. North-facing parks shade behind home first;
+    // afternoon notes that say "3B" describe the later westward migration.
+    ['bluejays', 'seating behind home plate'],
+    ['diamondbacks', 'seating behind home plate'],
+    ['padres', 'seating behind home plate'],
+    ['rockies', 'seating behind home plate'],
+    ['yankees', 'first base side'],
+    ['redsox', 'first base side'],
+  ] as const)('%s day-game shade side is %s', (id, side) => {
+    const stadium = MLB_STADIUMS.find((s) => s.id === id)!;
+    expect(bestShadedSideForDayGame(stadium.orientation)).toBe(side);
+  });
+});
+
+describe('sun position is computable for every stadium at a 1 PM local start', () => {
+  it('returns a finite azimuth/altitude for all 182 venues on 2025-07-15', () => {
+    const failures: string[] = [];
+    for (const venue of ALL_UNIFIED_VENUES) {
+      const utc = calendarDateAndTimeToUTC('2025-07-15', 13, 0, venue.timezone);
+      const sun = getSunPosition(utc, venue.latitude, venue.longitude);
+      if (!Number.isFinite(sun.azimuthDegrees) || !Number.isFinite(sun.altitudeDegrees)) {
+        failures.push(venue.id);
+      }
+      // Midsummer 1 PM is daylight everywhere this site covers.
+      if (sun.altitudeDegrees <= 0) failures.push(`${venue.id} night-at-1pm`);
+    }
+    expect(failures).toEqual([]);
+  });
+});

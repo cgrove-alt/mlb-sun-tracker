@@ -5,6 +5,7 @@ import { STADIUM_GEOMETRY_EVIDENCE } from '../stadiumGeometryEvidence';
 import {
   FIELD_VALIDATED_SHADE_STADIUMS,
   canPublishSeatLevelShade,
+  canPublishVenueSeatShade,
   getStadiumShadeConfidence,
   publicShadeStatus,
 } from '../stadiumShadeConfidence';
@@ -66,5 +67,12 @@ describe('MLB shade publication boundary', () => {
       .toBe('verified-shaded');
     expect(publicShadeStatus({ stadiumId: 'yankees', roof: 'open', sunAboveHorizon: false }))
       .toBe('verified-shaded');
+  });
+
+  it('publishes fixed-roof shade without waiting on row-geometry evidence', () => {
+    expect(canPublishVenueSeatShade({ id: 'rays', roof: 'fixed' })).toBe(true);
+    expect(canPublishVenueSeatShade({ id: 'caesars-superdome', roof: 'fixed' })).toBe(true);
+    expect(canPublishVenueSeatShade({ id: 'yankees', roof: 'open' })).toBe(false);
+    expect(canPublishVenueSeatShade({ id: 'lambeau-field', roof: 'open' })).toBe(false);
   });
 });
