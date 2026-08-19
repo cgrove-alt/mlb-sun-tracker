@@ -35,12 +35,6 @@ import { WeatherForecast, weatherApi } from './services/weatherApi';
 import { OfflineIndicator } from './components/OfflineIndicator';
 import { trackStadiumSelection, trackGameSelection } from './utils/analytics';
 import { getUnifiedVenueShade, ShadedVenueSection } from './utils/getUnifiedVenueShade';
-import { sectionAngleConventionFor } from './utils/bowlGeometry';
-import {
-  EXPOSURE_TIER_LABEL,
-  sectionExposureAtSun,
-  sortKeyForExposureTier,
-} from './utils/sectionShadeTier';
 
 function UnifiedAppContent() {
   const { t } = useTranslation();
@@ -201,104 +195,54 @@ function UnifiedAppContent() {
           ? await getStadiumSectionsAsync(selectedVenue.id)
           : getVenueSections(selectedVenue.id);
 
-        if (!seatShadePublished && sectionTiersPublished && selectedVenue.league === 'MLB') {
-          const domed = selectedVenue.roof === 'fixed';
-          const convention = sectionAngleConventionFor({ sport: 'baseball' });
-          const tierSections: SeatingSectionSun[] = sections.map((section) => {
-            const { tier } = sectionExposureAtSun(
-              section,
-              {
-                altitudeDegrees: position.altitudeDegrees,
-                azimuthDegrees: position.azimuthDegrees,
-              },
-              selectedVenue.orientation,
-              domed,
-              convention,
-            );
-            const sortKey = sortKeyForExposureTier(tier);
-            return {
-              section,
-              sunExposure: sortKey,
-              exposureLabel: EXPOSURE_TIER_LABEL[tier],
-              inSun: tier === 'full' || tier === 'moderate',
-              timeInSun: 0,
-              percentageOfGameInSun: sortKey,
-            };
-          });
-          if (isCancelled) return;
-          setDetailedSections(tierSections);
-          setShadedSections([]);
-          setGameExposureData(null);
-          return;
-        }
-        
-        if (!seatShadePublished) {
-          setDetailedSections([]);
-          setShadedSections([]);
-          setGameExposureData(null);
-          return;
-        }
-        
-        // Calculate shade for unified venues
-        const shadeResults = getUnifiedVenueShade(
-          selectedVenue,
-          gameDateTime,
-          sections,
-          weatherForecast?.current || undefined
-        );
-        
-        if (isCancelled) return;
-        setShadedSections(shadeResults);
-        
-        // Convert to legacy format for compatibility
         if (selectedVenue.league === 'MLB') {
-          // For MLB, use existing detailed calculations
           const calculator = new SunCalculator(legacyStadium!);
           const gameDuration = 3;
-          
+
           const detailedSectionData: SeatingSectionSun[] = sections.map((section) => {
-            // Stadium-local convention: 0 = 1B, 90 = CF, 180 = 3B, 270 = behind
-            // home plate. This mapping used to start `home` at 315–45°, which is
-            // the 1B corner, so every section was labelled a quarter-turn wrong.
             const local = ((section.baseAngle % 360) + 360) % 360;
             const side: 'home' | 'first' | 'third' | 'outfield' =
               local >= 315 || local < 45 ? 'first' :
               local < 135 ? 'outfield' :
               local < 225 ? 'third' : 'home';
 
-            // Pass the stadium-LOCAL baseAngle (carried through by the spread)
-            // and let SunCalculator convert it with the park's orientation.
-            // This used to set `angle: section.baseAngle`, handing a local angle
-            // to a field documented as a compass bearing, which discarded every
-            // park's orientation.
             const sectionWithGeometry = {
               ...section,
               side,
-              depth: 50 // Default depth
+              depth: 50,
             };
-            
-            // Calculate time in sun
+
             const timeExposure = calculator.calculateTimeInSun(sectionWithGeometry, gameDateTime, gameDuration);
-            
+
             return {
               section,
               sunExposure: Math.round(timeExposure.percentage),
               inSun: timeExposure.percentage > 20,
               timeInSun: timeExposure.totalMinutes,
-              percentageOfGameInSun: timeExposure.percentage
+              percentageOfGameInSun: timeExposure.percentage,
             };
           });
-          
-          if (isCancelled) return;
 
+          if (isCancelled) return;
           setDetailedSections(detailedSectionData);
-          
-          // Calculate game exposure - pass sections to avoid bundling
-          const exposureMap = calculateGameSunExposure(legacyStadium!, gameDateTime, gameDuration, sections);
-          setGameExposureData(exposureMap);
-        } else {
-          // For non-MLB venues, convert shade results to legacy format
-          const convertedSections: SeatingSectionSun[] = shadeResults.map(result => ({
+          setShadedSections([]);
+          setGameExposureData(
+            seatShadePublished
+              ? calculateGameSunExposure(legacyStadium!, gameDateTime, gameDuration, sections)
+              : null,
+          );
+        } else if (seatShadePublished) {
+          const shadeResults = getUnifiedVenueShade(
+            selectedVenue,
+            gameDateTime,
+            sections,
+            weatherForecast?.current || undefined,
+          );
+
+          if (isCancelled) return;
+          setShadedSections(shadeResults);
+
+          const convertedSections: SeatingSectionSun[] = shadeResults.map((result) => ({
             section: {
               id: result.section.id,
               name: result.section.name,
@@ -306,15 +250,20 @@ function UnifiedAppContent() {
               baseAngle: result.section.baseAngle,
               angleSpan: result.section.angleSpan,
               covered: result.section.covered,
-              price: result.section.price as 'value' | 'moderate' | 'premium' | 'luxury'
+              price: result.section.price as 'value' | 'moderate' | 'premium' | 'luxury',
             },
             sunExposure: Math.round(100 - result.shadePercentage),
             inSun: result.isInSun,
             timeInSun: result.isInSun ? 180 : 0,
-            percentageOfGameInSun: 100 - result.shadePercentage
+            percentageOfGameInSun: 100 - result.shadePercentage,
           }));
 
           setDetailedSections(convertedSections);
+          setGameExposureData(null);
+        } else {
+          setDetailedSections([]);
+          setShadedSections([]);
+          setGameExposureData(null);
         }
         
       } catch (error) {
@@ -503,14 +452,14 @@ function UnifiedAppContent() {
                   }}
                 >
                   <h2 id="desktop-shade-results-paused" style={{ marginTop: 0 }}>Section results paused</h2>
-                  <p style={{ marginBottom: 0 }}>Sun position and weather remain available, but section percentages and rankings are withheld until measured stadium geometry passes independent shadow validation.</p>
+                  <p style={{ marginBottom: 0 }}>Sun position and weather remain available, but the section list and sun-exposure filters are withheld for this venue until measured stadium geometry passes independent shadow validation.</p>
                 </section>
               )}
 
               {!seatShadePublished && sectionTiersPublished && (
                 <section
                   role="note"
-                  aria-labelledby="desktop-section-tier-guide"
+                  aria-labelledby="desktop-section-list-notice"
                   style={{
                     margin: '1rem 0',
                     padding: '1rem',
@@ -521,12 +470,8 @@ function UnifiedAppContent() {
                     color: '#334155',
                   }}
                 >
-                  <h2 id="desktop-section-tier-guide" style={{ marginTop: 0 }}>Section-level shade guide</h2>
-                  <p style={{ marginBottom: '0.5rem' }}>{SECTION_LEVEL_TIER_NOTICE}</p>
-                  <p style={{ marginBottom: 0 }}>
-                    Sections below show discrete tiers (Shaded / Light sun / Moderate sun / Full sun), not measured percentages.
-                    {' '}<Link href={`/stadium/${selectedVenue.id}`}>Open the full interactive diagram →</Link>
-                  </p>
+                  <h2 id="desktop-section-list-notice" style={{ marginTop: 0, fontSize: '1rem' }}>Section sun estimates</h2>
+                  <p style={{ marginBottom: 0 }}>{SECTION_LEVEL_TIER_NOTICE}</p>
                 </section>
               )}
 
@@ -542,7 +487,6 @@ function UnifiedAppContent() {
                   loading={loadingSections}
                   calculationProgress={null}
                   showFilters={true}
-                  displayMode={sectionTiersPublished && !seatShadePublished ? 'tier' : 'percent'}
                 />
               )}
             </div>

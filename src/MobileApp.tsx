@@ -21,12 +21,6 @@ import { SunIcon, MoonIcon } from './components/Icons';
 import { FidelityNotice } from './components/FidelityNotice';
 import { getStadiumDataFidelity, fidelityNote } from './data/stadiumDataFidelity';
 import { canPublishVenueSeatShade, canPublishSectionLevelShadeTiers } from './data/stadiumShadeConfidence';
-import { sectionAngleConventionFor } from './utils/bowlGeometry';
-import {
-  EXPOSURE_TIER_LABEL,
-  sectionExposureAtSun,
-  sortKeyForExposureTier,
-} from './utils/sectionShadeTier';
 import { validateFilterCriteria, RateLimiter } from './utils/validation';
 import { debounce } from './utils/debounce';
 import './styles/mobile.css';
@@ -185,71 +179,33 @@ const MobileApp: React.FC = () => {
         ? await getStadiumSectionsAsync(selectedVenue.id)
         : getVenueSections(selectedVenue.id);
       const gameDate = gameDateTime;
-
-      if (!canPublishVenueSeatShade(selectedVenue) && canPublishSectionLevelShadeTiers(selectedVenue) && selectedVenue.league === 'MLB') {
-        const position = getSunPosition(gameDate, selectedVenue.latitude, selectedVenue.longitude);
-        const domed = selectedVenue.roof === 'fixed';
-        const convention = sectionAngleConventionFor({ sport: 'baseball' });
-        const results: SeatingSectionSun[] = sections.map((section) => {
-          const { tier } = sectionExposureAtSun(
-            section,
-            {
-              altitudeDegrees: position.altitudeDegrees,
-              azimuthDegrees: position.azimuthDegrees,
-            },
-            selectedVenue.orientation,
-            domed,
-            convention,
-          );
-          const sortKey = sortKeyForExposureTier(tier);
-          return {
-            section,
-            sunExposure: sortKey,
-            exposureLabel: EXPOSURE_TIER_LABEL[tier],
-            inSun: tier === 'full' || tier === 'moderate',
-            timeInSun: 0,
-            percentageOfGameInSun: sortKey,
-          };
-        });
-        setAllSections(results);
-        return;
-      }
-      
-      // Use the same time-based calculation as desktop
       const calculator = new SunCalculator(selectedStadium);
-      const gameDuration = 3; // 3 hour game
-      
-      const results: SeatingSectionSun[] = sections.map(section => {
-        // Add section geometry for calculations
-        const side: 'home' | 'first' | 'third' | 'outfield' = 
-          section.name.toLowerCase().includes('third') || section.name.toLowerCase().includes('3b') || section.name.toLowerCase().includes('left') ? 'third' :
-          section.name.toLowerCase().includes('first') || section.name.toLowerCase().includes('1b') || section.name.toLowerCase().includes('right') ? 'first' :
-          section.name.toLowerCase().includes('behind') || section.name.toLowerCase().includes('home') || section.name.toLowerCase().includes('backstop') ? 'home' : 'outfield';
-        
-        // Pass the stadium-LOCAL baseAngle (carried through by the spread) and
-        // let SunCalculator convert it with the park's orientation. This used to
-        // set `angle: section.baseAngle`, handing a local angle to a field
-        // documented as a compass bearing, so orientation was discarded and the
-        // mobile shade list was identical for every park.
+      const gameDuration = 3;
+
+      const results: SeatingSectionSun[] = sections.map((section) => {
+        const local = ((section.baseAngle % 360) + 360) % 360;
+        const side: 'home' | 'first' | 'third' | 'outfield' =
+          local >= 315 || local < 45 ? 'first' :
+          local < 135 ? 'outfield' :
+          local < 225 ? 'third' : 'home';
+
         const sectionWithGeometry = {
           ...section,
           side,
-          depth: 50 // Default depth
+          depth: 50,
         };
-        
-        // Calculate time in sun
+
         const timeExposure = calculator.calculateTimeInSun(sectionWithGeometry, gameDate, gameDuration);
-        
+
         return {
           section,
           sunExposure: Math.round(timeExposure.percentage),
           inSun: timeExposure.percentage > 20,
           timeInSun: timeExposure.totalMinutes,
-          percentageOfGameInSun: timeExposure.percentage
+          percentageOfGameInSun: timeExposure.percentage,
         };
       });
-    
-      // Store all sections (unfiltered)
+
       setAllSections(results);
     } finally {
       setIsCalculating(false);
@@ -430,13 +386,6 @@ const MobileApp: React.FC = () => {
               </section>
             ) : (
             <>
-              {!seatShadePublished && sectionTiersPublished && (
-                <section className="mobile-section" role="note">
-                  <div className="mobile-error-banner" style={{ background: '#f8fafc', color: '#334155', borderColor: '#cbd5e1' }}>
-                    <p style={{ margin: 0 }}>Section tiers below are orientation-based guides, not measured row percentages.</p>
-                  </div>
-                </section>
-              )}
               <section className="mobile-section mobile-filter-section">
                 <MobileFilterSheet
                   onFilterChange={handleFilterChange}
@@ -465,7 +414,6 @@ const MobileApp: React.FC = () => {
                         sunExposure={sectionData.sunExposure}
                         inSun={sectionData.inSun}
                         timeInSun={sectionData.timeInSun}
-                        exposureLabel={sectionData.exposureLabel}
                       />
                     ))}
                   </div>
