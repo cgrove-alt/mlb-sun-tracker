@@ -43,24 +43,25 @@ below — do NOT re-enable the diagram for a league until its item is complete a
   where CF actually faces north (Syracuse, Rome, Lansing).
 - **Still blocking diagrams:** the live path no longer emits `generateBaseballSections`
   or Field-100 clones. Parks without a transcribed official chart now return empty
-  (fail closed). Ninety-two parks have source-backed inventories (Aberdeen, Akron,
+  (fail closed). Ninety-nine parks have source-backed inventories (Aberdeen, Akron,
   Albuquerque [partial], Altoona, Amarillo, Arkansas, Asheville, Beloit, Biloxi,
   Birmingham, Bowling Green, Bradenton, Brooklyn, Buffalo, Cedar Rapids, Charleston,
   Charlotte, Clearwater, Columbia, Columbus Clippers, Corpus Christi, Dayton,
   Delmarva, Durham, Erie, Everett, Fayetteville, Fort Myers, Fort Wayne [partial],
   Fredericksburg, Fresno [partial], Frisco, Great Lakes, Greensboro [partial],
   Greenville, Gwinnett, Harrisburg, Hartford, Hickory, Hillsboro, Hudson Valley,
-  Indianapolis [partial], Inland Empire, Iowa, Jacksonville, Jersey Shore,
-  Kannapolis [partial], Knoxville, Lakeland, Las Vegas, Lehigh Valley, Louisville,
-  Lynchburg, Memphis [partial], Midland [partial], Montgomery, Myrtle Beach,
-  Nashville, New Hampshire [partial], Norfolk, Northwest Arkansas, Oklahoma City,
-  Omaha [partial], Pensacola, Peoria, Portland, Rancho Cucamonga, Reading,
-  Richmond, Rocket City, Rome, Round Rock [partial], Sacramento, Salem, Salt Lake,
-  San Jose, Scranton/Wilkes-Barre, Somerset, Springfield, St. Lucie, St. Paul,
-  Stockton, Sugar Land, Syracuse, Tacoma [partial], Tampa, Toledo,
-  Vancouver [partial], Visalia, Winston-Salem [partial], Wisconsin,
-  Worcester [partial]). The other 28 still need official chart IDs — do **not**
-  fill them with a template. Do **not** publish section %.
+  Indianapolis [partial], Inland Empire, Iowa, Jacksonville, Jersey Shore, Jupiter,
+  Kannapolis [partial], Knoxville, Lakeland, Lansing, Las Vegas, Lehigh Valley,
+  Louisville, Lynchburg, Memphis [partial], Midland [partial], Montgomery,
+  Myrtle Beach, Nashville, New Hampshire [partial], Norfolk, Northwest Arkansas,
+  Oklahoma City, Omaha [partial], Ontario/Modesto, Palm Beach (Roger Dean shared),
+  Pensacola, Peoria, Portland, Rancho Cucamonga, Reading, Richmond, Rochester,
+  Rocket City, Rome, Round Rock [partial], Sacramento, Salem, Salt Lake, San Jose,
+  Scranton/Wilkes-Barre, Somerset, Springfield, St. Lucie, St. Paul, Stockton,
+  Sugar Land, Syracuse, Tacoma [partial], Tampa, Toledo, Tulsa, Vancouver [partial],
+  Visalia, Wichita, Winston-Salem [partial], Wisconsin, Worcester [partial]). The
+  other 21 still need official chart IDs — do **not** fill them with a template.
+  Do **not** publish section %.
 - **Work remaining:** transcribe the remaining official club charts / maps into
   `MILB_OFFICIAL_INVENTORIES` the same way, unique except shared bowls (Roger Dean).
 - **Done when:** all 120 MiLB ids have real, non-template sections + measured
