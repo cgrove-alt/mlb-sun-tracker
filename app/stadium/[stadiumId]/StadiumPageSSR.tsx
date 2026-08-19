@@ -532,7 +532,7 @@ export default function StadiumPageSSR({ stadium, sections, amenities, guide }: 
               {isDome
                 ? `${stadium.name}'s permanent roof blocks direct sunlight throughout the seating bowl.`
                 : sectionTiersPublished
-                  ? 'Structural coverage from the published inventory is listed in the table above and in the interactive diagram below.'
+                  ? 'Structural coverage from the published inventory is listed in the table above and in the where-to-sit guide below.'
                   : seatShadePublished
                     ? 'The validated section measurements are listed in the table above.'
                     : 'The published seating map confirms section identities, but it does not provide the row-by-row overhang dimensions needed to verify a covered-row list. We therefore do not publish one.'}
@@ -587,7 +587,7 @@ export default function StadiumPageSSR({ stadium, sections, amenities, guide }: 
         <div className={styles.container}>
           <h2>Plan Your Visit to {stadium.name}</h2>
           <p>{sectionTiersPublished
-            ? 'Browse the source-backed section inventory, orientation-based shade guide, and interactive diagram. Exact seat-level shade percentages will return only after measured geometry passes independent validation.'
+            ? 'Browse the source-backed section inventory and the where-to-sit guide. Exact seat-level shade percentages will return only after measured geometry passes independent validation.'
             : 'Browse the source-backed section inventory and solar-orientation context. Exact seat-level shade results will return only after measured geometry passes independent validation.'}</p>
           
           <div className={styles.ctaButtons}>

@@ -525,7 +525,7 @@ function UnifiedAppContent() {
                   <p style={{ marginBottom: '0.5rem' }}>{SECTION_LEVEL_TIER_NOTICE}</p>
                   <p style={{ marginBottom: 0 }}>
                     Sections below show discrete tiers (Shaded / Light sun / Moderate sun / Full sun), not measured percentages.
-                    {' '}<Link href={`/stadium/${selectedVenue.id}`}>Open the full interactive diagram →</Link>
+                    {' '}<Link href={`/stadium/${selectedVenue.id}`}>See where to sit by side of the park →</Link>
                   </p>
                 </section>
               )}

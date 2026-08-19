@@ -3,85 +3,45 @@
 import React, { useMemo, useState } from 'react';
 import type { StadiumSection } from '../data/stadiumSectionTypes';
 import { getSunPosition } from '../utils/sunPosition';
-import { getSectionSunExposure } from '../utils/sectionSunCalculations';
-import { reconciledExposure, exposureTierOf, EXPOSURE_TIER_LABEL, type ExposureTier } from '../utils/sectionShadeTier';
 import { stadiumLocalToUTC } from '../utils/stadiumTime';
 import { sectionAngleConventionFor } from '../utils/bowlGeometry';
+import {
+  BOWL_SIDE_LABEL,
+  EXPOSURE_TIER_LABEL,
+  SIDE_VERDICT_LABEL,
+  buildSectionShadeGuide,
+  formatGuideHeadline,
+  type BowlSideId,
+} from '../utils/sectionShadeGuide';
+import styles from './InteractiveSeatingBowl.module.css';
 
-// MLB-only, SECTION-LEVEL shade guide. Draws the seating bowl as a ring of
-// discrete wedges (one per section, positioned by baseAngle/angleSpan) colored
-// by each section's shade at a user-selected game time. It is a GUIDE, not a
-// row-by-row shadow simulation — it has no per-row/height/overhang geometry and
-// does not pretend to. Two honest guarantees:
-//   1. It uses the same verified stadium orientation + real sun position as the
-//      rest of the site (getSunPosition + getSectionSunExposure).
-//   2. It is reconciled with the section table via shadeTierOf: a section can
-//      never be shown sunnier than its structural tier allows (covered→shaded,
-//      partial→at most light). Enforced by reconciledExposure() + an invariant
-//      test across all 30 MLB venues.
-// Rendered only where the data supports it (MLB); MiLB/NFL fall back to the table.
+// MLB-only, SECTION-LEVEL shade guide. Fans choose a typical game time and
+// see which SIDE of the bowl to sit on, then look up a section by name.
+// This is a GUIDE, not a row-by-row shadow simulation.
+// Physics: getSectionSunExposure + reconciledExposure (same as the table).
 
 const DEFAULT_DATE = '2026-07-15';
-// Evening default: the orientation-driven sun/shade split is clearest at a low
-// sun angle. At high noon almost every open seat is in the sun (which the slider
-// will honestly show as the user drags earlier).
-const DEFAULT_TIME = '18:30';
+const DEFAULT_MINUTES = 16 * 60; // 4:00 PM — shade split is visible, still a day game
 
-const cx = 170;
-const cy = 170;
-const rIn = 80;
-const rOut = 150;
-
-// Coordinates are ROUNDED before they reach the SVG path string.
-//
-// Math.cos/Math.sin are not required to be bit-identical across JavaScript
-// engines, and Node (which renders this on the server) and Chrome (which
-// hydrates it) disagree in the last ulp — e.g. 302.44213892883903 server-side
-// vs 302.4421389288391 in the browser. React compared the two `d` strings,
-// found them different, and logged a hydration mismatch for the shade diagram
-// on every venue page, warning that it "won't be patched up". Three decimals
-// is far below one screen pixel at this viewBox and is engine-independent.
-const round3 = (n: number) => Math.round(n * 1000) / 1000;
-
-function pt(r: number, localDeg: number): [number, number] {
-  const a = (localDeg * Math.PI) / 180;
-  return [round3(cx + r * Math.cos(a)), round3(cy - r * Math.sin(a))];
-}
-
-function wedgePath(a0: number, a1: number): string {
-  const [x0o, y0o] = pt(rOut, a0);
-  const [x1o, y1o] = pt(rOut, a1);
-  const [x1i, y1i] = pt(rIn, a1);
-  const [x0i, y0i] = pt(rIn, a0);
-  const large = a1 - a0 > 180 ? 1 : 0;
-  return `M ${x0o} ${y0o} A ${rOut} ${rOut} 0 ${large} 0 ${x1o} ${y1o} L ${x1i} ${y1i} A ${rIn} ${rIn} 0 ${large} 1 ${x0i} ${y0i} Z`;
-}
-
-type Tier = ExposureTier;
-function tierOf(exposure: number): Tier {
-  return exposureTierOf(exposure);
-}
-const TIER_COLOR: Record<Tier, string> = {
-  shaded: '#1e3a5f',
-  light: '#93c5fd',
-  moderate: '#f6c453',
-  full: '#f59e0b',
-};
-const TIER_LABEL = EXPOSURE_TIER_LABEL;
-
-const COMPASS = ['N', 'NE', 'E', 'SE', 'S', 'SW', 'W', 'NW'];
-const compassOf = (az: number) => COMPASS[Math.round((((az % 360) + 360) % 360) / 45) % 8];
+const TIME_PRESETS: Array<{ label: string; minutes: number }> = [
+  { label: '1:00 PM', minutes: 13 * 60 },
+  { label: '4:00 PM', minutes: 16 * 60 },
+  { label: '7:00 PM', minutes: 19 * 60 },
+];
 
 const pad = (n: number) => n.toString().padStart(2, '0');
 const minutesToTime = (m: number) => `${pad(Math.floor(m / 60))}:${pad(m % 60)}`;
-const timeToMinutes = (t: string) => {
-  const [h, m] = t.split(':').map(Number);
-  return h * 60 + m;
-};
 const fmt12 = (t: string) => {
   const [h, m] = t.split(':').map(Number);
   const period = h >= 12 ? 'PM' : 'AM';
   return `${((h + 11) % 12) + 1}:${pad(m)} ${period}`;
+};
+
+const SIDE_CLASS: Record<BowlSideId, string> = {
+  first: styles.sideFirst,
+  third: styles.sideThird,
+  home: styles.sideHome,
+  outfield: styles.sideOutfield,
 };
 
 export function InteractiveSeatingBowl({
@@ -103,12 +63,12 @@ export function InteractiveSeatingBowl({
   roof?: string;
   name: string;
   sport?: 'baseball' | 'football';
-  // Optional lower-confidence disclaimer, e.g. for parks whose orientation is
-  // only estimated (±15–20°). Computed by the caller from orientation provenance.
   orientationNote?: string | null;
 }) {
   const [dateStr, setDateStr] = useState(DEFAULT_DATE);
-  const [minutes, setMinutes] = useState(timeToMinutes(DEFAULT_TIME));
+  const [minutes, setMinutes] = useState(DEFAULT_MINUTES);
+  const [query, setQuery] = useState('');
+  const [selectedSide, setSelectedSide] = useState<BowlSideId | null>(null);
 
   const drawable = useMemo(
     () => sections.filter((s) => typeof s.baseAngle === 'number' && typeof s.angleSpan === 'number' && s.angleSpan > 0),
@@ -118,9 +78,9 @@ export function InteractiveSeatingBowl({
   const domed = roof === 'fixed';
   const retractable = roof === 'retractable';
   const timeStr = minutesToTime(minutes);
+  const timeLabel = fmt12(timeStr);
 
-  const { sun, wedges, counts, srList } = useMemo(() => {
-    const counts: Record<Tier, number> = { shaded: 0, light: 0, moderate: 0, full: 0 };
+  const { sun, guide, belowHorizon } = useMemo(() => {
     let sun: { altitudeDegrees: number; azimuthDegrees: number } | null = null;
     try {
       const utc = stadiumLocalToUTC(dateStr, timeStr, timezone);
@@ -129,141 +89,170 @@ export function InteractiveSeatingBowl({
       sun = null;
     }
     const belowHorizon = !sun || sun.altitudeDegrees <= 0;
-    const srList: string[] = [];
-
     const convention = sectionAngleConventionFor({ sport });
-    const wedges = drawable.map((s, i) => {
-      const raw = domed || belowHorizon || !sun
-        ? 0
-        : getSectionSunExposure(s, sun.altitudeDegrees, sun.azimuthDegrees, orientation, convention);
-      // Reconcile with the table's structural tier: never show more sun than the
-      // tier permits (covered→0, partial→≤35, fixed dome→0).
-      const exposure = reconciledExposure(raw, s, domed || belowHorizon);
-      const tier = tierOf(exposure);
-      counts[tier]++;
-      srList.push(`${s.name}: ${TIER_LABEL[tier]}`);
-      return (
-        <path key={s.id ?? i} d={wedgePath(s.baseAngle, s.baseAngle + s.angleSpan)} fill={TIER_COLOR[tier]} stroke="#ffffff" strokeWidth={0.75}>
-          <title>{`${s.name} — ${TIER_LABEL[tier]}`}</title>
-        </path>
-      );
-    });
-
-    return { sun, wedges, counts, srList };
+    const guide = buildSectionShadeGuide(
+      drawable,
+      sun ?? { altitudeDegrees: 0, azimuthDegrees: 180 },
+      orientation,
+      domed || belowHorizon,
+      convention,
+    );
+    return { sun, guide, belowHorizon };
   }, [drawable, dateStr, timeStr, timezone, latitude, longitude, orientation, domed, sport]);
 
   if (drawable.length < 6) return null;
 
-  const belowHorizon = !sun || sun.altitudeDegrees <= 0;
-  const sunReadout = domed
-    ? 'Fixed roof — every seat is shaded regardless of sun position.'
-    : belowHorizon
-      ? 'Sun is below the horizon — the whole park is shaded.'
-      : `Sun: ${compassOf(sun!.azimuthDegrees)} · ${Math.round(sun!.altitudeDegrees)}° above the horizon`;
+  const headline = formatGuideHeadline({
+    timeLabel,
+    domed,
+    belowHorizon,
+    bestSide: guide.bestSide,
+  });
 
-  const label = (localDeg: number, text: string) => {
-    const [x, y] = pt(rOut + 16, localDeg);
-    return (
-      <text x={x} y={y} fontSize={12} fill="#475569" textAnchor="middle" dominantBaseline="middle">
-        {text}
-      </text>
-    );
-  };
+  const q = query.trim().toLowerCase();
+  const matches = (q
+    ? guide.rows.filter((r) =>
+        r.section.name.toLowerCase().includes(q) || r.section.id.toLowerCase().includes(q))
+    : selectedSide
+      ? guide.rows.filter((r) => r.side === selectedSide)
+      : []
+  ).slice(0, 12);
 
-  const tiers: Tier[] = ['shaded', 'light', 'moderate', 'full'];
+  const lookingUp = q.length > 0 || selectedSide !== null;
 
   return (
-    <section
-      aria-label={`Section-level shade guide for ${name}`}
-      style={{ margin: '1.5rem auto', maxWidth: 760, padding: '1rem 1.25rem' }}
-    >
-      <h2 style={{ fontSize: '1.25rem', fontWeight: 600, marginBottom: '0.15rem' }}>
-        Section-level shade guide
-      </h2>
-      <p style={{ fontSize: '0.8rem', color: '#6b7280', margin: '0 0 0.6rem' }}>
-        Pick a game time to see which <strong>sections</strong> face the sun. Based on the
-        sun&apos;s position and {name}&apos;s orientation — actual shade also varies by row,
-        deck overhang, and weather. Covered sections are always shown shaded.
+    <section className={styles.guide} aria-label={`Where to sit in the shade at ${name}`}>
+      <h2 className={styles.title}>Where to Sit</h2>
+      <p className={styles.lede}>
+        Choose a typical first-pitch time. Results are for <strong>sections</strong> at {name},
+        not individual rows. Covered sections stay shaded.
       </p>
 
       {retractable && (
-        <p role="note" style={{ fontSize: '0.78rem', color: '#7c5e10', background: '#fef9ec', border: '1px solid #f5e6b8', borderRadius: 6, padding: '6px 10px', margin: '0 0 0.6rem' }}>
-          Retractable roof: shade shown assumes the roof is <strong>open</strong>. With the roof closed, every seat is shaded.
+        <p role="note" className={styles.note}>
+          Retractable roof: this guide assumes the roof is <strong>open</strong>. Closed, every seat is shaded.
         </p>
       )}
       {orientationNote && (
-        <p role="note" style={{ fontSize: '0.78rem', color: '#475569', background: '#f1f5f9', border: '1px solid #e2e8f0', borderRadius: 6, padding: '6px 10px', margin: '0 0 0.6rem' }}>
+        <p role="note" className={styles.orientNote}>
           {orientationNote}
         </p>
       )}
 
-      <p style={{ fontSize: '0.875rem', color: '#374151', margin: '0 0 0.75rem' }} aria-live="polite">
-        {sunReadout}
-      </p>
-
-      {/* Controls */}
-      <div style={{ display: 'flex', flexWrap: 'wrap', gap: '1rem 1.5rem', alignItems: 'center', marginBottom: '0.75rem' }}>
-        <label style={{ display: 'flex', flexDirection: 'column', fontSize: '0.8rem', color: '#374151' }}>
+      <div className={styles.controls}>
+        <div className={styles.field}>
+          Game time
+          <div className={styles.presets} role="group" aria-label="Typical first-pitch times">
+            {TIME_PRESETS.map((preset) => {
+              const active = minutes === preset.minutes;
+              return (
+                <button
+                  key={preset.minutes}
+                  type="button"
+                  className={`${styles.chip} ${active ? styles.chipActive : ''}`}
+                  aria-pressed={active}
+                  onClick={() => setMinutes(preset.minutes)}
+                >
+                  {preset.label}
+                </button>
+              );
+            })}
+          </div>
+        </div>
+        <label className={styles.field} htmlFor="shade-guide-date">
           Date
           <input
+            id="shade-guide-date"
+            className={styles.dateInput}
             type="date"
+            name="shade-guide-date"
+            autoComplete="off"
             value={dateStr}
             onChange={(e) => setDateStr(e.target.value || DEFAULT_DATE)}
-            style={{ marginTop: 4, padding: '4px 8px', border: '1px solid #cbd5e1', borderRadius: 6 }}
           />
         </label>
-        <label style={{ display: 'flex', flexDirection: 'column', fontSize: '0.8rem', color: '#374151', minWidth: 240 }}>
-          Time: <strong>{fmt12(timeStr)}</strong>
+      </div>
+
+      <p className={styles.headline} aria-live="polite">
+        {headline}
+      </p>
+
+      <div className={styles.diamond} aria-label="Shade by side of the ballpark">
+        <div className={styles.fieldMark} aria-hidden="true">Field</div>
+        {guide.sides.map((side) => {
+          const tone = side.verdict === 'mostly-shade'
+            ? styles.sideShade
+            : side.verdict === 'mostly-sun'
+              ? styles.sideSun
+              : styles.sideMixed;
+          const selected = selectedSide === side.id;
+          return (
+            <button
+              key={side.id}
+              type="button"
+              className={`${styles.sideCard} ${SIDE_CLASS[side.id]} ${tone}`}
+              aria-pressed={selected}
+              aria-label={`${side.label}: ${SIDE_VERDICT_LABEL[side.verdict]}. ${side.shadeCount} of ${side.total} sections in shade.`}
+              onClick={() => setSelectedSide((cur) => (cur === side.id ? null : side.id))}
+            >
+              <span className={styles.sideName}>{side.label}</span>
+              <span className={styles.sideHint}>{side.hint}</span>
+              <span className={styles.sideVerdict}>{SIDE_VERDICT_LABEL[side.verdict]}</span>
+              <span className={styles.sideCount}>
+                {side.shadeCount} of {side.total} sections in shade
+              </span>
+              {side.examples.length > 0 && (
+                <span className={styles.sideExamples}>{side.examples.join(', ')}</span>
+              )}
+            </button>
+          );
+        })}
+      </div>
+
+      <div className={styles.lookup}>
+        <label className={styles.lookupLabel} htmlFor="shade-guide-section">
+          Find your section
           <input
-            type="range"
-            min={480}
-            max={1260}
-            step={15}
-            value={minutes}
-            onChange={(e) => setMinutes(Number(e.target.value))}
-            aria-label="Game time"
-            style={{ marginTop: 8 }}
+            id="shade-guide-section"
+            className={styles.searchInput}
+            type="search"
+            name="section"
+            autoComplete="off"
+            spellCheck={false}
+            placeholder="e.g. 114 or Grandstand…"
+            value={query}
+            onChange={(e) => {
+              setQuery(e.target.value);
+              if (e.target.value) setSelectedSide(null);
+            }}
           />
         </label>
+        {lookingUp && matches.length === 0 && (
+          <p className={styles.empty} role="status">
+            No matching section. Try a number from your ticket, like 110.
+          </p>
+        )}
+        {matches.length > 0 && (
+          <ul className={styles.matches}>
+            {matches.map((row) => (
+              <li key={row.section.id} className={styles.match}>
+                <span className={styles.matchName}>{row.section.name}</span>
+                <span className={styles.matchMeta}>
+                  {BOWL_SIDE_LABEL[row.side]} · {EXPOSURE_TIER_LABEL[row.tier]}
+                </span>
+              </li>
+            ))}
+          </ul>
+        )}
+        {selectedSide && !q && matches.length === 12 && (
+          <p className={styles.empty}>Showing the first 12 sections on this side. Search to jump to yours.</p>
+        )}
       </div>
 
-      <div style={{ display: 'flex', flexWrap: 'wrap', gap: '1.5rem', alignItems: 'center' }}>
-        <svg
-          viewBox="-18 -18 376 376"
-          role="img"
-          aria-label={`${name} seating bowl, sections colored by shade at ${fmt12(timeStr)}. A full text breakdown follows.`}
-          style={{ width: '100%', maxWidth: 376, height: 'auto' }}
-        >
-          <circle cx={cx} cy={cy} r={rIn - 6} fill="#eaf4e6" stroke="#cbd5e1" strokeWidth={1} />
-          <text x={cx} y={cy} fontSize={12} fill="#94a3b8" textAnchor="middle" dominantBaseline="middle">
-            Field
-          </text>
-          {wedges}
-          {sport === 'baseball' && label(0, '1B')}
-          {sport === 'baseball' && label(90, 'CF')}
-          {sport === 'baseball' && label(180, '3B')}
-          {sport === 'baseball' && label(270, 'Home')}
-        </svg>
-
-        <ul style={{ listStyle: 'none', padding: 0, margin: 0, fontSize: '0.9rem' }}>
-          {tiers.map((t) => (
-            <li key={t} style={{ display: 'flex', alignItems: 'center', marginBottom: 8 }}>
-              <span aria-hidden="true" style={{ display: 'inline-block', width: 16, height: 16, borderRadius: 3, background: TIER_COLOR[t], border: '1px solid #cbd5e1', marginRight: 8 }} />
-              {TIER_LABEL[t]} <span style={{ color: '#9ca3af', marginLeft: 6 }}>({counts[t]})</span>
-            </li>
-          ))}
-        </ul>
-      </div>
-
-      {/* Non-visual text alternative: the diagram is never the only way to get
-          the information (color is not the sole signal). The full section table
-          on this page is the primary accessible source; this list mirrors the
-          diagram's current-time result for screen-reader users. */}
-      <ul className="sr-only">
-        {srList.map((line, i) => (
-          <li key={i}>{line}</li>
-        ))}
-      </ul>
+      <p className={styles.fineprint}>
+        Based on {name}&apos;s orientation and the sun&apos;s position at {timeLabel}.
+        Shade also changes by row, deck overhang, and weather.
+      </p>
     </section>
   );
 }
