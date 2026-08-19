@@ -1227,6 +1227,23 @@ export const MILB_OFFICIAL_INVENTORIES: Record<string, OfficialInventory> = {
       { id: "syracuse-315-bullpen-bar", name: "315 Bullpen Bar", level: "standing", compassOffset: 50, span: 10 },
     ],
   },
+  "tacoma-rainiers": {
+    stadiumId: "tacoma-rainiers",
+    league: 'MiLB',
+    orientation: 60,
+    angleConvention: 'baseball-local',
+    sourceKind: "official-static-chart",
+    officialUrl: "https://www.milb.com/tacoma/tickets/season-tickets",
+    geometryUrl: "https://img.mlbstatic.com/milb-images/image/upload/t_w2208/milb/gxhkzgfkjb4bden64lrr.jpg",
+    inventoryNotes: "Cheney Stadium club photo shows wayfinding: Reserved 101-122 (A-N) and 124-128 (D-P). Season-ticket page adds Commencement Bank Summit Club and Lucky Eagle Casino & Hotel Dugout Club. Intermediate 123 and unpublished lettered dual-IDs are not invented as separate products.",
+    bands: [
+      { ids: ["101", "102", "103", "104", "105", "106", "107", "108", "109", "110", "111", "112", "113", "114", "115", "116", "117", "118", "119", "120", "121", "122", "124", "125", "126", "127", "128"], level: "lower", namePrefix: "Reserved" },
+    ],
+    named: [
+      { id: "tacoma-commencement-summit-club", name: "Commencement Bank Summit Club", level: "club", compassOffset: 40, span: 14 },
+      { id: "tacoma-lucky-eagle-dugout-club", name: "Lucky Eagle Casino & Hotel Dugout Club", level: "club", compassOffset: 180, span: 12 },
+    ],
+  },
   "tampa-tarpons": {
     stadiumId: "tampa-tarpons",
     league: 'MiLB',
