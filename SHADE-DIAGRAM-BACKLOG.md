@@ -43,15 +43,15 @@ below — do NOT re-enable the diagram for a league until its item is complete a
   where CF actually faces north (Syracuse, Rome, Lansing).
 - **Still blocking diagrams:** the live path no longer emits `generateBaseballSections`
   or Field-100 clones. Parks without a transcribed official chart now return empty
-  (fail closed). Ninety parks have source-backed inventories (Aberdeen, Akron,
+  (fail closed). Ninety-two parks have source-backed inventories (Aberdeen, Akron,
   Albuquerque [partial], Altoona, Amarillo, Arkansas, Asheville, Beloit, Biloxi,
   Birmingham, Bowling Green, Bradenton, Brooklyn, Buffalo, Cedar Rapids, Charleston,
   Charlotte, Clearwater, Columbia, Columbus Clippers, Corpus Christi, Dayton,
-  Durham, Erie, Everett, Fayetteville, Fort Myers, Fort Wayne [partial],
+  Delmarva, Durham, Erie, Everett, Fayetteville, Fort Myers, Fort Wayne [partial],
   Fredericksburg, Fresno [partial], Frisco, Great Lakes, Greensboro [partial],
   Greenville, Gwinnett, Harrisburg, Hartford, Hickory, Hillsboro, Hudson Valley,
   Indianapolis [partial], Inland Empire, Iowa, Jacksonville, Jersey Shore,
-  Kannapolis [partial], Lakeland, Las Vegas, Lehigh Valley, Louisville,
+  Kannapolis [partial], Knoxville, Lakeland, Las Vegas, Lehigh Valley, Louisville,
   Lynchburg, Memphis [partial], Midland [partial], Montgomery, Myrtle Beach,
   Nashville, New Hampshire [partial], Norfolk, Northwest Arkansas, Oklahoma City,
   Omaha [partial], Pensacola, Peoria, Portland, Rancho Cucamonga, Reading,
@@ -59,7 +59,7 @@ below — do NOT re-enable the diagram for a league until its item is complete a
   San Jose, Scranton/Wilkes-Barre, Somerset, Springfield, St. Lucie, St. Paul,
   Stockton, Sugar Land, Syracuse, Tacoma [partial], Tampa, Toledo,
   Vancouver [partial], Visalia, Winston-Salem [partial], Wisconsin,
-  Worcester [partial]). The other 30 still need official chart IDs — do **not**
+  Worcester [partial]). The other 28 still need official chart IDs — do **not**
   fill them with a template. Do **not** publish section %.
 - **Work remaining:** transcribe the remaining official club charts / maps into
   `MILB_OFFICIAL_INVENTORIES` the same way, unique except shared bowls (Roger Dean).
