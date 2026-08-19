@@ -1359,6 +1359,19 @@ OVERRIDES = {
             {"id": "nwa-mcnaughton-community-room", "name": "McNaughton Real Estate Community Room", "level": "club", "compassOffset": 180, "span": 10},
         ],
     },
+    "tacoma-rainiers": {
+        "officialUrl": "https://www.milb.com/tacoma/tickets/season-tickets",
+        "geometryUrl": "https://img.mlbstatic.com/milb-images/image/upload/t_w2208/milb/gxhkzgfkjb4bden64lrr.jpg",
+        "notes": "Cheney Stadium club photo shows wayfinding: Reserved 101-122 (A-N) and 124-128 (D-P). Season-ticket page adds Commencement Bank Summit Club and Lucky Eagle Casino & Hotel Dugout Club. Intermediate 123 and unpublished lettered dual-IDs are not invented as separate products.",
+        "inventoryStatus": "partial",
+        "bands": [
+            {"ids": [str(n) for n in list(range(101, 123)) + list(range(124, 129))], "level": "lower", "namePrefix": "Reserved"},
+        ],
+        "named": [
+            {"id": "tacoma-commencement-summit-club", "name": "Commencement Bank Summit Club", "level": "club", "compassOffset": 40, "span": 14},
+            {"id": "tacoma-lucky-eagle-dugout-club", "name": "Lucky Eagle Casino & Hotel Dugout Club", "level": "club", "compassOffset": 180, "span": 12},
+        ],
+    },
 }
 
 

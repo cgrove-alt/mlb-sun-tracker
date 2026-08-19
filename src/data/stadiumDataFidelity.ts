@@ -85,7 +85,7 @@ export const SOURCE_BACKED_INVENTORY_STADIUMS: ReadonlySet<string> = new Set([
   'salt-lake-bees',
   'somerset-patriots',
   'springfield-cardinals',
-  'st-paul-saints', 'syracuse-mets', 'tampa-tarpons',
+  'st-paul-saints', 'syracuse-mets', 'tacoma-rainiers', 'tampa-tarpons',
   'toledo-mud-hens', 'vancouver-canadians',
   'visalia-rawhide',
   'myrtle-beach-pelicans',
