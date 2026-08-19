@@ -123,6 +123,14 @@ export const SOURCE_BACKED_INVENTORY_STADIUMS: ReadonlySet<string> = new Set([
   'winston-salem-dash',
   'wisconsin-timber-rattlers',
   'worcester-red-sox',
+  'san-antonio-missions',
+  'augusta-greenjackets',
+  'lake-county-captains',
+  'wilmington-blue-rocks',
+  'daytona-tortugas',
+  'chattanooga-lookouts',
+  'binghamton-rumble-ponies',
+  'south-bend-cubs',
 ]);
 
 function stdev(xs: number[]): number {
