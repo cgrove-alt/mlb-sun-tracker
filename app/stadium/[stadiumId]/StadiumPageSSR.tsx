@@ -228,26 +228,6 @@ export default function StadiumPageSSR({ stadium, sections, amenities, guide }: 
       <ShadeAnswer name={stadium.name} orientation={stadium.orientation} roof={stadium.roof} />
       <ShadeConfidenceNotice stadiumId={stadium.id} roof={stadium.roof} />
 
-      {sectionTiersPublished ? (
-        <InteractiveSeatingBowl
-          sections={sections}
-          orientation={stadium.orientation}
-          latitude={stadium.latitude}
-          longitude={stadium.longitude}
-          timezone={stadium.timezone}
-          roof={stadium.roof}
-          name={stadium.name}
-          orientationNote={orientationNote}
-        />
-      ) : (
-        <section className={styles.section} aria-labelledby="interactive-model-paused">
-          <div className={styles.container}>
-            <h2 id="interactive-model-paused">Section shade guide paused</h2>
-            <p>Section-level shade results are hidden because this venue does not yet have a reconciled MLB inventory for a trustworthy side-of-bowl guide.</p>
-          </div>
-        </section>
-      )}
-
       {/* Best Shaded Sections */}
       <section className={styles.section}>
         <div className={styles.container}>
@@ -542,7 +522,7 @@ export default function StadiumPageSSR({ stadium, sections, amenities, guide }: 
               : seatShadePublished
                 ? `Measured geometry indicates the ${dayGameShadeSide} self-shades first for this solar position.`
                 : sectionTiersPublished
-                  ? `The where-to-sit guide above shows which side of the park faces the sun at game time. For a 1 PM start, the ${dayGameShadeSide} is oriented to self-shade first.`
+                  ? `The section-level shade guide and diagram below show which sections face the sun at game time. For a 1 PM start, the ${dayGameShadeSide} is oriented to self-shade first.`
                   : `The orientation model suggests the ${dayGameShadeSide} may self-shade first, but we do not publish section or row recommendations without measured, independently validated geometry.`}</p>
           </div>
 
@@ -552,7 +532,7 @@ export default function StadiumPageSSR({ stadium, sections, amenities, guide }: 
               {isDome
                 ? `${stadium.name}'s permanent roof blocks direct sunlight throughout the seating bowl.`
                 : sectionTiersPublished
-                  ? 'Structural coverage from the published inventory is listed in the table above and in the where-to-sit guide.'
+                  ? 'Structural coverage from the published inventory is listed in the table above and in the interactive diagram below.'
                   : seatShadePublished
                     ? 'The validated section measurements are listed in the table above.'
                     : 'The published seating map confirms section identities, but it does not provide the row-by-row overhang dimensions needed to verify a covered-row list. We therefore do not publish one.'}
@@ -582,12 +562,32 @@ export default function StadiumPageSSR({ stadium, sections, amenities, guide }: 
         </div>
       </section>
 
+      {/* Interactive section-level shade guide — placed below the section tables
+          (below the fold) so it is never the LCP element. MLB only. */}
+      {sectionTiersPublished ? <InteractiveSeatingBowl
+        sections={sections}
+        orientation={stadium.orientation}
+        latitude={stadium.latitude}
+        longitude={stadium.longitude}
+        timezone={stadium.timezone}
+        roof={stadium.roof}
+        name={stadium.name}
+        orientationNote={orientationNote}
+      /> : (
+        <section className={styles.section} aria-labelledby="interactive-model-paused">
+          <div className={styles.container}>
+            <h2 id="interactive-model-paused">Interactive shade model paused</h2>
+            <p>The colored section model is hidden because its precise boundaries would imply more measurement confidence than the current data supports.</p>
+          </div>
+        </section>
+      )}
+
       {/* Final CTA */}
       <section className={styles.stadiumCta}>
         <div className={styles.container}>
           <h2>Plan Your Visit to {stadium.name}</h2>
           <p>{sectionTiersPublished
-            ? 'Browse the source-backed section inventory and the where-to-sit guide. Exact seat-level shade percentages will return only after measured geometry passes independent validation.'
+            ? 'Browse the source-backed section inventory, orientation-based shade guide, and interactive diagram. Exact seat-level shade percentages will return only after measured geometry passes independent validation.'
             : 'Browse the source-backed section inventory and solar-orientation context. Exact seat-level shade results will return only after measured geometry passes independent validation.'}</p>
           
           <div className={styles.ctaButtons}>
