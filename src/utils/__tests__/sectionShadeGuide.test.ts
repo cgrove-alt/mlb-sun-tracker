@@ -68,8 +68,29 @@ describe('formatGuideHeadline', () => {
         examples: ['110'],
       },
     });
-    expect(text).toMatch(/first base/i);
+    expect(text).toMatch(/first-base/i);
     expect(text).toMatch(/4:00 PM/);
     expect(text.toLowerCase()).not.toContain('azimuth');
+  });
+
+  it('does not recommend a side when the uncovered bowl is all sun', () => {
+    const text = formatGuideHeadline({
+      timeLabel: '1:00 PM',
+      domed: false,
+      belowHorizon: false,
+      bestSide: {
+        id: 'first',
+        label: 'First base',
+        hint: '',
+        total: 10,
+        shadeCount: 0,
+        sunCount: 10,
+        meanExposure: 90,
+        verdict: 'mostly-sun',
+        examples: ['110'],
+      },
+    });
+    expect(text).toMatch(/uncovered sections are in the sun/i);
+    expect(text.toLowerCase()).not.toContain('best remaining chance');
   });
 });

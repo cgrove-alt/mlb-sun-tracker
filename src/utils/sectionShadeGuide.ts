@@ -24,6 +24,13 @@ export const BOWL_SIDE_HINT: Record<BowlSideId, string> = {
   outfield: 'Beyond center field',
 };
 
+export const BOWL_SIDE_WHERE: Record<BowlSideId, string> = {
+  first: 'the first-base side',
+  third: 'the third-base side',
+  home: 'behind home plate',
+  outfield: 'the outfield',
+};
+
 export function bowlSideOfLocalAngle(localDeg: number): BowlSideId {
   const a = ((localDeg % 360) + 360) % 360;
   if (a >= 315 || a < 45) return 'first';
@@ -137,13 +144,17 @@ export function formatGuideHeadline(input: {
   if (input.belowHorizon) return `The whole park is shaded at ${input.timeLabel} — the sun is down.`;
   const side = input.bestSide;
   if (!side) return `Pick a time to see which side of the bowl is in shade.`;
+  const where = BOWL_SIDE_WHERE[side.id];
   if (side.verdict === 'mostly-shade') {
-    return `Sit on the ${side.label.toLowerCase()} side at ${input.timeLabel} — those sections are mostly in shade.`;
+    return `Best shade at ${input.timeLabel}: ${where}.`;
   }
   if (side.verdict === 'mixed') {
-    return `The ${side.label.toLowerCase()} side has the most shade at ${input.timeLabel}, but it is mixed. Check your section below.`;
+    return `Best chance of shade at ${input.timeLabel}: ${where} (mixed). Check your section.`;
   }
-  return `At ${input.timeLabel}, most uncovered seats are in the sun. The ${side.label.toLowerCase()} side still has the best chance of shade.`;
+  if (side.shadeCount === 0) {
+    return `At ${input.timeLabel}, uncovered sections are in the sun. Shade shows up later in the afternoon, or in covered sections.`;
+  }
+  return `At ${input.timeLabel}, most uncovered seats are in the sun. Best remaining chance: ${where}.`;
 }
 
 export { EXPOSURE_TIER_LABEL, exposureTierOf };
