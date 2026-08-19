@@ -26,6 +26,21 @@ jest.mock('../../../../../../../src/data/publishedShadeRuntime', () => ({
   hasPublishedMeasuredShadeRuntime: jest.fn(() => true),
 }));
 
+jest.mock('../../../../../../../src/utils/measuredShadeRuntime', () => {
+  const actual = jest.requireActual('../../../../../../../src/utils/measuredShadeRuntime');
+  return {
+    ...actual,
+    bindMeasuredShadeRuntime: jest.fn(() => ({
+      ok: true,
+      artifact: actual.createSelfShadingGrandstandArtifact('yankees', {
+        west: 'section-100',
+        east: 'east',
+        covered: 'covered',
+      }, { westName: 'Section 100' }),
+    })),
+  };
+});
+
 jest.mock('../../../../../../../src/data/stadiums', () => ({
   MLB_STADIUMS: [
     {
@@ -79,7 +94,7 @@ describe('shade API — unknown parameters', () => {
   it('names the allowed parameters so the caller can self-correct', async () => {
     const { body } = await call('?bogus=1');
     expect(body.allowedParams).toEqual(
-      expect.arrayContaining(['date', 'time', 'sectionId', 'use3d', 'cache', 'window', 'step'])
+      expect.arrayContaining(['date', 'time', 'sectionId', 'use3d', 'cache', 'window', 'step', 'roofState'])
     );
   });
 
@@ -89,7 +104,7 @@ describe('shade API — unknown parameters', () => {
     expect(body.unknownParams).toEqual(['dat']);
   });
 
-  it.each(['date', 'time', 'sectionId', 'use3d', 'cache', 'window', 'step'])(
+  it.each(['date', 'time', 'sectionId', 'use3d', 'cache', 'window', 'step', 'roofState'])(
     'accepts the documented parameter %s',
     async param => {
       const value = param === 'date' ? '2025-07-04'
@@ -97,6 +112,7 @@ describe('shade API — unknown parameters', () => {
         : param === 'sectionId' ? 'section-100'
         : param === 'use3d' || param === 'cache' ? 'false'
         : param === 'window' ? '180'
+        : param === 'roofState' ? 'open'
         : '30';
       const { status } = await call(`?${param}=${value}`);
       expect(status).not.toBe(400);

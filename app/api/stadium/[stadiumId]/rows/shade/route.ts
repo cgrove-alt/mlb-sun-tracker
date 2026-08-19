@@ -1,15 +1,18 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { MLB_STADIUMS } from '../../../../../../src/data/stadiums';
-import { getStadiumSections, hasSpecificData } from '../../../../../../src/data/stadium-data-aggregator';
+import { getStadiumSections } from '../../../../../../src/data/stadium-data-aggregator';
 import {
-  calculateRowShadows,
-  calculateGameWindowShade,
   gameWindowOffsets,
   type SunSample,
 } from '../../../../../../src/utils/sunCalculator';
 import { getSunPosition } from '../../../../../../src/utils/sunCalculations';
-import { calculateMLBStadiumShade3D } from '../../../../../../src/utils/mlb3DCalculator';
 import { requireFiniteOrientation } from '../../../../../../src/utils/bowlGeometry';
+import {
+  bindMeasuredShadeRuntime,
+  calculateMeasuredGameWindowShade,
+  calculateMeasuredVenueShade,
+  type MeasuredRoofState,
+} from '../../../../../../src/utils/measuredShadeRuntime';
 import {
   calendarDateAndTimeToUTC,
   formatStadiumLocal,
@@ -42,6 +45,7 @@ const ALLOWED_PARAMS = new Set([
   'cache',
   'window',
   'step',
+  'roofState',
 ]);
 
 // Sun-position maths stays well-behaved far outside these bounds, but a request
@@ -73,8 +77,9 @@ export async function GET(request: NextRequest, { params }: RouteParams) {
   const dateParam = searchParams.get('date');
   const timeParam = searchParams.get('time');
   const sectionIdParam = searchParams.get('sectionId');
-  const use3D = searchParams.get('use3d') === 'true'; // Enable 3D calculator
-  const useCache = searchParams.get('cache') !== 'false'; // Default true
+  const use3D = searchParams.get('use3d') === 'true';
+  const _useCache = searchParams.get('cache') !== 'false';
+  void _useCache;
 
   // Opt-in whole-game-window mode. When `window` is present, shade is sampled
   // across the game (first pitch → first pitch + window minutes) instead of a
@@ -256,12 +261,10 @@ export async function GET(request: NextRequest, { params }: RouteParams) {
     );
   }
 
-  // Passing evidence is necessary but not sufficient. The legacy calculators
-  // below synthesize physical seats and obstructions from defaults. Keep them
-  // unreachable in production until this park has a separate measured-only
-  // runtime implementation bound to the validated geometry artifact. This
-  // second latch prevents a future evidence promotion from silently exposing
-  // precise-looking output from the old estimators.
+  // Passing evidence is necessary but not sufficient. The legacy 2D/3D
+  // estimators synthesize seats and obstructions from defaults and must stay
+  // unreachable. The measured runtime is the only calculator allowed after
+  // this point, and only when its hashed artifact is bound.
   if (!hasPublishedMeasuredShadeRuntime(stadium.id)) {
     return NextResponse.json(
       {
@@ -280,143 +283,47 @@ export async function GET(request: NextRequest, { params }: RouteParams) {
     );
   }
 
-  // Get stadium sections with row data only after the publication gate passes.
-  // This also makes the fail-closed path independent of the synthetic fixtures.
-  const sections = await getStadiumSections(stadium.id, 'MLB');
-
-  if (!sections || sections.length === 0) {
+  const bound = bindMeasuredShadeRuntime(stadium.id);
+  if (!bound.ok) {
     return NextResponse.json(
-      { error: 'No sections found for stadium', code: 'NO_SECTIONS_FOUND', stadiumId: stadium.id },
-      { status: 404 }
+      {
+        error: 'Measured shade geometry artifact is not bound for this stadium.',
+        code: bound.code,
+        blockers: bound.blockers,
+        stadium: { id: stadium.id, name: stadium.name },
+        shadeStatus: publicShadeStatus({
+          stadiumId: stadium.id,
+          roof: stadium.roof,
+          sunAboveHorizon: sunPosition.altitudeDegrees > 0,
+        }),
+        confidence: getStadiumShadeConfidence(stadium.id),
+        publicationState: 'withheld',
+      },
+      { status: 409, headers: { 'Cache-Control': 'no-store' } },
     );
   }
 
-  try {
-    // Check if stadium has 3D data (obstructions)
-    const stadiumDataStatus = hasSpecificData(stadium.id);
-    const shouldUse3D = use3D && stadiumDataStatus.hasObstructions;
-
-    // If 3D calculator is enabled and stadium has obstruction data
-    if (shouldUse3D) {
-      const result3D = await calculateMLBStadiumShade3D(
-        stadium.id,
-        stadium.name,
-        stadium.latitude,
-        stadium.longitude,
-        orientation,
-        targetDate,
+  const roofStateParam = searchParams.get('roofState');
+  let roofState: MeasuredRoofState;
+  if (bound.artifact.roof.type === 'retractable') {
+    if (roofStateParam !== 'open' && roofStateParam !== 'closed') {
+      return NextResponse.json(
         {
-          useCache,
-          useWebWorkers: false, // Disable web workers in server environment
-          lodLevel: 'medium'
-        }
-      );
-
-      // Convert 3D results to match existing API format
-      const sections3D = Array.from(result3D.sections.values()).map(sectionResult => {
-        // Group seats by row
-        const rowMap = new Map<number, any[]>();
-        sectionResult.seatResults.forEach(seat => {
-          const seatId = seat.seatId;
-          const rowMatch = seatId.match(/-R(\d+)-/);
-          if (rowMatch) {
-            const rowNum = parseInt(rowMatch[1]);
-            if (!rowMap.has(rowNum)) {
-              rowMap.set(rowNum, []);
-            }
-            rowMap.get(rowNum)!.push(seat);
-          }
-        });
-
-        // Convert to row shadow format
-        const rows = Array.from(rowMap.entries()).map(([rowNum, seats]) => {
-          const shadedSeats = seats.filter(s => s.inShade).length;
-          const coverage = (shadedSeats / seats.length) * 100;
-
-          return {
-            rowNumber: rowNum.toString(),
-            seats: seats.length,
-            elevation: 0, // Would need to extract from seat position
-            depth: 0,
-            coverage,
-            sunExposure: 100 - coverage,
-            inShadow: coverage > 50,
-            shadowSources: {
-              roof: coverage * 0.6,
-              upperDeck: coverage * 0.3,
-              overhang: coverage * 0.1,
-              bowl: 0
-            },
-            recommendation: coverage > 80 ? 'excellent' : coverage > 60 ? 'good' : coverage > 40 ? 'fair' : 'poor'
-          };
-        });
-
-        rows.sort((a, b) => parseInt(a.rowNumber) - parseInt(b.rowNumber));
-
-        const avgCoverage = rows.reduce((sum, r) => sum + r.coverage, 0) / rows.length;
-        const sortedByCoverage = [...rows].sort((a, b) => b.coverage - a.coverage);
-
-        return {
-          sectionId: sectionResult.sectionId,
-          sectionName: sectionResult.sectionId,
-          rows,
-          averageCoverage: avgCoverage,
-          bestRows: sortedByCoverage.slice(0, 5).map(r => r.rowNumber),
-          worstRows: sortedByCoverage.slice(-5).reverse().map(r => r.rowNumber)
-        };
-      });
-
-      const totalRows = sections3D.reduce((sum, s) => sum + s.rows.length, 0);
-      const excellentRows = sections3D.reduce((sum, s) =>
-        sum + s.rows.filter(r => r.recommendation === 'excellent').length, 0
-      );
-      const goodRows = sections3D.reduce((sum, s) =>
-        sum + s.rows.filter(r => r.recommendation === 'good').length, 0
-      );
-
-      return NextResponse.json({
-        stadium: {
-          id: stadium.id,
-          name: stadium.name,
-          orientation: stadium.orientation
+          error: 'Retractable-roof parks require roofState=open or roofState=closed. Percents are not published for an unknown roof position.',
+          code: 'ROOF_STATE_REQUIRED',
         },
-        date: calendarDate,
-        time: `${hour.toString().padStart(2, '0')}:${minute.toString().padStart(2, '0')}`,
-        sunPosition: {
-          altitude: result3D.sunPosition.elevation,
-          azimuth: result3D.sunPosition.azimuth,
-          isDay: result3D.sunPosition.elevation > 0,
-          utc: targetDate.toISOString(),
-        },
-        summary: {
-          totalSections: sections3D.length,
-          totalRows,
-          excellentShadeRows: excellentRows,
-          goodShadeRows: goodRows,
-          averageCoverage: Math.round(
-            sections3D.reduce((sum, s) => sum + s.averageCoverage, 0) / sections3D.length
-          )
-        },
-        sections: sections3D,
-        calculation: {
-          method: '3D',
-          calculationTime: result3D.calculationTime,
-          fromCache: result3D.fromCache
-        }
-      }, {
-        headers: {
-          'Cache-Control': 'public, max-age=3600, stale-while-revalidate=86400',
-        }
-      });
+        { status: 400 },
+      );
     }
+    roofState = roofStateParam;
+  } else if (bound.artifact.roof.type === 'fixed') {
+    roofState = 'closed';
+  } else {
+    roofState = 'open';
+  }
 
-    // Whole-game-window mode (opt-in, 2D only). Samples the sun across the
-    // game and aggregates shade migration per section/row. The 3D path above
-    // stays single-instant (windowed ray-casting is out of scope).
+  try {
     if (useWindow) {
-      // Sun position depends on the absolute instant, so each sample is just
-      // first-pitch UTC plus elapsed real minutes — no per-sample timezone
-      // conversion needed (and DST-safe, since we add real elapsed time).
       const offsets = gameWindowOffsets(windowMinutes, stepMinutes);
       const sunSamples: SunSample[] = offsets.map((m) => {
         const sampleDate = new Date(targetDate.getTime() + m * 60_000);
@@ -435,35 +342,34 @@ export async function GET(request: NextRequest, { params }: RouteParams) {
         samples: offsets.length,
       };
 
+      const sectionWindows = calculateMeasuredGameWindowShade(bound.artifact, sunSamples, {
+        roofState,
+        sectionId: sectionIdParam ?? undefined,
+      });
+
       if (sectionIdParam) {
-        const section = sections.find(s => s.id === sectionIdParam || s.name === sectionIdParam);
-        if (!section) {
+        const sectionWindow = sectionWindows[0];
+        if (!sectionWindow) {
           return NextResponse.json(
             { error: 'Section not found', code: 'SECTION_NOT_FOUND', sectionId: sectionIdParam },
-            { status: 404 }
+            { status: 404 },
           );
         }
-        const sectionWindow = calculateGameWindowShade(section, sunSamples, orientation);
         return NextResponse.json({
-          stadium: { id: stadium.id, name: stadium.name, orientation: stadium.orientation },
+          stadium: { id: stadium.id, name: stadium.name, orientation: orientation },
           date: calendarDate,
           time: windowMeta.startTime,
           window: windowMeta,
           section: sectionWindow,
-          calculation: { method: '2D-window' },
+          calculation: { method: 'measured-window' },
         }, {
           headers: { 'Cache-Control': 'public, max-age=3600, stale-while-revalidate=86400' },
         });
       }
 
-      const sectionWindows = sections.map(section =>
-        calculateGameWindowShade(section, sunSamples, orientation)
-      );
-      const countBy = (p: string) =>
-        sectionWindows.filter(s => s.progression === p).length;
-
+      const countBy = (p: string) => sectionWindows.filter((s) => s.progression === p).length;
       return NextResponse.json({
-        stadium: { id: stadium.id, name: stadium.name, orientation: stadium.orientation },
+        stadium: { id: stadium.id, name: stadium.name, orientation },
         date: calendarDate,
         time: windowMeta.startTime,
         window: windowMeta,
@@ -474,43 +380,30 @@ export async function GET(request: NextRequest, { params }: RouteParams) {
           sunToShadeSections: countBy('sun-to-shade'),
           shadeToSunSections: countBy('shade-to-sun'),
           sunnyAllSections: countBy('sunny-all'),
-          averageCoverage: Math.round(
-            sectionWindows.reduce((sum, s) => sum + s.averageCoverage, 0) / sectionWindows.length
-          ),
+          averageCoverage: sectionWindows.length
+            ? Math.round(sectionWindows.reduce((sum, s) => sum + s.averageCoverage, 0) / sectionWindows.length)
+            : 0,
         },
         sections: sectionWindows,
-        calculation: { method: '2D-window' },
+        calculation: { method: 'measured-window' },
       }, {
         headers: { 'Cache-Control': 'public, max-age=3600, stale-while-revalidate=86400' },
       });
     }
 
-    // Fallback to 2D calculation (existing logic)
-    // If specific section requested
     if (sectionIdParam) {
-      const section = sections.find(s => s.id === sectionIdParam || s.name === sectionIdParam);
-
-      if (!section) {
+      const rowShadowData = calculateMeasuredVenueShade(bound.artifact, sunPosition, {
+        roofState,
+        sectionId: sectionIdParam,
+      })[0];
+      if (!rowShadowData) {
         return NextResponse.json(
           { error: 'Section not found', code: 'SECTION_NOT_FOUND', sectionId: sectionIdParam },
-          { status: 404 }
+          { status: 404 },
         );
       }
-
-      // Calculate row shadows for single section
-      const rowShadowData = calculateRowShadows(
-        section,
-        sunPosition.altitudeDegrees,
-        sunPosition.azimuthDegrees,
-        orientation
-      );
-
       return NextResponse.json({
-        stadium: {
-          id: stadium.id,
-          name: stadium.name,
-          orientation: stadium.orientation
-        },
+        stadium: { id: stadium.id, name: stadium.name, orientation },
         date: calendarDate,
         time: `${hour.toString().padStart(2, '0')}:${minute.toString().padStart(2, '0')}`,
         sunPosition: {
@@ -520,41 +413,21 @@ export async function GET(request: NextRequest, { params }: RouteParams) {
           utc: targetDate.toISOString(),
         },
         section: rowShadowData,
-        calculation: {
-          method: '2D'
-        }
+        calculation: { method: 'measured-raycast' },
       }, {
-        headers: {
-          'Cache-Control': 'public, max-age=3600, stale-while-revalidate=86400',
-        }
+        headers: { 'Cache-Control': 'public, max-age=3600, stale-while-revalidate=86400' },
       });
     }
 
-    // Calculate row shadows for all sections
-    const allRowShadows = sections.map(section =>
-      calculateRowShadows(
-        section,
-        sunPosition.altitudeDegrees,
-        sunPosition.azimuthDegrees,
-        orientation
-      )
-    );
-
-    // Calculate summary statistics
+    const allRowShadows = calculateMeasuredVenueShade(bound.artifact, sunPosition, { roofState });
     const totalRows = allRowShadows.reduce((sum, s) => sum + s.rows.length, 0);
     const excellentRows = allRowShadows.reduce((sum, s) =>
-      sum + s.rows.filter(r => r.recommendation === 'excellent').length, 0
-    );
+      sum + s.rows.filter((r) => r.recommendation === 'excellent').length, 0);
     const goodRows = allRowShadows.reduce((sum, s) =>
-      sum + s.rows.filter(r => r.recommendation === 'good').length, 0
-    );
+      sum + s.rows.filter((r) => r.recommendation === 'good').length, 0);
 
     return NextResponse.json({
-      stadium: {
-        id: stadium.id,
-        name: stadium.name,
-        orientation: stadium.orientation
-      },
+      stadium: { id: stadium.id, name: stadium.name, orientation },
       date: calendarDate,
       time: `${hour.toString().padStart(2, '0')}:${minute.toString().padStart(2, '0')}`,
       sunPosition: {
@@ -564,22 +437,18 @@ export async function GET(request: NextRequest, { params }: RouteParams) {
         utc: targetDate.toISOString(),
       },
       summary: {
-        totalSections: sections.length,
+        totalSections: allRowShadows.length,
         totalRows,
         excellentShadeRows: excellentRows,
         goodShadeRows: goodRows,
-        averageCoverage: Math.round(
-          allRowShadows.reduce((sum, s) => sum + s.averageCoverage, 0) / allRowShadows.length
-        )
+        averageCoverage: allRowShadows.length
+          ? Math.round(allRowShadows.reduce((sum, s) => sum + s.averageCoverage, 0) / allRowShadows.length)
+          : 0,
       },
       sections: allRowShadows,
-      calculation: {
-        method: '2D'
-      }
+      calculation: { method: 'measured-raycast' },
     }, {
-      headers: {
-        'Cache-Control': 'public, max-age=3600, stale-while-revalidate=86400',
-      }
+      headers: { 'Cache-Control': 'public, max-age=3600, stale-while-revalidate=86400' },
     });
 
   } catch (error) {

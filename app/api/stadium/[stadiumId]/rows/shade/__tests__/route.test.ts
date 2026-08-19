@@ -9,6 +9,7 @@ import { NextRequest } from 'next/server';
 import { GET } from '../route';
 import { canPublishSeatLevelShade } from '../../../../../../../src/data/stadiumShadeConfidence';
 import { hasPublishedMeasuredShadeRuntime } from '../../../../../../../src/data/publishedShadeRuntime';
+import { bindMeasuredShadeRuntime } from '../../../../../../../src/utils/measuredShadeRuntime';
 
 jest.mock('../../../../../../../src/data/stadiumShadeConfidence', () => ({
   canPublishSeatLevelShade: jest.fn(() => true),
@@ -19,6 +20,27 @@ jest.mock('../../../../../../../src/data/stadiumShadeConfidence', () => ({
 jest.mock('../../../../../../../src/data/publishedShadeRuntime', () => ({
   hasPublishedMeasuredShadeRuntime: jest.fn(() => true),
 }));
+
+jest.mock('../../../../../../../src/utils/measuredShadeRuntime', () => {
+  const actual = jest.requireActual('../../../../../../../src/utils/measuredShadeRuntime');
+  return {
+    ...actual,
+    bindMeasuredShadeRuntime: jest.fn(() => ({
+      ok: true,
+      artifact: actual.createSelfShadingGrandstandArtifact('yankee-stadium', {
+        west: 'section-100',
+        east: 'unused-east',
+        covered: 'section-200',
+      }, {
+        includeEast: false,
+        westName: 'Section 100',
+        coveredName: 'Section 200',
+      }),
+    })),
+    calculateMeasuredVenueShade: jest.fn((...args: unknown[]) => actual.calculateMeasuredVenueShade(...args)),
+    calculateMeasuredGameWindowShade: jest.fn((...args: unknown[]) => actual.calculateMeasuredGameWindowShade(...args)),
+  };
+});
 
 // Mock dependencies
 jest.mock('../../../../../../../src/data/stadiums', () => ({
@@ -116,27 +138,6 @@ jest.mock('../../../../../../../src/utils/sunCalculations', () => ({
   })),
 }));
 
-jest.mock('../../../../../../../src/utils/sunCalculator', () => ({
-  calculateRowShadows: jest.fn((section) => ({
-    sectionId: section.id,
-    sectionName: section.name,
-    rows: section.rows.map((row: any) => ({
-      rowNumber: row.rowNumber,
-      seats: row.seats,
-      elevation: row.elevation,
-      depth: row.depth,
-      coverage: row.covered ? 100 : 50,
-      sunExposure: row.covered ? 0 : 50,
-      inShadow: row.covered,
-      shadowSources: { roof: 0, upperDeck: 0, overhang: row.covered ? 0 : 50, bowl: 0 },
-      recommendation: row.covered ? 'excellent' : 'good',
-    })),
-    averageCoverage: section.rows[0].covered ? 100 : 50,
-    bestRows: [section.rows[0].rowNumber],
-    worstRows: [section.rows[section.rows.length - 1].rowNumber],
-  })),
-}));
-
 describe('GET /api/stadium/[stadiumId]/rows/shade', () => {
   const createRequest = (url: string) => {
     return new NextRequest(new URL(url, 'http://localhost:3000'));
@@ -189,6 +190,22 @@ describe('GET /api/stadium/[stadiumId]/rows/shade', () => {
         code: 'MEASURED_SHADE_RUNTIME_UNAVAILABLE',
         publicationState: 'withheld',
       });
+      expect(data).not.toHaveProperty('sections');
+    });
+
+    it('withholds row output when the runtime is registered but no artifact is bound', async () => {
+      jest.mocked(bindMeasuredShadeRuntime).mockReturnValueOnce({
+        ok: false,
+        code: 'MEASURED_SHADE_ARTIFACT_UNAVAILABLE',
+        blockers: ['NO_MEASURED_GEOMETRY_ARTIFACT'],
+      });
+      const response = await GET(
+        createRequest('/api/stadium/yankee-stadium/rows/shade'),
+        createParams('yankee-stadium'),
+      );
+      const data = await response.json();
+      expect(response.status).toBe(409);
+      expect(data.code).toBe('MEASURED_SHADE_ARTIFACT_UNAVAILABLE');
       expect(data).not.toHaveProperty('sections');
     });
 
@@ -382,9 +399,9 @@ describe('GET /api/stadium/[stadiumId]/rows/shade', () => {
   });
 
   describe('Server Error Handling (500)', () => {
-    it('should return 500 when calculateRowShadows throws error', async () => {
-      const { calculateRowShadows } = require('../../../../../../../src/utils/sunCalculator');
-      calculateRowShadows.mockImplementationOnce(() => {
+    it('should return 500 when calculateMeasuredVenueShade throws error', async () => {
+      const { calculateMeasuredVenueShade } = require('../../../../../../../src/utils/measuredShadeRuntime');
+      calculateMeasuredVenueShade.mockImplementationOnce(() => {
         throw new Error('Calculation failed');
       });
 
@@ -400,8 +417,8 @@ describe('GET /api/stadium/[stadiumId]/rows/shade', () => {
     });
 
     it('should handle unknown errors gracefully', async () => {
-      const { calculateRowShadows } = require('../../../../../../../src/utils/sunCalculator');
-      calculateRowShadows.mockImplementationOnce(() => {
+      const { calculateMeasuredVenueShade } = require('../../../../../../../src/utils/measuredShadeRuntime');
+      calculateMeasuredVenueShade.mockImplementationOnce(() => {
         throw 'Unknown error';
       });
 
@@ -418,9 +435,9 @@ describe('GET /api/stadium/[stadiumId]/rows/shade', () => {
   });
 
   describe('Edge Cases', () => {
-    it('should handle stadium with no sections', async () => {
-      const { getStadiumSections } = require('../../../../../../../src/data/stadium-data-aggregator');
-      getStadiumSections.mockReturnValueOnce([]);
+    it('should handle stadium with no matching measured sections', async () => {
+      const { calculateMeasuredVenueShade } = require('../../../../../../../src/utils/measuredShadeRuntime');
+      calculateMeasuredVenueShade.mockReturnValueOnce([]);
 
       const request = createRequest('/api/stadium/yankee-stadium/rows/shade');
       const params = createParams('yankee-stadium');
@@ -428,8 +445,8 @@ describe('GET /api/stadium/[stadiumId]/rows/shade', () => {
       const response = await GET(request, params);
       const data = await response.json();
 
-      expect(response.status).toBe(404);
-      expect(data.error).toContain('No sections found');
+      expect(response.status).toBe(200);
+      expect(data.sections).toEqual([]);
     });
 
     it('should handle time with single digit hour', async () => {
