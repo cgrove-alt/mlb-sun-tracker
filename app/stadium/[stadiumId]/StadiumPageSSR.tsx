@@ -17,7 +17,7 @@ import { shadeTierOf, type ShadeTier } from '../../../src/utils/sectionShadeTier
 import { buildSeasonalShadeCopy } from '../../../src/utils/seasonalShade';
 import { getOrientationProvenance, getOrientationPrecision } from '../../../src/data/stadiumOrientationProvenance';
 import { stadiumHistories } from '../../../src/data/stadiumDetails';
-import { canPublishVenueSeatShade } from '../../../src/data/stadiumShadeConfidence';
+import { canPublishVenueSeatShade, canPublishSectionLevelShadeTiers, SECTION_LEVEL_TIER_NOTICE } from '../../../src/data/stadiumShadeConfidence';
 import styles from './StadiumPageSSR.module.css';
 
 interface StadiumPageSSRProps {
@@ -90,8 +90,8 @@ const LEVEL_LABEL: Record<StadiumSection['level'], string> = {
 
 // Shared per-section display data so the desktop table and the mobile cards
 // stay identical (single source of the tier → rating/coverage/notes mapping).
-function sectionRowData(section: StadiumSection, domed = false, geometryValidated = false) {
-  if (!domed && !geometryValidated) {
+function sectionRowData(section: StadiumSection, domed = false, sectionTiersPublished = false, seatShadePublished = false) {
+  if (!domed && !sectionTiersPublished) {
     return {
       shadeRating: 0,
       coverageLabel: 'Unverified',
@@ -106,10 +106,13 @@ function sectionRowData(section: StadiumSection, domed = false, geometryValidate
     tier === 'partial' ? `◐ ${section.coveredRows || 'back rows'}` : '— Exposed';
   const bestTime = tier === 'covered' ? 'All day' :
     tier === 'partial' ? 'Day games (back rows)' : 'Evening games';
-  const notes = tier === 'covered' ? (domed ? 'Permanent roof blocks direct sun' : 'Field-validated covered seating') :
-    tier === 'partial' ? 'Overhang shade in the back rows only; front rows exposed' :
-    section.level === 'upper' ? 'Exposed — some relief from self-shading late in the game' :
-    'Exposed — little to no shade';
+  const notes = tier === 'covered'
+    ? (domed ? 'Permanent roof blocks direct sun' : 'Published inventory marks this section as covered')
+    : tier === 'partial'
+      ? 'Overhang shade in the back rows only; front rows exposed'
+      : section.level === 'upper'
+        ? (seatShadePublished ? 'Exposed — some relief from self-shading late in the game' : 'Exposed — upper deck may self-shade as the sun lowers')
+        : (seatShadePublished ? 'Exposed — little to no shade' : 'Exposed — section-level sun guide; row shade not measured');
   const stars = '★'.repeat(shadeRating) + '☆'.repeat(5 - shadeRating);
   return { shadeRating, coverageLabel, bestTime, notes, stars };
 }
@@ -121,6 +124,7 @@ export default function StadiumPageSSR({ stadium, sections, amenities, guide }: 
   // section as covered and suppress the sun-angle / orientation copy below.
   const isDome = stadium.roof === 'fixed';
   const seatShadePublished = canPublishVenueSeatShade(stadium);
+  const sectionTiersPublished = canPublishSectionLevelShadeTiers(stadium);
   const tierOf = (s: StadiumSection): ShadeTier => (isDome ? 'covered' : shadeTierOf(s));
   // Lower-confidence disclaimer for parks whose orientation is only estimated
   // (±15–20°): the diagram still helps, but the sun/shade boundary is fuzzier.
@@ -255,6 +259,31 @@ export default function StadiumPageSSR({ stadium, sections, amenities, guide }: 
               ))}
               </div>
             </>
+          ) : sectionTiersPublished ? (
+            <>
+              <p>These sections offer the most shade based on stadium orientation and published inventory. This is a section-level guide — row-by-row shade is not measured.</p>
+              <div className={styles.sectionsGrid}>
+              {bestShadedSections.map((section, idx) => (
+              <div key={section.id} className={styles.sectionCard}>
+                <div className={styles.sectionRank}>#{idx + 1}</div>
+                <h3>{section.name}</h3>
+                <ul className={styles.sectionFeatures}>
+                  <li>Level: {section.level}</li>
+                  {tierOf(section) === 'covered' && <li className={styles.covered}>✓ Covered</li>}
+                  {tierOf(section) === 'partial' && <li className={styles.covered}>◐ Covered {section.coveredRows || 'back rows only'}</li>}
+                  {section.price && <li>Price: {section.price}</li>}
+                  {section.rows && <li>Rows: {section.rows}</li>}
+                </ul>
+                {tierOf(section) === 'covered' && (
+                  <p className={styles.sectionNote}>Published inventory marks this section as covered</p>
+                )}
+                {tierOf(section) === 'partial' && (
+                  <p className={styles.sectionNote}>Back rows under the overhang; front rows exposed</p>
+                )}
+              </div>
+              ))}
+              </div>
+            </>
           ) : (
             <div className={styles.sectionCard} role="status">
               <h3>Recommendations paused</h3>
@@ -339,10 +368,15 @@ export default function StadiumPageSSR({ stadium, sections, amenities, guide }: 
       {/* Section Details Table */}
       <section className={styles.section}>
         <div className={styles.container}>
-          <h2>{isDome ? 'Section Inventory and Roof Status' : 'Section Inventory and Measurement Status'}</h2>
+          <h2>{isDome ? 'Section Inventory and Roof Status' : 'Section Inventory and Shade Guide'}</h2>
           <p>{isDome
             ? 'The section names below are source-backed; the permanent-roof result applies throughout the seating bowl.'
-            : 'Section names are source-backed. Shade ratings are withheld until metric geometry is remotely measured and independently validated.'}</p>
+            : sectionTiersPublished
+              ? 'Section names are source-backed. Structural coverage and orientation-based shade tiers are shown below; exact row shade percentages remain withheld until measured geometry passes validation.'
+              : 'Section names are source-backed. Shade ratings are withheld until metric geometry is remotely measured and independently validated.'}</p>
+          {sectionTiersPublished && !seatShadePublished && !isDome && (
+            <p role="note" style={{ fontSize: '0.9rem', color: '#475569', marginTop: '0.5rem' }}>{SECTION_LEVEL_TIER_NOTICE}</p>
+          )}
 
           {/* Desktop: full table (hidden < 768px) */}
           <div className={`${styles.sectionsTableWrapper} ${styles.desktopOnly}`}>
@@ -359,7 +393,7 @@ export default function StadiumPageSSR({ stadium, sections, amenities, guide }: 
               </thead>
               <tbody>
                 {sections.map(section => {
-                  const { shadeRating, coverageLabel, bestTime, notes, stars } = sectionRowData(section, isDome, seatShadePublished);
+                  const { shadeRating, coverageLabel, bestTime, notes, stars } = sectionRowData(section, isDome, sectionTiersPublished, seatShadePublished);
                   return (
                     <tr key={section.id}>
                       <td>{section.name}</td>
@@ -391,7 +425,7 @@ export default function StadiumPageSSR({ stadium, sections, amenities, guide }: 
                   </summary>
                   <ul className={styles.sectionCards}>
                     {levelSections.map(section => {
-                      const { shadeRating, coverageLabel, bestTime, notes, stars } = sectionRowData(section, isDome, seatShadePublished);
+                      const { shadeRating, coverageLabel, bestTime, notes, stars } = sectionRowData(section, isDome, sectionTiersPublished, seatShadePublished);
                       return (
                         <li key={section.id} className={styles.sectionCard}>
                           <div className={styles.sectionCardHead}>
@@ -487,7 +521,9 @@ export default function StadiumPageSSR({ stadium, sections, amenities, guide }: 
               ? `${stadium.name} has a fixed roof, so every seat is shaded for a 1 PM game — no section is exposed to direct sun regardless of where you sit.`
               : seatShadePublished
                 ? `Measured geometry indicates the ${dayGameShadeSide} self-shades first for this solar position.`
-                : `The orientation model suggests the ${dayGameShadeSide} may self-shade first, but we do not publish section or row recommendations without measured, independently validated geometry.`}</p>
+                : sectionTiersPublished
+                  ? `The section-level shade guide and diagram below show which sections face the sun at game time. For a 1 PM start, the ${dayGameShadeSide} is oriented to self-shade first.`
+                  : `The orientation model suggests the ${dayGameShadeSide} may self-shade first, but we do not publish section or row recommendations without measured, independently validated geometry.`}</p>
           </div>
 
           <div className={styles.faqItem}>
@@ -495,11 +531,13 @@ export default function StadiumPageSSR({ stadium, sections, amenities, guide }: 
             <p>
               {isDome
                 ? `${stadium.name}'s permanent roof blocks direct sunlight throughout the seating bowl.`
-                : seatShadePublished
-                  ? 'The validated section measurements are listed in the table above.'
-                  : 'The published seating map confirms section identities, but it does not provide the row-by-row overhang dimensions needed to verify a covered-row list. We therefore do not publish one.'}
+                : sectionTiersPublished
+                  ? 'Structural coverage from the published inventory is listed in the table above and in the interactive diagram below.'
+                  : seatShadePublished
+                    ? 'The validated section measurements are listed in the table above.'
+                    : 'The published seating map confirms section identities, but it does not provide the row-by-row overhang dimensions needed to verify a covered-row list. We therefore do not publish one.'}
             </p>
-            {seatShadePublished && (coveredSections.length > 0 || partialSections.length > 0) && (
+            {sectionTiersPublished && (coveredSections.length > 0 || partialSections.length > 0) && (
               <details>
                 <summary>See the full covered-section list</summary>
                 {coveredSections.length > 0 && (
@@ -526,7 +564,7 @@ export default function StadiumPageSSR({ stadium, sections, amenities, guide }: 
 
       {/* Interactive section-level shade guide — placed below the section tables
           (below the fold) so it is never the LCP element. MLB only. */}
-      {seatShadePublished ? <InteractiveSeatingBowl
+      {sectionTiersPublished ? <InteractiveSeatingBowl
         sections={sections}
         orientation={stadium.orientation}
         latitude={stadium.latitude}
@@ -548,7 +586,9 @@ export default function StadiumPageSSR({ stadium, sections, amenities, guide }: 
       <section className={styles.stadiumCta}>
         <div className={styles.container}>
           <h2>Plan Your Visit to {stadium.name}</h2>
-          <p>Browse the source-backed section inventory and solar-orientation context. Exact seat-level shade results will return only after measured geometry passes independent validation.</p>
+          <p>{sectionTiersPublished
+            ? 'Browse the source-backed section inventory, orientation-based shade guide, and interactive diagram. Exact seat-level shade percentages will return only after measured geometry passes independent validation.'
+            : 'Browse the source-backed section inventory and solar-orientation context. Exact seat-level shade results will return only after measured geometry passes independent validation.'}</p>
           
           <div className={styles.ctaButtons}>
             <a href={`/?stadium=${stadium.id}`} className={`${styles.btn} ${styles.btnPrimary}`}>

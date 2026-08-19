@@ -109,6 +109,24 @@ export function canPublishVenueSeatShade(venue: {
 }
 
 /**
+ * Whether a venue may show section-level shade tiers (shaded / light / moderate /
+ * full and structural covered / partial / exposed). Uses verified orientation,
+ * astronomical sun position, and source-backed MLB section inventory — not
+ * measured row geometry. MiLB and NFL remain off per SHADE-DIAGRAM-BACKLOG.
+ */
+export function canPublishSectionLevelShadeTiers(venue: {
+  id: string;
+  league?: 'MLB' | 'NFL' | 'MiLB';
+}): boolean {
+  if (venue.league && venue.league !== 'MLB') return false;
+  const provenance = getStadiumSectionProvenance(venue.id);
+  return provenance?.inventoryStatus === 'reconciled';
+}
+
+export const SECTION_LEVEL_TIER_NOTICE =
+  'Section-level shade tiers use verified stadium orientation, astronomical sun position, and published section inventory. They show which sections face the sun at a given time — not exact row-by-row shade, which requires measured geometry and an independent observation holdout.';
+
+/**
  * @deprecated The name survives for compatibility with existing API clients.
  * Membership is derived from evidence and is not a manual allowlist. Remote
  * metric reconstruction plus a passing observation holdout can qualify.

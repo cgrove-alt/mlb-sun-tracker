@@ -31,6 +31,8 @@ export interface SeatingSectionSun {
   effectiveSunExposure?: number;
   timeInSun?: number; // Total minutes in sun during game
   percentageOfGameInSun?: number; // Same as sunExposure, for clarity
+  /** When set, UI shows this label instead of a numeric percentage (tier-mode guide). */
+  exposureLabel?: string;
 }
 
 export function getSunTimes(date: Date, latitude: number, longitude: number) {

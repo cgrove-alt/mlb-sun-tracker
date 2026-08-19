@@ -14,13 +14,15 @@ interface SectionListProps {
   loading?: boolean;
   calculationProgress?: { completed: number; total: number } | null;
   showFilters?: boolean;
+  displayMode?: 'percent' | 'tier';
 }
 
 export const SectionList: React.FC<SectionListProps> = ({
   sections,
   loading = false,
   calculationProgress,
-  showFilters = false
+  showFilters = false,
+  displayMode = 'percent',
 }) => {
   const [sortBy, setSortBy] = useState<'name' | 'exposure' | 'level' | 'price'>(() => {
     return preferencesStorage.get('sortBy', 'exposure');
@@ -263,11 +265,17 @@ export const SectionList: React.FC<SectionListProps> = ({
             )}
           </div>
           <div className="exposure-info">
-            <Tooltip content="Percentage shows how much time during the game this section will be in direct sunlight. For example, 50% means sun for about 1.5 hours of a 3-hour game.">
+            {displayMode === 'tier' ? (
               <span className="info-text">
-                <span className="info-icon">ℹ</span> What do the percentages mean?
+                <span className="info-icon">ℹ</span> Discrete shade tiers at this game time — not measured row percentages.
               </span>
-            </Tooltip>
+            ) : (
+              <Tooltip content="Percentage shows how much time during the game this section will be in direct sunlight. For example, 50% means sun for about 1.5 hours of a 3-hour game.">
+                <span className="info-text">
+                  <span className="info-icon">ℹ</span> What do the percentages mean?
+                </span>
+              </Tooltip>
+            )}
           </div>
         </div>
         
@@ -387,6 +395,7 @@ export const SectionList: React.FC<SectionListProps> = ({
                 inSun={sectionData.inSun}
                 index={index}
                 timeInSun={sectionData.timeInSun}
+                exposureLabel={sectionData.exposureLabel}
               />
             ))}
           </div>

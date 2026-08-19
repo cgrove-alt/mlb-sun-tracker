@@ -15,7 +15,7 @@ import { ErrorProvider, useError } from './components/ErrorNotification';
 import { Breadcrumb } from './components/NavigationBreadcrumb';
 import { FidelityNotice } from './components/FidelityNotice';
 import { getStadiumDataFidelity, fidelityNote } from './data/stadiumDataFidelity';
-import { canPublishVenueSeatShade } from './data/stadiumShadeConfidence';
+import { canPublishVenueSeatShade, canPublishSectionLevelShadeTiers, SECTION_LEVEL_TIER_NOTICE } from './data/stadiumShadeConfidence';
 import { LoadingSpinner } from './components/LoadingSpinner';
 import { VenueChangeSkeleton } from './components/SkeletonScreens';
 import { SunIcon, MoonIcon } from './components/Icons';
@@ -35,6 +35,12 @@ import { WeatherForecast, weatherApi } from './services/weatherApi';
 import { OfflineIndicator } from './components/OfflineIndicator';
 import { trackStadiumSelection, trackGameSelection } from './utils/analytics';
 import { getUnifiedVenueShade, ShadedVenueSection } from './utils/getUnifiedVenueShade';
+import { sectionAngleConventionFor } from './utils/bowlGeometry';
+import {
+  EXPOSURE_TIER_LABEL,
+  sectionExposureAtSun,
+  sortKeyForExposureTier,
+} from './utils/sectionShadeTier';
 
 function UnifiedAppContent() {
   const { t } = useTranslation();
@@ -57,6 +63,9 @@ function UnifiedAppContent() {
   const legacyStadium = selectedVenue ? convertToLegacyStadium(selectedVenue) : null;
   const seatShadePublished = selectedVenue
     ? canPublishVenueSeatShade(selectedVenue)
+    : false;
+  const sectionTiersPublished = selectedVenue
+    ? canPublishSectionLevelShadeTiers(selectedVenue)
     : false;
 
   // Load venue from URL parameters on mount
@@ -181,16 +190,54 @@ function UnifiedAppContent() {
         if (isCancelled) return;
         setSunPosition(formattedPosition);
 
-        if (!canPublishVenueSeatShade(selectedVenue)) {
+        if (!seatShadePublished && !sectionTiersPublished) {
           setDetailedSections([]);
           setShadedSections([]);
           setGameExposureData(null);
           return;
         }
-        
+
         const sections = selectedVenue.league === 'MLB'
           ? await getStadiumSectionsAsync(selectedVenue.id)
           : getVenueSections(selectedVenue.id);
+
+        if (!seatShadePublished && sectionTiersPublished && selectedVenue.league === 'MLB') {
+          const domed = selectedVenue.roof === 'fixed';
+          const convention = sectionAngleConventionFor({ sport: 'baseball' });
+          const tierSections: SeatingSectionSun[] = sections.map((section) => {
+            const { tier } = sectionExposureAtSun(
+              section,
+              {
+                altitudeDegrees: position.altitudeDegrees,
+                azimuthDegrees: position.azimuthDegrees,
+              },
+              selectedVenue.orientation,
+              domed,
+              convention,
+            );
+            const sortKey = sortKeyForExposureTier(tier);
+            return {
+              section,
+              sunExposure: sortKey,
+              exposureLabel: EXPOSURE_TIER_LABEL[tier],
+              inSun: tier === 'full' || tier === 'moderate',
+              timeInSun: 0,
+              percentageOfGameInSun: sortKey,
+            };
+          });
+          if (isCancelled) return;
+          setDetailedSections(tierSections);
+          setShadedSections([]);
+          setGameExposureData(null);
+          return;
+        }
+        
+        if (!seatShadePublished) {
+          setDetailedSections([]);
+          setShadedSections([]);
+          setGameExposureData(null);
+          return;
+        }
         
         // Calculate shade for unified venues
         const shadeResults = getUnifiedVenueShade(
@@ -441,7 +488,7 @@ function UnifiedAppContent() {
                 )}
               </div>
 
-              {!seatShadePublished && (
+              {!seatShadePublished && !sectionTiersPublished && (
                 <section
                   role="status"
                   aria-labelledby="desktop-shade-results-paused"
@@ -460,18 +507,42 @@ function UnifiedAppContent() {
                 </section>
               )}
 
+              {!seatShadePublished && sectionTiersPublished && (
+                <section
+                  role="note"
+                  aria-labelledby="desktop-section-tier-guide"
+                  style={{
+                    margin: '1rem 0',
+                    padding: '1rem',
+                    border: '1px solid #cbd5e1',
+                    borderLeft: '4px solid #334155',
+                    borderRadius: '8px',
+                    background: '#f8fafc',
+                    color: '#334155',
+                  }}
+                >
+                  <h2 id="desktop-section-tier-guide" style={{ marginTop: 0 }}>Section-level shade guide</h2>
+                  <p style={{ marginBottom: '0.5rem' }}>{SECTION_LEVEL_TIER_NOTICE}</p>
+                  <p style={{ marginBottom: 0 }}>
+                    Sections below show discrete tiers (Shaded / Light sun / Moderate sun / Full sun), not measured percentages.
+                    {' '}<Link href={`/stadium/${selectedVenue.id}`}>Open the full interactive diagram →</Link>
+                  </p>
+                </section>
+              )}
+
               {seatShadePublished && selectedVenue && gameDateTime && detailedSections.length > 0 && (
                 <>
                   <SunExposureExplanation />
                 </>
               )}
 
-              {seatShadePublished && detailedSections.length > 0 && (
+              {(seatShadePublished || sectionTiersPublished) && detailedSections.length > 0 && (
                 <SectionList
                   sections={detailedSections}
                   loading={loadingSections}
                   calculationProgress={null}
                   showFilters={true}
+                  displayMode={sectionTiersPublished && !seatShadePublished ? 'tier' : 'percent'}
                 />
               )}
             </div>

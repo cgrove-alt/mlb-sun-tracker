@@ -17,7 +17,7 @@ import { MLB_STADIUMS } from '../stadiums';
 import { NFL_STADIUMS } from '../nflStadiums';
 import { ALL_MILB_STADIUMS } from '../milbStadiums';
 import { ALL_UNIFIED_VENUES } from '../unifiedVenues';
-import { canPublishVenueSeatShade } from '../stadiumShadeConfidence';
+import { canPublishVenueSeatShade, canPublishSectionLevelShadeTiers } from '../stadiumShadeConfidence';
 import { MLB_ORIENTATION_PROVENANCE, getOrientationProvenance } from '../stadiumOrientationProvenance';
 import { NFL_ORIENTATION_PROVENANCE } from '../nflOrientationProvenance';
 import { MILB_ORIENTATION_PROVENANCE } from '../milbOrientationProvenance';
@@ -200,6 +200,16 @@ describe('publication gate is league-agnostic', () => {
         expect(canPublishVenueSeatShade(venue)).toBe(true);
       } else {
         expect(canPublishVenueSeatShade(venue)).toBe(false);
+      }
+    }
+  });
+
+  it('publishes MLB section-level tiers while seat-level % stays gated', () => {
+    for (const venue of ALL_UNIFIED_VENUES) {
+      if (venue.league === 'MLB') {
+        expect(canPublishSectionLevelShadeTiers(venue)).toBe(true);
+      } else {
+        expect(canPublishSectionLevelShadeTiers(venue)).toBe(false);
       }
     }
   });

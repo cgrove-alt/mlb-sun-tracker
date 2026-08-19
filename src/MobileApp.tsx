@@ -20,7 +20,13 @@ import { getSunPosition, getSunDescription, getCompassDirection } from './utils/
 import { SunIcon, MoonIcon } from './components/Icons';
 import { FidelityNotice } from './components/FidelityNotice';
 import { getStadiumDataFidelity, fidelityNote } from './data/stadiumDataFidelity';
-import { canPublishVenueSeatShade } from './data/stadiumShadeConfidence';
+import { canPublishVenueSeatShade, canPublishSectionLevelShadeTiers } from './data/stadiumShadeConfidence';
+import { sectionAngleConventionFor } from './utils/bowlGeometry';
+import {
+  EXPOSURE_TIER_LABEL,
+  sectionExposureAtSun,
+  sortKeyForExposureTier,
+} from './utils/sectionShadeTier';
 import { validateFilterCriteria, RateLimiter } from './utils/validation';
 import { debounce } from './utils/debounce';
 import './styles/mobile.css';
@@ -48,6 +54,9 @@ const MobileApp: React.FC = () => {
   const [isCalculating, setIsCalculating] = useState(false);
   const seatShadePublished = selectedVenue
     ? canPublishVenueSeatShade(selectedVenue)
+    : false;
+  const sectionTiersPublished = selectedVenue
+    ? canPublishSectionLevelShadeTiers(selectedVenue)
     : false;
 
   // Convert unified venue to legacy stadium when needed
@@ -166,7 +175,7 @@ const MobileApp: React.FC = () => {
         azimuthDegrees: position.azimuthDegrees
       });
 
-      if (!canPublishVenueSeatShade(selectedVenue)) {
+      if (!canPublishVenueSeatShade(selectedVenue) && !canPublishSectionLevelShadeTiers(selectedVenue)) {
         setAllSections([]);
         setFilteredSections([]);
         return;
@@ -176,6 +185,35 @@ const MobileApp: React.FC = () => {
         ? await getStadiumSectionsAsync(selectedVenue.id)
         : getVenueSections(selectedVenue.id);
       const gameDate = gameDateTime;
+
+      if (!canPublishVenueSeatShade(selectedVenue) && canPublishSectionLevelShadeTiers(selectedVenue) && selectedVenue.league === 'MLB') {
+        const position = getSunPosition(gameDate, selectedVenue.latitude, selectedVenue.longitude);
+        const domed = selectedVenue.roof === 'fixed';
+        const convention = sectionAngleConventionFor({ sport: 'baseball' });
+        const results: SeatingSectionSun[] = sections.map((section) => {
+          const { tier } = sectionExposureAtSun(
+            section,
+            {
+              altitudeDegrees: position.altitudeDegrees,
+              azimuthDegrees: position.azimuthDegrees,
+            },
+            selectedVenue.orientation,
+            domed,
+            convention,
+          );
+          const sortKey = sortKeyForExposureTier(tier);
+          return {
+            section,
+            sunExposure: sortKey,
+            exposureLabel: EXPOSURE_TIER_LABEL[tier],
+            inSun: tier === 'full' || tier === 'moderate',
+            timeInSun: 0,
+            percentageOfGameInSun: sortKey,
+          };
+        });
+        setAllSections(results);
+        return;
+      }
       
       // Use the same time-based calculation as desktop
       const calculator = new SunCalculator(selectedStadium);
@@ -383,7 +421,7 @@ const MobileApp: React.FC = () => {
 
           {/* Filter and Results */}
           {gameDateTime && selectedVenue && (
-            !seatShadePublished ? (
+            !seatShadePublished && !sectionTiersPublished ? (
               <section className="mobile-section" id="results" role="status" aria-labelledby="mobile-shade-results-paused">
                 <div className="mobile-error-banner" style={{ background: '#fffbeb', color: '#78350f', borderColor: '#f5c96a' }}>
                   <h2 id="mobile-shade-results-paused" className="mobile-section-title">Section results paused</h2>
@@ -392,6 +430,13 @@ const MobileApp: React.FC = () => {
               </section>
             ) : (
             <>
+              {!seatShadePublished && sectionTiersPublished && (
+                <section className="mobile-section" role="note">
+                  <div className="mobile-error-banner" style={{ background: '#f8fafc', color: '#334155', borderColor: '#cbd5e1' }}>
+                    <p style={{ margin: 0 }}>Section tiers below are orientation-based guides, not measured row percentages.</p>
+                  </div>
+                </section>
+              )}
               <section className="mobile-section mobile-filter-section">
                 <MobileFilterSheet
                   onFilterChange={handleFilterChange}
@@ -420,6 +465,7 @@ const MobileApp: React.FC = () => {
                         sunExposure={sectionData.sunExposure}
                         inSun={sectionData.inSun}
                         timeInSun={sectionData.timeInSun}
+                        exposureLabel={sectionData.exposureLabel}
                       />
                     ))}
                   </div>

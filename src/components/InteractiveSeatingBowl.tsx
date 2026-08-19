@@ -4,7 +4,7 @@ import React, { useMemo, useState } from 'react';
 import type { StadiumSection } from '../data/stadiumSectionTypes';
 import { getSunPosition } from '../utils/sunPosition';
 import { getSectionSunExposure } from '../utils/sectionSunCalculations';
-import { reconciledExposure } from '../utils/sectionShadeTier';
+import { reconciledExposure, exposureTierOf, EXPOSURE_TIER_LABEL, type ExposureTier } from '../utils/sectionShadeTier';
 import { stadiumLocalToUTC } from '../utils/stadiumTime';
 import { sectionAngleConventionFor } from '../utils/bowlGeometry';
 
@@ -57,12 +57,9 @@ function wedgePath(a0: number, a1: number): string {
   return `M ${x0o} ${y0o} A ${rOut} ${rOut} 0 ${large} 0 ${x1o} ${y1o} L ${x1i} ${y1i} A ${rIn} ${rIn} 0 ${large} 1 ${x0i} ${y0i} Z`;
 }
 
-type Tier = 'shaded' | 'light' | 'moderate' | 'full';
+type Tier = ExposureTier;
 function tierOf(exposure: number): Tier {
-  if (exposure <= 5) return 'shaded';
-  if (exposure <= 35) return 'light';
-  if (exposure <= 60) return 'moderate';
-  return 'full';
+  return exposureTierOf(exposure);
 }
 const TIER_COLOR: Record<Tier, string> = {
   shaded: '#1e3a5f',
@@ -70,12 +67,7 @@ const TIER_COLOR: Record<Tier, string> = {
   moderate: '#f6c453',
   full: '#f59e0b',
 };
-const TIER_LABEL: Record<Tier, string> = {
-  shaded: 'Shaded',
-  light: 'Light sun',
-  moderate: 'Moderate sun',
-  full: 'Full sun',
-};
+const TIER_LABEL = EXPOSURE_TIER_LABEL;
 
 const COMPASS = ['N', 'NE', 'E', 'SE', 'S', 'SW', 'W', 'NW'];
 const compassOf = (az: number) => COMPASS[Math.round((((az % 360) + 360) % 360) / 45) % 8];

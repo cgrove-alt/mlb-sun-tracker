@@ -1,6 +1,6 @@
 import React from 'react';
 import { Stadium } from '../data/stadiums';
-import { canPublishVenueSeatShade } from '../data/stadiumShadeConfidence';
+import { canPublishVenueSeatShade, canPublishSectionLevelShadeTiers } from '../data/stadiumShadeConfidence';
 
 interface StadiumSchemaProps {
   stadium: Stadium;
@@ -16,6 +16,7 @@ export const StadiumSchema: React.FC<StadiumSchemaProps> = ({
   totalSections = 0 // Default to 0 if not provided
 }) => {
   const seatShadePublished = canPublishVenueSeatShade(stadium);
+  const sectionTiersPublished = canPublishSectionLevelShadeTiers(stadium);
   
   const schemaData = {
     "@context": "https://schema.org",
@@ -47,7 +48,7 @@ export const StadiumSchema: React.FC<StadiumSchemaProps> = ({
           "name": "Total Seating Sections",
           "value": totalSections
         },
-        ...(seatShadePublished && shadedSectionsCount !== undefined ? [{
+        ...(sectionTiersPublished && shadedSectionsCount !== undefined ? [{
           "@type": "PropertyValue",
           "name": "Shaded Sections Available",
           "value": shadedSectionsCount
@@ -71,7 +72,9 @@ export const StadiumSchema: React.FC<StadiumSchemaProps> = ({
         "name": "Shade Information",
         "description": seatShadePublished
           ? `Measured shade results are available for ${stadium.name}.`
-          : `Solar-position context is available for ${stadium.name}; exact seat-level shade is withheld pending measured-geometry validation.`
+          : sectionTiersPublished
+            ? `Section-level shade tiers and solar-orientation context are available for ${stadium.name}; exact seat-level shade percentages are withheld pending measured-geometry validation.`
+            : `Solar-position context is available for ${stadium.name}; exact seat-level shade is withheld pending measured-geometry validation.`
       }
     }
   };
