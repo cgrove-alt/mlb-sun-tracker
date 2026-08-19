@@ -1,5 +1,12 @@
 // Auto-generated unified venues data
 // Generated on 2025-08-02T19:14:52.611Z
+//
+// Shade-critical fields (lat/lon, orientation, timezone, roof, capacity)
+// are overlaid at export time from stadiums.ts / nflStadiums.ts /
+// milbStadiums.ts so this dump cannot silently drift from the authored
+// sources. See applyCanonicalVenueGeometry.
+
+import { applyCanonicalVenueGeometry } from './syncVenueGeometry';
 
 export interface UnifiedVenue {
   id: string;
@@ -40,7 +47,7 @@ export interface UnifiedVenue {
   sport?: 'baseball' | 'football';
 }
 
-export const ALL_UNIFIED_VENUES: UnifiedVenue[] = [
+const RAW_UNIFIED_VENUES: UnifiedVenue[] = [
   {
     "id": "angels",
     "name": "Angel Stadium",
@@ -3302,7 +3309,7 @@ export const ALL_UNIFIED_VENUES: UnifiedVenue[] = [
     "id": "bowie-baysox",
     "name": "Prince George's Stadium",
     "league": "MiLB",
-    "team": "Bowie Baysox",
+    "team": "Chesapeake Baysox",
     "alternateTeams": [
       "Baltimore Orioles"
     ],
@@ -5676,13 +5683,13 @@ export const ALL_UNIFIED_VENUES: UnifiedVenue[] = [
   },
   {
     "id": "carolina-mudcats",
-    "name": "Five County Stadium",
+    "name": "Wilson Ballpark",
     "league": "MiLB",
-    "team": "Carolina Mudcats",
+    "team": "Wilson Warbirds",
     "alternateTeams": [
       "Milwaukee Brewers"
     ],
-    "city": "Zebulon",
+    "city": "Wilson",
     "state": "NC",
     "latitude": 35.8272,
     "longitude": -78.3031,
@@ -5706,8 +5713,8 @@ export const ALL_UNIFIED_VENUES: UnifiedVenue[] = [
     "venueType": "baseball",
     "sport": "baseball",
     "surface": "grass",
-    "opened": 1991,
-    "address": "Zebulon, NC",
+    "opened": 2026,
+    "address": "401 Goldsboro Street S, Wilson, NC",
     "level": "A"
   },
   {
@@ -5820,14 +5827,14 @@ export const ALL_UNIFIED_VENUES: UnifiedVenue[] = [
   },
   {
     "id": "down-east-wood-ducks",
-    "name": "Grainger Stadium",
+    "name": "Fifth Third Park",
     "league": "MiLB",
-    "team": "Down East Wood Ducks",
+    "team": "Hub City Spartanburgers",
     "alternateTeams": [
       "Texas Rangers"
     ],
-    "city": "Kinston",
-    "state": "NC",
+    "city": "Spartanburg",
+    "state": "SC",
     "latitude": 35.2703,
     "longitude": -77.5753,
     "orientation": 40,
@@ -5850,9 +5857,9 @@ export const ALL_UNIFIED_VENUES: UnifiedVenue[] = [
     "venueType": "baseball",
     "sport": "baseball",
     "surface": "grass",
-    "opened": 1949,
-    "address": "Kinston, NC",
-    "level": "A"
+    "opened": 2025,
+    "address": "300 W Henry Street, Spartanburg, SC",
+    "level": "A+"
   },
   {
     "id": "fayetteville-woodpeckers",
@@ -6432,6 +6439,8 @@ export const ALL_UNIFIED_VENUES: UnifiedVenue[] = [
   }
 ];
 
+export const ALL_UNIFIED_VENUES: UnifiedVenue[] = applyCanonicalVenueGeometry(RAW_UNIFIED_VENUES);
+
 export function getUnifiedVenueById(id: string): UnifiedVenue | null {
   return ALL_UNIFIED_VENUES.find(venue => venue.id === id) || null;
 }
@@ -6452,12 +6461,23 @@ export function convertToLegacyStadium(venue: UnifiedVenue): any {
     orientation: venue.orientation,
     capacity: venue.capacity,
     roof: venue.roof,
+    // SunCalculator historically checked only `roofType`. Homepage/mobile
+    // passed this helper, so Tropicana and every NFL dome skipped the
+    // 100% shade shortcut and were modelled as open bowls.
+    roofType: venue.roof,
     roofHeight: venue.roofHeight,
+    roofOverhang: venue.roofOverhang,
     upperDeckHeight: venue.upperDeckHeight,
     timezone: venue.timezone,
     opened: venue.opened,
     surface: venue.surface,
-    features: venue.features
+    features: venue.features,
+    venueType: venue.venueType,
+    league: venue.league,
+    sport: venue.sport,
+    sectionAngleConvention: venue.league === 'NFL' || venue.venueType === 'football'
+      ? 'compass-from-north'
+      : 'baseball-local',
   };
 }
 

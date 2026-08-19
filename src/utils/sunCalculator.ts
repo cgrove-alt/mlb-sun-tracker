@@ -3,7 +3,9 @@ import SunCalc from 'suncalc';
 import type { CoverageDetail } from '../types/stadium-complete';
 import { getSunPosition } from './sunPosition';
 import {
-  sectionCompassAngle,
+  venueSectionCompassAngle,
+  sectionAngleConventionFor,
+  requireFiniteOrientation,
   sunIncidence,
   backStructureShadeFraction,
   overhangShadeFraction,
@@ -12,6 +14,7 @@ import {
   normalizeAngle,
   BOWL_DEFAULTS,
   type SeatingLevel,
+  type SectionAngleConvention,
 } from './bowlGeometry';
 
 interface Stadium {
@@ -19,12 +22,17 @@ interface Stadium {
   name: string;
   latitude: number;
   longitude: number;
+  roof?: 'open' | 'fixed' | 'retractable';
   roofType?: 'open' | 'fixed' | 'retractable';
   roofHeight?: number;
   roofOverhang?: number;
   upperDeckHeight?: number;
   orientation?: number;
   sections?: Section[];
+  league?: string;
+  venueType?: string;
+  sport?: string;
+  sectionAngleConvention?: SectionAngleConvention;
 }
 
 interface Section {
@@ -108,7 +116,11 @@ export class SunCalculator {
       upperDeckHeight: this.stadium.upperDeckHeight || 100,
       fieldLevel: 0,
       homeplate: { x: 0, y: 0 },
-      orientation: this.stadium.orientation || 0
+      // Preserve a documented 0° N-S axis. Missing orientation stays NaN and
+      // requireFiniteOrientation throws before any compass conversion.
+      orientation: typeof this.stadium.orientation === 'number' && Number.isFinite(this.stadium.orientation)
+        ? this.stadium.orientation
+        : Number.NaN,
     };
   }
 
@@ -209,6 +221,21 @@ export class SunCalculator {
         sunExposure: 0 // ZERO sun exposure for covered sections
       };
     }
+
+    // Fixed roofs do not need a compass conversion (and must not invent one).
+    if ((this.stadium.roofType ?? this.stadium.roof) === 'fixed') {
+      return {
+        sectionId: section.id,
+        coverage: 100,
+        inShadow: true,
+        shadowSources: {
+          roof: 100,
+          upperDeck: 0,
+          bowl: 0
+        },
+        sunExposure: 0
+      };
+    }
     
     // REWRITTEN 2026-08-07. This block used to read:
     //
@@ -264,8 +291,10 @@ export class SunCalculator {
   private calculateRoofShadow(section: Section, sunAltitude: number): number {
     if (sunAltitude <= 0) return 0;
 
-    // Fixed roof stadiums always have 100% coverage
-    if (this.stadium.roofType === 'fixed') return 100;
+    // Fixed roof stadiums always have 100% coverage. Accept both `roof`
+    // (the field stadiums.ts / unifiedVenues actually store) and the
+    // legacy `roofType` alias — callers used to set only one of them.
+    if ((this.stadium.roofType ?? this.stadium.roof) === 'fixed') return 100;
 
     // Covered sections have permanent overhead protection.
     if (section.covered === true) return 100;
@@ -289,10 +318,16 @@ export class SunCalculator {
    * field that expects compass degrees.
    */
   private getSectionCompassAngle(section: Section): number {
+    const orientation = requireFiniteOrientation(
+      this.stadiumGeometry.orientation,
+      this.stadium.id,
+    );
+    const convention = sectionAngleConventionFor(this.stadium);
     if (section.baseAngle !== undefined) {
-      return sectionCompassAngle(
+      return venueSectionCompassAngle(
         { baseAngle: section.baseAngle, angleSpan: section.angleSpan },
-        this.stadiumGeometry.orientation,
+        orientation,
+        convention,
       );
     }
     if (section.angle !== undefined) {
@@ -308,7 +343,7 @@ export class SunCalculator {
       home: 270,     // behind home plate
     };
     const local = localBySide[section.side ?? 'home'] ?? 270;
-    return sectionCompassAngle({ baseAngle: local, angleSpan: 0 }, this.stadiumGeometry.orientation);
+    return venueSectionCompassAngle({ baseAngle: local, angleSpan: 0 }, orientation, convention);
   }
 
   projectShadow(origin: { x: number; y: number }, azimuth: number, length: number): { x: number; y: number } {
@@ -542,11 +577,14 @@ export function calculateRowShadows(
   sunAltitudeDeg: number,
   sunAzimuthDeg: number,
   stadiumOrientation: number,
+  convention: SectionAngleConvention = 'baseball-local',
 ): RowShadowResult {
+  const orientation = requireFiniteOrientation(stadiumOrientation, section.id);
   const rows = section.rows ?? [];
-  const sectionCompass = sectionCompassAngle(
+  const sectionCompass = venueSectionCompassAngle(
     { baseAngle: section.baseAngle, angleSpan: section.angleSpan },
-    stadiumOrientation,
+    orientation,
+    convention,
   );
   const { sunBehind, sunFacing } = sunIncidence(sunAzimuthDeg, sectionCompass);
 
@@ -769,6 +807,7 @@ export function calculateGameWindowShade(
   section: RowShadowInputSection,
   sunSamples: SunSample[],
   stadiumOrientation: number,
+  convention: SectionAngleConvention = 'baseball-local',
 ): SectionWindowShade {
   const samples = sunSamples.length
     ? sunSamples
@@ -776,7 +815,7 @@ export function calculateGameWindowShade(
 
   const perSample = samples.map((s) => ({
     minutesFromStart: s.minutesFromStart,
-    result: calculateRowShadows(section, s.altitudeDegrees, s.azimuthDegrees, stadiumOrientation),
+    result: calculateRowShadows(section, s.altitudeDegrees, s.azimuthDegrees, stadiumOrientation, convention),
   }));
 
   // Section-average timeline (one point per sample).

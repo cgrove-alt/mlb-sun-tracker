@@ -5,9 +5,11 @@ import { UnifiedVenue } from '../data/unifiedVenues';
 import { cloudTransmissionFactor, getSunPosition } from './sunCalculations';
 import { WeatherData } from '../services/weatherApi';
 import {
-  sectionCompassAngle,
+  venueSectionCompassAngle,
+  sectionAngleConventionFor,
   structuralShadeFraction,
   horizonBlockFactor,
+  requireFiniteOrientation,
   type SeatingLevel,
 } from './bowlGeometry';
 
@@ -129,10 +131,15 @@ function calculateSectionShade(
   if (section.covered) {
     shadePercentage = 100;
   } else {
-    // section.baseAngle is venue-local (0 = 1B, 90 = CF, 180 = 3B, 270 = behind
-    // home for baseball; the same rotation applies to the generated football
-    // layouts). Convert to a compass bearing before comparing with the sun.
-    const sectionCompassDeg = sectionCompassAngle(section, venue.orientation);
+    // Baseball sections are stadium-local (0 = 1B … 270 = home). NFL sections
+    // are already compass-from-north. Pick the conversion from the venue type
+    // rather than assuming every bowl is a baseball diamond.
+    const orientation = requireFiniteOrientation(venue.orientation, venue.id);
+    const sectionCompassDeg = venueSectionCompassAngle(
+      section,
+      orientation,
+      sectionAngleConventionFor(venue),
+    );
     shadePercentage = 100 * structuralShadeFraction({
       sunAltitudeDeg: sunPos.altitudeDegrees,
       sunAzimuthDeg: sunPos.azimuthDegrees,
@@ -243,6 +250,7 @@ export function convertToLegacyStadium(venue: UnifiedVenue): any {
     orientation: venue.orientation,
     capacity: venue.capacity,
     roof: venue.roof,
+    roofType: venue.roof,
     timezone: venue.timezone,
     roofHeight: venue.roofHeight,
     roofOverhang: venue.roofOverhang,

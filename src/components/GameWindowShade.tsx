@@ -12,6 +12,7 @@ import {
 } from '../utils/sunCalculator';
 import { getSunPosition } from '../utils/sunCalculations';
 import { stadiumLocalDateAndTimeToUTC } from '../utils/stadiumTime';
+import { requireFiniteOrientation } from '../utils/bowlGeometry';
 
 interface GameWindowShadeProps {
   stadiumId: string;
@@ -88,7 +89,9 @@ export const GameWindowShade: React.FC<GameWindowShadeProps> = ({
     const sunUp = samples.some((s) => s.altitudeDegrees > 3);
     if (!sunUp) return { night: true } as const;
 
-    const windows = sections.map((s) => calculateGameWindowShade(s, samples, stadium.orientation || 0));
+    const windows = sections.map((s) =>
+      calculateGameWindowShade(s, samples, requireFiniteOrientation(stadium.orientation, stadium.id)),
+    );
 
     const count = (p: SectionWindowShade['progression']) =>
       windows.filter((w) => w.progression === p).length;

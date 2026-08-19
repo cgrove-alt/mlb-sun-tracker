@@ -4,7 +4,6 @@ import { Stadium } from './data/stadiums';
 import { UnifiedVenue, convertToLegacyStadium } from './data/unifiedVenues';
 import { getStadiumSectionsAsync } from './data/getStadiumSections';
 import { getVenueSections } from './data/venueSections';
-import { generateBaseballSections } from './utils/generateBaseballSections';
 import { MLBGame } from './services/mlbApi';
 import { MiLBGame } from './services/milbApi';
 import { NFLGame } from './services/nflApi';
@@ -21,7 +20,7 @@ import { getSunPosition, getSunDescription, getCompassDirection } from './utils/
 import { SunIcon, MoonIcon } from './components/Icons';
 import { FidelityNotice } from './components/FidelityNotice';
 import { getStadiumDataFidelity, fidelityNote } from './data/stadiumDataFidelity';
-import { canPublishSeatLevelShade } from './data/stadiumShadeConfidence';
+import { canPublishVenueSeatShade, canPublishSectionLevelShadeTiers } from './data/stadiumShadeConfidence';
 import { validateFilterCriteria, RateLimiter } from './utils/validation';
 import { debounce } from './utils/debounce';
 import './styles/mobile.css';
@@ -47,8 +46,12 @@ const MobileApp: React.FC = () => {
   const [sunPosition, setSunPosition] = useState<any>(null);
 
   const [isCalculating, setIsCalculating] = useState(false);
-  const seatShadePublished = selectedVenue?.league !== 'MLB'
-    || canPublishSeatLevelShade(selectedVenue.id);
+  const seatShadePublished = selectedVenue
+    ? canPublishVenueSeatShade(selectedVenue)
+    : false;
+  const sectionTiersPublished = selectedVenue
+    ? canPublishSectionLevelShadeTiers(selectedVenue)
+    : false;
 
   // Convert unified venue to legacy stadium when needed
   useEffect(() => {
@@ -166,64 +169,43 @@ const MobileApp: React.FC = () => {
         azimuthDegrees: position.azimuthDegrees
       });
 
-      if (selectedVenue.league === 'MLB' && !canPublishSeatLevelShade(selectedVenue.id)) {
+      if (!canPublishVenueSeatShade(selectedVenue) && !canPublishSectionLevelShadeTiers(selectedVenue)) {
         setAllSections([]);
         setFilteredSections([]);
         return;
       }
       
-      // Get sections based on venue type
-      let sections: any[] = [];
-      if (selectedVenue.league === 'MLB') {
-        // Use async MLB sections to avoid bundling all stadiums
-        sections = await getStadiumSectionsAsync(selectedVenue.id);
-      } else if (selectedVenue.league === 'MiLB') {
-        // Get MiLB sections - will use custom layouts if available
-        sections = getVenueSections(selectedVenue.id);
-        // Fall back to generated sections if no custom layout
-        if (!sections || sections.length === 0) {
-          sections = generateBaseballSections(selectedVenue);
-        }
-      } else {
-        sections = getVenueSections(selectedVenue.id);
-      }
+      const sections = selectedVenue.league === 'MLB'
+        ? await getStadiumSectionsAsync(selectedVenue.id)
+        : getVenueSections(selectedVenue.id);
       const gameDate = gameDateTime;
-      
-      // Use the same time-based calculation as desktop
       const calculator = new SunCalculator(selectedStadium);
-      const gameDuration = 3; // 3 hour game
-      
-      const results: SeatingSectionSun[] = sections.map(section => {
-        // Add section geometry for calculations
-        const side: 'home' | 'first' | 'third' | 'outfield' = 
-          section.name.toLowerCase().includes('third') || section.name.toLowerCase().includes('3b') || section.name.toLowerCase().includes('left') ? 'third' :
-          section.name.toLowerCase().includes('first') || section.name.toLowerCase().includes('1b') || section.name.toLowerCase().includes('right') ? 'first' :
-          section.name.toLowerCase().includes('behind') || section.name.toLowerCase().includes('home') || section.name.toLowerCase().includes('backstop') ? 'home' : 'outfield';
-        
-        // Pass the stadium-LOCAL baseAngle (carried through by the spread) and
-        // let SunCalculator convert it with the park's orientation. This used to
-        // set `angle: section.baseAngle`, handing a local angle to a field
-        // documented as a compass bearing, so orientation was discarded and the
-        // mobile shade list was identical for every park.
+      const gameDuration = 3;
+
+      const results: SeatingSectionSun[] = sections.map((section) => {
+        const local = ((section.baseAngle % 360) + 360) % 360;
+        const side: 'home' | 'first' | 'third' | 'outfield' =
+          local >= 315 || local < 45 ? 'first' :
+          local < 135 ? 'outfield' :
+          local < 225 ? 'third' : 'home';
+
         const sectionWithGeometry = {
           ...section,
           side,
-          depth: 50 // Default depth
+          depth: 50,
         };
-        
-        // Calculate time in sun
+
         const timeExposure = calculator.calculateTimeInSun(sectionWithGeometry, gameDate, gameDuration);
-        
+
         return {
           section,
           sunExposure: Math.round(timeExposure.percentage),
           inSun: timeExposure.percentage > 20,
           timeInSun: timeExposure.totalMinutes,
-          percentageOfGameInSun: timeExposure.percentage
+          percentageOfGameInSun: timeExposure.percentage,
         };
       });
-    
-      // Store all sections (unfiltered)
+
       setAllSections(results);
     } finally {
       setIsCalculating(false);
@@ -395,7 +377,7 @@ const MobileApp: React.FC = () => {
 
           {/* Filter and Results */}
           {gameDateTime && selectedVenue && (
-            !seatShadePublished ? (
+            !seatShadePublished && !sectionTiersPublished ? (
               <section className="mobile-section" id="results" role="status" aria-labelledby="mobile-shade-results-paused">
                 <div className="mobile-error-banner" style={{ background: '#fffbeb', color: '#78350f', borderColor: '#f5c96a' }}>
                   <h2 id="mobile-shade-results-paused" className="mobile-section-title">Section results paused</h2>

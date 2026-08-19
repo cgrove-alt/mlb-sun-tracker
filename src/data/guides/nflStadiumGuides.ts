@@ -6,10 +6,10 @@ export const nflStadiumGuides: Record<string, StadiumGuide> = {
     id: 'highmark-stadium',
     name: 'Highmark Stadium',
     team: 'Buffalo Bills',
-    opened: 1973,
-    capacity: 71608,
+    opened: 2026,
+    capacity: 60108,
     overview: {
-      description: 'Highmark Stadium, home to the Bills since 1973, is known for its passionate fanbase and challenging weather conditions. The open-air stadium creates one of the most intimidating atmospheres in the NFL, especially during December and January playoff games.',
+      description: 'Highmark Stadium is the Bills\' 2026 home in Orchard Park, built west of Abbott Road across from the demolished New Era / Ralph Wilson bowl. The open-air stadium keeps Buffalo\'s winter identity, with a north-south field and a canopy over about 65% of seats to cut Lake Erie wind.',
       highlights: [
         'Home of the legendary Bills Mafia',
         'Notorious for brutal winter weather conditions',
@@ -23,11 +23,12 @@ export const nflStadiumGuides: Record<string, StadiumGuide> = {
         'Located in suburban Orchard Park'
       ],
       renovations: [
-        { year: 1999, description: 'End zone seating expansion' },
-        { year: 2014, description: 'Video board and sound system upgrades' },
-        { year: 2022, description: 'LED lighting installation' }
+        { year: 1999, description: 'End zone seating expansion (previous stadium)' },
+        { year: 2014, description: 'Video board and sound system upgrades (previous stadium)' },
+        { year: 2022, description: 'LED lighting installation (previous stadium)' },
+        { year: 2026, description: 'New Highmark Stadium opens west of Abbott Road; old bowl demolished' }
       ],
-      previousNames: ['Rich Stadium', 'Ralph Wilson Stadium', 'New Era Field']
+      previousNames: ['Rich Stadium', 'Ralph Wilson Stadium', 'New Era Field', 'Highmark Stadium (1973–2026)']
     },
     shadeGuide: {
       bestShadedSections: {
@@ -195,10 +196,11 @@ export const nflStadiumGuides: Record<string, StadiumGuide> = {
     },
     history: {
       timeline: [
-        { year: 1973, event: 'Stadium opens as Rich Stadium' },
-        { year: 1988, event: 'Renamed Ralph Wilson Stadium' },
-        { year: 2016, event: 'Becomes New Era Field' },
-        { year: 2020, event: 'Renamed Highmark Stadium' }
+        { year: 1973, event: 'Previous stadium opens as Rich Stadium' },
+        { year: 1988, event: 'Previous stadium renamed Ralph Wilson Stadium' },
+        { year: 2016, event: 'Previous stadium becomes New Era Field' },
+        { year: 2020, event: 'Previous stadium renamed Highmark Stadium' },
+        { year: 2026, event: 'New Highmark Stadium opens west of Abbott Road; old bowl demolished' }
       ],
       notableGames: [
         { date: '1993-01-03', description: 'The Comeback - Bills overcome 32-point deficit vs Oilers' },

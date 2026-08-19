@@ -96,15 +96,21 @@ const ComprehensiveStadiumGuide: React.FC<ComprehensiveStadiumGuideProps> = ({
       {/* Answer-first summary — only when standalone (MLB pages get it from
           StadiumPageSSR instead, so it isn't duplicated). */}
       {showTitleBlock && venue && (
-        <ShadeAnswer name={venue.name} orientation={venue.orientation} roof={venue.roof} />
+        <ShadeAnswer
+          name={venue.name}
+          orientation={venue.orientation}
+          roof={venue.roof}
+          venueType={venue.venueType === 'football' ? 'football' : 'baseball'}
+        />
       )}
 
       {/* The interactive shade diagram is intentionally NOT rendered for MiLB/NFL
-          venues: their section geometry is a generated template (MiLB) or has
-          unmeasured/zero orientation (many NFL), so a section-level shade diagram
-          there would imply accuracy the data can't support. These venues rely on
-          the structural section table instead, which is orientation-independent
-          and honest everywhere. The diagram is MLB-only (see StadiumPageSSR). */}
+          venues: their section geometry is a generated template (MiLB) or generic
+          rings (NFL). Field-axis orientations are now sourced, but that is not
+          measured bowl geometry, so a section-level shade diagram would still
+          imply accuracy the seating data can't support. These venues rely on
+          the structural section table instead. The diagram is MLB-only
+          (see StadiumPageSSR). */}
 
       <FidelityNotice note={fidelityNote} />
 

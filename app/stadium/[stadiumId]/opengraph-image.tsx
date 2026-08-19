@@ -31,7 +31,10 @@ export default async function Image({ params }: { params: Promise<{ stadiumId: s
   const domed = (stadium?.roof ?? venue?.roof) === 'fixed';
   const takeaway = domed
     ? 'Fixed roof — every seat is shaded'
-    : `Shade first on the ${bestShadedSideForDayGame(orientation)} for day games`;
+    : `Shade first on the ${bestShadedSideForDayGame(
+        orientation,
+        league === 'NFL' || venue?.venueType === 'football' ? 'football' : 'baseball',
+      )} for day games`;
 
   return new ImageResponse(
     (

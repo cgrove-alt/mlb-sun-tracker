@@ -135,6 +135,7 @@ interface VenueSchemaInput {
   longitude?: number;
   capacity?: number;
   orientation: number;
+  venueType?: 'baseball' | 'football';
 }
 
 // Single source of the JSON-LD for a venue page — used by both the MLB and the
@@ -143,7 +144,7 @@ interface VenueSchemaInput {
 function buildVenueSchemas(v: VenueSchemaInput): Record<string, unknown>[] {
   const url = `https://theshadium.com/stadium/${v.id}`;
   const stadiumNodeId = `${url}#stadium`;
-  const shadeSide = bestShadedSideForDayGame(v.orientation);
+  const shadeSide = bestShadedSideForDayGame(v.orientation, v.venueType ?? 'baseball');
   const wikipedia = STADIUM_WIKIPEDIA[v.id];
 
   const article: Record<string, unknown> = {
@@ -285,6 +286,7 @@ export default async function StadiumPage({ params }: StadiumPageProps) {
       longitude: venue.longitude,
       capacity: venue.capacity,
       orientation: venue.orientation,
+      venueType: venue.venueType === 'football' ? 'football' : 'baseball',
     });
 
     return (
@@ -331,6 +333,7 @@ export default async function StadiumPage({ params }: StadiumPageProps) {
     longitude: stadium.longitude,
     capacity: stadium.capacity,
     orientation: stadium.orientation,
+    venueType: 'baseball',
   });
 
   return (

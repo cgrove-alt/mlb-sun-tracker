@@ -149,6 +149,7 @@ export const milbLevelClassifications: Record<string, string> = {
   'west-michigan-whitecaps': 'A+',
   'winston-salem-dash': 'A+',
   'wisconsin-timber-rattlers': 'A+',
+  'down-east-wood-ducks': 'A+',
   
   // A (Low-A) Teams
   'augusta-greenjackets': 'A',
@@ -159,7 +160,6 @@ export const milbLevelClassifications: Record<string, string> = {
   'columbia-fireflies': 'A',
   'daytona-tortugas': 'A',
   'delmarva-shorebirds': 'A',
-  'down-east-wood-ducks': 'A',
   'dunedin-blue-jays': 'A',
   'fayetteville-woodpeckers': 'A',
   'fort-wayne-tincaps': 'A',

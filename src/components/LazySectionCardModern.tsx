@@ -12,6 +12,7 @@ interface LazySectionCardProps {
   inSun: boolean;
   index: number;
   timeInSun?: number;
+  exposureLabel?: string;
 }
 
 const LazySectionCardModernComponent: React.FC<LazySectionCardProps> = ({
@@ -20,6 +21,7 @@ const LazySectionCardModernComponent: React.FC<LazySectionCardProps> = ({
   inSun,
   index,
   timeInSun,
+  exposureLabel,
 }) => {
   const [ref, isIntersecting] = useIntersectionObserver({
     threshold: 0.01,
@@ -54,7 +56,9 @@ const LazySectionCardModernComponent: React.FC<LazySectionCardProps> = ({
 
   const handleClick = () => {
     haptic.light();
-    const announcement = `Selected section ${section.name}. ${formatPercentageForScreenReader(roundedExposure)}`;
+    const announcement = exposureLabel
+      ? `Selected section ${section.name}. ${exposureLabel}`
+      : `Selected section ${section.name}. ${formatPercentageForScreenReader(roundedExposure)}`;
     announceToScreenReader(announcement, 'polite');
   };
 
@@ -76,7 +80,9 @@ const LazySectionCardModernComponent: React.FC<LazySectionCardProps> = ({
       tabIndex={0}
       onClick={handleClick}
       onKeyDown={onActivateKeyDown(handleClick)}
-      aria-label={`Section ${section.name}, ${formatPercentageForScreenReader(roundedExposure)}, ${section.level} level${section.covered ? ', covered section' : ''}`}
+      aria-label={exposureLabel
+        ? `Section ${section.name}, ${exposureLabel}, ${section.level} level${section.covered ? ', covered section' : ''}`
+        : `Section ${section.name}, ${formatPercentageForScreenReader(roundedExposure)}, ${section.level} level${section.covered ? ', covered section' : ''}`}
     >
       {/* Glass morphism overlay effect */}
       <div className="absolute inset-0 bg-white/30 backdrop-blur-xs opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
@@ -97,8 +103,8 @@ const LazySectionCardModernComponent: React.FC<LazySectionCardProps> = ({
                 {getSunExposureIcon(sunExposure)}
               </div>
               <span className="text-2xl font-bold text-gray-900">
-                {roundedExposure}%
-                <span className="sr-only"> of game in sun</span>
+                {exposureLabel ?? `${roundedExposure}%`}
+                {!exposureLabel && <span className="sr-only"> of game in sun</span>}
               </span>
             </div>
           </div>
@@ -156,6 +162,7 @@ export const LazySectionCardModern = React.memo(LazySectionCardModernComponent, 
     prevProps.section.id === nextProps.section.id &&
     prevProps.sunExposure === nextProps.sunExposure &&
     prevProps.inSun === nextProps.inSun &&
-    prevProps.index === nextProps.index
+    prevProps.index === nextProps.index &&
+    prevProps.exposureLabel === nextProps.exposureLabel
   );
 });

@@ -20,11 +20,15 @@
 import type { StadiumSection } from '../data/stadiumSectionTypes';
 import {
   sectionCompassAngle,
+  venueSectionCompassAngle,
   directSunPercent,
+  requireFiniteOrientation,
   type SeatingLevel,
+  type SectionAngleConvention,
 } from './bowlGeometry';
 
 export { sectionCompassAngle };
+export type { SectionAngleConvention };
 
 /**
  * Is this section receiving any meaningful direct sunlight right now?
@@ -32,28 +36,28 @@ export { sectionCompassAngle };
  * Section-level binary; the per-row `calculateRowShadows` handles per-row
  * structural shade.
  *
- * @param stadiumOrientation Compass bearing from home plate to center field.
- *   Required to convert `section.baseAngle` (stadium-local) to absolute
- *   compass for comparison with `sunAzimuth`. See bowlGeometry.ts.
+ * @param stadiumOrientation Compass HP→CF (baseball) or field long-axis (NFL).
+ *   `0` is a real north-facing axis, not a missing value.
+ * @param convention How `section.baseAngle` is stored. NFL inventories are
+ *   compass-from-north; baseball-local here would rotate the bowl.
  */
 export function isSectionInSun(
   section: StadiumSection,
   sunAzimuth: number,
   sunElevation: number,
   stadiumOrientation: number,
+  convention: SectionAngleConvention = 'baseball-local',
 ): boolean {
-  if (sunElevation <= 0) return false;
-  if (section.covered) {
-    // Partial canopies only let direct sun through when the sun is nearly
-    // overhead. Below 60° treat the seat as shaded.
-    return sunElevation > 60;
-  }
-  // Uncovered, above the horizon: at least part of the section is in sun.
-  // The intensity question is `getSectionSunExposure`. `stadiumOrientation`
-  // is unused for the binary answer but kept in the signature so every
-  // caller is forced to pass it (this is the parameter the bug fix added).
-  void stadiumOrientation;
-  return true;
+  // Same shadow line as getSectionSunExposure: majority direct sun.
+  // Orientation and convention are not optional — an uncovered seat with
+  // the sun up is still shaded when it sits in its own grandstand's shadow.
+  return getSectionSunExposure(
+    section,
+    sunElevation,
+    sunAzimuth,
+    stadiumOrientation,
+    convention,
+  ) > 50;
 }
 
 /**
@@ -84,21 +88,24 @@ export function isSectionInSun(
  * Geometry only — cloud cover dims the sun but does not move the shadow line,
  * so weather is applied by callers, not folded in here.
  *
- * @param stadiumOrientation Compass bearing from home plate to center field.
+ * @param stadiumOrientation Compass HP→CF (baseball) or field long-axis (NFL).
+ * @param convention How `section.baseAngle` is stored. Default baseball-local.
  */
 export function getSectionSunExposure(
   section: StadiumSection,
   sunElevation: number,
   sunAzimuth: number,
   stadiumOrientation: number,
+  convention: SectionAngleConvention = 'baseball-local',
 ): number {
   if (sunElevation <= 0) return 0;
   if (section.covered && sunElevation <= 60) return 0;
 
+  const orientation = requireFiniteOrientation(stadiumOrientation, section.id);
   const exposure = directSunPercent({
     sunAltitudeDeg: sunElevation,
     sunAzimuthDeg: sunAzimuth,
-    sectionCompassDeg: sectionCompassAngle(section, stadiumOrientation),
+    sectionCompassDeg: venueSectionCompassAngle(section, orientation, convention),
     level: section.level as SeatingLevel,
   });
 

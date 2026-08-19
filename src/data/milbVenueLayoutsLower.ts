@@ -846,7 +846,7 @@ export const aVenueLayouts: VenueLayout[] = [
 
   {
     venueId: 'carolina-mudcats',
-    venueName: 'Five County Stadium',
+    venueName: 'Wilson Ballpark',
     lastUpdated: '2024-01',
     sections: [
       { id: 'sec-101', name: '101', level: 'field', baseAngle: 310, angleSpan: 10, covered: false, price: 'premium' },
@@ -961,7 +961,7 @@ export const aVenueLayouts: VenueLayout[] = [
 
   {
     venueId: 'down-east-wood-ducks',
-    venueName: 'Grainger Stadium',
+    venueName: 'Fifth Third Park',
     lastUpdated: '2024-01',
     sections: [
       { id: 'sec-a', name: 'A', level: 'field', baseAngle: 10, angleSpan: 10, covered: false, price: 'premium' },

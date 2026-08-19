@@ -66,6 +66,19 @@ export type SeatingLevel = 'field' | 'lower' | 'club' | 'upper' | 'suite' | 'sta
 
 export const normalizeAngle = (deg: number): number => ((deg % 360) + 360) % 360;
 
+/**
+ * A documented 0° axis (Highmark, Lambeau, Rogers Centre, …) is valid.
+ * `orientation || 0` is not: it silently aims a park with missing data due north.
+ */
+export function requireFiniteOrientation(orientation: unknown, context?: string): number {
+  if (typeof orientation !== 'number' || !Number.isFinite(orientation)) {
+    throw new Error(
+      `Stadium orientation is missing or invalid${context ? ` (${context})` : ''}; refusing to invent a north-facing default.`,
+    );
+  }
+  return orientation;
+}
+
 /** Smallest angle between two compass bearings, in [0, 180]. */
 export function angularDistance(a: number, b: number): number {
   const d = Math.abs(normalizeAngle(a) - normalizeAngle(b));
@@ -82,6 +95,59 @@ export function sectionCompassAngle(
 ): number {
   const center = section.baseAngle + (section.angleSpan ?? 0) / 2;
   return normalizeAngle(stadiumOrientation + 90 - center);
+}
+
+/**
+ * How a venue's `section.baseAngle` is stored.
+ *
+ *   baseball-local     — MLB / MiLB. 0 = 1B, 90 = CF, 180 = 3B, 270 = home.
+ *                        Must be converted with `sectionCompassAngle`.
+ *   compass-from-north — NFL (`nflSections.ts`). `baseAngle` is already an
+ *                        absolute compass bearing (0 = north). Applying the
+ *                        baseball conversion here rotates every section by
+ *                        `orientation + 90 − angle` and points shade the
+ *                        wrong way for every football venue.
+ */
+export type SectionAngleConvention = 'baseball-local' | 'compass-from-north';
+
+export function sectionAngleConventionFor(venue?: {
+  league?: string;
+  venueType?: string;
+  sport?: string;
+  sectionAngleConvention?: SectionAngleConvention;
+} | object | null): SectionAngleConvention {
+  const v = (venue ?? {}) as {
+    league?: string;
+    venueType?: string;
+    sport?: string;
+    sectionAngleConvention?: SectionAngleConvention;
+  };
+  if (v.sectionAngleConvention) return v.sectionAngleConvention;
+  if (
+    v.league === 'NFL'
+    || v.venueType === 'football'
+    || v.sport === 'football'
+  ) {
+    return 'compass-from-north';
+  }
+  return 'baseball-local';
+}
+
+/**
+ * Compass bearing of a section for any venue type. Baseball parks go through
+ * `sectionCompassAngle`; football sections keep their documented
+ * north-referenced angle.
+ */
+export function venueSectionCompassAngle(
+  section: { baseAngle: number; angleSpan?: number },
+  stadiumOrientation: number,
+  convention: SectionAngleConvention = 'baseball-local',
+): number {
+  if (convention === 'compass-from-north') {
+    const center = section.baseAngle + (section.angleSpan ?? 0) / 2;
+    return normalizeAngle(center);
+  }
+  return sectionCompassAngle(section, stadiumOrientation);
 }
 
 export interface SunIncidence {

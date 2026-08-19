@@ -278,6 +278,7 @@ function vertices(
 export function buildParkSections(
   orientation: number,
   seeds: readonly ParkSectionSeed[],
+  convention: 'baseball-local' | 'compass-from-north' = 'baseball-local',
 ): DetailedSection[] {
   const seen = new Set<string>();
   return seeds.map((seed) => {
@@ -287,7 +288,11 @@ export function buildParkSections(
     const defaults = LEVEL_GEOMETRY[seed.level];
     const coverage = seed.coverage ?? 'none';
     const angleSpan = seed.span ?? 7;
-    const baseAngle = normalize(orientation + 90 - seed.compass - angleSpan / 2);
+    // Baseball: convert chart compass → stadium-local. Football: the seed
+    // compass is already north-referenced, matching NFL `baseAngle`.
+    const baseAngle = convention === 'compass-from-north'
+      ? normalize(seed.compass - angleSpan / 2)
+      : normalize(orientation + 90 - seed.compass - angleSpan / 2);
     const height = seed.height ?? defaults.height;
     const rake = seed.rake ?? defaults.rake;
     const rows = makeRows(

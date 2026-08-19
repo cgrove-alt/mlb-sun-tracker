@@ -11,7 +11,7 @@ import { usePullToRefresh } from '../../../src/hooks/usePullToRefresh';
 import { PullToRefreshIndicator } from '../../../src/components/PullToRefreshIndicator';
 import { formatInTimeZone } from '../../../src/utils/dateTimeUtils';
 import { mlbApi, MLBGame } from '../../../src/services/mlbApi';
-import { canPublishSeatLevelShade } from '../../../src/data/stadiumShadeConfidence';
+import { canPublishVenueSeatShade } from '../../../src/data/stadiumShadeConfidence';
 
 const ComprehensiveStadiumGuide = dynamic(
   () => import('../../../src/components/ComprehensiveStadiumGuide'),
@@ -56,7 +56,7 @@ export default function StadiumPageClient({
   const [selectedGame, setSelectedGame] = useState<MLBGame | null>(null);
   const [gamesLoading, setGamesLoading] = useState(true);
   const [gamesError, setGamesError] = useState<string | null>(null);
-  const seatShadePublished = canPublishSeatLevelShade(stadium.id);
+  const seatShadePublished = canPublishVenueSeatShade(stadium);
 
   const stadiumTz: string = stadium?.timezone || 'America/New_York';
 

@@ -66,6 +66,9 @@
  * magnetic north.
  */
 
+import { NFL_ORIENTATION_PROVENANCE } from './nflOrientationProvenance';
+import { MILB_ORIENTATION_PROVENANCE } from './milbOrientationProvenance';
+
 export type OrientationConfidence = 'verified' | 'estimated' | 'unverified';
 
 /** How an orientation value was derived, strongest → weakest precision. */
@@ -196,10 +199,13 @@ export const MLB_ORIENTATION_PROVENANCE: OrientationProvenance[] = [
 ];
 
 /**
- * Fast lookup by stadium id.
+ * Fast lookup by stadium id. MLB first, then NFL, then MiLB. Shared
+ * physical fields (MetLife, SoFi, Roger Dean) have one row per franchise id.
  */
 export function getOrientationProvenance(stadiumId: string): OrientationProvenance | undefined {
-  return MLB_ORIENTATION_PROVENANCE.find(p => p.stadiumId === stadiumId);
+  return MLB_ORIENTATION_PROVENANCE.find(p => p.stadiumId === stadiumId)
+    ?? NFL_ORIENTATION_PROVENANCE.find(p => p.stadiumId === stadiumId)
+    ?? MILB_ORIENTATION_PROVENANCE.find(p => p.stadiumId === stadiumId);
 }
 
 /**

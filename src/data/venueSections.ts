@@ -398,34 +398,25 @@ export const VENUE_SECTIONS: Record<string, any[]> = {
   ]
 };
 
-import { NFL_SECTIONS, generateGenericNFLSections } from './nflSections';
-import { integrateVenueLayout } from './venueLayoutIntegration';
-import { ALL_UNIFIED_VENUES } from './unifiedVenues';
+import { getOfficialDetailedSections } from './officialSectionRegistry';
 
 export function getVenueSections(venueId: string): any[] {
-  // First check if it's in the regular venue sections
   if (VENUE_SECTIONS[venueId]) {
     return VENUE_SECTIONS[venueId];
   }
-  
-  // Then check NFL sections
-  if (NFL_SECTIONS[venueId]) {
-    const nflSections = NFL_SECTIONS[venueId];
-    // If no specific sections defined, generate generic ones
-    if (nflSections.length === 0) {
-      return generateGenericNFLSections(venueId);
-    }
-    return nflSections;
+
+  const official = getOfficialDetailedSections(venueId);
+  if (official) {
+    return official.map((section) => ({
+      id: section.id,
+      name: section.name,
+      level: section.level,
+      baseAngle: section.baseAngle,
+      angleSpan: section.angleSpan,
+      covered: section.covered,
+      price: section.price,
+    }));
   }
-  
-  // Check if this is a MiLB venue with custom layout
-  const venue = ALL_UNIFIED_VENUES.find(v => v.id === venueId);
-  if (venue && venue.league === 'MiLB') {
-    const integratedVenue = integrateVenueLayout(venue);
-    if (integratedVenue.hasCustomLayout && integratedVenue.sections) {
-      return integratedVenue.sections;
-    }
-  }
-  
+
   return [];
 }

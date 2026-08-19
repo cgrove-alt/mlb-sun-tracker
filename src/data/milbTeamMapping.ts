@@ -109,7 +109,8 @@ export const MILB_VENUE_TO_TEAM_MAP: Record<number, number> = {
   2640: 259,  // Chukchansi Park -> Fresno Grizzlies
   2856: 507,  // Clover Park -> St. Lucie Mets
   2815: 476,  // Excite Ballpark -> San Jose Giants
-  2625: 249,  // Five County Stadium -> Carolina Mudcats
+  2625: 249,  // Five County Stadium (former) -> Wilson Warbirds
+  7254: 249,  // Wilson Ballpark -> Wilson Warbirds
   2787: 450,  // Jackie Robinson Ballpark -> Daytona Tortugas
   2791: 515,  // John Thurman Field -> Modesto Nuts
   2540: 233,  // Joseph P. Riley, Jr. Ballpark -> Charleston RiverDogs
@@ -243,7 +244,8 @@ export const MILB_STRING_ID_TO_VENUE_ID_MAP: Record<string, number> = {
   // A Teams
   'augusta-greenjackets': 5345,
   'bradenton-marauders': 2526,
-  'carolina-mudcats': 2625,
+  'carolina-mudcats': 7254,
+  'down-east-wood-ducks': 6134,
   'charleston-riverdogs': 2540,
   'clearwater-threshers': 2700,
   'columbia-fireflies': 4980,

@@ -78,7 +78,7 @@ describe('sunny side faces the sun (all 30 stadiums)', () => {
       const sun = getSunPosition(utc, stadium.latitude, stadium.longitude);
       if (sun.altitudeDegrees <= 0) return; // sun down (high-latitude edge) — skip
 
-      const orient = stadium.orientation || 0;
+      const orient = stadium.orientation;
       // sectionCompass = (orient + 90 − baseAngle). Seats face (compass+180),
       // so the section that faces INTO the sun has compass ≈ sunAz+180.
       const facingBase = norm360(orient + 90 - norm360(sun.azimuthDegrees + 180));
@@ -103,7 +103,7 @@ describe('the model differentiates bowl sides for every park at evening sun', ()
 
       const sections = await getStadiumSections(stadium.id, 'MLB');
       const exposures = sections.map((s) => {
-        const r = calculateRowShadows(s, sun.altitudeDegrees, sun.azimuthDegrees, stadium.orientation || 0);
+        const r = calculateRowShadows(s, sun.altitudeDegrees, sun.azimuthDegrees, stadium.orientation);
         return 100 - r.averageCoverage;
       });
       const spread = Math.max(...exposures) - Math.min(...exposures);
@@ -132,7 +132,7 @@ describe('whole-game-window shade migrates monotonically as the sun sets', () =>
     });
 
     // An away-from-sun open section: bowl back-shadow grows as the sun lowers.
-    const orient = stadium.orientation || 0;
+    const orient = stadium.orientation;
     const awayBase = norm360(orient + 90 - norm360(samples[0].azimuthDegrees));
     const win = calculateGameWindowShade(openSection(awayBase), samples, orient);
 

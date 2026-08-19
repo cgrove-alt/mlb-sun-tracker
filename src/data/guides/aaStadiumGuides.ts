@@ -793,11 +793,11 @@ export const aaStadiumGuides: Record<string, StadiumGuide> = {
   'bowie-baysox': {
     id: 'bowie-baysox',
     name: 'Prince George\'s Stadium',
-    team: 'Bowie Baysox',
+    team: 'Chesapeake Baysox',
     opened: 2000,
     capacity: 10000,
     overview: {
-      description: 'Prince George\'s Stadium in Bowie, Maryland, is the home of the Bowie Baysox, Orioles AA affiliate. This contemporary ballpark combines modern conveniences with a capacity of 10000 fans. ',
+      description: 'Prince George\'s Stadium in Bowie, Maryland, is the home of the Chesapeake Baysox, Orioles AA affiliate. This contemporary ballpark combines modern conveniences with a capacity of 10000 fans. ',
       highlights: [
         'Orioles AA affiliate since 2000',
         'Modern facility',

@@ -16,6 +16,10 @@
  */
 
 import { sectionCompassAngle } from '../sectionSunCalculations';
+import {
+  venueSectionCompassAngle,
+  sectionAngleConventionFor,
+} from '../bowlGeometry';
 
 const sec = (baseAngle: number, angleSpan = 0) => ({ baseAngle, angleSpan });
 
@@ -62,5 +66,24 @@ describe('sectionCompassAngle — documented landmark mapping', () => {
   it('produces a DIFFERENT bearing for parks with different orientations', () => {
     const bearings = [0, 45, 90, 180, 270].map(o => sectionCompassAngle(sec(30), o));
     expect(new Set(bearings).size).toBe(bearings.length);
+  });
+});
+
+describe('NFL compass-from-north convention', () => {
+  it('treats NFL / football venues as compass-from-north', () => {
+    expect(sectionAngleConventionFor({ league: 'NFL' })).toBe('compass-from-north');
+    expect(sectionAngleConventionFor({ venueType: 'football' })).toBe('compass-from-north');
+    expect(sectionAngleConventionFor({ sport: 'football' })).toBe('compass-from-north');
+    expect(sectionAngleConventionFor({ league: 'MLB' })).toBe('baseball-local');
+    expect(sectionAngleConventionFor({ league: 'MiLB' })).toBe('baseball-local');
+  });
+
+  it('does not apply the baseball +90/−local rotation to NFL sections', () => {
+    // Hard Rock §101 is documented as baseAngle 0 = north endzone.
+    // The baseball formula would map that to orientation+90 = east.
+    expect(venueSectionCompassAngle(sec(0), 0, 'compass-from-north')).toBe(0);
+    expect(venueSectionCompassAngle(sec(90), 0, 'compass-from-north')).toBe(90);
+    expect(venueSectionCompassAngle(sec(180, 20), 45, 'compass-from-north')).toBe(190);
+    expect(venueSectionCompassAngle(sec(0), 0, 'baseball-local')).toBe(90);
   });
 });

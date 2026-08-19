@@ -47,7 +47,7 @@ describe('MLB stadium timezones', () => {
   describe.each([
     ['rangers', 'America/Chicago', -5, 'Arlington TX is Central, not Mountain'],
     ['reds', 'America/New_York', -4, 'all of Ohio is Eastern, not Central'],
-    ['tigers', 'America/New_York', -4, "Michigan's Lower Peninsula is Eastern, not Central"],
+    ['tigers', 'America/Detroit', -4, "Michigan's Lower Peninsula is Eastern; America/Detroit is the IANA zone"],
     ['guardians', 'America/New_York', -4, 'Cleveland OH is Eastern, not Central'],
   ])('%s', (id, expectedZone, expectedOffset, why) => {
     it(`uses ${expectedZone} (${why})`, () => {
@@ -79,13 +79,19 @@ describe('stadiums.ts and unifiedVenues.ts agree', () => {
       .toEqual(new Set(MLB_STADIUMS.map(s => s.id)));
   });
 
-  // This is the guard that would have caught the Guardians bug.
-  it.each(MLB_STADIUMS.map(s => [s.id, s.timezone] as const))(
-    '%s has the same timezone in both files',
-    (id, timezone) => {
+  // This is the guard that would have caught the Guardians bug — and the
+  // later Marlins orientation / Athletics coordinate drift.
+  it.each(MLB_STADIUMS.map(s => [s.id] as const))(
+    '%s has the same shade-critical geometry in both files',
+    (id) => {
+      const stadium = MLB_STADIUMS.find(s => s.id === id)!;
       const unified = unifiedMlb.find(v => v.id === id);
       expect(unified).toBeDefined();
-      expect(unified!.timezone).toBe(timezone);
+      expect(unified!.timezone).toBe(stadium.timezone);
+      expect(unified!.orientation).toBe(stadium.orientation);
+      expect(unified!.latitude).toBe(stadium.latitude);
+      expect(unified!.longitude).toBe(stadium.longitude);
+      expect(unified!.roof).toBe(stadium.roof);
     }
   );
 });

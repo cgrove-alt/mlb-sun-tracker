@@ -13,31 +13,64 @@ below — do NOT re-enable the diagram for a league until its item is complete a
 
 ## Backlog items
 
-### 1. NFL — measure real stadium orientations (blocking)
-- **Problem:** 14 of 32 NFL venues have `orientation: 0` (an unset default); the rest are
-  ungraded (no provenance). With a wrong/absent orientation the sun-vs-shade call is invalid.
-- **Work:** measure HP→CF-equivalent (field long-axis) bearing for all 32 NFL venues from
-  satellite imagery (Esri/OSM), record in a provenance file like
-  `stadiumOrientationProvenance.ts` with `precisionDeg` + source count.
-- **Done when:** 0 venues at the default; each has a documented confidence.
+### 1. NFL — measure real stadium orientations (done 2026-08-18)
+- **Was:** 14 of 32 NFL venues had `orientation: 0` as an unset default; several others
+  were leftover E-W / previous-building values (SoFi 90°, U.S. Bank 88° / TCF, Lambeau 45°,
+  Mercedes-Benz 0° / Georgia Dome, AT&T 340° perpendicular).
+- **Now:** every franchise id has a row in `nflOrientationProvenance.ts`. Open-air parks
+  are multi-source (OSM pitch PCA + Bliss azimuth, plus vizual-statistix where the 2015
+  building still exists). `0°` remains only where the field is actually N–S (Highmark 2026,
+  Empower, Lambeau, Raymond James, Lumen). Highmark lat/lon/capacity/opened moved to the
+  2026 stadium west of Abbott Road.
+- **Still not done:** this does **not** unlock NFL section-level shade %. Official
+  section IDs are now sourced; row/3-D geometry is still modeled. See item 2.
 
-### 2. NFL — fix the section angle convention (blocking)
-- **Problem:** `NFL_SECTIONS` `baseAngle` is documented as "angle from north (0-360)", a
-  different convention than the baseball stadium-local frame (`0=1B … 270=HP`) that
-  `sectionCompassAngle` / `getSectionSunExposure` assume. Feeding NFL angles into the
-  baseball model mis-rotates every section.
-- **Work:** either convert NFL section angles to the stadium-local convention, or add an
-  NFL-aware compass mapping and select it by venue type.
-- **Done when:** an NFL worked example (verified orientation) matches known reality.
+### 2. NFL — fix the section angle convention (done 2026-08-18)
+- **Was:** live math ran every football `baseAngle` through the baseball
+  `(orientation + 90 − local)` converter, rotating every NFL bowl.
+- **Now:** `sectionAngleConventionFor` uses `compass-from-north` for NFL / football.
+  Club-linked IOMEDIA / official static charts replaced the generic 101–136 ring
+  for every franchise id. Still do **not** publish section % — unmeasured bowl
+  geometry and the venue publication gate remain.
 
 ### 3. MiLB — build real per-venue section layouts (blocking)
-- **Problem:** MiLB sections come from `generateBaseballSections`, a single generic template
-  emitted identically for all 120 venues; positions are not measured. Orientations are also
-  mostly shared defaults (28 unique across 120).
-- **Work:** author per-venue MiLB section geometry (angular position + coverage) like the
-  MLB `stadiumSections-split/*` files, and measure per-venue orientations.
-- **Done when:** MiLB venues have real, non-template sections + measured orientation; the
-  `baseAngle/angleSpan` coverage script passes with real (not generated) data.
+- **Orientations (done 2026-08-18):** every MiLB id has a row in
+  `milbOrientationProvenance.ts`. Coordinates were re-pinned to the current 2026 home
+  (MLB Stats API / Wikipedia / Nominatim) — leftover venueIds still pointed at Kodak
+  Smokies Stadium, Smith's Ballpark, Trustmark Park, Polar Park-as-DCU-Center, and
+  Coolray-as-airport. HP→CF was read from north-up Esri tiles; Clem / Harbor Park /
+  First Horizon published bearings lock the verified AAA subset. `0°` remains only
+  where CF actually faces north (Syracuse, Rome, Lansing).
+- **Still blocking diagrams:**   the live path no longer emits `generateBaseballSections`
+  or Field-100 clones. Parks without a transcribed official chart now return empty
+  (fail closed). One hundred twenty parks have source-backed inventories (Aberdeen, Akron,
+  Albuquerque [partial], Altoona, Amarillo, Arkansas, Asheville, Augusta, Beloit, Biloxi,
+  Binghamton, Birmingham, Bowie, Bowling Green, Bradenton, Brooklyn, Buffalo, Cedar Rapids, Charleston,
+  Charlotte, Chattanooga, Clearwater, Columbia, Columbus Clippers, Columbus Clingstones, Corpus Christi, Dayton,
+  Daytona, Delmarva, Dunedin, Durham, El Paso, Erie, Eugene, Everett, Fayetteville, Fort Myers,
+  Fort Wayne [partial], Fredericksburg, Fresno [partial], Frisco, Great Lakes, Greensboro [partial],
+  Greenville, Gwinnett, Harrisburg, Hartford, Hickory, Hillsboro, Hub City/Down East, Hudson Valley,
+  Indianapolis [partial], Inland Empire, Iowa, Jacksonville, Jersey Shore, Jupiter,
+  Kannapolis [partial], Knoxville, Lake County, Lakeland, Lansing, Las Vegas, Lehigh Valley,
+  Louisville, Lynchburg, Memphis [partial], Midland [partial], Montgomery,
+  Myrtle Beach, Nashville, New Hampshire [partial], Norfolk, Northwest Arkansas,
+  Oklahoma City, Omaha [partial], Ontario/Modesto, Palm Beach (Roger Dean shared),
+  Pensacola, Peoria, Portland, Quad Cities, Rancho Cucamonga, Reading, Reno, Richmond, Rochester,
+  Rocket City, Rome, Round Rock [partial], Sacramento, Salem, Salt Lake, San Antonio,
+  San Jose, Scranton/Wilkes-Barre, Somerset, South Bend, Spokane, Springfield, St. Lucie, St. Paul,
+  Stockton, Sugar Land, Syracuse, Tacoma [partial], Tampa, Toledo, Tri-City, Tulsa,
+  Vancouver [partial], Visalia, West Michigan, Wichita, Wilmington, Wilson/Carolina,
+  Winston-Salem [partial], Wisconsin, Worcester [partial], Lake Elsinore). Quad Cities
+  uses the official UniversityTickets / Glitnir Modern Woodmen Park map (Reserved
+  1–11, Bleachers 13; section 12 is not sold). Lake Elsinore uses the official
+  Ticketmaster seating map hosted on the club Ticketmaster Instructions page
+  (labeled 101–117 and outfield 119/121/123; 118 is not labeled). Do **not**
+  publish section %.
+- **Work remaining:** item 3 inventories are source-backed for all 120 MiLB ids.
+  Keep the interactive seating diagram off until measured bowl geometry exists
+  (item 4). Do **not** invent missing labels or re-enable diagrams.
+- **Done when:** all 120 MiLB ids have real, non-template sections + measured
+  orientation; the coverage script passes with official (not generated) data.
 
 ### 4. Re-enable + verify (per league, after its data is fixed)
 - Gate the diagram on a data-quality check (real per-venue sections AND measured, non-default

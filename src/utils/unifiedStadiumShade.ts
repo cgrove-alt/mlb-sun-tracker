@@ -204,75 +204,16 @@ function getStadiumSectionsForType(stadium: UnifiedStadium): StadiumSection[] {
     return [];
   }
 
-  // For MiLB stadiums, use stadium-specific or generate generic sections
+  // Official inventories only. Empty is honest; a generic ring is not.
   if (stadium.type === 'MiLB') {
     return getMiLBStadiumSections(stadium.id);
   }
 
-  // For NFL stadiums, use stadium-specific or generate generic sections
   if (stadium.type === 'NFL') {
     return getNFLStadiumSections(stadium.id);
   }
-  
-  // Fallback to generic sections
-  return generateGenericSections(stadium);
-}
 
-// Generate generic sections for non-MLB stadiums
-function generateGenericSections(stadium: UnifiedStadium): StadiumSection[] {
-  const sections: StadiumSection[] = [];
-  const isFootball = stadium.type === 'NFL';
-  
-  // Define section configuration based on stadium type
-  const sectionConfig = isFootball ? {
-    levels: ['field', 'lower', 'club', 'upper'],
-    sectionsPerLevel: [8, 16, 12, 16],
-    angleStart: 0,
-    angleEnd: 360
-  } : {
-    levels: ['field', 'lower', 'upper'],
-    sectionsPerLevel: [8, 12, 12],
-    angleStart: 0,
-    angleEnd: 360
-  };
-  
-  let sectionId = 1;
-  
-  for (let levelIndex = 0; levelIndex < sectionConfig.levels.length; levelIndex++) {
-    const level = sectionConfig.levels[levelIndex] as 'field' | 'lower' | 'club' | 'upper';
-    const sectionCount = sectionConfig.sectionsPerLevel[levelIndex];
-    const angleStep = (sectionConfig.angleEnd - sectionConfig.angleStart) / sectionCount;
-    
-    for (let i = 0; i < sectionCount; i++) {
-      const baseAngle = sectionConfig.angleStart + (i * angleStep);
-      
-      sections.push({
-        id: `${stadium.id}-${level}-${sectionId}`,
-        name: `Section ${sectionId}`,
-        level,
-        baseAngle,
-        angleSpan: angleStep,
-        rows: level === 'field' ? 10 : 20,
-        covered: stadium.roof === 'fixed' || stadium.roof === 'retractable',
-        price: getPriceCategory(level)
-      });
-      
-      sectionId++;
-    }
-  }
-  
-  return sections;
-}
-
-// Helper functions for section generation
-function getPriceCategory(level: string): 'luxury' | 'premium' | 'moderate' | 'value' {
-  switch (level) {
-    case 'field': return 'luxury';
-    case 'club': return 'premium';
-    case 'lower': return 'moderate';
-    case 'upper': return 'value';
-    default: return 'moderate';
-  }
+  return [];
 }
 
 
