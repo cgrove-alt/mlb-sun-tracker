@@ -2283,6 +2283,27 @@ OVERRIDES = {
             {"id": "clingstones-wc-bradley-backyard", "name": "WC Bradley Backyard", "level": "standing", "compassOffset": 30, "span": 16},
         ],
     },
+    "quad-cities-river-bandits": {
+        "officialUrl": "https://www.milb.com/quad-cities/tickets/single-game-tickets",
+        "geometryUrl": "https://uw1.glitnirticketing.com/uwticket/web/stadiumg.php?status_id=2&event_id=223",
+        "notes": "Modern Woodmen Park official 2026 Glitnir/UniversityTickets stadium map linked from the club single-game ticket feed: reserved 1-11 (section 12 is not published), Bleachers 13, Berm 14, plus Luxury Suite Level, Royals Deck, QC Custom Tees Terrace, Champions Club, Cornfield Deck, Pepsi Boxes, and Backyard Deck. Official group/season PDFs add Party Plaza and Diamond Club as named products. Third-party 100-level maps are not used; a 2015 club story independently names Section 5.",
+        "bands": [
+            {"ids": [str(n) for n in range(1, 12)], "level": "lower", "namePrefix": "Section"},
+            {"ids": ["13"], "level": "standing", "namePrefix": "Bleachers", "startOffset": 40, "endOffset": 80},
+        ],
+        "named": [
+            {"id": "quad-cities-berm", "name": "Berm", "level": "standing", "compassOffset": 0, "span": 24},
+            {"id": "quad-cities-luxury-suite-level", "name": "Luxury Suite Level", "level": "suite", "compassOffset": 180, "span": 22},
+            {"id": "quad-cities-royals-deck", "name": "Royals Deck", "level": "club", "compassOffset": 70, "span": 12},
+            {"id": "quad-cities-qc-custom-tees-terrace", "name": "QC Custom Tees Terrace", "level": "club", "compassOffset": 50, "span": 12},
+            {"id": "quad-cities-champions-club", "name": "Champions Club", "level": "club", "compassOffset": 250, "span": 12},
+            {"id": "quad-cities-cornfield-deck", "name": "Cornfield Deck", "level": "club", "compassOffset": 20, "span": 12},
+            {"id": "quad-cities-pepsi-boxes", "name": "Pepsi Boxes", "level": "club", "compassOffset": 160, "span": 10},
+            {"id": "quad-cities-backyard-deck", "name": "Backyard Deck", "level": "club", "compassOffset": 300, "span": 12},
+            {"id": "quad-cities-party-plaza", "name": "Party Plaza", "level": "standing", "compassOffset": 40, "span": 12},
+            {"id": "quad-cities-diamond-club", "name": "Diamond Club", "level": "club", "compassOffset": 180, "span": 10},
+        ],
+    },
 }
 
 

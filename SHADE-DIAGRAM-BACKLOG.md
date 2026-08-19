@@ -43,7 +43,7 @@ below — do NOT re-enable the diagram for a league until its item is complete a
   where CF actually faces north (Syracuse, Rome, Lansing).
 - **Still blocking diagrams:**   the live path no longer emits `generateBaseballSections`
   or Field-100 clones. Parks without a transcribed official chart now return empty
-  (fail closed). One hundred eighteen parks have source-backed inventories (Aberdeen, Akron,
+  (fail closed). One hundred nineteen parks have source-backed inventories (Aberdeen, Akron,
   Albuquerque [partial], Altoona, Amarillo, Arkansas, Asheville, Augusta, Beloit, Biloxi,
   Binghamton, Birmingham, Bowie, Bowling Green, Bradenton, Brooklyn, Buffalo, Cedar Rapids, Charleston,
   Charlotte, Chattanooga, Clearwater, Columbia, Columbus Clippers, Columbus Clingstones, Corpus Christi, Dayton,
@@ -55,16 +55,19 @@ below — do NOT re-enable the diagram for a league until its item is complete a
   Louisville, Lynchburg, Memphis [partial], Midland [partial], Montgomery,
   Myrtle Beach, Nashville, New Hampshire [partial], Norfolk, Northwest Arkansas,
   Oklahoma City, Omaha [partial], Ontario/Modesto, Palm Beach (Roger Dean shared),
-  Pensacola, Peoria, Portland, Rancho Cucamonga, Reading, Reno, Richmond, Rochester,
+  Pensacola, Peoria, Portland, Quad Cities, Rancho Cucamonga, Reading, Reno, Richmond, Rochester,
   Rocket City, Rome, Round Rock [partial], Sacramento, Salem, Salt Lake, San Antonio,
   San Jose, Scranton/Wilkes-Barre, Somerset, South Bend, Spokane, Springfield, St. Lucie, St. Paul,
   Stockton, Sugar Land, Syracuse, Tacoma [partial], Tampa, Toledo, Tri-City, Tulsa,
   Vancouver [partial], Visalia, West Michigan, Wichita, Wilmington, Wilson/Carolina,
-  Winston-Salem [partial], Wisconsin, Worcester [partial]). The
-  other 2 still need official chart IDs — do **not** fill them with a template.
-  Do **not** publish section %.
-- **Work remaining:** transcribe the remaining official club charts / maps into
-  `MILB_OFFICIAL_INVENTORIES` the same way, unique except shared bowls (Roger Dean).
+  Winston-Salem [partial], Wisconsin, Worcester [partial]). Quad Cities uses the
+  official UniversityTickets / Glitnir Modern Woodmen Park map (Reserved 1–11,
+  Bleachers 13; section 12 is not sold). The other 1 still needs official chart
+  IDs — Lake Elsinore Storm — do **not** fill it with a template or a 2017
+  Larimer / SeatGeek 100-level map. Do **not** publish section %.
+- **Work remaining:** transcribe Lake Elsinore's official club chart / Ticketmaster
+  map into `MILB_OFFICIAL_INVENTORIES` the same way, unique except shared bowls
+  (Roger Dean).
 - **Done when:** all 120 MiLB ids have real, non-template sections + measured
   orientation; the coverage script passes with official (not generated) data.
 
