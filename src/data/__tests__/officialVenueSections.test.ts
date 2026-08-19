@@ -127,10 +127,14 @@ describe('MiLB official section inventories', () => {
     });
   });
 
-  it('returns empty instead of a Field Box clone when a park is not yet sourced', () => {
-    const missing = ALL_MILB_STADIUMS.find((stadium) => !MILB_OFFICIAL_INVENTORIES[stadium.id]);
-    expect(missing).toBeTruthy();
-    const sections = getMiLBStadiumSections(missing!.id);
+  it('covers every MiLB franchise id', () => {
+    expect(Object.keys(MILB_OFFICIAL_INVENTORIES).sort()).toEqual(
+      ALL_MILB_STADIUMS.map((stadium) => stadium.id).sort(),
+    );
+  });
+
+  it('returns empty instead of a Field Box clone when a park is not sourced', () => {
+    const sections = getMiLBStadiumSections('not-a-sourced-milb-park');
     expect(sections).toEqual([]);
     expect(sections.some((section) => String(section.name).startsWith('Field Box'))).toBe(false);
   });

@@ -43,7 +43,7 @@ below — do NOT re-enable the diagram for a league until its item is complete a
   where CF actually faces north (Syracuse, Rome, Lansing).
 - **Still blocking diagrams:**   the live path no longer emits `generateBaseballSections`
   or Field-100 clones. Parks without a transcribed official chart now return empty
-  (fail closed). One hundred nineteen parks have source-backed inventories (Aberdeen, Akron,
+  (fail closed). One hundred twenty parks have source-backed inventories (Aberdeen, Akron,
   Albuquerque [partial], Altoona, Amarillo, Arkansas, Asheville, Augusta, Beloit, Biloxi,
   Binghamton, Birmingham, Bowie, Bowling Green, Bradenton, Brooklyn, Buffalo, Cedar Rapids, Charleston,
   Charlotte, Chattanooga, Clearwater, Columbia, Columbus Clippers, Columbus Clingstones, Corpus Christi, Dayton,
@@ -60,14 +60,15 @@ below — do NOT re-enable the diagram for a league until its item is complete a
   San Jose, Scranton/Wilkes-Barre, Somerset, South Bend, Spokane, Springfield, St. Lucie, St. Paul,
   Stockton, Sugar Land, Syracuse, Tacoma [partial], Tampa, Toledo, Tri-City, Tulsa,
   Vancouver [partial], Visalia, West Michigan, Wichita, Wilmington, Wilson/Carolina,
-  Winston-Salem [partial], Wisconsin, Worcester [partial]). Quad Cities uses the
-  official UniversityTickets / Glitnir Modern Woodmen Park map (Reserved 1–11,
-  Bleachers 13; section 12 is not sold). The other 1 still needs official chart
-  IDs — Lake Elsinore Storm — do **not** fill it with a template or a 2017
-  Larimer / SeatGeek 100-level map. Do **not** publish section %.
-- **Work remaining:** transcribe Lake Elsinore's official club chart / Ticketmaster
-  map into `MILB_OFFICIAL_INVENTORIES` the same way, unique except shared bowls
-  (Roger Dean).
+  Winston-Salem [partial], Wisconsin, Worcester [partial], Lake Elsinore). Quad Cities
+  uses the official UniversityTickets / Glitnir Modern Woodmen Park map (Reserved
+  1–11, Bleachers 13; section 12 is not sold). Lake Elsinore uses the official
+  Ticketmaster seating map hosted on the club Ticketmaster Instructions page
+  (labeled 101–117 and outfield 119/121/123; 118 is not labeled). Do **not**
+  publish section %.
+- **Work remaining:** item 3 inventories are source-backed for all 120 MiLB ids.
+  Keep the interactive seating diagram off until measured bowl geometry exists
+  (item 4). Do **not** invent missing labels or re-enable diagrams.
 - **Done when:** all 120 MiLB ids have real, non-template sections + measured
   orientation; the coverage script passes with official (not generated) data.
 

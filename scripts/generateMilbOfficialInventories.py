@@ -2304,6 +2304,24 @@ OVERRIDES = {
             {"id": "quad-cities-diamond-club", "name": "Diamond Club", "level": "club", "compassOffset": 180, "span": 10},
         ],
     },
+    "lake-elsinore-storm": {
+        "officialUrl": "https://www.milb.com/lake-elsinore/tickets/ticketmasterinstructions",
+        "geometryUrl": "https://img.mlbstatic.com/milb-images/image/upload/t_w2208/milb/bkajb2svest6c8s1l2r7.png",
+        "notes": "Lake Elsinore Diamond official Ticketmaster seating map hosted on the club Ticketmaster Instructions page (overview bkajb2svest6c8s1l2r7 plus zoomed seat-picker uouxhipakvo84ernbz5n). Labeled bowl 101-117 and outfield odds 119/121/123; section 118 is not labeled and is not invented. 101HP is the Ticketmaster product code for Home Plate rows in 101, not a second section ID. Confirmation tickets print Sec 107 as 3rd Base Reserved. Map also labels Grass Berm, Upper Deck, and Lower Deck. Official 2026 hospitality copy adds Four Top, High Top, Luxury Suite, and Owner's Suite; picnic copy names the Oscar Tortola Party Deck (the map's Upper/Lower Deck). Diamond Taproom is an amenity, not a sold section. Third-party 2017 Larimer / SeatGeek maps are not used as the source.",
+        "bands": [
+            {"ids": [str(n) for n in range(101, 118)], "level": "lower", "namePrefix": "Section"},
+            {"ids": ["119", "121", "123"], "level": "lower", "namePrefix": "Section", "startOffset": 240, "endOffset": 300},
+        ],
+        "named": [
+            {"id": "lake-elsinore-grass-berm", "name": "Grass Berm", "level": "standing", "compassOffset": 20, "span": 22},
+            {"id": "lake-elsinore-four-top", "name": "Four Top Seating", "level": "club", "compassOffset": 90, "span": 14},
+            {"id": "lake-elsinore-high-top", "name": "High Top", "level": "club", "compassOffset": 180, "span": 12},
+            {"id": "lake-elsinore-luxury-suite", "name": "Luxury Suite", "level": "suite", "compassOffset": 180, "span": 16},
+            {"id": "lake-elsinore-owners-suite", "name": "Owner's Suite", "level": "suite", "compassOffset": 160, "span": 12},
+            {"id": "lake-elsinore-oscar-tortola-party-deck", "name": "Oscar Tortola Party Deck", "level": "club", "compassOffset": 280, "span": 16},
+            {"id": "lake-elsinore-lower-deck", "name": "Lower Deck", "level": "standing", "compassOffset": 300, "span": 12},
+        ],
+    },
 }
 
 
