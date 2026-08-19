@@ -1333,15 +1333,17 @@ export const MILB_ORIENTATION_PROVENANCE: OrientationProvenance[] = [
   },
   {
     stadiumId: "carolina-mudcats",
-    orientation: 86,
+    orientation: 88,
     confidence: "estimated",
     precisionDeg: 15,
     method: "satellite-visual",
     sources: [
-      "Esri World Imagery 2026-08-18: HP W, CF E ~86°",
-      "Coordinates: MLB Stats API Five County Stadium (35.81726,-78.27122)",
+      "OSM baseball pitch way 1497199653 PCA long axis 88.4°; west vertex cluster is HP (grandstand on Goldsboro St), east is CF",
+      "Esri World Imagery 2026-08-19: Wilson Ballpark bowl on the west side of the diamond, field opens east",
+      "BaseballParks.com Wilson Ballpark: field points East",
+      "Coordinates: OSM pitch centroid 35.72115,-77.91422 (MLB Stats API venue 7254 has address only)",
     ],
-    notes: "CORRECTED from 340° default.",
+    notes: "NEW 2026 Wilson Ballpark. Franchise left Five County Stadium in Zebulon.",
     lastReviewed: REVIEWED,
   },
   {
@@ -1385,15 +1387,17 @@ export const MILB_ORIENTATION_PROVENANCE: OrientationProvenance[] = [
   },
   {
     stadiumId: "down-east-wood-ducks",
-    orientation: 90,
+    orientation: 35,
     confidence: "estimated",
     precisionDeg: 15,
     method: "satellite-visual",
     sources: [
-      "Esri World Imagery 2026-08-18: HP W, CF E ~90°",
-      "Coordinates: MLB Stats API Grainger Stadium (35.27036,-77.57397)",
+      "OSM baseball pitch way 1363175881 PCA long axis 34.8°; HP at the south/southwest grandstand apex, CF northeast",
+      "Esri World Imagery 2026-08-19: Fifth Third Park HP near W Henry St, railroad west of 3B, field opens NNE/NE",
+      "BaseballParks.com Fifth Third Park: field points north by northeast",
+      "Coordinates: MLB Stats API Fifth Third Park (34.94494,-81.93594)",
     ],
-    notes: "CORRECTED from 40°.",
+    notes: "NEW 2025 Fifth Third Park. Franchise left Grainger Stadium in Kinston after 2024.",
     lastReviewed: REVIEWED,
   },
   {

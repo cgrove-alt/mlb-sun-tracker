@@ -43,13 +43,13 @@ below — do NOT re-enable the diagram for a league until its item is complete a
   where CF actually faces north (Syracuse, Rome, Lansing).
 - **Still blocking diagrams:** the live path no longer emits `generateBaseballSections`
   or Field-100 clones. Parks without a transcribed official chart now return empty
-  (fail closed). One hundred fourteen parks have source-backed inventories (Aberdeen, Akron,
+  (fail closed). One hundred seventeen parks have source-backed inventories (Aberdeen, Akron,
   Albuquerque [partial], Altoona, Amarillo, Arkansas, Asheville, Augusta, Beloit, Biloxi,
-  Binghamton, Birmingham, Bowling Green, Bradenton, Brooklyn, Buffalo, Cedar Rapids, Charleston,
+  Binghamton, Birmingham, Bowie, Bowling Green, Bradenton, Brooklyn, Buffalo, Cedar Rapids, Charleston,
   Charlotte, Chattanooga, Clearwater, Columbia, Columbus Clippers, Corpus Christi, Dayton,
   Daytona, Delmarva, Dunedin, Durham, El Paso, Erie, Eugene, Everett, Fayetteville, Fort Myers,
   Fort Wayne [partial], Fredericksburg, Fresno [partial], Frisco, Great Lakes, Greensboro [partial],
-  Greenville, Gwinnett, Harrisburg, Hartford, Hickory, Hillsboro, Hudson Valley,
+  Greenville, Gwinnett, Harrisburg, Hartford, Hickory, Hillsboro, Hub City/Down East, Hudson Valley,
   Indianapolis [partial], Inland Empire, Iowa, Jacksonville, Jersey Shore, Jupiter,
   Kannapolis [partial], Knoxville, Lake County, Lakeland, Lansing, Las Vegas, Lehigh Valley,
   Louisville, Lynchburg, Memphis [partial], Midland [partial], Montgomery,
@@ -59,9 +59,9 @@ below — do NOT re-enable the diagram for a league until its item is complete a
   Rocket City, Rome, Round Rock [partial], Sacramento, Salem, Salt Lake, San Antonio,
   San Jose, Scranton/Wilkes-Barre, Somerset, South Bend, Spokane, Springfield, St. Lucie, St. Paul,
   Stockton, Sugar Land, Syracuse, Tacoma [partial], Tampa, Toledo, Tri-City, Tulsa,
-  Vancouver [partial], Visalia, West Michigan, Wichita, Wilmington, Winston-Salem [partial],
-  Wisconsin, Worcester [partial]). The
-  other 6 still need official chart IDs — do **not** fill them with a template.
+  Vancouver [partial], Visalia, West Michigan, Wichita, Wilmington, Wilson/Carolina,
+  Winston-Salem [partial], Wisconsin, Worcester [partial]). The
+  other 3 still need official chart IDs — do **not** fill them with a template.
   Do **not** publish section %.
 - **Work remaining:** transcribe the remaining official club charts / maps into
   `MILB_OFFICIAL_INVENTORIES` the same way, unique except shared bowls (Roger Dean).

@@ -792,16 +792,16 @@ export const singleAStadiumGuides: Record<string, StadiumGuide> = {
   },
   'carolina-mudcats': {
     id: 'carolina-mudcats',
-    name: 'Five County Stadium',
-    team: 'Carolina Mudcats',
-    opened: 1991,
-    capacity: 6500,
+    name: 'Wilson Ballpark',
+    team: 'Wilson Warbirds',
+    opened: 2026,
+    capacity: 5000,
     overview: {
-      description: 'Five County Stadium in Zebulon, North Carolina, is the home of the Carolina Mudcats, Brewers Single-A affiliate. This updated facility maintains its classic charm with a capacity of 6500 fans. ',
+      description: 'Wilson Ballpark in Wilson, North Carolina, is the 2026 home of the Wilson Warbirds (franchise id carolina-mudcats), Brewers Single-A affiliate. The new downtown park holds 5000 fans. ',
       highlights: [
-        'Brewers Single-A affiliate since 2000',
-        'Renovated Classic facility',
-        'Zebulon landmark',
+        'Brewers Single-A affiliate',
+        'Opened 2026 downtown Wilson',
+        'Wilson landmark',
         'Family-friendly atmosphere',
         'Spacious concourses'
       ],
@@ -978,14 +978,14 @@ export const singleAStadiumGuides: Record<string, StadiumGuide> = {
       }
     },
     neighborhood: {
-      name: 'Zebulon area',
+      name: 'Wilson downtown',
       description: 'Suburban location with nearby amenities',
       beforeGame: ['Sports bars', 'Restaurants', 'Nearby parks'],
       afterGame: ['Family restaurants', 'Local favorites'],
       radius: 'Short drive'
     },
     transportation: {
-      address: '6500 Five County Stadium, Zebulon, North Carolina',
+      address: '401 Goldsboro Street S, Wilson, North Carolina',
       publicTransit: {
         bus: [
           { routes: ['Local routes'], stops: ['Stadium stop'] }
@@ -2896,16 +2896,16 @@ export const singleAStadiumGuides: Record<string, StadiumGuide> = {
   },
   'down-east-wood-ducks': {
     id: 'down-east-wood-ducks',
-    name: 'Grainger Stadium',
-    team: 'Down East Wood Ducks',
-    opened: 1949,
-    capacity: 4100,
+    name: 'Fifth Third Park',
+    team: 'Hub City Spartanburgers',
+    opened: 2025,
+    capacity: 5250,
     overview: {
-      description: 'Grainger Stadium in Kinston, North Carolina, is the home of the Down East Wood Ducks, Rangers Single-A affiliate. This historic venue offers nostalgic baseball with intimate seating for 4100 fans. ',
+      description: 'Fifth Third Park in Spartanburg, South Carolina, is the home of the Hub City Spartanburgers (franchise id down-east-wood-ducks), Rangers High-A affiliate. The 2025 downtown park holds 5250 fans. ',
       highlights: [
-        'Rangers Single-A affiliate since 2000',
-        'Historic facility',
-        'Kinston landmark',
+        'Rangers High-A affiliate since 2025',
+        'Opened 2025 downtown Spartanburg',
+        'Spartanburg landmark',
         'Family-friendly atmosphere',
         'Intimate setting'
       ],
@@ -3082,14 +3082,14 @@ export const singleAStadiumGuides: Record<string, StadiumGuide> = {
       }
     },
     neighborhood: {
-      name: 'Kinston area',
+      name: 'Spartanburg downtown',
       description: 'Suburban location with nearby amenities',
       beforeGame: ['Sports bars', 'Restaurants', 'Nearby parks'],
       afterGame: ['Family restaurants', 'Local favorites'],
       radius: 'Short drive'
     },
     transportation: {
-      address: '4100 Grainger Stadium, Kinston, North Carolina',
+      address: '300 W Henry Street, Spartanburg, South Carolina',
       publicTransit: {
         bus: [
           { routes: ['Local routes'], stops: ['Stadium stop'] }

@@ -3309,7 +3309,7 @@ const RAW_UNIFIED_VENUES: UnifiedVenue[] = [
     "id": "bowie-baysox",
     "name": "Prince George's Stadium",
     "league": "MiLB",
-    "team": "Bowie Baysox",
+    "team": "Chesapeake Baysox",
     "alternateTeams": [
       "Baltimore Orioles"
     ],
@@ -5683,13 +5683,13 @@ const RAW_UNIFIED_VENUES: UnifiedVenue[] = [
   },
   {
     "id": "carolina-mudcats",
-    "name": "Five County Stadium",
+    "name": "Wilson Ballpark",
     "league": "MiLB",
-    "team": "Carolina Mudcats",
+    "team": "Wilson Warbirds",
     "alternateTeams": [
       "Milwaukee Brewers"
     ],
-    "city": "Zebulon",
+    "city": "Wilson",
     "state": "NC",
     "latitude": 35.8272,
     "longitude": -78.3031,
@@ -5713,8 +5713,8 @@ const RAW_UNIFIED_VENUES: UnifiedVenue[] = [
     "venueType": "baseball",
     "sport": "baseball",
     "surface": "grass",
-    "opened": 1991,
-    "address": "Zebulon, NC",
+    "opened": 2026,
+    "address": "401 Goldsboro Street S, Wilson, NC",
     "level": "A"
   },
   {
@@ -5827,14 +5827,14 @@ const RAW_UNIFIED_VENUES: UnifiedVenue[] = [
   },
   {
     "id": "down-east-wood-ducks",
-    "name": "Grainger Stadium",
+    "name": "Fifth Third Park",
     "league": "MiLB",
-    "team": "Down East Wood Ducks",
+    "team": "Hub City Spartanburgers",
     "alternateTeams": [
       "Texas Rangers"
     ],
-    "city": "Kinston",
-    "state": "NC",
+    "city": "Spartanburg",
+    "state": "SC",
     "latitude": 35.2703,
     "longitude": -77.5753,
     "orientation": 40,
@@ -5857,9 +5857,9 @@ const RAW_UNIFIED_VENUES: UnifiedVenue[] = [
     "venueType": "baseball",
     "sport": "baseball",
     "surface": "grass",
-    "opened": 1949,
-    "address": "Kinston, NC",
-    "level": "A"
+    "opened": 2025,
+    "address": "300 W Henry Street, Spartanburg, SC",
+    "level": "A+"
   },
   {
     "id": "fayetteville-woodpeckers",

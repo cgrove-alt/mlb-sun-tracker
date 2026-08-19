@@ -138,6 +138,9 @@ export const SOURCE_BACKED_INVENTORY_STADIUMS: ReadonlySet<string> = new Set([
   'tri-city-dust-devils',
   'dunedin-blue-jays',
   'west-michigan-whitecaps',
+  'carolina-mudcats',
+  'down-east-wood-ducks',
+  'bowie-baysox',
 ]);
 
 function stdev(xs: number[]): number {

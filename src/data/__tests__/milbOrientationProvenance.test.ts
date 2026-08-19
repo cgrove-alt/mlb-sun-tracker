@@ -73,6 +73,12 @@ describe('MiLB orientation provenance', () => {
     expect(byId.get('salt-lake-bees')!.latitude).toBeCloseTo(40.5497, 4);
     expect(byId.get('columbus-clingstones')!.latitude).toBeCloseTo(32.45235, 5);
     expect(byId.get('knoxville-smokies')!.latitude).toBeCloseTo(35.97221, 5);
+    expect(byId.get('carolina-mudcats')!.name).toBe('Wilson Ballpark');
+    expect(byId.get('carolina-mudcats')!.latitude).toBeCloseTo(35.72115, 5);
+    expect(byId.get('carolina-mudcats')!.orientation).toBe(88);
+    expect(byId.get('down-east-wood-ducks')!.name).toBe('Fifth Third Park');
+    expect(byId.get('down-east-wood-ducks')!.latitude).toBeCloseTo(34.94494, 5);
+    expect(byId.get('down-east-wood-ducks')!.orientation).toBe(35);
     expect(byId.get('sacramento-river-cats')!.orientation).toBe(20);
     expect(angularDistance(158, 65)).toBeGreaterThan(80);
     expect(angularDistance(150, 90)).toBeGreaterThan(40);
