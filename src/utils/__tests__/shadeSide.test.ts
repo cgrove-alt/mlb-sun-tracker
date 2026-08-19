@@ -41,9 +41,18 @@ describe('bestShadedSideForDayGame — football', () => {
 });
 
 describe('baseballShadedBaseline follows grandstand self-shade, not a 3B default', () => {
-  it('puts Yankee Stadium (orientation 55°) afternoon shade on the first-base side', () => {
-    expect(baseballShadedBaseline(55, 250)).toBe('first base side');
-    expect(baseballSunnyBaseline(55, 250)).toBe('third base side');
+  it('puts Yankee Stadium (orientation 55°) midday shade on the first-base side', () => {
+    expect(baseballShadedBaseline(55, 180)).toBe('first base side');
+    expect(baseballSunnyBaseline(55, 180)).toBe('third base side');
+  });
+
+  it('puts Yankee Stadium afternoon shade on the third-base side as the sun moves west', () => {
+    expect(baseballShadedBaseline(55, 250)).toBe('third base side');
+  });
+
+  it('puts Comerica (orientation 145°) afternoon shade on the first-base side, not a 3B default', () => {
+    expect(baseballShadedBaseline(145, 250)).toBe('first base side');
+    expect(baseballSunnyBaseline(145, 250)).toBe('third base side');
   });
 
   it('puts Wrigley-class north parks (orientation 13°) afternoon shade on the third-base side', () => {

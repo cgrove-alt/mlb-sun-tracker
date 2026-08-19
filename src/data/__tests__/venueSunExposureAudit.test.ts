@@ -260,35 +260,44 @@ describe('NFL shade math no longer uses the baseball rotation', () => {
   it('getSectionSunExposure / calculateRowShadows use compass-from-north, not baseball-local', () => {
     const highmark = NFL_STADIUMS.find((s) => s.id === 'highmark-stadium')!;
     expect(highmark.orientation).toBe(0);
-    const north = {
+    const northSection = {
       id: 'north',
       name: 'North',
       level: 'lower' as const,
       baseAngle: 0,
       angleSpan: 10,
       covered: false,
-      rows: [{ rowNumber: '1', seats: 10, elevation: 10, depth: 20 }],
     };
-    const south = {
-      ...north,
+    const southSection = {
       id: 'south',
       name: 'South',
+      level: 'lower' as const,
       baseAngle: 180,
+      angleSpan: 10,
+      covered: false,
+    };
+    const northRows = {
+      ...northSection,
+      rows: [{ rowNumber: '1', seats: 10, elevation: 10, depth: 20 }],
+    };
+    const southRows = {
+      ...southSection,
+      rows: [{ rowNumber: '1', seats: 10, elevation: 10, depth: 20 }],
     };
     // Midsummer afternoon, sun in the south.
     const alt = 45;
     const az = 180;
-    const nflNorth = getSectionSunExposure(north, alt, az, highmark.orientation, 'compass-from-north');
-    const nflSouth = getSectionSunExposure(south, alt, az, highmark.orientation, 'compass-from-north');
-    const baseballNorth = getSectionSunExposure(north, alt, az, highmark.orientation, 'baseball-local');
+    const nflNorth = getSectionSunExposure(northSection, alt, az, highmark.orientation, 'compass-from-north');
+    const nflSouth = getSectionSunExposure(southSection, alt, az, highmark.orientation, 'compass-from-north');
+    const baseballNorth = getSectionSunExposure(northSection, alt, az, highmark.orientation, 'baseball-local');
     expect(nflSouth).toBeLessThan(nflNorth);
     expect(nflNorth).not.toBe(baseballNorth);
-    expect(isSectionInSun(south, az, alt, highmark.orientation, 'compass-from-north')).toBe(false);
-    expect(isSectionInSun(north, az, alt, highmark.orientation, 'compass-from-north')).toBe(true);
+    expect(isSectionInSun(southSection, az, alt, highmark.orientation, 'compass-from-north')).toBe(false);
+    expect(isSectionInSun(northSection, az, alt, highmark.orientation, 'compass-from-north')).toBe(true);
 
-    const rowNorth = calculateRowShadows(north, alt, az, highmark.orientation, 'compass-from-north');
-    const rowSouth = calculateRowShadows(south, alt, az, highmark.orientation, 'compass-from-north');
-    const rowNorthBaseball = calculateRowShadows(north, alt, az, highmark.orientation, 'baseball-local');
+    const rowNorth = calculateRowShadows(northRows, alt, az, highmark.orientation, 'compass-from-north');
+    const rowSouth = calculateRowShadows(southRows, alt, az, highmark.orientation, 'compass-from-north');
+    const rowNorthBaseball = calculateRowShadows(northRows, alt, az, highmark.orientation, 'baseball-local');
     expect(rowSouth.averageCoverage).toBeGreaterThan(rowNorth.averageCoverage);
     expect(rowNorth.averageCoverage).not.toBe(rowNorthBaseball.averageCoverage);
   });

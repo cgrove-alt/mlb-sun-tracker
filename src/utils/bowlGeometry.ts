@@ -110,17 +110,23 @@ export function sectionCompassAngle(
  */
 export type SectionAngleConvention = 'baseball-local' | 'compass-from-north';
 
-export function sectionAngleConventionFor(venue: {
+export function sectionAngleConventionFor(venue?: {
   league?: string;
   venueType?: string;
   sport?: string;
   sectionAngleConvention?: SectionAngleConvention;
-}): SectionAngleConvention {
-  if (venue.sectionAngleConvention) return venue.sectionAngleConvention;
+} | object | null): SectionAngleConvention {
+  const v = (venue ?? {}) as {
+    league?: string;
+    venueType?: string;
+    sport?: string;
+    sectionAngleConvention?: SectionAngleConvention;
+  };
+  if (v.sectionAngleConvention) return v.sectionAngleConvention;
   if (
-    venue.league === 'NFL'
-    || venue.venueType === 'football'
-    || venue.sport === 'football'
+    v.league === 'NFL'
+    || v.venueType === 'football'
+    || v.sport === 'football'
   ) {
     return 'compass-from-north';
   }
