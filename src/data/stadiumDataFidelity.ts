@@ -131,6 +131,13 @@ export const SOURCE_BACKED_INVENTORY_STADIUMS: ReadonlySet<string> = new Set([
   'chattanooga-lookouts',
   'binghamton-rumble-ponies',
   'south-bend-cubs',
+  'el-paso-chihuahuas',
+  'reno-aces',
+  'spokane-indians',
+  'eugene-emeralds',
+  'tri-city-dust-devils',
+  'dunedin-blue-jays',
+  'west-michigan-whitecaps',
 ]);
 
 function stdev(xs: number[]): number {
