@@ -2266,6 +2266,23 @@ OVERRIDES = {
             {"id": "bowie-birthday-tent", "name": "Luminis Health Birthday Tent", "level": "standing", "compassOffset": 40, "span": 10},
         ],
     },
+    "columbus-clingstones": {
+        "officialUrl": "https://www.milb.com/columbus-clingstones/tickets/season-memberships",
+        "geometryUrl": "https://img.mlbstatic.com/milb-images/image/upload/t_w2208/milb/jtd4re8i13hxwmlwjlw4.jpg",
+        "notes": "Synovus Park official 2026 seating map on the season-memberships page: lower 101-113 (home dugout 102-103, visitor 111-112), upper 201-213, Aflac Club 301-305, unlabeled Suite Level, plus The Peach Pit, 3B/1B FCFS-GA, and WC Bradley Backyard. A-Z ADA copy is a subset (103/104/105/107/109/110/111 and club 301-302) and is not treated as the full bowl. Pricing-band names are not section IDs.",
+        "bands": [
+            {"ids": [str(n) for n in range(101, 114)], "level": "lower", "namePrefix": "Section"},
+            {"ids": [str(n) for n in range(201, 214)], "level": "upper", "namePrefix": "Section", "startOffset": 74, "endOffset": 286},
+            {"ids": [str(n) for n in range(301, 306)], "level": "club", "namePrefix": "Aflac Club", "startOffset": 220, "endOffset": 270},
+        ],
+        "named": [
+            {"id": "clingstones-suite-level", "name": "Suite Level", "level": "suite", "compassOffset": 180, "span": 24},
+            {"id": "clingstones-peach-pit", "name": "The Peach Pit", "level": "club", "compassOffset": 300, "span": 12},
+            {"id": "clingstones-fcfs-ga-3b", "name": "FCFS-GA (Third Base)", "level": "standing", "compassOffset": 320, "span": 14},
+            {"id": "clingstones-fcfs-ga-1b", "name": "FCFS-GA (First Base)", "level": "standing", "compassOffset": 50, "span": 14},
+            {"id": "clingstones-wc-bradley-backyard", "name": "WC Bradley Backyard", "level": "standing", "compassOffset": 30, "span": 16},
+        ],
+    },
 }
 
 
