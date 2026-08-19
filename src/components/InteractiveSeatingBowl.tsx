@@ -6,6 +6,7 @@ import { getSunPosition } from '../utils/sunPosition';
 import { getSectionSunExposure } from '../utils/sectionSunCalculations';
 import { reconciledExposure } from '../utils/sectionShadeTier';
 import { stadiumLocalToUTC } from '../utils/stadiumTime';
+import { sectionAngleConventionFor } from '../utils/bowlGeometry';
 
 // MLB-only, SECTION-LEVEL shade guide. Draws the seating bowl as a ring of
 // discrete wedges (one per section, positioned by baseAngle/angleSpan) colored
@@ -138,10 +139,11 @@ export function InteractiveSeatingBowl({
     const belowHorizon = !sun || sun.altitudeDegrees <= 0;
     const srList: string[] = [];
 
+    const convention = sectionAngleConventionFor({ sport });
     const wedges = drawable.map((s, i) => {
       const raw = domed || belowHorizon || !sun
         ? 0
-        : getSectionSunExposure(s, sun.altitudeDegrees, sun.azimuthDegrees, orientation);
+        : getSectionSunExposure(s, sun.altitudeDegrees, sun.azimuthDegrees, orientation, convention);
       // Reconcile with the table's structural tier: never show more sun than the
       // tier permits (covered→0, partial→≤35, fixed dome→0).
       const exposure = reconciledExposure(raw, s, domed || belowHorizon);
@@ -156,7 +158,7 @@ export function InteractiveSeatingBowl({
     });
 
     return { sun, wedges, counts, srList };
-  }, [drawable, dateStr, timeStr, timezone, latitude, longitude, orientation, domed]);
+  }, [drawable, dateStr, timeStr, timezone, latitude, longitude, orientation, domed, sport]);
 
   if (drawable.length < 6) return null;
 

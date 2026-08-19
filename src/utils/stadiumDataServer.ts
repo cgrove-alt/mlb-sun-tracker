@@ -7,6 +7,8 @@ import {
 } from './sectionSunCalculations';
 import { stadiumLocalToUTC } from './stadiumTime';
 import { canPublishSeatLevelShade } from '../data/stadiumShadeConfidence';
+import { sectionAngleConventionFor, requireFiniteOrientation } from './bowlGeometry';
+import { baseballShadedBaseline, baseballSunnyBaseline, bestShadedSideForDayGame } from './shadeSide';
 
 function assertSeatLevelShadePublished(stadium: Stadium): void {
   if (!canPublishSeatLevelShade(stadium.id)) {
@@ -70,11 +72,15 @@ export function calculateShadePercentage(
     return 100; // Sun below horizon: section in shade.
   }
 
+  const orientation = requireFiniteOrientation(stadium.orientation, stadium.id);
+  const convention = sectionAngleConventionFor(stadium);
+
   if (!isSectionInSun(
     section,
     sunPosition.azimuthDegrees,
     sunPosition.altitudeDegrees,
-    stadium.orientation,
+    orientation,
+    convention,
   )) {
     return 100;
   }
@@ -83,7 +89,8 @@ export function calculateShadePercentage(
     section,
     sunPosition.altitudeDegrees,
     sunPosition.azimuthDegrees,
-    stadium.orientation,
+    orientation,
+    convention,
   );
 
   return Math.max(0, Math.min(100, 100 - exposure));
@@ -189,13 +196,28 @@ export interface TimeRecommendation {
 
 export function getTimeRecommendations(stadium: Stadium): TimeRecommendation[] {
   assertSeatLevelShadePublished(stadium);
+  requireFiniteOrientation(stadium.orientation, stadium.id);
   const recommendations: TimeRecommendation[] = [];
+  const afternoonSun = getSunPosition(
+    representativeDate(7, 16, stadium.timezone || 'UTC'),
+    stadium.latitude,
+    stadium.longitude,
+  );
+  const eveningSun = getSunPosition(
+    representativeDate(7, 19, stadium.timezone || 'UTC'),
+    stadium.latitude,
+    stadium.longitude,
+  );
+  const afternoonShade = baseballShadedBaseline(stadium.orientation, afternoonSun.azimuthDegrees);
+  const afternoonSunSide = baseballSunnyBaseline(stadium.orientation, afternoonSun.azimuthDegrees);
+  const eveningShade = baseballShadedBaseline(stadium.orientation, eveningSun.azimuthDegrees);
+  const dayShade = bestShadedSideForDayGame(stadium.orientation);
   
   // Day game (1 PM)
   recommendations.push({
     time: '1:00 PM',
     hour: 13,
-    generalAdvice: 'Maximum sun exposure. Shade is essential for comfort.',
+    generalAdvice: `Maximum sun exposure. Shade is essential for comfort; the ${dayShade} falls into shade first.`,
     bestLevels: ['Upper Deck', 'Club Level (covered sections)', 'Shaded Concourse Areas'],
     avoidAreas: ['Field Level (sections 1-20)', 'Outfield Bleachers', 'Uncovered Lower Bowl']
   });
@@ -204,21 +226,25 @@ export function getTimeRecommendations(stadium: Stadium): TimeRecommendation[] {
   recommendations.push({
     time: '4:00 PM',
     hour: 16,
-    generalAdvice: 'Afternoon sun creates shadows from third base side.',
-    bestLevels: ['Third Base Side (all levels)', 'Upper Deck Behind Home', 'Club Level'],
-    avoidAreas: ['First Base Side (lower levels)', 'Right Field', 'Sections facing west']
+    generalAdvice: `Afternoon sun creates shadows on the ${afternoonShade}.`,
+    bestLevels: [`${titleCaseSide(afternoonShade)} (all levels)`, 'Upper Deck Behind Home', 'Club Level'],
+    avoidAreas: [`${titleCaseSide(afternoonSunSide)} (lower levels)`, 'Outfield facing the sun', 'Uncovered seats opposite the shade line']
   });
   
   // Evening game (7 PM)
   recommendations.push({
     time: '7:00 PM',
     hour: 19,
-    generalAdvice: 'Low western sun can create glare before sunset; use only validated section results.',
+    generalAdvice: `Low western sun can create glare before sunset; the ${eveningShade} is the shaded baseline.`,
     bestLevels: ['Any Level (except outfield)', 'Behind Home Plate', 'Baseline Sections'],
-    avoidAreas: ['Outfield Sections (sunset glare)', 'Sections 301-310 (if facing west)']
+    avoidAreas: ['Outfield Sections (sunset glare)', 'Uncovered seats on the sun-facing baseline']
   });
   
   return recommendations;
+}
+
+function titleCaseSide(side: string): string {
+  return side.replace(/\b\w/g, (c) => c.toUpperCase());
 }
 
 // Generate static shade report for SEO
@@ -227,6 +253,7 @@ export function generateStaticShadeReport(
   sections: StadiumSection[]
 ): string {
   assertSeatLevelShadePublished(stadium);
+  requireFiniteOrientation(stadium.orientation, stadium.id);
   const coveredCount = sections.filter(s => s.covered).length;
   const upperCount = sections.filter(s => s.level === 'upper').length;
   
@@ -237,9 +264,14 @@ export function generateStaticShadeReport(
   report += `Validated Covered Sections: ${coveredCount}\n`;
   report += `Validated Upper Deck Sections: ${upperCount}\n\n`;
   
+  const afternoonShade = baseballShadedBaseline(
+    stadium.orientation,
+    getSunPosition(representativeDate(7, 16, stadium.timezone || 'UTC'), stadium.latitude, stadium.longitude).azimuthDegrees,
+  );
+
   report += `Best Times for Shade:\n`;
-  report += `- Day Games (1 PM): Upper deck and covered sections only\n`;
-  report += `- Afternoon Games (4 PM): Third base side and upper levels\n`;
+  report += `- Day Games (1 PM): Upper deck and covered sections only; ${bestShadedSideForDayGame(stadium.orientation)} first\n`;
+  report += `- Afternoon Games (4 PM): ${afternoonShade} and upper levels\n`;
   report += `- Evening Games (7 PM): Most sections except outfield\n\n`;
   
   report += `Seasonal Considerations:\n`;
@@ -271,7 +303,7 @@ export function sanitizeStadiumData(stadium: any): Stadium {
     state: String(stadium.state || ''),
     latitude: Number(stadium.latitude) || 0,
     longitude: Number(stadium.longitude) || 0,
-    orientation: Number(stadium.orientation) || 0,
+    orientation: Number.isFinite(Number(stadium.orientation)) ? Number(stadium.orientation) : Number.NaN,
     roof: stadium.roof || 'open',
     capacity: Number(stadium.capacity) || 40000, // Default capacity
     roofHeight: stadium.roofHeight || undefined,

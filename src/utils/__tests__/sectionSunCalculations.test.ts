@@ -98,10 +98,15 @@ describe('isSectionInSun', () => {
     expect(isSectionInSun(sec, 180, 60, RATE_FIELD_ORIENTATION)).toBe(false);
   });
 
-  it('is true for any uncovered section above the horizon', () => {
-    for (const baseAngle of [FIRST_BASE_SIDE, CENTER_FIELD, THIRD_BASE_SIDE, BEHIND_HOME]) {
-      expect(isSectionInSun(lowerBowl('s', baseAngle), 280, 8, RATE_FIELD_ORIENTATION)).toBe(true);
-    }
+  it('uses orientation: Rate Field 1B is shaded and 3B is in sun at western sunset', () => {
+    // Same geometry as getSectionSunExposure: sun-side of the bowl is shaded.
+    const oneB = lowerBowl('1B', FIRST_BASE_SIDE);
+    const threeB = lowerBowl('3B', THIRD_BASE_SIDE);
+    expect(isSectionInSun(oneB, 280, 8, RATE_FIELD_ORIENTATION)).toBe(false);
+    expect(isSectionInSun(threeB, 280, 8, RATE_FIELD_ORIENTATION)).toBe(true);
+    expect(isSectionInSun(oneB, 280, 8, RATE_FIELD_ORIENTATION)).toBe(
+      getSectionSunExposure(oneB, 8, 280, RATE_FIELD_ORIENTATION) > 50,
+    );
   });
 });
 

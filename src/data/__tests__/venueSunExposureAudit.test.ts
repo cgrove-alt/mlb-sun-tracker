@@ -21,12 +21,14 @@ import { canPublishVenueSeatShade } from '../stadiumShadeConfidence';
 import { MLB_ORIENTATION_PROVENANCE, getOrientationProvenance } from '../stadiumOrientationProvenance';
 import { NFL_ORIENTATION_PROVENANCE } from '../nflOrientationProvenance';
 import { MILB_ORIENTATION_PROVENANCE } from '../milbOrientationProvenance';
-import { SunCalculator } from '../../utils/sunCalculator';
+import { SunCalculator, calculateRowShadows } from '../../utils/sunCalculator';
 import { getUnifiedVenueShade } from '../../utils/getUnifiedVenueShade';
 import {
   sectionAngleConventionFor,
   venueSectionCompassAngle,
+  requireFiniteOrientation,
 } from '../../utils/bowlGeometry';
+import { getSectionSunExposure, isSectionInSun } from '../../utils/sectionSunCalculations';
 import { getSunPosition } from '../../utils/sunPosition';
 import { calendarDateAndTimeToUTC } from '../../utils/stadiumTime';
 import { bestShadedSideForDayGame } from '../../utils/shadeSide';
@@ -254,6 +256,42 @@ describe('NFL shade math no longer uses the baseball rotation', () => {
       expect(venueSectionCompassAngle({ baseAngle: 0, angleSpan: 0 }, venue.orientation, convention)).toBe(0);
     }
   });
+
+  it('getSectionSunExposure / calculateRowShadows use compass-from-north, not baseball-local', () => {
+    const highmark = NFL_STADIUMS.find((s) => s.id === 'highmark-stadium')!;
+    expect(highmark.orientation).toBe(0);
+    const north = {
+      id: 'north',
+      name: 'North',
+      level: 'lower' as const,
+      baseAngle: 0,
+      angleSpan: 10,
+      covered: false,
+      rows: [{ rowNumber: '1', seats: 10, elevation: 10, depth: 20 }],
+    };
+    const south = {
+      ...north,
+      id: 'south',
+      name: 'South',
+      baseAngle: 180,
+    };
+    // Midsummer afternoon, sun in the south.
+    const alt = 45;
+    const az = 180;
+    const nflNorth = getSectionSunExposure(north, alt, az, highmark.orientation, 'compass-from-north');
+    const nflSouth = getSectionSunExposure(south, alt, az, highmark.orientation, 'compass-from-north');
+    const baseballNorth = getSectionSunExposure(north, alt, az, highmark.orientation, 'baseball-local');
+    expect(nflSouth).toBeLessThan(nflNorth);
+    expect(nflNorth).not.toBe(baseballNorth);
+    expect(isSectionInSun(south, az, alt, highmark.orientation, 'compass-from-north')).toBe(false);
+    expect(isSectionInSun(north, az, alt, highmark.orientation, 'compass-from-north')).toBe(true);
+
+    const rowNorth = calculateRowShadows(north, alt, az, highmark.orientation, 'compass-from-north');
+    const rowSouth = calculateRowShadows(south, alt, az, highmark.orientation, 'compass-from-north');
+    const rowNorthBaseball = calculateRowShadows(north, alt, az, highmark.orientation, 'baseball-local');
+    expect(rowSouth.averageCoverage).toBeGreaterThan(rowNorth.averageCoverage);
+    expect(rowNorth.averageCoverage).not.toBe(rowNorthBaseball.averageCoverage);
+  });
 });
 
 describe('published football shade-side claims stay directionally true', () => {
@@ -301,5 +339,35 @@ describe('sun position is computable for every stadium at a 1 PM local start', (
       if (sun.altitudeDegrees <= 0) failures.push(`${venue.id} night-at-1pm`);
     }
     expect(failures).toEqual([]);
+  });
+});
+
+describe('orientation 0 is preserved and missing orientation is refused', () => {
+  it('accepts a documented 0° axis', () => {
+    expect(requireFiniteOrientation(0, 'highmark-stadium')).toBe(0);
+  });
+
+  it('refuses undefined / NaN instead of aiming the bowl north', () => {
+    expect(() => requireFiniteOrientation(undefined, 'missing')).toThrow(/refusing to invent/);
+    expect(() => requireFiniteOrientation(Number.NaN, 'missing')).toThrow(/refusing to invent/);
+  });
+
+  it('SunCalculator still treats a 0° open park as north-facing, not "missing"', () => {
+    const calc = new SunCalculator({
+      id: 'highmark-stadium',
+      name: 'Highmark',
+      latitude: 42.77,
+      longitude: -78.79,
+      orientation: 0,
+      league: 'NFL',
+      roof: 'open',
+    } as any);
+    const sun = { altitude: 45, azimuth: 180 } as any;
+    const north = { id: 'n', name: 'N', level: 'lower' as const, baseAngle: 0, angleSpan: 10, covered: false };
+    const south = { ...north, id: 's', name: 'S', baseAngle: 180 };
+    const shadows = calc.calculateShadows(sun, [north, south]);
+    const n = shadows.find((s) => s.sectionId === 'n')!;
+    const s = shadows.find((s) => s.sectionId === 's')!;
+    expect(s.sunExposure).toBeLessThan(n.sunExposure);
   });
 });

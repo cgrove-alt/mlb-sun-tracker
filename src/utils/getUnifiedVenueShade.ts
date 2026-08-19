@@ -9,6 +9,7 @@ import {
   sectionAngleConventionFor,
   structuralShadeFraction,
   horizonBlockFactor,
+  requireFiniteOrientation,
   type SeatingLevel,
 } from './bowlGeometry';
 
@@ -133,9 +134,10 @@ function calculateSectionShade(
     // Baseball sections are stadium-local (0 = 1B … 270 = home). NFL sections
     // are already compass-from-north. Pick the conversion from the venue type
     // rather than assuming every bowl is a baseball diamond.
+    const orientation = requireFiniteOrientation(venue.orientation, venue.id);
     const sectionCompassDeg = venueSectionCompassAngle(
       section,
-      venue.orientation,
+      orientation,
       sectionAngleConventionFor(venue),
     );
     shadePercentage = 100 * structuralShadeFraction({

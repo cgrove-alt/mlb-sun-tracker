@@ -19,10 +19,16 @@ import {
   overhangShadeFraction,
   structuralShadeFraction,
   directSunPercent,
+  requireFiniteOrientation,
   BOWL_DEFAULTS,
 } from '../bowlGeometry';
 
 describe('angle helpers', () => {
+  it('treats 0° as a real orientation and refuses a missing one', () => {
+    expect(requireFiniteOrientation(0)).toBe(0);
+    expect(() => requireFiniteOrientation(undefined)).toThrow(/refusing to invent/);
+  });
+
   it('normalizes into [0, 360)', () => {
     expect(normalizeAngle(0)).toBe(0);
     expect(normalizeAngle(360)).toBe(0);

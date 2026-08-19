@@ -66,6 +66,19 @@ export type SeatingLevel = 'field' | 'lower' | 'club' | 'upper' | 'suite' | 'sta
 
 export const normalizeAngle = (deg: number): number => ((deg % 360) + 360) % 360;
 
+/**
+ * A documented 0° axis (Highmark, Lambeau, Rogers Centre, …) is valid.
+ * `orientation || 0` is not: it silently aims a park with missing data due north.
+ */
+export function requireFiniteOrientation(orientation: unknown, context?: string): number {
+  if (typeof orientation !== 'number' || !Number.isFinite(orientation)) {
+    throw new Error(
+      `Stadium orientation is missing or invalid${context ? ` (${context})` : ''}; refusing to invent a north-facing default.`,
+    );
+  }
+  return orientation;
+}
+
 /** Smallest angle between two compass bearings, in [0, 180]. */
 export function angularDistance(a: number, b: number): number {
   const d = Math.abs(normalizeAngle(a) - normalizeAngle(b));

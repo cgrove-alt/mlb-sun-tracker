@@ -8,7 +8,39 @@
 // (e.g. an east-facing park like Yankee Stadium correctly yields the first base
 // side, not a naive orientation<180 guess).
 
+import { sectionCompassAngle, sunIncidence } from './bowlGeometry';
+
 export type ShadeVenueType = 'baseball' | 'football';
+
+export type BaseballBaselineSide = 'first base side' | 'third base side';
+
+/**
+ * Which baseline sits in its own grandstand's shadow at this sun azimuth.
+ * Uses the same incidence model as the calculators, not a "3B is always shade" rule.
+ */
+export function baseballShadedBaseline(
+  orientation: number,
+  sunAzimuthDeg: number,
+): BaseballBaselineSide {
+  const first = sunIncidence(
+    sunAzimuthDeg,
+    sectionCompassAngle({ baseAngle: 0, angleSpan: 0 }, orientation),
+  );
+  const third = sunIncidence(
+    sunAzimuthDeg,
+    sectionCompassAngle({ baseAngle: 180, angleSpan: 0 }, orientation),
+  );
+  return first.sunBehind >= third.sunBehind ? 'first base side' : 'third base side';
+}
+
+export function baseballSunnyBaseline(
+  orientation: number,
+  sunAzimuthDeg: number,
+): BaseballBaselineSide {
+  return baseballShadedBaseline(orientation, sunAzimuthDeg) === 'first base side'
+    ? 'third base side'
+    : 'first base side';
+}
 
 const normalize = (deg: number): number => ((deg % 360) + 360) % 360;
 

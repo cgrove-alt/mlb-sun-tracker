@@ -1,6 +1,10 @@
 /** @jest-environment node */
 
-import { bestShadedSideForDayGame } from '../shadeSide';
+import {
+  bestShadedSideForDayGame,
+  baseballShadedBaseline,
+  baseballSunnyBaseline,
+} from '../shadeSide';
 
 describe('bestShadedSideForDayGame — baseball', () => {
   it('picks first base when HP→CF faces east-northeast (Yankee Stadium class)', () => {
@@ -33,5 +37,17 @@ describe('bestShadedSideForDayGame — football', () => {
     // SoFi is 338°, not the leftover 90° east-west placeholder that used to
     // produce "south sideline".
     expect(bestShadedSideForDayGame(338, 'football')).toBe('south end zone');
+  });
+});
+
+describe('baseballShadedBaseline follows grandstand self-shade, not a 3B default', () => {
+  it('puts Yankee Stadium (orientation 55°) afternoon shade on the first-base side', () => {
+    expect(baseballShadedBaseline(55, 250)).toBe('first base side');
+    expect(baseballSunnyBaseline(55, 250)).toBe('third base side');
+  });
+
+  it('puts Wrigley-class north parks (orientation 13°) afternoon shade on the third-base side', () => {
+    expect(baseballShadedBaseline(13, 250)).toBe('third base side');
+    expect(baseballSunnyBaseline(13, 250)).toBe('first base side');
   });
 });

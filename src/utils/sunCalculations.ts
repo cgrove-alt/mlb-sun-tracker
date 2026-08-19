@@ -5,6 +5,7 @@ import { isSectionInSun, getSectionSunExposure } from './sectionSunCalculations'
 import { WeatherData } from '../services/weatherApi';
 import { getVenueSections } from '../data/venueSections';
 import { SunCalculator } from './sunCalculator';
+import { sectionAngleConventionFor } from './bowlGeometry';
 // getSunPosition lives in a leaf module (no data-layer imports) so first-load
 // components can use it without pulling venueSections in via this file. Re-export
 // keeps existing `import { getSunPosition } from './sunCalculations'` callers working.
@@ -83,9 +84,11 @@ export function calculateDetailedSectionSunExposure(
   // rather than baked into it. See the SeatingSectionSun docs above.
   const cloudTransmission = weather ? cloudTransmissionFactor(weather) : 1.0;
 
+  const convention = sectionAngleConventionFor(stadium);
+
   stadiumSections.forEach(section => {
-    const inSun = isSectionInSun(section, sunAzimuth, sunPosition.altitudeDegrees, stadium.orientation);
-    const sunExposure = getSectionSunExposure(section, sunPosition.altitudeDegrees, sunAzimuth, stadium.orientation);
+    const inSun = isSectionInSun(section, sunAzimuth, sunPosition.altitudeDegrees, stadium.orientation, convention);
+    const sunExposure = getSectionSunExposure(section, sunPosition.altitudeDegrees, sunAzimuth, stadium.orientation, convention);
 
     sectionSunData.push({
       section,

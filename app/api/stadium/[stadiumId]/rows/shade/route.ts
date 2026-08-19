@@ -9,6 +9,7 @@ import {
 } from '../../../../../../src/utils/sunCalculator';
 import { getSunPosition } from '../../../../../../src/utils/sunCalculations';
 import { calculateMLBStadiumShade3D } from '../../../../../../src/utils/mlb3DCalculator';
+import { requireFiniteOrientation } from '../../../../../../src/utils/bowlGeometry';
 import {
   calendarDateAndTimeToUTC,
   formatStadiumLocal,
@@ -148,6 +149,7 @@ export async function GET(request: NextRequest, { params }: RouteParams) {
   }
 
   const stadiumTimezone = stadium.timezone || 'UTC';
+  const orientation = requireFiniteOrientation(stadium.orientation, stadium.id);
   let calendarDate: string;
   let targetDate: Date;
 
@@ -301,7 +303,7 @@ export async function GET(request: NextRequest, { params }: RouteParams) {
         stadium.name,
         stadium.latitude,
         stadium.longitude,
-        stadium.orientation || 0,
+        orientation,
         targetDate,
         {
           useCache,
@@ -441,7 +443,7 @@ export async function GET(request: NextRequest, { params }: RouteParams) {
             { status: 404 }
           );
         }
-        const sectionWindow = calculateGameWindowShade(section, sunSamples, stadium.orientation || 0);
+        const sectionWindow = calculateGameWindowShade(section, sunSamples, orientation);
         return NextResponse.json({
           stadium: { id: stadium.id, name: stadium.name, orientation: stadium.orientation },
           date: calendarDate,
@@ -455,7 +457,7 @@ export async function GET(request: NextRequest, { params }: RouteParams) {
       }
 
       const sectionWindows = sections.map(section =>
-        calculateGameWindowShade(section, sunSamples, stadium.orientation || 0)
+        calculateGameWindowShade(section, sunSamples, orientation)
       );
       const countBy = (p: string) =>
         sectionWindows.filter(s => s.progression === p).length;
@@ -500,7 +502,7 @@ export async function GET(request: NextRequest, { params }: RouteParams) {
         section,
         sunPosition.altitudeDegrees,
         sunPosition.azimuthDegrees,
-        stadium.orientation || 0
+        orientation
       );
 
       return NextResponse.json({
@@ -534,7 +536,7 @@ export async function GET(request: NextRequest, { params }: RouteParams) {
         section,
         sunPosition.altitudeDegrees,
         sunPosition.azimuthDegrees,
-        stadium.orientation || 0
+        orientation
       )
     );
 

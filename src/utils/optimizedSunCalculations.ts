@@ -4,6 +4,7 @@ import { isSectionInSun, getSectionSunExposure } from './sectionSunCalculations'
 import { WeatherData } from '../services/weatherApi';
 import { getVenueSections } from '../data/venueSections';
 import { processInChunks } from './performanceUtils';
+import { sectionAngleConventionFor } from './bowlGeometry';
 import {
   SunPosition,
   SeatingSectionSun,
@@ -50,6 +51,7 @@ export async function calculateDetailedSectionSunExposureOptimized(
   // section helpers do the conversion internally given `stadium.orientation`.
   const sunAzimuth = sunPosition.azimuthDegrees;
   const orientation = stadium.orientation;
+  const convention = sectionAngleConventionFor(stadium);
 
   let processedCount = 0;
 
@@ -58,8 +60,8 @@ export async function calculateDetailedSectionSunExposureOptimized(
     stadiumSections,
     50, // Process 50 sections at a time
     (section) => {
-      const inSun = isSectionInSun(section, sunAzimuth, sunPosition.altitudeDegrees, orientation);
-      const sunExposure = getSectionSunExposure(section, sunPosition.altitudeDegrees, sunAzimuth, orientation);
+      const inSun = isSectionInSun(section, sunAzimuth, sunPosition.altitudeDegrees, orientation, convention);
+      const sunExposure = getSectionSunExposure(section, sunPosition.altitudeDegrees, sunAzimuth, orientation, convention);
 
       processedCount++;
       if (onProgress) {
