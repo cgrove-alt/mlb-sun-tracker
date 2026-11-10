@@ -159,10 +159,20 @@ also checked against the live site.
 - [ ] 2.2 Real first pitch everywhere: drop the 1/4/7 PM buckets; custom time
       accepts any minute (1:05, 1:35…).
 - [ ] 2.3 Orientation:
-      - write the measurement script;
-      - re-measure the 30 MLB parks and update the provenance;
-      - make `stadiums.ts` the only place orientation is typed;
-      - add a consistency test across all files.
+      - [x] write the measurement script (`scripts/measureOrientation.ts`,
+            records in `src/data/orientationMeasurements.ts`);
+      - [ ] re-measure the 30 MLB parks and update the provenance.
+            Done: Yankee Stadium = 75° ±1° (was 55°, 20° low), from USGS
+            NAIP 2019-08-30 imagery, four methods agreeing within 0.8°.
+            Remaining: the other 29 parks.
+      - [x] make `stadiums.ts` the only place orientation is typed: all 29
+            section maps now call `getStadiumOrientation()`. The four
+            static-chart parks (Blue Jays, Padres, Athletics, Giants) still
+            store absolute compass bearings per section; convert those to
+            axis-relative offsets when their parks are re-measured.
+      - [x] add a consistency test across all files. It immediately caught
+            a real drift: the Marlins' measured 129.036° was in
+            `stadiums.ts` but `unifiedVenues.ts` still said 135° (fixed).
 - [ ] 2.3b Fix how section positions are read from the club seat maps.
       Found while building the mockup:
       - The Yankees map's "behind home" anchors (122/123) sit about 90 map
