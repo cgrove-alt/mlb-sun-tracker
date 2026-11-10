@@ -1,5 +1,5 @@
 // sunCalculator.ts
-import SunCalc from 'suncalc';
+import { getSunTimes } from './solarPosition';
 import type { CoverageDetail } from '../types/stadium-complete';
 import { getSunPosition } from './sunPosition';
 import {
@@ -130,7 +130,7 @@ export class SunCalculator {
     const altitude = sunPos.altitudeDegrees;
     const azimuth = sunPos.azimuthDegrees;
 
-    const sunTimes = SunCalc.getTimes(
+    const sunTimes = getSunTimes(
       dateTime,
       this.stadium.latitude,
       this.stadium.longitude,

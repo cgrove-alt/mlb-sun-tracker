@@ -141,11 +141,15 @@ also checked against the live site.
 ### Phase 2: all-new sun and shade calculations (P2)
 - [ ] 2.0 Collect the feedback you received: each example (park, date, time,
       section, what was wrong) becomes a failing test before any fix.
-- [ ] 2.1 New sun-position module: a full NREL SPA implementation, replacing
-      the NOAA port. Tests:
+- [x] 2.1 New sun-position module: a full NREL SPA implementation, replacing
+      the NOAA port (and SunCalc for sunrise/sunset, now uninstalled). Tests:
       - the SPA paper's own published test case, to 0.001°;
       - Yankees 2025-07 1:05 PM ≈ 182° / 70°;
       - one NOAA calculator value per park as an independent cross-check.
+      Result: every intermediate value of the paper's example matches to its
+      printed precision (Earth longitude to 2e-11°); Yankees 2025-07-15
+      1:05 PM = 182.3° / 70.6°; SPA and NOAA agree within 0.01° on the sky
+      at all 30 parks; 2025 solstice sunrise/sunset match published times.
 - [ ] 2.1b New shade calculation written from scratch on the new sun
       position. Each half hour, for every row, it decides whether the
       sightline to the sun is blocked by the structure behind the seat, the

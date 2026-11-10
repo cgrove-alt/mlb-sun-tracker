@@ -10,7 +10,7 @@
  * barely change.
  *
  * These helpers compute the actual peak sun altitude for a given latitude and
- * month with SunCalc, then describe what that geometry means for shade. Nothing
+ * month with the NREL SPA, then describe what that geometry means for shade. Nothing
  * here is hand-written per park.
  */
 
@@ -32,7 +32,7 @@ export interface SeasonalSunFacts {
  * Highest sun altitude reached on a representative day of `month`.
  *
  * Samples across the day rather than trying to compute solar noon analytically,
- * which keeps this exactly consistent with the same SunCalc the shade engine
+ * which keeps this exactly consistent with the same NREL SPA the shade engine
  * uses. The 15th is used as the representative day so the value reflects the
  * middle of the month rather than either edge.
  */

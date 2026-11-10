@@ -35,7 +35,7 @@ export interface SeasonalShadePattern {
 // Day-of-month used as a representative date for the given month when
 // computing the sun position. The 15th is close to the monthly mean for
 // most of the baseball season. `hour` is interpreted as wall-clock time
-// in the stadium's local timezone — the conversion to UTC for SunCalc
+// in the stadium's local timezone — the conversion to UTC for the solar position
 // happens via stadiumLocalToUTC. Without that conversion, the static
 // matrix would compute sun position for the wrong real-world moment by
 // the stadium's UTC offset (5+ hours for West Coast parks).
