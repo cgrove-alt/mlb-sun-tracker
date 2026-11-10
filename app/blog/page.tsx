@@ -130,18 +130,6 @@ export default function BlogPage() {
               </Link>
             </div>
 
-            <div className="sidebar-widget rounded-xl border bg-white p-4 md:p-5 shadow-sm stack">
-              <h3>Newsletter</h3>
-              <p>Get weekly sun-safety tips and updates on stadium shade data quality.</p>
-              <form className="newsletter-form">
-                <input 
-                  type="email" 
-                  placeholder="Your email" 
-                  aria-label="Email for newsletter"
-                />
-                <button type="submit">Subscribe</button>
-              </form>
-            </div>
           </aside>
         </div>
       </div>

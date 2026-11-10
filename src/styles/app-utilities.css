@@ -253,14 +253,17 @@
   color: var(--color-ink-900);
 }
 
-.prose a {
-  color: var(--color-blue-600);
+/* Plain links in running text. Links with their own classes (buttons,
+   cards) keep the colors those classes give them. --color-blue-600 was never
+   defined, so these links fell back to the body text color. */
+.prose a:not([class]) {
+  color: var(--color-link);
   text-decoration: underline;
   transition: color 0.2s ease;
 }
 
-.prose a:hover {
-  color: var(--color-blue-800);
+.prose a:not([class]):hover {
+  color: var(--color-link-hover);
 }
 
 /* Prose color variants */
@@ -675,11 +678,14 @@ a {
   color: var(--color-link);
 }
 
-a:hover {
+/* :where() keeps these at the specificity of a bare `a`, so a link styled
+   as a button (.text-white on a green background) keeps its own text color
+   when hovered or visited. */
+a:where(:hover) {
   color: var(--color-link-hover);
 }
 
-a:visited {
+a:where(:visited) {
   color: var(--color-link-visited);
 }
 

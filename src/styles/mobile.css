@@ -550,11 +550,11 @@
 
 /* ===== Mobile Tables ===== */
 @media (max-width: 768px) {
+  /* Tables stay tables (display: block strips their semantics for screen
+     readers). Each one sits in a wrapper that scrolls sideways and can take
+     keyboard focus. */
   table {
     font-size: var(--mobile-font-sm);
-    width: 100%;
-    overflow-x: auto;
-    display: block;
     white-space: nowrap;
   }
   

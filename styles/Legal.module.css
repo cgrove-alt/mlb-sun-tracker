@@ -51,13 +51,13 @@
 }
 
 .tableOfContents a {
-  color: #2196f3;
+  color: #1565c0; /* 5.8:1 on white; #2196f3 was 3.1:1 */
   text-decoration: none;
   transition: color 0.3s;
 }
 
 .tableOfContents a:hover {
-  color: #1976d2;
+  color: #0d47a1;
   text-decoration: underline;
 }
 
@@ -234,7 +234,7 @@
 }
 
 .submitButton {
-  background: #2196f3;
+  background: #1565c0; /* white text 5.8:1; #2196f3 was 3.1:1 */
   color: white;
   padding: 12px 30px;
   border: none;
@@ -246,7 +246,7 @@
 }
 
 .submitButton:hover {
-  background: #1976d2;
+  background: #0d47a1;
 }
 
 .submitButton:disabled {
@@ -257,7 +257,7 @@
 .linkButton {
   background: none;
   border: none;
-  color: #2196f3;
+  color: #1565c0; /* 5.8:1 on white; #2196f3 was 3.1:1 */
   text-decoration: underline;
   cursor: pointer;
   font: inherit;
@@ -321,12 +321,12 @@
 }
 
 .tabButton:hover {
-  color: #2196f3;
+  color: #1565c0; /* 5.8:1 on white; #2196f3 was 3.1:1 */
   background: rgba(33, 150, 243, 0.05);
 }
 
 .activeTab {
-  color: #2196f3;
+  color: #1565c0; /* 5.8:1 on white; #2196f3 was 3.1:1 */
   border-bottom-color: #2196f3;
   background: rgba(33, 150, 243, 0.05);
 }

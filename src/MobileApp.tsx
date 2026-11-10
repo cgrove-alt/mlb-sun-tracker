@@ -248,8 +248,7 @@ const MobileApp: React.FC = () => {
 
   return (
     <div className="mobile-app">
-      {/* Skip Navigation Links for Accessibility */}
-      <a href="#main-content" className="skip-link">Skip to main content</a>
+      {/* Skip links within the finder. "Skip to main content" comes from the layout. */}
       <a href="#venue-selector" className="skip-link">Skip to venue selector</a>
       <a href="#results" className="skip-link">Skip to results</a>
       

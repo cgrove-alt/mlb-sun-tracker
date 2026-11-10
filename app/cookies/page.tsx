@@ -91,7 +91,7 @@ export default function CookiePolicy() {
           </p>
         </div>
         
-        <div className="overflow-x-auto">
+        <div className="overflow-x-auto" tabIndex={0} role="region" aria-label="Strictly necessary cookies">
           <table className="min-w-full divide-y divide-gray-200">
             <thead className="bg-gray-50">
               <tr>
@@ -124,7 +124,7 @@ export default function CookiePolicy() {
           </p>
         </div>
         
-        <div className="overflow-x-auto">
+        <div className="overflow-x-auto" tabIndex={0} role="region" aria-label="Performance cookies">
           <table className="min-w-full divide-y divide-gray-200">
             <thead className="bg-gray-50">
               <tr>

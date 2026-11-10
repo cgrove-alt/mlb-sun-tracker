@@ -1776,13 +1776,13 @@ div.guide-page.stadium-guide > * {
 
 .conditions {
   font-size: 0.875rem;
-  color: #6c757d;
+  color: #495057; /* 7.8:1; #6c757d was 4.4:1 on #f8f9fa */
   margin-bottom: 0.5rem;
 }
 
 .shade-tip {
   font-size: 0.875rem;
-  color: #28a745;
+  color: #1e7e34; /* 4.8:1 on the tip's #fff8e1; #28a745 was 2.9:1 */
   font-style: italic;
 }
 
@@ -1898,7 +1898,7 @@ div.guide-page.stadium-guide > * {
 
 .lot-info .tip {
   font-size: 0.875rem;
-  color: #28a745;
+  color: #1e7e34; /* 4.9:1 on #f8f9fa; #28a745 was 3.0:1 */
   font-style: italic;
 }
 

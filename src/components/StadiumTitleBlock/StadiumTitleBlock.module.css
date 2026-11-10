@@ -278,7 +278,7 @@
   align-items: center;
   gap: 4px;
   font-weight: 600;
-  color: #6b7280;
+  color: #4b5563; /* 6.9:1 on #f3f4f6; #6b7280 was 4.4:1 */
   background: #f3f4f6;
   padding: 2px 8px;
   border-radius: 4px;

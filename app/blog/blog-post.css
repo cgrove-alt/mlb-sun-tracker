@@ -188,11 +188,11 @@
 }
 
 .share-button.twitter {
-  background: #1da1f2;
+  background: #0e71b8; /* 5.2:1 with white; #1da1f2 was 2.8:1 */
 }
 
 .share-button.facebook {
-  background: #1877f2;
+  background: #1565c0; /* 5.8:1; #1877f2 was 4.2:1 */
 }
 
 /* Main content styling */

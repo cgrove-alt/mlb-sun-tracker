@@ -167,22 +167,22 @@
 }
 
 .league-mlb {
-  background: #ef4444;
+  background: #dc2626; /* 4.8:1 with white; #ef4444 was 3.8:1 */
   color: white;
 }
 
 .league-nfl {
-  background: #3b82f6;
+  background: #2563eb; /* 5.2:1; #3b82f6 was 3.7:1 */
   color: white;
 }
 
 .league-milb {
-  background: #8b5cf6;
+  background: #7c3aed; /* 5.7:1; #8b5cf6 was 4.2:1 */
   color: white;
 }
 
 .result-team {
-  color: #999;
+  color: #4b5563; /* #999 was 2.9:1 on white */
   font-size: 12px;
 }
 
