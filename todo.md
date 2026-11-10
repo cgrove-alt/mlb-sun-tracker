@@ -150,8 +150,9 @@ also checked against the live site.
       printed precision (Earth longitude to 2e-11°); Yankees 2025-07-15
       1:05 PM = 182.3° / 70.6°; SPA and NOAA agree within 0.01° on the sky
       at all 30 parks; 2025 solstice sunrise/sunset match published times.
-- [ ] 2.1b New shade calculation written from scratch on the new sun
-      position. Each half hour, for every row, it decides whether the
+- [x] 2.1b New shade calculation written from scratch on the new sun
+      position (`src/utils/shadeEngine.ts`, `src/utils/gameShade.ts`).
+      Old models are not retired yet; that happens when the UI switches over. Each half hour, for every row, it decides whether the
       sightline to the sun is blocked by the structure behind the seat, the
       overhang above it, or the roof. One function, one set of tests. The old
       models (`sectionSunCalculations`, `getUnifiedVenueShade`, the
@@ -191,10 +192,19 @@ also checked against the live site.
             straight runs gives 1.008, so the Yankees map is not squashed.
       - [ ] Fenway and the other 27 chart-built parks: add foul-line rows
             and check each park's arrows.
-- [ ] 2.4 Structure-profile data model, wired into the row model (roof,
-      upper-deck overhang, press box, structure behind each level).
+- [x] 2.4 Structure-profile data model (`src/data/stadiumStructures.ts`):
+      per tier, rows, heights, rake, the deck over the back rows and the
+      structure behind; per-section overrides; each value marked sourced or
+      estimated. Confidence = the answer must survive orientation ± its error
+      and the structure moved ±50% where estimated (±10–20% where measured).
 - [ ] 2.5 Yankees and Fenway profiles plus their reference checks, which prove
-      the method:
+      the method. Yankees done: 33 checks against published observations on
+      real 2025 games pass, plus the sun-position and orientation checks.
+      Heights are estimated except the canopy (NYC footprint record), so most
+      Yankees answers are Medium/Low until heights are measured. Known
+      disagreement: ShadedSeats says Terrace 310–319 shade gradually at a
+      1:35 PM start; the model shades 315–324 late but keeps 310 sunny, and
+      labels them Low/Medium. Fenway: next.
       - Yankees: first-base side shades first for a July 1:05 PM game.
       - Fenway: third-base side and behind home shade first. I'll check this
         against published sources first.

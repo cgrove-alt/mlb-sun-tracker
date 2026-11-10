@@ -51,8 +51,10 @@ export interface StandProfile {
    * of its underside above the field.
    */
   overhang?: { coveredFromRow: number; soffitHeightFt: number };
-  /** Height above the field of the top of whatever stands right behind the last row. */
+  /** Height above the field of the top of whatever stands behind the last row. */
   backHeightFt: number;
+  /** How far behind the last row that structure stands, feet (default 0: right behind it). */
+  backSetbackFt?: number;
 }
 
 export interface ParkEnvelope {
@@ -116,7 +118,7 @@ export function rowLight(
         // The stand itself: the last row's seat backs.
         [backU - tread + HEAD_SETBACK_FT - u, lastRowZ + SEAT_BACK_FT - headZ],
         // Whatever stands on top of the back of the stand.
-        [backU - u, stand.backHeightFt - headZ],
+        [backU + (stand.backSetbackFt ?? 0) - u, stand.backHeightFt - headZ],
       ];
       if (stand.overhang) obstacles.push([lipU - u, stand.overhang.soffitHeightFt - headZ]);
       const blocked = obstacles.some(([du, dz]) => du > 0 && dz > 0 && dz / du > tanPlane);
