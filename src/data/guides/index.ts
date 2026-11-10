@@ -48,34 +48,10 @@ export const allStadiumGuides: Record<string, StadiumGuide> = {
   ...allSingleAStadiumGuides
 };
 
-// Helper function to get guide by stadium ID
+// Guides are keyed by venue id. No fuzzy matching: a name match once gave
+// the Giants page the Jets guide (both play at "MetLife Stadium").
 export function getStadiumGuide(stadiumId: string): StadiumGuide | undefined {
-  // First try direct lookup
-  let guide = allStadiumGuides[stadiumId];
-  
-  // If not found, try to find by stadium name or alternative IDs
-  if (!guide) {
-    // Try lowercase version
-    guide = allStadiumGuides[stadiumId.toLowerCase()];
-    
-    // If still not found, search by stadium name
-    if (!guide) {
-      const searchId = stadiumId.toLowerCase().replace(/-/g, '');
-      const found = Object.values(allStadiumGuides).find(g => {
-        const stadiumNameNormalized = g.name.toLowerCase().replace(/[^a-z0-9]/g, '');
-        const teamNameNormalized = g.team.toLowerCase().replace(/[^a-z0-9]/g, '');
-        return stadiumNameNormalized.includes(searchId) || 
-               teamNameNormalized.includes(searchId) ||
-               searchId.includes(stadiumNameNormalized) ||
-               searchId.includes(teamNameNormalized);
-      });
-      if (found) {
-        guide = found;
-      }
-    }
-  }
-  
-  return guide;
+  return allStadiumGuides[stadiumId] ?? allStadiumGuides[stadiumId.toLowerCase()];
 }
 
 // Helper function to get guides by league
