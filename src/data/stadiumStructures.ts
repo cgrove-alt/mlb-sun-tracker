@@ -14,6 +14,7 @@
  * answer changes is labelled lower confidence.
  */
 import type { ParkEnvelope, StandProfile } from '../utils/shadeEngine';
+import type { DetailedSection } from '../types/stadium-complete';
 
 export interface TierStructure {
   label: string;
@@ -362,4 +363,68 @@ export const STADIUM_STRUCTURES: Readonly<Record<string, StadiumStructure>> = {
 
 export function getStadiumStructure(stadiumId: string): StadiumStructure | undefined {
   return STADIUM_STRUCTURES[stadiumId];
+}
+
+/**
+ * Typical stand shape for each seating level, used for parks that do not have
+ * their own profile yet. Every value is an estimate and which rows are
+ * covered comes from the section map rather than a cited source, so the
+ * confidence check treats it as uncertain and these parks mostly show Medium
+ * or Low until they get a profile like Yankee Stadium's.
+ */
+const GENERIC_LEVELS: Record<string, { label: string; stand: StandProfile }> = {
+  field: { label: 'Field level', stand: { rows: 12, frontRowHeightFt: 3, rakeDeg: 14, backHeightFt: 30, backSetbackFt: 50 } },
+  lower: { label: 'Lower level', stand: { rows: 22, frontRowHeightFt: 5, rakeDeg: 20, backHeightFt: 40 } },
+  club: { label: 'Club level', stand: { rows: 14, frontRowHeightFt: 35, rakeDeg: 24, backHeightFt: 60 } },
+  upper: { label: 'Upper level', stand: { rows: 20, frontRowHeightFt: 70, rakeDeg: 30, backHeightFt: 110 } },
+  suite: {
+    label: 'Suites',
+    stand: { rows: 1, frontRowHeightFt: 50, rakeDeg: 0, backHeightFt: 62, overhang: { coveredFromRow: 1, soffitHeightFt: 59 } },
+  },
+};
+
+export function genericStructure(
+  stadiumId: string,
+  roof: ParkEnvelope['roof'],
+  sections: readonly DetailedSection[],
+): StadiumStructure {
+  const levelOf = new Map(sections.map((section) => [section.id, section.level]));
+  const tiers: Record<string, TierStructure> = {};
+  for (const [level, { label, stand }] of Object.entries(GENERIC_LEVELS)) {
+    const rise = 2.75 * Math.tan((stand.rakeDeg * Math.PI) / 180);
+    const overrides: NonNullable<TierStructure['sections']> = {};
+    for (const section of sections) {
+      if (section.level !== level || level === 'suite') continue;
+      const firstCovered = section.covered ? 0 : section.rows.findIndex((row) => row.covered);
+      overrides[section.id] = firstCovered < 0
+        ? { noCover: true }
+        : {
+            overhang: {
+              coveredFromRow: firstCovered + 1,
+              soffitHeightFt: stand.frontRowHeightFt + firstCovered * rise + 12.5,
+            },
+          };
+    }
+    tiers[level] = {
+      label,
+      stand,
+      sections: overrides,
+      rowsFromMap: true,
+      heightsSourced: false,
+      coverSourced: false,
+      sources: [],
+      notes: 'Generic stand shape for this seating level; this park has no profile yet.',
+    };
+  }
+  return {
+    stadiumId,
+    park: { roof, farRimHeightFt: 100, fieldCrossingFt: 500 },
+    // Standing room and other non-seat products are not rated.
+    tierOf: (id) => {
+      const level = levelOf.get(id);
+      return level && level in GENERIC_LEVELS ? level : null;
+    },
+    tiers,
+    reviewedOn: '2026-11-10',
+  };
 }
