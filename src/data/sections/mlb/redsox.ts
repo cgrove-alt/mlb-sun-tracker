@@ -3,6 +3,7 @@ import { redSoxPublishedChartPoints } from './chart-points/reconciledLiveParkPoi
 import { buildParkSections, chartSeeds } from './parkSectionBuilder';
 import { classifyRedSoxSection } from './sourcedChartClassifiers';
 import { getStadiumOrientation } from '../../stadiums';
+import { fenwayTier } from '../../stadiumStructures';
 
 const ORIENTATION = getStadiumOrientation('redsox');
 
@@ -18,6 +19,16 @@ export const redsoxSections: DetailedSection[] = buildParkSections(ORIENTATION, 
     orientation: ORIENTATION,
     behindHomeIds: ['F39', 'F50'],
     centerFieldIds: ['L36', 'L37'],
+    // The straight runs of Field Boxes along each foul line. On this chart
+    // home plate is at the top, first base runs to the left and third base
+    // runs down the right-hand side.
+    foulLineRows: {
+      firstBase: ['F12', 'F14', 'F16', 'F18', 'F20', 'F22', 'F24', 'F26', 'F28', 'F30', 'F32', 'F34'],
+      thirdBase: ['F52', 'F54', 'F56', 'F58', 'F60', 'F62', 'F64', 'F66'],
+    },
+    // Upper (U) and top (T) bleacher sections sit behind the main ones: a
+    // separate ring for fitting stand directions.
+    tierOf: (id) => `${fenwayTier(id) ?? 'other'}${/^L\d+[UT]$/.test(id) ? ':back' : ''}`,
     classify: classifyRedSoxSection,
   },
 ));

@@ -712,7 +712,7 @@ export const ALL_UNIFIED_VENUES: UnifiedVenue[] = [
     "state": "MA",
     "latitude": 42.3467,
     "longitude": -71.0972,
-    "orientation": 52,
+    "orientation": 44,
     "capacity": 37755,
     "roof": "open",
     "timezone": "America/New_York",

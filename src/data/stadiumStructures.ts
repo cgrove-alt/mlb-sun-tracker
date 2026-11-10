@@ -24,6 +24,8 @@ export interface TierStructure {
   heightsSourced: boolean;
   /** True when which rows are covered comes from a cited source. */
   coverSourced: boolean;
+  /** Use each section's own row count from the club's seat map. */
+  rowsFromMap?: boolean;
   sources: string[];
   notes?: string;
 }
@@ -173,8 +175,189 @@ const YANKEES: StadiumStructure = {
   reviewedOn: '2026-11-10',
 };
 
+const RYS_FENWAY = 'https://www.rateyourseats.com/fenway-park/seating/shaded-covered-seats';
+const rysFenway = (path: string) => `https://www.rateyourseats.com/fenway-park/seating/${path}`;
+
+/**
+ * Seating tier of a Fenway Park ticket product, by the club map's id codes.
+ * Standing room, tables, booths and terraces return null (not rated).
+ */
+export function fenwayTier(id: string): string | null {
+  if (/^(?:F|D|H|FBC)\d/.test(id) || id === 'JBDBX') return 'fieldBox';
+  const box = /^B(\d+)$/.exec(id);
+  if (box) return Number(box[1]) <= 8 ? 'rightFieldBox' : 'logeBox';
+  if (/^G\d/.test(id)) return 'grandstand';
+  if (/^L\d/.test(id)) return 'bleachers';
+  if (/^M\d/.test(id)) return 'monster';
+  if (/^R\d/.test(id)) return 'roofBox';
+  if (/^PB\d/.test(id)) return 'pavilionBox';
+  if (/^(?:AC|DTC)\d/.test(id) || id === 'DTCB') return 'pavilionClub';
+  if (/^AP\d/.test(id)) return 'auraPavilion';
+  if (/^PR\d/.test(id)) return 'pavilionReserved';
+  if (/^(?:SB|SK|SL|SR)\d/.test(id)) return 'suite';
+  return null;
+}
+
+/**
+ * Fenway Park (1912). The lower bowl is one continuous slope: Field Boxes,
+ * then Loge Boxes, then the Grandstand under a roof held up by posts, with
+ * the pavilion level (clubs, Aura Pavilion, press box) on top of that roof.
+ * Row counts come from the club's seat map. Heights are estimates except the
+ * Green Monster (37 ft); no source publishes the roof or pavilion heights.
+ */
+const FENWAY: StadiumStructure = {
+  stadiumId: 'redsox',
+  park: { roof: 'open', farRimHeightFt: 70, fieldCrossingFt: 450 },
+  tierOf: fenwayTier,
+  tiers: {
+    fieldBox: {
+      label: 'Field Box',
+      // Uncovered (sourced). Estimated: front row ~2 ft, shallow 14° rake.
+      // Behind them the Loge Boxes rise to the Grandstand roof and the
+      // pavilion front (~50 ft) about 40 ft further back.
+      stand: { rows: 12, frontRowHeightFt: 2, rakeDeg: 14, backHeightFt: 50, backSetbackFt: 40 },
+      rowsFromMap: true,
+      heightsSourced: false,
+      coverSourced: true,
+      sources: [RYS_FENWAY, rysFenway('sections/FB38')],
+    },
+    logeBox: {
+      label: 'Loge Box',
+      // Uncovered, rows AA–NN (sourced). Estimated: front row ~10 ft, 16°
+      // rake; the Grandstand roof edge and pavilion front (~50 ft) stand
+      // just behind the last row.
+      stand: { rows: 13, frontRowHeightFt: 10, rakeDeg: 16, backHeightFt: 50, backSetbackFt: 5 },
+      rowsFromMap: true,
+      heightsSourced: false,
+      coverSourced: true,
+      sources: [RYS_FENWAY, rysFenway('loge-boxes'), rysFenway('sections/LB122')],
+    },
+    grandstand: {
+      label: 'Grandstand',
+      // Every row covered by the roof the pavilion level sits on (sourced).
+      // Estimated: front row ~21 ft (behind the Loge), 20° rake, roof
+      // underside ~38 ft at its front edge, back wall ~45 ft. With those,
+      // a low sun in the fans' faces reaches the front rows under the roof,
+      // which matches "covered but late-afternoon sun" in sections 1–6.
+      stand: {
+        rows: 17,
+        frontRowHeightFt: 21,
+        rakeDeg: 20,
+        backHeightFt: 45,
+        overhang: { coveredFromRow: 1, soffitHeightFt: 38 },
+      },
+      rowsFromMap: true,
+      heightsSourced: false,
+      coverSourced: true,
+      sources: [RYS_FENWAY, rysFenway('sections/GS3'), rysFenway('sections/GS14'), 'https://ballparkeguides.com/fenway-park-seating-guide/'],
+    },
+    rightFieldBox: {
+      label: 'Right Field Box',
+      // Uncovered; among the last seats to get shade (sourced). Estimated:
+      // front row ~3 ft, 15° rake, the right-field Grandstand roof (~40 ft)
+      // just behind.
+      stand: { rows: 12, frontRowHeightFt: 3, rakeDeg: 15, backHeightFt: 40, backSetbackFt: 5 },
+      rowsFromMap: true,
+      heightsSourced: false,
+      coverSourced: true,
+      sources: [rysFenway('right-field-boxes'), RYS_FENWAY],
+    },
+    bleachers: {
+      label: 'Bleachers',
+      // Uncovered; no bleacher seat is shaded on day games (sourced).
+      // Estimated: front row ~8 ft, 22° rake, a ~45 ft back wall.
+      stand: { rows: 20, frontRowHeightFt: 8, rakeDeg: 22, backHeightFt: 45 },
+      rowsFromMap: true,
+      heightsSourced: false,
+      coverSourced: true,
+      sources: [RYS_FENWAY, 'https://www.tickpick.com/blog/boston-red-sox-seating-chart-with-seat-views'],
+    },
+    monster: {
+      label: 'Green Monster seats',
+      // On top of the 37 ft wall, 3 rows, uncovered, nothing behind but
+      // Lansdowne Street (sourced: Wikipedia, Rate Your Seats).
+      stand: { rows: 3, frontRowHeightFt: 37, rakeDeg: 10, backHeightFt: 41 },
+      rowsFromMap: true,
+      heightsSourced: true,
+      coverSourced: true,
+      sources: ['https://en.wikipedia.org/wiki/Fenway_Park', rysFenway('monster-seats')],
+    },
+    roofBox: {
+      label: 'Roof Box',
+      // Rows A–G, uncovered (sourced). Estimated: front row ~45 ft on the
+      // first-base roof, 15° rake, an auxiliary press box (~60 ft) behind.
+      stand: { rows: 7, frontRowHeightFt: 45, rakeDeg: 15, backHeightFt: 60, backSetbackFt: 3 },
+      rowsFromMap: true,
+      heightsSourced: false,
+      coverSourced: true,
+      sources: [rysFenway('right-field-roof-boxes'), 'https://en.wikipedia.org/wiki/Fenway_Park'],
+    },
+    pavilionBox: {
+      label: 'Aura Pavilion Box',
+      // Covered (sourced; sources differ on whether from row A, B or C, so
+      // from row B). Estimated: front row ~55 ft, 15° rake, underside ~66 ft.
+      stand: {
+        rows: 5,
+        frontRowHeightFt: 55,
+        rakeDeg: 15,
+        backHeightFt: 70,
+        overhang: { coveredFromRow: 2, soffitHeightFt: 66 },
+      },
+      rowsFromMap: true,
+      heightsSourced: false,
+      coverSourced: true,
+      sources: [rysFenway('sections/PB10'), RYS_FENWAY, 'https://ballparkeguides.com/fenway-park-seating-guide/'],
+    },
+    pavilionClub: {
+      label: 'Pavilion club (Aura Club, Dell Technologies Club)',
+      // Covered: the press box sits overhead (sourced). Estimated heights.
+      stand: {
+        rows: 5,
+        frontRowHeightFt: 58,
+        rakeDeg: 12,
+        backHeightFt: 75,
+        overhang: { coveredFromRow: 1, soffitHeightFt: 68 },
+      },
+      rowsFromMap: true,
+      heightsSourced: false,
+      coverSourced: true,
+      sources: [RYS_FENWAY, 'https://www.mlb.com/redsox/ballpark/information/guide'],
+    },
+    auraPavilion: {
+      label: 'Aura Pavilion',
+      // Level 4 seating down both lines (sourced: Red Sox ballpark guide).
+      // Whether it is covered is not clear from the sources, so the
+      // confidence check tries it both ways. Estimated heights.
+      stand: { rows: 5, frontRowHeightFt: 58, rakeDeg: 15, backHeightFt: 72 },
+      rowsFromMap: true,
+      heightsSourced: false,
+      coverSourced: false,
+      sources: ['https://www.mlb.com/redsox/ballpark/information/guide', RYS_FENWAY],
+    },
+    pavilionReserved: {
+      label: 'Pavilion Reserved',
+      // Rows A–J, uncovered (sourced). Estimated: front row ~60 ft, 25° rake.
+      stand: { rows: 10, frontRowHeightFt: 60, rakeDeg: 25, backHeightFt: 80 },
+      rowsFromMap: true,
+      heightsSourced: false,
+      coverSourced: true,
+      sources: [rysFenway('pavilion-reserved')],
+    },
+    suite: {
+      label: 'Suites',
+      // Enclosed suites: one row of seats under the suite ceiling.
+      stand: { rows: 1, frontRowHeightFt: 60, rakeDeg: 0, backHeightFt: 72, overhang: { coveredFromRow: 1, soffitHeightFt: 66 } },
+      heightsSourced: false,
+      coverSourced: true,
+      sources: ['https://www.mlb.com/redsox/ballpark/information/guide'],
+    },
+  },
+  reviewedOn: '2026-11-10',
+};
+
 export const STADIUM_STRUCTURES: Readonly<Record<string, StadiumStructure>> = {
   yankees: YANKEES,
+  redsox: FENWAY,
 };
 
 export function getStadiumStructure(stadiumId: string): StadiumStructure | undefined {

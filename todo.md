@@ -190,21 +190,32 @@ also checked against the live site.
       - Correction to an earlier note: the "13% squash" came from fitting
             through the curved part of the field-box rows. Using only the
             straight runs gives 1.008, so the Yankees map is not squashed.
-      - [ ] Fenway and the other 27 chart-built parks: add foul-line rows
-            and check each park's arrows.
+      - [x] Fenway: calibrated from the Field Box runs; upper/top bleacher
+            sections fitted as their own ring; isolated sections (Pavilion
+            Reserved) face straight away from the field.
+      - [ ] The other 27 chart-built parks: add foul-line rows and check
+            each park's arrows.
 - [x] 2.4 Structure-profile data model (`src/data/stadiumStructures.ts`):
       per tier, rows, heights, rake, the deck over the back rows and the
       structure behind; per-section overrides; each value marked sourced or
       estimated. Confidence = the answer must survive orientation ± its error
       and the structure moved ±50% where estimated (±10–20% where measured).
-- [ ] 2.5 Yankees and Fenway profiles plus their reference checks, which prove
-      the method. Yankees done: 33 checks against published observations on
-      real 2025 games pass, plus the sun-position and orientation checks.
-      Heights are estimated except the canopy (NYC footprint record), so most
-      Yankees answers are Medium/Low until heights are measured. Known
-      disagreement: ShadedSeats says Terrace 310–319 shade gradually at a
-      1:35 PM start; the model shades 315–324 late but keeps 310 sunny, and
-      labels them Low/Medium. Fenway: next.
+- [x] 2.5 Yankees and Fenway profiles plus their reference checks, which prove
+      the method.
+      - Yankees: 33 checks against published observations on real 2025
+        games pass, plus sun-position and orientation checks. Heights are
+        estimated except the canopy (NYC footprint record).
+      - Fenway: orientation measured at 44° ±1° (was 52°; chalk foul lines
+        visible in 2023 imagery). Map calibrated from the Field Box runs;
+        club-map row counts used. 61 checks pass: covered Grandstand shaded,
+        Grandstand 1–6 late sun, third-base Loge/Field Boxes shade before
+        first-base, bleachers and Monster seats sunny, Right Field Boxes
+        among the last to shade, Pavilion Box covered rows shaded.
+      - Known disagreements, labelled Low/Medium instead of High: Yankees
+        Terrace 310–319 (ShadedSeats: shade gradually from a 1:35 start);
+        Fenway behind-home Loge upper rows (Rate Your Seats: shaded at a
+        1 PM start; model: from mid-game). Both point to estimated deck
+        heights; measured heights (lidar) are the fix.
       - Yankees: first-base side shades first for a July 1:05 PM game.
       - Fenway: third-base side and behind home shade first. I'll check this
         against published sources first.

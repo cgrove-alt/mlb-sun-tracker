@@ -225,31 +225,41 @@ function standCompasses(
   for (const indices of byTier.values()) {
     // Markers drawn on or beside a section (wheelchair platforms, standing
     // rails) are not part of the row line. A marker sits inside a larger
-    // section's outline, or is under a quarter of the size of a section
-    // right next to it. Markers take their parent's direction.
+    // section's outline, or is under 15% of the size of a section right
+    // next to it (wheelchair strips are ~10%). Markers take their parent's
+    // direction.
     const parentOf = (i: number): number | undefined => indices.find((j) => {
       if (j === i || seeds[j].area <= seeds[i].area) return false;
       const dx = Math.abs(seeds[i].x - seeds[j].x);
       const dy = Math.abs(seeds[i].y - seeds[j].y);
       const inside = dx < seeds[j].width / 2 && dy < seeds[j].height / 2;
-      const tinyNeighbour = seeds[i].area < seeds[j].area * 0.25 &&
+      const tinyNeighbour = seeds[i].area < seeds[j].area * 0.15 &&
         Math.hypot(dx, dy) < Math.max(seeds[j].width, seeds[j].height);
       return inside || tinyNeighbour;
     });
     const parents = new Map(indices.map((i) => [i, parentOf(i)]));
     const fitters = indices.filter((i) => parents.get(i) === undefined);
-    if (fitters.length < 3) continue;
 
     for (const i of fitters) {
-      const neighbours = fitters
+      const near = fitters
         .filter((j) => j !== i)
         .map((j) => ({ j, d: Math.hypot(seeds[i].x - seeds[j].x, seeds[i].y - seeds[j].y) }))
         .sort((p, q) => p.d - q.d)
-        .slice(0, 4)
-        .map(({ j }) => seeds[j]);
-      const line = fitLine([seeds[i], ...neighbours]);
-      let nx = -line.dy;
-      let ny = line.dx;
+        .slice(0, 4);
+      const size = Math.max(seeds[i].width, seeds[i].height);
+      let nx: number;
+      let ny: number;
+      if (near.length >= 2 && near[near.length - 1].d <= size * 4) {
+        const line = fitLine([seeds[i], ...near.map(({ j }) => seeds[j])]);
+        nx = -line.dy;
+        ny = line.dx;
+      } else {
+        // Too few ring-mates nearby to fit a row line (a lone deck or a
+        // small group spread around the park): face straight away from
+        // the middle of the field.
+        nx = seeds[i].x - fieldCenter.x;
+        ny = seeds[i].y - fieldCenter.y;
+      }
       if (nx * (seeds[i].x - fieldCenter.x) + ny * (seeds[i].y - fieldCenter.y) < 0) {
         nx = -nx;
         ny = -ny;

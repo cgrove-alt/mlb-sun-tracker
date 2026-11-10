@@ -65,6 +65,28 @@ export const ORIENTATION_MEASUREMENTS: readonly OrientationMeasurement[] = [
       'home → infield-dirt centroid gives 74.9°; the script\'s angle-and-offset symmetry search gives 75.3°. Mean 74.8°, recorded as 75° ±1°. ' +
       'The field is unchanged since the park opened in 2009. Replaces 55°, which was 20° low (ballparks.com lists 75°).',
   },
+  {
+    stadiumId: 'redsox',
+    imageCenter: { latitude: 42.3463, longitude: -71.0975 },
+    imageHalfWidthMeters: 75,
+    imageSizePx: 600,
+    naipTile: 'm_4207148_nw_19_030_20230707',
+    acquired: '2023-07-07',
+    nativeResolutionMeters: 0.3,
+    homeSeedPx: [212.5, 327.3],
+    moundSeedPx: [263, 275.5],
+    homeCenterPx: [212.54, 327.33],
+    moundCenterPx: [262.84, 275.81],
+    bearingHomeToMoundDeg: 44.35,
+    bearingInfieldSymmetryDeg: 44,
+    orientationDeg: 44,
+    precisionDeg: 1,
+    measuredOn: '2026-11-10',
+    notes:
+      'The chalk foul lines are visible: fitted at 359.21° (third base, 128 samples) and 89.55° (first base, 197 samples), ' +
+      '90.34° apart, bisector 44.38°. Home is where they cross; home → mound 44.35°; infield mirror axis 44.0° (96.1% overlap). ' +
+      'Replaces 52°, which was 8° high (ballparks.com lists 45°).',
+  },
 ];
 
 export function getOrientationMeasurement(stadiumId: string): OrientationMeasurement | undefined {

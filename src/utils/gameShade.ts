@@ -97,16 +97,41 @@ export function shadeSentence(label: string, samples: readonly ShadeSample[], su
   return when ? `${label}: partial shade from about ${when}.` : `${label}: mostly in the sun.`;
 }
 
-/** The section's stand profile: its tier's, with any section-specific changes. */
-export function standFor(structure: StadiumStructure, sectionId: string): { tierKey: string; tier: TierStructure; stand: StandProfile } | null {
+/**
+ * The section's stand profile: its tier's, with the club map's row count when
+ * the tier uses it (`mapRows`), and any section-specific changes on top.
+ */
+export function standFor(
+  structure: StadiumStructure,
+  sectionId: string,
+  mapRows?: number,
+): { tierKey: string; tier: TierStructure; stand: StandProfile } | null {
   const tierKey = structure.tierOf(sectionId);
   if (!tierKey) return null;
   const tier = structure.tiers[tierKey];
   if (!tier) return null;
   const override = tier.sections?.[sectionId];
-  const stand: StandProfile = { ...tier.stand, ...override };
+  const rows = tier.rowsFromMap && mapRows ? mapRows : tier.stand.rows;
+  const stand: StandProfile = { ...tier.stand, rows, ...override };
   if (override?.noCover) delete stand.overhang;
   return { tierKey, tier, stand };
+}
+
+/** The same stand with no deck overhead, and with one over its back half. */
+function coverAlternatives(stand: StandProfile): StandProfile[] {
+  const rise = (stand.treadFt ?? 2.75) * Math.tan((stand.rakeDeg * Math.PI) / 180);
+  const halfway = Math.max(1, Math.ceil(stand.rows / 2));
+  const { overhang: _omit, ...open } = stand;
+  return [
+    open,
+    {
+      ...stand,
+      overhang: {
+        coveredFromRow: halfway,
+        soffitHeightFt: stand.frontRowHeightFt + (stand.rows - 1) * rise + 8,
+      },
+    },
+  ];
 }
 
 /**
@@ -147,7 +172,7 @@ export function computeGameShade(input: GameShadeInput): GameShadeResult {
 
   const sections: SectionGameShade[] = [];
   for (const section of input.sections) {
-    const resolved = standFor(input.structure, section.id);
+    const resolved = standFor(input.structure, section.id, section.rows?.length);
     if (!resolved) continue;
     const { tierKey, tier, stand } = resolved;
     const facing = section.standCompass ?? bearingFromHome(section, input.orientationDeg);
@@ -175,6 +200,8 @@ export function computeGameShade(input: GameShadeInput): GameShadeResult {
       run(perturbStructure(stand, 1 - e, 1), facing, 1 - e),
       run(perturbStructure(stand, 1, 1 + setbackError), facing),
       run(perturbStructure(stand, 1, 1 - setbackError), facing),
+      // When no source says which rows are covered, try both.
+      ...(tier.coverSourced ? [] : coverAlternatives(stand).map((alt) => run(alt, facing))),
     ];
     const unstableSteps = base.filter((status, i) => variants.some((v) => v[i] !== status)).length;
     const confidence: Confidence = unstableSteps === 0 ? 'high' : unstableSteps <= 2 ? 'medium' : 'low';
