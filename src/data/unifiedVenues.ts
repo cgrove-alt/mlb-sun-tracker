@@ -75,7 +75,7 @@ export const ALL_UNIFIED_VENUES: UnifiedVenue[] = [
   },
   {
     "id": "astros",
-    "name": "Minute Maid Park",
+    "name": "Daikin Park",
     "league": "MLB",
     "team": "Houston Astros",
     "city": "Houston",

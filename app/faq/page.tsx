@@ -71,7 +71,7 @@ const faqs = [
       },
       {
         q: "Do covered stadiums still have sun issues?",
-        a: "Even stadiums with roofs can have sun glare through windows or open sides. Stadiums like Minute Maid Park have large windows that can create bright spots."
+        a: "Even stadiums with roofs can have sun glare through windows or open sides. Stadiums like Daikin Park have large windows that can create bright spots."
       },
       {
         q: "Which sections typically have overhead coverage?",

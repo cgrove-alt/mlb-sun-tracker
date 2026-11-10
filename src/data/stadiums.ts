@@ -40,7 +40,7 @@ export const MLB_STADIUMS: Stadium[] = [
   },
   {
     id: 'astros',
-    name: 'Minute Maid Park',
+    name: 'Daikin Park',
     team: 'Houston Astros',
     city: 'Houston',
     state: 'TX',

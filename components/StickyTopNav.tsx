@@ -35,7 +35,7 @@ export default function StickyTopNav() {
     { id: 'redsox', name: 'Fenway Park', team: 'Boston Red Sox', league: 'MLB' },
     { id: 'giants', name: 'Oracle Park', team: 'San Francisco Giants', league: 'MLB' },
     { id: 'braves', name: 'Truist Park', team: 'Atlanta Braves', league: 'MLB' },
-    { id: 'astros', name: 'Minute Maid Park', team: 'Houston Astros', league: 'MLB' },
+    { id: 'astros', name: 'Daikin Park', team: 'Houston Astros', league: 'MLB' },
     { id: 'mets', name: 'Citi Field', team: 'New York Mets', league: 'MLB' },
   ];
 

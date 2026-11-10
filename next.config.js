@@ -76,6 +76,17 @@ const nextConfig = {
         destination: '/stadium/:venueId',
         statusCode: 301,
       },
+      // Renamed ballparks: keep old blog URLs working.
+      {
+        source: '/blog/shaded-seats-minute-maid-park',
+        destination: '/blog/shaded-seats-daikin-park',
+        statusCode: 301,
+      },
+      {
+        source: '/blog/shaded-seats-guaranteed-rate-field',
+        destination: '/blog/shaded-seats-rate-field',
+        statusCode: 301,
+      },
     ];
   },
 
