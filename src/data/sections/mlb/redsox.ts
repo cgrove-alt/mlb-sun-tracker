@@ -2,6 +2,9 @@ import type { DetailedSection } from '../../../types/stadium-complete';
 import { redSoxPublishedChartPoints } from './chart-points/reconciledLiveParkPoints';
 import { buildParkSections, chartSeeds } from './parkSectionBuilder';
 import { classifyRedSoxSection } from './sourcedChartClassifiers';
+import { getStadiumOrientation } from '../../stadiums';
+
+const ORIENTATION = getStadiumOrientation('redsox');
 
 /**
  * All 483 ticket products currently published by the Red Sox-linked Fenway
@@ -9,10 +12,10 @@ import { classifyRedSoxSection } from './sourcedChartClassifiers';
  * source-backed; row, elevation, obstruction, and coverage geometry remains
  * modeled and cannot pass the public shade release gate.
  */
-export const redsoxSections: DetailedSection[] = buildParkSections(52, chartSeeds(
+export const redsoxSections: DetailedSection[] = buildParkSections(ORIENTATION, chartSeeds(
   redSoxPublishedChartPoints,
   {
-    orientation: 52,
+    orientation: ORIENTATION,
     behindHomeIds: ['F39', 'F50'],
     centerFieldIds: ['L36', 'L37'],
     classify: classifyRedSoxSection,

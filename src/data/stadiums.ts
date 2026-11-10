@@ -422,3 +422,14 @@ export const MLB_STADIUMS: Stadium[] = [
     timezone: 'America/New_York'
   }
 ];
+
+/**
+ * The one place an MLB park's orientation is read from. Section maps call this
+ * instead of typing the number again, so a corrected orientation reaches every
+ * section at once. Throws for an unknown id rather than guessing.
+ */
+export function getStadiumOrientation(stadiumId: string): number {
+  const stadium = MLB_STADIUMS.find((s) => s.id === stadiumId);
+  if (!stadium) throw new Error(`Unknown MLB stadium id: ${stadiumId}`);
+  return stadium.orientation;
+}
