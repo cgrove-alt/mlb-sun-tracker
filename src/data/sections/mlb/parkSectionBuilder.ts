@@ -36,6 +36,20 @@ export interface ParkSectionSeed {
   price?: DetailedSection['price'];
   /** Compass bearing the stand's back faces (outward normal of its rows). */
   standCompass?: number;
+  /** Where to draw the section on a seat map; see DetailedSection.map. */
+  map?: SectionMapPosition;
+}
+
+/**
+ * A section's place on a drawn seat map: home plate at (0, 0), center field
+ * toward −y, first base toward +x, scaled so the farthest seat is about 1
+ * away. `w` runs along the stand, `h` straight back from home plate.
+ */
+export interface SectionMapPosition {
+  x: number;
+  y: number;
+  w: number;
+  h: number;
 }
 
 export interface SectionBand {
@@ -420,6 +434,10 @@ export function chartSeeds(
       Math.abs(tangentY) * point.height * stretchY / 2
     );
     const polygonSpan = (2 * Math.atan2(halfTangentExtent, radius) * 180) / Math.PI;
+    const halfRadialExtent = (
+      Math.abs(vx / radius) * point.width / 2 +
+      Math.abs(vy / radius) * point.height * stretchY / 2
+    );
     provisional.push({
       id: point.id,
       name: meta.name ?? point.name ?? `Section ${point.id}`,
@@ -433,7 +451,15 @@ export function chartSeeds(
       height: meta.height,
       rake: meta.rake,
       price: meta.price,
+      map: { x: cross, y: -dot, w: halfTangentExtent * 2, h: halfRadialExtent * 2 },
     });
+  }
+
+  // Scale drawn positions so the farthest seat is about 1 from home plate.
+  const reach = Math.max(1e-9, ...provisional.map((seed) => Math.hypot(seed.map!.x, seed.map!.y) + seed.map!.h / 2));
+  for (const seed of provisional) {
+    const m = seed.map!;
+    seed.map = { x: m.x / reach, y: m.y / reach, w: m.w / reach, h: m.h / reach };
   }
 
   // The field's middle, for pointing each stand normal away from the field.
@@ -544,6 +570,7 @@ export function buildParkSections(
       height,
       rake,
       standCompass: seed.standCompass,
+      map: seed.map,
       viewQuality: seed.level === 'upper' ? 'fair' : seed.level === 'standing' ? 'good' : 'excellent',
     };
   });

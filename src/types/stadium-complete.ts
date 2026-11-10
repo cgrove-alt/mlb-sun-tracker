@@ -56,6 +56,13 @@ export interface DetailedSection {
    * or in its face depends on this, not on the bearing from home plate.
    */
   standCompass?: number;
+  /**
+   * Where to draw the section on a seat map: home plate at (0, 0), center
+   * field toward −y, first base toward +x, farthest seat about 1 away. `w`
+   * runs along the stand, `h` straight back from home plate. Only for parks
+   * built from a club seat map.
+   */
+  map?: { x: number; y: number; w: number; h: number };
   seatWidth?: number; // Average seat width in inches
   rowSpacing?: number; // Space between rows in inches
   
