@@ -4,8 +4,11 @@
 section in under 3 taps on a phone. All tests pass, there are no 404s, and
 mobile Lighthouse is 90+.
 
-**Status:** your answers are folded in (see section 4). A mockup of the new
-flow is ready for review. No code changes yet.
+**Status (2026-11-10):** the new engine is live on the branch for every MLB
+park: homepage dropdowns → game → colored real seat map, and the same map on
+every stadium page with share links. Yankees and Fenway have sourced
+profiles; the other 28 parks use a generic profile (labelled early
+estimates). Nothing is pushed or deployed.
 Baseline: `npx jest` passes 1,097 tests in 42 suites. The live build
 (`x-build-id 19406fab65da`) matches `main`.
 
@@ -128,14 +131,19 @@ also checked against the live site.
 - [x] 0.1 New branch from `main` (`fix/shade-answer-rebuild`).
 
 ### Phase 1: give an answer (P1)
-- [ ] 1.1 `src/utils/gameShade.ts`: `getGameShade(stadiumId, firstPitchUtc)`
+- [x] 1.1 `src/utils/gameShade.ts` + `src/utils/parkShade.ts` (any park; a
+      generic per-level profile where a park has none):
       returns every section's 7 half-hour states, its confidence and its lead
       sentence, built on `calculateGameWindowShade`. Tests: dome, night game,
       retractable roof, the sentence text.
-- [ ] 1.2 Remove the publication gate from the stadium page, the stadium
-      client, both homepage apps, `StadiumSchema`, `stadiumDataServer` and the
-      row API (no more 409). Update the tests that assert the gate.
-- [ ] 1.3 Stadium page shows the answer for a chosen game: the lead sentence
+- [x] 1.2 Remove the publication gate from the stadium page, the stadium
+      client, both homepage apps, `StadiumSchema`, `stadiumDataServer`. Done
+      for every page; the unused StadiumPageClient, StadiumSchema and
+      stadiumDataServer are deleted.
+- [ ] 1.2b Follow-up: the public row API (`/api/stadium/[id]/rows/shade`)
+      still returns 409. Nothing on the site calls it; moving it onto the new
+      engine means rewriting its ~940 lines of tests, so it is its own step.
+- [x] 1.3 Stadium page shows the answer for a chosen game: the lead sentence
       plus a "best shaded sections" short list.
 
 ### Phase 2: all-new sun and shade calculations (P2)
@@ -157,8 +165,10 @@ also checked against the live site.
       overhang above it, or the roof. One function, one set of tests. The old
       models (`sectionSunCalculations`, `getUnifiedVenueShade`, the
       `shadeSide.ts` shortcut, the 3-D estimator) are retired, not patched.
-- [ ] 2.2 Real first pitch everywhere: drop the 1/4/7 PM buckets; custom time
-      accepts any minute (1:05, 1:35…).
+- [x] 2.2 Real first pitch everywhere: the 1/4/7 PM buckets are gone; games
+      come from MLB's schedule, and "Another date and time" accepts any
+      minute. When MLB hasn't set any start times yet, the finder opens on the
+      first home game's date at 1:05 PM and says so.
 - [ ] 2.3 Orientation:
       - [x] write the measurement script (`scripts/measureOrientation.ts`,
             records in `src/data/orientationMeasurements.ts`);
@@ -223,6 +233,8 @@ also checked against the live site.
       batches of about 5 parks (one commit per batch).
 - [ ] 2.7 Replace `bestShadedSideForDayGame` copy (page, FAQ JSON-LD, OG
       image) with the engine's answer for a typical 1:05 PM and 7:05 PM start.
+      Done: MLB pages and their FAQ JSON-LD no longer use it. Left: the OG
+      image and the NFL guide's ShadeAnswer (with 2.8).
 - [ ] 2.8 NFL:
       - measure the 14 venues at 0°;
       - derive sideline advice from the engine (west stands shade in the
@@ -262,20 +274,25 @@ also checked against the live site.
       come from reading the page as text, where a native date/time input's
       value isn't part of the text. Not a display bug; the control is
       replaced by the dropdown flow in 4.4 anyway.
-- [ ] 4.4 Homepage per the approved mockup: a "Stadium" dropdown, then a
+- [x] 4.4 Homepage per the approved mockup: a "Stadium" dropdown, then a
       "Game" dropdown. The next home game is picked automatically, so a phone
       gets an answer in 2 taps. Server-rendered, light hero.
-- [ ] 4.5 Game view:
+- [x] 4.5 Game view:
       - the real seating layout from each park's club map, colored
         Shaded/Partial/Sun, with a half-hour time slider labelled by inning;
       - "Find your section" search, "Most shade this game" list, share;
       - night games and "Time TBD" games get their own plain-language message;
       - replace the double-rendered 222-row table.
-- [ ] 4.6 Share link (`?game=&section=`) with a copy button. MobileApp
-      honours URL params.
+- [x] 4.6 Share link (`/stadium/{id}?game=&section=`) with a copy button;
+      the stadium page keeps it in the address bar. The old MobileApp now
+      links MLB picks to the stadium page instead.
+- [ ] 4.6b Found while testing: on a phone the cookie banner covers half the
+      screen on first visit, on top of the finder.
 - [ ] 4.7 Rewrite the copy for fans: remove "withheld", "self-shade",
       "holdout", "geometry confidence", "publication gate" and "paused" from
-      every page, the FAQ, guides and JSON-LD.
+      every page, the FAQ, guides and JSON-LD. Done: homepage, finder page,
+      every MLB stadium page and its JSON-LD, the old apps. Left: /faq,
+      /guide pages, /disclaimer, HomepageSchema, /how-it-works.
 
 ### Phase 5: technical (P5)
 - [ ] 5.1 Blog links:
@@ -290,13 +307,20 @@ also checked against the live site.
       - cut render-blocking sheets;
       - remove dead CSS and `CSSOptimizer`;
       - hero styles in a CSS module so they're in the server HTML;
-      - stop mounting the hidden app on load;
+      - [x] stop mounting the hidden app on load (the homepage no longer
+            has it);
       - load GA4 lazily, drop the preconnect and the duplicate ID;
-      - stop sending sections and guide to the client.
+      - [x] stop sending sections and guide to the client (the MLB stadium
+            page is 146 KB in development, was 640 KB live).
+      - [x] fixed a dev-only bug found on the way: next.config.js forced
+            year-long immutable caching on dev chunks, so pages never
+            hydrated locally.
 - [ ] 5.4 Accessibility: badge contrast at least 4.5:1, and fix the skip-link
       targets and focus.
 - [ ] 5.5 Canonicals on the 7 pages, a permanent `/faqs` redirect, and
-      distinct Giants and Jets meta descriptions.
+      distinct Giants and Jets meta descriptions. Done: non-MLB descriptions
+      name the team, so the two MetLife pages differ. Left: canonicals and
+      `/faqs`.
 - [ ] 5.6 Tests that guard the strengths: one H1, JSON-LD present, server
       rendering.
 
