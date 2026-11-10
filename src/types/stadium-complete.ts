@@ -50,6 +50,12 @@ export interface DetailedSection {
   distance: number; // Distance from home plate in feet
   height: number; // Height above field level
   rake: number; // Seating rake angle in degrees
+  /**
+   * Compass bearing this section's stand faces away from the field (the
+   * outward normal of its seating rows). Whether the sun is behind the stand
+   * or in its face depends on this, not on the bearing from home plate.
+   */
+  standCompass?: number;
   seatWidth?: number; // Average seat width in inches
   rowSpacing?: number; // Space between rows in inches
   

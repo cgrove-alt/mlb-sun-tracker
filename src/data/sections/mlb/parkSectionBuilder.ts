@@ -34,6 +34,8 @@ export interface ParkSectionSeed {
   height?: number;
   rake?: number;
   price?: DetailedSection['price'];
+  /** Compass bearing the stand's back faces (outward normal of its rows). */
+  standCompass?: number;
 }
 
 export interface SectionBand {
@@ -91,7 +93,181 @@ export interface ChartSeedConfig {
    * in multiples of that polygon's larger bounding-box dimension.
    */
   originInset?: number;
+  /**
+   * Field-box sections whose rows run parallel to each foul line. When given,
+   * the chart is calibrated from them instead of from the two anchors:
+   *   - a straight line is fitted through each set;
+   *   - the chart's vertical squash is solved so the two lines are 90° apart
+   *     (foul lines are perpendicular; club maps are often drawn at an angle);
+   *   - their crossing point is the origin and their bisector is the
+   *     home → center-field axis.
+   * Two anchor sections can sit off-center (Yankee Stadium's 122/123 tilted
+   * the axis by about 16°); a fit through a dozen sections cannot.
+   */
+  foulLineRows?: { firstBase: readonly string[]; thirdBase: readonly string[] };
+  /**
+   * Which seating ring a section belongs to, for fitting stand directions.
+   * Defaults to the section's level; give it when two physical rings share a
+   * level (Yankee Stadium's 200s and 300s are both "club").
+   */
+  tierOf?: (id: string, level: DetailedSection['level']) => string;
   classify: (id: string, point: ChartSectionPoint) => ChartSectionMeta | null;
+}
+
+interface ChartFrame {
+  /** Multiply chart y by this to undo the map's vertical squash. */
+  stretchY: number;
+  originX: number;
+  originY: number;
+  /** Unit vector from the origin toward center field, in stretched chart space. */
+  axisX: number;
+  axisY: number;
+}
+
+interface FittedLine {
+  mx: number;
+  my: number;
+  dx: number;
+  dy: number;
+}
+
+function fitLine(points: readonly { x: number; y: number }[]): FittedLine {
+  const mx = points.reduce((sum, p) => sum + p.x, 0) / points.length;
+  const my = points.reduce((sum, p) => sum + p.y, 0) / points.length;
+  let sxx = 0;
+  let syy = 0;
+  let sxy = 0;
+  for (const p of points) {
+    sxx += (p.x - mx) ** 2;
+    syy += (p.y - my) ** 2;
+    sxy += (p.x - mx) * (p.y - my);
+  }
+  const theta = 0.5 * Math.atan2(2 * sxy, sxx - syy);
+  return { mx, my, dx: Math.cos(theta), dy: Math.sin(theta) };
+}
+
+function frameFromFoulLines(
+  byId: ReadonlyMap<string, ChartSectionPoint>,
+  rows: NonNullable<ChartSeedConfig['foulLineRows']>,
+  centerField: { x: number; y: number },
+): ChartFrame {
+  const pick = (ids: readonly string[]) => ids.map((id) => {
+    const point = byId.get(id);
+    if (!point) throw new Error(`Foul-line calibration section missing: ${id}`);
+    return point;
+  });
+  const first = pick(rows.firstBase);
+  const third = pick(rows.thirdBase);
+  const stretched = (pts: ChartSectionPoint[], k: number) => pts.map((p) => ({ x: p.x, y: p.y * k }));
+  const angleBetween = (k: number) => {
+    const a = fitLine(stretched(first, k));
+    const b = fitLine(stretched(third, k));
+    return (Math.acos(Math.min(1, Math.abs(a.dx * b.dx + a.dy * b.dy))) * 180) / Math.PI;
+  };
+
+  let stretchY = 1;
+  let bestError = Infinity;
+  for (let k = 0.6; k <= 1.8; k += 0.0005) {
+    const error = Math.abs(angleBetween(k) - 90);
+    if (error < bestError) {
+      bestError = error;
+      stretchY = k;
+    }
+  }
+  if (bestError > 0.5) throw new Error(`Foul-line rows cannot be made perpendicular (off by ${bestError.toFixed(2)}°)`);
+
+  const a = fitLine(stretched(first, stretchY));
+  const b = fitLine(stretched(third, stretchY));
+  const det = a.dx * -b.dy - a.dy * -b.dx;
+  const t = ((b.mx - a.mx) * -b.dy - (b.my - a.my) * -b.dx) / det;
+  const originX = a.mx + a.dx * t;
+  const originY = a.my + a.dy * t;
+
+  // Point each line away from the crossing point (down the line), then bisect.
+  const outward = (line: FittedLine) => {
+    const sign = Math.sign((line.mx - originX) * line.dx + (line.my - originY) * line.dy) || 1;
+    return { x: line.dx * sign, y: line.dy * sign };
+  };
+  const u1 = outward(a);
+  const u3 = outward(b);
+  let axisX = u1.x + u3.x;
+  let axisY = u1.y + u3.y;
+  const length = Math.hypot(axisX, axisY);
+  axisX /= length;
+  axisY /= length;
+
+  // The axis must point at center field, and the first-base rows must be on
+  // the first-base side (positive cross product in a y-down chart).
+  const toCenter = { x: centerField.x - originX, y: centerField.y * stretchY - originY };
+  if (axisX * toCenter.x + axisY * toCenter.y <= 0) throw new Error('Foul-line axis does not point toward center field');
+  if (axisX * u1.y - axisY * u1.x <= 0) throw new Error('First-base rows are not on the first-base side of the axis');
+
+  return { stretchY, originX, originY, axisX, axisY };
+}
+
+/**
+ * Compass bearing each section's stand faces AWAY from the field: the
+ * outward normal of its seating rows, from a straight-line fit through its
+ * same-tier neighbours. This, not the bearing from home plate, is what
+ * decides whether the sun is behind a stand or in its face. Along a foul
+ * line the two differ by 45° or more.
+ */
+function standCompasses(
+  seeds: readonly { tier: string; x: number; y: number; area: number; width: number; height: number }[],
+  frame: ChartFrame,
+  orientation: number,
+  fieldCenter: { x: number; y: number },
+): (number | undefined)[] {
+  const byTier = new Map<string, number[]>();
+  seeds.forEach((seed, index) => byTier.set(seed.tier, [...(byTier.get(seed.tier) ?? []), index]));
+
+  const result: (number | undefined)[] = seeds.map(() => undefined);
+  for (const indices of byTier.values()) {
+    // Markers drawn on or beside a section (wheelchair platforms, standing
+    // rails) are not part of the row line. A marker sits inside a larger
+    // section's outline, or is under a quarter of the size of a section
+    // right next to it. Markers take their parent's direction.
+    const parentOf = (i: number): number | undefined => indices.find((j) => {
+      if (j === i || seeds[j].area <= seeds[i].area) return false;
+      const dx = Math.abs(seeds[i].x - seeds[j].x);
+      const dy = Math.abs(seeds[i].y - seeds[j].y);
+      const inside = dx < seeds[j].width / 2 && dy < seeds[j].height / 2;
+      const tinyNeighbour = seeds[i].area < seeds[j].area * 0.25 &&
+        Math.hypot(dx, dy) < Math.max(seeds[j].width, seeds[j].height);
+      return inside || tinyNeighbour;
+    });
+    const parents = new Map(indices.map((i) => [i, parentOf(i)]));
+    const fitters = indices.filter((i) => parents.get(i) === undefined);
+    if (fitters.length < 3) continue;
+
+    for (const i of fitters) {
+      const neighbours = fitters
+        .filter((j) => j !== i)
+        .map((j) => ({ j, d: Math.hypot(seeds[i].x - seeds[j].x, seeds[i].y - seeds[j].y) }))
+        .sort((p, q) => p.d - q.d)
+        .slice(0, 4)
+        .map(({ j }) => seeds[j]);
+      const line = fitLine([seeds[i], ...neighbours]);
+      let nx = -line.dy;
+      let ny = line.dx;
+      if (nx * (seeds[i].x - fieldCenter.x) + ny * (seeds[i].y - fieldCenter.y) < 0) {
+        nx = -nx;
+        ny = -ny;
+      }
+      const dot = frame.axisX * nx + frame.axisY * ny;
+      const cross = frame.axisX * ny - frame.axisY * nx;
+      result[i] = normalize(orientation + (Math.atan2(cross, dot) * 180) / Math.PI);
+    }
+    for (const i of indices) {
+      let parent = parents.get(i);
+      // Follow marker-of-marker chains to the section that was fitted.
+      for (let hops = 0; parent !== undefined && result[parent] === undefined && hops < 4; hops++) {
+        parent = parents.get(parent);
+      }
+      if (parent !== undefined && result[i] === undefined) result[i] = result[parent];
+    }
+  }
+  return result;
 }
 
 export function range(start: number, end: number, excluded: readonly number[] = []): string[] {
@@ -168,26 +344,55 @@ export function chartSeeds(
   const behind = averageAnchor(config.behindHomeIds);
   const center = averageAnchor(config.centerFieldIds);
 
-  const towardCenterX = center.x - behind.x;
-  const towardCenterY = center.y - behind.y;
-  const towardCenterLength = Math.hypot(towardCenterX, towardCenterY) || 1;
-  const ux = towardCenterX / towardCenterLength;
-  const uy = towardCenterY / towardCenterLength;
-  const inset = Math.max(behind.width, behind.height) * (config.originInset ?? 1.7);
-  const originX = behind.x + ux * inset;
-  const originY = behind.y + uy * inset;
-  const axisX = center.x - originX;
-  const axisY = center.y - originY;
-  const axisLength = Math.hypot(axisX, axisY) || 1;
-  const ax = axisX / axisLength;
-  const ay = axisY / axisLength;
+  let frame: ChartFrame;
+  if (config.foulLineRows) {
+    const fitted = frameFromFoulLines(byId, config.foulLineRows, center);
+    // The foul-line rows sit off the lines themselves, so they cross behind
+    // home plate. Home plate is on the fitted axis: project the behind-home
+    // anchors onto it (removing their sideways offset) and step in toward
+    // the field by the usual inset.
+    const bx = behind.x - fitted.originX;
+    const by = behind.y * fitted.stretchY - fitted.originY;
+    const along = bx * fitted.axisX + by * fitted.axisY;
+    const inset = Math.max(behind.width, behind.height * fitted.stretchY) * (config.originInset ?? 1.7);
+    frame = {
+      ...fitted,
+      originX: fitted.originX + fitted.axisX * (along + inset),
+      originY: fitted.originY + fitted.axisY * (along + inset),
+    };
+  } else {
+    const towardCenterX = center.x - behind.x;
+    const towardCenterY = center.y - behind.y;
+    const towardCenterLength = Math.hypot(towardCenterX, towardCenterY) || 1;
+    const ux = towardCenterX / towardCenterLength;
+    const uy = towardCenterY / towardCenterLength;
+    const inset = Math.max(behind.width, behind.height) * (config.originInset ?? 1.7);
+    const originX = behind.x + ux * inset;
+    const originY = behind.y + uy * inset;
+    const axisX = center.x - originX;
+    const axisY = center.y - originY;
+    const axisLength = Math.hypot(axisX, axisY) || 1;
+    frame = { stretchY: 1, originX, originY, axisX: axisX / axisLength, axisY: axisY / axisLength };
+  }
+  const { stretchY, originX, originY, axisX: ax, axisY: ay } = frame;
 
   const provisional: ParkSectionSeed[] = [];
+  const positions: { tier: string; x: number; y: number; area: number; width: number; height: number }[] = [];
   for (const point of points) {
     const meta = config.classify(point.id, point);
     if (!meta) continue;
-    const vx = point.x - originX;
-    const vy = point.y - originY;
+    const px = point.x;
+    const py = point.y * stretchY;
+    positions.push({
+      tier: config.tierOf ? config.tierOf(point.id, meta.level) : meta.level,
+      x: px,
+      y: py,
+      area: point.width * point.height * stretchY,
+      width: point.width,
+      height: point.height * stretchY,
+    });
+    const vx = px - originX;
+    const vy = py - originY;
     const dot = ax * vx + ay * vy;
     // SVG/chart y increases downward. With that coordinate convention, this
     // cross-product sign is positive toward the first-base/right-field side.
@@ -202,7 +407,7 @@ export function chartSeeds(
     const tangentY = vx / radius;
     const halfTangentExtent = (
       Math.abs(tangentX) * point.width / 2 +
-      Math.abs(tangentY) * point.height / 2
+      Math.abs(tangentY) * point.height * stretchY / 2
     );
     const polygonSpan = (2 * Math.atan2(halfTangentExtent, radius) * 180) / Math.PI;
     provisional.push({
@@ -221,7 +426,11 @@ export function chartSeeds(
     });
   }
 
-  return provisional;
+  // The field's middle, for pointing each stand normal away from the field.
+  const toCenter = Math.hypot(center.x - originX, center.y * stretchY - originY);
+  const fieldCenter = { x: originX + ax * toCenter * 0.45, y: originY + ay * toCenter * 0.45 };
+  const stands = standCompasses(positions, frame, config.orientation, fieldCenter);
+  return provisional.map((seed, index) => ({ ...seed, standCompass: stands[index] }));
 }
 
 const LEVEL_GEOMETRY: Record<
@@ -324,6 +533,7 @@ export function buildParkSections(
       distance,
       height,
       rake,
+      standCompass: seed.standCompass,
       viewQuality: seed.level === 'upper' ? 'fair' : seed.level === 'standing' ? 'good' : 'excellent',
     };
   });

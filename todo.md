@@ -174,17 +174,23 @@ also checked against the live site.
             a real drift: the Marlins' measured 129.036° was in
             `stadiums.ts` but `unifiedVenues.ts` still said 135° (fixed).
 - [ ] 2.3b Fix how section positions are read from the club seat maps.
-      Found while building the mockup:
-      - The Yankees map's "behind home" anchors (122/123) sit about 90 map
-        units off-center, so the engine's Yankees home → center-field axis is
-        tilted about 16°. Every Yankees section angle is off by that much.
-      - Forcing the two foul-line rows of field boxes to be 90° apart shows
-        the map is squashed about 13% top-to-bottom.
-      - Its scale isn't uniform either: bleachers come out at about 300 ft
-        against real 385–408 ft fences.
-      Fix: derive home plate and the axis from foul-line row fits instead of
-      two anchor sections, undo the squash, and check every chart-derived park
-      for the same tilt (with a test).
+      - [x] Yankee Stadium. The old method took the home → center-field axis
+            from two anchor sections that sit off-center, tilting every
+            Yankees section about 16°. The axis now comes from straight-line
+            fits through the field boxes along each foul line (robust to
+            within ~1° whichever rows are used). Home plate is placed on that
+            axis.
+      - [x] New per-section `standCompass`: the direction each stand's back
+            faces, fitted from its 4 nearest ring-mates (markers such as
+            wheelchair platforms copy their parent). This is what decides
+            whether the sun is behind a stand. Along a foul line it differs
+            from the bearing from home plate by 45° or more (box 015A: 216°
+            vs the old 121°).
+      - Correction to an earlier note: the "13% squash" came from fitting
+            through the curved part of the field-box rows. Using only the
+            straight runs gives 1.008, so the Yankees map is not squashed.
+      - [ ] Fenway and the other 27 chart-built parks: add foul-line rows
+            and check each park's arrows.
 - [ ] 2.4 Structure-profile data model, wired into the row model (roof,
       upper-deck overhang, press box, structure behind each level).
 - [ ] 2.5 Yankees and Fenway profiles plus their reference checks, which prove

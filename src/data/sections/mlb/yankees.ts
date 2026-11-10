@@ -18,6 +18,15 @@ export const yankeesSections: DetailedSection[] = buildParkSections(ORIENTATION,
     orientation: ORIENTATION,
     behindHomeIds: ['122', '123'],
     centerFieldIds: ['202', '238'],
+    // The straight runs of field-level boxes along each foul line (first base
+    // on the chart's left). The boxes nearer home (015A–017A, 023–024B) curve
+    // toward the plate, so they are left out of the line fits.
+    foulLineRows: {
+      firstBase: ['011', '012', '013', '014A', '014B'],
+      thirdBase: ['025', '026', '027A', '027B', '028', '029'],
+    },
+    // 0xx Legends, 1xx Field, 2xx Main (and bleachers), 3xx Terrace, 4xx Grandstand.
+    tierOf: (id) => id.replace(/^S/, '').charAt(0),
     classify: classifyYankeesSection,
   },
 ));
