@@ -40,12 +40,11 @@ export const CriticalStylesInline = () => {
     .hero-section {
       position: relative;
       width: 100%;
-      height: 100vh;
-      min-height: 600px;
-      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      background: #0c447c;
       display: flex;
       align-items: center;
       justify-content: center;
+      padding: 32px 16px 20px;
     }
 
     .hero-overlay {
@@ -60,7 +59,7 @@ export const CriticalStylesInline = () => {
     .hero-content {
       text-align: center;
       color: white;
-      padding: 2rem;
+      padding: 0;
       max-width: 800px;
       width: 100%;
       position: relative;
@@ -68,16 +67,18 @@ export const CriticalStylesInline = () => {
     }
 
     .hero-headline {
-      font-size: clamp(2rem, 5vw, 4rem);
+      font-size: clamp(1.75rem, 6vw, 3rem);
       font-weight: 800;
-      margin: 0 0 1.5rem;
+      color: #ffffff;
+      margin: 0 0 0.75rem;
       line-height: 1.1;
       text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
     }
 
     .hero-subheadline {
-      font-size: clamp(1rem, 2.5vw, 1.5rem);
-      margin: 0 0 2.5rem;
+      font-size: clamp(1rem, 2.5vw, 1.25rem);
+      color: #ffffff;
+      margin: 0;
       opacity: 0.95;
       font-weight: 300;
     }

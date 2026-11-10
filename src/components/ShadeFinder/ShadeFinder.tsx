@@ -47,8 +47,10 @@ const CUSTOM = 'custom';
 const STATUS_LABEL: Record<ShadeStatus, string> = { shaded: 'Shaded', partial: 'Partial shade', sun: 'Sun' };
 const CONFIDENCE_LABEL = { high: 'High confidence', medium: 'Medium confidence', low: 'Low confidence' } as const;
 
-const todayIn = (timeZone: string) =>
-  new Intl.DateTimeFormat('en-CA', { timeZone, year: 'numeric', month: '2-digit', day: '2-digit' }).format(new Date());
+const dateIn = (timeZone: string, when: Date = new Date()) =>
+  new Intl.DateTimeFormat('en-CA', { timeZone, year: 'numeric', month: '2-digit', day: '2-digit' }).format(when);
+const todayIn = (timeZone: string) => dateIn(timeZone);
+const ASSUMED_FIRST_PITCH = '13:05';
 
 export default function ShadeFinder({ parks, lockedStadiumId }: ShadeFinderProps) {
   const uid = useId();
@@ -68,6 +70,8 @@ export default function ShadeFinder({ parks, lockedStadiumId }: ShadeFinderProps
   const [shareNote, setShareNote] = useState('');
   const [shared, setShared] = useState<{ gamePk?: number; sectionId?: string }>({});
   const [attempt, setAttempt] = useState(0);
+  // True while showing an assumed start because MLB hasn't set any times yet.
+  const [assumedStart, setAssumedStart] = useState(false);
 
   // A shared link opens straight on its game and section.
   useEffect(() => {
@@ -98,8 +102,16 @@ export default function ShadeFinder({ parks, lockedStadiumId }: ShadeFinderProps
     if (!games || gameKey || !park) return;
     const fromLink = shared.gamePk ? games.find((g) => g.gamePk === shared.gamePk) : undefined;
     const next = fromLink ?? games.find((g) => !g.status.startTimeTBD);
-    setGameKey(next ? String(next.gamePk) : CUSTOM);
-    if (!next) setCustomDate(todayIn(park.timezone));
+    if (next) {
+      setGameKey(String(next.gamePk));
+    } else {
+      // No upcoming game has a start time yet (common before a season):
+      // start on the first home game's date with a typical day-game start.
+      setGameKey(CUSTOM);
+      setCustomDate(games[0] ? dateIn(park.timezone, new Date(games[0].gameDate)) : todayIn(park.timezone));
+      setCustomTime(ASSUMED_FIRST_PITCH);
+      setAssumedStart(Boolean(games[0]));
+    }
     if (shared.sectionId) setSelectedId(shared.sectionId);
   }, [games, gameKey, park, shared]);
 
@@ -195,6 +207,7 @@ export default function ShadeFinder({ parks, lockedStadiumId }: ShadeFinderProps
               disabled={!games}
               onChange={(e) => {
                 setGameKey(e.target.value);
+                setAssumedStart(false);
                 setStep(0);
                 if (e.target.value === CUSTOM && !customDate) setCustomDate(todayIn(park.timezone));
               }}
@@ -211,11 +224,11 @@ export default function ShadeFinder({ parks, lockedStadiumId }: ShadeFinderProps
           <div className={styles.customRow}>
             <label className={styles.field}>
               <span className={styles.label}>Date</span>
-              <input className={styles.input} type="date" value={customDate} onChange={(e) => setCustomDate(e.target.value)} />
+              <input className={styles.input} type="date" value={customDate} onChange={(e) => { setCustomDate(e.target.value); setAssumedStart(false); }} />
             </label>
             <label className={styles.field}>
               <span className={styles.label}>First pitch (local time)</span>
-              <input className={styles.input} type="time" value={customTime} onChange={(e) => setCustomTime(e.target.value)} />
+              <input className={styles.input} type="time" value={customTime} onChange={(e) => { setCustomTime(e.target.value); setAssumedStart(false); }} />
             </label>
           </div>
         )}
@@ -226,6 +239,9 @@ export default function ShadeFinder({ parks, lockedStadiumId }: ShadeFinderProps
         <p className={styles.notice}>
           Couldn&apos;t load the schedule. <button type="button" className={styles.linkButton} onClick={() => setAttempt((n) => n + 1)}>Try again</button> or pick another date and time.
         </p>
+      )}
+      {park && assumedStart && gameKey === CUSTOM && (
+        <p className={styles.notice}>MLB hasn&apos;t set start times for the next home games yet, so this shows a 1:05 PM start. Change the date or time above.</p>
       )}
       {park && game?.status.startTimeTBD && gameKey !== CUSTOM && (
         <p className={styles.notice}>MLB hasn&apos;t set the start time for this game yet. Pick another game, or choose a date and time.</p>
@@ -241,7 +257,7 @@ export default function ShadeFinder({ parks, lockedStadiumId }: ShadeFinderProps
               <p><strong>Night game:</strong> the sun is down by first pitch, so every seat is out of the sun.</p>
             ) : best0 ? (
               <p>
-                <strong>Best bet:</strong> Section {best0.sectionId} ({best0.tierLabel}):{' '}
+                <strong>Best bet:</strong> Section {best0.sectionId}, {best0.tierLabel}:{' '}
                 {best0.sentence.slice(best0.sentence.indexOf(': ') + 2)}
               </p>
             ) : (

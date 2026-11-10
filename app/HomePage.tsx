@@ -117,14 +117,12 @@ export default function HomePage({ parks }: { parks: FinderPark[] }) {
         .hero-section {
           position: relative;
           width: 100%;
-          height: 100vh;
-          min-height: 600px;
-          background: linear-gradient(135deg, #0f766e 0%, #0891b2 100%);
+          background: #0c447c;
           display: flex;
           align-items: center;
           justify-content: center;
           overflow: hidden;
-          padding: 2rem;
+          padding: 32px 16px 20px;
         }
 
         .hero-section::before {
@@ -143,30 +141,25 @@ export default function HomePage({ parks }: { parks: FinderPark[] }) {
           z-index: 2;
           width: 100%;
           max-width: 800px;
-          background: rgba(255, 255, 255, 0.1);
-          backdrop-filter: blur(12px);
-          -webkit-backdrop-filter: blur(12px);
-          border: 1px solid rgba(255, 255, 255, 0.2);
-          border-radius: 24px;
-          padding: 3rem 2rem;
+          padding: 0;
           color: white;
-          animation: fadeInUp 1s ease-out;
-          box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
           text-align: center;
         }
 
         .hero-headline {
-          font-size: clamp(2.5rem, 5vw, 4.5rem);
+          font-size: clamp(1.75rem, 6vw, 3rem);
           font-weight: 700;
-          margin-bottom: 1.5rem;
+          color: #ffffff;
+          margin-bottom: 0.75rem;
           text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
           line-height: 1.1;
           letter-spacing: -0.02em;
         }
 
         .hero-subheadline {
-          font-size: clamp(1.125rem, 2.5vw, 1.375rem);
-          margin-bottom: 3rem;
+          font-size: clamp(1rem, 2.5vw, 1.25rem);
+          color: #ffffff;
+          margin-bottom: 0;
           opacity: 0.95;
           text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
           max-width: 600px;
