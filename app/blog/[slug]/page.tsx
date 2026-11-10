@@ -12,6 +12,9 @@ marked.setOptions({
   breaks: true,
 });
 
+// Only published posts have pages; a draft's URL 301-redirects (next.config.js).
+export const dynamicParams = false;
+
 export async function generateStaticParams() {
   const posts = getAllPosts();
   return posts.map((post) => ({

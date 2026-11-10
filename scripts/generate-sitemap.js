@@ -32,6 +32,7 @@ try {
       const fullPath = path.join(blogDir, f);
       const raw = fs.readFileSync(fullPath, 'utf-8');
       const { data } = matter(raw);
+      if (data.draft === true) return null; // unpublished: redirects elsewhere
       const slug = f.replace(/\.mdx$/, '');
       // Prefer dateModified (correction date) over the original publish date so
       // Google sees an accurate lastmod for posts we substantively updated.
@@ -40,7 +41,8 @@ try {
         ? new Date(effective).toISOString().split('T')[0]
         : new Date(fs.statSync(fullPath).mtime).toISOString().split('T')[0];
       return { slug, lastmod: dateISO, category: data.category || 'general' };
-    });
+    })
+    .filter(Boolean);
 } catch (err) {
   console.warn('No blog posts found or error reading them:', err.message);
 }
