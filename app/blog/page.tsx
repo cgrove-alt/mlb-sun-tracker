@@ -1,6 +1,6 @@
 import { Metadata } from 'next';
 import Link from 'next/link';
-import { getAllPosts, getCategories } from '@/lib/blog';
+import { getAllPosts, getCategories, categoryLabel } from '@/lib/blog';
 import './blog.css';
 
 export const metadata: Metadata = {
@@ -115,20 +115,10 @@ export default function BlogPage() {
                 {categories.map((category) => (
                   <li key={category}>
                     <Link href={`/blog/category/${category}`}>
-                      {category.charAt(0).toUpperCase() + category.slice(1)}
+                      {categoryLabel(category)}
                     </Link>
                   </li>
                 ))}
-              </ul>
-            </div>
-
-            <div className="sidebar-widget rounded-xl border bg-white p-4 md:p-5 shadow-sm stack">
-              <h3>Popular Topics</h3>
-              <ul className="topic-list">
-                <li><Link href="/blog/category/stadium-guides">Stadium Guides</Link></li>
-                <li><Link href="/blog/category/seasonal">Seasonal Tips</Link></li>
-                <li><Link href="/blog/category/how-to">How-To Guides</Link></li>
-                <li><Link href="/blog/category/comparisons">Stadium Comparisons</Link></li>
               </ul>
             </div>
 

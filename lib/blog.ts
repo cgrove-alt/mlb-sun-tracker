@@ -121,6 +121,17 @@ export function getRelatedPosts(currentSlug: string, limit = 3): BlogPost[] {
     .map((item) => item.post);
 }
 
+const CATEGORY_LABELS: Record<string, string> = {
+  'stadium-guides': 'Stadium Guides',
+  seasonal: 'Seasonal Tips',
+};
+
+/** Display name for a category slug ("stadium-guides" → "Stadium Guides"). */
+export function categoryLabel(category: string): string {
+  return CATEGORY_LABELS[category]
+    ?? category.split('-').map((word) => word.charAt(0).toUpperCase() + word.slice(1)).join(' ');
+}
+
 export function getCategories(): string[] {
   const posts = getAllPosts();
   const categories = new Set(posts.map((post) => post.category));

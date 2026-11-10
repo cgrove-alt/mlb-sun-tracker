@@ -94,9 +94,10 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
   };
 
   const postUrl = `https://theshadium.com/blog/${slug}`;
+  // Each post has a generated share image (opengraph-image.tsx).
   const postImage = post.image
     ? (post.image.startsWith('http') ? post.image : `https://theshadium.com${post.image}`)
-    : 'https://theshadium.com/logo512.png';
+    : `${postUrl}/opengraph-image`;
 
   const blogPostingJsonLd = {
     '@context': 'https://schema.org',
@@ -250,10 +251,12 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
           </div>
 
           <div className="post-tags">
+            {/* Tags are labels, not links: 93 tag pages would each hold one
+                or two posts. Categories have their own pages. */}
             {post.tags.map((tag) => (
-              <Link key={tag} href={`/blog/tag/${tag}`} className="post-tag">
+              <span key={tag} className="post-tag">
                 #{tag}
-              </Link>
+              </span>
             ))}
           </div>
 
