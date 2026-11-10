@@ -73,6 +73,12 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://theshadium.com/blog/shaded-seats-daikin-park</loc>
+    <lastmod>2026-07-17</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://theshadium.com/blog/shaded-seats-dodger-stadium</loc>
     <lastmod>2025-09-15</lastmod>
     <changefreq>monthly</changefreq>
@@ -91,12 +97,6 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://theshadium.com/blog/shaded-seats-guaranteed-rate-field</loc>
-    <lastmod>2026-07-17</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
     <loc>https://theshadium.com/blog/shaded-seats-kauffman-stadium</loc>
     <lastmod>2026-07-17</lastmod>
     <changefreq>monthly</changefreq>
@@ -104,12 +104,6 @@
   </url>
   <url>
     <loc>https://theshadium.com/blog/shaded-seats-loanDepot-park</loc>
-    <lastmod>2026-07-17</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://theshadium.com/blog/shaded-seats-minute-maid-park</loc>
     <lastmod>2026-07-17</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -140,6 +134,12 @@
   </url>
   <url>
     <loc>https://theshadium.com/blog/shaded-seats-progressive-field</loc>
+    <lastmod>2026-07-17</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://theshadium.com/blog/shaded-seats-rate-field</loc>
     <lastmod>2026-07-17</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -185,5 +185,17 @@
     <lastmod>2026-07-17</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://theshadium.com/blog/category/seasonal</loc>
+    <lastmod>2024-12-13</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://theshadium.com/blog/category/stadium-guides</loc>
+    <lastmod>2026-07-17</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
   </url>
 </urlset>

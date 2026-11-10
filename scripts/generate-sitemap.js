@@ -1,6 +1,7 @@
 const fs = require('fs');
 const path = require('path');
 const matter = require('gray-matter');
+const { execFileSync } = require('child_process');
 
 // Read venues from the generated unifiedVenues.ts file
 const unifiedVenuesPath = path.join(__dirname, '../src/data/unifiedVenues.ts');
@@ -38,7 +39,7 @@ try {
       const dateISO = effective
         ? new Date(effective).toISOString().split('T')[0]
         : new Date(fs.statSync(fullPath).mtime).toISOString().split('T')[0];
-      return { slug, lastmod: dateISO };
+      return { slug, lastmod: dateISO, category: data.category || 'general' };
     });
 } catch (err) {
   console.warn('No blog posts found or error reading them:', err.message);
@@ -62,40 +63,105 @@ const staticPages = [
   'blog'
 ];
 
-// League pages
+// League pages. There are no per-level MiLB pages (/league/milb/aaa and so
+// on 404), so only the three league hubs are listed.
 const leaguePages = [
   'league/mlb',
   'league/nfl',
-  'league/milb',
-  'league/milb/aaa',
-  'league/milb/aa',
-  'league/milb/a+',
-  'league/milb/a'
+  'league/milb'
 ];
 
 const baseUrl = 'https://theshadium.com';
-const buildDate = new Date().toISOString().split('T')[0];
+const publicDir = path.join(__dirname, '../public');
+const repoRoot = path.join(__dirname, '..');
+const today = new Date().toISOString().split('T')[0];
 
-const urlEntry = (loc, { changefreq = 'weekly', priority = '0.5', lastmod = buildDate } = {}) => `
+// lastmod is the date a page's own source last changed, not the build date.
+// That needs the full git history. Vercel builds from a shallow clone, where
+// `git log` would date every file to the clone's oldest commit, so there we
+// reuse the dates already in the committed sitemaps instead.
+const git = (args) => execFileSync('git', args, { cwd: repoRoot, encoding: 'utf-8' }).trim();
+let fullHistory = false;
+try {
+  fullHistory = git(['rev-parse', '--is-shallow-repository']) === 'false';
+} catch {
+  fullHistory = false;
+}
+
+const committedLastmod = new Map();
+for (const file of ['sitemap.xml', 'sitemap-stadiums.xml', 'sitemap-guides.xml', 'sitemap-blog.xml']) {
+  try {
+    const xml = fs.readFileSync(path.join(publicDir, file), 'utf-8');
+    for (const [, loc, lastmod] of xml.matchAll(/<loc>([^<]+)<\/loc>\s*<lastmod>([^<]+)<\/lastmod>/g)) {
+      committedLastmod.set(loc, lastmod);
+    }
+  } catch {
+    // No committed sitemap yet.
+  }
+}
+
+/** Last change to any of `sources` (paths or git pathspecs), as YYYY-MM-DD. */
+function sourceDate(loc, sources) {
+  if (!fullHistory) return committedLastmod.get(loc);
+  try {
+    if (git(['status', '--porcelain', '--', ...sources])) return today; // edited, not yet committed
+    return git(['log', '-1', '--format=%cs', '--', ...sources]) || committedLastmod.get(loc);
+  } catch {
+    return committedLastmod.get(loc);
+  }
+}
+
+/** A route's own directory, without the routes nested inside it. */
+const routeFiles = (dir) => `:(glob)${dir}/*.*`;
+
+const urlEntry = (loc, { changefreq = 'weekly', priority = '0.5', lastmod } = {}) => `
   <url>
-    <loc>${loc}</loc>
-    <lastmod>${lastmod}</lastmod>
+    <loc>${loc}</loc>${lastmod ? `
+    <lastmod>${lastmod}</lastmod>` : ''}
     <changefreq>${changefreq}</changefreq>
     <priority>${priority}</priority>
   </url>`;
 
+const pageLastmod = (page) => {
+  const loc = `${baseUrl}/${page}`;
+  const sources = page === '' ? ['app/page.tsx', 'app/HomePage.tsx'] : [routeFiles(`app/${page}`)];
+  return sourceDate(loc, sources);
+};
+
+const leagueLastmod = (page) => sourceDate(`${baseUrl}/${page}`, [routeFiles('app/league/[leagueId]')]);
+
+/** A venue page changes with its template and with its own section data. */
+const venueLastmod = (venue, league) => {
+  const sources = [routeFiles('app/stadium/[stadiumId]')];
+  const sectionFile = `src/data/sections/${league}/${venue}.ts`;
+  if (fs.existsSync(path.join(repoRoot, sectionFile))) sources.push(sectionFile);
+  return sourceDate(`${baseUrl}/stadium/${venue}`, sources);
+};
+
+/** The newest lastmod in a sitemap, for the index. */
+const newest = (dates) => dates.filter(Boolean).sort().pop();
+
 // Generate main sitemap with static pages and league pages
 let mainSitemap = `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">`;
+const mainDates = [];
+
+// The blog index changes whenever a post does.
+const newestPost = newest(blogPosts.map((post) => post.lastmod));
+const lastmodFor = (page) => (page === 'blog' ? newest([pageLastmod(page), newestPost]) : pageLastmod(page));
 
 staticPages.forEach(page => {
   const priority = page === '' ? '1.0' : page.startsWith('guide') ? '0.8' : '0.5';
   const changefreq = page === '' ? 'daily' : 'weekly';
-  mainSitemap += urlEntry(`${baseUrl}/${page}`, { changefreq, priority });
+  const lastmod = lastmodFor(page);
+  mainDates.push(lastmod);
+  mainSitemap += urlEntry(`${baseUrl}/${page}`, { changefreq, priority, lastmod });
 });
 
 leaguePages.forEach(page => {
-  mainSitemap += urlEntry(`${baseUrl}/${page}`, { changefreq: 'weekly', priority: '0.7' });
+  const lastmod = leagueLastmod(page);
+  mainDates.push(lastmod);
+  mainSitemap += urlEntry(`${baseUrl}/${page}`, { changefreq: 'weekly', priority: '0.7', lastmod });
 });
 
 mainSitemap += `
@@ -104,19 +170,16 @@ mainSitemap += `
 // Generate stadiums sitemap with all venue pages
 let stadiumsSitemap = `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">`;
+const stadiumDates = [];
 
 // All venues live under the single canonical /stadium/ URL pattern.
 // The former /venue/ URLs 301-redirect here and are intentionally omitted.
-mlbVenues.forEach(venue => {
-  stadiumsSitemap += urlEntry(`${baseUrl}/stadium/${venue}`, { changefreq: 'weekly', priority: '0.9' });
-});
-
-nflVenues.forEach(venue => {
-  stadiumsSitemap += urlEntry(`${baseUrl}/stadium/${venue}`, { changefreq: 'weekly', priority: '0.8' });
-});
-
-milbVenues.forEach(venue => {
-  stadiumsSitemap += urlEntry(`${baseUrl}/stadium/${venue}`, { changefreq: 'weekly', priority: '0.7' });
+[[mlbVenues, 'mlb', '0.9'], [nflVenues, 'nfl', '0.8'], [milbVenues, 'milb', '0.7']].forEach(([venues, league, priority]) => {
+  venues.forEach(venue => {
+    const lastmod = venueLastmod(venue, league);
+    stadiumDates.push(lastmod);
+    stadiumsSitemap += urlEntry(`${baseUrl}/stadium/${venue}`, { changefreq: 'weekly', priority, lastmod });
+  });
 });
 
 stadiumsSitemap += `
@@ -125,18 +188,20 @@ stadiumsSitemap += `
 // Generate guides sitemap
 let guidesSitemap = `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">`;
+const guideDates = [];
 
 const guidePaths = staticPages.filter(page => page.startsWith('guide'));
-guidePaths.forEach(page => {
-  guidesSitemap += urlEntry(`${baseUrl}/${page}`, { changefreq: 'weekly', priority: '0.8' });
+[...guidePaths, 'blog'].forEach(page => {
+  const lastmod = lastmodFor(page);
+  guideDates.push(lastmod);
+  guidesSitemap += urlEntry(`${baseUrl}/${page}`, { changefreq: page === 'blog' ? 'daily' : 'weekly', priority: '0.8', lastmod });
 });
-
-guidesSitemap += urlEntry(`${baseUrl}/blog`, { changefreq: 'daily', priority: '0.8' });
 
 guidesSitemap += `
 </urlset>`;
 
-// Generate blog sitemap
+// Generate blog sitemap: every post, then each category page, dated by its
+// newest post.
 let blogSitemap = `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">`;
 
@@ -148,38 +213,44 @@ blogPosts.forEach(({ slug, lastmod }) => {
   });
 });
 
+const blogCategories = [...new Set(blogPosts.map((post) => post.category))].sort();
+blogCategories.forEach(category => {
+  const lastmod = newest(blogPosts.filter((post) => post.category === category).map((post) => post.lastmod));
+  blogSitemap += urlEntry(`${baseUrl}/blog/category/${category}`, { changefreq: 'weekly', priority: '0.5', lastmod });
+});
+
 blogSitemap += `
 </urlset>`;
 
-// Generate sitemap index
+// Generate sitemap index. Each child is dated by its newest page; the
+// hand-written image sitemap by its own last commit.
+const indexEntry = (file, lastmod) => `
+  <sitemap>
+    <loc>${baseUrl}/${file}</loc>${lastmod ? `
+    <lastmod>${lastmod}</lastmod>` : ''}
+  </sitemap>`;
+
+let committedIndex = '';
+try {
+  committedIndex = fs.readFileSync(path.join(publicDir, 'sitemap-index.xml'), 'utf-8');
+} catch {
+  // No committed index yet.
+}
+const committedImagesDate = committedIndex.match(/sitemap-images\.xml<\/loc>\s*<lastmod>([^<]+)</)?.[1];
+const imagesDate = fullHistory
+  ? sourceDate(`${baseUrl}/sitemap-images.xml`, ['public/sitemap-images.xml']) || committedImagesDate
+  : committedImagesDate;
+
 const sitemapIndex = `<?xml version="1.0" encoding="UTF-8"?>
-<sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <sitemap>
-    <loc>${baseUrl}/sitemap.xml</loc>
-    <lastmod>${buildDate}</lastmod>
-  </sitemap>
-  <sitemap>
-    <loc>${baseUrl}/sitemap-stadiums.xml</loc>
-    <lastmod>${buildDate}</lastmod>
-  </sitemap>
-  <sitemap>
-    <loc>${baseUrl}/sitemap-guides.xml</loc>
-    <lastmod>${buildDate}</lastmod>
-  </sitemap>
-  <sitemap>
-    <loc>${baseUrl}/sitemap-blog.xml</loc>
-    <lastmod>${buildDate}</lastmod>
-  </sitemap>
-  <!-- sitemap-images.xml is checked in rather than generated here, but it was
-       omitted from this index, so crawlers had no way to discover it. -->
-  <sitemap>
-    <loc>${baseUrl}/sitemap-images.xml</loc>
-    <lastmod>${buildDate}</lastmod>
-  </sitemap>
+<sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">${
+  indexEntry('sitemap.xml', newest(mainDates))}${
+  indexEntry('sitemap-stadiums.xml', newest(stadiumDates))}${
+  indexEntry('sitemap-guides.xml', newest(guideDates))}${
+  indexEntry('sitemap-blog.xml', newestPost)}${
+  indexEntry('sitemap-images.xml', imagesDate)}
 </sitemapindex>`;
 
 // Write sitemaps
-const publicDir = path.join(__dirname, '../public');
 fs.writeFileSync(path.join(publicDir, 'sitemap.xml'), mainSitemap);
 fs.writeFileSync(path.join(publicDir, 'sitemap-stadiums.xml'), stadiumsSitemap);
 fs.writeFileSync(path.join(publicDir, 'sitemap-guides.xml'), guidesSitemap);
@@ -190,10 +261,10 @@ fs.writeFileSync(path.join(publicDir, 'sitemap-index.xml'), sitemapIndex);
 const mainUrls = staticPages.length + leaguePages.length;
 const stadiumUrls = mlbVenues.length + nflVenues.length + milbVenues.length;
 const guideUrls = guidePaths.length + 1; // +1 for /blog
-const blogUrls = blogPosts.length;
+const blogUrls = blogPosts.length + blogCategories.length;
 const totalUrls = mainUrls + stadiumUrls + guideUrls + blogUrls;
 
-console.log(`✓ Sitemaps generated with ${totalUrls} total URLs (build date: ${buildDate})`);
+console.log(`✓ Sitemaps generated with ${totalUrls} total URLs (dates from ${fullHistory ? 'git history' : 'the committed sitemaps'})`);
 console.log(`  Main sitemap: ${mainUrls} URLs (static + league pages)`);
 console.log(`  Stadiums sitemap: ${stadiumUrls} URLs`);
 console.log(`    - ${mlbVenues.length} MLB stadiums (/stadium/)`);
