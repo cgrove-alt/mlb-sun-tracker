@@ -8,7 +8,11 @@ export interface MLBGame {
   status: {
     statusCode: string;
     detailedState: string;
+    /** MLB has not set the start time yet; `gameDate` is a placeholder (07:33 UTC). */
+    startTimeTBD?: boolean;
   };
+  /** 'day' or 'night', as MLB schedules it. */
+  dayNight?: string;
   teams: {
     away: {
       team: {
@@ -212,6 +216,20 @@ export class MLBApiService {
       console.error('Error fetching team schedule:', error);
       return [];
     }
+  }
+
+  /**
+   * Upcoming home games at a park, soonest first. Asks MLB for one team's
+   * schedule (about 100 KB) rather than the whole league's (about 1.3 MB).
+   */
+  async getUpcomingHomeGames(stadiumId: string, now: Date = new Date()): Promise<MLBGame[]> {
+    const teamId = Object.entries(MLB_TEAM_TO_STADIUM_MAP).find(([, id]) => id === stadiumId)?.[0];
+    if (!teamId) return [];
+    const range = upcomingScheduleRange(now);
+    const games = await this.getTeamSchedule(Number(teamId), range.startDate, range.endDate);
+    return this.getHomeGamesForStadium(stadiumId, games)
+      .filter((game) => game.gameType === 'R' || game.gameType === 'F' || game.gameType === 'D' || game.gameType === 'L' || game.gameType === 'W')
+      .sort((a, b) => a.gameDate.localeCompare(b.gameDate));
   }
 
   getStadiumIdFromTeamId(teamId: number): string | null {

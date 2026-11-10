@@ -32,3 +32,18 @@ describe('getHomeGamesForStadium', () => {
     expect(mlbApi.getHomeGamesForStadium('nowhere', [game(1, 3313, 'Yankee Stadium', 'R')])).toEqual([]);
   });
 });
+
+describe('getUpcomingHomeGames', () => {
+  it('asks for one team, keeps regular-season games at the park, soonest first', async () => {
+    const spy = jest.spyOn(mlbApi, 'getTeamSchedule').mockResolvedValue([
+      { ...game(3, 3313, 'Yankee Stadium', 'R'), gameDate: '2027-04-10T17:35:00Z' },
+      { ...game(1, 2523, 'George M. Steinbrenner Field', 'S'), gameDate: '2027-02-20T18:05:00Z' },
+      { ...game(2, 3313, 'Yankee Stadium', 'R'), gameDate: '2027-03-25T17:35:00Z' },
+      { ...game(4, 3313, 'Yankee Stadium', 'E'), gameDate: '2027-03-23T17:05:00Z' },
+    ]);
+    const games = await mlbApi.getUpcomingHomeGames('yankees', new Date(2026, 10, 10));
+    expect(spy).toHaveBeenCalledWith(147, '2026-11-10', expect.any(String));
+    expect(games.map((g) => g.gamePk)).toEqual([2, 3]);
+    spy.mockRestore();
+  });
+});
