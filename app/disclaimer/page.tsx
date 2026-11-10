@@ -4,6 +4,7 @@ import Link from 'next/link';
 export const metadata: Metadata = {
   title: 'Disclaimers | The Shadium',
   description: 'Important disclaimers for The Shadium MLB stadium shade finder. Understand the limitations and proper use of our shade calculations.',
+  alternates: { canonical: 'https://theshadium.com/disclaimer' },
   robots: {
     index: true,
     follow: true,

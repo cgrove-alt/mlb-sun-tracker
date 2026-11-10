@@ -3,6 +3,7 @@ import { Metadata } from 'next';
 export const metadata: Metadata = {
   title: 'Contact Us - The Shadium',
   description: 'Get in touch with The Shadium team',
+  alternates: { canonical: 'https://theshadium.com/contact' },
 };
 
 export default function ContactPage() {

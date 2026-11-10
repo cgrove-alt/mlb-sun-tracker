@@ -4,6 +4,7 @@ import Link from 'next/link';
 export const metadata: Metadata = {
   title: 'Technology & Attributions | The Shadium',
   description: 'Learn about the technology and data sources that power The Shadium shade calculator, including attributions and citations.',
+  alternates: { canonical: 'https://theshadium.com/attributions' },
   robots: {
     index: true,
     follow: true,

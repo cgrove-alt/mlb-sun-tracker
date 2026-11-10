@@ -76,6 +76,11 @@ const nextConfig = {
         destination: '/stadium/:venueId',
         statusCode: 301,
       },
+      {
+        source: '/faqs',
+        destination: '/faq',
+        statusCode: 301,
+      },
       // Renamed ballparks: keep old blog URLs working.
       {
         source: '/blog/shaded-seats-minute-maid-park',

@@ -4,6 +4,7 @@ import Link from 'next/link';
 export const metadata: Metadata = {
   title: 'Terms of Service | The Shadium',
   description: 'Terms of service for The Shadium. Read our terms for using our MLB stadium shade finder.',
+  alternates: { canonical: 'https://theshadium.com/terms' },
   robots: {
     index: true,
     follow: true,

@@ -4,6 +4,7 @@ import Link from 'next/link';
 export const metadata: Metadata = {
   title: 'Privacy Policy | The Shadium',
   description: 'Privacy policy for The Shadium. Learn how we protect your data while helping you find shaded seats at MLB stadiums.',
+  alternates: { canonical: 'https://theshadium.com/privacy' },
   robots: {
     index: true,
     follow: true,

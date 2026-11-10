@@ -4,6 +4,7 @@ import Link from 'next/link';
 export const metadata: Metadata = {
   title: 'Cookie Policy | The Shadium',
   description: 'Learn how The Shadium uses cookies and similar technologies to enhance your experience. Manage your cookie preferences.',
+  alternates: { canonical: 'https://theshadium.com/cookies' },
   robots: {
     index: true,
     follow: true,
