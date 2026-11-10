@@ -109,6 +109,8 @@
     "selectDate": "Seleccionar fecha para análisis de hora personalizada",
     "selectTime": "Seleccionar hora para análisis de hora personalizada",
     "applyCustomTime": "Aplicar Hora Personalizada",
+    "apply": "Aplicar",
+    "applyCustomDateTime": "Aplicar fecha y hora personalizadas",
     "customTimeInfo": "Usa hora personalizada para analizar la exposición al sol en cualquier fecha y hora, incluso durante la temporada baja."
   },
   "sun": {
