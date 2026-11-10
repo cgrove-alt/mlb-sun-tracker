@@ -38,6 +38,28 @@ export interface MLBScheduleResponse {
   }>;
 }
 
+/**
+ * Date range for an "upcoming games" query: the fan's local calendar date
+ * through `days` days later.
+ *
+ * The end date is always after the start date, so the query stays valid in
+ * the offseason. The old callers ended the range on Oct 31 of the current
+ * year, so from Nov 1 on the end date fell before the start date and MLB's
+ * API answered 400 ("endDate must be after startDate").
+ *
+ * Local date, not UTC: `toISOString()` rolls over to tomorrow during an
+ * evening game in the US, which dropped that night's game from the list.
+ */
+export function upcomingScheduleRange(
+  now: Date = new Date(),
+  days = 180,
+): { startDate: string; endDate: string } {
+  const ymd = (d: Date) =>
+    `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, '0')}-${String(d.getDate()).padStart(2, '0')}`;
+  const end = new Date(now.getFullYear(), now.getMonth(), now.getDate() + days);
+  return { startDate: ymd(now), endDate: ymd(end) };
+}
+
 // Map MLB team IDs to our stadium IDs
 const MLB_TEAM_TO_STADIUM_MAP: Record<number, string> = {
   108: 'angels', // Los Angeles Angels
@@ -84,9 +106,9 @@ export class MLBApiService {
 
   getSchedule = withCache(
     async (startDate?: string, endDate?: string): Promise<MLBGame[]> => {
-    const today = new Date();
-    const defaultStart = startDate || today.toISOString().split('T')[0];
-    const defaultEnd = endDate || new Date(today.getTime() + 180 * 24 * 60 * 60 * 1000).toISOString().split('T')[0];
+    const range = upcomingScheduleRange();
+    const defaultStart = startDate || range.startDate;
+    const defaultEnd = endDate || range.endDate;
     
     // Validate dates
     if (startDate && !validateDate(startDate)) {
@@ -145,9 +167,9 @@ export class MLBApiService {
         throw new Error('Invalid team ID');
       }
       
-      const today = new Date();
-      const defaultStart = startDate || today.toISOString().split('T')[0];
-      const defaultEnd = endDate || new Date(today.getTime() + 180 * 24 * 60 * 60 * 1000).toISOString().split('T')[0];
+      const range = upcomingScheduleRange();
+      const defaultStart = startDate || range.startDate;
+      const defaultEnd = endDate || range.endDate;
       
       // Validate dates
       if (startDate && !validateDate(startDate)) {

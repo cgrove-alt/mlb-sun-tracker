@@ -10,7 +10,7 @@ import { LoadingSpinner } from '../../../src/components/LoadingSpinner';
 import { usePullToRefresh } from '../../../src/hooks/usePullToRefresh';
 import { PullToRefreshIndicator } from '../../../src/components/PullToRefreshIndicator';
 import { formatInTimeZone } from '../../../src/utils/dateTimeUtils';
-import { mlbApi, MLBGame } from '../../../src/services/mlbApi';
+import { mlbApi, MLBGame, upcomingScheduleRange } from '../../../src/services/mlbApi';
 import { canPublishSeatLevelShade } from '../../../src/data/stadiumShadeConfidence';
 
 const ComprehensiveStadiumGuide = dynamic(
@@ -75,12 +75,8 @@ export default function StadiumPageClient({
       setGamesLoading(true);
       setGamesError(null);
       try {
-        const today = new Date();
-        const endDate = new Date(today.getFullYear(), 9, 31); // Oct 31 — regular season end
-        const allGames = await mlbApi.getSchedule(
-          today.toISOString().split('T')[0],
-          endDate.toISOString().split('T')[0]
-        );
+        const range = upcomingScheduleRange();
+        const allGames = await mlbApi.getSchedule(range.startDate, range.endDate);
         if (cancelled) return;
         const homeGames = mlbApi.getHomeGamesForStadium(stadium.id, allGames);
         setGames(homeGames);

@@ -3,7 +3,7 @@ import { customSelectStyles } from './selectStyles';
 import { groupOptionsByMonth } from './groupOptionsByMonth';
 import Select from 'react-select';
 import { format } from 'date-fns';
-import { MLBGame, mlbApi } from '../services/mlbApi';
+import { MLBGame, mlbApi, upcomingScheduleRange } from '../services/mlbApi';
 import { MiLBGame, milbApi, MILB_LEVELS } from '../services/milbApi';
 import { NFLGame, nflApi } from '../services/nflApi';
 import { UnifiedVenue, getAllLeagues, getVenuesByLeague, getLeagueInfo, getMiLBVenuesByLevel, getMiLBLevels, isMiLBVenue } from '../data/unifiedVenues';
@@ -130,17 +130,12 @@ export const UnifiedGameSelector: React.FC<UnifiedGameSelectorProps> = ({
       gamesLoading.setLoading(true);
       
       const now = new Date();
-      const currentYear = now.getFullYear();
       // For MiLB, use 30 days due to API limitation with multiple sport IDs
-      const endDate = selectedVenue.league === 'MiLB' 
-        ? new Date(now.getTime() + 30 * 24 * 60 * 60 * 1000) 
-        : new Date(currentYear, 9, 31); // End of October for MLB
-      
+      const endDate = new Date(now.getTime() + 30 * 24 * 60 * 60 * 1000);
+
       if (selectedVenue.league === 'MLB') {
-        const schedule = await mlbApi.getSchedule(
-          now.toISOString().split('T')[0],
-          endDate.toISOString().split('T')[0]
-        );
+        const range = upcomingScheduleRange(now);
+        const schedule = await mlbApi.getSchedule(range.startDate, range.endDate);
         
         const homeGames = mlbApi.getHomeGamesForStadium(selectedVenue.id, schedule);
 
