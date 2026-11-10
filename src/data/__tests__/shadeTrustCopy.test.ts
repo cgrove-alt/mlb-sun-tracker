@@ -10,12 +10,11 @@ const PUBLIC_TRUST_SURFACES = [
   'app/layout.tsx',
   'app/opengraph-image.tsx',
   'app/stadium/[stadiumId]/StadiumPageSSR.tsx',
-  'app/stadium/[stadiumId]/StadiumPageClient.tsx',
+  'src/components/ShadeFinder/ShadeFinder.tsx',
   'components/FooterModern.tsx',
   'components/SafeSchema.tsx',
   'src/components/SectionShadeSEO.tsx',
   'src/components/MobileStadiumGuide.tsx',
-  'src/components/StadiumSchema.tsx',
   'src/MobileApp.tsx',
   'src/data/guides/mlbStadiumGuides.ts',
 ];

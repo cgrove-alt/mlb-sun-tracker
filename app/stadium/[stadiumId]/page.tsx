@@ -9,14 +9,11 @@ import { getStadiumGuide } from '../../../src/data/guides';
 import { getStadiumDataFidelity, fidelityNote } from '../../../src/data/stadiumDataFidelity';
 import { getCanonicalStadiumId, needsRedirect } from '../../../src/utils/stadiumSlugMapping';
 import { ALL_UNIFIED_VENUES, getUnifiedVenueById } from '../../../src/data/unifiedVenues';
-import { bestShadedSideForDayGame } from '../../../src/utils/shadeSide';
 import { STADIUM_WIKIPEDIA } from '../../../src/data/stadiumWikipedia';
-import { ErrorBoundary } from '../../../src/components/ErrorBoundary';
 import ComprehensiveStadiumGuide from '../../../src/components/ComprehensiveStadiumGuide';
 import { ShadeDataVerified } from '../../../src/components/ShadeDataVerified';
 import { getStadiumSectionProvenance } from '../../../src/data/stadiumSectionProvenance';
 import { RelatedStadiums } from '../../../src/components/RelatedStadiums';
-import StadiumPageClient from './StadiumPageClient';
 import StadiumPageSSR from './StadiumPageSSR';
 import styles from './StadiumPage.module.css';
 import killOverhang from './KillOverhang.module.css';
@@ -46,7 +43,7 @@ export async function generateMetadata({ params }: StadiumPageProps): Promise<Me
   if (stadium) {
     // SEO-optimized title targeting "shaded seats at [stadium]"
     const title = `Shaded Seats at ${stadium.name} - ${stadium.team} | The Shadium`;
-    const description = `Source-backed section inventory and solar-orientation context for ${stadium.name}. Exact row-level shade results are withheld until remotely reconstructed metric geometry is independently validated.`;
+    const description = `Which seats are in the shade at ${stadium.name}? Pick any ${stadium.team} home game to see every section in sun or shade, inning by inning.`;
 
     return {
       title,
@@ -90,7 +87,7 @@ export async function generateMetadata({ params }: StadiumPageProps): Promise<Me
   }
 
   const title = `Shaded Seats at ${venue.name} - ${venue.team} | The Shadium`;
-  const description = `Review section inventory, solar context, roof type, and measurement status for ${venue.name}.`;
+  const description = `Sun and shade guide for ${venue.team} games at ${venue.name}: seating, roof and sun-protection tips.`;
 
   return {
     title,
@@ -143,7 +140,6 @@ interface VenueSchemaInput {
 function buildVenueSchemas(v: VenueSchemaInput): Record<string, unknown>[] {
   const url = `https://theshadium.com/stadium/${v.id}`;
   const stadiumNodeId = `${url}#stadium`;
-  const shadeSide = bestShadedSideForDayGame(v.orientation);
   const wikipedia = STADIUM_WIKIPEDIA[v.id];
 
   const article: Record<string, unknown> = {
@@ -204,7 +200,9 @@ function buildVenueSchemas(v: VenueSchemaInput): Record<string, unknown>[] {
         name: `What are the best shaded seats at ${v.name}?`,
         acceptedAnswer: {
           '@type': 'Answer',
-          text: `The orientation model suggests the ${shadeSide} may self-shade first at ${v.name}. Exact sections and rows require measured geometry and are not published without independent validation.`,
+          text: v.league === 'MLB'
+            ? `It depends on when the game starts: shade moves across ${v.name} as the sun drops. The Shadium's map shows every section in sun or shade for any home game, inning by inning.`
+            : `It depends on the time of day and where the sun is. Covered areas and the side of the stadium facing away from the afternoon sun stay out of the sun longest; check the ${v.name} guide for covered seating.`,
         },
       },
       {
@@ -212,7 +210,9 @@ function buildVenueSchemas(v: VenueSchemaInput): Record<string, unknown>[] {
         name: `Which sections at ${v.name} have covered seating?`,
         acceptedAnswer: {
           '@type': 'Answer',
-          text: `A seating chart alone cannot verify row-by-row roof or overhang coverage at ${v.name}. Consult the venue for current roof and covered-area information.`,
+          text: v.league === 'MLB'
+            ? `Rows under a deck or roof are built into The Shadium's map of ${v.name}: they show as shaded even when the sun is high overhead.`
+            : `Covered seating depends on the stadium's roof and upper decks; check the ${v.name} guide and the venue's own seating information.`,
         },
       },
       {
@@ -220,7 +220,9 @@ function buildVenueSchemas(v: VenueSchemaInput): Record<string, unknown>[] {
         name: `How can I avoid sun at ${v.name} during day games?`,
         acceptedAnswer: {
           '@type': 'Answer',
-          text: `Use the solar-orientation context for ${v.name} as a broad planning aid, then confirm covered seating with the venue. Exact seat-level shade is withheld without validated metric geometry.`,
+          text: v.league === 'MLB'
+            ? `Pick your game on The Shadium to see which sections are shaded at each point of the game, then search for your section or choose from the shadiest sections list.`
+            : `Choose covered seats or the side of the stadium in its own shadow for the time of your game, and bring sun protection.`,
         },
       },
     ],
@@ -313,9 +315,6 @@ export default async function StadiumPage({ params }: StadiumPageProps) {
   const amenities = getStadiumAmenities(stadium.id);
   // Use the stadium's canonical ID for guide lookup
   const guide = getStadiumGuide(stadium.id) || getStadiumGuide(stadiumId);
-  // Fidelity note computed on the server (was computed inside FidelityNotice,
-  // which pulled the full stadium-data-aggregator into the client first-load).
-  const fidelityNoteText = fidelityNote(getStadiumDataFidelity(stadium.id));
 
   // Structured data (Article + StadiumOrArena + FAQPage + BreadcrumbList),
   // built from the same helper the MiLB/NFL branch uses.
@@ -352,20 +351,6 @@ export default async function StadiumPage({ params }: StadiumPageProps) {
           amenities={amenities}
           guide={guide}
         />
-      </div>
-
-      {/* Main content in grid */}
-      <div className={styles.contentWrapper} suppressHydrationWarning>
-        <ErrorBoundary level="section" resetKeys={[stadiumId]}>
-          <StadiumPageClient
-            stadium={stadium}
-            sections={sections}
-            amenities={amenities}
-            guide={guide}
-            fidelityNote={fidelityNoteText}
-            useComprehensive={!!guide}
-          />
-        </ErrorBoundary>
       </div>
 
       <RelatedStadiums venueId={stadium.id} />
