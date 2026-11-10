@@ -407,6 +407,7 @@ const MobileApp: React.FC = () => {
                   currentFilters={filterCriteria}
                   resultCount={filteredSections.length}
                   allSections={allSections}
+                  league={selectedVenue?.league}
                 />
               </section>
 

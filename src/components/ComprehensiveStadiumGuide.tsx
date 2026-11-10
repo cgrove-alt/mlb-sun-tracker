@@ -12,6 +12,7 @@ import {
 import StadiumTitleBlock from './StadiumTitleBlock';
 import { StadiumTitleData } from './StadiumTitleBlock';
 import { FidelityNotice } from './FidelityNotice';
+import type { KickoffSunSides } from '../utils/nflSunSide';
 import { ShadeAnswer } from './ShadeAnswer';
 import './StadiumGuide.css';
 
@@ -26,6 +27,8 @@ interface ComprehensiveStadiumGuideProps {
   guide: StadiumGuide | undefined;
   // Precomputed fidelity note (see FidelityNotice). null/undefined = no note.
   fidelityNote?: string | null;
+  // NFL only: which sideline has the sun at its back, worked out on the server.
+  nflSunSides?: KickoffSunSides;
   // When false, the guide's own title block (H1) is suppressed — used on MLB
   // stadium pages where StadiumPageSSR already renders the single H1/header.
   showTitleBlock?: boolean;
@@ -36,6 +39,7 @@ const ComprehensiveStadiumGuide: React.FC<ComprehensiveStadiumGuideProps> = ({
   guide,
   fidelityNote,
   showTitleBlock = true,
+  nflSunSides,
 }) => {
   // The structured venue record is the single source of truth for header
   // facts (location, capacity, orientation, league). Previously these came
@@ -43,6 +47,7 @@ const ComprehensiveStadiumGuide: React.FC<ComprehensiveStadiumGuideProps> = ({
   // "South Bronx," (missing state) bug, a hardcoded 'MLB' league for MiLB/NFL,
   // and a capacity that conflicted with the canonical value.
   const venue = getUnifiedVenueById(stadiumId);
+  const handWrittenShadeHidden = venue?.league === 'NFL';
   
   // Debug logging
   if (typeof window !== 'undefined' && guide) {
@@ -96,7 +101,7 @@ const ComprehensiveStadiumGuide: React.FC<ComprehensiveStadiumGuideProps> = ({
       {/* Answer-first summary — only when standalone (MLB pages get it from
           StadiumPageSSR instead, so it isn't duplicated). */}
       {showTitleBlock && venue && (
-        <ShadeAnswer name={venue.name} orientation={venue.orientation} roof={venue.roof} />
+        <ShadeAnswer venue={venue} nflSunSides={nflSunSides} />
       )}
 
       {/* The interactive shade diagram is intentionally NOT rendered for MiLB/NFL
@@ -135,7 +140,11 @@ const ComprehensiveStadiumGuide: React.FC<ComprehensiveStadiumGuideProps> = ({
       {/* Shade Guide Section */}
       <section className="guide-section shade-guide">
         <h2>Shade & Sun Protection Guide</h2>
-        
+
+        {/* NFL guides' hand-written shade lists named the wrong sideline (the
+            east side for afternoon games). NFL shade advice now comes only from
+            the sun's path (ShadeAnswer above); the lists stay in the data. */}
+        {!handWrittenShadeHidden && (<>
         <div className="shade-by-time">
           <h3>Best Shaded Sections by Time</h3>
           <div className="time-grid">
@@ -174,6 +183,7 @@ const ComprehensiveStadiumGuide: React.FC<ComprehensiveStadiumGuideProps> = ({
             ))}
           </ul>
         </div>
+        </>)}
 
         <div className="weather-patterns">
           <h3>Monthly Weather Patterns</h3>
@@ -187,7 +197,7 @@ const ComprehensiveStadiumGuide: React.FC<ComprehensiveStadiumGuideProps> = ({
                   <span><CloudIcon size={16} /> {pattern.rainChance}% rain</span>
                 </div>
                 <p className="conditions">{pattern.typicalConditions}</p>
-                <p className="shade-tip">{pattern.shadeTip}</p>
+                {!handWrittenShadeHidden && <p className="shade-tip">{pattern.shadeTip}</p>}
               </div>
             ))}
           </div>
@@ -343,7 +353,7 @@ const ComprehensiveStadiumGuide: React.FC<ComprehensiveStadiumGuideProps> = ({
           <h3>Typical Game Day Schedule</h3>
           <ul>
             <li><ClockIcon size={16} /> Gates Open: {guide.gameDay.typicalSchedule.gatesOpen}</li>
-            <li><ClockIcon size={16} /> First Pitch: {guide.gameDay.typicalSchedule.firstPitch}</li>
+            <li><ClockIcon size={16} /> {venue?.league === 'NFL' ? 'Kickoff' : 'First Pitch'}: {guide.gameDay.typicalSchedule.firstPitch}</li>
             {guide.gameDay.typicalSchedule.battingPractice && (
               <li><ClockIcon size={16} /> Batting Practice: {guide.gameDay.typicalSchedule.battingPractice}</li>
             )}
