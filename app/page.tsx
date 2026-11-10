@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import HomePage from './HomePage';
+import { finderParks } from '../src/components/ShadeFinder/finderParks';
 
 export const metadata: Metadata = {
   alternates: {
@@ -7,4 +8,6 @@ export const metadata: Metadata = {
   },
 };
 
-export default HomePage;
+export default function Page() {
+  return <HomePage parks={finderParks()} />;
+}

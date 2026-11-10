@@ -2,7 +2,6 @@ import React, { useState, useEffect, useCallback } from 'react';
 import { VENUE_COUNT } from './data/venueCount';
 import { Stadium } from './data/stadiums';
 import { UnifiedVenue, convertToLegacyStadium } from './data/unifiedVenues';
-import { getStadiumSectionsAsync } from './data/getStadiumSections';
 import { getVenueSections } from './data/venueSections';
 import { generateBaseballSections } from './utils/generateBaseballSections';
 import { MLBGame } from './services/mlbApi';
@@ -21,7 +20,6 @@ import { getSunPosition, getSunDescription, getCompassDirection } from './utils/
 import { SunIcon, MoonIcon } from './components/Icons';
 import { FidelityNotice } from './components/FidelityNotice';
 import { getStadiumDataFidelity, fidelityNote } from './data/stadiumDataFidelity';
-import { canPublishSeatLevelShade } from './data/stadiumShadeConfidence';
 import { validateFilterCriteria, RateLimiter } from './utils/validation';
 import { debounce } from './utils/debounce';
 import './styles/mobile.css';
@@ -47,8 +45,8 @@ const MobileApp: React.FC = () => {
   const [sunPosition, setSunPosition] = useState<any>(null);
 
   const [isCalculating, setIsCalculating] = useState(false);
-  const seatShadePublished = selectedVenue?.league !== 'MLB'
-    || canPublishSeatLevelShade(selectedVenue.id);
+  // MLB ballparks have the game-by-game shade map on their own page.
+  const isMlb = selectedVenue?.league === 'MLB';
 
   // Convert unified venue to legacy stadium when needed
   useEffect(() => {
@@ -166,7 +164,7 @@ const MobileApp: React.FC = () => {
         azimuthDegrees: position.azimuthDegrees
       });
 
-      if (selectedVenue.league === 'MLB' && !canPublishSeatLevelShade(selectedVenue.id)) {
+      if (selectedVenue.league === 'MLB') {
         setAllSections([]);
         setFilteredSections([]);
         return;
@@ -174,10 +172,7 @@ const MobileApp: React.FC = () => {
       
       // Get sections based on venue type
       let sections: any[] = [];
-      if (selectedVenue.league === 'MLB') {
-        // Use async MLB sections to avoid bundling all stadiums
-        sections = await getStadiumSectionsAsync(selectedVenue.id);
-      } else if (selectedVenue.league === 'MiLB') {
+      if (selectedVenue.league === 'MiLB') {
         // Get MiLB sections - will use custom layouts if available
         sections = getVenueSections(selectedVenue.id);
         // Fall back to generated sections if no custom layout
@@ -395,12 +390,15 @@ const MobileApp: React.FC = () => {
 
           {/* Filter and Results */}
           {gameDateTime && selectedVenue && (
-            !seatShadePublished ? (
-              <section className="mobile-section" id="results" role="status" aria-labelledby="mobile-shade-results-paused">
-                <div className="mobile-error-banner" style={{ background: '#fffbeb', color: '#78350f', borderColor: '#f5c96a' }}>
-                  <h2 id="mobile-shade-results-paused" className="mobile-section-title">Section results paused</h2>
-                  <p>Sun position and weather remain available. Section percentages, filters, and rankings are withheld until measured geometry passes independent shadow validation.</p>
-                </div>
+            isMlb ? (
+              <section className="mobile-section" id="results">
+                <h2 className="mobile-section-title">Every section&apos;s shade for this game</h2>
+                <p>
+                  <a href={`/stadium/${selectedVenue.id}${selectedGame && 'gamePk' in selectedGame ? `?game=${selectedGame.gamePk}` : ''}`}>
+                    See the {selectedVenue.name} shade map
+                  </a>{' '}
+                  — sun or shade for every section, inning by inning.
+                </p>
               </section>
             ) : (
             <>

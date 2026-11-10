@@ -15,7 +15,6 @@ import { ErrorProvider, useError } from './components/ErrorNotification';
 import { Breadcrumb } from './components/NavigationBreadcrumb';
 import { FidelityNotice } from './components/FidelityNotice';
 import { getStadiumDataFidelity, fidelityNote } from './data/stadiumDataFidelity';
-import { canPublishSeatLevelShade } from './data/stadiumShadeConfidence';
 import { LoadingSpinner } from './components/LoadingSpinner';
 import { VenueChangeSkeleton } from './components/SkeletonScreens';
 import { SunIcon, MoonIcon } from './components/Icons';
@@ -24,9 +23,7 @@ import { SunExposureExplanation } from './components/SunExposureExplanation';
 import MobileApp from './MobileApp';
 
 import { I18nProvider, useTranslation } from './i18n/i18nContext';
-import { getSunPosition, getSunDescription, getCompassDirection, SeatingSectionSun, calculateGameSunExposure } from './utils/sunCalculations';
-import { SunCalculator } from './utils/sunCalculator';
-import { getStadiumSectionsAsync } from './data/getStadiumSections';
+import { getSunPosition, getSunDescription, getCompassDirection, SeatingSectionSun } from './utils/sunCalculations';
 import { getVenueSections } from './data/venueSections';
 import { MLBGame } from './services/mlbApi';
 import { NFLGame } from './services/nflApi';
@@ -56,8 +53,9 @@ function UnifiedAppContent() {
 
   // Convert unified venue to legacy stadium format for compatibility
   const legacyStadium = selectedVenue ? convertToLegacyStadium(selectedVenue) : null;
-  const seatShadePublished = selectedVenue?.league !== 'MLB'
-    || canPublishSeatLevelShade(selectedVenue.id);
+  // MLB ballparks have the game-by-game shade map on their own page; this
+  // finder's section list is for NFL and minor league venues.
+  const isMlb = selectedVenue?.league === 'MLB';
 
   // Load venue from URL parameters on mount
   useEffect(() => {
@@ -181,7 +179,7 @@ function UnifiedAppContent() {
         if (isCancelled) return;
         setSunPosition(formattedPosition);
 
-        if (selectedVenue.league === 'MLB' && !canPublishSeatLevelShade(selectedVenue.id)) {
+        if (selectedVenue.league === 'MLB') {
           setDetailedSections([]);
           setShadedSections([]);
           setGameExposureData(null);
@@ -190,10 +188,7 @@ function UnifiedAppContent() {
         
         // Get sections based on venue type
         let sections: any[] = [];
-        if (selectedVenue.league === 'MLB') {
-          // Use async MLB sections to avoid bundling all stadiums
-          sections = await getStadiumSectionsAsync(selectedVenue.id);
-        } else if (selectedVenue.league === 'MiLB') {
+        if (selectedVenue.league === 'MiLB') {
           // Get MiLB sections - will use custom layouts if available
           sections = getVenueSections(selectedVenue.id);
           // Fall back to generated sections if no custom layout
@@ -216,72 +211,24 @@ function UnifiedAppContent() {
         if (isCancelled) return;
         setShadedSections(shadeResults);
         
-        // Convert to legacy format for compatibility
-        if (selectedVenue.league === 'MLB') {
-          // For MLB, use existing detailed calculations
-          const calculator = new SunCalculator(legacyStadium!);
-          const gameDuration = 3;
-          
-          const detailedSectionData: SeatingSectionSun[] = sections.map((section) => {
-            // Stadium-local convention: 0 = 1B, 90 = CF, 180 = 3B, 270 = behind
-            // home plate. This mapping used to start `home` at 315–45°, which is
-            // the 1B corner, so every section was labelled a quarter-turn wrong.
-            const local = ((section.baseAngle % 360) + 360) % 360;
-            const side: 'home' | 'first' | 'third' | 'outfield' =
-              local >= 315 || local < 45 ? 'first' :
-              local < 135 ? 'outfield' :
-              local < 225 ? 'third' : 'home';
+        // Convert to the section-list format (MLB parks use the shade map on their own page).
+        const convertedSections: SeatingSectionSun[] = shadeResults.map(result => ({
+          section: {
+            id: result.section.id,
+            name: result.section.name,
+            level: result.section.level as 'field' | 'lower' | 'club' | 'upper' | 'suite',
+            baseAngle: result.section.baseAngle,
+            angleSpan: result.section.angleSpan,
+            covered: result.section.covered,
+            price: result.section.price as 'value' | 'moderate' | 'premium' | 'luxury'
+          },
+          sunExposure: Math.round(100 - result.shadePercentage),
+          inSun: result.isInSun,
+          timeInSun: result.isInSun ? 180 : 0,
+          percentageOfGameInSun: 100 - result.shadePercentage
+        }));
 
-            // Pass the stadium-LOCAL baseAngle (carried through by the spread)
-            // and let SunCalculator convert it with the park's orientation.
-            // This used to set `angle: section.baseAngle`, handing a local angle
-            // to a field documented as a compass bearing, which discarded every
-            // park's orientation.
-            const sectionWithGeometry = {
-              ...section,
-              side,
-              depth: 50 // Default depth
-            };
-            
-            // Calculate time in sun
-            const timeExposure = calculator.calculateTimeInSun(sectionWithGeometry, gameDateTime, gameDuration);
-            
-            return {
-              section,
-              sunExposure: Math.round(timeExposure.percentage),
-              inSun: timeExposure.percentage > 20,
-              timeInSun: timeExposure.totalMinutes,
-              percentageOfGameInSun: timeExposure.percentage
-            };
-          });
-          
-          if (isCancelled) return;
-
-          setDetailedSections(detailedSectionData);
-          
-          // Calculate game exposure - pass sections to avoid bundling
-          const exposureMap = calculateGameSunExposure(legacyStadium!, gameDateTime, gameDuration, sections);
-          setGameExposureData(exposureMap);
-        } else {
-          // For non-MLB venues, convert shade results to legacy format
-          const convertedSections: SeatingSectionSun[] = shadeResults.map(result => ({
-            section: {
-              id: result.section.id,
-              name: result.section.name,
-              level: result.section.level as 'field' | 'lower' | 'club' | 'upper' | 'suite',
-              baseAngle: result.section.baseAngle,
-              angleSpan: result.section.angleSpan,
-              covered: result.section.covered,
-              price: result.section.price as 'value' | 'moderate' | 'premium' | 'luxury'
-            },
-            sunExposure: Math.round(100 - result.shadePercentage),
-            inSun: result.isInSun,
-            timeInSun: result.isInSun ? 180 : 0,
-            percentageOfGameInSun: 100 - result.shadePercentage
-          }));
-
-          setDetailedSections(convertedSections);
-        }
+        setDetailedSections(convertedSections);
         
       } catch (error) {
         console.error('Error calculating sun exposure:', error);
@@ -454,32 +401,25 @@ function UnifiedAppContent() {
                 )}
               </div>
 
-              {!seatShadePublished && selectedVenue.league === 'MLB' && (
-                <section
-                  role="status"
-                  aria-labelledby="desktop-shade-results-paused"
-                  style={{
-                    margin: '1rem 0',
-                    padding: '1rem',
-                    border: '1px solid #f5c96a',
-                    borderLeft: '4px solid #b45309',
-                    borderRadius: '8px',
-                    background: '#fffbeb',
-                    color: '#78350f',
-                  }}
-                >
-                  <h2 id="desktop-shade-results-paused" style={{ marginTop: 0 }}>Section results paused</h2>
-                  <p style={{ marginBottom: 0 }}>Sun position and weather remain available, but section percentages and rankings are withheld until measured stadium geometry passes independent shadow validation.</p>
+              {isMlb && (
+                <section style={{ margin: '1rem 0', padding: '1rem', border: '1px solid #b5d4f4', borderRadius: '8px', background: '#e6f1fb', color: '#0c447c' }}>
+                  <h2 style={{ marginTop: 0 }}>Every section&apos;s shade for this game</h2>
+                  <p style={{ marginBottom: 0 }}>
+                    <a href={`/stadium/${selectedVenue.id}${selectedGame && 'gamePk' in selectedGame ? `?game=${selectedGame.gamePk}` : ''}`} style={{ color: '#0c447c', fontWeight: 600 }}>
+                      See the {selectedVenue.name} shade map
+                    </a>{' '}
+                    — sun or shade for every section, inning by inning.
+                  </p>
                 </section>
               )}
 
-              {seatShadePublished && selectedVenue && gameDateTime && detailedSections.length > 0 && (
+              {!isMlb && selectedVenue && gameDateTime && detailedSections.length > 0 && (
                 <>
                   <SunExposureExplanation />
                 </>
               )}
 
-              {seatShadePublished && detailedSections.length > 0 && (
+              {!isMlb && detailedSections.length > 0 && (
                 <SectionList
                   sections={detailedSections}
                   loading={loadingSections}

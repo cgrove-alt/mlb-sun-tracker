@@ -1,42 +1,17 @@
 'use client';
 
-import { Suspense, useState } from 'react';
 import dynamic from 'next/dynamic';
 import { VENUE_COUNT, MLB_COUNT, MILB_COUNT, NFL_COUNT } from '../src/data/venueCount';
-import { HomePageSkeleton } from '../src/components/SkeletonScreens';
-import { ErrorBoundary } from '../src/components/ErrorBoundary';
 import HomepageSchema from './HomepageSchema';
 import Link from 'next/link';
-
-// Use the unified App component that supports multiple leagues
-const App = dynamic(() => import('../src/UnifiedApp'), {
-  ssr: false,
-  loading: () => <HomePageSkeleton />,
-});
+import ShadeFinder, { type FinderPark } from '../src/components/ShadeFinder/ShadeFinder';
 
 // Below-the-fold, non-critical: defer so it never competes with initial paint.
 const PWAInstallPrompt = dynamic(() => import('../components/PWAInstallPrompt'), {
   ssr: false,
 });
 
-export default function HomePage() {
-  const [showApp, setShowApp] = useState(false);
-
-  const handleCTAClick = () => {
-    setShowApp(true);
-    // After the app reveals, land the user directly on the stadium picker and
-    // focus it so the next step is obvious — not the top of a section that can
-    // look empty. Falls back to the app section if the dynamic app hasn't
-    // finished mounting yet (focus is then simply skipped, no harm).
-    setTimeout(() => {
-      const venueInput = document.getElementById('venue-select');
-      const target = venueInput?.closest('.control-group') || document.getElementById('app-section');
-      const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-      target?.scrollIntoView({ behavior: reduceMotion ? 'auto' : 'smooth', block: 'center' });
-      venueInput?.focus({ preventScroll: true });
-    }, 200);
-  };
-
+export default function HomePage({ parks }: { parks: FinderPark[] }) {
   return (
     <>
       <HomepageSchema />
@@ -45,18 +20,19 @@ export default function HomePage() {
         <section className="hero-section">
           <div className="hero-content">
             <h1 className="hero-headline h1 break-words md:break-normal">
-              Find Seats in the Shade
+              Will your seats be in the shade?
             </h1>
             <p className="hero-subheadline max-w-prose">
-              Avoid the sun and enjoy the game in comfort at any MLB, NFL, or MiLB stadium
+              Pick your ballpark and game to see every section in sun or shade, inning by inning.
             </p>
-            <button 
-              onClick={handleCTAClick}
-              className="hero-cta-button"
-            >
-              Select Your Stadium
-            </button>
           </div>
+        </section>
+
+        <section className="home-finder" aria-label="Find shaded seats">
+          <ShadeFinder parks={parks} />
+          <p className="home-finder__other">
+            Going to an NFL or minor league game? <Link href="/seats-shade-finder">Use the full stadium finder</Link>.
+          </p>
         </section>
 
         {/*
@@ -73,9 +49,9 @@ export default function HomePage() {
             Find Shaded Seats at MLB, MiLB &amp; NFL Stadiums
           </h2>
           <p className="home-intro__lead">
-            The Shadium provides sun-position context and seating information for {VENUE_COUNT} venues across Major League
-            Baseball (all {MLB_COUNT} ballparks), Minor League Baseball ({MILB_COUNT} parks), and the NFL ({NFL_COUNT} stadiums).
-            Pick your stadium and game time to see the available evidence and its measurement limits.
+            The Shadium covers {VENUE_COUNT} venues across Major League Baseball (all {MLB_COUNT} ballparks), Minor League
+            Baseball ({MILB_COUNT} parks), and the NFL ({NFL_COUNT} stadiums). For every MLB ballpark, pick your game to see
+            which sections are in the shade, from first pitch to the final out.
           </p>
 
           {/* What the tool actually accounts for — i.e. why its answer differs
@@ -84,8 +60,8 @@ export default function HomePage() {
             <li className="home-features__item">
               <span className="home-features__icon" aria-hidden="true">🧭</span>
               <span>
-                <strong>Park-specific orientation.</strong> Direction differs by venue and its
-                recorded precision is disclosed rather than treated as exact.
+                <strong>Each ballpark&apos;s real layout.</strong> Every park faces its own direction,
+                measured from aerial photos, and the map uses its real seating sections.
               </span>
             </li>
             <li className="home-features__item">
@@ -99,15 +75,15 @@ export default function HomePage() {
             <li className="home-features__item">
               <span className="home-features__icon" aria-hidden="true">🏟️</span>
               <span>
-                <strong>Geometry confidence.</strong> Source-backed section identity is kept separate
-                from modeled rows, roofs, decks, and overhangs. Unvalidated seat-level results are withheld.
+                <strong>Decks and roofs count.</strong> Rows under an upper deck or roof are shaded
+                even at noon, and every answer says how sure we are.
               </span>
             </li>
             <li className="home-features__item">
               <span className="home-features__icon" aria-hidden="true">🌤️</span>
               <span>
-                <strong>Game-day weather.</strong> Forecast cloud cover is folded in, because an
-                overcast afternoon changes what a &quot;sunny seat&quot; actually means.
+                <strong>The whole game, not just first pitch.</strong> Shade moves as the sun drops,
+                so each section shows sun or shade every half hour, labelled by inning.
               </span>
             </li>
           </ul>
@@ -127,20 +103,13 @@ export default function HomePage() {
             <div className="home-intro__col">
               <h3 className="home-intro__subtitle">How it works</h3>
               <p>
-                Choose a stadium and game time to see sun angle, orientation context, roof status,
-                weather, and the field-level data confidence. <Link href="/how-it-works">Read the full methodology</Link>.
+                Pick a ballpark and a game. We work out where the sun is for each half hour of the
+                game and which rows their own stand, deck or roof keeps out of it. <Link href="/how-it-works">How it works</Link>.
               </p>
             </div>
           </div>
         </section>
 
-        <div id="app-section" className={showApp ? 'app-visible' : 'app-hidden'}>
-          <ErrorBoundary level="section">
-            <Suspense fallback={<HomePageSkeleton />}>
-              <App />
-            </Suspense>
-          </ErrorBoundary>
-        </div>
         <PWAInstallPrompt />
       </div>
 
@@ -207,6 +176,17 @@ export default function HomePage() {
           line-height: 1.6;
         }
 
+        .home-finder {
+          background: #ffffff;
+          padding: 8px 0 24px;
+        }
+        .home-finder__other {
+          max-width: 640px;
+          margin: 0 auto;
+          padding: 0 16px;
+          font-size: 14px;
+          color: #4b5563;
+        }
         .hero-cta-button {
           background: white;
           color: #0f766e;
