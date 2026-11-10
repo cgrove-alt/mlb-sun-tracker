@@ -60,6 +60,19 @@ export function upcomingScheduleRange(
   return { startDate: ymd(now), endDate: ymd(end) };
 }
 
+/**
+ * MLB Stats API venue ID of each club's home park (teams endpoint, 2026
+ * season). Used to keep only games actually played at the park.
+ */
+export const MLB_STADIUM_VENUE_IDS: Record<string, number> = {
+  angels: 1, diamondbacks: 15, orioles: 2, redsox: 3, cubs: 17, reds: 2602,
+  guardians: 5, rockies: 19, tigers: 2394, astros: 2392, royals: 7, dodgers: 22,
+  nationals: 3309, mets: 3289, athletics: 2529, pirates: 31, padres: 2680,
+  mariners: 680, giants: 2395, cardinals: 2889, rays: 12, rangers: 5325,
+  bluejays: 14, twins: 3312, phillies: 2681, braves: 4705, whitesox: 4,
+  marlins: 4169, yankees: 3313, brewers: 32,
+};
+
 // Map MLB team IDs to our stadium IDs
 const MLB_TEAM_TO_STADIUM_MAP: Record<number, string> = {
   108: 'angels', // Los Angeles Angels
@@ -206,35 +219,21 @@ export class MLBApiService {
   }
 
   getHomeGamesForStadium(stadiumId: string, games: MLBGame[]): MLBGame[] {
-    const teamId = Object.entries(MLB_TEAM_TO_STADIUM_MAP)
-      .find(([_, stadium]) => stadium === stadiumId)?.[0];
-    
-    if (!teamId) {
-      console.error(`No team ID found for stadium: ${stadiumId}`);
+    const venueId = MLB_STADIUM_VENUE_IDS[stadiumId];
+    if (!venueId) {
+      console.error(`No MLB venue ID for stadium: ${stadiumId}`);
       return [];
     }
-    
-    // Filtering games for stadium and team
-    
-    let firstHomeGameLogged = false;
-    const homeGames = games.filter(game => {
-      const isHomeGame = game.teams.home.team.id === parseInt(teamId);
-      const isNotFinished = game.status.statusCode !== 'F';
-      const isNotCancelled = game.status.statusCode !== 'C';
-      // For now, include all game types to ensure we show games
-      const isValidGameType = true;
-      
-      // Log only the first home game to reduce console noise
-      if (isHomeGame && !firstHomeGameLogged) {
-        // Sample home game logged
-        firstHomeGameLogged = true;
-      }
-      
-      return isHomeGame && isNotFinished && isNotCancelled && isValidGameType;
-    });
-    
-    // Home games found: ${homeGames.length}
-    return homeGames;
+
+    // A club's "home" games include spring training in Florida and Arizona
+    // and neutral-site series (London, Tokyo, Mexico City). Shade only means
+    // something at the park itself, so keep games played at this venue.
+    return games.filter(
+      (game) =>
+        game.venue?.id === venueId &&
+        game.status.statusCode !== 'F' &&
+        game.status.statusCode !== 'C',
+    );
   }
 }
 

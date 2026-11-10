@@ -213,17 +213,28 @@ also checked against the live site.
       names), Dodger and Citi posts, plus every other mismatch the script
       finds, the general day-game post and the Steinbrenner orientation.
       Unpublish only what can't be fixed (I'll list those first).
-- [ ] 3.4 Minute Maid Park → Daikin Park everywhere, with a 301 for the blog
+- [ ] 3.4 (Also: MLB's 2026 team data names Dodger Stadium "UNIQLO Field
+      at Dodger Stadium". Confirm and update with the other names.)
+      Minute Maid Park → Daikin Park everywhere, with a 301 for the blog
       slug. Also fix the Guaranteed Rate slug, the Oakland Coliseum guide, the
       Arrowhead guide id and the locale names.
 
 ### Phase 4: UX, mobile first (P4)
 - [x] 4.1 Schedule 400: use a rolling window (today → +180 days) in both
       loaders, with a test dated in the offseason.
+- [x] 4.1b Found while checking 4.1 against live data: a team's "home"
+      list included spring training (16 Yankees games in Tampa) and would
+      include neutral-site series. Home games are now the games played at
+      the park's own MLB venue ID. Live check: 22 Yankees games, first is
+      opening day, Mar 25, 2027 at 1:35 PM vs Toronto.
 - [x] 4.2 Add the two i18n keys, plus a test that every `t()` key exists in
       en, es and ja.
-- [ ] 4.3 Reproduce the empty Date/Time labels in the browser, then fix the
-      root cause.
+- [x] 4.3 Reproduce the empty Date/Time labels in the browser. Checked on a
+      production build: after Apply, both inputs keep their values and the
+      breadcrumb shows "Nov 10, 2026 at 1:47 PM EST". The "empty" labels
+      come from reading the page as text, where a native date/time input's
+      value isn't part of the text. Not a display bug; the control is
+      replaced by the dropdown flow in 4.4 anyway.
 - [ ] 4.4 Homepage per the approved mockup: a "Stadium" dropdown, then a
       "Game" dropdown. The next home game is picked automatically, so a phone
       gets an answer in 2 taps. Server-rendered, light hero.
