@@ -1,4 +1,293 @@
-# theshadium.com — Sun/Shade Accuracy Audit (2026-08-07)
+# The Shadium rebuild: give fans an answer (plan, 2026-11-10)
+
+**Goal:** a fan picks a Yankees game and sees a correct shade answer for any
+section in under 3 taps on a phone. All tests pass, there are no 404s, and
+mobile Lighthouse is 90+.
+
+**Status:** your answers are folded in (see section 4). A mockup of the new
+flow is ready for review. No code changes yet.
+Baseline: `npx jest` passes 1,097 tests in 42 suites. The live build
+(`x-build-id 19406fab65da`) matches `main`.
+
+---
+
+## 1. What I confirmed in the code
+
+Every item in the audit was checked against the code. Where possible it was
+also checked against the live site.
+
+### Priority 1: give an answer
+
+| Audit item | Confirmed | Evidence / root cause |
+|---|---|---|
+| Every MLB section shows "paused" / "Unverified / Not rated" | ✅ | `canPublishSeatLevelShade()` (`src/data/stadiumShadeConfidence.ts:90`) is false for all 30 parks. It requires lidar geometry plus a 30-observation holdout that no park has. It is checked in 6 places, and the row API returns HTTP 409. |
+| "444-row" table | ✅ | Yankees has 222 sections, and the page renders each one twice: a desktop table and mobile cards, hidden only by CSS (`StadiumPageSSR.tsx:348-410`). The live page has 444 "Unverified" rows in 640 KB of HTML. |
+
+### Priority 2: the shade engine
+
+| Audit item | Confirmed | Evidence / root cause |
+|---|---|---|
+| Sun position needs NREL SPA or equivalent | ✅ already OK | `src/utils/solarPosition.ts` is a NOAA/Meeus port. Against the NREL SPA paper's own test case it gives azimuth 194.3426° (SPA: 194.34024°) and zenith 50.1086° (SPA: 50.11162°). Yankee Stadium, 2025-07-15 at 1:05 PM: 182.3° / 70.6°. Only tests are missing. |
+| Uses 1, 4, 7 PM, not real first pitch | ✅ | `StadiumPageSSR.tsx:155-161` hard-codes 1:00, 4:00 and 7:00 PM. The homepage uses real game times, but MLB results are gated off. |
+| Yankee Stadium at 55° | ✅ | `src/data/stadiums.ts:419`. Earlier sources said 75° (ballparks.com) and 64° (OSM). The value was deliberately left at 55° on 2026-06-23 (`stadiumOrientationProvenance.ts:158`). Only the Marlins entry is actually measured (±1°); the other 29 are ±8–18°. Each park's section file also hard-codes the orientation, e.g. `redsox.ts`: `buildParkSections(52, …)`. |
+| Geometry ignores roof, overhangs, press box | ✅ | All 30 parks share one generic height and depth per seating level (`bowlGeometry.ts` `BOWL_DEFAULTS`). There is no per-park roof, overhang or press-box data. |
+| Orientation alone gets Fenway wrong | ✅ (cause found) | The "day-game shaded side" used in page copy, blog checks, JSON-LD and the share image picks the stand nearest a fixed 180° sun (`shadeSide.ts`). It ignores game time and sun height, so it never answers "third base" for any of the 30 parks. Real shade arrives as the sun drops toward the west, which favors behind-home and the third-base side at NE-facing parks like Fenway. |
+| NFL afternoon advice says east sideline | ✅ | Hand-written strings in `src/data/guides/nflStadiumGuides.ts` (e.g. lines 35, 497, 725, 957, 1189, 1423, 1646, 2529, 3557, 4323). The morning advice is mirrored wrong too. |
+| Baseball terms on NFL pages | ✅ | `ShadeAnswer` ("seating behind home plate"), the JSON-LD FAQ, the OG image, `StadiumTitleBlock` (orientation fact, "Third base side"), the "First Pitch" label, and the `MobileFilterSheet` chips. None depend on league. |
+| NFL venues at 0° | ✅ | 14 of 32 in `src/data/unifiedVenues.ts` (also in `nflStadiums.ts` and `nfl-venues-generated.json`). |
+| Extra: NFL guide lookups | ✅ new | A fuzzy lookup makes the Giants page render the **Jets** guide (`guides/index.ts:63-75`). The Chiefs page shows "Stadium Guide Not Available". |
+
+### Priority 3: content
+
+| Audit item | Confirmed | Evidence / root cause |
+|---|---|---|
+| Yankees blog says third-base side | ✅ | `complete-guide-shaded-seats-yankee-stadium.mdx` L24 and L53. It also mislabels 305-315 as the third-base side, when they are on the RF/1B side. |
+| Fenway "Green Monster shade" | ✅ | Title and L19-28, L139, L255. The wall faces the afternoon sun, so its shadow falls on Lansdowne St. It also uses stale names: EMC Club, State Street Pavilion, Yawkey Way. |
+| Dodger "300 level" | ✅ | The only 300s are the outfield pavilions (301-316). The upper decks are RS and TD. |
+| Citi "Promenade Club 323–335" | ✅ | The 300s are the Excelsior club tier. Promenade is the 400s/500s. |
+| Other posts | ⚠️ | All 31 posts are published, and there is no draft flag. 9 stadium posts disagree with *today's* engine, but today's engine is itself wrong (see above), so every post gets re-checked after Phase 2. The Steinbrenner post cites the wrong orientation (316° vs 60°). |
+| Minute Maid Park → Daikin Park | ✅ | About 25 places: `stadiums.ts:43`, `unifiedVenues.ts:78`, the site-wide nav (`StickyTopNav.tsx:38`), the guide, blog post and slug, sitemap and locales. There is no redirect for the slug. Other stale names: "Oakland Coliseum" guide, "Guaranteed Rate" (locales and blog slug), "Arrowhead Stadium" guide id. |
+
+### Priority 4: UX
+
+| Audit item | Confirmed | Evidence / root cause |
+|---|---|---|
+| Schedule 400 / "Unable to load games" | ✅ root cause | Both MLB loaders set the end date to `new Date(year, 9, 31)` (`UnifiedGameSelector.tsx:137`, `StadiumPageClient.tsx:79`). After Oct 31 the end date falls before the start date, and MLB's API answers 400 "endDate must be after startDate" (reproduced with curl). |
+| Raw i18n keys | ✅ | `gameSelector.apply` and `gameSelector.applyCustomDateTime` are missing from en, es and ja, and `t()` returns the raw key. These are the only missing keys. |
+| Empty Date/Time labels after apply | ❓ | Not reproducible from reading the code. I'll reproduce it in the browser before fixing. |
+| Team → game → map flow | ✅ missing | It takes 5 taps on mobile to reach "Section results paused". A seat map exists (`InteractiveSeatingBowl`) but is gated off. There is no MLB section search, and no share link: `ShareButton` is unused and `MobileApp` ignores URL params. |
+| Jargon | ✅ | "withheld", "self-shade", "holdout", "Geometry confidence", "Publication gate" and "paused" appear in about 20 user-visible places (homepage, FAQ, guides, stadium page, `ShadeConfidenceNotice`, JSON-LD). |
+
+### Priority 5: technical
+
+| Audit item | Confirmed | Evidence / root cause |
+|---|---|---|
+| ~55 broken links | ✅ (actually **97**) | 93 `/blog/tag/*` and 4 `/blog/category/*` URLs all 404 live, because no route exists. 3 blog hero images are missing (`public/images/` doesn't exist), and the BlogPosting JSON-LD points at them too. `/og-image.png` is missing and is listed in `sitemap-images.xml`. |
+| Sitemap MiLB 404s, fake lastmod | ✅ | `scripts/generate-sitemap.js:66-74` hard-codes `/league/milb/{aaa,aa,a+,a}`, and all four 404. Every non-blog URL uses the build date as lastmod. |
+| Mobile speed | ✅ | 8–10 render-blocking stylesheets. Stale inline critical CSS: purple/orange hero, `header{height:64px}`. `app/critical.css` is dead. `CSSOptimizer` does nothing useful. The hero styles are styled-jsx and missing from the server HTML, so the page restyles after hydration. The hidden finder app mounts on load. GA4 loads `afterInteractive` with an early preconnect, and its ID is hard-coded twice (there is no GTM container). The stadium page sends 416 KB of client payload, because sections and guide are passed to a client component and the list is rendered twice. |
+| MLB badge contrast | ✅ | `#6b7280` on `#f3f4f6` = 4.39:1, which fails 4.5:1 (`StadiumTitleBlock.module.css:276`). The search badges are 3.68–4.23:1. |
+| Skip links | ✅ | The `#search-controls` target doesn't exist, and `#main-navigation` isn't focusable. |
+| Canonicals | ✅ | Missing on /privacy, /terms, /contact and /cookies, plus /attributions, /disclaimer and /dmca. `/faqs` uses a temporary (307) redirect. |
+| Giants/Jets same meta description | ✅ | `app/stadium/[stadiumId]/page.tsx:93` builds it from the venue name, which is "MetLife Stadium" for both. |
+| Keep SSR, JSON-LD, one H1 | ✅ | All three are present today. I'll add tests so they stay that way. |
+
+---
+
+## 2. Approach (the key decisions)
+
+1. **One engine answer.** Build on the existing `calculateGameWindowShade`,
+   which already samples every 30 min across 180 min. Add park-specific
+   structure data and a confidence label. No second model. Page copy, blog
+   checks, FAQ and the share image all derive from this same answer instead of
+   the 1 PM shortcut.
+2. **Shaded / Partial / Sun** per section at each half hour: 75% or more of
+   rows shaded = Shaded, 25% or less = Sun, anything between = Partial.
+3. **Confidence (High / Medium / Low) as a robustness test.** Recompute with
+   the orientation moved by its measured ± error and the structure heights
+   moved by ±25%. If the answer never changes, it is High (when the structure
+   data is sourced) or Medium (when it is a default). If it flips, it is Low.
+   Retractable roofs get "shaded if the roof is closed".
+4. **Lead sentence** such as "Section 214: shade from about the 3rd inning."
+   This uses the 2025 average 9-inning game of 2:38, about 17.6 min per inning.
+5. **Orientation re-measured** for all 30 MLB parks and the 14 NFL 0° venues.
+   The bearing comes from the home plate → second base line on public
+   orthoimagery (the same method that gave the Marlins ±1°). Pixel points,
+   image source and date are recorded. `stadiums.ts` becomes the only place an
+   orientation is typed: the section files and `unifiedVenues.ts` read it, and
+   a test enforces that.
+6. **Geometry per park.** A small structure profile per park, for each seating
+   level and compass range:
+   - which rows sit under a roof or overhang, and the lip height;
+   - the height of whatever rises behind (upper decks, press box, roof).
+   Every value cites a source: official seating charts that mark covered seats,
+   club pages, photos, or the lidar we already have. Where no source exists,
+   the generic default is used and confidence drops.
+7. **Reference checks, 5+ per MLB park:**
+   - 1 sun position against NOAA's published calculator;
+   - 1 orientation against the new measurement;
+   - 3 or more sourced shade observations, such as club shade maps,
+     time-stamped photos or published guides, each with a URL.
+   Tests fail when the engine disagrees.
+8. **Flow:**
+   - The homepage becomes a server-rendered team grid.
+   - Tapping a team (tap 1) opens `/stadium/yankees`, which lists the upcoming
+     home games.
+   - Tapping a game (tap 2) shows the color-coded seat map with a time slider,
+     a section search box, and a short "best shaded sections" list.
+   - `/stadium/yankees?game=<gamePk>&section=<id>` is the shareable link.
+9. **No data deleted.** The gate's evidence files stay in the repo, just no
+   longer wired in. "Unpublish" means `draft: true` plus a 301 redirect, never
+   deleting a file. Anything I think should be deleted, I'll list and ask
+   about first.
+
+---
+
+## 3. Todo (about one commit per checkbox)
+
+### Phase 0: setup
+- [x] 0.1 New branch from `main` (`fix/shade-answer-rebuild`).
+
+### Phase 1: give an answer (P1)
+- [ ] 1.1 `src/utils/gameShade.ts`: `getGameShade(stadiumId, firstPitchUtc)`
+      returns every section's 7 half-hour states, its confidence and its lead
+      sentence, built on `calculateGameWindowShade`. Tests: dome, night game,
+      retractable roof, the sentence text.
+- [ ] 1.2 Remove the publication gate from the stadium page, the stadium
+      client, both homepage apps, `StadiumSchema`, `stadiumDataServer` and the
+      row API (no more 409). Update the tests that assert the gate.
+- [ ] 1.3 Stadium page shows the answer for a chosen game: the lead sentence
+      plus a "best shaded sections" short list.
+
+### Phase 2: all-new sun and shade calculations (P2)
+- [ ] 2.0 Collect the feedback you received: each example (park, date, time,
+      section, what was wrong) becomes a failing test before any fix.
+- [ ] 2.1 New sun-position module: a full NREL SPA implementation, replacing
+      the NOAA port. Tests:
+      - the SPA paper's own published test case, to 0.001°;
+      - Yankees 2025-07 1:05 PM ≈ 182° / 70°;
+      - one NOAA calculator value per park as an independent cross-check.
+- [ ] 2.1b New shade calculation written from scratch on the new sun
+      position. Each half hour, for every row, it decides whether the
+      sightline to the sun is blocked by the structure behind the seat, the
+      overhang above it, or the roof. One function, one set of tests. The old
+      models (`sectionSunCalculations`, `getUnifiedVenueShade`, the
+      `shadeSide.ts` shortcut, the 3-D estimator) are retired, not patched.
+- [ ] 2.2 Real first pitch everywhere: drop the 1/4/7 PM buckets; custom time
+      accepts any minute (1:05, 1:35…).
+- [ ] 2.3 Orientation:
+      - write the measurement script;
+      - re-measure the 30 MLB parks and update the provenance;
+      - make `stadiums.ts` the only place orientation is typed;
+      - add a consistency test across all files.
+- [ ] 2.3b Fix how section positions are read from the club seat maps.
+      Found while building the mockup:
+      - The Yankees map's "behind home" anchors (122/123) sit about 90 map
+        units off-center, so the engine's Yankees home → center-field axis is
+        tilted about 16°. Every Yankees section angle is off by that much.
+      - Forcing the two foul-line rows of field boxes to be 90° apart shows
+        the map is squashed about 13% top-to-bottom.
+      - Its scale isn't uniform either: bleachers come out at about 300 ft
+        against real 385–408 ft fences.
+      Fix: derive home plate and the axis from foul-line row fits instead of
+      two anchor sections, undo the squash, and check every chart-derived park
+      for the same tilt (with a test).
+- [ ] 2.4 Structure-profile data model, wired into the row model (roof,
+      upper-deck overhang, press box, structure behind each level).
+- [ ] 2.5 Yankees and Fenway profiles plus their reference checks, which prove
+      the method:
+      - Yankees: first-base side shades first for a July 1:05 PM game.
+      - Fenway: third-base side and behind home shade first. I'll check this
+        against published sources first.
+- [ ] 2.6 The other 28 parks' profiles plus 5+ reference checks each, in
+      batches of about 5 parks (one commit per batch).
+- [ ] 2.7 Replace `bestShadedSideForDayGame` copy (page, FAQ JSON-LD, OG
+      image) with the engine's answer for a typical 1:05 PM and 7:05 PM start.
+- [ ] 2.8 NFL:
+      - measure the 14 venues at 0°;
+      - derive sideline advice from the engine (west stands shade in the
+        afternoon) and remove the inverted hand-written strings;
+      - football wording (sideline, end zone, kickoff);
+      - fix the Giants→Jets and Chiefs guide lookups.
+
+### Phase 3: content accuracy (P3)
+- [ ] 3.1 `draft` frontmatter support. A draft post is left out of the index
+      and sitemap, and its URL 301-redirects to the stadium page.
+- [ ] 3.2 Script that checks every post's shade claims against the fixed
+      engine and prints a table. It runs in tests so the posts can't drift
+      again.
+- [ ] 3.3 Fix the Yankees, Fenway (new title, no Monster shade, current club
+      names), Dodger and Citi posts, plus every other mismatch the script
+      finds, the general day-game post and the Steinbrenner orientation.
+      Unpublish only what can't be fixed (I'll list those first).
+- [ ] 3.4 Minute Maid Park → Daikin Park everywhere, with a 301 for the blog
+      slug. Also fix the Guaranteed Rate slug, the Oakland Coliseum guide, the
+      Arrowhead guide id and the locale names.
+
+### Phase 4: UX, mobile first (P4)
+- [x] 4.1 Schedule 400: use a rolling window (today → +180 days) in both
+      loaders, with a test dated in the offseason.
+- [x] 4.2 Add the two i18n keys, plus a test that every `t()` key exists in
+      en, es and ja.
+- [ ] 4.3 Reproduce the empty Date/Time labels in the browser, then fix the
+      root cause.
+- [ ] 4.4 Homepage per the approved mockup: a "Stadium" dropdown, then a
+      "Game" dropdown. The next home game is picked automatically, so a phone
+      gets an answer in 2 taps. Server-rendered, light hero.
+- [ ] 4.5 Game view:
+      - the real seating layout from each park's club map, colored
+        Shaded/Partial/Sun, with a half-hour time slider labelled by inning;
+      - "Find your section" search, "Most shade this game" list, share;
+      - night games and "Time TBD" games get their own plain-language message;
+      - replace the double-rendered 222-row table.
+- [ ] 4.6 Share link (`?game=&section=`) with a copy button. MobileApp
+      honours URL params.
+- [ ] 4.7 Rewrite the copy for fans: remove "withheld", "self-shade",
+      "holdout", "geometry confidence", "publication gate" and "paused" from
+      every page, the FAQ, guides and JSON-LD.
+
+### Phase 5: technical (P5)
+- [ ] 5.1 Blog links:
+      - add `/blog/category/[category]` pages for the 2 real categories;
+      - remove the 93 tag links and the 2 empty "Popular Topics";
+      - point the 3 hero images at the existing per-post generated OG image;
+      - fix `/og-image.png`.
+- [ ] 5.2 Sitemap: drop the 4 MiLB level URLs and use real lastmod dates
+      (each source file's last git commit).
+- [ ] 5.3 Speed:
+      - fix the inline critical CSS;
+      - cut render-blocking sheets;
+      - remove dead CSS and `CSSOptimizer`;
+      - hero styles in a CSS module so they're in the server HTML;
+      - stop mounting the hidden app on load;
+      - load GA4 lazily, drop the preconnect and the duplicate ID;
+      - stop sending sections and guide to the client.
+- [ ] 5.4 Accessibility: badge contrast at least 4.5:1, and fix the skip-link
+      targets and focus.
+- [ ] 5.5 Canonicals on the 7 pages, a permanent `/faqs` redirect, and
+      distinct Giants and Jets meta descriptions.
+- [ ] 5.6 Tests that guard the strengths: one H1, JSON-LD present, server
+      rendering.
+
+### Phase 6: verify
+- [ ] 6.1 `npx jest`, `npm run type-check`, `npm run lint`, `npm run build`.
+- [ ] 6.2 Crawl the local production build with zero 404s, including every
+      sitemap URL.
+- [ ] 6.3 Lighthouse mobile at 90+ on `/`, `/stadium/yankees` and one blog
+      post (local production build).
+- [ ] 6.4 Phone-viewport browser run: Yankees → game → any section answer in
+      under 3 taps; share link round-trip.
+- [ ] 6.5 Review section below, including anything I couldn't verify.
+
+---
+
+## 4. Decisions (2026-11-10)
+
+1. **Sun calculations: all new.** You've had feedback that the calculations
+   are wrong, so the sun position and the shade calculation are both rebuilt
+   (2.1 and 2.1b). Note for the record: the current sun position matches the
+   NREL SPA reference case within 0.003°, so the error is most likely in the
+   shade step (which seats the sun reaches), not in the sun position itself.
+   The new tests will show which. Geometry sources: official club seating and
+   shade maps, time-stamped photos, published shade guides and the lidar
+   already in the repo. Yankees and Fenway go first, for review before the
+   other 28.
+2. **Blog tags: remove** the 93 tag links (5.1).
+3. **Homepage: mockup first.** First mockup (team grid → game list) was
+   changed at your request to: a stadium dropdown, then a game dropdown, the
+   real stadium shape (Yankee Stadium drawn from the club map's 221
+   sections), and a new look (navy header, blue for shade, amber for sun).
+   Waiting for your OK on mockup v2 before 4.4–4.6 start. Real-data note: MLB lists not-yet-set
+   start times as "3:33 AM" (`startTimeTBD`), so the game list must show
+   "Time TBD" for those.
+4. **Shipping:** commits stay on the branch. Pushing, a PR and a production
+   deploy happen only when you say so.
+
+---
+---
+
+# Previous audit (2026-08-07), kept for history
+
+## theshadium.com — Sun/Shade Accuracy Audit (2026-08-07)
 
 ## Verdict
 
