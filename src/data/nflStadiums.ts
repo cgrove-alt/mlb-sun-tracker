@@ -35,7 +35,7 @@ export const NFL_STADIUMS: NFLStadium[] = [
     state: 'NY',
     latitude: 42.7738,
     longitude: -78.7870,
-    orientation: 50, // Northeast-Southwest
+    orientation: 123, // ESE-WNW (measured, imagery; see nflOrientationMeasurements.ts)
     capacity: 71608,
     opened: 1973,
     surface: 'turf',
@@ -54,7 +54,7 @@ export const NFL_STADIUMS: NFLStadium[] = [
     state: 'FL',
     latitude: 25.9580,
     longitude: -80.2389,
-    orientation: 0, // North-South
+    orientation: 301, // WNW-ESE (measured, osm-pitch; see nflOrientationMeasurements.ts)
     capacity: 65326,
     opened: 1987,
     surface: 'grass',
@@ -74,7 +74,7 @@ export const NFL_STADIUMS: NFLStadium[] = [
     state: 'MA',
     latitude: 42.0909,
     longitude: -71.2643,
-    orientation: 0, // North-South
+    orientation: 342, // NNW-SSE (measured, osm-pitch; see nflOrientationMeasurements.ts)
     capacity: 65878,
     opened: 2002,
     surface: 'turf',
@@ -93,7 +93,7 @@ export const NFL_STADIUMS: NFLStadium[] = [
     state: 'NJ',
     latitude: 40.8128,
     longitude: -74.0742,
-    orientation: 23, // NNE-SSW
+    orientation: 346, // NNW-SSE (measured, osm-pitch; see nflOrientationMeasurements.ts)
     capacity: 82500,
     opened: 2010,
     surface: 'turf',
@@ -114,7 +114,7 @@ export const NFL_STADIUMS: NFLStadium[] = [
     state: 'MD',
     latitude: 39.2780,
     longitude: -76.6227,
-    orientation: 22, // NNE-SSW
+    orientation: 110, // ESE-WNW (measured, osm-pitch; see nflOrientationMeasurements.ts)
     capacity: 71008,
     opened: 1998,
     surface: 'grass',
@@ -133,7 +133,7 @@ export const NFL_STADIUMS: NFLStadium[] = [
     state: 'OH',
     latitude: 39.0954,
     longitude: -84.5160,
-    orientation: 13, // NNE-SSW
+    orientation: 321, // NW-SE (measured, osm-pitch; see nflOrientationMeasurements.ts)
     capacity: 65515,
     opened: 2000,
     surface: 'turf',
@@ -152,7 +152,7 @@ export const NFL_STADIUMS: NFLStadium[] = [
     state: 'OH',
     latitude: 41.5061,
     longitude: -81.6995,
-    orientation: 287, // WNW-ESE
+    orientation: 236, // SW-NE (measured, osm-pitch; see nflOrientationMeasurements.ts)
     capacity: 67431,
     opened: 1999,
     surface: 'grass',
@@ -171,7 +171,7 @@ export const NFL_STADIUMS: NFLStadium[] = [
     state: 'PA',
     latitude: 40.4468,
     longitude: -80.0158,
-    orientation: 275, // W-E
+    orientation: 335, // NNW-SSE (measured, osm-pitch; see nflOrientationMeasurements.ts)
     capacity: 68400,
     opened: 2001,
     surface: 'grass',
@@ -192,7 +192,7 @@ export const NFL_STADIUMS: NFLStadium[] = [
     state: 'TX',
     latitude: 29.6847,
     longitude: -95.4107,
-    orientation: 0, // North-South
+    orientation: 0, // N-S (measured, imagery; see nflOrientationMeasurements.ts)
     capacity: 72220,
     opened: 2002,
     surface: 'turf',
@@ -212,7 +212,7 @@ export const NFL_STADIUMS: NFLStadium[] = [
     state: 'IN',
     latitude: 39.7601,
     longitude: -86.1639,
-    orientation: 0, // North-South
+    orientation: 0, // N-S (not measured; see nflOrientationMeasurements.ts)
     capacity: 67000,
     opened: 2008,
     surface: 'turf',
@@ -232,7 +232,7 @@ export const NFL_STADIUMS: NFLStadium[] = [
     state: 'FL',
     latitude: 30.3239,
     longitude: -81.6373,
-    orientation: 22, // NNE-SSW
+    orientation: 16, // NNE-SSW (measured, osm-pitch; see nflOrientationMeasurements.ts)
     capacity: 69132,
     opened: 1995,
     surface: 'grass',
@@ -251,7 +251,7 @@ export const NFL_STADIUMS: NFLStadium[] = [
     state: 'TN',
     latitude: 36.1665,
     longitude: -86.7713,
-    orientation: 0, // North-South
+    orientation: 336, // NNW-SSE (measured, osm-pitch; see nflOrientationMeasurements.ts)
     capacity: 69143,
     opened: 1999,
     surface: 'grass',
@@ -272,7 +272,7 @@ export const NFL_STADIUMS: NFLStadium[] = [
     state: 'CO',
     latitude: 39.7439,
     longitude: -105.0200,
-    orientation: 0, // North-South
+    orientation: 0, // N-S (measured, osm-pitch; see nflOrientationMeasurements.ts)
     capacity: 76125,
     opened: 2001,
     surface: 'grass',
@@ -291,7 +291,7 @@ export const NFL_STADIUMS: NFLStadium[] = [
     state: 'MO',
     latitude: 39.0489,
     longitude: -94.4839,
-    orientation: 0, // North-South
+    orientation: 317, // NW-SE (measured, osm-pitch; see nflOrientationMeasurements.ts)
     capacity: 76416,
     opened: 1972,
     surface: 'grass',
@@ -310,7 +310,7 @@ export const NFL_STADIUMS: NFLStadium[] = [
     state: 'NV',
     latitude: 36.0909,
     longitude: -115.1833,
-    orientation: 0, // North-South
+    orientation: 25, // NNE-SSW (measured, osm-grass-tray; see nflOrientationMeasurements.ts)
     capacity: 65000,
     opened: 2020,
     surface: 'grass',
@@ -330,7 +330,7 @@ export const NFL_STADIUMS: NFLStadium[] = [
     state: 'CA',
     latitude: 33.9535,
     longitude: -118.3392,
-    orientation: 90, // East-West
+    orientation: 90, // E-W (not measured; see nflOrientationMeasurements.ts)
     capacity: 70240,
     opened: 2020,
     surface: 'turf',
@@ -352,7 +352,7 @@ export const NFL_STADIUMS: NFLStadium[] = [
     state: 'TX',
     latitude: 32.7473,
     longitude: -97.0945,
-    orientation: 340, // NNW-SSE
+    orientation: 340, // NNW-SSE (not measured; see nflOrientationMeasurements.ts)
     capacity: 80000,
     opened: 2009,
     surface: 'turf',
@@ -372,7 +372,7 @@ export const NFL_STADIUMS: NFLStadium[] = [
     state: 'NJ',
     latitude: 40.8128,
     longitude: -74.0742,
-    orientation: 23, // NNE-SSW
+    orientation: 346, // NNW-SSE (measured, osm-pitch; see nflOrientationMeasurements.ts)
     capacity: 82500,
     opened: 2010,
     surface: 'turf',
@@ -391,7 +391,7 @@ export const NFL_STADIUMS: NFLStadium[] = [
     state: 'PA',
     latitude: 39.9008,
     longitude: -75.1675,
-    orientation: 5, // N-S
+    orientation: 351, // N-S (measured, osm-pitch; see nflOrientationMeasurements.ts)
     capacity: 69596,
     opened: 2003,
     surface: 'hybrid',
@@ -410,7 +410,7 @@ export const NFL_STADIUMS: NFLStadium[] = [
     state: 'MD',
     latitude: 38.9076,
     longitude: -76.8645,
-    orientation: 58, // ENE-WSW
+    orientation: 119, // ESE-WNW (measured, osm-pitch; see nflOrientationMeasurements.ts)
     capacity: 67617,
     opened: 1997,
     surface: 'grass',
@@ -431,7 +431,7 @@ export const NFL_STADIUMS: NFLStadium[] = [
     state: 'IL',
     latitude: 41.8623,
     longitude: -87.6167,
-    orientation: 0, // North-South
+    orientation: 356, // N-S (measured, osm-pitch; see nflOrientationMeasurements.ts)
     capacity: 61500,
     opened: 1924,
     surface: 'grass',
@@ -450,7 +450,7 @@ export const NFL_STADIUMS: NFLStadium[] = [
     state: 'MI',
     latitude: 42.3400,
     longitude: -83.0456,
-    orientation: 45, // NE-SW
+    orientation: 45, // NE-SW (not measured; see nflOrientationMeasurements.ts)
     capacity: 65000,
     opened: 2002,
     surface: 'turf',
@@ -470,7 +470,7 @@ export const NFL_STADIUMS: NFLStadium[] = [
     state: 'WI',
     latitude: 44.5013,
     longitude: -88.0622,
-    orientation: 45, // NE-SW
+    orientation: 0, // N-S (measured, osm-pitch; see nflOrientationMeasurements.ts)
     capacity: 81441,
     opened: 1957,
     surface: 'hybrid',
@@ -489,7 +489,7 @@ export const NFL_STADIUMS: NFLStadium[] = [
     state: 'MN',
     latitude: 44.9738,
     longitude: -93.2575,
-    orientation: 88, // E-W
+    orientation: 88, // E-W (not measured; see nflOrientationMeasurements.ts)
     capacity: 66655,
     opened: 2016,
     surface: 'turf',
@@ -511,7 +511,7 @@ export const NFL_STADIUMS: NFLStadium[] = [
     state: 'GA',
     latitude: 33.7554,
     longitude: -84.4009,
-    orientation: 0, // North-South
+    orientation: 80, // E-W (measured, imagery; see nflOrientationMeasurements.ts)
     capacity: 71000,
     opened: 2017,
     surface: 'turf',
@@ -531,7 +531,7 @@ export const NFL_STADIUMS: NFLStadium[] = [
     state: 'NC',
     latitude: 35.2258,
     longitude: -80.8528,
-    orientation: 75, // ENE-WSW
+    orientation: 140, // SE-NW (measured, osm-pitch; see nflOrientationMeasurements.ts)
     capacity: 75523,
     opened: 1996,
     surface: 'grass',
@@ -550,7 +550,7 @@ export const NFL_STADIUMS: NFLStadium[] = [
     state: 'LA',
     latitude: 29.9511,
     longitude: -90.0812,
-    orientation: 0, // North-South
+    orientation: 0, // N-S (not measured; see nflOrientationMeasurements.ts)
     capacity: 73208,
     opened: 1975,
     surface: 'turf',
@@ -570,7 +570,7 @@ export const NFL_STADIUMS: NFLStadium[] = [
     state: 'FL',
     latitude: 27.9759,
     longitude: -82.5033,
-    orientation: 0, // North-South
+    orientation: 0, // N-S (measured, osm-pitch; see nflOrientationMeasurements.ts)
     capacity: 69218,
     opened: 1998,
     surface: 'grass',
@@ -591,7 +591,7 @@ export const NFL_STADIUMS: NFLStadium[] = [
     state: 'AZ',
     latitude: 33.5276,
     longitude: -112.2626,
-    orientation: 0, // North-South
+    orientation: 328, // NNW-SSE (measured, osm-grass-tray; see nflOrientationMeasurements.ts)
     capacity: 63400,
     opened: 2006,
     surface: 'grass',
@@ -611,7 +611,7 @@ export const NFL_STADIUMS: NFLStadium[] = [
     state: 'CA',
     latitude: 33.9535,
     longitude: -118.3392,
-    orientation: 90, // East-West
+    orientation: 90, // E-W (not measured; see nflOrientationMeasurements.ts)
     capacity: 70240,
     opened: 2020,
     surface: 'turf',
@@ -631,7 +631,7 @@ export const NFL_STADIUMS: NFLStadium[] = [
     state: 'CA',
     latitude: 37.4033,
     longitude: -121.9694,
-    orientation: 310, // NW-SE
+    orientation: 332, // NNW-SSE (measured, osm-pitch; see nflOrientationMeasurements.ts)
     capacity: 68500,
     opened: 2014,
     surface: 'grass',
@@ -650,7 +650,7 @@ export const NFL_STADIUMS: NFLStadium[] = [
     state: 'WA',
     latitude: 47.5952,
     longitude: -122.3316,
-    orientation: 0, // North-South
+    orientation: 0, // N-S (measured, osm-pitch; see nflOrientationMeasurements.ts)
     capacity: 69000,
     opened: 2002,
     surface: 'turf',

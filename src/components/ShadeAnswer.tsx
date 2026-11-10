@@ -60,6 +60,20 @@ export function ShadeAnswer({ venue, nflSunSides }: { venue: UnifiedVenue; nflSu
     );
   }
 
+  if (venue.league === 'NFL' && !nflSunSides) {
+    // Only reached for a field whose direction we could not measure (a
+    // retractable roof that was closed in every aerial photo).
+    return (
+      <section className="shade-answer" aria-label={`Where are the shaded seats at ${name}?`} style={boxStyle}>
+        <p style={{ margin: 0 }}>
+          With the roof closed, every seat at <strong>{name}</strong> is shaded. We haven&apos;t been
+          able to measure which way the field runs (the roof is closed in every aerial photo), so we
+          can&apos;t yet say which sideline shades first when it&apos;s open.
+        </p>
+      </section>
+    );
+  }
+
   if (venue.league === 'NFL' && nflSunSides) {
     const { early, late, nightAfterSunset } = nflSunSides;
     return (

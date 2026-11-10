@@ -2,6 +2,7 @@ import { ImageResponse } from 'next/og';
 import { MLB_STADIUMS } from '../../../src/data/stadiums';
 import { ALL_UNIFIED_VENUES, getUnifiedVenueById } from '../../../src/data/unifiedVenues';
 import { kickoffSunSides } from '../../../src/utils/nflSunSide';
+import { isFieldAxisMeasured } from '../../../src/data/nflOrientationMeasurements';
 
 // Per-venue Open Graph image (audit Phase 8): a branded 1200x630 card with the
 // venue name, team, and a one-line shade takeaway — replaces the
@@ -21,6 +22,7 @@ export function generateStaticParams() {
 
 /** Same sun-path answer as the NFL page's ShadeAnswer. */
 function nflTakeaway(venue: NonNullable<ReturnType<typeof getUnifiedVenueById>>): string {
+  if (!isFieldAxisMeasured(venue.id)) return 'Roof closed: every seat is shaded';
   const { early } = kickoffSunSides(venue);
   const answer = early.clear
     ? `1 PM kickoffs: the ${early.shadedSideline} sideline shades first`

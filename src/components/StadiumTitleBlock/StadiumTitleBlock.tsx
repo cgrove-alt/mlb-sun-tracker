@@ -25,7 +25,9 @@ const StadiumTitleBlock: React.FC<StadiumTitleBlockProps> = ({
   // Baseball parks are measured home plate -> center field; football fields
   // by their long axis (end zone to end zone).
   const football = team.league === 'NFL';
-  const direction = football
+  const direction = orientation === undefined
+    ? undefined
+    : football
     ? `Field runs ${compassPoint(orientation)}–${compassPoint((orientation + 180) % 360)}`
     : `Faces ${compassPoint(orientation)}`;
 
@@ -277,7 +279,7 @@ const StadiumTitleBlock: React.FC<StadiumTitleBlockProps> = ({
           <span className={styles.factText}>{capacity.toLocaleString()} {getCapacityLabel(team.league)}</span>
         </div>
 
-        {!domed && (
+        {!domed && direction && (
           <div className={styles.factPill}>
             <span className={styles.factIcon} aria-hidden="true">🧭</span>
             <span className={styles.factText}>{direction}</span>
@@ -316,7 +318,7 @@ const StadiumTitleBlock: React.FC<StadiumTitleBlockProps> = ({
                 <dt>Seating Capacity</dt>
                 <dd>{capacity.toLocaleString()}</dd>
                 <dt>Field Orientation</dt>
-                <dd>{domed ? 'N/A — fixed roof' : football ? `${direction.replace('Field runs ', '')} (${orientation}°)` : `${compassPoint(orientation)}, home plate to center field (${orientation}°)`}</dd>
+                <dd>{domed ? 'N/A — fixed roof' : orientation === undefined || !direction ? 'Not measured yet' : football ? `${direction.replace('Field runs ', '')} (${orientation}°)` : `${compassPoint(orientation)}, home plate to center field (${orientation}°)`}</dd>
               </dl>
             </div>
 
@@ -407,7 +409,7 @@ const StadiumTitleBlock: React.FC<StadiumTitleBlockProps> = ({
       <div className={styles.srOnly} aria-live="polite">
         {stadium.name} stadium information: Home of the {team.name} in {team.league}.
         Located in {location.city}, {location.state} with a capacity of {capacity.toLocaleString()} seats.
-        The stadium has {getRoofTypeDisplay(roofType).toLowerCase()}{domed ? ', so every seat is shaded regardless of field orientation' : `. ${direction}`}.
+        The stadium has {getRoofTypeDisplay(roofType).toLowerCase()}{domed ? ', so every seat is shaded regardless of field orientation' : direction ? `. ${direction}` : ''}.
         {yearBuilt && ` Built in ${yearBuilt}.`}
       </div>
     </div>

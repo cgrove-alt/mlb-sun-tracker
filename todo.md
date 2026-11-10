@@ -235,12 +235,32 @@ also checked against the live site.
       image) with the engine's answer for a typical 1:05 PM and 7:05 PM start.
       Done: MLB pages and their FAQ JSON-LD no longer use it. Left: the OG
       image and the NFL guide's ShadeAnswer (with 2.8).
-- [ ] 2.8 NFL:
+- [x] 2.8 NFL:
       - measure the 14 venues at 0°;
       - derive sideline advice from the engine (west stands shade in the
         afternoon) and remove the inverted hand-written strings;
       - football wording (sideline, end zone, kickoff);
       - fix the Giants→Jets and Chiefs guide lookups.
+      Done:
+      - Every field re-measured, not just the 0° ones
+        (`src/data/nflOrientationMeasurements.ts`): OSM field outlines
+        checked on USGS aerial photos with the axis drawn on top, plus the
+        turf's own axis where it shows (agrees within 5°). 26 measured; most
+        old values were wrong (Lambeau 45° → N–S, Cleveland 287° → NE–SW,
+        M&T Bank 22° → WNW–ESE, Highmark 50° → WNW–ESE). Four of the 0°
+        entries were right (Empower, Raymond James, Lumen, NRG).
+      - Not measured: AT&T and Lucas Oil (roof closed in the only aerial
+        photo, no field in OSM). Their pages say so and show no direction.
+        Fixed roofs keep their old values (they don't affect shade).
+      - Sideline advice comes from the sun's path (`src/utils/nflSunSide.ts`)
+        for 1:00 and 4:25 PM kickoffs on Sept 14, 2025; every field's shaded
+        side is on the sun side (west, southwest or south).
+      - Hand-written NFL shade lists are hidden (the data is kept).
+      - Guides keyed by venue id; no fuzzy lookup.
+      - Left: `nfl-venues-generated.json` is a stale intermediate with
+        pre-2025 ids (updated for consistency, not used at runtime); the
+        duplicate Ravens guide `mt-bank-stadium` is unreachable (not
+        deleted: your call).
 
 ### Phase 3: content accuracy (P3)
 - [ ] 3.1 `draft` frontmatter support. A draft post is left out of the index
@@ -252,11 +272,18 @@ also checked against the live site.
       names), Dodger and Citi posts, plus every other mismatch the script
       finds, the general day-game post and the Steinbrenner orientation.
       Unpublish only what can't be fixed (I'll list those first).
-- [ ] 3.4 (Also: MLB's 2026 team data names Dodger Stadium "UNIQLO Field
+- [x] 3.4 (Also: MLB's 2026 team data names Dodger Stadium "UNIQLO Field
       at Dodger Stadium". Confirm and update with the other names.)
       Minute Maid Park → Daikin Park everywhere, with a 301 for the blog
       slug. Also fix the Guaranteed Rate slug, the Oakland Coliseum guide, the
       Arrowhead guide id and the locale names.
+      Done: Daikin Park, Rate Field and Athletics renamed, both blog slugs
+      301 to the new ones. Dodger Stadium kept: the 2026 deal names the
+      field, and we use 2025 data. The Arrowhead guide is now keyed
+      `geha-field-arrowhead` (see 2.8). Left: the Oakland Coliseum guide text
+      (not shown anywhere), and MiLB names: Oklahoma City Dodgers are the
+      Oklahoma City Comets in 2025; the Knoxville Smokies and Columbus
+      Clingstones (both new parks in 2025) have no guide.
 
 ### Phase 4: UX, mobile first (P4)
 - [x] 4.1 Schedule 400: use a rolling window (today → +180 days) in both
@@ -286,8 +313,10 @@ also checked against the live site.
 - [x] 4.6 Share link (`/stadium/{id}?game=&section=`) with a copy button;
       the stadium page keeps it in the address bar. The old MobileApp now
       links MLB picks to the stadium page instead.
-- [ ] 4.6b Found while testing: on a phone the cookie banner covers half the
-      screen on first visit, on top of the finder.
+- [x] 4.6b Found while testing: on a phone the cookie banner covers half the
+      screen on first visit, on top of the finder. Done: buttons share one
+      row and the heading shows from the sm breakpoint up. iPhone SE 383 →
+      203 px (67% → 36% of the screen); iPhone 13 58% → 31%.
 - [ ] 4.7 Rewrite the copy for fans: remove "withheld", "self-shade",
       "holdout", "geometry confidence", "publication gate" and "paused" from
       every page, the FAQ, guides and JSON-LD. Done: homepage, finder page,
@@ -295,13 +324,20 @@ also checked against the live site.
       /guide pages, /disclaimer, HomepageSchema, /how-it-works.
 
 ### Phase 5: technical (P5)
-- [ ] 5.1 Blog links:
+- [x] 5.1 Blog links:
       - add `/blog/category/[category]` pages for the 2 real categories;
       - remove the 93 tag links and the 2 empty "Popular Topics";
       - point the 3 hero images at the existing per-post generated OG image;
       - fix `/og-image.png`.
-- [ ] 5.2 Sitemap: drop the 4 MiLB level URLs and use real lastmod dates
+      Done (tags are plain text now; test in app/__tests__/blogLinks.test.ts).
+- [x] 5.2 Sitemap: drop the 4 MiLB level URLs and use real lastmod dates
       (each source file's last git commit).
+      Done. Vercel builds from a shallow clone, where git dates are wrong, so
+      there the generator reuses the dates in the committed sitemaps
+      (checked: a shallow clone reproduces them byte for byte). So: run
+      `npm run generate-sitemap` locally and commit the sitemaps when a
+      page changes. Also added the blog category pages and pointed the image
+      sitemap at /opengraph-image.
 - [ ] 5.3 Speed:
       - fix the inline critical CSS;
       - cut render-blocking sheets;
@@ -315,12 +351,19 @@ also checked against the live site.
       - [x] fixed a dev-only bug found on the way: next.config.js forced
             year-long immutable caching on dev chunks, so pages never
             hydrated locally.
-- [ ] 5.4 Accessibility: badge contrast at least 4.5:1, and fix the skip-link
+- [x] 5.4 Accessibility: badge contrast at least 4.5:1, and fix the skip-link
       targets and focus.
-- [ ] 5.5 Canonicals on the 7 pages, a permanent `/faqs` redirect, and
+      Done: one native "Skip to main content" link (first Tab shows it,
+      Enter moves focus into the page). Badges, `.prose` links (an undefined
+      color variable), link hover/visited overriding button text, NFL tip
+      text, share buttons, legal-page blues, privacy button. Tables stay
+      tables on phones and their scroll wrappers take focus. Removed the
+      blog Newsletter box (its form had no action or handler). axe (WCAG 2
+      A/AA) shows no violations at phone size on 30 pages.
+- [x] 5.5 Canonicals on the 7 pages, a permanent `/faqs` redirect, and
       distinct Giants and Jets meta descriptions. Done: non-MLB descriptions
-      name the team, so the two MetLife pages differ. Left: canonicals and
-      `/faqs`.
+      name the team, so the two MetLife pages differ; canonicals on all 7
+      (and a test that every static page has one); `/faqs` is a 301.
 - [ ] 5.6 Tests that guard the strengths: one H1, JSON-LD present, server
       rendering.
 

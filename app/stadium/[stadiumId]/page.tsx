@@ -16,6 +16,7 @@ import { getStadiumSectionProvenance } from '../../../src/data/stadiumSectionPro
 import { RelatedStadiums } from '../../../src/components/RelatedStadiums';
 import StadiumPageSSR from './StadiumPageSSR';
 import { kickoffSunSides } from '../../../src/utils/nflSunSide';
+import { isFieldAxisMeasured } from '../../../src/data/nflOrientationMeasurements';
 import styles from './StadiumPage.module.css';
 import killOverhang from './KillOverhang.module.css';
 
@@ -304,7 +305,7 @@ export default async function StadiumPage({ params }: StadiumPageProps) {
           stadiumId={venue.id}
           guide={getStadiumGuide(venue.id)}
           fidelityNote={fidelityNote(getStadiumDataFidelity(venue.id))}
-          nflSunSides={venue.league === 'NFL' && venue.roof !== 'fixed' ? kickoffSunSides(venue) : undefined}
+          nflSunSides={venue.league === 'NFL' && venue.roof !== 'fixed' && isFieldAxisMeasured(venue.id) ? kickoffSunSides(venue) : undefined}
         />
         <RelatedStadiums venueId={venue.id} />
         <ShadeDataVerified />

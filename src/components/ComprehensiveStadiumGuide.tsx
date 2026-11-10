@@ -13,6 +13,7 @@ import StadiumTitleBlock from './StadiumTitleBlock';
 import { StadiumTitleData } from './StadiumTitleBlock';
 import { FidelityNotice } from './FidelityNotice';
 import type { KickoffSunSides } from '../utils/nflSunSide';
+import { isFieldAxisMeasured } from '../data/nflOrientationMeasurements';
 import { ShadeAnswer } from './ShadeAnswer';
 import './StadiumGuide.css';
 
@@ -83,7 +84,8 @@ const ComprehensiveStadiumGuide: React.FC<ComprehensiveStadiumGuideProps> = ({
         state: venue?.state ?? (guide.neighborhood.name.split(',')[1]?.trim() || '')
       },
       capacity: venue?.capacity ?? guide.capacity,
-      orientation: venue?.orientation ?? 0,
+      // An NFL field whose direction we could not measure shows none.
+      orientation: venue && (venue.league !== 'NFL' || isFieldAxisMeasured(venue.id)) ? venue.orientation : undefined,
       roofType: venue?.roof ?? 'open',
       yearBuilt: venue?.opened ?? guide.opened
     }

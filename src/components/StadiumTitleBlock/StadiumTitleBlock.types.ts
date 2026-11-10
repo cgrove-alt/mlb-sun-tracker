@@ -16,7 +16,8 @@ export interface StadiumTeam {
 export interface StadiumQuickFacts {
   location: StadiumLocation;
   capacity: number;
-  orientation: number;
+  /** Undefined when the field's direction has not been measured. */
+  orientation?: number;
   roofType: RoofType;
   yearBuilt?: number;
 }
