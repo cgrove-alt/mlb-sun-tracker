@@ -254,15 +254,16 @@ const CookieBannerModern: React.FC = () => {
     <>
       {/* Main Banner */}
       {showBanner && !showPreferences && (
-        <div className="fixed bottom-0 left-0 right-0 z-50 p-3 sm:p-4 animate-slide-up">
+        <div className="fixed bottom-0 left-0 right-0 z-50 p-3 sm:p-4 animate-slide-up" role="region" aria-label="Cookie consent">
           <div className="mx-auto max-w-7xl">
             <div className="bg-white/95 backdrop-blur-md border-2 border-ink-200 rounded-xl sm:rounded-2xl shadow-2xl p-4 sm:p-6">
-              <div className="flex flex-col lg:flex-row items-start lg:items-center justify-between gap-4 sm:gap-6">
+              <div className="flex flex-col lg:flex-row items-start lg:items-center justify-between gap-3 sm:gap-6">
                 <div className="flex-1">
-                  <h3 className="text-base sm:text-lg font-bold text-ink-900 mb-1.5 sm:mb-2 flex items-center gap-2">
+                  {/* The heading only repeats the sentence below, so phones skip it to keep the banner short. */}
+                  <h3 className="text-base sm:text-lg font-bold text-ink-900 mt-0 mb-1.5 sm:mb-2 hidden sm:flex items-center gap-2">
                     <span>🍪</span> We value your privacy
                   </h3>
-                  <p className="text-xs sm:text-sm text-ink-600 mb-1.5 sm:mb-2">
+                  <p className="text-xs sm:text-sm text-ink-600 mb-0 sm:mb-2">
                     We use cookies to enhance your experience.
                     {' '}
                     <Link href="/cookies" className="text-primary-600 hover:text-primary-700 underline">
@@ -271,12 +272,12 @@ const CookieBannerModern: React.FC = () => {
                   </p>
                 </div>
 
-                <div className="flex flex-col sm:flex-row w-full lg:w-auto gap-2 sm:gap-3">
+                <div className="flex flex-row w-full lg:w-auto gap-2 sm:gap-3">
                   <ModernButton
                     onClick={() => setShowPreferences(true)}
                     variant="ghost"
                     size="md"
-                    className="text-xs sm:text-sm"
+                    className="flex-1 lg:flex-none text-xs sm:text-sm"
                   >
                     Manage
                   </ModernButton>
@@ -284,7 +285,7 @@ const CookieBannerModern: React.FC = () => {
                     onClick={handleRejectAll}
                     variant="secondary"
                     size="md"
-                    className="text-xs sm:text-sm"
+                    className="flex-1 lg:flex-none text-xs sm:text-sm"
                   >
                     Reject
                   </ModernButton>
@@ -292,7 +293,7 @@ const CookieBannerModern: React.FC = () => {
                     onClick={handleAcceptAll}
                     variant="primary"
                     size="md"
-                    className="text-xs sm:text-sm"
+                    className="flex-1 lg:flex-none text-xs sm:text-sm"
                   >
                     Accept
                   </ModernButton>
