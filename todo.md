@@ -263,15 +263,35 @@ also checked against the live site.
         deleted: your call).
 
 ### Phase 3: content accuracy (P3)
-- [ ] 3.1 `draft` frontmatter support. A draft post is left out of the index
+- [x] 3.1 `draft` frontmatter support. A draft post is left out of the index
       and sitemap, and its URL 301-redirects to the stadium page.
-- [ ] 3.2 Script that checks every post's shade claims against the fixed
+      Done (`draft: true` + `redirectTo` in frontmatter; next.config.js
+      builds the 301s; renamed slugs resolve straight to the final page).
+- [x] 3.2 Script that checks every post's shade claims against the fixed
       engine and prints a table. It runs in tests so the posts can't drift
       again.
-- [ ] 3.3 Fix the Yankees, Fenway (new title, no Monster shade, current club
+      Done as `app/__tests__/blogShadeClaims.test.ts`: each claim's sentence
+      must appear in the post word for word, and the engine must give that
+      answer for the 2025 game the post names (35 checks, including the sun
+      positions quoted).
+- [x] 3.3 Fix the Yankees, Fenway (new title, no Monster shade, current club
       names), Dodger and Citi posts, plus every other mismatch the script
       finds, the general day-game post and the Steinbrenner orientation.
       Unpublish only what can't be fixed (I'll list those first).
+      Decided with you (2026-11-10): unpublish every post that can't be
+      verified yet, and write new posts as each park gets its structure
+      profile. Done:
+      - 29 posts unpublished (files kept): 28 stadium posts 301 to their
+        stadium page, the general day-game post to the homepage.
+      - New Yankee Stadium post (same URL) and new Fenway Park post
+        (`/blog/shaded-seats-fenway-park`; the old Green Monster slug 301s
+        to it), written from the engine for real 2025 games, with
+        estimates labeled as estimates.
+      - Found on the way: an inline critical-CSS rule gave every `<header>`
+        a fixed 64 px height (meant for the sticky bar, which is a `<nav>`),
+        so on phones the post title overlapped the content below. Removed.
+      - Left: a new post for each of the other 28 parks once its profile
+        and reference checks are done (2.6).
 - [x] 3.4 (Also: MLB's 2026 team data names Dodger Stadium "UNIQLO Field
       at Dodger Stadium". Confirm and update with the other names.)
       Minute Maid Park → Daikin Park everywhere, with a 301 for the blog

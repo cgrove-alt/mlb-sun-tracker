@@ -13,11 +13,6 @@ export const CriticalStylesInline = () => {
       scroll-behavior: smooth;
     }
 
-    /* Reserve space for sticky header to avoid CLS */
-    header {
-      height: 64px;
-    }
-    
     body {
       margin: 0;
       padding: 0;

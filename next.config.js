@@ -9,6 +9,8 @@ const withBundleAnalyzer = require('@next/bundle-analyzer')({
 const RENAMED_POSTS = {
   'shaded-seats-minute-maid-park': 'shaded-seats-daikin-park',
   'shaded-seats-guaranteed-rate-field': 'shaded-seats-rate-field',
+  // The old title promised Green Monster shade; those seats get none by day.
+  'fenway-park-green-monster-shade-guide': 'shaded-seats-fenway-park',
 };
 
 /**

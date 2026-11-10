@@ -194,11 +194,11 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
                 background: '#eff6ff',
               }}
             >
-              <strong>📍 Planning a visit?</strong> See our full{' '}
+              <strong>📍 Going to a game?</strong> Pick it on our{' '}
               <Link href={`/stadium/${matchedVenue.id}`} style={{ fontWeight: 600, textDecoration: 'underline' }}>
-                {matchedVenue.name} shade guide
+                {matchedVenue.name} page
               </Link>{' '}
-              for sun-position context and the current section-data confidence status.
+              to see the shade in every section, inning by inning.
             </aside>
           )}
 
