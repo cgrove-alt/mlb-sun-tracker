@@ -99,13 +99,20 @@ export function layoutSeatMap(sections: readonly DetailedSection[], orientationD
 
 const confidenceRank = { high: 2, medium: 1, low: 0 } as const;
 
-/** Sections with the most shade over the game, most-confident first among ties. */
+/**
+ * Sections with the most shade over the game, most-confident first among
+ * ties. At most one per seating area first, so fans see options across
+ * price levels rather than five boxes of the same club.
+ */
 export function bestSections(sections: readonly SectionGameShade[], count = 5): SectionGameShade[] {
   const mean = (s: SectionGameShade) => s.samples.reduce((sum, x) => sum + x.shadedFraction, 0) / s.samples.length;
-  return [...sections]
+  const ranked = [...sections]
     .filter((s) => s.confidence !== 'low')
-    .sort((a, b) => mean(b) - mean(a) || confidenceRank[b.confidence] - confidenceRank[a.confidence])
-    .slice(0, count);
+    .sort((a, b) => mean(b) - mean(a) || confidenceRank[b.confidence] - confidenceRank[a.confidence]);
+  const seenTiers = new Set<string>();
+  const onePerTier = ranked.filter((s) => (seenTiers.has(s.tier) ? false : (seenTiers.add(s.tier), true)));
+  const rest = ranked.filter((s) => !onePerTier.includes(s));
+  return [...onePerTier, ...rest].slice(0, count);
 }
 
 /** Find a section by what a fan types: exact id, then an id that starts with it. */

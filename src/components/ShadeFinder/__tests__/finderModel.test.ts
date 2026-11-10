@@ -36,8 +36,15 @@ describe('finding a section', () => {
 
 describe('best sections', () => {
   it('ranks by shade over the game and leaves out low-confidence answers', () => {
-    const list = [shade('A', [0.2, 0.2]), shade('B', [1, 1], 'low'), shade('C', [0.9, 0.9]), shade('D', [0.5, 0.5])];
+    const list = [shade('A', [0.2, 0.2]), shade('B', [1, 1], 'low'), shade('C', [0.9, 0.9]), shade('D', [0.5, 0.5])]
+      .map((s, i) => ({ ...s, tier: `tier${i}` }));
     expect(bestSections(list, 2).map((s) => s.sectionId)).toEqual(['C', 'D']);
+  });
+
+  it('offers one section per seating area before repeating an area', () => {
+    const club = (id: string) => ({ ...shade(id, [1, 1]), tier: 'club' });
+    const loge = { ...shade('L1', [0.6, 0.6]), tier: 'loge' };
+    expect(bestSections([club('C1'), club('C2'), club('C3'), loge], 3).map((s) => s.sectionId)).toEqual(['C1', 'L1', 'C2']);
   });
 });
 
