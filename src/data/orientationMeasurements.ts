@@ -330,6 +330,124 @@ export const ORIENTATION_MEASUREMENTS: readonly OrientationMeasurement[] = [
       '359.7°. A light tower\'s shadow crosses the first-base side of the infield, so the grass-square and dirt-arc fits are not used. ' +
       'Recorded 0° ±1°, unchanged: confirms the published "due north".',
   },
+  {
+    stadiumId: 'angels',
+    imageCenter: { latitude: 33.79998, longitude: -117.8831 },
+    imageHalfWidthMeters: 75,
+    imageSizePx: 600,
+    naipTile: 'm_3311709_se_11_060_20220425',
+    acquired: '2022-04-25',
+    nativeResolutionMeters: 0.6,
+    homeSeedPx: [274.5, 327],
+    moundSeedPx: [325, 273],
+    homeCenterPx: [274.5, 327],
+    moundCenterPx: [325.04, 273],
+    bearingHomeToMoundDeg: 43.1,
+    bearingInfieldSymmetryDeg: 44,
+    orientationDeg: 44,
+    precisionDeg: 1,
+    measuredOn: '2026-11-11',
+    notes:
+      'Mound under a teal cover; home plate read as the centre of its dirt circle. Home → mound 43.1°; infield mirror axis 44.0° (96% overlap). ' +
+      'Third check: a circle fitted to the infield dirt\'s outer edge (98 of 111 rays; radius 28.9 m) is centred 43.2–43.7° from home. The infield ' +
+      'grass square\'s edges give 43.8° (spread 2.1°). Chalk foul lines 20–60 m out: midline 44.1–44.7°; traced 30–95 m out on a 260 m-wide image ' +
+      'of the same flight: 88.9° and 357.6°, midline 43.3–44.3°. Mean 43.8°, recorded as 44° ±1°. Replaces 50°, a midpoint of two published ' +
+      'values (ballparks.com 45°, "ENE" ~65°).',
+  },
+  {
+    stadiumId: 'rockies',
+    imageCenter: { latitude: 39.75579, longitude: -104.99419 },
+    imageHalfWidthMeters: 75,
+    imageSizePx: 600,
+    naipTile: 'm_3910409_sw_13_060_20190803',
+    acquired: '2019-08-03',
+    nativeResolutionMeters: 0.6,
+    homeSeedPx: [297.5, 336],
+    moundSeedPx: [303.5, 264.5],
+    homeCenterPx: [297.5, 336],
+    moundCenterPx: [303.92, 265.03],
+    bearingHomeToMoundDeg: 5.17,
+    bearingInfieldSymmetryDeg: 4.6,
+    orientationDeg: 5,
+    precisionDeg: 1,
+    measuredOn: '2026-11-11',
+    notes:
+      'Home plate and mound under white covers. Home → mound 5.17°; infield mirror axis 4.6° (97.1% overlap); a circle fitted to the infield dirt\'s ' +
+      'outer edge (109 of 111 rays; radius 29.4 m) is centred 4.55–4.71° from home. Chalk foul lines 20–60 m out: midline 4.8–5.4°; 30–95 m out on a ' +
+      '260 m-wide image of the same flight: 50.0° and 319.7°, 90.3° apart, midline 4.8°. The grass square\'s edges are too noisy here (spread 14.7°). ' +
+      'Mean 4.85°, recorded as 5° ±1°. Replaces 0° (ballparks.com lists 0°).',
+  },
+  {
+    stadiumId: 'royals',
+    imageCenter: { latitude: 39.05131, longitude: -94.48074 },
+    imageHalfWidthMeters: 75,
+    imageSizePx: 600,
+    naipTile: 'm_3909461_sw_15_060_20220629',
+    acquired: '2022-06-29',
+    nativeResolutionMeters: 0.6,
+    homeSeedPx: [272.5, 327.5],
+    moundSeedPx: [324, 278.5],
+    homeCenterPx: [272.5, 327.5],
+    moundCenterPx: [323.83, 279.02],
+    bearingHomeToMoundDeg: 46.63,
+    bearingInfieldSymmetryDeg: 47,
+    orientationDeg: 47,
+    precisionDeg: 1,
+    measuredOn: '2026-11-11',
+    notes:
+      'Mound under a white cover. Home → mound 46.63°; infield mirror axis 47.0° (96.4% overlap). Chalk foul lines 20–60 m out: midline 46.8–47.3°; ' +
+      '30–95 m out on a 260 m-wide image of the same flight: 92.0° and 1.3°, 90.7° apart, midline 46.6–46.9°. The grass square\'s edges give 45.8° ' +
+      '(spread 3°) and the dirt-arc circle 48.6°, both outside the others\' spread, so they are not used. Mean 46.9°, recorded as 47° ±1°. ' +
+      'Replaces 48° (ballparks.com lists 45°).',
+  },
+  {
+    stadiumId: 'reds',
+    imageCenter: { latitude: 39.09744, longitude: -84.50697 },
+    imageHalfWidthMeters: 75,
+    imageSizePx: 600,
+    naipTile: 'm_3908460_ne_17_030_20230522',
+    acquired: '2023-05-22',
+    nativeResolutionMeters: 0.3,
+    homeSeedPx: [271.1, 284.8],
+    moundSeedPx: [334, 323],
+    homeCenterPx: [271.1, 284.8],
+    moundCenterPx: [334.02, 323.02],
+    bearingHomeToMoundDeg: 121.27,
+    bearingInfieldSymmetryDeg: 121.8,
+    orientationDeg: 122,
+    precisionDeg: 1,
+    grassRule: 'slight-blue-cast',
+    measuredOn: '2026-11-11',
+    notes:
+      'Grass reads only a little greener than blue (g − b ≈ 3), hence grassRule \'slight-blue-cast\'. Home → mound 121.27°; infield mirror axis ' +
+      '121.8° (89.8% overlap); the infield grass square\'s edges 122.3° (spread 1.9°). Chalk foul lines 20–60 m out: midline 122.85–123.0°; 30–95 m ' +
+      'out on a 260 m-wide image of the same flight: 168.1° and 75.3°, midline 121.7–122.8°. The dirt-arc circle (90 of 111 rays) lands at ' +
+      '117.9–118.7°, 3–4° off the rest, so it is not used. Mean of the others 122.25°, recorded as 122° ±1°. Replaces 115° (ballparks.com lists 120°).',
+  },
+  {
+    stadiumId: 'pirates',
+    imageCenter: { latitude: 40.44704, longitude: -80.00609 },
+    imageHalfWidthMeters: 75,
+    imageSizePx: 600,
+    naipTile: 'm_4008040_ne_17_060_20220509',
+    acquired: '2022-05-09',
+    nativeResolutionMeters: 0.6,
+    homeSeedPx: [268.5, 290],
+    moundSeedPx: [333.5, 320.5],
+    homeCenterPx: [268.5, 290],
+    moundCenterPx: [333.89, 320.82],
+    bearingHomeToMoundDeg: 115.24,
+    bearingInfieldSymmetryDeg: 115.6,
+    orientationDeg: 116,
+    precisionDeg: 1.5,
+    measuredOn: '2026-11-11',
+    notes:
+      'Home plate under a grey cover (fitted by eye from its edges at 268.5, 290–290.5), mound under a logo cover. Home → mound 115.24°; infield ' +
+      'mirror axis 115.6° (96.5% overlap); a circle fitted to the infield dirt\'s outer edge (88 of 111 rays; radius 29.5 m) is centred 116.6° from ' +
+      'home; the infield grass square\'s edges 117.15° (spread 1.4°). Chalk foul lines 20–60 m out: midline 116.0–117.35°; 30–95 m out on a 260 m-wide ' +
+      'image of the same flight: 162.3° and 69.2°, midline 115.7–117.0°. Mean 116.3°, recorded as 116° with ±1.5° for the spread (115.2–117.35°). ' +
+      'Replaces 120° (ballparks.com lists 120°).',
+  },
 ];
 
 export function getOrientationMeasurement(stadiumId: string): OrientationMeasurement | undefined {

@@ -30,7 +30,7 @@ export const MLB_STADIUMS: Stadium[] = [
     state: 'CA',
     latitude: 33.8003,
     longitude: -117.8827,
-    orientation: 50, // ENE — refined 2026-06-23 from 65°. Sources split: ballparks.com 45° vs shadedseats ENE (~65°); ~50° is the midpoint. Estimated, needs GIS. See provenance.
+    orientation: 44, // NE — measured 2026-11-11 from USGS NAIP imagery (44° ±1°); replaces 50°. See orientationMeasurements.ts.
     capacity: 45517,
     roof: 'open',
     timezone: 'America/Los_Angeles',
@@ -283,7 +283,7 @@ export const MLB_STADIUMS: Stadium[] = [
     state: 'PA',
     latitude: 40.4468,
     longitude: -80.0057,
-    orientation: 120, // ESE — corrected 2026-06-23 from 55° (NE, wrong quadrant). ballparks.com (PNC 120°) + andrewclem (ESE) + sun pattern (sets behind HP) + skyline beyond CF to the SE confirm ESE. The old "NE" misread the skyline geometry. See provenance.
+    orientation: 116, // ESE — measured 2026-11-11 from USGS NAIP imagery (116° ±1.5°); replaces 120°. See orientationMeasurements.ts.
     capacity: 38362,
     roof: 'open',
     timezone: 'America/New_York'
@@ -338,7 +338,7 @@ export const MLB_STADIUMS: Stadium[] = [
     state: 'OH',
     latitude: 39.0979,
     longitude: -84.5080,
-    orientation: 115, // ESE — refined 2026-06-23 from 105°. ballparks.com 120° + andrewclem ESE (~112°) + sun pattern (sets behind HP) center on ~115°. See provenance.
+    orientation: 122, // ESE — measured 2026-11-11 from USGS NAIP imagery (122° ±1°); replaces 115°. See orientationMeasurements.ts.
     capacity: 42319,
     roof: 'open',
     timezone: 'America/New_York' // Eastern Time — was incorrectly 'America/Chicago' (Central). All of Ohio observes Eastern.
@@ -351,7 +351,7 @@ export const MLB_STADIUMS: Stadium[] = [
     state: 'CO',
     latitude: 39.7559,
     longitude: -104.9942,
-    orientation: 0, // N — corrected 2026-06-23 from 40°. ballparks.com (Coors 0°) + andrewclem (N) + sun pattern ("oriented to the north", rises over RF, sets behind LF) confirm due north. See provenance.
+    orientation: 5, // N — measured 2026-11-11 from USGS NAIP imagery (5° ±1°); replaces 0°. See orientationMeasurements.ts.
     capacity: 50144,
     roof: 'open',
     timezone: 'America/Denver'
@@ -364,7 +364,7 @@ export const MLB_STADIUMS: Stadium[] = [
     state: 'MO',
     latitude: 39.0517,
     longitude: -94.4803,
-    orientation: 48, // NE — refined 2026-06-23 from 58°. ballparks.com 45° + andrewclem NE + sun pattern (rises over CF, sets near LF foul pole) center on ~45–50°. See provenance.
+    orientation: 47, // NE — measured 2026-11-11 from USGS NAIP imagery (47° ±1°); replaces 48°. See orientationMeasurements.ts.
     capacity: 37903,
     roof: 'open',
     timezone: 'America/Chicago'
