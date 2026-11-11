@@ -8,7 +8,7 @@ const ORIENTATION = getStadiumOrientation('marlins');
 
 /** Selectable polygons sourced from the club-linked public 3D seating map. */
 export const marlinsSections: DetailedSection[] = buildParkSections(
-  129.036,
+  ORIENTATION,
   chartSeeds(marlinsChartPoints, {
     orientation: ORIENTATION,
     behindHomeIds: ['SEC14', 'SEC15'],

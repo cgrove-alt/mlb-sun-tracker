@@ -1,6 +1,8 @@
 import { MLB_STADIUMS } from '../stadiums';
 import { getUnifiedVenuesByLeague } from '../unifiedVenues';
 import { getOrientationProvenance } from '../stadiumOrientationProvenance';
+import fs from 'fs';
+import path from 'path';
 import { ORIENTATION_MEASUREMENTS } from '../orientationMeasurements';
 
 // Orientation (home plate → center field bearing) drives every shade answer.
@@ -34,6 +36,15 @@ describe('MLB orientation consistency', () => {
       }
     },
   );
+
+  // A seat map that types the angle in keeps the old value when a park is
+  // re-measured, so part of its sections would point the wrong way.
+  it.each(MLB_STADIUMS.map((s) => s.id))('%s: the seat map reads its orientation from stadiums.ts', (id) => {
+    const source = fs.readFileSync(path.join(__dirname, '../sections/mlb', `${id}.ts`), 'utf8');
+    expect(source).toMatch(new RegExp(`getStadiumOrientation\\('${id}'\\)`));
+    expect(source).not.toMatch(/buildParkSections\(\s*[\d.]/);
+    expect(source).not.toMatch(/ORIENTATION\w*\s*=\s*[\d.]/);
+  });
 
   it('Yankee Stadium points east-northeast (≈75°), not 55°', () => {
     expect(MLB_STADIUMS.find((s) => s.id === 'yankees')?.orientation).toBe(75);

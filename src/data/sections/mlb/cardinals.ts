@@ -8,7 +8,7 @@ const ORIENTATION = getStadiumOrientation('cardinals');
 
 /** Selectable polygons sourced from the club-linked public 3D seating map. */
 export const cardinalsSections: DetailedSection[] = buildParkSections(
-  60,
+  ORIENTATION,
   chartSeeds(cardinalsChartPoints, {
     orientation: ORIENTATION,
     behindHomeIds: ['5', '6'],

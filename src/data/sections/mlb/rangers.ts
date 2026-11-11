@@ -8,7 +8,7 @@ const ORIENTATION = getStadiumOrientation('rangers');
 
 /** Selectable polygons sourced from the club-linked public 3D seating map. */
 export const rangersSections: DetailedSection[] = buildParkSections(
-  46,
+  ORIENTATION,
   chartSeeds(rangersChartPoints, {
     orientation: ORIENTATION,
     behindHomeIds: ["15","16"],

@@ -8,7 +8,7 @@ const ORIENTATION = getStadiumOrientation('pirates');
 
 /** Selectable polygons sourced from the club-linked public 3D seating map. */
 export const piratesSections: DetailedSection[] = buildParkSections(
-  120,
+  ORIENTATION,
   chartSeeds(piratesChartPoints, {
     orientation: ORIENTATION,
     behindHomeIds: ["18","19"],

@@ -8,7 +8,7 @@ const ORIENTATION = getStadiumOrientation('guardians');
 
 /** Selectable polygons sourced from the club-linked public 3D seating map. */
 export const guardiansSections: DetailedSection[] = buildParkSections(
-  356,
+  ORIENTATION,
   chartSeeds(guardiansChartPoints, {
     orientation: ORIENTATION,
     behindHomeIds: ["153","154"],

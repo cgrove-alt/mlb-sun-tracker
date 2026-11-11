@@ -39,6 +39,7 @@
 //     above" of the 500 level is sheltered.
 
 import { DetailedSection, Vector3D, RowDetail, CoverageDetail } from '../../../types/stadium-complete';
+import { getStadiumOrientation } from '../../stadiums';
 
 // Three-tier coverage model (audit Phase 3). NOTE: unlike Yankee Stadium, Rate
 // Field's sections are reclassified by a generic architectural rule rather than
@@ -49,7 +50,7 @@ import { DetailedSection, Vector3D, RowDetail, CoverageDetail } from '../../../t
 // 100% of the upper deck as fully (guaranteed) shaded.
 type SectionCoverage = 'full' | 'partial' | 'none';
 
-const ORIENTATION_DEG = 120;
+const ORIENTATION_DEG = getStadiumOrientation('whitesox');
 
 function normalize(deg: number): number {
   return ((deg % 360) + 360) % 360;

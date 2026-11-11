@@ -8,7 +8,7 @@ const ORIENTATION = getStadiumOrientation('brewers');
 
 /** Selectable polygons sourced from the club-linked public 3D seating map. */
 export const brewersSections: DetailedSection[] = buildParkSections(
-  135,
+  ORIENTATION,
   chartSeeds(brewersChartPoints, {
     orientation: ORIENTATION,
     behindHomeIds: ["117"],

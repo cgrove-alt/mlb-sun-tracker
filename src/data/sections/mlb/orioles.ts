@@ -8,7 +8,7 @@ const ORIENTATION = getStadiumOrientation('orioles');
 
 /** Selectable polygons sourced from the club-linked public 3D seating map. */
 export const oriolesSections: DetailedSection[] = buildParkSections(
-  30,
+  ORIENTATION,
   chartSeeds(oriolesChartPoints, {
     orientation: ORIENTATION,
     behindHomeIds: ["32"],

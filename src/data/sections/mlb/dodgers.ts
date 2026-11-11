@@ -8,7 +8,7 @@ const ORIENTATION = getStadiumOrientation('dodgers');
 
 /** Selectable polygons sourced from the club-linked public 3D seating map. */
 export const dodgersSections: DetailedSection[] = buildParkSections(
-  25,
+  ORIENTATION,
   chartSeeds(dodgersChartPoints, {
     orientation: ORIENTATION,
     behindHomeIds: ["2DG","3DG"],

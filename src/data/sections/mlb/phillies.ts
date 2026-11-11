@@ -8,7 +8,7 @@ const ORIENTATION = getStadiumOrientation('phillies');
 
 /** Selectable polygons sourced from the club-linked public 3D seating map. */
 export const philliesSections: DetailedSection[] = buildParkSections(
-  18,
+  ORIENTATION,
   chartSeeds(philliesChartPoints, {
     orientation: ORIENTATION,
     behindHomeIds: ["124","125"],

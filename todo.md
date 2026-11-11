@@ -541,6 +541,74 @@ also checked against the live site.
   (filter by hostname).
 
 ---
+
+## 6. Plan: the other 28 parks (2026-11-11)
+
+Goal: every MLB park gets what Yankee Stadium and Fenway have: a measured
+orientation, a calibrated seat map, a sourced structure profile and 5+
+checks against published observations on real 2025 games. Today these
+parks use a generic stand shape per seating level, so most answers are
+Medium or Low confidence and their blog posts stay unpublished.
+
+### Step 0: fix found while reading
+- [ ] 6.0 18 section files pass the orientation to `buildParkSections` as a
+      typed number (Angels `50`, Astros `340`, …) next to
+      `getStadiumOrientation()`. They match `stadiums.ts` today, but a
+      re-measured park would keep the old angle for part of its seat map, and
+      the consistency test doesn't look at these files. Pass `ORIENTATION`
+      everywhere and make the test fail on a typed number.
+
+### Per park (the Yankees/Fenway recipe)
+1. Orientation from USGS aerial imagery (`scripts/measureOrientation.ts`),
+   with at least two methods that agree. Record it in
+   `orientationMeasurements.ts`; update `stadiums.ts`, `unifiedVenues.ts`
+   and the provenance file.
+2. Seat map: fit the axis from the straight runs of field boxes along each
+   foul line, then check the stand directions.
+3. Structure profile in `stadiumStructures.ts`, with each value marked
+   sourced or estimated:
+   - tiers and row counts from the club map;
+   - which rows are covered (shaded-seat guides, section pages, the club's
+     ballpark guide);
+   - heights, published where they exist, otherwise estimated with the
+     reasoning written down.
+4. Reference checks: `<park>ShadeReference.test.ts`, 5+ checks from
+   published observations, each on a real 2025 home game. A disagreement
+   gets investigated. If it can't be resolved, the section gets a lower
+   confidence label, never a fudged number.
+5. Check the stadium page on a phone. One commit per park.
+
+### Batches (I check in with you after batch 1)
+- [ ] 6.1 Batch 1: Dodgers, Cubs, Giants, Mets, Phillies.
+- [ ] 6.2 Batch 2: Braves, Cardinals, Nationals, Orioles, Padres.
+- [ ] 6.3 Batch 3: Angels, Rockies, Royals, Reds, Pirates.
+- [ ] 6.4 Batch 4: Tigers, Guardians, Twins, White Sox, Athletics (Sutter
+      Health Park).
+- [ ] 6.5 Batch 5, retractable roofs (answers assume the roof is open, as
+      today): Diamondbacks, Rangers, Astros, Marlins, Brewers, Mariners,
+      Blue Jays.
+- Rays: Tropicana Field has a fixed roof, so every seat is shaded and
+  there is nothing to profile. (Their 2025 home was Steinbrenner Field.)
+
+### Known hard cases
+- Rogers Centre is in Canada, which USGS imagery doesn't cover: use
+  Toronto's open-data aerial photos or OpenStreetMap, with a wider ±.
+- Retractable roofs may be closed in the aerial photo, as at two NFL
+  fields. Then I'll use other imagery or OpenStreetMap, with a wider ±.
+- Giants, Padres, Athletics, Blue Jays and White Sox seat maps come from
+  hand-typed compass tables rather than the club's 3-D map, so they need
+  converting before they can be calibrated.
+- Heights: like Yankees and Fenway, estimated unless a public source gives
+  them. USGS lidar exists for several parks and can turn an estimate into
+  a measurement. I'll use it where a reference check disagrees and the
+  height is the likely cause.
+
+### Done means
+Each park shows as profiled, has its measured orientation and 5+ passing
+reference checks, and its page is checked on a phone. All tests pass. New
+blog posts for these parks come after, as their own step.
+
+---
 ---
 
 # Previous audit (2026-08-07), kept for history

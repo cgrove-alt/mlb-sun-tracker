@@ -8,7 +8,7 @@ const ORIENTATION = getStadiumOrientation('nationals');
 
 /** Selectable polygons sourced from the club-linked public 3D seating map. */
 export const nationalsSections: DetailedSection[] = buildParkSections(
-  30,
+  ORIENTATION,
   chartSeeds(nationalsChartPoints, {
     orientation: ORIENTATION,
     behindHomeIds: ['C', 'D'],
