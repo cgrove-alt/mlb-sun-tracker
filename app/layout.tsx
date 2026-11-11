@@ -10,7 +10,6 @@ import { Inter } from 'next/font/google';
 import { Suspense } from 'react';
 import GoogleAnalyticsLazy from '../components/GoogleAnalyticsLazy';
 import { CriticalStylesInline } from './critical-styles-inline';
-import { CSSOptimizer } from '../components/CSSOptimizer';
 import StickyTopNav from '../components/StickyTopNav';
 import { WebApplicationSchema } from '../components/SafeSchema';
 import FooterModern from '../components/FooterModern';
@@ -127,7 +126,6 @@ export default function RootLayout({
       </head>
       <body className={inter.className}>
         <SkipLinks />
-        <CSSOptimizer />
         <Suspense fallback={null}>
           <GoogleAnalyticsLazy />
         </Suspense>
