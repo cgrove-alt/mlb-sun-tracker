@@ -12,6 +12,8 @@ import { bravesSections, BRAVES_AERIAL_CONTROL } from '../braves';
 import { bravesChartPoints } from '../chart-points/braves';
 import { cardinalsSections, CARDINALS_AERIAL_CONTROL } from '../cardinals';
 import { cardinalsChartPoints } from '../chart-points/cardinals';
+import { nationalsSections, NATIONALS_AERIAL_CONTROL } from '../nationals';
+import { nationalsChartPoints } from '../chart-points/nationals';
 import { aerialChartFit } from '../parkSectionBuilder';
 import { getStadiumOrientation } from '../../../stadiums';
 
@@ -385,5 +387,40 @@ describe('Busch Stadium stand directions (measured on the 2022 aerial photo)', (
     expect(stand('130')).toBe(135);
     expect(stand('193')).toBe(44);
     expect(stand('107')).toBe(92);
+  });
+});
+
+describe('Nationals Park stand directions (measured on the 2023 aerial photo)', () => {
+  // Level lines run parallel to both foul lines (backs 164° and 254°); behind
+  // home the rows are arcs centred ~3 m behind home plate; the right-field
+  // pavilion runs 137.8° (back 48°).
+  const byId = new Map(nationalsSections.map((s) => [s.id, s]));
+  const stand = (id: string) => {
+    const value = byId.get(id)?.standCompass;
+    if (value === undefined) throw new Error(`No stand direction for ${id}`);
+    return value;
+  };
+
+  it('pins the club map to the photo within 5 m', () => {
+    expect(aerialChartFit(nationalsChartPoints, NATIONALS_AERIAL_CONTROL).rmsM).toBeLessThan(5);
+  });
+
+  it.each(['128', '132', '219', '225', '320', '418'])('first-base section %s faces 164°', (id) => {
+    expect(stand(id)).toBe(164);
+  });
+
+  it.each(['112', '115', '203', '207', '305', '405'])('third-base section %s faces 254°', (id) => {
+    expect(stand(id)).toBe(254);
+  });
+
+  it.each(['C', 'DC122', 'DC123', '213', '313'])('behind-home section %s faces away from center field', (id) => {
+    expect(diff(stand(id), getStadiumOrientation('nationals') + 180)).toBeLessThan(12);
+  });
+
+  it('the outfield stands follow their walls', () => {
+    expect(stand('141')).toBe(48);
+    expect(stand('240')).toBe(48);
+    expect(stand('104')).toBe(314);
+    expect(stand('100')).toBe(5);
   });
 });

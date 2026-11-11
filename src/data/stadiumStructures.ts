@@ -1740,6 +1740,201 @@ const BUSCH: StadiumStructure = {
   reviewedOn: '2026-11-11',
 };
 
+const rysNats = (path: string) => `https://www.rateyourseats.com/nationals-park/seating/${path}`;
+const RYS_NATS = rysNats('shaded-covered-seats');
+const natsSections = (...ids: string[]) => ids.map((n) => rysNats(`sections/${n}`));
+
+/** Seating ring of a Nationals Park chart section. */
+export function natsTier(id: string): string | null {
+  if (/^[A-E]$/.test(id)) return 'terraClub';
+  if (/^(DC|HP)\d+$/.test(id)) return 'diamondClub';
+  if (/^SUITE\d+$/.test(id)) return 'suite';
+  // Party suites, the named clubs and center field's lettered blocks: no
+  // source says what covers them.
+  if (!/^\d+$/.test(id)) return null;
+  const n = Number(id);
+  if (n <= 107) return 'outfield';
+  if (n <= 137) return 'hundred';
+  if (n <= 143) return 'rightField';
+  if (n <= 205 || (n >= 223 && n <= 235 && n % 2 === 1)) return 'mezzanine';
+  if (n <= 221) return 'clubLevel';
+  if (n <= 236) return 'terrace';
+  if (n === 237) return 'pavilionCoverUnsourced';
+  if (n <= 243) return 'pavilion';
+  if (n <= 321) return 'gallery';
+  return 'upperGallery';
+}
+
+// The 100s' covered rows as positions in each section's lettered rows (A–Z
+// then AA–ZZ; Rate Your Seats: "a typical lower level section is covered at
+// row RR"). 118, 127 and the outfield stop before the deck.
+const NATS_100_COVER: Record<string, number> = {
+  '108': 39, '109': 25, '110': 38, '111': 39, '112': 40, '113': 42, '114': 42, '115': 45, '116': 43, '117': 43,
+  '128': 43, '129': 43, '130': 46, '131': 44, '132': 47, '133': 42, '134': 37, '135': 33, '136': 33, '137': 22,
+};
+// Estimated: the 200 level's underside ~54 ft over the deep (up to 49-row) 100s.
+const NATS_100_SOFFIT_FT = 54;
+
+/**
+ * Nationals Park (2008). The Terra Club and Diamond Club behind home, a deep
+ * 100 level, the 200s (Mezzanine, the club level and the right-field
+ * Terrace), the scoreboard pavilion in right-center, the 300s (Gallery,
+ * uncovered) and the 400s (Upper Gallery) under a roof from row C. Rows and
+ * covered rows are Rate Your Seats' section pages. No source publishes the
+ * deck heights, so every height is estimated by stacking the decks.
+ */
+const NATS: StadiumStructure = {
+  stadiumId: 'nationals',
+  // Far rim: the Upper Gallery roof (~135 ft) about 550 ft across the field.
+  park: { roof: 'open', farRimHeightFt: 135, fieldCrossingFt: 550 },
+  tierOf: natsTier,
+  tiers: {
+    terraClub: {
+      label: 'Terra Club (A–E)',
+      // Rows A–L at the backstop (C: A–H), open (seen from directly above on
+      // the photo). Estimated: front row ~2 ft, 12° rake; the Diamond Club
+      // rises behind them to the club level's front (~58 ft) ~70 ft back.
+      stand: { rows: 12, frontRowHeightFt: 2, rakeDeg: 12, backHeightFt: 58, backSetbackFt: 70 },
+      rowsFromMap: true,
+      heightsSourced: false,
+      coverSourced: true,
+      sources: natsSections('A', 'C', 'E'),
+    },
+    diamondClub: {
+      label: 'Diamond Club (119–126)',
+      // Rows A–U, "elevated about 12 rows off the field" behind the Terra
+      // Club; no source gives covered rows, so the check tries both.
+      // Estimated: front ~12 ft, 20° rake, the club level's front ~58 ft.
+      stand: { rows: 21, frontRowHeightFt: 12, rakeDeg: 20, backHeightFt: 58, backSetbackFt: 15 },
+      rowsFromMap: true,
+      heightsSourced: false,
+      coverSourced: false,
+      sources: natsSections('119', '122', '126'),
+    },
+    hundred: {
+      label: 'Field level (100s)',
+      // Rows A–WW and the like (up to 49 rows); covered by the 200 level from
+      // about row RR (per section below). Estimated: front row ~3 ft, 20° rake.
+      stand: { rows: 44, frontRowHeightFt: 3, rakeDeg: 20, backHeightFt: NATS_100_SOFFIT_FT },
+      sections: Object.fromEntries(Object.entries(NATS_100_COVER).map(([id, row]) => [id, { overhang: { coveredFromRow: row, soffitHeightFt: NATS_100_SOFFIT_FT } }])),
+      rowsFromMap: true,
+      heightsSourced: false,
+      coverSourced: true,
+      sources: [RYS_NATS, ...natsSections('108', '112', '113', '117', '118', '127', '128', '132', '135', '137')],
+    },
+    outfield: {
+      label: 'Outfield (100–107)',
+      // Rows up to 30, open ("very few outfield seats are in the shade").
+      // Estimated: front ~10 ft above the wall, 20° rake, concourse ~35 ft.
+      stand: { rows: 26, frontRowHeightFt: 10, rakeDeg: 20, backHeightFt: 35 },
+      rowsFromMap: true,
+      heightsSourced: false,
+      coverSourced: true,
+      sources: [RYS_NATS, ...natsSections('100', '101', '104', '107')],
+    },
+    rightField: {
+      label: 'Right field (138–143)',
+      // Under the scoreboard pavilion: 138 all covered, 139 from row H (its
+      // 3rd row), 140–143 from row H (sourced). Estimated: front ~8 ft, 20°
+      // rake, the pavilion's underside ~26 ft.
+      stand: { rows: 24, frontRowHeightFt: 8, rakeDeg: 20, backHeightFt: 30, overhang: { coveredFromRow: 8, soffitHeightFt: 26 } },
+      sections: {
+        '138': { overhang: { coveredFromRow: 1, soffitHeightFt: 26 } },
+        '139': { overhang: { coveredFromRow: 3, soffitHeightFt: 26 } },
+      },
+      rowsFromMap: true,
+      heightsSourced: false,
+      coverSourced: true,
+      sources: [RYS_NATS, ...natsSections('138', '139', '140', '142')],
+    },
+    mezzanine: {
+      label: 'Mezzanine (201–205, 223–235)',
+      // Rows A–P under the Gallery deck from row H (201–205) or G (odd
+      // 223–235). Estimated: front ~58 ft, 24° rake, deck underside ~76 ft.
+      stand: { rows: 16, frontRowHeightFt: 58, rakeDeg: 24, backHeightFt: 76, overhang: { coveredFromRow: 7, soffitHeightFt: 76 } },
+      sections: Object.fromEntries(['201', '202', '203', '204', '205'].map((id) => [id, { overhang: { coveredFromRow: 8, soffitHeightFt: 76 } }])),
+      rowsFromMap: true,
+      heightsSourced: false,
+      coverSourced: true,
+      sources: natsSections('201', '203', '205', '223', '229', '235'),
+    },
+    clubLevel: {
+      label: 'Club level (206–221)',
+      // Rows A–J or A–L, covered from row G (sourced). Estimated: front
+      // ~58 ft, 22° rake, deck underside ~72 ft.
+      stand: { rows: 10, frontRowHeightFt: 58, rakeDeg: 22, backHeightFt: 72, overhang: { coveredFromRow: 7, soffitHeightFt: 72 } },
+      rowsFromMap: true,
+      heightsSourced: false,
+      coverSourced: true,
+      sources: [RYS_NATS, ...natsSections('206', '209', '214', '217', '221')],
+    },
+    terrace: {
+      label: 'Right Field Terrace (222–236)',
+      // Rows A–X (A, D–X in 224–230), covered from row L (sourced).
+      // Estimated: front ~58 ft, 24° rake, the deck above ~82 ft.
+      stand: { rows: 24, frontRowHeightFt: 58, rakeDeg: 24, backHeightFt: 82, overhang: { coveredFromRow: 12, soffitHeightFt: 82 } },
+      sections: Object.fromEntries(['224', '226', '228', '230'].map((id) => [id, { overhang: { coveredFromRow: 10, soffitHeightFt: 82 } }])),
+      rowsFromMap: true,
+      heightsSourced: false,
+      coverSourced: true,
+      sources: natsSections('222', '224', '232', '236'),
+    },
+    pavilion: {
+      label: 'Scoreboard Pavilion (238–243)',
+      // Rows A–P, "no overhang above them". Estimated: front ~30 ft, 20°
+      // rake, the scoreboard structure behind ~60 ft.
+      stand: { rows: 16, frontRowHeightFt: 30, rakeDeg: 20, backHeightFt: 60 },
+      rowsFromMap: true,
+      heightsSourced: false,
+      coverSourced: true,
+      sources: natsSections('238', '240', '243'),
+    },
+    pavilionCoverUnsourced: {
+      label: 'Scoreboard Pavilion (237)',
+      // Its page says both "rows G and above are under cover" and "no
+      // overhang above them", so the check tries both.
+      stand: { rows: 16, frontRowHeightFt: 30, rakeDeg: 20, backHeightFt: 60, overhang: { coveredFromRow: 7, soffitHeightFt: 50 } },
+      rowsFromMap: true,
+      heightsSourced: false,
+      coverSourced: false,
+      sources: natsSections('237'),
+    },
+    gallery: {
+      label: 'Gallery (300s)',
+      // Rows A–J or A–L; "nothing in the 300 level is covered". On the photo
+      // the 300s' rows end where the Upper Gallery's roof begins (the 400s,
+      // ~12.5 m deep, sit under it, covered from row C), so the roof's front
+      // edge stands just behind the 300s' last row. Estimated: front ~84 ft,
+      // 28° rake, the roof's edge ~132 ft up, ~8 ft behind the last row.
+      stand: { rows: 10, frontRowHeightFt: 84, rakeDeg: 28, backHeightFt: 132, backSetbackFt: 8 },
+      rowsFromMap: true,
+      heightsSourced: false,
+      coverSourced: true,
+      sources: [RYS_NATS, ...natsSections('301', '305', '311', '315', '321')],
+    },
+    upperGallery: {
+      label: 'Upper Gallery (400s)',
+      // Rows A–N, covered from row C (sourced). Estimated: front ~104 ft,
+      // 32° rake, roof underside ~132 ft.
+      stand: { rows: 14, frontRowHeightFt: 104, rakeDeg: 32, backHeightFt: 132, overhang: { coveredFromRow: 3, soffitHeightFt: 132 } },
+      rowsFromMap: true,
+      heightsSourced: false,
+      coverSourced: true,
+      sources: [RYS_NATS, ...natsSections('401', '405', '409', '416', '420')],
+    },
+    suite: {
+      label: 'Suites',
+      // The club's map lists them as suites: as at the other parks, one row
+      // of seats under the suite level's ceiling. Estimated ~70 ft up.
+      stand: { rows: 1, frontRowHeightFt: 70, rakeDeg: 0, backHeightFt: 82, overhang: { coveredFromRow: 1, soffitHeightFt: 76 } },
+      heightsSourced: false,
+      coverSourced: true,
+      sources: ['https://www.mlb.com/nationals/ballpark/seating-map/3d'],
+    },
+  },
+  reviewedOn: '2026-11-11',
+};
+
 export const STADIUM_STRUCTURES: Readonly<Record<string, StadiumStructure>> = {
   yankees: YANKEES,
   redsox: FENWAY,
@@ -1750,6 +1945,7 @@ export const STADIUM_STRUCTURES: Readonly<Record<string, StadiumStructure>> = {
   phillies: CBP,
   braves: TRUIST,
   cardinals: BUSCH,
+  nationals: NATS,
 };
 
 export function getStadiumStructure(stadiumId: string): StadiumStructure | undefined {

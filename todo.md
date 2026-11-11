@@ -650,6 +650,20 @@ Medium or Low confidence and their blog posts stay unpublished.
             reproduced: 341–347 shade in late-afternoon games (likely the bowl
             curving behind home, which the cross-section can't see); 3B side
             best at 3:05 PM (only 2025 such game, in March, comes out even).
+      - [x] Nationals Park: club drawing pinned with 8 controls (2.6 m RMS).
+            First fit missed by 7–8 m until the photo showed each straight
+            block starts with a narrow section (118 / 127) after the
+            cross-walk. Stands square to both lines (164°/254°); rows behind
+            home are arcs centred 3 m behind the plate (curve facings computed
+            from that centre). The 300s' back obstacle is the Upper Gallery
+            roof's edge just behind them (seen on the photo), which makes them
+            shade from the back rows late in the game as RYS says. Rows and
+            covered rows from RYS (lettered rows incl. AA–WW). 75 checks. Not
+            reproduced: club 206–216 "always shaded" and 217–221 shaded at
+            first pitch (RYS's own covered rows are G+ only).
+      - [x] Fix: "Most shade this game" no longer lists a section that is in
+            the sun on average (it took the best of each seating area, even
+            a sunny outfield stand).
 - [ ] 6.3 Batch 3: Angels, Rockies, Royals, Reds, Pirates.
 - [ ] 6.4 Batch 4: Tigers, Guardians, Twins, White Sox, Athletics (Sutter
       Health Park).
