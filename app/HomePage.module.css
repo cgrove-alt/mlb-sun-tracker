@@ -80,6 +80,8 @@
 .home .finder {
   background: #ffffff;
   padding: 8px 0 24px;
+  /* The menu's "Shade Finder Tool" link scrolls here; clear the fixed nav. */
+  scroll-margin-top: 64px;
 }
 
 .home .other {

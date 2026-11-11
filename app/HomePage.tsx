@@ -29,7 +29,7 @@ export default function HomePage({ parks }: { parks: FinderPark[] }) {
           </div>
         </section>
 
-        <section className={styles.finder} aria-label="Find shaded seats">
+        <section id="shade-finder" className={styles.finder} aria-label="Find shaded seats">
           <ShadeFinder parks={parks} />
           <p className={styles.other}>
             Going to an NFL or minor league game? <Link href="/seats-shade-finder">Use the full stadium finder</Link>.
