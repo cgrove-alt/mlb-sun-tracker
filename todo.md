@@ -739,6 +739,18 @@ Medium or Low confidence and their blog posts stay unpublished.
             (tried both ways). 22 checks. Not reproduced: the third-base
             club all shaded by 3 PM, the front of 105–109 shaded at first
             pitch.
+      - [x] Kauffman Stadium: soft photo (0.6 m source); the club's drawing
+            pinned with 5 sections counted along the baselines (3.1 m RMS).
+            Stands parallel to both lines (182°/271°), arcs ~5 m behind
+            home. The 3D drawing places the upper rings ~45° off (the Loge's
+            middle at 180°), so the 200s/300s/400s are mapped by order onto
+            the lower bowl's shape (each ring's middle behind home) — an
+            approximation, noted in the file. The 400s' single- and
+            double-letter rows are separate sections on the map. Behind the
+            lower bowl the photo shows the upper deck's edge ~10 m behind
+            the 100s. 89 checks. Not reproduced: rows M–V of 409–427
+            "safely in the shade after 3:00" (only near the end of a 3:10
+            game at an estimated 30° rake).
 - [ ] 6.4 Batch 4: Tigers, Guardians, Twins, White Sox, Athletics (Sutter
       Health Park).
 - [ ] 6.5 Batch 5, retractable roofs (answers assume the roof is open, as

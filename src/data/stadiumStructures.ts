@@ -2615,6 +2615,144 @@ const COORS: StadiumStructure = {
   reviewedOn: '2026-11-11',
 };
 
+const rysKauffman = (path: string) => `https://www.rateyourseats.com/kauffman-stadium/seating/${path}`;
+const RYS_KAUFFMAN = rysKauffman('shaded-covered-seats');
+const kauffmanSections = (...ids: string[]) => ids.map((n) => rysKauffman(`sections/${n}`));
+
+/** Seating ring of a Kauffman Stadium chart section. */
+export function kauffmanTier(id: string): string | null {
+  if (/^STE\d+[A-D]?$/.test(id)) return 'suite';
+  // Clubs, crown seats, dugout suites, tables and standing areas: no source
+  // gives their seats or cover.
+  if (!/^\d{3}R?$/.test(id)) return null;
+  const n = Number(id.slice(0, 3));
+  if (n <= 106 || (n >= 150 && n < 200)) return 'outfield';
+  if (n <= 148) return 'field';
+  if (n <= 203) return 'outfield';
+  if (n <= 252) {
+    if (n === 206 || n === 207 || n === 208 || n >= 247) return 'plazaOpen';
+    return n <= 213 || n >= 242 ? 'plazaCorner' : 'plaza';
+  }
+  if (n <= 325) return 'loge';
+  if (id.endsWith('R')) return 'upperTop';
+  return 'upper';
+}
+
+// The decks stack forward: on the photo (third-base side, square to the
+// line) the stands run from ~8 m to ~25 m out and a bright deck edge starts
+// right there, so what stands behind the lower bowl is the upper deck's front
+// (estimated ~74 ft) about 10 m behind the 100s' last row.
+const KAUFFMAN_UPPER_FRONT = { backHeightFt: 74, backSetbackFt: 33 };
+
+/**
+ * Kauffman Stadium (1973, renovated 2009). The 100s and the 200s (Plaza)
+ * form the lower bowl, the Plaza's back rows under the Loge (300s), the
+ * Loge under the upper deck, and the 400s (single-letter rows A–V in front,
+ * double-letter rows AA–ZZ behind) under a roof from row MM. Rows and
+ * covered rows are Rate Your Seats' section pages. No source publishes the
+ * deck heights, so every height is estimated by stacking the decks.
+ */
+const KAUFFMAN: StadiumStructure = {
+  stadiumId: 'royals',
+  // Far rim: the upper deck's roof (~130 ft) about 560 ft across the field.
+  park: { roof: 'open', farRimHeightFt: 130, fieldCrossingFt: 560 },
+  tierOf: kauffmanTier,
+  tiers: {
+    field: {
+      label: 'Field level (100s)',
+      // Rows A–X (fewer in the corners), no cover ("all 100 level sections
+      // are exposed to the sun until at least 3:00"). Estimated: front row
+      // ~3 ft, 16° rake.
+      stand: { rows: 24, frontRowHeightFt: 3, rakeDeg: 16, ...KAUFFMAN_UPPER_FRONT },
+      rowsFromMap: true,
+      heightsSourced: false,
+      coverSourced: true,
+      sources: [RYS_KAUFFMAN, ...kauffmanSections('107', '112', '118', '127', '132', '140', '147')],
+    },
+    outfield: {
+      label: 'Outfield seats (101–106, 150–152, 201–203)',
+      // A few rows each, no cover ("no cover in the outfield").
+      stand: { rows: 4, frontRowHeightFt: 4, rakeDeg: 15, backHeightFt: 12 },
+      rowsFromMap: true,
+      heightsSourced: false,
+      coverSourced: true,
+      sources: [RYS_KAUFFMAN, ...kauffmanSections('101', '104', '150', '201')],
+    },
+    plaza: {
+      label: 'Plaza (214–241)',
+      // Rows AA–TT, covered from row LL (sourced). Estimated: front ~24 ft,
+      // 20° rake, the Loge deck's underside ~44 ft.
+      stand: { rows: 20, frontRowHeightFt: 24, rakeDeg: 20, backHeightFt: 74, backSetbackFt: 10, overhang: { coveredFromRow: 11, soffitHeightFt: 44 } },
+      rowsFromMap: true,
+      heightsSourced: false,
+      coverSourced: true,
+      sources: [RYS_KAUFFMAN, ...kauffmanSections('214', '219', '225', '232', '241')],
+    },
+    plazaCorner: {
+      label: 'Plaza corners (209–213, 242–246)',
+      // Rows AA–TT, covered from row NN (sourced).
+      stand: { rows: 20, frontRowHeightFt: 22, rakeDeg: 20, backHeightFt: 74, backSetbackFt: 10, overhang: { coveredFromRow: 13, soffitHeightFt: 44 } },
+      rowsFromMap: true,
+      heightsSourced: false,
+      coverSourced: true,
+      sources: [RYS_KAUFFMAN, ...kauffmanSections('209', '213', '242', '246')],
+    },
+    plazaOpen: {
+      label: 'Plaza ends (206–208, 247–252)',
+      // Rows AA–TT, past the end of the Loge deck: no cover given ("247–252
+      // get the worst of it" late in the day).
+      stand: { rows: 20, frontRowHeightFt: 20, rakeDeg: 20, backHeightFt: 40 },
+      rowsFromMap: true,
+      heightsSourced: false,
+      coverSourced: true,
+      sources: [RYS_KAUFFMAN, ...kauffmanSections('206', '208', '247', '252')],
+    },
+    loge: {
+      label: 'Loge (301–325)',
+      // Rows A–G or A–J, all covered by the upper deck (sourced). Estimated:
+      // front ~48 ft, 20° rake, the upper deck's underside ~66 ft.
+      stand: { rows: 10, frontRowHeightFt: 48, rakeDeg: 20, backHeightFt: 70, overhang: { coveredFromRow: 1, soffitHeightFt: 66 } },
+      rowsFromMap: true,
+      heightsSourced: false,
+      coverSourced: true,
+      sources: [RYS_KAUFFMAN, ...kauffmanSections('303', '310', '316', '325')],
+    },
+    upper: {
+      label: 'Upper deck (400s, rows A–V)',
+      // Single-letter rows, no cover. Estimated: front ~74 ft, 30° rake; the
+      // double-letter rows rise behind them to the roof (~130 ft).
+      stand: { rows: 22, frontRowHeightFt: 74, rakeDeg: 30, backHeightFt: 130, backSetbackFt: 30 },
+      rowsFromMap: true,
+      heightsSourced: false,
+      coverSourced: true,
+      sources: [RYS_KAUFFMAN, ...kauffmanSections('404', '409', '417', '427', '439')],
+    },
+    upperTop: {
+      label: 'Upper deck (400s, rows AA–ZZ)',
+      // Double-letter rows; 409–431 covered from row MM by the roof
+      // (sourced); 402–407 and 433–438 open ("the roof does not reach").
+      // Estimated: front ~110 ft, 30° rake, roof underside ~128 ft.
+      stand: { rows: 26, frontRowHeightFt: 110, rakeDeg: 30, backHeightFt: 132 },
+      sections: Object.fromEntries(['409R', '411R', '412R', '413R', '415R', '417R', '419R', '420R', '421R', '423R', '425R', '427R', '428R', '429R', '431R']
+        .map((id) => [id, { overhang: { coveredFromRow: 12, soffitHeightFt: 128 } }])),
+      rowsFromMap: true,
+      heightsSourced: false,
+      coverSourced: true,
+      sources: [RYS_KAUFFMAN, ...kauffmanSections('403', '409', '413', '421', '431', '437')],
+    },
+    suite: {
+      label: 'Suites',
+      // As at the other parks: one row of seats under the suite level's
+      // ceiling. Estimated ~60 ft up.
+      stand: { rows: 1, frontRowHeightFt: 60, rakeDeg: 0, backHeightFt: 72, overhang: { coveredFromRow: 1, soffitHeightFt: 66 } },
+      heightsSourced: false,
+      coverSourced: true,
+      sources: ['https://www.mlb.com/royals/ballpark/seating-map'],
+    },
+  },
+  reviewedOn: '2026-11-11',
+};
+
 export const STADIUM_STRUCTURES: Readonly<Record<string, StadiumStructure>> = {
   yankees: YANKEES,
   redsox: FENWAY,
@@ -2630,6 +2768,7 @@ export const STADIUM_STRUCTURES: Readonly<Record<string, StadiumStructure>> = {
   padres: PETCO,
   angels: ANGEL,
   rockies: COORS,
+  royals: KAUFFMAN,
 };
 
 export function getStadiumStructure(stadiumId: string): StadiumStructure | undefined {
