@@ -20,6 +20,8 @@ import { padresSections, PADRES_AERIAL_CONTROL } from '../padres';
 import { padresChartPoints } from '../chart-points/padres';
 import { angelsSections, ANGELS_AERIAL_CONTROL } from '../angels';
 import { angelsChartPoints } from '../chart-points/angels';
+import { rockiesSections, ROCKIES_AERIAL_CONTROL } from '../rockies';
+import { rockiesChartPoints } from '../chart-points/rockies';
 import { aerialChartFit } from '../parkSectionBuilder';
 import { getStadiumOrientation } from '../../../stadiums';
 
@@ -531,5 +533,33 @@ describe('Angel Stadium stand directions (measured on the 2022 aerial photo)', (
     expect(stand('134')).toBe(130);
     expect(stand('238')).toBe(73);
     expect(stand('258')).toBe(1);
+  });
+});
+
+describe('Coors Field stand directions (measured on the 2019 aerial photo)', () => {
+  // Level lines run parallel to both foul lines (backs 139° and 229°); the
+  // outfield stands follow their walls (330° and 48°).
+  const byId = new Map(rockiesSections.map((s) => [s.id, s]));
+  const stand = (id: string) => {
+    const value = byId.get(id)?.standCompass;
+    if (value === undefined) throw new Error(`No stand direction for ${id}`);
+    return value;
+  };
+
+  it('pins the club map to the photo within 5 m', () => {
+    expect(aerialChartFit(rockiesChartPoints, ROCKIES_AERIAL_CONTROL).rmsM).toBeLessThan(5);
+  });
+
+  it.each(['120', '123', '219', 'L319'])('first-base section %s faces 139°', (id) => expect(stand(id)).toBe(139));
+  it.each(['138', '142', '238', 'L340'])('third-base section %s faces 229°', (id) => expect(stand(id)).toBe(229));
+
+  it.each(['130', '131', 'L330'])('behind-home section %s faces away from center field', (id) => {
+    expect(diff(stand(id), getStadiumOrientation('rockies') + 180)).toBeLessThan(12);
+  });
+
+  it('the outfield stands follow their walls', () => {
+    expect(stand('155')).toBe(330);
+    expect(stand('107')).toBe(48);
+    expect(stand('205')).toBe(48);
   });
 });

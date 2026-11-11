@@ -2434,6 +2434,187 @@ const ANGEL: StadiumStructure = {
   reviewedOn: '2026-11-11',
 };
 
+const rysCoors = (path: string) => `https://www.rateyourseats.com/coors-field/seating/${path}`;
+const RYS_COORS = rysCoors('shaded-covered-seats');
+const coorsSections = (...ids: string[]) => ids.map((n) => rysCoors(`sections/${n}`));
+/** Coors Field's covered rows as positions in each section's numbered rows (Rate Your Seats). */
+const COORS_COVER: Record<string, number> = {
+  '105': 10, '106': 10, '107': 10, '108': 10, '109': 11,
+  '115': 37, '116': 37, '117': 37, '118': 32, '119': 32, '120': 32, '121': 32, '122': 28, '123': 28, '124': 28,
+  '125': 28, '126': 29, '127': 29, '134': 29, '135': 29, '136': 28, '137': 28, '138': 28, '139': 28,
+  '140': 32, '141': 32, '142': 32, '143': 32, '144': 32, '145': 32, '146': 32, '147': 32,
+  L311: 19, L313: 19, L319: 19, L343: 19, L345: 19,
+  U312: 10, U317: 10, U321: 10, U325: 10, U329: 10, U332: 10, U336: 10, U340: 10, U344: 10,
+};
+const coorsCover = (ids: readonly string[], soffitHeightFt: number) =>
+  Object.fromEntries(ids.filter((id) => COORS_COVER[id]).map((id) => [id, { overhang: { coveredFromRow: COORS_COVER[id], soffitHeightFt } }]));
+const coorsIds = (from: number, to: number, prefix = '') => Array.from({ length: to - from + 1 }, (_, i) => `${prefix}${from + i}`);
+
+/** Seating ring of a Coors Field chart section. */
+export function coorsTier(id: string): string | null {
+  if (/^\d{1,2}$/.test(id)) return 'suite';
+  if (/^L\d{3}$/.test(id)) return 'upperFront';
+  if (/^U\d{3}$/.test(id)) return 'upperBack';
+  // Clubs, decks and picnic areas: no source gives their seats or cover.
+  if (!/^\d{3}$/.test(id)) return null;
+  const n = Number(id);
+  if (n <= 109) return 'rightBleachers';
+  if (n <= 114) return 'rightCorner';
+  if (n >= 128 && n <= 133) return 'fieldHome';
+  if (n <= 147) return 'field';
+  if (n <= 150) return 'leftCorner';
+  if (n <= 160) return 'leftStands';
+  if (n <= 299) return 'club';
+  return 'rockpile';
+}
+
+// What stands behind the 100s: the decks above stack forward under a roof
+// whose front edge the photo shows ~47 m (third-base side) to ~57 m
+// (first-base side) from the foul lines; the difference is likely the
+// photo's lean, so ~52 m, ~14 m behind the 100s' last row (~38 m out).
+const COORS_ROOF = { backHeightFt: 100, backSetbackFt: 46 };
+
+/**
+ * Coors Field (1995). A deep 100 level (rows to 38, the back under the club
+ * level), the club level (200s), suites, the 300s split by a walkway (L in
+ * front, U behind, under a roof from row 19), bleachers in right field, the
+ * left-field stands and the Rockpile in center. Rows and covered rows are
+ * Rate Your Seats' section pages. No source publishes the deck heights, so
+ * every height is estimated by stacking the decks.
+ */
+const COORS: StadiumStructure = {
+  stadiumId: 'rockies',
+  // Far rim: the roof (~100 ft) about 560 ft across the field.
+  park: { roof: 'open', farRimHeightFt: 100, fieldCrossingFt: 560 },
+  tierOf: coorsTier,
+  tiers: {
+    field: {
+      label: 'Field level (100s)',
+      // Rows 1–38 (fewer in some), covered from row 32 (115–117: 37) by the
+      // club level (sourced). Estimated: front row ~4 ft, 20° rake (last row
+      // ~41 ft), deck underside ~46 ft.
+      stand: { rows: 38, frontRowHeightFt: 4, rakeDeg: 20, ...COORS_ROOF },
+      sections: coorsCover(coorsIds(115, 147), 46),
+      rowsFromMap: true,
+      heightsSourced: false,
+      coverSourced: true,
+      sources: [RYS_COORS, ...coorsSections('116', '118', '122', '126', '134', '136', '140', '147')],
+    },
+    fieldHome: {
+      label: 'Field level behind home (128–133)',
+      // Rows 4–38. Rate Your Seats calls rows 36, 36, 35, 34, 33 and 28 and
+      // up "shaded during most day games" rather than covered; on the photo
+      // a shadow band runs over the last rows behind home (41–45 m out),
+      // where the club level starts. Modelled as the deck's edge over those
+      // rows, but with cover unsourced, so the check also tries them open.
+      stand: { rows: 35, frontRowHeightFt: 7, rakeDeg: 20, ...COORS_ROOF, overhang: { coveredFromRow: 32, soffitHeightFt: 48 } },
+      sections: {
+        '128': { overhang: { coveredFromRow: 33, soffitHeightFt: 48 } },
+        '129': { overhang: { coveredFromRow: 33, soffitHeightFt: 48 } },
+        '130': { overhang: { coveredFromRow: 32, soffitHeightFt: 48 } },
+        '131': { overhang: { coveredFromRow: 31, soffitHeightFt: 48 } },
+        '132': { overhang: { coveredFromRow: 30, soffitHeightFt: 48 } },
+        '133': { overhang: { coveredFromRow: 25, soffitHeightFt: 48 } },
+      },
+      rowsFromMap: true,
+      heightsSourced: false,
+      coverSourced: false,
+      sources: coorsSections('128', '130', '131', '133'),
+    },
+    rightBleachers: {
+      label: 'Right-field seats (105–109)',
+      // Rows 2–14, covered from row 11 by the club level (sourced).
+      // Estimated: front ~8 ft above the wall, 20° rake, underside ~22 ft.
+      stand: { rows: 13, frontRowHeightFt: 8, rakeDeg: 20, backHeightFt: 26 },
+      sections: coorsCover(coorsIds(105, 109), 22),
+      rowsFromMap: true,
+      heightsSourced: false,
+      coverSourced: true,
+      sources: [RYS_COORS, ...coorsSections('105', '107', '109')],
+    },
+    rightCorner: {
+      label: 'Right-field corner (110–114)',
+      // Partial sections (rows 3–38 to 22–38), not covered.
+      stand: { rows: 20, frontRowHeightFt: 20, rakeDeg: 20, ...COORS_ROOF },
+      rowsFromMap: true,
+      heightsSourced: false,
+      coverSourced: true,
+      sources: [RYS_COORS, ...coorsSections('110', '112', '114')],
+    },
+    leftCorner: {
+      label: 'Left-field corner (148–150)',
+      // Rows 5–38 or 14–38, not covered.
+      stand: { rows: 25, frontRowHeightFt: 12, rakeDeg: 20, backHeightFt: 40 },
+      rowsFromMap: true,
+      heightsSourced: false,
+      coverSourced: true,
+      sources: coorsSections('148', '149', '150'),
+    },
+    leftStands: {
+      label: 'Left-field stands (151–160)',
+      // Rows 2–23 or 2–20, not covered ("in June and July the sunniest
+      // seats"). Estimated: front ~8 ft above the wall, 20° rake.
+      stand: { rows: 22, frontRowHeightFt: 8, rakeDeg: 20, backHeightFt: 30 },
+      rowsFromMap: true,
+      heightsSourced: false,
+      coverSourced: true,
+      sources: [RYS_COORS, ...coorsSections('151', '155', '160')],
+    },
+    club: {
+      label: 'Club level (200s)',
+      // Rows 1–13 covered from row 8; 201–209 in right field covered from
+      // row 4 (sourced). Estimated: front ~48 ft, 22° rake, underside ~66 ft.
+      stand: { rows: 13, frontRowHeightFt: 48, rakeDeg: 22, backHeightFt: 100, backSetbackFt: 20, overhang: { coveredFromRow: 8, soffitHeightFt: 66 } },
+      sections: Object.fromEntries(coorsIds(201, 209).map((id) => [id, { overhang: { coveredFromRow: 4, soffitHeightFt: 62 } }])),
+      rowsFromMap: true,
+      heightsSourced: false,
+      coverSourced: true,
+      sources: [RYS_COORS, ...coorsSections('201', '205', '214', '221', '227', '234', '241', '247')],
+    },
+    upperFront: {
+      label: 'Upper level (300s, in front of the walkway)',
+      // Rows 1–5 or 1–9 in front of the walkway, open; full-height sections
+      // (rows 1–25) covered from row 19 by the roof (sourced). Estimated:
+      // front ~70 ft, 28° rake, roof underside ~98 ft.
+      stand: { rows: 9, frontRowHeightFt: 70, rakeDeg: 28, backHeightFt: 100 },
+      sections: coorsCover(['L311', 'L313', 'L319', 'L343', 'L345'], 98),
+      rowsFromMap: true,
+      heightsSourced: false,
+      coverSourced: true,
+      sources: [RYS_COORS, ...coorsSections('311', '315', '319', '331', '343', '345')],
+    },
+    upperBack: {
+      label: 'Upper level (300s, behind the walkway)',
+      // Rows 10–25, covered from row 19 (sourced). Estimated: front ~84 ft,
+      // 28° rake, roof underside ~98 ft.
+      stand: { rows: 16, frontRowHeightFt: 84, rakeDeg: 28, backHeightFt: 100, overhang: { coveredFromRow: 10, soffitHeightFt: 98 } },
+      rowsFromMap: true,
+      heightsSourced: false,
+      coverSourced: true,
+      sources: [RYS_COORS, ...coorsSections('312', '317', '325', '332', '340')],
+    },
+    rockpile: {
+      label: 'The Rockpile (401–403)',
+      // Rows 1–30 in center field, not covered.
+      stand: { rows: 30, frontRowHeightFt: 10, rakeDeg: 22, backHeightFt: 40 },
+      rowsFromMap: true,
+      heightsSourced: false,
+      coverSourced: true,
+      sources: coorsSections('401', '402', '403'),
+    },
+    suite: {
+      label: 'Suites',
+      // As at the other parks: one row of seats under the suite level's
+      // ceiling. Estimated ~62 ft up.
+      stand: { rows: 1, frontRowHeightFt: 62, rakeDeg: 0, backHeightFt: 74, overhang: { coveredFromRow: 1, soffitHeightFt: 68 } },
+      heightsSourced: false,
+      coverSourced: true,
+      sources: ['https://www.mlb.com/rockies/ballpark/seat-viewer'],
+    },
+  },
+  reviewedOn: '2026-11-11',
+};
+
 export const STADIUM_STRUCTURES: Readonly<Record<string, StadiumStructure>> = {
   yankees: YANKEES,
   redsox: FENWAY,
@@ -2448,6 +2629,7 @@ export const STADIUM_STRUCTURES: Readonly<Record<string, StadiumStructure>> = {
   orioles: OPACY,
   padres: PETCO,
   angels: ANGEL,
+  rockies: COORS,
 };
 
 export function getStadiumStructure(stadiumId: string): StadiumStructure | undefined {
