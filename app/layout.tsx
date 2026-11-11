@@ -135,7 +135,7 @@ export default function RootLayout({
         <DataRetentionInitializer />
         <StickyTopNav />
         <main id="main-content" tabIndex={-1}>
-          <div id="root" className="page-transition">{children}</div>
+          <div id="root">{children}</div>
         </main>
         <FooterModern />
         <CookieBannerLazy />
