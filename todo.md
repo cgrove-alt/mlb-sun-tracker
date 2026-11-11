@@ -661,6 +661,18 @@ Medium or Low confidence and their blog posts stay unpublished.
             covered rows from RYS (lettered rows incl. AA–WW). 75 checks. Not
             reproduced: club 206–216 "always shaded" and 217–221 shaded at
             first pitch (RYS's own covered rows are G+ only).
+      - [x] Camden Yards: club drawing pinned with 10 controls (2.2 m RMS).
+            RYS places the dugouts (22–26, 48–52); on the photo they start
+            level with home, so 28–46 are ~10° wedges on the curve (axis on
+            36/38). Sections behind a dugout start behind it (their middles
+            ~24 m out, not ~20: fixing that took the misses from 5–7 m to
+            2–3 m). Stands square to both lines (166°/256°), arcs behind home
+            centred 5 m back, right-field corner angled to home (140°),
+            bleachers and left-field stands from their rows. The Terrace
+            behind home is C31–C43 on the club's map (RYS's 31–43). 101
+            checks. Not reproduced: 242–264 "entirely shaded by the middle
+            innings, last five rows all game" (RYS covers rows 8–9 only; holds
+            in September by the middle innings).
       - [x] Fix: "Most shade this game" no longer lists a section that is in
             the sun on average (it took the best of each seating area, even
             a sunny outfield stand).

@@ -14,6 +14,8 @@ import { cardinalsSections, CARDINALS_AERIAL_CONTROL } from '../cardinals';
 import { cardinalsChartPoints } from '../chart-points/cardinals';
 import { nationalsSections, NATIONALS_AERIAL_CONTROL } from '../nationals';
 import { nationalsChartPoints } from '../chart-points/nationals';
+import { oriolesSections, ORIOLES_AERIAL_CONTROL } from '../orioles';
+import { oriolesChartPoints } from '../chart-points/orioles';
 import { aerialChartFit } from '../parkSectionBuilder';
 import { getStadiumOrientation } from '../../../stadiums';
 
@@ -422,5 +424,42 @@ describe('Nationals Park stand directions (measured on the 2023 aerial photo)', 
     expect(stand('240')).toBe(48);
     expect(stand('104')).toBe(314);
     expect(stand('100')).toBe(5);
+  });
+});
+
+describe('Camden Yards stand directions (measured on the 2023 aerial photo)', () => {
+  // Level lines run parallel to both foul lines (backs 166° and 256°); behind
+  // home the rows are arcs centred ~5 m behind home plate; the right-field
+  // corner is angled toward home (back 140°).
+  const byId = new Map(oriolesSections.map((s) => [s.id, s]));
+  const stand = (id: string) => {
+    const value = byId.get(id)?.standCompass;
+    if (value === undefined) throw new Error(`No stand direction for ${id}`);
+    return value;
+  };
+
+  it('pins the club map to the photo within 5 m', () => {
+    expect(aerialChartFit(oriolesChartPoints, ORIOLES_AERIAL_CONTROL).rmsM).toBeLessThan(5);
+  });
+
+  it.each(['14', '18', '19', '216', '312'])('first-base section %s faces 166°', (id) => {
+    expect(stand(id)).toBe(166);
+  });
+
+  it.each(['50', '56', '55', '256', '360'])('third-base section %s faces 256°', (id) => {
+    expect(stand(id)).toBe(256);
+  });
+
+  // 36 and 38 straddle the axis, each ~10° wide, so they face up to ~15°
+  // either side of straight back.
+  it.each(['36', '38', 'C35', '332', '334'])('behind-home section %s faces away from center field', (id) => {
+    expect(diff(stand(id), getStadiumOrientation('orioles') + 180)).toBeLessThan(15);
+  });
+
+  it('the corners and outfield stands follow the photo', () => {
+    expect(stand('5')).toBe(140);
+    expect(stand('96')).toBe(88);
+    expect(stand('90')).toBe(55);
+    expect(stand('84')).toBe(2);
   });
 });

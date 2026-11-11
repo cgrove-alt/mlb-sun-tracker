@@ -1935,6 +1935,166 @@ const NATS: StadiumStructure = {
   reviewedOn: '2026-11-11',
 };
 
+const rysOpacy = (path: string) => `https://www.rateyourseats.com/oriole-park/seating/${path}`;
+const RYS_OPACY = rysOpacy('shaded-covered-seats');
+const opacySections = (...ids: string[]) => ids.map((n) => rysOpacy(`sections/${n}`));
+// The 300s with rows 1–5 then 9–25: row 15 is their 12th row.
+const OPACY_300_SKIPPING = ['306', '312', '318', '322', '326', '328', '334', '336', '340', '346', '348', '354', '356', '362', '364', '370', '372', '374', '378'];
+
+/** Seating ring of a Camden Yards chart section. */
+export function opacyTier(id: string): string | null {
+  if (/^STE\d+$|^S\d{4}$/.test(id)) return 'suite';
+  // The Terrace behind home is drawn as C31–C43 on the club's map; Rate Your
+  // Seats numbers it 31–43 (41 has no page, so it stays unrated).
+  if (id === 'C41') return null;
+  if (/^C\d+$/.test(id)) return opacyTier(id.slice(1));
+  // The center-field deck and standing room: no source says what covers them.
+  if (!/^\d+$/.test(id)) return null;
+  const n = Number(id);
+  if (n <= 8) return 'rightCorner';
+  if (n >= 33 && n <= 43 && n % 2 === 1) return 'terraceHome';
+  if (n <= 87) return n % 2 === 0 ? 'field' : 'terrace';
+  if (n <= 98) return 'bleachers';
+  if (n <= 210 || n >= 268) return n < 300 ? 'clubOpen' : ['320', '338', '350', '358', '366'].includes(id) ? 'upperShort' : 'upper';
+  return 'clubLevel';
+}
+
+// The Terrace: rows 1–13 under the club level from row 2 (sourced).
+// Estimated: front ~30 ft above the field-level rows, 20° rake, the club
+// level's underside ~48 ft.
+const OPACY_TERRACE: StandProfile = {
+  rows: 13,
+  frontRowHeightFt: 30,
+  rakeDeg: 20,
+  backHeightFt: 48,
+  overhang: { coveredFromRow: 2, soffitHeightFt: 48 },
+};
+
+/**
+ * Oriole Park at Camden Yards (1992). Field-level sections (even numbers)
+ * with the Terrace (odd numbers) behind them almost entirely under the club
+ * level, the club level (200s) and the upper deck (300s) under a roof from
+ * row 15. Rows and covered rows are Rate Your Seats' section pages. No
+ * source publishes the deck heights, so every height is estimated by
+ * stacking the decks.
+ */
+const OPACY: StadiumStructure = {
+  stadiumId: 'orioles',
+  // Far rim: the upper deck's roof (~112 ft) about 550 ft across the field.
+  park: { roof: 'open', farRimHeightFt: 112, fieldCrossingFt: 550 },
+  tierOf: opacyTier,
+  tiers: {
+    field: {
+      label: 'Field level (even numbers)',
+      // Rows 1–24 to 1–29, open. Estimated: front row ~3 ft, 18° rake; the
+      // club level's edge (~48 ft) over the Terrace's second row, ~8 ft
+      // behind the last row.
+      stand: { rows: 29, frontRowHeightFt: 3, rakeDeg: 18, backHeightFt: 48, backSetbackFt: 8 },
+      rowsFromMap: true,
+      heightsSourced: false,
+      coverSourced: true,
+      sources: [RYS_OPACY, ...opacySections('22', '36', '48', '56', '70', '86')],
+    },
+    terrace: {
+      label: 'Terrace (odd numbers)',
+      stand: OPACY_TERRACE,
+      rowsFromMap: true,
+      heightsSourced: false,
+      coverSourced: true,
+      sources: [RYS_OPACY, ...opacySections('9', '23', '45', '53', '55', '59', '87')],
+    },
+    terraceHome: {
+      label: 'Terrace behind home (33–43)',
+      // 33–39 rows 1–6 and 43 rows 1–13, "shaded during most day games";
+      // no source gives the covered rows, so the check tries both.
+      stand: { ...OPACY_TERRACE, rows: 6 },
+      rowsFromMap: true,
+      heightsSourced: false,
+      coverSourced: false,
+      sources: opacySections('33', '35', '37', '39', '43'),
+    },
+    rightCorner: {
+      label: 'Right-field corner (1–8)',
+      // Rows up to 21 (6: 10–27, 8: 4–27), open ("completely avoid
+      // sections 1–8 ... if you want to stay out of the sun").
+      stand: { rows: 21, frontRowHeightFt: 5, rakeDeg: 18, backHeightFt: 40 },
+      rowsFromMap: true,
+      heightsSourced: false,
+      coverSourced: true,
+      sources: [RYS_OPACY, ...opacySections('1', '3', '5', '6', '7', '8')],
+    },
+    bleachers: {
+      label: 'Right-field bleachers (90–98)',
+      // Rows 1–15 to 1–23; 92 and 94 covered from row 19 (sourced).
+      // Estimated: front ~8 ft above the wall, 20° rake, the structure
+      // behind ~30 ft.
+      stand: { rows: 23, frontRowHeightFt: 8, rakeDeg: 20, backHeightFt: 30 },
+      sections: {
+        '92': { overhang: { coveredFromRow: 19, soffitHeightFt: 30 } },
+        '94': { overhang: { coveredFromRow: 19, soffitHeightFt: 30 } },
+      },
+      rowsFromMap: true,
+      heightsSourced: false,
+      coverSourced: true,
+      sources: opacySections('90', '92', '94', '96', '98'),
+    },
+    clubLevel: {
+      label: 'Club level (212–264)',
+      // Rows 1–9, covered from row 8 (sourced). Estimated: front ~52 ft,
+      // 22° rake, the upper deck's underside ~66 ft.
+      stand: { rows: 9, frontRowHeightFt: 52, rakeDeg: 22, backHeightFt: 66, overhang: { coveredFromRow: 8, soffitHeightFt: 66 } },
+      rowsFromMap: true,
+      heightsSourced: false,
+      coverSourced: true,
+      sources: [RYS_OPACY, ...opacySections('212', '230', '242', '256', '264')],
+    },
+    clubOpen: {
+      label: 'Club level, outfield ends (204–210, 268–288)',
+      // Rows 1–5 or 1–6, open. Estimated as the club level, with the upper
+      // deck (~70 ft) just behind.
+      stand: { rows: 6, frontRowHeightFt: 52, rakeDeg: 22, backHeightFt: 70, backSetbackFt: 10 },
+      rowsFromMap: true,
+      heightsSourced: false,
+      coverSourced: true,
+      sources: opacySections('204', '210', '268', '278', '288'),
+    },
+    upper: {
+      label: 'Upper deck (300s)',
+      // Rows 1–25 (or 1–5 then 9–25), covered from row 15 by the roof
+      // (sourced). Estimated: front ~70 ft, 26° rake, roof underside ~110 ft.
+      stand: { rows: 25, frontRowHeightFt: 70, rakeDeg: 26, backHeightFt: 110, overhang: { coveredFromRow: 15, soffitHeightFt: 110 } },
+      sections: {
+        ...Object.fromEntries(OPACY_300_SKIPPING.map((id) => [id, { overhang: { coveredFromRow: 12, soffitHeightFt: 110 } }])),
+        '381': { overhang: { coveredFromRow: 8, soffitHeightFt: 110 } }, // rows 8–25
+      },
+      rowsFromMap: true,
+      heightsSourced: false,
+      coverSourced: true,
+      sources: [RYS_OPACY, ...opacySections('308', '312', '330', '342', '360', '381', '388')],
+    },
+    upperShort: {
+      label: 'Upper deck (300s)',
+      // 320, 338, 350, 358, 366: rows 1–8 only, in front of the covered
+      // rows, so open. Estimated as the upper deck.
+      stand: { rows: 8, frontRowHeightFt: 70, rakeDeg: 26, backHeightFt: 110, backSetbackFt: 20 },
+      rowsFromMap: true,
+      heightsSourced: false,
+      coverSourced: true,
+      sources: opacySections('320', '338', '350', '358', '366'),
+    },
+    suite: {
+      label: 'Suites',
+      // The club's map lists them as suites: as at the other parks, one row
+      // of seats under the suite level's ceiling. Estimated ~62 ft up.
+      stand: { rows: 1, frontRowHeightFt: 62, rakeDeg: 0, backHeightFt: 74, overhang: { coveredFromRow: 1, soffitHeightFt: 68 } },
+      heightsSourced: false,
+      coverSourced: true,
+      sources: ['https://www.mlb.com/orioles/ballpark/seating-map'],
+    },
+  },
+  reviewedOn: '2026-11-11',
+};
+
 export const STADIUM_STRUCTURES: Readonly<Record<string, StadiumStructure>> = {
   yankees: YANKEES,
   redsox: FENWAY,
@@ -1946,6 +2106,7 @@ export const STADIUM_STRUCTURES: Readonly<Record<string, StadiumStructure>> = {
   braves: TRUIST,
   cardinals: BUSCH,
   nationals: NATS,
+  orioles: OPACY,
 };
 
 export function getStadiumStructure(stadiumId: string): StadiumStructure | undefined {
