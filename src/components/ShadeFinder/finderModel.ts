@@ -108,8 +108,9 @@ export function bestSections(sections: readonly SectionGameShade[], count = 5): 
   const mean = (s: SectionGameShade) => s.samples.reduce((sum, x) => sum + x.shadedFraction, 0) / s.samples.length;
   const ranked = [...sections]
     // Suites are enclosed boxes sold whole, not seats a fan picks, and are
-    // always shaded: they would top every park's list.
-    .filter((s) => s.confidence !== 'low' && s.tier !== 'suite')
+    // always shaded: they would top every park's list. Wheelchair platforms
+    // are a few spaces kept for fans who need them, not a pick for everyone.
+    .filter((s) => s.confidence !== 'low' && s.tier !== 'suite' && s.tier !== 'wheelchair')
     .sort((a, b) => mean(b) - mean(a) || confidenceRank[b.confidence] - confidenceRank[a.confidence]);
   const seenTiers = new Set<string>();
   const onePerTier = ranked.filter((s) => (seenTiers.has(s.tier) ? false : (seenTiers.add(s.tier), true)));

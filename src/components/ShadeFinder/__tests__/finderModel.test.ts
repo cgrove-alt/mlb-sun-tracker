@@ -47,6 +47,12 @@ describe('best sections', () => {
     expect(bestSections([suite, club], 2).map((s) => s.sectionId)).toEqual(['C1']);
   });
 
+  it('never recommends a wheelchair platform', () => {
+    const platform = { ...shade('429V', [1, 1]), tier: 'wheelchair' };
+    const club = { ...shade('C1', [0.8, 0.8]), tier: 'club' };
+    expect(bestSections([platform, club], 2).map((s) => s.sectionId)).toEqual(['C1']);
+  });
+
   it('offers one section per seating area before repeating an area', () => {
     const club = (id: string) => ({ ...shade(id, [1, 1]), tier: 'club' });
     const loge = { ...shade('L1', [0.6, 0.6]), tier: 'loge' };
