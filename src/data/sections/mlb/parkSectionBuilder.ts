@@ -202,7 +202,7 @@ function leastSquares(rows: readonly number[][], rhs: readonly number[]): number
 export function aerialChartFit(
   points: readonly ChartSectionPoint[],
   control: readonly AerialControlPoint[],
-): { mapped: ChartSectionPoint[]; rmsM: number; model: 'affine' | 'projective' } {
+): { mapped: ChartSectionPoint[]; rmsM: number; drawScale: ReadonlyMap<string, number>; model: 'affine' | 'projective' } {
   const affine = fitAerialMap(points, control, 'affine');
   if (affine.rmsM <= AERIAL_FIT_MAX_RMS_M) return { ...affine, model: 'affine' };
   return { ...fitAerialMap(points, control, 'projective'), model: 'projective' };
@@ -212,7 +212,7 @@ function fitAerialMap(
   points: readonly ChartSectionPoint[],
   control: readonly AerialControlPoint[],
   model: 'affine' | 'projective',
-): { mapped: ChartSectionPoint[]; rmsM: number } {
+): { mapped: ChartSectionPoint[]; rmsM: number; drawScale: ReadonlyMap<string, number> } {
   const byId = new Map(points.map((point) => [point.id, point]));
   const pairs = control.map((c) => {
     const pts = c.ids.map((id) => {
@@ -273,10 +273,22 @@ function fitAerialMap(
     return sum + (g.east - p.east) ** 2 + (g.north - p.north) ** 2;
   }, 0) / pairs.length);
 
-  // The rest of the builder treats a footprint as an axis-aligned box, so a
-  // mapped box becomes the axis-aligned box around the mapped rectangle.
-  const mapped = points.map((point) => {
+  // The rest of the builder treats a footprint as an axis-aligned box: the
+  // box around the mapped rectangle (the map's local scale, rotation and
+  // skew). That is what the stand-direction fits were validated on. A
+  // perspective map's local scale grows several-fold toward one side of a
+  // rendered view, so `drawScale` brings each section back to the map's
+  // typical size (the median local scale) for drawing; for an affine map it
+  // is 1 everywhere.
+  const projected = points.map((point) => {
     const g = project(point.x, point.y);
+    return { point, g, localScale: Math.sqrt(Math.abs(g.dEast[0] * g.dNorth[1] - g.dEast[1] * g.dNorth[0])) };
+  });
+  const sortedScales = projected.map(({ localScale }) => localScale).sort((a, b) => a - b);
+  const typicalScale = sortedScales[Math.floor(sortedScales.length / 2)];
+  const drawScale = new Map<string, number>();
+  const mapped = projected.map(({ point, g, localScale }) => {
+    drawScale.set(point.id, localScale > 0 ? typicalScale / localScale : 1);
     return {
       ...point,
       x: g.east,
@@ -285,7 +297,7 @@ function fitAerialMap(
       height: Math.abs(g.dNorth[0]) * point.width + Math.abs(g.dNorth[1]) * point.height,
     };
   });
-  return { mapped, rmsM };
+  return { mapped, rmsM, drawScale };
 }
 
 interface ChartFrame {
@@ -513,6 +525,7 @@ export function chartSeeds(
 ): ParkSectionSeed[] {
   let points = sourcePoints;
   let aerialFrame: ChartFrame | undefined;
+  let drawScale: ReadonlyMap<string, number> | undefined;
   if (config.aerialControl) {
     const fit = aerialChartFit(sourcePoints, config.aerialControl);
     if (fit.rmsM > AERIAL_FIT_MAX_RMS_M) {
@@ -520,6 +533,7 @@ export function chartSeeds(
     }
     // Ground metres, y-down, home plate at the origin, axis toward center field.
     points = fit.mapped;
+    drawScale = fit.drawScale;
     const t = (config.orientation * Math.PI) / 180;
     aerialFrame = { stretchY: 1, originX: 0, originY: 0, axisX: Math.sin(t), axisY: -Math.cos(t) };
   }
@@ -635,7 +649,12 @@ export function chartSeeds(
       height: meta.height,
       rake: meta.rake,
       price: meta.price,
-      map: { x: cross, y: -dot, w: halfTangentExtent * 2, h: halfRadialExtent * 2 },
+      map: {
+        x: cross,
+        y: -dot,
+        w: halfTangentExtent * 2 * (drawScale?.get(point.id) ?? 1),
+        h: halfRadialExtent * 2 * (drawScale?.get(point.id) ?? 1),
+      },
     });
   }
 

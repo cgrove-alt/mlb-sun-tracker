@@ -472,7 +472,7 @@ export const ALL_UNIFIED_VENUES: UnifiedVenue[] = [
     "state": "NY",
     "latitude": 40.7571,
     "longitude": -73.8458,
-    "orientation": 35,
+    "orientation": 14,
     "capacity": 41922,
     "roof": "open",
     "timezone": "America/New_York",
@@ -483,11 +483,11 @@ export const ALL_UNIFIED_VENUES: UnifiedVenue[] = [
         "width": 330
       },
       "endZoneOrientation": "east-west",
-      "primarySeatingAngle": 90,
-      "sideline1Angle": 180,
-      "sideline2Angle": 0,
-      "endZone1Angle": 90,
-      "endZone2Angle": 270
+      "primarySeatingAngle": 14,
+      "sideline1Angle": 104,
+      "sideline2Angle": 284,
+      "endZone1Angle": 14,
+      "endZone2Angle": 194
     },
     "venueType": "baseball",
     "sport": "baseball",

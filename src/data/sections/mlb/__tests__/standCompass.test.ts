@@ -4,6 +4,8 @@ import { dodgersChartPoints } from '../chart-points/dodgers';
 import { cubsSections, CUBS_AERIAL_CONTROL } from '../cubs';
 import { cubsChartPoints } from '../chart-points/cubs';
 import { giantsSections } from '../giants';
+import { metsSections, METS_AERIAL_CONTROL } from '../mets';
+import { metsChartPoints } from '../chart-points/mets';
 import { aerialChartFit } from '../parkSectionBuilder';
 import { getStadiumOrientation } from '../../../stadiums';
 
@@ -221,5 +223,32 @@ describe('Oracle Park stand directions (from the 2022 aerial photo)', () => {
   it('the curve behind home turns steadily between the two runs', () => {
     const order = ['106', '108', '110', '113', '115', '117', '119', '122', '124'].map(stand);
     for (let i = 1; i < order.length; i++) expect(order[i]).toBeGreaterThanOrEqual(order[i - 1] - 5);
+  });
+});
+
+describe('Citi Field stand directions (pinned to the 2019 aerial photo)', () => {
+  // On the photo the third-base stands' front edge runs at 330° (facing
+  // 240°) and the first-base edge at about 50° (facing 140°).
+  const byId = new Map(metsSections.map((s) => [s.id, s]));
+  const stand = (id: string) => {
+    const value = byId.get(id)?.standCompass;
+    if (value === undefined) throw new Error(`No stand direction for ${id}`);
+    return value;
+  };
+
+  it('pins the club map to the photo within 5 m', () => {
+    expect(aerialChartFit(metsChartPoints, METS_AERIAL_CONTROL).rmsM).toBeLessThan(5);
+  });
+
+  it.each(['124', '127', '130', '425', '525'])('third-base section %s faces about 240°', (id) => {
+    expect(diff(stand(id), 240)).toBeLessThan(10);
+  });
+
+  it.each(['102', '105', '108', '111', '205', '305', '405', '505'])('first-base section %s faces 140°', (id) => {
+    expect(stand(id)).toBe(140);
+  });
+
+  it.each(['C', 'D', '5', '15'])('behind-home section %s faces away from center field', (id) => {
+    expect(diff(stand(id), getStadiumOrientation('mets') + 180)).toBeLessThan(12);
   });
 });

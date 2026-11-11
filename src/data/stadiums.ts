@@ -218,7 +218,7 @@ export const MLB_STADIUMS: Stadium[] = [
     state: 'NY',
     latitude: 40.7571,
     longitude: -73.8458,
-    orientation: 35, // NNE — confirmed north-northeast orientation (was incorrectly set to 90/due-East)
+    orientation: 14, // NNE — confirmed north-northeast orientation (was incorrectly set to 90/due-East)
     capacity: 41922,
     roof: 'open',
     timezone: 'America/New_York'

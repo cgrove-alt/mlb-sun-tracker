@@ -854,12 +854,170 @@ const ORACLE: StadiumStructure = {
   reviewedOn: '2026-11-11',
 };
 
+const rysCiti = (path: string) => `https://www.rateyourseats.com/citi-field/seating/${path}`;
+const RYS_CITI = rysCiti('shaded-covered-seats');
+
+/** Seating ring of a Citi Field chart section. */
+export function citiTier(id: string): string | null {
+  if (/^(?:[A-H]|AA|HH|\d{1,2}|\dA)$/.test(id)) return 'fieldBox';
+  if (/^(?:CADI|ECLUB|STBX\d)$/.test(id)) return 'suite';
+  const n = Number(id.replace(/\D+$/, ''));
+  if (!Number.isInteger(n) || n < 100) return null;
+  if (n >= 134 && n <= 139) return 'leftOutfield';
+  if (n >= 140 && n <= 143) return 'rightOutfield';
+  if (n < 200) return 'field';
+  if (n < 300) return 'sterling';
+  if (n < 400) return 'excelsior';
+  if (n < 500) return 'fourHundred';
+  return 'promenade';
+}
+
+/**
+ * Citi Field (2009). Field boxes, the 100 level (covered from row 27), the
+ * Sterling (200) level, the Excelsior (300) level under the 400s, the 400s
+ * in the open and the Promenade (500) level under the roof from row 11.
+ * Rows and covered rows are from Rate Your Seats' section pages. No source
+ * publishes the deck heights, so every height is estimated by stacking the
+ * decks.
+ */
+const CITI: StadiumStructure = {
+  stadiumId: 'mets',
+  // Far rim: the Promenade roof (~138 ft) about 520 ft from the outfield seats.
+  park: { roof: 'open', farRimHeightFt: 138, fieldCrossingFt: 520 },
+  tierOf: citiTier,
+  tiers: {
+    fieldBox: {
+      label: 'Field boxes',
+      // Rows 1–12, uncovered (sourced). Estimated: front row ~2 ft, 14°
+      // rake; behind, the 100 level rises to the deck over its back rows
+      // (~43 ft) about 72 ft back.
+      stand: { rows: 12, frontRowHeightFt: 2, rakeDeg: 14, backHeightFt: 43, backSetbackFt: 72 },
+      heightsSourced: false,
+      coverSourced: true,
+      sources: [rysCiti('sections/15')],
+    },
+    field: {
+      label: 'Field level (100s)',
+      // Rows 1–32, covered from row 27 (sourced; 102 has rows 4–13 covered
+      // from 11, 108 rows 24–34 from 30, 118 rows 1–8 and 133 rows A–E
+      // uncovered). Estimated: front row ~8 ft, 20° rake, deck underside
+      // ~43 ft.
+      stand: {
+        rows: 32,
+        frontRowHeightFt: 8,
+        rakeDeg: 20,
+        backHeightFt: 50,
+        overhang: { coveredFromRow: 27, soffitHeightFt: 43 },
+      },
+      sections: {
+        '102': { rows: 10, frontRowHeightFt: 11, overhang: { coveredFromRow: 8, soffitHeightFt: 28 } },
+        '108': { rows: 11, frontRowHeightFt: 31, overhang: { coveredFromRow: 7, soffitHeightFt: 46 } },
+        '118': { rows: 8, noCover: true },
+        '133': { rows: 5, noCover: true },
+      },
+      heightsSourced: false,
+      coverSourced: true,
+      sources: [rysCiti('sections/102'), rysCiti('sections/108'), rysCiti('sections/114'), rysCiti('sections/121'), rysCiti('sections/128'), RYS_CITI],
+    },
+    leftOutfield: {
+      label: 'Left-field seats (134–139)',
+      // Rows 1–19, the upper half covered from row 7 (sourced). Estimated:
+      // front row ~10 ft, 22° rake, deck underside ~26 ft.
+      stand: {
+        rows: 19,
+        frontRowHeightFt: 10,
+        rakeDeg: 22,
+        backHeightFt: 34,
+        overhang: { coveredFromRow: 7, soffitHeightFt: 26 },
+      },
+      heightsSourced: false,
+      coverSourced: true,
+      sources: [rysCiti('sections/134'), rysCiti('sections/137'), RYS_CITI],
+    },
+    rightOutfield: {
+      label: 'Right-field seats (140–143)',
+      // 140 has rows 1–20, 143 rows 1–3, uncovered (sourced). Estimated.
+      stand: { rows: 20, frontRowHeightFt: 8, rakeDeg: 22, backHeightFt: 32 },
+      sections: { '143': { rows: 3 } },
+      heightsSourced: false,
+      coverSourced: true,
+      sources: [rysCiti('sections/140'), rysCiti('sections/143')],
+    },
+    sterling: {
+      label: 'Sterling level (200s)',
+      // No source gives rows or cover; estimated, and the confidence check
+      // tries it with and without cover.
+      stand: { rows: 6, frontRowHeightFt: 50, rakeDeg: 22, backHeightFt: 62 },
+      heightsSourced: false,
+      coverSourced: false,
+      sources: [RYS_CITI],
+    },
+    excelsior: {
+      label: 'Excelsior level (300s)',
+      // Rows 1–12 (behind home 1–6), covered from row 5 by the 400 level
+      // (sourced; 336 from row 6). Estimated: front row ~62 ft, 25° rake,
+      // deck underside ~76 ft.
+      stand: {
+        rows: 12,
+        frontRowHeightFt: 62,
+        rakeDeg: 25,
+        backHeightFt: 82,
+        overhang: { coveredFromRow: 5, soffitHeightFt: 76 },
+      },
+      sections: {
+        '312': { rows: 10 },
+        '316': { rows: 6 },
+        '320': { rows: 6 },
+        '326': { rows: 10 },
+        '336': { overhang: { coveredFromRow: 6, soffitHeightFt: 77 } },
+      },
+      heightsSourced: false,
+      coverSourced: true,
+      sources: [rysCiti('sections/306'), rysCiti('sections/312'), rysCiti('sections/316'), rysCiti('sections/326'), rysCiti('sections/333'), rysCiti('sections/336'), RYS_CITI],
+    },
+    fourHundred: {
+      label: '400 level',
+      // Rows 1–8 (behind home 1–5), open to the sky (sourced). Estimated:
+      // front row ~86 ft, 30° rake; behind, the Promenade's front (~100 ft).
+      stand: { rows: 8, frontRowHeightFt: 86, rakeDeg: 30, backHeightFt: 100, backSetbackFt: 6 },
+      sections: { '415': { rows: 5 }, '425': { rows: 5 } },
+      heightsSourced: false,
+      coverSourced: true,
+      sources: [rysCiti('sections/405'), rysCiti('sections/415'), rysCiti('sections/425'), rysCiti('sections/435'), RYS_CITI],
+    },
+    promenade: {
+      label: 'Promenade level (500s)',
+      // Rows 1–17, covered by the roof from row 11 (sourced). Estimated:
+      // front row ~100 ft, 33° rake, roof underside ~127 ft, top ~138 ft.
+      stand: {
+        rows: 17,
+        frontRowHeightFt: 100,
+        rakeDeg: 33,
+        backHeightFt: 138,
+        overhang: { coveredFromRow: 11, soffitHeightFt: 127 },
+      },
+      heightsSourced: false,
+      coverSourced: true,
+      sources: [rysCiti('sections/505'), rysCiti('sections/515'), rysCiti('sections/525'), rysCiti('sections/535'), RYS_CITI],
+    },
+    suite: {
+      label: 'Clubs and suites',
+      stand: { rows: 1, frontRowHeightFt: 55, rakeDeg: 0, backHeightFt: 66, overhang: { coveredFromRow: 1, soffitHeightFt: 61 } },
+      heightsSourced: false,
+      coverSourced: true,
+      sources: [RYS_CITI],
+    },
+  },
+  reviewedOn: '2026-11-11',
+};
+
 export const STADIUM_STRUCTURES: Readonly<Record<string, StadiumStructure>> = {
   yankees: YANKEES,
   redsox: FENWAY,
   dodgers: DODGERS,
   cubs: WRIGLEY,
   giants: ORACLE,
+  mets: CITI,
 };
 
 export function getStadiumStructure(stadiumId: string): StadiumStructure | undefined {

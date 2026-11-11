@@ -159,6 +159,28 @@ export const ORIENTATION_MEASUREMENTS: readonly OrientationMeasurement[] = [
       '(81.6% overlap). The infield grass square\'s edges give 85.27°, 84.49°, 86.22° and 86.41° (mean 85.6°). Mean 85.7°, recorded as ' +
       '86° ±1°. Replaces 87° (ballparks.com lists 90°).',
   },
+  {
+    stadiumId: 'mets',
+    imageCenter: { latitude: 40.75675, longitude: -73.84598 },
+    imageHalfWidthMeters: 75,
+    imageSizePx: 600,
+    naipTile: 'm_4007310_sw_18_060_20190809',
+    acquired: '2019-08-09',
+    nativeResolutionMeters: 0.6,
+    homeSeedPx: [283, 372],
+    moundSeedPx: [300, 302],
+    homeCenterPx: [283, 372],
+    moundCenterPx: [300, 302],
+    bearingHomeToMoundDeg: 13.65,
+    bearingInfieldSymmetryDeg: 14.4,
+    orientationDeg: 14,
+    precisionDeg: 1,
+    measuredOn: '2026-11-11',
+    notes:
+      'Clear infield, no covers. The home-plate circle runs into the dirt around it, so home is the hand-placed point; home → mound ' +
+      '13.65°. Infield mirror axis 14.4° (96.3% overlap). The infield grass square\'s edges give 13.31°, 13.61°, 13.75° and 13.32° ' +
+      '(mean 13.5°, spread 0.44°). Mean 13.85°, recorded as 14° ±1°. Replaces 35°, which was 21° high.',
+  },
 ];
 
 export function getOrientationMeasurement(stadiumId: string): OrientationMeasurement | undefined {
