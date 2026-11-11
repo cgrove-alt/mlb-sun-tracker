@@ -39,7 +39,9 @@ describe('MLB orientation consistency', () => {
       expect(provenance?.method).toBe('gis-measured');
       expect(provenance?.precisionDeg).toBe(m.precisionDeg);
       for (const bearing of [m.bearingHomeToMoundDeg, m.bearingInfieldSymmetryDeg]) {
-        expect(Math.abs(bearing - m.orientationDeg)).toBeLessThanOrEqual(m.precisionDeg);
+        // Compass difference, so 359.6° is 0.4° from 0°.
+        const diff = Math.abs((((bearing - m.orientationDeg) % 360) + 540) % 360 - 180);
+        expect(diff).toBeLessThanOrEqual(m.precisionDeg);
       }
     },
   );

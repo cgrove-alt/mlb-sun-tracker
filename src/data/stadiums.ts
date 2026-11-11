@@ -85,7 +85,7 @@ export const MLB_STADIUMS: Stadium[] = [
     state: 'GA',
     latitude: 33.8908,
     longitude: -84.4678,
-    orientation: 135, // SE — corrected 2026-06-23 from 45°. Wikipedia "southeast orientation" + sun pattern (rises over LF, sets behind HP) confirm SE. See provenance.
+    orientation: 159, // SSE — measured 2026-11-11 from USGS NAIP imagery (159° ±1°); replaces 135°. See orientationMeasurements.ts.
     capacity: 41084,
     roof: 'open',
     timezone: 'America/New_York'
@@ -111,7 +111,7 @@ export const MLB_STADIUMS: Stadium[] = [
     state: 'MO',
     latitude: 38.6226,
     longitude: -90.1928,
-    orientation: 60, // ENE — corrected 2026-06-23 from 92° (~32° off). ballparks.com 60° + "field points northeast" + Gateway Arch/skyline beyond CF to the east confirm ENE. See provenance.
+    orientation: 62, // ENE — measured 2026-11-11 from USGS NAIP imagery (62° ±1.5°); replaces 60°. See orientationMeasurements.ts.
     capacity: 44494,
     roof: 'open',
     timezone: 'America/Chicago'
@@ -231,7 +231,7 @@ export const MLB_STADIUMS: Stadium[] = [
     state: 'DC',
     latitude: 38.8730,
     longitude: -77.0074,
-    orientation: 30, // NNE — corrected 2026-06-23 from 87° (nearly due E, wrong sub-quadrant). ballparks.com 30° + andrewclem NNE + sun pattern (rises behind RF, 3B is shade side) confirm NNE. See provenance.
+    orientation: 29, // NNE — measured 2026-11-11 from USGS NAIP imagery (29° ±1°); replaces 30°. See orientationMeasurements.ts.
     capacity: 41313,
     roof: 'open',
     timezone: 'America/New_York'
@@ -244,7 +244,7 @@ export const MLB_STADIUMS: Stadium[] = [
     state: 'MD',
     latitude: 39.2838,
     longitude: -76.6218,
-    orientation: 30, // NNE — corrected 2026-06-23 from 58° (~28° off). ballparks.com 30° + andrewclem NNE + sun pattern (rises over RF, 3B shade side) confirm NNE. See provenance.
+    orientation: 31, // NNE — measured 2026-11-11 from USGS NAIP imagery (31° ±1°); replaces 30°. See orientationMeasurements.ts.
     capacity: 45971,
     roof: 'open',
     timezone: 'America/New_York'
@@ -257,7 +257,7 @@ export const MLB_STADIUMS: Stadium[] = [
     state: 'CA',
     latitude: 32.7076,
     longitude: -117.1570,
-    orientation: 0, // N — corrected 2026-06-23 from 25°. Petco famously faces due north (batter faces north, shares orientation with Cleveland/Arizona); sun pattern confirms. See stadiumOrientationProvenance.ts.
+    orientation: 0, // N — measured 2026-11-11 from USGS NAIP imagery (0° ±1°), confirming the published "due north". See orientationMeasurements.ts.
     capacity: 40209,
     roof: 'open',
     timezone: 'America/Los_Angeles'

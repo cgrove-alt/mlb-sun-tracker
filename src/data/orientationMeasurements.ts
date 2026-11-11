@@ -38,8 +38,12 @@ export interface OrientationMeasurement {
   orientationDeg: number;
   /** Honest ± uncertainty of `orientationDeg`. */
   precisionDeg: number;
-  /** 'blue-cast' for flights whose grass reads as blue as it is green. */
-  grassRule?: 'blue-cast';
+  /**
+   * 'blue-cast' for flights whose grass reads as blue as it is green;
+   * 'slight-blue-cast' when grass is only a little greener than blue and a
+   * bluish cover would otherwise pass for grass.
+   */
+  grassRule?: 'blue-cast' | 'slight-blue-cast';
   measuredOn: string;
   notes?: string;
 }
@@ -204,6 +208,127 @@ export const ORIENTATION_MEASUREMENTS: readonly OrientationMeasurement[] = [
       'infield dirt (103 of 111 rays; radius 30.2 m, centre 18.6 m from home) puts its centre at 8.84° from home; the same fit gives ' +
       '14.35° at Citi Field (recorded 14°). The grass square\'s home-side edges run under the tarp, so it is not used. Mean 8.98°, ' +
       'recorded as 9° ±1°. Replaces 18° (ballparks.com lists 15°).',
+  },
+  {
+    stadiumId: 'braves',
+    imageCenter: { latitude: 33.89098, longitude: -84.4678 },
+    imageHalfWidthMeters: 75,
+    imageSizePx: 600,
+    naipTile: 'm_3308405_sw_16_060_20231007',
+    acquired: '2023-10-07',
+    nativeResolutionMeters: 0.6,
+    homeSeedPx: [275.95, 235.8],
+    moundSeedPx: [301, 302],
+    homeCenterPx: [275.95, 235.8],
+    moundCenterPx: [301, 302],
+    bearingHomeToMoundDeg: 159.27,
+    bearingInfieldSymmetryDeg: 158.7,
+    orientationDeg: 159,
+    precisionDeg: 1,
+    measuredOn: '2026-11-11',
+    notes:
+      'Home plate and mound under white covers. Home cover centre (white-pixel centroid) → mound 159.27°; infield mirror axis 158.7° (95.7% overlap). ' +
+      'Third check: a circle fitted to the outer edge of the infield dirt (109 of 111 rays; radius 30.3 m) is centred 160.0° from home. ' +
+      'The infield grass square\'s four edges give 158.8° (spread 1.9°). Chalk foul lines traced 30–95 m out on a 260 m-wide image of the same flight: ' +
+      '204.16° and 113.76°, 90.4° apart, midline 158.96°. Mean 159.1°, recorded as 159° ±1°. Replaces 135°, which was 24° low ' +
+      '(it came from "southeast" descriptions, not a measurement).',
+  },
+  {
+    stadiumId: 'cardinals',
+    imageCenter: { latitude: 38.62249, longitude: -90.19321 },
+    imageHalfWidthMeters: 75,
+    imageSizePx: 600,
+    naipTile: 'm_3809023_sw_15_060_20220618',
+    acquired: '2022-06-18',
+    nativeResolutionMeters: 0.6,
+    homeSeedPx: [236.09, 334.31],
+    moundSeedPx: [299, 300],
+    homeCenterPx: [236.09, 334.31],
+    moundCenterPx: [299, 300.03],
+    bearingHomeToMoundDeg: 61.41,
+    bearingInfieldSymmetryDeg: 62.6,
+    orientationDeg: 62,
+    precisionDeg: 1.5,
+    measuredOn: '2026-11-11',
+    notes:
+      '0.6 m imagery, softer than the other parks, with the right-field corner in the stands\' shadow. Home cover centre (white-pixel centroid) → ' +
+      'mound 61.41°; infield mirror axis 62.6° (93.8% overlap). Chalk foul lines 20–60 m out: 108.45° and 18.05°, 90.4° apart, midline 63.25°; ' +
+      'traced 30–95 m out on a 260 m-wide image: midline 61.34° (the right-field line only 18 points, in shadow). The grass-square and dirt-arc ' +
+      'fits are too noisy here (spread 6.5°; 35 of 96 rays kept). Mean of the four 62.2°, recorded as 62° with a wider ±1.5° for the softer ' +
+      'image. Replaces 60° (ballparks.com lists 60°).',
+  },
+  {
+    stadiumId: 'nationals',
+    imageCenter: { latitude: 38.87273, longitude: -77.00757 },
+    imageHalfWidthMeters: 75,
+    imageSizePx: 600,
+    naipTile: 'm_3807716_ne_18_030_20230901',
+    acquired: '2023-09-01',
+    nativeResolutionMeters: 0.3,
+    homeSeedPx: [259.5, 368.7],
+    moundSeedPx: [294, 306],
+    homeCenterPx: [259.5, 368.7],
+    moundCenterPx: [293.73, 306.24],
+    bearingHomeToMoundDeg: 28.72,
+    bearingInfieldSymmetryDeg: 29.3,
+    orientationDeg: 29,
+    precisionDeg: 1,
+    grassRule: 'slight-blue-cast',
+    measuredOn: '2026-11-11',
+    notes:
+      'Grass reads almost as blue as green (85, 99, 97) next to a bluish mound cover (85, 103, 107), hence grassRule \'slight-blue-cast\'. ' +
+      'A translucent cover on home plate, fitted as a circle of radius 3.9–4.1 m (the 13 ft home circle) centred at the home point used here. ' +
+      'Home → mound 28.72°; infield mirror axis 29.3° (91.7% overlap); the infield grass square\'s four edges 29.45° (spread 1.1°); chalk ' +
+      'foul lines 20–70 m out: 73.1–73.4° and 344.6–344.9°, midline 28.9–29.1°. The dirt-arc fit lands 2 m from the mound, so it is not used. ' +
+      'Mean 29.1°, recorded as 29° ±1°. Replaces 30° (ballparks.com lists 30°).',
+  },
+  {
+    stadiumId: 'orioles',
+    imageCenter: { latitude: 39.28366, longitude: -76.6218 },
+    imageHalfWidthMeters: 75,
+    imageSizePx: 600,
+    naipTile: 'm_3907644_sw_18_030_20230525',
+    acquired: '2023-05-25',
+    nativeResolutionMeters: 0.3,
+    homeSeedPx: [261.2, 365.4],
+    moundSeedPx: [298, 304],
+    homeCenterPx: [261.2, 365.4],
+    moundCenterPx: [298, 304],
+    bearingHomeToMoundDeg: 30.94,
+    bearingInfieldSymmetryDeg: 31.2,
+    orientationDeg: 31,
+    precisionDeg: 1,
+    grassRule: 'blue-cast',
+    measuredOn: '2026-11-11',
+    notes:
+      'Home plate and mound under white covers. Home cover centre → mound 30.94° (31.3° to the mound cover\'s own centre); infield mirror axis 31.2° ' +
+      '(82.3% overlap, lowered by a logo painted on the grass). On a 260 m-wide image of the same flight the foul poles stand 346.4° (102 m) and ' +
+      '76.4° (98 m) from home, 90.0° apart, midline 31.4°; the infield grass square\'s home-side edges give 30.9° and 31.0°. Not used: the infield ' +
+      'dirt\'s outer edge is not a clean circle here (its fitted centre moves 2 m with the rays used, 28.4–29.8°), and the grass square\'s ' +
+      'outfield-side edges give 27.8–28.3°. Mean of the methods used 31.2°, recorded as 31° ±1°. Replaces 30° (ballparks.com lists 30°).',
+  },
+  {
+    stadiumId: 'padres',
+    imageCenter: { latitude: 32.70721, longitude: -117.15706 },
+    imageHalfWidthMeters: 75,
+    imageSizePx: 600,
+    naipTile: 'm_3211723_ne_11_060_20220425',
+    acquired: '2022-04-25',
+    nativeResolutionMeters: 0.6,
+    homeSeedPx: [298.46, 372.47],
+    moundSeedPx: [298, 301],
+    homeCenterPx: [298.46, 372.47],
+    moundCenterPx: [297.96, 301],
+    bearingHomeToMoundDeg: 359.6,
+    bearingInfieldSymmetryDeg: 0,
+    orientationDeg: 0,
+    precisionDeg: 1,
+    measuredOn: '2026-11-11',
+    notes:
+      'Home-plate dirt circle centre → mound (under a bluish cover) 359.6° (0.5° and 359.5° from the other two home-centre fits); infield mirror ' +
+      'axis 0.0° (95.4% overlap). Chalk foul lines traced 30–95 m out on a 260 m-wide image of the same flight: 45.66° and 313.71°, midline ' +
+      '359.7°. A light tower\'s shadow crosses the first-base side of the infield, so the grass-square and dirt-arc fits are not used. ' +
+      'Recorded 0° ±1°, unchanged: confirms the published "due north".',
   },
 ];
 

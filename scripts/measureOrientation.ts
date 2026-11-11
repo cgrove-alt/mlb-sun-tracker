@@ -59,7 +59,11 @@ async function measure(m: OrientationMeasurement) {
     // cast that lifts grass's blue to its green (Oracle Park 2022: 95, 115,
     // 115); those measurements set grassRule 'blue-cast', where blue is
     // only required not to dominate.
-    return m.grassRule === 'blue-cast' ? g > r + 8 && g >= b - 10 : g > r + 8 && g > b + 8;
+    if (m.grassRule === 'blue-cast') return g > r + 8 && g >= b - 10;
+    // A fainter cast (Nationals Park 2023: grass 85, 99, 97) next to a
+    // bluish mound cover (85, 103, 107): grass only needs more green than blue.
+    if (m.grassRule === 'slight-blue-cast') return g > r + 8 && g > b;
+    return g > r + 8 && g > b + 8;
   };
 
   const centroid = (seed: [number, number], radiusMeters: number): [number, number] => {
