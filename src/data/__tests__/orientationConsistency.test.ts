@@ -28,6 +28,13 @@ describe('MLB orientation consistency', () => {
     (id, m) => {
       const stadium = MLB_STADIUMS.find((s) => s.id === id);
       expect(stadium?.orientation).toBe(m.orientationDeg);
+      // unifiedVenues repeats the angle in seatingGeometry (not read by the
+      // site today); a measured park keeps it in step too.
+      const geometry = unified.get(id)?.seatingGeometry;
+      if (geometry) {
+        expect(geometry.primarySeatingAngle).toBe(m.orientationDeg);
+        expect(geometry.sideline1Angle).toBe((m.orientationDeg + 90) % 360);
+      }
       const provenance = getOrientationProvenance(id);
       expect(provenance?.method).toBe('gis-measured');
       expect(provenance?.precisionDeg).toBe(m.precisionDeg);
