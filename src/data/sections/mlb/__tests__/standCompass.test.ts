@@ -24,6 +24,8 @@ import { rockiesSections, ROCKIES_AERIAL_CONTROL } from '../rockies';
 import { rockiesChartPoints } from '../chart-points/rockies';
 import { royalsSections, ROYALS_AERIAL_CONTROL } from '../royals';
 import { royalsChartPoints } from '../chart-points/royals';
+import { redsSections, REDS_AERIAL_CONTROL } from '../reds';
+import { redsChartPoints } from '../chart-points/reds';
 import { aerialChartFit } from '../parkSectionBuilder';
 import { getStadiumOrientation } from '../../../stadiums';
 
@@ -584,5 +586,32 @@ describe('Kauffman Stadium stand directions (measured on the 2022 aerial photo)'
 
   it.each(['127', '128', '225', '230', '314', '420', '420R'])('behind-home section %s faces away from center field', (id) => {
     expect(diff(stand(id), getStadiumOrientation('royals') + 180)).toBeLessThan(15);
+  });
+});
+
+describe('Great American Ball Park stand directions (measured on the 2023 aerial photo)', () => {
+  // Level lines run parallel to both foul lines (backs 256° and 347°);
+  // behind home the rows are arcs centred on home plate.
+  const byId = new Map(redsSections.map((s) => [s.id, s]));
+  const stand = (id: string) => {
+    const value = byId.get(id)?.standCompass;
+    if (value === undefined) throw new Error(`No stand direction for ${id}`);
+    return value;
+  };
+
+  it('pins the club map to the photo within 5 m', () => {
+    expect(aerialChartFit(redsChartPoints, REDS_AERIAL_CONTROL).rmsM).toBeLessThan(5);
+  });
+
+  it.each(['130', '134', '303', '533'])('first-base section %s faces 256°', (id) => expect(stand(id)).toBe(256));
+  it.each(['112', '118', '414', '514'])('third-base section %s faces 347°', (id) => expect(stand(id)).toBe(347));
+
+  it.each(['124', '225', '525'])('behind-home section %s faces away from center field', (id) => {
+    expect(diff(stand(id), getStadiumOrientation('reds') + 180)).toBeLessThan(10);
+  });
+
+  it('the outfield stands follow their walls', () => {
+    expect(stand('103')).toBe(85);
+    expect(stand('143')).toBe(160);
   });
 });

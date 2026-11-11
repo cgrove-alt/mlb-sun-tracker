@@ -751,6 +751,16 @@ Medium or Low confidence and their blog posts stay unpublished.
             the 100s. 89 checks. Not reproduced: rows M–V of 409–427
             "safely in the shade after 3:00" (only near the end of a 3:10
             game at an estimated 30° rake).
+      - [x] Great American Ball Park: the club's drawing pinned with 5
+            sections (3.5 m RMS): behind home the five short sections behind
+            the Diamond Seats (122–126) are centred on the axis; along the
+            first-base line the aisles give 127–134, and the third-base side
+            mirrors them within ~1 m. Stands 256°/347°, arcs centred on home,
+            outfield stands 85°/160°. The roof's edge sits over the
+            first-base 100s' last rows and ~17 m behind the third-base ones
+            on the photo. 59 checks, none failing. RYS's shade page places
+            108–112 in right field; its section pages and the club's map put
+            them on the third-base side.
 - [ ] 6.4 Batch 4: Tigers, Guardians, Twins, White Sox, Athletics (Sutter
       Health Park).
 - [ ] 6.5 Batch 5, retractable roofs (answers assume the roof is open, as

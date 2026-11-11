@@ -2753,6 +2753,213 @@ const KAUFFMAN: StadiumStructure = {
   reviewedOn: '2026-11-11',
 };
 
+const rysGabp = (path: string) => `https://www.rateyourseats.com/great-american-ball-park/seating/${path}`;
+const RYS_GABP = rysGabp('shaded-covered-seats');
+const gabpSections = (...ids: string[]) => ids.map((n) => rysGabp(`sections/${n}`));
+/** Great American's covered rows as positions in each section's lettered rows (Rate Your Seats). */
+const GABP_COVER: Record<string, number> = {
+  '101': 10, '102': 10, '103': 10, '104': 10, '105': 10,
+  '108': 18, '109': 25, '110': 32, '111': 37, '112': 37, '121': 20,
+  '122': 8, '123': 8, '124': 8, '125': 8, '126': 8,
+  '127': 26, '128': 26, '129': 26, '130': 26, '131': 26, '132': 31, '133': 31, '134': 31, '135': 31, '136': 27, '137': 19,
+  '301': 7, '302': 7, '303': 7, '304': 7, '305': 7,
+  '401': 20, '402': 20, '403': 22, '404': 22, '405': 20, '406': 20,
+  '411': 17, '412': 17, '413': 17, '414': 17, '415': 17, '416': 17, '417': 17, '418': 17, '419': 17,
+};
+const gabpCover = (ids: readonly string[], soffitHeightFt: number) =>
+  Object.fromEntries(ids.filter((id) => GABP_COVER[id]).map((id) => [id, { overhang: { coveredFromRow: GABP_COVER[id], soffitHeightFt } }]));
+const gabpIds = (from: number, to: number) => Array.from({ length: to - from + 1 }, (_, i) => String(from + i));
+
+/** Seating ring of a Great American Ball Park chart section. */
+export function gabpTier(id: string): string | null {
+  if (/^\d{1,2}$/.test(id)) return 'diamond';
+  if (/^STE\d+$/.test(id)) return 'suite';
+  // Party areas, clubs, decks and the boxes: no source gives their seats or cover.
+  if (!/^\d{3}$/.test(id)) return null;
+  const n = Number(id);
+  if (n <= 106) return 'leftField';
+  if (n <= 121) return n >= 113 && n <= 120 ? 'thirdCoverUnsourced' : 'third';
+  if (n <= 126) return 'home';
+  if (n <= 137) return 'first';
+  if (n <= 146) return 'rightField';
+  if (n <= 299) return 'twoHundred';
+  if (n <= 399) return n >= 306 ? 'clubCoverUnsourced' : 'club';
+  if (n <= 419) return 'fourHundred';
+  if (n <= 499) return 'fourHundredFront';
+  return n <= 519 ? 'upperThird' : 'upperFirst';
+}
+
+// The upper deck's roof stands behind the lower bowl. On the photo, square
+// to each line 50 m out, its edge is ~42 m from the first-base line (right
+// over the 100s' last rows) and ~57 m from the third-base line (~17 m
+// behind them). Estimated ~112 ft up.
+const GABP_LOWER = { frontRowHeightFt: 3, rakeDeg: 18 };
+
+/**
+ * Great American Ball Park (2003). The Diamond Seats in front of a deep 100
+ * level (to row PP), the Club (300s) on the first-base side, the 400s on the
+ * third-base side and behind home, and the View level (500s) under a roof.
+ * Rows and covered rows are Rate Your Seats' section pages. No source
+ * publishes the deck heights, so every height is estimated by stacking the
+ * decks.
+ */
+const GABP: StadiumStructure = {
+  stadiumId: 'reds',
+  // Far rim: the View level's roof (~112 ft) about 550 ft across the field.
+  park: { roof: 'open', farRimHeightFt: 112, fieldCrossingFt: 550 },
+  tierOf: gabpTier,
+  tiers: {
+    diamond: {
+      label: 'Diamond Seats (1–5, 22–25)',
+      // Rows A–H (D–H in 1) at the backstop, open. Estimated: front ~2 ft,
+      // 12° rake; the 100s rise behind them.
+      stand: { rows: 8, frontRowHeightFt: 2, rakeDeg: 12, backHeightFt: 112, backSetbackFt: 75 },
+      rowsFromMap: true,
+      heightsSourced: false,
+      coverSourced: true,
+      sources: gabpSections('1', '3', '22', '25'),
+    },
+    home: {
+      label: 'Field level behind home (122–126)',
+      // Rows A–I or A–O behind the Diamond Seats, covered from row H.
+      stand: { rows: 15, frontRowHeightFt: 9, rakeDeg: 18, backHeightFt: 112, backSetbackFt: 50, overhang: { coveredFromRow: 8, soffitHeightFt: 22 } },
+      sections: gabpCover(gabpIds(122, 126), 22),
+      rowsFromMap: true,
+      heightsSourced: false,
+      coverSourced: true,
+      sources: [RYS_GABP, ...gabpSections('122', '124', '126')],
+    },
+    first: {
+      label: 'Field level, first-base side (127–137)',
+      // Up to 42 rows, covered from row EE (sourced). Estimated deck
+      // underside ~36 ft; the roof's edge over the last rows.
+      stand: { rows: 37, ...GABP_LOWER, backHeightFt: 112, backSetbackFt: 5 },
+      sections: gabpCover(gabpIds(127, 137), 36),
+      rowsFromMap: true,
+      heightsSourced: false,
+      coverSourced: true,
+      sources: [RYS_GABP, ...gabpSections('127', '130', '132', '136', '137')],
+    },
+    third: {
+      label: 'Field level, third-base side (107–112, 121)',
+      // 108–112 covered from row KK, 121 from FF (sourced); 107 open.
+      stand: { rows: 30, ...GABP_LOWER, backHeightFt: 112, backSetbackFt: 56 },
+      sections: gabpCover(['108', '109', '110', '111', '112', '121'], 36),
+      rowsFromMap: true,
+      heightsSourced: false,
+      coverSourced: true,
+      sources: [RYS_GABP, ...gabpSections('107', '108', '110', '112', '121')],
+    },
+    thirdCoverUnsourced: {
+      label: 'Field level, third-base side (113–120)',
+      // Rows to GG; Rate Your Seats gives no covered rows (120: "GG and
+      // up shaded late afternoon"), so the check tries both.
+      stand: { rows: 28, ...GABP_LOWER, backHeightFt: 112, backSetbackFt: 56, overhang: { coveredFromRow: 22, soffitHeightFt: 34 } },
+      rowsFromMap: true,
+      heightsSourced: false,
+      coverSourced: false,
+      sources: gabpSections('113', '116', '120'),
+    },
+    leftField: {
+      label: 'Left field (101–106)',
+      // Rows A–Q; 101–105 covered from row J by the deck above (sourced).
+      stand: { rows: 17, frontRowHeightFt: 8, rakeDeg: 20, backHeightFt: 40, overhang: { coveredFromRow: 10, soffitHeightFt: 22 } },
+      sections: { '106': { noCover: true } },
+      rowsFromMap: true,
+      heightsSourced: false,
+      coverSourced: true,
+      sources: [RYS_GABP, ...gabpSections('101', '104', '106')],
+    },
+    rightField: {
+      label: 'Right field (138–146)',
+      // The Sun/Moon Deck, open ("avoid the seats beyond the right field
+      // wall at all costs").
+      stand: { rows: 26, frontRowHeightFt: 8, rakeDeg: 20, backHeightFt: 30 },
+      rowsFromMap: true,
+      heightsSourced: false,
+      coverSourced: true,
+      sources: [RYS_GABP, ...gabpSections('138', '140', '143', '146')],
+    },
+    twoHundred: {
+      label: '200 level (220–228)',
+      // Rows A–C behind home; no covered rows given ("shaded during most
+      // late afternoon games"), so the check tries both.
+      stand: { rows: 3, frontRowHeightFt: 36, rakeDeg: 10, backHeightFt: 112, backSetbackFt: 40, overhang: { coveredFromRow: 2, soffitHeightFt: 46 } },
+      rowsFromMap: true,
+      heightsSourced: false,
+      coverSourced: false,
+      sources: gabpSections('220', '224', '228'),
+    },
+    club: {
+      label: 'Club (301–307)',
+      // 301–305 covered from row G (sourced).
+      stand: { rows: 14, frontRowHeightFt: 44, rakeDeg: 20, backHeightFt: 112, backSetbackFt: 10, overhang: { coveredFromRow: 7, soffitHeightFt: 62 } },
+      rowsFromMap: true,
+      heightsSourced: false,
+      coverSourced: true,
+      sources: [RYS_GABP, ...gabpSections('301', '303', '305')],
+    },
+    clubCoverUnsourced: {
+      label: 'Club (306–307)',
+      stand: { rows: 13, frontRowHeightFt: 44, rakeDeg: 20, backHeightFt: 112, backSetbackFt: 10, overhang: { coveredFromRow: 7, soffitHeightFt: 62 } },
+      rowsFromMap: true,
+      heightsSourced: false,
+      coverSourced: false,
+      sources: gabpSections('306', '307'),
+    },
+    fourHundred: {
+      label: '400 level (401–419)',
+      // 401–406 covered from row V, 411–419 from row Q (sourced).
+      stand: { rows: 18, frontRowHeightFt: 48, rakeDeg: 24, backHeightFt: 112, overhang: { coveredFromRow: 17, soffitHeightFt: 74 } },
+      sections: gabpCover(gabpIds(401, 419), 74),
+      rowsFromMap: true,
+      heightsSourced: false,
+      coverSourced: true,
+      sources: [RYS_GABP, ...gabpSections('401', '405', '411', '419')],
+    },
+    fourHundredFront: {
+      label: '400 level (420–437)',
+      // Rows A–F, open; rows D and up "shaded during most late afternoon
+      // games" on the first-base side. Estimated: front ~52 ft, 20° rake,
+      // the View level rising behind (~80 ft) ~10 ft back.
+      stand: { rows: 6, frontRowHeightFt: 52, rakeDeg: 20, backHeightFt: 80, backSetbackFt: 10 },
+      rowsFromMap: true,
+      heightsSourced: false,
+      coverSourced: true,
+      sources: gabpSections('420', '428', '430', '437'),
+    },
+    upperThird: {
+      label: 'View level, third-base side (509–519)',
+      // Rows A–R, covered from row L (sourced). Estimated: front ~80 ft, 30°
+      // rake, roof underside ~110 ft.
+      stand: { rows: 18, frontRowHeightFt: 80, rakeDeg: 30, backHeightFt: 112, overhang: { coveredFromRow: 12, soffitHeightFt: 110 } },
+      rowsFromMap: true,
+      heightsSourced: false,
+      coverSourced: true,
+      sources: [RYS_GABP, ...gabpSections('509', '514', '519')],
+    },
+    upperFirst: {
+      label: 'View level, home and first-base side (520–537)',
+      // Rows A–V, covered from row O (sourced).
+      stand: { rows: 22, frontRowHeightFt: 76, rakeDeg: 30, backHeightFt: 112, overhang: { coveredFromRow: 15, soffitHeightFt: 110 } },
+      rowsFromMap: true,
+      heightsSourced: false,
+      coverSourced: true,
+      sources: [RYS_GABP, ...gabpSections('520', '528', '537')],
+    },
+    suite: {
+      label: 'Suites',
+      // As at the other parks: one row of seats under the suite level's
+      // ceiling. Estimated ~60 ft up.
+      stand: { rows: 1, frontRowHeightFt: 60, rakeDeg: 0, backHeightFt: 72, overhang: { coveredFromRow: 1, soffitHeightFt: 66 } },
+      heightsSourced: false,
+      coverSourced: true,
+      sources: ['https://www.mlb.com/reds/ballpark/netting'],
+    },
+  },
+  reviewedOn: '2026-11-11',
+};
+
 export const STADIUM_STRUCTURES: Readonly<Record<string, StadiumStructure>> = {
   yankees: YANKEES,
   redsox: FENWAY,
@@ -2769,6 +2976,7 @@ export const STADIUM_STRUCTURES: Readonly<Record<string, StadiumStructure>> = {
   angels: ANGEL,
   rockies: COORS,
   royals: KAUFFMAN,
+  reds: GABP,
 };
 
 export function getStadiumStructure(stadiumId: string): StadiumStructure | undefined {
