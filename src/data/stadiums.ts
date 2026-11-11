@@ -124,7 +124,7 @@ export const MLB_STADIUMS: Stadium[] = [
     state: 'IL',
     latitude: 41.9484,
     longitude: -87.6553,
-    orientation: 30, // NE — corrected 2026-06-23 from 13°. ballparks.com 30° + Hardball Times "oriented toward the northeast" + sun pattern confirm NE (the old 13° was too far north). See provenance.
+    orientation: 38, // NE — corrected 2026-06-23 from 13°. ballparks.com 30° + Hardball Times "oriented toward the northeast" + sun pattern confirm NE (the old 13° was too far north). See provenance.
     capacity: 41649,
     roof: 'open',
     timezone: 'America/Chicago',

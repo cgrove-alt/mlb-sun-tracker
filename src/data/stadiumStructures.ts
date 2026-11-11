@@ -573,10 +573,169 @@ const DODGERS: StadiumStructure = {
   reviewedOn: '2026-11-11',
 };
 
+const rysWrigley = (path: string) => `https://www.rateyourseats.com/wrigley-field/seating/${path}`;
+const RYS_WRIGLEY = rysWrigley('shaded-covered-seats');
+
+/**
+ * Seating ring of a Wrigley Field chart section: the front boxes (1–34 and
+ * the A boxes), the 100s behind them, the 200s (Terrace) under the upper
+ * deck, the upper deck's 300s and 400s (L/R by side), and the bleachers.
+ */
+export function wrigleyTier(id: string): string | null {
+  if (/^A\d+$/.test(id)) return 'clubBox';
+  if (/^\d{1,2}$/.test(id)) return 'box';
+  if (/^1\d\d$/.test(id)) return 'field';
+  if (/^2\d\d$/.test(id)) return 'terrace';
+  if (/^3\d\d[LR]$/.test(id)) return 'upperBox';
+  if (/^4\d\d[LR]$/.test(id)) return 'upperReserved';
+  if (/^5\d\d$/.test(id)) return 'bleachers';
+  return null;
+}
+
+/**
+ * Wrigley Field (1914). One lower bowl (front boxes, the 100s, then the 200s
+ * under the upper deck) and one upper deck (the 300s in front, the 400s
+ * behind, both under the roof), plus the open bleachers. Rows and covered
+ * rows are from Rate Your Seats' section pages. No source publishes deck or
+ * roof heights, so every height is estimated: a shallow lower bowl rising
+ * to the upper deck's underside (~32 ft), the upper deck above it and the
+ * roof over its back.
+ */
+const WRIGLEY: StadiumStructure = {
+  stadiumId: 'cubs',
+  // Far rim: the upper-deck roof (~72 ft) about 480 ft from the bleachers.
+  park: { roof: 'open', farRimHeightFt: 72, fieldCrossingFt: 480 },
+  tierOf: wrigleyTier,
+  tiers: {
+    clubBox: {
+      label: 'Club boxes',
+      // The front rows behind home, uncovered. Row count not published:
+      // estimated at 4. Behind them the bowl rises to the upper deck's
+      // underside (~32 ft) about 85 ft back.
+      stand: { rows: 4, frontRowHeightFt: 2, rakeDeg: 12, backHeightFt: 32, backSetbackFt: 85 },
+      heightsSourced: false,
+      coverSourced: true,
+      sources: [RYS_WRIGLEY],
+    },
+    box: {
+      label: 'Front boxes (1–34)',
+      // Rows 1–15 (sourced; the end sections start further back: 3 has rows
+      // 10–15, 9 has 5–14, 32 has 8–15), uncovered. Estimated: front row
+      // ~3 ft, 14° rake; behind, the upper deck's front edge (~31 ft) over
+      // row 11 of the 100s, about 28 ft back.
+      stand: { rows: 15, frontRowHeightFt: 3, rakeDeg: 14, backHeightFt: 31, backSetbackFt: 28 },
+      sections: { '3': { rows: 6 }, '9': { rows: 10 }, '27': { rows: 14 }, '32': { rows: 8 } },
+      heightsSourced: false,
+      coverSourced: true,
+      sources: [rysWrigley('sections/3'), rysWrigley('sections/9'), rysWrigley('sections/18'), rysWrigley('sections/27'), rysWrigley('sections/32')],
+    },
+    field: {
+      label: 'Field level (100s)',
+      // Rows 1–15 (101 has 7–13, 134 has 10–13) (sourced). The upper deck
+      // reaches over the back rows: on the 2019 aerial photo the crowd on
+      // the first-base side is visible for about 21 m (69 ft) from the field
+      // before the deck hides it, which leaves the front boxes (~41 ft) and
+      // about ten rows of the 100s, so the deck covers from about row 11.
+      // That agrees with Rate Your Seats (rows 10–13 and up shaded on day
+      // games). Estimated: front row ~14 ft, 16° rake, deck underside ~31 ft.
+      stand: {
+        rows: 15,
+        frontRowHeightFt: 14,
+        rakeDeg: 16,
+        backHeightFt: 40,
+        overhang: { coveredFromRow: 11, soffitHeightFt: 31 },
+      },
+      sections: {
+        '101': { rows: 7, overhang: { coveredFromRow: 5, soffitHeightFt: 31 } },
+        '134': { rows: 4, overhang: { coveredFromRow: 2, soffitHeightFt: 31 } },
+      },
+      heightsSourced: false,
+      coverSourced: false,
+      sources: [rysWrigley('sections/101'), rysWrigley('sections/110'), rysWrigley('sections/118'), rysWrigley('sections/126'), rysWrigley('sections/134'), RYS_WRIGLEY],
+    },
+    terrace: {
+      label: 'Terrace (200s)',
+      // Every row of 204–230 is under the upper deck (sourced); the corner
+      // sections 202, 203 and 231–233 are not. Rows 1–22 (225: 23, 230: 30,
+      // 202: 9, 233: 12). Estimated: front row ~27 ft, 18° rake, upper deck
+      // underside ~32 ft at its front edge.
+      stand: {
+        rows: 22,
+        frontRowHeightFt: 27,
+        rakeDeg: 18,
+        backHeightFt: 50,
+        overhang: { coveredFromRow: 1, soffitHeightFt: 32 },
+      },
+      sections: {
+        '202': { rows: 9, noCover: true },
+        '203': { noCover: true },
+        '225': { rows: 23 },
+        '230': { rows: 30 },
+        '231': { noCover: true },
+        '232': { noCover: true },
+        '233': { rows: 12, noCover: true },
+      },
+      heightsSourced: false,
+      coverSourced: true,
+      sources: [rysWrigley('sections/202'), rysWrigley('sections/206'), rysWrigley('sections/212'), rysWrigley('sections/225'), rysWrigley('sections/230'), rysWrigley('sections/233'), RYS_WRIGLEY],
+    },
+    upperBox: {
+      label: 'Upper deck (300s)',
+      // Rows 1–10 (331: 12), covered by the roof from row 7 (315 and 316
+      // from row 5) (sourced). Estimated: front row ~40 ft, 26° rake, roof
+      // underside ~57 ft.
+      stand: {
+        rows: 10,
+        frontRowHeightFt: 40,
+        rakeDeg: 26,
+        backHeightFt: 60,
+        overhang: { coveredFromRow: 7, soffitHeightFt: 57 },
+      },
+      sections: {
+        '315L': { overhang: { coveredFromRow: 5, soffitHeightFt: 55 } },
+        '316L': { overhang: { coveredFromRow: 5, soffitHeightFt: 55 } },
+        '331R': { rows: 12 },
+      },
+      heightsSourced: false,
+      coverSourced: true,
+      sources: [rysWrigley('sections/305'), rysWrigley('sections/310'), rysWrigley('sections/315'), rysWrigley('sections/320'), rysWrigley('sections/331')],
+    },
+    upperReserved: {
+      label: 'Upper deck (400s)',
+      // Rows 1–9, all under the roof (sourced; 419 has rows 5–9).
+      // Estimated: front row ~55 ft, 28° rake, roof underside ~64 ft, roof
+      // top ~72 ft.
+      stand: {
+        rows: 9,
+        frontRowHeightFt: 55,
+        rakeDeg: 28,
+        backHeightFt: 72,
+        overhang: { coveredFromRow: 1, soffitHeightFt: 64 },
+      },
+      sections: { '419R': { rows: 5 } },
+      heightsSourced: false,
+      coverSourced: true,
+      sources: [rysWrigley('sections/405'), rysWrigley('sections/410'), rysWrigley('sections/419'), rysWrigley('sections/425'), RYS_WRIGLEY],
+    },
+    bleachers: {
+      label: 'Bleachers',
+      // Rows 1–21 (501: 7–14, 511: 14 rows), uncovered (sourced). Estimated:
+      // front row ~12 ft over the ivy wall, 25° rake, a ~42 ft back wall.
+      stand: { rows: 21, frontRowHeightFt: 12, rakeDeg: 25, backHeightFt: 42 },
+      sections: { '501': { rows: 8 }, '511': { rows: 14 }, '537': { rows: 15 } },
+      heightsSourced: false,
+      coverSourced: true,
+      sources: [rysWrigley('sections/501'), rysWrigley('sections/505'), rysWrigley('sections/511'), rysWrigley('sections/515'), RYS_WRIGLEY],
+    },
+  },
+  reviewedOn: '2026-11-11',
+};
+
 export const STADIUM_STRUCTURES: Readonly<Record<string, StadiumStructure>> = {
   yankees: YANKEES,
   redsox: FENWAY,
   dodgers: DODGERS,
+  cubs: WRIGLEY,
 };
 
 export function getStadiumStructure(stadiumId: string): StadiumStructure | undefined {

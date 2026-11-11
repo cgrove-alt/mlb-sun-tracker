@@ -1,6 +1,8 @@
 import { yankeesSections } from '../yankees';
 import { dodgersSections, DODGERS_AERIAL_CONTROL } from '../dodgers';
 import { dodgersChartPoints } from '../chart-points/dodgers';
+import { cubsSections, CUBS_AERIAL_CONTROL } from '../cubs';
+import { cubsChartPoints } from '../chart-points/cubs';
 import { aerialChartFit } from '../parkSectionBuilder';
 import { getStadiumOrientation } from '../../../stadiums';
 
@@ -67,8 +69,8 @@ describe('Yankee Stadium stand directions', () => {
 });
 
 describe('aerial calibration of a club map', () => {
-  // A chart that is the ground rotated 30°, squashed and sheared: the fit
-  // must recover every point exactly from three or more pinned sections.
+  // A chart that is the ground rotated, squashed and sheared: the fit must
+  // recover every point exactly from the pinned sections.
   const toGround = (x: number, y: number) => ({ east: 0.8 * x + 0.3 * y + 5, north: -0.4 * x + 0.9 * y - 7 });
   const chart = Array.from({ length: 12 }, (_, i) => ({ id: `S${i}`, x: 100 * Math.cos(i), y: 80 * Math.sin(i * 1.3), width: 4, height: 3 }));
   const control = chart.slice(0, 4).map((p) => {
@@ -76,8 +78,29 @@ describe('aerial calibration of a club map', () => {
     return { ids: [p.id], bearingDeg: ((Math.atan2(g.east, g.north) * 180) / Math.PI + 360) % 360, distanceM: Math.hypot(g.east, g.north) };
   });
 
-  it('recovers an affine drawing exactly', () => {
-    const { mapped, rmsM } = aerialChartFit(chart, control);
+  it('uses a projective map for a perspective drawing an affine map cannot fit', () => {
+    // A rendered 3-D view: the ground seen in strong perspective.
+    const persp = (x: number, y: number) => {
+      const w = 1 + 0.004 * x - 0.003 * y;
+      return { east: (0.8 * x + 0.3 * y + 5) / w, north: (-0.4 * x + 0.9 * y - 7) / w };
+    };
+    const pinned = chart.slice(0, 6).map((p) => {
+      const g = persp(p.x, p.y);
+      return { ids: [p.id], bearingDeg: ((Math.atan2(g.east, g.north) * 180) / Math.PI + 360) % 360, distanceM: Math.hypot(g.east, g.north) };
+    });
+    const { mapped, rmsM, model } = aerialChartFit(chart, pinned);
+    expect(model).toBe('projective');
+    expect(rmsM).toBeLessThan(1e-6);
+    for (const p of mapped) {
+      const c = chart.find((q) => q.id === p.id)!;
+      expect(p.x).toBeCloseTo(persp(c.x, c.y).east, 5);
+      expect(-p.y).toBeCloseTo(persp(c.x, c.y).north, 5);
+    }
+  });
+
+  it('recovers an affine drawing exactly, with an affine map', () => {
+    const { mapped, rmsM, model } = aerialChartFit(chart, control);
+    expect(model).toBe('affine');
     expect(rmsM).toBeLessThan(1e-6);
     for (const p of mapped) {
       const g = toGround(chart.find((c) => c.id === p.id)!.x, chart.find((c) => c.id === p.id)!.y);
@@ -125,5 +148,42 @@ describe('Dodger Stadium stand directions (pinned to the 2022 aerial photo)', ()
 
   it.each(['302PR', '310PR', '316PR'])('right-field pavilion %s faces away from home plate (northeast)', (id) => {
     expect(diff(stand(id), 60)).toBeLessThan(15);
+  });
+});
+
+describe('Wrigley Field stand directions (pinned to the 2019 aerial photo)', () => {
+  // On the photo the third-base stands' front edge runs at 359° (facing
+  // 269°), the first-base edge at 74° (facing 164°), the left-field wall at
+  // about 94° (bleachers facing north) and the right-field wall at about
+  // 164° (bleachers facing 74°).
+  const byId = new Map(cubsSections.map((s) => [s.id, s]));
+  const stand = (id: string) => {
+    const value = byId.get(id)?.standCompass;
+    if (value === undefined) throw new Error(`No stand direction for ${id}`);
+    return value;
+  };
+
+  it('pins the club map to the photo within 5 m', () => {
+    expect(aerialChartFit(cubsChartPoints, CUBS_AERIAL_CONTROL).rmsM).toBeLessThan(5);
+  });
+
+  it.each(['5', '9', '13', '105', '205', '305L', '310L', '405L', '410L'])('third-base grandstand %s faces 269°', (id) => {
+    expect(diff(stand(id), 269)).toBeLessThan(3);
+  });
+
+  it.each(['24', '28', '32', '125', '130', '225', '230', '330R', '430R'])('first-base grandstand %s faces 164°', (id) => {
+    expect(diff(stand(id), 164)).toBeLessThan(3);
+  });
+
+  it.each(['19', '20', '120', '320R'])('behind-home section %s faces away from center field', (id) => {
+    expect(diff(stand(id), getStadiumOrientation('cubs') + 180)).toBeLessThan(20);
+  });
+
+  it.each(['505', '507'])('left-field bleacher %s faces north', (id) => {
+    expect(diff(stand(id), 4)).toBeLessThan(15);
+  });
+
+  it.each(['511', '513', '515'])('right-field bleacher %s faces east-northeast', (id) => {
+    expect(diff(stand(id), 74)).toBeLessThan(15);
   });
 });

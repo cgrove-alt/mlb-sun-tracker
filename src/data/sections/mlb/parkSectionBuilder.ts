@@ -121,13 +121,23 @@ export interface ChartSeedConfig {
   foulLineRows?: { firstBase: readonly string[]; thirdBase: readonly string[] };
   /**
    * Sections pinned on the park's aerial photo, as bearing and distance from
-   * home plate (each entry averages its ids, like the anchors). With three or
-   * more, the chart is mapped onto the ground by a least-squares affine fit,
-   * which undoes any rotation, skew or squash in the club's drawing, and
+   * home plate (each entry averages its ids, like the anchors). With four or
+   * more, the chart is mapped onto the ground by a least-squares projective
+   * fit, which undoes any rotation, skew, squash or perspective in the club's
+   * drawing, and
    * every position and stand direction is worked out in metres. Takes
    * precedence over the anchors and foulLineRows.
    */
   aerialControl?: readonly AerialControlPoint[];
+  /**
+   * Straight stand runs measured on the aerial photo. A section of one of
+   * `rings` whose bearing from home plate falls in [fromBearingDeg,
+   * toBearingDeg] faces `facingDeg` (square to the run's front edge), taken
+   * from the photo instead of from the club's drawing. Needed where the
+   * drawing is not to scale: Wrigley's map draws the two foul-side stands
+   * 90° apart; on the ground they are 75° apart.
+   */
+  standRuns?: readonly { rings: readonly string[]; fromBearingDeg: number; toBearingDeg: number; facingDeg: number }[];
   /**
    * Which seating ring a section belongs to, for fitting stand directions.
    * Defaults to the section's level; give it when two physical rings share a
@@ -146,15 +156,54 @@ export interface AerialControlPoint {
 /** Largest RMS miss (metres) an aerial calibration may leave at its control points. */
 export const AERIAL_FIT_MAX_RMS_M = 5;
 
+/** Solve the least-squares problem A·h ≈ b (normal equations, Gaussian elimination). */
+function leastSquares(rows: readonly number[][], rhs: readonly number[]): number[] {
+  const n = rows[0].length;
+  const m = Array.from({ length: n }, () => new Array<number>(n + 1).fill(0));
+  rows.forEach((row, k) => {
+    for (let i = 0; i < n; i++) {
+      m[i][n] += row[i] * rhs[k];
+      for (let j = 0; j < n; j++) m[i][j] += row[i] * row[j];
+    }
+  });
+  for (let i = 0; i < n; i++) {
+    let pivot = i;
+    for (let r = i + 1; r < n; r++) if (Math.abs(m[r][i]) > Math.abs(m[pivot][i])) pivot = r;
+    if (Math.abs(m[pivot][i]) < 1e-12) throw new Error('Aerial control points do not pin down the map');
+    [m[i], m[pivot]] = [m[pivot], m[i]];
+    for (let r = 0; r < n; r++) {
+      if (r === i) continue;
+      const f = m[r][i] / m[i][i];
+      for (let c = i; c <= n; c++) m[r][c] -= f * m[i][c];
+    }
+  }
+  return m.map((row, i) => row[n] / row[i]);
+}
+
 /**
- * Least-squares affine map from chart coordinates to ground metres
- * (east, north) of home plate. Returns the mapped points (y flipped so the
- * result is a y-down "chart" in metres, home plate at the origin) and the
- * fit's RMS miss at the control points.
+ * Map from chart coordinates to ground metres (east, north) of home plate,
+ * fitted by least squares to the control points. The simplest map that fits
+ * within AERIAL_FIT_MAX_RMS_M is used: affine (rotation, scale, skew) first;
+ * a projective map (which also covers the perspective of a rendered 3-D
+ * view) only when affine cannot fit. Extra freedom is not taken when it is
+ * not needed: with few control points it bends the map between them.
+ * Returns the mapped points (y flipped so the result is a y-down "chart" in
+ * metres, home plate at the origin), the RMS miss at the control points and
+ * which map was used.
  */
 export function aerialChartFit(
   points: readonly ChartSectionPoint[],
   control: readonly AerialControlPoint[],
+): { mapped: ChartSectionPoint[]; rmsM: number; model: 'affine' | 'projective' } {
+  const affine = fitAerialMap(points, control, 'affine');
+  if (affine.rmsM <= AERIAL_FIT_MAX_RMS_M) return { ...affine, model: 'affine' };
+  return { ...fitAerialMap(points, control, 'projective'), model: 'projective' };
+}
+
+function fitAerialMap(
+  points: readonly ChartSectionPoint[],
+  control: readonly AerialControlPoint[],
+  model: 'affine' | 'projective',
 ): { mapped: ChartSectionPoint[]; rmsM: number } {
   const byId = new Map(points.map((point) => [point.id, point]));
   const pairs = control.map((c) => {
@@ -171,43 +220,63 @@ export function aerialChartFit(
       north: Math.cos(t) * c.distanceM,
     };
   });
-  if (pairs.length < 3) throw new Error('Aerial calibration needs at least three control points');
+  if (pairs.length < 4) throw new Error('Aerial calibration needs at least four control points');
+  // (Four or more: three would fit an affine map exactly, leaving no check.)
 
-  // Normal equations for value = a*x + b*y + c, solved for east and north.
-  const solve = (values: number[]): [number, number, number] => {
-    const m = [[0, 0, 0], [0, 0, 0], [0, 0, 0]];
-    const v = [0, 0, 0];
-    pairs.forEach((p, i) => {
-      const row = [p.x, p.y, 1];
-      for (let r = 0; r < 3; r++) {
-        v[r] += row[r] * values[i];
-        for (let c = 0; c < 3; c++) m[r][c] += row[r] * row[c];
-      }
-    });
-    const det3 = (a: number[][]) =>
-      a[0][0] * (a[1][1] * a[2][2] - a[1][2] * a[2][1])
-      - a[0][1] * (a[1][0] * a[2][2] - a[1][2] * a[2][0])
-      + a[0][2] * (a[1][0] * a[2][1] - a[1][1] * a[2][0]);
-    const d = det3(m);
-    if (Math.abs(d) < 1e-9) throw new Error('Aerial control points are collinear');
-    const col = (k: number) => m.map((row, r) => row.map((value, c) => (c === k ? v[r] : value)));
-    return [det3(col(0)) / d, det3(col(1)) / d, det3(col(2)) / d];
+  // Work in normalised chart coordinates for a well-conditioned solve.
+  const cx = pairs.reduce((s, p) => s + p.x, 0) / pairs.length;
+  const cy = pairs.reduce((s, p) => s + p.y, 0) / pairs.length;
+  const scale = Math.max(...pairs.map((p) => Math.hypot(p.x - cx, p.y - cy))) || 1;
+  const norm = (x: number, y: number) => [(x - cx) / scale, (y - cy) / scale];
+
+  // east = (h0 u + h1 v + h2) / w, north = (h3 u + h4 v + h5) / w,
+  // w = h6 u + h7 v + 1. Linearised, then re-weighted by 1/w so the
+  // residual is (close to) the miss in metres.
+  // An affine map is the same with h6 = h7 = 0 (one pass, no re-weighting).
+  const params = model === 'affine' ? 6 : 8;
+  let h = [1, 0, 0, 0, 1, 0, 0, 0];
+  for (let pass = 0; pass < (model === 'affine' ? 1 : 25); pass++) {
+    const rows: number[][] = [];
+    const rhs: number[] = [];
+    for (const p of pairs) {
+      const [u, v] = norm(p.x, p.y);
+      const k = 1 / (h[6] * u + h[7] * v + 1);
+      rows.push([u * k, v * k, k, 0, 0, 0, -p.east * u * k, -p.east * v * k].slice(0, params));
+      rhs.push(p.east * k);
+      rows.push([0, 0, 0, u * k, v * k, k, -p.north * u * k, -p.north * v * k].slice(0, params));
+      rhs.push(p.north * k);
+    }
+    const solved = leastSquares(rows, rhs);
+    h = model === 'affine' ? [...solved, 0, 0] : solved;
+  }
+  const project = (x: number, y: number) => {
+    const [u, v] = norm(x, y);
+    const w = h[6] * u + h[7] * v + 1;
+    if (w <= 0) throw new Error('Aerial calibration folds the chart over (a point maps past the horizon)');
+    const east = (h[0] * u + h[1] * v + h[2]) / w;
+    const north = (h[3] * u + h[4] * v + h[5]) / w;
+    // Partial derivatives per chart unit, for sizing footprints.
+    const dEast = [(h[0] - east * h[6]) / w / scale, (h[1] - east * h[7]) / w / scale];
+    const dNorth = [(h[3] - north * h[6]) / w / scale, (h[4] - north * h[7]) / w / scale];
+    return { east, north, dEast, dNorth };
   };
-  const [ea, eb, ec] = solve(pairs.map((p) => p.east));
-  const [na, nb, nc] = solve(pairs.map((p) => p.north));
-  const rmsM = Math.sqrt(pairs.reduce((sum, p) => sum
-    + (ea * p.x + eb * p.y + ec - p.east) ** 2
-    + (na * p.x + nb * p.y + nc - p.north) ** 2, 0) / pairs.length);
+  const rmsM = Math.sqrt(pairs.reduce((sum, p) => {
+    const g = project(p.x, p.y);
+    return sum + (g.east - p.east) ** 2 + (g.north - p.north) ** 2;
+  }, 0) / pairs.length);
 
   // The rest of the builder treats a footprint as an axis-aligned box, so a
   // mapped box becomes the axis-aligned box around the mapped rectangle.
-  const mapped = points.map((point) => ({
-    ...point,
-    x: ea * point.x + eb * point.y + ec,
-    y: -(na * point.x + nb * point.y + nc),
-    width: Math.abs(ea) * point.width + Math.abs(eb) * point.height,
-    height: Math.abs(na) * point.width + Math.abs(nb) * point.height,
-  }));
+  const mapped = points.map((point) => {
+    const g = project(point.x, point.y);
+    return {
+      ...point,
+      x: g.east,
+      y: -g.north,
+      width: Math.abs(g.dEast[0]) * point.width + Math.abs(g.dEast[1]) * point.height,
+      height: Math.abs(g.dNorth[0]) * point.width + Math.abs(g.dNorth[1]) * point.height,
+    };
+  });
   return { mapped, rmsM };
 }
 
@@ -570,7 +639,13 @@ export function chartSeeds(
   }
 
   const stands = standCompasses(positions, frame, config.orientation, fieldCenter);
-  return provisional.map((seed, index) => ({ ...seed, standCompass: stands[index] }));
+  const inRun = (bearing: number, from: number, to: number) =>
+    from <= to ? bearing >= from && bearing <= to : bearing >= from || bearing <= to;
+  return provisional.map((seed, index) => {
+    const run = config.standRuns?.find((r) =>
+      r.rings.includes(positions[index].tier) && inRun(seed.compass, r.fromBearingDeg, r.toBearingDeg));
+    return { ...seed, standCompass: run ? run.facingDeg : stands[index] };
+  });
 }
 
 const LEVEL_GEOMETRY: Record<

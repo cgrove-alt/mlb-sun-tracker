@@ -110,6 +110,29 @@ export const ORIENTATION_MEASUREMENTS: readonly OrientationMeasurement[] = [
       '25.87°, 26.66°, 27.78° and 26.16° (mean 26.62°; corners 90.8°). Chalk foul lines are not visible at 0.6 m. Mean 27.1°, recorded ' +
       'as 27° ±1°. Replaces 25° (ballparks.com lists 30°).',
   },
+  {
+    stadiumId: 'cubs',
+    imageCenter: { latitude: 41.94805, longitude: -87.65569 },
+    imageHalfWidthMeters: 75,
+    imageSizePx: 600,
+    naipTile: 'm_4108703_ne_16_060_20190807',
+    acquired: '2019-08-07',
+    nativeResolutionMeters: 0.6,
+    homeSeedPx: [247, 368],
+    moundSeedPx: [298, 303],
+    homeCenterPx: [247, 368],
+    moundCenterPx: [298.11, 302.89],
+    bearingHomeToMoundDeg: 38.14,
+    bearingInfieldSymmetryDeg: 38.5,
+    orientationDeg: 38,
+    precisionDeg: 1,
+    measuredOn: '2026-11-11',
+    notes:
+      'Taken during a game. The home-plate circle runs into the dirt around it, so home is the hand-placed point; home → mound 38.14°. ' +
+      'Infield mirror axis 38.5° (94.1% overlap). The infield grass square\'s edges give 37.55°, 35.99° (edge partly in a stand\'s shadow), ' +
+      '38.89° and 37.68° (mean 37.53°). Mean 38.1°, recorded as 38° ±1°. Replaces 30° (ballparks.com lists 30°), 8° low; the stands in ' +
+      'the wider image run at about 80° (first base) and 358° (third base), consistent with 38°.',
+  },
 ];
 
 export function getOrientationMeasurement(stadiumId: string): OrientationMeasurement | undefined {

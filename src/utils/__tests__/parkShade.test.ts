@@ -34,9 +34,10 @@ describe('every MLB park has a shade answer', () => {
 
   it('marks which parks have their own profile', async () => {
     const yankees = MLB_STADIUMS.find((s) => s.id === 'yankees')!;
-    const cubs = MLB_STADIUMS.find((s) => s.id === 'cubs')!;
+    // Comerica Park has no profile yet (batch 4 of the 28-park plan).
+    const tigers = MLB_STADIUMS.find((s) => s.id === 'tigers')!;
     const at = (s: typeof yankees) => stadiumLocalToUTC('2025-07-15', '13:05', s.timezone);
     expect(parkGameShade(yankees, await getStadiumSections('yankees', 'MLB'), at(yankees), 1).profiled).toBe(true);
-    expect(parkGameShade(cubs, await getStadiumSections('cubs', 'MLB'), at(cubs), 12).profiled).toBe(false);
+    expect(parkGameShade(tigers, await getStadiumSections('tigers', 'MLB'), at(tigers), 12).profiled).toBe(false);
   });
 });

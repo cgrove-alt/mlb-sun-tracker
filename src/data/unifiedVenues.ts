@@ -262,7 +262,7 @@ export const ALL_UNIFIED_VENUES: UnifiedVenue[] = [
     "state": "IL",
     "latitude": 41.9484,
     "longitude": -87.6553,
-    "orientation": 30,
+    "orientation": 38,
     "capacity": 41649,
     "roof": "open",
     "timezone": "America/Chicago",
@@ -273,11 +273,11 @@ export const ALL_UNIFIED_VENUES: UnifiedVenue[] = [
         "width": 330
       },
       "endZoneOrientation": "north-northeast-south-southwest",
-      "primarySeatingAngle": 13,
-      "sideline1Angle": 103,
-      "sideline2Angle": 283,
-      "endZone1Angle": 13,
-      "endZone2Angle": 193
+      "primarySeatingAngle": 38,
+      "sideline1Angle": 128,
+      "sideline2Angle": 308,
+      "endZone1Angle": 38,
+      "endZone2Angle": 218
     },
     "venueType": "baseball",
     "sport": "baseball",
