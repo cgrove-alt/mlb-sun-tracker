@@ -91,6 +91,18 @@ export const classifyCubsSection: Classifier = (id) => {
   return section('standing');
 };
 
+/** Oracle Park, by the club's numbering (chart-points/giants.ts). */
+export const classifyGiantsSection: Classifier = (id) => {
+  const n = Number(id);
+  if (n >= 101 && n <= 135) return section('lower', 'none', `Field / Promenade Level ${id}`);
+  if (n >= 136 && n <= 144) return section('lower', 'none', `Bleachers ${id}`);
+  if (n >= 145 && n <= 152) return section('lower', 'none', `Arcade ${id}`);
+  if (n >= 202 && n <= 234) return section('club', 'none', `Club Level ${id}`);
+  if (n >= 1 && n <= 61) return section('suite', 'full', `Suite Level ${id}`);
+  if (n >= 302 && n <= 336) return section('upper', 'none', `View Level ${id}`);
+  return null;
+};
+
 export const classifyDodgersSection: Classifier = (id) => {
   if (/^STE/.test(id)) return section('suite', 'full');
   if (/DG$|FD$/.test(id)) return section('field');

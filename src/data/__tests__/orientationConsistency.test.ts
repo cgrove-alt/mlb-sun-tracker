@@ -53,6 +53,11 @@ describe('MLB orientation consistency', () => {
     expect(source).not.toMatch(/ORIENTATION\w*\s*=\s*[\d.]/);
   });
 
+  it('the hand-typed seat maps read orientations from stadiums.ts too', () => {
+    const source = fs.readFileSync(path.join(__dirname, '../sections/mlb/sourcedStaticParkSeeds.ts'), 'utf8');
+    expect(source).not.toMatch(/Orientation\s*=\s*[\d.]/);
+  });
+
   it('Yankee Stadium points east-northeast (≈75°), not 55°', () => {
     expect(MLB_STADIUMS.find((s) => s.id === 'yankees')?.orientation).toBe(75);
   });

@@ -38,6 +38,8 @@ export interface OrientationMeasurement {
   orientationDeg: number;
   /** Honest ± uncertainty of `orientationDeg`. */
   precisionDeg: number;
+  /** 'blue-cast' for flights whose grass reads as blue as it is green. */
+  grassRule?: 'blue-cast';
   measuredOn: string;
   notes?: string;
 }
@@ -132,6 +134,30 @@ export const ORIENTATION_MEASUREMENTS: readonly OrientationMeasurement[] = [
       'Infield mirror axis 38.5° (94.1% overlap). The infield grass square\'s edges give 37.55°, 35.99° (edge partly in a stand\'s shadow), ' +
       '38.89° and 37.68° (mean 37.53°). Mean 38.1°, recorded as 38° ±1°. Replaces 30° (ballparks.com lists 30°), 8° low; the stands in ' +
       'the wider image run at about 80° (first base) and 358° (third base), consistent with 38°.',
+  },
+  {
+    stadiumId: 'giants',
+    imageCenter: { latitude: 37.7786, longitude: -122.3893 },
+    imageHalfWidthMeters: 200,
+    imageSizePx: 1000,
+    naipTile: 'm_3712213_se_10_060_20220518',
+    acquired: '2022-05-18',
+    nativeResolutionMeters: 0.6,
+    grassRule: 'blue-cast',
+    homeSeedPx: [365, 563],
+    moundSeedPx: [410, 560],
+    homeCenterPx: [365, 563],
+    moundCenterPx: [410, 560],
+    bearingHomeToMoundDeg: 86.19,
+    bearingInfieldSymmetryDeg: 85.4,
+    orientationDeg: 86,
+    precisionDeg: 1,
+    measuredOn: '2026-11-11',
+    notes:
+      'Measured on the 400 m wide image (the USGS server timed out on a close-up; the source is 0.6 m either way). This flight has a ' +
+      'blue cast (grass 95, 115, 115), hence grassRule. Home plate is under a cover; home → mound 86.19°. Infield mirror axis 85.4° ' +
+      '(81.6% overlap). The infield grass square\'s edges give 85.27°, 84.49°, 86.22° and 86.41° (mean 85.6°). Mean 85.7°, recorded as ' +
+      '86° ±1°. Replaces 87° (ballparks.com lists 90°).',
   },
 ];
 

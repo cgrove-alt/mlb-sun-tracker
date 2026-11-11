@@ -3,6 +3,7 @@ import { dodgersSections, DODGERS_AERIAL_CONTROL } from '../dodgers';
 import { dodgersChartPoints } from '../chart-points/dodgers';
 import { cubsSections, CUBS_AERIAL_CONTROL } from '../cubs';
 import { cubsChartPoints } from '../chart-points/cubs';
+import { giantsSections } from '../giants';
 import { aerialChartFit } from '../parkSectionBuilder';
 import { getStadiumOrientation } from '../../../stadiums';
 
@@ -185,5 +186,40 @@ describe('Wrigley Field stand directions (pinned to the 2019 aerial photo)', () 
 
   it.each(['511', '513', '515'])('right-field bleacher %s faces east-northeast', (id) => {
     expect(diff(stand(id), 74)).toBeLessThan(15);
+  });
+});
+
+describe('Oracle Park stand directions (from the 2022 aerial photo)', () => {
+  // The club's drawing is a schematic, so the straight runs take their
+  // facing from the photo: third-base stands' edge 54° (facing 324°),
+  // first-base about 122° (facing 212°), left-field wall 136° (bleachers
+  // facing 46°), center-field wall north–south and right-field wall 54°
+  // (arcade facing 90° and 144°).
+  const byId = new Map(giantsSections.map((s) => [s.id, s]));
+  const stand = (id: string) => {
+    const value = byId.get(id)?.standCompass;
+    if (value === undefined) throw new Error(`No stand direction for ${id}`);
+    return value;
+  };
+
+  it('gives every seating section a stand direction', () => {
+    expect(giantsSections.filter((s) => s.standCompass === undefined).map((s) => s.id)).toEqual([]);
+  });
+
+  it.each(['127', '131', '135', '228', '232', '330', '336', '50', '61'])('third-base section %s faces 324°', (id) => {
+    expect(stand(id)).toBe(324);
+  });
+
+  it.each(['101', '104', '204', '208', '304', '310', '5', '12'])('first-base section %s faces 212°', (id) => {
+    expect(stand(id)).toBe(212);
+  });
+
+  it.each(['115', '116', '117', '215', '216', '315', '317'])('behind-home section %s faces away from center field', (id) => {
+    expect(diff(stand(id), getStadiumOrientation('giants') + 180)).toBeLessThan(15);
+  });
+
+  it('the curve behind home turns steadily between the two runs', () => {
+    const order = ['106', '108', '110', '113', '115', '117', '119', '122', '124'].map(stand);
+    for (let i = 1; i < order.length; i++) expect(order[i]).toBeGreaterThanOrEqual(order[i - 1] - 5);
   });
 });

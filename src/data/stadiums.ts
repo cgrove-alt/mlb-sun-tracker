@@ -166,7 +166,7 @@ export const MLB_STADIUMS: Stadium[] = [
     state: 'CA',
     latitude: 37.7786,
     longitude: -122.3893,
-    orientation: 87,
+    orientation: 86,
     capacity: 41915,
     roof: 'open',
     timezone: 'America/Los_Angeles'

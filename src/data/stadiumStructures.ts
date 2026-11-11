@@ -731,11 +731,135 @@ const WRIGLEY: StadiumStructure = {
   reviewedOn: '2026-11-11',
 };
 
+const rysOracle = (path: string) => `https://www.rateyourseats.com/oracle-park/seating/${path}`;
+const RYS_ORACLE = rysOracle('shaded-covered-seats');
+
+/** Seating ring of an Oracle Park section, by the club's numbering. */
+export function oracleTier(id: string): string | null {
+  const n = Number(id);
+  if (!Number.isInteger(n)) return null;
+  if (n >= 1 && n <= 61) return 'suite';
+  if (n >= 101 && n <= 135) return 'lower';
+  if (n >= 136 && n <= 144) return 'bleachers';
+  if (n >= 145 && n <= 152) return 'arcade';
+  if (n >= 202 && n <= 234) return 'club';
+  if (n >= 302 && n <= 336) return 'view';
+  return null;
+}
+
+/**
+ * Oracle Park (2000). A deep lower bowl (rows to 41) whose back rows sit
+ * under the club level, the club level under the View level, and a roof
+ * over the View level's last seven rows. Rows and covered rows are from Rate
+ * Your Seats' section pages. No source publishes the deck heights, so every
+ * height is estimated by stacking the decks.
+ */
+const ORACLE: StadiumStructure = {
+  stadiumId: 'giants',
+  // Far rim: the View level's roof (~125 ft) about 480 ft from the outfield seats.
+  park: { roof: 'open', farRimHeightFt: 125, fieldCrossingFt: 480 },
+  tierOf: oracleTier,
+  tiers: {
+    lower: {
+      label: 'Lower level (100s)',
+      // Rows 1–41 (sourced), covered from row 29 by the club level ("row
+      // 30 and above in most sections"; section pages say 29). The corner
+      // sections are shorter: 101 has rows 1–21 (none covered), 133 rows
+      // 28–39, 135 rows 4–39. Estimated: front row ~3 ft, 20° rake (~1 ft a
+      // row), club level underside ~40 ft.
+      stand: {
+        rows: 41,
+        frontRowHeightFt: 3,
+        rakeDeg: 20,
+        backHeightFt: 50,
+        overhang: { coveredFromRow: 29, soffitHeightFt: 40 },
+      },
+      sections: {
+        '101': { rows: 22, noCover: true },
+        '133': { rows: 11, frontRowHeightFt: 30, overhang: { coveredFromRow: 2, soffitHeightFt: 40 } },
+        '135': { rows: 32, frontRowHeightFt: 6, overhang: { coveredFromRow: 26, soffitHeightFt: 40 } },
+      },
+      heightsSourced: false,
+      coverSourced: true,
+      sources: [rysOracle('sections/101'), rysOracle('sections/103'), rysOracle('sections/108'), rysOracle('sections/121'), rysOracle('sections/127'), rysOracle('sections/133'), rysOracle('sections/135'), RYS_ORACLE],
+    },
+    bleachers: {
+      label: 'Bleachers',
+      // Rows 1–26, uncovered (sourced). Estimated: front row ~10 ft over the
+      // left-field wall, 25° rake, a ~45 ft back wall.
+      stand: { rows: 26, frontRowHeightFt: 10, rakeDeg: 25, backHeightFt: 45 },
+      heightsSourced: false,
+      coverSourced: true,
+      sources: [rysOracle('sections/136'), rysOracle('sections/140'), rysOracle('sections/143'), RYS_ORACLE],
+    },
+    arcade: {
+      label: 'Arcade',
+      // One to seven rows on top of the 25 ft right-field wall, uncovered
+      // (sourced; 145 has rows 1–7, 150 and 152 rows 1–3).
+      stand: { rows: 3, frontRowHeightFt: 25, rakeDeg: 10, backHeightFt: 32 },
+      sections: { '145': { rows: 7 }, '146': { rows: 7 }, '147': { rows: 7 } },
+      heightsSourced: false,
+      coverSourced: true,
+      sources: [rysOracle('sections/145'), rysOracle('sections/150'), rysOracle('sections/152'), 'https://en.wikipedia.org/wiki/Oracle_Park'],
+    },
+    club: {
+      label: 'Club level',
+      // Rows A–M (12, no I), covered from row K (10th) by the View level
+      // (sourced); 234 (rows A–H) is covered throughout. Estimated: front
+      // row ~48 ft, 25° rake, View level underside ~68 ft.
+      stand: {
+        rows: 12,
+        frontRowHeightFt: 48,
+        rakeDeg: 25,
+        backHeightFt: 75,
+        overhang: { coveredFromRow: 10, soffitHeightFt: 68 },
+      },
+      sections: {
+        '205': { rows: 10 },
+        '215': { rows: 8, noCover: true },
+        '234': { rows: 8, overhang: { coveredFromRow: 1, soffitHeightFt: 60 } },
+      },
+      heightsSourced: false,
+      coverSourced: true,
+      sources: [rysOracle('sections/202'), rysOracle('sections/205'), rysOracle('sections/210'), rysOracle('sections/215'), rysOracle('sections/225'), rysOracle('sections/234'), RYS_ORACLE],
+    },
+    view: {
+      label: 'View level (300s)',
+      // Rows A–D then 1–18 (22; 315 and 326 have A–G, 0–18: 26), the roof
+      // covering rows 12–18, the last seven (sourced). Estimated: front row
+      // ~80 ft, 32° rake, roof underside ~115 ft, roof top ~125 ft.
+      stand: {
+        rows: 22,
+        frontRowHeightFt: 80,
+        rakeDeg: 32,
+        backHeightFt: 125,
+        overhang: { coveredFromRow: 16, soffitHeightFt: 115 },
+      },
+      sections: {
+        '315': { rows: 26, overhang: { coveredFromRow: 20, soffitHeightFt: 121 } },
+        '326': { rows: 26, overhang: { coveredFromRow: 20, soffitHeightFt: 121 } },
+      },
+      heightsSourced: false,
+      coverSourced: true,
+      sources: [rysOracle('sections/302'), rysOracle('sections/308'), rysOracle('sections/315'), rysOracle('sections/326'), rysOracle('sections/336'), RYS_ORACLE],
+    },
+    suite: {
+      label: 'Suites',
+      stand: { rows: 1, frontRowHeightFt: 62, rakeDeg: 0, backHeightFt: 74, overhang: { coveredFromRow: 1, soffitHeightFt: 68 } },
+      heightsSourced: false,
+      coverSourced: true,
+      sources: ['https://www.mlb.com/giants/ballpark/seat-map'],
+    },
+  },
+  reviewedOn: '2026-11-11',
+};
+
 export const STADIUM_STRUCTURES: Readonly<Record<string, StadiumStructure>> = {
   yankees: YANKEES,
   redsox: FENWAY,
   dodgers: DODGERS,
   cubs: WRIGLEY,
+  giants: ORACLE,
 };
 
 export function getStadiumStructure(stadiumId: string): StadiumStructure | undefined {

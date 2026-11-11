@@ -55,7 +55,11 @@ async function measure(m: OrientationMeasurement) {
   const isGrass = (x: number, y: number) => {
     const i = (y * W + x) * C;
     const [r, g, b] = [data[i], data[i + 1], data[i + 2]];
-    return g > r + 8 && g > b + 8;
+    // Grass is clearly greener than red and blue. Some flights have a blue
+    // cast that lifts grass's blue to its green (Oracle Park 2022: 95, 115,
+    // 115); those measurements set grassRule 'blue-cast', where blue is
+    // only required not to dominate.
+    return m.grassRule === 'blue-cast' ? g > r + 8 && g >= b - 10 : g > r + 8 && g > b + 8;
   };
 
   const centroid = (seed: [number, number], radiusMeters: number): [number, number] => {

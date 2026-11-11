@@ -33,7 +33,9 @@ const PARKS: readonly ParkExpectation[] = [
   { id: 'cubs', count: 177, distinctiveIds: ['423R', 'A20', 'BLCHRGA'] },
   { id: 'diamondbacks', count: 149, distinctiveIds: ['A', '145AW', '320W'] },
   { id: 'dodgers', count: 312, distinctiveIds: ['31BL', 'OWNERS', 'FSRO'] },
-  { id: 'giants', count: 174, distinctiveIds: ['1', '101', '234', '336'] },
+  // 172: the club's seat map (and Rate Your Seats) has no 111 or 120; the
+  // old hand-typed list assumed every number from 101 to 152.
+  { id: 'giants', count: 172, distinctiveIds: ['1', '101', '234', '336'] },
   { id: 'guardians', count: 272, distinctiveIds: ['179', 'STE308', '1012'] },
   { id: 'mariners', count: 169, distinctiveIds: ['102', '219TB1', 'Power-Alley'] },
   { id: 'marlins', count: 160, distinctiveIds: ['SEC1', 'SEC228', 'SEC327'] },

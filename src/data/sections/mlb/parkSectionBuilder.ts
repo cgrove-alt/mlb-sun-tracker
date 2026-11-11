@@ -130,14 +130,20 @@ export interface ChartSeedConfig {
    */
   aerialControl?: readonly AerialControlPoint[];
   /**
-   * Straight stand runs measured on the aerial photo. A section of one of
-   * `rings` whose bearing from home plate falls in [fromBearingDeg,
-   * toBearingDeg] faces `facingDeg` (square to the run's front edge), taken
-   * from the photo instead of from the club's drawing. Needed where the
+   * The RMS miss allowed at the control points (default
+   * AERIAL_FIT_MAX_RMS_M). Raise it only for a schematic club drawing,
+   * where no map fits to 5 m; its stand directions must then come from
+   * standRuns measured on the photo.
+   */
+  aerialMaxRmsM?: number;
+  /**
+   * Straight stand runs measured on the aerial photo (see StandRun). A
+   * section in a run faces `facingDeg` (square to the run's front edge),
+   * taken from the photo instead of from the club's drawing. Needed where the
    * drawing is not to scale: Wrigley's map draws the two foul-side stands
    * 90° apart; on the ground they are 75° apart.
    */
-  standRuns?: readonly { rings: readonly string[]; fromBearingDeg: number; toBearingDeg: number; facingDeg: number }[];
+  standRuns?: readonly StandRun[];
   /**
    * Which seating ring a section belongs to, for fitting stand directions.
    * Defaults to the section's level; give it when two physical rings share a
@@ -146,6 +152,15 @@ export interface ChartSeedConfig {
   tierOf?: (id: string, level: DetailedSection['level']) => string;
   classify: (id: string, point: ChartSectionPoint) => ChartSectionMeta | null;
 }
+
+/**
+ * A straight stand run measured on the photo: either the sections of some
+ * rings within a range of bearings from home plate, or (where the club's
+ * drawing bends the bearings) a list of section ids.
+ */
+export type StandRun =
+  | { rings: readonly string[]; fromBearingDeg: number; toBearingDeg: number; facingDeg: number }
+  | { ids: readonly string[]; facingDeg: number };
 
 export interface AerialControlPoint {
   ids: readonly string[];
@@ -507,7 +522,7 @@ export function chartSeeds(
   let aerialFrame: ChartFrame | undefined;
   if (config.aerialControl) {
     const fit = aerialChartFit(sourcePoints, config.aerialControl);
-    if (fit.rmsM > AERIAL_FIT_MAX_RMS_M) {
+    if (fit.rmsM > (config.aerialMaxRmsM ?? AERIAL_FIT_MAX_RMS_M)) {
       throw new Error(`Aerial calibration misses its control points by ${fit.rmsM.toFixed(1)} m RMS`);
     }
     // Ground metres, y-down, home plate at the origin, axis toward center field.
@@ -642,8 +657,9 @@ export function chartSeeds(
   const inRun = (bearing: number, from: number, to: number) =>
     from <= to ? bearing >= from && bearing <= to : bearing >= from || bearing <= to;
   return provisional.map((seed, index) => {
-    const run = config.standRuns?.find((r) =>
-      r.rings.includes(positions[index].tier) && inRun(seed.compass, r.fromBearingDeg, r.toBearingDeg));
+    const run = config.standRuns?.find((r) => ('ids' in r
+      ? r.ids.includes(seed.id)
+      : r.rings.includes(positions[index].tier) && inRun(seed.compass, r.fromBearingDeg, r.toBearingDeg)));
     return { ...seed, standCompass: run ? run.facingDeg : stands[index] };
   });
 }
