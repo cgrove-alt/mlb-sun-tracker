@@ -6,30 +6,8 @@ declare global {
   }
 }
 
-// Google Analytics 4 measurement ID
-const GA_MEASUREMENT_ID = 'G-JXGEKF957C';
-
-// Initialize Google Analytics
-export const initGA = () => {
-  if (typeof window !== 'undefined' && !window.gtag) {
-    window.dataLayer = window.dataLayer || [];
-    window.gtag = function() {
-      window.dataLayer.push(arguments);
-    };
-    window.gtag('js', new Date());
-    window.gtag('config', GA_MEASUREMENT_ID);
-  }
-};
-
-// Track page views
-export const trackPageView = (url: string, title?: string) => {
-  if (typeof window !== 'undefined' && window.gtag) {
-    window.gtag('config', GA_MEASUREMENT_ID, {
-      page_path: url,
-      page_title: title || document.title
-    });
-  }
-};
+// GA4 itself is loaded and configured by components/GoogleAnalyticsLazy.tsx,
+// which owns the measurement ID. These helpers only send events.
 
 // Track custom events
 export const trackEvent = (

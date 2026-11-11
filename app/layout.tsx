@@ -7,7 +7,6 @@ import '../src/styles/app-utilities.css';
 import type { Metadata } from 'next';
 import { VENUE_COUNT } from '../src/data/venueCount';
 import { Inter } from 'next/font/google';
-import { Suspense } from 'react';
 import GoogleAnalyticsLazy from '../components/GoogleAnalyticsLazy';
 import { CriticalStylesInline } from './critical-styles-inline';
 import StickyTopNav from '../components/StickyTopNav';
@@ -118,7 +117,6 @@ export default function RootLayout({
         <meta name="google-adsense-account" content="ca-pub-3681192675377295" />
 
         {/* Resource hints for performance */}
-        <link rel="preconnect" href="https://www.googletagmanager.com" />
         <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
         <link rel="dns-prefetch" href="https://api.open-meteo.com" />
         <link rel="dns-prefetch" href="https://statsapi.mlb.com" />
@@ -126,9 +124,7 @@ export default function RootLayout({
       </head>
       <body className={inter.className}>
         <SkipLinks />
-        <Suspense fallback={null}>
-          <GoogleAnalyticsLazy />
-        </Suspense>
+        <GoogleAnalyticsLazy />
         <ServiceWorkerRegistration />
         <DataRetentionInitializer />
         <StickyTopNav />
