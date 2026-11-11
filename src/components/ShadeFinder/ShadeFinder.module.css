@@ -99,7 +99,9 @@
 .strip { display: grid; grid-template-columns: repeat(7, 1fr); gap: 3px; margin: 0 0 12px; padding: 0; list-style: none; }
 .strip li { display: grid; gap: 2px; text-align: center; }
 .cell { display: block; height: 14px; border-radius: 3px; }
-.cellLabel { font-size: 11px; color: #4b5563; white-space: nowrap; overflow: hidden; }
+/* Wraps ("1:35" over "PM") when a cell is too narrow, e.g. 375px phones,
+   instead of clipping to "1:35 PN". */
+.cellLabel { font-size: 11px; line-height: 1.2; color: #4b5563; }
 
 .shareRow { display: flex; flex-wrap: wrap; align-items: center; gap: 10px; }
 .shareNote { font-size: 13px; color: #4b5563; word-break: break-all; }
