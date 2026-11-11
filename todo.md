@@ -624,6 +624,20 @@ Medium or Low confidence and their blog posts stay unpublished.
             parks publish a master.json with every section's rows and seats:
             use it for row counts.
 - [ ] 6.2 Batch 2: Braves, Cardinals, Nationals, Orioles, Padres.
+      - [x] Orientations, all measured on NAIP with 3+ methods: Truist 159°
+            (was 135°, 24° low), Busch 62° ±1.5° (was 60°; softer photo),
+            Nationals 29° (was 30°), Camden 31° (was 30°; foul poles exactly
+            90° apart), Petco 0° (confirmed). New 'slight-blue-cast' grass
+            rule for Nationals; the consistency test compares compass bearings.
+      - [x] Truist Park: club drawing (a perspective view) pinned with 8
+            controls (1.6 m RMS), sections counted between aisles on the photo.
+            Stand directions from level lines on the photo: first-base side
+            286° (8° short of square: foul territory narrows), third-base 24°,
+            arcs behind home centred on home plate, corner fans, outfield walls.
+            Rows and covered rows from RYS section pages. 117 checks. Not
+            reproduced: 215–218 rows 3+ "good shade" in a 1:35 PM game (true at
+            4:10), 212 "in the shade" (cover unsourced), 220 rows 5+ late
+            afternoon (only from the 6th inning). 2019 USGS lidar exists.
 - [ ] 6.3 Batch 3: Angels, Rockies, Royals, Reds, Pirates.
 - [ ] 6.4 Batch 4: Tigers, Guardians, Twins, White Sox, Athletics (Sutter
       Health Park).

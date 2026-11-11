@@ -1286,6 +1286,279 @@ const CBP: StadiumStructure = {
   reviewedOn: '2026-11-11',
 };
 
+const rysTruist = (path: string) => `https://www.rateyourseats.com/truist-park/seating/${path}`;
+const RYS_TRUIST = rysTruist('shaded-covered-seats');
+const truistSections = (...ids: string[]) => ids.map((n) => rysTruist(`sections/${n}`));
+
+/** Seating ring of a Truist Park chart section. */
+export function truistTier(id: string): string | null {
+  // Club tables (T) and Lexus Premium Boxes (B): no source says what covers them.
+  if (!/^\d+$/.test(id)) return null;
+  const n = Number(id);
+  if (n <= 9) return 'clubBoxes';
+  if (n >= 17 && n <= 34) return 'fieldInfield';
+  if (n <= 42) return 'fieldBoxes';
+  if (n <= 109) return 'rightCorner';
+  if (n === 120 || n === 131) return 'hundredCoverUnsourced';
+  if (n >= 123 && n <= 128) return 'executive';
+  if (n <= 143) return 'hundred';
+  if (n <= 145) return 'leftCorner';
+  if (n <= 151) return 'homeRunPorch';
+  if (n <= 155 || n === 252) return 'pen';
+  if (n <= 160) return 'chopHouse';
+  if (n <= 212) return 'twoHundredCorner';
+  if (n >= 220 && n <= 231) return 'xfinityClub';
+  if (n >= 244 && n <= 246) return 'terrace';
+  if (n <= 243) return 'twoHundred';
+  if (n >= 324 && n <= 328) return 'vistaHome';
+  if (n >= 344 && n <= 347) return 'threeCorner';
+  if (n <= 343) return 'threeHundred';
+  if (n <= 412) return 'fourHundredOpen';
+  return 'fourHundred';
+}
+
+// The lower bowl along the lines: 13 field rows, a cross-aisle, then the
+// 100s, whose rows 8–20 are under the 200 level (sourced; on the photo only
+// the 100s' first ~7 rows show beside the cross-aisle). Estimated: field
+// front row ~3 ft, 18° rake; 100s front ~15 ft, 22° rake (last row ~36 ft);
+// 200-level deck underside ~44 ft, its front ~48 ft high about 24 ft behind
+// the field rows' last row.
+const TRUIST_FIELD_BACK = { backHeightFt: 48, backSetbackFt: 24 };
+const TRUIST_100: StandProfile = {
+  rows: 20,
+  frontRowHeightFt: 15,
+  rakeDeg: 22,
+  backHeightFt: 44,
+  overhang: { coveredFromRow: 8, soffitHeightFt: 44 },
+};
+
+/**
+ * Truist Park (2017). Field rows and the 100s form the lower bowl, then the
+ * 200 level (club), the 300s (Vista) and the 400s (Grandstand) stacked under
+ * a roof canopy that covers the 400s from the first row. The site is tight,
+ * so the decks stack high. Rows and covered rows are Rate Your Seats'
+ * section pages (row labels converted to counts on the seat map). No source
+ * publishes the deck heights (the canopy's engineer gives only its area and
+ * that it shades ~60% of fans), so every height is estimated by stacking
+ * the decks. A 2019 USGS lidar scan of the park exists (see
+ * stadiumGeometryEvidence.ts) and can replace these estimates.
+ */
+const TRUIST: StadiumStructure = {
+  stadiumId: 'braves',
+  // Far rim: the roof canopy (~142 ft) about 550 ft across the field.
+  park: { roof: 'open', farRimHeightFt: 142, fieldCrossingFt: 550 },
+  tierOf: truistTier,
+  tiers: {
+    clubBoxes: {
+      label: 'Truist Club boxes (1–9)',
+      // Rows 1–4 or 1–5 at the backstop, uncovered. Estimated: front row
+      // ~2 ft, 12° rake; the bowl rises behind them to the 200 level's front
+      // (~48 ft) about 46 ft back.
+      stand: { rows: 4, frontRowHeightFt: 2, rakeDeg: 12, backHeightFt: 48, backSetbackFt: 46 },
+      rowsFromMap: true,
+      heightsSourced: false,
+      coverSourced: true,
+      sources: [RYS_TRUIST, ...truistSections('1', '5', '9')],
+    },
+    fieldInfield: {
+      label: 'Field level (17–34)',
+      // Rows 6–13 behind the dugouts and the club boxes, uncovered.
+      // Estimated: row 6 ~6 ft, 18° rake.
+      stand: { rows: 8, frontRowHeightFt: 6, rakeDeg: 18, ...TRUIST_FIELD_BACK },
+      rowsFromMap: true,
+      heightsSourced: false,
+      coverSourced: true,
+      sources: [RYS_TRUIST, ...truistSections('17', '22', '25', '30', '34')],
+    },
+    fieldBoxes: {
+      label: 'Field level (10–16, 35–42)',
+      // Rows 1–13 (1–15 in 10 and 42), uncovered.
+      stand: { rows: 13, frontRowHeightFt: 3, rakeDeg: 18, ...TRUIST_FIELD_BACK },
+      rowsFromMap: true,
+      heightsSourced: false,
+      coverSourced: true,
+      sources: [RYS_TRUIST, ...truistSections('10', '12', '16', '35', '42')],
+    },
+    hundred: {
+      label: 'Field level (100s)',
+      // Rows 1–20; 110–118, 122, 130 and 133–143 are under cover from row 8.
+      stand: TRUIST_100,
+      rowsFromMap: true,
+      heightsSourced: false,
+      coverSourced: true,
+      sources: [RYS_TRUIST, ...truistSections('110', '114', '118', '122', '130', '133', '138', '143')],
+    },
+    hundredCoverUnsourced: {
+      label: 'Field level (100s)',
+      // 120 and 131: Rate Your Seats says only that their back rows (7+,
+      // 16+) are shaded late in the afternoon, not which rows are covered.
+      stand: TRUIST_100,
+      rowsFromMap: true,
+      heightsSourced: false,
+      coverSourced: false,
+      sources: truistSections('120', '131'),
+    },
+    executive: {
+      label: 'Executive seats (123–128)',
+      // Rows 1–11 behind home under the club level; no source gives the
+      // covered rows (only "rows 8+ shaded late afternoon"), so the check
+      // tries both. Estimated: front ~14 ft, 22° rake, deck underside ~36 ft.
+      stand: { rows: 11, frontRowHeightFt: 14, rakeDeg: 22, backHeightFt: 36, overhang: { coveredFromRow: 8, soffitHeightFt: 36 } },
+      rowsFromMap: true,
+      heightsSourced: false,
+      coverSourced: false,
+      sources: truistSections('123', '125', '127', '128'),
+    },
+    rightCorner: {
+      label: 'Right-field corner (107–109)',
+      // 107 rows 1–8 and 109 rows 1–6 open; 108 (rows 1–10) all under
+      // cover. Estimated: front ~15 ft, 22° rake, the 200-level corner
+      // (~44 ft) behind.
+      stand: { rows: 8, frontRowHeightFt: 15, rakeDeg: 22, backHeightFt: 44 },
+      sections: { '108': { overhang: { coveredFromRow: 1, soffitHeightFt: 30 } } },
+      rowsFromMap: true,
+      heightsSourced: false,
+      coverSourced: true,
+      sources: truistSections('107', '108', '109'),
+    },
+    leftCorner: {
+      label: 'Left-field corner (144–145)',
+      // Rows 9–27; Rate Your Seats says row 12 sits under the 200 level's
+      // overhang but its two statements disagree on how many rows, so the
+      // check tries both. Estimated: front ~12 ft, 22° rake.
+      stand: { rows: 19, frontRowHeightFt: 12, rakeDeg: 22, backHeightFt: 44, overhang: { coveredFromRow: 4, soffitHeightFt: 40 } },
+      rowsFromMap: true,
+      heightsSourced: false,
+      coverSourced: false,
+      sources: truistSections('144', '145'),
+    },
+    homeRunPorch: {
+      label: 'Home Run Porch (146–151)',
+      // Rows 1–27 or 1–29, uncovered ("significant sun exposure").
+      // Estimated: front ~9 ft above the wall, 20° rake, the porch's back
+      // wall ~45 ft.
+      stand: { rows: 29, frontRowHeightFt: 9, rakeDeg: 20, backHeightFt: 45 },
+      rowsFromMap: true,
+      heightsSourced: false,
+      coverSourced: true,
+      sources: [...truistSections('146', '148', '151'), RYS_TRUIST],
+    },
+    pen: {
+      label: 'The Pen (152–155)',
+      // Rows 7–24 or 1–24, uncovered. Estimated: front ~8 ft, 20° rake, the
+      // structure behind ~40 ft.
+      stand: { rows: 24, frontRowHeightFt: 8, rakeDeg: 20, backHeightFt: 40 },
+      rowsFromMap: true,
+      heightsSourced: false,
+      coverSourced: true,
+      sources: truistSections('152', '154', '155'),
+    },
+    chopHouse: {
+      label: 'Chop House (156–160)',
+      // Rows 1–5 past the right-field wall, uncovered. Estimated: front
+      // ~10 ft, 15° rake, the two-storey Chop House (~30 ft) right behind.
+      stand: { rows: 5, frontRowHeightFt: 10, rakeDeg: 15, backHeightFt: 30 },
+      rowsFromMap: true,
+      heightsSourced: false,
+      coverSourced: true,
+      sources: truistSections('156', '158', '160'),
+    },
+    twoHundredCorner: {
+      label: '200 level, right-field corner (210–212)',
+      // Rows 1–12. Left out of Rate Your Seats' covered list, yet its 212
+      // page calls them shaded seats for a day game, so the check tries
+      // them with and without a deck overhead. Estimated: front ~48 ft, 24°
+      // rake, the 300-level corner ~78 ft behind.
+      stand: { rows: 12, frontRowHeightFt: 48, rakeDeg: 24, backHeightFt: 78, backSetbackFt: 10 },
+      rowsFromMap: true,
+      heightsSourced: false,
+      coverSourced: false,
+      sources: truistSections('210', '211', '212'),
+    },
+    twoHundred: {
+      label: '200 level',
+      // Rows 1–19; 213–218 and 233–243 under cover from row 14 (sourced).
+      // Estimated: front ~48 ft, 24° rake, 300-level underside ~78 ft.
+      stand: { rows: 19, frontRowHeightFt: 48, rakeDeg: 24, backHeightFt: 78, overhang: { coveredFromRow: 14, soffitHeightFt: 78 } },
+      rowsFromMap: true,
+      heightsSourced: false,
+      coverSourced: true,
+      sources: [RYS_TRUIST, ...truistSections('213', '214', '215', '239', '243')],
+    },
+    xfinityClub: {
+      label: 'Xfinity Club (220–231)',
+      // Rows 1–7 (220: 1–12, 231: 1–11) in front of the club's tables; no
+      // source gives covered rows, so the check tries both. Estimated:
+      // front ~48 ft, 20° rake, the 300 level (~78 ft) behind the tables.
+      stand: { rows: 7, frontRowHeightFt: 48, rakeDeg: 20, backHeightFt: 78, backSetbackFt: 25 },
+      rowsFromMap: true,
+      heightsSourced: false,
+      coverSourced: false,
+      sources: truistSections('220', '222', '225', '231'),
+    },
+    terrace: {
+      label: 'Hank Aaron Terrace (244–246)',
+      // Rows 1–3 or 1–5, uncovered. Estimated as the 200 level's front.
+      stand: { rows: 5, frontRowHeightFt: 48, rakeDeg: 10, backHeightFt: 78, backSetbackFt: 10 },
+      rowsFromMap: true,
+      heightsSourced: false,
+      coverSourced: true,
+      sources: truistSections('244', '245', '246'),
+    },
+    threeHundred: {
+      label: '300 level (Vista)',
+      // Rows 1–13; 312–323 and 329–343 under cover from row 10 (sourced).
+      // Estimated: front ~82 ft, 28° rake, 400-level underside ~106 ft.
+      stand: { rows: 13, frontRowHeightFt: 82, rakeDeg: 28, backHeightFt: 106, overhang: { coveredFromRow: 10, soffitHeightFt: 106 } },
+      rowsFromMap: true,
+      heightsSourced: false,
+      coverSourced: true,
+      sources: [RYS_TRUIST, ...truistSections('312', '318', '323', '329', '337', '343')],
+    },
+    vistaHome: {
+      label: 'Vista home plate (324–328)',
+      // Rows 1–7 behind home; no source gives covered rows. Estimated:
+      // front ~82 ft, 28° rake, the 400 level (~110 ft) just behind.
+      stand: { rows: 7, frontRowHeightFt: 82, rakeDeg: 28, backHeightFt: 110, backSetbackFt: 10 },
+      rowsFromMap: true,
+      heightsSourced: false,
+      coverSourced: false,
+      sources: truistSections('324', '325', '326'),
+    },
+    threeCorner: {
+      label: '300 level, left-field corner (344–347)',
+      // Rows 1–13; left out of Rate Your Seats' covered list, which stops
+      // at 343, but no source says they are open, so the check tries both.
+      stand: { rows: 13, frontRowHeightFt: 82, rakeDeg: 28, backHeightFt: 106 },
+      rowsFromMap: true,
+      heightsSourced: false,
+      coverSourced: false,
+      sources: [RYS_TRUIST, ...truistSections('344', '345', '347')],
+    },
+    fourHundredOpen: {
+      label: '400 level, right-field corner (410–412)',
+      // Rows 1–12, outside the canopy (sourced: not covered; a reviewer
+      // in 411: "no shade at all"). Estimated: front ~110 ft, 32° rake.
+      stand: { rows: 12, frontRowHeightFt: 110, rakeDeg: 32, backHeightFt: 132 },
+      rowsFromMap: true,
+      heightsSourced: false,
+      coverSourced: true,
+      sources: truistSections('410', '411', '412'),
+    },
+    fourHundred: {
+      label: '400 level (Grandstand)',
+      // Rows 1–12, all under the roof canopy (sourced, 413–444).
+      // Estimated: front ~110 ft, 32° rake, canopy underside ~137 ft.
+      stand: { rows: 12, frontRowHeightFt: 110, rakeDeg: 32, backHeightFt: 137, overhang: { coveredFromRow: 1, soffitHeightFt: 137 } },
+      rowsFromMap: true,
+      heightsSourced: false,
+      coverSourced: true,
+      sources: [RYS_TRUIST, ...truistSections('413', '420', '426', '433', '437', '444')],
+    },
+  },
+  reviewedOn: '2026-11-11',
+};
+
 export const STADIUM_STRUCTURES: Readonly<Record<string, StadiumStructure>> = {
   yankees: YANKEES,
   redsox: FENWAY,
@@ -1294,6 +1567,7 @@ export const STADIUM_STRUCTURES: Readonly<Record<string, StadiumStructure>> = {
   giants: ORACLE,
   mets: CITI,
   phillies: CBP,
+  braves: TRUIST,
 };
 
 export function getStadiumStructure(stadiumId: string): StadiumStructure | undefined {

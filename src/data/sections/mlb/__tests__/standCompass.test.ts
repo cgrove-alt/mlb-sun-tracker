@@ -8,6 +8,8 @@ import { metsSections, METS_AERIAL_CONTROL } from '../mets';
 import { metsChartPoints } from '../chart-points/mets';
 import { philliesSections, PHILLIES_AERIAL_CONTROL } from '../phillies';
 import { philliesChartPoints } from '../chart-points/phillies';
+import { bravesSections, BRAVES_AERIAL_CONTROL } from '../braves';
+import { bravesChartPoints } from '../chart-points/braves';
 import { aerialChartFit } from '../parkSectionBuilder';
 import { getStadiumOrientation } from '../../../stadiums';
 
@@ -296,5 +298,51 @@ describe('Citizens Bank Park stand directions (measured on the 2022 aerial photo
     const mirror = (b: number) => (2 * (getStadiumOrientation('phillies') + 180) - b + 360) % 360;
     expect(diff(stand('108'), mirror(stand('139')))).toBeLessThan(3);
     expect(diff(stand('111'), mirror(stand('136')))).toBeLessThan(3);
+  });
+});
+
+describe('Truist Park stand directions (measured on the 2023 aerial photo)', () => {
+  // Every level's long lines run 194–198.5° on the first-base side (backs
+  // 286°) and 112–116° on the third-base side (backs 24°). Behind home the
+  // rings are arcs centred on home plate, so each section faces its own
+  // bearing from home. The outfield stands follow their walls.
+  const byId = new Map(bravesSections.map((s) => [s.id, s]));
+  const stand = (id: string) => {
+    const value = byId.get(id)?.standCompass;
+    if (value === undefined) throw new Error(`No stand direction for ${id}`);
+    return value;
+  };
+  const bearingFromHome = (id: string) => {
+    const s = byId.get(id)!;
+    return ((getStadiumOrientation('braves') + 90 - s.baseAngle - s.angleSpan / 2) % 360 + 360) % 360;
+  };
+
+  it('pins the club map to the photo within 5 m', () => {
+    expect(aerialChartFit(bravesChartPoints, BRAVES_AERIAL_CONTROL).rmsM).toBeLessThan(5);
+  });
+
+  it.each(['14', '19', '114', '216', '317', '415'])('first-base section %s faces 286°', (id) => {
+    expect(stand(id)).toBe(286);
+  });
+
+  it.each(['33', '37', '135', '238', '335', '435'])('third-base section %s faces 24°', (id) => {
+    expect(stand(id)).toBe(24);
+  });
+
+  it.each(['25', '26', '125', '126', '226', '326', '426'])('behind-home section %s faces back toward home plate', (id) => {
+    expect(diff(stand(id), bearingFromHome(id))).toBeLessThan(4);
+    expect(diff(stand(id), getStadiumOrientation('braves') + 180)).toBeLessThan(25);
+  });
+
+  it('the outfield stands follow their walls', () => {
+    expect(stand('158')).toBe(212); // Chop House, rows along the right-field wall (121.5°)
+    expect(stand('148')).toBe(135); // Home Run Porch, rows along the left-center wall (~225°)
+  });
+
+  it('sections the club calls level with first and third base sit beside them', () => {
+    // Rate Your Seats: 317 and 335 "line up almost directly with the first
+    // and third bases" (the bags are 45° either side of the 159° axis).
+    expect(diff(bearingFromHome('317'), 263)).toBeLessThan(10);
+    expect(diff(bearingFromHome('335'), 48.5)).toBeLessThan(10);
   });
 });
