@@ -579,7 +579,7 @@ Medium or Low confidence and their blog posts stay unpublished.
 5. Check the stadium page on a phone. One commit per park.
 
 ### Batches (I check in with you after batch 1)
-- [ ] 6.1 Batch 1: Dodgers, Cubs, Giants, Mets, Phillies.
+- [x] 6.1 Batch 1: Dodgers, Cubs, Giants, Mets, Phillies.
       - [x] 6.0 done (also: unifiedVenues' repeated seatingGeometry angles
             now kept in step for measured parks; 23 others still disagree).
       - [x] Dodger Stadium: 27° (was 25°). Its seat map was turned ~35°
@@ -593,10 +593,36 @@ Medium or Low confidence and their blog posts stay unpublished.
             `standRuns` take straight-run facings from the photo. The upper
             deck covers the 100s from ~row 11 (measured on the photo). 131
             checks.
+      - [x] Oracle Park: 86° (was 87°). Its seat map is a schematic drawing,
+            so stand directions come from the photo by section. 49 checks.
+            Not reproduced: RYS's "127–135 shaded early, sunniest later".
+      - [x] Citi Field: 14° (was 35°, 21° off). Control points on the photo
+            plus one first-base run. 64 checks. Its drawn outer rings on the
+            third-base side look skewed (picture only).
+      - [x] Citizens Bank Park: 9° (was 18°): home → mound 9.1°, mirror axis
+            9.0°, and a new third check, a circle fitted to the infield
+            dirt's edge (8.84°; gives 14.35° at Citi, recorded 14°). The
+            club's drawing turns the third-base side and both outfield stands
+            ~20° too far, so every stand direction comes from the photo
+            (aisles, dugouts, walls, deck edges); which upper sections share
+            a straight run comes from the club's drawing. Rows now come from
+            the club's own seat-map data (also fixes the rows shown on the
+            page); covered rows from RYS. "V" sections are wheelchair
+            platforms: their own tier, never the best bet. 48 checks. Not
+            reproduced: Hall of Fame Club "out of the sun by the 3rd inning"
+            holds in September but takes until ~5th in July/August (estimated
+            heights); RYS's "about half shaded at first pitch" in right field
+            (model 10–40%).
+      - Open: Diamond Club D is in the club's data but missing from our
+            seat map (inventory, not shade). The one-fit seat map pushes upper
+            decks outward on the drawing (3D chart), as at Citi.
       - Method notes for the next parks: survey helpers live in tmp/
             (naipFetch, gridCrop, overlayFit, standDirs, parkExplore,
-            rowDetail, fitReport). Check every seat map against its photo
-            before profiling; group stand fits by ring (tierOf).
+            rowDetail, fitReport, dirtArc, wallTrace, profile, rankPark,
+            drawMap). Check every seat map against its photo before
+            profiling; group stand fits by ring (tierOf). 3D Digital Venue
+            parks publish a master.json with every section's rows and seats:
+            use it for row counts.
 - [ ] 6.2 Batch 2: Braves, Cardinals, Nationals, Orioles, Padres.
 - [ ] 6.3 Batch 3: Angels, Rockies, Royals, Reds, Pirates.
 - [ ] 6.4 Batch 4: Tigers, Guardians, Twins, White Sox, Athletics (Sutter

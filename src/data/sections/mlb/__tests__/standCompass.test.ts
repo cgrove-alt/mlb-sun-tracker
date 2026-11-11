@@ -6,6 +6,8 @@ import { cubsChartPoints } from '../chart-points/cubs';
 import { giantsSections } from '../giants';
 import { metsSections, METS_AERIAL_CONTROL } from '../mets';
 import { metsChartPoints } from '../chart-points/mets';
+import { philliesSections, PHILLIES_AERIAL_CONTROL } from '../phillies';
+import { philliesChartPoints } from '../chart-points/phillies';
 import { aerialChartFit } from '../parkSectionBuilder';
 import { getStadiumOrientation } from '../../../stadiums';
 
@@ -250,5 +252,49 @@ describe('Citi Field stand directions (pinned to the 2019 aerial photo)', () => 
 
   it.each(['C', 'D', '5', '15'])('behind-home section %s faces away from center field', (id) => {
     expect(diff(stand(id), getStadiumOrientation('mets') + 180)).toBeLessThan(12);
+  });
+});
+
+describe('Citizens Bank Park stand directions (measured on the 2022 aerial photo)', () => {
+  // The infield stands run parallel to the foul lines (backs 144° and 234°),
+  // the backstop and the decks behind home are square to home plate, and the
+  // outfield stands follow their walls (55° and 325°).
+  const byId = new Map(philliesSections.map((s) => [s.id, s]));
+  const stand = (id: string) => {
+    const value = byId.get(id)?.standCompass;
+    if (value === undefined) throw new Error(`No stand direction for ${id}`);
+    return value;
+  };
+
+  it('pins the club map to the photo within 5 m', () => {
+    expect(aerialChartFit(philliesChartPoints, PHILLIES_AERIAL_CONTROL).rmsM).toBeLessThan(5);
+  });
+
+  it.each(['115', '117', '214', '315', '415'])('first-base section %s faces 144°', (id) => {
+    expect(stand(id)).toBe(144);
+  });
+
+  it.each(['130', '133', '228', '326', '426'])('third-base section %s faces 234°', (id) => {
+    expect(stand(id)).toBe(234);
+  });
+
+  it.each(['C', '123', '222', '321', '421'])('behind-home section %s faces away from center field', (id) => {
+    expect(diff(stand(id), getStadiumOrientation('phillies') + 180)).toBeLessThan(6);
+  });
+
+  it.each(['102', '104', '203', '304'])('right-field section %s faces 55°', (id) => {
+    expect(stand(id)).toBe(55);
+  });
+
+  it.each(['141', '143', '242', '244'])('left-field section %s faces 325°', (id) => {
+    expect(stand(id)).toBe(325);
+  });
+
+  it('the stands at both foul poles mirror each other about the axis', () => {
+    // 108 and 139 sit at the corners; mirrored about the axis (9°), their
+    // backs should agree within a few degrees.
+    const mirror = (b: number) => (2 * (getStadiumOrientation('phillies') + 180) - b + 360) % 360;
+    expect(diff(stand('108'), mirror(stand('139')))).toBeLessThan(3);
+    expect(diff(stand('111'), mirror(stand('136')))).toBeLessThan(3);
   });
 });

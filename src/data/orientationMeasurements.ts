@@ -181,6 +181,30 @@ export const ORIENTATION_MEASUREMENTS: readonly OrientationMeasurement[] = [
       '13.65°. Infield mirror axis 14.4° (96.3% overlap). The infield grass square\'s edges give 13.31°, 13.61°, 13.75° and 13.32° ' +
       '(mean 13.5°, spread 0.44°). Mean 13.85°, recorded as 14° ±1°. Replaces 35°, which was 21° high.',
   },
+  {
+    stadiumId: 'phillies',
+    imageCenter: { latitude: 39.90575, longitude: -75.16656 },
+    imageHalfWidthMeters: 75,
+    imageSizePx: 600,
+    naipTile: 'm_3907507_se_18_060_20220510',
+    acquired: '2022-05-10',
+    nativeResolutionMeters: 0.6,
+    homeSeedPx: [288, 376],
+    moundSeedPx: [299, 305],
+    homeCenterPx: [287.6, 376.18],
+    moundCenterPx: [299.01, 302.51],
+    bearingHomeToMoundDeg: 9.1,
+    bearingInfieldSymmetryDeg: 9,
+    orientationDeg: 9,
+    precisionDeg: 1,
+    measuredOn: '2026-11-11',
+    notes:
+      'A cover sits on the mound and a tarp over the front of the infield grass. Home-plate circle (98% non-grass) → mound 9.1° ' +
+      '(from the seed point, 8.52°). Infield mirror axis 9.0° (97.8% overlap). Third check: a circle fitted to the outer edge of the ' +
+      'infield dirt (103 of 111 rays; radius 30.2 m, centre 18.6 m from home) puts its centre at 8.84° from home; the same fit gives ' +
+      '14.35° at Citi Field (recorded 14°). The grass square\'s home-side edges run under the tarp, so it is not used. Mean 8.98°, ' +
+      'recorded as 9° ±1°. Replaces 18° (ballparks.com lists 15°).',
+  },
 ];
 
 export function getOrientationMeasurement(stadiumId: string): OrientationMeasurement | undefined {

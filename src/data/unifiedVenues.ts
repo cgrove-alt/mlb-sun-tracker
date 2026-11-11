@@ -592,7 +592,7 @@ export const ALL_UNIFIED_VENUES: UnifiedVenue[] = [
     "state": "PA",
     "latitude": 39.9061,
     "longitude": -75.1665,
-    "orientation": 18,
+    "orientation": 9,
     "capacity": 42792,
     "roof": "open",
     "timezone": "America/New_York",
@@ -603,11 +603,11 @@ export const ALL_UNIFIED_VENUES: UnifiedVenue[] = [
         "width": 330
       },
       "endZoneOrientation": "northeast-east-southwest-west",
-      "primarySeatingAngle": 59,
-      "sideline1Angle": 149,
-      "sideline2Angle": 329,
-      "endZone1Angle": 59,
-      "endZone2Angle": 239
+      "primarySeatingAngle": 9,
+      "sideline1Angle": 99,
+      "sideline2Angle": 279,
+      "endZone1Angle": 9,
+      "endZone2Angle": 189
     },
     "venueType": "baseball",
     "sport": "baseball",

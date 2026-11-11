@@ -1011,6 +1011,281 @@ const CITI: StadiumStructure = {
   reviewedOn: '2026-11-11',
 };
 
+const rysCbp = (path: string) => `https://www.rateyourseats.com/citizens-bank-park/seating/${path}`;
+const RYS_CBP = rysCbp('shaded-covered-seats');
+/** The club's 3D seat map data: every section's rows and seats. */
+const CBP_CLUB_MAP = 'https://vw-sitesbuilder.eu-west-1.staticresources.3ddvfactory.com/sitesbuilder/philadelphia-phillies/latest/master.json';
+const cbpRange = (from: number, to: number) => Array.from({ length: to - from + 1 }, (_, i) => String(from + i));
+
+/** Seating ring of a Citizens Bank Park chart section. */
+export function cbpTier(id: string): string | null {
+  if (/^DUG[A-G]$/.test(id)) return 'dugoutBox';
+  if (/^[A-G]$/.test(id)) return 'diamond';
+  if (id === 'RB' || id === 'RBW') return 'bleachers';
+  // Standing room, and a left-field box the club's data lists no seats for.
+  if (/^\d+V$/.test(id)) return 'wheelchair';
+  if (!/^\d+$/.test(id)) return null;
+  const n = Number(id);
+  if (n < 100) return 'suite';
+  if (n <= 107) return 'rightField';
+  if (n >= 112 && n <= 114) return 'fieldCoverUnsourced';
+  if (n >= 119 && n <= 128) return 'homePlate';
+  if (n <= 139) return 'field';
+  if (n <= 148) return 'leftField';
+  if (n <= 205) return 'rightField200';
+  if (n <= 237) return 'twoHundred';
+  if (n <= 245) return 'leftField200';
+  if (n <= 310) return 'rightField300';
+  if (n <= 399) return 'threeHundred';
+  return 'terrace';
+}
+
+// The 100 level, shared by its two tiers: rows 1–40, the deck above from
+// row 36 (sourced per section below). Estimated: front row ~3 ft, 18° rake,
+// deck underside ~46 ft, the 200 level behind ~50 ft.
+const CBP_FIELD: StandProfile = {
+  rows: 40,
+  frontRowHeightFt: 3,
+  rakeDeg: 18,
+  backHeightFt: 50,
+  overhang: { coveredFromRow: 36, soffitHeightFt: 46 },
+};
+
+/**
+ * Citizens Bank Park (2004). A lower bowl (dugout boxes, the Diamond Club and
+ * the 100s), the 200 level with the Hall of Fame Club, suites, the 300s and
+ * the Terrace Deck (400s) under the roof from row 9. Right field stacks
+ * three decks (100s, 200s, 300s); left field has the 100s and 200s under the
+ * main scoreboard. Rows are the club's own seat-map data; which rows are
+ * covered is from Rate Your Seats' section pages (row numbers converted to
+ * each section's row count, so a section that starts at row 21 counts row 21
+ * as its first). No source publishes the deck heights, so every height is
+ * estimated by stacking the decks.
+ */
+const CBP: StadiumStructure = {
+  stadiumId: 'phillies',
+  // Far rim: the Terrace Deck roof (~132 ft) about 560 ft across the field.
+  park: { roof: 'open', farRimHeightFt: 132, fieldCrossingFt: 560 },
+  tierOf: cbpTier,
+  tiers: {
+    dugoutBox: {
+      label: 'Dugout boxes',
+      // Rows 1–3 at the front of the bowl behind home, uncovered. Estimated:
+      // front row ~2 ft, 12° rake; the bowl rises behind them to the deck
+      // over the 100s (~50 ft) about 70 ft back.
+      stand: { rows: 3, frontRowHeightFt: 2, rakeDeg: 12, backHeightFt: 50, backSetbackFt: 70 },
+      rowsFromMap: true,
+      heightsSourced: false,
+      coverSourced: true,
+      sources: [CBP_CLUB_MAP],
+    },
+    diamond: {
+      label: 'Diamond Club (A–G)',
+      // Rows 5–19, uncovered (sourced). Estimated: row 5 ~6.5 ft on the
+      // 100s' 18° rake; the deck over the 100s (~50 ft) about 29 ft back.
+      stand: { rows: 15, frontRowHeightFt: 6.5, rakeDeg: 18, backHeightFt: 50, backSetbackFt: 29 },
+      rowsFromMap: true,
+      heightsSourced: false,
+      coverSourced: true,
+      sources: [CBP_CLUB_MAP, rysCbp('sections/A'), rysCbp('sections/C'), rysCbp('sections/E'), rysCbp('sections/G')],
+    },
+    homePlate: {
+      label: 'Field level behind home (119–128)',
+      // Rows 21–34 behind the Diamond Club, covered from row 29 or 30
+      // (sourced). Estimated: row 21 ~21 ft on the 18° rake, deck underside
+      // ~40 ft.
+      stand: { rows: 14, frontRowHeightFt: 21, rakeDeg: 18, backHeightFt: 50, overhang: { coveredFromRow: 9, soffitHeightFt: 40 } },
+      sections: {
+        '119': { overhang: { coveredFromRow: 11, soffitHeightFt: 40 } }, // rows 21–31, covered from 31
+        '122': { frontRowHeightFt: 23.6, overhang: { coveredFromRow: 7, soffitHeightFt: 40 } }, // rows 24–34, from 30
+        '123': { overhang: { coveredFromRow: 10, soffitHeightFt: 40 } },
+        '124': { overhang: { coveredFromRow: 10, soffitHeightFt: 40 } },
+        '125': { frontRowHeightFt: 23.6, overhang: { coveredFromRow: 7, soffitHeightFt: 40 } }, // rows 24–34, from 30
+      },
+      rowsFromMap: true,
+      heightsSourced: false,
+      coverSourced: true,
+      sources: [CBP_CLUB_MAP, ...['119', '120', '122', '124', '126', '128'].map((n) => rysCbp(`sections/${n}`)), RYS_CBP],
+    },
+    field: {
+      label: 'Field level (100s)',
+      stand: CBP_FIELD,
+      sections: {
+        '108': { frontRowHeightFt: 12, noCover: true }, // rows 11–35; RYS's covered rows (37+) are not in the club's data
+        '110': { overhang: { coveredFromRow: 37, soffitHeightFt: 46 } },
+        '116': { overhang: { coveredFromRow: 33, soffitHeightFt: 46 } },
+        '117': { overhang: { coveredFromRow: 33, soffitHeightFt: 46 } },
+        '118': { overhang: { coveredFromRow: 31, soffitHeightFt: 46 } },
+        '129': { overhang: { coveredFromRow: 31, soffitHeightFt: 46 } },
+        '130': { overhang: { coveredFromRow: 31, soffitHeightFt: 46 } },
+        '131': { overhang: { coveredFromRow: 31, soffitHeightFt: 46 } },
+        '132': { overhang: { coveredFromRow: 35, soffitHeightFt: 46 } }, // rows A–B then 1–37, covered from 33
+        '133': { overhang: { coveredFromRow: 33, soffitHeightFt: 46 } },
+        '134': { overhang: { coveredFromRow: 39, soffitHeightFt: 46 } },
+        '135': { noCover: true }, // only the wheelchair row behind row 37 is under cover
+        '136': { noCover: true },
+        '137': { overhang: { coveredFromRow: 34, soffitHeightFt: 46 } },
+        '138': { overhang: { coveredFromRow: 33, soffitHeightFt: 46 } },
+        '139': { frontRowHeightFt: 12, overhang: { coveredFromRow: 23, soffitHeightFt: 46 } }, // rows 11–37, from 33
+      },
+      rowsFromMap: true,
+      heightsSourced: false,
+      coverSourced: true,
+      sources: [CBP_CLUB_MAP, ...['108', '110', '115', '117', '118', '129', '131', '132', '134', '135', '137', '139'].map((n) => rysCbp(`sections/${n}`)), RYS_CBP],
+    },
+    fieldCoverUnsourced: {
+      label: 'Field level (100s)',
+      // 112–114: Rate Your Seats gives no covered rows for these three, so
+      // the confidence check tries them with and without the deck. Rows
+      // from the club's data; stand as the rest of the 100s.
+      stand: CBP_FIELD,
+      rowsFromMap: true,
+      heightsSourced: false,
+      coverSourced: false,
+      sources: [CBP_CLUB_MAP, rysCbp('sections/112'), rysCbp('sections/113'), rysCbp('sections/114')],
+    },
+    rightField: {
+      label: 'Right-field seats (101–107)',
+      // Rows 1–17, covered by the 200 level from row 11 (sourced; 101 has
+      // 7 open rows, 107 rows 4–16 covered from 14). Estimated: front row
+      // ~10 ft above the wall, 20° rake, deck underside ~32 ft.
+      stand: { rows: 16, frontRowHeightFt: 10, rakeDeg: 20, backHeightFt: 40, overhang: { coveredFromRow: 11, soffitHeightFt: 32 } },
+      sections: {
+        '101': { noCover: true },
+        '107': { frontRowHeightFt: 13, overhang: { coveredFromRow: 11, soffitHeightFt: 32 } },
+      },
+      rowsFromMap: true,
+      heightsSourced: false,
+      coverSourced: true,
+      sources: [CBP_CLUB_MAP, ...['101', '102', '104', '106', '107'].map((n) => rysCbp(`sections/${n}`)), RYS_CBP],
+    },
+    leftField: {
+      label: 'Left-field seats (140–148)',
+      // Rows 1–24; 142–145 covered by the 200 level from row 20, the rest
+      // open (sourced). Estimated: front row ~10 ft above the wall, 20°
+      // rake, deck underside ~40 ft, the 200 level behind ~45 ft.
+      stand: { rows: 23, frontRowHeightFt: 10, rakeDeg: 20, backHeightFt: 45, overhang: { coveredFromRow: 20, soffitHeightFt: 40 } },
+      sections: {
+        '140': { frontRowHeightFt: 16, noCover: true }, // rows 7–21
+        '141': { noCover: true },
+        '146': { noCover: true },
+        '147': { frontRowHeightFt: 13, noCover: true }, // rows 4–18
+        '148': { frontRowHeightFt: 14, noCover: true }, // rows 5–16
+      },
+      rowsFromMap: true,
+      heightsSourced: false,
+      coverSourced: true,
+      sources: [CBP_CLUB_MAP, ...['140', '141', '142', '143', '145', '146', '147', '148'].map((n) => rysCbp(`sections/${n}`))],
+    },
+    rightField200: {
+      label: '200 level, right field (201–205)',
+      // Rows 1–13, covered by the 300 level from row 10 (sourced).
+      // Estimated: front row ~34 ft, 22° rake, deck underside ~54 ft.
+      stand: { rows: 12, frontRowHeightFt: 34, rakeDeg: 22, backHeightFt: 60, overhang: { coveredFromRow: 10, soffitHeightFt: 54 } },
+      rowsFromMap: true,
+      heightsSourced: false,
+      coverSourced: true,
+      sources: [CBP_CLUB_MAP, rysCbp('sections/201'), rysCbp('sections/203'), rysCbp('sections/205')],
+    },
+    twoHundred: {
+      label: '200 level and Hall of Fame Club',
+      // Rows 1–12, covered by the suite level from row 7 (sourced: 206–209
+      // from row 9, behind home 220 from row 6 and 221–224 from row 5;
+      // 210, 211 and 227 have no covered rows). Estimated: front row ~50 ft
+      // above the deck over the 100s, 22° rake, deck underside ~70 ft.
+      stand: { rows: 10, frontRowHeightFt: 50, rakeDeg: 22, backHeightFt: 80, overhang: { coveredFromRow: 7, soffitHeightFt: 70 } },
+      sections: {
+        ...Object.fromEntries(cbpRange(206, 209).map((n) => [n, { overhang: { coveredFromRow: 9, soffitHeightFt: 70 } }])),
+        '210': { noCover: true },
+        '211': { noCover: true },
+        '220': { overhang: { coveredFromRow: 6, soffitHeightFt: 70 } },
+        ...Object.fromEntries(cbpRange(221, 224).map((n) => [n, { overhang: { coveredFromRow: 5, soffitHeightFt: 70 } }])),
+        '227': { noCover: true }, // 6 rows in the club's data; Rate Your Seats covers from row 7
+      },
+      rowsFromMap: true,
+      heightsSourced: false,
+      coverSourced: true,
+      sources: [CBP_CLUB_MAP, ...['207', '209', '211', '212', '216', '220', '222', '226', '228', '232', '233', '237'].map((n) => rysCbp(`sections/${n}`)), RYS_CBP],
+    },
+    leftField200: {
+      label: '200 level, left field (241–245)',
+      // Rows 1–11, open (sourced). Estimated: front row ~34 ft, 22° rake;
+      // the main scoreboard stands behind them (~90 ft, about 20 ft back).
+      stand: { rows: 11, frontRowHeightFt: 34, rakeDeg: 22, backHeightFt: 90, backSetbackFt: 20 },
+      rowsFromMap: true,
+      heightsSourced: false,
+      coverSourced: true,
+      sources: [CBP_CLUB_MAP, rysCbp('sections/241'), rysCbp('sections/243'), rysCbp('sections/245')],
+    },
+    suite: {
+      label: 'Suites',
+      stand: { rows: 2, frontRowHeightFt: 64, rakeDeg: 5, backHeightFt: 80, overhang: { coveredFromRow: 1, soffitHeightFt: 76 } },
+      rowsFromMap: true,
+      heightsSourced: false,
+      coverSourced: true,
+      sources: [CBP_CLUB_MAP, rysCbp('luxury-suites')],
+    },
+    rightField300: {
+      label: '300 level, right field (301–310)',
+      // Rows 1–21, under the roof from row 14 (sourced). Estimated: front
+      // row ~58 ft, 26° rake, roof underside ~92 ft.
+      stand: { rows: 21, frontRowHeightFt: 58, rakeDeg: 26, backHeightFt: 96, overhang: { coveredFromRow: 14, soffitHeightFt: 92 } },
+      rowsFromMap: true,
+      heightsSourced: false,
+      coverSourced: true,
+      sources: [CBP_CLUB_MAP, ...['301', '303', '305', '307', '310'].map((n) => rysCbp(`sections/${n}`)), RYS_CBP],
+    },
+    threeHundred: {
+      label: '300 level (312–333)',
+      // Rows 1–8, open (sourced). Estimated: front row ~80 ft, 26° rake; the
+      // Terrace Deck and its roof (~128 ft) rise about 45 ft behind.
+      stand: { rows: 8, frontRowHeightFt: 80, rakeDeg: 26, backHeightFt: 128, backSetbackFt: 45 },
+      rowsFromMap: true,
+      heightsSourced: false,
+      coverSourced: true,
+      sources: [CBP_CLUB_MAP, ...['313', '315', '318', '320', '324', '328', '331', '333'].map((n) => rysCbp(`sections/${n}`))],
+    },
+    terrace: {
+      label: 'Terrace Deck (400s)',
+      // Rows 1–16 (434: 13), under the roof from row 9 (sourced).
+      // Estimated: front row ~96 ft, 30° rake, roof underside ~128 ft, top
+      // ~132 ft.
+      stand: { rows: 16, frontRowHeightFt: 96, rakeDeg: 30, backHeightFt: 132, overhang: { coveredFromRow: 9, soffitHeightFt: 128 } },
+      rowsFromMap: true,
+      heightsSourced: false,
+      coverSourced: true,
+      sources: [CBP_CLUB_MAP, ...['412', '415', '418', '420', '424', '428', '432', '434'].map((n) => rysCbp(`sections/${n}`)), RYS_CBP],
+    },
+    wheelchair: {
+      label: 'Wheelchair platforms',
+      // One row each (the club's data): 412V–432V are row 9 of the Terrace
+      // Deck, its first row under the roof; 302V–309V are row 11 of the
+      // right-field 300s, in front of their roof. Heights are those rows' on
+      // the stands above.
+      stand: { rows: 1, frontRowHeightFt: 108.7, rakeDeg: 30, backHeightFt: 132, backSetbackFt: 19, overhang: { coveredFromRow: 1, soffitHeightFt: 128 } },
+      sections: Object.fromEntries(cbpRange(302, 309).map((n) => [
+        `${n}V`,
+        { frontRowHeightFt: 71.4, rakeDeg: 26, backHeightFt: 96, backSetbackFt: 27, noCover: true },
+      ])),
+      rowsFromMap: true,
+      heightsSourced: false,
+      coverSourced: true,
+      sources: [CBP_CLUB_MAP, rysCbp('sections/305'), rysCbp('sections/415')],
+    },
+    bleachers: {
+      label: 'Rooftop bleachers',
+      // Open rooftop rows beyond center field (the club's 3D map; RB 7 rows,
+      // RBW 1). Estimated: front row ~30 ft, 15° rake, nothing behind.
+      stand: { rows: 7, frontRowHeightFt: 30, rakeDeg: 15, backHeightFt: 36 },
+      rowsFromMap: true,
+      heightsSourced: false,
+      coverSourced: true,
+      sources: [CBP_CLUB_MAP],
+    },
+  },
+  reviewedOn: '2026-11-11',
+};
+
 export const STADIUM_STRUCTURES: Readonly<Record<string, StadiumStructure>> = {
   yankees: YANKEES,
   redsox: FENWAY,
@@ -1018,6 +1293,7 @@ export const STADIUM_STRUCTURES: Readonly<Record<string, StadiumStructure>> = {
   cubs: WRIGLEY,
   giants: ORACLE,
   mets: CITI,
+  phillies: CBP,
 };
 
 export function getStadiumStructure(stadiumId: string): StadiumStructure | undefined {

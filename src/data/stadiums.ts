@@ -270,7 +270,7 @@ export const MLB_STADIUMS: Stadium[] = [
     state: 'PA',
     latitude: 39.9061,
     longitude: -75.1665,
-    orientation: 18, // NNE — corrected 2026-06-23 from 59° (ENE, ~41° off). ballparks.com 15° + andrewclem NNE + sun pattern ("oriented to the north", rises over RF) confirm near-north NNE. See provenance.
+    orientation: 9, // N — measured 2026-11-11 from USGS NAIP imagery (9° ±1°); replaces 18°. See orientationMeasurements.ts.
     capacity: 42792,
     roof: 'open',
     timezone: 'America/New_York'
