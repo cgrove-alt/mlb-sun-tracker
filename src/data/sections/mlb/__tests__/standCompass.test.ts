@@ -26,6 +26,8 @@ import { royalsSections, ROYALS_AERIAL_CONTROL } from '../royals';
 import { royalsChartPoints } from '../chart-points/royals';
 import { redsSections, REDS_AERIAL_CONTROL } from '../reds';
 import { redsChartPoints } from '../chart-points/reds';
+import { piratesSections, PIRATES_AERIAL_CONTROL } from '../pirates';
+import { piratesChartPoints } from '../chart-points/pirates';
 import { aerialChartFit } from '../parkSectionBuilder';
 import { getStadiumOrientation } from '../../../stadiums';
 
@@ -613,5 +615,32 @@ describe('Great American Ball Park stand directions (measured on the 2023 aerial
   it('the outfield stands follow their walls', () => {
     expect(stand('103')).toBe(85);
     expect(stand('143')).toBe(160);
+  });
+});
+
+describe('PNC Park stand directions (measured on the 2022 aerial photo)', () => {
+  // Level lines run parallel to both foul lines (backs 253° and 338°);
+  // behind home the rows are arcs centred on home plate.
+  const byId = new Map(piratesSections.map((s) => [s.id, s]));
+  const stand = (id: string) => {
+    const value = byId.get(id)?.standCompass;
+    if (value === undefined) throw new Error(`No stand direction for ${id}`);
+    return value;
+  };
+
+  it('pins the club map to the photo within 5 m', () => {
+    expect(aerialChartFit(piratesChartPoints, PIRATES_AERIAL_CONTROL).rmsM).toBeLessThan(5);
+  });
+
+  it.each(['7', '108', '205', '305'])('first-base section %s faces 253°', (id) => expect(stand(id)).toBe(253));
+  it.each(['25', '127', '223', '325'])('third-base section %s faces 338°', (id) => expect(stand(id)).toBe(338));
+
+  it.each(['16', '116'])('behind-home section %s faces away from center field', (id) => {
+    expect(diff(stand(id), getStadiumOrientation('pirates') + 180)).toBeLessThan(10);
+  });
+
+  it('the outfield stands follow their walls', () => {
+    expect(stand('143')).toBe(170);
+    expect(stand('236')).toBe(78);
   });
 });

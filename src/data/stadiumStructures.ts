@@ -2960,6 +2960,156 @@ const GABP: StadiumStructure = {
   reviewedOn: '2026-11-11',
 };
 
+const rysPnc = (path: string) => `https://www.rateyourseats.com/pnc-park/seating/${path}`;
+const RYS_PNC = rysPnc('shaded-covered-seats');
+const pncSections = (...ids: string[]) => ids.map((n) => rysPnc(`sections/${n}`));
+/** PNC Park's covered rows as positions in each section's lettered rows (Rate Your Seats). */
+const PNC_COVER: Record<string, number> = {
+  '129': 18, '132': 22,
+  '301': 12, '302': 15, '303': 12, '305': 12, '307': 18, '308': 12, '309': 12, '310': 15, '311': 12, '312': 15,
+  '320': 15, '321': 12, '322': 13, '323': 12, '325': 15, '327': 15, '328': 15, '329': 15, '330': 9, '331': 18, '332': 18, '333': 18,
+};
+const pncCover = (ids: readonly string[], soffitHeightFt: number) =>
+  Object.fromEntries(ids.filter((id) => PNC_COVER[id]).map((id) => [id, { overhang: { coveredFromRow: PNC_COVER[id], soffitHeightFt } }]));
+
+/** Seating ring of a PNC Park chart section. */
+export function pncTier(id: string): string | null {
+  if (/^\d{1,2}$/.test(id)) return 'field';
+  if (/^(LUX|PS19)/.test(id)) return 'suite';
+  // Wheelchair platforms (WC), the VIP club, skull bar, porch and boxes: no
+  // source gives their seats or cover.
+  if (!/^\d{3}$/.test(id)) return null;
+  const n = Number(id);
+  if (n <= 132) return 'hundred';
+  if (n <= 138) return 'leftCorner';
+  if (n <= 147) return 'rightField';
+  if (n <= 228) return 'club';
+  if (n <= 238) return 'bleachers';
+  if (n >= 313 && n <= 319) return 'upperHome';
+  if (n <= 333) return 'upper';
+  return 'rooftop';
+}
+
+/**
+ * PNC Park (2001). A lower bowl of field-level sections (1–32, rows A–M) and
+ * the 100s behind them (rows to HH or KK, the back under the club deck),
+ * the club level (200s) with suites, and the upper deck (300s) under a roof
+ * from about row R; bleachers and a rooftop in left field. Rows and covered
+ * rows are Rate Your Seats' section pages. On the photo, square to the
+ * first-base line, the lower bowl runs ~10–48 m back and the top of the
+ * upper deck ~60 m. No source publishes the deck heights, so every height
+ * is estimated by stacking the decks.
+ */
+const PNC: StadiumStructure = {
+  stadiumId: 'pirates',
+  // Far rim: the upper deck's top (~100 ft) about 540 ft across the field.
+  park: { roof: 'open', farRimHeightFt: 100, fieldCrossingFt: 540 },
+  tierOf: pncTier,
+  tiers: {
+    field: {
+      label: 'Field level (1–32)',
+      // Rows A–M (D–M or F–M in some), open ("rarely in the shade").
+      // Estimated: front ~3 ft, 15° rake; the upper deck's top (~100 ft)
+      // ~37 m behind the last row.
+      stand: { rows: 13, frontRowHeightFt: 3, rakeDeg: 15, backHeightFt: 100, backSetbackFt: 120 },
+      rowsFromMap: true,
+      heightsSourced: false,
+      coverSourced: true,
+      sources: [RYS_PNC, ...pncSections('1', '10', '16', '17', '25', '32')],
+    },
+    hundred: {
+      label: 'Infield and baseline boxes (101–132)',
+      // Rows A–HH (to KK behind home), covered from row W by the club deck
+      // (sourced; 129 from W of F–HH, 132 from AA). Estimated: front ~14 ft,
+      // 18° rake, deck underside ~48 ft.
+      stand: { rows: 34, frontRowHeightFt: 14, rakeDeg: 18, backHeightFt: 100, backSetbackFt: 40, overhang: { coveredFromRow: 23, soffitHeightFt: 48 } },
+      sections: pncCover(['129', '132'], 48),
+      rowsFromMap: true,
+      heightsSourced: false,
+      coverSourced: true,
+      sources: [RYS_PNC, ...pncSections('101', '109', '113', '116', '120', '128', '129', '132')],
+    },
+    leftCorner: {
+      label: 'Left-field corner (133–138)',
+      // Rows A–F to A–P, open ("among the worst seats for shade").
+      stand: { rows: 12, frontRowHeightFt: 8, rakeDeg: 18, backHeightFt: 40 },
+      rowsFromMap: true,
+      heightsSourced: false,
+      coverSourced: true,
+      sources: [RYS_PNC, ...pncSections('133', '135', '138')],
+    },
+    rightField: {
+      label: 'Right field (139–147)',
+      // Rows A–G to A–M along the river, open ("all outfield seating is
+      // exposed").
+      stand: { rows: 13, frontRowHeightFt: 8, rakeDeg: 18, backHeightFt: 20 },
+      rowsFromMap: true,
+      heightsSourced: false,
+      coverSourced: true,
+      sources: [RYS_PNC, ...pncSections('139', '142', '147')],
+    },
+    club: {
+      label: 'Baseball Club (201–228)',
+      // Rows A–K (A–B, A–C at the ends), "rarely in the shade". Estimated:
+      // front ~52 ft, 20° rake, the upper deck rising behind.
+      stand: { rows: 11, frontRowHeightFt: 52, rakeDeg: 20, backHeightFt: 100, backSetbackFt: 25 },
+      rowsFromMap: true,
+      heightsSourced: false,
+      coverSourced: true,
+      sources: [RYS_PNC, ...pncSections('201', '209', '214', '220', '228')],
+    },
+    bleachers: {
+      label: 'Left-field bleachers (235–238)',
+      // Rows A–R, open ("always a heavy dose of sun").
+      stand: { rows: 18, frontRowHeightFt: 10, rakeDeg: 20, backHeightFt: 34 },
+      rowsFromMap: true,
+      heightsSourced: false,
+      coverSourced: true,
+      sources: [RYS_PNC, ...pncSections('235', '238')],
+    },
+    rooftop: {
+      label: 'Left-field rooftop (335–339)',
+      // Rows A–C, open.
+      stand: { rows: 3, frontRowHeightFt: 40, rakeDeg: 10, backHeightFt: 46 },
+      rowsFromMap: true,
+      heightsSourced: false,
+      coverSourced: true,
+      sources: [RYS_PNC, ...pncSections('335', '337', '339')],
+    },
+    upper: {
+      label: 'Grandstand (300s)',
+      // Rows D–Y (and A–Y in a few), covered from row R (sourced). Estimated:
+      // front ~66 ft, 30° rake, roof underside ~98 ft.
+      stand: { rows: 20, frontRowHeightFt: 66, rakeDeg: 30, backHeightFt: 102, overhang: { coveredFromRow: 15, soffitHeightFt: 98 } },
+      sections: pncCover(Array.from({ length: 33 }, (_, i) => String(301 + i)), 98),
+      rowsFromMap: true,
+      heightsSourced: false,
+      coverSourced: true,
+      sources: [RYS_PNC, ...pncSections('301', '307', '312', '320', '325', '333')],
+    },
+    upperHome: {
+      label: 'Grandstand behind home (313–319)',
+      // Rows D–R; "rows M (to Q) and up are shaded during most day games"
+      // but no covered rows given, so the check tries both.
+      stand: { rows: 15, frontRowHeightFt: 66, rakeDeg: 30, backHeightFt: 102, overhang: { coveredFromRow: 11, soffitHeightFt: 96 } },
+      rowsFromMap: true,
+      heightsSourced: false,
+      coverSourced: false,
+      sources: pncSections('313', '316', '319'),
+    },
+    suite: {
+      label: 'Suites',
+      // As at the other parks: one row of seats under the suite level's
+      // ceiling. Estimated ~56 ft up.
+      stand: { rows: 1, frontRowHeightFt: 56, rakeDeg: 0, backHeightFt: 68, overhang: { coveredFromRow: 1, soffitHeightFt: 62 } },
+      heightsSourced: false,
+      coverSourced: true,
+      sources: ['https://www.mlb.com/pirates/ballpark/seating-map/3d'],
+    },
+  },
+  reviewedOn: '2026-11-11',
+};
+
 export const STADIUM_STRUCTURES: Readonly<Record<string, StadiumStructure>> = {
   yankees: YANKEES,
   redsox: FENWAY,
@@ -2977,6 +3127,7 @@ export const STADIUM_STRUCTURES: Readonly<Record<string, StadiumStructure>> = {
   rockies: COORS,
   royals: KAUFFMAN,
   reds: GABP,
+  pirates: PNC,
 };
 
 export function getStadiumStructure(stadiumId: string): StadiumStructure | undefined {

@@ -710,7 +710,7 @@ Medium or Low confidence and their blog posts stay unpublished.
             blocks, letters (A–Z, AA–WW) and skip drink rails and wheelchair
             rows. A dugout section's middle sits ~24 m out, not ~20. Where a
             side is in shadow, brighten the photo before reading it.
-- [ ] 6.3 Batch 3: Angels, Rockies, Royals, Reds, Pirates.
+- [x] 6.3 Batch 3: Angels, Rockies, Royals, Reds, Pirates.
       - [x] Orientations, measured on NAIP with 4–6 methods each (incl. foul
             lines 30–95 m out): Angel Stadium 44° (was 50°), Coors 5° (was
             0°), Kauffman 47° (was 48°), Great American 122° (was 115°), PNC
@@ -761,6 +761,25 @@ Medium or Low confidence and their blog posts stay unpublished.
             on the photo. 59 checks, none failing. RYS's shade page places
             108–112 in right field; its section pages and the club's map put
             them on the third-base side.
+      - [x] PNC Park: the club's drawing pinned with 5 counted field-level
+            sections (2.2 m RMS, which also confirms the numbering): an aisle
+            sits ~2.5° from the axis between 16 and 17; ~7.5 m sections along
+            each line. Stands 253°/338°, arcs centred on home, right field
+            170°, left-field bleachers/rooftop 78°. 23 checks. Not
+            reproduced: the upper half of 301–312 "always shaded" (RYS covers
+            rows R+; the model ~half at a 1:35 PM start).
+      - Review (2026-11-11): 7 commits, all local. 2,941 tests pass, tsc
+            clean, each page checked at 375 px. Orientations: Great American
+            115° → 122° and Angel Stadium 50° → 44° are the big fixes; the
+            other three moved 1–5°. Seat maps pinned at 1.1–3.5 m RMS.
+            Reference checks: Angel 97, Coors 22, Kauffman 89, Great American
+            59, PNC 23. Lessons: an affine fit can absorb a mirrored
+            numbering (check sides against a source); the decks above stack
+            forward, so what stands behind a lower bowl is often the upper
+            deck's roof edge, measured on the photo square to each line;
+            row-texture direction separates rows from aisles where a ridge
+            fit catches aisles. Kauffman's upper rings are mapped by order
+            (photo too soft); worth redoing with a sharper flight.
 - [ ] 6.4 Batch 4: Tigers, Guardians, Twins, White Sox, Athletics (Sutter
       Health Park).
 - [ ] 6.5 Batch 5, retractable roofs (answers assume the roof is open, as
