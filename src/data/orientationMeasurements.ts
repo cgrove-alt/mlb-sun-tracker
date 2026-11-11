@@ -87,6 +87,29 @@ export const ORIENTATION_MEASUREMENTS: readonly OrientationMeasurement[] = [
       '90.34° apart, bisector 44.38°. Home is where they cross; home → mound 44.35°; infield mirror axis 44.0° (96.1% overlap). ' +
       'Replaces 52°, which was 8° high (ballparks.com lists 45°).',
   },
+  {
+    stadiumId: 'dodgers',
+    imageCenter: { latitude: 34.07358, longitude: -118.24014 },
+    imageHalfWidthMeters: 75,
+    imageSizePx: 600,
+    naipTile: 'm_3411863_nw_11_060_20220511',
+    acquired: '2022-05-11',
+    nativeResolutionMeters: 0.6,
+    homeSeedPx: [266, 370],
+    moundSeedPx: [300, 303],
+    homeCenterPx: [266, 370],
+    moundCenterPx: [299.93, 305.32],
+    bearingHomeToMoundDeg: 27.68,
+    bearingInfieldSymmetryDeg: 27.1,
+    orientationDeg: 27,
+    precisionDeg: 1,
+    measuredOn: '2026-11-11',
+    notes:
+      'Mound under a tarp. The home-plate circle runs into the dirt around it, so home is the hand-placed point; home → mound 27.68°. ' +
+      'Infield mirror axis 27.1° (97.9% overlap). The four straight edges of the infield grass square (parallel to the baselines) give ' +
+      '25.87°, 26.66°, 27.78° and 26.16° (mean 26.62°; corners 90.8°). Chalk foul lines are not visible at 0.6 m. Mean 27.1°, recorded ' +
+      'as 27° ±1°. Replaces 25° (ballparks.com lists 30°).',
+  },
 ];
 
 export function getOrientationMeasurement(stadiumId: string): OrientationMeasurement | undefined {

@@ -322,7 +322,7 @@ export const ALL_UNIFIED_VENUES: UnifiedVenue[] = [
     "state": "CA",
     "latitude": 34.0739,
     "longitude": -118.24,
-    "orientation": 25,
+    "orientation": 27,
     "capacity": 56000,
     "roof": "open",
     "timezone": "America/Los_Angeles",
@@ -333,11 +333,11 @@ export const ALL_UNIFIED_VENUES: UnifiedVenue[] = [
         "width": 330
       },
       "endZoneOrientation": "north-northeast-south-southwest",
-      "primarySeatingAngle": 25,
-      "sideline1Angle": 115,
-      "sideline2Angle": 295,
-      "endZone1Angle": 25,
-      "endZone2Angle": 205
+      "primarySeatingAngle": 27,
+      "sideline1Angle": 117,
+      "sideline2Angle": 297,
+      "endZone1Angle": 27,
+      "endZone2Angle": 207
     },
     "venueType": "baseball",
     "sport": "baseball",

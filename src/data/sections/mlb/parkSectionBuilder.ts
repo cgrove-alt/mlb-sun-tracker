@@ -98,10 +98,10 @@ export interface ChartSectionMeta {
 
 export interface ChartSeedConfig {
   orientation: number;
-  /** Chart polygon(s) centred directly behind home plate. */
-  behindHomeIds: readonly string[];
-  /** Chart polygon(s) centred in or bracketing centre field. */
-  centerFieldIds: readonly string[];
+  /** Chart polygon(s) centred directly behind home plate (not needed with aerialControl). */
+  behindHomeIds?: readonly string[];
+  /** Chart polygon(s) centred in or bracketing centre field (not needed with aerialControl). */
+  centerFieldIds?: readonly string[];
   /**
    * Distance from the behind-home polygon centre toward the field, expressed
    * in multiples of that polygon's larger bounding-box dimension.
@@ -120,12 +120,95 @@ export interface ChartSeedConfig {
    */
   foulLineRows?: { firstBase: readonly string[]; thirdBase: readonly string[] };
   /**
+   * Sections pinned on the park's aerial photo, as bearing and distance from
+   * home plate (each entry averages its ids, like the anchors). With three or
+   * more, the chart is mapped onto the ground by a least-squares affine fit,
+   * which undoes any rotation, skew or squash in the club's drawing, and
+   * every position and stand direction is worked out in metres. Takes
+   * precedence over the anchors and foulLineRows.
+   */
+  aerialControl?: readonly AerialControlPoint[];
+  /**
    * Which seating ring a section belongs to, for fitting stand directions.
    * Defaults to the section's level; give it when two physical rings share a
    * level (Yankee Stadium's 200s and 300s are both "club").
    */
   tierOf?: (id: string, level: DetailedSection['level']) => string;
   classify: (id: string, point: ChartSectionPoint) => ChartSectionMeta | null;
+}
+
+export interface AerialControlPoint {
+  ids: readonly string[];
+  bearingDeg: number;
+  distanceM: number;
+}
+
+/** Largest RMS miss (metres) an aerial calibration may leave at its control points. */
+export const AERIAL_FIT_MAX_RMS_M = 5;
+
+/**
+ * Least-squares affine map from chart coordinates to ground metres
+ * (east, north) of home plate. Returns the mapped points (y flipped so the
+ * result is a y-down "chart" in metres, home plate at the origin) and the
+ * fit's RMS miss at the control points.
+ */
+export function aerialChartFit(
+  points: readonly ChartSectionPoint[],
+  control: readonly AerialControlPoint[],
+): { mapped: ChartSectionPoint[]; rmsM: number } {
+  const byId = new Map(points.map((point) => [point.id, point]));
+  const pairs = control.map((c) => {
+    const pts = c.ids.map((id) => {
+      const point = byId.get(id);
+      if (!point) throw new Error(`Aerial control section missing: ${id}`);
+      return point;
+    });
+    const t = (c.bearingDeg * Math.PI) / 180;
+    return {
+      x: pts.reduce((s, p) => s + p.x, 0) / pts.length,
+      y: pts.reduce((s, p) => s + p.y, 0) / pts.length,
+      east: Math.sin(t) * c.distanceM,
+      north: Math.cos(t) * c.distanceM,
+    };
+  });
+  if (pairs.length < 3) throw new Error('Aerial calibration needs at least three control points');
+
+  // Normal equations for value = a*x + b*y + c, solved for east and north.
+  const solve = (values: number[]): [number, number, number] => {
+    const m = [[0, 0, 0], [0, 0, 0], [0, 0, 0]];
+    const v = [0, 0, 0];
+    pairs.forEach((p, i) => {
+      const row = [p.x, p.y, 1];
+      for (let r = 0; r < 3; r++) {
+        v[r] += row[r] * values[i];
+        for (let c = 0; c < 3; c++) m[r][c] += row[r] * row[c];
+      }
+    });
+    const det3 = (a: number[][]) =>
+      a[0][0] * (a[1][1] * a[2][2] - a[1][2] * a[2][1])
+      - a[0][1] * (a[1][0] * a[2][2] - a[1][2] * a[2][0])
+      + a[0][2] * (a[1][0] * a[2][1] - a[1][1] * a[2][0]);
+    const d = det3(m);
+    if (Math.abs(d) < 1e-9) throw new Error('Aerial control points are collinear');
+    const col = (k: number) => m.map((row, r) => row.map((value, c) => (c === k ? v[r] : value)));
+    return [det3(col(0)) / d, det3(col(1)) / d, det3(col(2)) / d];
+  };
+  const [ea, eb, ec] = solve(pairs.map((p) => p.east));
+  const [na, nb, nc] = solve(pairs.map((p) => p.north));
+  const rmsM = Math.sqrt(pairs.reduce((sum, p) => sum
+    + (ea * p.x + eb * p.y + ec - p.east) ** 2
+    + (na * p.x + nb * p.y + nc - p.north) ** 2, 0) / pairs.length);
+
+  // The rest of the builder treats a footprint as an axis-aligned box, so a
+  // mapped box becomes the axis-aligned box around the mapped rectangle.
+  const mapped = points.map((point) => ({
+    ...point,
+    x: ea * point.x + eb * point.y + ec,
+    y: -(na * point.x + nb * point.y + nc),
+    width: Math.abs(ea) * point.width + Math.abs(eb) * point.height,
+    height: Math.abs(na) * point.width + Math.abs(nb) * point.height,
+  }));
+  return { mapped, rmsM };
 }
 
 interface ChartFrame {
@@ -348,9 +431,21 @@ function normalize(degrees: number): number {
  * compass orientation.
  */
 export function chartSeeds(
-  points: readonly ChartSectionPoint[],
+  sourcePoints: readonly ChartSectionPoint[],
   config: ChartSeedConfig,
 ): ParkSectionSeed[] {
+  let points = sourcePoints;
+  let aerialFrame: ChartFrame | undefined;
+  if (config.aerialControl) {
+    const fit = aerialChartFit(sourcePoints, config.aerialControl);
+    if (fit.rmsM > AERIAL_FIT_MAX_RMS_M) {
+      throw new Error(`Aerial calibration misses its control points by ${fit.rmsM.toFixed(1)} m RMS`);
+    }
+    // Ground metres, y-down, home plate at the origin, axis toward center field.
+    points = fit.mapped;
+    const t = (config.orientation * Math.PI) / 180;
+    aerialFrame = { stretchY: 1, originX: 0, originY: 0, axisX: Math.sin(t), axisY: -Math.cos(t) };
+  }
   const byId = new Map(points.map((point) => [point.id, point]));
   const averageAnchor = (ids: readonly string[]) => {
     const anchors = ids.map((id) => byId.get(id)).filter((point): point is ChartSectionPoint => Boolean(point));
@@ -365,38 +460,50 @@ export function chartSeeds(
       height: anchors.reduce((sum, point) => sum + point.height, 0) / anchors.length,
     };
   };
-  const behind = averageAnchor(config.behindHomeIds);
-  const center = averageAnchor(config.centerFieldIds);
-
   let frame: ChartFrame;
-  if (config.foulLineRows) {
-    const fitted = frameFromFoulLines(byId, config.foulLineRows, center);
-    // The foul-line rows sit off the lines themselves, so they cross behind
-    // home plate. Home plate is on the fitted axis: project the behind-home
-    // anchors onto it (removing their sideways offset) and step in toward
-    // the field by the usual inset.
-    const bx = behind.x - fitted.originX;
-    const by = behind.y * fitted.stretchY - fitted.originY;
-    const along = bx * fitted.axisX + by * fitted.axisY;
-    const inset = Math.max(behind.width, behind.height * fitted.stretchY) * (config.originInset ?? 1.7);
-    frame = {
-      ...fitted,
-      originX: fitted.originX + fitted.axisX * (along + inset),
-      originY: fitted.originY + fitted.axisY * (along + inset),
-    };
+  let fieldCenter: { x: number; y: number };
+  if (aerialFrame) {
+    frame = aerialFrame;
+    // The middle of the field, about 55 m out from home plate.
+    fieldCenter = { x: frame.axisX * 55, y: frame.axisY * 55 };
   } else {
-    const towardCenterX = center.x - behind.x;
-    const towardCenterY = center.y - behind.y;
-    const towardCenterLength = Math.hypot(towardCenterX, towardCenterY) || 1;
-    const ux = towardCenterX / towardCenterLength;
-    const uy = towardCenterY / towardCenterLength;
-    const inset = Math.max(behind.width, behind.height) * (config.originInset ?? 1.7);
-    const originX = behind.x + ux * inset;
-    const originY = behind.y + uy * inset;
-    const axisX = center.x - originX;
-    const axisY = center.y - originY;
-    const axisLength = Math.hypot(axisX, axisY) || 1;
-    frame = { stretchY: 1, originX, originY, axisX: axisX / axisLength, axisY: axisY / axisLength };
+    if (!config.behindHomeIds || !config.centerFieldIds) {
+      throw new Error('Chart calibration needs behindHomeIds and centerFieldIds, or aerialControl');
+    }
+    const behind = averageAnchor(config.behindHomeIds);
+    const center = averageAnchor(config.centerFieldIds);
+    if (config.foulLineRows) {
+      const fitted = frameFromFoulLines(byId, config.foulLineRows, center);
+      // The foul-line rows sit off the lines themselves, so they cross behind
+      // home plate. Home plate is on the fitted axis: project the behind-home
+      // anchors onto it (removing their sideways offset) and step in toward
+      // the field by the usual inset.
+      const bx = behind.x - fitted.originX;
+      const by = behind.y * fitted.stretchY - fitted.originY;
+      const along = bx * fitted.axisX + by * fitted.axisY;
+      const inset = Math.max(behind.width, behind.height * fitted.stretchY) * (config.originInset ?? 1.7);
+      frame = {
+        ...fitted,
+        originX: fitted.originX + fitted.axisX * (along + inset),
+        originY: fitted.originY + fitted.axisY * (along + inset),
+      };
+    } else {
+      const towardCenterX = center.x - behind.x;
+      const towardCenterY = center.y - behind.y;
+      const towardCenterLength = Math.hypot(towardCenterX, towardCenterY) || 1;
+      const ux = towardCenterX / towardCenterLength;
+      const uy = towardCenterY / towardCenterLength;
+      const inset = Math.max(behind.width, behind.height) * (config.originInset ?? 1.7);
+      const originX = behind.x + ux * inset;
+      const originY = behind.y + uy * inset;
+      const axisX = center.x - originX;
+      const axisY = center.y - originY;
+      const axisLength = Math.hypot(axisX, axisY) || 1;
+      frame = { stretchY: 1, originX, originY, axisX: axisX / axisLength, axisY: axisY / axisLength };
+    }
+    // The field's middle, for pointing each stand normal away from the field.
+    const toCenter = Math.hypot(center.x - frame.originX, center.y * frame.stretchY - frame.originY);
+    fieldCenter = { x: frame.originX + frame.axisX * toCenter * 0.45, y: frame.originY + frame.axisY * toCenter * 0.45 };
   }
   const { stretchY, originX, originY, axisX: ax, axisY: ay } = frame;
 
@@ -462,9 +569,6 @@ export function chartSeeds(
     seed.map = { x: m.x / reach, y: m.y / reach, w: m.w / reach, h: m.h / reach };
   }
 
-  // The field's middle, for pointing each stand normal away from the field.
-  const toCenter = Math.hypot(center.x - originX, center.y * stretchY - originY);
-  const fieldCenter = { x: originX + ax * toCenter * 0.45, y: originY + ay * toCenter * 0.45 };
   const stands = standCompasses(positions, frame, config.orientation, fieldCenter);
   return provisional.map((seed, index) => ({ ...seed, standCompass: stands[index] }));
 }

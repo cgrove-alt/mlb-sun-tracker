@@ -356,9 +356,227 @@ const FENWAY: StadiumStructure = {
   reviewedOn: '2026-11-10',
 };
 
+const rysDodgers = (path: string) => `https://www.rateyourseats.com/uniqlo-field-at-dodger-stadium/seating/${path}`;
+const RYS_DODGERS = rysDodgers('shaded-covered-seats');
+
+/**
+ * Seating ring of a Dodger Stadium chart section. The club map numbers the
+ * whole upper deck "RS", but the tickets (and Rate Your Seats) split it:
+ * Infield Reserve 1–11 (rows A–V, under the Top Deck from row N), Infield
+ * Reserve 15/16/19/20 (A–V, open), Lower Reserve 23, 24, 27, 28 … 59, 60
+ * (A–V, open) and Reserve 12–14, 17, 18, 21, 22, 25, 26 … 61 (rows AA–JJ
+ * behind them, covered from CC).
+ */
+export function dodgersTier(id: string): string | null {
+  const m = /^(\d+)(FD|DG|BL|LG|CL|RS|TD|PL|PR)$/.exec(id);
+  if (m) {
+    const n = Number(m[1]);
+    switch (m[2]) {
+      case 'FD': return 'field';
+      case 'DG': return 'dugoutClub';
+      case 'BL': return 'baselineClub';
+      case 'LG': return 'loge';
+      case 'CL': return 'club';
+      case 'TD': return 'topDeck';
+      case 'PL':
+      case 'PR': return 'pavilion';
+      default:
+        if (n <= 11) return 'infieldReserve';
+        if ([15, 16, 19, 20].includes(n)) return 'infieldReserveOpen';
+        if (n >= 23 && (n % 4 === 3 || n % 4 === 0)) return 'lowerReserve';
+        return 'reserve';
+    }
+  }
+  if (/^(?:STE|SCB)\d+$|^CL\d$|^OWNERS$/.test(id)) return 'suite';
+  return null;
+}
+
+/**
+ * Dodger Stadium (1962), five decks stacked into the hillside: Field, Loge,
+ * Club, Reserve and the Top Deck behind home. Row letters skip I (the Reserve
+ * goes H, J), so "row N" is the 13th row. Rows and covered rows are from Rate
+ * Your Seats' section pages. No source publishes deck heights, so every
+ * height is estimated by stacking the decks: each deck's underside about 9 ft
+ * above the floor of the first row it covers, each deck's front row just above
+ * the back of the one below.
+ */
+const DODGERS: StadiumStructure = {
+  stadiumId: 'dodgers',
+  // Far rim: the Top Deck's back (~165 ft) about 560 ft from the pavilions.
+  park: { roof: 'open', farRimHeightFt: 165, fieldCrossingFt: 560 },
+  tierOf: dodgersTier,
+  tiers: {
+    dugoutClub: {
+      label: 'Dugout Club',
+      // Rows AA–JJ, at most nine (sourced). Estimated: front row ~2 ft,
+      // 12° rake; behind, the Field level rises to the Loge's underside
+      // (~33 ft) about 63 ft back.
+      stand: { rows: 8, frontRowHeightFt: 2, rakeDeg: 12, backHeightFt: 33, backSetbackFt: 63 },
+      sections: { '9DG': { rows: 4 } },
+      heightsSourced: false,
+      coverSourced: true,
+      sources: [rysDodgers('dugout-club'), rysDodgers('sections/1DC'), rysDodgers('sections/9DC')],
+    },
+    baselineClub: {
+      label: 'Baseline Club',
+      // Rows 1–6 in front of Field sections 26–43, uncovered (sourced).
+      stand: { rows: 6, frontRowHeightFt: 2, rakeDeg: 14, backHeightFt: 33, backSetbackFt: 63 },
+      heightsSourced: false,
+      coverSourced: true,
+      sources: [rysDodgers('field-level'), rysDodgers('sections/27')],
+    },
+    field: {
+      label: 'Field level',
+      // Rows A–X (22 rows, no I), covered from row T (19th) by the Loge
+      // (sourced). Sections 52 and 53 have rows AA, A–Z (25), so T is their
+      // 20th. Estimated:
+      // front row ~7 ft (behind the Dugout and Baseline Clubs), 20° rake
+      // (~1 ft a row); Loge underside ~33 ft.
+      stand: {
+        rows: 22,
+        frontRowHeightFt: 7,
+        rakeDeg: 20,
+        backHeightFt: 40,
+        overhang: { coveredFromRow: 19, soffitHeightFt: 33 },
+      },
+      sections: {
+        '52FD': { rows: 25, overhang: { coveredFromRow: 20, soffitHeightFt: 34 } },
+        '53FD': { rows: 25, overhang: { coveredFromRow: 20, soffitHeightFt: 34 } },
+      },
+      heightsSourced: false,
+      coverSourced: true,
+      sources: [rysDodgers('sections/1'), rysDodgers('sections/15'), rysDodgers('sections/46'), rysDodgers('sections/52'), RYS_DODGERS],
+    },
+    loge: {
+      label: 'Loge level',
+      // Rows A–W (22), covered from row N (13th) by the Club level above
+      // (sourced). Estimated: front row ~36 ft, 24° rake; Club underside
+      // ~60 ft; the Club level's wall ~70 ft behind the last row.
+      stand: {
+        rows: 22,
+        frontRowHeightFt: 36,
+        rakeDeg: 24,
+        backHeightFt: 70,
+        overhang: { coveredFromRow: 13, soffitHeightFt: 60 },
+      },
+      heightsSourced: false,
+      coverSourced: true,
+      sources: [rysDodgers('sections/124'), rysDodgers('sections/139'), rysDodgers('sections/166'), RYS_DODGERS],
+    },
+    club: {
+      label: 'Club level',
+      // Rows A–H, all under the Reserve deck (sourced). Estimated: front row
+      // ~72 ft, 25° rake, Reserve underside ~82 ft.
+      stand: {
+        rows: 8,
+        frontRowHeightFt: 72,
+        rakeDeg: 25,
+        backHeightFt: 90,
+        overhang: { coveredFromRow: 1, soffitHeightFt: 82 },
+      },
+      heightsSourced: false,
+      coverSourced: true,
+      sources: [rysDodgers('sections/229')],
+    },
+    infieldReserve: {
+      label: 'Infield Reserve (1–11)',
+      // Rows A–V (21), covered from row N (13th) by the Top Deck (sourced).
+      // Estimated: front row ~92 ft, 30° rake, Top Deck underside ~120 ft.
+      stand: {
+        rows: 21,
+        frontRowHeightFt: 92,
+        rakeDeg: 30,
+        backHeightFt: 128,
+        overhang: { coveredFromRow: 13, soffitHeightFt: 120 },
+      },
+      heightsSourced: false,
+      coverSourced: true,
+      sources: [rysDodgers('sections/1IR'), rysDodgers('sections/6IR'), rysDodgers('sections/11IR'), rysDodgers('reserve-level')],
+    },
+    infieldReserveOpen: {
+      label: 'Infield Reserve',
+      // Rows A–V, no cover (sourced). Estimated as the covered sections.
+      stand: { rows: 21, frontRowHeightFt: 92, rakeDeg: 30, backHeightFt: 128 },
+      heightsSourced: false,
+      coverSourced: true,
+      sources: [rysDodgers('sections/15IR'), rysDodgers('reserve-level')],
+    },
+    lowerReserve: {
+      label: 'Lower Reserve',
+      // Rows A–V, no cover (sourced). Estimated: front row ~92 ft, 30° rake;
+      // behind, the Reserve rows and their roof rise to ~148 ft.
+      stand: { rows: 21, frontRowHeightFt: 92, rakeDeg: 30, backHeightFt: 148, backSetbackFt: 10 },
+      heightsSourced: false,
+      coverSourced: true,
+      sources: [rysDodgers('sections/23LR'), rysDodgers('sections/24LR'), rysDodgers('sections/60LR')],
+    },
+    reserve: {
+      label: 'Reserve',
+      // Rows AA–JJ (9; Reserve 12 runs to KK), covered from row CC (sourced).
+      // Estimated: front row ~128 ft behind the Lower Reserve, 30° rake,
+      // roof underside ~140 ft, roof top ~148 ft.
+      stand: {
+        rows: 9,
+        frontRowHeightFt: 128,
+        rakeDeg: 30,
+        backHeightFt: 148,
+        overhang: { coveredFromRow: 3, soffitHeightFt: 140 },
+      },
+      sections: { '12RS': { rows: 10 } },
+      heightsSourced: false,
+      coverSourced: true,
+      sources: [rysDodgers('sections/12R'), rysDodgers('sections/29R'), rysDodgers('sections/30R'), rysDodgers('sections/61R')],
+    },
+    topDeck: {
+      label: 'Top Deck',
+      // Rows A–W (22), covered from row O (14th) by a small roof; Top Deck
+      // 13 has rows A–R (17), covered from P (sourced). Estimated: front row
+      // ~126 ft over the Infield Reserve, 33° rake, roof underside ~158 ft,
+      // roof top ~170 ft.
+      stand: {
+        rows: 22,
+        frontRowHeightFt: 126,
+        rakeDeg: 33,
+        backHeightFt: 170,
+        overhang: { coveredFromRow: 14, soffitHeightFt: 158 },
+      },
+      sections: { '13TD': { rows: 17, overhang: { coveredFromRow: 15, soffitHeightFt: 160 } } },
+      heightsSourced: false,
+      coverSourced: true,
+      sources: [rysDodgers('sections/1TD'), rysDodgers('sections/13TD'), rysDodgers('top-deck')],
+    },
+    pavilion: {
+      label: 'Pavilion',
+      // Rows A–X (22), covered from row T (19th) by the pavilion roof
+      // (sourced). Estimated: front row ~12 ft over the outfield wall, 25°
+      // rake, roof underside ~44 ft, roof top ~50 ft.
+      stand: {
+        rows: 22,
+        frontRowHeightFt: 12,
+        rakeDeg: 25,
+        backHeightFt: 50,
+        overhang: { coveredFromRow: 19, soffitHeightFt: 44 },
+      },
+      heightsSourced: false,
+      coverSourced: true,
+      sources: [rysDodgers('sections/301'), rysDodgers('sections/302'), rysDodgers('sections/315'), rysDodgers('pavilion-seats')],
+    },
+    suite: {
+      label: 'Suites and clubs',
+      // Enclosed suites and club boxes: one row under the suite ceiling.
+      stand: { rows: 1, frontRowHeightFt: 60, rakeDeg: 0, backHeightFt: 72, overhang: { coveredFromRow: 1, soffitHeightFt: 66 } },
+      heightsSourced: false,
+      coverSourced: true,
+      sources: [RYS_DODGERS],
+    },
+  },
+  reviewedOn: '2026-11-11',
+};
+
 export const STADIUM_STRUCTURES: Readonly<Record<string, StadiumStructure>> = {
   yankees: YANKEES,
   redsox: FENWAY,
+  dodgers: DODGERS,
 };
 
 export function getStadiumStructure(stadiumId: string): StadiumStructure | undefined {
