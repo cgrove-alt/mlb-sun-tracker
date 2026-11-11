@@ -53,6 +53,13 @@ describe('best sections', () => {
     expect(bestSections([platform, club], 2).map((s) => s.sectionId)).toEqual(['C1']);
   });
 
+  it('never lists a section that is in the sun most of the game, even as the best of its area', () => {
+    const club = { ...shade('C1', [0.8, 0.8]), tier: 'club' };
+    const outfield = { ...shade('O1', [0.1, 0.2]), tier: 'outfield' };
+    expect(bestSections([club, outfield], 5).map((s) => s.sectionId)).toEqual(['C1']);
+    expect(bestSections([outfield], 5)).toEqual([]);
+  });
+
   it('offers one section per seating area before repeating an area', () => {
     const club = (id: string) => ({ ...shade(id, [1, 1]), tier: 'club' });
     const loge = { ...shade('L1', [0.6, 0.6]), tier: 'loge' };

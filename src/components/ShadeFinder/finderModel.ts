@@ -5,6 +5,7 @@
 import type { DetailedSection } from '../../types/stadium-complete';
 import type { SectionGameShade } from '../../utils/gameShade';
 import type { MLBGame } from '../../services/mlbApi';
+import { statusFor } from '../../utils/shadeEngine';
 
 /** `https://theshadium.com/stadium/yankees?game=852989&section=214A` */
 export function buildShareUrl(origin: string, stadiumId: string, gamePk?: number, sectionId?: string): string {
@@ -111,6 +112,9 @@ export function bestSections(sections: readonly SectionGameShade[], count = 5): 
     // always shaded: they would top every park's list. Wheelchair platforms
     // are a few spaces kept for fans who need them, not a pick for everyone.
     .filter((s) => s.confidence !== 'low' && s.tier !== 'suite' && s.tier !== 'wheelchair')
+    // A section that is in the sun on average is not "most shade", even as
+    // the best of its seating area.
+    .filter((s) => statusFor(mean(s)) !== 'sun')
     .sort((a, b) => mean(b) - mean(a) || confidenceRank[b.confidence] - confidenceRank[a.confidence]);
   const seenTiers = new Set<string>();
   const onePerTier = ranked.filter((s) => (seenTiers.has(s.tier) ? false : (seenTiers.add(s.tier), true)));
