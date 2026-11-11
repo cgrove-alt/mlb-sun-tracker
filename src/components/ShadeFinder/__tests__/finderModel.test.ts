@@ -41,6 +41,12 @@ describe('best sections', () => {
     expect(bestSections(list, 2).map((s) => s.sectionId)).toEqual(['C', 'D']);
   });
 
+  it('never recommends a suite', () => {
+    const suite = { ...shade('S1', [1, 1]), tier: 'suite' };
+    const club = { ...shade('C1', [0.8, 0.8]), tier: 'club' };
+    expect(bestSections([suite, club], 2).map((s) => s.sectionId)).toEqual(['C1']);
+  });
+
   it('offers one section per seating area before repeating an area', () => {
     const club = (id: string) => ({ ...shade(id, [1, 1]), tier: 'club' });
     const loge = { ...shade('L1', [0.6, 0.6]), tier: 'loge' };

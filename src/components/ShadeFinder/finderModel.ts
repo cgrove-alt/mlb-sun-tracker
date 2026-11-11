@@ -107,7 +107,9 @@ const confidenceRank = { high: 2, medium: 1, low: 0 } as const;
 export function bestSections(sections: readonly SectionGameShade[], count = 5): SectionGameShade[] {
   const mean = (s: SectionGameShade) => s.samples.reduce((sum, x) => sum + x.shadedFraction, 0) / s.samples.length;
   const ranked = [...sections]
-    .filter((s) => s.confidence !== 'low')
+    // Suites are enclosed boxes sold whole, not seats a fan picks, and are
+    // always shaded: they would top every park's list.
+    .filter((s) => s.confidence !== 'low' && s.tier !== 'suite')
     .sort((a, b) => mean(b) - mean(a) || confidenceRank[b.confidence] - confidenceRank[a.confidence]);
   const seenTiers = new Set<string>();
   const onePerTier = ranked.filter((s) => (seenTiers.has(s.tier) ? false : (seenTiers.add(s.tier), true)));
