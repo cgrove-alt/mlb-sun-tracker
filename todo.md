@@ -711,6 +711,22 @@ Medium or Low confidence and their blog posts stay unpublished.
             rows. A dugout section's middle sits ~24 m out, not ~20. Where a
             side is in shadow, brighten the photo before reading it.
 - [ ] 6.3 Batch 3: Angels, Rockies, Royals, Reds, Pirates.
+      - [x] Orientations, measured on NAIP with 4–6 methods each (incl. foul
+            lines 30–95 m out): Angel Stadium 44° (was 50°), Coors 5° (was
+            0°), Kauffman 47° (was 48°), Great American 122° (was 115°), PNC
+            116° ±1.5° (was 120°).
+      - [x] Angel Stadium: the club's drawing pinned with 7 counted sections
+            (1.9 m RMS). Rate Your Seats' own sentences put 104–113 on the
+            third-base side: the first fit had the numbering mirrored (an
+            affine fit absorbs a reflection, so check sides against a
+            source). Stands 269°/179°, arcs behind home centred ~5 m back,
+            corners 299°/130° (the right-field corner's first fit caught its
+            aisles; the row texture gives 38–42°), outfield pavilions 73°/1°.
+            The upper decks stack forward, so the structure behind the 100s
+            is the View level's roof (edge ~44 m from the first-base line on
+            the photo, ~11 m behind the 100s' last row): with it the
+            third-base 100s go from sun to shade over a 1 PM game, as RYS
+            says. 97 checks.
 - [ ] 6.4 Batch 4: Tigers, Guardians, Twins, White Sox, Athletics (Sutter
       Health Park).
 - [ ] 6.5 Batch 5, retractable roofs (answers assume the roof is open, as

@@ -18,6 +18,8 @@ import { oriolesSections, ORIOLES_AERIAL_CONTROL } from '../orioles';
 import { oriolesChartPoints } from '../chart-points/orioles';
 import { padresSections, PADRES_AERIAL_CONTROL } from '../padres';
 import { padresChartPoints } from '../chart-points/padres';
+import { angelsSections, ANGELS_AERIAL_CONTROL } from '../angels';
+import { angelsChartPoints } from '../chart-points/angels';
 import { aerialChartFit } from '../parkSectionBuilder';
 import { getStadiumOrientation } from '../../../stadiums';
 
@@ -493,5 +495,41 @@ describe('Petco Park stand directions (measured on the 2022 aerial photo)', () =
   it('the outfield stands follow their walls', () => {
     expect(stand('130')).toBe(298);
     expect(stand('133')).toBe(45);
+  });
+});
+
+describe('Angel Stadium stand directions (measured on the 2022 aerial photo)', () => {
+  // Level lines run parallel to both foul lines (backs 179° and 269°); the
+  // corners turn toward the outfield stands (299° and 130°); the right-field
+  // pavilion faces 73°.
+  const byId = new Map(angelsSections.map((s) => [s.id, s]));
+  const stand = (id: string) => {
+    const value = byId.get(id)?.standCompass;
+    if (value === undefined) throw new Error(`No stand direction for ${id}`);
+    return value;
+  };
+
+  it('pins the club map to the photo within 5 m', () => {
+    expect(aerialChartFit(angelsChartPoints, ANGELS_AERIAL_CONTROL).rmsM).toBeLessThan(5);
+  });
+
+  it('numbers the 100s from the left-field corner (101) to the right-field corner (135)', () => {
+    const bearing = (id: string) => ((getStadiumOrientation('angels') + 90 - byId.get(id)!.baseAngle - byId.get(id)!.angleSpan / 2) % 360 + 360) % 360;
+    expect(diff(bearing('110'), 314)).toBeLessThan(20); // third-base side (the 3B line runs 359°)
+    expect(diff(bearing('126'), 134)).toBeLessThan(20); // first-base side (the 1B line runs 89°)
+  });
+
+  it.each(['108', '111', '207', '310', '405', '505'])('third-base section %s faces 269°', (id) => expect(stand(id)).toBe(269));
+  it.each(['126', '129', '226', '340', '428', '533'])('first-base section %s faces 179°', (id) => expect(stand(id)).toBe(179));
+
+  it.each(['118', '216', '520'])('behind-home section %s faces away from center field', (id) => {
+    expect(diff(stand(id), getStadiumOrientation('angels') + 180)).toBeLessThan(10);
+  });
+
+  it('the corners and outfield stands follow the photo', () => {
+    expect(stand('101')).toBe(299);
+    expect(stand('134')).toBe(130);
+    expect(stand('238')).toBe(73);
+    expect(stand('258')).toBe(1);
   });
 });

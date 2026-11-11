@@ -2296,6 +2296,144 @@ const PETCO: StadiumStructure = {
   reviewedOn: '2026-11-11',
 };
 
+const rysAngel = (path: string) => `https://www.rateyourseats.com/angel-stadium/seating/${path}`;
+const RYS_ANGEL = rysAngel('shaded-covered-seats');
+const angelSections = (...ids: string[]) => ids.map((n) => rysAngel(`sections/${n}`));
+
+/** Seating ring of an Angel Stadium chart section. */
+export function angelTier(id: string): string | null {
+  if (/^STE\d+$/.test(id)) return 'suite';
+  // The Legends boxes: no source gives their seats or what covers them.
+  if (!/^\d{3}$/.test(id)) return null;
+  const n = Number(id);
+  if (n <= 135) return 'field';
+  if (n <= 233) return 'terrace';
+  if (n <= 240) return 'rightPavilion';
+  if (n <= 249) return 'rightPavilionUpper';
+  if (n <= 260) return 'leftPavilion';
+  if (n <= 351) return 'club';
+  if (n <= 436) return 'loge';
+  return 'view';
+}
+
+/**
+ * Angel Stadium (1966, rebuilt 1998). The Field level (100s), the Terrace
+ * (200s) entirely under the Club level, the Club (300s), the 400s and the
+ * View level (500s) under a roof from row D; pavilions in both outfields.
+ * Rows and covered rows are Rate Your Seats' section pages. No source
+ * publishes the deck heights, so every height is estimated by stacking the
+ * decks.
+ */
+const ANGEL: StadiumStructure = {
+  stadiumId: 'angels',
+  // Far rim: the View level's roof (~118 ft) about 550 ft across the field.
+  park: { roof: 'open', farRimHeightFt: 118, fieldCrossingFt: 550 },
+  tierOf: angelTier,
+  tiers: {
+    field: {
+      label: 'Field level (100s)',
+      // Rows A–Z (C–Z or C–W behind the dugouts and home, AA–BB in front
+      // in the corners), open; "only the last row of sections 104–113 is
+      // shaded in the middle of the summer". The decks above stack forward,
+      // so what stands behind the 100s is the View level's roof: on the
+      // photo its front edge is ~44 m from the first-base line, ~11 m behind
+      // the 100s' last row (~33 m), and ~60 m from home behind the plate, 20 m
+      // behind theirs. Estimated: front row ~4 ft, 18° rake, roof edge ~116 ft.
+      stand: { rows: 26, frontRowHeightFt: 4, rakeDeg: 18, backHeightFt: 116, backSetbackFt: 36 },
+      sections: Object.fromEntries(['114', '115', '116', '117', '118', '119', '120', '121', '122'].map((id) => [id, { backSetbackFt: 65 }])),
+      rowsFromMap: true,
+      heightsSourced: false,
+      coverSourced: true,
+      sources: [RYS_ANGEL, ...angelSections('101', '104', '110', '114', '118', '122', '126', '130', '135')],
+    },
+    terrace: {
+      label: 'Terrace level (200s)',
+      // Rows A–L, every row under the Club level (sourced). Estimated:
+      // front ~26 ft, 22° rake, the Club level's underside ~44 ft.
+      stand: { rows: 12, frontRowHeightFt: 26, rakeDeg: 22, backHeightFt: 46, overhang: { coveredFromRow: 1, soffitHeightFt: 44 } },
+      rowsFromMap: true,
+      heightsSourced: false,
+      coverSourced: true,
+      sources: [RYS_ANGEL, ...angelSections('201', '209', '213', '221', '229', '233')],
+    },
+    rightPavilion: {
+      label: 'Right-field pavilion (236–240)',
+      // Rows A–Z and VV–YY, "zero protection from the sun". Estimated:
+      // front ~8 ft above the wall, 20° rake, the back ~40 ft.
+      stand: { rows: 30, frontRowHeightFt: 8, rakeDeg: 20, backHeightFt: 40 },
+      rowsFromMap: true,
+      heightsSourced: false,
+      coverSourced: true,
+      sources: [RYS_ANGEL, ...angelSections('236', '238', '240')],
+    },
+    rightPavilionUpper: {
+      label: 'Right-field pavilion (241–249)',
+      // Rows A–M, open (as above). Estimated: front ~36 ft, 24° rake.
+      stand: { rows: 13, frontRowHeightFt: 36, rakeDeg: 24, backHeightFt: 54 },
+      rowsFromMap: true,
+      heightsSourced: false,
+      coverSourced: true,
+      sources: [RYS_ANGEL, ...angelSections('241', '245', '249')],
+    },
+    leftPavilion: {
+      label: 'Left-field pavilion (256–260)',
+      // Rows A–Z or G–Z; no source says whether they are covered, so the
+      // check tries both. Estimated: front ~8 ft, 20° rake.
+      stand: { rows: 22, frontRowHeightFt: 8, rakeDeg: 20, backHeightFt: 34, overhang: { coveredFromRow: 18, soffitHeightFt: 32 } },
+      rowsFromMap: true,
+      heightsSourced: false,
+      coverSourced: false,
+      sources: angelSections('257', '258', '259', '260'),
+    },
+    club: {
+      label: 'Club level (300s)',
+      // Rows A–H (330–351 behind the dugouts and toward right field); "rows E
+      // and above are shaded during most day games" but no source says what
+      // covers them, so the check tries both. Estimated: front ~48 ft, 22°
+      // rake, the 400s' underside ~62 ft, the roof edge (~116 ft) ~30 ft
+      // behind the last row.
+      stand: { rows: 8, frontRowHeightFt: 48, rakeDeg: 22, backHeightFt: 116, backSetbackFt: 30, overhang: { coveredFromRow: 5, soffitHeightFt: 62 } },
+      rowsFromMap: true,
+      heightsSourced: false,
+      coverSourced: false,
+      sources: [RYS_ANGEL, ...angelSections('301', '310', '321', '330', '340', '351')],
+    },
+    loge: {
+      label: '400 level',
+      // Rows A–J; no covered rows given ("all seats shaded during most late
+      // afternoon games" on the third-base side), so the check tries both.
+      // Behind them the View level rises to its roof, whose edge sits over
+      // its row D. Estimated: front ~64 ft, 26° rake, roof edge ~116 ft about
+      // 12 ft behind the last row.
+      stand: { rows: 10, frontRowHeightFt: 64, rakeDeg: 26, backHeightFt: 116, backSetbackFt: 12 },
+      rowsFromMap: true,
+      heightsSourced: false,
+      coverSourced: false,
+      sources: angelSections('401', '410', '418', '421', '430', '436'),
+    },
+    view: {
+      label: 'View level (500s)',
+      // Rows A–R, under the roof from row D (sourced). Estimated: front
+      // ~84 ft, 30° rake, roof underside ~116 ft.
+      stand: { rows: 18, frontRowHeightFt: 84, rakeDeg: 30, backHeightFt: 118, overhang: { coveredFromRow: 4, soffitHeightFt: 116 } },
+      rowsFromMap: true,
+      heightsSourced: false,
+      coverSourced: true,
+      sources: [RYS_ANGEL, ...angelSections('501', '510', '520', '530', '540')],
+    },
+    suite: {
+      label: 'Suites',
+      // As at the other parks: one row of seats under the suite level's
+      // ceiling. Estimated ~58 ft up.
+      stand: { rows: 1, frontRowHeightFt: 58, rakeDeg: 0, backHeightFt: 70, overhang: { coveredFromRow: 1, soffitHeightFt: 64 } },
+      heightsSourced: false,
+      coverSourced: true,
+      sources: ['https://www.mlb.com/angels/tickets/seating-map/3d'],
+    },
+  },
+  reviewedOn: '2026-11-11',
+};
+
 export const STADIUM_STRUCTURES: Readonly<Record<string, StadiumStructure>> = {
   yankees: YANKEES,
   redsox: FENWAY,
@@ -2309,6 +2447,7 @@ export const STADIUM_STRUCTURES: Readonly<Record<string, StadiumStructure>> = {
   nationals: NATS,
   orioles: OPACY,
   padres: PETCO,
+  angels: ANGEL,
 };
 
 export function getStadiumStructure(stadiumId: string): StadiumStructure | undefined {
