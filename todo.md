@@ -580,6 +580,23 @@ Medium or Low confidence and their blog posts stay unpublished.
 
 ### Batches (I check in with you after batch 1)
 - [ ] 6.1 Batch 1: Dodgers, Cubs, Giants, Mets, Phillies.
+      - [x] 6.0 done (also: unifiedVenues' repeated seatingGeometry angles
+            now kept in step for measured parks; 23 others still disagree).
+      - [x] Dodger Stadium: 27° (was 25°). Its seat map was turned ~35°
+            toward left field (the "center field" anchors were at the LF
+            pavilion). New: pin a club map to the aerial photo with control
+            sections (bearing/distance from home); the builder fits the
+            simplest map within 5 m RMS (affine, else projective). 112
+            reference checks.
+      - [x] Wrigley Field: 38° (was 30°). Club map also badly anchored, and
+            drawn not to scale (foul-side stands 90° apart vs 75°): new
+            `standRuns` take straight-run facings from the photo. The upper
+            deck covers the 100s from ~row 11 (measured on the photo). 131
+            checks.
+      - Method notes for the next parks: survey helpers live in tmp/
+            (naipFetch, gridCrop, overlayFit, standDirs, parkExplore,
+            rowDetail, fitReport). Check every seat map against its photo
+            before profiling; group stand fits by ring (tierOf).
 - [ ] 6.2 Batch 2: Braves, Cardinals, Nationals, Orioles, Padres.
 - [ ] 6.3 Batch 3: Angels, Rockies, Royals, Reds, Pirates.
 - [ ] 6.4 Batch 4: Tigers, Guardians, Twins, White Sox, Athletics (Sutter
