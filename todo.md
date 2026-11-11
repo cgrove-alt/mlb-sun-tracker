@@ -727,6 +727,18 @@ Medium or Low confidence and their blog posts stay unpublished.
             the photo, ~11 m behind the 100s' last row): with it the
             third-base 100s go from sun to shade over a 1 PM game, as RYS
             says. 97 checks.
+      - [x] Coors Field: the club's drawing (turned 45°) pinned with 7 counted
+            sections (1.1 m RMS): an aisle sits on the axis, so 130/131
+            straddle it. Stands 139°/229°, arcs centred ~4 m behind home,
+            outfield stands 330°/48°, corners from their radial aisles
+            (286°/96°). RYS's "C-W" is a companion/wheelchair row, not
+            letters; the 300s' L/U sections are the rows in front of and
+            behind the walkway. Behind home RYS says rows 28–36+ of 128–133
+            are "shaded", not covered; the photo shows a shadow band over
+            those rows, so they get the deck's edge with cover unsourced
+            (tried both ways). 22 checks. Not reproduced: the third-base
+            club all shaded by 3 PM, the front of 105–109 shaded at first
+            pitch.
 - [ ] 6.4 Batch 4: Tigers, Guardians, Twins, White Sox, Athletics (Sutter
       Health Park).
 - [ ] 6.5 Batch 5, retractable roofs (answers assume the roof is open, as
