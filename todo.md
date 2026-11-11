@@ -623,7 +623,7 @@ Medium or Low confidence and their blog posts stay unpublished.
             profiling; group stand fits by ring (tierOf). 3D Digital Venue
             parks publish a master.json with every section's rows and seats:
             use it for row counts.
-- [ ] 6.2 Batch 2: Braves, Cardinals, Nationals, Orioles, Padres.
+- [x] 6.2 Batch 2: Braves, Cardinals, Nationals, Orioles, Padres.
       - [x] Orientations, all measured on NAIP with 3+ methods: Truist 159°
             (was 135°, 24° low), Busch 62° ±1.5° (was 60°; softer photo),
             Nationals 29° (was 30°), Camden 31° (was 30°; foul poles exactly
@@ -695,6 +695,21 @@ Medium or Low confidence and their blog posts stay unpublished.
       - [x] Fix: "Most shade this game" no longer lists a section that is in
             the sun on average (it took the best of each seating area, even
             a sunny outfield stand).
+      - Review (2026-11-11): 7 commits, all local. 2,571 tests pass, tsc
+            clean, each page checked at 375 px (no sideways scroll, map and
+            best bet render). Orientation fixed at Truist (135° → 159°, 24°
+            off); the other four moved 0–2°. Seat maps pinned to the photo
+            at 1.6–4.3 m RMS; every stand direction measured on the photo.
+            Reference checks: Truist 117, Busch 60, Nationals 75, Camden 101,
+            Petco 30. Disagreements are written into each test header (none
+            tuned away); they cluster where Rate Your Seats describes more
+            shade than its own covered-row data supports, which points at the
+            estimated deck heights. Low-confidence share 34–43%, as batch 1.
+            Method notes: Rate Your Seats section pages give rows and covered
+            rows for every park (tmp/rysSections.py); count front and back
+            blocks, letters (A–Z, AA–WW) and skip drink rails and wheelchair
+            rows. A dugout section's middle sits ~24 m out, not ~20. Where a
+            side is in shadow, brighten the photo before reading it.
 - [ ] 6.3 Batch 3: Angels, Rockies, Royals, Reds, Pirates.
 - [ ] 6.4 Batch 4: Tigers, Guardians, Twins, White Sox, Athletics (Sutter
       Health Park).
