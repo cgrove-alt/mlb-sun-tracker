@@ -10,6 +10,8 @@ import { philliesSections, PHILLIES_AERIAL_CONTROL } from '../phillies';
 import { philliesChartPoints } from '../chart-points/phillies';
 import { bravesSections, BRAVES_AERIAL_CONTROL } from '../braves';
 import { bravesChartPoints } from '../chart-points/braves';
+import { cardinalsSections, CARDINALS_AERIAL_CONTROL } from '../cardinals';
+import { cardinalsChartPoints } from '../chart-points/cardinals';
 import { aerialChartFit } from '../parkSectionBuilder';
 import { getStadiumOrientation } from '../../../stadiums';
 
@@ -344,5 +346,44 @@ describe('Truist Park stand directions (measured on the 2023 aerial photo)', () 
     // and third bases" (the bags are 45° either side of the 159° axis).
     expect(diff(bearingFromHome('317'), 263)).toBeLessThan(10);
     expect(diff(bearingFromHome('335'), 48.5)).toBeLessThan(10);
+  });
+});
+
+describe('Busch Stadium stand directions (measured on the 2022 aerial photo)', () => {
+  // Level lines run parallel to both foul lines (backs 197° and 287°); behind
+  // home the rings are arcs centred on home plate; the right-field corner's
+  // back edge runs 45°/225° (back 135°).
+  const byId = new Map(cardinalsSections.map((s) => [s.id, s]));
+  const stand = (id: string) => {
+    const value = byId.get(id)?.standCompass;
+    if (value === undefined) throw new Error(`No stand direction for ${id}`);
+    return value;
+  };
+  const bearingFromHome = (id: string) => {
+    const s = byId.get(id)!;
+    return ((getStadiumOrientation('cardinals') + 90 - s.baseAngle - s.angleSpan / 2) % 360 + 360) % 360;
+  };
+
+  it('pins the club map to the photo within 5 m', () => {
+    expect(aerialChartFit(cardinalsChartPoints, CARDINALS_AERIAL_CONTROL).rmsM).toBeLessThan(5);
+  });
+
+  it.each(['142', '144', '140D', '240', '340', '440'])('first-base section %s faces 197°', (id) => {
+    expect(stand(id)).toBe(197);
+  });
+
+  it.each(['158', '162', '160D', '265', '360', '365'])('third-base section %s faces 287°', (id) => {
+    expect(stand(id)).toBe(287);
+  });
+
+  it.each(['5', '151', '251', '351', '451'])('behind-home section %s faces back toward home plate', (id) => {
+    expect(diff(stand(id), bearingFromHome(id))).toBeLessThan(4);
+    expect(diff(stand(id), getStadiumOrientation('cardinals') + 180)).toBeLessThan(15);
+  });
+
+  it('the right-field corner and the outfield stands follow the photo', () => {
+    expect(stand('130')).toBe(135);
+    expect(stand('193')).toBe(44);
+    expect(stand('107')).toBe(92);
   });
 });

@@ -638,6 +638,18 @@ Medium or Low confidence and their blog posts stay unpublished.
             reproduced: 215–218 rows 3+ "good shade" in a 1:35 PM game (true at
             4:10), 212 "in the shade" (cover unsourced), 220 rows 5+ late
             afternoon (only from the 6th inning). 2019 USGS lidar exists.
+      - [x] Busch Stadium: club drawing pinned with 9 controls (1.6 m RMS),
+            sections counted on an arc 35 m from home (151 on the axis) and
+            along lines 35 m back from each foul line. Stands square to both
+            lines (197°/287°), arcs centred on home behind it, the shadowed
+            right-field corner read with the contrast raised (faces 135°).
+            Rows from RYS (lettered rows on the D boxes) and the club's data
+            (Cardinals Club rows A–C); covered rows converted to positions.
+            Suites rated as at the other parks (needed for the 60% coverage
+            rule; party patios and clubs stay unrated). 60 checks. Not
+            reproduced: 341–347 shade in late-afternoon games (likely the bowl
+            curving behind home, which the cross-section can't see); 3B side
+            best at 3:05 PM (only 2025 such game, in March, comes out even).
 - [ ] 6.3 Batch 3: Angels, Rockies, Royals, Reds, Pirates.
 - [ ] 6.4 Batch 4: Tigers, Guardians, Twins, White Sox, Athletics (Sutter
       Health Park).

@@ -1559,6 +1559,187 @@ const TRUIST: StadiumStructure = {
   reviewedOn: '2026-11-11',
 };
 
+const rysBusch = (path: string) => `https://www.rateyourseats.com/busch-stadium/seating/${path}`;
+const RYS_BUSCH = rysBusch('shaded-covered-seats');
+const buschSections = (...ids: string[]) => ids.map((n) => rysBusch(`sections/${n}`));
+const BUSCH_CLUB_MAP = 'https://vw-sitesbuilder.eu-west-1.staticresources.3ddvfactory.com/sitesbuilder/stlouis-cardinals/latest/master.json';
+
+/** Seating ring of a Busch Stadium chart section. */
+export function buschTier(id: string): string | null {
+  if (/^[1-8]$/.test(id)) return 'cardinalsClub';
+  if (/^\d{3}D$/.test(id)) return 'fieldBoxes';
+  if (/^S\d+$|^703[A-F]$/.test(id)) return 'suite';
+  // Party-suite patios (O), boxes (B) and the named clubs: no source says
+  // what covers them.
+  if (!/^\d+$/.test(id)) return null;
+  const n = Number(id);
+  if (n <= 111 || (n >= 189 && n <= 197)) return 'bleachers';
+  if (n <= 172) return 'hundred';
+  if (n <= 240 || (n >= 261 && n <= 272)) return 'loge';
+  if (n <= 260) return 'clubLevel';
+  if (n <= 360) return 'pavilion';
+  if (n <= 372) return 'pavilionLeft';
+  if (n <= 440) return 'terrace';
+  return 'terraceInfield';
+}
+
+// The 100s' covered rows as positions in each section's numbered rows
+// (Rate Your Seats; a wheelchair row between 18 and 20 is not counted, so
+// "row 21" in a section with rows 1–18 and 20–29 is its 20th row).
+const BUSCH_100_COVER: Record<string, number> = {
+  '128': 14, '129': 14, '130': 17, '132': 20, '133': 20, '134': 20, '135': 21, '137': 20, '139': 20, '140': 21,
+  '141': 24, '142': 24, '143': 24, '144': 24, '145': 24, '148': 24, '149': 24, '150': 24, '152': 24, '153': 24,
+  '155': 24, '156': 24, '157': 24, '158': 24,
+  '160': 19, '161': 19, '162': 19, '163': 19, '165': 20, '167': 19, '170': 8, '171': 8,
+};
+// Estimated: the 200 level's underside ~46 ft over the 100s.
+const BUSCH_100_SOFFIT_FT = 46;
+
+/**
+ * Busch Stadium (2006). Lettered field boxes and the Cardinals Club in front
+ * of the 100s, the 200 level (loge, and the club level behind home), the 300s
+ * (Pavilion) and the 400s (Terrace) under a small roof. Rows are Rate Your
+ * Seats' section pages (lettered rows on the "D" boxes, numbered rows on the
+ * main sections) and the club's own data for the Cardinals Club; covered
+ * rows are Rate Your Seats'. No source publishes the deck heights, so every
+ * height is estimated by stacking the decks.
+ */
+const BUSCH: StadiumStructure = {
+  stadiumId: 'cardinals',
+  // Far rim: the roof over the 400s (~120 ft) about 550 ft across the field.
+  park: { roof: 'open', farRimHeightFt: 120, fieldCrossingFt: 550 },
+  tierOf: buschTier,
+  tiers: {
+    cardinalsClub: {
+      label: 'Cardinals Club (1–8)',
+      // Rows A–C at the backstop (club data); open (seen from directly above
+      // on the photo). Estimated: front row ~2 ft, 10° rake; the 100s rise
+      // behind them to the 200 level's front (~50 ft) about 75 ft back.
+      stand: { rows: 3, frontRowHeightFt: 2, rakeDeg: 10, backHeightFt: 50, backSetbackFt: 75 },
+      rowsFromMap: true,
+      heightsSourced: false,
+      coverSourced: true,
+      sources: [BUSCH_CLUB_MAP],
+    },
+    fieldBoxes: {
+      label: 'Field boxes (lettered rows)',
+      // Rows A–L (fewer in some) in front of the 100s, open. Estimated:
+      // front row ~3 ft, 15° rake; the 200 level's front (~50 ft) about 60 ft
+      // behind the last row.
+      stand: { rows: 12, frontRowHeightFt: 3, rakeDeg: 15, backHeightFt: 50, backSetbackFt: 60 },
+      rowsFromMap: true,
+      heightsSourced: false,
+      coverSourced: true,
+      sources: buschSections('132', '135', '140', '142', '155', '158', '161', '167'),
+    },
+    hundred: {
+      label: 'Field level (100s)',
+      // Numbered rows; covered by the 200 level from row 21 (128–140), row 24
+      // (141–158) or row 20 (160–167), and from row 8 in 170–171. Sections
+      // whose rows stop before those (tunnel sections such as 131, 136, 146,
+      // 151, 154) are open. Estimated: front row ~12 ft behind the lettered
+      // boxes (~5 ft behind home, where there are none), 20° rake.
+      stand: { rows: 26, frontRowHeightFt: 12, rakeDeg: 20, backHeightFt: BUSCH_100_SOFFIT_FT },
+      sections: {
+        ...Object.fromEntries(Object.entries(BUSCH_100_COVER).map(([id, row]) => [id, { overhang: { coveredFromRow: row, soffitHeightFt: BUSCH_100_SOFFIT_FT } }])),
+        ...Object.fromEntries(['146', '147', '148', '149', '150', '151', '152', '153', '154'].map((id) => [
+          id, { frontRowHeightFt: 5, ...(BUSCH_100_COVER[id] ? { overhang: { coveredFromRow: BUSCH_100_COVER[id], soffitHeightFt: BUSCH_100_SOFFIT_FT } } : {}) },
+        ])),
+      },
+      rowsFromMap: true,
+      heightsSourced: false,
+      coverSourced: true,
+      sources: [RYS_BUSCH, ...buschSections('128', '130', '132', '135', '141', '144', '148', '150', '153', '158', '160', '165', '170')],
+    },
+    bleachers: {
+      label: 'Outfield bleachers (101–111, 189–197)',
+      // "One of the least shaded areas", open. Estimated: front ~8 ft above
+      // the wall, 20° rake, the structure behind ~30 ft.
+      stand: { rows: 20, frontRowHeightFt: 8, rakeDeg: 20, backHeightFt: 30 },
+      rowsFromMap: true,
+      heightsSourced: false,
+      coverSourced: true,
+      sources: buschSections('101', '107', '111', '189', '193', '197'),
+    },
+    loge: {
+      label: 'Loge (228–240, 261–272)',
+      // Rows 1–10 to 1–16. "The last few rows ... are among the best shaded
+      // seats on the 200 level, thanks to the overhang above", but no source
+      // gives the row, so the check tries both. Estimated: front ~50 ft,
+      // 22° rake, the 300 level's underside ~70 ft.
+      stand: { rows: 10, frontRowHeightFt: 50, rakeDeg: 22, backHeightFt: 70, overhang: { coveredFromRow: 9, soffitHeightFt: 70 } },
+      rowsFromMap: true,
+      heightsSourced: false,
+      coverSourced: false,
+      sources: buschSections('228', '235', '240', '261', '267', '272'),
+    },
+    clubLevel: {
+      label: 'Club level (241–260)',
+      // Rows 1–8 to 1–15, covered from row 9 (sourced); 249–251 have rows
+      // 1–8 only, 250 and 258 a drink rail behind row 8 (covered), 260 is
+      // all covered. Estimated: front ~50 ft, 20° rake, underside ~68 ft.
+      stand: { rows: 15, frontRowHeightFt: 50, rakeDeg: 20, backHeightFt: 68, overhang: { coveredFromRow: 9, soffitHeightFt: 68 } },
+      sections: { '260': { overhang: { coveredFromRow: 1, soffitHeightFt: 60 } } },
+      rowsFromMap: true,
+      heightsSourced: false,
+      coverSourced: true,
+      sources: [RYS_BUSCH, ...buschSections('241', '249', '250', '257', '258', '259', '260')],
+    },
+    pavilion: {
+      label: 'Pavilion (331–360)',
+      // Rows 1–6 or 1–9, open ("among the most exposed"). Estimated: front
+      // ~74 ft, 26° rake, the Terrace (400s) rising ~95 ft just behind.
+      stand: { rows: 9, frontRowHeightFt: 74, rakeDeg: 26, backHeightFt: 95, backSetbackFt: 10 },
+      rowsFromMap: true,
+      heightsSourced: false,
+      coverSourced: true,
+      sources: buschSections('331', '341', '345', '350', '355', '360'),
+    },
+    pavilionLeft: {
+      label: 'Pavilion, left field (361–372)',
+      // Rows 1–14, covered from row 8 (sourced). Estimated: front ~74 ft,
+      // 26° rake, roof underside ~95 ft.
+      stand: { rows: 14, frontRowHeightFt: 74, rakeDeg: 26, backHeightFt: 95, overhang: { coveredFromRow: 8, soffitHeightFt: 95 } },
+      rowsFromMap: true,
+      heightsSourced: false,
+      coverSourced: true,
+      sources: [RYS_BUSCH, ...buschSections('361', '365', '369', '372')],
+    },
+    terrace: {
+      label: 'Terrace (431–440)',
+      // Rows 1–11, covered from row 6 by the roof (sourced). Estimated:
+      // front ~98 ft, 30° rake, roof underside ~118 ft.
+      stand: { rows: 11, frontRowHeightFt: 98, rakeDeg: 30, backHeightFt: 118, overhang: { coveredFromRow: 6, soffitHeightFt: 118 } },
+      rowsFromMap: true,
+      heightsSourced: false,
+      coverSourced: true,
+      sources: buschSections('431', '433', '435', '437', '440'),
+    },
+    terraceInfield: {
+      label: 'Terrace (441–454)',
+      // Rows 1–11, covered from row 4 (sourced); 449–451 (rows 1–8) all
+      // covered.
+      stand: { rows: 11, frontRowHeightFt: 98, rakeDeg: 30, backHeightFt: 118, overhang: { coveredFromRow: 4, soffitHeightFt: 118 } },
+      sections: Object.fromEntries(['449', '450', '451'].map((id) => [id, { overhang: { coveredFromRow: 1, soffitHeightFt: 112 } }])),
+      rowsFromMap: true,
+      heightsSourced: false,
+      coverSourced: true,
+      sources: buschSections('441', '445', '449', '451', '454'),
+    },
+    suite: {
+      label: 'Suites',
+      // The club's map lists S1–S63 and 703A–F as suites: as at the other
+      // parks, one row of seats under the suite level's ceiling. Estimated:
+      // ~66 ft up, between the club level and the Pavilion.
+      stand: { rows: 1, frontRowHeightFt: 66, rakeDeg: 0, backHeightFt: 78, overhang: { coveredFromRow: 1, soffitHeightFt: 72 } },
+      heightsSourced: false,
+      coverSourced: true,
+      sources: [BUSCH_CLUB_MAP, 'https://www.mlb.com/cardinals/tickets/premium/suites'],
+    },
+  },
+  reviewedOn: '2026-11-11',
+};
+
 export const STADIUM_STRUCTURES: Readonly<Record<string, StadiumStructure>> = {
   yankees: YANKEES,
   redsox: FENWAY,
@@ -1568,6 +1749,7 @@ export const STADIUM_STRUCTURES: Readonly<Record<string, StadiumStructure>> = {
   mets: CITI,
   phillies: CBP,
   braves: TRUIST,
+  cardinals: BUSCH,
 };
 
 export function getStadiumStructure(stadiumId: string): StadiumStructure | undefined {
