@@ -31,69 +31,6 @@ export const CriticalStylesInline = () => {
       min-height: 100vh;
     }
 
-    /* Hero section critical styles */
-    .hero-section {
-      position: relative;
-      width: 100%;
-      background: #0c447c;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: 32px 16px 20px;
-    }
-
-    .hero-overlay {
-      position: absolute;
-      inset: 0;
-      background: rgba(0, 0, 0, 0.3);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-
-    .hero-content {
-      text-align: center;
-      color: white;
-      padding: 0;
-      max-width: 800px;
-      width: 100%;
-      position: relative;
-      z-index: 1;
-    }
-
-    .hero-headline {
-      font-size: clamp(1.75rem, 6vw, 3rem);
-      font-weight: 800;
-      color: #ffffff;
-      margin: 0 0 0.75rem;
-      line-height: 1.1;
-      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
-    }
-
-    .hero-subheadline {
-      font-size: clamp(1rem, 2.5vw, 1.25rem);
-      color: #ffffff;
-      margin: 0;
-      opacity: 0.95;
-      font-weight: 300;
-    }
-
-    .hero-cta-button {
-      background: linear-gradient(135deg, #ff6b6b 0%, #ff8e53 100%);
-      color: white;
-      border: none;
-      padding: 1rem 2.5rem;
-      font-size: 1.25rem;
-      font-weight: 600;
-      border-radius: 50px;
-      cursor: pointer;
-      box-shadow: 0 10px 30px rgba(255, 107, 107, 0.3);
-      text-transform: uppercase;
-      letter-spacing: 1px;
-      min-height: 60px;
-      touch-action: manipulation;
-    }
-
     /* Screen reader only content */
     .sr-only {
       position: absolute;
@@ -129,30 +66,6 @@ export const CriticalStylesInline = () => {
 
     @keyframes spin {
       to { transform: rotate(360deg); }
-    }
-
-    /* Mobile critical styles */
-    @media (max-width: 768px) {
-      .hero-content {
-        padding: 1.5rem;
-      }
-
-      .hero-cta-button {
-        padding: 1rem 2rem;
-        font-size: 1.1rem;
-        min-height: 56px;
-        width: 100%;
-        max-width: 300px;
-      }
-    }
-
-    /* Prevent FOUC */
-    .app-hidden {
-      display: none;
-    }
-
-    .app-visible {
-      display: block;
     }
 
     /* Safe area support */

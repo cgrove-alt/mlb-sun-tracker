@@ -5,6 +5,7 @@ import { VENUE_COUNT, MLB_COUNT, MILB_COUNT, NFL_COUNT } from '../src/data/venue
 import HomepageSchema from './HomepageSchema';
 import Link from 'next/link';
 import ShadeFinder, { type FinderPark } from '../src/components/ShadeFinder/ShadeFinder';
+import styles from './HomePage.module.css';
 
 // Below-the-fold, non-critical: defer so it never competes with initial paint.
 const PWAInstallPrompt = dynamic(() => import('../components/PWAInstallPrompt'), {
@@ -15,22 +16,22 @@ export default function HomePage({ parks }: { parks: FinderPark[] }) {
   return (
     <>
       <HomepageSchema />
-      <div>
+      <div className={styles.home}>
         {/* Hero Section */}
-        <section className="hero-section">
-          <div className="hero-content">
-            <h1 className="hero-headline h1 break-words md:break-normal">
+        <section className={styles.hero}>
+          <div className={styles.content}>
+            <h1 className={`${styles.headline} h1 break-words md:break-normal`}>
               Will your seats be in the shade?
             </h1>
-            <p className="hero-subheadline max-w-prose">
+            <p className={`${styles.subheadline} max-w-prose`}>
               Pick your ballpark and game to see every section in sun or shade, inning by inning.
             </p>
           </div>
         </section>
 
-        <section className="home-finder" aria-label="Find shaded seats">
+        <section className={styles.finder} aria-label="Find shaded seats">
           <ShadeFinder parks={parks} />
-          <p className="home-finder__other">
+          <p className={styles.other}>
             Going to an NFL or minor league game? <Link href="/seats-shade-finder">Use the full stadium finder</Link>.
           </p>
         </section>
@@ -112,207 +113,6 @@ export default function HomePage({ parks }: { parks: FinderPark[] }) {
 
         <PWAInstallPrompt />
       </div>
-
-      <style jsx>{`
-        .hero-section {
-          position: relative;
-          width: 100%;
-          background: #0c447c;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          overflow: hidden;
-          padding: 32px 16px 20px;
-        }
-
-        .hero-section::before {
-          content: '';
-          position: absolute;
-          top: 0;
-          left: 0;
-          right: 0;
-          bottom: 0;
-          background: linear-gradient(to bottom, transparent 0%, rgba(0, 0, 0, 0.1) 100%);
-          z-index: 1;
-        }
-
-        .hero-content {
-          position: relative;
-          z-index: 2;
-          width: 100%;
-          max-width: 800px;
-          padding: 0;
-          color: white;
-          text-align: center;
-        }
-
-        .hero-headline {
-          font-size: clamp(1.75rem, 6vw, 3rem);
-          font-weight: 700;
-          color: #ffffff;
-          margin-bottom: 0.75rem;
-          text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-          line-height: 1.1;
-          letter-spacing: -0.02em;
-        }
-
-        .hero-subheadline {
-          font-size: clamp(1rem, 2.5vw, 1.25rem);
-          color: #ffffff;
-          margin-bottom: 0;
-          opacity: 0.95;
-          text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
-          max-width: 600px;
-          margin-left: auto;
-          margin-right: auto;
-          font-weight: 400;
-          line-height: 1.6;
-        }
-
-        .home-finder {
-          background: #ffffff;
-          padding: 8px 0 24px;
-        }
-        .home-finder__other {
-          max-width: 640px;
-          margin: 0 auto;
-          padding: 0 16px;
-          font-size: 14px;
-          color: #4b5563;
-        }
-        .hero-cta-button {
-          background: white;
-          color: #0f766e;
-          border: none;
-          padding: 1rem 2.5rem;
-          font-size: 1.125rem;
-          font-weight: 600;
-          border-radius: 12px;
-          cursor: pointer;
-          transition: all 0.2s ease;
-          box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
-          letter-spacing: -0.01em;
-        }
-
-        .hero-cta-button:hover {
-          transform: translateY(-2px);
-          background: #f8fafc;
-          box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.15), 0 4px 6px -2px rgba(0, 0, 0, 0.08);
-        }
-
-        .hero-cta-button:active {
-          transform: translateY(0) scale(1);
-        }
-
-        #app-section {
-          transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
-        }
-
-        .app-hidden {
-          opacity: 0;
-          transform: translateY(20px);
-          display: none;
-        }
-
-        .app-visible {
-          opacity: 1;
-          transform: translateY(0);
-          display: block;
-        }
-
-        @keyframes fadeInUp {
-          from {
-            opacity: 0;
-            transform: translateY(30px) scale(0.95);
-          }
-          to {
-            opacity: 1;
-            transform: translateY(0) scale(1);
-          }
-        }
-        
-        /* Floating animation for subtle movement */
-        @keyframes float {
-          0%, 100% { transform: translateY(0px); }
-          50% { transform: translateY(-10px); }
-        }
-        
-        /* Add floating particles effect */
-        .hero-section::after {
-          content: '';
-          position: absolute;
-          width: 100%;
-          height: 100%;
-          top: 0;
-          left: 0;
-          background-image: radial-gradient(circle, rgba(255, 255, 255, 0.1) 1px, transparent 1px);
-          background-size: 50px 50px;
-          animation: float 20s ease-in-out infinite;
-          opacity: 0.3;
-          z-index: 0;
-        }
-
-        /* Mobile responsive adjustments */
-        @media (max-width: 768px) {
-          /* Disable animations on mobile to prevent shimmering */
-          .hero-section {
-            animation: none;
-            background-size: 100% 100%;
-            background-position: 50% 50%;
-          }
-          
-          /* Hide floating particles on mobile */
-          .hero-section::after {
-            display: none;
-          }
-          
-          /* Optimize backdrop filter for mobile */
-          .hero-content {
-            padding: 2rem 1.5rem;
-            border-radius: 20px;
-            backdrop-filter: blur(8px);
-            -webkit-backdrop-filter: blur(8px);
-            /* Disable entrance animation on mobile */
-            animation: none;
-            /* Add hardware acceleration */
-            transform: translateZ(0);
-            -webkit-transform: translateZ(0);
-            backface-visibility: hidden;
-            -webkit-backface-visibility: hidden;
-          }
-          
-          .hero-headline {
-            font-size: clamp(2rem, 5vw, 3rem);
-          }
-          
-          .hero-cta-button {
-            padding: 0.875rem 2rem;
-            font-size: 1rem;
-          }
-        }
-        
-        /* Tablets - reduce animation complexity */
-        @media (min-width: 769px) and (max-width: 1024px) {
-          .hero-section {
-            animation-duration: 20s;
-          }
-          
-          .hero-section::after {
-            animation: none;
-            opacity: 0.2;
-          }
-        }
-        
-        /* Accessibility: reduce motion */
-        @media (prefers-reduced-motion: reduce) {
-          .hero-content { animation: none; }
-          .hero-cta-button { transition: none; }
-          .hero-cta-button::after { display: none; }
-          #app-section { transition: none; }
-          .hero-section { animation: none; }
-          .hero-section::after { animation: none; }
-        }
-      `}</style>
     </>
   );
 }

@@ -1,0 +1,118 @@
+/* Homepage hero and finder. A CSS module, so it ships as a stylesheet with
+   the server HTML. These rules used to be a styled-jsx block, which App
+   Router only injects after hydration: the hero was drawn once with fallback
+   styles and again, larger, when the JavaScript ran.
+
+   Every rule is scoped under .home, giving it the weight of two classes like
+   the styled-jsx rules it replaces, so global rules such as
+   `section:first-of-type { padding-top: 0 }` and `.h1` don't override it. */
+
+.home .hero {
+  position: relative;
+  width: 100%;
+  background: #0c447c;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  padding: 32px 16px 20px;
+}
+
+.home .hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, transparent 0%, rgba(0, 0, 0, 0.1) 100%);
+  z-index: 1;
+}
+
+/* Faint dot pattern, drifting slowly on wide screens. */
+.home .hero::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background-image: radial-gradient(circle, rgba(255, 255, 255, 0.1) 1px, transparent 1px);
+  background-size: 50px 50px;
+  animation: float 20s ease-in-out infinite;
+  opacity: 0.3;
+  z-index: 0;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+}
+
+.home .content {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  max-width: 800px;
+  padding: 0;
+  color: white;
+  text-align: center;
+}
+
+.home .headline {
+  font-size: clamp(1.75rem, 6vw, 3rem);
+  font-weight: 700;
+  color: #ffffff;
+  margin: 0 0 0.75rem;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+}
+
+.home .subheadline {
+  font-size: clamp(1rem, 2.5vw, 1.25rem);
+  color: #ffffff;
+  margin: 0 auto;
+  opacity: 0.95;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+  max-width: 600px;
+  font-weight: 400;
+  line-height: 1.6;
+}
+
+.home .finder {
+  background: #ffffff;
+  padding: 8px 0 24px;
+}
+
+.home .other {
+  max-width: 640px;
+  margin: 0 auto;
+  padding: 0 16px;
+  font-size: 14px;
+  color: #4b5563;
+}
+
+@media (max-width: 768px) {
+  .home .hero::after {
+    display: none;
+  }
+
+  .home .content {
+    padding: 2rem 1.5rem;
+  }
+
+  .home .headline {
+    font-size: clamp(2rem, 5vw, 3rem);
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  .home .hero::after {
+    animation: none;
+    opacity: 0.2;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .home .hero::after {
+    animation: none;
+  }
+}
