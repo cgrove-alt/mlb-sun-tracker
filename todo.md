@@ -358,19 +358,43 @@ also checked against the live site.
       `npm run generate-sitemap` locally and commit the sitemaps when a
       page changes. Also added the blog category pages and pointed the image
       sitemap at /opengraph-image.
-- [ ] 5.3 Speed:
-      - fix the inline critical CSS;
-      - cut render-blocking sheets;
-      - remove dead CSS and `CSSOptimizer`;
-      - hero styles in a CSS module so they're in the server HTML;
+- [x] 5.3 Speed:
+      - [x] fix the inline critical CSS: removed its copy of the hero
+            styles (different from the real ones) and the old hidden-app
+            rules. Its base rules stay: they set the body text color and
+            cancel a 64 px body padding, so removing them shifts the layout.
+      - [ ] cut render-blocking sheets: not done. Pages load 8–9 CSS files
+            that Next.js splits from the global imports; Lighthouse estimates
+            ~0.6 s. Every page already scores 91+ without it; the options
+            (Next's experimental `inlineCss`, or merging the global sheets)
+            are bigger changes than the gain justifies right now.
+      - [x] remove dead CSS and `CSSOptimizer` (it downloaded every
+            stylesheet twice); deleted 4 stylesheets nothing imports.
+      - [x] hero styles in a CSS module so they're in the server HTML.
       - [x] stop mounting the hidden app on load (the homepage no longer
             has it);
-      - load GA4 lazily, drop the preconnect and the duplicate ID;
+      - [x] GA4: dropped the unused preconnect and the duplicate ID. Kept
+            `afterInteractive` instead of lazy: GA starts after the page has
+            painted, so it doesn't move LCP (TBT stays under 50 ms), and
+            loading it later would drop page views from short visits.
       - [x] stop sending sections and guide to the client (the MLB stadium
             page is 146 KB in development, was 640 KB live).
       - [x] fixed a dev-only bug found on the way: next.config.js forced
             year-long immutable caching on dev chunks, so pages never
             hydrated locally.
+      - [x] Found while measuring (the real causes of the slow phone LCP):
+            - every page's content faded in from opacity 0 (and the stadium
+              title block had its own fade); browsers don't count invisible
+              content as painted;
+            - a `loading.tsx` on the prebuilt stadium and league routes made
+              React ship the content hidden and reveal it up to 300 ms after
+              the skeleton painted.
+      - [x] Found while checking GA: an opted-out visitor's first page view
+            went out as "analytics granted" (the banner's opt-out arrived
+            after GA's first hit), every in-app navigation was counted twice,
+            and the banner re-sent `config` on every load (a third page
+            view). GA now starts from the saved choice; test in
+            `components/__tests__/gaConsent.test.ts`.
 - [x] 5.4 Accessibility: badge contrast at least 4.5:1, and fix the skip-link
       targets and focus.
       Done: one native "Skip to main content" link (first Tab shows it,
@@ -384,18 +408,31 @@ also checked against the live site.
       distinct Giants and Jets meta descriptions. Done: non-MLB descriptions
       name the team, so the two MetLife pages differ; canonicals on all 7
       (and a test that every static page has one); `/faqs` is a 301.
-- [ ] 5.6 Tests that guard the strengths: one H1, JSON-LD present, server
-      rendering.
+- [x] 5.6 Tests that guard the strengths: one H1, JSON-LD present, server
+      rendering. Done as `tests/seo-local.spec.ts` (raw server HTML of 9
+      pages: one H1 with the expected text, JSON-LD that parses, the
+      canonical, no hidden streaming placeholder). `npm run test:seo:local`,
+      and it runs in the Playwright CI job.
 
 ### Phase 6: verify
-- [ ] 6.1 `npx jest`, `npm run type-check`, `npm run lint`, `npm run build`.
-- [ ] 6.2 Crawl the local production build with zero 404s, including every
-      sitemap URL.
-- [ ] 6.3 Lighthouse mobile at 90+ on `/`, `/stadium/yankees` and one blog
-      post (local production build).
-- [ ] 6.4 Phone-viewport browser run: Yankees → game → any section answer in
-      under 3 taps; share link round-trip.
-- [ ] 6.5 Review section below, including anything I couldn't verify.
+- [x] 6.1 `npx jest` (60 suites, 1,518 tests), `npm run type-check`,
+      `npm run lint` (0 errors), `npm run build`: all pass. The build was
+      failing at lint on an eslint-disable for a rule the config doesn't
+      load; fixed.
+- [x] 6.2 Crawl of the local production build: 403 URLs (all 221 sitemap
+      URLs plus every link and asset on those pages), 0 broken, no redirect
+      chains. Found and fixed one dead link the crawl can't see (it's a
+      hash): the menu's "Shade Finder Tool" pointed at a removed section.
+- [x] 6.3 Lighthouse mobile, 3 runs each (local production build): `/`
+      93–96, `/stadium/yankees` 91–92, Yankees post 92–96, Fenway post
+      92–96. Accessibility, best practices and SEO 100 on all four.
+- [x] 6.4 Phone viewport: pick Yankee Stadium (1 tap) and the next game's
+      answer shows ("Best bet: Section 107 … shaded the whole game"); tap a
+      section (2) for its answer and half-hour strip. The share link
+      (`/stadium/yankees?game=852989&section=432A`) reopens the same game,
+      section and answer. Fixed on the way: the strip's times were clipped
+      ("1:35 PN") on a 375 px phone.
+- [x] 6.5 Review section below, including anything I couldn't verify.
 
 ---
 
@@ -420,6 +457,88 @@ also checked against the live site.
    "Time TBD" for those.
 4. **Shipping:** commits stay on the branch. Pushing, a PR and a production
    deploy happen only when you say so.
+
+---
+
+## 5. Review (2026-11-11)
+
+44 commits on `fix/shade-answer-rebuild`, nothing pushed.
+
+### What changed
+- **P1, an answer:** the publication gate is gone. Every MLB stadium page
+  and the homepage have a stadium → game picker. It shows each section as
+  Shaded / Partial / Sun every half hour from first pitch, with a
+  High/Medium/Low confidence label, a plain lead sentence and a share link.
+- **P2, the engine:**
+  - sun position is now NREL SPA, using the real first pitch;
+  - a new row-level shade engine (seat → structure behind, deck above,
+    roof);
+  - Yankee Stadium (75°, was 55°) and Fenway (44°, was 52°) are re-measured,
+    with profiles and reference checks (Yankees July 1:05 PM = 182.3° /
+    70.6°, first-base side shades first);
+  - every NFL field direction is re-measured, and the sideline advice comes
+    from the sun's path with football wording.
+- **P3, content:** 29 unverified posts are unpublished and 301 to their
+  stadium page. The Yankees and Fenway posts are rewritten from the engine,
+  with every claim pinned by a test. Current venue names (Daikin Park, Rate
+  Field).
+- **P4, UX:**
+  - schedule window fixed;
+  - i18n keys added and guarded;
+  - home-only games;
+  - cookie banner down to a third of a phone screen;
+  - menu link to the finder fixed;
+  - timeline labels no longer clipped.
+- **P5, technical:**
+  - the 97 broken blog links are gone;
+  - the sitemap lists only real pages with real lastmod dates;
+  - canonicals on every static page, `/faqs` is a 301;
+  - contrast and skip-link fixes;
+  - distinct Giants/Jets descriptions;
+  - speed, from the real causes: page fade-in, styles injected only after
+    JavaScript, double-downloaded CSS, hidden streaming placeholders;
+  - analytics consent and double counting fixed;
+  - SEO guard tests.
+
+### Verification (local production build)
+| Check | Result |
+|---|---|
+| Unit tests / type check / lint / build | 60 suites, 1,518 tests pass; tsc clean; 0 lint errors; build passes |
+| Playwright (SEO, a11y, overflow) | 17 pass |
+| Crawl | 403 URLs incl. all 221 sitemap URLs: 0 broken, no redirect chains |
+| Lighthouse mobile (before → after) | `/` 76–93 → 93–96; Yankees 80–81 → 91–92; posts 95 → 92–96; a11y 100 on all |
+| axe, phone size | 0 violations on 15 pages; skip link is the first Tab stop |
+| Phone run | Yankees answer in 1 tap, a section's answer in 2; share link round-trips |
+
+### Not done
+- 1.2b: the public row API still returns 409 (nothing on the site calls it).
+- 2.0: your feedback examples, to turn into failing tests.
+- 2.3 / 2.3b / 2.6: the other 28 MLB parks still need measured
+  orientations, seat-map calibration and structure profiles with 5+
+  reference checks each. Their answers today use a generic profile, and
+  their posts stay unpublished until then.
+- 2.7: the MiLB stadium pages still use the old fixed-sun "best side" text.
+- 4.7: plain-language copy on /faq, /guide pages, /disclaimer,
+  HomepageSchema and /how-it-works.
+- 5.3: render-blocking CSS (8–9 files, ~0.6 s estimated); scores are 91+
+  without it.
+- Data, all against "always use 2025 data":
+  - the Rays show Tropicana Field (their 2025 home was Steinbrenner Field);
+  - Oklahoma City Dodgers → Comets;
+  - no guides for the Knoxville Smokies or the Columbus Clingstones.
+- Not deleted (your call): the unreachable duplicate Ravens guide.
+  `nfl-venues-generated.json` is a stale intermediate.
+
+### Could not verify
+- The live site: nothing is deployed, so the scores are local
+  (`next start`, Lighthouse's simulated slow 4G and slow CPU), not Vercel's
+  CDN.
+- A physical phone: only emulated phone viewports.
+- Clipboard copy of the share link: the test browser blocks the clipboard,
+  so only the fallback (the link shown on screen) was checked.
+- Side effect: the local production builds send real hits to the GA
+  property, so some localhost page views from these checks are in it
+  (filter by hostname).
 
 ---
 ---
