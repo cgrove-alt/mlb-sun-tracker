@@ -37,7 +37,6 @@ describe('blog links', () => {
 describe('unpublished posts', () => {
   const all = getPostSlugs().map((file) => getPostBySlug(file)!);
   const drafts = all.filter((post) => post.draft);
-  // eslint-disable-next-line @typescript-eslint/no-require-imports
   const config = require('../../next.config.js');
 
   it('are left out of the published list', () => {
