@@ -673,6 +673,25 @@ Medium or Low confidence and their blog posts stay unpublished.
             checks. Not reproduced: 242–264 "entirely shaded by the middle
             innings, last five rows all game" (RYS covers rows 8–9 only; holds
             in September by the middle innings).
+      - [x] Petco Park: replaced the evenly spread placeholder arcs with the
+            club's own seat map (every label read off its 2026 drawing, 108
+            sections; suites and group areas keep their places from the
+            suite and hospitality maps). The drawing is a plan but not to
+            scale behind home, so it is pinned with photo controls (4.3 m
+            RMS); the first-base side is in shadow on the photo, and the
+            foul-territory wall traced on both sides is symmetric within
+            ~1 m, so 111/117 mirror the measured 110/116. Stands: 135°/225°
+            along the lines, turning to 90°/270° along the outfield lines,
+            arc centred on home behind it, outfield corners 298°/45°. Rows
+            and covered rows from RYS. 30 checks. Not reproduced: Lexus Club
+            "most shaded by first pitch" (RYS covers rows 9+; model ~half),
+            300–305 row 10 shade "in a few innings", and 305's row 21 at
+            the last sample.
+      - Open: section 222 is not on the club's 2026 drawing (the Cutwater
+            Agave Club is in its place) but stays in the inventory (RYS still
+            lists it); left unrated. Ask before removing it. Also
+            `giantsSourcedSeeds` in sourcedStaticParkSeeds.ts is unused since
+            batch 1.
       - [x] Fix: "Most shade this game" no longer lists a section that is in
             the sun on average (it took the best of each seating area, even
             a sunny outfield stand).

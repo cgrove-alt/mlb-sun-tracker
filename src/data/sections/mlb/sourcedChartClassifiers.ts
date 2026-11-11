@@ -191,6 +191,13 @@ export const classifyOriolesSection: Classifier = (id) => {
   return numeric ?? section('standing');
 };
 
+export const classifyPadresSection: Classifier = (id) => {
+  // A–L: the Lexus Club rows behind home (the club's legend).
+  if (/^[A-L]$/.test(id)) return section('field');
+  const numeric = numericTier(id, [[199, 'lower', 'partial'], [299, 'club', 'partial'], [399, 'upper']]);
+  return numeric ?? section('standing');
+};
+
 export const classifyPhilliesSection: Classifier = (id) => {
   if (/^STANDING|^RB/.test(id)) return section('standing');
   if (/^DUG|^[A-G]$/.test(id)) return section('field');

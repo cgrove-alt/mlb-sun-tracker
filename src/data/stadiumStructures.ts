@@ -2095,6 +2095,207 @@ const OPACY: StadiumStructure = {
   reviewedOn: '2026-11-11',
 };
 
+const rysPetco = (path: string) => `https://www.rateyourseats.com/petco-park/seating/${path}`;
+const RYS_PETCO = rysPetco('shaded-covered-seats');
+const petcoSections = (...ids: string[]) => ids.map((n) => rysPetco(`sections/${n}`));
+/**
+ * Covered rows at Petco Park as positions in each section's labelled rows
+ * (Rate Your Seats' "Rows N and above are under cover"; most 100s have a
+ * front block and a back block, so "row 32" is, say, 107's 22nd row).
+ */
+const PETCO_COVER: Record<string, number> = {
+  '107': 22, '108': 22, '109': 25, '110': 25, '112': 25, '113': 32, '114': 31, '115': 31, '116': 31, '117': 31,
+  '118': 30, '119': 25, '120': 29, '121': 23, '122': 30, '123': 14, '124': 18,
+  '126': 8, '128': 8, '130': 8, '132': 8, '134': 6, '129': 21, '131': 20, '133': 20, '135': 20, '137': 21,
+  '205': 11, '207': 11, '209': 9,
+  '226': 15, '228': 15, '230': 17, '227': 23, '229': 21, '231': 21,
+  '300': 15, '301': 13, '302': 13, '303': 17, '304': 17, '305': 13, '306': 13, '307': 19, '308': 19, '309': 15,
+  '310': 15, '311': 15, '312': 15, '315': 15, '316': 15, '317': 19, '318': 19, '319': 15, '320': 15, '321': 13,
+  '322': 11, '323': 17, '324': 15, '325': 15, '326': 19, '327': 17, '328': 15,
+};
+const petcoCover = (ids: readonly string[], soffitHeightFt: number) =>
+  Object.fromEntries(ids.filter((id) => PETCO_COVER[id]).map((id) => [id, { overhang: { coveredFromRow: PETCO_COVER[id], soffitHeightFt } }]));
+
+/** Seating ring of a Petco Park section. */
+export function petcoTier(id: string): string | null {
+  if (/^[A-L]$/.test(id)) return 'lexusClub';
+  if (/^(PCS|TI|TR|TP|TL|GLS|WMS-)/.test(id)) return 'suite';
+  // Group areas, named suites, the wheelchair platform 225 and 222 (not on
+  // the club's 2026 drawing): no source places them or gives what covers them.
+  if (!/^\d+$/.test(id) || id === '225' || id === '222') return null;
+  const n = Number(id);
+  if (n <= 106) return 'fieldVip';
+  if (n === 111 || n === 125 || n === 127) return 'hundredCoverUnsourced';
+  if (n <= 124) return 'hundred';
+  if (n <= 137) return n % 2 === 0 ? 'leftLower' : 'rightLower';
+  if (n <= 204) return 'terraceVip';
+  if (n === 206 || n === 208 || n === 210) return 'terraceInfieldOpen';
+  if (n <= 223) return 'terrace';
+  if (n <= 235) return n % 2 === 0 ? 'leftReserved' : 'rightUpper';
+  return 'upper';
+}
+
+// The 100s: a front block and a back block (up to 44 rows), the back of it
+// under the Terrace level. Estimated: front row ~3 ft, 18° rake (last row
+// ~41 ft), deck underside ~50 ft.
+const PETCO_100: StandProfile = { rows: 43, frontRowHeightFt: 3, rakeDeg: 18, backHeightFt: 50 };
+
+/**
+ * Petco Park (2004). Field VIP and the Lexus Club behind home, the 100s, the
+ * outfield stands, the Terrace level (200s) and the Upper level (300s)
+ * covered from row 19. Sections come from the club's seat map, rows and
+ * covered rows from Rate Your Seats' section pages. No source publishes the
+ * deck heights, so every height is estimated by stacking the decks.
+ */
+const PETCO: StadiumStructure = {
+  stadiumId: 'padres',
+  // Far rim: the Upper level's roof (~120 ft) about 540 ft across the field.
+  park: { roof: 'open', farRimHeightFt: 120, fieldCrossingFt: 540 },
+  tierOf: petcoTier,
+  tiers: {
+    fieldVip: {
+      label: 'Field VIP (101–106)',
+      // Rows 8–20 or 8–22, open (seen from directly above on the photo,
+      // 18–31 m behind home). Estimated: front ~4 ft, 15° rake; the Lexus
+      // Club's overhang (~30 ft) about 30 ft behind the last row.
+      stand: { rows: 15, frontRowHeightFt: 4, rakeDeg: 15, backHeightFt: 30, backSetbackFt: 30 },
+      rowsFromMap: true,
+      heightsSourced: false,
+      coverSourced: true,
+      sources: petcoSections('101', '102', '104', '106'),
+    },
+    lexusClub: {
+      label: 'Lexus Club (A–L)',
+      // Rows 1–10 to 1–20, covered from row 9 (sourced). Estimated: front
+      // ~10 ft, 18° rake, deck underside ~30 ft.
+      stand: { rows: 15, frontRowHeightFt: 10, rakeDeg: 18, backHeightFt: 34, overhang: { coveredFromRow: 9, soffitHeightFt: 30 } },
+      rowsFromMap: true,
+      heightsSourced: false,
+      coverSourced: true,
+      sources: [RYS_PETCO, ...petcoSections('A', 'C', 'F', 'J', 'L')],
+    },
+    hundred: {
+      label: 'Field level (100s)',
+      stand: PETCO_100,
+      sections: petcoCover([...Array.from({ length: 18 }, (_, i) => String(107 + i))], 50),
+      rowsFromMap: true,
+      heightsSourced: false,
+      coverSourced: true,
+      sources: [RYS_PETCO, ...petcoSections('107', '110', '113', '116', '118', '119', '121', '124')],
+    },
+    hundredCoverUnsourced: {
+      label: 'Field level (100s)',
+      // 111, 125 and 127: Rate Your Seats gives no covered rows, so the check
+      // tries them with and without the deck.
+      stand: PETCO_100,
+      rowsFromMap: true,
+      heightsSourced: false,
+      coverSourced: false,
+      sources: petcoSections('111', '125', '127'),
+    },
+    leftLower: {
+      label: 'Left Field Lower Box (126–134)',
+      // Rows A–B and 1–11 (fewer in 130, 134), under the 226–230 deck from
+      // row 6 (sourced). Estimated: front ~8 ft, 18° rake, underside ~22 ft.
+      stand: { rows: 13, frontRowHeightFt: 8, rakeDeg: 18, backHeightFt: 24 },
+      sections: petcoCover(['126', '128', '130', '132', '134'], 22),
+      rowsFromMap: true,
+      heightsSourced: false,
+      coverSourced: true,
+      sources: petcoSections('126', '128', '130', '134'),
+    },
+    rightLower: {
+      label: 'Right Field Lower (129–137)',
+      // Rows 1–25 (two blocks), covered from row 21 (sourced). Estimated:
+      // front ~6 ft, 18° rake, deck underside ~32 ft.
+      stand: { rows: 25, frontRowHeightFt: 6, rakeDeg: 18, backHeightFt: 34 },
+      sections: petcoCover(['129', '131', '133', '135', '137'], 32),
+      rowsFromMap: true,
+      heightsSourced: false,
+      coverSourced: true,
+      sources: petcoSections('129', '131', '133', '137'),
+    },
+    terraceVip: {
+      label: 'Terrace VIP (201–204)',
+      // Rows 1–8 or 1–9, open (202 and 204: "rows 5 and above are shaded
+      // during most day games"). Estimated: front ~38 ft, 20° rake; the press
+      // box (~68 ft) about 10 ft behind.
+      stand: { rows: 9, frontRowHeightFt: 38, rakeDeg: 20, backHeightFt: 68, backSetbackFt: 10 },
+      rowsFromMap: true,
+      heightsSourced: false,
+      coverSourced: true,
+      sources: petcoSections('201', '202', '203', '204'),
+    },
+    terraceInfieldOpen: {
+      label: 'Terrace Infield (206–210)',
+      // Rows 1–10; no covered rows given (only "rows 5+ shaded during most
+      // day games"), so the check tries both.
+      stand: { rows: 10, frontRowHeightFt: 38, rakeDeg: 22, backHeightFt: 62, overhang: { coveredFromRow: 8, soffitHeightFt: 56 } },
+      rowsFromMap: true,
+      heightsSourced: false,
+      coverSourced: false,
+      sources: petcoSections('206', '208', '210'),
+    },
+    terrace: {
+      label: 'Terrace level (205–223)',
+      // Rows 1–13 (205/207: 1–15, 209: 3–15), covered from row 7 (205–209:
+      // row 11). Estimated: front ~38 ft, 22° rake, underside ~58 ft.
+      stand: { rows: 13, frontRowHeightFt: 38, rakeDeg: 22, backHeightFt: 62, overhang: { coveredFromRow: 7, soffitHeightFt: 58 } },
+      sections: petcoCover(['205', '207', '209'], 58),
+      rowsFromMap: true,
+      heightsSourced: false,
+      coverSourced: true,
+      sources: [RYS_PETCO, ...petcoSections('205', '209', '211', '216', '219', '223')],
+    },
+    leftReserved: {
+      label: 'Left Field Reserved (226–230)',
+      // Rows up to 21, covered from row 17 (sourced). Estimated: front ~25 ft,
+      // 22° rake, underside ~48 ft.
+      stand: { rows: 21, frontRowHeightFt: 25, rakeDeg: 22, backHeightFt: 50 },
+      sections: petcoCover(['226', '228', '230'], 48),
+      rowsFromMap: true,
+      heightsSourced: false,
+      coverSourced: true,
+      sources: petcoSections('226', '228', '230'),
+    },
+    rightUpper: {
+      label: 'Right Field Upper (227–235)',
+      // Rows 1–25; 227–231 covered from row 23, 233 and 235 open ("all right
+      // field seats, especially on the 200 level, are not good for shade").
+      // Estimated: front ~32 ft, 22° rake, underside ~58 ft.
+      stand: { rows: 25, frontRowHeightFt: 32, rakeDeg: 22, backHeightFt: 60 },
+      sections: petcoCover(['227', '229', '231'], 58),
+      rowsFromMap: true,
+      heightsSourced: false,
+      coverSourced: true,
+      sources: [RYS_PETCO, ...petcoSections('227', '229', '233', '235')],
+    },
+    upper: {
+      label: 'Upper level (300s)',
+      // Rows up to 27 (Upper Box rows in front, Upper Deck behind), covered
+      // from row 19 (sourced); 313 and 314 (rows 1–3) and 329 (one row)
+      // sit in front of it. Estimated: front ~75 ft, 28° rake, roof
+      // underside ~118 ft.
+      stand: { rows: 23, frontRowHeightFt: 75, rakeDeg: 28, backHeightFt: 120 },
+      sections: petcoCover(Array.from({ length: 30 }, (_, i) => String(300 + i)), 118),
+      rowsFromMap: true,
+      heightsSourced: false,
+      coverSourced: true,
+      sources: [RYS_PETCO, ...petcoSections('300', '303', '307', '313', '317', '322', '328', '329')],
+    },
+    suite: {
+      label: 'Suites',
+      // The club's suite map: as at the other parks, one row of seats under
+      // the suite level's ceiling. Estimated ~58 ft up.
+      stand: { rows: 1, frontRowHeightFt: 58, rakeDeg: 0, backHeightFt: 70, overhang: { coveredFromRow: 1, soffitHeightFt: 64 } },
+      heightsSourced: false,
+      coverSourced: true,
+      sources: ['https://mktg.mlbstatic.com/padres/documents/y2026/suites_map.pdf'],
+    },
+  },
+  reviewedOn: '2026-11-11',
+};
+
 export const STADIUM_STRUCTURES: Readonly<Record<string, StadiumStructure>> = {
   yankees: YANKEES,
   redsox: FENWAY,
@@ -2107,6 +2308,7 @@ export const STADIUM_STRUCTURES: Readonly<Record<string, StadiumStructure>> = {
   cardinals: BUSCH,
   nationals: NATS,
   orioles: OPACY,
+  padres: PETCO,
 };
 
 export function getStadiumStructure(stadiumId: string): StadiumStructure | undefined {

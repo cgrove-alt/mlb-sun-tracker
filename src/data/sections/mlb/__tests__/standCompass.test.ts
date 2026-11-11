@@ -16,6 +16,8 @@ import { nationalsSections, NATIONALS_AERIAL_CONTROL } from '../nationals';
 import { nationalsChartPoints } from '../chart-points/nationals';
 import { oriolesSections, ORIOLES_AERIAL_CONTROL } from '../orioles';
 import { oriolesChartPoints } from '../chart-points/orioles';
+import { padresSections, PADRES_AERIAL_CONTROL } from '../padres';
+import { padresChartPoints } from '../chart-points/padres';
 import { aerialChartFit } from '../parkSectionBuilder';
 import { getStadiumOrientation } from '../../../stadiums';
 
@@ -461,5 +463,35 @@ describe('Camden Yards stand directions (measured on the 2023 aerial photo)', ()
     expect(stand('96')).toBe(88);
     expect(stand('90')).toBe(55);
     expect(stand('84')).toBe(2);
+  });
+});
+
+describe('Petco Park stand directions (measured on the 2022 aerial photo)', () => {
+  // Level lines run parallel to both foul lines (backs 135° and 225°), then
+  // the stands turn to run along the outfield lines (90° and 270°); behind
+  // home the rows are an arc centred on home plate.
+  const byId = new Map(padresSections.map((s) => [s.id, s]));
+  const stand = (id: string) => {
+    const value = byId.get(id)?.standCompass;
+    if (value === undefined) throw new Error(`No stand direction for ${id}`);
+    return value;
+  };
+
+  it('pins the club map to the photo within 5 m', () => {
+    expect(aerialChartFit(padresChartPoints, PADRES_AERIAL_CONTROL).rmsM).toBeLessThan(5);
+  });
+
+  it.each(['111', '209', '317'])('first-base section %s faces 135°', (id) => expect(stand(id)).toBe(135));
+  it.each(['112', '210', '318'])('third-base section %s faces 225°', (id) => expect(stand(id)).toBe(225));
+  it.each(['121', '219', '325'])('right-field-line section %s faces 90°', (id) => expect(stand(id)).toBe(90));
+  it.each(['122', '220', '326'])('left-field-line section %s faces 270°', (id) => expect(stand(id)).toBe(270));
+
+  it.each(['101', 'F', 'G', '300', '302'])('behind-home section %s faces away from center field', (id) => {
+    expect(diff(stand(id), getStadiumOrientation('padres') + 180)).toBeLessThan(10);
+  });
+
+  it('the outfield stands follow their walls', () => {
+    expect(stand('130')).toBe(298);
+    expect(stand('133')).toBe(45);
   });
 });
