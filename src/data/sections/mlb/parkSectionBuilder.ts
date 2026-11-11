@@ -130,13 +130,6 @@ export interface ChartSeedConfig {
    */
   aerialControl?: readonly AerialControlPoint[];
   /**
-   * The RMS miss allowed at the control points (default
-   * AERIAL_FIT_MAX_RMS_M). Raise it only for a schematic club drawing,
-   * where no map fits to 5 m; its stand directions must then come from
-   * standRuns measured on the photo.
-   */
-  aerialMaxRmsM?: number;
-  /**
    * Straight stand runs measured on the aerial photo (see StandRun). A
    * section in a run faces `facingDeg` (square to the run's front edge),
    * taken from the photo instead of from the club's drawing. Needed where the
@@ -522,7 +515,7 @@ export function chartSeeds(
   let aerialFrame: ChartFrame | undefined;
   if (config.aerialControl) {
     const fit = aerialChartFit(sourcePoints, config.aerialControl);
-    if (fit.rmsM > (config.aerialMaxRmsM ?? AERIAL_FIT_MAX_RMS_M)) {
+    if (fit.rmsM > AERIAL_FIT_MAX_RMS_M) {
       throw new Error(`Aerial calibration misses its control points by ${fit.rmsM.toFixed(1)} m RMS`);
     }
     // Ground metres, y-down, home plate at the origin, axis toward center field.
