@@ -205,7 +205,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
           <div className="post-layout">
             <aside className="post-sidebar">
               <div className="toc-widget">
-                <h3>Table of Contents</h3>
+                <h2>Table of Contents</h2>
                 <nav className="toc">
                   {toc.map((item, index) => (
                     <a
@@ -220,7 +220,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
               </div>
 
               <div className="share-widget">
-                <h3>Share This Post</h3>
+                <h2>Share This Post</h2>
                 <div className="share-buttons">
                   <a
                     href={`https://twitter.com/intent/tweet?text=${encodeURIComponent(post.title)}&url=${encodeURIComponent(`https://theshadium.com/blog/${post.slug}`)}`}
