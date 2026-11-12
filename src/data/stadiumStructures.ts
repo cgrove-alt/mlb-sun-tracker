@@ -1754,19 +1754,20 @@ export function truistTier(id: string): string | null {
   return 'fourHundred';
 }
 
-// The lower bowl along the lines: 13 field rows, a cross-aisle, then the
-// 100s, whose rows 8–20 are under the 200 level (sourced; on the photo only
-// the 100s' first ~7 rows show beside the cross-aisle). Estimated: field
-// front row ~3 ft, 18° rake; 100s front ~15 ft, 22° rake (last row ~36 ft);
-// 200-level deck underside ~44 ft, its front ~48 ft high about 24 ft behind
-// the field rows' last row.
-const TRUIST_FIELD_BACK = { backHeightFt: 48, backSetbackFt: 24 };
+const TRUIST_LIDAR = 'USGS 3DEP lidar GA_Statewide_B2_2018, flown 2019-04-18 (scripts/measureStandHeights.py)';
+
+// The 100s along the lines: rows 1–20, under the 200 level from row 8
+// (sourced). Lidar (10 of 17): front row 10 ft (6–10), 13° rake (13–22). The
+// 200 level's front, 35 ft up, reaches out over row 6–8 (agreeing with the
+// source); its underside is taken as that front row less 9 ft, 26 ft. What
+// rises highest behind is the roof canopy, 153 ft up over the back row.
 const TRUIST_100: StandProfile = {
   rows: 20,
-  frontRowHeightFt: 15,
-  rakeDeg: 22,
-  backHeightFt: 44,
-  overhang: { coveredFromRow: 8, soffitHeightFt: 44 },
+  frontRowHeightFt: 10,
+  rakeDeg: 13,
+  backHeightFt: 153,
+  backSetbackFt: 1,
+  overhang: { coveredFromRow: 8, soffitHeightFt: 26 },
 };
 
 /**
@@ -1774,83 +1775,119 @@ const TRUIST_100: StandProfile = {
  * 200 level (club), the 300s (Vista) and the 400s (Grandstand) stacked under
  * a roof canopy that covers the 400s from the first row. The site is tight,
  * so the decks stack high. Rows and covered rows are Rate Your Seats'
- * section pages (row labels converted to counts on the seat map). No source
- * publishes the deck heights (the canopy's engineer gives only its area and
- * that it shades ~60% of fans), so every height is estimated by stacking
- * the decks. A 2019 USGS lidar scan of the park exists (see
- * stadiumGeometryEvidence.ts) and can replace these estimates.
+ * section pages (row labels converted to counts on the seat map).
+ *
+ * Heights are measured on USGS airborne lidar (TRUIST_LIDAR), as at Citizens
+ * Bank Park: for each section a cut straight back through its rows gives the
+ * front row's height, the rake and the structure that rises highest behind
+ * as seen from the middle uncovered row; tier values are medians, sections
+ * more than 10% (at least 3 ft) off get their own. Every deck is lower than
+ * the stacking estimates: the 200 level's front is 36 ft (was 48), the
+ * 300s' 68 ft (82). The canopy, about 150 ft up, hides the 400s and the
+ * 300s' back rows from the air, and reaches out over the 200 and 300
+ * levels' back rows; its edge is not the deck over those rows (that deck is
+ * under it, unseen), so their sourced covered rows stay and the canopy
+ * counts as what rises behind them. Deck undersides the scan cannot see are
+ * taken as the deck above's measured front row less 9 ft, and never less
+ * than 9 ft above the first covered row's floor. Covered rows: where the
+ * scan puts an edge more than two rows from the source's, the scan's edge is
+ * used, with the lowest structure seen at it as the underside. Sections the
+ * scan does not find (the chart puts several corner sections' cuts under the
+ * canopy or on other stands) keep estimates, re-taken from the decks
+ * measured around them.
  */
 const TRUIST: StadiumStructure = {
   stadiumId: 'braves',
-  // Far rim: the roof canopy (~142 ft) about 550 ft across the field.
-  park: { roof: 'open', farRimHeightFt: 142, fieldCrossingFt: 550 },
+  // Far rim (lidar): the stands' roof line, median over sections 150 ft (the
+  // canopy); crossing: the median distance from a section to what rises
+  // highest across the field, 591 ft.
+  park: { roof: 'open', farRimHeightFt: 150, fieldCrossingFt: 591 },
   tierOf: truistTier,
   tiers: {
     clubBoxes: {
       label: 'Truist Club boxes (1–9)',
-      // Rows 1–4 or 1–5 at the backstop, uncovered. Estimated: front row
-      // ~2 ft, 12° rake; the bowl rises behind them to the 200 level's front
-      // (~48 ft) about 46 ft back.
-      stand: { rows: 4, frontRowHeightFt: 2, rakeDeg: 12, backHeightFt: 48, backSetbackFt: 46 },
+      // Rows 1–4 or 1–5 at the backstop, uncovered. Lidar (8 of 9): front
+      // row 2 ft (-1 to 2; 8 at -1), 11° rake (8–15); what rises highest
+      // behind is the canopy, 150 ft up and 83 ft behind the last row.
+      stand: { rows: 4, frontRowHeightFt: 2, rakeDeg: 11, backHeightFt: 150, backSetbackFt: 83 },
+      sections: { '8': { frontRowHeightFt: -1 } },
       rowsFromMap: true,
-      heightsSourced: false,
+      heightsSourced: true,
       coverSourced: true,
-      sources: [RYS_TRUIST, ...truistSections('1', '5', '9')],
+      sources: [RYS_TRUIST, ...truistSections('1', '5', '9'), TRUIST_LIDAR],
     },
     fieldInfield: {
       label: 'Field level (17–34)',
-      // Rows 6–13 behind the dugouts and the club boxes, uncovered.
-      // Estimated: row 6 ~6 ft, 18° rake.
-      stand: { rows: 8, frontRowHeightFt: 6, rakeDeg: 18, ...TRUIST_FIELD_BACK },
+      // Rows 6–13 behind the dugouts and the club boxes, uncovered. Lidar (17
+      // of 18): row 6 at 2 ft (0–3), 11° rake (10–15); behind, the canopy,
+      // 151 ft up and 65 ft back.
+      stand: { rows: 8, frontRowHeightFt: 2, rakeDeg: 11, backHeightFt: 151, backSetbackFt: 65 },
       rowsFromMap: true,
-      heightsSourced: false,
+      heightsSourced: true,
       coverSourced: true,
-      sources: [RYS_TRUIST, ...truistSections('17', '22', '25', '30', '34')],
+      sources: [RYS_TRUIST, ...truistSections('17', '22', '25', '30', '34'), TRUIST_LIDAR],
     },
     fieldBoxes: {
       label: 'Field level (10–16, 35–42)',
-      // Rows 1–13 (1–15 in 10 and 42), uncovered.
-      stand: { rows: 13, frontRowHeightFt: 3, rakeDeg: 18, ...TRUIST_FIELD_BACK },
+      // Rows 1–13 (1–15 in 10 and 42), uncovered. Lidar (9 of 15): front row
+      // at field level (-1 to 3; 10 at 3), 11° rake (8–15); behind, the
+      // canopy, 149 ft up and 68 ft back (in 10 and 11, by the right-field
+      // corner, the 300 level's corner, 92–103 ft).
+      stand: { rows: 13, frontRowHeightFt: 0, rakeDeg: 11, backHeightFt: 149, backSetbackFt: 68 },
+      sections: {
+        '10': { frontRowHeightFt: 3, backHeightFt: 92, backSetbackFt: 58 },
+        '11': { backHeightFt: 103, backSetbackFt: 88 },
+      },
       rowsFromMap: true,
-      heightsSourced: false,
+      heightsSourced: true,
       coverSourced: true,
-      sources: [RYS_TRUIST, ...truistSections('10', '12', '16', '35', '42')],
+      sources: [RYS_TRUIST, ...truistSections('10', '12', '16', '35', '42'), TRUIST_LIDAR],
     },
     hundred: {
       label: 'Field level (100s)',
       // Rows 1–20; 110–118, 122, 130 and 133–143 are under cover from row 8.
       stand: TRUIST_100,
+      sections: {
+        ...Object.fromEntries(['122', '135', '137'].map((id) => [id, { frontRowHeightFt: 6 }])),
+        '140': { backHeightFt: 35, backSetbackFt: -39 },
+      },
       rowsFromMap: true,
       heightsSourced: false,
       coverSourced: true,
-      sources: [RYS_TRUIST, ...truistSections('110', '114', '118', '122', '130', '133', '138', '143')],
+      sources: [RYS_TRUIST, ...truistSections('110', '114', '118', '122', '130', '133', '138', '143'), TRUIST_LIDAR],
     },
     hundredCoverUnsourced: {
       label: 'Field level (100s)',
       // 120 and 131: Rate Your Seats says only that their back rows (7+,
-      // 16+) are shaded late in the afternoon, not which rows are covered.
+      // 16+) are shaded late in the afternoon, not which rows are covered;
+      // the lidar puts the 200 level's edge over row 7–8 (both measured), as
+      // in the rest of the 100s.
       stand: TRUIST_100,
       rowsFromMap: true,
       heightsSourced: false,
-      coverSourced: false,
-      sources: truistSections('120', '131'),
+      coverSourced: true,
+      sources: [...truistSections('120', '131'), TRUIST_LIDAR],
     },
     executive: {
       label: 'Executive seats (123–128)',
       // Rows 1–11 behind home under the club level; no source gives the
-      // covered rows (only "rows 8+ shaded late afternoon"), so the check
-      // tries both. Estimated: front ~14 ft, 22° rake, deck underside ~36 ft.
-      stand: { rows: 11, frontRowHeightFt: 14, rakeDeg: 22, backHeightFt: 36, overhang: { coveredFromRow: 8, soffitHeightFt: 36 } },
+      // covered rows (only "rows 8+ shaded late afternoon"). Lidar (6 of 6):
+      // front row 8 ft (6–10), 17° rake (13–21); the 200 level's front, 35 ft
+      // up, reaches out over row 6–8, so the rows from 8 back are covered,
+      // under an underside of ~26 ft (that front row less 9 ft). Behind, the
+      // canopy, 151 ft up and 26 ft back.
+      stand: { rows: 11, frontRowHeightFt: 8, rakeDeg: 17, backHeightFt: 151, backSetbackFt: 26, overhang: { coveredFromRow: 8, soffitHeightFt: 26 } },
       rowsFromMap: true,
       heightsSourced: false,
-      coverSourced: false,
-      sources: truistSections('123', '125', '127', '128'),
+      coverSourced: true,
+      sources: [...truistSections('123', '125', '127', '128'), TRUIST_LIDAR],
     },
     rightCorner: {
       label: 'Right-field corner (107–109)',
       // 107 rows 1–8 and 109 rows 1–6 open; 108 (rows 1–10) all under
-      // cover. Estimated: front ~15 ft, 22° rake, the 200-level corner
-      // (~44 ft) behind.
+      // cover. Not found on the lidar (the chart's bearings miss them).
+      // Estimated: front ~15 ft, 22° rake, the 200-level corner (~44 ft)
+      // behind.
       stand: { rows: 8, frontRowHeightFt: 15, rakeDeg: 22, backHeightFt: 44 },
       sections: { '108': { overhang: { coveredFromRow: 1, soffitHeightFt: 30 } } },
       rowsFromMap: true,
@@ -1862,7 +1899,8 @@ const TRUIST: StadiumStructure = {
       label: 'Left-field corner (144–145)',
       // Rows 9–27; Rate Your Seats says row 12 sits under the 200 level's
       // overhang but its two statements disagree on how many rows, so the
-      // check tries both. Estimated: front ~12 ft, 22° rake.
+      // check tries both. Not found on the lidar. Estimated: front ~12 ft,
+      // 22° rake.
       stand: { rows: 19, frontRowHeightFt: 12, rakeDeg: 22, backHeightFt: 44, overhang: { coveredFromRow: 4, soffitHeightFt: 40 } },
       rowsFromMap: true,
       heightsSourced: false,
@@ -1871,72 +1909,99 @@ const TRUIST: StadiumStructure = {
     },
     homeRunPorch: {
       label: 'Home Run Porch (146–151)',
-      // Rows 1–27 or 1–29, uncovered ("significant sun exposure").
-      // Estimated: front ~9 ft above the wall, 20° rake, the porch's back
-      // wall ~45 ft.
-      stand: { rows: 29, frontRowHeightFt: 9, rakeDeg: 20, backHeightFt: 45 },
+      // Rows 1–27 or 1–29, uncovered ("significant sun exposure"). Lidar (5
+      // of 6): front row 7 ft (6–9), 13° rake; behind, the porch's back
+      // structure, 41 ft up (38–100). Over 151's rows 25 and up a building
+      // reaches out, its lowest point at the edge 43 ft up, so those rows
+      // are covered. (Over 147's front rows a bridge; its seats show
+      // uncovered past it.)
+      stand: { rows: 29, frontRowHeightFt: 7, rakeDeg: 13, backHeightFt: 41, backSetbackFt: 14 },
+      sections: {
+        '148': { backHeightFt: 100, backSetbackFt: 9 },
+        '151': { backHeightFt: 80, backSetbackFt: 0, overhang: { coveredFromRow: 25, soffitHeightFt: 43 } },
+      },
       rowsFromMap: true,
-      heightsSourced: false,
+      heightsSourced: true,
       coverSourced: true,
-      sources: [...truistSections('146', '148', '151'), RYS_TRUIST],
+      sources: [...truistSections('146', '148', '151'), RYS_TRUIST, TRUIST_LIDAR],
     },
     pen: {
       label: 'The Pen (152–155)',
-      // Rows 7–24 or 1–24, uncovered. Estimated: front ~8 ft, 20° rake, the
-      // structure behind ~40 ft.
-      stand: { rows: 24, frontRowHeightFt: 8, rakeDeg: 20, backHeightFt: 40 },
+      // Rows 7–24 or 1–24, uncovered. Lidar (4 of 5): front row 21 ft (15 in
+      // 155), 20° rake; behind, 60 ft up and 35 ft back (44–175). Over the
+      // back rows of 152–153 a frame ~43 ft up, which the scan sees the seats
+      // through (not a deck).
+      stand: { rows: 24, frontRowHeightFt: 21, rakeDeg: 20, backHeightFt: 60, backSetbackFt: 35 },
+      sections: {
+        '152': { backHeightFt: 175, backSetbackFt: 81 },
+        '155': { frontRowHeightFt: 15, backHeightFt: 44, backSetbackFt: 1 },
+      },
       rowsFromMap: true,
-      heightsSourced: false,
+      heightsSourced: true,
       coverSourced: true,
-      sources: truistSections('152', '154', '155'),
+      sources: [...truistSections('152', '154', '155'), TRUIST_LIDAR],
     },
     chopHouse: {
       label: 'Chop House (156–160)',
-      // Rows 1–5 past the right-field wall, uncovered. Estimated: front
-      // ~10 ft, 15° rake, the two-storey Chop House (~30 ft) right behind.
-      stand: { rows: 5, frontRowHeightFt: 10, rakeDeg: 15, backHeightFt: 30 },
+      // Rows 1–5 past the right-field wall, uncovered. Lidar (4 of 5): front
+      // row 15 ft (15–17), 20° rake (18–21); the Chop House behind, 55 ft up
+      // (44–92).
+      stand: { rows: 5, frontRowHeightFt: 15, rakeDeg: 20, backHeightFt: 55, backSetbackFt: 16 },
+      sections: {
+        '159': { backHeightFt: 44, backSetbackFt: 2 },
+        '160': { backHeightFt: 92, backSetbackFt: 62 },
+      },
       rowsFromMap: true,
-      heightsSourced: false,
+      heightsSourced: true,
       coverSourced: true,
-      sources: truistSections('156', '158', '160'),
+      sources: [...truistSections('156', '158', '160'), TRUIST_LIDAR],
     },
     twoHundredCorner: {
       label: '200 level, right-field corner (210–212)',
       // Rows 1–12. Left out of Rate Your Seats' covered list, yet its 212
       // page calls them shaded seats for a day game, so the check tries
-      // them with and without a deck overhead. Estimated: front ~48 ft, 24°
-      // rake, the 300-level corner ~78 ft behind.
-      stand: { rows: 12, frontRowHeightFt: 48, rakeDeg: 24, backHeightFt: 78, backSetbackFt: 10 },
+      // them with and without a deck overhead (the scan sees only the canopy
+      // over their last row or two). Lidar (3 of 3): front row 35 ft
+      // (34–38), 23° rake; behind, the canopy, 150 ft up (in 210 the 300
+      // level's corner, 92 ft).
+      stand: { rows: 12, frontRowHeightFt: 35, rakeDeg: 23, backHeightFt: 150, backSetbackFt: 20 },
+      sections: { '210': { backHeightFt: 92, backSetbackFt: 20 } },
       rowsFromMap: true,
-      heightsSourced: false,
+      heightsSourced: true,
       coverSourced: false,
-      sources: truistSections('210', '211', '212'),
+      sources: [...truistSections('210', '211', '212'), TRUIST_LIDAR],
     },
     twoHundred: {
       label: '200 level',
-      // Rows 1–19; 213–218 and 233–243 under cover from row 14 (sourced).
-      // Estimated: front ~48 ft, 24° rake, 300-level underside ~78 ft.
-      stand: { rows: 19, frontRowHeightFt: 48, rakeDeg: 24, backHeightFt: 78, overhang: { coveredFromRow: 14, soffitHeightFt: 78 } },
+      // Rows 1–19; 213–218 and 233–243 under cover from row 14 (sourced; the
+      // lidar sees the 300 level's front over row 12–15 where the canopy
+      // does not hide it). Lidar (10 of 15): front row 36 ft (35–36), 24°
+      // rake; behind, the canopy, 150 ft up. The 300 level's underside: its
+      // measured 68-ft front row less 9 ft is under row 14's heads, so 9 ft
+      // above row 14's floor, 61 ft.
+      stand: { rows: 19, frontRowHeightFt: 36, rakeDeg: 24, backHeightFt: 150, backSetbackFt: -16, overhang: { coveredFromRow: 14, soffitHeightFt: 61 } },
       rowsFromMap: true,
       heightsSourced: false,
       coverSourced: true,
-      sources: [RYS_TRUIST, ...truistSections('213', '214', '215', '239', '243')],
+      sources: [RYS_TRUIST, ...truistSections('213', '214', '215', '239', '243'), TRUIST_LIDAR],
     },
     xfinityClub: {
       label: 'Xfinity Club (220–231)',
       // Rows 1–7 (220: 1–12, 231: 1–11) in front of the club's tables; no
-      // source gives covered rows, so the check tries both. Estimated:
-      // front ~48 ft, 20° rake, the 300 level (~78 ft) behind the tables.
-      stand: { rows: 7, frontRowHeightFt: 48, rakeDeg: 20, backHeightFt: 78, backSetbackFt: 25 },
+      // source gives covered rows, so the check tries both (the scan sees
+      // only the canopy over 220's and 231's last rows). Lidar (9 of 11):
+      // front row 36 ft (35–36), 24° rake; behind, the canopy, 151 ft up.
+      stand: { rows: 7, frontRowHeightFt: 36, rakeDeg: 24, backHeightFt: 151, backSetbackFt: 14 },
       rowsFromMap: true,
-      heightsSourced: false,
+      heightsSourced: true,
       coverSourced: false,
-      sources: truistSections('220', '222', '225', '231'),
+      sources: [...truistSections('220', '222', '225', '231'), TRUIST_LIDAR],
     },
     terrace: {
       label: 'Hank Aaron Terrace (244–246)',
-      // Rows 1–3 or 1–5, uncovered. Estimated as the 200 level's front.
-      stand: { rows: 5, frontRowHeightFt: 48, rakeDeg: 10, backHeightFt: 78, backSetbackFt: 10 },
+      // Rows 1–3 or 1–5, uncovered. Not found on the lidar. Estimated as the
+      // 200 level's measured front (36 ft), the 300 level's (68 ft) behind.
+      stand: { rows: 5, frontRowHeightFt: 36, rakeDeg: 10, backHeightFt: 68, backSetbackFt: 10 },
       rowsFromMap: true,
       heightsSourced: false,
       coverSourced: true,
@@ -1944,39 +2009,47 @@ const TRUIST: StadiumStructure = {
     },
     threeHundred: {
       label: '300 level (Vista)',
-      // Rows 1–13; 312–323 and 329–343 under cover from row 10 (sourced).
-      // Estimated: front ~82 ft, 28° rake, 400-level underside ~106 ft.
-      stand: { rows: 13, frontRowHeightFt: 82, rakeDeg: 28, backHeightFt: 106, overhang: { coveredFromRow: 10, soffitHeightFt: 106 } },
+      // Rows 1–13; 312–323 and 329–343 under cover from row 10 (sourced; the
+      // 400 level over them is hidden under the canopy). Lidar (8 of 21):
+      // front row 68 ft, 28° rake; behind, the canopy, 149 ft up. The 400
+      // level's underside, unseen: 9 ft above row 10's floor, 90 ft.
+      stand: { rows: 13, frontRowHeightFt: 68, rakeDeg: 28, backHeightFt: 149, backSetbackFt: -22, overhang: { coveredFromRow: 10, soffitHeightFt: 90 } },
       rowsFromMap: true,
       heightsSourced: false,
       coverSourced: true,
-      sources: [RYS_TRUIST, ...truistSections('312', '318', '323', '329', '337', '343')],
+      sources: [RYS_TRUIST, ...truistSections('312', '318', '323', '329', '337', '343'), TRUIST_LIDAR],
     },
     vistaHome: {
       label: 'Vista home plate (324–328)',
-      // Rows 1–7 behind home; no source gives covered rows. Estimated:
-      // front ~82 ft, 28° rake, the 400 level (~110 ft) just behind.
-      stand: { rows: 7, frontRowHeightFt: 82, rakeDeg: 28, backHeightFt: 110, backSetbackFt: 10 },
+      // Rows 1–7 behind home; no source gives covered rows (the scan sees
+      // only the canopy over them). Lidar (5 of 5): front row 68 ft, 27°
+      // rake; behind, the canopy, 150 ft up.
+      stand: { rows: 7, frontRowHeightFt: 68, rakeDeg: 27, backHeightFt: 150, backSetbackFt: -7 },
       rowsFromMap: true,
-      heightsSourced: false,
+      heightsSourced: true,
       coverSourced: false,
-      sources: truistSections('324', '325', '326'),
+      sources: [...truistSections('324', '325', '326'), TRUIST_LIDAR],
     },
     threeCorner: {
       label: '300 level, left-field corner (344–347)',
       // Rows 1–13; left out of Rate Your Seats' covered list, which stops
       // at 343, but no source says they are open, so the check tries both.
-      stand: { rows: 13, frontRowHeightFt: 82, rakeDeg: 28, backHeightFt: 106 },
+      // Not measured (one cut runs along the steps, the others miss).
+      // Estimated as the 300 level's measured front and rake, the canopy
+      // behind.
+      stand: { rows: 13, frontRowHeightFt: 68, rakeDeg: 28, backHeightFt: 149, backSetbackFt: -22 },
       rowsFromMap: true,
       heightsSourced: false,
       coverSourced: false,
-      sources: [RYS_TRUIST, ...truistSections('344', '345', '347')],
+      sources: [RYS_TRUIST, ...truistSections('344', '345', '347'), TRUIST_LIDAR],
     },
     fourHundredOpen: {
       label: '400 level, right-field corner (410–412)',
       // Rows 1–12, outside the canopy (sourced: not covered; a reviewer
-      // in 411: "no shade at all"). Estimated: front ~110 ft, 32° rake.
-      stand: { rows: 12, frontRowHeightFt: 110, rakeDeg: 32, backHeightFt: 132 },
+      // in 411: "no shade at all"). Not found on the lidar (the chart puts
+      // their cuts under the canopy). Estimated as the 400 level: front
+      // ~99 ft, 32° rake.
+      stand: { rows: 12, frontRowHeightFt: 99, rakeDeg: 32, backHeightFt: 132 },
       rowsFromMap: true,
       heightsSourced: false,
       coverSourced: true,
@@ -1984,16 +2057,20 @@ const TRUIST: StadiumStructure = {
     },
     fourHundred: {
       label: '400 level (Grandstand)',
-      // Rows 1–12, all under the roof canopy (sourced, 413–444).
-      // Estimated: front ~110 ft, 32° rake, canopy underside ~137 ft.
-      stand: { rows: 12, frontRowHeightFt: 110, rakeDeg: 32, backHeightFt: 137, overhang: { coveredFromRow: 1, soffitHeightFt: 137 } },
+      // Rows 1–12, all under the roof canopy (sourced, 413–444). Hidden from
+      // the air. Estimated: its front row ~99 ft (its deck's underside over
+      // the 300s, 90 ft, plus 9 ft), 32° rake. The canopy (lidar): its edge
+      // 150 ft up, and nothing seen below it there, so a thin roof; that
+      // edge is over the 300s' front row, so it reaches ~25 ft past the 400s'
+      // front row (over the 300s' row 10, where the 400 deck starts).
+      stand: { rows: 12, frontRowHeightFt: 99, rakeDeg: 32, backHeightFt: 150, overhang: { coveredFromRow: 1, soffitHeightFt: 150, reachFt: 25 } },
       rowsFromMap: true,
       heightsSourced: false,
       coverSourced: true,
-      sources: [RYS_TRUIST, ...truistSections('413', '420', '426', '433', '437', '444')],
+      sources: [RYS_TRUIST, ...truistSections('413', '420', '426', '433', '437', '444'), TRUIST_LIDAR],
     },
   },
-  reviewedOn: '2026-11-11',
+  reviewedOn: '2026-11-12',
 };
 
 const rysBusch = (path: string) => `https://www.rateyourseats.com/busch-stadium/seating/${path}`;

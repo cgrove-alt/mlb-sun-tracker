@@ -130,6 +130,37 @@ PARKS = {
         # left-field scoreboard is a board 166-195 ft up on one pylon.
         'lightTowersAbove': 43,
     },
+    'braves': {
+        'scan': {'ept': 'GA_Statewide_B2_2018'}, 'name': 'USGS 3DEP GA_Statewide_B2_2018 (Georgia 2019)',
+        'noise': [7, 18],
+        'tiers': {
+            'clubBoxes': (-1.0, 1.2), 'fieldInfield': (-1.0, 1.2), 'fieldBoxes': (-1.0, 1.2),
+            'hundred': (1.5, 4.5, 'far'), 'hundredCoverUnsourced': (1.5, 4.5, 'far'), 'executive': (1.5, 4.5, 'far'),
+            'rightCorner': (1.5, 4.5, 'far'), 'leftCorner': (1.5, 4.5, 'far'),
+            'homeRunPorch': (1.0, 3.0), 'pen': (3.5, 7.0), 'chopHouse': (3.5, 5.5),
+            'twoHundred': (9.5, 14, 'near', 15), 'twoHundredCorner': (9.5, 14, 'near', 15),
+            'xfinityClub': (9.5, 14, 'near', 15), 'terrace': (9.5, 14, 'near', 15),
+            'threeHundred': (18, 23, 'near', 15), 'vistaHome': (18, 23, 'near', 15), 'threeCorner': (18, 23, 'near', 15),
+            'fourHundredOpen': (26, 36, 'near', 15),
+        },
+        # The roof canopy, ~150 ft up, reaches out over the 200 and 300 levels'
+        # back rows and hides the 300 and 400 decks under it. An edge at its
+        # height is not the deck over those rows (the scan cannot see that
+        # deck under it): the source's row stays, and the canopy counts as
+        # what rises behind.
+        'canopyFt': 140,
+        'skip': {'345': 'its cut runs along the steps, not up them (the stand direction is off in the corner)'},
+    },
+    'cardinals': {
+        'scan': {'ept': 'USGS_LPC_MO_StLouis_2017_LAS_2018'}, 'name': 'USGS 3DEP MO_StLouis_2017 (St. Louis 2017)',
+        'noise': [7, 18],
+        'tiers': {},
+    },
+    'nationals': {
+        'scan': {'ept': 'USGS_LPC_MD_VA_Sandy_NCR_2014_LAS_2015'}, 'name': 'USGS 3DEP MD_VA_Sandy_NCR_2014 (Washington 2014)',
+        'noise': [7, 18],
+        'tiers': {},
+    },
     'dodgers': {
         'scan': {'ept': 'CA_LosAngeles_1_B23'}, 'name': 'USGS 3DEP CA_LosAngeles_B23 (LA County 2023)',
         'noise': [7, 18],
@@ -498,6 +529,13 @@ def measure_section(P, sec, band):
     lip_row = None if lip is None else max(1, round((lip - run['s0']) / tread) + 1)
     if lip_row is not None and lip_row > rows:
         lip, lip_row = None, None
+    # A deck over the back rows hides the seats behind its edge from the air
+    # (a few metres show under it, seen at an angle). Seats seen well past an
+    # edge are not under it: it is a bridge or a sign over a few rows.
+    flags = []
+    if lip is not None and run['s1'] > lip + 6:
+        lip, lip_row = None, None
+        flags.append('seatsPastEdge')
     soffit = lip_low = None
     if lip is not None:
         # The bottom of the deck's front face, when the scan sees that face.
@@ -517,6 +555,17 @@ def measure_section(P, sec, band):
     above = [r for r in all_runs if lip is not None and lip - 1.5 <= r['s0'] <= lip + 2
              and r['z0'] > run['c'] + slope * r['s0'] + 2.2 and r['slope'] >= math.tan(math.radians(15))]
     above_front = min((r['z0'] for r in above), default=None)
+    # A roof high above whose edge comes first, over a deck of seats that
+    # starts further back under it (Truist Park's canopy over the 300 level):
+    # that deck is the edge over these rows, the lower of the two.
+    if lip is not None and lip_low is not None:
+        under_roof = [r for r in all_runs if lip + 2 < r['s0'] <= back and r['z0'] < lip_low - 2
+                      and r['z0'] > run['c'] + slope * r['s0'] + 2.2 and r['slope'] >= math.tan(math.radians(15))]
+        if under_roof:
+            deck = min(under_roof, key=lambda r: r['s0'])
+            lip, soffit, lip_low, above_front = deck['s0'], None, deck['z0'], deck['z0']
+            lip_row = max(1, round((lip - run['s0']) / tread) + 1)
+            flags.append('deckUnderRoof')
     cover_agrees = (lip_row is None and model_cover is None) or (
         lip_row is not None and model_cover is not None and abs(lip_row - model_cover) <= 2)
     # What stands behind, seen from the middle uncovered row (or row 1).
@@ -542,7 +591,7 @@ def measure_section(P, sec, band):
         'aboveFrontFt': ft(above_front),
         'backFt': None if g is None else g[1] / FT, 'backSetbackFt': None if g is None else (g[0] - back) / FT,
         'rimFt': None if rim is None else rim[1] / FT, 'rimDistFt': None if rim is None else rim[0] / FT,
-        'roofFt': ft(roof),
+        'roofFt': ft(roof), 'flags': flags,
         'cut': {'s0': run['s0'], 's1': run['s1'], 'slope': slope, 'c': run['c'], 'lip': lip, 'back': back,
                 'gov': g, 'head': [hs, hz]},
     }
@@ -753,6 +802,10 @@ def cover_report(park):
             st = secs[r['id']]['stand']
             m = (st.get('overhang') or {}).get('coveredFromRow')
             l = r['lipRow']
+            canopy = PARKS[park].get('canopyFt')
+            edge_z = r['lipLowFt'] if r.get('lipLowFt') is not None else r.get('roofFt')
+            if canopy is not None and l is not None and edge_z is not None and edge_z >= canopy:
+                l = None
             off = l is not None and abs(covered(st['rows'], l) - covered(st['rows'], m)) > 2
             under = None
             if l is not None and r['lipSoffitFt'] is not None:
