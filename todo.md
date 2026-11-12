@@ -837,6 +837,23 @@ Medium or Low confidence and their blog posts stay unpublished.
             rows 15–16 by the end, K–R's lower rows by mid-game, 316–327
             "ending in the sun" (the sun swings behind them), bleacher row 5,
             club E "shaded most day games".
+      - [x] Rate Field: the hand-typed compass table (keyed to the old 120°)
+            is replaced by the club's own 2026 seat map: every section's
+            outlined box found by flood fill on the drawing (new
+            tmp/regions.ts), 132 sections as before (334 keeps its ticketed
+            id 334A). Photo (2019, first-base side in shadow, read on a
+            brightened copy): an aisle every ~5.6 m along each line; RYS's
+            rows start at 5 in the six sections behind each dugout and the
+            photo's dugouts span the first six, so 127 and 137 start each
+            straight; behind home four sections each side of 132 between
+            aisles that radiate from the plate. Affine fit 3.4 m RMS with the
+            outfield stands pinned whole. Stands 263°/355°, corners from
+            their aisles (36°/68° in left, mirrored 226°/187° in right),
+            outfield 164° and 89°. Upper-deck names now follow RYS (Upper Box
+            522–542). 37 checks. Not reproduced: RYS's 2:30 PM late-July
+            photo (all but the first 15 rows of the first-base 100s shaded;
+            the model gets there an hour later) and "most" first-base lower
+            rows shaded at a 3:05 PM first pitch.
 - [ ] 6.5 Batch 5, retractable roofs (answers assume the roof is open, as
       today): Diamondbacks, Rangers, Astros, Marlins, Brewers, Mariners,
       Blue Jays.

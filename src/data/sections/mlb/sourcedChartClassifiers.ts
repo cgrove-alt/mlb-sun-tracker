@@ -271,6 +271,31 @@ export const classifyTigersSection: Classifier = (id) => {
   return numeric ?? section('standing');
 };
 
+/** Rate Field: the club's seat-map names (its 2026 drawing and section pages). */
+const WHITESOX_NAMED: Record<string, ChartSectionMeta> = {
+  'CIBC-SCOUT-CLUB': section('club', 'none', 'CIBC Scout Club'),
+  'MILLER-LITE-LANDING': section('standing', 'none', 'Miller Lite Landing'),
+  'LEINENKUGELS-CRAFT-LODGE': section('club', 'none', "Leinenkugel's Craft Lodge"),
+  PATIO: section('standing', 'none', 'Patio'),
+  'RATE-CLUB': section('club', 'none', 'Rate Club'),
+  'STADIUM-CLUB': section('club', 'none', 'Stadium Club'),
+  'FAN-DECK': section('standing', 'none', 'Fan Deck'),
+};
+
+export const classifyWhitesoxSection: Classifier = (id) => {
+  if (WHITESOX_NAMED[id]) return WHITESOX_NAMED[id];
+  const n = numberAtStart(id);
+  if (n === null) return section('standing');
+  if (n <= 105) return section('lower', 'none', `Outfield Reserved ${id}`);
+  if (n <= 156) return section('lower', 'partial', `Lower Box ${id}`);
+  if (n <= 159) return section('lower', 'none', `Outfield Reserved ${id}`);
+  if (n <= 164) return section('lower', 'none', `Bleachers ${id}`);
+  if (n <= 399) return section('club', 'partial', `Club ${id}`);
+  // Upper Box behind the infield (522–542), Upper Reserved down the lines
+  // (506–520, 544–558), as Rate Your Seats names them.
+  return section('upper', 'partial', `${n >= 522 && n <= 542 ? 'Upper Box' : 'Upper Reserved'} ${id}`);
+};
+
 export const classifyTwinsSection: Classifier = (id) => {
   if (/^ES[A-H]$/.test(id)) return section('suite', 'full');
   if (/^[A-HJ-NP-V]$/.test(id)) return section('club', 'partial');

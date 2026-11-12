@@ -3733,6 +3733,120 @@ const TARGET: StadiumStructure = {
   reviewedOn: '2026-11-11',
 };
 
+const rysRate = (path: string) => `https://www.rateyourseats.com/rate-field/seating/${path}`;
+const RYS_RATE = rysRate('shaded-covered-seats');
+const rateSections = (...ids: string[]) => ids.map((n) => rysRate(`sections/${n}`));
+/** Rate Field's covered rows as positions in each section's numbered rows (Rate Your Seats). */
+const RATE_COVER: Record<string, number> = {
+  '109': 27, '110': 30, '111': 30, '112': 31, '113': 31, '114': 31, '115': 31, '116': 31, '117': 31, '118': 31,
+  '119': 31, '120': 30, '121': 29, '122': 26, '123': 26, '124': 26, '125': 26, '126': 26, '127': 26, '128': 30,
+  '129': 30, '130': 21, '131': 18, '132': 18, '133': 18, '134': 21, '135': 30, '136': 30, '137': 26, '138': 26,
+  '139': 26, '140': 26, '141': 26, '142': 26, '143': 29, '144': 30, '145': 31, '146': 31, '147': 31, '148': 31,
+  '149': 31, '150': 31, '151': 31, '152': 31, '153': 30, '154': 27, '155': 27,
+  '514': 6, '516': 4, '518': 6, '524': 6, '540': 6, '546': 6, '548': 4, '550': 6,
+};
+/** The row each lower-box section starts at, where it is not 1 (Rate Your Seats). */
+const RATE_FIRST_ROW: Record<string, number> = {
+  '108': 9, '109': 7, '110': 4, '121': 2, '122': 5, '123': 5, '124': 5, '125': 5, '126': 5, '127': 5,
+  '130': 13, '131': 16, '132': 16, '133': 16, '134': 13, '137': 5, '138': 5, '139': 5, '140': 5, '141': 5,
+  '142': 5, '143': 2, '154': 4, '155': 4, '156': 8,
+};
+const RATE_LOWER = { frontRowHeightFt: 3, rakeDeg: 20 };
+const rateRise = 2.75 * Math.tan((RATE_LOWER.rakeDeg * Math.PI) / 180);
+
+/** Seating ring of a Rate Field chart section. */
+export function rateTier(id: string): string | null {
+  // The named clubs, decks and standing areas: no source gives their seats
+  // or cover.
+  if (!/^\d{3}A?$/.test(id)) return null;
+  const n = Number(id.slice(0, 3));
+  if (n <= 105) return 'rightField';
+  if (n <= 156) return 'lowerBox';
+  if (n <= 164) return 'leftField';
+  if (n <= 399) return 'club';
+  return 'upper';
+}
+
+/**
+ * Rate Field (1991; roof over the upper deck since 2004). A lower box (108–
+ * 156, rows to 35–37) covered from row 30 or 33 by the club level; the club
+ * boxes (311–357, rows 1–5) under the upper deck; the upper deck (506–558,
+ * rows 1–21) under a roof from row 9; open outfield stands. Rows and covered
+ * rows are Rate Your Seats' section pages. On the 2019 USGS photo, square to
+ * the third-base line, the lower box runs ~11–41 m back, the upper deck's
+ * open front rows from ~38 m and the roof's front edge stands at ~47.5 m.
+ * No source publishes the deck heights, so every height is estimated by
+ * stacking the decks.
+ */
+const RATE: StadiumStructure = {
+  stadiumId: 'whitesox',
+  // Far rim: the roof (~112 ft) about 550 ft across the field.
+  park: { roof: 'open', farRimHeightFt: 112, fieldCrossingFt: 550 },
+  tierOf: rateTier,
+  tiers: {
+    lowerBox: {
+      label: 'Lower box (108–156)',
+      // Covered from row 30 or 33 (here 18–31; sourced); 108 and 156 not.
+      // Estimated: front ~3 ft (higher where a section starts behind a
+      // dugout or the scout seats), 20° rake, club deck underside ~42 ft; the
+      // roof's front edge (~112 ft) ~6.5 m behind the last row.
+      stand: { rows: 37, ...RATE_LOWER, backHeightFt: 112, backSetbackFt: 21 },
+      sections: Object.fromEntries(Array.from({ length: 49 }, (_, i) => String(108 + i)).map((id) => [id, {
+        ...(RATE_FIRST_ROW[id] ? { frontRowHeightFt: RATE_LOWER.frontRowHeightFt + (RATE_FIRST_ROW[id] - 1) * rateRise } : {}),
+        ...(RATE_COVER[id] ? { overhang: { coveredFromRow: RATE_COVER[id], soffitHeightFt: 42 } } : {}),
+      }])),
+      rowsFromMap: true,
+      heightsSourced: false,
+      coverSourced: true,
+      sources: [RYS_RATE, ...rateSections('108', '112', '122', '127', '132', '137', '145', '152', '156')],
+    },
+    rightField: {
+      label: 'Right-field outfield reserved (100–105)',
+      // Rows 1–28 (104–105 from row 9), open ("none of the outfield seats
+      // are covered"). Estimated: front ~8 ft, 20° rake.
+      stand: { rows: 28, frontRowHeightFt: 8, rakeDeg: 20, backHeightFt: 40 },
+      sections: { '104': { frontRowHeightFt: 16 }, '105': { frontRowHeightFt: 16 } },
+      rowsFromMap: true,
+      heightsSourced: false,
+      coverSourced: true,
+      sources: [RYS_RATE, ...rateSections('100', '102', '105')],
+    },
+    leftField: {
+      label: 'Left-field outfield reserved and bleachers (157–164)',
+      // Rows 1–28 (157–158 from row 8), open.
+      stand: { rows: 28, frontRowHeightFt: 8, rakeDeg: 20, backHeightFt: 40 },
+      sections: { '157': { frontRowHeightFt: 15 }, '158': { frontRowHeightFt: 15 } },
+      rowsFromMap: true,
+      heightsSourced: false,
+      coverSourced: true,
+      sources: [RYS_RATE, ...rateSections('157', '160', '164')],
+    },
+    club: {
+      label: 'Club (311–357)',
+      // Rows 1–5 under the upper deck, hidden from above on the photo; no
+      // source gives covered rows, so the check tries both. Estimated: front
+      // ~45 ft, deck underside ~60 ft.
+      stand: { rows: 5, frontRowHeightFt: 45, rakeDeg: 15, backHeightFt: 112, backSetbackFt: 30, overhang: { coveredFromRow: 1, soffitHeightFt: 60 } },
+      rowsFromMap: true,
+      heightsSourced: false,
+      coverSourced: false,
+      sources: rateSections('311', '320', '330', '342', '357'),
+    },
+    upper: {
+      label: 'Upper deck (506–558)',
+      // Rows 1–21, covered from row 9 by the roof (sourced). Estimated:
+      // front ~68 ft, 32° rake, roof underside ~100 ft.
+      stand: { rows: 21, frontRowHeightFt: 68, rakeDeg: 32, treadFt: 2.6, backHeightFt: 112, overhang: { coveredFromRow: 9, soffitHeightFt: 100 } },
+      sections: Object.fromEntries(['514', '516', '518', '524', '540', '546', '548', '550'].map((id) => [id, { overhang: { coveredFromRow: RATE_COVER[id], soffitHeightFt: 100 } }])),
+      rowsFromMap: true,
+      heightsSourced: false,
+      coverSourced: true,
+      sources: [RYS_RATE, ...rateSections('506', '516', '530', '548', '558')],
+    },
+  },
+  reviewedOn: '2026-11-12',
+};
+
 export const STADIUM_STRUCTURES: Readonly<Record<string, StadiumStructure>> = {
   yankees: YANKEES,
   redsox: FENWAY,
@@ -3754,6 +3868,7 @@ export const STADIUM_STRUCTURES: Readonly<Record<string, StadiumStructure>> = {
   tigers: COMERICA,
   guardians: PROGRESSIVE,
   twins: TARGET,
+  whitesox: RATE,
 };
 
 export function getStadiumStructure(stadiumId: string): StadiumStructure | undefined {

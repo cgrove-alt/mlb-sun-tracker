@@ -34,6 +34,8 @@ import { guardiansSections, GUARDIANS_AERIAL_CONTROL } from '../guardians';
 import { guardiansChartPoints } from '../chart-points/guardians';
 import { twinsSections, TWINS_AERIAL_CONTROL } from '../twins';
 import { twinsChartPoints } from '../chart-points/twins';
+import { whitesoxSections, WHITESOX_AERIAL_CONTROL } from '../whitesox';
+import { whitesoxChartPoints } from '../chart-points/whitesox';
 import { aerialChartFit } from '../parkSectionBuilder';
 import { getStadiumOrientation } from '../../../stadiums';
 
@@ -766,5 +768,44 @@ describe('Target Field stand directions (measured on the 2021 aerial photo)', ()
     expect(stand('125')).toBe(340);
     expect(stand('130')).toBe(52);
     expect(stand('134')).toBe(130);
+  });
+});
+
+describe('Rate Field stand directions (measured on the 2019 aerial photo)', () => {
+  // Level lines run parallel to both foul lines (backs 263° and 355°);
+  // behind home the aisles radiate from home plate.
+  const byId = new Map(whitesoxSections.map((s) => [s.id, s]));
+  const stand = (id: string) => {
+    const value = byId.get(id)?.standCompass;
+    if (value === undefined) throw new Error(`No stand direction for ${id}`);
+    return value;
+  };
+  const bearing = (id: string) => {
+    const s = byId.get(id)!;
+    return (((getStadiumOrientation('whitesox') + 90 - s.baseAngle - s.angleSpan / 2) % 360) + 360) % 360;
+  };
+
+  it('pins the club map to the photo within 5 m', () => {
+    expect(aerialChartFit(whitesoxChartPoints, WHITESOX_AERIAL_CONTROL).rmsM).toBeLessThan(5);
+  });
+
+  it('puts 133–136 on the wedges between the aisles seen behind home', () => {
+    // Aisles at 313.5°, 324.5°, 336° and 348°; the straight starts at ~1°.
+    const wedges: Record<string, number> = { '133': 319, '134': 330.25, '135': 342, '136': 354.5 };
+    for (const [id, middle] of Object.entries(wedges)) expect(diff(bearing(id), middle)).toBeLessThan(4);
+  });
+
+  it.each(['112', '124', '316', '520'])('first-base section %s faces 263°', (id) => expect(stand(id)).toBe(263));
+  it.each(['140', '150', '342', '546'])('third-base section %s faces 355°', (id) => expect(stand(id)).toBe(355));
+
+  it.each(['132', '531'])('behind-home section %s faces away from center field', (id) => {
+    expect(diff(stand(id), getStadiumOrientation('whitesox') + 180)).toBeLessThan(10);
+  });
+
+  it('the corners and outfield stands follow the photo', () => {
+    expect(stand('108')).toBe(187);
+    expect(stand('155')).toBe(36);
+    expect(stand('102')).toBe(164);
+    expect(stand('161')).toBe(89);
   });
 });
