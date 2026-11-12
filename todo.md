@@ -1156,19 +1156,75 @@ Scans are kept cropped in tmp/lidar/<park>.npz; the one raw tile is deleted.
   some undersides far below the measured deck above): the bottom of its
   face where the scan sees one; otherwise the lowest structure the scan
   sees at the edge, or, when that is the front row of a deck of seats above
-  (within 2 ft), 6 ft below that row (the face depth measured at Dodger
-  Stadium's Reserve deck and Yankee Stadium's canopy); never less than 9 ft
-  above the first covered row's floor. Tier value = median, sections more
-  than 10% (3 ft) off get their own. Exceptions written down: Oracle's View
-  level (its rows A–D come before row 1, so its edge agrees), Fenway's Monster
-  seats (the "edge" is light-tower lattice, not a deck).
+  (within 2 ft), that row less the park's measured deck depth (front row to
+  lowest structure, at the edges where both show; 9 ft where none do);
+  never less than 9 ft above the floor of the first covered row the profile
+  gets, on the profile's own front row and rake. Tier value = median,
+  sections more than 10% (3 ft) off, or that the tier's value would leave
+  under 9 ft, get their own. Where two decks cover one tier, split it by
+  deck. Exceptions written down: Oracle's View level (its rows A–D come
+  before row 1, so its edge agrees), Fenway's Monster seats (the "edge" is
+  light-tower lattice, not a deck).
 - Those tiers' cover becomes sourced (by the scan); `heightsSourced` turns
   true where the underside is a seen face.
 - Reference checks and blog claims whose answers change are investigated
   and rewritten to the engine, never tuned.
 - One commit per park; tests, Low share before and after.
-- [ ] Dodgers   - [ ] Yankees   - [ ] Fenway   - [ ] Wrigley
-- [ ] Oracle    - [ ] Citi      - [ ] Phillies
+- [x] Dodgers   - [x] Yankees   - [x] Fenway   - [x] Wrigley
+- [x] Oracle    - [x] Citi      - [x] Phillies
+- [x] Every lidar-measured underside at least 9 ft over its first covered
+      row, kept by a test (found at CBP, see the review)
+
+### 7.1b Review: option A (2026-11-12)
+What changed: in all seven lidar parks the first covered row now comes from
+the scan where it differs from Rate Your Seats by more than two rows, with
+the underside measured where the scan sees it. Nine commits, one per park
+plus two fixes; nothing pushed.
+
+Low-confidence share at a 1:10 PM game (April / July), before → after:
+- Dodgers 48% / 45% → 24% / 24%
+- Yankees 61% / 55% → 32% / 30%
+- Fenway 33% / 28% → 26% / 21%
+- Wrigley 37% / 37% → 21% / 21%
+- Oracle 40% / 23% → 23% / 6%
+- Citi 55% / 51% → 39% / 39%
+- CBP 49% / 45% → 27% / 23%
+
+Rules refined along the way (all in the plan above):
+- Deck depth measured per park (8.8–11 ft) instead of a 6-ft guess.
+- Citi's 100s are covered by two decks (Sterling behind home, Excelsior
+  down the lines): split by deck, or the first-base 100s got the low
+  Sterling deck and too much shade.
+- Cuts that don't run along the rows are skipped, and the wrong values they
+  had given removed: Oracle 122 (down a vomitory ramp), Wrigley 515 and 536
+  (across end platforms). Wrigley 513 and Yankee corners 103/104/135/136
+  stay open (rows end before the edge the scan sees).
+- The 9-ft underside rule was checked at the scan's edge, not at the row
+  each profile got, so 13 entries at four parks and 4 at CBP (a few from
+  before option A) had less, as little as 5 ft. Fixed in the script,
+  raised in the data, and `deckClearance.test.ts` now keeps every
+  lidar-measured profile to it. This also fixed CBP's "right field 201–211
+  in the sun by the final out".
+
+Reference checks and blog claims (investigated, never tuned):
+- Now reproduced: CBP Hall of Fame Club 225–232 out of the sun by the 3rd
+  inning (July and September; it had failed in July), Fenway's Loge upper
+  rows shaded at a 1 PM start.
+- Narrowed, with the measured reason in the test header: Dodgers 52FD,
+  10RS and the pavilion's front rows; CBP 108–110 (the 200 level reaches
+  their back rows, the front 20 rows stay in the sun) and 134–136 (less
+  back-row shade than the neighbours, not much less).
+- Blog posts rewritten to the engine: Yankees (upper deck shaded almost
+  everywhere from first pitch; Main level's back rows under the Terrace),
+  Fenway (Loge). CBP's post is an unpublished draft.
+
+Still open:
+- The confidence split (`soffitSourced`) from Batch 1 is not decided.
+- Outside the lidar-measured tiers, many estimated undersides are under
+  9 ft over their first covered row: suites at 6 ft in about a dozen
+  parks, and some under 2 ft (the Reds' 400s and third-base 100s, the
+  Royals' and Rockies' upper decks, the Padres' right-field upper deck);
+  Wrigley's Terrace is at 5 ft. Not touched here.
 
 ---
 ---
