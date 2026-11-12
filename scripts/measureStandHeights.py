@@ -87,7 +87,10 @@ PARKS = {
     'cubs': {
         'scan': {'ept': 'USGS_LPC_IL_4County_Cook_2017_LAS_2019'}, 'name': 'USGS 3DEP IL_4County_Cook_2017 (Cook County 2017)',
         'noise': [7, 18],
-        'tiers': {},
+        # The lower bowl (club boxes, front boxes, the 100s) was rebuilt in
+        # 2017-18, after this scan, and is not measured; the Terrace and the
+        # 400s are under the upper deck and its roof.
+        'tiers': {'upperBox': (12, 17, 'near', 15), 'bleachers': (2, 8, 'near', 15)},
     },
     'giants': {
         'scan': {'ept': 'CA_SanFrancisco_1_B23'}, 'name': 'USGS 3DEP CA_SanFrancisco_B23 (San Francisco 2023)',
@@ -468,12 +471,21 @@ def measure_section(P, sec, band):
     lip_row = None if lip is None else max(1, round((lip - run['s0']) / tread) + 1)
     if lip_row is not None and lip_row > rows:
         lip, lip_row = None, None
-    soffit = None
+    soffit = lip_low = None
     if lip is not None:
         # The bottom of the deck's front face, when the scan sees that face.
-        zz = z[over & (s >= lip - 0.5) & (s <= lip + 1.0)]
-        if len(zz) >= 4 and np.percentile(zz, 95) - np.percentile(zz, 5) >= 1.0:
-            soffit = float(np.percentile(zz, 5))
+        # A face hangs from the deck: climb from the lowest point with no gap
+        # over 2 m; it is seen if that climb covers at least 1.5 m (railings
+        # and seat backs alone, or a roof far above, do not).
+        zz = np.sort(z[over & (s >= lip - 0.5) & (s <= lip + 1.0)])
+        if len(zz) >= 4:
+            lo_ = float(np.percentile(zz, 5))
+            lip_low = lo_
+            zz = zz[zz >= lo_]
+            gaps = np.flatnonzero(np.diff(zz) > 2.0)
+            face_top = zz[gaps[0]] if len(gaps) else zz[-1]
+            if face_top - lo_ >= 1.5:
+                soffit = lo_
     cover_agrees = (lip_row is None and model_cover is None) or (
         lip_row is not None and model_cover is not None and abs(lip_row - model_cover) <= 2)
     # What stands behind, seen from the middle uncovered row (or row 1).
@@ -495,7 +507,7 @@ def measure_section(P, sec, band):
         'id': sec['id'], 'tier': sec['tier'], 'found': True, 'rows': rows, 'anchor': [ax, ay, run['at'](0)],
         'frontFt': front / FT, 'rakeDeg': math.degrees(math.atan(slope)), 'visibleDepthFt': depth / FT,
         'lipRow': lip_row, 'modelCoveredFrom': model_cover, 'coverAgrees': cover_agrees,
-        'soffitFt': ft(soffit) if cover_agrees else None, 'lipSoffitFt': ft(soffit),
+        'soffitFt': ft(soffit) if cover_agrees else None, 'lipSoffitFt': ft(soffit), 'lipLowFt': ft(lip_low),
         'backFt': None if g is None else g[1] / FT, 'backSetbackFt': None if g is None else (g[0] - back) / FT,
         'rimFt': None if rim is None else rim[1] / FT, 'rimDistFt': None if rim is None else rim[0] / FT,
         'roofFt': ft(roof),
@@ -524,7 +536,7 @@ def measure(park):
         t = {'sections': n_all, 'found': len(rs)}
         t['coverDisagrees'] = sorted({f"{r['id']}: lip row {r['lipRow']}, sourced {r['modelCoveredFrom']}" for r in rs if not r['coverAgrees']})
         t['notFound'] = [f"{r['id']}: {r.get('why')}" for r in results if r['tier'] == key and not r['found']]
-        for f in ('frontFt', 'rakeDeg', 'lipRow', 'soffitFt', 'lipSoffitFt', 'backFt', 'backSetbackFt'):
+        for f in ('frontFt', 'rakeDeg', 'lipRow', 'soffitFt', 'lipSoffitFt', 'lipLowFt', 'backFt', 'backSetbackFt'):
             vals = [r[f] for r in rs if r[f] is not None]
             t[f] = None if not vals else {'median': float(np.median(vals)), 'min': float(min(vals)), 'max': float(max(vals)), 'n': len(vals)}
         tiers[key] = t
@@ -547,7 +559,7 @@ def measure(park):
         print(f"{key}: {t['found']}/{t['sections']} found")
         print(f"   front {show('frontFt')} (now {cur['frontRowHeightFt']})  rake {show('rakeDeg')} (now {cur['rakeDeg']})")
         oh = cur.get('overhang') or {}
-        print(f"   lip row {show('lipRow')} (sourced {oh.get('coveredFromRow')})  soffit {show('soffitFt')} (now {oh.get('soffitHeightFt')}); at the lidar's lip {show('lipSoffitFt')}")
+        print(f"   lip row {show('lipRow')} (sourced {oh.get('coveredFromRow')})  soffit {show('soffitFt')} (now {oh.get('soffitHeightFt')}); at the lidar's lip: face bottom {show('lipSoffitFt')}, lowest structure {show('lipLowFt')}")
         if t['coverDisagrees']:
             print(f"   cover disagrees: {len(t['coverDisagrees'])}: " + '; '.join(t['coverDisagrees'][:6]))
         if t['notFound']:

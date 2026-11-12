@@ -282,7 +282,7 @@ const FENWAY: StadiumStructure = {
       label: 'Loge Box',
       // Uncovered, rows AA–NN (sourced). Lidar (72 of 78): front row 4 ft
       // (3–9), 16° rake (12–34). The front edge of the Grandstand roof
-      // reaches out over row 9 (8–11), its face's bottom 41 ft up, against
+      // reaches out over row 9 (8–11), with structure down to 41 ft, against
       // the source; its top, 54 ft up over row 9, is what rises highest
       // behind (36–96 ft from section to section). With the source and the
       // scan disagreeing, which rows are covered is not settled, so the
@@ -303,10 +303,10 @@ const FENWAY: StadiumStructure = {
     grandstand: {
       label: 'Grandstand',
       // Every row covered by the roof the pavilion level sits on (sourced).
-      // Hidden from the air. The lidar sees the roof's front face over the
-      // Loge Boxes, its bottom 41 ft up (39–66). Estimated: front row ~15 ft
-      // (just above the Loge's measured last row), 20° rake, back wall
-      // ~48 ft.
+      // Hidden from the air. At the roof's front edge over the Loge Boxes
+      // the scan shows structure down to 41 ft (33–87; the face itself is
+      // not seen), used as the underside. Estimated: front row ~15 ft (just
+      // above the Loge's measured last row), 20° rake, back wall ~48 ft.
       stand: {
         rows: 17,
         frontRowHeightFt: 15,
@@ -571,7 +571,8 @@ const DODGERS: StadiumStructure = {
       // Rows A–W (22), covered from row N (13th) by the Club level above
       // (sourced). Lidar (68 of 68): front row 22 ft (21–24), 19° rake
       // (16–20). The Reserve deck's front edge reaches out over row 8 (6–9),
-      // its face's bottom 48 ft up (47–52); the Club deck under it, which
+      // its lowest structure 48 ft up (47–58; 50 ft where the scan sees its
+      // face); the Club deck under it, which
       // covers row N, cannot be seen from the air. What rises highest behind
       // is that Reserve deck edge, 58 ft up over row 8. Estimated: the Club
       // deck's underside ~42 ft (9 ft above row N's floor).
@@ -596,8 +597,8 @@ const DODGERS: StadiumStructure = {
       // so estimated from the measured decks around it: its floor sits over
       // the Loge's covered rows (Club deck underside ~42 ft plus its
       // structure), front row ~46 ft, 25° rake; the Reserve deck's underside
-      // ~55 ft over it (9 ft above the Club's floor; its face's bottom is
-      // measured at 47–52 ft at its front edge, further out, and rises with
+      // ~55 ft over it (9 ft above the Club's floor; at its front edge,
+      // further out, its lowest structure is 47–58 ft, and it rises with
       // its 30° rake).
       stand: {
         rows: 8,
