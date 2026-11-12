@@ -3946,6 +3946,162 @@ const SUTTER: StadiumStructure = {
   reviewedOn: '2026-11-12',
 };
 
+const CHASE_SHADE = 'https://www.shadedseats.com/chase-field-shaded-seats/';
+const CHASE_RYS = 'https://www.rateyourseats.com/chase-field/seating/shaded-covered-seats';
+const CHASE_PHOTO = 'USGS NAIP m_3311240_nw_12_.6_20170602 (roof open; also the 2010, 2013 and 2015 flights)';
+const CHASE_HEIGHT = 'https://www.mlb.com/news/chase-field-guide-capacity-seating-chart-parking-and-more';
+const chaseSection = (n: string) => `https://www.rateyourseats.com/chase-field/seating/sections/${n}`;
+/**
+ * Per section, from the 2017 photo with the roof open: the first covered row
+ * (0 = none) and what covers it ('d' the suite deck behind home, 'r' the
+ * roof: a parked panel stack or the fixed roof behind home), then how far
+ * behind the last row (m) the roof's edge stands. Worked out from each
+ * section's place on the pinned seat map, its rows (0.85 m apart) running
+ * back along its stand direction, and three measured edges: the suite deck
+ * 21.3 m behind home on the axis widening to 34.5 m at ±50° (the same in
+ * the 2010, 2013, 2015 and 2017 flights); the parked panels, whose inner
+ * edges are 142–145 m apart in all four flights (their apparent place moves
+ * up to 35 m with the camera's lean), so 72 m either side of home; and the
+ * fixed roof behind home, 35–43 m behind the plate (37 m used).
+ */
+const CHASE_ROOF: Record<string, [number, '' | 'd' | 'r', number]> = {
+  '101': [0, '', 17.5], '102': [26, 'r', 0], '103': [18, 'r', 0], '104': [4, 'r', 0], '105': [1, 'r', 0],
+  '106': [1, 'r', 0], '107': [1, 'r', 0], '108': [1, 'r', 0], '109': [5, 'r', 0], '110': [14, 'r', 0],
+  '111': [24, 'r', 0], '112': [35, 'r', 0], '113': [0, '', 3.5], '114': [0, '', 11], '115': [0, '', 21.5],
+  '116': [0, '', 31.5], '117': [0, '', 24], '118': [7, 'd', 13.5], '119': [1, 'd', 2.5], '120': [1, 'd', 0],
+  '121': [1, 'd', 0], '122': [1, 'd', 0], '123': [1, 'd', 0], '124': [1, 'd', 0], '125': [1, 'd', 2.5],
+  '126': [7, 'd', 13.5], '127': [0, '', 24], '128': [0, '', 32], '129': [0, '', 21.5], '130': [0, '', 11],
+  '131': [0, '', 3], '132': [34, 'r', 0], '133': [23, 'r', 0], '134': [14, 'r', 0], '135': [9, 'r', 0],
+  '136': [1, 'r', 0], '137': [1, 'r', 0], '138': [1, 'r', 0], '139': [2, 'r', 0], '140': [11, 'r', 0],
+  '141': [24, 'r', 0], '142': [0, '', 0.5], '143': [0, '', 15], '144': [0, '', 35], '200': [1, 'r', 0],
+  '201': [1, 'r', 0], '202': [1, 'r', 0], '203': [1, 'r', 0], '204': [4, 'r', 0], '205': [0, '', 2.5],
+  '206': [0, '', 10], '207': [0, '', 19], '208': [0, '', 26], '209': [0, '', 14], '211': [0, '', 14],
+  '212': [0, '', 26], '213': [0, '', 19], '214': [0, '', 10.5], '215': [0, '', 2.5], '216': [3, 'r', 0],
+  '217': [1, 'r', 0], '218': [1, 'r', 0], '219': [1, 'r', 0], '220': [1, 'r', 0], '221': [1, 'r', 0],
+  '222': [1, 'r', 0], '223': [1, 'r', 0], '300': [1, 'r', 0], '301': [1, 'r', 0], '302': [1, 'r', 0],
+  '303': [1, 'r', 0], '304': [1, 'r', 0], '305': [1, 'r', 0], '306': [1, 'r', 0], '307': [4, 'r', 0],
+  '308': [16, 'r', 0], '309': [27, 'r', 0], '310': [14, 'r', 0], '311': [4, 'r', 0], '312': [1, 'r', 0],
+  '313': [1, 'r', 0], '314': [1, 'r', 0], '315': [1, 'r', 0], '316': [1, 'r', 0], '317': [1, 'r', 0],
+  '318': [1, 'r', 0], '319': [1, 'r', 0], '320': [1, 'r', 0], '321': [4, 'r', 0], '322': [14, 'r', 0],
+  '323': [22, 'r', 0], '324': [15, 'r', 0], '325': [3, 'r', 0], '326': [1, 'r', 0], '327': [1, 'r', 0],
+  '328': [1, 'r', 0], '329': [1, 'r', 0], '330': [1, 'r', 0], '331': [1, 'r', 0], '332': [1, 'r', 0],
+  '210F': [1, 'r', 0], '210G': [1, 'r', 0], '210H': [1, 'r', 0], '210I': [0, '', 2], A: [0, '', 26.5],
+  B: [0, '', 33], C: [0, '', 33.5], D: [0, '', 40], E: [0, '', 47], F: [0, '', 41], G: [0, '', 34],
+  H: [0, '', 23], I: [9, 'd', 13.5], J: [6, 'd', 9], K: [10, 'd', 13.5], L: [0, '', 24.5],
+  M: [0, '', 34.5], N: [0, '', 40], O: [0, '', 47], P: [0, '', 40.5], Q: [0, '', 33], R: [0, '', 34.5],
+  S: [0, '', 27.5],
+};
+/** The first labelled row where it is not 1 (Rate Your Seats): rows 1–20 behind home are the boxes in front. */
+const CHASE_FIRST_ROW: Record<string, number> = {
+  '101': 22, '102': 14, '103': 14, '104': 14, '105': 17, '106': 22, '107': 25, '108': 11, '109': 5, '110': 3,
+  '113': 11, '114': 11, '115': 21, '116': 21, '117': 21, '118': 21, '119': 21, '120': 21, '121': 21, '122': 21,
+  '123': 21, '124': 21, '125': 21, '126': 21, '127': 21, '128': 21, '129': 21, '130': 11, '131': 11, '134': 3,
+  '135': 5, '136': 11, '137': 25, '138': 22, '139': 12, '140': 11, '141': 11, '142': 11, '143': 11, '144': 11,
+  C: 6, D: 6, E: 6, F: 6, N: 6, O: 6, P: 6, Q: 6,
+};
+const CHASE_LOWER = { frontRowHeightFt: 3, rakeDeg: 20 };
+const chaseRise = 2.75 * Math.tan((CHASE_LOWER.rakeDeg * Math.PI) / 180);
+/** Roof (parked panels and fixed section) top and underside, ft (estimated). */
+const CHASE_ROOF_TOP = 200;
+const CHASE_ROOF_UNDERSIDE = 170;
+/** Underside of the suite deck behind home, ft (estimated). */
+const CHASE_DECK = 50;
+const chaseSections = (ids: string[]) => Object.fromEntries(ids.map((id) => {
+  const [from, kind, setbackM] = CHASE_ROOF[id] ?? [0, '', 30];
+  return [id, {
+    ...(CHASE_FIRST_ROW[id] ? { frontRowHeightFt: CHASE_LOWER.frontRowHeightFt + (CHASE_FIRST_ROW[id] - 1) * chaseRise } : {}),
+    ...(from ? { overhang: { coveredFromRow: from, soffitHeightFt: kind === 'd' ? CHASE_DECK : CHASE_ROOF_UNDERSIDE } } : {}),
+    backSetbackFt: Math.round(setbackM * 3.28),
+  }];
+}));
+const chaseIds = (re: RegExp) => Object.keys(CHASE_ROOF).filter((id) => re.test(id));
+
+/** Seating ring of a Chase Field chart section. */
+export function chaseTier(id: string): string | null {
+  if (/^[A-S]$/.test(id)) return 'box';
+  if (/^1\d\d$/.test(id)) return 'lower';
+  if (/^2\d\d$|^210[A-I]$/.test(id)) return 'club';
+  if (/^3\d\d$/.test(id)) return 'upper';
+  // Wheelchair platforms (…W): no rows or cover listed.
+  return null;
+}
+
+/**
+ * Chase Field (1998), with the roof open. Field boxes (A–S) in front of the
+ * lower bowl (101–145, rows to 39), a club and suite level (200–223, 210A–I)
+ * and the upper deck (300–332). The roof opens by sliding its panels apart:
+ * they stack over the stands east and west of the field from about the foul
+ * poles outward, and a fixed section stays over the upper deck behind home.
+ * Rate Your Seats: "Even with the roof open, the Upper Deck is well-covered,
+ * as are corner sections on the infield, including 135-138, 220-223 and
+ * 106-109"; shadedseats.com: 314–318 and 328–332 are "the safest options",
+ * the back of 319–327 and of the first-base 300s are under the roof, and
+ * the seats directly behind home are under the structures attached to it.
+ * The geometry above reproduces each of those (CHASE_ROOF). MLB gives the
+ * roof as 255 ft at its highest and 185 ft at its lowest; no source gives
+ * the decks' heights, so they are estimated.
+ */
+const CHASE: StadiumStructure = {
+  stadiumId: 'diamondbacks',
+  // Far rim: the parked panels (~200 ft), ~145 m apart across the field.
+  park: { roof: 'retractable', farRimHeightFt: CHASE_ROOF_TOP, fieldCrossingFt: 475 },
+  tierOf: chaseTier,
+  tiers: {
+    box: {
+      label: 'Field boxes (A–S)',
+      // Rows A–M or 6–18 (7–14 rows; sourced). Estimated: front ~3 ft (~8 ft
+      // behind the dugouts, where rows start at 6), 20° rake, suite deck
+      // underside ~50 ft; the roof's edge (~200 ft) behind.
+      stand: { rows: 13, ...CHASE_LOWER, backHeightFt: CHASE_ROOF_TOP },
+      sections: chaseSections(chaseIds(/^[A-S]$/)),
+      rowsFromMap: true,
+      heightsSourced: false,
+      coverSourced: true,
+      sources: [CHASE_SHADE, CHASE_PHOTO, ...['J', 'N', 'S'].map(chaseSection)],
+    },
+    lower: {
+      label: 'Lower bowl (101–144)',
+      // Rows to 39, starting at row 21 behind the boxes (sourced). Covered:
+      // behind home by the suite deck, toward each corner by the parked
+      // panels (CHASE_ROOF). Estimated: front ~3 ft plus ~1 ft a row where
+      // the rows start further up, 20° rake.
+      stand: { rows: 39, ...CHASE_LOWER, backHeightFt: CHASE_ROOF_TOP },
+      sections: chaseSections(chaseIds(/^1\d\d$/)),
+      rowsFromMap: true,
+      heightsSourced: false,
+      coverSourced: true,
+      sources: [CHASE_RYS, CHASE_SHADE, CHASE_PHOTO, ...['101', '109', '111', '122', '135', '144'].map(chaseSection)],
+    },
+    club: {
+      label: 'Club and suite level (200–223, 210A–I)',
+      // Rows 1–11 or 1–13 (210A–I: 2) (sourced); under the parked panels
+      // toward the corners (CHASE_ROOF; 220–223 sourced). Whether the upper
+      // deck also covers their back rows is not published. Estimated: front
+      // ~45 ft, 25° rake.
+      stand: { rows: 11, frontRowHeightFt: 45, rakeDeg: 25, backHeightFt: CHASE_ROOF_TOP },
+      sections: chaseSections(chaseIds(/^2\d\d$|^210[A-I]$/)),
+      rowsFromMap: true,
+      heightsSourced: false,
+      coverSourced: false,
+      sources: [CHASE_RYS, CHASE_PHOTO, ...['200', '210F', '214', '221'].map(chaseSection)],
+    },
+    upper: {
+      label: 'Upper deck (300–332)',
+      // Rows 1–32 to 1–40 (sourced). Under the fixed roof behind home or the
+      // parked panels (CHASE_ROOF), matching the published 314–318, 328–332
+      // and the backs of 319–327 and the first-base 300s. Estimated: front
+      // ~85 ft, 30° rake, roof underside ~170 ft.
+      stand: { rows: 32, frontRowHeightFt: 85, rakeDeg: 30, treadFt: 2.6, backHeightFt: CHASE_ROOF_TOP },
+      sections: chaseSections(chaseIds(/^3\d\d$/)),
+      rowsFromMap: true,
+      heightsSourced: false,
+      coverSourced: true,
+      sources: [CHASE_RYS, CHASE_SHADE, CHASE_HEIGHT, CHASE_PHOTO, ...['300', '316', '323', '330'].map(chaseSection)],
+    },
+  },
+  reviewedOn: '2026-11-12',
+};
+
 export const STADIUM_STRUCTURES: Readonly<Record<string, StadiumStructure>> = {
   yankees: YANKEES,
   redsox: FENWAY,
@@ -3969,6 +4125,7 @@ export const STADIUM_STRUCTURES: Readonly<Record<string, StadiumStructure>> = {
   twins: TARGET,
   whitesox: RATE,
   athletics: SUTTER,
+  diamondbacks: CHASE,
 };
 
 export function getStadiumStructure(stadiumId: string): StadiumStructure | undefined {

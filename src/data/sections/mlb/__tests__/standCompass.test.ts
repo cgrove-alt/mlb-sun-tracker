@@ -1,4 +1,6 @@
 import { yankeesSections } from '../yankees';
+import { diamondbacksSections, DIAMONDBACKS_AERIAL_CONTROL } from '../diamondbacks';
+import { diamondbacksChartPoints } from '../chart-points/diamondbacks';
 import { dodgersSections, DODGERS_AERIAL_CONTROL } from '../dodgers';
 import { dodgersChartPoints } from '../chart-points/dodgers';
 import { cubsSections, CUBS_AERIAL_CONTROL } from '../cubs';
@@ -842,4 +844,43 @@ describe('Sutter Health Park stand directions (measured on the 2022 aerial photo
   it.each(['112', '110', '114'])('behind-home section %s faces its bearing from home', (id) => {
     expect(diff(stand(id), bearing(id))).toBeLessThan(4);
   });
+});
+
+describe('Chase Field stand directions (measured on the 2017 aerial photo, roof open)', () => {
+  // Both straights are turned ~4° toward home (backs 131° and 228°); behind
+  // home the rows are arcs on the plate; the outfield stands sit behind
+  // straight walls (backs 51° and 316°).
+  const byId = new Map(diamondbacksSections.map((s) => [s.id, s]));
+  const stand = (id: string) => {
+    const value = byId.get(id)?.standCompass;
+    if (value === undefined) throw new Error(`No stand direction for ${id}`);
+    return value;
+  };
+  const bearing = (id: string) => {
+    const s = byId.get(id)!;
+    return (((getStadiumOrientation('diamondbacks') + 90 - s.baseAngle - s.angleSpan / 2) % 360) + 360) % 360;
+  };
+
+  it('pins the club map to the photo within 5 m', () => {
+    expect(aerialChartFit(diamondbacksChartPoints, DIAMONDBACKS_AERIAL_CONTROL).rmsM).toBeLessThan(5);
+  });
+
+  it('puts J and 122 on the axis behind home, between the aisles at 171° and 189°', () => {
+    expect(diff(bearing('J'), 180)).toBeLessThan(3);
+    expect(diff(bearing('122'), 180)).toBeLessThan(3);
+  });
+
+  it('puts the outfield stands where the photo shows them', () => {
+    for (const id of ['101', '102', '103']) expect(bearing(id)).toBeGreaterThan(12);
+    for (const id of ['101', '102', '103']) expect(bearing(id)).toBeLessThan(46);
+    for (const id of ['141', '142', '143', '144']) expect(bearing(id)).toBeGreaterThan(314);
+    for (const id of ['141', '142', '143', '144']) expect(bearing(id)).toBeLessThan(347);
+  });
+
+  it.each(['A', 'F', '113', '115', '205', '308'])('first-base section %s faces 131°', (id) => expect(stand(id)).toBe(131));
+  it.each(['M', 'Q', '128', '132', '213', '326'])('third-base section %s faces 228°', (id) => expect(stand(id)).toBe(228));
+  it.each(['J', '122', '120', '124', '316'])('behind-home section %s faces its bearing from home', (id) => {
+    expect(diff(stand(id), bearing(id))).toBeLessThan(4);
+  });
+  it.each([['101', 51], ['104', 51], ['142', 316], ['144', 316]])('outfield section %s faces %i°', (id, deg) => expect(stand(id as string)).toBe(deg));
 });
