@@ -12,8 +12,9 @@
  * angles, so a bearing measured in pixels is the true compass bearing.
  *
  * Reproduce with: `npx tsx scripts/measureOrientation.ts <stadiumId>`. The
- * script re-fetches the image, re-finds both centers from the seed points
- * below, and prints every method's bearing.
+ * script re-fetches the image (from USGS, or from the Planetary Computer's
+ * NAIP archive when an older flight was used), re-finds both centers from
+ * the seed points below, and prints every method's bearing.
  */
 
 export interface OrientationMeasurement {
@@ -24,6 +25,12 @@ export interface OrientationMeasurement {
   imageSizePx: number;
   /** NAIP source tile and the date it was flown. */
   naipTile: string;
+  /**
+   * NAIP item on the Microsoft Planetary Computer, for an older flight than
+   * the one USGS serves (at retractable-roof parks the newest flight can
+   * show the roof closed).
+   */
+  planetaryComputerItem?: string;
   acquired: string;
   nativeResolutionMeters: number;
   /** Approximate pixel positions the script refines from. */
@@ -568,6 +575,128 @@ export const ORIENTATION_MEASUREMENTS: readonly OrientationMeasurement[] = [
       'infield dirt\'s outer edge (all 111 rays, radius 29.1 m) is centred 47.2° from home; the infield grass square\'s edges 46.7° (spread ' +
       '1.1°). Chalk foul lines 30–95 m out on a 260 m-wide image of the same flight: 93.0° and 1.5°, midline 45.7–47.3° (the 20–60 m fit put ' +
       'them 96° apart, so it is not used). Mean 47.0°, recorded as 47° with ±1.5° for the spread (45.7–47.9°). Replaces 20°, which was 27° low.',
+  },
+  {
+    stadiumId: 'diamondbacks',
+    imageCenter: { latitude: 33.44514, longitude: -112.06668 },
+    imageHalfWidthMeters: 75,
+    imageSizePx: 600,
+    naipTile: 'm_3311240_nw_12_.6_20170602',
+    planetaryComputerItem: 'az_m_3311240_nw_12_.6_20170602_20171128',
+    acquired: '2017-06-02',
+    nativeResolutionMeters: 0.6,
+    homeSeedPx: [301, 362],
+    moundSeedPx: [301.46, 291.2],
+    homeCenterPx: [301, 362],
+    moundCenterPx: [301.46, 291.2],
+    bearingHomeToMoundDeg: 0.37,
+    bearingInfieldSymmetryDeg: 359.9,
+    orientationDeg: 0,
+    precisionDeg: 1,
+    measuredOn: '2026-11-12',
+    notes:
+      'The newest flights (2019–2025) show the roof closed; this is the 2017 flight, roof open, from the Planetary Computer\'s NAIP archive. Home ' +
+      'and mound were under tarps, joined by Chase Field\'s dirt path. Home → mound 0.13–0.37°; infield mirror axis 359.9° (93.5% overlap); a circle ' +
+      'fitted to the infield dirt\'s outer edge (17 of 95 rays) 0.72° from home; the infield grass square\'s home-side edges 1.6° and 0.0° (all four ' +
+      '0.8°); chalk foul lines 45.2° and 315.2° (midline 0.2°), and fitted as lines 43.3° and 316.6° (midline 359.95°). Mean 0.3°, recorded as 0° ' +
+      '±1°, confirming the published "oriented to the north".',
+  },
+  {
+    stadiumId: 'astros',
+    imageCenter: { latitude: 29.75687, longitude: -95.35545 },
+    imageHalfWidthMeters: 75,
+    imageSizePx: 600,
+    naipTile: 'm_2909514_sw_15_060_20201130',
+    planetaryComputerItem: 'tx_m_2909514_sw_15_060_20201130',
+    acquired: '2020-11-30',
+    nativeResolutionMeters: 0.6,
+    homeSeedPx: [336.51, 389.92],
+    moundSeedPx: [316.9, 315.7],
+    homeCenterPx: [336.51, 389.92],
+    moundCenterPx: [316.9, 315.7],
+    bearingHomeToMoundDeg: 345.2,
+    bearingInfieldSymmetryDeg: 345.9,
+    orientationDeg: 345,
+    precisionDeg: 2,
+    measuredOn: '2026-11-12',
+    notes:
+      'Roof closed in the 2022 flight; open in 2016, 2020 and 2024 (Planetary Computer NAIP archive). 2020 (recorded): home → mound 345.2°, but the ' +
+      'stands\' shadow cuts off the bottom of the home-plate dirt; infield mirror axis 345.9° (95.3%); dirt-arc centre 346.3–346.8°; grass square ' +
+      '343.1° (four edges 342.1–344.3°); foul lines fitted 30–95 m out 30.0° and 298.6° (midline 344.3°). 2016 (1 m, home under a tarp): home → ' +
+      'mound 346.6°, dirt arc 346.4–347.0°, grass square 343.7°, foul lines midline 344.55°. 2024 (home in shadow): grass square home-side edges ' +
+      '341.4° and 344.8°, foul lines midline 343.2°. Methods that use the home-plate point give 345–347°, the ones that don\'t (grass square, foul ' +
+      'lines) 343–344.5°; mean of all 344.7°, recorded as 345° ±2° for that split. Replaces 340° (a read through a partly open roof).',
+  },
+  {
+    stadiumId: 'marlins',
+    imageCenter: { latitude: 25.77821, longitude: -80.21969 },
+    imageHalfWidthMeters: 75,
+    imageSizePx: 600,
+    naipTile: 'm_2508015_sw_17_060_20220118',
+    planetaryComputerItem: 'fl_m_2508015_sw_17_060_20220118',
+    acquired: '2022-01-18',
+    nativeResolutionMeters: 0.6,
+    homeSeedPx: [240.01, 253.26],
+    moundSeedPx: [291.1, 293.11],
+    homeCenterPx: [240.01, 253.26],
+    moundCenterPx: [291.1, 293.11],
+    bearingHomeToMoundDeg: 129.06,
+    bearingInfieldSymmetryDeg: 128.7,
+    orientationDeg: 129,
+    precisionDeg: 1,
+    measuredOn: '2026-11-12',
+    notes:
+      'Roof closed in the 2023 and 2025 flights; half open on 2022-01-18 (Planetary Computer NAIP archive), with home and mound under tarps. Home → ' +
+      'mound 129.06° (127.94° from the unrefined seed); infield mirror axis 128.7° (96.8%); dirt-arc centre 128.7–129.2°; grass square 129.3° ' +
+      '(spread 2.8°); foul lines fitted as lines 175.5° and 82.1° (midline 128.8°). Mean 128.9°, recorded as 129° ±1°. Agrees with 129.04° ±0.8° ' +
+      'measured earlier from Miami-Dade County\'s 2021 orthophoto.',
+  },
+  {
+    stadiumId: 'brewers',
+    imageCenter: { latitude: 43.0283, longitude: -87.97143 },
+    imageHalfWidthMeters: 75,
+    imageSizePx: 600,
+    naipTile: 'm_4308757_sw_16_060_20200902',
+    planetaryComputerItem: 'wi_m_4308757_sw_16_060_20200902',
+    acquired: '2020-09-02',
+    nativeResolutionMeters: 0.6,
+    homeSeedPx: [242.34, 247.83],
+    moundSeedPx: [292.61, 291.39],
+    homeCenterPx: [242.34, 247.83],
+    moundCenterPx: [292.61, 291.39],
+    bearingHomeToMoundDeg: 130.84,
+    bearingInfieldSymmetryDeg: 129.9,
+    orientationDeg: 130,
+    precisionDeg: 1,
+    measuredOn: '2026-11-12',
+    notes:
+      'The 2022 flight shows the infield in the shadow of the open roof panels; this is the 2020 flight (Planetary Computer NAIP archive). Home → ' +
+      'mound 130.4–130.8°; infield mirror axis 129.9° (95.1%); dirt-arc centre 130.4–130.6°; grass square 128.5° (spread 2.0°); foul lines fitted ' +
+      'as lines 173.8° and 85.25° (midline 129.5°). Mean 129.9°, recorded as 130° ±1°. Replaces 135°.',
+  },
+  {
+    stadiumId: 'mariners',
+    imageCenter: { latitude: 47.59123, longitude: -122.3327 },
+    imageHalfWidthMeters: 75,
+    imageSizePx: 600,
+    naipTile: 'm_4712230_nw_10_060_20231007',
+    planetaryComputerItem: 'wa_m_4712230_nw_10_060_20231007_20240209',
+    acquired: '2023-10-07',
+    nativeResolutionMeters: 0.6,
+    homeSeedPx: [240, 355],
+    moundSeedPx: [294.88, 306.86],
+    homeCenterPx: [240, 355],
+    moundCenterPx: [294.88, 306.86],
+    bearingHomeToMoundDeg: 48.01,
+    bearingInfieldSymmetryDeg: 46.6,
+    orientationDeg: 48,
+    precisionDeg: 1.5,
+    measuredOn: '2026-11-12',
+    notes:
+      'The roof is open in every flight but the 2019 one; this is the 2023 flight (Planetary Computer NAIP archive; USGS serves the 2017 one). Home ' +
+      'under a tarp at the edge of the stands\' shadow. Home → mound 48.0–48.8°; infield mirror axis 46.6° (94.1%); dirt-arc centre 47.7°; grass ' +
+      'square 48.2° (three edges; the home–first edge is in shadow); foul lines fitted as lines 95.3° (in shadow) and 4.0° (midline 49.65°). Mean ' +
+      '48.2°, recorded as 48° ±1.5° for the spread (46.6–49.65°). Replaces 45°.',
   },
 ];
 

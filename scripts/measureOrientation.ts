@@ -5,7 +5,8 @@
  *   npx tsx scripts/measureOrientation.ts yankees
  *
  * Method (see the header of orientationMeasurements.ts):
- *   1. Fetch a north-up Web Mercator image centered on the park.
+ *   1. Fetch a north-up Web Mercator image centered on the park (USGS, or
+ *      an older NAIP flight from the Planetary Computer when recorded).
  *   2. Find the home-plate circle and the pitcher's mound as the centroid of
  *      non-grass pixels around each seed point (works for dirt and for tarps).
  *   3. Bearing home → mound.
@@ -20,6 +21,8 @@ import sharp from 'sharp';
 import { ORIENTATION_MEASUREMENTS, type OrientationMeasurement } from '../src/data/orientationMeasurements';
 
 const NAIP = 'https://imagery.nationalmap.gov/arcgis/rest/services/USGSNAIPImagery/ImageServer/exportImage';
+// Every NAIP flight since 2010, for parks whose newest flight shows a closed roof.
+const PLANETARY_COMPUTER = 'https://planetarycomputer.microsoft.com/api/data/v1/item/bbox';
 const CACHE = path.resolve(__dirname, '../tmp/orientation');
 const EARTH_RADIUS = 6378137;
 
@@ -36,7 +39,11 @@ async function fetchImage(m: OrientationMeasurement): Promise<string> {
   const file = path.join(CACHE, `${m.stadiumId}.png`);
   if (existsSync(file)) return file;
   const bbox = mercatorBbox(m).map((v) => v.toFixed(2)).join(',');
-  const url = `${NAIP}?bbox=${bbox}&bboxSR=3857&imageSR=3857&size=${m.imageSizePx},${m.imageSizePx}&format=png&f=image`;
+  const size = m.imageSizePx;
+  const url = m.planetaryComputerItem
+    ? `${PLANETARY_COMPUTER}/${bbox}/${size}x${size}.png?collection=naip&item=${m.planetaryComputerItem}` +
+      '&assets=image&asset_bidx=image%7C1%2C2%2C3&coord_crs=epsg:3857&dst_crs=epsg:3857&nodata=0'
+    : `${NAIP}?bbox=${bbox}&bboxSR=3857&imageSR=3857&size=${size},${size}&format=png&f=image`;
   const res = await fetch(url);
   if (!res.ok) throw new Error(`NAIP request failed: ${res.status}`);
   writeFileSync(file, Buffer.from(await res.arrayBuffer()));

@@ -46,7 +46,7 @@ export const MLB_STADIUMS: Stadium[] = [
     state: 'TX',
     latitude: 29.7570,
     longitude: -95.3555,
-    orientation: 340, // NNW — corrected 2026-05-13. Esri imagery shows the diamond through partial roof opening: HP at lower-right of the visible field (~SE side), CF at upper-left (~NW side). Visual HP→CF bearing ~328°; OSM pitch polygon vertex analysis gives 346°. Houston's Crawford Boxes in LF align with Crawford Street (downtown Houston grid), geometrically consistent with HP→CF being NNW. Previous 20° (NNE) was wrong.
+    orientation: 345, // NNW — measured 2026-11-12 from USGS NAIP imagery, roof open (345° ±2°); replaces 340°. See orientationMeasurements.ts.
     capacity: 41168,
     roof: 'retractable',
     timezone: 'America/Chicago'
@@ -98,7 +98,7 @@ export const MLB_STADIUMS: Stadium[] = [
     state: 'WI',
     latitude: 43.0280,
     longitude: -87.9712,
-    orientation: 135, // SE — corrected 2026-05-13. shadedseats.com explicitly states "Miller Park has a similar orientation to ballparks in Cincinnati and Chicago with home plate facing southeast." This matches: Reds at 105° (ESE) and Whitesox at 120° (SE) are nearby in compass terms. OSM pitch polygon PCA principal axis also gave 132°/312° (SE/NW), confirming the diamond's long axis runs SE-NW. The fan-shaped roof's closed panel parks over home plate (upper-left/NW area in N-up imagery), with the field opening SE. Previous 357° (N) was a 138° error — likely a sign convention or HP/CF swap.
+    orientation: 130, // SE — measured 2026-11-12 from USGS NAIP imagery, roof open (130° ±1°); replaces 135°. See orientationMeasurements.ts.
     capacity: 41900,
     roof: 'retractable',
     timezone: 'America/Chicago'
@@ -140,7 +140,7 @@ export const MLB_STADIUMS: Stadium[] = [
     state: 'AZ',
     latitude: 33.4455,
     longitude: -112.0667,
-    orientation: 0, // N — confirmed 2026-05-13. shadedseats.com explicitly states "Chase Field is oriented to the north. This means that home plate faces toward the north direction. Each morning the sun rises over the right field corner, swings around home plate at mid-day and sets behind the left field wall." Geometric check matches: with HP→CF=N, RF (east of CF) catches sunrise and LF (west of CF) catches sunset.
+    orientation: 0, // N — measured 2026-11-12 from USGS NAIP imagery, roof open (0° ±1°), confirming the published "oriented to the north". See orientationMeasurements.ts.
     capacity: 48686,
     roof: 'retractable',
     timezone: 'America/Phoenix'
@@ -192,7 +192,7 @@ export const MLB_STADIUMS: Stadium[] = [
     state: 'WA',
     latitude: 47.5914,
     longitude: -122.3325,
-    orientation: 45, // NE — corrected 2026-06-23 from 318° (NW, wrong quadrant). ballparks.com (Safeco 45°) + andrewclem (NE) + sun pattern (rises over CF) confirm NE. See provenance.
+    orientation: 48, // NE — measured 2026-11-12 from USGS NAIP imagery, roof open (48° ±1.5°); replaces 45°. See orientationMeasurements.ts.
     capacity: 47929,
     roof: 'retractable',
     timezone: 'America/Los_Angeles'
@@ -205,7 +205,7 @@ export const MLB_STADIUMS: Stadium[] = [
     state: 'FL',
     latitude: 25.7781,
     longitude: -80.2197,
-    orientation: 129.036, // ESE. Measured from the official 2021 Miami-Dade open-roof orthophoto with opposite infield-edge and mound holdouts. Uncertainty is 0.815 degrees. See stadiumOrientationProvenance.ts.
+    orientation: 129, // ESE — measured 2026-11-12 from USGS NAIP imagery, roof half open (129° ±1°), agreeing with Miami-Dade County's 2021 orthophoto (129.04°). See orientationMeasurements.ts.
     capacity: 37446,
     roof: 'retractable',
     timezone: 'America/New_York'

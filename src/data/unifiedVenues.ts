@@ -82,7 +82,7 @@ export const ALL_UNIFIED_VENUES: UnifiedVenue[] = [
     "state": "TX",
     "latitude": 29.757,
     "longitude": -95.3555,
-    "orientation": 340,
+    "orientation": 345,
     "capacity": 41168,
     "roof": "retractable",
     "timezone": "America/Chicago",
@@ -93,11 +93,11 @@ export const ALL_UNIFIED_VENUES: UnifiedVenue[] = [
         "width": 330
       },
       "endZoneOrientation": "north-northeast-south-southwest",
-      "primarySeatingAngle": 20,
-      "sideline1Angle": 110,
-      "sideline2Angle": 290,
-      "endZone1Angle": 20,
-      "endZone2Angle": 200
+      "primarySeatingAngle": 345,
+      "sideline1Angle": 75,
+      "sideline2Angle": 255,
+      "endZone1Angle": 345,
+      "endZone2Angle": 165
     },
     "venueType": "baseball",
     "sport": "baseball",
@@ -202,7 +202,7 @@ export const ALL_UNIFIED_VENUES: UnifiedVenue[] = [
     "state": "WI",
     "latitude": 43.028,
     "longitude": -87.9712,
-    "orientation": 135,
+    "orientation": 130,
     "capacity": 41900,
     "roof": "retractable",
     "timezone": "America/Chicago",
@@ -213,11 +213,11 @@ export const ALL_UNIFIED_VENUES: UnifiedVenue[] = [
         "width": 330
       },
       "endZoneOrientation": "northwest-north-southeast-south",
-      "primarySeatingAngle": 357,
-      "sideline1Angle": 87,
-      "sideline2Angle": 267,
-      "endZone1Angle": 357,
-      "endZone2Angle": 177
+      "primarySeatingAngle": 130,
+      "sideline1Angle": 220,
+      "sideline2Angle": 40,
+      "endZone1Angle": 130,
+      "endZone2Angle": 310
     },
     "venueType": "baseball",
     "sport": "baseball",
@@ -303,11 +303,11 @@ export const ALL_UNIFIED_VENUES: UnifiedVenue[] = [
         "width": 330
       },
       "endZoneOrientation": "north-northeast-south-southwest",
-      "primarySeatingAngle": 23,
-      "sideline1Angle": 113,
-      "sideline2Angle": 293,
-      "endZone1Angle": 23,
-      "endZone2Angle": 203
+      "primarySeatingAngle": 0,
+      "sideline1Angle": 90,
+      "sideline2Angle": 270,
+      "endZone1Angle": 0,
+      "endZone2Angle": 180
     },
     "venueType": "baseball",
     "sport": "baseball",
@@ -412,7 +412,7 @@ export const ALL_UNIFIED_VENUES: UnifiedVenue[] = [
     "state": "WA",
     "latitude": 47.5914,
     "longitude": -122.3325,
-    "orientation": 45,
+    "orientation": 48,
     "capacity": 47929,
     "roof": "retractable",
     "timezone": "America/Los_Angeles",
@@ -423,11 +423,11 @@ export const ALL_UNIFIED_VENUES: UnifiedVenue[] = [
         "width": 330
       },
       "endZoneOrientation": "northwest-north-southeast-south",
-      "primarySeatingAngle": 318,
-      "sideline1Angle": 48,
-      "sideline2Angle": 228,
-      "endZone1Angle": 318,
-      "endZone2Angle": 138
+      "primarySeatingAngle": 48,
+      "sideline1Angle": 138,
+      "sideline2Angle": 318,
+      "endZone1Angle": 48,
+      "endZone2Angle": 228
     },
     "venueType": "baseball",
     "sport": "baseball",
@@ -442,7 +442,7 @@ export const ALL_UNIFIED_VENUES: UnifiedVenue[] = [
     "state": "FL",
     "latitude": 25.7781,
     "longitude": -80.2197,
-    "orientation": 129.036,
+    "orientation": 129,
     "capacity": 37446,
     "roof": "retractable",
     "timezone": "America/New_York",
@@ -453,11 +453,11 @@ export const ALL_UNIFIED_VENUES: UnifiedVenue[] = [
         "width": 330
       },
       "endZoneOrientation": "north-northeast-south-southwest",
-      "primarySeatingAngle": 40,
-      "sideline1Angle": 130,
-      "sideline2Angle": 310,
-      "endZone1Angle": 40,
-      "endZone2Angle": 220
+      "primarySeatingAngle": 129,
+      "sideline1Angle": 219,
+      "sideline2Angle": 39,
+      "endZone1Angle": 129,
+      "endZone2Angle": 309
     },
     "venueType": "baseball",
     "sport": "baseball",
