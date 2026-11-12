@@ -1,4 +1,6 @@
 import { yankeesSections } from '../yankees';
+import { brewersSections, BREWERS_AERIAL_CONTROL } from '../brewers';
+import { brewersChartPoints } from '../chart-points/brewers';
 import { marlinsSections, MARLINS_AERIAL_CONTROL } from '../marlins';
 import { marlinsChartPoints } from '../chart-points/marlins';
 import { astrosSections, ASTROS_AERIAL_CONTROL } from '../astros';
@@ -959,4 +961,34 @@ describe('loanDepot park stand directions (measured on the 2013 aerial photo, ro
     expect(diff(stand(id), bearing(id))).toBeLessThan(4);
   });
   it.each(['SEC29', 'SEC31'])('left-field section %s faces 90°', (id) => expect(stand(id)).toBe(90));
+});
+
+describe('American Family Field stand directions (measured on the 2020 aerial photo, roof open)', () => {
+  // The first-base straight's back faces 258°, the third-base one its
+  // mirror image (2°); behind home the aisles stand evenly round the plate.
+  const byId = new Map(brewersSections.map((s) => [s.id, s]));
+  const stand = (id: string) => {
+    const value = byId.get(id)?.standCompass;
+    if (value === undefined) throw new Error(`No stand direction for ${id}`);
+    return value;
+  };
+  const bearing = (id: string) => {
+    const s = byId.get(id)!;
+    return (((getStadiumOrientation('brewers') + 90 - s.baseAngle - s.angleSpan / 2) % 360) + 360) % 360;
+  };
+
+  it('pins the club map to the photo within 5 m', () => {
+    expect(aerialChartFit(brewersChartPoints, BREWERS_AERIAL_CONTROL).rmsM).toBeLessThan(5);
+  });
+
+  it('puts 117 and 118 either side of the aisle behind home', () => {
+    expect(diff(bearing('117'), 297.5)).toBeLessThan(5);
+    expect(diff(bearing('118'), 317.4)).toBeLessThan(5);
+  });
+
+  it.each(['109', '112', '210', '312', '415'])('first-base section %s faces 258°', (id) => expect(stand(id)).toBe(258));
+  it.each(['124', '128', '226', '340', '430'])('third-base section %s faces 2°', (id) => expect(stand(id)).toBe(2));
+  it.each(['116', '117', '118', '119'])('behind-home section %s faces its bearing from home', (id) => {
+    expect(diff(stand(id), bearing(id))).toBeLessThan(4);
+  });
 });

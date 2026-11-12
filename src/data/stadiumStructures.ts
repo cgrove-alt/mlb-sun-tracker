@@ -4408,6 +4408,150 @@ const LOANDEPOT: StadiumStructure = {
   reviewedOn: '2026-11-12',
 };
 
+const AMFAM_RYS = 'https://www.rateyourseats.com/american-family-field/seating/shaded-covered-seats';
+const AMFAM_PHOTO = 'USGS NAIP m_4308757_sw_16_060_20200902 (roof open), with the 2017 and 2018 flights';
+const amfamSection = (n: string) => `https://www.rateyourseats.com/american-family-field/seating/sections/${n}`;
+/**
+ * Per section, from the 2020 photo with the roof open: the first row under
+ * a folded roof panel (0 = none), how far behind the last row (m) the
+ * panel's edge stands, and the section's rows. Worked out from each section's place on the pinned
+ * seat map and its rows (0.8 m apart) running back along its stand
+ * direction. The roof's panels fan out from a pivot ~67 m behind home
+ * (bearing 301°); open, they fold over the two lines, their inner edges
+ * running 95° (over the third-base side; in the same place within ±2 m on
+ * the 2017, 2018 and 2020 flights) and 157.3° (over the first-base side; it
+ * moves ±10 m between flights with the camera's lean, so the mean is used).
+ */
+const AMFAM_ROOF: Record<string, [number, number, number]> = {
+  '101': [0, 150, 7], '102': [0, 150, 14], '103': [0, 150, 14], '104': [13, 0, 14], '106': [11, 0, 11],
+  '107': [17, 0, 21], '108': [9, 0, 19], '109': [18, 0, 27], '110': [17, 0, 27], '111': [16, 0, 27],
+  '112': [16, 0, 21], '113': [17, 0, 18], '114': [0, 1.5, 21], '115': [0, 4, 21], '116': [0, 8.5, 21],
+  '117': [0, 25.5, 27], '118': [0, 2, 27], '119': [16, 0, 21], '120': [14, 0, 21], '121': [15, 0, 21],
+  '122': [12, 0, 18], '123': [12, 0, 18], '124': [18, 0, 27], '125': [19, 0, 27], '126': [21, 0, 29],
+  '127': [24, 0, 30], '128': [24, 0, 27], '129': [0, 1, 25], '130': [0, 3.5, 21], '131': [0, 10, 7],
+  '201': [0, 150, 14], '202': [0, 150, 14], '203': [0, 150, 14], '204': [0, 150, 14], '205': [9, 0, 16],
+  '206': [8, 0, 19], '207': [4, 0, 21], '208': [1, 0, 19], '209': [1, 0, 19], '210': [1, 0, 21], '211': [1, 0, 19],
+  '212': [1, 0, 19], '213': [5, 0, 21], '214': [8, 0, 19], '215': [12, 0, 21], '216': [0, 1.5, 10],
+  '217': [0, 9.5, 10], '218': [0, 17.5, 10], '219': [7, 0, 10], '220': [1, 0, 10], '221': [1, 0, 10],
+  '222': [1, 0, 21], '223': [1, 0, 19], '224': [1, 0, 21], '225': [1, 0, 19], '226': [1, 0, 19], '227': [1, 0, 19],
+  '228': [1, 0, 19], '229': [2, 0, 21], '230': [4, 0, 19], '231': [10, 0, 21], '232': [17, 0, 19], '233': [0, 7, 19],
+  '234': [0, 150, 19], '235': [0, 150, 19], '236': [0, 150, 18], '306': [1, 0, 7], '307': [1, 0, 7],
+  '308': [1, 0, 7], '309': [1, 0, 7], '310': [1, 0, 7], '311': [1, 0, 8], '312': [1, 0, 7], '313': [1, 0, 7],
+  '314': [1, 0, 7], '315': [1, 0, 7], '316': [1, 0, 7], '317': [1, 0, 7], '318': [1, 0, 7], '319': [1, 0, 7],
+  '320': [1, 0, 5], '321': [1, 0, 7], '322': [1, 0, 7], '323': [1, 0, 7], '324': [1, 0, 8], '325': [6, 0, 7],
+  '326': [0, 4.5, 7], '327': [0, 14, 7], '328': [0, 12.5, 7], '329': [6, 0, 7], '330': [1, 0, 7], '331': [1, 0, 7],
+  '332': [1, 0, 7], '333': [1, 0, 7], '334': [1, 0, 7], '335': [1, 0, 8], '336': [1, 0, 7], '337': [1, 0, 7],
+  '338': [1, 0, 7], '339': [1, 0, 5], '340': [1, 0, 7], '341': [1, 0, 7], '342': [1, 0, 7], '343': [1, 0, 7],
+  '344': [1, 0, 7], '345': [1, 0, 7], '407': [1, 0, 24], '408': [1, 0, 21], '409': [1, 0, 24], '410': [1, 0, 21],
+  '411': [1, 0, 23], '412': [1, 0, 20], '413': [1, 0, 20], '414': [1, 0, 16], '415': [1, 0, 20], '416': [1, 0, 16],
+  '417': [1, 0, 20], '418': [1, 0, 19], '419': [1, 0, 25], '420': [13, 0, 22], '421': [18, 0, 25], '422': [1, 0, 22],
+  '423': [1, 0, 25], '424': [1, 0, 22], '425': [1, 0, 25], '426': [1, 0, 19], '427': [1, 0, 20], '428': [1, 0, 16],
+  '429': [1, 0, 20], '430': [1, 0, 16], '431': [1, 0, 20], '432': [1, 0, 18], '433': [1, 0, 22], '434': [1, 0, 20],
+  '435': [1, 0, 24], '436': [1, 0, 21], '437': [1, 0, 24], '438': [2, 0, 21], '439': [16, 0, 24],
+  '440': [0, 9.5, 13], '441': [0, 150, 16], '442': [0, 150, 12],
+};
+const AMFAM_ROOF_TOP = 240;
+const AMFAM_ROOF_UNDERSIDE = 190;
+/** Underside of the deck above the loge level's back rows and the right-field bleachers, ft (estimated). */
+const AMFAM_DECK = 55;
+const amfamSections = (re: RegExp, deck: (id: string, rows: number) => number = () => 0) =>
+  Object.fromEntries(Object.entries(AMFAM_ROOF).filter(([id]) => re.test(id)).map(([id, [from, setbackM, rows]]) => {
+    const deckFrom = deck(id, rows);
+    const overhang = deckFrom ? { coveredFromRow: deckFrom, soffitHeightFt: AMFAM_DECK }
+      : from ? { coveredFromRow: from, soffitHeightFt: AMFAM_ROOF_UNDERSIDE } : undefined;
+    return [id, { ...(overhang ? { overhang } : {}), backSetbackFt: Math.round(setbackM * 3.28) }];
+  }));
+
+/** Seating ring of an American Family Field chart section. */
+export function amfamTier(id: string): string | null {
+  if (/^10[1-4]$/.test(id)) return 'bleachers';
+  if (/^1\d\d$/.test(id)) return 'field';
+  if (/^2\d\d$/.test(id)) return 'loge';
+  if (/^3\d\d$/.test(id)) return 'club';
+  if (/^4\d\d$/.test(id)) return 'terrace';
+  // Named decks, bars and party areas: no rows or cover listed.
+  return null;
+}
+
+/**
+ * American Family Field (2001, as Miller Park), with the roof open. Field
+ * level (106–131), the right-field bleachers (101–104), the loge level
+ * (201–236), the club level (306–345) and the terrace (407–442). Rows are
+ * Rate Your Seats' section pages. Its fan-shaped roof folds open over the
+ * two lines; which rows it covers is the photo's geometry above, matching
+ * Rate Your Seats: "upper deck sections on the first base side (404-420)
+ * will be fully shaded, so will a number of sections on the opposite side",
+ * "Avoid ... 438-442", and in 101–104 "The first five rows of the sections
+ * are uncovered". No source gives the roof's or the decks' heights, so they
+ * are estimated.
+ */
+const AMFAM: StadiumStructure = {
+  stadiumId: 'brewers',
+  // Far rim: the folded panels (~240 ft) about 500 ft across the field.
+  park: { roof: 'retractable', farRimHeightFt: AMFAM_ROOF_TOP, fieldCrossingFt: 500 },
+  tierOf: amfamTier,
+  tiers: {
+    field: {
+      label: 'Field level (106–131)',
+      // Rows 1–21 to 1–30 (sourced). Estimated: front ~3 ft, 20° rake; the
+      // panels (~240 ft) behind.
+      stand: { rows: 27, frontRowHeightFt: 3, rakeDeg: 20, backHeightFt: AMFAM_ROOF_TOP },
+      sections: amfamSections(/^1(0[6-9]|[12]\d|3[01])$/),
+      rowsFromMap: true,
+      heightsSourced: false,
+      coverSourced: true,
+      sources: [AMFAM_RYS, AMFAM_PHOTO, ...['107', '112', '117', '122', '127'].map(amfamSection)],
+    },
+    bleachers: {
+      label: 'Right-field bleachers (101–104)',
+      // Rows 1–14 (101: 1–7), the loge level overhead from row 6 (sourced).
+      // Estimated: front ~10 ft, 20° rake, overhead deck underside ~30 ft.
+      stand: { rows: 14, frontRowHeightFt: 10, rakeDeg: 20, backHeightFt: AMFAM_ROOF_TOP, overhang: { coveredFromRow: 6, soffitHeightFt: 30 } },
+      sections: Object.fromEntries(['101', '102', '103', '104'].map((id) => [id, { backSetbackFt: Math.round((AMFAM_ROOF[id]?.[1] ?? 30) * 3.28) }])),
+      rowsFromMap: true,
+      heightsSourced: false,
+      coverSourced: true,
+      sources: ['101', '102', '104'].map(amfamSection),
+    },
+    loge: {
+      label: 'Loge level (201–236)',
+      // Rows 1–10 to 1–21 (sourced); the club level overhead from row 17
+      // ("good shade in Rows 17 and higher in Sections 212-215"), elsewhere
+      // the panels. Estimated: front ~38 ft, 25° rake.
+      stand: { rows: 19, frontRowHeightFt: 38, rakeDeg: 25, backHeightFt: AMFAM_ROOF_TOP },
+      sections: amfamSections(/^2\d\d$/, (_, rows) => (rows >= 17 ? 17 : 0)),
+      rowsFromMap: true,
+      heightsSourced: false,
+      coverSourced: true,
+      sources: [AMFAM_RYS, AMFAM_PHOTO, ...['205', '212', '215', '222', '230', '236'].map(amfamSection)],
+    },
+    club: {
+      label: 'Club level (306–345)',
+      // Rows 1–5 to 1–8 (sourced), under the panels except 326–328 behind
+      // home. Estimated: front ~62 ft, 25° rake.
+      stand: { rows: 7, frontRowHeightFt: 62, rakeDeg: 25, backHeightFt: AMFAM_ROOF_TOP },
+      sections: amfamSections(/^3\d\d$/),
+      rowsFromMap: true,
+      heightsSourced: false,
+      coverSourced: true,
+      sources: [AMFAM_PHOTO, ...['310', '327', '340'].map(amfamSection)],
+    },
+    terrace: {
+      label: 'Terrace (407–442)',
+      // Rows 1–12 to 1–25 (sourced), under the panels except 440–442 at the
+      // left-field end. Estimated: front ~80 ft, 30° rake, panel underside
+      // ~190 ft.
+      stand: { rows: 22, frontRowHeightFt: 80, rakeDeg: 30, treadFt: 2.6, backHeightFt: AMFAM_ROOF_TOP },
+      sections: amfamSections(/^4\d\d$/),
+      rowsFromMap: true,
+      heightsSourced: false,
+      coverSourced: true,
+      sources: [AMFAM_RYS, AMFAM_PHOTO, ...['410', '416', '420', '430', '440'].map(amfamSection)],
+    },
+  },
+  reviewedOn: '2026-11-12',
+};
+
 export const STADIUM_STRUCTURES: Readonly<Record<string, StadiumStructure>> = {
   yankees: YANKEES,
   redsox: FENWAY,
@@ -4434,6 +4578,7 @@ export const STADIUM_STRUCTURES: Readonly<Record<string, StadiumStructure>> = {
   diamondbacks: CHASE,
   astros: DAIKIN,
   marlins: LOANDEPOT,
+  brewers: AMFAM,
 };
 
 export function getStadiumStructure(stadiumId: string): StadiumStructure | undefined {
