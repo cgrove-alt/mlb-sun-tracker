@@ -1383,20 +1383,20 @@ export function cbpTier(id: string): string | null {
 
 const CBP_LIDAR = 'USGS 3DEP lidar PA_17County_D24, flown 2024-12-17 to 2025-04-02 (scripts/measureStandHeights.py)';
 
-// The 100 level, shared by its two tiers: rows 1–40, the deck above from
-// row 36 (sourced per section below). Lidar (21 of 22): front row at field
-// level (-1 to 4 ft), 12° rake (11–12); what rises highest behind is the 200
-// level's front, 70 ft up over the back rows. The 200 deck's edge reaches
-// out over row 27–28 (21–34), against the sourced row 36. Estimated: its
-// underside ~30 ft over row 36 (9 ft above that row's floor, under the
-// lowest structure at the deck's edge, 35 ft).
+// The 100 level, shared by its two tiers: rows 1–40, Rate Your Seats
+// counting the deck above from row 36 (per section below). Lidar (21 of 22):
+// front row at field level (-1 to 4 ft), 12° rake (11–12); what rises
+// highest behind is the 200 level's front, 70 ft up over the back rows. The
+// 200 deck's edge reaches out over row 28 (21–34), so the rows from there
+// back are covered; the lowest structure at that edge is 35 ft up (26–44),
+// taken as its underside.
 const CBP_FIELD: StandProfile = {
   rows: 40,
   frontRowHeightFt: 0,
   rakeDeg: 12,
   backHeightFt: 70,
   backSetbackFt: -8,
-  overhang: { coveredFromRow: 36, soffitHeightFt: 30 },
+  overhang: { coveredFromRow: 28, soffitHeightFt: 35 },
 };
 
 /**
@@ -1418,9 +1418,10 @@ const CBP_FIELD: StandProfile = {
  * light passes under) are not counted as walls. Deck undersides the scan
  * cannot see are estimated as 9 ft above the floor of the first covered row;
  * the Terrace and right-field roofs show nothing below their top edge, so
- * they are taken as thin roofs. Where the scan puts a deck's edge over rows
- * the source leaves uncovered, the cover is marked unsettled and the
- * confidence check tries it both ways.
+ * they are taken as thin roofs. Covered rows: where the scan puts a deck's
+ * edge more than two rows from the source's row, the scan's edge is used,
+ * with the lowest structure seen at it (or the deck above's front row less
+ * the 9 ft this park's decks measure) as the underside.
  */
 const CBP: StadiumStructure = {
   stadiumId: 'phillies',
@@ -1457,20 +1458,21 @@ const CBP: StadiumStructure = {
     homePlate: {
       label: 'Field level behind home (119–128)',
       // Rows 21–34 behind the Diamond Club, covered from row 29 or 30
-      // (sourced; the lidar puts the deck's edge at the 7th–9th row). Lidar
-      // (9 of 10): row 21 at 13 ft (11–19; 122 and 125 start at row 24),
-      // 13° rake; what rises highest behind is the 200 level's front (45 ft;
-      // 30–70). Estimated: the deck's underside 9 ft above the floor of the
-      // first covered row (26–32 ft).
-      stand: { rows: 14, frontRowHeightFt: 13, rakeDeg: 13, backHeightFt: 45, backSetbackFt: -11, overhang: { coveredFromRow: 9, soffitHeightFt: 27 } },
+      // (sourced; the lidar puts the 200 level's edge at the 7th–9th row
+      // too, and at the 3rd in 121, which takes it). Lidar (9 of 10): row 21
+      // at 13 ft (11–19; 122 and 125 start at row 24), 13° rake; what rises
+      // highest behind is the 200 level's front (45 ft; 30–70). The lowest
+      // structure at that deck's edge is 35 ft up (29 ft over 121), taken as
+      // its underside.
+      stand: { rows: 14, frontRowHeightFt: 13, rakeDeg: 13, backHeightFt: 45, backSetbackFt: -11, overhang: { coveredFromRow: 9, soffitHeightFt: 35 } },
       sections: {
-        '119': { overhang: { coveredFromRow: 11, soffitHeightFt: 28 } }, // rows 21–31, covered from 31
+        '119': { overhang: { coveredFromRow: 11, soffitHeightFt: 35 } }, // rows 21–31, covered from 31
         '120': { backHeightFt: 70, backSetbackFt: -11 },
-        '121': { backHeightFt: 30, backSetbackFt: -26 },
-        '122': { overhang: { coveredFromRow: 7, soffitHeightFt: 26 } }, // rows 24–34, from 30
-        '123': { overhang: { coveredFromRow: 10, soffitHeightFt: 28 } },
-        '124': { overhang: { coveredFromRow: 10, soffitHeightFt: 28 } },
-        '125': { frontRowHeightFt: 19, backHeightFt: 40, backSetbackFt: 25, overhang: { coveredFromRow: 7, soffitHeightFt: 32 } }, // rows 24–34, from 30
+        '121': { backHeightFt: 30, backSetbackFt: -26, overhang: { coveredFromRow: 3, soffitHeightFt: 29 } },
+        '122': { overhang: { coveredFromRow: 7, soffitHeightFt: 35 } }, // rows 24–34, from 30
+        '123': { overhang: { coveredFromRow: 10, soffitHeightFt: 35 } },
+        '124': { overhang: { coveredFromRow: 10, soffitHeightFt: 35 } },
+        '125': { frontRowHeightFt: 19, backHeightFt: 40, backSetbackFt: 25, overhang: { coveredFromRow: 7, soffitHeightFt: 35 } }, // rows 24–34, from 30
         '126': { backHeightFt: 70, backSetbackFt: -11 },
         '127': { backHeightFt: 70, backSetbackFt: -11 },
       },
@@ -1483,42 +1485,40 @@ const CBP: StadiumStructure = {
       label: 'Field level (100s)',
       stand: CBP_FIELD,
       sections: {
-        '108': { frontRowHeightFt: 4, noCover: true, backHeightFt: 45, backSetbackFt: -25 }, // rows 11–35; RYS's covered rows (37+) are not in the club's data
-        '109': { backHeightFt: 45, backSetbackFt: -25 },
-        '110': { overhang: { coveredFromRow: 37, soffitHeightFt: 30 }, backHeightFt: 117, backSetbackFt: 32 },
-        '111': { backHeightFt: 117, backSetbackFt: 32 },
-        '116': { overhang: { coveredFromRow: 33, soffitHeightFt: 28 }, backHeightFt: 133, backSetbackFt: 47 },
-        '117': { overhang: { coveredFromRow: 33, soffitHeightFt: 28 } },
-        '118': { overhang: { coveredFromRow: 31, soffitHeightFt: 27 } },
-        '129': { overhang: { coveredFromRow: 31, soffitHeightFt: 27 } },
-        '130': { overhang: { coveredFromRow: 31, soffitHeightFt: 27 } },
-        '131': { overhang: { coveredFromRow: 31, soffitHeightFt: 27 } },
-        '132': { overhang: { coveredFromRow: 35, soffitHeightFt: 29 } }, // rows A–B then 1–37, covered from 33
-        '133': { overhang: { coveredFromRow: 33, soffitHeightFt: 28 }, backHeightFt: 133, backSetbackFt: 47 },
-        '134': { overhang: { coveredFromRow: 39, soffitHeightFt: 31 }, backHeightFt: 133, backSetbackFt: 47 },
-        '135': { noCover: true, backHeightFt: 133, backSetbackFt: 47 }, // only the wheelchair row behind row 37 is under cover
-        '136': { noCover: true },
-        '137': { overhang: { coveredFromRow: 34, soffitHeightFt: 28 } },
-        '138': { frontRowHeightFt: 4, overhang: { coveredFromRow: 33, soffitHeightFt: 28 } },
+        '108': { frontRowHeightFt: 4, backHeightFt: 45, backSetbackFt: -25, overhang: { coveredFromRow: 21, soffitHeightFt: 35 } }, // rows 11–35
+        '109': { backHeightFt: 45, backSetbackFt: -25, overhang: { coveredFromRow: 23, soffitHeightFt: 35 } },
+        ...Object.fromEntries(['110', '111'].map((id) => [id, { backHeightFt: 117, backSetbackFt: 32 }])),
+        '115': { overhang: { coveredFromRow: 28, soffitHeightFt: 30 } },
+        '116': { backHeightFt: 133, backSetbackFt: 47 },
+        '118': { overhang: { coveredFromRow: 25, soffitHeightFt: 35 } },
+        '129': { overhang: { coveredFromRow: 23, soffitHeightFt: 30 } },
+        '133': { backHeightFt: 133, backSetbackFt: 47, overhang: { coveredFromRow: 31, soffitHeightFt: 30 } },
+        '134': { backHeightFt: 133, backSetbackFt: 47, overhang: { coveredFromRow: 34, soffitHeightFt: 28 } }, // 9 ft above row 34's floor
+        // RYS covers only the wheelchair row behind row 37; the lidar puts
+        // the deck's edge over row 34.
+        '135': { backHeightFt: 133, backSetbackFt: 47, overhang: { coveredFromRow: 34, soffitHeightFt: 35 } },
+        '136': { overhang: { coveredFromRow: 30, soffitHeightFt: 35 } },
+        '138': { frontRowHeightFt: 4, overhang: { coveredFromRow: 21, soffitHeightFt: 35 } },
         // Rows 11–37, covered from 33; not found in the scan, so row 11 is
-        // put on the measured slope.
-        '139': { frontRowHeightFt: 6, overhang: { coveredFromRow: 23, soffitHeightFt: 28 } },
+        // put on the measured slope and the source's covered row kept.
+        '139': { frontRowHeightFt: 6, overhang: { coveredFromRow: 23, soffitHeightFt: 35 } },
       },
       rowsFromMap: true,
       heightsSourced: false,
-      coverSourced: false,
+      coverSourced: true,
       sources: [CBP_CLUB_MAP, ...['108', '110', '115', '117', '118', '129', '131', '132', '134', '135', '137', '139'].map((n) => rysCbp(`sections/${n}`)), RYS_CBP, CBP_LIDAR],
     },
     fieldCoverUnsourced: {
       label: 'Field level (100s)',
-      // 112–114: Rate Your Seats gives no covered rows for these three, so
-      // the confidence check tries them with and without the deck. Rows
-      // from the club's data; stand as the rest of the 100s (the lidar
+      // 112–114: Rate Your Seats gives no covered rows for these three; the
+      // lidar puts the 200 level's edge over row 34 (112, 113) and 30 (114).
+      // Rows from the club's data; stand as the rest of the 100s (the lidar
       // agrees: front row 1 ft below the field, 12°).
       stand: CBP_FIELD,
+      sections: Object.fromEntries(['112', '113'].map((id) => [id, { overhang: { coveredFromRow: 34, soffitHeightFt: 35 } }])),
       rowsFromMap: true,
       heightsSourced: false,
-      coverSourced: false,
+      coverSourced: true,
       sources: [CBP_CLUB_MAP, rysCbp('sections/112'), rysCbp('sections/113'), rysCbp('sections/114'), CBP_LIDAR],
     },
     rightField: {
@@ -1527,9 +1527,9 @@ const CBP: StadiumStructure = {
       // puts its edge at row 9–11; 101 has 7 open rows, 107 rows 4–16
       // covered from 14). Lidar (6 of 7): front row 10 ft above the wall
       // (9–10), 13° rake; what rises highest behind is the 200 level's
-      // front, 45 ft up. Estimated: its underside ~25 ft (9 ft above row
-      // 11's floor).
-      stand: { rows: 16, frontRowHeightFt: 10, rakeDeg: 13, backHeightFt: 45, backSetbackFt: -19, overhang: { coveredFromRow: 11, soffitHeightFt: 25 } },
+      // front, 45 ft up. Its underside: that front row less this park's
+      // measured deck depth (9 ft), ~35 ft.
+      stand: { rows: 16, frontRowHeightFt: 10, rakeDeg: 13, backHeightFt: 45, backSetbackFt: -19, overhang: { coveredFromRow: 11, soffitHeightFt: 35 } },
       sections: {
         '101': { noCover: true },
       },
@@ -1540,22 +1540,23 @@ const CBP: StadiumStructure = {
     },
     leftField: {
       label: 'Left-field seats (140–148)',
-      // Rows 1–24; 142–145 covered by the 200 level from row 20, the rest
-      // open (sourced). Lidar (9 of 9): front row 8 ft above the wall (8–12),
-      // 13° rake; the 200 level's edge reaches out over row 16 (8–17; also
-      // over 140 and 141), against the source, and is what rises highest
-      // behind (39 ft). Estimated: its underside ~29 ft over row 20.
-      stand: { rows: 23, frontRowHeightFt: 8, rakeDeg: 13, backHeightFt: 39, backSetbackFt: -16, overhang: { coveredFromRow: 20, soffitHeightFt: 29 } },
+      // Rows 1–24; Rate Your Seats covers 142–145 from row 20 and calls the
+      // rest open. Lidar (9 of 9): front row 8 ft above the wall (8–12), 13°
+      // rake; the 200 level's edge reaches out over row 16 (13 in 145; also
+      // over 141, and over row 8 of 148), so the rows from there back are
+      // covered; that edge is what rises highest behind (39 ft). Its
+      // underside: the 200 level's 37-ft front row less 9 ft, ~28 ft.
+      stand: { rows: 23, frontRowHeightFt: 8, rakeDeg: 13, backHeightFt: 39, backSetbackFt: -16, overhang: { coveredFromRow: 16, soffitHeightFt: 28 } },
       sections: {
         '140': { noCover: true, backHeightFt: 49, backSetbackFt: 30 }, // rows 7–21
-        '141': { noCover: true },
+        '145': { overhang: { coveredFromRow: 13, soffitHeightFt: 33 } },
         '146': { noCover: true, backHeightFt: 43, backSetbackFt: 43 },
         '147': { noCover: true, backHeightFt: 25, backSetbackFt: -5 }, // rows 4–18
-        '148': { frontRowHeightFt: 12, noCover: true, backHeightFt: 25, backSetbackFt: -5 }, // rows 5–16
+        '148': { frontRowHeightFt: 12, backHeightFt: 25, backSetbackFt: -5, overhang: { coveredFromRow: 8, soffitHeightFt: 25 } }, // rows 5–16
       },
       rowsFromMap: true,
       heightsSourced: false,
-      coverSourced: false,
+      coverSourced: true,
       sources: [CBP_CLUB_MAP, ...['140', '141', '142', '143', '145', '146', '147', '148'].map((n) => rysCbp(`sections/${n}`)), CBP_LIDAR],
     },
     rightField200: {
@@ -1563,8 +1564,9 @@ const CBP: StadiumStructure = {
       // Rows 1–13, covered by the 300 level from row 10 (sourced; the lidar
       // puts its edge at row 8). Lidar (5 of 5): front row 45 ft (44–45), 25°
       // rake; what rises highest behind is the 300 level's front, 70 ft up.
-      // Estimated: its underside ~65 ft (9 ft above row 10's floor).
-      stand: { rows: 12, frontRowHeightFt: 45, rakeDeg: 25, backHeightFt: 70, backSetbackFt: -14, overhang: { coveredFromRow: 10, soffitHeightFt: 65 } },
+      // Its underside: that front row less 9 ft (~62 ft) would be under row
+      // 10's heads, so 9 ft above row 10's floor, ~66 ft.
+      stand: { rows: 12, frontRowHeightFt: 45, rakeDeg: 25, backHeightFt: 70, backSetbackFt: -14, overhang: { coveredFromRow: 10, soffitHeightFt: 66 } },
       sections: { '201': { backHeightFt: 96, backSetbackFt: 111 } },
       rowsFromMap: true,
       heightsSourced: false,
@@ -1573,25 +1575,28 @@ const CBP: StadiumStructure = {
     },
     twoHundred: {
       label: '200 level and Hall of Fame Club',
-      // Rows 1–12, covered by the suite level from row 7 (sourced: 206–209
-      // from row 9, behind home 220 from row 6 and 221–224 from row 5;
-      // 210, 211 and 227 have no covered rows). Lidar (24 of 32): front row
-      // 44 ft (42–45), 24° rake (19–25); the 300 level's front reaches out
-      // over row 3 (1–8), against the source, and is what rises highest
-      // behind (70 ft). Estimated: the suite level's underside 9 ft above
-      // the floor of the first covered row (58–63 ft).
-      stand: { rows: 10, frontRowHeightFt: 44, rakeDeg: 24, backHeightFt: 70, backSetbackFt: -14, overhang: { coveredFromRow: 7, soffitHeightFt: 60 } },
+      // Rows 1–12. Rate Your Seats counts them covered by the suite level
+      // from row 7 (206–209 from row 9, behind home 220 from row 6 and
+      // 221–224 from row 5; 210, 211 and 227 none). Lidar (24 of 32): front
+      // row 44 ft (42–45), 24° rake (19–25); the 300 level's front reaches
+      // out over row 3 (1–8; below by section), so the rows from there back
+      // are covered, and it is what rises highest behind (70 ft). Its
+      // underside: the 300 level's 69-ft front row less 9 ft, ~60 ft (63 ft
+      // behind home, where that front row is 72 ft; over 216 the scan sees a
+      // face, 54 ft up; 62 ft over 206 and 208, 9 ft above row 8's floor).
+      stand: { rows: 10, frontRowHeightFt: 44, rakeDeg: 24, backHeightFt: 70, backSetbackFt: -14, overhang: { coveredFromRow: 3, soffitHeightFt: 60 } },
       sections: {
-        ...Object.fromEntries(cbpRange(206, 209).map((n) => [n, { overhang: { coveredFromRow: 9, soffitHeightFt: 63 } }])),
+        ...Object.fromEntries(['206', '208'].map((n) => [n, { overhang: { coveredFromRow: 8, soffitHeightFt: 62 } }])),
+        ...Object.fromEntries(['207', '209'].map((n) => [n, { overhang: { coveredFromRow: 7, soffitHeightFt: 60 } }])),
         '210': { noCover: true },
         '211': { noCover: true },
-        '220': { overhang: { coveredFromRow: 6, soffitHeightFt: 59 } },
-        ...Object.fromEntries(cbpRange(221, 224).map((n) => [n, { overhang: { coveredFromRow: 5, soffitHeightFt: 58 } }])),
-        '227': { noCover: true }, // 6 rows in the club's data; Rate Your Seats covers from row 7
+        '216': { overhang: { coveredFromRow: 1, soffitHeightFt: 54 } },
+        '219': { overhang: { coveredFromRow: 5, soffitHeightFt: 60 } },
+        ...Object.fromEntries(cbpRange(220, 224).map((n) => [n, { overhang: { coveredFromRow: 5, soffitHeightFt: 63 } }])),
       },
       rowsFromMap: true,
       heightsSourced: false,
-      coverSourced: false,
+      coverSourced: true,
       sources: [CBP_CLUB_MAP, ...['207', '209', '211', '212', '216', '220', '222', '226', '228', '232', '233', '237'].map((n) => rysCbp(`sections/${n}`)), RYS_CBP, CBP_LIDAR],
     },
     leftField200: {
@@ -1610,8 +1615,9 @@ const CBP: StadiumStructure = {
     suite: {
       label: 'Suites',
       // Hidden from the air; estimated between the measured 200 level (its
-      // back ~55 ft) and the 300 level's 69-ft front.
-      stand: { rows: 2, frontRowHeightFt: 55, rakeDeg: 5, backHeightFt: 69, overhang: { coveredFromRow: 1, soffitHeightFt: 63 } },
+      // back ~55 ft) and the 300 level's 69-ft front, the underside 9 ft
+      // above the suite seats.
+      stand: { rows: 2, frontRowHeightFt: 55, rakeDeg: 5, backHeightFt: 69, overhang: { coveredFromRow: 1, soffitHeightFt: 64 } },
       rowsFromMap: true,
       heightsSourced: false,
       coverSourced: true,
@@ -1619,16 +1625,22 @@ const CBP: StadiumStructure = {
     },
     rightField300: {
       label: '300 level, right field (301–310)',
-      // Rows 1–21, under the roof from row 14 (sourced). Lidar (9 of 10):
-      // front row 69 ft (66–70), 29° rake; the roof's edge reaches out over
-      // row 11, against the source, its top 117 ft up and what rises
-      // highest behind. Estimated: its underside ~116 ft (the scan shows
-      // nothing below its top at that edge: a thin roof).
-      stand: { rows: 21, frontRowHeightFt: 69, rakeDeg: 29, backHeightFt: 117, backSetbackFt: -26, overhang: { coveredFromRow: 14, soffitHeightFt: 116 } },
-      sections: { '301': { backHeightFt: 19, backSetbackFt: 196 }, '302': { backHeightFt: 87, backSetbackFt: -26 } },
+      // Rows 1–21. Rate Your Seats counts them under the roof from row 14.
+      // Lidar (9 of 10): front row 69 ft (66–70), 29° rake; the roof's edge
+      // reaches out over row 11 (14–15 in 305 and 306), so the rows from
+      // there back are covered; its top, 117 ft up, is what rises highest
+      // behind, and the scan sees nothing below it there: a thin roof,
+      // underside taken as 117 ft.
+      stand: { rows: 21, frontRowHeightFt: 69, rakeDeg: 29, backHeightFt: 117, backSetbackFt: -26, overhang: { coveredFromRow: 11, soffitHeightFt: 117 } },
+      sections: {
+        '301': { backHeightFt: 19, backSetbackFt: 196 },
+        '302': { backHeightFt: 87, backSetbackFt: -26 },
+        '305': { overhang: { coveredFromRow: 14, soffitHeightFt: 117 } },
+        '306': { overhang: { coveredFromRow: 15, soffitHeightFt: 117 } },
+      },
       rowsFromMap: true,
       heightsSourced: false,
-      coverSourced: false,
+      coverSourced: true,
       sources: [CBP_CLUB_MAP, ...['301', '303', '305', '307', '310'].map((n) => rysCbp(`sections/${n}`)), RYS_CBP, CBP_LIDAR],
     },
     threeHundred: {
@@ -1645,28 +1657,28 @@ const CBP: StadiumStructure = {
     },
     terrace: {
       label: 'Terrace Deck (400s)',
-      // Rows 1–16 (434: 13), under the roof from row 9 (sourced). Lidar (23
-      // of 23): front row 90 ft (87–91), 33° rake; the roof's edge reaches
-      // out over row 6, against the source, its top 133 ft up. Estimated:
-      // its underside ~131 ft (nothing seen below its top at that edge: a
-      // thin roof).
-      stand: { rows: 16, frontRowHeightFt: 90, rakeDeg: 33, backHeightFt: 133, backSetbackFt: -25, overhang: { coveredFromRow: 9, soffitHeightFt: 131 } },
-      sections: { '414': { backHeightFt: 92, backSetbackFt: 50 } },
+      // Rows 1–16 (434: 13). Rate Your Seats counts them under the roof from
+      // row 9. Lidar (23 of 23): front row 90 ft (87–91), 33° rake; the
+      // roof's edge reaches out over row 6 (9 in 430), so the rows from there
+      // back are covered; its top is 133 ft up and the scan sees nothing
+      // below 132 ft there: a thin roof, underside taken as 132 ft.
+      stand: { rows: 16, frontRowHeightFt: 90, rakeDeg: 33, backHeightFt: 133, backSetbackFt: -25, overhang: { coveredFromRow: 6, soffitHeightFt: 132 } },
+      sections: { '414': { backHeightFt: 92, backSetbackFt: 50 }, '430': { overhang: { coveredFromRow: 9, soffitHeightFt: 132 } } },
       rowsFromMap: true,
       heightsSourced: false,
-      coverSourced: false,
+      coverSourced: true,
       sources: [CBP_CLUB_MAP, ...['412', '415', '418', '420', '424', '428', '432', '434'].map((n) => rysCbp(`sections/${n}`)), RYS_CBP, CBP_LIDAR],
     },
     wheelchair: {
       label: 'Wheelchair platforms',
       // One row each (the club's data): 412V–432V are row 9 of the Terrace
-      // Deck, its first row under the roof; 302V–309V are row 11 of the
-      // right-field 300s, in front of their roof. Heights are those rows'
-      // on the measured stands.
-      stand: { rows: 1, frontRowHeightFt: 104, rakeDeg: 33, backHeightFt: 133, backSetbackFt: 19, overhang: { coveredFromRow: 1, soffitHeightFt: 131 } },
+      // Deck, 302V–309V row 11 of the right-field 300s; both are under their
+      // roofs (the lidar puts the roofs' edges over rows 6 and 11). Heights
+      // are those rows' on the measured stands.
+      stand: { rows: 1, frontRowHeightFt: 104, rakeDeg: 33, backHeightFt: 133, backSetbackFt: 19, overhang: { coveredFromRow: 1, soffitHeightFt: 132 } },
       sections: Object.fromEntries(cbpRange(302, 309).map((n) => [
         `${n}V`,
-        { frontRowHeightFt: 84, rakeDeg: 29, backHeightFt: 117, backSetbackFt: 27, noCover: true },
+        { frontRowHeightFt: 84, rakeDeg: 29, backHeightFt: 117, backSetbackFt: 27, overhang: { coveredFromRow: 1, soffitHeightFt: 117 } },
       ])),
       rowsFromMap: true,
       heightsSourced: false,

@@ -11,19 +11,27 @@
  *   [RYS] https://www.rateyourseats.com/citizens-bank-park/seating/shaded-covered-seats
  *         and its section pages (101–148, 201–245, 301–333, 412–434)
  *
- * Not reproduced: [RYS] says Hall of Fame Club 225–232 are out of the sun by
- * the third inning of a 1 PM game. The model gets there in September for
- * 226 and 229–232 (tested below), but in July and August it takes until
- * about the fifth inning. In 225, 227 and 228 it doesn't get there at all:
- * the heights are now measured (USGS lidar, 2024–25), and the 300 level's
- * front reaches out over row 3, 70 ft up, while the sources count the
- * covered rows from row 7 (none in 227). The model keeps the sourced rows,
- * so the rows behind that edge get no shade from the deck over them; on the
- * ground they sit under it, which is what would put them out of the sun.
- * Which rows to count as covered is open, so the 200 level's cover is
- * marked unsettled and these answers are not labelled High.
+ * The covered rows come from the lidar (USGS, 2024–25) where it puts a
+ * deck's edge more than two rows from the source's. That reproduces [RYS]'s
+ * Hall of Fame Club 225–232, out of the sun by the third inning of a 1 PM
+ * game, in July as well as September (tested below): the 300 level's front
+ * reaches out over row 3, where the sources count from row 7 (none in 227).
+ *
+ * Partly reproduced, since the lidar's covered rows (recorded, not tuned):
+ *   - [RYS] calls 108–110 directly in the sun, counting the 200 level's
+ *     cover from row 37 (beyond 108's last row). The scan puts that deck's
+ *     edge over 108's 21st row, 109's 23rd and 110's 28th, so their back
+ *     rows are under it: on average a quarter of their rows are shaded
+ *     through a 1 PM July game (4% before). Tested: the front 20 rows, in
+ *     front of the deck in all three, are in the sun all game.
+ *   - [RYS] says 134–136's back rows get much less shade than their
+ *     neighbours' (in 135 only the wheelchair row behind row 37 is
+ *     covered). The scan puts the 200 level's edge over rows 34, 34 and 30
+ *     there, against 21–31 in the neighbours, so their rows 30 and up are
+ *     85% shaded through that game against 100% (47% before). Tested: less.
  * [RYS] also says about half of the right-field seats are shaded at first
- * pitch; the model has 10–40%, and agrees that they end up in the sun.
+ * pitch; the model has 15–35% (none in 101), and agrees that they end up in
+ * the sun.
  */
 import { philliesSections } from '../../data/sections/mlb/phillies';
 import { getStadiumStructure } from '../../data/stadiumStructures';
@@ -79,8 +87,12 @@ describe('Citizens Bank Park: a 1:05 PM game in July', () => {
     expect(meanShade(JULY_4_105PM, thirdBase100s)).toBeGreaterThan(meanShade(JULY_4_105PM, firstBase100s));
   });
 
-  it('[RYS] sections 108–110 are directly in the sun', () => {
-    expect(meanShade(JULY_4_105PM, range(108, 110))).toBeLessThan(0.1);
+  // The front 20 rows only: the 200 level reaches over the rows behind (header).
+  it.each(range(108, 110))('[RYS] section %s is directly in the sun: its front 20 rows all game', (id) => {
+    const s = philliesSections.find((x) => x.id === id)!;
+    const { stand } = standFor(structure, id, s.rows.length)!;
+    const front20 = JULY_4_105PM.sun.map((sun) => rowLight(stand, s.standCompass!, structure.park, sun).slice(0, 20));
+    expect(front20.every((rows) => rows.every((l) => l === 'sun'))).toBe(true);
   });
 
   // Physical row 30 as a position in each section's rows: 132 starts with
@@ -91,10 +103,11 @@ describe('Citizens Bank Park: a 1:05 PM game in July', () => {
     expect(backRowsShaded(JULY_4_105PM, id, row30)[2]).toBeGreaterThanOrEqual(0.5);
   });
 
-  it('[RYS] 134–136 are the exception: their back rows get much less shade', () => {
+  // "Much less" is not reproduced: the 200 level reaches over their back rows too (header).
+  it('[RYS] 134–136 are the exception: their back rows get less shade', () => {
     const backShade = (ids: string[]) =>
       ids.flatMap((id) => backRowsShaded(JULY_4_105PM, id, 30)).reduce((a, b) => a + b, 0) / (ids.length * JULY_4_105PM.sun.length);
-    expect(backShade(range(134, 136))).toBeLessThan(backShade(['129', '130', '131', '133', '137', '138']) - 0.3);
+    expect(backShade(range(134, 136))).toBeLessThan(backShade(['129', '130', '131', '133', '137', '138']));
   });
 
   it.each(range(423, 434))('[RYS] Terrace Deck %s: rows 6 and up are shaded, and rows 1–5 by mid-afternoon', (id) => {
@@ -129,10 +142,12 @@ describe('Citizens Bank Park: a 4:05 PM game in July', () => {
   });
 });
 
-describe('Citizens Bank Park: a 1:35 PM game in September', () => {
-  it.each(['226', '229', '230', '231', '232'])('[RYS] Hall of Fame Club %s is out of the sun by the third inning', (id) => {
-    const samples = section(SEPT_14_135PM, id).samples;
-    expect(samples[2].shadedFraction).toBeGreaterThanOrEqual(0.9);
-    expect(samples.slice(3).every((s) => s.shadedFraction === 1)).toBe(true);
+describe('Citizens Bank Park: Hall of Fame Club at a 1 PM game, July and September', () => {
+  it.each(range(225, 232))('[RYS] Hall of Fame Club %s is out of the sun by the third inning', (id) => {
+    for (const result of [JULY_4_105PM, SEPT_14_135PM]) {
+      const samples = section(result, id).samples;
+      expect(samples[2].shadedFraction).toBeGreaterThanOrEqual(0.9);
+      expect(samples.slice(3).every((s) => s.shadedFraction === 1)).toBe(true);
+    }
   });
 });
