@@ -1,4 +1,6 @@
 import { yankeesSections } from '../yankees';
+import { astrosSections, ASTROS_AERIAL_CONTROL } from '../astros';
+import { astrosChartPoints } from '../chart-points/astros';
 import { diamondbacksSections, DIAMONDBACKS_AERIAL_CONTROL } from '../diamondbacks';
 import { diamondbacksChartPoints } from '../chart-points/diamondbacks';
 import { dodgersSections, DODGERS_AERIAL_CONTROL } from '../dodgers';
@@ -883,4 +885,38 @@ describe('Chase Field stand directions (measured on the 2017 aerial photo, roof 
     expect(diff(stand(id), bearing(id))).toBeLessThan(4);
   });
   it.each([['101', 51], ['104', 51], ['142', 316], ['144', 316]])('outfield section %s faces %i°', (id, deg) => expect(stand(id as string)).toBe(deg));
+});
+
+describe('Daikin Park stand directions (measured on the 2012 and 2014 aerial photos, roof open)', () => {
+  // Both straights lean toward home (backs 113° and 214°); behind home the
+  // direction turns evenly between them; the outfield stands sit behind
+  // straight walls (backs 292° and 41°).
+  const byId = new Map(astrosSections.map((s) => [s.id, s]));
+  const stand = (id: string) => {
+    const value = byId.get(id)?.standCompass;
+    if (value === undefined) throw new Error(`No stand direction for ${id}`);
+    return value;
+  };
+  const bearing = (id: string) => {
+    const s = byId.get(id)!;
+    return (((getStadiumOrientation('astros') + 90 - s.baseAngle - s.angleSpan / 2) % 360) + 360) % 360;
+  };
+
+  it('pins the club map to the photos within 5 m', () => {
+    expect(aerialChartFit(astrosChartPoints, ASTROS_AERIAL_CONTROL).rmsM).toBeLessThan(5);
+  });
+
+  it('puts the Crawford Boxes behind the left-field wall and 150–156 behind the right-field wall', () => {
+    for (const id of ['100', '102', '104']) expect(bearing(id)).toBeGreaterThan(285);
+    for (const id of ['100', '102', '104']) expect(bearing(id)).toBeLessThan(320);
+    for (const id of ['150', '153', '156']) expect(bearing(id)).toBeLessThan(40);
+  });
+
+  it.each(['124', '127', '131', '225', '325', '428'])('first-base section %s faces 113°', (id) => expect(stand(id)).toBe(113));
+  it.each(['109', '112', '114', '209', '310', '410'])('third-base section %s faces 214°', (id) => expect(stand(id)).toBe(214));
+  it.each(['119', '120', '219', '419'])('behind-home section %s faces between the two straights', (id) => {
+    expect(stand(id)).toBeGreaterThan(113);
+    expect(stand(id)).toBeLessThan(214);
+  });
+  it.each([['101', 292], ['104', 292], ['152', 41], ['254', 41]])('outfield section %s faces %i°', (id, deg) => expect(stand(id as string)).toBe(deg));
 });

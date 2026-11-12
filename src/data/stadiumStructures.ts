@@ -4102,6 +4102,180 @@ const CHASE: StadiumStructure = {
   reviewedOn: '2026-11-12',
 };
 
+const DAIKIN_RYS = 'https://www.rateyourseats.com/daikin-park/seating/shaded-covered-seats';
+const DAIKIN_PHOTO = 'USGS NAIP 2012-06-23, 2014-10-16, 2016-10-10, 2020-11-30 and 2024-10-13 flights, roof open (Planetary Computer NAIP archive)';
+const DAIKIN_HEIGHT = 'https://www.walterpmoore.com/projects/daikin-park';
+const daikinSection = (n: string) => `https://www.rateyourseats.com/daikin-park/seating/sections/${n}`;
+/** First labelled row where it is not 1 (Rate Your Seats). */
+const DAIKIN_FIRST_ROW: Record<string, number> = {
+  '105': 12, '108': 27, '112': 5, '113': 5, '114': 5, '116': 5, '118': 12, '119': 12, '120': 12, '122': 5,
+  '124': 5, '125': 5, '126': 5, '134': 9, '150': 13, '151': 13, '250': 11,
+};
+/**
+ * First covered row, as a row label (Rate Your Seats): the club deck over
+ * the field level's back rows from row 35 round the infield and down both
+ * lines (122–126: "Rows 35 and above are shaded during most day games", on
+ * the side that faces the afternoon sun), 25–30 behind home (118–120); the
+ * terrace over the right-field stands from row 18 (150, 151 and 156 wholly).
+ */
+const DAIKIN_COVER_LABEL: Record<string, number> = {
+  ...Object.fromEntries(['105', '106', '107', '108', '109', '110', '111', '112', '113', '114', '116', '122', '124', '125', '126', '127', '128', '129', '131', '132', '133', '134'].map((id) => [id, 35])),
+  // 153's rows skip 18–20, so its first covered row (21) is its 18th.
+  '118': 25, '119': 28, '120': 30, '152': 18, '153': 18, '154': 18, '155': 18, '150': 13, '151': 13, '156': 1, '250': 11,
+};
+const DAIKIN_LOWER = { frontRowHeightFt: 3, rakeDeg: 20 };
+const daikinRise = 2.75 * Math.tan((DAIKIN_LOWER.rakeDeg * Math.PI) / 180);
+/** Roof top (fixed section and parked panels), ft (estimated; 242 ft at its highest). */
+const DAIKIN_ROOF_TOP = 200;
+const daikinSections = (ids: string[], soffitHeightFt: number, extra: (id: string) => Partial<StandProfile> = () => ({})) =>
+  Object.fromEntries(ids.map((id) => {
+    const first = DAIKIN_FIRST_ROW[id] ?? 1;
+    const label = DAIKIN_COVER_LABEL[id];
+    return [id, {
+      ...(first > 1 && /^1/.test(id) ? { frontRowHeightFt: DAIKIN_LOWER.frontRowHeightFt + (first - 1) * daikinRise } : {}),
+      ...(label ? { overhang: { coveredFromRow: Math.max(1, label - first + 1), soffitHeightFt } } : {}),
+      ...extra(id),
+    }];
+  }));
+const daikinRange = (from: number, to: number) => Array.from({ length: to - from + 1 }, (_, i) => String(from + i));
+
+/** Seating ring of a Daikin Park chart section. */
+export function daikinTier(id: string): string | null {
+  if (/^([A-F]|AA|7[0-5])$/.test(id)) return 'box';
+  if (/^10[0-4]$/.test(id)) return 'crawford';
+  if (/^15\d$/.test(id)) return 'rightField';
+  if (/^25\d$/.test(id)) return 'rightFieldUpper';
+  if (/^1\d\d$/.test(id)) return 'field';
+  if (/^2\d\d$/.test(id)) return 'club';
+  if (/^3\d\d$/.test(id)) return 'mezzanine';
+  if (/^4\d\d$/.test(id)) return 'upper';
+  // Suites, clubs, bars and party areas: no rows or cover listed.
+  return null;
+}
+
+/**
+ * Daikin Park (2000, as Enron Field; Minute Maid Park 2002–2024), with the
+ * roof open. Field level (105–134, rows to 40) with dugout boxes and the
+ * Diamond Club in front of it behind home, the Crawford Boxes (100–104)
+ * above the left-field wall, the right-field stands (150–156) under a
+ * terrace (250–255), the club level (205–236), the mezzanine (305–334) and
+ * the upper deck (405–434). Rows are Rate Your Seats' section pages, and so
+ * is which rows are covered: "The club level overhang protects the back
+ * rows of lower level seating around the infield and down the baselines",
+ * "More than half of rows on the club level are covered from above", and
+ * "200, 300 and 400 level seats are protected by a well-designed roof". With
+ * the roof open, its fixed section stays over the third-base side and its
+ * panels stack over the first-base side and right field: averaged over four
+ * flights (they lean up to 10 m with the camera), the fixed section's front
+ * edge stands ~36 m back from the third-base line and the panels' ~52 m back
+ * from the first-base line, in front of the upper deck's first row on both
+ * sides. The roof is 242 ft at its highest (Walter P Moore); no source gives
+ * the decks' heights, so they are estimated.
+ */
+const DAIKIN: StadiumStructure = {
+  stadiumId: 'astros',
+  // Far rim: the roof (~200 ft) about 500 ft across the field.
+  park: { roof: 'retractable', farRimHeightFt: DAIKIN_ROOF_TOP, fieldCrossingFt: 500 },
+  tierOf: daikinTier,
+  tiers: {
+    field: {
+      label: 'Field level (105–134)',
+      // Rows 1–40 (behind the dugouts from row 5; behind home 12–32)
+      // (sourced), the club deck over the back rows (sourced, see above).
+      // Estimated: front ~3 ft plus ~1 ft a row where rows start further up,
+      // 20° rake, club deck underside ~48 ft; the roof (~200 ft) behind: right
+      // behind the last row on the third-base side and behind home, ~30 ft
+      // further back (the parked panels' edge) on the first-base side.
+      stand: { rows: 40, ...DAIKIN_LOWER, backHeightFt: DAIKIN_ROOF_TOP },
+      sections: daikinSections([...daikinRange(105, 134)], 48, (id) => (Number(id) >= 122 ? { backSetbackFt: 30 } : {})),
+      rowsFromMap: true,
+      heightsSourced: false,
+      coverSourced: true,
+      sources: [DAIKIN_RYS, DAIKIN_PHOTO, ...['109', '112', '118', '120', '122', '127', '133'].map(daikinSection)],
+    },
+    box: {
+      label: 'Dugout boxes and Diamond Club (A–F, AA, 70–75)',
+      // No source lists their rows; a few rows in front of the field level.
+      // Estimated: 4 rows from ~2 ft, the field level rising behind them.
+      stand: { rows: 4, frontRowHeightFt: 2, rakeDeg: 12, backHeightFt: 48, backSetbackFt: 90 },
+      heightsSourced: false,
+      coverSourced: true,
+      sources: [DAIKIN_PHOTO],
+    },
+    crawford: {
+      label: 'Crawford Boxes (100–104)',
+      // Rows 1–10 (104: 13), open (Rate Your Seats: "among the worst" for
+      // sun). Estimated: front ~21 ft (above the 19-ft wall), 20° rake; the
+      // roof's track and the 115-ft left-field glass wall behind.
+      stand: { rows: 10, frontRowHeightFt: 21, rakeDeg: 20, backHeightFt: 115, backSetbackFt: 20 },
+      rowsFromMap: true,
+      heightsSourced: false,
+      coverSourced: true,
+      sources: [DAIKIN_RYS, DAIKIN_HEIGHT, ...['100', '102', '104'].map(daikinSection)],
+    },
+    rightField: {
+      label: 'Right-field stands (150–156)',
+      // Rows 1–25 (sourced), under the terrace from row 18 (150, 151 and 156
+      // wholly) (sourced). Estimated: front ~10 ft, 20° rake, terrace
+      // underside ~35 ft, the upper decks and roof behind.
+      stand: { rows: 25, frontRowHeightFt: 10, rakeDeg: 20, backHeightFt: DAIKIN_ROOF_TOP, backSetbackFt: 40 },
+      sections: daikinSections(daikinRange(150, 156), 35),
+      rowsFromMap: true,
+      heightsSourced: false,
+      coverSourced: true,
+      sources: [DAIKIN_RYS, ...['150', '153', '156'].map(daikinSection)],
+    },
+    rightFieldUpper: {
+      label: 'Right-field terrace (250–255)',
+      // Rows 1–17 (250: 11–17), covered from row 6 (250 wholly) (Rate Your
+      // Seats: "Rows 6 and above are shaded during most day games").
+      // Estimated: front ~38 ft, 25° rake, the deck above ~60 ft.
+      stand: { rows: 17, frontRowHeightFt: 38, rakeDeg: 25, backHeightFt: DAIKIN_ROOF_TOP, backSetbackFt: 20, overhang: { coveredFromRow: 6, soffitHeightFt: 60 } },
+      sections: daikinSections(['250'], 60),
+      rowsFromMap: true,
+      heightsSourced: false,
+      coverSourced: true,
+      sources: ['250', '253', '255'].map(daikinSection),
+    },
+    club: {
+      label: 'Club level (205–236)',
+      // Rows 1–12 (206: 1–8; 218–220: 1–6), covered from row 5 (sourced).
+      // Estimated: front ~50 ft, 25° rake, mezzanine underside ~62 ft.
+      stand: { rows: 12, frontRowHeightFt: 50, rakeDeg: 25, backHeightFt: DAIKIN_ROOF_TOP, overhang: { coveredFromRow: 5, soffitHeightFt: 62 } },
+      rowsFromMap: true,
+      heightsSourced: false,
+      coverSourced: true,
+      sources: [DAIKIN_RYS, ...['205', '212', '220', '228', '236'].map(daikinSection)],
+    },
+    mezzanine: {
+      label: 'Mezzanine (305–334)',
+      // Rows 1–5 or 1–9, covered from row 3 (309–316: "Rows 3 and above are
+      // shaded during most day games"; "300 ... level seats are protected by
+      // a well-designed roof"). Estimated: front ~66 ft, 25° rake, upper
+      // deck underside ~78 ft.
+      stand: { rows: 9, frontRowHeightFt: 66, rakeDeg: 25, backHeightFt: DAIKIN_ROOF_TOP, overhang: { coveredFromRow: 3, soffitHeightFt: 78 } },
+      rowsFromMap: true,
+      heightsSourced: false,
+      coverSourced: true,
+      sources: [DAIKIN_RYS, ...['309', '313', '317', '325', '333'].map(daikinSection)],
+    },
+    upper: {
+      label: 'Upper deck (405–434)',
+      // Rows 1–17 to 1–23 (sourced), under the roof: the fixed section over
+      // the third-base side ("408-415 ... get excellent shade from the
+      // closed roof"), the parked panels over the first-base side (their
+      // edge measured in front of the first row). Estimated: front ~88 ft,
+      // 30° rake, roof underside ~150 ft.
+      stand: { rows: 17, frontRowHeightFt: 88, rakeDeg: 30, treadFt: 2.6, backHeightFt: DAIKIN_ROOF_TOP, overhang: { coveredFromRow: 1, soffitHeightFt: 150 } },
+      rowsFromMap: true,
+      heightsSourced: false,
+      coverSourced: true,
+      sources: [DAIKIN_RYS, DAIKIN_HEIGHT, DAIKIN_PHOTO, ...['405', '410', '415', '420', '428', '434'].map(daikinSection)],
+    },
+  },
+  reviewedOn: '2026-11-12',
+};
+
 export const STADIUM_STRUCTURES: Readonly<Record<string, StadiumStructure>> = {
   yankees: YANKEES,
   redsox: FENWAY,
@@ -4126,6 +4300,7 @@ export const STADIUM_STRUCTURES: Readonly<Record<string, StadiumStructure>> = {
   whitesox: RATE,
   athletics: SUTTER,
   diamondbacks: CHASE,
+  astros: DAIKIN,
 };
 
 export function getStadiumStructure(stadiumId: string): StadiumStructure | undefined {
