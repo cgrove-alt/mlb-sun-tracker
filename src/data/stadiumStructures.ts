@@ -942,111 +942,155 @@ export function oracleTier(id: string): string | null {
   return null;
 }
 
+const ORACLE_LIDAR = 'USGS 3DEP lidar CA_SanFrancisco_B23, flown 2023-04-20 (scripts/measureStandHeights.py)';
+
 /**
  * Oracle Park (2000). A deep lower bowl (rows to 41) whose back rows sit
  * under the club level, the club level under the View level, and a roof
  * over the View level's last seven rows. Rows and covered rows are from Rate
- * Your Seats' section pages. No source publishes the deck heights, so every
- * height is estimated by stacking the decks.
+ * Your Seats' section pages.
+ *
+ * Heights are measured on USGS airborne lidar (ORACLE_LIDAR), as at Dodger
+ * Stadium: for each section a cut straight back through its rows gives the
+ * front row's height, the rake and the structure that rises highest behind
+ * as seen from the middle uncovered row; tier values are medians, sections
+ * more than 10% (at least 3 ft) off get their own. Deck undersides the scan
+ * cannot see are estimated as 9 ft above the floor of the first covered row
+ * (and below the deck above's measured front row); the suites are hidden.
  */
 const ORACLE: StadiumStructure = {
   stadiumId: 'giants',
-  // Far rim: the View level's roof (~125 ft) about 480 ft from the outfield seats.
-  park: { roof: 'open', farRimHeightFt: 125, fieldCrossingFt: 480 },
+  // Far rim (lidar): the stands' roof line, median over sections 125 ft (the
+  // View level's roof); crossing: the median distance from a section to what
+  // rises highest across the field, 582 ft.
+  park: { roof: 'open', farRimHeightFt: 125, fieldCrossingFt: 582 },
   tierOf: oracleTier,
   tiers: {
     lower: {
       label: 'Lower level (100s)',
       // Rows 1–41 (sourced), covered from row 29 by the club level ("row
-      // 30 and above in most sections"; section pages say 29). The corner
-      // sections are shorter: 101 has rows 1–21 (none covered), 133 rows
-      // 28–39, 135 rows 4–39. Estimated: front row ~3 ft, 20° rake (~1 ft a
-      // row), club level underside ~40 ft.
+      // 30 and above in most sections"; section pages say 29; the lidar puts
+      // the club deck's edge at row 27, 18–34). The corner sections are
+      // shorter: 101 has rows 1–21 (none covered), 133 rows 28–39, 135 rows
+      // 4–39. Lidar (32 of 33): front row at field level (-3 to 5 ft), 12°
+      // rake (6–25). What rises highest behind is the View level's front,
+      // 68 ft up over the Club level; nearer the corners the View roof
+      // (125 ft). Estimated: the club deck's underside ~25 ft (9 ft above row
+      // 29's floor, under the Club level's measured 32-ft front row).
       stand: {
         rows: 41,
-        frontRowHeightFt: 3,
-        rakeDeg: 20,
-        backHeightFt: 50,
-        overhang: { coveredFromRow: 29, soffitHeightFt: 40 },
+        frontRowHeightFt: 0,
+        rakeDeg: 12,
+        backHeightFt: 68,
+        backSetbackFt: -23,
+        overhang: { coveredFromRow: 29, soffitHeightFt: 25 },
       },
       sections: {
-        '101': { rows: 22, noCover: true },
-        '133': { rows: 11, frontRowHeightFt: 30, overhang: { coveredFromRow: 2, soffitHeightFt: 40 } },
-        '135': { rows: 32, frontRowHeightFt: 6, overhang: { coveredFromRow: 26, soffitHeightFt: 40 } },
+        '101': { rows: 22, noCover: true, backHeightFt: 33, backSetbackFt: 42 },
+        ...Object.fromEntries(['103', '104', '105', '112', '128', '129', '130', '131', '132', '134'].map((id) => [id, { backHeightFt: 125, backSetbackFt: 37 }])),
+        '122': { frontRowHeightFt: -3 },
+        // Row 28 on the measured slope.
+        '133': { rows: 11, frontRowHeightFt: 16, overhang: { coveredFromRow: 2, soffitHeightFt: 25 } },
+        '135': { rows: 32, frontRowHeightFt: 5, overhang: { coveredFromRow: 26, soffitHeightFt: 25 } },
       },
       heightsSourced: false,
       coverSourced: true,
-      sources: [rysOracle('sections/101'), rysOracle('sections/103'), rysOracle('sections/108'), rysOracle('sections/121'), rysOracle('sections/127'), rysOracle('sections/133'), rysOracle('sections/135'), RYS_ORACLE],
+      sources: [rysOracle('sections/101'), rysOracle('sections/103'), rysOracle('sections/108'), rysOracle('sections/121'), rysOracle('sections/127'), rysOracle('sections/133'), rysOracle('sections/135'), RYS_ORACLE, ORACLE_LIDAR],
     },
     bleachers: {
       label: 'Bleachers',
-      // Rows 1–26, uncovered (sourced). Estimated: front row ~10 ft over the
-      // left-field wall, 25° rake, a ~45 ft back wall.
-      stand: { rows: 26, frontRowHeightFt: 10, rakeDeg: 25, backHeightFt: 45 },
-      heightsSourced: false,
+      // Rows 1–26, uncovered (sourced). Lidar (7 of 9): front row 6 ft over
+      // the left-field wall (6–13), 13° rake (11–14). What rises highest
+      // behind differs from section to section (37–71 ft); behind 143 the
+      // scoreboard, 113 ft up.
+      stand: { rows: 26, frontRowHeightFt: 6, rakeDeg: 13, backHeightFt: 60, backSetbackFt: 37 },
+      sections: {
+        '137': { backHeightFt: 43, backSetbackFt: 60 },
+        '138': { backHeightFt: 37, backSetbackFt: 11 },
+        '140': { backHeightFt: 71, backSetbackFt: 52 },
+        '143': { frontRowHeightFt: 13, backHeightFt: 113, backSetbackFt: -7 },
+      },
+      heightsSourced: true,
       coverSourced: true,
-      sources: [rysOracle('sections/136'), rysOracle('sections/140'), rysOracle('sections/143'), RYS_ORACLE],
+      sources: [rysOracle('sections/136'), rysOracle('sections/140'), rysOracle('sections/143'), RYS_ORACLE, ORACLE_LIDAR],
     },
     arcade: {
       label: 'Arcade',
-      // One to seven rows on top of the 25 ft right-field wall, uncovered
-      // (sourced; 145 has rows 1–7, 150 and 152 rows 1–3).
-      stand: { rows: 3, frontRowHeightFt: 25, rakeDeg: 10, backHeightFt: 32 },
+      // One to seven rows along the right-field wall, uncovered (sourced; 145
+      // has rows 1–7, 150 and 152 rows 1–3). Lidar (145 and 146): front row
+      // 20 ft (18–21), 12° rake; behind, a 26 ft wall 21 ft back.
+      stand: { rows: 3, frontRowHeightFt: 20, rakeDeg: 12, backHeightFt: 26, backSetbackFt: 21 },
       sections: { '145': { rows: 7 }, '146': { rows: 7 }, '147': { rows: 7 } },
-      heightsSourced: false,
+      heightsSourced: true,
       coverSourced: true,
-      sources: [rysOracle('sections/145'), rysOracle('sections/150'), rysOracle('sections/152'), 'https://en.wikipedia.org/wiki/Oracle_Park'],
+      sources: [rysOracle('sections/145'), rysOracle('sections/150'), rysOracle('sections/152'), 'https://en.wikipedia.org/wiki/Oracle_Park', ORACLE_LIDAR],
     },
     club: {
       label: 'Club level',
       // Rows A–M (12, no I), covered from row K (10th) by the View level
-      // (sourced); 234 (rows A–H) is covered throughout. Estimated: front
-      // row ~48 ft, 25° rake, View level underside ~68 ft.
+      // (sourced); 234 (rows A–H) is covered throughout. Lidar (31 of 32):
+      // front row 32 ft (28–32), 19° rake (18–23). The View level's front
+      // rows reach out over row 5 (4–8), their floor 66 ft up, and are what
+      // rises highest behind; the deck that covers row K, under them,
+      // cannot be seen from the air. With the source and the scan
+      // disagreeing on the covered rows, the confidence check tries cover
+      // both ways. Estimated: underside ~50 ft (9 ft above row K's floor).
       stand: {
         rows: 12,
-        frontRowHeightFt: 48,
-        rakeDeg: 25,
-        backHeightFt: 75,
-        overhang: { coveredFromRow: 10, soffitHeightFt: 68 },
+        frontRowHeightFt: 32,
+        rakeDeg: 19,
+        backHeightFt: 68,
+        backSetbackFt: -19,
+        overhang: { coveredFromRow: 10, soffitHeightFt: 50 },
       },
       sections: {
+        '204': { frontRowHeightFt: 28 },
         '205': { rows: 10 },
         '215': { rows: 8, noCover: true },
-        '234': { rows: 8, overhang: { coveredFromRow: 1, soffitHeightFt: 60 } },
+        '225': { frontRowHeightFt: 28 },
+        '234': { rows: 8, overhang: { coveredFromRow: 1, soffitHeightFt: 41 } },
       },
       heightsSourced: false,
-      coverSourced: true,
-      sources: [rysOracle('sections/202'), rysOracle('sections/205'), rysOracle('sections/210'), rysOracle('sections/215'), rysOracle('sections/225'), rysOracle('sections/234'), RYS_ORACLE],
+      coverSourced: false,
+      sources: [rysOracle('sections/202'), rysOracle('sections/205'), rysOracle('sections/210'), rysOracle('sections/215'), rysOracle('sections/225'), rysOracle('sections/234'), RYS_ORACLE, ORACLE_LIDAR],
     },
     view: {
       label: 'View level (300s)',
       // Rows A–D then 1–18 (22; 315 and 326 have A–G, 0–18: 26), the roof
-      // covering rows 12–18, the last seven (sourced). Estimated: front row
-      // ~80 ft, 32° rake, roof underside ~115 ft, roof top ~125 ft.
+      // covering rows 12–18, the last seven (sourced; the lidar puts its
+      // edge at row 12 too). Lidar (24 of 29): rows 1–18 start 81 ft up
+      // (79–82) at 31° (19–32); rows A–D sit in front of a cross-aisle about
+      // 8 ft lower, so the front row here is row 1's height carried down
+      // that slope. The roof's underside at its edge is 124 ft (where the
+      // scan sees its face), its top 125 ft.
       stand: {
         rows: 22,
-        frontRowHeightFt: 80,
-        rakeDeg: 32,
+        frontRowHeightFt: 74,
+        rakeDeg: 31,
         backHeightFt: 125,
-        overhang: { coveredFromRow: 16, soffitHeightFt: 115 },
+        backSetbackFt: -29,
+        overhang: { coveredFromRow: 16, soffitHeightFt: 124 },
       },
       sections: {
-        '315': { rows: 26, overhang: { coveredFromRow: 20, soffitHeightFt: 121 } },
-        '326': { rows: 26, overhang: { coveredFromRow: 20, soffitHeightFt: 121 } },
+        '315': { rows: 26, frontRowHeightFt: 68, overhang: { coveredFromRow: 20, soffitHeightFt: 124 } },
+        '326': { rows: 26, frontRowHeightFt: 68, overhang: { coveredFromRow: 20, soffitHeightFt: 124 } },
       },
-      heightsSourced: false,
+      heightsSourced: true,
       coverSourced: true,
-      sources: [rysOracle('sections/302'), rysOracle('sections/308'), rysOracle('sections/315'), rysOracle('sections/326'), rysOracle('sections/336'), RYS_ORACLE],
+      sources: [rysOracle('sections/302'), rysOracle('sections/308'), rysOracle('sections/315'), rysOracle('sections/326'), rysOracle('sections/336'), RYS_ORACLE, ORACLE_LIDAR],
     },
     suite: {
       label: 'Suites',
-      stand: { rows: 1, frontRowHeightFt: 62, rakeDeg: 0, backHeightFt: 74, overhang: { coveredFromRow: 1, soffitHeightFt: 68 } },
+      // Enclosed suites between the Club and View levels: hidden from the
+      // air. Estimated under the View level's measured 66-ft front: ceiling
+      // ~60 ft, floor ~50 ft.
+      stand: { rows: 1, frontRowHeightFt: 50, rakeDeg: 0, backHeightFt: 66, overhang: { coveredFromRow: 1, soffitHeightFt: 60 } },
       heightsSourced: false,
       coverSourced: true,
-      sources: ['https://www.mlb.com/giants/ballpark/seat-map'],
+      sources: ['https://www.mlb.com/giants/ballpark/seat-map', ORACLE_LIDAR],
     },
   },
-  reviewedOn: '2026-11-11',
+  reviewedOn: '2026-11-12',
 };
 
 const rysCiti = (path: string) => `https://www.rateyourseats.com/citi-field/seating/${path}`;

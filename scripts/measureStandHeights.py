@@ -95,7 +95,9 @@ PARKS = {
     'giants': {
         'scan': {'ept': 'CA_SanFrancisco_1_B23'}, 'name': 'USGS 3DEP CA_SanFrancisco_B23 (San Francisco 2023)',
         'noise': [7, 18],
-        'tiers': {},
+        # The View level is rows A-D, a cross-aisle, then rows 1-18: the band
+        # picks rows 1-18. The suites are enclosed under it.
+        'tiers': {'lower': (-1, 4), 'club': (7, 12), 'view': (22, 27, 'near', 15), 'bleachers': (1, 4), 'arcade': (3, 7)},
     },
     'phillies': {
         # Not in the AWS copy: one tile from USGS (rockyweb), 163 MB, downloaded to tmp/lidar/raw/.

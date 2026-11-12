@@ -11,6 +11,12 @@
  *   [RYS] https://www.rateyourseats.com/oracle-park/seating/shaded-covered-seats
  *         and its section pages (103, 108, 121, 127, 133, 135, 202–234, 302–336)
  *
+ * Partly reproduced: [RYS] says the View level's rows under the roof are
+ * shaded all game. The roof's front edge is measured about 20 ft above the
+ * heads under it, so at a June 1:05 PM start the high sun in front of 333 and
+ * 336 still reaches their 17th row (4 ft under the edge); from the 18th row
+ * back they are shaded all game, as in the other View sections checked.
+ *
  * Not reproduced: [RYS] says sections 127–135 are shaded early and become
  * the sunniest seats later. In the model their covered rows (29 and up) stay
  * shaded and the rest stay in the sun: home plate faces east, so as the sun
@@ -96,9 +102,12 @@ describe('Oracle Park: a 1:05 PM game in June', () => {
   });
 
   it.each(['302', '308', '312', '320', '333', '336'])('[RYS] View %s: the rows under the roof are shaded all game', (id) => {
-    // Rows 12–18 (the 16th to 22nd) are under the roof; the 16th sits right
-    // under its front edge, where a lower sun in front can reach, so check
-    // from the next row back.
-    expect(backRowsShaded(JUNE_21_105PM, id, 17).every((share) => share === 1)).toBe(true);
+    // Rows 12–18 (the 16th to 22nd) are under the roof. The roof is a thin
+    // canopy whose front edge is measured (USGS lidar, 2023) about 20 ft
+    // above the heads of the row under it, so a sun in front reaches the
+    // first rows under it: the 16th, and at the start of this game in
+    // 333 and 336 the 17th too (sun 76° up, in front of them). Check from
+    // the 18th row back.
+    expect(backRowsShaded(JUNE_21_105PM, id, 18).every((share) => share === 1)).toBe(true);
   });
 });
