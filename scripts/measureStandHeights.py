@@ -729,8 +729,10 @@ def cover_report(park):
     sees one; otherwise the lowest structure seen there, or, if that is the
     front row of a deck of seats above (within 2 ft), that row less the
     park's measured deck depth (front row to lowest structure at the edges
-    where both show; 9 ft if none do); never less than 9 ft above the first
-    covered row's floor. Prints the tier's values and the sections that differ."""
+    where both show; 9 ft if none do); never less than 9 ft above the floor
+    of the first covered row the profile gets (the scan's edge, the tier's
+    row or the source's). Prints the tier's values and the sections that
+    differ, or that the tier's underside would leave under 9 ft."""
     d = json.load(open(f'tmp/lidar/{park}-measured.json'))
     data = load_sections(park)
     secs = {s['id']: s for s in data['sections']}
@@ -759,16 +761,23 @@ def cover_report(park):
                 under = r['lipLowFt']
                 if r.get('aboveFrontFt') is not None and under >= r['aboveFrontFt'] - 2:
                     under = r['aboveFrontFt'] - depth
-            if under is not None:
-                rise = 2.75 * math.tan(math.radians(r['rakeDeg']))
-                under = max(under, r['frontFt'] + (l - 1) * rise + 9)
             info.append({'id': r['id'], 'rows': st['rows'], 'm': m, 'l': l, 'off': off, 'under': under,
+                         # The profile's own front row and rake: the floor the engine uses.
+                         'front': st['frontRowHeightFt'], 'rise': st.get('treadFt', 2.75) * math.tan(math.radians(st['rakeDeg'])),
                          'face': r['lipSoffitFt'], 'low': r.get('lipLowFt'), 'above': r.get('aboveFrontFt')})
         n_off = sum(i['off'] for i in info)
         apply = n_off * 2 > len(info)
         lips = [i['l'] for i in info if i['l'] is not None]
-        unders = [i['under'] for i in info if i['under'] is not None]
         tier_row = int(round(float(np.median(lips)))) if apply and lips else None
+        for i in info:
+            # The row the profile gets: the scan's edge, the tier's, or the
+            # source's. The underside is never less than 9 ft above its floor.
+            i['own_row'] = (tier_row is not None and i['l'] is not None and abs(i['l'] - tier_row) > 2) or (tier_row is None and i['off'])
+            i['row'] = i['l'] if i['own_row'] else (tier_row if tier_row is not None else i['m'])
+            i['min'] = None if i['row'] is None else i['front'] + (i['row'] - 1) * i['rise'] + 9
+            if i['under'] is not None and i['min'] is not None:
+                i['under'] = max(i['under'], i['min'])
+        unders = [i['under'] for i in info if i['under'] is not None]
         tier_under = r0(med(unders)) if unders else None
         fmt = lambda v: '-' if v is None else f'{v:.0f}'
         print(f"{key}: {n_off}/{len(info)} off by >2 rows; tier -> {tier_row if apply else 'keep sourced'}; "
@@ -776,10 +785,11 @@ def cover_report(park):
               f"(lowest {fmt(med([i['low'] for i in info if i['low']]))}, deck above {fmt(med([i['above'] for i in info if i['above']]))}, "
               f"face {fmt(med([i['face'] for i in info if i['face']]))} n{sum(1 for i in info if i['face'])})")
         for i in info:
-            own_row = (tier_row is not None and i['l'] is not None and abs(i['l'] - tier_row) > 2) or (tier_row is None and i['off'])
-            own_under = i['under'] is not None and tier_under is not None and abs(i['under'] - tier_under) > max(0.1 * tier_under, 3)
-            if own_row or (own_under and (tier_row is not None or own_row)):
-                print(f"   '{i['id']}': rows {i['rows']}, sourced {i['m']}, edge {i['l']}, underside {fmt(i['under'])}"
+            differs = i['under'] is not None and tier_under is not None and abs(i['under'] - tier_under) > max(0.1 * tier_under, 3)
+            # The tier's underside would sit under 9 ft over this section's covered row.
+            too_low = i['min'] is not None and tier_under is not None and i['min'] > tier_under + 0.5
+            if i['own_row'] or too_low or (differs and tier_row is not None):
+                print(f"   '{i['id']}': rows {i['rows']}, sourced {i['m']}, edge {i['l']}, row {i['row']}, underside {fmt(i['under'])}"
                       f" (lowest {fmt(i['low'])}, deck above {fmt(i['above'])}, face {fmt(i['face'])})")
 
 
