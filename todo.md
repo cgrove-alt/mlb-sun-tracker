@@ -780,7 +780,7 @@ Medium or Low confidence and their blog posts stay unpublished.
             row-texture direction separates rows from aisles where a ridge
             fit catches aisles. Kauffman's upper rings are mapped by order
             (photo too soft); worth redoing with a sharper flight.
-- [ ] 6.4 Batch 4: Tigers, Guardians, Twins, White Sox, Athletics (Sutter
+- [x] 6.4 Batch 4: Tigers, Guardians, Twins, White Sox, Athletics (Sutter
       Health Park).
       - [x] Orientations, measured on NAIP with 5–7 methods each: Sutter
             Health Park 47° ±1.5° (was 20°, 27° off), Rate Field 129° ±2°
@@ -874,6 +874,32 @@ Medium or Low confidence and their blog posts stay unpublished.
             Coliseum, so the page said "Built 1966"; now Sutter Health Park
             (2000, ex-Raley Field). The unrendered Coliseum guide in
             mlbStadiumGuidesFinal.ts is still there (open item).
+      - Review (2026-11-12): 8 commits, all local. 3,231 tests pass, tsc
+            clean, each page checked at 375 px. Orientations: Sutter Health
+            Park 20° → 47° and Rate Field 120° → 129° are the big fixes;
+            Comerica 145° → 151°, Progressive 356° → 0°, Target 90° → 91°.
+            Seat maps pinned at 0.3–3.5 m RMS; two hand-made maps (Rate
+            Field's compass table, Sutter Health Park's placeholder arcs) are
+            replaced by the clubs' own seat maps with the same section ids.
+            Reference checks: Comerica 51, Progressive 50, Target 52, Rate
+            Field 37, Sutter Health Park 20. Disagreements are written into
+            each test header, none tuned away; as before most are timing (a
+            source's shade arriving an hour or so earlier than the model's
+            estimated deck heights give) and one is a model limit (low sun
+            from the side past a structure that is not behind the section).
+            Low-confidence share at a July 1:05 PM game: Progressive 16%,
+            Target 33%, Comerica 53%, Rate Field 53%, Sutter Health Park 55%
+            (high sun, many sections near a boundary; Rate Field's club and
+            Sutter's first-base overhang have unsourced cover, tried both
+            ways). Lessons: a 3-D club drawing needs its outfield stands
+            pinned too, and then a projective fit (Comerica, Progressive);
+            a plan drawing can be checked straight against the photo's aisle
+            wedges (Sutter); where a source gives no rows, the club's drawing
+            can (Sutter, checked against fans' seat photos); straightening
+            each stand along its own rows (tmp/rectify.ts) makes aisles
+            countable even in shadow. Open: the Coliseum guide data for the
+            Athletics (unrendered); the 3-D drawings' footprint boxes overlap
+            on Comerica's drawn map (display only).
 - [ ] 6.5 Batch 5, retractable roofs (answers assume the roof is open, as
       today): Diamondbacks, Rangers, Astros, Marlins, Brewers, Mariners,
       Blue Jays.
