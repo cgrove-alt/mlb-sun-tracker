@@ -18,7 +18,7 @@ import type { Confidence, GameShadeResult, SectionGameShade } from '@/src/utils/
 type Status = 'shaded' | 'partial' | 'sun';
 type Pick = (s: SectionGameShade) => boolean;
 type Expect =
-  | { every: Status; from?: number; minConfidence: Confidence }
+  | { every: Status; from?: number; to?: number; minConfidence: Confidence }
   | { share: Status | 'not-sun'; at: number[]; atLeast?: number; atMost?: number };
 interface Claim { quote: string; game: string; sections: Pick; expect: Expect }
 
@@ -54,21 +54,25 @@ const rank: Record<Confidence, number> = { low: 0, medium: 1, high: 2 };
 const CLAIMS: Record<ParkId, Claim[]> = {
   yankees: [
     { quote: 'Bleacher sections 202–204 and 235–238 are in the sun for the whole game.', game: '2025-07-12 13:05', sections: tier('Bleachers'), expect: { every: 'sun', minConfidence: 'high' } },
-    { quote: 'The Legends seats (sections 011–029) are in the sun for the whole game.', game: '2025-07-12 13:05', sections: tier('Legends seats'), expect: { every: 'sun', minConfidence: 'high' } },
+    { quote: 'The Legends seats (sections 011–029) are in the sun through the 9th inning (Medium confidence for most of them).', game: '2025-07-12 13:05', sections: tier('Legends seats'), expect: { every: 'sun', to: 150, minConfidence: 'medium' } },
     { quote: 'Field level sections 103, 104, 135 and 136 are in the sun for the whole game.', game: '2025-07-12 13:05', sections: ids('103', '104', '135', '136'), expect: { every: 'sun', minConfidence: 'high' } },
     { quote: 'Terrace sections 305–309 and 332–334 are in the sun for the whole game.', game: '2025-07-12 13:05', sections: and(tier('Terrace level (300s)'), numbered('', [305, 309], [332, 334])), expect: { every: 'sun', minConfidence: 'high' } },
-    { quote: 'Main level sections 205–213 and 228–234 are partly shaded all game: the back rows sit under the deck above, the front rows get sun.', game: '2025-07-12 13:05', sections: and(tier('Main level (200s)'), numbered('', [205, 213], [228, 234])), expect: { every: 'partial', minConfidence: 'high' } },
-    { quote: 'Most field level sections between 105 and 129 are the same: partly shaded, with the front rows in the sun.', game: '2025-07-12 13:05', sections: and(tier('Field level (100s)'), numbered('S?', [105, 129])), expect: { share: 'partial', at: ALL, atLeast: 0.9 } },
-    { quote: 'About one 400-level section in five is shaded at first pitch', game: '2025-07-12 13:05', sections: tier('Grandstand (400s)'), expect: { share: 'shaded', at: [0], atLeast: 0.15, atMost: 0.25 } },
+    { quote: 'Main level sections 205–207 and 232–234 are partly shaded all game: the back rows sit under the deck above, the front rows get sun.', game: '2025-07-12 13:05', sections: and(tier('Main level (200s)'), numbered('', [205, 207], [232, 234])), expect: { every: 'partial', minConfidence: 'high' } },
+    { quote: 'Sections 208–213 and 228–231 are the same through the 7th inning (Low confidence: the exact height of the deck above matters there).', game: '2025-07-12 13:05', sections: and(tier('Main level (200s)'), numbered('', [208, 213], [228, 231])), expect: { every: 'partial', to: 120, minConfidence: 'low' } },
+    { quote: 'Most field level sections between 105 and 129 are the same through the 7th inning: partly shaded, with the front rows in the sun.', game: '2025-07-12 13:05', sections: and(tier('Field level (100s)'), numbered('S?', [105, 129])), expect: { share: 'partial', at: [0, 30, 60, 90, 120], atLeast: 0.9 } },
+    { quote: 'By the 9th, about one in four is fully shaded.', game: '2025-07-12 13:05', sections: and(tier('Field level (100s)'), numbered('S?', [105, 129])), expect: { share: 'shaded', at: [150], atLeast: 0.2, atMost: 0.3 } },
+    { quote: 'Almost half the 400-level sections are shaded at first pitch', game: '2025-07-12 13:05', sections: tier('Grandstand (400s)'), expect: { share: 'shaded', at: [0], atLeast: 0.45, atMost: 0.5 } },
     { quote: 'and nearly three in four by the end of the game.', game: '2025-07-12 13:05', sections: tier('Grandstand (400s)'), expect: { share: 'shaded', at: [180], atLeast: 0.7, atMost: 0.75 } },
-    { quote: 'sections 410–419 on the first-base side are shaded by about the 2nd inning', game: '2025-07-12 13:05', sections: and(tier('Grandstand (400s)'), numbered('', [410, 419])), expect: { every: 'shaded', from: 30, minConfidence: 'low' } },
-    { quote: 'the sections right behind home plate (420–421) by the 4th', game: '2025-07-12 13:05', sections: and(tier('Grandstand (400s)'), numbered('', [420, 421])), expect: { every: 'shaded', from: 60, minConfidence: 'low' } },
-    { quote: 'and 422–430 between the 6th and the 9th.', game: '2025-07-12 13:05', sections: and(tier('Grandstand (400s)'), numbered('', [422, 430])), expect: { every: 'shaded', from: 150, minConfidence: 'low' } },
-    { quote: 'and 422–430 between the 6th and the 9th.', game: '2025-07-12 13:05', sections: and(tier('Grandstand (400s)'), numbered('', [422, 430])), expect: { share: 'shaded', at: [60], atMost: 0 } },
+    { quote: 'sections 410–419 on the first-base side are shaded from first pitch', game: '2025-07-12 13:05', sections: and(tier('Grandstand (400s)'), numbered('', [410, 419])), expect: { every: 'shaded', minConfidence: 'medium' } },
+    { quote: 'the sections right behind home plate (420–421) by the 2nd inning', game: '2025-07-12 13:05', sections: and(tier('Grandstand (400s)'), numbered('', [420, 421])), expect: { every: 'shaded', from: 30, minConfidence: 'medium' } },
+    { quote: 'and 422–430 between the 4th and the 7th.', game: '2025-07-12 13:05', sections: and(tier('Grandstand (400s)'), numbered('', [422, 430])), expect: { every: 'shaded', from: 120, minConfidence: 'medium' } },
+    { quote: 'and 422–430 between the 4th and the 7th.', game: '2025-07-12 13:05', sections: and(tier('Grandstand (400s)'), numbered('', [422, 430])), expect: { share: 'shaded', at: [30], atMost: 0 } },
     { quote: 'By the 2nd inning, almost every section in the 100s and 200s is in shade', game: '2025-07-10 19:05', sections: or(tier('Field level (100s)'), tier('Main level (200s)')), expect: { share: 'shaded', at: [30], atLeast: 0.95 } },
     { quote: 'and by the 6th inning the whole ballpark is.', game: '2025-07-10 19:05', sections: () => true, expect: { share: 'shaded', at: [90, 120, 150, 180], atLeast: 1 } },
-    { quote: 'shade reached more than half of the terrace sections by the end of the game', game: '2025-04-13 13:35', sections: tier('Terrace level (300s)'), expect: { share: 'shaded', at: [180], atLeast: 0.5 } },
-    { quote: 'on July 12 none of them were shaded at any point.', game: '2025-07-12 13:05', sections: tier('Terrace level (300s)'), expect: { share: 'shaded', at: ALL, atMost: 0 } },
+    { quote: 'a third of the terrace sections were shaded at first pitch', game: '2025-04-13 13:35', sections: tier('Terrace level (300s)'), expect: { share: 'shaded', at: [0], atLeast: 0.3, atMost: 0.35 } },
+    { quote: 'and three in four by the end of the game;', game: '2025-04-13 13:35', sections: tier('Terrace level (300s)'), expect: { share: 'shaded', at: [180], atLeast: 0.7, atMost: 0.76 } },
+    { quote: 'on July 12 none of them were shaded until the 6th inning.', game: '2025-07-12 13:05', sections: tier('Terrace level (300s)'), expect: { share: 'shaded', at: [0, 30, 60], atMost: 0 } },
+    { quote: 'on July 12 none of them were shaded until the 6th inning.', game: '2025-07-12 13:05', sections: tier('Terrace level (300s)'), expect: { share: 'shaded', at: [90], atLeast: 0.01 } },
   ],
   redsox: [
     { quote: 'Grandstand sections 1–33 are under the roof and shaded for the whole game.', game: '2025-07-13 13:35', sections: tier('Grandstand'), expect: { every: 'shaded', minConfidence: 'high' } },
@@ -110,9 +114,9 @@ describe.each(Object.keys(CLAIMS) as ParkId[])('%s post: shade claims match the 
     const sampleIndex = (minute: number) => ALL.indexOf(minute);
 
     if ('every' in c.expect) {
-      const { every, from = 0, minConfidence } = c.expect;
+      const { every, from = 0, to = 180, minConfidence } = c.expect;
       const wrong = sections
-        .filter((s) => s.samples.slice(sampleIndex(from)).some((x) => x.status !== every) || rank[s.confidence] < rank[minConfidence])
+        .filter((s) => s.samples.slice(sampleIndex(from), sampleIndex(to) + 1).some((x) => x.status !== every) || rank[s.confidence] < rank[minConfidence])
         .map((s) => `${s.sectionId} ${s.samples.map((x) => x.status[0]).join('')} ${s.confidence}`);
       expect(wrong).toEqual([]);
     } else {

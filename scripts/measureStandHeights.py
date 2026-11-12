@@ -28,7 +28,9 @@ Method (all heights in metres above the field until the report, which is in feet
        - what stands behind: of the scan's top surface behind the lip (or the
          back row), the point that rises highest as seen from the middle
          uncovered row (the one that cuts off the sun first);
-       - the far rim: the same, looking the other way across the field.
+       - the stand's roof line (the top of its structure), whose median over
+         the park is the far rim, and the distance to what rises highest
+         looking the other way across the field (the crossing).
 """
 import io, json, math, os, subprocess, sys, urllib.request, datetime
 import numpy as np
@@ -441,6 +443,10 @@ def measure_section(P, sec, band):
     hs, hz = run['s0'] + k * tread + HEAD_SETBACK, front + k * rise + EYE
     ps, pz = top_profile(s, across, z, lip if lip is not None else back, back + 60)
     g = governing(ps, pz, hs, hz)
+    # The stand's roof line: the top of the structure from its front row to
+    # 30 m behind its back row (for the park's far rim).
+    rs_, rz_ = top_profile(s, across, z, run['s0'], back + 30)
+    roof = float(np.max(rz_[np.isfinite(rz_)])) if np.isfinite(rz_).any() else None
     # The far rim: from that head, the other way across the field.
     sc = math.radians(sec['standCompass'])
     s2, across2, z2 = cut(P, ax + hs * math.sin(sc), ay + hs * math.cos(sc), (sec['standCompass'] + 180) % 360, 0, 330)
@@ -454,6 +460,7 @@ def measure_section(P, sec, band):
         'soffitFt': ft(soffit) if cover_agrees else None, 'lipSoffitFt': ft(soffit),
         'backFt': None if g is None else g[1] / FT, 'backSetbackFt': None if g is None else (g[0] - back) / FT,
         'rimFt': None if rim is None else rim[1] / FT, 'rimDistFt': None if rim is None else rim[0] / FT,
+        'roofFt': ft(roof),
         'cut': {'s0': run['s0'], 's1': run['s1'], 'slope': slope, 'c': run['c'], 'lip': lip, 'back': back,
                 'gov': g, 'head': [hs, hz]},
     }
@@ -483,13 +490,17 @@ def measure(park):
             vals = [r[f] for r in rs if r[f] is not None]
             t[f] = None if not vals else {'median': float(np.median(vals)), 'min': float(min(vals)), 'max': float(max(vals)), 'n': len(vals)}
         tiers[key] = t
-    found = [r for r in results if r['found'] and r['rimFt'] is not None]
-    rim = {'heightFt': med([r['rimFt'] for r in found]), 'distanceFt': med([r['rimDistFt'] for r in found])}
+    # The far rim (the engine's "upper deck or roof line"): the median of each
+    # measured section's own roof line; the crossing: the median distance from
+    # a section to what rises highest across the field from it.
+    found = [r for r in results if r['found']]
+    rim = {'heightFt': med([r['roofFt'] for r in found]), 'distanceFt': med([r['rimDistFt'] for r in found]),
+           'acrossFt': med([r['rimFt'] for r in found])}
     out = {'park': park, 'scan': PARKS[park]['name'], 'flown': dates, 'fieldZ': field, 'rim': rim, 'tiers': tiers,
            'sections': [{k: v for k, v in r.items() if k != 'cut'} for r in results]}
     json.dump(out, open(f'tmp/lidar/{park}-measured.json', 'w'), indent=1)
     print(f"{park}: {PARKS[park]['name']}, flown {dates}; field at {field:.2f} m")
-    print(f"far rim {rim['heightFt']:.0f} ft at {rim['distanceFt']:.0f} ft (median over sections)")
+    print(f"far rim (roof line) {rim['heightFt']:.0f} ft; crossing {rim['distanceFt']:.0f} ft; highest-rising across the field {rim['acrossFt']:.0f} ft (medians over sections)")
     for key, t in tiers.items():
         cur = data['tiers'][key]['stand']
         def show(f, unit=''):
@@ -585,7 +596,7 @@ def suggest(park):
     d = json.load(open(f'tmp/lidar/{park}-measured.json'))
     r0 = lambda v: None if v is None else int(round(v))
     differs = lambda v, ref: v is not None and ref is not None and abs(v - ref) > max(0.1 * abs(ref), 3)
-    print(f"// {d['scan']}, flown {d['flown']}; far rim {r0(d['rim']['heightFt'])} ft at {r0(d['rim']['distanceFt'])} ft")
+    print(f"// {d['scan']}, flown {d['flown']}; far rim (roof line) {r0(d['rim']['heightFt'])} ft, crossing {r0(d['rim']['distanceFt'])} ft")
     for key, t in d['tiers'].items():
         rs = [r for r in d['sections'] if r['tier'] == key and r['found']]
         if not rs:

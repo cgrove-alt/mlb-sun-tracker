@@ -65,9 +65,10 @@ const YANKEES_LIDAR = 'USGS 3DEP lidar NY_NewYorkCity, flown 2014-03-27 (scripts
  */
 const YANKEES: StadiumStructure = {
   stadiumId: 'yankees',
-  // Far rim (lidar): from each section, the highest-rising structure across
-  // the field; medians 110 ft high, 569 ft away.
-  park: { roof: 'open', farRimHeightFt: 110, fieldCrossingFt: 569 },
+  // Far rim (lidar): the stands' roof line, median over sections 134 ft (the
+  // canopy); crossing: the median distance from a section to what rises
+  // highest across the field, 569 ft.
+  park: { roof: 'open', farRimHeightFt: 134, fieldCrossingFt: 569 },
   tierOf: (id) => {
     const n = id.replace(/^S/, '');
     if (/^0/.test(n)) return 'legends';
@@ -441,9 +442,10 @@ const DODGERS_LIDAR = 'USGS 3DEP lidar CA_LosAngeles_B23, flown 2023-11-22 to 20
  */
 const DODGERS: StadiumStructure = {
   stadiumId: 'dodgers',
-  // Far rim (lidar): from each section, the highest-rising structure across
-  // the field; medians 85 ft high, 602 ft away.
-  park: { roof: 'open', farRimHeightFt: 85, fieldCrossingFt: 602 },
+  // Far rim (lidar): the stands' roof line, median over sections 120 ft
+  // (the Reserve roofs; the Top Deck's is 139); crossing: the median
+  // distance from a section to what rises highest across the field, 603 ft.
+  park: { roof: 'open', farRimHeightFt: 120, fieldCrossingFt: 603 },
   tierOf: dodgersTier,
   tiers: {
     dugoutClub: {
