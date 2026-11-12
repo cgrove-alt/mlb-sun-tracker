@@ -70,7 +70,19 @@ PARKS = {
     'redsox': {
         'scan': {'ept': 'MA_CentralEastern_1_2021'}, 'name': 'USGS 3DEP MA_CentralEastern_2021 (Massachusetts 2021)',
         'noise': [7, 18],
-        'tiers': {},
+        # One slope from the field: Field Boxes, a walkway, Loge Boxes, then
+        # the Grandstand under its roof (hidden); the pavilion level sits on
+        # that roof. The pavilion clubs and suites are hidden too.
+        'tiers': {
+            'fieldBox': (-1.5, 0.5), 'logeBox': (0.5, 4, 'far'), 'rightFieldBox': (-0.5, 3),
+            'monster': (9, 13),  # only a check of the sourced 37 ft wall
+            'roofBox': (13, 19), 'pavilionBox': (13, 19), 'auraPavilion': (13, 19), 'pavilionReserved': (13, 19),
+            # Bleachers: the club's chart (not pinned to a photo here) puts
+            # them off their stand; their cuts land behind it. Not measured.
+        },
+        'skip': {'B126': 'its chart position puts its cut outside the park (plan view)'},
+        # The eight lattice light towers stand on the roof (82 ft) up to 121-143 ft.
+        'lightTowersAbove': 32,
     },
     'cubs': {
         'scan': {'ept': 'USGS_LPC_IL_4County_Cook_2017_LAS_2019'}, 'name': 'USGS 3DEP IL_4County_Cook_2017 (Cook County 2017)',
@@ -215,7 +227,26 @@ def load_points(park):
     h, edges = np.histogram(Z[near], bins=np.arange(Z[near].min(), Z[near].max() + 0.05, 0.05))
     mode = edges[np.argmax(h)] + 0.025
     field = float(np.median(Z[near & (np.abs(Z - mode) < 0.15)]))
-    return E, N, Z - field, field, flown(d['gps'])
+    Z = Z - field
+    above = PARKS[park].get('lightTowersAbove')
+    if above is not None:
+        # Light towers: compact clusters (up to 200 m2 in plan, 2 m cells)
+        # standing above the park's roof line; what stands on the roof inside
+        # them (more than 2 m over its lowest fifth) is not a wall.
+        m = (Z > above) & (np.hypot(E, N) < 180)
+        g = np.zeros((180, 180), bool)
+        gi = lambda v: np.clip(((v + 180) / 2).astype(int), 0, 179)
+        g[gi(N[m]), gi(E[m])] = True
+        lab, n = ndimage.label(ndimage.binary_dilation(g))
+        sizes = ndimage.sum(np.ones_like(lab), lab, range(n + 1))
+        keep = np.ones(len(Z), bool)
+        for k in range(1, n + 1):
+            if sizes[k] * 4 > 200:
+                continue
+            inside = (lab[gi(N), gi(E)] == k) & (np.hypot(E, N) < 180)
+            keep &= ~(inside & (Z > np.percentile(Z[inside], 20) + 2))
+        E, N, Z = E[keep], N[keep], Z[keep]
+    return E, N, Z, field, flown(d['gps'])
 
 
 def cut(P, x0, y0, bearing, s0, s1, half=2.0):
@@ -314,37 +345,38 @@ def top_profile(s, across, z, s_lo, s_hi, half=2.0):
     1 m strip across the cut, then the second lowest of the four strips (a
     structure counts only where it fills three of them: a pole or a net does
     not). A patch narrower than 4.5 m along the cut standing over 6 m above
-    the structure around it is kept only if three strips show it reaching
-    down to that structure with no gap over 6 m (a wall, a scoreboard);
-    otherwise it floats (a lamp bank on its pole, a tree crown) and is
-    dropped to the level around it."""
+    the structure around it counts only if it is solid, like a wall or a
+    scoreboard: in three strips its face hangs down to that structure with
+    no gap over 6 m, and under 15% of its points lie on the surface beneath
+    it. Otherwise (a lamp bank on its pole, a lattice light tower the
+    scan sees through, a tree crown) it is dropped to the level around it."""
     nb, ns = int(math.ceil((s_hi - s_lo) / 0.5)), int(round(2 * half))
     m = (s >= s_lo) & (s < s_hi) & (np.abs(across) < half)
-    cell = ((s[m] - s_lo) / 0.5).astype(int) * ns + np.clip(((across[m] + half) / 1.0).astype(int), 0, ns - 1)
+    bins = ((s[m] - s_lo) / 0.5).astype(int)
+    strips = np.clip(((across[m] + half) / 1.0).astype(int), 0, ns - 1)
     zz = z[m]
+    top = np.full((nb, ns), -np.inf)
+    np.maximum.at(top, (bins, strips), zz)
+    # Bottom of the column hanging from each cell's top with no gap over 6 m.
+    cell = bins * ns + strips
     order = np.lexsort((zz, cell))
-    cell, zz = cell[order], zz[order]
-    top = np.full(nb * ns, -np.inf)
-    reach = np.full(nb * ns, np.inf)  # bottom of the column hanging from the top
-    if len(zz):
-        np.maximum.at(top, cell, zz)
-        gap = np.r_[np.diff(zz) > 6.0, False] & np.r_[cell[1:] == cell[:-1], False]
+    cs, zs = cell[order], zz[order]
+    reach = np.full(nb * ns, np.inf)
+    if len(zs):
+        gap = np.r_[np.diff(zs) > 6.0, False] & np.r_[cs[1:] == cs[:-1], False]
         last_gap = np.full(nb * ns, -1)
-        np.maximum.at(last_gap, cell[gap], np.flatnonzero(gap))
-        first = np.searchsorted(cell, np.arange(nb * ns))
-        has = top > -np.inf
+        np.maximum.at(last_gap, cs[gap], np.flatnonzero(gap))
+        first = np.searchsorted(cs, np.arange(nb * ns))
+        has = np.isfinite(top.ravel())
         idx = np.where(last_gap >= 0, last_gap + 1, first)
-        reach[has] = zz[np.minimum(idx[has], len(zz) - 1)]
-    top, reach = top.reshape(nb, ns), reach.reshape(nb, ns)
+        reach[has] = zs[np.minimum(idx[has], len(zs) - 1)]
+    reach = reach.reshape(nb, ns)
     prof = np.sort(top, axis=1)[:, 1]
     fin = np.isfinite(prof)
     if fin.sum() >= 2:
         # The profile without anything narrower than 4.5 m along the cut.
         opened = ndimage.grey_opening(np.interp(np.arange(nb), np.flatnonzero(fin), prof[fin]), size=9)
         raised = fin & (prof > opened + 6)
-        # Strips whose top is in the raised patch and whose column hangs
-        # from it down to the structure beside it without a gap over 6 m.
-        hangs = (top > (opened + 6)[:, None]) & (reach <= (opened + 6)[:, None])
         i = 0
         while i < nb:
             if not raised[i]:
@@ -353,7 +385,13 @@ def top_profile(s, across, z, s_lo, s_hi, half=2.0):
             j = i
             while j + 1 < nb and raised[j + 1]:
                 j += 1
-            if hangs[i:j + 1].any(axis=0).sum() < 3:
+            level = opened[i:j + 1, None]
+            hangs = ((top[i:j + 1] > level + 6) & (reach[i:j + 1] <= level + 6)).any(axis=0).sum()
+            b_ = np.clip(bins, 0, nb - 1)
+            inpatch = (bins >= i) & (bins <= j) & (top[b_, strips] > opened[b_] + 6)
+            beneath = inpatch & (np.abs(zz - opened[b_]) < 0.5)
+            see_through = inpatch.sum() and beneath.sum() >= max(5, 0.15 * inpatch.sum())
+            if hangs < 3 or see_through:
                 prof[i:j + 1] = opened[i:j + 1]
             i = j + 1
     return s_lo + 0.25 + 0.5 * np.arange(nb), prof

@@ -102,9 +102,13 @@ describe('Fenway Park: published shade observations', () => {
 
 describe('Fenway Park: where sources and the model disagree, confidence must say so', () => {
   // [RYS] says the upper rows of the Loge behind home plate are already
-  // shaded at a 1 PM start. With the current estimated pavilion heights the
-  // model only shades them from mid-game. Until those heights are measured
-  // the answer must not be presented as High confidence.
+  // shaded at a 1 PM start. The heights are now measured (USGS lidar, 2021),
+  // and the scan shows why: the Grandstand roof's front edge reaches out over
+  // Loge row 9, 41 ft up, so the upper rows sit under it. The sources call
+  // the Loge uncovered, and the model keeps that, so it puts the shade on
+  // the front rows (the roof's top edge behind them) and not on the upper
+  // rows. With source and scan disagreeing, the Loge's cover is marked
+  // unsettled and the answer must not be presented as High confidence.
   it.each(['B125', 'B130', 'B135'])('1:35 PM: Loge %s is not labelled High', (id) => {
     expect(section(JULY_13_135PM, id).confidence).not.toBe('high');
   });
