@@ -48,9 +48,11 @@ export interface StandProfile {
   /**
    * A deck or roof above the back of the section: rows from `coveredFromRow`
    * (1 = front row) to the back are under it. `soffitHeightFt` is the height
-   * of its underside above the field.
+   * of its underside above the field. Its front edge is over the front of
+   * that row, or `reachFt` further out toward the field (default 0), as where
+   * the deck above a level of suites reaches out over the seats in front.
    */
-  overhang?: { coveredFromRow: number; soffitHeightFt: number };
+  overhang?: { coveredFromRow: number; soffitHeightFt: number; reachFt?: number };
   /** Height above the field of the top of whatever stands behind the last row. */
   backHeightFt: number;
   /** How far behind the last row that structure stands, feet (default 0: right behind it). */
@@ -101,8 +103,9 @@ export function rowLight(
   const sunBehind = cosPsi > 0;
 
   const coveredFrom = stand.overhang ? Math.max(1, stand.overhang.coveredFromRow) : Infinity;
-  // The deck's front edge sits over the front of the first covered row.
-  const lipU = (coveredFrom - 1) * tread;
+  // The deck's front edge sits over the front of the first covered row, or
+  // reaches further out.
+  const lipU = (coveredFrom - 1) * tread - (stand.overhang?.reachFt ?? 0);
   const backU = rows * tread;
   const lastRowZ = stand.frontRowHeightFt + (rows - 1) * rise;
 

@@ -18,8 +18,7 @@ describe('decks over the stands', () => {
     const tooLow: string[] = [];
     for (const section of sections) {
       const found = standFor(structure, section.id, section.rows?.length);
-      // Suites: fixed separately (todo.md §8, Part B).
-      if (!found?.stand.overhang || found.tierKey === 'suite') continue;
+      if (!found?.stand.overhang) continue;
       const { stand } = found;
       const row = Math.max(1, stand.overhang!.coveredFromRow);
       if (row > stand.rows) continue;

@@ -85,6 +85,14 @@ describe('shade engine: sun in the fans\' faces', () => {
     const light = rowLight(COVERED, 180, OPEN_AIR, { azimuthDeg: 0, altitudeDeg: 15 });
     expect(light[12]).toBe('sun');
   });
+
+  it('a deck reaching out past the seats keeps that sun off them', () => {
+    // One row under a 9-ft ceiling, as at a suite.
+    const suite: StandProfile = { rows: 1, frontRowHeightFt: 50, rakeDeg: 0, backHeightFt: 62, overhang: { coveredFromRow: 1, soffitHeightFt: 59 } };
+    const sun = { azimuthDeg: 0, altitudeDeg: 30 };
+    expect(rowLight(suite, 180, OPEN_AIR, sun)).toEqual(['sun']);
+    expect(rowLight({ ...suite, overhang: { ...suite.overhang!, reachFt: 17 } }, 180, OPEN_AIR, sun)).toEqual(['shade']);
+  });
 });
 
 describe('shade engine: status bands', () => {

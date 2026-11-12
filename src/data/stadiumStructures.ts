@@ -11,9 +11,10 @@
  * reasoning is written next to it). `heightsSourced` / `coverSourced` record
  * which, and the confidence label uses them: the engine re-runs every answer
  * with the structure's rise above the front row moved ±50% and its setbacks
- * ±50% where the tier's heights are estimated (±10% and ±20% where they are
- * sourced; src/utils/gameShade.ts), and a section whose answer changes is
- * labelled lower confidence.
+ * (and how far a deck reaches out past its first covered row) ±50% where the
+ * tier's heights are estimated (±10% and ±20% where they are sourced;
+ * src/utils/gameShade.ts), and a section whose answer changes is labelled
+ * lower confidence.
  */
 import type { ParkEnvelope, StandProfile } from '../utils/shadeEngine';
 import type { DetailedSection } from '../types/stadium-complete';
@@ -41,6 +42,15 @@ export interface StadiumStructure {
   tiers: Record<string, TierStructure>;
   reviewedOn: string;
 }
+
+/**
+ * How far the deck above a level of suites reaches out past the suite seats,
+ * feet, where a park's own tiers don't show it. At ten parks they do (the
+ * suites sit behind the last row of a level that the same deck covers, and it
+ * reaches 6–28 ft past them; each says so at its suites): this is their
+ * median. Estimated.
+ */
+const SUITE_DECK_REACH_FT = 17;
 
 const RYS_YANKEES = 'https://www.rateyourseats.com/yankee-stadium/seating/shaded-covered-seats';
 const rysSection = (n: string) => `https://www.rateyourseats.com/yankee-stadium/seating/sections/${n}`;
@@ -465,9 +475,11 @@ const FENWAY: StadiumStructure = {
     },
     suite: {
       label: 'Suites',
-      // Enclosed suites: one row of seats under the suite ceiling. Hidden
-      // from the air; estimated as before.
-      stand: { rows: 1, frontRowHeightFt: 60, rakeDeg: 0, backHeightFt: 72, overhang: { coveredFromRow: 1, soffitHeightFt: 66 } },
+      // Enclosed suites: one row of seats under the suite ceiling, 9 ft above
+      // the floor. Hidden from the air; estimated as before. They sit behind the
+      // Pavilion Boxes' last row (60 ft), under the deck that covers those boxes
+      // from row 2, so it reaches 11 ft past the suite seats.
+      stand: { rows: 1, frontRowHeightFt: 60, rakeDeg: 0, backHeightFt: 72, overhang: { coveredFromRow: 1, soffitHeightFt: 69, reachFt: 11 } },
       heightsSourced: false,
       coverSourced: true,
       sources: ['https://www.mlb.com/redsox/ballpark/information/guide'],
@@ -761,9 +773,10 @@ const DODGERS: StadiumStructure = {
     },
     suite: {
       label: 'Suites and clubs',
-      // Enclosed suites and club boxes: one row under the suite ceiling.
-      // Hidden from the air; estimated as before.
-      stand: { rows: 1, frontRowHeightFt: 60, rakeDeg: 0, backHeightFt: 72, overhang: { coveredFromRow: 1, soffitHeightFt: 66 } },
+      // Enclosed suites and club boxes: one row under the suite ceiling, 9 ft
+      // above the floor, the deck above reaching past them as is typical (no
+      // tier here shows how far). Hidden from the air; estimated as before.
+      stand: { rows: 1, frontRowHeightFt: 60, rakeDeg: 0, backHeightFt: 72, overhang: { coveredFromRow: 1, soffitHeightFt: 69, reachFt: SUITE_DECK_REACH_FT } },
       heightsSourced: false,
       coverSourced: true,
       sources: [RYS_DODGERS],
@@ -1129,8 +1142,8 @@ const ORACLE: StadiumStructure = {
       label: 'Suites',
       // Enclosed suites between the Club and View levels: hidden from the
       // air. Estimated under the View level's measured 66-ft front: ceiling
-      // ~60 ft, floor ~50 ft.
-      stand: { rows: 1, frontRowHeightFt: 50, rakeDeg: 0, backHeightFt: 66, overhang: { coveredFromRow: 1, soffitHeightFt: 60 } },
+      // ~60 ft, floor ~50 ft, the View level reaching past them as is typical.
+      stand: { rows: 1, frontRowHeightFt: 50, rakeDeg: 0, backHeightFt: 66, overhang: { coveredFromRow: 1, soffitHeightFt: 60, reachFt: SUITE_DECK_REACH_FT } },
       heightsSourced: false,
       coverSourced: true,
       sources: ['https://www.mlb.com/giants/ballpark/seat-map', ORACLE_LIDAR],
@@ -1349,8 +1362,9 @@ const CITI: StadiumStructure = {
     },
     suite: {
       label: 'Clubs and suites',
-      // Hidden from the air; estimated as before.
-      stand: { rows: 1, frontRowHeightFt: 55, rakeDeg: 0, backHeightFt: 66, overhang: { coveredFromRow: 1, soffitHeightFt: 61 } },
+      // Hidden from the air; estimated as before, with the ceiling 9 ft above
+      // the floor and the deck above reaching past them as is typical.
+      stand: { rows: 1, frontRowHeightFt: 55, rakeDeg: 0, backHeightFt: 66, overhang: { coveredFromRow: 1, soffitHeightFt: 64, reachFt: SUITE_DECK_REACH_FT } },
       heightsSourced: false,
       coverSourced: true,
       sources: [RYS_CITI],
@@ -1623,8 +1637,10 @@ const CBP: StadiumStructure = {
       label: 'Suites',
       // Hidden from the air; estimated between the measured 200 level (its
       // back ~55 ft) and the 300 level's 69-ft front, the underside 9 ft
-      // above the suite seats.
-      stand: { rows: 2, frontRowHeightFt: 55, rakeDeg: 5, backHeightFt: 69, overhang: { coveredFromRow: 1, soffitHeightFt: 64 } },
+      // above the suite seats. They sit behind the 200 level's last row, under
+      // the 300 level, whose front reaches out over the 200 level's row 3:
+      // 22 ft past them.
+      stand: { rows: 2, frontRowHeightFt: 55, rakeDeg: 5, backHeightFt: 69, overhang: { coveredFromRow: 1, soffitHeightFt: 64, reachFt: 22 } },
       rowsFromMap: true,
       heightsSourced: false,
       coverSourced: true,
@@ -2150,9 +2166,11 @@ const BUSCH: StadiumStructure = {
     suite: {
       label: 'Suites',
       // The club's map lists S1–S63 and 703A–F as suites: as at the other
-      // parks, one row of seats under the suite level's ceiling. Estimated:
-      // ~66 ft up, between the club level and the Pavilion.
-      stand: { rows: 1, frontRowHeightFt: 66, rakeDeg: 0, backHeightFt: 78, overhang: { coveredFromRow: 1, soffitHeightFt: 72 } },
+      // parks, one row of seats under the suite level's ceiling, 9 ft above the
+      // floor. Estimated: ~66 ft up, between the club level and the Pavilion,
+      // behind the club level's last row (64 ft) and under the deck that covers
+      // it from row 9, so it reaches 19 ft past them.
+      stand: { rows: 1, frontRowHeightFt: 66, rakeDeg: 0, backHeightFt: 78, overhang: { coveredFromRow: 1, soffitHeightFt: 75, reachFt: 19 } },
       heightsSourced: false,
       coverSourced: true,
       sources: [BUSCH_CLUB_MAP, 'https://www.mlb.com/cardinals/tickets/premium/suites'],
@@ -2348,8 +2366,10 @@ const NATS: StadiumStructure = {
     suite: {
       label: 'Suites',
       // The club's map lists them as suites: as at the other parks, one row
-      // of seats under the suite level's ceiling. Estimated ~70 ft up.
-      stand: { rows: 1, frontRowHeightFt: 70, rakeDeg: 0, backHeightFt: 82, overhang: { coveredFromRow: 1, soffitHeightFt: 76 } },
+      // of seats under the suite level's ceiling, 9 ft above the floor.
+      // Estimated ~70 ft up, behind the club level's last row (68 ft) and under
+      // the deck that covers it from row G, so it reaches 11 ft past them.
+      stand: { rows: 1, frontRowHeightFt: 70, rakeDeg: 0, backHeightFt: 82, overhang: { coveredFromRow: 1, soffitHeightFt: 79, reachFt: 11 } },
       heightsSourced: false,
       coverSourced: true,
       sources: ['https://www.mlb.com/nationals/ballpark/seating-map/3d'],
@@ -2510,8 +2530,10 @@ const OPACY: StadiumStructure = {
     suite: {
       label: 'Suites',
       // The club's map lists them as suites: as at the other parks, one row
-      // of seats under the suite level's ceiling. Estimated ~62 ft up.
-      stand: { rows: 1, frontRowHeightFt: 62, rakeDeg: 0, backHeightFt: 74, overhang: { coveredFromRow: 1, soffitHeightFt: 68 } },
+      // of seats under the suite level's ceiling, 9 ft above the floor.
+      // Estimated ~62 ft up, behind the club level's last row (61 ft) and under
+      // the upper deck, which covers it from row 8: 6 ft past them.
+      stand: { rows: 1, frontRowHeightFt: 62, rakeDeg: 0, backHeightFt: 74, overhang: { coveredFromRow: 1, soffitHeightFt: 71, reachFt: 6 } },
       heightsSourced: false,
       coverSourced: true,
       sources: ['https://www.mlb.com/orioles/ballpark/seating-map'],
@@ -2715,8 +2737,9 @@ const PETCO: StadiumStructure = {
     suite: {
       label: 'Suites',
       // The club's suite map: as at the other parks, one row of seats under
-      // the suite level's ceiling. Estimated ~58 ft up.
-      stand: { rows: 1, frontRowHeightFt: 58, rakeDeg: 0, backHeightFt: 70, overhang: { coveredFromRow: 1, soffitHeightFt: 64 } },
+      // the suite level's ceiling, 9 ft above the floor, the deck above
+      // reaching past them as is typical. Estimated ~58 ft up.
+      stand: { rows: 1, frontRowHeightFt: 58, rakeDeg: 0, backHeightFt: 70, overhang: { coveredFromRow: 1, soffitHeightFt: 67, reachFt: SUITE_DECK_REACH_FT } },
       heightsSourced: false,
       coverSourced: true,
       sources: ['https://mktg.mlbstatic.com/padres/documents/y2026/suites_map.pdf'],
@@ -2854,8 +2877,10 @@ const ANGEL: StadiumStructure = {
     suite: {
       label: 'Suites',
       // As at the other parks: one row of seats under the suite level's
-      // ceiling. Estimated ~58 ft up.
-      stand: { rows: 1, frontRowHeightFt: 58, rakeDeg: 0, backHeightFt: 70, overhang: { coveredFromRow: 1, soffitHeightFt: 64 } },
+      // ceiling, 9 ft above the floor. Estimated ~58 ft up, behind the club's
+      // last row (56 ft) and under the deck that covers it from row 5, so it
+      // reaches 11 ft past them.
+      stand: { rows: 1, frontRowHeightFt: 58, rakeDeg: 0, backHeightFt: 70, overhang: { coveredFromRow: 1, soffitHeightFt: 67, reachFt: 11 } },
       heightsSourced: false,
       coverSourced: true,
       sources: ['https://www.mlb.com/angels/tickets/seating-map/3d'],
@@ -3038,8 +3063,10 @@ const COORS: StadiumStructure = {
     suite: {
       label: 'Suites',
       // As at the other parks: one row of seats under the suite level's
-      // ceiling. Estimated ~62 ft up.
-      stand: { rows: 1, frontRowHeightFt: 62, rakeDeg: 0, backHeightFt: 74, overhang: { coveredFromRow: 1, soffitHeightFt: 68 } },
+      // ceiling, 9 ft above the floor. Estimated ~62 ft up, behind the club
+      // level's last row (61 ft) and under the deck that covers it from row 8,
+      // so it reaches 17 ft past them.
+      stand: { rows: 1, frontRowHeightFt: 62, rakeDeg: 0, backHeightFt: 74, overhang: { coveredFromRow: 1, soffitHeightFt: 71, reachFt: 17 } },
       heightsSourced: false,
       coverSourced: true,
       sources: ['https://www.mlb.com/rockies/ballpark/seat-viewer'],
@@ -3177,8 +3204,10 @@ const KAUFFMAN: StadiumStructure = {
     suite: {
       label: 'Suites',
       // As at the other parks: one row of seats under the suite level's
-      // ceiling. Estimated ~60 ft up.
-      stand: { rows: 1, frontRowHeightFt: 60, rakeDeg: 0, backHeightFt: 72, overhang: { coveredFromRow: 1, soffitHeightFt: 66 } },
+      // ceiling, 9 ft above the floor. Estimated ~60 ft up, behind the Loge's
+      // last row (57 ft) and under the deck that covers all of it: 28 ft past
+      // them.
+      stand: { rows: 1, frontRowHeightFt: 60, rakeDeg: 0, backHeightFt: 72, overhang: { coveredFromRow: 1, soffitHeightFt: 69, reachFt: 28 } },
       heightsSourced: false,
       coverSourced: true,
       sources: ['https://www.mlb.com/royals/ballpark/seating-map'],
@@ -3391,8 +3420,10 @@ const GABP: StadiumStructure = {
     suite: {
       label: 'Suites',
       // As at the other parks: one row of seats under the suite level's
-      // ceiling. Estimated ~60 ft up.
-      stand: { rows: 1, frontRowHeightFt: 60, rakeDeg: 0, backHeightFt: 72, overhang: { coveredFromRow: 1, soffitHeightFt: 66 } },
+      // ceiling, 9 ft above the floor. Estimated ~60 ft up, behind the club
+      // level's last row (57 ft) and under the deck that covers it from row 7,
+      // so it reaches 22 ft past them.
+      stand: { rows: 1, frontRowHeightFt: 60, rakeDeg: 0, backHeightFt: 72, overhang: { coveredFromRow: 1, soffitHeightFt: 69, reachFt: 22 } },
       heightsSourced: false,
       coverSourced: true,
       sources: ['https://www.mlb.com/reds/ballpark/netting'],
@@ -3542,8 +3573,9 @@ const PNC: StadiumStructure = {
     suite: {
       label: 'Suites',
       // As at the other parks: one row of seats under the suite level's
-      // ceiling. Estimated ~56 ft up.
-      stand: { rows: 1, frontRowHeightFt: 56, rakeDeg: 0, backHeightFt: 68, overhang: { coveredFromRow: 1, soffitHeightFt: 62 } },
+      // ceiling, 9 ft above the floor, the deck above reaching past them as is
+      // typical. Estimated ~56 ft up.
+      stand: { rows: 1, frontRowHeightFt: 56, rakeDeg: 0, backHeightFt: 68, overhang: { coveredFromRow: 1, soffitHeightFt: 65, reachFt: SUITE_DECK_REACH_FT } },
       heightsSourced: false,
       coverSourced: true,
       sources: ['https://www.mlb.com/pirates/ballpark/seating-map/3d'],
@@ -3770,8 +3802,10 @@ const COMERICA: StadiumStructure = {
     suite: {
       label: 'Suites',
       // As at the other parks: one row of seats under the suite level's
-      // ceiling. Estimated ~50 ft up.
-      stand: { rows: 1, frontRowHeightFt: 50, rakeDeg: 0, backHeightFt: 62, overhang: { coveredFromRow: 1, soffitHeightFt: 58 } },
+      // ceiling, 9 ft above the floor. Estimated ~50 ft up, behind the
+      // terrace's last row (47 ft) and under the deck that covers it from row
+      // 3, so it reaches 17 ft past them.
+      stand: { rows: 1, frontRowHeightFt: 50, rakeDeg: 0, backHeightFt: 62, overhang: { coveredFromRow: 1, soffitHeightFt: 59, reachFt: 17 } },
       heightsSourced: false,
       coverSourced: true,
       sources: ['https://www.mlb.com/tigers/ballpark/seating-map'],
@@ -3963,8 +3997,9 @@ const PROGRESSIVE: StadiumStructure = {
     suite: {
       label: 'Suites',
       // As at the other parks: one row of seats under the suite level's
-      // ceiling. Estimated ~50 ft up.
-      stand: { rows: 1, frontRowHeightFt: 50, rakeDeg: 0, backHeightFt: 62, overhang: { coveredFromRow: 1, soffitHeightFt: 58 } },
+      // ceiling, 9 ft above the floor, the deck above reaching past them as is
+      // typical. Estimated ~50 ft up.
+      stand: { rows: 1, frontRowHeightFt: 50, rakeDeg: 0, backHeightFt: 62, overhang: { coveredFromRow: 1, soffitHeightFt: 59, reachFt: SUITE_DECK_REACH_FT } },
       heightsSourced: false,
       coverSourced: true,
       sources: ['https://www.mlb.com/guardians/ballpark/suites'],
@@ -4173,8 +4208,9 @@ const TARGET: StadiumStructure = {
     suite: {
       label: 'Suites',
       // As at the other parks: one row of seats under the suite level's
-      // ceiling. Estimated ~50 ft up.
-      stand: { rows: 1, frontRowHeightFt: 50, rakeDeg: 0, backHeightFt: 62, overhang: { coveredFromRow: 1, soffitHeightFt: 58 } },
+      // ceiling, 9 ft above the floor, the deck above reaching past them as is
+      // typical. Estimated ~50 ft up.
+      stand: { rows: 1, frontRowHeightFt: 50, rakeDeg: 0, backHeightFt: 62, overhang: { coveredFromRow: 1, soffitHeightFt: 59, reachFt: SUITE_DECK_REACH_FT } },
       heightsSourced: false,
       coverSourced: true,
       sources: ['https://www.mlb.com/twins/ballpark/seating-map'],
@@ -5197,7 +5233,7 @@ const GENERIC_LEVELS: Record<string, { label: string; stand: StandProfile }> = {
   upper: { label: 'Upper level', stand: { rows: 20, frontRowHeightFt: 70, rakeDeg: 30, backHeightFt: 110 } },
   suite: {
     label: 'Suites',
-    stand: { rows: 1, frontRowHeightFt: 50, rakeDeg: 0, backHeightFt: 62, overhang: { coveredFromRow: 1, soffitHeightFt: 59 } },
+    stand: { rows: 1, frontRowHeightFt: 50, rakeDeg: 0, backHeightFt: 62, overhang: { coveredFromRow: 1, soffitHeightFt: 59, reachFt: SUITE_DECK_REACH_FT } },
   },
 };
 
