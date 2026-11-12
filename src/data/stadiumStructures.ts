@@ -10,8 +10,10 @@
  * (worked out from sourced values and typical stadium dimensions; the
  * reasoning is written next to it). `heightsSourced` / `coverSourced` record
  * which, and the confidence label uses them: the engine re-runs every answer
- * with estimated heights moved ±25% (sourced ±10%), and a section whose
- * answer changes is labelled lower confidence.
+ * with the structure's rise above the front row moved ±50% and its setbacks
+ * ±50% where the tier's heights are estimated (±10% and ±20% where they are
+ * sourced; src/utils/gameShade.ts), and a section whose answer changes is
+ * labelled lower confidence.
  */
 import type { ParkEnvelope, StandProfile } from '../utils/shadeEngine';
 import type { DetailedSection } from '../types/stadium-complete';
