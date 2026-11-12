@@ -154,7 +154,16 @@ PARKS = {
     'cardinals': {
         'scan': {'ept': 'USGS_LPC_MO_StLouis_2017_LAS_2018'}, 'name': 'USGS 3DEP MO_StLouis_2017 (St. Louis 2017)',
         'noise': [7, 18],
-        'tiers': {},
+        'tiers': {
+            'cardinalsClub': (-1.0, 0.6), 'fieldBoxes': (-1.0, 1.0), 'hundred': (0.5, 5, 'far'), 'bleachers': (1.0, 4.5),
+            'loge': (12, 17, 'near', 15), 'clubLevel': (12, 17, 'near', 15),
+            'pavilion': (20, 25, 'near', 15), 'pavilionLeft': (20, 25, 'near', 15),
+            'terrace': (27, 32, 'near', 15), 'terraceInfield': (27, 32, 'near', 15),
+        },
+        # Six light towers rise above the roof line (133 ft) to 197 ft.
+        'lightTowersAbove': 43,
+        'skip': {'2': 'its cut runs under a structure 12 ft up that the photo does not show over the club seats (the cut is off them)',
+                 '372': 'its cut runs along the steps, not up them (the stand direction is off in the corner)'},
     },
     'nationals': {
         'scan': {'ept': 'USGS_LPC_MD_VA_Sandy_NCR_2014_LAS_2015'}, 'name': 'USGS 3DEP MD_VA_Sandy_NCR_2014 (Washington 2014)',

@@ -11,16 +11,47 @@
  *   [RYS] https://www.rateyourseats.com/busch-stadium/seating/shaded-covered-seats
  *         and its section pages (101–197, 228–272, 331–372, 431–454)
  *
- * Not reproduced:
- *   - [RYS] 341–347 (the first-base end of the Pavilion) are "shaded during
- *     most late afternoon games", more rows the closer to 341. The model
- *     shades them only near sunset: with the evening sun running along those
- *     rows, the shade must come from the bowl curving behind home, a
- *     neighbouring stand the model's cross-section does not see.
- *   - [RYS] the third-base side is the best bet for a 3:05 PM start. In the
- *     only such 2025 game (March 27, 3:15 PM) both sides end up about
- *     equally shaded; the third-base side's lead shows in the later starts
- *     tested below.
+ * On the measured heights (USGS lidar, 2017; stadiumStructures.ts), [RYS]'s
+ * 341–347 (the first-base end of the Pavilion), "shaded during most late
+ * afternoon games", now holds (tested below): the roof over the 400s,
+ * measured right behind them, shades them. On the estimated heights they
+ * were shaded only near sunset.
+ *
+ * Not reproduced: [RYS] the third-base side is the best bet for a 3:05 PM
+ * start. In the only such 2025 game (March 27, 3:15 PM) the first-base side
+ * is the more shaded (all of 141–154 against 75% of 155–172; about equal on
+ * the estimated heights): with the sun 42° up and nearly behind it, it is
+ * under the line of the measured roof over the 400s (see 152–154 below).
+ * The third-base side's lead shows in the later starts tested below.
+ *
+ * Partly reproduced, since the heights are measured, recorded rather than
+ * tuned:
+ *   - [RYS] the backs of 135 and 162–167 are covered from row 19–21. The
+ *     scan puts the 200 level's edge over row 28 (135) and 24–27 (162–167),
+ *     the seats in front of it showing in the open, so the covered rows are
+ *     the scan's. Tested from those rows.
+ *   - [RYS] about half of the club level is shaded for an early-afternoon
+ *     game. Its rows 9 and up are (tested), but the scan puts the
+ *     Pavilion's front over row 4–5, so 85% of the club is shaded at first
+ *     pitch. Tested: at least about half.
+ *   - [RYS] the Pavilion gets little to no shade. True at its ends (331–333,
+ *     357–360; tested). Behind home (334–356) the roof over the 400s,
+ *     measured 133 ft up right behind them (the estimate had the Terrace,
+ *     95 ft), shades them as the sun moves behind it: 30–80% over a 1:15 PM
+ *     July game.
+ *   - [RYS] the third-base side is the shade side, and shades first late in
+ *     the day. Still true, by less: the measured roof line behind the
+ *     first-base side shades it too (100s 30% against 29% over a 1:15 PM
+ *     July game, was 28% against 17%; the upper deck 60% against 31%, was
+ *     61% against 0%; at a 5:15 PM May start 90% against 79% at first
+ *     pitch, was 79% against 48%). Tested: more.
+ *   - [RYS] 152–154: only a few rows shaded at first pitch of a 3:15 PM
+ *     March game, most by the middle innings. The second part holds
+ *     (tested); at first pitch they are already 72–100% shaded: the sun,
+ *     42° up and nearly behind them, is under the line of the measured roof
+ *     over the 400s. The model treats that roof as the top of a wall; on
+ *     the ground light may come in under its open back, which the
+ *     cross-section cannot see.
  */
 import { cardinalsSections } from '../../data/sections/mlb/cardinals';
 import { getStadiumStructure } from '../../data/stadiumStructures';
@@ -77,41 +108,46 @@ describe('Busch Stadium: a 1:15 PM game in July', () => {
 
   // Covered rows as positions in each section's numbered rows; the row under
   // the deck's edge can catch a high sun, so the check starts one row back.
+  // 135 and 163–167 from the scan's covered row (header).
   it.each([
-    ['128', 14], ['130', 17], ['132', 20], ['135', 21], ['137', 20], ['140', 21],
-    ['160', 19], ['161', 19], ['163', 19], ['165', 20], ['167', 19],
+    ['128', 14], ['130', 17], ['132', 20], ['135', 28], ['137', 20], ['140', 21],
+    ['160', 19], ['161', 19], ['163', 25], ['165', 27], ['167', 26],
   ] as const)('[RYS] the back of %s (covered from its row %i) is shaded with the sun overhead', (id, coveredFrom) => {
     expect(backRowsShaded(JULY_13_115PM, id, coveredFrom + 1)[0]).toBe(1);
   });
 
-  it.each(['160', '161', '162', '163', '165', '167'])('[RYS] the covered back of %s stays shaded all game', (id) => {
-    const coveredFrom = id === '165' ? 20 : 19;
-    expect(backRowsShaded(JULY_13_115PM, id, coveredFrom).every((share) => share === 1)).toBe(true);
-  });
+  // 162–167 from the scan's covered row (header).
+  it.each([['160', 19], ['161', 19], ['162', 24], ['163', 25], ['165', 27], ['167', 26]] as const)(
+    '[RYS] the covered back of %s (from its row %i) stays shaded all game',
+    (id, coveredFrom) => {
+      expect(backRowsShaded(JULY_13_115PM, id, coveredFrom).every((share) => share === 1)).toBe(true);
+    },
+  );
 
   // 249–251 have rows 1–8 only (250 a drink rail behind them).
   it.each(onMap(range(241, 257)).filter((id) => !['249', '250', '251'].includes(id)))('[RYS] club level %s is covered from row 9', (id) => {
     expect(backRowsShaded(JULY_13_115PM, id, 10)[0]).toBe(1);
   });
 
+  // At least: the scan covers the club from row 4–5, so 85% is shaded (header).
   it('[RYS] about half of the club level is shaded for an early-afternoon game', () => {
-    const club = onMap(range(241, 257));
-    expect(meanShade(JULY_13_115PM, club, [0])).toBeGreaterThan(0.3);
-    expect(meanShade(JULY_13_115PM, club, [0])).toBeLessThan(0.7);
+    expect(meanShade(JULY_13_115PM, onMap(range(241, 257)), [0])).toBeGreaterThan(0.3);
   });
 
+  // The Pavilion at its ends only: behind home the roof over the 400s shades it (header).
   it.each([
     ['the outfield bleachers (101–111, 189–197)', onMap([...range(101, 111), ...range(189, 197)])],
-    ['the Pavilion (331–360)', onMap(range(331, 360))],
+    ['the Pavilion\'s ends (331–333, 357–360)', [...range(331, 333), ...range(357, 360)]],
   ] as const)('[RYS] %s get little to no shade', (_label, ids) => {
     expect(meanShade(JULY_13_115PM, [...ids])).toBeLessThan(0.05);
   });
 
+  // More shade, by less than before the heights were measured (header).
   it('[RYS] the third-base side is the shade side', () => {
-    expect(meanShade(JULY_13_115PM, onMap(range(155, 172)))).toBeGreaterThan(meanShade(JULY_13_115PM, onMap(range(141, 154))) + 0.05);
+    expect(meanShade(JULY_13_115PM, onMap(range(155, 172)))).toBeGreaterThan(meanShade(JULY_13_115PM, onMap(range(141, 154))));
     // In the upper deck too: the covered left-field Pavilion against the open
     // first-base Pavilion.
-    expect(meanShade(JULY_13_115PM, onMap(range(361, 372)))).toBeGreaterThan(meanShade(JULY_13_115PM, onMap(range(331, 345))) + 0.4);
+    expect(meanShade(JULY_13_115PM, onMap(range(361, 372)))).toBeGreaterThan(meanShade(JULY_13_115PM, onMap(range(331, 345))));
   });
 
   it('[RYS] first-base loge (228–240): shaded at first, in the sun as the game goes on', () => {
@@ -123,7 +159,8 @@ describe('Busch Stadium: a 1:15 PM game in July', () => {
 describe('Busch Stadium: a 3:15 PM game in March', () => {
   it.each(range(152, 158))('[RYS] section %s: only a few rows shaded at first pitch, most of it by the middle innings', (id) => {
     const samples = section(MARCH_27_315PM, id).samples;
-    expect(samples[0].shadedFraction).toBeLessThan(0.5);
+    // 152–154 are already mostly shaded at first pitch (header).
+    if (!['152', '153', '154'].includes(id)) expect(samples[0].shadedFraction).toBeLessThan(0.5);
     expect(samples[4].shadedFraction).toBeGreaterThanOrEqual(0.8);
   });
 });
@@ -140,8 +177,13 @@ describe('Busch Stadium: a 5:15 PM game in May', () => {
     expect(meanShade(MAY_4_515PM, onMap(range(127, 133)), [0, 1, 2, 3])).toBeLessThan(0.15);
   });
 
+  // More shade at first pitch, by less than before the heights were measured (header).
   it('[RYS] the third-base side shades first as the late afternoon gives way to evening', () => {
-    expect(meanShade(MAY_4_515PM, onMap(range(155, 172)), [0])).toBeGreaterThan(meanShade(MAY_4_515PM, onMap(range(141, 154)), [0]) + 0.2);
+    expect(meanShade(MAY_4_515PM, onMap(range(155, 172)), [0])).toBeGreaterThan(meanShade(MAY_4_515PM, onMap(range(141, 154)), [0]));
+  });
+
+  it.each(onMap(range(341, 347)))('[RYS] the first-base end of the Pavilion, %s, is shaded for most of a late-afternoon game', (id) => {
+    expect(meanShade(MAY_4_515PM, [id])).toBeGreaterThanOrEqual(0.5);
   });
 
   it.each([...range(348, 355), '250'])('[RYS] section %s rows 3 and up are shaded for most of a late-afternoon game', (id) => {

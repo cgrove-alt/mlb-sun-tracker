@@ -2106,8 +2106,16 @@ const BUSCH_100_COVER: Record<string, number> = {
   '155': 24, '156': 24, '157': 24, '158': 24,
   '160': 19, '161': 19, '162': 19, '163': 19, '165': 20, '167': 19, '170': 8, '171': 8,
 };
-// Estimated: the 200 level's underside ~46 ft over the 100s.
-const BUSCH_100_SOFFIT_FT = 46;
+// The 200 level's covered rows where the lidar puts its edge more than two
+// rows from Rate Your Seats' (131: none given; its rows end before row 21).
+const BUSCH_100_SCAN_COVER: Record<string, number> = {
+  '129': 17, '131': 8, '132': 15, '134': 24, '135': 28, '162': 24, '163': 25, '165': 27, '167': 26,
+};
+const BUSCH_100_ROWS = { ...BUSCH_100_COVER, ...BUSCH_100_SCAN_COVER };
+// The 200 level's underside over the 100s (lidar): the bottom of its face,
+// ~40 ft (39–41; its front row is 47 ft up).
+const BUSCH_100_SOFFIT_FT = 40;
+const BUSCH_LIDAR = 'USGS 3DEP lidar MO_StLouis_2017, flown 2017-02-20 (scripts/measureStandHeights.py)';
 
 /**
  * Busch Stadium (2006). Lettered field boxes and the Cardinals Club in front
@@ -2115,139 +2123,211 @@ const BUSCH_100_SOFFIT_FT = 46;
  * (Pavilion) and the 400s (Terrace) under a small roof. Rows are Rate Your
  * Seats' section pages (lettered rows on the "D" boxes, numbered rows on the
  * main sections) and the club's own data for the Cardinals Club; covered
- * rows are Rate Your Seats'. No source publishes the deck heights, so every
- * height is estimated by stacking the decks.
+ * rows are Rate Your Seats'.
+ *
+ * Heights are measured on USGS airborne lidar (BUSCH_LIDAR), as at Citizens
+ * Bank Park: for each section a cut straight back through its rows gives the
+ * front row's height, the rake and the structure that rises highest behind
+ * as seen from the middle uncovered row; tier values are medians, sections
+ * more than 10% (at least 3 ft) off get their own. The stacking estimates
+ * were close above the field (the 200 level's front 48 ft, the Pavilion's
+ * 75, the Terrace's 97); the field rows and the 100s start lower and rake
+ * less. The six light towers above the roof are not counted as walls.
+ * Covered rows: where the scan puts a deck's edge more than two rows from
+ * the source's, the scan's edge is used, with the lowest structure seen at
+ * it (or the deck above's front row less this park's measured deck depth)
+ * as the underside, never less than 9 ft above the first covered row's
+ * floor. Sections the scan does not find keep estimates, re-taken from the
+ * decks measured around them.
  */
 const BUSCH: StadiumStructure = {
   stadiumId: 'cardinals',
-  // Far rim: the roof over the 400s (~120 ft) about 550 ft across the field.
-  park: { roof: 'open', farRimHeightFt: 120, fieldCrossingFt: 550 },
+  // Far rim (lidar): the stands' roof line, median over sections 133 ft (the
+  // roof over the 400s); crossing: the median distance from a section to
+  // what rises highest across the field, 611 ft.
+  park: { roof: 'open', farRimHeightFt: 133, fieldCrossingFt: 611 },
   tierOf: buschTier,
   tiers: {
     cardinalsClub: {
       label: 'Cardinals Club (1–8)',
       // Rows A–C at the backstop (club data); open (seen from directly above
-      // on the photo). Estimated: front row ~2 ft, 10° rake; the 100s rise
-      // behind them to the 200 level's front (~50 ft) about 75 ft back.
-      stand: { rows: 3, frontRowHeightFt: 2, rakeDeg: 10, backHeightFt: 50, backSetbackFt: 75 },
+      // on the photo). Lidar (2 of 8; the rest join the boxes behind): front
+      // row at field level, 10° rake (6–14); what rises highest behind is the
+      // roof over the 400s, 133 ft up and 117 ft back.
+      stand: { rows: 3, frontRowHeightFt: 0, rakeDeg: 10, backHeightFt: 133, backSetbackFt: 117 },
       rowsFromMap: true,
-      heightsSourced: false,
+      heightsSourced: true,
       coverSourced: true,
-      sources: [BUSCH_CLUB_MAP],
+      sources: [BUSCH_CLUB_MAP, BUSCH_LIDAR],
     },
     fieldBoxes: {
       label: 'Field boxes (lettered rows)',
-      // Rows A–L (fewer in some) in front of the 100s, open. Estimated:
-      // front row ~3 ft, 15° rake; the 200 level's front (~50 ft) about 60 ft
-      // behind the last row.
-      stand: { rows: 12, frontRowHeightFt: 3, rakeDeg: 15, backHeightFt: 50, backSetbackFt: 60 },
+      // Rows A–L (fewer in some) in front of the 100s, open. Lidar (13 of
+      // 26): front row at field level (-1 to 2), 7° rake (6–23); behind, the
+      // roof over the 400s, 133 ft up and 112 ft back (down the first-base
+      // line the Pavilion's corners, 76–115 ft).
+      stand: { rows: 12, frontRowHeightFt: 0, rakeDeg: 7, backHeightFt: 133, backSetbackFt: 112 },
+      sections: {
+        '703D': { backHeightFt: 115, backSetbackFt: 124 },
+        ...Object.fromEntries(['163D', '164D', '166D'].map((id) => [id, { backHeightFt: 76, backSetbackFt: 94 }])),
+        '165D': { backHeightFt: 87, backSetbackFt: 121 },
+      },
       rowsFromMap: true,
-      heightsSourced: false,
+      heightsSourced: true,
       coverSourced: true,
-      sources: buschSections('132', '135', '140', '142', '155', '158', '161', '167'),
+      sources: [...buschSections('132', '135', '140', '142', '155', '158', '161', '167'), BUSCH_LIDAR],
     },
     hundred: {
       label: 'Field level (100s)',
       // Numbered rows; covered by the 200 level from row 21 (128–140), row 24
-      // (141–158) or row 20 (160–167), and from row 8 in 170–171. Sections
-      // whose rows stop before those (tunnel sections such as 131, 136, 146,
-      // 151, 154) are open. Estimated: front row ~12 ft behind the lettered
-      // boxes (~5 ft behind home, where there are none), 20° rake.
-      stand: { rows: 26, frontRowHeightFt: 12, rakeDeg: 20, backHeightFt: BUSCH_100_SOFFIT_FT },
+      // (141–158) or row 20 (160–167), and from row 8 in 170–171 (Rate Your
+      // Seats); in nine sections the lidar puts its edge more than two rows
+      // off and its row is used (BUSCH_100_SCAN_COVER; 131 covered from row
+      // 8). Sections whose rows stop before the deck (tunnel sections such
+      // as 136, 146, 151, 154) are open. Lidar (32 of 46): front row 4 ft (3–14; 14 in
+      // the left-field corner, 127–131), 12° rake (7–17); what rises
+      // highest behind is the roof over the 400s, 133 ft up and 35 ft
+      // behind the last row (down the lines the Pavilion, 76–116 ft).
+      stand: { rows: 26, frontRowHeightFt: 4, rakeDeg: 12, backHeightFt: 133, backSetbackFt: 35 },
       sections: {
-        ...Object.fromEntries(Object.entries(BUSCH_100_COVER).map(([id, row]) => [id, { overhang: { coveredFromRow: row, soffitHeightFt: BUSCH_100_SOFFIT_FT } }])),
-        ...Object.fromEntries(['146', '147', '148', '149', '150', '151', '152', '153', '154'].map((id) => [
-          id, { frontRowHeightFt: 5, ...(BUSCH_100_COVER[id] ? { overhang: { coveredFromRow: BUSCH_100_COVER[id], soffitHeightFt: BUSCH_100_SOFFIT_FT } } : {}) },
-        ])),
+        ...Object.fromEntries(Object.entries(BUSCH_100_ROWS).map(([id, row]) => [id, { overhang: { coveredFromRow: row, soffitHeightFt: BUSCH_100_SOFFIT_FT } }])),
+        '127': { frontRowHeightFt: 14, backHeightFt: 116, backSetbackFt: 63 },
+        '128': { frontRowHeightFt: 14, backHeightFt: 88, backSetbackFt: 58, overhang: { coveredFromRow: BUSCH_100_ROWS['128'], soffitHeightFt: BUSCH_100_SOFFIT_FT } },
+        ...Object.fromEntries(['129', '132'].map((id) => [id, { frontRowHeightFt: 8, overhang: { coveredFromRow: BUSCH_100_ROWS[id], soffitHeightFt: BUSCH_100_SOFFIT_FT } }])),
+        '131': { frontRowHeightFt: 14, backHeightFt: 49, backSetbackFt: -24, overhang: { coveredFromRow: BUSCH_100_ROWS['131'], soffitHeightFt: BUSCH_100_SOFFIT_FT } },
+        ...Object.fromEntries(['162', '163'].map((id) => [id, { backHeightFt: 76, backSetbackFt: 11, overhang: { coveredFromRow: BUSCH_100_ROWS[id], soffitHeightFt: BUSCH_100_SOFFIT_FT } }])),
+        '164': { backHeightFt: 88, backSetbackFt: 58 },
+        ...Object.fromEntries(['165', '167'].map((id) => [id, { backHeightFt: 116, backSetbackFt: 63, overhang: { coveredFromRow: BUSCH_100_ROWS[id], soffitHeightFt: BUSCH_100_SOFFIT_FT } }])),
+        ...Object.fromEntries(['166', '168'].map((id) => [id, { backHeightFt: 116, backSetbackFt: 63 }])),
       },
       rowsFromMap: true,
       heightsSourced: false,
       coverSourced: true,
-      sources: [RYS_BUSCH, ...buschSections('128', '130', '132', '135', '141', '144', '148', '150', '153', '158', '160', '165', '170')],
+      sources: [RYS_BUSCH, ...buschSections('128', '130', '132', '135', '141', '144', '148', '150', '153', '158', '160', '165', '170'), BUSCH_LIDAR],
     },
     bleachers: {
       label: 'Outfield bleachers (101–111, 189–197)',
-      // "One of the least shaded areas", open. Estimated: front ~8 ft above
-      // the wall, 20° rake, the structure behind ~30 ft.
-      stand: { rows: 20, frontRowHeightFt: 8, rakeDeg: 20, backHeightFt: 30 },
+      // "One of the least shaded areas", open. Lidar (8 of 10): front row
+      // 7 ft above the field (13 in 109), 18° rake (16–24); what rises
+      // highest behind differs from section to section (43–104 ft; 80 ft,
+      // 52 ft back, the median). Over 189's first three rows a deck of seats
+      // 47 ft up; its other rows show uncovered behind it.
+      stand: { rows: 20, frontRowHeightFt: 7, rakeDeg: 18, backHeightFt: 80, backSetbackFt: 52 },
+      sections: {
+        '101': { backHeightFt: 56, backSetbackFt: 30 },
+        ...Object.fromEntries(['103', '105'].map((id) => [id, { backHeightFt: 97, backSetbackFt: 52 }])),
+        '107': { backHeightFt: 104, backSetbackFt: 34 },
+        '109': { frontRowHeightFt: 13, backHeightFt: 43, backSetbackFt: 17 },
+      },
       rowsFromMap: true,
-      heightsSourced: false,
+      heightsSourced: true,
       coverSourced: true,
-      sources: buschSections('101', '107', '111', '189', '193', '197'),
+      sources: [...buschSections('101', '107', '111', '189', '193', '197'), BUSCH_LIDAR],
     },
     loge: {
       label: 'Loge (228–240, 261–272)',
       // Rows 1–10 to 1–16. "The last few rows ... are among the best shaded
-      // seats on the 200 level, thanks to the overhang above", but no source
-      // gives the row, so the check tries both. Estimated: front ~50 ft,
-      // 22° rake, the 300 level's underside ~70 ft.
-      stand: { rows: 10, frontRowHeightFt: 50, rakeDeg: 22, backHeightFt: 70, overhang: { coveredFromRow: 9, soffitHeightFt: 70 } },
+      // seats on the 200 level, thanks to the overhang above"; no source
+      // gives the row. Lidar (13 of 20): front row 48 ft (47–52), 21° rake
+      // (19–25); the Pavilion's front, 74–75 ft up, reaches out over row 5
+      // (3–6; row 11–12 in 265–272), so the rows from there back are
+      // covered, under an underside of ~67 ft (that front row less this
+      // park's measured 7-ft deck depth; 68–69 ft over row 11–12). What
+      // rises highest behind is that front edge (in 267–272 the roof over
+      // the 400s, 116 ft).
+      stand: { rows: 10, frontRowHeightFt: 48, rakeDeg: 21, backHeightFt: 76, backSetbackFt: -15, overhang: { coveredFromRow: 5, soffitHeightFt: 67 } },
+      sections: {
+        '265': { overhang: { coveredFromRow: 11, soffitHeightFt: 68 } },
+        ...Object.fromEntries(['267', '272'].map((id) => [id, { backHeightFt: 116, backSetbackFt: 6, overhang: { coveredFromRow: 11, soffitHeightFt: 68 } }])),
+        ...Object.fromEntries(['268', '269'].map((id) => [id, { backHeightFt: 116, backSetbackFt: 6, overhang: { coveredFromRow: 12, soffitHeightFt: 69 } }])),
+        '271': { backHeightFt: 116, backSetbackFt: 6 },
+      },
       rowsFromMap: true,
       heightsSourced: false,
-      coverSourced: false,
-      sources: buschSections('228', '235', '240', '261', '267', '272'),
+      coverSourced: true,
+      sources: [...buschSections('228', '235', '240', '261', '267', '272'), BUSCH_LIDAR],
     },
     clubLevel: {
       label: 'Club level (241–260)',
       // Rows 1–8 to 1–15, covered from row 9 (sourced); 249–251 have rows
       // 1–8 only, 250 and 258 a drink rail behind row 8 (covered), 260 is
-      // all covered. Estimated: front ~50 ft, 20° rake, underside ~68 ft.
-      stand: { rows: 15, frontRowHeightFt: 50, rakeDeg: 20, backHeightFt: 68, overhang: { coveredFromRow: 9, soffitHeightFt: 68 } },
-      sections: { '260': { overhang: { coveredFromRow: 1, soffitHeightFt: 60 } } },
+      // all covered. Lidar (16 of 19): front row 48 ft, 24° rake (23–26);
+      // the Pavilion's front, 75 ft up, reaches out over row 4–5 in all of
+      // them, so the rows from 4 back are covered (Rate Your Seats counts
+      // from 9), under an underside of ~67 ft (that front row less this
+      // park's measured 7-ft deck depth). What rises highest behind is that
+      // front edge.
+      stand: { rows: 15, frontRowHeightFt: 48, rakeDeg: 24, backHeightFt: 76, backSetbackFt: -25, overhang: { coveredFromRow: 4, soffitHeightFt: 67 } },
+      sections: { '260': { overhang: { coveredFromRow: 1, soffitHeightFt: 67 } } },
       rowsFromMap: true,
       heightsSourced: false,
       coverSourced: true,
-      sources: [RYS_BUSCH, ...buschSections('241', '249', '250', '257', '258', '259', '260')],
+      sources: [RYS_BUSCH, ...buschSections('241', '249', '250', '257', '258', '259', '260'), BUSCH_LIDAR],
     },
     pavilion: {
       label: 'Pavilion (331–360)',
-      // Rows 1–6 or 1–9, open ("among the most exposed"). Estimated: front
-      // ~74 ft, 26° rake, the Terrace (400s) rising ~95 ft just behind.
-      stand: { rows: 9, frontRowHeightFt: 74, rakeDeg: 26, backHeightFt: 95, backSetbackFt: 10 },
+      // Rows 1–6 or 1–9, open ("among the most exposed"). Lidar (27 of 27):
+      // front row 75 ft (74–76), 31° rake (28–33); what rises highest behind
+      // is the roof over the 400s, 133 ft up and 9 ft back (97–116 ft at
+      // the ends). The Terrace's front, 97 ft up, is over the last row of
+      // the 9-row sections.
+      stand: { rows: 9, frontRowHeightFt: 75, rakeDeg: 31, backHeightFt: 133, backSetbackFt: 9 },
+      sections: {
+        '357': { backHeightFt: 97, backSetbackFt: 7 },
+        ...Object.fromEntries(['358', '359'].map((id) => [id, { backHeightFt: 116, backSetbackFt: 52 }])),
+        '360': { backHeightFt: 106, backSetbackFt: 27 },
+      },
       rowsFromMap: true,
-      heightsSourced: false,
+      heightsSourced: true,
       coverSourced: true,
-      sources: buschSections('331', '341', '345', '350', '355', '360'),
+      sources: [...buschSections('331', '341', '345', '350', '355', '360'), BUSCH_LIDAR],
     },
     pavilionLeft: {
       label: 'Pavilion, left field (361–372)',
-      // Rows 1–14, covered from row 8 (sourced). Estimated: front ~74 ft,
-      // 26° rake, roof underside ~95 ft.
-      stand: { rows: 14, frontRowHeightFt: 74, rakeDeg: 26, backHeightFt: 95, overhang: { coveredFromRow: 8, soffitHeightFt: 95 } },
+      // Rows 1–14, covered from row 8 (sourced; the scan sees no edge over
+      // the rows of 363 and 365). Lidar (2 of 9): front row 75 ft, 31° rake;
+      // what rises highest behind is 115 ft up, 32 ft back (98 in 363).
+      // Estimated: roof underside ~96 ft (9 ft above row 8's floor).
+      stand: { rows: 14, frontRowHeightFt: 75, rakeDeg: 31, backHeightFt: 115, backSetbackFt: 32, overhang: { coveredFromRow: 8, soffitHeightFt: 96 } },
+      sections: { '363': { backHeightFt: 98, backSetbackFt: 35 } },
       rowsFromMap: true,
       heightsSourced: false,
       coverSourced: true,
-      sources: [RYS_BUSCH, ...buschSections('361', '365', '369', '372')],
+      sources: [RYS_BUSCH, ...buschSections('361', '365', '369', '372'), BUSCH_LIDAR],
     },
     terrace: {
       label: 'Terrace (431–440)',
-      // Rows 1–11, covered from row 6 by the roof (sourced). Estimated:
-      // front ~98 ft, 30° rake, roof underside ~118 ft.
-      stand: { rows: 11, frontRowHeightFt: 98, rakeDeg: 30, backHeightFt: 118, overhang: { coveredFromRow: 6, soffitHeightFt: 118 } },
+      // Rows 1–11, covered from row 6 by the roof (sourced). Not found on
+      // the lidar (the roof hides all but their first rows). Estimated as the
+      // Terrace behind home, measured: front 97 ft, 29° rake, under the same
+      // roof, 133 ft up.
+      stand: { rows: 11, frontRowHeightFt: 97, rakeDeg: 29, backHeightFt: 133, overhang: { coveredFromRow: 6, soffitHeightFt: 133 } },
       rowsFromMap: true,
       heightsSourced: false,
       coverSourced: true,
-      sources: buschSections('431', '433', '435', '437', '440'),
+      sources: [...buschSections('431', '433', '435', '437', '440'), BUSCH_LIDAR],
     },
     terraceInfield: {
       label: 'Terrace (441–454)',
       // Rows 1–11, covered from row 4 (sourced); 449–451 (rows 1–8) all
-      // covered.
-      stand: { rows: 11, frontRowHeightFt: 98, rakeDeg: 30, backHeightFt: 118, overhang: { coveredFromRow: 4, soffitHeightFt: 118 } },
-      sections: Object.fromEntries(['449', '450', '451'].map((id) => [id, { overhang: { coveredFromRow: 1, soffitHeightFt: 112 } }])),
+      // covered. Lidar (4 of 12): front row 97 ft, 29° rake (26–29); the
+      // roof's edge, 133 ft up with nothing seen below it (a thin roof), is
+      // over row 1–2 (row 1 in 454, which takes it).
+      stand: { rows: 11, frontRowHeightFt: 97, rakeDeg: 29, backHeightFt: 133, backSetbackFt: -25, overhang: { coveredFromRow: 4, soffitHeightFt: 133 } },
+      sections: Object.fromEntries(['449', '450', '451', '454'].map((id) => [id, { overhang: { coveredFromRow: 1, soffitHeightFt: 133 } }])),
       rowsFromMap: true,
-      heightsSourced: false,
+      heightsSourced: true,
       coverSourced: true,
-      sources: buschSections('441', '445', '449', '451', '454'),
+      sources: [...buschSections('441', '445', '449', '451', '454'), BUSCH_LIDAR],
     },
     suite: {
       label: 'Suites',
       // The club's map lists S1–S63 and 703A–F as suites: as at the other
       // parks, one row of seats under the suite level's ceiling, 9 ft above the
       // floor. Estimated: ~66 ft up, between the club level and the Pavilion,
-      // behind the club level's last row (64 ft) and under the deck that covers
-      // it from row 9, so it reaches 19 ft past them.
-      stand: { rows: 1, frontRowHeightFt: 66, rakeDeg: 0, backHeightFt: 78, overhang: { coveredFromRow: 1, soffitHeightFt: 75, reachFt: 19 } },
+      // behind the club level's last row (65 ft) and under the deck that covers
+      // it from row 4, so it reaches 33 ft past them.
+      stand: { rows: 1, frontRowHeightFt: 66, rakeDeg: 0, backHeightFt: 78, overhang: { coveredFromRow: 1, soffitHeightFt: 75, reachFt: 33 } },
       heightsSourced: false,
       coverSourced: true,
       sources: [BUSCH_CLUB_MAP, 'https://www.mlb.com/cardinals/tickets/premium/suites'],
