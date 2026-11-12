@@ -112,7 +112,20 @@ PARKS = {
         'url': 'https://rockyweb.usgs.gov/vdelivery/Datasets/Staged/Elevation/LPC/Projects/PA_17County_D24/PA_17Co_5_D24/LAZ/USGS_LPC_PA_17County_D24_18SVK485417.laz',
         'name': 'USGS 3DEP PA_17County_D24 (Pennsylvania 2024-25)',
         'noise': [7, 18],
-        'tiers': {},
+        # Behind home one slope carries the dugout boxes and the Diamond Club,
+        # then the 100s (119-128) start behind a walkway. The suites are
+        # enclosed; the wheelchair platforms are single rows of other tiers.
+        'tiers': {
+            'dugoutBox': (-1.5, 1.0), 'diamond': (-1.5, 1.0), 'homePlate': (2.5, 6, 'far'),
+            'field': (-1.5, 1.5), 'fieldCoverUnsourced': (-1.5, 1.5),
+            'rightField': (1.5, 5), 'rightField200': (10, 16, 'near', 15), 'rightField300': (17, 24, 'near', 15),
+            'leftField': (1, 4), 'leftField200': (8, 13, 'near', 15),
+            'twoHundred': (10, 16, 'near', 15), 'threeHundred': (18, 23, 'near', 15), 'terrace': (24, 30, 'near', 15),
+            'bleachers': (8, 14),
+        },
+        # The light towers rise above the roof (133 ft) to 186-195 ft, and the
+        # left-field scoreboard is a board 166-195 ft up on one pylon.
+        'lightTowersAbove': 43,
     },
     'dodgers': {
         'scan': {'ept': 'CA_LosAngeles_1_B23'}, 'name': 'USGS 3DEP CA_LosAngeles_B23 (LA County 2023)',
@@ -242,9 +255,10 @@ def load_points(park):
     Z = Z - field
     above = PARKS[park].get('lightTowersAbove')
     if above is not None:
-        # Light towers: compact clusters (up to 600 m2 in plan, 2 m cells)
-        # standing above the park's roof line; what stands on the roof inside
-        # them (more than 2 m over its lowest fifth) is not a wall.
+        # Light towers and boards up on pylons: compact clusters (up to
+        # 700 m2 in plan, 2 m cells) standing above the park's roof line;
+        # what stands inside them more than 2 m over their lowest fifth is
+        # not a wall (light passes under it).
         m = (Z > above) & (np.hypot(E, N) < 180)
         g = np.zeros((180, 180), bool)
         gi = lambda v: np.clip(((v + 180) / 2).astype(int), 0, 179)
@@ -253,7 +267,7 @@ def load_points(park):
         sizes = ndimage.sum(np.ones_like(lab), lab, range(n + 1))
         keep = np.ones(len(Z), bool)
         for k in range(1, n + 1):
-            if sizes[k] * 4 > 600:
+            if sizes[k] * 4 > 700:
                 continue
             inside = (lab[gi(N), gi(E)] == k) & (np.hypot(E, N) < 180)
             keep &= ~(inside & (Z > np.percentile(Z[inside], 20) + 2))

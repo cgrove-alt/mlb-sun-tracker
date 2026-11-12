@@ -12,10 +12,16 @@
  *         and its section pages (101–148, 201–245, 301–333, 412–434)
  *
  * Not reproduced: [RYS] says Hall of Fame Club 225–232 are out of the sun by
- * the third inning of a 1 PM game. The model gets there in September (tested
- * below), but in July and August it takes until about the fifth inning: with
- * the sun that high, the suite level's shadow only reaches the front rows
- * once the sun has moved well into the west. Their heights are estimates.
+ * the third inning of a 1 PM game. The model gets there in September for
+ * 226 and 229–232 (tested below), but in July and August it takes until
+ * about the fifth inning. In 225, 227 and 228 it doesn't get there at all:
+ * the heights are now measured (USGS lidar, 2024–25), and the 300 level's
+ * front reaches out over row 3, 70 ft up, while the sources count the
+ * covered rows from row 7 (none in 227). The model keeps the sourced rows,
+ * so the rows behind that edge get no shade from the deck over them; on the
+ * ground they sit under it, which is what would put them out of the sun.
+ * Which rows to count as covered is open, so the 200 level's cover is
+ * marked unsettled and these answers are not labelled High.
  * [RYS] also says about half of the right-field seats are shaded at first
  * pitch; the model has 10–40%, and agrees that they end up in the sun.
  */
@@ -124,7 +130,7 @@ describe('Citizens Bank Park: a 4:05 PM game in July', () => {
 });
 
 describe('Citizens Bank Park: a 1:35 PM game in September', () => {
-  it.each(range(225, 232))('[RYS] Hall of Fame Club %s is out of the sun by the third inning', (id) => {
+  it.each(['226', '229', '230', '231', '232'])('[RYS] Hall of Fame Club %s is out of the sun by the third inning', (id) => {
     const samples = section(SEPT_14_135PM, id).samples;
     expect(samples[2].shadedFraction).toBeGreaterThanOrEqual(0.9);
     expect(samples.slice(3).every((s) => s.shadedFraction === 1)).toBe(true);
