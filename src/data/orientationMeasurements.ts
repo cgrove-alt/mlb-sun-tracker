@@ -448,6 +448,127 @@ export const ORIENTATION_MEASUREMENTS: readonly OrientationMeasurement[] = [
       'image of the same flight: 162.3° and 69.2°, midline 115.7–117.0°. Mean 116.3°, recorded as 116° with ±1.5° for the spread (115.2–117.35°). ' +
       'Replaces 120° (ballparks.com lists 120°).',
   },
+  {
+    stadiumId: 'tigers',
+    imageCenter: { latitude: 42.33922, longitude: -83.04880 },
+    imageHalfWidthMeters: 75,
+    imageSizePx: 600,
+    naipTile: 'm_4208348_ne_17_060_20220730',
+    acquired: '2022-07-30',
+    nativeResolutionMeters: 0.6,
+    homeSeedPx: [243.27, 196.23],
+    moundSeedPx: [276.57, 257.74],
+    homeCenterPx: [243.27, 196.23],
+    moundCenterPx: [276.96, 258.03],
+    bearingHomeToMoundDeg: 151.4,
+    bearingInfieldSymmetryDeg: 150.8,
+    orientationDeg: 151,
+    precisionDeg: 1,
+    measuredOn: '2026-11-11',
+    notes:
+      'Home plate under a blue cover. Home → mound 151.4°; infield mirror axis 150.8° (96.8% overlap); a circle fitted to the infield dirt\'s outer ' +
+      'edge (108 of 111 rays, radius 29.1 m) is centred 151.3° from home; the infield grass square\'s edges 150.9° (spread 3.8°). Chalk foul lines ' +
+      '20–60 m out: 195.95° and 105.9°, midline 150.9°; 30–95 m out on a 260 m-wide image of the same flight: 195.6° and 104.7°, midline ' +
+      '150.1–151.35°. Mean 151.0°, recorded as 151° ±1°. Replaces 145° (ballparks.com lists 150°).',
+  },
+  {
+    stadiumId: 'guardians',
+    imageCenter: { latitude: 41.49581, longitude: -81.68528 },
+    imageHalfWidthMeters: 75,
+    imageSizePx: 600,
+    naipTile: 'm_4108135_ne_17_030_20230526',
+    acquired: '2023-05-26',
+    nativeResolutionMeters: 0.3,
+    homeSeedPx: [299.29, 412.72],
+    moundSeedPx: [298.49, 344.46],
+    homeCenterPx: [299.29, 412.72],
+    moundCenterPx: [298, 344],
+    bearingHomeToMoundDeg: 358.92,
+    bearingInfieldSymmetryDeg: 359.2,
+    orientationDeg: 0,
+    precisionDeg: 1.5,
+    grassRule: 'slight-blue-cast',
+    measuredOn: '2026-11-11',
+    notes:
+      'Grass reads only a little greener than blue (76, 85, 76), hence grassRule \'slight-blue-cast\'. Home → mound 358.92°; infield mirror axis ' +
+      '359.2° (94.5% overlap); the infield grass square\'s edges 1.25° (spread 4°). Chalk foul lines 20–60 m out: 45.6° and 313.5°, midline 359.55°; ' +
+      '30–95 m out on a 260 m-wide image of the same flight: midline 359.9–0.6°. A circle fitted to the infield dirt\'s outer edge kept only 49 of 98 ' +
+      'rays (the third-base side is in the stands\' shadow) and lands at 358.3°, so it is not used. Mean of the others 359.9°, recorded as 0° with ' +
+      '±1.5° for the spread (358.9–1.25°). Replaces 356°.',
+  },
+  {
+    stadiumId: 'twins',
+    imageCenter: { latitude: 44.98171, longitude: -93.27792 },
+    imageHalfWidthMeters: 75,
+    imageSizePx: 600,
+    naipTile: 'm_4409306_ne_15_060_20210618',
+    acquired: '2021-06-18',
+    nativeResolutionMeters: 0.6,
+    homeSeedPx: [180, 292],
+    moundSeedPx: [253.58, 294.29],
+    homeCenterPx: [180, 292],
+    moundCenterPx: [254, 294],
+    bearingHomeToMoundDeg: 91.55,
+    bearingInfieldSymmetryDeg: 90.6,
+    orientationDeg: 91,
+    precisionDeg: 1,
+    grassRule: 'slight-blue-cast',
+    measuredOn: '2026-11-11',
+    notes:
+      'Grass reads only a little greener than blue (61, 86, 84), hence grassRule \'slight-blue-cast\'. Home → mound 91.55°; infield mirror axis ' +
+      '90.6° (91.7% overlap); a circle fitted to the infield dirt\'s outer edge (103 of 111 rays, radius 29.7 m) is centred 91.55° from home; the ' +
+      'infield grass square\'s edges 90.6° (spread 3.8°). Chalk foul lines 20–60 m out: midline 90.5°; 30–95 m out on a 260 m-wide image of the ' +
+      'same flight: 135.5° and 44.8°, midline 90.1–90.55°. Mean 90.8°, recorded as 91° ±1°. Replaces 90° (ballparks.com lists 90°).',
+  },
+  {
+    stadiumId: 'whitesox',
+    imageCenter: { latitude: 41.83000, longitude: -87.63397 },
+    imageHalfWidthMeters: 75,
+    imageSizePx: 600,
+    naipTile: 'm_4108711_ne_16_060_20190802',
+    acquired: '2019-08-02',
+    nativeResolutionMeters: 0.6,
+    homeSeedPx: [211, 214],
+    moundSeedPx: [265.18, 259.79],
+    homeCenterPx: [211, 214],
+    moundCenterPx: [265.22, 259.65],
+    bearingHomeToMoundDeg: 130.1,
+    bearingInfieldSymmetryDeg: 128.6,
+    orientationDeg: 129,
+    precisionDeg: 2,
+    measuredOn: '2026-11-11',
+    notes:
+      'The only USGS flight here (2019, 0.6 m) is an afternoon one: the first-base stands\' shadow covers home plate\'s left half and the ' +
+      'first-base line. Home is read from the sunlit edges of the home-plate circle (top 418, right 447 on the 260 m image, radius 16 px), so it ' +
+      'is fixed by eye, not refined. Home → mound 130.1°; infield mirror axis 128.6° (90% overlap; the shadow counts as non-grass); home → the ' +
+      'centre of a circle fitted to the sunlit infield dirt edge (104 of 108 rays) 130.45°. The third-base chalk line is in the sun: 84.5° at ' +
+      '20–60 m, 82.9–84.0° at 30–95 m, and the left-field corner sits 82.6° from home, so the axis is 127.6–129.5° (the lines are square). The ' +
+      'sunlit edges of the grass square give 127.6° and 129.6°. The first-base line\'s fits (172–177°) follow the shadow\'s edge and are not used. ' +
+      'Mean 128.9°, recorded as 129° ±2° for the shadow. Replaces 120°.',
+  },
+  {
+    stadiumId: 'athletics',
+    imageCenter: { latitude: 38.58040, longitude: -121.51380 },
+    imageHalfWidthMeters: 75,
+    imageSizePx: 600,
+    naipTile: 'm_3812128_ne_10_060_20220621',
+    acquired: '2022-06-21',
+    nativeResolutionMeters: 0.6,
+    homeSeedPx: [211.71, 382.31],
+    moundSeedPx: [264.2, 335.49],
+    homeCenterPx: [211.71, 382.31],
+    moundCenterPx: [264, 335],
+    bearingHomeToMoundDeg: 47.86,
+    bearingInfieldSymmetryDeg: 47.1,
+    orientationDeg: 47,
+    precisionDeg: 1.5,
+    measuredOn: '2026-11-11',
+    notes:
+      'Sutter Health Park, the Athletics\' home in 2025. Home → mound 47.86°; infield mirror axis 47.1° (93.3% overlap); a circle fitted to the ' +
+      'infield dirt\'s outer edge (all 111 rays, radius 29.1 m) is centred 47.2° from home; the infield grass square\'s edges 46.7° (spread ' +
+      '1.1°). Chalk foul lines 30–95 m out on a 260 m-wide image of the same flight: 93.0° and 1.5°, midline 45.7–47.3° (the 20–60 m fit put ' +
+      'them 96° apart, so it is not used). Mean 47.0°, recorded as 47° with ±1.5° for the spread (45.7–47.9°). Replaces 20°, which was 27° low.',
+  },
 ];
 
 export function getOrientationMeasurement(stadiumId: string): OrientationMeasurement | undefined {

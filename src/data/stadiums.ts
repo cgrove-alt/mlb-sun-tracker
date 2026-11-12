@@ -59,7 +59,7 @@ export const MLB_STADIUMS: Stadium[] = [
     state: 'CA',
     latitude: 38.5803,
     longitude: -121.5132,
-    orientation: 20, // NNE — verified via Esri World Imagery 2026-05-13 (Sutter Health Park; prior 330° was the old Oakland Coliseum's orientation)
+    orientation: 47, // NE — measured 2026-11-11 from USGS NAIP imagery (47° ±1.5°); replaces 20°. See orientationMeasurements.ts.
     capacity: 14014,
     roof: 'open',
     timezone: 'America/Los_Angeles'
@@ -179,7 +179,7 @@ export const MLB_STADIUMS: Stadium[] = [
     state: 'OH',
     latitude: 41.4962,
     longitude: -81.6852,
-    orientation: 356, // N — corrected 2026-05-13. Great-circle bearing between OSM polygon's identified HP and CF wall vertices = 355.9°. Polygon-PCA gave 356.3°. Cleveland's downtown skyline is north of the stadium and visible beyond CF per Wikipedia, geometrically consistent with CF=N. Previous 60° was wrong.
+    orientation: 0, // N — measured 2026-11-11 from USGS NAIP imagery (0° ±1.5°); replaces 356°. See orientationMeasurements.ts.
     capacity: 34830,
     roof: 'open',
     timezone: 'America/New_York' // Eastern Time — was incorrectly 'America/Chicago' (Central). Cleveland observes Eastern Time year-round.
@@ -377,7 +377,7 @@ export const MLB_STADIUMS: Stadium[] = [
     state: 'MI',
     latitude: 42.3390,
     longitude: -83.0485,
-    orientation: 145,
+    orientation: 151, // SSE — measured 2026-11-11 from USGS NAIP imagery (151° ±1°); replaces 145°. See orientationMeasurements.ts.
     capacity: 41083,
     roof: 'open',
     timezone: 'America/New_York' // Eastern Time — was incorrectly 'America/Chicago' (Central). Detroit and all of Michigan's Lower Peninsula observe Eastern; only 4 western UP counties are Central.
@@ -390,7 +390,7 @@ export const MLB_STADIUMS: Stadium[] = [
     state: 'MN',
     latitude: 44.9817,
     longitude: -93.2776,
-    orientation: 90, // E — corrected 2026-06-23 from 40° (NE, wrong sub-quadrant). ballparks.com (Target 90°) + sun pattern ("faces east", sets behind HP near 3B) confirm due east. The old satellite ~39° read appears to have been wrong. See provenance.
+    orientation: 91, // E — measured 2026-11-11 from USGS NAIP imagery (91° ±1°); replaces 90°. See orientationMeasurements.ts.
     capacity: 38544,
     roof: 'open',
     timezone: 'America/Chicago'
@@ -403,7 +403,7 @@ export const MLB_STADIUMS: Stadium[] = [
     state: 'IL',
     latitude: 41.8299,
     longitude: -87.6338,
-    orientation: 120, // ESE/SE — confirmed southeast-facing orientation (was incorrectly set to 90/due-East)
+    orientation: 129, // SE — measured 2026-11-11 from USGS NAIP imagery (129° ±2°); replaces 120°. See orientationMeasurements.ts.
     capacity: 40615,
     roof: 'open',
     timezone: 'America/Chicago'
