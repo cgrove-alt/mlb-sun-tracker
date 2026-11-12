@@ -98,6 +98,8 @@ PARKS = {
         # 2017-18, after this scan, and is not measured; the Terrace and the
         # 400s are under the upper deck and its roof.
         'tiers': {'upperBox': (12, 17, 'near', 15), 'bleachers': (2, 8, 'near', 15)},
+        'skip': {'515': 'its cut crosses the bleachers\' end structure (landings, a platform, a lattice board), not its rows',
+                 '536': 'its cut crosses the bleachers\' end platforms, not its rows'},
     },
     'giants': {
         'scan': {'ept': 'CA_SanFrancisco_1_B23'}, 'name': 'USGS 3DEP CA_SanFrancisco_B23 (San Francisco 2023)',
@@ -105,6 +107,7 @@ PARKS = {
         # The View level is rows A-D, a cross-aisle, then rows 1-18: the band
         # picks rows 1-18. The suites are enclosed under it.
         'tiers': {'lower': (-1, 4), 'club': (7, 12), 'view': (22, 27, 'near', 15), 'bleachers': (1, 4), 'arcade': (3, 7)},
+        'skip': {'122': 'its cut runs down a vomitory ramp, which drags the treads\' line below the seats'},
     },
     'phillies': {
         # Not in the AWS copy: one tile from USGS (rockyweb), 163 MB, downloaded to tmp/lidar/raw/.

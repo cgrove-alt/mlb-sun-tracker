@@ -798,7 +798,9 @@ const WRIGLEY_LIDAR = 'USGS 3DEP lidar IL_4County_Cook_2017, flown 2017-04-17 to
  * rows are from Rate Your Seats' section pages.
  *
  * The upper deck and the bleachers are measured on USGS airborne lidar
- * (WRIGLEY_LIDAR), as at Dodger Stadium. The lower bowl is not: the club
+ * (WRIGLEY_LIDAR), as at Dodger Stadium, with covered rows from the scan
+ * where it puts a roof's edge more than two rows from the source's row. The
+ * lower bowl is not: the club
  * boxes and field boxes were rebuilt in the 2017–18 offseason (with the
  * American Airlines 1914 Club under them), after the scan, so its heights
  * stay estimated: a shallow bowl rising to the upper deck's underside
@@ -809,8 +811,8 @@ const WRIGLEY: StadiumStructure = {
   stadiumId: 'cubs',
   // Far rim (lidar): the stands' roof line, median over sections 95 ft (the
   // upper-deck roof); crossing: the median distance from a section to what
-  // rises highest across the field, 603 ft.
-  park: { roof: 'open', farRimHeightFt: 95, fieldCrossingFt: 603 },
+  // rises highest across the field, 619 ft.
+  park: { roof: 'open', farRimHeightFt: 95, fieldCrossingFt: 619 },
   tierOf: wrigleyTier,
   tiers: {
     clubBox: {
@@ -887,28 +889,23 @@ const WRIGLEY: StadiumStructure = {
     },
     upperBox: {
       label: 'Upper deck (300s)',
-      // Rows 1–10 (331: 12), covered by the roof from row 7 (315 and 316
-      // from row 5) (sourced). Lidar (21 of 28): front row 48 ft (47–48),
-      // 26° rake (20–30). The roof, on posts, reaches out over row 1–2: its
-      // underside there is 87 ft up (86–87, where the scan sees its face),
-      // its top 89 ft, and that edge is what rises highest behind. With the
-      // source and the scan disagreeing on the covered rows, the confidence
-      // check tries cover both ways.
+      // Rows 1–10 (331: 12). Rate Your Seats counts them covered by the roof
+      // from row 7 (315 and 316 from row 5). Lidar (21 of 28): front row
+      // 48 ft (47–48), 26° rake (20–30). The roof, on its posts, reaches out
+      // over row 1–2: its underside there is 87 ft up (the bottom of its
+      // face, 86–87), its top 89 ft, so every row is under it; that edge is
+      // what rises highest behind.
       stand: {
         rows: 10,
         frontRowHeightFt: 48,
         rakeDeg: 26,
         backHeightFt: 89,
         backSetbackFt: -18,
-        overhang: { coveredFromRow: 7, soffitHeightFt: 87 },
+        overhang: { coveredFromRow: 1, soffitHeightFt: 87 },
       },
-      sections: {
-        '315L': { overhang: { coveredFromRow: 5, soffitHeightFt: 87 } },
-        '316L': { overhang: { coveredFromRow: 5, soffitHeightFt: 87 } },
-        '331R': { rows: 12 },
-      },
+      sections: { '331R': { rows: 12 } },
       heightsSourced: true,
-      coverSourced: false,
+      coverSourced: true,
       sources: [rysWrigley('sections/305'), rysWrigley('sections/310'), rysWrigley('sections/315'), rysWrigley('sections/320'), rysWrigley('sections/331'), WRIGLEY_LIDAR],
     },
     upperReserved: {
@@ -932,24 +929,24 @@ const WRIGLEY: StadiumStructure = {
     },
     bleachers: {
       label: 'Bleachers',
-      // Rows 1–21 (501: 7–14, 511: 14 rows), uncovered (sourced). Lidar (14
-      // of 15): front row 9 ft over the ivy wall (8–16; 16 in center field),
-      // 30° rake (17–30). What rises highest behind differs: mostly the
-      // rooftop buildings across the street (54–68 ft, 60–150 ft back), the
-      // scoreboard (511), the video boards over the back rows of 505 and
-      // 506 (85–94 ft; the scan shows them over rows 15–17 there, which the
-      // source does not count as covered), or the back wall (507, 512).
-      stand: { rows: 21, frontRowHeightFt: 9, rakeDeg: 30, backHeightFt: 57, backSetbackFt: 19 },
+      // Rows 1–21 (501: 7–14, 511: 14 rows), uncovered (sourced). Lidar (12
+      // of 15; the cuts through 515 and 536 cross the stand's end platforms):
+      // front row 9 ft over the ivy wall (8–16; 16 in center field), 30°
+      // rake (21–30). What rises highest behind differs: mostly the rooftop
+      // buildings across the street (57 ft median, up to 65 ft), the
+      // scoreboard (511), the back wall (507, 512). The left-field video
+      // board's underside is 85 ft up over rows 15–17 of 505 and 506, which
+      // the lidar shows covered from there (the source calls them open).
+      stand: { rows: 21, frontRowHeightFt: 9, rakeDeg: 30, backHeightFt: 57, backSetbackFt: 11 },
       sections: {
         '501': { rows: 8, frontRowHeightFt: 16, backHeightFt: 65, backSetbackFt: 105 },
         '502': { frontRowHeightFt: 16, backHeightFt: 65, backSetbackFt: 105 },
         '503': { frontRowHeightFt: 16 },
-        '505': { backHeightFt: 94, backSetbackFt: -16 },
-        ...Object.fromEntries(['506', '511'].map((id) => [id, { backHeightFt: 86, backSetbackFt: 6 }])),
+        '505': { backHeightFt: 94, backSetbackFt: -16, overhang: { coveredFromRow: 15, soffitHeightFt: 85 } },
+        '506': { backHeightFt: 86, backSetbackFt: -2, overhang: { coveredFromRow: 17, soffitHeightFt: 85 } },
+        '511': { backHeightFt: 86, backSetbackFt: -2 },
         ...Object.fromEntries(['507', '512'].map((id) => [id, { backHeightFt: 36, backSetbackFt: 10 }])),
         '513': { backHeightFt: 48, backSetbackFt: -18 },
-        '515': { frontRowHeightFt: 16, backHeightFt: 68, backSetbackFt: 96 },
-        '536': { backHeightFt: 40, backSetbackFt: -26 },
         '537': { rows: 15 },
         '538': { backHeightFt: 51, backSetbackFt: 4 },
       },
