@@ -32,6 +32,8 @@ import { tigersSections, TIGERS_AERIAL_CONTROL } from '../tigers';
 import { tigersChartPoints } from '../chart-points/tigers';
 import { guardiansSections, GUARDIANS_AERIAL_CONTROL } from '../guardians';
 import { guardiansChartPoints } from '../chart-points/guardians';
+import { twinsSections, TWINS_AERIAL_CONTROL } from '../twins';
+import { twinsChartPoints } from '../chart-points/twins';
 import { aerialChartFit } from '../parkSectionBuilder';
 import { getStadiumOrientation } from '../../../stadiums';
 
@@ -725,5 +727,44 @@ describe('Progressive Field stand directions (measured on the 2023 aerial photo)
     expect(stand('117')).toBe(140);
     expect(stand('178')).toBe(221);
     expect(stand('183')).toBe(328);
+  });
+});
+
+describe('Target Field stand directions (measured on the 2021 aerial photo)', () => {
+  // Level lines run parallel to both foul lines (backs 226° and 316°);
+  // behind home the rows are arcs centred near home plate.
+  const byId = new Map(twinsSections.map((s) => [s.id, s]));
+  const stand = (id: string) => {
+    const value = byId.get(id)?.standCompass;
+    if (value === undefined) throw new Error(`No stand direction for ${id}`);
+    return value;
+  };
+  const bearing = (id: string) => {
+    const s = byId.get(id)!;
+    return (((getStadiumOrientation('twins') + 90 - s.baseAngle - s.angleSpan / 2) % 360) + 360) % 360;
+  };
+
+  it('pins the club map to the photo within 5 m', () => {
+    expect(aerialChartFit(twinsChartPoints, TWINS_AERIAL_CONTROL).rmsM).toBeLessThan(5);
+  });
+
+  it('puts 111–117 on the wedges between the aisles seen behind home', () => {
+    // Aisles at 229°, 243.5°, 254.3°, 265.5°, 273.5°, 284.5°, 296° and 310°.
+    const wedges: Record<string, number> = { '111': 236.25, '112': 248.9, '113': 259.9, '114': 269.5, '115': 279, '116': 290.25, '117': 303 };
+    for (const [id, middle] of Object.entries(wedges)) expect(diff(bearing(id), middle)).toBeLessThan(4);
+  });
+
+  it.each(['3', '108', 'B', '208', '308'])('first-base section %s faces 226°', (id) => expect(stand(id)).toBe(226));
+  it.each(['13', '120', 'P', '222', '322'])('third-base section %s faces 316°', (id) => expect(stand(id)).toBe(316));
+
+  it.each(['114', 'H', '214', '314'])('behind-home section %s faces away from center field', (id) => {
+    expect(diff(stand(id), getStadiumOrientation('twins') + 180)).toBeLessThan(10);
+  });
+
+  it('the corners and outfield stands follow the photo', () => {
+    expect(stand('102')).toBe(205);
+    expect(stand('125')).toBe(340);
+    expect(stand('130')).toBe(52);
+    expect(stand('134')).toBe(130);
   });
 });

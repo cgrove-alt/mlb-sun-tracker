@@ -821,6 +821,22 @@ Medium or Low confidence and their blog posts stay unpublished.
             sunny as the seats below). Sections whose rows start a few rows
             up (326 at D, 348 at C, 176–177 at Y) get their front row's
             height. RYS's noon advice names 257–267, not on today's map.
+      - [x] Target Field: the boxes (1–17) and 100s counted on the photo:
+            boxes every ~9.5 m along each line (the three behind each dugout
+            are RYS's rows-5–13 sections), behind home aisles at 229.5–310°
+            with one on the axis between 8 and 9; the 100s' aisles put 114
+            (a narrow section) on the axis. Affine fit 3.5 m RMS with the
+            left-field bleachers and the right-field seats pinned as whole
+            stands (the builder takes affine within 5 m). Stands 226°/316°,
+            arcs on home, corners 205°/340° from their aisles; the canopy's
+            front edge (new tmp/edgeRays.ts) follows the same shape, so the
+            upper rings use the same runs with their own corner bounds.
+            Outfield 52° (left) and 130° (right). 52 checks. RYS's "1 PM"
+            advice for the first-base 100s (rows 10+) and club A–D holds in
+            September, not July (sun ~67° up); not reproduced: third-base
+            rows 15–16 by the end, K–R's lower rows by mid-game, 316–327
+            "ending in the sun" (the sun swings behind them), bleacher row 5,
+            club E "shaded most day games".
 - [ ] 6.5 Batch 5, retractable roofs (answers assume the roof is open, as
       today): Diamondbacks, Rangers, Astros, Marlins, Brewers, Mariners,
       Blue Jays.

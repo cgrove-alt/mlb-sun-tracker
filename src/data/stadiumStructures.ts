@@ -3525,6 +3525,214 @@ const PROGRESSIVE: StadiumStructure = {
   reviewedOn: '2026-11-11',
 };
 
+const rysTarget = (path: string) => `https://www.rateyourseats.com/target-field/seating/${path}`;
+const RYS_TARGET = rysTarget('shaded-covered-seats');
+const targetSections = (...ids: string[]) => ids.map((n) => rysTarget(`sections/${n}`));
+/** Target Field's covered rows as positions in each section's numbered rows (Rate Your Seats). */
+const TARGET_COVER: Record<string, number> = {
+  '101': 32, '102': 39, '103': 41, '104': 41, '105': 25,
+  '124': 37, '125': 37, '126': 37,
+  '301': 8, '302': 7, '303': 7, '304': 4, '326': 6, '327': 8,
+};
+const targetCover = (ids: readonly string[], soffitHeightFt: number) =>
+  Object.fromEntries(ids.filter((id) => TARGET_COVER[id]).map((id) => [id, { overhang: { coveredFromRow: TARGET_COVER[id], soffitHeightFt } }]));
+const targetIds = (from: number, to: number) => Array.from({ length: to - from + 1 }, (_, i) => String(from + i));
+
+/** Seating ring of a Target Field chart section. */
+export function targetTier(id: string): string | null {
+  if (/^ES[A-H]$/.test(id)) return 'suite';
+  if (/^\d{1,2}$/.test(id)) return 'box';
+  if (/^[A-V]$/.test(id)) return id === 'E' ? 'clubCoverUnsourced' : /^[F-J]$/.test(id) ? 'clubOpen' : 'club';
+  // The Delta suite, the party deck, the dock and standing room: no source
+  // gives their seats or cover.
+  if (!/^\d{3}$/.test(id)) return null;
+  const n = Number(id);
+  if (n <= 106 || (n >= 123 && n <= 127)) return 'corner';
+  if (n <= 122) return 'infield';
+  if (n <= 131) return 'bleachers';
+  if (n <= 135) return 'cove';
+  if (n <= 140) return 'rightField';
+  if (n <= 228) return 'terrace';
+  if (n <= 234) return 'porch';
+  if (n <= 240) return 'rightFieldDeck';
+  if (n <= 327) return 'view';
+  return 'porchUpper';
+}
+
+/**
+ * Target Field (2010). Boxes (1–17, rows to 13) in front of the 100s (rows
+ * 1–28, to 44 in the corners), which the club level covers from row 17; the
+ * Delta club (A–V, rows 1–12) and the 200s above them, and the 300s under the
+ * canopy from row 3. In left field, bleachers (128–131) under the 200s and the
+ * open Home Run Porch above; in right field, Treasure Island Cove (132–135,
+ * covered) and open seats. Rows and covered rows are Rate Your Seats' section
+ * pages. On the 2021 USGS photo, square to the first-base line, the boxes run
+ * ~14–24 m back, the 100s from ~27 m, the club deck's front stands at ~40 m
+ * and the canopy's at ~58 m (~59 m from home behind it). No source publishes
+ * the deck heights, so every height is estimated by stacking the decks.
+ */
+const TARGET: StadiumStructure = {
+  stadiumId: 'twins',
+  // Far rim: the canopy (~110 ft) about 520 ft across the field.
+  park: { roof: 'open', farRimHeightFt: 110, fieldCrossingFt: 520 },
+  tierOf: targetTier,
+  tiers: {
+    box: {
+      label: 'Boxes (1–17)',
+      // Rows 1–13 (5–13 behind the dugouts), open ("rarely shaded").
+      // Estimated: front ~3 ft, 14° rake; the canopy (~110 ft) ~34 m behind
+      // the last row.
+      stand: { rows: 13, frontRowHeightFt: 3, rakeDeg: 14, treadFt: 2.8, backHeightFt: 110, backSetbackFt: 110 },
+      sections: Object.fromEntries(['4', '5', '6', '11', '12', '13'].map((id) => [id, { frontRowHeightFt: 5.8 }]).concat(['16', '17'].map((id) => [id, { frontRowHeightFt: 5.1 }]))),
+      rowsFromMap: true,
+      heightsSourced: false,
+      coverSourced: true,
+      sources: [RYS_TARGET, ...targetSections('1', '4', '11', '14', '16')],
+    },
+    infield: {
+      label: 'Infield 100s (107–122)',
+      // Rows 1–28, covered from row 17 by the club level (sourced; "the
+      // last twelve rows"). Estimated: front ~12 ft, 20° rake, deck
+      // underside ~34 ft; the canopy (~110 ft) ~8 m behind the last row.
+      stand: { rows: 28, frontRowHeightFt: 12, rakeDeg: 20, treadFt: 2.8, backHeightFt: 110, backSetbackFt: 26, overhang: { coveredFromRow: 17, soffitHeightFt: 34 } },
+      rowsFromMap: true,
+      heightsSourced: false,
+      coverSourced: true,
+      sources: [RYS_TARGET, ...targetSections('107', '110', '114', '118', '122')],
+    },
+    corner: {
+      label: 'Corners (101–106, 123–127)',
+      // Rows 1–28 to 1–44; 101–104 covered from row 41 (here 32–41), 105
+      // from 25, 124–126 from 37 (sourced); 106, 123 and 127 not.
+      stand: { rows: 44, frontRowHeightFt: 4, rakeDeg: 20, treadFt: 2.8, backHeightFt: 60 },
+      sections: { ...targetCover([...targetIds(101, 105), '124', '125', '126'], 54), '101': { frontRowHeightFt: 11, overhang: { coveredFromRow: TARGET_COVER['101'], soffitHeightFt: 54 } }, '127': { frontRowHeightFt: 7 } },
+      rowsFromMap: true,
+      heightsSourced: false,
+      coverSourced: true,
+      sources: [RYS_TARGET, ...targetSections('101', '104', '105', '106', '123', '124', '127')],
+    },
+    club: {
+      label: 'Delta SKY360 Club (A–D, K–V)',
+      // Rows 1–12 (to 14), covered from row 9 (sourced). Estimated: front
+      // ~34 ft, 20° rake, the 200s' underside ~48 ft.
+      stand: { rows: 12, frontRowHeightFt: 34, rakeDeg: 20, treadFt: 2.8, backHeightFt: 110, backSetbackFt: 40, overhang: { coveredFromRow: 9, soffitHeightFt: 48 } },
+      rowsFromMap: true,
+      heightsSourced: false,
+      coverSourced: true,
+      sources: [RYS_TARGET, ...targetSections('A', 'D', 'K', 'R', 'V')],
+    },
+    clubOpen: {
+      label: 'Delta SKY360 Club (F–J)',
+      // Rows 1–12 behind home with no covered rows given; "E–J start in the
+      // sun and eventually become shaded".
+      stand: { rows: 12, frontRowHeightFt: 34, rakeDeg: 20, treadFt: 2.8, backHeightFt: 110, backSetbackFt: 40 },
+      rowsFromMap: true,
+      heightsSourced: false,
+      coverSourced: true,
+      sources: [RYS_TARGET, ...targetSections('F', 'H', 'J')],
+    },
+    clubCoverUnsourced: {
+      label: 'Delta SKY360 Club (E)',
+      // "All seats … shaded during most day games", but no covered rows
+      // given, so the check tries both.
+      stand: { rows: 12, frontRowHeightFt: 34, rakeDeg: 20, treadFt: 2.8, backHeightFt: 110, backSetbackFt: 40, overhang: { coveredFromRow: 9, soffitHeightFt: 48 } },
+      rowsFromMap: true,
+      heightsSourced: false,
+      coverSourced: false,
+      sources: targetSections('E'),
+    },
+    terrace: {
+      label: 'Terrace (201–228)',
+      // Rows 1–4 to 1–8, open (no covered rows given). Estimated: front
+      // ~52 ft, 22° rake, the 300s rising behind.
+      stand: { rows: 6, frontRowHeightFt: 52, rakeDeg: 22, treadFt: 2.8, backHeightFt: 110, backSetbackFt: 30 },
+      rowsFromMap: true,
+      heightsSourced: false,
+      coverSourced: true,
+      sources: targetSections('201', '211', '220', '228'),
+    },
+    view: {
+      label: 'View level (301–327)',
+      // Rows 1–14, covered from row 3 by the canopy (7–8 at the ends;
+      // sourced). Estimated: front ~66 ft, 28° rake, canopy underside
+      // ~100 ft.
+      stand: { rows: 14, frontRowHeightFt: 66, rakeDeg: 28, treadFt: 2.7, backHeightFt: 110, overhang: { coveredFromRow: 3, soffitHeightFt: 100 } },
+      sections: targetCover(['301', '302', '303', '304', '326', '327'], 100),
+      rowsFromMap: true,
+      heightsSourced: false,
+      coverSourced: true,
+      sources: [RYS_TARGET, ...targetSections('301', '303', '310', '320', '327')],
+    },
+    bleachers: {
+      label: 'Left-field bleachers (128–131)',
+      // Rows 1–15/16 under the 200 level from row 3 (sourced: "all rows …
+      // covered by the overhang" but "the first couple rows … always in the
+      // sun"). Estimated: front ~10 ft, 20° rake, deck underside ~22 ft.
+      stand: { rows: 15, frontRowHeightFt: 10, rakeDeg: 20, treadFt: 2.8, backHeightFt: 50, overhang: { coveredFromRow: 3, soffitHeightFt: 22 } },
+      rowsFromMap: true,
+      heightsSourced: false,
+      coverSourced: true,
+      sources: [RYS_TARGET, ...targetSections('128', '131')],
+    },
+    porch: {
+      label: 'Home Run Porch, 200 level (229–234)',
+      // Rows 1–4 to 1–7, open ("the only shade comes from the clouds").
+      stand: { rows: 6, frontRowHeightFt: 28, rakeDeg: 20, treadFt: 2.8, backHeightFt: 34 },
+      rowsFromMap: true,
+      heightsSourced: false,
+      coverSourced: true,
+      sources: [RYS_TARGET, ...targetSections('229', '234')],
+    },
+    porchUpper: {
+      label: 'Home Run Porch, 300 level (329–334)',
+      // Rows 1–16, open.
+      stand: { rows: 16, frontRowHeightFt: 46, rakeDeg: 26, treadFt: 2.8, backHeightFt: 64 },
+      rowsFromMap: true,
+      heightsSourced: false,
+      coverSourced: true,
+      sources: [RYS_TARGET, ...targetSections('329', '334')],
+    },
+    cove: {
+      label: 'Treasure Island Cove (132–135)',
+      // Rows 1–4, all under the overhang (sourced). Estimated: front ~14 ft
+      // over the wall, deck underside ~24 ft.
+      stand: { rows: 4, frontRowHeightFt: 14, rakeDeg: 15, treadFt: 2.8, backHeightFt: 40, overhang: { coveredFromRow: 1, soffitHeightFt: 24 } },
+      rowsFromMap: true,
+      heightsSourced: false,
+      coverSourced: true,
+      sources: [RYS_TARGET, ...targetSections('132', '135')],
+    },
+    rightField: {
+      label: 'Right field (136–140)',
+      // Rows 1–7, open.
+      stand: { rows: 7, frontRowHeightFt: 14, rakeDeg: 15, treadFt: 2.8, backHeightFt: 40 },
+      rowsFromMap: true,
+      heightsSourced: false,
+      coverSourced: true,
+      sources: targetSections('136', '138'),
+    },
+    rightFieldDeck: {
+      label: 'Right-field 200s (237–240)',
+      // Rows 1–12 to 1–22, open ("no shade for day games").
+      stand: { rows: 16, frontRowHeightFt: 30, rakeDeg: 24, treadFt: 2.8, backHeightFt: 50 },
+      rowsFromMap: true,
+      heightsSourced: false,
+      coverSourced: true,
+      sources: targetSections('237', '240'),
+    },
+    suite: {
+      label: 'Suites',
+      // As at the other parks: one row of seats under the suite level's
+      // ceiling. Estimated ~50 ft up.
+      stand: { rows: 1, frontRowHeightFt: 50, rakeDeg: 0, backHeightFt: 62, overhang: { coveredFromRow: 1, soffitHeightFt: 58 } },
+      heightsSourced: false,
+      coverSourced: true,
+      sources: ['https://www.mlb.com/twins/ballpark/seating-map'],
+    },
+  },
+  reviewedOn: '2026-11-11',
+};
+
 export const STADIUM_STRUCTURES: Readonly<Record<string, StadiumStructure>> = {
   yankees: YANKEES,
   redsox: FENWAY,
@@ -3545,6 +3753,7 @@ export const STADIUM_STRUCTURES: Readonly<Record<string, StadiumStructure>> = {
   pirates: PNC,
   tigers: COMERICA,
   guardians: PROGRESSIVE,
+  twins: TARGET,
 };
 
 export function getStadiumStructure(stadiumId: string): StadiumStructure | undefined {
