@@ -991,6 +991,158 @@ Each park shows as profiled, has its measured orientation and 5+ passing
 reference checks, and its page is checked on a phone. All tests pass. New
 blog posts for these parks come after, as their own step.
 
+## 7. Plan: measured heights from lidar (2026-11-12)
+
+Why: 264 of the 265 profiled tiers in `stadiumStructures.ts` have estimated heights.
+The confidence check moves estimates ±25% (measured ±10%), which is behind
+most Low labels (18–75% of sections at a 1:10 PM game). A pilot on Dodger
+Stadium shows the estimates are also off: the loge's front row is ~23 ft up
+(estimated 36 ft) and the top deck's back ~125 ft (estimated 165 ft).
+
+### Source
+USGS 3DEP airborne lidar (public domain), the newest scan of each park:
+- Fast route: USGS's own copy on AWS (`usgs-lidar-public`, Entwine format),
+  which fetches only the park (6M points for Dodger Stadium in 17 s).
+- Slow route: the 2023–24 scans not on AWS come as whole tiles from USGS's
+  rockyweb server (~20–75 KB/s, one connection; it refuses parallel ones).
+  About 920 MB, downloaded in the background while other parks are done:
+  Phillies 163 MB, Pirates 157 MB, Orioles 107 MB, Padres 98 MB (2024),
+  Astros 213 MB (2024), Marlins 183 MB (2023).
+- Points are cropped to 460 m around home plate and kept in `tmp/`
+  (git-ignored); the raw tiles are deleted after cropping.
+
+| Park | Scan (flown) | Park | Scan (flown) |
+|---|---|---|---|
+| Dodgers | LA 2023 (Nov–Dec 2023) | Giants | SF 2023 (Apr 2023) |
+| Phillies, Pirates | PA 17-County (2024–25) | Orioles | MD 4-County (2024) |
+| Padres | San Diego Co. (2024) | Marlins | Miami-Dade (2023) |
+| Astros | Houston (2024) | Twins | Central Miss. River (May 2022) |
+| Reds | Ohio Phase 3 (Dec 2021–Apr 2022) | Red Sox | MA Central-Eastern (Mar–Apr 2021) |
+| Mariners | King Co. (Apr 2021) | Diamondbacks | Maricopa-Pinal (Oct–Nov 2020) |
+| Rockies | Denver DRCOG (May–Jun 2020) | Royals | MO FEMA-NRCS (2020) |
+| Guardians | Ohio Phase 1 (Nov 2019–Mar 2020) | Braves | Georgia B2 (Jan–Apr 2019) |
+| Cubs, White Sox | Cook Co. (Apr–May 2017) | Tigers | Wayne Co. (Apr 2017) |
+| Cardinals | St. Louis (Feb 2017) | Athletics (Sutter) | Central Valley (Dec 2017) |
+| Brewers | SEWRPC (Mar–Apr 2015) | Yankees, Mets | New York City (Mar–Apr 2014) |
+| Nationals | Sandy NCR (2014) | Angels | CA Gaps 2023 (partial; checked first) |
+
+A stand rebuilt after its scan keeps its estimate, with the reason written
+down (for example Wrigley's 2018 field boxes, Progressive Field's 2023–25
+work). Rogers Centre (not USGS), Globe Life Field (scan predates it) and
+Tropicana Field (fixed roof) are out of scope.
+
+### Method (one reproducible script, `scripts/measureStandHeights.py`)
+1. Field level: median ground return within 35 m of home plate.
+2. For each section, a cross-section from home along its bearing finds the
+   stacked seating runs. The section's tier is picked by its order from the
+   field (a short list per park, checked on a picture), not by its pinned
+   centre: the pilot shows the club drawings' upper decks can sit 10–20 m
+   off radially.
+3. A second cross-section along the section's stand direction through that
+   run measures:
+   - the front row's height and the rake (from the treads);
+   - the bottom edge of the deck above, where the scan hits its front face;
+   - what stands behind (height and setback);
+   - the far rim, once per park.
+4. A tier's value is the median over its sections. A section that differs
+   by more than 10% (or 3 ft) gets its own value.
+5. The values replace the estimates, each with a note naming the scan, its
+   dates and the spread. `heightsSourced` becomes true only for a tier whose
+   heights are all measured. A tier hidden under a deck keeps its own floor
+   estimated and stays false, with the reason written down.
+6. Covered rows stay as their sources give them. Where the lidar's deck edge
+   disagrees by more than two rows, I note it and ask you before changing
+   anything.
+
+### Checks per park
+- All tests run.
+- A reference check that changes result is investigated against its
+  cross-section and recorded in the test header, never tuned away.
+- The Low-confidence share is recorded before and after.
+- One commit per park.
+
+### Order
+- Same batches as the profiles: Yankees and Fenway with batch 1 (Dodgers,
+  Cubs, Giants, Mets, Phillies), then batches 2–5.
+- I check in with you after batch 1.
+
+- [x] 7.1 Batch 1 lidar heights: Yankees, Fenway, Dodgers, Cubs, Giants, Mets, Phillies
+      (2026-11-12, 11 commits from e5bca2555 to 97a7402f9; all 3436 tests pass).
+      Measured front rows (ft, was estimated):
+      | Park | Lower | Middle | Upper | Far rim |
+      |---|---|---|---|---|
+      | Dodgers | Field 1 (7), Loge 22 (36) | Reserve 56–57 (92) | Top Deck 97 (126) | 120 (165) |
+      | Yankees | Legends 0 (2), 100s 6 (4) | Main 29 (31), Terrace 72 (69) | 400s 95 (96) | 134 (132) |
+      | Fenway | Field Box -1 (2), Loge 4 (10) | — | Pavilion 52–53 (55–60) | 82 (70) |
+      | Wrigley | not measured (rebuilt 2017–18) | — | 300s 48 (40); roof underside 87 (57) | 95 (72) |
+      | Oracle | 100s 0 (3) | Club 32 (48) | View 74 (80); roof 124 (115) | 125 (125) |
+      | Citi | 100s 4 (8) | Sterling 25 (50), Excelsior 46 (62) | 400s 69 (86), Promenade 85 (100) | 129 (138) |
+      | CBP | 100s 0 (3) | 200s 44 (50) | 300s 69 (80), Terrace 90 (96) | 133 (132) |
+      Rakes are mostly lower: lower bowls 9–13° (estimated 14–20°).
+      Not measured, with the reason in the data: Wrigley's lower bowl (rebuilt
+      after the 2017 scan); the Yankee and Fenway bleachers (the club charts
+      put them off their stands); Citi's left-field seats (1 of 6 found);
+      enclosed suites and decks hidden under other decks (re-estimated from
+      the measured decks around them).
+      Low-confidence share at a 1:10 PM game, April / July, before → after:
+      Yankees 50/32 → 61/55, Fenway 45/22 → 33/28, Dodgers 35/20 → 48/45,
+      Cubs 34/31 → 37/37, Giants 35/19 → 40/23, Mets 58/49 → 55/51,
+      Phillies 39/39 → 49/45. The rises come from cover marked unsettled
+      (below) and from tiers whose underside is estimated being perturbed
+      ±50% as a whole, measured heights included.
+      Reference checks changed and recorded (none tuned): Fenway B125–135
+      (the Grandstand roof's edge over Loge row 9 explains RYS's shaded upper
+      rows), Oracle View 333/336 (measured canopy 20 ft above the heads;
+      checked from row 18), CBP Hall of Fame Club 225/227/228. Blog posts:
+      the Yankee and Fenway July/April claims rewritten to the new answers.
+      Method found along the way: lamp banks, lattice light towers and a
+      scoreboard on a pylon are not walls; a deck's underside only counts
+      when its face is seen; the far rim is the roof line (the engine's
+      definition), not the median of what rises across the field.
+      Open for you: the cover question and the confidence split (see
+      "Batch 1 review" below).
+- [ ] 7.2 Batch 2
+- [ ] 7.3 Batch 3
+- [ ] 7.4 Batch 4
+- [ ] 7.5 Batch 5 (retractable roofs: measure the parked roof only where the scan shows it open)
+
+### Batch 1 review (2026-11-12)
+Correction to the plan above: the confidence check moves estimated
+structure ±50% (measured ±10%), not ±25%; the data file's header now says
+so.
+
+**Decision needed 1: covered rows.** In every park the scan shows a deck or
+roof edge over rows that Rate Your Seats does not count as covered, usually
+high above them (the guide counts rows under a low ceiling):
+- Dodgers: Loge (Reserve deck over row 8, 47 ft up; sourced row 13),
+  Infield Reserve 15/16/19/20 (Top Deck over row 12; sourced none).
+- Yankees: Main (Terrace deck over row 8–9; sourced 14), Grandstand
+  (canopy edge over row 2; sourced 6).
+- Fenway: Loge Box (Grandstand roof edge over row 9; sourced none),
+  Pavilion Reserved (over row 6–9; none).
+- Wrigley: 300s (roof edge over row 1–2, underside 87 ft; sourced 7).
+- Oracle: Club (View level over row 5; sourced 10).
+- Citi: 100s (Sterling deck over row 14–15; sourced 27).
+- CBP: 100s (row 27–28; 36), 200s (row 3; 7), right-field 300s (11; 14),
+  left-field seats (16; 20), Terrace Deck (6; 9).
+Rows behind such an edge currently get no shade from it when the sun is
+behind (the model keeps the sourced cover), which is wrong on the ground:
+that is what Fenway's B125 and CBP's Hall of Fame Club checks show. Until
+decided, those tiers' cover is marked unsettled (answers can't show High).
+Option A: take the scan's edge as the first covered row, with the measured
+underside where the scan sees it (estimated where not). Option B: keep the
+sources and the unsettled label.
+
+**Decision needed 2: confidence for mixed tiers.** A tier counts as
+measured only when every height is, and a deck's underside is rarely seen
+from the air, so most measured tiers are still swung ±50% as if guessed.
+A per-value flag (e.g. `soffitSourced`) would let measured fronts, rakes and
+backs move ±10% while the estimated underside moves ±50%.
+
+Tools: `scripts/measureStandHeights.py` (fetch, runs, measure; writes a
+check picture and a plan view per park) and `scripts/lidar/standSections.ts`.
+Scans are kept cropped in tmp/lidar/<park>.npz; the one raw tile is deleted.
+
 ---
 ---
 
