@@ -4276,6 +4276,138 @@ const DAIKIN: StadiumStructure = {
   reviewedOn: '2026-11-12',
 };
 
+const LOANDEPOT_RYS = 'https://www.rateyourseats.com/loandepot-park/seating/shaded-covered-seats';
+const LOANDEPOT_SHADE = 'https://www.shadedseats.com/loandepot-park-shaded-seats/';
+const LOANDEPOT_PHOTO = 'USGS NAIP m_2508015_sw_17_1_20131018 (roof fully open), with the 2017, 2019 and 2022 flights';
+const loanDepotSection = (n: string) => `https://www.rateyourseats.com/loandepot-park/seating/sections/${n}`;
+/**
+ * Per section, from the 2013 photo with the roof fully open: the first row
+ * under the roof (0 = none) and how far behind the last row (m) the roof's
+ * edge stands. Worked out from each section's place on the pinned seat map
+ * and its rows (0.85 m apart) running back along its stand direction. With
+ * the roof open its panels stack west of the field, their edge ~19.5 m west
+ * of home; the fixed ring's inner edge stands ~108.5 m east of home, ~58.4 m
+ * north and ~104 m south. The ring's east edge moves ±7 m between the 2013,
+ * 2019 and 2022 flights (the camera's lean), so 2013's sits close to true.
+ */
+const LOANDEPOT_ROOF: Record<string, [number, number]> = {
+  FL1: [0, 5.5], FL2: [0, 4.5], FL3: [0, 3.5], FL4: [12, 0], FL5: [0, 1], FL6: [0, 8], FL7: [0, 37], FL8: [0, 38.5],
+  FL9: [0, 35], FL10: [0, 34], FL11: [0, 33], FL14: [10, 0], FL15: [0, 4], FL16: [0, 16.5], FS202A: [1, 0],
+  FS203A: [1, 0], FS204A: [1, 0], FS202B: [1, 0], FS203B: [1, 0], FS204B: [1, 0], SEC1: [0, 0.5], SEC2: [24, 0],
+  SEC3: [21, 0], SEC4: [15, 0], SEC5: [16, 0], SEC6: [12, 0], SEC7: [12, 0], SEC8: [10, 0], SEC9: [9, 0],
+  SEC10: [8, 0], SEC11: [2, 0], SEC12: [3, 0], SEC13: [6, 0], SEC14: [5, 0], SEC15: [13, 0], SEC16: [26, 0],
+  SEC17: [0, 13], SEC18: [0, 13], SEC19: [0, 10], SEC20: [0, 9.5], SEC21: [0, 7], SEC22: [0, 4.5], SEC23: [0, 3],
+  SEC24: [0, 2], SEC25: [0, 4.5], SEC26: [0, 2], SEC27: [0, 7.5], SEC28: [0, 2], SEC29: [7, 0], SEC30: [2, 0],
+  SEC31: [1, 0], SEC32: [1, 0], SEC34: [0, 17], SEC35: [0, 2.5], SEC36: [14, 0], SEC38: [10, 0], SEC39: [9, 0],
+  SEC40: [13, 0], SEC134: [0, 26.5], SEC135: [0, 7], SEC136: [4, 0], SEC137: [1, 0], SEC138: [2, 0], SEC139: [3, 0],
+  SEC140: [4, 0], SEC141: [1, 0], SEC201: [1, 0], SEC202: [1, 0], SEC203: [1, 0], SEC204: [1, 0], SEC205: [1, 0],
+  SEC206: [1, 0], SEC207: [1, 0], SEC208: [1, 0], SEC209: [1, 0], SEC210: [1, 0], SEC211: [1, 0], SEC219: [0, 8],
+  SEC220: [0, 6.5], SEC221: [0, 4.5], SEC222: [0, 2.5], SEC223: [9, 0], SEC224: [8, 0], SEC225: [9, 0],
+  SEC226: [10, 0], SEC227: [0, 0.5], SEC228: [0, 1.5], SEC302: [1, 0], SEC303: [1, 0], SEC304: [1, 0],
+  SEC305: [1, 0], SEC306: [1, 0], SEC307: [1, 0], SEC308: [1, 0], SEC309: [1, 0], SEC310: [1, 0], SEC311: [1, 0],
+  SEC312: [1, 0], SEC313: [1, 0], SEC314: [1, 0], SEC315: [1, 0], SEC316: [1, 0], SEC317: [1, 0], SEC318: [3, 0],
+  SEC319: [9, 0], SEC320: [3, 0], SEC321: [1, 0], SEC322: [1, 0], SEC323: [1, 0], SEC324: [1, 0], SEC325: [1, 0],
+  SEC326: [1, 0], SEC327: [4, 0],
+};
+const LOANDEPOT_ROOF_TOP = 200;
+const LOANDEPOT_ROOF_UNDERSIDE = 170;
+const loanDepotSections = (re: RegExp) => Object.fromEntries(Object.entries(LOANDEPOT_ROOF).filter(([id]) => re.test(id)).map(([id, [from, setbackM]]) => [id, {
+  ...(from ? { overhang: { coveredFromRow: from, soffitHeightFt: LOANDEPOT_ROOF_UNDERSIDE } } : {}),
+  backSetbackFt: Math.round(setbackM * 3.28),
+}]));
+
+/** Seating ring of a loanDepot park chart section. */
+export function loanDepotTier(id: string): string | null {
+  const n = id.match(/^SEC(\d+)$/);
+  if (n) {
+    const value = Number(n[1]);
+    if (value >= 300) return 'upper';
+    if (value >= 200) return 'club';
+    if (value >= 134) return 'porch';
+    return 'field';
+  }
+  if (/^FL\d+$/.test(id)) return 'box';
+  if (/^FS20\d[AB]$/.test(id)) return 'club';
+  // Suites, bars, standing areas: no rows or cover listed.
+  return null;
+}
+
+/**
+ * loanDepot park (2012, as Marlins Park), with the roof open. A field level
+ * (1–41, lettered rows in front of rows 1–30) with field boxes (FL) in front
+ * of it, the Home Run Porch (134–141), a 200 level and a 300 level. Rows are
+ * Rate Your Seats' section pages. Which rows are covered is the photo's
+ * geometry above, and matches the published account: "The first base side is
+ * well covered by part of the roof, especially in the upper deck" (Rate Your
+ * Seats); 304–309 "are under cover, thanks to the retractable roof", "the
+ * back of sections 28-32 are under the cover of a permanent roof section",
+ * the back rows of 34–40 under the overhang above (shadedseats.com). No
+ * source gives the roof's or the decks' heights, so they are estimated.
+ */
+const LOANDEPOT: StadiumStructure = {
+  stadiumId: 'marlins',
+  // Far rim: the roof (~200 ft) about 450 ft across the field.
+  park: { roof: 'retractable', farRimHeightFt: LOANDEPOT_ROOF_TOP, fieldCrossingFt: 450 },
+  tierOf: loanDepotTier,
+  tiers: {
+    field: {
+      label: 'Field level (1–41)',
+      // Rows: lettered rows then 1–30 (sourced). Estimated: front ~3 ft,
+      // 20° rake; the roof's edge (~200 ft) behind.
+      stand: { rows: 42, frontRowHeightFt: 3, rakeDeg: 20, backHeightFt: LOANDEPOT_ROOF_TOP },
+      sections: loanDepotSections(/^SEC\d{1,2}$/),
+      rowsFromMap: true,
+      heightsSourced: false,
+      coverSourced: true,
+      sources: [LOANDEPOT_RYS, LOANDEPOT_SHADE, LOANDEPOT_PHOTO, ...['6', '11', '15', '21', '26', '30', '36'].map(loanDepotSection)],
+    },
+    box: {
+      label: 'Field boxes (FL)',
+      // No source lists their rows. Estimated: ~12 rows from ~2 ft.
+      stand: { rows: 12, frontRowHeightFt: 2, rakeDeg: 15, backHeightFt: LOANDEPOT_ROOF_TOP },
+      sections: loanDepotSections(/^FL\d+$/),
+      heightsSourced: false,
+      coverSourced: true,
+      sources: [LOANDEPOT_PHOTO],
+    },
+    porch: {
+      label: 'Home Run Porch (134–141)',
+      // Rows 1–5 to 1–16 (sourced). Estimated: front ~10 ft, 20° rake.
+      stand: { rows: 16, frontRowHeightFt: 10, rakeDeg: 20, backHeightFt: LOANDEPOT_ROOF_TOP },
+      sections: loanDepotSections(/^SEC1[34]\d$/),
+      rowsFromMap: true,
+      heightsSourced: false,
+      coverSourced: true,
+      sources: [LOANDEPOT_PHOTO, ...['134', '137', '141'].map(loanDepotSection)],
+    },
+    club: {
+      label: '200 level (201–228, FS202A–204B)',
+      // Rows 1–7 to 1–13 (sourced); under the roof down the first-base side
+      // and toward the third-base corner. Rate Your Seats also has the 300
+      // level's overhang over the 200s "further down the lines", which rows
+      // is not published. Estimated: front ~40 ft, 25° rake.
+      stand: { rows: 10, frontRowHeightFt: 40, rakeDeg: 25, backHeightFt: LOANDEPOT_ROOF_TOP },
+      sections: loanDepotSections(/^(SEC2\d\d|FS20\d[AB])$/),
+      rowsFromMap: true,
+      heightsSourced: false,
+      coverSourced: false,
+      sources: [LOANDEPOT_RYS, LOANDEPOT_PHOTO, ...['201', '206', '211', '219', '224', '228'].map(loanDepotSection)],
+    },
+    upper: {
+      label: '300 level (302–327)',
+      // Rows A–K and 1–16 (sourced), all under the roof. Estimated: front
+      // ~70 ft, 30° rake, roof underside ~170 ft.
+      stand: { rows: 20, frontRowHeightFt: 70, rakeDeg: 30, treadFt: 2.6, backHeightFt: LOANDEPOT_ROOF_TOP },
+      sections: loanDepotSections(/^SEC3\d\d$/),
+      rowsFromMap: true,
+      heightsSourced: false,
+      coverSourced: true,
+      sources: [LOANDEPOT_RYS, LOANDEPOT_SHADE, LOANDEPOT_PHOTO, ...['304', '309', '315', '320', '327'].map(loanDepotSection)],
+    },
+  },
+  reviewedOn: '2026-11-12',
+};
+
 export const STADIUM_STRUCTURES: Readonly<Record<string, StadiumStructure>> = {
   yankees: YANKEES,
   redsox: FENWAY,
@@ -4301,6 +4433,7 @@ export const STADIUM_STRUCTURES: Readonly<Record<string, StadiumStructure>> = {
   athletics: SUTTER,
   diamondbacks: CHASE,
   astros: DAIKIN,
+  marlins: LOANDEPOT,
 };
 
 export function getStadiumStructure(stadiumId: string): StadiumStructure | undefined {
