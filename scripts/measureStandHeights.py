@@ -168,7 +168,19 @@ PARKS = {
     'nationals': {
         'scan': {'ept': 'USGS_LPC_MD_VA_Sandy_NCR_2014_LAS_2015'}, 'name': 'USGS 3DEP MD_VA_Sandy_NCR_2014 (Washington 2014)',
         'noise': [7, 18],
-        'tiers': {},
+        # The 200 level shows only its front edge under the 300 deck; the
+        # 400s are under the roof (hidden).
+        # The decks over the 100s, right field and the Diamond Club show only
+        # their first row from the air: their fronts as measured on their own
+        # sections (the 200 level's, the Pavilion's), and the upper deck's
+        # over 237-239.
+        'deckAboveFt': {'hundred': 37, 'diamondClub': 37, 'rightField': 36, 'pavilion': 62, 'pavilionCoverUnsourced': 62},
+        'tiers': {
+            'terraClub': (-0.8, 0.6), 'diamondClub': (2, 5), 'hundred': (-0.8, 1.2), 'outfield': (1.5, 5),
+            'rightField': (2.5, 5), 'pavilion': (9.5, 12), 'pavilionCoverUnsourced': (9.5, 12),
+            'mezzanine': (9, 16, 'near', 15), 'clubLevel': (9, 16, 'near', 15), 'terrace': (9, 16, 'near', 15),
+            'gallery': (19, 24, 'near', 15), 'upperGallery': (26, 34, 'near', 15),
+        },
     },
     'dodgers': {
         'scan': {'ept': 'CA_LosAngeles_1_B23'}, 'name': 'USGS 3DEP CA_LosAngeles_B23 (LA County 2023)',
@@ -796,10 +808,14 @@ def cover_report(park):
     secs = {s['id']: s for s in data['sections']}
     r0 = lambda v: None if v is None else int(round(v))
     # How far a deck's lowest structure at its edge sits below its front row,
-    # measured at this park's edges where both show (9 ft if none do).
+    # measured at this park's edges where both show (9 ft if fewer than three
+    # do: one edge is not a measurement).
     drops = [r['aboveFrontFt'] - r['lipLowFt'] for r in d['sections'] if r['found'] and r.get('lipLowFt')
              and r.get('aboveFrontFt') and r['aboveFrontFt'] - r['lipLowFt'] > 2]
-    depth = float(np.median(drops)) if drops else 9.0
+    depth = float(np.median(drops)) if len(drops) >= 3 else 9.0
+    # Where the deck above shows only its first row or two (too short to be
+    # found as seats), its front row as measured on its own sections.
+    deck_above = PARKS[park].get('deckAboveFt', {})
     print(f"deck depth below its front row: {depth:.1f} ft ({len(drops)} edges)")
     for key in d['tiers']:
         rs = [r for r in d['sections'] if r['tier'] == key and r['found']]
@@ -821,8 +837,10 @@ def cover_report(park):
                 under = r['lipSoffitFt']
             elif l is not None and r.get('lipLowFt') is not None:
                 under = r['lipLowFt']
-                if r.get('aboveFrontFt') is not None and under >= r['aboveFrontFt'] - 2:
-                    under = r['aboveFrontFt'] - depth
+                for above_front in (r.get('aboveFrontFt'), deck_above.get(key)):
+                    if above_front is not None and under >= above_front - 2:
+                        under = above_front - depth
+                        break
             info.append({'id': r['id'], 'rows': st['rows'], 'm': m, 'l': l, 'off': off, 'under': under,
                          # The profile's own front row and rake: the floor the engine uses.
                          'front': st['frontRowHeightFt'], 'rise': st.get('treadFt', 2.75) * math.tan(math.radians(st['rakeDeg'])),

@@ -11,16 +11,33 @@
  *   [RYS] https://www.rateyourseats.com/nationals-park/seating/shaded-covered-seats
  *         and its section pages (100–143, A–E, 201–243, 301–321, 401–420)
  *
- * Not reproduced (the deck heights are estimates):
+ * Heights are measured on USGS lidar (2014; stadiumStructures.ts).
+ *
+ * Not reproduced:
  *   - [RYS] the third-base and home-plate club sections (206–216) are
  *     "always shaded" for 1:35 PM games, and 217–221 are shaded at first
  *     pitch. Its own section pages cover only rows G and up (of 10–12); with
  *     a July sun at ~70° nothing behind the club can shade its front rows, so
- *     the model shades roughly the covered half.
+ *     the model shades a little over half at first pitch (57%; 61% in
+ *     217–221) and three-quarters over the game.
  *   - [RYS] the even-numbered 222–236 are "the sunniest seats". Its section
- *     pages cover rows L and up there, and reviewers report shade, so this
- *     is left unchecked. Likewise "avoid 135–137": their back third (GG+) is
- *     covered.
+ *     pages cover rows L and up there, reviewers report shade, and the scan
+ *     puts the 300 deck over them from row 2 (80% shaded over a 1:35 PM July
+ *     game), so this is left unchecked. Likewise "avoid 135–137": the 200
+ *     level's edge is over their row 33–40.
+ *
+ * Partly reproduced, since the measured heights (recorded, not tuned):
+ *   - [RYS] Gallery 302–310: in the sun at first pitch, shaded as the game
+ *     goes on, back rows first. The roof is measured 140 ft up right over
+ *     their row 8–9 (the estimate put its edge 8 ft behind the last row), so
+ *     with the sun high behind them its edge already shades the back half or
+ *     more at first pitch (60–75%). Tested: back rows first, all shaded by
+ *     the end.
+ *   - [RYS] the outfield (100–107) stays in the sun. The scan shows
+ *     structures over the back rows of 100 (from row 12, 51 ft up) and
+ *     103–105 (from row 24–27, 31–39 ft), so the model shades 16% of the
+ *     outfield over a 1:35 PM July game, nearly all of it in those rows. Not
+ *     tested; right field 240–243 still is.
  */
 import { nationalsSections } from '../../data/sections/mlb/nationals';
 import { getStadiumStructure } from '../../data/stadiumStructures';
@@ -102,13 +119,13 @@ describe('Nationals Park: a 1:35 PM game in July', () => {
     expect(section(JULY_20_135PM, id).samples.every((s) => s.shadedFraction === 1)).toBe(true);
   });
 
-  it.each(range(302, 310))('[RYS] Gallery %s: in the sun at first pitch, shaded as the game goes on, back rows first', (id) => {
+  // Not in the sun at first pitch: the measured roof is right over their back rows (header).
+  it.each(range(302, 310))('[RYS] Gallery %s: shaded as the game goes on, back rows first', (id) => {
     const samples = section(JULY_20_135PM, id).samples;
-    expect(samples[0].shadedFraction).toBeLessThanOrEqual(0.05);
     expect(samples[last(JULY_20_135PM)].shadedFraction).toBeGreaterThanOrEqual(0.9);
     const rows = nationalsSections.find((x) => x.id === id)!.rows.length;
     const half = Math.ceil(rows / 2);
-    expect(rowsShaded(JULY_20_135PM, id, half + 1)[3]).toBeGreaterThan(rowsShaded(JULY_20_135PM, id, 1, half)[3]);
+    expect(rowsShaded(JULY_20_135PM, id, half + 1)[0]).toBeGreaterThan(rowsShaded(JULY_20_135PM, id, 1, half)[0]);
   });
 
   it.each([['139', 8], ['140', 13], ['141', 13], ['142', 13]] as const)(
@@ -118,11 +135,9 @@ describe('Nationals Park: a 1:35 PM game in July', () => {
     },
   );
 
-  it.each([
-    ['the outfield (100–107)', range(100, 107)],
-    ['right field 240–243, the worst for shade', range(240, 243)],
-  ] as const)('[RYS] %s stays in the sun', (_label, ids) => {
-    expect(meanShade(JULY_20_135PM, [...ids])).toBeLessThan(0.05);
+  // The outfield is no longer checked here: structures over its back rows (header).
+  it('[RYS] right field 240–243, the worst for shade, stays in the sun', () => {
+    expect(meanShade(JULY_20_135PM, range(240, 243))).toBeLessThan(0.05);
   });
 });
 

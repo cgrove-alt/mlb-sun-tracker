@@ -2368,165 +2368,254 @@ const NATS_100_COVER: Record<string, number> = {
   '108': 39, '109': 25, '110': 38, '111': 39, '112': 40, '113': 42, '114': 42, '115': 45, '116': 43, '117': 43,
   '128': 43, '129': 43, '130': 46, '131': 44, '132': 47, '133': 42, '134': 37, '135': 33, '136': 33, '137': 22,
 };
-// Estimated: the 200 level's underside ~54 ft over the deep (up to 49-row) 100s;
-// over the four covered furthest back, 9 ft above their first covered row's floor.
-const NATS_100_SOFFIT_FT = 54;
-const NATS_100_SOFFIT_DEEP: Record<string, number> = { '115': 56, '130': 57, '131': 55, '132': 58 };
+const NATS_LIDAR = 'USGS 3DEP lidar MD_VA_Sandy_NCR_2014, flown 2014-04-24 (scripts/measureStandHeights.py)';
 
 /**
  * Nationals Park (2008). The Terra Club and Diamond Club behind home, a deep
  * 100 level, the 200s (Mezzanine, the club level and the right-field
  * Terrace), the scoreboard pavilion in right-center, the 300s (Gallery,
  * uncovered) and the 400s (Upper Gallery) under a roof from row C. Rows and
- * covered rows are Rate Your Seats' section pages. No source publishes the
- * deck heights, so every height is estimated by stacking the decks.
+ * covered rows are Rate Your Seats' section pages.
+ *
+ * Heights are measured on USGS airborne lidar (NATS_LIDAR), as at Citizens
+ * Bank Park: for each section a cut straight back through its rows gives the
+ * front row's height, the rake and the structure that rises highest behind
+ * as seen from the middle uncovered row; tier values are medians, sections
+ * more than 10% (at least 3 ft) off get their own. The scan (2014) is
+ * sparse: the lower bowl and the 300s are well covered, the 200 level shows
+ * only its first rows under the 300 deck (5 sections measured), and the
+ * 400s are hidden under their roof. The decks are lower than the stacking
+ * estimates: the 200 level's front is 37 ft (58), the 300s' 73 ft (84).
+ * Covered rows: where the scan puts a deck's edge more than two rows from
+ * the source's, the scan's edge is used, with the lowest structure seen at
+ * it (or the deck above's front row less 9 ft) as the underside, never less
+ * than 9 ft above the first covered row's floor. Sections the scan does not
+ * find keep estimates, re-taken from the decks measured around them.
  */
 const NATS: StadiumStructure = {
   stadiumId: 'nationals',
-  // Far rim: the Upper Gallery roof (~135 ft) about 550 ft across the field.
-  park: { roof: 'open', farRimHeightFt: 135, fieldCrossingFt: 550 },
+  // Far rim (lidar): the stands' roof line, median over sections 134 ft (the
+  // Upper Gallery roof); crossing: the median distance from a section to
+  // what rises highest across the field, 578 ft.
+  park: { roof: 'open', farRimHeightFt: 134, fieldCrossingFt: 578 },
   tierOf: natsTier,
   tiers: {
     terraClub: {
       label: 'Terra Club (A–E)',
       // Rows A–L at the backstop (C: A–H), open (seen from directly above on
-      // the photo). Estimated: front row ~2 ft, 12° rake; the Diamond Club
-      // rises behind them to the club level's front (~58 ft) ~70 ft back.
-      stand: { rows: 12, frontRowHeightFt: 2, rakeDeg: 12, backHeightFt: 58, backSetbackFt: 70 },
+      // the photo). Lidar (5 of 5): front row at field level, 10° rake
+      // (9–13); what rises highest behind is the Upper Gallery's roof, 135 ft
+      // up and 103 ft back.
+      stand: { rows: 12, frontRowHeightFt: 0, rakeDeg: 10, backHeightFt: 135, backSetbackFt: 103 },
       rowsFromMap: true,
-      heightsSourced: false,
+      heightsSourced: true,
       coverSourced: true,
-      sources: natsSections('A', 'C', 'E'),
+      sources: [...natsSections('A', 'C', 'E'), NATS_LIDAR],
     },
     diamondClub: {
       label: 'Diamond Club (119–126)',
       // Rows A–U, "elevated about 12 rows off the field" behind the Terra
-      // Club; no source gives covered rows, so the check tries both.
-      // Estimated: front ~12 ft, 20° rake, the club level's front ~58 ft.
-      stand: { rows: 21, frontRowHeightFt: 12, rakeDeg: 20, backHeightFt: 58, backSetbackFt: 15 },
+      // Club; no source gives covered rows, so the check tries both. Lidar (7
+      // of 11): front row 10 ft (9–15), 14° rake (13–14); what rises highest
+      // behind is the Upper Gallery's roof, 134 ft up and 39 ft back.
+      // In DC122 the club level's front (37 ft) reaches out over row 15
+      // (underside ~34 ft, 9 ft above that row's floor).
+      stand: { rows: 21, frontRowHeightFt: 10, rakeDeg: 14, backHeightFt: 134, backSetbackFt: 39 },
+      sections: { 'DC122': { frontRowHeightFt: 15, backHeightFt: 73, backSetbackFt: -11, overhang: { coveredFromRow: 15, soffitHeightFt: 34 } } },
       rowsFromMap: true,
-      heightsSourced: false,
+      heightsSourced: true,
       coverSourced: false,
-      sources: natsSections('119', '122', '126'),
+      sources: [...natsSections('119', '122', '126'), NATS_LIDAR],
     },
     hundred: {
       label: 'Field level (100s)',
-      // Rows A–WW and the like (up to 49 rows); covered by the 200 level from
-      // about row RR (per section below). Estimated: front row ~3 ft, 20° rake.
-      stand: { rows: 44, frontRowHeightFt: 3, rakeDeg: 20, backHeightFt: NATS_100_SOFFIT_FT },
-      sections: Object.fromEntries(Object.entries(NATS_100_COVER).map(([id, row]) => [id, { overhang: { coveredFromRow: row, soffitHeightFt: NATS_100_SOFFIT_DEEP[id] ?? NATS_100_SOFFIT_FT } }])),
-      rowsFromMap: true,
-      heightsSourced: false,
-      coverSourced: true,
-      sources: [RYS_NATS, ...natsSections('108', '112', '113', '117', '118', '127', '128', '132', '135', '137')],
-    },
-    outfield: {
-      label: 'Outfield (100–107)',
-      // Rows up to 30, open ("very few outfield seats are in the shade").
-      // Estimated: front ~10 ft above the wall, 20° rake, concourse ~35 ft.
-      stand: { rows: 26, frontRowHeightFt: 10, rakeDeg: 20, backHeightFt: 35 },
-      rowsFromMap: true,
-      heightsSourced: false,
-      coverSourced: true,
-      sources: [RYS_NATS, ...natsSections('100', '101', '104', '107')],
-    },
-    rightField: {
-      label: 'Right field (138–143)',
-      // Under the scoreboard pavilion: 138 all covered, 139 from row H (its
-      // 3rd row), 140–143 from row H (sourced). Estimated: front ~8 ft, 20°
-      // rake, the pavilion's underside ~26 ft.
-      stand: { rows: 24, frontRowHeightFt: 8, rakeDeg: 20, backHeightFt: 30, overhang: { coveredFromRow: 8, soffitHeightFt: 26 } },
+      // Rows A–WW and the like (up to 49 rows); Rate Your Seats counts them
+      // covered by the 200 level from about row RR (NATS_100_COVER). Lidar (21
+      // of 22): front row 1 ft (-2 to 1), 13° rake (12–13); the 200 level's
+      // front, 37 ft up, reaches out over row 36 (33–41; the 300 level's over
+      // 108), so the rows from there back are covered, under an underside of
+      // ~28 ft (that front row less 9 ft), never under 9 ft above the first
+      // covered row's floor (32 ft over row 36). Where the scan sees no edge
+      // (109) or did not measure the section (137) the source's row stays.
+      // What rises highest behind is the Upper Gallery's roof, 140 ft up over
+      // the back row.
+      stand: { rows: 44, frontRowHeightFt: 1, rakeDeg: 13, backHeightFt: 140, backSetbackFt: 1, overhang: { coveredFromRow: 36, soffitHeightFt: 32 } },
       sections: {
-        '138': { overhang: { coveredFromRow: 1, soffitHeightFt: 26 } },
-        '139': { overhang: { coveredFromRow: 3, soffitHeightFt: 26 } },
+        ...Object.fromEntries(['109', '137'].map((id) => [id, { overhang: { coveredFromRow: NATS_100_COVER[id], soffitHeightFt: 28 } }])),
+        '108': { overhang: { coveredFromRow: 41, soffitHeightFt: 62 } },
+        '113': { overhang: { coveredFromRow: 39, soffitHeightFt: 34 } },
+        ...Object.fromEntries(['134', '135'].map((id) => [id, { overhang: { coveredFromRow: 33, soffitHeightFt: 30 } }])),
+        '136': { overhang: { coveredFromRow: 40, soffitHeightFt: 35 } },
       },
       rowsFromMap: true,
       heightsSourced: false,
       coverSourced: true,
-      sources: [RYS_NATS, ...natsSections('138', '139', '140', '142')],
+      sources: [RYS_NATS, ...natsSections('108', '112', '113', '117', '118', '127', '128', '132', '135', '137'), NATS_LIDAR],
+    },
+    outfield: {
+      label: 'Outfield (100–107)',
+      // Rows up to 30, open ("very few outfield seats are in the shade").
+      // Lidar (6 of 8): front row 9 ft above the field (14 in 100 and 101),
+      // 13° rake (10–19); behind, 46 ft up (41–78). Over the back rows of
+      // 100 and 103–105 a structure reaches out (from row 24, 12 in 100, 27
+      // in 103; the bottom of its face 39 ft up, 33–48), so those rows are
+      // covered; over 101 and 102 the scan sees none.
+      stand: { rows: 26, frontRowHeightFt: 9, rakeDeg: 13, backHeightFt: 46, backSetbackFt: -6 },
+      sections: {
+        '100': { frontRowHeightFt: 14, overhang: { coveredFromRow: 12, soffitHeightFt: 48 } },
+        '101': { frontRowHeightFt: 14, backHeightFt: 77, backSetbackFt: 149 },
+        '102': { backHeightFt: 77, backSetbackFt: 149 },
+        '103': { backHeightFt: 41, backSetbackFt: -6, overhang: { coveredFromRow: 27, soffitHeightFt: 38 } },
+        '104': { backHeightFt: 41, backSetbackFt: -6, overhang: { coveredFromRow: 24, soffitHeightFt: 33 } },
+        '105': { overhang: { coveredFromRow: 24, soffitHeightFt: 39 } },
+      },
+      rowsFromMap: true,
+      heightsSourced: true,
+      coverSourced: true,
+      sources: [RYS_NATS, ...natsSections('100', '101', '104', '107'), NATS_LIDAR],
+    },
+    rightField: {
+      label: 'Right field (138–143)',
+      // Under the scoreboard pavilion: 138 all covered, 139 from row H (its
+      // 3rd row), 140–143 from row H (sourced). Lidar (4 of 6): front row
+      // 12 ft (12–14), 14° rake; the pavilion's front, 36 ft up, reaches out
+      // over row 6 (row 2 in 140), so the rows from there back are covered,
+      // under an underside of ~27 ft (that front row less 9 ft); over 143
+      // from row 19, under the scoreboard (its bottom 70 ft up). What rises
+      // highest behind is that front edge (154 ft in 143).
+      stand: { rows: 24, frontRowHeightFt: 12, rakeDeg: 14, backHeightFt: 37, backSetbackFt: -53, overhang: { coveredFromRow: 6, soffitHeightFt: 27 } },
+      sections: {
+        '138': { overhang: { coveredFromRow: 1, soffitHeightFt: 27 } },
+        '139': { overhang: { coveredFromRow: 3, soffitHeightFt: 27 } },
+        '140': { overhang: { coveredFromRow: 2, soffitHeightFt: 27 } },
+        '143': { backHeightFt: 154, backSetbackFt: -14, overhang: { coveredFromRow: 19, soffitHeightFt: 70 } },
+      },
+      rowsFromMap: true,
+      heightsSourced: false,
+      coverSourced: true,
+      sources: [RYS_NATS, ...natsSections('138', '139', '140', '142'), NATS_LIDAR],
     },
     mezzanine: {
       label: 'Mezzanine (201–205, 223–235)',
       // Rows A–P under the Gallery deck from row H (201–205) or G (odd
-      // 223–235). Estimated: front ~58 ft, 24° rake, deck underside ~76 ft.
-      stand: { rows: 16, frontRowHeightFt: 58, rakeDeg: 24, backHeightFt: 76, overhang: { coveredFromRow: 7, soffitHeightFt: 76 } },
-      sections: Object.fromEntries(['201', '202', '203', '204', '205'].map((id) => [id, { overhang: { coveredFromRow: 8, soffitHeightFt: 76 } }])),
+      // 223–235). Lidar (2 of 12; the 300 deck hides the rest): front row
+      // 37 ft, 18° rake (16–20); the 300 deck reaches out over row 1–2, so
+      // the rows from 2 back are covered (201–205, not measured, keep row
+      // H), its lowest point there 63 ft up, taken as its underside.
+      stand: { rows: 16, frontRowHeightFt: 37, rakeDeg: 18, backHeightFt: 63, overhang: { coveredFromRow: 2, soffitHeightFt: 63 } },
+      sections: Object.fromEntries(['201', '202', '203', '204', '205'].map((id) => [id, { overhang: { coveredFromRow: 8, soffitHeightFt: 63 } }])),
       rowsFromMap: true,
       heightsSourced: false,
       coverSourced: true,
-      sources: natsSections('201', '203', '205', '223', '229', '235'),
+      sources: [...natsSections('201', '203', '205', '223', '229', '235'), NATS_LIDAR],
     },
     clubLevel: {
       label: 'Club level (206–221)',
-      // Rows A–J or A–L, covered from row G (sourced). Estimated: front
-      // ~58 ft, 22° rake, deck underside ~74 ft (9 ft above row G's floor).
-      stand: { rows: 10, frontRowHeightFt: 58, rakeDeg: 22, backHeightFt: 74, overhang: { coveredFromRow: 7, soffitHeightFt: 74 } },
+      // Rows A–J or A–L, covered from row G (sourced; the one measured
+      // section shows no edge over its first rows). Lidar (1 of 16; the 300
+      // deck hides the rest): front row 38 ft, 26° rake. The 300 deck's
+      // underside as measured over the Mezzanine and Terrace, 63 ft.
+      stand: { rows: 10, frontRowHeightFt: 38, rakeDeg: 26, backHeightFt: 63, overhang: { coveredFromRow: 7, soffitHeightFt: 63 } },
       rowsFromMap: true,
       heightsSourced: false,
       coverSourced: true,
-      sources: [RYS_NATS, ...natsSections('206', '209', '214', '217', '221')],
+      sources: [RYS_NATS, ...natsSections('206', '209', '214', '217', '221'), NATS_LIDAR],
     },
     terrace: {
       label: 'Right Field Terrace (222–236)',
-      // Rows A–X (A, D–X in 224–230), covered from row L (sourced).
-      // Estimated: front ~58 ft, 24° rake, the deck above ~82 ft.
-      stand: { rows: 24, frontRowHeightFt: 58, rakeDeg: 24, backHeightFt: 82, overhang: { coveredFromRow: 12, soffitHeightFt: 82 } },
-      sections: Object.fromEntries(['224', '226', '228', '230'].map((id) => [id, { overhang: { coveredFromRow: 10, soffitHeightFt: 82 } }])),
+      // Rows A–X (A, D–X in 224–230), covered from row L (sourced). Lidar (2
+      // of 8; the 300 deck hides the rest): front row 37 ft, 15° rake; the
+      // 300 deck reaches out over row 1–4, so the rows from 2 back are
+      // covered (224–230, not measured, keep their row), its lowest point
+      // there 62 ft up, taken as its underside.
+      stand: { rows: 24, frontRowHeightFt: 37, rakeDeg: 15, backHeightFt: 62, overhang: { coveredFromRow: 2, soffitHeightFt: 62 } },
+      sections: Object.fromEntries(['224', '226', '228', '230'].map((id) => [id, { overhang: { coveredFromRow: 10, soffitHeightFt: 62 } }])),
       rowsFromMap: true,
       heightsSourced: false,
       coverSourced: true,
-      sources: natsSections('222', '224', '232', '236'),
+      sources: [...natsSections('222', '224', '232', '236'), NATS_LIDAR],
     },
     pavilion: {
       label: 'Scoreboard Pavilion (238–243)',
-      // Rows A–P, "no overhang above them". Estimated: front ~30 ft, 20°
-      // rake, the scoreboard structure behind ~60 ft.
-      stand: { rows: 16, frontRowHeightFt: 30, rakeDeg: 20, backHeightFt: 60 },
+      // Rows A–P, "no overhang above them". Lidar (6 of 6): front row 36 ft
+      // (35–37), 20° rake (10–23; 238 is shallow); what rises highest behind
+      // is the scoreboard structure, 95 ft up (64–135). The scoreboard
+      // reaches out over row 12 of 241–243, the bottom of its face 75 ft up
+      // (69–82; 100 over 243), and the upper deck over row 2–3 of 238 and
+      // 239 (its front row 62 ft up, its underside ~53 ft), so those rows
+      // are covered; over 240 the scan sees nothing.
+      stand: { rows: 16, frontRowHeightFt: 36, rakeDeg: 20, backHeightFt: 95, backSetbackFt: -12, overhang: { coveredFromRow: 12, soffitHeightFt: 75 } },
+      sections: {
+        '238': { backHeightFt: 64, backSetbackFt: -5, overhang: { coveredFromRow: 3, soffitHeightFt: 53 } },
+        '239': { backHeightFt: 67, backSetbackFt: -22, overhang: { coveredFromRow: 2, soffitHeightFt: 53 } },
+        '240': { backHeightFt: 64, backSetbackFt: -5, noCover: true },
+        ...Object.fromEntries(['241', '242'].map((id) => [id, { backHeightFt: 123, backSetbackFt: -12 }])),
+        '243': { backHeightFt: 135, backSetbackFt: -12, overhang: { coveredFromRow: 12, soffitHeightFt: 100 } },
+      },
       rowsFromMap: true,
-      heightsSourced: false,
+      heightsSourced: true,
       coverSourced: true,
-      sources: natsSections('238', '240', '243'),
+      sources: [...natsSections('238', '240', '243'), NATS_LIDAR],
     },
     pavilionCoverUnsourced: {
       label: 'Scoreboard Pavilion (237)',
       // Its page says both "rows G and above are under cover" and "no
-      // overhang above them", so the check tries both.
-      stand: { rows: 16, frontRowHeightFt: 30, rakeDeg: 20, backHeightFt: 60, overhang: { coveredFromRow: 7, soffitHeightFt: 50 } },
+      // overhang above them". Lidar: front row 36 ft, a shallow 8°; the upper
+      // deck reaches out over row 1, as over 238 and 239 (its front row 62 ft
+      // up, its underside ~53 ft), which settles it; behind, 63 ft up.
+      stand: { rows: 16, frontRowHeightFt: 36, rakeDeg: 8, backHeightFt: 63, backSetbackFt: -32, overhang: { coveredFromRow: 1, soffitHeightFt: 53 } },
       rowsFromMap: true,
       heightsSourced: false,
-      coverSourced: false,
-      sources: natsSections('237'),
+      coverSourced: true,
+      sources: [...natsSections('237'), NATS_LIDAR],
     },
     gallery: {
       label: 'Gallery (300s)',
       // Rows A–J or A–L; "nothing in the 300 level is covered". On the photo
       // the 300s' rows end where the Upper Gallery's roof begins (the 400s,
       // ~12.5 m deep, sit under it, covered from row C), so the roof's front
-      // edge stands just behind the 300s' last row. Estimated: front ~84 ft,
-      // 28° rake, the roof's edge ~132 ft up, ~8 ft behind the last row.
-      stand: { rows: 10, frontRowHeightFt: 84, rakeDeg: 28, backHeightFt: 132, backSetbackFt: 8 },
+      // edge stands just behind the 300s' last row. Lidar (20 of 21): front
+      // row 73 ft (71–74), 31° rake (28–34); the roof, 135 ft up, is what
+      // rises highest behind. Its edge reaches out over row 9 (8–12) in 18
+      // of the 19 sections measured, 140 ft up with nothing seen below it (a
+      // thin roof), so the rows from there back are covered. Where it covers
+      // only the last row or two that is under option A's three-row mark,
+      // but its edge is then what rises behind them, just in front of the
+      // last row, which would leave the rows under it with nothing behind:
+      // so they are covered too. Over 315 the scan sees no edge.
+      stand: { rows: 10, frontRowHeightFt: 73, rakeDeg: 31, backHeightFt: 135, backSetbackFt: -2, overhang: { coveredFromRow: 9, soffitHeightFt: 140 } },
+      sections: {
+        ...Object.fromEntries(['305', '306', '307', '308', '318', '319', '320', '321'].map((id) => [id, { overhang: { coveredFromRow: 8, soffitHeightFt: 140 } }])),
+        '316': { overhang: { coveredFromRow: 10, soffitHeightFt: 140 } },
+        ...Object.fromEntries(['303', '309'].map((id) => [id, { overhang: { coveredFromRow: 11, soffitHeightFt: 140 } }])),
+        '317': { overhang: { coveredFromRow: 12, soffitHeightFt: 140 } },
+        '315': { noCover: true },
+      },
       rowsFromMap: true,
-      heightsSourced: false,
+      heightsSourced: true,
       coverSourced: true,
-      sources: [RYS_NATS, ...natsSections('301', '305', '311', '315', '321')],
+      sources: [RYS_NATS, ...natsSections('301', '305', '311', '315', '321'), NATS_LIDAR],
     },
     upperGallery: {
       label: 'Upper Gallery (400s)',
-      // Rows A–N, covered from row C (sourced). Estimated: front ~104 ft,
-      // 32° rake, roof underside ~132 ft.
-      stand: { rows: 14, frontRowHeightFt: 104, rakeDeg: 32, backHeightFt: 132, overhang: { coveredFromRow: 3, soffitHeightFt: 132 } },
+      // Rows A–N, covered from row C (sourced). Hidden under the roof from
+      // the air. Estimated: front ~93 ft, just above the 300s' measured last
+      // row (91 ft), 32° rake. The roof (lidar): its edge 140 ft up with
+      // nothing seen below it, so a thin roof.
+      stand: { rows: 14, frontRowHeightFt: 93, rakeDeg: 32, backHeightFt: 140, overhang: { coveredFromRow: 3, soffitHeightFt: 140 } },
       rowsFromMap: true,
       heightsSourced: false,
       coverSourced: true,
-      sources: [RYS_NATS, ...natsSections('401', '405', '409', '416', '420')],
+      sources: [RYS_NATS, ...natsSections('401', '405', '409', '416', '420'), NATS_LIDAR],
     },
     suite: {
       label: 'Suites',
       // The club's map lists them as suites: as at the other parks, one row
       // of seats under the suite level's ceiling, 9 ft above the floor.
-      // Estimated ~70 ft up, behind the club level's last row (68 ft) and under
-      // the deck that covers it from row G, so it reaches 11 ft past them.
-      stand: { rows: 1, frontRowHeightFt: 70, rakeDeg: 0, backHeightFt: 82, overhang: { coveredFromRow: 1, soffitHeightFt: 79, reachFt: 11 } },
+      // Estimated ~50 ft up, behind the club level's last row (50 ft,
+      // measured front and rake) and under the deck that covers it from row
+      // G, so it reaches 11 ft past them.
+      stand: { rows: 1, frontRowHeightFt: 50, rakeDeg: 0, backHeightFt: 64, overhang: { coveredFromRow: 1, soffitHeightFt: 59, reachFt: 11 } },
       heightsSourced: false,
       coverSourced: true,
       sources: ['https://www.mlb.com/nationals/ballpark/seating-map/3d'],
