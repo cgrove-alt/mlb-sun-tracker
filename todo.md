@@ -1148,7 +1148,9 @@ Scans are kept cropped in tmp/lidar/<park>.npz; the one raw tile is deleted.
   the sourced covered row (or over 3+ rows the source leaves open) takes
   the scan's edge: the median row. Sections more than 2 rows off that get
   their own. Where the scan sees no edge but the source covers rows, the
-  source stays (a sparse scan can miss an edge).
+  source stays (a sparse scan can miss an edge). Where the source calls a
+  section open and its row count is only a default, the source also stays:
+  a short section can end before the deck edge the scan sees.
 - The underside at every edge the scan sees (also where the covered row
   already agreed, since "9 ft above the first covered row's floor" put
   some undersides far below the measured deck above): the bottom of its
