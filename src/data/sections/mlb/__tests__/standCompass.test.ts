@@ -1,4 +1,6 @@
 import { yankeesSections } from '../yankees';
+import { marinersSections, MARINERS_AERIAL_CONTROL } from '../mariners';
+import { marinersChartPoints } from '../chart-points/mariners';
 import { brewersSections, BREWERS_AERIAL_CONTROL } from '../brewers';
 import { brewersChartPoints } from '../chart-points/brewers';
 import { marlinsSections, MARLINS_AERIAL_CONTROL } from '../marlins';
@@ -989,6 +991,39 @@ describe('American Family Field stand directions (measured on the 2020 aerial ph
   it.each(['109', '112', '210', '312', '415'])('first-base section %s faces 258°', (id) => expect(stand(id)).toBe(258));
   it.each(['124', '128', '226', '340', '430'])('third-base section %s faces 2°', (id) => expect(stand(id)).toBe(2));
   it.each(['116', '117', '118', '119'])('behind-home section %s faces its bearing from home', (id) => {
+    expect(diff(stand(id), bearing(id))).toBeLessThan(4);
+  });
+});
+
+describe('T-Mobile Park stand directions (measured on the 2013 and 2017 aerial photos, roof open)', () => {
+  // Straights: backs 272° (third base) and 181° (first base); both corners
+  // turn ~18.5° toward the outfield (290° and 163°); behind home each
+  // section faces its bearing.
+  const byId = new Map(marinersSections.map((s) => [s.id, s]));
+  const stand = (id: string) => {
+    const value = byId.get(id)?.standCompass;
+    if (value === undefined) throw new Error(`No stand direction for ${id}`);
+    return value;
+  };
+  const bearing = (id: string) => {
+    const s = byId.get(id)!;
+    return (((getStadiumOrientation('mariners') + 90 - s.baseAngle - s.angleSpan / 2) % 360) + 360) % 360;
+  };
+
+  it('pins the club map to the photos within 5 m', () => {
+    expect(aerialChartFit(marinersChartPoints, MARINERS_AERIAL_CONTROL).rmsM).toBeLessThan(5);
+  });
+
+  it('puts the right-field stands (102–110) between the right-field wall and the parked roof', () => {
+    for (const id of ['102', '106', '110']) expect(bearing(id)).toBeGreaterThan(55);
+    for (const id of ['102', '106', '110']) expect(bearing(id)).toBeLessThan(101);
+  });
+
+  it.each(['135', '137', '139', '237'])('third-base section %s faces 272°', (id) => expect(stand(id)).toBe(272));
+  it.each(['122', '124', '125'])('first-base section %s faces 181°', (id) => expect(stand(id)).toBe(181));
+  it.each(['143', '146'])('left-field corner section %s faces 290°', (id) => expect(stand(id)).toBe(290));
+  it.each(['115', '117'])('right-field corner section %s faces 163°', (id) => expect(stand(id)).toBe(163));
+  it.each(['127', '129', '131'])('behind-home section %s faces its bearing from home', (id) => {
     expect(diff(stand(id), bearing(id))).toBeLessThan(4);
   });
 });

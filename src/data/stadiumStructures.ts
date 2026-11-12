@@ -4552,6 +4552,143 @@ const AMFAM: StadiumStructure = {
   reviewedOn: '2026-11-12',
 };
 
+const TMOBILE_RYS = 'https://www.rateyourseats.com/t-mobile-park/seating/shaded-covered-seats';
+const TMOBILE_PHOTO = 'USGS NAIP 2011-08-26, 2013-07-15 and 2017-08-15 flights, roof open (Planetary Computer NAIP archive)';
+const TMOBILE_HEIGHT = 'https://www.nbbj.com/work/t-mobile-park-safeco-field';
+const tmobileSection = (n: string) => `https://www.rateyourseats.com/t-mobile-park/seating/sections/${n}`;
+/**
+ * Sections under the parked roof, from the photos: the first row under it
+ * (0 = none) and how far behind the last row (m) its edge stands. Open, the
+ * roof's panels stack over the railway east of the park; their west edge
+ * stands ~123 m east of home plate (113–131 m on the 2011, 2013 and 2017
+ * flights, which lean differently). Worked out from each section's place on
+ * the pinned seat map and its rows (0.85 m apart) running back along its
+ * stand direction.
+ */
+const TMOBILE_ROOF: Record<string, [number, number]> = {
+  '102': [0, 17.5], '103': [0, 11.5], '104': [0, 4.5], '105': [12, 0], '106': [16, 0], '107': [18, 0], '108': [18, 0],
+  '109': [16, 0], '110': [16, 0], '111': [0, 19.5], '112': [0, 44], '190': [0, 43.5], '191': [0, 34], '192': [0, 19],
+  '193': [0, 5], '194': [11, 0], '195': [2, 0], '211': [0, 1], '212': [0, 9], '213': [0, 31.5], '306': [4, 0],
+  '307': [5, 0], '308': [1, 0], '309': [1, 0], '310': [1, 0], '311': [1, 0], '312': [1, 0],
+};
+/** First labelled row of each main-level section where it is not 1 (Rate Your Seats). */
+const TMOBILE_FIRST_ROW: Record<string, number> = {
+  '102': 23, '103': 23, '104': 23, '105': 23, '106': 23, '107': 23, '108': 23, '109': 23, '110': 23, '111': 11,
+  '115': 10, '121': 4, '122': 5, '123': 5, '124': 5, '125': 9, '126': 17, '127': 9, '128': 17, '129': 9, '131': 17,
+  '132': 9, '133': 17, '134': 9, '135': 9, '136': 5, '137': 5, '138': 5, '139': 4, '147': 10, '149': 12, '150': 19,
+  '151': 27,
+};
+const TMOBILE_MAIN = { frontRowHeightFt: 3, rakeDeg: 20 };
+const tmobileRise = 2.75 * Math.tan((TMOBILE_MAIN.rakeDeg * Math.PI) / 180);
+/** Parked roof top and underside, ft ("about 215 feet in the air"; underside estimated). */
+const TMOBILE_ROOF_TOP = 215;
+const TMOBILE_ROOF_UNDERSIDE = 180;
+const tmobileRoof = (id: string) => {
+  // The roof's edge behind a section matters only where it covers rows: it
+  // is high (~180 ft underside) and east of every stand, so the stands'
+  // own backs block the sun before it would.
+  const [from] = TMOBILE_ROOF[id] ?? [0, 0];
+  return from ? { overhang: { coveredFromRow: from, soffitHeightFt: TMOBILE_ROOF_UNDERSIDE }, backHeightFt: TMOBILE_ROOF_TOP, backSetbackFt: 0 } : {};
+};
+const tmobileIds = (from: number, to: number) => Array.from({ length: to - from + 1 }, (_, i) => String(from + i));
+
+/** Seating ring of a T-Mobile Park chart section. */
+export function tmobileTier(id: string): string | null {
+  if (/^1[89]\d$/.test(id)) return 'bleachers';
+  if (/^1\d\d$/.test(id)) return 'main';
+  if (/^2\d\d$/.test(id)) return 'club';
+  if (/^3\d\d$/.test(id)) return 'view';
+  // Field-level boxes, suites, decks and standing areas: no rows or cover listed.
+  return null;
+}
+
+/**
+ * T-Mobile Park (1999, as Safeco Field), with the roof open. The main level
+ * (102–151, rows to 41), the terrace club level (211–249), the view level
+ * (306–349) and the outfield bleachers (180–195). Rows are Rate Your Seats'
+ * section pages, and so is the cover over the main and club levels: "aim
+ * for rows 35 and higher which are tucked beneath the overhang" (main),
+ * "Rows 10 and above are your best options for shade" beneath the overhang
+ * (club), 219–223 "Fully covered". The roof is "about 215 feet in the air"
+ * and, open, does not shade the bowl except where it stacks over the east
+ * side (TMOBILE_ROOF). The view level's canopy covers its back rows
+ * ("Sections 333-344 ... well covered from the upper deck roof"); which rows
+ * is not published. Deck heights are estimated.
+ */
+const TMOBILE: StadiumStructure = {
+  stadiumId: 'mariners',
+  // Far rim: the view level's canopy (~125 ft) about 500 ft across the field.
+  park: { roof: 'retractable', farRimHeightFt: 125, fieldCrossingFt: 500 },
+  tierOf: tmobileTier,
+  tiers: {
+    main: {
+      label: 'Main level (102–151)',
+      // Rows to 41 (sourced), the club deck over rows 35 and up (sourced);
+      // the right-field stands under the parked roof's edge (photo). Above
+      // the back rows the club and view levels rise to the view level's
+      // canopy, whose inner edge stands ~50 m back from each foul line on
+      // the 2017 photo (46 m on the third-base side, 55 m on the first-base
+      // side, the canopy leaning with the camera), ~3 m behind the last
+      // row. Estimated: front ~3 ft plus ~1 ft a row where rows start
+      // further up, 20° rake, club deck underside ~45 ft, canopy ~125 ft.
+      stand: { rows: 41, ...TMOBILE_MAIN, backHeightFt: 125, backSetbackFt: 10 },
+      sections: Object.fromEntries([...tmobileIds(102, 151)].map((id) => {
+        const first = TMOBILE_FIRST_ROW[id] ?? 1;
+        const roof = tmobileRoof(id);
+        return [id, {
+          ...(first > 1 ? { frontRowHeightFt: TMOBILE_MAIN.frontRowHeightFt + (first - 1) * tmobileRise } : {}),
+          ...('overhang' in roof ? roof : { overhang: { coveredFromRow: Math.max(1, 35 - first + 1), soffitHeightFt: 45 }, ...roof }),
+        }];
+      })),
+      rowsFromMap: true,
+      heightsSourced: false,
+      coverSourced: true,
+      sources: [TMOBILE_RYS, TMOBILE_PHOTO, ...['106', '112', '120', '128', '135', '142', '150'].map(tmobileSection)],
+    },
+    bleachers: {
+      label: 'Bleachers (180–195)',
+      // Rows 1–10 to 1–17 (sourced), open ("Little to no shade") except
+      // where the parked roof reaches over right-center. Estimated: front
+      // ~10 ft, 20° rake.
+      stand: { rows: 17, frontRowHeightFt: 10, rakeDeg: 20, backHeightFt: 30 },
+      sections: Object.fromEntries(tmobileIds(180, 195).map((id) => [id, tmobileRoof(id)])),
+      rowsFromMap: true,
+      heightsSourced: false,
+      coverSourced: true,
+      sources: [TMOBILE_PHOTO, ...['180', '186', '190', '195'].map(tmobileSection)],
+    },
+    club: {
+      label: 'Terrace club level (211–249)',
+      // Rows 1–13 (sourced), the view level overhead from row 10 (sourced;
+      // 219–223 fully covered). Estimated: front ~38 ft, 25° rake, view
+      // level underside ~62 ft.
+      stand: { rows: 13, frontRowHeightFt: 38, rakeDeg: 25, backHeightFt: 125, overhang: { coveredFromRow: 10, soffitHeightFt: 62 } },
+      sections: {
+        ...Object.fromEntries(tmobileIds(211, 213).map((id) => [id, tmobileRoof(id)])),
+        ...Object.fromEntries(tmobileIds(219, 223).map((id) => [id, { overhang: { coveredFromRow: 1, soffitHeightFt: 50 } }])),
+      },
+      rowsFromMap: true,
+      heightsSourced: false,
+      coverSourced: true,
+      sources: [TMOBILE_RYS, ...['211', '219', '223', '233', '241'].map(tmobileSection)],
+    },
+    view: {
+      label: 'View level (306–349)',
+      // Rows 1–21 or 1–25 (sourced), the canopy over the back rows (which
+      // rows not published, so both are tried); 306–312 under the parked
+      // roof (photo). Estimated: front ~75 ft, 30° rake, canopy underside
+      // ~118 ft.
+      stand: { rows: 25, frontRowHeightFt: 75, rakeDeg: 30, treadFt: 2.6, backHeightFt: 125, overhang: { coveredFromRow: 16, soffitHeightFt: 118 } },
+      sections: Object.fromEntries(tmobileIds(306, 312).map((id) => [id, tmobileRoof(id)])),
+      rowsFromMap: true,
+      heightsSourced: false,
+      coverSourced: false,
+      sources: [TMOBILE_RYS, TMOBILE_HEIGHT, TMOBILE_PHOTO, ...['306', '320', '330', '340', '344'].map(tmobileSection)],
+    },
+  },
+  reviewedOn: '2026-11-12',
+};
+
 export const STADIUM_STRUCTURES: Readonly<Record<string, StadiumStructure>> = {
   yankees: YANKEES,
   redsox: FENWAY,
@@ -4579,6 +4716,7 @@ export const STADIUM_STRUCTURES: Readonly<Record<string, StadiumStructure>> = {
   astros: DAIKIN,
   marlins: LOANDEPOT,
   brewers: AMFAM,
+  mariners: TMOBILE,
 };
 
 export function getStadiumStructure(stadiumId: string): StadiumStructure | undefined {
