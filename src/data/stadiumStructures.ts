@@ -1111,57 +1111,81 @@ export function citiTier(id: string): string | null {
   return 'promenade';
 }
 
+const CITI_LIDAR = 'USGS 3DEP lidar NY_NewYorkCity, flown 2014-03-23 to 2014-04-06 (scripts/measureStandHeights.py)';
+
 /**
  * Citi Field (2009). Field boxes, the 100 level (covered from row 27), the
  * Sterling (200) level, the Excelsior (300) level under the 400s, the 400s
  * in the open and the Promenade (500) level under the roof from row 11.
- * Rows and covered rows are from Rate Your Seats' section pages. No source
- * publishes the deck heights, so every height is estimated by stacking the
- * decks.
+ * Rows and covered rows are from Rate Your Seats' section pages.
+ *
+ * Heights are measured on USGS airborne lidar (CITI_LIDAR; a sparse 2014
+ * scan, about 6 points per square metre), as at Dodger Stadium: for each
+ * section a cut straight back through its rows gives the front row's height,
+ * the rake and the structure that rises highest behind as seen from the
+ * middle uncovered row; tier values are medians, sections more than 10% (at
+ * least 3 ft) off get their own. The decks step back in a staircase, each
+ * upper deck's front over the rows of the one below; the light towers above
+ * the roof are not counted as walls. Deck undersides the scan cannot see are
+ * estimated as 9 ft above the floor of the first covered row (and below the
+ * deck above's measured front row).
  */
 const CITI: StadiumStructure = {
   stadiumId: 'mets',
-  // Far rim: the Promenade roof (~138 ft) about 520 ft from the outfield seats.
-  park: { roof: 'open', farRimHeightFt: 138, fieldCrossingFt: 520 },
+  // Far rim (lidar): the stands' roof line, median over sections 129 ft (the
+  // Promenade roof); crossing: the median distance from a section to what
+  // rises highest across the field, 600 ft.
+  park: { roof: 'open', farRimHeightFt: 129, fieldCrossingFt: 600 },
   tierOf: citiTier,
   tiers: {
     fieldBox: {
       label: 'Field boxes',
-      // Rows 1–12, uncovered (sourced). Estimated: front row ~2 ft, 14°
-      // rake; behind, the 100 level rises to the deck over its back rows
-      // (~43 ft) about 72 ft back.
-      stand: { rows: 12, frontRowHeightFt: 2, rakeDeg: 14, backHeightFt: 43, backSetbackFt: 72 },
-      heightsSourced: false,
+      // Rows 1–12, uncovered (sourced). Lidar (27 of 31): front row at field
+      // level (0–2 ft), 12° rake (6–23); what rises highest behind is the
+      // Promenade roof, 129 ft up and 107 ft back.
+      stand: { rows: 12, frontRowHeightFt: 0, rakeDeg: 12, backHeightFt: 129, backSetbackFt: 107 },
+      heightsSourced: true,
       coverSourced: true,
-      sources: [rysCiti('sections/15')],
+      sources: [rysCiti('sections/15'), CITI_LIDAR],
     },
     field: {
       label: 'Field level (100s)',
       // Rows 1–32, covered from row 27 (sourced; 102 has rows 4–13 covered
       // from 11, 108 rows 24–34 from 30, 118 rows 1–8 and 133 rows A–E
-      // uncovered). Estimated: front row ~8 ft, 20° rake, deck underside
-      // ~43 ft.
+      // uncovered). Lidar (11 of 35; the sparse scan loses the rest): front
+      // row 4 ft (4–7), 10° rake (10–15). The Sterling deck's front reaches
+      // out over row 14–15 (13–24), against the source; with the two
+      // disagreeing, the confidence check tries cover both ways. What rises
+      // highest behind is that deck's edge (25 ft) or the Excelsior's
+      // (69 ft). Estimated: the underside over row 27 ~23 ft (just under the
+      // Sterling level's measured 25-ft front row); 102 and 108 start further
+      // up the measured slope.
       stand: {
         rows: 32,
-        frontRowHeightFt: 8,
-        rakeDeg: 20,
-        backHeightFt: 50,
-        overhang: { coveredFromRow: 27, soffitHeightFt: 43 },
+        frontRowHeightFt: 4,
+        rakeDeg: 10,
+        backHeightFt: 47,
+        backSetbackFt: -48,
+        overhang: { coveredFromRow: 27, soffitHeightFt: 23 },
       },
       sections: {
-        '102': { rows: 10, frontRowHeightFt: 11, overhang: { coveredFromRow: 8, soffitHeightFt: 28 } },
-        '108': { rows: 11, frontRowHeightFt: 31, overhang: { coveredFromRow: 7, soffitHeightFt: 46 } },
-        '118': { rows: 8, noCover: true },
+        ...Object.fromEntries(['114', '115', '116', '119', '120'].map((id) => [id, { backHeightFt: 25, backSetbackFt: -51 }])),
+        ...Object.fromEntries(['117', '128', '130', '132'].map((id) => [id, { backHeightFt: 69, backSetbackFt: -17 }])),
+        '102': { rows: 10, frontRowHeightFt: 6, overhang: { coveredFromRow: 8, soffitHeightFt: 18 } },
+        '108': { rows: 11, frontRowHeightFt: 15, overhang: { coveredFromRow: 7, soffitHeightFt: 23 } },
+        '118': { rows: 8, noCover: true, backHeightFt: 129, backSetbackFt: 99 },
         '133': { rows: 5, noCover: true },
       },
       heightsSourced: false,
-      coverSourced: true,
-      sources: [rysCiti('sections/102'), rysCiti('sections/108'), rysCiti('sections/114'), rysCiti('sections/121'), rysCiti('sections/128'), RYS_CITI],
+      coverSourced: false,
+      sources: [rysCiti('sections/102'), rysCiti('sections/108'), rysCiti('sections/114'), rysCiti('sections/121'), rysCiti('sections/128'), RYS_CITI, CITI_LIDAR],
     },
     leftOutfield: {
       label: 'Left-field seats (134–139)',
       // Rows 1–19, the upper half covered from row 7 (sourced). Estimated:
-      // front row ~10 ft, 22° rake, deck underside ~26 ft.
+      // front row ~10 ft, 22° rake, deck underside ~26 ft. Not measured: the
+      // sparse scan gives only one of these six sections (135: front row
+      // 9 ft, 18° rake).
       stand: {
         rows: 19,
         frontRowHeightFt: 10,
@@ -1175,79 +1199,101 @@ const CITI: StadiumStructure = {
     },
     rightOutfield: {
       label: 'Right-field seats (140–143)',
-      // 140 has rows 1–20, 143 rows 1–3, uncovered (sourced). Estimated.
-      stand: { rows: 20, frontRowHeightFt: 8, rakeDeg: 22, backHeightFt: 32 },
-      sections: { '143': { rows: 3 } },
-      heightsSourced: false,
+      // 140 has rows 1–20, 143 rows 1–3, uncovered (sourced). Lidar (3 of
+      // 4): front row 9 ft (7–25; 141 sits 25 ft up), 18° rake (16–21).
+      stand: { rows: 20, frontRowHeightFt: 9, rakeDeg: 18, backHeightFt: 45, backSetbackFt: 12 },
+      sections: {
+        '140': { backHeightFt: 27, backSetbackFt: 21 },
+        '141': { frontRowHeightFt: 25, backHeightFt: 64, backSetbackFt: 7 },
+        '143': { rows: 3 },
+      },
+      heightsSourced: true,
       coverSourced: true,
-      sources: [rysCiti('sections/140'), rysCiti('sections/143')],
+      sources: [rysCiti('sections/140'), rysCiti('sections/143'), CITI_LIDAR],
     },
     sterling: {
       label: 'Sterling level (200s)',
-      // No source gives rows or cover; estimated, and the confidence check
-      // tries it with and without cover.
-      stand: { rows: 6, frontRowHeightFt: 50, rakeDeg: 22, backHeightFt: 62 },
-      heightsSourced: false,
+      // No source gives rows or cover; the confidence check tries it with
+      // and without cover (the lidar shows the Excelsior's front over row
+      // 5). Lidar (21 of 39): front row 25 ft (24–35), 18° rake (7–24);
+      // what rises highest behind is the 400 level's front, 69 ft up.
+      stand: { rows: 6, frontRowHeightFt: 25, rakeDeg: 18, backHeightFt: 69, backSetbackFt: 11 },
+      sections: {
+        ...Object.fromEntries(['212', '225', '226'].map((id) => [id, { frontRowHeightFt: 29 }])),
+        ...Object.fromEntries(['219', '220', '221'].map((id) => [id, { frontRowHeightFt: 34 }])),
+        '222': { backHeightFt: 35, backSetbackFt: -7 },
+      },
+      heightsSourced: true,
       coverSourced: false,
-      sources: [RYS_CITI],
+      sources: [RYS_CITI, CITI_LIDAR],
     },
     excelsior: {
       label: 'Excelsior level (300s)',
       // Rows 1–12 (behind home 1–6), covered from row 5 by the 400 level
-      // (sourced; 336 from row 6). Estimated: front row ~62 ft, 25° rake,
-      // deck underside ~76 ft.
+      // (sourced; 336 from row 6). Lidar: the 400s' front hangs over row
+      // 2–3, so only a few rows show, in 4 of 42 sections: front row 46 ft
+      // (41–46). Estimated: 25° rake (as before), the 400 deck's underside
+      // ~60 ft (9 ft above row 5's floor).
       stand: {
         rows: 12,
-        frontRowHeightFt: 62,
+        frontRowHeightFt: 46,
         rakeDeg: 25,
-        backHeightFt: 82,
-        overhang: { coveredFromRow: 5, soffitHeightFt: 76 },
+        backHeightFt: 69,
+        backSetbackFt: -23,
+        overhang: { coveredFromRow: 5, soffitHeightFt: 60 },
       },
       sections: {
         '312': { rows: 10 },
         '316': { rows: 6 },
         '320': { rows: 6 },
         '326': { rows: 10 },
-        '336': { overhang: { coveredFromRow: 6, soffitHeightFt: 77 } },
+        '336': { overhang: { coveredFromRow: 6, soffitHeightFt: 62 } },
+        '338': { frontRowHeightFt: 41 },
       },
       heightsSourced: false,
       coverSourced: true,
-      sources: [rysCiti('sections/306'), rysCiti('sections/312'), rysCiti('sections/316'), rysCiti('sections/326'), rysCiti('sections/333'), rysCiti('sections/336'), RYS_CITI],
+      sources: [rysCiti('sections/306'), rysCiti('sections/312'), rysCiti('sections/316'), rysCiti('sections/326'), rysCiti('sections/333'), rysCiti('sections/336'), RYS_CITI, CITI_LIDAR],
     },
     fourHundred: {
       label: '400 level',
-      // Rows 1–8 (behind home 1–5), open to the sky (sourced). Estimated:
-      // front row ~86 ft, 30° rake; behind, the Promenade's front (~100 ft).
-      stand: { rows: 8, frontRowHeightFt: 86, rakeDeg: 30, backHeightFt: 100, backSetbackFt: 6 },
-      sections: { '415': { rows: 5 }, '425': { rows: 5 } },
-      heightsSourced: false,
+      // Rows 1–8 (behind home 1–5), open to the sky (sourced). Lidar (29 of
+      // 37): front row 69 ft (68–69), 26° rake (17–32); what rises highest
+      // behind is the Promenade roof, 129 ft up and 30 ft back.
+      stand: { rows: 8, frontRowHeightFt: 69, rakeDeg: 26, backHeightFt: 129, backSetbackFt: 30 },
+      sections: { '415': { rows: 5 }, '425': { rows: 5 }, '437': { backHeightFt: 116, backSetbackFt: 43 } },
+      heightsSourced: true,
       coverSourced: true,
-      sources: [rysCiti('sections/405'), rysCiti('sections/415'), rysCiti('sections/425'), rysCiti('sections/435'), RYS_CITI],
+      sources: [rysCiti('sections/405'), rysCiti('sections/415'), rysCiti('sections/425'), rysCiti('sections/435'), RYS_CITI, CITI_LIDAR],
     },
     promenade: {
       label: 'Promenade level (500s)',
-      // Rows 1–17, covered by the roof from row 11 (sourced). Estimated:
-      // front row ~100 ft, 33° rake, roof underside ~127 ft, top ~138 ft.
+      // Rows 1–17, covered by the roof from row 11 (sourced; the lidar puts
+      // its edge at row 10). Lidar (34 of 38): front row 85 ft (79–87), 30°
+      // rake; the roof's front edge is 129 ft up. Estimated: its underside
+      // ~127 ft (the scan shows nothing below 128 ft at that edge: a thin
+      // roof, like Oracle Park's measured one).
       stand: {
         rows: 17,
-        frontRowHeightFt: 100,
-        rakeDeg: 33,
-        backHeightFt: 138,
+        frontRowHeightFt: 85,
+        rakeDeg: 30,
+        backHeightFt: 129,
+        backSetbackFt: -16,
         overhang: { coveredFromRow: 11, soffitHeightFt: 127 },
       },
       heightsSourced: false,
       coverSourced: true,
-      sources: [rysCiti('sections/505'), rysCiti('sections/515'), rysCiti('sections/525'), rysCiti('sections/535'), RYS_CITI],
+      sources: [rysCiti('sections/505'), rysCiti('sections/515'), rysCiti('sections/525'), rysCiti('sections/535'), RYS_CITI, CITI_LIDAR],
     },
     suite: {
       label: 'Clubs and suites',
+      // Hidden from the air; estimated as before.
       stand: { rows: 1, frontRowHeightFt: 55, rakeDeg: 0, backHeightFt: 66, overhang: { coveredFromRow: 1, soffitHeightFt: 61 } },
       heightsSourced: false,
       coverSourced: true,
       sources: [RYS_CITI],
     },
   },
-  reviewedOn: '2026-11-11',
+  reviewedOn: '2026-11-12',
 };
 
 const rysCbp = (path: string) => `https://www.rateyourseats.com/citizens-bank-park/seating/${path}`;

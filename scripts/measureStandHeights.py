@@ -65,7 +65,14 @@ PARKS = {
     'mets': {
         'scan': {'ept': 'NY_NewYorkCity'}, 'name': 'USGS 3DEP NY_NewYorkCity (New York City 2014)',
         'noise': [7],
-        'tiers': {},
+        'tiers': {
+            'fieldBox': (-1.5, 1.0), 'field': (1.0, 4, 'far'), 'sterling': (5, 11), 'excelsior': (12, 17),
+            'fourHundred': (18, 23, 'near', 15), 'promenade': (24, 29, 'near', 15),
+            'leftOutfield': (0.5, 4), 'rightOutfield': (1.5, 8),
+        },
+        # The light towers rise above the roof (129 ft) to 182-192 ft; the
+        # right-field scoreboard's top (142 ft) stays.
+        'lightTowersAbove': 47,
     },
     'redsox': {
         'scan': {'ept': 'MA_CentralEastern_1_2021'}, 'name': 'USGS 3DEP MA_CentralEastern_2021 (Massachusetts 2021)',
@@ -235,7 +242,7 @@ def load_points(park):
     Z = Z - field
     above = PARKS[park].get('lightTowersAbove')
     if above is not None:
-        # Light towers: compact clusters (up to 200 m2 in plan, 2 m cells)
+        # Light towers: compact clusters (up to 600 m2 in plan, 2 m cells)
         # standing above the park's roof line; what stands on the roof inside
         # them (more than 2 m over its lowest fifth) is not a wall.
         m = (Z > above) & (np.hypot(E, N) < 180)
@@ -246,7 +253,7 @@ def load_points(park):
         sizes = ndimage.sum(np.ones_like(lab), lab, range(n + 1))
         keep = np.ones(len(Z), bool)
         for k in range(1, n + 1):
-            if sizes[k] * 4 > 200:
+            if sizes[k] * 4 > 600:
                 continue
             inside = (lab[gi(N), gi(E)] == k) & (np.hypot(E, N) < 180)
             keep &= ~(inside & (Z > np.percentile(Z[inside], 20) + 2))
