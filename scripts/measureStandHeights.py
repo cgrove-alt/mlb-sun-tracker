@@ -50,9 +50,15 @@ PARKS = {
         # Classes 17 and 18 hold the flight-line overlap here (18 is ground), not noise.
         'noise': [7],
         'tiers': {
-            'legends': (-2, 5), 'field': (-1, 5, 'far'), 'main': (6, 13), 'bleachers': (-1, 6),
-            'terrace': (18, 23.5), 'grandstand': (26, 33),
+            # Legends rows start at the field (0-1 ft), the 100s about 6 ft up;
+            # the dugouts' floors are 4 ft down.
+            'legends': (-0.6, 1.0), 'field': (1.0, 5, 'far'), 'main': (6, 13),
+            'terrace': (18, 23.5), 'grandstand': (26, 33, 'near', 15),
+            # Bleachers: the club's chart (not pinned to a photo here) draws
+            # them bunched toward the foul lines, so the cuts along their
+            # bearings land on other stands; not measured.
         },
+        'skip': {'427': 'its cut lands just outside the stadium wall (plan view)'},
     },
     'mets': {
         'scan': {'ept': 'NY_NewYorkCity'}, 'name': 'USGS 3DEP NY_NewYorkCity (New York City 2014)',
@@ -265,11 +271,25 @@ def runs_in(s, z):
         m = labels == k
         if m.sum() < 12:
             continue
-        r = fit_run(s[m], z[m])
-        if r and r['s1'] - r['s0'] >= 2.5 and r['slope'] > math.tan(math.radians(5)):
-            runs.append(r)
+        for ps, pz in split_at_steps(s[m], z[m]):
+            r = fit_run(ps, pz)
+            if r and r['s1'] - r['s0'] >= 2.5 and r['slope'] > math.tan(math.radians(5)):
+                runs.append(r)
     runs.sort(key=lambda r: r['z0'])
     return runs
+
+
+def split_at_steps(ss, zz):
+    """Split a run where its treads step up more than 0.9 m within a metre
+    (no row of seats rises that much over the one in front: it is another
+    stand, or a sunken dugout in front of the seats)."""
+    b = np.floor(ss / 0.5)
+    ub = np.unique(b)
+    lo = np.array([np.percentile(zz[b == u], 10) for u in ub])
+    cuts = [k + 1 for k in range(len(ub) - 1)
+            if ub[k + 1] - ub[k] <= 2 and lo[k + 1] - lo[k] > 0.9 and (k + 2 >= len(ub) or lo[k + 2] - lo[k] > 0.9)]
+    edges = [ub[0]] + [ub[k] for k in cuts] + [ub[-1] + 1]
+    return [(ss[(b >= e0) & (b < e1)], zz[(b >= e0) & (b < e1)]) for e0, e1 in zip(edges, edges[1:])]
 
 
 def fit_run(ss, zz):
@@ -350,14 +370,21 @@ def governing(ps, pz, hs, hz):
 # ---------------------------------------------------------------- measure
 
 def tier_run(runs, band):
-    """The run whose front sits in the band; of several, the nearest home
-    plate, or the farthest for a band marked 'far'."""
+    """The run whose front sits in the band (lo, hi[, 'near' or 'far'[, least
+    rake in degrees, default 5]]); of several, the nearest home plate, or for
+    'far' the farthest one in front of the first run above the band (the next
+    deck up)."""
     lo, hi = band[:2]
-    cands = [r for r in runs if lo <= r['z0'] <= hi and r['s0'] < 170]
+    min_rake = band[3] if len(band) > 3 else 5
+    cands = [r for r in runs if lo <= r['z0'] <= hi and r['s0'] < 170 and r['slope'] > math.tan(math.radians(min_rake))]
     if not cands:
         return None
-    pick = max if band[2:] == ('far',) else min
-    return pick(cands, key=lambda r: r['s0'])
+    if band[2:3] == ('far',):
+        above = [r['s0'] for r in runs if r['z0'] > hi]
+        if above:
+            cands = [r for r in cands if r['s0'] < min(above)] or cands
+        return max(cands, key=lambda r: r['s0'])
+    return min(cands, key=lambda r: r['s0'])
 
 
 def measure_section(P, sec, band):
@@ -442,7 +469,9 @@ def measure(park):
     P = (E, N, Z)
     data = load_sections(park)
     bands = PARKS[park]['tiers']
-    results = [measure_section(P, sec, bands[sec['tier']]) for sec in data['sections'] if sec['tier'] in bands]
+    skip = PARKS[park].get('skip', {})
+    results = [{'id': sec['id'], 'tier': sec['tier'], 'found': False, 'why': 'skipped: ' + skip[sec['id']]} if sec['id'] in skip
+               else measure_section(P, sec, bands[sec['tier']]) for sec in data['sections'] if sec['tier'] in bands]
     tiers = {}
     for key in bands:
         rs = [r for r in results if r['tier'] == key and r['found']]
@@ -522,6 +551,29 @@ def draw(park, P, data, results):
     for i, p in enumerate(panels):
         sheet.paste(p, ((i % cols) * W, (i // cols) * H))
     sheet.save(f'tmp/lidar/{park}-check.png')
+    # Plan view: heights (white = high), each section's measuring point
+    # coloured by tier (grey where not found), with its id.
+    E, N, Z = P
+    cell = 0.5
+    ix, iy = ((E + HALF) / cell).astype(int), ((HALF - N) / cell).astype(int)
+    size = int(2 * HALF / cell) + 1
+    img = np.full((size, size), -np.inf)
+    np.maximum.at(img, (np.clip(iy, 0, size - 1), np.clip(ix, 0, size - 1)), Z)
+    g = np.clip(np.nan_to_num(img, neginf=0) / max(1.0, np.percentile(Z, 99.5)), 0, 1) * 200
+    plan = Image.fromarray(g.astype(np.uint8)).convert('RGB').resize((size * 2, size * 2))
+    dp = ImageDraw.Draw(plan)
+    colours = [(255, 60, 60), (60, 200, 60), (80, 140, 255), (255, 180, 0), (220, 80, 255), (0, 220, 220), (255, 120, 180), (180, 255, 120), (255, 255, 255), (160, 120, 60), (120, 120, 255), (255, 90, 0)]
+    keys = list(PARKS[park]['tiers'])
+    for r in results:
+        if 'anchor' not in r:
+            continue
+        x, y = (r['anchor'][0] + HALF) / cell * 2, (HALF - r['anchor'][1]) / cell * 2
+        c = colours[keys.index(r['tier']) % len(colours)] if r['found'] else (128, 128, 128)
+        dp.ellipse([x - 4, y - 4, x + 4, y + 4], fill=c)
+        dp.text((x + 5, y - 6), r['id'], fill=c)
+    for i, k in enumerate(keys):
+        dp.text((10, 10 + 14 * i), k, fill=colours[i % len(colours)])
+    plan.save(f'tmp/lidar/{park}-plan.png')
     print(f'wrote tmp/lidar/{park}-check.png ({len(panels)} cuts)')
 
 
