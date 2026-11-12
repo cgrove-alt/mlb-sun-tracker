@@ -1224,7 +1224,74 @@ Still open:
   9 ft over their first covered row: suites at 6 ft in about a dozen
   parks, and some under 2 ft (the Reds' 400s and third-base 100s, the
   Royals' and Rockies' upper decks, the Padres' right-field upper deck);
-  Wrigley's Terrace is at 5 ft. Not touched here.
+  Wrigley's Terrace is at 5 ft. Not touched here (plan in §8).
+
+## 8. Plan: every deck at least 9 ft over its first covered row (2026-11-12)
+The rule from §7.1b, now applied at every park: a deck's underside is at
+least 9 ft above the floor of the first row under it (to the nearest foot,
+on the profile the engine uses). 1,139 sections at 20 parks have less.
+
+Causes, from the code:
+- Estimates written before the rule (e.g. Wrigley's Terrace, 5 ft).
+- One underside shared by sections whose covered rows differ: the cover
+  helpers (`gabpCover`, `coorsCover`, `petcoCover`, `pncCover`,
+  `comericaCover`, …) and shared constants give one value to a whole tier,
+  so sections covered further back get a floor almost at the deck (GABP
+  403/404: 0.3 ft; Brewers' Loge: the deck 3.5 ft below row 17's floor).
+- Suites: "one row of seats under the suite ceiling", the ceiling 6 ft
+  above the floor at 12 parks (8 ft at 3).
+
+### Part A: everything but suites (about 380 sections, 16 parks)
+Raise each to 9 ft over its own first covered row, no more. Where a helper
+or constant gives one value to sections that need different ones, split it
+by what each needs. Comments updated. Simulated effect at a July 1:10 PM
+game: about 40 sections move by more than 5% (rows in front of a higher
+deck edge get a little more shade, covered rows a little more low sun).
+- Angels: left pavilion 256–260, 32 → 34 ft
+- Astros: club, 62 → 64; right field 152–155, 35 → 36
+- Brewers: Loge 206–215 and 222–236, 55 → 68 (`AMFAM_DECK`, Loge only)
+- Cubs: Terrace, 32 → 36
+- Guardians: first 128–148, 32 → 33; club, 58 → 59; upper, 114 → 115
+- Mariners: main (club deck), 45 → 46
+- Nationals: 100s 115/130–132, 54 → 55–58; club level, 72 → 74
+- Orioles: bleachers 92/94, 30 → 35; club level, 66 → 69
+- Padres: left lower 126–132, 22 → 23; right lower 129/137, 32 → 33;
+  left reserved 226/228/230, 48 → 50–52; right upper 227/229/231, 58 → 63–65
+- Pirates: upper 307/331–333, 98 → 102
+- Reds: 400s, 74 → 77/80/83 (by covered row); third 110–112, 36 → 40/44;
+  first 132–135, 36 → 39; home 122–126, 22 → 24; left field, 22 → 26
+- Rockies: upper deck roof, 98 → 105/106; right bleachers, 22 → 26/27;
+  field 116/117, 46 → 49
+- Royals: upper deck roof, 128 → 136
+- Tigers: upper, 98 → 100; mezzanine 211–218, 87 → 88; and 104–107,
+  115, 143, 144 by 1 ft each
+- Twins: club, 48 → 51; infield, 34 → 37
+- White Sox: lower box 109/110/130–134, 42 → 44
+
+### Part B: suites (759 sections, 15 parks): decision needed
+The engine puts the deck above's edge right over the suite seats' front.
+On the ground the deck above reaches well past them (CBP: the 300 level's
+front is over the 200 level's 3rd row, ~27 ft ahead of the suites; that is
+why the scan can't see them). The 6-ft ceiling has been standing in for
+that reach. Options:
+1. (Recommended) Model the reach: one new optional value,
+   `overhang.reachFt` (how far the deck's edge reaches past the first
+   covered row's front; one line in `rowLight`). Suites get a 9-ft ceiling
+   and a reach worked out per park from the tier in front of them (the
+   deck's sourced covered row there), or measured where the lidar has it.
+   Suites end up shaded except under a low sun in front.
+2. 9-ft ceiling, edge left over the seats: simplest, but suites facing the
+   sun get much sunnier (Reds' suites lose about half their shade at a July
+   1:10 PM game), which is likely wrong.
+3. Leave suites out for now: Part A only, suites recorded as an exception.
+
+### Then
+- `deckClearance.test.ts` covers every park and tier (suites per Part B).
+- Reference checks and blog claims re-run; any that change are
+  investigated and recorded, never tuned. Low share before and after.
+- Commits: Part A with the wider test; Part B on its own.
+
+- [x] Part A   - [ ] Part B   - [x] Test covers every park   - [ ] Review
 
 ---
 ---
