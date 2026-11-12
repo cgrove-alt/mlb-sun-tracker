@@ -36,6 +36,8 @@ import { twinsSections, TWINS_AERIAL_CONTROL } from '../twins';
 import { twinsChartPoints } from '../chart-points/twins';
 import { whitesoxSections, WHITESOX_AERIAL_CONTROL } from '../whitesox';
 import { whitesoxChartPoints } from '../chart-points/whitesox';
+import { athleticsSections, ATHLETICS_AERIAL_CONTROL } from '../athletics';
+import { athleticsChartPoints } from '../chart-points/athletics';
 import { aerialChartFit } from '../parkSectionBuilder';
 import { getStadiumOrientation } from '../../../stadiums';
 
@@ -807,5 +809,37 @@ describe('Rate Field stand directions (measured on the 2019 aerial photo)', () =
     expect(stand('155')).toBe(36);
     expect(stand('102')).toBe(164);
     expect(stand('161')).toBe(89);
+  });
+});
+
+describe('Sutter Health Park stand directions (measured on the 2022 aerial photo)', () => {
+  // Both straights converge on their foul lines (backs 171° and 280°);
+  // behind home the aisles radiate from home plate.
+  const byId = new Map(athleticsSections.map((s) => [s.id, s]));
+  const stand = (id: string) => {
+    const value = byId.get(id)?.standCompass;
+    if (value === undefined) throw new Error(`No stand direction for ${id}`);
+    return value;
+  };
+  const bearing = (id: string) => {
+    const s = byId.get(id)!;
+    return (((getStadiumOrientation('athletics') + 90 - s.baseAngle - s.angleSpan / 2) % 360) + 360) % 360;
+  };
+
+  it('pins the club map to the photo within 5 m', () => {
+    expect(aerialChartFit(athleticsChartPoints, ATHLETICS_AERIAL_CONTROL).rmsM).toBeLessThan(5);
+  });
+
+  it('puts 108–116 on the wedges between the aisles seen behind home', () => {
+    // Aisles at 163°, 176.5°, 190°, 203.5°, 217.5°, 235.5°, 249.5°, 263°, 276.5° and 290°.
+    const wedges: Record<string, number> = { '108': 169.75, '109': 183.25, '110': 196.75, '111': 210.5, '112': 226.5, '113': 242.5, '114': 256.25, '115': 269.75, '116': 283.25 };
+    for (const [id, middle] of Object.entries(wedges)) expect(diff(bearing(id), middle)).toBeLessThan(3);
+  });
+
+  it.each(['101', '104', '107', '203'])('first-base section %s faces 171°', (id) => expect(stand(id)).toBe(171));
+  it.each(['117', '120', '123'])('third-base section %s faces 280°', (id) => expect(stand(id)).toBe(280));
+
+  it.each(['112', '110', '114'])('behind-home section %s faces its bearing from home', (id) => {
+    expect(diff(stand(id), bearing(id))).toBeLessThan(4);
   });
 });

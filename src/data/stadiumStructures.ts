@@ -3847,6 +3847,105 @@ const RATE: StadiumStructure = {
   reviewedOn: '2026-11-12',
 };
 
+const SUTTER_MAP = 'https://www.mlb.com/athletics/ballpark/seating-map';
+const SUTTER_SHADE = 'https://www.shadedseats.com/sutter-health-park-shaded-seats/';
+const SUTTER_PHOTO = 'USGS NAIP m_3812128_ne_10_060_20220621';
+const SUTTER_LOWER = { frontRowHeightFt: 4, rakeDeg: 20, treadFt: 2.8 };
+const sutterRise = 2.8 * Math.tan((SUTTER_LOWER.rakeDeg * Math.PI) / 180);
+/** Front-row height of a section whose rows start this many rows up (behind a dugout). */
+const sutterFront = (rowsUp: number) => ({ frontRowHeightFt: SUTTER_LOWER.frontRowHeightFt + rowsUp * sutterRise });
+
+/** Seating ring of a Sutter Health Park chart section. */
+export function sutterTier(id: string): string | null {
+  if (!/^\d{3}$/.test(id)) return null;
+  const n = Number(id);
+  if (n <= 107) return 'first';
+  if (n <= 116) return 'home';
+  if (n <= 123) return 'third';
+  return 'club';
+}
+
+/**
+ * Sutter Health Park (2000, as Raley Field; the Athletics' home from 2025).
+ * One seating bowl (101–123) with the suites and press box behind it from
+ * the first-base curve round the third-base side, and a five-row club
+ * (201–206) raised behind 101–106. Rows are the club's own drawing (see
+ * chart-points/athletics.ts); no source lists covered rows. On the 2022 USGS
+ * photo the seats behind home run ~19–43 m from the plate and the suite and
+ * press-box structure's front edge stands ~2 m behind the last row (it
+ * shades the back rows on the photo); on the third-base side the suite
+ * building stands ~1.5 m behind the last row and ends by 123; on the first-base side
+ * the club's canopy reaches over the back of 103–105. No source publishes
+ * heights, so every height is estimated by stacking the levels: the bowl's
+ * top ~33 ft, a suite level and press box above it.
+ */
+const SUTTER: StadiumStructure = {
+  stadiumId: 'athletics',
+  // Far rim: the third-base suites (~58 ft) about 350 ft across the field
+  // from the first-base seats, which face the evening sun.
+  park: { roof: 'open', farRimHeightFt: 58, fieldCrossingFt: 350 },
+  tierOf: sutterTier,
+  tiers: {
+    home: {
+      label: 'Behind home (108–116)',
+      // 29 rows (22 in 111–113, in front of the tables); the suites and
+      // press box (~70 ft) with their front edge ~2 m behind the last row
+      // (~8 m behind 111–113's, past the tables).
+      stand: { rows: 29, ...SUTTER_LOWER, backHeightFt: 70, backSetbackFt: 7 },
+      sections: Object.fromEntries(['111', '112', '113'].map((id) => [id, { backSetbackFt: 27 }])),
+      rowsFromMap: true,
+      heightsSourced: false,
+      coverSourced: true,
+      sources: [SUTTER_MAP, SUTTER_SHADE, SUTTER_PHOTO],
+    },
+    third: {
+      label: 'Third-base side (117–123)',
+      // Open; the suite building (~58 ft) ~1.5 m behind the last row, ending
+      // before 123 ("extends past the structure that blocks the sun").
+      // 117–118 start behind the home dugout (~4 rows up).
+      stand: { rows: 32, ...SUTTER_LOWER, backHeightFt: 58, backSetbackFt: 5 },
+      sections: {
+        '117': sutterFront(4),
+        '118': sutterFront(4),
+        // 12 rows; only its own back stands behind it.
+        '123': { backHeightFt: 4 + 11 * sutterRise + 4, backSetbackFt: 0 },
+      },
+      rowsFromMap: true,
+      heightsSourced: false,
+      coverSourced: true,
+      sources: [SUTTER_MAP, SUTTER_SHADE, SUTTER_PHOTO],
+    },
+    first: {
+      label: 'First-base side (101–107)',
+      // The club deck (~40 ft) behind; its canopy reaches over "the very
+      // back of sections 103–105" (no rows given, so the check tries both;
+      // on the photo ~3 m, about the last 4 rows). 106–107 start behind the
+      // visitors' dugout.
+      stand: { rows: 30, ...SUTTER_LOWER, backHeightFt: 40, backSetbackFt: 10 },
+      sections: {
+        ...Object.fromEntries(['103', '104', '105'].map((id) => [id, { overhang: { coveredFromRow: 27, soffitHeightFt: 40 } }])),
+        '106': sutterFront(6),
+        '107': sutterFront(6),
+      },
+      rowsFromMap: true,
+      heightsSourced: false,
+      coverSourced: false,
+      sources: [SUTTER_MAP, SUTTER_SHADE, SUTTER_PHOTO],
+    },
+    club: {
+      label: 'Club (201–206)',
+      // Five rows raised behind 101–106, open ("remain sunny the longest").
+      // Estimated: front ~36 ft, the club building (~50 ft) behind.
+      stand: { rows: 5, frontRowHeightFt: 36, rakeDeg: 15, treadFt: 2.8, backHeightFt: 50, backSetbackFt: 6 },
+      rowsFromMap: true,
+      heightsSourced: false,
+      coverSourced: true,
+      sources: [SUTTER_MAP, SUTTER_SHADE],
+    },
+  },
+  reviewedOn: '2026-11-12',
+};
+
 export const STADIUM_STRUCTURES: Readonly<Record<string, StadiumStructure>> = {
   yankees: YANKEES,
   redsox: FENWAY,
@@ -3869,6 +3968,7 @@ export const STADIUM_STRUCTURES: Readonly<Record<string, StadiumStructure>> = {
   guardians: PROGRESSIVE,
   twins: TARGET,
   whitesox: RATE,
+  athletics: SUTTER,
 };
 
 export function getStadiumStructure(stadiumId: string): StadiumStructure | undefined {

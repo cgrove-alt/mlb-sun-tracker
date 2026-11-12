@@ -271,6 +271,12 @@ export const classifyTigersSection: Classifier = (id) => {
   return numeric ?? section('standing');
 };
 
+/** Sutter Health Park: 101–123 around the bowl; 201–206 the club seats behind 101–106. */
+export const classifyAthleticsSection: Classifier = (id) => {
+  const numeric = numericTier(id, [[199, 'lower'], [299, 'club']]);
+  return numeric ?? section('standing');
+};
+
 /** Rate Field: the club's seat-map names (its 2026 drawing and section pages). */
 const WHITESOX_NAMED: Record<string, ChartSectionMeta> = {
   'CIBC-SCOUT-CLUB': section('club', 'none', 'CIBC Scout Club'),

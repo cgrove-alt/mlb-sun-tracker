@@ -854,6 +854,26 @@ Medium or Low confidence and their blog posts stay unpublished.
             photo (all but the first 15 rows of the first-base 100s shaded;
             the model gets there an hour later) and "most" first-base lower
             rows shaded at a 3:05 PM first pitch.
+      - [x] Sutter Health Park: the placeholder arcs (101–123 spread evenly,
+            201–206 called suites) are replaced by the club's own 2025 seat
+            map (the same 29 ids; 201–206 are a five-row club behind
+            101–106). The drawing is a plan to scale: turned to the measured
+            47° it lands on the photo's aisle wedges behind home within ~1.5°
+            and along both lines within ~2 m, so the fit is affine at 0.3 m
+            RMS. Both straights converge on their foul lines (rows at 81°
+            and 10.4°, facing 171°/280°); arcs on home behind it. Rate Your
+            Seats has no pages for this park: rows are counted on the club's
+            drawing (agrees with fans' seat photos), shade claims come from
+            shadedseats.com. The suite/press-box edge stands ~2 m behind the
+            last row behind home (its shadow falls on the back rows on the
+            photo) and ~1.5 m on the third-base side, ending before 123. 20
+            checks pass. Not reproduced: 109–113's back quarter shaded by
+            2–3 PM, and 109–111 in the evening (the low sun comes in
+            sideways past the press box, which a cross-section can't see).
+      - [x] Fix: the Athletics' history entry described the Oakland
+            Coliseum, so the page said "Built 1966"; now Sutter Health Park
+            (2000, ex-Raley Field). The unrendered Coliseum guide in
+            mlbStadiumGuidesFinal.ts is still there (open item).
 - [ ] 6.5 Batch 5, retractable roofs (answers assume the roof is open, as
       today): Diamondbacks, Rangers, Astros, Marlins, Brewers, Mariners,
       Blue Jays.
