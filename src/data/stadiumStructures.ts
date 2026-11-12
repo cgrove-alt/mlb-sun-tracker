@@ -139,6 +139,8 @@ const YANKEES: StadiumStructure = {
       // what rises highest behind; behind home (220B, 222) the canopy. The
       // deck that covers row 14 is under it and cannot be seen from the air.
       // Estimated: its underside ~50 ft (9 ft above row 14's floor).
+      // With the source and the scan disagreeing, which rows are covered is
+      // not settled, so the confidence check tries it both ways.
       stand: {
         rows: 22,
         frontRowHeightFt: 29,
@@ -157,7 +159,7 @@ const YANKEES: StadiumStructure = {
         ['229', { rows: 19 }], ['205', { rows: 22 }], ['217', { rows: 23 }], ['233A', { rows: 23 }],
       ]),
       heightsSourced: false,
-      coverSourced: true,
+      coverSourced: false,
       sources: [RYS_YANKEES, rysSection('217'), rysSection('220A'), rysSection('229'), rysSection('205'), rysSection('215'), rysSection('233A'), YANKEES_LIDAR],
     },
     terrace: {
@@ -178,6 +180,9 @@ const YANKEES: StadiumStructure = {
       // sparse up here and only two sections' first rows come out cleanly
       // (408, 420C): front row 95 ft (94–95), 23° rake (22–24); the canopy's
       // front edge is 133 ft up, its underside there 127 ft (126–129).
+      // The scan puts that edge over row 2 (the sources say row 5–7).
+      // With the source and the scan disagreeing, which rows are covered is
+      // not settled, so the confidence check tries it both ways.
       stand: {
         rows: 14,
         frontRowHeightFt: 95,
@@ -187,7 +192,7 @@ const YANKEES: StadiumStructure = {
         overhang: { coveredFromRow: 6, soffitHeightFt: 127 },
       },
       heightsSourced: true,
-      coverSourced: true,
+      coverSourced: false,
       sources: [rysSection('420B'), 'https://ballparkeguides.com/yankee-stadium-seating/', 'https://baseballpilgrimages.com/american/newyork.html', 'NYC Building Footprints, BIN 2114490 (height_roof 120 ft)', YANKEES_LIDAR],
     },
     bleachers: {
@@ -570,6 +575,8 @@ const DODGERS: StadiumStructure = {
       // covers row N, cannot be seen from the air. What rises highest behind
       // is that Reserve deck edge, 58 ft up over row 8. Estimated: the Club
       // deck's underside ~42 ft (9 ft above row N's floor).
+      // With the source and the scan disagreeing, which rows are covered is
+      // not settled, so the confidence check tries it both ways.
       stand: {
         rows: 22,
         frontRowHeightFt: 22,
@@ -580,7 +587,7 @@ const DODGERS: StadiumStructure = {
       },
       sections: { '145LG': { backHeightFt: 48, backSetbackFt: -43 } },
       heightsSourced: false,
-      coverSourced: true,
+      coverSourced: false,
       sources: [rysDodgers('sections/124'), rysDodgers('sections/139'), rysDodgers('sections/166'), RYS_DODGERS, DODGERS_LIDAR],
     },
     club: {
@@ -628,9 +635,11 @@ const DODGERS: StadiumStructure = {
       // (56–57), 27° rake (26–30); what rises highest behind is the Top
       // Deck's front edge, 97 ft up over row 12 (the scan shows the Top Deck
       // over these sections' rows 11–12 and back, against the source).
+      // With the source and the scan disagreeing, which rows are covered is
+      // not settled, so the confidence check tries it both ways.
       stand: { rows: 21, frontRowHeightFt: 57, rakeDeg: 27, backHeightFt: 97, backSetbackFt: -23 },
       heightsSourced: true,
-      coverSourced: true,
+      coverSourced: false,
       sources: [rysDodgers('sections/15IR'), rysDodgers('reserve-level'), DODGERS_LIDAR],
     },
     lowerReserve: {
