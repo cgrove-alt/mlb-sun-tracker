@@ -47,7 +47,7 @@ export interface StadiumStructure {
  * How far the deck above a level of suites reaches out past the suite seats,
  * feet, where a park's own tiers don't show it. At ten parks they do (the
  * suites sit behind the last row of a level that the same deck covers, and it
- * reaches 6–28 ft past them; each says so at its suites): this is their
+ * reaches 11–33 ft past them; each says so at its suites): this is their
  * median. Estimated.
  */
 const SUITE_DECK_REACH_FT = 17;
@@ -2648,41 +2648,72 @@ export function opacyTier(id: string): string | null {
   return 'clubLevel';
 }
 
-// The Terrace: rows 1–13 under the club level from row 2 (sourced).
-// Estimated: front ~30 ft above the field-level rows, 20° rake, the club
-// level's underside ~48 ft.
+const OPACY_LIDAR = 'USGS 3DEP lidar MD_4County_D24, flown 2024-12-23 (scripts/measureStandHeights.py)';
+// The Terrace: rows 1–13 under the club level from row 2 (sourced). Hidden
+// from the air down the lines. Estimated: front ~22 ft, just behind the
+// field rows' back aisle (~20 ft on the lidar; 23 ft measured behind home),
+// 18° rake (as behind home); the club level's underside ~32 ft (its
+// measured 40-ft front row less 9 ft, raised to 9 ft above row 2's floor).
 const OPACY_TERRACE: StandProfile = {
   rows: 13,
-  frontRowHeightFt: 30,
-  rakeDeg: 20,
-  backHeightFt: 48,
-  overhang: { coveredFromRow: 2, soffitHeightFt: 48 },
+  frontRowHeightFt: 22,
+  rakeDeg: 18,
+  backHeightFt: 32,
+  overhang: { coveredFromRow: 2, soffitHeightFt: 32 },
 };
 
 /**
  * Oriole Park at Camden Yards (1992). Field-level sections (even numbers)
  * with the Terrace (odd numbers) behind them almost entirely under the club
  * level, the club level (200s) and the upper deck (300s) under a roof from
- * row 15. Rows and covered rows are Rate Your Seats' section pages. No
- * source publishes the deck heights, so every height is estimated by
- * stacking the decks.
+ * row 15. Rows and covered rows are Rate Your Seats' section pages.
+ *
+ * Heights are measured on USGS airborne lidar (OPACY_LIDAR, December 2024:
+ * after the 2022 left-field rebuild), as at Citizens Bank Park: for each
+ * section a cut straight back through its rows gives the front row's
+ * height, the rake and the structure that rises highest behind as seen from
+ * the middle uncovered row; tier values are medians, sections more than 10%
+ * (at least 3 ft) off get their own. The decks are lower than the stacking
+ * estimates: the club level's front is 40 ft (52), the upper deck's 63 ft
+ * (70), its roof's edge 119 ft (110). The light towers are not counted as
+ * walls; four corner sections whose cuts run along the steps are skipped.
+ * Covered rows: where the scan puts a deck's edge more than two rows from
+ * the source's, the scan's edge is used, with the lowest structure seen at
+ * it (or the deck above's front row less 9 ft) as the underside, never less
+ * than 9 ft above the first covered row's floor. Sections the scan does not
+ * find keep estimates, re-taken from the decks measured around them.
  */
 const OPACY: StadiumStructure = {
   stadiumId: 'orioles',
-  // Far rim: the upper deck's roof (~112 ft) about 550 ft across the field.
-  park: { roof: 'open', farRimHeightFt: 112, fieldCrossingFt: 550 },
+  // Far rim (lidar): the stands' roof line, median over sections 122 ft (the
+  // upper deck's roof); crossing: the median distance from a section to
+  // what rises highest across the field, 604 ft.
+  park: { roof: 'open', farRimHeightFt: 122, fieldCrossingFt: 604 },
   tierOf: opacyTier,
   tiers: {
     field: {
       label: 'Field level (even numbers)',
-      // Rows 1–24 to 1–29, open. Estimated: front row ~3 ft, 18° rake; the
-      // club level's edge (~48 ft) over the Terrace's second row, ~8 ft
-      // behind the last row.
-      stand: { rows: 29, frontRowHeightFt: 3, rakeDeg: 18, backHeightFt: 48, backSetbackFt: 8 },
+      // Rows 1–24 to 1–29, open. Lidar (38 of 39): front row 1 ft (-1 to 10;
+      // 7–10 ft in left field, 72–82), 14° rake (11–20); what rises highest
+      // behind is the upper deck's roof, 122 ft up and 51 ft back. In left
+      // field (70–76) the club level's front, 40 ft up, reaches out over
+      // their back rows (from row 14–25), so those rows are covered, under
+      // an underside of ~30 ft (that front row less 9 ft).
+      stand: { rows: 29, frontRowHeightFt: 1, rakeDeg: 14, backHeightFt: 122, backSetbackFt: 51 },
+      sections: {
+        '70': { overhang: { coveredFromRow: 25, soffitHeightFt: 31 } },
+        '74': { frontRowHeightFt: 10, overhang: { coveredFromRow: 16, soffitHeightFt: 30 } },
+        '80': { frontRowHeightFt: 10 },
+        '72': { frontRowHeightFt: 7, overhang: { coveredFromRow: 18, soffitHeightFt: 30 } },
+        '76': { frontRowHeightFt: 10, backHeightFt: 41, backSetbackFt: -25, overhang: { coveredFromRow: 14, soffitHeightFt: 31 } },
+        '78': { frontRowHeightFt: 10, backHeightFt: 65, backSetbackFt: 12 },
+        '82': { frontRowHeightFt: 7, backHeightFt: 57, backSetbackFt: 35 },
+        '86': { backHeightFt: 18, backSetbackFt: 1 },
+      },
       rowsFromMap: true,
-      heightsSourced: false,
+      heightsSourced: true,
       coverSourced: true,
-      sources: [RYS_OPACY, ...opacySections('22', '36', '48', '56', '70', '86')],
+      sources: [RYS_OPACY, ...opacySections('22', '36', '48', '56', '70', '86'), OPACY_LIDAR],
     },
     terrace: {
       label: 'Terrace (odd numbers)',
@@ -2695,91 +2726,112 @@ const OPACY: StadiumStructure = {
     terraceHome: {
       label: 'Terrace behind home (33–43)',
       // 33–39 rows 1–6 and 43 rows 1–13, "shaded during most day games";
-      // no source gives the covered rows, so the check tries both.
-      stand: { ...OPACY_TERRACE, rows: 6 },
+      // no source gives the covered rows. Lidar (4 of 5): front row 23 ft
+      // (23–25), 18° rake (10–20); the upper deck's front, 63 ft up, reaches
+      // out over row 1–5 (5 in 37), which settles the cover from row 2,
+      // under an underside of ~54 ft (that front row less 9 ft); that edge
+      // is what rises highest behind.
+      stand: { rows: 6, frontRowHeightFt: 23, rakeDeg: 18, backHeightFt: 64, backSetbackFt: -7, overhang: { coveredFromRow: 2, soffitHeightFt: 54 } },
+      sections: { 'C37': { overhang: { coveredFromRow: 5, soffitHeightFt: 54 } } },
       rowsFromMap: true,
       heightsSourced: false,
-      coverSourced: false,
-      sources: opacySections('33', '35', '37', '39', '43'),
+      coverSourced: true,
+      sources: [...opacySections('33', '35', '37', '39', '43'), OPACY_LIDAR],
     },
     rightCorner: {
       label: 'Right-field corner (1–8)',
       // Rows up to 21 (6: 10–27, 8: 4–27), open ("completely avoid
-      // sections 1–8 ... if you want to stay out of the sun").
-      stand: { rows: 21, frontRowHeightFt: 5, rakeDeg: 18, backHeightFt: 40 },
+      // sections 1–8 ... if you want to stay out of the sun"). Lidar (5 of
+      // 6): front row 3 ft (0–5), 12° rake; what rises highest behind is the
+      // upper deck's roof, 122 ft up and 75 ft back.
+      stand: { rows: 21, frontRowHeightFt: 3, rakeDeg: 12, backHeightFt: 122, backSetbackFt: 75 },
       rowsFromMap: true,
-      heightsSourced: false,
+      heightsSourced: true,
       coverSourced: true,
-      sources: [RYS_OPACY, ...opacySections('1', '3', '5', '6', '7', '8')],
+      sources: [RYS_OPACY, ...opacySections('1', '3', '5', '6', '7', '8'), OPACY_LIDAR],
     },
     bleachers: {
       label: 'Right-field bleachers (90–98)',
-      // Rows 1–15 to 1–23; 92 and 94 covered from row 19 (sourced).
-      // Estimated: front ~8 ft above the wall, 20° rake, the structure
-      // behind ~30 ft; over 92 and 94 its underside ~35 ft (9 ft above row
-      // 19's floor).
-      stand: { rows: 23, frontRowHeightFt: 8, rakeDeg: 20, backHeightFt: 30 },
+      // Rows 1–15 to 1–23; 92 and 94 covered from row 19 (sourced). Lidar
+      // (4 of 5): front row 6 ft above the field (5–8), 18° rake; what rises
+      // highest behind is 112 ft up and 50 ft back (40–118). Estimated: over
+      // 92 and 94 the structure's underside ~35 ft (9 ft above row 19's
+      // floor). Over 90's rows 17 and up a structure reaches out, its lowest
+      // point at the edge 38 ft up, so those rows are covered.
+      stand: { rows: 23, frontRowHeightFt: 6, rakeDeg: 18, backHeightFt: 112, backSetbackFt: 50 },
       sections: {
+        '90': { overhang: { coveredFromRow: 17, soffitHeightFt: 38 } },
         '92': { overhang: { coveredFromRow: 19, soffitHeightFt: 35 } },
         '94': { overhang: { coveredFromRow: 19, soffitHeightFt: 35 } },
+        '96': { backHeightFt: 40, backSetbackFt: 45 },
       },
       rowsFromMap: true,
       heightsSourced: false,
       coverSourced: true,
-      sources: opacySections('90', '92', '94', '96', '98'),
+      sources: [...opacySections('90', '92', '94', '96', '98'), OPACY_LIDAR],
     },
     clubLevel: {
       label: 'Club level (212–264)',
-      // Rows 1–9, covered from row 8 (sourced). Estimated: front ~52 ft,
-      // 22° rake, the upper deck's underside ~69 ft (9 ft above row 8's
-      // floor).
-      stand: { rows: 9, frontRowHeightFt: 52, rakeDeg: 22, backHeightFt: 69, overhang: { coveredFromRow: 8, soffitHeightFt: 69 } },
+      // Rows 1–9; Rate Your Seats counts them covered from row 8. Lidar (19
+      // of 21): front row 40 ft, 23° rake (21–26); the upper deck's front,
+      // 63 ft up, reaches out over row 5 in all of them, so the rows from 5
+      // back are covered, under an underside of ~54 ft (that front row less
+      // 9 ft). That edge is what rises highest behind.
+      stand: { rows: 9, frontRowHeightFt: 40, rakeDeg: 23, backHeightFt: 64, backSetbackFt: -12, overhang: { coveredFromRow: 5, soffitHeightFt: 54 } },
       rowsFromMap: true,
       heightsSourced: false,
       coverSourced: true,
-      sources: [RYS_OPACY, ...opacySections('212', '230', '242', '256', '264')],
+      sources: [RYS_OPACY, ...opacySections('212', '230', '242', '256', '264'), OPACY_LIDAR],
     },
     clubOpen: {
       label: 'Club level, outfield ends (204–210, 268–288)',
-      // Rows 1–5 or 1–6, open. Estimated as the club level, with the upper
-      // deck (~70 ft) just behind.
-      stand: { rows: 6, frontRowHeightFt: 52, rakeDeg: 22, backHeightFt: 70, backSetbackFt: 10 },
+      // Rows 1–5 or 1–6, open. Lidar (2 of 15; the corner cuts run along the
+      // steps): front row 40 ft, 22° rake; what rises highest behind is the
+      // upper deck's front edge, 64 ft up, which reaches out over 270's row
+      // 5 (its underside ~53 ft).
+      stand: { rows: 6, frontRowHeightFt: 40, rakeDeg: 22, backHeightFt: 64, backSetbackFt: -3 },
+      sections: { '270': { overhang: { coveredFromRow: 5, soffitHeightFt: 53 } } },
       rowsFromMap: true,
-      heightsSourced: false,
+      heightsSourced: true,
       coverSourced: true,
-      sources: opacySections('204', '210', '268', '278', '288'),
+      sources: [...opacySections('204', '210', '268', '278', '288'), OPACY_LIDAR],
     },
     upper: {
       label: 'Upper deck (300s)',
       // Rows 1–25 (or 1–5 then 9–25), covered from row 15 by the roof
-      // (sourced). Estimated: front ~70 ft, 26° rake, roof underside ~110 ft.
-      stand: { rows: 25, frontRowHeightFt: 70, rakeDeg: 26, backHeightFt: 110, overhang: { coveredFromRow: 15, soffitHeightFt: 110 } },
+      // (sourced; the lidar puts the roof's edge over row 14). Lidar (29 of
+      // 37): front row 63 ft (63–64), 30° rake (27–31); the roof's edge is
+      // 119 ft up with nothing seen below it (a thin roof), and is what rises
+      // highest behind.
+      stand: { rows: 25, frontRowHeightFt: 63, rakeDeg: 30, backHeightFt: 122, backSetbackFt: -24, overhang: { coveredFromRow: 15, soffitHeightFt: 119 } },
       sections: {
-        ...Object.fromEntries(OPACY_300_SKIPPING.map((id) => [id, { overhang: { coveredFromRow: 12, soffitHeightFt: 110 } }])),
-        '381': { overhang: { coveredFromRow: 8, soffitHeightFt: 110 } }, // rows 8–25
+        ...Object.fromEntries(OPACY_300_SKIPPING.map((id) => [id, { overhang: { coveredFromRow: 12, soffitHeightFt: 119 } }])),
+        '381': { overhang: { coveredFromRow: 8, soffitHeightFt: 119 } }, // rows 8–25
       },
       rowsFromMap: true,
-      heightsSourced: false,
+      heightsSourced: true,
       coverSourced: true,
-      sources: [RYS_OPACY, ...opacySections('308', '312', '330', '342', '360', '381', '388')],
+      sources: [RYS_OPACY, ...opacySections('308', '312', '330', '342', '360', '381', '388'), OPACY_LIDAR],
     },
     upperShort: {
       label: 'Upper deck (300s)',
       // 320, 338, 350, 358, 366: rows 1–8 only, in front of the covered
-      // rows, so open. Estimated as the upper deck.
-      stand: { rows: 8, frontRowHeightFt: 70, rakeDeg: 26, backHeightFt: 110, backSetbackFt: 20 },
+      // rows, so open. Lidar (338; the others join the rows behind them):
+      // front row 64 ft, 30° rake; behind, the roof, 122 ft up.
+      stand: { rows: 8, frontRowHeightFt: 64, rakeDeg: 30, backHeightFt: 122, backSetbackFt: 16 },
       rowsFromMap: true,
-      heightsSourced: false,
+      heightsSourced: true,
       coverSourced: true,
-      sources: opacySections('320', '338', '350', '358', '366'),
+      sources: [...opacySections('320', '338', '350', '358', '366'), OPACY_LIDAR],
     },
     suite: {
       label: 'Suites',
       // The club's map lists them as suites: as at the other parks, one row
       // of seats under the suite level's ceiling, 9 ft above the floor.
-      // Estimated ~62 ft up, behind the club level's last row (61 ft) and under
-      // the upper deck, which covers it from row 8: 6 ft past them.
-      stand: { rows: 1, frontRowHeightFt: 62, rakeDeg: 0, backHeightFt: 74, overhang: { coveredFromRow: 1, soffitHeightFt: 71, reachFt: 6 } },
+      // Estimated ~50 ft up, behind the club level's last row (49 ft,
+      // measured front and rake) and under the upper deck, which covers it
+      // from row 5: 14 ft past them.
+      stand: { rows: 1, frontRowHeightFt: 50, rakeDeg: 0, backHeightFt: 64, overhang: { coveredFromRow: 1, soffitHeightFt: 59, reachFt: 14 } },
       heightsSourced: false,
       coverSourced: true,
       sources: ['https://www.mlb.com/orioles/ballpark/seating-map'],

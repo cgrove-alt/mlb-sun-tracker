@@ -182,6 +182,27 @@ PARKS = {
             'gallery': (19, 24, 'near', 15), 'upperGallery': (26, 34, 'near', 15),
         },
     },
+    'orioles': {
+        # Not in the AWS copy (it has 2014): two tiles from USGS (rockyweb),
+        # 54 and 53 MB, downloaded to tmp/lidar/raw/. The 2024 scan shows the
+        # left-field wall as moved back in 2022.
+        'scan': {'laz': ['tmp/lidar/raw/USGS_LPC_MD_4County_D24_18suj600490.laz', 'tmp/lidar/raw/USGS_LPC_MD_4County_D24_18suj590490.laz']},
+        'url': ['https://rockyweb.usgs.gov/vdelivery/Datasets/Staged/Elevation/LPC/Projects/MD_4County_D24/MD_4County_2_D24/LAZ/USGS_LPC_MD_4County_D24_18suj600490.laz',
+                'https://rockyweb.usgs.gov/vdelivery/Datasets/Staged/Elevation/LPC/Projects/MD_4County_D24/MD_4County_2_D24/LAZ/USGS_LPC_MD_4County_D24_18suj590490.laz'],
+        'name': 'USGS 3DEP MD_4County_D24 (Maryland 2024)',
+        'noise': [7, 18],
+        # The Terrace (odd 11-87) is under the club level, its first rows
+        # showing; behind home (33-43) under the upper deck.
+        'tiers': {
+            'field': (-0.8, 3.5, 'near'), 'rightCorner': (-0.8, 2.5, 'near'), 'bleachers': (1, 3),
+            'terrace': (4, 8.5, 'near', 10), 'terraceHome': (5.5, 8.5, 'near', 10),
+            'clubLevel': (10.5, 14, 'near', 12), 'clubOpen': (10.5, 14, 'near', 12),
+            'upper': (17.5, 21, 'near', 15), 'upperShort': (17.5, 21, 'near', 15),
+        },
+        # The light towers rise above the roof line (~121 ft) to ~165 ft.
+        'lightTowersAbove': 40,
+        'skip': {n: 'its cut runs along the steps, not up them (the stand direction is off in the corner)' for n in ('276', '280', '282', '378')},
+    },
     'dodgers': {
         'scan': {'ept': 'CA_LosAngeles_1_B23'}, 'name': 'USGS 3DEP CA_LosAngeles_B23 (LA County 2023)',
         'noise': [7, 18],
@@ -526,7 +547,10 @@ def measure_section(P, sec, band):
     if not run:
         return {'id': sec['id'], 'tier': sec['tier'], 'found': False, 'why': 'no run in band on the stand cut', 'anchor': [ax, ay, radial['at'](sm)]}
     model_cover = (st.get('overhang') or {}).get('coveredFromRow')
-    open_rows = rows if model_cover is None else model_cover - 1
+    # The rows the scan should see: up to the covered row where a source
+    # gives it; a guessed covered row (the tier's cover is unsourced) is what
+    # is being measured, so it does not limit them.
+    open_rows = rows if model_cover is None or not sec.get('coverSourced', True) else model_cover - 1
     depth = run['s1'] - run['s0']
     if depth > 1.6 * max(open_rows, 1) * tread + 2:
         return {'id': sec['id'], 'tier': sec['tier'], 'found': False, 'anchor': [ax, ay, run['at'](0)],
@@ -630,7 +654,8 @@ def measure(park):
     bands = PARKS[park]['tiers']
     skip = PARKS[park].get('skip', {})
     results = [{'id': sec['id'], 'tier': sec['tier'], 'found': False, 'why': 'skipped: ' + skip[sec['id']]} if sec['id'] in skip
-               else measure_section(P, sec, bands[sec['tier']]) for sec in data['sections'] if sec['tier'] in bands]
+               else measure_section(P, {**sec, 'coverSourced': data['tiers'][sec['tier']]['coverSourced']}, bands[sec['tier']])
+               for sec in data['sections'] if sec['tier'] in bands]
     tiers = {}
     for key in bands:
         rs = [r for r in results if r['tier'] == key and r['found']]

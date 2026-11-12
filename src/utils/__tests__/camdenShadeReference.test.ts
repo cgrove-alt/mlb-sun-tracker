@@ -11,14 +11,14 @@
  *   [RYS] https://www.rateyourseats.com/oriole-park/seating/shaded-covered-seats
  *         and its section pages (1–98, 204–288, 306–388)
  *
- * Not reproduced (the deck heights are estimates):
- *   - [RYS] the third-base club sections 242–264 are "entirely shaded by
- *     the middle innings" and their last five rows "shaded for the entirety
- *     of a 1 p.m. game". Its own section pages cover only rows 8–9 of their
- *     nine; with the club level's deck edge over row 8, a sun at 50–72° from
- *     behind reaches rows 5–7 at first pitch. The model shades the last five
- *     rows by the middle innings in September (tested below), and the whole
- *     section only late in the game.
+ * The heights are measured on USGS lidar (December 2024; stadiumStructures.ts).
+ * On them, [RYS]'s third-base club sections 242–264, "entirely shaded by the
+ * middle innings" with their last five rows "shaded for the entirety of a
+ * 1 p.m. game", hold in July and September (tested below): the upper deck's
+ * front is over the club level's row 5, where its section pages count the
+ * cover from row 8. On the estimated heights the model shaded the last five
+ * rows only from the middle innings in September, and the whole sections
+ * only late in the game.
  */
 import { oriolesSections } from '../../data/sections/mlb/orioles';
 import { getStadiumStructure } from '../../data/stadiumStructures';
@@ -120,9 +120,12 @@ describe('Camden Yards: 1:35 PM games in April and September', () => {
     }
   });
 
-  it.each(onMap(range(242, 264, 2)))('[RYS] third-base club %s: its last five rows are shaded by the middle innings in September', (id) => {
+  it.each(onMap(range(242, 264, 2)))('[RYS] third-base club %s: its last five rows shaded all game, all of it by the middle innings', (id) => {
     const rows = oriolesSections.find((x) => x.id === id)!.rows.length;
-    expect(rowsShaded(SEPT_21_135PM, id, rows - 4).slice(4).every((share) => share === 1)).toBe(true);
-    expect(section(SEPT_21_135PM, id).samples[last(SEPT_21_135PM)].shadedFraction).toBeGreaterThanOrEqual(0.9);
+    for (const result of [JULY_13_135PM, SEPT_21_135PM]) {
+      expect(rowsShaded(result, id, rows - 4).every((share) => share === 1)).toBe(true);
+      // By two hours in (about the 6th inning).
+      expect(section(result, id).samples.slice(4).every((s) => s.shadedFraction === 1)).toBe(true);
+    }
   });
 });
