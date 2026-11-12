@@ -754,19 +754,28 @@ export function wrigleyTier(id: string): string | null {
   return null;
 }
 
+const WRIGLEY_LIDAR = 'USGS 3DEP lidar IL_4County_Cook_2017, flown 2017-04-17 to 2017-04-18 (scripts/measureStandHeights.py)';
+
 /**
  * Wrigley Field (1914). One lower bowl (front boxes, the 100s, then the 200s
  * under the upper deck) and one upper deck (the 300s in front, the 400s
  * behind, both under the roof), plus the open bleachers. Rows and covered
- * rows are from Rate Your Seats' section pages. No source publishes deck or
- * roof heights, so every height is estimated: a shallow lower bowl rising
- * to the upper deck's underside (~32 ft), the upper deck above it and the
- * roof over its back.
+ * rows are from Rate Your Seats' section pages.
+ *
+ * The upper deck and the bleachers are measured on USGS airborne lidar
+ * (WRIGLEY_LIDAR), as at Dodger Stadium. The lower bowl is not: the club
+ * boxes and field boxes were rebuilt in the 2017–18 offseason (with the
+ * American Airlines 1914 Club under them), after the scan, so its heights
+ * stay estimated: a shallow bowl rising to the upper deck's underside
+ * (~32 ft). The Terrace and the 400s are hidden under the upper deck and its
+ * roof.
  */
 const WRIGLEY: StadiumStructure = {
   stadiumId: 'cubs',
-  // Far rim: the upper-deck roof (~72 ft) about 480 ft from the bleachers.
-  park: { roof: 'open', farRimHeightFt: 72, fieldCrossingFt: 480 },
+  // Far rim (lidar): the stands' roof line, median over sections 95 ft (the
+  // upper-deck roof); crossing: the median distance from a section to what
+  // rises highest across the field, 603 ft.
+  park: { roof: 'open', farRimHeightFt: 95, fieldCrossingFt: 603 },
   tierOf: wrigleyTier,
   tiers: {
     clubBox: {
@@ -844,53 +853,77 @@ const WRIGLEY: StadiumStructure = {
     upperBox: {
       label: 'Upper deck (300s)',
       // Rows 1–10 (331: 12), covered by the roof from row 7 (315 and 316
-      // from row 5) (sourced). Estimated: front row ~40 ft, 26° rake, roof
-      // underside ~57 ft.
+      // from row 5) (sourced). Lidar (21 of 28): front row 48 ft (47–48),
+      // 26° rake (20–30). The roof, on posts, reaches out over row 1–2: its
+      // underside there is 87 ft up (86–87, where the scan sees its face),
+      // its top 89 ft, and that edge is what rises highest behind. With the
+      // source and the scan disagreeing on the covered rows, the confidence
+      // check tries cover both ways.
       stand: {
         rows: 10,
-        frontRowHeightFt: 40,
+        frontRowHeightFt: 48,
         rakeDeg: 26,
-        backHeightFt: 60,
-        overhang: { coveredFromRow: 7, soffitHeightFt: 57 },
+        backHeightFt: 89,
+        backSetbackFt: -18,
+        overhang: { coveredFromRow: 7, soffitHeightFt: 87 },
       },
       sections: {
-        '315L': { overhang: { coveredFromRow: 5, soffitHeightFt: 55 } },
-        '316L': { overhang: { coveredFromRow: 5, soffitHeightFt: 55 } },
+        '315L': { overhang: { coveredFromRow: 5, soffitHeightFt: 87 } },
+        '316L': { overhang: { coveredFromRow: 5, soffitHeightFt: 87 } },
         '331R': { rows: 12 },
       },
-      heightsSourced: false,
-      coverSourced: true,
-      sources: [rysWrigley('sections/305'), rysWrigley('sections/310'), rysWrigley('sections/315'), rysWrigley('sections/320'), rysWrigley('sections/331')],
+      heightsSourced: true,
+      coverSourced: false,
+      sources: [rysWrigley('sections/305'), rysWrigley('sections/310'), rysWrigley('sections/315'), rysWrigley('sections/320'), rysWrigley('sections/331'), WRIGLEY_LIDAR],
     },
     upperReserved: {
       label: 'Upper deck (400s)',
-      // Rows 1–9, all under the roof (sourced; 419 has rows 5–9).
-      // Estimated: front row ~55 ft, 28° rake, roof underside ~64 ft, roof
-      // top ~72 ft.
+      // Rows 1–9, all under the roof (sourced; 419 has rows 5–9). Hidden
+      // from the air; estimated from the measured 300s and roof: front row
+      // ~62 ft (just above the 300s' last row), 28° rake; the roof's
+      // underside, 87 ft at its front edge and rising toward its 95-ft
+      // ridge, ~93 ft over these rows.
       stand: {
         rows: 9,
-        frontRowHeightFt: 55,
+        frontRowHeightFt: 62,
         rakeDeg: 28,
-        backHeightFt: 72,
-        overhang: { coveredFromRow: 1, soffitHeightFt: 64 },
+        backHeightFt: 95,
+        overhang: { coveredFromRow: 1, soffitHeightFt: 93 },
       },
       sections: { '419R': { rows: 5 } },
       heightsSourced: false,
       coverSourced: true,
-      sources: [rysWrigley('sections/405'), rysWrigley('sections/410'), rysWrigley('sections/419'), rysWrigley('sections/425'), RYS_WRIGLEY],
+      sources: [rysWrigley('sections/405'), rysWrigley('sections/410'), rysWrigley('sections/419'), rysWrigley('sections/425'), RYS_WRIGLEY, WRIGLEY_LIDAR],
     },
     bleachers: {
       label: 'Bleachers',
-      // Rows 1–21 (501: 7–14, 511: 14 rows), uncovered (sourced). Estimated:
-      // front row ~12 ft over the ivy wall, 25° rake, a ~42 ft back wall.
-      stand: { rows: 21, frontRowHeightFt: 12, rakeDeg: 25, backHeightFt: 42 },
-      sections: { '501': { rows: 8 }, '511': { rows: 14 }, '537': { rows: 15 } },
-      heightsSourced: false,
+      // Rows 1–21 (501: 7–14, 511: 14 rows), uncovered (sourced). Lidar (14
+      // of 15): front row 9 ft over the ivy wall (8–16; 16 in center field),
+      // 30° rake (17–30). What rises highest behind differs: mostly the
+      // rooftop buildings across the street (54–68 ft, 60–150 ft back), the
+      // scoreboard (511), the video boards over the back rows of 505 and
+      // 506 (85–94 ft; the scan shows them over rows 15–17 there, which the
+      // source does not count as covered), or the back wall (507, 512).
+      stand: { rows: 21, frontRowHeightFt: 9, rakeDeg: 30, backHeightFt: 57, backSetbackFt: 19 },
+      sections: {
+        '501': { rows: 8, frontRowHeightFt: 16, backHeightFt: 65, backSetbackFt: 105 },
+        '502': { frontRowHeightFt: 16, backHeightFt: 65, backSetbackFt: 105 },
+        '503': { frontRowHeightFt: 16 },
+        '505': { backHeightFt: 94, backSetbackFt: -16 },
+        ...Object.fromEntries(['506', '511'].map((id) => [id, { backHeightFt: 86, backSetbackFt: 6 }])),
+        ...Object.fromEntries(['507', '512'].map((id) => [id, { backHeightFt: 36, backSetbackFt: 10 }])),
+        '513': { backHeightFt: 48, backSetbackFt: -18 },
+        '515': { frontRowHeightFt: 16, backHeightFt: 68, backSetbackFt: 96 },
+        '536': { backHeightFt: 40, backSetbackFt: -26 },
+        '537': { rows: 15 },
+        '538': { backHeightFt: 51, backSetbackFt: 4 },
+      },
+      heightsSourced: true,
       coverSourced: true,
-      sources: [rysWrigley('sections/501'), rysWrigley('sections/505'), rysWrigley('sections/511'), rysWrigley('sections/515'), RYS_WRIGLEY],
+      sources: [rysWrigley('sections/501'), rysWrigley('sections/505'), rysWrigley('sections/511'), rysWrigley('sections/515'), RYS_WRIGLEY, WRIGLEY_LIDAR],
     },
   },
-  reviewedOn: '2026-11-11',
+  reviewedOn: '2026-11-12',
 };
 
 const rysOracle = (path: string) => `https://www.rateyourseats.com/oracle-park/seating/${path}`;
