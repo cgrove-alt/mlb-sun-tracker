@@ -28,6 +28,8 @@ import { redsSections, REDS_AERIAL_CONTROL } from '../reds';
 import { redsChartPoints } from '../chart-points/reds';
 import { piratesSections, PIRATES_AERIAL_CONTROL } from '../pirates';
 import { piratesChartPoints } from '../chart-points/pirates';
+import { tigersSections, TIGERS_AERIAL_CONTROL } from '../tigers';
+import { tigersChartPoints } from '../chart-points/tigers';
 import { aerialChartFit } from '../parkSectionBuilder';
 import { getStadiumOrientation } from '../../../stadiums';
 
@@ -642,5 +644,44 @@ describe('PNC Park stand directions (measured on the 2022 aerial photo)', () => 
   it('the outfield stands follow their walls', () => {
     expect(stand('143')).toBe(170);
     expect(stand('236')).toBe(78);
+  });
+});
+
+describe('Comerica Park stand directions (measured on the 2022 aerial photo)', () => {
+  // Level lines run parallel to both foul lines (backs 286° and 17°); behind
+  // home the rows are arcs centred ~4 m behind the plate.
+  const byId = new Map(tigersSections.map((s) => [s.id, s]));
+  const stand = (id: string) => {
+    const value = byId.get(id)?.standCompass;
+    if (value === undefined) throw new Error(`No stand direction for ${id}`);
+    return value;
+  };
+  const bearing = (id: string) => {
+    const s = byId.get(id)!;
+    return (((getStadiumOrientation('tigers') + 90 - s.baseAngle - s.angleSpan / 2) % 360) + 360) % 360;
+  };
+
+  it('pins the club map to the photo within 5 m', () => {
+    expect(aerialChartFit(tigersChartPoints, TIGERS_AERIAL_CONTROL).rmsM).toBeLessThan(5);
+  });
+
+  it('puts 127 and 128 either side of the aisle on the axis, as the photo shows', () => {
+    const axis = (getStadiumOrientation('tigers') + 180) % 360;
+    expect(diff(bearing('127'), axis - 5.5)).toBeLessThan(2);
+    expect(diff(bearing('128'), axis + 5.5)).toBeLessThan(2);
+  });
+
+  it.each(['118', '122', '214', 'TD121', '116A'])('first-base section %s faces 286°', (id) => expect(stand(id)).toBe(286));
+  it.each(['133', '138', '137A', '340', 'TD134'])('third-base section %s faces 17°', (id) => expect(stand(id)).toBe(17));
+
+  it.each(['127', '128', 'TD127A', '328'])('behind-home section %s faces away from center field', (id) => {
+    expect(diff(stand(id), getStadiumOrientation('tigers') + 180)).toBeLessThan(10);
+  });
+
+  it('the corners and outfield stands follow the photo', () => {
+    expect(stand('113')).toBe(238);
+    expect(stand('142')).toBe(65);
+    expect(stand('104')).toBe(197);
+    expect(stand('148')).toBe(102);
   });
 });

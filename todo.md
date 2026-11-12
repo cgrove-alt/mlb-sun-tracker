@@ -782,6 +782,29 @@ Medium or Low confidence and their blog posts stay unpublished.
             (photo too soft); worth redoing with a sharper flight.
 - [ ] 6.4 Batch 4: Tigers, Guardians, Twins, White Sox, Athletics (Sutter
       Health Park).
+      - [x] Orientations, measured on NAIP with 5–7 methods each: Sutter
+            Health Park 47° ±1.5° (was 20°, 27° off), Rate Field 129° ±2°
+            (was 120°; the only flight has the first-base stands' shadow over
+            home, so home is read from the sunlit edges of its circle),
+            Comerica 151° (was 145°), Progressive 0° ±1.5° (was 356°),
+            Target 91° (was 90°).
+      - [x] Comerica Park: resampling each baseline stand square to its line
+            (new tmp/rectify.ts) shows both bowls mirror each other: aisles
+            2/11/20/29 m from home behind each dugout (RYS rows 7–35 there),
+            then 35.5/45/55/68/81 m. The club's 3-D drawing needs a
+            projective fit once the outfield stands are pinned (2.5 m RMS
+            with the right-field bleachers and the left-field pavilion behind
+            the bullpens; affine could not hold both). The fit puts 125–130
+            on the photo's wedges behind home without being told. Stands
+            286°/17°, curve centred ~4 m behind home, corners 238°/65°,
+            bleachers 197°, pavilion 102°. Rows and covered rows from RYS
+            (Tiger Den and terraces A–H, covered from C). 51 checks; RYS's
+            "afternoon games" advice holds on the 5:10 PM start, and at
+            1:40 PM the model agrees midday shade is scarce. Not reproduced:
+            row C of TD126–127 for the first half hour of a 1:40 PM game; the
+            pavilion "most sun" (the third-base side ties). Open: the map
+            draws each section as its 3-D footprint box, which overlaps
+            heavily here (display only).
 - [ ] 6.5 Batch 5, retractable roofs (answers assume the roof is open, as
       today): Diamondbacks, Rangers, Astros, Marlins, Brewers, Mariners,
       Blue Jays.
