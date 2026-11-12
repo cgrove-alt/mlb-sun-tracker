@@ -3334,6 +3334,197 @@ const COMERICA: StadiumStructure = {
   reviewedOn: '2026-11-11',
 };
 
+const rysProgressive = (path: string) => `https://www.rateyourseats.com/progressive-field/seating/${path}`;
+const RYS_PROGRESSIVE = rysProgressive('shaded-covered-seats');
+const progressiveSections = (...ids: string[]) => ids.map((n) => rysProgressive(`sections/${n}`));
+/** Progressive Field's covered rows as positions in each section's lettered rows (Rate Your Seats). */
+const PROGRESSIVE_COVER: Record<string, number> = {
+  '108': 22, '109': 22, '111': 22, '113': 22,
+  '128': 24, '129': 24, '130': 24, '131': 24, '134': 24, '136': 24, '138': 24, '140': 19, '142': 19, '144': 19, '146': 19, '148': 19,
+  '303': 13, '304': 13, '307': 13, '309': 13, '311': 13, '316': 13,
+  '326': 10, '328': 13, '330': 13, '332': 13, '334': 13, '336': 13, '338': 13, '340': 13, '342': 13, '344': 13, '346': 13, '348': 11,
+};
+const progressiveCover = (ids: readonly string[], soffitHeightFt: number) =>
+  Object.fromEntries(ids.filter((id) => PROGRESSIVE_COVER[id]).map((id) => [id, { overhang: { coveredFromRow: PROGRESSIVE_COVER[id], soffitHeightFt } }]));
+
+/** Seating ring of a Progressive Field chart section. */
+export function progressiveTier(id: string): string | null {
+  if (/^STE\d/.test(id)) return 'suite';
+  // The boxes and clubs behind home (HPBOX, CC, CLNG, PC), the center-field
+  // boxes (1011–1014), the named suites and the standing areas: no source
+  // gives their seats or cover.
+  if (!/^\d{3}$/.test(id)) return null;
+  const n = Number(id);
+  if (n <= 113) return 'rightField';
+  if (n <= 125) return 'rightCorner';
+  if (n <= 148) return 'first';
+  if (n <= 157) return 'home';
+  if (n <= 175) return 'third';
+  if (n <= 179) return 'leftCorner';
+  if (n <= 185) return 'leftField';
+  if (n <= 316) return 'rightFieldClub';
+  if (n <= 348) return 'club';
+  if (n <= 478) return 'upperBox';
+  return 'upper';
+}
+
+// The lower bowl along each line, square to its rows on the photo: rows A–HH
+// from the wall ~12 m out to ~41 m (a ~2.8 ft tread). Estimated: front
+// ~3 ft, 18° rake. The upper deck's roof canopy (~125 ft) stands ~31 m behind
+// the last row on both sides.
+const PROGRESSIVE_LOWER = { frontRowHeightFt: 3, rakeDeg: 18, treadFt: 2.8, backHeightFt: 125, backSetbackFt: 100 };
+/** The sections whose front rows give way to a dugout or the boxes behind home start at row F. */
+const progressiveRowF = (ids: readonly string[]) => Object.fromEntries(ids.map((id) => [id, { frontRowHeightFt: 7.5 }]));
+
+/**
+ * Progressive Field (1994; 2015–16 renovation). A lower bowl to row HH whose
+ * rows run ~6° inside the foul lines, the club deck (326–348) over the
+ * first-base side from row X, the 300s in right field above 103–113, and an
+ * upper deck of boxes (400s, rows A–F) and reserved seats (500s, rows A–X)
+ * under a roof canopy from row P. Rows and covered rows are Rate Your Seats'
+ * section pages. On the 2023 USGS photo, square to the first-base rows, the
+ * club seats run ~36–50 m out, the upper deck ~50–72 m and the canopy from
+ * ~72 m. No source publishes the deck heights, so every height is estimated
+ * by stacking the decks.
+ */
+const PROGRESSIVE: StadiumStructure = {
+  stadiumId: 'guardians',
+  // Far rim: the upper deck's canopy (~125 ft) about 550 ft across the field.
+  park: { roof: 'open', farRimHeightFt: 125, fieldCrossingFt: 550 },
+  tierOf: progressiveTier,
+  tiers: {
+    first: {
+      label: 'Lower level, first-base side (128–148)',
+      // Covered from row X by the club deck (sourced). Estimated deck
+      // underside ~32 ft.
+      stand: { rows: 34, ...PROGRESSIVE_LOWER },
+      sections: { ...progressiveCover(['128', '129', '130', '131', '134', '136', '138'], 32), ...Object.fromEntries(['140', '142', '144', '146', '148'].map((id) => [id, { frontRowHeightFt: 7.5, overhang: { coveredFromRow: PROGRESSIVE_COVER[id], soffitHeightFt: 32 } }])) },
+      rowsFromMap: true,
+      heightsSourced: false,
+      coverSourced: true,
+      sources: [RYS_PROGRESSIVE, ...progressiveSections('128', '134', '138', '140', '148')],
+    },
+    home: {
+      label: 'Lower level behind home (149–157)',
+      // Rows L–HH behind the boxes (149: F–HH), open.
+      stand: { rows: 23, frontRowHeightFt: 13, rakeDeg: 18, treadFt: 2.8, backHeightFt: 125, backSetbackFt: 80 },
+      sections: progressiveRowF(['149']),
+      rowsFromMap: true,
+      heightsSourced: false,
+      coverSourced: true,
+      sources: [RYS_PROGRESSIVE, ...progressiveSections('149', '150', '153', '154', '157')],
+    },
+    third: {
+      label: 'Lower level, third-base side (158–175)',
+      // Open; "the third base side will see shade first during late
+      // afternoon and evening games".
+      stand: { rows: 34, ...PROGRESSIVE_LOWER },
+      sections: progressiveRowF(['158', '159', '160', '162', '163', '164']),
+      rowsFromMap: true,
+      heightsSourced: false,
+      coverSourced: true,
+      sources: [RYS_PROGRESSIVE, ...progressiveSections('158', '162', '165', '172', '175')],
+    },
+    leftCorner: {
+      label: 'Left-field corner (176–179)',
+      // Rows Y–HH (176–177), F–HH (178), N–EE (179), open.
+      stand: { rows: 29, frontRowHeightFt: 7.5, rakeDeg: 18, treadFt: 2.8, backHeightFt: 60 },
+      sections: { '176': { frontRowHeightFt: 25 }, '177': { frontRowHeightFt: 25 }, '179': { frontRowHeightFt: 15 } },
+      rowsFromMap: true,
+      heightsSourced: false,
+      coverSourced: true,
+      sources: progressiveSections('176', '178', '179'),
+    },
+    leftField: {
+      label: 'Left field (180–185)',
+      // Rows A–Y (E–Y in 180), open. Estimated: front ~20 ft over the
+      // 19-ft wall, 22° rake.
+      stand: { rows: 25, frontRowHeightFt: 20, rakeDeg: 22, treadFt: 2.8, backHeightFt: 40 },
+      sections: { '180': { frontRowHeightFt: 24.5 } },
+      rowsFromMap: true,
+      heightsSourced: false,
+      coverSourced: true,
+      sources: progressiveSections('180', '182', '185'),
+    },
+    rightCorner: {
+      label: 'Right-field corner (117, 125)',
+      // Open: 117 has "no overhead protection".
+      stand: { rows: 38, frontRowHeightFt: 3, rakeDeg: 18, treadFt: 2.8, backHeightFt: 60 },
+      rowsFromMap: true,
+      heightsSourced: false,
+      coverSourced: true,
+      sources: [RYS_PROGRESSIVE, ...progressiveSections('117', '125')],
+    },
+    rightField: {
+      label: 'Right field (103–113)',
+      // Rows A–CC; 108–113 covered from row V by the 300s above (sourced).
+      // Estimated: front ~6 ft, 20° rake, deck underside ~36 ft.
+      stand: { rows: 29, frontRowHeightFt: 6, rakeDeg: 20, treadFt: 2.8, backHeightFt: 60 },
+      sections: progressiveCover(['108', '109', '111', '113'], 36),
+      rowsFromMap: true,
+      heightsSourced: false,
+      coverSourced: true,
+      sources: [RYS_PROGRESSIVE, ...progressiveSections('103', '107', '109', '113')],
+    },
+    rightFieldClub: {
+      label: 'Right field 300s (303–316)',
+      // Rows A–U, covered from row M (sourced). Estimated: front ~32 ft, 22°
+      // rake, deck underside ~56 ft.
+      stand: { rows: 21, frontRowHeightFt: 32, rakeDeg: 22, treadFt: 2.8, backHeightFt: 64, overhang: { coveredFromRow: 13, soffitHeightFt: 56 } },
+      rowsFromMap: true,
+      heightsSourced: false,
+      coverSourced: true,
+      sources: [RYS_PROGRESSIVE, ...progressiveSections('303', '309', '316')],
+    },
+    club: {
+      label: 'Club (326–348)',
+      // Rows A–T, covered from row M by the upper deck (sourced). Estimated:
+      // front ~36 ft, 22° rake, deck underside ~58 ft.
+      stand: { rows: 20, frontRowHeightFt: 36, rakeDeg: 22, treadFt: 2.8, backHeightFt: 125, backSetbackFt: 70, overhang: { coveredFromRow: 13, soffitHeightFt: 58 } },
+      // 326 starts at row D and 348 at row C, a few rows up.
+      sections: {
+        ...progressiveCover(Array.from({ length: 23 }, (_, i) => String(326 + i)), 58),
+        '326': { frontRowHeightFt: 39.4, overhang: { coveredFromRow: PROGRESSIVE_COVER['326'], soffitHeightFt: 58 } },
+        '348': { frontRowHeightFt: 38.3, overhang: { coveredFromRow: PROGRESSIVE_COVER['348'], soffitHeightFt: 58 } },
+      },
+      rowsFromMap: true,
+      heightsSourced: false,
+      coverSourced: true,
+      sources: [RYS_PROGRESSIVE, ...progressiveSections('326', '336', '348')],
+    },
+    upperBox: {
+      label: 'Upper boxes (403–478)',
+      // Rows A–F at the front of the upper deck, open. Estimated: front
+      // ~70 ft, 30° rake, the reserved seats rising behind.
+      stand: { rows: 6, frontRowHeightFt: 70, rakeDeg: 30, treadFt: 2.6, backHeightFt: 82 },
+      rowsFromMap: true,
+      heightsSourced: false,
+      coverSourced: true,
+      sources: progressiveSections('403', '440', '478'),
+    },
+    upper: {
+      label: 'Upper reserved (519–567)',
+      // Rows A–X, covered from row P by the canopy (sourced). Estimated:
+      // front ~82 ft, 32° rake, canopy underside ~114 ft.
+      stand: { rows: 24, frontRowHeightFt: 82, rakeDeg: 32, treadFt: 2.6, backHeightFt: 125, overhang: { coveredFromRow: 16, soffitHeightFt: 114 } },
+      rowsFromMap: true,
+      heightsSourced: false,
+      coverSourced: true,
+      sources: [RYS_PROGRESSIVE, ...progressiveSections('519', '541', '554', '567')],
+    },
+    suite: {
+      label: 'Suites',
+      // As at the other parks: one row of seats under the suite level's
+      // ceiling. Estimated ~50 ft up.
+      stand: { rows: 1, frontRowHeightFt: 50, rakeDeg: 0, backHeightFt: 62, overhang: { coveredFromRow: 1, soffitHeightFt: 58 } },
+      heightsSourced: false,
+      coverSourced: true,
+      sources: ['https://www.mlb.com/guardians/ballpark/suites'],
+    },
+  },
+  reviewedOn: '2026-11-11',
+};
+
 export const STADIUM_STRUCTURES: Readonly<Record<string, StadiumStructure>> = {
   yankees: YANKEES,
   redsox: FENWAY,
@@ -3353,6 +3544,7 @@ export const STADIUM_STRUCTURES: Readonly<Record<string, StadiumStructure>> = {
   reds: GABP,
   pirates: PNC,
   tigers: COMERICA,
+  guardians: PROGRESSIVE,
 };
 
 export function getStadiumStructure(stadiumId: string): StadiumStructure | undefined {

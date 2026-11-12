@@ -805,6 +805,22 @@ Medium or Low confidence and their blog posts stay unpublished.
             pavilion "most sun" (the third-base side ties). Open: the map
             draws each section as its 3-D footprint box, which overlaps
             heavily here (display only).
+      - [x] Progressive Field: the rows run ~6° inside both foul lines
+            (39.4° and 320.8°, facing 129°/231°) as the foul ground narrows.
+            Resampled along its rows, each side has an aisle every 6.5 m,
+            one per section (148→125 and 159→175; RYS's rows start at F
+            behind the dugouts, at A from 138/165 where the dugouts end);
+            behind home they radiate from the plate every ~11.2°, one on the
+            axis between 153 and 154 (symmetric RYS rows). Shadowed side
+            read on a lifted copy (new tmp/polar.ts unrolls the curve).
+            Projective fit 2.2 m RMS with the right- and left-field stands
+            pinned; 150–157 land within 3° of their wedges. Corners 140°/221°,
+            right field 56° (its 300s and 400s too), left field 328°.
+            50 checks; the covered right-field 300s face the afternoon sun,
+            so only their back rows are checked as shaded (RYS calls them as
+            sunny as the seats below). Sections whose rows start a few rows
+            up (326 at D, 348 at C, 176–177 at Y) get their front row's
+            height. RYS's noon advice names 257–267, not on today's map.
 - [ ] 6.5 Batch 5, retractable roofs (answers assume the roof is open, as
       today): Diamondbacks, Rangers, Astros, Marlins, Brewers, Mariners,
       Blue Jays.
