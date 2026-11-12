@@ -5,8 +5,9 @@
  *   npx tsx scripts/measureOrientation.ts yankees
  *
  * Method (see the header of orientationMeasurements.ts):
- *   1. Fetch a north-up Web Mercator image centered on the park (USGS, or
- *      an older NAIP flight from the Planetary Computer when recorded).
+ *   1. Fetch a north-up Web Mercator image centered on the park (USGS, an
+ *      older NAIP flight from the Planetary Computer, or a city's
+ *      orthophoto service where USGS has no coverage).
  *   2. Find the home-plate circle and the pitcher's mound as the centroid of
  *      non-grass pixels around each seed point (works for dirt and for tarps).
  *   3. Bearing home → mound.
@@ -40,7 +41,9 @@ async function fetchImage(m: OrientationMeasurement): Promise<string> {
   if (existsSync(file)) return file;
   const bbox = mercatorBbox(m).map((v) => v.toFixed(2)).join(',');
   const size = m.imageSizePx;
-  const url = m.planetaryComputerItem
+  const url = m.mapServerExport
+    ? `${m.mapServerExport}?bbox=${bbox}&bboxSR=3857&imageSR=3857&size=${size},${size}&format=png32&f=image`
+    : m.planetaryComputerItem
     ? `${PLANETARY_COMPUTER}/${bbox}/${size}x${size}.png?collection=naip&item=${m.planetaryComputerItem}` +
       '&assets=image&asset_bidx=image%7C1%2C2%2C3&coord_crs=epsg:3857&dst_crs=epsg:3857&nodata=0'
     : `${NAIP}?bbox=${bbox}&bboxSR=3857&imageSR=3857&size=${size},${size}&format=png&f=image`;
@@ -70,6 +73,9 @@ async function measure(m: OrientationMeasurement) {
     // A fainter cast (Nationals Park 2023: grass 85, 99, 97) next to a
     // bluish mound cover (85, 103, 107): grass only needs more green than blue.
     if (m.grassRule === 'slight-blue-cast') return g > r + 8 && g > b;
+    // Artificial turf reads grey-green, close to its painted lines; there
+    // only the reddish dirt cutouts count as "not grass".
+    if (m.grassRule === 'artificial-turf') return !(r > g + 25 && r > b + 25);
     return g > r + 8 && g > b + 8;
   };
 

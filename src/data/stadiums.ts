@@ -72,7 +72,7 @@ export const MLB_STADIUMS: Stadium[] = [
     state: 'ON',
     latitude: 43.6414,
     longitude: -79.3894,
-    orientation: 0, // N — confirmed 2026-05-13. Multiple authoritative sources: "Rogers Centre is one of the few major league parks where the batter faces north when hitting" (intheballparks.com / shadedseats). Geometric check: "Throughout the afternoon the sun rotates from above home plate down the third base side… 3rd base side is the shade side, 1st base side is sunny" — sun moves E→W during day; if afternoon sun is on 3B side, 3B is W and 1B is E (catcher's right when facing N). Consistent with HP→CF=N. Independent OSM building polygon axis: 354° N (well-matched). Previous 15° was approximately right but the published source explicitly says "north."
+    orientation: 345, // NNW — measured 2026-11-12 from the City of Toronto's 2012 open-roof orthophoto (345° ±1.5°); replaces 0°. See orientationMeasurements.ts.
     capacity: 49282,
     roof: 'retractable',
     timezone: 'America/Toronto'

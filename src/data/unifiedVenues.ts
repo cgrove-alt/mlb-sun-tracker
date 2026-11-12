@@ -142,7 +142,7 @@ export const ALL_UNIFIED_VENUES: UnifiedVenue[] = [
     "state": "ON",
     "latitude": 43.6414,
     "longitude": -79.3894,
-    "orientation": 0,
+    "orientation": 345,
     "capacity": 49282,
     "roof": "retractable",
     "timezone": "America/Toronto",
@@ -153,11 +153,11 @@ export const ALL_UNIFIED_VENUES: UnifiedVenue[] = [
         "width": 330
       },
       "endZoneOrientation": "north-northeast-south-southwest",
-      "primarySeatingAngle": 15,
-      "sideline1Angle": 105,
-      "sideline2Angle": 285,
-      "endZone1Angle": 15,
-      "endZone2Angle": 195
+      "primarySeatingAngle": 345,
+      "sideline1Angle": 75,
+      "sideline2Angle": 255,
+      "endZone1Angle": 345,
+      "endZone2Angle": 165
     },
     "venueType": "baseball",
     "sport": "baseball",

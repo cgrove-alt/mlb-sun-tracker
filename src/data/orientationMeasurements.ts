@@ -31,6 +31,11 @@ export interface OrientationMeasurement {
    * show the roof closed).
    */
   planetaryComputerItem?: string;
+  /**
+   * An ArcGIS MapServer `export` endpoint used instead of NAIP where USGS
+   * has no coverage (Toronto). `naipTile` then names that service's layer.
+   */
+  mapServerExport?: string;
   acquired: string;
   nativeResolutionMeters: number;
   /** Approximate pixel positions the script refines from. */
@@ -48,9 +53,10 @@ export interface OrientationMeasurement {
   /**
    * 'blue-cast' for flights whose grass reads as blue as it is green;
    * 'slight-blue-cast' when grass is only a little greener than blue and a
-   * bluish cover would otherwise pass for grass.
+   * bluish cover would otherwise pass for grass. 'artificial-turf' where
+   * only the reddish dirt cutouts are told apart from the field.
    */
-  grassRule?: 'blue-cast' | 'slight-blue-cast';
+  grassRule?: 'blue-cast' | 'slight-blue-cast' | 'artificial-turf';
   measuredOn: string;
   notes?: string;
 }
@@ -697,6 +703,33 @@ export const ORIENTATION_MEASUREMENTS: readonly OrientationMeasurement[] = [
       'under a tarp at the edge of the stands\' shadow. Home → mound 48.0–48.8°; infield mirror axis 46.6° (94.1%); dirt-arc centre 47.7°; grass ' +
       'square 48.2° (three edges; the home–first edge is in shadow); foul lines fitted as lines 95.3° (in shadow) and 4.0° (midline 49.65°). Mean ' +
       '48.2°, recorded as 48° ±1.5° for the spread (46.6–49.65°). Replaces 45°.',
+  },
+  {
+    stadiumId: 'bluejays',
+    imageCenter: { latitude: 43.6414, longitude: -79.3894 },
+    imageHalfWidthMeters: 200,
+    imageSizePx: 1600,
+    naipTile: 'City of Toronto cot_ortho_2012_color_5cm',
+    mapServerExport: 'https://gis.toronto.ca/arcgis/rest/services/basemap/cot_ortho_2012_color_5cm/MapServer/export',
+    acquired: '2012-04-18',
+    nativeResolutionMeters: 0.05,
+    homeSeedPx: [917.71, 879.24],
+    moundSeedPx: [900.15, 810.86],
+    homeCenterPx: [917.71, 879.24],
+    moundCenterPx: [900, 811],
+    bearingHomeToMoundDeg: 345.45,
+    bearingInfieldSymmetryDeg: 343.7,
+    orientationDeg: 345,
+    precisionDeg: 1.5,
+    grassRule: 'artificial-turf',
+    measuredOn: '2026-11-12',
+    notes:
+      'USGS NAIP does not cover Canada, and every City of Toronto and Ontario orthophoto since 2013 shows the roof closed; the City of ' +
+      'Toronto\'s 2012 colour orthophoto (flown 2012-04-18 to 06-10, 5 cm, Open Government Licence – Toronto) shows it open. The field was ' +
+      'artificial turf with dirt cutouts then (home plate has not moved since). Home-plate cutout → mound 345.45–345.6°; home → first- and third-base ' +
+      'cutouts 29.5° and 300.7° (axis 344.5° and 345.7°); mirror axis of the dirt cutouts 343.6–344.1°; chalk foul lines 29.25° and 299.1° ' +
+      '(midline 344.2°), and fitted as lines 343.65–344.75°. Mean 344.6°, recorded as 345° ±1.5° for the spread (343.6–345.7°). Replaces 0°, ' +
+      'which was 15° off: the published "the batter faces north" is only approximate.',
   },
 ];
 
