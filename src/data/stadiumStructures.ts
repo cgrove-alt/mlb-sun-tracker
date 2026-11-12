@@ -986,9 +986,11 @@ const ORACLE_LIDAR = 'USGS 3DEP lidar CA_SanFrancisco_B23, flown 2023-04-20 (scr
  * Stadium: for each section a cut straight back through its rows gives the
  * front row's height, the rake and the structure that rises highest behind
  * as seen from the middle uncovered row; tier values are medians, sections
- * more than 10% (at least 3 ft) off get their own. Deck undersides the scan
- * cannot see are estimated as 9 ft above the floor of the first covered row
- * (and below the deck above's measured front row); the suites are hidden.
+ * more than 10% (at least 3 ft) off get their own. Covered rows: where the
+ * scan puts a deck's edge more than two rows from the source's row, the
+ * scan's edge is used. Deck undersides the scan cannot see are estimated as
+ * the deck above's measured front row less 9 ft, never under 9 ft above the
+ * first covered row's floor; the suites are hidden.
  */
 const ORACLE: StadiumStructure = {
   stadiumId: 'giants',
@@ -1002,7 +1004,8 @@ const ORACLE: StadiumStructure = {
       label: 'Lower level (100s)',
       // Rows 1–41 (sourced), covered from row 29 by the club level ("row
       // 30 and above in most sections"; section pages say 29; the lidar puts
-      // the club deck's edge at row 27, 18–34). The corner sections are
+      // the club deck's edge at row 27, and sections where it is more than
+      // two rows off take the lidar's row, below). The corner sections are
       // shorter: 101 has rows 1–21 (none covered), 133 rows 28–39, 135 rows
       // 4–39. Lidar (32 of 33): front row at field level (-3 to 5 ft), 12°
       // rake (6–25). What rises highest behind is the View level's front,
@@ -1020,10 +1023,15 @@ const ORACLE: StadiumStructure = {
       sections: {
         '101': { rows: 22, noCover: true, backHeightFt: 33, backSetbackFt: 42 },
         ...Object.fromEntries(['103', '104', '105', '112', '128', '129', '130', '131', '132', '134'].map((id) => [id, { backHeightFt: 125, backSetbackFt: 37 }])),
-        '122': { frontRowHeightFt: -3 },
+        '102': { overhang: { coveredFromRow: 34, soffitHeightFt: 25 } },
+        ...Object.fromEntries(['107', '124'].map((id) => [id, { overhang: { coveredFromRow: 21, soffitHeightFt: 25 } }])),
+        '108': { overhang: { coveredFromRow: 23, soffitHeightFt: 25 } },
+        '109': { overhang: { coveredFromRow: 24, soffitHeightFt: 25 } },
+        ...Object.fromEntries(['114', '116', '118', '121'].map((id) => [id, { overhang: { coveredFromRow: 25, soffitHeightFt: 25 } }])),
+        '123': { overhang: { coveredFromRow: 22, soffitHeightFt: 25 } },
         // Row 28 on the measured slope.
         '133': { rows: 11, frontRowHeightFt: 16, overhang: { coveredFromRow: 2, soffitHeightFt: 25 } },
-        '135': { rows: 32, frontRowHeightFt: 5, overhang: { coveredFromRow: 26, soffitHeightFt: 25 } },
+        '135': { rows: 32, frontRowHeightFt: 5, overhang: { coveredFromRow: 23, soffitHeightFt: 25 } },
       },
       heightsSourced: false,
       coverSourced: true,
@@ -1034,13 +1042,14 @@ const ORACLE: StadiumStructure = {
       // Rows 1–26, uncovered (sourced). Lidar (7 of 9): front row 6 ft over
       // the left-field wall (6–13), 13° rake (11–14). What rises highest
       // behind differs from section to section (37–71 ft); behind 143 the
-      // scoreboard, 113 ft up.
+      // scoreboard, 113 ft up, whose structure reaches out over 143's row 22
+      // (its face's bottom 33 ft up), covering the rows behind.
       stand: { rows: 26, frontRowHeightFt: 6, rakeDeg: 13, backHeightFt: 60, backSetbackFt: 37 },
       sections: {
         '137': { backHeightFt: 43, backSetbackFt: 60 },
         '138': { backHeightFt: 37, backSetbackFt: 11 },
         '140': { backHeightFt: 71, backSetbackFt: 52 },
-        '143': { frontRowHeightFt: 13, backHeightFt: 113, backSetbackFt: -7 },
+        '143': { frontRowHeightFt: 13, backHeightFt: 113, backSetbackFt: -7, overhang: { coveredFromRow: 22, soffitHeightFt: 33 } },
       },
       heightsSourced: true,
       coverSourced: true,
@@ -1059,38 +1068,38 @@ const ORACLE: StadiumStructure = {
     },
     club: {
       label: 'Club level',
-      // Rows A–M (12, no I), covered from row K (10th) by the View level
-      // (sourced); 234 (rows A–H) is covered throughout. Lidar (31 of 32):
-      // front row 32 ft (28–32), 19° rake (18–23). The View level's front
-      // rows reach out over row 5 (4–8), their floor 66 ft up, and are what
-      // rises highest behind; the deck that covers row K, under them,
-      // cannot be seen from the air. With the source and the scan
-      // disagreeing on the covered rows, the confidence check tries cover
-      // both ways. Estimated: underside ~50 ft (9 ft above row K's floor).
+      // Rows A–M (12, no I). Rate Your Seats counts them covered from row K
+      // (10th) by the View level; 234 (rows A–H) is covered throughout.
+      // Lidar (31 of 32): front row 32 ft (28–32), 19° rake (18–23). The
+      // View level's front rows reach out over row 5 (4–8; 225 at 8), their
+      // floor 66 ft up, so the rows from 5 back are covered; they are what
+      // rises highest behind. Estimated: their underside ~57 ft, that floor
+      // less 9 ft (the deck that covers row K under them is hidden).
       stand: {
         rows: 12,
         frontRowHeightFt: 32,
         rakeDeg: 19,
         backHeightFt: 68,
         backSetbackFt: -19,
-        overhang: { coveredFromRow: 10, soffitHeightFt: 50 },
+        overhang: { coveredFromRow: 5, soffitHeightFt: 57 },
       },
       sections: {
         '204': { frontRowHeightFt: 28 },
         '205': { rows: 10 },
         '215': { rows: 8, noCover: true },
-        '225': { frontRowHeightFt: 28 },
-        '234': { rows: 8, overhang: { coveredFromRow: 1, soffitHeightFt: 41 } },
+        '225': { frontRowHeightFt: 28, overhang: { coveredFromRow: 8, soffitHeightFt: 57 } },
+        '234': { rows: 8, overhang: { coveredFromRow: 1, soffitHeightFt: 57 } },
       },
       heightsSourced: false,
-      coverSourced: false,
+      coverSourced: true,
       sources: [rysOracle('sections/202'), rysOracle('sections/205'), rysOracle('sections/210'), rysOracle('sections/215'), rysOracle('sections/225'), rysOracle('sections/234'), RYS_ORACLE, ORACLE_LIDAR],
     },
     view: {
       label: 'View level (300s)',
       // Rows A–D then 1–18 (22; 315 and 326 have A–G, 0–18: 26), the roof
       // covering rows 12–18, the last seven (sourced; the lidar puts its
-      // edge at row 12 too). Lidar (24 of 29): rows 1–18 start 81 ft up
+      // edge at row 12 too, and at row 7 in 333). Lidar (24 of 29): rows
+      // 1–18 start 81 ft up
       // (79–82) at 31° (19–32); rows A–D sit in front of a cross-aisle about
       // 8 ft lower, so the front row here is row 1's height carried down
       // that slope. The roof's underside at its edge is 124 ft (where the
@@ -1106,6 +1115,7 @@ const ORACLE: StadiumStructure = {
       sections: {
         '315': { rows: 26, frontRowHeightFt: 68, overhang: { coveredFromRow: 20, soffitHeightFt: 124 } },
         '326': { rows: 26, frontRowHeightFt: 68, overhang: { coveredFromRow: 20, soffitHeightFt: 124 } },
+        '333': { overhang: { coveredFromRow: 11, soffitHeightFt: 124 } },
       },
       heightsSourced: true,
       coverSourced: true,
