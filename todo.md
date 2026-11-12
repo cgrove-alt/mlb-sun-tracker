@@ -1291,7 +1291,41 @@ that reach. Options:
   investigated and recorded, never tuned. Low share before and after.
 - Commits: Part A with the wider test; Part B on its own.
 
-- [x] Part A   - [ ] Part B   - [x] Test covers every park   - [ ] Review
+- [x] Part A   - [x] Part B (option 1, approved 2026-11-12)
+- [x] Test covers every park   - [x] Review
+
+### §8 Review (2026-11-12)
+What changed: every deck or roof in the model now leaves at least 9 ft
+above the floor of the first row under it, at all 30 parks (generic
+profiles included), and `deckClearance.test.ts` keeps it that way. Two
+commits, nothing pushed.
+- Part A (b7c53a0f3): about 380 sections at 16 parks raised to 9 ft over
+  their own first covered row, no more. The cause was mostly one value per
+  tier from a cover helper while each section's covered rows start at its
+  own row; helpers and constants serving different needs were split. No
+  reference check or blog claim changed. Low share moved only where a deck
+  had sat at the covered rows' heads, so they read as certain under every
+  variation: Rockies 42% → 48%, Royals 27% → 34% (April), Nationals 27% →
+  31% (July).
+- Part B (476277c78): the engine's overhang gains `reachFt`, how far the
+  deck's front edge reaches past the first covered row (default 0, varied
+  ±50% with the setbacks where estimated). Suites get a 9-ft ceiling and
+  the deck reaching past them: by the covered depth of the level in front
+  at ten parks (Angels 11 ft, Cardinals 19, Nationals 11, Orioles 6,
+  Phillies 22, Red Sox 11, Reds 22, Rockies 17, Royals 28, Tigers 17);
+  elsewhere, and in the generic profile, their median, 17 ft
+  (`SUITE_DECK_REACH_FT`). At a July 1:10 PM game every park's suites are
+  now fully shaded (Tigers' were 41%); at 7:10 PM 87–100%. Low share at
+  1:10 PM falls at most suite parks (Tigers 56% → 26%, Reds 54% → 34%,
+  Pirates 44% → 25%, Giants 23% → 9% in April); at 7:10 PM a third of the
+  Orioles', Red Sox and Rockies suites turn Low, where whether the evening
+  sun reaches in depends on the estimated reach.
+
+Not verified: no page was checked in the browser (a local server sends
+real Google Analytics hits); the engine path is covered by the tests.
+Still open: the suites' floor heights and seven parks' reach are
+estimates with no source; the confidence split (`soffitSourced`) from
+Batch 1 is undecided.
 
 ---
 ---
