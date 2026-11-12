@@ -902,7 +902,44 @@ Medium or Low confidence and their blog posts stay unpublished.
             on Comerica's drawn map (display only).
 - [ ] 6.5 Batch 5, retractable roofs (answers assume the roof is open, as
       today): Diamondbacks, Rangers, Astros, Marlins, Brewers, Mariners,
-      Blue Jays.
+      Blue Jays. Five of seven profiled; two blocked on imagery (below).
+      - [x] Orientations. The newest USGS photo shows the roof closed at
+            most of these parks, so the script can now fetch any NAIP year
+            from the Planetary Computer archive (and, for Toronto, a city
+            MapServer). Chase Field 0° (confirmed), Daikin Park 345° (was
+            340°), loanDepot park 129°, American Family Field 130° (was
+            135°), T-Mobile Park 48° (was 45°), Rogers Centre 345° (was 0°,
+            15° off; City of Toronto's 2012 photo, the one public image with
+            the roof open; the script reads artificial turf by its dirt
+            cutouts).
+      - [x] Chase Field: seat map pinned at 1.9 m (nine field boxes on the
+            aisles); the parked roof panels, the fixed roof behind home and
+            the suite deck measured on four open-roof flights give each
+            section's covered rows. 23 checks.
+      - [x] Daikin Park: stands in shadow on recent flights, so aisles read
+            on the 2012 and 2014 ones; 1.1 m; roof edges on four flights.
+            31 checks.
+      - [x] loanDepot park: 2013 flight (roof fully open); the hidden
+            first-base side pinned as the mirror of the measured third-base
+            side; 2.6 m. 16 checks.
+      - [x] American Family Field: 2020 flight; the folded panels' edges on
+            three flights; 1.3 m. 15 checks.
+      - [x] T-Mobile Park: aisles from the 2013 and 2017 flights, the
+            outfield pinned from 2011 (3-D drawing, projective, 2.8 m); the
+            parked roof's edge over the right-field stands and the upper
+            canopy measured. 12 checks.
+      - [ ] Globe Life Field: no public photo shows the field. NAIP 2020
+            and 2022, every City of Arlington, Fort Worth and Esri capture
+            2020–2026 show the roof closed; 2018 is construction. Its
+            coordinates pointed at the old ballpark next door (fixed). The
+            one untested public source is the 2024 Texas NAIP (USDA's
+            server doesn't answer from here; TxGIO serves it only as a
+            county download). Orientation stays the published estimate.
+      - [ ] Rogers Centre: sections now come from the club's 2026 seat map
+            (adds the field-level clubs 1–5 and 16–32; drops suites 330–334,
+            not on the map). Not pinned or profiled: the 2012 photo
+            predates the 2024 rebuild of the 100 level, and every Toronto
+            and Ontario photo since 2013 shows the roof closed.
 - Rays: Tropicana Field has a fixed roof, so every seat is shaded and
   there is nothing to profile. (Their 2025 home was Steinbrenner Field.)
 
@@ -918,6 +955,36 @@ Medium or Low confidence and their blog posts stay unpublished.
   them. USGS lidar exists for several parks and can turn an estimate into
   a measurement. I'll use it where a reference check disagrees and the
   height is the likely cause.
+
+### Batch 5 review (2026-11-12)
+Ten commits, local only. What changed: six orientations measured (two
+large fixes: Rogers Centre 0° → 345°, American Family Field 135° → 130°);
+five parks profiled with the roof open (Chase Field, Daikin Park, loanDepot
+park, American Family Field, T-Mobile Park), each with its seat map pinned
+to an open-roof photo (1.1–2.8 m), photo-measured stand directions, the
+parked roof's edges measured on several flights, and 97 reference checks
+on real 2025 games; Globe Life Field's coordinates fixed; Rogers Centre's
+section list rebuilt from the club's 2026 map. 3,431 tests pass, tsc is
+clean, each page checked at 375 px.
+Not reproduced (in each test header): Chase Field's first-base 300s (the
+parked panels reach over them) and 106–109 ("well-covered" vs
+"particularly exposed"); Daikin Park's 152–155 rows 12–17 and 131–134 as
+the very sunniest; loanDepot's right-field "decent for day games" and late
+shade down the third-base line; American Family Field's third-base upper
+deck "under cover" (the panel is ~110 ft above it); T-Mobile's first-base
+100s by 4 PM, the bleachers at first pitch, and 306–310 by 3 PM. Two of
+these are a model limit already seen at Sutter Health Park: a low sun from
+the side past a structure that is not behind the section.
+Low-confidence share at a 1:10 PM game (April / July): loanDepot 27% /
+23%, American Family 18% / 33%, Daikin 33% / 47%, Chase Field 45% / 49%,
+T-Mobile 70% / 75% (its view-level canopy has unsourced cover, tried both
+ways). Lessons: at retractable-roof parks the newest photo is often
+closed; older NAIP years (Planetary Computer) usually have one open; the
+stands are often in the roof's shadow, so different flights light
+different sides. Open: Globe Life Field and Rogers Centre (imagery); the
+unused hand-typed `blueJaysSourcedSeeds` (with `giantsSourcedSeeds` and
+`athleticsSourcedSeeds`) can be removed with your OK; ShadeFinder shows
+loanDepot's map ids ("Section SEC39") rather than "Section 39".
 
 ### Done means
 Each park shows as profiled, has its measured orientation and 5+ passing
