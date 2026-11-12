@@ -466,7 +466,8 @@ def measure_section(P, sec, band):
     sm = (radial['s0'] + radial['s1']) / 2
     ax, ay = sm * math.sin(a), sm * math.cos(a)
     s, across, z = cut(P, ax, ay, sec['standCompass'], -60, 90)
-    run = tier_run([r for r in runs_in(s, z) if -35 < r['s0'] < 30], band)
+    all_runs = runs_in(s, z)
+    run = tier_run([r for r in all_runs if -35 < r['s0'] < 30], band)
     if not run:
         return {'id': sec['id'], 'tier': sec['tier'], 'found': False, 'why': 'no run in band on the stand cut', 'anchor': [ax, ay, radial['at'](sm)]}
     model_cover = (st.get('overhang') or {}).get('coveredFromRow')
@@ -509,6 +510,10 @@ def measure_section(P, sec, band):
             face_top = zz[gaps[0]] if len(gaps) else zz[-1]
             if face_top - lo_ >= 1.5:
                 soffit = lo_
+    # The front row of a deck of seats starting at that edge, if any.
+    above = [r for r in all_runs if lip is not None and lip - 1.5 <= r['s0'] <= lip + 2
+             and r['z0'] > run['c'] + slope * r['s0'] + 2.2 and r['slope'] >= math.tan(math.radians(15))]
+    above_front = min((r['z0'] for r in above), default=None)
     cover_agrees = (lip_row is None and model_cover is None) or (
         lip_row is not None and model_cover is not None and abs(lip_row - model_cover) <= 2)
     # What stands behind, seen from the middle uncovered row (or row 1).
@@ -531,6 +536,7 @@ def measure_section(P, sec, band):
         'frontFt': front / FT, 'rakeDeg': math.degrees(math.atan(slope)), 'visibleDepthFt': depth / FT,
         'lipRow': lip_row, 'modelCoveredFrom': model_cover, 'coverAgrees': cover_agrees,
         'soffitFt': ft(soffit) if cover_agrees else None, 'lipSoffitFt': ft(soffit), 'lipLowFt': ft(lip_low),
+        'aboveFrontFt': ft(above_front),
         'backFt': None if g is None else g[1] / FT, 'backSetbackFt': None if g is None else (g[0] - back) / FT,
         'rimFt': None if rim is None else rim[1] / FT, 'rimDistFt': None if rim is None else rim[0] / FT,
         'roofFt': ft(roof),
@@ -711,6 +717,69 @@ def suggest(park):
             print(f"   ...Object.fromEntries({json.dumps(sorted(ids))}.map((id) => [id, {{ {vals} }}])),".replace('"', "'"))
 
 
+def cover_report(park):
+    """Covered rows from the scan (option A). Per tier, the sections whose
+    deck edge is more than 2 rows from the sourced covered row (or covers 3+
+    rows the source leaves open). When most measured sections are, the tier
+    takes the median edge row; sections more than 2 rows off it get their
+    own. The underside at the edge: the bottom of its face where the scan
+    sees one; otherwise the lowest structure seen there, or, if that is the
+    front row of a deck of seats above (within 2 ft), that row less the
+    park's measured deck depth (front row to lowest structure at the edges
+    where both show; 9 ft if none do); never less than 9 ft above the first
+    covered row's floor. Prints the tier's values and the sections that differ."""
+    d = json.load(open(f'tmp/lidar/{park}-measured.json'))
+    data = load_sections(park)
+    secs = {s['id']: s for s in data['sections']}
+    r0 = lambda v: None if v is None else int(round(v))
+    # How far a deck's lowest structure at its edge sits below its front row,
+    # measured at this park's edges where both show (9 ft if none do).
+    drops = [r['aboveFrontFt'] - r['lipLowFt'] for r in d['sections'] if r['found'] and r.get('lipLowFt')
+             and r.get('aboveFrontFt') and r['aboveFrontFt'] - r['lipLowFt'] > 2]
+    depth = float(np.median(drops)) if drops else 9.0
+    print(f"deck depth below its front row: {depth:.1f} ft ({len(drops)} edges)")
+    for key in d['tiers']:
+        rs = [r for r in d['sections'] if r['tier'] == key and r['found']]
+        if not rs:
+            continue
+        covered = lambda rows, row: 0 if row is None else rows - row + 1
+        info = []
+        for r in rs:
+            st = secs[r['id']]['stand']
+            m = (st.get('overhang') or {}).get('coveredFromRow')
+            l = r['lipRow']
+            off = l is not None and abs(covered(st['rows'], l) - covered(st['rows'], m)) > 2
+            under = None
+            if l is not None and r['lipSoffitFt'] is not None:
+                under = r['lipSoffitFt']
+            elif l is not None and r.get('lipLowFt') is not None:
+                under = r['lipLowFt']
+                if r.get('aboveFrontFt') is not None and under >= r['aboveFrontFt'] - 2:
+                    under = r['aboveFrontFt'] - depth
+            if under is not None:
+                rise = 2.75 * math.tan(math.radians(r['rakeDeg']))
+                under = max(under, r['frontFt'] + (l - 1) * rise + 9)
+            info.append({'id': r['id'], 'rows': st['rows'], 'm': m, 'l': l, 'off': off, 'under': under,
+                         'face': r['lipSoffitFt'], 'low': r.get('lipLowFt'), 'above': r.get('aboveFrontFt')})
+        n_off = sum(i['off'] for i in info)
+        apply = n_off * 2 > len(info)
+        lips = [i['l'] for i in info if i['l'] is not None]
+        unders = [i['under'] for i in info if i['under'] is not None]
+        tier_row = int(round(float(np.median(lips)))) if apply and lips else None
+        tier_under = r0(med(unders)) if unders else None
+        fmt = lambda v: '-' if v is None else f'{v:.0f}'
+        print(f"{key}: {n_off}/{len(info)} off by >2 rows; tier -> {tier_row if apply else 'keep sourced'}; "
+              f"underside {fmt(med(unders))} [{fmt(min(unders) if unders else None)}-{fmt(max(unders) if unders else None)}] "
+              f"(lowest {fmt(med([i['low'] for i in info if i['low']]))}, deck above {fmt(med([i['above'] for i in info if i['above']]))}, "
+              f"face {fmt(med([i['face'] for i in info if i['face']]))} n{sum(1 for i in info if i['face'])})")
+        for i in info:
+            own_row = (tier_row is not None and i['l'] is not None and abs(i['l'] - tier_row) > 2) or (tier_row is None and i['off'])
+            own_under = i['under'] is not None and tier_under is not None and abs(i['under'] - tier_under) > max(0.1 * tier_under, 3)
+            if own_row or (own_under and (tier_row is not None or own_row)):
+                print(f"   '{i['id']}': rows {i['rows']}, sourced {i['m']}, edge {i['l']}, underside {fmt(i['under'])}"
+                      f" (lowest {fmt(i['low'])}, deck above {fmt(i['above'])}, face {fmt(i['face'])})")
+
+
 def runs_listing(park):
     P = load_points(park)
     print(f'field {P[3]:.2f} m; flown {P[4]}')
@@ -735,3 +804,5 @@ if __name__ == '__main__':
     elif cmd == 'measure':
         measure(park)
         suggest(park)
+    elif cmd == 'cover':
+        cover_report(park)

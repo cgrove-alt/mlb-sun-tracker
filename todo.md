@@ -1143,6 +1143,31 @@ Tools: `scripts/measureStandHeights.py` (fetch, runs, measure; writes a
 check picture and a plan view per park) and `scripts/lidar/standSections.ts`.
 Scans are kept cropped in tmp/lidar/<park>.npz; the one raw tile is deleted.
 
+### 7.1b Plan: option A, covered rows from the scan (approved 2026-11-12)
+- A tier whose sections mostly put the deck's edge more than 2 rows from
+  the sourced covered row (or over 3+ rows the source leaves open) takes
+  the scan's edge: the median row. Sections more than 2 rows off that get
+  their own. Where the scan sees no edge but the source covers rows, the
+  source stays (a sparse scan can miss an edge).
+- The underside at every edge the scan sees (also where the covered row
+  already agreed, since "9 ft above the first covered row's floor" put
+  some undersides far below the measured deck above): the bottom of its
+  face where the scan sees one; otherwise the lowest structure the scan
+  sees at the edge, or, when that is the front row of a deck of seats above
+  (within 2 ft), 6 ft below that row (the face depth measured at Dodger
+  Stadium's Reserve deck and Yankee Stadium's canopy); never less than 9 ft
+  above the first covered row's floor. Tier value = median, sections more
+  than 10% (3 ft) off get their own. Exceptions written down: Oracle's View
+  level (its rows A–D come before row 1, so its edge agrees), Fenway's Monster
+  seats (the "edge" is light-tower lattice, not a deck).
+- Those tiers' cover becomes sourced (by the scan); `heightsSourced` turns
+  true where the underside is a seen face.
+- Reference checks and blog claims whose answers change are investigated
+  and rewritten to the engine, never tuned.
+- One commit per park; tests, Low share before and after.
+- [ ] Dodgers   - [ ] Yankees   - [ ] Fenway   - [ ] Wrigley
+- [ ] Oracle    - [ ] Citi      - [ ] Phillies
+
 ---
 ---
 

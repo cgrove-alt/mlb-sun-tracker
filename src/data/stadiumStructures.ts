@@ -494,10 +494,13 @@ const DODGERS_LIDAR = 'USGS 3DEP lidar CA_LosAngeles_B23, flown 2023-11-22 to 20
  * structure behind, the point that rises highest as seen from the middle
  * uncovered row. Values are medians over a tier's sections, with the spread
  * given; sections more than 10% (at least 3 ft) off get their own values.
- * The scan sees the top of each deck but not its underside, so where a deck
- * covers rows the underside is estimated as before: 9 ft above the floor of
- * the first covered row (and below the measured deck top). The Club level and
- * the suites cannot be seen from the air and stay estimated.
+ * Covered rows: where the scan puts a deck's or roof's edge more than two
+ * rows from the source's covered row, the scan's edge is used. The underside
+ * at an edge is the bottom of its face where the scan sees one, otherwise
+ * the lowest structure seen there (when that is a deck of seats, its front
+ * row less the 9 ft this park's decks measure from front row to lowest
+ * edge), never under 9 ft above the first covered row's floor. The Club
+ * level and the suites cannot be seen from the air and stay estimated.
  */
 const DODGERS: StadiumStructure = {
   stadiumId: 'dodgers',
@@ -538,7 +541,8 @@ const DODGERS: StadiumStructure = {
     field: {
       label: 'Field level',
       // Rows A–X (22 rows, no I), covered from row T (19th) by the Loge
-      // (sourced; the lidar puts the Loge's front edge at row 19, 16–22).
+      // (sourced; the lidar puts the Loge's front edge at row 19, 16–22; at
+      // row 22 in 15FD and row 16 in 52FD, which take the lidar's row).
       // Sections 52 and 53 have rows AA, A–Z (25), so T is their 20th.
       // Lidar (53 of 53): front row 1 ft (-1 to 4), 12° rake (9–13). What
       // rises highest behind depends on where the section is: down the
@@ -556,10 +560,11 @@ const DODGERS: StadiumStructure = {
         overhang: { coveredFromRow: 19, soffitHeightFt: 20 },
       },
       sections: {
-        ...Object.fromEntries(['10FD', '11FD', '12FD', '13FD', '14FD', '15FD', '16FD', '17FD', '18FD', '19FD', '2FD', '4FD', '5FD', '6FD', '7FD', '8FD', '9FD'].map((id) => [id, { backHeightFt: 139, backSetbackFt: 75 }])),
+        ...Object.fromEntries(['10FD', '11FD', '12FD', '13FD', '14FD', '16FD', '17FD', '18FD', '19FD', '2FD', '4FD', '5FD', '6FD', '7FD', '8FD', '9FD'].map((id) => [id, { backHeightFt: 139, backSetbackFt: 75 }])),
         ...Object.fromEntries(['20FD', '21FD', '22FD', '24FD', '25FD', '26FD', '27FD', '28FD', '29FD', '30FD', '31FD', '32FD', '33FD', '34FD', '35FD', '36FD', '37FD', '38FD', '39FD', '40FD', '41FD', '42FD', '47FD'].map((id) => [id, { backHeightFt: 58, backSetbackFt: 11 }])),
         ...Object.fromEntries(['1FD', '3FD'].map((id) => [id, { backHeightFt: 155, backSetbackFt: 97 }])),
-        '52FD': { rows: 25, overhang: { coveredFromRow: 20, soffitHeightFt: 21 }, backHeightFt: 58, backSetbackFt: 11 },
+        '15FD': { backHeightFt: 139, backSetbackFt: 75, overhang: { coveredFromRow: 22, soffitHeightFt: 21 } },
+        '52FD': { rows: 25, overhang: { coveredFromRow: 16, soffitHeightFt: 21 }, backHeightFt: 58, backSetbackFt: 11 },
         '53FD': { rows: 25, overhang: { coveredFromRow: 20, soffitHeightFt: 21 } },
       },
       heightsSourced: false,
@@ -568,27 +573,24 @@ const DODGERS: StadiumStructure = {
     },
     loge: {
       label: 'Loge level',
-      // Rows A–W (22), covered from row N (13th) by the Club level above
-      // (sourced). Lidar (68 of 68): front row 22 ft (21–24), 19° rake
-      // (16–20). The Reserve deck's front edge reaches out over row 8 (6–9),
-      // its lowest structure 48 ft up (47–58; 50 ft where the scan sees its
-      // face); the Club deck under it, which
-      // covers row N, cannot be seen from the air. What rises highest behind
-      // is that Reserve deck edge, 58 ft up over row 8. Estimated: the Club
-      // deck's underside ~42 ft (9 ft above row N's floor).
-      // With the source and the scan disagreeing, which rows are covered is
-      // not settled, so the confidence check tries it both ways.
+      // Rows A–W (22). Rate Your Seats counts them covered from row N
+      // (13th), under the Club level. Lidar (68 of 68): front row 22 ft
+      // (21–24), 19° rake (16–20). The Reserve deck's front edge reaches out
+      // over row 8 (6–9), its underside there 48 ft up (47–52; 51 ft where
+      // the scan sees its face), so the rows from 8 back are covered; the
+      // Club deck under it, from row N, cannot be seen from the air. What
+      // rises highest behind is that edge, 58 ft up.
       stand: {
         rows: 22,
         frontRowHeightFt: 22,
         rakeDeg: 19,
         backHeightFt: 58,
         backSetbackFt: -40,
-        overhang: { coveredFromRow: 13, soffitHeightFt: 42 },
+        overhang: { coveredFromRow: 8, soffitHeightFt: 48 },
       },
       sections: { '145LG': { backHeightFt: 48, backSetbackFt: -43 } },
-      heightsSourced: false,
-      coverSourced: false,
+      heightsSourced: true,
+      coverSourced: true,
       sources: [rysDodgers('sections/124'), rysDodgers('sections/139'), rysDodgers('sections/166'), RYS_DODGERS, DODGERS_LIDAR],
     },
     club: {
@@ -617,14 +619,15 @@ const DODGERS: StadiumStructure = {
       // the lidar puts its front edge at row 12, 11–12). Lidar (11 of 11):
       // front row 56 ft (56–58), 30° rake (29–30); what rises highest behind
       // is the Top Deck's front edge, 97 ft up over row 12. Estimated: the
-      // Top Deck's underside ~84 ft (9 ft above row N's floor).
+      // Top Deck's underside ~87 ft: its front row less this park's measured
+      // deck depth (9 ft from a deck's front row to its lowest edge).
       stand: {
         rows: 21,
         frontRowHeightFt: 56,
         rakeDeg: 30,
         backHeightFt: 97,
         backSetbackFt: -26,
-        overhang: { coveredFromRow: 13, soffitHeightFt: 84 },
+        overhang: { coveredFromRow: 13, soffitHeightFt: 87 },
       },
       heightsSourced: false,
       coverSourced: true,
@@ -632,15 +635,14 @@ const DODGERS: StadiumStructure = {
     },
     infieldReserveOpen: {
       label: 'Infield Reserve',
-      // Rows A–V, no cover (sourced). Lidar (4 of 4): front row 57 ft
-      // (56–57), 27° rake (26–30); what rises highest behind is the Top
-      // Deck's front edge, 97 ft up over row 12 (the scan shows the Top Deck
-      // over these sections' rows 11–12 and back, against the source).
-      // With the source and the scan disagreeing, which rows are covered is
-      // not settled, so the confidence check tries it both ways.
-      stand: { rows: 21, frontRowHeightFt: 57, rakeDeg: 27, backHeightFt: 97, backSetbackFt: -23 },
-      heightsSourced: true,
-      coverSourced: false,
+      // Rows A–V. Rate Your Seats gives them no cover, but the lidar shows
+      // the Top Deck over their rows from 12 (11–12) back. Lidar (4 of 4):
+      // front row 57 ft (56–57), 27° rake (26–30); what rises highest behind
+      // is the Top Deck's front edge, 97 ft up. Estimated: its underside
+      // ~86 ft, its front row less the park's measured deck depth (9 ft).
+      stand: { rows: 21, frontRowHeightFt: 57, rakeDeg: 27, backHeightFt: 97, backSetbackFt: -23, overhang: { coveredFromRow: 12, soffitHeightFt: 86 } },
+      heightsSourced: false,
+      coverSourced: true,
       sources: [rysDodgers('sections/15IR'), rysDodgers('reserve-level'), DODGERS_LIDAR],
     },
     lowerReserve: {
@@ -677,21 +679,24 @@ const DODGERS: StadiumStructure = {
       label: 'Top Deck',
       // Rows A–W (22), covered from row O (14th) by a small roof; Top Deck
       // 13 has rows A–R (17), covered from P (sourced; the lidar puts the
-      // roof's front edge at row 12). Lidar (13 of 13): front row 97 ft
-      // (96–97), 34° rake (33–34); the roof's front edge is 139 ft up, and
-      // behind home (1TD, 3TD) the box on the roof 155 ft. Estimated: roof
-      // underside ~130 ft (9 ft above row O's floor).
+      // roof's front edge at row 12, also in 13TD, which takes it). Lidar
+      // (13 of 13): front row 97 ft (96–97), 34° rake (33–34); the roof's
+      // front edge is 139 ft up and the scan sees nothing below it there: a
+      // thin roof, underside taken as 139 ft. Behind home (1TD, 3TD) the box
+      // on the roof, 155 ft, starts over row 17–18, its face's bottom
+      // 136–137 ft.
       stand: {
         rows: 22,
         frontRowHeightFt: 97,
         rakeDeg: 34,
         backHeightFt: 139,
         backSetbackFt: -27,
-        overhang: { coveredFromRow: 14, soffitHeightFt: 130 },
+        overhang: { coveredFromRow: 14, soffitHeightFt: 139 },
       },
       sections: {
-        '13TD': { rows: 17, overhang: { coveredFromRow: 15, soffitHeightFt: 132 } },
-        ...Object.fromEntries(['1TD', '3TD'].map((id) => [id, { backHeightFt: 155, backSetbackFt: -1 }])),
+        '13TD': { rows: 17, overhang: { coveredFromRow: 12, soffitHeightFt: 139 } },
+        '1TD': { backHeightFt: 155, backSetbackFt: -1, overhang: { coveredFromRow: 18, soffitHeightFt: 137 } },
+        '3TD': { backHeightFt: 155, backSetbackFt: -1, overhang: { coveredFromRow: 17, soffitHeightFt: 136 } },
       },
       heightsSourced: false,
       coverSourced: true,
@@ -703,15 +708,15 @@ const DODGERS: StadiumStructure = {
       // (sourced; the lidar puts its front edge at row 18). Lidar (15 of
       // 16): front row 8 ft over the outfield wall (8–9), 17° rake; the
       // roof's front edge is 42 ft up, and behind 307–311 the video boards
-      // rise to 85–109 ft. Estimated: roof underside ~32 ft (9 ft above row
-      // T's floor).
+      // rise to 85–109 ft. The scan sees nothing below 39 ft at the roof's
+      // edge (39–41): a thin roof, underside taken as 39 ft.
       stand: {
         rows: 22,
         frontRowHeightFt: 8,
         rakeDeg: 17,
         backHeightFt: 42,
         backSetbackFt: -10,
-        overhang: { coveredFromRow: 19, soffitHeightFt: 32 },
+        overhang: { coveredFromRow: 19, soffitHeightFt: 39 },
       },
       sections: {
         ...Object.fromEntries(['308PR', '310PR'].map((id) => [id, { backHeightFt: 89, backSetbackFt: 11 }])),
