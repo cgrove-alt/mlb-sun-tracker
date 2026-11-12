@@ -26,7 +26,9 @@ const PARKS: readonly ParkExpectation[] = [
   { id: 'angels', count: 283, distinctiveIds: ['101', '236', '540'] },
   { id: 'astros', count: 210, distinctiveIds: ['AA', 'STE55', 'FC'] },
   { id: 'athletics', count: 29, distinctiveIds: ['101', '123', '201', '206'] },
-  { id: 'bluejays', count: 252, distinctiveIds: ['101', '244', '300', '498', '540'] },
+  // 269: the club's 2026 map adds the field-level clubs (1–5, 16–32) and
+  // has no suites 330–334 (the Ticketmaster Lounge is there).
+  { id: 'bluejays', count: 269, distinctiveIds: ['1', '32', '101', '244', '300', '498', '540'] },
   { id: 'braves', count: 273, distinctiveIds: ['25', '130T1', '239B1'] },
   { id: 'brewers', count: 159, distinctiveIds: ['107', 'DECK305', 'BULLPEN'] },
   { id: 'cardinals', count: 324, distinctiveIds: ['101', '197', 'S63'] },

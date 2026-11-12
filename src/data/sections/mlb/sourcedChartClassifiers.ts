@@ -124,6 +124,13 @@ export const classifyDiamondbacksSection: Classifier = (id) => {
   return numeric ?? section('standing');
 };
 
+export const classifyBluejaysSection: Classifier = (id) => {
+  // Field-level clubs in front of the 100 level: TD Lounge (1–5), KPMG
+  // Blueprint Club (16–22), Clover Banner Club (23–32).
+  const numeric = numericTier(id, [[99, 'field'], [199, 'lower'], [299, 'club'], [499, 'suite', 'full'], [599, 'upper']]);
+  return numeric ?? section('standing');
+};
+
 export const classifyGuardiansSection: Classifier = (id) => {
   if (/^STE/.test(id)) return section('suite', 'full');
   if (/^(HPBOX|PC|CC|CLNG)/.test(id)) return section('club', 'full');
