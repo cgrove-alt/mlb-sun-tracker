@@ -257,10 +257,14 @@ const FENWAY_LIDAR = 'USGS 3DEP lidar MA_CentralEastern_2021, flown 2021-03-20 (
  * front row's height, the rake and the structure that rises highest behind
  * as seen from the middle uncovered row; tier values are medians, sections
  * more than 10% (at least 3 ft) off get their own. The eight lattice light
- * towers on the roof are not counted as walls. The Grandstand, the pavilion
- * clubs and the suites are hidden from the air and stay estimated, now from
- * the measured structure around them. The lidar puts the Green Monster
- * seats' front row at 36.6 ft, matching the sourced 37 ft.
+ * towers on the roof are not counted as walls. Covered rows: where the scan
+ * puts a roof's or deck's edge more than two rows from the source's row
+ * (most of the Loge Boxes, which the sources call open), the scan's edge is
+ * used, with the lowest structure seen at it as the underside. The
+ * Grandstand, the pavilion clubs and the suites are hidden from the air and
+ * stay estimated, now from the measured structure around them. The lidar
+ * puts the Green Monster seats' front row at 36.6 ft, matching the sourced
+ * 37 ft (the light towers among them are not a roof).
  */
 const FENWAY: StadiumStructure = {
   stadiumId: 'redsox',
@@ -290,24 +294,36 @@ const FENWAY: StadiumStructure = {
     },
     logeBox: {
       label: 'Loge Box',
-      // Uncovered, rows AA–NN (sourced). Lidar (72 of 78): front row 4 ft
-      // (3–9), 16° rake (12–34). The front edge of the Grandstand roof
-      // reaches out over row 9 (8–11), with structure down to 41 ft, against
-      // the source; its top, 54 ft up over row 9, is what rises highest
-      // behind (36–96 ft from section to section). With the source and the
-      // scan disagreeing, which rows are covered is not settled, so the
-      // confidence check tries it both ways.
-      stand: { rows: 13, frontRowHeightFt: 4, rakeDeg: 16, backHeightFt: 54, backSetbackFt: -13 },
+      // Rows AA–NN; Rate Your Seats calls them uncovered. Lidar (72 of 78):
+      // front row 4 ft (3–9), 16° rake (12–34). The front edge of the
+      // Grandstand roof reaches out over row 9 (3–14 by section, below), its
+      // lowest structure 41 ft up, so the rows behind it are covered; behind
+      // home the press box block reaches out over row 6, 57–87 ft up. The
+      // roof's top over row 9, 54 ft up, is what rises highest behind (36–96
+      // ft from section to section).
+      stand: { rows: 13, frontRowHeightFt: 4, rakeDeg: 16, backHeightFt: 54, backSetbackFt: -13, overhang: { coveredFromRow: 9, soffitHeightFt: 41 } },
       sections: {
-        ...Object.fromEntries(['B102', 'B88', 'B89'].map((id) => [id, { backHeightFt: 41, backSetbackFt: -14 }])),
-        ...Object.fromEntries(['B106', 'B107', 'B108', 'B109', 'B147', 'B148', 'B149'].map((id) => [id, { backHeightFt: 36, backSetbackFt: -15 }])),
-        'B115': { frontRowHeightFt: 9, backHeightFt: 61, backSetbackFt: -15 },
-        ...Object.fromEntries(['B125', 'B127', 'B128', 'B129', 'B131', 'B132', 'B133', 'B134'].map((id) => [id, { backHeightFt: 87, backSetbackFt: -15 }])),
-        'B130': { backHeightFt: 96, backSetbackFt: -9 },
+        'B88': { backHeightFt: 41, backSetbackFt: -14, overhang: { coveredFromRow: 13, soffitHeightFt: 28 } },
+        'B89': { backHeightFt: 41, backSetbackFt: -14, overhang: { coveredFromRow: 14, soffitHeightFt: 28 } },
+        'B102': { backHeightFt: 41, backSetbackFt: -14 },
+        ...Object.fromEntries(['B105', 'B150'].map((id) => [id, { overhang: { coveredFromRow: 8, soffitHeightFt: 36 } }])),
+        ...Object.fromEntries(['B106', 'B107', 'B108', 'B147', 'B148'].map((id) => [id, { backHeightFt: 36, backSetbackFt: -15, overhang: { coveredFromRow: 7, soffitHeightFt: 36 } }])),
+        'B110': { overhang: { coveredFromRow: 7, soffitHeightFt: 36 } },
+        ...Object.fromEntries(['B109', 'B149'].map((id) => [id, { backHeightFt: 36, backSetbackFt: -15, overhang: { coveredFromRow: 6, soffitHeightFt: 36 } }])),
+        'B111': { overhang: { coveredFromRow: 6, soffitHeightFt: 36 } },
+        'B115': { frontRowHeightFt: 9, backHeightFt: 61, backSetbackFt: -15, overhang: { coveredFromRow: 3, soffitHeightFt: 41 } },
+        'B118': { overhang: { coveredFromRow: 9, soffitHeightFt: 46 } },
+        ...Object.fromEntries(['B125', 'B128', 'B132', 'B133'].map((id) => [id, { backHeightFt: 87, backSetbackFt: -15, overhang: { coveredFromRow: 6, soffitHeightFt: 66 } }])),
+        'B127': { backHeightFt: 87, backSetbackFt: -15, overhang: { coveredFromRow: 6, soffitHeightFt: 57 } },
+        'B129': { backHeightFt: 87, backSetbackFt: -15, overhang: { coveredFromRow: 6, soffitHeightFt: 36 } },
+        'B130': { backHeightFt: 96, backSetbackFt: -9, overhang: { coveredFromRow: 10, soffitHeightFt: 87 } },
+        'B131': { backHeightFt: 87, backSetbackFt: -15, overhang: { coveredFromRow: 5, soffitHeightFt: 33 } },
+        'B134': { backHeightFt: 87, backSetbackFt: -15, overhang: { coveredFromRow: 6, soffitHeightFt: 41 } },
+        'B135': { overhang: { coveredFromRow: 6, soffitHeightFt: 41 } },
       },
       rowsFromMap: true,
-      heightsSourced: true,
-      coverSourced: false,
+      heightsSourced: false,
+      coverSourced: true,
       sources: [RYS_FENWAY, rysFenway('loge-boxes'), rysFenway('sections/LB122'), FENWAY_LIDAR],
     },
     grandstand: {
@@ -418,28 +434,32 @@ const FENWAY: StadiumStructure = {
     auraPavilion: {
       label: 'Aura Pavilion',
       // Level 4 seating down both lines (sourced: Red Sox ballpark guide).
-      // Whether it is covered is not clear from the sources, so the
-      // confidence check tries it both ways (the lidar shows nothing over
-      // 12 of the 14 sections; AP01 and AP02 sit under the press box).
-      // Lidar (14 of 14): front row 53 ft (52–53), 32° rake (28–34); behind,
-      // the pavilion roof 82 ft up.
+      // The sources don't say whether it is covered; the lidar shows nothing
+      // over 12 of the 14 sections, while AP01 and AP02 sit under the press
+      // box from their first row (its face's bottom 66 ft up). Lidar (14 of
+      // 14): front row 53 ft (52–53), 32° rake (28–34); behind, the pavilion
+      // roof 82 ft up.
       stand: { rows: 5, frontRowHeightFt: 53, rakeDeg: 32, backHeightFt: 82, backSetbackFt: 2 },
+      sections: Object.fromEntries(['AP01', 'AP02'].map((id) => [id, { overhang: { coveredFromRow: 1, soffitHeightFt: 66 } }])),
       rowsFromMap: true,
       heightsSourced: true,
-      coverSourced: false,
+      coverSourced: true,
       sources: ['https://www.mlb.com/redsox/ballpark/information/guide', RYS_FENWAY, FENWAY_LIDAR],
     },
     pavilionReserved: {
       label: 'Pavilion Reserved',
-      // Rows A–J, uncovered (sourced). Lidar (4 of 4): front row 52 ft
-      // (52–53), 35° rake (32–36); a structure 82 ft up reaches out over row
-      // 6–9 (against the source) and is what rises highest behind. With the
-      // two disagreeing, the confidence check tries cover both ways.
+      // Rows A–J; Rate Your Seats calls them uncovered. Lidar (4 of 4): front
+      // row 52 ft (52–53), 35° rake (32–36); a structure 82 ft up reaches
+      // out over row 6 of PR15 and PR16 (covering them from there; over the
+      // last rows only in PR18 and PR20) and is what rises highest behind.
       stand: { rows: 10, frontRowHeightFt: 52, rakeDeg: 35, backHeightFt: 82, backSetbackFt: -7 },
-      sections: { 'PR18': { backHeightFt: 69, backSetbackFt: 1 } },
+      sections: {
+        ...Object.fromEntries(['PR15', 'PR16'].map((id) => [id, { overhang: { coveredFromRow: 6, soffitHeightFt: 82 } }])),
+        'PR18': { backHeightFt: 69, backSetbackFt: 1 },
+      },
       rowsFromMap: true,
       heightsSourced: true,
-      coverSourced: false,
+      coverSourced: true,
       sources: [rysFenway('pavilion-reserved'), FENWAY_LIDAR],
     },
     suite: {

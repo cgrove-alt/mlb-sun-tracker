@@ -100,16 +100,16 @@ describe('Fenway Park: published shade observations', () => {
   );
 });
 
-describe('Fenway Park: where sources and the model disagree, confidence must say so', () => {
+describe('Fenway Park: the Loge behind home plate at a 1:35 PM start', () => {
   // [RYS] says the upper rows of the Loge behind home plate are already
-  // shaded at a 1 PM start. The heights are now measured (USGS lidar, 2021),
-  // and the scan shows why: the Grandstand roof's front edge reaches out over
-  // Loge row 9, 41 ft up, so the upper rows sit under it. The sources call
-  // the Loge uncovered, and the model keeps that, so it puts the shade on
-  // the front rows (the roof's top edge behind them) and not on the upper
-  // rows. With source and scan disagreeing, the Loge's cover is marked
-  // unsettled and the answer must not be presented as High confidence.
-  it.each(['B125', 'B130', 'B135'])('1:35 PM: Loge %s is not labelled High', (id) => {
-    expect(section(JULY_13_135PM, id).confidence).not.toBe('high');
+  // shaded at a 1 PM start. The lidar (2021) shows why: the press box block
+  // and the Grandstand roof's front edge reach out over Loge row 6 behind
+  // home, so the covered rows come from the scan (the sources call the Loge
+  // uncovered).
+  it.each(['B125', 'B130', 'B135'])('[RYS] Loge %s: the upper rows are shaded at first pitch', (id) => {
+    const s = redsoxSections.find((x) => x.id === id)!;
+    const { stand } = standFor(structure, id, s.rows.length)!;
+    const light = rowLight(stand, s.standCompass!, structure.park, JULY_13_135PM.sun[0]);
+    expect(light.slice(6).every((l) => l === 'shade')).toBe(true);
   });
 });
