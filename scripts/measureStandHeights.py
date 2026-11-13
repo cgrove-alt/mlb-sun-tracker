@@ -312,7 +312,27 @@ PARKS = {
     'reds': {
         'scan': {'ept': 'OH_StatewideP3_6_B21'}, 'name': 'USGS 3DEP OH_StatewideP3_B21 (Ohio Phase 3, 2021-22)',
         'noise': [7, 18],
-        'tiers': {},
+        # The 400s are ~10 m up in left field (401-406), ~15.5 m on the
+        # third-base side (411-419); the View level shows its rows to the
+        # roof's edge.
+        'tiers': {
+            'diamond': (-0.6, 0.6, 'near', 5), 'home': (0.9, 1.8, 'near', 8),
+            'first': (-0.6, 1.4, 'near', 5), 'third': (-0.3, 2.8, 'near', 4),
+            'thirdCoverUnsourced': (-0.5, 1.0, 'near', 5), 'leftField': (2.0, 3.5, 'near', 10),
+            'rightField': (1.0, 2.2, 'near', 12), 'twoHundred': (9.8, 11.2, 'near', 12),
+            'club': (9.8, 11.0, 'near', 12), 'clubCoverUnsourced': (9.8, 11.0, 'near', 12),
+            'fourHundred': (9.5, 16.5, 'near', 15), 'fourHundredFront': (19.5, 21.5, 'near', 12),
+            'upperThird': (25.5, 27.5, 'near', 15), 'upperFirst': (23.5, 27.5, 'near', 15),
+        },
+        # The light towers behind the stands rise to ~65 m; the roof's edge
+        # is ~42 m.
+        'lightTowersAbove': 45,
+        'skip': {n: 'its cut crosses the rows at an angle (a smeared band, two blocks): the rake and the edge read off it are not the stand\'s'
+                 for n in ('401', '402', '403', '404', '405')},
+        # Decks seen only as their edge: their fronts as measured on their own
+        # sections (the third-base 400s over the 100s there, the club over
+        # the first-base 100s, the View level over the third-base 400s).
+        'deckAboveFt': {'third': 52, 'thirdCoverUnsourced': 52, 'first': 35, 'fourHundred': 88},
     },
     'pirates': {
         # Not in the AWS copy (it has 2019): two tiles from USGS (rockyweb),

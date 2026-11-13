@@ -3837,184 +3837,266 @@ export function gabpTier(id: string): string | null {
   return n <= 519 ? 'upperThird' : 'upperFirst';
 }
 
-// The upper deck's roof stands behind the lower bowl. On the photo, square
-// to each line 50 m out, its edge is ~42 m from the first-base line (right
-// over the 100s' last rows) and ~57 m from the third-base line (~17 m
-// behind them). Estimated ~112 ft up.
-const GABP_LOWER = { frontRowHeightFt: 3, rakeDeg: 18 };
+const GABP_LIDAR = 'USGS 3DEP lidar OH_StatewideP3_B21, flown 2022-01-26 (scripts/measureStandHeights.py)';
 
 /**
  * Great American Ball Park (2003). The Diamond Seats in front of a deep 100
  * level (to row PP), the Club (300s) on the first-base side, the 400s on the
  * third-base side and behind home, and the View level (500s) under a roof.
- * Rows and covered rows are Rate Your Seats' section pages. No source
- * publishes the deck heights, so every height is estimated by stacking the
- * decks.
+ * Rows and covered rows are Rate Your Seats' section pages.
+ *
+ * Heights are measured on USGS airborne lidar (GABP_LIDAR, January 2022; no
+ * later scan covers the park), as at Citizens Bank Park: for each section a
+ * cut straight back through its stand gives the front row's height and the
+ * rake, the edge of any deck over it, and what rises highest behind. Where
+ * a deck's edge is more than two rows from the source's covered row (or
+ * covers three or more it leaves open), the scan's row is used. The scan
+ * sees decks from above: a deck's underside is the bottom of its face where
+ * seen; where only its front row of seats shows, that row less 9 ft; never
+ * under 9 ft above the floor of the first covered row. Not measured (tier
+ * values): 1, 2, 5, 107, 122, 138–140, 220, 221, 401–405 (their front row
+ * from the cut from home plate), 420 and 520.
  */
 const GABP: StadiumStructure = {
   stadiumId: 'reds',
-  // Far rim: the View level's roof (~112 ft) about 550 ft across the field.
-  park: { roof: 'open', farRimHeightFt: 112, fieldCrossingFt: 550 },
+  // Far rim (lidar): the roof line, median over sections 138 ft; crossing:
+  // the median distance from a section to it across the field, 573 ft.
+  park: { roof: 'open', farRimHeightFt: 138, fieldCrossingFt: 573 },
   tierOf: gabpTier,
   tiers: {
     diamond: {
       label: 'Diamond Seats (1–5, 22–25)',
-      // Rows A–H (D–H in 1) at the backstop, open. Estimated: front ~2 ft,
-      // 12° rake; the 100s rise behind them.
-      stand: { rows: 8, frontRowHeightFt: 2, rakeDeg: 12, backHeightFt: 112, backSetbackFt: 75 },
+      // Rows A–H (D–H in 1) at the backstop, open. Lidar (6 of 9): front
+      // row at field level (-1 ft), 11° rake (10–15); what rises highest
+      // behind is the roof's edge, 138 ft up and 122 ft back.
+      stand: { rows: 8, frontRowHeightFt: -1, rakeDeg: 11, backHeightFt: 138, backSetbackFt: 122 },
+      sections: { '3': { backHeightFt: 69, backSetbackFt: 86 } },
       rowsFromMap: true,
-      heightsSourced: false,
+      heightsSourced: true,
       coverSourced: true,
-      sources: gabpSections('1', '3', '22', '25'),
+      sources: [...gabpSections('1', '3', '22', '25'), GABP_LIDAR],
     },
     home: {
       label: 'Field level behind home (122–126)',
-      // Rows A–I or A–O behind the Diamond Seats, covered from row H.
-      // Estimated: the deck's underside ~24 ft (9 ft above row H's floor).
-      stand: { rows: 15, frontRowHeightFt: 9, rakeDeg: 18, backHeightFt: 112, backSetbackFt: 50, overhang: { coveredFromRow: 8, soffitHeightFt: 24 } },
+      // Rows A–I or A–O behind the Diamond Seats, covered from row H
+      // (sourced). Lidar (4 of 5): front row 4 ft, 13° rake; behind, the
+      // roof's edge, 138 ft up and 73 ft back. The scan sees no deck over
+      // their first rows; estimated: the cover's underside ~24 ft.
+      stand: { rows: 15, frontRowHeightFt: 4, rakeDeg: 13, backHeightFt: 138, backSetbackFt: 73, overhang: { coveredFromRow: 8, soffitHeightFt: 24 } },
       sections: gabpCover(gabpIds(122, 126), 24),
       rowsFromMap: true,
       heightsSourced: false,
       coverSourced: true,
-      sources: [RYS_GABP, ...gabpSections('122', '124', '126')],
+      sources: [RYS_GABP, ...gabpSections('122', '124', '126'), GABP_LIDAR],
     },
     first: {
       label: 'Field level, first-base side (127–137)',
-      // Up to 42 rows, covered from row EE (sourced). Estimated deck
-      // underside ~36 ft (39 over 132–135, covered from further back: 9 ft
-      // above their floor); the roof's edge over the last rows.
-      stand: { rows: 37, ...GABP_LOWER, backHeightFt: 112, backSetbackFt: 5 },
-      sections: { ...gabpCover(gabpIds(127, 137), 36), ...gabpCover(gabpIds(132, 135), 39) },
+      // Up to 42 rows, covered from row EE (sourced: 26 in 127–131, 31 in
+      // 132–135, 27 in 136, 19 in 137). Lidar (11 of 11): front row at field
+      // level (-1 ft; 4 in 136), 11° rake (11–12); what rises highest behind
+      // is the roof's edge, 138 ft up and 33 ft back (in five, the club's
+      // front over the last rows). The club's front, 35 ft up, is over the
+      // source's row in six; in 127, 128 and 136 it reaches out over row
+      // 20–22 and in 133 over 28, which they take; in 137 the scan puts it
+      // over row 30 (source: 19). Its underside ~25 ft (that front row less
+      // 9 ft; 30 ft in 127, where something lower shows).
+      stand: { rows: 37, frontRowHeightFt: -1, rakeDeg: 11, backHeightFt: 138, backSetbackFt: 33 },
+      sections: {
+        ...gabpCover(['131', '132', '134', '135'], 25),
+        '127': { backHeightFt: 62, backSetbackFt: -29, overhang: { coveredFromRow: 22, soffitHeightFt: 30 } },
+        '128': { backHeightFt: 69, backSetbackFt: -25, overhang: { coveredFromRow: 22, soffitHeightFt: 24 } },
+        ...Object.fromEntries(['129', '130'].map((id) => [id, { backHeightFt: 69, backSetbackFt: -25, ...gabpCover([id], 25)[id] }])),
+        '133': { overhang: { coveredFromRow: 28, soffitHeightFt: 25 } },
+        '136': { frontRowHeightFt: 4, backHeightFt: 69, backSetbackFt: -25, overhang: { coveredFromRow: 20, soffitHeightFt: 25 } },
+        '137': { overhang: { coveredFromRow: 30, soffitHeightFt: 25 } },
+      },
       rowsFromMap: true,
       heightsSourced: false,
       coverSourced: true,
-      sources: [RYS_GABP, ...gabpSections('127', '130', '132', '136', '137')],
+      sources: [RYS_GABP, ...gabpSections('127', '130', '132', '136', '137'), GABP_LIDAR],
     },
     third: {
       label: 'Field level, third-base side (107–112, 121)',
-      // 108–112 covered from row KK, 121 from FF (sourced); 107 open.
-      // Estimated deck underside ~36 ft (40 over 110, 44 over 111 and 112,
-      // covered from further back: 9 ft above their floor).
-      stand: { rows: 30, ...GABP_LOWER, backHeightFt: 112, backSetbackFt: 56 },
-      sections: { ...gabpCover(['108', '109', '121'], 36), ...gabpCover(['110'], 40), ...gabpCover(['111', '112'], 44) },
+      // 108–112 covered from row KK, 121 from FF (sourced: 18, 25, 32, 37,
+      // 37, 20); 107 open. Lidar (6 of 7): front row 1 ft (-1 to 4), 11° rake
+      // (10–12); behind, the roof's edge, 134 ft up and 47 ft back. The 400s'
+      // front, 52 ft up, is over the source's row in 109 and 110; in 111 and
+      // 112 it reaches out over row 33, which they take. Its underside ~43 ft
+      // (that front row less 9 ft).
+      stand: { rows: 30, frontRowHeightFt: 1, rakeDeg: 11, backHeightFt: 134, backSetbackFt: 47 },
+      sections: {
+        ...gabpCover(['108', '109', '110'], 43),
+        '121': { backHeightFt: 53, backSetbackFt: 19, ...gabpCover(['121'], 43)['121'] },
+        ...Object.fromEntries(['111', '112'].map((id) => [id, { overhang: { coveredFromRow: 33, soffitHeightFt: 43 } }])),
+      },
       rowsFromMap: true,
       heightsSourced: false,
       coverSourced: true,
-      sources: [RYS_GABP, ...gabpSections('107', '108', '110', '112', '121')],
+      sources: [RYS_GABP, ...gabpSections('107', '108', '110', '112', '121'), GABP_LIDAR],
     },
     thirdCoverUnsourced: {
       label: 'Field level, third-base side (113–120)',
-      // Rows to GG; Rate Your Seats gives no covered rows (120: "GG and
-      // up shaded late afternoon"), so the check tries both.
-      stand: { rows: 28, ...GABP_LOWER, backHeightFt: 112, backSetbackFt: 56, overhang: { coveredFromRow: 22, soffitHeightFt: 34 } },
+      // Rows to GG; Rate Your Seats gives no covered rows (120: "GG and up
+      // shaded late afternoon"). Lidar (8 of 8): front row at field level
+      // (-1 ft), 11° rake (10–12); behind, the roof's edge, 134 ft up and
+      // 68 ft back. The 400s' front, 52 ft up, is over 113's and 114's row
+      // 33, 118's 27 and 119's 26; over 115–117 and 120 the scan sees every
+      // row open. That settles the cover; the underside ~43 ft (that front
+      // row less 9 ft).
+      stand: { rows: 28, frontRowHeightFt: -1, rakeDeg: 11, backHeightFt: 134, backSetbackFt: 68 },
+      sections: {
+        '113': { overhang: { coveredFromRow: 33, soffitHeightFt: 43 } },
+        '114': { overhang: { coveredFromRow: 33, soffitHeightFt: 42 } },
+        '118': { overhang: { coveredFromRow: 27, soffitHeightFt: 43 } },
+        '119': { overhang: { coveredFromRow: 26, soffitHeightFt: 43 } },
+      },
       rowsFromMap: true,
       heightsSourced: false,
-      coverSourced: false,
-      sources: gabpSections('113', '116', '120'),
+      coverSourced: true,
+      sources: [...gabpSections('113', '116', '120'), GABP_LIDAR],
     },
     leftField: {
       label: 'Left field (101–106)',
       // Rows A–Q; 101–105 covered from row J by the deck above (sourced).
-      // Estimated: its underside ~26 ft (9 ft above row J's floor).
-      stand: { rows: 17, frontRowHeightFt: 8, rakeDeg: 20, backHeightFt: 40, overhang: { coveredFromRow: 10, soffitHeightFt: 26 } },
-      sections: { '106': { noCover: true } },
+      // Lidar (6 of 6): front row 10 ft (8–10), 16° rake; that deck's front,
+      // 33 ft up, is over row 9–10 (106 too, which takes it), under an
+      // underside of ~26 ft (9 ft above row J's floor; its front less 9 ft
+      // would leave less). It is also what rises highest behind (in 104 and
+      // 105, a light tower).
+      stand: { rows: 17, frontRowHeightFt: 10, rakeDeg: 16, backHeightFt: 34, backSetbackFt: -23, overhang: { coveredFromRow: 10, soffitHeightFt: 26 } },
+      sections: { '105': { backHeightFt: 147, backSetbackFt: 36 }, '104': { backHeightFt: 142, backSetbackFt: 39 } },
       rowsFromMap: true,
       heightsSourced: false,
       coverSourced: true,
-      sources: [RYS_GABP, ...gabpSections('101', '104', '106')],
+      sources: [RYS_GABP, ...gabpSections('101', '104', '106'), GABP_LIDAR],
     },
     rightField: {
       label: 'Right field (138–146)',
       // The Sun/Moon Deck, open ("avoid the seats beyond the right field
-      // wall at all costs").
-      stand: { rows: 26, frontRowHeightFt: 8, rakeDeg: 20, backHeightFt: 30 },
+      // wall at all costs"). Lidar (6 of 9): front row 6 ft, 26° rake
+      // (16–28); behind, 45 ft up and 8 ft back.
+      stand: { rows: 26, frontRowHeightFt: 6, rakeDeg: 26, backHeightFt: 45, backSetbackFt: 8 },
+      sections: { '141': { backHeightFt: 20, backSetbackFt: 43 }, '143': { backHeightFt: 91, backSetbackFt: -4 } },
       rowsFromMap: true,
-      heightsSourced: false,
+      heightsSourced: true,
       coverSourced: true,
-      sources: [RYS_GABP, ...gabpSections('138', '140', '143', '146')],
+      sources: [RYS_GABP, ...gabpSections('138', '140', '143', '146'), GABP_LIDAR],
     },
     twoHundred: {
       label: '200 level (220–228)',
-      // Rows A–C behind home; no covered rows given ("shaded during most
-      // late afternoon games"), so the check tries both.
-      stand: { rows: 3, frontRowHeightFt: 36, rakeDeg: 10, backHeightFt: 112, backSetbackFt: 40, overhang: { coveredFromRow: 2, soffitHeightFt: 46 } },
+      // Rows A–C behind home; no covered rows given ("shaded during most late
+      // afternoon games"). Lidar (7 of 9): front row 35 ft, 22° rake; the
+      // 400s' front rows rise 2 ft behind the last row (69 ft). In 222 and
+      // 225 something 62 ft up is over row 2; over the rest, nothing. That
+      // settles the cover.
+      stand: { rows: 3, frontRowHeightFt: 35, rakeDeg: 22, backHeightFt: 69, backSetbackFt: 2 },
+      sections: Object.fromEntries(['222', '225'].map((id) => [id, { overhang: { coveredFromRow: 2, soffitHeightFt: 62 } }])),
       rowsFromMap: true,
-      heightsSourced: false,
-      coverSourced: false,
-      sources: gabpSections('220', '224', '228'),
+      heightsSourced: true,
+      coverSourced: true,
+      sources: [...gabpSections('220', '224', '228'), GABP_LIDAR],
     },
     club: {
       label: 'Club (301–307)',
-      // 301–305 covered from row G (sourced).
-      stand: { rows: 14, frontRowHeightFt: 44, rakeDeg: 20, backHeightFt: 112, backSetbackFt: 10, overhang: { coveredFromRow: 7, soffitHeightFt: 62 } },
+      // 301–305 covered from row G (sourced). Lidar (5 of 5): front row
+      // 35 ft (34–35), 25° rake (16–26); the 400s' front, 67–68 ft up,
+      // reaches out over row 4 (3–5), more than two rows ahead of the
+      // source's in three of five, so the tier takes it, under an underside
+      // of ~58 ft (that front row less 9 ft). It is also what rises highest
+      // behind.
+      stand: { rows: 14, frontRowHeightFt: 35, rakeDeg: 25, backHeightFt: 69, backSetbackFt: -29, overhang: { coveredFromRow: 4, soffitHeightFt: 58 } },
       rowsFromMap: true,
       heightsSourced: false,
       coverSourced: true,
-      sources: [RYS_GABP, ...gabpSections('301', '303', '305')],
+      sources: [RYS_GABP, ...gabpSections('301', '303', '305'), GABP_LIDAR],
     },
     clubCoverUnsourced: {
       label: 'Club (306–307)',
-      stand: { rows: 13, frontRowHeightFt: 44, rakeDeg: 20, backHeightFt: 112, backSetbackFt: 10, overhang: { coveredFromRow: 7, soffitHeightFt: 62 } },
-      rowsFromMap: true,
-      heightsSourced: false,
-      coverSourced: false,
-      sources: gabpSections('306', '307'),
-    },
-    fourHundred: {
-      label: '400 level (401–419)',
-      // 401–406 covered from row V, 411–419 from row Q (sourced). Estimated:
-      // the roof's underside 9 ft above the first covered row's floor (77 ft
-      // in 411–419, 80–83 in 401–406).
-      stand: { rows: 18, frontRowHeightFt: 48, rakeDeg: 24, backHeightFt: 112, overhang: { coveredFromRow: 17, soffitHeightFt: 77 } },
-      sections: { ...gabpCover(gabpIds(411, 419), 77), ...gabpCover(['401', '402', '405', '406'], 80), ...gabpCover(['403', '404'], 83) },
+      // No covered rows given. Lidar (2 of 2): front row 35 ft, 24° rake;
+      // the 400s' front is over row 4, which settles the cover, under ~57 ft
+      // (that front row less 9 ft).
+      stand: { rows: 13, frontRowHeightFt: 35, rakeDeg: 24, backHeightFt: 72, backSetbackFt: -15, overhang: { coveredFromRow: 4, soffitHeightFt: 57 } },
       rowsFromMap: true,
       heightsSourced: false,
       coverSourced: true,
-      sources: [RYS_GABP, ...gabpSections('401', '405', '411', '419')],
+      sources: [...gabpSections('306', '307'), GABP_LIDAR],
+    },
+    fourHundred: {
+      label: '400 level (401–419)',
+      // 401–406 covered from row V, 411–419 from row Q (sourced). Lidar (10
+      // of 15): on the third-base side front row 52 ft (52–53), 25° rake
+      // (24–27); the View level's front, 87–88 ft up, reaches out over row
+      // 14, three rows ahead of the source's, so the tier takes it, under an
+      // underside of ~78 ft (9 ft above row 14's floor). Behind, the roof's
+      // edge, 134 ft up. In left field (401–405) the cuts cross the rows at
+      // an angle; the cut from home plate gives their front row 32–33 ft
+      // (and ~25°); their covered rows are the source's, under an estimated
+      // underside 9 ft above that row's floor (405's cut shows an arched
+      // canopy over its back rows that the cuts cannot place).
+      stand: { rows: 18, frontRowHeightFt: 52, rakeDeg: 25, backHeightFt: 134, backSetbackFt: 11, overhang: { coveredFromRow: 14, soffitHeightFt: 78 } },
+      sections: {
+        '406': { backHeightFt: 88, backSetbackFt: -26 },
+        ...Object.fromEntries(['401', '402', '405'].map((id) => [id, { frontRowHeightFt: 33, ...gabpCover([id], 66)[id] }])),
+        ...Object.fromEntries(['403', '404'].map((id) => [id, { frontRowHeightFt: 33, ...gabpCover([id], 69)[id] }])),
+      },
+      rowsFromMap: true,
+      heightsSourced: false,
+      coverSourced: true,
+      sources: [RYS_GABP, ...gabpSections('401', '405', '411', '419'), GABP_LIDAR],
     },
     fourHundredFront: {
       label: '400 level (420–437)',
       // Rows A–F, open; rows D and up "shaded during most late afternoon
-      // games" on the first-base side. Estimated: front ~52 ft, 20° rake,
-      // the View level rising behind (~80 ft) ~10 ft back.
-      stand: { rows: 6, frontRowHeightFt: 52, rakeDeg: 20, backHeightFt: 80, backSetbackFt: 10 },
+      // games" on the first-base side. Lidar (17 of 18): front row 68 ft
+      // (67–68), 30° rake (28–32); what rises highest behind is the roof's
+      // edge, 138 ft up and 35 ft back.
+      stand: { rows: 6, frontRowHeightFt: 68, rakeDeg: 30, backHeightFt: 138, backSetbackFt: 35 },
+      sections: { '421': { backHeightFt: 83, backSetbackFt: 30 } },
       rowsFromMap: true,
-      heightsSourced: false,
+      heightsSourced: true,
       coverSourced: true,
-      sources: gabpSections('420', '428', '430', '437'),
+      sources: [...gabpSections('420', '428', '430', '437'), GABP_LIDAR],
     },
     upperThird: {
       label: 'View level, third-base side (509–519)',
-      // Rows A–R, covered from row L (sourced). Estimated: front ~80 ft, 30°
-      // rake, roof underside ~110 ft.
-      stand: { rows: 18, frontRowHeightFt: 80, rakeDeg: 30, backHeightFt: 112, overhang: { coveredFromRow: 12, soffitHeightFt: 110 } },
+      // Rows A–R, covered from row L (sourced). Lidar (11 of 11): front row
+      // 88 ft (87–89), 29° rake (26–31); the roof's edge, 134 ft up (its
+      // top), is over row 7 (6–8), five rows ahead of the source's, so the
+      // rows from G are covered.
+      stand: { rows: 18, frontRowHeightFt: 88, rakeDeg: 29, backHeightFt: 134, backSetbackFt: -29, overhang: { coveredFromRow: 7, soffitHeightFt: 134 } },
       rowsFromMap: true,
-      heightsSourced: false,
+      heightsSourced: true,
       coverSourced: true,
-      sources: [RYS_GABP, ...gabpSections('509', '514', '519')],
+      sources: [RYS_GABP, ...gabpSections('509', '514', '519'), GABP_LIDAR],
     },
     upperFirst: {
       label: 'View level, home and first-base side (520–537)',
-      // Rows A–V, covered from row O (sourced).
-      stand: { rows: 22, frontRowHeightFt: 76, rakeDeg: 30, backHeightFt: 112, overhang: { coveredFromRow: 15, soffitHeightFt: 110 } },
+      // Rows A–V, covered from row O (sourced). Lidar (17 of 18): front row
+      // 84 ft (84–89), 32° rake (30–32); the roof's edge, 137 ft up (its
+      // top), is over row 11 (9–12), four rows ahead of the source's, so the
+      // rows from K are covered. Nothing rises behind 521 (its own top,
+      // 106 ft).
+      stand: { rows: 22, frontRowHeightFt: 84, rakeDeg: 32, backHeightFt: 138, backSetbackFt: -30, overhang: { coveredFromRow: 11, soffitHeightFt: 137 } },
+      sections: { '521': { backHeightFt: 106, backSetbackFt: 0 } },
       rowsFromMap: true,
-      heightsSourced: false,
+      heightsSourced: true,
       coverSourced: true,
-      sources: [RYS_GABP, ...gabpSections('520', '528', '537')],
+      sources: [RYS_GABP, ...gabpSections('520', '528', '537'), GABP_LIDAR],
     },
     suite: {
       label: 'Suites',
       // As at the other parks: one row of seats under the suite level's
-      // ceiling, 9 ft above the floor. Estimated ~60 ft up, behind the club
-      // level's last row (57 ft) and under the deck that covers it from row 7,
-      // so it reaches 22 ft past them.
-      stand: { rows: 1, frontRowHeightFt: 60, rakeDeg: 0, backHeightFt: 72, overhang: { coveredFromRow: 1, soffitHeightFt: 69, reachFt: 22 } },
+      // ceiling, 9 ft above the floor. Estimated ~52 ft up, behind the club
+      // level's last row (52 ft, measured front and rake) and under the 400s
+      // (their front row 68 ft), which cover it from row 4, so they reach
+      // 30 ft past them.
+      stand: { rows: 1, frontRowHeightFt: 52, rakeDeg: 0, backHeightFt: 68, overhang: { coveredFromRow: 1, soffitHeightFt: 61, reachFt: 30 } },
       heightsSourced: false,
       coverSourced: true,
       sources: ['https://www.mlb.com/reds/ballpark/netting'],
     },
   },
-  reviewedOn: '2026-11-11',
+  reviewedOn: '2026-11-12',
 };
 
 const rysPnc = (path: string) => `https://www.rateyourseats.com/pnc-park/seating/${path}`;
