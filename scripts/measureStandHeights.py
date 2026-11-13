@@ -996,7 +996,8 @@ def cover_report(park):
     differ, or that the tier's underside would leave under 9 ft. With each
     underside, the deck's front (the top of what a sun from behind meets at
     the edge): the front row of the deck of seats starting there, where it
-    stands above the underside; none for a roof, whose top is its underside."""
+    stands above the underside (by 2-15 ft); none for a roof, whose top is
+    its underside."""
     d = json.load(open(f'tmp/lidar/{park}-measured.json'))
     data = load_sections(park)
     secs = {s['id']: s for s in data['sections']}
@@ -1011,6 +1012,7 @@ def cover_report(park):
     # found as seats), its front row as measured on its own sections.
     deck_above = PARKS[park].get('deckAboveFt', {})
     print(f"deck depth below its front row: {depth:.1f} ft ({len(drops)} edges)")
+    rows_out = []
     for key in d['tiers']:
         rs = [r for r in d['sections'] if r['tier'] == key and r['found']]
         if not rs:
@@ -1059,7 +1061,9 @@ def cover_report(park):
             i['min'] = None if i['row'] is None else i['front'] + (i['row'] - 1) * i['rise'] + 9
             if i['under'] is not None and i['min'] is not None:
                 i['under'] = max(i['under'], i['min'])
-            if i['deck_front'] is not None and (i['under'] is None or i['deck_front'] < i['under'] + 2):
+            # Not above the underside (a roof), or more than 15 ft above it: the
+            # seats found at the edge are another, higher deck's.
+            if i['deck_front'] is not None and (i['under'] is None or not i['under'] + 2 <= i['deck_front'] <= i['under'] + 15):
                 i['deck_front'] = None
         unders = [i['under'] for i in info if i['under'] is not None]
         tier_under = r0(med(unders)) if unders else None
@@ -1071,6 +1075,7 @@ def cover_report(park):
               f"deck front {fmt(med(fronts))} [{fmt(min(fronts) if fronts else None)}-{fmt(max(fronts) if fronts else None)}] "
               f"(lowest {fmt(med([i['low'] for i in info if i['low']]))}, deck above {fmt(med([i['above'] for i in info if i['above']]))}, "
               f"face {fmt(med([i['face'] for i in info if i['face']]))} n{sum(1 for i in info if i['face'])})")
+        rows_out += [{'tier': key, 'id': i['id'], 'row': i['row'], 'underFt': i['under'], 'deckFrontFt': i['deck_front']} for i in info]
         for i in info:
             differs = i['under'] is not None and tier_under is not None and abs(i['under'] - tier_under) > max(0.1 * tier_under, 3)
             # The tier's underside would sit under 9 ft over this section's covered row.
@@ -1079,6 +1084,7 @@ def cover_report(park):
             if i['own_row'] or too_low or (differs and tier_row is not None) or front_differs:
                 print(f"   '{i['id']}': rows {i['rows']}, sourced {i['m']}, edge {i['l']}, row {i['row']}, underside {fmt(i['under'])}, deck front {fmt(i['deck_front'])}"
                       f" (lowest {fmt(i['low'])}, deck above {fmt(i['above'])}, face {fmt(i['face'])})")
+    json.dump(rows_out, open(f'tmp/lidar/{park}-cover.json', 'w'), indent=1)
 
 
 def runs_listing(park):

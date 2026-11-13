@@ -1230,6 +1230,9 @@ Tropicana Field (fixed roof) are out of scope.
       moves the covered row by 2–3.
 - [ ] 7.4 Batch 4
 - [ ] 7.5 Batch 5 (retractable roofs: measure the parked roof only where the scan shows it open)
+      Both batches: with each underside, the deck's front (`deckFrontFt`,
+      §9) from the cover report, at tier level, and per section where a
+      section is under another deck.
 
 ### Batch 1 review (2026-11-12)
 Correction to the plan above: the confidence check moves estimated
@@ -1452,6 +1455,95 @@ pages render with no console errors.
 Still open: the suites' floor heights and seven parks' reach are
 estimates with no source; the confidence split (`soffitSourced`) from
 Batch 1 is undecided.
+
+## 9. Plan: a deck stops a sun from behind up to the top of its front (2026-11-12)
+Found at Coors 133 (batch 3). For the rows in front of a deck's edge, with
+the sun behind the stand, `rowLight` blocks the ray at the edge only below
+the deck's underside. A ray passing the edge between the underside and the
+top of the deck's front hits that front on the ground, but the engine lets
+it through. Coors 133: underside 27 ft, the club level's front 36–38 ft;
+its rows just in front of the edge read sunny until mid-afternoon.
+
+Fix, as small as it can be:
+1. Engine: the stand profile gets one optional value, `deckFrontFt`, the
+   height of the top of the covering deck's front at its edge (default: the
+   underside, so nothing changes where it is not given). In `rowLight` the
+   edge obstacle for a sun behind uses it (one line, plus the type and its
+   comment). It sits on the stand, not inside `overhang`, so a section that
+   sets its own covered row keeps its tier's deck front; a section under a
+   different deck sets its own.
+2. Confidence: it moves with the heights, as the underside does (±10%
+   measured, ±50% estimated), in `perturbStructure`.
+3. Tool: the cover report prints each tier's deck front: the deck above's
+   front row as measured (or the park's `deckAboveFt`). For a roof whose
+   top already stands in for its underside there is nothing to add.
+4. Data: at the 17 measured parks, the covered tiers whose cover is a deck
+   of seats get `deckFrontFt` from the report (its front row as measured;
+   the railing above it is not guessed at). Roofs unchanged. The 13 parks
+   still estimated are unchanged; each gets it with its lidar batch (added
+   to the batch steps).
+5. Tests: an engine test (a sun behind passing between a deck's underside
+   and its front is blocked for the row in front of the edge, and not
+   without `deckFrontFt`); `deckClearance.test.ts` also checks every deck
+   front is at or above its underside and within 15 ft of it, which catches
+   a section left with another deck's front.
+6. Reference checks and blog claims re-run; any that change are
+   investigated and recorded, never tuned (Coors 133's rows 28+ should now
+   hold). Low share before and after.
+7. Commits: the engine, tool and tests first (no data yet, so no answer
+   changes); then the data, with the recorded checks.
+
+Simulated effect (approximate: deck front taken as underside + 9 ft for
+decks of seats, roofs unchanged): about 150 of the 2,552 covered sections
+at the 17 measured parks gain more than 5 points of shade at a July 1:10 PM
+game, most at Busch (32), Wrigley (23), Nationals (20), Yankees and Dodger
+Stadium (12 each). Only rows in front of a deck's edge with the sun behind
+change, and only toward shade.
+
+Not in this change, still open: an underside seen more than a metre behind
+a deck's edge (Great American's 400s), Kauffman's double-letter rows, the
+confidence split.
+
+- [x] 1 Engine   - [x] 2 Confidence   - [x] 3 Tool   - [x] 4 Data
+- [x] 5 Tests   - [x] 6 Checks and Low share   - [x] 7 Commits   - [x] Review
+
+### §9 Review (2026-11-13)
+What changed: with the sun behind a stand, a deck now stops it for the
+rows in front of its edge up to the top of its front, not only below its
+underside. Two commits, nothing pushed; all 3522 tests pass.
+- Engine, tool and tests (c9a48b1b7): `deckFrontFt` on the stand profile
+  (default: the underside, so a park without it is unchanged), used in
+  `rowLight` for a sun from behind and varied with the heights for
+  confidence. The cover report prints each tier's and section's deck front
+  (the front row of the deck of seats at the edge, 2–15 ft above the
+  underside; none for a roof) and writes them to `tmp/lidar/<park>-cover.json`.
+  Tests: the engine case; every deck front 0–15 ft above its underside.
+- Data: 54 tiers at 16 of the 17 measured parks get the measured front of
+  the deck over them; sections under another deck get their own (Fenway
+  B88/B89 39 ft, Nationals 108 71, Coors 128 38 and 133 36, Nationals
+  238/239 62, Petco 202 69) or none where another structure covers them
+  with no front measured (Fenway's loge boxes at the ends and behind home,
+  Nationals 143, Phillies 134, Great American 401–405). Wrigley has no
+  measured deck of seats over its lower rows (rebuilt since the scan). Left
+  out: Citi's field level (its underside, 37 ft, belongs to a deck above
+  the Sterling level whose 25-ft front the scan finds at the edge), Citi's
+  Sterling level, Busch's bleachers and Coors' Reserve Level Outfield
+  (almost no section gains).
+- Reference checks: Coors 133's rows 28 and up shaded during most day games
+  now holds (tested again). Recorded figures that moved, rewritten: Busch's
+  club level at first pitch 85% → 89%, its 100s 30%/29% → 32%/31%; Phillies
+  134–136's back rows 85% → 88%; Kauffman 248 55–75% → 55–80%; Petco's
+  Lexus Club 85–89% → 86–92%. No other check or blog claim changed.
+- Low share at a 1:10 PM game, April / July, before → after: Yankees 32/30
+  → 28/27, Red Sox 25/20 → 24/19, Busch 27/31 → 24/28, Coors 25/27 →
+  24/22, Angels 31/23 → 31/25, Dodgers 21/21 → 22/22, Truist 44/43 →
+  49/43; the rest within a point. Truist's April rise is its 100s
+  (110–122): the 200 level's measured front now decides their rows in
+  front of its edge, but the tier is varied ±50% because its underside is
+  the "front row less 9 ft" rule — what the open confidence split would
+  separate.
+Still open: an underside seen more than a metre behind a deck's edge (Great
+American's 400s), Kauffman's double-letter rows, the confidence split.
 
 ---
 ---

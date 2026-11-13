@@ -28,7 +28,7 @@
  *     roof over 437's double-letter rows.
  *   - [RYS] all of the right-field corner (147–148, 247–252) gets the worst of
  *     the late-afternoon sun. The scan puts the upper deck's end over 248's
- *     rows from 9, which the model shades (55–75%); the rest are in the sun
+ *     rows from 9, which the model shades (55–80%); the rest are in the sun
  *     (tested below).
  */
 import { royalsSections } from '../../data/sections/mlb/royals';

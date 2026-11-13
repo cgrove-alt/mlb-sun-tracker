@@ -20,7 +20,7 @@
  *
  * Not reproduced:
  *   - [RYS] all of the Lexus Club by the middle innings: its first rows, in
- *     front of the Terrace level's edge, stay in the sun (85–89% shaded all
+ *     front of the Terrace level's edge, stay in the sun (86–92% shaded all
  *     game).
  *   - [RYS] in 300–305, row 10 "will see shade in a few innings". The model
  *     shades from about row 9–12 back, under and just in front of the

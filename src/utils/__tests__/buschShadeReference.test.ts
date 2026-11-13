@@ -32,7 +32,7 @@
  *     the scan's. Tested from those rows.
  *   - [RYS] about half of the club level is shaded for an early-afternoon
  *     game. Its rows 9 and up are (tested), but the scan puts the
- *     Pavilion's front over row 4–5, so 85% of the club is shaded at first
+ *     Pavilion's front over row 4–5, so 89% of the club is shaded at first
  *     pitch. Tested: at least about half.
  *   - [RYS] the Pavilion gets little to no shade. True at its ends (331–333,
  *     357–360; tested). Behind home (334–356) the roof over the 400s,
@@ -41,7 +41,7 @@
  *     July game.
  *   - [RYS] the third-base side is the shade side, and shades first late in
  *     the day. Still true, by less: the measured roof line behind the
- *     first-base side shades it too (100s 30% against 29% over a 1:15 PM
+ *     first-base side shades it too (100s 32% against 31% over a 1:15 PM
  *     July game, was 28% against 17%; the upper deck 60% against 31%, was
  *     61% against 0%; at a 5:15 PM May start 90% against 79% at first
  *     pitch, was 79% against 48%). Tested: more.

@@ -28,7 +28,7 @@
  *     neighbours' (in 135 only the wheelchair row behind row 37 is
  *     covered). The scan puts the 200 level's edge over rows 34, 34 and 30
  *     there, against 21–31 in the neighbours, so their rows 30 and up are
- *     85% shaded through that game against 100% (47% before). Tested: less.
+ *     88% shaded through that game against 100% (47% before). Tested: less.
  * [RYS] also says about half of the right-field seats are shaded at first
  * pitch; the model has 15–35% (none in 101), and agrees that they end up in
  * the sun.
