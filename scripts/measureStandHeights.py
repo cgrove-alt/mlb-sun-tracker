@@ -237,6 +237,59 @@ PARKS = {
         # the Upper Box's line, or a flat structure the seats show under.
         'edgeMinFt': {'upper': 120},
     },
+    'angels': {
+        # The 2023 California gaps scan covers only a strip of the park; the
+        # 2018 SoCal scan covers all of it.
+        'scan': {'ept': 'USGS_LPC_CA_SoCal_Wildfires_B1_2018_LAS_2019'}, 'name': 'USGS 3DEP CA_SoCal_Wildfires_B1_2018 (Orange County 2018-19)',
+        'noise': [7, 18],
+        'tiers': {},
+    },
+    'rockies': {
+        'scan': {'ept': 'CO_DRCOG_2_2020'}, 'name': 'USGS 3DEP CO_DRCOG_2020 (Denver 2020)',
+        'noise': [7, 18],
+        # The club level (200s) shows only its first rows under the upper
+        # level, and none behind home; the upper level's U rows start behind
+        # a walkway, ~5 m above its L rows.
+        # Behind home and toward third, a 3-4 m piece at the backstop (the
+        # wall, or rows the sections do not include) comes before the seats:
+        # the field level's run is the first at least 6 m long.
+        'tiers': {
+            'field': (-0.8, 2.2, 'near', 5, 6), 'fieldHome': (-0.8, 1.5, 'near', 5, 6),
+            'rightBleachers': (3.5, 5.5, 'near', 10), 'rightCorner': (-0.8, 2.0, 'near', 8),
+            'leftCorner': (-0.8, 2.0, 'near', 8), 'leftStands': (-0.8, 3.0, 'near', 10),
+            'club': (9.5, 11.5, 'near', 10), 'rightReserve': (19.5, 21.5, 'near', 15),
+            'upperFront': (19.5, 22.5, 'near', 15), 'upperBack': (24, 27.5, 'near', 15),
+            'rockpile': (13, 17, 'near', 15),
+        },
+        # The light towers rise above the roof line (~128 ft).
+        'lightTowersAbove': 42,
+        # Decks seen only as their edge over the stands below: their fronts as
+        # measured on their own sections (the club level's over the 100s and
+        # the right-field seats, the upper level's over the club level and
+        # the rows behind home).
+        'deckAboveFt': {'field': 34, 'rightBleachers': 34, 'club': 67, 'fieldHome': 67},
+        'skip': {'L311': 'its cut crosses the rows at an angle (the stand turns at the end of the upper level): a smeared run, 22° against 27° elsewhere'},
+    },
+    'royals': {
+        'scan': {'ept': 'MO_FEMANRCS_1_2020'}, 'name': 'USGS 3DEP MO_FEMANRCS_2020 (Missouri 2020)',
+        'noise': [7, 18],
+        'tiers': {},
+    },
+    'reds': {
+        'scan': {'ept': 'OH_StatewideP3_6_B21'}, 'name': 'USGS 3DEP OH_StatewideP3_B21 (Ohio Phase 3, 2021-22)',
+        'noise': [7, 18],
+        'tiers': {},
+    },
+    'pirates': {
+        # Not in the AWS copy (it has 2019): two tiles from USGS (rockyweb),
+        # 76 and 81 MB, downloaded to tmp/lidar/raw/.
+        'scan': {'laz': ['tmp/lidar/raw/USGS_LPC_PA_17County_D24_17TNE584477.laz', 'tmp/lidar/raw/USGS_LPC_PA_17County_D24_17TNE584478.laz']},
+        'url': ['https://rockyweb.usgs.gov/vdelivery/Datasets/Staged/Elevation/LPC/Projects/PA_17County_D24/PA_17Co_1_D24/LAZ/USGS_LPC_PA_17County_D24_17TNE584477.laz',
+                'https://rockyweb.usgs.gov/vdelivery/Datasets/Staged/Elevation/LPC/Projects/PA_17County_D24/PA_17Co_1_D24/LAZ/USGS_LPC_PA_17County_D24_17TNE584478.laz'],
+        'name': 'USGS 3DEP PA_17County_D24 (Pennsylvania 2024-25)',
+        'noise': [7, 18],
+        'tiers': {},
+    },
     'dodgers': {
         'scan': {'ept': 'CA_LosAngeles_1_B23'}, 'name': 'USGS 3DEP CA_LosAngeles_B23 (LA County 2023)',
         'noise': [7, 18],
@@ -547,12 +600,14 @@ def governing(ps, pz, hs, hz):
 
 def tier_run(runs, band):
     """The run whose front sits in the band (lo, hi[, 'near' or 'far'[, least
-    rake in degrees, default 5]]); of several, the nearest home plate, or for
-    'far' the farthest one in front of the first run above the band (the next
-    deck up)."""
+    rake in degrees, default 5[, least length in metres, default 0]]]); of
+    several, the nearest home plate, or for 'far' the farthest one in front of
+    the first run above the band (the next deck up)."""
     lo, hi = band[:2]
     min_rake = band[3] if len(band) > 3 else 5
-    cands = [r for r in runs if lo <= r['z0'] <= hi and r['s0'] < 170 and r['slope'] > math.tan(math.radians(min_rake))]
+    min_len = band[4] if len(band) > 4 else 0
+    cands = [r for r in runs if lo <= r['z0'] <= hi and r['s0'] < 170 and r['slope'] > math.tan(math.radians(min_rake))
+             and r['s1'] - r['s0'] >= min_len]
     if not cands:
         return None
     if band[2:3] == ('far',):
@@ -897,8 +952,10 @@ def cover_report(park):
             under = None
             if l is not None and r['lipSoffitFt'] is not None:
                 under = r['lipSoffitFt']
-            elif l is not None and r.get('lipLowFt') is not None:
-                under = r['lipLowFt']
+            elif l is not None and (r.get('lipLowFt') is not None or r.get('aboveFrontFt') is not None):
+                # Too few points under the edge for its lowest structure: the
+                # deck of seats seen starting there is the structure.
+                under = r['lipLowFt'] if r.get('lipLowFt') is not None else r['aboveFrontFt']
                 for above_front in (r.get('aboveFrontFt'), deck_above.get(key)):
                     if above_front is not None and under >= above_front - 2:
                         under = above_front - depth

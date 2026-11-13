@@ -3289,18 +3289,19 @@ const ANGEL: StadiumStructure = {
 const rysCoors = (path: string) => `https://www.rateyourseats.com/coors-field/seating/${path}`;
 const RYS_COORS = rysCoors('shaded-covered-seats');
 const coorsSections = (...ids: string[]) => ids.map((n) => rysCoors(`sections/${n}`));
-/** Coors Field's covered rows as positions in each section's numbered rows (Rate Your Seats). */
+/**
+ * Coors Field's covered rows as positions in each section's numbered rows
+ * (Rate Your Seats), where the profile keeps them: the right-field seats and
+ * the full-height upper-level sections. (The 100s, the club level and the U
+ * rows take the scan's; their sourced rows are in the comments.)
+ */
 const COORS_COVER: Record<string, number> = {
   '105': 10, '106': 10, '107': 10, '108': 10, '109': 11,
-  '115': 37, '116': 37, '117': 37, '118': 32, '119': 32, '120': 32, '121': 32, '122': 28, '123': 28, '124': 28,
-  '125': 28, '126': 29, '127': 29, '134': 29, '135': 29, '136': 28, '137': 28, '138': 28, '139': 28,
-  '140': 32, '141': 32, '142': 32, '143': 32, '144': 32, '145': 32, '146': 32, '147': 32,
   L311: 19, L313: 19, L319: 19, L343: 19, L345: 19,
-  U312: 10, U317: 10, U321: 10, U325: 10, U329: 10, U332: 10, U336: 10, U340: 10, U344: 10,
 };
 const coorsCover = (ids: readonly string[], soffitHeightFt: number) =>
   Object.fromEntries(ids.filter((id) => COORS_COVER[id]).map((id) => [id, { overhang: { coveredFromRow: COORS_COVER[id], soffitHeightFt } }]));
-const coorsIds = (from: number, to: number, prefix = '') => Array.from({ length: to - from + 1 }, (_, i) => `${prefix}${from + i}`);
+const cover = (coveredFromRow: number, soffitHeightFt: number) => ({ overhang: { coveredFromRow, soffitHeightFt } });
 
 /** Seating ring of a Coors Field chart section. */
 export function coorsTier(id: string): string | null {
@@ -3317,159 +3318,252 @@ export function coorsTier(id: string): string | null {
   if (n <= 150) return 'leftCorner';
   if (n <= 160) return 'leftStands';
   if (n <= 299) return 'club';
+  if (n <= 309) return 'rightReserve';
   return 'rockpile';
 }
 
-// What stands behind the 100s: the decks above stack forward under a roof
-// whose front edge the photo shows ~47 m (third-base side) to ~57 m
-// (first-base side) from the foul lines; the difference is likely the
-// photo's lean, so ~52 m, ~14 m behind the 100s' last row (~38 m out).
-const COORS_ROOF = { backHeightFt: 100, backSetbackFt: 46 };
+const COORS_LIDAR = 'USGS 3DEP lidar CO_DRCOG_2020, flown 2020-05-27 (scripts/measureStandHeights.py)';
 
 /**
  * Coors Field (1995). A deep 100 level (rows to 38, the back under the club
  * level), the club level (200s), suites, the 300s split by a walkway (L in
- * front, U behind, under a roof from row 19), bleachers in right field, the
- * left-field stands and the Rockpile in center. Rows and covered rows are
- * Rate Your Seats' section pages. No source publishes the deck heights, so
- * every height is estimated by stacking the decks.
+ * front, U behind, under a roof), bleachers in right field and the Reserve
+ * Level Outfield above them, the left-field stands and the Rockpile in
+ * center. Rows and covered rows are Rate Your Seats' section pages.
+ *
+ * Heights are measured on USGS airborne lidar (COORS_LIDAR, May 2020; no
+ * later scan covers Denver), as at Citizens Bank Park: for each section a
+ * cut straight back through its stand gives the front row's height and the
+ * rake, the edge of any deck over it, and what rises highest behind. Where
+ * a deck's edge is more than two rows from the source's covered row, the
+ * scan's row is used. The scan sees decks from above: a deck's underside is
+ * the bottom of its face where seen; where only its front row of seats shows,
+ * that row less 9 ft; never under 9 ft above the floor of the first covered
+ * row. Not measured (tier values): 109, 151, 201, 203, 208, 209, 214, 215,
+ * 217, 247, L311–L313, L316–L318, L325, L336, U312 and U329.
  */
 const COORS: StadiumStructure = {
   stadiumId: 'rockies',
-  // Far rim: the roof (~100 ft) about 560 ft across the field.
-  park: { roof: 'open', farRimHeightFt: 100, fieldCrossingFt: 560 },
+  // Far rim (lidar): the roof line, median over sections 128 ft; crossing:
+  // the median distance from a section to it across the field, 591 ft.
+  park: { roof: 'open', farRimHeightFt: 128, fieldCrossingFt: 591 },
   tierOf: coorsTier,
   tiers: {
     field: {
       label: 'Field level (100s)',
-      // Rows 1–38 (fewer in some), covered from row 32 (115–117: 37) by the
-      // club level (sourced). Estimated: front row ~4 ft, 20° rake (last row
-      // ~41 ft), deck underside ~46 ft (49 over 116 and 117, covered from
-      // row 37: 9 ft above its floor).
-      stand: { rows: 38, frontRowHeightFt: 4, rakeDeg: 20, ...COORS_ROOF },
-      sections: { ...coorsCover(coorsIds(115, 147), 46), ...coorsCover(['116', '117'], 49) },
+      // Rows 1–38 (fewer in some), the back under the club level (Rate Your
+      // Seats: covered from row 32; 37 in 115–117, 28 in 122–125 and
+      // 136–139, 29 in 126, 127, 134 and 135). Lidar (24 of 24): front row
+      // at field level (-1 to 3 ft), 12° rake (11–13); what rises highest
+      // behind is the roof's edge, 128 ft up and 30 ft behind the last row
+      // (in eight, the upper level's front, 68–73 ft, over the last rows).
+      // The club level's front, 34 ft up, reaches out over row 26 (22 in
+      // 123–125 and 135–138, 29–33 in 116–119, 121, 144 and 145): more
+      // than two rows ahead of the source's in 19 of 24, so the tier takes
+      // the scan's rows. In 116 and 117 the field level's front runs at an
+      // angle to the deck's, so the row varies across the section (27–29
+      // on a cut nearer the foul line). The underside ~25 ft (that front
+      // row less 9 ft; 26–28 over row 29–33, 9 ft above the floor).
+      stand: { rows: 38, frontRowHeightFt: 0, rakeDeg: 12, backHeightFt: 128, backSetbackFt: 30, overhang: { coveredFromRow: 26, soffitHeightFt: 25 } },
+      sections: {
+        '116': cover(31, 27),
+        '117': cover(33, 28),
+        ...Object.fromEntries(['118', '119'].map((id) => [id, { backHeightFt: 68, backSetbackFt: -9, ...cover(29, 25) }])),
+        ...Object.fromEntries(['121', '144'].map((id) => [id, cover(30, 26)])),
+        '145': { backHeightFt: 68, backSetbackFt: -9, ...cover(30, 26) },
+        ...Object.fromEntries(['123', '124', '125', '135', '138'].map((id) => [id, cover(22, 25)])),
+        ...Object.fromEntries(['136', '137'].map((id) => [id, { backHeightFt: 68, backSetbackFt: -9, ...cover(22, 25) }])),
+        ...Object.fromEntries(['139', '140'].map((id) => [id, { backHeightFt: 68, backSetbackFt: -9 }])),
+        '141': { backHeightFt: 73, backSetbackFt: -2 },
+      },
       rowsFromMap: true,
       heightsSourced: false,
       coverSourced: true,
-      sources: [RYS_COORS, ...coorsSections('116', '118', '122', '126', '134', '136', '140', '147')],
+      sources: [RYS_COORS, ...coorsSections('116', '118', '122', '126', '134', '136', '140', '147'), COORS_LIDAR],
     },
     fieldHome: {
       label: 'Field level behind home (128–133)',
       // Rows 4–38. Rate Your Seats calls rows 36, 36, 35, 34, 33 and 28 and
       // up "shaded during most day games" rather than covered; on the photo
-      // a shadow band runs over the last rows behind home (41–45 m out),
-      // where the club level starts. Modelled as the deck's edge over those
-      // rows, but with cover unsourced, so the check also tries them open.
-      stand: { rows: 35, frontRowHeightFt: 7, rakeDeg: 20, ...COORS_ROOF, overhang: { coveredFromRow: 32, soffitHeightFt: 48 } },
+      // a shadow band runs over the last rows (41–45 m out). Lidar (6 of 6):
+      // front row 1 ft, 13° rake; what rises highest behind is the roof's
+      // edge, 129 ft up and 34 ft back. A deck's edge is over row 30–32 in
+      // all six, which settles the cover: over 129–132 the upper level's
+      // front (67 ft; the club level does not run behind home), under an
+      // underside of ~58 ft (that front row less 9 ft); over 128 and 133
+      // the club level's end (36–38 ft), from row 30 and 28 (the photo gave
+      // 25 in 133), under ~27–29 ft (9 ft above the floor).
+      stand: { rows: 35, frontRowHeightFt: 1, rakeDeg: 13, backHeightFt: 129, backSetbackFt: 34, overhang: { coveredFromRow: 32, soffitHeightFt: 58 } },
       sections: {
-        '128': { overhang: { coveredFromRow: 33, soffitHeightFt: 48 } },
-        '129': { overhang: { coveredFromRow: 33, soffitHeightFt: 48 } },
-        '130': { overhang: { coveredFromRow: 32, soffitHeightFt: 48 } },
-        '131': { overhang: { coveredFromRow: 31, soffitHeightFt: 48 } },
-        '132': { overhang: { coveredFromRow: 30, soffitHeightFt: 48 } },
-        '133': { overhang: { coveredFromRow: 25, soffitHeightFt: 48 } },
+        '128': cover(30, 29),
+        '129': cover(33, 58),
+        '130': cover(32, 58),
+        '131': cover(31, 58),
+        '132': cover(30, 58),
+        '133': cover(28, 27),
       },
       rowsFromMap: true,
       heightsSourced: false,
-      coverSourced: false,
-      sources: coorsSections('128', '130', '131', '133'),
+      coverSourced: true,
+      sources: [...coorsSections('128', '130', '131', '133'), COORS_LIDAR],
     },
     rightBleachers: {
       label: 'Right-field seats (105–109)',
-      // Rows 2–14, covered from row 11 by the club level (sourced).
-      // Estimated: front ~8 ft above the wall, 20° rake, underside ~26 ft (27
-      // over 109), 9 ft above the first covered row's floor.
-      stand: { rows: 13, frontRowHeightFt: 8, rakeDeg: 20, backHeightFt: 26 },
-      sections: { ...coorsCover(coorsIds(105, 108), 26), ...coorsCover(['109'], 27) },
+      // Rows 2–14, covered from row 11 (position 10) by the club level
+      // (sourced). Lidar (4 of 5): front row 15 ft above the field, 13°
+      // rake; behind, the upper level's front, 68 ft up, 14 ft in front of
+      // the last row. The club level's edge is over row 8 (7 in 105, which
+      // takes it). Its underside ~30 ft: its front row (34 ft) less 9 ft
+      // would leave under 9 ft above the floor, so 9 ft above it.
+      stand: { rows: 13, frontRowHeightFt: 15, rakeDeg: 13, backHeightFt: 68, backSetbackFt: -14 },
+      sections: { ...coorsCover(['106', '107', '108', '109'], 30), '105': cover(7, 28) },
       rowsFromMap: true,
       heightsSourced: false,
       coverSourced: true,
-      sources: [RYS_COORS, ...coorsSections('105', '107', '109')],
+      sources: [RYS_COORS, ...coorsSections('105', '107', '109'), COORS_LIDAR],
     },
     rightCorner: {
       label: 'Right-field corner (110–114)',
-      // Partial sections (rows 3–38 to 22–38), not covered.
-      stand: { rows: 20, frontRowHeightFt: 20, rakeDeg: 20, ...COORS_ROOF },
+      // Partial sections (rows 3–38 to 22–38), not covered. Lidar (1 of 1):
+      // front row at field level, 13° rake; what rises highest behind is
+      // the roof's edge, 128 ft up and 53 ft back.
+      stand: { rows: 20, frontRowHeightFt: 0, rakeDeg: 13, backHeightFt: 128, backSetbackFt: 53 },
       rowsFromMap: true,
-      heightsSourced: false,
+      heightsSourced: true,
       coverSourced: true,
-      sources: [RYS_COORS, ...coorsSections('110', '112', '114')],
+      sources: [RYS_COORS, ...coorsSections('110', '112', '114'), COORS_LIDAR],
     },
     leftCorner: {
       label: 'Left-field corner (148–150)',
-      // Rows 5–38 or 14–38, not covered.
-      stand: { rows: 25, frontRowHeightFt: 12, rakeDeg: 20, backHeightFt: 40 },
+      // Rows 5–38 or 14–38, not covered. Lidar (1 of 1): front row at field
+      // level (-2 ft), 12° rake; behind, 25 ft up and 43 ft back.
+      stand: { rows: 25, frontRowHeightFt: -2, rakeDeg: 12, backHeightFt: 25, backSetbackFt: 43 },
       rowsFromMap: true,
-      heightsSourced: false,
+      heightsSourced: true,
       coverSourced: true,
-      sources: coorsSections('148', '149', '150'),
+      sources: [...coorsSections('148', '149', '150'), COORS_LIDAR],
     },
     leftStands: {
       label: 'Left-field stands (151–160)',
       // Rows 2–23 or 2–20, not covered ("in June and July the sunniest
-      // seats"). Estimated: front ~8 ft above the wall, 20° rake.
-      stand: { rows: 22, frontRowHeightFt: 8, rakeDeg: 20, backHeightFt: 30 },
+      // seats"). Lidar (9 of 10; 151's place on the seat map cuts a ramp):
+      // front row 5 ft (5–8), 18° rake (16–18); behind, 39 ft up and 43 ft
+      // back (the scoreboard in 154, 107 ft).
+      stand: { rows: 22, frontRowHeightFt: 5, rakeDeg: 18, backHeightFt: 39, backSetbackFt: 43 },
+      sections: {
+        '154': { backHeightFt: 107, backSetbackFt: 43 },
+        ...Object.fromEntries(['155', '159'].map((id) => [id, { backHeightFt: 25, backSetbackFt: 7 }])),
+        '157': { backHeightFt: 32, backSetbackFt: 21 },
+        '158': { backHeightFt: 76, backSetbackFt: 45 },
+        '160': { backHeightFt: 48, backSetbackFt: 21 },
+      },
       rowsFromMap: true,
-      heightsSourced: false,
+      heightsSourced: true,
       coverSourced: true,
-      sources: [RYS_COORS, ...coorsSections('151', '155', '160')],
+      sources: [RYS_COORS, ...coorsSections('151', '155', '160'), COORS_LIDAR],
     },
     club: {
       label: 'Club level (200s)',
       // Rows 1–13 covered from row 8; 201–209 in right field covered from
-      // row 4 (sourced). Estimated: front ~48 ft, 22° rake, underside ~66 ft.
-      stand: { rows: 13, frontRowHeightFt: 48, rakeDeg: 22, backHeightFt: 100, backSetbackFt: 20, overhang: { coveredFromRow: 8, soffitHeightFt: 66 } },
-      sections: Object.fromEntries(coorsIds(201, 209).map((id) => [id, { overhang: { coveredFromRow: 4, soffitHeightFt: 62 } }])),
+      // row 4 (sourced). Lidar (25 of 33): front row 34 ft (33–35), 21° rake
+      // (20–28); behind, the upper level's front, 68 ft up, over the last
+      // rows. That front reaches out over row 5 (1–2 in 202 and 204–207):
+      // more than two rows ahead of the source's in 23 of 25, so the tier
+      // takes the scan's rows (201, 203, 208 and 209, not measured, keep
+      // row 4). Its underside ~58 ft (that front row, 67 ft, less 9 ft).
+      stand: { rows: 13, frontRowHeightFt: 34, rakeDeg: 21, backHeightFt: 68, backSetbackFt: -23, overhang: { coveredFromRow: 5, soffitHeightFt: 58 } },
+      sections: {
+        ...Object.fromEntries(['201', '203', '208', '209'].map((id) => [id, cover(4, 58)])),
+        '202': cover(2, 58),
+        ...Object.fromEntries(['204', '206'].map((id) => [id, cover(1, 58)])),
+        '205': cover(1, 57),
+        '207': cover(2, 57),
+      },
       rowsFromMap: true,
       heightsSourced: false,
       coverSourced: true,
-      sources: [RYS_COORS, ...coorsSections('201', '205', '214', '221', '227', '234', '241', '247')],
+      sources: [RYS_COORS, ...coorsSections('201', '205', '214', '221', '227', '234', '241', '247'), COORS_LIDAR],
+    },
+    rightReserve: {
+      label: 'Reserve Level Outfield (301–309)',
+      // Rows 1–5 in the right-field upper deck, open: "sun exposure will be
+      // some of the heaviest in these seats". Lidar (9 of 9): front row
+      // 68 ft (67–68), 27° rake (18–30); what rises highest behind is the
+      // roof line, 128 ft up and 29 ft back (lower in 301–303 and 305, the
+      // Rooftop's deck).
+      stand: { rows: 5, frontRowHeightFt: 68, rakeDeg: 27, backHeightFt: 128, backSetbackFt: 29 },
+      sections: {
+        '301': { backHeightFt: 97, backSetbackFt: 17 },
+        ...Object.fromEntries(['302', '303'].map((id) => [id, { backHeightFt: 93, backSetbackFt: 0 }])),
+        '305': { backHeightFt: 103, backSetbackFt: 12 },
+      },
+      rowsFromMap: true,
+      heightsSourced: true,
+      coverSourced: true,
+      sources: [...coorsSections('305'), COORS_LIDAR],
     },
     upperFront: {
       label: 'Upper level (300s, in front of the walkway)',
       // Rows 1–5 or 1–9 in front of the walkway, open; full-height sections
-      // (rows 1–25) covered from row 19 by the roof (sourced). Estimated:
-      // front ~70 ft, 28° rake, roof underside ~105 ft (9 ft above row 19's
-      // floor).
-      stand: { rows: 9, frontRowHeightFt: 70, rakeDeg: 28, backHeightFt: 100 },
-      sections: coorsCover(['L311', 'L313', 'L319', 'L343', 'L345'], 105),
+      // (rows 1–25) covered from row 19 by the roof (sourced). Lidar (21 of
+      // 29; L311's cut crosses its rows at an angle): front row 67 ft
+      // (67–68), 27° rake (25–30); what rises highest behind is the roof's
+      // edge, 128 ft up and 30 ft back. In L319 and L343 that edge is over
+      // row 16, which they take. Its underside: 128 ft (the roof's top; the
+      // scan sees nothing under it).
+      stand: { rows: 9, frontRowHeightFt: 67, rakeDeg: 27, backHeightFt: 128, backSetbackFt: 30 },
+      sections: {
+        ...coorsCover(['L311', 'L313', 'L345'], 128),
+        L342: { backHeightFt: 106, backSetbackFt: 29 },
+        L321: { backHeightFt: 83, backSetbackFt: 9 },
+        L319: { backHeightFt: 100, backSetbackFt: -17, ...cover(16, 128) },
+        L343: cover(16, 128),
+      },
       rowsFromMap: true,
-      heightsSourced: false,
+      heightsSourced: true,
       coverSourced: true,
-      sources: [RYS_COORS, ...coorsSections('311', '315', '319', '331', '343', '345')],
+      sources: [RYS_COORS, ...coorsSections('311', '315', '319', '331', '343', '345'), COORS_LIDAR],
     },
     upperBack: {
       label: 'Upper level (300s, behind the walkway)',
-      // Rows 10–25, covered from row 19 (sourced). Estimated: front ~84 ft,
-      // 28° rake, roof underside ~106 ft (9 ft above row 19's floor).
-      stand: { rows: 16, frontRowHeightFt: 84, rakeDeg: 28, backHeightFt: 100, overhang: { coveredFromRow: 10, soffitHeightFt: 106 } },
+      // Rows 10–25, covered from row 19 (position 10; sourced). Lidar (7 of
+      // 9): front row 85 ft (83–85), 31° rake (28–31). The roof's edge, 128
+      // ft up (its top), is over position 6 (row 15; 7–8 in two): more than
+      // two rows ahead of the source's in 6 of 7, so the tier takes it.
+      stand: { rows: 16, frontRowHeightFt: 85, rakeDeg: 31, backHeightFt: 128, backSetbackFt: -27, overhang: { coveredFromRow: 6, soffitHeightFt: 128 } },
+      sections: {
+        U340: { backHeightFt: 106, backSetbackFt: -27 },
+        U336: { backHeightFt: 103, backSetbackFt: -27 },
+      },
       rowsFromMap: true,
-      heightsSourced: false,
+      heightsSourced: true,
       coverSourced: true,
-      sources: [RYS_COORS, ...coorsSections('312', '317', '325', '332', '340')],
+      sources: [RYS_COORS, ...coorsSections('312', '317', '325', '332', '340'), COORS_LIDAR],
     },
     rockpile: {
       label: 'The Rockpile (401–403)',
-      // Rows 1–30 in center field, not covered.
-      stand: { rows: 30, frontRowHeightFt: 10, rakeDeg: 22, backHeightFt: 40 },
+      // Rows 1–30 in center field, not covered. Lidar (1 of 1): front row
+      // 51 ft, 23° rake; nothing rises behind it (its own top, 85 ft).
+      stand: { rows: 30, frontRowHeightFt: 51, rakeDeg: 23, backHeightFt: 85 },
       rowsFromMap: true,
-      heightsSourced: false,
+      heightsSourced: true,
       coverSourced: true,
-      sources: coorsSections('401', '402', '403'),
+      sources: [...coorsSections('401', '402', '403'), COORS_LIDAR],
     },
     suite: {
       label: 'Suites',
       // As at the other parks: one row of seats under the suite level's
-      // ceiling, 9 ft above the floor. Estimated ~62 ft up, behind the club
-      // level's last row (61 ft) and under the deck that covers it from row 8,
-      // so it reaches 17 ft past them.
-      stand: { rows: 1, frontRowHeightFt: 62, rakeDeg: 0, backHeightFt: 74, overhang: { coveredFromRow: 1, soffitHeightFt: 71, reachFt: 17 } },
+      // ceiling, 9 ft above the floor. Estimated ~47 ft up, behind the club
+      // level's last row (47 ft, measured front and rake) and under the
+      // upper level (its front row 67 ft), which covers the club level from
+      // row 5, so it reaches 25 ft past them.
+      stand: { rows: 1, frontRowHeightFt: 47, rakeDeg: 0, backHeightFt: 67, overhang: { coveredFromRow: 1, soffitHeightFt: 56, reachFt: 25 } },
       heightsSourced: false,
       coverSourced: true,
       sources: ['https://www.mlb.com/rockies/ballpark/seat-viewer'],
     },
   },
-  reviewedOn: '2026-11-11',
+  reviewedOn: '2026-11-12',
 };
 
 const rysKauffman = (path: string) => `https://www.rateyourseats.com/kauffman-stadium/seating/${path}`;

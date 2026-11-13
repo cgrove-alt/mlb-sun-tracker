@@ -11,13 +11,22 @@
  *   [RYS] https://www.rateyourseats.com/coors-field/seating/shaded-covered-seats
  *         and its section pages (105–160, 201–247, 301–347, 401–403)
  *
- * Not reproduced (the deck heights are estimates):
- *   - [RYS] the third-base club (234–247) is entirely out of the sun by
- *     3 PM. Its own section pages cover rows 8 and up (of 13); the model
- *     shades the covered rows and a few in front, 50–67% of each section.
+ * The heights are measured on USGS lidar (May 2020; stadiumStructures.ts).
+ * On them one claim the estimated heights missed now holds (tested below):
+ * the third-base club (234–247) is entirely out of the sun by 3 PM (the
+ * upper level's front reaches out over its row 5, where its section pages
+ * count from 8).
+ *
+ * Not reproduced:
  *   - [RYS] the front of the right-field seats (105–109) is shaded at first
  *     pitch for a 1 PM game, then in the sun by the 3rd or 4th inning. The
- *     model shades only their covered rows (11 and up).
+ *     model shades only their covered rows (11 and up; 8 in 105).
+ *   - [RYS] behind home, 133's rows 28 and up (position 25) are shaded
+ *     during most day games. The scan puts the club level's end over its
+ *     position 28; the model shades the two rows in front of it only after
+ *     about 3 PM. With the sun behind the stand, the engine stops it at a
+ *     deck's underside (27 ft here), not at the top of its front (~39 ft),
+ *     which would shade them all game.
  */
 import { rockiesSections } from '../../data/sections/mlb/rockies';
 import { getStadiumStructure } from '../../data/stadiumStructures';
@@ -88,6 +97,13 @@ describe('Coors Field: a 1:10 PM game in July', () => {
     expect(meanShade(JULY_20_110PM, club, [last(JULY_20_110PM)])).toBeGreaterThan(meanShade(JULY_20_110PM, club, [0]));
   });
 
+  it('[RYS] the third-base club (234–247) is entirely out of the sun by 3 PM', () => {
+    const from3pm = JULY_20_110PM.sun.flatMap((sun, i) => (sun.minutesFromStart >= 110 ? [i] : []));
+    for (const id of onMap(range(234, 247))) {
+      expect(from3pm.every((i) => section(JULY_20_110PM, id).samples[i].shadedFraction === 1)).toBe(true);
+    }
+  });
+
   it.each(onMap([...range(331, 347, 'U'), 'L343', 'L345']))('[RYS] upper deck %s: rows 19 and up are guaranteed shade', (id) => {
     const from = id.startsWith('U') ? 10 : 19;
     expect(rowsShaded(JULY_20_110PM, id, from).every((share) => share === 1)).toBe(true);
@@ -105,7 +121,7 @@ describe('Coors Field: a 1:10 PM game in July', () => {
     expect(meanShade(JULY_20_110PM, [...ids])).toBeLessThan(0.05);
   });
 
-  it.each([['128', 33], ['129', 33], ['130', 32], ['131', 31], ['132', 30], ['133', 25]] as const)(
+  it.each([['128', 33], ['129', 33], ['130', 32], ['131', 31], ['132', 30]] as const)(
     '[RYS] behind home, section %s: its rows from position %i are shaded during most day games',
     (id, fromRow) => {
       expect(rowsShaded(JULY_20_110PM, id, fromRow + 1).filter((share) => share === 1).length).toBeGreaterThanOrEqual(5);
