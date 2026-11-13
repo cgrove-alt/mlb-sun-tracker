@@ -439,7 +439,12 @@ PARKS = {
     'athletics': {
         'scan': {'ept': 'USGS_LPC_CA_NoCAL_Wildfires_B5a_2018'}, 'name': 'USGS 3DEP CA_NoCAL_Wildfires_B5a_2018 (Northern California 2018)',
         'noise': [7, 18],
-        'tiers': {},
+        # One bowl from the field; the club's five rows raised behind
+        # 101-106.
+        'tiers': {
+            'first': (-0.8, 1.2, 'near', 5, 5), 'home': (-0.8, 1.2, 'near', 5, 5), 'third': (-0.8, 1.2, 'near', 5, 5),
+            'club': (8.0, 10.5, 'near', 8, 3),
+        },
     },
     'dodgers': {
         'scan': {'ept': 'CA_LosAngeles_1_B23'}, 'name': 'USGS 3DEP CA_LosAngeles_B23 (LA County 2023)',

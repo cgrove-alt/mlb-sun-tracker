@@ -11,15 +11,32 @@
  *   [SS] https://www.shadedseats.com/sutter-health-park-shaded-seats/ (Rate
  *        Your Seats has no section pages for this park)
  *
- * Not reproduced (the structure heights are estimates):
+ * The heights are measured on USGS lidar (February 2019;
+ * stadiumStructures.ts): the bowl from field level at 13° (estimated 20°),
+ * the suite and press-box structure 51–61 ft up right behind it (est. 70),
+ * a balcony and the suite building over the third-base side's back rows
+ * (from row 21–30), the club's front row (29 ft) over 103–104's row 27 and
+ * a face 35 ft up over 105's row 24. Recorded, not tuned:
+ *
+ * Not reproduced:
  *   - [SS] 109–113 "the first to receive consistent shade" between 2 and
- *     3 PM, in their back quarter: at a 1:05 PM July start the model shades
- *     only 110's last two or three rows by then; the back rows of 114–116
- *     and the third-base side follow from about 3 PM.
+ *     3 PM, in their back quarter, and behind home shaded before the sides:
+ *     the last rows behind home are in the press box's shadow from first
+ *     pitch, but so are the third-base side's back rows, under the measured
+ *     balcony and suite building.
  *   - [SS] 109–111 shaded in the evening: their seats face south and the
  *     low evening sun comes in from the side, past the press box behind
  *     113–115, which a single cross-section per section does not see. They
  *     shade at sunset with the first-base side.
+ *
+ * Partly reproduced:
+ *   - [SS] field level battles the sun for the first few innings: the seats
+ *     not under a deck do (tested); the covered back rows of 116–121 are
+ *     shaded from first pitch.
+ *   - [SS] only the very back of 103–105 under the club level's overhang:
+ *     103–104 from row 27; 105 from row 24, the rows just in front in its
+ *     shadow at midday. Tested on the profile's edge: shade from row 28, sun
+ *     to four rows in front of the edge.
  */
 import { athleticsSections } from '../../data/sections/mlb/athletics';
 import { getStadiumStructure } from '../../data/stadiumStructures';
@@ -76,25 +93,22 @@ const firstBase = range(101, 107);
 const club = range(201, 206);
 
 describe('Sutter Health Park: a 1:05 PM game in July', () => {
-  it('[SS] field level battles the sun for the first few innings', () => {
+  /** The first covered row in the profile, or past the last row when open. */
+  const edgeRow = (id: string) => {
+    const s = athleticsSections.find((x) => x.id === id)!;
+    return standFor(structure, id, s.rows.length)!.stand.overhang?.coveredFromRow ?? s.rows.length + 1;
+  };
+
+  it('[SS] field level battles the sun for the first few innings: the seats not under a deck', () => {
     const others = [...range(101, 102), ...range(106, 123)];
-    expect(meanShade(JULY_13_105PM, others, [0, 1, 2])).toBeLessThan(0.05);
+    const open = others.flatMap((id) => [0, 1, 2].map((i) => rowsShaded(JULY_13_105PM, id, 1, edgeRow(id) - 1)[i]));
+    expect(open.reduce((a, b) => a + b, 0) / open.length).toBeLessThan(0.05);
   });
 
   it.each(['103', '104', '105'])('[SS] only the very back of %s is under the club level\'s overhang', (id) => {
     // Its last rows are shaded in the early innings, the rest are not.
     expect(rowsShaded(JULY_13_105PM, id, 28).slice(0, 3).every((share) => share === 1)).toBe(true);
-    expect(rowsShaded(JULY_13_105PM, id, 1, 24).slice(0, 3).every((share) => share === 0)).toBe(true);
-  });
-
-  it('[SS] behind home gets shade before the sides: the first back rows to shade are there', () => {
-    const firstBackRowShade = (id: string) => {
-      const s = athleticsSections.find((x) => x.id === id)!;
-      const i = rowsShaded(JULY_13_105PM, id, s.rows.length).findIndex((share) => share === 1);
-      return i < 0 ? JULY_13_105PM.sun.length : i;
-    };
-    const behindHome = Math.min(...range(108, 116).map(firstBackRowShade));
-    expect(behindHome).toBeLessThan(Math.min(...[...thirdBase, ...firstBase.filter((id) => !['103', '104', '105'].includes(id))].map(firstBackRowShade)));
+    expect(rowsShaded(JULY_13_105PM, id, 1, edgeRow(id) - 4).slice(0, 3).every((share) => share === 0)).toBe(true);
   });
 });
 

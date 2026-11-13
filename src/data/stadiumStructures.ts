@@ -5296,7 +5296,8 @@ const RATE: StadiumStructure = {
 const SUTTER_MAP = 'https://www.mlb.com/athletics/ballpark/seating-map';
 const SUTTER_SHADE = 'https://www.shadedseats.com/sutter-health-park-shaded-seats/';
 const SUTTER_PHOTO = 'USGS NAIP m_3812128_ne_10_060_20220621';
-const SUTTER_LOWER = { frontRowHeightFt: 4, rakeDeg: 20, treadFt: 2.8 };
+const SUTTER_LIDAR = 'USGS 3DEP lidar CA_NoCAL_Wildfires_B5a_2018, flown 2019-02-10 to 2019-02-12 (scripts/measureStandHeights.py)';
+const SUTTER_LOWER = { frontRowHeightFt: 0, rakeDeg: 13, treadFt: 2.8 };
 const sutterRise = 2.8 * Math.tan((SUTTER_LOWER.rakeDeg * Math.PI) / 180);
 /** Front-row height of a section whose rows start this many rows up (behind a dugout). */
 const sutterFront = (rowsUp: number) => ({ frontRowHeightFt: SUTTER_LOWER.frontRowHeightFt + rowsUp * sutterRise });
@@ -5316,80 +5317,102 @@ export function sutterTier(id: string): string | null {
  * One seating bowl (101–123) with the suites and press box behind it from
  * the first-base curve round the third-base side, and a five-row club
  * (201–206) raised behind 101–106. Rows are the club's own drawing (see
- * chart-points/athletics.ts); no source lists covered rows. On the 2022 USGS
- * photo the seats behind home run ~19–43 m from the plate and the suite and
- * press-box structure's front edge stands ~2 m behind the last row (it
- * shades the back rows on the photo); on the third-base side the suite
- * building stands ~1.5 m behind the last row and ends by 123; on the first-base side
- * the club's canopy reaches over the back of 103–105. No source publishes
- * heights, so every height is estimated by stacking the levels: the bowl's
- * top ~33 ft, a suite level and press box above it.
+ * chart-points/athletics.ts); no source lists covered rows.
+ *
+ * Heights: USGS lidar (February 2019). The 2025 work for the Athletics
+ * (clubhouses, field, dugouts, refitted clubs) left the stands as they were.
  */
 const SUTTER: StadiumStructure = {
   stadiumId: 'athletics',
-  // Far rim: the third-base suites (~58 ft) about 350 ft across the field
-  // from the first-base seats, which face the evening sun.
-  park: { roof: 'open', farRimHeightFt: 58, fieldCrossingFt: 350 },
+  // Far rim: the suite and press-box structure, 56 ft up (lidar), ~520 ft
+  // across the field.
+  park: { roof: 'open', farRimHeightFt: 56, fieldCrossingFt: 523 },
   tierOf: sutterTier,
   tiers: {
     home: {
       label: 'Behind home (108–116)',
-      // 29 rows (22 in 111–113, in front of the tables); the suites and
-      // press box (~70 ft) with their front edge ~2 m behind the last row
-      // (~8 m behind 111–113's, past the tables).
-      stand: { rows: 29, ...SUTTER_LOWER, backHeightFt: 70, backSetbackFt: 7 },
-      sections: Object.fromEntries(['111', '112', '113'].map((id) => [id, { backSetbackFt: 27 }])),
-      rowsFromMap: true,
-      heightsSourced: false,
-      coverSourced: true,
-      sources: [SUTTER_MAP, SUTTER_SHADE, SUTTER_PHOTO],
-    },
-    third: {
-      label: 'Third-base side (117–123)',
-      // Open; the suite building (~58 ft) ~1.5 m behind the last row, ending
-      // before 123 ("extends past the structure that blocks the sun").
-      // 117–118 start behind the home dugout (~4 rows up).
-      stand: { rows: 32, ...SUTTER_LOWER, backHeightFt: 58, backSetbackFt: 5 },
+      // 29 rows (22 in 111–113, in front of the tables). Lidar (9 of 9):
+      // front row at field level, 13° rake; behind, the suites and press
+      // box, 56 ft up right behind the last row (19 ft back behind 111–113,
+      // past the tables; 61 ft behind 112). A balcony, its underside 33 ft
+      // up, reaches over 116's last three rows.
+      stand: { rows: 29, ...SUTTER_LOWER, backHeightFt: 56, backSetbackFt: 2 },
       sections: {
-        '117': sutterFront(4),
-        '118': sutterFront(4),
-        // 12 rows; only its own back stands behind it.
-        '123': { backHeightFt: 4 + 11 * sutterRise + 4, backSetbackFt: 0 },
+        ...Object.fromEntries(['111', '113'].map((id) => [id, { backSetbackFt: 19 }])),
+        '112': { backHeightFt: 61, backSetbackFt: 19 },
+        '116': { overhang: { coveredFromRow: 27, soffitHeightFt: 33 } },
       },
       rowsFromMap: true,
       heightsSourced: false,
       coverSourced: true,
-      sources: [SUTTER_MAP, SUTTER_SHADE, SUTTER_PHOTO],
+      sources: [SUTTER_MAP, SUTTER_SHADE, SUTTER_PHOTO, SUTTER_LIDAR],
+    },
+    third: {
+      label: 'Third-base side (117–123)',
+      // Open in the source; the suite building ending before 123 ("extends
+      // past the structure that blocks the sun"). 117–118 start behind the
+      // home dugout (~4 rows up). Lidar (6 of 7): front row at field level
+      // (3–4 ft at 117–118's first row), 13° rake; behind, the suite
+      // building 55 ft up, 4 ft in front of the last row (23 ft in front of
+      // 119's; 53 ft and 16 ft back behind 122). The suite building and a
+      // balcony in front of it reach out over row 24 (21 in 118, 30 in 120,
+      // 29 in 121), so the rows from there back are covered: under the
+      // balcony, the lowest structure 33–38 ft up (the bottom of its face
+      // 33 ft over 117); over 119 the building's own roof, 54 ft (its top).
+      // Nothing over 122 and 123.
+      stand: { rows: 32, ...SUTTER_LOWER, backHeightFt: 55, backSetbackFt: -4, overhang: { coveredFromRow: 24, soffitHeightFt: 35 } },
+      sections: {
+        '117': sutterFront(4),
+        '118': { ...sutterFront(4), overhang: { coveredFromRow: 21, soffitHeightFt: 33 } },
+        '119': { backSetbackFt: -23, overhang: { coveredFromRow: 24, soffitHeightFt: 54 } },
+        '120': { overhang: { coveredFromRow: 30, soffitHeightFt: 35 } },
+        '121': { overhang: { coveredFromRow: 29, soffitHeightFt: 38 } },
+        '122': { noCover: true, backHeightFt: 53, backSetbackFt: 16 },
+        // 12 rows; only its own back stands behind it.
+        '123': { noCover: true, backHeightFt: SUTTER_LOWER.frontRowHeightFt + 11 * sutterRise + 4, backSetbackFt: 0 },
+      },
+      rowsFromMap: true,
+      heightsSourced: false,
+      coverSourced: true,
+      sources: [SUTTER_MAP, SUTTER_SHADE, SUTTER_PHOTO, SUTTER_LIDAR],
     },
     first: {
       label: 'First-base side (101–107)',
-      // The club deck (~40 ft) behind; its canopy reaches over "the very
-      // back of sections 103–105" (no rows given, so the check tries both;
-      // on the photo ~3 m, about the last 4 rows). 106–107 start behind the
-      // visitors' dugout.
-      stand: { rows: 30, ...SUTTER_LOWER, backHeightFt: 40, backSetbackFt: 10 },
+      // The club deck behind; its canopy reaches over "the very back of
+      // sections 103–105" (no rows given; the last four on the photo, row
+      // 27). 106–107 start behind the visitors' dugout. Lidar (6 of 7):
+      // front row at field level (3 ft at 105–107), 13° rake; behind, 52 ft
+      // up and 5 ft back (49 ft and 39 ft back behind 102; 56 ft, 16 ft in
+      // front of 105's last row). The club's front row, 29 ft up, is over
+      // row 26–27 of 103 and 104, so row 27 stands, its underside 9 ft above
+      // that row's floor; over 105's row 24 the bottom of a face, 35 ft up,
+      // which it takes.
+      stand: { rows: 30, ...SUTTER_LOWER, backHeightFt: 52, backSetbackFt: 5 },
       sections: {
-        ...Object.fromEntries(['103', '104', '105'].map((id) => [id, { overhang: { coveredFromRow: 27, soffitHeightFt: 40 } }])),
+        ...Object.fromEntries(['103', '104'].map((id) => [id, { deckFrontFt: 29, overhang: { coveredFromRow: 27, soffitHeightFt: 26 } }])),
+        '102': { backHeightFt: 49, backSetbackFt: 39 },
+        '105': { backHeightFt: 56, backSetbackFt: -16, overhang: { coveredFromRow: 24, soffitHeightFt: 35 } },
         '106': sutterFront(6),
         '107': sutterFront(6),
       },
       rowsFromMap: true,
       heightsSourced: false,
-      coverSourced: false,
-      sources: [SUTTER_MAP, SUTTER_SHADE, SUTTER_PHOTO],
+      coverSourced: true,
+      sources: [SUTTER_MAP, SUTTER_SHADE, SUTTER_PHOTO, SUTTER_LIDAR],
     },
     club: {
       label: 'Club (201–206)',
       // Five rows raised behind 101–106, open ("remain sunny the longest").
-      // Estimated: front ~36 ft, the club building (~50 ft) behind.
-      stand: { rows: 5, frontRowHeightFt: 36, rakeDeg: 15, treadFt: 2.8, backHeightFt: 50, backSetbackFt: 6 },
+      // Lidar (5 of 6): front row 31 ft, 22° rake; behind, the club building
+      // 49 ft up right behind the last row.
+      stand: { rows: 5, frontRowHeightFt: 31, rakeDeg: 22, treadFt: 2.8, backHeightFt: 49, backSetbackFt: 0 },
       rowsFromMap: true,
-      heightsSourced: false,
+      heightsSourced: true,
       coverSourced: true,
-      sources: [SUTTER_MAP, SUTTER_SHADE],
+      sources: [SUTTER_MAP, SUTTER_SHADE, SUTTER_LIDAR],
     },
   },
-  reviewedOn: '2026-11-12',
+  reviewedOn: '2026-11-13',
 };
 
 const CHASE_SHADE = 'https://www.shadedseats.com/chase-field-shaded-seats/';
