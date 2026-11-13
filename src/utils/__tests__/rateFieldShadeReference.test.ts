@@ -11,14 +11,17 @@
  *   [RYS] https://www.rateyourseats.com/rate-field/seating/shaded-covered-seats
  *         and its section pages (100–164, 311–357, 506–558)
  *
- * Not reproduced (the deck heights are estimates):
+ * The heights are measured on USGS lidar (April–May 2017;
+ * stadiumStructures.ts): the lower box's 14° rake (estimated 20°), the club
+ * deck's front, 48 ft up, over its row 26, the roof 130 ft up (its face's
+ * bottom 123 ft). On them, two claims the estimates missed now reproduce
+ * and are tested:
  *   - [RYS] a photo "taken at 2:30pm in late July" with all but the first 15
- *     rows of the first-base 100s shaded: with the sun ~60° up behind them,
- *     the model shades rows 28 and up at 2:40 PM and reaches row 17 by
- *     3:40 PM.
+ *     rows of the first-base 100s shaded: at 2:40 PM on July 27 all but the
+ *     first 11–18 rows are (tested: rows 1–10 sunny, 20 and up shaded).
  *   - [RYS] for 3:05 starts, "most lower-level rows" on the first-base side
- *     shaded at first pitch: about a third at 3:10 PM, then fully shaded by
- *     4:40 PM (RYS: "by 4:00–4:30").
+ *     shaded at first pitch (67% at 3:10 PM), fully by 4:00–4:30 (95% at
+ *     4:10 PM).
  */
 import { whitesoxSections } from '../../data/sections/mlb/whitesox';
 import { getStadiumStructure } from '../../data/stadiumStructures';
@@ -43,6 +46,7 @@ const game = (date: string, time: string): GameShadeResult =>
 const JULY_13_110PM = game('2025-07-13', '13:10'); // vs Guardians
 const JULY_12_310PM = game('2025-07-12', '15:10'); // vs Guardians
 const JULY_25_640PM = game('2025-07-25', '18:40'); // vs Cubs
+const JULY_27_110PM = game('2025-07-27', '13:10'); // vs Cubs
 
 const section = (result: GameShadeResult, id: string) => {
   const found = result.sections.find((s) => s.sectionId === id);
@@ -67,7 +71,10 @@ const rowsShaded = (result: GameShadeResult, id: string, fromRow: number, toRow?
 };
 const last = (result: GameShadeResult) => result.sun.length - 1;
 /** Position of a section's row 30 (or 33) — where Rate Your Seats says its cover starts. */
-const coveredFrom = (id: string) => (structure.tiers.lowerBox.sections?.[id]?.overhang?.coveredFromRow ?? 0);
+const coveredFrom = (id: string) => {
+  const s = whitesoxSections.find((x) => x.id === id)!;
+  return standFor(structure, id, s.rows.length)!.stand.overhang?.coveredFromRow ?? 0;
+};
 
 describe('Rate Field: a 1:10 PM game in July', () => {
   it.each(range(117, 129))('[RYS] %s: rows 30 and up are shaded when the game starts', (id) => {
@@ -107,6 +114,19 @@ describe('Rate Field: a 3:10 PM game in July', () => {
 
   it('[RYS] the first-base lower rows are fully shaded by mid-game', () => {
     expect(meanShade(JULY_12_310PM, range(117, 129), [3])).toBeGreaterThan(0.95);
+  });
+
+  it('[RYS] for a 3:05 start, most first-base lower-level rows are shaded at first pitch, all by 4:00–4:30', () => {
+    expect(meanShade(JULY_12_310PM, range(108, 131), [0])).toBeGreaterThan(0.5);
+    expect(meanShade(JULY_12_310PM, range(108, 131), [2])).toBeGreaterThan(0.9);
+  });
+});
+
+describe('Rate Field: 2:40 PM in late July', () => {
+  it.each(range(112, 128))('[RYS] %s: all but the first rows of the first-base 100s are shaded', (id) => {
+    const at240 = 3;
+    expect(rowsShaded(JULY_27_110PM, id, 1, 10)[at240]).toBe(0);
+    expect(rowsShaded(JULY_27_110PM, id, 20)[at240]).toBe(1);
   });
 });
 

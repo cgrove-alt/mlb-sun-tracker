@@ -5150,10 +5150,18 @@ const RATE_FIRST_ROW: Record<string, number> = {
   '130': 13, '131': 16, '132': 16, '133': 16, '134': 13, '137': 5, '138': 5, '139': 5, '140': 5, '141': 5,
   '142': 5, '143': 2, '154': 4, '155': 4, '156': 8,
 };
-const RATE_LOWER = { frontRowHeightFt: 3, rakeDeg: 20 };
+const RATE_LIDAR = 'USGS 3DEP lidar IL_4County_Cook_2017, flown 2017-04-18 to 2017-05-08 (scripts/measureStandHeights.py)';
+const RATE_LOWER = { frontRowHeightFt: 0, rakeDeg: 14 };
 const rateRise = 2.75 * Math.tan((RATE_LOWER.rakeDeg * Math.PI) / 180);
-/** Sections whose covered rows start higher up: the club deck clears them at 44 ft. */
-const RATE_DECK_HIGHER = ['109', '110', '130', '131', '132', '133', '134'];
+/** The lower box's first covered row (position) where the scan's club-deck edge is not the tier's row 26. */
+const RATE_EDGE_ROW: Record<string, number> = {
+  ...Object.fromEntries(['121', '122', '123', '124', '125', '126', '138', '139', '140', '141', '142', '143'].map((id) => [id, 21])),
+  '155': 22, '109': 29, '129': 29,
+};
+/** The lower box's back where it differs: the roof, 130 ft up, this far behind the last row (lidar). */
+const RATE_LOWER_BACK: Record<string, number> = {
+  '108': 50, '109': 18, '111': 18, '110': 29, '130': 32, '134': 32, '131': 45, '132': 39, '133': 43, '156': 43, '154': 27,
+};
 
 /** Seating ring of a Rate Field chart section. */
 export function rateTier(id: string): string | null {
@@ -5173,81 +5181,116 @@ export function rateTier(id: string): string | null {
  * 156, rows to 35–37) covered from row 30 or 33 by the club level; the club
  * boxes (311–357, rows 1–5) under the upper deck; the upper deck (506–558,
  * rows 1–21) under a roof from row 9; open outfield stands. Rows and covered
- * rows are Rate Your Seats' section pages. On the 2019 USGS photo, square to
- * the third-base line, the lower box runs ~11–41 m back, the upper deck's
- * open front rows from ~38 m and the roof's front edge stands at ~47.5 m.
- * No source publishes the deck heights, so every height is estimated by
- * stacking the decks.
+ * rows are Rate Your Seats' section pages.
+ *
+ * Heights: USGS lidar (Cook County, April–May 2017). Since then the 500
+ * level gained two view bars (2023); the upper-deck sections the chart now
+ * gives fewer rows start that many rows up the measured deck.
  */
 const RATE: StadiumStructure = {
   stadiumId: 'whitesox',
-  // Far rim: the roof (~112 ft) about 550 ft across the field.
-  park: { roof: 'open', farRimHeightFt: 112, fieldCrossingFt: 550 },
+  // Far rim: the roof, 130 ft up (lidar), ~580 ft across the field.
+  park: { roof: 'open', farRimHeightFt: 130, fieldCrossingFt: 581 },
   tierOf: rateTier,
   tiers: {
     lowerBox: {
       label: 'Lower box (108–156)',
       // Covered from row 30 or 33 (here 18–31; sourced); 108 and 156 not.
-      // Estimated: front ~3 ft (higher where a section starts behind a
-      // dugout or the scout seats), 20° rake, club deck underside ~42 ft (44
-      // over 109, 110 and 130–134, whose covered rows sit higher: 9 ft above
-      // their floor); the roof's front edge (~112 ft) ~6.5 m behind the last
-      // row.
-      stand: { rows: 37, ...RATE_LOWER, backHeightFt: 112, backSetbackFt: 21 },
+      // Lidar (49 of 49): front row at field level (-1–3 ft), 14° rake
+      // (higher where a section starts behind a dugout or the scout seats:
+      // that row on the slope); behind, the roof 130 ft up and 6 ft back (by
+      // section, below). The club deck's front row, 48 ft up, reaches out
+      // over position 26 (21–22 where a section starts at row 2–5, 29 in 109
+      // and 129; sourced 26–31), which the tier takes; its underside is not
+      // seen: that row less 9 ft (36 over 109, the lowest structure there).
+      // Over 130–134 the scan sees no edge, so their sourced rows stand.
+      stand: { rows: 37, ...RATE_LOWER, backHeightFt: 130, backSetbackFt: 6, deckFrontFt: 48, overhang: { coveredFromRow: 26, soffitHeightFt: 39 } },
       sections: Object.fromEntries(Array.from({ length: 49 }, (_, i) => String(108 + i)).map((id) => [id, {
         ...(RATE_FIRST_ROW[id] ? { frontRowHeightFt: RATE_LOWER.frontRowHeightFt + (RATE_FIRST_ROW[id] - 1) * rateRise } : {}),
-        ...(RATE_COVER[id] ? { overhang: { coveredFromRow: RATE_COVER[id], soffitHeightFt: RATE_DECK_HIGHER.includes(id) ? 44 : 42 } } : {}),
+        ...(RATE_LOWER_BACK[id] ? { backSetbackFt: RATE_LOWER_BACK[id] } : {}),
+        ...(RATE_EDGE_ROW[id] ? { overhang: { coveredFromRow: RATE_EDGE_ROW[id], soffitHeightFt: id === '109' ? 36 : 39 } } : {}),
+        ...(['130', '131', '132', '133', '134'].includes(id) ? { overhang: { coveredFromRow: RATE_COVER[id], soffitHeightFt: 39 } } : {}),
+        ...(RATE_COVER[id] ? {} : { noCover: true }),
       }])),
       rowsFromMap: true,
       heightsSourced: false,
       coverSourced: true,
-      sources: [RYS_RATE, ...rateSections('108', '112', '122', '127', '132', '137', '145', '152', '156')],
+      sources: [RYS_RATE, ...rateSections('108', '112', '122', '127', '132', '137', '145', '152', '156'), RATE_LIDAR],
     },
     rightField: {
       label: 'Right-field outfield reserved (100–105)',
       // Rows 1–28 (104–105 from row 9), open ("none of the outfield seats
-      // are covered"). Estimated: front ~8 ft, 20° rake.
-      stand: { rows: 28, frontRowHeightFt: 8, rakeDeg: 20, backHeightFt: 40 },
-      sections: { '104': { frontRowHeightFt: 16 }, '105': { frontRowHeightFt: 16 } },
+      // are covered"). Lidar (6 of 6): front row 5 ft (9 in 104–105), 15°
+      // rake; behind, 27–89 ft up by section.
+      stand: { rows: 28, frontRowHeightFt: 5, rakeDeg: 15, backHeightFt: 35, backSetbackFt: 25 },
+      sections: {
+        '100': { backHeightFt: 27, backSetbackFt: 7 },
+        '101': { backHeightFt: 33, backSetbackFt: 6 },
+        '102': { backHeightFt: 38, backSetbackFt: 43 },
+        '103': { backHeightFt: 89, backSetbackFt: 45 },
+        '104': { frontRowHeightFt: 9, backHeightFt: 27, backSetbackFt: 7 },
+        '105': { frontRowHeightFt: 9, backHeightFt: 36, backSetbackFt: 40 },
+      },
       rowsFromMap: true,
-      heightsSourced: false,
+      heightsSourced: true,
       coverSourced: true,
-      sources: [RYS_RATE, ...rateSections('100', '102', '105')],
+      sources: [RYS_RATE, ...rateSections('100', '102', '105'), RATE_LIDAR],
     },
     leftField: {
       label: 'Left-field outfield reserved and bleachers (157–164)',
-      // Rows 1–28 (157–158 from row 8), open.
-      stand: { rows: 28, frontRowHeightFt: 8, rakeDeg: 20, backHeightFt: 40 },
-      sections: { '157': { frontRowHeightFt: 15 }, '158': { frontRowHeightFt: 15 } },
+      // Rows 1–28 (157–158 from row 8), open in the source. Lidar (8 of 8):
+      // front row 5 ft (9 in 157–158), 15° rake; behind, 37–89 ft up by
+      // section. Over 158's row 19 and 159's row 25 a structure reaches out,
+      // the bottom of its face 45–46 ft up, so those rows are covered.
+      stand: { rows: 28, frontRowHeightFt: 5, rakeDeg: 15, backHeightFt: 37, backSetbackFt: 48 },
+      sections: {
+        '157': { frontRowHeightFt: 9, backHeightFt: 73, backSetbackFt: 4 },
+        '158': { frontRowHeightFt: 9, backHeightFt: 52, backSetbackFt: -6, overhang: { coveredFromRow: 19, soffitHeightFt: 46 } },
+        '159': { backHeightFt: 48, backSetbackFt: -4, overhang: { coveredFromRow: 25, soffitHeightFt: 45 } },
+        ...Object.fromEntries(['161', '163'].map((id) => [id, { backHeightFt: 89 }])),
+      },
       rowsFromMap: true,
-      heightsSourced: false,
+      heightsSourced: true,
       coverSourced: true,
-      sources: [RYS_RATE, ...rateSections('157', '160', '164')],
+      sources: [RYS_RATE, ...rateSections('157', '160', '164'), RATE_LIDAR],
     },
     club: {
       label: 'Club (311–357)',
-      // Rows 1–5 under the upper deck, hidden from above on the photo; no
-      // source gives covered rows, so the check tries both. Estimated: front
-      // ~45 ft, deck underside ~60 ft.
-      stand: { rows: 5, frontRowHeightFt: 45, rakeDeg: 15, backHeightFt: 112, backSetbackFt: 30, overhang: { coveredFromRow: 1, soffitHeightFt: 60 } },
-      rowsFromMap: true,
-      heightsSourced: false,
-      coverSourced: false,
-      sources: rateSections('311', '320', '330', '342', '357'),
-    },
-    upper: {
-      label: 'Upper deck (506–558)',
-      // Rows 1–21, covered from row 9 by the roof (sourced). Estimated:
-      // front ~68 ft, 32° rake, roof underside ~100 ft.
-      stand: { rows: 21, frontRowHeightFt: 68, rakeDeg: 32, treadFt: 2.6, backHeightFt: 112, overhang: { coveredFromRow: 9, soffitHeightFt: 100 } },
-      sections: Object.fromEntries(['514', '516', '518', '524', '540', '546', '548', '550'].map((id) => [id, { overhang: { coveredFromRow: RATE_COVER[id], soffitHeightFt: 100 } }])),
+      // Rows 1–5 under the upper deck; no source gives covered rows. Lidar
+      // (17 of 26): front row 48 ft, 28° rake; the upper deck's front row,
+      // 71 ft up (70–72), reaches out over row 4, so rows 4–5 are covered;
+      // its underside is not seen: that row less 9 ft (69 over 312, the
+      // lowest structure there). Behind, its front 73 ft up and 3 ft in
+      // front of the last row (the roof, 130 ft and 26 ft back, behind 356).
+      stand: { rows: 5, frontRowHeightFt: 48, rakeDeg: 28, backHeightFt: 73, backSetbackFt: -3, deckFrontFt: 71, overhang: { coveredFromRow: 4, soffitHeightFt: 62 } },
+      sections: { '356': { backHeightFt: 130, backSetbackFt: 26 }, '312': { overhang: { coveredFromRow: 4, soffitHeightFt: 69 } } },
       rowsFromMap: true,
       heightsSourced: false,
       coverSourced: true,
-      sources: [RYS_RATE, ...rateSections('506', '516', '530', '548', '558')],
+      sources: [...rateSections('311', '320', '330', '342', '357'), RATE_LIDAR],
+    },
+    upper: {
+      label: 'Upper deck (506–558)',
+      // Rows 1–21, covered from row 9 by the roof (sourced). Lidar (34 of
+      // 36): front row 72 ft (70–80), 33° rake; the roof's edge is over row 7
+      // (2 rows ahead of the source's, which stands; in 507, 509, 522, 526,
+      // 538, 542 and 554 the cut starts a few rows up, past an aisle, and
+      // counted from row 1 their edge is there too), the bottom of its face
+      // 123 ft up (121–124); its top, 130 ft, is what rises behind. Sections
+      // the chart gives 18 or 16 rows (covered from 6 or 4) start 3 or 5
+      // rows up the deck (77 and 80 ft; 514 and 550 measure 78).
+      stand: { rows: 21, frontRowHeightFt: 72, rakeDeg: 33, treadFt: 2.6, backHeightFt: 130, backSetbackFt: -37, overhang: { coveredFromRow: 9, soffitHeightFt: 123 } },
+      sections: Object.fromEntries(['514', '516', '518', '524', '540', '546', '548', '550'].map((id) => [id, {
+        frontRowHeightFt: RATE_COVER[id] === 4 ? 80 : 77,
+        overhang: { coveredFromRow: RATE_COVER[id], soffitHeightFt: 123 },
+      }])),
+      rowsFromMap: true,
+      heightsSourced: true,
+      coverSourced: true,
+      sources: [RYS_RATE, ...rateSections('506', '516', '530', '548', '558'), RATE_LIDAR],
     },
   },
-  reviewedOn: '2026-11-12',
+  reviewedOn: '2026-11-13',
 };
 
 const SUTTER_MAP = 'https://www.mlb.com/athletics/ballpark/seating-map';

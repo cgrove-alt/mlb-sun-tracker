@@ -424,7 +424,17 @@ PARKS = {
     'whitesox': {
         'scan': {'ept': 'USGS_LPC_IL_4County_Cook_2017_LAS_2019'}, 'name': 'USGS 3DEP IL_4County_Cook_2017 (Cook County 2017)',
         'noise': [7, 18],
-        'tiers': {},
+        # The lower box from the field (higher behind the dugouts and the
+        # scout seats), the club's five rows under the upper deck, the upper
+        # deck under its roof; open outfield stands.
+        'tiers': {
+            'lowerBox': (-0.8, 4.0, 'near', 5, 5), 'rightField': (1.0, 3.5, 'near', 10, 5), 'leftField': (1.0, 3.5, 'near', 10, 5),
+            'club': (13.8, 16.5, 'near', 8, 2), 'upper': (20.5, 24.5, 'near', 15, 3),
+        },
+        # The deck above seen only as its edge: its front row as measured on
+        # its own sections (the club's over the lower box, the upper deck's
+        # over the club).
+        'deckAboveFt': {'lowerBox': 48, 'club': 72},
     },
     'athletics': {
         'scan': {'ept': 'USGS_LPC_CA_NoCAL_Wildfires_B5a_2018'}, 'name': 'USGS 3DEP CA_NoCAL_Wildfires_B5a_2018 (Northern California 2018)',
