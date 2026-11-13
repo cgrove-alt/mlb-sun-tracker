@@ -342,7 +342,20 @@ PARKS = {
                 'https://rockyweb.usgs.gov/vdelivery/Datasets/Staged/Elevation/LPC/Projects/PA_17County_D24/PA_17Co_1_D24/LAZ/USGS_LPC_PA_17County_D24_17TNE584478.laz'],
         'name': 'USGS 3DEP PA_17County_D24 (Pennsylvania 2024-25)',
         'noise': [7, 18],
-        'tiers': {},
+        # The field-level boxes, then a step to the 100s; the club rows and
+        # the 300s form the upper deck, the 300s a step above the club's
+        # back (in places one run).
+        'tiers': {
+            'field': (-0.8, 1.0, 'near', 5, 4), 'hundred': (0.9, 2.3, 'near', 7, 5),
+            'leftCorner': (-0.5, 1.8, 'near', 6, 5), 'rightField': (1.5, 6.0, 'near', 15),
+            'bleachers': (3.8, 5.2, 'near', 10), 'rooftop': (11.0, 13.5, 'near', 10),
+            'club': (15.0, 16.6, 'near', 12), 'upper': (20.5, 24.0, 'near', 15), 'upperHome': (20.5, 24.0, 'near', 15),
+        },
+        # The light towers rise above the roof's edge (~120 ft) to ~200 ft.
+        'lightTowersAbove': 40,
+        # The club deck seen only as its edge over the 100s: its front as
+        # measured on its own sections.
+        'deckAboveFt': {'hundred': 53},
     },
     'dodgers': {
         'scan': {'ept': 'CA_LosAngeles_1_B23'}, 'name': 'USGS 3DEP CA_LosAngeles_B23 (LA County 2023)',

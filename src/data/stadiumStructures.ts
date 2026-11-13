@@ -4129,113 +4129,162 @@ export function pncTier(id: string): string | null {
   return 'rooftop';
 }
 
+const PNC_LIDAR = 'USGS 3DEP lidar PA_17County_D24, flown 2024-04-29 to 2024-05-01 (scripts/measureStandHeights.py)';
+
 /**
  * PNC Park (2001). A lower bowl of field-level sections (1–32, rows A–M) and
  * the 100s behind them (rows to HH or KK, the back under the club deck),
- * the club level (200s) with suites, and the upper deck (300s) under a roof
- * from about row R; bleachers and a rooftop in left field. Rows and covered
- * rows are Rate Your Seats' section pages. On the photo, square to the
- * first-base line, the lower bowl runs ~10–48 m back and the top of the
- * upper deck ~60 m. No source publishes the deck heights, so every height
- * is estimated by stacking the decks.
+ * the club level (200s) with suites, and the upper deck (300s) under a roof;
+ * bleachers and a rooftop in left field. Rows and covered rows are Rate
+ * Your Seats' section pages.
+ *
+ * Heights are measured on USGS airborne lidar (PNC_LIDAR, April–May 2024),
+ * as at Citizens Bank Park: for each section a cut straight back through its
+ * stand gives the front row's height and the rake, the edge of any deck
+ * over it, and what rises highest behind. Where a deck's edge is more than
+ * two rows from the source's covered row (or covers three or more it leaves
+ * open), the scan's row is used. The scan sees decks from above: a deck's
+ * underside is the bottom of its face where seen; where only its front row
+ * of seats shows, that row less 9 ft; never under 9 ft above the floor of
+ * the first covered row. Not measured (tier values): 6, 7, 13, 16, 23,
+ * 25–29, 127, 129, 140, 141, 147, 202, 207, 216, 228, 235, 315, 316, 329,
+ * 331–333 and 335.
  */
 const PNC: StadiumStructure = {
   stadiumId: 'pirates',
-  // Far rim: the upper deck's top (~100 ft) about 540 ft across the field.
-  park: { roof: 'open', farRimHeightFt: 100, fieldCrossingFt: 540 },
+  // Far rim (lidar): the roof line, median over sections 120 ft; crossing:
+  // the median distance from a section to it across the field, 583 ft.
+  park: { roof: 'open', farRimHeightFt: 120, fieldCrossingFt: 583 },
   tierOf: pncTier,
   tiers: {
     field: {
       label: 'Field level (1–32)',
-      // Rows A–M (D–M or F–M in some), open ("rarely in the shade").
-      // Estimated: front ~3 ft, 15° rake; the upper deck's top (~100 ft)
-      // ~37 m behind the last row.
-      stand: { rows: 13, frontRowHeightFt: 3, rakeDeg: 15, backHeightFt: 100, backSetbackFt: 120 },
+      // Rows A–M (D–M or F–M in some), open ("rarely in the shade"). Lidar
+      // (21 of 31): front row at field level (-1 ft), 10° rake (7–12); what
+      // rises highest behind is the roof's edge, 121 ft up and 107 ft back.
+      stand: { rows: 13, frontRowHeightFt: -1, rakeDeg: 10, backHeightFt: 121, backSetbackFt: 107 },
       rowsFromMap: true,
-      heightsSourced: false,
+      heightsSourced: true,
       coverSourced: true,
-      sources: [RYS_PNC, ...pncSections('1', '10', '16', '17', '25', '32')],
+      sources: [RYS_PNC, ...pncSections('1', '10', '16', '17', '25', '32'), PNC_LIDAR],
     },
     hundred: {
       label: 'Infield and baseline boxes (101–132)',
       // Rows A–HH (to KK behind home), covered from row W by the club deck
-      // (sourced; 129 from W of F–HH, 132 from AA). Estimated: front ~14 ft,
-      // 18° rake, deck underside ~48 ft.
-      stand: { rows: 34, frontRowHeightFt: 14, rakeDeg: 18, backHeightFt: 100, backSetbackFt: 40, overhang: { coveredFromRow: 23, soffitHeightFt: 48 } },
-      sections: pncCover(['129', '132'], 48),
+      // (sourced; 129 from W of F–HH, 132 from AA). Lidar (23 of 25): front
+      // row 5 ft (4–7), 13° rake (8–14). The club deck's front, 53 ft up,
+      // reaches out over row 17 (15–19; 25 in 132, 26 in 131), more than
+      // two rows ahead of the source's in all 23, so the tier takes the
+      // scan's row, under an underside of ~43 ft (that front row less 9 ft).
+      // It is also what rises highest behind.
+      stand: { rows: 34, frontRowHeightFt: 5, rakeDeg: 13, backHeightFt: 53, backSetbackFt: -47, overhang: { coveredFromRow: 17, soffitHeightFt: 43 } },
+      sections: {
+        ...pncCover(['129'], 43),
+        '131': { backHeightFt: 120, backSetbackFt: 60, overhang: { coveredFromRow: 26, soffitHeightFt: 44 } },
+        '132': { overhang: { coveredFromRow: 25, soffitHeightFt: 43 } },
+      },
       rowsFromMap: true,
       heightsSourced: false,
       coverSourced: true,
-      sources: [RYS_PNC, ...pncSections('101', '109', '113', '116', '120', '128', '129', '132')],
+      sources: [RYS_PNC, ...pncSections('101', '109', '113', '116', '120', '128', '129', '132'), PNC_LIDAR],
     },
     leftCorner: {
       label: 'Left-field corner (133–138)',
-      // Rows A–F to A–P, open ("among the worst seats for shade").
-      stand: { rows: 12, frontRowHeightFt: 8, rakeDeg: 18, backHeightFt: 40 },
+      // Rows A–F to A–P, open ("among the worst seats for shade"). Lidar (6
+      // of 6): front row 1 ft (-1 to 3), 11° rake; behind, 63 ft up and 73 ft
+      // back.
+      stand: { rows: 12, frontRowHeightFt: 1, rakeDeg: 11, backHeightFt: 63, backSetbackFt: 73 },
+      sections: { '133': { backHeightFt: 121, backSetbackFt: 124 }, '134': { backHeightFt: 72, backSetbackFt: 58 } },
       rowsFromMap: true,
-      heightsSourced: false,
+      heightsSourced: true,
       coverSourced: true,
-      sources: [RYS_PNC, ...pncSections('133', '135', '138')],
+      sources: [RYS_PNC, ...pncSections('133', '135', '138'), PNC_LIDAR],
     },
     rightField: {
       label: 'Right field (139–147)',
       // Rows A–G to A–M along the river, open ("all outfield seating is
-      // exposed").
-      stand: { rows: 13, frontRowHeightFt: 8, rakeDeg: 18, backHeightFt: 20 },
+      // exposed"). Lidar (6 of 9): front row 19 ft (on the wall; 9 in 139),
+      // 31° rake; behind, 33 ft up and 60 ft back (nothing over 142's and
+      // 144's own top). Something 36 ft up is over 139's row 10.
+      stand: { rows: 13, frontRowHeightFt: 19, rakeDeg: 31, backHeightFt: 33, backSetbackFt: 60 },
+      sections: {
+        ...Object.fromEntries(['142', '144'].map((id) => [id, { backHeightFt: 39, backSetbackFt: 0 }])),
+        '146': { backHeightFt: 39, backSetbackFt: 65 },
+        '139': { frontRowHeightFt: 9, overhang: { coveredFromRow: 10, soffitHeightFt: 36 } },
+      },
       rowsFromMap: true,
-      heightsSourced: false,
+      heightsSourced: true,
       coverSourced: true,
-      sources: [RYS_PNC, ...pncSections('139', '142', '147')],
+      sources: [RYS_PNC, ...pncSections('139', '142', '147'), PNC_LIDAR],
     },
     club: {
       label: 'Baseball Club (201–228)',
-      // Rows A–K (A–B, A–C at the ends), "rarely in the shade". Estimated:
-      // front ~52 ft, 20° rake, the upper deck rising behind.
-      stand: { rows: 11, frontRowHeightFt: 52, rakeDeg: 20, backHeightFt: 100, backSetbackFt: 25 },
+      // Rows A–K (A–B, A–C at the ends), "rarely in the shade". Lidar (19 of
+      // 23): front row 53 ft (52–53), 27° rake (22–29), open; what rises
+      // highest behind is the roof's edge, 121 ft up and 25 ft back (the
+      // 300s rise between, a walkway behind the last row).
+      stand: { rows: 11, frontRowHeightFt: 53, rakeDeg: 27, backHeightFt: 121, backSetbackFt: 25 },
       rowsFromMap: true,
-      heightsSourced: false,
+      heightsSourced: true,
       coverSourced: true,
-      sources: [RYS_PNC, ...pncSections('201', '209', '214', '220', '228')],
+      sources: [RYS_PNC, ...pncSections('201', '209', '214', '220', '228'), PNC_LIDAR],
     },
     bleachers: {
       label: 'Left-field bleachers (235–238)',
-      // Rows A–R, open ("always a heavy dose of sun").
-      stand: { rows: 18, frontRowHeightFt: 10, rakeDeg: 20, backHeightFt: 34 },
+      // Rows A–R, open ("always a heavy dose of sun"). Lidar (3 of 4): front
+      // row 16 ft, 14° rake; behind, the rooftop deck, 73 ft up over the last
+      // row (110 in 238, 43 in 236).
+      stand: { rows: 18, frontRowHeightFt: 16, rakeDeg: 14, backHeightFt: 73, backSetbackFt: -1 },
+      sections: { '238': { backHeightFt: 110, backSetbackFt: -4 }, '236': { backHeightFt: 43, backSetbackFt: -1 } },
       rowsFromMap: true,
-      heightsSourced: false,
+      heightsSourced: true,
       coverSourced: true,
-      sources: [RYS_PNC, ...pncSections('235', '238')],
+      sources: [RYS_PNC, ...pncSections('235', '238'), PNC_LIDAR],
     },
     rooftop: {
       label: 'Left-field rooftop (335–339)',
-      // Rows A–C, open.
-      stand: { rows: 3, frontRowHeightFt: 40, rakeDeg: 10, backHeightFt: 46 },
+      // Rows A–C, open. Lidar (4 of 5): front row 39 ft (39–43), 18° rake;
+      // behind, 82 ft up and 128 ft back.
+      stand: { rows: 3, frontRowHeightFt: 39, rakeDeg: 18, backHeightFt: 82, backSetbackFt: 128 },
       rowsFromMap: true,
-      heightsSourced: false,
+      heightsSourced: true,
       coverSourced: true,
-      sources: [RYS_PNC, ...pncSections('335', '337', '339')],
+      sources: [RYS_PNC, ...pncSections('335', '337', '339'), PNC_LIDAR],
     },
     upper: {
       label: 'Grandstand (300s)',
-      // Rows D–Y (and A–Y in a few), covered from row R (sourced). Estimated:
-      // front ~66 ft, 30° rake, roof underside ~98 ft (102 over 307 and
-      // 331–333, covered from further back: 9 ft above their floor).
-      stand: { rows: 20, frontRowHeightFt: 66, rakeDeg: 30, backHeightFt: 102, overhang: { coveredFromRow: 15, soffitHeightFt: 98 } },
-      sections: { ...pncCover(Array.from({ length: 33 }, (_, i) => String(301 + i)), 98), ...pncCover(['307', '331', '332', '333'], 102) },
+      // Rows D–Y (and A–Y in a few), covered from row R (sourced; position
+      // 12–18). Lidar (18 of 22): front row 76 ft (70–78), 28° rake (23–30),
+      // a step above the club's walkway. The roof's edge, 120 ft up (its
+      // top), is over position 6 (5–10), more than two rows ahead of the
+      // source's in 17 of 18, so the tier takes the scan's row (9–10 in six,
+      // which take theirs; 329 and 331–333, not measured, keep theirs).
+      stand: { rows: 20, frontRowHeightFt: 76, rakeDeg: 28, backHeightFt: 120, backSetbackFt: -35, overhang: { coveredFromRow: 6, soffitHeightFt: 120 } },
+      sections: {
+        ...pncCover(['329', '331', '332', '333'], 120),
+        ...Object.fromEntries(['308', '323', '327', '328'].map((id) => [id, { overhang: { coveredFromRow: 9, soffitHeightFt: 120 } }])),
+        ...Object.fromEntries(['311', '320'].map((id) => [id, { overhang: { coveredFromRow: 10, soffitHeightFt: 120 } }])),
+      },
       rowsFromMap: true,
-      heightsSourced: false,
+      heightsSourced: true,
       coverSourced: true,
-      sources: [RYS_PNC, ...pncSections('301', '307', '312', '320', '325', '333')],
+      sources: [RYS_PNC, ...pncSections('301', '307', '312', '320', '325', '333'), PNC_LIDAR],
     },
     upperHome: {
       label: 'Grandstand behind home (313–319)',
-      // Rows D–R; "rows M (to Q) and up are shaded during most day games"
-      // but no covered rows given, so the check tries both.
-      stand: { rows: 15, frontRowHeightFt: 66, rakeDeg: 30, backHeightFt: 102, overhang: { coveredFromRow: 11, soffitHeightFt: 96 } },
+      // Rows D–R; "rows M (to Q) and up are shaded during most day games",
+      // no covered rows given. Lidar (5 of 7): front row 77 ft (71–78), 28°
+      // rake; the roof's edge, 120 ft up, is over position 6 (9–10 in 313
+      // and 318), which settles the cover.
+      stand: { rows: 15, frontRowHeightFt: 77, rakeDeg: 28, backHeightFt: 120, backSetbackFt: -16, overhang: { coveredFromRow: 6, soffitHeightFt: 120 } },
+      sections: {
+        '313': { overhang: { coveredFromRow: 10, soffitHeightFt: 120 } },
+        '318': { overhang: { coveredFromRow: 9, soffitHeightFt: 120 } },
+      },
       rowsFromMap: true,
-      heightsSourced: false,
-      coverSourced: false,
-      sources: pncSections('313', '316', '319'),
+      heightsSourced: true,
+      coverSourced: true,
+      sources: [...pncSections('313', '316', '319'), PNC_LIDAR],
     },
     suite: {
       label: 'Suites',
@@ -4248,7 +4297,7 @@ const PNC: StadiumStructure = {
       sources: ['https://www.mlb.com/pirates/ballpark/seating-map/3d'],
     },
   },
-  reviewedOn: '2026-11-11',
+  reviewedOn: '2026-11-12',
 };
 
 const rysComerica = (path: string) => `https://www.rateyourseats.com/comerica-park/seating/${path}`;

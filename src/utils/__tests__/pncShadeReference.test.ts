@@ -11,11 +11,18 @@
  *   [RYS] https://www.rateyourseats.com/pnc-park/seating/shaded-covered-seats
  *         and its section pages (1–32, 101–147, 201–238, 301–339)
  *
- * Not reproduced (the deck heights are estimates):
- *   - [RYS] the upper half of 301–312 is "always shaded" for afternoon
- *     games. Its section pages cover rows R and up (the back quarter); the
- *     model shades those and, at a 1:35 PM start, about half of each
- *     section, filling in through the game.
+ * The heights are measured on USGS lidar (April–May 2024;
+ * stadiumStructures.ts). On them one claim the estimated heights missed now
+ * holds (tested below): the upper half of 301–312 is "always shaded" for
+ * afternoon games (the roof's edge reaches out over their sixth row, where
+ * the section pages count from R).
+ *
+ * Not reproduced:
+ *   - [RYS] the Baseball Club (201–228) is "rarely in the shade". The
+ *     first-base club (201–216) is in the shade for the last hour of a
+ *     1:35 PM game (the roof's edge, 121 ft up and 25 ft behind its last
+ *     row, measured), as Rate Your Seats also says of the later innings
+ *     (tested below): 20% of the club's seats over the game.
  */
 import { piratesSections } from '../../data/sections/mlb/pirates';
 import { getStadiumStructure } from '../../data/stadiumStructures';
@@ -74,9 +81,15 @@ describe('PNC Park: a 1:35 PM game in July', () => {
     expect(meanShade(JULY_20_135PM, onMap(range(301, 312)), [end])).toBeGreaterThan(meanShade(JULY_20_135PM, onMap(range(320, 333)), [end]) + 0.2);
   });
 
-  it('[RYS] the field level (1–32) and the Baseball Club (201–228) are rarely in the shade', () => {
+  it('[RYS] the field level (1–32) is rarely in the shade', () => {
     expect(meanShade(JULY_20_135PM, onMap(range(1, 32)))).toBeLessThan(0.05);
-    expect(meanShade(JULY_20_135PM, onMap(range(201, 228)))).toBeLessThan(0.15);
+  });
+
+  it.each(onMap(range(301, 312)))('[RYS] the upper half of %s is always shaded for an afternoon game', (id) => {
+    const rows = piratesSections.find((x) => x.id === id)!.rows.length;
+    for (const result of [JULY_20_135PM, JUNE_8_135PM, JUNE_21_405PM]) {
+      expect(rowsShaded(result, id, Math.ceil(rows / 2) + 1).every((share) => share === 1)).toBe(true);
+    }
   });
 
   it('[RYS] first-base club sections shade in the later innings; third-base ones stay in the sun', () => {
