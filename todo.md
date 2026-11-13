@@ -1228,11 +1228,81 @@ Tropicana Field (fixed roof) are out of scope.
       Caveat: row depth stays 2.75 ft; the scans are too sparse to read rows
       (Angels: ~5 points a metre), and where it matters (Angels 104–113) it
       moves the covered row by 2–3.
-- [ ] 7.4 Batch 4
+- [x] 7.4 Batch 4 lidar heights: Tigers, Guardians, Twins, White Sox,
+      Athletics (2026-11-13, 6 commits from c7589f583 to 95ef50cac: one per
+      park plus one tool fix; option A covers, the 9-ft rule and deck fronts
+      in the same commits; all 3536 tests pass; the five stadium pages
+      checked on the dev server, each with its answer, no console errors).
+      Scans: Comerica 2017, Progressive 2019 (the newest; predates the
+      2023–25 renovation), Target Field 2022, Rate Field 2017, Sutter Health
+      Park 2019. Checked for changes since: Progressive's Terrace Club was
+      rebuilt (2025), so what is over and behind 167–175 and the left-field
+      corner is not measured; Rate Field's 500 level gained two view bars
+      (2023), and the sections the chart now gives fewer rows start that many
+      rows up the measured deck; nothing structural at Target or Sutter.
+      Measured front rows (ft, was estimated):
+      | Park | Lower | Middle | Upper | Roof / far rim |
+      |---|---|---|---|---|
+      | Comerica | field -1–2 (3), LF 6 (10), RF 10 (6) | mezzanine 50 (50) | upper 62 (60) | 118 (108) |
+      | Progressive | field 0–3 (3), RF 6 | club 28 (36), RF 300s 38 (32) | 400s 71 (70), 500s 87 (82) | 139 (125) |
+      | Target Field | boxes 1 (3), 100s 9 (12) | club 38 (34) | 200s 73 (52); 300s hidden, carried to 83 | 148 (110) |
+      | Rate Field | field 0 (3) | club 48 (45) | upper 72 (68) | 130 (112) |
+      | Sutter Health | field 0 (4) | club 31 (36) | — | 56 (58) |
+      Low-confidence share at a 1:10 PM game, April / July, before → after:
+      Comerica 26/23 → 28/25, Progressive 31/13 → 22/24, Target 46/35 →
+      27/23, Rate Field 50/54 → 58/56, Sutter 76/59 → 93/45. The rises are
+      tiers whose underside is not a seen face, swung ±50% (Comerica's
+      first-base bowl, Progressive's third-base and club, Rate Field's
+      third-base lower box): the open confidence split. Sutter's April rise
+      is its five-row club, now in the measured club building's shadow.
+      Covered rows from the scan, the larger moves: Progressive's 500s from
+      D (P), right-field 300s from 2 (M), 142–148 from 13 (19); Target's
+      club from 6 (9), six infield 100s from 14 (17); Rate Field's lower box
+      from 26 (30–31); Sutter's third-base back rows (none given).
+      Reference checks: now reproduced and tested — Target's club A–D and E,
+      third-base rows 15–16 by the end, bleacher rows 3–5 by the middle
+      innings; Rate Field's late-July 2:30 PM photo and 3:05 starts; Sutter's
+      evening third-base shade. Recorded as not reproduced, each with its
+      measured reason — Comerica's midday lower bowl, Progressive's right-
+      field 300s and "little match" canopy, Target's F–J starting sunny,
+      Sutter's "behind home before the sides".
+      Tool (c17e1dbea; re-checked against every park where each rule fires:
+      no committed value changes):
+      - An edge with seats seen past it is kept under a high roof when the
+        structure stays overhead and the seats show no further in than its
+        height times tan 30° (Progressive's canopy).
+      - A deck under a roof needs headroom over its front (a roof's back
+        truss is not one).
+      - The park's deck depth counts drops of 2–15 ft only (a suite level
+        under a deck of seats is not its depth).
+      - suggest() lists a section's back when its setback is more than
+        10 ft off the tier's (c7589f583).
+      Written down, not decks: Target's corner cable line (101–104,
+      124–126), the walkway over 225–226 and a lamp-bank frame over 239–240
+      (left out like light towers); Progressive's canopy "deck front" (its
+      own curved edge).
+      Open for you:
+      1. `heightsSourced` and roofs seen only from above: the approved rule
+         says measured only where the underside is a seen face. Batch 4
+         follows it (Comerica's upper deck and mezzanine, Progressive's
+         500s stay estimated), as Citizens Bank Park did; batches 1 and 3
+         counted a roof's top as measured at Busch, Camden, Angels, Coors
+         (2), Great American (2) and PNC (2), and several measured tiers
+         carry a section whose underside is the 9-ft rule (Nationals,
+         Camden, Petco, Fenway, Citi). Settling the confidence split would
+         settle these; otherwise flip them to the rule.
+      2. The setback gap: before c7589f583 suggest() did not list a section
+         whose back stands more than 10 ft from the tier's setback, so 279
+         measured sections at the 17 committed parks still carry the tier's
+         value (Royals 113–133 ~90 ft vs 66, Padres 112–122 ~-35 vs 2, Cubs
+         501–514). Fixing them is per-section data plus each park's checks.
+      Caveat: Sutter's chart gives 119–121 29–32 rows, but their seats end
+      where the suite building begins (19 ft up, ~25 rows on the measured
+      slope); option A covers the chart's back rows under it.
 - [ ] 7.5 Batch 5 (retractable roofs: measure the parked roof only where the scan shows it open)
-      Both batches: with each underside, the deck's front (`deckFrontFt`,
-      §9) from the cover report, at tier level, and per section where a
-      section is under another deck.
+      With each underside, the deck's front (`deckFrontFt`, §9) from the
+      cover report, at tier level, and per section where a section is under
+      another deck.
 
 ### Batch 1 review (2026-11-12)
 Correction to the plan above: the confidence check moves estimated
