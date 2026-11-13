@@ -203,6 +203,40 @@ PARKS = {
         'lightTowersAbove': 40,
         'skip': {n: 'its cut runs along the steps, not up them (the stand direction is off in the corner)' for n in ('276', '280', '282', '378')},
     },
+    'padres': {
+        # Not in the AWS copy (it has 2014): two tiles from USGS (rockyweb),
+        # 45 and 53 MB, downloaded to tmp/lidar/raw/.
+        'scan': {'laz': ['tmp/lidar/raw/USGS_LPC_CA_SanDiegoCo_D24_11SMS485618.laz', 'tmp/lidar/raw/USGS_LPC_CA_SanDiegoCo_D24_11SMS485619.laz']},
+        'url': ['https://rockyweb.usgs.gov/vdelivery/Datasets/Staged/Elevation/LPC/Projects/CA_SanDiegoCo_D24/CA_SanDiegoCo_2_D24/LAZ/USGS_LPC_CA_SanDiegoCo_D24_11SMS485618.laz',
+                'https://rockyweb.usgs.gov/vdelivery/Datasets/Staged/Elevation/LPC/Projects/CA_SanDiegoCo_D24/CA_SanDiegoCo_2_D24/LAZ/USGS_LPC_CA_SanDiegoCo_D24_11SMS485619.laz'],
+        'name': 'USGS 3DEP CA_SanDiegoCo_D24 (San Diego County 2024)',
+        'noise': [7, 18],
+        # The upper deck: Upper Box rows from ~20 m, then the rows behind an
+        # aisle from ~24 m. The band takes only the front block: a section
+        # whose cut misses it would be measured from the wrong first row.
+        'tiers': {
+            'fieldVip': (-0.8, 1.0, 'near'), 'lexusClub': (2, 4.5, 'near'),
+            'hundred': (-0.8, 1.2, 'near'), 'hundredCoverUnsourced': (-0.8, 3.0, 'near'),
+            'leftLower': (-0.5, 2.0, 'near'), 'rightLower': (1.5, 4, 'near'),
+            'terraceVip': (9, 12.5, 'near', 15), 'terraceInfieldOpen': (9, 12.5, 'near', 15), 'terrace': (9, 12.5, 'near', 15),
+            'leftReserved': (6.5, 10, 'near', 15), 'rightUpper': (10.5, 16, 'near', 15),
+            'upper': (19, 23, 'near', 15),
+        },
+        # The light towers rise above the roof line (~134 ft) to 177-217 ft;
+        # the downtown towers beyond the outfield stay.
+        'lightTowersAbove': 43,
+        'skip': {'301': 'its cut picks up a deck edge over row 1 and nothing behind: off the Upper Box (the stand direction is off behind home)',
+                 '117': 'its fit runs under the seats (11 ft of them seen)'},
+        # Decks that show only their first row over the stands below: their
+        # fronts as measured on their own sections (the Terrace level's over
+        # the 100s and the Lexus Club, the Upper Box's over the Terrace, right
+        # field's upper level over its lower stands).
+        'deckAboveFt': {'hundred': 36, 'hundredCoverUnsourced': 36, 'lexusClub': 36, 'terrace': 67, 'terraceInfieldOpen': 66, 'rightLower': 47},
+        # Over the upper deck only the roof (133 ft) is an edge: lower
+        # "edges" are the Upper Deck's rows behind the aisle, which rise above
+        # the Upper Box's line, or a flat structure the seats show under.
+        'edgeMinFt': {'upper': 120},
+    },
     'dodgers': {
         'scan': {'ept': 'CA_LosAngeles_1_B23'}, 'name': 'USGS 3DEP CA_LosAngeles_B23 (LA County 2023)',
         'noise': [7, 18],
@@ -855,6 +889,9 @@ def cover_report(park):
             canopy = PARKS[park].get('canopyFt')
             edge_z = r['lipLowFt'] if r.get('lipLowFt') is not None else r.get('roofFt')
             if canopy is not None and l is not None and edge_z is not None and edge_z >= canopy:
+                l = None
+            edge_min = PARKS[park].get('edgeMinFt', {}).get(key)
+            if edge_min is not None and l is not None and (r.get('lipLowFt') is None or r['lipLowFt'] < edge_min):
                 l = None
             off = l is not None and abs(covered(st['rows'], l) - covered(st['rows'], m)) > 2
             under = None

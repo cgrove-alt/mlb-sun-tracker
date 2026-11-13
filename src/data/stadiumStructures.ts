@@ -2883,161 +2883,260 @@ export function petcoTier(id: string): string | null {
 // The 100s: a front block and a back block (up to 44 rows), the back of it
 // under the Terrace level. Estimated: front row ~3 ft, 18° rake (last row
 // ~41 ft), deck underside ~50 ft.
-const PETCO_100: StandProfile = { rows: 43, frontRowHeightFt: 3, rakeDeg: 18, backHeightFt: 50 };
+const PETCO_LIDAR = 'USGS 3DEP lidar CA_SanDiegoCo_D24, flown 2024-11-17 (scripts/measureStandHeights.py)';
+// The 100s (lidar, 16 of 17): front row at field level (-2 to 2), 10° rake
+// (5–30); what rises highest behind is 68 ft up (36–134).
+const PETCO_100: StandProfile = { rows: 43, frontRowHeightFt: -1, rakeDeg: 10, backHeightFt: 68, backSetbackFt: 2 };
 
 /**
  * Petco Park (2004). Field VIP and the Lexus Club behind home, the 100s, the
  * outfield stands, the Terrace level (200s) and the Upper level (300s)
  * covered from row 19. Sections come from the club's seat map, rows and
- * covered rows from Rate Your Seats' section pages. No source publishes the
- * deck heights, so every height is estimated by stacking the decks.
+ * covered rows from Rate Your Seats' section pages.
+ *
+ * Heights are measured on USGS airborne lidar (PETCO_LIDAR, November 2024),
+ * as at Citizens Bank Park: for each section a cut straight back through its
+ * rows gives the front row's height, the rake and the structure that rises
+ * highest behind as seen from the middle uncovered row; tier values are
+ * medians, sections more than 10% (at least 3 ft) off get their own. The
+ * Terrace level's front is 36 ft (38), the Upper Box's 67 ft (75; the
+ * Upper Deck's rows behind an aisle start ~80 ft), the roof 133 ft (118).
+ * The light towers are not counted as walls; the downtown towers beyond the
+ * outfield are. Covered rows: where the scan puts a deck's edge more than
+ * two rows from the source's, the scan's edge is used, with the lowest
+ * structure seen at it (or the deck above's front row less 9 ft) as the
+ * underside, never less than 9 ft above the first covered row's floor.
+ * Sections the scan does not find keep estimates, re-taken from the decks
+ * measured around them.
  */
 const PETCO: StadiumStructure = {
   stadiumId: 'padres',
-  // Far rim: the Upper level's roof (~120 ft) about 540 ft across the field.
-  park: { roof: 'open', farRimHeightFt: 120, fieldCrossingFt: 540 },
+  // Far rim (lidar): the stands' roof line, median over sections 134 ft (the
+  // Upper level's roof); crossing: the median distance from a section to
+  // what rises highest across the field, 824 ft (often the downtown towers).
+  park: { roof: 'open', farRimHeightFt: 134, fieldCrossingFt: 824 },
   tierOf: petcoTier,
   tiers: {
     fieldVip: {
       label: 'Field VIP (101–106)',
       // Rows 8–20 or 8–22, open (seen from directly above on the photo,
-      // 18–31 m behind home). Estimated: front ~4 ft, 15° rake; the Lexus
-      // Club's overhang (~30 ft) about 30 ft behind the last row.
-      stand: { rows: 15, frontRowHeightFt: 4, rakeDeg: 15, backHeightFt: 30, backSetbackFt: 30 },
+      // 18–31 m behind home). Lidar (6 of 6): front row at field level (-2
+      // to 2), 12° rake (9–14); what rises highest behind is the Upper
+      // level's roof, 133 ft up and 88 ft back.
+      stand: { rows: 15, frontRowHeightFt: -1, rakeDeg: 12, backHeightFt: 133, backSetbackFt: 88 },
       rowsFromMap: true,
-      heightsSourced: false,
+      heightsSourced: true,
       coverSourced: true,
-      sources: petcoSections('101', '102', '104', '106'),
+      sources: [...petcoSections('101', '102', '104', '106'), PETCO_LIDAR],
     },
     lexusClub: {
       label: 'Lexus Club (A–L)',
-      // Rows 1–10 to 1–20, covered from row 9 (sourced). Estimated: front
-      // ~10 ft, 18° rake, deck underside ~30 ft.
-      stand: { rows: 15, frontRowHeightFt: 10, rakeDeg: 18, backHeightFt: 34, overhang: { coveredFromRow: 9, soffitHeightFt: 30 } },
+      // Rows 1–10 to 1–20, covered from row 9 (sourced). Lidar (8 of 12):
+      // front row 10 ft (10–13), 19° rake (10–25); what rises highest
+      // behind is the Terrace level's front edge, 36 ft up (71 in J). That
+      // front reaches out over row 4 (1 in A), so the rows from there back
+      // are covered (Rate Your Seats counts from 9), under an underside of
+      // ~27 ft (that front row less 9 ft; in J the bottom of its face is
+      // seen, 34 ft).
+      stand: { rows: 15, frontRowHeightFt: 10, rakeDeg: 19, backHeightFt: 36, backSetbackFt: -26, overhang: { coveredFromRow: 4, soffitHeightFt: 27 } },
+      sections: {
+        'A': { overhang: { coveredFromRow: 1, soffitHeightFt: 27 } },
+        'J': { backHeightFt: 71, backSetbackFt: -11, overhang: { coveredFromRow: 4, soffitHeightFt: 34 } },
+      },
       rowsFromMap: true,
       heightsSourced: false,
       coverSourced: true,
-      sources: [RYS_PETCO, ...petcoSections('A', 'C', 'F', 'J', 'L')],
+      sources: [RYS_PETCO, ...petcoSections('A', 'C', 'F', 'J', 'L'), PETCO_LIDAR],
     },
     hundred: {
       label: 'Field level (100s)',
       stand: PETCO_100,
-      sections: petcoCover([...Array.from({ length: 18 }, (_, i) => String(107 + i))], 50),
+      // Covered rows (Rate Your Seats) per section; the Terrace level's
+      // front, 36 ft up, reaches out over row 17–26 in seven of them, more
+      // than two rows ahead of the source's, and those take the scan's row
+      // (the cross-aisle between the front and back blocks counts as rows
+      // in that distance, as it does in the engine). Its underside: that
+      // front row less 9 ft, ~27 ft (the lidar sees nothing lower).
+      sections: {
+        ...petcoCover([...Array.from({ length: 18 }, (_, i) => String(107 + i))], 27),
+        ...Object.fromEntries(['108', '110', '117', '118', '119', '120', '121'].map((id) => [id, { backHeightFt: 133, backSetbackFt: 32, ...petcoCover([id], 27)[id] }])),
+        '109': { backHeightFt: 36, backSetbackFt: -62, overhang: { coveredFromRow: 17, soffitHeightFt: 27 } },
+        '107': { overhang: { coveredFromRow: 17, soffitHeightFt: 27 } },
+        '113': { overhang: { coveredFromRow: 21, soffitHeightFt: 26 } },
+        ...Object.fromEntries(['114', '122'].map((id) => [id, { overhang: { coveredFromRow: 26, soffitHeightFt: id === '122' ? 28 : 27 } }])),
+        '115': { overhang: { coveredFromRow: 24, soffitHeightFt: 28 } },
+        '116': { overhang: { coveredFromRow: 24, soffitHeightFt: 27 } },
+      },
       rowsFromMap: true,
       heightsSourced: false,
       coverSourced: true,
-      sources: [RYS_PETCO, ...petcoSections('107', '110', '113', '116', '118', '119', '121', '124')],
+      sources: [RYS_PETCO, ...petcoSections('107', '110', '113', '116', '118', '119', '121', '124'), PETCO_LIDAR],
     },
     hundredCoverUnsourced: {
       label: 'Field level (100s)',
-      // 111, 125 and 127: Rate Your Seats gives no covered rows, so the check
-      // tries them with and without the deck.
-      stand: PETCO_100,
+      // 111, 125 and 127: Rate Your Seats gives no covered rows. Lidar (3 of
+      // 3): front row 7 ft (2 in 111), 15° rake (11–15); the deck above
+      // reaches out over row 21 (17 in 111), which settles the cover, under
+      // an underside of ~31 ft (9 ft above row 21's floor; 27 ft over 111,
+      // the Terrace level's front less 9 ft). Behind, 76 ft up.
+      stand: { rows: 43, frontRowHeightFt: 7, rakeDeg: 15, backHeightFt: 76, backSetbackFt: -15, overhang: { coveredFromRow: 21, soffitHeightFt: 31 } },
+      sections: { '111': { frontRowHeightFt: 2, backHeightFt: 36, backSetbackFt: -49, overhang: { coveredFromRow: 17, soffitHeightFt: 27 } } },
       rowsFromMap: true,
       heightsSourced: false,
-      coverSourced: false,
-      sources: petcoSections('111', '125', '127'),
+      coverSourced: true,
+      sources: [...petcoSections('111', '125', '127'), PETCO_LIDAR],
     },
     leftLower: {
       label: 'Left Field Lower Box (126–134)',
       // Rows A–B and 1–11 (fewer in 130, 134), under the 226–230 deck from
-      // row 6 (sourced). Estimated: front ~8 ft, 18° rake, underside ~22 ft
-      // (23 over 126–132, covered from row 8: 9 ft above its floor).
-      stand: { rows: 13, frontRowHeightFt: 8, rakeDeg: 18, backHeightFt: 24 },
-      sections: { ...petcoCover(['134'], 22), ...petcoCover(['126', '128', '130', '132'], 23) },
+      // row 6 (sourced). Lidar (5 of 5): front row 3 ft (3–4), 10° rake
+      // (8–11); behind, 26 ft up (57–74 in 126 and 128). Estimated:
+      // underside ~22 ft (23 over 126–132, covered from row 8).
+      stand: { rows: 13, frontRowHeightFt: 3, rakeDeg: 10, backHeightFt: 26, backSetbackFt: -12 },
+      // The scan puts the deck's edge over 126's row 1 (its lowest point
+      // 20 ft up) and 132's row 5.
+      sections: {
+        ...petcoCover(['130', '134'], 23),
+        '126': { backHeightFt: 74, backSetbackFt: -23, overhang: { coveredFromRow: 1, soffitHeightFt: 20 } },
+        '128': { backHeightFt: 57, backSetbackFt: 0, ...petcoCover(['128'], 23)['128'] },
+        '132': { overhang: { coveredFromRow: 5, soffitHeightFt: 23 } },
+      },
       rowsFromMap: true,
       heightsSourced: false,
       coverSourced: true,
-      sources: petcoSections('126', '128', '130', '134'),
+      sources: [...petcoSections('126', '128', '130', '134'), PETCO_LIDAR],
     },
     rightLower: {
       label: 'Right Field Lower (129–137)',
-      // Rows 1–25 (two blocks), covered from row 21 (sourced). Estimated:
-      // front ~6 ft, 18° rake, deck underside ~32 ft (33 over 129 and 137,
-      // 9 ft above row 21's floor).
-      stand: { rows: 25, frontRowHeightFt: 6, rakeDeg: 18, backHeightFt: 34 },
-      sections: { ...petcoCover(['131', '133', '135'], 32), ...petcoCover(['129', '137'], 33) },
+      // Rows 1–25 (two blocks), covered from row 21 (sourced). Lidar (3 of
+      // 5): front row 9 ft (7–10), 12° rake; behind, 49 ft up (135 in 129).
+      // The deck's underside: the bottom of its face, seen once, 39 ft
+      // (38 over 129, where the deck's edge is over row 25: its front row,
+      // 47 ft, less 9 ft).
+      stand: { rows: 25, frontRowHeightFt: 9, rakeDeg: 12, backHeightFt: 49, backSetbackFt: -16 },
+      sections: {
+        ...petcoCover(['131', '133', '135', '137'], 39),
+        '129': { backHeightFt: 135, backSetbackFt: 73, overhang: { coveredFromRow: 25, soffitHeightFt: 38 } },
+      },
       rowsFromMap: true,
       heightsSourced: false,
       coverSourced: true,
-      sources: petcoSections('129', '131', '133', '137'),
+      sources: [...petcoSections('129', '131', '133', '137'), PETCO_LIDAR],
     },
     terraceVip: {
       label: 'Terrace VIP (201–204)',
       // Rows 1–8 or 1–9, open (202 and 204: "rows 5 and above are shaded
-      // during most day games"). Estimated: front ~38 ft, 20° rake; the press
-      // box (~68 ft) about 10 ft behind.
-      stand: { rows: 9, frontRowHeightFt: 38, rakeDeg: 20, backHeightFt: 68, backSetbackFt: 10 },
+      // during most day games"). Lidar (4 of 4): front row 35 ft (33–36),
+      // 22° rake (19–24); what rises highest behind is the deck above, 71 ft
+      // up, just behind the last row. Its edge reaches out over 202's row 7
+      // and 201's row 6 (underside ~60 ft, 50 over 201, where something
+      // lower shows), so those rows are covered.
+      stand: { rows: 9, frontRowHeightFt: 35, rakeDeg: 22, backHeightFt: 71, backSetbackFt: -5 },
+      sections: {
+        '201': { overhang: { coveredFromRow: 6, soffitHeightFt: 50 } },
+        '202': { overhang: { coveredFromRow: 7, soffitHeightFt: 60 } },
+      },
       rowsFromMap: true,
-      heightsSourced: false,
+      heightsSourced: true,
       coverSourced: true,
-      sources: petcoSections('201', '202', '203', '204'),
+      sources: [...petcoSections('201', '202', '203', '204'), PETCO_LIDAR],
     },
     terraceInfieldOpen: {
       label: 'Terrace Infield (206–210)',
       // Rows 1–10; no covered rows given (only "rows 5+ shaded during most
-      // day games"), so the check tries both.
-      stand: { rows: 10, frontRowHeightFt: 38, rakeDeg: 22, backHeightFt: 62, overhang: { coveredFromRow: 8, soffitHeightFt: 56 } },
+      // day games"). Lidar (3 of 3): front row 35 ft, 23° rake; the Upper
+      // Box's front, 66 ft up, reaches out over row 6–8 (5 in 208), which
+      // settles the cover, under an underside of ~57 ft (that front row less
+      // 9 ft); behind, 68 ft up.
+      stand: { rows: 10, frontRowHeightFt: 35, rakeDeg: 23, backHeightFt: 68, backSetbackFt: -14, overhang: { coveredFromRow: 8, soffitHeightFt: 57 } },
+      sections: { '208': { overhang: { coveredFromRow: 5, soffitHeightFt: 57 } } },
       rowsFromMap: true,
       heightsSourced: false,
-      coverSourced: false,
-      sources: petcoSections('206', '208', '210'),
+      coverSourced: true,
+      sources: [...petcoSections('206', '208', '210'), PETCO_LIDAR],
     },
     terrace: {
       label: 'Terrace level (205–223)',
       // Rows 1–13 (205/207: 1–15, 209: 3–15), covered from row 7 (205–209:
-      // row 11). Estimated: front ~38 ft, 22° rake, underside ~58 ft.
-      stand: { rows: 13, frontRowHeightFt: 38, rakeDeg: 22, backHeightFt: 62, overhang: { coveredFromRow: 7, soffitHeightFt: 58 } },
-      sections: petcoCover(['205', '207', '209'], 58),
+      // row 11). Lidar (12 of 15): front row 36 ft (35–38), 22° rake
+      // (19–23); the Upper Box's front, 67 ft up, reaches out over row 4
+      // (3–6) in 9 of the 12, so the rows from 4 back are covered, under an
+      // underside of ~57 ft (that front row less 9 ft). That edge is what
+      // rises highest behind.
+      stand: { rows: 13, frontRowHeightFt: 36, rakeDeg: 22, backHeightFt: 68, backSetbackFt: -25, overhang: { coveredFromRow: 4, soffitHeightFt: 57 } },
       rowsFromMap: true,
       heightsSourced: false,
       coverSourced: true,
-      sources: [RYS_PETCO, ...petcoSections('205', '209', '211', '216', '219', '223')],
+      sources: [RYS_PETCO, ...petcoSections('205', '209', '211', '216', '219', '223'), PETCO_LIDAR],
     },
     leftReserved: {
       label: 'Left Field Reserved (226–230)',
-      // Rows up to 21, covered from row 17 (sourced). Estimated: front ~25 ft,
-      // 22° rake, underside 9 ft above the first covered row's floor (~50 ft,
-      // 52 over 230).
-      stand: { rows: 21, frontRowHeightFt: 25, rakeDeg: 22, backHeightFt: 50 },
-      sections: { ...petcoCover(['226', '228'], 50), ...petcoCover(['230'], 52) },
+      // Rows up to 21; Rate Your Seats counts them covered from row 15–17.
+      // Lidar (2 of 3): front row 26 ft, 21° rake (18–23); a structure
+      // reaches out over row 9 (8–10), its lowest point 43 ft up, so the rows
+      // from there back are covered (226, not measured, keeps its row, with
+      // an underside 9 ft above that row's floor). Behind, 126 ft up.
+      stand: { rows: 21, frontRowHeightFt: 26, rakeDeg: 21, backHeightFt: 126, backSetbackFt: -12, overhang: { coveredFromRow: 9, soffitHeightFt: 44 } },
+      sections: petcoCover(['226'], 50),
       rowsFromMap: true,
       heightsSourced: false,
       coverSourced: true,
-      sources: petcoSections('226', '228', '230'),
+      sources: [...petcoSections('226', '228', '230'), PETCO_LIDAR],
     },
     rightUpper: {
       label: 'Right Field Upper (227–235)',
       // Rows 1–25; 227–231 covered from row 23, 233 and 235 open ("all right
       // field seats, especially on the 200 level, are not good for shade").
-      // Estimated: front ~32 ft, 22° rake, underside 9 ft above the first
-      // covered row's floor (~63 ft, 65 over 227).
-      stand: { rows: 25, frontRowHeightFt: 32, rakeDeg: 22, backHeightFt: 60 },
-      sections: { ...petcoCover(['229', '231'], 63), ...petcoCover(['227'], 65) },
+      // Lidar (4 of 5): front row 47 ft (36 in 227), 27° rake (17–29);
+      // behind, 73 ft up (62–129). Estimated: underside 9 ft above the first
+      // covered row's floor. Over 233's rows 19 and up a structure reaches
+      // out, its lowest point 94 ft up, so those rows are covered.
+      stand: { rows: 25, frontRowHeightFt: 47, rakeDeg: 27, backHeightFt: 73, backSetbackFt: 81 },
+      sections: {
+        ...petcoCover(['229', '231'], 84),
+        '227': { frontRowHeightFt: 36, ...petcoCover(['227'], 76)['227'] },
+        '233': { backHeightFt: 129, backSetbackFt: -15, overhang: { coveredFromRow: 19, soffitHeightFt: 94 } },
+        '235': { backHeightFt: 62, backSetbackFt: 191 },
+      },
       rowsFromMap: true,
       heightsSourced: false,
       coverSourced: true,
-      sources: [RYS_PETCO, ...petcoSections('227', '229', '233', '235')],
+      sources: [RYS_PETCO, ...petcoSections('227', '229', '233', '235'), PETCO_LIDAR],
     },
     upper: {
       label: 'Upper level (300s)',
       // Rows up to 27 (Upper Box rows in front, Upper Deck behind), covered
       // from row 19 (sourced); 313 and 314 (rows 1–3) and 329 (one row)
-      // sit in front of it. Estimated: front ~75 ft, 28° rake, roof
-      // underside ~118 ft.
-      stand: { rows: 23, frontRowHeightFt: 75, rakeDeg: 28, backHeightFt: 120 },
-      sections: petcoCover(Array.from({ length: 30 }, (_, i) => String(300 + i)), 118),
+      // sit in front of it. Lidar (17 of 29): the Upper Box's front row
+      // 67 ft (65–75), 29° rake (19–33; the Upper Deck's rows behind an aisle
+      // start ~80 ft); the roof's edge is 133 ft up with nothing seen below
+      // it (a thin roof), and is what rises highest behind (80–105 ft at the
+      // ends). Its edge agrees with the source's row but in 304, 307, 322
+      // and 326, which take the scan's (14–16). Lower "edges" over 311 and
+      // 320–325 are the Upper Deck's rows behind the aisle, not a deck.
+      stand: { rows: 23, frontRowHeightFt: 67, rakeDeg: 29, backHeightFt: 133, backSetbackFt: -21 },
+      sections: {
+        ...petcoCover(Array.from({ length: 30 }, (_, i) => String(300 + i)), 133),
+        ...Object.fromEntries(['304', '307'].map((id) => [id, { overhang: { coveredFromRow: 14, soffitHeightFt: 133 } }])),
+        '322': { overhang: { coveredFromRow: 15, soffitHeightFt: 132 } },
+        '326': { overhang: { coveredFromRow: 16, soffitHeightFt: 133 } },
+        ...Object.fromEntries(['315', '328'].map((id) => [id, { backHeightFt: 98, backSetbackFt: -21, ...petcoCover([id], 133)[id] }])),
+        '319': { backHeightFt: 105, backSetbackFt: 66, ...petcoCover(['319'], 133)['319'] },
+        ...Object.fromEntries(['321', '323'].map((id) => [id, { backHeightFt: 80, backSetbackFt: -13, ...petcoCover([id], 133)[id] }])),
+      },
       rowsFromMap: true,
       heightsSourced: false,
       coverSourced: true,
-      sources: [RYS_PETCO, ...petcoSections('300', '303', '307', '313', '317', '322', '328', '329')],
+      sources: [RYS_PETCO, ...petcoSections('300', '303', '307', '313', '317', '322', '328', '329'), PETCO_LIDAR],
     },
     suite: {
       label: 'Suites',
       // The club's suite map: as at the other parks, one row of seats under
       // the suite level's ceiling, 9 ft above the floor, the deck above
-      // reaching past them as is typical. Estimated ~58 ft up.
-      stand: { rows: 1, frontRowHeightFt: 58, rakeDeg: 0, backHeightFt: 70, overhang: { coveredFromRow: 1, soffitHeightFt: 67, reachFt: SUITE_DECK_REACH_FT } },
+      // reaching past them as is typical. Estimated ~50 ft up, behind the
+      // Terrace level's last row (49 ft, measured front and rake), under the
+      // Upper Box (its front row 67 ft).
+      stand: { rows: 1, frontRowHeightFt: 50, rakeDeg: 0, backHeightFt: 67, overhang: { coveredFromRow: 1, soffitHeightFt: 59, reachFt: SUITE_DECK_REACH_FT } },
       heightsSourced: false,
       coverSourced: true,
       sources: ['https://mktg.mlbstatic.com/padres/documents/y2026/suites_map.pdf'],

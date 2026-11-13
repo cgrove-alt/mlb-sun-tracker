@@ -11,16 +11,20 @@
  *   [RYS] https://www.rateyourseats.com/petco-park/seating/shaded-covered-seats
  *         and its section pages (101–137, A–L, 201–235, 300–329)
  *
- * Not reproduced (the deck heights are estimates):
- *   - [RYS] most Lexus Club (Premier Club) seats are shaded by first pitch
- *     and all by the middle innings. Its own section pages cover rows 9 and
- *     up (of 10–20); the model shades about half of each section all game.
- *   - [RYS] in 300–305, rows above 20 are "guaranteed shade": in 305 the
- *     model's last sample (about 4:10 PM) has its row 21 in the sun under the
- *     roof's edge.
+ * The heights are measured on USGS lidar (November 2024;
+ * stadiumStructures.ts). On them two claims the estimated heights missed now
+ * hold (tested below): most Lexus Club (Premier Club) seats are shaded by
+ * first pitch (the Terrace level's front is over their row 4, where its
+ * section pages count from 9), and in 300–305 the rows above 20 are
+ * "guaranteed shade", all game.
+ *
+ * Not reproduced:
+ *   - [RYS] all of the Lexus Club by the middle innings: its first rows, in
+ *     front of the Terrace level's edge, stay in the sun (85–89% shaded all
+ *     game).
  *   - [RYS] in 300–305, row 10 "will see shade in a few innings". The model
- *     shades the covered rows (19+) and a few in front, about half of each
- *     section, steady through a July game.
+ *     shades from about row 9–12 back, under and just in front of the
+ *     roof's edge, steady through a July game.
  */
 import { padresSections } from '../../data/sections/mlb/padres';
 import { getStadiumStructure } from '../../data/stadiumStructures';
@@ -72,6 +76,14 @@ const last = (result: GameShadeResult) => result.sun.length - 1;
 const rowCount = (id: string) => padresSections.find((x) => x.id === id)!.rows.length;
 
 describe('Petco Park: a 1:10 PM game in July', () => {
+  it('[RYS] most Lexus Club seats are shaded by first pitch', () => {
+    expect(meanShade(JULY_13_110PM, onMap('ABCDEFGHIJKL'.split('')), [0])).toBeGreaterThan(0.5);
+  });
+
+  it.each(onMap(range(300, 305)).filter((id) => rowCount(id) > 20))('[RYS] section %s: the rows above 20 are guaranteed shade', (id) => {
+    expect(rowsShaded(JULY_13_110PM, id, 21).every((share) => share === 1)).toBe(true);
+  });
+
   it.each([
     ['100 level', range(108, 124, 2), range(107, 123, 2)],
     ['Upper level', onMap(range(306, 328, 2)), onMap(range(313, 327, 2))],
@@ -104,14 +116,6 @@ describe('Petco Park: a 1:10 PM game in July', () => {
 
   it('[RYS] right field, especially the 200 level, is not good for shade', () => {
     expect(meanShade(JULY_13_110PM, onMap(range(227, 235, 2)))).toBeLessThan(0.15);
-  });
-
-  // 305 is not reproduced in full: its row 21 sits just behind the roof's
-  // edge, and the late-afternoon sun (from in front, ~46° up) reaches it at
-  // the last sample (estimated roof height).
-  it.each(range(300, 304))('[RYS] section %s: rows above 20 are guaranteed shade', (id) => {
-    const rows = rowCount(id);
-    expect(rowsShaded(JULY_13_110PM, id, rows - 6).every((share) => share === 1)).toBe(true);
   });
 
   it.each(['A', 'C', 'F', 'J', 'L'])('[RYS] Lexus Club %s is covered from row 9', (id) => {
