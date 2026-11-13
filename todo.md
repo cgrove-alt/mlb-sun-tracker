@@ -1101,7 +1101,59 @@ Tropicana Field (fixed roof) are out of scope.
       definition), not the median of what rises across the field.
       Open for you: the cover question and the confidence split (see
       "Batch 1 review" below).
-- [ ] 7.2 Batch 2
+- [x] 7.2 Batch 2 lidar heights: Braves, Cardinals, Nationals, Orioles, Padres
+      (2026-11-12, 5 commits from a8cba78fc to c16d327d8; option A covers and
+      the 9-ft rule applied in the same commit; all 3481 tests pass; the five
+      stadium pages checked on the dev server, no console errors).
+      Measured front rows (ft, was estimated):
+      | Park | Lower | Middle | Upper | Roof / far rim |
+      |---|---|---|---|---|
+      | Truist (2019) | field 0–2 (3–6), 100s 10 (15) | 200s 36 (48) | 300s 68 (82); 400s hidden | canopy 150 (137) |
+      | Busch (2017) | field 0 (2–3), 100s 4 (12) | 200s 48 (50) | Pavilion 75 (74), Terrace 97 (98) | 133 (118) |
+      | Nationals (2014) | 100s 1 (3) | 200s 37 (58) | 300s 73 (84); 400s hidden | 140 (132) |
+      | Camden (2024) | field 1 (3), Terrace home 23 (30) | club 40 (52) | upper 63 (70) | 119 (110) |
+      | Petco (2024) | field and 100s 0 (3–4) | Terrace 36 (38) | Upper Box 67 (75) | 133 (118) |
+      Low-confidence share at a 1:10 PM game, April / July, before → after:
+      Truist 54/43 → 44/43, Busch 36/27 → 27/31, Nationals 43/31 → 33/27,
+      Camden 43/31 → 14/16, Petco 33/28 → 29/29.
+      Covered rows from the scan (option A), the larger moves: Busch's club
+      level from row 4 (9) and loge from 5 (none given); Nationals' 100s
+      from 36 (about RR) and 200 level from 2 (7–12); Camden's club level
+      from 5 (8); Petco's Lexus Club from 4 (9), Terrace from 4 (7–11) and
+      seven 100s sections from 17–26 (22–32). Some go the other way: Busch 135 and 162–167, where the
+      seats show in the open up to an edge further back than the source's
+      row.
+      Reference checks: now hold — Truist 220 rows 5+ and the 400s, Busch
+      341–347, Camden's third-base club, Petco's Lexus Club at first pitch
+      and 300–305's rows above 20; narrowed with the measured reason
+      in each test header — Truist 110–122 row 7, 1–42 and behind home;
+      Busch 135/162–167, the club level, the Pavilion, the third-base lead,
+      152–154 in March; Nationals' Gallery and outfield.
+      Method added (none of it changes a batch 1 park, checked by re-running
+      their cover reports):
+      - Where a roof's edge comes first over a deck of seats starting
+        further back under it, that deck is the edge (the lower one).
+      - Seats seen well past an edge are not under it (a bridge, a frame).
+      - Truist: the canopy's edge never replaces a sourced covered row (the
+        deck under it is unseen); it counts as what rises behind.
+      - A park's deck depth needs at least three edges (else 9 ft).
+      - Where the deck above shows only its first row from the air, its
+        front as measured on its own sections stands in for it.
+      - A guessed (unsourced) covered row no longer limits how many rows the
+        scan may see.
+      - Corner sections whose cuts run along the steps are skipped.
+      - Petco's upper deck: only the roof counts as an edge (lower "edges"
+        are the Upper Deck's rows behind the aisle); the band takes the
+        Upper Box only, so no section is measured from the wrong first row.
+      - Two-block sections (Petco's 100s): the cross-aisle counts as rows in
+        the scan's distance, as it does in the engine's even row spacing.
+      - Nationals' Gallery: where the roof's edge is over only the last row
+        or two (under option A's three-row mark) those rows are covered
+        too, or the edge, as what rises behind just in front of the last
+        row, would leave the rows under it with nothing behind.
+      Caveat: a roof is treated as the top of a wall behind the seats; on
+      the ground light may come in under its open back (Busch's 152–154 in
+      March read shadier than Rate Your Seats says).
 - [ ] 7.3 Batch 3
 - [ ] 7.4 Batch 4
 - [ ] 7.5 Batch 5 (retractable roofs: measure the parked roof only where the scan shows it open)
@@ -1321,8 +1373,9 @@ commits, nothing pushed.
   Orioles', Red Sox and Rockies suites turn Low, where whether the evening
   sun reaches in depends on the estimated reach.
 
-Not verified: no page was checked in the browser (a local server sends
-real Google Analytics hits); the engine path is covered by the tests.
+Checked in the browser later (with batch 2, on the dev server, which loads
+no analytics; only a local production build sends real hits): stadium
+pages render with no console errors.
 Still open: the suites' floor heights and seven parks' reach are
 estimates with no source; the confidence split (`soffitSourced`) from
 Batch 1 is undecided.
