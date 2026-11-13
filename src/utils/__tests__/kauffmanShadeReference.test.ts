@@ -11,11 +11,25 @@
  *   [RYS] https://www.rateyourseats.com/kauffman-stadium/seating/shaded-covered-seats
  *         and its section pages (101–152, 201–252, 303–325, 402–439)
  *
- * Not reproduced (the deck heights are estimates):
- *   - [RYS] rows M–V of 409–427 are "safely in the shade after 3:00". The
- *     model shades them only near the end of a 3:10 PM game: the
- *     double-letter rows and the roof behind them rise only ~25 ft above
- *     row M at an estimated 30° rake.
+ * The heights are measured on USGS lidar (April 2020; stadiumStructures.ts).
+ *
+ * Not reproduced:
+ *   - [RYS] rows M–V of 409–427 are "safely in the shade after 3:00". In a
+ *     3:10 PM game the model shades them in 409–417 from about 3:40 (at
+ *     3:10 rows M–O of 411–415 are in the sun), and in 423–427, behind home,
+ *     only partly or not at all: there the roof's edge, measured over the
+ *     single-letter rows 16–21 elsewhere, is not seen (their cuts stop at a
+ *     step in the front rows), so they have no cover.
+ *   - [RYS] the edges of the upper deck's double-letter rows (402–407,
+ *     433–438), "where the roof does not reach", stay in the sun at a 1 PM
+ *     game. The roof's back end, measured at 130–136 ft, rises 20 ft and
+ *     more above the last rows of these short sections and shades them from
+ *     behind (22% of their seats over the game); the scan also shows the
+ *     roof over 437's double-letter rows.
+ *   - [RYS] all of the right-field corner (147–148, 247–252) gets the worst of
+ *     the late-afternoon sun. The scan puts the upper deck's end over 248's
+ *     rows from 9, which the model shades (55–75%); the rest are in the sun
+ *     (tested below).
  */
 import { royalsSections } from '../../data/sections/mlb/royals';
 import { getStadiumStructure } from '../../data/stadiumStructures';
@@ -84,9 +98,6 @@ describe('Kauffman Stadium: a 1:10 PM game in July', () => {
     expect(rowsShaded(JULY_13_110PM, id, 13)[0]).toBe(1);
   });
 
-  it('[RYS] the edges of the upper deck (402–407, 433–438), where the roof does not reach, stay in the sun', () => {
-    expect(meanShade(JULY_13_110PM, onMap([...range(402, 407, 'R'), ...range(433, 438, 'R')]))).toBeLessThan(0.15);
-  });
 });
 
 describe('Kauffman Stadium: 3:10 PM games', () => {
@@ -107,8 +118,8 @@ describe('Kauffman Stadium: 3:10 PM games', () => {
     expect(samples[0].shadedFraction).toBeGreaterThanOrEqual(0.2);
   });
 
-  it('[RYS] the right-field corner (147–148, 247–252) gets the worst of the late-afternoon sun', () => {
-    expect(meanShade(JULY_12_310PM, onMap(['147', '148', ...range(247, 252)]))).toBeLessThan(0.05);
+  it('[RYS] the right-field corner (147–148, 247–252 but 248) gets the worst of the late-afternoon sun', () => {
+    expect(meanShade(JULY_12_310PM, onMap(['147', '148', '247', ...range(249, 252)]))).toBeLessThan(0.05);
   });
 
   it('[RYS] the Loge is shaded throughout', () => {

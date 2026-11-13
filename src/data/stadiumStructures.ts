@@ -3631,80 +3631,117 @@ export function kauffmanTier(id: string): string | null {
   return 'upper';
 }
 
-// The decks stack forward: on the photo (third-base side, square to the
-// line) the stands run from ~8 m to ~25 m out and a bright deck edge starts
-// right there, so what stands behind the lower bowl is the upper deck's front
-// (estimated ~74 ft) about 10 m behind the 100s' last row.
-const KAUFFMAN_UPPER_FRONT = { backHeightFt: 74, backSetbackFt: 33 };
+const KAUFFMAN_LIDAR = 'USGS 3DEP lidar MO_FEMANRCS_2020, flown 2020-04-18 (scripts/measureStandHeights.py)';
 
 /**
  * Kauffman Stadium (1973, renovated 2009). The 100s and the 200s (Plaza)
  * form the lower bowl, the Plaza's back rows under the Loge (300s), the
  * Loge under the upper deck, and the 400s (single-letter rows A–V in front,
- * double-letter rows AA–ZZ behind) under a roof from row MM. Rows and
- * covered rows are Rate Your Seats' section pages. No source publishes the
- * deck heights, so every height is estimated by stacking the decks.
+ * double-letter rows AA–ZZ behind) under a roof. Rows and covered rows are
+ * Rate Your Seats' section pages.
+ *
+ * Heights are measured on USGS airborne lidar (KAUFFMAN_LIDAR, April 2020;
+ * no later scan covers the park; the 2025 outfield walls moved in, not the
+ * stands), as at Citizens Bank Park: for each section a cut straight back
+ * through its stand gives the front row's height and the rake, the edge of
+ * any deck over it, and what rises highest behind. Where a deck's edge is
+ * more than two rows from the source's covered row (or covers three or more
+ * it leaves open), the scan's row is used. The scan sees decks from above: a
+ * deck's underside is the bottom of its face where seen; where only its
+ * front row of seats shows, that row less 9 ft; never under 9 ft above the
+ * floor of the first covered row. The Loge and the double-letter rows are
+ * hidden (estimated from the measured tiers around them). Not measured
+ * (tier values): 103–107, 109, 111, 148, 150–152, 201–203, 206–208, 210,
+ * 214–217, 234, 236, 238–240, 242, 245–247, 249, 251, 252, 404, 408, 414,
+ * 417–426, 438, 439 and the double-letter rows.
  */
 const KAUFFMAN: StadiumStructure = {
   stadiumId: 'royals',
-  // Far rim: the upper deck's roof (~130 ft) about 560 ft across the field.
-  park: { roof: 'open', farRimHeightFt: 130, fieldCrossingFt: 560 },
+  // Far rim (lidar): the roof line, median over sections 151 ft; crossing:
+  // the median distance from a section to it across the field, 587 ft.
+  park: { roof: 'open', farRimHeightFt: 151, fieldCrossingFt: 587 },
   tierOf: kauffmanTier,
   tiers: {
     field: {
       label: 'Field level (100s)',
       // Rows A–X (fewer in the corners), no cover ("all 100 level sections
-      // are exposed to the sun until at least 3:00"). Estimated: front row
-      // ~3 ft, 16° rake.
-      stand: { rows: 24, frontRowHeightFt: 3, rakeDeg: 16, ...KAUFFMAN_UPPER_FRONT },
+      // are exposed to the sun until at least 3:00"). Lidar (38 of 42): front
+      // row 3 ft (-1 to 4), 14° rake (12–28); what rises highest behind is
+      // the roof's edge, 157 ft up and 66 ft back (in nine, the upper deck's
+      // front, 60 ft, 25 ft back). No deck over them.
+      stand: { rows: 24, frontRowHeightFt: 3, rakeDeg: 14, backHeightFt: 157, backSetbackFt: 66 },
+      sections: {
+        ...Object.fromEntries(['108', '110', '112', '142', '143', '145', '146', '147'].map((id) => [id, { backHeightFt: 60, backSetbackFt: 25 }])),
+        ...Object.fromEntries(['126', '129', '131', '132'].map((id) => [id, { frontRowHeightFt: -1 }])),
+        '144': { frontRowHeightFt: -1, backHeightFt: 60, backSetbackFt: 25 },
+      },
       rowsFromMap: true,
-      heightsSourced: false,
+      heightsSourced: true,
       coverSourced: true,
-      sources: [RYS_KAUFFMAN, ...kauffmanSections('107', '112', '118', '127', '132', '140', '147')],
+      sources: [RYS_KAUFFMAN, ...kauffmanSections('107', '112', '118', '127', '132', '140', '147'), KAUFFMAN_LIDAR],
     },
     outfield: {
       label: 'Outfield seats (101–106, 150–152, 201–203)',
-      // A few rows each, no cover ("no cover in the outfield").
-      stand: { rows: 4, frontRowHeightFt: 4, rakeDeg: 15, backHeightFt: 12 },
+      // A few rows each, no cover ("no cover in the outfield"). Lidar (2 of
+      // 12; the others' cuts run on into the terraces around them): front
+      // row 7 ft, 29° rake (25–32); behind, 44 ft up and 28 ft back.
+      stand: { rows: 4, frontRowHeightFt: 7, rakeDeg: 29, backHeightFt: 44, backSetbackFt: 28 },
+      sections: { '101': { backHeightFt: 65, backSetbackFt: 45 }, '102': { backHeightFt: 24, backSetbackFt: 11 } },
       rowsFromMap: true,
-      heightsSourced: false,
+      heightsSourced: true,
       coverSourced: true,
-      sources: [RYS_KAUFFMAN, ...kauffmanSections('101', '104', '150', '201')],
+      sources: [RYS_KAUFFMAN, ...kauffmanSections('101', '104', '150', '201'), KAUFFMAN_LIDAR],
     },
     plaza: {
       label: 'Plaza (214–241)',
-      // Rows AA–TT, covered from row LL (sourced). Estimated: front ~24 ft,
-      // 20° rake, the Loge deck's underside ~44 ft.
-      stand: { rows: 20, frontRowHeightFt: 24, rakeDeg: 20, backHeightFt: 74, backSetbackFt: 10, overhang: { coveredFromRow: 11, soffitHeightFt: 44 } },
+      // Rows AA–TT, covered from row LL (sourced; by the Loge). Lidar (11 of
+      // 20): front row 16 ft, 22° rake (20–24). The upper deck's front, 60 ft
+      // up, reaches out over row 6 (FF), more than two rows ahead of the
+      // source's in all 11, so the rows from there back are covered, under
+      // an underside of ~50 ft (that front row less 9 ft; the Loge's lower
+      // deck, from LL, is hidden under it). What rises highest behind is that
+      // front, 39 ft in front of the last row.
+      stand: { rows: 20, frontRowHeightFt: 16, rakeDeg: 22, backHeightFt: 60, backSetbackFt: -39, overhang: { coveredFromRow: 6, soffitHeightFt: 50 } },
       rowsFromMap: true,
       heightsSourced: false,
       coverSourced: true,
-      sources: [RYS_KAUFFMAN, ...kauffmanSections('214', '219', '225', '232', '241')],
+      sources: [RYS_KAUFFMAN, ...kauffmanSections('214', '219', '225', '232', '241'), KAUFFMAN_LIDAR],
     },
     plazaCorner: {
       label: 'Plaza corners (209–213, 242–246)',
-      // Rows AA–TT, covered from row NN (sourced).
-      stand: { rows: 20, frontRowHeightFt: 22, rakeDeg: 20, backHeightFt: 74, backSetbackFt: 10, overhang: { coveredFromRow: 13, soffitHeightFt: 44 } },
+      // Rows AA–TT, covered from row NN (sourced). Lidar (6 of 10): front
+      // row 16 ft, 21° rake; the upper deck's front reaches out over row 6
+      // in all six (5–7), so the rows from there back are covered, under
+      // ~50 ft (as in the Plaza).
+      stand: { rows: 20, frontRowHeightFt: 16, rakeDeg: 21, backHeightFt: 60, backSetbackFt: -37, overhang: { coveredFromRow: 6, soffitHeightFt: 50 } },
       rowsFromMap: true,
       heightsSourced: false,
       coverSourced: true,
-      sources: [RYS_KAUFFMAN, ...kauffmanSections('209', '213', '242', '246')],
+      sources: [RYS_KAUFFMAN, ...kauffmanSections('209', '213', '242', '246'), KAUFFMAN_LIDAR],
     },
     plazaOpen: {
       label: 'Plaza ends (206–208, 247–252)',
       // Rows AA–TT, past the end of the Loge deck: no cover given ("247–252
-      // get the worst of it" late in the day).
-      stand: { rows: 20, frontRowHeightFt: 20, rakeDeg: 20, backHeightFt: 40 },
+      // get the worst of it" late in the day). Lidar (2 of 9): front row
+      // 17 ft, 16° rake; behind, 47 ft up. The upper deck's end is over
+      // 248's row 9 (underside ~51 ft, its front less 9 ft).
+      stand: { rows: 20, frontRowHeightFt: 17, rakeDeg: 16, backHeightFt: 47, backSetbackFt: -13 },
+      sections: {
+        '248': { backHeightFt: 61, backSetbackFt: -26, overhang: { coveredFromRow: 9, soffitHeightFt: 51 } },
+        '250': { backHeightFt: 33, backSetbackFt: 1 },
+      },
       rowsFromMap: true,
       heightsSourced: false,
       coverSourced: true,
-      sources: [RYS_KAUFFMAN, ...kauffmanSections('206', '208', '247', '252')],
+      sources: [RYS_KAUFFMAN, ...kauffmanSections('206', '208', '247', '252'), KAUFFMAN_LIDAR],
     },
     loge: {
       label: 'Loge (301–325)',
-      // Rows A–G or A–J, all covered by the upper deck (sourced). Estimated:
-      // front ~48 ft, 20° rake, the upper deck's underside ~66 ft.
-      stand: { rows: 10, frontRowHeightFt: 48, rakeDeg: 20, backHeightFt: 70, overhang: { coveredFromRow: 1, soffitHeightFt: 66 } },
+      // Rows A–G or A–J, all covered by the upper deck (sourced). Hidden from
+      // the air; estimated between the measured tiers: front ~40 ft (over
+      // the Plaza's row LL, 27 ft), 20° rake, the upper deck's underside
+      // ~51 ft (its front row, 60 ft, less 9 ft).
+      stand: { rows: 10, frontRowHeightFt: 40, rakeDeg: 20, backHeightFt: 60, overhang: { coveredFromRow: 1, soffitHeightFt: 51 } },
       rowsFromMap: true,
       heightsSourced: false,
       coverSourced: true,
@@ -3712,23 +3749,38 @@ const KAUFFMAN: StadiumStructure = {
     },
     upper: {
       label: 'Upper deck (400s, rows A–V)',
-      // Single-letter rows, no cover. Estimated: front ~74 ft, 30° rake; the
-      // double-letter rows rise behind them to the roof (~130 ft).
-      stand: { rows: 22, frontRowHeightFt: 74, rakeDeg: 30, backHeightFt: 130, backSetbackFt: 30 },
+      // Single-letter rows, no cover given. Lidar (22 of 37; behind home the
+      // front rows sit below a step): front row 60 ft (59–61), 32° rake
+      // (31–33); what rises highest behind is the roof's edge, 156 ft up and
+      // 12 ft back. That edge is over their last rows; in five over row
+      // 16–20, three or more rows, which they take, under its face's
+      // bottom, 152–154 ft (153 in 409, where none is seen).
+      stand: { rows: 22, frontRowHeightFt: 60, rakeDeg: 32, backHeightFt: 156, backSetbackFt: 12 },
+      sections: {
+        '403': { backHeightFt: 135, backSetbackFt: 33, overhang: { coveredFromRow: 16, soffitHeightFt: 154 } },
+        '437': { backHeightFt: 135, backSetbackFt: 33, overhang: { coveredFromRow: 16, soffitHeightFt: 152 } },
+        '429': { overhang: { coveredFromRow: 20, soffitHeightFt: 153 } },
+        '431': { overhang: { coveredFromRow: 20, soffitHeightFt: 154 } },
+        '409': { overhang: { coveredFromRow: 19, soffitHeightFt: 153 } },
+      },
       rowsFromMap: true,
-      heightsSourced: false,
+      heightsSourced: true,
       coverSourced: true,
-      sources: [RYS_KAUFFMAN, ...kauffmanSections('404', '409', '417', '427', '439')],
+      sources: [RYS_KAUFFMAN, ...kauffmanSections('404', '409', '417', '427', '439'), KAUFFMAN_LIDAR],
     },
     upperTop: {
       label: 'Upper deck (400s, rows AA–ZZ)',
       // Double-letter rows; 409–431 covered from row MM by the roof
       // (sourced); 402–407 and 433–438 open ("the roof does not reach").
-      // Estimated: front ~110 ft, 30° rake, roof underside ~136 ft (9 ft
-      // above row MM's floor).
-      stand: { rows: 26, frontRowHeightFt: 110, rakeDeg: 30, backHeightFt: 132 },
+      // Mostly hidden from the air under the roof; their rows carry on from
+      // the single-letter rows' (seen at the ends, 92–98 ft at AA): front
+      // ~98 ft, 32° rake. The roof's back end, 130–136 ft (measured), is what
+      // rises behind; it is ~140 ft over row MM (its top there). Its edge is
+      // over the single-letter rows, and at 437 it is over these rows too,
+      // so the scan suggests it covers them from AA.
+      stand: { rows: 26, frontRowHeightFt: 98, rakeDeg: 32, backHeightFt: 132 },
       sections: Object.fromEntries(['409R', '411R', '412R', '413R', '415R', '417R', '419R', '420R', '421R', '423R', '425R', '427R', '428R', '429R', '431R']
-        .map((id) => [id, { overhang: { coveredFromRow: 12, soffitHeightFt: 136 } }])),
+        .map((id) => [id, { overhang: { coveredFromRow: 12, soffitHeightFt: 140 } }])),
       rowsFromMap: true,
       heightsSourced: false,
       coverSourced: true,
@@ -3737,16 +3789,16 @@ const KAUFFMAN: StadiumStructure = {
     suite: {
       label: 'Suites',
       // As at the other parks: one row of seats under the suite level's
-      // ceiling, 9 ft above the floor. Estimated ~60 ft up, behind the Loge's
-      // last row (57 ft) and under the deck that covers all of it: 28 ft past
-      // them.
-      stand: { rows: 1, frontRowHeightFt: 60, rakeDeg: 0, backHeightFt: 72, overhang: { coveredFromRow: 1, soffitHeightFt: 69, reachFt: 28 } },
+      // ceiling, 9 ft above the floor. Estimated ~49 ft up, behind the Loge's
+      // last row (49 ft, estimated) and under the upper deck (its front row
+      // 60 ft, measured), which covers all of the Loge: 28 ft past them.
+      stand: { rows: 1, frontRowHeightFt: 49, rakeDeg: 0, backHeightFt: 60, overhang: { coveredFromRow: 1, soffitHeightFt: 58, reachFt: 28 } },
       heightsSourced: false,
       coverSourced: true,
       sources: ['https://www.mlb.com/royals/ballpark/seating-map'],
     },
   },
-  reviewedOn: '2026-11-11',
+  reviewedOn: '2026-11-12',
 };
 
 const rysGabp = (path: string) => `https://www.rateyourseats.com/great-american-ball-park/seating/${path}`;

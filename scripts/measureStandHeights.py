@@ -296,7 +296,18 @@ PARKS = {
     'royals': {
         'scan': {'ept': 'MO_FEMANRCS_1_2020'}, 'name': 'USGS 3DEP MO_FEMANRCS_2020 (Missouri 2020)',
         'noise': [7, 18],
-        'tiers': {},
+        # The Loge (300s) is under the upper deck, hidden; so are the upper
+        # deck's double-letter rows under the roof, except at its ends.
+        'tiers': {
+            'field': (-0.8, 1.2, 'near', 5), 'outfield': (1.0, 2.6, 'near', 5),
+            'plaza': (4.0, 6.6, 'near', 8), 'plazaCorner': (4.0, 6.6, 'near', 8), 'plazaOpen': (4.0, 6.6, 'near', 8),
+            'upper': (17.0, 18.8, 'near', 15), 'upperTop': (31, 36, 'near', 15),
+        },
+        'skip': {n: 'its cut finds only the front rows below a step (the rows behind start ~7 ft higher), at a shallower rake'
+                 for n in ('417', '418', '421', '422', '423', '424', '425')},
+        # The upper deck seen only as its edge over the Plaza: its front as
+        # measured on its own sections.
+        'deckAboveFt': {'plaza': 60, 'plazaCorner': 60, 'plazaOpen': 60},
     },
     'reds': {
         'scan': {'ept': 'OH_StatewideP3_6_B21'}, 'name': 'USGS 3DEP OH_StatewideP3_B21 (Ohio Phase 3, 2021-22)',
