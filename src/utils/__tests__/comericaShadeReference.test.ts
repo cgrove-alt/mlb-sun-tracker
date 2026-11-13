@@ -18,13 +18,38 @@
  * model agrees that "finding the shade during a midday game … is no easy
  * task".
  *
- * Not reproduced (the deck heights are estimates):
+ * The heights are measured on USGS lidar (April 2017; stadiumStructures.ts).
+ * On them the left-field pavilion now sees "the most sun of any location"
+ * (6% shaded over a 5:10 PM game, against 8% on the third-base side; tested
+ * below).
+ *
+ * Not reproduced:
  *   - [RYS] all covered Tiger Den seats shaded "after about 1pm": behind
  *     home (TD126–TD127) row C is in the sun for the first half hour of a
  *     1:40 PM game (the sun almost overhead slips under the deck's edge),
- *     shaded from 2:40 PM on.
- *   - [RYS] the left-field pavilion sees "the most sun of any location": the
- *     third-base side comes out as sunny (both all but unshaded).
+ *     shaded from 2:40 PM on. (The Tiger Den is hidden from the air: its
+ *     heights are estimated from the measured tiers around it.)
+ *   - [RYS] at midday it is hard to find shade on the lower level, and the
+ *     upper deck has some relief. The scan puts the upper deck's front over
+ *     the lower bowl's last 3–4 rows, which the model shades: 14% of the
+ *     lower level over a 1:40 PM game, against 19% of the upper deck.
+ *
+ * Partly reproduced, since the heights are measured (recorded, not tuned):
+ *   - [RYS] the mezzanine's covered rows (17 and up) are shaded all game.
+ *     Its roof is measured 103 ft up (its top), about 25 ft over row 17, so
+ *     a near-overhead sun reaches that first covered row for the first half
+ *     hour of a 1:40 PM game. Tested from the second half-hour on.
+ *   - [RYS] decent shade in the upper deck's last rows "of most sections".
+ *     The roof is measured 118 ft up (its top; the estimate was 100), so the
+ *     high sun in front reaches under it to the third-to-last row in the
+ *     third-base sections (333–344) from mid-game, and in 343, where the
+ *     scan puts the roof's edge over row 16, two rows from the back, to all
+ *     of its covered rows. Tested: the last two rows shaded all game in all
+ *     but one section.
+ *   - [RYS] at a late-afternoon start the third-base side is "your enemy".
+ *     Still far sunnier than the first-base side (8% against 93% over a
+ *     5:10 PM game; tested), but no longer under 5%: the upper deck's front
+ *     over its last rows shades them late in the game.
  */
 import { tigersSections } from '../../data/sections/mlb/tigers';
 import { getStadiumStructure } from '../../data/stadiumStructures';
@@ -77,11 +102,6 @@ const thirdBase = range(131, 139);
 const tigerDen = ['TD120', 'TD121', 'TD122', 'TD123', 'TD124', 'TD125A', 'TD125B', 'TD126', 'TD127A', 'TD127B'];
 
 describe('Comerica Park: a 1:40 PM game in July', () => {
-  it('[RYS] midday: hard-pressed to find shaded seats on the lower level; the upper deck has some relief', () => {
-    expect(meanShade(JULY_13_140PM, [...firstBase, ...thirdBase])).toBeLessThan(0.05);
-    expect(meanShade(JULY_13_140PM, range(321, 345).filter((n) => n !== '335'))).toBeGreaterThan(meanShade(JULY_13_140PM, [...firstBase, ...thirdBase]) + 0.1);
-  });
-
   it.each(tigerDen)('[RYS] Tiger Den %s: its covered rows (C–H) are shaded after about 1 PM', (id) => {
     // Row C itself only from 2:40 PM behind home (see the header).
     expect(rowsShaded(JULY_13_140PM, id, 4).every((share) => share === 1)).toBe(true);
@@ -95,15 +115,17 @@ describe('Comerica Park: a 1:40 PM game in July', () => {
     },
   );
 
-  it.each(range(211, 218))('[RYS] mezzanine %s: its covered rows (17 and up) are shaded all game', (id) => {
-    expect(rowsShaded(JULY_13_140PM, id, 23).every((share) => share === 1)).toBe(true);
+  it.each(range(211, 218))('[RYS] mezzanine %s: its covered rows (17 and up) are shaded from the second half-hour', (id) => {
+    expect(rowsShaded(JULY_13_140PM, id, 23).slice(1).every((share) => share === 1)).toBe(true);
   });
 
   it('[RYS] the upper deck: decent shade in the last rows of most sections', () => {
-    for (const id of range(321, 345).filter((n) => n !== '335')) {
+    const ids = range(321, 345).filter((n) => n !== '335');
+    const shaded = ids.filter((id) => {
       const s = tigersSections.find((x) => x.id === id)!;
-      expect(rowsShaded(JULY_13_140PM, id, s.rows.length - 3).every((share) => share === 1)).toBe(true);
-    }
+      return rowsShaded(JULY_13_140PM, id, s.rows.length - 1).every((share) => share === 1);
+    });
+    expect(shaded.length).toBeGreaterThanOrEqual(ids.length - 1);
   });
 
   it.each([
@@ -119,13 +141,13 @@ describe('Comerica Park: a 1:40 PM game in July', () => {
 describe('Comerica Park: a 5:10 PM game in July', () => {
   it('[RYS] afternoon games: the first-base side has the shade; the third-base side is "your enemy"', () => {
     expect(meanShade(JULY_9_510PM, firstBase)).toBeGreaterThan(meanShade(JULY_9_510PM, thirdBase) + 0.3);
-    expect(meanShade(JULY_9_510PM, thirdBase)).toBeLessThan(0.05);
+    expect(meanShade(JULY_9_510PM, thirdBase)).toBeLessThan(0.1);
   });
 
-  it('[RYS] the left-field pavilion sees the most sun of any seats (the third-base side as much)', () => {
+  it('[RYS] the left-field pavilion sees the most sun of any seats', () => {
     const pavilion = meanShade(JULY_9_510PM, range(145, 151));
-    expect(pavilion).toBeLessThan(0.05);
-    for (const ids of [firstBase, range(125, 130), range(101, 106), range(211, 218), range(321, 345).filter((n) => n !== '335')]) {
+    expect(pavilion).toBeLessThan(0.1);
+    for (const ids of [firstBase, thirdBase, range(125, 130), range(101, 106), range(211, 218), range(321, 345).filter((n) => n !== '335')]) {
       expect(pavilion).toBeLessThan(meanShade(JULY_9_510PM, ids));
     }
   });

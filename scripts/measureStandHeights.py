@@ -357,6 +357,48 @@ PARKS = {
         # measured on its own sections.
         'deckAboveFt': {'hundred': 53},
     },
+    'tigers': {
+        'scan': {'ept': 'USGS_LPC_MI_WayneCo_2017_LAS_2018'}, 'name': 'USGS 3DEP MI_WayneCo_2017 (Wayne County 2017)',
+        'noise': [7, 18],
+        # The Tiger Den and the terraces are under the decks; the upper deck's
+        # rows A-F, then 1-20 a step up; the mezzanine's A-F, then 1-22.
+        'tiers': {
+            'home': (-0.8, 0.8, 'near', 5, 5), 'first': (-0.8, 2.0, 'near', 5, 5), 'third': (-0.8, 1.5, 'near', 5, 5),
+            'firstCorner': (-0.5, 2.5, 'near', 5, 5), 'leftCorner': (-0.5, 1.2, 'near', 5, 3),
+            'leftField': (1.2, 2.2, 'near', 7, 5), 'rightField': (1.8, 3.6, 'near', 8, 5),
+            'mezzanine': (14.0, 15.6, 'near', 10), 'upper': (17.8, 19.4, 'near', 12),
+        },
+        # The light towers rise above the roof (~120 ft) to ~205 ft.
+        'lightTowersAbove': 40,
+        # The upper deck seen only as its edge over the lower bowl: its front
+        # as measured on its own sections.
+        'deckAboveFt': {'first': 61, 'third': 61, 'leftCorner': 61},
+        'skip': {n: "its run is the mezzanine's shallow front block (A-F); the rows behind the step read as an edge"
+                 for n in ('211', '212')},
+    },
+    'guardians': {
+        # The newest scan (2019) predates the 2023-24 renovation, which took
+        # out upper-deck seats in the left-field corner, behind home and in
+        # right field and added canopied decks there.
+        'scan': {'ept': 'OH_Statewide_Phase1_1_2019'}, 'name': 'USGS 3DEP OH_Statewide_Phase1_2019 (Ohio Phase 1, 2019)',
+        'noise': [7, 18],
+        'tiers': {},
+    },
+    'twins': {
+        'scan': {'ept': 'MN_CentralMissRiver_4_B22'}, 'name': 'USGS 3DEP MN_CentralMissRiver_B22 (Minnesota 2022)',
+        'noise': [7, 18],
+        'tiers': {},
+    },
+    'whitesox': {
+        'scan': {'ept': 'USGS_LPC_IL_4County_Cook_2017_LAS_2019'}, 'name': 'USGS 3DEP IL_4County_Cook_2017 (Cook County 2017)',
+        'noise': [7, 18],
+        'tiers': {},
+    },
+    'athletics': {
+        'scan': {'ept': 'USGS_LPC_CA_NoCAL_Wildfires_B5a_2018'}, 'name': 'USGS 3DEP CA_NoCAL_Wildfires_B5a_2018 (Northern California 2018)',
+        'noise': [7, 18],
+        'tiers': {},
+    },
     'dodgers': {
         'scan': {'ept': 'CA_LosAngeles_1_B23'}, 'name': 'USGS 3DEP CA_LosAngeles_B23 (LA County 2023)',
         'noise': [7, 18],
@@ -934,7 +976,8 @@ def draw(park, P, data, results):
 def suggest(park):
     """Print each tier's measured values (feet, rounded) and the sections
     that differ from them by more than 10% (at least 3 ft) in the form used
-    in stadiumStructures.ts. Soffits only where the scan saw the deck's face
+    in stadiumStructures.ts (a back also where its setback is more than 10 ft
+    off the tier's). Soffits only where the scan saw the deck's face
     and the deck's edge agrees with the sourced covered row."""
     d = json.load(open(f'tmp/lidar/{park}-measured.json'))
     r0 = lambda v: None if v is None else int(round(v))
@@ -963,6 +1006,11 @@ def suggest(park):
                     group.append(r)
             return out
         fronts, backs = clusters('frontFt', front), clusters('backFt', back)
+        # A setback more than 10 ft from the tier's (in front of the last row
+        # rather than behind it, say) changes which rows the obstacle shades.
+        for r in rs:
+            if r['id'] not in backs and r['backSetbackFt'] is not None and setback is not None and abs(r['backSetbackFt'] - setback) > 10:
+                backs[r['id']] = [r]
         soffits = clusters('soffitFt', soffit) if soffit is not None else {}
         pooled = {}
         for r in rs:

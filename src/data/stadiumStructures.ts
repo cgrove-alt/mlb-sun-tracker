@@ -4326,8 +4326,6 @@ const COMERICA_COVER: Record<string, number> = {
 const comericaCover = (ids: readonly string[], soffitHeightFt: number) =>
   Object.fromEntries(ids.filter((id) => COMERICA_COVER[id]).map((id) => [id, { overhang: { coveredFromRow: COMERICA_COVER[id], soffitHeightFt } }]));
 const comericaIds = (from: number, to: number) => Array.from({ length: to - from + 1 }, (_, i) => String(from + i));
-/** The sections whose front rows give way to a dugout start at row 7 (Rate Your Seats). */
-const behindDugout = (ids: readonly string[]) => Object.fromEntries(ids.map((id) => [id, { frontRowHeightFt: 10 }]));
 
 /** Seating ring of a Comerica Park chart section. */
 export function comericaTier(id: string): string | null {
@@ -4351,118 +4349,180 @@ export function comericaTier(id: string): string | null {
   return n === 346 ? 'upperCorner' : 'upper';
 }
 
-// The lower bowl along each line, square to it on the photo: rows 1–35 from
-// ~12 m to the walkway ~44 m back (a ~3 ft tread); behind the dugouts rows
-// 7–35 from ~21 m. Estimated: front ~3 ft, 20° rake.
-const COMERICA_LOWER = { frontRowHeightFt: 3, rakeDeg: 20, treadFt: 3 };
+// The lower bowl's rake and row depth (rows 1–35 from ~12 m to the walkway
+// ~44 m back on the photo: a ~3 ft tread); each tier's front row measured.
+const COMERICA_LOWER = { rakeDeg: 10, treadFt: 3 };
+const COMERICA_LIDAR = 'USGS 3DEP lidar MI_WayneCo_2017, flown 2017-04-22 to 2017-04-23 (scripts/measureStandHeights.py)';
 
 /**
  * Comerica Park (2000). A lower bowl to row 35 with the Tiger Den (rows A–H)
  * behind it from dugout to dugout and terraces (rows A–H) behind the
  * baselines; the mezzanine (210–219) over the first-base side and the right-
- * field corner, under a roof from its row 17; the upper deck (321–346) from
- * the first-base dugout round to the left-field corner, under a roof from
- * its row 15. Rows and covered rows are Rate Your Seats' section pages. On
- * the 2022 USGS photo, square to the first-base line, the mezzanine's seats
- * run ~56–75 m back and its roof's edge stands at ~75 m; behind home the
- * upper deck's front sits over the walkway (~49 m from home) and its roof's
- * edge ~64 m out. No source publishes the deck heights, so every height is
- * estimated by stacking the decks.
+ * field corner, under a roof; the upper deck (321–346) from the first-base
+ * dugout round to the left-field corner, under a roof. Rows and covered rows
+ * are Rate Your Seats' section pages.
+ *
+ * Heights are measured on USGS airborne lidar (COMERICA_LIDAR, April 2017;
+ * no later scan covers the park), as at Citizens Bank Park: for each
+ * section a cut straight back through its stand gives the front row's
+ * height and the rake, the edge of any deck over it, and what rises highest
+ * behind. Where a deck's edge is more than two rows from the source's
+ * covered row (or covers three or more it leaves open), the scan's row is
+ * used. The scan sees decks from above: a deck's underside is the bottom of
+ * its face where seen; where only its front row of seats shows, that row
+ * less 9 ft; never under 9 ft above the floor of the first covered row. The
+ * Tiger Den, the terraces and the suites are hidden (estimated from the
+ * measured tiers around them). Not measured (tier values): 101, 107–111,
+ * 115, 211, 212, 217–219, 327, 337, 344, 346.
  */
 const COMERICA: StadiumStructure = {
   stadiumId: 'tigers',
-  // Far rim: the upper deck's roof (~108 ft) about 550 ft across the field.
-  park: { roof: 'open', farRimHeightFt: 108, fieldCrossingFt: 550 },
+  // Far rim (lidar): the roof line, median over sections 118 ft; crossing:
+  // the median distance from a section to it across the field, 637 ft.
+  park: { roof: 'open', farRimHeightFt: 118, fieldCrossingFt: 637 },
   tierOf: comericaTier,
   tiers: {
     first: {
       label: 'Lower bowl, first-base side (116–124)',
-      // Open; rows 27 and up "shaded during most late afternoon games". The
-      // mezzanine's roof edge (~95 ft) stands ~31 m behind the last row.
-      stand: { rows: 35, ...COMERICA_LOWER, backHeightFt: 95, backSetbackFt: 100 },
-      sections: behindDugout(comericaIds(120, 124)),
-      rowsFromMap: true,
-      heightsSourced: false,
-      coverSourced: true,
-      sources: [RYS_COMERICA, ...comericaSections('116', '119', '120', '121', '124')],
-    },
-    firstCorner: {
-      label: 'Right-field corner (112–115)',
-      // Two blocks (rows to 33/34, then 37–45), the back one under the
-      // mezzanine from row 37 (sourced). Estimated deck underside ~50 ft (51
-      // over 115, 9 ft above its first covered row's floor).
-      stand: { rows: 43, ...COMERICA_LOWER, backHeightFt: 95, backSetbackFt: 30 },
+      // Open in the source; rows 27 and up "shaded during most late
+      // afternoon games". Lidar (9 of 9): front row 1 ft (-2 to 5), 10° rake
+      // (7–11). The upper deck's front, 61 ft up, reaches out over their row
+      // 26 (32–33 of the full 35-row sections), so the rows from there back
+      // are covered, under an underside of ~52 ft (that front row less 9 ft);
+      // nearer right field (116–119) the mezzanine's front, 49–50 ft, under
+      // ~40 ft. Over 120 and 124 the scan sees every row open.
+      stand: { rows: 35, frontRowHeightFt: 1, ...COMERICA_LOWER, backHeightFt: 62, backSetbackFt: -7, deckFrontFt: 61, overhang: { coveredFromRow: 26, soffitHeightFt: 52 } },
       sections: {
-        ...comericaCover(comericaIds(112, 115), 50),
-        '112': { frontRowHeightFt: 17, overhang: { coveredFromRow: COMERICA_COVER['112'], soffitHeightFt: 50 } },
-        '115': { frontRowHeightFt: 31, overhang: { coveredFromRow: COMERICA_COVER['115'], soffitHeightFt: 51 } },
+        '116': { frontRowHeightFt: 5, backHeightFt: 51, backSetbackFt: -25, deckFrontFt: 49, overhang: { coveredFromRow: 26, soffitHeightFt: 40 } },
+        '117': { backHeightFt: 51, backSetbackFt: -25, deckFrontFt: 49, overhang: { coveredFromRow: 33, soffitHeightFt: 40 } },
+        '118': { backHeightFt: 118, backSetbackFt: 48, deckFrontFt: 60, overhang: { coveredFromRow: 33, soffitHeightFt: 51 } },
+        '119': { backHeightFt: 51, backSetbackFt: -25, deckFrontFt: 50, overhang: { coveredFromRow: 26, soffitHeightFt: 41 } },
+        '120': { noCover: true, backHeightFt: 63, backSetbackFt: 9 },
+        '124': { noCover: true, backHeightFt: 63, backSetbackFt: 4 },
       },
       rowsFromMap: true,
       heightsSourced: false,
       coverSourced: true,
-      sources: [RYS_COMERICA, ...comericaSections('112', '113', '114', '115')],
+      sources: [RYS_COMERICA, ...comericaSections('116', '119', '120', '121', '124'), COMERICA_LIDAR],
+    },
+    firstCorner: {
+      label: 'Right-field corner (112–115)',
+      // Two blocks (rows to 33/34, then 37–45), the back one under the
+      // mezzanine from row 37 (sourced). Lidar (3 of 4): front row at field
+      // level (-1 ft; 8 in 112), 10° rake; behind, 51–103 ft up by section.
+      // The mezzanine's front, 49 ft up, reaches out over
+      // 114's position 31 (source: 35), under an underside of ~40 ft (that
+      // front row less 9 ft; 45 over 115, 9 ft above its floor).
+      stand: { rows: 43, frontRowHeightFt: -1, ...COMERICA_LOWER, backHeightFt: 84, backSetbackFt: 24, deckFrontFt: 49 },
+      sections: {
+        '113': { backHeightFt: 51, backSetbackFt: -26, ...comericaCover(['113'], 40)['113'] },
+        '112': { frontRowHeightFt: 8, backHeightFt: 84, backSetbackFt: 62, overhang: { coveredFromRow: COMERICA_COVER['112'], soffitHeightFt: 40 } },
+        '114': { backHeightFt: 103, backSetbackFt: 24, overhang: { coveredFromRow: 31, soffitHeightFt: 40 } },
+        '115': { frontRowHeightFt: 31, overhang: { coveredFromRow: COMERICA_COVER['115'], soffitHeightFt: 45 } },
+      },
+      rowsFromMap: true,
+      heightsSourced: false,
+      coverSourced: true,
+      sources: [RYS_COMERICA, ...comericaSections('112', '113', '114', '115'), COMERICA_LIDAR],
     },
     home: {
       label: 'Lower bowl behind home (125–130)',
       // Rows HHH–KKK and 15–35 behind the boxes; rows 31–34 and up "shaded
-      // during most late afternoon games". The upper deck's roof edge
-      // (~108 ft) ~18 m behind the last row.
-      stand: { rows: 25, ...COMERICA_LOWER, backHeightFt: 108, backSetbackFt: 59 },
+      // during most late afternoon games". Lidar (6 of 6): front row at field
+      // level (-1 ft), 10° rake; no deck over them: what rises highest behind
+      // is the upper deck's front, 62 ft up and 15 ft behind the last row.
+      stand: { rows: 25, frontRowHeightFt: -1, ...COMERICA_LOWER, backHeightFt: 62, backSetbackFt: 15 },
+      sections: { '127': { backHeightFt: 61, backSetbackFt: 1 } },
       rowsFromMap: true,
-      heightsSourced: false,
+      heightsSourced: true,
       coverSourced: true,
-      sources: [RYS_COMERICA, ...comericaSections('125', '127', '128', '130')],
+      sources: [RYS_COMERICA, ...comericaSections('125', '127', '128', '130'), COMERICA_LIDAR],
     },
     third: {
       label: 'Lower bowl, third-base side (131–139)',
-      // Open ("the third base side will be your enemy"). The upper deck's
-      // roof (~108 ft) ~10 m behind the last row.
-      stand: { rows: 35, ...COMERICA_LOWER, backHeightFt: 108, backSetbackFt: 33 },
-      sections: behindDugout(comericaIds(131, 135)),
+      // Open in the source ("the third base side will be your enemy"). Lidar
+      // (9 of 9): front row 2 ft (-1 in 137 and 139), 10° rake. The upper
+      // deck's front, 61 ft up, reaches out over their row 26 (32–33 of the
+      // full 35-row sections), so the rows from there back are covered, under
+      // an underside of ~52 ft (that front row less 9 ft). It is also what
+      // rises highest behind.
+      stand: { rows: 35, frontRowHeightFt: 2, ...COMERICA_LOWER, backHeightFt: 62, backSetbackFt: -9, deckFrontFt: 61, overhang: { coveredFromRow: 26, soffitHeightFt: 52 } },
+      sections: {
+        ...Object.fromEntries(['137', '139'].map((id) => [id, { frontRowHeightFt: -1, overhang: { coveredFromRow: 33, soffitHeightFt: id === '137' ? 53 : 52 } }])),
+        ...Object.fromEntries(['136', '138'].map((id) => [id, { overhang: { coveredFromRow: 32, soffitHeightFt: 53 } }])),
+      },
       rowsFromMap: true,
       heightsSourced: false,
       coverSourced: true,
-      sources: [RYS_COMERICA, ...comericaSections('131', '135', '136', '139')],
+      sources: [RYS_COMERICA, ...comericaSections('131', '135', '136', '139'), COMERICA_LIDAR],
     },
     leftCorner: {
       label: 'Left-field corner (140–143)',
-      // Open but for 143 from row 41 (rows 12–44; sourced). Estimated deck
-      // underside ~56 ft (9 ft above row 41's floor).
-      stand: { rows: 35, ...COMERICA_LOWER, backHeightFt: 108, backSetbackFt: 33 },
-      sections: { '143': { frontRowHeightFt: 15, overhang: { coveredFromRow: COMERICA_COVER['143'], soffitHeightFt: 56 } } },
+      // Open but for 143 from row 41 (rows 12–44; sourced). Lidar (4 of 4):
+      // front row at field level (-1 ft; 3 in 143), 10° rake. The upper
+      // deck's front, 61 ft up, is over 142's row 29 and 143's position 23,
+      // under ~52 ft (that front row less 9 ft); over 140 and 141 nothing.
+      stand: { rows: 35, frontRowHeightFt: -1, ...COMERICA_LOWER, backHeightFt: 62, backSetbackFt: -5, deckFrontFt: 61 },
+      sections: {
+        '140': { backHeightFt: 62, backSetbackFt: 9 },
+        '141': { backHeightFt: 62, backSetbackFt: 11 },
+        '142': { backHeightFt: 62, backSetbackFt: -19, overhang: { coveredFromRow: 29, soffitHeightFt: 52 } },
+        '143': { frontRowHeightFt: 3, backHeightFt: 63, backSetbackFt: -31, overhang: { coveredFromRow: 23, soffitHeightFt: 52 } },
+      },
       rowsFromMap: true,
       heightsSourced: false,
       coverSourced: true,
-      sources: [RYS_COMERICA, ...comericaSections('140', '142', '143')],
+      sources: [RYS_COMERICA, ...comericaSections('140', '142', '143'), COMERICA_LIDAR],
     },
     leftField: {
       label: 'Left-field pavilion (144–151)',
       // Behind the bullpens, open but for 144 from row DD (sourced): "the
-      // most sun of any location". Estimated: front ~10 ft, 22° rake, deck
-      // underside ~54 ft (9 ft above row DD's floor).
-      stand: { rows: 33, frontRowHeightFt: 10, rakeDeg: 22, treadFt: 3, backHeightFt: 60 },
-      sections: comericaCover(['144'], 54),
+      // most sun of any location". Lidar (8 of 8): front row 6 ft (5–6), 11°
+      // rake; behind, 44 ft up (the scoreboard over 149, 173 ft). Canopies
+      // at the top of the pavilion are over 144's position 21 and the last
+      // three rows of 147 and 149, ~34 ft up (42 over 149).
+      stand: { rows: 33, frontRowHeightFt: 6, rakeDeg: 11, treadFt: 3, backHeightFt: 44, backSetbackFt: 2 },
+      sections: {
+        '144': { backHeightFt: 62, backSetbackFt: -34, overhang: { coveredFromRow: 21, soffitHeightFt: 34 } },
+        '147': { overhang: { coveredFromRow: 27, soffitHeightFt: 34 } },
+        '148': { backHeightFt: 123, backSetbackFt: 0 },
+        '149': { backHeightFt: 173, backSetbackFt: -9, overhang: { coveredFromRow: 29, soffitHeightFt: 42 } },
+        ...Object.fromEntries(['150', '151'].map((id) => [id, { backHeightFt: 26, backSetbackFt: 5 }])),
+        '145': { backHeightFt: 43, backSetbackFt: 42 },
+        '146': { backHeightFt: 43, backSetbackFt: 63 },
+      },
       rowsFromMap: true,
       heightsSourced: false,
       coverSourced: true,
-      sources: [RYS_COMERICA, ...comericaSections('144', '146', '148', '151')],
+      sources: [RYS_COMERICA, ...comericaSections('144', '146', '148', '151'), COMERICA_LIDAR],
     },
     rightField: {
       label: 'Right-field bleachers (101–106)',
-      // Rows E–T to A–GG; 104–106 covered from row CC (sourced). Estimated:
-      // front ~6 ft, 22° rake, the balcony above ~49 ft (9 ft above row CC's
-      // floor).
-      stand: { rows: 33, frontRowHeightFt: 6, rakeDeg: 22, treadFt: 3, backHeightFt: 56 },
-      sections: comericaCover(comericaIds(101, 106), 49),
+      // Rows E–T to A–GG; 104–106 covered from row CC (sourced). Lidar (5 of
+      // 6): front row 10 ft (8–11), 12° rake. The balcony deck above, 38 ft up
+      // (its top; the scan sees nothing under it), reaches out over row 23
+      // (20 in 104), more than two rows ahead of the source's; over 103's
+      // last rows something 70 ft up; over 102 nothing. Behind, 26–70 ft up
+      // by section.
+      stand: { rows: 33, frontRowHeightFt: 10, rakeDeg: 12, treadFt: 3, backHeightFt: 40, backSetbackFt: -5, overhang: { coveredFromRow: 23, soffitHeightFt: 38 } },
+      sections: {
+        '101': { noCover: true },
+        '102': { noCover: true, backHeightFt: 26, backSetbackFt: 1 },
+        '103': { backHeightFt: 70, backSetbackFt: -5, overhang: { coveredFromRow: 31, soffitHeightFt: 70 } },
+        '104': { backHeightFt: 56, backSetbackFt: 7, overhang: { coveredFromRow: 20, soffitHeightFt: 38 } },
+        '105': { backHeightFt: 39, backSetbackFt: -31 },
+        '106': { backHeightFt: 40, backSetbackFt: -29 },
+      },
       rowsFromMap: true,
       heightsSourced: false,
       coverSourced: true,
-      sources: [RYS_COMERICA, ...comericaSections('101', '102', '104', '106')],
+      sources: [RYS_COMERICA, ...comericaSections('101', '102', '104', '106'), COMERICA_LIDAR],
     },
     kaline: {
       label: "Kaline's Corner (107–111)",
       // The corner's upper rows past the pole: 110–111 rows 21–36, 107–109
-      // rows 37–47; 107 covered from row 43 (sourced). Estimated: the deck's
+      // rows 37–47; 107 covered from row 43 (sourced). Not measured: the cuts
+      // from home find the corner stand's lower rows. Estimated: the deck's
       // underside ~57 ft (9 ft above row 43's floor).
       stand: { rows: 16, frontRowHeightFt: 24, rakeDeg: 20, treadFt: 3, backHeightFt: 95, backSetbackFt: 30 },
       sections: {
@@ -4477,8 +4537,11 @@ const COMERICA: StadiumStructure = {
     tigerDen: {
       label: 'Tiger Den (TD120–TD135)',
       // Rows A–H at the top of the lower bowl, under the deck above from row
-      // C (sourced). Estimated: front ~42 ft, deck underside ~52 ft.
-      stand: { rows: 8, frontRowHeightFt: 42, rakeDeg: 15, backHeightFt: 60, overhang: { coveredFromRow: 3, soffitHeightFt: 52 } },
+      // C (sourced). Hidden from the air; estimated from the measured tiers
+      // around it: front ~18 ft (the lower bowl's last row, 17 ft), the deck
+      // over it ~29 ft (9 ft above row C's floor); the upper deck's front,
+      // 61 ft, rises behind.
+      stand: { rows: 8, frontRowHeightFt: 18, rakeDeg: 15, backHeightFt: 61, overhang: { coveredFromRow: 3, soffitHeightFt: 29 } },
       rowsFromMap: true,
       heightsSourced: false,
       coverSourced: true,
@@ -4487,7 +4550,8 @@ const COMERICA: StadiumStructure = {
     terrace: {
       label: 'Terraces (116–117, 136–141)',
       // Rows A–H behind the baseline bowls, covered from row C (sourced).
-      stand: { rows: 8, frontRowHeightFt: 42, rakeDeg: 15, backHeightFt: 60, overhang: { coveredFromRow: 3, soffitHeightFt: 52 } },
+      // Hidden from the air; estimated as the Tiger Den.
+      stand: { rows: 8, frontRowHeightFt: 18, rakeDeg: 15, backHeightFt: 61, overhang: { coveredFromRow: 3, soffitHeightFt: 29 } },
       rowsFromMap: true,
       heightsSourced: false,
       coverSourced: true,
@@ -4496,31 +4560,47 @@ const COMERICA: StadiumStructure = {
     mezzanine: {
       label: 'Mezzanine (210–219)',
       // Rows A–F then 1–22 (1–11 in 210 and 219), covered from row 17
-      // (sourced; 210 and 219 not). Estimated: front ~50 ft, 25° rake, roof
-      // underside ~88 ft (9 ft above row 17's floor).
-      stand: { rows: 28, frontRowHeightFt: 50, rakeDeg: 25, treadFt: 2.8, backHeightFt: 95 },
-      sections: comericaCover(comericaIds(210, 219), 88),
+      // (sourced; 210 and 219 not). Lidar (5 of 10; in 211 and 212 the cut
+      // takes the shallow front block): front row 50 ft, 24° rake (23–27).
+      // The roof is seen 103 ft up (its top) past the last rows, so the
+      // source's covered rows stay, under it. Behind, 72 ft up far back
+      // (86–103 in 210 and 216).
+      stand: { rows: 28, frontRowHeightFt: 50, rakeDeg: 24, treadFt: 2.8, backHeightFt: 72, backSetbackFt: 129 },
+      sections: {
+        ...comericaCover(comericaIds(210, 219), 103),
+        '216': { backHeightFt: 86, backSetbackFt: 16, ...comericaCover(['216'], 103)['216'] },
+        ...Object.fromEntries(['214', '215'].map((id) => [id, { backHeightFt: 65, backSetbackFt: 157, ...comericaCover([id], 103)[id] }])),
+        '210': { backHeightFt: 103, backSetbackFt: 12 },
+      },
       rowsFromMap: true,
       heightsSourced: false,
       coverSourced: true,
-      sources: [RYS_COMERICA, ...comericaSections('210', '211', '215', '218', '219')],
+      sources: [RYS_COMERICA, ...comericaSections('210', '211', '215', '218', '219'), COMERICA_LIDAR],
     },
     upper: {
       label: 'Upper deck (321–345)',
-      // Rows A–F then 1–20, covered from row 15 (sourced). Estimated: front
-      // ~60 ft, 30° rake, roof underside ~100 ft (9 ft above row 15's floor;
-      // 98 over 327, 333, 337 and 343, covered from nearer the front).
-      stand: { rows: 26, frontRowHeightFt: 60, rakeDeg: 30, treadFt: 2.65, backHeightFt: 108, overhang: { coveredFromRow: 21, soffitHeightFt: 100 } },
-      sections: { ...comericaCover(comericaIds(321, 345), 100), ...comericaCover(['327', '333', '337', '343'], 98) },
+      // Rows A–F then 1–20, covered from row 15 (sourced). Lidar (21 of 24):
+      // front row 62 ft (61–62), 27° rake (21–35); the roof's edge, 118 ft up
+      // (its top), is over the source's row in 18 of 21 (row 9 in 341 and 345,
+      // 16 in 343, which take theirs). It is also what rises highest behind.
+      // The scan sees nothing under the roof, so its top stands in for its
+      // underside and the tier's heights stay estimated.
+      stand: { rows: 26, frontRowHeightFt: 62, rakeDeg: 27, treadFt: 2.65, backHeightFt: 118, backSetbackFt: -12, overhang: { coveredFromRow: 21, soffitHeightFt: 118 } },
+      sections: {
+        ...comericaCover(comericaIds(321, 345), 118),
+        ...Object.fromEntries(['341', '345'].map((id) => [id, { overhang: { coveredFromRow: 15, soffitHeightFt: 118 } }])),
+        '343': { overhang: { coveredFromRow: 22, soffitHeightFt: 118 } },
+      },
       rowsFromMap: true,
       heightsSourced: false,
       coverSourced: true,
-      sources: [RYS_COMERICA, ...comericaSections('321', '327', '330', '338', '345')],
+      sources: [RYS_COMERICA, ...comericaSections('321', '327', '330', '338', '345'), COMERICA_LIDAR],
     },
     upperCorner: {
       label: 'Upper deck corner (346)',
-      // Rows A–F, open ("avoid the corners").
-      stand: { rows: 6, frontRowHeightFt: 60, rakeDeg: 30, treadFt: 2.65, backHeightFt: 72 },
+      // Rows A–F, open ("avoid the corners"). Not measured; as the upper
+      // deck's front rows.
+      stand: { rows: 6, frontRowHeightFt: 62, rakeDeg: 27, treadFt: 2.65, backHeightFt: 72 },
       rowsFromMap: true,
       heightsSourced: false,
       coverSourced: true,
@@ -4529,17 +4609,19 @@ const COMERICA: StadiumStructure = {
     suite: {
       label: 'Suites',
       // As at the other parks: one row of seats under the suite level's
-      // ceiling, 9 ft above the floor. Estimated ~50 ft up, behind the
-      // terrace's last row (47 ft) and under the deck that covers it from row
-      // 3, so it reaches 17 ft past them.
-      stand: { rows: 1, frontRowHeightFt: 50, rakeDeg: 0, backHeightFt: 62, overhang: { coveredFromRow: 1, soffitHeightFt: 59, reachFt: 17 } },
+      // ceiling, 9 ft above the floor. Estimated ~32 ft up, on the deck over
+      // the Tiger Den and the terraces (its underside ~29 ft, estimated from
+      // the measured lower bowl), under the upper deck (its front row 61 ft,
+      // measured) reaching past them as is typical.
+      stand: { rows: 1, frontRowHeightFt: 32, rakeDeg: 0, backHeightFt: 61, overhang: { coveredFromRow: 1, soffitHeightFt: 41, reachFt: SUITE_DECK_REACH_FT } },
       heightsSourced: false,
       coverSourced: true,
       sources: ['https://www.mlb.com/tigers/ballpark/seating-map'],
     },
   },
-  reviewedOn: '2026-11-11',
+  reviewedOn: '2026-11-13',
 };
+
 
 const rysProgressive = (path: string) => `https://www.rateyourseats.com/progressive-field/seating/${path}`;
 const RYS_PROGRESSIVE = rysProgressive('shaded-covered-seats');
