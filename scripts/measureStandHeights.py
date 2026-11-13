@@ -403,7 +403,23 @@ PARKS = {
     'twins': {
         'scan': {'ept': 'MN_CentralMissRiver_4_B22'}, 'name': 'USGS 3DEP MN_CentralMissRiver_B22 (Minnesota 2022)',
         'noise': [7, 18],
-        'tiers': {},
+        # The boxes from the field, the 100s a step up behind them, the club
+        # deck (A-V) over the 100s' back rows, and the upper deck over the
+        # club's.
+        'tiers': {
+            'box': (-0.8, 1.2, 'near', 5, 4), 'infield': (1.8, 3.6, 'near', 8, 5), 'corner': (-0.8, 3.6, 'near', 5, 5),
+            'club': (10.5, 12.2, 'near', 10, 3), 'clubOpen': (10.5, 12.2, 'near', 10, 3), 'clubCoverUnsourced': (10.5, 12.2, 'near', 10, 3),
+            # The upper deck: the 200s are its front rows; the 300s behind them
+            # are under the canopy, hidden from the air.
+            'terrace': (21.0, 23.5, 'near', 15, 3),
+            # Left field: the bleachers (mostly under the porch), the 200-level
+            # porch, the 300-level porch; right field: the seats over the wall
+            # and the 200s above (the cove is under them).
+            'bleachers': (1.0, 3.0, 'near', 15, 5), 'porch': (11.0, 13.5, 'near', 20, 3), 'porchUpper': (17.0, 19.5, 'near', 25, 5),
+            'rightField': (5.0, 7.5, 'near', 10, 3), 'rightFieldDeck': (11.5, 16.0, 'near', 25, 3),
+        },
+        # The light rigs rise above the canopy (~148 ft).
+        'lightTowersAbove': 47,
     },
     'whitesox': {
         'scan': {'ept': 'USGS_LPC_IL_4County_Cook_2017_LAS_2019'}, 'name': 'USGS 3DEP IL_4County_Cook_2017 (Cook County 2017)',

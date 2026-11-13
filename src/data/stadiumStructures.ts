@@ -4883,6 +4883,7 @@ const TARGET_COVER: Record<string, number> = {
 const targetCover = (ids: readonly string[], soffitHeightFt: number) =>
   Object.fromEntries(ids.filter((id) => TARGET_COVER[id]).map((id) => [id, { overhang: { coveredFromRow: TARGET_COVER[id], soffitHeightFt } }]));
 const targetIds = (from: number, to: number) => Array.from({ length: to - from + 1 }, (_, i) => String(from + i));
+const TARGET_LIDAR = 'USGS 3DEP lidar MN_CentralMissRiver_B22, flown 2022-05-16 to 2022-05-24 (scripts/measureStandHeights.py)';
 
 /** Seating ring of a Target Field chart section. */
 export function targetTier(id: string): string | null {
@@ -4907,105 +4908,137 @@ export function targetTier(id: string): string | null {
 
 /**
  * Target Field (2010). Boxes (1–17, rows to 13) in front of the 100s (rows
- * 1–28, to 44 in the corners), which the club level covers from row 17; the
- * Delta club (A–V, rows 1–12) and the 200s above them, and the 300s under the
- * canopy from row 3. In left field, bleachers (128–131) under the 200s and the
- * open Home Run Porch above; in right field, Treasure Island Cove (132–135,
- * covered) and open seats. Rows and covered rows are Rate Your Seats' section
- * pages. On the 2021 USGS photo, square to the first-base line, the boxes run
- * ~14–24 m back, the 100s from ~27 m, the club deck's front stands at ~40 m
- * and the canopy's at ~58 m (~59 m from home behind it). No source publishes
- * the deck heights, so every height is estimated by stacking the decks.
+ * 1–28, to 44 in the corners), which the club deck covers from row 17; the
+ * Delta club (A–V, rows 1–12) on that deck, and the upper deck over its back
+ * rows: the 200s its front rows, the 300s behind them under the canopy from
+ * row 3. In left field, bleachers (128–131) under the 200-level porch and the
+ * 300-level porch above; in right field, Treasure Island Cove (132–135,
+ * covered) under the right-field 200s, and open seats. Rows and covered rows
+ * are Rate Your Seats' section pages.
+ *
+ * Heights: USGS lidar (Minnesota, May 2022); no structural change since. The
+ * 300s, the bleachers and the cove are hidden from the air under the decks
+ * above them.
  */
 const TARGET: StadiumStructure = {
   stadiumId: 'twins',
-  // Far rim: the canopy (~110 ft) about 520 ft across the field.
-  park: { roof: 'open', farRimHeightFt: 110, fieldCrossingFt: 520 },
+  // Far rim: the canopy, 148 ft up (lidar), ~560 ft across the field.
+  park: { roof: 'open', farRimHeightFt: 148, fieldCrossingFt: 563 },
   tierOf: targetTier,
   tiers: {
     box: {
       label: 'Boxes (1–17)',
-      // Rows 1–13 (5–13 behind the dugouts), open ("rarely shaded").
-      // Estimated: front ~3 ft, 14° rake; the canopy (~110 ft) ~34 m behind
-      // the last row.
-      stand: { rows: 13, frontRowHeightFt: 3, rakeDeg: 14, treadFt: 2.8, backHeightFt: 110, backSetbackFt: 110 },
-      sections: Object.fromEntries(['4', '5', '6', '11', '12', '13'].map((id) => [id, { frontRowHeightFt: 5.8 }]).concat(['16', '17'].map((id) => [id, { frontRowHeightFt: 5.1 }]))),
+      // Rows 1–13 (5–13 behind the dugouts), open ("rarely shaded"). Lidar
+      // (16 of 17): front row 1 ft (-1–2; row 5 behind the dugouts as high),
+      // 11° rake; behind, the canopy 148 ft up and 84 ft back.
+      stand: { rows: 13, frontRowHeightFt: 1, rakeDeg: 11, treadFt: 2.8, backHeightFt: 148, backSetbackFt: 84 },
+      sections: { '3': { backSetbackFt: 73 } },
       rowsFromMap: true,
-      heightsSourced: false,
+      heightsSourced: true,
       coverSourced: true,
-      sources: [RYS_TARGET, ...targetSections('1', '4', '11', '14', '16')],
+      sources: [RYS_TARGET, ...targetSections('1', '4', '11', '14', '16'), TARGET_LIDAR],
     },
     infield: {
       label: 'Infield 100s (107–122)',
       // Rows 1–28, covered from row 17 by the club level (sourced; "the
-      // last twelve rows"). Estimated: front ~12 ft, 20° rake, deck
-      // underside ~37 ft (9 ft above row 17's floor); the canopy (~110 ft)
-      // ~8 m behind the last row.
-      stand: { rows: 28, frontRowHeightFt: 12, rakeDeg: 20, treadFt: 2.8, backHeightFt: 110, backSetbackFt: 26, overhang: { coveredFromRow: 17, soffitHeightFt: 37 } },
+      // last twelve rows"). Lidar (16 of 16): front row 9 ft (8–10), 14°
+      // rake; behind, the canopy 148 ft up over the last row. The club
+      // deck's front row, 37 ft up, reaches out over row 14–17 (14 in six,
+      // which take it); its underside is not seen: 9 ft above the covered
+      // row's floor.
+      stand: { rows: 28, frontRowHeightFt: 9, rakeDeg: 14, treadFt: 2.8, backHeightFt: 148, backSetbackFt: -2, deckFrontFt: 37, overhang: { coveredFromRow: 17, soffitHeightFt: 29 } },
+      sections: Object.fromEntries(['107', '111', '113', '118', '119', '121'].map((id) => [id, { overhang: { coveredFromRow: 14, soffitHeightFt: 28 } }])),
       rowsFromMap: true,
       heightsSourced: false,
       coverSourced: true,
-      sources: [RYS_TARGET, ...targetSections('107', '110', '114', '118', '122')],
+      sources: [RYS_TARGET, ...targetSections('107', '110', '114', '118', '122'), TARGET_LIDAR],
     },
     corner: {
       label: 'Corners (101–106, 123–127)',
       // Rows 1–28 to 1–44; 101–104 covered from row 41 (here 32–41), 105
-      // from 25, 124–126 from 37 (sourced); 106, 123 and 127 not.
-      stand: { rows: 44, frontRowHeightFt: 4, rakeDeg: 20, treadFt: 2.8, backHeightFt: 60 },
-      sections: { ...targetCover([...targetIds(101, 105), '124', '125', '126'], 54), '101': { frontRowHeightFt: 11, overhang: { coveredFromRow: TARGET_COVER['101'], soffitHeightFt: 54 } }, '127': { frontRowHeightFt: 7 } },
+      // from 25, 124–126 from 37 (sourced); 106, 123 and 127 not. Lidar (11
+      // of 11): front row at field level (-2–2 ft), 13° rake; behind, the
+      // canopy 148 ft up, 17 ft back (by section, below). The club deck's
+      // front row, 37 ft up, reaches out over row 26 of 105, 106 and 123
+      // (which take it; 105's source says 25), its underside 9 ft above
+      // that row's floor. Over 101–104 and 124–126 the scan's "edge" is a
+      // thin cable line, not a deck: their sourced rows stand, under an
+      // estimated ~54 ft.
+      stand: { rows: 44, frontRowHeightFt: 0, rakeDeg: 13, treadFt: 2.8, backHeightFt: 148, backSetbackFt: 17 },
+      sections: {
+        ...targetCover([...targetIds(101, 104), '124', '125', '126'], 54),
+        '101': { backHeightFt: 147, backSetbackFt: 32, overhang: { coveredFromRow: TARGET_COVER['101'], soffitHeightFt: 54 } },
+        '103': { backSetbackFt: -8, overhang: { coveredFromRow: TARGET_COVER['103'], soffitHeightFt: 54 } },
+        '104': { backSetbackFt: 6, overhang: { coveredFromRow: TARGET_COVER['104'], soffitHeightFt: 54 } },
+        '105': { backSetbackFt: 31, deckFrontFt: 37, overhang: { coveredFromRow: TARGET_COVER['105'], soffitHeightFt: 28 } },
+        ...Object.fromEntries(['106', '123'].map((id) => [id, { backSetbackFt: 31, deckFrontFt: 37, overhang: { coveredFromRow: 26, soffitHeightFt: 28 } }])),
+        '125': { backSetbackFt: 1, overhang: { coveredFromRow: TARGET_COVER['125'], soffitHeightFt: 54 } },
+        '127': { backHeightFt: 145, backSetbackFt: 50 },
+      },
       rowsFromMap: true,
       heightsSourced: false,
       coverSourced: true,
-      sources: [RYS_TARGET, ...targetSections('101', '104', '105', '106', '123', '124', '127')],
+      sources: [RYS_TARGET, ...targetSections('101', '104', '105', '106', '123', '124', '127'), TARGET_LIDAR],
     },
     club: {
       label: 'Delta SKY360 Club (A–D, K–V)',
-      // Rows 1–12 (to 14), covered from row 9 (sourced). Estimated: front
-      // ~34 ft, 20° rake, the 200s' underside ~51 ft (9 ft above row 9's
-      // floor).
-      stand: { rows: 12, frontRowHeightFt: 34, rakeDeg: 20, treadFt: 2.8, backHeightFt: 110, backSetbackFt: 40, overhang: { coveredFromRow: 9, soffitHeightFt: 51 } },
+      // Rows 1–12 (to 14), covered from row 9 (sourced). Lidar (14 of 15):
+      // front row 38 ft, 21° rake; the upper deck's front row, 72–73 ft up,
+      // reaches out over row 6, three rows ahead of the source's, so the
+      // rows from 6 are covered; its underside is not seen: that row less
+      // 9 ft. Behind, its front rises to 76 ft, 18 ft in front of the last
+      // row.
+      stand: { rows: 12, frontRowHeightFt: 38, rakeDeg: 21, treadFt: 2.8, backHeightFt: 76, backSetbackFt: -18, deckFrontFt: 72, overhang: { coveredFromRow: 6, soffitHeightFt: 63 } },
       rowsFromMap: true,
       heightsSourced: false,
       coverSourced: true,
-      sources: [RYS_TARGET, ...targetSections('A', 'D', 'K', 'R', 'V')],
+      sources: [RYS_TARGET, ...targetSections('A', 'D', 'K', 'R', 'V'), TARGET_LIDAR],
     },
     clubOpen: {
       label: 'Delta SKY360 Club (F–J)',
       // Rows 1–12 behind home with no covered rows given; "E–J start in the
-      // sun and eventually become shaded".
-      stand: { rows: 12, frontRowHeightFt: 34, rakeDeg: 20, treadFt: 2.8, backHeightFt: 110, backSetbackFt: 40 },
+      // sun and eventually become shaded". Lidar (4 of 4): front row 38 ft,
+      // 22° rake; the upper deck's front row, 72 ft up, reaches out over row
+      // 6 (its underside that less 9 ft), rising to 75 ft 16 ft in front of
+      // the last row.
+      stand: { rows: 12, frontRowHeightFt: 38, rakeDeg: 22, treadFt: 2.8, backHeightFt: 75, backSetbackFt: -16, deckFrontFt: 72, overhang: { coveredFromRow: 6, soffitHeightFt: 63 } },
       rowsFromMap: true,
       heightsSourced: false,
       coverSourced: true,
-      sources: [RYS_TARGET, ...targetSections('F', 'H', 'J')],
+      sources: [RYS_TARGET, ...targetSections('F', 'H', 'J'), TARGET_LIDAR],
     },
     clubCoverUnsourced: {
       label: 'Delta SKY360 Club (E)',
-      // "All seats … shaded during most day games", but no covered rows
-      // given, so the check tries both.
-      stand: { rows: 12, frontRowHeightFt: 34, rakeDeg: 20, treadFt: 2.8, backHeightFt: 110, backSetbackFt: 40, overhang: { coveredFromRow: 9, soffitHeightFt: 51 } },
-      rowsFromMap: true,
-      heightsSourced: false,
-      coverSourced: false,
-      sources: targetSections('E'),
-    },
-    terrace: {
-      label: 'Terrace (201–228)',
-      // Rows 1–4 to 1–8, open (no covered rows given). Estimated: front
-      // ~52 ft, 22° rake, the 300s rising behind.
-      stand: { rows: 6, frontRowHeightFt: 52, rakeDeg: 22, treadFt: 2.8, backHeightFt: 110, backSetbackFt: 30 },
+      // "All seats … shaded during most day games"; no covered rows given.
+      // Lidar: front row 38 ft, 21° rake; the upper deck's front row, 72 ft
+      // up, reaches out over row 6 (its underside that less 9 ft), rising to
+      // 76 ft 16 ft in front of the last row.
+      stand: { rows: 12, frontRowHeightFt: 38, rakeDeg: 21, treadFt: 2.8, backHeightFt: 76, backSetbackFt: -16, deckFrontFt: 72, overhang: { coveredFromRow: 6, soffitHeightFt: 63 } },
       rowsFromMap: true,
       heightsSourced: false,
       coverSourced: true,
-      sources: targetSections('201', '211', '220', '228'),
+      sources: [...targetSections('E'), TARGET_LIDAR],
+    },
+    terrace: {
+      label: 'Terrace (201–228)',
+      // Rows 1–4 to 1–8, open (no covered rows given): the upper deck's
+      // front rows. Lidar (26 of 28): front row 73 ft, 31° rake; behind, the
+      // canopy 148 ft up over the last row (over 225 and 226 the scan's
+      // "edge" is the walkway at the top of their rows).
+      stand: { rows: 6, frontRowHeightFt: 73, rakeDeg: 31, treadFt: 2.8, backHeightFt: 148, backSetbackFt: -1 },
+      rowsFromMap: true,
+      heightsSourced: true,
+      coverSourced: true,
+      sources: [...targetSections('201', '211', '220', '228'), TARGET_LIDAR],
     },
     view: {
       label: 'View level (301–327)',
       // Rows 1–14, covered from row 3 by the canopy (7–8 at the ends;
-      // sourced). Estimated: front ~66 ft, 28° rake, canopy underside
-      // ~100 ft.
-      stand: { rows: 14, frontRowHeightFt: 66, rakeDeg: 28, treadFt: 2.7, backHeightFt: 110, overhang: { coveredFromRow: 3, soffitHeightFt: 100 } },
-      sections: targetCover(['301', '302', '303', '304', '326', '327'], 100),
+      // sourced). Hidden from the air behind the 200s, under the canopy: the
+      // 200s' measured slope (73 ft, 31°) carried back over their six rows
+      // (83 ft); the canopy, 148 ft up where the scan sees its edge (its top).
+      stand: { rows: 14, frontRowHeightFt: 83, rakeDeg: 31, treadFt: 2.7, backHeightFt: 148, overhang: { coveredFromRow: 3, soffitHeightFt: 148 } },
+      sections: targetCover(['301', '302', '303', '304', '326', '327'], 148),
       rowsFromMap: true,
       heightsSourced: false,
       coverSourced: true,
@@ -5015,8 +5048,10 @@ const TARGET: StadiumStructure = {
       label: 'Left-field bleachers (128–131)',
       // Rows 1–15/16 under the 200 level from row 3 (sourced: "all rows …
       // covered by the overhang" but "the first couple rows … always in the
-      // sun"). Estimated: front ~10 ft, 20° rake, deck underside ~22 ft.
-      stand: { rows: 15, frontRowHeightFt: 10, rakeDeg: 20, treadFt: 2.8, backHeightFt: 50, overhang: { coveredFromRow: 3, soffitHeightFt: 22 } },
+      // sun"). Hidden from the air under the porch. Estimated: front ~10 ft,
+      // 20° rake; deck underside ~32 ft (the porch's front row, 41 ft by
+      // lidar, less 9 ft).
+      stand: { rows: 15, frontRowHeightFt: 10, rakeDeg: 20, treadFt: 2.8, backHeightFt: 50, overhang: { coveredFromRow: 3, soffitHeightFt: 32 } },
       rowsFromMap: true,
       heightsSourced: false,
       coverSourced: true,
@@ -5025,26 +5060,33 @@ const TARGET: StadiumStructure = {
     porch: {
       label: 'Home Run Porch, 200 level (229–234)',
       // Rows 1–4 to 1–7, open ("the only shade comes from the clouds").
-      stand: { rows: 6, frontRowHeightFt: 28, rakeDeg: 20, treadFt: 2.8, backHeightFt: 34 },
+      // Lidar (5 of 6): front row 41 ft, 32° rake; behind, the upper porch's
+      // front 62 ft up and 6 ft back.
+      stand: { rows: 6, frontRowHeightFt: 41, rakeDeg: 32, treadFt: 2.8, backHeightFt: 62, backSetbackFt: 6 },
       rowsFromMap: true,
-      heightsSourced: false,
+      heightsSourced: true,
       coverSourced: true,
-      sources: [RYS_TARGET, ...targetSections('229', '234')],
+      sources: [RYS_TARGET, ...targetSections('229', '234'), TARGET_LIDAR],
     },
     porchUpper: {
       label: 'Home Run Porch, 300 level (329–334)',
-      // Rows 1–16, open.
-      stand: { rows: 16, frontRowHeightFt: 46, rakeDeg: 26, treadFt: 2.8, backHeightFt: 64 },
+      // Rows 1–16, open. Lidar (4 of 8): front row 61 ft, 36° rake; behind,
+      // 87–109 ft up right behind the last row (the scoreboard, the bottom
+      // of its face 99 ft, reaches over 331's and 332's last two rows,
+      // too few to change the source's open rows; nothing behind 333).
+      stand: { rows: 16, frontRowHeightFt: 61, rakeDeg: 36, treadFt: 2.8, backHeightFt: 97, backSetbackFt: 1 },
+      sections: { '331': { backHeightFt: 109, backSetbackFt: 2 }, '333': { backHeightFt: 32, backSetbackFt: 129 } },
       rowsFromMap: true,
-      heightsSourced: false,
+      heightsSourced: true,
       coverSourced: true,
-      sources: [RYS_TARGET, ...targetSections('329', '334')],
+      sources: [RYS_TARGET, ...targetSections('329', '334'), TARGET_LIDAR],
     },
     cove: {
       label: 'Treasure Island Cove (132–135)',
-      // Rows 1–4, all under the overhang (sourced). Estimated: front ~14 ft
-      // over the wall, deck underside ~24 ft.
-      stand: { rows: 4, frontRowHeightFt: 14, rakeDeg: 15, treadFt: 2.8, backHeightFt: 40, overhang: { coveredFromRow: 1, soffitHeightFt: 24 } },
+      // Rows 1–4, all under the overhang (sourced). Hidden from the air under
+      // the right-field 200s. Estimated: front ~14 ft over the wall; deck
+      // underside ~33 ft (the 200s' front row, 42 ft by lidar, less 9 ft).
+      stand: { rows: 4, frontRowHeightFt: 14, rakeDeg: 15, treadFt: 2.8, backHeightFt: 40, overhang: { coveredFromRow: 1, soffitHeightFt: 33 } },
       rowsFromMap: true,
       heightsSourced: false,
       coverSourced: true,
@@ -5052,21 +5094,29 @@ const TARGET: StadiumStructure = {
     },
     rightField: {
       label: 'Right field (136–140)',
-      // Rows 1–7, open.
-      stand: { rows: 7, frontRowHeightFt: 14, rakeDeg: 15, treadFt: 2.8, backHeightFt: 40 },
+      // Rows 1–7, open. Lidar (5 of 5): front row 21 ft (20–22) over the
+      // wall, 16° rake; behind, 32 ft up right behind the last row (44 ft
+      // and 68 ft back behind 139, 82 ft and 50 ft back behind 140).
+      stand: { rows: 7, frontRowHeightFt: 21, rakeDeg: 16, treadFt: 2.8, backHeightFt: 32, backSetbackFt: 4 },
+      sections: { '139': { backHeightFt: 44, backSetbackFt: 68 }, '140': { backHeightFt: 82, backSetbackFt: 50 } },
       rowsFromMap: true,
-      heightsSourced: false,
+      heightsSourced: true,
       coverSourced: true,
-      sources: targetSections('136', '138'),
+      sources: [...targetSections('136', '138'), TARGET_LIDAR],
     },
     rightFieldDeck: {
       label: 'Right-field 200s (237–240)',
-      // Rows 1–12 to 1–22, open ("no shade for day games").
-      stand: { rows: 16, frontRowHeightFt: 30, rakeDeg: 24, treadFt: 2.8, backHeightFt: 50 },
+      // Rows 1–12 to 1–22, open ("no shade for day games"). Lidar (3 of 4):
+      // front row 42 ft (52 in 240), 35° rake; behind, a roof 78 ft up over
+      // the last two rows. Over 239's and 240's last rows stands an open
+      // frame (a lamp bank, 75–128 ft), neither a deck nor a wall: left out,
+      // as the light towers are.
+      stand: { rows: 16, frontRowHeightFt: 42, rakeDeg: 35, treadFt: 2.8, backHeightFt: 78, backSetbackFt: -6 },
+      sections: { '240': { frontRowHeightFt: 52 } },
       rowsFromMap: true,
-      heightsSourced: false,
+      heightsSourced: true,
       coverSourced: true,
-      sources: targetSections('237', '240'),
+      sources: [...targetSections('237', '240'), TARGET_LIDAR],
     },
     suite: {
       label: 'Suites',
@@ -5079,7 +5129,7 @@ const TARGET: StadiumStructure = {
       sources: ['https://www.mlb.com/twins/ballpark/seating-map'],
     },
   },
-  reviewedOn: '2026-11-11',
+  reviewedOn: '2026-11-13',
 };
 
 const rysRate = (path: string) => `https://www.rateyourseats.com/rate-field/seating/${path}`;

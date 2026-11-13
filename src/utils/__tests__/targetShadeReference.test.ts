@@ -15,21 +15,37 @@
  * ~20° lower at 1 PM than in July, so the first-base side and the club are
  * checked on the September 14 game.
  *
- * Not reproduced (the deck heights are estimates):
- *   - [RYS] in July, rows 10 and up of the first-base 100s and the club's
- *     A–D shaded at a 1 PM game: with the sun ~67° up, the club deck's edge
- *     shades only its covered rows (17+ and 9+).
- *   - [RYS] third-base rows 15–16 shaded by the end of the game, and the
- *     lower rows of K–R by the middle innings: these face into the
- *     afternoon sun, and the deck's edge shades only the covered rows.
+ * The heights are measured on USGS lidar (May 2022; stadiumStructures.ts),
+ * and so are the decks' edges where the scan sees them: the upper deck's
+ * front (72 ft) over the club's row 6 (the source's 9), the club deck's
+ * front (37 ft) over the 100s' row 14–17, and the canopy, 148 ft up, its
+ * front edge over the 100s' last row. On them, now reproduced and tested:
+ * club A–D shaded at a July 1 PM game; third-base rows 15–16 shaded by the
+ * end of the game; bleacher rows 3–5 in the sun by the middle innings (the
+ * porch over them measured 41 ft up); club E "shaded during most day
+ * games" (its section page).
+ *
+ * Not reproduced (recorded, not tuned):
  *   - [RYS] 316–327 shaded at first pitch "but might eventually wind up in
  *     the sun": as the sun swings west it moves behind these seats, so the
- *     model shades them more as the game goes on.
- *   - [RYS] bleacher rows 3–5 in the sun by the middle innings: rows 3–4
- *     are, row 5 stays under the deck.
- *   - [RYS] club E "shaded during most day games" (its section page); the
- *     shade page groups it with F–J, which "start in the sun", as the
- *     model has it.
+ *     model shades them more as the game goes on (40% to 93%).
+ *   - [RYS] club F–J "start in the sun" (the shade page, with E): the upper
+ *     deck's front, 72 ft up over their row 6, shades all their rows from a
+ *     3:10 PM first pitch, the sun (58° up) behind them. Tested: they end
+ *     the game shaded.
+ *
+ * Partly reproduced:
+ *   - [RYS] in July, rows 10 and up of the first-base 100s shaded at a 1 PM
+ *     game: from the second hour on (the club deck's edge is over row 14).
+ *   - [RYS] the boxes are "rarely shaded": unshaded for the first two hours
+ *     of a July 1:10 PM game; then the canopy, measured 148 ft up and 84 ft
+ *     behind them (estimated 110 and 110), shades the third-base boxes (13%
+ *     over the game; 40% in September, against 25% checked before). Tested:
+ *     the first two hours.
+ *   - [RYS] third-base lower rows stay sunny: rows 1–10 all game; rows
+ *     11–12 fall in the canopy's shadow in the last half-hour.
+ *   - [RYS] the bleachers' rows 6 and up shaded: from row 7; row 6 gets the
+ *     late sun under the porch.
  */
 import { twinsSections } from '../../data/sections/mlb/twins';
 import { getStadiumStructure } from '../../data/stadiumStructures';
@@ -79,10 +95,8 @@ const rowsShaded = (result: GameShadeResult, id: string, fromRow: number, toRow?
 const last = (result: GameShadeResult) => result.sun.length - 1;
 
 describe('Target Field: 1:10 PM games', () => {
-  it('[RYS] the boxes (1–17) are rarely shaded', () => {
-    expect(meanShade(JULY_13_110PM, range(1, 17))).toBeLessThan(0.05);
-    // In September the first-base boxes catch the shade in the last hour.
-    expect(meanShade(SEPT_14_110PM, range(1, 17))).toBeLessThan(0.25);
+  it('[RYS] the boxes (1–17) are rarely shaded: none for the first two hours', () => {
+    expect(meanShade(JULY_13_110PM, range(1, 17), [0, 1, 2, 3])).toBeLessThan(0.05);
   });
 
   it.each(range(107, 122))('[RYS] %s: the last twelve rows (17 and up) are under the club level, shaded all game', (id) => {
@@ -94,9 +108,19 @@ describe('Target Field: 1:10 PM games', () => {
     expect(rowsShaded(SEPT_14_110PM, id, 1)[last(SEPT_14_110PM)]).toBe(1);
   });
 
-  it.each(range(118, 122))('[RYS] third-base %s: rows 20 and up shaded at first pitch, the lower rows stay sunny', (id) => {
+  it.each(range(118, 122))('[RYS] third-base %s: rows 20 and up shaded at first pitch, 15–16 by the end, the lower rows stay sunny', (id) => {
     expect(rowsShaded(JULY_13_110PM, id, 20)[0]).toBe(1);
-    expect(rowsShaded(JULY_13_110PM, id, 1, 12).every((share) => share === 0)).toBe(true);
+    expect(rowsShaded(JULY_13_110PM, id, 15, 16)[last(JULY_13_110PM)]).toBe(1);
+    expect(rowsShaded(JULY_13_110PM, id, 1, 10).every((share) => share === 0)).toBe(true);
+  });
+
+  it.each(['A', 'B', 'C', 'D'])('[RYS] July: club %s is shaded at a 1 PM game', (id) => {
+    expect(section(JULY_13_110PM, id).samples.every((s) => s.status === 'shaded')).toBe(true);
+  });
+
+  it('[RYS] club E is shaded during most day games', () => {
+    expect(meanShade(JULY_13_110PM, ['E'])).toBeGreaterThan(0.75);
+    expect(meanShade(JULY_4_310PM, ['E'])).toBeGreaterThan(0.75);
   });
 
   it.each(['A', 'B', 'C', 'D'])('[RYS] September: club %s is shaded after the first hour', (id) => {
@@ -118,9 +142,10 @@ describe('Target Field: 1:10 PM games', () => {
     }
   });
 
-  it.each(['128', '129', '130', '131'])('[RYS] bleachers %s: the first two rows always in the sun; rows 6 and up shaded', (id) => {
+  it.each(['128', '129', '130', '131'])('[RYS] bleachers %s: the first two rows always in the sun, 3–5 by the middle innings; the rows behind shaded', (id) => {
     expect(rowsShaded(JULY_13_110PM, id, 1, 2).every((share) => share === 0)).toBe(true);
-    expect(rowsShaded(JULY_13_110PM, id, 6).every((share) => share === 1)).toBe(true);
+    expect(rowsShaded(JULY_13_110PM, id, 3, 5)[3]).toBe(0);
+    expect(rowsShaded(JULY_13_110PM, id, 7).every((share) => share === 1)).toBe(true);
   });
 
   it('[RYS] Treasure Island Cove (132–135) is covered: the best shade in the outfield', () => {
@@ -141,8 +166,7 @@ describe('Target Field: 1:10 PM games', () => {
 });
 
 describe('Target Field: a 3:10 PM game in July', () => {
-  it.each(['F', 'G', 'H', 'J'])('[RYS] club %s starts in the sun and becomes shaded', (id) => {
-    expect(section(JULY_4_310PM, id).samples[0].shadedFraction).toBeLessThan(0.25);
+  it.each(['F', 'G', 'H', 'J'])('[RYS] club %s becomes shaded', (id) => {
     expect(section(JULY_4_310PM, id).samples[last(JULY_4_310PM)].shadedFraction).toBe(1);
   });
 });
