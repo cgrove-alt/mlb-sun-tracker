@@ -136,7 +136,7 @@ function coverAlternatives(stand: StandProfile): StandProfile[] {
 
 /**
  * The structure around the seats moved by `factor`: how far the back wall and
- * the deck's underside rise above the front row, how far back the structure
+ * the deck's underside and front rise above the front row, how far back the structure
  * stands and how far the deck reaches out. Scaling every height together
  * would barely change the geometry that matters; this changes the structure
  * relative to the seats.
@@ -147,6 +147,7 @@ function perturbStructure(stand: StandProfile, heightFactor: number, setbackFact
     ...stand,
     backHeightFt: base + (stand.backHeightFt - base) * heightFactor,
     backSetbackFt: stand.backSetbackFt === undefined ? undefined : stand.backSetbackFt * setbackFactor,
+    deckFrontFt: stand.deckFrontFt === undefined ? undefined : base + (stand.deckFrontFt - base) * heightFactor,
     overhang: stand.overhang
       ? {
           ...stand.overhang,

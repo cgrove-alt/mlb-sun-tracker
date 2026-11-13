@@ -4,6 +4,10 @@
  * estimated (scripts/measureStandHeights.py, `cover`). A lower one would put
  * the deck through the heads of the people sitting there. Heights are whole
  * feet, so an underside may round down by half a foot.
+ *
+ * Where a deck's front is given (`deckFrontFt`, its front row as the scan
+ * measures it), it stands at or above the underside and within 15 ft of it:
+ * a section under another deck than its tier's sets its own.
  */
 import { MLB_STADIUMS } from '../../data/stadiums';
 import { getStadiumSections } from '../../data/stadium-data-aggregator';
@@ -28,5 +32,18 @@ describe('decks over the stands', () => {
       }
     }
     expect(tooLow).toEqual([]);
+  });
+
+  it.each(MLB_STADIUMS.map((s) => [s.id, s] as const))("%s: every deck's front is its own", async (_id, stadium) => {
+    const sections = await getStadiumSections(stadium.id, 'MLB');
+    const structure = getStadiumStructure(stadium.id) ?? genericStructure(stadium.id, stadium.roof, sections);
+    const wrong: string[] = [];
+    for (const section of sections) {
+      const stand = standFor(structure, section.id, section.rows?.length)?.stand;
+      if (!stand?.overhang || stand.deckFrontFt === undefined) continue;
+      const above = stand.deckFrontFt - stand.overhang.soffitHeightFt;
+      if (above < 0 || above > 15) wrong.push(`${section.id} (front ${stand.deckFrontFt} ft, underside ${stand.overhang.soffitHeightFt} ft)`);
+    }
+    expect(wrong).toEqual([]);
   });
 });

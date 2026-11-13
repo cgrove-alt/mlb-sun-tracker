@@ -9,8 +9,8 @@
  *   - Sun BEHIND the stand (within 90° of the direction the stand's back
  *     faces): the ray from the head climbs back over the rows behind. It is
  *     blocked by the stand itself rising behind the fan, by whatever sits on
- *     top of the stand (concourse wall, upper deck, press box), or by the
- *     underside of a deck overhead.
+ *     top of the stand (concourse wall, upper deck, press box), or by a deck
+ *     overhead (its underside, or its front for the rows in front of it).
  *   - Sun IN FRONT (the fan faces it): the ray climbs out over the field. Only
  *     the lip of a deck overhead can block it, or, when the sun is low, the
  *     far side of the stadium.
@@ -53,6 +53,13 @@ export interface StandProfile {
    * the deck above a level of suites reaches out over the seats in front.
    */
   overhang?: { coveredFromRow: number; soffitHeightFt: number; reachFt?: number };
+  /**
+   * Height above the field of the top of that deck's front at its edge (for
+   * a deck of seats, its front row), feet; default: its underside. With the
+   * sun behind the stand, a ray from a row in front of the edge that passes
+   * it below this height hits the deck's front.
+   */
+  deckFrontFt?: number;
   /** Height above the field of the top of whatever stands behind the last row. */
   backHeightFt: number;
   /** How far behind the last row that structure stands, feet (default 0: right behind it). */
@@ -123,7 +130,8 @@ export function rowLight(
         // Whatever stands on top of the back of the stand.
         [backU + (stand.backSetbackFt ?? 0) - u, stand.backHeightFt - headZ],
       ];
-      if (stand.overhang) obstacles.push([lipU - u, stand.overhang.soffitHeightFt - headZ]);
+      // The deck's edge, up to the top of its front.
+      if (stand.overhang) obstacles.push([lipU - u, Math.max(stand.overhang.soffitHeightFt, stand.deckFrontFt ?? 0) - headZ]);
       const blocked = obstacles.some(([du, dz]) => du > 0 && dz > 0 && dz / du > tanPlane);
       return blocked ? 'shade' : 'sun';
     }

@@ -93,6 +93,17 @@ describe('shade engine: sun in the fans\' faces', () => {
     expect(rowLight(suite, 180, OPEN_AIR, sun)).toEqual(['sun']);
     expect(rowLight({ ...suite, overhang: { ...suite.overhang!, reachFt: 17 } }, 180, OPEN_AIR, sun)).toEqual(['shade']);
   });
+
+  it("a sun behind that passes a deck's edge between its underside and its front hits the front", () => {
+    // Row 5 is two rows in front of the edge: from its head the underside
+    // (30 ft) rises at about 63°, the deck's front (40 ft) at about 73°.
+    const stand: StandProfile = { rows: 10, frontRowHeightFt: 10, rakeDeg: 15, backHeightFt: 10, overhang: { coveredFromRow: 8, soffitHeightFt: 30 } };
+    const sun = { azimuthDeg: 180, altitudeDeg: 68 };
+    expect(rowLight(stand, 180, OPEN_AIR, sun)[4]).toBe('sun');
+    expect(rowLight({ ...stand, deckFrontFt: 40 }, 180, OPEN_AIR, sun)[4]).toBe('shade');
+    // A higher sun clears the front too.
+    expect(rowLight({ ...stand, deckFrontFt: 40 }, 180, OPEN_AIR, { ...sun, altitudeDeg: 78 })[4]).toBe('sun');
+  });
 });
 
 describe('shade engine: status bands', () => {

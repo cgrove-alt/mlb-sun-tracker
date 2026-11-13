@@ -993,7 +993,10 @@ def cover_report(park):
     where both show; 9 ft if none do); never less than 9 ft above the floor
     of the first covered row the profile gets (the scan's edge, the tier's
     row or the source's). Prints the tier's values and the sections that
-    differ, or that the tier's underside would leave under 9 ft."""
+    differ, or that the tier's underside would leave under 9 ft. With each
+    underside, the deck's front (the top of what a sun from behind meets at
+    the edge): the front row of the deck of seats starting there, where it
+    stands above the underside; none for a roof, whose top is its underside."""
     d = json.load(open(f'tmp/lidar/{park}-measured.json'))
     data = load_sections(park)
     secs = {s['id']: s for s in data['sections']}
@@ -1037,7 +1040,10 @@ def cover_report(park):
                     if above_front is not None and under >= above_front - 2:
                         under = above_front - depth
                         break
-            info.append({'id': r['id'], 'rows': st['rows'], 'm': m, 'l': l, 'off': off, 'under': under,
+            deck_front = None
+            if l is not None:
+                deck_front = next((f for f in (r.get('aboveFrontFt'), deck_above.get(key)) if f is not None), None)
+            info.append({'id': r['id'], 'rows': st['rows'], 'm': m, 'l': l, 'off': off, 'under': under, 'deck_front': deck_front,
                          # The profile's own front row and rake: the floor the engine uses.
                          'front': st['frontRowHeightFt'], 'rise': st.get('treadFt', 2.75) * math.tan(math.radians(st['rakeDeg'])),
                          'face': r['lipSoffitFt'], 'low': r.get('lipLowFt'), 'above': r.get('aboveFrontFt')})
@@ -1053,19 +1059,25 @@ def cover_report(park):
             i['min'] = None if i['row'] is None else i['front'] + (i['row'] - 1) * i['rise'] + 9
             if i['under'] is not None and i['min'] is not None:
                 i['under'] = max(i['under'], i['min'])
+            if i['deck_front'] is not None and (i['under'] is None or i['deck_front'] < i['under'] + 2):
+                i['deck_front'] = None
         unders = [i['under'] for i in info if i['under'] is not None]
         tier_under = r0(med(unders)) if unders else None
+        fronts = [i['deck_front'] for i in info if i['deck_front'] is not None]
+        tier_front = r0(med(fronts)) if fronts else None
         fmt = lambda v: '-' if v is None else f'{v:.0f}'
         print(f"{key}: {n_off}/{len(info)} off by >2 rows; tier -> {tier_row if apply else 'keep sourced'}; "
-              f"underside {fmt(med(unders))} [{fmt(min(unders) if unders else None)}-{fmt(max(unders) if unders else None)}] "
+              f"underside {fmt(med(unders))} [{fmt(min(unders) if unders else None)}-{fmt(max(unders) if unders else None)}], "
+              f"deck front {fmt(med(fronts))} [{fmt(min(fronts) if fronts else None)}-{fmt(max(fronts) if fronts else None)}] "
               f"(lowest {fmt(med([i['low'] for i in info if i['low']]))}, deck above {fmt(med([i['above'] for i in info if i['above']]))}, "
               f"face {fmt(med([i['face'] for i in info if i['face']]))} n{sum(1 for i in info if i['face'])})")
         for i in info:
             differs = i['under'] is not None and tier_under is not None and abs(i['under'] - tier_under) > max(0.1 * tier_under, 3)
             # The tier's underside would sit under 9 ft over this section's covered row.
             too_low = i['min'] is not None and tier_under is not None and i['min'] > tier_under + 0.5
-            if i['own_row'] or too_low or (differs and tier_row is not None):
-                print(f"   '{i['id']}': rows {i['rows']}, sourced {i['m']}, edge {i['l']}, row {i['row']}, underside {fmt(i['under'])}"
+            front_differs = i['deck_front'] is not None and tier_front is not None and abs(i['deck_front'] - tier_front) > 3
+            if i['own_row'] or too_low or (differs and tier_row is not None) or front_differs:
+                print(f"   '{i['id']}': rows {i['rows']}, sourced {i['m']}, edge {i['l']}, row {i['row']}, underside {fmt(i['under'])}, deck front {fmt(i['deck_front'])}"
                       f" (lowest {fmt(i['low'])}, deck above {fmt(i['above'])}, face {fmt(i['face'])})")
 
 
