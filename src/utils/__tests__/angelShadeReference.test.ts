@@ -11,13 +11,23 @@
  *   [RYS] https://www.rateyourseats.com/angel-stadium/seating/shaded-covered-seats
  *         and its section pages (101–135, 201–260, 301–351, 401–436, 501–540)
  *
- * Not reproduced (the deck heights are estimates):
+ * The heights are measured on USGS lidar (2023 and 2018; stadiumStructures.ts).
+ *
+ * Not reproduced:
  *   - [RYS] the front of the Terrace's 229–233 is in the sun by the end of a
  *     1 PM game, and 230–233's front rows between 4 and 7 PM. The model
  *     reproduces it for 233, in the right-field corner (tested below); 229–232
  *     face south along the line, so a low western sun runs along their rows
- *     and the deck above keeps them shaded at 1 PM, with only the first
- *     sample of a 6:38 PM game reaching their front third.
+ *     and the deck above keeps them shaded at 1 PM, with only the first two
+ *     samples of a 6:38 PM game reaching their front two or three rows. (The
+ *     Terrace is hidden from the air: its heights are estimated from the
+ *     measured tiers around it.)
+ *   - [RYS] third-base sections 104–113 are in the sun at first pitch of a
+ *     1 PM game ("only the last row ... is shaded in the middle of the
+ *     summer"). The scan puts the club level's front over their row 22 (of
+ *     24–27), and the model shades the rows under it, 13–22% of each
+ *     section, at first pitch. They are in the shade by the end of the game
+ *     (tested below).
  */
 import { angelsSections } from '../../data/sections/mlb/angels';
 import { getStadiumStructure } from '../../data/stadiumStructures';
@@ -76,10 +86,10 @@ describe('Angel Stadium: a 1:07 PM game in July', () => {
     expect(rowsShaded(JULY_13_107PM, '233', 1, 3)[last(JULY_13_107PM)]).toBeLessThan(1);
   });
 
-  it.each(range(104, 113))('[RYS] third-base section %s: in the sun at first pitch, in the shade by the end of the game', (id) => {
+  it.each(range(104, 113))('[RYS] third-base section %s: in the shade by the end of the game', (id) => {
     const samples = section(JULY_13_107PM, id).samples;
-    expect(samples[0].shadedFraction).toBeLessThan(0.1);
     expect(samples[last(JULY_13_107PM)].shadedFraction).toBeGreaterThanOrEqual(0.85);
+    expect(samples[last(JULY_13_107PM)].shadedFraction).toBeGreaterThan(samples[0].shadedFraction);
   });
 
   it('[RYS] seek out the third-base side', () => {

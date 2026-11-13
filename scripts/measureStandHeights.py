@@ -238,11 +238,34 @@ PARKS = {
         'edgeMinFt': {'upper': 120},
     },
     'angels': {
-        # The 2023 California gaps scan covers only a strip of the park; the
-        # 2018 SoCal scan covers all of it.
-        'scan': {'ept': 'USGS_LPC_CA_SoCal_Wildfires_B1_2018_LAS_2019'}, 'name': 'USGS 3DEP CA_SoCal_Wildfires_B1_2018 (Orange County 2018-19)',
+        # The 2018 SoCal scan (AWS) stops at its project's edge, leaving out
+        # home plate's side of the park; the 2023 California gaps tile (from
+        # USGS, rockyweb, 10 MB, downloaded to tmp/lidar/raw/) covers a strip
+        # from there to ~70 m east of the park's middle. Where it has points,
+        # only its points.
+        'scan': {'ept': 'USGS_LPC_CA_SoCal_Wildfires_B1_2018_LAS_2019',
+                 'laz': ['tmp/lidar/raw/USGS_LPC_CA_CaliforniaGaps_B23_11SMT418740.laz']},
+        'url': ['https://rockyweb.usgs.gov/vdelivery/Datasets/Staged/Elevation/LPC/Projects/CA_CaliforniaGaps_B23/CA_CaliforniaGaps_2_B23/LAZ/USGS_LPC_CA_CaliforniaGaps_B23_11SMT418740.laz'],
+        'name': 'USGS 3DEP CA_CaliforniaGaps_B23 (November 2023) and CA_SoCal_Wildfires_B1_2018 (August 2018)',
         'noise': [7, 18],
-        'tiers': {},
+        # The Terrace (200s) is under the club level, hidden. The field level
+        # steps up ~1 m at an aisle part way back (its front block is the
+        # run); the 500s show rows A-C before their roof, and only where a
+        # walkway sets them above the 400s. The upper right-field pavilion
+        # shows as a deck near the pole (241-244); further out its rows go
+        # on from the lower pavilion's.
+        'tiers': {
+            'field': (-0.5, 1.2, 'near', 5, 4), 'club': (9.5, 11.5, 'near', 5),
+            'loge': (16.8, 20.5, 'near', 15), 'view': (23, 25.5, 'near', 10),
+            'rightPavilion': (3.0, 5.0, 'near', 10), 'rightPavilionUpper': (10, 12, 'near', 5),
+            'leftPavilion': (0.5, 3.2, 'near', 10, 4),
+        },
+        # The light towers behind both pavilions rise to ~168 ft; the lamp
+        # banks on the roof's front edge (~123 ft) only to ~143 ft, over the
+        # 500s' front rows, which a lower threshold would take with them.
+        'lightTowersAbove': 45,
+        'skip': {'241': 'its cut crosses a flat platform at an angle (5° rake), not the pavilion rows',
+                 '260': "its place on the seat map cuts the field level's end (101's rows, under the club level), not the pavilion"},
     },
     'rockies': {
         'scan': {'ept': 'CO_DRCOG_2_2020'}, 'name': 'USGS 3DEP CO_DRCOG_2020 (Denver 2020)',
@@ -341,7 +364,7 @@ def fetch(park):
     home = home_of(park)
     k = 1 / math.cos(math.radians(home['lat']))  # Web Mercator metres per ground metre
     scan = PARKS[park]['scan']
-    cols = []
+    cols, parts, newer_parts = [], [], []
     if 'ept' in scan:
         project = scan['ept']
         xmin, xmax, ymin, ymax = home['x'] - HALF * k, home['x'] + HALF * k, home['y'] - HALF * k, home['y'] + HALF * k
@@ -373,9 +396,8 @@ def fetch(park):
 
         with concurrent.futures.ThreadPoolExecutor(16) as pool:
             parts = list(pool.map(read, keys))
-    else:
+    if 'laz' in scan:
         from pyproj import Transformer
-        parts = []
         for path in scan['laz']:
             las = laspy.read(path)
             crs = las.header.parse_crs()
@@ -386,13 +408,24 @@ def fetch(park):
             x, y = np.asarray(las.x), np.asarray(las.y)
             m = (np.abs(x - hx) <= HALF * 1.01) & (np.abs(y - hy) <= HALF * 1.01)
             mx, my = Transformer.from_crs(horiz, 'EPSG:3857', always_xy=True).transform(x[m], y[m])
-            parts.append((las, m, (mx - home['x']) / k, (my - home['y']) / k))
-    for las, m, east, north in parts:
-        inside = (np.abs(east) <= HALF) & (np.abs(north) <= HALF)
-        sel = np.flatnonzero(m)[inside]
-        cols.append({'east': east[inside].astype(np.float32), 'north': north[inside].astype(np.float32),
-                     'z': np.asarray(las.z)[sel], 'cls': np.asarray(las.classification)[sel],
-                     'gps': np.asarray(las.gps_time)[sel]})
+            newer_parts.append((las, m, (mx - home['x']) / k, (my - home['y']) / k))
+    # Tiles with a scan: where the tiles (newer, flown to fill the scan's
+    # gaps) have points, only theirs (2 m cells, less one at their edge,
+    # where a cell is only partly theirs); the scan fills the rest.
+    cell = lambda v: np.clip(((v + HALF) // 2).astype(int), 0, int(HALF))
+    newer = np.zeros((int(HALF) + 1, int(HALF) + 1), bool)
+    for las, m, east, north in newer_parts:
+        newer[cell(east), cell(north)] = True
+    newer = ndimage.binary_erosion(newer)
+    for older, group in ((True, parts), (False, newer_parts)):
+        for las, m, east, north in group:
+            inside = (np.abs(east) <= HALF) & (np.abs(north) <= HALF)
+            if older and newer_parts:
+                inside &= ~newer[cell(east), cell(north)]
+            sel = np.flatnonzero(m)[inside]
+            cols.append({'east': east[inside].astype(np.float32), 'north': north[inside].astype(np.float32),
+                         'z': np.asarray(las.z)[sel], 'cls': np.asarray(las.classification)[sel],
+                         'gps': np.asarray(las.gps_time)[sel]})
     data = {c: np.concatenate([p[c] for p in cols]) for c in cols[0]}
     os.makedirs('tmp/lidar', exist_ok=True)
     np.savez_compressed(f'tmp/lidar/{park}.npz', **data)

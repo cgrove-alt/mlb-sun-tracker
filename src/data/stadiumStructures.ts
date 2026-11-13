@@ -3165,41 +3165,63 @@ export function angelTier(id: string): string | null {
   return 'view';
 }
 
+const ANGEL_LIDAR = 'USGS 3DEP lidar CA_CaliforniaGaps_B23, flown 2023-11-10, and CA_SoCal_Wildfires_B1_2018, flown 2018-08-12 (scripts/measureStandHeights.py)';
+
 /**
  * Angel Stadium (1966, rebuilt 1998). The Field level (100s), the Terrace
  * (200s) entirely under the Club level, the Club (300s), the 400s and the
- * View level (500s) under a roof from row D; pavilions in both outfields.
- * Rows and covered rows are Rate Your Seats' section pages. No source
- * publishes the deck heights, so every height is estimated by stacking the
- * decks.
+ * View level (500s) under a roof; pavilions in both outfields. Rows and
+ * covered rows are Rate Your Seats' section pages.
+ *
+ * Heights are measured on USGS airborne lidar (ANGEL_LIDAR: the 2023 tile
+ * covers home plate's side of the park, which the 2018 scan leaves out; they
+ * agree to 2 cm where both have ground), as at Citizens Bank Park: for each
+ * section a cut straight back through its stand gives the front row's
+ * height and the rake, the edge of any deck over it, and what rises highest
+ * behind. Where a deck's edge is more than two rows from the source's
+ * covered row (or covers three or more it leaves open), the scan's row is
+ * used. The scan sees decks from above: a deck's underside is the bottom of
+ * its face where seen; where only its front row of seats shows, that row
+ * less 9 ft; never under 9 ft above the floor of the first covered row.
+ * Not measured (tier values): the Terrace (hidden), 101, 105, 106, 110–112,
+ * 120, 125, 128, 129, 133–135, 236, 241, 242, 245–249, 260, 322, 330, 347,
+ * 348, 406, 434, 436 and 36 of the 40 500s.
  */
 const ANGEL: StadiumStructure = {
   stadiumId: 'angels',
-  // Far rim: the View level's roof (~118 ft) about 550 ft across the field.
-  park: { roof: 'open', farRimHeightFt: 118, fieldCrossingFt: 550 },
+  // Far rim (lidar): the roof line, median over sections 123 ft; crossing:
+  // the median distance from a section to it across the field, 614 ft.
+  park: { roof: 'open', farRimHeightFt: 123, fieldCrossingFt: 614 },
   tierOf: angelTier,
   tiers: {
     field: {
       label: 'Field level (100s)',
       // Rows A–Z (C–Z or C–W behind the dugouts and home, AA–BB in front
       // in the corners), open; "only the last row of sections 104–113 is
-      // shaded in the middle of the summer". The decks above stack forward,
-      // so what stands behind the 100s is the View level's roof: on the
-      // photo its front edge is ~44 m from the first-base line, ~11 m behind
-      // the 100s' last row (~33 m), and ~60 m from home behind the plate, 20 m
-      // behind theirs. Estimated: front row ~4 ft, 18° rake, roof edge ~116 ft.
-      stand: { rows: 26, frontRowHeightFt: 4, rakeDeg: 18, backHeightFt: 116, backSetbackFt: 36 },
-      sections: Object.fromEntries(['114', '115', '116', '117', '118', '119', '120', '121', '122'].map((id) => [id, { backSetbackFt: 65 }])),
+      // shaded in the middle of the summer". Lidar (22 of 35): front row
+      // 2 ft (0–3), 14° rake (10–17; an aisle part way back steps up ~1 ft);
+      // what rises highest behind is the roof's edge, 123 ft up and 41 ft
+      // back (in five, a lamp bank on it, 140 ft). Where a section runs past
+      // 21 rows (the corners), the club level's front, 34–35 ft up, reaches
+      // out over its row 22 (25 in 103), so those rows are covered, under an
+      // underside of ~25 ft (that front row less 9 ft).
+      stand: { rows: 26, frontRowHeightFt: 2, rakeDeg: 14, backHeightFt: 123, backSetbackFt: 41, overhang: { coveredFromRow: 22, soffitHeightFt: 25 } },
+      sections: {
+        ...Object.fromEntries(['102', '113', '124', '131', '132'].map((id) => [id, { backHeightFt: 140, backSetbackFt: 38 }])),
+        '103': { overhang: { coveredFromRow: 25, soffitHeightFt: 27 } },
+      },
       rowsFromMap: true,
       heightsSourced: false,
       coverSourced: true,
-      sources: [RYS_ANGEL, ...angelSections('101', '104', '110', '114', '118', '122', '126', '130', '135')],
+      sources: [RYS_ANGEL, ...angelSections('101', '104', '110', '114', '118', '122', '126', '130', '135'), ANGEL_LIDAR],
     },
     terrace: {
       label: 'Terrace level (200s)',
-      // Rows A–L, every row under the Club level (sourced). Estimated:
-      // front ~26 ft, 22° rake, the Club level's underside ~44 ft.
-      stand: { rows: 12, frontRowHeightFt: 26, rakeDeg: 22, backHeightFt: 46, overhang: { coveredFromRow: 1, soffitHeightFt: 44 } },
+      // Rows A–L, every row under the Club level (sourced). Hidden from the
+      // air; estimated from the measured tiers around it: front ~16 ft (the
+      // field level's last row behind home), 22° rake, the Club level's
+      // underside ~26 ft (its front row, 35 ft, less 9 ft).
+      stand: { rows: 12, frontRowHeightFt: 16, rakeDeg: 22, backHeightFt: 35, overhang: { coveredFromRow: 1, soffitHeightFt: 26 } },
       rowsFromMap: true,
       heightsSourced: false,
       coverSourced: true,
@@ -3207,83 +3229,103 @@ const ANGEL: StadiumStructure = {
     },
     rightPavilion: {
       label: 'Right-field pavilion (236–240)',
-      // Rows A–Z and VV–YY, "zero protection from the sun". Estimated:
-      // front ~8 ft above the wall, 20° rake, the back ~40 ft.
-      stand: { rows: 30, frontRowHeightFt: 8, rakeDeg: 20, backHeightFt: 40 },
+      // Rows A–Z and VV–YY, "zero protection from the sun". Lidar (4 of 5):
+      // front row 13 ft above the field, 17° rake (15–18); behind, 111 ft
+      // up and 44 ft back (68 in 238).
+      stand: { rows: 30, frontRowHeightFt: 13, rakeDeg: 17, backHeightFt: 111, backSetbackFt: 44 },
+      sections: { '238': { backHeightFt: 68, backSetbackFt: 57 } },
       rowsFromMap: true,
-      heightsSourced: false,
+      heightsSourced: true,
       coverSourced: true,
-      sources: [RYS_ANGEL, ...angelSections('236', '238', '240')],
+      sources: [RYS_ANGEL, ...angelSections('236', '238', '240'), ANGEL_LIDAR],
     },
     rightPavilionUpper: {
       label: 'Right-field pavilion (241–249)',
-      // Rows A–M, open (as above). Estimated: front ~36 ft, 24° rake.
-      stand: { rows: 13, frontRowHeightFt: 36, rakeDeg: 24, backHeightFt: 54 },
+      // Rows A–M, open (as above). Lidar (2 of 9; further out its rows go on
+      // from the lower pavilion's, ~37 ft up there too): front row 37 ft
+      // (36–39), 23° rake; behind, a canopy 64 ft up and 16 ft back.
+      stand: { rows: 13, frontRowHeightFt: 37, rakeDeg: 23, backHeightFt: 64, backSetbackFt: 16 },
       rowsFromMap: true,
-      heightsSourced: false,
+      heightsSourced: true,
       coverSourced: true,
-      sources: [RYS_ANGEL, ...angelSections('241', '245', '249')],
+      sources: [RYS_ANGEL, ...angelSections('241', '245', '249'), ANGEL_LIDAR],
     },
     leftPavilion: {
       label: 'Left-field pavilion (256–260)',
-      // Rows A–Z or G–Z; no source says whether they are covered, so the
-      // check tries both. Estimated: front ~8 ft, 20° rake, the cover over
-      // row 18 and up ~34 ft (9 ft above row 18's floor).
-      stand: { rows: 22, frontRowHeightFt: 8, rakeDeg: 20, backHeightFt: 34, overhang: { coveredFromRow: 18, soffitHeightFt: 34 } },
+      // Rows A–Z or G–Z; no source says whether they are covered. Lidar (4
+      // of 5; 260's place on the seat map cuts the field level's end): front
+      // row 9 ft (3 in 256), 16° rake; no deck over any of them, which
+      // settles the cover; behind, 32 ft up and 11 ft back (26–38).
+      stand: { rows: 22, frontRowHeightFt: 9, rakeDeg: 16, backHeightFt: 32, backSetbackFt: 11 },
+      sections: {
+        '259': { backHeightFt: 26, backSetbackFt: 1 },
+        ...Object.fromEntries(['257', '258'].map((id) => [id, { backHeightFt: 38, backSetbackFt: 21 }])),
+        '256': { frontRowHeightFt: 3, backHeightFt: 26, backSetbackFt: 1 },
+      },
       rowsFromMap: true,
-      heightsSourced: false,
-      coverSourced: false,
-      sources: angelSections('257', '258', '259', '260'),
+      heightsSourced: true,
+      coverSourced: true,
+      sources: [...angelSections('257', '258', '259', '260'), ANGEL_LIDAR],
     },
     club: {
       label: 'Club level (300s)',
       // Rows A–H (330–351 behind the dugouts and toward right field); "rows E
-      // and above are shaded during most day games" but no source says what
-      // covers them, so the check tries both. Estimated: front ~48 ft, 22°
-      // rake, the 400s' underside ~62 ft, the roof edge (~116 ft) ~30 ft
-      // behind the last row.
-      stand: { rows: 8, frontRowHeightFt: 48, rakeDeg: 22, backHeightFt: 116, backSetbackFt: 30, overhang: { coveredFromRow: 5, soffitHeightFt: 62 } },
-      rowsFromMap: true,
-      heightsSourced: false,
-      coverSourced: false,
-      sources: [RYS_ANGEL, ...angelSections('301', '310', '321', '330', '340', '351')],
-    },
-    loge: {
-      label: '400 level',
-      // Rows A–J; no covered rows given ("all seats shaded during most late
-      // afternoon games" on the third-base side), so the check tries both.
-      // Behind them the View level rises to its roof, whose edge sits over
-      // its row D. Estimated: front ~64 ft, 26° rake, roof edge ~116 ft about
-      // 12 ft behind the last row.
-      stand: { rows: 10, frontRowHeightFt: 64, rakeDeg: 26, backHeightFt: 116, backSetbackFt: 12 },
-      rowsFromMap: true,
-      heightsSourced: false,
-      coverSourced: false,
-      sources: angelSections('401', '410', '418', '421', '430', '436'),
-    },
-    view: {
-      label: 'View level (500s)',
-      // Rows A–R, under the roof from row D (sourced). Estimated: front
-      // ~84 ft, 30° rake, roof underside ~116 ft.
-      stand: { rows: 18, frontRowHeightFt: 84, rakeDeg: 30, backHeightFt: 118, overhang: { coveredFromRow: 4, soffitHeightFt: 116 } },
+      // and above are shaded during most day games". Lidar (40 of 44): front
+      // row 35 ft (34–35), 23° rake (17–24); the 400s' front, 59–60 ft up,
+      // reaches out over row 4–5 (2 in 331), which settles the cover: from
+      // row E, under an underside of ~50 ft (that front row less 9 ft). It is
+      // also what rises highest behind.
+      stand: { rows: 8, frontRowHeightFt: 35, rakeDeg: 23, backHeightFt: 60, backSetbackFt: -10, overhang: { coveredFromRow: 5, soffitHeightFt: 50 } },
+      sections: { '331': { overhang: { coveredFromRow: 2, soffitHeightFt: 50 } } },
       rowsFromMap: true,
       heightsSourced: false,
       coverSourced: true,
-      sources: [RYS_ANGEL, ...angelSections('501', '510', '520', '530', '540')],
+      sources: [RYS_ANGEL, ...angelSections('301', '310', '321', '330', '340', '351'), ANGEL_LIDAR],
+    },
+    loge: {
+      label: '400 level',
+      // Rows A–J, open ("all seats shaded during most late afternoon games"
+      // on the third-base side). Lidar (33 of 36): front row 60 ft (58–62),
+      // 32° rake (30–33); behind, the View level rises to its roof, whose
+      // edge is 123 ft up, 4 ft behind the last row (in seven, a lamp bank
+      // on it, 137–141 ft).
+      stand: { rows: 10, frontRowHeightFt: 60, rakeDeg: 32, backHeightFt: 123, backSetbackFt: 4 },
+      sections: {
+        ...Object.fromEntries(['404', '411'].map((id) => [id, { backHeightFt: 137, backSetbackFt: 2 }])),
+        ...Object.fromEntries(['402', '410', '426', '427', '433'].map((id) => [id, { backHeightFt: 141, backSetbackFt: 4 }])),
+      },
+      rowsFromMap: true,
+      heightsSourced: true,
+      coverSourced: true,
+      sources: [...angelSections('401', '410', '418', '421', '430', '436'), ANGEL_LIDAR],
+    },
+    view: {
+      label: 'View level (500s)',
+      // Rows A–R, under the roof from row D (sourced). Lidar (4 of 40; the
+      // others' rows go on from the 400s' with no step to find): front row
+      // 80 ft, 32° rake (30–33). The roof's edge, 123 ft up (its top; at 511
+      // and 512 a lamp bank on it comes first), is over row A in all four,
+      // three rows ahead of the source's, so the rows from A are covered.
+      stand: { rows: 18, frontRowHeightFt: 80, rakeDeg: 32, backHeightFt: 122, backSetbackFt: -44, overhang: { coveredFromRow: 1, soffitHeightFt: 123 } },
+      rowsFromMap: true,
+      heightsSourced: true,
+      coverSourced: true,
+      sources: [RYS_ANGEL, ...angelSections('501', '510', '520', '530', '540'), ANGEL_LIDAR],
     },
     suite: {
       label: 'Suites',
       // As at the other parks: one row of seats under the suite level's
-      // ceiling, 9 ft above the floor. Estimated ~58 ft up, behind the club's
-      // last row (56 ft) and under the deck that covers it from row 5, so it
-      // reaches 11 ft past them.
-      stand: { rows: 1, frontRowHeightFt: 58, rakeDeg: 0, backHeightFt: 70, overhang: { coveredFromRow: 1, soffitHeightFt: 67, reachFt: 11 } },
+      // ceiling, 9 ft above the floor. Estimated ~43 ft up, behind the Club
+      // level's last row (43 ft, measured front and rake) and under the
+      // 400s (their front row 60 ft), which cover it from row 5, so they
+      // reach 11 ft past them.
+      stand: { rows: 1, frontRowHeightFt: 43, rakeDeg: 0, backHeightFt: 60, overhang: { coveredFromRow: 1, soffitHeightFt: 52, reachFt: 11 } },
       heightsSourced: false,
       coverSourced: true,
       sources: ['https://www.mlb.com/angels/tickets/seating-map/3d'],
     },
   },
-  reviewedOn: '2026-11-11',
+  reviewedOn: '2026-11-12',
 };
 
 const rysCoors = (path: string) => `https://www.rateyourseats.com/coors-field/seating/${path}`;
