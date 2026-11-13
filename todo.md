@@ -1154,7 +1154,80 @@ Tropicana Field (fixed roof) are out of scope.
       Caveat: a roof is treated as the top of a wall behind the seats; on
       the ground light may come in under its open back (Busch's 152–154 in
       March read shadier than Rate Your Seats says).
-- [ ] 7.3 Batch 3
+- [x] 7.3 Batch 3 lidar heights: Angels, Rockies, Royals, Reds, Pirates
+      (2026-11-12, 5 commits from 5a6c39c4f to 897bece5c; option A covers and
+      the 9-ft rule applied in the same commit; all 3490 tests pass; the five
+      stadium pages checked on the dev server, no console errors).
+      Scans: Angels 2023 California gaps tile (home plate's side, which the
+      2018 SoCal scan leaves out) with the 2018 scan for the rest (they agree
+      to 2 cm on the ground); Coors 2020, Kauffman 2020, Great American 2022
+      (no later scans cover them); PNC 2024 (two rockyweb tiles, cropped and
+      deleted).
+      Measured front rows (ft, was estimated):
+      | Park | Lower | Middle | Upper | Roof / far rim |
+      |---|---|---|---|---|
+      | Angel Stadium | field 2 (4); Terrace hidden | club 35 (48) | 400s 60 (64), 500s 80 (84) | 123 (118) |
+      | Coors Field | field 0 (4), RF seats 15 (8) | club 34 (48) | L 67 (70), U 85 (84), Rockpile 51 (10) | 128 (100) |
+      | Kauffman | field 3 (3), Plaza 16 (20–24) | Loge hidden | upper 60 (74); AA–ZZ hidden | 151 (130) |
+      | Great American | field -1–1 (3), Diamond -1 (2) | club 35 (44), 200s 35 (36) | 400s 52 / LF 33 (48), 420s 68 (52), View 84–88 (76–80) | 138 (112) |
+      | PNC Park | field -1 (3), 100s 5 (14) | club 53 (52) | 300s 76 (66), rooftop 39 (40) | 120 (100) |
+      Low-confidence share at a 1:10 PM game, April / July, before → after:
+      Angels 41/37 → 31/23, Coors 48/39 → 25/27, Kauffman 34/5 → 22/16 (the
+      July rise is Kauffman's hidden double-letter rows, still estimated),
+      Great American 34/21 → 9/6, PNC 25/13 → 7/11.
+      Covered rows from the scan (option A), the larger moves: Coors' 100s
+      from 26 (28–37), club from 5 (8), U rows from 6 (10); Angels' 500s from
+      A (D) and the corners' 100s from 22 (none); Kauffman's Plaza from 6
+      (LL/NN), the upper deck's last rows in five sections; Great American's
+      club from 4 (G), third-base 400s from 14 (Q), View level from 7 and 11
+      (L, O); PNC's 100s from 17 (W) and 300s from 6 (R). Settled where only
+      an estimate stood: Coors behind home, Angels' club (from E) and left
+      pavilion (open), Great American 113–120, 200s and 306–307, PNC 313–319.
+      A tier fix found on the way: Coors 301–309 were in the Rockpile's
+      profile (front 10 ft); they are the Reserve Level Outfield, rows 1–5,
+      open (Rate Your Seats), now their own tier at 68 ft.
+      Reference checks: now hold — Coors' third-base club by 3 PM, PNC's
+      upper half of 301–312 "always shaded" (three games); partly — Kauffman's
+      rows M–V of 409–417 from about 3:40 (claim: after 3:00). Recorded as not
+      reproduced, each with its measured reason in the test header — Coors
+      133's rows 28+, Angels 104–113 at first pitch (the club deck is over
+      their row 22), Kauffman's double-letter ends and 248, Great American's
+      third-base 400s (the View level's edge is over their row 14), PNC's
+      club "rarely in the shade" (the first-base club is shaded in the last
+      hour, as the later-innings check says).
+      Method added (re-checked against the committed parks: one value
+      affected, Cardinals 269, which it reproduces):
+      - Fetch combines a scan with newer tiles flown to fill its gaps: where
+        a tile has points, only its points.
+      - A band can ask for a least run length (Coors: a 3–4 m piece at the
+        backstop was taken as the stand).
+      - An edge that shows a deck's front row but too few points beneath
+        uses that row less the deck depth.
+      - The light-tower filter's height sits between a roof's lamp banks
+        (which stand over seats) and the pylon towers (Angels).
+      - Hidden tiers (Angels' Terrace, Kauffman's Loge and double-letter
+        rows) are re-estimated from the measured tiers around them.
+      - Where nothing rises behind a stand, its own top (Rockpile, 521, PNC
+        142/144).
+      - Skipped, with reasons: cuts across the rows at an angle (Coors L311,
+        Angels 241, Great American 401–405, whose front comes from the cut
+        from home plate), a seat map place off the stand (Angels 260), the
+        front rows below a step (Kauffman 417–425).
+      Open for you:
+      1. Engine: with the sun behind a stand, a deck stops it only below its
+         underside, not up to the top of its front face (Coors 133: underside
+         27 ft, face top ~39 ft). Taking the face top would shade the rows
+         just in front of every deck edge more, at all 30 parks.
+      2. Tool: an underside seen more than a metre behind a deck's edge is
+         not used (Great American's 400s: seen at 83–88 ft, the rule gives
+         78). Using it would change some committed undersides; it barely
+         moves the one claim checked (25% → 24%).
+      3. Kauffman's double-letter rows: the roof is seen over them from AA
+         (source: MM); they are hidden, so the source's row stays by the
+         approved rule.
+      Caveat: row depth stays 2.75 ft; the scans are too sparse to read rows
+      (Angels: ~5 points a metre), and where it matters (Angels 104–113) it
+      moves the covered row by 2–3.
 - [ ] 7.4 Batch 4
 - [ ] 7.5 Batch 5 (retractable roofs: measure the parked roof only where the scan shows it open)
 
