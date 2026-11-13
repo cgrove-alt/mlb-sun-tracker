@@ -782,13 +782,22 @@ def measure_section(P, sec, band):
     lip_row = None if lip is None else max(1, round((lip - run['s0']) / tread) + 1)
     if lip_row is not None and lip_row > rows:
         lip, lip_row = None, None
-    # A deck over the back rows hides the seats behind its edge from the air
-    # (a few metres show under it, seen at an angle). Seats seen well past an
-    # edge are not under it: it is a bridge or a sign over a few rows.
+    # A deck over the back rows hides the seats behind its edge from the air:
+    # a scanner looks at most ~30° off vertical, so the seats show under it
+    # only as far as its height over them times tan 30° (a few metres; more
+    # under a high roof). Seats seen further past an edge, or with open sky
+    # over some of them, are not under it: it is a bridge, a sign over a few
+    # rows, or a structure beside the cut.
     flags = []
     if lip is not None and run['s1'] > lip + 6:
-        lip, lip_row = None, None
-        flags.append('seatsPastEdge')
+        past = run['s1'] - lip
+        n_bins = int(past / 0.5)
+        seen_over = np.unique(((s[over & (s >= lip) & (s < lip + n_bins * 0.5)] - lip) / 0.5).astype(int))
+        at_lip = z[over & (s >= lip) & (s <= lip + 1.0)]
+        height = float(np.percentile(at_lip, 5)) - (run['c'] + slope * lip) if len(at_lip) else 0.0
+        if len(seen_over) < 0.9 * n_bins or past > height * math.tan(math.radians(30)):
+            lip, lip_row = None, None
+            flags.append('seatsPastEdge')
     soffit = lip_low = None
     if lip is not None:
         # The bottom of the deck's front face, when the scan sees that face.
@@ -811,9 +820,15 @@ def measure_section(P, sec, band):
     # A roof high above whose edge comes first, over a deck of seats that
     # starts further back under it (Truist Park's canopy over the 300 level):
     # that deck is the edge over these rows, the lower of the two.
+    # A deck has headroom under the roof over its front (the roof's own back
+    # truss, sloping up to meet it, does not).
+    def headroom(r):
+        zz = z[(np.abs(s - r['s0']) <= 0.5) & (z > r['z0'] + 1.5)]
+        return float(zz.min()) - r['z0'] if len(zz) else 0.0
     if lip is not None and lip_low is not None:
         under_roof = [r for r in all_runs if lip + 2 < r['s0'] <= back and r['z0'] < lip_low - 2
-                      and r['z0'] > run['c'] + slope * r['s0'] + 2.2 and r['slope'] >= math.tan(math.radians(15))]
+                      and r['z0'] > run['c'] + slope * r['s0'] + 2.2 and r['slope'] >= math.tan(math.radians(15))
+                      and headroom(r) >= 2.2]
         if under_roof:
             deck = min(under_roof, key=lambda r: r['s0'])
             lip, soffit, lip_low, above_front = deck['s0'], None, deck['z0'], deck['z0']
@@ -1052,9 +1067,10 @@ def cover_report(park):
     r0 = lambda v: None if v is None else int(round(v))
     # How far a deck's lowest structure at its edge sits below its front row,
     # measured at this park's edges where both show (9 ft if fewer than three
-    # do: one edge is not a measurement).
+    # do: one edge is not a measurement). More than 15 ft below, the lowest
+    # structure is another, lower level's (suites under the deck of seats).
     drops = [r['aboveFrontFt'] - r['lipLowFt'] for r in d['sections'] if r['found'] and r.get('lipLowFt')
-             and r.get('aboveFrontFt') and r['aboveFrontFt'] - r['lipLowFt'] > 2]
+             and r.get('aboveFrontFt') and 2 < r['aboveFrontFt'] - r['lipLowFt'] <= 15]
     depth = float(np.median(drops)) if len(drops) >= 3 else 9.0
     # Where the deck above shows only its first row or two (too short to be
     # found as seats), its front row as measured on its own sections.
