@@ -382,7 +382,23 @@ PARKS = {
         # right field and added canopied decks there.
         'scan': {'ept': 'OH_Statewide_Phase1_1_2019'}, 'name': 'USGS 3DEP OH_Statewide_Phase1_2019 (Ohio Phase 1, 2019)',
         'noise': [7, 18],
-        'tiers': {},
+        # The lower bowl from the field; the club deck (326-348) a deck above
+        # its first-base side; the upper deck's boxes (400s, rows A-F), then
+        # its reserved seats (500s) a step up where there is one.
+        'tiers': {
+            'first': (-0.8, 2.0, 'near', 5, 5), 'home': (-0.8, 1.2, 'near', 5, 5), 'third': (-0.8, 1.5, 'near', 5, 5),
+            'rightCorner': (-0.8, 4.0, 'near', 5, 5), 'rightField': (1.0, 2.6, 'near', 8, 5), 'leftField': (4.5, 10, 'near', 15, 5),
+            'club': (7.5, 9.0, 'near', 10, 5), 'rightFieldClub': (10.5, 12.0, 'near', 12, 3),
+            'upperBox': (19.8, 22.6, 'near', 12, 3), 'upper': (24.0, 27.0, 'near', 15, 3),
+        },
+        # The light towers rise above the roof canopy (~141 ft).
+        'lightTowersAbove': 46,
+        # The Terrace Club's stepped decks over and behind these (and the
+        # left-field corner, 176-179, not measured) were rebuilt after the
+        # scan (the North Coast Social Club, 2025).
+        'skip': {**{n: 'what is over and behind it, the Terrace Club, was rebuilt in 2024-25'
+                    for n in ('167', '169', '170', '171', '172', '174', '175')},
+                 '117': "its cut runs over the right-field corner's flat platform, not up its rows"},
     },
     'twins': {
         'scan': {'ept': 'MN_CentralMissRiver_4_B22'}, 'name': 'USGS 3DEP MN_CentralMissRiver_B22 (Minnesota 2022)',

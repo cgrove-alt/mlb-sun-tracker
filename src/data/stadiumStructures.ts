@@ -4657,66 +4657,93 @@ export function progressiveTier(id: string): string | null {
   return 'upper';
 }
 
+const PROGRESSIVE_LIDAR = 'USGS 3DEP lidar OH_Statewide_Phase1_2019, flown 2019-11-09 (scripts/measureStandHeights.py)';
 // The lower bowl along each line, square to its rows on the photo: rows A–HH
-// from the wall ~12 m out to ~41 m (a ~2.8 ft tread). Estimated: front
-// ~3 ft, 18° rake. The upper deck's roof canopy (~125 ft) stands ~31 m behind
-// the last row on both sides.
-const PROGRESSIVE_LOWER = { frontRowHeightFt: 3, rakeDeg: 18, treadFt: 2.8, backHeightFt: 125, backSetbackFt: 100 };
-/** The sections whose front rows give way to a dugout or the boxes behind home start at row F. */
-const progressiveRowF = (ids: readonly string[]) => Object.fromEntries(ids.map((id) => [id, { frontRowHeightFt: 7.5 }]));
+// from the wall (from F behind the dugouts). Lidar: front row at field level
+// (3–4 ft at row F), 11–13° rake, a ~2.8 ft tread.
+const PROGRESSIVE_TREAD = { treadFt: 2.8 };
 
 /**
- * Progressive Field (1994; 2015–16 renovation). A lower bowl to row HH whose
- * rows run ~6° inside the foul lines, the club deck (326–348) over the
- * first-base side from row X, the 300s in right field above 103–113, and an
- * upper deck of boxes (400s, rows A–F) and reserved seats (500s, rows A–X)
- * under a roof canopy from row P. Rows and covered rows are Rate Your Seats'
- * section pages. On the 2023 USGS photo, square to the first-base rows, the
- * club seats run ~36–50 m out, the upper deck ~50–72 m and the canopy from
- * ~72 m. No source publishes the deck heights, so every height is estimated
- * by stacking the decks.
+ * Progressive Field (1994; 2015–16 renovation; 2023–25 "Reimagined"). A
+ * lower bowl to row HH whose rows run ~6° inside the foul lines, the club
+ * deck (326–348) over the first-base side from row X, suites over the
+ * third-base side, the 300s in right field above 103–113, and an upper deck
+ * of boxes (400s, rows A–F) and reserved seats (500s, rows A–X) under a roof
+ * canopy. Rows and covered rows are Rate Your Seats' section pages.
+ *
+ * Heights: USGS lidar (Ohio, November 2019), the newest scan of the park. It
+ * predates the 2023–25 renovation, which took out upper-deck seats in both
+ * corners (those sections are no longer on the chart), added lounges behind
+ * home at field level and rebuilt the Terrace Club down the left-field line
+ * (the North Coast Social Club, 2025). The seats on the chart stand as they
+ * were; what is over and behind the third-base sections next to the Terrace
+ * (167–175) and the left-field corner (176–179) is not measured.
  */
 const PROGRESSIVE: StadiumStructure = {
   stadiumId: 'guardians',
-  // Far rim: the upper deck's canopy (~125 ft) about 550 ft across the field.
-  park: { roof: 'open', farRimHeightFt: 125, fieldCrossingFt: 550 },
+  // Far rim: the roof canopy, 139 ft up (lidar), ~590 ft across the field.
+  park: { roof: 'open', farRimHeightFt: 139, fieldCrossingFt: 588 },
   tierOf: progressiveTier,
   tiers: {
     first: {
       label: 'Lower level, first-base side (128–148)',
-      // Covered from row X by the club deck (sourced). Estimated deck
-      // underside ~33 ft (9 ft above row X's floor).
-      stand: { rows: 34, ...PROGRESSIVE_LOWER },
-      sections: { ...progressiveCover(['128', '129', '130', '131', '134', '136', '138'], 33), ...Object.fromEntries(['140', '142', '144', '146', '148'].map((id) => [id, { frontRowHeightFt: 7.5, overhang: { coveredFromRow: PROGRESSIVE_COVER[id], soffitHeightFt: 33 } }])) },
+      // Covered from row X by the club deck (sourced). Lidar (12 of 12):
+      // front row at field level (-1–0 ft; 4 ft at row F in 142–148), 11°
+      // rake; behind, the roof canopy 139 ft up and 30 ft back. The club
+      // deck's front row, 28 ft up, reaches out over row 22 (sourced X, row
+      // 24, kept), over row 19 in 129 and over 142–148's row 13 (sourced 19),
+      // which take it. Its underside is not seen: 9 ft above the covered
+      // row's floor (its front row less the park's 12 ft deck depth would be
+      // lower).
+      stand: { rows: 34, frontRowHeightFt: 0, rakeDeg: 11, ...PROGRESSIVE_TREAD, backHeightFt: 139, backSetbackFt: 30, deckFrontFt: 28, overhang: { coveredFromRow: 24, soffitHeightFt: 22 } },
+      sections: {
+        '129': { overhang: { coveredFromRow: 19, soffitHeightFt: 19 } },
+        '140': { backSetbackFt: 43, overhang: { coveredFromRow: PROGRESSIVE_COVER['140'], soffitHeightFt: 21 } },
+        ...Object.fromEntries(['142', '144', '146', '148'].map((id) => [id, { frontRowHeightFt: 4, overhang: { coveredFromRow: 13, soffitHeightFt: 20 } }])),
+      },
       rowsFromMap: true,
       heightsSourced: false,
       coverSourced: true,
-      sources: [RYS_PROGRESSIVE, ...progressiveSections('128', '134', '138', '140', '148')],
+      sources: [RYS_PROGRESSIVE, ...progressiveSections('128', '134', '138', '140', '148'), PROGRESSIVE_LIDAR],
     },
     home: {
       label: 'Lower level behind home (149–157)',
-      // Rows L–HH behind the boxes (149: F–HH), open.
-      stand: { rows: 23, frontRowHeightFt: 13, rakeDeg: 18, treadFt: 2.8, backHeightFt: 125, backSetbackFt: 80 },
-      sections: progressiveRowF(['149']),
+      // Rows L–HH behind the boxes (149: F–HH), open. Lidar (9 of 9): front
+      // row 3 ft (3–4), 13° rake; behind, the roof canopy 139 ft up and
+      // 39 ft back (22 behind 149).
+      stand: { rows: 23, frontRowHeightFt: 3, rakeDeg: 13, ...PROGRESSIVE_TREAD, backHeightFt: 139, backSetbackFt: 39 },
+      sections: { '149': { backSetbackFt: 22 } },
       rowsFromMap: true,
-      heightsSourced: false,
+      heightsSourced: true,
       coverSourced: true,
-      sources: [RYS_PROGRESSIVE, ...progressiveSections('149', '150', '153', '154', '157')],
+      sources: [RYS_PROGRESSIVE, ...progressiveSections('149', '150', '153', '154', '157'), PROGRESSIVE_LIDAR],
     },
     third: {
       label: 'Lower level, third-base side (158–175)',
-      // Open; "the third base side will see shade first during late
-      // afternoon and evening games".
-      stand: { rows: 34, ...PROGRESSIVE_LOWER },
-      sections: progressiveRowF(['158', '159', '160', '162', '163', '164']),
+      // Open in the source ("the third base side will see shade first during
+      // late afternoon and evening games"). Lidar (7 of 14; 167–175 skipped,
+      // the Terrace over and behind them rebuilt since): front row 3 ft at
+      // row F (165, from row A: -1), 13° rake. The suite level reaches out
+      // over row 24 (33 in 165), the bottom of its structure 33 ft up (34),
+      // with the upper deck's front, 72 ft up, above it and 13 ft in front
+      // of the last row; nothing over 164's (the roof canopy, 139 ft, behind
+      // it and 165). 167–175, from row A like 165, keep the estimate behind
+      // them and the source's open rows.
+      stand: { rows: 29, frontRowHeightFt: 3, rakeDeg: 13, ...PROGRESSIVE_TREAD, backHeightFt: 72, backSetbackFt: -13, overhang: { coveredFromRow: 24, soffitHeightFt: 33 } },
+      sections: {
+        '165': { frontRowHeightFt: -1, backHeightFt: 139, backSetbackFt: 34, overhang: { coveredFromRow: 33, soffitHeightFt: 34 } },
+        '164': { noCover: true, backHeightFt: 139, backSetbackFt: 34 },
+        ...Object.fromEntries(['167', '169', '170', '171', '172', '174', '175'].map((id) => [id, { noCover: true, frontRowHeightFt: -1, backHeightFt: 125, backSetbackFt: 100 }])),
+      },
       rowsFromMap: true,
       heightsSourced: false,
       coverSourced: true,
-      sources: [RYS_PROGRESSIVE, ...progressiveSections('158', '162', '165', '172', '175')],
+      sources: [RYS_PROGRESSIVE, ...progressiveSections('158', '162', '165', '172', '175'), PROGRESSIVE_LIDAR],
     },
     leftCorner: {
       label: 'Left-field corner (176–179)',
-      // Rows Y–HH (176–177), F–HH (178), N–EE (179), open.
+      // Rows Y–HH (176–177), F–HH (178), N–EE (179), open. Not measured: the
+      // Terrace beside them was rebuilt after the scan.
       stand: { rows: 29, frontRowHeightFt: 7.5, rakeDeg: 18, treadFt: 2.8, backHeightFt: 60 },
       sections: { '176': { frontRowHeightFt: 25 }, '177': { frontRowHeightFt: 25 }, '179': { frontRowHeightFt: 15 } },
       rowsFromMap: true,
@@ -4726,82 +4753,109 @@ const PROGRESSIVE: StadiumStructure = {
     },
     leftField: {
       label: 'Left field (180–185)',
-      // Rows A–Y (E–Y in 180), open. Estimated: front ~20 ft over the
-      // 19-ft wall, 22° rake.
-      stand: { rows: 25, frontRowHeightFt: 20, rakeDeg: 22, treadFt: 2.8, backHeightFt: 40 },
-      sections: { '180': { frontRowHeightFt: 24.5 } },
+      // Rows A–Y (E–Y in 180), open in the source. Lidar (6 of 6): front row
+      // 24 ft (20–32) over the wall, 29° rake. The left-field scoreboard
+      // reaches out over row 16 (12 in 180, 19–20 in 181 and 184), the
+      // bottom of its face 67 ft up (77 over 180), its top 124 ft; nothing
+      // over 182 and 183 (behind them, 71–74 ft up and 30 ft back).
+      stand: { rows: 25, frontRowHeightFt: 24, rakeDeg: 29, ...PROGRESSIVE_TREAD, backHeightFt: 73, backSetbackFt: 30, overhang: { coveredFromRow: 16, soffitHeightFt: 67 } },
+      sections: {
+        '185': { frontRowHeightFt: 31, backHeightFt: 67, backSetbackFt: 16 },
+        '181': { frontRowHeightFt: 20, backHeightFt: 124, backSetbackFt: -17, overhang: { coveredFromRow: 20, soffitHeightFt: 67 } },
+        '184': { frontRowHeightFt: 20, backHeightFt: 124, backSetbackFt: -17, overhang: { coveredFromRow: 19, soffitHeightFt: 67 } },
+        '180': { frontRowHeightFt: 31, backHeightFt: 124, backSetbackFt: -17, overhang: { coveredFromRow: 12, soffitHeightFt: 77 } },
+        ...Object.fromEntries(['182', '183'].map((id) => [id, { noCover: true }])),
+      },
       rowsFromMap: true,
-      heightsSourced: false,
+      heightsSourced: true,
       coverSourced: true,
-      sources: progressiveSections('180', '182', '185'),
+      sources: [...progressiveSections('180', '182', '185'), PROGRESSIVE_LIDAR],
     },
     rightCorner: {
       label: 'Right-field corner (117, 125)',
-      // Open: 117 has "no overhead protection".
-      stand: { rows: 38, frontRowHeightFt: 3, rakeDeg: 18, treadFt: 2.8, backHeightFt: 60 },
+      // Open in the source: 117 has "no overhead protection". Lidar (125;
+      // 117's cut runs over the corner's flat platform, so it keeps the
+      // estimate): front row at field level (-1 ft), 11° rake; behind, the
+      // roof canopy 139 ft up and 30 ft back. Over 125's row 22 the club
+      // deck's front row, 28 ft up (its underside 9 ft above that row's
+      // floor).
+      stand: { rows: 34, frontRowHeightFt: -1, rakeDeg: 11, ...PROGRESSIVE_TREAD, backHeightFt: 139, backSetbackFt: 30, deckFrontFt: 28, overhang: { coveredFromRow: 22, soffitHeightFt: 19 } },
+      sections: { '117': { noCover: true, frontRowHeightFt: 3, rakeDeg: 18, backHeightFt: 60, backSetbackFt: 0 } },
       rowsFromMap: true,
       heightsSourced: false,
       coverSourced: true,
-      sources: [RYS_PROGRESSIVE, ...progressiveSections('117', '125')],
+      sources: [RYS_PROGRESSIVE, ...progressiveSections('117', '125'), PROGRESSIVE_LIDAR],
     },
     rightField: {
       label: 'Right field (103–113)',
       // Rows A–CC; 108–113 covered from row V by the 300s above (sourced).
-      // Estimated: front ~6 ft, 20° rake, deck underside ~36 ft.
-      stand: { rows: 29, frontRowHeightFt: 6, rakeDeg: 20, treadFt: 2.8, backHeightFt: 60 },
-      sections: progressiveCover(['108', '109', '111', '113'], 36),
+      // Lidar (6 of 6): front row 6 ft (5–7), 11° rake; behind, the roof
+      // canopy 139 ft up and 34 ft back. The 300s' front row, 38 ft up,
+      // reaches out over row 27 (V: 22) in 103–111 (none seen over 113,
+      // which keeps V); its underside is not seen: 9 ft above row 27's
+      // floor.
+      stand: { rows: 29, frontRowHeightFt: 6, rakeDeg: 11, ...PROGRESSIVE_TREAD, backHeightFt: 139, backSetbackFt: 34, deckFrontFt: 38, overhang: { coveredFromRow: 27, soffitHeightFt: 29 } },
+      sections: { '113': { overhang: { coveredFromRow: PROGRESSIVE_COVER['113'], soffitHeightFt: 29 } } },
       rowsFromMap: true,
       heightsSourced: false,
       coverSourced: true,
-      sources: [RYS_PROGRESSIVE, ...progressiveSections('103', '107', '109', '113')],
+      sources: [RYS_PROGRESSIVE, ...progressiveSections('103', '107', '109', '113'), PROGRESSIVE_LIDAR],
     },
     rightFieldClub: {
       label: 'Right field 300s (303–316)',
-      // Rows A–U, covered from row M (sourced). Estimated: front ~32 ft, 22°
-      // rake, deck underside ~56 ft.
-      stand: { rows: 21, frontRowHeightFt: 32, rakeDeg: 22, treadFt: 2.8, backHeightFt: 64, overhang: { coveredFromRow: 13, soffitHeightFt: 56 } },
+      // Rows A–U, covered from row M (sourced). Lidar (5 of 6): front row
+      // 38 ft, 22° rake; the upper deck's front row, 70 ft up, reaches out
+      // over their row 2, so the rows from there back are covered. Its
+      // underside is not seen: that row less the park's deck depth (12 ft,
+      // over the club).
+      stand: { rows: 21, frontRowHeightFt: 38, rakeDeg: 22, ...PROGRESSIVE_TREAD, backHeightFt: 78, backSetbackFt: -42, deckFrontFt: 70, overhang: { coveredFromRow: 2, soffitHeightFt: 58 } },
       rowsFromMap: true,
       heightsSourced: false,
       coverSourced: true,
-      sources: [RYS_PROGRESSIVE, ...progressiveSections('303', '309', '316')],
+      sources: [RYS_PROGRESSIVE, ...progressiveSections('303', '309', '316'), PROGRESSIVE_LIDAR],
     },
     club: {
       label: 'Club (326–348)',
-      // Rows A–T, covered from row M by the upper deck (sourced). Estimated:
-      // front ~36 ft, 22° rake, deck underside ~59 ft (9 ft above row M's
-      // floor).
-      stand: { rows: 20, frontRowHeightFt: 36, rakeDeg: 22, treadFt: 2.8, backHeightFt: 125, backSetbackFt: 70, overhang: { coveredFromRow: 13, soffitHeightFt: 59 } },
-      // 326 starts at row D and 348 at row C, a few rows up.
-      sections: {
-        ...progressiveCover(Array.from({ length: 23 }, (_, i) => String(326 + i)), 59),
-        '326': { frontRowHeightFt: 39.4, overhang: { coveredFromRow: PROGRESSIVE_COVER['326'], soffitHeightFt: 59 } },
-        '348': { frontRowHeightFt: 38.3, overhang: { coveredFromRow: PROGRESSIVE_COVER['348'], soffitHeightFt: 59 } },
-      },
+      // Rows A–T, covered from row M by the upper deck (sourced; the lidar
+      // puts its edge over row 11). Lidar (11 of 12): front row 28 ft, 21°
+      // rake; the upper deck's front row is 70 ft up, the lowest structure
+      // at its edge 58 ft (its underside; what rises behind, 71 ft, 27 ft in
+      // front of the last row).
+      stand: { rows: 20, frontRowHeightFt: 28, rakeDeg: 21, ...PROGRESSIVE_TREAD, backHeightFt: 71, backSetbackFt: -27, deckFrontFt: 70, overhang: { coveredFromRow: 13, soffitHeightFt: 58 } },
+      // 326 starts at row D, its first row as high as the others' row A.
+      sections: progressiveCover(Array.from({ length: 23 }, (_, i) => String(326 + i)), 58),
       rowsFromMap: true,
       heightsSourced: false,
       coverSourced: true,
-      sources: [RYS_PROGRESSIVE, ...progressiveSections('326', '336', '348')],
+      sources: [RYS_PROGRESSIVE, ...progressiveSections('326', '336', '348'), PROGRESSIVE_LIDAR],
     },
     upperBox: {
       label: 'Upper boxes (403–478)',
-      // Rows A–F at the front of the upper deck, open. Estimated: front
-      // ~70 ft, 30° rake, the reserved seats rising behind.
-      stand: { rows: 6, frontRowHeightFt: 70, rakeDeg: 30, treadFt: 2.6, backHeightFt: 82 },
+      // Rows A–F at the front of the upper deck, open. Lidar (35 of 68; the
+      // others' rows go on into the 500s' with no step to find): front row
+      // 71 ft (70–75), 30° rake; behind, the roof canopy 139 ft up and 19 ft
+      // back (48 behind 414).
+      stand: { rows: 6, frontRowHeightFt: 71, rakeDeg: 30, treadFt: 2.6, backHeightFt: 139, backSetbackFt: 19 },
+      sections: { '414': { backSetbackFt: 48 } },
       rowsFromMap: true,
-      heightsSourced: false,
+      heightsSourced: true,
       coverSourced: true,
-      sources: progressiveSections('403', '440', '478'),
+      sources: [...progressiveSections('403', '440', '478'), PROGRESSIVE_LIDAR],
     },
     upper: {
       label: 'Upper reserved (519–567)',
-      // Rows A–X, covered from row P by the canopy (sourced). Estimated:
-      // front ~82 ft, 32° rake, canopy underside ~115 ft (9 ft above row P's
-      // floor).
-      stand: { rows: 24, frontRowHeightFt: 82, rakeDeg: 32, treadFt: 2.6, backHeightFt: 125, overhang: { coveredFromRow: 16, soffitHeightFt: 115 } },
+      // Rows A–X, covered from row P by the canopy (sourced). Lidar (11 of
+      // 24, where a step up from the boxes shows): front row 87 ft (83–87),
+      // 32° rake. The canopy's edge, 138 ft up (its top; the scan sees
+      // nothing under it), is over row 4 (6 in two), twelve rows ahead of
+      // the source's, so the rows from D are covered; the canopy is also what
+      // rises highest behind. Its top stands in for its underside, so the
+      // tier's heights stay estimated.
+      stand: { rows: 24, frontRowHeightFt: 87, rakeDeg: 32, treadFt: 2.6, backHeightFt: 136, backSetbackFt: -40, overhang: { coveredFromRow: 4, soffitHeightFt: 138 } },
       rowsFromMap: true,
       heightsSourced: false,
       coverSourced: true,
-      sources: [RYS_PROGRESSIVE, ...progressiveSections('519', '541', '554', '567')],
+      sources: [RYS_PROGRESSIVE, ...progressiveSections('519', '541', '554', '567'), PROGRESSIVE_LIDAR],
     },
     suite: {
       label: 'Suites',
@@ -4814,7 +4868,7 @@ const PROGRESSIVE: StadiumStructure = {
       sources: ['https://www.mlb.com/guardians/ballpark/suites'],
     },
   },
-  reviewedOn: '2026-11-11',
+  reviewedOn: '2026-11-13',
 };
 
 const rysTarget = (path: string) => `https://www.rateyourseats.com/target-field/seating/${path}`;
