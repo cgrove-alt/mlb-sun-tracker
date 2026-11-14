@@ -1615,6 +1615,166 @@ underside. Two commits, nothing pushed; all 3522 tests pass.
 Still open: an underside seen more than a metre behind a deck's edge (Great
 American's 400s), Kauffman's double-letter rows, the confidence split.
 
+## 10. Plan: each section's measured back setback (2026-11-14)
+
+**The bug.** Until c7589f583 the lidar tool's suggestions gave a section its
+own back only when the back's *height* differed from its tier's (by >10%
+and >3 ft). A section whose back stands at the tier's height but much
+nearer or farther (or in front of its last row rather than behind) was not
+listed, so it kept the tier's setback. The tool lists it now; the parks
+measured before still carry the tier's value.
+
+**Audit** (`tmp/lidar/backAudit.ts`: every found section's measured back
+against its profile; "changes" = sections where the measured back changes
+at least one half-hour answer at a 1:10 PM game on 2025-04-15 or
+2025-07-15):
+
+| Park | Setback >10 ft off | changes | | Park | Setback >10 ft off | changes |
+|---|---|---|---|---|---|---|
+| Red Sox | 36 | 32 | | Phillies | 16 | 4 |
+| Royals | 33 | 24 | | Pirates | 15 | 1 |
+| Cardinals | 29 | 13 | | Braves | 14 | 2 |
+| Yankees | 24 | 18 | | Dodgers | 11 | 3 |
+| Nationals | 20 | 9 | | Rockies | 11 | 3 |
+| Padres | 20 | 8 | | Giants | 10 | 4 |
+| Angels | 9 | 3 | | Mets | 8 | 4 |
+| Orioles | 8 | 3 | | Reds | 8 | 1 |
+| Cubs | 7 | 0 | | Comerica | 1 (117) | 1 |
+
+280 sections, 133 with an answer that changes. Comerica 117 is my batch 4
+slip (grouped with 116's setback by hand). Also 15 back *heights* off the
+measurement, which the old tool did list: most are written down on purpose
+(Target 239–240's lamp-bank frame; "its own top" at PNC 142/144, Great
+American 521, the Rockpile; Fenway's Monster seats); Nationals 100 and
+215, Cardinals 131, Mets 135, Orioles C43, Reds 301 and Target 334 have no
+reason written.
+
+**Plan** (one commit per park, the same procedure as the batches):
+- [x] 10.1 A small helper in stadiumStructures.ts that merges measured
+      backs `{ id: [heightFt, setbackFt] }` into a tier's sections without
+      dropping a section's other values (its cover, front). Each park then
+      gets one short map per tier instead of hand-merged entries.
+- [x] 10.2 Per park, in the order above (most answers changed first):
+      - read each affected tier's comment: a back left on purpose stays,
+        with its reason; otherwise the section takes its measured back
+        (height and setback, rounded to the foot);
+      - the seven unexplained heights get their measured value or a
+        written reason;
+      - the tier comment says per-section backs come from the lidar;
+      - reference checks and blog claims whose answers change are
+        investigated and recorded, never tuned;
+      - full suite, type check, Low share before → after;
+      - commit.
+- [x] 10.3 Re-run the audit: nothing left without a written reason.
+- [x] 10.4 Notes and review here; the changed parks' pages checked on the
+      dev server.
+
+Not in this change: the `heightsSourced` / roof-top question and the
+confidence split (§7.4, open for you).
+
+### §10 Review (2026-11-14)
+
+**What changed.** Every measured section whose back stands more than 10 ft
+nearer or farther than its tier's (or whose height is >10% and >3 ft off)
+now carries its own measured back, through a small merge helper
+(`withBacks`) that keeps the section's other values. 20 commits at 19
+parks, one per park (Kauffman has a follow-up; Target 334, one of the
+unexplained heights, its own). The audit now flags
+only backs left on purpose, each with its reason in the code: Truist pen
+153 (the frame the scan sees the seats through), PNC 142/144 and Great
+American 521 (nothing behind rises above their own top), Fenway M8 (the
+light towers' lattice), the Rockpile, Target 239/240 (the lamp-bank
+frame).
+
+**The seven unexplained heights:** Nationals 100 takes its measured 51 ft;
+Cardinals 131 its back seen from its open rows (74 ft, 18 ft in front of
+its last row; the 49 ft was measured from row 9 before the scan covered it
+from row 8); Orioles C43 the upper deck's rows rising over its covered
+rows (71 ft); Reds 301 the 400s' lower front over that end section (62
+ft); Target 334 its own 87 ft; Mets 135 its own 69 ft. Nationals 215's
+cut lands on a roof outside the park, 86 m from home plate (see below).
+
+**Root causes found on the way** (each fixed in its park's commit):
+- *Giants View level: setbacks 11 ft too far forward.* The band finds rows
+  1–18; the profile's 22 rows start at row A. The tool put the last row at
+  "row 1 + 22 rows", 4 rows too far back; the batch converted the covered
+  rows by hand but not the backs. The tool now takes `rowsInFront` (4; 8
+  in 315/326) and counts lip rows, open rows and the last row from the
+  profile's first row. Re-measured: −18 ft (was −29), right over the
+  covered rows from row 12 instead of over four open rows. Low share
+  9/6 → 8/1.
+- *Nationals club level: "measured" from a roof outside the park.* Its one
+  found section, 215, gave the tier's front (38 ft) and rake (26°); the
+  cut is a roof ridge beside the street. Re-estimated from the 200 level
+  around it (37 ft, the Mezzanine's 18°), the suites re-derived, and the
+  tool skips 215.
+- *Wrigley 511 lost its sourced 14 rows* when the lidar commit rewrote the
+  bleachers' overrides (it ran as 21 rows since). Restored and re-measured
+  on them (the scoreboard 25 ft behind its last row).
+- *Leftover "open" flags from before option A:* Yankees 215 and Giants 215
+  were marked open because their rows stop before the source's covered
+  row; when option A moved their tier's cover to the scan's row, the flag
+  stayed, though the scan sees the deck over them like their neighbours.
+  Both are covered with their tier now.
+- *A back over the last one or two open rows.* Where the scan's edge is
+  over only the last row or two (under option A's three-row mark) the
+  measured back stands over rows that stay open, and the engine never
+  counts a back over a row. Nationals' Gallery settled this in batch 3 by
+  covering those rows; Kauffman 405/407/411/413/433, Truist 231 and Coors
+  L345 follow it (Kauffman's first commit had moved the back instead; the
+  follow-up makes it consistent).
+
+**Reference checks and posts** (investigated, recorded, not tuned): the
+Fenway post's two claims are rewritten to the engine (most Field Box seats
+in the sun through the 4th inning, 78% at the 6th; Loge 146, whose eight
+rows end short of the roof, in the sun at first pitch). Busch 154 now
+reproduces "only a few rows shaded at first pitch" (44%) and is tested
+again; Kauffman rows M–V of 409–413 are shaded from 3:10 ("safely in the
+shade after 3:00"); Truist 212 shades from about the 4th inning (closer to
+"in the shade for a day game"). Header figures updated where they moved
+(Busch, Nationals, Truist, Comerica); Nationals' Gallery range was already
+stale (42–75%, not 60–75%) and is corrected.
+
+**Low share at a 1:10 PM game, April / July, before → after:** Red Sox
+24/19 → 28/22; Royals 22/16 → 21/14; Cardinals 24/28 → 25/28; Yankees
+28/27 → 31/31; Nationals 33/27 → 33/26; Padres 29/29 →
+31/29; Angels 31/25 =; Orioles 14/16 → 14/15; Cubs 21/21 =; Phillies 21/19 =;
+Pirates 7/11 =; Braves 49/43 → 48/42; Dodgers 22/22 =; Rockies 24/22 →
+25/23; Giants 9/6 → 8/1; Mets 39/38 =; Reds 9/6 → 8/5; Tigers 28/25 =;
+Twins 27/23 =. The rises (Fenway, Yankees, Petco) are sections whose
+measured back is nearer, so the shade line now crosses them mid-game; at
+Yankee Stadium the seven sections behind home now see the Terrace's front
+(their old setback put it in front of their first row), and the Main
+tier's heights are estimated (±50%).
+
+**Checks:** full suite 3537/3537, type check clean after every park; the
+19 changed parks' pages and the Fenway post render on the dev server with
+no console or server errors (the post shows the new sentences).
+
+**Measurement files patched by the tool's own output** (tmp/lidar, not
+committed): nationals 215 (skipped), cubs 511 (re-measured on 14 rows),
+giants View sections (re-measured with `rowsInFront`; 333 with the cover
+it was first measured with, the circularity noted in batch 4).
+
+**Open for you:**
+1. *Backs over open rows elsewhere.* 253 sections' profiles still put the
+   back over one of their own open rows, nearly all from a tier median
+   applied to a section of a different depth, on sections never measured
+   or within the 10-ft threshold (e.g. Kauffman's plaza ends 206–252,
+   whose 47 ft at −13 is the average of two unlike sections, 248 and 250;
+   Fenway's Roof Boxes; Camden's club ends). The engine never counts such
+   a back for those rows. Counting it as overhead would change 77 sections'
+   answers at the test games, but it would also make phantom roofs out of
+   the misapplied medians. My recommendation is the data fix: carry a
+   tier's back as a position from its deck's row (or front row), not from
+   the last row, so a median carries across section depths. That's a
+   change to every tier's back, so it's your call.
+2. *Mets 135's cover:* its cut shows its treads open to the sky up to row
+   14 (a deck 42 ft up starts there), against the source's row 7; the tier
+   is estimated (one section of six measured), so it is left as sourced.
+3. Still open from §7.4: the `heightsSourced` / roof-top question and the
+   confidence split (behind most of the Low-share rises above).
+
 ---
 ---
 
