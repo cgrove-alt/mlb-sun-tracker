@@ -627,6 +627,7 @@ const DODGERS: StadiumStructure = {
         '9DG': { rows: 4 },
         '1DG': { backHeightFt: 155, backSetbackFt: 160 },
         '10DG': { backHeightFt: 120, backSetbackFt: 157 },
+        '11DG': { backHeightFt: 139, backSetbackFt: 127 },
       },
       heightsSourced: true,
       coverSourced: true,
@@ -655,7 +656,8 @@ const DODGERS: StadiumStructure = {
       // (155 ft), in the corners the Reserve roof (120 ft, the median).
       // Estimated: the Loge's underside ~21 ft (9 ft above row T's floor,
       // a foot under the Loge's measured 22-ft front row; 22 ft over 15FD's
-      // row 22).
+      // row 22). Sections whose measured back stands more than 10 ft nearer
+      // or farther take their own (86–91 ft behind 15FD, 23FD, 48FD, 50FD).
       stand: {
         deckFrontFt: 23,
         rows: 22,
@@ -665,14 +667,14 @@ const DODGERS: StadiumStructure = {
         backSetbackFt: 75,
         overhang: { coveredFromRow: 19, soffitHeightFt: 21 },
       },
-      sections: {
+      sections: withBacks({
         ...Object.fromEntries(['10FD', '11FD', '12FD', '13FD', '14FD', '16FD', '17FD', '18FD', '19FD', '2FD', '4FD', '5FD', '6FD', '7FD', '8FD', '9FD'].map((id) => [id, { backHeightFt: 139, backSetbackFt: 75 }])),
         ...Object.fromEntries(['20FD', '21FD', '22FD', '24FD', '25FD', '26FD', '27FD', '28FD', '29FD', '30FD', '31FD', '32FD', '33FD', '34FD', '35FD', '36FD', '37FD', '38FD', '39FD', '40FD', '41FD', '42FD', '47FD'].map((id) => [id, { backHeightFt: 58, backSetbackFt: 11 }])),
         ...Object.fromEntries(['1FD', '3FD'].map((id) => [id, { backHeightFt: 155, backSetbackFt: 97 }])),
         '15FD': { backHeightFt: 139, backSetbackFt: 75, overhang: { coveredFromRow: 22, soffitHeightFt: 22 } },
         '52FD': { rows: 25, overhang: { coveredFromRow: 16, soffitHeightFt: 21 }, backHeightFt: 58, backSetbackFt: 11 },
         '53FD': { rows: 25, overhang: { coveredFromRow: 20, soffitHeightFt: 21 } },
-      },
+      }, { '15FD': [139, 86], '23FD': [120, 89], '48FD': [120, 88], '50FD': [120, 91] }),
       heightsSourced: false,
       coverSourced: true,
       sources: [rysDodgers('sections/1'), rysDodgers('sections/15'), rysDodgers('sections/46'), rysDodgers('sections/52'), RYS_DODGERS, DODGERS_LIDAR],
@@ -757,8 +759,12 @@ const DODGERS: StadiumStructure = {
       label: 'Lower Reserve',
       // Rows A–V, no cover (sourced). Lidar (20 of 20): front row 57 ft
       // (55–58), 29° rake (25–31); behind, the Reserve roof's front edge
-      // 120 ft up, 7 ft behind the last row.
+      // 120 ft up, 7 ft behind the last row (17–22 ft behind 44RS, 48RS and
+      // 56RS, measured).
       stand: { rows: 21, frontRowHeightFt: 57, rakeDeg: 29, backHeightFt: 120, backSetbackFt: 7 },
+      sections: {
+        '44RS': { backHeightFt: 120, backSetbackFt: 21 }, '48RS': { backHeightFt: 120, backSetbackFt: 22 }, '56RS': { backHeightFt: 120, backSetbackFt: 17 },
+      },
       heightsSourced: true,
       coverSourced: true,
       sources: [rysDodgers('sections/23LR'), rysDodgers('sections/24LR'), rysDodgers('sections/60LR'), DODGERS_LIDAR],
@@ -792,7 +798,9 @@ const DODGERS: StadiumStructure = {
       // front edge is 139 ft up and the scan sees nothing below it there: a
       // thin roof, underside taken as 139 ft. Behind home (1TD, 3TD) the box
       // on the roof, 155 ft, starts over row 17–18, its face's bottom
-      // 136–137 ft (138 over 1TD, 9 ft above row 18's floor).
+      // 136–137 ft (138 over 1TD, 9 ft above row 18's floor); measured, the
+      // box's top is 12 ft in front of 1TD's last row and 9 ft behind 3TD's,
+      // and in the shorter 13TD the roof's edge is 13 ft in front of it.
       stand: {
         rows: 22,
         frontRowHeightFt: 97,
@@ -802,9 +810,9 @@ const DODGERS: StadiumStructure = {
         overhang: { coveredFromRow: 14, soffitHeightFt: 139 },
       },
       sections: {
-        '13TD': { rows: 17, overhang: { coveredFromRow: 12, soffitHeightFt: 139 } },
-        '1TD': { backHeightFt: 155, backSetbackFt: -1, overhang: { coveredFromRow: 18, soffitHeightFt: 138 } },
-        '3TD': { backHeightFt: 155, backSetbackFt: -1, overhang: { coveredFromRow: 17, soffitHeightFt: 136 } },
+        '13TD': { rows: 17, backHeightFt: 139, backSetbackFt: -13, overhang: { coveredFromRow: 12, soffitHeightFt: 139 } },
+        '1TD': { backHeightFt: 154, backSetbackFt: -12, overhang: { coveredFromRow: 18, soffitHeightFt: 138 } },
+        '3TD': { backHeightFt: 155, backSetbackFt: 9, overhang: { coveredFromRow: 17, soffitHeightFt: 136 } },
       },
       heightsSourced: false,
       coverSourced: true,
