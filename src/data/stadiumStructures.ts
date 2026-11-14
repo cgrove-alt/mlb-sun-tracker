@@ -4361,8 +4361,14 @@ const PNC: StadiumStructure = {
       label: 'Field level (1–32)',
       // Rows A–M (D–M or F–M in some), open ("rarely in the shade"). Lidar
       // (21 of 31): front row at field level (-1 ft), 10° rake (7–12); what
-      // rises highest behind is the roof's edge, 121 ft up and 107 ft back.
+      // rises highest behind is the roof's edge, 121 ft up and 107 ft back
+      // (91–132 ft behind 20 and 30–32, measured).
       stand: { rows: 13, frontRowHeightFt: -1, rakeDeg: 10, backHeightFt: 121, backSetbackFt: 107 },
+      sections: {
+        '20': { backHeightFt: 121, backSetbackFt: 91 },
+        ...Object.fromEntries(['30', '31'].map((id) => [id, { backHeightFt: 120, backSetbackFt: 117 }])),
+        '32': { backHeightFt: 120, backSetbackFt: 132 },
+      },
       rowsFromMap: true,
       heightsSourced: true,
       coverSourced: true,
@@ -4376,12 +4382,14 @@ const PNC: StadiumStructure = {
       // reaches out over row 17 (15–19; 25 in 132, 26 in 131), more than
       // two rows ahead of the source's in all 23, so the tier takes the
       // scan's row, under an underside of ~43 ft (that front row less 9 ft).
-      // It is also what rises highest behind.
+      // It is also what rises highest behind (58 ft in front of the last row
+      // of the 37-row 114 and 115, 2 ft in front of 132's, measured).
       stand: { rows: 34, frontRowHeightFt: 5, rakeDeg: 13, backHeightFt: 53, backSetbackFt: -47, deckFrontFt: 52, overhang: { coveredFromRow: 17, soffitHeightFt: 43 } },
       sections: {
         ...pncCover(['129'], 43),
         '131': { backHeightFt: 120, backSetbackFt: 60, overhang: { coveredFromRow: 26, soffitHeightFt: 44 } },
-        '132': { overhang: { coveredFromRow: 25, soffitHeightFt: 43 } },
+        '132': { backHeightFt: 54, backSetbackFt: -2, overhang: { coveredFromRow: 25, soffitHeightFt: 43 } },
+        ...Object.fromEntries(['114', '115'].map((id) => [id, { backHeightFt: 53, backSetbackFt: -58 }])),
       },
       rowsFromMap: true,
       heightsSourced: false,
@@ -4392,9 +4400,14 @@ const PNC: StadiumStructure = {
       label: 'Left-field corner (133–138)',
       // Rows A–F to A–P, open ("among the worst seats for shade"). Lidar (6
       // of 6): front row 1 ft (-1 to 3), 11° rake; behind, 63 ft up and 73 ft
-      // back.
+      // back (each section's own where it differs: 57–64 ft up and 6–134 ft
+      // back behind 135–138).
       stand: { rows: 12, frontRowHeightFt: 1, rakeDeg: 11, backHeightFt: 63, backSetbackFt: 73 },
-      sections: { '133': { backHeightFt: 121, backSetbackFt: 124 }, '134': { backHeightFt: 72, backSetbackFt: 58 } },
+      sections: {
+        '133': { backHeightFt: 121, backSetbackFt: 124 }, '134': { backHeightFt: 72, backSetbackFt: 58 },
+        '135': { backHeightFt: 60, backSetbackFt: 6 }, '136': { backHeightFt: 62, backSetbackFt: 57 },
+        '137': { backHeightFt: 64, backSetbackFt: 134 }, '138': { backHeightFt: 57, backSetbackFt: 88 },
+      },
       rowsFromMap: true,
       heightsSourced: true,
       coverSourced: true,
@@ -4405,12 +4418,13 @@ const PNC: StadiumStructure = {
       // Rows A–G to A–M along the river, open ("all outfield seating is
       // exposed"). Lidar (6 of 9): front row 19 ft (on the wall; 9 in 139),
       // 31° rake; behind, 33 ft up and 60 ft back (nothing over 142's and
-      // 144's own top). Something 36 ft up is over 139's row 10.
+      // 144's own top). Something 36 ft up is over 139's row 10, its top 3
+      // ft in front of 139's last row.
       stand: { rows: 13, frontRowHeightFt: 19, rakeDeg: 31, backHeightFt: 33, backSetbackFt: 60 },
       sections: {
         ...Object.fromEntries(['142', '144'].map((id) => [id, { backHeightFt: 39, backSetbackFt: 0 }])),
         '146': { backHeightFt: 39, backSetbackFt: 65 },
-        '139': { frontRowHeightFt: 9, overhang: { coveredFromRow: 10, soffitHeightFt: 36 } },
+        '139': { frontRowHeightFt: 9, backHeightFt: 36, backSetbackFt: -3, overhang: { coveredFromRow: 10, soffitHeightFt: 36 } },
       },
       rowsFromMap: true,
       heightsSourced: true,
@@ -4433,9 +4447,9 @@ const PNC: StadiumStructure = {
       label: 'Left-field bleachers (235–238)',
       // Rows A–R, open ("always a heavy dose of sun"). Lidar (3 of 4): front
       // row 16 ft, 14° rake; behind, the rooftop deck, 73 ft up over the last
-      // row (110 in 238, 43 in 236).
+      // row (110 in 238, 43 in 236; 32 ft behind 237's).
       stand: { rows: 18, frontRowHeightFt: 16, rakeDeg: 14, backHeightFt: 73, backSetbackFt: -1 },
-      sections: { '238': { backHeightFt: 110, backSetbackFt: -4 }, '236': { backHeightFt: 43, backSetbackFt: -1 } },
+      sections: { '238': { backHeightFt: 110, backSetbackFt: -4 }, '236': { backHeightFt: 43, backSetbackFt: -1 }, '237': { backHeightFt: 73, backSetbackFt: 32 } },
       rowsFromMap: true,
       heightsSourced: true,
       coverSourced: true,
@@ -4444,8 +4458,9 @@ const PNC: StadiumStructure = {
     rooftop: {
       label: 'Left-field rooftop (335–339)',
       // Rows A–C, open. Lidar (4 of 5): front row 39 ft (39–43), 18° rake;
-      // behind, 82 ft up and 128 ft back.
+      // behind, 82 ft up and 128 ft back (76 ft and 114 ft behind 336).
       stand: { rows: 3, frontRowHeightFt: 39, rakeDeg: 18, backHeightFt: 82, backSetbackFt: 128 },
+      sections: { '336': { backHeightFt: 76, backSetbackFt: 114 } },
       rowsFromMap: true,
       heightsSourced: true,
       coverSourced: true,
@@ -4475,10 +4490,11 @@ const PNC: StadiumStructure = {
       // Rows D–R; "rows M (to Q) and up are shaded during most day games",
       // no covered rows given. Lidar (5 of 7): front row 77 ft (71–78), 28°
       // rake; the roof's edge, 120 ft up, is over position 6 (9–10 in 313
-      // and 318), which settles the cover.
+      // and 318), which settles the cover (in 313 6 ft in front of the last
+      // row, measured).
       stand: { rows: 15, frontRowHeightFt: 77, rakeDeg: 28, backHeightFt: 120, backSetbackFt: -16, overhang: { coveredFromRow: 6, soffitHeightFt: 120 } },
       sections: {
-        '313': { overhang: { coveredFromRow: 10, soffitHeightFt: 120 } },
+        '313': { backHeightFt: 121, backSetbackFt: -6, overhang: { coveredFromRow: 10, soffitHeightFt: 120 } },
         '318': { overhang: { coveredFromRow: 9, soffitHeightFt: 120 } },
       },
       rowsFromMap: true,
