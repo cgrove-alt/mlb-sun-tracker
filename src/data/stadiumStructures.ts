@@ -5368,7 +5368,7 @@ const TARGET: StadiumStructure = {
       // of its face 99 ft, reaches over 331's and 332's last two rows,
       // too few to change the source's open rows; nothing behind 333).
       stand: { rows: 16, frontRowHeightFt: 61, rakeDeg: 36, treadFt: 2.8, backHeightFt: 97, backSetbackFt: 1 },
-      sections: { '331': { backHeightFt: 109, backSetbackFt: 2 }, '333': { backHeightFt: 32, backSetbackFt: 129 } },
+      sections: { '331': { backHeightFt: 109, backSetbackFt: 2 }, '333': { backHeightFt: 32, backSetbackFt: 129 }, '334': { backHeightFt: 87, backSetbackFt: 1 } },
       rowsFromMap: true,
       heightsSourced: true,
       coverSourced: true,
