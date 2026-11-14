@@ -1301,8 +1301,9 @@ const CITI: StadiumStructure = {
       label: 'Field boxes',
       // Rows 1–12, uncovered (sourced). Lidar (27 of 31): front row at field
       // level (0–2 ft), 12° rake (6–23); what rises highest behind is the
-      // Promenade roof, 129 ft up and 107 ft back.
+      // Promenade roof, 129 ft up and 107 ft back (119 ft behind A, measured).
       stand: { rows: 12, frontRowHeightFt: 0, rakeDeg: 12, backHeightFt: 129, backSetbackFt: 107 },
+      sections: { 'A': { backHeightFt: 129, backSetbackFt: 119 } },
       heightsSourced: true,
       coverSourced: true,
       sources: [rysCiti('sections/15'), CITI_LIDAR],
@@ -1320,7 +1321,8 @@ const CITI: StadiumStructure = {
       // reaches out over row 13–15 (measured in 114–120; 121 is taken as its
       // neighbours), its front row 25 ft up, its underside ~20 ft (9 ft above
       // row 15's floor, since 25 less 9 would be under the heads). What
-      // rises highest behind is the nearer deck's edge (25 or 69 ft).
+      // rises highest behind is the nearer deck's edge (25 or 69 ft; 28 ft
+      // in front of 132's last row, measured).
       // 102 and 108 were not measured and keep their sourced rows, their
       // undersides 9 ft above the first covered row's floor.
       stand: {
@@ -1338,7 +1340,8 @@ const CITI: StadiumStructure = {
         '117': { backHeightFt: 69, backSetbackFt: -17, overhang: { coveredFromRow: 15, soffitHeightFt: 20 } },
         '120': { backHeightFt: 25, backSetbackFt: -51, overhang: { coveredFromRow: 15, soffitHeightFt: 20 } },
         '121': { overhang: { coveredFromRow: 14, soffitHeightFt: 20 } },
-        ...Object.fromEntries(['128', '132'].map((id) => [id, { backHeightFt: 69, backSetbackFt: -17 }])),
+        '128': { backHeightFt: 69, backSetbackFt: -17 },
+        '132': { backHeightFt: 69, backSetbackFt: -28 },
         '130': { backHeightFt: 69, backSetbackFt: -17, overhang: { coveredFromRow: 24, soffitHeightFt: 37 } },
         '102': { rows: 10, frontRowHeightFt: 6, overhang: { coveredFromRow: 8, soffitHeightFt: 18 } },
         '108': { rows: 11, frontRowHeightFt: 15, overhang: { coveredFromRow: 7, soffitHeightFt: 27 } },
@@ -1354,7 +1357,11 @@ const CITI: StadiumStructure = {
       // Rows 1–19, the upper half covered from row 7 (sourced). Estimated:
       // front row ~10 ft, 22° rake, deck underside ~26 ft. Not measured: the
       // sparse scan gives only one of these six sections (135: front row
-      // 9 ft, 18° rake).
+      // 9 ft, 18° rake). Behind 135 what rises highest is measured: a
+      // structure 69 ft up, 4 ft in front of its last row, over its covered
+      // rows. (Its cut shows its treads open to the sky up to row 14, where
+      // a deck 42 ft up begins; the source counts the cover from row 7. Not
+      // changed on one section of a sparse scan.)
       stand: {
         rows: 19,
         frontRowHeightFt: 10,
@@ -1362,6 +1369,7 @@ const CITI: StadiumStructure = {
         backHeightFt: 34,
         overhang: { coveredFromRow: 7, soffitHeightFt: 26 },
       },
+      sections: { '135': { backHeightFt: 69, backSetbackFt: -4 } },
       heightsSourced: false,
       coverSourced: true,
       sources: [rysCiti('sections/134'), rysCiti('sections/137'), RYS_CITI],
@@ -1432,9 +1440,13 @@ const CITI: StadiumStructure = {
       label: '400 level',
       // Rows 1–8 (behind home 1–5), open to the sky (sourced). Lidar (29 of
       // 37): front row 69 ft (68–69), 26° rake (17–32); what rises highest
-      // behind is the Promenade roof, 129 ft up and 30 ft back.
+      // behind is the Promenade roof, 129 ft up and 30 ft back (43–45 ft
+      // behind 425, 434 and 436, measured).
       stand: { rows: 8, frontRowHeightFt: 69, rakeDeg: 26, backHeightFt: 129, backSetbackFt: 30 },
-      sections: { '415': { rows: 5 }, '425': { rows: 5 }, '437': { backHeightFt: 116, backSetbackFt: 43 } },
+      sections: {
+        '415': { rows: 5 }, '425': { rows: 5, backHeightFt: 129, backSetbackFt: 45 }, '437': { backHeightFt: 116, backSetbackFt: 43 },
+        '434': { backHeightFt: 129, backSetbackFt: 43 }, '436': { backHeightFt: 127, backSetbackFt: 43 },
+      },
       heightsSourced: true,
       coverSourced: true,
       sources: [rysCiti('sections/405'), rysCiti('sections/415'), rysCiti('sections/425'), rysCiti('sections/435'), RYS_CITI, CITI_LIDAR],
@@ -1445,7 +1457,9 @@ const CITI: StadiumStructure = {
       // its edge at row 10, and at row 8 in 503). Lidar (34 of 38): front
       // row 85 ft (79–87), 30° rake; the roof's front edge is 129 ft up and
       // the scan shows nothing below 128 ft there: a thin roof, underside
-      // taken as 128 ft.
+      // taken as 128 ft. Behind 534, 535 and 537, where the scan sees no
+      // edge over the rows, what rises highest stands 12–37 ft behind the
+      // last row (measured).
       stand: {
         rows: 17,
         frontRowHeightFt: 85,
@@ -1454,7 +1468,10 @@ const CITI: StadiumStructure = {
         backSetbackFt: -16,
         overhang: { coveredFromRow: 11, soffitHeightFt: 128 },
       },
-      sections: { '503': { overhang: { coveredFromRow: 8, soffitHeightFt: 128 } } },
+      sections: {
+        '503': { overhang: { coveredFromRow: 8, soffitHeightFt: 128 } },
+        '534': { backHeightFt: 129, backSetbackFt: 12 }, '535': { backHeightFt: 129, backSetbackFt: 37 }, '537': { backHeightFt: 127, backSetbackFt: 22 },
+      },
       heightsSourced: false,
       coverSourced: true,
       sources: [rysCiti('sections/505'), rysCiti('sections/515'), rysCiti('sections/525'), rysCiti('sections/535'), RYS_CITI, CITI_LIDAR],
