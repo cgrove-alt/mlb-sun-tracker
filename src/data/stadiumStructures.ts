@@ -3855,10 +3855,13 @@ const KAUFFMAN: StadiumStructure = {
       // measured back stands more than 10 ft nearer or farther take their
       // own: the edge is 1–6 ft in front of the last row of the full 19–22
       // row sections (405–413, 429–435) and 22–32 ft behind the 10–12 row
-      // ones (410, 412, 416, 428, 430, 434, 436). Where that puts it over
-      // the last one or two rows, which stay open (405, 407, 411, 413, 433:
-      // fewer than three), it stands right behind the last row, as the open
-      // rows say; over an open row it would not count against a sun behind.
+      // ones (410, 412, 416, 428, 430, 434, 436). Where it is over only the
+      // last row or two (405, 407, 411, 413, 433), under option A's
+      // three-row mark, its edge is what rises behind them, just in front of
+      // the last row, which would leave the rows under it with nothing
+      // behind: so they are covered too (as at Nationals Park's Gallery),
+      // under its face's bottom or lowest structure there, 149–154 ft (153
+      // in 405, where none is seen).
       stand: { rows: 22, frontRowHeightFt: 60, rakeDeg: 32, backHeightFt: 156, backSetbackFt: 12 },
       sections: withBacks({
         '403': { backHeightFt: 135, backSetbackFt: 33, overhang: { coveredFromRow: 16, soffitHeightFt: 154 } },
@@ -3866,9 +3869,14 @@ const KAUFFMAN: StadiumStructure = {
         '429': { overhang: { coveredFromRow: 20, soffitHeightFt: 153 } },
         '431': { overhang: { coveredFromRow: 20, soffitHeightFt: 154 } },
         '409': { overhang: { coveredFromRow: 19, soffitHeightFt: 153 } },
+        '405': { overhang: { coveredFromRow: 18, soffitHeightFt: 153 } },
+        '407': { overhang: { coveredFromRow: 19, soffitHeightFt: 151 } },
+        '411': { overhang: { coveredFromRow: 21, soffitHeightFt: 150 } },
+        '413': { overhang: { coveredFromRow: 21, soffitHeightFt: 149 } },
+        '433': { overhang: { coveredFromRow: 19, soffitHeightFt: 154 } },
       }, {
-        '405': [157, 0], '407': [156, 0], '409': [157, -6], '411': [154, 0], '413': [158, 0],
-        '429': [161, -4], '431': [161, -2], '433': [155, 0], '435': [157, -1],
+        '405': [157, -2], '407': [156, -2], '409': [157, -6], '411': [154, -6], '413': [158, -4],
+        '429': [161, -4], '431': [161, -2], '433': [155, -2], '435': [157, -1],
         '410': [157, 22], '412': [161, 24], '416': [150, 32], '428': [161, 25], '430': [161, 24], '434': [154, 22], '436': [149, 29],
       }),
       rowsFromMap: true,
