@@ -3712,13 +3712,20 @@ const KAUFFMAN: StadiumStructure = {
       // are exposed to the sun until at least 3:00"). Lidar (38 of 42): front
       // row 3 ft (-1 to 4), 14° rake (12–28); what rises highest behind is
       // the roof's edge, 157 ft up and 66 ft back (in nine, the upper deck's
-      // front, 60 ft, 25 ft back). No deck over them.
+      // front, 60 ft, 25 ft back). No deck over them. Sections whose measured
+      // back stands more than 10 ft nearer or farther take their own: behind
+      // home (113, 122–134) the roof's edge is 86–101 ft back, behind 112,
+      // 142 and 143 the upper deck's front 11–14 ft back.
       stand: { rows: 24, frontRowHeightFt: 3, rakeDeg: 14, backHeightFt: 157, backSetbackFt: 66 },
-      sections: {
+      sections: withBacks({
         ...Object.fromEntries(['108', '110', '112', '142', '143', '145', '146', '147'].map((id) => [id, { backHeightFt: 60, backSetbackFt: 25 }])),
         ...Object.fromEntries(['126', '129', '131', '132'].map((id) => [id, { frontRowHeightFt: -1 }])),
         '144': { frontRowHeightFt: -1, backHeightFt: 60, backSetbackFt: 25 },
-      },
+      }, {
+        '113': [141, 91], '122': [161, 88], '123': [160, 91], '124': [161, 94], '125': [150, 89], '126': [150, 89],
+        '127': [150, 93], '129': [150, 99], '130': [151, 101], '131': [157, 99], '132': [161, 89], '133': [161, 88], '134': [161, 86],
+        '112': [60, 14], '142': [60, 11], '143': [60, 14],
+      }),
       rowsFromMap: true,
       heightsSourced: true,
       coverSourced: true,
@@ -3756,8 +3763,10 @@ const KAUFFMAN: StadiumStructure = {
       // Rows AA–TT, covered from row NN (sourced). Lidar (6 of 10): front
       // row 16 ft, 21° rake; the upper deck's front reaches out over row 6
       // in all six (5–7), so the rows from there back are covered, under
-      // ~50 ft (as in the Plaza).
+      // ~50 ft (as in the Plaza). In 211, whose 14 rows end sooner, that
+      // front is 21 ft in front of the last row (measured).
       stand: { rows: 20, frontRowHeightFt: 16, rakeDeg: 21, backHeightFt: 60, backSetbackFt: -37, deckFrontFt: 59, overhang: { coveredFromRow: 6, soffitHeightFt: 50 } },
+      sections: { '211': { backHeightFt: 60, backSetbackFt: -21 } },
       rowsFromMap: true,
       heightsSourced: false,
       coverSourced: true,
@@ -3798,15 +3807,26 @@ const KAUFFMAN: StadiumStructure = {
       // (31–33); what rises highest behind is the roof's edge, 156 ft up and
       // 12 ft back. That edge is over their last rows; in five over row
       // 16–20, three or more rows, which they take, under its face's
-      // bottom, 152–154 ft (153 in 409, where none is seen).
+      // bottom, 152–154 ft (153 in 409, where none is seen). Sections whose
+      // measured back stands more than 10 ft nearer or farther take their
+      // own: the edge is 1–6 ft in front of the last row of the full 19–22
+      // row sections (405–413, 429–435) and 22–32 ft behind the 10–12 row
+      // ones (410, 412, 416, 428, 430, 434, 436). Where that puts it over
+      // the last one or two rows, which stay open (405, 407, 411, 413, 433:
+      // fewer than three), it stands right behind the last row, as the open
+      // rows say; over an open row it would not count against a sun behind.
       stand: { rows: 22, frontRowHeightFt: 60, rakeDeg: 32, backHeightFt: 156, backSetbackFt: 12 },
-      sections: {
+      sections: withBacks({
         '403': { backHeightFt: 135, backSetbackFt: 33, overhang: { coveredFromRow: 16, soffitHeightFt: 154 } },
         '437': { backHeightFt: 135, backSetbackFt: 33, overhang: { coveredFromRow: 16, soffitHeightFt: 152 } },
         '429': { overhang: { coveredFromRow: 20, soffitHeightFt: 153 } },
         '431': { overhang: { coveredFromRow: 20, soffitHeightFt: 154 } },
         '409': { overhang: { coveredFromRow: 19, soffitHeightFt: 153 } },
-      },
+      }, {
+        '405': [157, 0], '407': [156, 0], '409': [157, -6], '411': [154, 0], '413': [158, 0],
+        '429': [161, -4], '431': [161, -2], '433': [155, 0], '435': [157, -1],
+        '410': [157, 22], '412': [161, 24], '416': [150, 32], '428': [161, 25], '430': [161, 24], '434': [154, 22], '436': [149, 29],
+      }),
       rowsFromMap: true,
       heightsSourced: true,
       coverSourced: true,

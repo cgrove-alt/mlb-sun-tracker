@@ -15,8 +15,9 @@
  *
  * Not reproduced:
  *   - [RYS] rows M–V of 409–427 are "safely in the shade after 3:00". In a
- *     3:10 PM game the model shades them in 409–417 from about 3:40 (at
- *     3:10 rows M–O of 411–415 are in the sun), and in 423–427, behind home,
+ *     3:10 PM game the model shades them in 409–413 from first pitch (each
+ *     section's measured roof edge), in 415–417 from about 3:40 (at 3:10
+ *     rows M–O of 415 are in the sun), and in 423–427, behind home,
  *     only partly or not at all: there the roof's edge, measured over the
  *     single-letter rows 16–21 elsewhere, is not seen (their cuts stop at a
  *     step in the front rows), so they have no cover.
