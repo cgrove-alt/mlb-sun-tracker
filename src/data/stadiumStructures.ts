@@ -52,6 +52,22 @@ export interface StadiumStructure {
  */
 const SUITE_DECK_REACH_FT = 17;
 
+/**
+ * A tier's section overrides with each listed section's own measured back
+ * (lidar: [height ft, setback ft behind the last row]) merged in, keeping
+ * the section's other values (its cover, its front row).
+ */
+function withBacks(
+  sections: NonNullable<TierStructure['sections']>,
+  backs: Record<string, readonly [number, number]>,
+): NonNullable<TierStructure['sections']> {
+  const out = { ...sections };
+  for (const [id, [backHeightFt, backSetbackFt]] of Object.entries(backs)) {
+    out[id] = { ...out[id], backHeightFt, backSetbackFt };
+  }
+  return out;
+}
+
 const RYS_YANKEES = 'https://www.rateyourseats.com/yankee-stadium/seating/shaded-covered-seats';
 const rysSection = (n: string) => `https://www.rateyourseats.com/yankee-stadium/seating/sections/${n}`;
 
@@ -293,13 +309,19 @@ const FENWAY: StadiumStructure = {
       // field (-2 to 1), 9° rake (7–10). What rises highest behind is the
       // pavilion roof, 82 ft up and 47 ft behind the last row; behind home
       // the press box block (96–100 ft), in the right-field corner the
-      // Grandstand roof (54 ft).
+      // Grandstand roof (54 ft). Sections whose measured back stands more
+      // than 10 ft nearer or farther take their own (the roof's front 34–35
+      // ft back behind 13–20, 58–61 and 69).
       stand: { rows: 12, frontRowHeightFt: -1, rakeDeg: 9, backHeightFt: 82, backSetbackFt: 47 },
-      sections: {
+      sections: withBacks({
         ...Object.fromEntries(['F39', 'F40', 'F41', 'F42', 'F43', 'F46', 'F47', 'F48', 'F49', 'H39', 'H40', 'H41', 'H42', 'H43', 'H46', 'H47', 'H48', 'H49'].map((id) => [id, { backHeightFt: 96, backSetbackFt: 25 }])),
         ...Object.fromEntries(['F44', 'F45', 'H44', 'H45'].map((id) => [id, { backHeightFt: 100, backSetbackFt: 25 }])),
         ...Object.fromEntries(['D78', 'D79', 'F78', 'F79', 'F80', 'F81', 'FBC78', 'FBC79', 'FBC80'].map((id) => [id, { backHeightFt: 54, backSetbackFt: 29 }])),
-      },
+      }, {
+        ...Object.fromEntries(['F13', 'F14', 'F15', 'F17', 'F18', 'F19', 'D13', 'D14', 'D15', 'D17', 'D18', 'D19', 'F58', 'F60', 'F61', 'D58', 'D60', 'D61', 'FBC58', 'FBC60', 'FBC61'].map((id) => [id, [82, 35] as const])),
+        ...Object.fromEntries(['F20', 'D20', 'F69', 'FBC69'].map((id) => [id, [82, 34] as const])),
+        'F42': [96, 39], 'H42': [96, 39],
+      }),
       rowsFromMap: true,
       heightsSourced: true,
       coverSourced: true,
@@ -314,9 +336,13 @@ const FENWAY: StadiumStructure = {
       // it) 52 ft, so the rows behind it are covered; behind
       // home the press box block reaches out over row 6, 57–87 ft up. The
       // roof's top over row 9, 54 ft up, is what rises highest behind (36–96
-      // ft from section to section).
+      // ft from section to section). Sections whose measured back stands
+      // more than 10 ft nearer or farther take their own: in the 21-row
+      // sections (B94–B97) the roof's edge is 26 ft in front of the last
+      // row; behind the short ones (B96, B103, B116, B146, B165: 6–11 rows)
+      // it starts at or just past the last row.
       stand: { rows: 13, frontRowHeightFt: 4, rakeDeg: 16, backHeightFt: 54, backSetbackFt: -13, deckFrontFt: 52, overhang: { coveredFromRow: 9, soffitHeightFt: 41 } },
-      sections: {
+      sections: withBacks({
         'B88': { backHeightFt: 41, backSetbackFt: -14, deckFrontFt: 39, overhang: { coveredFromRow: 13, soffitHeightFt: 28 } },
         'B89': { backHeightFt: 41, backSetbackFt: -14, deckFrontFt: 39, overhang: { coveredFromRow: 14, soffitHeightFt: 28 } },
         // At the ends and behind home another structure covers them, its
@@ -336,7 +362,10 @@ const FENWAY: StadiumStructure = {
         'B131': { backHeightFt: 87, backSetbackFt: -15, deckFrontFt: undefined, overhang: { coveredFromRow: 5, soffitHeightFt: 33 } },
         'B134': { backHeightFt: 87, backSetbackFt: -15, overhang: { coveredFromRow: 6, soffitHeightFt: 41 } },
         'B135': { overhang: { coveredFromRow: 6, soffitHeightFt: 41 } },
-      },
+      }, {
+        'B94': [55, -26], 'B95': [53, -26], 'B97': [53, -26],
+        'B96': [54, 0], 'B103': [53, -2], 'B116': [54, 1], 'B146': [54, 1], 'B165': [54, 6],
+      }),
       rowsFromMap: true,
       heightsSourced: false,
       coverSourced: true,
@@ -366,9 +395,9 @@ const FENWAY: StadiumStructure = {
       // Uncovered; among the last seats to get shade (sourced). Lidar (5 of
       // 8; the others are not separated from the Grandstand in the cut):
       // front row 1 ft below the field (-1 to 2), 9° rake (6–15); behind,
-      // the pavilion roof 82 ft up and 52 ft back.
+      // the pavilion roof 82 ft up and 52 ft back (63 ft behind B5).
       stand: { rows: 12, frontRowHeightFt: -1, rakeDeg: 9, backHeightFt: 82, backSetbackFt: 52 },
-      sections: { 'B2': { backHeightFt: 41, backSetbackFt: 21 }, 'B6': { frontRowHeightFt: 2 } },
+      sections: { 'B2': { backHeightFt: 41, backSetbackFt: 21 }, 'B5': { backHeightFt: 82, backSetbackFt: 63 }, 'B6': { frontRowHeightFt: 2 } },
       rowsFromMap: true,
       heightsSourced: true,
       coverSourced: true,
@@ -390,8 +419,12 @@ const FENWAY: StadiumStructure = {
       label: 'Green Monster seats',
       // On top of the 37 ft wall, 3 rows, uncovered, nothing behind but
       // Lansdowne Street (sourced: Wikipedia, Rate Your Seats; the lidar
-      // gives 36.6 ft).
+      // gives 36.6 ft). Lidar (3 of 10): behind M10 the buildings across
+      // the street, 55 ft up and 150 ft back; over M1 and M8 it sees only
+      // the light towers' lattice standing among the seats (44–45 ft), not
+      // a wall, so they keep the sourced back.
       stand: { rows: 3, frontRowHeightFt: 37, rakeDeg: 10, backHeightFt: 41 },
+      sections: { 'M10': { backHeightFt: 55, backSetbackFt: 150 } },
       rowsFromMap: true,
       heightsSourced: true,
       coverSourced: true,
