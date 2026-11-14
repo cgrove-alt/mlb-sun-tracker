@@ -1542,8 +1542,9 @@ const CBP: StadiumStructure = {
       // Rows 5–19, uncovered (sourced). Lidar (6 of 6): the slope from the
       // dugout boxes' front row (1 ft below the field) at 11° (10–13) puts
       // row 5 at ~1 ft; behind, the Terrace Deck roof, 133 ft up and 99 ft
-      // back.
+      // back (84–88 ft behind A and G, measured).
       stand: { rows: 15, frontRowHeightFt: 1, rakeDeg: 11, backHeightFt: 133, backSetbackFt: 99 },
+      sections: { 'A': { backHeightFt: 133, backSetbackFt: 88 }, 'G': { backHeightFt: 132, backSetbackFt: 84 } },
       rowsFromMap: true,
       heightsSourced: true,
       coverSourced: true,
@@ -1567,7 +1568,7 @@ const CBP: StadiumStructure = {
         '123': { overhang: { coveredFromRow: 10, soffitHeightFt: 35 } },
         '124': { overhang: { coveredFromRow: 10, soffitHeightFt: 35 } },
         '125': { frontRowHeightFt: 19, backHeightFt: 40, backSetbackFt: 25, overhang: { coveredFromRow: 7, soffitHeightFt: 35 } }, // rows 24–34, from 30
-        '126': { backHeightFt: 70, backSetbackFt: -11 },
+        '126': { backHeightFt: 70, backSetbackFt: 7 },
         '127': { backHeightFt: 70, backSetbackFt: -11 },
       },
       rowsFromMap: true,
@@ -1578,7 +1579,11 @@ const CBP: StadiumStructure = {
     field: {
       label: 'Field level (100s)',
       stand: { ...CBP_FIELD, deckFrontFt: 44 },
-      sections: {
+      // Sections whose measured back stands more than 10 ft nearer or
+      // farther take their own: the 200 level's front 21–44 ft in front of
+      // the last row of 115, 132, 137 and 138, 12 and 39 ft in front of
+      // 108's and 109's.
+      sections: withBacks({
         '108': { frontRowHeightFt: 4, backHeightFt: 45, backSetbackFt: -25, overhang: { coveredFromRow: 21, soffitHeightFt: 35 } }, // rows 11–35
         '109': { backHeightFt: 45, backSetbackFt: -25, overhang: { coveredFromRow: 23, soffitHeightFt: 35 } },
         ...Object.fromEntries(['110', '111'].map((id) => [id, { backHeightFt: 117, backSetbackFt: 32 }])),
@@ -1596,7 +1601,9 @@ const CBP: StadiumStructure = {
         // Rows 11–37, covered from 33; not found in the scan, so row 11 is
         // put on the measured slope and the source's covered row kept.
         '139': { frontRowHeightFt: 6, overhang: { coveredFromRow: 23, soffitHeightFt: 35 } },
-      },
+      }, {
+        '108': [45, -12], '109': [45, -39], '115': [70, -21], '132': [70, -21], '137': [70, -21], '138': [70, -44],
+      }),
       rowsFromMap: true,
       heightsSourced: false,
       coverSourced: true,
@@ -1607,9 +1614,15 @@ const CBP: StadiumStructure = {
       // 112–114: Rate Your Seats gives no covered rows for these three; the
       // lidar puts the 200 level's edge over row 34 (112, 113) and 30 (114).
       // Rows from the club's data; stand as the rest of the 100s (the lidar
-      // agrees: front row 1 ft below the field, 12°).
+      // agrees: front row 1 ft below the field, 12°). Behind 112's 37 rows
+      // the 200 level's front stands 24 ft back, in 114 19 ft in front of
+      // the last row (measured).
       stand: { ...CBP_FIELD, deckFrontFt: 44 },
-      sections: Object.fromEntries(['112', '113'].map((id) => [id, { overhang: { coveredFromRow: 34, soffitHeightFt: 35 } }])),
+      sections: {
+        '112': { backHeightFt: 69, backSetbackFt: 24, overhang: { coveredFromRow: 34, soffitHeightFt: 35 } },
+        '113': { overhang: { coveredFromRow: 34, soffitHeightFt: 35 } },
+        '114': { backHeightFt: 70, backSetbackFt: -19 },
+      },
       rowsFromMap: true,
       heightsSourced: false,
       coverSourced: true,
@@ -1682,7 +1695,7 @@ const CBP: StadiumStructure = {
       sections: {
         ...Object.fromEntries(['206', '208'].map((n) => [n, { overhang: { coveredFromRow: 8, soffitHeightFt: 62 } }])),
         ...Object.fromEntries(['207', '209'].map((n) => [n, { overhang: { coveredFromRow: 7, soffitHeightFt: 60 } }])),
-        '210': { noCover: true },
+        '210': { noCover: true, backHeightFt: 69, backSetbackFt: 2 }, // its 12 rows open: the 300 level's front 2 ft behind them
         '211': { noCover: true },
         '216': { overhang: { coveredFromRow: 1, soffitHeightFt: 54 } },
         '219': { overhang: { coveredFromRow: 5, soffitHeightFt: 60 } },
@@ -1700,7 +1713,7 @@ const CBP: StadiumStructure = {
       // 56 ft up (49–67). The main scoreboard above them is a board on one
       // pylon, 166–195 ft up, which light passes under.
       stand: { rows: 11, frontRowHeightFt: 38, rakeDeg: 22, backHeightFt: 56, backSetbackFt: 16 },
-      sections: { '241': { backHeightFt: 67, backSetbackFt: 52 }, '244': { backHeightFt: 49, backSetbackFt: 1 } },
+      sections: { '241': { backHeightFt: 67, backSetbackFt: 52 }, '244': { backHeightFt: 49, backSetbackFt: 1 }, '245': { backHeightFt: 53, backSetbackFt: 135 } },
       rowsFromMap: true,
       heightsSourced: true,
       coverSourced: true,
@@ -1731,8 +1744,8 @@ const CBP: StadiumStructure = {
       sections: {
         '301': { backHeightFt: 19, backSetbackFt: 196 },
         '302': { backHeightFt: 87, backSetbackFt: -26 },
-        '305': { overhang: { coveredFromRow: 14, soffitHeightFt: 117 } },
-        '306': { overhang: { coveredFromRow: 15, soffitHeightFt: 117 } },
+        '305': { backHeightFt: 117, backSetbackFt: -16, overhang: { coveredFromRow: 14, soffitHeightFt: 117 } },
+        '306': { backHeightFt: 117, backSetbackFt: -8, overhang: { coveredFromRow: 15, soffitHeightFt: 117 } },
       },
       rowsFromMap: true,
       heightsSourced: false,
@@ -1743,9 +1756,12 @@ const CBP: StadiumStructure = {
       label: '300 level (312–333)',
       // Rows 1–8, open (sourced). Lidar (21 of 22): front row 69 ft (68–75),
       // 31° rake; what rises highest behind is the Terrace Deck roof, 133 ft
-      // up and 25 ft back (90 ft behind 314, 315 and 333).
+      // up and 25 ft back (40 ft behind 330; 90 ft behind 314, 315 and 333).
       stand: { rows: 8, frontRowHeightFt: 69, rakeDeg: 31, backHeightFt: 133, backSetbackFt: 25 },
-      sections: Object.fromEntries(['314', '315', '333'].map((id) => [id, { backHeightFt: 90, backSetbackFt: 2 }])),
+      sections: {
+        ...Object.fromEntries(['314', '315', '333'].map((id) => [id, { backHeightFt: 90, backSetbackFt: 2 }])),
+        '330': { backHeightFt: 133, backSetbackFt: 40 },
+      },
       rowsFromMap: true,
       heightsSourced: true,
       coverSourced: true,
