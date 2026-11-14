@@ -19,7 +19,7 @@
  *
  * Not reproduced: [RYS] the third-base side is the best bet for a 3:05 PM
  * start. In the only such 2025 game (March 27, 3:15 PM) the first-base side
- * is the more shaded (all of 141–154 against 75% of 155–172; about equal on
+ * is the more shaded (99% of 141–154 against 76% of 155–172; about equal on
  * the estimated heights): with the sun 42° up and nearly behind it, it is
  * under the line of the measured roof over the 400s (see 152–154 below).
  * The third-base side's lead shows in the later starts tested below.
@@ -41,13 +41,14 @@
  *     July game.
  *   - [RYS] the third-base side is the shade side, and shades first late in
  *     the day. Still true, by less: the measured roof line behind the
- *     first-base side shades it too (100s 32% against 31% over a 1:15 PM
+ *     first-base side shades it too (100s 32% against 26% over a 1:15 PM
  *     July game, was 28% against 17%; the upper deck 60% against 31%, was
- *     61% against 0%; at a 5:15 PM May start 90% against 79% at first
+ *     61% against 0%; at a 5:15 PM May start 90% against 74% at first
  *     pitch, was 79% against 48%). Tested: more.
  *   - [RYS] 152–154: only a few rows shaded at first pitch of a 3:15 PM
  *     March game, most by the middle innings. The second part holds
- *     (tested); at first pitch they are already 72–100% shaded: the sun,
+ *     (tested), and the first in 154 (44%, its rows ending sooner, the roof
+ *     48 ft behind them); 152 and 153 are already 84–100% shaded: the sun,
  *     42° up and nearly behind them, is under the line of the measured roof
  *     over the 400s. The model treats that roof as the top of a wall; on
  *     the ground light may come in under its open back, which the
@@ -159,8 +160,8 @@ describe('Busch Stadium: a 1:15 PM game in July', () => {
 describe('Busch Stadium: a 3:15 PM game in March', () => {
   it.each(range(152, 158))('[RYS] section %s: only a few rows shaded at first pitch, most of it by the middle innings', (id) => {
     const samples = section(MARCH_27_315PM, id).samples;
-    // 152–154 are already mostly shaded at first pitch (header).
-    if (!['152', '153', '154'].includes(id)) expect(samples[0].shadedFraction).toBeLessThan(0.5);
+    // 152 and 153 are already mostly shaded at first pitch (header).
+    if (!['152', '153'].includes(id)) expect(samples[0].shadedFraction).toBeLessThan(0.5);
     expect(samples[4].shadedFraction).toBeGreaterThanOrEqual(0.8);
   });
 });
