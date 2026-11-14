@@ -105,8 +105,11 @@ PARKS = {
         'scan': {'ept': 'CA_SanFrancisco_1_B23'}, 'name': 'USGS 3DEP CA_SanFrancisco_B23 (San Francisco 2023)',
         'noise': [7, 18],
         # The View level is rows A-D, a cross-aisle, then rows 1-18: the band
-        # picks rows 1-18. The suites are enclosed under it.
+        # picks rows 1-18, so the profile's first four rows (A-G and row 0,
+        # eight, in 315 and 326) lie in front of the run. The suites are
+        # enclosed under it.
         'tiers': {'lower': (-1, 4), 'club': (7, 12), 'view': (22, 27, 'near', 15), 'bleachers': (1, 4), 'arcade': (3, 7)},
+        'rowsInFront': {'view': 4, '315': 8, '326': 8},
         'skip': {'122': 'its cut runs down a vomitory ramp, which drags the treads\' line below the seats'},
     },
     'phillies': {
@@ -787,8 +790,11 @@ def tier_run(runs, band):
 
 def measure_section(P, sec, band):
     """One section: find its tier's run on the cut from home plate, then
-    measure it on a cut along the stand direction through that run."""
+    measure it on a cut along the stand direction through that run. Rows are
+    counted as the profile counts them: where the band's run starts behind
+    the profile's first rows (`rowsInFront`), those rows lie in front of it."""
     st, rows = sec['stand'], sec['stand']['rows']
+    ahead = sec.get('rowsInFront', 0)
     tread = (st.get('treadFt') or 2.75) * FT
     a = math.radians(sec['bearing'])
     s, across, z = cut(P, 0, 0, sec['bearing'], 0, 220)
@@ -806,7 +812,7 @@ def measure_section(P, sec, band):
     # The rows the scan should see: up to the covered row where a source
     # gives it; a guessed covered row (the tier's cover is unsourced) is what
     # is being measured, so it does not limit them.
-    open_rows = rows if model_cover is None or not sec.get('coverSourced', True) else model_cover - 1
+    open_rows = (rows if model_cover is None or not sec.get('coverSourced', True) else model_cover - 1) - ahead
     depth = run['s1'] - run['s0']
     if depth > 1.6 * max(open_rows, 1) * tread + 2:
         return {'id': sec['id'], 'tier': sec['tier'], 'found': False, 'anchor': [ax, ay, run['at'](0)],
@@ -814,7 +820,7 @@ def measure_section(P, sec, band):
     slope = run['slope']
     front = run['at'](run['s0'] + tread / 2)
     rise = tread * slope
-    back = run['s0'] + rows * tread
+    back = run['s0'] + (rows - ahead) * tread
     # A deck over the seats: from the first 0.5 m bin where structure 2.2 m
     # or more above the treads carries on for 3 m (a net or a pole does not).
     over = (s > run['s0'] - 1) & (s < back + 2) & (z > run['c'] + slope * s + 2.2)
@@ -827,7 +833,7 @@ def measure_section(P, sec, band):
             if flag[k] and flag[k:k + 6].sum() >= 5:
                 lip = b0 + k * 0.5
                 break
-    lip_row = None if lip is None else max(1, round((lip - run['s0']) / tread) + 1)
+    lip_row = None if lip is None else max(1, round((lip - run['s0']) / tread) + 1 + ahead)
     if lip_row is not None and lip_row > rows:
         lip, lip_row = None, None
     # A deck over the back rows hides the seats behind its edge from the air:
@@ -880,7 +886,7 @@ def measure_section(P, sec, band):
         if under_roof:
             deck = min(under_roof, key=lambda r: r['s0'])
             lip, soffit, lip_low, above_front = deck['s0'], None, deck['z0'], deck['z0']
-            lip_row = max(1, round((lip - run['s0']) / tread) + 1)
+            lip_row = max(1, round((lip - run['s0']) / tread) + 1 + ahead)
             flags.append('deckUnderRoof')
     cover_agrees = (lip_row is None and model_cover is None) or (
         lip_row is not None and model_cover is not None and abs(lip_row - model_cover) <= 2)
@@ -924,8 +930,10 @@ def measure(park):
     data = load_sections(park)
     bands = PARKS[park]['tiers']
     skip = PARKS[park].get('skip', {})
+    ahead = PARKS[park].get('rowsInFront', {})
     results = [{'id': sec['id'], 'tier': sec['tier'], 'found': False, 'why': 'skipped: ' + skip[sec['id']]} if sec['id'] in skip
-               else measure_section(P, {**sec, 'coverSourced': data['tiers'][sec['tier']]['coverSourced']}, bands[sec['tier']])
+               else measure_section(P, {**sec, 'coverSourced': data['tiers'][sec['tier']]['coverSourced'],
+                                        'rowsInFront': ahead.get(sec['id'], ahead.get(sec['tier'], 0))}, bands[sec['tier']])
                for sec in data['sections'] if sec['tier'] in bands]
     tiers = {}
     for key in bands:
