@@ -3035,8 +3035,12 @@ const PETCO: StadiumStructure = {
       // Rows 8–20 or 8–22, open (seen from directly above on the photo,
       // 18–31 m behind home). Lidar (6 of 6): front row at field level (-2
       // to 2), 12° rake (9–14); what rises highest behind is the Upper
-      // level's roof, 133 ft up and 88 ft back.
+      // level's roof, 133 ft up and 88 ft back (66–103 ft behind 101–103,
+      // measured).
       stand: { rows: 15, frontRowHeightFt: -1, rakeDeg: 12, backHeightFt: 133, backSetbackFt: 88 },
+      sections: {
+        '101': { backHeightFt: 134, backSetbackFt: 75 }, '102': { backHeightFt: 133, backSetbackFt: 66 }, '103': { backHeightFt: 133, backSetbackFt: 103 },
+      },
       rowsFromMap: true,
       heightsSourced: true,
       coverSourced: true,
@@ -3053,7 +3057,7 @@ const PETCO: StadiumStructure = {
       // seen, 34 ft).
       stand: { rows: 15, frontRowHeightFt: 10, rakeDeg: 19, backHeightFt: 36, backSetbackFt: -26, deckFrontFt: 36, overhang: { coveredFromRow: 4, soffitHeightFt: 27 } },
       sections: {
-        'A': { overhang: { coveredFromRow: 1, soffitHeightFt: 27 } },
+        'A': { backHeightFt: 38, backSetbackFt: -15, overhang: { coveredFromRow: 1, soffitHeightFt: 27 } },
         'J': { backHeightFt: 71, backSetbackFt: -11, overhang: { coveredFromRow: 4, soffitHeightFt: 34 } },
       },
       rowsFromMap: true,
@@ -3069,8 +3073,12 @@ const PETCO: StadiumStructure = {
       // than two rows ahead of the source's, and those take the scan's row
       // (the cross-aisle between the front and back blocks counts as rows
       // in that distance, as it does in the engine). Its underside: that
-      // front row less 9 ft, ~27 ft (the lidar sees nothing lower).
-      sections: {
+      // front row less 9 ft, ~27 ft (the lidar sees nothing lower). Sections
+      // whose measured back stands more than 10 ft nearer or farther take
+      // their own: that front 15–45 ft in front of the last row of the deep
+      // sections (107, 112–116, 122), 19 ft behind the 23-row 124; the roof
+      // 57 ft behind 108.
+      sections: withBacks({
         ...petcoCover([...Array.from({ length: 18 }, (_, i) => String(107 + i))], 27),
         ...Object.fromEntries(['108', '110', '117', '118', '119', '120', '121'].map((id) => [id, { backHeightFt: 133, backSetbackFt: 32, ...petcoCover([id], 27)[id] }])),
         '109': { backHeightFt: 36, backSetbackFt: -62, overhang: { coveredFromRow: 17, soffitHeightFt: 27 } },
@@ -3079,7 +3087,10 @@ const PETCO: StadiumStructure = {
         ...Object.fromEntries(['114', '122'].map((id) => [id, { overhang: { coveredFromRow: 26, soffitHeightFt: id === '122' ? 28 : 27 } }])),
         '115': { overhang: { coveredFromRow: 24, soffitHeightFt: 28 } },
         '116': { overhang: { coveredFromRow: 24, soffitHeightFt: 27 } },
-      },
+      }, {
+        '107': [68, -18], '112': [68, -15], '113': [67, -45], '114': [67, -35], '115': [68, -40], '116': [68, -40], '122': [67, -33],
+        '124': [68, 19], '108': [132, 57],
+      }),
       rowsFromMap: true,
       heightsSourced: false,
       coverSourced: true,
@@ -3201,13 +3212,15 @@ const PETCO: StadiumStructure = {
       // Rows 1–25; 227–231 covered from row 23, 233 and 235 open ("all right
       // field seats, especially on the 200 level, are not good for shade").
       // Lidar (4 of 5): front row 47 ft (36 in 227), 27° rake (17–29);
-      // behind, 73 ft up (62–129). Estimated: underside 9 ft above the first
+      // behind, 73 ft up (62–129; 78 ft right behind 227's last row, 67 ft
+      // and 162 ft back behind 231). Estimated: underside 9 ft above the first
       // covered row's floor. Over 233's rows 19 and up a structure reaches
       // out, its lowest point 94 ft up, so those rows are covered.
       stand: { rows: 25, frontRowHeightFt: 47, rakeDeg: 27, backHeightFt: 73, backSetbackFt: 81 },
       sections: {
-        ...petcoCover(['229', '231'], 84),
-        '227': { frontRowHeightFt: 36, ...petcoCover(['227'], 76)['227'] },
+        ...petcoCover(['229'], 84),
+        '231': { backHeightFt: 67, backSetbackFt: 162, ...petcoCover(['231'], 84)['231'] },
+        '227': { frontRowHeightFt: 36, backHeightFt: 78, backSetbackFt: 1, ...petcoCover(['227'], 76)['227'] },
         '233': { backHeightFt: 129, backSetbackFt: -15, overhang: { coveredFromRow: 19, soffitHeightFt: 94 } },
         '235': { backHeightFt: 62, backSetbackFt: 191 },
       },
@@ -3227,8 +3240,13 @@ const PETCO: StadiumStructure = {
       // ends). Its edge agrees with the source's row but in 304, 307, 322
       // and 326, which take the scan's (14–16). Lower "edges" over 311 and
       // 320–325 are the Upper Deck's rows behind the aisle, not a deck.
+      // Sections whose measured back stands more than 10 ft nearer or
+      // farther take their own (the roof's edge 32–39 ft in front of the
+      // last row of 304, 307 and 326; the Upper Deck's rows behind the
+      // aisle, ~80 ft up, start 20 ft behind 321's last row and 47 ft in
+      // front of 323's).
       stand: { rows: 23, frontRowHeightFt: 67, rakeDeg: 29, backHeightFt: 133, backSetbackFt: -21 },
-      sections: {
+      sections: withBacks({
         ...petcoCover(Array.from({ length: 30 }, (_, i) => String(300 + i)), 133),
         ...Object.fromEntries(['304', '307'].map((id) => [id, { overhang: { coveredFromRow: 14, soffitHeightFt: 133 } }])),
         '322': { overhang: { coveredFromRow: 15, soffitHeightFt: 132 } },
@@ -3236,7 +3254,7 @@ const PETCO: StadiumStructure = {
         ...Object.fromEntries(['315', '328'].map((id) => [id, { backHeightFt: 98, backSetbackFt: -21, ...petcoCover([id], 133)[id] }])),
         '319': { backHeightFt: 105, backSetbackFt: 66, ...petcoCover(['319'], 133)['319'] },
         ...Object.fromEntries(['321', '323'].map((id) => [id, { backHeightFt: 80, backSetbackFt: -13, ...petcoCover([id], 133)[id] }])),
-      },
+      }, { '304': [134, -33], '307': [133, -39], '326': [133, -32], '321': [79, 20], '323': [81, -47] }),
       rowsFromMap: true,
       heightsSourced: false,
       coverSourced: true,
