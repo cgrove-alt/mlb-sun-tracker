@@ -30,9 +30,9 @@
  *   - [RYS] Gallery 302–310: in the sun at first pitch, shaded as the game
  *     goes on, back rows first. The roof is measured 140 ft up right over
  *     their row 8–9 (the estimate put its edge 8 ft behind the last row), so
- *     with the sun high behind them its edge already shades the back half or
- *     more at first pitch (60–75%). Tested: back rows first, all shaded by
- *     the end.
+ *     with the sun high behind them its edge already shades much of them at
+ *     first pitch (42–75%, 64% on average; least in 303 and 309, covered
+ *     from row 11 of 12). Tested: back rows first, all shaded by the end.
  *   - [RYS] the outfield (100–107) stays in the sun. The scan shows
  *     structures over the back rows of 100 (from row 12, 51 ft up) and
  *     103–105 (from row 24–27, 31–39 ft), so the model shades 16% of the

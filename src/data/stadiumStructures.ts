@@ -2493,8 +2493,9 @@ const NATS: StadiumStructure = {
       // Rows A–L at the backstop (C: A–H), open (seen from directly above on
       // the photo). Lidar (5 of 5): front row at field level, 10° rake
       // (9–13); what rises highest behind is the Upper Gallery's roof, 135 ft
-      // up and 103 ft back.
+      // up and 103 ft back (116 ft behind C, measured).
       stand: { rows: 12, frontRowHeightFt: 0, rakeDeg: 10, backHeightFt: 135, backSetbackFt: 103 },
+      sections: { 'C': { backHeightFt: 135, backSetbackFt: 116 } },
       rowsFromMap: true,
       heightsSourced: true,
       coverSourced: true,
@@ -2505,11 +2506,15 @@ const NATS: StadiumStructure = {
       // Rows A–U, "elevated about 12 rows off the field" behind the Terra
       // Club; no source gives covered rows, so the check tries both. Lidar (7
       // of 11): front row 10 ft (9–15), 14° rake (13–14); what rises highest
-      // behind is the Upper Gallery's roof, 134 ft up and 39 ft back.
+      // behind is the Upper Gallery's roof, 134 ft up and 39 ft back (57–62
+      // ft behind HP119 and HP120, measured).
       // In DC122 the club level's front (37 ft) reaches out over row 15
       // (underside ~34 ft, 9 ft above that row's floor).
       stand: { rows: 21, frontRowHeightFt: 10, rakeDeg: 14, backHeightFt: 134, backSetbackFt: 39, deckFrontFt: 37 },
-      sections: { 'DC122': { frontRowHeightFt: 15, backHeightFt: 73, backSetbackFt: -11, overhang: { coveredFromRow: 15, soffitHeightFt: 34 } } },
+      sections: {
+        'DC122': { frontRowHeightFt: 15, backHeightFt: 73, backSetbackFt: -11, overhang: { coveredFromRow: 15, soffitHeightFt: 34 } },
+        'HP119': { backHeightFt: 134, backSetbackFt: 62 }, 'HP120': { backHeightFt: 134, backSetbackFt: 57 },
+      },
       rowsFromMap: true,
       heightsSourced: true,
       coverSourced: false,
@@ -2526,15 +2531,20 @@ const NATS: StadiumStructure = {
       // covered row's floor (32 ft over row 36). Where the scan sees no edge
       // (109) or did not measure the section (137) the source's row stays.
       // What rises highest behind is the Upper Gallery's roof, 140 ft up over
-      // the back row.
+      // the back row. Sections whose measured back stands more than 10 ft
+      // nearer or farther take their own (the same roof 27–42 ft behind the
+      // shorter sections 108, 109, 118 and 127, 9–16 ft in front of the last
+      // row of the 49-row 111 and 135).
       stand: { rows: 44, frontRowHeightFt: 1, rakeDeg: 13, backHeightFt: 140, backSetbackFt: 1, deckFrontFt: 37, overhang: { coveredFromRow: 36, soffitHeightFt: 32 } },
-      sections: {
+      sections: withBacks({
         ...Object.fromEntries(['109', '137'].map((id) => [id, { overhang: { coveredFromRow: NATS_100_COVER[id], soffitHeightFt: 28 } }])),
         '108': { deckFrontFt: 71, overhang: { coveredFromRow: 41, soffitHeightFt: 62 } },
         '113': { overhang: { coveredFromRow: 39, soffitHeightFt: 34 } },
         ...Object.fromEntries(['134', '135'].map((id) => [id, { overhang: { coveredFromRow: 33, soffitHeightFt: 30 } }])),
         '136': { overhang: { coveredFromRow: 40, soffitHeightFt: 35 } },
-      },
+      }, {
+        '108': [133, 24], '109': [134, 42], '118': [141, 29], '127': [141, 27], '111': [142, -9], '135': [142, -16],
+      }),
       rowsFromMap: true,
       heightsSourced: false,
       coverSourced: true,
@@ -2547,12 +2557,14 @@ const NATS: StadiumStructure = {
       // 13° rake (10–19); behind, 46 ft up (41–78). Over the back rows of
       // 100 and 103–105 a structure reaches out (from row 24, 12 in 100, 27
       // in 103; the bottom of its face 39 ft up, 33–48), so those rows are
-      // covered; over 101 and 102 the scan sees none.
+      // covered; over 101 and 102 the scan sees none. Each takes its own
+      // measured back where it differs (over 100 that structure's top, 51
+      // ft up and 41 ft in front of its last row).
       stand: { rows: 26, frontRowHeightFt: 9, rakeDeg: 13, backHeightFt: 46, backSetbackFt: -6 },
       sections: {
-        '100': { frontRowHeightFt: 14, overhang: { coveredFromRow: 12, soffitHeightFt: 48 } },
-        '101': { frontRowHeightFt: 14, backHeightFt: 77, backSetbackFt: 149 },
-        '102': { backHeightFt: 77, backSetbackFt: 149 },
+        '100': { frontRowHeightFt: 14, backHeightFt: 51, backSetbackFt: -41, overhang: { coveredFromRow: 12, soffitHeightFt: 48 } },
+        '101': { frontRowHeightFt: 14, backHeightFt: 78, backSetbackFt: 125 },
+        '102': { backHeightFt: 77, backSetbackFt: 173 },
         '103': { backHeightFt: 41, backSetbackFt: -6, overhang: { coveredFromRow: 27, soffitHeightFt: 38 } },
         '104': { backHeightFt: 41, backSetbackFt: -6, overhang: { coveredFromRow: 24, soffitHeightFt: 33 } },
         '105': { overhang: { coveredFromRow: 24, soffitHeightFt: 39 } },
@@ -2589,9 +2601,14 @@ const NATS: StadiumStructure = {
       // 223–235). Lidar (2 of 12; the 300 deck hides the rest): front row
       // 37 ft, 18° rake (16–20); the 300 deck reaches out over row 1–2, so
       // the rows from 2 back are covered (201–205, not measured, keep row
-      // H), its lowest point there 63 ft up, taken as its underside.
+      // H), its lowest point there 63 ft up, taken as its underside. Behind
+      // the two measured, 229 and 235, that deck is 35 ft in front of the
+      // last row.
       stand: { rows: 16, frontRowHeightFt: 37, rakeDeg: 18, backHeightFt: 63, overhang: { coveredFromRow: 2, soffitHeightFt: 63 } },
-      sections: Object.fromEntries(['201', '202', '203', '204', '205'].map((id) => [id, { overhang: { coveredFromRow: 8, soffitHeightFt: 63 } }])),
+      sections: {
+        ...Object.fromEntries(['201', '202', '203', '204', '205'].map((id) => [id, { overhang: { coveredFromRow: 8, soffitHeightFt: 63 } }])),
+        ...Object.fromEntries(['229', '235'].map((id) => [id, { backHeightFt: 63, backSetbackFt: -35 }])),
+      },
       rowsFromMap: true,
       heightsSourced: false,
       coverSourced: true,
@@ -2599,11 +2616,13 @@ const NATS: StadiumStructure = {
     },
     clubLevel: {
       label: 'Club level (206–221)',
-      // Rows A–J or A–L, covered from row G (sourced; the one measured
-      // section shows no edge over its first rows). Lidar (1 of 16; the 300
-      // deck hides the rest): front row 38 ft, 26° rake. The 300 deck's
-      // underside as measured over the Mezzanine and Terrace, 63 ft.
-      stand: { rows: 10, frontRowHeightFt: 38, rakeDeg: 26, backHeightFt: 63, overhang: { coveredFromRow: 7, soffitHeightFt: 63 } },
+      // Rows A–J or A–L, covered from row G (sourced). Hidden under the 300
+      // deck: the scan finds none of its 16 sections (215's cut lands on a
+      // roof outside the park, 86 m from home plate, beyond the stands).
+      // Estimated from the 200 level measured around it: front 37 ft (the
+      // Mezzanine's and the Terrace's), the Mezzanine's 18° rake, and the 300
+      // deck's underside as measured over them, 63 ft.
+      stand: { rows: 10, frontRowHeightFt: 37, rakeDeg: 18, backHeightFt: 63, overhang: { coveredFromRow: 7, soffitHeightFt: 63 } },
       rowsFromMap: true,
       heightsSourced: false,
       coverSourced: true,
@@ -2615,9 +2634,13 @@ const NATS: StadiumStructure = {
       // of 8; the 300 deck hides the rest): front row 37 ft, 15° rake; the
       // 300 deck reaches out over row 1–4, so the rows from 2 back are
       // covered (224–230, not measured, keep their row), its lowest point
-      // there 62 ft up, taken as its underside.
+      // there 62 ft up, taken as its underside. Behind the two measured, 232
+      // and 236, that deck is 49 ft in front of the last row (63 ft up).
       stand: { rows: 24, frontRowHeightFt: 37, rakeDeg: 15, backHeightFt: 62, overhang: { coveredFromRow: 2, soffitHeightFt: 62 } },
-      sections: Object.fromEntries(['224', '226', '228', '230'].map((id) => [id, { overhang: { coveredFromRow: 10, soffitHeightFt: 62 } }])),
+      sections: {
+        ...Object.fromEntries(['224', '226', '228', '230'].map((id) => [id, { overhang: { coveredFromRow: 10, soffitHeightFt: 62 } }])),
+        ...Object.fromEntries(['232', '236'].map((id) => [id, { backHeightFt: 63, backSetbackFt: -49 }])),
+      },
       rowsFromMap: true,
       heightsSourced: false,
       coverSourced: true,
@@ -2634,9 +2657,9 @@ const NATS: StadiumStructure = {
       // are covered; over 240 the scan sees nothing.
       stand: { rows: 16, frontRowHeightFt: 36, rakeDeg: 20, backHeightFt: 95, backSetbackFt: -12, overhang: { coveredFromRow: 12, soffitHeightFt: 75 } },
       sections: {
-        '238': { backHeightFt: 64, backSetbackFt: -5, deckFrontFt: 62, overhang: { coveredFromRow: 3, soffitHeightFt: 53 } },
+        '238': { backHeightFt: 65, backSetbackFt: -22, deckFrontFt: 62, overhang: { coveredFromRow: 3, soffitHeightFt: 53 } },
         '239': { backHeightFt: 67, backSetbackFt: -22, deckFrontFt: 62, overhang: { coveredFromRow: 2, soffitHeightFt: 53 } },
-        '240': { backHeightFt: 64, backSetbackFt: -5, noCover: true },
+        '240': { backHeightFt: 63, backSetbackFt: 12, noCover: true },
         ...Object.fromEntries(['241', '242'].map((id) => [id, { backHeightFt: 123, backSetbackFt: -12 }])),
         '243': { backHeightFt: 135, backSetbackFt: -12, overhang: { coveredFromRow: 12, soffitHeightFt: 100 } },
       },
@@ -2670,15 +2693,17 @@ const NATS: StadiumStructure = {
       // only the last row or two that is under option A's three-row mark,
       // but its edge is then what rises behind them, just in front of the
       // last row, which would leave the rows under it with nothing behind:
-      // so they are covered too. Over 315 the scan sees no edge.
+      // so they are covered too. Over 315 the scan sees no edge. In the
+      // 12-row 307, 318 and 320 the edge is 12–14 ft in front of the last
+      // row, 141–142 ft up (measured).
       stand: { rows: 10, frontRowHeightFt: 73, rakeDeg: 31, backHeightFt: 135, backSetbackFt: -2, overhang: { coveredFromRow: 9, soffitHeightFt: 140 } },
-      sections: {
+      sections: withBacks({
         ...Object.fromEntries(['305', '306', '307', '308', '318', '319', '320', '321'].map((id) => [id, { overhang: { coveredFromRow: 8, soffitHeightFt: 140 } }])),
         '316': { overhang: { coveredFromRow: 10, soffitHeightFt: 140 } },
         ...Object.fromEntries(['303', '309'].map((id) => [id, { overhang: { coveredFromRow: 11, soffitHeightFt: 140 } }])),
         '317': { overhang: { coveredFromRow: 12, soffitHeightFt: 140 } },
         '315': { noCover: true },
-      },
+      }, { '307': [141, -14], '318': [142, -12], '320': [141, -12] }),
       rowsFromMap: true,
       heightsSourced: true,
       coverSourced: true,
@@ -2700,10 +2725,10 @@ const NATS: StadiumStructure = {
       label: 'Suites',
       // The club's map lists them as suites: as at the other parks, one row
       // of seats under the suite level's ceiling, 9 ft above the floor.
-      // Estimated ~50 ft up, behind the club level's last row (50 ft,
-      // measured front and rake) and under the deck that covers it from row
-      // G, so it reaches 11 ft past them.
-      stand: { rows: 1, frontRowHeightFt: 50, rakeDeg: 0, backHeightFt: 64, overhang: { coveredFromRow: 1, soffitHeightFt: 59, reachFt: 11 } },
+      // Estimated ~45 ft up, behind the club level's last row (45 ft,
+      // estimated from the 200 level around it) and under the deck that
+      // covers it from row G, so it reaches 11 ft past them.
+      stand: { rows: 1, frontRowHeightFt: 45, rakeDeg: 0, backHeightFt: 59, overhang: { coveredFromRow: 1, soffitHeightFt: 54, reachFt: 11 } },
       heightsSourced: false,
       coverSourced: true,
       sources: ['https://www.mlb.com/nationals/ballpark/seating-map/3d'],

@@ -181,6 +181,7 @@ PARKS = {
             'mezzanine': (9, 16, 'near', 15), 'clubLevel': (9, 16, 'near', 15), 'terrace': (9, 16, 'near', 15),
             'gallery': (19, 24, 'near', 15), 'upperGallery': (26, 34, 'near', 15),
         },
+        'skip': {'215': 'its cut lands on a roof outside the park (86 m from home plate, beyond the stands), not on the club level'},
     },
     'orioles': {
         # Not in the AWS copy (it has 2014): two tiles from USGS (rockyweb),
