@@ -2811,9 +2811,12 @@ const OPACY: StadiumStructure = {
       // behind is the upper deck's roof, 122 ft up and 51 ft back. In left
       // field (70–76) the club level's front, 40 ft up, reaches out over
       // their back rows (from row 14–25), so those rows are covered, under
-      // an underside of ~30 ft (that front row less 9 ft).
+      // an underside of ~30 ft (that front row less 9 ft). Sections whose
+      // measured back stands more than 10 ft nearer or farther take their
+      // own (the roof 33–40 ft behind 36, 38, 72 and 74, 65–75 ft behind 14
+      // and 68).
       stand: { rows: 29, frontRowHeightFt: 1, rakeDeg: 14, backHeightFt: 122, backSetbackFt: 51, deckFrontFt: 39 },
-      sections: {
+      sections: withBacks({
         '70': { overhang: { coveredFromRow: 25, soffitHeightFt: 31 } },
         '74': { frontRowHeightFt: 10, overhang: { coveredFromRow: 16, soffitHeightFt: 30 } },
         '80': { frontRowHeightFt: 10 },
@@ -2822,7 +2825,7 @@ const OPACY: StadiumStructure = {
         '78': { frontRowHeightFt: 10, backHeightFt: 65, backSetbackFt: 12 },
         '82': { frontRowHeightFt: 7, backHeightFt: 57, backSetbackFt: 35 },
         '86': { backHeightFt: 18, backSetbackFt: 1 },
-      },
+      }, { '14': [122, 65], '36': [122, 40], '38': [121, 40], '68': [122, 75], '72': [122, 33], '74': [122, 38] }),
       rowsFromMap: true,
       heightsSourced: true,
       coverSourced: true,
@@ -2843,9 +2846,10 @@ const OPACY: StadiumStructure = {
       // (23–25), 18° rake (10–20); the upper deck's front, 63 ft up, reaches
       // out over row 1–5 (5 in 37), which settles the cover from row 2,
       // under an underside of ~54 ft (that front row less 9 ft); that edge
-      // is what rises highest behind.
+      // is what rises highest behind (over the 13-row C43 the upper deck's
+      // rows behind it, 71 ft up and 15 ft in front of its last row).
       stand: { rows: 6, frontRowHeightFt: 23, rakeDeg: 18, backHeightFt: 64, backSetbackFt: -7, deckFrontFt: 63, overhang: { coveredFromRow: 2, soffitHeightFt: 54 } },
-      sections: { 'C37': { overhang: { coveredFromRow: 5, soffitHeightFt: 54 } } },
+      sections: { 'C37': { overhang: { coveredFromRow: 5, soffitHeightFt: 54 } }, 'C43': { backHeightFt: 71, backSetbackFt: -15 } },
       rowsFromMap: true,
       heightsSourced: false,
       coverSourced: true,
@@ -2870,11 +2874,13 @@ const OPACY: StadiumStructure = {
       // highest behind is 112 ft up and 50 ft back (40–118). Estimated: over
       // 92 and 94 the structure's underside ~35 ft (9 ft above row 19's
       // floor). Over 90's rows 17 and up a structure reaches out, its lowest
-      // point at the edge 38 ft up, so those rows are covered.
+      // point at the edge 38 ft up, so those rows are covered; its top, 118
+      // ft, 4 ft in front of 90's last row. Behind 92 what rises highest is
+      // 110 ft up, 72 ft back.
       stand: { rows: 23, frontRowHeightFt: 6, rakeDeg: 18, backHeightFt: 112, backSetbackFt: 50 },
       sections: {
-        '90': { overhang: { coveredFromRow: 17, soffitHeightFt: 38 } },
-        '92': { overhang: { coveredFromRow: 19, soffitHeightFt: 35 } },
+        '90': { backHeightFt: 118, backSetbackFt: -4, overhang: { coveredFromRow: 17, soffitHeightFt: 38 } },
+        '92': { backHeightFt: 110, backSetbackFt: 72, overhang: { coveredFromRow: 19, soffitHeightFt: 35 } },
         '94': { overhang: { coveredFromRow: 19, soffitHeightFt: 35 } },
         '96': { backHeightFt: 40, backSetbackFt: 45 },
       },
