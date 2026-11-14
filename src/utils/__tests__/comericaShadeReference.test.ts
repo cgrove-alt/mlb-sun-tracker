@@ -47,7 +47,7 @@
  *     of its covered rows. Tested: the last two rows shaded all game in all
  *     but one section.
  *   - [RYS] at a late-afternoon start the third-base side is "your enemy".
- *     Still far sunnier than the first-base side (8% against 93% over a
+ *     Still far sunnier than the first-base side (8% against 91% over a
  *     5:10 PM game; tested), but no longer under 5%: the upper deck's front
  *     over its last rows shades them late in the game.
  */

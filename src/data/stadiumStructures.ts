@@ -4687,7 +4687,7 @@ const COMERICA: StadiumStructure = {
       stand: { rows: 35, frontRowHeightFt: 1, ...COMERICA_LOWER, backHeightFt: 62, backSetbackFt: -7, deckFrontFt: 61, overhang: { coveredFromRow: 26, soffitHeightFt: 52 } },
       sections: {
         '116': { frontRowHeightFt: 5, backHeightFt: 51, backSetbackFt: -25, deckFrontFt: 49, overhang: { coveredFromRow: 26, soffitHeightFt: 40 } },
-        '117': { backHeightFt: 51, backSetbackFt: -25, deckFrontFt: 49, overhang: { coveredFromRow: 33, soffitHeightFt: 40 } },
+        '117': { backHeightFt: 50, backSetbackFt: -7, deckFrontFt: 49, overhang: { coveredFromRow: 33, soffitHeightFt: 40 } }, // its own back: the mezzanine's front over row 33
         '118': { backHeightFt: 118, backSetbackFt: 48, deckFrontFt: 60, overhang: { coveredFromRow: 33, soffitHeightFt: 51 } },
         '119': { backHeightFt: 51, backSetbackFt: -25, deckFrontFt: 50, overhang: { coveredFromRow: 26, soffitHeightFt: 41 } },
         '120': { noCover: true, backHeightFt: 63, backSetbackFt: 9 },
