@@ -20,8 +20,9 @@
  *
  * Not reproduced: [RYS] 212 is "in the shade for a day game". No source
  * says what covers 210–212 (the scan sees only the canopy over their last
- * rows), so they are rated with low confidence; the model shades 211 and
- * 212 from about the 6th inning of a 1:35 PM game.
+ * rows), so they are rated with lower confidence; the model shades 211
+ * from about the 6th inning of a 1:35 PM game and 212, the canopy measured
+ * 4 ft behind its last row, from about the 4th (17% at first pitch).
  *
  * Partly reproduced, since the measured heights (recorded, not tuned):
  *   - [RYS] 110–122: rows 7 and up get relief from the sun all game. The 200

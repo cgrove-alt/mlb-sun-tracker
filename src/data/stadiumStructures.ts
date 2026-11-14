@@ -1897,9 +1897,10 @@ const TRUIST: StadiumStructure = {
       label: 'Truist Club boxes (1–9)',
       // Rows 1–4 or 1–5 at the backstop, uncovered. Lidar (8 of 9): front
       // row 2 ft (-1 to 2; 8 at -1), 11° rake (8–15); what rises highest
-      // behind is the canopy, 150 ft up and 83 ft behind the last row.
+      // behind is the canopy, 150 ft up and 83 ft behind the last row (98 ft
+      // behind 8 and 9; over 8 a lamp bank on it, 160 ft).
       stand: { rows: 4, frontRowHeightFt: 2, rakeDeg: 11, backHeightFt: 150, backSetbackFt: 83 },
-      sections: { '8': { frontRowHeightFt: -1 } },
+      sections: { '8': { frontRowHeightFt: -1, backHeightFt: 160, backSetbackFt: 98 }, '9': { backHeightFt: 150, backSetbackFt: 98 } },
       rowsFromMap: true,
       heightsSourced: true,
       coverSourced: true,
@@ -1926,6 +1927,7 @@ const TRUIST: StadiumStructure = {
       sections: {
         '10': { frontRowHeightFt: 3, backHeightFt: 92, backSetbackFt: 58 },
         '11': { backHeightFt: 103, backSetbackFt: 88 },
+        '39': { backHeightFt: 149, backSetbackFt: 80 },
       },
       rowsFromMap: true,
       heightsSourced: true,
@@ -1935,10 +1937,14 @@ const TRUIST: StadiumStructure = {
     hundred: {
       label: 'Field level (100s)',
       // Rows 1–20; 110–118, 122, 130 and 133–143 are under cover from row 8.
+      // The canopy stands 15–21 ft behind the last row of 122 and 141
+      // (measured).
       stand: { ...TRUIST_100, deckFrontFt: 35 },
       sections: {
-        ...Object.fromEntries(['122', '135', '137'].map((id) => [id, { frontRowHeightFt: 6 }])),
+        ...Object.fromEntries(['135', '137'].map((id) => [id, { frontRowHeightFt: 6 }])),
+        '122': { frontRowHeightFt: 6, backHeightFt: 150, backSetbackFt: 15 },
         '140': { backHeightFt: 35, backSetbackFt: -39 },
+        '141': { backHeightFt: 149, backSetbackFt: 21 },
       },
       rowsFromMap: true,
       heightsSourced: false,
@@ -1964,8 +1970,9 @@ const TRUIST: StadiumStructure = {
       // front row 8 ft (6–10), 17° rake (13–21); the 200 level's front, 35 ft
       // up, reaches out over row 6–8, so the rows from 8 back are covered,
       // under an underside of ~26 ft (that front row less 9 ft). Behind, the
-      // canopy, 151 ft up and 26 ft back.
+      // canopy, 151 ft up and 26 ft back (43 ft behind 124).
       stand: { rows: 11, frontRowHeightFt: 8, rakeDeg: 17, backHeightFt: 151, backSetbackFt: 26, deckFrontFt: 34, overhang: { coveredFromRow: 8, soffitHeightFt: 26 } },
+      sections: { '124': { backHeightFt: 149, backSetbackFt: 43 } },
       rowsFromMap: true,
       heightsSourced: false,
       coverSourced: true,
@@ -2000,13 +2007,16 @@ const TRUIST: StadiumStructure = {
       label: 'Home Run Porch (146–151)',
       // Rows 1–27 or 1–29, uncovered ("significant sun exposure"). Lidar (5
       // of 6): front row 7 ft (6–9), 13° rake; behind, the porch's back
-      // structure, 41 ft up (38–100). Over 151's rows 25 and up a building
+      // structure, 41 ft up (38–100; 25–27 ft behind 149 and 150). Over
+      // 151's rows 25 and up a building
       // reaches out, its lowest point at the edge 43 ft up, so those rows
       // are covered. (Over 147's front rows a bridge; its seats show
       // uncovered past it.)
       stand: { rows: 29, frontRowHeightFt: 7, rakeDeg: 13, backHeightFt: 41, backSetbackFt: 14 },
       sections: {
         '148': { backHeightFt: 100, backSetbackFt: 9 },
+        '149': { backHeightFt: 41, backSetbackFt: 25 },
+        '150': { backHeightFt: 40, backSetbackFt: 27 },
         '151': { backHeightFt: 80, backSetbackFt: 0, overhang: { coveredFromRow: 25, soffitHeightFt: 43 } },
       },
       rowsFromMap: true,
@@ -2019,10 +2029,13 @@ const TRUIST: StadiumStructure = {
       // Rows 7–24 or 1–24, uncovered. Lidar (4 of 5): front row 21 ft (15 in
       // 155), 20° rake; behind, 60 ft up and 35 ft back (44–175). Over the
       // back rows of 152–153 a frame ~43 ft up, which the scan sees the seats
-      // through (not a deck).
+      // through (not a deck); over 153 its top, 56 ft, is what the scan
+      // finds rising highest, so 153 keeps the tier's back (the frame is not
+      // a wall either). 154 sees 63 ft, 70 ft back (measured).
       stand: { rows: 24, frontRowHeightFt: 21, rakeDeg: 20, backHeightFt: 60, backSetbackFt: 35 },
       sections: {
         '152': { backHeightFt: 175, backSetbackFt: 81 },
+        '154': { backHeightFt: 63, backSetbackFt: 70 },
         '155': { frontRowHeightFt: 15, backHeightFt: 44, backSetbackFt: 1 },
       },
       rowsFromMap: true,
@@ -2052,9 +2065,9 @@ const TRUIST: StadiumStructure = {
       // them with and without a deck overhead (the scan sees only the canopy
       // over their last row or two). Lidar (3 of 3): front row 35 ft
       // (34–38), 23° rake; behind, the canopy, 150 ft up (in 210 the 300
-      // level's corner, 92 ft).
+      // level's corner, 92 ft; 4 ft behind 212's last row).
       stand: { rows: 12, frontRowHeightFt: 35, rakeDeg: 23, backHeightFt: 150, backSetbackFt: 20 },
-      sections: { '210': { backHeightFt: 92, backSetbackFt: 20 } },
+      sections: { '210': { backHeightFt: 92, backSetbackFt: 20 }, '212': { backHeightFt: 150, backSetbackFt: 4 } },
       rowsFromMap: true,
       heightsSourced: true,
       coverSourced: false,
@@ -2067,8 +2080,10 @@ const TRUIST: StadiumStructure = {
       // does not hide it). Lidar (10 of 15): front row 36 ft (35–36), 24°
       // rake; behind, the canopy, 150 ft up. The 300 level's underside: its
       // measured 68-ft front row less 9 ft is under row 14's heads, so 9 ft
-      // above row 14's floor, 61 ft.
+      // above row 14's floor, 61 ft. (In 243 the canopy's edge stands 4 ft in
+      // front of the last row, measured.)
       stand: { rows: 19, frontRowHeightFt: 36, rakeDeg: 24, backHeightFt: 150, backSetbackFt: -16, deckFrontFt: 67, overhang: { coveredFromRow: 14, soffitHeightFt: 61 } },
+      sections: { '243': { backHeightFt: 153, backSetbackFt: -4 } },
       rowsFromMap: true,
       heightsSourced: false,
       coverSourced: true,
@@ -2079,8 +2094,15 @@ const TRUIST: StadiumStructure = {
       // Rows 1–7 (220: 1–12, 231: 1–11) in front of the club's tables; no
       // source gives covered rows, so the check tries both (the scan sees
       // only the canopy over 220's and 231's last rows). Lidar (9 of 11):
-      // front row 36 ft (35–36), 24° rake; behind, the canopy, 151 ft up.
+      // front row 36 ft (35–36), 24° rake; behind, the canopy, 151 ft up
+      // (2 ft behind 220's last row). Its edge is over 231's last row, just
+      // in front of that row's head: so that row is covered (as at Nationals
+      // Park's Gallery), under its lowest structure there, 154 ft.
       stand: { rows: 7, frontRowHeightFt: 36, rakeDeg: 24, backHeightFt: 151, backSetbackFt: 14 },
+      sections: {
+        '220': { backHeightFt: 150, backSetbackFt: 2 },
+        '231': { backHeightFt: 157, backSetbackFt: -2, overhang: { coveredFromRow: 11, soffitHeightFt: 154 } },
+      },
       rowsFromMap: true,
       heightsSourced: true,
       coverSourced: false,
