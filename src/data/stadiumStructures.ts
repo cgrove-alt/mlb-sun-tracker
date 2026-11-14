@@ -1016,14 +1016,20 @@ const WRIGLEY: StadiumStructure = {
       // scoreboard (511), the back wall (507, 512). The left-field video
       // board's underside is 85 ft up over rows 15–17 of 505 and 506, which
       // the lidar shows covered from there (the source calls them open).
+      // Each section takes its own measured back where it stands more than
+      // 10 ft nearer or farther: the buildings 60–150 ft behind 501–504 and
+      // 514, the scoreboard 25 ft behind 511's last row (its 14 rows), the
+      // video board's top 13 ft in front of 506's.
       stand: { rows: 21, frontRowHeightFt: 9, rakeDeg: 30, backHeightFt: 57, backSetbackFt: 11 },
       sections: {
-        '501': { rows: 8, frontRowHeightFt: 16, backHeightFt: 65, backSetbackFt: 105 },
-        '502': { frontRowHeightFt: 16, backHeightFt: 65, backSetbackFt: 105 },
-        '503': { frontRowHeightFt: 16 },
+        '501': { rows: 8, frontRowHeightFt: 16, backHeightFt: 65, backSetbackFt: 150 },
+        '502': { frontRowHeightFt: 16, backHeightFt: 64, backSetbackFt: 60 },
+        '503': { frontRowHeightFt: 16, backHeightFt: 60, backSetbackFt: 116 },
+        '504': { backHeightFt: 54, backSetbackFt: 88 },
+        '514': { backHeightFt: 54, backSetbackFt: 76 },
         '505': { backHeightFt: 94, backSetbackFt: -16, overhang: { coveredFromRow: 15, soffitHeightFt: 85 } },
-        '506': { backHeightFt: 86, backSetbackFt: -2, overhang: { coveredFromRow: 17, soffitHeightFt: 85 } },
-        '511': { backHeightFt: 86, backSetbackFt: -2 },
+        '506': { backHeightFt: 85, backSetbackFt: -13, overhang: { coveredFromRow: 17, soffitHeightFt: 85 } },
+        '511': { rows: 14, backHeightFt: 88, backSetbackFt: 25 },
         ...Object.fromEntries(['507', '512'].map((id) => [id, { backHeightFt: 36, backSetbackFt: 10 }])),
         '513': { backHeightFt: 48, backSetbackFt: -18 },
         '537': { rows: 15 },
