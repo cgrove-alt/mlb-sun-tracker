@@ -1694,8 +1694,10 @@ const CBP: StadiumStructure = {
       // puts its edge at row 9–11; 101 has 7 open rows, 107 rows 4–16
       // covered from 14). Lidar (6 of 7): front row 10 ft above the wall
       // (9–10), 13° rake; what rises highest behind is the 200 level's
-      // front, 45 ft up. Its underside: that front row less this park's
-      // measured deck depth (9 ft), ~35 ft. The 200 level ends at 101: its
+      // front, 45 ft up (10 ft in front of the last row of the 13-row 107,
+      // over its row 10 where the scan sees the edge over row 9, measured).
+      // Its underside: that front row less this park's measured deck depth
+      // (9 ft), ~35 ft. The 200 level ends at 101: its
       // front stands 6 ft behind 101's last row at the side next to 102,
       // and nothing near behind the rest; through its middle, what rises
       // highest is 72 ft up, 121 ft behind (its cut, on a point the tool's
@@ -1703,6 +1705,7 @@ const CBP: StadiumStructure = {
       stand: { rows: 16, frontRowHeightFt: 10, rakeDeg: 13, backHeightFt: 45, backSetbackFt: -19, deckFrontFt: 44, overhang: { coveredFromRow: 11, soffitHeightFt: 35 } },
       sections: {
         '101': { noCover: true, backHeightFt: 72, backSetbackFt: 121 },
+        '107': { backHeightFt: 45, backSetbackFt: -10 },
       },
       rowsFromMap: true,
       heightsSourced: false,
