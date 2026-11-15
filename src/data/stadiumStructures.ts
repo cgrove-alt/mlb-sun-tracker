@@ -2680,11 +2680,13 @@ const NATS: StadiumStructure = {
       // over row 6 (row 2 in 140), so the rows from there back are covered,
       // under an underside of ~27 ft (that front row less 9 ft); over 143
       // from row 19, under the scoreboard (its bottom 70 ft up). What rises
-      // highest behind is that front edge (154 ft in 143).
+      // highest behind is that front edge (154 ft in 143), 12 ft behind the
+      // front row of 140; 139 (19 rows, hidden under it but its first rows)
+      // takes it there too, 40 ft in front of its last row.
       stand: { rows: 24, frontRowHeightFt: 12, rakeDeg: 14, backHeightFt: 37, backSetbackFt: -53, deckFrontFt: 36, overhang: { coveredFromRow: 6, soffitHeightFt: 27 } },
       sections: {
         '138': { overhang: { coveredFromRow: 1, soffitHeightFt: 27 } },
-        '139': { overhang: { coveredFromRow: 3, soffitHeightFt: 27 } },
+        '139': { backSetbackFt: -40, overhang: { coveredFromRow: 3, soffitHeightFt: 27 } },
         '140': { overhang: { coveredFromRow: 2, soffitHeightFt: 27 } },
         '143': { backHeightFt: 154, backSetbackFt: -14, deckFrontFt: undefined, overhang: { coveredFromRow: 19, soffitHeightFt: 70 } }, // another deck, its front not measured
       },
