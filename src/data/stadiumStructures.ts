@@ -3364,9 +3364,12 @@ const PETCO: StadiumStructure = {
       // farther take their own (the roof's edge 32–39 ft in front of the
       // last row of 304, 307 and 326; the Upper Deck's rows behind the
       // aisle, ~80 ft up, start 20 ft behind 321's last row and 47 ft in
-      // front of 323's). The short rows in front, 313 and 329, have the
-      // step up to that aisle right behind them, 75 ft up (313's cut, on a
-      // point the tool's line from home misses; 329's shows the same step).
+      // front of 323's), and so does 322, whose own puts the roof's edge
+      // over its covered row 15 (12 ft in front of its last row) where the
+      // tier's would stand over its open rows 12–14. The short rows in
+      // front, 313 and 329, have the step up to that aisle right behind
+      // them, 75 ft up (313's cut, on a point the tool's line from home
+      // misses; 329's shows the same step).
       stand: { rows: 23, frontRowHeightFt: 67, rakeDeg: 29, backHeightFt: 133, backSetbackFt: -21 },
       sections: withBacks({
         ...petcoCover(Array.from({ length: 30 }, (_, i) => String(300 + i)), 133),
@@ -3376,7 +3379,7 @@ const PETCO: StadiumStructure = {
         ...Object.fromEntries(['315', '328'].map((id) => [id, { backHeightFt: 98, backSetbackFt: -21, ...petcoCover([id], 133)[id] }])),
         '319': { backHeightFt: 105, backSetbackFt: 66, ...petcoCover(['319'], 133)['319'] },
         ...Object.fromEntries(['321', '323'].map((id) => [id, { backHeightFt: 80, backSetbackFt: -13, ...petcoCover([id], 133)[id] }])),
-      }, { '304': [134, -33], '307': [133, -39], '326': [133, -32], '321': [79, 20], '323': [81, -47], '313': [75, 1], '329': [75, 1] }),
+      }, { '304': [134, -33], '307': [133, -39], '326': [133, -32], '321': [79, 20], '323': [81, -47], '322': [133, -12], '313': [75, 1], '329': [75, 1] }),
       rowsFromMap: true,
       heightsSourced: false,
       coverSourced: true,
