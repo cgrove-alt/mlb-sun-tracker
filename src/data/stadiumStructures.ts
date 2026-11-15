@@ -130,11 +130,12 @@ const YANKEES: StadiumStructure = {
       // from about row 14 by the Main Level deck (sourced; the lidar puts
       // the deck's edge at row 14 too, 4–17). Sections where the lidar puts
       // it more than two rows off take the lidar's row (below). In the
-      // corner sections the sources call open (103, 104, 135, 136) the scan
-      // shows the Main deck starting about five rows back (row 4–5 in 104 and
-      // 135, 14 in 136); their row counts are not published (the tier's 20 is
-      // a default), and short sections that end there would be open, so they
-      // stay as sourced. Lidar
+      // corner sections the sources call open (103, 104, 135, 136: "no roof
+      // or overhang") the scan shows the Main deck starting about five rows
+      // back (row 4–5 in 104 and 135, 14 in 136), on cuts whose direction is
+      // uncertain in the corners; they stay as sourced. 104 and 135 have 18
+      // and 14 rows (Rate Your Seats), and the deck's front, 32 ft up, is
+      // taken right behind their last row, not over it. Lidar
       // (45 of 50): front row 6 ft (4–11; 11 in the left-field corner), 12°
       // rake (8–15). What rises highest behind is the canopy, 133 ft up and
       // 46 ft behind the last row; behind 121BW and 122 the Terrace's front
@@ -155,7 +156,7 @@ const YANKEES: StadiumStructure = {
       },
       sections: withBacks({
         '103': { noCover: true },
-        '104': { noCover: true, backHeightFt: 32, backSetbackFt: -26 },
+        '104': { rows: 18, noCover: true, backHeightFt: 32, backSetbackFt: 0 },
         '107': { rows: 21, overhang: { coveredFromRow: 6, soffitHeightFt: 18 } },
         '109': { rows: 24, overhang: { coveredFromRow: 15, soffitHeightFt: 23 } },
         '120B': { rows: 17 },
@@ -167,7 +168,7 @@ const YANKEES: StadiumStructure = {
         '130': { rows: 26, overhang: { coveredFromRow: 15, soffitHeightFt: 23 } },
         '133': { overhang: { coveredFromRow: 17, soffitHeightFt: 24 } },
         '134': { frontRowHeightFt: 11, overhang: { coveredFromRow: 8, soffitHeightFt: 24 } },
-        '135': { noCover: true, frontRowHeightFt: 11, backHeightFt: 32, backSetbackFt: -26 },
+        '135': { rows: 14, noCover: true, frontRowHeightFt: 11, backHeightFt: 32, backSetbackFt: 0 },
         '136': { noCover: true },
       }, {
         '112': [132, 62], '115': [132, 57], '120B': [132, 57], 'S122B': [140, 34],
@@ -175,7 +176,7 @@ const YANKEES: StadiumStructure = {
       }),
       heightsSourced: false,
       coverSourced: true,
-      sources: [RYS_YANKEES, rysSection('107'), rysSection('109'), rysSection('120B'), rysSection('125'), rysSection('127B'), rysSection('130'), 'https://ballparkeguides.com/yankee-stadium-seating/', YANKEES_LIDAR],
+      sources: [RYS_YANKEES, rysSection('104'), rysSection('107'), rysSection('109'), rysSection('120B'), rysSection('125'), rysSection('127B'), rysSection('130'), rysSection('135'), 'https://ballparkeguides.com/yankee-stadium-seating/', YANKEES_LIDAR],
     },
     main: {
       label: 'Main level (200s)',
