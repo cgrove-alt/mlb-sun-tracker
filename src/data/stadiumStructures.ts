@@ -2197,9 +2197,12 @@ const TRUIST: StadiumStructure = {
       label: '300 level (Vista)',
       // Rows 1–13; 312–323 and 329–343 under cover from row 10 (sourced; the
       // 400 level over them is hidden under the canopy). Lidar (8 of 21):
-      // front row 68 ft, 28° rake; behind, the canopy, 149 ft up. The 400
-      // level's underside, unseen: 9 ft above row 10's floor, 90 ft.
+      // front row 68 ft, 28° rake; behind, the canopy, 149 ft up, over rows
+      // 6–9. The 400 level's underside, unseen: 9 ft above row 10's floor,
+      // 90 ft. 315's 10 rows end at that row 10 (covered from it like the
+      // rest), so the canopy stands 14 ft in front of its last row.
       stand: { rows: 13, frontRowHeightFt: 68, rakeDeg: 28, backHeightFt: 149, backSetbackFt: -22, overhang: { coveredFromRow: 10, soffitHeightFt: 90 } },
+      sections: { '315': { backSetbackFt: -14 } },
       rowsFromMap: true,
       heightsSourced: false,
       coverSourced: true,
