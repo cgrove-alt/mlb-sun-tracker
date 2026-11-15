@@ -51,6 +51,32 @@ describe('shade engine: sun behind the stand', () => {
     expect(at(55)).toBeLessThanOrEqual(at(40));
   });
 
+  it('a back just in front of the last row\'s head shades it as one just behind does', () => {
+    // A 60-ft structure 2 ft in front of the last row's head, then 2 ft
+    // behind it: the answer must not jump between the two.
+    const lastHeadFromBack = 2.75 - 1.25; // the last row's head, from the back of the stand
+    const at = (backSetbackFt: number) => rowLight({ ...LOWER, backSetbackFt }, 180, OPEN_AIR, { azimuthDeg: 180, altitudeDeg: 70 });
+    const inFront = at(-lastHeadFromBack - 2);
+    const behind = at(-lastHeadFromBack + 2);
+    expect(inFront[19]).toBe('shade');
+    expect(inFront[19]).toBe(behind[19]);
+  });
+
+  it('a canopy reaching out over open rows shades them with the sun behind', () => {
+    // A canopy 120 ft up whose edge is over row 8 (back 33 ft in front of the
+    // last row of a 20-row stand): rows 9-20 are under it.
+    const canopy: StandProfile = { ...LOWER, backHeightFt: 120, backSetbackFt: -33 };
+    const light = rowLight(canopy, 180, OPEN_AIR, { azimuthDeg: 180, altitudeDeg: 85 });
+    expect(light.slice(8).every((l) => l === 'shade')).toBe(true);
+    expect(light[0]).toBe('sun');
+  });
+
+  it('a back over the rows does not block a sun in front', () => {
+    const canopy: StandProfile = { ...LOWER, backHeightFt: 120, backSetbackFt: -33 };
+    const sun = { azimuthDeg: 0, altitudeDeg: 60 };
+    expect(rowLight(canopy, 180, OPEN_AIR, sun)).toEqual(rowLight(LOWER, 180, OPEN_AIR, sun));
+  });
+
   it('a sun running along the rows does not count as behind them', () => {
     // 89° off the back direction at 30° elevation: the cross-section angle is
     // nearly vertical, so the stand behind cannot block it.

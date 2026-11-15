@@ -62,7 +62,12 @@ export interface StandProfile {
   deckFrontFt?: number;
   /** Height above the field of the top of whatever stands behind the last row. */
   backHeightFt: number;
-  /** How far behind the last row that structure stands, feet (default 0: right behind it). */
+  /**
+   * How far behind the last row that structure stands, feet (default 0:
+   * right behind it). Negative where it reaches out over the rows (a deck's
+   * front, a canopy): with the sun behind, a row whose head is under it is
+   * in its shade, as under a deck.
+   */
   backSetbackFt?: number;
 }
 
@@ -124,11 +129,15 @@ export function rowLight(
     if (sunBehind) {
       // Under a deck that runs back over the seat: the ray hits its underside.
       if (covered) return 'shade';
+      // Whatever stands on top of the back of the stand. Where it reaches
+      // out over this row's head, the ray runs into it, as under a deck.
+      const backDu = backU + (stand.backSetbackFt ?? 0) - u;
+      const backDz = stand.backHeightFt - headZ;
+      if (backDu <= 0 && backDz > 0) return 'shade';
       const obstacles: Array<[number, number]> = [
         // The stand itself: the last row's seat backs.
         [backU - tread + HEAD_SETBACK_FT - u, lastRowZ + SEAT_BACK_FT - headZ],
-        // Whatever stands on top of the back of the stand.
-        [backU + (stand.backSetbackFt ?? 0) - u, stand.backHeightFt - headZ],
+        [backDu, backDz],
       ];
       // The deck's edge, up to the top of its front.
       if (stand.overhang) obstacles.push([lipU - u, Math.max(stand.overhang.soffitHeightFt, stand.deckFrontFt ?? 0) - headZ]);
