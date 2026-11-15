@@ -3160,10 +3160,12 @@ const PETCO: StadiumStructure = {
       // front reaches out over row 4 (1 in A), so the rows from there back
       // are covered (Rate Your Seats counts from 9), under an underside of
       // ~27 ft (that front row less 9 ft; in J the bottom of its face is
-      // seen, 34 ft).
+      // seen, 34 ft). In the 10-row A and B that front is 15 ft in front of
+      // the last row (measured; B on a cut the tool's line from home misses).
       stand: { rows: 15, frontRowHeightFt: 10, rakeDeg: 19, backHeightFt: 36, backSetbackFt: -26, deckFrontFt: 36, overhang: { coveredFromRow: 4, soffitHeightFt: 27 } },
       sections: {
         'A': { backHeightFt: 38, backSetbackFt: -15, overhang: { coveredFromRow: 1, soffitHeightFt: 27 } },
+        'B': { backHeightFt: 36, backSetbackFt: -15 },
         'J': { backHeightFt: 71, backSetbackFt: -11, overhang: { coveredFromRow: 4, soffitHeightFt: 34 } },
       },
       rowsFromMap: true,
@@ -3350,7 +3352,9 @@ const PETCO: StadiumStructure = {
       // farther take their own (the roof's edge 32–39 ft in front of the
       // last row of 304, 307 and 326; the Upper Deck's rows behind the
       // aisle, ~80 ft up, start 20 ft behind 321's last row and 47 ft in
-      // front of 323's).
+      // front of 323's). The short rows in front, 313 and 329, have the
+      // step up to that aisle right behind them, 75 ft up (313's cut, on a
+      // point the tool's line from home misses; 329's shows the same step).
       stand: { rows: 23, frontRowHeightFt: 67, rakeDeg: 29, backHeightFt: 133, backSetbackFt: -21 },
       sections: withBacks({
         ...petcoCover(Array.from({ length: 30 }, (_, i) => String(300 + i)), 133),
@@ -3360,7 +3364,7 @@ const PETCO: StadiumStructure = {
         ...Object.fromEntries(['315', '328'].map((id) => [id, { backHeightFt: 98, backSetbackFt: -21, ...petcoCover([id], 133)[id] }])),
         '319': { backHeightFt: 105, backSetbackFt: 66, ...petcoCover(['319'], 133)['319'] },
         ...Object.fromEntries(['321', '323'].map((id) => [id, { backHeightFt: 80, backSetbackFt: -13, ...petcoCover([id], 133)[id] }])),
-      }, { '304': [134, -33], '307': [133, -39], '326': [133, -32], '321': [79, 20], '323': [81, -47] }),
+      }, { '304': [134, -33], '307': [133, -39], '326': [133, -32], '321': [79, 20], '323': [81, -47], '313': [75, 1], '329': [75, 1] }),
       rowsFromMap: true,
       heightsSourced: false,
       coverSourced: true,
