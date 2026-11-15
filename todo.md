@@ -1776,6 +1776,282 @@ it was first measured with, the circularity noted in batch 4).
    confidence split (behind most of the Low-share rises above).
 
 ---
+
+## §11 Backs over open rows (plan, 2026-11-15)
+
+**The problem.** 253 sections at 21 parks have a back that stands over one
+or more of their own open rows. The engine never counts it for those rows.
+If it did, 77 sections' answers would change at the test games (1:10 PM,
+2025-04-15 and 2025-07-15).
+
+**My §10 recommendation is withdrawn.** I tested it on the scan: 895
+measured sections whose depth or cover differs from their tier's default.
+Anchoring a tier's back to the covered row or the front row predicts the
+measured back no better than today's last-row anchor:
+
+| Sections | Last row (today) | Covered row | Front row |
+|---|---|---|---|
+| Covered, other depth (316) | 5 ft | 4 ft | 5 ft |
+| Covered, cover moved by option A (117) | 3 ft | 8 ft | 3 ft |
+| Open, other depth (384) | 8 ft | – | 11 ft |
+
+(Median error against the scan.) So the anchor is not the cause, and
+changing every tier's back would not fix it.
+
+**Root cause: the engine.** `backSetbackFt` is documented as how far
+*behind* the last row the back stands. The lidar measured negative values,
+meaning the structure stands *over* the rows:
+- Truist Park's canopy over the 300 level's rows 6–9;
+- a deck's front a row or two ahead of the source's covered row (White Sox,
+  Dodgers top deck, Guardians club, Cardinals terrace);
+- a roof or deck reaching 3–6 ft over the last row (Camden's open club
+  sections, Fenway's Roof Boxes, Reds 143, Twins 237–240).
+
+The engine only counts an obstacle that is behind a row's head and above
+it. A row under the back is treated as having nothing above it. Here the
+answer jumps: a back 2 ft *in front of* the last row's head leaves that row
+in the sun whenever the sun is behind, while the same back 2 ft *behind* it
+shades the row at nearly every sun angle.
+
+**Fix: one condition in `rowLight`.** With the sun behind, a row whose head
+is under the back (at or behind its position, below its top) is in shade,
+as under a deck. A sun in front is handled as today: a back over the rows
+does not block it.
+
+**But first, the backs that aren't really there.** Some backs stand over
+open rows only because a tier value was carried to a section it doesn't
+fit. The engine fix would turn those into roofs that don't exist, so they
+are fixed first:
+- **P1. Short sections whose back lands at or in front of their own first
+  row (14):** Mets 102, 108, 133, 316, 320; Nationals 139; Padres B, 313,
+  329; Phillies 101; Red Sox R43; Rockies 201–203. They take their tier's
+  setback, measured on deeper sections.
+- **P2. Tier defaults made of unlike sections (27):**
+  - Royals' Plaza ends (206–208, 247, 249, 251, 252): 47 ft at −13 is the
+    average of 248 (under the deck's end) and 250 (open).
+  - Mets field (20 line sections, 101–131): the default back is the
+    behind-home deck, 6 rows in front of the default cover row 21. The
+    measured line sections (128, 130, 132) put it at or behind their deck's
+    edge.
+- **P3. Measured sections where the tier's back and their own stand over
+  open rows that differ by 3+ rows (7):** Braves 238 and 345, Cardinals 250
+  and 258, Padres 322, Phillies 107, Pirates 311. This is option A's
+  3-row mark, added to §10's 10-ft rule. Twins 240 stays on its tier's
+  back: its own is the lamp-bank frame, left out on purpose.
+- **P4. The other unmeasured sections whose back is over open rows (53, in
+  about 18 tiers):** each checked against its measured neighbours.
+- **P5. Sections whose own measured back is over open rows (10):** Braves
+  140, Cubs 513, Dodgers 145LG, Mets 120, Phillies 147, Pirates 238, Reds
+  143, Tigers 113, Yankees 104 and 135. Each is confirmed on its cut to be
+  a deck, roof or canopy, not an open frame like the light towers or the
+  lamp bank.
+  - Yankees 104 and 135: the sources call them open and their row counts
+    are unpublished (20 is a default). Their scan puts the Main deck over
+    rows 12–20, but the recorded choice was "stay as sourced". I'll look
+    for their real row counts first.
+- **Real, left as they are (143):** measured sections on their tier's back
+  where the tier's back and their own scan's stand over the same open rows
+  within 2 rows.
+
+Each fix uses the section's own cut where the scan has one, otherwise its
+neighbours' measured structure. Reasons go in the code, as in §10.
+
+### Steps
+- [x] 1. Audit script listing P1–P5 with each section's cut and its
+      neighbours (tmp/lidar, not committed).
+- [x] 2. Mets: field default from the line sections; 102, 108, 133, 316,
+      320 (one commit).
+- [x] 3. Royals Plaza ends, each from its own cut or its open/covered
+      neighbour (one commit).
+- [x] 4. The other P1 short sections, one commit per park (Nationals,
+      Padres, Phillies, Red Sox, Rockies).
+- [x] 5. P3's 7 sections take their own backs, one commit per park.
+- [x] 6. P4 and P5 checks; fix any that don't fit (per park).
+- [x] 7. Engine: the one condition, the `backSetbackFt` doc (a negative
+      value stands over the rows), and unit tests. The tests cover:
+      - the last row gives the same answer with the back 2 ft in front of
+        or behind its head;
+      - a canopy over open rows shades them with the sun behind;
+      - a sun in front is unchanged.
+
+      One commit.
+- [x] 8. Re-run everything:
+      - full suite and type check;
+      - reference tests, where changes are investigated and recorded, never
+        tuned;
+      - Low share;
+      - the back-over-rows audit, which should list only real structures;
+      - the changed parks' pages on the dev server.
+- [x] 9. Review section here.
+
+**Expect:** Braves' 300 level, Camden's club, Fenway's Roof Boxes and
+Pavilion Reserved 20, and a few last rows elsewhere get more shade
+with the sun behind. The confidence check scales setbacks ±20–50%, so some
+labels may change too.
+
+**Not in this plan (noticed):** 343 measured sections that use their tier's
+back, within §10's 10-ft rule, would give different answers with their own
+measured back, both today and after this fix. Whether every measured
+section should simply use its own back is a separate decision.
+
+### §11 Review (2026-11-15)
+
+**What changed.** The engine now counts a back that reaches out over a row:
+with the sun behind, a row whose head is under it is in shade, as under a
+deck (`rowLight`, one condition; the `backSetbackFt` doc says a negative
+value stands over the rows). Unit tests: the last row answers the same with
+the back 2 ft either side of its head, a canopy over open rows shades them,
+a sun in front is unchanged; the first two fail on the old engine. Before
+that, 17 commits at 13 parks removed every back that stood over rows only
+because a value didn't fit the section. 18 commits, one per park, the
+engine last.
+
+**How the sections were measured.** The lidar tool cuts each section along
+its stand direction through the point where its line from home plate finds
+the tier's rows. In corners and at stand ends that line misses, so many of
+these sections were "not found". Cutting through a point on the section's
+bearing instead, with the same measurement code (`measure_section`), finds
+them; it reproduces the file's values exactly where both work (Royals 248,
+250). New measurements are written to the tmp/lidar files (not committed;
+pre-change copies in the scratchpad).
+
+**Root causes found, by kind:**
+- *A tier median of unlike sections.*
+  - Citi field level: the suites deck behind home (25 ft) and the 69-ft
+    structure down the lines gave 47 ft at −48, 6 rows ahead of the line
+    sections' deck. The default is now the line sections' measurement
+    (128, 130, 132: 69 ft, 18 ft in front of the last row). 106 keeps its
+    own; 121 takes its measured neighbours' suites deck, as for its cover.
+  - Kauffman Plaza ends: 47 ft at −13 was the average of 248 (under the
+    upper deck's end) and 250 (open). Cut one by one:
+    - the upper deck's end, its edge angled across them, is over 206 from
+      row 11, 207 and 248 from row 9, 208 and 247 from row 8, and 249 from
+      row 14. Those are 3+ rows the source leaves open, so they take them
+      (option A, like 248);
+    - 250–252 are open with a 33-ft roof right behind, now the default.
+- *A setback measured on deeper sections, applied to short ones.* Each now
+  takes its own cut where the scan has one:
+  - Petco B (36 at −15) and 313 (the aisle step, 75 ft, right behind; 329,
+    one row, shows the same step);
+  - Phillies 101 (the 200 level ends there: 72 ft, 121 ft behind);
+  - Coors 201–203 (68 at −11/−12).
+
+  Otherwise it takes the measured relation from its neighbours:
+  - Nationals 139 (the pavilion's front 12 ft behind the front row, as in
+    140);
+  - Mets 102 (at its last row: its deck covers its last three rows);
+  - Mets 133 (its cut: 49 ft behind its five front rows);
+  - Mets 316/320/326 (the 400 level's front over the same row as the
+    12-row sections);
+  - Truist 315 (the canopy over rows 6–9 as its neighbours, from its front
+    rows: −14);
+  - Fenway R43 (R41's 66-ft top, 18 ft behind its one front row; copying
+    R41's setback would have made a 13-ft wall of it);
+  - Comerica 101 (rows E–T end before the balcony; it takes 102's wall right
+    behind).
+- *Rows 3+ apart from the section's own measurement* (option A's mark),
+  so they take their own: Truist 238, Busch 250/258, Petco 322, Phillies 107,
+  PNC 311.
+- *A hand-averaged value:* Phillies 147/148 shared the mean of their two
+  measured backs; each takes its own.
+- *Backs over rows the source says are open*, kept open as sourced:
+  - Yankees 104/135: "no roof or overhang", and their rows are published
+    after all (Rate Your Seats: 18 and 14, now used). The Main deck's front
+    is taken right behind their last row.
+  - Wrigley 513: the bleacher rows are ~2.1 ft deep (511's 14 in 30 ft), so
+    the scan's "row 15" at the profile's 2.75 ft is about its last row; the
+    back building stands right behind it.
+- *A stale cut in a measurement file:* Truist 345 is skipped by the tool
+  (its cut runs along the steps), but braves-measured.json still had it;
+  corrected, so it keeps the tier's back.
+
+**Audit after** (`tmp/lidar/overRows.ts`): no short-section backs left.
+Twins 240 is the only measured section whose rows differ by 3+ (its own
+back is the lamp-bank frame, left out on purpose). 14 own backs over open
+rows are confirmed on their cuts:
+- decks: Braves 140, Dodgers 145LG, Mets 120, Tigers 113, and Mets
+  316/320/326, Coors 201/203, Phillies 107, Truist 238 from this plan;
+- a solid board: Pirates 238 (99–110 ft over its last row);
+- a 28-m-wide structure: Reds 143 (81–92 ft over its last row).
+
+52 unmeasured sections' backs agree with their measured neighbours within
+2 rows (`tmp/lidar/p4Neighbours.ts`):
+- the 300-level canopy at Truist, including the corner 344–347;
+- the PNC Grandstand and 100s (129 lines up with its neighbours at the
+  back);
+- the Orioles club ends, the White Sox upper deck (aligned at the back:
+  covers 12 rows from the last), and others.
+
+142 measured sections on their tier's back are within 2 rows of their own.
+
+**Answers at the test games** (1:10 PM, 2025-04-15 and 2025-07-15, half-hour
+statuses) changed in 73 sections:
+- Truist 300 level 13 (shade with the sun behind under the canopy);
+- Mets 16, Orioles club ends 14, Fenway 9 (Roof Boxes and Pavilion Reserved
+  20);
+- Royals Plaza ends 5, Padres 4, Coors 4, Phillies 3, Tigers 2;
+- one each at Busch, PNC and the Reds.
+
+**Low share, April / July, before → after:**
+
+| Park | Before | After |
+|---|---|---|
+| Braves | 48/42 | 46/40 |
+| Cardinals | 25/28 | 25/30 |
+| Dodgers | 22/22 | 23/29 |
+| Mets | 39/38 | 40/41 |
+| Nationals | 33/26 | 33/26 (one fewer) |
+| Padres | 31/29 | 32/29 |
+| Phillies | 21/19 | 22/20 |
+| Pirates | 7/11 | 7/13 |
+| Red Sox | 28/22 | 26/22 |
+| Royals | 21/14 | 19/14 |
+| Tigers | 28/25 | 27/25 |
+| Twins | 27/23 | 28/25 |
+| Yankees | 31/31 | 31/31 (one more) |
+
+**Why the labels moved (root cause found, not changed).** With the data held
+fixed, the engine change alone causes 92 confidence drops and 25 rises.
+87 of the 92 come from one confidence variant. It scales each back's
+setback by ±20% (measured) or ±50% (estimated). For a back over the rows
+that slides it across 2–8 rows, apart from the deck edge it belongs to
+(Dodgers loge: the deck's front at −40 becomes −48, over open rows 6–7,
+while the deck's edge stays at row 8). Before the fix the engine ignored
+those rows, so the variant did nothing there. A fix would move a back over
+the rows by its measurement error (about a row), or together with its
+deck's edge. That's a change to the confidence model, so it's yours to
+decide.
+
+**Reference checks and posts** (investigated, recorded, not tuned):
+- Kauffman: "the right-field corner gets the worst of the late sun" now
+  holds for 147–148 and 250–252; 247 and 249 join 248 as not reproduced
+  (the scan puts the upper deck over their back rows: 74%, 69% and 42% of
+  their seats shaded over the July 12 game).
+- Fenway post: the Roof Boxes under the press box (R23–R37) are partly
+  shaded through the 9th inning (High confidence; the old Medium came from
+  the jump), and R39–R43 are in the sun all game. The sentence is rewritten
+  to the engine.
+
+**Checks:** full suite 3540/3540; type check clean. On the dev server, the
+13 changed parks' pages and the Fenway post return 200 with no console or
+server errors; R25's panel shows partial 1:35–4:05 and sun at 4:35 (High),
+and the post shows the new sentence.
+
+**Open for you:**
+1. The confidence variant for backs over the rows (above): Dodgers' July
+   Low share 22% → 29% comes from it.
+2. 335 measured sections on their tier's back would answer differently
+   with their own (was 343): whether every measured section takes its own.
+3. Found on the R25 panel: the section sentence says "partly shaded, with
+   sun on some rows all game" when a section starts partial and ends in
+   sun (`shadeSentence` never checks the later half-hours). It was there
+   before §11.
+4. Covers the scan disputes on sections not measured before: Mets 108's cut
+   puts the Excelsior's front over its row ~3 (source row 30, model 7).
+   Still open from earlier: the `heightsSourced` / roof-top question and
+   the confidence split.
+
+---
 ---
 
 # Previous audit (2026-08-07), kept for history
