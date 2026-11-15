@@ -458,9 +458,15 @@ const FENWAY: StadiumStructure = {
       // Rows A–G, uncovered (sourced). Lidar (10 of 11): front row 53 ft
       // (52–53), 33° rake (31–35). A structure 82 ft up reaches out over
       // row 6 (against the source) and is what rises highest behind; behind
-      // R39 and R41 a lower one, 66 ft.
+      // R39 and R41 a lower one, 66 ft, right behind the last row. R43 (one
+      // row on the club's map, at the front) cuts the same as R41, a 7-row
+      // run with nothing at 82 ft; the tool will not measure one row on
+      // it. Behind its row the run rises to R41's 66 ft, 18 ft back.
       stand: { rows: 7, frontRowHeightFt: 53, rakeDeg: 33, backHeightFt: 82, backSetbackFt: -4 },
-      sections: Object.fromEntries(['R39', 'R41'].map((id) => [id, { backHeightFt: 66, backSetbackFt: 1 }])),
+      sections: {
+        ...Object.fromEntries(['R39', 'R41'].map((id) => [id, { backHeightFt: 66, backSetbackFt: 1 }])),
+        'R43': { backHeightFt: 66, backSetbackFt: 18 },
+      },
       rowsFromMap: true,
       heightsSourced: true,
       coverSourced: true,
