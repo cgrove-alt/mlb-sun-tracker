@@ -3779,11 +3779,14 @@ const COORS: StadiumStructure = {
       // takes the scan's rows (201, 203, 208 and 209, not measured, keep
       // row 4). Its underside ~58 ft (that front row, 67 ft, less 9 ft).
       // In the 17-row 205 and 206 that front is 43 ft in front of the last
-      // row (measured).
+      // row, in the 6-row 201–203 11–12 ft (measured; 201 and 203 on cuts
+      // through points the tool's line from home misses, their edge over
+      // row 2, within two rows of the source's 4).
       stand: { rows: 13, frontRowHeightFt: 34, rakeDeg: 21, backHeightFt: 68, backSetbackFt: -23, deckFrontFt: 67, overhang: { coveredFromRow: 5, soffitHeightFt: 58 } },
       sections: {
-        ...Object.fromEntries(['201', '203', '208', '209'].map((id) => [id, cover(4, 58)])),
-        '202': cover(2, 58),
+        ...Object.fromEntries(['208', '209'].map((id) => [id, cover(4, 58)])),
+        ...Object.fromEntries(['201', '203'].map((id) => [id, { backHeightFt: 68, backSetbackFt: -11, ...cover(4, 58) }])),
+        '202': { backHeightFt: 68, backSetbackFt: -12, ...cover(2, 58) },
         '204': cover(1, 58),
         '206': { backHeightFt: 69, backSetbackFt: -43, ...cover(1, 58) },
         '205': { backHeightFt: 68, backSetbackFt: -43, ...cover(1, 57) },
