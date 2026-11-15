@@ -1720,14 +1720,16 @@ const CBP: StadiumStructure = {
       // rake; the 200 level's edge reaches out over row 16 (13 in 145; also
       // over 141, and over row 8 of 148), so the rows from there back are
       // covered; that edge is what rises highest behind (39 ft). Its
-      // underside: the 200 level's 37-ft front row less 9 ft, ~28 ft.
+      // underside: the 200 level's 37-ft front row less 9 ft, ~28 ft. Past
+      // the 200 level's end, behind 147 a structure 26 ft up stands right
+      // behind its last row; over 148 that edge, 24 ft up (measured).
       stand: { rows: 23, frontRowHeightFt: 8, rakeDeg: 13, backHeightFt: 39, backSetbackFt: -16, deckFrontFt: 37, overhang: { coveredFromRow: 16, soffitHeightFt: 28 } },
       sections: {
         '140': { noCover: true, backHeightFt: 49, backSetbackFt: 30 }, // rows 7–21
         '145': { overhang: { coveredFromRow: 13, soffitHeightFt: 33 } },
         '146': { noCover: true, backHeightFt: 43, backSetbackFt: 43 },
-        '147': { noCover: true, backHeightFt: 25, backSetbackFt: -5 }, // rows 4–18
-        '148': { frontRowHeightFt: 12, backHeightFt: 25, backSetbackFt: -5, overhang: { coveredFromRow: 8, soffitHeightFt: 25 } }, // rows 5–16
+        '147': { noCover: true, backHeightFt: 26, backSetbackFt: 1 }, // rows 4–18
+        '148': { frontRowHeightFt: 12, backHeightFt: 24, backSetbackFt: -11, overhang: { coveredFromRow: 8, soffitHeightFt: 25 } }, // rows 5–16
       },
       rowsFromMap: true,
       heightsSourced: false,
