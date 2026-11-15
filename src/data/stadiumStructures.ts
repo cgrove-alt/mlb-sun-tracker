@@ -1034,7 +1034,11 @@ const WRIGLEY: StadiumStructure = {
       // Each section takes its own measured back where it stands more than
       // 10 ft nearer or farther: the buildings 60–150 ft behind 501–504 and
       // 514, the scoreboard 25 ft behind 511's last row (its 14 rows), the
-      // video board's top 13 ft in front of 506's.
+      // video board's top 13 ft in front of 506's. Behind 513 the bleachers'
+      // back building, 48 ft up, starts where its rows end (39 ft from the
+      // front; the rows here are ~2.1 ft deep, 511's 14 in 30 ft, not the
+      // profile's 2.75, so the scan's "row 15" is about its last): it is
+      // taken right behind its last row, open as sourced.
       stand: { rows: 21, frontRowHeightFt: 9, rakeDeg: 30, backHeightFt: 57, backSetbackFt: 11 },
       sections: {
         '501': { rows: 8, frontRowHeightFt: 16, backHeightFt: 65, backSetbackFt: 150 },
@@ -1046,7 +1050,7 @@ const WRIGLEY: StadiumStructure = {
         '506': { backHeightFt: 85, backSetbackFt: -13, overhang: { coveredFromRow: 17, soffitHeightFt: 85 } },
         '511': { rows: 14, backHeightFt: 88, backSetbackFt: 25 },
         ...Object.fromEntries(['507', '512'].map((id) => [id, { backHeightFt: 36, backSetbackFt: 10 }])),
-        '513': { backHeightFt: 48, backSetbackFt: -18 },
+        '513': { backHeightFt: 48, backSetbackFt: 0 },
         '537': { rows: 15 },
         '538': { backHeightFt: 51, backSetbackFt: 4 },
       },
