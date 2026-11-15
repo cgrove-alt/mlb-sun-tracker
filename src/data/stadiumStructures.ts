@@ -4609,12 +4609,15 @@ const PNC: StadiumStructure = {
       // a step above the club's walkway. The roof's edge, 120 ft up (its
       // top), is over position 6 (5–10), more than two rows ahead of the
       // source's in 17 of 18, so the tier takes the scan's row (9–10 in six,
-      // which take theirs; 329 and 331–333, not measured, keep theirs).
+      // which take theirs; 329 and 331–333, not measured, keep theirs). In
+      // 311 that edge is 27 ft in front of the last row, over its row 9
+      // (measured; the tier's 35 would put it over its open rows 7–9).
       stand: { rows: 20, frontRowHeightFt: 76, rakeDeg: 28, backHeightFt: 120, backSetbackFt: -35, overhang: { coveredFromRow: 6, soffitHeightFt: 120 } },
       sections: {
         ...pncCover(['329', '331', '332', '333'], 120),
         ...Object.fromEntries(['308', '323', '327', '328'].map((id) => [id, { overhang: { coveredFromRow: 9, soffitHeightFt: 120 } }])),
-        ...Object.fromEntries(['311', '320'].map((id) => [id, { overhang: { coveredFromRow: 10, soffitHeightFt: 120 } }])),
+        '311': { backHeightFt: 120, backSetbackFt: -27, overhang: { coveredFromRow: 10, soffitHeightFt: 120 } },
+        '320': { overhang: { coveredFromRow: 10, soffitHeightFt: 120 } },
       },
       rowsFromMap: true,
       heightsSourced: true,
