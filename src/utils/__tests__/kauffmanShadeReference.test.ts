@@ -28,9 +28,10 @@
  *     behind (22% of their seats over the game); the scan also shows the
  *     roof over 437's double-letter rows.
  *   - [RYS] all of the right-field corner (147–148, 247–252) gets the worst of
- *     the late-afternoon sun. The scan puts the upper deck's end over 248's
- *     rows from 9, which the model shades (55–80%); the rest are in the sun
- *     (tested below).
+ *     the late-afternoon sun. The scan puts the upper deck's end over 247's
+ *     rows from 8, 248's from 9 and 249's from 14 (its edge angled across
+ *     them), which the model covers and shades (74%, 69% and 42% of their
+ *     seats over the July 12 game); the rest are in the sun (tested below).
  */
 import { royalsSections } from '../../data/sections/mlb/royals';
 import { getStadiumStructure } from '../../data/stadiumStructures';
@@ -119,8 +120,8 @@ describe('Kauffman Stadium: 3:10 PM games', () => {
     expect(samples[0].shadedFraction).toBeGreaterThanOrEqual(0.2);
   });
 
-  it('[RYS] the right-field corner (147–148, 247–252 but 248) gets the worst of the late-afternoon sun', () => {
-    expect(meanShade(JULY_12_310PM, onMap(['147', '148', '247', ...range(249, 252)]))).toBeLessThan(0.05);
+  it('[RYS] the right-field corner (147–148, 250–252) gets the worst of the late-afternoon sun', () => {
+    expect(meanShade(JULY_12_310PM, onMap(['147', '148', ...range(250, 252)]))).toBeLessThan(0.05);
   });
 
   it('[RYS] the Loge is shaded throughout', () => {

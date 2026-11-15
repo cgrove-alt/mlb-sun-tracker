@@ -3992,13 +3992,23 @@ const KAUFFMAN: StadiumStructure = {
     plazaOpen: {
       label: 'Plaza ends (206–208, 247–252)',
       // Rows AA–TT, past the end of the Loge deck: no cover given ("247–252
-      // get the worst of it" late in the day). Lidar (2 of 9): front row
-      // 17 ft, 16° rake; behind, 47 ft up. The upper deck's end is over
-      // 248's row 9 (underside ~51 ft, its front less 9 ft).
-      stand: { rows: 20, frontRowHeightFt: 17, rakeDeg: 16, backHeightFt: 47, backSetbackFt: -13, deckFrontFt: 60 },
+      // get the worst of it" late in the day). Lidar (all 9; seven on cuts
+      // through a point the tool's line from home plate misses): front row
+      // 16–21 ft, 11–19° rake (taken as 17 ft, 16°). The upper deck's end
+      // reaches over the six nearest the foul lines, its edge angled across
+      // them: over row 8 of 208 and 247, 9 of 207 and 248, 11 of 206 and 14
+      // of 249, three or more rows, which they take (option A; underside
+      // ~51 ft, its front less 9 ft); behind, its rows rise 60–63 ft, 18–26
+      // ft in front of the last row (each section's own). 250–252 are open, under nothing: behind
+      // them a roof 33 ft up, right behind the last row.
+      stand: { rows: 20, frontRowHeightFt: 17, rakeDeg: 16, backHeightFt: 33, backSetbackFt: 1, deckFrontFt: 60 },
       sections: {
+        '206': { backHeightFt: 60, backSetbackFt: -23, overhang: { coveredFromRow: 11, soffitHeightFt: 51 } },
+        '207': { backHeightFt: 61, backSetbackFt: -26, overhang: { coveredFromRow: 9, soffitHeightFt: 51 } },
+        '208': { backHeightFt: 62, backSetbackFt: -26, overhang: { coveredFromRow: 8, soffitHeightFt: 51 } },
+        '247': { backHeightFt: 63, backSetbackFt: -26, overhang: { coveredFromRow: 8, soffitHeightFt: 51 } },
         '248': { backHeightFt: 61, backSetbackFt: -26, overhang: { coveredFromRow: 9, soffitHeightFt: 51 } },
-        '250': { backHeightFt: 33, backSetbackFt: 1 },
+        '249': { backHeightFt: 60, backSetbackFt: -18, overhang: { coveredFromRow: 14, soffitHeightFt: 51 } },
       },
       rowsFromMap: true,
       heightsSourced: false,
