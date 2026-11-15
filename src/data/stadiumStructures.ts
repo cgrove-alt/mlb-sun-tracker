@@ -4857,11 +4857,12 @@ const COMERICA: StadiumStructure = {
       // (its top; the scan sees nothing under it), reaches out over row 23
       // (20 in 104), more than two rows ahead of the source's; over 103's
       // last rows something 70 ft up; over 102 nothing. Behind, 26–70 ft up
-      // by section.
+      // by section. 101 (rows E–T, not measured) ends before where the
+      // balcony reaches elsewhere, beyond 102: it takes 102's back, 26 ft
+      // up right behind the last row.
       stand: { rows: 33, frontRowHeightFt: 10, rakeDeg: 12, treadFt: 3, backHeightFt: 40, backSetbackFt: -5, overhang: { coveredFromRow: 23, soffitHeightFt: 38 } },
       sections: {
-        '101': { noCover: true },
-        '102': { noCover: true, backHeightFt: 26, backSetbackFt: 1 },
+        ...Object.fromEntries(['101', '102'].map((id) => [id, { noCover: true, backHeightFt: 26, backSetbackFt: 1 }])),
         '103': { backHeightFt: 70, backSetbackFt: -5, overhang: { coveredFromRow: 31, soffitHeightFt: 70 } },
         '104': { backHeightFt: 56, backSetbackFt: 7, overhang: { coveredFromRow: 20, soffitHeightFt: 38 } },
         '105': { backHeightFt: 39, backSetbackFt: -31 },
