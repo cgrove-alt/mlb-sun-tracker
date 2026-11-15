@@ -2145,9 +2145,10 @@ const TRUIST: StadiumStructure = {
       // rake; behind, the canopy, 150 ft up. The 300 level's underside: its
       // measured 68-ft front row less 9 ft is under row 14's heads, so 9 ft
       // above row 14's floor, 61 ft. (In 243 the canopy's edge stands 4 ft in
-      // front of the last row, measured.)
+      // front of the last row, in 238 24 ft, 157 ft up, over its rows 11–13
+      // where the scan also sees the 300 level's front from row 11; measured.)
       stand: { rows: 19, frontRowHeightFt: 36, rakeDeg: 24, backHeightFt: 150, backSetbackFt: -16, deckFrontFt: 67, overhang: { coveredFromRow: 14, soffitHeightFt: 61 } },
-      sections: { '243': { backHeightFt: 153, backSetbackFt: -4 } },
+      sections: { '243': { backHeightFt: 153, backSetbackFt: -4 }, '238': { backHeightFt: 157, backSetbackFt: -24 } },
       rowsFromMap: true,
       heightsSourced: false,
       coverSourced: true,
