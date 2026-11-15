@@ -2450,11 +2450,12 @@ const BUSCH: StadiumStructure = {
       // from 9), under an underside of ~67 ft (that front row less this
       // park's measured 7-ft deck depth). What rises highest behind is that
       // front edge (11 ft in front of the last row in the 8-row 249 and 251,
-      // measured).
+      // 16 ft in the 9-row 250 and 258, measured).
       stand: { rows: 15, frontRowHeightFt: 48, rakeDeg: 24, backHeightFt: 76, backSetbackFt: -25, deckFrontFt: 75, overhang: { coveredFromRow: 4, soffitHeightFt: 67 } },
       sections: {
         '260': { overhang: { coveredFromRow: 1, soffitHeightFt: 67 } },
         ...Object.fromEntries(['249', '251'].map((id) => [id, { backHeightFt: 76, backSetbackFt: -11 }])),
+        ...Object.fromEntries(['250', '258'].map((id) => [id, { backHeightFt: 76, backSetbackFt: -16 }])),
       },
       rowsFromMap: true,
       heightsSourced: false,
