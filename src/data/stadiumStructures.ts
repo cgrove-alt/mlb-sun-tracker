@@ -1080,7 +1080,7 @@ const WRIGLEY_LIDAR = 'USGS 3DEP lidar IL_4County_Cook_2017, flown 2017-04-17 to
  * The upper deck and the bleachers are measured on USGS airborne lidar
  * (WRIGLEY_LIDAR), as at Dodger Stadium, with covered rows from the scan
  * where it puts a roof's edge more than two rows from the source's row;
- * each measured section takes its own back. The
+ * each measured section takes its own front row and back. The
  * lower bowl is not: the club
  * boxes and field boxes were rebuilt in the 2017–18 offseason (with the
  * American Airlines 1914 Club under them), after the scan, so its heights
@@ -1186,9 +1186,11 @@ const WRIGLEY: StadiumStructure = {
         backSetbackFt: -18,
         overhang: { coveredFromRow: 1, soffitHeightFt: 87 },
       },
-      sections: withBacks({ '331R': { rows: 12 } }, {
+      sections: withFronts(withBacks({ '331R': { rows: 12 } }, {
         ...Object.fromEntries(['304L', '305L', '306L', '307L', '309L', '312L', '316L', '317R', '318R', '321R', '323R', '324R', '329R'].map((id) => [id, [88, -23] as const])),
         '326R': [87, -23], '331R': [88, -29],
+      }), {
+        '324R': 47, '326R': 47, '321R': 47, '323R': 47, '318R': 47,
       }),
       heightsSourced: true,
       coverSourced: true,
@@ -1232,10 +1234,9 @@ const WRIGLEY: StadiumStructure = {
       // profile's 2.75, so the scan's "row 15" is about its last): it is
       // taken right behind its last row, open as sourced.
       stand: { rows: 21, frontRowHeightFt: 9, rakeDeg: 30, backHeightFt: 57, backSetbackFt: 19 },
-      sections: withBacks({
-        '501': { rows: 8, frontRowHeightFt: 16 },
-        '502': { frontRowHeightFt: 16 },
-        '503': { frontRowHeightFt: 16 },
+      sections: withFronts(withBacks({
+        '501': { rows: 8 },
+
         '505': { overhang: { coveredFromRow: 15, soffitHeightFt: 85 } },
         '506': { overhang: { coveredFromRow: 17, soffitHeightFt: 85 } },
         '511': { rows: 14 },
@@ -1245,6 +1246,8 @@ const WRIGLEY: StadiumStructure = {
         '502': [64, 60], '511': [88, 25], '512': [35, 7], '514': [54, 76], '503': [60, 116],
         '504': [54, 88], '505': [94, -16], '506': [85, -13], '507': [38, 12], '501': [65, 150],
         '538': [51, 4],
+      }), {
+        '502': 16, '511': 8, '512': 8, '503': 16, '504': 8, '507': 8, '501': 16, '538': 8,
       }),
 
       heightsSourced: true,
