@@ -1194,8 +1194,9 @@ const ORACLE_LIDAR = 'USGS 3DEP lidar CA_SanFrancisco_B23, flown 2023-04-20 (scr
  * Heights are measured on USGS airborne lidar (ORACLE_LIDAR), as at Dodger
  * Stadium: for each section a cut straight back through its rows gives the
  * front row's height, the rake and the structure that rises highest behind
- * as seen from the middle uncovered row; tier values are medians, sections
- * more than 10% (at least 3 ft) off get their own. Covered rows: where the
+ * as seen from the middle uncovered row; tier values are medians, a section
+ * whose front row is more than 10% (at least 3 ft) off gets its own, and
+ * every measured section takes its own back. Covered rows: where the
  * scan puts a deck's edge more than two rows from the source's row, the
  * scan's edge is used. Deck undersides the scan cannot see are estimated as
  * the deck above's measured front row less 9 ft, never under 9 ft above the
@@ -1222,23 +1223,23 @@ const ORACLE: StadiumStructure = {
       // (125 ft). Estimated: the club deck's underside ~25 ft (9 ft above row
       // 29's floor, under the Club level's measured 32-ft front row; 26–28 ft
       // over 102, 133 and 135, 9 ft above their first covered row's floor).
-      // Sections whose measured back stands more than 10 ft nearer or
-      // farther take their own: the View level's front 33–35 ft in front of
-      // the last row where the club deck covers from row 21–23 (107, 108,
-      // 123, 124), 5–10 ft where it covers from 23–34 (102, 135); the View
-      // roof 91 ft behind 112.
+      // Each measured section takes its own back, seen from the middle of
+      // its open rows: the View level's front 5–35 ft in front of the last
+      // row (16 sections), or the View roof 28–39 ft behind it (14; 91 ft
+      // behind 112). The tier takes the View front's median, 25 ft in
+      // front: the separate medians of height and setback (69 ft, 5 ft in
+      // front) pair the two groups and fit neither.
       stand: {
         deckFrontFt: 31,
         rows: 41,
         frontRowHeightFt: 0,
         rakeDeg: 12,
         backHeightFt: 68,
-        backSetbackFt: -23,
+        backSetbackFt: -25,
         overhang: { coveredFromRow: 29, soffitHeightFt: 25 },
       },
       sections: withBacks({
-        '101': { rows: 22, noCover: true, backHeightFt: 33, backSetbackFt: 42 },
-        ...Object.fromEntries(['103', '104', '105', '112', '128', '129', '130', '131', '132', '134'].map((id) => [id, { backHeightFt: 125, backSetbackFt: 37 }])),
+        '101': { rows: 22, noCover: true },
         '102': { overhang: { coveredFromRow: 34, soffitHeightFt: 28 } },
         ...Object.fromEntries(['107', '124'].map((id) => [id, { overhang: { coveredFromRow: 21, soffitHeightFt: 25 } }])),
         '108': { overhang: { coveredFromRow: 23, soffitHeightFt: 25 } },
@@ -1249,7 +1250,13 @@ const ORACLE: StadiumStructure = {
         '133': { rows: 11, frontRowHeightFt: 16, overhang: { coveredFromRow: 2, soffitHeightFt: 26 } },
         '135': { rows: 32, frontRowHeightFt: 5, overhang: { coveredFromRow: 23, soffitHeightFt: 27 } },
       }, {
-        '102': [68, -5], '107': [67, -33], '108': [68, -35], '123': [68, -33], '124': [68, -35], '135': [68, -10], '112': [125, 91],
+        '101': [33, 42], '102': [68, -5], '103': [125, 39], '104': [125, 39], '105': [125, 39],
+        '106': [68, -22], '107': [67, -33], '108': [68, -35], '109': [125, 28], '110': [69, -27],
+        '112': [125, 91], '113': [68, -25], '114': [68, -27], '115': [68, -25], '116': [125, 28],
+        '117': [69, -25], '118': [125, 28], '119': [68, -25], '121': [125, 31], '123': [68, -33],
+        '124': [68, -35], '125': [68, -22], '126': [67, -23], '127': [67, -23], '128': [125, 37],
+        '129': [125, 37], '130': [125, 36], '131': [125, 36], '132': [125, 36], '134': [125, 36],
+        '135': [68, -10],
       }),
       heightsSourced: false,
       coverSourced: true,
@@ -1262,16 +1269,16 @@ const ORACLE: StadiumStructure = {
       // behind differs from section to section (37–71 ft); behind 143 the
       // scoreboard, 113 ft up, whose structure reaches out over 143's row 22
       // (its face's bottom 33 ft up; taken as 35 ft, 9 ft above row 22's
-      // floor), covering the rows behind. Behind 136 what rises highest is
-      // 61 ft up, 132 ft back.
+      // floor), covering the rows behind; from 143's open rows its top, 130
+      // ft up, rises highest. Behind 136 what rises highest is 61 ft up, 132
+      // ft back. Each measured section takes its own back.
       stand: { rows: 26, frontRowHeightFt: 6, rakeDeg: 13, backHeightFt: 60, backSetbackFt: 37 },
-      sections: {
-        '136': { backHeightFt: 61, backSetbackFt: 132 },
-        '137': { backHeightFt: 43, backSetbackFt: 60 },
-        '138': { backHeightFt: 37, backSetbackFt: 11 },
-        '140': { backHeightFt: 71, backSetbackFt: 52 },
-        '143': { frontRowHeightFt: 13, backHeightFt: 113, backSetbackFt: -7, overhang: { coveredFromRow: 22, soffitHeightFt: 35 } },
-      },
+      sections: withBacks({
+        '143': { frontRowHeightFt: 13, overhang: { coveredFromRow: 22, soffitHeightFt: 35 } },
+      }, {
+        '136': [61, 132], '137': [43, 60], '138': [37, 11], '139': [58, 35], '140': [71, 52],
+        '143': [130, 0],
+      }),
       heightsSourced: true,
       coverSourced: true,
       sources: [rysOracle('sections/136'), rysOracle('sections/140'), rysOracle('sections/143'), RYS_ORACLE, ORACLE_LIDAR],
@@ -1282,7 +1289,7 @@ const ORACLE: StadiumStructure = {
       // has rows 1–7, 150 and 152 rows 1–3). Lidar (145 and 146): front row
       // 20 ft (18–21), 12° rake; behind, a 26 ft wall 21 ft back.
       stand: { rows: 3, frontRowHeightFt: 20, rakeDeg: 12, backHeightFt: 26, backSetbackFt: 21 },
-      sections: { '145': { rows: 7 }, '146': { rows: 7 }, '147': { rows: 7 } },
+      sections: withBacks({ '145': { rows: 7 }, '146': { rows: 7 }, '147': { rows: 7 } }, { '145': [26, 24], '146': [27, 19] }),
       heightsSourced: true,
       coverSourced: true,
       sources: [rysOracle('sections/145'), rysOracle('sections/150'), rysOracle('sections/152'), 'https://en.wikipedia.org/wiki/Oracle_Park', ORACLE_LIDAR],
@@ -1299,7 +1306,7 @@ const ORACLE: StadiumStructure = {
       // rows A–H stop before the source's row K, but the scan sees the View
       // level's front over its row 6, as over the rest, so it is covered
       // from row 5 with them (its back measured 8 ft in front of its last
-      // row).
+      // row). Each measured section takes its own back.
       stand: {
         deckFrontFt: 66,
         rows: 12,
@@ -1309,13 +1316,19 @@ const ORACLE: StadiumStructure = {
         backSetbackFt: -19,
         overhang: { coveredFromRow: 5, soffitHeightFt: 57 },
       },
-      sections: {
+      sections: withBacks({
         '204': { frontRowHeightFt: 28 },
         '205': { rows: 10 },
-        '215': { rows: 8, backHeightFt: 68, backSetbackFt: -8 },
+        '215': { rows: 8 },
         '225': { frontRowHeightFt: 28, overhang: { coveredFromRow: 8, soffitHeightFt: 57 } },
         '234': { rows: 8, overhang: { coveredFromRow: 1, soffitHeightFt: 57 } },
-      },
+      }, {
+        '203': [68, -21], '205': [68, -14], '207': [68, -21], '209': [68, -16], '210': [68, -17],
+        '211': [66, -19], '212': [68, -17], '213': [68, -17], '214': [65, -22], '215': [68, -8],
+        '216': [67, -19], '217': [67, -19], '218': [69, -17], '219': [67, -17], '220': [68, -16],
+        '221': [67, -19], '222': [68, -21], '223': [66, -22], '224': [67, -19], '225': [66, -12],
+        '227': [67, -19], '228': [67, -19], '229': [68, -21], '231': [67, -21], '233': [68, -21],
+      }),
       heightsSourced: false,
       coverSourced: true,
       sources: [rysOracle('sections/202'), rysOracle('sections/205'), rysOracle('sections/210'), rysOracle('sections/215'), rysOracle('sections/225'), rysOracle('sections/234'), RYS_ORACLE, ORACLE_LIDAR],
@@ -1343,11 +1356,16 @@ const ORACLE: StadiumStructure = {
         backSetbackFt: -18,
         overhang: { coveredFromRow: 16, soffitHeightFt: 124 },
       },
-      sections: {
+      sections: withBacks({
         '315': { rows: 26, frontRowHeightFt: 68, overhang: { coveredFromRow: 20, soffitHeightFt: 124 } },
         '326': { rows: 26, frontRowHeightFt: 68, overhang: { coveredFromRow: 20, soffitHeightFt: 124 } },
         '333': { overhang: { coveredFromRow: 11, soffitHeightFt: 124 } },
-      },
+      }, {
+        '302': [125, -19], '305': [125, -19], '311': [125, -19], '313': [125, -19],
+        '315': [125, -16], '317': [125, -19], '319': [123, -16], '320': [125, -19],
+        '324': [125, -21], '326': [125, -16], '327': [125, -21], '330': [125, -19],
+      }),
+
       heightsSourced: true,
       coverSourced: true,
       sources: [rysOracle('sections/302'), rysOracle('sections/308'), rysOracle('sections/315'), rysOracle('sections/326'), rysOracle('sections/336'), RYS_ORACLE, ORACLE_LIDAR],
