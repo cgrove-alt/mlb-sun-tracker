@@ -1109,8 +1109,9 @@ const WRIGLEY_LIDAR = 'USGS 3DEP lidar IL_4County_Cook_2017, flown 2017-04-17 to
  * The upper deck and the bleachers are measured on USGS airborne lidar
  * (WRIGLEY_LIDAR), as at Dodger Stadium, with covered rows from the scan
  * where it puts a roof's edge more than two rows from the source's row;
- * each measured section takes its own front row and back. The
- * lower bowl is not: the club
+ * each measured section takes its own front row and back, and its own rake
+ * where the scan sees 9 or more of its rows and the cuts beside it agree.
+ * The lower bowl is not: the club
  * boxes and field boxes were rebuilt in the 2017–18 offseason (with the
  * American Airlines 1914 Club under them), after the scan, so its heights
  * stay estimated: a shallow bowl rising to the upper deck's underside
@@ -1263,7 +1264,7 @@ const WRIGLEY: StadiumStructure = {
       // profile's 2.75, so the scan's "row 15" is about its last): it is
       // taken right behind its last row, open as sourced.
       stand: { rows: 21, frontRowHeightFt: 9, rakeDeg: 30, backHeightFt: 57, backSetbackFt: 19 },
-      sections: withFronts(withBacks({
+      sections: withRakes(withFronts(withBacks({
         '501': { rows: 8 },
 
         '505': { overhang: { coveredFromRow: 15, soffitHeightFt: 85 } },
@@ -1277,6 +1278,8 @@ const WRIGLEY: StadiumStructure = {
         '538': [51, 4],
       }), {
         '502': 16, '511': 8, '512': 8, '503': 16, '504': 8, '507': 8, '501': 16, '538': 8,
+      }), {
+        '511': 28, '538': 29,
       }),
 
       heightsSourced: true,
