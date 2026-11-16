@@ -3972,8 +3972,9 @@ const ANGEL_LIDAR = 'USGS 3DEP lidar CA_CaliforniaGaps_B23, flown 2023-11-10, an
  * agree to 2 cm where both have ground), as at Citizens Bank Park: for each
  * section a cut straight back through its stand gives the front row's
  * height and the rake, the edge of any deck over it, and what rises highest
- * behind; each measured section takes its own front row and that back.
- * Where a deck's
+ * behind; each measured section takes its own front row and that back, and
+ * its own rake where the scan sees 9 or more of its rows and the cuts beside
+ * it agree. Where a deck's
  * edge is more than two rows from the source's
  * covered row (or covers three or more it leaves open), the scan's row is
  * used. The scan sees decks from above: a deck's underside is the bottom of
@@ -4005,7 +4006,7 @@ const ANGEL: StadiumStructure = {
       // 127, whose own front rows sit a foot higher: 9 ft above their row
       // 22's floor).
       stand: { rows: 26, frontRowHeightFt: 2, rakeDeg: 14, backHeightFt: 123, backSetbackFt: 41, deckFrontFt: 34, overhang: { coveredFromRow: 22, soffitHeightFt: 25 } },
-      sections: withFronts(withBacks({
+      sections: withRakes(withFronts(withBacks({
         '103': { overhang: { coveredFromRow: 25, soffitHeightFt: 27 } },
         ...Object.fromEntries(['113', '127'].map((id) => [id, { overhang: { coveredFromRow: 22, soffitHeightFt: 26 } }])),
       }, {
@@ -4018,6 +4019,8 @@ const ANGEL: StadiumStructure = {
       }), {
         '113': 3, '103': 1, '102': 1, '117': 1, '127': 3, '131': 0, '114': 1, '121': 1, '119': 1,
         '118': 3, '116': 1, '115': 1,
+      }), {
+        '131': 12,
       }),
       rowsFromMap: true,
       heightsSourced: false,
@@ -4039,16 +4042,19 @@ const ANGEL: StadiumStructure = {
     rightPavilion: {
       label: 'Right-field pavilion (236–240)',
       // Rows A–Z and VV–YY, "zero protection from the sun". Lidar (4 of 5):
-      // front row 13 ft above the field, 17° rake (15–18); behind, 111 ft
+      // front row 13 ft above the field, 18° rake (15–18; 237's cut, 15°,
+      // is off the cuts beside it, 18°, so it is left out); behind, 111 ft
       // up and 44 ft back (68 in 238; 104–117 ft and 34–55 ft back behind
       // 237, 239 and 240, measured).
-      stand: { rows: 30, frontRowHeightFt: 13, rakeDeg: 17, backHeightFt: 111, backSetbackFt: 44 },
-      sections: withFronts({
+      stand: { rows: 30, frontRowHeightFt: 13, rakeDeg: 18, backHeightFt: 111, backSetbackFt: 44 },
+      sections: withRakes(withFronts({
         '238': { backHeightFt: 68, backSetbackFt: 57 },
         '239': { backHeightFt: 104, backSetbackFt: 55 },
         ...Object.fromEntries(['237', '240'].map((id) => [id, { backHeightFt: 117, backSetbackFt: 34 }])),
       }, {
         '237': 14,
+      }), {
+        '238': 15,
       }),
       rowsFromMap: true,
       heightsSourced: true,
@@ -4078,8 +4084,10 @@ const ANGEL: StadiumStructure = {
       // settles the cover; behind, 32 ft up and 11 ft back (26–39 ft up, each
       // measured section its own).
       stand: { rows: 22, frontRowHeightFt: 9, rakeDeg: 16, backHeightFt: 32, backSetbackFt: 11 },
-      sections: withFronts(withBacks({ '256': { frontRowHeightFt: 3 } }, { '259': [27, 1], '258': [37, 22], '256': [26, 1], '257': [39, 21] }), {
+      sections: withRakes(withFronts(withBacks({ '256': { frontRowHeightFt: 3 } }, { '259': [27, 1], '258': [37, 22], '256': [26, 1], '257': [39, 21] }), {
         '259': 10, '258': 10, '256': 3,
+      }), {
+        '259': 17,
       }),
       rowsFromMap: true,
       heightsSourced: true,
@@ -4123,7 +4131,7 @@ const ANGEL: StadiumStructure = {
       // edge is 123 ft up, 4 ft behind the last row (2–7 ft, each measured
       // section its own; in eight, a lamp bank on it, 135–141 ft).
       stand: { rows: 10, frontRowHeightFt: 60, rakeDeg: 32, backHeightFt: 123, backSetbackFt: 4 },
-      sections: withFronts(withBacks({}, {
+      sections: withRakes(withFronts(withBacks({}, {
         '435': [123, 7], '422': [123, 6], '417': [123, 6], '416': [124, 4], '415': [123, 6],
         '425': [123, 6], '412': [123, 6], '411': [137, 2], '410': [141, 4], '409': [123, 7],
         '408': [123, 2], '426': [140, 4], '427': [141, 6], '428': [123, 6], '429': [123, 2],
@@ -4132,6 +4140,9 @@ const ANGEL: StadiumStructure = {
         '402': [140, 2],
       }), {
         '409': 59, '408': 62, '426': 59, '427': 58, '429': 61,
+      }), {
+        '435': 30, '416': 33, '405': 33, '429': 33, '404': 31, '418': 33, '419': 33, '420': 33,
+        '423': 31, '401': 31, '402': 31,
       }),
       rowsFromMap: true,
       heightsSourced: true,
