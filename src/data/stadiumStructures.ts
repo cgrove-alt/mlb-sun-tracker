@@ -14,7 +14,8 @@
  * (and how far a deck reaches out past its first covered row) ±50% where the
  * tier's heights are estimated (±10% and ±20% where they are sourced;
  * src/utils/gameShade.ts), and a section whose answer changes is labelled
- * lower confidence.
+ * lower confidence. A back over the rows of a stand with a deck is moved by
+ * its distance from the deck's edge, so it stays on the deck.
  */
 import type { ParkEnvelope, StandProfile } from '../utils/shadeEngine';
 import type { DetailedSection } from '../types/stadium-complete';

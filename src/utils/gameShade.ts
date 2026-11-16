@@ -9,13 +9,15 @@
  * Confidence is a robustness test, not a guess. Every answer is recomputed
  * with the park's orientation moved by its measured ± error and with the
  * structure around the seats moved as far as its data could plausibly be off
- * (estimated heights and setbacks ±50%; measured ones ±10–20%). If no half-hour step changes, the answer is High; one or two steps,
- * Medium; more, Low.
+ * (estimated heights and setbacks ±50%; measured ones ±10–20%; a back over
+ * the rows of a stand with a deck moves with the deck's edge). If no
+ * half-hour step changes, the answer is High; one or two steps, Medium;
+ * more, Low.
  */
 import type { DetailedSection } from '../types/stadium-complete';
 import type { StadiumStructure, TierStructure } from '../data/stadiumStructures';
 import { getSolarPosition } from './solarPosition';
-import { rowLight, shadedFraction, statusFor, type ShadeStatus, type StandProfile, type SunAngles } from './shadeEngine';
+import { DEFAULT_TREAD_FT, rowLight, shadedFraction, statusFor, type ShadeStatus, type StandProfile, type SunAngles } from './shadeEngine';
 
 export const GAME_WINDOW_MINUTES = 180;
 export const STEP_MINUTES = 30;
@@ -146,7 +148,7 @@ function perturbStructure(stand: StandProfile, heightFactor: number, setbackFact
   return {
     ...stand,
     backHeightFt: base + (stand.backHeightFt - base) * heightFactor,
-    backSetbackFt: stand.backSetbackFt === undefined ? undefined : stand.backSetbackFt * setbackFactor,
+    backSetbackFt: movedSetback(stand, setbackFactor),
     deckFrontFt: stand.deckFrontFt === undefined ? undefined : base + (stand.deckFrontFt - base) * heightFactor,
     overhang: stand.overhang
       ? {
@@ -156,6 +158,28 @@ function perturbStructure(stand: StandProfile, heightFactor: number, setbackFact
         }
       : undefined,
   };
+}
+
+/**
+ * The back's setback with its distance from what it stands on moved by
+ * `factor`. That is the last row, except for a back over the rows of a stand
+ * with a deck: it stands on that deck (its front, or the deck above), so it
+ * keeps its place relative to the deck's edge and moves with it, the way the
+ * deck's reach is moved. A share of its distance from the last row would
+ * slide it rows past that edge, out over the open rows.
+ */
+function movedSetback(stand: StandProfile, factor: number): number | undefined {
+  const setback = stand.backSetbackFt;
+  if (setback === undefined) return undefined;
+  if (setback >= 0 || !stand.overhang) return setback * factor;
+  // The deck's edge, in feet behind the last row (negative: in front of it),
+  // before and after its reach is moved.
+  const tread = stand.treadFt ?? DEFAULT_TREAD_FT;
+  const coveredDepth = (Math.max(1, Math.round(stand.rows)) - Math.max(1, stand.overhang.coveredFromRow) + 1) * tread;
+  const reach = stand.overhang.reachFt ?? 0;
+  const edge = -(coveredDepth + reach);
+  const movedEdge = -(coveredDepth + reach * factor);
+  return movedEdge + (setback - edge) * factor;
 }
 
 /** Bearing from home plate to a section, for parks without stand directions. */
