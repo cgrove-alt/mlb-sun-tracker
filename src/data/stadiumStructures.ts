@@ -5404,7 +5404,7 @@ const COMERICA_LIDAR = 'USGS 3DEP lidar MI_WayneCo_2017, flown 2017-04-22 to 201
  * no later scan covers the park), as at Citizens Bank Park: for each
  * section a cut straight back through its stand gives the front row's
  * height and the rake, the edge of any deck over it, and what rises highest
- * behind, which each measured section takes as its own back. Where a deck's
+ * behind; each measured section takes its own front row and that back. Where a deck's
  * edge is more than two rows from the source's
  * covered row (or covers three or more it leaves open), the scan's row is
  * used. The scan sees decks from above: a deck's underside is the bottom of
@@ -5433,7 +5433,7 @@ const COMERICA: StadiumStructure = {
       // section takes its own back (over 117 the mezzanine's front over row
       // 33; behind 118 the roof).
       stand: { rows: 35, frontRowHeightFt: 1, ...COMERICA_LOWER, backHeightFt: 62, backSetbackFt: -7, deckFrontFt: 61, overhang: { coveredFromRow: 26, soffitHeightFt: 52 } },
-      sections: withBacks({
+      sections: withFronts(withBacks({
         '116': { frontRowHeightFt: 5, deckFrontFt: 49, overhang: { coveredFromRow: 26, soffitHeightFt: 40 } },
         '117': { deckFrontFt: 49, overhang: { coveredFromRow: 33, soffitHeightFt: 40 } },
         '118': { deckFrontFt: 60, overhang: { coveredFromRow: 33, soffitHeightFt: 51 } },
@@ -5443,6 +5443,8 @@ const COMERICA: StadiumStructure = {
       }, {
         '122': [62, -12], '121': [62, -2], '123': [62, -12], '124': [63, 4], '117': [50, -7],
         '118': [118, 48], '116': [51, -29], '119': [51, -25], '120': [63, 9],
+      }), {
+        '122': 2, '121': 2, '123': 2, '124': -1, '117': -2, '118': -1, '116': 5, '120': -1,
       }),
       rowsFromMap: true,
       heightsSourced: false,
@@ -5458,12 +5460,14 @@ const COMERICA: StadiumStructure = {
       // 114's position 31 (source: 35), under an underside of ~40 ft (that
       // front row less 9 ft; 45 over 115, 9 ft above its floor).
       stand: { rows: 43, frontRowHeightFt: -1, ...COMERICA_LOWER, backHeightFt: 84, backSetbackFt: 24, deckFrontFt: 49 },
-      sections: {
+      sections: withFronts({
         '113': { backHeightFt: 51, backSetbackFt: -26, ...comericaCover(['113'], 40)['113'] },
         '112': { frontRowHeightFt: 8, backHeightFt: 84, backSetbackFt: 62, overhang: { coveredFromRow: COMERICA_COVER['112'], soffitHeightFt: 40 } },
         '114': { backHeightFt: 103, backSetbackFt: 24, overhang: { coveredFromRow: 31, soffitHeightFt: 40 } },
         '115': { frontRowHeightFt: 31, overhang: { coveredFromRow: COMERICA_COVER['115'], soffitHeightFt: 45 } },
-      },
+      }, {
+        '112': 8,
+      }),
       rowsFromMap: true,
       heightsSourced: false,
       coverSourced: true,
@@ -5477,9 +5481,11 @@ const COMERICA: StadiumStructure = {
       // is the upper deck's front, 62 ft up and 15 ft behind the last row
       // (1–16 ft, each measured section its own).
       stand: { rows: 25, frontRowHeightFt: -1, ...COMERICA_LOWER, backHeightFt: 62, backSetbackFt: 15 },
-      sections: withBacks({}, {
+      sections: withFronts(withBacks({}, {
         '130': [62, 16], '129': [63, 16], '128': [63, 14], '125': [63, 16], '126': [62, 14],
         '127': [61, 1],
+      }), {
+        '127': 2,
       }),
       rowsFromMap: true,
       heightsSourced: true,
@@ -5495,12 +5501,15 @@ const COMERICA: StadiumStructure = {
       // an underside of ~52 ft (that front row less 9 ft). It is also what
       // rises highest behind (each measured section its own).
       stand: { rows: 35, frontRowHeightFt: 2, ...COMERICA_LOWER, backHeightFt: 62, backSetbackFt: -9, deckFrontFt: 61, overhang: { coveredFromRow: 26, soffitHeightFt: 52 } },
-      sections: withBacks({
-        ...Object.fromEntries(['137', '139'].map((id) => [id, { frontRowHeightFt: -1, overhang: { coveredFromRow: 33, soffitHeightFt: id === '137' ? 53 : 52 } }])),
+      sections: withFronts(withBacks({
+        ...Object.fromEntries(['137', '139'].map((id) => [id, { overhang: { coveredFromRow: 33, soffitHeightFt: id === '137' ? 53 : 52 } }])),
+
         ...Object.fromEntries(['136', '138'].map((id) => [id, { overhang: { coveredFromRow: 32, soffitHeightFt: 53 } }])),
       }, {
         '139': [62, -6], '138': [63, -9], '137': [62, -6], '134': [63, -12], '133': [62, -14],
         '132': [62, -12], '131': [61, -9], '135': [63, -11],
+      }), {
+        '139': -1, '138': -1, '137': -2, '136': -1,
       }),
       rowsFromMap: true,
       heightsSourced: false,
@@ -5514,12 +5523,14 @@ const COMERICA: StadiumStructure = {
       // deck's front, 61 ft up, is over 142's row 29 and 143's position 23,
       // under ~52 ft (that front row less 9 ft); over 140 and 141 nothing.
       stand: { rows: 35, frontRowHeightFt: -1, ...COMERICA_LOWER, backHeightFt: 62, backSetbackFt: -5, deckFrontFt: 61 },
-      sections: {
+      sections: withFronts({
         '140': { backHeightFt: 62, backSetbackFt: 9 },
         '141': { backHeightFt: 62, backSetbackFt: 11 },
         '142': { backHeightFt: 62, backSetbackFt: -19, overhang: { coveredFromRow: 29, soffitHeightFt: 52 } },
         '143': { frontRowHeightFt: 3, backHeightFt: 63, backSetbackFt: -31, overhang: { coveredFromRow: 23, soffitHeightFt: 52 } },
-      },
+      }, {
+        '143': 3,
+      }),
       rowsFromMap: true,
       heightsSourced: false,
       coverSourced: true,
@@ -5533,13 +5544,15 @@ const COMERICA: StadiumStructure = {
       // at the top of the pavilion are over 144's position 21 and the last
       // three rows of 147 and 149, ~34 ft up (42 over 149).
       stand: { rows: 33, frontRowHeightFt: 6, rakeDeg: 11, treadFt: 3, backHeightFt: 44, backSetbackFt: 2 },
-      sections: withBacks({
+      sections: withFronts(withBacks({
         '144': { overhang: { coveredFromRow: 21, soffitHeightFt: 34 } },
         '147': { overhang: { coveredFromRow: 27, soffitHeightFt: 34 } },
         '149': { overhang: { coveredFromRow: 29, soffitHeightFt: 42 } },
       }, {
         '144': [62, -34], '147': [46, -3], '148': [123, 0], '150': [26, 5], '151': [26, 4],
         '149': [173, -9], '146': [43, 63], '145': [43, 42],
+      }), {
+        '145': 5,
       }),
       rowsFromMap: true,
       heightsSourced: false,
@@ -5557,13 +5570,15 @@ const COMERICA: StadiumStructure = {
       // balcony reaches elsewhere, beyond 102: it takes 102's back, 26 ft
       // up right behind the last row.
       stand: { rows: 33, frontRowHeightFt: 10, rakeDeg: 12, treadFt: 3, backHeightFt: 40, backSetbackFt: -5, overhang: { coveredFromRow: 23, soffitHeightFt: 38 } },
-      sections: {
+      sections: withFronts({
         ...Object.fromEntries(['101', '102'].map((id) => [id, { noCover: true, backHeightFt: 26, backSetbackFt: 1 }])),
         '103': { backHeightFt: 70, backSetbackFt: -5, overhang: { coveredFromRow: 31, soffitHeightFt: 70 } },
         '104': { backHeightFt: 56, backSetbackFt: 7, overhang: { coveredFromRow: 20, soffitHeightFt: 38 } },
         '105': { backHeightFt: 39, backSetbackFt: -31 },
         '106': { backHeightFt: 40, backSetbackFt: -29 },
-      },
+      }, {
+        '105': 8, '102': 11, '103': 11, '106': 8,
+      }),
       rowsFromMap: true,
       heightsSourced: false,
       coverSourced: true,
@@ -5635,7 +5650,7 @@ const COMERICA: StadiumStructure = {
       // underside and the tier's heights stay estimated. Each measured
       // section takes its own back.
       stand: { rows: 26, frontRowHeightFt: 62, rakeDeg: 27, treadFt: 2.65, backHeightFt: 118, backSetbackFt: -12, overhang: { coveredFromRow: 21, soffitHeightFt: 118 } },
-      sections: withBacks({
+      sections: withFronts(withBacks({
 
         ...comericaCover(comericaIds(321, 345), 118),
         ...Object.fromEntries(['341', '345'].map((id) => [id, { overhang: { coveredFromRow: 15, soffitHeightFt: 118 } }])),
@@ -5644,6 +5659,8 @@ const COMERICA: StadiumStructure = {
         '333': [118, -7], '336': [118, -14], '331': [118, -14], '330': [118, -14], '329': [118, -14],
         '328': [118, -14], '326': [118, -14], '322': [118, -14], '345': [118, -7], '343': [118, -5],
         '339': [118, -11], '342': [118, -11], '341': [118, -9],
+      }), {
+        '333': 61, '332': 61, '334': 61, '343': 61, '338': 61, '341': 61,
       }),
 
       rowsFromMap: true,
