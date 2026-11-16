@@ -6419,8 +6419,6 @@ const SUTTER_PHOTO = 'USGS NAIP m_3812128_ne_10_060_20220621';
 const SUTTER_LIDAR = 'USGS 3DEP lidar CA_NoCAL_Wildfires_B5a_2018, flown 2019-02-10 to 2019-02-12 (scripts/measureStandHeights.py)';
 const SUTTER_LOWER = { frontRowHeightFt: 0, rakeDeg: 13, treadFt: 2.8 };
 const sutterRise = 2.8 * Math.tan((SUTTER_LOWER.rakeDeg * Math.PI) / 180);
-/** Front-row height of a section whose rows start this many rows up (behind a dugout). */
-const sutterFront = (rowsUp: number) => ({ frontRowHeightFt: SUTTER_LOWER.frontRowHeightFt + rowsUp * sutterRise });
 
 /** Seating ring of a Sutter Health Park chart section. */
 export function sutterTier(id: string): string | null {
@@ -6441,8 +6439,9 @@ export function sutterTier(id: string): string | null {
  *
  * Heights: USGS lidar (February 2019). The 2025 work for the Athletics
  * (clubhouses, field, dugouts, refitted clubs) left the stands as they were.
- * Each measured section takes its own back: what rises highest behind it,
- * seen from the middle of its open rows.
+ * Each measured section takes its own front row (3–4 ft for those that start
+ * behind a dugout, which the scan finds directly) and its own back: what
+ * rises highest behind it, seen from the middle of its open rows.
  */
 const SUTTER: StadiumStructure = {
   stadiumId: 'athletics',
@@ -6484,9 +6483,8 @@ const SUTTER: StadiumStructure = {
       // 33 ft over 117); over 119 the building's own roof, 54 ft (its top).
       // Nothing over 122 and 123.
       stand: { rows: 32, ...SUTTER_LOWER, backHeightFt: 55, backSetbackFt: -4, overhang: { coveredFromRow: 24, soffitHeightFt: 35 } },
-      sections: withBacks({
-        '117': sutterFront(4),
-        '118': { ...sutterFront(4), overhang: { coveredFromRow: 21, soffitHeightFt: 33 } },
+      sections: withFronts(withBacks({
+        '118': { overhang: { coveredFromRow: 21, soffitHeightFt: 33 } },
         '119': { overhang: { coveredFromRow: 24, soffitHeightFt: 54 } },
         '120': { overhang: { coveredFromRow: 30, soffitHeightFt: 35 } },
         '121': { overhang: { coveredFromRow: 29, soffitHeightFt: 38 } },
@@ -6496,7 +6494,7 @@ const SUTTER: StadiumStructure = {
       }, {
         '117': [54, -1], '118': [56, -6], '119': [55, -23], '120': [56, -7], '121': [54, 2],
         '122': [53, 16],
-      }),
+      }), { '117': 4, '118': 3, '119': 3, '122': 2 }),
       rowsFromMap: true,
       heightsSourced: false,
       coverSourced: true,
@@ -6515,15 +6513,14 @@ const SUTTER: StadiumStructure = {
       // that row's floor; over 105's row 24 the bottom of a face, 35 ft up,
       // which it takes.
       stand: { rows: 30, ...SUTTER_LOWER, backHeightFt: 52, backSetbackFt: 5 },
-      sections: withBacks({
+      sections: withFronts(withBacks({
         ...Object.fromEntries(['103', '104'].map((id) => [id, { deckFrontFt: 29, overhang: { coveredFromRow: 27, soffitHeightFt: 26 } }])),
         '105': { overhang: { coveredFromRow: 24, soffitHeightFt: 35 } },
-        '106': sutterFront(6),
-        '107': sutterFront(6),
       }, {
         '102': [49, 39], '103': [49, 5], '104': [49, 5], '105': [56, -16], '106': [54, 4],
         '107': [56, 1],
-      }),
+      }), { '105': 3, '106': 3, '107': 3 }),
+
       rowsFromMap: true,
       heightsSourced: false,
       coverSourced: true,
@@ -6535,7 +6532,9 @@ const SUTTER: StadiumStructure = {
       // Lidar (5 of 6): front row 31 ft, 22° rake; behind, the club building
       // 49 ft up right behind the last row (each measured section its own).
       stand: { rows: 5, frontRowHeightFt: 31, rakeDeg: 22, treadFt: 2.8, backHeightFt: 49, backSetbackFt: 0 },
-      sections: withBacks({}, { '201': [49, -2], '202': [49, 2], '205': [49, 2] }),
+      sections: withFronts(withBacks({}, { '201': [49, -2], '202': [49, 2], '205': [49, 2] }), {
+        '201': 32, '202': 29, '205': 30,
+      }),
 
       rowsFromMap: true,
       heightsSourced: true,
