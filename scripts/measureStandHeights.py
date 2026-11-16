@@ -1049,11 +1049,13 @@ def draw(park, P, data, results):
 def suggest(park):
     """Print each tier's measured values (feet, rounded) and, in the form
     used in stadiumStructures.ts, the sections whose soffit differs from them
-    by more than 10% (at least 3 ft), and every section whose own front row
-    or back (height, setback) differs from the tier's at all, as `withFronts`
-    and `withBacks` maps. Soffits only where the scan saw the deck's face and
-    the deck's edge agrees with the sourced covered row."""
+    by more than 10% (at least 3 ft), and every section whose own front row,
+    back (height, setback) or rake (where its run spans 9 or more rows)
+    differs from the tier's at all, as `withFronts`, `withBacks` and
+    `withRakes` maps. Soffits only where the scan saw the deck's face and the
+    deck's edge agrees with the sourced covered row."""
     d = json.load(open(f'tmp/lidar/{park}-measured.json'))
+    treads = {s['id']: s['stand'].get('treadFt') or 2.75 for s in load_sections(park)['sections']}
     r0 = lambda v: None if v is None else int(round(v))
     differs = lambda v, ref: v is not None and ref is not None and abs(v - ref) > max(0.1 * abs(ref), 3)
     print(f"// {d['scan']}, flown {d['flown']}; far rim (roof line) {r0(d['rim']['heightFt'])} ft, crossing {r0(d['rim']['distanceFt'])} ft")
@@ -1109,6 +1111,17 @@ def suggest(park):
                                       if r['frontFt'] is not None and front is not None and r0(r['frontFt']) != r0(front)])
         own = {r['id']: (r0(r['backFt']), r0(r['backSetbackFt'])) for r in rs if r['backFt'] is not None and back is not None}
         paste('backs (withBacks)', [f"'{i}': [{h}, {s}]," for i, (h, s) in own.items() if (h, s) != (r0(back), r0(setback))])
+        # A rake is a line fitted to the run's treads, which are steps: over a
+        # few rows, where the run starts and ends on a step tips the line.
+        # Refitted on only their first n rows, the runs of 12+ rows at six
+        # parks (359 sections) come within 2 degrees of their whole run's
+        # rake in 44% of sections at 3 rows, 80% at 8 and 90% at 9, with no
+        # lean either way. So a section takes its own rake where its run spans
+        # 9 or more rows; a shorter run keeps the tier's, the median over all
+        # its sections, where noise that doesn't lean evens out.
+        paste('rakes (withRakes)', [f"'{r['id']}': {r0(r['rakeDeg'])}," for r in rs
+                                    if r['rakeDeg'] is not None and rake is not None and r0(r['rakeDeg']) != r0(rake)
+                                    and r['visibleDepthFt'] / treads.get(r['id'], 2.75) >= 9])
 
 
 def cover_report(park):
