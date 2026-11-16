@@ -403,9 +403,9 @@ const FENWAY_LIDAR = 'USGS 3DEP lidar MA_CentralEastern_2021, flown 2021-03-20 (
  * Stadium: for each section a cut straight back through its rows gives the
  * front row's height, the rake and the structure that rises highest behind
  * as seen from the middle uncovered row; tier values are medians, and every
- * measured section takes its own front row and back. The eight lattice light
-
- * towers on the roof are not counted as walls. Covered rows: where the scan
+ * measured section takes its own front row and back, and its own rake where
+ * the scan sees 9 or more of its rows and the cuts beside it agree. The eight
+ * lattice light towers on the roof are not counted as walls. Covered rows: where the scan
  * puts a roof's or deck's edge more than two rows from the source's row
  * (most of the Loge Boxes, which the sources call open), the scan's edge is
  * used, with the lowest structure seen at it as the underside. The
@@ -431,7 +431,7 @@ const FENWAY: StadiumStructure = {
       // Grandstand roof (54 ft). Each measured section takes its own back
       // (the pavilion roof 34–57 ft behind them, the press box block 24–39).
       stand: { rows: 12, frontRowHeightFt: -1, rakeDeg: 9, backHeightFt: 82, backSetbackFt: 47 },
-      sections: withFronts(withBacks({}, {
+      sections: withRakes(withFronts(withBacks({}, {
         'F9': [82, 50], 'F10': [82, 50], 'F11': [82, 55], 'F12': [82, 53], 'F13': [82, 35],
         'F14': [82, 35], 'F15': [82, 35], 'F16': [82, 50], 'F17': [82, 35], 'F18': [82, 35],
         'F19': [82, 35], 'F20': [82, 34], 'F21': [82, 40], 'F22': [82, 40], 'F23': [82, 42],
@@ -471,6 +471,12 @@ const FENWAY: StadiumStructure = {
         'D56': -2, 'D58': 1, 'D59': -2, 'D60': 1, 'D61': 1, 'H42': -2, 'H49': -2, 'FBC29': -2,
         'FBC32': -2, 'FBC34': -2, 'FBC51': -2, 'FBC56': -2, 'FBC58': 1, 'FBC59': -2, 'FBC60': 1,
         'FBC61': 1, 'FBC69': 1,
+      }), {
+        'F12': 8, 'F42': 8, 'F47': 8, 'F48': 10, 'F49': 7, 'F59': 10, 'F65': 10, 'F66': 10,
+        'F68': 10, 'F72': 8, 'F73': 10, 'F74': 10, 'F75': 10, 'F76': 10, 'F77': 10, 'F79': 10,
+        'F80': 10, 'F81': 10, 'D59': 10, 'D72': 8, 'D73': 10, 'D74': 10, 'D75': 10, 'D76': 10,
+        'D77': 10, 'D79': 10, 'H42': 8, 'H47': 8, 'H48': 10, 'H49': 7, 'FBC59': 10, 'FBC72': 8,
+        'FBC73': 10, 'FBC74': 10, 'FBC75': 10, 'FBC76': 10, 'FBC77': 10, 'FBC79': 10, 'FBC80': 10,
       }),
       rowsFromMap: true,
       heightsSourced: true,
@@ -492,7 +498,7 @@ const FENWAY: StadiumStructure = {
       // row; behind the short ones (B96, B103, B116, B146, B165: 6–11 rows)
       // it starts at or just past the last row.
       stand: { rows: 13, frontRowHeightFt: 4, rakeDeg: 16, backHeightFt: 54, backSetbackFt: -12, deckFrontFt: 52, overhang: { coveredFromRow: 9, soffitHeightFt: 41 } },
-      sections: withFronts(withBacks({
+      sections: withRakes(withFronts(withBacks({
         'B88': { deckFrontFt: 39, overhang: { coveredFromRow: 13, soffitHeightFt: 28 } },
         'B89': { deckFrontFt: 39, overhang: { coveredFromRow: 14, soffitHeightFt: 28 } },
         // At the ends and behind home another structure covers them, its
@@ -524,6 +530,11 @@ const FENWAY: StadiumStructure = {
         'B160': [54, -10], 'B161': [54, -10], 'B162': [54, -10], 'B164': [52, -10], 'B165': [54, 6],
       }), {
         'B94': 6, 'B101': 5, 'B115': 9, 'B160': 3, 'B163': 5, 'B164': 6, 'B165': 5,
+      }), {
+        'B88': 13, 'B89': 12, 'B94': 13, 'B95': 13, 'B96': 13, 'B97': 14, 'B98': 14, 'B99': 14,
+        'B100': 15, 'B101': 14, 'B102': 14, 'B110': 14, 'B111': 15, 'B112': 15, 'B113': 15,
+        'B118': 14, 'B144': 15, 'B149': 15, 'B150': 15, 'B154': 15, 'B155': 17, 'B157': 20,
+        'B158': 20, 'B159': 20, 'B160': 20, 'B161': 19, 'B162': 19, 'B163': 18,
       }),
       rowsFromMap: true,
       heightsSourced: false,
@@ -581,11 +592,13 @@ const FENWAY: StadiumStructure = {
       label: 'Green Monster seats',
       // On top of the 37 ft wall, 3 rows, uncovered, nothing behind but
       // Lansdowne Street (sourced: Wikipedia, Rate Your Seats; the lidar
-      // gives 36.6 ft). Lidar (3 of 10): behind M10 the buildings across
+      // gives 36.6 ft). Lidar (3 of 10): the rows step up at 34° (28–35;
+      // 26–36° on the eight cuts through and beside the three, both halves
+      // of each run as steep); behind M10 the buildings across
       // the street, 55 ft up and 150 ft back; over M1 and M8 it sees only
       // the light towers' lattice standing among the seats (44–45 ft), not
       // a wall, so they keep the sourced back.
-      stand: { rows: 3, frontRowHeightFt: 37, rakeDeg: 10, backHeightFt: 41 },
+      stand: { rows: 3, frontRowHeightFt: 37, rakeDeg: 34, backHeightFt: 41 },
       sections: withFronts({ 'M10': { backHeightFt: 55, backSetbackFt: 150 } }, {
         'M8': 36, 'M10': 40,
       }),
@@ -678,11 +691,13 @@ const FENWAY: StadiumStructure = {
       // last rows only in PR18 and PR20) and is what rises highest behind;
       // each section takes its own (behind PR18 a lower one, 69 ft).
       stand: { rows: 10, frontRowHeightFt: 52, rakeDeg: 35, backHeightFt: 82, backSetbackFt: -7 },
-      sections: withFronts(withBacks(
+      sections: withRakes(withFronts(withBacks(
         Object.fromEntries(['PR15', 'PR16'].map((id) => [id, { overhang: { coveredFromRow: 6, soffitHeightFt: 82 } }])),
         { 'PR15': [82, -10], 'PR16': [82, -12], 'PR18': [69, 1], 'PR20': [88, -4] },
       ), {
         'PR16': 53, 'PR18': 53,
+      }), {
+        'PR18': 36, 'PR20': 36,
       }),
       rowsFromMap: true,
       heightsSourced: true,
