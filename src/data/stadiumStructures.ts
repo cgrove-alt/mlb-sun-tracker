@@ -6550,7 +6550,9 @@ export function sutterTier(id: string): string | null {
  * (clubhouses, field, dugouts, refitted clubs) left the stands as they were.
  * Each measured section takes its own front row (3–4 ft for those that start
  * behind a dugout, which the scan finds directly) and its own back: what
- * rises highest behind it, seen from the middle of its open rows.
+ * rises highest behind it, seen from the middle of its open rows; and its
+ * own rake where the scan sees 9 or more of its rows and the cuts beside it
+ * agree.
  */
 const SUTTER: StadiumStructure = {
   stadiumId: 'athletics',
@@ -6622,13 +6624,15 @@ const SUTTER: StadiumStructure = {
       // that row's floor; over 105's row 24 the bottom of a face, 35 ft up,
       // which it takes.
       stand: { rows: 30, ...SUTTER_LOWER, backHeightFt: 52, backSetbackFt: 5 },
-      sections: withFronts(withBacks({
+      sections: withRakes(withFronts(withBacks({
         ...Object.fromEntries(['103', '104'].map((id) => [id, { deckFrontFt: 29, overhang: { coveredFromRow: 27, soffitHeightFt: 26 } }])),
         '105': { overhang: { coveredFromRow: 24, soffitHeightFt: 35 } },
       }, {
         '102': [49, 39], '103': [49, 5], '104': [49, 5], '105': [56, -16], '106': [54, 4],
         '107': [56, 1],
-      }), { '105': 3, '106': 3, '107': 3 }),
+      }), { '105': 3, '106': 3, '107': 3 }), {
+        '102': 12, '103': 12, '104': 12,
+      }),
 
       rowsFromMap: true,
       heightsSourced: false,
