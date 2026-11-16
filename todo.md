@@ -2501,6 +2501,190 @@ measuring behind it instead (a scratch copy of the tool, all 22 parks).
   cover.
 
 ---
+
+## §15 Every measured section on its own front row (plan, 2026-11-16)
+
+Branch `fix/section-fronts`, from `main` after PR #88.
+
+**The problem.** It is the same shortcut §14 fixed for backs. The lidar
+tool's `suggest()` gives a section its own front-row height only when it
+is more than 10% (and 3 ft) off its tier's. The sections it does list are
+pooled within 3 ft, and each takes its group's median. The front row sets
+the height of every row behind it, so it sets the angle from each head to
+whatever stands behind. Today, on the measurements re-taken in §14:
+- 869 measured sections' own front row differs from what the profile
+  uses (rounded to the foot):
+  - 855 use the tier's front;
+  - 14 have a written front that differs from their own measurement.
+- Most differ by about a foot (median 1, 90th percentile 3, largest 9),
+  but 263 sections' answers change at the five 2025 test games: 122
+  shadier, 141 sunnier. Once the exceptions below keep their written
+  fronts, that is 246 (362 half-hour steps).
+
+**Where the scan's front row isn't the section's.** The tool measures the
+front of the run of seats it finds. In four places that isn't the profile's
+front row, and the code already says so:
+- *Rows in front of the run* (Oracle's View level: rows A–D, eight rows
+  in 315 and 326). The profile's front row is the run's carried down the
+  slope. The tool will report it that way (the run's front less those
+  rows' rise). Then 12 of the 22 differ.
+- *Sections that start rows up the slope*, behind other seats the cut
+  runs through:
+  - Rate Field's lower box (`RATE_FIRST_ROW`, behind the scout seats);
+  - Rate Field's upper-deck sections the 2023 view bars shortened;
+  - Sutter's 106, 107, 117 and 118 (behind the dugouts).
+
+  Their written fronts come from their first row's number on the
+  measured slope, and they stay (35 sections).
+- *Cuts that start past an aisle* (Rate Field 507, 509, 522, 526, 538,
+  542, 554): they keep the tier's front.
+- *Tiers whose front is carried from another* (Citizens Bank's Diamond
+  Club, from the dugout boxes' slope): it stays.
+
+**A deck can't go through the heads.** Many undersides are estimates
+whose lower bound is 9 ft above the first covered row's floor (§8,
+`deckClearance.test.ts`), worked out from the tier's front. With their own
+front 1–3 ft higher, 36 sections would sit under 9 ft:
+- Yankee Stadium field level (16), Dodgers field (5), Oracle lower (5),
+  Angel Stadium field (3), GABP 400 level (5) and one each at Coors and
+  Citizens Bank.
+
+All 36 undersides are estimates, so each rises to that bound over the
+section's own floor. An underside the scan measured would need its cut
+checked instead (none so far). Where a section's own front is lower, its
+underside stays where it is: a deck doesn't move with the seats under it.
+
+**Fix.**
+1. Tool:
+   - `suggest()` lists every found section whose own front row (rounded)
+     differs from its tier's, unpooled, as a ready-to-paste map, as it
+     does for backs;
+   - `measure()` reports the front row as the profile counts it where
+     rows lie in front of the run (`rowsInFront`);
+   - Oracle is re-measured (its backs don't change).
+2. A small `withFronts` helper beside `withBacks`. Per park, one commit
+   each:
+   - every measured section takes its own front row, except the four
+     kinds above, each with its reason in the code;
+   - a tier whose front is its median takes the new median (8 differ,
+     each re-read: Sutter's first and third, the Dodgers pavilion, Mets
+     left outfield (estimated), the Nationals pavilion, the Petco
+     terrace, Citizens Bank's Diamond Club and its 100s without a
+     sourced cover);
+   - the 36 undersides rise to the §8 bound;
+   - the 14 other sections more than 3 ft off are checked on their cuts:
+     PNC's 300s (eight), Cardinals 271, Guardians 468, Mets 537,
+     Phillies 318, PNC 339, Reds 526;
+   - comments: "a section more than 10% (at least 3 ft) off gets its
+     own" becomes "every measured section takes its own front row";
+   - reference checks and post claims are investigated and recorded,
+     never tuned; full suite, type check, Low share.
+3. Re-run the audit (`tmp/lidar/frontAudit.ts`); full checks; review here.
+
+**Not in this plan (noticed):**
+- *Rake has the same rule.* 1,245 measured sections' own rake differs
+  (166 by more than 3°), and 197 would answer differently. Rake errors
+  from a cut along steps or past an aisle are larger, so it needs its own
+  look.
+- Still open from §14: the tool's "too deep" check, tier medians taken
+  field by field, GABP 104/105's light tower, the confidence split, and
+  Mets 108's cover.
+
+### Steps
+- [x] 1. Tool rule and the `rowsInFront` front; re-measure Oracle.
+- [x] 2. `withFronts` helper (with the first park's commit).
+- [x] 3. 22 parks, one commit each.
+- [x] 4. Audit re-run; full checks; review.
+
+### §15 Review (2026-11-16)
+
+**What changed:**
+- **Tool:** `suggest()` lists every found section whose own front row
+  (rounded) differs from its tier's, unpooled, as a `withFronts` map.
+  `measure()` reports the front row as the profile counts it where rows
+  lie in front of the run (`rowsInFront`). Oracle was re-measured, and
+  only its 22 View fronts moved; no back changed.
+- **Data:** a `withFronts` helper beside `withBacks`, and 22 commits, one
+  per park.
+  - 2,327 measured sections take their own front row.
+  - 47 keep a front set on purpose, each with its reason in the code:
+    - Rate Field lower box (25, `RATE_FIRST_ROW`): rows start up the
+      slope behind a dugout or the scout seats, and the cut runs from the
+      slope's front;
+    - Rate Field upper deck: seven cut past an aisle, plus the six the
+      2023 view bars shortened;
+    - Citizens Bank's Diamond Club (5): its front is carried from the
+      dugout boxes' slope;
+    - Citi 537 (its cut crosses the stand's end at an angle), Progressive
+      468 (its run starts a row up), Citizens Bank 318 (a run part way
+      up) and GABP 526 (past the walkway).
+  - Written fronts the map now covers are gone. Several were pooled and
+    stale: Yankees 134, Busch 131, Camden 74 and 82, Progressive 146,
+    148 and 185, Truist 137, Comerica 137 and Kauffman 126.
+- **Where it went differently from the plan:**
+  - *Sutter's 105–107 and 117–119 take their own front (3–4 ft).* The
+    plan kept the written values for 106, 107, 117 and 118. But a dugout,
+    not seats, stands in front of them, so the scan's run starts at their
+    first row. Their tier comments already quoted those heights, so
+    `sutterFront` (a guess from row counts) is gone.
+  - *PNC's eight Grandstand sections at ~71 ft take their own.* On their
+    cuts the seats run on with no step up from the club's walkway, and
+    their covered rows (9–10) were counted from that same start.
+  - *Busch 271 takes 52 ft:* its rows start behind a flat platform at
+    that height.
+- **Tier fronts:**
+  - Two move to their median: the Dodgers pavilion (8 → 9) and the Petco
+    terrace (36 → 37), neither of which had a reason written.
+  - These stay, with reasons:
+    - Sutter's first- and third-base tiers stay at field level, because
+      their medians mix two kinds of section;
+    - Mets left outfield keeps its estimate;
+    - the Nationals pavilion keeps the median of the six measured before;
+    - Citizens Bank's Diamond Club and its 100s without a sourced cover
+      (which share `CBP_FIELD`) keep their fronts.
+- **Undersides (§8):** 35 estimated undersides rise to 9 ft over the
+  section's own first covered row: Yankee Stadium field level 16,
+  Dodgers 5, Oracle 5, GABP 400s 5, Angels 2, Coors 1 and Citizens Bank
+  207. The plan counted 36: Angels 118's covered row is past its last
+  row. None of them was measured, and none rises above its deck's front.
+- **Post:** the Yankees line now reads "By the 9th, about three in ten
+  are fully shaded" (12 of 41), and its claims test follows.
+
+**Results, at the five 2025 test games across all 30 parks:**
+- Answers change for 246 sections (357 half-hour steps).
+- 96 labels go up and 92 down. The Low share stays at 26.8%.
+- Sections changed by park: Red Sox 36, Mets 26, Dodgers 24, Yankees 16,
+  Padres 16, Rockies 15, Phillies 14, Orioles 12, Pirates 12, Cardinals
+  10, Braves 8, Reds 8, Royals 8, Athletics 7, Twins 7, Giants 6,
+  Guardians 6, Angels 5, Nationals 5, Tigers 3, White Sox 2, Cubs 0.
+- Progressive's labels fall 27 with no answer change. At their own
+  front rows its first-base 100s and upper boxes sit nearer a
+  shaded/partial boundary.
+
+**Checks:**
+- Audit (`tmp/lidar/ownFrontCheck.ts`): 2,327 measured sections are on
+  their own front row; the other 47 are the exceptions above. No
+  underside is under 9 ft. The back audit is unchanged (2,363 sections,
+  11 exceptions).
+- The full suite passes, 3,551 of 3,551, and every reference check
+  passes unchanged.
+  - One full run lost the Chase suite to a Jest worker crash (SIGSEGV).
+    It passes alone, and the next full run passed.
+- The type check and eslint are clean.
+- On the dev server, the Yankees post shows its new line, and the Rate
+  Field page has no console or server errors.
+
+**Noticed, not changed:**
+- *Rake has the same rule:* 197 sections would answer differently with
+  their own.
+- *The tool's run can start past an aisle or a row up.* The over-3-ft
+  check caught four such cases. Smaller ones may sit among the 1–3 ft
+  differences taken here.
+- Still open from §14: the "too deep" check, tier medians taken field by
+  field, GABP 104/105's light tower, the confidence split, and Mets
+  108's cover.
+
+---
 ---
 
 # Previous audit (2026-08-07), kept for history
