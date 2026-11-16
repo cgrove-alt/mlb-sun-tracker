@@ -2448,8 +2448,9 @@ const BUSCH_LIDAR = 'USGS 3DEP lidar MO_StLouis_2017, flown 2017-02-20 (scripts/
  * Heights are measured on USGS airborne lidar (BUSCH_LIDAR), as at Citizens
  * Bank Park: for each section a cut straight back through its rows gives the
  * front row's height, the rake and the structure that rises highest behind
- * as seen from the middle uncovered row; tier values are medians, sections
- * more than 10% (at least 3 ft) off get their own. The stacking estimates
+ * as seen from the middle uncovered row; tier values are medians, a section
+ * whose front row is more than 10% (at least 3 ft) off gets its own, and
+ * every measured section takes its own back. The stacking estimates
  * were close above the field (the 200 level's front 48 ft, the Pavilion's
  * 75, the Terrace's 97); the field rows and the 100s start lower and rake
  * less. The six light towers above the roof are not counted as walls.
@@ -2475,6 +2476,7 @@ const BUSCH: StadiumStructure = {
       // row at field level, 10° rake (6–14); what rises highest behind is the
       // roof over the 400s, 133 ft up and 117 ft back.
       stand: { rows: 3, frontRowHeightFt: 0, rakeDeg: 10, backHeightFt: 133, backSetbackFt: 117 },
+      sections: withBacks({}, { '3': [133, 119], '7': [133, 116] }),
       rowsFromMap: true,
       heightsSourced: true,
       coverSourced: true,
@@ -2485,14 +2487,14 @@ const BUSCH: StadiumStructure = {
       // Rows A–L (fewer in some) in front of the 100s, open. Lidar (13 of
       // 26): front row at field level (-1 to 2), 7° rake (6–23); behind, the
       // roof over the 400s, 133 ft up and 112 ft back (down the first-base
-      // line the Pavilion's corners, 76–115 ft). Sections whose measured back
-      // stands more than 10 ft nearer or farther take their own.
+      // line the Pavilion's corners, 76–115 ft). Each measured section takes
+      // its own back.
       stand: { rows: 12, frontRowHeightFt: 0, rakeDeg: 7, backHeightFt: 133, backSetbackFt: 112 },
-      sections: withBacks({
-        '703D': { backHeightFt: 115, backSetbackFt: 124 },
-        ...Object.fromEntries(['163D', '164D', '166D'].map((id) => [id, { backHeightFt: 76, backSetbackFt: 94 }])),
-        '165D': { backHeightFt: 87, backSetbackFt: 121 },
-      }, { '138D': [133, 93], '140D': [133, 89], '163D': [76, 83], '166D': [76, 116] }),
+      sections: withBacks({}, {
+        '703D': [115, 124], '137D': [133, 111], '138D': [133, 93], '140D': [133, 89],
+        '141D': [133, 111], '144D': [133, 114], '163D': [76, 83], '164D': [76, 94],
+        '165D': [87, 121], '166D': [76, 116],
+      }),
       rowsFromMap: true,
       heightsSourced: true,
       coverSourced: true,
@@ -2509,26 +2511,24 @@ const BUSCH: StadiumStructure = {
       // the left-field corner, 127–131), 12° rake (7–17); what rises
       // highest behind is the roof over the 400s, 133 ft up and 35 ft
       // behind the last row (down the lines the Pavilion, 76–116 ft).
-      // Sections whose measured back stands more than 10 ft nearer or
-      // farther take their own (the same roof 6–24 ft behind the 28–29 row
-      // sections behind home, 45–70 ft behind the tunnel sections, which end
-      // sooner). 131's is seen from its open rows (1–7), the scan covering it
+      // Each measured section takes its own back (the same roof 6–33 ft
+      // behind the 28–29 row sections behind home, 45–70 ft behind the
+      // tunnel sections, which end sooner). 131's is seen from its open rows (1–7), the scan covering it
       // from row 8: a structure 74 ft up, 18 ft in front of its last row.
       stand: { rows: 26, frontRowHeightFt: 4, rakeDeg: 12, backHeightFt: 133, backSetbackFt: 35, deckFrontFt: 47 },
       sections: withBacks({
         ...Object.fromEntries(Object.entries(BUSCH_100_ROWS).map(([id, row]) => [id, { overhang: { coveredFromRow: row, soffitHeightFt: BUSCH_100_SOFFIT_FT } }])),
-        '127': { frontRowHeightFt: 14, backHeightFt: 116, backSetbackFt: 63 },
-        '128': { frontRowHeightFt: 14, backHeightFt: 88, backSetbackFt: 58, overhang: { coveredFromRow: BUSCH_100_ROWS['128'], soffitHeightFt: BUSCH_100_SOFFIT_FT } },
+        '127': { frontRowHeightFt: 14 },
+        '128': { frontRowHeightFt: 14, overhang: { coveredFromRow: BUSCH_100_ROWS['128'], soffitHeightFt: BUSCH_100_SOFFIT_FT } },
         ...Object.fromEntries(['129', '132'].map((id) => [id, { frontRowHeightFt: 8, overhang: { coveredFromRow: BUSCH_100_ROWS[id], soffitHeightFt: BUSCH_100_SOFFIT_FT } }])),
-        '131': { frontRowHeightFt: 14, backHeightFt: 49, backSetbackFt: -24, overhang: { coveredFromRow: BUSCH_100_ROWS['131'], soffitHeightFt: BUSCH_100_SOFFIT_FT } },
-        ...Object.fromEntries(['162', '163'].map((id) => [id, { backHeightFt: 76, backSetbackFt: 11, overhang: { coveredFromRow: BUSCH_100_ROWS[id], soffitHeightFt: BUSCH_100_SOFFIT_FT } }])),
-        '164': { backHeightFt: 88, backSetbackFt: 58 },
-        ...Object.fromEntries(['165', '167'].map((id) => [id, { backHeightFt: 116, backSetbackFt: 63, overhang: { coveredFromRow: BUSCH_100_ROWS[id], soffitHeightFt: BUSCH_100_SOFFIT_FT } }])),
-        ...Object.fromEntries(['166', '168'].map((id) => [id, { backHeightFt: 116, backSetbackFt: 63 }])),
+        '131': { frontRowHeightFt: 14, overhang: { coveredFromRow: BUSCH_100_ROWS['131'], soffitHeightFt: BUSCH_100_SOFFIT_FT } },
       }, {
-        '127': [117, 84], '131': [74, -18], '165': [116, 39], '167': [116, 40],
-        '132': [133, 6], '133': [133, 22], '134': [133, 50], '135': [133, 51], '136': [133, 70], '137': [133, 21],
-        '138': [133, 50], '139': [133, 24], '140': [133, 21], '146': [133, 45], '147': [133, 53], '151': [133, 53], '154': [133, 48],
+        '127': [117, 84], '128': [89, 49], '129': [133, 27], '130': [133, 26], '131': [74, -18],
+        '132': [133, 6], '133': [133, 22], '134': [133, 50], '135': [133, 51], '136': [133, 70],
+        '137': [133, 21], '138': [133, 50], '139': [133, 24], '140': [133, 21], '146': [133, 45],
+        '147': [133, 53], '148': [133, 33], '149': [133, 30], '150': [133, 29], '151': [133, 53],
+        '152': [133, 26], '153': [133, 27], '162': [76, 3], '163': [76, 19], '164': [87, 66],
+        '165': [116, 39], '166': [116, 63], '167': [116, 40], '168': [116, 71], '154': [133, 48],
       }),
       rowsFromMap: true,
       heightsSourced: false,
@@ -2540,19 +2540,15 @@ const BUSCH: StadiumStructure = {
       // "One of the least shaded areas", open. Lidar (8 of 10): front row
       // 7 ft above the field (13 in 109), 18° rake (16–24); what rises
       // highest behind differs from section to section (43–104 ft; 80 ft,
-      // 52 ft back, the median). Over 189's first three rows a deck of seats
-      // 47 ft up; its other rows show uncovered behind it. Behind 189, 195
-      // and 197 what rises highest is 75–80 ft up and 134–188 ft back.
+      // 52 ft back, the median; each measured section takes its own). Over
+      // 189's first three rows a deck of seats 47 ft up; its other rows show
+      // uncovered behind it. Behind 189, 195 and 197 what rises highest is
+      // 75–80 ft up and 134–188 ft back.
       stand: { rows: 20, frontRowHeightFt: 7, rakeDeg: 18, backHeightFt: 80, backSetbackFt: 52 },
-      sections: {
-        '101': { backHeightFt: 56, backSetbackFt: 30 },
-        ...Object.fromEntries(['103', '105'].map((id) => [id, { backHeightFt: 97, backSetbackFt: 52 }])),
-        '107': { backHeightFt: 104, backSetbackFt: 34 },
-        '109': { frontRowHeightFt: 13, backHeightFt: 43, backSetbackFt: 17 },
-        '189': { backHeightFt: 80, backSetbackFt: 187 },
-        '195': { backHeightFt: 75, backSetbackFt: 134 },
-        '197': { backHeightFt: 79, backSetbackFt: 188 },
-      },
+      sections: withBacks({ '109': { frontRowHeightFt: 13 } }, {
+        '101': [56, 30], '103': [97, 50], '105': [97, 55], '107': [104, 34], '109': [43, 17],
+        '189': [80, 187], '195': [75, 134], '197': [79, 188],
+      }),
       rowsFromMap: true,
       heightsSourced: true,
       coverSourced: true,
@@ -2568,17 +2564,19 @@ const BUSCH: StadiumStructure = {
       // covered, under an underside of ~67 ft (that front row less this
       // park's measured 7-ft deck depth; 68–69 ft over row 11–12). What
       // rises highest behind is that front edge (in 267–272 the roof over
-      // the 400s, 116 ft). Sections whose measured back stands more than 10
-      // ft nearer or farther take their own (231 and 261, whose deck edge is
-      // over row 3–4, 25 ft in front; that roof 5–7 ft in front of the last
-      // row of 271 and 272).
+      // the 400s, 115–116 ft). Each measured section takes its own back (231,
+      // 240 and 261, whose deck edge is over row 3–4, 23–25 ft in front; that
+      // roof 5–7 ft in front of the last row of 271 and 272).
       stand: { rows: 10, frontRowHeightFt: 48, rakeDeg: 21, backHeightFt: 76, backSetbackFt: -15, deckFrontFt: 74, overhang: { coveredFromRow: 5, soffitHeightFt: 67 } },
       sections: withBacks({
         '265': { overhang: { coveredFromRow: 11, soffitHeightFt: 68 } },
-        ...Object.fromEntries(['267', '272'].map((id) => [id, { backHeightFt: 116, backSetbackFt: 6, overhang: { coveredFromRow: 11, soffitHeightFt: 68 } }])),
-        ...Object.fromEntries(['268', '269'].map((id) => [id, { backHeightFt: 116, backSetbackFt: 6, overhang: { coveredFromRow: 12, soffitHeightFt: 69 } }])),
-        '271': { backHeightFt: 116, backSetbackFt: 6 },
-      }, { '231': [75, -25], '261': [76, -25], '271': [115, -7], '272': [116, -5] }),
+        ...Object.fromEntries(['267', '272'].map((id) => [id, { overhang: { coveredFromRow: 11, soffitHeightFt: 68 } }])),
+        ...Object.fromEntries(['268', '269'].map((id) => [id, { overhang: { coveredFromRow: 12, soffitHeightFt: 69 } }])),
+      }, {
+        '230': [75, -17], '231': [75, -25], '232': [76, -17], '233': [75, -17], '240': [75, -23],
+        '261': [76, -25], '265': [76, -7], '267': [116, 9], '268': [115, 11], '269': [116, 6],
+        '271': [115, -7], '272': [116, -5],
+      }),
       rowsFromMap: true,
       heightsSourced: false,
       coverSourced: true,
@@ -2593,14 +2591,16 @@ const BUSCH: StadiumStructure = {
       // them, so the rows from 4 back are covered (Rate Your Seats counts
       // from 9), under an underside of ~67 ft (that front row less this
       // park's measured 7-ft deck depth). What rises highest behind is that
-      // front edge (11 ft in front of the last row in the 8-row 249 and 251,
-      // 16 ft in the 9-row 250 and 258, measured).
-      stand: { rows: 15, frontRowHeightFt: 48, rakeDeg: 24, backHeightFt: 76, backSetbackFt: -25, deckFrontFt: 75, overhang: { coveredFromRow: 4, soffitHeightFt: 67 } },
-      sections: {
-        '260': { overhang: { coveredFromRow: 1, soffitHeightFt: 67 } },
-        ...Object.fromEntries(['249', '251'].map((id) => [id, { backHeightFt: 76, backSetbackFt: -11 }])),
-        ...Object.fromEntries(['250', '258'].map((id) => [id, { backHeightFt: 76, backSetbackFt: -16 }])),
-      },
+      // front edge, 26 ft in front of the last row (11 ft in the 8-row 249
+      // and 251, 16 ft in the 9-row 250 and 258; each measured section takes
+      // its own).
+      stand: { rows: 15, frontRowHeightFt: 48, rakeDeg: 24, backHeightFt: 76, backSetbackFt: -26, deckFrontFt: 75, overhang: { coveredFromRow: 4, soffitHeightFt: 67 } },
+      sections: withBacks({ '260': { overhang: { coveredFromRow: 1, soffitHeightFt: 67 } } }, {
+        '244': [75, -31], '245': [76, -31], '246': [76, -31], '247': [76, -22], '248': [76, -31],
+        '249': [76, -11], '250': [76, -16], '251': [76, -11], '252': [76, -32], '253': [76, -31],
+        '254': [76, -31], '255': [76, -22], '256': [76, -32], '257': [76, -22], '258': [76, -16],
+        '259': [76, -22],
+      }),
       rowsFromMap: true,
       heightsSourced: false,
       coverSourced: true,
@@ -2610,15 +2610,17 @@ const BUSCH: StadiumStructure = {
       label: 'Pavilion (331–360)',
       // Rows 1–6 or 1–9, open ("among the most exposed"). Lidar (27 of 27):
       // front row 75 ft (74–76), 31° rake (28–33); what rises highest behind
-      // is the roof over the 400s, 133 ft up and 9 ft back (97–116 ft at
-      // the ends). The Terrace's front, 97 ft up, is over the last row of
-      // the 9-row sections.
+      // is the roof over the 400s, 133 ft up and 9 ft back (97–117 ft at
+      // the ends; each measured section takes its own). The Terrace's front,
+      // 97 ft up, is over the last row of the 9-row sections.
       stand: { rows: 9, frontRowHeightFt: 75, rakeDeg: 31, backHeightFt: 133, backSetbackFt: 9 },
-      sections: {
-        '357': { backHeightFt: 97, backSetbackFt: 7 },
-        ...Object.fromEntries(['358', '359'].map((id) => [id, { backHeightFt: 116, backSetbackFt: 52 }])),
-        '360': { backHeightFt: 106, backSetbackFt: 27 },
-      },
+      sections: withBacks({}, {
+        '350': [133, 11], '331': [133, 11], '332': [133, 2], '333': [133, 2], '334': [133, 12],
+        '335': [133, 4], '337': [133, 2], '339': [133, 4], '340': [133, 11], '341': [133, 11],
+        '342': [133, 2], '344': [133, 2], '345': [133, 4], '346': [133, 2], '347': [133, 11],
+        '349': [133, 11], '352': [133, 11], '354': [133, 1], '355': [133, 1], '356': [133, 2],
+        '357': [97, 7], '358': [117, 55], '359': [116, 48], '360': [106, 27],
+      }),
       rowsFromMap: true,
       heightsSourced: true,
       coverSourced: true,
@@ -2628,10 +2630,12 @@ const BUSCH: StadiumStructure = {
       label: 'Pavilion, left field (361–372)',
       // Rows 1–14, covered from row 8 (sourced; the scan sees no edge over
       // the rows of 363 and 365). Lidar (2 of 9): front row 75 ft, 31° rake;
-      // what rises highest behind is 115 ft up, 32 ft back (98 in 363).
-      // Estimated: roof underside ~96 ft (9 ft above row 8's floor).
+      // what rises highest behind is 116 ft up, 32 ft back in 365 and 98 ft
+      // in 363 (each its own); the tier takes 365's, not the two's 107-ft
+      // median, which neither section has. Estimated: roof underside ~96 ft
+      // (9 ft above row 8's floor).
       stand: { rows: 14, frontRowHeightFt: 75, rakeDeg: 31, backHeightFt: 115, backSetbackFt: 32, overhang: { coveredFromRow: 8, soffitHeightFt: 96 } },
-      sections: { '363': { backHeightFt: 98, backSetbackFt: 35 } },
+      sections: withBacks({}, { '363': [98, 35], '365': [116, 32] }),
       rowsFromMap: true,
       heightsSourced: false,
       coverSourced: true,
@@ -2656,7 +2660,8 @@ const BUSCH: StadiumStructure = {
       // roof's edge, 133 ft up with nothing seen below it (a thin roof), is
       // over row 1–2 (row 1 in 454, which takes it).
       stand: { rows: 11, frontRowHeightFt: 97, rakeDeg: 29, backHeightFt: 133, backSetbackFt: -25, overhang: { coveredFromRow: 4, soffitHeightFt: 133 } },
-      sections: Object.fromEntries(['449', '450', '451', '454'].map((id) => [id, { overhang: { coveredFromRow: 1, soffitHeightFt: 133 } }])),
+      sections: withBacks(Object.fromEntries(['449', '450', '451', '454'].map((id) => [id, { overhang: { coveredFromRow: 1, soffitHeightFt: 133 } }])), { '454': [133, -26] }),
+
       rowsFromMap: true,
       heightsSourced: true,
       coverSourced: true,
