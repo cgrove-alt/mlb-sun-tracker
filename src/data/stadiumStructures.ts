@@ -998,7 +998,8 @@ const WRIGLEY_LIDAR = 'USGS 3DEP lidar IL_4County_Cook_2017, flown 2017-04-17 to
  *
  * The upper deck and the bleachers are measured on USGS airborne lidar
  * (WRIGLEY_LIDAR), as at Dodger Stadium, with covered rows from the scan
- * where it puts a roof's edge more than two rows from the source's row. The
+ * where it puts a roof's edge more than two rows from the source's row;
+ * each measured section takes its own back. The
  * lower bowl is not: the club
  * boxes and field boxes were rebuilt in the 2017–18 offseason (with the
  * American Airlines 1914 Club under them), after the scan, so its heights
@@ -1093,7 +1094,9 @@ const WRIGLEY: StadiumStructure = {
       // 48 ft (47–48), 26° rake (20–30). The roof, on its posts, reaches out
       // over row 1–2: its underside there is 87 ft up (the bottom of its
       // face, 86–87), its top 89 ft, so every row is under it; that edge is
-      // what rises highest behind.
+      // what rises highest behind (the tier's back is the median of the 21
+      // measured; seen from row 1 now that the scan covers every row, the
+      // tool finds 15 of them, each of which takes its own).
       stand: {
         rows: 10,
         frontRowHeightFt: 48,
@@ -1102,7 +1105,10 @@ const WRIGLEY: StadiumStructure = {
         backSetbackFt: -18,
         overhang: { coveredFromRow: 1, soffitHeightFt: 87 },
       },
-      sections: { '331R': { rows: 12 } },
+      sections: withBacks({ '331R': { rows: 12 } }, {
+        ...Object.fromEntries(['304L', '305L', '306L', '307L', '309L', '312L', '316L', '317R', '318R', '321R', '323R', '324R', '329R'].map((id) => [id, [88, -23] as const])),
+        '326R': [87, -23], '331R': [88, -29],
+      }),
       heightsSourced: true,
       coverSourced: true,
       sources: [rysWrigley('sections/305'), rysWrigley('sections/310'), rysWrigley('sections/315'), rysWrigley('sections/320'), rysWrigley('sections/331'), WRIGLEY_LIDAR],
@@ -1136,29 +1142,30 @@ const WRIGLEY: StadiumStructure = {
       // scoreboard (511), the back wall (507, 512). The left-field video
       // board's underside is 85 ft up over rows 15–17 of 505 and 506, which
       // the lidar shows covered from there (the source calls them open).
-      // Each section takes its own measured back where it stands more than
-      // 10 ft nearer or farther: the buildings 60–150 ft behind 501–504 and
-      // 514, the scoreboard 25 ft behind 511's last row (its 14 rows), the
-      // video board's top 13 ft in front of 506's. Behind 513 the bleachers'
+      // Each measured section takes its own back: the buildings 60–150 ft
+      // behind 501–504 and 514, the scoreboard 25 ft behind 511's last row
+      // (its 14 rows), the video board's top 13 ft in front of 506's (16 ft
+      // in front of 505's); the tier's is their median. Behind 513 the bleachers'
       // back building, 48 ft up, starts where its rows end (39 ft from the
       // front; the rows here are ~2.1 ft deep, 511's 14 in 30 ft, not the
       // profile's 2.75, so the scan's "row 15" is about its last): it is
       // taken right behind its last row, open as sourced.
-      stand: { rows: 21, frontRowHeightFt: 9, rakeDeg: 30, backHeightFt: 57, backSetbackFt: 11 },
-      sections: {
-        '501': { rows: 8, frontRowHeightFt: 16, backHeightFt: 65, backSetbackFt: 150 },
-        '502': { frontRowHeightFt: 16, backHeightFt: 64, backSetbackFt: 60 },
-        '503': { frontRowHeightFt: 16, backHeightFt: 60, backSetbackFt: 116 },
-        '504': { backHeightFt: 54, backSetbackFt: 88 },
-        '514': { backHeightFt: 54, backSetbackFt: 76 },
-        '505': { backHeightFt: 94, backSetbackFt: -16, overhang: { coveredFromRow: 15, soffitHeightFt: 85 } },
-        '506': { backHeightFt: 85, backSetbackFt: -13, overhang: { coveredFromRow: 17, soffitHeightFt: 85 } },
-        '511': { rows: 14, backHeightFt: 88, backSetbackFt: 25 },
-        ...Object.fromEntries(['507', '512'].map((id) => [id, { backHeightFt: 36, backSetbackFt: 10 }])),
+      stand: { rows: 21, frontRowHeightFt: 9, rakeDeg: 30, backHeightFt: 57, backSetbackFt: 19 },
+      sections: withBacks({
+        '501': { rows: 8, frontRowHeightFt: 16 },
+        '502': { frontRowHeightFt: 16 },
+        '503': { frontRowHeightFt: 16 },
+        '505': { overhang: { coveredFromRow: 15, soffitHeightFt: 85 } },
+        '506': { overhang: { coveredFromRow: 17, soffitHeightFt: 85 } },
+        '511': { rows: 14 },
         '513': { backHeightFt: 48, backSetbackFt: 0 },
         '537': { rows: 15 },
-        '538': { backHeightFt: 51, backSetbackFt: 4 },
-      },
+      }, {
+        '502': [64, 60], '511': [88, 25], '512': [35, 7], '514': [54, 76], '503': [60, 116],
+        '504': [54, 88], '505': [94, -16], '506': [85, -13], '507': [38, 12], '501': [65, 150],
+        '538': [51, 4],
+      }),
+
       heightsSourced: true,
       coverSourced: true,
       sources: [rysWrigley('sections/501'), rysWrigley('sections/505'), rysWrigley('sections/511'), rysWrigley('sections/515'), RYS_WRIGLEY, WRIGLEY_LIDAR],
