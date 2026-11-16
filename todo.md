@@ -2298,6 +2298,209 @@ Their sentences name one change only, for example "shade from about the
 9th inning" for sun → partial → shaded.
 
 ---
+
+## §14 Every measured section on its own back (plan, 2026-11-16)
+
+Branch `fix/section-backs`, from `main` after PR #87.
+
+**The problem.** Two shortcuts in the lidar tool's `suggest()`
+(scripts/measureStandHeights.py) keep measured sections on a back that
+isn't theirs:
+- A section gets its own back only when it is far from its tier's
+  (height off by >10% and >3 ft, or setback by >10 ft). 1,711 measured
+  sections use their tier's back, and 1,310 of them measure differently.
+- The sections it does list are pooled when their heights are within 3 ft,
+  and each one takes the group's median height *and* setback. So 143 of the
+  663 written backs are a group's value, not the section's own. For
+  example, Fenway F43, F49, H43 and H49 are written 25 ft behind the last
+  row, but each measures 34.
+
+**The measurements are also out of date.** They were taken 12–15 Nov.
+Since then option A (§7.1b) moved the covered rows of 756 measured
+sections, and §10–§11 changed more. The tool measures the back from the
+middle *open* row. Where the cover moved, that row moved too, and from the
+new row a different structure can rise highest. I re-measured all 22 parks
+on today's profiles (in tmp/lidar; the old files are kept in the
+scratchpad):
+- 181 backs moved by a foot or more, 149 of them where the cover moved.
+  Fenway's Loge Boxes B125–B134 went from 87 ft at −15 to 96–100 ft at −19.
+- Where the middle open row moved toward the field, some backs switched
+  from the deck's edge to the structure behind it. Twins club: 76 ft at
+  −18 → 148 ft at 0. Phillies field: 70 at −8 → 132 at 35.
+- The tool no longer finds 69 sections it found before:
+  - 57: with fewer open rows, the run of seats it sees under a high deck is
+    rejected as "too deep";
+  - 12: the tool finds no run of seats where it expects that tier.
+
+  These sections keep the backs they have now.
+
+**What it changes.** Every measured section on its own re-measured back,
+checked at the five 2025 test games:
+- 512 sections' answers change (1,530 half-hour steps): 263 get more
+  shade, 249 less. That about-even split fits removing noise rather than a
+  bias.
+- Most changes by park: Yankees 76, Red Sox 75, Dodgers 41, Mets 40,
+  Angels 37, Cardinals 32, Phillies 30.
+- 24 tier backs that are their tier's median move to the new median (most
+  by 1–3 ft; Twins club, Phillies field, Guardians third, Nationals right
+  field and pavilion, Padres Lexus club, Giants lower and Cubs bleachers by
+  more). A tier's back now matters only for sections the scan doesn't find.
+
+**Rejected: measuring the back behind the deck's edge.** For 765 of the
+1,418 sections with a deck edge in the scan, the back the tool finds is
+that edge, which the profile also has as the deck's front. I tried
+measuring behind it instead (a scratch copy of the tool, all 22 parks).
+- Result: 118 sections' answers changed, every one to less shade, and 78
+  tier backs moved (against 38).
+- Why: the edge isn't a duplicate. It carries each section's own edge,
+  while the profile's deck front is the tier's.
+- What stands behind the edge never added shade at the test games.
+- Decision: keep the tool's definition.
+
+**Fix.**
+1. Tool: `suggest()` lists every found section whose own back (height and
+   setback, rounded to the foot) differs from its tier's. Each section gets
+   its own value, with no thresholds and no pooling. Front rows and
+   undersides keep their rules.
+2. Per park, one commit each, following the §10 procedure:
+   - every measured section takes its own back through `withBacks`;
+   - a tier whose back is its median takes the new median;
+   - backs set apart on purpose keep their reasons, each re-read against
+     the new cut. The tiers are Braves 100s (cover unsourced), Cardinals
+     pavilion left, Dodgers pavilion, Giants View, Guardians left field,
+     Mets field and left outfield, Nationals mezzanine, Padres 100s,
+     Phillies field (cover unsourced), Fenway Monster, the Rockpile, Royals
+     plaza (open), Twins right-field deck and White Sox left field. The
+     sections are Truist 153, Fenway M1 and M8, Twins 239–240, PNC
+     142/144, Great American 521, Nationals 215, Yankees 104/135 and Cubs
+     513;
+   - 92 backs get a look at their cut, as in §10, for open frames (light
+     towers, lamp banks) and roofs outside the park: the 45 sections whose
+     own back is far from their tier's, and the 47 written backs that moved
+     far;
+   - tier comments: update the numbers that change, and replace "sections
+     more than 10% (at least 3 ft) off get their own" with "each measured
+     section takes its own";
+   - reference checks and blog claims whose answers change are
+     investigated and recorded, never tuned;
+   - full suite, type check, Low share before → after.
+3. Re-run the audit: every measured section is on its own back, except
+   the listed ones.
+4. Review here, and check the changed parks' pages on the dev server.
+
+**Not in this plan (noticed):**
+- Front rows have the same 3-ft rule. 875 measured sections' own front
+  row differs from their tier's, and 264 of them would answer differently.
+  The same fix would apply; it can come next.
+- The tool's "too deep" check counts the model's open rows. Under a high
+  deck the scan also sees seats past its edge, so 57 sections are no
+  longer measured.
+- Still open: the confidence split / `heightsSourced`, and Mets 108's
+  cover.
+
+### Steps
+- [x] 1. Tool rule (one commit, plus one that wraps its output to paste).
+- [x] 2. 22 parks, one commit each, most changed answers first: Yankees,
+      Red Sox, Dodgers, Mets, Angels, Cardinals, Phillies, Orioles, Twins,
+      Guardians, Rockies, Royals, White Sox, Nationals, Reds, Braves,
+      Giants, Athletics, Padres, Pirates, Tigers, Cubs.
+- [x] 3. Audit re-run; full checks.
+- [x] 4. Review section here.
+
+### §14 Review (2026-11-16)
+
+**What changed:**
+- **Tool:** `suggest()` lists every found section whose own back (height
+  and setback, rounded to the foot) differs from its tier's. There are no
+  thresholds and no pooling, and it prints a `withBacks` map ready to
+  paste. Front rows and undersides keep their rules.
+- **Data:** 22 commits, one per park.
+  - All 2,363 measured sections now use their own re-measured back.
+  - 11 more keep a back set on purpose, each with its reason in the code:
+    Yankees 104 and 135, Fenway M1 and M8, Truist 153, Cubs 513, PNC 142
+    and 144, the Rockpile, and Twins 239–240.
+  - Inline back values and old pooled maps for measured sections are
+    gone. Only the section's other values (cover, front row) remain.
+  - Rate Field's `RATE_LOWER_BACK` table is removed.
+- **Tier backs:** where the tier's back was its median, it takes the new
+  median, for example Twins club 76 → 148 ft and the third-base side at
+  Progressive 72 → 139 ft. The work turned up three cases the plan didn't
+  cover, each written in its tier's comment:
+  - *The tool can't find sections it measured before* (Camden's terrace
+    behind home, Nationals right field and pavilion, GABP's View level
+    on the third-base side, Petco's upper level, Wrigley's upper deck).
+    The tier keeps the median of the sections measured before, because
+    those sections keep their backs.
+  - *A tier splits into two kinds of back.* Its separate medians of
+    height and setback then pair into a back no section has. Oracle's
+    lower level (69 ft, 5 ft in front) and Petco's 100s (68 ft, 19 ft
+    behind) take their larger group's median instead. Petco's Lexus Club
+    is an even split, so it keeps the Terrace's front, and its F and G
+    (never cut, between E and H) take what E–J all measure.
+  - *The median is none of the sections' backs* (Busch left-field
+    pavilion, Progressive left field, Rate Field left field). The tier
+    keeps the back of the sections it stands for.
+- **Posts:** each one changes where the engine does, and its claims test
+  follows (`app/__tests__/blogShadeClaims.test.ts`).
+  - *Yankees:* Terrace 308 is partly shaded until about the 7th, under a
+    bank of lights on the canopy. 312–315 get shade from the 4th on July
+    12. The field 100s are about one in three shaded by the 9th. A
+    quarter of the Terrace is shaded at first pitch on April 13.
+  - *Fenway:* R33's own back stands 2 ft over its last row, not 4, so it
+    gets sun from about the 9th.
+
+**Why the backs moved (from the cuts):**
+- *Covers changed after measuring.* Option A moved the covered rows of
+  756 sections after the backs were measured. The back is seen from the
+  middle open row, so where the cover moved forward, a higher structure
+  further back can rise highest. Twins club and Phillies field moved from
+  a deck's front to the canopy or roof, and Fenway's Loge Boxes behind
+  home to the press box block.
+- *Lamp banks.* The 137–142 ft backs at Yankee Stadium, Angel Stadium and
+  Truist are lamp banks on the canopy's or roof's edge. Following §10
+  (Comerica, Truist 8), these count as the back.
+- *Checked on the cut:* every large move, drawn from the scan (Yankees
+  Terrace, Fenway Loge, Dodgers 52FD, Mets 106/114/116, Angels 305/306,
+  Phillies 108/114/129/138, Twins D/G/N, Guardians 158/162/182/184).
+
+**Results, at the five 2025 test games across all 30 parks:**
+- Answers change for 503 sections (1,441 half-hour steps).
+- 265 labels go up and 240 down. The Low share goes from 26.9% to 26.8%.
+- Sections changed by park: Yankees 74, Red Sox 73, Dodgers 41, Mets 41,
+  Angels 37, Cardinals 32, Phillies 31, Orioles 24, Guardians 20, Twins
+  18, Royals 15, White Sox 14, Nationals 12, Reds 12, Rockies 12, Giants
+  11, Athletics 10, Braves 10, Padres 8, Pirates 7, Tigers 1, Cubs 0.
+
+**Checks:**
+- Audit (`tmp/lidar/ownBackCheck.ts`): 2,363 measured sections are on
+  their own back. The other 11 are the exceptions above.
+- The full suite passes, 3,551 of 3,551. The type check is clean, and
+  eslint is clean on the changed files.
+  - The first baseline run had the Comerica suite fail to run under load
+    (it passes alone). A second full run passed.
+- Reference checks: one moved, and it is recorded, not tuned. Target 118's
+  canopy edge measures 4 ft over its last row, so row 10 falls in shadow
+  in the last half-hour. The check now tests the lower rows through the
+  9th, and its header records the rest.
+- On the dev server, the Yankees and Fenway posts show the new sentences.
+  The Yankees stadium page renders with no console or server errors.
+
+**Noticed, not changed:**
+- *Front rows have the same 3-ft rule:* 264 sections would answer
+  differently with their own measured front row.
+- *The tool's "too deep" check* counts the model's open rows. Under a
+  high deck the scan also sees seats past its edge, so 57 sections (and
+  12 that no longer land in their tier's band) are no longer measured.
+  They keep their backs.
+- *The tool takes tier medians field by field,* which can pair two kinds
+  of back (Oracle, Petco). Taking the median section instead would fix
+  this at the source.
+- *GABP 104 and 105* take a light tower as their back, while Fenway's
+  lattice light towers are left out. The two choices don't match.
+- Still open: the confidence split / `heightsSourced`, and Mets 108's
+  cover.
+
+---
 ---
 
 # Previous audit (2026-08-07), kept for history

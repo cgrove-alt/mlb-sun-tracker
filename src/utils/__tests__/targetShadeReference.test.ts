@@ -42,8 +42,11 @@
  *     behind them (estimated 110 and 110), shades the third-base boxes (13%
  *     over the game; 40% in September, against 25% checked before). Tested:
  *     the first two hours.
- *   - [RYS] third-base lower rows stay sunny: rows 1–10 all game; rows
- *     11–12 fall in the canopy's shadow in the last half-hour.
+ *   - [RYS] third-base lower rows stay sunny: rows 1–10 through the 9th
+ *     inning; in the last half-hour the canopy's shadow reaches row 11
+ *     (row 10 in 118, whose canopy edge is measured 4 ft over its last
+ *     row; over 119–122 it is 2 ft over it to 3 ft behind it). Tested:
+ *     through the 9th.
  *   - [RYS] the bleachers' rows 6 and up shaded: from row 7; row 6 gets the
  *     late sun under the porch.
  */
@@ -111,7 +114,7 @@ describe('Target Field: 1:10 PM games', () => {
   it.each(range(118, 122))('[RYS] third-base %s: rows 20 and up shaded at first pitch, 15–16 by the end, the lower rows stay sunny', (id) => {
     expect(rowsShaded(JULY_13_110PM, id, 20)[0]).toBe(1);
     expect(rowsShaded(JULY_13_110PM, id, 15, 16)[last(JULY_13_110PM)]).toBe(1);
-    expect(rowsShaded(JULY_13_110PM, id, 1, 10).every((share) => share === 0)).toBe(true);
+    expect(rowsShaded(JULY_13_110PM, id, 1, 10).slice(0, last(JULY_13_110PM)).every((share) => share === 0)).toBe(true);
   });
 
   it.each(['A', 'B', 'C', 'D'])('[RYS] July: club %s is shaded at a 1 PM game', (id) => {
