@@ -3362,8 +3362,13 @@ export function petcoTier(id: string): string | null {
 // ~41 ft), deck underside ~50 ft.
 const PETCO_LIDAR = 'USGS 3DEP lidar CA_SanDiegoCo_D24, flown 2024-11-17 (scripts/measureStandHeights.py)';
 // The 100s (lidar, 16 of 17): front row at field level (-2 to 2), 10° rake
-// (5–30); what rises highest behind is 68 ft up (36–134).
-const PETCO_100: StandProfile = { rows: 43, frontRowHeightFt: -1, rakeDeg: 10, backHeightFt: 68, backSetbackFt: 2 };
+// (5–30). What rises highest behind, seen from the middle of the open rows,
+// is the Terrace level's front, 67–68 ft up and 15–45 ft in front of the
+// last row (eight sections), or the roof, 132–134 ft up and 27–57 ft
+// behind it (seven). The profile takes the larger group's median, 38 ft in
+// front: the separate medians of height and setback (68 ft, 19 ft behind)
+// pair the two groups and fit neither.
+const PETCO_100: StandProfile = { rows: 43, frontRowHeightFt: -1, rakeDeg: 10, backHeightFt: 68, backSetbackFt: -38 };
 
 /**
  * Petco Park (2004). Field VIP and the Lexus Club behind home, the 100s, the
@@ -3375,7 +3380,8 @@ const PETCO_100: StandProfile = { rows: 43, frontRowHeightFt: -1, rakeDeg: 10, b
  * as at Citizens Bank Park: for each section a cut straight back through its
  * rows gives the front row's height, the rake and the structure that rises
  * highest behind as seen from the middle uncovered row; tier values are
- * medians, sections more than 10% (at least 3 ft) off get their own. The
+ * medians, a section whose front row is more than 10% (at least 3 ft) off
+ * gets its own, and every measured section takes its own back. The
  * Terrace level's front is 36 ft (38), the Upper Box's 67 ft (75; the
  * Upper Deck's rows behind an aisle start ~80 ft), the roof 133 ft (118).
  * The light towers are not counted as walls; the downtown towers beyond the
@@ -3399,12 +3405,13 @@ const PETCO: StadiumStructure = {
       // Rows 8–20 or 8–22, open (seen from directly above on the photo,
       // 18–31 m behind home). Lidar (6 of 6): front row at field level (-2
       // to 2), 12° rake (9–14); what rises highest behind is the Upper
-      // level's roof, 133 ft up and 88 ft back (66–103 ft behind 101–103,
-      // measured).
+      // level's roof, 133 ft up and 88 ft back (66–103 ft, each measured
+      // section its own).
       stand: { rows: 15, frontRowHeightFt: -1, rakeDeg: 12, backHeightFt: 133, backSetbackFt: 88 },
-      sections: {
-        '101': { backHeightFt: 134, backSetbackFt: 75 }, '102': { backHeightFt: 133, backSetbackFt: 66 }, '103': { backHeightFt: 133, backSetbackFt: 103 },
-      },
+      sections: withBacks({}, {
+        '104': [133, 93], '106': [133, 86], '101': [134, 75], '102': [133, 66], '103': [133, 103],
+        '105': [134, 89],
+      }),
       rowsFromMap: true,
       heightsSourced: true,
       coverSourced: true,
@@ -3418,14 +3425,23 @@ const PETCO: StadiumStructure = {
       // front reaches out over row 4 (1 in A), so the rows from there back
       // are covered (Rate Your Seats counts from 9), under an underside of
       // ~27 ft (that front row less 9 ft; in J the bottom of its face is
-      // seen, 34 ft). In the 10-row A and B that front is 15 ft in front of
-      // the last row (measured; B on a cut the tool's line from home misses).
+      // seen, 34 ft). Each measured section takes its own back, seen from
+      // the middle of its open rows: in A, C, D and K that front (23–35 ft in
+      // front of the last row), in E and H–J the Terrace level's rows rising
+      // behind it, 70–71 ft up, 11 ft in front. The tier keeps the front, 26
+      // ft in front (the separate medians, 53 ft, pair the two groups); F
+      // and G, not measured, between E and H, take what all four of those
+      // measure; B, measured before on a cut the tool's line from home
+      // misses, keeps its 15 ft.
       stand: { rows: 15, frontRowHeightFt: 10, rakeDeg: 19, backHeightFt: 36, backSetbackFt: -26, deckFrontFt: 36, overhang: { coveredFromRow: 4, soffitHeightFt: 27 } },
-      sections: {
-        'A': { backHeightFt: 38, backSetbackFt: -15, overhang: { coveredFromRow: 1, soffitHeightFt: 27 } },
+      sections: withBacks({
+        'A': { overhang: { coveredFromRow: 1, soffitHeightFt: 27 } },
         'B': { backHeightFt: 36, backSetbackFt: -15 },
-        'J': { backHeightFt: 71, backSetbackFt: -11, overhang: { coveredFromRow: 4, soffitHeightFt: 34 } },
-      },
+        'J': { overhang: { coveredFromRow: 4, soffitHeightFt: 34 } },
+      }, {
+        'A': [36, -23], 'C': [37, -27], 'D': [36, -32], 'E': [71, -11], 'H': [70, -11],
+        'I': [71, -11], 'J': [71, -11], 'K': [37, -35], 'F': [71, -11], 'G': [71, -11],
+      }),
       rowsFromMap: true,
       heightsSourced: false,
       coverSourced: true,
@@ -3439,23 +3455,22 @@ const PETCO: StadiumStructure = {
       // than two rows ahead of the source's, and those take the scan's row
       // (the cross-aisle between the front and back blocks counts as rows
       // in that distance, as it does in the engine). Its underside: that
-      // front row less 9 ft, ~27 ft (the lidar sees nothing lower). Sections
-      // whose measured back stands more than 10 ft nearer or farther take
-      // their own: that front 15–45 ft in front of the last row of the deep
-      // sections (107, 112–116, 122), 19 ft behind the 23-row 124; the roof
-      // 57 ft behind 108.
+      // front row less 9 ft, ~27 ft (the lidar sees nothing lower). Each
+      // measured section takes its own back (see PETCO_100): that front
+      // 15–45 ft in front of the last row of the deep sections, 19 ft
+      // behind the 23-row 124; the roof 27–57 ft behind the others.
       sections: withBacks({
         ...petcoCover([...Array.from({ length: 18 }, (_, i) => String(107 + i))], 27),
-        ...Object.fromEntries(['108', '110', '117', '118', '119', '120', '121'].map((id) => [id, { backHeightFt: 133, backSetbackFt: 32, ...petcoCover([id], 27)[id] }])),
-        '109': { backHeightFt: 36, backSetbackFt: -62, overhang: { coveredFromRow: 17, soffitHeightFt: 27 } },
+        '109': { overhang: { coveredFromRow: 17, soffitHeightFt: 27 } },
         '107': { overhang: { coveredFromRow: 17, soffitHeightFt: 27 } },
         '113': { overhang: { coveredFromRow: 21, soffitHeightFt: 26 } },
         ...Object.fromEntries(['114', '122'].map((id) => [id, { overhang: { coveredFromRow: 26, soffitHeightFt: id === '122' ? 28 : 27 } }])),
         '115': { overhang: { coveredFromRow: 24, soffitHeightFt: 28 } },
         '116': { overhang: { coveredFromRow: 24, soffitHeightFt: 27 } },
       }, {
-        '107': [68, -18], '112': [68, -15], '113': [67, -45], '114': [67, -35], '115': [68, -40], '116': [68, -40], '122': [67, -33],
-        '124': [68, 19], '108': [132, 57],
+        '108': [132, 57], '110': [132, 31], '112': [68, -15], '114': [67, -35], '116': [68, -40],
+        '118': [133, 27], '120': [133, 32], '122': [67, -33], '107': [134, 27], '109': [67, -44],
+        '113': [67, -45], '115': [68, -40], '119': [134, 35], '121': [134, 41], '124': [68, 19],
       }),
       rowsFromMap: true,
       heightsSourced: false,
@@ -3468,9 +3483,10 @@ const PETCO: StadiumStructure = {
       // 3): front row 7 ft (2 in 111), 15° rake (11–15); the deck above
       // reaches out over row 21 (17 in 111), which settles the cover, under
       // an underside of ~31 ft (9 ft above row 21's floor; 27 ft over 111,
-      // the Terrace level's front less 9 ft). Behind, 76 ft up.
+      // the Terrace level's front less 9 ft). Behind, 76 ft up (each takes
+      // its own: over 111 the Terrace level, 68 ft, 34 ft in front).
       stand: { rows: 43, frontRowHeightFt: 7, rakeDeg: 15, backHeightFt: 76, backSetbackFt: -15, deckFrontFt: 36, overhang: { coveredFromRow: 21, soffitHeightFt: 31 } },
-      sections: { '111': { frontRowHeightFt: 2, backHeightFt: 36, backSetbackFt: -49, overhang: { coveredFromRow: 17, soffitHeightFt: 27 } } },
+      sections: withBacks({ '111': { frontRowHeightFt: 2, overhang: { coveredFromRow: 17, soffitHeightFt: 27 } } }, { '111': [68, -34], '127': [77, -11] }),
       rowsFromMap: true,
       heightsSourced: false,
       coverSourced: true,
@@ -3480,17 +3496,16 @@ const PETCO: StadiumStructure = {
       label: 'Left Field Lower Box (126–134)',
       // Rows A–B and 1–11 (fewer in 130, 134), under the 226–230 deck from
       // row 6 (sourced). Lidar (5 of 5): front row 3 ft (3–4), 10° rake
-      // (8–11); behind, 26 ft up (57–74 in 126 and 128). Estimated:
+      // (8–11); behind, 26 ft up (57–59 in 126 and 128; each its own). Estimated:
       // underside ~22 ft (23 over 126–132, covered from row 8).
       stand: { rows: 13, frontRowHeightFt: 3, rakeDeg: 10, backHeightFt: 26, backSetbackFt: -12 },
       // The scan puts the deck's edge over 126's row 1 (its lowest point
       // 20 ft up) and 132's row 5.
-      sections: {
-        ...petcoCover(['130', '134'], 23),
-        '126': { backHeightFt: 74, backSetbackFt: -23, overhang: { coveredFromRow: 1, soffitHeightFt: 20 } },
-        '128': { backHeightFt: 57, backSetbackFt: 0, ...petcoCover(['128'], 23)['128'] },
+      sections: withBacks({
+        ...petcoCover(['128', '130', '134'], 23),
+        '126': { overhang: { coveredFromRow: 1, soffitHeightFt: 20 } },
         '132': { overhang: { coveredFromRow: 5, soffitHeightFt: 23 } },
-      },
+      }, { '126': [59, -32], '128': [57, 0], '130': [26, -8], '132': [26, -22] }),
       rowsFromMap: true,
       heightsSourced: false,
       coverSourced: true,
@@ -3499,15 +3514,16 @@ const PETCO: StadiumStructure = {
     rightLower: {
       label: 'Right Field Lower (129–137)',
       // Rows 1–25 (two blocks), covered from row 21 (sourced). Lidar (3 of
-      // 5): front row 9 ft (7–10), 12° rake; behind, 49 ft up (135 in 129).
+      // 5): front row 9 ft (7–10), 12° rake; behind, 49 ft up (128 in 129;
+      // each its own).
       // The deck's underside: the bottom of its face, seen once, 39 ft
       // (38 over 129, where the deck's edge is over row 25: its front row,
       // 47 ft, less 9 ft).
       stand: { rows: 25, frontRowHeightFt: 9, rakeDeg: 12, backHeightFt: 49, backSetbackFt: -16, deckFrontFt: 46 },
-      sections: {
+      sections: withBacks({
         ...petcoCover(['131', '133', '135', '137'], 39),
-        '129': { backHeightFt: 135, backSetbackFt: 73, overhang: { coveredFromRow: 25, soffitHeightFt: 38 } },
-      },
+        '129': { overhang: { coveredFromRow: 25, soffitHeightFt: 38 } },
+      }, { '129': [128, 67], '131': [49, -18] }),
       rowsFromMap: true,
       heightsSourced: false,
       coverSourced: true,
@@ -3518,14 +3534,14 @@ const PETCO: StadiumStructure = {
       // Rows 1–8 or 1–9, open (202 and 204: "rows 5 and above are shaded
       // during most day games"). Lidar (4 of 4): front row 35 ft (33–36),
       // 22° rake (19–24); what rises highest behind is the deck above, 71 ft
-      // up, just behind the last row. Its edge reaches out over 202's row 7
+      // up, just behind the last row (each its own). Its edge reaches out over 202's row 7
       // and 201's row 6 (underside ~60 ft, 50 over 201, where something
       // lower shows), so those rows are covered.
       stand: { rows: 9, frontRowHeightFt: 35, rakeDeg: 22, backHeightFt: 71, backSetbackFt: -5 },
-      sections: {
+      sections: withBacks({
         '201': { overhang: { coveredFromRow: 6, soffitHeightFt: 50 } },
         '202': { deckFrontFt: 69, overhang: { coveredFromRow: 7, soffitHeightFt: 60 } },
-      },
+      }, { '202': [71, -6], '204': [71, -4], '203': [71, -1] }),
       rowsFromMap: true,
       heightsSourced: true,
       coverSourced: true,
@@ -3539,7 +3555,7 @@ const PETCO: StadiumStructure = {
       // settles the cover, under an underside of ~57 ft (that front row less
       // 9 ft); behind, 68 ft up.
       stand: { rows: 10, frontRowHeightFt: 35, rakeDeg: 23, backHeightFt: 68, backSetbackFt: -14, deckFrontFt: 66, overhang: { coveredFromRow: 8, soffitHeightFt: 57 } },
-      sections: { '208': { overhang: { coveredFromRow: 5, soffitHeightFt: 57 } } },
+      sections: withBacks({ '208': { overhang: { coveredFromRow: 5, soffitHeightFt: 57 } } }, { '210': [68, -12] }),
       rowsFromMap: true,
       heightsSourced: false,
       coverSourced: true,
@@ -3552,8 +3568,12 @@ const PETCO: StadiumStructure = {
       // (19–23); the Upper Box's front, 67 ft up, reaches out over row 4
       // (3–6) in 9 of the 12, so the rows from 4 back are covered, under an
       // underside of ~57 ft (that front row less 9 ft). That edge is what
-      // rises highest behind.
+      // rises highest behind (each measured section its own).
       stand: { rows: 13, frontRowHeightFt: 36, rakeDeg: 22, backHeightFt: 68, backSetbackFt: -25, deckFrontFt: 66, overhang: { coveredFromRow: 4, soffitHeightFt: 57 } },
+      sections: withBacks({}, {
+        '214': [65, -27], '216': [67, -27], '207': [68, -27], '209': [68, -22], '211': [68, -22],
+        '213': [68, -20], '215': [67, -25], '217': [68, -23], '223': [68, -28],
+      }),
       rowsFromMap: true,
       heightsSourced: false,
       coverSourced: true,
@@ -3567,7 +3587,7 @@ const PETCO: StadiumStructure = {
       // from there back are covered (226, not measured, keeps its row, with
       // an underside 9 ft above that row's floor). Behind, 126 ft up.
       stand: { rows: 21, frontRowHeightFt: 26, rakeDeg: 21, backHeightFt: 126, backSetbackFt: -12, overhang: { coveredFromRow: 9, soffitHeightFt: 44 } },
-      sections: petcoCover(['226'], 50),
+      sections: withBacks(petcoCover(['226'], 50), { '228': [119, -17], '230': [132, -8] }),
       rowsFromMap: true,
       heightsSourced: false,
       coverSourced: true,
@@ -3606,26 +3626,29 @@ const PETCO: StadiumStructure = {
       // ends). Its edge agrees with the source's row but in 304, 307, 322
       // and 326, which take the scan's (14–16). Lower "edges" over 311 and
       // 320–325 are the Upper Deck's rows behind the aisle, not a deck.
-      // Sections whose measured back stands more than 10 ft nearer or
-      // farther take their own (the roof's edge 32–39 ft in front of the
-      // last row of 304, 307 and 326; the Upper Deck's rows behind the
+      // Each measured section takes its own back (the roof's edge 32–39 ft
+      // in front of the last row of 304, 307 and 326; the Upper Deck's rows behind the
       // aisle, ~80 ft up, start 20 ft behind 321's last row and 47 ft in
       // front of 323's), and so does 322, whose own puts the roof's edge
       // over its covered row 15 (12 ft in front of its last row) where the
       // tier's would stand over its open rows 12–14. The short rows in
       // front, 313 and 329, have the step up to that aisle right behind
       // them, 75 ft up (313's cut, on a point the tool's line from home
-      // misses; 329's shows the same step).
+      // misses; 329's shows the same step). The tier's back is the median
+      // of the 17 measured before; the tool no longer finds 313's run.
       stand: { rows: 23, frontRowHeightFt: 67, rakeDeg: 29, backHeightFt: 133, backSetbackFt: -21 },
       sections: withBacks({
         ...petcoCover(Array.from({ length: 30 }, (_, i) => String(300 + i)), 133),
         ...Object.fromEntries(['304', '307'].map((id) => [id, { overhang: { coveredFromRow: 14, soffitHeightFt: 133 } }])),
         '322': { overhang: { coveredFromRow: 15, soffitHeightFt: 132 } },
         '326': { overhang: { coveredFromRow: 16, soffitHeightFt: 133 } },
-        ...Object.fromEntries(['315', '328'].map((id) => [id, { backHeightFt: 98, backSetbackFt: -21, ...petcoCover([id], 133)[id] }])),
-        '319': { backHeightFt: 105, backSetbackFt: 66, ...petcoCover(['319'], 133)['319'] },
-        ...Object.fromEntries(['321', '323'].map((id) => [id, { backHeightFt: 80, backSetbackFt: -13, ...petcoCover([id], 133)[id] }])),
-      }, { '304': [134, -33], '307': [133, -39], '326': [133, -32], '321': [79, 20], '323': [81, -47], '322': [133, -12], '313': [75, 1], '329': [75, 1] }),
+      }, {
+        '304': [134, -33], '305': [133, -22], '306': [133, -22], '307': [133, -39], '310': [133, -23],
+        '311': [134, -21], '315': [98, -23], '319': [105, 66], '320': [134, -21], '321': [79, 20],
+        '322': [133, -12], '323': [81, -47], '324': [133, -13], '325': [134, -15], '326': [133, -32],
+        '328': [98, -20], '313': [75, 1], '329': [75, 1],
+      }),
+
       rowsFromMap: true,
       heightsSourced: false,
       coverSourced: true,
