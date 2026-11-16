@@ -2052,6 +2052,137 @@ and the post shows the new sentence.
    the confidence split.
 
 ---
+
+## §12 Confidence for backs over the rows (plan, 2026-11-15)
+
+**The problem.** The confidence check moves every back nearer and farther
+by ±20% (measured) or ±50% (estimated) of its distance from the last row.
+1,441 sections have a back over their rows, and 1,365 of them have a deck
+there. That back is part of the deck: three in four stand within 2 rows of
+the deck's edge (its front, or the deck above). Moving it by a share of its
+distance from the last row slides it 2–8 rows. For 1,027 sections the far
+move puts it in front of the deck's edge, over open rows, while the edge
+itself stays put: a deck whose front sticks out past its own edge. Since
+§11 the engine counts a back over a row's head, so that impossible shape
+shades open rows in the variant and lowers the label. Example: Dodgers
+loge. The reserve deck's front stands over row 8, half a row behind the
+deck's edge. The variant moves it to row 5, over open rows 5–7.
+
+**Fix: for a back over a deck's rows, scale its distance from the deck's
+edge.** In `perturbStructure`, such a back keeps its place relative to the
+deck's edge. Only its distance from that edge is moved ±20/50%, the rule
+the check already uses for how far a deck reaches out. A back at the deck's
+edge stays there, as a wall right behind the last row stays there today.
+Nothing else changes:
+- backs behind the stand;
+- backs over the rows with no deck (a canopy or press box: there the back
+  *is* the edge, and its reach from the last row stays scaled, like a
+  deck's reach);
+- heights, the error sizes, and every answer.
+
+**Considered and rejected:**
+- Moving a back over the rows by ±1 row: a second error model for backs
+  over the rows only. A back 1 ft in front of the last row would move
+  2.75 ft while one 1 ft behind it moves 0.2 ft. It lowers 74 labels
+  (e.g. the Twins terrace's roof, 1 ft over the last row).
+- Not moving it at all: too small where the back stands well behind the
+  deck's edge.
+
+**What it changes.** Measured at three 2025 test games (1:10 PM on April
+15 and July 15, 4:10 PM on July 15), 15,654 labels, each park's own
+orientation error. A script worked it out. A trial edit of the real code
+gave the same labels (10,436 of 10,436 checked) and was reverted.
+- Answers: none. Only the confidence check changes.
+- Labels: 214 rise, none fall. Low share overall goes from 27.4% to 26.9%
+  (27.3% on the engine before §11).
+- Of the 107 drops the §11 engine change caused, 94 go away. The 13 that
+  stay are all edges with no deck under them: Fenway R23–R35 at 4:10 PM,
+  Nationals 107 and 315, Padres 203, Phillies 211, Twins 240. How many rows
+  such an edge covers does depend on how far it reaches, so their lower
+  label is real.
+- Low share, July 1:10 PM (engine before §11 / now / with the fix):
+
+  | Park | Before §11 | Now | Fix |
+  |---|---|---|---|
+  | Dodgers | 22% | 29% | 20% |
+  | Yankees | 31% | 31% | 25% |
+  | Twins | 23% | 25% | 20% |
+  | Pirates | 11% | 13% | 11% |
+  | Cardinals | 28% | 30% | 28% |
+  | Mets | 39% | 41% | 39% |
+  | Phillies | 19% | 20% | 18% |
+  | Rockies | 23% | 23% | 21% |
+
+  Yankees and Dodgers end up below their pre-§11 share. The old engine had
+  part of the same problem: the moved back blocked open rows at an angle.
+- Tests: with the trial edit the full suite passes (3540/3540), including
+  Yankees' "Terrace 310–319 not High". No label stated in the Fenway or
+  Yankees post changes at its game.
+
+**Steps**
+1. [x] Add a unit test first: a made-up stand whose deck's front stands
+   half a row behind the deck's edge, with the sun behind, is High
+   confidence. It must fail on today's code.
+2. [x] Make the change in `perturbStructure` (src/utils/gameShade.ts) and
+   its doc. The confidence notes at the top of gameShade.ts and
+   stadiumStructures.ts say how a back over a deck's rows is moved.
+3. [x] Re-check:
+   - full suite and type check;
+   - the label tallies above, on the real code;
+   - the labels the posts state;
+   - the Dodgers and Yankees pages on the dev server.
+4. [x] Commit (one change), then write the review here.
+
+Not in this change: the error sizes themselves, and which tiers count as
+measured (the confidence split and `heightsSourced` questions).
+
+### §12 Review (2026-11-16)
+
+**What changed** (commit 0acc17b28):
+- `perturbStructure` (src/utils/gameShade.ts) now moves the back's
+  setback through a new `movedSetback`. For a back over the rows of a
+  stand with a deck, its distance from the deck's edge is scaled ±20/50%,
+  with the edge itself moved by the deck's scaled reach. Every other back
+  is scaled from the last row, as before.
+- The confidence notes at the top of gameShade.ts and stadiumStructures.ts
+  say so.
+- New test: src/utils/__tests__/gameShadeConfidence.test.ts. A made-up
+  stand shaped like Dodger Stadium's loge at a 2025-07-15 1:10 PM game in
+  Los Angeles: High with the fix, Low without (checked before the change).
+
+**Results** (the real code, three 2025 test games, 15,654 labels, each
+park's own orientation error):
+- No answer changes.
+- 214 labels rise, none fall, the same labels the planning script
+  predicted (0 differences).
+- Low share 27.4% → 26.9%. Per park as in the plan's table (Dodgers July
+  1:10 PM 29% → 20%, Yankees 31% → 25%, Twins 25% → 20%).
+- Of the 107 drops §11 caused, 13 remain. All are edges with no deck under
+  them, where the edge's reach does decide which rows it covers.
+
+**Checks:**
+- Full suite 3541/3541 (3540 + the new test); type check clean.
+- Posts: the blog claims test passes, and no label stated in the Fenway or
+  Yankees post changes at its game.
+- On the dev server, at a custom 2025-07-15 1:10 PM game:
+  - Dodgers 124LG reads High (was Low);
+  - Yankees 226 reads Medium (was Low);
+  - no console or server errors.
+
+**Found on the way (not this change):** Dodgers 124LG's sentence says
+"shaded until about the 2nd inning, then sun", but after 1:40 PM it is
+partial, never sun. That is the same `shadeSentence` function the
+sentence-bug session is fixing on its own branch
+(claude/objective-einstein-5df341), so the case was sent to it. That
+session also numbers its plan §12 in its copy of this file; it was asked
+to use §13.
+
+**Still open for you:**
+- The confidence split / `heightsSourced` question.
+- The 335 measured sections on their tier's back.
+- Mets 108's cover.
+
+---
 ---
 
 # Previous audit (2026-08-07), kept for history
