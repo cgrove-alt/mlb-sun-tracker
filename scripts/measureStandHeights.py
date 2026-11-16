@@ -24,8 +24,8 @@ Method (all heights in metres above the field until the report, which is in feet
        - front row: that line at the middle of the first tread;
        - the same on four cuts beside it (2 and 4 m to either side): where
          this cut's rake is more than 2 degrees off their median, it isn't
-         the stand's (an aisle's steps, a walkway), and the section's rake
-         (and, down an aisle, its front row) is left out;
+         the stand's (an aisle's steps, a walkway): the section's rake is
+         left out, and down an aisle its front row is theirs;
        - the deck above: where structure starts over the seats (the lip, as a
          row) and the bottom of its front face (soffit), when the scan sees
          that face;
@@ -1136,11 +1136,11 @@ def suggest(park):
                     line = ''
                 line = f'{line} {item}' if line else f'        {item}'
             print(line)
-        # A cut down an aisle's steps starts below the seats: that section
-        # keeps the tier's front row.
-        paste('fronts (withFronts)', [f"'{r['id']}': {r0(r['frontFt'])}," for r in rs
-                                      if r['frontFt'] is not None and front is not None and r0(r['frontFt']) != r0(front)
-                                      and 'aisle' not in r['flags']])
+        # A cut down an aisle's steps starts below the seats: that section's
+        # front row is the median of the cuts beside it.
+        own_front = lambda r: r['frontAcrossFt'] if 'aisle' in r['flags'] else r['frontFt']
+        paste('fronts (withFronts)', [f"'{r['id']}': {r0(own_front(r))}," for r in rs
+                                      if r['frontFt'] is not None and front is not None and r0(own_front(r)) != r0(front)])
         own = {r['id']: (r0(r['backFt']), r0(r['backSetbackFt'])) for r in rs if r['backFt'] is not None and back is not None}
         paste('backs (withBacks)', [f"'{i}': [{h}, {s}]," for i, (h, s) in own.items() if (h, s) != (r0(back), r0(setback))])
         # A rake is a line fitted to the run's treads, which are steps: over a

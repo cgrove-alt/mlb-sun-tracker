@@ -2356,7 +2356,7 @@ const TRUIST_100: StandProfile = {
  * the scan sees 9 or more of its rows and the cuts beside it agree. Behind
  * home the cuts through 8, 123, 124, 126, 135 and 137 run down an aisle's
  * steps (starting ~3 ft low and climbing at ~30° before the rows' 13–14°),
- * so those take the tier's front row and rake. Every deck is lower than
+ * so those take the tier's rake and the front row of the cuts beside them. Every deck is lower than
  * the stacking estimates: the 200 level's front is 36 ft (was 48), the
  * 300s' 68 ft (82). The canopy, about 150 ft up, hides the 400s and the
  * 300s' back rows from the air, and reaches out over the 200 and 300
@@ -2382,7 +2382,8 @@ const TRUIST: StadiumStructure = {
     clubBoxes: {
       label: 'Truist Club boxes (1–9)',
       // Rows 1–4 or 1–5 at the backstop, uncovered. Lidar (8 of 9): front
-      // row 2 ft (0–2; 8's cut runs down an aisle, so it takes the tier's),
+      // row 2 ft (0–2; 8's cut runs down an aisle, so it takes the front row
+      // of the cuts beside it, 1 ft),
       // 11° rake (8–15); what rises highest
       // behind is the canopy, 150 ft up and 83 ft behind the last row (75–98
       // ft, each measured section its own; over 7 and 8 a lamp bank on it,
@@ -2392,7 +2393,7 @@ const TRUIST: StadiumStructure = {
         '3': [150, 86], '4': [150, 80], '6': [151, 76], '7': [157, 76], '8': [160, 98],
         '1': [150, 89], '5': [150, 75], '9': [150, 98],
       }), {
-        '3': 1, '7': 0,
+        '3': 1, '7': 0, '8': 1,
       }),
       rowsFromMap: true,
       heightsSourced: true,
@@ -2449,7 +2450,8 @@ const TRUIST: StadiumStructure = {
       // Each measured section takes its own back: the canopy from 5 ft in
       // front of the last row to 21 ft behind it (over 140 the 200 level's
       // front, 35 ft up). The cuts through 135 and 137 run down an aisle's
-      // steps, so they take the tier's front row.
+      // steps, so they take the front row of the cuts beside them (10 ft,
+      // the tier's).
       stand: { ...TRUIST_100, deckFrontFt: 35 },
       sections: withFronts(withBacks({}, {
         '122': [150, 15],
@@ -2484,14 +2486,17 @@ const TRUIST: StadiumStructure = {
       // covered rows (only "rows 8+ shaded late afternoon"). Lidar (6 of 6):
       // front row 10 ft, 14° rake (13–14), from 125, 127 and 128; the cuts
       // through 123, 124 and 126 run down an aisle's steps (front row 6–7
-      // ft, 21°), so those take the tier's. The 200 level's front, 35 ft
+      // ft, 21°), so those take the tier's rake and the front row of the
+      // cuts beside them (9–10 ft). The 200 level's front, 35 ft
       // up, reaches out over row 6–8, so the rows from 8 back are covered,
       // under an underside of ~26 ft (that front row less 9 ft). Behind, the
       // canopy, 151 ft up and 26 ft back (21–43 ft, each its own).
       stand: { rows: 11, frontRowHeightFt: 10, rakeDeg: 14, backHeightFt: 151, backSetbackFt: 26, deckFrontFt: 34, overhang: { coveredFromRow: 8, soffitHeightFt: 26 } },
-      sections: withBacks({}, {
+      sections: withFronts(withBacks({}, {
         '123': [151, 28], '124': [149, 43], '125': [151, 25], '126': [150, 28], '127': [151, 25],
         '128': [157, 21],
+      }), {
+        '123': 9,
       }),
       rowsFromMap: true,
       heightsSourced: false,
