@@ -6328,8 +6328,9 @@ export function targetTier(id: string): string | null {
  * Heights: USGS lidar (Minnesota, May 2022); no structural change since. The
  * 300s, the bleachers and the cove are hidden from the air under the decks
  * above them. Each measured section takes its own front row and back (what
- * rises highest behind it, seen from the middle of its open rows).
-
+ * rises highest behind it, seen from the middle of its open rows), and its
+ * own rake where the scan sees 9 or more of its rows and the cuts beside it
+ * agree.
  */
 const TARGET: StadiumStructure = {
   stadiumId: 'twins',
@@ -6341,15 +6342,17 @@ const TARGET: StadiumStructure = {
       label: 'Boxes (1–17)',
       // Rows 1–13 (5–13 behind the dugouts), open ("rarely shaded"). Lidar
       // (16 of 17): front row 1 ft (-1–2; row 5 behind the dugouts as high),
-      // 11° rake; behind, the canopy 148 ft up and 84 ft back (73–91).
-      stand: { rows: 13, frontRowHeightFt: 1, rakeDeg: 11, treadFt: 2.8, backHeightFt: 148, backSetbackFt: 84 },
-      sections: withFronts(withBacks({}, {
+      // 12° rake; behind, the canopy 148 ft up and 84 ft back (73–91).
+      stand: { rows: 13, frontRowHeightFt: 1, rakeDeg: 12, treadFt: 2.8, backHeightFt: 148, backSetbackFt: 84 },
+      sections: withRakes(withFronts(withBacks({}, {
         '2': [148, 80], '3': [148, 73], '4': [148, 83], '6': [148, 81], '8': [148, 91],
         '9': [148, 91], '12': [148, 86], '14': [148, 86], '15': [148, 86], '16': [148, 88],
         '17': [148, 88],
       }), {
         '3': 2, '4': 2, '5': 2, '6': 2, '7': 0, '8': -1, '9': -1, '10': 0, '11': 2, '12': 2, '13': 2,
         '14': 0, '15': 0, '17': 0,
+      }), {
+        '5': 11, '7': 11, '8': 11, '10': 14, '17': 13,
       }),
       rowsFromMap: true,
       heightsSourced: true,
@@ -6363,15 +6366,20 @@ const TARGET: StadiumStructure = {
       // rake; behind, the canopy 148 ft up over the last row. The club
       // deck's front row, 37 ft up, reaches out over row 14–17 (14 in six,
       // which take it); its underside is not seen: 9 ft above the covered
-      // row's floor.
+      // row's floor (30 ft over 108, 112 and 115, at their own 15–16°).
       stand: { rows: 28, frontRowHeightFt: 9, rakeDeg: 14, treadFt: 2.8, backHeightFt: 148, backSetbackFt: -2, deckFrontFt: 37, overhang: { coveredFromRow: 17, soffitHeightFt: 29 } },
-      sections: withFronts(withBacks(Object.fromEntries(['107', '111', '113', '118', '119', '121'].map((id) => [id, { overhang: { coveredFromRow: 14, soffitHeightFt: 28 } }])), {
+      sections: withRakes(withFronts(withBacks({
+        ...Object.fromEntries(['107', '111', '113', '118', '119', '121'].map((id) => [id, { overhang: { coveredFromRow: 14, soffitHeightFt: 28 } }])),
+        ...Object.fromEntries(['108', '112', '115'].map((id) => [id, { overhang: { coveredFromRow: 17, soffitHeightFt: 30 } }])),
+      }, {
         '108': [148, 1], '110': [148, 1], '111': [148, -4], '112': [148, 0], '113': [148, -5],
         '114': [148, -4], '115': [148, 0], '117': [148, 1], '118': [148, -4], '120': [148, 3],
         '122': [148, 0],
       }), {
         '107': 10, '108': 8, '110': 8, '111': 10, '113': 10, '117': 8, '118': 10, '119': 10,
         '121': 10,
+      }), {
+        '108': 16, '110': 15, '112': 15, '115': 15,
       }),
       rowsFromMap: true,
       heightsSourced: false,
@@ -6390,7 +6398,7 @@ const TARGET: StadiumStructure = {
       // thin cable line, not a deck: their sourced rows stand, under an
       // estimated ~54 ft.
       stand: { rows: 44, frontRowHeightFt: 0, rakeDeg: 13, treadFt: 2.8, backHeightFt: 148, backSetbackFt: 17 },
-      sections: withFronts(withBacks({
+      sections: withRakes(withFronts(withBacks({
         ...targetCover([...targetIds(101, 104), '124', '125', '126'], 54),
         '105': { deckFrontFt: 37, overhang: { coveredFromRow: TARGET_COVER['105'], soffitHeightFt: 28 } },
         ...Object.fromEntries(['106', '123'].map((id) => [id, { deckFrontFt: 37, overhang: { coveredFromRow: 26, soffitHeightFt: 28 } }])),
@@ -6400,6 +6408,8 @@ const TARGET: StadiumStructure = {
         '127': [145, 50],
       }), {
         '104': -1, '105': 2, '106': 2, '123': 2, '124': -2, '126': -1,
+      }), {
+        '101': 14, '124': 10, '125': 12,
       }),
       rowsFromMap: true,
       heightsSourced: false,
@@ -6558,9 +6568,11 @@ const TARGET: StadiumStructure = {
       // frame (a lamp bank, 75–128 ft), neither a deck nor a wall: left out,
       // as the light towers are.
       stand: { rows: 16, frontRowHeightFt: 42, rakeDeg: 35, treadFt: 2.8, backHeightFt: 78, backSetbackFt: -6 },
-      sections: withFronts({}, {
+      sections: withRakes(withFronts({}, {
 
         '239': 41, '240': 52,
+      }), {
+        '239': 36,
       }),
       rowsFromMap: true,
       heightsSourced: true,
