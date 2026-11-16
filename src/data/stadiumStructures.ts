@@ -3578,7 +3578,8 @@ const ANGEL_LIDAR = 'USGS 3DEP lidar CA_CaliforniaGaps_B23, flown 2023-11-10, an
  * agree to 2 cm where both have ground), as at Citizens Bank Park: for each
  * section a cut straight back through its stand gives the front row's
  * height and the rake, the edge of any deck over it, and what rises highest
- * behind. Where a deck's edge is more than two rows from the source's
+ * behind, which each measured section takes as its own back. Where a deck's
+ * edge is more than two rows from the source's
  * covered row (or covers three or more it leaves open), the scan's row is
  * used. The scan sees decks from above: a deck's underside is the bottom of
  * its face where seen; where only its front row of seats shows, that row
@@ -3601,17 +3602,19 @@ const ANGEL: StadiumStructure = {
       // shaded in the middle of the summer". Lidar (22 of 35): front row
       // 2 ft (0–3), 14° rake (10–17; an aisle part way back steps up ~1 ft);
       // what rises highest behind is the roof's edge, 123 ft up and 41 ft
-      // back (in five, a lamp bank on it, 140 ft). Where a section runs past
+      // back (32–52 ft, each measured section its own; in five, a lamp bank
+      // on it, 139–141 ft). Where a section runs past
       // 21 rows (the corners), the club level's front, 34–35 ft up, reaches
       // out over its row 22 (25 in 103), so those rows are covered, under an
-      // underside of ~25 ft (that front row less 9 ft). Behind 119 the
-      // roof's edge is 52 ft back (measured).
+      // underside of ~25 ft (that front row less 9 ft).
       stand: { rows: 26, frontRowHeightFt: 2, rakeDeg: 14, backHeightFt: 123, backSetbackFt: 41, deckFrontFt: 34, overhang: { coveredFromRow: 22, soffitHeightFt: 25 } },
-      sections: {
-        ...Object.fromEntries(['102', '113', '124', '131', '132'].map((id) => [id, { backHeightFt: 140, backSetbackFt: 38 }])),
-        '103': { overhang: { coveredFromRow: 25, soffitHeightFt: 27 } },
-        '119': { backHeightFt: 123, backSetbackFt: 52 },
-      },
+      sections: withBacks({ '103': { overhang: { coveredFromRow: 25, soffitHeightFt: 27 } } }, {
+        '113': [139, 41], '103': [123, 43], '102': [139, 38], '117': [123, 47], '123': [123, 40],
+        '127': [123, 33], '131': [141, 38], '130': [123, 38], '124': [140, 38], '132': [141, 34],
+        '114': [123, 47], '122': [123, 48], '121': [123, 48], '119': [123, 52], '118': [123, 47],
+        '116': [123, 48], '115': [124, 47], '108': [122, 34], '107': [123, 34], '109': [123, 32],
+        '104': [123, 36],
+      }),
       rowsFromMap: true,
       heightsSourced: false,
       coverSourced: true,
@@ -3664,13 +3667,10 @@ const ANGEL: StadiumStructure = {
       // Rows A–Z or G–Z; no source says whether they are covered. Lidar (4
       // of 5; 260's place on the seat map cuts the field level's end): front
       // row 9 ft (3 in 256), 16° rake; no deck over any of them, which
-      // settles the cover; behind, 32 ft up and 11 ft back (26–38).
+      // settles the cover; behind, 32 ft up and 11 ft back (26–39 ft up, each
+      // measured section its own).
       stand: { rows: 22, frontRowHeightFt: 9, rakeDeg: 16, backHeightFt: 32, backSetbackFt: 11 },
-      sections: {
-        '259': { backHeightFt: 26, backSetbackFt: 1 },
-        ...Object.fromEntries(['257', '258'].map((id) => [id, { backHeightFt: 38, backSetbackFt: 21 }])),
-        '256': { frontRowHeightFt: 3, backHeightFt: 26, backSetbackFt: 1 },
-      },
+      sections: withBacks({ '256': { frontRowHeightFt: 3 } }, { '259': [27, 1], '258': [37, 22], '256': [26, 1], '257': [39, 21] }),
       rowsFromMap: true,
       heightsSourced: true,
       coverSourced: true,
@@ -3683,13 +3683,21 @@ const ANGEL: StadiumStructure = {
       // row 35 ft (34–35), 23° rake (17–24); the 400s' front, 59–60 ft up,
       // reaches out over row 4–5 (2 in 331), which settles the cover: from
       // row E, under an underside of ~50 ft (that front row less 9 ft). It is
-      // also what rises highest behind: 10 ft in front of the last row, 2–6
-      // ft behind it in the 3-row 349–351 (measured), which end before it.
-      stand: { rows: 8, frontRowHeightFt: 35, rakeDeg: 23, backHeightFt: 60, backSetbackFt: -10, deckFrontFt: 59, overhang: { coveredFromRow: 5, soffitHeightFt: 50 } },
-      sections: {
-        '331': { overhang: { coveredFromRow: 2, soffitHeightFt: 50 } },
-        '349': { backHeightFt: 60, backSetbackFt: 2 }, '350': { backHeightFt: 61, backSetbackFt: 6 }, '351': { backHeightFt: 61, backSetbackFt: 2 },
-      },
+      // also what rises highest behind, 61 ft up: 10 ft in front of the last
+      // row, 2–6 ft behind it in the 3-row 349–351, which end before it;
+      // behind 305 and 306 a lamp bank on the roof, 139–140 ft. Each measured
+      // section takes its own back.
+      stand: { rows: 8, frontRowHeightFt: 35, rakeDeg: 23, backHeightFt: 61, backSetbackFt: -10, deckFrontFt: 59, overhang: { coveredFromRow: 5, soffitHeightFt: 50 } },
+      sections: withBacks({ '331': { overhang: { coveredFromRow: 2, soffitHeightFt: 50 } } }, {
+        '321': [61, -11], '320': [61, -11], '319': [61, -9], '318': [61, -11], '317': [61, -9],
+        '316': [61, -11], '315': [60, -9], '314': [60, -11], '313': [61, -9], '312': [61, -11],
+        '311': [61, -9], '309': [61, -11], '308': [61, -11], '307': [61, -7], '306': [139, 25],
+        '305': [140, 20], '304': [61, -11], '303': [61, -11], '302': [60, -10], '301': [61, -11],
+        '332': [61, -11], '333': [61, -9], '334': [61, -11], '335': [61, -9], '337': [60, -9],
+        '338': [61, -11], '339': [61, -9], '340': [61, -11], '341': [61, -7], '342': [61, -11],
+        '343': [61, -9], '345': [61, -9], '346': [61, -11], '349': [60, 2], '350': [61, 6],
+        '351': [61, 2],
+      }),
       rowsFromMap: true,
       heightsSourced: false,
       coverSourced: true,
@@ -3700,13 +3708,17 @@ const ANGEL: StadiumStructure = {
       // Rows A–J, open ("all seats shaded during most late afternoon games"
       // on the third-base side). Lidar (33 of 36): front row 60 ft (58–62),
       // 32° rake (30–33); behind, the View level rises to its roof, whose
-      // edge is 123 ft up, 4 ft behind the last row (in seven, a lamp bank
-      // on it, 137–141 ft).
+      // edge is 123 ft up, 4 ft behind the last row (2–7 ft, each measured
+      // section its own; in eight, a lamp bank on it, 135–141 ft).
       stand: { rows: 10, frontRowHeightFt: 60, rakeDeg: 32, backHeightFt: 123, backSetbackFt: 4 },
-      sections: {
-        ...Object.fromEntries(['404', '411'].map((id) => [id, { backHeightFt: 137, backSetbackFt: 2 }])),
-        ...Object.fromEntries(['402', '410', '426', '427', '433'].map((id) => [id, { backHeightFt: 141, backSetbackFt: 4 }])),
-      },
+      sections: withBacks({}, {
+        '435': [123, 7], '422': [123, 6], '417': [123, 6], '416': [124, 4], '415': [123, 6],
+        '425': [123, 6], '412': [123, 6], '411': [137, 2], '410': [141, 4], '409': [123, 7],
+        '408': [123, 2], '426': [140, 4], '427': [141, 6], '428': [123, 6], '429': [123, 2],
+        '403': [135, 2], '404': [137, 2], '413': [123, 6], '414': [124, 6], '421': [123, 6],
+        '423': [123, 6], '424': [123, 6], '432': [123, 6], '433': [141, 2], '401': [123, 6],
+        '402': [140, 2],
+      }),
       rowsFromMap: true,
       heightsSourced: true,
       coverSourced: true,
@@ -3719,8 +3731,10 @@ const ANGEL: StadiumStructure = {
       // 80 ft, 32° rake (30–33). The roof's edge, 123 ft up (its top; at 511
       // and 512 a lamp bank on it comes first), is over row A in all four,
       // three rows ahead of the source's, so the rows from A are covered.
-      stand: { rows: 18, frontRowHeightFt: 80, rakeDeg: 32, backHeightFt: 122, backSetbackFt: -44, overhang: { coveredFromRow: 1, soffitHeightFt: 123 } },
+      stand: { rows: 18, frontRowHeightFt: 80, rakeDeg: 32, backHeightFt: 122, backSetbackFt: -45, overhang: { coveredFromRow: 1, soffitHeightFt: 123 } },
+      sections: withBacks({}, { '511': [121, -45] }),
       rowsFromMap: true,
+
       heightsSourced: true,
       coverSourced: true,
       sources: [RYS_ANGEL, ...angelSections('501', '510', '520', '530', '540'), ANGEL_LIDAR],
