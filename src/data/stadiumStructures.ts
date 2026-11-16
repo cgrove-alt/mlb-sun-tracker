@@ -4401,8 +4401,10 @@ const COORS_LIDAR = 'USGS 3DEP lidar CO_DRCOG_2020, flown 2020-05-27 (scripts/me
  * later scan covers Denver), as at Citizens Bank Park: for each section a
  * cut straight back through its stand gives the front row's height and the
  * rake, the edge of any deck over it, and what rises highest behind; each
- * measured section takes its own front row and that back. Where a deck's
- * edge is more than two rows from the source's covered row, the scan's row is used. The
+ * measured section takes its own front row and that back, and its own rake
+ * where the scan sees 9 or more of its rows and the cuts beside it agree.
+ * Where a deck's edge is more than two rows from the source's covered row,
+ * the scan's row is used. The
  * scan sees decks from above: a deck's underside is
  * the bottom of its face where seen; where only its front row of seats shows,
  * that row less 9 ft; never under 9 ft above the floor of the first covered
@@ -4435,7 +4437,7 @@ const COORS: StadiumStructure = {
       // measured section takes its own back (the roof's edge 27–48 ft behind
       // the last row).
       stand: { rows: 38, frontRowHeightFt: 0, rakeDeg: 12, backHeightFt: 128, backSetbackFt: 30, deckFrontFt: 34, overhang: { coveredFromRow: 26, soffitHeightFt: 25 } },
-      sections: withFronts(withBacks({
+      sections: withRakes(withFronts(withBacks({
         '116': cover(31, 27),
         '117': cover(33, 28),
         ...Object.fromEntries(['118', '119'].map((id) => [id, cover(29, 25)])),
@@ -4453,6 +4455,8 @@ const COORS: StadiumStructure = {
         '116': -1, '117': -1, '118': -1, '119': -1, '121': -1, '123': 2, '124': 3, '125': 3,
         '126': 2, '127': 1, '134': 1, '135': 2, '136': 3, '137': 3, '138': 2, '141': -1, '144': -1,
         '145': -1,
+      }), {
+        '122': 13, '139': 13, '141': 13, '144': 11,
       }),
       rowsFromMap: true,
       heightsSourced: false,
@@ -4528,11 +4532,13 @@ const COORS: StadiumStructure = {
       // front row 5 ft (5–8), 18° rake (16–18); behind, 39 ft up and 43 ft
       // back (the scoreboard in 154, 107 ft; each measured section its own).
       stand: { rows: 22, frontRowHeightFt: 5, rakeDeg: 18, backHeightFt: 39, backSetbackFt: 43 },
-      sections: withFronts(withBacks({}, {
+      sections: withRakes(withFronts(withBacks({}, {
         '152': [42, 45], '153': [39, 50], '154': [107, 43], '155': [25, 7], '156': [37, 47],
         '157': [32, 21], '158': [76, 45], '159': [25, 6], '160': [48, 21],
       }), {
         '156': 8, '158': 6, '160': 6,
+      }), {
+        '153': 17, '158': 17, '159': 16, '160': 16,
       }),
       rowsFromMap: true,
       heightsSourced: true,
@@ -4611,7 +4617,7 @@ const COORS: StadiumStructure = {
       // the last row, 19 ft behind the 9-row L329 and L332; each measured
       // section takes its own back.
       stand: { rows: 9, frontRowHeightFt: 67, rakeDeg: 27, backHeightFt: 128, backSetbackFt: 30 },
-      sections: withFronts(withBacks({
+      sections: withRakes(withFronts(withBacks({
         ...coorsCover(['L311', 'L313'], 128),
         L319: cover(16, 128),
         L343: cover(16, 128),
@@ -4624,6 +4630,8 @@ const COORS: StadiumStructure = {
       }), {
         'L346': 68, 'L345': 68, 'L344': 68, 'L343': 68, 'L342': 68, 'L332': 68, 'L330': 68,
         'L329': 68, 'L327': 68, 'L319': 68,
+      }), {
+        'L346': 29, 'L340': 29, 'L332': 29, 'L329': 29,
       }),
       rowsFromMap: true,
       heightsSourced: true,
