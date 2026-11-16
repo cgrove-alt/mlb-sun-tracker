@@ -667,7 +667,8 @@ const DODGERS_LIDAR = 'USGS 3DEP lidar CA_LosAngeles_B23, flown 2023-11-22 to 20
  * (the treads' line at the middle of the first row), the rake, and of the
  * structure behind, the point that rises highest as seen from the middle
  * uncovered row. Values are medians over a tier's sections, with the spread
- * given; sections more than 10% (at least 3 ft) off get their own values.
+ * given; sections whose front row is more than 10% (at least 3 ft) off get
+ * their own, and every measured section takes its own back.
  * Covered rows: where the scan puts a deck's or roof's edge more than two
  * rows from the source's covered row, the scan's edge is used. The underside
  * at an edge is the bottom of its face where the scan sees one, otherwise
@@ -691,14 +692,12 @@ const DODGERS: StadiumStructure = {
       // 2 ft below the field (-2 to 0), 7° rake (6–14). What rises highest
       // behind is the Top Deck's roof, 139 ft up and 148 ft behind; behind
       // home (1DG) the box on that roof, beside the Field level's end (10DG)
-      // the Reserve roof.
+      // the Reserve roof; each measured section takes its own.
       stand: { rows: 8, frontRowHeightFt: -2, rakeDeg: 7, backHeightFt: 139, backSetbackFt: 148 },
-      sections: {
-        '9DG': { rows: 4 },
-        '1DG': { backHeightFt: 155, backSetbackFt: 160 },
-        '10DG': { backHeightFt: 120, backSetbackFt: 157 },
-        '11DG': { backHeightFt: 139, backSetbackFt: 127 },
-      },
+      sections: withBacks({ '9DG': { rows: 4 } }, {
+        '1DG': [155, 160], '10DG': [120, 157], '7DG': [139, 147], '11DG': [139, 127],
+        '2DG': [139, 147], '3DG': [139, 147],
+      }),
       heightsSourced: true,
       coverSourced: true,
       sources: [rysDodgers('dugout-club'), rysDodgers('sections/1DC'), rysDodgers('sections/9DC'), DODGERS_LIDAR],
@@ -707,8 +706,14 @@ const DODGERS: StadiumStructure = {
       label: 'Baseline Club',
       // Rows 1–6 in front of Field sections 26–43, uncovered (sourced).
       // Lidar (14 of 18): front row 1 ft below the field (-2 to -1), 7°
-      // rake; behind, the Reserve roof 120 ft up and 142 ft back.
+      // rake; behind, the Reserve roof 120 ft up and 142 ft back (139–144,
+      // each measured section its own).
       stand: { rows: 6, frontRowHeightFt: -1, rakeDeg: 7, backHeightFt: 120, backSetbackFt: 142 },
+      sections: withBacks({}, {
+        '35BL': [121, 139], '41BL': [120, 144], '36BL': [120, 140], '32BL': [120, 144],
+        '26BL': [120, 139], '33BL': [120, 139], '37BL': [120, 144], '39BL': [120, 144],
+        '43BL': [120, 144],
+      }),
       heightsSourced: true,
       coverSourced: true,
       sources: [rysDodgers('field-level'), rysDodgers('sections/27'), DODGERS_LIDAR],
@@ -726,8 +731,8 @@ const DODGERS: StadiumStructure = {
       // (155 ft), in the corners the Reserve roof (120 ft, the median).
       // Estimated: the Loge's underside ~21 ft (9 ft above row T's floor,
       // a foot under the Loge's measured 22-ft front row; 22 ft over 15FD's
-      // row 22). Sections whose measured back stands more than 10 ft nearer
-      // or farther take their own (86–91 ft behind 15FD, 23FD, 48FD, 50FD).
+      // row 22). Each measured section takes its own back (in 52FD, covered
+      // from row 16, the Reserve roof).
       stand: {
         deckFrontFt: 23,
         rows: 22,
@@ -738,13 +743,22 @@ const DODGERS: StadiumStructure = {
         overhang: { coveredFromRow: 19, soffitHeightFt: 21 },
       },
       sections: withBacks({
-        ...Object.fromEntries(['10FD', '11FD', '12FD', '13FD', '14FD', '16FD', '17FD', '18FD', '19FD', '2FD', '4FD', '5FD', '6FD', '7FD', '8FD', '9FD'].map((id) => [id, { backHeightFt: 139, backSetbackFt: 75 }])),
-        ...Object.fromEntries(['20FD', '21FD', '22FD', '24FD', '25FD', '26FD', '27FD', '28FD', '29FD', '30FD', '31FD', '32FD', '33FD', '34FD', '35FD', '36FD', '37FD', '38FD', '39FD', '40FD', '41FD', '42FD', '47FD'].map((id) => [id, { backHeightFt: 58, backSetbackFt: 11 }])),
-        ...Object.fromEntries(['1FD', '3FD'].map((id) => [id, { backHeightFt: 155, backSetbackFt: 97 }])),
-        '15FD': { backHeightFt: 139, backSetbackFt: 75, overhang: { coveredFromRow: 22, soffitHeightFt: 22 } },
-        '52FD': { rows: 25, overhang: { coveredFromRow: 16, soffitHeightFt: 21 }, backHeightFt: 58, backSetbackFt: 11 },
+        '15FD': { overhang: { coveredFromRow: 22, soffitHeightFt: 22 } },
+        '52FD': { rows: 25, overhang: { coveredFromRow: 16, soffitHeightFt: 21 } },
         '53FD': { rows: 25, overhang: { coveredFromRow: 20, soffitHeightFt: 21 } },
-      }, { '15FD': [139, 86], '23FD': [120, 89], '48FD': [120, 88], '50FD': [120, 91] }),
+      }, {
+        '2FD': [139, 72], '24FD': [58, 9], '22FD': [58, 11], '20FD': [59, 11], '18FD': [139, 75],
+        '46FD': [120, 85], '42FD': [57, 11], '40FD': [59, 12], '36FD': [58, 9], '34FD': [58, 11],
+        '32FD': [58, 11], '30FD': [59, 11], '28FD': [59, 11], '26FD': [59, 12], '16FD': [138, 75],
+        '14FD': [139, 76], '12FD': [139, 76], '19FD': [139, 75], '15FD': [139, 86],
+        '17FD': [139, 75], '23FD': [120, 89], '31FD': [59, 11], '33FD': [59, 11], '35FD': [58, 11],
+        '37FD': [59, 11], '39FD': [59, 11], '7FD': [139, 75], '9FD': [139, 76], '11FD': [139, 76],
+        '13FD': [139, 80], '21FD': [59, 11], '25FD': [58, 11], '27FD': [57, 11], '29FD': [59, 11],
+        '41FD': [58, 11], '50FD': [120, 91], '48FD': [120, 88], '38FD': [58, 9], '10FD': [139, 76],
+        '8FD': [139, 75], '6FD': [139, 75], '4FD': [139, 70], '1FD': [155, 95], '3FD': [155, 99],
+        '5FD': [139, 75], '47FD': [58, 12], '52FD': [120, 80], '49FD': [121, 75], '51FD': [120, 83],
+        '53FD': [120, 83],
+      }),
       heightsSourced: false,
       coverSourced: true,
       sources: [rysDodgers('sections/1'), rysDodgers('sections/15'), rysDodgers('sections/46'), rysDodgers('sections/52'), RYS_DODGERS, DODGERS_LIDAR],
@@ -757,7 +771,8 @@ const DODGERS: StadiumStructure = {
       // over row 8 (6–9), its underside there 48 ft up (47–52; 51 ft where
       // the scan sees its face), so the rows from 8 back are covered; the
       // Club deck under it, from row N, cannot be seen from the air. What
-      // rises highest behind is that edge, 58 ft up.
+      // rises highest behind is that edge, 58 ft up, 35–43 ft in front of
+      // the last row (each measured section its own).
       stand: {
         deckFrontFt: 57,
         rows: 22,
@@ -767,7 +782,22 @@ const DODGERS: StadiumStructure = {
         backSetbackFt: -40,
         overhang: { coveredFromRow: 8, soffitHeightFt: 48 },
       },
-      sections: { '145LG': { backHeightFt: 48, backSetbackFt: -43 } },
+      sections: withBacks({}, {
+        '163LG': [57, -38], '166LG': [58, -37], '105LG': [58, -38], '164LG': [57, -37],
+        '126LG': [58, -42], '144LG': [59, -40], '148LG': [58, -42], '156LG': [58, -42],
+        '160LG': [58, -35], '158LG': [58, -38], '132LG': [59, -38], '138LG': [57, -42],
+        '134LG': [59, -40], '146LG': [58, -38], '142LG': [59, -40], '130LG': [58, -38],
+        '128LG': [58, -42], '162LG': [58, -37], '154LG': [58, -42], '152LG': [58, -42],
+        '122LG': [58, -38], '120LG': [58, -42], '116LG': [58, -42], '114LG': [58, -38],
+        '108LG': [58, -42], '104LG': [58, -42], '102LG': [58, -42], '101LG': [58, -42],
+        '149LG': [58, -42], '155LG': [58, -42], '153LG': [58, -43], '151LG': [59, -42],
+        '115LG': [59, -42], '117LG': [59, -42], '119LG': [59, -42], '121LG': [59, -40],
+        '131LG': [59, -43], '133LG': [59, -42], '135LG': [59, -42], '137LG': [57, -43],
+        '129LG': [59, -43], '127LG': [59, -42], '125LG': [59, -40], '139LG': [57, -43],
+        '141LG': [59, -42], '145LG': [59, -42], '143LG': [59, -43], '147LG': [58, -42],
+        '111LG': [59, -40], '113LG': [59, -40], '165LG': [57, -38], '168LG': [56, -35],
+        '167LG': [58, -37],
+      }),
       heightsSourced: true,
       coverSourced: true,
       sources: [rysDodgers('sections/124'), rysDodgers('sections/139'), rysDodgers('sections/166'), RYS_DODGERS, DODGERS_LIDAR],
@@ -809,6 +839,10 @@ const DODGERS: StadiumStructure = {
         backSetbackFt: -26,
         overhang: { coveredFromRow: 13, soffitHeightFt: 87 },
       },
+      sections: withBacks({}, {
+        '10RS': [97, -29], '11RS': [96, -29], '7RS': [98, -29], '9RS': [98, -27], '5RS': [98, -26],
+        '3RS': [96, -26],
+      }),
       heightsSourced: false,
       coverSourced: true,
       sources: [rysDodgers('sections/1IR'), rysDodgers('sections/6IR'), rysDodgers('sections/11IR'), rysDodgers('reserve-level'), DODGERS_LIDAR],
@@ -821,6 +855,7 @@ const DODGERS: StadiumStructure = {
       // is the Top Deck's front edge, 97 ft up. Estimated: its underside
       // ~86 ft, its front row less the park's measured deck depth (9 ft).
       stand: { rows: 21, frontRowHeightFt: 57, rakeDeg: 27, backHeightFt: 97, backSetbackFt: -23, deckFrontFt: 94, overhang: { coveredFromRow: 12, soffitHeightFt: 86 } },
+      sections: withBacks({}, { '16RS': [97, -22], '15RS': [97, -24] }),
       heightsSourced: false,
       coverSourced: true,
       sources: [rysDodgers('sections/15IR'), rysDodgers('reserve-level'), DODGERS_LIDAR],
@@ -829,12 +864,15 @@ const DODGERS: StadiumStructure = {
       label: 'Lower Reserve',
       // Rows A–V, no cover (sourced). Lidar (20 of 20): front row 57 ft
       // (55–58), 29° rake (25–31); behind, the Reserve roof's front edge
-      // 120 ft up, 7 ft behind the last row (17–22 ft behind 44RS, 48RS and
-      // 56RS, measured).
+      // 120 ft up, 7 ft behind the last row (4–22 ft; each measured section
+      // takes its own).
       stand: { rows: 21, frontRowHeightFt: 57, rakeDeg: 29, backHeightFt: 120, backSetbackFt: 7 },
-      sections: {
-        '44RS': { backHeightFt: 120, backSetbackFt: 21 }, '48RS': { backHeightFt: 120, backSetbackFt: 22 }, '56RS': { backHeightFt: 120, backSetbackFt: 17 },
-      },
+      sections: withBacks({}, {
+        '59RS': [120, 4], '48RS': [120, 22], '51RS': [120, 11], '40RS': [120, 14], '36RS': [120, 9],
+        '28RS': [120, 11], '23RS': [120, 4], '27RS': [121, 7], '44RS': [120, 21], '52RS': [120, 12],
+        '56RS': [120, 17], '43RS': [120, 4], '39RS': [120, 4], '35RS': [120, 6], '31RS': [120, 4],
+        '60RS': [120, 9],
+      }),
       heightsSourced: true,
       coverSourced: true,
       sources: [rysDodgers('sections/23LR'), rysDodgers('sections/24LR'), rysDodgers('sections/60LR'), DODGERS_LIDAR],
@@ -879,11 +917,14 @@ const DODGERS: StadiumStructure = {
         backSetbackFt: -27,
         overhang: { coveredFromRow: 14, soffitHeightFt: 139 },
       },
-      sections: {
-        '13TD': { rows: 17, backHeightFt: 139, backSetbackFt: -13, overhang: { coveredFromRow: 12, soffitHeightFt: 139 } },
-        '1TD': { backHeightFt: 154, backSetbackFt: -12, overhang: { coveredFromRow: 18, soffitHeightFt: 138 } },
-        '3TD': { backHeightFt: 155, backSetbackFt: 9, overhang: { coveredFromRow: 17, soffitHeightFt: 136 } },
-      },
+      sections: withBacks({
+        '13TD': { rows: 17, overhang: { coveredFromRow: 12, soffitHeightFt: 139 } },
+        '1TD': { overhang: { coveredFromRow: 18, soffitHeightFt: 138 } },
+        '3TD': { overhang: { coveredFromRow: 17, soffitHeightFt: 136 } },
+      }, {
+        '9TD': [139, -29], '7TD': [139, -29], '3TD': [155, 9], '1TD': [154, -12], '2TD': [139, -29],
+        '13TD': [139, -13], '4TD': [139, -29], '12TD': [139, -29], '10TD': [139, -29],
+      }),
       heightsSourced: false,
       coverSourced: true,
       sources: [rysDodgers('sections/1TD'), rysDodgers('sections/13TD'), rysDodgers('top-deck'), DODGERS_LIDAR],
@@ -893,22 +934,23 @@ const DODGERS: StadiumStructure = {
       // Rows A–X (22), covered from row T (19th) by the pavilion roof
       // (sourced; the lidar puts its front edge at row 18). Lidar (15 of
       // 16): front row 8 ft over the outfield wall (8–9), 17° rake; the
-      // roof's front edge is 42 ft up, and behind 307–311 the video boards
-      // rise to 85–109 ft. The scan sees nothing below 39 ft at the roof's
-      // edge (39–41): a thin roof, underside taken as 39 ft.
+      // roof's front edge is 42 ft up, 12 ft in front of the last row, and
+      // behind 307–311 the video boards rise to 85–109 ft; each measured
+      // section takes its own. The scan sees nothing below 39 ft at the
+      // roof's edge (39–41): a thin roof, underside taken as 39 ft.
       stand: {
         rows: 22,
         frontRowHeightFt: 8,
         rakeDeg: 17,
         backHeightFt: 42,
-        backSetbackFt: -10,
+        backSetbackFt: -12,
         overhang: { coveredFromRow: 19, soffitHeightFt: 39 },
       },
-      sections: {
-        ...Object.fromEntries(['308PR', '310PR'].map((id) => [id, { backHeightFt: 89, backSetbackFt: 11 }])),
-        ...Object.fromEntries(['307PL', '311PL'].map((id) => [id, { backHeightFt: 85, backSetbackFt: 11 }])),
-        '309PL': { backHeightFt: 109, backSetbackFt: 12 },
-      },
+      sections: withBacks({}, {
+        '308PR': [89, 9], '310PR': [89, 11], '302PR': [41, -10], '316PR': [40, -12],
+        '305PL': [40, -12], '303PL': [40, -10], '313PL': [40, -12], '311PL': [85, 11],
+        '309PL': [109, 12], '315PL': [40, -12], '307PL': [85, 11],
+      }),
       heightsSourced: false,
       coverSourced: true,
       sources: [rysDodgers('sections/301'), rysDodgers('sections/302'), rysDodgers('sections/315'), rysDodgers('pavilion-seats'), DODGERS_LIDAR],
