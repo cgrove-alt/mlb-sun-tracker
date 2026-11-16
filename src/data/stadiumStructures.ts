@@ -1502,9 +1502,9 @@ const CITI_LIDAR = 'USGS 3DEP lidar NY_NewYorkCity, flown 2014-03-23 to 2014-04-
  * scan, about 6 points per square metre), as at Dodger Stadium: for each
  * section a cut straight back through its rows gives the front row's height,
  * the rake and the structure that rises highest behind as seen from the
- * middle uncovered row; tier values are medians, a section whose front row
- * is more than 10% (at least 3 ft) off gets its own, and every measured
- * section takes its own back. The decks step back in a staircase, each
+ * middle uncovered row; tier values are medians, and every measured section
+ * takes its own front row and back (537's cut crosses the end of its stand,
+ * so it keeps the tier's front). The decks step back in a staircase, each
  * upper deck's front over the rows of the one below; the light towers above
  * the roof are not counted as walls. Covered rows: where the scan puts a
  * deck's edge more than two rows from the source's row, the scan's edge is
@@ -1527,12 +1527,14 @@ const CITI: StadiumStructure = {
       // Promenade roof, 129 ft up and 107 ft back (103–119; each measured
       // section takes its own).
       stand: { rows: 12, frontRowHeightFt: 0, rakeDeg: 12, backHeightFt: 129, backSetbackFt: 107 },
-      sections: withBacks({}, {
+      sections: withFronts(withBacks({}, {
         '11': [129, 103], 'A': [129, 119], '12': [129, 109], '4': [129, 106], '13': [129, 106],
         'C': [129, 109], 'D': [129, 109], '15': [129, 109], '6': [129, 109], '5': [129, 109],
         'E': [129, 109], '16': [128, 109], '6A': [129, 109], '7': [129, 106], 'F': [129, 106],
         '17': [129, 106], '8': [129, 109], '9': [128, 106], '10': [129, 104], '19': [129, 104],
         'H': [129, 106], 'AA': [129, 116], 'HH': [129, 104],
+      }), {
+        '11': 2, '4': 1, '13': 1, '16': 1, 'HH': 1,
       }),
       heightsSourced: true,
       coverSourced: true,
@@ -1574,7 +1576,7 @@ const CITI: StadiumStructure = {
         backSetbackFt: -18,
         overhang: { coveredFromRow: 21, soffitHeightFt: 37 },
       },
-      sections: withBacks({
+      sections: withFronts(withBacks({
         '106': { overhang: { coveredFromRow: 15, soffitHeightFt: 37 } },
         ...Object.fromEntries(['114', '115', '119', '121'].map((id) => [id, { overhang: { coveredFromRow: 14, soffitHeightFt: 20 } }])),
         '116': { overhang: { coveredFromRow: 13, soffitHeightFt: 20 } },
@@ -1588,6 +1590,8 @@ const CITI: StadiumStructure = {
         '106': [69, -41], '114': [69, -22], '115': [69, -20], '116': [129, 31], '117': [128, 34],
         '118': [129, 99], '119': [128, 34], '120': [129, 34], '121': [129, 34], '128': [69, -18],
         '130': [69, -15], '132': [69, -28],
+      }), {
+        '106': 7, '116': 5, '132': 6,
       }),
       heightsSourced: false,
       coverSourced: true,
@@ -1610,7 +1614,7 @@ const CITI: StadiumStructure = {
         backHeightFt: 34,
         overhang: { coveredFromRow: 7, soffitHeightFt: 26 },
       },
-      sections: { '135': { backHeightFt: 69, backSetbackFt: -4 } },
+      sections: { '135': { frontRowHeightFt: 9, backHeightFt: 69, backSetbackFt: -4 } },
       heightsSourced: false,
       coverSourced: true,
       sources: [rysCiti('sections/134'), rysCiti('sections/137'), RYS_CITI],
@@ -1620,11 +1624,13 @@ const CITI: StadiumStructure = {
       // 140 has rows 1–20, 143 rows 1–3, uncovered (sourced). Lidar (3 of
       // 4): front row 9 ft (7–25; 141 sits 25 ft up), 18° rake (16–21).
       stand: { rows: 20, frontRowHeightFt: 9, rakeDeg: 18, backHeightFt: 45, backSetbackFt: 12 },
-      sections: {
+      sections: withFronts({
         '140': { backHeightFt: 27, backSetbackFt: 21 },
-        '141': { frontRowHeightFt: 25, backHeightFt: 64, backSetbackFt: 7 },
+        '141': { backHeightFt: 64, backSetbackFt: 7 },
         '143': { rows: 3 },
-      },
+      }, {
+        '141': 25, '142': 7,
+      }),
       heightsSourced: true,
       coverSourced: true,
       sources: [rysCiti('sections/140'), rysCiti('sections/143'), CITI_LIDAR],
@@ -1638,15 +1644,17 @@ const CITI: StadiumStructure = {
       // behind is the 400 level's front, 69 ft up, 2–17 ft behind the last
       // row (each measured section its own; 222 too, from its two open rows).
       stand: { rows: 6, frontRowHeightFt: 25, rakeDeg: 18, backHeightFt: 69, backSetbackFt: 11 },
-      sections: withBacks({
-        ...Object.fromEntries(['212', '225', '226'].map((id) => [id, { frontRowHeightFt: 29 }])),
-        ...Object.fromEntries(['219', '220', '221'].map((id) => [id, { frontRowHeightFt: 34 }])),
+      sections: withFronts(withBacks({
+
         '222': { overhang: { coveredFromRow: 3, soffitHeightFt: 36 } },
       }, {
         '229': [69, 14], '228': [69, 14], '227': [69, 9], '226': [69, 4], '225': [69, 4],
         '219': [69, 2], '220': [69, 2], '221': [69, 4], '216': [69, 12], '217': [69, 17],
         '218': [69, 14], '215': [69, 7], '208': [69, 2], '209': [69, 16], '210': [69, 16],
         '211': [69, 16], '212': [69, 6],
+      }), {
+        '226': 29, '225': 29, '224': 26, '219': 35, '220': 34, '221': 34, '222': 24, '215': 26,
+        '214': 26, '208': 28, '212': 29,
       }),
       heightsSourced: true,
       coverSourced: true,
@@ -1673,15 +1681,17 @@ const CITI: StadiumStructure = {
         backSetbackFt: -23,
         overhang: { coveredFromRow: 5, soffitHeightFt: 60 },
       },
-      sections: withBacks({
+      sections: withFronts(withBacks({
         '312': { rows: 10, overhang: { coveredFromRow: 2, soffitHeightFt: 58 } },
         '314': { overhang: { coveredFromRow: 2, soffitHeightFt: 58 } },
         '316': { rows: 6, backSetbackFt: -7 },
         '320': { rows: 6, backSetbackFt: -7 },
         '326': { rows: 10, backSetbackFt: -18 },
         '336': { overhang: { coveredFromRow: 6, soffitHeightFt: 61 } },
-        '338': { frontRowHeightFt: 41 },
-      }, { '302': [69, -26], '314': [69, -24], '312': [69, -22], '338': [70, -19] }),
+
+      }, { '302': [69, -26], '314': [69, -24], '312': [69, -22], '338': [70, -19] }), {
+        '338': 41,
+      }),
       heightsSourced: false,
       coverSourced: true,
       sources: [rysCiti('sections/306'), rysCiti('sections/312'), rysCiti('sections/316'), rysCiti('sections/326'), rysCiti('sections/333'), rysCiti('sections/336'), RYS_CITI, CITI_LIDAR],
@@ -1693,12 +1703,15 @@ const CITI: StadiumStructure = {
       // behind is the Promenade roof, 129 ft up and 30 ft back (25–45 ft;
       // each measured section takes its own).
       stand: { rows: 8, frontRowHeightFt: 69, rakeDeg: 26, backHeightFt: 129, backSetbackFt: 30 },
-      sections: withBacks({ '415': { rows: 5 }, '425': { rows: 5 } }, {
+      sections: withFronts(withBacks({ '415': { rows: 5 }, '425': { rows: 5 } }, {
         '437': [116, 43], '436': [127, 43], '434': [129, 43], '432': [129, 27], '431': [127, 30],
         '430': [129, 29], '426': [129, 32], '425': [129, 45], '424': [129, 35], '421': [129, 33],
         '420': [129, 33], '418': [128, 30], '417': [129, 29], '416': [129, 29], '415': [129, 39],
         '403': [129, 29], '404': [127, 25], '405': [129, 27], '406': [129, 27], '407': [129, 27],
         '408': [129, 34], '409': [128, 35], '410': [129, 34], '411': [128, 35], '412': [129, 35],
+      }), {
+        '436': 68, '434': 68, '424': 68, '420': 68, '418': 68, '408': 68, '409': 68, '410': 68,
+        '411': 68, '412': 68,
       }),
       heightsSourced: true,
       coverSourced: true,
@@ -1712,7 +1725,11 @@ const CITI: StadiumStructure = {
       // the scan shows nothing below 128 ft there: a thin roof, underside
       // taken as 128 ft. Behind 534, 535 and 537, where the scan sees no
       // edge over the rows, what rises highest stands 12–37 ft behind the
-      // last row. Each measured section takes its own back.
+      // last row. Each measured section takes its own front row and back,
+      // but for 537's front: its cut crosses the end of the stand at an
+      // angle (a 17° rake, against 23–30°), so its run starts lower than
+      // its first row.
+
       stand: {
         rows: 17,
         frontRowHeightFt: 85,
@@ -1721,7 +1738,7 @@ const CITI: StadiumStructure = {
         backSetbackFt: -16,
         overhang: { coveredFromRow: 11, soffitHeightFt: 128 },
       },
-      sections: withBacks({ '503': { overhang: { coveredFromRow: 8, soffitHeightFt: 128 } } }, {
+      sections: withFronts(withBacks({ '503': { overhang: { coveredFromRow: 8, soffitHeightFt: 128 } } }, {
         '537': [127, 22], '535': [129, 37], '534': [129, 12], '533': [129, -15], '532': [129, -13],
         '531': [129, -18], '530': [129, -20], '529': [129, -20], '527': [128, -16],
         '526': [129, -15], '524': [128, -16], '523': [128, -10], '522': [128, -13],
@@ -1730,6 +1747,10 @@ const CITI: StadiumStructure = {
         '502': [128, -16], '503': [129, -20], '504': [127, -18], '505': [129, -20],
         '506': [129, -20], '507': [129, -20], '508': [128, -15], '509': [128, -18],
         '510': [129, -18], '511': [129, -13],
+      }), {
+        '535': 83, '534': 84, '533': 86, '531': 86, '530': 86, '529': 87, '524': 86,
+        '523': 84, '522': 82, '521': 84, '519': 84, '515': 86, '514': 86, '503': 87, '505': 87,
+        '506': 86, '507': 86, '508': 86, '509': 87, '510': 86, '511': 84, '513': 86,
       }),
       heightsSourced: false,
       coverSourced: true,
