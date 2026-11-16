@@ -4717,7 +4717,10 @@ const KAUFFMAN_LIDAR = 'USGS 3DEP lidar MO_FEMANRCS_2020, flown 2020-04-18 (scri
  * stands), as at Citizens Bank Park: for each section a cut straight back
  * through its stand gives the front row's height and the rake, the edge of
  * any deck over it, and what rises highest behind; each measured section
- * takes its own front row and that back. Where a deck's edge is more than
+ * takes its own front row and that back, and its own rake where the scan
+ * sees 9 or more of its rows and the cuts beside it agree (144's cut runs
+ * down an aisle's steps, so it takes the front row of the cuts beside it).
+ * Where a deck's edge is more than
  * two rows from the source's covered row (or covers three or more
 
  * it leaves open), the scan's row is used. The scan sees decks from above: a
@@ -4747,7 +4750,7 @@ const KAUFFMAN: StadiumStructure = {
       // 86–101 ft back; behind 108–112 and 142–147 the upper deck's front,
       // 11–34 ft back.
       stand: { rows: 24, frontRowHeightFt: 3, rakeDeg: 14, backHeightFt: 157, backSetbackFt: 66 },
-      sections: withFronts(withBacks({}, {
+      sections: withRakes(withFronts(withBacks({}, {
         '108': [61, 32],
  '110': [60, 17], '113': [141, 91], '114': [157, 60], '115': [161, 66],
         '116': [161, 63], '117': [160, 65], '118': [161, 68], '119': [157, 71], '120': [160, 65],
@@ -4759,8 +4762,10 @@ const KAUFFMAN: StadiumStructure = {
         '146': [60, 32], '147': [60, 34], '112': [60, 14],
       }), {
         '108': 4, '113': 2, '122': 0, '123': 0, '124': 0, '125': 0, '126': 0, '127': 0, '129': -1,
-        '130': 0, '131': -1, '132': -1, '133': 0, '134': 0, '138': 2, '140': 2, '141': 2, '144': -1,
+        '130': 0, '131': -1, '132': -1, '133': 0, '134': 0, '138': 2, '140': 2, '141': 2,
         '145': 2, '146': 2, '147': 4,
+      }), {
+        '114': 13, '115': 13, '138': 13, '142': 13, '143': 13, '146': 13,
       }),
       rowsFromMap: true,
       heightsSourced: true,
@@ -4837,7 +4842,7 @@ const KAUFFMAN: StadiumStructure = {
       // 31 ft; the others the tool no longer finds). 250–252 are open, under
       // nothing: behind them a roof 33 ft up, right behind the last row.
       stand: { rows: 20, frontRowHeightFt: 17, rakeDeg: 16, backHeightFt: 33, backSetbackFt: 1, deckFrontFt: 60 },
-      sections: withFronts({
+      sections: withRakes(withFronts({
         '206': { backHeightFt: 60, backSetbackFt: -23, overhang: { coveredFromRow: 11, soffitHeightFt: 51 } },
         '207': { backHeightFt: 61, backSetbackFt: -26, overhang: { coveredFromRow: 9, soffitHeightFt: 51 } },
         '208': { backHeightFt: 62, backSetbackFt: -26, overhang: { coveredFromRow: 8, soffitHeightFt: 51 } },
@@ -4846,6 +4851,8 @@ const KAUFFMAN: StadiumStructure = {
         '249': { backHeightFt: 60, backSetbackFt: -18, overhang: { coveredFromRow: 14, soffitHeightFt: 51 } },
       }, {
         '248': 16, '250': 18,
+      }), {
+        '248': 19, '250': 13,
       }),
       rowsFromMap: true,
       heightsSourced: false,
@@ -4883,7 +4890,7 @@ const KAUFFMAN: StadiumStructure = {
       // under its face's bottom or lowest structure there, 149–154 ft (153
       // in 405, where none is seen).
       stand: { rows: 22, frontRowHeightFt: 60, rakeDeg: 32, backHeightFt: 156, backSetbackFt: 12 },
-      sections: withFronts(withBacks({
+      sections: withRakes(withFronts(withBacks({
         '403': { overhang: { coveredFromRow: 16, soffitHeightFt: 154 } },
         '437': { overhang: { coveredFromRow: 16, soffitHeightFt: 152 } },
         '429': { overhang: { coveredFromRow: 20, soffitHeightFt: 153 } },
@@ -4902,6 +4909,9 @@ const KAUFFMAN: StadiumStructure = {
         '412': [161, 24], '415': [150, 4],
       }), {
         '428': 61, '405': 59, '415': 59,
+      }), {
+        '403': 31, '411': 33, '413': 33, '416': 33, '428': 31, '431': 33, '436': 31, '437': 31,
+        '410': 31,
       }),
 
       rowsFromMap: true,
