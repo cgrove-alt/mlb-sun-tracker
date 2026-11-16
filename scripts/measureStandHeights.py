@@ -907,7 +907,9 @@ def measure_section(P, sec, band):
     ft = lambda v: None if v is None else v / FT
     return {
         'id': sec['id'], 'tier': sec['tier'], 'found': True, 'rows': rows, 'anchor': [ax, ay, run['at'](0)],
-        'frontFt': front / FT, 'rakeDeg': math.degrees(math.atan(slope)), 'visibleDepthFt': depth / FT,
+        # The profile's front row: where its first rows lie in front of the
+        # run (`rowsInFront`), the run's front carried down the slope by them.
+        'frontFt': (front - ahead * rise) / FT, 'rakeDeg': math.degrees(math.atan(slope)), 'visibleDepthFt': depth / FT,
         'lipRow': lip_row, 'modelCoveredFrom': model_cover, 'coverAgrees': cover_agrees,
         'soffitFt': ft(soffit) if cover_agrees else None, 'lipSoffitFt': ft(soffit), 'lipLowFt': ft(lip_low),
         'aboveFrontFt': ft(above_front),
@@ -1046,11 +1048,11 @@ def draw(park, P, data, results):
 
 def suggest(park):
     """Print each tier's measured values (feet, rounded) and, in the form
-    used in stadiumStructures.ts, the sections whose front row or soffit
-    differs from them by more than 10% (at least 3 ft), and every section
-    whose own back (height, setback) differs from the tier's at all, as a
-    `withBacks` map. Soffits only where the scan saw the deck's face and the
-    deck's edge agrees with the sourced covered row."""
+    used in stadiumStructures.ts, the sections whose soffit differs from them
+    by more than 10% (at least 3 ft), and every section whose own front row
+    or back (height, setback) differs from the tier's at all, as `withFronts`
+    and `withBacks` maps. Soffits only where the scan saw the deck's face and
+    the deck's edge agrees with the sourced covered row."""
     d = json.load(open(f'tmp/lidar/{park}-measured.json'))
     r0 = lambda v: None if v is None else int(round(v))
     differs = lambda v, ref: v is not None and ref is not None and abs(v - ref) > max(0.1 * abs(ref), 3)
@@ -1077,13 +1079,10 @@ def suggest(park):
                 if r is not None:
                     group.append(r)
             return out
-        fronts = clusters('frontFt', front)
         soffits = clusters('soffitFt', soffit) if soffit is not None else {}
         pooled = {}
         for r in rs:
             o = []
-            if r['id'] in fronts:
-                o.append(('frontRowHeightFt', r0(med([g['frontFt'] for g in fronts[r['id']]]))))
             if r['id'] in soffits:
                 o.append(('soffitHeightFt', r0(med([g['soffitFt'] for g in soffits[r['id']]]))))
             if o:
@@ -1091,20 +1090,25 @@ def suggest(park):
         for o, ids in pooled.items():
             vals = ', '.join(f'{k}: {v}' for k, v in o)
             print(f"   ...Object.fromEntries({json.dumps(sorted(ids))}.map((id) => [id, {{ {vals} }}])),".replace('"', "'"))
-        # Every section whose own back differs from the tier's takes its own,
-        # unpooled: a back a few feet nearer or higher moves rows in or out of
-        # its shade, so a tier's or a group's value is not close enough.
-        own = {r['id']: (r0(r['backFt']), r0(r['backSetbackFt'])) for r in rs if r['backFt'] is not None and back is not None}
-        own = {i: v for i, v in own.items() if v != (r0(back), r0(setback))}
-        if own:
-            print('   backs (withBacks):')
+        # Every section whose own front row or back differs from the tier's
+        # takes its own, unpooled: a foot higher or a few feet nearer moves
+        # rows in or out of shade, so a tier's or a group's value is not close
+        # enough.
+        def paste(title, items):
+            if not items:
+                return
+            print(f'   {title}:')
             line = ''
-            for item in (f"'{i}': [{h}, {s}]," for i, (h, s) in own.items()):
+            for item in items:
                 if line and len(line) + len(item) > 100:
                     print(line)
                     line = ''
                 line = f'{line} {item}' if line else f'        {item}'
             print(line)
+        paste('fronts (withFronts)', [f"'{r['id']}': {r0(r['frontFt'])}," for r in rs
+                                      if r['frontFt'] is not None and front is not None and r0(r['frontFt']) != r0(front)])
+        own = {r['id']: (r0(r['backFt']), r0(r['backSetbackFt'])) for r in rs if r['backFt'] is not None and back is not None}
+        paste('backs (withBacks)', [f"'{i}': [{h}, {s}]," for i, (h, s) in own.items() if (h, s) != (r0(back), r0(setback))])
 
 
 def cover_report(park):
