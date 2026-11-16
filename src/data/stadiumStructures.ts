@@ -5058,7 +5058,8 @@ const COMERICA_LIDAR = 'USGS 3DEP lidar MI_WayneCo_2017, flown 2017-04-22 to 201
  * no later scan covers the park), as at Citizens Bank Park: for each
  * section a cut straight back through its stand gives the front row's
  * height and the rake, the edge of any deck over it, and what rises highest
- * behind. Where a deck's edge is more than two rows from the source's
+ * behind, which each measured section takes as its own back. Where a deck's
+ * edge is more than two rows from the source's
  * covered row (or covers three or more it leaves open), the scan's row is
  * used. The scan sees decks from above: a deck's underside is the bottom of
  * its face where seen; where only its front row of seats shows, that row
@@ -5082,16 +5083,21 @@ const COMERICA: StadiumStructure = {
       // 26 (32–33 of the full 35-row sections), so the rows from there back
       // are covered, under an underside of ~52 ft (that front row less 9 ft);
       // nearer right field (116–119) the mezzanine's front, 49–50 ft, under
-      // ~40 ft. Over 120 and 124 the scan sees every row open.
+      // ~40 ft. Over 120 and 124 the scan sees every row open. Each measured
+      // section takes its own back (over 117 the mezzanine's front over row
+      // 33; behind 118 the roof).
       stand: { rows: 35, frontRowHeightFt: 1, ...COMERICA_LOWER, backHeightFt: 62, backSetbackFt: -7, deckFrontFt: 61, overhang: { coveredFromRow: 26, soffitHeightFt: 52 } },
-      sections: {
-        '116': { frontRowHeightFt: 5, backHeightFt: 51, backSetbackFt: -25, deckFrontFt: 49, overhang: { coveredFromRow: 26, soffitHeightFt: 40 } },
-        '117': { backHeightFt: 50, backSetbackFt: -7, deckFrontFt: 49, overhang: { coveredFromRow: 33, soffitHeightFt: 40 } }, // its own back: the mezzanine's front over row 33
-        '118': { backHeightFt: 118, backSetbackFt: 48, deckFrontFt: 60, overhang: { coveredFromRow: 33, soffitHeightFt: 51 } },
-        '119': { backHeightFt: 51, backSetbackFt: -25, deckFrontFt: 50, overhang: { coveredFromRow: 26, soffitHeightFt: 41 } },
-        '120': { noCover: true, backHeightFt: 63, backSetbackFt: 9 },
-        '124': { noCover: true, backHeightFt: 63, backSetbackFt: 4 },
-      },
+      sections: withBacks({
+        '116': { frontRowHeightFt: 5, deckFrontFt: 49, overhang: { coveredFromRow: 26, soffitHeightFt: 40 } },
+        '117': { deckFrontFt: 49, overhang: { coveredFromRow: 33, soffitHeightFt: 40 } },
+        '118': { deckFrontFt: 60, overhang: { coveredFromRow: 33, soffitHeightFt: 51 } },
+        '119': { deckFrontFt: 50, overhang: { coveredFromRow: 26, soffitHeightFt: 41 } },
+        '120': { noCover: true },
+        '124': { noCover: true },
+      }, {
+        '122': [62, -12], '121': [62, -2], '123': [62, -12], '124': [63, 4], '117': [50, -7],
+        '118': [118, 48], '116': [51, -29], '119': [51, -25], '120': [63, 9],
+      }),
       rowsFromMap: true,
       heightsSourced: false,
       coverSourced: true,
@@ -5122,9 +5128,13 @@ const COMERICA: StadiumStructure = {
       // Rows HHH–KKK and 15–35 behind the boxes; rows 31–34 and up "shaded
       // during most late afternoon games". Lidar (6 of 6): front row at field
       // level (-1 ft), 10° rake; no deck over them: what rises highest behind
-      // is the upper deck's front, 62 ft up and 15 ft behind the last row.
+      // is the upper deck's front, 62 ft up and 15 ft behind the last row
+      // (1–16 ft, each measured section its own).
       stand: { rows: 25, frontRowHeightFt: -1, ...COMERICA_LOWER, backHeightFt: 62, backSetbackFt: 15 },
-      sections: { '127': { backHeightFt: 61, backSetbackFt: 1 } },
+      sections: withBacks({}, {
+        '130': [62, 16], '129': [63, 16], '128': [63, 14], '125': [63, 16], '126': [62, 14],
+        '127': [61, 1],
+      }),
       rowsFromMap: true,
       heightsSourced: true,
       coverSourced: true,
@@ -5137,12 +5147,15 @@ const COMERICA: StadiumStructure = {
       // deck's front, 61 ft up, reaches out over their row 26 (32–33 of the
       // full 35-row sections), so the rows from there back are covered, under
       // an underside of ~52 ft (that front row less 9 ft). It is also what
-      // rises highest behind.
+      // rises highest behind (each measured section its own).
       stand: { rows: 35, frontRowHeightFt: 2, ...COMERICA_LOWER, backHeightFt: 62, backSetbackFt: -9, deckFrontFt: 61, overhang: { coveredFromRow: 26, soffitHeightFt: 52 } },
-      sections: {
+      sections: withBacks({
         ...Object.fromEntries(['137', '139'].map((id) => [id, { frontRowHeightFt: -1, overhang: { coveredFromRow: 33, soffitHeightFt: id === '137' ? 53 : 52 } }])),
         ...Object.fromEntries(['136', '138'].map((id) => [id, { overhang: { coveredFromRow: 32, soffitHeightFt: 53 } }])),
-      },
+      }, {
+        '139': [62, -6], '138': [63, -9], '137': [62, -6], '134': [63, -12], '133': [62, -14],
+        '132': [62, -12], '131': [61, -9], '135': [63, -11],
+      }),
       rowsFromMap: true,
       heightsSourced: false,
       coverSourced: true,
@@ -5174,15 +5187,14 @@ const COMERICA: StadiumStructure = {
       // at the top of the pavilion are over 144's position 21 and the last
       // three rows of 147 and 149, ~34 ft up (42 over 149).
       stand: { rows: 33, frontRowHeightFt: 6, rakeDeg: 11, treadFt: 3, backHeightFt: 44, backSetbackFt: 2 },
-      sections: {
-        '144': { backHeightFt: 62, backSetbackFt: -34, overhang: { coveredFromRow: 21, soffitHeightFt: 34 } },
+      sections: withBacks({
+        '144': { overhang: { coveredFromRow: 21, soffitHeightFt: 34 } },
         '147': { overhang: { coveredFromRow: 27, soffitHeightFt: 34 } },
-        '148': { backHeightFt: 123, backSetbackFt: 0 },
-        '149': { backHeightFt: 173, backSetbackFt: -9, overhang: { coveredFromRow: 29, soffitHeightFt: 42 } },
-        ...Object.fromEntries(['150', '151'].map((id) => [id, { backHeightFt: 26, backSetbackFt: 5 }])),
-        '145': { backHeightFt: 43, backSetbackFt: 42 },
-        '146': { backHeightFt: 43, backSetbackFt: 63 },
-      },
+        '149': { overhang: { coveredFromRow: 29, soffitHeightFt: 42 } },
+      }, {
+        '144': [62, -34], '147': [46, -3], '148': [123, 0], '150': [26, 5], '151': [26, 4],
+        '149': [173, -9], '146': [43, 63], '145': [43, 42],
+      }),
       rowsFromMap: true,
       heightsSourced: false,
       coverSourced: true,
@@ -5259,12 +5271,9 @@ const COMERICA: StadiumStructure = {
       // source's covered rows stay, under it. Behind, 72 ft up far back
       // (86–103 in 210 and 216).
       stand: { rows: 28, frontRowHeightFt: 50, rakeDeg: 24, treadFt: 2.8, backHeightFt: 72, backSetbackFt: 129 },
-      sections: {
-        ...comericaCover(comericaIds(210, 219), 103),
-        '216': { backHeightFt: 86, backSetbackFt: 16, ...comericaCover(['216'], 103)['216'] },
-        ...Object.fromEntries(['214', '215'].map((id) => [id, { backHeightFt: 65, backSetbackFt: 157, ...comericaCover([id], 103)[id] }])),
-        '210': { backHeightFt: 103, backSetbackFt: 12 },
-      },
+      sections: withBacks(comericaCover(comericaIds(210, 219), 103), {
+        '214': [65, 158], '216': [86, 16], '215': [65, 157], '210': [103, 12],
+      }),
       rowsFromMap: true,
       heightsSourced: false,
       coverSourced: true,
@@ -5277,13 +5286,20 @@ const COMERICA: StadiumStructure = {
       // (its top), is over the source's row in 18 of 21 (row 9 in 341 and 345,
       // 16 in 343, which take theirs). It is also what rises highest behind.
       // The scan sees nothing under the roof, so its top stands in for its
-      // underside and the tier's heights stay estimated.
+      // underside and the tier's heights stay estimated. Each measured
+      // section takes its own back.
       stand: { rows: 26, frontRowHeightFt: 62, rakeDeg: 27, treadFt: 2.65, backHeightFt: 118, backSetbackFt: -12, overhang: { coveredFromRow: 21, soffitHeightFt: 118 } },
-      sections: {
+      sections: withBacks({
+
         ...comericaCover(comericaIds(321, 345), 118),
         ...Object.fromEntries(['341', '345'].map((id) => [id, { overhang: { coveredFromRow: 15, soffitHeightFt: 118 } }])),
         '343': { overhang: { coveredFromRow: 22, soffitHeightFt: 118 } },
-      },
+      }, {
+        '333': [118, -7], '336': [118, -14], '331': [118, -14], '330': [118, -14], '329': [118, -14],
+        '328': [118, -14], '326': [118, -14], '322': [118, -14], '345': [118, -7], '343': [118, -5],
+        '339': [118, -11], '342': [118, -11], '341': [118, -9],
+      }),
+
       rowsFromMap: true,
       heightsSourced: false,
       coverSourced: true,
