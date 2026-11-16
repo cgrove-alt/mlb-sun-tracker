@@ -1097,7 +1097,14 @@ def suggest(park):
         own = {r['id']: (r0(r['backFt']), r0(r['backSetbackFt'])) for r in rs if r['backFt'] is not None and back is not None}
         own = {i: v for i, v in own.items() if v != (r0(back), r0(setback))}
         if own:
-            print('   backs (withBacks): { ' + ', '.join(f"'{i}': [{h}, {s}]" for i, (h, s) in own.items()) + ' }')
+            print('   backs (withBacks):')
+            line = ''
+            for item in (f"'{i}': [{h}, {s}]," for i, (h, s) in own.items()):
+                if line and len(line) + len(item) > 100:
+                    print(line)
+                    line = ''
+                line = f'{line} {item}' if line else f'        {item}'
+            print(line)
 
 
 def cover_report(park):
