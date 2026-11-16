@@ -69,6 +69,21 @@ function withBacks(
   return out;
 }
 
+/**
+ * A tier's section overrides with each listed section's own measured front
+ * row (lidar, feet above the field) merged in, keeping its other values.
+ */
+function withFronts(
+  sections: NonNullable<TierStructure['sections']>,
+  fronts: Record<string, number>,
+): NonNullable<TierStructure['sections']> {
+  const out = { ...sections };
+  for (const [id, frontRowHeightFt] of Object.entries(fronts)) {
+    out[id] = { ...out[id], frontRowHeightFt };
+  }
+  return out;
+}
+
 const RYS_YANKEES = 'https://www.rateyourseats.com/yankee-stadium/seating/shaded-covered-seats';
 const rysSection = (n: string) => `https://www.rateyourseats.com/yankee-stadium/seating/sections/${n}`;
 
@@ -84,9 +99,8 @@ const YANKEES_LIDAR = 'USGS 3DEP lidar NY_NewYorkCity, flown 2014-03-27 (scripts
  * scan, about 5 points per square metre), as at Dodger Stadium: for each
  * section a cut straight back through its rows gives the front row's height,
  * the rake and the structure that rises highest behind as seen from the
- * middle uncovered row; tier values are medians, a section whose front row is
- * more than 10% (at least 3 ft) off gets its own, and every measured section
- * takes its own back. The lidar confirms the canopy top (133 ft) and puts
+ * middle uncovered row; tier values are medians, and every measured section
+ * takes its own front row and back. The lidar confirms the canopy top (133 ft) and puts
  * its underside at its front edge at 128 ft; where a section's cut crosses a
  * lamp bank on the canopy, that rises highest (137–142 ft). Covered rows: where
  * the scan puts a deck's edge more than two rows from the source's row, the
@@ -119,11 +133,14 @@ const YANKEES: StadiumStructure = {
       // highest behind is the canopy, 134 ft up and 107 ft back; each
       // measured section takes its own (94–117 ft back).
       stand: { rows: 9, frontRowHeightFt: 0, rakeDeg: 10, backHeightFt: 134, backSetbackFt: 107 },
-      sections: withBacks({}, {
+      sections: withFronts(withBacks({}, {
         '029W': [139, 101], '027A': [141, 94], '024B': [132, 104], '023': [133, 111],
         '022W': [134, 112], '022': [132, 117], '021BW': [142, 106], '021B': [132, 112],
         '021A': [140, 96], '020': [132, 117], '019': [140, 104], '018': [140, 106],
         '017B': [132, 109], '017A': [133, 116], '011W': [135, 111], '011': [140, 101],
+      }), {
+        '029W': 1, '027A': 3, '024B': 3, '023': 1, '022': -1, '021A': 1, '017A': 1, '011W': 1,
+        '011': 1,
       }),
       heightsSourced: true,
       coverSourced: true,
@@ -147,7 +164,8 @@ const YANKEES: StadiumStructure = {
       // the corners (104, 135) the Main deck's edge, 32 ft up.
       // Estimated: the Main deck's underside ~23 ft (its 28-ft front row less
       // 9 ft is under the covered rows' heads, so 9 ft above row 14's floor;
-      // 24 ft over 133 and 134, whose first covered rows sit higher).
+      // 24 ft over 134 and the sections whose own front row is 7 ft, 25 over
+      // 133, whose first covered rows sit higher).
       // Each measured section takes its own back (the canopy 29–94 ft behind
       // them); 104 and 135 keep the Main deck's edge right behind their last
       // row, as sourced.
@@ -160,7 +178,7 @@ const YANKEES: StadiumStructure = {
         backSetbackFt: 46,
         overhang: { coveredFromRow: 14, soffitHeightFt: 23 },
       },
-      sections: withBacks({
+      sections: withFronts(withBacks({
         '103': { noCover: true },
         '104': { rows: 18, noCover: true, backHeightFt: 32, backSetbackFt: 0 },
         '107': { rows: 21, overhang: { coveredFromRow: 6, soffitHeightFt: 18 } },
@@ -168,13 +186,16 @@ const YANKEES: StadiumStructure = {
         '120B': { rows: 17 },
         '122': { overhang: { coveredFromRow: 11, soffitHeightFt: 23 } },
         ...Object.fromEntries(['123', 'S122A', 'S122B'].map((id) => [id, { overhang: { coveredFromRow: 11, soffitHeightFt: 23 } }])),
-        '125': { rows: 19 },
+        '125': { rows: 19, overhang: { coveredFromRow: 14, soffitHeightFt: 24 } },
         '127B': { rows: 19 },
         '130': { rows: 26, overhang: { coveredFromRow: 15, soffitHeightFt: 23 } },
-        '133': { overhang: { coveredFromRow: 17, soffitHeightFt: 24 } },
-        '134': { frontRowHeightFt: 11, overhang: { coveredFromRow: 8, soffitHeightFt: 24 } },
-        '135': { rows: 14, noCover: true, frontRowHeightFt: 11, backHeightFt: 32, backSetbackFt: 0 },
+        '133': { overhang: { coveredFromRow: 17, soffitHeightFt: 25 } },
+        '134': { overhang: { coveredFromRow: 8, soffitHeightFt: 24 } },
+        '135': { rows: 14, noCover: true, backHeightFt: 32, backSetbackFt: 0 },
         '136': { noCover: true },
+        ...Object.fromEntries(['110', '113', '116', '117A', '118W', '121AW', '121B', '121BW', '124', '126', '127A', '128', '129', 'S117BC']
+          .map((id) => [id, { overhang: { coveredFromRow: 14, soffitHeightFt: 24 } }])),
+
       }, {
         '134': [133, 59], '133': [140, 70], '130': [141, 29], '132': [133, 94], '127A': [139, 38],
         '125': [132, 55], '124': [139, 43], '121B': [140, 41], '122': [133, 41], '123': [132, 46],
@@ -186,6 +207,11 @@ const YANKEES: StadiumStructure = {
         '131': [133, 54], '108': [140, 44], '127B': [140, 47], '136': [133, 51],
         '129': [133, 48], '128': [132, 44], '126': [139, 38], '114B': [140, 44],
         '113': [133, 49], '112': [132, 62], '110': [139, 36],
+      }), {
+        '134': 10, '133': 7, '130': 5, '132': 5, '127A': 7, '125': 7, '124': 7, '121B': 7, '122': 8,
+        '123': 7, 'S122B': 8, 'S122A': 7, '121BW': 7, '121AW': 7, '119': 5, '118W': 7, '117B': 5,
+        '117A': 7, 'S117BC': 7, '116': 7, '104': 5, '131': 4, '135': 11, '129': 7, '128': 7,
+        '126': 7, '114B': 5, '113': 7, '112': 5, '110': 7,
       }),
       heightsSourced: false,
       coverSourced: true,
@@ -217,7 +243,7 @@ const YANKEES: StadiumStructure = {
         backSetbackFt: -33,
         overhang: { coveredFromRow: 8, soffitHeightFt: 62 },
       },
-      sections: withBacks(Object.fromEntries([
+      sections: withFronts(withBacks(Object.fromEntries([
         ['218A', { rows: 8, noCover: true }], ['218B', { rows: 8, noCover: true }],
         ['219', { rows: 8, noCover: true }], ['220A', { rows: 7, noCover: true }],
         ['220B', { rows: 7, noCover: true }], ['220C', { rows: 7, noCover: true }],
@@ -239,6 +265,9 @@ const YANKEES: StadiumStructure = {
         '227A': [73, -35], '221A': [74, 7], '222': [140, 41], '218B': [72, 4], '219': [73, 2],
         '208': [72, -33], '210': [72, -33], '221B': [73, 2], '218A': [72, 7], '227B': [72, -38],
         '223': [72, -37], '217': [72, -41], '207': [72, -17], '213': [73, -38], '214A': [73, -37],
+      }), {
+        '205W': 28, '205S': 28, '234': 32, '234W': 28, '231': 30, '216': 27, '233B': 31, '232B': 28,
+        '232A': 28, '218B': 28, '210': 28, '218A': 28,
       }),
       heightsSourced: false,
       coverSourced: true,
@@ -251,7 +280,7 @@ const YANKEES: StadiumStructure = {
       // up and 12 ft behind the last row; each measured section takes its
       // own (4–30 ft behind).
       stand: { rows: 9, frontRowHeightFt: 72, rakeDeg: 31, backHeightFt: 133, backSetbackFt: 12 },
-      sections: withBacks({ '320B': { rows: 10 }, '314': { rows: 8 } }, {
+      sections: withFronts(withBacks({ '320B': { rows: 10 }, '314': { rows: 8 } }, {
         '327': [140, 7], '330': [133, 14], '331': [140, 7], '326': [141, 9], '325': [132, 19],
         '325W': [133, 19], '326W': [133, 16], '331W': [132, 17], '333W': [133, 19], '330W': [139, 7],
         '327W': [133, 17], '320C': [132, 16], '321': [132, 19], '323': [140, 9], '322': [141, 11],
@@ -262,6 +291,10 @@ const YANKEES: StadiumStructure = {
         '315W': [140, 9], '305': [140, 12], '305W': [132, 30], '308': [140, 7], '332A': [140, 6],
         '332B': [133, 21], '329': [140, 7], '328': [132, 16], '324': [140, 11], '312': [141, 7],
         '316': [139, 9],
+      }), {
+        '331W': 73, '321': 73, '321W': 73, '318': 73, '319': 73, '320B': 73, '319W': 73, '318W': 73,
+        '310': 73, '313': 73, '315': 73, '313W': 73, '314W': 71, '315W': 73, '305': 71, '332A': 73,
+        '312': 73,
       }),
       heightsSourced: true,
       coverSourced: true,
@@ -283,7 +316,9 @@ const YANKEES: StadiumStructure = {
         backSetbackFt: -25,
         overhang: { coveredFromRow: 2, soffitHeightFt: 128 },
       },
-      sections: withBacks({}, { '420C': [132, -21], '408': [134, -29] }),
+      sections: withFronts(withBacks({}, { '420C': [132, -21], '408': [134, -29] }), {
+        '408': 94,
+      }),
       heightsSourced: true,
       coverSourced: true,
       sources: [rysSection('420B'), 'https://ballparkeguides.com/yankee-stadium-seating/', 'https://baseballpilgrimages.com/american/newyork.html', 'NYC Building Footprints, BIN 2114490 (height_roof 120 ft)', YANKEES_LIDAR],
