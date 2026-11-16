@@ -6187,8 +6187,9 @@ export function rateTier(id: string): string | null {
  * Heights: USGS lidar (Cook County, April–May 2017). Since then the 500
  * level gained two view bars (2023); the upper-deck sections the chart now
  * gives fewer rows start that many rows up the measured deck. Each measured
- * section takes its own back: what rises highest behind it, seen from the
- * middle of its open rows.
+ * section takes its own front row (but where its rows start up a slope
+ * whose front the cut finds, below) and its own back: what rises highest
+ * behind it, seen from the middle of its open rows.
  */
 const RATE: StadiumStructure = {
   stadiumId: 'whitesox',
@@ -6201,7 +6202,9 @@ const RATE: StadiumStructure = {
       // Covered from row 30 or 33 (here 18–31; sourced); 108 and 156 not.
       // Lidar (49 of 49): front row at field level (-1–3 ft), 14° rake
       // (higher where a section starts behind a dugout or the scout seats:
-      // that row on the slope); behind, the roof 130 ft up and 6 ft back (by
+      // that row on the slope, RATE_FIRST_ROW; their cuts run on from the
+      // slope's front, so the scan's front is not theirs; the rest take
+      // their own); behind, the roof 130 ft up and 6 ft back (by
       // section, below: 1 ft in front of the last row to 50 ft behind it).
       // The club deck's front row, 48 ft up, reaches out
       // over position 26 (21–22 where a section starts at row 2–5, 29 in 109
@@ -6209,7 +6212,7 @@ const RATE: StadiumStructure = {
       // seen: that row less 9 ft (36 over 109, the lowest structure there).
       // Over 130–134 the scan sees no edge, so their sourced rows stand.
       stand: { rows: 37, ...RATE_LOWER, backHeightFt: 130, backSetbackFt: 6, deckFrontFt: 48, overhang: { coveredFromRow: 26, soffitHeightFt: 39 } },
-      sections: withBacks(Object.fromEntries(Array.from({ length: 49 }, (_, i) => String(108 + i)).map((id) => [id, {
+      sections: withFronts(withBacks(Object.fromEntries(Array.from({ length: 49 }, (_, i) => String(108 + i)).map((id) => [id, {
         ...(RATE_FIRST_ROW[id] ? { frontRowHeightFt: RATE_LOWER.frontRowHeightFt + (RATE_FIRST_ROW[id] - 1) * rateRise } : {}),
         ...(RATE_EDGE_ROW[id] ? { overhang: { coveredFromRow: RATE_EDGE_ROW[id], soffitHeightFt: id === '109' ? 36 : 39 } } : {}),
         ...(['130', '131', '132', '133', '134'].includes(id) ? { overhang: { coveredFromRow: RATE_COVER[id], soffitHeightFt: 39 } } : {}),
@@ -6223,6 +6226,9 @@ const RATE: StadiumStructure = {
         '143': [130, -2], '144': [130, 11], '145': [130, 8], '146': [130, 4], '147': [130, 0],
         '148': [130, 0], '149': [130, 0], '150': [130, 0], '151': [130, 12], '152': [130, 12],
         '153': [130, 8], '154': [130, 27], '156': [130, 43],
+      }), {
+        '111': -1, '112': -1, '113': -1, '114': -1, '115': -1, '117': -1, '118': -1, '120': -1,
+        '128': -1, '135': -1, '136': 1, '151': -1, '152': -1,
       }),
       rowsFromMap: true,
       heightsSourced: false,
@@ -6235,9 +6241,11 @@ const RATE: StadiumStructure = {
       // are covered"). Lidar (6 of 6): front row 5 ft (9 in 104–105), 15°
       // rake; behind, 27–89 ft up by section.
       stand: { rows: 28, frontRowHeightFt: 5, rakeDeg: 15, backHeightFt: 35, backSetbackFt: 25 },
-      sections: withBacks({ '104': { frontRowHeightFt: 9 }, '105': { frontRowHeightFt: 9 } }, {
+      sections: withFronts(withBacks({}, {
         '100': [27, 11], '101': [33, 6], '102': [38, 43], '103': [89, 45], '104': [27, 2],
         '105': [36, 40],
+      }), {
+        '101': 4, '104': 8, '105': 10,
       }),
       rowsFromMap: true,
       heightsSourced: true,
@@ -6253,13 +6261,15 @@ const RATE: StadiumStructure = {
       // section takes its own back; the tier keeps the bleachers' (160, 162,
       // 164: 37 ft, 42–55 ft back), not the eight's 50-ft median.
       stand: { rows: 28, frontRowHeightFt: 5, rakeDeg: 15, backHeightFt: 37, backSetbackFt: 48 },
-      sections: withBacks({
-        '157': { frontRowHeightFt: 9 },
-        '158': { frontRowHeightFt: 9, overhang: { coveredFromRow: 19, soffitHeightFt: 46 } },
+      sections: withFronts(withBacks({
+        '158': { overhang: { coveredFromRow: 19, soffitHeightFt: 46 } },
+
         '159': { overhang: { coveredFromRow: 25, soffitHeightFt: 45 } },
       }, {
         '157': [73, 4], '158': [52, -6], '159': [48, -4], '160': [37, 48], '161': [88, 45],
         '162': [37, 42], '163': [89, 50], '164': [37, 55],
+      }), {
+        '157': 9, '158': 9,
       }),
       rowsFromMap: true,
       heightsSourced: true,
@@ -6276,8 +6286,10 @@ const RATE: StadiumStructure = {
       // front of the last row (the roof, 130 ft and 18–26 ft back, behind
       // 312, 316 and 356; each measured section takes its own).
       stand: { rows: 5, frontRowHeightFt: 48, rakeDeg: 28, backHeightFt: 73, backSetbackFt: -3, deckFrontFt: 71, overhang: { coveredFromRow: 4, soffitHeightFt: 62 } },
-      sections: withBacks({ '312': { overhang: { coveredFromRow: 4, soffitHeightFt: 69 } } }, {
+      sections: withFronts(withBacks({ '312': { overhang: { coveredFromRow: 4, soffitHeightFt: 69 } } }, {
         '312': [130, 22], '314': [72, -3], '316': [130, 18], '342': [72, -3], '356': [130, 26],
+      }), {
+        '312': 47, '342': 49, '344': 49, '346': 49, '356': 49,
       }),
       rowsFromMap: true,
       heightsSourced: false,
@@ -6293,9 +6305,11 @@ const RATE: StadiumStructure = {
       // counted from row 1 their edge is there too), the bottom of its face
       // 123 ft up (121–124); its top, 130 ft, is what rises behind. Sections
       // the chart gives 18 or 16 rows (covered from 6 or 4) start 3 or 5
-      // rows up the deck (77 and 80 ft; 514 and 550 measure 78).
+      // rows up the deck (77 and 80 ft; 514 and 550 measure 78). The others
+      // take their own front row but for the seven cut past an aisle, whose
+      // run starts a few rows up: they keep the tier's.
       stand: { rows: 21, frontRowHeightFt: 72, rakeDeg: 33, treadFt: 2.6, backHeightFt: 130, backSetbackFt: -37, overhang: { coveredFromRow: 9, soffitHeightFt: 123 } },
-      sections: withBacks(Object.fromEntries(['514', '516', '518', '524', '540', '546', '548', '550'].map((id) => [id, {
+      sections: withFronts(withBacks(Object.fromEntries(['514', '516', '518', '524', '540', '546', '548', '550'].map((id) => [id, {
         frontRowHeightFt: RATE_COVER[id] === 4 ? 80 : 77,
         overhang: { coveredFromRow: RATE_COVER[id], soffitHeightFt: 123 },
       }])), {
@@ -6305,6 +6319,8 @@ const RATE: StadiumStructure = {
         '531': [130, -39], '535': [130, -39], '538': [130, -41], '540': [130, -28],
         '542': [130, -42], '544': [130, -36], '546': [130, -34], '550': [130, -38],
         '552': [130, -36], '554': [130, -42], '555': [130, -31], '557': [130, -34],
+      }), {
+        '520': 73, '527': 71, '555': 70, '556': 73,
       }),
 
       rowsFromMap: true,
