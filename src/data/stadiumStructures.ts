@@ -6036,6 +6036,8 @@ export function sutterTier(id: string): string | null {
  *
  * Heights: USGS lidar (February 2019). The 2025 work for the Athletics
  * (clubhouses, field, dugouts, refitted clubs) left the stands as they were.
+ * Each measured section takes its own back: what rises highest behind it,
+ * seen from the middle of its open rows.
  */
 const SUTTER: StadiumStructure = {
   stadiumId: 'athletics',
@@ -6049,14 +6051,14 @@ const SUTTER: StadiumStructure = {
       // 29 rows (22 in 111–113, in front of the tables). Lidar (9 of 9):
       // front row at field level, 13° rake; behind, the suites and press
       // box, 56 ft up right behind the last row (19 ft back behind 111–113,
-      // past the tables; 61 ft behind 112). A balcony, its underside 33 ft
-      // up, reaches over 116's last three rows.
+      // past the tables; 61 ft behind 112; each measured section its own).
+      // A balcony, its underside 33 ft up, reaches over 116's last three
+      // rows.
       stand: { rows: 29, ...SUTTER_LOWER, backHeightFt: 56, backSetbackFt: 2 },
-      sections: {
-        ...Object.fromEntries(['111', '113'].map((id) => [id, { backSetbackFt: 19 }])),
-        '112': { backHeightFt: 61, backSetbackFt: 19 },
-        '116': { overhang: { coveredFromRow: 27, soffitHeightFt: 33 } },
-      },
+      sections: withBacks({ '116': { overhang: { coveredFromRow: 27, soffitHeightFt: 33 } } }, {
+        '109': [51, 2], '110': [56, 0], '111': [56, 19], '112': [61, 19], '113': [56, 19],
+        '114': [56, 1],
+      }),
       rowsFromMap: true,
       heightsSourced: false,
       coverSourced: true,
@@ -6069,23 +6071,27 @@ const SUTTER: StadiumStructure = {
       // home dugout (~4 rows up). Lidar (6 of 7): front row at field level
       // (3–4 ft at 117–118's first row), 13° rake; behind, the suite
       // building 55 ft up, 4 ft in front of the last row (23 ft in front of
-      // 119's; 53 ft and 16 ft back behind 122). The suite building and a
+      // 119's; 53 ft and 16 ft back behind 122; each measured section its
+      // own). The suite building and a
       // balcony in front of it reach out over row 24 (21 in 118, 30 in 120,
       // 29 in 121), so the rows from there back are covered: under the
       // balcony, the lowest structure 33–38 ft up (the bottom of its face
       // 33 ft over 117); over 119 the building's own roof, 54 ft (its top).
       // Nothing over 122 and 123.
       stand: { rows: 32, ...SUTTER_LOWER, backHeightFt: 55, backSetbackFt: -4, overhang: { coveredFromRow: 24, soffitHeightFt: 35 } },
-      sections: {
+      sections: withBacks({
         '117': sutterFront(4),
         '118': { ...sutterFront(4), overhang: { coveredFromRow: 21, soffitHeightFt: 33 } },
-        '119': { backSetbackFt: -23, overhang: { coveredFromRow: 24, soffitHeightFt: 54 } },
+        '119': { overhang: { coveredFromRow: 24, soffitHeightFt: 54 } },
         '120': { overhang: { coveredFromRow: 30, soffitHeightFt: 35 } },
         '121': { overhang: { coveredFromRow: 29, soffitHeightFt: 38 } },
-        '122': { noCover: true, backHeightFt: 53, backSetbackFt: 16 },
+        '122': { noCover: true },
         // 12 rows; only its own back stands behind it.
         '123': { noCover: true, backHeightFt: SUTTER_LOWER.frontRowHeightFt + 11 * sutterRise + 4, backSetbackFt: 0 },
-      },
+      }, {
+        '117': [54, -1], '118': [56, -6], '119': [55, -23], '120': [56, -7], '121': [54, 2],
+        '122': [53, 16],
+      }),
       rowsFromMap: true,
       heightsSourced: false,
       coverSourced: true,
@@ -6098,18 +6104,21 @@ const SUTTER: StadiumStructure = {
       // 27). 106–107 start behind the visitors' dugout. Lidar (6 of 7):
       // front row at field level (3 ft at 105–107), 13° rake; behind, 52 ft
       // up and 5 ft back (49 ft and 39 ft back behind 102; 56 ft, 16 ft in
-      // front of 105's last row). The club's front row, 29 ft up, is over
+      // front of 105's last row; each measured section its own). The club's
+      // front row, 29 ft up, is over
       // row 26–27 of 103 and 104, so row 27 stands, its underside 9 ft above
       // that row's floor; over 105's row 24 the bottom of a face, 35 ft up,
       // which it takes.
       stand: { rows: 30, ...SUTTER_LOWER, backHeightFt: 52, backSetbackFt: 5 },
-      sections: {
+      sections: withBacks({
         ...Object.fromEntries(['103', '104'].map((id) => [id, { deckFrontFt: 29, overhang: { coveredFromRow: 27, soffitHeightFt: 26 } }])),
-        '102': { backHeightFt: 49, backSetbackFt: 39 },
-        '105': { backHeightFt: 56, backSetbackFt: -16, overhang: { coveredFromRow: 24, soffitHeightFt: 35 } },
+        '105': { overhang: { coveredFromRow: 24, soffitHeightFt: 35 } },
         '106': sutterFront(6),
         '107': sutterFront(6),
-      },
+      }, {
+        '102': [49, 39], '103': [49, 5], '104': [49, 5], '105': [56, -16], '106': [54, 4],
+        '107': [56, 1],
+      }),
       rowsFromMap: true,
       heightsSourced: false,
       coverSourced: true,
@@ -6119,8 +6128,10 @@ const SUTTER: StadiumStructure = {
       label: 'Club (201–206)',
       // Five rows raised behind 101–106, open ("remain sunny the longest").
       // Lidar (5 of 6): front row 31 ft, 22° rake; behind, the club building
-      // 49 ft up right behind the last row.
+      // 49 ft up right behind the last row (each measured section its own).
       stand: { rows: 5, frontRowHeightFt: 31, rakeDeg: 22, treadFt: 2.8, backHeightFt: 49, backSetbackFt: 0 },
+      sections: withBacks({}, { '201': [49, -2], '202': [49, 2], '205': [49, 2] }),
+
       rowsFromMap: true,
       heightsSourced: true,
       coverSourced: true,
