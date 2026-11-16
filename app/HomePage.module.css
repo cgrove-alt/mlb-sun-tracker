@@ -92,6 +92,11 @@
   color: #4b5563;
 }
 
+/* A link inside a sentence needs more than color to stand out (WCAG 1.4.1). */
+.home .other a {
+  text-decoration: underline;
+}
+
 @media (max-width: 768px) {
   .home .hero::after {
     display: none;
