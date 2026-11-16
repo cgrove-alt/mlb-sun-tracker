@@ -1,11 +1,13 @@
 /**
  * Sun-position accuracy tests.
  *
- * Production sun position is the NOAA GML Solar Calculator (Meeus). These
- * tests pin three things:
+ * Production sun position is the NREL SPA (src/utils/solarPosition.ts; its
+ * own tests are in spa.test.ts). These tests pin three things through the
+ * app-facing wrapper:
  *
  *   1. Solar-noon geometry (azimuth ≈ 180° in the northern hemisphere).
- *   2. NOAA reference values at known stadium instants, to 0.01°.
+ *   2. Values from NOAA's published calculator at known stadium instants, to
+ *      0.01° — an independent algorithm the SPA must agree with.
  *   3. Atmospheric refraction: apparent altitude must exceed geometric
  *      altitude at low sun, where missing refraction stretches shadows.
  *
@@ -16,7 +18,7 @@
  */
 
 import { getSunPosition } from '../sunCalculations';
-import { getSolarPosition, noaaRefractionDegrees } from '../solarPosition';
+import { getSolarPosition, spaRefractionDegrees } from '../solarPosition';
 
 function azDiff(a: number, b: number): number {
   return Math.min(Math.abs(a - b), 360 - Math.abs(a - b));
@@ -170,10 +172,10 @@ describe('Sun position — atmospheric refraction', () => {
       .toBeLessThan(1e-9);
   });
 
-  it('matches NOAA refraction at 5° geometric elevation', () => {
-    // NOAA piecewise: 58.1/tan(e) − 0.07/tan³(e) + … for e > 5°.
-    expect(noaaRefractionDegrees(5.0001)).toBeGreaterThan(0.15);
-    expect(noaaRefractionDegrees(90)).toBe(0);
+  it('SPA refraction is about 0.16° at 5° geometric elevation and ~0 overhead', () => {
+    expect(spaRefractionDegrees(5)).toBeGreaterThan(0.15);
+    expect(spaRefractionDegrees(5)).toBeLessThan(0.18);
+    expect(spaRefractionDegrees(90)).toBeLessThan(0.001);
   });
 
   it('getSunPosition exposes the same apparent altitude as getSolarPosition', () => {
@@ -187,9 +189,10 @@ describe('Sun position — atmospheric refraction', () => {
 });
 
 describe('Sun position — NREL SPA paper cross-check', () => {
-  // Reda & Andreas 2003, Table 1. SPA with pressure/temp: azimuth 194.34024°,
-  // zenith 50.11162° → elevation 39.88838°. NOAA (no pressure/temp) agrees
-  // to ~0.003°. A regression back to SunCalc misses by 0.35° in azimuth.
+  // Reda & Andreas 2008, worked example: azimuth 194.34024°, zenith
+  // 50.11162° → elevation 39.88838° with the example's 820 mbar / 11 °C. With
+  // default sea-level pressure the refraction differs by ~0.002°. A
+  // regression back to SunCalc misses by 0.35° in azimuth.
   it('Golden, CO 2003-10-17 12:30:30 MST is within 0.05° of SPA', () => {
     const pos = getSunPosition(new Date('2003-10-17T19:30:30Z'), 39.742476, -105.1786);
     expect(azDiff(pos.azimuthDegrees, 194.34024)).toBeLessThanOrEqual(0.05);

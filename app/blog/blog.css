@@ -221,32 +221,6 @@
   color: white !important;
 }
 
-.newsletter-form {
-  display: flex;
-  flex-direction: column;
-  gap: 0.75rem;
-}
-
-.newsletter-form input {
-  padding: 0.75rem;
-  border: 1px solid #ddd;
-  border-radius: 8px;
-  font-size: 0.95rem;
-}
-
-.newsletter-form button {
-  padding: 0.75rem;
-  background: #2196f3;
-  color: white;
-  border: none;
-  border-radius: 8px;
-  font-weight: 500;
-  cursor: pointer;
-}
-
-.newsletter-form button:hover {
-  background: #1976d2;
-}
 
 @media (max-width: 768px) {
   .blog-layout {

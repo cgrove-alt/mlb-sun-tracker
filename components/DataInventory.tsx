@@ -80,7 +80,7 @@ const DataInventory: React.FC<DataInventoryProps> = ({ dataReport, onRefresh }) 
           <p className={styles.categoryDescription}>{category.description}</p>
           
           {Object.keys(category.data).length > 0 ? (
-            <div className={styles.dataTable}>
+            <div className={styles.dataTable} tabIndex={0} role="region" aria-label={category.name}>
               <table>
                 <thead>
                   <tr>

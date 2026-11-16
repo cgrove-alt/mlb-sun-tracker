@@ -1,8 +1,6 @@
 'use client';
 
 import Script from 'next/script';
-import { usePathname, useSearchParams } from 'next/navigation';
-import { useEffect } from 'react';
 
 // Single source of truth for the GA4 measurement ID. Vercel sets
 // NEXT_PUBLIC_GA_ID in the production environment (see vercel.json); the
@@ -12,6 +10,47 @@ const GA_ID = process.env.NEXT_PUBLIC_GA_ID || 'G-JXGEKF957C';
 // `window.gtag` and `window.dataLayer` are declared globally in
 // src/utils/analytics.ts; intentionally not re-declared here to avoid
 // TS2717 "subsequent property declarations must have the same type."
+
+/**
+ * The inline script that starts GA4: Consent Mode defaults, then the config
+ * command that sends the first pageview. Exported for the consent tests.
+ */
+export function gaInitScript(gaId: string): string {
+  return `
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      window.gtag = gtag;
+      gtag('consent', 'default', (function () {
+        var analytics = 'granted', functional = 'granted';
+        try {
+          var saved = JSON.parse(localStorage.getItem('cookie_consent') || 'null');
+          if (saved) {
+            analytics = saved.performance ? 'granted' : 'denied';
+            functional = saved.functional ? 'granted' : 'denied';
+          } else if (navigator.globalPrivacyControl) {
+            analytics = 'denied';
+            functional = 'denied';
+          }
+        } catch (e) {
+          analytics = 'denied';
+          functional = 'denied';
+        }
+        return {
+          'analytics_storage': analytics,
+          'functionality_storage': functional,
+          'security_storage': 'granted',
+          'personalization_storage': 'denied',
+          'ad_storage': 'denied',
+          'ad_user_data': 'denied',
+          'ad_personalization': 'denied'
+        };
+      })());
+      gtag('js', new Date());
+      gtag('config', '${gaId}', {
+        send_page_view: true
+      });
+  `;
+}
 
 /**
  * Loads Google Analytics 4 via next/script so the script tag is emitted into
@@ -42,27 +81,13 @@ const GA_ID = process.env.NEXT_PUBLIC_GA_ID || 'G-JXGEKF957C';
  *   - The cookie banner downgrades analytics_storage to 'denied' via
  *     gtag('consent', 'update', ...) when the user opts out (or when GPC is
  *     active), which is the correct compliance flow.
+ *
+ * Client-side navigations are counted by GA4 itself: the property's
+ * enhanced measurement listens for history changes (`gtm.historyChange-v2`
+ * in the dataLayer). A manual page_view on route change counted each one
+ * twice, so there isn't one here.
  */
 export default function GoogleAnalyticsLazy() {
-  const pathname = usePathname();
-  const searchParams = useSearchParams();
-
-  // GA4 doesn't auto-fire pageviews on App Router client-side navigations.
-  // Fire one explicitly whenever the route changes. The initial pageview
-  // for the entry URL is sent by the inline init script below.
-  useEffect(() => {
-    if (process.env.NODE_ENV !== 'production') return;
-    if (typeof window === 'undefined' || typeof window.gtag !== 'function') return;
-
-    const qs = searchParams?.toString();
-    const url = qs ? `${pathname}?${qs}` : pathname;
-    window.gtag('event', 'page_view', {
-      page_path: url,
-      page_location: window.location.origin + url,
-      page_title: document.title,
-    });
-  }, [pathname, searchParams]);
-
   // Skip GA entirely in dev so localhost traffic never lands in the property.
   if (process.env.NODE_ENV !== 'production') return null;
 
@@ -70,32 +95,20 @@ export default function GoogleAnalyticsLazy() {
     <>
       {/*
         Inline init script runs first and seeds the dataLayer with:
-          1. Consent Mode v2 defaults (analytics granted, ads denied — we
-             don't run ads)
+          1. Consent Mode v2 defaults. Ads are always denied (we don't run
+             ads). Analytics follows the visitor's saved cookie choice (the
+             banner saves it to localStorage 'cookie_consent'), then a Global
+             Privacy Control signal, and is granted only when neither says
+             no. The banner loads after this script, so its own
+             consent 'update' came too late: the first pageview had already
+             gone out as granted for visitors who had opted out.
           2. The library timestamp
           3. The initial config + first pageview
         Because gtag.js is loaded async, its queue processor reads these
         commands in order once it boots.
       */}
       <Script id="ga-init" strategy="afterInteractive">
-        {`
-          window.dataLayer = window.dataLayer || [];
-          function gtag(){dataLayer.push(arguments);}
-          window.gtag = gtag;
-          gtag('consent', 'default', {
-            'analytics_storage': 'granted',
-            'functionality_storage': 'granted',
-            'security_storage': 'granted',
-            'personalization_storage': 'denied',
-            'ad_storage': 'denied',
-            'ad_user_data': 'denied',
-            'ad_personalization': 'denied'
-          });
-          gtag('js', new Date());
-          gtag('config', '${GA_ID}', {
-            send_page_view: true
-          });
-        `}
+        {gaInitScript(GA_ID)}
       </Script>
       <Script
         id="ga-loader"

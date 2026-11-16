@@ -4,6 +4,7 @@ import Link from 'next/link';
 export const metadata: Metadata = {
   title: 'DMCA Policy | The Shadium',
   description: 'DMCA Policy and copyright infringement procedures for The Shadium. Learn how to report copyright violations.',
+  alternates: { canonical: 'https://theshadium.com/dmca' },
   robots: {
     index: true,
     follow: true,

@@ -91,6 +91,18 @@ export const classifyCubsSection: Classifier = (id) => {
   return section('standing');
 };
 
+/** Oracle Park, by the club's numbering (chart-points/giants.ts). */
+export const classifyGiantsSection: Classifier = (id) => {
+  const n = Number(id);
+  if (n >= 101 && n <= 135) return section('lower', 'none', `Field / Promenade Level ${id}`);
+  if (n >= 136 && n <= 144) return section('lower', 'none', `Bleachers ${id}`);
+  if (n >= 145 && n <= 152) return section('lower', 'none', `Arcade ${id}`);
+  if (n >= 202 && n <= 234) return section('club', 'none', `Club Level ${id}`);
+  if (n >= 1 && n <= 61) return section('suite', 'full', `Suite Level ${id}`);
+  if (n >= 302 && n <= 336) return section('upper', 'none', `View Level ${id}`);
+  return null;
+};
+
 export const classifyDodgersSection: Classifier = (id) => {
   if (/^STE/.test(id)) return section('suite', 'full');
   if (/DG$|FD$/.test(id)) return section('field');
@@ -109,6 +121,13 @@ export const classifyDiamondbacksSection: Classifier = (id) => {
     [299, 'club'],
     [399, 'upper'],
   ]);
+  return numeric ?? section('standing');
+};
+
+export const classifyBluejaysSection: Classifier = (id) => {
+  // Field-level clubs in front of the 100 level: TD Lounge (1–5), KPMG
+  // Blueprint Club (16–22), Clover Banner Club (23–32).
+  const numeric = numericTier(id, [[99, 'field'], [199, 'lower'], [299, 'club'], [499, 'suite', 'full'], [599, 'upper']]);
   return numeric ?? section('standing');
 };
 
@@ -176,6 +195,13 @@ export const classifyOriolesSection: Classifier = (id) => {
   if (/^STE|^S\d/.test(id)) return section('suite', 'full');
   if (/^C\d/.test(id)) return section('club', 'partial');
   const numeric = numericTier(id, [[99, 'lower', 'partial'], [299, 'club', 'partial'], [399, 'upper']]);
+  return numeric ?? section('standing');
+};
+
+export const classifyPadresSection: Classifier = (id) => {
+  // A–L: the Lexus Club rows behind home (the club's legend).
+  if (/^[A-L]$/.test(id)) return section('field');
+  const numeric = numericTier(id, [[199, 'lower', 'partial'], [299, 'club', 'partial'], [399, 'upper']]);
   return numeric ?? section('standing');
 };
 
@@ -250,6 +276,37 @@ export const classifyTigersSection: Classifier = (id) => {
   if (/^L\d/.test(id)) return section('lower', 'partial');
   const numeric = numericTier(id, [[199, 'lower', 'partial'], [299, 'club', 'partial'], [399, 'upper']]);
   return numeric ?? section('standing');
+};
+
+/** Sutter Health Park: 101–123 around the bowl; 201–206 the club seats behind 101–106. */
+export const classifyAthleticsSection: Classifier = (id) => {
+  const numeric = numericTier(id, [[199, 'lower'], [299, 'club']]);
+  return numeric ?? section('standing');
+};
+
+/** Rate Field: the club's seat-map names (its 2026 drawing and section pages). */
+const WHITESOX_NAMED: Record<string, ChartSectionMeta> = {
+  'CIBC-SCOUT-CLUB': section('club', 'none', 'CIBC Scout Club'),
+  'MILLER-LITE-LANDING': section('standing', 'none', 'Miller Lite Landing'),
+  'LEINENKUGELS-CRAFT-LODGE': section('club', 'none', "Leinenkugel's Craft Lodge"),
+  PATIO: section('standing', 'none', 'Patio'),
+  'RATE-CLUB': section('club', 'none', 'Rate Club'),
+  'STADIUM-CLUB': section('club', 'none', 'Stadium Club'),
+  'FAN-DECK': section('standing', 'none', 'Fan Deck'),
+};
+
+export const classifyWhitesoxSection: Classifier = (id) => {
+  if (WHITESOX_NAMED[id]) return WHITESOX_NAMED[id];
+  const n = numberAtStart(id);
+  if (n === null) return section('standing');
+  if (n <= 105) return section('lower', 'none', `Outfield Reserved ${id}`);
+  if (n <= 156) return section('lower', 'partial', `Lower Box ${id}`);
+  if (n <= 159) return section('lower', 'none', `Outfield Reserved ${id}`);
+  if (n <= 164) return section('lower', 'none', `Bleachers ${id}`);
+  if (n <= 399) return section('club', 'partial', `Club ${id}`);
+  // Upper Box behind the infield (522–542), Upper Reserved down the lines
+  // (506–520, 544–558), as Rate Your Seats names them.
+  return section('upper', 'partial', `${n >= 522 && n <= 542 ? 'Upper Box' : 'Upper Reserved'} ${id}`);
 };
 
 export const classifyTwinsSection: Classifier = (id) => {

@@ -126,7 +126,7 @@ export default function BestShadedSeatsMLBPage() {
               <li><strong>Arizona (Chase Field):</strong> Retractable roof provides full shade when closed</li>
               <li><strong>Texas (Globe Life Field):</strong> Climate-controlled with retractable roof</li>
               <li><strong>Florida (loanDepot park):</strong> Retractable roof for rain and sun protection</li>
-              <li><strong>Houston (Minute Maid Park):</strong> Retractable roof keeps fans comfortable</li>
+              <li><strong>Houston (Daikin Park):</strong> Retractable roof keeps fans comfortable</li>
             </ul>
 
             <h3>Moderate Climate Stadiums</h3>

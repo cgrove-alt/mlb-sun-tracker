@@ -1,4 +1,3 @@
-import SunCalc from 'suncalc';
 import { Stadium } from '../data/stadiums';
 import type { StadiumSection } from '../data/stadiumSectionTypes';
 import { isSectionInSun, getSectionSunExposure } from './sectionSunCalculations';
@@ -32,9 +31,8 @@ export interface SeatingSectionSun {
   percentageOfGameInSun?: number; // Same as sunExposure, for clarity
 }
 
-export function getSunTimes(date: Date, latitude: number, longitude: number) {
-  return SunCalc.getTimes(date, latitude, longitude);
-}
+// Sunrise, sunset and twilight come from the NREL SPA module, like sun position.
+export { getSunTimes } from './solarPosition';
 
 
 // Calculate detailed section-level sun exposure for all sections in a stadium

@@ -2,10 +2,11 @@ import { Metadata } from 'next';
 import { VENUE_COUNT } from '../../src/data/venueCount';
 import Link from 'next/link';
 import { MLB_STADIUMS } from '../../src/data/stadiums';
+import FullFinder from './FullFinder';
 
 export const metadata: Metadata = {
   title: 'Are My Seats in the Shade? MLB, MiLB & NFL Stadium Shade Finder | The Shadium',
-  description: `Review stadium section inventories, astronomical sun-position context, and measurement status across ${VENUE_COUNT} venues.`,
+  description: `Check sun and shade by game time at ${VENUE_COUNT} MLB, minor league and NFL stadiums.`,
   keywords: [
     'are my seats in the shade',
     'are my seats shaded',
@@ -36,29 +37,28 @@ export default function SeatsShadeFinderPage() {
         <div className="flex min-w-0 items-center justify-between py-4 mb-6">
           <div className="min-w-0">
             <h1 className="text-balance font-semibold text-ink-800 text-[clamp(1.75rem,2vw+1rem,2.5rem)] truncate md:whitespace-normal">
-              Are My Seats in the Shade? Check the Evidence First
+              Are My Seats in the Shade?
             </h1>
           </div>
         </div>
         
         <div className="rounded-xl border bg-white p-4 md:p-5 shadow-sm mb-8 overflow-hidden stack">
-          <p className="text-lg text-ink-700 mb-4 max-w-prose">
-            Wondering "are my seats shaded?" The Shadium separates what is known from what is modeled.
-            Select a venue to review its section inventory, astronomical sun position, roof context, and
-            measurement status before relying on any seat-level conclusion.
+          <p className="text-lg text-ink-700 max-w-prose">
+            For MLB games, pick your ballpark below to see every section in sun or shade, inning by
+            inning. For NFL and minor league games, use the finder with your game&apos;s date and time.
           </p>
-          
-          <div className="bg-blue-50 border-l-4 border-blue-500 p-4 mb-6">
-            <p className="text-blue-800">
-              <strong>MLB trust status:</strong> Exact row and section shade results are paused until physical
-              metric row, overhang, and obstruction geometry passes independent observation validation.
-            </p>
-          </div>
         </div>
+
+        <section className="mb-12" aria-labelledby="full-finder-title">
+          <h2 id="full-finder-title" className="h2 text-gray-900 mb-4 break-words md:break-normal">
+            NFL and Minor League Stadiums
+          </h2>
+          <FullFinder />
+        </section>
 
         <section className="mb-12">
           <h2 className="h2 text-gray-900 mb-6 break-words md:break-normal">
-            Check If Your Seats Are Shaded by Stadium
+            MLB Ballparks: Shade by Game
           </h2>
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
@@ -75,7 +75,7 @@ export default function SeatsShadeFinderPage() {
                   {stadium.team} • {stadium.city}
                 </p>
                 <span className="inline-block text-sm font-semibold text-white bg-orange-700 hover:bg-orange-800 px-3 py-1 rounded mt-2 transition-colors">
-                  View data status →
+                  See shade by game →
                 </span>
               </Link>
             ))}
@@ -91,25 +91,25 @@ export default function SeatsShadeFinderPage() {
             <li className="flex">
               <span className="font-bold text-blue-600 mr-3">1.</span>
               <div>
-                <strong>Select Your Stadium:</strong> Choose from our database of {VENUE_COUNT} MLB, MiLB, and NFL venues.
+                <strong>Pick your stadium:</strong> any of {VENUE_COUNT} MLB, minor league and NFL venues.
               </div>
             </li>
             <li className="flex">
               <span className="font-bold text-blue-600 mr-3">2.</span>
               <div>
-                <strong>Pick Your Game Time:</strong> Enter the date and start time to calculate the astronomical sun position.
+                <strong>Pick your game:</strong> for MLB parks, choose from the real schedule; otherwise enter the date and start time.
               </div>
             </li>
             <li className="flex">
               <span className="font-bold text-blue-600 mr-3">3.</span>
               <div>
-                <strong>Find Your Section:</strong> Confirm that your section appears in the source-backed inventory.
+                <strong>Find your section:</strong> tap it on the map or search for it.
               </div>
             </li>
             <li className="flex">
               <span className="font-bold text-blue-600 mr-3">4.</span>
               <div>
-                <strong>Read the Confidence Notice:</strong> Do not treat orientation context as an exact row guarantee.
+                <strong>Check how sure we are:</strong> each answer is labelled High, Medium or Low confidence.
               </div>
             </li>
           </ol>
@@ -126,8 +126,8 @@ export default function SeatsShadeFinderPage() {
                 "Are field level seats ever shaded?"
               </h3>
               <p className="text-ink-700">
-                They can be, but a seating chart does not contain the physical measurements needed to say
-                which rows. Confirm covered seating with the venue until measured geometry is available.
+                Yes, later in the day: as the sun drops, the stands behind the field level throw shade forward.
+                The map shows when it reaches each section for your game.
               </p>
             </div>
             
@@ -136,8 +136,8 @@ export default function SeatsShadeFinderPage() {
                 "Which side of the stadium has more shade?"
               </h3>
               <p className="text-ink-700">
-                It varies with stadium orientation, sun position, and physical structures. The site provides
-                orientation context but withholds exact section claims without validated geometry.
+                The side whose stands have the afternoon sun behind them. Every ballpark faces a different way,
+                so that can be first base, third base or behind home plate; the map shows it for your game.
               </p>
             </div>
             
@@ -146,8 +146,8 @@ export default function SeatsShadeFinderPage() {
                 "Are upper deck seats always shaded?"
               </h3>
               <p className="text-ink-700">
-                No. Coverage depends on the roof and overhang dimensions, which must be measured rather than
-                inferred from a generic level label.
+                Only the rows under a roof or canopy. The front rows of most upper decks are in the sun on
+                summer afternoons.
               </p>
             </div>
           </div>
@@ -158,13 +158,13 @@ export default function SeatsShadeFinderPage() {
             Ready to Check If Your Seats Are Shaded?
           </h2>
           <p className="text-blue-800 mb-4">
-            Select a stadium above to review the available evidence and its limitations.
+            Pick your ballpark and game on the homepage to see every section&apos;s shade.
           </p>
           <Link 
             href="/" 
             className="cta-btn"
           >
-            Review Stadium Data
+            Find my seats
           </Link>
         </div>
       </div>

@@ -2046,9 +2046,9 @@ export const nflStadiumGuides: Record<string, StadiumGuide> = {
   },
 
   // AFC WEST  
-  'arrowhead-stadium': {
-    id: 'arrowhead-stadium',
-    name: 'Arrowhead Stadium',
+  'geha-field-arrowhead': {
+    id: 'geha-field-arrowhead',
+    name: 'GEHA Field at Arrowhead Stadium',
     team: 'Kansas City Chiefs',
     opened: 1972,
     capacity: 76416,
@@ -2286,8 +2286,8 @@ export const nflStadiumGuides: Record<string, StadiumGuide> = {
   },
 
   // NFC EAST
-  'att-stadium': {
-    id: 'att-stadium',
+  'at-t-stadium': {
+    id: 'at-t-stadium',
     name: 'AT&T Stadium',
     team: 'Dallas Cowboys',
     opened: 2009,
@@ -4552,8 +4552,8 @@ export const nflStadiumGuides: Record<string, StadiumGuide> = {
     }
   },
 
-  'sofi-stadium': {
-    id: 'sofi-stadium',
+  'sofi-stadium-rams': {
+    id: 'sofi-stadium-rams',
     name: 'SoFi Stadium',
     team: 'Los Angeles Rams',
     opened: 2020,
@@ -5306,8 +5306,8 @@ export const nflStadiumGuides: Record<string, StadiumGuide> = {
     }
   },
 
-  'metlife-stadium': {
-    id: 'metlife-stadium',
+  'metlife-stadium-giants': {
+    id: 'metlife-stadium-giants',
     name: 'MetLife Stadium',
     team: 'New York Giants',
     opened: 2010,

@@ -1,10 +1,11 @@
 import { ImageResponse } from 'next/og';
 import { MLB_STADIUMS } from '../../../src/data/stadiums';
 import { ALL_UNIFIED_VENUES, getUnifiedVenueById } from '../../../src/data/unifiedVenues';
-import { bestShadedSideForDayGame } from '../../../src/utils/shadeSide';
+import { kickoffSunSides } from '../../../src/utils/nflSunSide';
+import { isFieldAxisMeasured } from '../../../src/data/nflOrientationMeasurements';
 
 // Per-venue Open Graph image (audit Phase 8): a branded 1200x630 card with the
-// venue name, team, and orientation-derived shade takeaway — replaces the
+// venue name, team, and a one-line shade takeaway — replaces the
 // generic logo512.png og:image on every venue page.
 export const alt = 'The Shadium — venue shade guide';
 export const size = { width: 1200, height: 630 };
@@ -19,6 +20,16 @@ export function generateStaticParams() {
   return Array.from(ids).map((stadiumId) => ({ stadiumId }));
 }
 
+/** Same sun-path answer as the NFL page's ShadeAnswer. */
+function nflTakeaway(venue: NonNullable<ReturnType<typeof getUnifiedVenueById>>): string {
+  if (!isFieldAxisMeasured(venue.id)) return 'Roof closed: every seat is shaded';
+  const { early } = kickoffSunSides(venue);
+  const answer = early.clear
+    ? `1 PM kickoffs: the ${early.shadedSideline} sideline shades first`
+    : '1 PM kickoffs: the sun runs along the field';
+  return venue.roof === 'retractable' ? `Roof open, ${answer.charAt(0).toLowerCase()}${answer.slice(1)}` : answer;
+}
+
 export default async function Image({ params }: { params: Promise<{ stadiumId: string }> }) {
   const { stadiumId } = await params;
   const stadium = MLB_STADIUMS.find((s) => s.id === stadiumId);
@@ -27,11 +38,14 @@ export default async function Image({ params }: { params: Promise<{ stadiumId: s
   const name = stadium?.name ?? venue?.name ?? 'Stadium';
   const team = stadium?.team ?? venue?.team ?? '';
   const league = venue?.league ?? 'MLB';
-  const orientation = stadium?.orientation ?? venue?.orientation ?? 0;
-  const domed = (stadium?.roof ?? venue?.roof) === 'fixed';
-  const takeaway = domed
-    ? 'Fixed roof — every seat is shaded'
-    : `Shade first on the ${bestShadedSideForDayGame(orientation)} for day games`;
+  const roof = stadium?.roof ?? venue?.roof;
+  const takeaway = roof === 'fixed'
+    ? 'Fixed roof: every seat is shaded'
+    : stadium
+      ? 'Shade for every section, every game'
+      : venue?.league === 'NFL'
+        ? nflTakeaway(venue)
+        : 'Sun and shade guide';
 
   return new ImageResponse(
     (

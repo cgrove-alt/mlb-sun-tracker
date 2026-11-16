@@ -1,0 +1,66 @@
+import { MLB_STADIUMS } from '../stadiums';
+import { getUnifiedVenuesByLeague } from '../unifiedVenues';
+import { getOrientationProvenance } from '../stadiumOrientationProvenance';
+import fs from 'fs';
+import path from 'path';
+import { ORIENTATION_MEASUREMENTS } from '../orientationMeasurements';
+
+// Orientation (home plate → center field bearing) drives every shade answer.
+// stadiums.ts is the source of truth; section maps read it through
+// getStadiumOrientation(). unifiedVenues.ts and the provenance record are
+// separate hand-maintained files that the site also reads, so a corrected
+// value must reach all of them. A fix that lands in only one file used to
+// stay wrong in production through the other.
+
+describe('MLB orientation consistency', () => {
+  const unified = new Map(getUnifiedVenuesByLeague('MLB').map((v) => [v.id, v]));
+
+  it.each(MLB_STADIUMS.map((s) => [s.id, s.orientation] as const))(
+    '%s: unifiedVenues and provenance match stadiums.ts',
+    (id, orientation) => {
+      expect(unified.get(id)?.orientation).toBe(orientation);
+      expect(getOrientationProvenance(id)?.orientation).toBe(orientation);
+    },
+  );
+
+  it.each(ORIENTATION_MEASUREMENTS.map((m) => [m.stadiumId, m] as const))(
+    '%s: stadiums.ts uses the measured orientation, and the measurements agree',
+    (id, m) => {
+      const stadium = MLB_STADIUMS.find((s) => s.id === id);
+      expect(stadium?.orientation).toBe(m.orientationDeg);
+      // unifiedVenues repeats the angle in seatingGeometry (not read by the
+      // site today); a measured park keeps it in step too.
+      const geometry = unified.get(id)?.seatingGeometry;
+      if (geometry) {
+        expect(geometry.primarySeatingAngle).toBe(m.orientationDeg);
+        expect(geometry.sideline1Angle).toBe((m.orientationDeg + 90) % 360);
+      }
+      const provenance = getOrientationProvenance(id);
+      expect(provenance?.method).toBe('gis-measured');
+      expect(provenance?.precisionDeg).toBe(m.precisionDeg);
+      for (const bearing of [m.bearingHomeToMoundDeg, m.bearingInfieldSymmetryDeg]) {
+        // Compass difference, so 359.6° is 0.4° from 0°.
+        const diff = Math.abs((((bearing - m.orientationDeg) % 360) + 540) % 360 - 180);
+        expect(diff).toBeLessThanOrEqual(m.precisionDeg);
+      }
+    },
+  );
+
+  // A seat map that types the angle in keeps the old value when a park is
+  // re-measured, so part of its sections would point the wrong way.
+  it.each(MLB_STADIUMS.map((s) => s.id))('%s: the seat map reads its orientation from stadiums.ts', (id) => {
+    const source = fs.readFileSync(path.join(__dirname, '../sections/mlb', `${id}.ts`), 'utf8');
+    expect(source).toMatch(new RegExp(`getStadiumOrientation\\('${id}'\\)`));
+    expect(source).not.toMatch(/buildParkSections\(\s*[\d.]/);
+    expect(source).not.toMatch(/ORIENTATION\w*\s*=\s*[\d.]/);
+  });
+
+  it('the hand-typed seat maps read orientations from stadiums.ts too', () => {
+    const source = fs.readFileSync(path.join(__dirname, '../sections/mlb/sourcedStaticParkSeeds.ts'), 'utf8');
+    expect(source).not.toMatch(/Orientation\s*=\s*[\d.]/);
+  });
+
+  it('Yankee Stadium points east-northeast (≈75°), not 55°', () => {
+    expect(MLB_STADIUMS.find((s) => s.id === 'yankees')?.orientation).toBe(75);
+  });
+});

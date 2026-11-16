@@ -3,6 +3,7 @@
 import React, { useState, useCallback } from 'react';
 import Breadcrumb from '../Breadcrumb/Breadcrumb';
 import { StadiumTitleBlockProps } from './StadiumTitleBlock.types';
+import { compassPoint } from '../../utils/compass';
 import styles from './StadiumTitleBlock.module.css';
 
 const StadiumTitleBlock: React.FC<StadiumTitleBlockProps> = ({
@@ -21,6 +22,14 @@ const StadiumTitleBlock: React.FC<StadiumTitleBlockProps> = ({
   // A fixed-roof (domed) stadium is shaded everywhere regardless of sun angle,
   // so orientation / "shaded side" facts are not applicable and are suppressed.
   const domed = roofType === 'fixed';
+  // Baseball parks are measured home plate -> center field; football fields
+  // by their long axis (end zone to end zone).
+  const football = team.league === 'NFL';
+  const direction = orientation === undefined
+    ? undefined
+    : football
+    ? `Field runs ${compassPoint(orientation)}–${compassPoint((orientation + 180) % 360)}`
+    : `Faces ${compassPoint(orientation)}`;
 
   // State for expandable sections
   const [isExpanded, setIsExpanded] = useState(false);
@@ -270,10 +279,10 @@ const StadiumTitleBlock: React.FC<StadiumTitleBlockProps> = ({
           <span className={styles.factText}>{capacity.toLocaleString()} {getCapacityLabel(team.league)}</span>
         </div>
 
-        {!domed && (
+        {!domed && direction && (
           <div className={styles.factPill}>
             <span className={styles.factIcon} aria-hidden="true">🧭</span>
-            <span className={styles.factText}>{orientation}° orientation</span>
+            <span className={styles.factText}>{direction}</span>
           </div>
         )}
 
@@ -309,7 +318,7 @@ const StadiumTitleBlock: React.FC<StadiumTitleBlockProps> = ({
                 <dt>Seating Capacity</dt>
                 <dd>{capacity.toLocaleString()}</dd>
                 <dt>Field Orientation</dt>
-                <dd>{domed ? 'N/A — fixed roof' : `${orientation}° (Home to Center)`}</dd>
+                <dd>{domed ? 'N/A — fixed roof' : orientation === undefined || !direction ? 'Not measured yet' : football ? `${direction.replace('Field runs ', '')} (${orientation}°)` : `${compassPoint(orientation)}, home plate to center field (${orientation}°)`}</dd>
               </dl>
             </div>
 
@@ -327,21 +336,6 @@ const StadiumTitleBlock: React.FC<StadiumTitleBlockProps> = ({
                 <dd>{getClimateZone(location.state)}</dd>
                 <dt>Time Zone</dt>
                 <dd>{getTimeZone(location.state)}</dd>
-              </dl>
-            </div>
-
-            {/* Shade Information */}
-            <div className={styles.detailCard}>
-              <h3>Shade Information</h3>
-              <dl className={styles.detailsList}>
-                <dt>Best Shade Time</dt>
-                <dd>Evening games (7:00 PM+)</dd>
-                <dt>Most Sun Exposure</dt>
-                <dd>Day games (12:00-3:00 PM)</dd>
-                <dt>Covered Sections</dt>
-                <dd>{roofType !== 'open' ? 'All sections (roof)' : 'Upper deck overhang'}</dd>
-                <dt>Shade Direction</dt>
-                <dd>{domed ? 'All seats shaded (roof)' : (orientation < 90 || orientation > 270 ? 'Third base side' : 'First base side')}</dd>
               </dl>
             </div>
           </div>
@@ -415,7 +409,7 @@ const StadiumTitleBlock: React.FC<StadiumTitleBlockProps> = ({
       <div className={styles.srOnly} aria-live="polite">
         {stadium.name} stadium information: Home of the {team.name} in {team.league}.
         Located in {location.city}, {location.state} with a capacity of {capacity.toLocaleString()} seats.
-        The stadium has {getRoofTypeDisplay(roofType).toLowerCase()}{domed ? ', so every seat is shaded regardless of field orientation' : ` and faces ${orientation} degrees`}.
+        The stadium has {getRoofTypeDisplay(roofType).toLowerCase()}{domed ? ', so every seat is shaded regardless of field orientation' : direction ? `. ${direction}` : ''}.
         {yearBuilt && ` Built in ${yearBuilt}.`}
       </div>
     </div>

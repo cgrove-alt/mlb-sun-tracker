@@ -8,7 +8,11 @@ export interface MLBGame {
   status: {
     statusCode: string;
     detailedState: string;
+    /** MLB has not set the start time yet; `gameDate` is a placeholder (07:33 UTC). */
+    startTimeTBD?: boolean;
   };
+  /** 'day' or 'night', as MLB schedules it. */
+  dayNight?: string;
   teams: {
     away: {
       team: {
@@ -37,6 +41,41 @@ export interface MLBScheduleResponse {
     games: MLBGame[];
   }>;
 }
+
+/**
+ * Date range for an "upcoming games" query: the fan's local calendar date
+ * through `days` days later.
+ *
+ * The end date is always after the start date, so the query stays valid in
+ * the offseason. The old callers ended the range on Oct 31 of the current
+ * year, so from Nov 1 on the end date fell before the start date and MLB's
+ * API answered 400 ("endDate must be after startDate").
+ *
+ * Local date, not UTC: `toISOString()` rolls over to tomorrow during an
+ * evening game in the US, which dropped that night's game from the list.
+ */
+export function upcomingScheduleRange(
+  now: Date = new Date(),
+  days = 180,
+): { startDate: string; endDate: string } {
+  const ymd = (d: Date) =>
+    `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, '0')}-${String(d.getDate()).padStart(2, '0')}`;
+  const end = new Date(now.getFullYear(), now.getMonth(), now.getDate() + days);
+  return { startDate: ymd(now), endDate: ymd(end) };
+}
+
+/**
+ * MLB Stats API venue ID of each club's home park (teams endpoint, 2026
+ * season). Used to keep only games actually played at the park.
+ */
+export const MLB_STADIUM_VENUE_IDS: Record<string, number> = {
+  angels: 1, diamondbacks: 15, orioles: 2, redsox: 3, cubs: 17, reds: 2602,
+  guardians: 5, rockies: 19, tigers: 2394, astros: 2392, royals: 7, dodgers: 22,
+  nationals: 3309, mets: 3289, athletics: 2529, pirates: 31, padres: 2680,
+  mariners: 680, giants: 2395, cardinals: 2889, rays: 12, rangers: 5325,
+  bluejays: 14, twins: 3312, phillies: 2681, braves: 4705, whitesox: 4,
+  marlins: 4169, yankees: 3313, brewers: 32,
+};
 
 // Map MLB team IDs to our stadium IDs
 const MLB_TEAM_TO_STADIUM_MAP: Record<number, string> = {
@@ -84,9 +123,9 @@ export class MLBApiService {
 
   getSchedule = withCache(
     async (startDate?: string, endDate?: string): Promise<MLBGame[]> => {
-    const today = new Date();
-    const defaultStart = startDate || today.toISOString().split('T')[0];
-    const defaultEnd = endDate || new Date(today.getTime() + 180 * 24 * 60 * 60 * 1000).toISOString().split('T')[0];
+    const range = upcomingScheduleRange();
+    const defaultStart = startDate || range.startDate;
+    const defaultEnd = endDate || range.endDate;
     
     // Validate dates
     if (startDate && !validateDate(startDate)) {
@@ -145,9 +184,9 @@ export class MLBApiService {
         throw new Error('Invalid team ID');
       }
       
-      const today = new Date();
-      const defaultStart = startDate || today.toISOString().split('T')[0];
-      const defaultEnd = endDate || new Date(today.getTime() + 180 * 24 * 60 * 60 * 1000).toISOString().split('T')[0];
+      const range = upcomingScheduleRange();
+      const defaultStart = startDate || range.startDate;
+      const defaultEnd = endDate || range.endDate;
       
       // Validate dates
       if (startDate && !validateDate(startDate)) {
@@ -179,40 +218,40 @@ export class MLBApiService {
     }
   }
 
+  /**
+   * Upcoming home games at a park, soonest first. Asks MLB for one team's
+   * schedule (about 100 KB) rather than the whole league's (about 1.3 MB).
+   */
+  async getUpcomingHomeGames(stadiumId: string, now: Date = new Date()): Promise<MLBGame[]> {
+    const teamId = Object.entries(MLB_TEAM_TO_STADIUM_MAP).find(([, id]) => id === stadiumId)?.[0];
+    if (!teamId) return [];
+    const range = upcomingScheduleRange(now);
+    const games = await this.getTeamSchedule(Number(teamId), range.startDate, range.endDate);
+    return this.getHomeGamesForStadium(stadiumId, games)
+      .filter((game) => game.gameType === 'R' || game.gameType === 'F' || game.gameType === 'D' || game.gameType === 'L' || game.gameType === 'W')
+      .sort((a, b) => a.gameDate.localeCompare(b.gameDate));
+  }
+
   getStadiumIdFromTeamId(teamId: number): string | null {
     return MLB_TEAM_TO_STADIUM_MAP[teamId] || null;
   }
 
   getHomeGamesForStadium(stadiumId: string, games: MLBGame[]): MLBGame[] {
-    const teamId = Object.entries(MLB_TEAM_TO_STADIUM_MAP)
-      .find(([_, stadium]) => stadium === stadiumId)?.[0];
-    
-    if (!teamId) {
-      console.error(`No team ID found for stadium: ${stadiumId}`);
+    const venueId = MLB_STADIUM_VENUE_IDS[stadiumId];
+    if (!venueId) {
+      console.error(`No MLB venue ID for stadium: ${stadiumId}`);
       return [];
     }
-    
-    // Filtering games for stadium and team
-    
-    let firstHomeGameLogged = false;
-    const homeGames = games.filter(game => {
-      const isHomeGame = game.teams.home.team.id === parseInt(teamId);
-      const isNotFinished = game.status.statusCode !== 'F';
-      const isNotCancelled = game.status.statusCode !== 'C';
-      // For now, include all game types to ensure we show games
-      const isValidGameType = true;
-      
-      // Log only the first home game to reduce console noise
-      if (isHomeGame && !firstHomeGameLogged) {
-        // Sample home game logged
-        firstHomeGameLogged = true;
-      }
-      
-      return isHomeGame && isNotFinished && isNotCancelled && isValidGameType;
-    });
-    
-    // Home games found: ${homeGames.length}
-    return homeGames;
+
+    // A club's "home" games include spring training in Florida and Arizona
+    // and neutral-site series (London, Tokyo, Mexico City). Shade only means
+    // something at the park itself, so keep games played at this venue.
+    return games.filter(
+      (game) =>
+        game.venue?.id === venueId &&
+        game.status.statusCode !== 'F' &&
+        game.status.statusCode !== 'C',
+    );
   }
 }
 

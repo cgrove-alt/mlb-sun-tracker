@@ -1,6 +1,40 @@
+const fs = require('fs');
+const path = require('path');
+const matter = require('gray-matter');
 const withBundleAnalyzer = require('@next/bundle-analyzer')({
   enabled: process.env.ANALYZE === 'true',
 });
+
+// Blog posts that moved to a new slug: old slug -> new slug.
+const RENAMED_POSTS = {
+  'shaded-seats-minute-maid-park': 'shaded-seats-daikin-park',
+  'shaded-seats-guaranteed-rate-field': 'shaded-seats-rate-field',
+  // The old title promised Green Monster shade; those seats get none by day.
+  'fenway-park-green-monster-shade-guide': 'shaded-seats-fenway-park',
+};
+
+/**
+ * 301s for the blog. An unpublished post (`draft: true` in its frontmatter)
+ * redirects to its `redirectTo` page, and a renamed slug goes straight to
+ * wherever its new slug ends up, so there are no redirect chains.
+ */
+function blogRedirects() {
+  const dir = path.join(__dirname, 'content/blog');
+  const unpublished = {};
+  for (const file of fs.readdirSync(dir).filter((f) => f.endsWith('.mdx'))) {
+    const { data } = matter(fs.readFileSync(path.join(dir, file), 'utf-8'));
+    if (data.draft !== true) continue;
+    if (typeof data.redirectTo !== 'string' || !data.redirectTo.startsWith('/')) {
+      throw new Error(`content/blog/${file}: an unpublished post needs redirectTo (a site path)`);
+    }
+    unpublished[file.replace(/\.mdx$/, '')] = data.redirectTo;
+  }
+  const finalUrl = (slug) => unpublished[slug] ?? `/blog/${slug}`;
+  return [
+    ...Object.entries(unpublished).map(([slug, destination]) => ({ source: `/blog/${slug}`, destination, statusCode: 301 })),
+    ...Object.entries(RENAMED_POSTS).map(([from, to]) => ({ source: `/blog/${from}`, destination: finalUrl(to), statusCode: 301 })),
+  ];
+}
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
@@ -76,21 +110,25 @@ const nextConfig = {
         destination: '/stadium/:venueId',
         statusCode: 301,
       },
+      {
+        source: '/faqs',
+        destination: '/faq',
+        statusCode: 301,
+      },
+      ...blogRedirects(),
     ];
   },
 
   // Headers for caching
   async headers() {
     return [
-      {
-        source: '/_next/static/:path*',
-        headers: [
-          {
-            key: 'Cache-Control',
-            value: 'public, max-age=31536000, immutable',
-          },
-        ],
-      },
+      // No Cache-Control for /_next/static here. In production Next.js
+      // already serves those content-hashed files as immutable (and
+      // vercel.json repeats it). In development the chunk names do not change
+      // between edits (`layout.js`), so a year-long immutable header made the
+      // browser keep stale or half-downloaded chunks: the page threw
+      // "Invalid or unexpected token" and never hydrated.
+      //
       // API handlers own their cache policy. A blanket public-cache header
       // here used to overwrite security- and trust-sensitive responses,
       // including the 409 that withholds unvalidated row-level shade data.

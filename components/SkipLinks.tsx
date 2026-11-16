@@ -1,40 +1,15 @@
-'use client';
-
-import React from 'react';
 import './SkipLinks.css';
 
+/**
+ * A plain fragment link: the browser scrolls to <main id="main-content"
+ * tabIndex={-1}> and moves focus there, with or without JavaScript. The
+ * navigation sits right after this link, so it needs no skip link of its own.
+ */
 export default function SkipLinks() {
-  const handleSkipClick = (e: React.MouseEvent<HTMLAnchorElement>, targetId: string) => {
-    e.preventDefault();
-    const target = document.getElementById(targetId);
-    if (target) {
-      target.focus();
-      target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-    }
-  };
-
   return (
-    <nav className="skip-links" role="navigation" aria-label="Skip links">
-      <a 
-        href="#main-content" 
-        className="skip-link"
-        onClick={(e) => handleSkipClick(e, 'main-content')}
-      >
+    <nav className="skip-links" aria-label="Skip links">
+      <a href="#main-content" className="skip-link">
         Skip to main content
-      </a>
-      <a 
-        href="#main-navigation" 
-        className="skip-link"
-        onClick={(e) => handleSkipClick(e, 'main-navigation')}
-      >
-        Skip to navigation
-      </a>
-      <a
-        href="#search-controls"
-        className="skip-link"
-        onClick={(e) => handleSkipClick(e, 'search-controls')}
-      >
-        Skip to search
       </a>
     </nav>
   );

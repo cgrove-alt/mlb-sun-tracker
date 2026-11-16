@@ -4,6 +4,7 @@ import Link from 'next/link';
 export const metadata: Metadata = {
   title: 'Privacy Policy | The Shadium',
   description: 'Privacy policy for The Shadium. Learn how we protect your data while helping you find shaded seats at MLB stadiums.',
+  alternates: { canonical: 'https://theshadium.com/privacy' },
   robots: {
     index: true,
     follow: true,
@@ -174,7 +175,7 @@ export default function PrivacyPage() {
           <p className="text-green-700 mb-3">
             Use our Privacy Rights Center to instantly view, export, or delete your data:
           </p>
-          <Link href="/privacy-rights" className="inline-block bg-green-600 text-white px-6 py-2 rounded-lg hover:bg-green-700 transition-colors">
+          <Link href="/privacy-rights" className="inline-block bg-green-700 text-white px-6 py-2 rounded-lg hover:bg-green-800 transition-colors">
             Go to Privacy Rights Center →
           </Link>
         </div>

@@ -30,7 +30,7 @@ export const MLB_STADIUMS: Stadium[] = [
     state: 'CA',
     latitude: 33.8003,
     longitude: -117.8827,
-    orientation: 50, // ENE — refined 2026-06-23 from 65°. Sources split: ballparks.com 45° vs shadedseats ENE (~65°); ~50° is the midpoint. Estimated, needs GIS. See provenance.
+    orientation: 44, // NE — measured 2026-11-11 from USGS NAIP imagery (44° ±1°); replaces 50°. See orientationMeasurements.ts.
     capacity: 45517,
     roof: 'open',
     timezone: 'America/Los_Angeles',
@@ -40,13 +40,13 @@ export const MLB_STADIUMS: Stadium[] = [
   },
   {
     id: 'astros',
-    name: 'Minute Maid Park',
+    name: 'Daikin Park',
     team: 'Houston Astros',
     city: 'Houston',
     state: 'TX',
     latitude: 29.7570,
     longitude: -95.3555,
-    orientation: 340, // NNW — corrected 2026-05-13. Esri imagery shows the diamond through partial roof opening: HP at lower-right of the visible field (~SE side), CF at upper-left (~NW side). Visual HP→CF bearing ~328°; OSM pitch polygon vertex analysis gives 346°. Houston's Crawford Boxes in LF align with Crawford Street (downtown Houston grid), geometrically consistent with HP→CF being NNW. Previous 20° (NNE) was wrong.
+    orientation: 345, // NNW — measured 2026-11-12 from USGS NAIP imagery, roof open (345° ±2°); replaces 340°. See orientationMeasurements.ts.
     capacity: 41168,
     roof: 'retractable',
     timezone: 'America/Chicago'
@@ -59,7 +59,7 @@ export const MLB_STADIUMS: Stadium[] = [
     state: 'CA',
     latitude: 38.5803,
     longitude: -121.5132,
-    orientation: 20, // NNE — verified via Esri World Imagery 2026-05-13 (Sutter Health Park; prior 330° was the old Oakland Coliseum's orientation)
+    orientation: 47, // NE — measured 2026-11-11 from USGS NAIP imagery (47° ±1.5°); replaces 20°. See orientationMeasurements.ts.
     capacity: 14014,
     roof: 'open',
     timezone: 'America/Los_Angeles'
@@ -72,7 +72,7 @@ export const MLB_STADIUMS: Stadium[] = [
     state: 'ON',
     latitude: 43.6414,
     longitude: -79.3894,
-    orientation: 0, // N — confirmed 2026-05-13. Multiple authoritative sources: "Rogers Centre is one of the few major league parks where the batter faces north when hitting" (intheballparks.com / shadedseats). Geometric check: "Throughout the afternoon the sun rotates from above home plate down the third base side… 3rd base side is the shade side, 1st base side is sunny" — sun moves E→W during day; if afternoon sun is on 3B side, 3B is W and 1B is E (catcher's right when facing N). Consistent with HP→CF=N. Independent OSM building polygon axis: 354° N (well-matched). Previous 15° was approximately right but the published source explicitly says "north."
+    orientation: 345, // NNW — measured 2026-11-12 from the City of Toronto's 2012 open-roof orthophoto (345° ±1.5°); replaces 0°. See orientationMeasurements.ts.
     capacity: 49282,
     roof: 'retractable',
     timezone: 'America/Toronto'
@@ -85,7 +85,7 @@ export const MLB_STADIUMS: Stadium[] = [
     state: 'GA',
     latitude: 33.8908,
     longitude: -84.4678,
-    orientation: 135, // SE — corrected 2026-06-23 from 45°. Wikipedia "southeast orientation" + sun pattern (rises over LF, sets behind HP) confirm SE. See provenance.
+    orientation: 159, // SSE — measured 2026-11-11 from USGS NAIP imagery (159° ±1°); replaces 135°. See orientationMeasurements.ts.
     capacity: 41084,
     roof: 'open',
     timezone: 'America/New_York'
@@ -98,7 +98,7 @@ export const MLB_STADIUMS: Stadium[] = [
     state: 'WI',
     latitude: 43.0280,
     longitude: -87.9712,
-    orientation: 135, // SE — corrected 2026-05-13. shadedseats.com explicitly states "Miller Park has a similar orientation to ballparks in Cincinnati and Chicago with home plate facing southeast." This matches: Reds at 105° (ESE) and Whitesox at 120° (SE) are nearby in compass terms. OSM pitch polygon PCA principal axis also gave 132°/312° (SE/NW), confirming the diamond's long axis runs SE-NW. The fan-shaped roof's closed panel parks over home plate (upper-left/NW area in N-up imagery), with the field opening SE. Previous 357° (N) was a 138° error — likely a sign convention or HP/CF swap.
+    orientation: 130, // SE — measured 2026-11-12 from USGS NAIP imagery, roof open (130° ±1°); replaces 135°. See orientationMeasurements.ts.
     capacity: 41900,
     roof: 'retractable',
     timezone: 'America/Chicago'
@@ -111,7 +111,7 @@ export const MLB_STADIUMS: Stadium[] = [
     state: 'MO',
     latitude: 38.6226,
     longitude: -90.1928,
-    orientation: 60, // ENE — corrected 2026-06-23 from 92° (~32° off). ballparks.com 60° + "field points northeast" + Gateway Arch/skyline beyond CF to the east confirm ENE. See provenance.
+    orientation: 62, // ENE — measured 2026-11-11 from USGS NAIP imagery (62° ±1.5°); replaces 60°. See orientationMeasurements.ts.
     capacity: 44494,
     roof: 'open',
     timezone: 'America/Chicago'
@@ -124,7 +124,7 @@ export const MLB_STADIUMS: Stadium[] = [
     state: 'IL',
     latitude: 41.9484,
     longitude: -87.6553,
-    orientation: 30, // NE — corrected 2026-06-23 from 13°. ballparks.com 30° + Hardball Times "oriented toward the northeast" + sun pattern confirm NE (the old 13° was too far north). See provenance.
+    orientation: 38, // NE — corrected 2026-06-23 from 13°. ballparks.com 30° + Hardball Times "oriented toward the northeast" + sun pattern confirm NE (the old 13° was too far north). See provenance.
     capacity: 41649,
     roof: 'open',
     timezone: 'America/Chicago',
@@ -140,7 +140,7 @@ export const MLB_STADIUMS: Stadium[] = [
     state: 'AZ',
     latitude: 33.4455,
     longitude: -112.0667,
-    orientation: 0, // N — confirmed 2026-05-13. shadedseats.com explicitly states "Chase Field is oriented to the north. This means that home plate faces toward the north direction. Each morning the sun rises over the right field corner, swings around home plate at mid-day and sets behind the left field wall." Geometric check matches: with HP→CF=N, RF (east of CF) catches sunrise and LF (west of CF) catches sunset.
+    orientation: 0, // N — measured 2026-11-12 from USGS NAIP imagery, roof open (0° ±1°), confirming the published "oriented to the north". See orientationMeasurements.ts.
     capacity: 48686,
     roof: 'retractable',
     timezone: 'America/Phoenix'
@@ -153,7 +153,7 @@ export const MLB_STADIUMS: Stadium[] = [
     state: 'CA',
     latitude: 34.0739,
     longitude: -118.2400,
-    orientation: 25,
+    orientation: 27,
     capacity: 56000,
     roof: 'open',
     timezone: 'America/Los_Angeles'
@@ -166,7 +166,7 @@ export const MLB_STADIUMS: Stadium[] = [
     state: 'CA',
     latitude: 37.7786,
     longitude: -122.3893,
-    orientation: 87,
+    orientation: 86,
     capacity: 41915,
     roof: 'open',
     timezone: 'America/Los_Angeles'
@@ -179,7 +179,7 @@ export const MLB_STADIUMS: Stadium[] = [
     state: 'OH',
     latitude: 41.4962,
     longitude: -81.6852,
-    orientation: 356, // N — corrected 2026-05-13. Great-circle bearing between OSM polygon's identified HP and CF wall vertices = 355.9°. Polygon-PCA gave 356.3°. Cleveland's downtown skyline is north of the stadium and visible beyond CF per Wikipedia, geometrically consistent with CF=N. Previous 60° was wrong.
+    orientation: 0, // N — measured 2026-11-11 from USGS NAIP imagery (0° ±1.5°); replaces 356°. See orientationMeasurements.ts.
     capacity: 34830,
     roof: 'open',
     timezone: 'America/New_York' // Eastern Time — was incorrectly 'America/Chicago' (Central). Cleveland observes Eastern Time year-round.
@@ -192,7 +192,7 @@ export const MLB_STADIUMS: Stadium[] = [
     state: 'WA',
     latitude: 47.5914,
     longitude: -122.3325,
-    orientation: 45, // NE — corrected 2026-06-23 from 318° (NW, wrong quadrant). ballparks.com (Safeco 45°) + andrewclem (NE) + sun pattern (rises over CF) confirm NE. See provenance.
+    orientation: 48, // NE — measured 2026-11-12 from USGS NAIP imagery, roof open (48° ±1.5°); replaces 45°. See orientationMeasurements.ts.
     capacity: 47929,
     roof: 'retractable',
     timezone: 'America/Los_Angeles'
@@ -205,7 +205,7 @@ export const MLB_STADIUMS: Stadium[] = [
     state: 'FL',
     latitude: 25.7781,
     longitude: -80.2197,
-    orientation: 129.036, // ESE. Measured from the official 2021 Miami-Dade open-roof orthophoto with opposite infield-edge and mound holdouts. Uncertainty is 0.815 degrees. See stadiumOrientationProvenance.ts.
+    orientation: 129, // ESE — measured 2026-11-12 from USGS NAIP imagery, roof half open (129° ±1°), agreeing with Miami-Dade County's 2021 orthophoto (129.04°). See orientationMeasurements.ts.
     capacity: 37446,
     roof: 'retractable',
     timezone: 'America/New_York'
@@ -218,7 +218,7 @@ export const MLB_STADIUMS: Stadium[] = [
     state: 'NY',
     latitude: 40.7571,
     longitude: -73.8458,
-    orientation: 35, // NNE — confirmed north-northeast orientation (was incorrectly set to 90/due-East)
+    orientation: 14, // NNE — confirmed north-northeast orientation (was incorrectly set to 90/due-East)
     capacity: 41922,
     roof: 'open',
     timezone: 'America/New_York'
@@ -231,7 +231,7 @@ export const MLB_STADIUMS: Stadium[] = [
     state: 'DC',
     latitude: 38.8730,
     longitude: -77.0074,
-    orientation: 30, // NNE — corrected 2026-06-23 from 87° (nearly due E, wrong sub-quadrant). ballparks.com 30° + andrewclem NNE + sun pattern (rises behind RF, 3B is shade side) confirm NNE. See provenance.
+    orientation: 29, // NNE — measured 2026-11-11 from USGS NAIP imagery (29° ±1°); replaces 30°. See orientationMeasurements.ts.
     capacity: 41313,
     roof: 'open',
     timezone: 'America/New_York'
@@ -244,7 +244,7 @@ export const MLB_STADIUMS: Stadium[] = [
     state: 'MD',
     latitude: 39.2838,
     longitude: -76.6218,
-    orientation: 30, // NNE — corrected 2026-06-23 from 58° (~28° off). ballparks.com 30° + andrewclem NNE + sun pattern (rises over RF, 3B shade side) confirm NNE. See provenance.
+    orientation: 31, // NNE — measured 2026-11-11 from USGS NAIP imagery (31° ±1°); replaces 30°. See orientationMeasurements.ts.
     capacity: 45971,
     roof: 'open',
     timezone: 'America/New_York'
@@ -257,7 +257,7 @@ export const MLB_STADIUMS: Stadium[] = [
     state: 'CA',
     latitude: 32.7076,
     longitude: -117.1570,
-    orientation: 0, // N — corrected 2026-06-23 from 25°. Petco famously faces due north (batter faces north, shares orientation with Cleveland/Arizona); sun pattern confirms. See stadiumOrientationProvenance.ts.
+    orientation: 0, // N — measured 2026-11-11 from USGS NAIP imagery (0° ±1°), confirming the published "due north". See orientationMeasurements.ts.
     capacity: 40209,
     roof: 'open',
     timezone: 'America/Los_Angeles'
@@ -270,7 +270,7 @@ export const MLB_STADIUMS: Stadium[] = [
     state: 'PA',
     latitude: 39.9061,
     longitude: -75.1665,
-    orientation: 18, // NNE — corrected 2026-06-23 from 59° (ENE, ~41° off). ballparks.com 15° + andrewclem NNE + sun pattern ("oriented to the north", rises over RF) confirm near-north NNE. See provenance.
+    orientation: 9, // N — measured 2026-11-11 from USGS NAIP imagery (9° ±1°); replaces 18°. See orientationMeasurements.ts.
     capacity: 42792,
     roof: 'open',
     timezone: 'America/New_York'
@@ -283,7 +283,7 @@ export const MLB_STADIUMS: Stadium[] = [
     state: 'PA',
     latitude: 40.4468,
     longitude: -80.0057,
-    orientation: 120, // ESE — corrected 2026-06-23 from 55° (NE, wrong quadrant). ballparks.com (PNC 120°) + andrewclem (ESE) + sun pattern (sets behind HP) + skyline beyond CF to the SE confirm ESE. The old "NE" misread the skyline geometry. See provenance.
+    orientation: 116, // ESE — measured 2026-11-11 from USGS NAIP imagery (116° ±1.5°); replaces 120°. See orientationMeasurements.ts.
     capacity: 38362,
     roof: 'open',
     timezone: 'America/New_York'
@@ -294,8 +294,8 @@ export const MLB_STADIUMS: Stadium[] = [
     team: 'Texas Rangers',
     city: 'Arlington',
     state: 'TX',
-    latitude: 32.7512,
-    longitude: -97.0833,
+    latitude: 32.7475,
+    longitude: -97.0838,
     orientation: 46,
     capacity: 40300,
     roof: 'retractable',
@@ -322,7 +322,7 @@ export const MLB_STADIUMS: Stadium[] = [
     state: 'MA',
     latitude: 42.3467,
     longitude: -71.0972,
-    orientation: 52,
+    orientation: 44,
     capacity: 37755,
     roof: 'open',
     timezone: 'America/New_York',
@@ -338,7 +338,7 @@ export const MLB_STADIUMS: Stadium[] = [
     state: 'OH',
     latitude: 39.0979,
     longitude: -84.5080,
-    orientation: 115, // ESE — refined 2026-06-23 from 105°. ballparks.com 120° + andrewclem ESE (~112°) + sun pattern (sets behind HP) center on ~115°. See provenance.
+    orientation: 122, // ESE — measured 2026-11-11 from USGS NAIP imagery (122° ±1°); replaces 115°. See orientationMeasurements.ts.
     capacity: 42319,
     roof: 'open',
     timezone: 'America/New_York' // Eastern Time — was incorrectly 'America/Chicago' (Central). All of Ohio observes Eastern.
@@ -351,7 +351,7 @@ export const MLB_STADIUMS: Stadium[] = [
     state: 'CO',
     latitude: 39.7559,
     longitude: -104.9942,
-    orientation: 0, // N — corrected 2026-06-23 from 40°. ballparks.com (Coors 0°) + andrewclem (N) + sun pattern ("oriented to the north", rises over RF, sets behind LF) confirm due north. See provenance.
+    orientation: 5, // N — measured 2026-11-11 from USGS NAIP imagery (5° ±1°); replaces 0°. See orientationMeasurements.ts.
     capacity: 50144,
     roof: 'open',
     timezone: 'America/Denver'
@@ -364,7 +364,7 @@ export const MLB_STADIUMS: Stadium[] = [
     state: 'MO',
     latitude: 39.0517,
     longitude: -94.4803,
-    orientation: 48, // NE — refined 2026-06-23 from 58°. ballparks.com 45° + andrewclem NE + sun pattern (rises over CF, sets near LF foul pole) center on ~45–50°. See provenance.
+    orientation: 47, // NE — measured 2026-11-11 from USGS NAIP imagery (47° ±1°); replaces 48°. See orientationMeasurements.ts.
     capacity: 37903,
     roof: 'open',
     timezone: 'America/Chicago'
@@ -377,7 +377,7 @@ export const MLB_STADIUMS: Stadium[] = [
     state: 'MI',
     latitude: 42.3390,
     longitude: -83.0485,
-    orientation: 145,
+    orientation: 151, // SSE — measured 2026-11-11 from USGS NAIP imagery (151° ±1°); replaces 145°. See orientationMeasurements.ts.
     capacity: 41083,
     roof: 'open',
     timezone: 'America/New_York' // Eastern Time — was incorrectly 'America/Chicago' (Central). Detroit and all of Michigan's Lower Peninsula observe Eastern; only 4 western UP counties are Central.
@@ -390,7 +390,7 @@ export const MLB_STADIUMS: Stadium[] = [
     state: 'MN',
     latitude: 44.9817,
     longitude: -93.2776,
-    orientation: 90, // E — corrected 2026-06-23 from 40° (NE, wrong sub-quadrant). ballparks.com (Target 90°) + sun pattern ("faces east", sets behind HP near 3B) confirm due east. The old satellite ~39° read appears to have been wrong. See provenance.
+    orientation: 91, // E — measured 2026-11-11 from USGS NAIP imagery (91° ±1°); replaces 90°. See orientationMeasurements.ts.
     capacity: 38544,
     roof: 'open',
     timezone: 'America/Chicago'
@@ -403,7 +403,7 @@ export const MLB_STADIUMS: Stadium[] = [
     state: 'IL',
     latitude: 41.8299,
     longitude: -87.6338,
-    orientation: 120, // ESE/SE — confirmed southeast-facing orientation (was incorrectly set to 90/due-East)
+    orientation: 129, // SE — measured 2026-11-11 from USGS NAIP imagery (129° ±2°); replaces 120°. See orientationMeasurements.ts.
     capacity: 40615,
     roof: 'open',
     timezone: 'America/Chicago'
@@ -416,9 +416,20 @@ export const MLB_STADIUMS: Stadium[] = [
     state: 'NY',
     latitude: 40.8296,
     longitude: -73.9262,
-    orientation: 55,
+    orientation: 75,
     capacity: 46537,
     roof: 'open',
     timezone: 'America/New_York'
   }
 ];
+
+/**
+ * The one place an MLB park's orientation is read from. Section maps call this
+ * instead of typing the number again, so a corrected orientation reaches every
+ * section at once. Throws for an unknown id rather than guessing.
+ */
+export function getStadiumOrientation(stadiumId: string): number {
+  const stadium = MLB_STADIUMS.find((s) => s.id === stadiumId);
+  if (!stadium) throw new Error(`Unknown MLB stadium id: ${stadiumId}`);
+  return stadium.orientation;
+}

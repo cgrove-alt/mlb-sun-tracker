@@ -140,19 +140,17 @@ export const stadiumHistories: Record<string, StadiumHistory> = {
       'Fountains provide cooling effect on hot days'
     ]
   },
+  // Sutter Health Park, the Athletics' home from 2025 (the entry described
+  // the Oakland Coliseum, so the page said "Built 1966").
   'athletics': {
-    opened: 1966,
-    previousNames: ['Oakland-Alameda County Coliseum'],
-    renovations: [
-      { year: 1996, description: 'Mount Davis added for Raiders' }
-    ],
+    opened: 2000,
+    previousNames: ['Raley Field'],
     shadeFeatures: [
-      { year: 1966, feature: 'Original concrete overhang design' },
-      { year: 1996, feature: 'Mount Davis provides extensive shade' }
+      { year: 2000, feature: 'Suites and press box behind home and along the third-base side shade the seats in front of them late in the day' }
     ],
     funFacts: [
-      'Mount Davis blocks sun for many sections',
-      'Concrete architecture provides reliable shade patterns'
+      'Home of the Triple-A Sacramento River Cats, shared with the Athletics from 2025',
+      'The third-base side is the shade side; the first-base side faces the setting sun'
     ]
   },
   'mariners': {

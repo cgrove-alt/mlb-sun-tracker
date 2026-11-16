@@ -7,10 +7,8 @@ import '../src/styles/app-utilities.css';
 import type { Metadata } from 'next';
 import { VENUE_COUNT } from '../src/data/venueCount';
 import { Inter } from 'next/font/google';
-import { Suspense } from 'react';
 import GoogleAnalyticsLazy from '../components/GoogleAnalyticsLazy';
 import { CriticalStylesInline } from './critical-styles-inline';
-import { CSSOptimizer } from '../components/CSSOptimizer';
 import StickyTopNav from '../components/StickyTopNav';
 import { WebApplicationSchema } from '../components/SafeSchema';
 import FooterModern from '../components/FooterModern';
@@ -119,7 +117,6 @@ export default function RootLayout({
         <meta name="google-adsense-account" content="ca-pub-3681192675377295" />
 
         {/* Resource hints for performance */}
-        <link rel="preconnect" href="https://www.googletagmanager.com" />
         <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
         <link rel="dns-prefetch" href="https://api.open-meteo.com" />
         <link rel="dns-prefetch" href="https://statsapi.mlb.com" />
@@ -127,15 +124,12 @@ export default function RootLayout({
       </head>
       <body className={inter.className}>
         <SkipLinks />
-        <CSSOptimizer />
-        <Suspense fallback={null}>
-          <GoogleAnalyticsLazy />
-        </Suspense>
+        <GoogleAnalyticsLazy />
         <ServiceWorkerRegistration />
         <DataRetentionInitializer />
         <StickyTopNav />
         <main id="main-content" tabIndex={-1}>
-          <div id="root" className="page-transition">{children}</div>
+          <div id="root">{children}</div>
         </main>
         <FooterModern />
         <CookieBannerLazy />

@@ -2,6 +2,9 @@ import type { DetailedSection } from '../../../types/stadium-complete';
 import { yankeesChartPoints } from './chart-points/yankees';
 import { buildParkSections, chartSeeds } from './parkSectionBuilder';
 import { classifyYankeesSection } from './sourcedChartClassifiers';
+import { getStadiumOrientation } from '../../stadiums';
+
+const ORIENTATION = getStadiumOrientation('yankees');
 
 /**
  * The 222 current products in the Yankees-linked IOMEDIA map, including its
@@ -9,12 +12,21 @@ import { classifyYankeesSection } from './sourcedChartClassifiers';
  * are intentionally not normalized onto the older 184-entry hand map because
  * doing so would erase real products published by the venue.
  */
-export const yankeesSections: DetailedSection[] = buildParkSections(55, chartSeeds(
+export const yankeesSections: DetailedSection[] = buildParkSections(ORIENTATION, chartSeeds(
   yankeesChartPoints,
   {
-    orientation: 55,
+    orientation: ORIENTATION,
     behindHomeIds: ['122', '123'],
     centerFieldIds: ['202', '238'],
+    // The straight runs of field-level boxes along each foul line (first base
+    // on the chart's left). The boxes nearer home (015A–017A, 023–024B) curve
+    // toward the plate, so they are left out of the line fits.
+    foulLineRows: {
+      firstBase: ['011', '012', '013', '014A', '014B'],
+      thirdBase: ['025', '026', '027A', '027B', '028', '029'],
+    },
+    // 0xx Legends, 1xx Field, 2xx Main (and bleachers), 3xx Terrace, 4xx Grandstand.
+    tierOf: (id) => id.replace(/^S/, '').charAt(0),
     classify: classifyYankeesSection,
   },
 ));

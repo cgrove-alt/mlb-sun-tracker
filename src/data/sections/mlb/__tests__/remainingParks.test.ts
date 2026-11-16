@@ -26,14 +26,18 @@ const PARKS: readonly ParkExpectation[] = [
   { id: 'angels', count: 283, distinctiveIds: ['101', '236', '540'] },
   { id: 'astros', count: 210, distinctiveIds: ['AA', 'STE55', 'FC'] },
   { id: 'athletics', count: 29, distinctiveIds: ['101', '123', '201', '206'] },
-  { id: 'bluejays', count: 252, distinctiveIds: ['101', '244', '300', '498', '540'] },
+  // 269: the club's 2026 map adds the field-level clubs (1–5, 16–32) and
+  // has no suites 330–334 (the Ticketmaster Lounge is there).
+  { id: 'bluejays', count: 269, distinctiveIds: ['1', '32', '101', '244', '300', '498', '540'] },
   { id: 'braves', count: 273, distinctiveIds: ['25', '130T1', '239B1'] },
   { id: 'brewers', count: 159, distinctiveIds: ['107', 'DECK305', 'BULLPEN'] },
   { id: 'cardinals', count: 324, distinctiveIds: ['101', '197', 'S63'] },
   { id: 'cubs', count: 177, distinctiveIds: ['423R', 'A20', 'BLCHRGA'] },
   { id: 'diamondbacks', count: 149, distinctiveIds: ['A', '145AW', '320W'] },
   { id: 'dodgers', count: 312, distinctiveIds: ['31BL', 'OWNERS', 'FSRO'] },
-  { id: 'giants', count: 174, distinctiveIds: ['1', '101', '234', '336'] },
+  // 172: the club's seat map (and Rate Your Seats) has no 111 or 120; the
+  // old hand-typed list assumed every number from 101 to 152.
+  { id: 'giants', count: 172, distinctiveIds: ['1', '101', '234', '336'] },
   { id: 'guardians', count: 272, distinctiveIds: ['179', 'STE308', '1012'] },
   { id: 'mariners', count: 169, distinctiveIds: ['102', '219TB1', 'Power-Alley'] },
   { id: 'marlins', count: 160, distinctiveIds: ['SEC1', 'SEC228', 'SEC327'] },

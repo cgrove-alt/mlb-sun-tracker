@@ -30,6 +30,13 @@ export interface BlogPost {
   readingTime: string;
   content: string;
   excerpt?: string;
+  /**
+   * Unpublished: left out of every list and the sitemap, and its URL
+   * 301-redirects to `redirectTo` (see next.config.js). Used for posts whose
+   * shade claims have not been checked against the shade engine.
+   */
+  draft?: boolean;
+  redirectTo?: string;
 }
 
 export function getPostSlugs() {
@@ -69,18 +76,21 @@ export function getPostBySlug(slug: string): BlogPost | null {
       image: data.image,
       readingTime: stats.text,
       content,
-      excerpt: data.excerpt || content.substring(0, 200) + '...'
+      excerpt: data.excerpt || content.substring(0, 200) + '...',
+      draft: data.draft === true,
+      redirectTo: data.redirectTo,
     };
   } catch (error) {
     return null;
   }
 }
 
+/** Published posts only (drafts are left out). */
 export function getAllPosts(): BlogPost[] {
   const slugs = getPostSlugs();
   const posts = slugs
     .map((slug) => getPostBySlug(slug))
-    .filter((post): post is BlogPost => post !== null)
+    .filter((post): post is BlogPost => post !== null && !post.draft)
     .sort((post1, post2) => {
       const date1 = new Date(post1.date);
       const date2 = new Date(post2.date);
@@ -119,6 +129,17 @@ export function getRelatedPosts(currentSlug: string, limit = 3): BlogPost[] {
     .sort((a, b) => b.score - a.score)
     .slice(0, limit)
     .map((item) => item.post);
+}
+
+const CATEGORY_LABELS: Record<string, string> = {
+  'stadium-guides': 'Stadium Guides',
+  seasonal: 'Seasonal Tips',
+};
+
+/** Display name for a category slug ("stadium-guides" → "Stadium Guides"). */
+export function categoryLabel(category: string): string {
+  return CATEGORY_LABELS[category]
+    ?? category.split('-').map((word) => word.charAt(0).toUpperCase() + word.slice(1)).join(' ');
 }
 
 export function getCategories(): string[] {

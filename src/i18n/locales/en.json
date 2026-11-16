@@ -109,6 +109,8 @@
     "selectDate": "Select date for custom time analysis",
     "selectTime": "Select time for custom time analysis",
     "applyCustomTime": "Apply Custom Time",
+    "apply": "Apply",
+    "applyCustomDateTime": "Apply custom date and time",
     "customTimeInfo": "Use custom time to analyze sun exposure for any date and time, even during off-season."
   },
   "sun": {
@@ -488,7 +490,7 @@
     },
     "stadiums": {
       "angels": "Angel Stadium",
-      "astros": "Minute Maid Park",
+      "astros": "Daikin Park",
       "athletics": "Sutter Health Park",
       "bluejays": "Rogers Centre",
       "braves": "Truist Park",

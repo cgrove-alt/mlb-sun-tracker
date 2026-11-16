@@ -9,13 +9,16 @@ interface MobileFilterSheetProps {
   currentFilters: SunFilterCriteria;
   resultCount: number;
   allSections?: SeatingSectionSun[];
+  /** Football venues get football seating words (no outfield or home plate). */
+  league?: 'MLB' | 'NFL' | 'MiLB';
 }
 
 export const MobileFilterSheet: React.FC<MobileFilterSheetProps> = ({
   onFilterChange,
   currentFilters,
   resultCount,
-  allSections = []
+  allSections = [],
+  league,
 }) => {
   const [isOpen, setIsOpen] = useState(false);
   const [localFilters, setLocalFilters] = useState<SunFilterCriteria>(currentFilters);
@@ -225,7 +228,7 @@ export const MobileFilterSheet: React.FC<MobileFilterSheetProps> = ({
               <div className="mobile-filter-section">
                 <h3>Seating Areas</h3>
                 <div className="mobile-filter-chips">
-                  {['Field Level', 'Lower Level', 'Upper Level', 'Outfield'].map(area => (
+                  {(league === 'NFL' ? ['Field Level', 'Lower Level', 'Upper Level'] : ['Field Level', 'Lower Level', 'Upper Level', 'Outfield']).map(area => (
                     <button
                       key={area}
                       className={`mobile-filter-chip ${localFilters.seatingAreas?.includes(area) ? 'selected' : ''}`}
@@ -251,7 +254,7 @@ export const MobileFilterSheet: React.FC<MobileFilterSheetProps> = ({
                     { value: 'value', label: 'Value', icon: '💵', description: 'Upper deck, bleachers' },
                     { value: 'moderate', label: 'Moderate', icon: '💶', description: 'Lower bowl, main level' },
                     { value: 'premium', label: 'Premium', icon: '💷', description: 'Field level, club seats' },
-                    { value: 'luxury', label: 'Luxury', icon: '💎', description: 'Behind home plate, dugout' }
+                    { value: 'luxury', label: 'Luxury', icon: '💎', description: league === 'NFL' ? 'Sideline near midfield, suites' : 'Behind home plate, dugout' }
                   ].map(price => (
                     <label key={price.value} className={`mobile-filter-option ${localFilters.priceRange?.includes(price.value as any) ? 'selected' : ''}`}>
                       <input

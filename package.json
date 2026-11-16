@@ -22,6 +22,7 @@
     "test:a11y": "playwright test tests/a11y.spec.ts",
     "test:visual:local": "playwright test tests/visual-local.spec.ts --project=chromium",
     "test:a11y:local": "playwright test tests/a11y-local.spec.ts --project=chromium",
+    "test:seo:local": "playwright test tests/seo-local.spec.ts --project=chromium",
     "test:local": "playwright test tests/*-local.spec.ts --project=chromium",
     "test:ui": "playwright test --ui",
     "test:headed": "playwright test --headed",
@@ -39,7 +40,6 @@
     "react-select": "^5.10.2",
     "reading-time": "^1.5.0",
     "sharp": "^0.34.4",
-    "suncalc": "^1.9.0",
     "web-vitals": "^5.1.0"
   },
   "devDependencies": {
@@ -52,7 +52,6 @@
     "@types/node": "^20.0.0",
     "@types/react": "^18.2.0",
     "@types/react-dom": "^18.2.0",
-    "@types/suncalc": "^1.9.2",
     "autoprefixer": "^10.4.21",
     "eslint": "^8.57.0",
     "eslint-config-next": "15.4.1",

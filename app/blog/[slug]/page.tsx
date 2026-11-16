@@ -12,6 +12,9 @@ marked.setOptions({
   breaks: true,
 });
 
+// Only published posts have pages; a draft's URL 301-redirects (next.config.js).
+export const dynamicParams = false;
+
 export async function generateStaticParams() {
   const posts = getAllPosts();
   return posts.map((post) => ({
@@ -94,9 +97,10 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
   };
 
   const postUrl = `https://theshadium.com/blog/${slug}`;
+  // Each post has a generated share image (opengraph-image.tsx).
   const postImage = post.image
     ? (post.image.startsWith('http') ? post.image : `https://theshadium.com${post.image}`)
-    : 'https://theshadium.com/logo512.png';
+    : `${postUrl}/opengraph-image`;
 
   const blogPostingJsonLd = {
     '@context': 'https://schema.org',
@@ -190,18 +194,18 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
                 background: '#eff6ff',
               }}
             >
-              <strong>📍 Planning a visit?</strong> See our full{' '}
+              <strong>📍 Going to a game?</strong> Pick it on our{' '}
               <Link href={`/stadium/${matchedVenue.id}`} style={{ fontWeight: 600, textDecoration: 'underline' }}>
-                {matchedVenue.name} shade guide
+                {matchedVenue.name} page
               </Link>{' '}
-              for sun-position context and the current section-data confidence status.
+              to see the shade in every section, inning by inning.
             </aside>
           )}
 
           <div className="post-layout">
             <aside className="post-sidebar">
               <div className="toc-widget">
-                <h3>Table of Contents</h3>
+                <h2>Table of Contents</h2>
                 <nav className="toc">
                   {toc.map((item, index) => (
                     <a
@@ -216,7 +220,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
               </div>
 
               <div className="share-widget">
-                <h3>Share This Post</h3>
+                <h2>Share This Post</h2>
                 <div className="share-buttons">
                   <a
                     href={`https://twitter.com/intent/tweet?text=${encodeURIComponent(post.title)}&url=${encodeURIComponent(`https://theshadium.com/blog/${post.slug}`)}`}
@@ -250,10 +254,12 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
           </div>
 
           <div className="post-tags">
+            {/* Tags are labels, not links: 93 tag pages would each hold one
+                or two posts. Categories have their own pages. */}
             {post.tags.map((tag) => (
-              <Link key={tag} href={`/blog/tag/${tag}`} className="post-tag">
+              <span key={tag} className="post-tag">
                 #{tag}
-              </Link>
+              </span>
             ))}
           </div>
 

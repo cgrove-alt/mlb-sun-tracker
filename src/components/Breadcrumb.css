@@ -25,7 +25,7 @@
 .breadcrumb-button {
   background: none;
   border: none;
-  color: #007bff;
+  color: #0056b3; /* 7.0:1 on white; #007bff was 3.97:1, under AA's 4.5:1 */
   cursor: pointer;
   font-size: 0.9rem;
   padding: 4px 8px;
@@ -58,7 +58,7 @@
 
 .breadcrumb-subtitle {
   font-size: 0.8rem;
-  color: #868e96;
+  color: #6c757d; /* 4.69:1 on white; #868e96 was 3.32:1 */
   font-weight: 400;
   margin-top: 2px;
 }

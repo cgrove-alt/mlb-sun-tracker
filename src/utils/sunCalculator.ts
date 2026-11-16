@@ -1,5 +1,6 @@
 // sunCalculator.ts
-import SunCalc from 'suncalc';
+import { getSunTimes } from './solarPosition';
+import { compassPoint } from './compass';
 import type { CoverageDetail } from '../types/stadium-complete';
 import { getSunPosition } from './sunPosition';
 import {
@@ -130,7 +131,7 @@ export class SunCalculator {
     const altitude = sunPos.altitudeDegrees;
     const azimuth = sunPos.azimuthDegrees;
 
-    const sunTimes = SunCalc.getTimes(
+    const sunTimes = getSunTimes(
       dateTime,
       this.stadium.latitude,
       this.stadium.longitude,
@@ -384,10 +385,7 @@ export function formatSunPosition(position: SunPosition): {
 }
 
 export function getCompassDirection(degrees: number): string {
-  const directions = ['N', 'NNE', 'NE', 'ENE', 'E', 'ESE', 'SE', 'SSE', 
-                     'S', 'SSW', 'SW', 'WSW', 'W', 'WNW', 'NW', 'NNW'];
-  const index = Math.round(degrees / 22.5) % 16;
-  return directions[index];
+  return compassPoint(degrees);
 }
 
 export function calculateGameSunExposure(

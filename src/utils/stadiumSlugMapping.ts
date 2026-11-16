@@ -8,6 +8,7 @@ export const stadiumSlugMap: Record<string, string> = {
   // Stadium name slugs to team IDs
   'angel-stadium': 'angels',
   'minute-maid-park': 'astros',
+  'daikin-park': 'astros',
   'oakland-coliseum': 'athletics',
   'rogers-centre': 'bluejays',
   'truist-park': 'braves',

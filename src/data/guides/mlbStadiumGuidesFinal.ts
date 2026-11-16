@@ -3,12 +3,12 @@ import { StadiumGuide } from '../stadiumGuides';
 export const mlbStadiumGuidesFinal: Record<string, StadiumGuide> = {
   'astros': {
     id: 'astros',
-    name: 'Minute Maid Park',
+    name: 'Daikin Park',
     team: 'Houston Astros',
     opened: 2000,
     capacity: 41168,
     overview: {
-      description: 'Minute Maid Park in downtown Houston features a retractable roof and the famous train that runs along the left field wall. This unique ballpark combines Houston\'s railroad history with modern amenities, including the iconic Tal\'s Hill (now removed) and distinctive architecture.',
+      description: 'Daikin Park (formerly Minute Maid Park) in downtown Houston features a retractable roof and the famous train that runs along the left field wall. This unique ballpark combines Houston\'s railroad history with modern amenities, including the iconic Tal\'s Hill (now removed) and distinctive architecture.',
       highlights: [
         'Retractable roof for Houston weather',
         'Train runs on 800-foot track',
@@ -229,6 +229,7 @@ export const mlbStadiumGuidesFinal: Record<string, StadiumGuide> = {
       timeline: [
         { year: 2000, event: 'Enron Field opens' },
         { year: 2002, event: 'Renamed Minute Maid Park' },
+        { year: 2025, event: 'Renamed Daikin Park' },
         { year: 2017, event: 'Astros win World Series' },
         { year: 2022, event: 'Astros win World Series' }
       ],

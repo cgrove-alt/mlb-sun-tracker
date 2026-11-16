@@ -1,5 +1,6 @@
 import type { ParkSectionSeed, SectionCoverage } from './parkSectionBuilder';
 import { band, range } from './parkSectionBuilder';
+import { getStadiumOrientation } from '../../stadiums';
 
 type Level = ParkSectionSeed['level'];
 
@@ -76,13 +77,13 @@ function namedPlace(
   return { id, name, level, compass, span };
 }
 
-const athleticsOrientation = 20;
+const athleticsOrientation = getStadiumOrientation('athletics');
 export const athleticsSourcedSeeds: readonly ParkSectionSeed[] = [
   ...arc(athleticsOrientation, range(101, 123), 'lower', { namePrefix: 'Reserved Bowl', startOffset: 74, endOffset: 286 }),
   ...arc(athleticsOrientation, range(201, 206), 'suite', { namePrefix: 'Luxury Suite', startOffset: 74, endOffset: 112 }),
 ];
 
-const blueJaysOrientation = 0;
+const blueJaysOrientation = getStadiumOrientation('bluejays');
 export const blueJaysSourcedSeeds: readonly ParkSectionSeed[] = [
   ...arc(blueJaysOrientation, [...range(101, 103), ...range(108, 148)], 'lower', { namePrefix: '100 Level' }),
   ...arc(blueJaysOrientation, [...range(204, 207), ...range(210, 244)], 'club', { namePrefix: '200 Level' }),
@@ -91,7 +92,7 @@ export const blueJaysSourcedSeeds: readonly ParkSectionSeed[] = [
   ...arc(blueJaysOrientation, range(508, 540), 'upper', { namePrefix: '500 Level' }),
 ];
 
-const giantsOrientation = 87;
+const giantsOrientation = getStadiumOrientation('giants');
 export const giantsSourcedSeeds: readonly ParkSectionSeed[] = [
   ...arc(giantsOrientation, range(101, 152), 'lower', { namePrefix: 'Field / Promenade Level' }),
   ...arc(giantsOrientation, [...range(202, 205), ...range(207, 234)], 'club', { namePrefix: 'Club Level' }),
@@ -99,7 +100,7 @@ export const giantsSourcedSeeds: readonly ParkSectionSeed[] = [
   ...arc(giantsOrientation, range(302, 336, [303, 306, 309, 316, 322, 329]), 'upper', { namePrefix: 'View Level' }),
 ];
 
-const padresOrientation = 0;
+const padresOrientation = getStadiumOrientation('padres');
 export const padresSourcedSeeds: readonly ParkSectionSeed[] = [
   // Current 2026 seating chart: 136 and 224 are not published; 313 is.
   ...arc(padresOrientation, range(101, 137, [136]), 'lower', { namePrefix: 'Field Level' }),

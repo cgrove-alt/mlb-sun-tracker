@@ -118,9 +118,14 @@
   box-shadow: 0 2px 8px rgba(0,0,0,0.08);
 }
 
-.toc-widget h3,
-.share-widget h3 {
+/* h2: the sidebar comes right after the post title (h1) in the page.
+   Margin, line height and letter spacing keep the h3 look it had. */
+.toc-widget h2,
+.share-widget h2 {
+  margin-top: 24px;
   margin-bottom: 1rem;
+  line-height: 1.4;
+  letter-spacing: normal;
   font-size: 1.1rem;
   color: #1a1a1a;
   font-weight: 600;
@@ -188,11 +193,11 @@
 }
 
 .share-button.twitter {
-  background: #1da1f2;
+  background: #0e71b8; /* 5.2:1 with white; #1da1f2 was 2.8:1 */
 }
 
 .share-button.facebook {
-  background: #1877f2;
+  background: #1565c0; /* 5.8:1; #1877f2 was 4.2:1 */
 }
 
 /* Main content styling */
@@ -561,6 +566,11 @@
 
 /* Responsive design */
 @media (max-width: 768px) {
+  .toc-widget h2,
+  .share-widget h2 {
+    margin-top: 20px;
+  }
+
   .post-layout {
     grid-template-columns: 1fr;
   }

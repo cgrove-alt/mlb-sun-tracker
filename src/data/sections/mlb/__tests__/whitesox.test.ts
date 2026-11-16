@@ -56,13 +56,14 @@ describe('Rate Field official chart inventory', () => {
       .forEach((id) => expect(ids).not.toContain(id));
   });
 
-  it('retains the verified chart orientation around home plate and center field', () => {
+  it('puts 132 behind home plate and 163 in left-center field', () => {
     const byId = new Map(whitesoxSections.map((section) => [section.id, section]));
     const behindHome = sectionCompassAngle(asStadiumSection(byId.get('132')!), ORIENTATION);
-    const centerField = sectionCompassAngle(asStadiumSection(byId.get('163')!), ORIENTATION);
+    const leftCenter = sectionCompassAngle(asStadiumSection(byId.get('163')!), ORIENTATION);
 
-    expect(angularDistance(behindHome, 300)).toBeLessThan(5);
-    expect(angularDistance(centerField, 114)).toBeLessThan(6);
+    expect(angularDistance(behindHome, ORIENTATION + 180)).toBeLessThan(5);
+    // Between the left-field pole (orientation − 45°) and center field.
+    expect(angularDistance(leftCenter, ORIENTATION - 22.5)).toBeLessThan(22.5);
   });
 
   it('supplies non-empty modeled calculator geometry for each product', () => {

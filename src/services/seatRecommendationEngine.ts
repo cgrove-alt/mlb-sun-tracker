@@ -71,7 +71,7 @@ export class SeatRecommendationEngine {
     
     // Calculate sun position for game time. gameTime is wall-clock HH:MM at
     // the stadium; convert to a real UTC instant using the stadium's IANA
-    // timezone so SunCalc receives the correct moment. Previously this
+    // timezone so the solar position gets the correct moment. Previously this
     // path passed `stadium.timezone` to `getSunPosition`, which silently
     // ignored the argument — a hidden bypass of any fix.
     const [hours, minutes] = gameTime.split(':').map(Number);

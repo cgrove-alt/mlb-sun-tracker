@@ -128,7 +128,7 @@ export default function GoogleAnalyticsOptOut() {
           </p>
         </div>
         
-        <div className={styles.dataTable}>
+        <div className={styles.dataTable} tabIndex={0} role="region" aria-label="Google Analytics status">
           <table>
             <tbody>
               <tr>
