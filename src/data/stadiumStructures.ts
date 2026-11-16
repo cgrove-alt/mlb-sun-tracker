@@ -5571,8 +5571,9 @@ const PROGRESSIVE_TREAD = { treadFt: 2.8 };
  * (the North Coast Social Club, 2025). The seats on the chart stand as they
  * were; what is over and behind the third-base sections next to the Terrace
  * (167–175) and the left-field corner (176–179) is not measured. Each
- * measured section takes its own back: what rises highest behind it, seen
- * from the middle of its open rows.
+ * measured section takes its own front row (but 468, whose run starts a row
+ * up) and its own back: what rises highest behind it, seen from the middle
+ * of its open rows.
  */
 const PROGRESSIVE: StadiumStructure = {
   stadiumId: 'guardians',
@@ -5591,13 +5592,16 @@ const PROGRESSIVE: StadiumStructure = {
       // row's floor (its front row less the park's 12 ft deck depth would be
       // lower).
       stand: { rows: 34, frontRowHeightFt: 0, rakeDeg: 11, ...PROGRESSIVE_TREAD, backHeightFt: 139, backSetbackFt: 30, deckFrontFt: 28, overhang: { coveredFromRow: 24, soffitHeightFt: 22 } },
-      sections: withBacks({
+      sections: withFronts(withBacks({
         '129': { overhang: { coveredFromRow: 19, soffitHeightFt: 19 } },
         '140': { overhang: { coveredFromRow: PROGRESSIVE_COVER['140'], soffitHeightFt: 21 } },
-        ...Object.fromEntries(['142', '144', '146', '148'].map((id) => [id, { frontRowHeightFt: 4, overhang: { coveredFromRow: 13, soffitHeightFt: 20 } }])),
+        ...Object.fromEntries(['142', '144', '146', '148'].map((id) => [id, { overhang: { coveredFromRow: 13, soffitHeightFt: 20 } }])),
       }, {
         '129': [139, 25], '140': [139, 43], '142': [139, 21], '144': [136, 31], '146': [138, 21],
         '148': [139, 21],
+      }), {
+        '128': -1, '130': -1, '131': -1, '134': -1, '136': -1, '138': -1, '142': 4, '144': 4,
+        '146': 3, '148': 3,
       }),
       rowsFromMap: true,
       heightsSourced: false,
@@ -5610,7 +5614,9 @@ const PROGRESSIVE: StadiumStructure = {
       // row 3 ft (3–4), 13° rake; behind, the roof canopy 139 ft up and
       // 39 ft back (22 behind 149).
       stand: { rows: 23, frontRowHeightFt: 3, rakeDeg: 13, ...PROGRESSIVE_TREAD, backHeightFt: 139, backSetbackFt: 39 },
-      sections: withBacks({}, { '151': [138, 38], '152': [138, 38], '153': [138, 36], '149': [139, 22] }),
+      sections: withFronts(withBacks({}, { '151': [138, 38], '152': [138, 38], '153': [138, 36], '149': [139, 22] }), {
+        '153': 4, '149': 4,
+      }),
       rowsFromMap: true,
       heightsSourced: true,
       coverSourced: true,
@@ -5630,13 +5636,15 @@ const PROGRESSIVE: StadiumStructure = {
       // own. 167–175, from row A like 165, keep the estimate behind them and
       // the source's open rows.
       stand: { rows: 29, frontRowHeightFt: 3, rakeDeg: 13, ...PROGRESSIVE_TREAD, backHeightFt: 139, backSetbackFt: 21, overhang: { coveredFromRow: 24, soffitHeightFt: 33 } },
-      sections: withBacks({
-        '165': { frontRowHeightFt: -1, overhang: { coveredFromRow: 33, soffitHeightFt: 34 } },
+      sections: withFronts(withBacks({
+        '165': { overhang: { coveredFromRow: 33, soffitHeightFt: 34 } },
         '164': { noCover: true },
         ...Object.fromEntries(['167', '169', '170', '171', '172', '174', '175'].map((id) => [id, { noCover: true, frontRowHeightFt: -1, backHeightFt: 125, backSetbackFt: 100 }])),
       }, {
         '165': [139, 30], '164': [139, 37], '163': [138, 21], '162': [138, 21], '160': [138, 21],
         '158': [139, 23],
+      }), {
+        '165': -1, '164': 0,
       }),
       rowsFromMap: true,
       heightsSourced: false,
@@ -5664,15 +5672,16 @@ const PROGRESSIVE: StadiumStructure = {
       // measured section takes its own back; the tier keeps 182's and 183's,
       // not the six's 98-ft median, which none of them has.
       stand: { rows: 25, frontRowHeightFt: 24, rakeDeg: 29, ...PROGRESSIVE_TREAD, backHeightFt: 73, backSetbackFt: 30, overhang: { coveredFromRow: 16, soffitHeightFt: 67 } },
-      sections: withBacks({
-        '185': { frontRowHeightFt: 31 },
-        '181': { frontRowHeightFt: 20, overhang: { coveredFromRow: 20, soffitHeightFt: 67 } },
-        '184': { frontRowHeightFt: 20, overhang: { coveredFromRow: 19, soffitHeightFt: 67 } },
-        '180': { frontRowHeightFt: 31, overhang: { coveredFromRow: 12, soffitHeightFt: 77 } },
+      sections: withFronts(withBacks({
+        '181': { overhang: { coveredFromRow: 20, soffitHeightFt: 67 } },
+        '184': { overhang: { coveredFromRow: 19, soffitHeightFt: 67 } },
+        '180': { overhang: { coveredFromRow: 12, soffitHeightFt: 77 } },
         ...Object.fromEntries(['182', '183'].map((id) => [id, { noCover: true }])),
       }, {
         '185': [67, 16], '184': [124, -17], '183': [71, 29], '182': [74, 30], '181': [123, -17],
         '180': [125, -22],
+      }), {
+        '185': 32, '184': 20, '181': 20, '180': 31,
       }),
       rowsFromMap: true,
       heightsSourced: true,
@@ -5703,7 +5712,9 @@ const PROGRESSIVE: StadiumStructure = {
       // which keeps V); its underside is not seen: 9 ft above row 27's
       // floor.
       stand: { rows: 29, frontRowHeightFt: 6, rakeDeg: 11, ...PROGRESSIVE_TREAD, backHeightFt: 139, backSetbackFt: 34, deckFrontFt: 38, overhang: { coveredFromRow: 27, soffitHeightFt: 29 } },
-      sections: withBacks({ '113': { overhang: { coveredFromRow: PROGRESSIVE_COVER['113'], soffitHeightFt: 29 } } }, { '103': [139, 41], '113': [139, 30] }),
+      sections: withFronts(withBacks({ '113': { overhang: { coveredFromRow: PROGRESSIVE_COVER['113'], soffitHeightFt: 29 } } }, { '103': [139, 41], '113': [139, 30] }), {
+        '103': 5, '113': 7,
+      }),
       rowsFromMap: true,
       heightsSourced: false,
       coverSourced: true,
@@ -5747,11 +5758,16 @@ const PROGRESSIVE: StadiumStructure = {
       // 71 ft (70–75), 30° rake; behind, the roof canopy 139 ft up and 19 ft
       // back (12–48; each measured section takes its own).
       stand: { rows: 6, frontRowHeightFt: 71, rakeDeg: 30, treadFt: 2.6, backHeightFt: 139, backSetbackFt: 19 },
-      sections: withBacks({}, {
+      sections: withFronts(withBacks({}, {
         '407': [138, 19], '414': [139, 48], '417': [139, 21], '418': [138, 17], '426': [140, 21],
         '427': [139, 17], '476': [139, 21], '475': [139, 21], '432': [139, 21], '436': [139, 21],
         '469': [139, 21], '468': [139, 12], '442': [139, 21], '448': [139, 21], '450': [139, 21],
         '452': [139, 21], '455': [139, 21], '454': [139, 21],
+      }), {
+        '406': 70, '407': 70, '414': 72, '417': 70, '477': 70, '476': 70, '475': 70, '432': 70,
+        '436': 70, '469': 70, '442': 70, '448': 70, '450': 70, '452': 70, '455': 70,
+
+        '454': 70,
       }),
 
       rowsFromMap: true,
