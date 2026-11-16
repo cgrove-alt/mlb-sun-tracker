@@ -86,15 +86,21 @@ export function shadeSentence(label: string, samples: readonly ShadeSample[], su
   const firstShaded = statuses.indexOf('shaded');
   if (firstShaded === 0) {
     const lost = statuses.findIndex((s) => s !== 'shaded');
+    const next = statuses[lost] === 'sun' ? 'sun' : 'partial shade';
     const when = inningAt(samples[lost].minutesFromStart);
-    return when ? `${label}: shaded until about ${when}, then sun.` : `${label}: shaded until late in the game.`;
+    return when ? `${label}: shaded until about ${when}, then ${next}.` : `${label}: shaded until late in the game.`;
   }
   if (firstShaded > 0) {
     const when = inningAt(samples[firstShaded].minutesFromStart);
     return when ? `${label}: shade from about ${when}.` : `${label}: shade arrives by the end of the game.`;
   }
   const firstPartial = statuses.indexOf('partial');
-  if (firstPartial === 0) return `${label}: partly shaded, with sun on some rows all game.`;
+  if (firstPartial === 0) {
+    const sun = statuses.indexOf('sun');
+    if (sun === -1) return `${label}: partly shaded, with sun on some rows all game.`;
+    const until = inningAt(samples[sun].minutesFromStart);
+    return until ? `${label}: partly shaded until about ${until}, then sun.` : `${label}: partly shaded until late in the game.`;
+  }
   const when = inningAt(samples[firstPartial].minutesFromStart);
   return when ? `${label}: partial shade from about ${when}.` : `${label}: mostly in the sun.`;
 }

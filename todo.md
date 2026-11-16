@@ -2183,6 +2183,121 @@ to use §13.
 - Mets 108's cover.
 
 ---
+
+## §13 Section sentences that skip what comes next (plan, 2026-11-16)
+
+**The problem.** Two wrong sentences for one fan-facing answer:
+- Fenway R25, 2025-07-13 1:35 PM: partial 1:35–4:05, sun at 4:35. It reads
+  "partly shaded, with sun on some rows all game."
+- Dodgers 124LG, 2025-07-15 1:10 PM: shaded at 1:10, partial from 1:40
+  on, never sun. It reads "shaded until about the 2nd inning, then sun."
+
+**Root cause (one, in `shadeSentence`, `src/utils/gameShade.ts`).** When
+a section starts shaded or partly shaded, the sentence never reads the
+half-hour where that changes. It assumes what comes next:
+- starts shaded: always "then sun", even when the next status is partial;
+- starts partial (no shaded half-hour): always "all game", even when sun
+  comes later.
+
+The other branches (sun first, then shade or partial) already name the
+half-hour and status they describe, so they stay as they are.
+
+**How many, today.** All 30 parks at five 2025 test games (2025-07-15
+1:10, 4:10 and 7:10 PM; 2025-04-15 and 2025-09-15 1:10 PM), counted by
+pattern:
+- start partial, later sun, no shade (Fenway R25's pattern): 801 wrong
+  "all game" sentences. 1,607 really are partial all game, unchanged.
+- start shaded, then partial (Dodgers 124LG's pattern): 1,153 wrong
+  "then sun" sentences. In 934 of them the sun never comes; in the rest
+  it comes later than the sentence says.
+
+**Fix: read the half-hour where it changes.** Two branches change; the
+sentence order and every other branch stay as they are.
+- Shaded first: "shaded until about {inning}, then partial shade." when
+  the next status is partial; "…then sun." when it is sun, as today.
+- Partial first: when no half-hour is sun, keep "…all game". Otherwise:
+  "partly shaded until about {inning}, then sun."
+- When `inningAt` gives nothing (after the 9th), keep the shaded branch's
+  fallback ("shaded until late in the game.") and use the same for partial
+  ("partly shaded until late in the game.").
+
+R25's sun comes 180 minutes in, past the 9th inning. It will read
+"Section R25: partly shaded until late in the game." That matches the
+Fenway post ("partly shaded through the 9th inning"). 124LG will read
+"Section 124LG: shaded until about the 2nd inning, then partial shade."
+
+**Not in this change.** The sentence names one change. 2,408
+section-games change twice or more:
+- 1,867 go sun → partial → shaded and read "shade from about {inning}";
+- 171 go shaded → sun → shaded again after sunset at a 7:10 PM game;
+- 370 follow other patterns.
+
+After the fix, these sentences are true about the change they name but
+say nothing about the other one. Whether the sentence should name a second
+change is a wording decision for you.
+
+- [x] Add `src/utils/__tests__/shadeSentence.test.ts`. No direct tests
+      exist yet. It checks:
+      - shaded then partial names partial shade;
+      - shaded then sun still says sun;
+      - partial then sun names the inning;
+      - partial until past the 9th falls back to "late in the game";
+      - partial all game is unchanged.
+      Confirm the new cases fail on today's code.
+- [x] Change the two branches in `shadeSentence`.
+- [x] Quotes of the old sentences: none found. The blog claims test checks
+      statuses, not sentences, and both posts already match the engine.
+      Re-check after the change.
+- [x] `npx jest` (full suite), then `npx tsc --noEmit -p .`.
+- [x] Dev server: Fenway R25 (2025-07-13 1:35 PM) and Dodgers 124LG
+      (2025-07-15 1:10 PM) panels.
+- [x] Review here, one commit, no push.
+
+## §13 Review
+
+**What changed:** two branches of `shadeSentence` in
+`src/utils/gameShade.ts`, plus one new test file. The sentence order and
+every other branch are unchanged.
+- **Starts shaded:** reads the status at the half-hour where full shade
+  ends. It says "then partial shade." when that is partial and "then sun."
+  when it is sun.
+- **Starts partial, never shaded:** looks for the first sun half-hour.
+  - None: keeps "partly shaded, with sun on some rows all game."
+  - Otherwise: "partly shaded until about {inning}, then sun.", or "partly
+    shaded until late in the game." after the 9th inning, the same fallback
+    as the shaded branch.
+- **`src/utils/__tests__/shadeSentence.test.ts`:** five cases. The three new
+  behaviours failed on the old code; the two unchanged ones passed.
+
+**Answers now:**
+- Fenway R25, 2025-07-13 1:35 PM (partial 1:35–4:05, sun 4:35, High):
+  "Section R25: partly shaded until late in the game."
+- Dodgers 124LG, 2025-07-15 1:10 PM (shaded 1:10, partial after, High):
+  "Section 124LG: shaded until about the 2nd inning, then partial shade."
+
+**Checks:**
+- New tests: they failed 3 of 5 before the fix and pass 5 of 5 after.
+- Full suite: 3546/3546 pass. Type check is clean.
+- All 30 parks at the five 2025 test games, 29,770 sentences. Two rules
+  checked, 0 sentences break them:
+  - "all game" appears only when every half-hour is partial (1,607);
+  - every "then …" names the status right after the first change.
+- Partial then sun: 801, as counted in the plan. 651 now name an inning,
+  150 read "late in the game".
+- Old wording: no test, post or page quotes it. `ShadeFinder` cuts the
+  sentence after its ": ", and that format is unchanged.
+- On the dev server, R25's and 124LG's panels show the new sentences, with
+  no console or server errors.
+
+**Branch:** this worktree's branch was fast-forwarded to
+`fix/shade-answer-rebuild` (3aa381c14) first, since `main` has no
+`gameShade.ts`. The commit sits on top of §12.
+
+**Still open for you:** the 2,408 section-games that change twice or more.
+Their sentences name one change only, for example "shade from about the
+9th inning" for sun → partial → shaded.
+
+---
 ---
 
 # Previous audit (2026-08-07), kept for history
