@@ -3460,7 +3460,10 @@ const OPACY_TERRACE: StandProfile = {
  * section a cut straight back through its rows gives the front row's
  * height, the rake and the structure that rises highest behind as seen from
  * the middle uncovered row; tier values are medians, and every measured
- * section takes its own front row and back. The decks are lower than the stacking
+ * section takes its own front row and back, and its own rake where the scan
+ * sees 9 or more of its rows and the cuts beside it agree (68's cut runs down
+ * an aisle's steps, so it takes the front row of the cuts beside it). The
+ * decks are lower than the stacking
  * estimates: the club level's front is 40 ft (52), the upper deck's 63 ft
  * (70), its roof's edge 119 ft (110). The light towers are not counted as
  * walls; four corner sections whose cuts run along the steps are skipped.
@@ -3489,7 +3492,7 @@ const OPACY: StadiumStructure = {
       // section takes its own back (the roof 25–75 ft behind the last row;
       // past the left-field corner lower structures, 18–65 ft).
       stand: { rows: 29, frontRowHeightFt: 1, rakeDeg: 14, backHeightFt: 122, backSetbackFt: 51, deckFrontFt: 39 },
-      sections: withFronts(withBacks({
+      sections: withRakes(withFronts(withBacks({
         '70': { overhang: { coveredFromRow: 25, soffitHeightFt: 31 } },
         '74': { overhang: { coveredFromRow: 16, soffitHeightFt: 30 } },
         '72': { overhang: { coveredFromRow: 18, soffitHeightFt: 30 } },
@@ -3505,9 +3508,13 @@ const OPACY: StadiumStructure = {
         '70': [122, 43], '76': [122, 25], '78': [65, 12], '86': [18, 1],
       }), {
         '74': 9, '50': 3, '32': 0, '10': 0, '12': 0, '24': 3, '34': 0, '36': 2, '40': 0, '42': 0,
-        '68': 4, '72': 7, '80': 10, '82': 6, '14': -1, '18': -1, '20': 0, '22': 3, '26': 3, '28': 0,
+        '68': 6, '72': 7, '80': 10, '82': 6, '14': -1, '18': -1, '20': 0, '22': 3, '26': 3, '28': 0,
         '30': 0, '38': 2, '44': 0, '48': 3, '52': 3, '54': 0, '56': 0, '58': 0, '60': 0, '70': 3,
         '76': 10, '78': 10, '86': 4,
+      }), {
+        '74': 11, '10': 13, '12': 13, '34': 13, '40': 13, '42': 13, '62': 13, '64': 13, '66': 13,
+        '72': 15, '14': 13, '18': 13, '20': 13, '30': 13, '38': 13, '54': 13, '56': 13, '58': 13,
+        '60': 13, '78': 15,
       }),
       rowsFromMap: true,
       heightsSourced: true,
@@ -3548,8 +3555,10 @@ const OPACY: StadiumStructure = {
       // upper deck's roof, 122 ft up and 75 ft back (66–84 ft, each measured
       // section its own).
       stand: { rows: 21, frontRowHeightFt: 3, rakeDeg: 12, backHeightFt: 122, backSetbackFt: 75 },
-      sections: withFronts(withBacks({}, { '3': [122, 70], '1': [122, 84], '6': [122, 81], '8': [122, 66] }), {
+      sections: withRakes(withFronts(withBacks({}, { '3': [122, 70], '1': [122, 84], '6': [122, 81], '8': [122, 66] }), {
         '5': 0, '3': 2, '1': 5, '6': 5,
+      }), {
+        '5': 13, '3': 13,
       }),
       rowsFromMap: true,
       heightsSourced: true,
@@ -3567,12 +3576,14 @@ const OPACY: StadiumStructure = {
       // ft, 4 ft in front of 90's last row. Behind 92 what rises highest is
       // 110 ft up, 72 ft back. Each measured section takes its own back.
       stand: { rows: 23, frontRowHeightFt: 6, rakeDeg: 18, backHeightFt: 112, backSetbackFt: 50 },
-      sections: withFronts(withBacks({
+      sections: withRakes(withFronts(withBacks({
         '90': { overhang: { coveredFromRow: 17, soffitHeightFt: 38 } },
         '92': { overhang: { coveredFromRow: 19, soffitHeightFt: 35 } },
         '94': { overhang: { coveredFromRow: 19, soffitHeightFt: 35 } },
       }, { '96': [40, 45], '94': [114, 55], '92': [110, 72], '90': [118, -4] }), {
         '94': 5, '90': 8,
+      }), {
+        '96': 17,
       }),
       rowsFromMap: true,
       heightsSourced: false,
@@ -3624,7 +3635,7 @@ const OPACY: StadiumStructure = {
       // 119 ft up with nothing seen below it (a thin roof), and is what rises
       // highest behind (each measured section its own).
       stand: { rows: 25, frontRowHeightFt: 63, rakeDeg: 30, backHeightFt: 122, backSetbackFt: -24, overhang: { coveredFromRow: 15, soffitHeightFt: 119 } },
-      sections: withFronts(withBacks({
+      sections: withRakes(withFronts(withBacks({
         ...Object.fromEntries(OPACY_300_SKIPPING.map((id) => [id, { overhang: { coveredFromRow: 12, soffitHeightFt: 119 } }])),
         '381': { overhang: { coveredFromRow: 8, soffitHeightFt: 119 } }, // rows 8–25
       }, {
@@ -3635,6 +3646,8 @@ const OPACY: StadiumStructure = {
       }), {
         '364': 64, '344': 64, '340': 64, '332': 64, '328': 64, '326': 64, '324': 64, '322': 64,
         '312': 64,
+      }), {
+        '356': 31, '352': 31, '342': 31, '336': 31, '318': 31,
       }),
 
       rowsFromMap: true,
