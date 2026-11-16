@@ -5863,7 +5863,8 @@ const PROGRESSIVE_TREAD = { treadFt: 2.8 };
  * (167–175) and the left-field corner (176–179) is not measured. Each
  * measured section takes its own front row (but 468, whose run starts a row
  * up) and its own back: what rises highest behind it, seen from the middle
- * of its open rows.
+ * of its open rows; and its own rake where the scan sees 9 or more of its
+ * rows and the cuts beside it agree.
  */
 const PROGRESSIVE: StadiumStructure = {
   stadiumId: 'guardians',
@@ -5882,8 +5883,8 @@ const PROGRESSIVE: StadiumStructure = {
       // row's floor (its front row less the park's 12 ft deck depth would be
       // lower).
       stand: { rows: 34, frontRowHeightFt: 0, rakeDeg: 11, ...PROGRESSIVE_TREAD, backHeightFt: 139, backSetbackFt: 30, deckFrontFt: 28, overhang: { coveredFromRow: 24, soffitHeightFt: 22 } },
-      sections: withFronts(withBacks({
-        '129': { overhang: { coveredFromRow: 19, soffitHeightFt: 19 } },
+      sections: withRakes(withFronts(withBacks({
+        '129': { overhang: { coveredFromRow: 19, soffitHeightFt: 20 } },
         '140': { overhang: { coveredFromRow: PROGRESSIVE_COVER['140'], soffitHeightFt: 21 } },
         ...Object.fromEntries(['142', '144', '146', '148'].map((id) => [id, { overhang: { coveredFromRow: 13, soffitHeightFt: 20 } }])),
       }, {
@@ -5892,6 +5893,8 @@ const PROGRESSIVE: StadiumStructure = {
       }), {
         '128': -1, '130': -1, '131': -1, '134': -1, '136': -1, '138': -1, '142': 4, '144': 4,
         '146': 3, '148': 3,
+      }), {
+        '129': 12, '142': 12, '144': 12, '146': 12, '148': 12,
       }),
       rowsFromMap: true,
       heightsSourced: false,
@@ -5904,8 +5907,10 @@ const PROGRESSIVE: StadiumStructure = {
       // row 3 ft (3–4), 13° rake; behind, the roof canopy 139 ft up and
       // 39 ft back (22 behind 149).
       stand: { rows: 23, frontRowHeightFt: 3, rakeDeg: 13, ...PROGRESSIVE_TREAD, backHeightFt: 139, backSetbackFt: 39 },
-      sections: withFronts(withBacks({}, { '151': [138, 38], '152': [138, 38], '153': [138, 36], '149': [139, 22] }), {
+      sections: withRakes(withFronts(withBacks({}, { '151': [138, 38], '152': [138, 38], '153': [138, 36], '149': [139, 22] }), {
         '153': 4, '149': 4,
+      }), {
+        '150': 12, '151': 12, '149': 12,
       }),
       rowsFromMap: true,
       heightsSourced: true,
@@ -5926,7 +5931,7 @@ const PROGRESSIVE: StadiumStructure = {
       // own. 167–175, from row A like 165, keep the estimate behind them and
       // the source's open rows.
       stand: { rows: 29, frontRowHeightFt: 3, rakeDeg: 13, ...PROGRESSIVE_TREAD, backHeightFt: 139, backSetbackFt: 21, overhang: { coveredFromRow: 24, soffitHeightFt: 33 } },
-      sections: withFronts(withBacks({
+      sections: withRakes(withFronts(withBacks({
         '165': { overhang: { coveredFromRow: 33, soffitHeightFt: 34 } },
         '164': { noCover: true },
         ...Object.fromEntries(['167', '169', '170', '171', '172', '174', '175'].map((id) => [id, { noCover: true, frontRowHeightFt: -1, backHeightFt: 125, backSetbackFt: 100 }])),
@@ -5935,6 +5940,8 @@ const PROGRESSIVE: StadiumStructure = {
         '158': [139, 23],
       }), {
         '165': -1, '164': 0,
+      }), {
+        '165': 12, '164': 12,
       }),
       rowsFromMap: true,
       heightsSourced: false,
@@ -5962,7 +5969,7 @@ const PROGRESSIVE: StadiumStructure = {
       // measured section takes its own back; the tier keeps 182's and 183's,
       // not the six's 98-ft median, which none of them has.
       stand: { rows: 25, frontRowHeightFt: 24, rakeDeg: 29, ...PROGRESSIVE_TREAD, backHeightFt: 73, backSetbackFt: 30, overhang: { coveredFromRow: 16, soffitHeightFt: 67 } },
-      sections: withFronts(withBacks({
+      sections: withRakes(withFronts(withBacks({
         '181': { overhang: { coveredFromRow: 20, soffitHeightFt: 67 } },
         '184': { overhang: { coveredFromRow: 19, soffitHeightFt: 67 } },
         '180': { overhang: { coveredFromRow: 12, soffitHeightFt: 77 } },
@@ -5972,6 +5979,8 @@ const PROGRESSIVE: StadiumStructure = {
         '180': [125, -22],
       }), {
         '185': 32, '184': 20, '181': 20, '180': 31,
+      }), {
+        '184': 30, '183': 30, '180': 30,
       }),
       rowsFromMap: true,
       heightsSourced: true,
@@ -6000,10 +6009,15 @@ const PROGRESSIVE: StadiumStructure = {
       // canopy 139 ft up and 34 ft back. The 300s' front row, 38 ft up,
       // reaches out over row 27 (V: 22) in 103–111 (none seen over 113,
       // which keeps V); its underside is not seen: 9 ft above row 27's
-      // floor.
+      // floor (30 ft over 107 and 108, at their own 12°).
       stand: { rows: 29, frontRowHeightFt: 6, rakeDeg: 11, ...PROGRESSIVE_TREAD, backHeightFt: 139, backSetbackFt: 34, deckFrontFt: 38, overhang: { coveredFromRow: 27, soffitHeightFt: 29 } },
-      sections: withFronts(withBacks({ '113': { overhang: { coveredFromRow: PROGRESSIVE_COVER['113'], soffitHeightFt: 29 } } }, { '103': [139, 41], '113': [139, 30] }), {
+      sections: withRakes(withFronts(withBacks({
+        '113': { overhang: { coveredFromRow: PROGRESSIVE_COVER['113'], soffitHeightFt: 29 } },
+        ...Object.fromEntries(['107', '108'].map((id) => [id, { overhang: { coveredFromRow: 27, soffitHeightFt: 30 } }])),
+      }, { '103': [139, 41], '113': [139, 30] }), {
         '103': 5, '113': 7,
+      }), {
+        '107': 12, '108': 12, '113': 10,
       }),
       rowsFromMap: true,
       heightsSourced: false,
