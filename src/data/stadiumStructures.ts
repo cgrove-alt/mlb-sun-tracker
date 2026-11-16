@@ -5835,8 +5835,9 @@ export function targetTier(id: string): string | null {
  *
  * Heights: USGS lidar (Minnesota, May 2022); no structural change since. The
  * 300s, the bleachers and the cove are hidden from the air under the decks
- * above them. Each measured section takes its own back: what rises highest
- * behind it, seen from the middle of its open rows.
+ * above them. Each measured section takes its own front row and back (what
+ * rises highest behind it, seen from the middle of its open rows).
+
  */
 const TARGET: StadiumStructure = {
   stadiumId: 'twins',
@@ -5850,10 +5851,13 @@ const TARGET: StadiumStructure = {
       // (16 of 17): front row 1 ft (-1–2; row 5 behind the dugouts as high),
       // 11° rake; behind, the canopy 148 ft up and 84 ft back (73–91).
       stand: { rows: 13, frontRowHeightFt: 1, rakeDeg: 11, treadFt: 2.8, backHeightFt: 148, backSetbackFt: 84 },
-      sections: withBacks({}, {
+      sections: withFronts(withBacks({}, {
         '2': [148, 80], '3': [148, 73], '4': [148, 83], '6': [148, 81], '8': [148, 91],
         '9': [148, 91], '12': [148, 86], '14': [148, 86], '15': [148, 86], '16': [148, 88],
         '17': [148, 88],
+      }), {
+        '3': 2, '4': 2, '5': 2, '6': 2, '7': 0, '8': -1, '9': -1, '10': 0, '11': 2, '12': 2, '13': 2,
+        '14': 0, '15': 0, '17': 0,
       }),
       rowsFromMap: true,
       heightsSourced: true,
@@ -5869,10 +5873,13 @@ const TARGET: StadiumStructure = {
       // which take it); its underside is not seen: 9 ft above the covered
       // row's floor.
       stand: { rows: 28, frontRowHeightFt: 9, rakeDeg: 14, treadFt: 2.8, backHeightFt: 148, backSetbackFt: -2, deckFrontFt: 37, overhang: { coveredFromRow: 17, soffitHeightFt: 29 } },
-      sections: withBacks(Object.fromEntries(['107', '111', '113', '118', '119', '121'].map((id) => [id, { overhang: { coveredFromRow: 14, soffitHeightFt: 28 } }])), {
+      sections: withFronts(withBacks(Object.fromEntries(['107', '111', '113', '118', '119', '121'].map((id) => [id, { overhang: { coveredFromRow: 14, soffitHeightFt: 28 } }])), {
         '108': [148, 1], '110': [148, 1], '111': [148, -4], '112': [148, 0], '113': [148, -5],
         '114': [148, -4], '115': [148, 0], '117': [148, 1], '118': [148, -4], '120': [148, 3],
         '122': [148, 0],
+      }), {
+        '107': 10, '108': 8, '110': 8, '111': 10, '113': 10, '117': 8, '118': 10, '119': 10,
+        '121': 10,
       }),
       rowsFromMap: true,
       heightsSourced: false,
@@ -5891,7 +5898,7 @@ const TARGET: StadiumStructure = {
       // thin cable line, not a deck: their sourced rows stand, under an
       // estimated ~54 ft.
       stand: { rows: 44, frontRowHeightFt: 0, rakeDeg: 13, treadFt: 2.8, backHeightFt: 148, backSetbackFt: 17 },
-      sections: withBacks({
+      sections: withFronts(withBacks({
         ...targetCover([...targetIds(101, 104), '124', '125', '126'], 54),
         '105': { deckFrontFt: 37, overhang: { coveredFromRow: TARGET_COVER['105'], soffitHeightFt: 28 } },
         ...Object.fromEntries(['106', '123'].map((id) => [id, { deckFrontFt: 37, overhang: { coveredFromRow: 26, soffitHeightFt: 28 } }])),
@@ -5899,6 +5906,8 @@ const TARGET: StadiumStructure = {
         '101': [147, 32], '102': [148, 11], '103': [148, -8], '104': [148, 6], '105': [148, 31],
         '106': [148, 31], '123': [148, 31], '124': [148, 15], '125': [148, 1], '126': [146, 17],
         '127': [145, 50],
+      }), {
+        '104': -1, '105': 2, '106': 2, '123': 2, '124': -2, '126': -1,
       }),
       rowsFromMap: true,
       heightsSourced: false,
@@ -5915,9 +5924,11 @@ const TARGET: StadiumStructure = {
       // behind is the canopy, 148 ft up over the last row; in N, U and V the
       // upper deck's front, 76 ft up, 18–24 ft in front of it.
       stand: { rows: 12, frontRowHeightFt: 38, rakeDeg: 21, treadFt: 2.8, backHeightFt: 148, backSetbackFt: 0, deckFrontFt: 72, overhang: { coveredFromRow: 6, soffitHeightFt: 63 } },
-      sections: withBacks({}, {
+      sections: withFronts(withBacks({}, {
         'A': [148, 3], 'C': [149, 0], 'D': [148, -2], 'K': [148, -2], 'L': [148, -2], 'N': [76, -18],
         'T': [148, 3], 'U': [76, -22], 'V': [76, -24],
+      }), {
+        'A': 37,
       }),
       rowsFromMap: true,
       heightsSourced: false,
@@ -5957,11 +5968,13 @@ const TARGET: StadiumStructure = {
       // canopy 148 ft up over the last row (over 225 and 226 the scan's
       // "edge" is the walkway at the top of their rows).
       stand: { rows: 6, frontRowHeightFt: 73, rakeDeg: 31, treadFt: 2.8, backHeightFt: 148, backSetbackFt: -1 },
-      sections: withBacks({}, {
+      sections: withFronts(withBacks({}, {
         '201': [147, 8], '202': [148, 3], '203': [148, -4], '206': [148, -2], '207': [148, 0],
         '208': [148, 1], '211': [148, 4], '212': [148, 4], '213': [148, -3], '215': [148, -3],
         '216': [148, -3], '218': [148, -3], '220': [148, 0], '221': [148, -2], '222': [148, -2],
         '223': [148, 1], '224': [148, 1], '225': [148, -5], '226': [148, -5], '227': [147, -2],
+      }), {
+        '224': 74,
       }),
       rowsFromMap: true,
       heightsSourced: true,
@@ -6036,7 +6049,9 @@ const TARGET: StadiumStructure = {
       // wall, 16° rake; behind, 32 ft up right behind the last row (44 ft
       // and 68 ft back behind 139, 82 ft and 50 ft back behind 140).
       stand: { rows: 7, frontRowHeightFt: 21, rakeDeg: 16, treadFt: 2.8, backHeightFt: 32, backSetbackFt: 4 },
-      sections: withBacks({}, { '136': [32, 1], '137': [32, 1], '139': [44, 68], '140': [82, 50] }),
+      sections: withFronts(withBacks({}, { '136': [32, 1], '137': [32, 1], '139': [44, 68], '140': [82, 50] }), {
+        '136': 22, '138': 20,
+      }),
 
       rowsFromMap: true,
       heightsSourced: true,
@@ -6051,7 +6066,10 @@ const TARGET: StadiumStructure = {
       // frame (a lamp bank, 75–128 ft), neither a deck nor a wall: left out,
       // as the light towers are.
       stand: { rows: 16, frontRowHeightFt: 42, rakeDeg: 35, treadFt: 2.8, backHeightFt: 78, backSetbackFt: -6 },
-      sections: { '240': { frontRowHeightFt: 52 } },
+      sections: withFronts({}, {
+
+        '239': 41, '240': 52,
+      }),
       rowsFromMap: true,
       heightsSourced: true,
       coverSourced: true,
