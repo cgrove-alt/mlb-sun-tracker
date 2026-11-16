@@ -3745,8 +3745,9 @@ const PETCO_100: StandProfile = { rows: 43, frontRowHeightFt: -1, rakeDeg: 10, b
  * as at Citizens Bank Park: for each section a cut straight back through its
  * rows gives the front row's height, the rake and the structure that rises
  * highest behind as seen from the middle uncovered row; tier values are
- * medians, and every measured section takes its own front row and back. The
- * Terrace level's front is 36 ft (38), the Upper Box's 67 ft (75; the
+ * medians, and every measured section takes its own front row and back, and
+ * its own rake where the scan sees 9 or more of its rows and the cuts beside
+ * it agree. The Terrace level's front is 36 ft (38), the Upper Box's 67 ft (75; the
  * Upper Deck's rows behind an aisle start ~80 ft), the roof 133 ft (118).
  * The light towers are not counted as walls; the downtown towers beyond the
  * outfield are. Covered rows: where the scan puts a deck's edge more than
@@ -3768,10 +3769,11 @@ const PETCO: StadiumStructure = {
       label: 'Field VIP (101–106)',
       // Rows 8–20 or 8–22, open (seen from directly above on the photo,
       // 18–31 m behind home). Lidar (6 of 6): front row at field level (-2
-      // to 2), 12° rake (9–14); what rises highest behind is the Upper
+      // to 2), 10° rake (9–12; the cuts through 101, 102 and 105 are off
+      // those beside them); what rises highest behind is the Upper
       // level's roof, 133 ft up and 88 ft back (66–103 ft, each measured
       // section its own).
-      stand: { rows: 15, frontRowHeightFt: -1, rakeDeg: 12, backHeightFt: 133, backSetbackFt: 88 },
+      stand: { rows: 15, frontRowHeightFt: -1, rakeDeg: 10, backHeightFt: 133, backSetbackFt: 88 },
       sections: withFronts(withBacks({}, {
         '104': [133, 93], '106': [133, 86], '101': [134, 75], '102': [133, 66], '103': [133, 103],
         '105': [134, 89],
@@ -3827,7 +3829,7 @@ const PETCO: StadiumStructure = {
       // measured section takes its own back (see PETCO_100): that front
       // 15–45 ft in front of the last row of the deep sections, 19 ft
       // behind the 23-row 124; the roof 27–57 ft behind the others.
-      sections: withFronts(withBacks({
+      sections: withRakes(withFronts(withBacks({
         ...petcoCover([...Array.from({ length: 18 }, (_, i) => String(107 + i))], 27),
         '109': { overhang: { coveredFromRow: 17, soffitHeightFt: 27 } },
         '107': { overhang: { coveredFromRow: 17, soffitHeightFt: 27 } },
@@ -3842,6 +3844,8 @@ const PETCO: StadiumStructure = {
       }), {
         '110': 2, '112': -2, '114': -2, '118': -2, '120': -2, '122': -2, '124': -2, '107': 2,
         '109': 2, '113': 0, '115': 0, '119': 0, '121': 0,
+      }), {
+        '112': 11, '116': 11, '118': 9, '122': 12, '124': 12, '107': 11, '115': 9, '121': 9,
       }),
       rowsFromMap: true,
       heightsSourced: false,
@@ -3857,8 +3861,10 @@ const PETCO: StadiumStructure = {
       // the Terrace level's front less 9 ft). Behind, 76 ft up (each takes
       // its own: over 111 the Terrace level, 68 ft, 34 ft in front).
       stand: { rows: 43, frontRowHeightFt: 7, rakeDeg: 15, backHeightFt: 76, backSetbackFt: -15, deckFrontFt: 36, overhang: { coveredFromRow: 21, soffitHeightFt: 31 } },
-      sections: withFronts(withBacks({ '111': { frontRowHeightFt: 2, overhang: { coveredFromRow: 17, soffitHeightFt: 27 } } }, { '111': [68, -34], '127': [77, -11] }), {
+      sections: withRakes(withFronts(withBacks({ '111': { frontRowHeightFt: 2, overhang: { coveredFromRow: 17, soffitHeightFt: 27 } } }, { '111': [68, -34], '127': [77, -11] }), {
         '111': 2,
+      }), {
+        '111': 11,
       }),
       rowsFromMap: true,
       heightsSourced: false,
@@ -3874,12 +3880,14 @@ const PETCO: StadiumStructure = {
       stand: { rows: 13, frontRowHeightFt: 3, rakeDeg: 10, backHeightFt: 26, backSetbackFt: -12 },
       // The scan puts the deck's edge over 126's row 1 (its lowest point
       // 20 ft up) and 132's row 5.
-      sections: withFronts(withBacks({
+      sections: withRakes(withFronts(withBacks({
         ...petcoCover(['128', '130', '134'], 23),
         '126': { overhang: { coveredFromRow: 1, soffitHeightFt: 20 } },
         '132': { overhang: { coveredFromRow: 5, soffitHeightFt: 23 } },
       }, { '126': [59, -32], '128': [57, 0], '130': [26, -8], '132': [26, -22] }), {
         '126': 4, '132': 4,
+      }), {
+        '128': 11,
       }),
       rowsFromMap: true,
       heightsSourced: false,
@@ -3964,11 +3972,12 @@ const PETCO: StadiumStructure = {
     leftReserved: {
       label: 'Left Field Reserved (226–230)',
       // Rows up to 21; Rate Your Seats counts them covered from row 15–17.
-      // Lidar (2 of 3): front row 26 ft, 21° rake (18–23); a structure
+      // Lidar (2 of 3): front row 26 ft, 18° rake (228's; 230's cut, 23°, is
+      // off the cuts beside it, 20°); a structure
       // reaches out over row 9 (8–10), its lowest point 43 ft up, so the rows
       // from there back are covered (226, not measured, keeps its row, with
       // an underside 9 ft above that row's floor). Behind, 126 ft up.
-      stand: { rows: 21, frontRowHeightFt: 26, rakeDeg: 21, backHeightFt: 126, backSetbackFt: -12, overhang: { coveredFromRow: 9, soffitHeightFt: 44 } },
+      stand: { rows: 21, frontRowHeightFt: 26, rakeDeg: 18, backHeightFt: 126, backSetbackFt: -12, overhang: { coveredFromRow: 9, soffitHeightFt: 44 } },
       sections: withFronts(withBacks(petcoCover(['226'], 50), { '228': [119, -17], '230': [132, -8] }), {
         '230': 27,
       }),
@@ -3981,7 +3990,9 @@ const PETCO: StadiumStructure = {
       label: 'Right Field Upper (227–235)',
       // Rows 1–25; 227–231 covered from row 23, 233 and 235 open ("all right
       // field seats, especially on the 200 level, are not good for shade").
-      // Lidar (4 of 5): front row 47 ft (36 in 227), 27° rake (17–29);
+      // Lidar (4 of 5): front row 47 ft (36 in 227), 27° rake (26–29 on 231
+      // and the cuts beside 233; 227's run starts on a walkway, near flat
+      // over its first rows and 26° behind);
       // behind, 73 ft up (62–129; 78 ft right behind 227's last row, 67 ft
       // and 162 ft back behind 231). Estimated: underside 9 ft above the first
       // covered row's floor. Over 233's rows 19 and up a structure reaches
