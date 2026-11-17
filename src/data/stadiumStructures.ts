@@ -404,7 +404,11 @@ const FENWAY_LIDAR = 'USGS 3DEP lidar MA_CentralEastern_2021, flown 2021-03-20 (
  * front row's height, the rake and the structure that rises highest behind
  * as seen from the middle uncovered row; tier values are medians, and every
  * measured section takes its own front row and back, and its own rake where
- * the scan sees 9 or more of its rows and the cuts beside it agree. The eight
+ * the scan sees 9 or more of its rows and the cuts beside it agree. Each
+ * cut runs along the rows' fall line: where that is firmly more than 15°
+ * off the club map's direction, the section faces it (its section file's
+ * standRuns); one that straddles a bend keeps the map's direction and its
+ * tier's rake. The eight
  * lattice light towers on the roof are not counted as walls. Covered rows: where the scan
  * puts a roof's or deck's edge more than two rows from the source's row
  * (most of the Loge Boxes, which the sources call open), the scan's edge is
@@ -432,7 +436,7 @@ const FENWAY: StadiumStructure = {
       // (the pavilion roof 34–57 ft behind them, the press box block 24–39).
       stand: { rows: 12, frontRowHeightFt: -1, rakeDeg: 9, backHeightFt: 82, backSetbackFt: 47 },
       sections: withRakes(withFronts(withBacks({}, {
-        'F9': [82, 50], 'F10': [82, 50], 'F11': [82, 55], 'F12': [82, 53], 'F13': [82, 35],
+        'F9': [82, 50], 'F10': [82, 50], 'F11': [82, 55], 'F12': [82, 52], 'F13': [82, 35],
         'F14': [82, 35], 'F15': [82, 35], 'F16': [82, 50], 'F17': [82, 35], 'F18': [82, 35],
         'F19': [82, 35], 'F20': [82, 34], 'F21': [82, 40], 'F22': [82, 40], 'F23': [82, 42],
         'F24': [82, 40], 'F25': [82, 42], 'F26': [82, 42], 'F27': [82, 57], 'F28': [82, 43],
@@ -444,14 +448,14 @@ const FENWAY: StadiumStructure = {
         'F56': [82, 48], 'F57': [82, 48], 'F58': [82, 35], 'F59': [82, 48], 'F60': [82, 35],
         'F61': [82, 35], 'F62': [82, 40], 'F63': [82, 40], 'F64': [82, 39], 'F65': [82, 53],
         'F66': [82, 55], 'F68': [82, 55], 'F69': [82, 34], 'F70': [82, 48], 'F71': [82, 53],
-        'F72': [82, 55], 'F73': [82, 48], 'F74': [82, 48], 'F77': [82, 48], 'F78': [54, 29],
+        'F72': [82, 48], 'F73': [82, 48], 'F74': [82, 48], 'F77': [82, 48], 'F78': [54, 29],
         'F79': [54, 32], 'F80': [54, 27], 'F81': [54, 30], 'D13': [82, 35], 'D14': [82, 35],
         'D15': [82, 35], 'D16': [82, 50], 'D17': [82, 35], 'D18': [82, 35], 'D19': [82, 35],
         'D20': [82, 34], 'D29': [82, 52], 'D30': [82, 50], 'D31': [82, 48], 'D32': [82, 50],
         'D33': [82, 50], 'D34': [82, 50], 'D35': [82, 48], 'D37': [82, 45], 'D38': [82, 45],
         'D52': [82, 48], 'D53': [82, 48], 'D54': [82, 48], 'D55': [82, 48], 'D56': [82, 48],
         'D57': [82, 48], 'D58': [82, 35], 'D59': [82, 48], 'D60': [82, 35], 'D61': [82, 35],
-        'D72': [82, 55], 'D73': [82, 48], 'D74': [82, 48], 'D77': [82, 48], 'D78': [54, 29],
+        'D72': [82, 48], 'D73': [82, 48], 'D74': [82, 48], 'D77': [82, 48], 'D78': [54, 29],
         'D79': [54, 32], 'H39': [96, 24], 'H40': [98, 24], 'H41': [98, 24], 'H42': [96, 39],
         'H43': [96, 34], 'H44': [100, 24], 'H45': [100, 25], 'H46': [98, 25], 'H47': [98, 25],
         'H48': [96, 24], 'H49': [96, 34], 'H50': [82, 45], 'FBC29': [82, 52], 'FBC30': [82, 50],
@@ -460,7 +464,7 @@ const FENWAY: StadiumStructure = {
         'FBC53': [82, 48], 'FBC54': [82, 48], 'FBC55': [82, 48], 'FBC56': [82, 48],
         'FBC57': [82, 48], 'FBC58': [82, 35], 'FBC59': [82, 48], 'FBC60': [82, 35],
         'FBC61': [82, 35], 'FBC69': [82, 34], 'FBC70': [82, 48], 'FBC71': [82, 53],
-        'FBC72': [82, 55], 'FBC73': [82, 48], 'FBC74': [82, 48], 'FBC77': [82, 48],
+        'FBC72': [82, 48], 'FBC73': [82, 48], 'FBC74': [82, 48], 'FBC77': [82, 48],
         'FBC78': [54, 29], 'FBC79': [54, 32], 'FBC80': [54, 27],
       }), {
         'F11': -2, 'F13': 1, 'F14': 1, 'F15': 1, 'F17': 1, 'F18': 1, 'F19': 1, 'F20': 1, 'F21': 1,
@@ -472,10 +476,10 @@ const FENWAY: StadiumStructure = {
         'FBC32': -2, 'FBC34': -2, 'FBC51': -2, 'FBC56': -2, 'FBC58': 1, 'FBC59': -2, 'FBC60': 1,
         'FBC61': 1, 'FBC69': 1,
       }), {
-        'F12': 8, 'F42': 8, 'F47': 8, 'F48': 10, 'F49': 7, 'F59': 10, 'F65': 10, 'F66': 10,
-        'F68': 10, 'F72': 8, 'F73': 10, 'F74': 10, 'F75': 10, 'F76': 10, 'F77': 10, 'F79': 10,
-        'F80': 10, 'F81': 10, 'D59': 10, 'D72': 8, 'D73': 10, 'D74': 10, 'D75': 10, 'D76': 10,
-        'D77': 10, 'D79': 10, 'H42': 8, 'H47': 8, 'H48': 10, 'H49': 7, 'FBC59': 10, 'FBC72': 8,
+        'F42': 8, 'F47': 8, 'F48': 10, 'F59': 10, 'F65': 10, 'F66': 10,
+        'F68': 10, 'F72': 10, 'F73': 10, 'F74': 10, 'F75': 10, 'F76': 10, 'F77': 10, 'F79': 10,
+        'F80': 10, 'F81': 10, 'D59': 10, 'D72': 10, 'D73': 10, 'D74': 10, 'D75': 10, 'D76': 10,
+        'D77': 10, 'D79': 10, 'H42': 8, 'H47': 8, 'H48': 10, 'FBC59': 10, 'FBC72': 10,
         'FBC73': 10, 'FBC74': 10, 'FBC75': 10, 'FBC76': 10, 'FBC77': 10, 'FBC79': 10, 'FBC80': 10,
       }),
       rowsFromMap: true,
@@ -500,7 +504,7 @@ const FENWAY: StadiumStructure = {
       stand: { rows: 13, frontRowHeightFt: 4, rakeDeg: 16, backHeightFt: 54, backSetbackFt: -12, deckFrontFt: 52, overhang: { coveredFromRow: 9, soffitHeightFt: 41 } },
       sections: withRakes(withFronts(withBacks({
         'B88': { deckFrontFt: 39, overhang: { coveredFromRow: 13, soffitHeightFt: 28 } },
-        'B89': { deckFrontFt: 39, overhang: { coveredFromRow: 14, soffitHeightFt: 28 } },
+        'B89': { deckFrontFt: 40, overhang: { coveredFromRow: 14, soffitHeightFt: 29 } },
         // At the ends and behind home another structure covers them, its
         // front not measured.
         ...Object.fromEntries(['B105', 'B150'].map((id) => [id, { deckFrontFt: undefined, overhang: { coveredFromRow: 8, soffitHeightFt: 36 } }])),
@@ -515,11 +519,11 @@ const FENWAY: StadiumStructure = {
         'B131': { deckFrontFt: undefined, overhang: { coveredFromRow: 5, soffitHeightFt: 33 } },
         ...Object.fromEntries(['B134', 'B135'].map((id) => [id, { overhang: { coveredFromRow: 6, soffitHeightFt: 41 } }])),
       }, {
-        'B88': [41, -13], 'B89': [41, -14], 'B94': [54, -32], 'B95': [54, -27], 'B96': [54, 0],
+        'B88': [41, -13], 'B89': [41, -17], 'B94': [54, -32], 'B95': [54, -27], 'B96': [54, 0],
         'B97': [54, -27], 'B98': [54, -7], 'B99': [54, -15], 'B100': [54, -17], 'B101': [54, -17],
         'B102': [54, -19], 'B103': [53, -2], 'B104': [54, -20], 'B105': [54, -20], 'B106': [54, -20],
-        'B109': [52, -10], 'B110': [52, -10], 'B111': [52, -10], 'B112': [52, -10],
-        'B113': [53, -10], 'B115': [54, -28], 'B116': [54, 1], 'B118': [53, -10], 'B121': [54, -14],
+        'B111': [52, -10],
+        'B113': [53, -10], 'B115': [54, -28], 'B116': [54, 1], 'B118': [54, -14], 'B121': [54, -14],
         'B122': [54, -15], 'B123': [54, -15], 'B124': [53, -15], 'B125': [96, -19],
         'B127': [98, -19], 'B128': [98, -19], 'B129': [97, -20], 'B130': [96, -9],
         'B131': [100, -20], 'B132': [98, -19], 'B133': [98, -19], 'B134': [96, -20],
@@ -530,10 +534,11 @@ const FENWAY: StadiumStructure = {
         'B160': [54, -10], 'B161': [54, -10], 'B162': [54, -10], 'B164': [52, -10], 'B165': [54, 6],
       }), {
         'B94': 6, 'B101': 5, 'B115': 9, 'B160': 3, 'B163': 5, 'B164': 6, 'B165': 5,
+        'B89': 5,
       }), {
-        'B88': 13, 'B89': 12, 'B94': 13, 'B95': 13, 'B96': 13, 'B97': 14, 'B98': 14, 'B99': 14,
-        'B100': 15, 'B101': 14, 'B102': 14, 'B110': 14, 'B111': 15, 'B112': 15, 'B113': 15,
-        'B118': 14, 'B144': 15, 'B149': 15, 'B150': 15, 'B154': 15, 'B155': 17, 'B157': 20,
+        'B88': 13, 'B89': 14, 'B95': 13, 'B96': 13, 'B97': 14, 'B98': 14, 'B99': 14,
+        'B100': 15, 'B101': 14, 'B102': 14, 'B111': 15, 'B113': 15,
+        'B144': 15, 'B149': 15, 'B150': 15, 'B157': 20,
         'B158': 20, 'B159': 20, 'B160': 20, 'B161': 19, 'B162': 19, 'B163': 18,
       }),
       rowsFromMap: true,
@@ -565,10 +570,11 @@ const FENWAY: StadiumStructure = {
       // Uncovered; among the last seats to get shade (sourced). Lidar (5 of
       // 8; the others are not separated from the Grandstand in the cut):
       // front row 1 ft below the field (-1 to 2), 9° rake (6–15); behind,
-      // the pavilion roof 82 ft up and 52 ft back. Each measured section
-      // takes its own back (50–63 ft; behind B2 the Grandstand roof, 41 ft).
-      stand: { rows: 12, frontRowHeightFt: -1, rakeDeg: 9, backHeightFt: 82, backSetbackFt: 52 },
-      sections: withFronts(withBacks({ 'B6': { frontRowHeightFt: 2 } }, { 'B2': [41, 21], 'B5': [82, 63], 'B6': [82, 50], 'B8': [82, 58] }), {
+      // the pavilion roof 82 ft up and 50 ft back. Each measured section
+      // takes its own back (50–58 ft; behind B2 the Grandstand roof, 41 ft;
+      // along B5's rows' fall line, a structure 54 ft up, 45 ft back).
+      stand: { rows: 12, frontRowHeightFt: -1, rakeDeg: 9, backHeightFt: 82, backSetbackFt: 50 },
+      sections: withFronts(withBacks({ 'B6': { frontRowHeightFt: 2 } }, { 'B2': [41, 21], 'B5': [54, 45], 'B8': [82, 58], 'B7': [82, 52] }), {
         'B2': 0, 'B6': 2,
       }),
       rowsFromMap: true,
@@ -686,18 +692,17 @@ const FENWAY: StadiumStructure = {
     pavilionReserved: {
       label: 'Pavilion Reserved',
       // Rows A–J; Rate Your Seats calls them uncovered. Lidar (4 of 4): front
-      // row 52 ft (52–53), 35° rake (32–36); a structure 82 ft up reaches
+      // row 52 ft (52–53), 36° rake (32–36; PR16 straddles a bend, its cut
+      // across the rows); a structure 82 ft up reaches
       // out over row 6 of PR15 and PR16 (covering them from there; over the
       // last rows only in PR18 and PR20) and is what rises highest behind;
       // each section takes its own (behind PR18 a lower one, 69 ft).
-      stand: { rows: 10, frontRowHeightFt: 52, rakeDeg: 35, backHeightFt: 82, backSetbackFt: -7 },
-      sections: withRakes(withFronts(withBacks(
+      stand: { rows: 10, frontRowHeightFt: 52, rakeDeg: 36, backHeightFt: 82, backSetbackFt: -7 },
+      sections: withFronts(withBacks(
         Object.fromEntries(['PR15', 'PR16'].map((id) => [id, { overhang: { coveredFromRow: 6, soffitHeightFt: 82 } }])),
         { 'PR15': [82, -10], 'PR16': [82, -12], 'PR18': [69, 1], 'PR20': [88, -4] },
       ), {
         'PR16': 53, 'PR18': 53,
-      }), {
-        'PR18': 36, 'PR20': 36,
       }),
       rowsFromMap: true,
       heightsSourced: true,

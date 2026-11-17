@@ -17,6 +17,18 @@ export const redsoxSections: DetailedSection[] = buildParkSections(ORIENTATION, 
   redSoxPublishedChartPoints,
   {
     orientation: ORIENTATION,
+    standRuns: [
+      // Turned to the rows' fall line, measured on the lidar
+      // (scripts/measureStandHeights.py): these sections' rows climb firmly
+      // more than 15° off the direction fitted on the map, in the middle
+      // of the section and 4 m to either side.
+      { ids: ['B109', 'B110', 'B118'], facingDeg: 174 },
+      { ids: ['B112'], facingDeg: 175 },
+      { ids: ['B5'], facingDeg: 159 },
+      { ids: ['B89'], facingDeg: 164 },
+      { ids: ['F12'], facingDeg: 160 },
+      { ids: ['F72', 'D72', 'FBC72'], facingDeg: 299 },
+    ],
     behindHomeIds: ['F39', 'F50'],
     centerFieldIds: ['L36', 'L37'],
     // The straight runs of Field Boxes along each foul line. On this chart
