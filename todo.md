@@ -3733,6 +3733,175 @@ along its direction, and all faces share it.
 - *The 41 bends read partly outside their section*, and per-face
   profiles, as in the plan.
 
+## §20 §18's turns against the treads (plan, 2026-11-17)
+
+Asked: plan checking the §18 turns against the treads. Branch
+`fix/turn-treads`, from `main` after PR #93.
+
+**The problem.**
+- §18 turned 79 sections to the median of the fall lines read in their
+  middle and 4 m to either side.
+- §19 found that fall lines read off to the side often pick up an aisle,
+  a walkway or a structure's edge: 63 of 72 bent readings failed a check
+  on the treads.
+- §18's turns were checked for stability (re-measured fall lines) and on
+  pictures, but not against the treads. §17's were checked against a
+  tread plane.
+
+**What the treads say.** For each turn, planes fitted to the treads
+(the tool's `tread_plane`):
+- 8 m and 12 m squares at the middle (§17's sizes);
+- 5 m squares at each of the three points where the fall lines were
+  read;
+- leaving out any reading more than 60° from both the map's and the
+  turned direction (a patch on a structure).
+
+The median of those readings, against the turn (78 turns; Fenway B6
+isn't measured):
+- **59 confirmed:** within 10° of the turn.
+- **7 where the readings agree within 12° and lie 11–14° from the
+  turn:**
+  - Twins 202: map 205°, turn 187°, treads 201°;
+  - Royals 128: 216°, 238°, 226°;
+  - Busch 163D: 287°, 307°, 319°;
+  - Fenway F71 and FBC71: 279°, 299°, 310°;
+  - Mets 16: 221°, 189°, 200°;
+  - Mets 411: 192°, 157°, 169°.
+- **12 whose readings spread 20–64°**, with no firm direction of their
+  own. These are curves and bends, or a patch catching a structure.
+  - 7 turn further the same way: Angels 243, Busch 136D, 137D and 271,
+    Camden 8, PNC 30 and 32.
+  - 2 lie between the map and the turn: Busch 231 and Fenway B155.
+  - 2 lean back toward the map: Busch 229 and PNC 135.
+  - Dodgers 316PR has only two clean readings.
+
+  None of these gives a firm direction to face instead, and reverting
+  to the map would put most of them further from their treads.
+
+**The rule.** A §18 turn stands unless its tread readings (as above)
+agree within 15° and their median is more than 10° from the turn (the
+fall-line fit resolves about 10°). Then the section faces the treads'
+median. That applies to the 7 above.
+
+**What it changes.** Facing the treads' direction alone changes answers
+for all 7 at the five 2025 test games (24 half-hour steps;
+`scratchpad/treadWhatIf.ts`). Re-measuring along the new directions then
+moves their own rakes, fronts, backs and covered rows, and the tier
+medians, as in §18.
+
+**Fix.**
+1. *Tool (`scripts/measureStandHeights.py`).*
+   - `tread_direction()`: the five readings, their median and spread.
+   - A `treads <park>` command lists the sections whose treads firmly
+     disagree with their direction, as `standRuns` entries.
+2. *Directions:* in each section file, the 7 move from their §18 entry to
+   the treads' median.
+   - Re-measure the five parks along the new directions.
+   - Check that the treads still agree there (within 10°), and check each
+     picture.
+3. *One commit per park* (Busch, Citi, Fenway, Kauffman, Target Field):
+   - the maps through the §18 guard;
+   - covered rows against the true source (the §18 lesson);
+   - the §8 undersides;
+   - reference checks and post claims (investigated, not tuned).
+4. *Checks:* audits, the full suite, the type check, eslint, the
+   snapshot, and a review here.
+
+**Not in this plan (noticed):**
+- *The same check on every other measured section*
+  (`scratchpad/allTreads.py`). This is the larger finding.
+  - Of 2,156 measured sections, 1,623 have tread readings that agree
+    within 15°.
+  - 340 of those beyond §18's 7 have a median more than 10° off their
+    direction: 338 on the map's direction, and 2 of §17's turns (Comerica
+    215 and 116, at 10°).
+  - 125 are more than 15° off, all on the map's direction. They never
+    turned because their fall line isn't firm in the middle. Most are at
+    the Yankees (25), Red Sox (21), Mets (14) and Royals (12), for
+    example Busch 164 at +34°.
+  - Some rings sit about 10° off as a whole (the Angels' club and 400
+    level), which is either the map's fit for that ring or a bias to rule
+    out first.
+  - It's an audit of where most sections' directions come from, to be
+    checked against the photo runs in the stand-direction test before
+    any change: a plan of its own.
+- *The 12 turns with scattered treads* keep their §18 direction. Some
+  may be bent sections that §19's faces rule didn't confirm.
+
+### Steps
+- [x] 1. Tool: `tread_direction()` and the `treads` listing.
+- [x] 2. Directions; re-measure; tread and picture checks.
+- [x] 3. Parks, one commit each: maps, covers, checks.
+- [x] 4. Audits; full checks; snapshot; review.
+
+### §20 Review (2026-11-17)
+
+**What changed:**
+- **Tool (`scripts/measureStandHeights.py`).**
+  - `tread_direction()` reads a section's climb on its treads: planes in
+    8 m and 12 m squares at the middle, and 5 m squares at each
+    fall-line point. It leaves out any reading more than 60° off the
+    section's direction and returns the median, the spread and the
+    count.
+  - `treads <park>` lists the sections whose readings agree within 15°
+    and lie more than 10° off their direction, as `standRuns` entries.
+- **Directions.** The 7 move from their §18 entries to a block of their
+  own at the top of each park's list:
+  - Busch 163D: 307° → 319°;
+  - Citi 16: 189° → 200°, and 411: 157° → 169°;
+  - Fenway F71 and FBC71: 299° → 310°;
+  - Kauffman 128: 238° → 226°;
+  - Target Field 202: 187° → 201°.
+
+  Re-measured along them, every one's treads agree within 4°, and no
+  middle is firmly off its fall line.
+- **Maps** follow, through the §18 guard, one commit per park:
+  - 163D's back (116 ft, 96 ft back) and its tier's rake;
+  - 16's and 411's backs;
+  - F71 and FBC71: their tier's rake, front row 2 ft below the field,
+    pavilion roof 53 ft back;
+  - 128's back (150 ft, 70 ft back, as before §18);
+  - 202's back (3 ft behind).
+
+  The covered rows don't move.
+- **Knock-ons:**
+  - *Busch 162* now reads its back from the open rows its sourced
+    covered row (19, since §18) leaves: 75 ft, 4 ft behind its last row.
+    This is the same effect §17 and §18 accepted.
+  - *Fenway's Field Box back median* is 47 ft again (§18 took it to 45;
+    F71 now reads 53). The 12 entries §18 added at 47 go, and F49 and
+    H49 keep 45 as their own. Of the three unmeasured field boxes, F67
+    and F82 each change at one test game.
+
+**Results, at the five 2025 test games across all 30 parks:**
+- Answers change for 7 sections (20 half-hour steps): Citi 16, Fenway
+  F71, FBC71, F67 and F82, Kauffman 128, and Target Field 202. Citi 411
+  changes one label only.
+- Labels: 3 up, 3 down. The Low share stays 26.6%.
+- Target Field 202 is shaded all game at the July 4:10 PM game (High),
+  where it was in the sun from about the 7th.
+- Kauffman 128's shade comes earlier at the 1:10 PM games, for example
+  in September partly from about the 4th inning and shaded from the
+  6th.
+- No reference check or post claim changes.
+
+**Checks:**
+- *Audits:* rakes, fronts and backs are exactly as before §20 (2,371 on
+  the rule's rake but Pirates 139; 2,323 own fronts and 49 set on
+  purpose; 2,361 own backs and 11 set on purpose). No underside is
+  under 9 ft.
+- *Tests:* the full suite passes, 3,583 of 3,583. In the first full run
+  one suite didn't start (a worker crash: its 6 tests were missing, and
+  it passes alone); the re-run passed whole. The type check and eslint
+  are clean.
+- **Not run:** the production build and Playwright (CI runs them). No
+  post changed, so no dev-server check.
+
+**Noticed, not changed:**
+- *The 125 sections on the map's direction that read more than 15° off
+  on their treads*, and 213 more at 10–15° (above). This is the next
+  audit; check it against the stand-direction test's photo runs first.
+
 ---
 ---
 
