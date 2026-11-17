@@ -5322,18 +5322,20 @@ const GABP: StadiumStructure = {
       label: 'Field level, third-base side (107–112, 121)',
       // 108–112 covered from row KK, 121 from FF (sourced: 18, 25, 32, 37,
       // 37, 20); 107 open. Lidar (6 of 7; 108 and 109 along their rows' fall
-      // line, 20° off the photo's direction): front row 1 ft (-1 to 4), 12°
-      // rake (10–12; 110 and 111 straddle a bend, their cuts across the
-      // rows); behind, the roof's edge, 134 ft up and 42 ft back. The 400s'
-      // front, 52 ft up, is over the source's row in 110; in 111 and 112 it
-      // reaches out over row 33, and along 109's rows over row 22, which they
-      // take. Its underside ~43 ft (that front row less 9 ft). Each measured
-      // section takes its own back (the roof's edge 38–65 ft back; behind
-      // 121 a structure 53 ft up).
+      // line, 20° off the photo's direction, and 111 along the median of its
+      // rows' fall lines): front row 1 ft (-1 to 4), 12° rake (10–12; 110
+      // straddles a bend, its cut across the rows); behind, the roof's edge,
+      // 134 ft up and 40 ft back. The 400s' front, 52 ft up, is over the
+      // source's row in 110; in 112 it reaches out over row 33, along 111's
+      // rows over row 31 and along 109's over row 22, which they take. Its
+      // underside ~43 ft (that front row less 9 ft). Each measured section
+      // takes its own back (the roof's edge 28–65 ft back; behind 121 a
+      // structure 53 ft up).
       stand: { rows: 30, frontRowHeightFt: 1, rakeDeg: 12, backHeightFt: 134, backSetbackFt: 40, deckFrontFt: 52 },
       sections: withRakes(withFronts(withBacks({
         ...gabpCover(['108', '110', '121'], 43),
-        ...Object.fromEntries(['111', '112'].map((id) => [id, { overhang: { coveredFromRow: 33, soffitHeightFt: 43 } }])),
+        '111': { overhang: { coveredFromRow: 31, soffitHeightFt: 43 } },
+        '112': { overhang: { coveredFromRow: 33, soffitHeightFt: 43 } },
         '109': { overhang: { coveredFromRow: 22, soffitHeightFt: 43 } },
       }, {
         '112': [134, 43], '111': [134, 28], '110': [134, 55], '109': [134, 38], '108': [134, 65],
