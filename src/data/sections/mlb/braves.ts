@@ -59,6 +59,15 @@ export const bravesSections: DetailedSection[] = buildParkSections(ORIENTATION, 
   orientation: ORIENTATION,
   aerialControl: BRAVES_AERIAL_CONTROL,
   standRuns: [
+    // Turned to the rows' fall line, measured on the lidar
+    // (scripts/measureStandHeights.py): these sections' rows climb firmly
+    // more than 15° off the direction fitted on the map, in the middle
+    // of the section and 4 m to either side.
+    { ids: ['111'], facingDeg: 276 },
+    { ids: ['141'], facingDeg: 44 },
+    { ids: ['29'], facingDeg: 34 },
+    { ids: ['8'], facingDeg: 30 },
+    { ids: ['9'], facingDeg: 28 },
     // The club boxes follow the backstop arc (radius 18 m) out to the dugouts.
     { ids: ['1'], facingDeg: 258 },
     { ids: ['2'], facingDeg: 268 },
