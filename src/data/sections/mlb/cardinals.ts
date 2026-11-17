@@ -58,12 +58,22 @@ export const cardinalsSections: DetailedSection[] = buildParkSections(
     standRuns: [
       // Turned to the rows' fall line, measured on the lidar
       // (scripts/measureStandHeights.py): these sections' rows climb firmly
-      // more than 15° off the direction fitted on the map, in the middle
-      // of the section and 4 m to either side. 128–131 are in the corner
+      // more than 15° off the direction fitted on the map; each faces the
+      // median of the fall lines in its middle and 4 m to either side. 128–131 are in the corner
       // whose back edge the photo read in shadow (135° below); 163–168 and
       // 265–269 are past the level lines the photo measured on the
       // third-base side (287° below): on the scan their rows run about 15°
       // and 50°.
+      { ids: ['135', '136'], facingDeg: 147 },
+      { ids: ['136D'], facingDeg: 162 },
+      { ids: ['137D'], facingDeg: 157 },
+      { ids: ['162'], facingDeg: 317 },
+      { ids: ['163D'], facingDeg: 307 },
+      { ids: ['165'], facingDeg: 315 },
+      { ids: ['229'], facingDeg: 114 },
+      { ids: ['230'], facingDeg: 109 },
+      { ids: ['231'], facingDeg: 101 },
+      { ids: ['271'], facingDeg: 316 },
       { ids: ['128'], facingDeg: 110 },
       { ids: ['129'], facingDeg: 105 },
       { ids: ['130'], facingDeg: 106 },

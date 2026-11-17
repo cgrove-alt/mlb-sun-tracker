@@ -414,14 +414,15 @@ describe('Busch Stadium stand directions (measured on the 2022 aerial photo)', (
     expect(stand(id)).toBe(197);
   });
 
-  it.each(['158', '162', '160D', '360', '365'])('third-base section %s faces 287°', (id) => {
+  it.each(['158', '160D', '360', '365'])('third-base section %s faces 287°', (id) => {
     expect(stand(id)).toBe(287);
   });
 
   it('the left-field loge faces its own rows on the lidar', () => {
     // The photo's level lines are 4–38 m back from the line; past them the
-    // loge's rows (265–269, and 163–168 below) run about 50° on the scan.
+    // loge's rows (265–269, and 162–168 below) run about 50° on the scan.
     expect(stand('265')).toBe(320);
+    expect(stand('162')).toBe(317);
   });
 
   it.each(['5', '151', '251', '351', '451'])('behind-home section %s faces back toward home plate', (id) => {
