@@ -2028,7 +2028,7 @@ const CBP_FIELD: StandProfile = {
  * front row's height, the rake and the structure that rises highest behind
  * as seen from the middle uncovered row; tier values are medians, and every
  * measured section takes its own front row and back (but for the Diamond
- * Club's front, carried from the dugout boxes' slope, and 318's), and its own
+ * Club's front, carried from the dugout boxes' slope), and its own
  * rake where the scan sees 9 or more of its rows and the cuts beside it agree
  * (119's cut runs down an aisle's steps, so it takes the front row of the
  * cuts beside it). Each cut runs along the rows' fall line: where that is
@@ -2089,7 +2089,9 @@ const CBP: StadiumStructure = {
       label: 'Field level behind home (119–128)',
       // Rows 21–34 behind the Diamond Club, covered from row 29 or 30
       // (sourced; the lidar puts the 200 level's edge at the 7th–9th row
-      // too, and at the 3rd in 121, which takes it). Lidar (9 of 10): row 21
+      // too, and at the 3rd in 121, which takes it; along 126's rows the
+      // scan puts an edge over its 5th row with nothing under it the scan
+      // can place, so 126 keeps the source's). Lidar (9 of 10): row 21
       // at 13 ft (11–19; 122 and 125 start at row 24), 13° rake; what rises
       // highest behind is the 200 level's front (45 ft; 30–70; each measured
       // section takes its own, 121 the one measured before the scan's cover
@@ -2105,7 +2107,7 @@ const CBP: StadiumStructure = {
         '125': { overhang: { coveredFromRow: 7, soffitHeightFt: 35 } }, // rows 24–34, from 30
       }, {
         '120': [70, -11], '119': [45, -8], '125': [40, 25], '122': [45, -20], '123': [45, -18],
-        '124': [44, -18], '126': [70, 7], '127': [70, -11],
+        '124': [44, -18], '126': [70, -10], '127': [70, -11],
       }), {
         '125': 19, '122': 16, '124': 12,
       }),
@@ -2337,19 +2339,20 @@ const CBP: StadiumStructure = {
     },
     threeHundred: {
       label: '300 level (312–333)',
-      // Rows 1–8, open (sourced). Lidar (21 of 22): front row 69 ft (68–75),
-      // 31° rake; what rises highest behind is the Terrace Deck roof, 133 ft
+      // Rows 1–8, open (sourced). Lidar (21 of 22; 318 and 330, on bends,
+      // along the median of their rows' fall lines, where 318's run starts
+      // at its first row): front row 69 ft (68–72), 31° rake; what rises highest behind is the Terrace Deck roof, 133 ft
       // up and 25 ft back (24–40 ft; behind 314, 315 and 333 the Terrace
       // Deck's front, 90–91 ft; each measured section takes its own).
       stand: { rows: 8, frontRowHeightFt: 69, rakeDeg: 31, backHeightFt: 133, backSetbackFt: 25 },
       sections: withFronts(withBacks({}, {
         '313': [133, 29], '328': [133, 30], '315': [90, 2], '314': [90, 2], '317': [133, 30],
-        '322': [133, 34], '320': [132, 29], '318': [133, 32], '324': [133, 30], '316': [133, 24],
-        '329': [133, 24], '330': [133, 40], '331': [133, 30], '332': [133, 32], '312': [132, 24],
+        '322': [133, 34], '320': [132, 29], '318': [133, 21], '324': [133, 30], '316': [133, 24],
+        '329': [133, 24], '331': [133, 30], '332': [133, 32], '312': [132, 24],
         '333': [91, 2],
       }), {
-        '314': 70, '326': 70, '319': 72, '320': 72, '327': 70, '330': 68, '333': 70,
-
+        '314': 70, '326': 70, '319': 72, '320': 72, '327': 70, '333': 70,
+        '318': 72,
       }),
       rowsFromMap: true,
       heightsSourced: true,
@@ -3671,7 +3674,7 @@ const OPACY: StadiumStructure = {
         '76': { overhang: { coveredFromRow: 14, soffitHeightFt: 31 } },
 
       }, {
-        '74': [122, 38], '50': [122, 50], '32': [122, 50], '10': [122, 58], '12': [122, 58],
+        '74': [121, 23], '50': [122, 50], '32': [122, 50], '10': [122, 58], '12': [122, 58],
         '24': [122, 50], '34': [122, 52], '36': [122, 40], '40': [122, 52], '42': [122, 50],
         '68': [122, 75], '72': [122, 33], '80': [122, 52], '82': [57, 35], '14': [122, 65],
         '16': [122, 47], '18': [122, 58], '20': [122, 58], '22': [122, 50], '26': [122, 50],
@@ -3679,7 +3682,7 @@ const OPACY: StadiumStructure = {
         '48': [122, 52], '54': [122, 57], '56': [122, 50], '58': [122, 52], '60': [122, 57],
         '70': [122, 43], '76': [122, 25], '78': [65, 12], '86': [18, 1],
       }), {
-        '74': 9, '50': 3, '32': 0, '10': 0, '12': 0, '24': 3, '34': 0, '36': 2, '40': 0, '42': 0,
+        '74': 10, '50': 3, '32': 0, '10': 0, '12': 0, '24': 3, '34': 0, '36': 2, '40': 0, '42': 0,
         '68': 6, '72': 7, '80': 10, '82': 6, '14': -1, '18': -1, '20': 0, '22': 3, '26': 3, '28': 0,
         '30': 0, '38': 2, '44': 0, '48': 3, '52': 3, '54': 0, '56': 0, '58': 0, '60': 0, '70': 3,
         '76': 10, '78': 10, '86': 4,
@@ -3687,6 +3690,7 @@ const OPACY: StadiumStructure = {
         '10': 13, '12': 13, '34': 13, '40': 13, '42': 13, '62': 13, '64': 13, '66': 13,
         '72': 15, '14': 13, '18': 13, '20': 13, '30': 13, '38': 13, '54': 13, '56': 13, '58': 13,
         '60': 13, '78': 15,
+        '74': 15,
       }),
       rowsFromMap: true,
       heightsSourced: true,
@@ -3724,15 +3728,21 @@ const OPACY: StadiumStructure = {
       // Rows up to 21 (6: 10–27, 8: 4–27), open ("completely avoid
       // sections 1–8 ... if you want to stay out of the sun"). Lidar (5 of
       // 6; 1 and 6 along their rows' fall line, 30° off the map's
-      // direction): front row 3 ft (0–3), 13° rake; what rises highest
-      // behind is the upper deck's roof, 122 ft up and 75 ft back (66–75 ft,
-      // each measured section its own; behind 1 and 6, along their rows, a
-      // structure 107–108 ft up, 155–157 ft back).
-      stand: { rows: 21, frontRowHeightFt: 3, rakeDeg: 13, backHeightFt: 122, backSetbackFt: 75 },
-      sections: withRakes(withFronts(withBacks({}, { '3': [122, 70], '1': [107, 155], '6': [108, 157], '8': [122, 66] }), {
-        '5': 0, '3': 2,
+      // direction, and 8 along the median of its rows' fall lines): front
+      // row 2 ft (0–3), 13° rake; what rises highest behind is the upper
+      // deck's roof, 122 ft up and 75 ft back (70–75 ft, each measured
+      // section its own; behind 1 and 6, along their rows, a structure
+      // 107–108 ft up, 155–157 ft back, and behind 8 one 65 ft up, 47 ft
+      // back; the separate medians, 108 ft and 75 ft back, pair them).
+      stand: { rows: 21, frontRowHeightFt: 2, rakeDeg: 13, backHeightFt: 122, backSetbackFt: 75 },
+      sections: withRakes(withFronts(withBacks({}, { '3': [122, 70], '1': [107, 155], '6': [108, 157], '8': [65, 47] }), {
+        '5': 0,
+        '1': 3,
+        '6': 3,
+        '8': 0,
       }), {
         '1': 14,
+        '8': 14,
       }),
       rowsFromMap: true,
       heightsSourced: true,
@@ -3904,11 +3914,11 @@ const PETCO_LIDAR = 'USGS 3DEP lidar CA_SanDiegoCo_D24, flown 2024-11-17 (script
 // off the map's direction): front row at field level (-2 to 2), 11° rake
 // (9–30). What rises highest behind, seen from the middle of the open rows,
 // is the Terrace level's front, 67–68 ft up and 15–45 ft in front of the
-// last row (nine sections), or the roof, 132–134 ft up and 7–57 ft behind
-// it (six). The profile takes the larger group's median, 40 ft in front:
-// the separate medians of height and setback (68 ft, 15 ft in front) pair
+// last row (eight sections), or the roof, 132–134 ft up and 2–57 ft behind
+// it (seven). The profile takes the larger group's median, 38 ft in front:
+// the separate medians of height and setback (68 ft, 2 ft in front) pair
 // the two groups and fit neither.
-const PETCO_100: StandProfile = { rows: 43, frontRowHeightFt: -1, rakeDeg: 11, backHeightFt: 68, backSetbackFt: -40 };
+const PETCO_100: StandProfile = { rows: 43, frontRowHeightFt: -1, rakeDeg: 11, backHeightFt: 68, backSetbackFt: -38 };
 
 /**
  * Petco Park (2004). Field VIP and the Lexus Club behind home, the 100s, the
@@ -4023,7 +4033,7 @@ const PETCO: StadiumStructure = {
         '120': { overhang: { coveredFromRow: 26, soffitHeightFt: 28 } },
       }, {
         '108': [132, 57], '110': [132, 31], '112': [68, -15], '114': [67, -35], '116': [68, -40],
-        '118': [68, -45], '120': [133, 7], '122': [67, -33], '107': [134, 27], '109': [67, -44],
+        '118': [133, -2], '120': [133, 7], '122': [67, -33], '107': [134, 27], '109': [67, -44],
         '113': [67, -45], '115': [68, -40], '119': [134, 20], '121': [134, 33], '124': [68, 19],
       }), {
         '110': 2, '112': -2, '114': -2, '120': -2, '122': -2, '124': -2, '107': 2,
@@ -4142,15 +4152,15 @@ const PETCO: StadiumStructure = {
       // (3–6) in 9 of the 12, so the rows from 4 back are covered, under an
       // underside of ~57 ft (that front row less 9 ft). That edge is what
       // rises highest behind (each measured section its own).
-      stand: { rows: 13, frontRowHeightFt: 37, rakeDeg: 22, backHeightFt: 68, backSetbackFt: -26, deckFrontFt: 66, overhang: { coveredFromRow: 4, soffitHeightFt: 57 } },
+      stand: { rows: 13, frontRowHeightFt: 37, rakeDeg: 22, backHeightFt: 68, backSetbackFt: -27, deckFrontFt: 66, overhang: { coveredFromRow: 4, soffitHeightFt: 57 } },
 
       sections: withFronts(withBacks({}, {
-        '214': [65, -27], '216': [67, -27], '207': [68, -27], '209': [68, -22], '211': [68, -22],
-        '213': [68, -20], '215': [67, -25], '217': [68, -27], '223': [68, -28],
-        '220': [68, -25],
+        '214': [65, -27], '216': [67, -27], '209': [68, -22], '211': [68, -22],
+        '213': [68, -20], '215': [67, -25], '223': [68, -28],
       }), {
         '207': 35, '209': 35, '211': 36, '213': 35, '223': 38,
         '217': 38,
+        '220': 38,
       }),
       rowsFromMap: true,
       heightsSourced: false,
@@ -4178,22 +4188,24 @@ const PETCO: StadiumStructure = {
       label: 'Right Field Upper (227–235)',
       // Rows 1–25; 227–231 covered from row 23, 233 and 235 open ("all right
       // field seats, especially on the 200 level, are not good for shade").
-      // Lidar (4 of 5): front row 47 ft (36 in 227), 27° rake (26–29 on 231
-      // and the cuts beside 233; 227's run starts on a walkway, near flat
-      // over its first rows and 26° behind);
-      // behind, 73 ft up (62–129; 78 ft right behind 227's last row, 67 ft
-      // and 162 ft back behind 231). Estimated: underside 9 ft above the first
-      // covered row's floor. Over 233's rows 19 and up a structure reaches
+      // Lidar (4 of 5): front row 47 ft (38 in 227, along the median of its
+      // rows' fall lines), 27° rake (26–29 on 231 and the cuts beside 233;
+      // along 227's rows, 24° over five); behind, 75 ft up and 73 ft back
+      // (62–129; 84 ft, 37 ft in front of 227's last row, 67 ft and 162 ft
+      // back behind 231). Estimated: underside 9 ft above the first
+      // covered row's floor. Along 227's rows the scan puts a deck's edge
+      // over its row 4; it keeps its source's row 23, as at this corner the
+      // edge runs across the rows and the cut across them saw seats past it. Over 233's rows 19 and up a structure reaches
       // out, its lowest point 94 ft up, so those rows are covered.
-      stand: { rows: 25, frontRowHeightFt: 47, rakeDeg: 27, backHeightFt: 73, backSetbackFt: 81 },
-      sections: withFronts({
+      stand: { rows: 25, frontRowHeightFt: 47, rakeDeg: 27, backHeightFt: 75, backSetbackFt: 73 },
+      sections: withFronts(withBacks({
         ...petcoCover(['229'], 84),
         '231': { backHeightFt: 67, backSetbackFt: 162, ...petcoCover(['231'], 84)['231'] },
-        '227': { frontRowHeightFt: 36, backHeightFt: 78, backSetbackFt: 1, ...petcoCover(['227'], 76)['227'] },
+        '227': petcoCover(['227'], 78)['227'],
         '233': { backHeightFt: 129, backSetbackFt: -15, overhang: { coveredFromRow: 19, soffitHeightFt: 94 } },
         '235': { backHeightFt: 62, backSetbackFt: 191 },
-      }, {
-        '227': 36,
+      }, { '227': [84, -37] }), {
+        '227': 38,
       }),
       rowsFromMap: true,
       heightsSourced: false,
@@ -4231,10 +4243,10 @@ const PETCO: StadiumStructure = {
       }, {
         '304': [134, -33], '305': [133, -22], '306': [133, -22], '307': [133, -39], '310': [133, -23],
         '311': [134, -21], '315': [98, -23], '319': [105, 66], '320': [134, -21], '321': [79, 20],
-        '322': [133, -12], '323': [81, -47], '324': [133, -13], '325': [134, -15], '326': [133, -32],
+        '322': [133, -12], '323': [81, -47], '324': [134, -21], '326': [133, -32],
         '328': [98, -20], '313': [75, 1], '329': [75, 1],
       }), {
-        '304': 70, '305': 70, '306': 70, '307': 70, '323': 66, '324': 65, '325': 66, '326': 66,
+        '304': 70, '305': 70, '306': 70, '307': 70, '323': 66, '325': 66, '326': 66,
         '328': 66,
       }),
 

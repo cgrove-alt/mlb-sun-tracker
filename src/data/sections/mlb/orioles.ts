@@ -71,8 +71,10 @@ export const oriolesSections: DetailedSection[] = buildParkSections(
     standRuns: [
       // Turned to the rows' fall line, measured on the lidar
       // (scripts/measureStandHeights.py): these sections' rows climb firmly
-      // more than 15° off the direction fitted on the map, in the middle
-      // of the section and 4 m to either side.
+      // more than 15° off the direction fitted on the map; each faces the
+      // median of the fall lines in its middle and 4 m to either side.
+      { ids: ['74'], facingDeg: 355 },
+      { ids: ['8'], facingDeg: 120 },
       { ids: ['1', '6'], facingDeg: 111 },
       { ids: ['264'], facingDeg: 268 },
       { ids: ['1', '3', '5', '6', '7', '8'], facingDeg: 140 },
