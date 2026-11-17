@@ -61,6 +61,12 @@ export const rockiesSections: DetailedSection[] = buildParkSections(ORIENTATION,
   orientation: ORIENTATION,
   aerialControl: ROCKIES_AERIAL_CONTROL,
   standRuns: [
+    // Turned to the rows' fall line, measured on the lidar
+    // (scripts/measureStandHeights.py): these sections' rows climb firmly
+    // more than 15° off the direction fitted on the map, in the middle
+    // of the section and 4 m to either side.
+    { ids: ['159'], facingDeg: 359 },
+    { ids: ['244'], facingDeg: 246 },
     { ids: [...ids(105, 109), ...ids(201, 209), ...ids(301, 309)], facingDeg: 48 },
     { ids: ids(151, 160), facingDeg: 330 },
     { ids: ids(110, 115), facingDeg: 96 },

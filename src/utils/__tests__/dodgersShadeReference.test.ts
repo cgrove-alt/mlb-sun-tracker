@@ -12,9 +12,11 @@
  *         and its section pages (1, 15, 46, 52, 124, 139, 166, 229, 1IR, 11IR, 30R, 1TD, 301, 302)
  *
  * Partly reproduced, with heights and covered rows measured on USGS lidar:
- *   - Field 52FD is not in the sun at first pitch: the Loge's edge is over
- *     its 16th row (the sources say T, the 20th), so 10 of its 25 rows are
- *     covered and it reads partly shaded. The other Field sections are.
+ *   - Field 53FD is not in the sun at first pitch: along its rows' fall line
+ *     the Loge's edge is over its 17th row (the sources say T, the 20th), so
+ *     9 of its 25 rows are covered and it reads partly shaded. The other
+ *     Field sections are (52FD's edge, at its 16th row on a cut across its
+ *     rows, is at its 19th along them).
  *   - Infield Reserve rows N and up are shaded through the 9th inning; three
  *     hours in, a sun almost side-on reaches 10RS's row N just under the Top
  *     Deck's edge.
@@ -76,7 +78,7 @@ const thirdBaseLoge = ids(123, 165, 2, 'LG');
 const firstBaseLoge = ids(124, 166, 2, 'LG');
 
 describe('Dodger Stadium: a 1:10 PM game in July', () => {
-  it.each(ids(1, 53, 1, 'FD').filter((id) => id !== '52FD'))('[RYS] Field level %s is in the sun at first pitch (shade is scarce at midday)', (id) => {
+  it.each(ids(1, 53, 1, 'FD').filter((id) => id !== '53FD'))('[RYS] Field level %s is in the sun at first pitch (shade is scarce at midday)', (id) => {
     expect(section(JULY_20_110PM, id).samples[0].status).toBe('sun');
   });
 

@@ -9,6 +9,8 @@ and Node (npx tsx) for scripts/lidar/standSections.ts.
   python scripts/measureStandHeights.py runs <park>     # seating runs under each section (to set the tier bands)
   python scripts/measureStandHeights.py measure <park>  # per-section and per-tier values -> tmp/lidar/<park>-measured.json
                                                         # and a check picture tmp/lidar/<park>-check.png
+  python scripts/measureStandHeights.py fallsheet <park>  # the scan around each section whose fall line is off
+                                                        # its stand direction -> tmp/lidar/<park>-fall-<n>.png
 
 Method (all heights in metres above the field until the report, which is in feet):
   1. Field level: the most common height within 35 m of home plate (the
@@ -26,6 +28,13 @@ Method (all heights in metres above the field until the report, which is in feet
          this cut's rake is more than 2 degrees off their median, it isn't
          the stand's (an aisle's steps, a walkway): the section's rake is
          left out, and down an aisle its front row is theirs;
+       - the rows' fall line: 13 cuts turned -60 to +60 degrees about the
+         middle of the run, and about the points 4 m to either side. A cut at
+         an angle t to the fall line reads atan(tan(rake) cos t), so the
+         direction most of them agree with is the way the rows climb. Where
+         it is firmly more than 15 degrees off the stand direction, this cut
+         crosses the rows at an angle: its rake is left out, and where all
+         three agree within 10 degrees the stand turns to it (`suggest`);
        - the deck above: where structure starts over the seats (the lip, as a
          row) and the bottom of its front face (soffit), when the scan sees
          that face;
@@ -792,6 +801,67 @@ def tier_run(runs, band):
     return min(cands, key=lambda r: r['s0'])
 
 
+FALL_FIRM = 15   # degrees: a stand direction firmly further off the fall line than this is wrong
+FALL_AGREE = 10  # degrees: the fall lines 4 m to either side agree with the middle's within this
+
+
+def fall_line(P, x, y, compass, band, tread):
+    """The rows' fall line at (x, y), from 13 cuts turned -60 to +60 degrees
+    (10 degree steps) off `compass`, each taking its tier's run where it spans
+    4 or more rows. A cut at t to the fall line reads tan(rake) = tan(R) cos t.
+    For each trial direction d0 (-90 to 90 degrees, 1 degree steps), the cuts
+    within 50 degrees of it give R (the median of atan(tan(rake) / cos(d - d0)))
+    and agree with it where the model puts them within 1.5 degrees. The fall
+    line is the d0 most cuts agree with (then the least error), needing 5 or
+    more over 40 degrees or more, so one aisle or walkway can't outvote it.
+    On a shallow stand the rake barely changes near the fall line, so several
+    d0 may fit as well: `lo` and `hi` are their range. Returns how far the
+    fall line is off `compass` (degrees, clockwise), that range and R, or None
+    where no direction fits."""
+    cuts = []
+    for d in range(-60, 61, 10):
+        s, _, z = cut(P, x, y, (compass + d) % 360, -60, 90)
+        r = tier_run([q for q in runs_in(s, z) if -35 < q['s0'] < 30], band)
+        if r and r['s1'] - r['s0'] >= 4 * tread:
+            cuts.append((d, math.degrees(math.atan(r['slope']))))
+    c = np.array(cuts, float).reshape(-1, 2)
+    best, trials = None, []
+    for d0 in range(-90, 91):
+        near = c[np.abs(c[:, 0] - d0) <= 50]
+        if len(near) < 5:
+            continue
+        cosd = np.cos(np.radians(near[:, 0] - d0))
+        R = math.degrees(math.atan(np.median(np.tan(np.radians(near[:, 1])) / cosd)))
+        err = np.abs(np.degrees(np.arctan(math.tan(math.radians(R)) * cosd)) - near[:, 1])
+        agree = err <= 1.5
+        if agree.sum() < 5 or np.ptp(near[agree, 0]) < 40:
+            continue
+        key = (int(agree.sum()), -float(err[agree].mean()))
+        trials.append((d0, key[0]))
+        if best is None or key > best[0]:
+            best = (key, d0, R)
+    if best is None:
+        return None
+    same = [d0 for d0, k in trials if k == best[0][0]]
+    return {'off': best[1], 'lo': min(same), 'hi': max(same), 'rakeDeg': best[2]}
+
+
+def fall_firm(f):
+    """The fall line is firmly more than FALL_FIRM degrees off: every direction that fits as well is."""
+    return f is not None and (f['lo'] > FALL_FIRM or f['hi'] < -FALL_FIRM)
+
+
+def fall_turn(r):
+    """Where the stand turns to its fall line: firmly off in the middle of the
+    run, and the fall lines 4 m to either side within FALL_AGREE degrees of it
+    (one face, not a bend). Returns the new stand direction (the median of the
+    three), or None."""
+    f, sides = r.get('fall'), r.get('fallSides') or []
+    if not fall_firm(f) or len(sides) != 2 or any(s is None or abs(s['off'] - f['off']) > FALL_AGREE for s in sides):
+        return None
+    return round(r['standCompass'] + float(np.median([f['off']] + [s['off'] for s in sides]))) % 360
+
+
 def measure_section(P, sec, band):
     """One section: find its tier's run on the cut from home plate, then
     measure it on a cut along the stand direction through that run. Rows are
@@ -840,6 +910,12 @@ def measure_section(P, sec, band):
     usable = [r for r in [run] + side if r['s1'] - r['s0'] >= 5 * tread]
     rake_across = med([math.degrees(math.atan(r['slope'])) for r in usable]) if len(usable) >= 3 else None
     front_across = med([r['at'](r['s0'] + tread / 2) - ahead * tread * r['slope'] for r in usable]) if len(usable) >= 3 else None
+    # The rows' fall line here and 4 m to either side: the stand direction
+    # comes from the club's seat map, which averages two faces where a ring
+    # bends.
+    fall = fall_line(P, ax, ay, sec['standCompass'], band, tread)
+    fall_sides = [fall_line(P, ax + off * math.cos(sc), ay - off * math.sin(sc), sec['standCompass'], band, tread)
+                  for off in (-4, 4)]
     # A deck over the seats: from the first 0.5 m bin where structure 2.2 m
     # or more above the treads carries on for 3 m (a net or a pole does not).
     over = (s > run['s0'] - 1) & (s < back + 2) & (z > run['c'] + slope * s + 2.2)
@@ -869,6 +945,10 @@ def measure_section(P, sec, band):
         flags.append('rakeOffAcross')
         if front - ahead * rise < front_across - 2 * FT and rake_deg > rake_across + 2:
             flags.append('aisle')
+    # A cut firmly off the rows' fall line crosses them at an angle: it reads
+    # the rake short (tan by cos t), and so do the cuts beside it.
+    if fall_firm(fall):
+        flags.append('cutOffFall')
     if lip is not None and run['s1'] > lip + 6:
         past = run['s1'] - lip
         n_bins = int(past / 0.5)
@@ -936,6 +1016,7 @@ def measure_section(P, sec, band):
         # run (`rowsInFront`), the run's front carried down the slope by them.
         'frontFt': (front - ahead * rise) / FT, 'rakeDeg': rake_deg, 'visibleDepthFt': depth / FT,
         'rakeAcrossDeg': rake_across, 'frontAcrossFt': ft(front_across),
+        'standCompass': sec['standCompass'], 'fall': fall, 'fallSides': fall_sides,
         'lipRow': lip_row, 'modelCoveredFrom': model_cover, 'coverAgrees': cover_agrees,
         'soffitFt': ft(soffit) if cover_agrees else None, 'lipSoffitFt': ft(soffit), 'lipLowFt': ft(lip_low),
         'aboveFrontFt': ft(above_front),
@@ -970,11 +1051,12 @@ def measure(park):
         t = {'sections': n_all, 'found': len(rs)}
         t['coverDisagrees'] = sorted({f"{r['id']}: lip row {r['lipRow']}, sourced {r['modelCoveredFrom']}" for r in rs if not r['coverAgrees']})
         t['notFound'] = [f"{r['id']}: {r.get('why')}" for r in results if r['tier'] == key and not r['found']]
-        # A cut that isn't the stand's (`rakeOffAcross`, `aisle`) leaves its
-        # rake (and, down an aisle, its front row) out of the tier's.
-        off = {'rakeDeg': 'rakeOffAcross', 'frontFt': 'aisle'}
+        # A cut that isn't the stand's (`rakeOffAcross`, `aisle`) or crosses
+        # the rows at an angle (`cutOffFall`) leaves its rake (and, down an
+        # aisle, its front row) out of the tier's.
+        off = {'rakeDeg': ('rakeOffAcross', 'cutOffFall'), 'frontFt': ('aisle',)}
         for f in ('frontFt', 'rakeDeg', 'lipRow', 'soffitFt', 'lipSoffitFt', 'lipLowFt', 'backFt', 'backSetbackFt'):
-            vals = [r[f] for r in rs if r[f] is not None and off.get(f) not in r['flags']]
+            vals = [r[f] for r in rs if r[f] is not None and not any(g in r['flags'] for g in off.get(f, ()))]
             t[f] = None if not vals else {'median': float(np.median(vals)), 'min': float(min(vals)), 'max': float(max(vals)), 'n': len(vals)}
         tiers[key] = t
     # The far rim (the engine's "upper deck or roof line"): the median of each
@@ -1149,13 +1231,34 @@ def suggest(park):
         # parks (359 sections) come within 2 degrees of their whole run's
         # rake in 44% of sections at 3 rows, 80% at 8 and 90% at 9, with no
         # lean either way. So a section takes its own rake where its run spans
-        # 9 or more rows and the cuts beside it agree (within 2 degrees of
-        # their median); otherwise it keeps the tier's, the median over its
-        # sections, where noise that doesn't lean evens out.
+        # 9 or more rows, the cuts beside it agree (within 2 degrees of their
+        # median) and its cut runs along the rows' fall line; otherwise it
+        # keeps the tier's, the median over its sections, where noise that
+        # doesn't lean evens out.
         paste('rakes (withRakes)', [f"'{r['id']}': {r0(r['rakeDeg'])}," for r in rs
                                     if r['rakeDeg'] is not None and rake is not None and r0(r['rakeDeg']) != r0(rake)
                                     and r['visibleDepthFt'] / treads.get(r['id'], 2.75) >= 9
-                                    and r.get('rakeAcrossDeg') is not None and 'rakeOffAcross' not in r['flags']])
+                                    and r.get('rakeAcrossDeg') is not None and 'rakeOffAcross' not in r['flags']
+                                    and 'cutOffFall' not in r['flags']])
+    # Stand directions: a section whose fall line is firmly off its stand
+    # direction, with the fall lines 4 m to either side agreeing, turns to it
+    # (`standRuns` entries, first in the park's list so they win). One firmly
+    # off where the sides disagree straddles a bend and keeps its direction.
+    found = [r for r in d['sections'] if r.get('found')]
+    turns = {}
+    for r in found:
+        to = fall_turn(r)
+        if to is not None:
+            turns.setdefault(to, []).append(r['id'])
+    if turns:
+        print('stand directions (standRuns, first in the list):')
+        for to, ids in sorted(turns.items()):
+            print(f"    {{ ids: {json.dumps(ids)}, facingDeg: {to} }},".replace('"', "'"))
+    side_txt = lambda s: '-' if s is None else f"{s['off']:+d}"
+    bends = [f"{r['id']} {r['fall']['off']:+d} (sides {', '.join(side_txt(s) for s in r['fallSides'])})"
+             for r in found if fall_firm(r.get('fall')) and fall_turn(r) is None]
+    if bends:
+        print(f"firmly off but not turned (a bend, or no fall line beside it): {'; '.join(bends)}")
 
 
 def cover_report(park):
@@ -1265,6 +1368,55 @@ def cover_report(park):
     json.dump(rows_out, open(f'tmp/lidar/{park}-cover.json', 'w'), indent=1)
 
 
+def fall_sheet(park):
+    """Check pictures for the stand directions. For each section whose fall
+    line is firmly off its stand direction: the scan in a 40 m square around
+    the middle of its run, shaded by slope (of the lowest point per 0.3 m
+    cell: risers and aisle edges light, treads dark), with its stand direction
+    (red) and fall line (cyan; where it turns, the direction it turns to)
+    drawn from there, and a thin line across the square to each: the rows,
+    the stand's front and the deck edges run along the true one's. Twelve to
+    a sheet, north up: tmp/lidar/<park>-fall-<n>.png."""
+    from PIL import Image, ImageDraw
+    E, N, Z, field, dates = load_points(park)
+    d = json.load(open(f'tmp/lidar/{park}-measured.json'))
+    H, c, px = 20, 0.3, 3
+    n = int(2 * H / c)
+    T, k = n * px, px / c
+    tiles = []
+    for r in d['sections']:
+        if not r.get('found') or not fall_firm(r.get('fall')):
+            continue
+        ax, ay, _ = r['anchor']
+        m = (np.abs(E - ax) < H) & (np.abs(N - ay) < H)
+        g = np.full((n, n), np.nan)
+        np.fmin.at(g, (((N[m] - ay + H) / c).astype(int).clip(0, n - 1), ((E[m] - ax + H) / c).astype(int).clip(0, n - 1)), Z[m])
+        # Empty cells take their nearest neighbour's height.
+        g = g[tuple(ndimage.distance_transform_edt(np.isnan(g), return_distances=False, return_indices=True))]
+        gy, gx = np.gradient(g, c)
+        shade = np.clip(np.hypot(gx, gy) / 1.5, 0, 1)
+        im = Image.fromarray((shade[::-1] * 255).astype(np.uint8)).resize((T, T), Image.NEAREST).convert('RGB')
+        dr = ImageDraw.Draw(im)
+        turn = fall_turn(r)
+        fall_to = turn if turn is not None else (r['standCompass'] + r['fall']['off']) % 360
+        for b, col in ((r['standCompass'], (255, 60, 60)), (fall_to, (0, 220, 255))):
+            a = math.radians(b)
+            dr.line([T / 2, T / 2, T / 2 + 15 * k * math.sin(a), T / 2 - 15 * k * math.cos(a)], fill=col, width=3)
+            dr.line([T / 2 - 20 * k * math.cos(a), T / 2 - 20 * k * math.sin(a),
+                     T / 2 + 20 * k * math.cos(a), T / 2 + 20 * k * math.sin(a)], fill=col, width=1)
+        dr.ellipse([T / 2 - 4, T / 2 - 4, T / 2 + 4, T / 2 + 4], fill=(255, 255, 0))
+        dr.rectangle([0, 0, T, 14], fill=(0, 0, 0))
+        dr.text((3, 2), f"{r['id']} ({r['tier']}): {r['standCompass'] % 360:.0f} -> {fall_to:.0f}, "
+                        f"{'turns' if fall_turn(r) is not None else 'bend, stays'}", fill=(255, 255, 0))
+        tiles.append(im)
+    for i in range(0, len(tiles), 12):
+        sheet = Image.new('RGB', (4 * T, 3 * T), 'black')
+        for j, im in enumerate(tiles[i:i + 12]):
+            sheet.paste(im, ((j % 4) * T, (j // 4) * T))
+        sheet.save(f'tmp/lidar/{park}-fall-{i // 12 + 1}.png')
+    print(f'{park}: {len(tiles)} sections firmly off their fall line, {(len(tiles) + 11) // 12} sheets')
+
+
 def runs_listing(park):
     P = load_points(park)
     print(f'field {P[3]:.2f} m; flown {P[4]}')
@@ -1291,3 +1443,5 @@ if __name__ == '__main__':
         suggest(park)
     elif cmd == 'cover':
         cover_report(park)
+    elif cmd == 'fallsheet':
+        fall_sheet(park)

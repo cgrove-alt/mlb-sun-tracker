@@ -63,6 +63,12 @@ export const philliesSections: DetailedSection[] = buildParkSections(
     aerialControl: PHILLIES_AERIAL_CONTROL,
     tierOf: philliesRing,
     standRuns: [
+      // Turned to the rows' fall line, measured on the lidar
+      // (scripts/measureStandHeights.py): these sections' rows climb firmly
+      // more than 15° off the direction fitted on the map, in the middle
+      // of the section and 4 m to either side.
+      { ids: ['306'], facingDeg: 102 },
+      { ids: ['430'], facingDeg: 232 },
       // Lower bowl, by bearing from home. Its corners curve: aisles near the
       // poles run at 96–99° and 280°, then 107–122° and 256–271°.
       { rings: ['1', 'diamond'], fromBearingDeg: 54, toBearingDeg: 61.4, facingDeg: 97 },

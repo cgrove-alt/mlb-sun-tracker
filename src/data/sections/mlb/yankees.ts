@@ -16,6 +16,34 @@ export const yankeesSections: DetailedSection[] = buildParkSections(ORIENTATION,
   yankeesChartPoints,
   {
     orientation: ORIENTATION,
+    standRuns: [
+      // Turned to the rows' fall line, measured on the lidar
+      // (scripts/measureStandHeights.py): these sections' rows climb firmly
+      // more than 15° off the direction fitted on the map, in the middle
+      // of the section and 4 m to either side.
+      { ids: ['132'], facingDeg: 325 },
+      { ids: ['205'], facingDeg: 164 },
+      { ids: ['205W'], facingDeg: 160 },
+      { ids: ['206'], facingDeg: 179 },
+      { ids: ['208', '207'], facingDeg: 194 },
+      { ids: ['209'], facingDeg: 188 },
+      { ids: ['214B'], facingDeg: 201 },
+      { ids: ['218A'], facingDeg: 220 },
+      { ids: ['218B'], facingDeg: 229 },
+      { ids: ['221B'], facingDeg: 285 },
+      { ids: ['222'], facingDeg: 290 },
+      { ids: ['226'], facingDeg: 307 },
+      { ids: ['227A', '325W'], facingDeg: 308 },
+      { ids: ['232B'], facingDeg: 315 },
+      { ids: ['233A', '232A'], facingDeg: 320 },
+      { ids: ['233B'], facingDeg: 317 },
+      { ids: ['234W'], facingDeg: 332 },
+      { ids: ['309W'], facingDeg: 202 },
+      { ids: ['313W'], facingDeg: 203 },
+      { ids: ['324'], facingDeg: 303 },
+      { ids: ['327', '328'], facingDeg: 312 },
+      { ids: ['333W'], facingDeg: 319 },
+    ],
     behindHomeIds: ['122', '123'],
     centerFieldIds: ['202', '238'],
     // The straight runs of field-level boxes along each foul line (first base

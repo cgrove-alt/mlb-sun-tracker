@@ -61,6 +61,13 @@ export const nationalsSections: DetailedSection[] = buildParkSections(
     orientation: ORIENTATION,
     aerialControl: NATIONALS_AERIAL_CONTROL,
     standRuns: [
+      // Turned to the rows' fall line, measured on the lidar
+      // (scripts/measureStandHeights.py): these sections' rows climb firmly
+      // more than 15° off the direction fitted on the map, in the middle
+      // of the section and 4 m to either side.
+      { ids: ['101'], facingDeg: 354 },
+      { ids: ['240'], facingDeg: 88 },
+      { ids: ['304'], facingDeg: 271 },
       { ids: ['100', '100K', '100L', '100M', '100N', '100P', '100Q'], facingDeg: 5 },
       { ids: ['101', '102', '103', '104', '105', '106', '107'], facingDeg: 314 },
       { ids: ['138', '139', '140', '141', '142', '143', '237', '238', '239', '240', '241', '242', '243'], facingDeg: 48 },

@@ -26,6 +26,27 @@ export const dodgersSections: DetailedSection[] = buildParkSections(
   ORIENTATION,
   chartSeeds(dodgersChartPoints, {
     orientation: ORIENTATION,
+    standRuns: [
+      // Turned to the rows' fall line, measured on the lidar
+      // (scripts/measureStandHeights.py): these sections' rows climb firmly
+      // more than 15° off the direction fitted on the map, in the middle
+      // of the section and 4 m to either side.
+      { ids: ['103LG'], facingDeg: 218 },
+      { ids: ['107LG'], facingDeg: 219 },
+      { ids: ['15RS'], facingDeg: 256 },
+      { ids: ['166LG'], facingDeg: 110 },
+      { ids: ['168LG'], facingDeg: 104 },
+      { ids: ['16RS'], facingDeg: 155 },
+      { ids: ['40RS', '32RS', '24RS', '44RS'], facingDeg: 147 },
+      { ids: ['48RS', '36RS', '28RS'], facingDeg: 146 },
+      { ids: ['50FD'], facingDeg: 116 },
+      { ids: ['51RS'], facingDeg: 272 },
+      { ids: ['52FD'], facingDeg: 106 },
+      { ids: ['52RS'], facingDeg: 137 },
+      { ids: ['53FD'], facingDeg: 297 },
+      { ids: ['56RS'], facingDeg: 125 },
+      { ids: ['60RS'], facingDeg: 114 },
+    ],
     aerialControl: DODGERS_AERIAL_CONTROL,
     // Each ring by its section code (FD, DG, BL, LG, CL, RS, TD, PL, PR,
     // suites), for fitting stand directions: Field and Dugout Club share the

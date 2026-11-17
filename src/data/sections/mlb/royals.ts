@@ -67,6 +67,15 @@ export const royalsSections: DetailedSection[] = buildParkSections(
     orientation: ORIENTATION,
     aerialControl: ROYALS_AERIAL_CONTROL,
     standRuns: [
+      // Turned to the rows' fall line, measured on the lidar
+      // (scripts/measureStandHeights.py): these sections' rows climb firmly
+      // more than 15° off the direction fitted on the map, in the middle
+      // of the section and 4 m to either side.
+      { ids: ['108', '110'], facingDeg: 291 },
+      { ids: ['129'], facingDeg: 214 },
+      { ids: ['146'], facingDeg: 165 },
+      { ids: ['250'], facingDeg: 140 },
+      { ids: ['415'], facingDeg: 257 },
       ...UPPER_RUNS,
       { ids: [...upperIds(206, 222), ...upperIds(303, 310), ...upperIds(402, 415)], facingDeg: THIRD },
       { ids: [...upperIds(233, 252), ...upperIds(318, 325), ...upperIds(425, 439)], facingDeg: FIRST },
