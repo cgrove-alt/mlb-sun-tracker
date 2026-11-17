@@ -463,11 +463,11 @@ const FENWAY: StadiumStructure = {
       label: 'Field Box',
       // Uncovered (sourced). Lidar (154 of 157): front row 1 ft below the
       // field (-2 to 1), 9° rake (7–11). What rises highest behind is the
-      // pavilion roof, 82 ft up and 45 ft behind the last row; behind home
+      // pavilion roof, 82 ft up and 47 ft behind the last row; behind home
       // the press box block (96–100 ft), in the right-field corner the
       // Grandstand roof (54 ft). Each measured section takes its own back
       // (the pavilion roof 34–57 ft behind them, the press box block 24–39).
-      stand: { rows: 12, frontRowHeightFt: -1, rakeDeg: 9, backHeightFt: 82, backSetbackFt: 45 },
+      stand: { rows: 12, frontRowHeightFt: -1, rakeDeg: 9, backHeightFt: 82, backSetbackFt: 47 },
       sections: withRakes(withFronts(withBacks({}, {
         'F9': [82, 50], 'F10': [82, 50], 'F11': [82, 55], 'F12': [82, 52], 'F13': [82, 35],
         'F14': [82, 35], 'F15': [82, 35], 'F16': [82, 50], 'F17': [82, 35], 'F18': [82, 35],
@@ -499,18 +499,10 @@ const FENWAY: StadiumStructure = {
         'FBC61': [82, 35], 'FBC69': [82, 34], 'FBC70': [82, 43],
         'FBC72': [82, 48], 'FBC73': [82, 48], 'FBC74': [82, 48], 'FBC77': [82, 48],
         'FBC78': [54, 29], 'FBC79': [54, 32], 'FBC80': [54, 27],
-        'F36': [82, 47],
-        'F51': [82, 47],
-        'F75': [82, 47],
-        'F76': [82, 47],
-        'D36': [82, 47],
-        'D51': [82, 47],
-        'D75': [82, 47],
-        'D76': [82, 47],
-        'FBC36': [82, 47],
-        'FBC51': [82, 47],
-        'FBC75': [82, 47],
-        'FBC76': [82, 47],
+        'F49': [82, 45],
+        'F71': [82, 53],
+        'H49': [82, 45],
+        'FBC71': [82, 53],
       }), {
         'F11': -2, 'F13': 1, 'F14': 1, 'F15': 1, 'F17': 1, 'F18': 1, 'F19': 1, 'F20': 1, 'F21': 1,
         'F22': 1, 'F23': 1, 'F24': 1, 'F25': 1, 'F26': 1, 'F28': 1, 'F29': -2, 'F32': -2, 'F34': -2,
@@ -522,6 +514,8 @@ const FENWAY: StadiumStructure = {
         'FBC61': 1, 'FBC69': 1,
         'F70': -2,
         'FBC70': -2,
+        'F71': -2,
+        'FBC71': -2,
       }), {
         'F42': 8, 'F47': 8, 'F48': 10, 'F59': 10, 'F65': 10, 'F66': 10,
         'F68': 10, 'F72': 10, 'F73': 10, 'F74': 10, 'F75': 10, 'F76': 10, 'F77': 10, 'F79': 10,
@@ -529,9 +523,7 @@ const FENWAY: StadiumStructure = {
         'D77': 10, 'D79': 10, 'H42': 8, 'H47': 8, 'H48': 10, 'FBC59': 10, 'FBC72': 10,
         'FBC73': 10, 'FBC74': 10, 'FBC75': 10, 'FBC76': 10, 'FBC77': 10, 'FBC79': 10, 'FBC80': 10,
         'F70': 11,
-        'F71': 10,
         'FBC70': 11,
-        'FBC71': 10,
       }),
       rowsFromMap: true,
       heightsSourced: true,
