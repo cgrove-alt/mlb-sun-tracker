@@ -44,8 +44,11 @@
  *     high sun in front reaches under it to the third-to-last row in the
  *     third-base sections (333–344) from mid-game, and in 343, where the
  *     scan puts the roof's edge over row 16, two rows from the back, to all
- *     of its covered rows. Tested: the last two rows shaded all game in all
- *     but one section.
+ *     of its covered rows. And 345, at the left-field corner, faces its
+ *     rows' fall line, 66° (the tread plane and the risers agree, 59–69°;
+ *     the map's 17° is the third-base side's), into the afternoon sun,
+ *     which reaches its last rows from about the 7th inning. Tested: the
+ *     last two rows shaded all game in all but those two sections.
  *   - [RYS] at a late-afternoon start the third-base side is "your enemy".
  *     Still far sunnier than the first-base side (8% against 91% over a
  *     5:10 PM game; tested), but no longer under 5%: the upper deck's front
@@ -125,7 +128,7 @@ describe('Comerica Park: a 1:40 PM game in July', () => {
       const s = tigersSections.find((x) => x.id === id)!;
       return rowsShaded(JULY_13_140PM, id, s.rows.length - 1).every((share) => share === 1);
     });
-    expect(shaded.length).toBeGreaterThanOrEqual(ids.length - 1);
+    expect(ids.filter((id) => !shaded.includes(id))).toEqual(['343', '345']);
   });
 
   it.each([

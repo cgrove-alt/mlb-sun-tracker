@@ -6074,24 +6074,25 @@ const COMERICA: StadiumStructure = {
     leftField: {
       label: 'Left-field pavilion (144–151)',
       // Behind the bullpens, open but for 144 from row DD (sourced): "the
-      // most sun of any location". Lidar (8 of 8; 144 and 145 along their
-      // rows' fall line, 35–40° off the map's direction): front row 6 ft
-      // (5–6), 11° rake; behind, 54 ft up (26–173 ft, the scoreboard over
-      // 149; each its own). Canopies at the top of the pavilion are over the
-      // last three rows of 147 and 149, ~34 ft up (42 over 149); along its
-      // rows the upper deck's front, 61 ft up, is over 144's position 16, its
-      // lowest structure 52 ft. Along 145's it is over position 18, but 145
-      // stays open as its source has it: Rate Your Seats' sun on the
-      // pavilion from 145 out (comericaShadeReference) has it in the open,
-      // and at this corner the deck's end runs across the rows.
-      stand: { rows: 33, frontRowHeightFt: 6, rakeDeg: 11, treadFt: 3, backHeightFt: 54, backSetbackFt: -1 },
+      // most sun of any location". Lidar (8 of 8; 144–146 along their rows'
+      // fall lines, 35–40° off the map's direction): front row 6 ft (5–6),
+      // 11° rake; behind, 62 ft up and 6 ft in front of the last row (26–173
+      // ft, the scoreboard over 149; each its own). Canopies at the top of
+      // the pavilion are over the last three rows of 147 and 149, ~34 ft up
+      // (42 over 149); along its rows the upper deck's front, 61 ft up, is
+      // over 144's position 16, its lowest structure 52 ft. Along 145's and 146's it is over positions
+      // 18 and 17, but they stay open as their sources have them: Rate Your
+      // Seats' sun on the pavilion from 145 out (comericaShadeReference) has
+      // them in the open, and at this corner the deck's end runs across the
+      // rows.
+      stand: { rows: 33, frontRowHeightFt: 6, rakeDeg: 11, treadFt: 3, backHeightFt: 62, backSetbackFt: -6 },
       sections: withRakes(withBacks({
         '144': { deckFrontFt: 61, overhang: { coveredFromRow: 16, soffitHeightFt: 52 } },
         '147': { overhang: { coveredFromRow: 27, soffitHeightFt: 34 } },
         '149': { overhang: { coveredFromRow: 29, soffitHeightFt: 42 } },
       }, {
         '144': [62, -52], '147': [46, -3], '148': [123, 0], '150': [26, 5], '151': [26, 4],
-        '149': [173, -9], '146': [43, 63], '145': [66, -55],
+        '149': [173, -9], '146': [63, -37], '145': [66, -55],
       }), {
         '144': 12,
       }),
@@ -6190,8 +6191,8 @@ const COMERICA: StadiumStructure = {
       label: 'Upper deck (321–345)',
       // Rows A–F then 1–20, covered from row 15 (sourced). Lidar (21 of 24):
       // front row 62 ft (61–62), 27° rake (21–35); the roof's edge, 118 ft up
-      // (its top), is over the source's row in 18 of 21 (row 9 in 341 and 345,
-      // 16 in 343, which take theirs). It is also what rises highest behind.
+      // (its top), is over the source's row in 19 of 21 (row 9 in 341, 16 in
+      // 343, which take theirs). It is also what rises highest behind.
       // The scan sees nothing under the roof, so its top stands in for its
       // underside and the tier's heights stay estimated. Each measured
       // section takes its own back.
@@ -6199,11 +6200,11 @@ const COMERICA: StadiumStructure = {
       sections: withFronts(withBacks({
 
         ...comericaCover(comericaIds(321, 345), 118),
-        ...Object.fromEntries(['341', '345'].map((id) => [id, { overhang: { coveredFromRow: 15, soffitHeightFt: 118 } }])),
+        '341': { overhang: { coveredFromRow: 15, soffitHeightFt: 118 } },
         '343': { overhang: { coveredFromRow: 22, soffitHeightFt: 118 } },
       }, {
         '333': [118, -7], '336': [118, -14], '331': [118, -14], '330': [118, -14], '329': [118, -14],
-        '328': [118, -14], '326': [118, -14], '322': [118, -14], '345': [118, -7], '343': [118, -5],
+        '328': [118, -14], '326': [118, -14], '322': [118, -14], '345': [118, -14], '343': [118, -5],
         '339': [118, -11], '342': [118, -11], '341': [118, -9],
       }), {
         '333': 61, '332': 61, '334': 61, '343': 61, '338': 61, '341': 61,
