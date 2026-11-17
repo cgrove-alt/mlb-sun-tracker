@@ -85,6 +85,12 @@ export const twinsSections: DetailedSection[] = buildParkSections(ORIENTATION, c
     { rings: UPPER, fromBearingDeg: 309.5, toBearingDeg: 359.99, facingDeg: THIRD },
     { rings: UPPER, fromBearingDeg: 0, toBearingDeg: 40, facingDeg: 340 },
   ],
+  // Rows that bend across the section, measured on the lidar
+  // (scripts/measureStandHeights.py faces): each third faces the rows'
+  // fall line read in it, where planes fitted to the treads confirm it.
+  standFaces: [
+    { id: '140', facesDeg: [140, 163, 163] },
+  ],
   // Rings: the boxes (1–17), the 100s, the Delta club (A–V) and the 200s and
   // 300s; suites and standing areas with their level.
   tierOf: (id, level) => (/^\d{1,2}$/.test(id) ? 'box' : /^\d{3}$/.test(id) ? id[0] : /^[A-V]$/.test(id) ? 'club' : level),
