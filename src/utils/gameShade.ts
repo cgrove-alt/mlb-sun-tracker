@@ -212,16 +212,22 @@ export function computeGameShade(input: GameShadeInput): GameShadeResult {
     if (!resolved) continue;
     const { tierKey, tier, stand } = resolved;
     const facing = section.standCompass ?? bearingFromHome(section, input.orientationDeg);
+    // Where the rows bend across the section, each face (an equal share of
+    // it) gets its own shade; the section's is their mean.
+    const faces = section.standFaces?.length ? section.standFaces : [facing];
 
-    const run = (standUsed: StandProfile, facingUsed: number, rimScale = 1) =>
-      sun.map((s) => statusFor(shadedFraction(rowLight(
+    // The share of the section in shade, with every face turned by `turnDeg`.
+    const fraction = (standUsed: StandProfile, turnDeg: number, s: SunAngles, rimScale = 1) =>
+      faces.reduce((sum, face) => sum + shadedFraction(rowLight(
         standUsed,
-        facingUsed,
+        face + turnDeg,
         { ...park, farRimHeightFt: park.farRimHeightFt * rimScale },
         s,
-      ))));
+      )), 0) / faces.length;
+    const run = (standUsed: StandProfile, turnDeg: number, rimScale = 1) =>
+      sun.map((s) => statusFor(fraction(standUsed, turnDeg, s, rimScale)));
 
-    const fractions = sun.map((s) => shadedFraction(rowLight(stand, facing, park, s)));
+    const fractions = sun.map((s) => fraction(stand, 0, s));
     const base = fractions.map(statusFor);
 
     // How far the structure could plausibly be off: estimated heights and
@@ -230,14 +236,14 @@ export function computeGameShade(input: GameShadeInput): GameShadeResult {
     const setbackError = tier.heightsSourced ? 0.2 : 0.5;
     const precision = input.orientationPrecisionDeg;
     const variants = [
-      run(stand, facing + precision),
-      run(stand, facing - precision),
-      run(perturbStructure(stand, 1 + e, 1), facing, 1 + e),
-      run(perturbStructure(stand, 1 - e, 1), facing, 1 - e),
-      run(perturbStructure(stand, 1, 1 + setbackError), facing),
-      run(perturbStructure(stand, 1, 1 - setbackError), facing),
+      run(stand, precision),
+      run(stand, -precision),
+      run(perturbStructure(stand, 1 + e, 1), 0, 1 + e),
+      run(perturbStructure(stand, 1 - e, 1), 0, 1 - e),
+      run(perturbStructure(stand, 1, 1 + setbackError), 0),
+      run(perturbStructure(stand, 1, 1 - setbackError), 0),
       // When no source says which rows are covered, try both.
-      ...(tier.coverSourced ? [] : coverAlternatives(stand).map((alt) => run(alt, facing))),
+      ...(tier.coverSourced ? [] : coverAlternatives(stand).map((alt) => run(alt, 0))),
     ];
     const unstableSteps = base.filter((status, i) => variants.some((v) => v[i] !== status)).length;
     const confidence: Confidence = unstableSteps === 0 ? 'high' : unstableSteps <= 2 ? 'medium' : 'low';

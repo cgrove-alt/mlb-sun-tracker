@@ -57,6 +57,13 @@ export interface DetailedSection {
    */
   standCompass?: number;
   /**
+   * Where the section's rows bend across its width: the compass bearings its
+   * faces look away from the field, equal shares of it (its thirds). The
+   * engine works out each face's shade and averages them; `standCompass`
+   * stays the section's direction otherwise.
+   */
+  standFaces?: readonly number[];
+  /**
    * Where to draw the section on a seat map: home plate at (0, 0), center
    * field toward −y, first base toward +x, farthest seat about 1 away. `w`
    * runs along the stand, `h` straight back from home plate. Only for parks
