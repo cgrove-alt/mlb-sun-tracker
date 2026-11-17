@@ -4506,6 +4506,10 @@ const COORS_LIDAR = 'USGS 3DEP lidar CO_DRCOG_2020, flown 2020-05-27 (scripts/me
  * rake, the edge of any deck over it, and what rises highest behind; each
  * measured section takes its own front row and that back, and its own rake
  * where the scan sees 9 or more of its rows and the cuts beside it agree.
+ * Each cut runs along the rows' fall line: where that is firmly more than
+ * 15° off the club map's direction, the section faces it (its section
+ * file's standRuns); one that straddles a bend keeps the map's direction
+ * and its tier's rake.
  * Where a deck's edge is more than two rows from the source's covered row,
  * the scan's row is used. The
  * scan sees decks from above: a deck's underside is
@@ -4632,16 +4636,17 @@ const COORS: StadiumStructure = {
       label: 'Left-field stands (151–160)',
       // Rows 2–23 or 2–20, not covered ("in June and July the sunniest
       // seats"). Lidar (9 of 10; 151's place on the seat map cuts a ramp):
-      // front row 5 ft (5–8), 18° rake (16–18); behind, 39 ft up and 43 ft
-      // back (the scoreboard in 154, 107 ft; each measured section its own).
-      stand: { rows: 22, frontRowHeightFt: 5, rakeDeg: 18, backHeightFt: 39, backSetbackFt: 43 },
+      // front row 5 ft (5–8), 18° rake (17–18; 158 and 160 straddle a bend,
+      // their cuts across the rows); behind, 42 ft up and 43 ft back (the
+      // scoreboard in 154, 107 ft; each measured section its own).
+      stand: { rows: 22, frontRowHeightFt: 5, rakeDeg: 18, backHeightFt: 42, backSetbackFt: 43 },
       sections: withRakes(withFronts(withBacks({}, {
         '152': [42, 45], '153': [39, 50], '154': [107, 43], '155': [25, 7], '156': [37, 47],
-        '157': [32, 21], '158': [76, 45], '159': [25, 6], '160': [48, 21],
+        '157': [32, 21], '158': [76, 45], '159': [47, 12], '160': [48, 21],
       }), {
         '156': 8, '158': 6, '160': 6,
       }), {
-        '153': 17, '158': 17, '159': 16, '160': 16,
+        '153': 17,
       }),
       rowsFromMap: true,
       heightsSourced: true,
@@ -4675,7 +4680,7 @@ const COORS: StadiumStructure = {
       }, {
         '204': [68, -29], '205': [68, -43], '206': [69, -43], '219': [68, -18], '221': [68, -15],
         '222': [68, -15], '223': [68, -18], '226': [68, -25], '227': [71, -19], '238': [68, -18],
-        '239': [68, -15], '241': [69, -17], '242': [69, -20], '243': [68, -25], '244': [69, -23],
+        '239': [68, -15], '241': [69, -17], '242': [69, -20], '243': [68, -25], '244': [69, -25],
         '245': [69, -25], '246': [69, -23],
       }), {
         '223': 35, '227': 35,
