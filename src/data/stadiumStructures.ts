@@ -119,8 +119,10 @@ const YANKEES_LIDAR = 'USGS 3DEP lidar NY_NewYorkCity, flown 2014-03-27 (scripts
  * takes its own front row and back, and its own rake where the scan sees 9 or
  * more of its rows and the cuts beside it agree. Each cut runs along the
  * rows' fall line: where that is firmly more than 15° off the club map's
- * direction, the section faces it (its section file's standRuns); one that
- * straddles a bend keeps the map's direction and its tier's rake. The lidar confirms the
+ * direction, the section faces it, or where its rows bend across its width
+ * the median of the fall lines in its middle and 4 m to either side (its
+ * section file's standRuns); one whose fall lines lie either side of the
+ * map's direction keeps it and its tier's rake. The lidar confirms the
  * canopy top (133 ft) and puts its underside at its front edge at 128 ft;
  * where a section's cut crosses a lamp bank on the canopy, that rises
  * highest (137–142 ft). Covered rows: where
@@ -434,11 +436,12 @@ const FENWAY_LIDAR = 'USGS 3DEP lidar MA_CentralEastern_2021, flown 2021-03-20 (
  * front row's height, the rake and the structure that rises highest behind
  * as seen from the middle uncovered row; tier values are medians, and every
  * measured section takes its own front row and back, and its own rake where
- * the scan sees 9 or more of its rows and the cuts beside it agree. Each
- * cut runs along the rows' fall line: where that is firmly more than 15°
- * off the club map's direction, the section faces it (its section file's
- * standRuns); one that straddles a bend keeps the map's direction and its
- * tier's rake. The eight
+ * the scan sees 9 or more of its rows and the cuts beside it agree. Each cut
+ * runs along the rows' fall line: where that is firmly more than 15° off the
+ * club map's direction, the section faces it, or where its rows bend across
+ * its width the median of the fall lines in its middle and 4 m to either
+ * side (its section file's standRuns); one whose fall lines lie either side
+ * of the map's direction keeps it and its tier's rake. The eight
  * lattice light towers on the roof are not counted as walls. Covered rows: where the scan
  * puts a roof's or deck's edge more than two rows from the source's row
  * (most of the Loge Boxes, which the sources call open), the scan's edge is
@@ -826,9 +829,10 @@ const DODGERS_LIDAR = 'USGS 3DEP lidar CA_LosAngeles_B23, flown 2023-11-22 to 20
  * given; every measured section takes its own front row and back, and its
  * own rake where the scan sees 9 or more of its rows and the cuts beside it
  * agree. Each cut runs along the rows' fall line: where that is firmly more
- * than 15° off the club map's direction, the section faces it (its section
- * file's standRuns); one that straddles a bend keeps the map's direction
- * and its tier's rake.
+ * than 15° off the club map's direction, the section faces it, or where its
+ * rows bend across its width the median of the fall lines in its middle and
+ * 4 m to either side (its section file's standRuns); one whose fall lines
+ * lie either side of the map's direction keeps it and its tier's rake.
  * Covered rows: where the scan puts a deck's or roof's edge more than two
  * rows from the source's covered row, the scan's edge is used. The underside
  * at an edge is the bottom of its face where the scan sees one, otherwise
@@ -1164,7 +1168,7 @@ const DODGERS: StadiumStructure = {
       label: 'Pavilion',
       // Rows A–X (22), covered from row T (19th) by the pavilion roof
       // (sourced; the lidar puts its front edge at row 18). Lidar (15 of
-      // 16): front row 9 ft over the outfield wall (8–9, each its own), 17° rake; the
+      // 16): front row 8 ft over the outfield wall (8–9, each its own), 17° rake; the
       // roof's front edge is 42 ft up, 12 ft in front of the last row, and
       // behind 307–311 the video boards rise to 85–109 ft; each measured
       // section takes its own. The scan sees nothing below 39 ft at the
@@ -1452,11 +1456,12 @@ const ORACLE_LIDAR = 'USGS 3DEP lidar CA_SanFrancisco_B23, flown 2023-04-20 (scr
  * front row's height, the rake and the structure that rises highest behind
  * as seen from the middle uncovered row; tier values are medians, and every
  * measured section takes its own front row and back, and its own rake where
- * the scan sees 9 or more of its rows and the cuts beside it agree. Each
- * cut runs along the rows' fall line: where that is firmly more than 15°
- * off the club map's direction, the section faces it (its section file's
- * standRuns); one that straddles a bend keeps the map's direction and its
- * tier's rake. Covered
+ * the scan sees 9 or more of its rows and the cuts beside it agree. Each cut
+ * runs along the rows' fall line: where that is firmly more than 15° off the
+ * club map's direction, the section faces it, or where its rows bend across
+ * its width the median of the fall lines in its middle and 4 m to either
+ * side (its section file's standRuns); one whose fall lines lie either side
+ * of the map's direction keeps it and its tier's rake. Covered
  * rows: where the
  * scan puts a deck's edge more than two rows from the source's row, the
  * scan's edge is used. Deck undersides the scan cannot see are estimated as
@@ -1707,8 +1712,10 @@ const CITI_LIDAR = 'USGS 3DEP lidar NY_NewYorkCity, flown 2014-03-23 to 2014-04-
  * so it keeps the tier's front), and its own rake where the scan sees 9 or
  * more of its rows and the cuts beside it agree. Each cut runs along the
  * rows' fall line: where that is firmly more than 15° off the club map's
- * direction, the section faces it (its section file's standRuns); one that
- * straddles a bend keeps the map's direction and its tier's rake. The decks step back in a
+ * direction, the section faces it, or where its rows bend across its width
+ * the median of the fall lines in its middle and 4 m to either side (its
+ * section file's standRuns); one whose fall lines lie either side of the
+ * map's direction keeps it and its tier's rake. The decks step back in a
  * staircase, each
  * upper deck's front over the rows of the one below; the light towers above
  * the roof are not counted as walls. Covered rows: where the scan puts a
@@ -1728,10 +1735,11 @@ const CITI: StadiumStructure = {
     fieldBox: {
       label: 'Field boxes',
       // Rows 1–12, uncovered (sourced). Lidar (27 of 31): front row at field
-      // level (0–2 ft), 14° rake (8–23; behind home 4–6, 14, 16 and D
-      // straddle a bend, their cuts across the rows); what rises highest behind is the
-      // Promenade roof, 129 ft up and 107 ft back (103–119; each measured
-      // section takes its own).
+      // level (0–2 ft), 13° rake (8–23; 4 and 16 along the median of their
+      // rows' fall lines; behind home 5, 6, 14 and D straddle a bend, their
+      // cuts across the rows); what rises highest behind is the Promenade
+      // roof, 129 ft up and 107 ft back (103–119; each measured section
+      // takes its own).
       stand: { rows: 12, frontRowHeightFt: 0, rakeDeg: 13, backHeightFt: 129, backSetbackFt: 107 },
       sections: withRakes(withFronts(withBacks({}, {
         '11': [129, 103], 'A': [129, 119], '12': [129, 109], '4': [129, 111], '13': [129, 106],
@@ -1852,8 +1860,9 @@ const CITI: StadiumStructure = {
       // No source gives rows or cover. The lidar shows nothing over 20 of
       // its 21 measured sections; over 222 a structure reaches out over row
       // 3, 34 ft up (taken as 36 ft, 9 ft above row 3's floor). Lidar (21 of
-      // 39): front row 25 ft (24–35), 18° rake (7–22; 213, 214 and 218
-      // straddle a bend, their cuts across the rows); what rises highest
+      // 39): front row 25 ft (24–35), 18° rake (7–22; 214 and 218 along the
+      // median of their rows' fall lines; 213 straddles a bend, its cut
+      // across the rows); what rises highest
       // behind is the 400 level's front, 69 ft up, 2–17 ft behind the last
       // row (each measured section its own; 222 too, from its two open rows).
       stand: { rows: 6, frontRowHeightFt: 25, rakeDeg: 18, backHeightFt: 69, backSetbackFt: 11 },
@@ -1915,8 +1924,9 @@ const CITI: StadiumStructure = {
     fourHundred: {
       label: '400 level',
       // Rows 1–8 (behind home 1–5), open to the sky (sourced). Lidar (29 of
-      // 37): front row 69 ft (68–69), 28° rake (17–32; 409, 411, 431, 434
-      // and 437 straddle a bend, their cuts across the rows); what rises highest
+      // 37): front row 69 ft (68–69), 29° rake (17–32; 411, 434 and 437 along
+      // the median of their rows' fall lines; 409 and 431 straddle a bend,
+      // their cuts across the rows); what rises highest
       // behind is the Promenade roof, 129 ft up and 30 ft back (25–45 ft;
       // each measured section takes its own).
       stand: { rows: 8, frontRowHeightFt: 69, rakeDeg: 29, backHeightFt: 129, backSetbackFt: 30 },
@@ -2081,9 +2091,11 @@ const CBP_FIELD: StandProfile = {
  * rake where the scan sees 9 or more of its rows and the cuts beside it agree
  * (119's cut runs down an aisle's steps, so it takes the front row of the
  * cuts beside it). Each cut runs along the rows' fall line: where that is
- * firmly more than 15° off the club map's direction, the section faces it
- * (its section file's standRuns); one that straddles a bend keeps the map's
- * direction and its tier's rake. The light
+ * firmly more than 15° off the club map's direction, the section faces it,
+ * or where its rows bend across its width the median of the fall lines in
+ * its middle and 4 m to either side (its section file's standRuns); one
+ * whose fall lines lie either side of the map's direction keeps it and its
+ * tier's rake. The light
  * towers above
  * the roof and the left-field scoreboard (a board up on one pylon, which
  * light passes under) are not counted as walls. Deck undersides the scan
@@ -2523,11 +2535,12 @@ const TRUIST_100: StandProfile = {
  * front row's height, the rake and the structure that rises highest behind
  * as seen from the middle uncovered row; tier values are medians, and every
  * measured section takes its own front row and back, and its own rake where
- * the scan sees 9 or more of its rows and the cuts beside it agree. Each
- * cut runs along the rows' fall line: where that is firmly more than 15°
- * off the club map's direction, the section faces it (its section file's
- * standRuns); one that straddles a bend keeps the map's direction and its
- * tier's rake. Behind
+ * the scan sees 9 or more of its rows and the cuts beside it agree. Each cut
+ * runs along the rows' fall line: where that is firmly more than 15° off the
+ * club map's direction, the section faces it, or where its rows bend across
+ * its width the median of the fall lines in its middle and 4 m to either
+ * side (its section file's standRuns); one whose fall lines lie either side
+ * of the map's direction keeps it and its tier's rake. Behind
  * home the cuts through 8, 123, 124, 126, 135 and 137 run down an aisle's
  * steps (starting ~3 ft low and climbing at ~30° before the rows' 13–14°),
  * so those take the tier's rake and the front row of the cuts beside them. Every deck is lower than
@@ -2974,11 +2987,12 @@ const BUSCH_LIDAR = 'USGS 3DEP lidar MO_StLouis_2017, flown 2017-02-20 (scripts/
  * front row's height, the rake and the structure that rises highest behind
  * as seen from the middle uncovered row; tier values are medians, and every
  * measured section takes its own front row and back, and its own rake where
- * the scan sees 9 or more of its rows and the cuts beside it agree. Each
- * cut runs along the rows' fall line: where that is firmly more than 15°
- * off the club map's direction, the section faces it (its section file's
- * standRuns); one that straddles a bend keeps the map's direction and its
- * tier's rake. The
+ * the scan sees 9 or more of its rows and the cuts beside it agree. Each cut
+ * runs along the rows' fall line: where that is firmly more than 15° off the
+ * club map's direction, the section faces it, or where its rows bend across
+ * its width the median of the fall lines in its middle and 4 m to either
+ * side (its section file's standRuns); one whose fall lines lie either side
+ * of the map's direction keeps it and its tier's rake. The
  * stacking estimates were close above the field (the 200 level's front 48
  * ft, the Pavilion's 75, the Terrace's 97); the field rows and the 100s start lower and rake
  * less. The six light towers above the roof are not counted as walls.
@@ -3311,11 +3325,12 @@ const NATS_LIDAR = 'USGS 3DEP lidar MD_VA_Sandy_NCR_2014, flown 2014-04-24 (scri
  * front row's height, the rake and the structure that rises highest behind
  * as seen from the middle uncovered row; tier values are medians, and every
  * measured section takes its own front row and back, and its own rake where
- * the scan sees 9 or more of its rows and the cuts beside it agree. Each
- * cut runs along the rows' fall line: where that is firmly more than 15°
- * off the club map's direction, the section faces it (its section file's
- * standRuns); one that straddles a bend keeps the map's direction and its
- * tier's rake. The
+ * the scan sees 9 or more of its rows and the cuts beside it agree. Each cut
+ * runs along the rows' fall line: where that is firmly more than 15° off the
+ * club map's direction, the section faces it, or where its rows bend across
+ * its width the median of the fall lines in its middle and 4 m to either
+ * side (its section file's standRuns); one whose fall lines lie either side
+ * of the map's direction keeps it and its tier's rake. The
  * pavilion and the mezzanine keep the rake of the sections measured before
  * (six and two), some of which the tool no longer finds. The scan (2014) is
  * sparse: the lower bowl and the 300s are well covered, the 200 level shows
@@ -3683,10 +3698,11 @@ const OPACY_TERRACE: StandProfile = {
  * section takes its own front row and back, and its own rake where the scan
  * sees 9 or more of its rows and the cuts beside it agree (68's cut runs down
  * an aisle's steps, so it takes the front row of the cuts beside it). Each
- * cut runs along the rows' fall line: where that is firmly more than 15°
- * off the club map's direction, the section faces it (its section file's
- * standRuns); one that straddles a bend keeps the map's direction and its
- * tier's rake. The
+ * cut runs along the rows' fall line: where that is firmly more than 15° off
+ * the club map's direction, the section faces it, or where its rows bend
+ * across its width the median of the fall lines in its middle and 4 m to
+ * either side (its section file's standRuns); one whose fall lines lie
+ * either side of the map's direction keeps it and its tier's rake. The
  * decks are lower than the stacking
  * estimates: the club level's front is 40 ft (52), the upper deck's 63 ft
  * (70), its roof's edge 119 ft (110). The light towers are not counted as
@@ -3982,9 +3998,11 @@ const PETCO_100: StandProfile = { rows: 43, frontRowHeightFt: -1, rakeDeg: 11, b
  * medians, and every measured section takes its own front row and back, and
  * its own rake where the scan sees 9 or more of its rows and the cuts beside
  * it agree. Each cut runs along the rows' fall line: where that is firmly
- * more than 15° off the club map's direction, the section faces it (its
- * section file's standRuns); one that straddles a bend keeps the map's
- * direction and its tier's rake. The Terrace level's front is 36 ft (38), the Upper Box's 67 ft (75; the
+ * more than 15° off the club map's direction, the section faces it, or where
+ * its rows bend across its width the median of the fall lines in its middle
+ * and 4 m to either side (its section file's standRuns); one whose fall
+ * lines lie either side of the map's direction keeps it and its tier's rake.
+ * The Terrace level's front is 36 ft (38), the Upper Box's 67 ft (75; the
  * Upper Deck's rows behind an aisle start ~80 ft), the roof 133 ft (118).
  * The light towers are not counted as walls; the downtown towers beyond the
  * outfield are. Covered rows: where the scan puts a deck's edge more than
@@ -4266,13 +4284,13 @@ const PETCO: StadiumStructure = {
       // Rows up to 27 (Upper Box rows in front, Upper Deck behind), covered
       // from row 19 (sourced); 313 and 314 (rows 1–3) and 329 (one row)
       // sit in front of it. Lidar (17 of 29): the Upper Box's front row
-      // 67 ft (65–75), 30° rake (19–33; 324 and 325 straddle a bend, their
-      // cuts across the rows; the Upper Deck's rows behind an aisle
+      // 67 ft (65–75), 30° rake (19–33; 324 and 325 along the median of
+      // their rows' fall lines; the Upper Deck's rows behind an aisle
       // start ~80 ft); the roof's edge is 133 ft up with nothing seen below
       // it (a thin roof), and is what rises highest behind (80–105 ft at the
       // ends). Its edge agrees with the source's row but in 304, 307, 322
-      // and 326, which take the scan's (14–16). Lower "edges" over 311 and
-      // 320–325 are the Upper Deck's rows behind the aisle, not a deck.
+      // and 326, which take the scan's (14–16). Lower "edges" over 311, 321
+      // and 323 are the Upper Deck's rows behind the aisle, not a deck.
       // Each measured section takes its own back (the roof's edge 32–39 ft
       // in front of the last row of 304, 307 and 326; the Upper Deck's rows behind the
       // aisle, ~80 ft up, start 20 ft behind 321's last row and 47 ft in
@@ -4356,9 +4374,11 @@ const ANGEL_LIDAR = 'USGS 3DEP lidar CA_CaliforniaGaps_B23, flown 2023-11-10, an
  * behind; each measured section takes its own front row and that back, and
  * its own rake where the scan sees 9 or more of its rows and the cuts beside
  * it agree. Each cut runs along the rows' fall line: where that is firmly
- * more than 15° off the club map's direction, the section faces it (its
- * section file's standRuns); one that straddles a bend keeps the map's
- * direction and its tier's rake. Where a deck's
+ * more than 15° off the club map's direction, the section faces it, or where
+ * its rows bend across its width the median of the fall lines in its middle
+ * and 4 m to either side (its section file's standRuns); one whose fall
+ * lines lie either side of the map's direction keeps it and its tier's rake.
+ * Where a deck's
  * edge is more than two rows from the source's
  * covered row (or covers three or more it leaves open), the scan's row is
  * used. The scan sees decks from above: a deck's underside is the bottom of
@@ -4448,13 +4468,13 @@ const ANGEL: StadiumStructure = {
     rightPavilionUpper: {
       label: 'Right-field pavilion (241–249)',
       // Rows A–M, open (as above). Lidar (2 of 9; further out its rows go on
-      // from the lower pavilion's, ~37 ft up there too): front row 38 ft
-      // (37–39), 24° rake (244; 243 straddles a bend, its cut across the
-      // rows); behind, 71 ft up and 23 ft back, the median of a canopy 64 ft
-      // up right behind 243's last row and a structure 78 ft up, 45 ft behind
-      // 244's (seen along its rows' fall line).
+      // from the lower pavilion's, ~37 ft up there too): front row 36 ft
+      // (36–37), 24° rake (243, along the median of its rows' fall lines,
+      // and 244); behind, 75 ft up and 23 ft back, the median of a canopy 72
+      // ft up right behind 243's last row and a structure 78 ft up, 45 ft
+      // behind 244's (each seen along its rows' fall line).
       stand: { rows: 13, frontRowHeightFt: 36, rakeDeg: 24, backHeightFt: 75, backSetbackFt: 23 },
-      sections: withFronts(withBacks({ '243': { backHeightFt: 64, backSetbackFt: 1 }, '244': { backHeightFt: 78, backSetbackFt: 45 } }, { '243': [72, 1] }), {
+      sections: withFronts({ '243': { backHeightFt: 72, backSetbackFt: 1 }, '244': { backHeightFt: 78, backSetbackFt: 45 } }, {
         '244': 37,
       }),
       rowsFromMap: true,
@@ -4621,9 +4641,10 @@ const COORS_LIDAR = 'USGS 3DEP lidar CO_DRCOG_2020, flown 2020-05-27 (scripts/me
  * measured section takes its own front row and that back, and its own rake
  * where the scan sees 9 or more of its rows and the cuts beside it agree.
  * Each cut runs along the rows' fall line: where that is firmly more than
- * 15° off the club map's direction, the section faces it (its section
- * file's standRuns); one that straddles a bend keeps the map's direction
- * and its tier's rake.
+ * 15° off the club map's direction, the section faces it, or where its rows
+ * bend across its width the median of the fall lines in its middle and 4 m
+ * to either side (its section file's standRuns); one whose fall lines lie
+ * either side of the map's direction keeps it and its tier's rake.
  * Where a deck's edge is more than two rows from the source's covered row,
  * the scan's row is used. The
  * scan sees decks from above: a deck's underside is
@@ -4941,9 +4962,10 @@ const KAUFFMAN_LIDAR = 'USGS 3DEP lidar MO_FEMANRCS_2020, flown 2020-04-18 (scri
  * sees 9 or more of its rows and the cuts beside it agree (144's cut runs
  * down an aisle's steps, so it takes the front row of the cuts beside it).
  * Each cut runs along the rows' fall line: where that is firmly more than
- * 15° off the club map's direction, the section faces it (its section
- * file's standRuns); one that straddles a bend keeps the map's direction
- * and its tier's rake.
+ * 15° off the club map's direction, the section faces it, or where its rows
+ * bend across its width the median of the fall lines in its middle and 4 m
+ * to either side (its section file's standRuns); one whose fall lines lie
+ * either side of the map's direction keeps it and its tier's rake.
  * Where a deck's edge is more than
  * two rows from the source's covered row (or covers three or more
 
@@ -5230,9 +5252,10 @@ const GABP_LIDAR = 'USGS 3DEP lidar OH_StatewideP3_B21, flown 2022-01-26 (script
  * measured section takes its own front row and that back, and its own rake
  * where the scan sees 9 or more of its rows and the cuts beside it agree.
  * Each cut runs along the rows' fall line: where that is firmly more than
- * 15° off the club map's direction, the section faces it (its section
- * file's standRuns); one that straddles a bend keeps the map's direction
- * and its tier's rake.
+ * 15° off the club map's direction, the section faces it, or where its rows
+ * bend across its width the median of the fall lines in its middle and 4 m
+ * to either side (its section file's standRuns); one whose fall lines lie
+ * either side of the map's direction keeps it and its tier's rake.
  * Where a deck's edge is more than two rows from the source's covered row (or
  * covers three or more it leaves open), the scan's row is used. The scan
  * sees decks from above: a deck's underside is the bottom of its face where
@@ -5619,8 +5642,11 @@ const PNC_LIDAR = 'USGS 3DEP lidar PA_17County_D24, flown 2024-04-29 to 2024-05-
  * own front row and that back, and its own rake where the scan sees 9 or
  * more of its rows and the cuts beside it agree. Each cut runs along the
  * rows' fall line: where that is firmly more than 15° off the club map's
- * direction, the section faces it (its section file's standRuns); one that
- * straddles a bend keeps the map's direction and its tier's rake. Where a deck's edge is more than
+ * direction, the section faces it, or where its rows bend across its width
+ * the median of the fall lines in its middle and 4 m to either side (its
+ * section file's standRuns); one whose fall lines lie either side of the
+ * map's direction keeps it and its tier's rake. Where a deck's edge is more
+ * than
  * two rows from the source's covered row (or covers three or more it leaves
  * open), the scan's row is used. The scan sees decks from above: a deck's
  * underside is the bottom of its face where seen; where only its front row
@@ -5926,9 +5952,11 @@ const COMERICA_LIDAR = 'USGS 3DEP lidar MI_WayneCo_2017, flown 2017-04-22 to 201
  * behind; each measured section takes its own front row and that back, and
  * its own rake where the scan sees 9 or more of its rows and the cuts beside
  * it agree. Each cut runs along the rows' fall line: where that is firmly
- * more than 15° off the club map's direction, the section faces it (its
- * section file's standRuns); one that straddles a bend keeps the map's
- * direction and its tier's rake. Where a deck's edge is more than two rows from the source's
+ * more than 15° off the club map's direction, the section faces it, or where
+ * its rows bend across its width the median of the fall lines in its middle
+ * and 4 m to either side (its section file's standRuns); one whose fall
+ * lines lie either side of the map's direction keeps it and its tier's rake.
+ * Where a deck's edge is more than two rows from the source's
  * covered row (or covers three or more it leaves open), the scan's row is
  * used. The scan sees decks from above: a deck's underside is the bottom of
  * its face where seen; where only its front row of seats shows, that row
@@ -6599,9 +6627,10 @@ export function targetTier(id: string): string | null {
  * rises highest behind it, seen from the middle of its open rows), and its
  * own rake where the scan sees 9 or more of its rows and the cuts beside it
  * agree. Each cut runs along the rows' fall line: where that is firmly more
- * than 15° off the club map's direction, the section faces it (its section
- * file's standRuns); one that straddles a bend keeps the map's direction
- * and its tier's rake.
+ * than 15° off the club map's direction, the section faces it, or where its
+ * rows bend across its width the median of the fall lines in its middle and
+ * 4 m to either side (its section file's standRuns); one whose fall lines
+ * lie either side of the map's direction keeps it and its tier's rake.
  */
 const TARGET: StadiumStructure = {
   stadiumId: 'twins',
@@ -6931,9 +6960,10 @@ export function rateTier(id: string): string | null {
  * the scan sees 9 or more of its rows and the cuts beside it agree (a
  * section that starts up a slope at its own rake starts that far up it).
  * Each cut runs along the rows' fall line: where that is firmly more than
- * 15° off the club map's direction, the section faces it (its section
- * file's standRuns); one that straddles a bend keeps the map's direction
- * and its tier's rake.
+ * 15° off the club map's direction, the section faces it, or where its rows
+ * bend across its width the median of the fall lines in its middle and 4 m
+ * to either side (its section file's standRuns); one whose fall lines lie
+ * either side of the map's direction keeps it and its tier's rake.
  */
 const RATE: StadiumStructure = {
   stadiumId: 'whitesox',
