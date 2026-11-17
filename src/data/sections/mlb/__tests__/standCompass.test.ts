@@ -468,7 +468,9 @@ describe('Nationals Park stand directions (measured on the 2023 aerial photo)', 
 
   it('the outfield stands follow their walls', () => {
     expect(stand('141')).toBe(48);
-    expect(stand('240')).toBe(48);
+    // The upper pavilion's rows run north-south on the lidar (88°), not
+    // along the wall below it.
+    expect(stand('240')).toBe(88);
     expect(stand('104')).toBe(314);
     expect(stand('100')).toBe(5);
   });
