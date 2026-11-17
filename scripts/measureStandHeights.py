@@ -35,7 +35,10 @@ Method (all heights in metres above the field until the report, which is in feet
          it is firmly more than 15 degrees off the stand direction, this cut
          crosses the rows at an angle: its rake is left out, and where the
          median of the fall lines found (two or more) is more than 15
-         degrees off, the stand turns to that median (`suggest`);
+         degrees off, the stand turns to that median (`suggest`). Where two
+         of them, both read within the section, are firmly more than 20
+         degrees apart and planes fitted to the treads there agree, its
+         rows bend across its width: each third faces its own (`faces`);
        - the deck above: where structure starts over the seats (the lip, as a
          row) and the bottom of its front face (soffit), when the scan sees
          that face;
@@ -806,6 +809,8 @@ def tier_run(runs, band):
 
 
 FALL_FIRM = 15   # degrees: a stand direction firmly further off the fall line than this is wrong
+FALL_SIDE_M = 4  # metres: the fall lines either side are read this far from the middle
+FACE_APART = 20  # degrees: fall lines firmly further apart than this split a section into faces
 
 
 def fall_line(P, x, y, compass, band, tread):
@@ -871,6 +876,96 @@ def fall_turn(r):
     return round(r['standCompass'] + m) % 360 if abs(m) > FALL_FIRM else None
 
 
+def fall_side_points(r):
+    """Where the fall lines either side of the middle are read: FALL_SIDE_M
+    along the rows from it, as measure_section reads them."""
+    ax, ay = r['anchor'][:2]
+    sc = math.radians(r['standCompass'])
+    return [(ax + off * math.cos(sc), ay - off * math.sin(sc)) for off in (-FALL_SIDE_M, FALL_SIDE_M)]
+
+
+def tread_plane(P, x, y, compass, half):
+    """The treads' uphill direction (compass degrees) from a plane fitted in a
+    square of side 2 * half just uphill of (x, y) along `compass`: the lowest
+    point per 0.5 m cell, refitted three times on the cells within 0.4 m of
+    it. None where the scan is too thin there."""
+    E, N, Z = P
+    sc = math.radians(compass)
+    cx, cy = x + half * math.sin(sc), y + half * math.cos(sc)
+    m = (np.abs(E - cx) < half) & (np.abs(N - cy) < half)
+    if m.sum() < 30:
+        return None
+    px, py, pz = E[m] - cx, N[m] - cy, Z[m]
+    key = ((px + half) / 0.5).astype(int) * 1000 + ((py + half) / 0.5).astype(int)
+    o = np.lexsort((pz, key))
+    key, px, py, pz = key[o], px[o], py[o], pz[o]
+    first = np.r_[True, key[1:] != key[:-1]]
+    px, py, pz = px[first], py[first], pz[first]
+    keep = np.ones(len(pz), bool)
+    for _ in range(4):
+        (gx, gy, _c), *_ = np.linalg.lstsq(np.c_[px[keep], py[keep], np.ones(keep.sum())], pz[keep], rcond=None)
+        keep = np.abs(pz - (gx * px + gy * py + _c)) < 0.4
+    return math.degrees(math.atan2(gx, gy)) % 360
+
+
+FACE_PLANE_M = (2.5, 3)  # metres: the half-sizes of the tread planes that must confirm a bend
+FACE_PLANE_AGREE = 15    # degrees: each tread plane within this of its face, and turning at least this much
+
+
+def fall_faces(r, sections, P):
+    """Where a section's rows bend across its width: two of its fall lines
+    (in the middle and either side) firmly more than FACE_APART degrees apart
+    (their ranges of equally good directions that far apart), each read
+    within the section (its point nearer the section's middle than any other
+    section's in its tier, from `sections`), and the treads confirming it:
+    at both of those points, planes fitted to the treads at each size in
+    FACE_PLANE_M lie within FACE_PLANE_AGREE degrees of the face and turn
+    the same way by at least that much. Returns (its faces, one per third in
+    the side readings' order (compass degrees; a third whose reading is
+    missing or outside the section takes the middle's), None) or (None, why)."""
+    f = r.get('fall')
+    if f is None:
+        return None, None
+    ax, ay = r['anchor'][:2]
+    mates = [o['anchor'] for o in sections if o.get('anchor') and o['tier'] == r['tier'] and o['id'] != r['id']]
+    own = lambda x, y: all(math.hypot(x - mx, y - my) > FALL_SIDE_M for mx, my, *_ in mates)
+    pts = fall_side_points(r)
+    sides = [s if s is not None and own(x, y) else None for s, (x, y) in zip(r.get('fallSides') or [None, None], pts)]
+    read = [f] + [s for s in sides if s is not None]
+    if max(a['lo'] - b['hi'] for a in read for b in read) <= FACE_APART:
+        return None, None
+    faces = [round(r['standCompass'] + (s or f)['off']) % 360 for s in (sides[0], None, sides[1])]
+    turn = lambda a, b: (a - b + 180) % 360 - 180
+    i, j = max(((0, 1), (0, 2), (1, 2)), key=lambda ij: abs(turn(faces[ij[1]], faces[ij[0]])))
+    at = (pts[0], (ax, ay), pts[1])
+    for half in FACE_PLANE_M:
+        pi, pj = (tread_plane(P, *at[k], r['standCompass'], half) for k in (i, j))
+        if pi is None or pj is None:
+            return None, f'no tread plane ({half * 2:g} m)'
+        if abs(turn(pi, faces[i])) > FACE_PLANE_AGREE or abs(turn(pj, faces[j])) > FACE_PLANE_AGREE:
+            return None, f'treads {round(pi)}/{round(pj)} against faces {faces[i]}/{faces[j]} ({half * 2:g} m)'
+        if turn(pj, pi) * turn(faces[j], faces[i]) <= 0 or abs(turn(pj, pi)) < FACE_PLANE_AGREE:
+            return None, f'treads turn {turn(pj, pi):+.0f}, faces {turn(faces[j], faces[i]):+d} ({half * 2:g} m)'
+    return faces, None
+
+
+def faces_listing(park):
+    """The sections whose rows bend across their width (`fall_faces`), as
+    standFaces entries, and the bent readings the treads don't confirm."""
+    P = load_points(park)[:3]
+    d = json.load(open(f'tmp/lidar/{park}-measured.json'))
+    found = [r for r in d['sections'] if r.get('found')]
+    res = [(r['id'], *fall_faces(r, d['sections'], P)) for r in found]
+    faces = [(i, fs) for i, fs, _ in res if fs]
+    if faces:
+        print('faces (standFaces):')
+        for i, fs in faces:
+            print(f"    {{ id: '{i}', facesDeg: {json.dumps(fs)} }},")
+    kept = [f'{i} ({why})' for i, fs, why in res if why]
+    if kept:
+        print(f"bent readings the treads don't confirm (one direction): {'; '.join(kept)}")
+
+
 def measure_section(P, sec, band):
     """One section: find its tier's run on the cut from home plate, then
     measure it on a cut along the stand direction through that run. Rows are
@@ -924,7 +1019,7 @@ def measure_section(P, sec, band):
     # bends.
     fall = fall_line(P, ax, ay, sec['standCompass'], band, tread)
     fall_sides = [fall_line(P, ax + off * math.cos(sc), ay - off * math.sin(sc), sec['standCompass'], band, tread)
-                  for off in (-4, 4)]
+                  for off in (-FALL_SIDE_M, FALL_SIDE_M)]
     # A deck over the seats: from the first 0.5 m bin where structure 2.2 m
     # or more above the treads carries on for 3 m (a net or a pole does not).
     over = (s > run['s0'] - 1) & (s < back + 2) & (z > run['c'] + slope * s + 2.2)
@@ -1379,14 +1474,17 @@ def cover_report(park):
 
 
 def fall_sheet(park):
-    """Check pictures for the stand directions. For each section whose fall
-    line is firmly off its stand direction: the scan in a 40 m square around
+    """Check pictures for the stand directions and faces. For each section
+    whose fall line is firmly off its stand direction, or that has faces: the
+    scan in a 40 m square around
     the middle of its run, shaded by slope (of the lowest point per 0.3 m
     cell: risers and aisle edges light, treads dark), with its stand direction
     (red) and fall line (cyan; where it turns, the direction it turns to)
     drawn from there, and a thin line across the square to each: the rows,
-    the stand's front and the deck edges run along the true one's. Twelve to
-    a sheet, north up: tmp/lidar/<park>-fall-<n>.png."""
+    the stand's front and the deck edges run along the true one's. A
+    section's faces (magenta) are drawn where each is read, with a thin line
+    across: the rows there run along it. Twelve to a sheet, north up:
+    tmp/lidar/<park>-fall-<n>.png."""
     from PIL import Image, ImageDraw
     E, N, Z, field, dates = load_points(park)
     d = json.load(open(f'tmp/lidar/{park}-measured.json'))
@@ -1395,7 +1493,8 @@ def fall_sheet(park):
     T, k = n * px, px / c
     tiles = []
     for r in d['sections']:
-        if not r.get('found') or not fall_firm(r.get('fall')):
+        faces = fall_faces(r, d['sections'], (E, N, Z))[0] if r.get('found') else None
+        if not r.get('found') or not (fall_firm(r.get('fall')) or faces):
             continue
         ax, ay, _ = r['anchor']
         m = (np.abs(E - ax) < H) & (np.abs(N - ay) < H)
@@ -1414,17 +1513,25 @@ def fall_sheet(park):
             dr.line([T / 2, T / 2, T / 2 + 15 * k * math.sin(a), T / 2 - 15 * k * math.cos(a)], fill=col, width=3)
             dr.line([T / 2 - 20 * k * math.cos(a), T / 2 - 20 * k * math.sin(a),
                      T / 2 + 20 * k * math.cos(a), T / 2 + 20 * k * math.sin(a)], fill=col, width=1)
+        if faces:
+            pts = fall_side_points(r)
+            for b, (x, y) in zip(faces, (pts[0], (ax, ay), pts[1])):
+                a, cx, cy = math.radians(b), T / 2 + (x - ax) * k, T / 2 - (y - ay) * k
+                dr.line([cx, cy, cx + 6 * k * math.sin(a), cy - 6 * k * math.cos(a)], fill=(255, 0, 255), width=3)
+                dr.line([cx - 8 * k * math.cos(a), cy - 8 * k * math.sin(a),
+                         cx + 8 * k * math.cos(a), cy + 8 * k * math.sin(a)], fill=(255, 0, 255), width=1)
         dr.ellipse([T / 2 - 4, T / 2 - 4, T / 2 + 4, T / 2 + 4], fill=(255, 255, 0))
         dr.rectangle([0, 0, T, 14], fill=(0, 0, 0))
         dr.text((3, 2), f"{r['id']} ({r['tier']}): {r['standCompass'] % 360:.0f} -> {fall_to:.0f}, "
-                        f"{'turns' if fall_turn(r) is not None else 'stays'}", fill=(255, 255, 0))
+                        f"{'turns' if fall_turn(r) is not None else 'stays'}"
+                        + (f"; faces {'/'.join(str(b) for b in faces)}" if faces else ''), fill=(255, 255, 0))
         tiles.append(im)
     for i in range(0, len(tiles), 12):
         sheet = Image.new('RGB', (4 * T, 3 * T), 'black')
         for j, im in enumerate(tiles[i:i + 12]):
             sheet.paste(im, ((j % 4) * T, (j // 4) * T))
         sheet.save(f'tmp/lidar/{park}-fall-{i // 12 + 1}.png')
-    print(f'{park}: {len(tiles)} sections firmly off their fall line, {(len(tiles) + 11) // 12} sheets')
+    print(f'{park}: {len(tiles)} sections firmly off their fall line or with faces, {(len(tiles) + 11) // 12} sheets')
 
 
 def runs_listing(park):
@@ -1455,3 +1562,5 @@ if __name__ == '__main__':
         cover_report(park)
     elif cmd == 'fallsheet':
         fall_sheet(park)
+    elif cmd == 'faces':
+        faces_listing(park)
