@@ -98,6 +98,12 @@ export const cardinalsSections: DetailedSection[] = buildParkSections(
       { rings: RINGS, fromBearingDeg: THIRD, toBearingDeg: 30, facingDeg: THIRD },
       { rings: RINGS, fromBearingDeg: 85, toBearingDeg: FIRST - 0.01, facingDeg: FIRST },
     ],
+    // Rows that bend across the section, measured on the lidar
+    // (scripts/measureStandHeights.py faces): each third faces the rows'
+    // fall line read in it, where planes fitted to the treads confirm it.
+    standFaces: [
+      { id: '132', facesDeg: [116, 116, 145] },
+    ],
     // Rings: the Cardinals Club boxes (1–8), the lettered field boxes in
     // front of the 100s (D), the 100s and the outfield bleachers, then the
     // 200s, 300s and 400s. Party-suite patios (O), boxes (B) and the clubs
