@@ -78,6 +78,12 @@ export const rockiesSections: DetailedSection[] = buildParkSections(ORIENTATION,
     { rings: RINGS, fromBearingDeg: 226, toBearingDeg: 335, facingDeg: THIRD },
     { rings: RINGS, fromBearingDeg: 40, toBearingDeg: 141.99, facingDeg: FIRST },
   ],
+  // Rows that bend across the section, measured on the lidar
+  // (scripts/measureStandHeights.py faces): each third faces the rows'
+  // fall line read in it, where planes fitted to the treads confirm it.
+  standFaces: [
+    { id: 'L315', facesDeg: [119, 125, 142] },
+  ],
   // Rings: the 100s, the club level (200s), suites (1–45), the 300s (L/U)
   // and the Rockpile.
   tierOf: (id, level) => {
