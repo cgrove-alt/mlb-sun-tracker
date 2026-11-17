@@ -53,6 +53,12 @@ export const yankeesSections: DetailedSection[] = buildParkSections(ORIENTATION,
       { ids: ['327', '328'], facingDeg: 312 },
       { ids: ['333W'], facingDeg: 319 },
     ],
+    // Rows that bend across the section, measured on the lidar
+    // (scripts/measureStandHeights.py faces): each third faces the rows'
+    // fall line read in it, where planes fitted to the treads confirm it.
+    standFaces: [
+      { id: '321', facesDeg: [269, 269, 294] },
+    ],
     behindHomeIds: ['122', '123'],
     centerFieldIds: ['202', '238'],
     // The straight runs of field-level boxes along each foul line (first base
