@@ -2685,6 +2685,280 @@ underside stays where it is: a deck doesn't move with the seats under it.
   108's cover.
 
 ---
+
+## §16 Every measured section on its own rake (plan, 2026-11-16)
+
+Branch `fix/section-rakes`, from `main` after PR #89.
+
+**The problem.** The rake sets how far each row rises over the one in
+front: row *n* sits at the front row plus (*n* − 1) treads × tan(rake). Since
+§15 every measured section starts on its own front row, the front of the
+line the tool fits to its treads. But every section still climbs at its
+tier's rake, the median of the tier's sections. So the rows drift off the
+measured treads, more with each row back. A 3° difference over 20 rows is
+about 3 ft at the back row, and that moves heads toward or away from the
+deck above and the stand behind. Today:
+- 1,245 of 2,374 measured sections' own rake (rounded) differs from the
+  rake they get, 166 of them by more than 3°.
+- If every one took its own, 204 sections' answers would change at the
+  five 2025 test games (338 half-hour steps).
+
+**A rake needs rows; a front row doesn't.** The tool fits a line to the
+bottom of the scan's points along the cut, and the treads are steps. Over
+a few rows, where the run starts and ends on a step tips the line a lot.
+To measure how much, I took the 359 sections at six parks whose runs span
+12 or more rows (Yankees, Dodgers, Red Sox, Cardinals, Pirates, Braves),
+refitted each on only its first *n* rows, and compared that with the whole
+run's rake (`tmp/lidar/rakeTrunc.py`):
+
+| Rows fitted | Median error | 9 in 10 within | Within 2° |
+|---|---|---|---|
+| 3 | 2.6° | 14.5° | 44% |
+| 5 | 1.4° | 6.8° | 61% |
+| 7 | 1.0° | 3.8° | 69% |
+| 8 | 0.8° | 2.8° | 80% |
+| 9 | 0.6° | 2.1° | 90% |
+| 10 | 0.4° | 1.6° | 94% |
+
+The errors don't lean either way (the mean signed error is under 0.4°),
+so this is noise from a short fit. The front rows are not really
+shallower. The audit of today's data shows the same pattern:
+- sections whose run spans 3–5 rows differ from their tier's rake by a
+  median of 1.5°, and 57 of 231 by more than 3°;
+- runs of 12 or more rows differ by a median of 0.4°, and only 18 of 948
+  by more than 3°.
+
+**The rule.** A section takes its own rake where its run spans 9 or more
+rows, the least run whose rake is within 2° 9 times in 10.
+- That is 1,325 sections, 578 of them off their tier's (41 by more than
+  3°). Before the checks below, 100 sections' answers change (168 steps).
+- A shorter run keeps the tier's rake. The tier's rake stays the median
+  over all its measured sections: noise that doesn't lean evens out in a
+  median. A median over the 9-row runs alone would rest on one or two
+  sections in many tiers.
+- 53 of the 185 measured tiers have no run of 9 rows, so nothing in them
+  changes.
+
+**Checks.**
+- *Own rakes more than 3° off their tier's (41) are checked on their cut
+  pictures,* as the fronts were. If the cut runs along an aisle's steps,
+  past a walkway, at an angle to the rows, or into another stand, the
+  section keeps the tier's rake, with the reason in the code.
+  - Some look real because their neighbours agree: Cardinals 134–136
+    (7–8° against 12°), Pirates 131–132 (8° against 13°), Dodgers 44RS
+    and 48RS (25° against 29°) and Red Sox B157–B160 (20° against 16°).
+  - Others stand alone: Braves 243 (24° → 18°, 18 steps), Yankees 234W
+    (19° → 12°, 8 steps), Phillies 306 and 330, Pirates 139, Padres 227
+    and Reds 146 (each 10–16° shallower).
+  - First looks at three of these: Pirates 139's run is a low stand of its
+    own under a deck, and Braves 243's and Yankees 234W's fitted lines
+    follow their treads. Each gets a closer look.
+- *A deck can't go through the heads (§8).* With their own rakes, 11
+  undersides would sit under 9 ft above their first covered row, by
+  0.1–1.8 ft:
+  - Guardians 107, 108 and 129;
+  - Twins 108, 112 and 115;
+  - Reds 129, 130 and 417;
+  - Yankees 109 and Cardinals 272.
+
+  As in §15, an estimated underside rises to that bound. If the scan
+  measured it, the rake, the covered row or the underside is wrong, so
+  its cut is checked instead.
+- *Values worked out from the tier's rake.* These are written as a row's
+  number on a slope:
+  - Rate Field's lower-box fronts (`RATE_FIRST_ROW`; 108, 110, 130–133,
+    154 and 156 take their own rake);
+  - the shortened upper-deck sections' fronts;
+  - Citizens Bank's Diamond Club fronts (its rows from the dugout boxes'
+    slope);
+  - Sutter 123's back.
+
+  Where such a section takes its own rake, the value is worked out with
+  that rake, because its rows lie on that slope. For example, Diamond
+  Club A and G go from 1 ft to 2 ft.
+- *Tiers whose rake isn't their measured median* are re-read. As in §15,
+  one with no reason written takes its median.
+  - Red Sox Green Monster seats: set at 10° with no reason given; their
+    three sections measure 28–35°, but over 3–4 rows.
+  - Citi Excelsior: 25° "as before"; four sections measure 8–17°, over
+    3–5 rows.
+  - Citi left outfield: estimated 22°; its one section measures 18°.
+  - Nationals pavilion: 20° against 23°, over four 9+ row runs.
+  - Nationals mezzanine: 18° against 20° (one section).
+  - GABP's upper third-base tier: 29° against 31°.
+- The other §15 exceptions (cuts that start in the wrong place) are short
+  runs, apart from Rate Field 540 (+1°) and GABP 526 (no change). They
+  follow the rule above.
+
+**Fix.**
+1. Tool: `suggest()` lists every found section whose run spans 9 or more
+   rows and whose own rake (rounded) differs from its tier's, as a
+   ready-to-paste `withRakes` map. The rows come from the run's depth over
+   the profile's tread, which `cover_report()` already reads. A comment
+   gives the reason and the refit numbers. No re-measure is needed.
+2. A small `withRakes` helper beside `withFronts` and `withBacks`. Then one
+   commit per park (22), covering:
+   - the own rakes, except any the cut checks above rule out;
+   - the values re-worked from them;
+   - the undersides raised by §8;
+   - the tier re-reads;
+   - comments: "every measured section takes its own front row and back"
+     gains "and, where the scan saw 9 or more rows, its own rake";
+   - reference checks and post claims, investigated and recorded, never
+     tuned; the full suite, the type check and the Low share.
+3. Re-run the audit (`tmp/lidar/rakeAudit.ts`); full checks; review here.
+
+**Not in this plan (noticed):**
+- *Rows under a deck aren't seen.* A covered section's rake comes from its
+  open rows (and a few rows past the deck's edge) and is carried back
+  under the deck. That doesn't change here.
+- Still open: the "too deep" check, tier medians taken field by field,
+  GABP 104/105's light tower, the confidence split, Mets 108's cover,
+  and small run-start errors among the 1–3 ft front differences.
+
+### Steps
+- [x] 1. Tool: `suggest()` lists own rakes from runs of 9+ rows.
+- [x] 1b. Tool: each cut checked against four beside it (added during the
+  work, below).
+- [x] 2. `withRakes` helper (with the first park's commit).
+- [x] 3. 22 parks, one commit each.
+- [x] 4. Audit re-run; full checks; review.
+
+### §16 Review (2026-11-16)
+
+**What changed:**
+- **Tool (`scripts/measureStandHeights.py`):**
+  - `suggest()` lists a `withRakes` map. It holds every found section that
+    meets three conditions:
+    - its run spans 9 or more rows;
+    - its cut agrees with the cuts beside it;
+    - its own rake (rounded) differs from its tier's.
+  - `measure()` takes the same run on four more cuts through each section,
+    2 and 4 m to either side. It reports the median rake and front row
+    over the cuts whose run spans 5+ rows (`rakeAcrossDeg`,
+    `frontAcrossFt`), where 3 or more do. It flags two kinds of cut:
+    - `rakeOffAcross`: the section's own cut is more than 2° off that
+      median;
+    - `aisle`: the cut also starts more than 2 ft low and is steeper, the
+      signature of an aisle's steps.
+  - Tier medians leave those rakes (and aisle fronts) out. An aisle
+    section's front row is the median of the cuts beside it.
+  - All 22 parks were re-measured. Every earlier value came back exactly
+    (0 mismatches).
+- **Data:** a `withRakes` helper and 22 commits, one per park.
+  - Of 2,374 measured sections, 1,317 have runs spanning 9+ rows. 1,287
+    of those take their own rake (540 differ from their tier's). The other
+    30 keep the tier's, because the cuts beside them disagree or there are
+    too few of them.
+  - **Tiers take their new median** (14), mostly because the cuts left out
+    moved it:
+    - Yankees Legends 10° → 9°;
+    - Angels right pavilion 17° → 18°;
+    - Truist field boxes 11° → 12°;
+    - Truist executive 17° → 14° and 8 ft → 10 ft (half its cuts were
+      aisles);
+    - Cardinals Club 10° → 14°;
+    - Oracle arcade 12° → 10°;
+    - Citi Sterling 18° → 17°;
+    - Petco field VIP 12° → 10° and left reserved 21° → 18°;
+    - PNC left corner 11° → 10° and club 27° → 28°;
+    - GABP 400 front 30° → 31°;
+    - Target boxes 11° → 12°;
+    - Fenway's Green Monster seats 10° → 34°. No reason was given for
+      10°. All eight cuts through and beside the three measured sections
+      read 26–36°, with both halves of each run equally steep.
+  - **Tiers that keep their value, with the reason written:**
+    - Petco right upper 27°: its median would rest on 227, whose run
+      starts on a walkway.
+    - Citi Excelsior 25°: only 3–5 rows show under the 400 level, too few
+      to give a rake.
+    - Nationals pavilion 20° and mezzanine 18°, GABP upper third 29° and
+      the Petco terrace 22°: the median of the sections measured before,
+      some of which the tool no longer finds.
+  - **Aisle cuts (9 sections).** The five-cut check found cuts that run
+    down an aisle's steps. Their run starts about 3 ft low and climbs at
+    about 30° before the rows' own slope. They also gave §15 wrong fronts.
+    Each now takes the front row of the cuts beside it and the tier's
+    rake:
+    - Truist 8 (−1 → 1 ft), 123 (7 → 9), 124, 126, 135 and 137 (6–7 → 10);
+    - Orioles 68 (4 → 6);
+    - Citizens Bank 119 (11 → 13);
+    - Kauffman 144 (−1 → 3).
+  - **Values worked out from a rake:**
+    - Rate Field's lower box: its own rakes are a named map, and its
+      sections that start up the slope are carried up it at their own
+      rake (108, 110, 130, 131, 154 and 156 move a fraction of a foot).
+    - Citizens Bank Diamond Club A and G: at their own 13°, row 5 is 2 ft
+      (was 1).
+    - Sutter 123 and Rate Field 540 don't change.
+  - **Undersides (§8).** 11 estimated undersides rise to 9 ft over their
+    first covered row's floor. They are exactly the 11 the plan listed:
+    - Yankees 109 (24 ft);
+    - Busch 272 (70);
+    - Progressive 129 (20), 107 and 108 (30);
+    - GABP 129 and 130 (26) and 417 (80);
+    - Target 108, 112 and 115 (30).
+- **Posts:**
+  - *Yankees:* on July 12, "only three (312, 313 and 315 …) before the
+    6th". 314, at its own 32°, is now shaded from about the 6th.
+  - *Fenway:* the Monster seats get no shade at 1:35 PM games in July. At
+    a 4:10 PM game, from about the 9th inning, the rows behind shade the
+    front rows of M2. At 34° those rows step up about 1.9 ft, and the sun
+    is 11–16° up behind them.
+  - The claims tests follow both posts.
+
+**Where it went differently from the plan:**
+- *The check on own rakes.* The plan was to judge the 41 rakes more than
+  3° off their tier from cut pictures. Pictures turned out too coarse for
+  that, so the tool now compares every section's cut with four parallel
+  cuts. The same rule applies to every own rake, not just the 41: of
+  those 41, 30 pass (Padres 227 has too few cuts beside it). Applied to all, the rule left out 28 sections whose
+  own rake differs from the one they use (plus 2 whose own matches).
+- *Aisle cuts and §15's fronts.* Nine sections took wrong fronts from
+  aisle cuts in §15. They are corrected here, from the cuts beside them.
+- *Tier medians.* They now leave out cuts that aren't the stand's. That
+  corrects Truist's executive tier. With the medians re-taken, 12 more
+  tiers move by 1–4° (the Monster seats' change is a re-read, not this).
+
+**Results, at the five 2025 test games across all 30 parks:**
+- Answers change for 120 sections (202 half-hour steps).
+- 56 confidence labels go up and 37 down. The Low share stays at 26.8%.
+- Sections changed by park: Dodgers 20, Red Sox 20, Mets 11, Reds 11,
+  Braves 6, Cardinals 6, Pirates 6, Yankees 6, Giants 5, Phillies 5,
+  Orioles 4, Rockies 4, Tigers 4, Twins 3, White Sox 3, Nationals 2,
+  Padres 2, Angels 1, Royals 1; Athletics, Cubs and Guardians 0.
+
+**Checks:**
+- `tmp/lidar/rakeMaps.ts`: no section is left off its own rake, and 28
+  differing ones are left out by the rule.
+- The front audit: 2,326 on their own front, 48 set on purpose. That is
+  §15's 47 plus Diamond Club A, now carried at its own 13°.
+- The back audit is unchanged (2,363, 11 exceptions), and no underside is
+  under 9 ft.
+- The full suite passes, 3,553 of 3,553. The type check and eslint are
+  clean.
+- On the dev server both posts show their new lines and the Truist page
+  loads, with no console or server errors.
+- **Not run:** the production build and Playwright (CI runs them).
+
+**Noticed, not changed:**
+- *Sections whose cut is off those beside it keep their tier's rake.* The
+  median of the cuts beside them would often be closer: Citizens Bank 306
+  reads 21° beside it against the tier's 29°, and 330 reads 22° against 31°.
+  Taking that median, where the side cuts are long enough, is a follow-up.
+- *Small tiers' medians can rest on one or two sections.* The Cardinals
+  Club's 14° comes from one 7-row run; the cuts beside its two sections
+  give 11–12°.
+- *Truist 122 is a borderline aisle.* Its front is exactly 2 ft below the
+  cuts beside it, so it keeps its own 6 ft.
+- *42 more fronts are over 2 ft off their five-cut median without the
+  aisle signature.* Some are §15's exceptions; others are real variation
+  across a section, or side cuts that leave it.
+- Still open: the "too deep" check, tier medians taken field by field,
+  GABP 104/105's light tower, the confidence split, Mets 108's cover, and
+  rows under decks that the scan can't see.
+
+---
 ---
 
 # Previous audit (2026-08-07), kept for history

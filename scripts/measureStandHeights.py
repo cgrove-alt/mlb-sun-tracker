@@ -22,6 +22,10 @@ Method (all heights in metres above the field until the report, which is in feet
      its rows), through the middle of that run, gives:
        - rake: slope of the run's lower envelope (the treads);
        - front row: that line at the middle of the first tread;
+       - the same on four cuts beside it (2 and 4 m to either side): where
+         this cut's rake is more than 2 degrees off their median, it isn't
+         the stand's (an aisle's steps, a walkway): the section's rake is
+         left out, and down an aisle its front row is theirs;
        - the deck above: where structure starts over the seats (the lip, as a
          row) and the bottom of its front face (soffit), when the scan sees
          that face;
@@ -821,6 +825,21 @@ def measure_section(P, sec, band):
     front = run['at'](run['s0'] + tread / 2)
     rise = tread * slope
     back = run['s0'] + (rows - ahead) * tread
+    # The same run on four more cuts through the section, 2 and 4 m to either
+    # side. Where this cut runs down an aisle's steps or onto a walkway, they
+    # show it: the medians of their rake and front row (this cut's with
+    # theirs, over the cuts whose run spans 5 or more rows, where 3 or more
+    # do) are the stand's.
+    sc = math.radians(sec['standCompass'])
+    side = []
+    for off in (-4, -2, 2, 4):
+        s2, _, z2 = cut(P, ax + off * math.cos(sc), ay - off * math.sin(sc), sec['standCompass'], -60, 90)
+        r2 = tier_run([r for r in runs_in(s2, z2) if -35 < r['s0'] < 30], band)
+        if r2:
+            side.append(r2)
+    usable = [r for r in [run] + side if r['s1'] - r['s0'] >= 5 * tread]
+    rake_across = med([math.degrees(math.atan(r['slope'])) for r in usable]) if len(usable) >= 3 else None
+    front_across = med([r['at'](r['s0'] + tread / 2) - ahead * tread * r['slope'] for r in usable]) if len(usable) >= 3 else None
     # A deck over the seats: from the first 0.5 m bin where structure 2.2 m
     # or more above the treads carries on for 3 m (a net or a pole does not).
     over = (s > run['s0'] - 1) & (s < back + 2) & (z > run['c'] + slope * s + 2.2)
@@ -843,6 +862,13 @@ def measure_section(P, sec, band):
     # over some of them, are not under it: it is a bridge, a sign over a few
     # rows, or a structure beside the cut.
     flags = []
+    # This cut's rake more than 2 degrees off the stand's: it isn't the
+    # stand's. Down an aisle's steps it also starts more than 2 ft low.
+    rake_deg = math.degrees(math.atan(slope))
+    if rake_across is not None and abs(rake_deg - rake_across) > 2:
+        flags.append('rakeOffAcross')
+        if front - ahead * rise < front_across - 2 * FT and rake_deg > rake_across + 2:
+            flags.append('aisle')
     if lip is not None and run['s1'] > lip + 6:
         past = run['s1'] - lip
         n_bins = int(past / 0.5)
@@ -900,7 +926,6 @@ def measure_section(P, sec, band):
     rs_, rz_ = top_profile(s, across, z, run['s0'], back + 30)
     roof = float(np.max(rz_[np.isfinite(rz_)])) if np.isfinite(rz_).any() else None
     # The far rim: from that head, the other way across the field.
-    sc = math.radians(sec['standCompass'])
     s2, across2, z2 = cut(P, ax + hs * math.sin(sc), ay + hs * math.cos(sc), (sec['standCompass'] + 180) % 360, 0, 330)
     ps2, pz2 = top_profile(s2, across2, z2, 60, 330)
     rim = governing(ps2, pz2, 0, hz)
@@ -909,7 +934,8 @@ def measure_section(P, sec, band):
         'id': sec['id'], 'tier': sec['tier'], 'found': True, 'rows': rows, 'anchor': [ax, ay, run['at'](0)],
         # The profile's front row: where its first rows lie in front of the
         # run (`rowsInFront`), the run's front carried down the slope by them.
-        'frontFt': (front - ahead * rise) / FT, 'rakeDeg': math.degrees(math.atan(slope)), 'visibleDepthFt': depth / FT,
+        'frontFt': (front - ahead * rise) / FT, 'rakeDeg': rake_deg, 'visibleDepthFt': depth / FT,
+        'rakeAcrossDeg': rake_across, 'frontAcrossFt': ft(front_across),
         'lipRow': lip_row, 'modelCoveredFrom': model_cover, 'coverAgrees': cover_agrees,
         'soffitFt': ft(soffit) if cover_agrees else None, 'lipSoffitFt': ft(soffit), 'lipLowFt': ft(lip_low),
         'aboveFrontFt': ft(above_front),
@@ -944,8 +970,11 @@ def measure(park):
         t = {'sections': n_all, 'found': len(rs)}
         t['coverDisagrees'] = sorted({f"{r['id']}: lip row {r['lipRow']}, sourced {r['modelCoveredFrom']}" for r in rs if not r['coverAgrees']})
         t['notFound'] = [f"{r['id']}: {r.get('why')}" for r in results if r['tier'] == key and not r['found']]
+        # A cut that isn't the stand's (`rakeOffAcross`, `aisle`) leaves its
+        # rake (and, down an aisle, its front row) out of the tier's.
+        off = {'rakeDeg': 'rakeOffAcross', 'frontFt': 'aisle'}
         for f in ('frontFt', 'rakeDeg', 'lipRow', 'soffitFt', 'lipSoffitFt', 'lipLowFt', 'backFt', 'backSetbackFt'):
-            vals = [r[f] for r in rs if r[f] is not None]
+            vals = [r[f] for r in rs if r[f] is not None and off.get(f) not in r['flags']]
             t[f] = None if not vals else {'median': float(np.median(vals)), 'min': float(min(vals)), 'max': float(max(vals)), 'n': len(vals)}
         tiers[key] = t
     # The far rim (the engine's "upper deck or roof line"): the median of each
@@ -1049,11 +1078,13 @@ def draw(park, P, data, results):
 def suggest(park):
     """Print each tier's measured values (feet, rounded) and, in the form
     used in stadiumStructures.ts, the sections whose soffit differs from them
-    by more than 10% (at least 3 ft), and every section whose own front row
-    or back (height, setback) differs from the tier's at all, as `withFronts`
-    and `withBacks` maps. Soffits only where the scan saw the deck's face and
-    the deck's edge agrees with the sourced covered row."""
+    by more than 10% (at least 3 ft), and every section whose own front row,
+    back (height, setback) or rake (where its run spans 9 or more rows)
+    differs from the tier's at all, as `withFronts`, `withBacks` and
+    `withRakes` maps. Soffits only where the scan saw the deck's face and the
+    deck's edge agrees with the sourced covered row."""
     d = json.load(open(f'tmp/lidar/{park}-measured.json'))
+    treads = {s['id']: s['stand'].get('treadFt') or 2.75 for s in load_sections(park)['sections']}
     r0 = lambda v: None if v is None else int(round(v))
     differs = lambda v, ref: v is not None and ref is not None and abs(v - ref) > max(0.1 * abs(ref), 3)
     print(f"// {d['scan']}, flown {d['flown']}; far rim (roof line) {r0(d['rim']['heightFt'])} ft, crossing {r0(d['rim']['distanceFt'])} ft")
@@ -1105,10 +1136,26 @@ def suggest(park):
                     line = ''
                 line = f'{line} {item}' if line else f'        {item}'
             print(line)
-        paste('fronts (withFronts)', [f"'{r['id']}': {r0(r['frontFt'])}," for r in rs
-                                      if r['frontFt'] is not None and front is not None and r0(r['frontFt']) != r0(front)])
+        # A cut down an aisle's steps starts below the seats: that section's
+        # front row is the median of the cuts beside it.
+        own_front = lambda r: r['frontAcrossFt'] if 'aisle' in r['flags'] else r['frontFt']
+        paste('fronts (withFronts)', [f"'{r['id']}': {r0(own_front(r))}," for r in rs
+                                      if r['frontFt'] is not None and front is not None and r0(own_front(r)) != r0(front)])
         own = {r['id']: (r0(r['backFt']), r0(r['backSetbackFt'])) for r in rs if r['backFt'] is not None and back is not None}
         paste('backs (withBacks)', [f"'{i}': [{h}, {s}]," for i, (h, s) in own.items() if (h, s) != (r0(back), r0(setback))])
+        # A rake is a line fitted to the run's treads, which are steps: over a
+        # few rows, where the run starts and ends on a step tips the line.
+        # Refitted on only their first n rows, the runs of 12+ rows at six
+        # parks (359 sections) come within 2 degrees of their whole run's
+        # rake in 44% of sections at 3 rows, 80% at 8 and 90% at 9, with no
+        # lean either way. So a section takes its own rake where its run spans
+        # 9 or more rows and the cuts beside it agree (within 2 degrees of
+        # their median); otherwise it keeps the tier's, the median over its
+        # sections, where noise that doesn't lean evens out.
+        paste('rakes (withRakes)', [f"'{r['id']}': {r0(r['rakeDeg'])}," for r in rs
+                                    if r['rakeDeg'] is not None and rake is not None and r0(r['rakeDeg']) != r0(rake)
+                                    and r['visibleDepthFt'] / treads.get(r['id'], 2.75) >= 9
+                                    and r.get('rakeAcrossDeg') is not None and 'rakeOffAcross' not in r['flags']])
 
 
 def cover_report(park):
