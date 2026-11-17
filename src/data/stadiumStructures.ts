@@ -4144,7 +4144,10 @@ const ANGEL_LIDAR = 'USGS 3DEP lidar CA_CaliforniaGaps_B23, flown 2023-11-10, an
  * height and the rake, the edge of any deck over it, and what rises highest
  * behind; each measured section takes its own front row and that back, and
  * its own rake where the scan sees 9 or more of its rows and the cuts beside
- * it agree. Where a deck's
+ * it agree. Each cut runs along the rows' fall line: where that is firmly
+ * more than 15° off the club map's direction, the section faces it (its
+ * section file's standRuns); one that straddles a bend keeps the map's
+ * direction and its tier's rake. Where a deck's
  * edge is more than two rows from the source's
  * covered row (or covers three or more it leaves open), the scan's row is
  * used. The scan sees decks from above: a deck's underside is the bottom of
@@ -4234,12 +4237,14 @@ const ANGEL: StadiumStructure = {
     rightPavilionUpper: {
       label: 'Right-field pavilion (241–249)',
       // Rows A–M, open (as above). Lidar (2 of 9; further out its rows go on
-      // from the lower pavilion's, ~37 ft up there too): front row 37 ft
-      // (36–39), 23° rake; behind, a canopy 64 ft up and 16 ft back (30 ft
-      // behind 244, right behind 243's last row).
-      stand: { rows: 13, frontRowHeightFt: 37, rakeDeg: 23, backHeightFt: 64, backSetbackFt: 16 },
-      sections: withFronts({ '243': { backHeightFt: 64, backSetbackFt: 1 }, '244': { backHeightFt: 64, backSetbackFt: 30 } }, {
-        '244': 36, '243': 39,
+      // from the lower pavilion's, ~37 ft up there too): front row 38 ft
+      // (37–39), 24° rake (244; 243 straddles a bend, its cut across the
+      // rows); behind, 71 ft up and 23 ft back, the median of a canopy 64 ft
+      // up right behind 243's last row and a structure 78 ft up, 45 ft behind
+      // 244's (seen along its rows' fall line).
+      stand: { rows: 13, frontRowHeightFt: 38, rakeDeg: 24, backHeightFt: 71, backSetbackFt: 23 },
+      sections: withFronts({ '243': { backHeightFt: 64, backSetbackFt: 1 }, '244': { backHeightFt: 78, backSetbackFt: 45 } }, {
+        '244': 37, '243': 39,
       }),
       rowsFromMap: true,
       heightsSourced: true,
@@ -4302,17 +4307,18 @@ const ANGEL: StadiumStructure = {
       // section its own; in eight, a lamp bank on it, 135–141 ft).
       stand: { rows: 10, frontRowHeightFt: 60, rakeDeg: 32, backHeightFt: 123, backSetbackFt: 4 },
       sections: withRakes(withFronts(withBacks({}, {
-        '435': [123, 7], '422': [123, 6], '417': [123, 6], '416': [124, 4], '415': [123, 6],
+        '422': [123, 6], '417': [123, 6], '416': [124, 4], '415': [123, 6],
         '425': [123, 6], '412': [123, 6], '411': [137, 2], '410': [141, 4], '409': [123, 7],
         '408': [123, 2], '426': [140, 4], '427': [141, 6], '428': [123, 6], '429': [123, 2],
         '403': [135, 2], '404': [137, 2], '413': [123, 6], '414': [124, 6], '421': [123, 6],
-        '423': [123, 6], '424': [123, 6], '432': [123, 6], '433': [141, 2], '401': [123, 6],
+        '423': [123, 6], '424': [123, 6], '432': [123, 6], '433': [141, 2],
         '402': [140, 2],
       }), {
         '409': 59, '408': 62, '426': 59, '427': 58, '429': 61,
+        '435': 61,
       }), {
-        '435': 30, '416': 33, '405': 33, '429': 33, '404': 31, '418': 33, '419': 33, '420': 33,
-        '423': 31, '401': 31, '402': 31,
+        '435': 32, '416': 33, '405': 33, '429': 33, '404': 31, '418': 33, '419': 33, '420': 33,
+        '423': 31, '401': 32, '402': 31,
       }),
       rowsFromMap: true,
       heightsSourced: true,
