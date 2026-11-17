@@ -408,8 +408,14 @@ describe('Busch Stadium stand directions (measured on the 2022 aerial photo)', (
     expect(stand(id)).toBe(197);
   });
 
-  it.each(['158', '162', '160D', '265', '360', '365'])('third-base section %s faces 287°', (id) => {
+  it.each(['158', '162', '160D', '360', '365'])('third-base section %s faces 287°', (id) => {
     expect(stand(id)).toBe(287);
+  });
+
+  it('the left-field loge faces its own rows on the lidar', () => {
+    // The photo's level lines are 4–38 m back from the line; past them the
+    // loge's rows (265–269, and 163–168 below) run about 50° on the scan.
+    expect(stand('265')).toBe(320);
   });
 
   it.each(['5', '151', '251', '351', '451'])('behind-home section %s faces back toward home plate', (id) => {
@@ -418,7 +424,10 @@ describe('Busch Stadium stand directions (measured on the 2022 aerial photo)', (
   });
 
   it('the right-field corner and the outfield stands follow the photo', () => {
-    expect(stand('130')).toBe(135);
+    // The corner's back edge, read in shadow, gives 135° (127, 132, 133);
+    // the rows of 128–131 run nearer north-south on the lidar (105–108°).
+    expect(stand('133')).toBe(135);
+    expect(stand('130')).toBe(106);
     expect(stand('193')).toBe(44);
     expect(stand('107')).toBe(92);
   });

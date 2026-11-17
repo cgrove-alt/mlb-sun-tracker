@@ -56,6 +56,25 @@ export const cardinalsSections: DetailedSection[] = buildParkSections(
     orientation: ORIENTATION,
     aerialControl: CARDINALS_AERIAL_CONTROL,
     standRuns: [
+      // Turned to the rows' fall line, measured on the lidar
+      // (scripts/measureStandHeights.py): these sections' rows climb firmly
+      // more than 15° off the direction fitted on the map, in the middle
+      // of the section and 4 m to either side. 128–131 are in the corner
+      // whose back edge the photo read in shadow (135° below); 163–168 and
+      // 265–269 are past the level lines the photo measured on the
+      // third-base side (287° below): on the scan their rows run about 15°
+      // and 50°.
+      { ids: ['128'], facingDeg: 110 },
+      { ids: ['129'], facingDeg: 105 },
+      { ids: ['130'], facingDeg: 106 },
+      { ids: ['131'], facingDeg: 109 },
+      { ids: ['134'], facingDeg: 147 },
+      { ids: ['163', '166D', '167', '168', '268'], facingDeg: 317 },
+      { ids: ['164D'], facingDeg: 316 },
+      { ids: ['165D'], facingDeg: 315 },
+      { ids: ['166'], facingDeg: 321 },
+      { ids: ['265', '267', '269'], facingDeg: 320 },
+      { ids: ['337'], facingDeg: 181 },
       // The Cardinals Club boxes follow the backstop arc out to the dugouts.
       { ids: ['1'], facingDeg: 158 },
       { ids: ['2'], facingDeg: 174 },
