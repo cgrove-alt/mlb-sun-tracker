@@ -5620,7 +5620,7 @@ const PNC: StadiumStructure = {
       stand: { rows: 13, frontRowHeightFt: -1, rakeDeg: 10, backHeightFt: 120, backSetbackFt: 106 },
       sections: withRakes(withFronts(withBacks({}, {
         '1': [120, 116], '2': [120, 114], '4': [120, 104], '8': [120, 103], '9': [120, 104],
-        '10': [120, 103], '11': [120, 104], '12': [121, 104], '30': [120, 117], '24': [121, 104],
+        '10': [120, 103], '11': [120, 104], '12': [121, 104], '30': [120, 107], '24': [121, 104],
         '22': [121, 104], '21': [120, 104], '20': [121, 91], '19': [121, 106], '32': [120, 132],
         '31': [120, 117],
         '5': [121, 107],
@@ -5630,6 +5630,7 @@ const PNC: StadiumStructure = {
         '17': [121, 107],
       }), {
         '10': 2, '11': 1, '12': 2, '22': 1, '21': 2, '20': 2,
+        '30': 0,
       }), {
         '2': 11, '5': 9, '9': 11, '14': 9, '15': 9, '18': 11, '17': 12,
       }),
@@ -5673,17 +5674,19 @@ const PNC: StadiumStructure = {
     leftCorner: {
       label: 'Left-field corner (133–138)',
       // Rows A–F to A–P, open ("among the worst seats for shade"). Lidar (6
-      // of 6): front row 2 ft (-1 to 3), 10° rake (137, along its rows' fall
-      // line, and 138, straddling a bend, read 16° over 8–9 rows); behind,
-      // 66 ft up and 66 ft back (each section's own where it differs: 57–72
-      // ft up and 6–124 ft back).
-      stand: { rows: 12, frontRowHeightFt: 2, rakeDeg: 10, backHeightFt: 66, backSetbackFt: 66 },
+      // of 6): front row 1 ft (-1 to 3), 12° rake (9–17: 133, 134 and 136
+      // read 9–10°, 135 13°, and 137 and 138, along their rows' fall lines,
+      // 16–17° over 8–9 rows); behind, 66 ft up and 57 ft back (each
+      // section's own where it differs: 57–72 ft up and 7–124 ft back).
+      stand: { rows: 12, frontRowHeightFt: 1, rakeDeg: 12, backHeightFt: 66, backSetbackFt: 57 },
       sections: withRakes(withBacks(withFronts({
         '133': { backHeightFt: 121, backSetbackFt: 124 }, '134': { backHeightFt: 72, backSetbackFt: 58 },
-        '135': { backHeightFt: 60, backSetbackFt: 6 }, '136': { backHeightFt: 62, backSetbackFt: 57 },
-        '137': { backHeightFt: 70, backSetbackFt: 75 }, '138': { backHeightFt: 57, backSetbackFt: 88 },
+        '135': { backHeightFt: 59, backSetbackFt: 7 }, '136': { backHeightFt: 62, backSetbackFt: 57 },
+        '137': { backHeightFt: 70, backSetbackFt: 75 }, '138': { backHeightFt: 57, backSetbackFt: 57 },
       }, {
-        '133': -1, '138': 0, '137': 1, '136': 3,
+        '133': -1, '136': 3,
+        '134': 2,
+        '135': 2,
       }), { '137': [70, 75] }), {
         '134': 9,
       }),
@@ -5726,11 +5729,9 @@ const PNC: StadiumStructure = {
       // 300s rise between, a walkway behind the last row; each measured
       // section its own).
       stand: { rows: 11, frontRowHeightFt: 53, rakeDeg: 28, backHeightFt: 121, backSetbackFt: 25 },
-      sections: withRakes(withFronts(withBacks({}, {
-        '201': [120, 25], '203': [120, 30], '204': [120, 25], '205': [120, 25], '208': [120, 25],
+      sections: withRakes(withBacks({}, {
+        '201': [120, 25], '203': [120, 25], '204': [120, 25], '205': [120, 25], '208': [120, 25],
         '210': [120, 25], '211': [120, 24],
-      }), {
-        '203': 52,
       }), {
         '227': 27, '225': 27, '221': 27, '220': 27, '214': 29, '219': 27,
       }),
@@ -5782,20 +5783,22 @@ const PNC: StadiumStructure = {
       // which take theirs; 329 and 331–333, not measured, keep theirs). Each
       // measured section takes its own back (that edge 27–55 ft in front of
       // the last row; in 311 over its row 9).
-      stand: { rows: 20, frontRowHeightFt: 76, rakeDeg: 28, backHeightFt: 120, backSetbackFt: -36, overhang: { coveredFromRow: 6, soffitHeightFt: 120 } },
+      stand: { rows: 20, frontRowHeightFt: 76, rakeDeg: 28, backHeightFt: 120, backSetbackFt: -37, overhang: { coveredFromRow: 6, soffitHeightFt: 120 } },
       sections: withRakes(withFronts(withBacks({
         ...pncCover(['329', '331', '332', '333'], 120),
         ...Object.fromEntries(['308', '323', '327', '328'].map((id) => [id, { overhang: { coveredFromRow: 9, soffitHeightFt: 120 } }])),
         ...Object.fromEntries(['311', '320'].map((id) => [id, { overhang: { coveredFromRow: 10, soffitHeightFt: 120 } }])),
       }, {
-        '301': [120, -33], '302': [120, -45], '303': [121, -33], '305': [120, -37],
+        '301': [120, -38], '302': [120, -45], '303': [121, -33],
         '308': [120, -27], '307': [120, -55], '309': [121, -37], '310': [120, -42],
         '311': [120, -27], '312': [121, -42], '330': [121, -27], '328': [121, -37],
         '323': [121, -27], '327': [121, -35], '321': [121, -37], '325': [121, -47],
         '320': [120, -35],
+        '322': [120, -36],
       }), {
         '303': 75, '308': 71, '307': 77, '309': 77, '310': 75, '311': 70, '312': 77, '328': 72,
         '323': 71, '327': 71, '325': 78, '322': 75, '320': 71,
+        '301': 77,
       }), {
         '308': 29, '311': 30,
       }),
