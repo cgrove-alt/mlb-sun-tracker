@@ -3292,6 +3292,245 @@ are listed.
   - the eight parks without lidar;
   - the seat map's own fit at bends.
 
+## §18 Bend sections (plan, 2026-11-17)
+
+Asked: plan the bend sections. Branch `fix/bend-sections`, from `main`
+after PR #91.
+
+**The problem.**
+- §17 turned a section to its rows' fall line only where the fall lines
+  in its middle and 4 m to either side agreed within 10°.
+- 136 sections had their middle firmly off the map's direction but didn't
+  pass that test. They keep the map's direction, and their rake went to
+  the tier's.
+- Their fronts, backs and covered rows still come from a cut that crosses
+  their rows.
+- More importantly, for many of them the map's direction isn't even
+  between their faces. Every part of the section faces well away from it,
+  the same way.
+
+**How their fall lines sit** (middle and the two sides, where found):
+
+| Pattern | Sections | Example |
+|---|---|---|
+| All off the same way by more than 15° | 46 (21 with one side missing) | Braves 243: +46, +29, +49 |
+| Off the same way, one side within 15° | 39 (9 with one side missing) | |
+| Either side of the map's direction | 47 (7 with one side missing) | Cardinals 135: −50, −50, +13 |
+| Only the middle found | 4 | |
+
+The map's direction is a fair compromise only where the fall lines lie
+either side of it. Even then, the middle often outvotes one side; Cardinals
+135 faces 147°, not 197°, over two-thirds of its width.
+
+**The rule.** A section on a bend faces the median of its fall lines
+(middle and 4 m to either side, as found) where:
+- at least two of them were found;
+- the median is more than 15° off the map's direction;
+- it holds when re-measured: along the new direction, the median of the
+  fall lines is within 15°;
+- its picture, with a row line square to each direction, shows the rows
+  run along the new one.
+
+This replaces §17's "the sides agree within 10°". A section that passed
+that test passes this one with the same direction to within a few
+degrees, so §17's turns stand. Once a bend section is turned, its cut
+runs along the median face. Where its middle is still firmly off the new
+direction, the cut still crosses that face, so `cutOffFall` keeps its rake
+on the tier's.
+
+**The numbers.**
+- 95 sections at 21 parks turn: Mets 14, Cardinals 11, Red Sox 11,
+  Yankees 9, Dodgers 7, Pirates 6, and 1–4 at fifteen others.
+- 41 keep the map's direction: 37 whose fall lines lie either side of it
+  (median within 15°), and the 4 with only the middle found.
+- Turning alone changes answers for 77 of the 95 at the five 2025 test
+  games (494 half-hour steps; `tmp/lidar/bendWhatIf.ts`).
+- Re-measuring along the new direction then moves their own fronts,
+  backs, covered rows and (where the cut now runs along the rows) rakes,
+  and the tier medians, as §17's turns did. That number comes with the
+  work.
+
+**What one direction can't fix.** In 28 of the 95, one face is more than
+20° off the median. The section's rows bend that much across its width,
+and the engine takes one direction per section. The median puts it on the
+direction most of the section faces.
+
+**Fix.**
+1. *Tool.* `fall_turn()` takes the median of the fall lines found (two or
+   more), where it is more than 15° off, in place of "the sides agree
+   within 10°". `suggest()` lists the turns, and the sections kept with
+   why (fall lines either side, or only the middle found).
+2. *Re-measure and check.*
+   - Re-measure the parks with turns.
+   - Draw every turn's picture and check it.
+   - Put the turns in `standRuns`, re-measure along them, and drop any
+     turn whose median isn't within 15° afterwards.
+3. *One commit per park.*
+   - The turns, then the maps from the re-measure: rakes, fronts, backs,
+     covered rows and the tier medians, as in §17.
+   - The §8 undersides, the reference checks and post claims
+     (investigated, not tuned), and photo-measured runs it contradicts,
+     with the reason written.
+   - **Guard from §17's slip (Mets 537):** a deliberate exception keeps
+     its value when its tier's value moves. Only lines for turned
+     sections and tiers are edited, never one because its text changed.
+4. *The audits, full checks and a review here.*
+
+**Not in this plan (noticed):**
+- *Splitting a strongly bent section into its faces in the engine* (shade
+  per face, weighted by seats): the honest fix for the 28 above, but an
+  engine change.
+- The eight parks without lidar, and fitting the seat map's own
+  directions at bends.
+
+### Steps
+- [x] 1. Tool: the median rule; the kept list.
+- [x] 2. Re-measure; pictures; turns; re-measure along them; stability.
+- [x] 3. Parks, one commit each: directions, maps, checks.
+- [x] 4. Audits; full checks; review.
+
+### §18 Review (2026-11-17)
+
+**What changed:**
+- **Tool (`scripts/measureStandHeights.py`).** `fall_turn()` turns a
+  section to the median of the fall lines found (middle and 4 m to either
+  side, two or more) where that median is more than 15° off, in place of
+  §17's "the sides agree within 10°". `suggest()` lists the sections kept
+  (fall lines either side, or only the middle's found). Fenway B6 joins
+  the `skip` list (below).
+- **Directions.** 79 sections at 21 parks turn, as `standRuns` entries:
+  - Cardinals 11, Red Sox 11, Mets 10, Yankees 9, Pirates 6;
+  - Braves and Padres 4 each;
+  - Angels, Dodgers, Phillies and Rockies 3 each;
+  - Orioles and Tigers 2 each;
+  - Cubs, Giants, Guardians, Nationals, Reds, Royals, Twins and White
+    Sox 1 each.
+- **Of the plan's 95, 16 keep the map's direction:**
+  - 8 on the picture check, where the rows don't run square to the
+    median: Dodgers 2DG, 34BL and 41BL, Phillies 140, Reds 303, Twins
+    140, White Sox 108 and 322;
+  - 6 that didn't hold when re-measured (the median of their fall lines
+    still more than 15° off): Angels 127, Dodgers 10DG, Mets 213 and 409,
+    Reds 22, Rockies 309;
+  - Mets D, whose rows centre on the plate behind home (the
+    stand-direction test's photo run);
+  - Mets 534: two fall lines on a 4.5-row run at the stand's end, and
+    Rate Your Seats' shade on its rows 10 and up at a July 1:10 PM game
+    needs the map's direction.
+- **Re-measured along the new directions**, through the §14–17 maps:
+  rakes, fronts, backs, covered rows and the §8 undersides, one commit
+  per park. A guard (`tmp/lidar/changes18.py`) edits only turned
+  sections and sections with no deliberate line before, so §15–17
+  exceptions keep their values (the Mets 537 lesson).
+- **Tier values that move:**
+  - rakes: Pirates left corner 10° → 12°, Cardinals 100s 12 → 13, Mets
+    400s 28 → 29, Mets field boxes 14 → 13, Braves right-field corner
+    24 → 23;
+  - fronts: Angels pavilion upper 38 → 36 ft, Dodgers pavilion 9 → 8,
+    Orioles right corner 3 → 2, Pirates left corner 2 → 1;
+  - backs: Tigers left-field pavilion 54 ft 1 ft in front → 62 ft 6 ft in
+    front; Yankees terrace 133 → 137 ft and field level 133 → 134; Cubs
+    bleachers 57 ft 19 ft back → 54 ft 12 ft back; Angels pavilion upper
+    71 → 75 ft; Padres right upper 73 ft 81 back → 75 ft 73 back; and
+    1–9 ft setback moves at the Pirates (left corner, upper), Fenway
+    field boxes, Reds third base, Nationals Terra Club, Padres 100s and
+    terrace, Dodgers and Cardinals loges.
+
+  Tiers that keep their value, with the reason written: Busch 100s back
+  34 ft and field boxes 111 ft (the median rests on turned corner
+  sections; Rate Your Seats' March check on 157 and 158 holds at 34);
+  Braves corner back (the canopy); Fenway right-field boxes (82 ft: the
+  median of the four measured, 68 ft, is neither roof); Camden right
+  corner and Petco 100s backs (two structures); Petco right upper's rake
+  27° (227's 24° along its rows spans five rows).
+- **Covered rows along the rows:**
+  - back to the source's or tier's row: Yankees 133 (17 → 14) and 234
+    (5 → 8), Comerica 345 (15 → 21);
+  - the scan's row, more than 2 off the source: Reds 111 (31), Camden 74
+    (14), Coors L345 (16), Mets 523, 503 and 511 (8);
+  - kept as sourced, where a section-specific reference agrees or the
+    deck's end runs across the rows: Comerica 146 (open, like 145), Petco
+    227 (23), Phillies 126, Giants 143 (open), Yankees 135 (open; along
+    its rows the deck's edge is over its last row, as sourced).
+- **Fenway B6 is no longer measured.** Along its rows its cut runs up a
+  field-level walkway into the stand and finds the rows behind it (6 ft
+  front row, 13°); the cuts 4 m either side climb its rows from the
+  field. It takes its tier's values, as Giants 122 (a vomitory ramp)
+  does.
+- **Tests and posts:**
+  - Comerica's upper-deck reference ("decent shade in the last rows of
+    most sections") records 345 with 343: 345 faces 66° at the left-field
+    corner (fall line, tread plane and risers 59–69°), into the afternoon
+    sun.
+  - Stand-direction test: Busch 162, Petco 325 and 220, Dodgers 316PR on
+    their rows on the scan.
+  - Fenway post: Loge Box 154 and 155 are fully shaded by the 6th inning,
+    not the 4th.
+  - Yankees post: 305 is partly shaded until about the 6th, 305W through
+    the 9th, 332B in the sun until about the 9th; 234 partly shaded
+    through the 9th, then shaded (Medium, was Low); five in six terrace
+    sections shaded by the end of the April 13 game (was three in four).
+- **Headers:** 19 parks' headers give the median rule; tier notes that
+  still said "straddles a bend" for turned sections, or gave values from
+  before, now match their profiles.
+
+**Where it went differently from the plan:**
+- *16 of 95 turns dropped* (above), so 79 went in.
+- *Three covered rows slipped through at first:* Reds 111, Camden 74 and
+  Coors L345 kept the row the cut across their rows had read. The cover
+  report compares against the profile's row, which for these was that
+  scan row, not the source's. A check of every turned section against its
+  true source found them; each is its own commit.
+- *A walkway into a stand* (Fenway B6) fooled the aisle flag, which only
+  catches a cut that starts low. 37 sections across the parks have a
+  middle-cut front more than 2 ft off the cuts beside it; most are set on
+  purpose from §15. Of the turned ones, Royals 128 is caught by the flag
+  (its cut runs down an aisle's steps) and Cardinals 136D keeps its front
+  on purpose; B6 was the new case.
+- *Stale tier notes:* the Angels pavilion upper, Dodgers pavilion and
+  Mets notes went in with values from before their medians moved; fixed
+  in the docs commit.
+
+**Results, at the five 2025 test games across all 30 parks:**
+- Answers change for 80 sections (360 half-hour steps).
+- 55 confidence labels go up and 39 down.
+- The Low share is 26.6% (was 26.7%).
+- By park: Cardinals 17, Red Sox 13, Yankees 12, Mets 11, Braves 4,
+  Dodgers 3, Padres 3, Phillies 3, Angels 2, Pirates 2, Rockies 2, and 1
+  each at the Cubs, Nationals, Orioles, Reds, Royals, Tigers, Twins and
+  White Sox.
+
+**Checks:**
+- *Rakes:* every measured section is on the rule's rake but Pirates 139,
+  set on purpose (2,371 of 2,372).
+- *Fronts:* 2,323 on their own, 49 set on purpose (Braves 211 and
+  Cardinals 136D join; Phillies 318 leaves). No underside is under 9 ft.
+- *Backs:* 2,361 on their own, 11 set on purpose; the tier backs kept
+  above are the only new tier exceptions.
+- *Tests:* the full suite passes, 3,566 of 3,566. The first full run lost
+  one suite to a worker crash while a snapshot ran alongside; the re-run
+  passed whole. The type check and eslint are clean.
+- *Dev server:* both posts show their new lines, and the Yankees and Red
+  Sox pages load, with no console or server errors.
+- **Not run:** the production build and Playwright (CI runs them).
+
+**Noticed, not changed:**
+- *Strongly bent sections:* in 28 of the plan's 95, one face is more than
+  20° off the median. The engine takes one direction per section;
+  splitting a section into its faces is an engine change.
+- *Cover report:* it compares the scan's row with the profile's, which is
+  sometimes itself a scan row. Comparing with the source's would catch
+  slips like the three above automatically.
+- *Middle cuts that start high:* the aisle flag could also catch a cut
+  whose front is more than 2 ft above the cuts beside it, but most such
+  sections are set on purpose already, so it would need checking park by
+  park.
+- *Comerica 343:* the map gives 17°, but the tread plane reads 21–27°,
+  the fall line 30° and the risers 39–40°. Its middle isn't firmly off,
+  so it stays.
+- *Not done:* the eight parks without lidar, and fitting the seat map's
+  own directions at bends.
+
 ---
 ---
 

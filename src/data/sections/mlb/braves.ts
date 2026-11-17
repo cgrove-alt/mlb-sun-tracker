@@ -61,8 +61,12 @@ export const bravesSections: DetailedSection[] = buildParkSections(ORIENTATION, 
   standRuns: [
     // Turned to the rows' fall line, measured on the lidar
     // (scripts/measureStandHeights.py): these sections' rows climb firmly
-    // more than 15° off the direction fitted on the map, in the middle
-    // of the section and 4 m to either side.
+    // more than 15° off the direction fitted on the map; each faces the
+    // median of the fall lines in its middle and 4 m to either side.
+    { ids: ['1'], facingDeg: 292 },
+    { ids: ['211'], facingDeg: 261 },
+    { ids: ['212'], facingDeg: 270 },
+    { ids: ['243'], facingDeg: 70 },
     { ids: ['111'], facingDeg: 276 },
     { ids: ['141'], facingDeg: 44 },
     { ids: ['29'], facingDeg: 34 },

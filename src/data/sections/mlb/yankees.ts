@@ -19,8 +19,17 @@ export const yankeesSections: DetailedSection[] = buildParkSections(ORIENTATION,
     standRuns: [
       // Turned to the rows' fall line, measured on the lidar
       // (scripts/measureStandHeights.py): these sections' rows climb firmly
-      // more than 15° off the direction fitted on the map, in the middle
-      // of the section and 4 m to either side.
+      // more than 15° off the direction fitted on the map; each faces the
+      // median of the fall lines in its middle and 4 m to either side.
+      { ids: ['133'], facingDeg: 322 },
+      { ids: ['135'], facingDeg: 354 },
+      { ids: ['210'], facingDeg: 194 },
+      { ids: ['221A'], facingDeg: 278 },
+      { ids: ['234'], facingDeg: 332 },
+      { ids: ['305'], facingDeg: 171 },
+      { ids: ['305W'], facingDeg: 182 },
+      { ids: ['326'], facingDeg: 308 },
+      { ids: ['332B'], facingDeg: 319 },
       { ids: ['132'], facingDeg: 325 },
       { ids: ['205'], facingDeg: 164 },
       { ids: ['205W'], facingDeg: 160 },

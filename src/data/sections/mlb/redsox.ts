@@ -20,8 +20,16 @@ export const redsoxSections: DetailedSection[] = buildParkSections(ORIENTATION, 
     standRuns: [
       // Turned to the rows' fall line, measured on the lidar
       // (scripts/measureStandHeights.py): these sections' rows climb firmly
-      // more than 15° off the direction fitted on the map, in the middle
-      // of the section and 4 m to either side.
+      // more than 15° off the direction fitted on the map; each faces the
+      // median of the fall lines in its middle and 4 m to either side.
+      { ids: ['B153'], facingDeg: 288 },
+      { ids: ['B154'], facingDeg: 297 },
+      { ids: ['B155'], facingDeg: 308 },
+      { ids: ['B165'], facingDeg: 302 },
+      { ids: ['B6'], facingDeg: 157 },
+      { ids: ['F49', 'H49'], facingDeg: 273 },
+      { ids: ['F70', 'FBC70'], facingDeg: 307 },
+      { ids: ['F71', 'FBC71'], facingDeg: 299 },
       { ids: ['B109', 'B110', 'B118'], facingDeg: 174 },
       { ids: ['B112'], facingDeg: 175 },
       { ids: ['B5'], facingDeg: 159 },

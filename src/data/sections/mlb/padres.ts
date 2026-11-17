@@ -60,8 +60,12 @@ export const padresSections: DetailedSection[] = buildParkSections(ORIENTATION, 
     standRuns: [
       // Turned to the rows' fall line, measured on the lidar
       // (scripts/measureStandHeights.py): these sections' rows climb firmly
-      // more than 15° off the direction fitted on the map, in the middle
-      // of the section and 4 m to either side.
+      // more than 15° off the direction fitted on the map; each faces the
+      // median of the fall lines in its middle and 4 m to either side.
+      { ids: ['220'], facingDeg: 254 },
+      { ids: ['227'], facingDeg: 96 },
+      { ids: ['324'], facingDeg: 244 },
+      { ids: ['325'], facingDeg: 110 },
       { ids: ['118'], facingDeg: 240 },
       { ids: ['119', '217'], facingDeg: 120 },
       { ids: ['120'], facingDeg: 238 },

@@ -33,8 +33,9 @@ Method (all heights in metres above the field until the report, which is in feet
          an angle t to the fall line reads atan(tan(rake) cos t), so the
          direction most of them agree with is the way the rows climb. Where
          it is firmly more than 15 degrees off the stand direction, this cut
-         crosses the rows at an angle: its rake is left out, and where all
-         three agree within 10 degrees the stand turns to it (`suggest`);
+         crosses the rows at an angle: its rake is left out, and where the
+         median of the fall lines found (two or more) is more than 15
+         degrees off, the stand turns to that median (`suggest`);
        - the deck above: where structure starts over the seats (the lip, as a
          row) and the bottom of its front face (soffit), when the scan sees
          that face;
@@ -100,7 +101,10 @@ PARKS = {
             # Bleachers: the club's chart (not pinned to a photo here) puts
             # them off their stand; their cuts land behind it. Not measured.
         },
-        'skip': {'B126': 'its chart position puts its cut outside the park (plan view)'},
+        'skip': {'B126': 'its chart position puts its cut outside the park (plan view)',
+                 'B6': 'its cut, along its rows, runs up a field-level walkway into the stand '
+                       '(flat at the field for 12 m, then a 7 ft step) and finds the rows behind it; '
+                       'the cuts 4 m either side climb its rows from the field'},
         # The eight lattice light towers stand on the roof (82 ft) up to 121-143 ft.
         'lightTowersAbove': 32,
     },
@@ -802,7 +806,6 @@ def tier_run(runs, band):
 
 
 FALL_FIRM = 15   # degrees: a stand direction firmly further off the fall line than this is wrong
-FALL_AGREE = 10  # degrees: the fall lines 4 m to either side agree with the middle's within this
 
 
 def fall_line(P, x, y, compass, band, tread):
@@ -852,14 +855,20 @@ def fall_firm(f):
 
 
 def fall_turn(r):
-    """Where the stand turns to its fall line: firmly off in the middle of the
-    run, and the fall lines 4 m to either side within FALL_AGREE degrees of it
-    (one face, not a bend). Returns the new stand direction (the median of the
-    three), or None."""
+    """Where the stand turns: its fall line is firmly off in the middle of the
+    run, and the median of the fall lines found there and 4 m to either side
+    (two or more) is more than FALL_FIRM degrees off. A section whose rows
+    bend across its width faces the way most of it does; where its fall lines
+    lie either side of the stand direction, or only the middle's is found,
+    that direction stays. Returns the new stand direction, or None."""
     f, sides = r.get('fall'), r.get('fallSides') or []
-    if not fall_firm(f) or len(sides) != 2 or any(s is None or abs(s['off'] - f['off']) > FALL_AGREE for s in sides):
+    if not fall_firm(f):
         return None
-    return round(r['standCompass'] + float(np.median([f['off']] + [s['off'] for s in sides]))) % 360
+    offs = [f['off']] + [s['off'] for s in sides if s is not None]
+    if len(offs) < 2:
+        return None
+    m = float(np.median(offs))
+    return round(r['standCompass'] + m) % 360 if abs(m) > FALL_FIRM else None
 
 
 def measure_section(P, sec, band):
@@ -1241,9 +1250,10 @@ def suggest(park):
                                     and r.get('rakeAcrossDeg') is not None and 'rakeOffAcross' not in r['flags']
                                     and 'cutOffFall' not in r['flags']])
     # Stand directions: a section whose fall line is firmly off its stand
-    # direction, with the fall lines 4 m to either side agreeing, turns to it
-    # (`standRuns` entries, first in the park's list so they win). One firmly
-    # off where the sides disagree straddles a bend and keeps its direction.
+    # direction turns to the median of its fall lines, where that is more
+    # than 15 degrees off (`standRuns` entries, first in the park's list so
+    # they win). One whose fall lines lie either side of its direction, or
+    # with only the middle's found, keeps it.
     found = [r for r in d['sections'] if r.get('found')]
     turns = {}
     for r in found:
@@ -1258,7 +1268,7 @@ def suggest(park):
     bends = [f"{r['id']} {r['fall']['off']:+d} (sides {', '.join(side_txt(s) for s in r['fallSides'])})"
              for r in found if fall_firm(r.get('fall')) and fall_turn(r) is None]
     if bends:
-        print(f"firmly off but not turned (a bend, or no fall line beside it): {'; '.join(bends)}")
+        print(f"firmly off but kept (fall lines either side of it, or only the middle's): {'; '.join(bends)}")
 
 
 def cover_report(park):
@@ -1407,7 +1417,7 @@ def fall_sheet(park):
         dr.ellipse([T / 2 - 4, T / 2 - 4, T / 2 + 4, T / 2 + 4], fill=(255, 255, 0))
         dr.rectangle([0, 0, T, 14], fill=(0, 0, 0))
         dr.text((3, 2), f"{r['id']} ({r['tier']}): {r['standCompass'] % 360:.0f} -> {fall_to:.0f}, "
-                        f"{'turns' if fall_turn(r) is not None else 'bend, stays'}", fill=(255, 255, 0))
+                        f"{'turns' if fall_turn(r) is not None else 'stays'}", fill=(255, 255, 0))
         tiles.append(im)
     for i in range(0, len(tiles), 12):
         sheet = Image.new('RGB', (4 * T, 3 * T), 'black')

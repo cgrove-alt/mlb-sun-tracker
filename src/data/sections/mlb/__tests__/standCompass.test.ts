@@ -191,8 +191,13 @@ describe('Dodger Stadium stand directions (pinned to the 2022 aerial photo)', ()
     expect(diff(stand(id), 0)).toBeLessThan(15);
   });
 
-  it.each(['302PR', '310PR', '316PR'])('right-field pavilion %s faces away from home plate (northeast)', (id) => {
+  it.each(['302PR', '310PR'])('right-field pavilion %s faces away from home plate (northeast)', (id) => {
     expect(diff(stand(id), 60)).toBeLessThan(15);
+  });
+
+  it('the pavilion\'s end, 316PR, faces its own rows on the lidar', () => {
+    // The median of its rows' fall lines (middle and 4 m to either side).
+    expect(stand('316PR')).toBe(43);
   });
 });
 
@@ -414,14 +419,15 @@ describe('Busch Stadium stand directions (measured on the 2022 aerial photo)', (
     expect(stand(id)).toBe(197);
   });
 
-  it.each(['158', '162', '160D', '360', '365'])('third-base section %s faces 287°', (id) => {
+  it.each(['158', '160D', '360', '365'])('third-base section %s faces 287°', (id) => {
     expect(stand(id)).toBe(287);
   });
 
   it('the left-field loge faces its own rows on the lidar', () => {
     // The photo's level lines are 4–38 m back from the line; past them the
-    // loge's rows (265–269, and 163–168 below) run about 50° on the scan.
+    // loge's rows (265–269, and 162–168 below) run about 50° on the scan.
     expect(stand('265')).toBe(320);
+    expect(stand('162')).toBe(317);
   });
 
   it.each(['5', '151', '251', '351', '451'])('behind-home section %s faces back toward home plate', (id) => {
@@ -530,11 +536,11 @@ describe('Petco Park stand directions (measured on the 2022 aerial photo)', () =
 
   it.each(['111', '209', '317'])('first-base section %s faces 135°', (id) => expect(stand(id)).toBe(135));
   it.each(['112', '210', '318'])('third-base section %s faces 225°', (id) => expect(stand(id)).toBe(225));
-  it.each(['219', '325'])('right-field-line section %s faces 90°', (id) => expect(stand(id)).toBe(90));
-  // Where the stand turns from the line to the outfield, 119 and 121's rows
-  // run at 20–30° to north-south on the lidar.
-  it('right-field section 121 faces its own rows on the lidar', () => expect(stand('121')).toBe(110));
-  it.each(['122', '220', '326'])('left-field-line section %s faces 270°', (id) => expect(stand(id)).toBe(270));
+  it.each(['219'])('right-field-line section %s faces 90°', (id) => expect(stand(id)).toBe(90));
+  // Where the stands turn from the lines to the outfield, the rows of 119,
+  // 121 and 325, and of 220, run at 16–30° to north-south on the lidar.
+  it.each([['121', 110], ['325', 110], ['220', 254]] as const)('section %s faces its own rows on the lidar', (id, deg) => expect(stand(id)).toBe(deg));
+  it.each(['122', '326'])('left-field-line section %s faces 270°', (id) => expect(stand(id)).toBe(270));
 
   it.each(['101', 'F', 'G', '300', '302'])('behind-home section %s faces away from center field', (id) => {
     expect(diff(stand(id), getStadiumOrientation('padres') + 180)).toBeLessThan(10);

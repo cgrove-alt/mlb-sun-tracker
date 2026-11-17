@@ -46,8 +46,9 @@ export const giantsSections: DetailedSection[] = buildParkSections(
     standRuns: [
       // Turned to the rows' fall line, measured on the lidar
       // (scripts/measureStandHeights.py): these sections' rows climb firmly
-      // more than 15° off the direction fitted on the map, in the middle
-      // of the section and 4 m to either side.
+      // more than 15° off the direction fitted on the map; each faces the
+      // median of the fall lines in its middle and 4 m to either side.
+      { ids: ['143'], facingDeg: 78 },
       { ids: ['102'], facingDeg: 192 },
       { ids: ['219'], facingDeg: 313 },
       { ids: [...range(124, 135), ...range(225, 234), ...range(324, 336), ...range(44, 61)], facingDeg: 324 },

@@ -33,6 +33,11 @@ export const cubsSections: DetailedSection[] = buildParkSections(
     // to 381,500) and 74° (first base, from 450,656 to 610,608), 75° apart.
     // Each grandstand ring along those runs faces square to the edge.
     standRuns: [
+      // Turned to the rows' fall line, measured on the lidar
+      // (scripts/measureStandHeights.py): these sections' rows climb firmly
+      // more than 15° off the direction fitted on the map; each faces the
+      // median of the fall lines in its middle and 4 m to either side.
+      { ids: ['501'], facingDeg: 358 },
       { rings: ['box', '1', '2', '3', '4'], fromBearingDeg: 295, toBearingDeg: 360, facingDeg: 269 },
       { rings: ['box', '1', '2', '3', '4'], fromBearingDeg: 90, toBearingDeg: 155, facingDeg: 164 },
     ],
