@@ -60,6 +60,11 @@ export const guardiansSections: DetailedSection[] = buildParkSections(
     orientation: ORIENTATION,
     aerialControl: GUARDIANS_AERIAL_CONTROL,
     standRuns: [
+      // Turned to the rows' fall line, measured on the lidar
+      // (scripts/measureStandHeights.py): these sections' rows climb firmly
+      // more than 15° off the direction fitted on the map; each faces the
+      // median of the fall lines in its middle and 4 m to either side.
+      { ids: ['103'], facingDeg: 33 },
       { ids: ['103', '107', '108', '109', '111', '113', ...ids(303, 316)], facingDeg: 56 },
       { ids: ids(180, 185), facingDeg: 328 },
       { ids: ['117'], facingDeg: 140 },

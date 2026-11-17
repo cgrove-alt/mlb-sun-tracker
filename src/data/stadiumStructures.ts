@@ -1336,19 +1336,20 @@ const WRIGLEY: StadiumStructure = {
       // of 15; the cuts through 515 and 536 cross the stand's end platforms):
       // front row 9 ft over the ivy wall (8–16; 16 in center field), 30°
       // rake (21–30). What rises highest behind differs: mostly the rooftop
-      // buildings across the street (57 ft median, up to 65 ft), the
+      // buildings across the street (54 ft median, up to 65 ft), the
       // scoreboard (511), the back wall (507, 512). The left-field video
       // board's underside is 85 ft up over rows 15–17 of 505 and 506, which
       // the lidar shows covered from there (the source calls them open).
-      // Each measured section takes its own back: the buildings 60–150 ft
-      // behind 501–504 and 514, the scoreboard 25 ft behind 511's last row
+      // Each measured section takes its own back: the buildings 60–116 ft
+      // behind 502–504 and 514 (along 501's rows, which bend, a structure 40
+      // ft up, 12 ft behind), the scoreboard 25 ft behind 511's last row
       // (its 14 rows), the video board's top 13 ft in front of 506's (16 ft
       // in front of 505's); the tier's is their median. Behind 513 the bleachers'
       // back building, 48 ft up, starts where its rows end (39 ft from the
       // front; the rows here are ~2.1 ft deep, 511's 14 in 30 ft, not the
       // profile's 2.75, so the scan's "row 15" is about its last): it is
       // taken right behind its last row, open as sourced.
-      stand: { rows: 21, frontRowHeightFt: 9, rakeDeg: 30, backHeightFt: 57, backSetbackFt: 19 },
+      stand: { rows: 21, frontRowHeightFt: 9, rakeDeg: 30, backHeightFt: 54, backSetbackFt: 12 },
       sections: withRakes(withFronts(withBacks({
         '501': { rows: 8 },
 
@@ -1359,7 +1360,7 @@ const WRIGLEY: StadiumStructure = {
         '537': { rows: 15 },
       }, {
         '502': [64, 60], '511': [88, 25], '512': [35, 7], '514': [54, 76], '503': [60, 116],
-        '504': [54, 88], '505': [94, -16], '506': [85, -13], '507': [38, 12], '501': [65, 150],
+        '504': [54, 88], '505': [94, -16], '506': [85, -13], '507': [38, 12], '501': [40, 12],
         '538': [51, 4],
       }), {
         '502': 16, '511': 8, '512': 8, '503': 16, '504': 8, '507': 8, '501': 16, '538': 8,
@@ -1468,8 +1469,8 @@ const ORACLE: StadiumStructure = {
       }, {
         '101': [33, 42], '102': [33, -17], '103': [125, 39], '104': [125, 39], '105': [125, 39],
         '106': [68, -22], '107': [67, -33], '108': [68, -35], '109': [125, 28], '110': [69, -27],
-        '112': [125, 91], '113': [68, -25], '114': [68, -27], '115': [68, -25], '116': [125, 28],
-        '117': [69, -25], '118': [125, 28], '119': [68, -25], '121': [125, 31], '123': [68, -33],
+        '112': [125, 91], '114': [68, -27], '116': [125, 28],
+        '117': [69, -25], '118': [125, 28], '121': [125, 31], '123': [68, -33],
         '124': [68, -35], '125': [68, -22], '126': [67, -23], '127': [67, -23], '128': [125, 37],
         '129': [125, 37], '130': [125, 36], '131': [125, 36], '132': [125, 36], '134': [125, 36],
         '135': [68, -10],
@@ -1490,19 +1491,19 @@ const ORACLE: StadiumStructure = {
       // Rows 1–26, uncovered (sourced). Lidar (7 of 9): front row 6 ft over
       // the left-field wall (6–13), 13° rake (11–14). What rises highest
       // behind differs from section to section (37–71 ft); behind 143 the
-      // scoreboard, 113 ft up, whose structure reaches out over 143's row 22
-      // (its face's bottom 33 ft up; taken as 35 ft, 9 ft above row 22's
-      // floor), covering the rows behind; from 143's open rows its top, 130
-      // ft up, rises highest. Behind 136 what rises highest is 61 ft up, 132
-      // ft back. Each measured section takes its own back.
+      // scoreboard: along the median of 143's rows' fall lines its structure
+      // reaches out over only its last two rows (row 25 on, its lowest point
+      // 41 ft up), under the three-row mark, so 143 stays open as sourced;
+      // its top, 114 ft up and 3 ft in front of the last row, rises highest
+      // (the cut across 143's rows put the edge over row 22). Behind 136 what
+      // rises highest is 61 ft up, 132 ft back. Each measured section takes
+      // its own back.
       stand: { rows: 26, frontRowHeightFt: 6, rakeDeg: 13, backHeightFt: 60, backSetbackFt: 37 },
-      sections: withRakes(withFronts(withBacks({
-        '143': { frontRowHeightFt: 13, overhang: { coveredFromRow: 22, soffitHeightFt: 35 } },
-      }, {
+      sections: withRakes(withFronts(withBacks({}, {
         '136': [61, 132], '137': [43, 60], '138': [37, 11], '139': [58, 35], '140': [71, 52],
-        '143': [130, 0],
+        '143': [114, -3],
       }), {
-        '137': 7, '139': 7, '143': 13,
+        '137': 7, '139': 7, '143': 9,
       }), {
         '139': 14,
       }),
@@ -3288,9 +3289,9 @@ const NATS: StadiumStructure = {
       // Rows A–L at the backstop (C: A–H), open (seen from directly above on
       // the photo). Lidar (5 of 5): front row at field level, 10° rake
       // (9–13); what rises highest behind is the Upper Gallery's roof, 135 ft
-      // up and 103 ft back (98–116 ft, each measured section its own).
-      stand: { rows: 12, frontRowHeightFt: 0, rakeDeg: 10, backHeightFt: 135, backSetbackFt: 103 },
-      sections: withRakes(withBacks({}, { 'A': [142, 98], 'C': [135, 116], 'D': [134, 107], 'E': [142, 99] }), {
+      // up and 107 ft back (98–116 ft, each measured section its own).
+      stand: { rows: 12, frontRowHeightFt: 0, rakeDeg: 10, backHeightFt: 135, backSetbackFt: 107 },
+      sections: withRakes(withFronts(withBacks({}, { 'A': [134, 107], 'C': [135, 116], 'D': [134, 107], 'E': [142, 99], 'B': [135, 103] }), { 'A': -1 }), {
         'B': 9, 'D': 9,
       }),
       rowsFromMap: true,
@@ -6388,8 +6389,8 @@ const PROGRESSIVE: StadiumStructure = {
       sections: withRakes(withFronts(withBacks({
         '113': { overhang: { coveredFromRow: PROGRESSIVE_COVER['113'], soffitHeightFt: 29 } },
         ...Object.fromEntries(['107', '108'].map((id) => [id, { overhang: { coveredFromRow: 27, soffitHeightFt: 30 } }])),
-      }, { '103': [139, 41], '113': [139, 30] }), {
-        '103': 5, '113': 7,
+      }, { '103': [139, 44], '113': [139, 30] }), {
+        '113': 7,
       }), {
         '107': 12, '108': 12, '113': 10,
       }),
