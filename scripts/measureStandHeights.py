@@ -40,7 +40,8 @@ Method (all heights in metres above the field until the report, which is in feet
          degrees apart and planes fitted to the treads there agree, its
          rows bend across its width: each third faces its own (`faces`).
          Planes fitted to the treads at the middle and those points give a
-         direction of their own; where they agree within 15 degrees and lie
+         direction of their own; where they agree within 15 degrees, the
+         fall line in the middle agrees with them within 8, and both lie
          more than 10 off the stand direction, it is wrong (`treads`);
        - the deck above: where structure starts over the seats (the lip, as a
          row) and the bottom of its front face (soffit), when the scan sees
@@ -992,22 +993,34 @@ def tread_direction(P, r):
     return {'off': float(np.median(offs)), 'spread': max(offs) - min(offs), 'n': len(offs)}
 
 
+TREAD_FALL_AGREE = 8  # degrees: the fall line in the middle within this of the treads confirms them
+
+
 def treads_listing(park):
     """The sections whose treads give a firm direction (readings within
     TREAD_AGREE degrees of each other) more than TREAD_OFF degrees off
-    theirs, as standRuns entries facing the treads' median."""
+    theirs. Where the fall line read in the middle agrees with them (within
+    TREAD_FALL_AGREE degrees), two methods agree: a standRuns entry facing
+    the mean of the two. Where it doesn't, the section is listed and kept."""
     P = load_points(park)[:3]
     d = json.load(open(f'tmp/lidar/{park}-measured.json'))
-    rows = []
+    both, alone = [], []
     for r in d['sections']:
         if not r.get('found') or r.get('fall') is None:
             continue
         t = tread_direction(P, r)
-        if t and t['spread'] <= TREAD_AGREE and abs(t['off']) > TREAD_OFF:
-            rows.append((r['id'], round(r['standCompass'] + t['off']) % 360, t))
-    print(f'treads firmly more than {TREAD_OFF} degrees off the section direction (standRuns):')
-    for i, to, t in rows:
-        print(f"    {{ ids: ['{i}'], facingDeg: {to} }}, // {t['off']:+.0f}, {t['n']} readings within {t['spread']:.0f}")
+        if not t or t['spread'] > TREAD_AGREE or abs(t['off']) <= TREAD_OFF:
+            continue
+        f = r['fall']['off']
+        if abs(f - t['off']) <= TREAD_FALL_AGREE:
+            both.append((r['id'], round(r['standCompass'] + (t['off'] + f) / 2) % 360, t, f))
+        else:
+            alone.append(f"{r['id']} (treads {t['off']:+.0f}, fall line {f:+d})")
+    print(f'treads and fall line agree, more than {TREAD_OFF} degrees off the section direction (standRuns):')
+    for i, to, t, f in both:
+        print(f"    {{ ids: ['{i}'], facingDeg: {to} }}, // treads {t['off']:+.0f} ({t['n']} within {t['spread']:.0f}), fall line {f:+d}")
+    if alone:
+        print(f"treads firmly off, fall line disagreeing (kept): {'; '.join(alone)}")
 
 
 def measure_section(P, sec, band):
