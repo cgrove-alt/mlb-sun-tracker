@@ -6768,9 +6768,12 @@ const RATE_FIRST_ROW: Record<string, number> = {
 };
 const RATE_LIDAR = 'USGS 3DEP lidar IL_4County_Cook_2017, flown 2017-04-18 to 2017-05-08 (scripts/measureStandHeights.py)';
 const RATE_LOWER = { frontRowHeightFt: 0, rakeDeg: 14 };
-/** The lower box's own rakes (lidar), where the scan sees 9 or more of a section's rows and the cuts beside it agree. */
+/**
+ * The lower box's own rakes (lidar), where the scan sees 9 or more of a section's rows, the cuts
+ * beside it agree and its cut runs along the rows' fall line (108 straddles a bend: the tier's).
+ */
 const RATE_LOWER_RAKE: Record<string, number> = {
-  '108': 13, '110': 13, '111': 13, '112': 13, '113': 13, '114': 13, '117': 13, '118': 13, '130': 15, '131': 13,
+  '110': 13, '111': 13, '112': 13, '113': 13, '114': 13, '117': 13, '118': 13, '130': 15, '131': 13,
   '151': 13, '152': 13, '154': 13, '156': 13,
 };
 /** A lower-box section's rise per row, at its own rake. */
@@ -6809,6 +6812,10 @@ export function rateTier(id: string): string | null {
  * behind it, seen from the middle of its open rows; and its own rake where
  * the scan sees 9 or more of its rows and the cuts beside it agree (a
  * section that starts up a slope at its own rake starts that far up it).
+ * Each cut runs along the rows' fall line: where that is firmly more than
+ * 15° off the club map's direction, the section faces it (its section
+ * file's standRuns); one that straddles a bend keeps the map's direction
+ * and its tier's rake.
  */
 const RATE: StadiumStructure = {
   stadiumId: 'whitesox',
@@ -6887,7 +6894,7 @@ const RATE: StadiumStructure = {
 
         '159': { overhang: { coveredFromRow: 25, soffitHeightFt: 45 } },
       }, {
-        '157': [73, 4], '158': [52, -6], '159': [48, -4], '160': [37, 48], '161': [88, 45],
+        '157': [73, 4], '158': [52, -6], '159': [48, -4], '161': [88, 45],
         '162': [37, 42], '163': [89, 50], '164': [37, 55],
       }), {
         '157': 9, '158': 9,
@@ -6922,31 +6929,40 @@ const RATE: StadiumStructure = {
     upper: {
       label: 'Upper deck (506–558)',
       // Rows 1–21, covered from row 9 by the roof (sourced). Lidar (34 of
-      // 36): front row 72 ft (70–80), 33° rake; the roof's edge is over row 7
-      // (2 rows ahead of the source's, which stands; in 507, 509, 522, 526,
+      // 36; 507–509 and 555 along their rows' fall line, 20–29° off the
+      // map's direction): front row 72 ft (70–80), 34° rake (514 straddles a
+      // bend, its cut across the rows); the roof's edge is over row 7
+      // (2 rows ahead of the source's, which stands; in 508, 509, 522, 526,
       // 538, 542 and 554 the cut starts a few rows up, past an aisle, and
       // counted from row 1 their edge is there too), the bottom of its face
       // 123 ft up (121–124); its top, 130 ft, is what rises behind. Sections
       // the chart gives 18 or 16 rows (covered from 6 or 4) start 3 or 5
-      // rows up the deck (77 and 80 ft; 514 and 550 measure 78). The others
+      // rows up the deck (77 and 81 ft; 514 and 550 measure 78). The others
       // take their own front row but for the seven cut past an aisle, whose
       // run starts a few rows up: they keep the tier's.
-      stand: { rows: 21, frontRowHeightFt: 72, rakeDeg: 33, treadFt: 2.6, backHeightFt: 130, backSetbackFt: -37, overhang: { coveredFromRow: 9, soffitHeightFt: 123 } },
+      stand: { rows: 21, frontRowHeightFt: 72, rakeDeg: 34, treadFt: 2.6, backHeightFt: 130, backSetbackFt: -37, overhang: { coveredFromRow: 9, soffitHeightFt: 123 } },
       sections: withRakes(withFronts(withBacks(Object.fromEntries(['514', '516', '518', '524', '540', '546', '548', '550'].map((id) => [id, {
-        frontRowHeightFt: RATE_COVER[id] === 4 ? 80 : 77,
+        frontRowHeightFt: RATE_COVER[id] === 4 ? 81 : 77,
         overhang: { coveredFromRow: RATE_COVER[id], soffitHeightFt: 123 },
       }])), {
-        '507': [129, -42], '508': [130, -36], '509': [130, -42], '510': [130, -34],
+        '507': [130, -39], '508': [128, -42], '509': [129, -42], '510': [130, -34],
         '512': [130, -36], '514': [130, -36], '518': [130, -28], '522': [130, -42],
         '524': [130, -30], '526': [130, -42], '527': [130, -36], '530': [130, -39],
         '531': [130, -39], '535': [130, -39], '538': [130, -41], '540': [130, -28],
         '542': [130, -42], '544': [130, -36], '546': [130, -34], '550': [130, -38],
-        '552': [130, -36], '554': [130, -42], '555': [130, -31], '557': [130, -34],
+        '552': [130, -36], '554': [130, -42], '557': [130, -34],
       }), {
-        '520': 73, '527': 71, '555': 70, '556': 73,
+        '520': 73, '527': 71, '556': 73,
       }), {
-        '510': 30, '527': 35, '529': 35, '530': 35, '531': 34, '533': 35, '534': 34, '535': 34,
-        '536': 34, '540': 34, '555': 28, '557': 29,
+        '510': 30, '527': 35, '529': 35, '530': 35, '533': 35,
+        '555': 35, '557': 29,
+        '518': 33,
+        '524': 33,
+        '528': 33,
+        '544': 33,
+        '552': 33,
+        '556': 33,
+        '558': 33,
       }),
 
       rowsFromMap: true,

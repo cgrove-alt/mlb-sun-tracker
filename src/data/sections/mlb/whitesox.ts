@@ -63,6 +63,14 @@ export const whitesoxSections: DetailedSection[] = buildParkSections(
     orientation: ORIENTATION,
     aerialControl: WHITESOX_AERIAL_CONTROL,
     standRuns: [
+      // Turned to the rows' fall line, measured on the lidar
+      // (scripts/measureStandHeights.py): these sections' rows climb firmly
+      // more than 15° off the direction fitted on the map, in the middle
+      // of the section and 4 m to either side.
+      { ids: ['354'], facingDeg: 11 },
+      { ids: ['507'], facingDeg: 209 },
+      { ids: ['508', '509'], facingDeg: 246 },
+      { ids: ['555'], facingDeg: 7 },
       { ids: ids(100, 105), facingDeg: 164 },
       { ids: ids(157, 164), facingDeg: 89 },
       { ids: ['108', '506', '507'], facingDeg: 187 },
