@@ -101,6 +101,15 @@ export const philliesSections: DetailedSection[] = buildParkSections(
       },
       { ids: [...range(233, 237), ...range(330, 333), ...withMarkers(range(430, 434)), ...range(1, 10), ...range(77, 80)], facingDeg: WEST },
     ],
+    // Rows that bend across the section, measured on the lidar
+    // (scripts/measureStandHeights.py faces): each third faces the rows'
+    // fall line read in it, where planes fitted to the treads confirm it.
+    standFaces: [
+      { id: '305', facesDeg: [54, 53, 101] },
+      { id: '219', facesDeg: [154, 154, 198] },
+      { id: '224', facesDeg: [187, 187, 218] },
+      { id: '210', facesDeg: [101, 97, 147] },
+    ],
     classify: classifyPhilliesSection,
   }),
 );
