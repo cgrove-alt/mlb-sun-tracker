@@ -4828,6 +4828,10 @@ const KAUFFMAN_LIDAR = 'USGS 3DEP lidar MO_FEMANRCS_2020, flown 2020-04-18 (scri
  * takes its own front row and that back, and its own rake where the scan
  * sees 9 or more of its rows and the cuts beside it agree (144's cut runs
  * down an aisle's steps, so it takes the front row of the cuts beside it).
+ * Each cut runs along the rows' fall line: where that is firmly more than
+ * 15° off the club map's direction, the section faces it (its section
+ * file's standRuns); one that straddles a bend keeps the map's direction
+ * and its tier's rake.
  * Where a deck's edge is more than
  * two rows from the source's covered row (or covers three or more
 
@@ -4859,19 +4863,20 @@ const KAUFFMAN: StadiumStructure = {
       // 11–34 ft back.
       stand: { rows: 24, frontRowHeightFt: 3, rakeDeg: 14, backHeightFt: 157, backSetbackFt: 66 },
       sections: withRakes(withFronts(withBacks({}, {
-        '108': [61, 32],
- '110': [60, 17], '113': [141, 91], '114': [157, 60], '115': [161, 66],
+        '108': [59, 30],
+ '110': [61, 14], '113': [141, 91], '114': [157, 60], '115': [161, 66],
         '116': [161, 63], '117': [160, 65], '118': [161, 68], '119': [157, 71], '120': [160, 65],
         '121': [161, 65], '122': [161, 88], '123': [160, 91], '124': [161, 94], '125': [150, 89],
-        '126': [150, 89], '127': [150, 93], '128': [150, 70], '129': [150, 99], '130': [151, 101],
+        '126': [150, 89], '127': [150, 93], '128': [150, 70], '129': [151, 88], '130': [151, 101],
         '131': [157, 99], '132': [161, 89], '133': [161, 88], '134': [161, 86], '135': [161, 65],
         '136': [161, 75], '137': [161, 66], '138': [155, 65], '139': [157, 62], '140': [157, 65],
         '141': [160, 63], '142': [60, 11], '143': [60, 14], '144': [60, 30], '145': [60, 25],
-        '146': [60, 32], '147': [60, 34], '112': [60, 14],
+        '146': [61, 29], '147': [60, 34], '112': [60, 14],
       }), {
-        '108': 4, '113': 2, '122': 0, '123': 0, '124': 0, '125': 0, '126': 0, '127': 0, '129': -1,
+        '108': 4, '113': 2, '122': 0, '123': 0, '124': 0, '125': 0, '126': 0, '127': 0, '129': 0,
         '130': 0, '131': -1, '132': -1, '133': 0, '134': 0, '138': 2, '140': 2, '141': 2,
         '145': 2, '146': 2, '147': 4,
+        '110': 4,
       }), {
         '114': 13, '115': 13, '138': 13, '142': 13, '143': 13, '146': 13,
       }),
@@ -4949,8 +4954,10 @@ const KAUFFMAN: StadiumStructure = {
       // ft in front of the last row (each section's own; 248's re-measured,
       // 31 ft; the others the tool no longer finds). 250–252 are open, under
       // nothing: behind them a roof 33 ft up, right behind the last row.
+      // 250, re-measured along its rows' fall line (42° off the map's
+      // direction), takes its own 18° (the cut across them read 13°).
       stand: { rows: 20, frontRowHeightFt: 17, rakeDeg: 16, backHeightFt: 33, backSetbackFt: 1, deckFrontFt: 60 },
-      sections: withRakes(withFronts({
+      sections: withRakes(withBacks(withFronts({
         '206': { backHeightFt: 60, backSetbackFt: -23, overhang: { coveredFromRow: 11, soffitHeightFt: 51 } },
         '207': { backHeightFt: 61, backSetbackFt: -26, overhang: { coveredFromRow: 9, soffitHeightFt: 51 } },
         '208': { backHeightFt: 62, backSetbackFt: -26, overhang: { coveredFromRow: 8, soffitHeightFt: 51 } },
@@ -4958,9 +4965,9 @@ const KAUFFMAN: StadiumStructure = {
         '248': { backHeightFt: 61, backSetbackFt: -31, overhang: { coveredFromRow: 9, soffitHeightFt: 51 } },
         '249': { backHeightFt: 60, backSetbackFt: -18, overhang: { coveredFromRow: 14, soffitHeightFt: 51 } },
       }, {
-        '248': 16, '250': 18,
-      }), {
-        '248': 19, '250': 13,
+        '248': 16,
+      }), { '250': [32, 4] }), {
+        '248': 19, '250': 18,
       }),
       rowsFromMap: true,
       heightsSourced: false,
@@ -5014,9 +5021,9 @@ const KAUFFMAN: StadiumStructure = {
         '428': [161, 25], '429': [161, -4], '430': [161, 24], '431': [161, -2], '432': [155, 21],
         '433': [155, -2], '434': [154, 22], '435': [157, -1], '436': [149, 29], '437': [135, 34],
         '405': [157, -2], '406': [154, 19], '407': [161, 0], '409': [157, -6], '410': [157, 22],
-        '412': [161, 24], '415': [150, 4],
+        '412': [161, 24], '415': [150, 2],
       }), {
-        '428': 61, '405': 59, '415': 59,
+        '428': 61, '405': 59,
       }), {
         '403': 31, '411': 33, '413': 33, '416': 33, '428': 31, '431': 33, '436': 31, '437': 31,
         '410': 31,
