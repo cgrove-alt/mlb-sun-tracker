@@ -38,7 +38,10 @@ Method (all heights in metres above the field until the report, which is in feet
          degrees off, the stand turns to that median (`suggest`). Where two
          of them, both read within the section, are firmly more than 20
          degrees apart and planes fitted to the treads there agree, its
-         rows bend across its width: each third faces its own (`faces`);
+         rows bend across its width: each third faces its own (`faces`).
+         Planes fitted to the treads at the middle and those points give a
+         direction of their own; where they agree within 15 degrees and lie
+         more than 10 off the stand direction, it is wrong (`treads`);
        - the deck above: where structure starts over the seats (the lip, as a
          row) and the bottom of its front face (soffit), when the scan sees
          that face;
@@ -966,6 +969,47 @@ def faces_listing(park):
         print(f"bent readings the treads don't confirm (one direction): {'; '.join(kept)}")
 
 
+TREAD_AGREE = 15  # degrees: tread readings within this of each other give a firm direction
+TREAD_OFF = 10    # degrees: a firm tread direction further off the section's than this is wrong
+
+
+def tread_direction(P, r):
+    """The section's climb read on its treads: planes fitted (`tread_plane`)
+    in 8 m and 12 m squares at the middle of its run, and in 5 m squares at
+    each point its fall lines are read (`fall_side_points`), leaving out any
+    more than 60 degrees off its direction (a patch on a structure). Returns
+    the median of their offsets from the section's direction (degrees,
+    clockwise), their spread and how many there are, or None with fewer
+    than three."""
+    C = r['standCompass']
+    ax, ay = r['anchor'][:2]
+    pts = fall_side_points(r)
+    reads = [tread_plane(P, ax, ay, C, h) for h in (4, 6)] + [tread_plane(P, x, y, C, 2.5) for x, y in (pts[0], (ax, ay), pts[1])]
+    offs = [(p - C + 180) % 360 - 180 for p in reads if p is not None]
+    offs = [o for o in offs if abs(o) <= 60]
+    if len(offs) < 3:
+        return None
+    return {'off': float(np.median(offs)), 'spread': max(offs) - min(offs), 'n': len(offs)}
+
+
+def treads_listing(park):
+    """The sections whose treads give a firm direction (readings within
+    TREAD_AGREE degrees of each other) more than TREAD_OFF degrees off
+    theirs, as standRuns entries facing the treads' median."""
+    P = load_points(park)[:3]
+    d = json.load(open(f'tmp/lidar/{park}-measured.json'))
+    rows = []
+    for r in d['sections']:
+        if not r.get('found') or r.get('fall') is None:
+            continue
+        t = tread_direction(P, r)
+        if t and t['spread'] <= TREAD_AGREE and abs(t['off']) > TREAD_OFF:
+            rows.append((r['id'], round(r['standCompass'] + t['off']) % 360, t))
+    print(f'treads firmly more than {TREAD_OFF} degrees off the section direction (standRuns):')
+    for i, to, t in rows:
+        print(f"    {{ ids: ['{i}'], facingDeg: {to} }}, // {t['off']:+.0f}, {t['n']} readings within {t['spread']:.0f}")
+
+
 def measure_section(P, sec, band):
     """One section: find its tier's run on the cut from home plate, then
     measure it on a cut along the stand direction through that run. Rows are
@@ -1564,3 +1608,5 @@ if __name__ == '__main__':
         fall_sheet(park)
     elif cmd == 'faces':
         faces_listing(park)
+    elif cmd == 'treads':
+        treads_listing(park)
