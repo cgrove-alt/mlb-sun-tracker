@@ -3531,6 +3531,208 @@ direction most of the section faces.
 - *Not done:* the eight parks without lidar, and fitting the seat map's
   own directions at bends.
 
+## §19 Strongly bent sections (plan, 2026-11-17)
+
+Asked: plan the strongly bent sections. Branch `fix/bent-faces`, from
+`main` after PR #92.
+
+**The problem.**
+- The engine gives each section one stand direction (`standCompass`).
+  `computeGameShade()` runs the row engine once in that direction. A
+  section's shaded share is the share of its rows in shade, and its
+  status comes from that share.
+- Where a section's rows bend across its width, no one direction is
+  right for all of its seats. §18 faced such a section the way most of
+  it climbs, or left the map's direction where its fall lines lie
+  either side. The seats on the other face are then answered for a
+  direction they don't face.
+
+**Which sections.** Each measured section has a fall line read in its
+middle and 4 m to either side, each with a range of equally good
+directions (`lo`..`hi`). A section is strongly bent where two of these
+ranges are more than 20° apart:
+- 114 sections meet that on the three readings.
+- In 41 of them a side reading lies outside the section: the point 4 m
+  across is nearer another section's centre than its own (sections run
+  about 6–8 m apart in those rings). There the bend may be the
+  neighbour's face, not this section's.
+- **73 sections at 18 parks are bent within their own width**:
+  - Braves 11, Cardinals 8, Phillies 8;
+  - Reds 6, Twins 6;
+  - Dodgers 5, Mets 5, White Sox 5;
+  - Pirates 4, Rockies 4;
+  - Padres, Red Sox and Tigers 2 each;
+  - Angels, Cubs, Orioles, Royals and Yankees 1 each.
+
+  11 of them turned in §18 (for example Cardinals 271: −7°, +2°, +64°),
+  and the rest kept the map's direction (for example Phillies 322: −1°,
+  −6°, +40°).
+
+**What it changes.** Shade worked out for each face of these 73 (each
+third of the section facing its own fall line; a third with no reading
+of its own takes the middle's) and averaged over the thirds, at the five
+2025 test games, against the one direction now
+(`scratchpad/faceWhatIf.ts`):
+- answers change for 45 sections (158 of 2,555 half-hour steps);
+- 121 steps become partly shaded (one face in shade, another in sun),
+  and 37 move from partly shaded to sun or shade;
+- no step flips between sun and shade.
+
+The largest changes: Phillies 219 and 322 (13 steps each), White Sox 556
+(10), Braves 128 (8).
+
+**The rule.** A measured section is split into faces where:
+- two of its fall lines are firmly more than 20° apart (their ranges
+  don't come within 20°);
+- both readings lie within the section (each reading's point is nearer
+  this section's centre than any other in its tier);
+- its picture, with a row line for each face, shows the rows bend as
+  the faces say.
+
+Its faces are its thirds, left to right, each facing the fall line read
+in it, and a third with no reading of its own takes the middle's. The
+stand profile (rows, heights, cover, back) stays the section's, measured
+along its direction, and all faces share it.
+
+**Fix.**
+1. *Engine (`src/utils/gameShade.ts`, the section type).* A section may
+   carry `standFaces`: three compass directions, equal shares. Its
+   shaded share is the mean over the faces of the share of rows in
+   shade, and its status comes from that. The confidence test moves
+   every face the same way (orientation ± its error, the structure as
+   now). A section without faces runs exactly as now. Unit tests:
+   - three equal faces give the one-direction answer;
+   - a shaded face and a sunny face give partly shaded.
+2. *Section builder (`parkSectionBuilder.ts`).* A `standFaces` list in a
+   park's config (`{ id, facesDeg: [left, middle, right] }`), passed to
+   the section, next to `standRuns`.
+3. *Tool (`scripts/measureStandHeights.py`).* `suggest()` lists the
+   faces by the rule above, and `fallsheet` draws a row line for each
+   face.
+4. *Pictures:* check every listed section, and drop any whose rows
+   don't bend as its faces say.
+5. *One commit per park:* the faces in its section file, then the
+   reference checks and post claims (investigated, not tuned).
+   Reference tests that read rows directly in one direction (for
+   example Comerica's upper deck, with 345 in the list) use the
+   section's faces.
+6. *Checks:* the full suite, the type check, eslint, the snapshot
+   against today's, and a review here.
+
+**Not in this plan (noticed):**
+- *The 41 bends read partly outside their section.* Reading their fall
+  lines at a third of their width either side needs each section's
+  width in the tool, and the turn rule uses today's 4 m readings, so it
+  is a change of its own.
+- *Profiles per face:* backs, covers and fronts measured along each
+  face. Each face keeps the section's profile here.
+- *Eight sections off the same way on every reading* with no firm
+  middle or only one reading (Mets 213, 534 and 537, Orioles 312, Reds
+  22, Red Sox AP12, Royals 209, Tigers 328): §18 kept them, most for a
+  stated reason.
+- *The row-level API* uses a separate, older calculator, which this
+  doesn't touch.
+
+### Steps
+- [x] 1. Engine and builder: `standFaces`, with unit tests.
+- [x] 2. Tool: list faces; draw them; check every picture.
+- [x] 3. Parks, one commit each: faces, reference checks, posts.
+- [x] 4. Checks; snapshot; review.
+
+### §19 Review (2026-11-17)
+
+**What changed:**
+- **Engine (`src/utils/gameShade.ts`, `DetailedSection.standFaces`).**
+  - A section may carry faces: compass bearings, equal shares of it.
+  - Each face gets its own shade from the row engine, and the section's
+    shaded share is their mean.
+  - The confidence test turns every face by the orientation's error and
+    moves the structure as before.
+  - A section without faces runs exactly as before: before any faces
+    went in, a snapshot of every park showed 0 answers changed.
+  - Unit tests (`gameShadeFaces.test.ts`): three equal faces give the
+    one-direction answer; a shaded face and a sunny one give partly
+    shaded.
+- **Builder (`parkSectionBuilder.ts`).** `standFaces: [{ id, facesDeg }]`
+  in a park's chart config, next to `standRuns`. An id that isn't on the
+  chart is an error.
+- **Tool (`scripts/measureStandHeights.py faces <park>`).** It lists a
+  park's bent sections as `standFaces` entries. A section qualifies
+  where:
+  - two of its fall lines are firmly more than 20° apart;
+  - both are read within the section;
+  - planes fitted to the treads at both points, in 5 m and 6 m squares,
+    each lie within 15° of their face and turn the same way by at least
+    15°.
+
+  The bent readings the treads don't confirm are listed with the reason.
+  `fallsheet` draws each face where it is read.
+- **Faces** on 9 sections at 6 parks, one commit per park:
+  - Busch 132 (116/116/145);
+  - Petco 220 (235/254/271);
+  - Citizens Bank 210 (101/97/147), 219 (154/154/198), 224
+    (187/187/218) and 305 (54/53/101);
+  - Coors L315 (119/125/142);
+  - Target Field 140 (140/163/163);
+  - Yankees 321 (269/269/294).
+
+  In the pictures, Petco 220, Target Field 140 and Citizens Bank 305 sit
+  where two stands meet at an angle. The rest sit where their rings turn
+  or curve. A data test (`standFaces.test.ts`) checks the six parks
+  carry exactly these faces, each within 60° of the section's direction.
+
+**Where it went differently from the plan:**
+- *Most of the bends weren't real.* The plan counted 73 sections bent
+  within their width. The tool counts 72: Phillies 146 drops, because a
+  side reading lies nearer an unmeasured neighbour.
+  - Checking the pictures by eye wasn't reliable at that scale. So the
+    tool checks each bend against planes fitted to the treads at the two
+    points.
+  - With 5 m squares 16 pass, with 6 m squares 13, and 9 at both. Faces
+    go only where both agree, as the turn rule needs a firm reading.
+  - In the other 63, the fall line at one point picks up an aisle, a
+    walkway or a structure's edge, or the treads turn far less than the
+    faces say. Many sit on smoothly curved rings, like the Braves'
+    executive sections 124 and 125, where the treads turn 10–17° over
+    those 8 m, not the 29–35° the faces say.
+- *The riser check* (§17's) couldn't serve here. In 5 m squares its
+  directions snap to the scan's grid (0°, 90°, 180°, 270°).
+- *Faces come from a separate `faces` command*, not `suggest()`, since
+  the tread check needs the scan.
+- *The plan's estimate* (45 sections, 158 steps) assumed every bent
+  reading was right; with 9 confirmed, far fewer answers change.
+
+**Results, at the five 2025 test games across all 30 parks:**
+- Answers change for 4 sections (22 half-hour steps): Citizens Bank
+  219, 224 and 305, and Yankees 321. Busch 132's labels change only.
+- Labels: 2 up, 1 down. The Low share stays 26.6%.
+- The biggest change: Citizens Bank 219 (on the map's 144° before; its
+  faces are 154/154/198) is shaded longer at the 1:10 PM games, until
+  about the 9th inning in April (the 4th before).
+- Yankees 321 now gets its shade over a half hour or two: partly shaded
+  in the 9th at the July game, before full shade.
+- No reference check or post claim changes.
+
+**Checks:**
+- The full suite passes, 3,583 of 3,583. The type check and eslint are
+  clean.
+- On the dev server the Citizens Bank Park page loads with no console or
+  server errors.
+- **Not run:** the production build and Playwright (CI runs them).
+
+**Noticed, not changed:**
+- *§18's turns use the same side readings.* The median rule takes the
+  fall lines 4 m to either side, and here 63 of 72 bent readings failed
+  the tread check. §18's turns also had to hold when re-measured and
+  pass a picture check, but checking them against the tread planes at
+  their three points would show whether any rest on a misread side.
+- *Bends confirmed at one size only:* Braves 229, Cardinals 249, Mets
+  412 and 512, Orioles 8, and Citizens Bank 140 and 322 at 5 m; Angels
+  350, Coors 309 and L331, and White Sox 556 at 6 m. They keep one
+  direction.
+- *The 41 bends read partly outside their section*, and per-face
+  profiles, as in the plan.
+
 ---
 ---
 

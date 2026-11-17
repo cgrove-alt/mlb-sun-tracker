@@ -79,6 +79,12 @@ export const padresSections: DetailedSection[] = buildParkSections(ORIENTATION, 
       { ids: ids(107, 109, 111, 113, 115, 117, 203, 205, 207, 209, 211, 213, 215, 313, 315, 317, 319, 321), facingDeg: FIRST },
       ...CURVE,
     ],
+    // Rows that bend across the section, measured on the lidar
+    // (scripts/measureStandHeights.py faces): each third faces the rows'
+    // fall line read in it, where planes fitted to the treads confirm it.
+    standFaces: [
+      { id: '220', facesDeg: [235, 254, 271] },
+    ],
     classify: classifyPadresSection,
   }),
   // Suites and group areas keep their places from the club's suite and

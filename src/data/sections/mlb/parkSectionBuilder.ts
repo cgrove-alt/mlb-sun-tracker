@@ -36,6 +36,8 @@ export interface ParkSectionSeed {
   price?: DetailedSection['price'];
   /** Compass bearing the stand's back faces (outward normal of its rows). */
   standCompass?: number;
+  /** Where its rows bend across its width, its faces; see DetailedSection.standFaces. */
+  standFaces?: readonly number[];
   /** Where to draw the section on a seat map; see DetailedSection.map. */
   map?: SectionMapPosition;
 }
@@ -138,6 +140,12 @@ export interface ChartSeedConfig {
    */
   standRuns?: readonly StandRun[];
   /**
+   * Sections whose rows bend across their width, measured on the lidar: each
+   * third of the section faces the rows' fall line read in it (see
+   * DetailedSection.standFaces).
+   */
+  standFaces?: readonly StandFaces[];
+  /**
    * Which seating ring a section belongs to, for fitting stand directions.
    * Defaults to the section's level; give it when two physical rings share a
    * level (Yankee Stadium's 200s and 300s are both "club").
@@ -154,6 +162,12 @@ export interface ChartSeedConfig {
 export type StandRun =
   | { rings: readonly string[]; fromBearingDeg: number; toBearingDeg: number; facingDeg: number }
   | { ids: readonly string[]; facingDeg: number };
+
+/** A section's faces: the compass bearings its thirds face, equal shares. */
+export interface StandFaces {
+  id: string;
+  facesDeg: readonly number[];
+}
 
 export interface AerialControlPoint {
   ids: readonly string[];
@@ -666,13 +680,16 @@ export function chartSeeds(
   }
 
   const stands = standCompasses(positions, frame, config.orientation, fieldCenter);
+  const unknownFaces = (config.standFaces ?? []).filter((f) => !provisional.some((seed) => seed.id === f.id));
+  if (unknownFaces.length) throw new Error(`standFaces for sections not on the chart: ${unknownFaces.map((f) => f.id).join(', ')}`);
   const inRun = (bearing: number, from: number, to: number) =>
     from <= to ? bearing >= from && bearing <= to : bearing >= from || bearing <= to;
   return provisional.map((seed, index) => {
     const run = config.standRuns?.find((r) => ('ids' in r
       ? r.ids.includes(seed.id)
       : r.rings.includes(positions[index].tier) && inRun(seed.compass, r.fromBearingDeg, r.toBearingDeg)));
-    return { ...seed, standCompass: run ? run.facingDeg : stands[index] };
+    const faces = config.standFaces?.find((f) => f.id === seed.id);
+    return { ...seed, standCompass: run ? run.facingDeg : stands[index], ...(faces && { standFaces: faces.facesDeg }) };
   });
 }
 
@@ -777,6 +794,7 @@ export function buildParkSections(
       height,
       rake,
       standCompass: seed.standCompass,
+      ...(seed.standFaces && { standFaces: seed.standFaces }),
       map: seed.map,
       viewQuality: seed.level === 'upper' ? 'fair' : seed.level === 'standing' ? 'good' : 'excellent',
     };
