@@ -31,14 +31,17 @@ export const metsSections: DetailedSection[] = buildParkSections(
     // square to the line), so they face 140°. The third-base edge runs at
     // 330° (318,430 to 362,505), which the drawing already gets (≈245°).
     standRuns: [
+      // Turned to the direction their treads climb: planes fitted to the
+      // treads (scripts/measureStandHeights.py treads) agree within 15° and
+      // lie more than 10° off the median of the rows' fall lines.
+      { ids: ['16'], facingDeg: 200 },
+      { ids: ['411'], facingDeg: 169 },
       // Turned to the rows' fall line, measured on the lidar
       // (scripts/measureStandHeights.py): these sections' rows climb firmly
       // more than 15° off the direction fitted on the map; each faces the
       // median of the fall lines in its middle and 4 m to either side.
-      { ids: ['16'], facingDeg: 189 },
       { ids: ['214'], facingDeg: 154 },
       { ids: ['4'], facingDeg: 173 },
-      { ids: ['411'], facingDeg: 157 },
       { ids: ['434'], facingDeg: 342 },
       { ids: ['437'], facingDeg: 337 },
       { ids: ['513'], facingDeg: 183 },
