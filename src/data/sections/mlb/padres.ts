@@ -58,6 +58,15 @@ export const padresSections: DetailedSection[] = buildParkSections(ORIENTATION, 
     orientation: ORIENTATION,
     aerialControl: PADRES_AERIAL_CONTROL,
     standRuns: [
+      // Turned to the rows' fall line, measured on the lidar
+      // (scripts/measureStandHeights.py): these sections' rows climb firmly
+      // more than 15° off the direction fitted on the map, in the middle
+      // of the section and 4 m to either side.
+      { ids: ['118'], facingDeg: 240 },
+      { ids: ['119', '217'], facingDeg: 120 },
+      { ids: ['120'], facingDeg: 238 },
+      { ids: ['121'], facingDeg: 110 },
+      { ids: ['129'], facingDeg: 85 },
       { ids: ids(126, 128, 130, 132, 134, 226, 228, 230), facingDeg: 298 },
       { ids: ids(129, 131, 133, 135, 137, 227, 229, 231, 233, 235), facingDeg: 45 },
       { ids: ids(118, 120, 122, 124, 218, 220, 324, 326, 328), facingDeg: 270 },

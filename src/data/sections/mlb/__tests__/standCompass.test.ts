@@ -530,7 +530,10 @@ describe('Petco Park stand directions (measured on the 2022 aerial photo)', () =
 
   it.each(['111', '209', '317'])('first-base section %s faces 135°', (id) => expect(stand(id)).toBe(135));
   it.each(['112', '210', '318'])('third-base section %s faces 225°', (id) => expect(stand(id)).toBe(225));
-  it.each(['121', '219', '325'])('right-field-line section %s faces 90°', (id) => expect(stand(id)).toBe(90));
+  it.each(['219', '325'])('right-field-line section %s faces 90°', (id) => expect(stand(id)).toBe(90));
+  // Where the stand turns from the line to the outfield, 119 and 121's rows
+  // run at 20–30° to north-south on the lidar.
+  it('right-field section 121 faces its own rows on the lidar', () => expect(stand('121')).toBe(110));
   it.each(['122', '220', '326'])('left-field-line section %s faces 270°', (id) => expect(stand(id)).toBe(270));
 
   it.each(['101', 'F', 'G', '300', '302'])('behind-home section %s faces away from center field', (id) => {
