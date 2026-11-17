@@ -1374,7 +1374,11 @@ const ORACLE_LIDAR = 'USGS 3DEP lidar CA_SanFrancisco_B23, flown 2023-04-20 (scr
  * front row's height, the rake and the structure that rises highest behind
  * as seen from the middle uncovered row; tier values are medians, and every
  * measured section takes its own front row and back, and its own rake where
- * the scan sees 9 or more of its rows and the cuts beside it agree. Covered
+ * the scan sees 9 or more of its rows and the cuts beside it agree. Each
+ * cut runs along the rows' fall line: where that is firmly more than 15°
+ * off the club map's direction, the section faces it (its section file's
+ * standRuns); one that straddles a bend keeps the map's direction and its
+ * tier's rake. Covered
  * rows: where the
  * scan puts a deck's edge more than two rows from the source's row, the
  * scan's edge is used. Deck undersides the scan cannot see are estimated as
@@ -1400,13 +1404,14 @@ const ORACLE: StadiumStructure = {
       // rake (6–25). What rises highest behind is the View level's front,
       // 68 ft up over the Club level; nearer the corners the View roof
       // (125 ft). Estimated: the club deck's underside ~25 ft (9 ft above row
-      // 29's floor, under the Club level's measured 32-ft front row; 26–28 ft
-      // over 102, 133 and 135, 9 ft above their first covered row's floor,
-      // and over 110–117, whose own front rows sit 1–2 ft higher).
+      // 29's floor, under the Club level's measured 32-ft front row; 26–27 ft
+      // over 133 and 135, 9 ft above their first covered row's floor, and
+      // 26–27 ft over 110–117, whose own front rows sit 1–2 ft higher).
       // Each measured section takes its own back, seen from the middle of
       // its open rows: the View level's front 5–35 ft in front of the last
-      // row (16 sections), or the View roof 28–39 ft behind it (14; 91 ft
-      // behind 112). The tier takes the View front's median, 25 ft in
+      // row (15 sections), or the View roof 28–39 ft behind it (14; 91 ft
+      // behind 112); along 102's rows' fall line, the Club level's front
+      // (33 ft, 17 ft in front). The tier takes the View front's median, 25 ft in
       // front: the separate medians of height and setback (69 ft, 5 ft in
       // front) pair the two groups and fit neither.
       stand: {
@@ -1420,7 +1425,6 @@ const ORACLE: StadiumStructure = {
       },
       sections: withRakes(withFronts(withBacks({
         '101': { rows: 22, noCover: true },
-        '102': { overhang: { coveredFromRow: 34, soffitHeightFt: 28 } },
         ...Object.fromEntries(['110', '113', '115', '117'].map((id) => [id, { overhang: { coveredFromRow: 29, soffitHeightFt: 26 } }])),
         '112': { overhang: { coveredFromRow: 29, soffitHeightFt: 27 } },
         ...Object.fromEntries(['107', '124'].map((id) => [id, { overhang: { coveredFromRow: 21, soffitHeightFt: 25 } }])),
@@ -1432,7 +1436,7 @@ const ORACLE: StadiumStructure = {
         '133': { rows: 11, frontRowHeightFt: 16, overhang: { coveredFromRow: 2, soffitHeightFt: 26 } },
         '135': { rows: 32, frontRowHeightFt: 5, overhang: { coveredFromRow: 23, soffitHeightFt: 27 } },
       }, {
-        '101': [33, 42], '102': [68, -5], '103': [125, 39], '104': [125, 39], '105': [125, 39],
+        '101': [33, 42], '102': [33, -17], '103': [125, 39], '104': [125, 39], '105': [125, 39],
         '106': [68, -22], '107': [67, -33], '108': [68, -35], '109': [125, 28], '110': [69, -27],
         '112': [125, 91], '113': [68, -25], '114': [68, -27], '115': [68, -25], '116': [125, 28],
         '117': [69, -25], '118': [125, 28], '119': [68, -25], '121': [125, 31], '123': [68, -33],
@@ -1444,7 +1448,7 @@ const ORACLE: StadiumStructure = {
         '113': 1, '114': 1, '115': 1, '116': 1, '117': 1, '118': 1, '121': 1, '123': 2, '124': 3,
         '128': -1, '129': -1, '134': -1, '135': 5,
       }), {
-        '101': 10, '102': 10, '107': 11, '125': 11, '126': 11, '127': 11, '128': 11, '129': 11,
+        '101': 10, '102': 11, '107': 11, '125': 11, '126': 11, '127': 11, '128': 11, '129': 11,
         '130': 11, '131': 11, '132': 11, '134': 11, '135': 9,
       }),
       heightsSourced: false,
@@ -1470,7 +1474,7 @@ const ORACLE: StadiumStructure = {
       }), {
         '137': 7, '139': 7, '143': 13,
       }), {
-        '139': 14, '143': 11,
+        '139': 14,
       }),
       heightsSourced: true,
       coverSourced: true,
@@ -1521,7 +1525,7 @@ const ORACLE: StadiumStructure = {
       }, {
         '203': [68, -21], '205': [68, -14], '207': [68, -21], '209': [68, -16], '210': [68, -17],
         '211': [66, -19], '212': [68, -17], '213': [68, -17], '214': [65, -22], '215': [68, -8],
-        '216': [67, -19], '217': [67, -19], '218': [69, -17], '219': [67, -17], '220': [68, -16],
+        '216': [67, -19], '217': [67, -19], '218': [69, -17], '219': [68, -17], '220': [68, -16],
         '221': [67, -19], '222': [68, -21], '223': [66, -22], '224': [67, -19], '225': [66, -12],
         '227': [67, -19], '228': [67, -19], '229': [68, -21], '231': [67, -21], '233': [68, -21],
       }), {

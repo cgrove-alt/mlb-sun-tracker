@@ -44,6 +44,12 @@ export const giantsSections: DetailedSection[] = buildParkSections(
     // each line is read from the drawing; the curve behind home keeps the
     // drawing's own directions.
     standRuns: [
+      // Turned to the rows' fall line, measured on the lidar
+      // (scripts/measureStandHeights.py): these sections' rows climb firmly
+      // more than 15° off the direction fitted on the map, in the middle
+      // of the section and 4 m to either side.
+      { ids: ['102'], facingDeg: 192 },
+      { ids: ['219'], facingDeg: 313 },
       { ids: [...range(124, 135), ...range(225, 234), ...range(324, 336), ...range(44, 61)], facingDeg: 324 },
       { ids: [...range(101, 106), ...range(202, 208), ...range(302, 310), ...range(1, 15)], facingDeg: 212 },
       { ids: range(136, 144), facingDeg: 46 },
