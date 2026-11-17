@@ -3718,7 +3718,7 @@ const OPACY: StadiumStructure = {
       stand: { rows: 29, frontRowHeightFt: 1, rakeDeg: 14, backHeightFt: 122, backSetbackFt: 51, deckFrontFt: 39 },
       sections: withRakes(withFronts(withBacks({
         '70': { overhang: { coveredFromRow: 25, soffitHeightFt: 31 } },
-        '74': { overhang: { coveredFromRow: 16, soffitHeightFt: 30 } },
+        '74': { overhang: { coveredFromRow: 14, soffitHeightFt: 30 } },
         '72': { overhang: { coveredFromRow: 18, soffitHeightFt: 30 } },
         '76': { overhang: { coveredFromRow: 14, soffitHeightFt: 31 } },
 
