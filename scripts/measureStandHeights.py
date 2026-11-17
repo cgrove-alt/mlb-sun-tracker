@@ -101,7 +101,10 @@ PARKS = {
             # Bleachers: the club's chart (not pinned to a photo here) puts
             # them off their stand; their cuts land behind it. Not measured.
         },
-        'skip': {'B126': 'its chart position puts its cut outside the park (plan view)'},
+        'skip': {'B126': 'its chart position puts its cut outside the park (plan view)',
+                 'B6': 'its cut, along its rows, runs up a field-level walkway into the stand '
+                       '(flat at the field for 12 m, then a 7 ft step) and finds the rows behind it; '
+                       'the cuts 4 m either side climb its rows from the field'},
         # The eight lattice light towers stand on the roof (82 ft) up to 121-143 ft.
         'lightTowersAbove': 32,
     },

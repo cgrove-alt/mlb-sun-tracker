@@ -454,12 +454,12 @@ const FENWAY: StadiumStructure = {
     fieldBox: {
       label: 'Field Box',
       // Uncovered (sourced). Lidar (154 of 157): front row 1 ft below the
-      // field (-2 to 1), 9° rake (7–10). What rises highest behind is the
-      // pavilion roof, 82 ft up and 47 ft behind the last row; behind home
+      // field (-2 to 1), 9° rake (7–11). What rises highest behind is the
+      // pavilion roof, 82 ft up and 45 ft behind the last row; behind home
       // the press box block (96–100 ft), in the right-field corner the
       // Grandstand roof (54 ft). Each measured section takes its own back
       // (the pavilion roof 34–57 ft behind them, the press box block 24–39).
-      stand: { rows: 12, frontRowHeightFt: -1, rakeDeg: 9, backHeightFt: 82, backSetbackFt: 47 },
+      stand: { rows: 12, frontRowHeightFt: -1, rakeDeg: 9, backHeightFt: 82, backSetbackFt: 45 },
       sections: withRakes(withFronts(withBacks({}, {
         'F9': [82, 50], 'F10': [82, 50], 'F11': [82, 55], 'F12': [82, 52], 'F13': [82, 35],
         'F14': [82, 35], 'F15': [82, 35], 'F16': [82, 50], 'F17': [82, 35], 'F18': [82, 35],
@@ -468,11 +468,11 @@ const FENWAY: StadiumStructure = {
         'F29': [82, 52], 'F30': [82, 50], 'F31': [82, 48], 'F32': [82, 50], 'F33': [82, 50],
         'F34': [82, 50], 'F35': [82, 48], 'F37': [82, 45], 'F38': [82, 45], 'F39': [96, 24],
         'F40': [98, 24], 'F41': [98, 24], 'F42': [96, 39], 'F43': [96, 34], 'F44': [100, 24],
-        'F45': [100, 25], 'F46': [98, 25], 'F47': [98, 25], 'F48': [96, 24], 'F49': [96, 34],
+        'F45': [100, 25], 'F46': [98, 25], 'F47': [98, 25], 'F48': [96, 24],
         'F50': [82, 45], 'F52': [82, 48], 'F53': [82, 48], 'F54': [82, 48], 'F55': [82, 48],
         'F56': [82, 48], 'F57': [82, 48], 'F58': [82, 35], 'F59': [82, 48], 'F60': [82, 35],
         'F61': [82, 35], 'F62': [82, 40], 'F63': [82, 40], 'F64': [82, 39], 'F65': [82, 53],
-        'F66': [82, 55], 'F68': [82, 55], 'F69': [82, 34], 'F70': [82, 48], 'F71': [82, 53],
+        'F66': [82, 55], 'F68': [82, 55], 'F69': [82, 34], 'F70': [82, 43],
         'F72': [82, 48], 'F73': [82, 48], 'F74': [82, 48], 'F77': [82, 48], 'F78': [54, 29],
         'F79': [54, 32], 'F80': [54, 27], 'F81': [54, 30], 'D13': [82, 35], 'D14': [82, 35],
         'D15': [82, 35], 'D16': [82, 50], 'D17': [82, 35], 'D18': [82, 35], 'D19': [82, 35],
@@ -483,14 +483,26 @@ const FENWAY: StadiumStructure = {
         'D72': [82, 48], 'D73': [82, 48], 'D74': [82, 48], 'D77': [82, 48], 'D78': [54, 29],
         'D79': [54, 32], 'H39': [96, 24], 'H40': [98, 24], 'H41': [98, 24], 'H42': [96, 39],
         'H43': [96, 34], 'H44': [100, 24], 'H45': [100, 25], 'H46': [98, 25], 'H47': [98, 25],
-        'H48': [96, 24], 'H49': [96, 34], 'H50': [82, 45], 'FBC29': [82, 52], 'FBC30': [82, 50],
+        'H48': [96, 24], 'H50': [82, 45], 'FBC29': [82, 52], 'FBC30': [82, 50],
         'FBC31': [82, 48], 'FBC32': [82, 50], 'FBC33': [82, 50], 'FBC34': [82, 50],
         'FBC35': [82, 48], 'FBC37': [82, 45], 'FBC38': [82, 45], 'FBC52': [82, 48],
         'FBC53': [82, 48], 'FBC54': [82, 48], 'FBC55': [82, 48], 'FBC56': [82, 48],
         'FBC57': [82, 48], 'FBC58': [82, 35], 'FBC59': [82, 48], 'FBC60': [82, 35],
-        'FBC61': [82, 35], 'FBC69': [82, 34], 'FBC70': [82, 48], 'FBC71': [82, 53],
+        'FBC61': [82, 35], 'FBC69': [82, 34], 'FBC70': [82, 43],
         'FBC72': [82, 48], 'FBC73': [82, 48], 'FBC74': [82, 48], 'FBC77': [82, 48],
         'FBC78': [54, 29], 'FBC79': [54, 32], 'FBC80': [54, 27],
+        'F36': [82, 47],
+        'F51': [82, 47],
+        'F75': [82, 47],
+        'F76': [82, 47],
+        'D36': [82, 47],
+        'D51': [82, 47],
+        'D75': [82, 47],
+        'D76': [82, 47],
+        'FBC36': [82, 47],
+        'FBC51': [82, 47],
+        'FBC75': [82, 47],
+        'FBC76': [82, 47],
       }), {
         'F11': -2, 'F13': 1, 'F14': 1, 'F15': 1, 'F17': 1, 'F18': 1, 'F19': 1, 'F20': 1, 'F21': 1,
         'F22': 1, 'F23': 1, 'F24': 1, 'F25': 1, 'F26': 1, 'F28': 1, 'F29': -2, 'F32': -2, 'F34': -2,
@@ -500,12 +512,18 @@ const FENWAY: StadiumStructure = {
         'D56': -2, 'D58': 1, 'D59': -2, 'D60': 1, 'D61': 1, 'H42': -2, 'H49': -2, 'FBC29': -2,
         'FBC32': -2, 'FBC34': -2, 'FBC51': -2, 'FBC56': -2, 'FBC58': 1, 'FBC59': -2, 'FBC60': 1,
         'FBC61': 1, 'FBC69': 1,
+        'F70': -2,
+        'FBC70': -2,
       }), {
         'F42': 8, 'F47': 8, 'F48': 10, 'F59': 10, 'F65': 10, 'F66': 10,
         'F68': 10, 'F72': 10, 'F73': 10, 'F74': 10, 'F75': 10, 'F76': 10, 'F77': 10, 'F79': 10,
         'F80': 10, 'F81': 10, 'D59': 10, 'D72': 10, 'D73': 10, 'D74': 10, 'D75': 10, 'D76': 10,
         'D77': 10, 'D79': 10, 'H42': 8, 'H47': 8, 'H48': 10, 'FBC59': 10, 'FBC72': 10,
         'FBC73': 10, 'FBC74': 10, 'FBC75': 10, 'FBC76': 10, 'FBC77': 10, 'FBC79': 10, 'FBC80': 10,
+        'F70': 11,
+        'F71': 10,
+        'FBC70': 11,
+        'FBC71': 10,
       }),
       rowsFromMap: true,
       heightsSourced: true,
@@ -555,10 +573,10 @@ const FENWAY: StadiumStructure = {
         'B135': [54, -17], 'B136': [54, -17], 'B137': [54, -14], 'B138': [54, -14],
         'B140': [54, -14], 'B141': [54, -14], 'B144': [52, -10], 'B146': [54, 1], 'B148': [53, -10],
         'B149': [53, -10], 'B150': [53, -10], 'B151': [53, -12], 'B152': [53, -10],
-        'B154': [54, -10], 'B155': [53, -10], 'B157': [53, -10], 'B158': [54, -10], 'B159': [53, -9],
-        'B160': [54, -10], 'B161': [54, -10], 'B162': [54, -10], 'B164': [52, -10], 'B165': [54, 6],
+        'B154': [54, -14], 'B155': [54, -14], 'B157': [53, -10], 'B158': [54, -10], 'B159': [53, -9],
+        'B160': [54, -10], 'B161': [54, -10], 'B162': [54, -10], 'B164': [52, -10], 'B165': [54, 2],
       }), {
-        'B94': 6, 'B101': 5, 'B115': 9, 'B160': 3, 'B163': 5, 'B164': 6, 'B165': 5,
+        'B94': 6, 'B101': 5, 'B115': 9, 'B160': 3, 'B163': 5, 'B164': 6, 'B165': 6,
         'B89': 5,
       }), {
         'B88': 13, 'B89': 14, 'B95': 13, 'B96': 13, 'B97': 14, 'B98': 14, 'B99': 14,
@@ -592,15 +610,18 @@ const FENWAY: StadiumStructure = {
     },
     rightFieldBox: {
       label: 'Right Field Box',
-      // Uncovered; among the last seats to get shade (sourced). Lidar (5 of
-      // 8; the others are not separated from the Grandstand in the cut):
-      // front row 1 ft below the field (-1 to 2), 9° rake (6–15); behind,
-      // the pavilion roof 82 ft up and 50 ft back. Each measured section
-      // takes its own back (50–58 ft; behind B2 the Grandstand roof, 41 ft;
-      // along B5's rows' fall line, a structure 54 ft up, 45 ft back).
+      // Uncovered; among the last seats to get shade (sourced). Lidar (4 of
+      // 8; B1, B3 and B4 are not separated from the Grandstand in the cut,
+      // and B6's cut along its rows runs up a field-level walkway into the
+      // stand, while the cuts 4 m either side read its front row at the
+      // field): front row 1 ft below the field (-1 to 0), 9° rake (9–15);
+      // behind, the pavilion roof 82 ft up and 50 ft back, as B7 and B8 see
+      // it (behind B2 and, along its rows' fall line, B5 the Grandstand
+      // roof, 41–54 ft up: the median of the four, 68 ft, is neither). Each
+      // measured section takes its own back.
       stand: { rows: 12, frontRowHeightFt: -1, rakeDeg: 9, backHeightFt: 82, backSetbackFt: 50 },
-      sections: withFronts(withBacks({ 'B6': { frontRowHeightFt: 2 } }, { 'B2': [41, 21], 'B5': [54, 45], 'B8': [82, 58], 'B7': [82, 52] }), {
-        'B2': 0, 'B6': 2,
+      sections: withFronts(withBacks({}, { 'B2': [41, 21], 'B5': [54, 45], 'B8': [82, 58], 'B7': [82, 52] }), {
+        'B2': 0,
       }),
       rowsFromMap: true,
       heightsSourced: true,
