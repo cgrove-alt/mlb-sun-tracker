@@ -5478,7 +5478,10 @@ const PNC_LIDAR = 'USGS 3DEP lidar PA_17County_D24, flown 2024-04-29 to 2024-05-
  * stand gives the front row's height and the rake, the edge of any deck
  * over it, and what rises highest behind; each measured section takes its
  * own front row and that back, and its own rake where the scan sees 9 or
- * more of its rows and the cuts beside it agree. Where a deck's edge is more than
+ * more of its rows and the cuts beside it agree. Each cut runs along the
+ * rows' fall line: where that is firmly more than 15° off the club map's
+ * direction, the section faces it (its section file's standRuns); one that
+ * straddles a bend keeps the map's direction and its tier's rake. Where a deck's edge is more than
  * two rows from the source's covered row (or covers three or more it leaves
  * open), the scan's row is used. The scan sees decks from above: a deck's
  * underside is the bottom of its face where seen; where only its front row
@@ -5500,12 +5503,17 @@ const PNC: StadiumStructure = {
       // (21 of 31): front row at field level (-1 ft), 10° rake (7–12); what
       // rises highest behind is the roof's edge, 121 ft up and 107 ft back
       // (91–132 ft, each measured section its own).
-      stand: { rows: 13, frontRowHeightFt: -1, rakeDeg: 10, backHeightFt: 121, backSetbackFt: 107 },
+      stand: { rows: 13, frontRowHeightFt: -1, rakeDeg: 10, backHeightFt: 120, backSetbackFt: 106 },
       sections: withRakes(withFronts(withBacks({}, {
-        '1': [120, 116], '2': [120, 114], '4': [121, 109], '8': [120, 103], '9': [120, 104],
+        '1': [120, 116], '2': [120, 114], '4': [120, 104], '8': [120, 103], '9': [120, 104],
         '10': [120, 103], '11': [120, 104], '12': [121, 104], '30': [120, 117], '24': [121, 104],
         '22': [121, 104], '21': [120, 104], '20': [121, 91], '19': [121, 106], '32': [120, 132],
         '31': [120, 117],
+        '5': [121, 107],
+        '14': [121, 107],
+        '15': [121, 107],
+        '18': [121, 107],
+        '17': [121, 107],
       }), {
         '10': 2, '11': 1, '12': 2, '22': 1, '21': 2, '20': 2,
       }), {
@@ -5521,28 +5529,27 @@ const PNC: StadiumStructure = {
       // Rows A–HH (to KK behind home), covered from row W by the club deck
       // (sourced; 129 from W of F–HH, 132 from AA). Lidar (23 of 25): front
       // row 5 ft (4–7), 13° rake (8–14). The club deck's front, 53 ft up,
-      // reaches out over row 17 (15–19; 25 in 132, 26 in 131), more than
-      // two rows ahead of the source's in all 23, so the tier takes the
+      // reaches out over row 17 (15–19; 131 and 132 along their rows' fall
+      // line, 50° off the map's direction, where the cut across their rows
+      // put it at 25–26), more than two rows ahead of the source's in all
+      // 23, so the tier takes the
       // scan's row, under an underside of ~43 ft (that front row less 9 ft).
       // It is also what rises highest behind (58 ft in front of the last row
-      // of the 37-row 114 and 115, 2 ft in front of 132's; each measured
+      // of the 37-row 114 and 115, 33 ft in front of 132's; each measured
       // section takes its own).
       stand: { rows: 34, frontRowHeightFt: 5, rakeDeg: 13, backHeightFt: 53, backSetbackFt: -47, deckFrontFt: 52, overhang: { coveredFromRow: 17, soffitHeightFt: 43 } },
       sections: withRakes(withFronts(withBacks({
         ...pncCover(['129'], 43),
-        '131': { overhang: { coveredFromRow: 26, soffitHeightFt: 44 } },
-        '132': { overhang: { coveredFromRow: 25, soffitHeightFt: 43 } },
       }, {
-        '132': [54, -2], '101': [53, -39], '103': [53, -39], '105': [53, -45], '107': [53, -48],
+        '132': [56, -33], '101': [53, -46], '103': [53, -48], '105': [53, -45], '107': [53, -48],
         '108': [54, -47], '110': [54, -47], '113': [54, -47], '114': [53, -58], '115': [53, -58],
-        '116': [53, -52], '117': [54, -55], '131': [54, -16], '130': [53, -50], '128': [53, -50],
+        '116': [53, -52], '117': [54, -55], '131': [55, -47], '130': [53, -50], '128': [53, -50],
         '125': [54, -52], '121': [54, -47], '119': [54, -52],
       }), {
-        '132': 6, '101': 4, '103': 4, '105': 4, '114': 6, '115': 6, '116': 6, '117': 6, '131': 6,
+        '132': 7, '101': 6, '105': 4, '114': 6, '115': 6, '116': 6, '117': 6, '131': 6,
         '130': 6, '128': 6, '125': 7, '123': 6,
       }), {
-        '132': 8, '101': 12, '103': 12, '105': 14, '108': 14, '110': 14, '112': 14, '113': 14,
-        '131': 8,
+        '105': 14, '108': 14, '110': 14, '112': 14, '113': 14,
       }),
       rowsFromMap: true,
       heightsSourced: false,
@@ -5552,19 +5559,19 @@ const PNC: StadiumStructure = {
     leftCorner: {
       label: 'Left-field corner (133–138)',
       // Rows A–F to A–P, open ("among the worst seats for shade"). Lidar (6
-      // of 6): front row 1 ft (-1 to 3), 10° rake (137's cut, 15°, is off
-      // the cuts beside it, 13°); behind, 63 ft up and 73 ft
-      // back (each section's own where it differs: 57–64 ft up and 6–134 ft
-      // back behind 135–138).
-      stand: { rows: 12, frontRowHeightFt: 1, rakeDeg: 10, backHeightFt: 63, backSetbackFt: 73 },
-      sections: withRakes(withFronts({
+      // of 6): front row 2 ft (-1 to 3), 10° rake (137, along its rows' fall
+      // line, and 138, straddling a bend, read 16° over 8–9 rows); behind,
+      // 66 ft up and 66 ft back (each section's own where it differs: 57–72
+      // ft up and 6–124 ft back).
+      stand: { rows: 12, frontRowHeightFt: 2, rakeDeg: 10, backHeightFt: 66, backSetbackFt: 66 },
+      sections: withRakes(withBacks(withFronts({
         '133': { backHeightFt: 121, backSetbackFt: 124 }, '134': { backHeightFt: 72, backSetbackFt: 58 },
         '135': { backHeightFt: 60, backSetbackFt: 6 }, '136': { backHeightFt: 62, backSetbackFt: 57 },
-        '137': { backHeightFt: 64, backSetbackFt: 134 }, '138': { backHeightFt: 57, backSetbackFt: 88 },
+        '137': { backHeightFt: 70, backSetbackFt: 75 }, '138': { backHeightFt: 57, backSetbackFt: 88 },
       }, {
-        '133': -1, '134': 2, '138': 0, '137': 0, '136': 3, '135': 2,
-      }), {
-        '134': 9, '138': 16,
+        '133': -1, '138': 0, '137': 1, '136': 3,
+      }), { '137': [70, 75] }), {
+        '134': 9,
       }),
       rowsFromMap: true,
       heightsSourced: true,
@@ -5577,16 +5584,20 @@ const PNC: StadiumStructure = {
       // exposed"). Lidar (6 of 9): front row 19 ft (on the wall; 9 in 139),
       // 31° rake; behind, 33 ft up and 60 ft back (nothing over 142's and
       // 144's own top, which they keep). Something 36 ft up is over 139's
-      // row 10, its top 3 ft in front of 139's last row. Each other measured
-      // section takes its own back.
+      // row 10, its top 39 ft up and 9 ft in front of 139's last row (along
+      // its rows' fall line, 48° off the map's direction). 139, a low stand
+      // of its own under it, takes its own rake, 22°: 22.5° along its 7 open
+      // rows, and the cut across them read 15°, which is 22° at that angle
+      // (tan 15° / cos 48°). Each other measured section takes its own back.
       stand: { rows: 13, frontRowHeightFt: 19, rakeDeg: 31, backHeightFt: 33, backSetbackFt: 60 },
       sections: withRakes(withFronts(withBacks({
         ...Object.fromEntries(['142', '144'].map((id) => [id, { backHeightFt: 39, backSetbackFt: 0 }])),
         '139': { frontRowHeightFt: 9, overhang: { coveredFromRow: 10, soffitHeightFt: 36 } },
-      }, { '143': [31, 62], '145': [35, 65], '146': [39, 65], '139': [36, -3] }), {
+      }, { '143': [31, 62], '145': [35, 65], '146': [39, 65], '139': [39, -9] }), {
         '142': 18, '139': 9,
       }), {
-        '144': 32, '139': 15,
+        '144': 32,
+        '139': 22,
       }),
       rowsFromMap: true,
       heightsSourced: true,
@@ -5602,12 +5613,12 @@ const PNC: StadiumStructure = {
       // section its own).
       stand: { rows: 11, frontRowHeightFt: 53, rakeDeg: 28, backHeightFt: 121, backSetbackFt: 25 },
       sections: withRakes(withFronts(withBacks({}, {
-        '201': [120, 32], '203': [120, 30], '204': [120, 25], '205': [120, 25], '208': [120, 25],
+        '201': [120, 25], '203': [120, 30], '204': [120, 25], '205': [120, 25], '208': [120, 25],
         '210': [120, 25], '211': [120, 24],
       }), {
-        '201': 52, '203': 52,
+        '203': 52,
       }), {
-        '227': 27, '225': 27, '221': 27, '220': 27, '201': 25, '203': 25, '214': 29, '219': 27,
+        '227': 27, '225': 27, '221': 27, '220': 27, '214': 29, '219': 27,
       }),
       rowsFromMap: true,
       heightsSourced: true,
@@ -5672,7 +5683,7 @@ const PNC: StadiumStructure = {
         '303': 75, '308': 71, '307': 77, '309': 77, '310': 75, '311': 70, '312': 77, '328': 72,
         '323': 71, '327': 71, '325': 78, '322': 75, '320': 71,
       }), {
-        '301': 23, '308': 29, '311': 30,
+        '308': 29, '311': 30,
       }),
       rowsFromMap: true,
       heightsSourced: true,

@@ -47,6 +47,15 @@ export const piratesSections: DetailedSection[] = buildParkSections(
     orientation: ORIENTATION,
     aerialControl: PIRATES_AERIAL_CONTROL,
     standRuns: [
+      // Turned to the rows' fall line, measured on the lidar
+      // (scripts/measureStandHeights.py): these sections' rows climb firmly
+      // more than 15° off the direction fitted on the map, in the middle
+      // of the section and 4 m to either side.
+      { ids: ['132', '131'], facingDeg: 28 },
+      { ids: ['137'], facingDeg: 79 },
+      { ids: ['139'], facingDeg: 122 },
+      { ids: ['201'], facingDeg: 228 },
+      { ids: ['4', '101', '103'], facingDeg: 233 },
       { ids: ids(139, 147), facingDeg: 170 },
       { ids: [...ids(235, 238), ...ids(335, 339), 'PORCH'], facingDeg: 78 },
       ...CURVE,
