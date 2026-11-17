@@ -51,6 +51,19 @@ export const redsSections: DetailedSection[] = buildParkSections(
     orientation: ORIENTATION,
     aerialControl: REDS_AERIAL_CONTROL,
     standRuns: [
+      // Turned to the rows' fall line, measured on the lidar
+      // (scripts/measureStandHeights.py): these sections' rows climb firmly
+      // more than 15° off the direction fitted on the map, in the middle
+      // of the section and 4 m to either side. On the third-base side
+      // (108, 109, 114, 115, 411–415, 510) that is the photo's run (347°,
+      // below): there the scan's rows, and the 400s' walls, run about 100°,
+      // facing 7–14°; the photo's level lines, 12–36 m back, are the lower
+      // bowl's nearer the line.
+      { ids: ['109', '108', '415'], facingDeg: 7 },
+      { ids: ['115', '510', '114'], facingDeg: 12 },
+      { ids: ['412', '411', '414'], facingDeg: 14 },
+      { ids: ['413'], facingDeg: 13 },
+      { ids: ['437'], facingDeg: 234 },
       { ids: ids(101, 106), facingDeg: 85 },
       { ids: ids(140, 146), facingDeg: 160 },
       ...CURVE,
