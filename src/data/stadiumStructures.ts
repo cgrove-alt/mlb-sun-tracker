@@ -4750,8 +4750,8 @@ const COORS: StadiumStructure = {
       label: 'Left-field stands (151–160)',
       // Rows 2–23 or 2–20, not covered ("in June and July the sunniest
       // seats"). Lidar (9 of 10; 151's place on the seat map cuts a ramp):
-      // front row 5 ft (5–8), 18° rake (17–18; 158 and 160 straddle a bend,
-      // their cuts across the rows); behind, 42 ft up and 43 ft back (the
+      // front row 5 ft (4–8), 18° rake (17–18; 158 and 160 along the median
+      // of their rows' fall lines); behind, 42 ft up and 43 ft back (the
       // scoreboard in 154, 107 ft; each measured section its own).
       stand: { rows: 22, frontRowHeightFt: 5, rakeDeg: 18, backHeightFt: 42, backSetbackFt: 43 },
       sections: withRakes(withFronts(withBacks({}, {
@@ -4830,13 +4830,10 @@ const COORS: StadiumStructure = {
       // (rows 1–25) covered from row 19 by the roof (sourced). Lidar (21 of
       // 29; L311's cut crosses its rows at an angle): front row 67 ft
       // (67–68), 27° rake (25–30); what rises highest behind is the roof's
-      // edge, 128 ft up and 30 ft back. In L319 and L343 that edge is over
-      // row 16, which they take. Its underside: 128 ft (the roof's top; the
-      // scan sees nothing under it). In L345 the edge is over row 17, two
-      // rows ahead of the source's 19, under option A's mark, but it is then
-      // what rises behind rows 17 and 18, which would leave them with
-      // nothing behind: so they are covered too (as at Nationals Park's
-      // Gallery). In the 25-row sections the edge stands 25 ft in front of
+      // edge, 128 ft up and 30 ft back. In L319, L343 and L345 (along the
+      // median of its rows' fall lines) that edge is over row 16, which they
+      // take. Its underside: 128 ft (the roof's top; the scan sees nothing
+      // under it). In the 25-row sections the edge stands 25 ft in front of
       // the last row, 19 ft behind the 9-row L329 and L332; each measured
       // section takes its own back.
       stand: { rows: 9, frontRowHeightFt: 67, rakeDeg: 27, backHeightFt: 128, backSetbackFt: 30 },
@@ -4844,7 +4841,7 @@ const COORS: StadiumStructure = {
         ...coorsCover(['L311', 'L313'], 128),
         L319: cover(16, 128),
         L343: cover(16, 128),
-        L345: cover(17, 128),
+        L345: cover(16, 128),
       }, {
         'L345': [128, -27], 'L344': [128, 27], 'L343': [128, -25], 'L342': [106, 29],
         'L340': [127, 29], 'L338': [128, 32], 'L334': [129, 32], 'L333': [129, 30],
