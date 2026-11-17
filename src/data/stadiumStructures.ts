@@ -6480,7 +6480,10 @@ export function targetTier(id: string): string | null {
  * above them. Each measured section takes its own front row and back (what
  * rises highest behind it, seen from the middle of its open rows), and its
  * own rake where the scan sees 9 or more of its rows and the cuts beside it
- * agree.
+ * agree. Each cut runs along the rows' fall line: where that is firmly more
+ * than 15° off the club map's direction, the section faces it (its section
+ * file's standRuns); one that straddles a bend keeps the map's direction
+ * and its tier's rake.
  */
 const TARGET: StadiumStructure = {
   stadiumId: 'twins',
@@ -6554,12 +6557,12 @@ const TARGET: StadiumStructure = {
         ...Object.fromEntries(['106', '123'].map((id) => [id, { deckFrontFt: 37, overhang: { coveredFromRow: 26, soffitHeightFt: 28 } }])),
       }, {
         '101': [147, 32], '102': [148, 11], '103': [148, -8], '104': [148, 6], '105': [148, 31],
-        '106': [148, 31], '123': [148, 31], '124': [148, 15], '125': [148, 1], '126': [146, 17],
+        '106': [148, 31], '123': [148, 31], '124': [148, 4], '125': [148, 1], '126': [146, 17],
         '127': [145, 50],
       }), {
-        '104': -1, '105': 2, '106': 2, '123': 2, '124': -2, '126': -1,
+        '104': -1, '105': 2, '106': 2, '123': 2, '124': -1, '126': -1,
       }), {
-        '101': 14, '124': 10, '125': 12,
+        '101': 14, '124': 11, '125': 12,
       }),
       rowsFromMap: true,
       heightsSourced: false,
@@ -6621,12 +6624,13 @@ const TARGET: StadiumStructure = {
       // "edge" is the walkway at the top of their rows).
       stand: { rows: 6, frontRowHeightFt: 73, rakeDeg: 31, treadFt: 2.8, backHeightFt: 148, backSetbackFt: -1 },
       sections: withFronts(withBacks({}, {
-        '201': [147, 8], '202': [148, 3], '203': [148, -4], '206': [148, -2], '207': [148, 0],
+        '201': [147, 8], '202': [148, 3], '203': [148, -4], '206': [148, -4], '207': [148, 0],
         '208': [148, 1], '211': [148, 4], '212': [148, 4], '213': [148, -3], '215': [148, -3],
         '216': [148, -3], '218': [148, -3], '220': [148, 0], '221': [148, -2], '222': [148, -2],
-        '223': [148, 1], '224': [148, 1], '225': [148, -5], '226': [148, -5], '227': [147, -2],
+        '223': [148, 1], '224': [148, 1], '225': [148, -7], '226': [148, -5], '227': [147, -2],
       }), {
         '224': 74,
+        '206': 74,
       }),
       rowsFromMap: true,
       heightsSourced: true,
@@ -6698,12 +6702,13 @@ const TARGET: StadiumStructure = {
     rightField: {
       label: 'Right field (136–140)',
       // Rows 1–7, open. Lidar (5 of 5): front row 21 ft (20–22) over the
-      // wall, 16° rake; behind, 32 ft up right behind the last row (44 ft
+      // wall, 18° rake (136 and 139; 137's and 138's cuts are off those
+      // beside them and 140 straddles a bend); behind, 32 ft up right behind the last row (44 ft
       // and 68 ft back behind 139, 82 ft and 50 ft back behind 140).
-      stand: { rows: 7, frontRowHeightFt: 21, rakeDeg: 16, treadFt: 2.8, backHeightFt: 32, backSetbackFt: 4 },
-      sections: withFronts(withBacks({}, { '136': [32, 1], '137': [32, 1], '139': [44, 68], '140': [82, 50] }), {
+      stand: { rows: 7, frontRowHeightFt: 21, rakeDeg: 18, treadFt: 2.8, backHeightFt: 32, backSetbackFt: 4 },
+      sections: withRakes(withFronts(withBacks({}, { '136': [32, 1], '137': [32, 1], '139': [44, 68], '140': [82, 50] }), {
         '136': 22, '138': 20,
-      }),
+      }), { '139': 16 }),
 
       rowsFromMap: true,
       heightsSourced: true,
