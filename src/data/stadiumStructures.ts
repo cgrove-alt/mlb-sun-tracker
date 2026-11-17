@@ -3569,7 +3569,11 @@ const OPACY_TERRACE: StandProfile = {
  * the middle uncovered row; tier values are medians, and every measured
  * section takes its own front row and back, and its own rake where the scan
  * sees 9 or more of its rows and the cuts beside it agree (68's cut runs down
- * an aisle's steps, so it takes the front row of the cuts beside it). The
+ * an aisle's steps, so it takes the front row of the cuts beside it). Each
+ * cut runs along the rows' fall line: where that is firmly more than 15°
+ * off the club map's direction, the section faces it (its section file's
+ * standRuns); one that straddles a bend keeps the map's direction and its
+ * tier's rake. The
  * decks are lower than the stacking
  * estimates: the club level's front is 40 ft (52), the upper deck's 63 ft
  * (70), its roof's edge 119 ft (110). The light towers are not counted as
@@ -3619,7 +3623,7 @@ const OPACY: StadiumStructure = {
         '30': 0, '38': 2, '44': 0, '48': 3, '52': 3, '54': 0, '56': 0, '58': 0, '60': 0, '70': 3,
         '76': 10, '78': 10, '86': 4,
       }), {
-        '74': 11, '10': 13, '12': 13, '34': 13, '40': 13, '42': 13, '62': 13, '64': 13, '66': 13,
+        '10': 13, '12': 13, '34': 13, '40': 13, '42': 13, '62': 13, '64': 13, '66': 13,
         '72': 15, '14': 13, '18': 13, '20': 13, '30': 13, '38': 13, '54': 13, '56': 13, '58': 13,
         '60': 13, '78': 15,
       }),
@@ -3658,14 +3662,16 @@ const OPACY: StadiumStructure = {
       label: 'Right-field corner (1–8)',
       // Rows up to 21 (6: 10–27, 8: 4–27), open ("completely avoid
       // sections 1–8 ... if you want to stay out of the sun"). Lidar (5 of
-      // 6): front row 3 ft (0–5), 12° rake; what rises highest behind is the
-      // upper deck's roof, 122 ft up and 75 ft back (66–84 ft, each measured
-      // section its own).
-      stand: { rows: 21, frontRowHeightFt: 3, rakeDeg: 12, backHeightFt: 122, backSetbackFt: 75 },
-      sections: withRakes(withFronts(withBacks({}, { '3': [122, 70], '1': [122, 84], '6': [122, 81], '8': [122, 66] }), {
-        '5': 0, '3': 2, '1': 5, '6': 5,
+      // 6; 1 and 6 along their rows' fall line, 30° off the map's
+      // direction): front row 3 ft (0–3), 13° rake; what rises highest
+      // behind is the upper deck's roof, 122 ft up and 75 ft back (66–75 ft,
+      // each measured section its own; behind 1 and 6, along their rows, a
+      // structure 107–108 ft up, 155–157 ft back).
+      stand: { rows: 21, frontRowHeightFt: 3, rakeDeg: 13, backHeightFt: 122, backSetbackFt: 75 },
+      sections: withRakes(withFronts(withBacks({}, { '3': [122, 70], '1': [107, 155], '6': [108, 157], '8': [122, 66] }), {
+        '5': 0, '3': 2,
       }), {
-        '5': 13, '3': 13,
+        '1': 14,
       }),
       rowsFromMap: true,
       heightsSourced: true,
@@ -3709,7 +3715,7 @@ const OPACY: StadiumStructure = {
       sections: withFronts(withBacks({}, {
         '252': [63, -12], '216': [64, -11], '214': [63, -12], '220': [64, -14], '228': [64, -14],
         '244': [64, -11], '262': [64, -14], '248': [63, -12], '250': [64, -11], '256': [65, -12],
-        '264': [63, -12],
+        '264': [64, -11],
       }), {
         '252': 39, '216': 39, '242': 39, '244': 39, '246': 39, '248': 39, '250': 39, '258': 39,
         '264': 39,
