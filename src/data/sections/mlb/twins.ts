@@ -63,11 +63,14 @@ export const twinsSections: DetailedSection[] = buildParkSections(ORIENTATION, c
   orientation: ORIENTATION,
   aerialControl: TWINS_AERIAL_CONTROL,
   standRuns: [
+    // Turned to the direction their treads climb: planes fitted to the
+    // treads (scripts/measureStandHeights.py treads) agree within 15° and
+    // lie more than 10° off the median of the rows' fall lines.
+    { ids: ['202'], facingDeg: 201 },
     // Turned to the rows' fall line, measured on the lidar
     // (scripts/measureStandHeights.py): these sections' rows climb firmly
     // more than 15° off the direction fitted on the map; each faces the
     // median of the fall lines in its middle and 4 m to either side.
-    { ids: ['202'], facingDeg: 187 },
     { ids: ['124'], facingDeg: 320 },
     { ids: ['206'], facingDeg: 225 },
     { ids: ['225'], facingDeg: 323 },

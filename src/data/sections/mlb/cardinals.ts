@@ -56,6 +56,10 @@ export const cardinalsSections: DetailedSection[] = buildParkSections(
     orientation: ORIENTATION,
     aerialControl: CARDINALS_AERIAL_CONTROL,
     standRuns: [
+      // Turned to the direction their treads climb: planes fitted to the
+      // treads (scripts/measureStandHeights.py treads) agree within 15° and
+      // lie more than 10° off the median of the rows' fall lines.
+      { ids: ['163D'], facingDeg: 319 },
       // Turned to the rows' fall line, measured on the lidar
       // (scripts/measureStandHeights.py): these sections' rows climb firmly
       // more than 15° off the direction fitted on the map; each faces the
@@ -68,7 +72,6 @@ export const cardinalsSections: DetailedSection[] = buildParkSections(
       { ids: ['136D'], facingDeg: 162 },
       { ids: ['137D'], facingDeg: 157 },
       { ids: ['162'], facingDeg: 317 },
-      { ids: ['163D'], facingDeg: 307 },
       { ids: ['165'], facingDeg: 315 },
       { ids: ['229'], facingDeg: 114 },
       { ids: ['230'], facingDeg: 109 },
