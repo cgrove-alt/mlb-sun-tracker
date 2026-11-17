@@ -1627,7 +1627,10 @@ const CITI_LIDAR = 'USGS 3DEP lidar NY_NewYorkCity, flown 2014-03-23 to 2014-04-
  * middle uncovered row; tier values are medians, and every measured section
  * takes its own front row and back (537's cut crosses the end of its stand,
  * so it keeps the tier's front), and its own rake where the scan sees 9 or
- * more of its rows and the cuts beside it agree. The decks step back in a
+ * more of its rows and the cuts beside it agree. Each cut runs along the
+ * rows' fall line: where that is firmly more than 15° off the club map's
+ * direction, the section faces it (its section file's standRuns); one that
+ * straddles a bend keeps the map's direction and its tier's rake. The decks step back in a
  * staircase, each
  * upper deck's front over the rows of the one below; the light towers above
  * the roof are not counted as walls. Covered rows: where the scan puts a
@@ -1647,10 +1650,11 @@ const CITI: StadiumStructure = {
     fieldBox: {
       label: 'Field boxes',
       // Rows 1–12, uncovered (sourced). Lidar (27 of 31): front row at field
-      // level (0–2 ft), 12° rake (6–23); what rises highest behind is the
+      // level (0–2 ft), 14° rake (8–23; behind home 4–6, 14, 16 and D
+      // straddle a bend, their cuts across the rows); what rises highest behind is the
       // Promenade roof, 129 ft up and 107 ft back (103–119; each measured
       // section takes its own).
-      stand: { rows: 12, frontRowHeightFt: 0, rakeDeg: 12, backHeightFt: 129, backSetbackFt: 107 },
+      stand: { rows: 12, frontRowHeightFt: 0, rakeDeg: 14, backHeightFt: 129, backSetbackFt: 107 },
       sections: withRakes(withFronts(withBacks({}, {
         '11': [129, 103], 'A': [129, 119], '12': [129, 109], '4': [129, 106], '13': [129, 106],
         'C': [129, 109], 'D': [129, 109], '15': [129, 109], '6': [129, 109], '5': [129, 109],
@@ -1714,12 +1718,12 @@ const CITI: StadiumStructure = {
         '133': { rows: 5, noCover: true, backSetbackFt: 49 },
       }, {
         '106': [69, -41], '114': [69, -22], '115': [69, -20], '116': [129, 31], '117': [128, 34],
-        '118': [129, 99], '119': [128, 34], '120': [129, 34], '121': [129, 34], '128': [69, -18],
-        '130': [69, -15], '132': [69, -28],
+        '118': [129, 99], '119': [128, 34], '120': [129, 34], '121': [129, 34],
+        '130': [69, -15], '132': [70, -26],
       }), {
-        '106': 7, '116': 5, '132': 6,
+        '106': 7, '116': 5, '132': 5,
       }), {
-        '106': 15, '130': 11, '132': 11,
+        '106': 15, '130': 11, '132': 12,
       }),
       heightsSourced: false,
       coverSourced: true,
@@ -1770,24 +1774,23 @@ const CITI: StadiumStructure = {
       // No source gives rows or cover. The lidar shows nothing over 20 of
       // its 21 measured sections; over 222 a structure reaches out over row
       // 3, 34 ft up (taken as 36 ft, 9 ft above row 3's floor). Lidar (21 of
-      // 39): front row 25 ft (24–35), 17° rake (7–24); what rises highest
+      // 39): front row 25 ft (24–35), 18° rake (7–22; 213, 214 and 218
+      // straddle a bend, their cuts across the rows); what rises highest
       // behind is the 400 level's front, 69 ft up, 2–17 ft behind the last
       // row (each measured section its own; 222 too, from its two open rows).
-      stand: { rows: 6, frontRowHeightFt: 25, rakeDeg: 17, backHeightFt: 69, backSetbackFt: 11 },
+      stand: { rows: 6, frontRowHeightFt: 25, rakeDeg: 18, backHeightFt: 69, backSetbackFt: 11 },
       sections: withRakes(withFronts(withBacks({
 
         '222': { overhang: { coveredFromRow: 3, soffitHeightFt: 36 } },
       }, {
         '229': [69, 14], '228': [69, 14], '227': [69, 9], '226': [69, 4], '225': [69, 4],
-        '219': [69, 2], '220': [69, 2], '221': [69, 4], '216': [69, 12], '217': [69, 17],
+        '219': [69, 2], '220': [69, 2], '221': [69, 4], '216': [69, 12], '217': [69, 12],
         '218': [69, 14], '215': [69, 7], '208': [69, 2], '209': [69, 16], '210': [69, 16],
         '211': [69, 16], '212': [69, 6],
       }), {
         '226': 29, '225': 29, '224': 26, '219': 35, '220': 34, '221': 34, '222': 24, '215': 26,
         '214': 26, '208': 28, '212': 29,
-      }), {
-        '217': 16,
-      }),
+      }), { '210': 17 }),
       heightsSourced: true,
       coverSourced: true,
       sources: [RYS_CITI, CITI_LIDAR],
@@ -1833,21 +1836,23 @@ const CITI: StadiumStructure = {
     fourHundred: {
       label: '400 level',
       // Rows 1–8 (behind home 1–5), open to the sky (sourced). Lidar (29 of
-      // 37): front row 69 ft (68–69), 26° rake (17–32); what rises highest
+      // 37): front row 69 ft (68–69), 28° rake (17–32; 409, 411, 431, 434
+      // and 437 straddle a bend, their cuts across the rows); what rises highest
       // behind is the Promenade roof, 129 ft up and 30 ft back (25–45 ft;
       // each measured section takes its own).
-      stand: { rows: 8, frontRowHeightFt: 69, rakeDeg: 26, backHeightFt: 129, backSetbackFt: 30 },
+      stand: { rows: 8, frontRowHeightFt: 69, rakeDeg: 28, backHeightFt: 129, backSetbackFt: 30 },
       sections: withRakes(withFronts(withBacks({ '415': { rows: 5 }, '425': { rows: 5 } }, {
         '437': [116, 43], '436': [127, 43], '434': [129, 43], '432': [129, 27], '431': [127, 30],
-        '430': [129, 29], '426': [129, 32], '425': [129, 45], '424': [129, 35], '421': [129, 33],
+        '430': [129, 29], '426': [129, 27], '425': [129, 45], '424': [129, 35], '421': [129, 33],
         '420': [129, 33], '418': [128, 30], '417': [129, 29], '416': [129, 29], '415': [129, 39],
         '403': [129, 29], '404': [127, 25], '405': [129, 27], '406': [129, 27], '407': [129, 27],
-        '408': [129, 34], '409': [128, 35], '410': [129, 34], '411': [128, 35], '412': [129, 35],
+        '408': [129, 34], '409': [128, 35], '410': [129, 34], '411': [128, 35], '412': [129, 29],
+        '427': [129, 29],
       }), {
         '436': 68, '434': 68, '424': 68, '420': 68, '418': 68, '408': 68, '409': 68, '410': 68,
-        '411': 68, '412': 68,
+        '411': 68,
       }), {
-        '436': 19, '412': 24,
+        '436': 19,
       }),
       heightsSourced: true,
       coverSourced: true,
@@ -1856,8 +1861,10 @@ const CITI: StadiumStructure = {
     promenade: {
       label: 'Promenade level (500s)',
       // Rows 1–17, covered by the roof from row 11 (sourced; the lidar puts
-      // its edge at row 10, and at row 8 in 503). Lidar (34 of 38): front
-      // row 85 ft (79–87), 30° rake; the roof's front edge is 129 ft up and
+      // its edge at row 10, and at row 8 in 503 and 511). Lidar (34 of 38; 508–533
+      // along their rows' fall line, 19–37° off the map's direction): front
+      // row 86 ft (79–87), 32° rake (512, 513, 523, 534 and 537 straddle a
+      // bend, their cuts across the rows); the roof's front edge is 129 ft up and
       // the scan shows nothing below 128 ft there: a thin roof, underside
       // taken as 128 ft. Behind 534, 535 and 537, where the scan sees no
       // edge over the rows, what rises highest stands 12–37 ft behind the
@@ -1868,30 +1875,47 @@ const CITI: StadiumStructure = {
 
       stand: {
         rows: 17,
-        frontRowHeightFt: 85,
-        rakeDeg: 30,
+        frontRowHeightFt: 86,
+        rakeDeg: 32,
         backHeightFt: 129,
-        backSetbackFt: -16,
+        backSetbackFt: -18,
         overhang: { coveredFromRow: 11, soffitHeightFt: 128 },
       },
-      sections: withRakes(withFronts(withBacks({ '503': { overhang: { coveredFromRow: 8, soffitHeightFt: 128 } } }, {
-        '537': [127, 22], '535': [129, 37], '534': [129, 12], '533': [129, -15], '532': [129, -13],
-        '531': [129, -18], '530': [129, -20], '529': [129, -20], '527': [128, -16],
-        '526': [129, -15], '524': [128, -16], '523': [128, -10], '522': [128, -13],
-        '521': [129, -15], '520': [129, -15], '519': [129, -13], '518': [129, -18],
-        '517': [127, -18], '516': [129, -18], '515': [129, -18], '514': [129, -18],
+      sections: withRakes(withFronts(withBacks({
+        ...Object.fromEntries(['503', '511'].map((id) => [id, { overhang: { coveredFromRow: 8, soffitHeightFt: 128 } }])),
+      }, {
+        '537': [127, 22], '535': [129, 37], '534': [129, 12], '533': [129, -20], '532': [129, -21],
+        '530': [129, -20], '529': [129, -20], '527': [129, -20],
+        '526': [129, -20], '524': [129, -20], '523': [128, -10], '522': [128, -13],
+        '521': [129, -15], '520': [128, -18],
+        '517': [127, -18],
         '502': [128, -16], '503': [129, -20], '504': [127, -18], '505': [129, -20],
-        '506': [129, -20], '507': [129, -20], '508': [128, -15], '509': [128, -18],
-        '510': [129, -18], '511': [129, -13],
+        '506': [129, -20], '507': [129, -20], '508': [129, -16], '509': [129, -21],
+        '511': [129, -20],
+        '512': [129, -16],
+        '513': [129, -16],
       }), {
-        '535': 83, '534': 84, '533': 86, '531': 86, '530': 86, '529': 87, '524': 86,
-        '523': 84, '522': 82, '521': 84, '519': 84, '515': 86, '514': 86, '503': 87, '505': 87,
-        '506': 86, '507': 86, '508': 86, '509': 87, '510': 86, '511': 84, '513': 86,
+        '535': 83, '534': 84, '529': 87, '524': 87,
+        '523': 84, '522': 82, '521': 84, '503': 87, '505': 87,
+        '508': 85, '509': 87, '511': 87,
+        '537': 79,
+        '532': 87,
+        '527': 87,
+        '526': 87,
+        '525': 84,
+        '520': 85,
+        '518': 85,
+        '517': 85,
+        '516': 85,
+        '502': 85,
+        '504': 85,
+        '512': 85,
       }), {
-        '532': 27, '531': 31, '530': 32, '529': 32, '527': 28, '526': 29, '525': 29, '524': 28,
-        '523': 26, '522': 31, '521': 31, '519': 28, '518': 32, '516': 31, '515': 31, '514': 32,
-        '502': 32, '503': 32, '504': 32, '505': 32, '506': 32, '507': 32, '508': 26, '509': 27,
-        '511': 28, '512': 29,
+        '531': 31,
+        '522': 31, '521': 31, '516': 31, '515': 31,
+        '520': 31,
+        '517': 30,
+        '510': 30,
       }),
       heightsSourced: false,
       coverSourced: true,

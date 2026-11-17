@@ -282,8 +282,14 @@ describe('Citi Field stand directions (pinned to the 2019 aerial photo)', () => 
     expect(aerialChartFit(metsChartPoints, METS_AERIAL_CONTROL).rmsM).toBeLessThan(5);
   });
 
-  it.each(['124', '127', '130', '425', '525'])('third-base section %s faces about 240°', (id) => {
+  it.each(['124', '127', '130', '425'])('third-base section %s faces about 240°', (id) => {
     expect(diff(stand(id), 240)).toBeLessThan(10);
+  });
+
+  it('the promenade past 524 faces its own rows on the lidar, not the lower stands\' edge', () => {
+    // The scan's rows there run north-south (its fall line, at the middle of
+    // the section and 4 m to either side): 524–527 face 264–272°.
+    expect(stand('525')).toBe(272);
   });
 
   it.each(['102', '105', '108', '111', '205', '305', '405', '505'])('first-base section %s faces 140°', (id) => {

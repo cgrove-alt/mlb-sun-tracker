@@ -30,7 +30,28 @@ export const metsSections: DetailedSection[] = buildParkSections(
     // (pixel 505,670 to 640,540; the club's drawing has them nearly 20° more
     // square to the line), so they face 140°. The third-base edge runs at
     // 330° (318,430 to 362,505), which the drawing already gets (≈245°).
-    standRuns: [{ rings: ['1', '2', '3', '4', '5'], fromBearingDeg: 75, toBearingDeg: 135, facingDeg: 140 }],
+    standRuns: [
+      // Turned to the rows' fall line, measured on the lidar
+      // (scripts/measureStandHeights.py): these sections' rows climb firmly
+      // more than 15° off the direction fitted on the map, in the middle
+      // of the section and 4 m to either side.
+      { ids: ['132'], facingDeg: 268 },
+      { ids: ['217'], facingDeg: 174 },
+      { ids: ['412'], facingDeg: 171 },
+      { ids: ['426'], facingDeg: 269 },
+      { ids: ['427', '526'], facingDeg: 266 },
+      { ids: ['508'], facingDeg: 151 },
+      { ids: ['509'], facingDeg: 158 },
+      { ids: ['511'], facingDeg: 169 },
+      { ids: ['519'], facingDeg: 249 },
+      { ids: ['520'], facingDeg: 251 },
+      { ids: ['524'], facingDeg: 267 },
+      { ids: ['525'], facingDeg: 272 },
+      { ids: ['527'], facingDeg: 264 },
+      { ids: ['532'], facingDeg: 302 },
+      { ids: ['533'], facingDeg: 305 },
+      { rings: ['1', '2', '3', '4', '5'], fromBearingDeg: 75, toBearingDeg: 135, facingDeg: 140 },
+    ],
     // Rings: field boxes (letters and 1–19), then the 100s to 500s; the
     // outfield 100s (135–143) are their own ring behind the outfield wall.
     tierOf: (id) => {
