@@ -191,8 +191,13 @@ describe('Dodger Stadium stand directions (pinned to the 2022 aerial photo)', ()
     expect(diff(stand(id), 0)).toBeLessThan(15);
   });
 
-  it.each(['302PR', '310PR', '316PR'])('right-field pavilion %s faces away from home plate (northeast)', (id) => {
+  it.each(['302PR', '310PR'])('right-field pavilion %s faces away from home plate (northeast)', (id) => {
     expect(diff(stand(id), 60)).toBeLessThan(15);
+  });
+
+  it('the pavilion\'s end, 316PR, faces its own rows on the lidar', () => {
+    // The median of its rows' fall lines (middle and 4 m to either side).
+    expect(stand('316PR')).toBe(43);
   });
 });
 

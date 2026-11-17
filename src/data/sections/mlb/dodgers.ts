@@ -29,8 +29,11 @@ export const dodgersSections: DetailedSection[] = buildParkSections(
     standRuns: [
       // Turned to the rows' fall line, measured on the lidar
       // (scripts/measureStandHeights.py): these sections' rows climb firmly
-      // more than 15° off the direction fitted on the map, in the middle
-      // of the section and 4 m to either side.
+      // more than 15° off the direction fitted on the map; each faces the
+      // median of the fall lines in its middle and 4 m to either side.
+      { ids: ['105LG'], facingDeg: 212 },
+      { ids: ['316PR'], facingDeg: 43 },
+      { ids: ['3FD'], facingDeg: 215 },
       { ids: ['103LG'], facingDeg: 218 },
       { ids: ['107LG'], facingDeg: 219 },
       { ids: ['15RS'], facingDeg: 256 },
