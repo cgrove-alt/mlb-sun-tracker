@@ -45,12 +45,14 @@
  *     July game, was 28% against 17%; the upper deck 60% against 31%, was
  *     61% against 0%; at a 5:15 PM May start 90% against 74% at first
  *     pitch, was 79% against 48%). Tested: more.
- *   - [RYS] 152–154: only a few rows shaded at first pitch of a 3:15 PM
+ *   - [RYS] 152–158: only a few rows shaded at first pitch of a 3:15 PM
  *     March game, most by the middle innings. The second part holds
- *     (tested), and the first in 154 (44%, its rows ending sooner, the roof
- *     48 ft behind them); 152 and 153 are already 84–100% shaded: the sun,
- *     42° up and nearly behind them, is under the line of the measured roof
- *     over the 400s. The model treats that roof as the top of a wall; on
+ *     (tested), and the first in 154 (39%, its rows ending sooner, the roof
+ *     48 ft behind them), 155, 157 and 158 (42–46%); 152 and 153 are
+ *     already 96–100% shaded, and 156 half: the sun, 42° up and nearly
+ *     behind them, is under the line of the measured roof over the 400s,
+ *     26–27 ft behind 152's and 153's last rows (156, not measured, takes
+ *     the 100s' shared distance from the front row: 26 ft, as 152). The model treats that roof as the top of a wall; on
  *     the ground light may come in under its open back, which the
  *     cross-section cannot see.
  */
@@ -160,8 +162,8 @@ describe('Busch Stadium: a 1:15 PM game in July', () => {
 describe('Busch Stadium: a 3:15 PM game in March', () => {
   it.each(range(152, 158))('[RYS] section %s: only a few rows shaded at first pitch, most of it by the middle innings', (id) => {
     const samples = section(MARCH_27_315PM, id).samples;
-    // 152 and 153 are already mostly shaded at first pitch (header).
-    if (!['152', '153'].includes(id)) expect(samples[0].shadedFraction).toBeLessThan(0.5);
+    // 152, 153 and 156 are already half shaded or more at first pitch (header).
+    if (!['152', '153', '156'].includes(id)) expect(samples[0].shadedFraction).toBeLessThan(0.5);
     expect(samples[4].shadedFraction).toBeGreaterThanOrEqual(0.8);
   });
 });

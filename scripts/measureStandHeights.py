@@ -1217,8 +1217,13 @@ def measure(park):
         # the rows at an angle (`cutOffFall`) leaves its rake (and, down an
         # aisle, its front row) out of the tier's.
         off = {'rakeDeg': ('rakeOffAcross', 'cutOffFall'), 'frontFt': ('aisle',)}
+        # Where the tier's sections share a front line (`backFromFront`), its
+        # setback is for the tier's rows: each back's distance from its front
+        # row, less the tier's rows.
+        ts = data['tiers'][key]['stand']
+        shift = (lambda r: (r['rows'] - ts['rows']) * (ts.get('treadFt') or 2.75)) if data['tiers'][key].get('backFromFront') else (lambda r: 0)
         for f in ('frontFt', 'rakeDeg', 'lipRow', 'soffitFt', 'lipSoffitFt', 'lipLowFt', 'backFt', 'backSetbackFt'):
-            vals = [r[f] for r in rs if r[f] is not None and not any(g in r['flags'] for g in off.get(f, ()))]
+            vals = [r[f] + (shift(r) if f == 'backSetbackFt' else 0) for r in rs if r[f] is not None and not any(g in r['flags'] for g in off.get(f, ()))]
             t[f] = None if not vals else {'median': float(np.median(vals)), 'min': float(min(vals)), 'max': float(max(vals)), 'n': len(vals)}
         tiers[key] = t
     # The far rim (the engine's "upper deck or roof line"): the median of each

@@ -107,7 +107,9 @@ export function shadeSentence(label: string, samples: readonly ShadeSample[], su
 
 /**
  * The section's stand profile: its tier's, with the club map's row count when
- * the tier uses it (`mapRows`), and any section-specific changes on top.
+ * the tier uses it (`mapRows`), and any section-specific changes on top. In a
+ * tier whose sections share a front line (`backFromFront`), a section's back
+ * that is the tier's keeps the tier's distance from the front row.
  */
 export function standFor(
   structure: StadiumStructure,
@@ -122,6 +124,10 @@ export function standFor(
   const rows = tier.rowsFromMap && mapRows ? mapRows : tier.stand.rows;
   const stand: StandProfile = { ...tier.stand, rows, ...override };
   if (override?.noCover) delete stand.overhang;
+  // Its back where the tier's stands, measured from the front row.
+  if (tier.backFromFront && override?.backSetbackFt === undefined) {
+    stand.backSetbackFt = (tier.stand.backSetbackFt ?? 0) + (tier.stand.rows - stand.rows) * (stand.treadFt ?? DEFAULT_TREAD_FT);
+  }
   return { tierKey, tier, stand };
 }
 

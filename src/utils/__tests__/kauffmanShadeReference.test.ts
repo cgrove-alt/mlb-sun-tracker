@@ -23,11 +23,14 @@
  *     step in the front rows), so they have no cover.
  *   - [RYS] the edges of the upper deck's double-letter rows (402–407,
  *     433–438), "where the roof does not reach", stay in the sun at a 1 PM
- *     game. The model shades 41% of their seats over the game: the roof's
+ *     game. The model shades 34% of their seats over the game: the roof's
  *     edge is over the back rows of 403, 405, 407, 433 and 437 (from row
  *     16–19), which it covers, and the roof, 155–161 ft up, stands behind
  *     most of the rest. Along 436's and 437's rows (their treads and fall
- *     line, 14–15° off the line's direction) it is not behind them.
+ *     line, 14–15° off the line's direction) it is not behind them, and
+ *     behind 404 and 438, not measured, it stands where it stands for the
+ *     full sections, counted from their front rows (28 and 33 ft behind
+ *     their last rows): 438 is in the sun all game.
  *   - [RYS] every 100-level section is in the sun until at least 3:00. 142
  *     faces its rows' climb, 166° (planes fitted to its treads and its fall
  *     line agree), and along them the upper deck's front, 61 ft up, stands

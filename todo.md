@@ -4201,6 +4201,186 @@ turns.
 **Final checks:** the full suite passes, 3,599 of 3,599 (11 new: the
 restated Great American checks); the type check and eslint are clean.
 
+## §22 Short sections' backs (plan, 2026-11-18)
+
+Asked: plan the short-section setback fix (noticed in §21 phase B).
+Branch `fix/short-section-setback`, from `main` after PR #96.
+
+**The problem.**
+- The engine puts a section's back `rows × tread + backSetbackFt` from
+  its front row (`shadeEngine.ts`). A section with no back of its own
+  takes its tier's setback, but its own row count from the club's map
+  (`rowsFromMap`).
+- Where a tier's sections share a front line and the short ones end
+  sooner, the structure doesn't move with the last row, but the model's
+  back does:
+  - Kauffman's 8-row 438 and 439 get the roof's edge 12 ft behind their
+    last row; the measured 11–12-row sections have it 17–25 ft behind.
+  - Coors' 25-row L311 and L313 get the roof's edge 30 ft *behind*
+    their last row; the tier's measured 25-row sections have it 25 ft
+    *in front*.
+- Measured sections are not affected: the tool measures each back from
+  the section's own last row (through `standFor`, as the engine).
+- Not every tier is like this. Sections can also share the back line
+  and start rows up (Rate Field's shortened upper sections), and then
+  the setback is the shared quantity, which is what the engine does now.
+
+**Which tiers: the measured sections say.** For each tier, take its
+measured sections whose back is the tier's structure (height within 6
+ft of the tier's). Compare the spread (IQR) of their setbacks with the
+spread of the back's distance from their front row (`tmp/lidar/s22`):
+- **12 tiers are firmly front-aligned.** Each has 4+ sections across 2+
+  row counts, and the distance from the front row has an IQR within 5 ft
+  that is 5+ ft tighter than the setbacks':
+  - Angels field;
+  - Athletics behind home;
+  - Busch 100s, loge, club level and Pavilion;
+  - Camden upper deck;
+  - Citizens Bank 200s and behind home;
+  - Coors club and upper level;
+  - Kauffman upper deck.
+- 20 tiers show the opposite (back-aligned), and the rest can't tell
+  (too few sections, or one row count).
+
+**The rule.** In a front-aligned tier, a section with no back of its
+own keeps the tier's structure where it is, at the same distance from
+its front row:
+`setback = tier's setback + (tier's rows − its rows) × tread`.
+The tier's setback becomes the median, over its measured sections, of
+that distance less the tier's rows.
+
+**Scope.** 383 sections take their tier's setback with a different row
+count:
+- **Changed by this fix:** 52 sections the scan doesn't measure, in 10 of
+  the 12 tiers; 49 of their backs move (three already sit where the rule
+  puts them). Athletics behind home and Busch's Pavilion have none to
+  change, so they aren't flagged.
+- **Kept at their measured values:** the measured sections in those tiers
+  that take the tier's value today (27). The flag shifts them by the
+  same rule. Where that no longer gives their measured back, the audit
+  lists them and they take it as their own entry.
+- **Unchanged:**
+  - 217 more unmeasured sections at lidar parks, in back-aligned tiers or
+    tiers without firm evidence;
+  - 114 sections at the eight parks without lidar.
+
+**What it changes** (what-if, `tmp/lidar/s22/whatif.ts`): at the five
+2025 test games, 26 sections at 5 parks change their answers (62
+section-games, 109 half-hour steps, 30 confidence labels). Examples:
+- Kauffman's 418–426 and 438–439 get the edge 14–41 ft behind (12);
+- Busch's 169–172, 15 or 12 rows, get the roof 57–66 ft behind (34);
+- Coors L311 and L313 get the roof's edge 25 ft in front (30 behind);
+- Angels' 101, 134 and 135 (27–28 rows) get the roof 29–32 ft behind,
+  and the 21-row 120 48 ft behind (41).
+
+**Fix** (one PR):
+1. *Engine.* An optional tier flag, `backFromFront` (on `TierStructure`).
+   `standFor` shifts the setback by the row difference for a section
+   with no setback of its own (one line). A unit test covers it.
+2. *Tool.* `scripts/lidar/standSections.ts` exports the flag. For
+   flagged tiers, `measureStandHeights.py` takes the tier's setback
+   median as the distance from the front row, converted to the tier's
+   rows, so the back audit compares like with like.
+3. *Data, one commit per park:*
+   - flag the 10 tiers and re-take their setback medians;
+   - give the measured sections that relied on the tier's value their
+     own back, through the §18 guard;
+   - say it in the tier comments.
+4. *Checks:*
+   - the audits, the reference checks and post claims (investigated,
+     not tuned);
+   - the full suite, the type check and eslint;
+   - the snapshot, and a review here.
+
+**Not in this plan:** the eight parks without lidar, tiers without firm
+evidence, and the back-aligned tiers, which already behave correctly.
+
+### Steps
+- [x] C1. Engine flag and `standFor` line, with a unit test.
+- [x] C2. Tool: export the flag; flagged tiers' setback median from the
+      front.
+- [x] C3. Data, one commit per park (Angels, Busch, Camden, Citizens
+      Bank, Coors, Kauffman): flag, medians, own backs, comments.
+- [x] C4. Checks; snapshot; review. (PR: when asked.)
+
+### §22 Review (2026-11-18)
+
+**What changed:**
+- **Engine.** `TierStructure.backFromFront`. In a flagged tier, a
+  section with no setback of its own keeps the tier's back at the same
+  distance from its front row: `standFor` adds (the tier's rows − its
+  rows) × tread to the tier's setback, which is for the tier's
+  `stand.rows`. Unit tests cover shorter and longer sections, the
+  tier's own row count, a section's own back and unflagged tiers.
+- **Tool.** `standSections.ts` exports the flag. For flagged tiers,
+  `measureStandHeights.py` takes the setback median from each back's
+  distance to its front row, less the tier's rows. Re-measuring the six
+  parks changed no section's values, only the flagged tiers' medians.
+- **Data: 9 tiers flagged at 6 parks, each taking its median from the
+  front row** (for its rows):
+  - Angels field: 35 ft behind (41);
+  - Busch: 100s 26 ft behind (34), loge 15 ft in front (17), club level
+    31 ft in front (26);
+  - Camden upper: 32 ft in front (24);
+  - Citizens Bank 200s: 22 ft in front (14);
+  - Coors: upper level 19 ft behind (30); club level unchanged (23 in
+    front);
+  - Kauffman upper: 157 ft, 5 ft in front (156 ft, 12 behind).
+
+  The unmeasured sections of other lengths then get backs that match
+  their measured neighbours of the same length. Measured sections that
+  relied on the tier's value mostly land on their own; six that don't
+  keep it as their own entry: Busch 229 and 232, Citizens Bank 206–209.
+- **Two kept exceptions resolved:** the Busch 100s' 34 ft and the
+  Kauffman upper deck's 12 ft. Both had been kept because the setback's
+  median mixed section lengths, which is exactly what this fixes.
+- **Reference checks and notes:**
+  - *Busch:* the March check on 152–158 now finds 156 half shaded at
+    first pitch. It is not measured and takes the roof 26 ft behind its
+    last row, as 152 (also 26 rows) measures. It is recorded with 152 and
+    153, under the same reason (the sun under the line of the roof over
+    the 400s), not tuned. The note's numbers were stale and are
+    corrected.
+  - *Kauffman:* the upper deck's edges are 34% shaded over the July 1:10
+    PM game (41%); 438 is in the sun all game, as Rate Your Seats has the
+    edges.
+
+**Where it went differently from the plan:**
+- *Citizens Bank's field level behind home isn't flagged.* Its comment
+  says 122 and 125 start at row 24: the short sections share the back
+  line. The from-front test passed on five scattered values (−28 to +17
+  ft). It keeps its value; 128 is unchanged.
+- *Two sections whose tier's structure was never theirs* take their
+  measured twin's values instead of being shifted:
+  - Citizens Bank 211 is open, as 210: the 300 level's front 2 ft behind
+    its last row, not over its rows.
+  - Busch 270 is in the loge's 265–272: covered from row 12 and the roof
+    over the 400s 3 ft behind, as 268.
+- *Sections with the tier's own row count also move,* where they take
+  the tier's value, because the old median mixed lengths: Busch 144,
+  Camden 308 and 380–388, Coors' 9-row L312, L317, L325 and L336, and
+  Busch's 10-row loge sections. The new values match their measured
+  neighbours (Coors' 9-row L329 and L332 measure the new 19 ft).
+- *The back audit (`tmp/lidar/ownBackCheck.ts`) now rounds the model's
+  setback*, since the shifted ones are fractional (rows × 2.75 ft). On
+  `main`'s data this changes nothing.
+
+**Results, at the five 2025 test games across all 30 parks:**
+- Answers change for 36 sections (186 half-hour steps): Kauffman 14,
+  Busch 12, Camden 6, Coors 6, Angels 2, Citizens Bank 1.
+- Labels: 19 up, 34 down. The Low share stays 26.7%.
+
+**Checks:**
+- *Audits:* identical to the baseline but for the two resolved kept
+  lines (2,371 on the rule's rake; 2,323 own fronts, 49 set on purpose;
+  2,361 own backs, 11 set on purpose; no underside under 9 ft).
+- *Tests:* 3,602 of 3,602 (3 new). The type check and eslint are
+  clean.
+
+**Not changed:** the 114 sections at the eight parks without lidar, and
+the tiers with no firm evidence either way. A tier whose measured
+sections later show alignment can take the flag the same way.
+
 ---
 ---
 
