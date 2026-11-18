@@ -4760,18 +4760,21 @@ const COORS: StadiumStructure = {
       label: 'Left-field stands (151–160)',
       // Rows 2–23 or 2–20, not covered ("in June and July the sunniest
       // seats"). Lidar (9 of 10; 151's place on the seat map cuts a ramp):
-      // front row 5 ft (4–8), 18° rake (17–18; 158 and 160 along the median
-      // of their rows' fall lines); behind, 42 ft up and 43 ft back (the
-      // scoreboard in 154, 107 ft; each measured section its own).
-      stand: { rows: 22, frontRowHeightFt: 5, rakeDeg: 18, backHeightFt: 42, backSetbackFt: 43 },
+      // front row 5 ft (4–8), 18° rake (17–19; 152, 155, 156, 158 and 160
+      // along their rows, which turn from 314° to due north along the
+      // stands); behind, 47 ft up and 34 ft back (the scoreboard in 154,
+      // 107 ft; each measured section its own).
+      stand: { rows: 22, frontRowHeightFt: 5, rakeDeg: 18, backHeightFt: 47, backSetbackFt: 34 },
       sections: withRakes(withFronts(withBacks({}, {
-        '152': [42, 45], '153': [39, 50], '154': [107, 43], '155': [25, 7], '156': [37, 47],
+        '152': [51, 34], '153': [39, 50], '154': [107, 43], '155': [25, 6], '156': [38, 53],
         '157': [32, 21], '158': [84, 91], '159': [47, 12], '160': [47, 11],
       }), {
-        '156': 8, '158': 4, '160': 6,
+        '158': 4, '160': 6,
+        '155': 4,
       }), {
         '153': 17,
         '158': 17,
+        '156': 19,
       }),
       rowsFromMap: true,
       heightsSourced: true,
@@ -4806,7 +4809,7 @@ const COORS: StadiumStructure = {
         '204': [68, -29], '205': [68, -43], '206': [69, -43], '219': [68, -18], '221': [68, -15],
         '222': [68, -15], '223': [68, -18], '226': [68, -25], '227': [71, -19], '238': [68, -18],
         '239': [68, -15], '241': [69, -17], '242': [69, -20], '243': [68, -25], '244': [69, -25],
-        '245': [69, -25], '246': [69, -23],
+        '245': [69, -25], '246': [69, -25],
       }), {
         '223': 35, '227': 35,
       }),

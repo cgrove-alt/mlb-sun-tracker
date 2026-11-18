@@ -623,9 +623,14 @@ describe('Coors Field stand directions (measured on the 2019 aerial photo)', () 
   });
 
   it('the outfield stands follow their walls', () => {
-    expect(stand('155')).toBe(330);
     expect(stand('107')).toBe(48);
     expect(stand('205')).toBe(48);
+  });
+
+  it('the left-field stands face their own rows on the lidar', () => {
+    // Planes fitted to the treads and the fall line in the middle agree that
+    // 152–156's rows climb toward 314°, 16° off the wall's 330°.
+    expect(stand('155')).toBe(314);
   });
 });
 
