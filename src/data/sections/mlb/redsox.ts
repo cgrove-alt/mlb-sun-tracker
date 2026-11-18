@@ -21,15 +21,21 @@ export const redsoxSections: DetailedSection[] = buildParkSections(ORIENTATION, 
       // Turned where two lidar measurements agree on the way the rows climb
       // (scripts/measureStandHeights.py treads): planes fitted to the treads
       // (five readings within 15°) and the fall line in the middle (within 8°
-      // of them), both more than 10° off the direction fitted on the map; each
-      // faces their mean.
+      // of them), both more than 10° off the direction they had (fitted on
+      // the map or on a photo); each faces their mean.
       { ids: ['B111'], facingDeg: 175 },
       { ids: ['B113'], facingDeg: 175 },
       { ids: ['B144'], facingDeg: 275 },
+      { ids: ['B162'], facingDeg: 308 },
+      { ids: ['B164'], facingDeg: 305 },
       { ids: ['B7'], facingDeg: 158 },
       { ids: ['D29'], facingDeg: 173 },
       { ids: ['D51'], facingDeg: 275 },
+      { ids: ['F10'], facingDeg: 163 },
       { ids: ['F11'], facingDeg: 158 },
+      { ids: ['F24'], facingDeg: 172 },
+      { ids: ['F25'], facingDeg: 171 },
+      { ids: ['F27'], facingDeg: 173 },
       { ids: ['F28'], facingDeg: 173 },
       { ids: ['F29'], facingDeg: 173 },
       { ids: ['F47'], facingDeg: 249 },
