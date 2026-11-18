@@ -6825,7 +6825,7 @@ const TARGET: StadiumStructure = {
         '201': [147, 8], '202': [148, 3], '203': [148, -4], '206': [148, -4], '207': [148, 0],
         '208': [148, 1], '211': [148, 4], '212': [148, 4], '213': [148, -3], '215': [148, -3],
         '216': [148, -3], '218': [148, -3], '220': [148, 0], '221': [148, -2], '222': [148, -2],
-        '223': [148, 1], '224': [148, 1], '225': [148, -7], '226': [148, -5], '227': [147, -2],
+        '223': [148, 1], '224': [148, 1], '225': [148, -7], '226': [148, -5], '227': [148, -2],
       }), {
         '224': 74,
         '206': 74,
@@ -6875,12 +6875,13 @@ const TARGET: StadiumStructure = {
     },
     porchUpper: {
       label: 'Home Run Porch, 300 level (329–334)',
-      // Rows 1–16, open. Lidar (4 of 8): front row 61 ft, 36° rake; behind,
-      // 87–109 ft up right behind the last row (the scoreboard, the bottom
+      // Rows 1–16, open. Lidar (4 of 8; 331 along its rows, 11° off the
+      // photo's run): front row 61 ft, 36° rake; behind, 87–106 ft up right
+      // behind the last row (the scoreboard, the bottom
       // of its face 99 ft, reaches over 331's and 332's last two rows,
       // too few to change the source's open rows; nothing behind 333).
-      stand: { rows: 16, frontRowHeightFt: 61, rakeDeg: 36, treadFt: 2.8, backHeightFt: 97, backSetbackFt: 1 },
-      sections: withBacks({}, { '331': [109, 2], '332': [106, -3], '333': [32, 129], '334': [87, 1] }),
+      stand: { rows: 16, frontRowHeightFt: 61, rakeDeg: 36, treadFt: 2.8, backHeightFt: 96, backSetbackFt: -1 },
+      sections: withBacks({}, { '331': [104, -5], '332': [106, -3], '333': [32, 129], '334': [87, 1] }),
       rowsFromMap: true,
       heightsSourced: true,
       coverSourced: true,
