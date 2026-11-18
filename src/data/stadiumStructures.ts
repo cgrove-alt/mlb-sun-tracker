@@ -5201,10 +5201,12 @@ const KAUFFMAN: StadiumStructure = {
       // front rows sit below a step; 403, 405, 406, 427 and 434–437 along
       // their rows, 13–15° off the photo's directions): front row 60 ft
       // (59–61), 32° rake (31–33); what rises highest behind is the roof's
-      // edge, 156 ft up and 12 ft back (the measured median is 2 ft back,
-      // the full sections'; the tier keeps 12 for the sections the scan does
-      // not measure, 12 of 15 of them 5–15 rows, behind whose last rows the
-      // edge stands further back). That edge is over their last rows; in five over row
+      // edge, 157 ft up and 5 ft in front of a 22-row section's last row.
+      // The sections share the front line, the shorter ones ending sooner,
+      // so one the scan does not measure (12 of the 15 are 5–15 rows) keeps
+      // the edge at the same distance from its front row (`backFromFront`):
+      // 22 ft behind a 12-row section's last row, 33 behind an 8-row one's.
+      // That edge is over their last rows; in five over row
       // 16–20, three or more rows, which they take, under its face's
       // bottom, 152–154 ft (153 in 409, where none is seen). Each measured
       // section takes its own back: the edge is 0–7 ft in front of the last
@@ -5218,7 +5220,7 @@ const KAUFFMAN: StadiumStructure = {
       // behind: so they are covered too (as at Nationals Park's Gallery),
       // under its face's bottom or lowest structure there, 149–154 ft (153
       // in 405, where none is seen).
-      stand: { rows: 22, frontRowHeightFt: 60, rakeDeg: 32, backHeightFt: 156, backSetbackFt: 12 },
+      stand: { rows: 22, frontRowHeightFt: 60, rakeDeg: 32, backHeightFt: 157, backSetbackFt: -5 },
       sections: withRakes(withFronts(withBacks({
         '403': { overhang: { coveredFromRow: 16, soffitHeightFt: 154 } },
         '437': { overhang: { coveredFromRow: 16, soffitHeightFt: 152 } },
@@ -5248,6 +5250,7 @@ const KAUFFMAN: StadiumStructure = {
       }),
 
       rowsFromMap: true,
+      backFromFront: true,
       heightsSourced: true,
       coverSourced: true,
       sources: [RYS_KAUFFMAN, ...kauffmanSections('404', '409', '417', '427', '439'), KAUFFMAN_LIDAR],
