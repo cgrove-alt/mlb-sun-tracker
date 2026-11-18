@@ -3987,7 +3987,19 @@ fronts, backs and covered rows, and the tier medians, as in §17 and §18.
 - [x] A2. Directions for the 80; re-measure; stability; photo runs.
 - [x] A3. Parks, one commit each: maps, covers, checks.
 - [x] A4. Checks; snapshot; review. (PR: when asked.)
-- [ ] B. The 220 at 10–15°, the same way, as a second PR.
+- [x] B. The 220 at 10–15°, the same way, as a second PR
+  (`fix/tread-audit-b`, from `main` after PR #95):
+  - [x] B1. Baseline from `main`: re-measure the 22 lidar parks, audits,
+        snapshot; the listing's turns not in phase A (`tmp/lidar/s21b`).
+        Found: the listing never checked the fall line's own offset, so
+        "220" counted 157 sections whose fall line is within 10°. With the
+        rule as written (both more than 10° off), phase B is 65 sections
+        at 16 parks. Also found: Great American 136 kept a back read
+        before phase A moved its covered row (fixed first).
+  - [x] B2. Directions; re-measure; drop any turn that doesn't hold; photo
+        runs.
+  - [x] B3. Parks, one commit each: maps, covers, checks.
+  - [x] B4. Checks; snapshot; review. (PR: when asked.)
 
 ### §21 Review, phase A (2026-11-18)
 
@@ -4080,6 +4092,114 @@ fronts, backs and covered rows, and the tier medians, as in §17 and §18.
 - **Not run:** the production build and Playwright (CI runs them).
 
 **Next:** phase B, the 220 sections 10–15° off, the same way.
+
+### §21 Review, phase B (2026-11-18)
+
+**Found first, from a fresh baseline** (all 22 lidar parks re-measured
+from `main`; the rake and front audits and the snapshot matched phase
+A's final exactly):
+- *Great American 136* kept a back read before phase A moved its covered
+  row (20 → 24). Re-measured, rows 1–23 see the club's front, 69 ft up,
+  28 ft in front of the last row, as 127, 129 and 130 do. Fixed in its
+  own commit; the back audit is back to phase A's.
+- *The tool's listing* never checked the fall line's own offset, though
+  the rule needs both readings more than 10° off. The plan's "220"
+  counted 157 sections whose fall line is 10° or less off. Fixed; phase B
+  is the 65 that meet the rule as written (phase A, all more than 15°
+  off, was not affected).
+- *The lidar-turn blocks* said "off the direction fitted on the map";
+  some were photo runs. Reworded in all 19 files.
+
+**What changed:**
+- **Directions.** Of the 65, six did not hold when re-measured (Busch
+  141, Camden 312, Great American 435, Fenway PR16, Kauffman 212, Target
+  Field 226) and keep theirs. **59 sections at 16 parks** turn 11–15°:
+  Kauffman 9, Camden and Fenway 6, Angels and Dodgers 5, Nationals and
+  Coors 4, Petco, Rate Field and Yankees 3, Busch, Citi, PNC, Great
+  American and Target Field 2, Truist 1.
+- **Maps,** through the §18 guard, one commit per park. White Sox 117's
+  own rake sat in a shared constant (`RATE_LOWER_RAKE`) the editor can't
+  reach; dropped by hand.
+- **Tier medians that move:** Truist porch front 7 → 6 ft; Dodgers Lower
+  Reserve rake 30 → 31°, Top Deck back 27 → 29 ft in front; Citi
+  Promenade back 18 → 19 in front; Camden right corner rake 13 → 14°,
+  front 2 → 1 ft, club ends rake 22 → 23°, back 3 → 4 in front; Petco
+  left box front 3 → 4 ft, rake 10 → 11°, back 12 → 14 in front; PNC
+  upper back 120 → 121 ft; Coors left stands back 47 → 38 ft (only 151,
+  unmeasured, uses it); Target porch back 97@1 → 96@-1; Rate right field
+  37@42 → 39@44; Yankees Terrace back 11 → 12 ft behind.
+- **Kept, with the reason written:**
+  - Nationals outfield back 46 ft (the median, 64, mixes the structure
+    over 103's and 104's back rows with what rises behind 101, 102 and
+    105, where 105's cut now crosses a light tower);
+  - Kauffman upper back 156@12 (the median, 2 ft back, is the full
+    sections'; 12 of the 15 unmeasured sections it serves are 5–15 rows,
+    and taking it would shade 438 98% of a July 1:10 PM game);
+  - Nationals Gallery rake 31° (§17's choice at a 31.5° median, now
+    31.54°; I first moved it to 32 because the audit's count changed
+    from n19 to n20, then put it back).
+- **Covers and undersides:** PNC 322 takes the scan's row 9 (re-measured
+  after: its back holds); Dodgers 51FD's underside 22 ft (§8, its front
+  row rose 2 ft).
+- **Tests and posts:**
+  - Stand-direction test: Truist 148, Nationals 305 and Petco 130/134
+    assert their lidar directions with the reason; the photo checks move
+    to 149, 307 and 128.
+  - Kauffman reference header: the note on the upper deck's edges said
+    22% shaded; it was already 45% before phase B, now 41%, with the
+    roof covering five sections' back rows and not behind 436 and 437.
+  - Yankees post: only 313 and 314 are shaded before the 6th on July 12
+    (Low confidence); 312 is now partly shaded from the 4th.
+
+**Results, at the five 2025 test games across all 30 parks:**
+- Answers change for 66 sections (281 half-hour steps); labels: 41 up,
+  45 down. The Low share stays 26.7%.
+- *The snapshot script was wrong:* it stored each step by its status's
+  first letter, so "sun" and "shaded" were both `s` and a change between
+  them was not seen. Fixed (o, ~, #); every earlier count from it,
+  including phase A's 71 sections and 309 steps, is an undercount.
+
+**Checks:**
+- *Audits:* the same as the baseline but the two kept tier backs above
+  (2,371 on the rule's rake; 2,323 own fronts, 49 set on purpose; 2,361
+  own backs, 11 set on purpose; no underside under 9 ft).
+- *Tests:* see the end of this review. The type check and eslint are
+  clean.
+- *Dev server:* the Yankees post shows its new July 12 line, with no
+  console or server errors.
+- *Commits:* my first per-park staging patched with no context and put
+  some lines in the wrong place (Busch's front rows inside the next
+  tier's comment). The 15 park commits were rebuilt by copying each
+  park's segment of `stadiumStructures.ts` whole into the index, and the
+  index parsed after each.
+
+**Great American's reference check (decided: restated to the source).**
+"[RYS] the first-base side gets the sun at its back first" asked for the
+first-base 100s to be more than 90% shaded 1 hour into the July 12 4:10
+PM game. Along 132's rows
+(241°) its first five of 42 rows are still in the sun then, and the mean
+falls to 89.8%. It was 90.5% before phase B, and the other ten sections
+alone average 89.99%: the shadow is crossing their front rows (0–8 in
+the sun) right then, and all are shaded by 5:40 but 136's first four
+rows. Rate Your Seats' words are comparative ("seats on the first base
+side of the field are the first to get shade"), with "good shade
+starting near Row DD in Section 127" down to 137; the 90% is the test's.
+The check now asserts both: the first-base 100s are more shaded than the
+third-base ones at every half-hour step (90% against 11% an hour in),
+and rows from DD (the row before the source's EE) back are shaded all
+game in 127–137 (137 from the second step, where the scan's club front
+is over its row 29, not the source's 19). Both hold with or without the
+turns.
+
+**Noticed, not changed:**
+- A tier's back setback is taken from the tier's full-row profile, so an
+  unmeasured short section (rows from the map) gets the edge as if its
+  last row were the full section's. An engine change across many parks.
+- The 157 sections whose treads are firmly 10–15° off but whose fall
+  line is within 10°: one method alone, so they stay.
+
+**Final checks:** the full suite passes, 3,599 of 3,599 (11 new: the
+restated Great American checks); the type check and eslint are clean.
 
 ---
 ---
