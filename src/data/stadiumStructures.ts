@@ -183,8 +183,8 @@ const YANKEES: StadiumStructure = {
       // source has it. 104 has 18 rows (Rate Your Seats), and the deck's
       // front, 32 ft up, is taken right behind its last row, not over it.
       // Lidar (45 of 50; 132, 133 and 135 along their rows' fall lines,
-      // 30–39° off the map's direction, and 112–118W, 124, 125 and S122A
-      // along their rows by the treads and the fall line, 16–22° off): front
+      // 30–39° off the map's direction, and 112–118W, 123–125 and S122A
+      // along their rows by the treads and the fall line, 13–22° off): front
       // row 6 ft (4–10), 12° rake (8–15). What rises highest behind is the
       // canopy, 139 ft up and 43 ft behind the last row (a lamp bank on it,
       // 139–141 ft, where a section's cut crosses one, as 25 of the 45 do;
@@ -221,7 +221,7 @@ const YANKEES: StadiumStructure = {
         '136': { noCover: true },
       }, {
         '134': [133, 59], '133': [139, 38], '130': [141, 29], '132': [139, 38], '127A': [139, 38],
-        '125': [141, 44], '124': [141, 39], '121B': [140, 41], '122': [133, 41], '123': [132, 46],
+        '125': [141, 44], '124': [141, 39], '121B': [140, 41], '122': [133, 41], '123': [133, 43],
         'S122B': [140, 34], 'S122A': [133, 43], '121BW': [73, 5],
         '121A': [133, 52], '120B': [132, 57], '120BW': [132, 48],
         '121AW': [140, 38], '119': [132, 54], '118': [139, 41], '118W': [72, 7],
@@ -329,10 +329,10 @@ const YANKEES: StadiumStructure = {
       label: 'Terrace level (300s)',
       // 7–10 rows, not covered (sourced). Lidar (49 of 55): front row 72 ft
       // (71–73), 31° rake; what rises highest behind is the canopy, 139 ft
-      // up and 11 ft behind the last row (its top 132–134 ft, or a lamp bank
-      // on it, 137–141, where a section's cut crosses one, as 26 of the 49
+      // up and 12 ft behind the last row (its top 132–134 ft, or a lamp bank
+      // on it, 137–141, where a section's cut crosses one, as 25 of the 49
       // do); each measured section takes its own (4–22 ft behind).
-      stand: { rows: 9, frontRowHeightFt: 72, rakeDeg: 31, backHeightFt: 139, backSetbackFt: 11 },
+      stand: { rows: 9, frontRowHeightFt: 72, rakeDeg: 31, backHeightFt: 139, backSetbackFt: 12 },
       sections: withRakes(withFronts(withBacks({ '320B': { rows: 10 }, '314': { rows: 8 } }, {
         '327': [132, 14], '330': [133, 14], '331': [140, 7], '326': [139, 6], '325': [132, 19],
         '325W': [141, 9], '326W': [139, 6], '331W': [132, 17], '333W': [134, 16], '330W': [139, 7],
@@ -342,21 +342,20 @@ const YANKEES: StadiumStructure = {
         '319W': [141, 9], '320AW': [132, 22], '318W': [132, 19], '309': [132, 12], '310': [133, 17],
         '313': [140, 7], '314': [139, 9], '315': [139, 7], '309W': [140, 7], '314W': [141, 12],
         '315W': [140, 9], '305': [140, 7], '305W': [140, 7], '308': [140, 7], '332A': [140, 6],
-        '332B': [140, 7], '329': [140, 7], '328': [139, 7], '324': [132, 19], '312': [141, 7],
+        '332B': [140, 7], '329': [140, 7], '328': [139, 7], '324': [132, 19], '312': [132, 12],
         '316': [139, 9],
         '310W': [133, 12],
         '313W': [133, 12],
         '311': [133, 12],
       }), {
         '331W': 73, '321': 73, '321W': 73, '318': 73, '319': 73, '320B': 73, '319W': 73, '318W': 73,
-        '310': 73, '313': 73, '315': 73, '314W': 71, '315W': 73, '305': 73, '332A': 73,
-        '312': 73,
+        '310': 73, '315': 73, '314W': 71, '315W': 73, '305': 73, '332A': 73,
         '327': 73,
         '325W': 73,
         '324': 73,
         '326W': 73,
       }), {
-        '327W': 32, '321': 30, '321W': 30, '319': 30, '320B': 33, '319W': 30, '313': 30,
+        '327W': 32, '321': 30, '321W': 30, '319': 30, '320B': 33, '319W': 30, '313': 32,
         '314': 33, '313W': 32, '314W': 33,
         '326': 33,
         '326W': 32,
