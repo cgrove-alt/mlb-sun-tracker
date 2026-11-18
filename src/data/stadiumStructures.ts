@@ -6713,18 +6713,16 @@ const TARGET: StadiumStructure = {
     club: {
       label: 'Delta SKY360 Club (A–D, K–V)',
       // Rows 1–12 (to 14), covered from row 9 (sourced). Lidar (14 of 15):
-      // front row 38 ft, 21° rake; the upper deck's front row, 72–73 ft up,
+      // front row 38 ft, 22° rake; the upper deck's front row, 72–73 ft up,
       // reaches out over row 6, three rows ahead of the source's, so the
       // rows from 6 are covered; its underside is not seen: that row less
       // 9 ft. Seen from the middle of the five open rows, what rises highest
       // behind is the canopy, 148 ft up over the last row; in N, U and V the
       // upper deck's front, 76 ft up, 18–24 ft in front of it.
-      stand: { rows: 12, frontRowHeightFt: 38, rakeDeg: 21, treadFt: 2.8, backHeightFt: 148, backSetbackFt: 0, deckFrontFt: 72, overhang: { coveredFromRow: 6, soffitHeightFt: 63 } },
-      sections: withFronts(withBacks({}, {
-        'A': [148, 3], 'C': [149, 0], 'D': [148, -2], 'K': [148, -2], 'L': [148, -2], 'N': [76, -18],
+      stand: { rows: 12, frontRowHeightFt: 38, rakeDeg: 22, treadFt: 2.8, backHeightFt: 148, backSetbackFt: 0, deckFrontFt: 72, overhang: { coveredFromRow: 6, soffitHeightFt: 63 } },
+      sections: withBacks({}, {
+        'C': [149, 0], 'D': [148, -2], 'K': [148, -2], 'L': [148, -2], 'N': [76, -18],
         'T': [148, 3], 'U': [76, -22], 'V': [76, -24],
-      }), {
-        'A': 37,
       }),
       rowsFromMap: true,
       heightsSourced: false,
