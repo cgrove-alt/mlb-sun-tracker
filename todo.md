@@ -3902,6 +3902,185 @@ medians, as in §18.
   on their treads*, and 213 more at 10–15° (above). This is the next
   audit; check it against the stand-direction test's photo runs first.
 
+## §21 Tread audit of all sections (plan, 2026-11-17)
+
+Asked: plan the tread audit of all sections. Branches `fix/tread-audit-a`
+and then `fix/tread-audit-b`, from `main` after PR #94.
+
+**The problem.**
+- Most sections face the direction fitted on the club's seat map: square
+  to a line through each section and its four nearest ring-mates.
+- §17 turned a section only where its middle fall line was *firmly* more
+  than 15° off: every equally good reading had to be. The fall-line fit
+  resolves only about 10°, so that rule leaves a section on the map's
+  direction when it is 10–15° off, or more than 15° off but not firmly.
+- §20 added a second measurement: planes fitted to the treads.
+
+**Is the tread reading trustworthy?** Checked against the stand-direction
+test's photo runs (57 runs, 276 sections; front edges measured on aerial
+photos):
+- *On the 114 photo-run sections with firm treads* (five readings within
+  15° of each other), the treads agree with the photo to a median of 4°.
+  92 are within 10°, and the signed mean is +1°, so there's no overall
+  bias.
+- *Where they disagree by more than 10° (22 sections)*, the fall line
+  read in the middle sides with the treads in 19 and with the photo in
+  none. There the photo's edge isn't square to the rows: Camden 14, 18
+  and 312 read 154–156° on both lidar methods, against the photo's 166°.
+  This is the pattern §17 found for six photo runs.
+- *Rings aren't off as a whole.* Within a ring, sections are off both
+  ways (Fenway's field boxes 13 one way and 27 the other), so it's the
+  map's fit section by section, mostly at bends, not a rotation to fix
+  ring by ring.
+
+**The rule.** A section faces the mean of its two lidar readings where:
+- its tread readings agree within 15°;
+- the fall line read in its middle is within 8° of the treads' median;
+- both are more than 10° off its direction.
+
+That gives 300 sections at 20 parks, all on the map's direction:
+- Fenway 55, Kauffman 30, Yankees 29, Great American 27, Camden 24,
+  Dodgers 24, White Sox 15, Angels 15, Busch 14, Coors 12, Nationals
+  10;
+- Citi and Target Field 9 each, Petco 6, Oracle and Citizens Bank 5
+  each, PNC 4, Comerica 3, Athletics and Truist 2 each.
+- 19 of them are on photo runs.
+- 40 more have firm treads more than 10° off but a fall line that
+  doesn't agree; they stay.
+
+**What it changes** (direction alone, at the five 2025 test games;
+`scratchpad/treadWhatIf.ts`):
+- **A: the 80 more than 15° off.** Answers change for 66 (338
+  half-hour steps).
+- **B: the 220 at 10–15° off.** Answers change for 196 (729 steps).
+
+Re-measuring along the new directions then moves their own rakes,
+fronts, backs and covered rows, and the tier medians, as in §17 and §18.
+
+**Fix**, in two phases (A, then B), each its own PR:
+1. *Tool.* `treads` adds the fall line's agreement and lists the
+   qualifying sections as `standRuns` entries facing the mean of the two
+   readings.
+2. *Directions,* in a block of their own at the top of each park's
+   `standRuns`.
+   - Re-measure each park along them.
+   - Check both methods then agree within 10° of the new direction, and
+     drop any turn that doesn't hold.
+   - Photo-run sections move to scan assertions in the stand-direction
+     test, each with the reason, as §17 did.
+3. *One commit per park:*
+   - the maps through the §18 guard;
+   - covered rows against the true source (the §18 lesson);
+   - the §8 undersides;
+   - reference checks and post claims (investigated, not tuned).
+4. *Checks:* audits, the full suite, the type check, eslint, the
+   snapshot, the dev server for any post that changes, and a review here.
+
+**Not in this plan (noticed):**
+- *The 40 with firm treads but a disagreeing fall line*, and sections
+  whose treads scatter: one direction can't be read for them.
+- *The eight parks without lidar,* whose directions still come from
+  the map alone.
+
+### Steps
+- [x] A1. Tool: the two-method listing.
+- [x] A2. Directions for the 80; re-measure; stability; photo runs.
+- [x] A3. Parks, one commit each: maps, covers, checks.
+- [x] A4. Checks; snapshot; review. (PR: when asked.)
+- [ ] B. The 220 at 10–15°, the same way, as a second PR.
+
+### §21 Review, phase A (2026-11-18)
+
+**What changed:**
+- **Tool (`scripts/measureStandHeights.py treads`).** It lists the
+  sections where the treads (five readings within 15°) and the fall line
+  in the middle (within 8° of them) agree, both more than 10° off, as
+  `standRuns` entries facing their mean. Sections whose treads are firm
+  but whose fall line disagrees are named and kept.
+- **Directions.** The tool lists 304 sections at 10° and over (the plan
+  counted 300 from rounded values); 82 are more than 15° off. Three of
+  those didn't hold when re-measured along the new direction, and keep
+  the map's:
+  - Dodgers 10DG (its fall line then 40° off, as in §18);
+  - Mets 212 (18° off);
+  - Yankees 106 (its rows not found along it).
+
+  So **79 sections at 14 parks** turn, in a block of their own at the
+  top of each park's `standRuns`: Yankees 18, Fenway 17, Kauffman 8,
+  Dodgers 7, Great American 7, Busch, Coors and Rate Field 4 each,
+  Citizens Bank 3, Oracle and Citi 2 each, and Comerica, PNC and Target
+  Field 1 each. Re-measured along them, every one's treads and fall line
+  lie within 10°.
+- **Maps,** through the §18 guard, one commit per park: rakes, fronts and
+  backs re-measured. The guard now also drops an own rake equal to its
+  tier's, and own values the medians made redundant go (the Yankees'
+  field-level fronts of 6 ft, for example).
+- **Tier medians that move:**
+  - Target Field club rake 21° → 22°;
+  - Yankees field front 7 → 6 ft;
+  - backs: Yankees field 134 ft 46 back → 139 ft 43 back, Terrace 137 →
+    139 ft; Coors left stands 42 ft 43 back → 47 ft 34 back; PNC left
+    corner 66 ft 57 back → 65 ft 66 back; Rate Field right field 35 ft
+    25 back → 37 ft 42 back; Great American first base 33 → 29 ft back,
+    third base 40 → 33, View level −30 → −31; Comerica third base −9 →
+    −11; Kauffman plaza corner −38 → −39.
+
+  Kept with their reasons: Rate Field left field (the bleachers' back,
+  as 160 measures it), Citizens Bank's three-section field tier (shared
+  profile), Fenway's right-field boxes.
+- **Covered rows against the true source:**
+  - Dodgers 15FD 22 → 19 (the source's T);
+  - Citizens Bank 133 31 → 28 (the 100 level's) and 113 34 → 33;
+  - Great American 112 33 → 31, 136 20 → 24, 137 30 → 29;
+  - Fenway B111 6 → 8, under the lower structure behind home, as B105
+    and B150;
+  - Yankees 216 11 → 8 (the tier's).
+- **Tests and posts:**
+  - Stand-direction test: six sections move from photo runs to their
+    lidar direction, each with the reason: Oracle 101, Citizens Bank
+    133, Coors 155, Great American 112, Kauffman 112 and 142.
+  - Kauffman reference: Rate Your Seats' "every 100-level section in the
+    sun until 3:00" holds for the sections. Along 142's rows the upper
+    deck's front, 7 ft behind its last row, shades its last two of 23
+    rows from 1:10 to 2:10 PM; the check now names it and keeps the rest
+    of the 100 level unshaded.
+  - Yankees post:
+    - 309 is in the sun at Low confidence;
+    - the terrace sections shaded before the 6th are 312, 313 and 314
+      (Low for 314);
+    - on July 10 more than nine in ten of the 100s and 200s are shaded
+      by the 2nd inning.
+
+**Where it went differently from the plan:**
+- *The session broke overnight* and the scratchpad was cleared, losing
+  the pre-turn baselines. They were rebuilt by re-measuring the 14 parks
+  with the turns set aside (the tool is deterministic). The rebuilt
+  audits matched §20's exactly. This work's state now lives in
+  `tmp/lidar/s21`, which isn't cleared.
+- *Kauffman 142's reference exception* wasn't foreseen.
+- *Fenway B111* didn't take the tier's row, as a plain row check would
+  have given: the structure over it is the lower one behind home (35–36
+  ft), not the Grandstand roof the tier describes.
+
+**Results, at the five 2025 test games across all 30 parks:**
+- Answers change for 71 sections (309 half-hour steps): Yankees 23,
+  Fenway 15, Dodgers 7, Great American 7, Kauffman 6, Busch 4, and 1–2
+  at the rest.
+- Labels: 43 up, 51 down. The Low share is 26.7% (26.6%).
+
+**Checks:**
+- *Audits:* exactly as before (2,371 on the rule's rake but Pirates
+  139; 2,323 own fronts and 49 set on purpose; 2,361 own backs and 11
+  set on purpose; no underside under 9 ft). The three kept tier backs'
+  medians moved slightly.
+- *Tests:* the full suite passes, 3,586 of 3,586. The type check and
+  eslint are clean.
+- *Dev server:* the Yankees post shows its three new lines, and the
+  Yankees page loads, with no console or server errors.
+- **Not run:** the production build and Playwright (CI runs them).
+
+**Next:** phase B, the 220 sections 10–15° off, the same way.
+
 ---
 ---
 
