@@ -3921,8 +3921,11 @@ const OPACY: StadiumStructure = {
       // (sourced; the lidar puts the roof's edge over row 14). Lidar (29 of
       // 37): front row 63 ft (63–64), 30° rake (27–31); the roof's edge is
       // 119 ft up with nothing seen below it (a thin roof), and is what rises
-      // highest behind (each measured section its own).
-      stand: { rows: 25, frontRowHeightFt: 63, rakeDeg: 30, backHeightFt: 122, backSetbackFt: -24, overhang: { coveredFromRow: 15, soffitHeightFt: 119 } },
+      // highest behind: 32 ft in front of a 25-row section's last row, 24 in
+      // the 22-row ones. Counted from the front row it is in the same place
+      // over all of them, so one the scan does not measure keeps that
+      // distance (`backFromFront`; each measured section its own).
+      stand: { rows: 25, frontRowHeightFt: 63, rakeDeg: 30, backHeightFt: 122, backSetbackFt: -32, overhang: { coveredFromRow: 15, soffitHeightFt: 119 } },
       sections: withRakes(withFronts(withBacks({
         ...Object.fromEntries(OPACY_300_SKIPPING.map((id) => [id, { overhang: { coveredFromRow: 12, soffitHeightFt: 119 } }])),
         '381': { overhang: { coveredFromRow: 8, soffitHeightFt: 119 } }, // rows 8–25
@@ -3941,6 +3944,7 @@ const OPACY: StadiumStructure = {
       }),
 
       rowsFromMap: true,
+      backFromFront: true,
       heightsSourced: true,
       coverSourced: true,
       sources: [RYS_OPACY, ...opacySections('308', '312', '330', '342', '360', '381', '388'), OPACY_LIDAR],
