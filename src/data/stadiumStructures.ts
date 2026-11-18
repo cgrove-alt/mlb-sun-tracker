@@ -885,8 +885,8 @@ const DODGERS: StadiumStructure = {
     field: {
       label: 'Field level',
       // Rows A–X (22 rows, no I), covered from row T (19th) by the Loge
-      // (sourced; the lidar puts the Loge's front edge at row 19, 16–22; at
-      // row 22 in 15FD and row 17 in 53FD, which take the lidar's row).
+      // (sourced; the lidar puts the Loge's front edge at row 19, 17–21; at
+      // row 17 in 53FD, which takes the lidar's row).
       // Sections 52 and 53 have rows AA, A–Z (25), so T is their 20th.
       // Lidar (53 of 53): front row 1 ft (-1 to 4), 12° rake (9–13). What
       // rises highest behind depends on where the section is: down the
@@ -894,9 +894,9 @@ const DODGERS: StadiumStructure = {
       // row), behind home the Top Deck's roof (139 ft) or the box on it
       // (155 ft), in the corners the Reserve roof (120 ft, the median).
       // Estimated: the Loge's underside ~21 ft (9 ft above row T's floor,
-      // a foot under the Loge's measured 22-ft front row; 22 ft over 15FD's
-      // row 22, and over 2FD, 3FD, 4FD, 6FD and 36FD, whose own front rows
-      // sit higher). Each measured section takes its own back.
+      // a foot under the Loge's measured 22-ft front row; 22 ft over 2FD,
+      // 3FD, 4FD, 6FD and 36FD, whose own front rows sit higher). Each
+      // measured section takes its own back.
       stand: {
         deckFrontFt: 23,
         rows: 22,
@@ -907,7 +907,6 @@ const DODGERS: StadiumStructure = {
         overhang: { coveredFromRow: 19, soffitHeightFt: 21 },
       },
       sections: withRakes(withFronts(withBacks({
-        '15FD': { overhang: { coveredFromRow: 22, soffitHeightFt: 22 } },
         '52FD': { rows: 25, overhang: { coveredFromRow: 20, soffitHeightFt: 21 } },
         ...Object.fromEntries(['2FD', '3FD', '4FD', '6FD', '36FD'].map((id) => [id, { overhang: { coveredFromRow: 19, soffitHeightFt: 22 } }])),
         '53FD': { rows: 25, overhang: { coveredFromRow: 17, soffitHeightFt: 21 } },
@@ -915,11 +914,11 @@ const DODGERS: StadiumStructure = {
         '2FD': [139, 72], '24FD': [58, 9], '22FD': [58, 11], '20FD': [59, 11], '18FD': [139, 75],
         '46FD': [120, 85], '42FD': [57, 11], '40FD': [59, 12], '36FD': [58, 9], '34FD': [58, 11],
         '32FD': [58, 11], '30FD': [59, 11], '28FD': [59, 11], '26FD': [59, 12], '16FD': [138, 75],
-        '14FD': [139, 76], '12FD': [139, 76], '19FD': [139, 75], '15FD': [139, 86],
+        '14FD': [139, 76], '12FD': [139, 76], '19FD': [139, 75], '15FD': [139, 75],
         '17FD': [139, 75], '23FD': [120, 89], '31FD': [59, 11], '33FD': [59, 11], '35FD': [58, 11],
         '37FD': [59, 11], '39FD': [59, 11], '7FD': [139, 75], '9FD': [139, 76], '11FD': [139, 76],
-        '13FD': [139, 80], '21FD': [59, 11], '25FD': [58, 11], '27FD': [57, 11], '29FD': [59, 11],
-        '41FD': [58, 11], '50FD': [56, 9], '48FD': [120, 88], '38FD': [58, 9], '10FD': [139, 76],
+        '13FD': [139, 75], '21FD': [59, 11], '25FD': [58, 11], '27FD': [57, 11], '29FD': [59, 11],
+        '41FD': [58, 11], '50FD': [56, 9], '48FD': [120, 78], '38FD': [58, 9], '10FD': [139, 76],
         '8FD': [139, 75], '6FD': [139, 75], '4FD': [139, 70], '1FD': [155, 95], '3FD': [139, 73],
         '5FD': [139, 75], '47FD': [58, 12], '49FD': [121, 75], '51FD': [120, 83],
         '53FD': [120, 65],
@@ -927,13 +926,13 @@ const DODGERS: StadiumStructure = {
         '43FD': [120, 75],
         '45FD': [120, 75],
       }), {
-        '2FD': 2, '46FD': 0, '36FD': 2, '15FD': 0, '17FD': 0, '23FD': -1, '9FD': 0, '48FD': 0,
+        '2FD': 2, '46FD': 0, '36FD': 2, '17FD': 0, '23FD': -1, '9FD': 0, '48FD': 0,
         '6FD': 2, '4FD': 2, '52FD': 0, '51FD': 0, '53FD': 2,
         '50FD': 2,
         '3FD': 2,
       }), {
-        '20FD': 13, '30FD': 11, '28FD': 11, '17FD': 13, '9FD': 13, '11FD': 11, '13FD': 11,
-        '50FD': 11, '48FD': 11, '10FD': 11, '6FD': 11, '4FD': 11, '1FD': 11, '5FD': 13,
+        '20FD': 13, '30FD': 11, '28FD': 11, '17FD': 13, '9FD': 13, '11FD': 11,
+        '50FD': 11, '10FD': 11, '6FD': 11, '4FD': 11, '1FD': 11, '5FD': 13,
       }),
       heightsSourced: false,
       coverSourced: true,
@@ -961,7 +960,7 @@ const DODGERS: StadiumStructure = {
       sections: withRakes(withFronts(withBacks({}, {
         '163LG': [57, -38], '166LG': [57, -38], '105LG': [58, -42], '164LG': [57, -37],
         '126LG': [58, -42], '144LG': [59, -40], '148LG': [58, -42], '156LG': [58, -42],
-        '160LG': [58, -35], '158LG': [58, -38], '132LG': [59, -38], '138LG': [57, -42],
+        '160LG': [59, -37], '158LG': [58, -38], '132LG': [59, -38], '138LG': [57, -42],
         '134LG': [59, -40], '146LG': [58, -38], '142LG': [59, -40], '130LG': [58, -38],
         '128LG': [58, -42], '162LG': [58, -37], '154LG': [58, -42], '152LG': [58, -42],
         '122LG': [58, -38], '120LG': [58, -42], '116LG': [58, -42], '114LG': [58, -38],
@@ -989,14 +988,14 @@ const DODGERS: StadiumStructure = {
         '159LG': [58, -40],
         '161LG': [58, -40],
       }), {
-        '105LG': 23, '126LG': 23, '160LG': 21, '128LG': 23, '120LG': 23, '116LG': 23, '106LG': 23,
+        '105LG': 23, '126LG': 23, '128LG': 23, '120LG': 23, '116LG': 23, '106LG': 23,
         '104LG': 23, '101LG': 23, '103LG': 23, '149LG': 23, '155LG': 23, '153LG': 23, '151LG': 23,
         '115LG': 23, '117LG': 23, '119LG': 23, '131LG': 24, '133LG': 23, '135LG': 23, '137LG': 23,
         '129LG': 23, '127LG': 23, '125LG': 23, '139LG': 23, '141LG': 23, '145LG': 23, '143LG': 23,
         '147LG': 23, '111LG': 23, '157LG': 23, '159LG': 23, '161LG': 23,
         '107LG': 23,
       }), {
-        '160LG': 18, '122LG': 18, '112LG': 20, '106LG': 18, '102LG': 20,
+        '122LG': 18, '112LG': 20, '106LG': 18, '102LG': 20,
         '115LG': 20, '121LG': 18, '125LG': 18, '123LG': 18, '165LG': 20,
         '105LG': 20,
       }),
@@ -1080,14 +1079,10 @@ const DODGERS: StadiumStructure = {
         '28RS': [120, 2], '27RS': [121, 7],
         '35RS': [120, 6],
         '32RS': [120, 2],
-        '55RS': [120, 7],
-        '47RS': [120, 7],
       }), {
         '32RS': 59, '28RS': 59,
         '27RS': 56, '56RS': 57,
         '24RS': 57,
-        '55RS': 57,
-        '47RS': 57,
         '35RS': 57,
       }), {
         '48RS': 31, '40RS': 31, '44RS': 31,
@@ -1095,6 +1090,8 @@ const DODGERS: StadiumStructure = {
         '51RS': 31,
         '28RS': 31,
         '24RS': 31,
+        '55RS': 31,
+        '47RS': 31,
       }),
       heightsSourced: true,
       coverSourced: true,
@@ -1146,11 +1143,11 @@ const DODGERS: StadiumStructure = {
         '3TD': { overhang: { coveredFromRow: 17, soffitHeightFt: 136 } },
       }, {
         '9TD': [139, -29], '7TD': [139, -29], '3TD': [155, 9], '1TD': [154, -12], '2TD': [139, -29],
-        '13TD': [139, -13], '4TD': [139, -29], '12TD': [139, -29], '10TD': [139, -29],
+        '13TD': [139, -15], '4TD': [139, -29], '12TD': [139, -29], '10TD': [139, -29],
       }), {
-        '11TD': 96, '13TD': 96, '5TD': 96,
+        '11TD': 96, '5TD': 96,
       }), {
-        '11TD': 33, '7TD': 33, '13TD': 33, '5TD': 33, '4TD': 33, '6TD': 33,
+        '11TD': 33, '7TD': 33, '5TD': 33, '4TD': 33, '6TD': 33,
       }),
       heightsSourced: false,
       coverSourced: true,
