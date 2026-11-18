@@ -4793,19 +4793,19 @@ const COORS: StadiumStructure = {
       label: 'Left-field stands (151–160)',
       // Rows 2–23 or 2–20, not covered ("in June and July the sunniest
       // seats"). Lidar (9 of 10; 151's place on the seat map cuts a ramp):
-      // front row 5 ft (4–8), 18° rake (17–19; 152, 155, 156, 158 and 160
-      // along their rows, which turn from 314° to due north along the
-      // stands); behind, 47 ft up and 34 ft back (the scoreboard in 154,
-      // 107 ft; each measured section its own).
-      stand: { rows: 22, frontRowHeightFt: 5, rakeDeg: 18, backHeightFt: 47, backSetbackFt: 34 },
+      // front row 5 ft (4–8), 18° rake (17–19; 152–156, 158 and 160 along
+      // their rows, which turn from 314° to due north along the stands);
+      // behind, 38 ft up and 34 ft back (25–84 ft; each measured section its
+      // own).
+      stand: { rows: 22, frontRowHeightFt: 5, rakeDeg: 18, backHeightFt: 38, backSetbackFt: 34 },
       sections: withRakes(withFronts(withBacks({}, {
-        '152': [51, 34], '153': [39, 50], '154': [107, 43], '155': [25, 6], '156': [38, 53],
+        '152': [51, 34], '153': [37, 43], '154': [38, 50], '155': [25, 6], '156': [38, 53],
         '157': [32, 21], '158': [84, 91], '159': [47, 12], '160': [47, 11],
       }), {
         '158': 4, '160': 6,
         '155': 4,
+        '153': 4,
       }), {
-        '153': 17,
         '158': 17,
         '156': 19,
       }),
@@ -4874,7 +4874,8 @@ const COORS: StadiumStructure = {
       label: 'Upper level (300s, in front of the walkway)',
       // Rows 1–5 or 1–9 in front of the walkway, open; full-height sections
       // (rows 1–25) covered from row 19 by the roof (sourced). Lidar (21 of
-      // 29; L311's cut crosses its rows at an angle): front row 67 ft
+      // 29; L311's cut crosses its rows at an angle; L344 and L346 along
+      // their rows, 13–15° off the photo's third-base direction): front row 67 ft
       // (67–68), 27° rake (25–30); what rises highest behind is the roof's
       // edge, 128 ft up and 30 ft back. In L319, L343 and L345 (along the
       // median of its rows' fall lines) that edge is over row 16, which they
@@ -4889,15 +4890,16 @@ const COORS: StadiumStructure = {
         L343: cover(16, 128),
         L345: cover(16, 128),
       }, {
-        'L345': [128, -27], 'L344': [128, 27], 'L343': [128, -25], 'L342': [106, 29],
+        'L345': [128, -27], 'L344': [129, 25], 'L343': [128, -25], 'L342': [106, 29],
         'L340': [127, 29], 'L338': [128, 32], 'L334': [129, 32], 'L333': [129, 30],
         'L332': [129, 19], 'L330': [129, 30], 'L329': [128, 19], 'L326': [128, 32],
         'L323': [129, 30], 'L321': [83, 9], 'L319': [100, -17], 'L315': [129, 32],
+        'L346': [128, 29],
       }), {
         'L346': 68, 'L345': 68, 'L344': 68, 'L343': 68, 'L342': 68, 'L332': 68, 'L330': 68,
         'L329': 68, 'L327': 68, 'L319': 68,
       }), {
-        'L346': 29, 'L340': 29, 'L332': 29, 'L329': 29,
+        'L346': 31, 'L340': 29, 'L332': 29, 'L329': 29,
       }),
       rowsFromMap: true,
       heightsSourced: true,
