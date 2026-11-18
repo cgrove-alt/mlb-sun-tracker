@@ -5094,7 +5094,7 @@ const KAUFFMAN: StadiumStructure = {
       // takes its own).
       stand: { rows: 20, frontRowHeightFt: 16, rakeDeg: 21, backHeightFt: 60, backSetbackFt: -39, deckFrontFt: 59, overhang: { coveredFromRow: 6, soffitHeightFt: 50 } },
       sections: withFronts(withBacks({}, {
-        '209': [60, -36], '211': [58, -25], '212': [61, -39], '213': [60, -39], '243': [60, -39],
+        '209': [60, -36], '211': [58, -25], '212': [61, -39], '213': [61, -39],
         '244': [60, -38],
       }), {
         '213': 17,
@@ -5152,15 +5152,20 @@ const KAUFFMAN: StadiumStructure = {
     upper: {
       label: 'Upper deck (400s, rows A–V)',
       // Single-letter rows, no cover given. Lidar (22 of 37; behind home the
-      // front rows sit below a step): front row 60 ft (59–61), 32° rake
-      // (31–33); what rises highest behind is the roof's edge, 156 ft up and
-      // 12 ft back. That edge is over their last rows; in five over row
+      // front rows sit below a step; 403, 405, 406, 427 and 434–437 along
+      // their rows, 13–15° off the photo's directions): front row 60 ft
+      // (59–61), 32° rake (31–33); what rises highest behind is the roof's
+      // edge, 156 ft up and 12 ft back (the measured median is 2 ft back,
+      // the full sections'; the tier keeps 12 for the sections the scan does
+      // not measure, 12 of 15 of them 5–15 rows, behind whose last rows the
+      // edge stands further back). That edge is over their last rows; in five over row
       // 16–20, three or more rows, which they take, under its face's
       // bottom, 152–154 ft (153 in 409, where none is seen). Each measured
-      // section takes its own back: the edge is 0–6 ft in front of the last
-      // row of the full 19–22 row sections (405–413, 429–435) and 19–32 ft
-      // behind the shorter ones; behind 403 and 437 the roof's back end,
-      // 135–136 ft. Where it is over only the
+      // section takes its own back: the edge is 0–7 ft in front of the last
+      // row of the full 19–22 row sections (405–413, 429–435) and 17–32 ft
+      // behind the shorter ones; along 403's rows something 122 ft up stands
+      // 40 ft behind its last row, and along 436's and 437's the roof is not
+      // behind them (nothing more than 18 ft above their last rows). Where it is over only the
       // last row or two (405, 407, 411, 413, 433), under option A's
       // three-row mark, its edge is what rises behind them, just in front of
       // the last row, which would leave the rows under it with nothing
@@ -5180,16 +5185,20 @@ const KAUFFMAN: StadiumStructure = {
         '413': { overhang: { coveredFromRow: 21, soffitHeightFt: 149 } },
         '433': { overhang: { coveredFromRow: 19, soffitHeightFt: 154 } },
       }, {
-        '403': [136, 32], '411': [154, -6], '413': [158, -4], '416': [150, 32], '427': [150, 6],
+        '403': [122, 40], '411': [154, -6], '413': [158, -4], '416': [150, 32], '427': [151, 2],
         '428': [161, 25], '429': [161, -4], '430': [161, 24], '431': [161, -2], '432': [155, 21],
-        '433': [155, -2], '434': [154, 22], '435': [157, -1], '436': [149, 29], '437': [135, 34],
-        '405': [157, -2], '406': [154, 19], '407': [161, 0], '409': [157, -6], '410': [157, 22],
+        '433': [155, -2], '434': [161, 21], '435': [157, -4], '436': [93, 16], '437': [91, -10],
+        '405': [156, -7], '406': [157, 17], '407': [161, 0], '409': [157, -6], '410': [157, 22],
         '412': [161, 24], '415': [150, 2],
       }), {
-        '428': 61, '405': 59,
+        '428': 61,
+        '403': 59,
+        '434': 61,
+        '406': 59,
       }), {
-        '403': 31, '411': 33, '413': 33, '416': 33, '428': 31, '431': 33, '436': 31, '437': 31,
+        '411': 33, '413': 33, '416': 33, '428': 31, '431': 33,
         '410': 31,
+        '405': 33,
       }),
 
       rowsFromMap: true,
