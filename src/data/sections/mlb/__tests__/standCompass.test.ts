@@ -483,8 +483,15 @@ describe('Nationals Park stand directions (measured on the 2023 aerial photo)', 
     expect(stand(id)).toBe(164);
   });
 
-  it.each(['112', '115', '203', '207', '305', '405'])('third-base section %s faces 254°', (id) => {
+  it.each(['112', '115', '203', '207', '307', '405'])('third-base section %s faces 254°', (id) => {
     expect(stand(id)).toBe(254);
+  });
+
+  it('the Gallery\'s 305 faces its own rows on the lidar', () => {
+    // Planes fitted to its treads and the fall line in its middle agree its
+    // rows climb toward 266°, 12° off the level lines along the line, as
+    // 304's (271°) and 306's (269°) beside it do: the Gallery turns there.
+    expect(stand('305')).toBe(266);
   });
 
   it.each(['C', 'DC122', 'DC123', '213', '313'])('behind-home section %s faces away from center field', (id) => {

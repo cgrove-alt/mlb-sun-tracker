@@ -3403,7 +3403,8 @@ const NATS: StadiumStructure = {
       label: 'Field level (100s)',
       // Rows A–WW and the like (up to 49 rows); Rate Your Seats counts them
       // covered by the 200 level from about row RR (NATS_100_COVER). Lidar (21
-      // of 22): front row 1 ft (-2 to 1), 13° rake (12–13); the 200 level's
+      // of 22; 111 along its rows, 15° off the photo's third-base direction):
+      // front row 1 ft (-2 to 1), 13° rake (12–13); the 200 level's
       // front, 37 ft up, reaches out over row 36 (33–41; the 300 level's over
       // 108), so the rows from there back are covered, under an underside of
       // ~28 ft (that front row less 9 ft), never under 9 ft above the first
@@ -3421,16 +3422,16 @@ const NATS: StadiumStructure = {
         ...Object.fromEntries(['134', '135'].map((id) => [id, { overhang: { coveredFromRow: 33, soffitHeightFt: 30 } }])),
         '136': { overhang: { coveredFromRow: 40, soffitHeightFt: 35 } },
       }, {
-        '108': [133, 24], '109': [134, 42], '110': [134, 1], '111': [142, -9], '112': [140, -4],
+        '108': [133, 24], '109': [134, 42], '110': [134, 1], '111': [134, -9], '112': [140, -4],
         '113': [142, 6], '114': [140, -2], '115': [142, -4], '116': [142, -4], '117': [138, 1],
         '118': [142, 29], '127': [141, 27], '128': [133, 6], '129': [142, -3], '130': [139, -8],
         '131': [141, -7], '132': [133, 6], '133': [142, 1], '134': [134, 3], '135': [142, -16],
         '136': [134, -4],
       }), {
-        '108': -2, '109': 0, '110': 0, '111': 0, '112': -1, '113': -2, '114': 0, '115': -1, '132': 0,
+        '108': -2, '109': 0, '110': 0, '112': -1, '113': -2, '114': 0, '115': -1, '132': 0,
         '133': 0,
       }), {
-        '108': 12, '109': 12, '110': 12, '111': 12, '112': 12, '113': 12, '133': 12, '135': 12,
+        '108': 12, '109': 12, '110': 12, '112': 12, '113': 12, '133': 12, '135': 12,
         '136': 12,
       }),
       rowsFromMap: true,
@@ -3442,7 +3443,11 @@ const NATS: StadiumStructure = {
       label: 'Outfield (100–107)',
       // Rows up to 30, open ("very few outfield seats are in the shade").
       // Lidar (6 of 8): front row 9 ft above the field (14 in 100, 10 in 101
-      // along its rows' fall line), 13° rake (13–14); behind, 46 ft up (41–94). Over the back rows of
+      // along its rows' fall line; 105 along its treads and fall line, 13°
+      // off the photo's run), 13° rake (13–14); behind, 46 ft up (41–103;
+      // the structure over 103's and 104's back rows: the median, 64 ft,
+      // mixes it with what rises behind 101, 102 and 105, where its cut
+      // crosses a light tower 103 ft up). Over the back rows of
       // 100 and 103–105 a structure reaches out (from row 24, 12 in 100, 27
       // in 103; the bottom of its face 39 ft up, 33–48), so those rows are
       // covered; over 101 and 102 the scan sees none. Each takes its own
@@ -3456,11 +3461,12 @@ const NATS: StadiumStructure = {
         '105': { overhang: { coveredFromRow: 24, soffitHeightFt: 39 } },
       }, {
         '100': [51, -41], '101': [94, 157], '102': [77, 173], '103': [42, -7], '104': [41, -6],
-        '105': [42, -7],
+        '105': [103, 10],
       }), {
         '100': 14, '101': 10, '102': 8,
       }), {
         '101': 14,
+        '105': 14,
       }),
       rowsFromMap: true,
       heightsSourced: true,
@@ -3591,8 +3597,9 @@ const NATS: StadiumStructure = {
       // Rows A–J or A–L; "nothing in the 300 level is covered". On the photo
       // the 300s' rows end where the Upper Gallery's roof begins (the 400s,
       // ~12.5 m deep, sit under it, covered from row C), so the roof's front
-      // edge stands just behind the 300s' last row. Lidar (20 of 21): front
-      // row 73 ft (71–74), 31° rake (28–34); the roof, 135 ft up, is what
+      // edge stands just behind the 300s' last row. Lidar (20 of 21; 305 and
+      // 306 along their rows, 12–15° off the photo's third-base direction):
+      // front row 73 ft (71–74), 31° rake (28–34); the roof, 135 ft up, is what
       // rises highest behind. Its edge reaches out over row 9 (8–12) in 18
       // of the 19 sections measured, 140 ft up with nothing seen below it (a
       // thin roof), so the rows from there back are covered. Where it covers
@@ -3613,12 +3620,13 @@ const NATS: StadiumStructure = {
         '304': { overhang: { coveredFromRow: 12, soffitHeightFt: 134 } },
         '315': { noCover: true },
       }, {
-        '302': [140, -4], '303': [133, 2], '304': [134, -3], '305': [135, 1], '306': [142, -7],
+        '302': [140, -4], '303': [133, 2], '304': [134, -3], '305': [142, -7], '306': [136, 1],
         '307': [141, -14], '308': [135, -6], '309': [134, -3], '310': [135, 0], '311': [136, 0],
         '312': [135, 0], '313': [137, 0], '315': [135, 4], '316': [133, 3], '317': [134, -3],
         '318': [142, -12], '319': [134, 3], '320': [141, -12], '321': [138, -4],
       }), {
         '302': 72, '303': 71, '304': 72, '308': 72, '312': 72, '316': 72,
+        '306': 72,
       }), {
         '303': 28,
       }),
