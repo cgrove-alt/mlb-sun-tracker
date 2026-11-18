@@ -60,6 +60,33 @@ export const marinersSections: DetailedSection[] = buildParkSections(ORIENTATION
   orientation: ORIENTATION,
   aerialControl: MARINERS_AERIAL_CONTROL,
   standRuns: [
+    // Turned where two lidar measurements agree on the way the rows climb
+    // (scripts/measureStandHeights.py treads): planes fitted to the treads
+    // (five readings within 15°; three for 107, its rows ending under the
+    // parked roof) and the fall line in the middle (within 8° of them), both
+    // more than 10° off the direction they had (fitted on the map or on a
+    // photo); each faces their mean.
+    { ids: ['107'], facingDeg: 99 },
+    { ids: ['111'], facingDeg: 141 },
+    { ids: ['112'], facingDeg: 143 },
+    { ids: ['120'], facingDeg: 179 },
+    { ids: ['150'], facingDeg: 318 },
+    { ids: ['185'], facingDeg: 1 },
+    { ids: ['186'], facingDeg: 0 },
+    { ids: ['187'], facingDeg: 1 },
+    { ids: ['242'], facingDeg: 293 },
+    // Turned to the rows' fall line, measured on the lidar
+    // (scripts/measureStandHeights.py): these sections' rows climb firmly
+    // more than 15° off the direction fitted on the map; each faces the
+    // median of the fall lines in its middle and 4 m to either side.
+    { ids: ['106'], facingDeg: 99 },
+    { ids: ['191'], facingDeg: 65 },
+    { ids: ['192'], facingDeg: 68 },
+    { ids: ['211'], facingDeg: 137 },
+    { ids: ['241'], facingDeg: 288 },
+    { ids: ['243'], facingDeg: 292 },
+    { ids: ['308'], facingDeg: 136 },
+    { ids: ['345'], facingDeg: 294 },
     ...step(181, 271.5, 15),
     { rings: RINGS, fromBearingDeg: 271.5, toBearingDeg: 331.99, facingDeg: 272 },
     // The left-field corner runs out to the foul pole (3°).
@@ -69,6 +96,12 @@ export const marinersSections: DetailedSection[] = buildParkSections(ORIENTATION
     { rings: RINGS, fromBearingDeg: 100, toBearingDeg: 123.99, facingDeg: 163 },
     { rings: RINGS, fromBearingDeg: 124, toBearingDeg: 180.99, facingDeg: 181 },
     ...step(330, 460, 20, ['bleachers']),
+  ],
+  // Rows that bend across the section, measured on the lidar
+  // (scripts/measureStandHeights.py faces): each third faces the rows' fall
+  // line read in it, where planes fitted to the treads confirm it.
+  standFaces: [
+    { id: '328', facesDeg: [202, 205, 227] },
   ],
   // Rings: the main level, the terrace club level, the view level and the
   // outfield bleachers.
