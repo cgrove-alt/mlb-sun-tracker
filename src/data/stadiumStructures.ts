@@ -6972,7 +6972,7 @@ const RATE_LOWER = { frontRowHeightFt: 0, rakeDeg: 14 };
  * beside it agree and its cut runs along the rows' fall line (108 straddles a bend: the tier's).
  */
 const RATE_LOWER_RAKE: Record<string, number> = {
-  '110': 13, '111': 13, '112': 13, '113': 13, '114': 13, '117': 13, '118': 13, '130': 15, '131': 13,
+  '110': 13, '111': 13, '112': 13, '113': 13, '114': 13, '118': 13, '130': 15, '131': 13,
   '151': 13, '152': 13, '154': 13, '156': 13,
 };
 /** A lower-box section's rise per row, at its own rake. */
@@ -7052,6 +7052,7 @@ const RATE: StadiumStructure = {
         '143': [130, -2], '144': [130, 11], '145': [130, 8], '146': [130, 4], '147': [130, 0],
         '148': [130, 0], '149': [130, 0], '150': [130, 0], '151': [130, 12], '152': [130, 12],
         '153': [130, 8], '154': [130, 27], '156': [130, 43],
+        '117': [130, 5],
       }), {
         '111': -1, '112': -1, '113': -1, '114': -1, '115': -1, '117': -1, '118': -1, '120': -1,
         '128': -1, '135': -1, '136': 1, '151': -1, '152': -1,
@@ -7064,17 +7065,16 @@ const RATE: StadiumStructure = {
     rightField: {
       label: 'Right-field outfield reserved (100–105)',
       // Rows 1–28 (104–105 from row 9), open ("none of the outfield seats
-      // are covered"). Lidar (6 of 6): front row 5 ft (9 in 104–105), 15°
-      // rake; behind, 27–89 ft up by section.
-      stand: { rows: 28, frontRowHeightFt: 5, rakeDeg: 15, backHeightFt: 37, backSetbackFt: 42 },
+      // are covered"). Lidar (6 of 6; 101 along its rows, 13° off the
+      // photo's run): front row 5 ft (9 in 104–105), 15° rake; behind, 27–89
+      // ft up by section.
+      stand: { rows: 28, frontRowHeightFt: 5, rakeDeg: 15, backHeightFt: 39, backSetbackFt: 44 },
       sections: withRakes(withFronts(withBacks({}, {
-        '100': [88, 53], '101': [33, 6], '102': [38, 43], '103': [89, 45], '104': [27, 2],
+        '100': [88, 53], '101': [41, 55], '102': [38, 43], '103': [89, 45], '104': [27, 2],
         '105': [36, 40],
       }), {
-        '101': 4, '104': 8, '105': 10,
-      }), {
-        '101': 14,
-      }),
+        '104': 8, '105': 10,
+      }), {}),
       rowsFromMap: true,
       heightsSourced: true,
       coverSourced: true,
@@ -7131,8 +7131,9 @@ const RATE: StadiumStructure = {
       label: 'Upper deck (506–558)',
       // Rows 1–21, covered from row 9 by the roof (sourced). Lidar (34 of
       // 36; 507–509 and 555 along their rows' fall line, 20–29° off the
-      // map's direction): front row 72 ft (70–80), 34° rake (514 straddles a
-      // bend, its cut across the rows); the roof's edge is over row 7
+      // map's direction, and 514 by its treads and fall line, 15° off the
+      // photo's first-base direction): front row 72 ft (70–80), 34° rake;
+      // the roof's edge is over row 7
       // (2 rows ahead of the source's, which stands; in 508, 509, 522, 526,
       // 538, 542 and 554 the cut starts a few rows up, past an aisle, and
       // counted from row 1 their edge is there too), the bottom of its face
@@ -7147,7 +7148,7 @@ const RATE: StadiumStructure = {
         overhang: { coveredFromRow: RATE_COVER[id], soffitHeightFt: 123 },
       }])), {
         '507': [130, -39], '508': [128, -42], '509': [129, -42], '510': [130, -34],
-        '512': [130, -36], '514': [130, -36], '518': [130, -28], '522': [130, -42],
+        '512': [130, -36], '514': [130, -38], '518': [130, -28], '522': [130, -42],
         '524': [130, -30], '526': [130, -42], '527': [130, -36], '530': [130, -39],
         '531': [130, -39], '535': [130, -39], '538': [130, -41], '540': [130, -28],
         '542': [130, -42], '544': [130, -36], '546': [130, -34], '550': [130, -38],
