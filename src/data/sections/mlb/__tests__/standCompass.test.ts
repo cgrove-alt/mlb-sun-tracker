@@ -398,7 +398,13 @@ describe('Truist Park stand directions (measured on the 2023 aerial photo)', () 
 
   it('the outfield stands follow their walls', () => {
     expect(stand('158')).toBe(212); // Chop House, rows along the right-field wall (121.5°)
-    expect(stand('148')).toBe(135); // Home Run Porch, rows along the left-center wall (~225°)
+    expect(stand('149')).toBe(135); // Home Run Porch, rows along the left-center wall (~225°)
+  });
+
+  it('the Home Run Porch\'s 148 faces its own rows on the lidar', () => {
+    // Planes fitted to its treads and the fall line in its middle agree its
+    // rows climb toward 121°, 14° off the run along the left-center wall.
+    expect(stand('148')).toBe(121);
   });
 
   it('sections the club calls level with first and third base sit beside them', () => {
@@ -477,8 +483,15 @@ describe('Nationals Park stand directions (measured on the 2023 aerial photo)', 
     expect(stand(id)).toBe(164);
   });
 
-  it.each(['112', '115', '203', '207', '305', '405'])('third-base section %s faces 254°', (id) => {
+  it.each(['112', '115', '203', '207', '307', '405'])('third-base section %s faces 254°', (id) => {
     expect(stand(id)).toBe(254);
+  });
+
+  it('the Gallery\'s 305 faces its own rows on the lidar', () => {
+    // Planes fitted to its treads and the fall line in its middle agree its
+    // rows climb toward 266°, 12° off the level lines along the line, as
+    // 304's (271°) and 306's (269°) beside it do: the Gallery turns there.
+    expect(stand('305')).toBe(266);
   });
 
   it.each(['C', 'DC122', 'DC123', '213', '313'])('behind-home section %s faces away from center field', (id) => {
@@ -560,8 +573,15 @@ describe('Petco Park stand directions (measured on the 2022 aerial photo)', () =
   });
 
   it('the outfield stands follow their walls', () => {
-    expect(stand('130')).toBe(298);
+    expect(stand('128')).toBe(298);
     expect(stand('133')).toBe(45);
+  });
+
+  it('the left-field box\'s 130 and 134 face their own rows on the lidar', () => {
+    // Planes fitted to their treads and the fall line in their middle agree
+    // their rows climb toward 311–313°, 13–15° off the run along the wall.
+    expect(stand('130')).toBe(313);
+    expect(stand('134')).toBe(311);
   });
 });
 

@@ -64,12 +64,16 @@ export const rockiesSections: DetailedSection[] = buildParkSections(ORIENTATION,
     // Turned where two lidar measurements agree on the way the rows climb
     // (scripts/measureStandHeights.py treads): planes fitted to the treads
     // (five readings within 15°) and the fall line in the middle (within 8°
-    // of them), both more than 10° off the direction fitted on the map; each
-    // faces their mean.
+    // of them), both more than 10° off the direction they had (fitted on
+    // the map or on a photo); each faces their mean.
     { ids: ['152'], facingDeg: 314 },
+    { ids: ['153'], facingDeg: 315 },
+    { ids: ['154'], facingDeg: 315 },
     { ids: ['155'], facingDeg: 314 },
     { ids: ['156'], facingDeg: 314 },
     { ids: ['246'], facingDeg: 245 },
+    { ids: ['L344'], facingDeg: 242 },
+    { ids: ['L346'], facingDeg: 244 },
     // Turned to the rows' fall line, measured on the lidar
     // (scripts/measureStandHeights.py): these sections' rows climb firmly
     // more than 15° off the direction fitted on the map; each faces the

@@ -66,8 +66,10 @@ export const twinsSections: DetailedSection[] = buildParkSections(ORIENTATION, c
     // Turned where two lidar measurements agree on the way the rows climb
     // (scripts/measureStandHeights.py treads): planes fitted to the treads
     // (five readings within 15°) and the fall line in the middle (within 8°
-    // of them), both more than 10° off the direction fitted on the map; each
-    // faces their mean.
+    // of them), both more than 10° off the direction they had (fitted on
+    // the map or on a photo); each faces their mean.
+    { ids: ['227'], facingDeg: 326 },
+    { ids: ['331'], facingDeg: 41 },
     { ids: ['A'], facingDeg: 223 },
     // Turned to the direction their treads climb: planes fitted to the
     // treads (scripts/measureStandHeights.py treads) agree within 15° and

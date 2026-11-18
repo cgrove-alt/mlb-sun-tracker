@@ -88,10 +88,9 @@ const CLAIMS: Record<ParkId, Claim[]> = {
     { quote: 'about a quarter of the terrace sections were shaded at first pitch', game: '2025-04-13 13:35', sections: tier('Terrace level (300s)'), expect: { share: 'shaded', at: [0], atLeast: 0.2, atMost: 0.3 } },
     { quote: 'and five in six by the end of the game;', game: '2025-04-13 13:35', sections: tier('Terrace level (300s)'), expect: { share: 'shaded', at: [180], atLeast: 0.8, atMost: 0.87 } },
     { quote: 'on July 12 none were shaded before the 4th inning,', game: '2025-07-12 13:05', sections: tier('Terrace level (300s)'), expect: { share: 'shaded', at: [0, 30], atMost: 0 } },
-    { quote: 'and only three (312, 313 and 314, under banks of lights on the roof) before the 6th (Low confidence for 314).', game: '2025-07-12 13:05', sections: ids('312', '313'), expect: { every: 'shaded', from: 60, minConfidence: 'medium' } },
-    { quote: 'and only three (312, 313 and 314, under banks of lights on the roof) before the 6th (Low confidence for 314).', game: '2025-07-12 13:05', sections: ids('314'), expect: { every: 'shaded', from: 60, minConfidence: 'low' } },
-    { quote: 'and only three (312, 313 and 314, under banks of lights on the roof) before the 6th (Low confidence for 314).', game: '2025-07-12 13:05', sections: and(tier('Terrace level (300s)'), (s) => !['312', '313', '314'].includes(s.sectionId)), expect: { share: 'shaded', at: [60], atMost: 0 } },
-    { quote: 'and only three (312, 313 and 314, under banks of lights on the roof) before the 6th (Low confidence for 314).', game: '2025-07-12 13:05', sections: tier('Terrace level (300s)'), expect: { share: 'shaded', at: [90], atLeast: 0.01 } },
+    { quote: 'and only two (313 and 314, under banks of lights on the roof) before the 6th (Low confidence).', game: '2025-07-12 13:05', sections: ids('313', '314'), expect: { every: 'shaded', from: 60, minConfidence: 'low' } },
+    { quote: 'and only two (313 and 314, under banks of lights on the roof) before the 6th (Low confidence).', game: '2025-07-12 13:05', sections: and(tier('Terrace level (300s)'), (s) => !['313', '314'].includes(s.sectionId)), expect: { share: 'shaded', at: [60], atMost: 0 } },
+    { quote: 'and only two (313 and 314, under banks of lights on the roof) before the 6th (Low confidence).', game: '2025-07-12 13:05', sections: tier('Terrace level (300s)'), expect: { share: 'shaded', at: [90], atLeast: 0.01 } },
   ],
   redsox: [
     { quote: 'Grandstand sections 1–33 are under the roof and shaded through the 9th inning', game: '2025-07-13 13:35', sections: tier('Grandstand'), expect: { every: 'shaded', to: 150, minConfidence: 'medium' } },

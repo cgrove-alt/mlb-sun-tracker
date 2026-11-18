@@ -66,8 +66,8 @@ export const philliesSections: DetailedSection[] = buildParkSections(
       // Turned where two lidar measurements agree on the way the rows climb
       // (scripts/measureStandHeights.py treads): planes fitted to the treads
       // (five readings within 15°) and the fall line in the middle (within 8°
-      // of them), both more than 10° off the direction fitted on the map; each
-      // faces their mean.
+      // of them), both more than 10° off the direction they had (fitted on
+      // the map or on a photo); each faces their mean.
       { ids: ['113'], facingDeg: 122 },
       { ids: ['133'], facingDeg: 255 },
       { ids: ['134'], facingDeg: 256 },
