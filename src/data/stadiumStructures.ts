@@ -31,6 +31,14 @@ export interface TierStructure {
   coverSourced: boolean;
   /** Use each section's own row count from the club's seat map. */
   rowsFromMap?: boolean;
+  /**
+   * The tier's sections share a front line, the shorter ones ending sooner,
+   * so what stands behind them stays put as the last row moves: a section
+   * with another row count and no back of its own keeps the tier's back at
+   * the same distance from its front row (`stand.backSetbackFt` is for the
+   * tier's `stand.rows`).
+   */
+  backFromFront?: boolean;
   sources: string[];
   notes?: string;
 }
