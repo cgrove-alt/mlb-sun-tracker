@@ -4979,29 +4979,31 @@ const KAUFFMAN: StadiumStructure = {
       // Rows A–X (fewer in the corners), no cover ("all 100 level sections
       // are exposed to the sun until at least 3:00"). Lidar (38 of 42): front
       // row 3 ft (-1 to 4), 14° rake (12–28); what rises highest behind is
-      // the roof's edge, 157 ft up and 66 ft back (in nine, the upper deck's
-      // front, 60 ft, 25 ft back). No deck over them. Each measured section
+      // the roof's edge, 157 ft up and 66 ft back (in ten, the upper deck's
+      // front, 60 ft, 7–30 ft back). No deck over them. Each measured section
       // takes its own back: behind home (113, 122–134) the roof's edge is
-      // 86–101 ft back; behind 108–112 and 142–147 the upper deck's front,
-      // 11–34 ft back.
+      // 86–101 ft back; behind 108–114 and 142–147 (112, 114 and 142–147
+      // along their rows) the upper deck's front, 7–30 ft back.
       stand: { rows: 24, frontRowHeightFt: 3, rakeDeg: 14, backHeightFt: 157, backSetbackFt: 66 },
       sections: withRakes(withFronts(withBacks({}, {
         '108': [59, 30],
- '110': [61, 14], '113': [141, 91], '114': [157, 60], '115': [161, 66],
+ '110': [61, 14], '113': [141, 91], '114': [58, 7], '115': [161, 66],
         '116': [161, 63], '117': [160, 65], '118': [161, 68], '119': [157, 71], '120': [160, 65],
         '121': [161, 65], '122': [161, 88], '123': [160, 91], '124': [161, 94], '125': [150, 89],
         '126': [150, 89], '127': [150, 93], '128': [150, 70], '129': [151, 88], '130': [151, 101],
         '131': [157, 99], '132': [161, 89], '133': [161, 88], '134': [161, 86], '135': [161, 65],
         '136': [161, 75], '137': [161, 66], '138': [155, 65], '139': [157, 62], '140': [157, 65],
-        '141': [160, 63], '142': [60, 11], '143': [60, 14], '144': [60, 30], '145': [60, 25],
-        '146': [61, 29], '147': [60, 34], '112': [60, 14],
+        '141': [160, 63], '142': [61, 7], '143': [60, 11], '144': [61, 21], '145': [61, 16],
+        '146': [61, 29], '147': [60, 30], '112': [61, 11],
       }), {
         '108': 4, '113': 2, '122': 0, '123': 0, '124': 0, '125': 0, '126': 0, '127': 0, '129': 0,
         '130': 0, '131': -1, '132': -1, '133': 0, '134': 0, '138': 2, '140': 2, '141': 2,
-        '145': 2, '146': 2, '147': 4,
+        '146': 2, '147': 4,
         '110': 4,
+        '144': 2,
       }), {
-        '114': 13, '115': 13, '138': 13, '142': 13, '143': 13, '146': 13,
+        '115': 13, '138': 13, '146': 13,
+        '144': 13,
       }),
       rowsFromMap: true,
       heightsSourced: true,
@@ -5049,13 +5051,13 @@ const KAUFFMAN: StadiumStructure = {
       // Rows AA–TT, covered from row NN (sourced). Lidar (6 of 10): front
       // row 16 ft, 21° rake; the upper deck's front reaches out over row 6
       // in all six (5–7), so the rows from there back are covered, under
-      // ~50 ft (as in the Plaza). That front is 38 ft in front of the last
+      // ~50 ft (as in the Plaza). That front is 39 ft in front of the last
       // row, 25 ft in 211, whose 14 rows end sooner (each measured section
       // takes its own).
-      stand: { rows: 20, frontRowHeightFt: 16, rakeDeg: 21, backHeightFt: 60, backSetbackFt: -38, deckFrontFt: 59, overhang: { coveredFromRow: 6, soffitHeightFt: 50 } },
+      stand: { rows: 20, frontRowHeightFt: 16, rakeDeg: 21, backHeightFt: 60, backSetbackFt: -39, deckFrontFt: 59, overhang: { coveredFromRow: 6, soffitHeightFt: 50 } },
       sections: withFronts(withBacks({}, {
         '209': [60, -36], '211': [58, -25], '212': [61, -39], '213': [60, -39], '243': [60, -39],
-        '244': [60, -36],
+        '244': [60, -38],
       }), {
         '213': 17,
       }),

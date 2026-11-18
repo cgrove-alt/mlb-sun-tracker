@@ -647,8 +647,13 @@ describe('Kauffman Stadium stand directions (measured on the 2022 aerial photo)'
     expect(aerialChartFit(royalsChartPoints, ROYALS_AERIAL_CONTROL).rmsM).toBeLessThan(5);
   });
 
-  it.each(['112', '118', '214', '309', '411'])('third-base section %s faces 271°', (id) => expect(stand(id)).toBe(271));
-  it.each(['138', '142', '240', '322', '433', '433R'])('first-base section %s faces 182°', (id) => expect(stand(id)).toBe(182));
+  it.each(['118', '214', '309', '411'])('third-base section %s faces 271°', (id) => expect(stand(id)).toBe(271));
+  it.each(['138', '240', '322', '433', '433R'])('first-base section %s faces 182°', (id) => expect(stand(id)).toBe(182));
+  // Planes fitted to their treads and the fall line in their middle agree
+  // these two climb 16–17° off the runs: the lower bowl turns toward the
+  // corners (112 and 114 to 288°, 142–147 to 161–166°).
+  it('third-base section 112 faces its own rows on the lidar', () => expect(stand('112')).toBe(288));
+  it('first-base section 142 faces its own rows on the lidar', () => expect(stand('142')).toBe(166));
 
   it.each(['127', '128', '225', '230', '314', '420', '420R'])('behind-home section %s faces away from center field', (id) => {
     expect(diff(stand(id), getStadiumOrientation('royals') + 180)).toBeLessThan(15);

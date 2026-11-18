@@ -67,6 +67,19 @@ export const royalsSections: DetailedSection[] = buildParkSections(
     orientation: ORIENTATION,
     aerialControl: ROYALS_AERIAL_CONTROL,
     standRuns: [
+      // Turned where two lidar measurements agree on the way the rows climb
+      // (scripts/measureStandHeights.py treads): planes fitted to the treads
+      // (five readings within 15°) and the fall line in the middle (within 8°
+      // of them), both more than 10° off the direction fitted on the map; each
+      // faces their mean.
+      { ids: ['112'], facingDeg: 288 },
+      { ids: ['114'], facingDeg: 288 },
+      { ids: ['142'], facingDeg: 166 },
+      { ids: ['143'], facingDeg: 165 },
+      { ids: ['144'], facingDeg: 164 },
+      { ids: ['145'], facingDeg: 163 },
+      { ids: ['147'], facingDeg: 161 },
+      { ids: ['244'], facingDeg: 165 },
       // Turned to the direction their treads climb: planes fitted to the
       // treads (scripts/measureStandHeights.py treads) agree within 15° and
       // lie more than 10° off the median of the rows' fall lines.
