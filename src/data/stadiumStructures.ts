@@ -2330,19 +2330,25 @@ const CBP: StadiumStructure = {
       // 221–224 from row 5; 210, 211 and 227 none). Lidar (24 of 32): front
       // row 44 ft (42–45), 24° rake (19–25); the 300 level's front reaches
       // out over row 3 (1–8; below by section), so the rows from there back
-      // are covered, and it is what rises highest behind (70 ft). Its
+      // are covered, and it is what rises highest behind (70 ft), 22 ft in
+      // front of a 10-row section's last row. The sections share the front
+      // line, so one the scan does not measure keeps that front at the same
+      // distance from its front row (`backFromFront`); 206–209, whose edge
+      // is over row 7–8, and the open 210 and 211 have their own. Its
       // underside: the 300 level's 69-ft front row less 9 ft, ~60 ft (63 ft
       // behind home, where that front row is 72 ft; over 216 the scan sees a
       // face, 54 ft up; 62 ft over 206 and 208, 9 ft above row 8's floor; 61
       // over 207, whose own front row sits a foot higher).
       // Each measured section takes its own back.
-      stand: { rows: 10, frontRowHeightFt: 44, rakeDeg: 24, backHeightFt: 70, backSetbackFt: -14, deckFrontFt: 69, overhang: { coveredFromRow: 3, soffitHeightFt: 60 } },
+      stand: { rows: 10, frontRowHeightFt: 44, rakeDeg: 24, backHeightFt: 70, backSetbackFt: -22, deckFrontFt: 69, overhang: { coveredFromRow: 3, soffitHeightFt: 60 } },
       sections: withRakes(withFronts(withBacks({
         ...Object.fromEntries(['206', '208'].map((n) => [n, { overhang: { coveredFromRow: 8, soffitHeightFt: 62 } }])),
         '207': { overhang: { coveredFromRow: 7, soffitHeightFt: 61 } },
         '209': { overhang: { coveredFromRow: 7, soffitHeightFt: 60 } },
         '210': { noCover: true }, // its 12 rows open: the 300 level's front 2 ft behind them
-        '211': { noCover: true },
+        // Not measured: open as 210, its 12-row twin, with the 300 level's
+        // front 2 ft behind its last row (210's, measured), not over it.
+        '211': { noCover: true, backHeightFt: 69, backSetbackFt: 2 },
         '216': { overhang: { coveredFromRow: 1, soffitHeightFt: 54 } },
         '219': { overhang: { coveredFromRow: 5, soffitHeightFt: 60 } },
         ...Object.fromEntries(cbpRange(220, 224).map((n) => [n, { overhang: { coveredFromRow: 5, soffitHeightFt: 63 } }])),
@@ -2351,12 +2357,17 @@ const CBP: StadiumStructure = {
         '219': [70, -9], '223': [73, -9], '222': [74, -9], '221': [73, -9], '220': [73, -9],
         '224': [73, -9], '217': [70, -22], '227': [70, -11], '216': [70, -19], '236': [70, -19],
         '210': [69, 2],
+        '206': [70, -14],
+        '207': [70, -14],
+        '208': [70, -14],
+        '209': [70, -14],
       }), {
         '235': 45, '229': 45, '228': 45, '226': 45, '219': 43, '222': 45, '207': 45, '210': 42,
       }), {
         '210': 22,
       }),
       rowsFromMap: true,
+      backFromFront: true,
       heightsSourced: false,
       coverSourced: true,
       sources: [CBP_CLUB_MAP, ...['207', '209', '211', '212', '216', '220', '222', '226', '228', '232', '233', '237'].map((n) => rysCbp(`sections/${n}`)), RYS_CBP, CBP_LIDAR],
