@@ -573,8 +573,15 @@ describe('Petco Park stand directions (measured on the 2022 aerial photo)', () =
   });
 
   it('the outfield stands follow their walls', () => {
-    expect(stand('130')).toBe(298);
+    expect(stand('128')).toBe(298);
     expect(stand('133')).toBe(45);
+  });
+
+  it('the left-field box\'s 130 and 134 face their own rows on the lidar', () => {
+    // Planes fitted to their treads and the fall line in their middle agree
+    // their rows climb toward 311–313°, 13–15° off the run along the wall.
+    expect(stand('130')).toBe(313);
+    expect(stand('134')).toBe(311);
   });
 });
 

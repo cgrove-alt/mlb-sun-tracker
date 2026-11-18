@@ -4161,21 +4161,18 @@ const PETCO: StadiumStructure = {
     leftLower: {
       label: 'Left Field Lower Box (126–134)',
       // Rows A–B and 1–11 (fewer in 130, 134), under the 226–230 deck from
-      // row 6 (sourced). Lidar (5 of 5): front row 3 ft (3–4), 10° rake
-      // (8–11); behind, 26 ft up (57–59 in 126 and 128; each its own). Estimated:
+      // row 6 (sourced). Lidar (5 of 5; 130 and 134 along their rows, 13–15°
+      // off the photo's wall): front row 4 ft (3–4), 11° rake (8–11);
+      // behind, 26 ft up (57–59 in 126 and 128; each its own). Estimated:
       // underside ~22 ft (23 over 126–132, covered from row 8).
-      stand: { rows: 13, frontRowHeightFt: 3, rakeDeg: 10, backHeightFt: 26, backSetbackFt: -12 },
+      stand: { rows: 13, frontRowHeightFt: 4, rakeDeg: 11, backHeightFt: 26, backSetbackFt: -14 },
       // The scan puts the deck's edge over 126's row 1 (its lowest point
       // 20 ft up) and 132's row 5.
       sections: withRakes(withFronts(withBacks({
         ...petcoCover(['128', '130', '134'], 23),
         '126': { overhang: { coveredFromRow: 1, soffitHeightFt: 20 } },
         '132': { overhang: { coveredFromRow: 5, soffitHeightFt: 23 } },
-      }, { '126': [59, -32], '128': [57, 0], '130': [26, -8], '132': [26, -22] }), {
-        '126': 4, '132': 4,
-      }), {
-        '128': 11,
-      }),
+      }, { '126': [59, -32], '128': [57, 0], '130': [26, -11], '132': [26, -22] }), { '128': 3 }), {}),
       rowsFromMap: true,
       heightsSourced: false,
       coverSourced: true,
@@ -4244,12 +4241,13 @@ const PETCO: StadiumStructure = {
       stand: { rows: 13, frontRowHeightFt: 37, rakeDeg: 22, backHeightFt: 68, backSetbackFt: -27, deckFrontFt: 66, overhang: { coveredFromRow: 4, soffitHeightFt: 57 } },
 
       sections: withFronts(withBacks({}, {
-        '214': [65, -27], '216': [67, -27], '209': [68, -22], '211': [68, -22],
+        '214': [65, -27], '209': [68, -22], '211': [68, -22],
         '213': [68, -20], '215': [67, -25], '223': [68, -28],
       }), {
         '207': 35, '209': 35, '211': 36, '213': 35, '223': 38,
         '217': 38,
         '220': 38,
+        '216': 38,
       }),
       rowsFromMap: true,
       heightsSourced: false,
