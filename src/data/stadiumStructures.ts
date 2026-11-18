@@ -3083,17 +3083,16 @@ const BUSCH: StadiumStructure = {
       // as 136, 146, 151, 154) are open. Lidar (32 of 46): front row 4 ft (3–14; 8–14 in
       // the right-field corner, 127–131), 13° rake (7–17; 135, 136, 162 and
       // 165 along the median of their rows' fall lines); what rises
-      // highest behind is the roof over the 400s, 133 ft up and 34 ft
-      // behind the last row (down the lines the Pavilion, 48–116 ft). That
-      // is the median before the bend sections turned: along their rows
-      // 135, 136 and 165 see the roof nearer (16–45 ft), pulling it to 30
-      // ft, but they aren't like the unmeasured sections down the line that
-      // take the tier's, and Rate Your Seats' March check on 157 and 158
-      // holds at 34.
+      // highest behind is the roof over the 400s, 133 ft up and 26 ft
+      // behind a 26-row section's last row (down the lines the Pavilion,
+      // 48–116 ft). The sections share the front line, the tunnel sections
+      // ending sooner: measured from the front row the roof stands in the
+      // same place behind all of them (24–33 ft, as for 26 rows), so one the
+      // scan does not measure keeps it there (`backFromFront`).
       // Each measured section takes its own back (the same roof 6–33 ft
       // behind the 28–29 row sections behind home, 45–70 ft behind the
       // tunnel sections, which end sooner).
-      stand: { rows: 26, frontRowHeightFt: 4, rakeDeg: 13, backHeightFt: 133, backSetbackFt: 34, deckFrontFt: 47 },
+      stand: { rows: 26, frontRowHeightFt: 4, rakeDeg: 13, backHeightFt: 133, backSetbackFt: 26, deckFrontFt: 47 },
       sections: withRakes(withFronts(withBacks({
         ...Object.fromEntries(Object.entries(BUSCH_100_ROWS).map(([id, row]) => [id, { overhang: { coveredFromRow: row, soffitHeightFt: BUSCH_100_SOFFIT_FT } }])),
 
@@ -3127,6 +3126,7 @@ const BUSCH: StadiumStructure = {
         '154': 12,
       }),
       rowsFromMap: true,
+      backFromFront: true,
       heightsSourced: false,
       coverSourced: true,
       sources: [RYS_BUSCH, ...buschSections('128', '130', '132', '135', '141', '144', '148', '150', '153', '158', '160', '165', '170'), BUSCH_LIDAR],
@@ -3166,22 +3166,31 @@ const BUSCH: StadiumStructure = {
       // covered, under an underside of ~67 ft (that front row less this
       // park's measured 7-ft deck depth; over row 11–12, 70–71 ft, 9 ft
       // above its floor). What
-      // rises highest behind is that front edge (in 267–272 the roof over
-      // the 400s, 115–116 ft). Each measured section takes its own back (231,
+      // rises highest behind is that front edge, 15 ft in front of a 10-row
+      // section's last row (in 267–272 the roof over the 400s, 115–116 ft).
+      // The sections share the front line, so one the scan does not measure
+      // keeps that edge at the same distance from its front row
+      // (`backFromFront`). Each measured section takes its own back (231,
       // 240 and 261, whose deck edge is over row 3–4, 23–25 ft in front; that
       // roof 5–7 ft in front of the last row of 271 and 272).
-      stand: { rows: 10, frontRowHeightFt: 48, rakeDeg: 25, backHeightFt: 76, backSetbackFt: -17, deckFrontFt: 74, overhang: { coveredFromRow: 5, soffitHeightFt: 67 } },
+      stand: { rows: 10, frontRowHeightFt: 48, rakeDeg: 25, backHeightFt: 76, backSetbackFt: -15, deckFrontFt: 74, overhang: { coveredFromRow: 5, soffitHeightFt: 67 } },
       sections: withFronts(withBacks({
         ...Object.fromEntries(['265', '267', '272'].map((id) => [id, { overhang: { coveredFromRow: 11, soffitHeightFt: 70 } }])),
         ...Object.fromEntries(['268', '269'].map((id) => [id, { overhang: { coveredFromRow: 12, soffitHeightFt: 71 } }])),
+        // Not measured: as 268 beside it (13 rows each), not the tier's front
+        // and back, which aren't behind 265–272.
+        '270': { overhang: { coveredFromRow: 12, soffitHeightFt: 71 }, backHeightFt: 116, backSetbackFt: 3 },
       }, {
         '230': [76, -18], '231': [74, -28], '233': [75, -17], '240': [75, -23],
         '261': [76, -25], '265': [116, 1], '267': [116, 1], '268': [116, 3], '269': [116, -4],
         '271': [116, -11], '272': [116, -5],
+        '229': [76, -17],
+        '232': [76, -17],
       }), {
         '271': 53,
       }),
       rowsFromMap: true,
+      backFromFront: true,
       heightsSourced: false,
       coverSourced: true,
       sources: [...buschSections('228', '235', '240', '261', '267', '272'), BUSCH_LIDAR],
@@ -3195,10 +3204,12 @@ const BUSCH: StadiumStructure = {
       // them, so the rows from 4 back are covered (Rate Your Seats counts
       // from 9), under an underside of ~67 ft (that front row less this
       // park's measured 7-ft deck depth). What rises highest behind is that
-      // front edge, 26 ft in front of the last row (11 ft in the 8-row 249
-      // and 251, 16 ft in the 9-row 250 and 258; each measured section takes
-      // its own).
-      stand: { rows: 15, frontRowHeightFt: 48, rakeDeg: 24, backHeightFt: 76, backSetbackFt: -26, deckFrontFt: 75, overhang: { coveredFromRow: 4, soffitHeightFt: 67 } },
+      // front edge, 31 ft in front of a 15-row section's last row (11 ft in
+      // the 8-row 249 and 251, 16 ft in the 9-row 250 and 258: the sections
+      // share the front line, so one the scan does not measure keeps the
+      // edge at the same distance from its front row, `backFromFront`; each
+      // measured section takes its own).
+      stand: { rows: 15, frontRowHeightFt: 48, rakeDeg: 24, backHeightFt: 76, backSetbackFt: -31, deckFrontFt: 75, overhang: { coveredFromRow: 4, soffitHeightFt: 67 } },
       sections: withFronts(withBacks({ '260': { overhang: { coveredFromRow: 1, soffitHeightFt: 67 } } }, {
         '244': [75, -31], '245': [76, -31], '246': [76, -31], '247': [76, -22], '248': [76, -31],
         '249': [76, -11], '250': [76, -16], '251': [76, -11], '252': [76, -32], '253': [76, -31],
@@ -3208,6 +3219,7 @@ const BUSCH: StadiumStructure = {
         '250': 49, '252': 49, '256': 49,
       }),
       rowsFromMap: true,
+      backFromFront: true,
       heightsSourced: false,
       coverSourced: true,
       sources: [RYS_BUSCH, ...buschSections('241', '249', '250', '257', '258', '259', '260'), BUSCH_LIDAR],
