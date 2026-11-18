@@ -6053,7 +6053,7 @@ const COMERICA: StadiumStructure = {
       // full 35-row sections), so the rows from there back are covered, under
       // an underside of ~52 ft (that front row less 9 ft). It is also what
       // rises highest behind (each measured section its own).
-      stand: { rows: 35, frontRowHeightFt: 2, ...COMERICA_LOWER, backHeightFt: 62, backSetbackFt: -9, deckFrontFt: 61, overhang: { coveredFromRow: 26, soffitHeightFt: 52 } },
+      stand: { rows: 35, frontRowHeightFt: 2, ...COMERICA_LOWER, backHeightFt: 62, backSetbackFt: -11, deckFrontFt: 61, overhang: { coveredFromRow: 26, soffitHeightFt: 52 } },
       sections: withRakes(withFronts(withBacks({
         ...Object.fromEntries(['137', '139'].map((id) => [id, { overhang: { coveredFromRow: 33, soffitHeightFt: id === '137' ? 53 : 52 } }])),
 
@@ -6061,6 +6061,7 @@ const COMERICA: StadiumStructure = {
       }, {
         '139': [62, -6], '138': [63, -9], '137': [62, -6], '134': [63, -12], '133': [62, -14],
         '132': [62, -12], '131': [61, -9], '135': [63, -11],
+        '136': [62, -12],
       }), {
         '139': -1, '138': -1, '137': -2, '136': -1,
       }), {
