@@ -670,10 +670,17 @@ describe('Great American Ball Park stand directions (measured on the 2023 aerial
   });
 
   it.each(['130', '134', '303', '533'])('first-base section %s faces 256°', (id) => expect(stand(id)).toBe(256));
-  it.each(['112', '118', '514'])('third-base section %s faces 347°', (id) => expect(stand(id)).toBe(347));
+  it.each(['118', '514'])('third-base section %s faces 347°', (id) => expect(stand(id)).toBe(347));
   // The photo's level lines are the lower bowl's; on the lidar the 400s'
   // rows and walls on the third-base side (411–415) run about 100°.
   it('third-base section 414 faces its own rows on the lidar', () => expect(stand('414')).toBe(14));
+
+  it('third-base section 112 faces its own rows on the lidar', () => {
+    // Planes fitted to its treads and the fall line in its middle agree its
+    // rows climb toward 14°, 27° off the line's 347° (as 108–111's rows,
+    // along their fall lines, turn from it).
+    expect(stand('112')).toBe(14);
+  });
 
   it.each(['124', '225', '525'])('behind-home section %s faces away from center field', (id) => {
     expect(diff(stand(id), getStadiumOrientation('reds') + 180)).toBeLessThan(10);
