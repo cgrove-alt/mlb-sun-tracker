@@ -398,7 +398,13 @@ describe('Truist Park stand directions (measured on the 2023 aerial photo)', () 
 
   it('the outfield stands follow their walls', () => {
     expect(stand('158')).toBe(212); // Chop House, rows along the right-field wall (121.5°)
-    expect(stand('148')).toBe(135); // Home Run Porch, rows along the left-center wall (~225°)
+    expect(stand('149')).toBe(135); // Home Run Porch, rows along the left-center wall (~225°)
+  });
+
+  it('the Home Run Porch\'s 148 faces its own rows on the lidar', () => {
+    // Planes fitted to its treads and the fall line in its middle agree its
+    // rows climb toward 121°, 14° off the run along the left-center wall.
+    expect(stand('148')).toBe(121);
   });
 
   it('sections the club calls level with first and third base sit beside them', () => {

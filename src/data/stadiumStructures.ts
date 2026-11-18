@@ -2713,20 +2713,20 @@ const TRUIST: StadiumStructure = {
     homeRunPorch: {
       label: 'Home Run Porch (146–151)',
       // Rows 1–27 or 1–29, uncovered ("significant sun exposure"). Lidar (5
-      // of 6): front row 7 ft (6–9), 13° rake; behind, the porch's back
-      // structure, 41 ft up (38–100; 25–27 ft behind 149 and 150). Over
+      // of 6; 148 along its rows, 14° off the photo's wall): front row 6 ft
+      // (6–9), 13° rake; behind, the porch's back structure, 41 ft up
+      // (38–112; 25–27 ft behind 149 and 150). Over
       // 151's rows 25 and up a building
       // reaches out, its lowest point at the edge 43 ft up, so those rows
       // are covered. (Over 147's front rows a bridge; its seats show
       // uncovered past it.)
-      stand: { rows: 29, frontRowHeightFt: 7, rakeDeg: 13, backHeightFt: 41, backSetbackFt: 14 },
+      stand: { rows: 29, frontRowHeightFt: 6, rakeDeg: 13, backHeightFt: 41, backSetbackFt: 14 },
       sections: withRakes(withFronts(withBacks({
         '151': { overhang: { coveredFromRow: 25, soffitHeightFt: 43 } },
-      }, { '151': [80, 0], '150': [40, 27], '149': [41, 25], '147': [38, 14], '148': [100, 9] }), {
-        '150': 6, '149': 6, '147': 9,
-      }), {
-        '148': 12,
-      }),
+      }, { '151': [80, 0], '150': [40, 27], '149': [41, 25], '147': [38, 14], '148': [112, 6] }), {
+        '147': 9,
+        '151': 7,
+      }), {}),
       rowsFromMap: true,
       heightsSourced: true,
       coverSourced: true,
