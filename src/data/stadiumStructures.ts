@@ -4497,8 +4497,9 @@ const ANGEL: StadiumStructure = {
     club: {
       label: 'Club level (300s)',
       // Rows A–H (330–351 behind the dugouts and toward right field); "rows E
-      // and above are shaded during most day games". Lidar (40 of 44): front
-      // row 35 ft (34–35), 23° rake (17–24); the 400s' front, 59–60 ft up,
+      // and above are shaded during most day games". Lidar (40 of 44; 304 and
+      // 315 along their rows, 12–14° off the photo's third-base direction):
+      // front row 35 ft (34–35), 23° rake (17–24); the 400s' front, 59–60 ft up,
       // reaches out over row 4–5 (2 in 331), which settles the cover: from
       // row E, under an underside of ~50 ft (that front row less 9 ft). It is
       // also what rises highest behind, 61 ft up: 10 ft in front of the last
@@ -4508,9 +4509,9 @@ const ANGEL: StadiumStructure = {
       stand: { rows: 8, frontRowHeightFt: 35, rakeDeg: 23, backHeightFt: 61, backSetbackFt: -10, deckFrontFt: 59, overhang: { coveredFromRow: 5, soffitHeightFt: 50 } },
       sections: withFronts(withBacks({ '331': { overhang: { coveredFromRow: 2, soffitHeightFt: 50 } } }, {
         '321': [61, -11], '320': [61, -11], '319': [61, -9], '318': [61, -11], '317': [61, -9],
-        '316': [61, -11], '315': [60, -9], '314': [60, -11], '313': [61, -9], '312': [61, -11],
+        '316': [61, -11], '315': [61, -9], '314': [60, -11], '313': [61, -9], '312': [61, -11],
         '311': [61, -9], '309': [61, -11], '308': [61, -11], '307': [61, -7], '306': [139, 25],
-        '305': [140, 20], '304': [61, -11], '303': [61, -11], '301': [61, -11],
+        '305': [140, 20], '304': [61, -13], '303': [61, -11], '301': [61, -11],
         '332': [61, -11], '333': [61, -9], '334': [61, -11], '335': [61, -9], '337': [60, -9],
         '338': [61, -11], '339': [61, -9], '340': [61, -11], '341': [61, -7], '342': [61, -11],
         '343': [61, -9], '345': [61, -9], '346': [61, -11], '349': [60, 2], '350': [61, 2],
@@ -4526,8 +4527,9 @@ const ANGEL: StadiumStructure = {
     loge: {
       label: '400 level',
       // Rows A–J, open ("all seats shaded during most late afternoon games"
-      // on the third-base side). Lidar (33 of 36): front row 60 ft (58–62),
-      // 32° rake (30–33); behind, the View level rises to its roof, whose
+      // on the third-base side). Lidar (33 of 36; 402, 403 and 423 along
+      // their rows, 12–13° off the photo's directions): front row 60 ft
+      // (58–62), 32° rake (30–33); behind, the View level rises to its roof, whose
       // edge is 123 ft up, 4 ft behind the last row (2–7 ft, each measured
       // section its own; in eight, a lamp bank on it, 135–141 ft).
       stand: { rows: 10, frontRowHeightFt: 60, rakeDeg: 32, backHeightFt: 123, backSetbackFt: 4 },
@@ -4535,15 +4537,15 @@ const ANGEL: StadiumStructure = {
         '422': [123, 6], '417': [123, 6], '416': [124, 4], '415': [123, 6],
         '425': [123, 6], '412': [123, 6], '411': [137, 2], '410': [141, 4], '409': [123, 7],
         '408': [123, 2], '426': [140, 4], '427': [141, 6], '428': [123, 6], '429': [123, 2],
-        '403': [135, 2], '404': [137, 2], '413': [123, 6], '414': [124, 6], '421': [123, 6],
+        '403': [135, 1], '404': [137, 2], '413': [123, 6], '414': [124, 6], '421': [123, 6],
         '423': [123, 6], '424': [123, 6], '432': [123, 6], '433': [141, 2],
-        '402': [140, 2],
+        '402': [141, 2],
       }), {
         '409': 59, '408': 62, '426': 59, '427': 58, '429': 61,
         '435': 61,
       }), {
         '416': 33, '405': 33, '429': 33, '404': 31, '418': 33, '419': 33, '420': 33,
-        '423': 31, '402': 31,
+        '423': 33, '402': 33,
       }),
       rowsFromMap: true,
       heightsSourced: true,
