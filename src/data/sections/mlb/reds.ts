@@ -54,13 +54,15 @@ export const redsSections: DetailedSection[] = buildParkSections(
       // Turned where two lidar measurements agree on the way the rows climb
       // (scripts/measureStandHeights.py treads): planes fitted to the treads
       // (five readings within 15°) and the fall line in the middle (within 8°
-      // of them), both more than 10° off the direction fitted on the map; each
-      // faces their mean.
+      // of them), both more than 10° off the direction they had (fitted on
+      // the map or on a photo); each faces their mean.
       { ids: ['110'], facingDeg: 11 },
       { ids: ['112'], facingDeg: 14 },
+      { ids: ['132'], facingDeg: 241 },
       { ids: ['133'], facingDeg: 240 },
       { ids: ['136'], facingDeg: 232 },
       { ids: ['137'], facingDeg: 239 },
+      { ids: ['141'], facingDeg: 173 },
       { ids: ['436'], facingDeg: 239 },
       { ids: ['537'], facingDeg: 240 },
       // Turned to the rows' fall line, measured on the lidar

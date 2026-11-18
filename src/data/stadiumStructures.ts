@@ -5342,8 +5342,8 @@ const GABP: StadiumStructure = {
     first: {
       label: 'Field level, first-base side (127–137)',
       // Up to 42 rows, covered from row EE (sourced: 26 in 127–131, 31 in
-      // 132–135, 27 in 136, 19 in 137). Lidar (11 of 11; 133, 136 and 137
-      // along their rows): front row at field level (-1 ft; 1 in 136), 11°
+      // 132–135, 27 in 136, 19 in 137). Lidar (11 of 11; 132, 133, 136 and
+      // 137 along their rows): front row at field level (-1 ft; 1 in 136), 11°
       // rake (11–12); what rises highest behind is the roof's edge, 138 ft
       // up and 29 ft back (in four, the club's front over the last rows).
       // The club's front, 35 ft up, is over the source's row in six; in 127
@@ -5366,7 +5366,7 @@ const GABP: StadiumStructure = {
       }, {
         '127': [62, -29], '128': [138, 29], '129': [69, -25], '130': [68, -25], '131': [138, 45],
         '136': [69, -28], '137': [138, 61],
-        '132': [138, 33],
+        '132': [138, 30],
         '133': [138, 28],
         '134': [138, 33],
         '135': [138, 33],
@@ -5462,17 +5462,19 @@ const GABP: StadiumStructure = {
     rightField: {
       label: 'Right field (138–146)',
       // The Sun/Moon Deck, open ("avoid the seats beyond the right field
-      // wall at all costs"). Lidar (6 of 9): front row 6 ft, 26° rake
+      // wall at all costs"). Lidar (6 of 9; 141 along its rows, 13° off the
+      // photo's wall): front row 6 ft, 26° rake
       // (16–28); behind, 45 ft up and 8 ft back (41 ft, 3 ft in front of
       // 142's last row, at the height of its own back rows).
       stand: { rows: 26, frontRowHeightFt: 6, rakeDeg: 26, backHeightFt: 45, backSetbackFt: 8 },
       sections: withRakes(withFronts(withBacks({}, {
-        '141': [20, 43], '142': [41, -3], '143': [91, -4], '144': [49, 7], '146': [42, 12],
+        '141': [18, 145], '142': [41, -3], '143': [91, -4], '144': [49, 7], '146': [42, 12],
         '145': [48, 9],
       }), {
         '146': 7,
       }), {
         '146': 16,
+        '141': 27,
       }),
       rowsFromMap: true,
       heightsSourced: true,

@@ -111,9 +111,28 @@ describe('Great American Ball Park: a 1:40 PM game in July', () => {
 });
 
 describe('Great American Ball Park: a 4:10 PM game in July', () => {
-  it('[RYS] the first-base side gets the sun at its back first', () => {
-    expect(meanShade(JULY_12_410PM, firstBase100s, [2])).toBeGreaterThan(0.9);
-    expect(meanShade(JULY_12_410PM, thirdBase100s, [2])).toBeLessThan(0.3);
+  it('[RYS] the first-base side is the first to get shade', () => {
+    // "Seats on the first base side of the field are the first to get
+    // shade": at every half-hour step the first-base 100s are more shaded
+    // than the third-base ones (an hour in, 90% of their seats against
+    // 11%, the shadow still crossing their front rows; all by 6:10).
+    JULY_12_410PM.sun.forEach((_, i) => {
+      expect(meanShade(JULY_12_410PM, firstBase100s, [i])).toBeGreaterThan(meanShade(JULY_12_410PM, thirdBase100s, [i]));
+    });
+  });
+
+  it.each([
+    ...range(127, 131).map((id) => [id, 25] as const),
+    ...range(132, 135).map((id) => [id, 30] as const),
+    ['136', 26] as const,
+    ['137', 18] as const,
+  ])('[RYS] after 3:00, first-base section %s has good shade from about row DD (its row %i)', (id, dd) => {
+    // "Good shade starting near Row DD in Section 127", down to 137 (DD is
+    // the row before the source's EE). In 137 from the second step: the
+    // scan puts the club's front over its row 29 (the source's EE is its
+    // 19), so its rows from DD are open, partly in the sun at first pitch.
+    const from = id === '137' ? 1 : 0;
+    expect(rowsShaded(JULY_12_410PM, id, dd).slice(from).every((share) => share === 1)).toBe(true);
   });
 
   it.each(['428', ...range(429, 437)])('[RYS] 400 level %s: its back rows are shaded during most late-afternoon games', (id) => {
