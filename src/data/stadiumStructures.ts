@@ -4428,15 +4428,18 @@ const ANGEL: StadiumStructure = {
       // in the corners), open; "only the last row of sections 104–113 is
       // shaded in the middle of the summer". Lidar (22 of 35): front row
       // 2 ft (0–3), 14° rake (10–17; an aisle part way back steps up ~1 ft);
-      // what rises highest behind is the roof's edge, 123 ft up and 41 ft
-      // back (32–52 ft, each measured section its own; in five, a lamp bank
-      // on it, 139–141 ft). Where a section runs past
+      // what rises highest behind is the roof's edge, 123 ft up and 35 ft
+      // behind a 26-row section's last row (32–52 ft by section, each
+      // measured one its own; in five, a lamp bank on it, 139–141 ft). The
+      // sections share the front line, the corner ones running further back,
+      // so one the scan does not measure keeps the edge at the same distance
+      // from its front row (`backFromFront`). Where a section runs past
       // 21 rows (the corners), the club level's front, 34–35 ft up, reaches
       // out over its row 22 (25 in 103), so those rows are covered, under an
       // underside of ~25 ft (that front row less 9 ft; 26 ft over 113 and
       // 127, whose own front rows sit a foot higher: 9 ft above their row
       // 22's floor).
-      stand: { rows: 26, frontRowHeightFt: 2, rakeDeg: 14, backHeightFt: 123, backSetbackFt: 41, deckFrontFt: 34, overhang: { coveredFromRow: 22, soffitHeightFt: 25 } },
+      stand: { rows: 26, frontRowHeightFt: 2, rakeDeg: 14, backHeightFt: 123, backSetbackFt: 35, deckFrontFt: 34, overhang: { coveredFromRow: 22, soffitHeightFt: 25 } },
       sections: withRakes(withFronts(withBacks({
         '103': { overhang: { coveredFromRow: 25, soffitHeightFt: 27 } },
         ...Object.fromEntries(['113', '127'].map((id) => [id, { overhang: { coveredFromRow: 22, soffitHeightFt: 26 } }])),
@@ -4454,6 +4457,7 @@ const ANGEL: StadiumStructure = {
         '131': 12,
       }),
       rowsFromMap: true,
+      backFromFront: true,
       heightsSourced: false,
       coverSourced: true,
       sources: [RYS_ANGEL, ...angelSections('101', '104', '110', '114', '118', '122', '126', '130', '135'), ANGEL_LIDAR],
