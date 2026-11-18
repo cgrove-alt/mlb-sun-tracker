@@ -2181,7 +2181,6 @@ const CBP: StadiumStructure = {
         '115': { overhang: { coveredFromRow: 28, soffitHeightFt: 30 } },
         '118': { overhang: { coveredFromRow: 25, soffitHeightFt: 35 } },
         '129': { overhang: { coveredFromRow: 23, soffitHeightFt: 30 } },
-        '133': { overhang: { coveredFromRow: 31, soffitHeightFt: 30 } },
         '134': { deckFrontFt: undefined, overhang: { coveredFromRow: 34, soffitHeightFt: 28 } }, // 9 ft above row 34's floor; something lower than the deck at its edge
         // RYS covers only the wheelchair row behind row 37; the lidar puts
         // the deck's edge over row 34.
@@ -2193,15 +2192,13 @@ const CBP: StadiumStructure = {
         '139': { frontRowHeightFt: 6, overhang: { coveredFromRow: 23, soffitHeightFt: 35 } },
       }, {
         '132': [133, 28], '115': [133, 29], '117': [70, -16], '118': [70, -6], '129': [132, 40],
-        '130': [70, -16], '131': [133, 42], '134': [133, 48], '135': [132, 52], '136': [132, 42],
+        '130': [70, -16], '131': [133, 42], '134': [133, 52], '135': [132, 52], '136': [132, 42],
         '108': [117, 45], '109': [117, 16], '110': [117, 25], '111': [117, 39], '116': [133, 45],
-        '133': [133, 38], '137': [133, 32], '138': [70, -44],
+        '133': [133, 42], '137': [133, 32], '138': [70, -44],
       }), {
         '115': -1, '117': 1, '118': 1, '129': 1, '130': 1, '134': -1, '135': -1, '136': -1, '108': 4,
         '109': 2, '111': -1, '116': -1, '133': -1, '137': -1, '138': 4,
-      }), {
-        '134': 11, '133': 11,
-      }),
+      }), {}),
       rowsFromMap: true,
       heightsSourced: false,
       coverSourced: true,
@@ -2210,19 +2207,19 @@ const CBP: StadiumStructure = {
     fieldCoverUnsourced: {
       label: 'Field level (100s)',
       // 112–114: Rate Your Seats gives no covered rows for these three; the
-      // lidar puts the 200 level's edge over row 34 (112, 113) and 30 (114).
+      // lidar puts the 200 level's edge over row 34 (112), 33 (113) and 30
+      // (114).
       // Rows from the club's data; stand as the rest of the 100s (the lidar
       // agrees: front row 1 ft below the field, 12°). Each takes its own
-      // back: behind 112's 37 rows the 200 level's front stands 24 ft back,
-      // over 113's last row 4 ft in front; from 114's open rows the Terrace
-      // Deck roof rises highest.
+      // back: behind 112's 37 rows the 200 level's front stands 24 ft back;
+      // along 113's rows (turned to their fall line) the deck's front, 45 ft
+      // up, is 12 ft in front of its last row; from 114's open rows the
+      // Terrace Deck roof rises highest.
       stand: { ...CBP_FIELD, deckFrontFt: 44 },
       sections: withRakes(withFronts(withBacks({
         '112': { overhang: { coveredFromRow: 34, soffitHeightFt: 35 } },
-        '113': { overhang: { coveredFromRow: 34, soffitHeightFt: 35 } },
-      }, { '112': [69, 24], '113': [70, -4], '114': [133, 29] }), { '112': -1, '113': -1, '114': -1 }), {
-        '113': 11,
-      }),
+        '113': { overhang: { coveredFromRow: 33, soffitHeightFt: 35 } },
+      }, { '112': [69, 24], '113': [45, -12], '114': [133, 29] }), { '112': -1, '113': -1, '114': -1 }), {}),
       rowsFromMap: true,
       heightsSourced: false,
       coverSourced: true,

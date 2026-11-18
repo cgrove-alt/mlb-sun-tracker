@@ -332,8 +332,14 @@ describe('Citizens Bank Park stand directions (measured on the 2022 aerial photo
     expect(stand(id)).toBe(144);
   });
 
-  it.each(['130', '133', '228', '326', '426'])('third-base section %s faces 234°', (id) => {
+  it.each(['130', '228', '326', '426'])('third-base section %s faces 234°', (id) => {
     expect(stand(id)).toBe(234);
+  });
+
+  it('third-base section 133 faces its own rows on the lidar', () => {
+    // Planes fitted to its treads and the fall line in its middle agree its
+    // rows climb toward 255°, 21° off the run's 234°.
+    expect(stand('133')).toBe(255);
   });
 
   it.each(['C', '123', '222', '321', '421'])('behind-home section %s faces away from center field', (id) => {
