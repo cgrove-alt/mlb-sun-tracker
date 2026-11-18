@@ -183,25 +183,26 @@ const YANKEES: StadiumStructure = {
       // source has it. 104 has 18 rows (Rate Your Seats), and the deck's
       // front, 32 ft up, is taken right behind its last row, not over it.
       // Lidar (45 of 50; 132, 133 and 135 along their rows' fall lines,
-      // 30–39° off the map's direction): front row 7 ft (4–10), 12° rake
-      // (8–15). What rises highest behind is the canopy, 134 ft up and 46 ft
-      // behind the last row (its top 132–134 ft, or a lamp bank on it,
-      // 139–141, where a section's cut crosses one); behind 121BW the
-      // Terrace's front edge, at the corner (104) the Main deck's edge, 32 ft
-      // up. Estimated: the Main deck's underside ~24 ft (its 28-ft front row
+      // 30–39° off the map's direction, and 112–118W, 124, 125 and S122A
+      // along their rows by the treads and the fall line, 16–22° off): front
+      // row 6 ft (4–10), 12° rake (8–15). What rises highest behind is the
+      // canopy, 139 ft up and 43 ft behind the last row (a lamp bank on it,
+      // 139–141 ft, where a section's cut crosses one, as 25 of the 45 do;
+      // its top, 132–134, elsewhere); behind 118W and 121BW the Terrace's
+      // front edge, at the corner (104) the Main deck's edge, 32 ft up. Estimated: the Main deck's underside ~24 ft (its 28-ft front row
       // less 9 ft is under the covered rows' heads, so 9 ft above row 14's
       // floor; 23 over 122, 123, 130 and the suites, whose first covered
       // rows sit lower).
-      // Each measured section takes its own back (the canopy 29–94 ft behind
+      // Each measured section takes its own back (the canopy 29–59 ft behind
       // them); 104 keeps the Main deck's edge right behind its last row, as
       // sourced.
       stand: {
         deckFrontFt: 28,
         rows: 20,
-        frontRowHeightFt: 7,
+        frontRowHeightFt: 6,
         rakeDeg: 12,
-        backHeightFt: 134,
-        backSetbackFt: 46,
+        backHeightFt: 139,
+        backSetbackFt: 43,
         overhang: { coveredFromRow: 14, soffitHeightFt: 24 },
       },
       sections: withRakes(withFronts(withBacks({
@@ -220,41 +221,44 @@ const YANKEES: StadiumStructure = {
         '136': { noCover: true },
       }, {
         '134': [133, 59], '133': [139, 38], '130': [141, 29], '132': [139, 38], '127A': [139, 38],
-        '125': [132, 55], '124': [139, 43], '121B': [140, 41], '122': [133, 41], '123': [132, 46],
-        'S122B': [140, 34], 'S122A': [133, 49], '121BW': [73, 5], '120A': [139, 43],
-        '121A': [133, 52], '120B': [132, 57], '120AW': [139, 43], '120BW': [132, 48],
-        '121AW': [140, 38], '119': [132, 54], '118': [139, 41], '118W': [140, 48], '119W': [139, 43],
-        '117B': [133, 56], '117A': [140, 46], 'S117BC': [133, 48], '116': [134, 51],
-        '115': [132, 57], '114A': [141, 46], '111': [133, 49], '109': [133, 41], '106': [140, 43],
+        '125': [141, 44], '124': [141, 39], '121B': [140, 41], '122': [133, 41], '123': [132, 46],
+        'S122B': [140, 34], 'S122A': [133, 43], '121BW': [73, 5],
+        '121A': [133, 52], '120B': [132, 57], '120BW': [132, 48],
+        '121AW': [140, 38], '119': [132, 54], '118': [139, 41], '118W': [72, 7],
+        '117B': [133, 56], '117A': [140, 39], 'S117BC': [133, 48], '116': [141, 46],
+        '115': [140, 43], '114A': [141, 46], '111': [133, 49], '109': [133, 41], '106': [140, 43],
         '131': [133, 54], '108': [140, 44], '127B': [140, 47], '136': [133, 51],
         '129': [133, 48], '128': [132, 44], '126': [139, 38], '114B': [140, 44],
-        '113': [133, 49], '112': [132, 62], '110': [139, 36],
+        '113': [140, 41], '112': [132, 51], '110': [139, 36],
         '135': [140, 57],
       }), {
         '134': 10, '130': 5, '122': 8,
         'S122B': 8, '119': 5, '117B': 5,
         '104': 5, '131': 4,
         '114B': 5, '112': 5,
-        '120A': 6,
-        '121A': 6,
-        '120B': 6,
-        '120AW': 6,
-        '120BW': 6,
-        '118': 6,
-        '119W': 6,
-        '115': 6,
-        '114A': 6,
-        '111': 6,
-        '109': 6,
-        '106': 6,
-        '108': 6,
-        '127B': 6,
-        '136': 6,
+        '133': 7,
+        '132': 7,
+        '127A': 7,
+        '125': 7,
+        '124': 7,
+        '121B': 7,
+        '123': 7,
+        'S122A': 7,
+        '121BW': 7,
+        '121AW': 7,
+        '118W': 7,
+        'S117BC': 7,
+        '135': 7,
+        '129': 7,
+        '128': 7,
+        '126': 7,
+        '110': 7,
       }), {
-        '130': 13, '127A': 13, '124': 11, '122': 13, '123': 13, 'S122A': 13,
-        '121A': 11, '118W': 11, '117B': 13, '117A': 11, '115': 11, '114A': 11, '111': 11, '109': 13,
+        '130': 13, '127A': 13, '122': 13, '123': 13,
+        '121A': 11, '117B': 13, '114A': 11, '111': 11, '109': 13,
         '131': 15, '129': 13, '128': 13, '114B': 14, '112': 13, '110': 13,
         '133': 13,
+        '125': 13,
       }),
       heightsSourced: false,
       coverSourced: true,
@@ -265,8 +269,9 @@ const YANKEES: StadiumStructure = {
       // 19–23 rows (sourced). Rate Your Seats counts 205–217 and 223–234 as
       // covered from row 14; behind home (218–222) the suites sit above, but
       // no source gives a covered row there and the lidar shows none. Lidar
-      // (44 of 44; 21 along their rows' fall line, 17–56° off the map's
-      // direction, where the cuts across the rows read 12–19°): front row
+      // (44 of 44; 26 along their rows, 15–56° off the map's direction, 21
+      // by the fall line and 205S, 215, 216, 224 and 225 by the treads with
+      // it, where the cuts across the rows read 12–19°): front row
       // 29 ft (27–30), 20° rake (17–24). The Terrace deck's front edge
       // reaches out over row 8 (5–12; the sections below differ),
       // so the rows from 8 back are covered; that edge, 73 ft up, is what
@@ -296,27 +301,24 @@ const YANKEES: StadiumStructure = {
         ['222', { rows: 8, noCover: true }],
         ['215', { rows: 13 }],
         ['229', { rows: 19 }], ['205', { rows: 22 }], ['217', { rows: 23 }], ['233A', { rows: 23 }],
-        ['216', { overhang: { coveredFromRow: 11, soffitHeightFt: 62 } }],
       ]), {
-        '205S': [72, -32], '205': [72, -33], '234': [73, -38],
+        '205S': [72, -35], '205': [72, -33], '234': [73, -38],
         '231': [73, -38], '229': [73, -27], '226': [73, -38],
         '224': [73, -35], '220C': [72, 4], '220B': [139, 37], '220A': [73, 4],
-        '220BW': [74, -33], '220CW': [72, -37], '216': [72, -32], '215': [73, -12],
+        '220BW': [74, -33], '220CW': [72, -37], '216': [72, -37], '215': [72, -12],
         '214B': [73, -38], '212': [72, -37], '211': [72, -38], '209': [73, -38], '206': [73, -38],
         '233B': [72, -37], '233A': [73, -41], '232A': [73, -40], '230': [73, -38],
         '227A': [137, -4], '221A': [73, 1], '222': [73, 0], '218B': [73, 0], '219': [73, 2],
         '208': [72, -37], '210': [73, -38], '221B': [72, 2], '218A': [73, 1], '227B': [72, -38],
         '223': [72, -37], '217': [72, -41], '207': [72, -38], '213': [73, -38],
+        '225': [73, -38],
       }), {
-        '205S': 28, '234W': 28, '231': 30, '216': 27, '232B': 28,
+        '205S': 28, '234W': 28, '231': 30, '232B': 28,
         '227A': 28,
+        '224': 28,
       }), {
-        '205S': 17, '228': 21, '212': 21,
+        '228': 21, '212': 21,
         '221B': 21,
-        '225': 19,
-        '224': 19,
-        '216': 19,
-        '215': 19,
         '214A': 19,
       }),
       heightsSourced: false,
@@ -326,19 +328,19 @@ const YANKEES: StadiumStructure = {
     terrace: {
       label: 'Terrace level (300s)',
       // 7–10 rows, not covered (sourced). Lidar (49 of 55): front row 72 ft
-      // (71–73), 31° rake; what rises highest behind is the canopy, 137 ft
-      // up and 12 ft behind the last row (its top 132–134 ft, or a lamp bank
+      // (71–73), 31° rake; what rises highest behind is the canopy, 139 ft
+      // up and 11 ft behind the last row (its top 132–134 ft, or a lamp bank
       // on it, 137–141, where a section's cut crosses one, as 26 of the 49
       // do); each measured section takes its own (4–22 ft behind).
-      stand: { rows: 9, frontRowHeightFt: 72, rakeDeg: 31, backHeightFt: 137, backSetbackFt: 12 },
+      stand: { rows: 9, frontRowHeightFt: 72, rakeDeg: 31, backHeightFt: 139, backSetbackFt: 11 },
       sections: withRakes(withFronts(withBacks({ '320B': { rows: 10 }, '314': { rows: 8 } }, {
         '327': [132, 14], '330': [133, 14], '331': [140, 7], '326': [139, 6], '325': [132, 19],
-        '325W': [141, 9], '326W': [133, 16], '331W': [132, 17], '333W': [134, 16], '330W': [139, 7],
+        '325W': [141, 9], '326W': [139, 6], '331W': [132, 17], '333W': [134, 16], '330W': [139, 7],
         '327W': [133, 17], '320C': [132, 16], '321': [132, 19], '323': [140, 9], '322': [141, 11],
         '320CW': [132, 16], '321W': [132, 19], '322W': [141, 11], '323W': [140, 9], '317': [133, 21],
         '318': [132, 19], '319': [132, 21], '320A': [133, 16], '320B': [140, 4], '317W': [133, 21],
-        '319W': [141, 9], '320AW': [132, 22], '318W': [132, 19], '309': [133, 14], '310': [133, 17],
-        '313': [140, 7], '314': [140, 11], '315': [137, 6], '309W': [140, 7], '314W': [141, 12],
+        '319W': [141, 9], '320AW': [132, 22], '318W': [132, 19], '309': [132, 12], '310': [133, 17],
+        '313': [140, 7], '314': [139, 9], '315': [139, 7], '309W': [140, 7], '314W': [141, 12],
         '315W': [140, 9], '305': [140, 7], '305W': [140, 7], '308': [140, 7], '332A': [140, 6],
         '332B': [140, 7], '329': [140, 7], '328': [139, 7], '324': [132, 19], '312': [141, 7],
         '316': [139, 9],
@@ -352,10 +354,13 @@ const YANKEES: StadiumStructure = {
         '327': 73,
         '325W': 73,
         '324': 73,
+        '326W': 73,
       }), {
         '327W': 32, '321': 30, '321W': 30, '319': 30, '320B': 33, '319W': 30, '313': 30,
-        '314': 32, '313W': 32, '314W': 33,
+        '314': 33, '313W': 32, '314W': 33,
         '326': 33,
+        '326W': 32,
+        '315': 30,
       }),
       heightsSourced: true,
       coverSourced: true,
@@ -472,11 +477,11 @@ const FENWAY: StadiumStructure = {
         'F9': [82, 50], 'F10': [82, 50], 'F11': [82, 55], 'F12': [82, 52], 'F13': [82, 35],
         'F14': [82, 35], 'F15': [82, 35], 'F16': [82, 50], 'F17': [82, 35], 'F18': [82, 35],
         'F19': [82, 35], 'F20': [82, 34], 'F21': [82, 40], 'F22': [82, 40], 'F23': [82, 42],
-        'F24': [82, 40], 'F25': [82, 42], 'F26': [82, 42], 'F27': [82, 57], 'F28': [82, 43],
-        'F29': [82, 52], 'F30': [82, 50], 'F31': [82, 48], 'F32': [82, 50], 'F33': [82, 50],
+        'F24': [82, 40], 'F25': [82, 42], 'F26': [82, 42], 'F27': [82, 57], 'F28': [82, 40],
+        'F29': [82, 48], 'F30': [82, 50], 'F31': [82, 48], 'F32': [82, 50], 'F33': [82, 50],
         'F34': [82, 50], 'F35': [82, 48], 'F37': [82, 45], 'F38': [82, 45], 'F39': [96, 24],
         'F40': [98, 24], 'F41': [98, 24], 'F42': [96, 39], 'F43': [96, 34], 'F44': [100, 24],
-        'F45': [100, 25], 'F46': [98, 25], 'F47': [98, 25], 'F48': [96, 24],
+        'F45': [100, 25], 'F46': [98, 25], 'F47': [96, 24], 'F48': [96, 24],
         'F50': [82, 45], 'F52': [82, 48], 'F53': [82, 48], 'F54': [82, 48], 'F55': [82, 48],
         'F56': [82, 48], 'F57': [82, 48], 'F58': [82, 35], 'F59': [82, 48], 'F60': [82, 35],
         'F61': [82, 35], 'F62': [82, 40], 'F63': [82, 40], 'F64': [82, 39], 'F65': [82, 53],
@@ -484,14 +489,14 @@ const FENWAY: StadiumStructure = {
         'F72': [82, 48], 'F73': [82, 48], 'F74': [82, 48], 'F77': [82, 48], 'F78': [54, 29],
         'F79': [54, 32], 'F80': [54, 27], 'F81': [54, 30], 'D13': [82, 35], 'D14': [82, 35],
         'D15': [82, 35], 'D16': [82, 50], 'D17': [82, 35], 'D18': [82, 35], 'D19': [82, 35],
-        'D20': [82, 34], 'D29': [82, 52], 'D30': [82, 50], 'D31': [82, 48], 'D32': [82, 50],
+        'D20': [82, 34], 'D29': [82, 48], 'D30': [82, 50], 'D31': [82, 48], 'D32': [82, 50],
         'D33': [82, 50], 'D34': [82, 50], 'D35': [82, 48], 'D37': [82, 45], 'D38': [82, 45],
         'D52': [82, 48], 'D53': [82, 48], 'D54': [82, 48], 'D55': [82, 48], 'D56': [82, 48],
         'D57': [82, 48], 'D58': [82, 35], 'D59': [82, 48], 'D60': [82, 35], 'D61': [82, 35],
         'D72': [82, 48], 'D73': [82, 48], 'D74': [82, 48], 'D77': [82, 48], 'D78': [54, 29],
         'D79': [54, 32], 'H39': [96, 24], 'H40': [98, 24], 'H41': [98, 24], 'H42': [96, 39],
-        'H43': [96, 34], 'H44': [100, 24], 'H45': [100, 25], 'H46': [98, 25], 'H47': [98, 25],
-        'H48': [96, 24], 'H50': [82, 45], 'FBC29': [82, 52], 'FBC30': [82, 50],
+        'H43': [96, 34], 'H44': [100, 24], 'H45': [100, 25], 'H46': [98, 25], 'H47': [96, 24],
+        'H48': [96, 24], 'H50': [82, 45], 'FBC29': [82, 48], 'FBC30': [82, 50],
         'FBC31': [82, 48], 'FBC32': [82, 50], 'FBC33': [82, 50], 'FBC34': [82, 50],
         'FBC35': [82, 48], 'FBC37': [82, 45], 'FBC38': [82, 45], 'FBC52': [82, 48],
         'FBC53': [82, 48], 'FBC54': [82, 48], 'FBC55': [82, 48], 'FBC56': [82, 48],
@@ -503,13 +508,16 @@ const FENWAY: StadiumStructure = {
         'F71': [82, 53],
         'H49': [82, 45],
         'FBC71': [82, 53],
+        'F51': [82, 48],
+        'D51': [82, 48],
+        'FBC51': [82, 48],
       }), {
         'F11': -2, 'F13': 1, 'F14': 1, 'F15': 1, 'F17': 1, 'F18': 1, 'F19': 1, 'F20': 1, 'F21': 1,
-        'F22': 1, 'F23': 1, 'F24': 1, 'F25': 1, 'F26': 1, 'F28': 1, 'F29': -2, 'F32': -2, 'F34': -2,
+        'F22': 1, 'F23': 1, 'F24': 1, 'F25': 1, 'F26': 1, 'F28': 1, 'F32': -2, 'F34': -2,
         'F42': -2, 'F49': -2, 'F51': -2, 'F56': -2, 'F58': 1, 'F59': -2, 'F60': 1, 'F61': 1,
         'F62': 1, 'F63': 1, 'F64': 1, 'F65': -2, 'F66': -2, 'F68': -2, 'F69': 1, 'D13': 1, 'D14': 1,
-        'D15': 1, 'D17': 1, 'D18': 1, 'D19': 1, 'D20': 1, 'D29': -2, 'D32': -2, 'D34': -2, 'D51': -2,
-        'D56': -2, 'D58': 1, 'D59': -2, 'D60': 1, 'D61': 1, 'H42': -2, 'H49': -2, 'FBC29': -2,
+        'D15': 1, 'D17': 1, 'D18': 1, 'D19': 1, 'D20': 1, 'D32': -2, 'D34': -2, 'D51': -2,
+        'D56': -2, 'D58': 1, 'D59': -2, 'D60': 1, 'D61': 1, 'H42': -2, 'H49': -2,
         'FBC32': -2, 'FBC34': -2, 'FBC51': -2, 'FBC56': -2, 'FBC58': 1, 'FBC59': -2, 'FBC60': 1,
         'FBC61': 1, 'FBC69': 1,
         'F70': -2,
@@ -517,10 +525,10 @@ const FENWAY: StadiumStructure = {
         'F71': -2,
         'FBC71': -2,
       }), {
-        'F42': 8, 'F47': 8, 'F48': 10, 'F59': 10, 'F65': 10, 'F66': 10,
+        'F42': 8, 'F48': 10, 'F59': 10, 'F65': 10, 'F66': 10,
         'F68': 10, 'F72': 10, 'F73': 10, 'F74': 10, 'F75': 10, 'F76': 10, 'F77': 10, 'F79': 10,
         'F80': 10, 'F81': 10, 'D59': 10, 'D72': 10, 'D73': 10, 'D74': 10, 'D75': 10, 'D76': 10,
-        'D77': 10, 'D79': 10, 'H42': 8, 'H47': 8, 'H48': 10, 'FBC59': 10, 'FBC72': 10,
+        'D77': 10, 'D79': 10, 'H42': 8, 'H48': 10, 'FBC59': 10, 'FBC72': 10,
         'FBC73': 10, 'FBC74': 10, 'FBC75': 10, 'FBC76': 10, 'FBC77': 10, 'FBC79': 10, 'FBC80': 10,
         'F70': 11,
         'FBC70': 11,
@@ -550,9 +558,9 @@ const FENWAY: StadiumStructure = {
         'B89': { deckFrontFt: 40, overhang: { coveredFromRow: 14, soffitHeightFt: 29 } },
         // At the ends and behind home another structure covers them, its
         // front not measured.
-        ...Object.fromEntries(['B105', 'B150'].map((id) => [id, { deckFrontFt: undefined, overhang: { coveredFromRow: 8, soffitHeightFt: 36 } }])),
+        ...Object.fromEntries(['B105', 'B150', 'B111'].map((id) => [id, { deckFrontFt: undefined, overhang: { coveredFromRow: 8, soffitHeightFt: 36 } }])),
         ...Object.fromEntries(['B106', 'B107', 'B108', 'B147', 'B148', 'B110'].map((id) => [id, { deckFrontFt: undefined, overhang: { coveredFromRow: 7, soffitHeightFt: 36 } }])),
-        ...Object.fromEntries(['B109', 'B149', 'B111'].map((id) => [id, { deckFrontFt: undefined, overhang: { coveredFromRow: 6, soffitHeightFt: 36 } }])),
+        ...Object.fromEntries(['B109', 'B149'].map((id) => [id, { deckFrontFt: undefined, overhang: { coveredFromRow: 6, soffitHeightFt: 36 } }])),
         'B115': { frontRowHeightFt: 9, overhang: { coveredFromRow: 3, soffitHeightFt: 41 } },
         'B118': { overhang: { coveredFromRow: 9, soffitHeightFt: 46 } },
         ...Object.fromEntries(['B125', 'B128', 'B132', 'B133'].map((id) => [id, { deckFrontFt: undefined, overhang: { coveredFromRow: 6, soffitHeightFt: 66 } }])),
@@ -566,12 +574,12 @@ const FENWAY: StadiumStructure = {
         'B97': [54, -27], 'B98': [54, -7], 'B99': [54, -15], 'B100': [54, -17], 'B101': [54, -17],
         'B102': [54, -19], 'B103': [53, -2], 'B104': [54, -20], 'B105': [54, -20], 'B106': [54, -20],
         'B111': [52, -10],
-        'B113': [53, -10], 'B115': [54, -28], 'B116': [54, 1], 'B118': [54, -14], 'B121': [54, -14],
+        'B115': [54, -28], 'B116': [54, 1], 'B118': [54, -14], 'B121': [54, -14],
         'B122': [54, -15], 'B123': [54, -15], 'B124': [53, -15], 'B125': [96, -19],
         'B127': [98, -19], 'B128': [98, -19], 'B129': [97, -20], 'B130': [96, -9],
         'B131': [100, -20], 'B132': [98, -19], 'B133': [98, -19], 'B134': [96, -20],
         'B135': [54, -17], 'B136': [54, -17], 'B137': [54, -14], 'B138': [54, -14],
-        'B140': [54, -14], 'B141': [54, -14], 'B144': [52, -10], 'B146': [54, 1], 'B148': [53, -10],
+        'B140': [54, -14], 'B141': [54, -14], 'B146': [54, 1], 'B148': [53, -10],
         'B149': [53, -10], 'B150': [53, -10], 'B151': [53, -12], 'B152': [53, -10],
         'B154': [54, -14], 'B155': [54, -14], 'B157': [53, -10], 'B158': [54, -10], 'B159': [53, -9],
         'B160': [54, -10], 'B161': [54, -10], 'B162': [54, -10], 'B164': [52, -10], 'B165': [54, 2],
@@ -580,8 +588,8 @@ const FENWAY: StadiumStructure = {
         'B89': 5,
       }), {
         'B88': 13, 'B89': 14, 'B95': 13, 'B96': 13, 'B97': 14, 'B98': 14, 'B99': 14,
-        'B100': 15, 'B101': 14, 'B102': 14, 'B111': 15, 'B113': 15,
-        'B144': 15, 'B149': 15, 'B150': 15, 'B157': 20,
+        'B100': 15, 'B101': 14, 'B102': 14,
+        'B149': 15, 'B150': 15, 'B157': 20,
         'B158': 20, 'B159': 20, 'B160': 20, 'B161': 19, 'B162': 19, 'B163': 18,
       }),
       rowsFromMap: true,
@@ -620,7 +628,7 @@ const FENWAY: StadiumStructure = {
       // roof, 41–54 ft up: the median of the four, 68 ft, is neither). Each
       // measured section takes its own back.
       stand: { rows: 12, frontRowHeightFt: -1, rakeDeg: 9, backHeightFt: 82, backSetbackFt: 50 },
-      sections: withFronts(withBacks({}, { 'B2': [41, 21], 'B5': [54, 45], 'B8': [82, 58], 'B7': [82, 52] }), {
+      sections: withFronts(withBacks({}, { 'B2': [41, 21], 'B5': [54, 45], 'B8': [82, 58], 'B7': [82, 48] }), {
         'B2': 0,
       }),
       rowsFromMap: true,
@@ -885,8 +893,8 @@ const DODGERS: StadiumStructure = {
     field: {
       label: 'Field level',
       // Rows A–X (22 rows, no I), covered from row T (19th) by the Loge
-      // (sourced; the lidar puts the Loge's front edge at row 19, 16–22; at
-      // row 22 in 15FD and row 17 in 53FD, which take the lidar's row).
+      // (sourced; the lidar puts the Loge's front edge at row 19, 17–21; at
+      // row 17 in 53FD, which takes the lidar's row).
       // Sections 52 and 53 have rows AA, A–Z (25), so T is their 20th.
       // Lidar (53 of 53): front row 1 ft (-1 to 4), 12° rake (9–13). What
       // rises highest behind depends on where the section is: down the
@@ -894,9 +902,9 @@ const DODGERS: StadiumStructure = {
       // row), behind home the Top Deck's roof (139 ft) or the box on it
       // (155 ft), in the corners the Reserve roof (120 ft, the median).
       // Estimated: the Loge's underside ~21 ft (9 ft above row T's floor,
-      // a foot under the Loge's measured 22-ft front row; 22 ft over 15FD's
-      // row 22, and over 2FD, 3FD, 4FD, 6FD and 36FD, whose own front rows
-      // sit higher). Each measured section takes its own back.
+      // a foot under the Loge's measured 22-ft front row; 22 ft over 2FD,
+      // 3FD, 4FD, 6FD and 36FD, whose own front rows sit higher). Each
+      // measured section takes its own back.
       stand: {
         deckFrontFt: 23,
         rows: 22,
@@ -907,7 +915,6 @@ const DODGERS: StadiumStructure = {
         overhang: { coveredFromRow: 19, soffitHeightFt: 21 },
       },
       sections: withRakes(withFronts(withBacks({
-        '15FD': { overhang: { coveredFromRow: 22, soffitHeightFt: 22 } },
         '52FD': { rows: 25, overhang: { coveredFromRow: 20, soffitHeightFt: 21 } },
         ...Object.fromEntries(['2FD', '3FD', '4FD', '6FD', '36FD'].map((id) => [id, { overhang: { coveredFromRow: 19, soffitHeightFt: 22 } }])),
         '53FD': { rows: 25, overhang: { coveredFromRow: 17, soffitHeightFt: 21 } },
@@ -915,11 +922,11 @@ const DODGERS: StadiumStructure = {
         '2FD': [139, 72], '24FD': [58, 9], '22FD': [58, 11], '20FD': [59, 11], '18FD': [139, 75],
         '46FD': [120, 85], '42FD': [57, 11], '40FD': [59, 12], '36FD': [58, 9], '34FD': [58, 11],
         '32FD': [58, 11], '30FD': [59, 11], '28FD': [59, 11], '26FD': [59, 12], '16FD': [138, 75],
-        '14FD': [139, 76], '12FD': [139, 76], '19FD': [139, 75], '15FD': [139, 86],
+        '14FD': [139, 76], '12FD': [139, 76], '19FD': [139, 75], '15FD': [139, 75],
         '17FD': [139, 75], '23FD': [120, 89], '31FD': [59, 11], '33FD': [59, 11], '35FD': [58, 11],
         '37FD': [59, 11], '39FD': [59, 11], '7FD': [139, 75], '9FD': [139, 76], '11FD': [139, 76],
-        '13FD': [139, 80], '21FD': [59, 11], '25FD': [58, 11], '27FD': [57, 11], '29FD': [59, 11],
-        '41FD': [58, 11], '50FD': [56, 9], '48FD': [120, 88], '38FD': [58, 9], '10FD': [139, 76],
+        '13FD': [139, 75], '21FD': [59, 11], '25FD': [58, 11], '27FD': [57, 11], '29FD': [59, 11],
+        '41FD': [58, 11], '50FD': [56, 9], '48FD': [120, 78], '38FD': [58, 9], '10FD': [139, 76],
         '8FD': [139, 75], '6FD': [139, 75], '4FD': [139, 70], '1FD': [155, 95], '3FD': [139, 73],
         '5FD': [139, 75], '47FD': [58, 12], '49FD': [121, 75], '51FD': [120, 83],
         '53FD': [120, 65],
@@ -927,13 +934,13 @@ const DODGERS: StadiumStructure = {
         '43FD': [120, 75],
         '45FD': [120, 75],
       }), {
-        '2FD': 2, '46FD': 0, '36FD': 2, '15FD': 0, '17FD': 0, '23FD': -1, '9FD': 0, '48FD': 0,
+        '2FD': 2, '46FD': 0, '36FD': 2, '17FD': 0, '23FD': -1, '9FD': 0, '48FD': 0,
         '6FD': 2, '4FD': 2, '52FD': 0, '51FD': 0, '53FD': 2,
         '50FD': 2,
         '3FD': 2,
       }), {
-        '20FD': 13, '30FD': 11, '28FD': 11, '17FD': 13, '9FD': 13, '11FD': 11, '13FD': 11,
-        '50FD': 11, '48FD': 11, '10FD': 11, '6FD': 11, '4FD': 11, '1FD': 11, '5FD': 13,
+        '20FD': 13, '30FD': 11, '28FD': 11, '17FD': 13, '9FD': 13, '11FD': 11,
+        '50FD': 11, '10FD': 11, '6FD': 11, '4FD': 11, '1FD': 11, '5FD': 13,
       }),
       heightsSourced: false,
       coverSourced: true,
@@ -961,7 +968,7 @@ const DODGERS: StadiumStructure = {
       sections: withRakes(withFronts(withBacks({}, {
         '163LG': [57, -38], '166LG': [57, -38], '105LG': [58, -42], '164LG': [57, -37],
         '126LG': [58, -42], '144LG': [59, -40], '148LG': [58, -42], '156LG': [58, -42],
-        '160LG': [58, -35], '158LG': [58, -38], '132LG': [59, -38], '138LG': [57, -42],
+        '160LG': [59, -37], '158LG': [58, -38], '132LG': [59, -38], '138LG': [57, -42],
         '134LG': [59, -40], '146LG': [58, -38], '142LG': [59, -40], '130LG': [58, -38],
         '128LG': [58, -42], '162LG': [58, -37], '154LG': [58, -42], '152LG': [58, -42],
         '122LG': [58, -38], '120LG': [58, -42], '116LG': [58, -42], '114LG': [58, -38],
@@ -989,14 +996,14 @@ const DODGERS: StadiumStructure = {
         '159LG': [58, -40],
         '161LG': [58, -40],
       }), {
-        '105LG': 23, '126LG': 23, '160LG': 21, '128LG': 23, '120LG': 23, '116LG': 23, '106LG': 23,
+        '105LG': 23, '126LG': 23, '128LG': 23, '120LG': 23, '116LG': 23, '106LG': 23,
         '104LG': 23, '101LG': 23, '103LG': 23, '149LG': 23, '155LG': 23, '153LG': 23, '151LG': 23,
         '115LG': 23, '117LG': 23, '119LG': 23, '131LG': 24, '133LG': 23, '135LG': 23, '137LG': 23,
         '129LG': 23, '127LG': 23, '125LG': 23, '139LG': 23, '141LG': 23, '145LG': 23, '143LG': 23,
         '147LG': 23, '111LG': 23, '157LG': 23, '159LG': 23, '161LG': 23,
         '107LG': 23,
       }), {
-        '160LG': 18, '122LG': 18, '112LG': 20, '106LG': 18, '102LG': 20,
+        '122LG': 18, '112LG': 20, '106LG': 18, '102LG': 20,
         '115LG': 20, '121LG': 18, '125LG': 18, '123LG': 18, '165LG': 20,
         '105LG': 20,
       }),
@@ -1080,14 +1087,10 @@ const DODGERS: StadiumStructure = {
         '28RS': [120, 2], '27RS': [121, 7],
         '35RS': [120, 6],
         '32RS': [120, 2],
-        '55RS': [120, 7],
-        '47RS': [120, 7],
       }), {
         '32RS': 59, '28RS': 59,
         '27RS': 56, '56RS': 57,
         '24RS': 57,
-        '55RS': 57,
-        '47RS': 57,
         '35RS': 57,
       }), {
         '48RS': 31, '40RS': 31, '44RS': 31,
@@ -1095,6 +1098,8 @@ const DODGERS: StadiumStructure = {
         '51RS': 31,
         '28RS': 31,
         '24RS': 31,
+        '55RS': 31,
+        '47RS': 31,
       }),
       heightsSourced: true,
       coverSourced: true,
@@ -1146,11 +1151,11 @@ const DODGERS: StadiumStructure = {
         '3TD': { overhang: { coveredFromRow: 17, soffitHeightFt: 136 } },
       }, {
         '9TD': [139, -29], '7TD': [139, -29], '3TD': [155, 9], '1TD': [154, -12], '2TD': [139, -29],
-        '13TD': [139, -13], '4TD': [139, -29], '12TD': [139, -29], '10TD': [139, -29],
+        '13TD': [139, -15], '4TD': [139, -29], '12TD': [139, -29], '10TD': [139, -29],
       }), {
-        '11TD': 96, '13TD': 96, '5TD': 96,
+        '11TD': 96, '5TD': 96,
       }), {
-        '11TD': 33, '7TD': 33, '13TD': 33, '5TD': 33, '4TD': 33, '6TD': 33,
+        '11TD': 33, '7TD': 33, '5TD': 33, '4TD': 33, '6TD': 33,
       }),
       heightsSourced: false,
       coverSourced: true,
@@ -1511,7 +1516,7 @@ const ORACLE: StadiumStructure = {
         '133': { rows: 11, frontRowHeightFt: 16, overhang: { coveredFromRow: 2, soffitHeightFt: 26 } },
         '135': { rows: 32, frontRowHeightFt: 5, overhang: { coveredFromRow: 23, soffitHeightFt: 27 } },
       }, {
-        '101': [33, 42], '102': [33, -17], '103': [125, 39], '104': [125, 39], '105': [125, 39],
+        '101': [24, 9], '102': [33, -17], '103': [125, 39], '104': [125, 39], '105': [125, 39],
         '106': [68, -22], '107': [67, -33], '108': [68, -35], '109': [125, 28], '110': [69, -27],
         '112': [125, 91], '114': [68, -27], '116': [125, 28],
         '117': [69, -25], '118': [125, 28], '121': [125, 31], '123': [68, -33],
@@ -1519,11 +1524,11 @@ const ORACLE: StadiumStructure = {
         '129': [125, 37], '130': [125, 36], '131': [125, 36], '132': [125, 36], '134': [125, 36],
         '135': [68, -10],
       }), {
-        '101': -1, '103': -1, '104': -1, '105': -1, '107': 3, '108': 3, '109': 1, '110': 1, '112': 2,
+        '103': -1, '104': -1, '105': -1, '107': 3, '108': 3, '109': 1, '110': 1, '112': 2,
         '113': 1, '114': 1, '115': 1, '116': 1, '117': 1, '118': 1, '121': 1, '123': 2, '124': 3,
         '128': -1, '129': -1, '134': -1, '135': 5,
       }), {
-        '101': 10, '102': 11, '107': 11, '125': 11, '126': 11, '127': 11, '128': 11, '129': 11,
+        '101': 11, '102': 11, '107': 11, '125': 11, '126': 11, '127': 11, '128': 11, '129': 11,
         '130': 11, '131': 11, '132': 11, '134': 11, '135': 9,
       }),
       heightsSourced: false,
@@ -1600,11 +1605,11 @@ const ORACLE: StadiumStructure = {
       }, {
         '203': [68, -21], '205': [68, -14], '207': [68, -21], '209': [68, -16], '210': [68, -17],
         '211': [66, -19], '212': [68, -17], '213': [68, -17], '214': [65, -22], '215': [68, -8],
-        '216': [67, -19], '217': [67, -19], '218': [69, -17], '219': [68, -17], '220': [68, -16],
+        '216': [67, -19], '217': [67, -19], '218': [69, -17], '219': [68, -17], '220': [67, -19],
         '221': [67, -19], '222': [68, -21], '223': [66, -22], '224': [67, -19], '225': [66, -12],
         '227': [67, -19], '228': [67, -19], '229': [68, -21], '231': [67, -21], '233': [68, -21],
       }), {
-        '209': 30, '220': 31, '225': 29,
+        '209': 30, '225': 29,
       }), {
         '225': 21,
       }),
@@ -1796,12 +1801,13 @@ const CITI: StadiumStructure = {
         '133': { rows: 5, noCover: true, backSetbackFt: 49 },
       }, {
         '106': [69, -41], '114': [69, -22], '115': [69, -20], '116': [129, 31], '117': [128, 34],
-        '118': [129, 99], '119': [128, 34], '120': [129, 34], '121': [129, 34],
+        '118': [129, 99], '119': [129, 31], '120': [129, 34], '121': [129, 34],
         '130': [69, -15], '132': [70, -26],
       }), {
         '106': 7, '116': 5, '132': 5,
       }), {
         '106': 15, '130': 11, '132': 12,
+        '119': 11,
       }),
       heightsSourced: false,
       coverSourced: true,
@@ -1969,7 +1975,7 @@ const CITI: StadiumStructure = {
         '537': [127, 22], '535': [129, 37], '534': [129, 12], '533': [129, -20], '532': [129, -21],
         '530': [129, -20], '529': [129, -20], '527': [129, -20],
         '526': [129, -20], '524': [129, -20], '523': [129, -20], '522': [128, -13],
-        '521': [129, -15], '520': [128, -18],
+        '520': [128, -18],
         '517': [127, -18],
         '502': [128, -16], '503': [129, -20], '504': [127, -18], '505': [129, -20],
         '506': [129, -20], '507': [129, -20], '508': [129, -16], '509': [129, -21],
@@ -1978,7 +1984,7 @@ const CITI: StadiumStructure = {
         '513': [129, -20],
       }), {
         '535': 83, '534': 84, '529': 87, '524': 87,
-        '523': 87, '522': 82, '521': 84, '503': 87, '505': 87,
+        '523': 87, '522': 82, '521': 85, '503': 87, '505': 87,
         '508': 85, '509': 87, '511': 87,
         '532': 87,
         '527': 87,
@@ -1993,7 +1999,7 @@ const CITI: StadiumStructure = {
         '512': 87,
       }), {
         '531': 31,
-        '522': 31, '521': 31, '516': 31, '515': 31,
+        '522': 31, '516': 31, '515': 31,
         '520': 31,
         '517': 30,
         '510': 30,
@@ -2180,7 +2186,6 @@ const CBP: StadiumStructure = {
         '115': { overhang: { coveredFromRow: 28, soffitHeightFt: 30 } },
         '118': { overhang: { coveredFromRow: 25, soffitHeightFt: 35 } },
         '129': { overhang: { coveredFromRow: 23, soffitHeightFt: 30 } },
-        '133': { overhang: { coveredFromRow: 31, soffitHeightFt: 30 } },
         '134': { deckFrontFt: undefined, overhang: { coveredFromRow: 34, soffitHeightFt: 28 } }, // 9 ft above row 34's floor; something lower than the deck at its edge
         // RYS covers only the wheelchair row behind row 37; the lidar puts
         // the deck's edge over row 34.
@@ -2192,15 +2197,13 @@ const CBP: StadiumStructure = {
         '139': { frontRowHeightFt: 6, overhang: { coveredFromRow: 23, soffitHeightFt: 35 } },
       }, {
         '132': [133, 28], '115': [133, 29], '117': [70, -16], '118': [70, -6], '129': [132, 40],
-        '130': [70, -16], '131': [133, 42], '134': [133, 48], '135': [132, 52], '136': [132, 42],
+        '130': [70, -16], '131': [133, 42], '134': [133, 52], '135': [132, 52], '136': [132, 42],
         '108': [117, 45], '109': [117, 16], '110': [117, 25], '111': [117, 39], '116': [133, 45],
-        '133': [133, 38], '137': [133, 32], '138': [70, -44],
+        '133': [133, 42], '137': [133, 32], '138': [70, -44],
       }), {
         '115': -1, '117': 1, '118': 1, '129': 1, '130': 1, '134': -1, '135': -1, '136': -1, '108': 4,
         '109': 2, '111': -1, '116': -1, '133': -1, '137': -1, '138': 4,
-      }), {
-        '134': 11, '133': 11,
-      }),
+      }), {}),
       rowsFromMap: true,
       heightsSourced: false,
       coverSourced: true,
@@ -2209,19 +2212,19 @@ const CBP: StadiumStructure = {
     fieldCoverUnsourced: {
       label: 'Field level (100s)',
       // 112–114: Rate Your Seats gives no covered rows for these three; the
-      // lidar puts the 200 level's edge over row 34 (112, 113) and 30 (114).
+      // lidar puts the 200 level's edge over row 34 (112), 33 (113) and 30
+      // (114).
       // Rows from the club's data; stand as the rest of the 100s (the lidar
       // agrees: front row 1 ft below the field, 12°). Each takes its own
-      // back: behind 112's 37 rows the 200 level's front stands 24 ft back,
-      // over 113's last row 4 ft in front; from 114's open rows the Terrace
-      // Deck roof rises highest.
+      // back: behind 112's 37 rows the 200 level's front stands 24 ft back;
+      // along 113's rows (turned to their fall line) the deck's front, 45 ft
+      // up, is 12 ft in front of its last row; from 114's open rows the
+      // Terrace Deck roof rises highest.
       stand: { ...CBP_FIELD, deckFrontFt: 44 },
       sections: withRakes(withFronts(withBacks({
         '112': { overhang: { coveredFromRow: 34, soffitHeightFt: 35 } },
-        '113': { overhang: { coveredFromRow: 34, soffitHeightFt: 35 } },
-      }, { '112': [69, 24], '113': [70, -4], '114': [133, 29] }), { '112': -1, '113': -1, '114': -1 }), {
-        '113': 11,
-      }),
+        '113': { overhang: { coveredFromRow: 33, soffitHeightFt: 35 } },
+      }, { '112': [69, 24], '113': [45, -12], '114': [133, 29] }), { '112': -1, '113': -1, '114': -1 }), {}),
       rowsFromMap: true,
       heightsSourced: false,
       coverSourced: true,
@@ -3076,25 +3079,23 @@ const BUSCH: StadiumStructure = {
       }, {
         '127': [117, 84], '128': [117, 75], '129': [117, 70], '130': [48, -47], '131': [76, -9],
         '132': [133, 6], '133': [133, 22], '134': [133, 21], '135': [133, 16], '136': [133, 45],
-        '137': [133, 21], '138': [133, 50], '139': [133, 24], '140': [133, 21], '146': [133, 45],
+        '137': [133, 21], '138': [133, 50], '139': [133, 19], '140': [133, 21], '146': [133, 45],
         '147': [133, 53], '148': [133, 33], '150': [133, 29], '151': [133, 53],
-        '152': [133, 26], '153': [133, 27], '162': [75, 4], '163': [116, 21], '164': [87, 66],
+        '152': [133, 26], '153': [133, 27], '162': [75, 4], '163': [116, 21], '164': [116, 43],
         '165': [116, 18], '166': [116, 45], '167': [116, 21], '168': [116, 50], '154': [133, 48],
         '141': [133, 35],
         '155': [133, 35],
         '149': [133, 30],
       }), {
         '127': 14, '128': 8, '129': 8, '130': 12, '131': 11, '132': 8,
-        '137': 5, '146': 5, '147': 3, '148': 3, '152': 5, '153': 5, '155': 3, '162': 5, '164': 3,
+        '146': 5, '147': 3, '148': 3, '152': 5, '153': 5, '155': 3, '162': 5,
         '154': 5,
       }), {
-        '152': 11, '163': 12, '164': 11,
+        '152': 11, '163': 12,
         '128': 14,
         '129': 14,
         '132': 12,
         '133': 12,
-        '137': 12,
-        '139': 12,
         '146': 12,
         '147': 12,
         '149': 12,
@@ -3200,7 +3201,7 @@ const BUSCH: StadiumStructure = {
       stand: { rows: 9, frontRowHeightFt: 75, rakeDeg: 31, backHeightFt: 133, backSetbackFt: 9 },
       sections: withRakes(withFronts(withBacks({}, {
         '350': [133, 11], '331': [133, 11], '332': [133, 2], '333': [133, 2], '334': [133, 12],
-        '335': [133, 4], '337': [133, 1], '339': [133, 4], '340': [133, 11], '341': [133, 11],
+        '335': [133, 2], '337': [133, 1], '339': [133, 4], '340': [133, 11], '341': [133, 11],
         '342': [133, 2], '344': [133, 2], '345': [133, 4], '346': [133, 2], '347': [133, 11],
         '349': [133, 11], '352': [133, 11], '354': [133, 1], '355': [133, 1], '356': [133, 2],
         '357': [97, 7], '358': [117, 55], '359': [116, 48], '360': [106, 27],
@@ -3208,7 +3209,7 @@ const BUSCH: StadiumStructure = {
         '339': 74, '344': 76, '351': 76, '354': 76, '355': 76, '357': 76,
         '337': 76,
       }), {
-        '333': 30, '335': 29, '345': 30, '356': 30,
+        '333': 30, '345': 30, '356': 30,
       }),
       rowsFromMap: true,
       heightsSourced: true,
@@ -4764,18 +4765,21 @@ const COORS: StadiumStructure = {
       label: 'Left-field stands (151–160)',
       // Rows 2–23 or 2–20, not covered ("in June and July the sunniest
       // seats"). Lidar (9 of 10; 151's place on the seat map cuts a ramp):
-      // front row 5 ft (4–8), 18° rake (17–18; 158 and 160 along the median
-      // of their rows' fall lines); behind, 42 ft up and 43 ft back (the
-      // scoreboard in 154, 107 ft; each measured section its own).
-      stand: { rows: 22, frontRowHeightFt: 5, rakeDeg: 18, backHeightFt: 42, backSetbackFt: 43 },
+      // front row 5 ft (4–8), 18° rake (17–19; 152, 155, 156, 158 and 160
+      // along their rows, which turn from 314° to due north along the
+      // stands); behind, 47 ft up and 34 ft back (the scoreboard in 154,
+      // 107 ft; each measured section its own).
+      stand: { rows: 22, frontRowHeightFt: 5, rakeDeg: 18, backHeightFt: 47, backSetbackFt: 34 },
       sections: withRakes(withFronts(withBacks({}, {
-        '152': [42, 45], '153': [39, 50], '154': [107, 43], '155': [25, 7], '156': [37, 47],
+        '152': [51, 34], '153': [39, 50], '154': [107, 43], '155': [25, 6], '156': [38, 53],
         '157': [32, 21], '158': [84, 91], '159': [47, 12], '160': [47, 11],
       }), {
-        '156': 8, '158': 4, '160': 6,
+        '158': 4, '160': 6,
+        '155': 4,
       }), {
         '153': 17,
         '158': 17,
+        '156': 19,
       }),
       rowsFromMap: true,
       heightsSourced: true,
@@ -4810,7 +4814,7 @@ const COORS: StadiumStructure = {
         '204': [68, -29], '205': [68, -43], '206': [69, -43], '219': [68, -18], '221': [68, -15],
         '222': [68, -15], '223': [68, -18], '226': [68, -25], '227': [71, -19], '238': [68, -18],
         '239': [68, -15], '241': [69, -17], '242': [69, -20], '243': [68, -25], '244': [69, -25],
-        '245': [69, -25], '246': [69, -23],
+        '245': [69, -25], '246': [69, -25],
       }), {
         '223': 35, '227': 35,
       }),
@@ -4983,29 +4987,31 @@ const KAUFFMAN: StadiumStructure = {
       // Rows A–X (fewer in the corners), no cover ("all 100 level sections
       // are exposed to the sun until at least 3:00"). Lidar (38 of 42): front
       // row 3 ft (-1 to 4), 14° rake (12–28); what rises highest behind is
-      // the roof's edge, 157 ft up and 66 ft back (in nine, the upper deck's
-      // front, 60 ft, 25 ft back). No deck over them. Each measured section
+      // the roof's edge, 157 ft up and 66 ft back (in ten, the upper deck's
+      // front, 60 ft, 7–30 ft back). No deck over them. Each measured section
       // takes its own back: behind home (113, 122–134) the roof's edge is
-      // 86–101 ft back; behind 108–112 and 142–147 the upper deck's front,
-      // 11–34 ft back.
+      // 86–101 ft back; behind 108–114 and 142–147 (112, 114 and 142–147
+      // along their rows) the upper deck's front, 7–30 ft back.
       stand: { rows: 24, frontRowHeightFt: 3, rakeDeg: 14, backHeightFt: 157, backSetbackFt: 66 },
       sections: withRakes(withFronts(withBacks({}, {
         '108': [59, 30],
- '110': [61, 14], '113': [141, 91], '114': [157, 60], '115': [161, 66],
+ '110': [61, 14], '113': [141, 91], '114': [58, 7], '115': [161, 66],
         '116': [161, 63], '117': [160, 65], '118': [161, 68], '119': [157, 71], '120': [160, 65],
         '121': [161, 65], '122': [161, 88], '123': [160, 91], '124': [161, 94], '125': [150, 89],
         '126': [150, 89], '127': [150, 93], '128': [150, 70], '129': [151, 88], '130': [151, 101],
         '131': [157, 99], '132': [161, 89], '133': [161, 88], '134': [161, 86], '135': [161, 65],
         '136': [161, 75], '137': [161, 66], '138': [155, 65], '139': [157, 62], '140': [157, 65],
-        '141': [160, 63], '142': [60, 11], '143': [60, 14], '144': [60, 30], '145': [60, 25],
-        '146': [61, 29], '147': [60, 34], '112': [60, 14],
+        '141': [160, 63], '142': [61, 7], '143': [60, 11], '144': [61, 21], '145': [61, 16],
+        '146': [61, 29], '147': [60, 30], '112': [61, 11],
       }), {
         '108': 4, '113': 2, '122': 0, '123': 0, '124': 0, '125': 0, '126': 0, '127': 0, '129': 0,
         '130': 0, '131': -1, '132': -1, '133': 0, '134': 0, '138': 2, '140': 2, '141': 2,
-        '145': 2, '146': 2, '147': 4,
+        '146': 2, '147': 4,
         '110': 4,
+        '144': 2,
       }), {
-        '114': 13, '115': 13, '138': 13, '142': 13, '143': 13, '146': 13,
+        '115': 13, '138': 13, '146': 13,
+        '144': 13,
       }),
       rowsFromMap: true,
       heightsSourced: true,
@@ -5053,13 +5059,13 @@ const KAUFFMAN: StadiumStructure = {
       // Rows AA–TT, covered from row NN (sourced). Lidar (6 of 10): front
       // row 16 ft, 21° rake; the upper deck's front reaches out over row 6
       // in all six (5–7), so the rows from there back are covered, under
-      // ~50 ft (as in the Plaza). That front is 38 ft in front of the last
+      // ~50 ft (as in the Plaza). That front is 39 ft in front of the last
       // row, 25 ft in 211, whose 14 rows end sooner (each measured section
       // takes its own).
-      stand: { rows: 20, frontRowHeightFt: 16, rakeDeg: 21, backHeightFt: 60, backSetbackFt: -38, deckFrontFt: 59, overhang: { coveredFromRow: 6, soffitHeightFt: 50 } },
+      stand: { rows: 20, frontRowHeightFt: 16, rakeDeg: 21, backHeightFt: 60, backSetbackFt: -39, deckFrontFt: 59, overhang: { coveredFromRow: 6, soffitHeightFt: 50 } },
       sections: withFronts(withBacks({}, {
         '209': [60, -36], '211': [58, -25], '212': [61, -39], '213': [60, -39], '243': [60, -39],
-        '244': [60, -36],
+        '244': [60, -38],
       }), {
         '213': 17,
       }),
@@ -5298,33 +5304,39 @@ const GABP: StadiumStructure = {
     first: {
       label: 'Field level, first-base side (127–137)',
       // Up to 42 rows, covered from row EE (sourced: 26 in 127–131, 31 in
-      // 132–135, 27 in 136, 19 in 137). Lidar (11 of 11): front row at field
-      // level (-1 ft; 4 in 136), 11° rake (11–12); what rises highest behind
-      // is the roof's edge, 138 ft up and 33 ft back (in four, the club's
-      // front over the last rows). The club's front, 35 ft up, is over the
-      // source's row in six; in 127, 128 and 136 it reaches out over row
-      // 20–22 and in 133 over 28, which they take; in 137 the scan puts it
-      // over row 30 (source: 19). Its underside ~25 ft (that front row less
+      // 132–135, 27 in 136, 19 in 137). Lidar (11 of 11; 133, 136 and 137
+      // along their rows): front row at field level (-1 ft; 1 in 136), 11°
+      // rake (11–12); what rises highest behind is the roof's edge, 138 ft
+      // up and 29 ft back (in three, the club's front over the last rows).
+      // The club's front, 35 ft up, is over the source's row in six; in 127
+      // and 128 it reaches out over row 22, in 133 over 28 and in 136 over
+      // 24, which they take; in 137 the scan puts it over row 29 (source:
+      // 19). Its underside ~25 ft (that front row less
       // 9 ft; 30 ft in 127, where something lower shows; 26 over 129 and
       // 130, 9 ft above their row 26's floor at their own 12°). Each measured
-      // section takes its own back (the roof's edge 29–68 ft behind the last
-      // row; the club's front 25–35 ft in front of it).
-      stand: { rows: 37, frontRowHeightFt: -1, rakeDeg: 11, backHeightFt: 138, backSetbackFt: 33, deckFrontFt: 34 },
+      // section takes its own back (the roof's edge 26–61 ft behind the last
+      // row; the club's front 25–29 ft in front of it).
+      stand: { rows: 37, frontRowHeightFt: -1, rakeDeg: 11, backHeightFt: 138, backSetbackFt: 29, deckFrontFt: 34 },
       sections: withRakes(withFronts(withBacks({
         ...gabpCover(['131', '132', '134', '135'], 25),
         '127': { overhang: { coveredFromRow: 22, soffitHeightFt: 30 } },
         '128': { overhang: { coveredFromRow: 22, soffitHeightFt: 24 } },
         ...Object.fromEntries(['129', '130'].map((id) => [id, gabpCover([id], 26)[id]])),
         '133': { overhang: { coveredFromRow: 28, soffitHeightFt: 25 } },
-        '136': { frontRowHeightFt: 4, overhang: { coveredFromRow: 20, soffitHeightFt: 25 } },
-        '137': { overhang: { coveredFromRow: 30, soffitHeightFt: 25 } },
+        '136': { overhang: { coveredFromRow: 24, soffitHeightFt: 25 } },
+        '137': { overhang: { coveredFromRow: 29, soffitHeightFt: 25 } },
       }, {
         '127': [62, -29], '128': [138, 29], '129': [69, -25], '130': [68, -25], '131': [138, 45],
-        '136': [69, -35], '137': [138, 68],
+        '136': [138, 26], '137': [138, 61],
+        '132': [138, 33],
+        '133': [138, 28],
+        '134': [138, 33],
+        '135': [138, 33],
       }), {
-        '127': 2, '128': 1, '129': 2, '130': 2, '136': 4,
+        '127': 2, '128': 1, '129': 2, '130': 2, '136': 1,
       }), {
         '127': 12, '128': 12, '129': 12, '130': 12,
+        '136': 12,
       }),
       rowsFromMap: true,
       heightsSourced: false,
@@ -5334,30 +5346,28 @@ const GABP: StadiumStructure = {
     third: {
       label: 'Field level, third-base side (107–112, 121)',
       // 108–112 covered from row KK, 121 from FF (sourced: 18, 25, 32, 37,
-      // 37, 20); 107 open. Lidar (6 of 7; 108 and 109 along their rows' fall
-      // line, 20° off the photo's direction, and 111 along the median of its
-      // rows' fall lines): front row 1 ft (-1 to 4), 12° rake (10–12; 110
-      // straddles a bend, its cut across the rows); behind, the roof's edge,
-      // 134 ft up and 40 ft back. The 400s' front, 52 ft up, is over the
-      // source's row in 110; in 112 it reaches out over row 33, along 111's
-      // rows over row 31 and along 109's over row 22, which they take. Its
+      // 37, 20); 107 open. Lidar (6 of 7; all but 121 along their rows, 20–27°
+      // off the photo's direction: 108 and 109 their fall line, 111 the
+      // median of its fall lines, 110 and 112 the treads and the fall line):
+      // front row 1 ft (-1 to 4), 12° rake (10–12); behind, the roof's edge,
+      // 134 ft up and 33 ft back. The 400s' front, 52 ft up, is over the
+      // source's row in 110; along 111's and 112's rows it reaches out over
+      // row 31 and along 109's over row 22, which they take. Its
       // underside ~43 ft (that front row less 9 ft). Each measured section
       // takes its own back (the roof's edge 28–65 ft back; behind 121 a
       // structure 53 ft up).
-      stand: { rows: 30, frontRowHeightFt: 1, rakeDeg: 12, backHeightFt: 134, backSetbackFt: 40, deckFrontFt: 52 },
+      stand: { rows: 30, frontRowHeightFt: 1, rakeDeg: 12, backHeightFt: 134, backSetbackFt: 33, deckFrontFt: 52 },
       sections: withRakes(withFronts(withBacks({
         ...gabpCover(['108', '110', '121'], 43),
         '111': { overhang: { coveredFromRow: 31, soffitHeightFt: 43 } },
-        '112': { overhang: { coveredFromRow: 33, soffitHeightFt: 43 } },
+        '112': { overhang: { coveredFromRow: 31, soffitHeightFt: 43 } },
         '109': { overhang: { coveredFromRow: 22, soffitHeightFt: 43 } },
       }, {
-        '112': [134, 43], '111': [134, 28], '110': [134, 55], '109': [134, 38], '108': [134, 65],
+        '112': [134, 28], '111': [134, 28], '110': [134, 40], '109': [134, 38], '108': [134, 65],
         '121': [53, 19],
       }), {
         '112': -1, '111': -1, '110': 0, '109': 4, '108': 2, '121': 2,
-      }), {
-        '112': 10,
-      }),
+      }), {}),
       rowsFromMap: true,
       heightsSourced: false,
       coverSourced: true,
@@ -5514,12 +5524,12 @@ const GABP: StadiumStructure = {
       // edge, 138 ft up and 35 ft back (35–40; each measured section its own).
       stand: { rows: 6, frontRowHeightFt: 68, rakeDeg: 31, backHeightFt: 138, backSetbackFt: 35 },
       sections: withRakes(withFronts(withBacks({}, {
-        '436': [138, 39], '435': [138, 39], '434': [138, 37], '432': [137, 35],
+        '435': [138, 39], '434': [138, 37], '432': [137, 35],
         '424': [137, 35], '422': [138, 37], '421': [83, 30],
       }), {
         '435': 67,
       }), {
-        '436': 28, '425': 29,
+        '425': 29,
       }),
       rowsFromMap: true,
       heightsSourced: true,
@@ -5556,16 +5566,24 @@ const GABP: StadiumStructure = {
       // but for 526's front: its run starts a row or two up, past the
       // walkway its neighbours' runs start right behind.
 
-      stand: { rows: 22, frontRowHeightFt: 84, rakeDeg: 32, backHeightFt: 138, backSetbackFt: -30, overhang: { coveredFromRow: 11, soffitHeightFt: 137 } },
+      stand: { rows: 22, frontRowHeightFt: 84, rakeDeg: 32, backHeightFt: 138, backSetbackFt: -31, overhang: { coveredFromRow: 11, soffitHeightFt: 137 } },
       sections: withRakes(withFronts(withBacks({ '521': { backHeightFt: 106, backSetbackFt: 0 } }, {
         '525': [138, -33], '526': [138, -38], '530': [138, -32], '531': [138, -35],
         '532': [138, -35], '533': [138, -32], '535': [138, -32], '536': [138, -29],
-        '537': [138, -29],
+        '537': [138, -33],
+        '522': [138, -30],
+        '523': [138, -30],
+        '524': [138, -30],
+        '527': [138, -30],
+        '528': [138, -30],
+        '529': [138, -30],
+        '534': [138, -30],
       }), {
         '525': 86, '530': 85, '531': 87, '532': 86, '533': 85, '535': 85,
 
+        '537': 86,
       }), {
-        '536': 31, '537': 30,
+        '536': 31,
       }),
 
       rowsFromMap: true,
@@ -5720,12 +5738,12 @@ const PNC: StadiumStructure = {
       // Rows A–F to A–P, open ("among the worst seats for shade"). Lidar (6
       // of 6): front row 1 ft (-1 to 3), 12° rake (9–17: 133, 134 and 136
       // read 9–10°, 135 13°, and 137 and 138, along their rows' fall lines,
-      // 16–17° over 8–9 rows); behind, 66 ft up and 57 ft back (each
-      // section's own where it differs: 57–72 ft up and 7–124 ft back).
-      stand: { rows: 12, frontRowHeightFt: 1, rakeDeg: 12, backHeightFt: 66, backSetbackFt: 57 },
+      // 16–17° over 8–9 rows); behind, 65 ft up and 66 ft back (each
+      // section's own where it differs: 43–72 ft up and 7–124 ft back).
+      stand: { rows: 12, frontRowHeightFt: 1, rakeDeg: 12, backHeightFt: 65, backSetbackFt: 66 },
       sections: withRakes(withBacks(withFronts({
         '133': { backHeightFt: 121, backSetbackFt: 124 }, '134': { backHeightFt: 72, backSetbackFt: 58 },
-        '135': { backHeightFt: 59, backSetbackFt: 7 }, '136': { backHeightFt: 62, backSetbackFt: 57 },
+        '135': { backHeightFt: 59, backSetbackFt: 7 }, '136': { backHeightFt: 43, backSetbackFt: 76 },
         '137': { backHeightFt: 70, backSetbackFt: 75 }, '138': { backHeightFt: 57, backSetbackFt: 57 },
       }, {
         '133': -1, '136': 3,
@@ -6053,7 +6071,7 @@ const COMERICA: StadiumStructure = {
       // full 35-row sections), so the rows from there back are covered, under
       // an underside of ~52 ft (that front row less 9 ft). It is also what
       // rises highest behind (each measured section its own).
-      stand: { rows: 35, frontRowHeightFt: 2, ...COMERICA_LOWER, backHeightFt: 62, backSetbackFt: -9, deckFrontFt: 61, overhang: { coveredFromRow: 26, soffitHeightFt: 52 } },
+      stand: { rows: 35, frontRowHeightFt: 2, ...COMERICA_LOWER, backHeightFt: 62, backSetbackFt: -11, deckFrontFt: 61, overhang: { coveredFromRow: 26, soffitHeightFt: 52 } },
       sections: withRakes(withFronts(withBacks({
         ...Object.fromEntries(['137', '139'].map((id) => [id, { overhang: { coveredFromRow: 33, soffitHeightFt: id === '137' ? 53 : 52 } }])),
 
@@ -6061,6 +6079,7 @@ const COMERICA: StadiumStructure = {
       }, {
         '139': [62, -6], '138': [63, -9], '137': [62, -6], '134': [63, -12], '133': [62, -14],
         '132': [62, -12], '131': [61, -9], '135': [63, -11],
+        '136': [62, -12],
       }), {
         '139': -1, '138': -1, '137': -2, '136': -1,
       }), {
@@ -6712,18 +6731,16 @@ const TARGET: StadiumStructure = {
     club: {
       label: 'Delta SKY360 Club (A–D, K–V)',
       // Rows 1–12 (to 14), covered from row 9 (sourced). Lidar (14 of 15):
-      // front row 38 ft, 21° rake; the upper deck's front row, 72–73 ft up,
+      // front row 38 ft, 22° rake; the upper deck's front row, 72–73 ft up,
       // reaches out over row 6, three rows ahead of the source's, so the
       // rows from 6 are covered; its underside is not seen: that row less
       // 9 ft. Seen from the middle of the five open rows, what rises highest
       // behind is the canopy, 148 ft up over the last row; in N, U and V the
       // upper deck's front, 76 ft up, 18–24 ft in front of it.
-      stand: { rows: 12, frontRowHeightFt: 38, rakeDeg: 21, treadFt: 2.8, backHeightFt: 148, backSetbackFt: 0, deckFrontFt: 72, overhang: { coveredFromRow: 6, soffitHeightFt: 63 } },
-      sections: withFronts(withBacks({}, {
-        'A': [148, 3], 'C': [149, 0], 'D': [148, -2], 'K': [148, -2], 'L': [148, -2], 'N': [76, -18],
+      stand: { rows: 12, frontRowHeightFt: 38, rakeDeg: 22, treadFt: 2.8, backHeightFt: 148, backSetbackFt: 0, deckFrontFt: 72, overhang: { coveredFromRow: 6, soffitHeightFt: 63 } },
+      sections: withBacks({}, {
+        'C': [149, 0], 'D': [148, -2], 'K': [148, -2], 'L': [148, -2], 'N': [76, -18],
         'T': [148, 3], 'U': [76, -22], 'V': [76, -24],
-      }), {
-        'A': 37,
       }),
       rowsFromMap: true,
       heightsSourced: false,
@@ -7007,14 +7024,14 @@ const RATE: StadiumStructure = {
       // Rows 1–28 (104–105 from row 9), open ("none of the outfield seats
       // are covered"). Lidar (6 of 6): front row 5 ft (9 in 104–105), 15°
       // rake; behind, 27–89 ft up by section.
-      stand: { rows: 28, frontRowHeightFt: 5, rakeDeg: 15, backHeightFt: 35, backSetbackFt: 25 },
+      stand: { rows: 28, frontRowHeightFt: 5, rakeDeg: 15, backHeightFt: 37, backSetbackFt: 42 },
       sections: withRakes(withFronts(withBacks({}, {
-        '100': [27, 11], '101': [33, 6], '102': [38, 43], '103': [89, 45], '104': [27, 2],
+        '100': [88, 53], '101': [33, 6], '102': [38, 43], '103': [89, 45], '104': [27, 2],
         '105': [36, 40],
       }), {
         '101': 4, '104': 8, '105': 10,
       }), {
-        '100': 14, '101': 14,
+        '101': 14,
       }),
       rowsFromMap: true,
       heightsSourced: true,
@@ -7024,11 +7041,12 @@ const RATE: StadiumStructure = {
     leftField: {
       label: 'Left-field outfield reserved and bleachers (157–164)',
       // Rows 1–28 (157–158 from row 8), open in the source. Lidar (8 of 8):
-      // front row 5 ft (9 in 157–158), 15° rake; behind, 37–89 ft up by
-      // section. Over 158's row 19 and 159's row 25 a structure reaches out,
-      // the bottom of its face 45–46 ft up, so those rows are covered. Each
-      // section takes its own back; the tier keeps the bleachers' (160, 162,
-      // 164: 37 ft, 42–55 ft back), not the eight's 50-ft median.
+      // front row 5 ft (9 in 157–158), 15° rake (163 and 164 along their
+      // rows); behind, 33–89 ft up by section. Over 158's row 19 and 159's
+      // row 25 a structure reaches out, the bottom of its face 45–46 ft up,
+      // so those rows are covered. Each section takes its own back; the tier
+      // keeps the bleachers' (160 and 162: 37 ft, 42–48 ft back), not the
+      // eight's median.
       stand: { rows: 28, frontRowHeightFt: 5, rakeDeg: 15, backHeightFt: 37, backSetbackFt: 48 },
       sections: withRakes(withFronts(withBacks({
         '158': { overhang: { coveredFromRow: 19, soffitHeightFt: 46 } },
@@ -7036,11 +7054,11 @@ const RATE: StadiumStructure = {
         '159': { overhang: { coveredFromRow: 25, soffitHeightFt: 45 } },
       }, {
         '157': [73, 4], '158': [52, -6], '159': [48, -4], '161': [88, 45],
-        '162': [37, 42], '163': [89, 50], '164': [37, 55],
+        '162': [37, 42], '163': [37, 39], '164': [33, 11],
       }), {
         '157': 9, '158': 9,
       }), {
-        '159': 14, '160': 14, '163': 14, '164': 14,
+        '159': 14, '160': 14,
       }),
       rowsFromMap: true,
       heightsSourced: true,
@@ -7058,7 +7076,7 @@ const RATE: StadiumStructure = {
       // 312, 316 and 356; each measured section takes its own).
       stand: { rows: 5, frontRowHeightFt: 48, rakeDeg: 28, backHeightFt: 73, backSetbackFt: -3, deckFrontFt: 71, overhang: { coveredFromRow: 4, soffitHeightFt: 62 } },
       sections: withFronts(withBacks({ '312': { overhang: { coveredFromRow: 4, soffitHeightFt: 69 } } }, {
-        '312': [130, 22], '314': [72, -3], '316': [130, 18], '342': [72, -3], '356': [130, 26],
+        '312': [130, 22], '314': [74, -3], '316': [130, 18], '342': [72, -3], '356': [130, 26],
       }), {
         '312': 47, '342': 49, '344': 49, '346': 49, '356': 49,
       }),

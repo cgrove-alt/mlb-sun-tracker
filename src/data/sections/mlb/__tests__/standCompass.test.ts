@@ -259,8 +259,15 @@ describe('Oracle Park stand directions (from the 2022 aerial photo)', () => {
     expect(stand(id)).toBe(324);
   });
 
-  it.each(['101', '104', '204', '208', '304', '310', '5', '12'])('first-base section %s faces 212°', (id) => {
+  it.each(['104', '204', '208', '304', '310', '5', '12'])('first-base section %s faces 212°', (id) => {
     expect(stand(id)).toBe(212);
+  });
+
+  it('the first-base corner, 101, faces its own rows on the lidar', () => {
+    // Planes fitted to its treads and the fall line in its middle agree its
+    // rows climb toward 188°, 24° off the run along the first-base stands'
+    // edge: at the corner its rows turn from that edge.
+    expect(stand('101')).toBe(188);
   });
 
   it.each(['115', '116', '117', '215', '216', '315', '317'])('behind-home section %s faces away from center field', (id) => {
@@ -325,8 +332,14 @@ describe('Citizens Bank Park stand directions (measured on the 2022 aerial photo
     expect(stand(id)).toBe(144);
   });
 
-  it.each(['130', '133', '228', '326', '426'])('third-base section %s faces 234°', (id) => {
+  it.each(['130', '228', '326', '426'])('third-base section %s faces 234°', (id) => {
     expect(stand(id)).toBe(234);
+  });
+
+  it('third-base section 133 faces its own rows on the lidar', () => {
+    // Planes fitted to its treads and the fall line in its middle agree its
+    // rows climb toward 255°, 21° off the run's 234°.
+    expect(stand('133')).toBe(255);
   });
 
   it.each(['C', '123', '222', '321', '421'])('behind-home section %s faces away from center field', (id) => {
@@ -610,9 +623,14 @@ describe('Coors Field stand directions (measured on the 2019 aerial photo)', () 
   });
 
   it('the outfield stands follow their walls', () => {
-    expect(stand('155')).toBe(330);
     expect(stand('107')).toBe(48);
     expect(stand('205')).toBe(48);
+  });
+
+  it('the left-field stands face their own rows on the lidar', () => {
+    // Planes fitted to the treads and the fall line in the middle agree that
+    // 152–156's rows climb toward 314°, 16° off the wall's 330°.
+    expect(stand('155')).toBe(314);
   });
 });
 
@@ -629,8 +647,13 @@ describe('Kauffman Stadium stand directions (measured on the 2022 aerial photo)'
     expect(aerialChartFit(royalsChartPoints, ROYALS_AERIAL_CONTROL).rmsM).toBeLessThan(5);
   });
 
-  it.each(['112', '118', '214', '309', '411'])('third-base section %s faces 271°', (id) => expect(stand(id)).toBe(271));
-  it.each(['138', '142', '240', '322', '433', '433R'])('first-base section %s faces 182°', (id) => expect(stand(id)).toBe(182));
+  it.each(['118', '214', '309', '411'])('third-base section %s faces 271°', (id) => expect(stand(id)).toBe(271));
+  it.each(['138', '240', '322', '433', '433R'])('first-base section %s faces 182°', (id) => expect(stand(id)).toBe(182));
+  // Planes fitted to their treads and the fall line in their middle agree
+  // these two climb 16–17° off the runs: the lower bowl turns toward the
+  // corners (112 and 114 to 288°, 142–147 to 161–166°).
+  it('third-base section 112 faces its own rows on the lidar', () => expect(stand('112')).toBe(288));
+  it('first-base section 142 faces its own rows on the lidar', () => expect(stand('142')).toBe(166));
 
   it.each(['127', '128', '225', '230', '314', '420', '420R'])('behind-home section %s faces away from center field', (id) => {
     expect(diff(stand(id), getStadiumOrientation('royals') + 180)).toBeLessThan(15);
@@ -652,10 +675,17 @@ describe('Great American Ball Park stand directions (measured on the 2023 aerial
   });
 
   it.each(['130', '134', '303', '533'])('first-base section %s faces 256°', (id) => expect(stand(id)).toBe(256));
-  it.each(['112', '118', '514'])('third-base section %s faces 347°', (id) => expect(stand(id)).toBe(347));
+  it.each(['118', '514'])('third-base section %s faces 347°', (id) => expect(stand(id)).toBe(347));
   // The photo's level lines are the lower bowl's; on the lidar the 400s'
   // rows and walls on the third-base side (411–415) run about 100°.
   it('third-base section 414 faces its own rows on the lidar', () => expect(stand('414')).toBe(14));
+
+  it('third-base section 112 faces its own rows on the lidar', () => {
+    // Planes fitted to its treads and the fall line in its middle agree its
+    // rows climb toward 14°, 27° off the line's 347° (as 108–111's rows,
+    // along their fall lines, turn from it).
+    expect(stand('112')).toBe(14);
+  });
 
   it.each(['124', '225', '525'])('behind-home section %s faces away from center field', (id) => {
     expect(diff(stand(id), getStadiumOrientation('reds') + 180)).toBeLessThan(10);

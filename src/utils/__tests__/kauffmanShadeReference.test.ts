@@ -27,6 +27,12 @@
  *     more above the last rows of these short sections and shades them from
  *     behind (22% of their seats over the game); the scan also shows the
  *     roof over 437's double-letter rows.
+ *   - [RYS] every 100-level section is in the sun until at least 3:00. 142
+ *     faces its rows' climb, 166° (planes fitted to its treads and its fall
+ *     line agree), and along them the upper deck's front, 61 ft up, stands
+ *     7 ft behind its last row: with the sun high behind it from 1:10 to
+ *     2:10 PM, that front's shade falls on its last two of 23 rows. The
+ *     section is in the sun; every other 100-level row is (tested below).
  *   - [RYS] all of the right-field corner (147–148, 247–252) gets the worst of
  *     the late-afternoon sun. The scan puts the upper deck's end over 247's
  *     rows from 8, 248's from 9 and 249's from 14 (its edge angled across
@@ -86,7 +92,10 @@ describe('Kauffman Stadium: a 1:10 PM game in July', () => {
   });
 
   it('[RYS] every 100-level section is in the sun until at least 3:00', () => {
-    expect(meanShade(JULY_13_110PM, onMap(range(107, 148)), [0, 1, 2, 3])).toBe(0);
+    // Every row, but 142's last two: see the header.
+    expect(meanShade(JULY_13_110PM, onMap(range(107, 148)).filter((id) => id !== '142'), [0, 1, 2, 3])).toBe(0);
+    expect(section(JULY_13_110PM, '142').samples.slice(0, 4).map((s) => s.status)).toEqual(['sun', 'sun', 'sun', 'sun']);
+    expect(rowsShaded(JULY_13_110PM, '142', 1, 21).slice(0, 4)).toEqual([0, 0, 0, 0]);
   });
 
   it.each([

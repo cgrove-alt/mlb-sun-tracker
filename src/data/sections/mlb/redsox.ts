@@ -18,6 +18,28 @@ export const redsoxSections: DetailedSection[] = buildParkSections(ORIENTATION, 
   {
     orientation: ORIENTATION,
     standRuns: [
+      // Turned where two lidar measurements agree on the way the rows climb
+      // (scripts/measureStandHeights.py treads): planes fitted to the treads
+      // (five readings within 15°) and the fall line in the middle (within 8°
+      // of them), both more than 10° off the direction fitted on the map; each
+      // faces their mean.
+      { ids: ['B111'], facingDeg: 175 },
+      { ids: ['B113'], facingDeg: 175 },
+      { ids: ['B144'], facingDeg: 275 },
+      { ids: ['B7'], facingDeg: 158 },
+      { ids: ['D29'], facingDeg: 173 },
+      { ids: ['D51'], facingDeg: 275 },
+      { ids: ['F11'], facingDeg: 158 },
+      { ids: ['F28'], facingDeg: 173 },
+      { ids: ['F29'], facingDeg: 173 },
+      { ids: ['F47'], facingDeg: 249 },
+      { ids: ['F50'], facingDeg: 276 },
+      { ids: ['F51'], facingDeg: 275 },
+      { ids: ['F9'], facingDeg: 161 },
+      { ids: ['FBC29'], facingDeg: 173 },
+      { ids: ['FBC51'], facingDeg: 275 },
+      { ids: ['H47'], facingDeg: 249 },
+      { ids: ['H50'], facingDeg: 276 },
       // Turned to the direction their treads climb: planes fitted to the
       // treads (scripts/measureStandHeights.py treads) agree within 15° and
       // lie more than 10° off the median of the rows' fall lines.
