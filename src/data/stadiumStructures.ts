@@ -5863,31 +5863,33 @@ const PNC: StadiumStructure = {
     upper: {
       label: 'Grandstand (300s)',
       // Rows D–Y (and A–Y in a few), covered from row R (sourced; position
-      // 12–18). Lidar (18 of 22): front row 76 ft (70–78), 28° rake (23–30),
-      // a step above the club's walkway (in 308, 311, 320, 323, 327 and 328
-      // the seats run on from ~71 ft with no step, and their covered rows
-      // count from there; each takes its own front row). The roof's edge, 120 ft up (its
-
-      // top), is over position 6 (5–10), more than two rows ahead of the
-      // source's in 17 of 18, so the tier takes the scan's row (9–10 in six,
-      // which take theirs; 329 and 331–333, not measured, keep theirs). Each
+      // 12–18). Lidar (18 of 22; 322 and 328 along their rows, 13–14° off the
+      // photo's third-base direction): front row 76 ft (70–78), 28° rake
+      // (23–30), a step above the club's walkway (in 308, 311, 320, 322, 323,
+      // 327 and 328 the seats run on from ~71 ft with no step, and their
+      // covered rows count from there; each takes its own front row). The
+      // roof's edge, 121 ft up (its top), is over position 6 (5–10), more
+      // than two rows ahead of the source's in 17 of 18, so the tier takes
+      // the scan's row (9–10 in seven, which take theirs; 329 and 331–333,
+      // not measured, keep theirs). Each
       // measured section takes its own back (that edge 27–55 ft in front of
       // the last row; in 311 over its row 9).
-      stand: { rows: 20, frontRowHeightFt: 76, rakeDeg: 28, backHeightFt: 120, backSetbackFt: -37, overhang: { coveredFromRow: 6, soffitHeightFt: 120 } },
+      stand: { rows: 20, frontRowHeightFt: 76, rakeDeg: 28, backHeightFt: 121, backSetbackFt: -37, overhang: { coveredFromRow: 6, soffitHeightFt: 120 } },
       sections: withRakes(withFronts(withBacks({
         ...pncCover(['329', '331', '332', '333'], 120),
-        ...Object.fromEntries(['308', '323', '327', '328'].map((id) => [id, { overhang: { coveredFromRow: 9, soffitHeightFt: 120 } }])),
+        ...Object.fromEntries(['308', '322', '323', '327', '328'].map((id) => [id, { overhang: { coveredFromRow: 9, soffitHeightFt: 120 } }])),
         ...Object.fromEntries(['311', '320'].map((id) => [id, { overhang: { coveredFromRow: 10, soffitHeightFt: 120 } }])),
       }, {
         '301': [120, -38], '302': [120, -45], '303': [121, -33],
-        '308': [120, -27], '307': [120, -55], '309': [121, -37], '310': [120, -42],
-        '311': [120, -27], '312': [121, -42], '330': [121, -27], '328': [121, -37],
-        '323': [121, -27], '327': [121, -35], '321': [121, -37], '325': [121, -47],
+        '308': [120, -27], '307': [120, -55], '310': [120, -42],
+        '311': [120, -27], '312': [121, -42], '330': [121, -27],
+        '323': [121, -27], '327': [121, -35], '325': [121, -47],
         '320': [120, -35],
-        '322': [120, -36],
+        '322': [121, -33],
+        '305': [120, -37],
       }), {
-        '303': 75, '308': 71, '307': 77, '309': 77, '310': 75, '311': 70, '312': 77, '328': 72,
-        '323': 71, '327': 71, '325': 78, '322': 75, '320': 71,
+        '303': 75, '308': 71, '307': 77, '309': 77, '310': 75, '311': 70, '312': 77, '328': 71,
+        '323': 71, '327': 71, '325': 78, '322': 71, '320': 71,
         '301': 77,
       }), {
         '308': 29, '311': 30,
