@@ -4857,7 +4857,9 @@ const COORS: StadiumStructure = {
       // Rows 1–13 covered from row 8; 201–209 in right field covered from
       // row 4 (sourced). Lidar (25 of 33): front row 34 ft (33–35), 21° rake
       // (20–28); behind, the upper level's front, 68 ft up, over the last
-      // rows. That front reaches out over row 5 (1–2 in 202 and 204–207):
+      // rows: 23 ft in front of a 13-row section's last row. The sections
+      // share the front line, so one the scan does not measure keeps that
+      // front at the same distance from its front row (`backFromFront`). That front reaches out over row 5 (1–2 in 202 and 204–207):
       // more than two rows ahead of the source's in 23 of 25, so the tier
       // takes the scan's rows (201, 203, 208 and 209, not measured, keep
       // row 4). Its underside ~58 ft (that front row, 67 ft, less 9 ft).
@@ -4885,6 +4887,7 @@ const COORS: StadiumStructure = {
         '223': 35, '227': 35,
       }),
       rowsFromMap: true,
+      backFromFront: true,
       heightsSourced: false,
       coverSourced: true,
       sources: [RYS_COORS, ...coorsSections('201', '205', '214', '221', '227', '234', '241', '247'), COORS_LIDAR],
@@ -4915,13 +4918,17 @@ const COORS: StadiumStructure = {
       // 29; L311's cut crosses its rows at an angle; L344 and L346 along
       // their rows, 13–15° off the photo's third-base direction): front row 67 ft
       // (67–68), 27° rake (25–30); what rises highest behind is the roof's
-      // edge, 128 ft up and 30 ft back. In L319, L343 and L345 (along the
+      // edge, 128 ft up and 19 ft behind a 9-row section's last row. The
+      // sections share the front line, so one the scan does not measure
+      // keeps the edge at the same distance from its front row
+      // (`backFromFront`): 30 ft behind the 5-row ones, 25 ft in front of
+      // the 25-row L311 and L313. In L319, L343 and L345 (along the
       // median of its rows' fall lines) that edge is over row 16, which they
       // take. Its underside: 128 ft (the roof's top; the scan sees nothing
       // under it). In the 25-row sections the edge stands 25 ft in front of
       // the last row, 19 ft behind the 9-row L329 and L332; each measured
       // section takes its own back.
-      stand: { rows: 9, frontRowHeightFt: 67, rakeDeg: 27, backHeightFt: 128, backSetbackFt: 30 },
+      stand: { rows: 9, frontRowHeightFt: 67, rakeDeg: 27, backHeightFt: 128, backSetbackFt: 19 },
       sections: withRakes(withFronts(withBacks({
         ...coorsCover(['L311', 'L313'], 128),
         L319: cover(16, 128),
@@ -4940,6 +4947,7 @@ const COORS: StadiumStructure = {
         'L346': 31, 'L340': 29, 'L332': 29, 'L329': 29,
       }),
       rowsFromMap: true,
+      backFromFront: true,
       heightsSourced: true,
       coverSourced: true,
       sources: [RYS_COORS, ...coorsSections('311', '315', '319', '331', '343', '345'), COORS_LIDAR],
