@@ -17,6 +17,29 @@ export const yankeesSections: DetailedSection[] = buildParkSections(ORIENTATION,
   {
     orientation: ORIENTATION,
     standRuns: [
+      // Turned where two lidar measurements agree on the way the rows climb
+      // (scripts/measureStandHeights.py treads): planes fitted to the treads
+      // (five readings within 15°) and the fall line in the middle (within 8°
+      // of them), both more than 10° off the direction fitted on the map; each
+      // faces their mean.
+      { ids: ['112'], facingDeg: 203 },
+      { ids: ['113'], facingDeg: 204 },
+      { ids: ['115'], facingDeg: 204 },
+      { ids: ['116'], facingDeg: 206 },
+      { ids: ['117A'], facingDeg: 204 },
+      { ids: ['118W'], facingDeg: 231 },
+      { ids: ['124'], facingDeg: 307 },
+      { ids: ['125'], facingDeg: 308 },
+      { ids: ['205S'], facingDeg: 161 },
+      { ids: ['215'], facingDeg: 203 },
+      { ids: ['216'], facingDeg: 203 },
+      { ids: ['224'], facingDeg: 306 },
+      { ids: ['225'], facingDeg: 307 },
+      { ids: ['309'], facingDeg: 192 },
+      { ids: ['314'], facingDeg: 204 },
+      { ids: ['315'], facingDeg: 204 },
+      { ids: ['326W'], facingDeg: 310 },
+      { ids: ['S122A'], facingDeg: 292 },
       // Turned to the rows' fall line, measured on the lidar
       // (scripts/measureStandHeights.py): these sections' rows climb firmly
       // more than 15° off the direction fitted on the map; each faces the
