@@ -5720,12 +5720,12 @@ const PNC: StadiumStructure = {
       // Rows A–F to A–P, open ("among the worst seats for shade"). Lidar (6
       // of 6): front row 1 ft (-1 to 3), 12° rake (9–17: 133, 134 and 136
       // read 9–10°, 135 13°, and 137 and 138, along their rows' fall lines,
-      // 16–17° over 8–9 rows); behind, 66 ft up and 57 ft back (each
-      // section's own where it differs: 57–72 ft up and 7–124 ft back).
-      stand: { rows: 12, frontRowHeightFt: 1, rakeDeg: 12, backHeightFt: 66, backSetbackFt: 57 },
+      // 16–17° over 8–9 rows); behind, 65 ft up and 66 ft back (each
+      // section's own where it differs: 43–72 ft up and 7–124 ft back).
+      stand: { rows: 12, frontRowHeightFt: 1, rakeDeg: 12, backHeightFt: 65, backSetbackFt: 66 },
       sections: withRakes(withBacks(withFronts({
         '133': { backHeightFt: 121, backSetbackFt: 124 }, '134': { backHeightFt: 72, backSetbackFt: 58 },
-        '135': { backHeightFt: 59, backSetbackFt: 7 }, '136': { backHeightFt: 62, backSetbackFt: 57 },
+        '135': { backHeightFt: 59, backSetbackFt: 7 }, '136': { backHeightFt: 43, backSetbackFt: 76 },
         '137': { backHeightFt: 70, backSetbackFt: 75 }, '138': { backHeightFt: 57, backSetbackFt: 57 },
       }, {
         '133': -1, '136': 3,
