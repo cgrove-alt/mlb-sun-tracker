@@ -25,7 +25,7 @@ const park = process.argv[2];
     return [{ id: s.id, tier: sf.tierKey, bearing, standCompass: s.standCompass, stand: sf.stand }];
   });
   const tiers = Object.fromEntries(Object.entries(structure.tiers).map(([key, t]) => [key, {
-    label: t.label, stand: t.stand, heightsSourced: t.heightsSourced, coverSourced: t.coverSourced,
+    label: t.label, stand: t.stand, heightsSourced: t.heightsSourced, coverSourced: t.coverSourced, backFromFront: t.backFromFront ?? false,
     overrides: t.sections ?? {},
   }]));
   console.log(JSON.stringify({ park, orientation, envelope: structure.park, tiers, sections: out }));
