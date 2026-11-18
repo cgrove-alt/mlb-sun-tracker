@@ -1863,7 +1863,8 @@ const CITI: StadiumStructure = {
       // its 21 measured sections; over 222 a structure reaches out over row
       // 3, 34 ft up (taken as 36 ft, 9 ft above row 3's floor). Lidar (21 of
       // 39): front row 25 ft (24–35), 18° rake (7–22; 214 and 218 along the
-      // median of their rows' fall lines; 213 straddles a bend, its cut
+      // median of their rows' fall lines, 220 its treads and fall line; 213
+      // straddles a bend, its cut
       // across the rows); what rises highest
       // behind is the 400 level's front, 69 ft up, 2–17 ft behind the last
       // row (each measured section its own; 222 too, from its two open rows).
@@ -1878,7 +1879,7 @@ const CITI: StadiumStructure = {
         '211': [69, 16], '212': [69, 6],
         '214': [69, 7],
       }), {
-        '226': 29, '225': 29, '224': 26, '219': 35, '220': 34, '221': 34, '222': 24, '215': 26,
+        '226': 29, '225': 29, '224': 26, '219': 35, '220': 35, '221': 34, '222': 24, '215': 26,
         '214': 26, '208': 28, '212': 29,
       }), { '210': 17 }),
       heightsSourced: true,
@@ -1954,7 +1955,8 @@ const CITI: StadiumStructure = {
       label: 'Promenade level (500s)',
       // Rows 1–17, covered by the roof from row 11 (sourced; the lidar puts
       // its edge at row 10, and at row 8 in 503, 511 and 523). Lidar (34 of 38; 508–533
-      // along their rows' fall line, 19–37° off the map's direction): front
+      // along their rows' fall line, 19–37° off the map's direction; 510
+      // along its treads and fall line, 14° further): front
       // row 86 ft (79–87), 32° rake (512, 513, 523, 534 and 537 straddle a
       // bend, their cuts across the rows); the roof's front edge is 129 ft up and
       // the scan shows nothing below 128 ft there: a thin roof, underside
@@ -1970,7 +1972,7 @@ const CITI: StadiumStructure = {
         frontRowHeightFt: 86,
         rakeDeg: 32,
         backHeightFt: 129,
-        backSetbackFt: -18,
+        backSetbackFt: -19,
         overhang: { coveredFromRow: 11, soffitHeightFt: 128 },
       },
       sections: withRakes(withFronts(withBacks({
@@ -1986,6 +1988,15 @@ const CITI: StadiumStructure = {
         '511': [129, -20],
         '512': [129, -20],
         '513': [129, -20],
+        '510': [129, -20],
+        '531': [129, -18],
+        '525': [129, -18],
+        '521': [129, -18],
+        '519': [129, -18],
+        '518': [129, -18],
+        '516': [129, -18],
+        '515': [129, -18],
+        '514': [129, -18],
       }), {
         '535': 83, '534': 84, '529': 87, '524': 87,
         '523': 87, '522': 82, '521': 85, '503': 87, '505': 87,
@@ -2006,7 +2017,6 @@ const CITI: StadiumStructure = {
         '522': 31, '516': 31, '515': 31,
         '520': 31,
         '517': 30,
-        '510': 30,
         '523': 31,
       }),
       heightsSourced: false,
