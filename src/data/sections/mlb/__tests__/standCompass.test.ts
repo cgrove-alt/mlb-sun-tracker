@@ -259,8 +259,15 @@ describe('Oracle Park stand directions (from the 2022 aerial photo)', () => {
     expect(stand(id)).toBe(324);
   });
 
-  it.each(['101', '104', '204', '208', '304', '310', '5', '12'])('first-base section %s faces 212°', (id) => {
+  it.each(['104', '204', '208', '304', '310', '5', '12'])('first-base section %s faces 212°', (id) => {
     expect(stand(id)).toBe(212);
+  });
+
+  it('the first-base corner, 101, faces its own rows on the lidar', () => {
+    // Planes fitted to its treads and the fall line in its middle agree its
+    // rows climb toward 188°, 24° off the run along the first-base stands'
+    // edge: at the corner its rows turn from that edge.
+    expect(stand('101')).toBe(188);
   });
 
   it.each(['115', '116', '117', '215', '216', '315', '317'])('behind-home section %s faces away from center field', (id) => {
