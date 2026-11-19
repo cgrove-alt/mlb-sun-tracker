@@ -502,6 +502,31 @@ PARKS = {
                         '(a 16-degree run with the view level over it), not the bleachers\' 27-37 degree rows',
                  '181': 'its cut, as 180\'s, crosses the left-field corner\'s club level, not the bleachers'},
     },
+    'astros': {
+        # Flown 9-21 March 2018 with the roof open (Houston's 2024 scan has it closed).
+        'scan': {'ept': 'TX_Coastal_B1_2018'}, 'name': 'USGS 3DEP TX_Coastal_B1_2018 (Texas coast 2018)',
+        'noise': [7, 18],
+        # The field level from the field (past a cross-aisle, the farthest
+        # piece in front of the club level), the boxes in front of it, the
+        # Crawford Boxes above the left-field wall, the right-field stands and
+        # the 250s above them (seen under the parked roof), the club level's
+        # front rows before the mezzanine overhangs them, the mezzanine (one
+        # slope with the upper deck) and the upper deck (under the roof).
+        'tiers': {
+            'box': (-0.8, 0.6, 'near'), 'field': (-0.8, 1.6, 'far'), 'crawford': (3.5, 5.5, 'near'),
+            'rightField': (0.3, 3.0, 'near'), 'rightFieldUpper': (8.5, 11, 'near', 12),
+            'club': (9, 11, 'near'), 'mezzanine': (19, 22.5, 'near', 15), 'upper': (23, 28, 'near', 15),
+        },
+        # Decks that show only their first row over the stands below: their
+        # fronts as measured on their own sections (the club level's over the
+        # field level, the mezzanine's over the club level, the 250s' over
+        # the right-field stands).
+        'deckAboveFt': {'field': 33, 'club': 67, 'rightField': 31},
+        'skip': {'250': 'its front rows gave way to the Ultra Club\'s standing staircase in 2019-21, after this scan '
+                        '(its rows now start at 11)',
+                 '100': 'its cut runs under the roof\'s left-field runway, a girder 2-4 m wide 133 ft up, which it '
+                        'reads as a deck over its rows and as what stands behind them'},
+    },
 }
 
 
