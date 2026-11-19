@@ -7633,12 +7633,13 @@ const DAIKIN: StadiumStructure = {
       // deck starting under them is the edge over their rows. What rises
       // highest behind is the roof's edge, 136 ft up and 10 ft in front of the
       // last row (135–160 ft; the club deck's front, 67–69 ft, behind 105,
-      // 106 and 119; the parked panels, 180 ft, over 132 and 133).
+      // 106 and 119; over 132 and 133, from the club deck's edge on, the
+      // parked panels above it, 176 ft).
       stand: { rows: 40, ...DAIKIN_LOWER, backHeightFt: 136, backSetbackFt: -10, deckFrontFt: 33, overhang: { coveredFromRow: 27, soffitHeightFt: 24 } },
       sections: withRakes(withBacks(withFronts(Object.fromEntries(daikinRange(105, 134).map((id) => {
         const cover = DAIKIN_FIELD_COVER[id];
         return [id, cover ? { overhang: { coveredFromRow: cover[0], soffitHeightFt: cover[1] } } : {}];
-      })), { '108': 13, '111': -2, '113': 1, '114': 0, '116': 1, '118': 1, '119': 3, '122': -2, '125': 0, '126': 1 }), { '105': [69, -2], '106': [69, -32], '107': [153, 1], '109': [155, -27], '110': [160, -26], '111': [158, -21], '112': [156, -15], '113': [153, -26], '114': [147, -24], '116': [147, -26], '118': [143, 30], '119': [67, -4], '120': [135, 43], '122': [136, -12], '124': [135, -10], '125': [135, -10], '126': [135, -5], '127': [136, 1], '128': [136, 4], '129': [135, 7], '131': [136, 9], '132': [181, -73], '133': [180, -63] }), { '113': 12, '114': 12, '116': 12, '119': 12, '122': 12, '124': 12, '125': 12, '126': 12, '127': 12 }),
+      })), { '108': 13, '111': -2, '113': 1, '114': 0, '116': 1, '118': 1, '119': 3, '122': -2, '125': 0, '126': 1 }), { '105': [69, -2], '106': [69, -32], '107': [153, 1], '109': [155, -27], '110': [160, -26], '111': [158, -21], '112': [156, -15], '113': [153, -26], '114': [147, -24], '116': [147, -26], '118': [143, 30], '119': [67, -4], '120': [135, 43], '122': [136, -12], '124': [135, -10], '125': [135, -10], '126': [135, -5], '127': [136, 1], '128': [136, 4], '129': [135, 7], '131': [136, 9], '132': [176, -35], '133': [176, -34] }), { '113': 12, '114': 12, '116': 12, '119': 12, '122': 12, '124': 12, '125': 12, '126': 12, '127': 12 }),
       rowsFromMap: true,
       heightsSourced: true,
       coverSourced: true,
