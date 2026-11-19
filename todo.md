@@ -4381,6 +4381,195 @@ evidence, and the back-aligned tiers, which already behave correctly.
 the tiers with no firm evidence either way. A tier whose measured
 sections later show alignment can take the flag the same way.
 
+## §23 The parks without lidar (plan, 2026-11-18)
+
+Asked: plan the parks without lidar. Branches `fix/lidar-retractable-a`
+and then `fix/lidar-retractable-b`, from `main` after PR #97.
+
+**The eight parks** (`tmp/lidar/s23`):
+
+| Park | Profile today | Lidar |
+|---|---|---|
+| Mariners (T-Mobile Park) | estimated heights | King County 2021, on AWS: roof **open** |
+| Diamondbacks (Chase Field) | estimated | Maricopa–Pinal 2020, on AWS: roof **closed** (corrected below) |
+| Brewers (American Family Field) | estimated | SEWRPC (flown April 2015), on AWS: roof open, its panels over the club and terrace |
+| Astros (Daikin Park) | estimated | Houston 2024, rockyweb tiles (~300 MB) |
+| Marlins (loanDepot park) | estimated | Miami-Dade 2023, one rockyweb tile (183 MB) |
+| Rangers (Globe Life Field) | generic shape | none: Dallas–Pecos 2018–19 predates its 2020 opening; Texas's 2022 collection doesn't reach Arlington |
+| Blue Jays (Rogers Centre) | generic shape | not USGS: Ontario's GTA 2023 predates the 2024 rebuild of the 100 level |
+| Rays (Tropicana Field) | generic, fixed roof | nothing to measure: every seat is roofed |
+
+"Roof open": the points within 25 m of the infield sit at the height of
+the ground outside the stadium, not 40–70 m above it (`roof.py`; see the
+correction in D1). The §7 plan named these five scans and left batch 5
+(7.5) undone.
+
+**Why it matters.** The five open-roof parks are profiled with estimated
+heights, which the confidence check moves ±50% (measured: ±10%). Their
+Low share at the three §12 day games is 24–67%:
+- Mariners 67%, partly because the view-level canopy's covered rows are
+  unsourced, so it is tried both ways;
+- Diamondbacks 51%, Astros 47%, Marlins 28%, Brewers 24%.
+
+Across the 22 lidar parks it is 24%. These 651 sections also carry five
+posts and five reference test files (97 checks).
+
+**What's particular to a retractable roof:**
+- The engine keeps modelling the roof open, as today.
+- The parked roof stacks over some stands. From above the scan sees its
+  panels, not the seats under them, so those sections aren't found and
+  keep their estimates (written down). The panels' edge is what the
+  cover report sees over the rows in front: the parked roof's edge,
+  which each profile already places from photos. The scan gives its
+  height, and its underside where a face is seen (a thin roof's top
+  otherwise, as at Citi and Dodger Stadium).
+- A stand rebuilt after its scan keeps its estimate, with the reason
+  (as Wrigley's 2018 boxes). Each park gets a quick check, the Brewers'
+  2017 scan above all.
+
+**Fix**, per park, the same way as the other 22. In the tool:
+`PARKS` entries (scan, tier bands from the runs picture, skips), then
+fetch, runs, measure, cover, fall sheets. Then through the existing
+rules and their checks:
+- own front rows, rakes and backs (§14–16);
+- fall-line turns (§17–18) and faces where the treads confirm (§19);
+- the two-method tread turns (§21);
+- covered rows against the true source, and the §8 undersides;
+- `backFromFront` where a tier's measured sections show it (§22);
+- the far rim and crossing.
+
+Reference checks and post claims are investigated, not tuned.
+
+Two phases, each its own PR:
+- **A: Mariners, Diamondbacks, Brewers** (on AWS, roof open).
+- **B: Astros and Marlins**: download the tiles in the background
+  during A, check the roof first, and measure only if it is open (else
+  say so and keep the estimates).
+
+**Not in this plan (noticed):**
+- *Globe Life Field:* no scan of the open ballpark exists. It keeps the
+  generic shape.
+- *Rogers Centre:* Ontario's GTA 2023 lidar might show the 200 and 500
+  levels, which weren't rebuilt, if its roof was open. But the park has
+  no profile or pinned seat map yet (no open-roof photo since 2012).
+  That is a project of its own.
+- *Tropicana Field:* a dome. (The Rays' 2025 home was Steinbrenner
+  Field; the site shows their 2026 home, as decided in July.)
+
+### Steps
+- [x] D1. A: tool entries and fetch for the three parks; runs pictures,
+      bands. B's downloads: rockyweb answers HTTP 429 (rate limit); retry
+      before B.
+      **Correction:** my roof check compared the infield points with their
+      own lowest, and a closed roof is as flat as a field. Against the
+      ground outside the stadium: Mariners −0.7 m (open), Brewers −1.9 m
+      (open), Diamondbacks **+62 m: closed**. Chase Field's stands are
+      hidden in this scan, the only one, so the Diamondbacks keep their
+      estimates.
+      **Brewers:** the scan (2015, ~1M points) sees 12 of 26 field-level
+      sections, 10 of 36 loge, no bleachers; the open roof's panels stand
+      over the club and terrace levels. Over the field level its "edge" is
+      a panel 258 ft up, not the loge deck (~20 ft) that covers those rows,
+      hidden under it, so covers can't be measured. Asked whether to do
+      the Brewers partly (fronts, rakes, backs of 22 sections) or not:
+      **left estimated** (the user's call).
+- [x] D2. A: measure, apply, checks, one commit per park. Only the
+      Mariners: Low share at the three day games 67% → 4%.
+- [x] D3. A: audits, suite, snapshot, review. (PR: when asked.)
+- [ ] D4. B: roof check; then as D1–D3 for the Astros and Marlins.
+
+### §23 Phase A review (2026-11-18)
+
+**What changed:** one park, T-Mobile Park (Mariners), in one commit on
+`fix/lidar-retractable-a`. The profile takes the King County 2021 lidar
+(flown with the roof open) in place of its estimates, through the same
+tool and rules as the other 22 parks:
+- **Directions:** 9 two-method turns, 8 fall-line turns (16–31° off the
+  map's), and 328 in three faces. 346's turn was dropped because its
+  fall line can't be read along it. Re-measured along them, all hold.
+- **Heights, with the estimates in brackets:**
+  - main level: front 0 ft (3), 12° (20); right field 6–7 ft;
+  - club level: front 36 ft (38), 20° (25);
+  - view level: front 68 ft (75), 29° (30);
+  - bleachers: front 35 ft (10), 32° (20).
+
+  Every measured section takes its own front, rake and back.
+- **Covers:**
+  - The club deck's front (35 ft) is over main row 30; the source says
+    "rows 35 and higher".
+  - The view level's front (68 ft) is over club row 1. The source gives
+    the best shade from row 10.
+  - The view level's canopy is over row 11, 133 ft up underneath. It
+    had been unsourced and tried both ways.
+  - The parked roof's edge, at its lowest 134–146 ft (estimated 180), is
+    over 104, 106, 191–193 and 306–308.
+- **Far rim and crossing:** 142 ft and 510 ft (estimated 125 and 500).
+- **Two estimates the scan corrected:**
+  - Sections labelled from row 9 or 17 had been raised 5–9 ft. They
+    measure at the field, so only right field (rows from 23) keeps a
+    raised front.
+  - The tool read a deck over row 8 of the left-center bleachers. It is
+    a narrow, broken band of fixtures 73–79 ft up, so the bleachers stay
+    open, as Rate Your Seats has them.
+
+**Where it went differently from the plan:**
+- *Chase Field (Diamondbacks):* the only scan has the roof closed. My
+  first roof check was wrong; see D1. The Diamondbacks keep their
+  estimates.
+- *American Family Field (Brewers):* left estimated. The 2015 scan sees
+  only 22 of 142 sections, and covers can't be measured under the open
+  roof's panels. Its measurement is kept aside
+  (`tmp/lidar/s23/brewers-measured.json`) so the audits leave it out;
+  the tool has no Brewers entry.
+- *Sections that the covers leave too few open rows to find* keep what
+  they measured before covers (the Phillies 121 precedent):
+  - 103, 104, 106, 191–193, 211, 233–249 and 306–308;
+  - on the club level the back is the exception. Seen from row 1, which
+    is the rule when every row is covered, it is the view level's front,
+    69 ft and 28 ft in front of the last row. The six sections still
+    found measure it that way, and the rest take it. Before the cover was
+    known it read 75 ft, seen from the middle row.
+- *Two data errors were found in review and fixed.* Neither changes an
+  answer (snapshot: 0 steps), and both were folded into the Mariners
+  commit, which was not pushed yet.
+  - **Deck fronts (caught by the full suite's deck check):** 102 and
+    104–110, under the parked roof, had inherited the club deck's 35 ft
+    front. The engine takes the higher of front and underside. They now
+    stand at their underside, the convention for an unmeasured front, as
+    at Fenway, Citizens Bank and Nationals Park.
+  - **Backs (caught by checking the kept values against the last
+    pre-cover run):** 104, 106, 193 and 306–308 had taken their tier's
+    back (the view canopy or the bleacher slab), not the parked roof they
+    measured behind them (204–221 ft). The what-if showed 0 of 650
+    section-games change, since every row is covered. They now keep their
+    own, as the rule says and as 103, 191 and 192 already did. 105, 109
+    and 110 take the roof from the photos.
+
+**Results, at the five 2025 test games across all 30 parks:**
+- Answers change for 129 of the 130 Mariners sections (1,179 half-hour
+  steps; 129's stay) and nowhere else.
+- Labels: 441 up, 12 down.
+- Mariners' Low share at the three day games: 67% → 4%; High: 21% →
+  66%. Site-wide Low share: 26.7% → 25.2%.
+
+**Checks:**
+- *Audits:* identical to §22's final but for the 84 Mariners sections in
+  the final measurement, all on their own values: 2,455 on the rule's
+  rake; 2,407 own fronts, 49 set on purpose; 2,445 own backs, 11 set on
+  purpose; no underside under 9 ft. Every value kept from before the
+  covers matches the last pre-cover run (`mariners-measure3.out`), except
+  the club's backs, as above.
+- *Reference checks:* T-Mobile's 12 pass. The header notes were
+  refreshed (the 100 level at 4:10 PM; right-center bleachers 18–65% at
+  1:10 PM, under the roof's edge; 306–310 64% at 3:10 PM), and the
+  post's claims pass.
+- *Tests:* 3,602 of 3,602. The type check and eslint are clean.
+
+**Not changed:** the Diamondbacks and Brewers (estimated, as above); the
+Astros and Marlins (phase B: retry the rockyweb downloads, which
+returned HTTP 429, then check the roof against the ground outside);
+Globe Life Field, Rogers Centre and Tropicana Field (see the plan).
+
 ---
 ---
 

@@ -485,6 +485,23 @@ PARKS = {
             'lowerReserve': (12, 21), 'topDeck': (24, 34), 'pavilion': (0, 5),
         },
     },
+    # Retractable roofs, scanned with the roof open (the points over the
+    # infield at the field). The parked roof stacks over some stands; their
+    # seats are hidden from the air.
+    'mariners': {
+        'scan': {'ept': 'WA_KingCo_1_2021'}, 'name': 'USGS 3DEP WA_KingCo_2021 (King County 2021)',
+        'noise': [7, 18],
+        # The main level from the field; the club level's front rows before
+        # the view level's front overhangs them; the view level (a walkway
+        # part way up). The bleachers stand ~10 m up beyond the outfield wall.
+        'tiers': {
+            'main': (-1, 2.5, 'near', 5, 8), 'club': (9.5, 11.5), 'view': (19.5, 21.5, 'near', 10),
+            'bleachers': (9.5, 11.5, 'near', 15),
+        },
+        'skip': {'180': 'its cut, from its place on the club\'s map, crosses the left-field corner\'s club level '
+                        '(a 16-degree run with the view level over it), not the bleachers\' 27-37 degree rows',
+                 '181': 'its cut, as 180\'s, crosses the left-field corner\'s club level, not the bleachers'},
+    },
 }
 
 

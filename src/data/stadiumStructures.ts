@@ -7977,6 +7977,7 @@ const AMFAM: StadiumStructure = {
 const TMOBILE_RYS = 'https://www.rateyourseats.com/t-mobile-park/seating/shaded-covered-seats';
 const TMOBILE_PHOTO = 'USGS NAIP 2011-08-26, 2013-07-15 and 2017-08-15 flights, roof open (Planetary Computer NAIP archive)';
 const TMOBILE_HEIGHT = 'https://www.nbbj.com/work/t-mobile-park-safeco-field';
+const TMOBILE_LIDAR = 'USGS 3DEP lidar WA_KingCo_2021, flown 2021-04-14 with the roof open (scripts/measureStandHeights.py)';
 const tmobileSection = (n: string) => `https://www.rateyourseats.com/t-mobile-park/seating/sections/${n}`;
 /**
  * Sections under the parked roof, from the photos: the first row under it
@@ -7985,7 +7986,8 @@ const tmobileSection = (n: string) => `https://www.rateyourseats.com/t-mobile-pa
  * stands ~123 m east of home plate (113–131 m on the 2011, 2013 and 2017
  * flights, which lean differently). Worked out from each section's place on
  * the pinned seat map and its rows (0.85 m apart) running back along its
- * stand direction.
+ * stand direction. Used where the lidar does not measure the section (105,
+ * 109, 110, 194, 195); elsewhere the scan places the roof's edge.
  */
 const TMOBILE_ROOF: Record<string, [number, number]> = {
   '102': [0, 17.5], '103': [0, 11.5], '104': [0, 4.5], '105': [12, 0], '106': [16, 0], '107': [18, 0], '108': [18, 0],
@@ -8000,17 +8002,34 @@ const TMOBILE_FIRST_ROW: Record<string, number> = {
   '132': 9, '133': 17, '134': 9, '135': 9, '136': 5, '137': 5, '138': 5, '139': 4, '147': 10, '149': 12, '150': 19,
   '151': 27,
 };
-const TMOBILE_MAIN = { frontRowHeightFt: 3, rakeDeg: 20 };
-const tmobileRise = 2.75 * Math.tan((TMOBILE_MAIN.rakeDeg * Math.PI) / 180);
-/** Parked roof top and underside, ft ("about 215 feet in the air"; underside estimated). */
+const TMOBILE_MAIN = { frontRowHeightFt: 0, rakeDeg: 12 };
+/**
+ * Parked roof top and underside, ft ("about 215 feet in the air"; the
+ * lidar's lowest structure at its edge over 103, 104 and 106: 134–146 ft).
+ */
 const TMOBILE_ROOF_TOP = 215;
-const TMOBILE_ROOF_UNDERSIDE = 180;
+const TMOBILE_ROOF_UNDERSIDE = 140;
 const tmobileRoof = (id: string) => {
   // The roof's edge behind a section matters only where it covers rows: it
-  // is high (~180 ft underside) and east of every stand, so the stands'
+  // is high (~140 ft underside) and east of every stand, so the stands'
   // own backs block the sun before it would.
+  // Its front is not measured, so it stands at its underside (not the
+  // tier's deck front).
   const [from] = TMOBILE_ROOF[id] ?? [0, 0];
-  return from ? { overhang: { coveredFromRow: from, soffitHeightFt: TMOBILE_ROOF_UNDERSIDE }, backHeightFt: TMOBILE_ROOF_TOP, backSetbackFt: 0 } : {};
+  return from ? { overhang: { coveredFromRow: from, soffitHeightFt: TMOBILE_ROOF_UNDERSIDE }, deckFrontFt: undefined, backHeightFt: TMOBILE_ROOF_TOP, backSetbackFt: 0 } : {};
+};
+/**
+ * The main level's covered rows and undersides (ft) where they are not the
+ * tier's (the club deck's front over row 30, 26 ft up underneath), and the
+ * deck's front where it is another: measured (lidar), but for 128, 131 and
+ * 151, not measured, which keep the source's row 35.
+ */
+const TMOBILE_MAIN_COVER: Record<string, readonly [number, number, number?]> = {
+  '102': [15, 210], '103': [8, 134, 143], '104': [1, 145], '106': [1, 135, 144], '107': [11, 59, 68], '108': [11, 59, 68],
+  '114': [30, 35], '120': [30, 35], '121': [30, 35], '122': [30, 35], '123': [30, 31], '124': [24, 31], '125': [26, 35],
+  '126': [25, 35], '127': [30, 35], '129': [30, 58, 67], '133': [21, 26], '134': [26, 26], '135': [25, 26], '136': [25, 31],
+  '137': [30, 31],
+  '128': [19, 26], '131': [19, 26], '151': [9, 26],
 };
 const tmobileIds = (from: number, to: number) => Array.from({ length: to - from + 1 }, (_, i) => String(from + i));
 
@@ -8035,78 +8054,125 @@ export function tmobileTier(id: string): string | null {
  * and, open, does not shade the bowl except where it stacks over the east
  * side (TMOBILE_ROOF). The view level's canopy covers its back rows
  * ("Sections 333-344 ... well covered from the upper deck roof"); which rows
- * is not published. Deck heights are estimated.
+ * is not published.
+ *
+ * Heights, the decks' edges and the parked roof's are measured on USGS lidar
+ * (TMOBILE_LIDAR, April 2021, the roof open), as at Citizens Bank Park: a
+ * cut straight back through each section's stand gives its front row, rake,
+ * the edge of any deck or roof over it and what rises highest behind; each
+ * measured section takes its own. Sections whose covered rows leave too few
+ * open rows to find (103, 104, 106, 191–193, 211–249, 306–308) keep what
+ * they measured before the covers, but for the club level's backs: covered
+ * from row 1, its back is seen from row 1 (the view level's front), as the
+ * six it still finds measure it, and the rest take theirs.
  */
 const TMOBILE: StadiumStructure = {
   stadiumId: 'mariners',
-  // Far rim: the view level's canopy (~125 ft) about 500 ft across the field.
-  park: { roof: 'retractable', farRimHeightFt: 125, fieldCrossingFt: 500 },
+  // Far rim (lidar): the roof line, median over sections 142 ft; crossing:
+  // the median distance from a section to it across the field, 510 ft.
+  park: { roof: 'retractable', farRimHeightFt: 142, fieldCrossingFt: 510 },
   tierOf: tmobileTier,
   tiers: {
     main: {
       label: 'Main level (102–151)',
-      // Rows to 41 (sourced), the club deck over rows 35 and up (sourced);
-      // the right-field stands under the parked roof's edge (photo). Above
-      // the back rows the club and view levels rise to the view level's
-      // canopy, whose inner edge stands ~50 m back from each foul line on
-      // the 2017 photo (46 m on the third-base side, 55 m on the first-base
-      // side, the canopy leaning with the camera), ~3 m behind the last
-      // row. Estimated: front ~3 ft plus ~1 ft a row where rows start
-      // further up, 20° rake, club deck underside ~46 ft (9 ft above row
-      // 35's floor), canopy ~125 ft.
-      stand: { rows: 41, ...TMOBILE_MAIN, backHeightFt: 125, backSetbackFt: 10 },
-      sections: Object.fromEntries([...tmobileIds(102, 151)].map((id) => {
+      // Rows to 41 (sourced). Lidar (41 of 47; 106, 107, 111, 112, 120 and
+      // 150 along their rows, 16–28° off the map's direction): front row at
+      // the field (−1 to 2 ft; 6–7 ft in right field, where the rows start at
+      // 23 above the bullpens), 12° rake (11–19). The club deck's front, 35
+      // ft up, is over row 30 (21–32 by section, TMOBILE_MAIN_COVER; the
+      // source's "rows 35 and higher"), so the rows from there back are
+      // covered, under ~26 ft (that front row less 9 ft; 31–35 ft where the
+      // scan sees lower structure). In right field the parked roof's edge
+      // (134–146 ft at its lowest) is over rows 1–15 of 102–106, the view
+      // level's front over row 11 of 107 and 108. What rises highest behind
+      // is the view level's canopy, 140 ft up and 10 ft behind the last row
+      // (2 ft in front to 35 ft behind; in right field the parked roof,
+      // 195–221 ft); each measured section takes its own back.
+      stand: { rows: 41, ...TMOBILE_MAIN, backHeightFt: 140, backSetbackFt: 10, deckFrontFt: 35, overhang: { coveredFromRow: 30, soffitHeightFt: 26 } },
+      sections: withRakes(withBacks(withFronts(Object.fromEntries([...tmobileIds(102, 151)].map((id) => {
         const first = TMOBILE_FIRST_ROW[id] ?? 1;
-        const roof = tmobileRoof(id);
+        const cover = TMOBILE_MAIN_COVER[id];
         return [id, {
-          ...(first > 1 ? { frontRowHeightFt: TMOBILE_MAIN.frontRowHeightFt + (first - 1) * tmobileRise } : {}),
-          ...('overhang' in roof ? roof : { overhang: { coveredFromRow: Math.max(1, 35 - first + 1), soffitHeightFt: 46 }, ...roof }),
+          // Right field (rows from 23, above the bullpens): 6–7 ft on the
+          // lidar (102–108). Elsewhere a section's first labelled row sits at
+          // the field whatever its number (121–150 measure −1 to 2 ft).
+          ...(first === 23 ? { frontRowHeightFt: 7 } : {}),
+          ...(cover ? { overhang: { coveredFromRow: cover[0], soffitHeightFt: cover[1] }, ...(cover[2] ? { deckFrontFt: cover[2] } : {}) } : {}),
+          // Under the parked roof, its front not seen (102, 104): it stands
+          // at its underside, not the club deck's front.
+          ...(['102', '104'].includes(id) ? { deckFrontFt: undefined } : {}),
+          // Not measured, under the parked roof: the photos' rows.
+          ...(['105', '109', '110'].includes(id) ? tmobileRoof(id) : {}),
         }];
-      })),
+      })), { '103': 6, '112': -1, '114': -1, '115': -1, '116': -1, '117': -1, '118': -1, '121': -1, '124': 2, '125': 2, '126': 2, '133': 5, '134': 2, '135': 2, '136': 2, '139': -1, '140': -1, '141': -1, '143': -1, '144': -1, '146': -1, '147': -1, '148': -1, '149': -1, '150': 1 }), { '102': [211, -1], '107': [220, -24], '108': [218, -23], '111': [198, 27], '112': [195, 16], '114': [140, 5], '115': [140, 29], '116': [139, 5], '117': [140, 5], '118': [140, 5], '119': [139, 0], '120': [139, 1], '121': [140, 13], '122': [140, 11], '123': [139, 12], '124': [139, 1], '125': [139, 12], '126': [140, 32], '127': [142, 30], '129': [133, 19], '132': [133, 18], '133': [133, 21], '134': [140, 12], '135': [137, 10], '136': [140, 2], '137': [140, 11], '138': [140, 11], '139': [138, 13], '140': [139, 6], '141': [140, 6], '142': [137, -2], '143': [139, 6], '144': [139, 6], '146': [140, 5], '147': [140, 29], '148': [137, 5], '149': [140, 35], '150': [69, 16], '103': [216, -17], '104': [219, -27], '106': [221, -30] }), { '102': 19, '103': 19, '104': 17, '106': 18, '107': 18, '108': 18, '112': 11, '114': 11, '115': 11, '116': 11, '117': 11, '118': 11, '121': 11, '139': 11, '140': 11, '141': 11, '144': 11, '146': 11, '148': 11 }),
       rowsFromMap: true,
-      heightsSourced: false,
+      heightsSourced: true,
       coverSourced: true,
-      sources: [TMOBILE_RYS, TMOBILE_PHOTO, ...['106', '112', '120', '128', '135', '142', '150'].map(tmobileSection)],
+      sources: [TMOBILE_RYS, TMOBILE_PHOTO, ...['106', '112', '120', '128', '135', '142', '150'].map(tmobileSection), TMOBILE_LIDAR],
     },
     bleachers: {
       label: 'Bleachers (180–195)',
       // Rows 1–10 to 1–17 (sourced), open ("Little to no shade") except
-      // where the parked roof reaches over right-center. Estimated: front
-      // ~10 ft, 20° rake.
-      stand: { rows: 17, frontRowHeightFt: 10, rakeDeg: 20, backHeightFt: 30 },
-      sections: Object.fromEntries(tmobileIds(180, 195).map((id) => [id, tmobileRoof(id)])),
+      // where the parked roof reaches over right-center. Lidar (9 of 14;
+      // 180 and 181 skipped, their cuts on the left-field corner's club
+      // level; 185–187, 191 and 192 along their rows, 17–31° off the map's
+      // direction): front row 35 ft (34–36), 32° rake (31–32); behind, a slab
+      // 64 ft up just behind the last row (55–71 ft; behind 191–193, the
+      // parked roof, 138–210 ft). Over the back rows of
+      // 182–187 the scan sees a narrow, broken band 73–79 ft up along the
+      // top of the bleachers (fixtures, 2–3 m wide in plan, with gaps), not
+      // a deck: they stay open. The parked roof's edge is over row 3 of 191
+      // and 192 and row 1 of 193.
+      stand: { rows: 17, frontRowHeightFt: 35, rakeDeg: 32, backHeightFt: 64, backSetbackFt: -3 },
+      sections: withRakes(withBacks(withFronts({
+        '191': { overhang: { coveredFromRow: 3, soffitHeightFt: 138 } },
+        '192': { overhang: { coveredFromRow: 3, soffitHeightFt: 140 } },
+        '193': { overhang: { coveredFromRow: 1, soffitHeightFt: 152 } },
+        // Not measured: under the parked roof (photos).
+        '194': tmobileRoof('194'), '195': tmobileRoof('195'),
+      }, { '193': 36 }), { '182': [64, 1], '183': [55, -9], '184': [55, -9], '185': [71, -3], '186': [63, 1], '187': [71, -3], '191': [138, -21], '192': [202, -21], '193': [210, -21] }), { '184': 31, '191': 31, '192': 31, '193': 31 }),
       rowsFromMap: true,
-      heightsSourced: false,
+      heightsSourced: true,
       coverSourced: true,
-      sources: [TMOBILE_PHOTO, ...['180', '186', '190', '195'].map(tmobileSection)],
+      sources: [TMOBILE_PHOTO, ...['180', '186', '190', '195'].map(tmobileSection), TMOBILE_LIDAR],
     },
     club: {
       label: 'Terrace club level (211–249)',
-      // Rows 1–13 (sourced), the view level overhead from row 10 (sourced;
-      // 219–223 fully covered). Estimated: front ~38 ft, 25° rake, view
-      // level underside ~62 ft.
-      stand: { rows: 13, frontRowHeightFt: 38, rakeDeg: 25, backHeightFt: 125, overhang: { coveredFromRow: 10, soffitHeightFt: 62 } },
-      sections: {
-        ...Object.fromEntries(tmobileIds(211, 213).map((id) => [id, tmobileRoof(id)])),
-        ...Object.fromEntries(tmobileIds(219, 223).map((id) => [id, { overhang: { coveredFromRow: 1, soffitHeightFt: 50 } }])),
-      },
+      // Rows 1–13 (sourced; "rows 10 and above" the best shade, 219–223
+      // fully covered). Lidar (23 of 32; 211 and 241–243 along their rows,
+      // 16–26° off the map's direction): front row 36 ft (35–36), 20° rake
+      // (18–21). The view level's front, 68 ft up, is over row 1 (1–3) in all
+      // of them: the rows are covered, under ~59 ft (that front row less 9
+      // ft), and it is what rises highest behind, 28 ft in front of the last
+      // row.
+      stand: { rows: 13, frontRowHeightFt: 36, rakeDeg: 20, backHeightFt: 69, backSetbackFt: -28, deckFrontFt: 68, overhang: { coveredFromRow: 1, soffitHeightFt: 59 } },
+      sections: withFronts(withBacks({}, { '212': [69, -32], '214': [70, -26], '215': [70, -26], '216': [69, -29], '217': [69, -26], '218': [69, -29] }), { '216': 35, '217': 35, '218': 35, '237': 35, '238': 35, '240': 35 }),
       rowsFromMap: true,
-      heightsSourced: false,
+      heightsSourced: true,
       coverSourced: true,
-      sources: [TMOBILE_RYS, ...['211', '219', '223', '233', '241'].map(tmobileSection)],
+      sources: [TMOBILE_RYS, ...['211', '219', '223', '233', '241'].map(tmobileSection), TMOBILE_LIDAR],
     },
     view: {
       label: 'View level (306–349)',
-      // Rows 1–21 or 1–25 (sourced), the canopy over the back rows (which
-      // rows not published, so both are tried); 306–312 under the parked
-      // roof (photo). Estimated: front ~75 ft, 30° rake, canopy underside
-      // ~118 ft.
-      stand: { rows: 25, frontRowHeightFt: 75, rakeDeg: 30, treadFt: 2.6, backHeightFt: 125, overhang: { coveredFromRow: 16, soffitHeightFt: 118 } },
-      sections: Object.fromEntries(tmobileIds(306, 312).map((id) => [id, tmobileRoof(id)])),
+      // Rows 1–21 or 1–25 (sourced). Lidar (37 of 37; 308 and 345 along
+      // their rows, 22–27° off the map's direction, 328 in three faces):
+      // front row 68 ft (68–69), 29° rake (25–33). The canopy's edge is over
+      // row 11 (10–12), the bottom of its face 133 ft up (129–136), which
+      // settles the cover; its top, 139 ft, is what rises highest behind,
+      // 28 ft in front of the last row (each measured section its own). The
+      // parked roof's edge is over row 1 of 306–308 (its lowest 153–207 ft),
+      // and the roof is what rises highest behind them (204–217 ft).
+      stand: { rows: 25, frontRowHeightFt: 68, rakeDeg: 29, treadFt: 2.6, backHeightFt: 139, backSetbackFt: -28, overhang: { coveredFromRow: 11, soffitHeightFt: 133 } },
+      sections: withRakes(withBacks(withFronts({
+        // Under the parked roof's edge (lidar).
+        '306': { overhang: { coveredFromRow: 1, soffitHeightFt: 160 } },
+        '307': { overhang: { coveredFromRow: 1, soffitHeightFt: 153 } },
+        '308': { overhang: { coveredFromRow: 1, soffitHeightFt: 207 } },
+      }, { '307': 69, '310': 69, '316': 69, '318': 69, '321': 69, '325': 69, '326': 69, '327': 69, '328': 69, '333': 69, '334': 69, '335': 69, '342': 69, '347': 69, '349': 69 }), { '306': [217, -24], '307': [213, -30], '308': [204, -24], '309': [139, -33], '311': [140, -17], '312': [139, -38], '313': [139, -26], '314': [139, -35], '316': [141, -38], '319': [140, -40], '320': [140, -28], '321': [139, -38], '323': [140, -28], '325': [133, -38], '326': [133, -28], '327': [133, -38], '328': [135, -26], '329': [133, -38], '330': [133, -28], '331': [134, -36], '332': [136, -26], '333': [133, -38], '334': [133, -28], '335': [140, -38], '337': [140, -28], '339': [140, -38], '340': [140, -28], '341': [139, -38], '342': [140, -28], '344': [139, -36], '345': [140, -28], '346': [137, -35], '349': [140, 14] }), { '309': 26, '311': 33, '312': 33, '313': 31, '320': 33, '329': 33, '337': 32, '341': 32, '346': 25 }),
       rowsFromMap: true,
-      heightsSourced: false,
-      coverSourced: false,
-      sources: [TMOBILE_RYS, TMOBILE_HEIGHT, TMOBILE_PHOTO, ...['306', '320', '330', '340', '344'].map(tmobileSection)],
+      heightsSourced: true,
+      coverSourced: true,
+      sources: [TMOBILE_RYS, TMOBILE_HEIGHT, TMOBILE_PHOTO, ...['306', '320', '330', '340', '344'].map(tmobileSection), TMOBILE_LIDAR],
     },
   },
   reviewedOn: '2026-11-12',

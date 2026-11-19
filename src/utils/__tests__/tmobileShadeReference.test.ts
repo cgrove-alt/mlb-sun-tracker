@@ -16,16 +16,19 @@
  *
  * Not reproduced:
  *   - [RYS] "By 4:00 p.m., most seats on the 100 level will be shaded": the
- *     third-base side and behind home are (~65% and ~85% at 4:10 PM in
- *     July), the first-base side is not (~20%). The sun is then in the
+ *     third-base side and behind home are (90% and 88% at 4:10 PM in
+ *     July), the first-base side is not (28%). The sun is then in the
  *     west-southwest, beyond the home-plate end of the first-base stands;
  *     a cross-section through each section does not see the structure
  *     there, off to the side.
- *   - [RYS] outfield seats "may be shaded at first pitch": the bleachers
- *     (180–195) are in the sun from a 1:10 PM start.
+ *   - [RYS] outfield seats "may be shaded at first pitch": at a 1:10 PM
+ *     start only the right-center bleachers are (191–195, 18–65%, under
+ *     the parked roof's edge, measured on the lidar); 180–190 are in the
+ *     sun.
  *   - [RYS] 306–310 "the last place you want to be" by 3:00 p.m.: the model
- *     still has them ~70% under the parked roof then; the low sun reaches
- *     them from ~5 PM.
+ *     still has them 64% shaded then, the parked roof's edge over row 1
+ *     of 306–308 (lidar); the low sun reaches most of them
+ *     from ~4 PM (36% shaded at 4:10, 17% at 5:10).
  */
 import { marinersSections } from '../../data/sections/mlb/mariners';
 import { getStadiumStructure } from '../../data/stadiumStructures';
