@@ -4708,6 +4708,181 @@ the user's call.
 Brewers (phase A); Globe Life Field, Rogers Centre and Tropicana Field
 (see the plan).
 
+## §24 The deck-under-roof rule under a sparse roof edge (plan, 2026-11-19)
+
+Asked: fix the tool's deck-under-roof rule, which phase B of §23 found
+skipped at Daikin 132 and 133, then re-measure the parks it can change.
+Branch `fix/lidar-deck-under-roof`, from `fix/lidar-retractable-b` (not
+merged yet), because 132 and 133 were set by hand there for this bug.
+
+**The bug.** Where a roof high above has its edge first over a stand, and
+a deck of seats starts further back under it, `measure_section` takes that
+deck as the edge over the rows (Truist's canopy over its 300 level). Its
+test needs the roof's lowest point at the edge, `lip_low`: the 5th
+percentile of the points over the treads from 0.5 m in front of the edge
+to 1 m past it, when there are 4 or more. Under a sparsely scanned edge
+there are fewer, `lip_low` is None, and the rule is skipped without a
+word: the high roof's edge becomes the section's cover.
+
+**Root cause:** the test reads a 1.5 m window, narrower than the 3 m that
+defines the edge (5 of 6 half-metre bins with structure over the treads).
+So the edge can be found where the test's window has too few points.
+
+**Fix, in one place:** where `lip_low` is None, the test takes the roof's
+lowest point (the same 5th percentile) from the points over the first 3 m
+past the edge. Those points define the edge, so they are always there.
+`lipLowFt` is reported as before, since the cover report reads it, so
+nothing changes where the rule doesn't fire.
+
+**Tried first, read-only** (nothing written), on the 59 sections at 18
+parks (Daikin and 17 others) whose stored measurement has an edge but no
+lowest point:
+- **Daikin 132 and 133 change.** The parked panels' edge comes first
+  (157 and 183 ft at its lowest over those 3 m, from 5 and 8 points; 2
+  in the narrow window). The club deck starts 23 and 19 m behind it,
+  33 ft up, with 143 ft of headroom under the panels. Their edge becomes
+  the club deck's front, row 28 (it was rows 1 and 5). What stands behind
+  is read from there:
+  - 132: 176 ft, 35 ft in front of the last row (was 181 ft at −73: the
+    panels just behind row 13);
+  - 133: 176 ft at −34 (was 180 ft at −63).
+- **The other 57 don't change.** At 47 no deck of seats starts behind the
+  edge within the section's rows. At the other 10 one does, but with
+  nothing over its front, or (Daikin 131) higher than the edge itself. So among the stored measurements
+  the fix changes only 132 and 133.
+
+**Daikin against phase B's hand values.** Phase B's pre-cover report
+(`tmp/lidar/s23/astros-cover1.out`) gave the field level row 27, but 132
+and 133 their own rows 1 and 5. With their edge at 28, within two rows of
+the tier's, the report gives them the tier's row 27 and its underside,
+24 ft (the deck's front less the 9 ft depth). That is what phase B set by
+hand. Their backs follow the tool (§14: each measured section takes its
+own), as above.
+
+### Steps
+- [x] E1. Fix the rule in `scripts/measureStandHeights.py`, with its
+      comment. Commit (03bbb0e7a).
+- [x] E2. Re-measure with the fixed tool, after copying the stored outputs
+      to `tmp/lidar/s24/before/`: all 24 parks with a stored measurement,
+      not only those 18, so that a section the stored files don't show
+      can't be missed. Compare every value of every section. Expected:
+      only Daikin 132 and 133 differ. Anything else is traced (old tool on
+      that park) before going on.
+- [x] E3. Daikin: confirm from the new measurement that the cover report
+      gives 132 and 133 row 27 and a 24 ft underside, also against phase
+      B's pre-cover covers. Apply their backs and update the comments that
+      call them hand-set. One commit. Any other park changed in E2: one
+      commit each, by §7.1b option A and §8's undersides; sections lost
+      after covers keep their pre-cover values.
+- [x] E4. Checks:
+      - audits `rakeCheck17`, `ownFrontCheck` and `ownBackCheck` against
+        `tmp/lidar/s23/b/final-*.txt`;
+      - snapshot against `tmp/lidar/s23/snap-b2.json`;
+      - jest, tsc, eslint;
+      - Daikin's reference checks, investigated and never tuned.
+
+      From this worktree `tmp/lidar` links to the main checkout's, and
+      the audits import `../../src` from their real path, which would check
+      the main checkout's code. So they run as copies in this worktree's
+      `tmp/s24/`.
+- [x] E5. Review here.
+
+**Not in this plan:**
+- Daikin 153: the panels' edge has its lowest point (175 ft), and the
+  250s' rows don't show under it, so it is not this bug.
+- Filling `lipLowFt` itself from the wider window. That would move the
+  cover report's undersides at the 57 sections, which is a question of its
+  own.
+
+### §24 Review (2026-11-19)
+
+**What changed:** two commits on `fix/lidar-deck-under-roof`.
+- **The tool (03bbb0e7a).** Where too few points show at the roof's edge
+  for its lowest point, the deck-under-roof test takes it from the first
+  3 m past the edge, the points that define the edge. `lipLowFt` is
+  reported as before.
+- **Daikin Park (59724e54f).** 132 and 133's backs, and the field level's
+  comment on them:
+  - 132: 181 ft at −73 → 176 ft at −35;
+  - 133: 180 ft at −63 → 176 ft at −34.
+
+**Re-measure:** all 24 parks with a stored measurement, every value of
+every section and tier compared with the stored ones (kept in
+`tmp/lidar/s24/before/`).
+- **Only Daikin 132 and 133 differ.** Their edge moves from the panels'
+  (rows 1 and 5) to the club deck's front (row 28, 33 ft), flagged
+  `deckUnderRoof`, and their backs move as above.
+- The field level's medians are unchanged, apart from its lowest
+  structure at the edge (33 ft either way, now over 20 sections, not 18).
+  Only its ranges move: edge rows from 18, backs to 176 ft.
+- The other 23 parks are identical, including the 57 sections the plan
+  expected to stay put.
+
+**Sections whose cover changes:**
+- *In the tool:* only 132 and 133, from the parked panels' edge to the
+  club deck.
+- *In the profile:* none. Phase B had already given them the club deck by
+  hand, and the cover report now gives the same on its own:
+  - on the new measurement: row 27, 24 ft underneath (23.5 and 23.7) and
+    the deck's front at 33 ft, the tier's values, so they are no longer
+    listed apart;
+  - against phase B's pre-cover rows (the source's 35): the field level
+    gets row 27. It lists apart exactly the sections in
+    `DAIKIN_FIELD_COVER` (111, 113, 114, 116, 119, 125, 126 and 131), and
+    132 and 133 take the tier's row and underside.
+
+  No covers changed, so no section was lost after covers, and none keeps
+  pre-cover values for this.
+
+The rule now fires at 7 Daikin sections (122, 132, 133, 154, 155, 231
+and 233), 3 at Truist Park (233, 235, 237) and 2 at T-Mobile Park (107,
+108).
+
+**Why the backs moved.** What stands behind is read from the edge on.
+With the panels' edge as the cover (the bug), the highest point seen from
+row 13 was the panels just behind it. With the club deck as the cover, it
+is the panels above the deck's edge. That is how the rule reads every
+section where it fires (§14: each measured section takes its own back).
+
+**Results, at the five 2025 test games across all 30 parks:**
+- Answers change for 132 and 133 only, in 8 half-hour steps, all at the
+  1:10 PM starts. Their first one or two half-hours go from wholly shaded
+  to partly shaded.
+- Labels: 4 up, 0 down. Low share unchanged at 24.3%.
+- Daikin's April 13 1:10 PM game: 132 goes from 48% to 38% of the game
+  shaded, and 133 from 45% to 38%. The park's median section is 81%.
+
+**A limit, already written down in phase B:** the engine gives one cover
+per section. The panels 150–187 ft over 132 and 133's open rows (1–26)
+are not modelled. The old back, wrongly read from their edge, had stood in
+for them over the front rows. That is why those rows now get more sun at
+1:10 PM.
+
+**Checks:**
+- *Audits:* identical to phase B's final (`tmp/lidar/s23/b/final-*.txt`):
+  - 2,506 sections on the rule's rake;
+  - 2,458 on their own front, 49 set on purpose;
+  - 2,496 on their own back, 11 set on purpose;
+  - no underside under 9 ft.
+
+  They run from copies in the worktree's `tmp/s24/`. Through the
+  `tmp/lidar` link they load the main checkout's `src`: checked by
+  resolving `src/data/stadiums` from each place.
+- *Snapshot:* against `snap-b2.json`, as in the results above.
+- *Reference checks:* Daikin's 37 pass. The header's statements hold:
+  - 129–134 stay sunnier than the park's median at 1:10 PM;
+  - the 3:10 PM first-pitch figures are unchanged (131–134 and 122–129
+    both 31% shaded; 134 16%).
+- *Tests:* 3,608 of 3,608.
+- *Type check and eslint:* tsc is clean. eslint gives no errors; its 39
+  warnings in `src` are all in other files, and `stadiumStructures.ts`
+  lints clean.
+- *Dev server:* `/stadium/astros` renders with no console errors. Section
+  132 at a 1:10 PM game: "partly shaded, with sun on some rows all game".
+
+**Not changed:** Daikin 153 (not this bug), and `lipLowFt` from the wider
+window (see the plan).
+
 ---
 ---
 
