@@ -4476,7 +4476,24 @@ Two phases, each its own PR:
 - [x] D2. A: measure, apply, checks, one commit per park. Only the
       Mariners: Low share at the three day games 67% → 4%.
 - [x] D3. A: audits, suite, snapshot, review. (PR: when asked.)
-- [ ] D4. B: roof check; then as D1–D3 for the Astros and Marlins.
+- [x] D4. B: roof check; then as D1–D3 for the Astros and Marlins.
+      **Roof check (2026-11-19):** both planned scans were flown in
+      February 2024 with the roof closed (infield +67 m and +78 m above
+      the ground outside, all roof). The other scans listed or on AWS:
+      - *Marlins:* none. Miami-Dade 2007 predates the park, and Florida
+        Southeast 2018 has no points over it. **They keep their estimates.**
+      - *Astros:* Texas coast 2018 (`TX_Coastal_B1_2018`, AWS), flown
+        9–21 March 2018 with the roof open on all three days (infield
+        99–100% ground). All 143 mapped sections cross seating runs.
+        **Measure from it** (the user's call, 2026-11-19). Stands rebuilt
+        since keep their estimates, with the reason: the 2019–21
+        right-field work (seats removed for the Ultra Club in the upper
+        deck, a standing staircase down to the 250s). No source numbers
+        the sections, so find them in the scan against today's map.
+        **Correction:** neither scan shows today's corner (the parked
+        panels over it in 2018, the closed roof in 2024), so the map and
+        the sources decide: 250, at the Ultra Club Patio's bearing, its
+        rows now from 11. See the review.
 
 ### §23 Phase A review (2026-11-18)
 
@@ -4569,6 +4586,127 @@ tool and rules as the other 22 parks:
 Astros and Marlins (phase B: retry the rockyweb downloads, which
 returned HTTP 429, then check the roof against the ground outside);
 Globe Life Field, Rogers Centre and Tropicana Field (see the plan).
+
+### §23 Phase B review (2026-11-19)
+
+**What changed:** one park, Daikin Park (Astros), in one commit on
+`fix/lidar-retractable-b`. The profile takes the Texas coast 2018 lidar
+(`TX_Coastal_B1_2018`, AWS; flown 9–21 March 2018 with the roof open) in
+place of its estimates, through the same tool and rules as the other 23
+parks. Houston's 2024 scan has the roof closed; using the older scan was
+the user's call.
+- **Directions:** 5 two-method turns (100, 105, 106, 206, 233) and 3
+  fall-line turns (107, 205, 307), 14–60° off the map's. Re-measured
+  along them, all hold (307 reads +17° in its middle, +2° on its one
+  readable side, so it stays).
+- **Heights, with the estimates in brackets:**
+  - field level: front at the field, −1 ft (3), 11° (20);
+  - boxes: −1 ft (2), 7° (12);
+  - Crawford Boxes: 15 ft (21), 18° (20);
+  - right-field stands: 4 ft (10), 17° (20); the 250s: 31 ft (38), 26° (25);
+  - club level: 33 ft (50), 21° (25);
+  - mezzanine: 67 ft (66), 30° (25);
+  - upper deck: hidden under the roof (only 407 found), so it keeps its
+    estimates.
+- **Covers:**
+  - The club deck's front, 33 ft up, is over field row 27 (18–30), 24 ft
+    underneath (estimated: row 35, 48 ft). The mezzanine's front, 66 ft,
+    is over club row 2 (the source's 5), 57 ft underneath (64).
+  - The mezzanine and the upper deck are one slope, with no deck between:
+    the mezzanine's cover is the roof, 148 ft underneath (estimated: an
+    upper deck at 78 ft).
+  - The 250s' front, 31 ft, is over the right-field stands' row 8 (the
+    source's 18). The parked panels are over the 250s from row 1, 246 ft
+    at their top (estimated: a deck at 60 ft over row 6).
+  - The deck behind the Crawford Boxes is over 102's rows 8–10, 43 ft up.
+- **Far rim and crossing:** 147 ft and 408 ft (estimated 200 and 500).
+
+**Where it went differently from the plan:**
+- *Marlins (loanDepot park):* no open-roof scan exists (D4), so they keep
+  their estimates.
+- *Which scan:* the planned Houston 2024 tiles have the roof closed; Texas
+  coast 2018 has it open (D4). The Miami tile is in US survey feet, which
+  the tool's tile reader would need to read, but the Marlins aren't
+  measured, so the tool is unchanged for it.
+- *Rebuilt after the scan:* the right field's second deck and the corner
+  of its upper deck, for the Ultra Club and its standing staircase
+  (2019–21). 250 is skipped and keeps its estimates: its rows now start
+  at 11, at the Ultra Club Patio's bearing on today's map.
+- *Written down:*
+  - 100: over its rows runs the roof's left-field runway, a girder 2–4 m
+    wide and 133 ft up. It is not a deck (as the Mariners' fixtures band),
+    and it was also read as 100's back, so 100 is skipped and takes the
+    tier's values. It measured within 1 ft and 1° of the tier's front and
+    rake (16 ft, 18°).
+  - 103 and 104: where the Crawford Boxes meet the field level and the
+    street (~7 m above the field), the tool can't isolate their rows, so
+    they aren't measured. A wider band found 104 at 24 ft on cuts running
+    mostly over the field level's slope, and was taken back.
+  - 108: its rows, 27–40, are the back of 107 and 109's stand (it sits
+    further out on the map), so it stands at row 27's height, 13 ft. The
+    sections labelled from rows 5 and 12 measure at the field, so their
+    raised fronts went.
+  - 224: the roof's edge, 130 ft up, comes a row before the mezzanine's
+    front, which covers its rows from row 2 as at 223 and 225. It takes
+    the tier's cover.
+  - 132, 133 and 153: the parked panels' edge comes first over them, over
+    a deck of seats. The tool's deck-under-roof rule takes the lower deck
+    but didn't fire. For 132 and 133, the panels' points at their edge are
+    too few for the lowest point the rule needs; that is a tool bug,
+    affecting sections at 18 other parks too (follow-up). For 153, the
+    250s' rows don't show under the panels at all. So 132 and 133 take
+    the club deck (the tier's row 27, as the rule gives) and 153 the
+    source's row 18. Across their width the panels' edge crosses 132 and
+    133 at ~70° to their rows (the panels from row 1 on their right-field
+    side, the club deck from row 19–27 on the other); the engine gives one
+    cover per section.
+  - 118 and 120: the scan sees no edge over their rows, so the source's
+    rows stand, as the approved rule (§7.1b) says. The cover report's code
+    would give them the tier's row instead; the rule was followed.
+- *Sections lost after covers* (21 club sections, 253–255) keep their
+  pre-cover measurements. 8 of the 9 club sections still found read the
+  same back from row 1 as before covers, so the Mariners' club exception
+  doesn't apply.
+- *`backFromFront`:* no tier qualifies. The field level reads
+  back-aligned; the club and mezzanine have too few sections carrying
+  the tier's back.
+
+**Results, at the five 2025 test games across all 30 parks:**
+- Answers change for 120 of the 143 Astros sections (1,190 half-hour
+  steps) and nowhere else.
+- Labels: 253 up, 29 down.
+- Astros' Low share at the three day games: 47% → 14%; High: 35% → 58%.
+  Site-wide Low share: 25.2% → 24.3%.
+
+**Checks:**
+- *Audits:* identical to phase A's but for the Astros. All 51 sections in
+  the final measurement are on their own values: 2,506 on the rule's
+  rake; 2,458 own fronts, 49 set on purpose; 2,496 own backs, 11 set on
+  purpose; no underside under 9 ft. The upper deck's tier lines remain
+  (estimates, 1 of 28 measured).
+- *Reference checks:* Daikin's 37 pass. Rewritten to the measurement, with
+  the reasons in the test header:
+  - left field and 129–134 "among the worst for sun" now means sunnier
+    than the park's median section; 102's rows 8–10 are under the deck
+    behind it;
+  - "the sun shines on the first-base side" now means every row in front
+    of the club deck's edge is in the sun;
+  - "all the shade along the third-base line" now covers 108–116; 105–107
+    turn toward the left-field corner, and their front rows get the sun.
+  - New checks: 122–126 rows 35 and up, and 154–155 rows 12 and up, are
+    shaded (Rate Your Seats), since the lidar, not those lines, now sets
+    their covers.
+  - The Daikin post is a draft (unpublished 2026-11-10), so no post claims
+    are checked.
+- *Tests:* 3,608 of 3,608. One earlier run's worker crashed (SIGSEGV) on a
+  hook test, which passes alone and in the next full run. The type check
+  and eslint are clean.
+- *Dev server:* `/stadium/astros` renders with no console errors. Section
+  124 at the 3:10 PM opener: "shade arrives by the end of the game".
+
+**Not changed:** the Marlins (no open-roof scan); the Diamondbacks and
+Brewers (phase A); Globe Life Field, Rogers Centre and Tropicana Field
+(see the plan).
 
 ---
 ---
