@@ -73,6 +73,23 @@ export const astrosSections: DetailedSection[] = buildParkSections(
     orientation: ORIENTATION,
     aerialControl: ASTROS_AERIAL_CONTROL,
     standRuns: [
+      // Turned where two lidar measurements agree on the way the rows climb
+      // (scripts/measureStandHeights.py treads): planes fitted to the treads
+      // (four or five readings within 14°) and the fall line in the middle
+      // (within 8° of them), both more than 10° off the direction they had
+      // (fitted on the photos); each faces their mean.
+      { ids: ['100'], facingDeg: 306 },
+      { ids: ['105'], facingDeg: 257 },
+      { ids: ['106'], facingDeg: 257 },
+      { ids: ['206'], facingDeg: 256 },
+      { ids: ['233'], facingDeg: 97 },
+      // Turned to the rows' fall line, measured on the lidar
+      // (scripts/measureStandHeights.py): these sections' rows climb firmly
+      // more than 15° off the direction fitted on the photos; each faces the
+      // median of the fall lines in its middle and 4 m to either side.
+      { ids: ['107'], facingDeg: 254 },
+      { ids: ['205'], facingDeg: 274 },
+      { ids: ['307'], facingDeg: 254 },
       { ids: ids(100, 104), facingDeg: 292 },
       { ids: [...ids(150, 156), ...ids(250, 255)], facingDeg: 41 },
       ...CURVE,

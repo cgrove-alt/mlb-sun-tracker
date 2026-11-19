@@ -7522,6 +7522,7 @@ const CHASE: StadiumStructure = {
 const DAIKIN_RYS = 'https://www.rateyourseats.com/daikin-park/seating/shaded-covered-seats';
 const DAIKIN_PHOTO = 'USGS NAIP 2012-06-23, 2014-10-16, 2016-10-10, 2020-11-30 and 2024-10-13 flights, roof open (Planetary Computer NAIP archive)';
 const DAIKIN_HEIGHT = 'https://www.walterpmoore.com/projects/daikin-park';
+const DAIKIN_LIDAR = 'USGS 3DEP lidar TX_Coastal_B1_2018, flown 2018-03-09 to 2018-03-21 with the roof open (scripts/measureStandHeights.py)';
 const daikinSection = (n: string) => `https://www.rateyourseats.com/daikin-park/seating/sections/${n}`;
 /** First labelled row where it is not 1 (Rate Your Seats). */
 const DAIKIN_FIRST_ROW: Record<string, number> = {
@@ -7529,19 +7530,30 @@ const DAIKIN_FIRST_ROW: Record<string, number> = {
   '124': 5, '125': 5, '126': 5, '134': 9, '150': 13, '151': 13, '250': 11,
 };
 /**
- * First covered row, as a row label (Rate Your Seats): the club deck over
- * the field level's back rows from row 35 round the infield and down both
- * lines (122–126: "Rows 35 and above are shaded during most day games", on
- * the side that faces the afternoon sun), 25–30 behind home (118–120); the
- * terrace over the right-field stands from row 18 (150, 151 and 156 wholly).
+ * First covered row, as a row label (Rate Your Seats), where the lidar does
+ * not measure it: the terrace over the right-field stands from row 18 (150,
+ * 151 and 156 wholly), and 250 wholly.
  */
 const DAIKIN_COVER_LABEL: Record<string, number> = {
-  ...Object.fromEntries(['105', '106', '107', '108', '109', '110', '111', '112', '113', '114', '116', '122', '124', '125', '126', '127', '128', '129', '131', '132', '133', '134'].map((id) => [id, 35])),
   // 153's rows skip 18–20, so its first covered row (21) is its 18th.
-  '118': 25, '119': 28, '120': 30, '152': 18, '153': 18, '154': 18, '155': 18, '150': 13, '151': 13, '156': 1, '250': 11,
+  '152': 18, '153': 18, '150': 13, '151': 13, '156': 1, '250': 11,
 };
-const DAIKIN_LOWER = { frontRowHeightFt: 3, rakeDeg: 20 };
-const daikinRise = 2.75 * Math.tan((DAIKIN_LOWER.rakeDeg * Math.PI) / 180);
+/**
+ * The field level's covered rows and undersides (ft) where they are not the
+ * tier's (the club deck's front over row 27, 24 ft up underneath; lidar):
+ * measured, but for 118 and 120, where the scan sees no edge over their
+ * rows, and 108 and 134, not measured, which keep the source's (Rate Your
+ * Seats: "Rows 35 and above are shaded during most day games" round the
+ * infield and down both lines, 25 and 30 behind home; 108's underside 9 ft
+ * over its row 9).
+ */
+const DAIKIN_FIELD_COVER: Record<string, readonly [number, number]> = {
+  '111': [30, 24], '113': [23, 24], '114': [24, 24], '116': [23, 24], '119': [18, 24], '125': [24, 24], '126': [23, 24],
+  '131': [22, 24],
+  '108': [9, 27], '118': [14, 24], '120': [19, 24], '134': [27, 24],
+};
+/** The field level's front row and rake (lidar). */
+const DAIKIN_LOWER = { frontRowHeightFt: -1, rakeDeg: 11 };
 /** Roof top (fixed section and parked panels), ft (estimated; 242 ft at its highest). */
 const DAIKIN_ROOF_TOP = 200;
 const daikinSections = (ids: string[], soffitHeightFt: number, extra: (id: string) => Partial<StandProfile> = () => ({})) =>
@@ -7549,7 +7561,6 @@ const daikinSections = (ids: string[], soffitHeightFt: number, extra: (id: strin
     const first = DAIKIN_FIRST_ROW[id] ?? 1;
     const label = DAIKIN_COVER_LABEL[id];
     return [id, {
-      ...(first > 1 && /^1/.test(id) ? { frontRowHeightFt: DAIKIN_LOWER.frontRowHeightFt + (first - 1) * daikinRise } : {}),
       ...(label ? { overhang: { coveredFromRow: Math.max(1, label - first + 1), soffitHeightFt } } : {}),
       ...extra(id),
     }];
@@ -7576,120 +7587,193 @@ export function daikinTier(id: string): string | null {
  * Diamond Club in front of it behind home, the Crawford Boxes (100–104)
  * above the left-field wall, the right-field stands (150–156) under a
  * terrace (250–255), the club level (205–236), the mezzanine (305–334) and
- * the upper deck (405–434). Rows are Rate Your Seats' section pages, and so
- * is which rows are covered: "The club level overhang protects the back
- * rows of lower level seating around the infield and down the baselines",
- * "More than half of rows on the club level are covered from above", and
- * "200, 300 and 400 level seats are protected by a well-designed roof". With
+ * the upper deck (405–434). Rows are Rate Your Seats' section pages. With
  * the roof open, its fixed section stays over the third-base side and its
  * panels stack over the first-base side and right field: averaged over four
  * flights (they lean up to 10 m with the camera), the fixed section's front
  * edge stands ~36 m back from the third-base line and the panels' ~52 m back
  * from the first-base line, in front of the upper deck's first row on both
- * sides. The roof is 242 ft at its highest (Walter P Moore); no source gives
- * the decks' heights, so they are estimated.
+ * sides. The roof is 242 ft at its highest (Walter P Moore).
+ *
+ * Heights, the decks' edges and the roof's are measured on USGS lidar
+ * (DAIKIN_LIDAR, March 2018, the roof open; Houston's 2024 scan has it
+ * closed), as at T-Mobile Park: a cut straight back through each section's
+ * stand gives its front row, rake, the edge of any deck or roof over it and
+ * what rises highest behind; each measured section takes its own. Which rows
+ * are covered is the scan's edge, more than two rows from Rate Your Seats'
+ * ("Rows N and above are shaded during most day games") in most sections;
+ * the source's row stands where the scan sees no edge or doesn't measure the
+ * section. Where a roof's edge comes first over a deck of seats starting
+ * under it, that deck is the edge over the rows (the lower of the two).
+ * Sections whose covered rows leave too few open rows to find (205–207,
+ * 209–211, 218–230, 234 and 236; 253–255) keep what they measured before
+ * the covers. Not measured: the upper deck but 407 (hidden under the roof),
+ * 18 of the mezzanine's 27 (its rows run on into the upper deck's), and
+ * 250, whose front rows gave way to the Ultra Club's standing staircase in
+ * 2019–21, after the scan (its rows now start at 11).
  */
 const DAIKIN: StadiumStructure = {
   stadiumId: 'astros',
-  // Far rim: the roof (~200 ft) about 500 ft across the field.
-  park: { roof: 'retractable', farRimHeightFt: DAIKIN_ROOF_TOP, fieldCrossingFt: 500 },
+  // Far rim (lidar): the roof line, median over sections 147 ft; crossing:
+  // the median distance from a section to it across the field, 408 ft.
+  park: { roof: 'retractable', farRimHeightFt: 147, fieldCrossingFt: 408 },
   tierOf: daikinTier,
   tiers: {
     field: {
       label: 'Field level (105–134)',
       // Rows 1–40 (behind the dugouts from row 5; behind home 12–32)
-      // (sourced), the club deck over the back rows (sourced, see above).
-      // Estimated: front ~3 ft plus ~1 ft a row where rows start further up,
-      // 20° rake, club deck underside ~48 ft; the roof (~200 ft) behind: right
-      // behind the last row on the third-base side and behind home, ~30 ft
-      // further back (the parked panels' edge) on the first-base side.
-      stand: { rows: 40, ...DAIKIN_LOWER, backHeightFt: DAIKIN_ROOF_TOP },
-      sections: daikinSections([...daikinRange(105, 134)], 48, (id) => (Number(id) >= 122 ? { backSetbackFt: 30 } : {})),
+      // (sourced). Lidar (23 of 25; 105–107 along their rows, 40–45° off the
+      // map's direction): front row at the field (−2 to 3 ft) wherever the
+      // rows' labels start (108's rows, 27–40, are the back of 107 and 109's
+      // stand: row 27's height, 13 ft), 11° rake (11–12). The club deck's
+      // front, 33 ft up, is over row 27 (18–30 by section, DAIKIN_FIELD_COVER;
+      // the source's "rows 35 and above"), 24 ft up underneath (that front
+      // less 9 ft). Over 132 and 133 the parked roof's panels come first
+      // (150–187 ft up, their edge crossing the rows at ~70°), and the club
+      // deck starting under them is the edge over their rows. What rises
+      // highest behind is the roof's edge, 136 ft up and 10 ft in front of the
+      // last row (135–160 ft; the club deck's front, 67–69 ft, behind 105,
+      // 106 and 119; the parked panels, 180 ft, over 132 and 133).
+      stand: { rows: 40, ...DAIKIN_LOWER, backHeightFt: 136, backSetbackFt: -10, deckFrontFt: 33, overhang: { coveredFromRow: 27, soffitHeightFt: 24 } },
+      sections: withRakes(withBacks(withFronts(Object.fromEntries(daikinRange(105, 134).map((id) => {
+        const cover = DAIKIN_FIELD_COVER[id];
+        return [id, cover ? { overhang: { coveredFromRow: cover[0], soffitHeightFt: cover[1] } } : {}];
+      })), { '108': 13, '111': -2, '113': 1, '114': 0, '116': 1, '118': 1, '119': 3, '122': -2, '125': 0, '126': 1 }), { '105': [69, -2], '106': [69, -32], '107': [153, 1], '109': [155, -27], '110': [160, -26], '111': [158, -21], '112': [156, -15], '113': [153, -26], '114': [147, -24], '116': [147, -26], '118': [143, 30], '119': [67, -4], '120': [135, 43], '122': [136, -12], '124': [135, -10], '125': [135, -10], '126': [135, -5], '127': [136, 1], '128': [136, 4], '129': [135, 7], '131': [136, 9], '132': [181, -73], '133': [180, -63] }), { '113': 12, '114': 12, '116': 12, '119': 12, '122': 12, '124': 12, '125': 12, '126': 12, '127': 12 }),
       rowsFromMap: true,
-      heightsSourced: false,
+      heightsSourced: true,
       coverSourced: true,
-      sources: [DAIKIN_RYS, DAIKIN_PHOTO, ...['109', '112', '118', '120', '122', '127', '133'].map(daikinSection)],
+      sources: [DAIKIN_RYS, DAIKIN_PHOTO, ...['109', '112', '118', '120', '122', '127', '133'].map(daikinSection), DAIKIN_LIDAR],
     },
     box: {
       label: 'Dugout boxes and Diamond Club (A–F, AA, 70–75)',
-      // No source lists their rows; a few rows in front of the field level.
-      // Estimated: 4 rows from ~2 ft, the field level rising behind them.
-      stand: { rows: 4, frontRowHeightFt: 2, rakeDeg: 12, backHeightFt: 48, backSetbackFt: 90 },
-      heightsSourced: false,
+      // No source lists their rows; a few rows in front of the field level
+      // (4, estimated). Lidar (4 of 13; the rest run on into the field level's
+      // rows): front row at the field (−1 to 0 ft), 7° rake; what rises
+      // highest behind is the roof's edge over the upper deck, 135 ft up and
+      // 99 ft back (86–135).
+      stand: { rows: 4, frontRowHeightFt: -1, rakeDeg: 7, backHeightFt: 135, backSetbackFt: 99 },
+      sections: withBacks(withFronts({}, { C: 0 }), { C: [136, 135], '75': [135, 86] }),
+      heightsSourced: true,
       coverSourced: true,
-      sources: [DAIKIN_PHOTO],
+      sources: [DAIKIN_PHOTO, DAIKIN_LIDAR],
     },
     crawford: {
       label: 'Crawford Boxes (100–104)',
       // Rows 1–10 (104: 13), open (Rate Your Seats: "among the worst" for
-      // sun). Estimated: front ~21 ft (above the 19-ft wall), 20° rake; the
-      // roof's track and the 115-ft left-field glass wall behind.
-      stand: { rows: 10, frontRowHeightFt: 21, rakeDeg: 20, backHeightFt: 115, backSetbackFt: 20 },
+      // sun). Lidar (101 and 102; 100 runs under the roof's left-field
+      // runway, a girder 2–4 m wide 133 ft up, not a deck; 103 and 104, where
+      // the boxes meet the field level and the street, not found): front row
+      // 15 ft, 18° rake. What rises highest behind is the deck behind them,
+      // 56 ft up, 2 ft in front of the last row (54–59); its edge is over row
+      // 8 of 102, 43 ft up underneath (the bottom of its face).
+      stand: { rows: 10, frontRowHeightFt: 15, rakeDeg: 18, backHeightFt: 56, backSetbackFt: -2 },
+      sections: withBacks({ '102': { overhang: { coveredFromRow: 8, soffitHeightFt: 43 } } }, { '101': [59, 1], '102': [54, -5] }),
       rowsFromMap: true,
-      heightsSourced: false,
+      heightsSourced: true,
       coverSourced: true,
-      sources: [DAIKIN_RYS, DAIKIN_HEIGHT, ...['100', '102', '104'].map(daikinSection)],
+      sources: [DAIKIN_RYS, DAIKIN_HEIGHT, ...['100', '102', '104'].map(daikinSection), DAIKIN_LIDAR],
     },
     rightField: {
       label: 'Right-field stands (150–156)',
-      // Rows 1–25 (sourced), under the terrace from row 18 (150, 151 and 156
-      // wholly) (sourced). Estimated: front ~10 ft, 20° rake, terrace
-      // underside ~35 ft (36 over 152–155, 9 ft above row 18's floor), the
-      // upper decks and roof behind.
-      stand: { rows: 25, frontRowHeightFt: 10, rakeDeg: 20, backHeightFt: DAIKIN_ROOF_TOP, backSetbackFt: 40 },
-      sections: { ...daikinSections(['150', '151', '156'], 35), ...daikinSections(daikinRange(152, 155), 36) },
+      // Rows 1–25 (sourced). Lidar (153–155, seen under the parked roof;
+      // 150, 151 and 156, covered wholly, and 152 not found): front row 4 ft
+      // (4–6), 17° rake. The 250s' front, 31 ft up, is over row 8 (8–9; the
+      // source's row 18), 22 ft up underneath (that front less 9 ft). Over
+      // 153 the parked roof's panels come first (their face 175 ft up) and
+      // the 250s' front doesn't show under them: it keeps the source's row
+      // 18. What rises highest behind is the parked roof, 241 ft up, 38 ft in
+      // front of the last row (235–247). Not measured: 150 and 151 (rows from
+      // 13) at row 13's height on the measured stand, 14 ft; their covered
+      // rows the source's (DAIKIN_COVER_LABEL), at least 9 ft over the floor.
+      stand: { rows: 25, frontRowHeightFt: 4, rakeDeg: 17, backHeightFt: 241, backSetbackFt: -38, deckFrontFt: 31, overhang: { coveredFromRow: 8, soffitHeightFt: 22 } },
+      sections: withBacks(withFronts({
+        ...daikinSections(['150', '151'], 23), ...daikinSections(['152'], 28), ...daikinSections(['153'], 29), ...daikinSections(['156'], 22),
+      }, { '150': 14, '151': 14, '153': 6 }), { '153': [235, -35], '155': [247, -47] }),
       rowsFromMap: true,
-      heightsSourced: false,
+      heightsSourced: true,
       coverSourced: true,
-      sources: [DAIKIN_RYS, ...['150', '153', '156'].map(daikinSection)],
+      sources: [DAIKIN_RYS, ...['150', '153', '156'].map(daikinSection), DAIKIN_LIDAR],
     },
     rightFieldUpper: {
       label: 'Right-field terrace (250–255)',
-      // Rows 1–17 (250: 11–17), covered from row 6 (250 wholly) (Rate Your
-      // Seats: "Rows 6 and above are shaded during most day games").
-      // Estimated: front ~38 ft, 25° rake, the deck above ~60 ft.
-      stand: { rows: 17, frontRowHeightFt: 38, rakeDeg: 25, backHeightFt: DAIKIN_ROOF_TOP, backSetbackFt: 20, overhang: { coveredFromRow: 6, soffitHeightFt: 60 } },
-      sections: daikinSections(['250'], 60),
+      // Rows 1–17 (250: 11–17). Lidar (253–255, seen under the parked roof;
+      // 251 and 252 not found): front row 31 ft (31–32), 26° rake. The parked
+      // roof's panels are over them from row 1, 246 ft up at their top (no
+      // face seen; 239–249), and what rises highest behind, 38 ft in front of
+      // the last row. 251 and 252 keep the source's row 6 ("Rows 6 and above
+      // are shaded during most day games"). 250 was rebuilt after the scan
+      // (2019–21: its front rows gave way to the Ultra Club's staircase) and
+      // keeps its estimates: front ~38 ft, 25° rake, covered wholly (~60 ft).
+      stand: { rows: 17, frontRowHeightFt: 31, rakeDeg: 26, backHeightFt: 246, backSetbackFt: -38, overhang: { coveredFromRow: 1, soffitHeightFt: 246 } },
+      sections: withRakes(withBacks(withFronts({
+        // Rebuilt after the scan (its rows now from 11): its estimates.
+        '250': { frontRowHeightFt: 38, rakeDeg: 25, backHeightFt: DAIKIN_ROOF_TOP, backSetbackFt: 20, ...daikinSections(['250'], 60)['250'] },
+        // Not measured: the source's rows.
+        '251': { overhang: { coveredFromRow: 6, soffitHeightFt: 246 } }, '252': { overhang: { coveredFromRow: 6, soffitHeightFt: 246 } },
+      }, { '255': 32 }), { '253': [239, -38], '255': [249, -38] }), { '254': 27 }),
       rowsFromMap: true,
-      heightsSourced: false,
+      heightsSourced: true,
       coverSourced: true,
-      sources: ['250', '253', '255'].map(daikinSection),
+      sources: [...['250', '253', '255'].map(daikinSection), DAIKIN_LIDAR],
     },
     club: {
       label: 'Club level (205–236)',
-      // Rows 1–12 (206: 1–8; 218–220: 1–6), covered from row 5 (sourced).
-      // Estimated: front ~50 ft, 25° rake, mezzanine underside ~64 ft (9 ft
-      // above row 5's floor).
-      stand: { rows: 12, frontRowHeightFt: 50, rakeDeg: 25, backHeightFt: DAIKIN_ROOF_TOP, overhang: { coveredFromRow: 5, soffitHeightFt: 64 } },
+      // Rows 1–12 (206: 1–8; 218–220: 1–6). Lidar (30 of 32; 205, 206 and
+      // 233 along their rows, 16–60° off the map's direction): front row 33 ft
+      // (33–34), 21° rake (18–23). The mezzanine's front, 66 ft up, is over
+      // row 2 (1–3; the source's row 5): the rows from there are covered,
+      // under ~57 ft (that front less 9 ft). Over 224 the roof's edge, 130 ft
+      // up, comes a row before the mezzanine's front, which covers its rows
+      // from row 2 as at 223 and 225. What rises highest behind, seen from row
+      // 1, is the mezzanine's front (67–74 ft, 11–29 ft in front of the last
+      // row) or the roof's edge (135–182 ft); each measured section takes its
+      // own. 232 and 235, not measured, keep the source's row 5.
+      stand: { rows: 12, frontRowHeightFt: 33, rakeDeg: 21, backHeightFt: 154, backSetbackFt: -24, deckFrontFt: 66, overhang: { coveredFromRow: 2, soffitHeightFt: 57 } },
+      sections: withBacks(withFronts({
+        // Not measured: the source's row 5.
+        '232': { overhang: { coveredFromRow: 5, soffitHeightFt: 57 } }, '235': { overhang: { coveredFromRow: 5, soffitHeightFt: 57 } },
+      }, { '208': 34 }), { '205': [68, -27], '206': [67, -16], '207': [68, -24], '208': [158, -24], '209': [160, -22], '210': [160, -22], '211': [159, -22], '212': [157, -22], '214': [152, -24], '215': [149, -22], '216': [147, -24], '217': [68, -29], '218': [68, -11], '219': [68, -11], '220': [67, -11], '221': [68, -27], '222': [68, -27], '223': [135, -23], '224': [137, -27], '225': [74, -27], '226': [67, -27], '227': [68, -27], '228': [67, -27], '229': [67, -27], '230': [68, -27], '231': [175, -28], '233': [177, -28], '234': [179, -27], '236': [182, -26] }),
       rowsFromMap: true,
-      heightsSourced: false,
+      heightsSourced: true,
       coverSourced: true,
-      sources: [DAIKIN_RYS, ...['205', '212', '220', '228', '236'].map(daikinSection)],
+      sources: [DAIKIN_RYS, ...['205', '212', '220', '228', '236'].map(daikinSection), DAIKIN_LIDAR],
     },
     mezzanine: {
       label: 'Mezzanine (305–334)',
       // Rows 1–5 or 1–9, covered from row 3 (309–316: "Rows 3 and above are
-      // shaded during most day games"; "300 ... level seats are protected by
-      // a well-designed roof"). Estimated: front ~66 ft, 25° rake, upper
-      // deck underside ~78 ft.
-      stand: { rows: 9, frontRowHeightFt: 66, rakeDeg: 25, backHeightFt: DAIKIN_ROOF_TOP, overhang: { coveredFromRow: 3, soffitHeightFt: 78 } },
+      // shaded during most day games"; the scan's edge over rows 1–3, 7 at
+      // 328). Lidar (9 of 27; the rest run on into the upper deck's rows; 307
+      // along its rows, 40° off the map's direction): front row 67 ft, 30°
+      // rake (29–32). The 300s and 400s are one slope, with no deck between:
+      // what covers them is the roof (its fixed section, the parked panels),
+      // 148 ft up underneath (126–175, each measured section its own), and
+      // what rises highest behind is its edge, 149 ft up and 8 ft in front of
+      // the last row (132–175).
+      stand: { rows: 9, frontRowHeightFt: 67, rakeDeg: 30, backHeightFt: 149, backSetbackFt: -8, overhang: { coveredFromRow: 3, soffitHeightFt: 148 } },
+      sections: withBacks({
+        '322': { overhang: { coveredFromRow: 3, soffitHeightFt: 132 } }, '324': { overhang: { coveredFromRow: 3, soffitHeightFt: 126 } },
+        '328': { overhang: { coveredFromRow: 7, soffitHeightFt: 129 } }, '331': { overhang: { coveredFromRow: 3, soffitHeightFt: 175 } },
+      }, { '307': [156, 3], '309': [160, -8], '313': [154, -19], '315': [149, -19], '319': [137, 32], '322': [135, -6], '324': [135, -1], '328': [132, -8], '331': [175, -10] }),
       rowsFromMap: true,
-      heightsSourced: false,
+      heightsSourced: true,
       coverSourced: true,
-      sources: [DAIKIN_RYS, ...['309', '313', '317', '325', '333'].map(daikinSection)],
+      sources: [DAIKIN_RYS, ...['309', '313', '317', '325', '333'].map(daikinSection), DAIKIN_LIDAR],
     },
     upper: {
       label: 'Upper deck (405–434)',
       // Rows 1–17 to 1–23 (sourced), under the roof: the fixed section over
       // the third-base side ("408-415 ... get excellent shade from the
       // closed roof"), the parked panels over the first-base side (their
-      // edge measured in front of the first row). Estimated: front ~88 ft,
-      // 30° rake, roof underside ~150 ft.
+      // edge measured in front of the first row). Hidden under it from the
+      // air (lidar: only 407 found, front row 90 ft, the roof 147 ft up over
+      // its row 1 and 156 ft at 56 ft in front of its last row), so
+      // estimated: front ~88 ft, 30° rake, roof underside ~150 ft.
       stand: { rows: 17, frontRowHeightFt: 88, rakeDeg: 30, treadFt: 2.6, backHeightFt: DAIKIN_ROOF_TOP, overhang: { coveredFromRow: 1, soffitHeightFt: 150 } },
+      sections: withBacks(withFronts({}, { '407': 90 }), { '407': [156, -56] }),
       rowsFromMap: true,
       heightsSourced: false,
       coverSourced: true,
-      sources: [DAIKIN_RYS, DAIKIN_HEIGHT, DAIKIN_PHOTO, ...['405', '410', '415', '420', '428', '434'].map(daikinSection)],
+      sources: [DAIKIN_RYS, DAIKIN_HEIGHT, DAIKIN_PHOTO, ...['405', '410', '415', '420', '428', '434'].map(daikinSection), DAIKIN_LIDAR],
     },
   },
   reviewedOn: '2026-11-12',
