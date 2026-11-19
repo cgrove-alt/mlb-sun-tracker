@@ -1189,8 +1189,14 @@ def measure_section(P, sec, band):
     def headroom(r):
         zz = z[(np.abs(s - r['s0']) <= 0.5) & (z > r['z0'] + 1.5)]
         return float(zz.min()) - r['z0'] if len(zz) else 0.0
-    if lip is not None and lip_low is not None:
-        under_roof = [r for r in all_runs if lip + 2 < r['s0'] <= back and r['z0'] < lip_low - 2
+    # The roof's lowest point at its edge; where too few points show there
+    # (a sparsely scanned edge), over the first 3 m past it, which define the
+    # edge and so always hold points.
+    roof_low = lip_low
+    if lip is not None and roof_low is None:
+        roof_low = float(np.percentile(z[over & (s >= lip) & (s < lip + 3)], 5))
+    if lip is not None:
+        under_roof = [r for r in all_runs if lip + 2 < r['s0'] <= back and r['z0'] < roof_low - 2
                       and r['z0'] > run['c'] + slope * r['s0'] + 2.2 and r['slope'] >= math.tan(math.radians(15))
                       and headroom(r) >= 2.2]
         if under_roof:
