@@ -25,7 +25,7 @@ export default function HowItWorksPage() {
 
       <h2>1. Sun position — NREL&apos;s Solar Position Algorithm</h2>
       <p>
-        For any date, time, and place we compute the sun&apos;s <strong>azimuth</strong>
+        For any date, time, and place we compute the sun&apos;s <strong>azimuth</strong>{' '}
         (compass direction) and <strong>elevation</strong> (height above the horizon) with the{' '}
         <a href="https://www.nrel.gov/docs/fy08osti/34302.pdf" target="_blank" rel="noopener noreferrer">
           Solar Position Algorithm
