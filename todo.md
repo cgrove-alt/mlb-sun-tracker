@@ -4883,6 +4883,135 @@ for them over the front rows. That is why those rows now get more sun at
 **Not changed:** Daikin 153 (not this bug), and `lipLowFt` from the wider
 window (see the plan).
 
+## §25 Copy that still says seat-level shade is withheld (plan, 2026-11-19)
+
+Asked: plan the copy fix. Branch `fix/copy-withheld`, from `main` after
+PR #100. This finishes 4.7.
+
+**The problem.** In August the site paused seat-level answers (audit
+Phase 10), and its copy said so. Since then every MLB park has a
+section-by-section shade map, 24 of them on stands measured from lidar.
+The pages around the map still describe the pause. On the live site
+(fetched 2026-11-19):
+- *Every page:* the default meta description ("Review stadium solar
+  context and data confidence before relying on any seat-level shade
+  claim", `app/layout.tsx`), the footer line (`FooterModern`) and the
+  site's share image ("solar context with confidence disclosed").
+- */faq:* 4 answers say exact sections and rows are withheld, and 2 more
+  lean on "validated stadium geometry". The page's FAQ JSON-LD, which
+  search engines read, carries the same answers.
+- *Homepage:* 3 FAQ JSON-LD answers say the same (`HomepageSchema`), one
+  that Yankee Stadium's shaded rows aren't published.
+- */how-it-works:*
+  - it names the NOAA calculator (NREL's SPA replaced it in 2.1);
+  - it says MLB rows are "modeled rather than surveyed";
+  - it says results are "not currently published" (the "release gate").
+- */disclaimer:* "Exact MLB seat-level shade outputs are currently
+  withheld".
+- */guide/best-shaded-seats-mlb:* titled "MLB Shade Data Trust Guide":
+  "Exact section and row rankings are paused", "publication gate",
+  "holdout".
+- */guide/how-to-find-shaded-seats:* three lines say results are withheld.
+- */guide, /stadiums, /league/(mlb|milb|nfl)*, and the blog posts'
+  closing line: "solar context", "data confidence", "measurement status".
+- *Every MLB stadium page, under the map:* each of "How High the Sun
+  Gets"'s 7 months ends "This is verified solar-position context only;
+  translating it into exact section or row shade requires measured stadium
+  geometry" (`seasonalShade.ts`).
+- *MiLB pages:* "the orientation model indicates the {side} is more likely
+  to self-shade first. Exact sections, rows, and transition times are not
+  published until metric geometry has been measured and independently
+  validated" (`ShadeAnswer`).
+- *MiLB and NFL pages:* "Seating layout is approximate. Individual section
+  placement and metric shade geometry are modeled and have not passed
+  independent observation validation" (`fidelityNote`).
+
+For MiLB and NFL the gist is still true, since they have no section map.
+Only the wording is internal.
+
+**What the copy will say.** Each fact was checked in the code:
+- *MLB:*
+  - Pick a game and see every section in sun or shade, in half-hour
+    steps labelled by inning.
+  - Each section's answer carries High, Medium or Low confidence.
+  - Rows under a deck or roof show as shaded.
+- *How it's worked out:*
+  - The sun's position comes from NREL's Solar Position Algorithm.
+  - At 24 parks the stands' heights and rake, and the decks and roofs
+    over them, are measured from USGS lidar scans. A few decks the scans
+    can't see are estimated.
+  - At Chase Field, American Family Field and loanDepot park there's no
+    scan with the roof open, so the stands are estimated from aerial
+    photos.
+  - Globe Life Field and Rogers Centre use a generic stand shape.
+  - Tropicana Field has a fixed roof.
+  - The confidence label says whether the answer holds if the park's
+    direction or the stands' heights are off by their known error.
+  - The answers are checked against published reports from real games.
+- *Retractable roofs:* the map shows the roof open; with it closed,
+  every seat is shaded.
+- *MiLB:* there's no section map, only which side tends to shade first
+  at a day game, from the way the park faces. *NFL:* already plain
+  (which sideline).
+
+**Fix.** Copy only, with no logic changes and each page's layout kept.
+Plain words throughout, with no "withheld", "self-shade", "holdout",
+"publication gate", "paused", "solar context", "data confidence" or
+"measurement status". One commit per area.
+
+### Steps
+- [ ] E1. Site-wide: the default meta description, the footer line and the
+      site's share-image subtitle.
+- [ ] E2. /faq and the homepage's FAQ JSON-LD: rewrite the answers that
+      describe the pause.
+- [ ] E3. /how-it-works: the sun (NREL SPA), the stands (as above) and the
+      limits:
+      - the roof is shown open;
+      - estimated parks lean to Low and Medium;
+      - weather: say where it's used, after checking whether the MLB map
+        uses it.
+- [ ] E4. /disclaimer: replace the withheld sentence with what the answers
+      rest on, and that they're estimates.
+- [ ] E5. Guides:
+      - best-shaded-seats-mlb, same URL, retitled to its keywords ("Best
+        Shaded Seats at MLB Ballparks"): how to find them with each park's
+        map, keeping its climate and start-time sections;
+      - how-to-find-shaded-seats;
+      - the guide index.
+- [ ] E6. /stadiums, the league pages and the blog's closing line.
+- [ ] E7. Stadium pages: drop the "verified solar-position context only…"
+      sentence from the monthly sun heights.
+- [ ] E8. MiLB and NFL: `ShadeAnswer`'s MiLB answer and `fidelityNote` in
+      plain words, with their unit test (`stadiumDataFidelity.test.ts`
+      matches the old wording).
+- [ ] E9. Checks:
+      - on the dev server, every route above with none of the old phrases;
+      - the FAQ JSON-LD parses;
+      - unit tests, type check, eslint, and the SEO and a11y specs;
+      - a look at /faq, /how-it-works, a guide, an MLB, a MiLB and an NFL
+        page.
+
+      Then the review, and tick 4.7 (and 2.7, whose last use of the
+      side-of-park answer is MiLB's). (PR: when asked.)
+
+**Not in this plan (noticed):**
+- *Files nothing imports, with the same copy:*
+  - `ShadeConfidenceNotice`;
+  - `MobileStadiumGuide`, with `StadiumShadeQuestions` and
+    `SectionShadeSEO`;
+  - `src/utils/seoSchema.ts`;
+  - `ShareButton`.
+
+  Also `tests/trust-boundary-local.spec.ts`, which tests that removed
+  notice (CI doesn't run it). Deleting these is a cleanup of its own.
+- *The row API (1.2b)* still answers `publicationState: 'withheld'`. That's
+  an API field, not copy, and nothing on the site calls it.
+- *Other FAQ answers not about the pause* (favorites, live weather,
+  offline) are left as they are. Weather and favorites belong to the full
+  finder used for MiLB and NFL.
+- *Stale ticks:* 6.0 is done (every section file passes `ORIENTATION`), as
+  is 7.5 (§23). Ticked with this review.
+
 ---
 ---
 
