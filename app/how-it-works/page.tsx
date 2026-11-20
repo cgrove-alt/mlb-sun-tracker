@@ -5,7 +5,7 @@ import { SHADE_DATA_VERIFIED_LABEL } from '../../src/data/shadeDataVerified';
 export const metadata: Metadata = {
   title: 'How The Shadium Calculates Shade | Methodology',
   description:
-    'How The Shadium separates astronomical sun position, source-backed seating inventory, modeled stadium geometry, weather, and MLB schedule data — including the publication boundary.',
+    'How The Shadium works out sun and shade for every MLB section: the sun\'s position, the stands measured from lidar, the real game schedule, and the limits.',
   alternates: { canonical: 'https://theshadium.com/how-it-works' },
 };
 
@@ -18,57 +18,73 @@ export default function HowItWorksPage() {
 
       <h1>How The Shadium calculates shade</h1>
       <p>
-        The Shadium separates four inputs: where the sun is in the sky, what is known about
-        the venue, the weather, and the real game schedule. A reliable sun position does not
-        make unmeasured stadium geometry reliable, so each field has its own confidence status.
+        For any MLB game, The Shadium works out which sections are in the sun or the shade as
+        the game goes on. It needs four things: where the sun is, the shape of the stands, the
+        real start time and, in the full finder, the weather.
       </p>
 
-      <h2>1. Sun position — NOAA Solar Calculator</h2>
+      <h2>1. Sun position — NREL&apos;s Solar Position Algorithm</h2>
       <p>
-        For any date, time, and location we compute the sun&apos;s <strong>azimuth</strong>
-        (compass direction) and <strong>elevation</strong> (height above the horizon) using the{' '}
-        <a href="https://gml.noaa.gov/grad/solcalc/" target="_blank" rel="noopener noreferrer">
-          NOAA Global Monitoring Laboratory Solar Calculator
-        </a>
-        , based on Jean Meeus&apos;s <em>Astronomical Algorithms</em>, including atmospheric
-        refraction. This tells us the apparent direction sunlight is coming from at first pitch
-        and throughout the game. Typical agreement with NREL SPA is within 0.01°.
-      </p>
-
-      <h2>2. Stadium orientation &amp; geometry</h2>
-      <p>
-        MLB section identities come from published club charts or club-linked maps. Orientation
-        has a recorded precision range. Horizontal placement, row elevations and depths,
-        overhang dimensions, and obstruction meshes are separate fields; the current MLB row
-        and obstruction geometry is modeled rather than surveyed.
-      </p>
-
-      <h2>3. Weather — Open-Meteo</h2>
-      <p>
-        Clear-sky geometry is only half the story. We pull cloud-cover and conditions from{' '}
-        <a href="https://open-meteo.com/" target="_blank" rel="noopener noreferrer">
-          Open-Meteo
+        For any date, time, and place we compute the sun&apos;s <strong>azimuth</strong>
+        (compass direction) and <strong>elevation</strong> (height above the horizon) with the{' '}
+        <a href="https://www.nrel.gov/docs/fy08osti/34302.pdf" target="_blank" rel="noopener noreferrer">
+          Solar Position Algorithm
         </a>{' '}
-        so a heavily overcast forecast is reflected in what you should actually expect at the game.
+        of the U.S. National Renewable Energy Laboratory, including atmospheric refraction. We
+        check it against the worked example in NREL&apos;s paper and against NOAA&apos;s solar
+        calculator at every park.
       </p>
 
-      <h2>4. Game schedule — MLB StatsAPI</h2>
+      <h2>2. The stands, decks and roofs</h2>
+      <p>
+        Each section&apos;s place in the park comes from the club&apos;s seating chart. At 24
+        parks, the height and steepness of the stands, and the decks and roofs over them, are
+        measured from USGS lidar scans: laser measurements of the ground and buildings, flown
+        from aircraft. A few decks the scans can&apos;t see are estimated. At Chase Field,
+        American Family Field and loanDepot park no scan shows the roof open, so their stands
+        are estimated, with the layout and roof edges taken from aerial photos. Globe Life Field
+        and Rogers Centre use a generic stand shape. Tropicana Field has a fixed roof, so every
+        seat is shaded.
+      </p>
+      <p>
+        From these we trace the shadows the stands, the deck above and the roof throw over each
+        section&apos;s rows, every half hour of the game. Each section&apos;s answer is labelled
+        High, Medium or Low confidence. It&apos;s High when the answer at every half hour stays
+        the same if the park&apos;s direction is off by its measured error, or the stands are
+        10% taller or shorter (50% where they&apos;re estimated). It&apos;s Medium when one or
+        two half hours change, and Low when more do. At 27 parks we check the map against
+        published reports of where the shade fell at real games.
+      </p>
+
+      <h2>3. Game schedule — MLB StatsAPI</h2>
       <p>
         Shade depends entirely on the real first-pitch time, so we use official MLB schedule data
         (MLB Advanced Media) to tie every calculation to the actual game you pick, in the
         stadium&apos;s local time zone.
       </p>
 
+      <h2>4. Weather — Open-Meteo</h2>
+      <p>
+        The MLB shade map shows a clear day: clouds aren&apos;t counted. The full stadium finder,
+        used for MiLB and NFL venues, shows the forecast cloud cover and conditions from{' '}
+        <a href="https://open-meteo.com/" target="_blank" rel="noopener noreferrer">
+          Open-Meteo
+        </a>
+        .
+      </p>
+
       <h2>Accuracy &amp; limitations (the honest part)</h2>
       <ul>
         <li>
-          Exact MLB section and row results are <strong>not currently published</strong>. The
-          internal geometry model is useful for engineering, but it has not passed the measured-
-          geometry and independent shadow-observation release gate.
+          At retractable-roof parks the map shows the roof <strong>open</strong>. With it closed,
+          every seat is shaded, and whether it&apos;s open is up to the team on the day.
         </li>
         <li>
-          A published seating map proves section identity and order; it does not prove row depth,
-          rake, elevation, overhang depth, roof height, or the shadow boundary.
+          Where the stands are estimated, more sections are labelled Medium or Low confidence.
+        </li>
+        <li>
+          The map gives one answer for each row of a section. Where a roof&apos;s edge crosses a
+          section at an angle, one end of a row can shade a little before the other.
         </li>
         <li>
           Weather changes fast. A forecast is not a measurement, and passing clouds or an
@@ -86,7 +102,7 @@ export default function HowItWorksPage() {
       </ul>
 
       <p>
-        Ready to review the evidence? <Link href="/stadiums">Browse all stadium sun guides →</Link>
+        Ready to pick your seats? <Link href="/stadiums">Browse all stadium sun guides →</Link>
       </p>
     </div>
   );
