@@ -231,10 +231,13 @@ also checked against the live site.
         against published sources first.
 - [ ] 2.6 The other 28 parks' profiles plus 5+ reference checks each, in
       batches of about 5 parks (one commit per batch).
-- [ ] 2.7 Replace `bestShadedSideForDayGame` copy (page, FAQ JSON-LD, OG
+- [x] 2.7 Replace `bestShadedSideForDayGame` copy (page, FAQ JSON-LD, OG
       image) with the engine's answer for a typical 1:05 PM and 7:05 PM start.
       Done: MLB pages and their FAQ JSON-LD no longer use it. Left: the OG
       image and the NFL guide's ShadeAnswer (with 2.8).
+      **Done** (checked in §25): the MLB share image and the NFL answers no
+      longer use it. It is left only for MiLB, which has no section map, in
+      plain words.
 - [x] 2.8 NFL:
       - measure the 14 venues at 0°;
       - derive sideline advice from the engine (west stands shade in the
@@ -337,11 +340,14 @@ also checked against the live site.
       screen on first visit, on top of the finder. Done: buttons share one
       row and the heading shows from the sm breakpoint up. iPhone SE 383 →
       203 px (67% → 36% of the screen); iPhone 13 58% → 31%.
-- [ ] 4.7 Rewrite the copy for fans: remove "withheld", "self-shade",
+- [x] 4.7 Rewrite the copy for fans: remove "withheld", "self-shade",
       "holdout", "geometry confidence", "publication gate" and "paused" from
       every page, the FAQ, guides and JSON-LD. Done: homepage, finder page,
       every MLB stadium page and its JSON-LD, the old apps. Left: /faq,
       /guide pages, /disclaimer, HomepageSchema, /how-it-works.
+      **Done in §25**, with the site-wide description, footer, schema and
+      share image, /stadiums, the league pages, the blog, the stadium pages'
+      monthly sun note and the MiLB and NFL notes.
 
 ### Phase 5: technical (P5)
 - [x] 5.1 Blog links:
@@ -551,12 +557,14 @@ parks use a generic stand shape per seating level, so most answers are
 Medium or Low confidence and their blog posts stay unpublished.
 
 ### Step 0: fix found while reading
-- [ ] 6.0 18 section files pass the orientation to `buildParkSections` as a
+- [x] 6.0 18 section files pass the orientation to `buildParkSections` as a
       typed number (Angels `50`, Astros `340`, …) next to
       `getStadiumOrientation()`. They match `stadiums.ts` today, but a
       re-measured park would keep the old angle for part of its seat map, and
       the consistency test doesn't look at these files. Pass `ORIENTATION`
       everywhere and make the test fail on a typed number.
+      **Done** (found in §25): every section file passes `ORIENTATION`, and
+      `orientationConsistency.test.ts` fails on a typed number.
 
 ### Per park (the Yankees/Fenway recipe)
 1. Orientation from USGS aerial imagery (`scripts/measureOrientation.ts`),
@@ -1299,10 +1307,12 @@ Tropicana Field (fixed roof) are out of scope.
       Caveat: Sutter's chart gives 119–121 29–32 rows, but their seats end
       where the suite building begins (19 ft up, ~25 rows on the measured
       slope); option A covers the chart's back rows under it.
-- [ ] 7.5 Batch 5 (retractable roofs: measure the parked roof only where the scan shows it open)
+- [x] 7.5 Batch 5 (retractable roofs: measure the parked roof only where the scan shows it open)
       With each underside, the deck's front (`deckFrontFt`, §9) from the
       cover report, at tier level, and per section where a section is under
       another deck.
+      **Done in §23:** the Mariners (phase A) and Astros (phase B) measured;
+      the other retractable parks have no open-roof scan.
 
 ### Batch 1 review (2026-11-12)
 Correction to the plan above: the confidence check moves estimated
@@ -4960,31 +4970,31 @@ Plain words throughout, with no "withheld", "self-shade", "holdout",
 "measurement status". One commit per area.
 
 ### Steps
-- [ ] E1. Site-wide: the default meta description, the footer line and the
+- [x] E1. Site-wide: the default meta description, the footer line and the
       site's share-image subtitle.
-- [ ] E2. /faq and the homepage's FAQ JSON-LD: rewrite the answers that
+- [x] E2. /faq and the homepage's FAQ JSON-LD: rewrite the answers that
       describe the pause.
-- [ ] E3. /how-it-works: the sun (NREL SPA), the stands (as above) and the
+- [x] E3. /how-it-works: the sun (NREL SPA), the stands (as above) and the
       limits:
       - the roof is shown open;
       - estimated parks lean to Low and Medium;
       - weather: say where it's used, after checking whether the MLB map
         uses it.
-- [ ] E4. /disclaimer: replace the withheld sentence with what the answers
+- [x] E4. /disclaimer: replace the withheld sentence with what the answers
       rest on, and that they're estimates.
-- [ ] E5. Guides:
+- [x] E5. Guides:
       - best-shaded-seats-mlb, same URL, retitled to its keywords ("Best
         Shaded Seats at MLB Ballparks"): how to find them with each park's
         map, keeping its climate and start-time sections;
       - how-to-find-shaded-seats;
       - the guide index.
-- [ ] E6. /stadiums, the league pages and the blog's closing line.
-- [ ] E7. Stadium pages: drop the "verified solar-position context only…"
+- [x] E6. /stadiums, the league pages and the blog's closing line.
+- [x] E7. Stadium pages: drop the "verified solar-position context only…"
       sentence from the monthly sun heights.
-- [ ] E8. MiLB and NFL: `ShadeAnswer`'s MiLB answer and `fidelityNote` in
+- [x] E8. MiLB and NFL: `ShadeAnswer`'s MiLB answer and `fidelityNote` in
       plain words, with their unit test (`stadiumDataFidelity.test.ts`
       matches the old wording).
-- [ ] E9. Checks:
+- [x] E9. Checks:
       - on the dev server, every route above with none of the old phrases;
       - the FAQ JSON-LD parses;
       - unit tests, type check, eslint, and the SEO and a11y specs;
@@ -5011,6 +5021,91 @@ Plain words throughout, with no "withheld", "self-shade", "holdout",
   finder used for MiLB and NFL.
 - *Stale ticks:* 6.0 is done (every section file passes `ORIENTATION`), as
   is 7.5 (§23). Ticked with this review.
+
+### §25 Review (2026-11-20)
+
+**What changed:** copy only, in 10 commits on `fix/copy-withheld`. No
+logic, data or layout changed.
+- *Site-wide* (E1):
+  - the default meta, Open Graph and Twitter descriptions;
+  - the footer line;
+  - the share image's subtitle;
+  - the WebApplication JSON-LD on every page (`components/SafeSchema.tsx`).
+    The plan missed it, and the sweep found it ("Data-confidence
+    disclosures", "Source-backed section inventories").
+
+  Each now says what the site gives: every MLB section, for any game, plus
+  guides for MiLB and NFL venues.
+- */faq* (7 answers) and the homepage's FAQ JSON-LD (5 answers and the
+  Organization line), E2:
+  - what the map shows (every section, inning by inning, and the sections
+    with the most shade);
+  - how it's worked out (NREL's SPA; at most MLB parks, stands measured
+    from USGS lidar);
+  - what High, Medium and Low mean.
+- */how-it-works* (E3): the SPA instead of NOAA, and the stands:
+  - 24 parks measured from lidar, a few decks estimated;
+  - Chase, American Family Field and loanDepot estimated from aerial
+    photos;
+  - Globe Life Field and Rogers Centre generic;
+  - Tropicana Field fixed.
+
+  Also the confidence rule as `gameShade.ts` applies it: High when no
+  half hour changes with the direction ± its error or the stands ±10%
+  (±50% estimated), Medium for 1–2 half hours, Low for more. Then the 27
+  parks with reference checks, and that the MLB map is clear-sky (weather
+  belongs to the full finder). The limits: the roof shown open, estimated
+  parks leaning Medium and Low, and one answer per row.
+- */disclaimer* (E4): the answers are estimates resting on the sun's
+  position and measured or estimated stands; the label is a guide, not a
+  guarantee.
+- *Guides* (E5):
+  - best-shaded-seats-mlb, at the same URL, is now "Best Shaded Seats at
+    MLB Ballparks": where the shade is, using a park's map, by start time,
+    buying tickets. Its climate section is kept.
+  - how-to-find-shaded-seats, avoid-sun-baseball-games and the guide index
+    lose the withheld and "evidence" wording.
+  - Also fixed, in the same block: "4 PM: Sun sets during game" (sunset is
+    near 8 PM in summer).
+- */stadiums, the league pages, the blog's closing line* (E6). The league
+  line differs by league: every section for MLB, which side for MiLB,
+  which sideline (where measured) for NFL.
+- *Stadium pages* (E7): the 7 monthly sun heights lose their "requires
+  measured stadium geometry" sentence.
+- *MiLB and NFL* (E8): the MiLB answer ("the {side} tends to shade first,
+  going by the way the park faces; no seating map") and the approximate
+  layout note, with the unit test that matched the old wording.
+
+**Checks:**
+- *Sweep:* 47 routes on the dev server, 0 hits. The routes are all 30 MLB
+  parks, the FAQ, how-it-works, the disclaimer, the three guides and the
+  index, /stadiums, the three league pages, /blog and a post, the finder,
+  one MiLB and one NFL page. The phrases: withheld or withhold,
+  self-shade, holdout, publication or release gate, paused, solar or sun
+  context, data confidence, measurement status, boundary or confidence,
+  source-backed, independent validation, requires measured, metric
+  geometry, not currently published, evidence, orientation model.
+- *JSON-LD:* all 195 blocks on those pages parse, 34 of them FAQPage.
+- *Tests:* 3,608 of 3,608. The type check is clean. eslint gives no
+  errors; its 22 warnings in the touched files are all on lines this
+  didn't change.
+- *Playwright:*
+  - a11y spec: 6 of 6.
+  - SEO spec: all 9 fail on the dev server, at its last check, a streamed
+    `<div hidden id="S:`. The dev server always streams; CI runs the spec on
+    a production build. On every page, the H1, the JSON-LD parse and the
+    canonical before that check pass.
+- *Pages:* /how-it-works, the MLB guide, /faq, the Astros page (months end
+  at "the season high") and Isotopes Park (the MiLB answer and note) all
+  render with no console errors.
+
+**Not changed (see the plan):**
+- the five unimported components and the old trust-boundary spec;
+- the row API's `publicationState`;
+- the FAQ's other answers (favorites, weather, offline).
+
+On the MiLB page the answer and the layout note now both say no sections
+can be named; the note shows on NFL pages too, so it stays.
 
 ---
 ---
