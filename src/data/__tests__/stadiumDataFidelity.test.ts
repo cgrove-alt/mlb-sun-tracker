@@ -80,7 +80,7 @@ describe('STADIUM_DATA_FIDELITY map', () => {
 
 describe('fidelityNote', () => {
   it('discloses the geometry boundary for source-backed and approximate data', () => {
-    expect(fidelityNote('source-backed')).toMatch(/independent observation validation/i);
+    expect(fidelityNote('source-backed')).toMatch(/seating chart/i);
     expect(fidelityNote('approximate')).toMatch(/approximate/i);
     expect(fidelityNote('partial')).toMatch(/partial/i);
   });

@@ -5,7 +5,7 @@ const organizationSchema = {
   "name": "The Shadium",
   "url": "https://theshadium.com",
   "logo": "https://theshadium.com/logo512.png",
-  "description": "The Shadium provides stadium seating inventories, astronomical sun-position context, and explicit measurement-confidence disclosures.",
+  "description": "The Shadium shows which seats are in the sun or the shade at MLB, MiLB and NFL venues, for any game.",
 };
 
 // WebSite node with a SearchAction so search engines can surface a sitelinks
@@ -48,7 +48,7 @@ export default function HomepageSchema() {
               "name": "How do I know if my seats are in the shade?",
               "acceptedAnswer": {
                 "@type": "Answer",
-                "text": "Select a stadium and game time to view astronomical sun-position context and the current measurement status. Exact sections and rows are withheld until remotely reconstructed metric geometry is independently validated."
+                "text": "Pick your stadium and game. At every MLB ballpark the map shows each section in sun or shade through the game, inning by inning, and lists the sections with the most shade. Tap your section to see how its shade changes."
               }
             },
             {
@@ -56,7 +56,7 @@ export default function HomepageSchema() {
               "name": "Are my seats shaded at Yankee Stadium?",
               "acceptedAnswer": {
                 "@type": "Answer",
-                "text": "Yankee Stadium's orientation provides broad solar context, but the site does not currently publish exact shaded rows because its metric row, overhang, and obstruction geometry has not passed independent observation validation."
+                "text": "Pick your game on The Shadium's Yankee Stadium page: the map shows every section in sun or shade through the game, and rows under a deck show as shaded."
               }
             },
             {
@@ -64,7 +64,7 @@ export default function HomepageSchema() {
               "name": "Which MLB stadium seats have the most shade?",
               "acceptedAnswer": {
                 "@type": "Answer",
-                "text": "A permanent fixed roof blocks direct sun. Retractable-roof results depend on the confirmed roof state, and open-air row coverage requires measured overhang and obstruction geometry."
+                "text": "Seats under a deck or roof stay shaded all game. In the open seats it depends on the start time and which way the stands face: in the afternoon, the stands with the sun behind them shade first. Each park's map shows which sections, for your game."
               }
             },
             {
@@ -72,7 +72,7 @@ export default function HomepageSchema() {
               "name": "Are field level seats ever shaded?",
               "acceptedAnswer": {
                 "@type": "Answer",
-                "text": "Field-level exposure depends on the stadium's measured structures, date, and time. The site does not infer an exact field-level result from a seating chart alone."
+                "text": "Yes. Rows under the deck above are shaded, and as the sun drops the shade creeps forward from the back rows, so the front rows are the last to shade. The map shows when it reaches yours."
               }
             },
             {
@@ -80,7 +80,7 @@ export default function HomepageSchema() {
               "name": "How accurate is The Shadium's shade prediction?",
               "acceptedAnswer": {
                 "@type": "Answer",
-                "text": "Astronomical sun position is calculated separately from stadium geometry. Exact seat-level MLB predictions are currently withheld because row, overhang, and obstruction measurements have not passed independent observation validation."
+                "text": "The sun's position comes from NREL's Solar Position Algorithm. At most MLB parks the stands, decks and roofs are measured from USGS lidar scans; at the rest they are estimated. Each section's answer is labelled High, Medium or Low confidence, by whether it still holds if those measurements are off."
               }
             },
             {

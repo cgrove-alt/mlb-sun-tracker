@@ -36,14 +36,15 @@ export default function Disclaimer() {
         <div className="bg-red-50 border border-red-200 p-6 rounded-lg">
           <h3 className="h4 text-red-800">⚠️ IMPORTANT NOTICE</h3>
           <p className="text-red-700">
-            <strong>Exact MLB seat-level shade outputs are currently withheld because physical
-            metric row, overhang, and obstruction geometry has not passed independent observation validation.</strong>
+            <strong>Our shade answers are estimates. They rest on the sun&apos;s calculated position and
+            on stand, deck and roof heights that are measured from lidar scans at most MLB parks and
+            estimated at the rest, so the shade at your seat can differ from what the map shows.</strong>
           </p>
         </div>
         
         <p>
-          Astronomical sun position and source-backed section identity are separate from stadium
-          shadow geometry. Do not treat orientation context as a seat or row guarantee.
+          Each section&apos;s answer carries a High, Medium or Low confidence label. Treat it as a
+          guide, not a guarantee for your seat or row.
         </p>
         
         <h3 className="h3">Factors Affecting Accuracy:</h3>

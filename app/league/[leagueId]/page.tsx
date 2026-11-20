@@ -35,6 +35,13 @@ export async function generateStaticParams() {
   }));
 }
 
+// What a league's venue pages show, in one line (§25).
+function leagueShadeSummary(leagueKey: string, venuesPhrase: string): string {
+  if (leagueKey === 'MLB') return `Every section in sun or shade, inning by inning, at ${venuesPhrase} MLB ballparks.`;
+  if (leagueKey === 'NFL') return `Sun and shade guides for ${venuesPhrase} NFL stadiums: which sideline shades first, where we've measured the field's direction.`;
+  return `Sun and shade guides for ${venuesPhrase} Minor League Baseball parks: which side tends to shade first at a day game.`;
+}
+
 export async function generateMetadata({ params }: LeaguePageProps): Promise<Metadata> {
   const { leagueId } = await params;
   // Handle MiLB case sensitivity
@@ -48,7 +55,7 @@ export async function generateMetadata({ params }: LeaguePageProps): Promise<Met
   }
 
   const title = `${league.name} Stadium Shade Guide | The Shadium`;
-  const description = `Review sun-position context, roof information, and disclosed data confidence for every ${league.name} ${league.sport} venue.`;
+  const description = leagueShadeSummary(leagueKey, 'all');
 
   return {
     title,
@@ -81,7 +88,7 @@ export default async function LeaguePage({ params }: LeaguePageProps) {
     '@context': 'https://schema.org',
     '@type': 'CollectionPage',
     name: `${league.name} Stadium Shade Guide`,
-    description: `Review sun-position context, roof information, and disclosed data confidence for all ${venues.length} ${league.name} ${league.sport} venues.`,
+    description: leagueShadeSummary(leagueKey, `all ${venues.length}`),
     url: pageUrl,
     isPartOf: {
       '@type': 'WebSite',
@@ -149,7 +156,7 @@ export default async function LeaguePage({ params }: LeaguePageProps) {
               {league.name} Stadium Shade Guide
             </h1>
             <p className="text-base text-ink-700 mt-2 max-w-prose">
-              Review sun context and measurement status for all {venues.length} {league.name} venues
+              {leagueShadeSummary(leagueKey, `all ${venues.length}`)}
             </p>
           </div>
         </div>

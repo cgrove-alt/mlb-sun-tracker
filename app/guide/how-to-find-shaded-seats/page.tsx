@@ -18,31 +18,31 @@ const howToJsonLd = {
       '@type': 'HowToStep',
       position: 2,
       name: 'Know Your Stadium\'s Orientation',
-      text: 'Every MLB ballpark is built at a different compass angle. The orientation determines which side of the stadium gets afternoon shade. Use The Shadium to look up your stadium\'s orientation automatically.',
+      text: 'Every MLB ballpark is built at a different compass angle. The orientation determines which side of the stadium gets afternoon shade. The Shadium works this out for every section of every MLB park.',
     },
     {
       '@type': 'HowToStep',
       position: 3,
       name: 'Consider the Season',
-      text: 'The sun\'s arc changes throughout the year. Date-specific solar position is reliable context, but it does not identify exact shaded rows without measured stadium geometry.',
+      text: 'The sun\'s arc changes through the season: it is highest in June, so the shade is shortest then and reaches further in April and September.',
     },
     {
       '@type': 'HowToStep',
       position: 4,
-      name: 'Confirm Physical Coverage',
-      text: 'Do not infer coverage from a level name. Confirm roof and overhang coverage with the venue unless measured row geometry is available.',
+      name: 'Look for Covered Rows',
+      text: 'Rows under a deck or roof stay shaded all game. A level\'s name doesn\'t tell you which rows are covered; the map does.',
     },
     {
       '@type': 'HowToStep',
       position: 5,
-      name: 'Treat Orientation as Context',
-      text: 'Orientation indicates broad solar direction, but structures determine the actual shadow boundary. Do not treat a base side as a universal shade rule.',
+      name: 'Don\'t Rely on a Base-Side Rule',
+      text: 'Which side shades first depends on the park and the start time. In the afternoon the stands with the sun behind them shade first, and the decks and roofs decide how far the shade reaches.',
     },
     {
       '@type': 'HowToStep',
       position: 6,
-      name: 'Check the Publication Status',
-      text: 'Enter your stadium, date, and game time at theshadium.com, then read the measurement notice. Exact section and row results are withheld until remotely reconstructed metric geometry passes independent validation.',
+      name: 'Check Your Section on the Map',
+      text: 'Pick your stadium and game at theshadium.com. The map shows every section in sun or shade through the game, inning by inning, with a High, Medium or Low confidence label.',
     },
   ],
 };
@@ -122,43 +122,43 @@ export default function HowToFindShadedSeatsPage() {
                 <strong>Consider the Season:</strong> Sun angle changes throughout the baseball season
               </li>
               <li>
-                <strong>Confirm Coverage:</strong> A level label alone does not prove that a row sits under an overhang
+                <strong>Look for Covered Rows:</strong> A level&apos;s name doesn&apos;t tell you which rows sit under a deck; the map does
               </li>
               <li>
-                <strong>Use Orientation Carefully:</strong> It is broad context, not a universal section rule
+                <strong>Skip the Rules of Thumb:</strong> &quot;Sit on the first-base side&quot; is right at some parks and wrong at others
               </li>
             </ol>
           </section>
 
           <section>
-            <h2>What Game Time Can and Cannot Tell You</h2>
+            <h2>What Game Time Tells You</h2>
             <h3>Day Games (1:00 PM starts)</h3>
             <ul>
-              <li>The sun is usually high, so unverified coverage should be treated conservatively</li>
-              <li>Confirm any roof or overhang claim with the venue</li>
-              <li>Do not rely on a section-level result without measured geometry</li>
+              <li>The sun is high, so the shade at first pitch is mostly under decks and roofs</li>
+              <li>As the afternoon goes on, shade spreads across the stands with the sun behind them</li>
+              <li>Check your section on the map to see when the shade reaches it</li>
             </ul>
 
             <h3>Evening Games (7:00 PM starts)</h3>
             <ul>
               <li>Low western sun may still create glare before sunset</li>
               <li>Check the actual sunset time for the game date</li>
-              <li>Nighttime can be verified once the sun is below the horizon</li>
+              <li>Once the sun sets, every seat is out of it</li>
             </ul>
           </section>
 
           <section>
             <h2>Stadium-Specific Shade Patterns</h2>
             <p>
-              Every MLB stadium is oriented differently, but orientation is only one input. The Shadium
-              shows solar context and withholds exact sections until metric geometry is remotely reconstructed and validated.
+              Every MLB stadium faces a different way, and its decks and roofs decide how far the shade
+              reaches. The Shadium&apos;s map for each park shows every section in sun or shade for your game.
             </p>
             
             <div className="cta-box">
-              <h3>Review Your Stadium&apos;s Evidence</h3>
-              <p>Check section provenance, solar context, roof status, and the measurement boundary.</p>
+              <h3>Find Your Stadium&apos;s Shade</h3>
+              <p>Pick your park and game to see which sections are in the shade, inning by inning.</p>
               <Link href="/" className="cta-button">
-                Review Stadium Data →
+                Find Shaded Seats →
               </Link>
             </div>
           </section>
@@ -180,27 +180,28 @@ export default function HowToFindShadedSeatsPage() {
             <h3>Do shaded seats cost more?</h3>
             <p>
               Not necessarily. Shade depends on time of day and stadium orientation, not ticket pricing. 
-              Ticket price does not verify shade; confirm covered-seat information with the venue.
+              An expensive field-level seat can be in the sun all game while a cheaper one under a deck is shaded.
             </p>
 
             <h3>How accurate are shade predictions?</h3>
             <p>
-              Astronomical sun position is calculated from coordinates, date, and time. Exact seat-level
-              shade is withheld until row, overhang, and obstruction geometry passes independent validation.
+              The sun&apos;s position is calculated precisely. At most MLB parks the stands, decks and roofs are measured
+              from lidar scans, and each section&apos;s answer carries a High, Medium or Low confidence label.
+              See <Link href="/how-it-works">how it works</Link>.
             </p>
 
             <h3>What if my section gets partial shade?</h3>
             <p>
-              A partial-shade label is not published for MLB sections without measured row and overhang
-              geometry. Confirm coverage with the venue instead of assuming higher rows are shaded.
+              The map marks a section Partial shade when only some of its rows are shaded at that point in the
+              game. Tap the section to see how its shade changes through the game.
             </p>
           </section>
 
           <div className="guide-footer">
-            <h2>Ready to Review Your Stadium?</h2>
-            <p>Use the available evidence conservatively and bring sun protection whenever seat coverage is uncertain.</p>
+            <h2>Ready to Find Your Seats?</h2>
+            <p>Pick your game to see the shade, and bring sun protection for the innings before it arrives.</p>
             <Link href="/" className="cta-button primary">
-              Review Stadium Data
+              Find Shaded Seats
             </Link>
           </div>
         </article>

@@ -17,11 +17,11 @@ const faqs = [
     questions: [
       {
         q: "How do I find seats in the shade at a stadium?",
-        a: "Select your venue and game time to review astronomical sun position, source-backed section inventory, roof context, and measurement status. Exact sections and rows are withheld until remotely reconstructed metric geometry is independently validated."
+        a: "Pick your venue and game. At every MLB ballpark the map shows each section in sun or shade through the game, inning by inning, and lists the sections with the most shade. At MiLB and NFL venues the guide says which side or sideline shades first."
       },
       {
         q: "Which stadiums have the most shaded seats?",
-        a: "A permanent fixed roof blocks direct sun. Retractable-roof exposure depends on the confirmed event roof state; open-air row coverage requires measured overhang and obstruction geometry."
+        a: "A fixed roof shades every seat, and so does a retractable roof when it's closed. At open-air parks the surest shade is under the upper decks and roofs; each MLB park's map shows exactly which rows they cover."
       },
       {
         q: "Do shaded seats cost more?",
@@ -33,7 +33,7 @@ const faqs = [
       },
       {
         q: "How do I know which side of the stadium gets shade first?",
-        a: "There is no universal base-side rule. Orientation provides broad solar context, while the actual boundary depends on measured roofs, overhangs, decks, and other obstructions."
+        a: "There's no single rule: it depends on which way the park faces and when the game starts. In the afternoon the sun moves to the west, so the stands with the sun behind them shade first. Each MLB park's map shows it for your game."
       }
     ]
   },
@@ -42,11 +42,11 @@ const faqs = [
     questions: [
       {
         q: "How accurate are The Shadium's shade predictions?",
-        a: "Astronomical sun position is calculated separately from stadium structures. Exact MLB seat-level predictions are currently withheld because metric row, overhang, and obstruction geometry has not passed independent observation validation."
+        a: "The sun's position comes from NREL's Solar Position Algorithm. At most MLB parks the stands, decks and roofs are measured from USGS lidar scans; at the rest they are estimated. Each section's answer is labelled High, Medium or Low confidence, by whether it still holds if those measurements are off."
       },
       {
         q: "Which venues does The Shadium cover?",
-        a: `The Shadium covers ${VENUE_COUNT} venues across three leagues — all ${MLB_COUNT} MLB ballparks, ${MILB_COUNT} Minor League Baseball parks, and ${NFL_COUNT} NFL stadiums — and discloses the measurement status before publishing seat-level conclusions.`
+        a: `The Shadium covers ${VENUE_COUNT} venues across three leagues — all ${MLB_COUNT} MLB ballparks, ${MILB_COUNT} Minor League Baseball parks, and ${NFL_COUNT} NFL stadiums. Every MLB ballpark has a section-by-section shade map; the MiLB and NFL guides say which side shades first.`
       },
       {
         q: "Can I save my favorite shaded sections?",
@@ -88,7 +88,7 @@ const faqs = [
     questions: [
       {
         q: "How far in advance can I check shade patterns?",
-        a: "Astronomical sun positions can be calculated for future dates. Future seat-level shade still depends on validated stadium geometry and, at retractable-roof parks, the event's actual roof state."
+        a: "As far ahead as you like: the sun's path is known years in advance, so you can check a game as soon as it's on the schedule. At retractable-roof parks the map shows the roof open, and whether it's open on the day is up to the team."
       },
       {
         q: "Should I still bring sun protection to shaded seats?",
@@ -109,7 +109,7 @@ const faqs = [
     questions: [
       {
         q: "How does The Shadium calculate shade?",
-        a: "We calculate astronomical sun position from stadium coordinates, date, and time. Stadium structures are a separate geometry problem; exact seat-level outputs remain withheld until measured geometry passes independent validation."
+        a: "We work out where the sun is for the game's date, time and place, then trace the shadows that the stands, decks and roofs throw over each section's rows. At most MLB parks those structures are measured from USGS lidar scans."
       },
       {
         q: "Why do shade patterns change throughout the season?",
