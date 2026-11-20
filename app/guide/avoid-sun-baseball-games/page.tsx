@@ -119,16 +119,16 @@ export default function AvoidSunBaseballGamesPage() {
             <h3>1. Choose Your Game Time Wisely</h3>
             <ul>
               <li><strong>Evening games (7 PM):</strong> Minimal sun exposure</li>
-              <li><strong>Late afternoon (4 PM):</strong> Sun sets during game</li>
+              <li><strong>Late afternoon (4 PM):</strong> Shade spreads as the sun drops</li>
               <li><strong>Day games (1 PM):</strong> Maximum exposure - plan carefully</li>
             </ul>
 
-            <h3>2. Confirm Covered Seating</h3>
-            <p>Use The Shadium to review the available evidence, then confirm exact covered rows with the venue.</p>
+            <h3>2. Pick a Shaded Section</h3>
+            <p>Use The Shadium&apos;s map for your park and game to see which sections are in the shade, inning by inning.</p>
             <ul>
-              <li>Do not infer coverage from a seating level alone</li>
-              <li>Confirm retractable-roof state for the event</li>
-              <li>Treat unvalidated seating as exposed when sun avoidance matters</li>
+              <li>Rows under a deck or roof stay shaded all game; a level&apos;s name doesn&apos;t tell you which rows those are</li>
+              <li>At retractable-roof parks the map shows the roof open, so check the team&apos;s roof plans close to game time</li>
+              <li>If avoiding the sun matters, prefer a section whose answer is labelled High confidence</li>
             </ul>
 
             <h3>3. Check the Weather</h3>

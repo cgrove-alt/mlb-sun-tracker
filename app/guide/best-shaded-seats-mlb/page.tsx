@@ -2,15 +2,15 @@ import { Metadata } from 'next';
 import Link from 'next/link';
 
 export const metadata: Metadata = {
-  title: 'MLB Shade Data Trust Guide | The Shadium',
-  description: 'What is source-backed, what remains modeled, and why exact MLB section and row rankings are paused.',
+  title: 'Best Shaded Seats at MLB Ballparks | The Shadium',
+  description: 'Where the shade is at MLB ballparks: covered rows, the stands with the sun behind them, and how to find the shadiest sections for your game.',
   keywords: ['best shaded seats MLB', 'shade seating guide', 'MLB stadium shade map', 'coolest seats baseball', 'shaded sections every stadium'],
   alternates: {
     canonical: 'https://theshadium.com/guide/best-shaded-seats-mlb',
   },
   openGraph: {
-    title: 'MLB Shade Data Trust Guide',
-    description: 'Understand the evidence and measurement boundary behind MLB shade information.',
+    title: 'Best Shaded Seats at MLB Ballparks',
+    description: 'How to find the shaded seats at any MLB ballpark, for your game.',
     type: 'article',
   },
 };
@@ -21,52 +21,52 @@ const breadcrumbJsonLd = {
   itemListElement: [
     { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://theshadium.com/' },
     { '@type': 'ListItem', position: 2, name: 'Guides', item: 'https://theshadium.com/guide' },
-    { '@type': 'ListItem', position: 3, name: 'MLB Shade Data Trust Guide', item: 'https://theshadium.com/guide/best-shaded-seats-mlb' },
+    { '@type': 'ListItem', position: 3, name: 'Best Shaded Seats at MLB Ballparks', item: 'https://theshadium.com/guide/best-shaded-seats-mlb' },
   ],
 };
 
 const howToJsonLd = {
   '@context': 'https://schema.org',
   '@type': 'HowTo',
-  name: 'How to Evaluate MLB Shade Information',
-  description: 'A practical guide to separating source-backed inventory and solar context from unvalidated physical shade geometry.',
-  totalTime: 'PT8M',
+  name: 'How to Find the Best Shaded Seats at an MLB Ballpark',
+  description: 'Find the seats that stay in the shade for your game at any MLB ballpark.',
+  totalTime: 'PT5M',
   step: [
     {
       '@type': 'HowToStep',
       position: 1,
-      name: 'Reject Universal Section Rules',
-      text: 'A level or base-side label does not prove shade. Each park requires measured metric geometry.',
+      name: 'Pick Your Park and Game',
+      text: 'Open your ballpark\'s page on The Shadium and pick your game. The map shows every section in sun or shade, every half hour, labelled by inning.',
     },
     {
       '@type': 'HowToStep',
       position: 2,
-      name: 'Check Section Provenance',
-      text: 'Confirm that section identity comes from a published venue map, while keeping that fact separate from row and obstruction measurements.',
+      name: 'Look for Covered Rows',
+      text: 'Rows under a deck or roof stay shaded all game. They show as shaded on the map even when the sun is high.',
     },
     {
       '@type': 'HowToStep',
       position: 3,
-      name: 'Account for Climate and Roof Type',
-      text: 'A permanent roof blocks direct sun. At retractable-roof parks, use only a confirmed event roof state.',
+      name: 'Pick the Side With the Sun Behind It',
+      text: 'In the afternoon the sun moves to the west, so the stands with the sun behind them shade first, from the back rows forward.',
     },
     {
       '@type': 'HowToStep',
       position: 4,
-      name: 'Calculate Solar Context',
-      text: 'Date, time, and coordinates determine astronomical sun position. They do not determine the row-level shadow boundary by themselves.',
+      name: 'Check the Most-Shade List',
+      text: 'The map lists the sections with the most shade over your game, one from each seating area, leaving out Low-confidence answers.',
     },
     {
       '@type': 'HowToStep',
       position: 5,
-      name: 'Confirm Physical Coverage',
-      text: 'Ask the venue to confirm roof, overhang, and covered-seat details before purchasing tickets based on a shade claim.',
+      name: 'Read the Confidence Label',
+      text: 'Each section\'s answer is labelled High, Medium or Low confidence. If shade matters, prefer a section labelled High.',
     },
     {
       '@type': 'HowToStep',
       position: 6,
-      name: 'Respect the Publication Gate',
-      text: 'Exact section and row results stay withheld until measured geometry passes independent shadow validation.',
+      name: 'Plan for the Roof',
+      text: 'At retractable-roof parks the map shows the roof open. With it closed, every seat is shaded; teams decide on the day.',
     },
   ],
 };
@@ -82,39 +82,40 @@ export default function BestShadedSeatsMLBPage() {
           <span aria-hidden="true">/</span>
           <Link href="/guide" className="hover:underline">Guides</Link>
           <span aria-hidden="true">/</span>
-          <span className="truncate">MLB Shade Data Trust Guide</span>
+          <span className="truncate">Best Shaded Seats at MLB Ballparks</span>
         </nav>
 
         <div className="flex min-w-0 items-center justify-between py-4 mb-6">
           <div className="min-w-0">
             <h1 className="text-balance font-semibold text-ink-800 text-[clamp(1.75rem,2vw+1rem,2.5rem)] truncate md:whitespace-normal">
-              MLB Shade Data Trust Guide
+              Best Shaded Seats at MLB Ballparks
             </h1>
             <p className="text-base text-ink-700 mt-2 max-w-prose">
-              Shade information affects real ticket decisions and health planning. This guide explains what
-              the site can support today and what it refuses to publish without better evidence.
+              Where the shade falls depends on the park and the start time. Every MLB ballpark&apos;s
+              page has a map that shows each section in sun or shade through your game.
             </p>
           </div>
         </div>
 
         <article className="prose prose-slate max-w-prose stack">
           <section>
-            <h2>Rules for Trustworthy Shade Information</h2>
+            <h2>Where the Shade Is</h2>
             <ul>
-              <li><strong>Identity is not geometry:</strong> A published section map does not measure rows or overhangs.</li>
-              <li><strong>Solar position is not a shadow boundary:</strong> Structures must be measured separately.</li>
-              <li><strong>Roof state matters:</strong> Retractable-roof results are event-dependent.</li>
-              <li><strong>Precise outputs need validation:</strong> Independent shadow observations are required.</li>
+              <li><strong>Under a deck or roof:</strong> the surest shade, all game.</li>
+              <li><strong>The stands with the sun behind them:</strong> in the afternoon the sun moves to the west, so these shade first, from the back rows forward.</li>
+              <li><strong>Not by price or level:</strong> an expensive field-level seat can be in the sun all game while a cheaper one under a deck is shaded.</li>
+              <li><strong>Retractable roofs:</strong> closed, every seat is shaded. The map shows the roof open.</li>
             </ul>
           </section>
 
           <section>
-            <h2>Current MLB Publication Status</h2>
+            <h2>Using a Park&apos;s Shade Map</h2>
             <div className="stadium-shade-card">
-              <h3>Exact section and row rankings are paused</h3>
-              <p>All 30 parks have source-backed section inventories. None currently has complete remotely measured row,
-              overhang, and obstruction geometry plus the independent shadow-observation holdout required by
-              the seat-level publication gate.</p>
+              <h3>Every section, every game</h3>
+              <p>Pick your game and move the slider: it steps through the game every half hour, labelled by
+              inning. Tap a section to see how its shade changes, or choose from the sections with the most
+              shade. Each answer is labelled High, Medium or Low confidence; at most parks the stands are
+              measured from lidar scans, and where they&apos;re estimated more sections are Medium or Low.</p>
             </div>
           </section>
 
@@ -138,20 +139,20 @@ export default function BestShadedSeatsMLBPage() {
           </section>
 
           <section>
-            <h2>Time-Based Solar Context</h2>
+            <h2>By Start Time</h2>
             
             <h3>1:00 PM Games</h3>
-            <p>The sun is generally high. Plan conservatively:</p>
+            <p>The sun is high, so the shade is mostly under decks and roofs at first:</p>
             <ul>
-              <li>Confirm covered seating with the venue</li>
-              <li>Bring sun protection when coverage is uncertain</li>
+              <li>Pick a covered row if you want shade from the first pitch</li>
+              <li>Bring sun protection for open seats</li>
             </ul>
 
             <h3>4:00 PM Games</h3>
-            <p>Transitional lighting. Consider:</p>
+            <p>The sun is lower in the west, and shade spreads across the stands with the sun behind them:</p>
             <ul>
-              <li>Use the calculated sun bearing as orientation context only</li>
-              <li>Do not infer row coverage from a section name</li>
+              <li>Check your section on the map: shade can arrive inning by inning</li>
+              <li>Front rows near the field are the last to shade</li>
             </ul>
 
             <h3>7:00 PM Games</h3>
@@ -163,24 +164,24 @@ export default function BestShadedSeatsMLBPage() {
           </section>
 
           <section>
-            <h2>Buying Tickets Conservatively</h2>
+            <h2>Buying Tickets</h2>
             <p>
-              Ticket price and level do not prove shade. Before purchasing:
+              Ticket price and level don&apos;t decide shade. Before you buy:
             </p>
             <ul>
-              <li>Ask the venue which exact rows are physically covered</li>
+              <li>Check your section on the map for your game, and its confidence label</li>
               <li>Confirm retractable-roof plans close to game time</li>
               <li>Choose a ticket with a flexible exchange policy when heat risk is high</li>
             </ul>
           </section>
 
           <section className="cta-section">
-            <h2>Review the Available Evidence</h2>
+            <h2>Find the Shade for Your Game</h2>
             <p>
-              Review source-backed inventory, astronomical sun context, roof status, and measurement limits.
+              Pick your park and game to see every section in sun or shade.
             </p>
             <Link href="/" className="cta-btn">
-              View Stadium Context →
+              Find Shaded Seats →
             </Link>
           </section>
 
