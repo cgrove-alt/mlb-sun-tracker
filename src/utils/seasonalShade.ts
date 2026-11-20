@@ -107,8 +107,7 @@ export function seasonalShadeNote(
     ? 'the season high'
     : `${below}° below the season high`;
 
-  return `${name}: the sun peaks near ${deg}° above ${stadiumName}, ${seasonContext}. ` +
-    'This is verified solar-position context only; translating it into exact section or row shade requires measured stadium geometry.';
+  return `${name}: the sun peaks near ${deg}° above ${stadiumName}, ${seasonContext}.`;
 }
 
 /** Build the whole season's per-month copy for one venue. */
