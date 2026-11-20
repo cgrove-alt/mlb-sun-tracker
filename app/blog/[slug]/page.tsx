@@ -295,7 +295,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
 
           <div className="post-cta">
             <h2>Find Your Perfect Shaded Seat</h2>
-            <p>Ready to put these tips into action? Use The Shadium to review solar context, roof status, and the available stadium evidence.</p>
+            <p>Ready to put these tips into action? Use The Shadium to see which sections are in the shade for your game, inning by inning.</p>
             <Link href="/" className="cta-button primary">
               Check Shade Coverage Now →
             </Link>
