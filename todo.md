@@ -5693,6 +5693,9 @@ With the final directions the plan's table reads (120 parks):
 
 **Added after the review** (asked, 2026-11-23): /attributions credits the
 aerial photos and the Copernicus Sentinel images behind the MiLB directions.
+Checked against the record: 102 values are from NAIP photos, 12 from the USGS
+layer, and 6 from Sentinel-2, all 2025 images: Knoxville, Columbus, Salt Lake
+and Vancouver, and Nashville and Fresno, where neither photo is a clear match.
 
 **Corrections to the plan:**
 - G2 doesn't fix the finder, whose MiLB section layouts are wrong for a
