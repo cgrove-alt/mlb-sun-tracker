@@ -1,9 +1,9 @@
-import React, { useState, useEffect, useCallback } from 'react';
+import React, { useState, useEffect, useCallback, useMemo } from 'react';
 import { VENUE_COUNT } from './data/venueCount';
 import { Stadium } from './data/stadiums';
 import { UnifiedVenue, convertToLegacyStadium } from './data/unifiedVenues';
 import { getVenueSections } from './data/venueSections';
-import { generateBaseballSections } from './utils/generateBaseballSections';
+import { gameShade } from './utils/shadeSide';
 import { MLBGame } from './services/mlbApi';
 import { MiLBGame } from './services/milbApi';
 import { NFLGame } from './services/nflApi';
@@ -19,6 +19,7 @@ import { SunCalculator } from './utils/sunCalculator';
 import { getSunPosition, getSunDescription, getCompassDirection } from './utils/sunCalculations';
 import { SunIcon, MoonIcon } from './components/Icons';
 import { FidelityNotice } from './components/FidelityNotice';
+import { ShadeAnswer } from './components/ShadeAnswer';
 import { getStadiumDataFidelity, fidelityNote } from './data/stadiumDataFidelity';
 import { validateFilterCriteria, RateLimiter } from './utils/validation';
 import { debounce } from './utils/debounce';
@@ -45,8 +46,13 @@ const MobileApp: React.FC = () => {
   const [sunPosition, setSunPosition] = useState<any>(null);
 
   const [isCalculating, setIsCalculating] = useState(false);
-  // MLB ballparks have the game-by-game shade map on their own page.
+  // MLB ballparks have the game-by-game shade map on their own page, and minor
+  // league parks have no seating map, so the section list is for NFL venues.
   const isMlb = selectedVenue?.league === 'MLB';
+  const milbGame = useMemo(
+    () => (selectedVenue?.league === 'MiLB' && gameDateTime ? gameShade(selectedVenue, gameDateTime) : undefined),
+    [selectedVenue, gameDateTime],
+  );
 
   // Convert unified venue to legacy stadium when needed
   useEffect(() => {
@@ -164,24 +170,13 @@ const MobileApp: React.FC = () => {
         azimuthDegrees: position.azimuthDegrees
       });
 
-      if (selectedVenue.league === 'MLB') {
+      if (selectedVenue.league !== 'NFL') {
         setAllSections([]);
         setFilteredSections([]);
         return;
       }
       
-      // Get sections based on venue type
-      let sections: any[] = [];
-      if (selectedVenue.league === 'MiLB') {
-        // Get MiLB sections - will use custom layouts if available
-        sections = getVenueSections(selectedVenue.id);
-        // Fall back to generated sections if no custom layout
-        if (!sections || sections.length === 0) {
-          sections = generateBaseballSections(selectedVenue);
-        }
-      } else {
-        sections = getVenueSections(selectedVenue.id);
-      }
+      const sections = getVenueSections(selectedVenue.id);
       const gameDate = gameDateTime;
       
       // Use the same time-based calculation as desktop
@@ -398,6 +393,10 @@ const MobileApp: React.FC = () => {
                   </a>{' '}
                   — sun or shade for every section, inning by inning.
                 </p>
+              </section>
+            ) : milbGame ? (
+              <section className="mobile-section" id="results">
+                <ShadeAnswer venue={selectedVenue} milbGame={milbGame} />
               </section>
             ) : (
             <>
