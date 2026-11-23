@@ -6103,26 +6103,26 @@ the finder shows: the finder is showing the list.
 
 ### Plan (waiting for your go-ahead)
 
-- [ ] N1. `nflSunSide.ts`: take the loop out of `fieldSunSide` as
+- [x] N1. `nflSunSide.ts`: take the loop out of `fieldSunSide` as
       `fieldSunSideAt(venue, start)`, which gives null when the sun is down
       for the whole game (today it throws). `fieldSunSide(venue, date,
       kickoff)` calls it, so no page changes. Add `nflGameShade(venue,
       start)` (time, date, side, sunset), as §28's `gameShade`. Tests first:
       a night game, a game the sun sets on, and all 24 stadiums' answers the
       same as before.
-- [ ] N2. `ShadeAnswer`: an optional `nflGame`. With it, the sentence is
+- [x] N2. `ShadeAnswer`: an optional `nflGame`. With it, the sentence is
       about that game ("For the 12:00 PM game on December 6 at Lambeau
       Field, the sun is on the west side of the field, so seats on the west
       sideline have it at their backs and get shade first"), plus the sunset
       if it falls during the game, or "the sun is down for the whole game".
       Unclear, unmeasured and fixed-roof stadiums keep the words the pages
       use. Without it, unchanged (test).
-- [ ] N3. `UnifiedApp` and `MobileApp`: for NFL, show N2's answer instead of
+- [x] N3. `UnifiedApp` and `MobileApp`: for NFL, show N2's answer instead of
       the section list, its filters and its explanation, as they do for MLB
       and MiLB. After this no league shows the list. Tests (extending
       `finderMilb.test.tsx`): NFL shows the answer and no sections; MiLB and
       MLB as before; a fixed roof and an unmeasured stadium each say so.
-- [ ] N4. `/seats-shade-finder` and the empty-state copy: MLB by section;
+- [x] N4. `/seats-shade-finder` and the empty-state copy: MLB by section;
       MiLB and NFL by side of the field or park; no section, filter or
       percentage is promised for NFL.
 - [ ] N5. Delete what nothing uses then (own commit, after N3). Today only the
@@ -6135,7 +6135,7 @@ the finder shows: the finder is showing the list.
       the audit script) and `nflSections` (351, `venueSections` and a script).
       I'd check every import again after merging and ask before deleting any
       file.
-- [ ] N6. Checks: unit tests, type check, eslint, build; all 32 stadiums in
+- [x] N6. Checks: unit tests, type check, eslint, build; all 32 stadiums in
       both finders at 1:00 PM, 4:25 PM and night against a separate
       calculation in Python; MLB and MiLB answers byte for byte as before;
       NFL pages unchanged; a look at Lambeau (open), Lumen, AT&T
@@ -6155,6 +6155,54 @@ One PR, one commit per step. N5 could wait.
 - When this merges, the `?venue=` link from a stadium's page opens the finder
   with the League box still showing Major League Baseball (seen at Lambeau
   Field, on the dev server).
+
+## §29 Review (2026-11-23)
+
+Approved as planned: N1–N4 and N6, with N5 held for a decision on each
+deletion and the schedule left for its own plan. Commits on
+`fix/nfl-finder-sections`, with `main` (bb77e58af, #104) merged in.
+
+**What changed**
+- *N1 (ef1c5c81c):* `fieldSunSideAt(venue, start)` is the loop from
+  `fieldSunSide`, and is null when the sun is down for the whole game.
+  `nflGameShade` adds the kickoff, date and sunset in the stadium's time. The
+  part that gives those is now one helper, `gameClock.ts`, which MiLB's
+  `gameShade` uses too.
+- *N2 (696695558):* `ShadeAnswer` takes `nflGame`. The page's own sentence is
+  one function, so both use the same words.
+- *N3 (a236c4fa8):* both finders show that answer for NFL, and no league shows
+  a section list, its filters or percentages. The code the list needed came
+  out of `UnifiedApp.tsx` and `MobileApp.tsx`; the files are still there (N5).
+- *N4 (ce91e6ded):* `/seats-shade-finder` says MiLB and NFL get a side, and
+  the "Choose from…" line covers all three leagues.
+
+**Checks**
+- *Every stadium:* 576 answers (32 stadiums, both finders, 1:00, 4:25 and 8:20
+  PM on three 2025 dates) match a separate calculation in Python (the NOAA
+  equations, none of this code): 266 clear, 8 unclear, 158 with the sun down,
+  108 under a fixed roof, 36 not measured. None shows a section list.
+- *Nothing else moved:* the 96 page answers (32 stadiums, three dates), the
+  480 MiLB game answers, and the text of the 32 NFL pages' answers against the
+  live site are all the same as before.
+- *In a browser:* Lambeau Field, Lumen Field (sunset 4:18 PM), AT&T Stadium
+  (not measured), Allegiant Stadium and the Chargers' SoFi Stadium (fixed
+  roofs) on desktop. On mobile the `?venue=` link doesn't apply, so the two
+  finders were compared by the rendered check above.
+- *Tests:* 4,027 of 4,027; the type check and the production build pass;
+  eslint gives no errors (its 9 warnings are the page's old ones and one old
+  hook warning). **One thing I couldn't explain:** in my first two full runs
+  `stadiumShadeConfidence.test.ts` failed to run at all. Nothing in it
+  changed, it passes alone, and eight later full runs (two with the dev
+  server under load) passed. I found no process kill in the system log. CI
+  runs it on a fresh machine.
+
+**Not done**
+- N5 (the deletions), waiting for a decision.
+- The schedule (finding 6), in its own plan. Until then, a fan types the
+  date and time. The finder waits two minutes or more for the schedule to
+  fail before it offers that.
+- The homepage still links "Shaded sections at MetLife Stadium (NFL)", and
+  that page gives a sideline.
 
 ---
 ---
