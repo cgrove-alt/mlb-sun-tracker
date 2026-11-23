@@ -5890,8 +5890,7 @@ the shadiest at all 20 and the sunniest at none.
       the section list, its filters and its explanation, as they already do
       for MLB. Tests: a MiLB venue shows the answer and no sections; NFL
       still lists the same sections with the same numbers; MLB unchanged.
-- [ ] H4. (On hold: waiting for your OK to delete.) Delete what nothing uses
-      then (own commit): the MiLB branch of
+- [x] H4. Delete what nothing uses then (own commit): the MiLB branch of
       `getVenueSections`, `milbVenueLayouts.ts`, `milbVenueLayoutsLower.ts`,
       `venueLayoutIntegration.ts`, `generateBaseballSections.ts` (4,400
       lines, 349 KB of source, all in the finder's download today), the
@@ -5929,7 +5928,7 @@ being used again.
 - Unreachable already: `milbStadiumSections.ts`, `unifiedStadiumShade.ts`,
   `optimizedSunCalculations.ts`, `stadiumSectionGenerator.ts`,
   `realStadiumSections.ts`, `realStadiumLayouts/`, and
-  `SmartItinerariesPage` with its service.
+  `SmartItinerariesPage` with its service. H4 doesn't cover these.
 
 The scripts and data are in the shared notes folder, `milb-finder/`.
 
@@ -5974,12 +5973,12 @@ The scripts and data are in the shared notes folder, `milb-finder/`.
 
 ### §28 Review (2026-11-23)
 
-Go-ahead: "go ahead with the finder plan", passed on by the session that
-started this group. H4 (deleting the layouts) and NFL weren't part of what
-was asked, so both are left. `main` (§27, PR #103) was merged in first:
-the finder's data is identical, so no number above moved.
+Go-ahead: "go ahead with the finder plan", and later "Yes, delete them" for
+H4, both passed on by the session that started this group. NFL wasn't asked
+for, so it's left. `main` (§27, PR #103) was merged in first: the finder's
+data is identical, so no number above moved.
 
-**What changed:** 5 commits on `claude/admiring-austin-0ae2e0`, not pushed.
+**What changed:** 6 commits on `claude/admiring-austin-0ae2e0`, not pushed.
 - *The rule* (H1): `shadeSides(venue, starts)` in `shadeSide.ts` is the loop
   from `dayGameShadeSides`, leaving out the time after sunset. `gameShade`
   adds the time, date and sunset in the park's time zone.
@@ -5992,12 +5991,20 @@ the finder's data is identical, so no number above moved.
 - *Copy* (H5): `/seats-shade-finder` says MiLB gets a side of the park and
   that MLB answers carry a confidence label. The finder's empty state said
   "see which sections" for MiLB too, and no longer does.
+- *The layouts* (H4): the ten files in the plan are gone, with the MiLB part
+  of `getVenueSections` and the audit script's MiLB line. That is 5,661
+  lines, not the 4,400 the plan gave: 4,366 in the four main files, and the
+  rest in the modules tied to them. Checked again before deleting: nothing
+  that stays imported any of them (app, tests, scripts, dynamic imports).
+  The finder chunk that held them was 499 KB (84 KB gzipped); the one with
+  the section lists left is 230 KB (60 KB).
 
 **Checks:**
-- *Tests:* 4,003 of 4,003, 23 of them new. Each was seen to fail before its
-  change, except the NFL and MLB ones in `finderMilb.test.tsx`, which guard
-  what must not change. The type check is clean; eslint gives no errors (its
-  warnings are on old lines). The production build passes.
+- *Tests:* 4,005 of 4,005, 25 of them new. Each was seen to fail before its
+  change, except the NFL and MLB ones (in `finderMilb.test.tsx` and
+  `venueSections.test.ts`), which guard what must not change. The type check
+  is clean; eslint gives no errors (its warnings are on old lines). The
+  production build passes.
 - *Every MiLB park:* 720 answers (120 parks, both finders, 1:05 PM and
   6:35 PM on July 20 and 9:05 PM on September 14, 2025) against a separate
   calculation in Python (the NOAA equations, not this code): all 720 have the
@@ -6005,14 +6012,11 @@ the finder's data is identical, so no number above moved.
   side is named at 89 parks and two at 31.
 - *Nothing else moved:* the 120 day answers on the pages, and everything both
   finders work out for the 32 NFL stadiums at two kickoffs, are byte for byte
-  the same before and after.
+  the same before and after, H4 included.
 - *In a browser* (dev server): Sahlen Field at 6:35 PM and 8:35 PM, Ron
   Tonkin Field at 1:05 PM (no side clear), Lambeau Field (12 sections, as
   before), Yankee Stadium (its link); and Sahlen Field on mobile through the
   real selector. No server errors.
-
-**Left over until H4:** the MiLB branch of `getVenueSections` and the layout
-files are still there, but no page reaches them.
 
 **Noticed (not changed):**
 - NFL's schedule can't load in the finder: the site's Content Security Policy
