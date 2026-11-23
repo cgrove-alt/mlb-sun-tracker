@@ -5978,7 +5978,7 @@ H4, both passed on by the session that started this group. NFL wasn't asked
 for, so it's left. `main` (§27, PR #103) was merged in first: the finder's
 data is identical, so no number above moved.
 
-**What changed:** 6 commits on `claude/admiring-austin-0ae2e0`, not pushed.
+**What changed:** 6 commits on `claude/admiring-austin-0ae2e0`.
 - *The rule* (H1): `shadeSides(venue, starts)` in `shadeSide.ts` is the loop
   from `dayGameShadeSides`, leaving out the time after sunset. `gameShade`
   adds the time, date and sunset in the park's time zone.
