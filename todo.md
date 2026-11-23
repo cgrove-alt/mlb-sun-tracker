@@ -5107,6 +5107,331 @@ logic, data or layout changed.
 On the MiLB page the answer and the layout note now both say no sections
 can be named; the note shows on NFL pages too, so it stays.
 
+## §27 MiLB pages: the guide's shade advice and the side answer (plan, 2026-11-23)
+
+Asked: does the hand-written shade advice on MiLB pages disagree with the
+side answer at the top of the same page, and which is right? Branch
+`claude/festive-haslett-850afa`, from `main` at 9cf9df992. (§26 is on
+`fix/copy-leftovers`, not merged yet. Both add a section at this spot, so
+the second to merge gets a small conflict here.) Nothing but this file has
+changed.
+
+**In short:** they disagree outright at 41 parks, and neither can be
+trusted. The guide's lists are boilerplate. The answer's idea is right, but
+almost every park direction it uses is wrong, by a median of 75°, and it
+keeps the sun due south all game. NFL pages had the same two faults, fixed
+in November (83879ea95, d9edd394f). This plan makes the same fix for MiLB.
+
+### Findings
+
+**1. Where the guide's advice comes from.**
+- `shadeGuide.bestShadedSections` and `.shadeTips` in
+  `src/data/guides/{aaa,aa,aPlus,singleA}StadiumGuides.ts`, shown by
+  `ComprehensiveStadiumGuide.tsx`, lines 149–188.
+- 118 of the 120 MiLB parks have it. Columbus Clingstones and Knoxville
+  Smokies have no guide.
+- NFL pages hide it (line 51). MLB pages don't use this component.
+- It's boilerplate. 29 different lists cover the 118 parks, and the 3 most
+  common cover 83. 69 parks say "First base upper deck". Nothing in it
+  depends on the park's direction.
+
+**2. Guide against answer, all 120 parks** (afternoon list against the side
+named at the top):
+
+| | Parks |
+|---|---|
+| Disagree: the answer's side isn't in the list | 41 |
+| Agree in part: it's one of two sides in the list | 55 |
+| Agree | 17 |
+| Can't be compared (section numbers only) | 5 |
+| No guide | 2 |
+
+The "Shade tips" name a side for the afternoon at 29 parks, and at 22 of
+them it isn't the answer's side. Every park is listed at the end.
+
+**3. Is the answer right?** It is worked out from two inputs
+(`src/utils/shadeSide.ts`), and both are wrong.
+
+*The park's direction.* All 120 arrived in one commit (683a545fe,
+2025-08-01) with no source. 35 parks have exactly 340° and 20 have exactly
+315°. I measured them:
+- Method: fit a regulation infield (90 ft bases, 95 ft skin arc) to a USGS
+  aerial photo. 98 parks on the USGS imagery layer, 18 on newer or
+  re-centered NAIP photos, and 2 (Salt Lake, Vancouver) from OpenStreetMap
+  outlines. Every fit was looked at with the direction drawn on the photo.
+- Not measured: Knoxville and Columbus. The photos are older than the 2025
+  parks.
+- Check on MLB: 21 of 22 open-air parks land within 6° of their measured
+  direction. The miss (GABP) had the lowest match score, 0.68, and every
+  hit was at least 0.76. Five MiLB fits score below 0.76 (0.69–0.74); those
+  were kept only because the direction is plain in the photo.
+- Check on MiLB: the Stats API gives a direction for only 3 of these parks,
+  and the fit is within 1° of all 3.
+
+  | Park | Ours | Stats API | Photo |
+  |---|---|---|---|
+  | Buffalo | 65° | 157° | 157° |
+  | Sacramento | 340° | 46° | 47° |
+  | Dunedin | 335° | 138° | 139° |
+
+- Result: of the 118 measured, 10 of ours are within 15°, 88 are more than
+  45° off and 46 more than 90°. Sutter Health Park has both: our Athletics
+  page has it at 47° (measured), and our River Cats page at 340°.
+
+*The sun.* The rule puts it due south all game. At the 1,864 day games
+MiLB teams played at home in 2025, the sun's bearing (NREL SPA, median) was:
+
+| First pitch | 75 minutes in | 150 minutes in |
+|---|---|---|
+| 177° | 217° | 244° |
+
+South is right only at first pitch, when the sun is so high that few rows
+are shaded.
+
+*How often the named side is right.* ✓ means the sun's mean direction over
+a 1:05 PM game (the usual 2025 day start, 6 Sundays) is within 60° of that
+side, so the sun is behind it; ✗ means over 120°, so it faces the sun;
+– is in between. 118 parks:
+
+| | ✓ | – | ✗ |
+|---|---|---|---|
+| Today: our directions, sun due south | 57 | 45 | 16 |
+| Our directions, the sun's path | 37 | 48 | 33 |
+| Measured directions, sun due south | 75 | 43 | 0 |
+| Measured directions, the sun's path | 116 | 2 | 0 |
+
+Neither fix works alone. The last row is judged by the sun's path too, so
+it can't be called proof. The independent check is our own engine, at the
+27 MLB parks with stand profiles (1:05 PM, uncovered field and lower seats):
+
+| Rule | Names the shadiest infield side |
+|---|---|
+| Sun due south (today's) | 12 of 27 |
+| The sun's path, one side | 18 of 27 |
+| The sun's path, every side within 60° | 22 of 27 |
+
+Most misses are home plate against the third-base side at parks facing
+northeast, which depends on the stands.
+
+**4. Is the guide right?** At the 113 parks where it names a side, the sun
+is behind every side it names at 29 and behind none of them at 25. At 20 it
+names a side that faces the sun. Where the two disagree (41), the answer's
+side is ✓ at 11 and the guide names a ✓ side at 27, partly because it often
+names two. At 5 neither is ✓. So neither can be kept as the right one.
+
+**5. Other places the same data shows.**
+- The direction: "Faces …" in the MiLB title block, and the MiLB section
+  list in /seats-shade-finder (`getUnifiedVenueShade`). Both are as wrong
+  as the answer.
+- Side claims outside the hidden block, on MiLB pages: "Sun in right field
+  afternoon" and the like in Things to Avoid (110 parks); seating tips with
+  a SHADE badge naming a base line or sections (109 parks; most say "Third
+  base line: Check weather forecast…"); Pro Tips (5 parks); a game-day tip
+  (Las Vegas); and monthly tips naming a base (5 entries).
+- NFL: 5 pages still show side claims outside the block, and all 5 agree
+  with the page's own answer. No NFL change needed.
+
+### Plan (waiting for your go-ahead)
+
+- [ ] G1. Record the measured directions: `milbOrientationMeasurements.ts`
+      (value, ± error, method, source, as `nflOrientationMeasurements.ts`
+      does) and the measuring script, so it can be re-run. Knoxville and
+      Columbus: look for a 2025 photo; if there's none, mark "not measured".
+- [ ] G2. Put the values in `unifiedVenues.ts` (and its `seatingGeometry`
+      copies) and `milbStadiums.ts`, with a test that keeps all three in
+      step (as `nflOrientationConsistency.test.ts`). This also fixes the
+      title block and the finder.
+- [ ] G3. Replace the due-south rule in `shadeSide.ts` with the sun's path
+      (SPA, 1:05 PM, 3 hours, the 6 dates above), worked out on the server
+      as the NFL answer is. Name each infield side within 60°: one side at
+      95 parks, two at 21. At Hillsboro and Vancouver, and where the
+      direction isn't measured, say no side has a clear edge / we can't say
+      yet. Tests first, from the photos (Buffalo first base, Albuquerque
+      behind home plate).
+- [ ] G4. Remove the "Best Shaded Sections by Time", "Shade Tips" and
+      monthly shade-tip markup from `ComprehensiveStadiumGuide`. Only MiLB
+      and NFL pages render it, and NFL already hides it, so the
+      `handWrittenShadeHidden` flag goes too.
+- [ ] G5. Delete the other MiLB side claims (finding 5) from the four guide
+      files, with a test that no visible MiLB guide text ties a side of the
+      park to sun or shade.
+- [ ] G6. Checks: unit tests, type check, eslint; all 120 pages on the dev
+      server against the expected answer; a look at Isotopes Park, Sahlen
+      Field, Sutter Health Park and Knoxville. Then the review.
+
+One PR, one commit per step. G4 and G5 alone would end the contradiction
+but leave a wrong answer at about half the parks, so I'd not ship them
+without G1–G3.
+
+**For you to decide:**
+1. Go ahead with G1–G6?
+2. G3: name two sides where the sun is behind both (my pick: 22 of 27 on
+   the MLB check, against 18), or always one?
+
+**Not in this plan (noticed):**
+- *Coordinates:* 65 MiLB parks are stored more than 1 km from the Stats
+  API's, 17 of them more than 5 km and the worst 12.9 km. The sun barely
+  changes, but the pages' JSON-LD `geo` is wrong. (The API has errors too:
+  its Dunedin is an old park in Clearwater.)
+- *2025 teams and parks:* Down East isn't a 2025 team (Spartanburg replaced
+  it). Oklahoma City, Bowie and Rome have their old team names, and some
+  parks their old names. Tampa's 2025 home games were on a back field,
+  because the Rays used Steinbrenner Field.
+- *The finder's MiLB sections* are a generated template, not a seating map.
+
+The scripts, per-park results and marked photos are in the shared notes
+folder, `milb-shade-advice/`.
+
+### Every park
+
+Stored and measured are home plate to center field. ✓ – ✗ as above.
+"Sun behind" is what G3 would name.
+
+**Disagree (41)**
+
+| Park | Stored | Measured | Page answer | Guide, afternoon | Sun behind |
+|---|---|---|---|---|---|
+| albuquerque-isotopes | 5° | 47° | Home ✓ | 1B – | Home |
+| augusta-greenjackets | 225° | 139° | 3B ✗ | 1B ✓ + Home – | 1B |
+| binghamton-rumble-ponies | 315° | 33° | 3B – | 1B – + Home ✓ | Home |
+| bowling-green-hot-rods | 315° | 49° | 3B – | 1B – + Home ✓ | Home |
+| brooklyn-cyclones | 195° | 129° | Outfield – | 1B ✓ + Home – | 1B |
+| buffalo-bisons | 65° | 157° | 1B ✓ | 3B ✗ | 1B |
+| charlotte-knights | 45° | 81° | 1B ✓ | 3B ✗ | Home + 1B |
+| durham-bulls | 90° | 73° | 1B – | 3B – | Home |
+| el-paso-chihuahuas | 340° | 34° | Home ✓ | 1B – | Home |
+| fort-wayne-tincaps | 50° | 37° | 1B – | Home ✓ | Home |
+| fresno-grizzlies | 315° | 105° | 3B ✗ | Home ✓ | 1B + Home |
+| frisco-roughriders | 50° | 49° | 1B – | Home ✓ | Home |
+| gwinnett-stripers | 340° | 119° | Home – | 1B ✓ | 1B |
+| harrisburg-senators | 250° | 175° | 3B ✗ | 1B ✓ + Home ✗ | 1B |
+| hillsboro-hops | 315° | 193° | 3B – | 1B – + Home ✗ | none clear |
+| jacksonville-jumbo-shrimp | 350° | 67° | Home ✓ | 1B – | Home |
+| lake-elsinore-storm | 315° | 63° | 3B – | 1B – + Home ✓ | Home |
+| lansing-lugnuts | 315° | 1° | 3B – | Home ✓ | Home |
+| louisville-bats | 225° | 15° | 3B – | 1B – | Home |
+| lynchburg-hillcats | 315° | 11° | 3B ✓ | 1B ✗ + Home ✓ | Home + 3B |
+| memphis-redbirds | 340° | 67° | Home ✓ | 1B – | Home |
+| nashville-sounds | 30° | 152° | Home – | 1B ✓ | 1B |
+| norfolk-tides | 325° | 139° | Home – | 1B ✓ | 1B |
+| omaha-storm-chasers | 310° | 49° | 3B – | 1B – | Home |
+| pensacola-blue-wahoos | 225° | 122° | 3B ✗ | 1B ✓ + Home ✓ | 1B + Home |
+| portland-sea-dogs | 315° | 13° | 3B ✓ | 1B ✗ + Home ✓ | Home + 3B |
+| quad-cities-river-bandits | 160° | 135° | Outfield – | 1B ✓ + Home – | 1B |
+| rancho-cucamonga-quakes | 315° | 47° | 3B – | 1B – + Home ✓ | Home |
+| reading-fightin-phils | 50° | 39° | 1B – | Home ✓ | Home |
+| rochester-red-wings | 315° | 69° | 3B – | 1B ✓ | Home + 1B |
+| sacramento-river-cats | 340° | 47° | Home ✓ | 3B – | Home |
+| san-antonio-missions | 315° | 131° | 3B ✗ | Home – | 1B |
+| scranton-railriders | 20° | 45° | Home ✓ | 1B – | Home |
+| somerset-patriots | 315° | 125° | 3B ✗ | 1B ✓ + Home – | 1B |
+| springfield-cardinals | 310° | 43° | 3B – | Home ✓ | Home |
+| st-paul-saints | 180° | 101° | Outfield – | 1B ✓ | 1B |
+| syracuse-mets | 315° | 1° | 3B ✓ | 1B ✗ | Home + 3B |
+| tampa-tarpons | 60° | 64° | 1B – | Home ✓ | Home |
+| visalia-rawhide | 315° | 141° | 3B ✗ | 1B ✓ + Home – | 1B |
+| west-michigan-whitecaps | 315° | 13° | 3B – | Home ✓ | Home |
+| wisconsin-timber-rattlers | 315° | 47° | 3B – | 1B – + Home ✓ | Home |
+
+**Agree in part (55)**
+
+| Park | Stored | Measured | Page answer | Guide, afternoon | Sun behind |
+|---|---|---|---|---|---|
+| aberdeen-ironbirds | 340° | 101° | Home ✓ | 1B ✓ + Home ✓ | 1B + Home |
+| akron-rubberducks | 45° | 355° | 1B ✗ | 1B ✗ + Home ✓ | Home + 3B |
+| altoona-curve | 20° | 175° | Home ✗ | 1B ✓ + Home ✗ | 1B |
+| amarillo-sod-poodles | 25° | 54° | Home ✓ | 1B – + Home ✓ | Home |
+| arkansas-travelers | 340° | 147° | Home – | 1B ✓ + Home – | 1B |
+| asheville-tourists | 90° | 147° | 1B ✓ | 1B ✓ + Home – | 1B |
+| beloit-sky-carp | 340° | 41° | Home ✓ | 1B – + Home ✓ | Home |
+| biloxi-shuckers | 20° | 139° | Home – | 1B ✓ + Home – | 1B |
+| carolina-mudcats | 340° | 47° | Home ✓ | 1B – + Home ✓ | Home |
+| cedar-rapids-kernels | 70° | 43° | 1B – | 1B – + Home ✓ | Home |
+| charleston-riverdogs | 10° | 193° | Home ✗ | 1B ✓ + Home ✗ | 1B |
+| chattanooga-lookouts | 115° | 341° | 1B ✗ | 1B ✗ + Home ✓ | 3B + Home |
+| corpus-christi-hooks | 340° | 41° | Home ✓ | 1B – + Home ✓ | Home |
+| dayton-dragons | 55° | 79° | 1B ✓ | 1B ✓ + Home ✓ | 1B + Home |
+| daytona-tortugas | 70° | 351° | 1B ✗ | 1B ✗ + Home – | 3B |
+| delmarva-shorebirds | 90° | 90° | 1B ✓ | 1B ✓ + Home ✓ | Home + 1B |
+| down-east-wood-ducks | 40° | 49° | Home ✓ | 1B – + Home ✓ | Home |
+| erie-seawolves | 340° | 17° | Home ✓ | 1B – + Home ✓ | Home |
+| eugene-emeralds | 340° | 131° | Home – | 1B ✓ + Home – | 1B |
+| everett-aquasox | 340° | 63° | Home ✓ | 1B – + Home ✓ | Home |
+| fayetteville-woodpeckers | 10° | 43° | Home ✓ | 1B – + Home ✓ | Home |
+| fredericksburg-nationals | 340° | 68° | Home ✓ | 1B – + Home ✓ | Home |
+| great-lakes-loons | 340° | 90° | Home – | 1B ✓ + Home – | 1B |
+| greensboro-grasshoppers | 340° | 49° | Home ✓ | 1B – + Home ✓ | Home |
+| greenville-drive | 340° | 27° | Home ✓ | 1B – + Home ✓ | Home |
+| hartford-yard-goats | 350° | 103° | Home ✓ | 1B ✓ + Home ✓ | 1B + Home |
+| hickory-crawdads | 40° | 37° | Home ✓ | 1B – + Home ✓ | Home |
+| hudson-valley-renegades | 350° | 83° | Home ✓ | 1B ✓ + Home ✓ | Home + 1B |
+| indianapolis-indians | 315° | 53° | 3B – | 3B – | Home |
+| inland-empire-66ers | 340° | 45° | Home ✓ | 1B – + Home ✓ | Home |
+| jersey-shore-blueclaws | 10° | 59° | Home ✓ | 1B – + Home ✓ | Home |
+| jupiter-hammerheads | 335° | 59° | Home ✓ | 1B – + Home ✓ | Home |
+| kannapolis-cannon-ballers | 340° | 43° | Home ✓ | 1B – + Home ✓ | Home |
+| lake-county-captains | 340° | 45° | Home ✓ | 1B – + Home ✓ | Home |
+| midland-rockhounds | 340° | 123° | Home – | 1B ✓ + Home – | 1B |
+| modesto-nuts | 40° | 179° | Home ✗ | 1B ✓ + Home ✗ | 1B |
+| montgomery-biscuits | 340° | 55° | Home ✓ | 1B – + Home ✓ | Home |
+| myrtle-beach-pelicans | 340° | 153° | Home – | 1B ✓ + Home – | 1B |
+| new-hampshire-fisher-cats | 55° | 39° | 1B – | 1B – + Home ✓ | Home |
+| northwest-arkansas-naturals | 340° | 57° | Home ✓ | 1B – + Home ✓ | Home |
+| palm-beach-cardinals | 335° | 59° | Home ✓ | 1B – + Home ✓ | Home |
+| peoria-chiefs | 65° | 51° | 1B – | 1B – + Home ✓ | Home |
+| rocket-city-trash-pandas | 340° | 117° | Home ✓ | 1B ✓ + Home ✓ | 1B + Home |
+| rome-braves | 340° | 21° | Home ✓ | 1B – + Home ✓ | Home |
+| salem-red-sox | 25° | 153° | Home – | 1B ✓ + Home – | 1B |
+| san-jose-giants | 50° | 195° | 1B ✓ | 1B ✓ + Home ✗ | 1B |
+| south-bend-cubs | 90° | 43° | 1B – | 1B – + Home ✓ | Home |
+| spokane-indians | 330° | 139° | Home – | 1B ✓ + Home – | 1B |
+| st-lucie-mets | 335° | 17° | Home ✓ | 1B ✗ + Home ✓ | Home + 3B |
+| stockton-ports | 50° | 121° | 1B ✓ | 1B ✓ + Home – | 1B |
+| tri-city-dust-devils | 340° | 181° | Home ✗ | 1B ✓ + Home ✗ | 1B |
+| tulsa-drillers | 340° | 157° | Home – | 1B ✓ + Home – | 1B |
+| vancouver-canadians | 45° | 211° | 1B – | 1B – + Home ✗ | none clear |
+| wilmington-blue-rocks | 340° | 13° | Home ✓ | 1B ✗ + Home ✓ | Home + 3B |
+| winston-salem-dash | 20° | 59° | Home ✓ | 1B – + Home ✓ | Home |
+
+**Agree (17)**
+
+| Park | Stored | Measured | Page answer | Guide, afternoon | Sun behind |
+|---|---|---|---|---|---|
+| birmingham-barons | 350° | 103° | Home ✓ | Home ✓ | Home + 1B |
+| bowie-baysox | 350° | 27° | Home ✓ | Home ✓ | Home |
+| bradenton-marauders | 0° | 47° | Home ✓ | Home ✓ | Home |
+| clearwater-threshers | 350° | 43° | Home ✓ | Home ✓ | Home |
+| columbia-fireflies | 340° | 113° | Home – | Home – | 1B |
+| columbus-clippers | 315° | 131° | 3B ✗ | 3B ✗ | 1B |
+| dunedin-blue-jays | 335° | 139° | Home – | Home – | 1B |
+| fort-myers-mighty-mussels | 335° | 27° | Home ✓ | Home ✓ | Home + 3B |
+| iowa-cubs | 60° | 35° | 1B – | 1B – | Home |
+| lakeland-flying-tigers | 340° | 39° | Home ✓ | Home ✓ | Home |
+| las-vegas-aviators | 315° | 41° | 3B – | 3B – | Home |
+| lehigh-valley-ironpigs | 90° | 51° | 1B – | 1B – | Home |
+| richmond-flying-squirrels | 350° | 103° | Home ✓ | Home ✓ | 1B + Home |
+| salt-lake-bees | 315° | 97° | 3B ✗ | 3B ✗ | 1B |
+| toledo-mud-hens | 90° | 85° | 1B ✓ | 1B ✓ | 1B + Home |
+| wichita-wind-surge | 10° | 45° | Home ✓ | Home ✓ | Home |
+| worcester-red-sox | 45° | 49° | 1B – | 1B – | Home |
+
+**Can't compare (5)**
+
+| Park | Stored | Measured | Page answer | Guide, afternoon | Sun behind |
+|---|---|---|---|---|---|
+| oklahoma-city-dodgers | 5° | 55° | Home ✓ | Sections 109-115, Club Level | Home |
+| reno-aces | 340° | 23° | Home ✓ | Sections 112-118, Club Level | Home |
+| round-rock-express | 340° | 43° | Home ✓ | Sections 113-119, Suites | Home |
+| sugar-land-space-cowboys | 340° | 129° | Home – | Sections 110-116, Club seats | 1B |
+| tacoma-rainiers | 340° | 31° | Home ✓ | Sections 11-17, Press Level | Home |
+
+**No guide (2)**
+
+| Park | Stored | Measured | Page answer | Guide, afternoon | Sun behind |
+|---|---|---|---|---|---|
+| columbus-clingstones | 340° | not measured | Home | (none) | ? |
+| knoxville-smokies | 85° | not measured | 1B | (none) | ? |
+
 ---
 ---
 
