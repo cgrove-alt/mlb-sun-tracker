@@ -87,7 +87,6 @@ export const aPlusStadiumGuides: Record<string, StadiumGuide> = {
       ],
       tips: [
         { section: 'Behind home plate', tip: 'Best views but most expensive', category: 'view' },
-        { section: 'Third base line', tip: 'Check weather forecast before choosing seats', category: 'shade' },
         { section: 'Bleachers', tip: 'Best value for families', category: 'value' },
         { section: 'Upper deck', tip: 'Great for groups', category: 'experience' }
       ]
@@ -241,7 +240,6 @@ export const aPlusStadiumGuides: Record<string, StadiumGuide> = {
       ],
       avoidThese: [
         'Long concession lines at peak',
-        'Sun in right field afternoon',
         'Crowded kids zone on Sundays'
       ],
       hiddenGems: [
@@ -350,7 +348,6 @@ export const aPlusStadiumGuides: Record<string, StadiumGuide> = {
       ],
       tips: [
         { section: 'Behind home plate', tip: 'Best views but most expensive', category: 'view' },
-        { section: 'Third base line', tip: 'Check weather forecast before choosing seats', category: 'shade' },
         { section: 'Lawn', tip: 'Best value for families', category: 'value' },
         { section: 'Upper deck', tip: 'Great for groups', category: 'experience' }
       ]
@@ -504,7 +501,6 @@ export const aPlusStadiumGuides: Record<string, StadiumGuide> = {
       ],
       avoidThese: [
         'Long concession lines at peak',
-        'Sun in right field afternoon',
         'Crowded kids zone on Sundays'
       ],
       hiddenGems: [
@@ -613,7 +609,6 @@ export const aPlusStadiumGuides: Record<string, StadiumGuide> = {
       ],
       tips: [
         { section: 'Behind home plate', tip: 'Best views but most expensive', category: 'view' },
-        { section: 'Third base line', tip: 'Check weather forecast before choosing seats', category: 'shade' },
         { section: 'Bleachers', tip: 'Best value for families', category: 'value' },
         { section: 'Upper deck', tip: 'Great for groups', category: 'experience' }
       ]
@@ -767,7 +762,6 @@ export const aPlusStadiumGuides: Record<string, StadiumGuide> = {
       ],
       avoidThese: [
         'Long concession lines at peak',
-        'Sun in right field afternoon',
         'Crowded kids zone on Sundays'
       ],
       hiddenGems: [
@@ -876,7 +870,6 @@ export const aPlusStadiumGuides: Record<string, StadiumGuide> = {
       ],
       tips: [
         { section: 'Behind home plate', tip: 'Best views but most expensive', category: 'view' },
-        { section: 'Third base line', tip: 'Check weather forecast before choosing seats', category: 'shade' },
         { section: 'Bleachers', tip: 'Best value for families', category: 'value' },
         { section: 'Upper deck', tip: 'Great for groups', category: 'experience' }
       ]
@@ -1030,7 +1023,6 @@ export const aPlusStadiumGuides: Record<string, StadiumGuide> = {
       ],
       avoidThese: [
         'Long concession lines at peak',
-        'Sun in right field afternoon',
         'Crowded kids zone on Sundays'
       ],
       hiddenGems: [
@@ -1139,7 +1131,6 @@ export const aPlusStadiumGuides: Record<string, StadiumGuide> = {
       ],
       tips: [
         { section: 'Behind home plate', tip: 'Best views but most expensive', category: 'view' },
-        { section: 'Third base line', tip: 'Check weather forecast before choosing seats', category: 'shade' },
         { section: 'Bleachers', tip: 'Best value for families', category: 'value' },
         { section: 'Upper deck', tip: 'Great for groups', category: 'experience' }
       ]
@@ -1293,7 +1284,6 @@ export const aPlusStadiumGuides: Record<string, StadiumGuide> = {
       ],
       avoidThese: [
         'Long concession lines at peak',
-        'Sun in right field afternoon',
         'Crowded kids zone on Sundays'
       ],
       hiddenGems: [
@@ -1402,7 +1392,6 @@ export const aPlusStadiumGuides: Record<string, StadiumGuide> = {
       ],
       tips: [
         { section: 'Behind home plate', tip: 'Best views but most expensive', category: 'view' },
-        { section: 'Third base line', tip: 'Check weather forecast before choosing seats', category: 'shade' },
         { section: 'Bleachers', tip: 'Best value for families', category: 'value' },
         { section: 'Upper deck', tip: 'Great for groups', category: 'experience' }
       ]
@@ -1556,7 +1545,6 @@ export const aPlusStadiumGuides: Record<string, StadiumGuide> = {
       ],
       avoidThese: [
         'Long concession lines at peak',
-        'Sun in right field afternoon',
         'Crowded kids zone on Sundays'
       ],
       hiddenGems: [
@@ -1665,7 +1653,6 @@ export const aPlusStadiumGuides: Record<string, StadiumGuide> = {
       ],
       tips: [
         { section: 'Behind home plate', tip: 'Best views but most expensive', category: 'view' },
-        { section: 'Third base line', tip: 'Check weather forecast before choosing seats', category: 'shade' },
         { section: 'Bleachers', tip: 'Best value for families', category: 'value' },
         { section: 'Upper deck', tip: 'Great for groups', category: 'experience' }
       ]
@@ -1819,7 +1806,6 @@ export const aPlusStadiumGuides: Record<string, StadiumGuide> = {
       ],
       avoidThese: [
         'Long concession lines at peak',
-        'Sun in right field afternoon',
         'Crowded kids zone on Sundays'
       ],
       hiddenGems: [
@@ -1928,7 +1914,6 @@ export const aPlusStadiumGuides: Record<string, StadiumGuide> = {
       ],
       tips: [
         { section: 'Behind home plate', tip: 'Best views but most expensive', category: 'view' },
-        { section: 'Third base line', tip: 'Check weather forecast before choosing seats', category: 'shade' },
         { section: 'Lawn', tip: 'Best value for families', category: 'value' },
         { section: 'Upper deck', tip: 'Great for groups', category: 'experience' }
       ]
@@ -2082,7 +2067,6 @@ export const aPlusStadiumGuides: Record<string, StadiumGuide> = {
       ],
       avoidThese: [
         'Long concession lines at peak',
-        'Sun in right field afternoon',
         'Crowded kids zone on Sundays'
       ],
       hiddenGems: [
@@ -2191,7 +2175,6 @@ export const aPlusStadiumGuides: Record<string, StadiumGuide> = {
       ],
       tips: [
         { section: 'Behind home plate', tip: 'Best views but most expensive', category: 'view' },
-        { section: 'Third base line', tip: 'Check weather forecast before choosing seats', category: 'shade' },
         { section: 'Bleachers', tip: 'Best value for families', category: 'value' },
         { section: 'Upper deck', tip: 'Great for groups', category: 'experience' }
       ]
@@ -2345,7 +2328,6 @@ export const aPlusStadiumGuides: Record<string, StadiumGuide> = {
       ],
       avoidThese: [
         'Long concession lines at peak',
-        'Sun in right field afternoon',
         'Crowded kids zone on Sundays'
       ],
       hiddenGems: [
@@ -2454,7 +2436,6 @@ export const aPlusStadiumGuides: Record<string, StadiumGuide> = {
       ],
       tips: [
         { section: 'Behind home plate', tip: 'Best views but most expensive', category: 'view' },
-        { section: 'Third base line', tip: 'Check weather forecast before choosing seats', category: 'shade' },
         { section: 'Bleachers', tip: 'Best value for families', category: 'value' },
         { section: 'Upper deck', tip: 'Great for groups', category: 'experience' }
       ]
@@ -2608,7 +2589,6 @@ export const aPlusStadiumGuides: Record<string, StadiumGuide> = {
       ],
       avoidThese: [
         'Long concession lines at peak',
-        'Sun in right field afternoon',
         'Crowded kids zone on Sundays'
       ],
       hiddenGems: [
@@ -2717,7 +2697,6 @@ export const aPlusStadiumGuides: Record<string, StadiumGuide> = {
       ],
       tips: [
         { section: 'Behind home plate', tip: 'Best views but most expensive', category: 'view' },
-        { section: 'Third base line', tip: 'Check weather forecast before choosing seats', category: 'shade' },
         { section: 'Bleachers', tip: 'Best value for families', category: 'value' },
         { section: 'Upper deck', tip: 'Great for groups', category: 'experience' }
       ]
@@ -2871,7 +2850,6 @@ export const aPlusStadiumGuides: Record<string, StadiumGuide> = {
       ],
       avoidThese: [
         'Long concession lines at peak',
-        'Sun in right field afternoon',
         'Crowded kids zone on Sundays'
       ],
       hiddenGems: [
@@ -2980,7 +2958,6 @@ export const aPlusStadiumGuides: Record<string, StadiumGuide> = {
       ],
       tips: [
         { section: 'Behind home plate', tip: 'Best views but most expensive', category: 'view' },
-        { section: 'Third base line', tip: 'Check weather forecast before choosing seats', category: 'shade' },
         { section: 'Bleachers', tip: 'Best value for families', category: 'value' },
         { section: 'Upper deck', tip: 'Great for groups', category: 'experience' }
       ]
@@ -3134,7 +3111,6 @@ export const aPlusStadiumGuides: Record<string, StadiumGuide> = {
       ],
       avoidThese: [
         'Long concession lines at peak',
-        'Sun in right field afternoon',
         'Crowded kids zone on Sundays'
       ],
       hiddenGems: [
@@ -3243,7 +3219,6 @@ export const aPlusStadiumGuides: Record<string, StadiumGuide> = {
       ],
       tips: [
         { section: 'Behind home plate', tip: 'Best views but most expensive', category: 'view' },
-        { section: 'Third base line', tip: 'Check weather forecast before choosing seats', category: 'shade' },
         { section: 'Bleachers', tip: 'Best value for families', category: 'value' },
         { section: 'Upper deck', tip: 'Great for groups', category: 'experience' }
       ]
@@ -3397,7 +3372,6 @@ export const aPlusStadiumGuides: Record<string, StadiumGuide> = {
       ],
       avoidThese: [
         'Long concession lines at peak',
-        'Sun in right field afternoon',
         'Crowded kids zone on Sundays'
       ],
       hiddenGems: [
@@ -3506,7 +3480,6 @@ export const aPlusStadiumGuides: Record<string, StadiumGuide> = {
       ],
       tips: [
         { section: 'Behind home plate', tip: 'Best views but most expensive', category: 'view' },
-        { section: 'Third base line', tip: 'Check weather forecast before choosing seats', category: 'shade' },
         { section: 'Bleachers', tip: 'Best value for families', category: 'value' },
         { section: 'Upper deck', tip: 'Great for groups', category: 'experience' }
       ]
@@ -3660,7 +3633,6 @@ export const aPlusStadiumGuides: Record<string, StadiumGuide> = {
       ],
       avoidThese: [
         'Long concession lines at peak',
-        'Sun in right field afternoon',
         'Crowded kids zone on Sundays'
       ],
       hiddenGems: [
@@ -3769,7 +3741,6 @@ export const aPlusStadiumGuides: Record<string, StadiumGuide> = {
       ],
       tips: [
         { section: 'Behind home plate', tip: 'Best views but most expensive', category: 'view' },
-        { section: 'Third base line', tip: 'Check weather forecast before choosing seats', category: 'shade' },
         { section: 'Bleachers', tip: 'Best value for families', category: 'value' },
         { section: 'Upper deck', tip: 'Great for groups', category: 'experience' }
       ]
@@ -3923,7 +3894,6 @@ export const aPlusStadiumGuides: Record<string, StadiumGuide> = {
       ],
       avoidThese: [
         'Long concession lines at peak',
-        'Sun in right field afternoon',
         'Crowded kids zone on Sundays'
       ],
       hiddenGems: [
@@ -4032,7 +4002,6 @@ export const aPlusStadiumGuides: Record<string, StadiumGuide> = {
       ],
       tips: [
         { section: 'Behind home plate', tip: 'Best views but most expensive', category: 'view' },
-        { section: 'Third base line', tip: 'Check weather forecast before choosing seats', category: 'shade' },
         { section: 'Bleachers', tip: 'Best value for families', category: 'value' },
         { section: 'Upper deck', tip: 'Great for groups', category: 'experience' }
       ]
@@ -4186,7 +4155,6 @@ export const aPlusStadiumGuides: Record<string, StadiumGuide> = {
       ],
       avoidThese: [
         'Long concession lines at peak',
-        'Sun in right field afternoon',
         'Crowded kids zone on Sundays'
       ],
       hiddenGems: [
@@ -4295,7 +4263,6 @@ export const aPlusStadiumGuides: Record<string, StadiumGuide> = {
       ],
       tips: [
         { section: 'Behind home plate', tip: 'Best views but most expensive', category: 'view' },
-        { section: 'Third base line', tip: 'Check weather forecast before choosing seats', category: 'shade' },
         { section: 'Bleachers', tip: 'Best value for families', category: 'value' },
         { section: 'Upper deck', tip: 'Great for groups', category: 'experience' }
       ]
@@ -4449,7 +4416,6 @@ export const aPlusStadiumGuides: Record<string, StadiumGuide> = {
       ],
       avoidThese: [
         'Long concession lines at peak',
-        'Sun in right field afternoon',
         'Crowded kids zone on Sundays'
       ],
       hiddenGems: [
@@ -4558,7 +4524,6 @@ export const aPlusStadiumGuides: Record<string, StadiumGuide> = {
       ],
       tips: [
         { section: 'Behind home plate', tip: 'Best views but most expensive', category: 'view' },
-        { section: 'Third base line', tip: 'Check weather forecast before choosing seats', category: 'shade' },
         { section: 'Bleachers', tip: 'Best value for families', category: 'value' },
         { section: 'Upper deck', tip: 'Great for groups', category: 'experience' }
       ]
@@ -4712,7 +4677,6 @@ export const aPlusStadiumGuides: Record<string, StadiumGuide> = {
       ],
       avoidThese: [
         'Long concession lines at peak',
-        'Sun in right field afternoon',
         'Crowded kids zone on Sundays'
       ],
       hiddenGems: [
@@ -4821,7 +4785,6 @@ export const aPlusStadiumGuides: Record<string, StadiumGuide> = {
       ],
       tips: [
         { section: 'Behind home plate', tip: 'Best views but most expensive', category: 'view' },
-        { section: 'Third base line', tip: 'Check weather forecast before choosing seats', category: 'shade' },
         { section: 'Bleachers', tip: 'Best value for families', category: 'value' },
         { section: 'Rooftop', tip: 'Social atmosphere', category: 'experience' }
       ]
@@ -4975,7 +4938,6 @@ export const aPlusStadiumGuides: Record<string, StadiumGuide> = {
       ],
       avoidThese: [
         'Long concession lines at peak',
-        'Sun in right field afternoon',
         'Crowded kids zone on Sundays'
       ],
       hiddenGems: [
@@ -5084,7 +5046,6 @@ export const aPlusStadiumGuides: Record<string, StadiumGuide> = {
       ],
       tips: [
         { section: 'Behind home plate', tip: 'Best views but most expensive', category: 'view' },
-        { section: 'Third base line', tip: 'Check weather forecast before choosing seats', category: 'shade' },
         { section: 'Bleachers', tip: 'Best value for families', category: 'value' },
         { section: 'Upper deck', tip: 'Great for groups', category: 'experience' }
       ]
@@ -5238,7 +5199,6 @@ export const aPlusStadiumGuides: Record<string, StadiumGuide> = {
       ],
       avoidThese: [
         'Long concession lines at peak',
-        'Sun in right field afternoon',
         'Crowded kids zone on Sundays'
       ],
       hiddenGems: [
@@ -5347,7 +5307,6 @@ export const aPlusStadiumGuides: Record<string, StadiumGuide> = {
       ],
       tips: [
         { section: 'Behind home plate', tip: 'Best views but most expensive', category: 'view' },
-        { section: 'Third base line', tip: 'Check weather forecast before choosing seats', category: 'shade' },
         { section: 'Lawn', tip: 'Best value for families', category: 'value' },
         { section: 'Upper deck', tip: 'Great for groups', category: 'experience' }
       ]
@@ -5501,7 +5460,6 @@ export const aPlusStadiumGuides: Record<string, StadiumGuide> = {
       ],
       avoidThese: [
         'Long concession lines at peak',
-        'Sun in right field afternoon',
         'Crowded kids zone on Sundays'
       ],
       hiddenGems: [
@@ -5610,7 +5568,6 @@ export const aPlusStadiumGuides: Record<string, StadiumGuide> = {
       ],
       tips: [
         { section: 'Behind home plate', tip: 'Best views but most expensive', category: 'view' },
-        { section: 'Third base line', tip: 'Check weather forecast before choosing seats', category: 'shade' },
         { section: 'Lawn', tip: 'Best value for families', category: 'value' },
         { section: 'Upper deck', tip: 'Great for groups', category: 'experience' }
       ]
@@ -5764,7 +5721,6 @@ export const aPlusStadiumGuides: Record<string, StadiumGuide> = {
       ],
       avoidThese: [
         'Parking lot traffic postgame',
-        'Sun in right field afternoon',
         'Crowded kids zone on Sundays'
       ],
       hiddenGems: [
@@ -5873,7 +5829,6 @@ export const aPlusStadiumGuides: Record<string, StadiumGuide> = {
       ],
       tips: [
         { section: 'Behind home plate', tip: 'Best views but most expensive', category: 'view' },
-        { section: 'Third base line', tip: 'Check weather forecast before choosing seats', category: 'shade' },
         { section: 'Bleachers', tip: 'Best value for families', category: 'value' },
         { section: 'Upper deck', tip: 'Great for groups', category: 'experience' }
       ]
@@ -6027,7 +5982,6 @@ export const aPlusStadiumGuides: Record<string, StadiumGuide> = {
       ],
       avoidThese: [
         'Long concession lines at peak',
-        'Sun in right field afternoon',
         'Crowded kids zone on Sundays'
       ],
       hiddenGems: [
@@ -6136,7 +6090,6 @@ export const aPlusStadiumGuides: Record<string, StadiumGuide> = {
       ],
       tips: [
         { section: 'Behind home plate', tip: 'Best views but most expensive', category: 'view' },
-        { section: 'Third base line', tip: 'Check weather forecast before choosing seats', category: 'shade' },
         { section: 'Lawn', tip: 'Best value for families', category: 'value' },
         { section: 'Upper deck', tip: 'Great for groups', category: 'experience' }
       ]
@@ -6290,7 +6243,6 @@ export const aPlusStadiumGuides: Record<string, StadiumGuide> = {
       ],
       avoidThese: [
         'Long concession lines at peak',
-        'Sun in right field afternoon',
         'Crowded kids zone on Sundays'
       ],
       hiddenGems: [
@@ -6399,7 +6351,6 @@ export const aPlusStadiumGuides: Record<string, StadiumGuide> = {
       ],
       tips: [
         { section: 'Behind home plate', tip: 'Best views but most expensive', category: 'view' },
-        { section: 'Third base line', tip: 'Check weather forecast before choosing seats', category: 'shade' },
         { section: 'Lawn', tip: 'Best value for families', category: 'value' },
         { section: 'Upper deck', tip: 'Great for groups', category: 'experience' }
       ]
@@ -6553,7 +6504,6 @@ export const aPlusStadiumGuides: Record<string, StadiumGuide> = {
       ],
       avoidThese: [
         'Parking lot traffic postgame',
-        'Sun in right field afternoon',
         'Crowded kids zone on Sundays'
       ],
       hiddenGems: [
@@ -6662,7 +6612,6 @@ export const aPlusStadiumGuides: Record<string, StadiumGuide> = {
       ],
       tips: [
         { section: 'Behind home plate', tip: 'Best views but most expensive', category: 'view' },
-        { section: 'Third base line', tip: 'Check weather forecast before choosing seats', category: 'shade' },
         { section: 'Lawn', tip: 'Best value for families', category: 'value' },
         { section: 'Upper deck', tip: 'Great for groups', category: 'experience' }
       ]
@@ -6816,7 +6765,6 @@ export const aPlusStadiumGuides: Record<string, StadiumGuide> = {
       ],
       avoidThese: [
         'Long concession lines at peak',
-        'Sun in right field afternoon',
         'Crowded kids zone on Sundays'
       ],
       hiddenGems: [
@@ -6925,7 +6873,6 @@ export const aPlusStadiumGuides: Record<string, StadiumGuide> = {
       ],
       tips: [
         { section: 'Behind home plate', tip: 'Best views but most expensive', category: 'view' },
-        { section: 'Third base line', tip: 'Check weather forecast before choosing seats', category: 'shade' },
         { section: 'Lawn', tip: 'Best value for families', category: 'value' },
         { section: 'Upper deck', tip: 'Great for groups', category: 'experience' }
       ]
@@ -7079,7 +7026,6 @@ export const aPlusStadiumGuides: Record<string, StadiumGuide> = {
       ],
       avoidThese: [
         'Long concession lines at peak',
-        'Sun in right field afternoon',
         'Crowded kids zone on Sundays'
       ],
       hiddenGems: [
@@ -7188,7 +7134,6 @@ export const aPlusStadiumGuides: Record<string, StadiumGuide> = {
       ],
       tips: [
         { section: 'Behind home plate', tip: 'Best views but most expensive', category: 'view' },
-        { section: 'Third base line', tip: 'Check weather forecast before choosing seats', category: 'shade' },
         { section: 'Bleachers', tip: 'Best value for families', category: 'value' },
         { section: 'Upper deck', tip: 'Great for groups', category: 'experience' }
       ]
@@ -7342,7 +7287,6 @@ export const aPlusStadiumGuides: Record<string, StadiumGuide> = {
       ],
       avoidThese: [
         'Long concession lines at peak',
-        'Sun in right field afternoon',
         'Crowded kids zone on Sundays'
       ],
       hiddenGems: [
@@ -7451,7 +7395,6 @@ export const aPlusStadiumGuides: Record<string, StadiumGuide> = {
       ],
       tips: [
         { section: 'Behind home plate', tip: 'Best views but most expensive', category: 'view' },
-        { section: 'Third base line', tip: 'Check weather forecast before choosing seats', category: 'shade' },
         { section: 'Lawn', tip: 'Best value for families', category: 'value' },
         { section: 'Upper deck', tip: 'Great for groups', category: 'experience' }
       ]
@@ -7605,7 +7548,6 @@ export const aPlusStadiumGuides: Record<string, StadiumGuide> = {
       ],
       avoidThese: [
         'Parking lot traffic postgame',
-        'Sun in right field afternoon',
         'Crowded kids zone on Sundays'
       ],
       hiddenGems: [
@@ -7714,7 +7656,6 @@ export const aPlusStadiumGuides: Record<string, StadiumGuide> = {
       ],
       tips: [
         { section: 'Behind home plate', tip: 'Best views but most expensive', category: 'view' },
-        { section: 'Third base line', tip: 'Check weather forecast before choosing seats', category: 'shade' },
         { section: 'Bleachers', tip: 'Best value for families', category: 'value' },
         { section: 'Upper deck', tip: 'Great for groups', category: 'experience' }
       ]
@@ -7868,7 +7809,6 @@ export const aPlusStadiumGuides: Record<string, StadiumGuide> = {
       ],
       avoidThese: [
         'Long concession lines at peak',
-        'Sun in right field afternoon',
         'Crowded kids zone on Sundays'
       ],
       hiddenGems: [
