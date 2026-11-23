@@ -14,29 +14,44 @@ const boxStyle = {
   lineHeight: 1.6,
 } as const;
 
+const endZoneToo = ({ shadedEndZone }: FieldSunSide) =>
+  shadedEndZone ? ` The ${shadedEndZone} end zone has it at its back too.` : '';
+
 function kickoffSentence(opening: string, name: string, side: FieldSunSide) {
   return side.clear ? (
     <>
       For {opening} at <strong>{name}</strong>, the sun is on the {side.shadedSideline} side
       of the field, so seats on the <strong>{side.shadedSideline} sideline</strong> have it at their
-      backs and get shade first, starting with the upper rows and seats under an overhang. The{' '}
-      {side.sunnySideline} sideline and the {side.sunFacingEndZone} end zone face the sun.
+      backs and get shade first, starting with the upper rows and seats under an overhang.
+      {endZoneToo(side)} The {side.sunnySideline} sideline and the {side.sunFacingEndZone} end zone
+      face the sun.
     </>
   ) : (
     <>
       For {opening} at <strong>{name}</strong>, the sun moves along the length of the field,
-      so neither sideline has a clear edge. The {side.sunFacingEndZone} end zone faces the sun; seats
-      under an overhang are the surest shade.
+      so neither sideline has a clear edge.{' '}
+      {side.shadedEndZone ? (
+        <>
+          Seats in the <strong>{side.shadedEndZone} end zone</strong> have it at their backs and get
+          shade first, and the {side.sunFacingEndZone} end zone faces the sun. Seats under an overhang
+          are the surest shade.
+        </>
+      ) : (
+        <>
+          The {side.sunFacingEndZone} end zone faces the sun; seats under an overhang are the surest
+          shade.
+        </>
+      )}
     </>
   );
 }
 
 function laterKickoffs(early: FieldSunSide, late: FieldSunSide, nightAfterSunset: boolean) {
   const lateText = !late.clear
-    ? 'For a 4:25 PM kickoff the sun runs along the field.'
+    ? `For a 4:25 PM kickoff the sun runs along the field${late.shadedEndZone ? `, and the ${late.shadedEndZone} end zone has it at its back` : ''}.`
     : late.shadedSideline === early.shadedSideline && early.clear
-      ? `For a 4:25 PM kickoff it's the same ${late.shadedSideline} sideline, with more of it in shade as the sun drops.`
-      : `For a 4:25 PM kickoff the ${late.shadedSideline} sideline shades first.`;
+      ? `For a 4:25 PM kickoff it's the same ${late.shadedSideline} sideline, with more of it in shade as the sun drops.${endZoneToo(late)}`
+      : `For a 4:25 PM kickoff the ${late.shadedSideline} sideline shades first.${endZoneToo(late)}`;
   return `${lateText}${nightAfterSunset ? ' Night games kick off after sunset.' : ''}`;
 }
 

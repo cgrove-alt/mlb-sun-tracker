@@ -14,6 +14,7 @@
  * zone, 0 = north–south). Only the axis matters, so 10° and 190° agree.
  */
 import { gameClock, type GameClock } from './gameClock';
+import { SUN_BEHIND_WITHIN_DEG } from './shadeSide';
 import { getSolarPosition } from './solarPosition';
 import { calendarDateAndTimeToUTC } from './stadiumTime';
 
@@ -42,6 +43,8 @@ export interface FieldSunSide {
   sunnySideline: string;
   /** End zone whose seats look into the sun. */
   sunFacingEndZone: string;
+  /** The other end zone, when the sun is behind it as well: within 60° of the mean direction, as for a MiLB side. */
+  shadedEndZone: string | null;
   /** Mean across-field share of the sun's horizontal direction, 0–1. */
   sidelineContrast: number;
   /** False when the sun runs along the field and neither sideline has a clear edge. */
@@ -76,10 +79,12 @@ export function fieldSunSideAt(venue: FieldVenue, start: Date): FieldSunSide | n
   const shaded = acrossMean >= 0 ? across : across + 180;
   // End-zone seats face the field, so the end away from the sun looks into it.
   const sunFacing = alongMean >= 0 ? venue.orientation + 180 : venue.orientation;
+  const endZoneFromSun = Math.atan2(Math.abs(acrossMean), Math.abs(alongMean)) / rad;
   return {
     shadedSideline: compassName(shaded),
     sunnySideline: compassName(shaded + 180),
     sunFacingEndZone: compassName(sunFacing),
+    shadedEndZone: endZoneFromSun <= SUN_BEHIND_WITHIN_DEG ? compassName(sunFacing + 180) : null,
     sidelineContrast: Math.abs(acrossMean),
     clear: Math.abs(acrossMean) >= CLEAR_SIDELINE,
   };

@@ -35,6 +35,38 @@ describe('which sideline has the sun at its back', () => {
   });
 });
 
+describe('the end zone with the sun at its back', () => {
+  it('is named when the sun is nearly as much behind it as behind the sideline', () => {
+    // 1:00 PM on a north–south field: the sun goes from south to west-southwest.
+    expect(fieldSunSide({ ...chicago, orientation: 0 }).shadedEndZone).toBe('south');
+  });
+
+  it('is not named when the sun is square across the field', () => {
+    expect(fieldSunSide({ ...chicago, orientation: 0 }, '2025-09-14', { hour: 16, minute: 25 }).shadedEndZone).toBeNull();
+  });
+
+  it('is named when the sun runs along the field', () => {
+    const side = fieldSunSide({ ...chicago, orientation: 45 });
+    expect(side.clear).toBe(false);
+    expect(side.shadedEndZone).toBe('southwest');
+  });
+
+  it('is across the field from the one that faces the sun', () => {
+    const opposite: Record<string, string> = {
+      north: 'south', south: 'north', east: 'west', west: 'east',
+      northeast: 'southwest', southwest: 'northeast', northwest: 'southeast', southeast: 'northwest',
+    };
+    let named = 0;
+    for (let orientation = 0; orientation < 180; orientation += 5) {
+      const side = fieldSunSide({ ...chicago, orientation });
+      if (!side.shadedEndZone) continue;
+      named += 1;
+      expect(side.shadedEndZone).toBe(opposite[side.sunFacingEndZone]);
+    }
+    expect(named).toBeGreaterThan(0);
+  });
+});
+
 describe('the answer for one game', () => {
   const field = { ...chicago, orientation: 0 };
 

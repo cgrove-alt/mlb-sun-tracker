@@ -26,7 +26,7 @@ import { calendarDateAndTimeToUTC } from './stadiumTime';
 const SEASON_SUNDAYS = ['2025-04-13', '2025-05-18', '2025-06-15', '2025-07-20', '2025-08-24', '2025-09-14'];
 const FIRST_PITCH = { hour: 13, minute: 5 };
 const GAME_MINUTES = 180;
-const SUN_BEHIND_WITHIN_DEG = 60;
+export const SUN_BEHIND_WITHIN_DEG = 60;
 
 /** Each reads after "the". Offsets are from the direction the park faces. */
 const SIDES = [

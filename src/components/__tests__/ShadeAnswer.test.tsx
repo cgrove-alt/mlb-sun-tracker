@@ -70,6 +70,7 @@ describe('the NFL shade answer for one game (the finder)', () => {
     shadedSideline: 'west',
     sunnySideline: 'east',
     sunFacingEndZone: 'north',
+    shadedEndZone: null,
     sidelineContrast: 0.8,
     clear: true,
   };
@@ -97,6 +98,23 @@ describe('the NFL shade answer for one game (the finder)', () => {
     expect(text).toContain('For the 12:00 PM game on December 6 at Lambeau Field, the sun moves along the length of the field');
     expect(text).toContain('so neither sideline has a clear edge');
     expect(text).not.toContain('get shade first');
+  });
+
+  it('names the end zone with the sun at its back, when there is one', () => {
+    const game = { time: '12:00 PM', date: 'December 6' };
+    expect(gameAnswer({ ...game, side: { ...side, shadedEndZone: 'south' } }))
+      .toContain('seats under an overhang. The south end zone has it at its back too. The east sideline and the north end zone face the sun.');
+  });
+
+  it('names no end zone otherwise', () => {
+    expect(gameAnswer({ time: '12:00 PM', date: 'December 6', side })).not.toContain('at its back');
+  });
+
+  it('gives the end zone, not "neither", when the sun runs along the field', () => {
+    const text = gameAnswer({ time: '12:00 PM', date: 'December 6', side: { ...side, clear: false, shadedEndZone: 'south' } });
+    expect(text).toContain(
+      'so neither sideline has a clear edge. Seats in the south end zone have it at their backs and get shade first, and the north end zone faces the sun. Seats under an overhang are the surest shade.',
+    );
   });
 
   it('gives the sunset when it falls during the game', () => {
@@ -130,5 +148,27 @@ describe('the NFL shade answer for one game (the finder)', () => {
     expect(text).toContain('For a 1:00 PM kickoff at Lambeau Field, the sun is on the west side of the field');
     expect(text).toContain('Based on the sun');
     expect(text).toContain('September 14, 2025');
+  });
+
+  const pageAnswer = (early: object, late: object) => {
+    render(<ShadeAnswer venue={lambeau} nflSunSides={{ early: { ...side, ...early }, late: { ...side, ...late }, nightAfterSunset: true }} />);
+    return screen.getByLabelText('Where are the shaded seats at Lambeau Field?').textContent;
+  };
+
+  it('names the end zone on the stadium page, for each kickoff it has the sun behind', () => {
+    const text = pageAnswer({ shadedEndZone: 'south' }, {});
+    expect(text).toContain('The south end zone has it at its back too. The east sideline and the north end zone face the sun.');
+    expect(text).toContain("For a 4:25 PM kickoff it's the same west sideline, with more of it in shade as the sun drops. Night games");
+  });
+
+  it.each([
+    ['the same sideline', {}, { shadedEndZone: 'south' },
+      'with more of it in shade as the sun drops. The south end zone has it at its back too. Night games'],
+    ['a sideline the early kickoff has none of', { clear: false, shadedEndZone: 'south' }, { shadedEndZone: 'south' },
+      'For a 4:25 PM kickoff the west sideline shades first. The south end zone has it at its back too. Night games'],
+    ['no clear sideline', {}, { clear: false, shadedEndZone: 'south' },
+      'For a 4:25 PM kickoff the sun runs along the field, and the south end zone has it at its back. Night games'],
+  ])('names it for the late kickoff, with %s', (_case, early, late, words) => {
+    expect(pageAnswer(early, late)).toContain(words);
   });
 });
