@@ -6152,9 +6152,8 @@ One PR, one commit per step. N5 could wait.
 
 **Not in this plan (noticed):**
 - NFL's schedule (finding 6), unless you choose otherwise.
-- When this merges, the `?venue=` link from a stadium's page opens the finder
-  with the League box still showing Major League Baseball (seen at Lambeau
-  Field, on the dev server).
+- A `?venue=` link opened the finder with the League box still showing Major
+  League Baseball (seen at Lambeau Field, on the dev server). Fixed in §31.
 
 ## §29 Review (2026-11-23)
 
@@ -6186,8 +6185,8 @@ deletion and the schedule left for its own plan. Commits on
   live site are all the same as before.
 - *In a browser:* Lambeau Field, Lumen Field (sunset 4:18 PM), AT&T Stadium
   (not measured), Allegiant Stadium and the Chargers' SoFi Stadium (fixed
-  roofs) on desktop. On mobile the `?venue=` link doesn't apply, so the two
-  finders were compared by the rendered check above.
+  roofs) on desktop; after §31 was merged in, Lambeau Field and Sahlen Field
+  through a link on a phone-size window, and AT&T Stadium's league box.
 - *Tests:* 4,027 of 4,027; the type check and the production build pass;
   eslint gives no errors (its 9 warnings are the page's old ones and one old
   hook warning). **One thing I couldn't explain:** in my first two full runs
@@ -6196,8 +6195,20 @@ deletion and the schedule left for its own plan. Commits on
   server under load) passed. I found no process kill in the system log. CI
   runs it on a fresh machine.
 
+**After merging `fix/finder-leftovers`** (asked, 2026-11-23; its section is §31)
+- The three conflicts: `MobileApp.tsx` and `UnifiedApp.tsx` (this branch had
+  removed the section code its changes sat in; the typed sun position is kept)
+  and this file.
+- 4,038 of 4,038 tests (100 suites), the type check clean, eslint 0 errors;
+  576 of 576 NFL answers; the MiLB and NFL page answers identical to before.
+
 **Not done**
-- N5 (the deletions), waiting for a decision.
+- N5 (the deletions). Another session's plan (§30 on
+  `claude/agitated-sanderson-94f055`) counts 19 unreachable files (4,970
+  lines) after N3, where this one found 6. The deletion is left to that plan.
+- §30 also found two things in this answer: it never names the end zone with
+  the sun at its back, and AT&T and Lucas Oil say "can't yet say" after
+  sunset. Both are in its plan.
 - The schedule (finding 6), in its own plan. Until then, a fan types the
   date and time. The finder waits two minutes or more for the schedule to
   fail before it offers that.
