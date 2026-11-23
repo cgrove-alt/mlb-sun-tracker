@@ -13,6 +13,7 @@
  * `orientation` is the field's long axis in compass degrees (end zone to end
  * zone, 0 = north–south). Only the axis matters, so 10° and 190° agree.
  */
+import { gameClock, type GameClock } from './gameClock';
 import { getSolarPosition } from './solarPosition';
 import { calendarDateAndTimeToUTC } from './stadiumTime';
 
@@ -54,12 +55,8 @@ export function compassName(degrees: number): string {
   return COMPASS[Math.round(d / 45) % 8];
 }
 
-export function fieldSunSide(
-  venue: FieldVenue,
-  date = EARLY_SEASON_DATE,
-  kickoff = KICKOFF,
-): FieldSunSide {
-  const start = calendarDateAndTimeToUTC(date, kickoff.hour, kickoff.minute, venue.timezone);
+/** The same for one game; null when the sun is down for all of it. */
+export function fieldSunSideAt(venue: FieldVenue, start: Date): FieldSunSide | null {
   const across = venue.orientation + 90; // where one sideline is, seen from midfield
   const rad = Math.PI / 180;
   let acrossSum = 0;
@@ -73,7 +70,7 @@ export function fieldSunSide(
     alongSum += horizontal * Math.cos((sun.azimuthDegrees - venue.orientation) * rad);
     samples += 1;
   }
-  if (samples === 0) throw new Error('fieldSunSide: the sun is down for the whole game');
+  if (samples === 0) return null;
   const acrossMean = acrossSum / samples;
   const alongMean = alongSum / samples;
   const shaded = acrossMean >= 0 ? across : across + 180;
@@ -86,6 +83,26 @@ export function fieldSunSide(
     sidelineContrast: Math.abs(acrossMean),
     clear: Math.abs(acrossMean) >= CLEAR_SIDELINE,
   };
+}
+
+export function fieldSunSide(
+  venue: FieldVenue,
+  date = EARLY_SEASON_DATE,
+  kickoff = KICKOFF,
+): FieldSunSide {
+  const side = fieldSunSideAt(venue, calendarDateAndTimeToUTC(date, kickoff.hour, kickoff.minute, venue.timezone));
+  if (!side) throw new Error('fieldSunSide: the sun is down for the whole game');
+  return side;
+}
+
+/** What the finder says about one NFL game. */
+export interface NflGameShade extends GameClock {
+  /** null when the sun is down for the whole game. */
+  side: FieldSunSide | null;
+}
+
+export function nflGameShade(venue: FieldVenue, start: Date): NflGameShade {
+  return { ...gameClock(venue, start, GAME_MINUTES), side: fieldSunSideAt(venue, start) };
 }
 
 /** The three usual NFL kickoff windows. */

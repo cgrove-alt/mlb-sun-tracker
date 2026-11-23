@@ -19,8 +19,9 @@
  *
  * `orientation` is the compass bearing from home plate to center field.
  */
-import { getSolarPosition, getSunTimes } from './solarPosition';
-import { calendarDateAndTimeToUTC, formatStadiumLocal } from './stadiumTime';
+import { gameClock, type GameClock } from './gameClock';
+import { getSolarPosition } from './solarPosition';
+import { calendarDateAndTimeToUTC } from './stadiumTime';
 
 const SEASON_SUNDAYS = ['2025-04-13', '2025-05-18', '2025-06-15', '2025-07-20', '2025-08-24', '2025-09-14'];
 const FIRST_PITCH = { hour: 13, minute: 5 };
@@ -41,14 +42,10 @@ export interface BallparkVenue {
   orientation: number;
 }
 
-/** What the finder says about one game, in the park's own time. */
-export interface GameShade {
-  time: string;
-  date: string;
+/** What the finder says about one game. */
+export interface GameShade extends GameClock {
   /** null when the sun is down for the whole game. */
   sides: string[] | null;
-  /** Only when the sun sets during the game. */
-  sunset?: string;
 }
 
 /**
@@ -91,13 +88,5 @@ export function dayGameShadeSides(venue: BallparkVenue): string[] {
 
 /** The same for the game the fan picked (the finder). */
 export function gameShade(venue: BallparkVenue, start: Date): GameShade {
-  const { sunset } = getSunTimes(start, venue.latitude, venue.longitude);
-  const end = start.getTime() + GAME_MINUTES * 60_000;
-  const setsDuringGame = sunset.getTime() > start.getTime() && sunset.getTime() < end;
-  return {
-    time: formatStadiumLocal(start, venue.timezone, 'h:mm a'),
-    date: formatStadiumLocal(start, venue.timezone, 'MMMM d'),
-    sides: shadeSides(venue, [start]),
-    sunset: setsDuringGame ? formatStadiumLocal(sunset, venue.timezone, 'h:mm a') : undefined,
-  };
+  return { ...gameClock(venue, start, GAME_MINUTES), sides: shadeSides(venue, [start]) };
 }
