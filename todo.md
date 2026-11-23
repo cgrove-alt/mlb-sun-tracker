@@ -6249,10 +6249,11 @@ for AT&T.
 
 Go-ahead: "go ahead with P1–P5", passed on by the session that started this
 one. P6 (deletions) isn't approved. P4 and P5 need `nflGameShade`, which is
-only on `fix/nfl-finder-sections`, so they wait for it to reach `main`. The
-Bills (question 4) aren't decided. Nothing is pushed.
+only on `fix/nfl-finder-sections`, so they wait for it to reach `main`.
+Question 4: "leave the Bills' 2026 games out", passed on the same way.
+Nothing is pushed.
 
-**What changed:** 3 commits, one per step.
+**What changed:** 4 commits, one per step and one for the Bills.
 - *P1 (b6318163e):* `fetchVenueSchedule` asks ESPN once for the stadium's own
   team and season, and keeps ESPN's kickoff as it is. Neutral sites and games
   with no time yet are left out, no header is sent, and the Ravens' id is
@@ -6261,23 +6262,33 @@ Bills (question 4) aren't decided. Nothing is pushed.
 - *P2 (d210126b7):* `connect-src` names `https://site.api.espn.com`. A test
   pins the whole list, so it can't widen unnoticed.
 - *P3 (86aa04f9b):* the games/custom switch shows for NFL, on both finders.
+- *Bills (6a1988214):* only games at what ESPN calls "Highmark Stadium (Old)"
+  are listed. It goes by the building, so it holds for later seasons, and if
+  ESPN renames it the fan gets the date form.
 
 **Checks:**
-- *Tests:* 4,048 of 4,048, 43 of them new, all seen to fail first. The
+- *Tests:* 4,051 of 4,051, 46 of them new, all seen to fail first but one (the
+  Bills' 2025 games, which guards what must not change). The
   schedule tests also pass in Tokyo, Los Angeles and UTC. The type check is
   clean, eslint gives no errors (one old warning), and the production build
   passes.
 - *Every team, live:* 504 games over 64 team-seasons. 2025: all 265 non-neutral
   games in ESPN's weekly feed, which P1 doesn't use, none missing, none extra,
-  no time different. 2026: all 239.
+  no time different. 2026: all 239; with the Bills' rule 232, the 7 gone all
+  theirs (the eighth has no time yet), and every other team as before. Their 9
+  home games of 2025 still list.
 - *In a browser (dev server):* Lambeau's games load in one request of 0.1 s
   (it was 132 s to give up). "Dec 20, 12:00 PM CST - Dolphins @ Packers" is
   rated with the sun at 22.1°, due south. On mobile the Ravens list theirs.
+  At Highmark the date form comes up at once, and it and the Custom Time tab
+  both work: 1:00 PM on December 20, 2026 and September 28, 2025 give the sun
+  at 22.9° and 44.9°, as the NOAA equations do.
 - *Against the NFL branch:* a dry-run merge has one conflict, this file.
 
 **Open:**
-- *Bills:* their 2026 games are now listed, with the old stadium's direction.
-  This shouldn't go live before question 4 is answered.
+- *Bills:* a date typed in the finder, and their page, still answer for the
+  old stadium. Measuring the new one is its own task. The form says the
+  schedule is "currently unavailable", which isn't quite why.
 - Not tested: Safari and Firefox, and the built site in a browser.
 - After the NFL branch merges, two lines still say only MLB has a schedule
   (step 2 on `/seats-shade-finder`, and the finder's "no game" line).
