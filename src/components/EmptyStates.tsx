@@ -28,7 +28,7 @@ export const EmptyState: React.FC<EmptyStateProps> = ({
         return {
           icon: <BaseballIcon size={48} color="#9ca3af" />,
           title: title || 'Select a Game or Time',
-          message: message || 'Choose a game time to see which sections will be in sun or shade.'
+          message: message || 'Choose a game time to see where the sun and shade will be.'
         };
       case 'no-sections':
         return {

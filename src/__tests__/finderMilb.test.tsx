@@ -48,6 +48,14 @@ describe.each([['desktop', 1280], ['mobile', 390]])('the finder on %s', (device,
     expect(screen.queryByText('What does sun exposure mean for fans?')).toBeNull();
   });
 
+  it('MiLB, before a game is picked: promises no sections', () => {
+    window.innerWidth = width;
+    render(<UnifiedApp />);
+    fireEvent.click(screen.getByText('buffalo-bisons'));
+    expect(screen.getByText('Choose a game time to see where the sun and shade will be.')).toBeTruthy();
+    expect(screen.queryByText(/which sections/)).toBeNull();
+  });
+
   it('NFL: still lists its sections', async () => {
     await pickGame('lambeau-field', width);
     expect(sectionList()).not.toBeNull();
