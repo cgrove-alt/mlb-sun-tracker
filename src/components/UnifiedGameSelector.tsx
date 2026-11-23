@@ -68,6 +68,14 @@ export const UnifiedGameSelector: React.FC<UnifiedGameSelectorProps> = ({
     return () => window.removeEventListener('resize', checkMobileContext);
   }, []);
   
+  // Show the league of a park chosen elsewhere (a link). The saved league is
+  // the fan's own choice, so it stays.
+  useEffect(() => {
+    if (!selectedVenue) return;
+    setSelectedLeague(selectedVenue.league);
+    if (isMiLBVenue(selectedVenue) && selectedVenue.level) setSelectedMiLBLevel(selectedVenue.level);
+  }, [selectedVenue]);
+
   // Get all leagues and venues
   const leagues = getAllLeagues();
   const venuesInLeague = selectedLeague === 'MiLB' ? getMiLBVenuesByLevel(selectedMiLBLevel) : getVenuesByLeague(selectedLeague);

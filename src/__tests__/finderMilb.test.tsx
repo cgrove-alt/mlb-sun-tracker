@@ -1,8 +1,9 @@
 /** @jest-environment jsdom */
 /**
- * The finder has no seating map for a MiLB park, so it names a side of the
- * park for the game. NFL and MLB keep what they had. The game selector and the
- * weather call the network, so they are stubbed; the rest is real.
+ * The finder has no seating map for a MiLB park or an NFL stadium, so it names
+ * a side of the park or field for the game. MLB keeps its link. The game
+ * selector and the weather call the network, so they are stubbed; the rest is
+ * real.
  */
 import { act, fireEvent, render, screen } from '@testing-library/react';
 import UnifiedApp from '../UnifiedApp';
@@ -14,7 +15,7 @@ const GAME = new Date('2025-07-20T22:35:00Z');
 jest.mock('../components/UnifiedGameSelector', () => ({
   UnifiedGameSelector: ({ onVenueChange, onGameSelect }: any) => (
     <>
-      {['buffalo-bisons', 'lambeau-field', 'yankees'].map((id) => (
+      {['buffalo-bisons', 'lambeau-field', 'at-t-stadium', 'ford-field', 'sofi-stadium-chargers', 'yankees'].map((id) => (
         <button key={id} onClick={() => onVenueChange(getUnifiedVenueById(id))}>{id}</button>
       ))}
       <button onClick={() => onGameSelect(null, GAME)}>pick game</button>
@@ -56,11 +57,38 @@ describe.each([['desktop', 1280], ['mobile', 390]])('the finder on %s', (device,
     expect(screen.queryByText(/which sections/)).toBeNull();
   });
 
-  it('NFL: still lists its sections', async () => {
+  const noSections = () => {
+    expect(sectionList()).toBeNull();
+    expect(screen.queryByText(/Sections Found/)).toBeNull();
+    expect(screen.queryByText('No sections match your filters')).toBeNull();
+    expect(screen.queryByText('What does sun exposure mean for fans?')).toBeNull();
+  };
+
+  it('NFL, before a game is picked: promises no sections', () => {
+    window.innerWidth = width;
+    render(<UnifiedApp />);
+    fireEvent.click(screen.getByText('lambeau-field'));
+    expect(screen.queryByText(/which sections/)).toBeNull();
+  });
+
+  it('NFL: names the sideline for that game and lists no sections', async () => {
     await pickGame('lambeau-field', width);
-    expect(sectionList()).not.toBeNull();
-    expect(answer('Lambeau Field')).toBeNull();
-    if (device === 'mobile') expect(sectionList()!.textContent).toBe('12 Sections Found');
+    const text = answer('Lambeau Field')?.textContent;
+    expect(text).toContain('For the 5:35 PM game on July 20 at Lambeau Field, the sun is on the west side of the field');
+    expect(text).toContain('seats on the west sideline have it at their backs and get shade first');
+    noSections();
+  });
+
+  it('NFL: says so when the direction was never measured', async () => {
+    await pickGame('at-t-stadium', width);
+    expect(answer('AT&T Stadium')?.textContent).toContain("can't yet say which sideline shades first");
+    noSections();
+  });
+
+  it.each(['ford-field', 'sofi-stadium-chargers'])('NFL: says every seat is shaded under a fixed roof (%s)', async (id) => {
+    await pickGame(id, width);
+    expect(answer(getUnifiedVenueById(id)!.name)?.textContent).toContain('has a fixed roof, so every seat is out of the sun');
+    noSections();
   });
 
   it('MLB: still links to the park page', async () => {
