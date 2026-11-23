@@ -6025,6 +6025,137 @@ data is identical, so no number above moved.
   `mobile.css`), so the period after "How we work this out" strays. The MiLB
   pages have the same.
 
+## §29 NFL sections in the finder (plan, 2026-11-23)
+
+Asked: plan the fix for the finder's NFL section list, which §28 left for its
+own plan. Branch `fix/nfl-finder-sections`, from §28's branch (6445cee8f,
+PR #104, not merged yet), because it extends §28's code. Nothing but this
+file has changed.
+
+**In short:** the list is wrong at every stadium and can't be corrected from
+what we have. The NFL page's answer (which sideline has the sun at its back)
+is sound, and it already takes a date and a kickoff. So the finder should
+give that answer for the game the fan picked, as §28 does for MiLB.
+
+### Findings
+
+**1. Where the list's angles point.** Every section has a label: end zone,
+home sideline, visitor sideline or corner. The finder turns `baseAngle` into
+a compass bearing with `sectionCompassAngle` (orientation + 90 − center),
+which fits baseball, where 0 is first base. These lists put an end zone at
+0, and a field's `orientation` is its long axis, so every one of them is 90°
+off. Counted over all 32 stadiums (1,818 sections):
+- 0 of 580 end-zone sections are placed at an end zone;
+- 0 of 580 sideline sections are placed on a sideline.
+
+This is §28's fault again, at all 32 and not at 35.
+
+**2. It isn't a seating map.**
+- 29 of the 32 stadiums share one list of 60 sections (101–136 and 301–324,
+  no overhang anywhere). Hard Rock Stadium has 66 of its own and Lambeau
+  Field 12. The Chargers have none, so the finder shows nothing there.
+- Turning them 90° would put the labels right, but not the numbers. Nothing
+  says which end zone is at 0, or which way round the numbers run, so we
+  can't say which side of the field "Section 110" is on.
+
+**3. What fans are told today.** For the 2025 regular season (ESPN's
+schedule: 265 home games without a neutral site, 216 of them where the roof
+opens):
+- The sun is up at kickoff at 171. At 110 of those the list's shadiest
+  section is labelled end zone, at 36 a corner, at 14 a sideline and at 11
+  it has no label (Lambeau).
+- At 148 of the games with a measured direction and a list, putting each
+  section where its own label says reverses which is shadier, the sidelines
+  or the end zones, at 82.
+
+**4. The page's answer, for a fan's own game.** For the 200 games at the 24
+stadiums with an opening roof and a measured direction:
+- The sun is up for some of the game at 159 and down for all of it at 41.
+- The answer for the game is the page's own text for that kickoff window at
+  152 of the 159. It never names the other sideline. At 7 the edge is clear
+  for the game but not for the page's date, or the reverse.
+- 49 home games are under a fixed roof (shaded) and 16 at AT&T Stadium and
+  Lucas Oil Stadium, whose direction we couldn't measure (the answer says
+  so).
+
+So a game-specific answer changes little, but the page's answer isn't what
+the finder shows: the finder is showing the list.
+
+**5. The other list.** The mobile finder runs the same sections through
+`SunCalculator`. I haven't measured it separately. It uses
+`sectionCompassAngle` too (§28, finding 2).
+
+**6. Faults in the NFL schedule** (found on the way; see "To decide"):
+- *It never loads on the live site.* The site's security policy
+  (`middleware.ts:54`, `connect-src`) doesn't allow `site.api.espn.com`
+  (§28 noted this). In a browser, at Lambeau Field, it took over two minutes
+  of failed retries before the typed-date form appeared. That form is right:
+  it turns the stadium's clock into UTC.
+- *A picked game would get the wrong time.* `nflApiClient.ts:136` keeps only
+  the UTC date, and the picker reads it with `new Date(...)`, which is
+  midnight UTC: 8:00 PM Eastern the day before for a 1:00 PM kickoff. Of the
+  171 games with the sun up at kickoff, the finder's time has it down at
+  140. It would also show the wrong day at 170 of the 216. The kickoff
+  clock beside it is in the fan's own time zone.
+- *The Ravens have the wrong id.* The two team tables say
+  `mt-bank-stadium`; the venue is `m-t-bank-stadium`, so their home games
+  match no venue. `nflStadiumGuides.ts` has a guide under both ids.
+
+### Plan (waiting for your go-ahead)
+
+- [ ] N1. `nflSunSide.ts`: take the loop out of `fieldSunSide` as
+      `fieldSunSideAt(venue, start)`, which gives null when the sun is down
+      for the whole game (today it throws). `fieldSunSide(venue, date,
+      kickoff)` calls it, so no page changes. Add `nflGameShade(venue,
+      start)` (time, date, side, sunset), as §28's `gameShade`. Tests first:
+      a night game, a game the sun sets on, and all 24 stadiums' answers the
+      same as before.
+- [ ] N2. `ShadeAnswer`: an optional `nflGame`. With it, the sentence is
+      about that game ("For the 12:00 PM game on December 6 at Lambeau
+      Field, the sun is on the west side of the field, so seats on the west
+      sideline have it at their backs and get shade first"), plus the sunset
+      if it falls during the game, or "the sun is down for the whole game".
+      Unclear, unmeasured and fixed-roof stadiums keep the words the pages
+      use. Without it, unchanged (test).
+- [ ] N3. `UnifiedApp` and `MobileApp`: for NFL, show N2's answer instead of
+      the section list, its filters and its explanation, as they do for MLB
+      and MiLB. After this no league shows the list. Tests (extending
+      `finderMilb.test.tsx`): NFL shows the answer and no sections; MiLB and
+      MLB as before; a fixed roof and an unmeasured stadium each say so.
+- [ ] N4. `/seats-shade-finder` and the empty-state copy: MLB by section;
+      MiLB and NFL by side of the field or park; no section, filter or
+      percentage is promised for NFL.
+- [ ] N5. Delete what nothing uses then (own commit, after N3). Today only the
+      two finders use these, 1,530 lines in all: `SectionList` (399),
+      `SectionFilters` (320), `MobileFilterSheet` (302), `getUnifiedVenueShade`
+      (251, and the part of `shadeDirection.test.ts` that tests it),
+      `SunExposureExplanation` (166) and `MobileSectionCard` (92). These might
+      go too, 1,468 more lines, but other code uses them: `EnhancedSunFilter`
+      (697, `preferences.ts`), `venueSections` (420, `sunCalculations.ts` and
+      the audit script) and `nflSections` (351, `venueSections` and a script).
+      I'd check every import again after merging and ask before deleting any
+      file.
+- [ ] N6. Checks: unit tests, type check, eslint, build; all 32 stadiums in
+      both finders at 1:00 PM, 4:25 PM and night against a separate
+      calculation in Python; MLB and MiLB answers byte for byte as before;
+      NFL pages unchanged; a look at Lambeau (open), Lumen, AT&T
+      (unmeasured), Allegiant (fixed) and the Chargers. Then the review.
+
+One PR, one commit per step. N5 could wait.
+
+**For you to decide:**
+1. Go ahead with N1–N4 and N6, and N5 now or later?
+2. The schedule faults (finding 6). Fix them in their own plan (my pick:
+   loading the schedule means allowing ESPN in the site's security policy,
+   which should be its own decision), in this one, or not at all? Typed dates
+   work right without them.
+
+**Not in this plan (noticed):**
+- NFL's schedule (finding 6), unless you choose otherwise.
+- When this merges, the `?venue=` link from a stadium's page opens the finder
+  with the League box still showing Major League Baseball (seen at Lambeau
+  Field, on the dev server).
+
 ---
 ---
 
