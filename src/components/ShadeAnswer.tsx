@@ -1,5 +1,4 @@
 import Link from 'next/link';
-import { bestShadedSideForDayGame } from '../utils/shadeSide';
 import type { FieldSunSide, KickoffSunSides } from '../utils/nflSunSide';
 import type { UnifiedVenue } from '../data/unifiedVenues';
 
@@ -41,12 +40,16 @@ function laterKickoffs(early: FieldSunSide, late: FieldSunSide, nightAfterSunset
 }
 
 /**
- * Answer-first shade summary at the top of NFL and MiLB venue pages. NFL
- * advice comes from the sun's path over the field (`nflSunSide.ts`), worked
- * out on the server so the sun-position code stays out of the page's
- * JavaScript. MLB pages use the shade finder instead.
+ * Answer-first shade summary at the top of NFL and MiLB venue pages. The
+ * advice comes from the sun's path over the field (`nflSunSide.ts`,
+ * `shadeSide.ts`), worked out on the server so the sun-position code stays out
+ * of the page's JavaScript. MLB pages use the shade finder instead.
  */
-export function ShadeAnswer({ venue, nflSunSides }: { venue: UnifiedVenue; nflSunSides?: KickoffSunSides }) {
+export function ShadeAnswer({ venue, nflSunSides, milbShadeSides = [] }: {
+  venue: UnifiedVenue;
+  nflSunSides?: KickoffSunSides;
+  milbShadeSides?: string[];
+}) {
   const { name, roof } = venue;
 
   if (roof === 'fixed') {
@@ -93,13 +96,25 @@ export function ShadeAnswer({ venue, nflSunSides }: { venue: UnifiedVenue; nflSu
     );
   }
 
-  const side = bestShadedSideForDayGame(venue.orientation);
+  const [side, secondSide] = milbShadeSides;
   return (
     <section className="shade-answer" aria-label={`Where are the shaded seats at ${name}?`} style={boxStyle}>
       <p style={{ margin: 0 }}>
-        For a day game at <strong>{name}</strong>, the <strong>{side}</strong> tends to
-        shade first, going by the way the park faces. We don&apos;t have a seating map
-        for this park, so we can&apos;t say which sections or rows.{' '}
+        For a 1:05 PM game at <strong>{name}</strong>,{' '}
+        {side ? (
+          <>
+            the <strong>{side}</strong>
+            {secondSide && <> and the <strong>{secondSide}</strong></>}{' '}
+            {secondSide ? 'tend' : 'tends'} to shade first, going by the way the park faces and the
+            sun&apos;s path.
+          </>
+        ) : (
+          <>
+            the sun is behind the outfield for most of the game, so no side of the infield seating
+            has a clear edge. Seats under a roof or overhang are the surest shade.
+          </>
+        )}{' '}
+        We don&apos;t have a seating map for this park, so we can&apos;t say which sections or rows.{' '}
         <Link href="/how-it-works" style={{ fontWeight: 600, textDecoration: 'underline' }}>
           How we work this out
         </Link>

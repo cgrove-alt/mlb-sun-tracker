@@ -73,7 +73,6 @@ export const aaaStadiumGuides: Record<string, StadiumGuide> = {
           { name: 'Group Picnic Area', capacity: '100', amenities: ['Food included', 'Private space', 'Game viewing'] }
         ],
         tips: [
-          { section: 'Box seats 201-210', tip: 'Great views with some afternoon shade protection', category: 'shade' },
           { section: 'General Admission', tip: 'Best value for casual fans and families', category: 'value' },
           { section: 'Club Level', tip: 'Premium experience with indoor amenities', category: 'experience' }
         ]
@@ -217,8 +216,7 @@ export const aaaStadiumGuides: Record<string, StadiumGuide> = {
           'Downtown location offers pre/post-game activities'
         ],
         avoidThese: [
-          'Rush hour traffic downtown',
-          'Limited shade in outfield sections'
+          'Rush hour traffic downtown'
         ],
         hiddenGems: [
           'City skyline views from upper sections',
@@ -456,8 +454,7 @@ export const aaaStadiumGuides: Record<string, StadiumGuide> = {
           'Downtown location perfect for dinner after games'
         ],
         avoidThese: [
-          'Rush hour downtown traffic',
-          'Right field sections can be sunny for day games'
+          'Rush hour downtown traffic'
         ],
         hiddenGems: [
           'Green building features throughout stadium',
@@ -1331,7 +1328,6 @@ export const aaaStadiumGuides: Record<string, StadiumGuide> = {
         ],
         tips: [
           { section: 'Club Level', tip: 'Best for escaping heat with AC', category: 'shade' },
-          { section: 'Sections 109-115', tip: 'Third base side with afternoon shade', category: 'shade' },
           { section: 'Pool Zone', tip: 'Unique experience but can be hot', category: 'experience' },
           { section: 'Upper deck', tip: 'Canopy coverage and breeze', category: 'value' }
         ]
@@ -1473,7 +1469,6 @@ export const aaaStadiumGuides: Record<string, StadiumGuide> = {
         ],
         avoidThese: [
           'Afternoon games in summer',
-          'Right field lawn without shade',
           'Parking lot without arriving early',
           'Pool area if wanting to watch game closely'
         ],
@@ -1577,7 +1572,6 @@ export const aaaStadiumGuides: Record<string, StadiumGuide> = {
         ],
         tips: [
           { section: 'Solon Club', tip: 'Best amenities and shade', category: 'experience' },
-          { section: 'Sections 113-118', tip: 'Good shade and value', category: 'shade' },
           { section: 'Home Run Hill', tip: 'Fun but sunny lawn area', category: 'family' },
           { section: 'Upper Box', tip: 'Affordable with overhang shade', category: 'value' }
         ]
@@ -1720,7 +1714,6 @@ export const aaaStadiumGuides: Record<string, StadiumGuide> = {
         avoidThese: [
           'Lawn seating on hot days',
           'Parking lot without early arrival',
-          'Right field in afternoon sun',
           'I-80 right after game'
         ],
         hiddenGems: [
@@ -1822,7 +1815,6 @@ export const aaaStadiumGuides: Record<string, StadiumGuide> = {
         ],
         tips: [
           { section: 'Sections 7-11', tip: 'Best views behind home plate', category: 'view' },
-          { section: 'Sections 1-6', tip: 'Third base shade and value', category: 'shade' },
           { section: 'The Apiary', tip: 'Social atmosphere', category: 'experience' },
           { section: 'Left Field Lawn', tip: 'Great for families', category: 'family' }
         ]
@@ -1963,7 +1955,6 @@ export const aaaStadiumGuides: Record<string, StadiumGuide> = {
         ],
         avoidThese: [
           'Driving on I-15 at rush hour',
-          'Right field on sunny afternoons',
           'Parking lot without early arrival',
           'Limited alcohol options (Utah laws)'
         ],
@@ -2066,7 +2057,6 @@ export const aaaStadiumGuides: Record<string, StadiumGuide> = {
         tips: [
           { section: 'Sections 105-109', tip: 'Best overall views', category: 'view' },
           { section: 'Grass Berm', tip: 'Great for families', category: 'family' },
-          { section: 'First base side', tip: 'Afternoon shade', category: 'shade' },
           { section: 'Club Level', tip: 'Premium experience', category: 'experience' }
         ]
       },
@@ -2198,13 +2188,11 @@ export const aaaStadiumGuides: Record<string, StadiumGuide> = {
         insiderTips: [
           'Grass berm great value for families',
           'Arrive early for close parking',
-          'First base side for shade',
           'Thirsty Thursdays popular',
           'Check for theme night giveaways'
         ],
         avoidThese: [
           'Arriving late on firework nights',
-          'Left field in afternoon sun',
           'Parking far without checking weather',
           'Missing Kids Zone if with children'
         ],
@@ -2271,8 +2259,7 @@ export const aaaStadiumGuides: Record<string, StadiumGuide> = {
         budgetOptions: ['Lawn seating', 'Bleachers'],
         familySections: ['Sections 16-18'],
         tips: [
-          { section: 'Sections 8-12', tip: 'Best views', category: 'view' },
-          { section: 'First base', tip: 'Afternoon shade', category: 'shade' }
+          { section: 'Sections 8-12', tip: 'Best views', category: 'view' }
         ]
       },
       concessions: {
@@ -2376,8 +2363,8 @@ export const aaaStadiumGuides: Record<string, StadiumGuide> = {
         mascot: { name: 'Cubbie Bear', description: 'Cubs mascot' }
       },
       proTips: {
-        insiderTips: ['Pork chop is must-try', 'First base for shade'],
-        avoidThese: ['Left field in sun', 'Late arrival on fireworks'],
+        insiderTips: ['Pork chop is must-try'],
+        avoidThese: ['Late arrival on fireworks'],
         hiddenGems: ['Confluence taproom', 'River walk'],
         photoSpots: ['Capitol view', 'River views'],
         bestValue: ['Lawn seating', 'Thirsty Thursday']
@@ -2426,8 +2413,7 @@ export const aaaStadiumGuides: Record<string, StadiumGuide> = {
         budgetOptions: ['Bleachers', 'Upper reserved'],
         familySections: ['Sections 201-203'],
         tips: [
-          { section: 'Sections 105-109', tip: 'River views', category: 'view' },
-          { section: 'First base', tip: 'Afternoon shade', category: 'shade' }
+          { section: 'Sections 105-109', tip: 'River views', category: 'view' }
         ]
       },
       concessions: {
@@ -2531,8 +2517,8 @@ export const aaaStadiumGuides: Record<string, StadiumGuide> = {
         mascot: { name: 'Scampi', description: 'Shrimp mascot' }
       },
       proTips: {
-        insiderTips: ['First base for shade', 'Red shirt Friday discount'],
-        avoidThese: ['Left field in sun', 'Forgetting sunscreen'],
+        insiderTips: ['Red shirt Friday discount'],
+        avoidThese: ['Forgetting sunscreen'],
         hiddenGems: ['Bold City beer', 'River walk'],
         photoSpots: ['River background', 'With Scampi'],
         bestValue: ['Upper reserved', 'Thrifty Thursday']
@@ -2584,8 +2570,7 @@ export const aaaStadiumGuides: Record<string, StadiumGuide> = {
         budgetOptions: ['Lawn', 'Bleachers'],
         familySections: ['Sections 116-118'],
         tips: [
-          { section: 'Pig Pen', tip: 'Party atmosphere', category: 'experience' },
-          { section: 'First base', tip: 'Afternoon shade', category: 'shade' }
+          { section: 'Pig Pen', tip: 'Party atmosphere', category: 'experience' }
         ]
       },
       concessions: {
@@ -2690,7 +2675,7 @@ export const aaaStadiumGuides: Record<string, StadiumGuide> = {
       },
       proTips: {
         insiderTips: ['Bacon on stick must-try', 'Pig Pen opens early'],
-        avoidThese: ['Left field in sun', 'Late on giveaways'],
+        avoidThese: ['Late on giveaways'],
         hiddenGems: ['Pig candy', 'Tiki Terrace'],
         photoSpots: ['With pig mascots', 'Bacon slide'],
         bestValue: ['Lawn seating', 'Tuesday specials']
@@ -2739,8 +2724,7 @@ export const aaaStadiumGuides: Record<string, StadiumGuide> = {
         budgetOptions: ['Bleachers', 'Upper reserved'],
         familySections: ['Sections 110-112'],
         tips: [
-          { section: 'Sections 105-109', tip: 'River views', category: 'view' },
-          { section: 'First base', tip: 'Afternoon shade', category: 'shade' }
+          { section: 'Sections 105-109', tip: 'River views', category: 'view' }
         ]
       },
       concessions: {
@@ -2844,8 +2828,8 @@ export const aaaStadiumGuides: Record<string, StadiumGuide> = {
         mascot: { name: 'Buddy Bat', description: 'Bat mascot' }
       },
       proTips: {
-        insiderTips: ['First base for shade', 'Slugger Museum before game'],
-        avoidThese: ['Left field in sun', 'Downtown traffic'],
+        insiderTips: ['Slugger Museum before game'],
+        avoidThese: ['Downtown traffic'],
         hiddenGems: ['Bourbon bar', 'River walk'],
         photoSpots: ['River background', 'With giant bat'],
         bestValue: ['Bleachers', 'Thirsty Thursday']
@@ -2894,8 +2878,7 @@ export const aaaStadiumGuides: Record<string, StadiumGuide> = {
         budgetOptions: ['Lawn', 'Upper reserved'],
         familySections: ['Sections 106-108'],
         tips: [
-          { section: 'The Bluff', tip: 'Unique experience', category: 'experience' },
-          { section: 'First base', tip: 'Afternoon shade', category: 'shade' }
+          { section: 'The Bluff', tip: 'Unique experience', category: 'experience' }
         ]
       },
       concessions: {
@@ -3000,7 +2983,7 @@ export const aaaStadiumGuides: Record<string, StadiumGuide> = {
       },
       proTips: {
         insiderTips: ['BBQ nachos are legendary', 'Beale Street after game'],
-        avoidThese: ['Left field in sun', 'Parking on Beale'],
+        avoidThese: ['Parking on Beale'],
         hiddenGems: ['The Bluff seating', 'Local beer selection'],
         photoSpots: ['Downtown skyline', 'The Bluff'],
         bestValue: ['Lawn seating', 'Thirsty Thursday']
@@ -3049,8 +3032,7 @@ export const aaaStadiumGuides: Record<string, StadiumGuide> = {
         budgetOptions: ['Outfield', 'Upper corners'],
         familySections: ['Sections 115-117'],
         tips: [
-          { section: 'Behind home', tip: 'Skyline views', category: 'view' },
-          { section: 'First base', tip: 'Afternoon shade', category: 'shade' }
+          { section: 'Behind home', tip: 'Skyline views', category: 'view' }
         ]
       },
       concessions: {
@@ -3155,7 +3137,7 @@ export const aaaStadiumGuides: Record<string, StadiumGuide> = {
       },
       proTips: {
         insiderTips: ['Hot chicken is spicy', 'Broadway after game'],
-        avoidThese: ['Right field in sun', 'Downtown traffic'],
+        avoidThese: ['Downtown traffic'],
         hiddenGems: ['The Band Box', 'Local beer selection'],
         photoSpots: ['Guitar scoreboard', 'Skyline view'],
         bestValue: ['Outfield seats', 'Tuesday deals']
@@ -3204,8 +3186,7 @@ export const aaaStadiumGuides: Record<string, StadiumGuide> = {
         budgetOptions: ['Upper reserved', 'Outfield'],
         familySections: ['Sections 214-216'],
         tips: [
-          { section: 'Behind home', tip: 'Harbor views', category: 'view' },
-          { section: 'First base', tip: 'Afternoon shade', category: 'shade' }
+          { section: 'Behind home', tip: 'Harbor views', category: 'view' }
         ]
       },
       concessions: {
@@ -3311,7 +3292,7 @@ export const aaaStadiumGuides: Record<string, StadiumGuide> = {
       },
       proTips: {
         insiderTips: ['Crab cakes are excellent', 'Waterside District before game'],
-        avoidThese: ['Right field in sun', 'Tunnel traffic'],
+        avoidThese: ['Tunnel traffic'],
         hiddenGems: ['Harbor walk', 'Local seafood options'],
         photoSpots: ['Harbor backdrop', 'Navy ships'],
         bestValue: ['Upper reserved', 'Tuesday specials']
@@ -3466,7 +3447,7 @@ export const aaaStadiumGuides: Record<string, StadiumGuide> = {
       },
       proTips: {
         insiderTips: ['Grass berm great for families', 'Runza is must-try'],
-        avoidThese: ['Left field in sun', 'Late arrival parking'],
+        avoidThese: ['Late arrival parking'],
         hiddenGems: ['Party porch', 'Local beer selection'],
         photoSpots: ['Main entrance', 'With mascots'],
         bestValue: ['Grass berm', 'Tuesday deals']
@@ -3515,8 +3496,7 @@ export const aaaStadiumGuides: Record<string, StadiumGuide> = {
         budgetOptions: ['Upper reserved', 'Outfield'],
         familySections: ['Sections 211-213'],
         tips: [
-          { section: 'Behind home', tip: 'Skyline views', category: 'view' },
-          { section: 'First base', tip: 'Afternoon shade', category: 'shade' }
+          { section: 'Behind home', tip: 'Skyline views', category: 'view' }
         ]
       },
       concessions: {
@@ -3622,7 +3602,7 @@ export const aaaStadiumGuides: Record<string, StadiumGuide> = {
       },
       proTips: {
         insiderTips: ['Garbage plate is huge', 'High Falls before game'],
-        avoidThese: ['Left field in sun', 'Limited parking'],
+        avoidThese: ['Limited parking'],
         hiddenGems: ['Local beer selection', 'Party deck'],
         photoSpots: ['Skyline view', 'High Falls nearby'],
         bestValue: ['Upper reserved', 'Thursday specials']
@@ -3671,8 +3651,7 @@ export const aaaStadiumGuides: Record<string, StadiumGuide> = {
         budgetOptions: ['Bleachers', 'Upper reserved'],
         familySections: ['Sections 10-12'],
         tips: [
-          { section: 'Behind home', tip: 'Mountain views', category: 'view' },
-          { section: 'First base', tip: 'Afternoon shade', category: 'shade' }
+          { section: 'Behind home', tip: 'Mountain views', category: 'view' }
         ]
       },
       concessions: {
@@ -3776,7 +3755,7 @@ export const aaaStadiumGuides: Record<string, StadiumGuide> = {
       },
       proTips: {
         insiderTips: ['Mountain views at sunset', 'Yankees rehab appearances'],
-        avoidThese: ['Left field in sun', 'Limited food late'],
+        avoidThese: ['Limited food late'],
         hiddenGems: ['Pierogy race', 'Local beer'],
         photoSpots: ['Mountain backdrop', 'With Champ'],
         bestValue: ['Bleachers', 'Tuesday deals']
@@ -3932,7 +3911,7 @@ export const aaaStadiumGuides: Record<string, StadiumGuide> = {
       },
       proTips: {
         insiderTips: ['Dog park unique feature', 'Green Line convenient'],
-        avoidThese: ['Right field in sun', 'Limited parking'],
+        avoidThese: ['Limited parking'],
         hiddenGems: ['Lawn seating', 'Local beer selection'],
         photoSpots: ['Skyline view', 'With Mudonna'],
         bestValue: ['Lawn seats', 'Thursday deals']
@@ -3981,8 +3960,7 @@ export const aaaStadiumGuides: Record<string, StadiumGuide> = {
         budgetOptions: ['Bleachers', 'Upper reserved'],
         familySections: ['Sections 208-210'],
         tips: [
-          { section: 'Behind home', tip: 'Best views', category: 'view' },
-          { section: 'First base', tip: 'Afternoon shade', category: 'shade' }
+          { section: 'Behind home', tip: 'Best views', category: 'view' }
         ]
       },
       concessions: {
@@ -4086,7 +4064,7 @@ export const aaaStadiumGuides: Record<string, StadiumGuide> = {
       },
       proTips: {
         insiderTips: ['Salt potatoes unique', 'Mets rehabs common'],
-        avoidThese: ['Left field in sun', 'Limited late food'],
+        avoidThese: ['Limited late food'],
         hiddenGems: ['Party deck', 'Local beer'],
         photoSpots: ['Skyline view', 'With Scooch'],
         bestValue: ['Bleachers', 'Tuesday deals']
@@ -4241,7 +4219,7 @@ export const aaaStadiumGuides: Record<string, StadiumGuide> = {
       },
       proTips: {
         insiderTips: ['Tony Packos famous', 'Tigers rehabs common'],
-        avoidThese: ['Left field in sun', 'Limited parking'],
+        avoidThese: ['Limited parking'],
         hiddenGems: ['The Roost', 'Hensville before game'],
         photoSpots: ['Warehouse backdrop', 'With Muddy'],
         bestValue: ['Bleachers', 'Tuesday deals']
@@ -4398,7 +4376,7 @@ export const aaaStadiumGuides: Record<string, StadiumGuide> = {
       },
       proTips: {
         insiderTips: ['Worcester Wall unique', 'Red Sox rehabs frequent'],
-        avoidThese: ['Left field wall sun', 'Limited street parking'],
+        avoidThese: ['Limited street parking'],
         hiddenGems: ['DCU Club', 'Canal District before'],
         photoSpots: ['Worcester Wall', 'With Smiley Ball'],
         bestValue: ['Upper reserved', 'Student nights']
@@ -4448,8 +4426,7 @@ export const aaaStadiumGuides: Record<string, StadiumGuide> = {
         budgetOptions: ['Berm seating', 'Upper reserved'],
         familySections: ['Sections 115-117'],
         tips: [
-          { section: 'Behind home', tip: 'Mountain views', category: 'view' },
-          { section: 'First base', tip: 'Afternoon shade', category: 'shade' }
+          { section: 'Behind home', tip: 'Mountain views', category: 'view' }
         ]
       },
       concessions: {
@@ -4554,7 +4531,7 @@ export const aaaStadiumGuides: Record<string, StadiumGuide> = {
       },
       proTips: {
         insiderTips: ['Green chile on everything', 'Balls fly at altitude', 'Sunscreen essential'],
-        avoidThese: ['Right field in sun', 'Forgetting water', 'Underestimating sun'],
+        avoidThese: ['Forgetting water', 'Underestimating sun'],
         hiddenGems: ['Berm seating', 'Local beer selection', 'Mariachi nights'],
         photoSpots: ['Mountain backdrop', 'With Orbit', 'Sunset views'],
         bestValue: ['Berm seating', 'Thirsty Thursday', 'Dollar Dog nights']
@@ -4604,8 +4581,7 @@ export const aaaStadiumGuides: Record<string, StadiumGuide> = {
         budgetOptions: ['Upper reserved', 'Outfield'],
         familySections: ['Sections 205-207'],
         tips: [
-          { section: 'Behind home', tip: 'Mountain views', category: 'view' },
-          { section: 'First base', tip: 'Afternoon shade', category: 'shade' }
+          { section: 'Behind home', tip: 'Mountain views', category: 'view' }
         ]
       },
       concessions: {
@@ -4768,7 +4744,6 @@ export const aaaStadiumGuides: Record<string, StadiumGuide> = {
       standingRoom: ['Party deck', 'Outfield concourse'],
       partyAreas: [{ name: 'Corona Beach House', capacity: '150', amenities: ['Beach theme', 'Group seating'] }],
       tips: [
-        { section: 'Sections 109-111', tip: 'Best shade for day games', category: 'shade' },
         { section: 'Sections 106-108', tip: 'Close to Bricktown', category: 'experience' },
         { section: 'Lawn', tip: 'Great value for families', category: 'value' }
       ]
@@ -4836,7 +4811,6 @@ export const aaaStadiumGuides: Record<string, StadiumGuide> = {
       tips: [
         { title: 'Explore Bricktown', description: 'Arrive early to enjoy restaurants and bars', category: 'arrival' },
         { title: 'Canal walk', description: 'Take the canal boat to the ballpark', category: 'experience' },
-        { title: 'Shade priority', description: 'Third base side for afternoon games', category: 'shade' },
         { title: 'Stay after', description: 'Bricktown nightlife after games', category: 'departure' }
       ],
       typicalSchedule: {
@@ -4902,7 +4876,6 @@ export const aaaStadiumGuides: Record<string, StadiumGuide> = {
       ],
       avoidThese: [
         'Driving right at game time',
-        'Outfield during day games',
         'Limited parking nearby'
       ],
       hiddenGems: [
@@ -4974,7 +4947,6 @@ export const aaaStadiumGuides: Record<string, StadiumGuide> = {
       standingRoom: ['Aces Alley', 'Party deck'],
       partyAreas: [{ name: 'Party Deck', capacity: '200', amenities: ['Bar', 'Standing room'] }],
       tips: [
-        { section: 'Sections 112-114', tip: 'Best shade and value', category: 'shade' },
         { section: 'Sections 101-103', tip: 'Close to Freight House', category: 'experience' },
         { section: 'Lawn', tip: 'Bring blankets, great for families', category: 'family' }
       ]
@@ -5103,7 +5075,6 @@ export const aaaStadiumGuides: Record<string, StadiumGuide> = {
         'Lawn seating great for families'
       ],
       avoidThese: [
-        'Sections 107-111 for day games',
         'Limited shade options',
         'Parking fills quickly'
       ],
@@ -5183,7 +5154,6 @@ export const aaaStadiumGuides: Record<string, StadiumGuide> = {
         { name: 'Pool', capacity: '30', amenities: ['Swimming', 'Seating'] }
       ],
       tips: [
-        { section: 'Sections 113-115', tip: 'Best shade for Texas heat', category: 'shade' },
         { section: 'Berm', tip: 'Great for families with kids', category: 'family' },
         { section: 'Pool area', tip: 'Unique experience, book early', category: 'experience' }
       ]
@@ -5324,9 +5294,7 @@ export const aaaStadiumGuides: Record<string, StadiumGuide> = {
         'United Heritage Center best for heat'
       ],
       avoidThese: [
-        'I-35 at rush hour',
-        'Sections 106-112 for day games',
-        'Limited shade in outfield'
+        'I-35 at rush hour'
       ],
       hiddenGems: [
         'Nolan Ryan exhibit',
@@ -5400,7 +5368,6 @@ export const aaaStadiumGuides: Record<string, StadiumGuide> = {
         { name: 'Budweiser Bow Tie Bar', capacity: '100', amenities: ['Full bar', 'Standing room'] }
       ],
       tips: [
-        { section: 'Sections 110-112', tip: 'Best shade and value', category: 'shade' },
         { section: 'Berm', tip: 'Perfect for families with young kids', category: 'family' },
         { section: 'Club seats', tip: 'AC relief from humidity', category: 'experience' }
       ]
