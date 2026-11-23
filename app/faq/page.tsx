@@ -220,7 +220,7 @@ export default function FAQPage() {
               </li>
               <li>
                 <Link href="/guide/best-shaded-seats-mlb">
-                  MLB Shade Data Trust Guide
+                  Best Shaded Seats at MLB Ballparks
                 </Link>
               </li>
               <li>

@@ -16,46 +16,45 @@ export default function AttributionsPage() {
     <div className="page-container prose prose-slate max-w-prose mx-auto px-4 py-8 stack">
       <h1 className="h1 break-words md:break-normal">Technology & Attributions</h1>
       <p className="text-lg text-gray-600">
-        The Shadium combines solar calculations with weather, schedule, and venue-source data.
-        Each source supports a different claim; none is presented as proof of unmeasured seat geometry.
+        The Shadium combines the sun&apos;s position with the shape of the stands (measured at 24
+        MLB parks), the real game schedule and the weather. These are the sources behind each.
       </p>
 
       <section className="stack">
         <h2 className="h2">🌞 Solar Position Calculations</h2>
         
         <div className="bg-amber-50 border border-amber-200 p-6 rounded-lg">
-          <h3 className="h3 text-amber-900">NOAA Solar Calculator</h3>
+          <h3 className="h3 text-amber-900">NREL Solar Position Algorithm</h3>
           <p>
-            Sun position is computed with the NOAA Global Monitoring Laboratory Solar Calculator
-            (Jean Meeus, <em>Astronomical Algorithms</em>), including atmospheric refraction so
-            evening shade uses the sun as it appears in the sky. Typical agreement with the
-            NREL Solar Position Algorithm is within 0.01°.
+            Sun position is computed with the Solar Position Algorithm (SPA) of the U.S. National
+            Renewable Energy Laboratory, including atmospheric refraction, so evening shade uses
+            the sun as it appears in the sky. We check it against the worked example in
+            NREL&apos;s paper and against NOAA&apos;s Solar Calculator at every park.
           </p>
-          
+
           <div className="mt-4 p-4 bg-white rounded-md">
             <p className="font-semibold">Academic Citation:</p>
             <p className="text-sm italic">
-              Meeus, J. (1998). Astronomical Algorithms (2nd ed.). Willmann-Bell.
-              Implemented following NOAA GML Solar Calculator,
-              https://gml.noaa.gov/grad/solcalc/.
+              Reda, I. and Andreas, A. Solar Position Algorithm for Solar Radiation Applications.
+              NREL/TP-560-34302, revised January 2008.
             </p>
             <p className="text-sm mt-2">
-              <a 
-                href="https://gml.noaa.gov/grad/solcalc/" 
-                target="_blank" 
+              <a
+                href="https://www.nrel.gov/docs/fy08osti/34302.pdf"
+                target="_blank"
                 rel="noopener noreferrer"
                 className="text-blue-600 hover:underline"
               >
-                NOAA Solar Calculator
+                The SPA paper (PDF)
               </a>
               {' | '}
-              <a 
-                href="https://gml.noaa.gov/grad/solcalc/calcdetails.html" 
-                target="_blank" 
+              <a
+                href="https://gml.noaa.gov/grad/solcalc/"
+                target="_blank"
                 rel="noopener noreferrer"
                 className="text-blue-600 hover:underline"
               >
-                Calculation details
+                NOAA Solar Calculator (our cross-check)
               </a>
             </p>
           </div>
@@ -133,15 +132,21 @@ export default function AttributionsPage() {
         <div className="bg-purple-50 border border-purple-200 p-6 rounded-lg">
           <h3 className="h3 text-purple-900">Stadium Information</h3>
           <p>
-            Stadium dimensions, seating configurations, and orientation data are compiled from 
-            various public sources and verified through satellite imagery and official venue information.
+            Where each MLB park&apos;s sections are, and the shape of the stands around them, come
+            from public sources:
           </p>
-          
+
           <ul className="list-disc list-inside text-sm space-y-1 mt-4">
             <li>Stadium coordinates and dimensions from official venue specifications</li>
-            <li>Seating section data from publicly available seating charts</li>
-            <li>Field orientation verified through satellite imagery analysis</li>
-            <li>Shade structures and roof coverage from architectural documentation</li>
+            <li>Section positions from each club&apos;s published seating chart</li>
+            <li>
+              Stand heights, decks and roofs at 24 MLB parks measured from USGS 3D Elevation
+              Program lidar (public domain)
+            </li>
+            <li>
+              The direction 28 of the 30 parks face, measured from USDA NAIP aerial photos (City of
+              Toronto photos for Rogers Centre)
+            </li>
           </ul>
         </div>
       </section>
@@ -183,27 +188,34 @@ export default function AttributionsPage() {
         
         <div className="bg-indigo-50 border border-indigo-200 p-6 rounded-lg">
           <h3 className="h3 text-indigo-900">How We Calculate Shade</h3>
-          
+          <p className="mt-2">
+            At MLB parks (more on{' '}
+            <Link href="/how-it-works" className="text-blue-600 hover:underline">
+              How It Works
+            </Link>
+            ):
+          </p>
+
           <ol className="list-decimal list-inside space-y-3 mt-4">
             <li>
-              <strong>Solar Position:</strong> Calculate the sun's azimuth and elevation using the
-              NOAA Solar Calculator (Meeus) for the specific date, time, and stadium location.
+              <strong>Sun position:</strong> NREL&apos;s Solar Position Algorithm, for the date,
+              time and park.
             </li>
             <li>
-              <strong>Shadow Projection:</strong> Project shadows from stadium structures (roof, 
-              upper decks) onto seating sections using 3D geometry.
+              <strong>Shadows:</strong> the shadows the stands, the deck above and the roof throw
+              over each section&apos;s rows.
             </li>
             <li>
-              <strong>Weather Adjustment:</strong> Modify sun exposure based on cloud cover and 
-              precipitation probability from weather data.
+              <strong>Through the game:</strong> every half hour from first pitch.
             </li>
             <li>
-              <strong>Time Integration:</strong> Calculate percentage of game time each section 
-              will be in direct sunlight vs. shade.
+              <strong>Confidence:</strong> each section&apos;s answer is High, Medium or Low, by
+              whether it holds if the park&apos;s direction or the stands&apos; heights are a
+              little off.
             </li>
             <li>
-              <strong>Comfort Scoring:</strong> Generate recommendations based on sun exposure, 
-              temperature, and UV index.
+              <strong>Weather:</strong> the MLB map shows a clear sky; the full finder for MiLB and
+              NFL venues shows Open-Meteo&apos;s forecast.
             </li>
           </ol>
         </div>
