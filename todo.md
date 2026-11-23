@@ -5174,11 +5174,11 @@ false sentences beside it:
     Scoring", isn't part of the shade answer.
 
 **The fix (one commit each):**
-- [ ] F1 Link text, both links: "MLB Shade Data Trust Guide" → "Best
+- [x] F1 Link text, both links: "MLB Shade Data Trust Guide" → "Best
       Shaded Seats at MLB Ballparks".
-- [ ] F2 Footer: "☀️ Sun: NOAA Solar Calculator" → "☀️ Sun: NREL Solar
+- [x] F2 Footer: "☀️ Sun: NOAA Solar Calculator" → "☀️ Sun: NREL Solar
       Position Algorithm".
-- [ ] F3 /attributions:
+- [x] F3 /attributions:
       - Intro: "The Shadium combines the sun's position with the measured
         shape of each park's stands, the real game schedule and the
         weather. These are the sources behind each."
@@ -5212,16 +5212,16 @@ false sentences beside it:
            heights are a little off.
         5. Weather: the MLB map shows a clear sky; the full finder for
            MiLB and NFL venues shows Open-Meteo's forecast.
-- [ ] F4 /disclaimer: the NOAA box becomes "NREL Solar Position
+- [x] F4 /disclaimer: the NOAA box becomes "NREL Solar Position
       Algorithm": "Sun position from the Solar Position Algorithm of the
       U.S. National Renewable Energy Laboratory (Reda and Andreas,
       NREL/TP-560-34302)", with the paper's URL.
-- [ ] F5 `AttributionNotice`:
+- [x] F5 `AttributionNotice`:
       - the `nrel` case credits NREL's SPA and links the paper;
       - `noaa` comes out of the type, since no caller passes it (tsc
         checks);
       - the `all` case's sun line says NREL.
-- [ ] F6 `public/llms.txt`:
+- [x] F6 `public/llms.txt`:
       - Line 5: "The Shadium works out shade from the sun's position
         (NREL's Solar Position Algorithm), the shape of each park's
         stands, decks and roofs (measured from USGS lidar at 24 MLB
@@ -5236,9 +5236,9 @@ false sentences beside it:
         - "MiLB and NFL pages are sun and shade guides: which side or
           sideline tends to shade first, going by the way the venue faces,
           plus seating, food and travel notes."
-- [ ] F7 `sunCalculations.ts:45` comment: "NOAA refraction" → "SPA
+- [x] F7 `sunCalculations.ts:45` comment: "NOAA refraction" → "SPA
       refraction".
-- [ ] F8 Check:
+- [x] F8 Check:
       - re-run the search: only the "right as is" hits and the two unused
         files are left;
       - jest, tsc, eslint;
@@ -5251,6 +5251,44 @@ Shaded Sections by Time" can differ from the page's own answer. At Isotopes
 Park, it says "first base side, upper deck" for afternoon games, but the
 answer says "the seating behind home plate tends to shade first". That's
 venue guide data for 120 parks, a task of its own.
+
+## §26 Review (2026-11-23)
+
+**What changed:** seven commits after the plan's, on `fix/copy-leftovers`.
+Copy and one code comment only, no logic.
+- *F1 (ebcf0b734):* the links on /faq and the avoid-sun guide say "Best
+  Shaded Seats at MLB Ballparks".
+- *F2 (81206febd):* the footer on every page says "☀️ Sun: NREL Solar
+  Position Algorithm".
+- *F3 (6e46822de):* /attributions has a new intro and an NREL box
+  (citation, the paper's link, and NOAA's calculator as the cross-check).
+  Its Stadium Data list credits USGS 3DEP lidar and NAIP/Toronto photos,
+  and How We Calculate Shade lists five steps that match how-it-works.
+- *F4 (69d183350):* /disclaimer's NOAA box became an NREL box.
+- *F5 (d8f8e84e2):* `AttributionNotice`'s `nrel` and `all` cases credit
+  NREL; `noaa` left the type (its one caller passes `weather`).
+- *F6 (dd9a25c20):* `llms.txt` line 5 gives the real method; line 10
+  became one line for MLB pages and one for MiLB and NFL.
+- *F7 (6072a39a8):* the comment in `sunCalculations.ts` names SPA's
+  refraction.
+
+**Checks:**
+- *Search:* only the "right as is" hits are left (how-it-works and
+  /attributions naming NOAA's calculator as the cross-check, the test-only
+  reference, the NOAA lidar evidence, the SunCalc angle names), plus the
+  two files nothing imports.
+- *Dev server:* on `/`, /faq, the avoid-sun guide, /attributions,
+  /disclaimer, /how-it-works, /seats-shade-finder, /stadium/yankees and
+  /llms.txt (all 200), none of the old phrases show. The new ones show where
+  expected (the footer on every route). /attributions looks right, with no
+  console errors.
+- *Tests:* jest 3,608 of 3,608; tsc clean.
+- *Lint:* eslint gives no errors. Its 19 warnings in the changed files
+  are all on lines this branch didn't touch.
+- *Not yet:* the live pages, after merge.
+
+**Not changed:** `MobileHeader.tsx` and `AttributionFooter.tsx` (nothing
+imports them); the MiLB guide blocks (above).
 
 ---
 ---
