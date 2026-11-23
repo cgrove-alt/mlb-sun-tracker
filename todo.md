@@ -5691,16 +5691,26 @@ With the final directions the plan's table reads (120 parks):
   the Athletics' page), Regions Field (two sides), Ron Tonkin Field (none
   clear) and Lambeau Field (unchanged). No console or server errors.
 
+**Added after the review** (asked, 2026-11-23): /attributions credits the
+aerial photos and the Copernicus Sentinel images behind the MiLB directions.
+
 **Corrections to the plan:**
-- G2 doesn't fix the finder. Its MiLB section layouts count angles from
-  behind home plate, but the shade code counts from first base
-  (`sectionCompassAngle`), so every MiLB section is 90° off even with the
-  right direction. (With the wrong directions it averaged about 122°.)
+- G2 doesn't fix the finder, whose MiLB section layouts are wrong for a
+  reason of their own. (Corrected 2026-11-23: this first said every MiLB
+  section is 90° off. That is so at 35 parks. At 82, the sections were laid
+  out from the old wrong directions, and 3 can't be placed. §28, on
+  `claude/admiring-austin-0ae2e0`, has the findings.) What G2 does to it:
+  - At the 82, the old direction canceled out before, so the first section
+    sat at about 115° at every one of them. Now it turns with the
+    correction. Neither means anything.
+  - At the 35, every section is now 90° off. 29 of them were further off
+    before and 6 were closer, 2 of those (Daytona, St. Paul) nearly right by
+    luck, 12° off.
 - The game-day tip was Oklahoma City's, not Las Vegas's.
 - G5 also found 3 "…for day games" entries in Things to Avoid.
 
 **Not changed (noticed):**
-- The finder's 90°, above.
+- The finder's MiLB sections, above (§28 has a plan).
 - The two pages with no guide (Knoxville, Columbus) return before the answer
   block, so they show no answer or title.
 - The Salt Lake guide describes Smith's Ballpark; the Bees' 2025 park is The
