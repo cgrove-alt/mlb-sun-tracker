@@ -6223,10 +6223,9 @@ correcting its angles against naming a sideline, and plan the fix. Branch
 this file has changed.
 
 **Overlap:** while I worked, the main session planned and built that same fix
-on `fix/nfl-finder-sections` (its §29, N1–N4 and N6; not pushed or merged).
-`fix/finder-leftovers` has another §29, so this is §30. I don't plan the list
-again: findings 1–5 are separate checks on that choice, and the plan is what
-it leaves.
+on `fix/nfl-finder-sections` (its §29, N1–N4 and N6; merged since as PR #105,
+with §31). I don't plan the list again: findings 1–5 are separate checks on
+that choice, and the plan is what it leaves.
 
 **In short:** naming a sideline is right, and correcting the angles would
 have made the answers worse. §29's answer is the same as mine at all 212
@@ -6373,7 +6372,7 @@ six 2025 Sundays):
 ### Plan (waiting for your go-ahead)
 
 After `fix/nfl-finder-sections` and `fix/finder-leftovers` merge (they change
-the same files). One PR, one commit per step.
+the same files); they have since. P1–P3 went first, in a PR of their own.
 
 - [x] P1. `nflApiClient.ts`, `nflApi.ts`: one request for the stadium's team.
       Keep ESPN's own instant in `gameDate`, as MLB games do, so the picker
@@ -6437,11 +6436,11 @@ for AT&T.
 
 ### §30 Review, P1–P3 (2026-11-23)
 
-Go-ahead: "go ahead with P1–P5", passed on by the session that started this
-one. P6 (deletions) isn't approved. P4 and P5 need `nflGameShade`, which is
-only on `fix/nfl-finder-sections`, so they wait for it to reach `main`.
-Question 4: "leave the Bills' 2026 games out", passed on the same way.
-Nothing is pushed.
+Go-ahead: "go ahead with P1–P5", then "leave the Bills' 2026 games out"
+(question 4) and "have the NFL session open a PR for P1–P3", passed on by the
+session that started this one. P6 (deletions) isn't approved. P4 and P5 needed
+`nflGameShade`, which reached `main` (PR #105) after P1–P3 were done; they're
+for the next PR. `main` at 977a45f37 is merged in here.
 
 **What changed:** 4 commits, one per step and one for the Bills.
 - *P1 (b6318163e):* `fetchVenueSchedule` asks ESPN once for the stadium's own
@@ -6473,15 +6472,21 @@ Nothing is pushed.
   At Highmark the date form comes up at once, and it and the Custom Time tab
   both work: 1:00 PM on December 20, 2026 and September 28, 2025 give the sun
   at 22.9° and 44.9°, as the NOAA equations do.
-- *Against the NFL branch:* a dry-run merge has one conflict, this file.
+- *With `main` merged in (§29, §31):* the one conflict was this file. 4,084 of
+  4,084 tests (§31's 4,038 and these 46), and the live schedule check the same.
+  In a browser the two halves meet: "Dec 20, 12:00 PM CST - Dolphins @
+  Packers" gives "For the 12:00 PM game on December 20 at Lambeau Field, the
+  sun is on the west side of the field …", the 7:20 PM game on December 13
+  says the sun is down, and on a phone-size window the Ravens' games and a
+  typed date at Highmark get their answers.
 
 **Open:**
 - *Bills:* a date typed in the finder, and their page, still answer for the
   old stadium. Measuring the new one is its own task. The form says the
   schedule is "currently unavailable", which isn't quite why.
 - Not tested: Safari and Firefox, and the built site in a browser.
-- After the NFL branch merges, two lines still say only MLB has a schedule
-  (step 2 on `/seats-shade-finder`, and the finder's "no game" line).
+- Two lines still say only MLB has a schedule (step 2 on
+  `/seats-shade-finder`, and the finder's "no game" line).
 - Playoff games aren't listed, as before (`seasontype=2`).
 
 ## §31 Three leftovers from checking §28 (plan, 2026-11-23)
