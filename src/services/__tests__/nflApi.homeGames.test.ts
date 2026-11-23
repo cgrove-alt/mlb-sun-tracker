@@ -4,6 +4,7 @@ import { ALL_UNIFIED_VENUES } from '../../data/unifiedVenues';
 import { formatGameTimeInStadiumTZ } from '../../utils/dateTimeUtils';
 // ESPN's own answers (2026-11-23), cut down to the fields we read.
 import { jaguars2025, ravens2026 } from './fixtures/espnTeamSchedules.json';
+import { bills2025, bills2026 } from './fixtures/espnBills.json';
 
 const NOW = new Date('2025-09-01T12:00:00Z');
 const espn = jest.fn();
@@ -86,4 +87,26 @@ describe("an NFL stadium's home games", () => {
       expect(espn).toHaveBeenCalledTimes(1);
       expect(espn.mock.calls[0][0]).toMatch(/\/teams\/\d+\/schedule\?season=2025&seasontype=2$/);
     });
+});
+
+// The Bills moved in 2026. We measured the stadium they left.
+describe('the Bills', () => {
+  it('list their games at the stadium we measured', async () => {
+    answer(bills2025);
+    const games = await nflApiClient.fetchVenueSchedule('highmark-stadium', 2025);
+    expect(games).toHaveLength(9);
+    expect(label(games[0].gameDate, 'America/New_York')).toBe('Sep 7, 8:20 PM EDT');
+  });
+
+  it('list none of the games at their new one', async () => {
+    answer(bills2026);
+    expect(await nflApiClient.fetchVenueSchedule('highmark-stadium', 2026)).toEqual([]);
+  });
+
+  it('give the fan the date form instead', async () => {
+    jest.spyOn(console, 'error').mockImplementation(() => {});
+    jest.setSystemTime(new Date('2026-11-23T12:00:00Z'));
+    answer(bills2026);
+    await expect(nflApi.getUpcomingVenueGames('highmark-stadium')).rejects.toThrow('NFL schedule data is currently unavailable');
+  });
 });

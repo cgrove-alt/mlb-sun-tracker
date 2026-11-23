@@ -90,6 +90,12 @@ const ESPN_TEAM_TO_VENUE_MAP: Record<string, string> = {
   '26': 'lumen-field' // Seattle Seahawks
 };
 
+// Where a team has left the stadium we measured: ESPN's name for that one. Its
+// games at the new one would get the old one's direction, so they aren't listed.
+const ESPN_NAME_OF_LEFT_STADIUM: Record<string, string> = {
+  'highmark-stadium': 'Highmark Stadium (Old)', // Buffalo Bills, through the 2025 season
+};
+
 class NFLApiClient {
   private baseUrl = 'https://site.api.espn.com/apis/site/v2/sports/football/nfl';
   private retryableFetch = createRetryableFetch({
@@ -151,11 +157,13 @@ class NFLApiClient {
       throw new Error(`HTTP ${response.status}: ${response.statusText}`);
     }
 
+    const leftStadium = ESPN_NAME_OF_LEFT_STADIUM[venueId];
     const data: ESPNTeamSchedule = await response.json();
     const games = (data.events ?? [])
       .filter(({ competitions: [game] }) =>
         game.timeValid &&
         !game.neutralSite &&
+        (!leftStadium || game.venue?.fullName === leftStadium) &&
         game.competitors.some(c => c.homeAway === 'home' && c.id === teamId))
       .map(event => this.convertESPNEventToNFLGame(event, venueId));
 
