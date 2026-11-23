@@ -30,6 +30,7 @@ import { MLBGame } from './services/mlbApi';
 import { NFLGame } from './services/nflApi';
 import { MiLBGame } from './services/milbApi';
 import { gameShade } from './utils/shadeSide';
+import { readFinderLink } from './utils/finderLink';
 import { WeatherForecast, weatherApi } from './services/weatherApi';
 import { OfflineIndicator } from './components/OfflineIndicator';
 import { trackStadiumSelection, trackGameSelection } from './utils/analytics';
@@ -62,41 +63,11 @@ function UnifiedAppContent() {
     [selectedVenue, gameDateTime],
   );
 
-  // Load venue from URL parameters on mount
+  // Open the park and time a link names
   useEffect(() => {
-    if (typeof window === 'undefined') return;
-    
-    const urlParams = new URLSearchParams(window.location.search);
-    const venueParam = urlParams.get('venue');
-    const stadiumParam = urlParams.get('stadium');
-    const datetimeParam = urlParams.get('datetime');
-    
-    // Check for venue parameter (for MiLB/NFL venues)
-    if (venueParam) {
-      const venue = ALL_UNIFIED_VENUES.find(v => v.id === venueParam);
-      if (venue) {
-        setSelectedVenue(venue);
-      }
-    }
-    // Check for stadium parameter (for MLB stadiums - backward compatibility)
-    else if (stadiumParam) {
-      const venue = ALL_UNIFIED_VENUES.find(v => v.id === stadiumParam);
-      if (venue) {
-        setSelectedVenue(venue);
-      }
-    }
-    
-    // If datetime is provided, set it
-    if (datetimeParam) {
-      try {
-        const dateTime = new Date(datetimeParam);
-        if (!isNaN(dateTime.getTime())) {
-          setGameDateTime(dateTime);
-        }
-      } catch (error) {
-        console.error('Invalid datetime parameter:', error);
-      }
-    }
+    const { venue, dateTime } = readFinderLink(window.location.search);
+    if (venue) setSelectedVenue(venue);
+    if (dateTime) setGameDateTime(dateTime);
   }, []); // Only run once on mount
 
   // Load weather forecast

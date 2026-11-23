@@ -4,6 +4,7 @@ import { Stadium } from './data/stadiums';
 import { UnifiedVenue, convertToLegacyStadium } from './data/unifiedVenues';
 import { getVenueSections } from './data/venueSections';
 import { gameShade } from './utils/shadeSide';
+import { readFinderLink } from './utils/finderLink';
 import { MLBGame } from './services/mlbApi';
 import { MiLBGame } from './services/milbApi';
 import { NFLGame } from './services/nflApi';
@@ -53,6 +54,13 @@ const MobileApp: React.FC = () => {
     () => (selectedVenue?.league === 'MiLB' && gameDateTime ? gameShade(selectedVenue, gameDateTime) : undefined),
     [selectedVenue, gameDateTime],
   );
+
+  // Open the park and time a link names
+  useEffect(() => {
+    const { venue, dateTime } = readFinderLink(window.location.search);
+    if (venue) setSelectedVenue(venue);
+    if (dateTime) setGameDateTime(dateTime);
+  }, []);
 
   // Convert unified venue to legacy stadium when needed
   useEffect(() => {
