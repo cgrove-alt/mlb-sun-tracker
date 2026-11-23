@@ -17,7 +17,7 @@ import { WeatherDisplay } from './components/WeatherDisplay';
 import { EmptyState } from './components/EmptyStates';
 import { weatherApi } from './services/weatherApi';
 import { SunCalculator } from './utils/sunCalculator';
-import { getSunPosition, getSunDescription, getCompassDirection } from './utils/sunCalculations';
+import { getSunPosition, getSunDescription, getCompassDirection, type SunPosition } from './utils/sunCalculations';
 import { SunIcon, MoonIcon } from './components/Icons';
 import { FidelityNotice } from './components/FidelityNotice';
 import { ShadeAnswer } from './components/ShadeAnswer';
@@ -44,7 +44,7 @@ const MobileApp: React.FC = () => {
   const [error, setError] = useState<string | null>(null);
   const [weatherForecast, setWeatherForecast] = useState<any>(null);
   const [isWeatherLoading, setIsWeatherLoading] = useState(false);
-  const [sunPosition, setSunPosition] = useState<any>(null);
+  const [sunPosition, setSunPosition] = useState<SunPosition | null>(null);
 
   const [isCalculating, setIsCalculating] = useState(false);
   // MLB ballparks have the game-by-game shade map on their own page, and minor
@@ -173,10 +173,7 @@ const MobileApp: React.FC = () => {
     try {
       // Calculate sun position
       const position = getSunPosition(gameDateTime, selectedVenue.latitude, selectedVenue.longitude);
-      setSunPosition({
-        altitudeDegrees: position.altitudeDegrees,
-        azimuthDegrees: position.azimuthDegrees
-      });
+      setSunPosition(position);
 
       if (selectedVenue.league !== 'NFL') {
         setAllSections([]);
@@ -355,7 +352,7 @@ const MobileApp: React.FC = () => {
                       <SunIcon size={24} />
                       <div className="sun-details">
                         <span className="sun-status">
-                          Sun is {getSunDescription(sunPosition.altitudeDegrees)}
+                          {getSunDescription(sunPosition)}
                         </span>
                         <span className="sun-position">
                           {sunPosition.altitudeDegrees.toFixed(1)}° · {getCompassDirection(sunPosition.azimuthDegrees)}

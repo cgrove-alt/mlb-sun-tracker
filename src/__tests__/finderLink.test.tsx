@@ -64,3 +64,9 @@ describe.each([['desktop', 1280], ['mobile', 390]])('a finder link on %s', (_dev
     expect(screen.queryByText(/For the .* game on/)).toBeNull();
   });
 });
+
+it('the mobile sun line says how high the sun is', async () => {
+  await open('?venue=memphis-redbirds&datetime=2025-07-20T18:35:00-05:00', 390);
+  expect(document.querySelector('.sun-status')?.textContent).toBe('Sun is low in the sky');
+  expect(document.querySelector('.sun-position')?.textContent).toBe('17.9° · W');
+});
