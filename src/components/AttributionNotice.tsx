@@ -1,6 +1,6 @@
 import React from 'react';
 
-export type AttributionType = 'mlb' | 'weather' | 'nrel' | 'noaa' | 'all';
+export type AttributionType = 'mlb' | 'weather' | 'nrel' | 'all';
 
 interface AttributionNoticeProps {
   type: AttributionType;
@@ -55,21 +55,19 @@ export const AttributionNotice: React.FC<AttributionNoticeProps> = ({
         );
       
       case 'nrel':
-      case 'noaa':
         return (
           <>
             {showIcon && <span className="attribution-icon">☀️</span>}
             <span className="attribution-text">
-              Sun calculations powered by the{' '}
-              <a 
-                href="https://gml.noaa.gov/grad/solcalc/" 
-                target="_blank" 
+              Sun position from NREL&apos;s{' '}
+              <a
+                href="https://www.nrel.gov/docs/fy08osti/34302.pdf"
+                target="_blank"
                 rel="noopener noreferrer"
                 className="attribution-link"
               >
-                NOAA Solar Calculator
+                Solar Position Algorithm
               </a>
-              {' '}(Meeus, Astronomical Algorithms)
             </span>
           </>
         );
@@ -109,14 +107,14 @@ export const AttributionNotice: React.FC<AttributionNoticeProps> = ({
             <div className="attribution-item">
               {showIcon && <span className="attribution-icon">☀️</span>}
               <span className="attribution-text">
-                Sun calculations:{' '}
-                <a 
-                  href="https://gml.noaa.gov/grad/solcalc/" 
-                  target="_blank" 
+                Sun:{' '}
+                <a
+                  href="https://www.nrel.gov/docs/fy08osti/34302.pdf"
+                  target="_blank"
                   rel="noopener noreferrer"
                   className="attribution-link"
                 >
-                  NOAA Solar Calculator
+                  NREL Solar Position Algorithm
                 </a>
               </span>
             </div>
