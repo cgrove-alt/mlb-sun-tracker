@@ -19,9 +19,10 @@ Method:
      on dirt and -1 on grass against (red - green) / brightness.
   3. Turn it through every direction and slide it up to 15 m around the
      mound. The best normalized match is the direction.
-  4. Parks with no usable photo (new in 2025, or in Canada) are fitted the
-     same way to Sentinel-2 images (10 m pixels) from the 2025 season: the
-     median of the dates that match at 0.6 or better.
+  4. Parks no photo shows (new in 2025, or in Canada) and those where neither
+     photo is a clear match are fitted the same way to Sentinel-2 images (10 m
+     pixels) from the 2025 season: the median of the dates that match at 0.6
+     or better.
 
 On 21 open-air MLB parks (measured on their own in
 src/data/orientationMeasurements.ts) NAIP lands within 5 degrees. The 22nd,

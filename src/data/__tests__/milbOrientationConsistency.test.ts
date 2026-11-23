@@ -30,6 +30,19 @@ describe('MiLB park directions', () => {
       .toBe(MILB_FIELD_DIRECTIONS['jupiter-hammerheads'].orientation);
   });
 
+  // Two values once came from satellite images under `method: 'photo'`, so a
+  // re-run of the script measured something else.
+  it.each(Object.entries(MILB_FIELD_DIRECTIONS))('%s: the value is the one its method gives', (_id, park) => {
+    if (park.method === 'photo') {
+      const [naip, usgs] = [...park.source.matchAll(/(?:NAIP|USGS) (\d+)° \(([\d.]+)\)/g)]
+        .map(([, direction, score]) => ({ direction: Number(direction), score: Number(score) }));
+      expect(park.orientation).toBe((naip.score >= usgs.score ? naip : usgs).direction);
+    } else {
+      const median = Number(park.source.match(/^.*?Sentinel-2 2025.*?median ([\d.]+)°/)?.[1]);
+      expect(Math.abs(park.orientation - median)).toBeLessThanOrEqual(0.5);
+    }
+  });
+
   it('every value carries its error, the mound it was measured at and a source', () => {
     for (const park of Object.values(MILB_FIELD_DIRECTIONS)) {
       expect(park.precisionDeg).toBeGreaterThan(0);

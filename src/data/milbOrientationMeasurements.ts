@@ -9,8 +9,11 @@
  * - `photo`: a regulation infield fitted to two USGS aerial photos, centered
  *   on the pitcher's mound (`mound`, latitude and longitude). The value is the
  *   better match's; each source shows both with their scores.
- * - `satellite`: the same fit on Sentinel-2 images, for parks without a usable
- *   photo. The value is the median date's.
+ * - `satellite`: the same fit on Sentinel-2 images, for parks no photo shows
+ *   (new in 2025, or in Canada) and those where neither photo is a clear
+ *   match. The value is the median date's. ±8° because, where four dates agree
+ *   within 12° of each other, their median is within 8° of the known direction
+ *   at 85 of 86 parks (9 MLB, 77 MiLB), and 8.5° off at worst.
  */
 export interface MilbFieldDirection {
   orientation: number;
@@ -32,7 +35,7 @@ export const MILB_FIELD_DIRECTIONS: Record<string, MilbFieldDirection> = {
   'lehigh-valley-ironpigs': { orientation: 50, precisionDeg: 5, method: 'photo', mound: [40.62575, -75.45276], source: 'NAIP 50° (0.88), USGS 50° (0.88); Sentinel-2 2025 48°.' },
   'louisville-bats': { orientation: 15, precisionDeg: 5, method: 'photo', mound: [38.25630, -85.74461], source: 'NAIP 14° (0.77), USGS 15° (0.83); Sentinel-2 2025 14°.' },
   'memphis-redbirds': { orientation: 68, precisionDeg: 5, method: 'photo', mound: [35.14288, -90.04945], source: 'NAIP 68° (0.90), USGS 68° (0.84); Sentinel-2 2025 72°.' },
-  'nashville-sounds': { orientation: 150, precisionDeg: 5, method: 'photo', mound: [36.17285, -86.78488], source: 'NAIP 152° (0.67), USGS 315° (0.66); neither is a clear match, so Sentinel-2 2025, median of 4 dates.' },
+  'nashville-sounds': { orientation: 150, precisionDeg: 8, method: 'satellite', mound: [36.17285, -86.78488], source: 'Sentinel-2 2025, 4 dates, 149–155°, median 150.5° (all 13 clear dates: 151°). Neither photo is a clear match: NAIP 152° (0.67), USGS 315° (0.66).' },
   'norfolk-tides': { orientation: 135, precisionDeg: 5, method: 'photo', mound: [36.84282, -76.27899], source: 'NAIP 135° (0.93), USGS 137° (0.84); Sentinel-2 2025 136°.' },
   'omaha-storm-chasers': { orientation: 47, precisionDeg: 5, method: 'photo', mound: [41.15163, -96.10675], source: 'NAIP 47° (0.95), USGS 227° (0.26); the USGS photo is older than the park; Sentinel-2 2025 49°.' },
   'rochester-red-wings': { orientation: 68, precisionDeg: 5, method: 'photo', mound: [43.15824, -77.61989], source: 'NAIP 68° (0.93), USGS 69° (0.88); Sentinel-2 2025 69°.' },
@@ -111,7 +114,7 @@ export const MILB_FIELD_DIRECTIONS: Record<string, MilbFieldDirection> = {
   'spokane-indians': { orientation: 136, precisionDeg: 5, method: 'photo', mound: [47.66166, -117.34479], source: 'NAIP 136° (0.94), USGS 137° (0.89); Sentinel-2 2025 136°.' },
   'tri-city-dust-devils': { orientation: 181, precisionDeg: 5, method: 'photo', mound: [46.26647, -119.17198], source: 'NAIP 181° (0.94), USGS 183° (0.89); Sentinel-2 2025 180°.' },
   'vancouver-canadians': { orientation: 213, precisionDeg: 8, method: 'satellite', mound: [49.24291, -123.10649], source: 'Sentinel-2 2025, 13 dates, median 213°; OSM way 427252706 (field outline) 211°. No USGS photos in Canada.' },
-  'fresno-grizzlies': { orientation: 100, precisionDeg: 5, method: 'photo', mound: [36.73216, -119.79065], source: 'NAIP 100° (0.65), USGS 103° (0.73); neither is a clear match, so Sentinel-2 2025, median of 4 dates.' },
+  'fresno-grizzlies': { orientation: 100, precisionDeg: 8, method: 'satellite', mound: [36.73216, -119.79065], source: 'Sentinel-2 2025, 4 dates, 98–102°, median 100° (all 19 clear dates: 99°). Neither photo is a clear match: NAIP 100° (0.65), USGS 103° (0.73).' },
   'inland-empire-66ers': { orientation: 45, precisionDeg: 5, method: 'photo', mound: [34.09750, -117.29541], source: 'NAIP 45° (0.86), USGS 45° (0.79); Sentinel-2 2025 46°.' },
   'lake-elsinore-storm': { orientation: 62, precisionDeg: 5, method: 'photo', mound: [33.65427, -117.30236], source: 'NAIP 62° (0.89), USGS 62° (0.83); Sentinel-2 2025 63°.' },
   'modesto-nuts': { orientation: 179, precisionDeg: 5, method: 'photo', mound: [37.62260, -121.00073], source: 'NAIP 179° (0.70), USGS 179° (0.84).' },
