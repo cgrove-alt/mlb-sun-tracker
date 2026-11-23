@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useCallback } from 'react';
+import React, { useState, useEffect, useCallback, useMemo } from 'react';
 import Link from 'next/link';
 import './App.css';
 import { UnifiedVenue, ALL_UNIFIED_VENUES, convertToLegacyStadium } from './data/unifiedVenues';
@@ -20,6 +20,7 @@ import { VenueChangeSkeleton } from './components/SkeletonScreens';
 import { SunIcon, MoonIcon } from './components/Icons';
 import { ErrorBoundary } from './components/ErrorBoundary';
 import { SunExposureExplanation } from './components/SunExposureExplanation';
+import { ShadeAnswer } from './components/ShadeAnswer';
 import MobileApp from './MobileApp';
 
 import { I18nProvider, useTranslation } from './i18n/i18nContext';
@@ -28,7 +29,7 @@ import { getVenueSections } from './data/venueSections';
 import { MLBGame } from './services/mlbApi';
 import { NFLGame } from './services/nflApi';
 import { MiLBGame } from './services/milbApi';
-import { generateBaseballSections } from './utils/generateBaseballSections';
+import { gameShade } from './utils/shadeSide';
 import { WeatherForecast, weatherApi } from './services/weatherApi';
 import { OfflineIndicator } from './components/OfflineIndicator';
 import { trackStadiumSelection, trackGameSelection } from './utils/analytics';
@@ -53,9 +54,13 @@ function UnifiedAppContent() {
 
   // Convert unified venue to legacy stadium format for compatibility
   const legacyStadium = selectedVenue ? convertToLegacyStadium(selectedVenue) : null;
-  // MLB ballparks have the game-by-game shade map on their own page; this
-  // finder's section list is for NFL and minor league venues.
+  // MLB ballparks have the game-by-game shade map on their own page, and minor
+  // league parks have no seating map, so the section list is for NFL venues.
   const isMlb = selectedVenue?.league === 'MLB';
+  const milbGame = useMemo(
+    () => (selectedVenue?.league === 'MiLB' && gameDateTime ? gameShade(selectedVenue, gameDateTime) : undefined),
+    [selectedVenue, gameDateTime],
+  );
 
   // Load venue from URL parameters on mount
   useEffect(() => {
@@ -179,27 +184,15 @@ function UnifiedAppContent() {
         if (isCancelled) return;
         setSunPosition(formattedPosition);
 
-        if (selectedVenue.league === 'MLB') {
+        if (selectedVenue.league !== 'NFL') {
           setDetailedSections([]);
           setShadedSections([]);
           setGameExposureData(null);
           return;
         }
         
-        // Get sections based on venue type
-        let sections: any[] = [];
-        if (selectedVenue.league === 'MiLB') {
-          // Get MiLB sections - will use custom layouts if available
-          sections = getVenueSections(selectedVenue.id);
-          // Fall back to generated sections if no custom layout
-          if (!sections || sections.length === 0) {
-            sections = generateBaseballSections(selectedVenue);
-          }
-        } else {
-          // Use generated sections for other sports
-          sections = getVenueSections(selectedVenue.id);
-        }
-        
+        const sections = getVenueSections(selectedVenue.id);
+
         // Calculate shade for unified venues
         const shadeResults = getUnifiedVenueShade(
           selectedVenue,
@@ -211,7 +204,7 @@ function UnifiedAppContent() {
         if (isCancelled) return;
         setShadedSections(shadeResults);
         
-        // Convert to the section-list format (MLB parks use the shade map on their own page).
+        // Convert to the section-list format.
         const convertedSections: SeatingSectionSun[] = shadeResults.map(result => ({
           section: {
             id: result.section.id,
@@ -412,6 +405,8 @@ function UnifiedAppContent() {
                   </p>
                 </section>
               )}
+
+              {milbGame && <ShadeAnswer venue={selectedVenue} milbGame={milbGame} />}
 
               {!isMlb && selectedVenue && gameDateTime && detailedSections.length > 0 && (
                 <>

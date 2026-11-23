@@ -7,9 +7,9 @@
  * TIER is above Exposed (Covered or Partial) — i.e. the shade table would claim
  * shade the seating tips say those seats don't have.
  *
- * Runs across ALL leagues using the SAME section sources the pages render from:
+ * Runs across MLB and NFL (MiLB parks have no section lists) using the SAME
+ * section sources the pages render from:
  *   MLB  -> getStadiumSectionsAsync (shared per-park DetailedSection modules)
- *   MiLB -> generateBaseballSections(venue)
  *   NFL  -> getVenueSections(venue.id)
  *
  * Run: npx tsx scripts/auditCoverageContradictions.ts
@@ -17,7 +17,6 @@
 import { ALL_UNIFIED_VENUES } from '../src/data/unifiedVenues';
 import { MLB_STADIUMS } from '../src/data/stadiums';
 import { getStadiumSectionsAsync } from '../src/data/getStadiumSections';
-import { generateBaseballSections } from '../src/utils/generateBaseballSections';
 import { getVenueSections } from '../src/data/venueSections';
 
 const OPEN_AIR = /bleacher|pavilion|berm|lawn|porch|rooftop|sun deck|home run|batter'?s eye|outfield reserved/i;
@@ -49,7 +48,6 @@ function tier(s: Sec): 'covered' | 'partial' | 'exposed' {
 async function sectionsFor(v: (typeof ALL_UNIFIED_VENUES)[number]): Promise<Sec[]> {
   try {
     if (v.league === 'MLB') return (await getStadiumSectionsAsync(v.id)) as unknown as Sec[];
-    if (v.league === 'MiLB') return generateBaseballSections(v) as unknown as Sec[];
     return getVenueSections(v.id) as unknown as Sec[];
   } catch {
     return [];

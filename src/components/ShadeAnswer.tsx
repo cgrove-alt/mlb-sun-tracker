@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import type { FieldSunSide, KickoffSunSides } from '../utils/nflSunSide';
+import type { GameShade } from '../utils/shadeSide';
 import type { UnifiedVenue } from '../data/unifiedVenues';
 
 const boxStyle = {
@@ -44,11 +45,14 @@ function laterKickoffs(early: FieldSunSide, late: FieldSunSide, nightAfterSunset
  * advice comes from the sun's path over the field (`nflSunSide.ts`,
  * `shadeSide.ts`), worked out on the server so the sun-position code stays out
  * of the page's JavaScript. MLB pages use the shade finder instead.
+ *
+ * The finder passes `milbGame`: the answer for the MiLB game the fan picked.
  */
-export function ShadeAnswer({ venue, nflSunSides, milbShadeSides = [] }: {
+export function ShadeAnswer({ venue, nflSunSides, milbShadeSides = [], milbGame }: {
   venue: UnifiedVenue;
   nflSunSides?: KickoffSunSides;
   milbShadeSides?: string[];
+  milbGame?: GameShade;
 }) {
   const { name, roof } = venue;
 
@@ -96,11 +100,23 @@ export function ShadeAnswer({ venue, nflSunSides, milbShadeSides = [] }: {
     );
   }
 
-  const [side, secondSide] = milbShadeSides;
+  const game = milbGame ? `the ${milbGame.time} game on ${milbGame.date}` : 'a 1:05 PM game';
+  if (milbGame && !milbGame.sides) {
+    return (
+      <section className="shade-answer" aria-label={`Where are the shaded seats at ${name}?`} style={boxStyle}>
+        <p style={{ margin: 0 }}>
+          For {game} at <strong>{name}</strong>, the sun is down for the whole game, so every seat is
+          out of the sun.
+        </p>
+      </section>
+    );
+  }
+
+  const [side, secondSide] = milbGame?.sides ?? milbShadeSides;
   return (
     <section className="shade-answer" aria-label={`Where are the shaded seats at ${name}?`} style={boxStyle}>
       <p style={{ margin: 0 }}>
-        For a 1:05 PM game at <strong>{name}</strong>,{' '}
+        For {game} at <strong>{name}</strong>,{' '}
         {side ? (
           <>
             the <strong>{side}</strong>
@@ -114,6 +130,7 @@ export function ShadeAnswer({ venue, nflSunSides, milbShadeSides = [] }: {
             has a clear edge. Seats under a roof or overhang are the surest shade.
           </>
         )}{' '}
+        {milbGame?.sunset && <>The sun sets at {milbGame.sunset}. </>}
         We don&apos;t have a seating map for this park, so we can&apos;t say which sections or rows.{' '}
         <Link href="/how-it-works" style={{ fontWeight: 600, textDecoration: 'underline' }}>
           How we work this out
