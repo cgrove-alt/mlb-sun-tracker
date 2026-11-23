@@ -5107,6 +5107,151 @@ logic, data or layout changed.
 On the MiLB page the answer and the layout note now both say no sections
 can be named; the note shows on NFL pages too, so it stays.
 
+## §26 Copy §25 missed: the guide's old title and the NOAA credit (plan, 2026-11-23)
+
+Asked: plan the fix for two things still live after PR #101 merged, found
+by fetching the live pages (build 9cf9df9926f2). Branch
+`fix/copy-leftovers`, from `main` at 9cf9df992.
+
+**What's wrong:**
+1. §25 (E5) retitled the MLB guide "Best Shaded Seats at MLB Ballparks",
+   but two links to it still say "MLB Shade Data Trust Guide".
+2. The site credits NOAA's Solar Calculator (Meeus) for the sun's
+   position. Since 2.1 every sun position and sunrise/sunset comes from
+   NREL's SPA (`src/utils/solarPosition.ts`, reached through
+   `sunPosition.ts` and `sunCalculations.ts`). NOAA's calculator is only
+   the tests' cross-check (`src/utils/testReference/noaaSolarReference.ts`).
+
+**Why §25's sweep missed them:** it searched for the withheld era's
+phrases. It didn't search for what §25 renamed (the guide's title) or
+what 2.1 replaced (NOAA). This plan's search covers both: `Data Trust`,
+`Trust Guide`, `NOAA`, `Meeus`, `solcalc` and `esrl`, in `app/`,
+`components/`, `src/`, `lib/` and `public/`.
+
+**Every hit, and what happens to it:**
+- *Shipped and wrong (fixed below):*
+  - `app/faq/page.tsx:223` and `app/guide/avoid-sun-baseball-games/page.tsx:251`:
+    the link text;
+  - `components/FooterModern.tsx:84`: the footer on every page;
+  - `app/attributions/page.tsx`: the solar box, its citation, and step 1
+    of "How We Calculate Shade";
+  - `app/disclaimer/page.tsx:223–232`: the NOAA box among the third-party
+    sources;
+  - `src/components/AttributionNotice.tsx`: the `nrel`/`noaa` case and
+    the `all` case. Its one caller (WeatherDisplay) passes `weather`, so
+    these show nowhere today, but the next caller would show them;
+  - `public/llms.txt:5`: the summary AI crawlers read.
+- *Right as is:*
+  - how-it-works line 34, which names NOAA's calculator as the cross-check;
+  - `stadiumGeometryEvidence.ts`: lidar from NOAA's Office for Coastal
+    Management, a different NOAA;
+  - the test-only reference;
+  - `compassDegreesToSunCalcRadians`, a name for an angle convention.
+- *A code comment that's wrong:* `src/utils/sunCalculations.ts:45` says
+  "NOAA refraction"; it's SPA's (Eq. 42).
+- *Files nothing imports:* `src/components/MobileHeader.tsx` ("MLB Data
+  Trust Guide") and `src/components/AttributionFooter.tsx` (NOAA). Left as
+  they are, like §25's five.
+
+**Other wrong lines in the same places.** Fixing only the name would leave
+false sentences beside it:
+- `public/llms.txt`:
+  - line 5 also says shade uses cloud-cover weather, but the MLB map
+    shows a clear sky (how-it-works §4);
+  - line 10 says every venue has a section-by-section table (Covered /
+    partial back-rows / Exposed). No page shows that now, and MiLB and
+    NFL pages can't name sections.
+- `app/attributions/page.tsx`:
+  - the intro, "none is presented as proof of unmeasured seat geometry",
+    is the withheld era's wording;
+  - Stadium Data says roofs come from "architectural documentation" and
+    orientation from "satellite imagery". The heights at 24 parks come
+    from USGS 3DEP lidar (all 24 in `scripts/measureStandHeights.py`),
+    and the page doesn't credit it. Orientations come from USDA NAIP
+    photos, and Toronto's for Rogers Centre (`orientationMeasurements.ts`);
+  - in How We Calculate Shade, step 3 says sun exposure is adjusted for
+    cloud cover and rain chance (the MLB map isn't), and step 5, "Comfort
+    Scoring", isn't part of the shade answer.
+
+**The fix (one commit each):**
+- [ ] F1 Link text, both links: "MLB Shade Data Trust Guide" → "Best
+      Shaded Seats at MLB Ballparks".
+- [ ] F2 Footer: "☀️ Sun: NOAA Solar Calculator" → "☀️ Sun: NREL Solar
+      Position Algorithm".
+- [ ] F3 /attributions:
+      - Intro: "The Shadium combines the sun's position with the measured
+        shape of each park's stands, the real game schedule and the
+        weather. These are the sources behind each."
+      - Solar box, titled "NREL Solar Position Algorithm": "Sun position is
+        computed with the Solar Position Algorithm (SPA) of the U.S.
+        National Renewable Energy Laboratory, including atmospheric
+        refraction, so evening shade uses the sun as it appears in the
+        sky. We check it against the worked example in NREL's paper and
+        against NOAA's Solar Calculator at every park."
+        - Citation: "Reda, I. and Andreas, A. Solar Position Algorithm for
+          Solar Radiation Applications. NREL/TP-560-34302, revised
+          January 2008."
+        - Links: the paper | NOAA Solar Calculator (the cross-check).
+      - Stadium Data, as a lead line and a list: "Where each park's seats
+        are, and the shape of the stands around them, come from public
+        sources:"
+        - coordinates and dimensions from official venue specifications
+          (kept);
+        - section positions from each club's published seating chart;
+        - stand heights, decks and roofs at 24 MLB parks measured from
+          USGS 3D Elevation Program lidar (public domain);
+        - each park's direction measured from USDA NAIP aerial photos,
+          and City of Toronto photos for Rogers Centre.
+      - How We Calculate Shade, for MLB parks, linking /how-it-works:
+        1. Sun position: NREL's SPA for the date, time and park.
+        2. Shadows: the shadows the stands, the deck above and the roof
+           throw over each section's rows.
+        3. Through the game: every half hour from first pitch.
+        4. Confidence: each section's answer is High, Medium or Low, by
+           whether it holds if the park's direction or the stands'
+           heights are a little off.
+        5. Weather: the MLB map shows a clear sky; the full finder for
+           MiLB and NFL venues shows Open-Meteo's forecast.
+- [ ] F4 /disclaimer: the NOAA box becomes "NREL Solar Position
+      Algorithm": "Sun position from the Solar Position Algorithm of the
+      U.S. National Renewable Energy Laboratory (Reda and Andreas,
+      NREL/TP-560-34302)", with the paper's URL.
+- [ ] F5 `AttributionNotice`:
+      - the `nrel` case credits NREL's SPA and links the paper;
+      - `noaa` comes out of the type, since no caller passes it (tsc
+        checks);
+      - the `all` case's sun line says NREL.
+- [ ] F6 `public/llms.txt`:
+      - Line 5: "The Shadium works out shade from the sun's position
+        (NREL's Solar Position Algorithm), the shape of each park's
+        stands, decks and roofs (measured from USGS lidar at 24 MLB
+        parks), and the real first-pitch time from MLB's schedule. The
+        MLB map shows a clear sky; the full finder for MiLB and NFL venues
+        shows the forecast from Open-Meteo." The how-it-works link stays.
+      - Line 10 becomes two lines:
+        - "MLB ballpark pages show every section in sun or shade for any
+          game, inning by inning, with the sections that get the most
+          shade, a High, Medium or Low confidence label, and how high the
+          sun gets each month."
+        - "MiLB and NFL pages are sun and shade guides: which side or
+          sideline tends to shade first, going by the way the venue faces,
+          plus seating, food and travel notes."
+- [ ] F7 `sunCalculations.ts:45` comment: "NOAA refraction" → "SPA
+      refraction".
+- [ ] F8 Check:
+      - re-run the search: only the "right as is" hits and the two unused
+        files are left;
+      - jest, tsc, eslint;
+      - on the dev server: /faq, the avoid-sun guide, /attributions,
+        /disclaimer and the footer;
+      - after merge, the live pages.
+
+**Seen, not in scope:** on MiLB pages the hand-written guide block "Best
+Shaded Sections by Time" can differ from the page's own answer. At Isotopes
+Park, it says "first base side, upper deck" for afternoon games, but the
+answer says "the seating behind home plate tends to shade first". That's
+venue guide data for 120 parks, a task of its own.
+
 ---
 ---
 
