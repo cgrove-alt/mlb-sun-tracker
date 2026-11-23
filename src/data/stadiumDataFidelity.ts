@@ -160,11 +160,11 @@ export async function computeStadiumDataFidelity(stadiumId: string): Promise<Dat
 export function fidelityNote(fidelity: DataFidelity): string | null {
   switch (fidelity) {
     case 'source-backed':
-      return 'Section inventory is source-backed. Metric row, overhang, and obstruction geometry has not passed remote reconstruction and independent observation validation; exact seat-level shade results are unavailable.';
+      return 'Sections come from the club\'s published seating chart.';
     case 'partial':
       return 'Seating data is partially hand-verified; some sections are approximate.';
     case 'approximate':
-      return 'Seating layout is approximate. Individual section placement and metric shade geometry are modeled and have not passed independent observation validation.';
+      return 'This venue\'s seating layout is approximate, so this guide can\'t say which sections or rows are shaded.';
     default:
       return null;
   }

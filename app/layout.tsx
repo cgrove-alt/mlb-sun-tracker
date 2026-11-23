@@ -5,7 +5,7 @@ import './globals.css';
 // into one file to cut render-blocking CSS round-trips. Cascade order preserved.
 import '../src/styles/app-utilities.css';
 import type { Metadata } from 'next';
-import { VENUE_COUNT } from '../src/data/venueCount';
+import { MLB_COUNT } from '../src/data/venueCount';
 import { Inter } from 'next/font/google';
 import GoogleAnalyticsLazy from '../components/GoogleAnalyticsLazy';
 import { CriticalStylesInline } from './critical-styles-inline';
@@ -35,7 +35,7 @@ const BUILD_ID = (process.env.VERCEL_GIT_COMMIT_SHA || process.env.NEXT_PUBLIC_B
 export const metadata: Metadata = {
   metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || 'https://theshadium.com/'),
   title: 'The Shadium - Find Seats in the Shade at MLB, MiLB & NFL Stadiums | Avoid Sun Exposure',
-  description: `Review stadium seating inventory, astronomical sun-position context, roof information, and measurement confidence across ${VENUE_COUNT} sports venues.`,
+  description: `See which seats are in the shade for your game: every section at all ${MLB_COUNT} MLB ballparks, inning by inning, plus sun and shade guides for MiLB and NFL venues.`,
   authors: [{ name: 'The Shadium Team' }],
   creator: 'The Shadium',
   publisher: 'The Shadium',
@@ -55,7 +55,7 @@ export const metadata: Metadata = {
     locale: 'en_US',
     url: process.env.NEXT_PUBLIC_SITE_URL || 'https://theshadium.com/',
     title: 'The Shadium - Find Seats in the Shade at MLB, MiLB & NFL Stadiums',
-    description: `Stadium sun-position context, roof information, and data-confidence disclosures for ${VENUE_COUNT} sports venues.`,
+    description: `Sun and shade for every section at all ${MLB_COUNT} MLB ballparks, for any game, plus guides for MiLB and NFL venues.`,
     siteName: 'The Shadium',
     // OG image comes from the opengraph-image.tsx file convention (root default
     // + per-venue / per-league / per-post overrides) — not a hardcoded logo.
@@ -63,7 +63,7 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
     title: 'The Shadium - Find Seats in the Shade at MLB, MiLB & NFL Stadiums',
-    description: 'Review stadium solar context and data confidence before relying on any seat-level shade claim.',
+    description: `Sun and shade for every section at all ${MLB_COUNT} MLB ballparks, for any game, plus guides for MiLB and NFL venues.`,
     creator: '@theshadium',
     site: '@theshadium',
   },

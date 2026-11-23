@@ -15,7 +15,7 @@ const FooterModern: React.FC = () => {
           <div>
             <h3 className="text-lg font-bold text-ink-900 mb-2">The Shadium</h3>
             <p className="text-sm text-ink-700 mb-3">
-              Review stadium sun context, roof information, and data confidence across {VENUE_COUNT} venues.
+              Find the shade for your game at {VENUE_COUNT} MLB, MiLB and NFL venues.
             </p>
             <p className="text-xs text-ink-600">
               © {currentYear} The Shadium™. All rights reserved.

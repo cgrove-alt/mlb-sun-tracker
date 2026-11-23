@@ -29,9 +29,8 @@ export default function StadiumsPageSSR() {
         <section className={styles.hero}>
           <h1>All Stadium Sun Guides</h1>
           <p className={styles.lead}>
-            Review seating inventory, roof type, orientation, solar context, and measurement
-            confidence at {VENUE_COUNT} venues across Major League Baseball, Minor League Baseball,
-            and the NFL.
+            Find the shade at {VENUE_COUNT} venues: every section, inning by inning, at the MLB
+            ballparks, and which side shades first at Minor League Baseball parks and NFL stadiums.
           </p>
 
           <div className={styles.statsGrid}>

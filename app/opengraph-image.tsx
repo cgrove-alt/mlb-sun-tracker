@@ -13,7 +13,7 @@ export default function Image() {
     ogCard({
       eyebrow: 'THE SHADIUM',
       title: 'Plan for stadium sun',
-      subtitle: `${VENUE_COUNT} MLB, MiLB & NFL venues · solar context with confidence disclosed`,
+      subtitle: `${VENUE_COUNT} MLB, MiLB & NFL venues · every MLB section, every game`,
     }),
     { ...OG_SIZE },
   );

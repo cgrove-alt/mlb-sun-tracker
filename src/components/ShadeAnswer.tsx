@@ -97,12 +97,11 @@ export function ShadeAnswer({ venue, nflSunSides }: { venue: UnifiedVenue; nflSu
   return (
     <section className="shade-answer" aria-label={`Where are the shaded seats at ${name}?`} style={boxStyle}>
       <p style={{ margin: 0 }}>
-        For a day game at <strong>{name}</strong>, the orientation model indicates the{' '}
-        <strong>{side}</strong> is more likely to self-shade first. Exact sections,
-        rows, and transition times are not published until metric geometry has
-        been measured and independently validated.{' '}
+        For a day game at <strong>{name}</strong>, the <strong>{side}</strong> tends to
+        shade first, going by the way the park faces. We don&apos;t have a seating map
+        for this park, so we can&apos;t say which sections or rows.{' '}
         <Link href="/how-it-works" style={{ fontWeight: 600, textDecoration: 'underline' }}>
-          See how we calculate this
+          How we work this out
         </Link>
         .
       </p>
