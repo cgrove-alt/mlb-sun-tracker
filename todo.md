@@ -5696,6 +5696,14 @@ aerial photos and the Copernicus Sentinel images behind the MiLB directions.
 Checked against the record: 102 values are from NAIP photos, 12 from the USGS
 layer, and 6 from Sentinel-2, all 2025 images: Knoxville, Columbus, Salt Lake
 and Vancouver, and Nashville and Fresno, where neither photo is a clear match.
+Those last two were recorded as `photo`, ±5°, by the one-off writer that made
+the file, so a re-run measured something else (found by the session that asked
+for the credit). They're `satellite`, ±8°, now, with a test that each value is
+the one its method gives (120 cases). No value changed. The ±8° is measured:
+where four clear dates agree within 12°, their median is within 8° of the
+known direction at 85 of 86 parks (9 MLB, 77 MiLB), and 8.5° off at worst. All
+the 2025 dates give 151° for Nashville (recorded 150°) and 99° for Fresno
+(100°).
 
 **Corrections to the plan:**
 - G2 doesn't fix the finder, whose MiLB section layouts are wrong for a
