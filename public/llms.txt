@@ -8,7 +8,7 @@ For MLB ballparks, The Shadium works out shade from the sun's position (NREL's S
 
 - 182 venues across three leagues: 30 MLB ballparks, 120 Minor League Baseball (MiLB) parks, and 32 NFL stadiums.
 - MLB ballpark pages show every section in sun or shade for any game, inning by inning, with the sections that get the most shade, a High, Medium or Low confidence label, and how high the sun gets each month.
-- Nearly all MiLB and NFL pages are sun and shade guides: which side or sideline tends to shade first, where we know the way the venue faces, plus seating, food and travel notes.
+- Nearly all MiLB and NFL pages are sun and shade guides: which side or sideline tends to shade first, plus seating, food and travel notes.
 
 ## URL patterns
 

@@ -5303,8 +5303,11 @@ shipped:
 - `llms.txt` said all MiLB and NFL pages are guides. A survey of the 152
   on the dev server found 2 MiLB pages with no guide and no side answer
   (Columbus Clingstones and Knoxville Smokies: "Stadium Guide Not
-  Available"). It now says "nearly all", and adds "where we know the way
-  the venue faces". Those two pages are their own task.
+  Available"). It now says "nearly all". Those two pages are their own
+  task.
+- That line briefly said "where we know the way the venue faces". The §27
+  findings (branch `claude/festive-haslett-850afa`) show most stored MiLB
+  directions are wrong, so the clause is dropped (asked, 2026-11-23).
 
 **Not changed:** `MobileHeader.tsx` and `AttributionFooter.tsx` (nothing
 imports them); the MiLB guide blocks (above).
