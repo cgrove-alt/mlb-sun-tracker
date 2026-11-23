@@ -132,8 +132,8 @@ export default function AttributionsPage() {
         <div className="bg-purple-50 border border-purple-200 p-6 rounded-lg">
           <h3 className="h3 text-purple-900">Stadium Information</h3>
           <p>
-            Where each MLB park&apos;s sections are, and the shape of the stands around them, come
-            from public sources:
+            Where each MLB park&apos;s sections are, the shape of the stands around them, and the
+            way MLB and MiLB parks face come from public sources:
           </p>
 
           <ul className="list-disc list-inside text-sm space-y-1 mt-4">
@@ -144,8 +144,13 @@ export default function AttributionsPage() {
               Program lidar (public domain)
             </li>
             <li>
-              The direction 28 of the 30 parks face, measured from USDA NAIP aerial photos (City of
-              Toronto photos for Rogers Centre)
+              The direction 28 of the 30 MLB parks face, measured from USDA NAIP aerial photos (City
+              of Toronto photos for Rogers Centre)
+            </li>
+            <li>
+              The direction all 120 MiLB parks face, measured from USDA NAIP and USGS aerial photos,
+              and at four parks from satellite images (contains modified Copernicus Sentinel data
+              2025)
             </li>
           </ul>
         </div>
