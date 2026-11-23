@@ -248,7 +248,7 @@ export default function AvoidSunBaseballGamesPage() {
           <section>
             <h2>Related Guides</h2>
             <ul>
-              <li><Link href="/guide/best-shaded-seats-mlb">MLB Shade Data Trust Guide</Link></li>
+              <li><Link href="/guide/best-shaded-seats-mlb">Best Shaded Seats at MLB Ballparks</Link></li>
               <li><Link href="/guide/how-to-find-shaded-seats">How to Find Shaded Seats</Link></li>
               <li><Link href="/guide">View All Guides</Link></li>
             </ul>
