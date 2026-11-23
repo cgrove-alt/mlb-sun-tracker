@@ -81,7 +81,7 @@ const FooterModern: React.FC = () => {
         <div className="mt-4 pt-4 border-t border-ink-100">
           <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2">
             <p className="text-xs text-ink-600">
-              ⚾ MLB data: MLB Advanced Media • 🌤️ Weather: Open-Meteo • ☀️ Sun: NOAA Solar Calculator
+              ⚾ MLB data: MLB Advanced Media • 🌤️ Weather: Open-Meteo • ☀️ Sun: NREL Solar Position Algorithm
             </p>
             <p className="text-xs text-ink-600">
               Not affiliated with MLB, MiLB, or NFL. Calculations are estimates.

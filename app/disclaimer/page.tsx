@@ -221,14 +221,13 @@ export default function Disclaimer() {
         </div>
         
         <div className="bg-amber-50 border border-amber-200 p-4 rounded-lg mb-4">
-          <h4 className="font-semibold text-amber-900">NOAA Solar Calculator</h4>
+          <h4 className="font-semibold text-amber-900">NREL Solar Position Algorithm</h4>
           <p className="text-sm mt-2">
-            Sun position calculations based on Jean Meeus, Astronomical Algorithms,
-            as implemented by NOAA GML.
+            Sun position from the Solar Position Algorithm of the U.S. National Renewable Energy
+            Laboratory (Reda and Andreas, NREL/TP-560-34302).
           </p>
           <p className="text-xs text-amber-700 mt-2">
-            NOAA Global Monitoring Laboratory Solar Calculator.
-            https://gml.noaa.gov/grad/solcalc/
+            https://www.nrel.gov/docs/fy08osti/34302.pdf
           </p>
         </div>
 
