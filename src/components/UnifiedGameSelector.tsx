@@ -340,7 +340,7 @@ export const UnifiedGameSelector: React.FC<UnifiedGameSelectorProps> = ({
         <div className="selector-header">
           <h3 id="game-selector-title">{t('gameSelector.title')}</h3>
           
-          {(selectedVenue?.league === 'MLB' || selectedVenue?.league === 'MiLB') && (
+          {(selectedVenue?.league === 'MLB' || selectedVenue?.league === 'MiLB' || selectedVenue?.league === 'NFL') && (
             <div className="view-mode-toggle" role="tablist" aria-labelledby="game-selector-title">
               <button
                 className={`toggle-btn ${viewMode === 'games' ? 'active' : ''}`}
@@ -378,7 +378,7 @@ export const UnifiedGameSelector: React.FC<UnifiedGameSelectorProps> = ({
       )}
       
       {/* Show toggle buttons for mobile but without the header wrapper */}
-      {isMobileContext && (selectedVenue?.league === 'MLB' || selectedVenue?.league === 'MiLB') && (
+      {isMobileContext && (selectedVenue?.league === 'MLB' || selectedVenue?.league === 'MiLB' || selectedVenue?.league === 'NFL') && (
         <div className="view-mode-toggle mobile-toggle" role="tablist">
           <button
             className={`toggle-btn ${viewMode === 'games' ? 'active' : ''}`}
