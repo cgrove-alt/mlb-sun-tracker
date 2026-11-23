@@ -6265,7 +6265,8 @@ Bills (question 4) aren't decided. Nothing is pushed.
 **Checks:**
 - *Tests:* 4,048 of 4,048, 43 of them new, all seen to fail first. The
   schedule tests also pass in Tokyo, Los Angeles and UTC. The type check is
-  clean, and eslint gives no errors (one old warning).
+  clean, eslint gives no errors (one old warning), and the production build
+  passes.
 - *Every team, live:* 504 games over 64 team-seasons. 2025: all 265 non-neutral
   games in ESPN's weekly feed, which P1 doesn't use, none missing, none extra,
   no time different. 2026: all 239.
@@ -6277,7 +6278,7 @@ Bills (question 4) aren't decided. Nothing is pushed.
 **Open:**
 - *Bills:* their 2026 games are now listed, with the old stadium's direction.
   This shouldn't go live before question 4 is answered.
-- Not tested: Safari and Firefox, and the production build.
+- Not tested: Safari and Firefox, and the built site in a browser.
 - After the NFL branch merges, two lines still say only MLB has a schedule
   (step 2 on `/seats-shade-finder`, and the finder's "no game" line).
 - Playoff games aren't listed, as before (`seasontype=2`).
