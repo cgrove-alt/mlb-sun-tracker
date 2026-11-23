@@ -4,25 +4,14 @@
 import { createRetryableFetch, CircuitBreaker } from '../utils/retryUtils';
 import { NFLGame } from './nflApi';
 
-// ESPN Scoreboard API types
-interface ESPNScoreboardResponse {
-  events: ESPNEvent[];
-  week?: {
-    number: number;
-  };
-  season?: {
-    year: number;
-    type: number;
-  };
+// ESPN team schedule types (only what we read)
+interface ESPNTeamSchedule {
+  events?: ESPNEvent[];
 }
 
 interface ESPNEvent {
   id: string;
-  date: string;
-  name: string;
-  shortName: string;
-  season: {
-    year: number;
+  seasonType: {
     type: number;
   };
   week: {
@@ -32,15 +21,18 @@ interface ESPNEvent {
 }
 
 interface ESPNCompetition {
-  id: string;
   date: string;
+  /** False until the NFL sets the kickoff; the date is then a placeholder. */
+  timeValid: boolean;
+  neutralSite: boolean;
   venue?: {
-    id: string;
     fullName: string;
   };
   competitors: ESPNCompetitor[];
   broadcasts?: Array<{
-    names: string[];
+    media?: {
+      shortName: string;
+    };
   }>;
 }
 
@@ -48,11 +40,9 @@ interface ESPNCompetitor {
   id: string;
   homeAway: 'home' | 'away';
   team: {
-    id: string;
-    location: string;
-    name: string;
-    displayName: string;
     abbreviation: string;
+    displayName: string;
+    shortDisplayName: string;
   };
 }
 
@@ -64,7 +54,7 @@ const ESPN_TEAM_TO_VENUE_MAP: Record<string, string> = {
   '17': 'gillette-stadium', // New England Patriots
   '20': 'metlife-stadium-jets', // New York Jets
   // AFC North
-  '33': 'mt-bank-stadium', // Baltimore Ravens
+  '33': 'm-t-bank-stadium', // Baltimore Ravens
   '4': 'paycor-stadium', // Cincinnati Bengals
   '5': 'huntington-bank-field', // Cleveland Browns
   '23': 'acrisure-stadium', // Pittsburgh Steelers
@@ -101,7 +91,7 @@ const ESPN_TEAM_TO_VENUE_MAP: Record<string, string> = {
 };
 
 class NFLApiClient {
-  private backupUrl = 'https://site.api.espn.com/apis/site/v2/sports/football/nfl';
+  private baseUrl = 'https://site.api.espn.com/apis/site/v2/sports/football/nfl';
   private retryableFetch = createRetryableFetch({
     maxRetries: 3,
     initialDelay: 1000,
@@ -113,158 +103,64 @@ class NFLApiClient {
   private cache = new Map<string, { data: any; timestamp: number }>();
   private cacheTimeout = 3600000; // 1 hour
 
-  // Convert ESPN event to our NFLGame format
-  private convertESPNEventToNFLGame(event: ESPNEvent): NFLGame | null {
-    try {
-      const competition = event.competitions[0];
-      if (!competition) return null;
+  // Convert an ESPN event to our NFLGame format
+  private convertESPNEventToNFLGame(event: ESPNEvent, venueId: string): NFLGame {
+    const competition = event.competitions[0];
+    const side = (homeAway: 'home' | 'away') => {
+      const { id, team } = competition.competitors.find(c => c.homeAway === homeAway)!;
+      return { id, name: team.shortDisplayName, abbreviation: team.abbreviation };
+    };
+    const homeTeam = side('home');
 
-      const homeCompetitor = competition.competitors.find(c => c.homeAway === 'home');
-      const awayCompetitor = competition.competitors.find(c => c.homeAway === 'away');
-      
-      if (!homeCompetitor || !awayCompetitor) return null;
-
-      // Get venue ID from our mapping
-      const venueId = ESPN_TEAM_TO_VENUE_MAP[homeCompetitor.id];
-      if (!venueId) {
-        console.warn(`[NFL API Client] No venue mapping for team ${homeCompetitor.team.displayName} (${homeCompetitor.id})`);
-        return null;
-      }
-
-      // Parse date and time
-      const gameDate = new Date(competition.date);
-      const localGameDate = gameDate.toISOString().split('T')[0];
-      const hours = gameDate.getHours().toString().padStart(2, '0');
-      const minutes = gameDate.getMinutes().toString().padStart(2, '0');
-      const localGameTime = `${hours}:${minutes}`;
-
-      // Determine season type
-      let seasonType: 'preseason' | 'regular' | 'postseason' = 'regular';
-      if (event.season.type === 1) seasonType = 'preseason';
-      else if (event.season.type === 3) seasonType = 'postseason';
-
-      // Get TV network from broadcasts
-      const tvNetwork = competition.broadcasts?.[0]?.names?.[0];
-
-      return {
-        gameId: event.id,
-        gameDate: localGameDate,
-        gameTime: localGameTime,
-        week: event.week.number,
-        seasonType,
-        homeTeam: {
-          id: homeCompetitor.id,
-          name: homeCompetitor.team.name,
-          abbreviation: homeCompetitor.team.abbreviation
-        },
-        awayTeam: {
-          id: awayCompetitor.id,
-          name: awayCompetitor.team.name,
-          abbreviation: awayCompetitor.team.abbreviation
-        },
-        venue: {
-          id: venueId,
-          name: competition.venue?.fullName || homeCompetitor.team.displayName + ' Stadium'
-        },
-        tvNetwork
-      };
-    } catch (error) {
-      console.error('[NFL API Client] Error converting ESPN event:', error);
-      return null;
-    }
+    return {
+      gameId: event.id,
+      gameDate: competition.date,
+      week: event.week.number,
+      seasonType: event.seasonType.type === 1 ? 'preseason' : event.seasonType.type === 3 ? 'postseason' : 'regular',
+      homeTeam,
+      awayTeam: side('away'),
+      venue: {
+        id: venueId,
+        name: competition.venue?.fullName || `${homeTeam.name} Stadium`
+      },
+      tvNetwork: competition.broadcasts?.[0]?.media?.shortName
+    };
   }
 
-  // Fetch games for a specific week
-  private async fetchWeekGames(season: number, week: number): Promise<NFLGame[]> {
-    try {
-      const url = `${this.backupUrl}/scoreboard?seasontype=2&week=${week}&season=${season}`;
-      
-      const response = await this.retryableFetch(url, {
-        headers: {
-          'Accept': 'application/json',
-          'User-Agent': 'Mozilla/5.0 (compatible; MLB-Sun-Tracker/1.0)'
-        }
-      });
-
-      if (!response.ok) {
-        throw new Error(`HTTP ${response.status}: ${response.statusText}`);
-      }
-
-      const data: ESPNScoreboardResponse = await response.json();
-      
-      if (!data.events || !Array.isArray(data.events)) {
-        return []; // No games for this week
-      }
-
-      // Convert ESPN events to our format
-      const games = data.events
-        .map(event => this.convertESPNEventToNFLGame(event))
-        .filter((game): game is NFLGame => game !== null);
-
-      return games;
-    } catch (error) {
-      console.error(`[NFL API Client] Error fetching week ${week}:`, error);
-      return []; // Return empty array for failed weeks
+  // Get the regular-season games played at a venue, from its team's schedule.
+  // A neutral-site game is played somewhere else, and one with no kickoff set
+  // yet has nothing to work the shade out for.
+  async fetchVenueSchedule(venueId: string, season: number): Promise<NFLGame[]> {
+    const teamId = Object.keys(ESPN_TEAM_TO_VENUE_MAP).find(id => ESPN_TEAM_TO_VENUE_MAP[id] === venueId);
+    if (!teamId) {
+      throw new Error(`No ESPN team for venue ${venueId}`);
     }
-  }
 
-  // Fetch all games for a season
-  async fetchSeasonSchedule(season: number): Promise<NFLGame[]> {
-    const cacheKey = `season-${season}`;
+    const cacheKey = `${teamId}-${season}`;
     const cached = this.cache.get(cacheKey);
-    
     if (cached && Date.now() - cached.timestamp < this.cacheTimeout) {
-      // Returning cached data for ${season} season
       return cached.data;
     }
 
-    try {
-      const allGames: NFLGame[] = [];
-      
-      // For current/future seasons, only fetch a few weeks ahead
-      const currentDate = new Date();
-      const currentWeek = this.getCurrentNFLWeek(currentDate, season);
-      const maxWeek = Math.min(currentWeek + 8, 18); // Fetch up to 8 weeks ahead or week 18
-      
-      // Fetching weeks 1-${maxWeek} for ${season} season
-      
-      // Fetch games for each week
-      for (let week = 1; week <= maxWeek; week++) {
-        const weekGames = await this.fetchWeekGames(season, week);
-        if (weekGames.length > 0) {
-          allGames.push(...weekGames);
-          // Week ${week}: ${weekGames.length} games
-        }
-      }
-
-      if (allGames.length === 0) {
-        throw new Error('No games found for the season');
-      }
-
-      // Total: ${allGames.length} games for ${season} season
-      
-      // Cache the results
-      this.cache.set(cacheKey, { data: allGames, timestamp: Date.now() });
-      
-      return allGames;
-    } catch (error) {
-      console.error(`[NFL API Client] Error fetching ${season} season:`, error);
-      throw error;
+    // No headers: a browser asks ESPN's permission first for any but the
+    // simplest, and ESPN refuses.
+    const response = await this.retryableFetch(
+      `${this.baseUrl}/teams/${teamId}/schedule?season=${season}&seasontype=2`
+    );
+    if (!response.ok) {
+      throw new Error(`HTTP ${response.status}: ${response.statusText}`);
     }
-  }
 
-  // Get current NFL week based on date
-  private getCurrentNFLWeek(date: Date, season: number): number {
-    // NFL season typically starts in early September
-    const seasonStart = new Date(season, 8, 1); // September 1st
-    const weeksSinceStart = Math.floor((date.getTime() - seasonStart.getTime()) / (7 * 24 * 60 * 60 * 1000));
-    return Math.max(1, Math.min(weeksSinceStart + 1, 18));
-  }
+    const data: ESPNTeamSchedule = await response.json();
+    const games = (data.events ?? [])
+      .filter(({ competitions: [game] }) =>
+        game.timeValid &&
+        !game.neutralSite &&
+        game.competitors.some(c => c.homeAway === 'home' && c.id === teamId))
+      .map(event => this.convertESPNEventToNFLGame(event, venueId));
 
-  // Get games for a specific venue
-  async fetchVenueSchedule(venueId: string, season: number): Promise<NFLGame[]> {
-    const allGames = await this.fetchSeasonSchedule(season);
-    return allGames.filter(game => game.venue.id === venueId);
+    this.cache.set(cacheKey, { data: games, timestamp: Date.now() });
+    return games;
   }
 
   // Reset circuit breaker (for testing or manual intervention)
