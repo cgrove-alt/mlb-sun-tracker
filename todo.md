@@ -6185,16 +6185,16 @@ six 2025 Sundays):
 After `fix/nfl-finder-sections` and `fix/finder-leftovers` merge (they change
 the same files). One PR, one commit per step.
 
-- [ ] P1. `nflApiClient.ts`, `nflApi.ts`: one request for the stadium's team.
+- [x] P1. `nflApiClient.ts`, `nflApi.ts`: one request for the stadium's team.
       Keep ESPN's own instant in `gameDate`, as MLB games do, so the picker
       and the finder read the real kickoff unchanged. Drop the header, fix
       the Ravens' id, leave out neutral sites and games with no time yet.
       Tests first, on saved ESPN responses: Sunday 1:00, Sunday night, a game
       in London, the Ravens, a fan in another time zone.
-- [ ] P2. `middleware.ts`: add `https://site.api.espn.com` to `connect-src`.
+- [x] P2. `middleware.ts`: add `https://site.api.espn.com` to `connect-src`.
       Never before P1. Test: the header allows exactly the hosts the app
       calls.
-- [ ] P3. `UnifiedGameSelector`: show the games/custom switch for NFL (two
+- [x] P3. `UnifiedGameSelector`: show the games/custom switch for NFL (two
       conditions).
 - [ ] P4. `nflSunSide.ts`, `ShadeAnswer`: name the end zone with the sun at
       its back by MiLB's test ("The south end zone has it at its back too";
@@ -6244,6 +6244,43 @@ with [TickPick](https://tpblog.tickpick.com/?p=18379) for benches,
 [Visit Denver](https://visitdenver.com/blog/post/ultimate-guide-empower-field-at-mile-high/)
 and the [Dallas Morning News](https://dallasnews.com/sports/cowboys/2024/11/12/why-is-there-a-sun-issue-at-att-stadium-see-what-experts-have-said-about-cowboys-home)
 for AT&T.
+
+### §30 Review, P1–P3 (2026-11-23)
+
+Go-ahead: "go ahead with P1–P5", passed on by the session that started this
+one. P6 (deletions) isn't approved. P4 and P5 need `nflGameShade`, which is
+only on `fix/nfl-finder-sections`, so they wait for it to reach `main`. The
+Bills (question 4) aren't decided. Nothing is pushed.
+
+**What changed:** 3 commits, one per step.
+- *P1 (b6318163e):* `fetchVenueSchedule` asks ESPN once for the stadium's own
+  team and season, and keeps ESPN's kickoff as it is. Neutral sites and games
+  with no time yet are left out, no header is sent, and the Ravens' id is
+  right in both tables. The week-by-week loader and the four `nflApi` methods
+  that depended on it or on the old clock (no callers) are gone.
+- *P2 (d210126b7):* `connect-src` names `https://site.api.espn.com`. A test
+  pins the whole list, so it can't widen unnoticed.
+- *P3 (86aa04f9b):* the games/custom switch shows for NFL, on both finders.
+
+**Checks:**
+- *Tests:* 4,048 of 4,048, 43 of them new, all seen to fail first. The
+  schedule tests also pass in Tokyo, Los Angeles and UTC. The type check is
+  clean, and eslint gives no errors (one old warning).
+- *Every team, live:* 504 games over 64 team-seasons. 2025: all 265 non-neutral
+  games in ESPN's weekly feed, which P1 doesn't use, none missing, none extra,
+  no time different. 2026: all 239.
+- *In a browser (dev server):* Lambeau's games load in one request of 0.1 s
+  (it was 132 s to give up). "Dec 20, 12:00 PM CST - Dolphins @ Packers" is
+  rated with the sun at 22.1°, due south. On mobile the Ravens list theirs.
+- *Against the NFL branch:* a dry-run merge has one conflict, this file.
+
+**Open:**
+- *Bills:* their 2026 games are now listed, with the old stadium's direction.
+  This shouldn't go live before question 4 is answered.
+- Not tested: Safari and Firefox, and the production build.
+- After the NFL branch merges, two lines still say only MLB has a schedule
+  (step 2 on `/seats-shade-finder`, and the finder's "no game" line).
+- Playoff games aren't listed, as before (`seasontype=2`).
 
 ---
 ---
