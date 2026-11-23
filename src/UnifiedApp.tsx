@@ -4,9 +4,8 @@ import './App.css';
 import { UnifiedVenue, ALL_UNIFIED_VENUES, convertToLegacyStadium } from './data/unifiedVenues';
 import { UnifiedGameSelector } from './components/UnifiedGameSelector';
 import { WeatherDisplay } from './components/WeatherDisplay';
-import { SectionList } from './components/SectionList';
 import { EmptyState } from './components/EmptyStates';
-import { ErrorProvider, useError } from './components/ErrorNotification';
+import { ErrorProvider } from './components/ErrorNotification';
 // Renamed from './components/Breadcrumb': a file Breadcrumb.tsx and a directory
 // Breadcrumb/ both existed, so this specifier resolved to the FILE by extension
 // precedence — silently, and the two components have incompatible props (this
@@ -15,25 +14,24 @@ import { ErrorProvider, useError } from './components/ErrorNotification';
 import { Breadcrumb } from './components/NavigationBreadcrumb';
 import { FidelityNotice } from './components/FidelityNotice';
 import { getStadiumDataFidelity, fidelityNote } from './data/stadiumDataFidelity';
-import { LoadingSpinner } from './components/LoadingSpinner';
 import { VenueChangeSkeleton } from './components/SkeletonScreens';
 import { SunIcon, MoonIcon } from './components/Icons';
 import { ErrorBoundary } from './components/ErrorBoundary';
-import { SunExposureExplanation } from './components/SunExposureExplanation';
 import { ShadeAnswer } from './components/ShadeAnswer';
 import MobileApp from './MobileApp';
 
 import { I18nProvider, useTranslation } from './i18n/i18nContext';
-import { getSunPosition, getSunDescription, getCompassDirection, SeatingSectionSun } from './utils/sunCalculations';
-import { getVenueSections } from './data/venueSections';
+import { getSunPosition, getSunDescription, getCompassDirection } from './utils/sunCalculations';
+import { isFieldAxisMeasured } from './data/nflOrientationMeasurements';
 import { MLBGame } from './services/mlbApi';
 import { NFLGame } from './services/nflApi';
 import { MiLBGame } from './services/milbApi';
 import { gameShade } from './utils/shadeSide';
+import { nflGameShade } from './utils/nflSunSide';
+import { readFinderLink } from './utils/finderLink';
 import { WeatherForecast, weatherApi } from './services/weatherApi';
 import { OfflineIndicator } from './components/OfflineIndicator';
 import { trackStadiumSelection, trackGameSelection } from './utils/analytics';
-import { getUnifiedVenueShade, ShadedVenueSection } from './utils/getUnifiedVenueShade';
 
 function UnifiedAppContent() {
   const { t } = useTranslation();
@@ -44,59 +42,30 @@ function UnifiedAppContent() {
   const [sunPosition, setSunPosition] = useState<any>(null);
   const [weatherForecast, setWeatherForecast] = useState<WeatherForecast | null>(null);
   const [loadingWeather, setLoadingWeather] = useState(false);
-  const [detailedSections, setDetailedSections] = useState<SeatingSectionSun[]>([]);
-  const [shadedSections, setShadedSections] = useState<ShadedVenueSection[]>([]);
-  const [gameExposureData, setGameExposureData] = useState<Map<string, number> | null>(null);
-  const [loadingSections, setLoadingSections] = useState(false);
-  const [calculationInProgress, setCalculationInProgress] = useState(false);
   const [changingVenue, setChangingVenue] = useState(false);
-  const { showError } = useError();
 
   // Convert unified venue to legacy stadium format for compatibility
   const legacyStadium = selectedVenue ? convertToLegacyStadium(selectedVenue) : null;
-  // MLB ballparks have the game-by-game shade map on their own page, and minor
-  // league parks have no seating map, so the section list is for NFL venues.
+  // MLB ballparks have the game-by-game shade map on their own page. Minor
+  // league parks and NFL stadiums have no seating map, so their answer is a side.
   const isMlb = selectedVenue?.league === 'MLB';
   const milbGame = useMemo(
     () => (selectedVenue?.league === 'MiLB' && gameDateTime ? gameShade(selectedVenue, gameDateTime) : undefined),
     [selectedVenue, gameDateTime],
   );
+  // Undefined for a fixed roof, or a field whose direction we couldn't measure.
+  const nflGame = useMemo(
+    () => (selectedVenue?.league === 'NFL' && gameDateTime && selectedVenue.roof !== 'fixed' && isFieldAxisMeasured(selectedVenue.id)
+      ? nflGameShade(selectedVenue, gameDateTime)
+      : undefined),
+    [selectedVenue, gameDateTime],
+  );
 
-  // Load venue from URL parameters on mount
+  // Open the park and time a link names
   useEffect(() => {
-    if (typeof window === 'undefined') return;
-    
-    const urlParams = new URLSearchParams(window.location.search);
-    const venueParam = urlParams.get('venue');
-    const stadiumParam = urlParams.get('stadium');
-    const datetimeParam = urlParams.get('datetime');
-    
-    // Check for venue parameter (for MiLB/NFL venues)
-    if (venueParam) {
-      const venue = ALL_UNIFIED_VENUES.find(v => v.id === venueParam);
-      if (venue) {
-        setSelectedVenue(venue);
-      }
-    }
-    // Check for stadium parameter (for MLB stadiums - backward compatibility)
-    else if (stadiumParam) {
-      const venue = ALL_UNIFIED_VENUES.find(v => v.id === stadiumParam);
-      if (venue) {
-        setSelectedVenue(venue);
-      }
-    }
-    
-    // If datetime is provided, set it
-    if (datetimeParam) {
-      try {
-        const dateTime = new Date(datetimeParam);
-        if (!isNaN(dateTime.getTime())) {
-          setGameDateTime(dateTime);
-        }
-      } catch (error) {
-        console.error('Invalid datetime parameter:', error);
-      }
-    }
+    const { venue, dateTime } = readFinderLink(window.location.search);
+    if (venue) setSelectedVenue(venue);
+    if (dateTime) setGameDateTime(dateTime);
   }, []); // Only run once on mount
 
   // Load weather forecast
@@ -136,9 +105,7 @@ function UnifiedAppContent() {
     setGameDateTime(null);
     setSunPosition(null);
     setWeatherForecast(null);
-    setDetailedSections([]);
-    setShadedSections([]);
-    
+
     setTimeout(() => setChangingVenue(false), 300);
   };
 
@@ -152,96 +119,20 @@ function UnifiedAppContent() {
     }
   };
 
-  // Calculate sun and section data when venue, time, or weather changes
+  // Work out the sun's position when the venue or time changes
   useEffect(() => {
     if (!selectedVenue || !gameDateTime) {
-      setDetailedSections([]);
-      setShadedSections([]);
       setSunPosition(null);
-      setLoadingSections(false);
-      setCalculationInProgress(false);
       return;
     }
-    
-    let isCancelled = false;
-    
-    const performCalculation = async () => {
-      if (isCancelled || calculationInProgress) return;
-      
-      setLoadingSections(true);
-      setCalculationInProgress(true);
-      
-      try {
-        // Calculate sun position
-        const position = getSunPosition(gameDateTime, selectedVenue.latitude, selectedVenue.longitude);
-        const formattedPosition = {
-          altitudeDegrees: position.altitudeDegrees,
-          azimuthDegrees: position.azimuthDegrees,
-          altitude: position.altitude,
-          azimuth: position.azimuth
-        };
-        
-        if (isCancelled) return;
-        setSunPosition(formattedPosition);
-
-        if (selectedVenue.league !== 'NFL') {
-          setDetailedSections([]);
-          setShadedSections([]);
-          setGameExposureData(null);
-          return;
-        }
-        
-        const sections = getVenueSections(selectedVenue.id);
-
-        // Calculate shade for unified venues
-        const shadeResults = getUnifiedVenueShade(
-          selectedVenue,
-          gameDateTime,
-          sections,
-          weatherForecast?.current || undefined
-        );
-        
-        if (isCancelled) return;
-        setShadedSections(shadeResults);
-        
-        // Convert to the section-list format.
-        const convertedSections: SeatingSectionSun[] = shadeResults.map(result => ({
-          section: {
-            id: result.section.id,
-            name: result.section.name,
-            level: result.section.level as 'field' | 'lower' | 'club' | 'upper' | 'suite',
-            baseAngle: result.section.baseAngle,
-            angleSpan: result.section.angleSpan,
-            covered: result.section.covered,
-            price: result.section.price as 'value' | 'moderate' | 'premium' | 'luxury'
-          },
-          sunExposure: Math.round(100 - result.shadePercentage),
-          inSun: result.isInSun,
-          timeInSun: result.isInSun ? 180 : 0,
-          percentageOfGameInSun: 100 - result.shadePercentage
-        }));
-
-        setDetailedSections(convertedSections);
-        
-      } catch (error) {
-        console.error('Error calculating sun exposure:', error);
-        showError?.('Error calculating sun exposure. Please try again.', 'error');
-      } finally {
-        if (!isCancelled) {
-          setLoadingSections(false);
-          setCalculationInProgress(false);
-        }
-      }
-    };
-    
-    const timeoutId = setTimeout(performCalculation, 300);
-    
-    return () => {
-      isCancelled = true;
-      clearTimeout(timeoutId);
-      setCalculationInProgress(false);
-    };
-  }, [selectedVenue, gameDateTime, selectedGame, weatherForecast]);
+    const position = getSunPosition(gameDateTime, selectedVenue.latitude, selectedVenue.longitude);
+    setSunPosition({
+      altitudeDegrees: position.altitudeDegrees,
+      azimuthDegrees: position.azimuthDegrees,
+      altitude: position.altitude,
+      azimuth: position.azimuth,
+    });
+  }, [selectedVenue, gameDateTime]);
 
   // Load weather forecast when venue AND game time are selected
   useEffect(() => {
@@ -295,7 +186,7 @@ function UnifiedAppContent() {
               type="no-stadium"
               action={
                 <p style={{fontSize: '0.9rem', color: '#666', margin: 0}}>
-                  Choose from MLB and NFL venues to analyze sun exposure patterns
+                  Choose from MLB, MiLB and NFL venues to see where the sun and shade will be
                 </p>
               }
             />
@@ -332,25 +223,6 @@ function UnifiedAppContent() {
 
           {selectedVenue && gameDateTime && (
             <div className="results">
-              {loadingSections && (
-                <div style={{
-                  position: 'fixed',
-                  top: '50%',
-                  left: '50%',
-                  transform: 'translate(-50%, -50%)',
-                  zIndex: 9999,
-                  background: 'white',
-                  padding: '2rem',
-                  borderRadius: '8px',
-                  boxShadow: '0 4px 20px rgba(0,0,0,0.2)',
-                  textAlign: 'center'
-                }}>
-                  <LoadingSpinner />
-                  <p style={{marginTop: '1rem', color: '#666'}}>Calculating sun exposure for {selectedVenue.name}...</p>
-                  <p style={{fontSize: '0.875rem', color: '#999'}}>This may take a moment for large venues</p>
-                </div>
-              )}
-              
               <div className="weather-info-section">
                 {weatherForecast && (
                   <WeatherDisplay
@@ -407,21 +279,7 @@ function UnifiedAppContent() {
               )}
 
               {milbGame && <ShadeAnswer venue={selectedVenue} milbGame={milbGame} />}
-
-              {!isMlb && selectedVenue && gameDateTime && detailedSections.length > 0 && (
-                <>
-                  <SunExposureExplanation />
-                </>
-              )}
-
-              {!isMlb && detailedSections.length > 0 && (
-                <SectionList
-                  sections={detailedSections}
-                  loading={loadingSections}
-                  calculationProgress={null}
-                  showFilters={true}
-                />
-              )}
+              {selectedVenue.league === 'NFL' && <ShadeAnswer venue={selectedVenue} nflGame={nflGame} />}
             </div>
           )}
         </div>

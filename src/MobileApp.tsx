@@ -2,27 +2,23 @@ import React, { useState, useEffect, useCallback, useMemo } from 'react';
 import { VENUE_COUNT } from './data/venueCount';
 import { Stadium } from './data/stadiums';
 import { UnifiedVenue, convertToLegacyStadium } from './data/unifiedVenues';
-import { getVenueSections } from './data/venueSections';
+import { isFieldAxisMeasured } from './data/nflOrientationMeasurements';
 import { gameShade } from './utils/shadeSide';
+import { nflGameShade } from './utils/nflSunSide';
+import { readFinderLink } from './utils/finderLink';
 import { MLBGame } from './services/mlbApi';
 import { MiLBGame } from './services/milbApi';
 import { NFLGame } from './services/nflApi';
-import { SeatingSectionSun } from './utils/sunCalculations';
 import { UnifiedGameSelector } from './components/UnifiedGameSelector';
-import { MobileFilterSheet } from './components/MobileFilterSheet';
-import { SunFilterCriteria } from './components/EnhancedSunFilter';
-import { MobileSectionCard } from './components/MobileSectionCard';
 import { WeatherDisplay } from './components/WeatherDisplay';
 import { EmptyState } from './components/EmptyStates';
 import { weatherApi } from './services/weatherApi';
-import { SunCalculator } from './utils/sunCalculator';
-import { getSunPosition, getSunDescription, getCompassDirection } from './utils/sunCalculations';
+import { getSunPosition, getSunDescription, getCompassDirection, type SunPosition } from './utils/sunCalculations';
 import { SunIcon, MoonIcon } from './components/Icons';
 import { FidelityNotice } from './components/FidelityNotice';
 import { ShadeAnswer } from './components/ShadeAnswer';
 import { getStadiumDataFidelity, fidelityNote } from './data/stadiumDataFidelity';
-import { validateFilterCriteria, RateLimiter } from './utils/validation';
-import { debounce } from './utils/debounce';
+import { RateLimiter } from './utils/validation';
 import './styles/mobile.css';
 import './MobileApp.css';
 
@@ -36,23 +32,33 @@ const MobileApp: React.FC = () => {
   const [games, setGames] = useState<(MLBGame | MiLBGame | NFLGame)[]>([]);
   const [selectedGame, setSelectedGame] = useState<MLBGame | MiLBGame | NFLGame | null>(null);
   const [gameDateTime, setGameDateTime] = useState<Date | null>(null);
-  const [allSections, setAllSections] = useState<SeatingSectionSun[]>([]);
-  const [filteredSections, setFilteredSections] = useState<SeatingSectionSun[]>([]);
-  const [filterCriteria, setFilterCriteria] = useState<SunFilterCriteria>({});
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const [weatherForecast, setWeatherForecast] = useState<any>(null);
   const [isWeatherLoading, setIsWeatherLoading] = useState(false);
-  const [sunPosition, setSunPosition] = useState<any>(null);
+  const [sunPosition, setSunPosition] = useState<SunPosition | null>(null);
 
-  const [isCalculating, setIsCalculating] = useState(false);
-  // MLB ballparks have the game-by-game shade map on their own page, and minor
-  // league parks have no seating map, so the section list is for NFL venues.
+  // MLB ballparks have the game-by-game shade map on their own page. Minor
+  // league parks and NFL stadiums have no seating map, so their answer is a side.
   const isMlb = selectedVenue?.league === 'MLB';
   const milbGame = useMemo(
     () => (selectedVenue?.league === 'MiLB' && gameDateTime ? gameShade(selectedVenue, gameDateTime) : undefined),
     [selectedVenue, gameDateTime],
   );
+  // Undefined for a fixed roof, or a field whose direction we couldn't measure.
+  const nflGame = useMemo(
+    () => (selectedVenue?.league === 'NFL' && gameDateTime && selectedVenue.roof !== 'fixed' && isFieldAxisMeasured(selectedVenue.id)
+      ? nflGameShade(selectedVenue, gameDateTime)
+      : undefined),
+    [selectedVenue, gameDateTime],
+  );
+
+  // Open the park and time a link names
+  useEffect(() => {
+    const { venue, dateTime } = readFinderLink(window.location.search);
+    if (venue) setSelectedVenue(venue);
+    if (dateTime) setGameDateTime(dateTime);
+  }, []);
 
   // Convert unified venue to legacy stadium when needed
   useEffect(() => {
@@ -74,22 +80,14 @@ const MobileApp: React.FC = () => {
     }
   }, [gameDateTime, selectedVenue]);
 
-  // Calculate sun exposure when game is selected
+  // Work out the sun's position when a game is selected
   useEffect(() => {
-    if (gameDateTime && selectedVenue && selectedStadium) {
-      calculateSections();
-    } else {
-      setAllSections([]);
-      setFilteredSections([]);
+    if (!gameDateTime || !selectedVenue) {
+      setSunPosition(null);
+      return;
     }
-  }, [gameDateTime, selectedVenue, selectedStadium]);
-  
-  // Apply filters when sections or filter criteria change
-  useEffect(() => {
-    if (allSections.length > 0) {
-      applyFilters();
-    }
-  }, [allSections, filterCriteria]);
+    setSunPosition(getSunPosition(gameDateTime, selectedVenue.latitude, selectedVenue.longitude));
+  }, [gameDateTime, selectedVenue]);
 
   const handleGamesLoaded = (loadedGames: (MLBGame | MiLBGame | NFLGame)[]) => {
     setGames(loadedGames);
@@ -126,100 +124,6 @@ const MobileApp: React.FC = () => {
     }
   };
 
-  const applyFilters = React.useCallback(() => {
-    let filtered = [...allSections];
-    
-    if (filterCriteria.sunPreference) {
-      if (filterCriteria.sunPreference === 'sun') {
-        filtered = filtered.filter(s => s.sunExposure >= 60);
-      } else if (filterCriteria.sunPreference === 'shade') {
-        filtered = filtered.filter(s => s.sunExposure <= 20);
-      }
-    }
-    
-    if (filterCriteria.maxSunExposure !== undefined && filterCriteria.maxSunExposure !== 100) {
-      const maxExposure = filterCriteria.maxSunExposure;
-      filtered = filtered.filter(s => s.sunExposure <= maxExposure);
-    }
-    
-    if (filterCriteria.seatingAreas && filterCriteria.seatingAreas.length > 0) {
-      filtered = filtered.filter(s => 
-        filterCriteria.seatingAreas!.includes(s.section.level)
-      );
-    }
-    
-    if (filterCriteria.priceRange && filterCriteria.priceRange.length > 0) {
-      filtered = filtered.filter(s => 
-        s.section.price && filterCriteria.priceRange!.includes(s.section.price)
-      );
-    }
-    
-    setFilteredSections(filtered);
-  }, [allSections, filterCriteria]);
-
-  const calculateSections = React.useCallback(debounce(async () => {
-    if (!gameDateTime || !selectedVenue || !selectedStadium) return;
-    
-    setIsCalculating(true);
-    
-    try {
-      // Calculate sun position
-      const position = getSunPosition(gameDateTime, selectedVenue.latitude, selectedVenue.longitude);
-      setSunPosition({
-        altitudeDegrees: position.altitudeDegrees,
-        azimuthDegrees: position.azimuthDegrees
-      });
-
-      if (selectedVenue.league !== 'NFL') {
-        setAllSections([]);
-        setFilteredSections([]);
-        return;
-      }
-      
-      const sections = getVenueSections(selectedVenue.id);
-      const gameDate = gameDateTime;
-      
-      // Use the same time-based calculation as desktop
-      const calculator = new SunCalculator(selectedStadium);
-      const gameDuration = 3; // 3 hour game
-      
-      const results: SeatingSectionSun[] = sections.map(section => {
-        // Add section geometry for calculations
-        const side: 'home' | 'first' | 'third' | 'outfield' = 
-          section.name.toLowerCase().includes('third') || section.name.toLowerCase().includes('3b') || section.name.toLowerCase().includes('left') ? 'third' :
-          section.name.toLowerCase().includes('first') || section.name.toLowerCase().includes('1b') || section.name.toLowerCase().includes('right') ? 'first' :
-          section.name.toLowerCase().includes('behind') || section.name.toLowerCase().includes('home') || section.name.toLowerCase().includes('backstop') ? 'home' : 'outfield';
-        
-        // Pass the stadium-LOCAL baseAngle (carried through by the spread) and
-        // let SunCalculator convert it with the park's orientation. This used to
-        // set `angle: section.baseAngle`, handing a local angle to a field
-        // documented as a compass bearing, so orientation was discarded and the
-        // mobile shade list was identical for every park.
-        const sectionWithGeometry = {
-          ...section,
-          side,
-          depth: 50 // Default depth
-        };
-        
-        // Calculate time in sun
-        const timeExposure = calculator.calculateTimeInSun(sectionWithGeometry, gameDate, gameDuration);
-        
-        return {
-          section,
-          sunExposure: Math.round(timeExposure.percentage),
-          inSun: timeExposure.percentage > 20,
-          timeInSun: timeExposure.totalMinutes,
-          percentageOfGameInSun: timeExposure.percentage
-        };
-      });
-    
-      // Store all sections (unfiltered)
-      setAllSections(results);
-    } finally {
-      setIsCalculating(false);
-    }
-  }, 300), [gameDateTime, selectedVenue, selectedStadium]);
-
   const handleVenueChange = useCallback((venue: UnifiedVenue | null) => {
     setSelectedVenue(venue);
     setSelectedGame(null);
@@ -229,15 +133,6 @@ const MobileApp: React.FC = () => {
   const handleGameSelect = useCallback((game: MLBGame | MiLBGame | NFLGame | null, dateTime: Date | null) => {
     setSelectedGame(game);
     setGameDateTime(dateTime);
-  }, []);
-
-  const handleFilterChange = useCallback((criteria: SunFilterCriteria) => {
-    // Validate filter criteria
-    if (!validateFilterCriteria(criteria)) {
-      console.error('Invalid filter criteria:', criteria);
-      return;
-    }
-    setFilterCriteria(criteria);
   }, []);
 
 
@@ -282,7 +177,7 @@ const MobileApp: React.FC = () => {
                 action={
                   <div style={{textAlign: 'center'}}>
                     <p style={{fontSize: '0.9rem', color: '#666', margin: '0 0 12px 0'}}>
-                      Choose from MLB, MiLB, and NFL venues to analyze sun exposure patterns
+                      Choose from MLB, MiLB and NFL venues to see where the sun and shade will be
                     </p>
                     <div style={{display: 'flex', gap: '8px', justifyContent: 'center', flexWrap: 'wrap'}}>
                       <span style={{padding: '4px 8px', background: '#e3f2fd', borderRadius: '12px', fontSize: '0.8rem', color: '#1976d2'}}>
@@ -347,7 +242,7 @@ const MobileApp: React.FC = () => {
                       <SunIcon size={24} />
                       <div className="sun-details">
                         <span className="sun-status">
-                          Sun is {getSunDescription(sunPosition.altitudeDegrees)}
+                          {getSunDescription(sunPosition)}
                         </span>
                         <span className="sun-position">
                           {sunPosition.altitudeDegrees.toFixed(1)}° · {getCompassDirection(sunPosition.azimuthDegrees)}
@@ -394,64 +289,10 @@ const MobileApp: React.FC = () => {
                   — sun or shade for every section, inning by inning.
                 </p>
               </section>
-            ) : milbGame ? (
-              <section className="mobile-section" id="results">
-                <ShadeAnswer venue={selectedVenue} milbGame={milbGame} />
-              </section>
             ) : (
-            <>
-              <section className="mobile-section mobile-filter-section">
-                <MobileFilterSheet
-                  onFilterChange={handleFilterChange}
-                  currentFilters={filterCriteria}
-                  resultCount={filteredSections.length}
-                  allSections={allSections}
-                  league={selectedVenue?.league}
-                />
-              </section>
-
               <section className="mobile-section" id="results">
-                <h2 className="mobile-section-title">
-                  {filteredSections.length} Sections Found
-                </h2>
-                
-                {isCalculating ? (
-                  <div className="mobile-loading">
-                    <div className="mobile-spinner" />
-                    <p>Calculating sun exposure...</p>
-                  </div>
-                ) : filteredSections.length > 0 ? (
-                  <div className="mobile-section-list">
-                    {filteredSections.map((sectionData) => (
-                      <MobileSectionCard
-                        key={sectionData.section.id}
-                        section={sectionData.section}
-                        sunExposure={sectionData.sunExposure}
-                        inSun={sectionData.inSun}
-                        timeInSun={sectionData.timeInSun}
-                      />
-                    ))}
-                  </div>
-                ) : (
-                  <div className="mobile-empty-state">
-                    <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
-                      <path d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
-                    </svg>
-                    <p>No sections match your filters</p>
-                    <button 
-                      className="mobile-reset-btn"
-                      onClick={() => {
-                        setFilterCriteria({});
-                        // Immediately apply empty filters
-                        setFilteredSections(allSections);
-                      }}
-                    >
-                      Reset Filters
-                    </button>
-                  </div>
-                )}
+                <ShadeAnswer venue={selectedVenue} milbGame={milbGame} nflGame={nflGame} />
               </section>
-            </>
             )
           )}
         </div>

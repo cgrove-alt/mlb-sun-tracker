@@ -7,9 +7,9 @@ jest.mock('../seats-shade-finder/FullFinder', () => ({ __esModule: true, default
 const text = () => render(<SeatsShadeFinderPage />).container.textContent!.replace(/\s+/g, ' ');
 
 describe('the finder page', () => {
-  it('says MiLB gets a side of the park, not sections', () => {
-    expect(text()).toContain("We don't have seating maps for minor league parks, so there it says which side shades first.");
-    expect(text()).toContain('For minor league games, the finder names a side of the park instead.');
+  it('says MiLB and NFL get a side of the park or field, not sections', () => {
+    expect(text()).toContain("We don't have seating maps for NFL stadiums or minor league parks, so there it says which sideline, or side of the park, shades first.");
+    expect(text()).toContain('For NFL and minor league games, the finder names a side of the field or park instead.');
   });
 
   it('claims a confidence label only where there is one', () => {

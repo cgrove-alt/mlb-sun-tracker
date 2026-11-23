@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import type { FieldSunSide, KickoffSunSides } from '../utils/nflSunSide';
+import type { FieldSunSide, KickoffSunSides, NflGameShade } from '../utils/nflSunSide';
 import type { GameShade } from '../utils/shadeSide';
 import type { UnifiedVenue } from '../data/unifiedVenues';
 
@@ -14,17 +14,17 @@ const boxStyle = {
   lineHeight: 1.6,
 } as const;
 
-function earlyKickoff(name: string, side: FieldSunSide) {
+function kickoffSentence(opening: string, name: string, side: FieldSunSide) {
   return side.clear ? (
     <>
-      For a 1:00 PM kickoff at <strong>{name}</strong>, the sun is on the {side.shadedSideline} side
+      For {opening} at <strong>{name}</strong>, the sun is on the {side.shadedSideline} side
       of the field, so seats on the <strong>{side.shadedSideline} sideline</strong> have it at their
       backs and get shade first, starting with the upper rows and seats under an overhang. The{' '}
       {side.sunnySideline} sideline and the {side.sunFacingEndZone} end zone face the sun.
     </>
   ) : (
     <>
-      For a 1:00 PM kickoff at <strong>{name}</strong>, the sun moves along the length of the field,
+      For {opening} at <strong>{name}</strong>, the sun moves along the length of the field,
       so neither sideline has a clear edge. The {side.sunFacingEndZone} end zone faces the sun; seats
       under an overhang are the surest shade.
     </>
@@ -46,11 +46,13 @@ function laterKickoffs(early: FieldSunSide, late: FieldSunSide, nightAfterSunset
  * `shadeSide.ts`), worked out on the server so the sun-position code stays out
  * of the page's JavaScript. MLB pages use the shade finder instead.
  *
- * The finder passes `milbGame`: the answer for the MiLB game the fan picked.
+ * The finder passes `milbGame` or `nflGame`: the answer for the game the fan
+ * picked.
  */
-export function ShadeAnswer({ venue, nflSunSides, milbShadeSides = [], milbGame }: {
+export function ShadeAnswer({ venue, nflSunSides, nflGame, milbShadeSides = [], milbGame }: {
   venue: UnifiedVenue;
   nflSunSides?: KickoffSunSides;
+  nflGame?: NflGameShade;
   milbShadeSides?: string[];
   milbGame?: GameShade;
 }) {
@@ -62,6 +64,32 @@ export function ShadeAnswer({ venue, nflSunSides, milbShadeSides = [], milbGame 
         <p style={{ margin: 0 }}>
           <strong>{name}</strong> has a fixed roof, so every seat is out of the sun for the whole
           game, whatever the start time.
+        </p>
+      </section>
+    );
+  }
+
+  if (venue.league === 'NFL' && nflGame) {
+    const opening = `the ${nflGame.time} game on ${nflGame.date}`;
+    return (
+      <section className="shade-answer" aria-label={`Where are the shaded seats at ${name}?`} style={boxStyle}>
+        <p style={{ margin: 0 }}>
+          {nflGame.side ? (
+            <>
+              {roof === 'retractable' && <>With the roof closed, every seat is shaded. With it open: </>}
+              {kickoffSentence(opening, name, nflGame.side)}{' '}
+              {nflGame.sunset && <>The sun sets at {nflGame.sunset}. </>}
+              <Link href="/how-it-works" style={{ fontWeight: 600, textDecoration: 'underline' }}>
+                How we work this out
+              </Link>
+              .
+            </>
+          ) : (
+            <>
+              For {opening} at <strong>{name}</strong>, the sun is down for the whole game, so every
+              seat is out of the sun.
+            </>
+          )}
         </p>
       </section>
     );
@@ -87,7 +115,7 @@ export function ShadeAnswer({ venue, nflSunSides, milbShadeSides = [], milbGame 
       <section className="shade-answer" aria-label={`Where are the shaded seats at ${name}?`} style={boxStyle}>
         <p style={{ margin: 0 }}>
           {roof === 'retractable' && <>With the roof closed, every seat is shaded. With it open: </>}
-          {earlyKickoff(name, early)} {laterKickoffs(early, late, nightAfterSunset)}
+          {kickoffSentence('a 1:00 PM kickoff', name, early)} {laterKickoffs(early, late, nightAfterSunset)}
         </p>
         <p style={{ margin: '0.5rem 0 0', fontSize: '0.875rem' }}>
           Based on the sun&apos;s path on Sunday, September 14, 2025. Later in the season the sun is
