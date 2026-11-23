@@ -149,7 +149,7 @@ export default function AttributionsPage() {
             </li>
             <li>
               The direction all 120 MiLB parks face, measured from USDA NAIP and USGS aerial photos,
-              and at four parks from satellite images (contains modified Copernicus Sentinel data
+              and at six parks from satellite images (contains modified Copernicus Sentinel data
               2025)
             </li>
           </ul>
