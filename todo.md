@@ -5710,6 +5710,246 @@ With the final directions the plan's table reads (120 parks):
 - `StadiumGuide.css` keeps the removed lists' rules (the unimported
   `MobileStadiumGuide` uses them).
 
+## §28 MiLB sections in the finder (plan, 2026-11-23)
+
+Asked: is every MiLB section in `/seats-shade-finder` 90° off, are the
+layouts real seating maps, and what should be done? Branch
+`claude/admiring-austin-0ae2e0`, from §27's branch (1695d3a52). Nothing but
+this file has changed.
+
+**In short:** no one angle fixes it. The layouts use two frames that run
+opposite ways, and 82 of the 120 were laid out from the old, wrong park
+directions. They aren't seating maps either: 10 of the 12 parks I could
+check have sections ours lacks. I recommend the finder stop listing MiLB
+sections and name a side for the game the fan picked.
+
+### Findings
+
+**1. Which way the angles run, park by park** (2,231 sections):
+
+| | Parks | Sections | What the angles count from |
+|---|---|---|---|
+| A | 32 | 794 | Behind home (0), then first base 90, center 180, third base 270 |
+| B | 82 | 1,261 | The old stored direction: the first section starts 30° before it |
+| ? | 3 | 52 | Near the old direction, but not exactly 30° before: can't be placed |
+| T | 3 | 124 | No layout; the `generateBaseballSections` template, as A |
+
+- *A* is the 29 AAA layouts plus Daytona, Fort Myers and Lakeland. The
+  numbered bowl is centered on 0 (within 12°) whatever the park's stored
+  direction was. 36 areas at 22 parks have a name that gives a side (Home
+  Plate Club, Left Field Pavilion and so on), and all 36 sit on that side.
+  Here and in T, and nowhere else, the 90° in §27's review is right.
+- *B* is AA, A+ and A. The first section listed (101 at 69 parks, 1, 100 or
+  A at the rest) is at *exactly* the old direction minus 30° at all 82, over
+  24 different stored directions from 0° to 350°. Each next one is 10° on at
+  75 of them, 8–15° at the rest. 25 of these parks had 340°, so they start
+  at 310° and could pass for A; the other 57 show the rule.
+- Those directions were wrong by a median of 74°, so the B angles never
+  described the park. The seats are laid out around the way the park
+  *faces*, which is center field, so this only makes sense as the way each
+  section faces.
+- *B also runs the other way round from A.* Only 5 B parks have a side in a
+  name (Portland, Greenville, Richmond, Wichita, West Michigan), and all 5
+  put left field at the high-angle end; A puts right field there. The other
+  77 B parks name no side, so which way their numbers run can't be told.
+- *Can't be placed:* Akron, Altoona and Binghamton (the frame), and the 77 B
+  parks above (the direction). Reno and Sugar Land fit both rules; as AAA
+  I count them as A.
+- *The template* has its Left Field and Right Field GA swapped, and its
+  "Reserved" rows run into the outfield.
+
+**2. How the data reaches the page.** The finder is the only place these
+sections show. Nothing else that imports them is reachable from a page.
+
+| | Desktop (`UnifiedApp`) | Mobile (`MobileApp`, up to 768 px) |
+|---|---|---|
+| Sections | `getVenueSections`, else the template | the same |
+| Shade | `getUnifiedVenueShade`, at first pitch only | `SunCalculator`, 3 hours |
+| Direction | `sectionCompassAngle` | `sectionCompassAngle` |
+| Label | `101` | `Section sec-101`, `Section lower-1b-1` |
+
+So the two finders don't agree with each other. Over six 2025 Sundays at
+1:05 PM the same section differs by a median of 8 points and up to 56, and
+391 of the 2,231 are sunny (50% or more) in one and shaded in the other.
+
+*NFL* goes through the same two functions with its own sections
+(`VENUE_SECTIONS`, `NFL_SECTIONS`), so changing `sectionCompassAngle` would
+also move MLB and NFL. Anything done for MiLB has to stay behind
+`league === 'MiLB'`. NFL has its own version of this fault (see "Not in this
+plan").
+
+**3. How wrong today's answers are.** 35 parks (A and T) can be judged by
+their own labels. Over the same six Sundays, the shadiest infield side in the
+mobile finder is one of the page's sides at 5 of them.
+
+**4. Are they seating maps? No.**
+- They came in a run of commits on 2025-08-04 and 05 (7a4fa0f50 to
+  33fe8efde) with no source. The scripts are in `dev-scripts/`: one renames
+  "Section 105" to "105", and another then counts three-digit names as real.
+- Templates: 117 layouts use 49 lists of section numbers. 17 parks share one
+  (101–108, 201–205), 14 share another, 11 and 10 two more. Nine parks have
+  lower sections lying on top of each other (46 pairs).
+- 74 parks put section 201 straight above 101, the same width. 100 parks
+  have an "upper" level, 69 of them holding under 8,000. The lower bowl
+  covers a median of 80° in B, where a real one runs from pole to pole.
+- 650 sections (29%) are marked covered, so they read 0% sun at any hour,
+  and no source says they have a roof.
+- 153 berm and general-admission areas are rated as a lower bowl with a
+  45 ft stand behind it (`BOWL_DEFAULTS` in `bowlGeometry.ts`, "a generic
+  MLB seating bowl").
+- Against published lists, 12 parks where I found any:
+
+  | Park | Published | Ours |
+  |---|---|---|
+  | Greenville | 101–120; home 107–109; Pesky's Porch 116–120 | 100–107, 200–204 |
+  | Birmingham | 106–110 home; 111–113 first base dugout; up to 119 | 101–110, 201–206 |
+  | Indianapolis | 103–125, 201–219; home 110–113; third base 107 | 101–122 |
+  | Dayton | 104–116, 201–210 | 101–108, 201–206 |
+  | Toledo | 101–122; 119 beyond left field | 100–115, 200–209 |
+  | Las Vegas | 100–127; club 209–214 | 101–117 |
+  | Portland | 101–114 | 101–110, 201–206 |
+  | Tulsa | 101–105, 109, 112, 114, 116 | 101–110, 201–205 |
+  | Beloit | 105, 107, 108, 109 | 101–107, 201–204 |
+  | Delmarva | 111 | 101–107, 201–205 |
+  | Gwinnett | 101, 106, 109, 111, 113 | 101–115 (no conflict) |
+  | Buffalo | 100 behind home; 201 | 100–124, 201–212 (no conflict) |
+
+  Greenville, Birmingham and Dayton are the teams' own pages; the rest are
+  ticket guides and fans' seat photos. I read them through web-search
+  extracts, because the pages refuse automated reading, so this is enough to
+  show the lists differ but not to correct them.
+
+**5. Would converting the angles help?**
+- *Subtracting 90°* helps A and T: the shadiest side is then one of the
+  page's sides at 29 of 35. It does nothing for the other 85.
+- *Converting each group its own way* still misses. Ten sections at three
+  parks (Greenville 107; Birmingham 106–110; Indianapolis 107, 110, 112,
+  113) have a published position. Today they're 105–170° off (median 140°).
+  Converted, they're 25–122° off (median 56°), because the numbers
+  themselves are invented. At Greenville the real numbers rise toward right
+  field, and ours toward the Green Monster in left.
+- *Real maps* for 120 parks, plus the height of the stands behind each
+  section, is what §6 to §24 did for 30 MLB parks.
+
+So a conversion would make made-up sections look more certain. The page
+already tells fans "this guide can't say which sections or rows are shaded";
+the finder says the opposite, with a percentage, and the finder page adds
+"each answer is labelled High, Medium or Low confidence", which no MiLB or
+NFL answer is.
+
+**6. The page's answer isn't enough by itself.** It is for a 1:05 PM game.
+The finder knows the fan's game, and 77% of 2025 MiLB games were at night.
+At the 8,126 games played in 2025 at the 118 parks the finder has a schedule
+for:
+- the sun was up for some of the game at all but 13 of them;
+- the sides are the same as the page's 1:05 PM answer at 1,715 (21%);
+- the leading side isn't in the page's answer at all at 4,315 (53%).
+
+The same rule, run for the game's own hours, holds up. On the 27 MLB parks
+with stand profiles, the sides it names include the shadiest infield side (or
+one within 2 points) at 22 at 1:05 PM (as §27), 27 at 4:05, 5:05, 6:05 and
+6:40, and 26 at 7:05. At
+6:40 PM the sides differ by more than 10 points at 20 parks; the rule names
+the shadiest at all 20 and the sunniest at none.
+
+### Plan (waiting for your go-ahead)
+
+- [ ] H1. `shadeSide.ts`: take the loop out of `dayGameShadeSides` as
+      `shadeSides(venue, starts)`, leaving out samples when the sun is down.
+      `dayGameShadeSides` calls it with its six Sundays, so no page changes.
+      Tests first: an evening game, a game after sunset, and all 120 day
+      answers the same as before.
+- [ ] H2. `ShadeAnswer`: an optional game time. With it, the MiLB sentence is
+      about that game ("For the 6:35 PM game on July 12 at Sahlen Field, the
+      … tends to shade first"), plus "The sun sets at …", or "the sun is down
+      for the whole game". It keeps "We don't have a seating map for this
+      park". Without it, unchanged (test).
+- [ ] H3. `UnifiedApp` and `MobileApp`: for MiLB, show H2's answer instead of
+      the section list, its filters and its explanation, as they already do
+      for MLB. Tests: a MiLB venue shows the answer and no sections; NFL
+      still lists the same sections with the same numbers; MLB unchanged.
+- [ ] H4. Delete what nothing uses then (own commit): the MiLB branch of
+      `getVenueSections`, `milbVenueLayouts.ts`, `milbVenueLayoutsLower.ts`,
+      `venueLayoutIntegration.ts`, `generateBaseballSections.ts` (4,400
+      lines, 349 KB of source, all in the finder's download today), the
+      unreachable modules tied to them (`data/index.ts`, `venueCorrections`,
+      `stadiumDataIntegration`, `stadiumLayoutEnhancer`,
+      `allRealStadiumLayouts`), and `scripts/verifyLayouts.ts`.
+      `auditCoverageContradictions.ts` loses its MiLB line.
+- [ ] H5. `/seats-shade-finder` copy: MLB and NFL by section, MiLB by side,
+      and no confidence label where there is none.
+- [ ] H6. Checks: unit tests, type check, eslint, build; every MiLB park in
+      both finders against a separate calculation (day, evening, after
+      sunset); NFL's list before and after, byte for byte; a look at Buffalo,
+      Hillsboro and Lambeau. Then the review.
+
+One PR, one commit per step. H4 could wait, but it's what stops the layouts
+being used again.
+
+**For you to decide:**
+1. Go ahead with H1–H6? (I'd say yes.)
+2. NFL's list has a fault of the same kind (below). Leave it for its own plan
+   (my pick: it needs its own checks), or include it here?
+
+**Not in this plan (noticed):**
+- *NFL:* the field's direction is its long axis, but the sections' labels
+  put an end zone at 0, so the finder turns every one by 90°. By their own
+  `sideType`, 0 of 580 end-zone sections are placed at an end zone, and 0 of
+  580 sideline sections on a sideline. 29 of the 32 stadiums share one
+  60-section list (Hard Rock and Lambeau have their own; the Chargers have
+  none, so the finder shows nothing). `fieldSunSide` in `nflSunSide.ts` already takes a date and a
+  kickoff, so the same remedy would work.
+- The desktop NFL list rates only kickoff, though its tooltip says the
+  percentage is for the whole game; the mobile one covers 3 hours.
+- Down East and Palm Beach aren't in `milbTeamMapping.ts`, so picking them
+  from the schedule gives "Venue configuration error".
+- Unreachable already: `milbStadiumSections.ts`, `unifiedStadiumShade.ts`,
+  `optimizedSunCalculations.ts`, `stadiumSectionGenerator.ts`,
+  `realStadiumSections.ts`, `realStadiumLayouts/`, and
+  `SmartItinerariesPage` with its service.
+- §27's review says every MiLB section is 90° off. That is so for 35 parks.
+
+The scripts and data are in the shared notes folder, `milb-finder/`.
+
+### Every park
+
+- **A** (32): Albuquerque, Buffalo, Charlotte, Columbus Clippers, Daytona,
+  Durham, El Paso, Fort Myers, Fresno, Gwinnett, Indianapolis, Iowa,
+  Jacksonville, Lakeland, Las Vegas, Lehigh Valley, Louisville, Memphis,
+  Nashville, Norfolk, Oklahoma City, Omaha, Reno, Rochester, Round Rock,
+  Salt Lake, Scranton, St. Paul, Sugar Land, Syracuse, Tacoma, Toledo.
+- **?** (3): Akron, Altoona, Binghamton.
+- **T** (3): Rome, Sacramento, Worcester.
+- **B** (82): every other park. The first section starts at the old stored
+  direction minus 30°, in full:
+
+  | Old | Starts | Parks |
+  |---|---|---|
+  | 0° | 330° | bradenton-marauders |
+  | 10° | 340° | charleston-riverdogs, fayetteville-woodpeckers, jersey-shore-blueclaws, wichita-wind-surge |
+  | 20° | 350° | biloxi-shuckers, winston-salem-dash |
+  | 25° | 355° | amarillo-sod-poodles, salem-red-sox |
+  | 40° | 10° | down-east-wood-ducks, hickory-crawdads, modesto-nuts |
+  | 45° | 15° | vancouver-canadians |
+  | 50° | 20° | fort-wayne-tincaps, frisco-roughriders, reading-fightin-phils, san-jose-giants, stockton-ports |
+  | 55° | 25° | dayton-dragons, new-hampshire-fisher-cats |
+  | 60° | 30° | tampa-tarpons |
+  | 65° | 35° | peoria-chiefs |
+  | 70° | 40° | cedar-rapids-kernels |
+  | 85° | 55° | knoxville-smokies |
+  | 90° | 60° | asheville-tourists, delmarva-shorebirds, south-bend-cubs |
+  | 115° | 85° | chattanooga-lookouts |
+  | 160° | 130° | quad-cities-river-bandits |
+  | 195° | 165° | brooklyn-cyclones |
+  | 225° | 195° | augusta-greenjackets, pensacola-blue-wahoos |
+  | 250° | 220° | harrisburg-senators |
+  | 310° | 280° | springfield-cardinals |
+  | 315° | 285° | bowling-green-hot-rods, hillsboro-hops, lake-elsinore-storm, lansing-lugnuts, lynchburg-hillcats, portland-sea-dogs, rancho-cucamonga-quakes, san-antonio-missions, somerset-patriots, visalia-rawhide, west-michigan-whitecaps, wisconsin-timber-rattlers |
+  | 330° | 300° | spokane-indians |
+  | 335° | 305° | dunedin-blue-jays, jupiter-hammerheads, palm-beach-cardinals, st-lucie-mets |
+  | 340° | 310° | aberdeen-ironbirds, arkansas-travelers, beloit-sky-carp, carolina-mudcats, columbia-fireflies, columbus-clingstones, corpus-christi-hooks, erie-seawolves, eugene-emeralds, everett-aquasox, fredericksburg-nationals, great-lakes-loons, greensboro-grasshoppers, greenville-drive, inland-empire-66ers, kannapolis-cannon-ballers, lake-county-captains, midland-rockhounds, montgomery-biscuits, myrtle-beach-pelicans, northwest-arkansas-naturals, rocket-city-trash-pandas, tri-city-dust-devils, tulsa-drillers, wilmington-blue-rocks |
+  | 350° | 320° | birmingham-barons, bowie-baysox, clearwater-threshers, hartford-yard-goats, hudson-valley-renegades, richmond-flying-squirrels |
+
 ---
 ---
 
