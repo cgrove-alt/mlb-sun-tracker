@@ -2,12 +2,13 @@
 
 > The Shadium finds the shaded seats at sports venues. Pick a stadium and a game, and it shows which sections and seats will be in sun or shade at that game's real first-pitch time.
 
-The Shadium calculates shade from the sun's position (NOAA Solar Calculator), each venue's verified orientation and per-section geometry, cloud-cover weather from Open-Meteo, and official MLB schedule data. See the full methodology, including accuracy and limitations, at https://theshadium.com/how-it-works.
+The Shadium works out shade from the sun's position (NREL's Solar Position Algorithm), the shape of each park's stands, decks and roofs (measured from USGS lidar at 24 MLB parks), and the real first-pitch time from MLB's schedule. The MLB map shows a clear sky; the full finder for MiLB and NFL venues shows the forecast from Open-Meteo. See the full methodology, including accuracy and limitations, at https://theshadium.com/how-it-works.
 
 ## Coverage
 
 - 182 venues across three leagues: 30 MLB ballparks, 120 Minor League Baseball (MiLB) parks, and 32 NFL stadiums.
-- Every venue has an "answer-first" summary of where the shaded seats are, a section-by-section shade table (Covered / partial back-rows / Exposed), seasonal patterns, and an orientation-aware FAQ.
+- MLB ballpark pages show every section in sun or shade for any game, inning by inning, with the sections that get the most shade, a High, Medium or Low confidence label, and how high the sun gets each month.
+- MiLB and NFL pages are sun and shade guides: which side or sideline tends to shade first, going by the way the venue faces, plus seating, food and travel notes.
 
 ## URL patterns
 
