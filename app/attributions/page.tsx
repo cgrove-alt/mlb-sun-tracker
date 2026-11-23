@@ -16,8 +16,8 @@ export default function AttributionsPage() {
     <div className="page-container prose prose-slate max-w-prose mx-auto px-4 py-8 stack">
       <h1 className="h1 break-words md:break-normal">Technology & Attributions</h1>
       <p className="text-lg text-gray-600">
-        The Shadium combines the sun&apos;s position with the measured shape of each park&apos;s
-        stands, the real game schedule and the weather. These are the sources behind each.
+        The Shadium combines the sun&apos;s position with the shape of the stands (measured at 24
+        MLB parks), the real game schedule and the weather. These are the sources behind each.
       </p>
 
       <section className="stack">
@@ -132,8 +132,8 @@ export default function AttributionsPage() {
         <div className="bg-purple-50 border border-purple-200 p-6 rounded-lg">
           <h3 className="h3 text-purple-900">Stadium Information</h3>
           <p>
-            Where each park&apos;s seats are, and the shape of the stands around them, come from
-            public sources:
+            Where each MLB park&apos;s sections are, and the shape of the stands around them, come
+            from public sources:
           </p>
 
           <ul className="list-disc list-inside text-sm space-y-1 mt-4">
@@ -144,8 +144,8 @@ export default function AttributionsPage() {
               Program lidar (public domain)
             </li>
             <li>
-              Each park&apos;s direction measured from USDA NAIP aerial photos, and City of Toronto
-              photos for Rogers Centre
+              The direction 28 of the 30 parks face, measured from USDA NAIP aerial photos (City of
+              Toronto photos for Rogers Centre)
             </li>
           </ul>
         </div>

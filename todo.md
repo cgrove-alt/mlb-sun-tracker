@@ -5287,6 +5287,25 @@ Copy and one code comment only, no logic.
   are all on lines this branch didn't touch.
 - *Not yet:* the live pages, after merge.
 
+**Corrected before the PR.** Checking my own new claims against the data
+found four that were too broad, so the plan's wording above is not what
+shipped:
+- /attributions said "each park's direction" is measured from photos.
+  `orientationMeasurements.ts` has 28 of the 30: Globe Life Field's is a
+  published estimate and Tropicana Field's fixed roof needs none. It now
+  says "the direction 28 of the 30 parks face".
+- Its intro said "the measured shape of each park's stands", and its
+  Stadium Data lead line spoke of every park. The stands are measured at
+  24 MLB parks, and MiLB and NFL parks have no stands model, so both now
+  say that.
+- `llms.txt` gave the method for every venue; it's MLB's, so it now says
+  "for MLB ballparks" and "24 of the 30 parks".
+- `llms.txt` said all MiLB and NFL pages are guides. A survey of the 152
+  on the dev server found 2 MiLB pages with no guide and no side answer
+  (Columbus Clingstones and Knoxville Smokies: "Stadium Guide Not
+  Available"). It now says "nearly all", and adds "where we know the way
+  the venue faces". Those two pages are their own task.
+
 **Not changed:** `MobileHeader.tsx` and `AttributionFooter.tsx` (nothing
 imports them); the MiLB guide blocks (above).
 
