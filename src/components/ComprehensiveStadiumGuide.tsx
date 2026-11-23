@@ -30,6 +30,8 @@ interface ComprehensiveStadiumGuideProps {
   fidelityNote?: string | null;
   // NFL only: which sideline has the sun at its back, worked out on the server.
   nflSunSides?: KickoffSunSides;
+  // MiLB only: the sides of the park that shade first at a day game, worked out on the server.
+  milbShadeSides?: string[];
   // When false, the guide's own title block (H1) is suppressed — used on MLB
   // stadium pages where StadiumPageSSR already renders the single H1/header.
   showTitleBlock?: boolean;
@@ -41,6 +43,7 @@ const ComprehensiveStadiumGuide: React.FC<ComprehensiveStadiumGuideProps> = ({
   fidelityNote,
   showTitleBlock = true,
   nflSunSides,
+  milbShadeSides,
 }) => {
   // The structured venue record is the single source of truth for header
   // facts (location, capacity, orientation, league). Previously these came
@@ -103,7 +106,7 @@ const ComprehensiveStadiumGuide: React.FC<ComprehensiveStadiumGuideProps> = ({
       {/* Answer-first summary — only when standalone (MLB pages get it from
           StadiumPageSSR instead, so it isn't duplicated). */}
       {showTitleBlock && venue && (
-        <ShadeAnswer venue={venue} nflSunSides={nflSunSides} />
+        <ShadeAnswer venue={venue} nflSunSides={nflSunSides} milbShadeSides={milbShadeSides} />
       )}
 
       {/* The interactive shade diagram is intentionally NOT rendered for MiLB/NFL
