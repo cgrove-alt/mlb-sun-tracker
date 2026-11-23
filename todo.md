@@ -5759,7 +5759,8 @@ sections and name a side for the game the fan picked.
   numbered bowl is centered on 0 (within 12°) whatever the park's stored
   direction was. 36 areas at 22 parks have a name that gives a side (Home
   Plate Club, Left Field Pavilion and so on), and all 36 sit on that side.
-  Here and in T, and nowhere else, the 90° in §27's review is right.
+  Here and in T, and nowhere else, "90° off" is right (§27's review first
+  said it of every park, and has since been corrected).
 - *B* is AA, A+ and A. The first section listed (101 at 69 parks, 1, 100 or
   A at the rest) is at *exactly* the old direction minus 30° at all 82, over
   24 different stored directions from 0° to 350°. Each next one is 10° on at
@@ -5875,21 +5876,22 @@ the shadiest at all 20 and the sunniest at none.
 
 ### Plan (waiting for your go-ahead)
 
-- [ ] H1. `shadeSide.ts`: take the loop out of `dayGameShadeSides` as
+- [x] H1. `shadeSide.ts`: take the loop out of `dayGameShadeSides` as
       `shadeSides(venue, starts)`, leaving out samples when the sun is down.
       `dayGameShadeSides` calls it with its six Sundays, so no page changes.
       Tests first: an evening game, a game after sunset, and all 120 day
       answers the same as before.
-- [ ] H2. `ShadeAnswer`: an optional game time. With it, the MiLB sentence is
+- [x] H2. `ShadeAnswer`: an optional game time. With it, the MiLB sentence is
       about that game ("For the 6:35 PM game on July 12 at Sahlen Field, the
       … tends to shade first"), plus "The sun sets at …", or "the sun is down
       for the whole game". It keeps "We don't have a seating map for this
       park". Without it, unchanged (test).
-- [ ] H3. `UnifiedApp` and `MobileApp`: for MiLB, show H2's answer instead of
+- [x] H3. `UnifiedApp` and `MobileApp`: for MiLB, show H2's answer instead of
       the section list, its filters and its explanation, as they already do
       for MLB. Tests: a MiLB venue shows the answer and no sections; NFL
       still lists the same sections with the same numbers; MLB unchanged.
-- [ ] H4. Delete what nothing uses then (own commit): the MiLB branch of
+- [ ] H4. (On hold: waiting for your OK to delete.) Delete what nothing uses
+      then (own commit): the MiLB branch of
       `getVenueSections`, `milbVenueLayouts.ts`, `milbVenueLayoutsLower.ts`,
       `venueLayoutIntegration.ts`, `generateBaseballSections.ts` (4,400
       lines, 349 KB of source, all in the finder's download today), the
@@ -5897,9 +5899,9 @@ the shadiest at all 20 and the sunniest at none.
       `stadiumDataIntegration`, `stadiumLayoutEnhancer`,
       `allRealStadiumLayouts`), and `scripts/verifyLayouts.ts`.
       `auditCoverageContradictions.ts` loses its MiLB line.
-- [ ] H5. `/seats-shade-finder` copy: MLB and NFL by section, MiLB by side,
+- [x] H5. `/seats-shade-finder` copy: MLB and NFL by section, MiLB by side,
       and no confidence label where there is none.
-- [ ] H6. Checks: unit tests, type check, eslint, build; every MiLB park in
+- [x] H6. Checks: unit tests, type check, eslint, build; every MiLB park in
       both finders against a separate calculation (day, evening, after
       sunset); NFL's list before and after, byte for byte; a look at Buffalo,
       Hillsboro and Lambeau. Then the review.
@@ -5928,7 +5930,6 @@ being used again.
   `optimizedSunCalculations.ts`, `stadiumSectionGenerator.ts`,
   `realStadiumSections.ts`, `realStadiumLayouts/`, and
   `SmartItinerariesPage` with its service.
-- §27's review says every MiLB section is 90° off. That is so for 35 parks.
 
 The scripts and data are in the shared notes folder, `milb-finder/`.
 
@@ -5970,6 +5971,55 @@ The scripts and data are in the shared notes folder, `milb-finder/`.
   | 335° | 305° | dunedin-blue-jays, jupiter-hammerheads, palm-beach-cardinals, st-lucie-mets |
   | 340° | 310° | aberdeen-ironbirds, arkansas-travelers, beloit-sky-carp, carolina-mudcats, columbia-fireflies, columbus-clingstones, corpus-christi-hooks, erie-seawolves, eugene-emeralds, everett-aquasox, fredericksburg-nationals, great-lakes-loons, greensboro-grasshoppers, greenville-drive, inland-empire-66ers, kannapolis-cannon-ballers, lake-county-captains, midland-rockhounds, montgomery-biscuits, myrtle-beach-pelicans, northwest-arkansas-naturals, rocket-city-trash-pandas, tri-city-dust-devils, tulsa-drillers, wilmington-blue-rocks |
   | 350° | 320° | birmingham-barons, bowie-baysox, clearwater-threshers, hartford-yard-goats, hudson-valley-renegades, richmond-flying-squirrels |
+
+### §28 Review (2026-11-23)
+
+Go-ahead: "go ahead with the finder plan", passed on by the session that
+started this group. H4 (deleting the layouts) and NFL weren't part of what
+was asked, so both are left. `main` (§27, PR #103) was merged in first:
+the finder's data is identical, so no number above moved.
+
+**What changed:** 5 commits on `claude/admiring-austin-0ae2e0`, not pushed.
+- *The rule* (H1): `shadeSides(venue, starts)` in `shadeSide.ts` is the loop
+  from `dayGameShadeSides`, leaving out the time after sunset. `gameShade`
+  adds the time, date and sunset in the park's time zone.
+- *The answer* (H2): `ShadeAnswer` takes one game. "For the 6:35 PM game on
+  July 20 at Sahlen Field, the first base side and the seating behind home
+  plate tend to shade first … The sun sets at 8:48 PM." The sunset is given
+  only if it falls during the game. A game after sunset says so instead.
+- *The finders* (H3): both show that answer for a MiLB game, with no
+  section list, filters or percentages. NFL keeps its list, MLB its link.
+- *Copy* (H5): `/seats-shade-finder` says MiLB gets a side of the park and
+  that MLB answers carry a confidence label. The finder's empty state said
+  "see which sections" for MiLB too, and no longer does.
+
+**Checks:**
+- *Tests:* 4,003 of 4,003, 23 of them new. Each was seen to fail before its
+  change, except the NFL and MLB ones in `finderMilb.test.tsx`, which guard
+  what must not change. The type check is clean; eslint gives no errors (its
+  warnings are on old lines). The production build passes.
+- *Every MiLB park:* 720 answers (120 parks, both finders, 1:05 PM and
+  6:35 PM on July 20 and 9:05 PM on September 14, 2025) against a separate
+  calculation in Python (the NOAA equations, not this code): all 720 have the
+  right sides, sunset and times, and none shows a section. At 6:35 PM one
+  side is named at 89 parks and two at 31.
+- *Nothing else moved:* the 120 day answers on the pages, and everything both
+  finders work out for the 32 NFL stadiums at two kickoffs, are byte for byte
+  the same before and after.
+- *In a browser* (dev server): Sahlen Field at 6:35 PM and 8:35 PM, Ron
+  Tonkin Field at 1:05 PM (no side clear), Lambeau Field (12 sections, as
+  before), Yankee Stadium (its link); and Sahlen Field on mobile through the
+  real selector. No server errors.
+
+**Left over until H4:** the MiLB branch of `getVenueSections` and the layout
+files are still there, but no page reaches them.
+
+**Noticed (not changed):**
+- NFL's schedule can't load in the finder: the site's Content Security Policy
+  doesn't allow `site.api.espn.com`. A custom time still works.
+- On phones a site-wide rule pads every link (`app-utilities.css`,
+  `mobile.css`), so the period after "How we work this out" strays. The MiLB
+  pages have the same.
 
 ---
 ---
