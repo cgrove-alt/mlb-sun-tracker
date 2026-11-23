@@ -5,6 +5,7 @@ import { UnifiedVenue, convertToLegacyStadium } from './data/unifiedVenues';
 import { isFieldAxisMeasured } from './data/nflOrientationMeasurements';
 import { gameShade } from './utils/shadeSide';
 import { nflGameShade } from './utils/nflSunSide';
+import { readFinderLink } from './utils/finderLink';
 import { MLBGame } from './services/mlbApi';
 import { MiLBGame } from './services/milbApi';
 import { NFLGame } from './services/nflApi';
@@ -12,7 +13,7 @@ import { UnifiedGameSelector } from './components/UnifiedGameSelector';
 import { WeatherDisplay } from './components/WeatherDisplay';
 import { EmptyState } from './components/EmptyStates';
 import { weatherApi } from './services/weatherApi';
-import { getSunPosition, getSunDescription, getCompassDirection } from './utils/sunCalculations';
+import { getSunPosition, getSunDescription, getCompassDirection, type SunPosition } from './utils/sunCalculations';
 import { SunIcon, MoonIcon } from './components/Icons';
 import { FidelityNotice } from './components/FidelityNotice';
 import { ShadeAnswer } from './components/ShadeAnswer';
@@ -35,7 +36,7 @@ const MobileApp: React.FC = () => {
   const [error, setError] = useState<string | null>(null);
   const [weatherForecast, setWeatherForecast] = useState<any>(null);
   const [isWeatherLoading, setIsWeatherLoading] = useState(false);
-  const [sunPosition, setSunPosition] = useState<any>(null);
+  const [sunPosition, setSunPosition] = useState<SunPosition | null>(null);
 
   // MLB ballparks have the game-by-game shade map on their own page. Minor
   // league parks and NFL stadiums have no seating map, so their answer is a side.
@@ -51,6 +52,13 @@ const MobileApp: React.FC = () => {
       : undefined),
     [selectedVenue, gameDateTime],
   );
+
+  // Open the park and time a link names
+  useEffect(() => {
+    const { venue, dateTime } = readFinderLink(window.location.search);
+    if (venue) setSelectedVenue(venue);
+    if (dateTime) setGameDateTime(dateTime);
+  }, []);
 
   // Convert unified venue to legacy stadium when needed
   useEffect(() => {
@@ -78,11 +86,7 @@ const MobileApp: React.FC = () => {
       setSunPosition(null);
       return;
     }
-    const position = getSunPosition(gameDateTime, selectedVenue.latitude, selectedVenue.longitude);
-    setSunPosition({
-      altitudeDegrees: position.altitudeDegrees,
-      azimuthDegrees: position.azimuthDegrees
-    });
+    setSunPosition(getSunPosition(gameDateTime, selectedVenue.latitude, selectedVenue.longitude));
   }, [gameDateTime, selectedVenue]);
 
   const handleGamesLoaded = (loadedGames: (MLBGame | MiLBGame | NFLGame)[]) => {
@@ -238,7 +242,7 @@ const MobileApp: React.FC = () => {
                       <SunIcon size={24} />
                       <div className="sun-details">
                         <span className="sun-status">
-                          Sun is {getSunDescription(sunPosition.altitudeDegrees)}
+                          {getSunDescription(sunPosition)}
                         </span>
                         <span className="sun-position">
                           {sunPosition.altitudeDegrees.toFixed(1)}° · {getCompassDirection(sunPosition.azimuthDegrees)}

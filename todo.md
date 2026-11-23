@@ -6204,6 +6204,65 @@ deletion and the schedule left for its own plan. Commits on
 - The homepage still links "Shaded sections at MetLife Stadium (NFL)", and
   that page gives a sideline.
 
+## §31 Three leftovers from checking §28 (plan, 2026-11-23)
+
+Asked: fix the three things noticed while checking PR #104. Branch
+`fix/finder-leftovers`, from `main` at bb77e58af.
+
+1. *`scripts/remove-debug-logs.js` lists a deleted file*
+   (`milbVenueLayouts.ts`, H4). `StadiumVisualizationSection.tsx` on the same
+   list is gone too.
+2. *The mobile finder's sun line* reads "Sun is Sun is high in the sky"
+   whatever the sun's height. `MobileApp` passes `getSunDescription` the
+   height, but it takes the whole sun position, so every comparison is with
+   `undefined` and it falls through to "high". It also writes "Sun is" before
+   text that starts with it. The state is typed `any`, so the compiler
+   couldn't catch it.
+3. *A finder link* (`?venue=`, `?datetime=`) opens the park on desktop, not on
+   phones: only `UnifiedApp` reads it. And the picker keeps its own league and
+   ignores the park it's given, so on desktop it says "Major League Baseball"
+   over a minor league park. Nothing on the site makes these links now
+   (`ShareButton` isn't imported anywhere), so this is for old and hand-typed
+   ones.
+
+### Steps
+- [x] I1. Drop both missing files from the script's list.
+- [x] I2. Pass the sun position, drop the extra "Sun is", and type the state
+      so the compiler checks the call. Test first.
+- [x] I3. Move the link reading to one function that both finders use, and
+      have the picker show the league (and MiLB level) of the park it's given,
+      without changing the fan's saved league. Tests first.
+- [x] I4. Checks: unit tests, type check, eslint; both finders in a browser,
+      with and without a link, MiLB, NFL and MLB. Then the review.
+
+### §31 Review (2026-11-23)
+
+**What changed:** 3 commits on `fix/finder-leftovers`, one per fix.
+- *Script* (I1): both files that no longer exist are off its list.
+- *Sun line* (I2): phones read "Sun is low in the sky · 17.9° W" for a 6:35 PM
+  game in Memphis, and "high" at 75°. With the state typed, the compiler
+  rejects the old call.
+- *Links* (I3): `readFinderLink` (`utils/finderLink.ts`) replaces the copy in
+  `UnifiedApp`, and both finders use it. The picker shows the league, level
+  and park it's given. The fan's saved league stays.
+
+**Checks:**
+- *Tests:* 4,016 of 4,016, 11 of them new (`finderLink.test.tsx`: desktop and
+  mobile). 6 of the 9 first written failed before the fixes, the sun line for
+  its own reason once the links worked. The type check is clean; eslint gives
+  the same 6 warnings on these files as before.
+- *In a browser, on the dev server:* Memphis, Reading (AA), Lambeau and Yankee
+  Stadium links, on phones or desktop; switching leagues by hand after a link
+  clears the park; with no link the saved league shows. No server errors.
+
+**Not changed (noticed):** `ShareButton`, which made these links, isn't
+imported anywhere, so nothing on the site makes them now. A link's time isn't
+copied into the picker's Custom Time boxes.
+
+(Merged into `fix/nfl-finder-sections` 2026-11-23, asked. It was §29 on
+`fix/finder-leftovers`; another branch's plan is §30, so it's §31 here. Its
+conflicts were in `MobileApp.tsx`, `UnifiedApp.tsx` and this file.)
+
 ---
 ---
 

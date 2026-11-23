@@ -12,10 +12,8 @@ const filesToClean = [
   'src/components/StadiumHeader/StadiumHeader.tsx',
   'src/components/UnifiedGameSelector.tsx',
   'src/components/ComprehensiveStadiumGuide.tsx',
-  'src/components/StadiumVisualizationSection.tsx',
   'src/components/WeatherDisplay.tsx',
   'src/components/OfflineIndicator.tsx',
-  'src/data/milbVenueLayouts.ts',
   'src/services/nflApi.ts',
 ];
 
