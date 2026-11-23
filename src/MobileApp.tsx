@@ -173,7 +173,7 @@ const MobileApp: React.FC = () => {
                 action={
                   <div style={{textAlign: 'center'}}>
                     <p style={{fontSize: '0.9rem', color: '#666', margin: '0 0 12px 0'}}>
-                      Choose from MLB, MiLB, and NFL venues to analyze sun exposure patterns
+                      Choose from MLB, MiLB and NFL venues to see where the sun and shade will be
                     </p>
                     <div style={{display: 'flex', gap: '8px', justifyContent: 'center', flexWrap: 'wrap'}}>
                       <span style={{padding: '4px 8px', background: '#e3f2fd', borderRadius: '12px', fontSize: '0.8rem', color: '#1976d2'}}>

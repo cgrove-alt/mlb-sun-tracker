@@ -215,7 +215,7 @@ function UnifiedAppContent() {
               type="no-stadium"
               action={
                 <p style={{fontSize: '0.9rem', color: '#666', margin: 0}}>
-                  Choose from MLB and NFL venues to analyze sun exposure patterns
+                  Choose from MLB, MiLB and NFL venues to see where the sun and shade will be
                 </p>
               }
             />

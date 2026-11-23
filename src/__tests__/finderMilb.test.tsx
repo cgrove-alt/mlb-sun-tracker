@@ -64,6 +64,13 @@ describe.each([['desktop', 1280], ['mobile', 390]])('the finder on %s', (device,
     expect(screen.queryByText('What does sun exposure mean for fans?')).toBeNull();
   };
 
+  it('NFL, before a game is picked: promises no sections', () => {
+    window.innerWidth = width;
+    render(<UnifiedApp />);
+    fireEvent.click(screen.getByText('lambeau-field'));
+    expect(screen.queryByText(/which sections/)).toBeNull();
+  });
+
   it('NFL: names the sideline for that game and lists no sections', async () => {
     await pickGame('lambeau-field', width);
     const text = answer('Lambeau Field')?.textContent;
