@@ -6485,9 +6485,49 @@ for the next PR. `main` at 977a45f37 is merged in here.
   old stadium. Measuring the new one is its own task. The form says the
   schedule is "currently unavailable", which isn't quite why.
 - Not tested: Safari and Firefox, and the built site in a browser.
-- Two lines still say only MLB has a schedule (step 2 on
-  `/seats-shade-finder`, and the finder's "no game" line).
 - Playoff games aren't listed, as before (`seasontype=2`).
+
+### §30, before P1–P3 go out: the picker and the copy (2026-11-24)
+
+Asked: "Yes, fix first", passed on by the main session, which reviewed P1–P3
+and found these four. All four were in `main` already; NFL lists never loaded before, so P1 and P2
+bring the first two out there.
+
+- [x] Q1 (f48c2dbea). *A late schedule.* `loadGames` never checked that its
+      venue was still the selected one, so a slow answer listed the old
+      stadium's games at the new one, and a slow failure showed its error
+      there. Each load now has a number, a change of venue takes the next one,
+      and a load that isn't the latest is dropped: answer, error and "loading"
+      alike. One guard, all three leagues.
+- [x] Q2 (00d614aea). *The old game in the box.* The effect returned its
+      cleanup before the line that clears the choice. The line moves up.
+- [x] Q3 (2ad761e9c). *Copy.* Both finders say "Pick a game from the schedule,
+      or set a date and time if yours isn't listed", for every league. The
+      finder page says what each schedule covers (30 days for the minor
+      leagues, eight games for the NFL) and what to do without one.
+- [x] Q4 (53032dcf1). *Sources.* `/how-it-works`, `/attributions`, `/disclaimer`
+      and `SECURITY_CHECKLIST.md` name ESPN for the NFL schedule.
+
+**Checks:**
+- *Tests first:* 9 for the picker (a late answer, a late failure and the old
+  game, in each league) and 10 for the copy, all seen to fail; 3 more guard
+  the baseball sources. 4,106 of 4,106 in all; the schedule and picker tests
+  also in Tokyo, Los Angeles and UTC. Types and the production build pass;
+  eslint 0 errors, and its 14 warnings are all on `main`. The live schedule
+  check is unchanged (497 games, 64 team-seasons).
+- *In a browser (dev server):* with Lambeau's answer held back 5 s and Lumen
+  picked meanwhile, Lumen lists its own three games, and the first gives
+  Lumen's answer. Going on to M&T with that game chosen, the box reads "Choose
+  a game" and no answer shows. The finder's new copy and `/attributions` too.
+- *With P4 and P5 (`claude/nfl-end-zone`):* both branches now change the two
+  finders and `finderMilb.test.tsx`, on other lines. They still merge without
+  a conflict, and together pass 4,121 of 4,121.
+
+**Not asked for, left as it is** (the review's list): the date form crashes
+when its date is cleared; it flashes "currently unavailable" before each list;
+a game leaves the list at kickoff; the moved-stadium rule covers only the
+Bills. Also: the footer, `AttributionFooter`, `AttributionNotice` and
+`llms.txt` still name only MLB as a schedule source.
 
 ## §31 Three leftovers from checking §28 (plan, 2026-11-23)
 
