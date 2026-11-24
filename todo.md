@@ -6524,8 +6524,9 @@ bring the first two out there.
 
 **Not asked for, left as it is** (the reviews' list): a game leaves the list at
 kickoff; the moved-stadium rule covers only the Bills; picking the same stadium
-again clears the answer but not the box. Also: the footer, `AttributionFooter`,
-`AttributionNotice` and `llms.txt` still name only MLB as a schedule source.
+again clears the answer but not the box. The other places that name a source
+need no ESPN: nothing imports `AttributionFooter`, `AttributionNotice` credits
+MLB for MLB's data, and `llms.txt`'s line is about MLB ballparks.
 
 **The date form, after that** (asked: "have the NFL session fix both date form
 bugs", passed on):
@@ -6559,6 +6560,11 @@ bugs", passed on):
       browser: Highmark (none) and, with ESPN answering 404, Lambeau on a
       phone-size window (unavailable). Highmark now asks ESPN for next season
       as well, as any stadium does with nothing left this one.
+- [x] Q8 (9538da0ba). *The footer* (asked: "have the NFL session add ESPN to the
+      footer too"). `FooterModern`, the only footer the layout renders, says
+      "🏈 NFL schedule: ESPN" after the MLB credit. Test first. On a phone
+      (375 px) the line takes three rows inside its margins, at 320 px it still
+      fits, and at 1280 px it takes two.
 - *Noticed:* for about a frame (13 ms on the dev server) after a change of
   stadium the old list is still there. It was before, too.
 
