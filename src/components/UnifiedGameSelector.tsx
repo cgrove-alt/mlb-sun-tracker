@@ -126,6 +126,9 @@ export const UnifiedGameSelector: React.FC<UnifiedGameSelectorProps> = ({
     };
   });
 
+  // Also true before a venue's first load, which starts a moment after it's picked.
+  const stillLoading = gamesLoading.loading || gamesLoading.isInitialLoad;
+
   // Counts the loads, and the changes of venue. A load that is no longer the
   // latest must not land on the venue chosen since.
   const latestLoad = useRef(0);
@@ -512,7 +515,7 @@ export const UnifiedGameSelector: React.FC<UnifiedGameSelectorProps> = ({
               <>
                 <div className="control-group">
                   <label htmlFor="game-select">{t('gameSelector.upcomingGames')}:</label>
-                  {gamesLoading.loading ? (
+                  {stillLoading ? (
                     <GameSelectorSkeleton />
                   ) : error ? (
                     selectedVenue.league === 'NFL' ? (
@@ -562,7 +565,7 @@ export const UnifiedGameSelector: React.FC<UnifiedGameSelectorProps> = ({
                     </>
                   )}
                 </div>
-                {games.length === 0 && !gamesLoading.loading && !error && (
+                {games.length === 0 && !stillLoading && !error && (
                   selectedVenue.league === 'NFL' ? (
                     <NFLCustomGameSelector
                       selectedVenue={selectedVenue}

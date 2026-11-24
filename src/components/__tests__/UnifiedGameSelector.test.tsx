@@ -100,6 +100,36 @@ const Picker = ({ ids }: { ids: string[] }) => {
 const gameBox = () => document.querySelector('.game-select');
 const openList = () => fireEvent.keyDown(document.querySelector('#game-select')!, { key: 'ArrowDown' });
 
+describe.each(Object.entries(LEAGUES))('while the %s schedule loads', (_league, { ids, request }) => {
+  const nothingYet = () => {
+    expect(screen.queryByText(/unavailable|No upcoming/)).toBeNull();
+    expect(document.querySelector('.game-selector-skeleton')).toBeTruthy();
+  };
+
+  it("doesn't say there's none, at the first stadium or the next", async () => {
+    request(() => new Promise(() => {}));
+    render(<Picker ids={ids} />);
+    nothingYet();
+    await wait(100); // the request goes out after 200 ms
+    nothingYet();
+    await wait(300);
+    nothingYet();
+    fireEvent.click(screen.getByText('the other stadium'));
+    nothingYet();
+    await wait(100);
+    nothingYet();
+  });
+
+  it('says so once it knows', async () => {
+    request(() => Promise.reject(new Error('down')));
+    jest.spyOn(console, 'error').mockImplementation(() => {});
+    render(<Picker ids={ids} />);
+    await wait(900);
+    expect(screen.getByText(/unavailable|Unable to load/)).toBeTruthy();
+    expect(document.querySelector('.game-selector-skeleton')).toBeNull();
+  });
+});
+
 describe.each(Object.entries(LEAGUES))('changing stadium in %s', (_league, { ids, games, request }) => {
   /** Change stadium while the first one's schedule is still on its way; it arrives last. */
   const changeWhileLoading = async (arrive: (first: { resolve: () => void; reject: (error: Error) => void }) => void) => {
