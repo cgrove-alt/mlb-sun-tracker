@@ -95,134 +95,6 @@ class VenueImporter {
   }
 
   /**
-   * Generate venue sections based on seating geometry
-   */
-  private generateVenueSections(venue: Venue): any[] {
-    const sections: any[] = [];
-    const { seatingGeometry } = venue;
-    
-    // Generate sections based on venue type
-    if (venue.venueType === 'football') {
-      return this.generateFootballSections(venue);
-    } else if (venue.venueType === 'soccer') {
-      return this.generateSoccerSections(venue);
-    }
-    
-    return sections;
-  }
-
-  private generateFootballSections(venue: Venue): any[] {
-    const sections: any[] = [];
-    const { seatingGeometry } = venue;
-    
-    // Lower bowl sections
-    const lowerSections = [
-      // Sideline sections
-      { side: 'east', start: 0, end: 50, level: 'lower' },
-      { side: 'west', start: 0, end: 50, level: 'lower' },
-      // End zone sections
-      { side: 'north', start: 0, end: 30, level: 'lower' },
-      { side: 'south', start: 0, end: 30, level: 'lower' },
-      // Corner sections
-      { side: 'northeast', start: 0, end: 20, level: 'lower' },
-      { side: 'northwest', start: 0, end: 20, level: 'lower' },
-      { side: 'southeast', start: 0, end: 20, level: 'lower' },
-      { side: 'southwest', start: 0, end: 20, level: 'lower' },
-    ];
-
-    lowerSections.forEach((section, index) => {
-      const baseAngle = this.getSectionAngle(section.side, seatingGeometry);
-      sections.push({
-        id: `${venue.id}-lower-${section.side}-${index + 1}`,
-        name: `Lower ${section.side.charAt(0).toUpperCase() + section.side.slice(1)} ${index + 1}`,
-        level: section.level,
-        baseAngle,
-        angleSpan: 15,
-        covered: venue.roof === 'fixed' || venue.roof === 'retractable',
-        price: index < 4 ? 'premium' : 'moderate',
-        venueType: venue.venueType
-      });
-    });
-
-    // Upper deck sections
-    if (venue.capacity > 40000) {
-      const upperSections = ['east', 'west', 'north', 'south'];
-      upperSections.forEach((side, index) => {
-        const baseAngle = this.getSectionAngle(side, venue.seatingGeometry);
-        sections.push({
-          id: `${venue.id}-upper-${side}-${index + 1}`,
-          name: `Upper ${side.charAt(0).toUpperCase() + side.slice(1)} ${index + 1}`,
-          level: 'upper',
-          baseAngle,
-          angleSpan: 20,
-          covered: venue.roof === 'fixed',
-          price: 'value',
-          venueType: venue.venueType
-        });
-      });
-    }
-
-    return sections;
-  }
-
-  private generateSoccerSections(venue: Venue): any[] {
-    const sections: any[] = [];
-    const { seatingGeometry } = venue;
-    
-    // Soccer stadium sections
-    const soccerSides = ['east', 'west', 'north', 'south'];
-    
-    soccerSides.forEach((side, index) => {
-      const baseAngle = this.getSectionAngle(side, seatingGeometry);
-      
-      // Lower tier
-      sections.push({
-        id: `${venue.id}-lower-${side}`,
-        name: `Lower ${side.charAt(0).toUpperCase() + side.slice(1)}`,
-        level: 'lower',
-        baseAngle,
-        angleSpan: 25,
-        covered: venue.roof === 'fixed',
-        price: side === 'east' || side === 'west' ? 'premium' : 'moderate',
-        venueType: venue.venueType
-      });
-
-      // Upper tier (if large capacity)
-      if (venue.capacity > 15000) {
-        sections.push({
-          id: `${venue.id}-upper-${side}`,
-          name: `Upper ${side.charAt(0).toUpperCase() + side.slice(1)}`,
-          level: 'upper',
-          baseAngle,
-          angleSpan: 25,
-          covered: venue.roof === 'fixed',
-          price: 'value',
-          venueType: venue.venueType
-        });
-      }
-    });
-
-    return sections;
-  }
-
-  private getSectionAngle(side: string, geometry: SeatingGeometry): number {
-    const { primarySeatingAngle } = geometry;
-    
-    const angleMap: Record<string, number> = {
-      'north': primarySeatingAngle,
-      'east': (primarySeatingAngle + 90) % 360,
-      'south': (primarySeatingAngle + 180) % 360,
-      'west': (primarySeatingAngle + 270) % 360,
-      'northeast': (primarySeatingAngle + 45) % 360,
-      'southeast': (primarySeatingAngle + 135) % 360,
-      'southwest': (primarySeatingAngle + 225) % 360,
-      'northwest': (primarySeatingAngle + 315) % 360,
-    };
-
-    return angleMap[side] || primarySeatingAngle;
-  }
-
-  /**
    * Generate static props data for all venues
    */
   public generateStaticProps(): GeneratedVenueData {
@@ -245,32 +117,6 @@ class VenueImporter {
       leagues: this.config.leagues,
       venueTypes: this.config.venueTypes
     };
-  }
-
-  /**
-   * Generate section data for each venue
-   */
-  public generateVenueSectionsFile(): void {
-    const sectionsData: Record<string, any[]> = {};
-
-    this.config.venues.forEach(venue => {
-      sectionsData[venue.id] = this.generateVenueSections(venue);
-    });
-
-    const outputPath = path.join(this.outputDir, 'venueSections.ts');
-    const content = `// Auto-generated venue sections data
-// Generated on ${new Date().toISOString()}
-
-export const VENUE_SECTIONS: Record<string, any[]> = ${JSON.stringify(sectionsData, null, 2)};
-
-export function getVenueSections(venueId: string): any[] {
-  return VENUE_SECTIONS[venueId] || [];
-}
-`;
-
-    this.ensureDirectoryExists(this.outputDir);
-    fs.writeFileSync(outputPath, content);
-    console.log(`✅ Generated venue sections: ${outputPath}`);
   }
 
   /**
@@ -395,7 +241,6 @@ export const LEAGUE_STATIC_PARAMS = ${JSON.stringify(leagueSlugs, null, 2)};
     
     try {
       this.generateVenuesFile();
-      this.generateVenueSectionsFile();
       this.generateStaticParams();
       
       console.log('✅ Venue import completed successfully!');
