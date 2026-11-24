@@ -208,4 +208,16 @@ describe.each(Object.entries(LEAGUES))('changing stadium in %s', (_league, { ids
     expect(gameBox()!.textContent).not.toContain(games[0]);
     expect(gameBox()!.textContent).toContain('Choose a game');
   });
+
+  it('so does one picked before choosing the same stadium again', async () => {
+    request(() => Promise.resolve());
+    render(<Picker ids={ids} />);
+    await wait(900);
+    openList();
+    fireEvent.click(screen.getByText(new RegExp(games[0])));
+    expect(gameBox()!.textContent).toContain(games[0]);
+    fireEvent.keyDown(document.querySelector('#venue-select')!, { key: 'ArrowDown' });
+    fireEvent.click(screen.getByRole('option', { name: new RegExp(`^${getUnifiedVenueById(ids[0])!.name}`) }));
+    expect(gameBox()!.textContent).toContain('Choose a game');
+  });
 });

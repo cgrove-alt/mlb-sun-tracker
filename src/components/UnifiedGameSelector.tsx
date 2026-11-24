@@ -488,7 +488,10 @@ export const UnifiedGameSelector: React.FC<UnifiedGameSelectorProps> = ({
           inputId="venue-select"
           options={venueOptions}
           value={venueOptions.find(opt => opt.venue.id === selectedVenue?.id) || null}
-          onChange={(option) => onVenueChange(option?.venue || null)}
+          onChange={(option) => {
+            setSelectedGameOption(null); // the same stadium again too: the answer is cleared
+            onVenueChange(option?.venue || null);
+          }}
           placeholder={selectedLeague ? `Choose ${leagueInfo?.name || selectedLeague} venue` : 'Select a league first'}
           className="venue-select"
           aria-label={t('gameSelector.selectStadium')}
