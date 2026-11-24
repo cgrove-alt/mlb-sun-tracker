@@ -2,10 +2,9 @@ import { Stadium } from '../data/stadiums';
 import type { StadiumSection } from '../data/stadiumSectionTypes';
 import { isSectionInSun, getSectionSunExposure } from './sectionSunCalculations';
 import { WeatherData } from '../services/weatherApi';
-import { getVenueSections } from '../data/venueSections';
 import { SunCalculator } from './sunCalculator';
 // getSunPosition lives in a leaf module (no data-layer imports) so first-load
-// components can use it without pulling venueSections in via this file. Re-export
+// components can use it without pulling this file in. Re-export
 // keeps existing `import { getSunPosition } from './sunCalculations'` callers working.
 import { getSunPosition, type SunPosition } from './sunPosition';
 export { getSunPosition };
@@ -44,12 +43,7 @@ export function calculateDetailedSectionSunExposure(
 ): SeatingSectionSun[] {
   // Apparent altitude already includes SPA refraction (see solarPosition.ts).
 
-  // Use provided sections or fall back to venue sections
-  let stadiumSections = sections;
-  if (!stadiumSections || stadiumSections.length === 0) {
-    // Try venue sections (for MiLB and NFL venues)
-    stadiumSections = getVenueSections(stadium.id);
-  }
+  const stadiumSections = sections ?? [];
   const sectionSunData: SeatingSectionSun[] = [];
 
   // Safety check to prevent performance issues
@@ -215,12 +209,7 @@ export function calculateGameSunExposure(
 ): Map<string, number> {
   const calculator = new SunCalculator(stadium);
 
-  // Use provided sections or fall back to venue sections
-  let stadiumSections = sections;
-  if (!stadiumSections || stadiumSections.length === 0) {
-    // Try venue sections (for MiLB and NFL venues)
-    stadiumSections = getVenueSections(stadium.id);
-  }
+  const stadiumSections = sections ?? [];
   const exposureMap = new Map<string, number>();
 
   // Safety check to prevent performance issues
