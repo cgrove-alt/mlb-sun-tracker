@@ -17,7 +17,7 @@ const football: any = {
   gameId: '777', gameDate: '2025-12-07T18:00:00Z', awayTeam: { name: 'Visitors' }, homeTeam: { name: 'Hosts' },
 };
 const baseball: any = {
-  gamePk: 777, gameDate: '2025-07-20T17:05:00Z', teams: { away: { team: { name: 'Visitors' } }, home: { team: { name: 'Hosts' } } },
+  gamePk: 777, gameDate: '2025-07-20T17:05:00Z', status: {}, teams: { away: { team: { name: 'Visitors' } }, home: { team: { name: 'Hosts' } } },
 };
 
 // Earlier in the list, so a list that opens at its start shows up.

@@ -51,7 +51,7 @@ const nflGame = (away: string, home: string): any => ({
   gameId: home, gameDate: '2026-12-20T18:00Z', awayTeam: { name: away }, homeTeam: { name: home },
 });
 const baseballGame = (away: string, home: string): any => ({
-  gamePk: home, gameDate: '2027-07-20T17:05:00Z', teams: { away: { team: { name: away } }, home: { team: { name: home } } },
+  gamePk: home, gameDate: '2027-07-20T17:05:00Z', status: {}, teams: { away: { team: { name: away } }, home: { team: { name: home } } },
 });
 
 /** Two stadiums in one league, and the league's schedule request. */
@@ -233,4 +233,38 @@ it('keeping the chosen game is not choosing it again', async () => {
   openList();
   fireEvent.click(screen.getByRole('option', { name: /Jul 21/ }));
   expect(onGameSelect.mock.calls).toEqual([[another, new Date(another.gameDate)]]);
+});
+
+// The placeholders MLB gives: 3:33 AM at the park, and in the minors five minutes
+// after the first game of a doubleheader.
+it.each([
+  ['MLB', 'yankees', '2025-07-20T07:33:00Z'],
+  ['MiLB', 'buffalo-bisons', '2025-07-20T17:10:00Z'],
+] as const)("%s: a game with no start time yet is listed without one, and can't be chosen", async (league, id, gameDate) => {
+  LEAGUES[league].request(() => Promise.resolve());
+  const games = [{ ...baseballGame('Rays', 'Hosts'), gameDate, status: { startTimeTBD: true } }, baseballGame('Mets', 'Hosts')];
+  jest.spyOn(mlbApi, 'getHomeGamesForStadium').mockReturnValue(games);
+  jest.spyOn(milbApi, 'getHomeGamesForVenue').mockReturnValue(games);
+  const onGameSelect = jest.fn();
+  render(
+    <I18nProvider>
+      <UnifiedGameSelector
+        selectedVenue={getUnifiedVenueById(id)!}
+        selectedGame={null}
+        onGameSelect={onGameSelect}
+        onVenueChange={() => {}}
+      />
+    </I18nProvider>,
+  );
+  await wait(900);
+  openList();
+  expect(screen.getAllByRole('option').map((option) => option.textContent)).toEqual([
+    'Jul 20, time TBD - Rays @ Hosts',
+    'Jul 20, 1:05 PM EDT - Mets @ Hosts',
+  ]);
+  fireEvent.click(screen.getByRole('option', { name: /Rays/ }));
+  fireEvent.keyDown(document.querySelector('#game-select')!, { key: 'Tab' });
+  expect(onGameSelect).not.toHaveBeenCalled();
+  fireEvent.click(screen.getByRole('option', { name: /Mets/ }));
+  expect(onGameSelect.mock.calls).toEqual([[games[1], new Date(games[1].gameDate)]]);
 });

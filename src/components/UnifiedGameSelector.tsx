@@ -10,7 +10,7 @@ import { UnifiedVenue, getAllLeagues, getVenuesByLeague, getLeagueInfo, getMiLBV
 import { getTeamIdFromVenueId, getVenueIdFromStringId } from '../data/milbTeamMapping';
 import { preferencesStorage } from '../utils/preferences';
 import { formatGameTimeInStadiumTZ } from '../utils/dateTimeUtils';
-import { stadiumLocalToUTC, utcToStadiumLocal } from '../utils/stadiumTime';
+import { formatStadiumLocal, stadiumLocalToUTC, utcToStadiumLocal } from '../utils/stadiumTime';
 import { useHapticFeedback } from '../hooks/useHapticFeedback';
 import { useTranslation } from '../i18n/i18nContext';
 import { GameSelectorSkeleton } from './SkeletonScreens';
@@ -29,7 +29,11 @@ interface UnifiedGameSelectorProps {
 /** A game as the list and the box show it. */
 const gameOption = (game: MLBGame | MiLBGame | NFLGame, timezone = 'America/New_York') => {
   const gameDate = new Date(game.gameDate);
-  const formattedTime = formatGameTimeInStadiumTZ(gameDate, timezone, true);
+  // Its date is right, but its time is a placeholder.
+  const timeTBD = 'teams' in game && game.status.startTimeTBD;
+  const formattedTime = timeTBD
+    ? `${formatStadiumLocal(gameDate, timezone, 'MMM d')}, time TBD`
+    : formatGameTimeInStadiumTZ(gameDate, timezone, true);
 
   // Handle different game structures
   let label: string;
@@ -46,7 +50,7 @@ const gameOption = (game: MLBGame | MiLBGame | NFLGame, timezone = 'America/New_
     gameId = nflGame.gameId;
   }
 
-  return { value: gameId, label, game };
+  return { value: gameId, label, game, isDisabled: timeTBD };
 };
 
 /**

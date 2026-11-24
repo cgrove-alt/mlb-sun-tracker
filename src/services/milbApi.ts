@@ -37,6 +37,8 @@ export interface MiLBGame {
     abstractGameState: 'Preview' | 'Live' | 'Final';
     codedGameState: string;
     detailedState: string;
+    /** No start time is set; `gameDate` is a placeholder, as for a doubleheader's second game. */
+    startTimeTBD?: boolean;
   };
   teams: {
     away: {
