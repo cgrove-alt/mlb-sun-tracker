@@ -73,11 +73,16 @@ describe("an NFL stadium's home games", () => {
     expect(espn).toHaveBeenCalledTimes(1);
   });
 
-  it('fails when ESPN has none, so the fan gets the date form', async () => {
-    jest.spyOn(console, 'error').mockImplementation(() => {});
+  it('gives none when ESPN lists none, this season or next', async () => {
     answer({ events: [] });
+    expect(await nflApi.getUpcomingVenueGames('everbank-stadium')).toEqual([]);
+    expect(espn.mock.calls.map(([url]) => url.match(/season=(\d+)/)[1])).toEqual(['2025', '2026']);
+  });
+
+  it('fails when ESPN does', async () => {
+    jest.spyOn(console, 'error').mockImplementation(() => {});
+    espn.mockImplementation(async () => ({ ok: false, status: 404, statusText: 'Not Found' }));
     await expect(nflApi.getUpcomingVenueGames('everbank-stadium')).rejects.toThrow('NFL schedule data is currently unavailable');
-    expect(espn).toHaveBeenCalledTimes(1);
   });
 
   it.each(ALL_UNIFIED_VENUES.filter((venue) => venue.league === 'NFL').map((venue) => venue.id))(
@@ -103,10 +108,9 @@ describe('the Bills', () => {
     expect(await nflApiClient.fetchVenueSchedule('highmark-stadium', 2026)).toEqual([]);
   });
 
-  it('give the fan the date form instead', async () => {
-    jest.spyOn(console, 'error').mockImplementation(() => {});
+  it('have none coming up there, which is no failure', async () => {
     jest.setSystemTime(new Date('2026-11-23T12:00:00Z'));
     answer(bills2026);
-    await expect(nflApi.getUpcomingVenueGames('highmark-stadium')).rejects.toThrow('NFL schedule data is currently unavailable');
+    expect(await nflApi.getUpcomingVenueGames('highmark-stadium')).toEqual([]);
   });
 });

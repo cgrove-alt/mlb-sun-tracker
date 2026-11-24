@@ -522,6 +522,7 @@ export const UnifiedGameSelector: React.FC<UnifiedGameSelectorProps> = ({
                       <NFLCustomGameSelector
                         selectedVenue={selectedVenue}
                         onGameSelect={onGameSelect}
+                        scheduleFailed
                         initialDate={customDate}
                         initialTime={customTime}
                       />

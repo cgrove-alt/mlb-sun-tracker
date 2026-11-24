@@ -97,13 +97,7 @@ class NFLApiService {
   // Get games for a specific venue (only home games)
   async getVenueSchedule(venueId: string, season?: number): Promise<NFLGame[]> {
     try {
-      const games = await nflApiClient.fetchVenueSchedule(venueId, season || this.getCurrentSeason());
-
-      if (games.length === 0) {
-        throw new Error('No games found for this venue');
-      }
-
-      return games;
+      return await nflApiClient.fetchVenueSchedule(venueId, season || this.getCurrentSeason());
     } catch (error) {
       console.error(`[NFL API] Error fetching venue data:`, error);
       throw new Error('NFL schedule data is currently unavailable');
