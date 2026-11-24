@@ -7093,6 +7093,67 @@ run passed (17 of 17). On the live site, Lambeau picked again empties the box an
 the answer, on desktop and at phone size. Its changes to the NFL and MiLB lists
 weren't checked live.
 
+## §37 The game list reopens at the first game (plan, 2026-11-24)
+
+Asked: "Yes, fix it" (found while checking PR #112). Branch
+`fix/reopened-game-list`, from `main` at 30003d767 (PR #112).
+
+### Findings
+
+**The bug.** Pick any game but the first, open the list again: it starts at the
+first game, not the chosen one. Tab or Enter then swaps the chosen game for the
+first, and the answer with it, and the arrow keys start from the top. On the live
+site, Lambeau's January 4 game became December 13. All three leagues, desktop and
+mobile; new in PR #112.
+
+**The cause.** react-select opens a list on the chosen option by looking for the
+same object in it (`indexOf` in `openMenu`). Until PR #112 the box's value was the
+list's own entry. Since then it's a new one, built on every render, so it's never
+found.
+
+**What's right.** The list opens on the chosen game. The box still shows the game
+the answer is for: if the list comes back with the game at another time, the box
+keeps the time that was chosen, so the match is on what the box shows and not on
+the game's number alone.
+
+### Plan
+
+- [x] R1 (d846105e1). Tests first, in `finderGameBox.test.tsx` (desktop and mobile, three
+      leagues), with an earlier game in the list: the list opened again and left
+      with Tab; the same after the tabs; the list come back with the game moved.
+- [x] R2 (d846105e1). The box's value is the list's own entry when the list has the game as it
+      was chosen, and is built only when it doesn't.
+- [x] R3. Checks: tests, types, eslint, build, and the finder in a browser. Then
+      the review.
+
+### §37 Review (2026-11-24)
+
+**What changed:** one commit (d846105e1). The box's value is the list's own entry for
+the chosen game when the list has that game as it was chosen, and an entry built
+for the box when it doesn't. Nothing else in the picker moved.
+
+**What a fan sees:** the game list opens on the chosen game again, so Tab and
+Enter keep it and the arrow keys go on from it. Same as before PR #112, and now
+after Custom Time is opened and left as well. The box still shows the game the
+answer is for.
+
+**Checks:**
+- *Tests:* 4,189 of 4,189 in 107 suites; 18 new. Twelve were seen to fail first,
+  with the box and the answer moved to the earlier game. The other six guard
+  against matching on the game's number alone: tried, and all six fail, with the
+  new time in the box and the answer for the old one.
+- *Types, build, eslint:* pass, with the one warning `main` has in the picker.
+- *In a browser (dev server):* Lambeau on desktop (Tab, the arrow keys, after the
+  tabs) and Yankee Stadium's 31 games on desktop and at phone size (Tab). The
+  Yankees list, opened again on desktop with its last game chosen, scrolls to it:
+  1,059 px before PR #112, 0 in PR #112, 1,059 now.
+- *Console:* one error, from the browser tool's own script; it isn't in the app.
+- *No page's answer changes:* only the finder's box is touched.
+- *Not tested:* Safari and Firefox, and MiLB in a browser (its season is over).
+
+**Noticed, not changed:** at phone size the list opens on the chosen game but
+doesn't scroll to it. It didn't before PR #112 either.
+
 ---
 ---
 
