@@ -4,7 +4,7 @@ import { ALL_UNIFIED_VENUES } from '../../data/unifiedVenues';
 import { formatGameTimeInStadiumTZ } from '../../utils/dateTimeUtils';
 // ESPN's own answers (2026-11-23), cut down to the fields we read.
 import { jaguars2025, ravens2026 } from './fixtures/espnTeamSchedules.json';
-import { bills2025, bills2026 } from './fixtures/espnBills.json';
+import { bills2026 } from './fixtures/espnBills.json';
 
 const NOW = new Date('2025-09-01T12:00:00Z');
 const espn = jest.fn();
@@ -94,23 +94,20 @@ describe("an NFL stadium's home games", () => {
     });
 });
 
-// The Bills moved in 2026. We measured the stadium they left.
+// They moved across the street in 2026. ESPN's answer, on 2026-11-23.
 describe('the Bills', () => {
-  it('list their games at the stadium we measured', async () => {
-    answer(bills2025);
-    const games = await nflApiClient.fetchVenueSchedule('highmark-stadium', 2025);
-    expect(games).toHaveLength(9);
-    expect(label(games[0].gameDate, 'America/New_York')).toBe('Sep 7, 8:20 PM EDT');
+  it('list their games at the new stadium', async () => {
+    answer(bills2026);
+    const games = await nflApiClient.fetchVenueSchedule('highmark-stadium', 2026);
+    expect(games).toHaveLength(7); // the eighth has no time yet
+    expect(label(games[0].gameDate, 'America/New_York')).toBe('Sep 17, 8:15 PM EDT');
   });
 
-  it('list none of the games at their new one', async () => {
+  it('give the ones still to come', async () => {
+    jest.setSystemTime(new Date('2026-11-24T12:00:00Z'));
     answer(bills2026);
-    expect(await nflApiClient.fetchVenueSchedule('highmark-stadium', 2026)).toEqual([]);
-  });
-
-  it('have none coming up there, which is no failure', async () => {
-    jest.setSystemTime(new Date('2026-11-23T12:00:00Z'));
-    answer(bills2026);
-    expect(await nflApi.getUpcomingVenueGames('highmark-stadium')).toEqual([]);
+    const games = await nflApi.getUpcomingVenueGames('highmark-stadium');
+    expect(games.map((game) => `${label(game.gameDate, 'America/New_York')} ${game.awayTeam.name}`))
+      .toEqual(['Nov 26, 8:20 PM EST Chiefs', 'Dec 19, 8:20 PM EST Bears']);
   });
 });

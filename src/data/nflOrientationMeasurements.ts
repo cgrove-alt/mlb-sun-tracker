@@ -1,6 +1,7 @@
 /**
  * Measured direction of each NFL field's long axis (end zone to end zone),
- * in compass degrees. Measured 2026-11-10 for the 2025 season's stadiums.
+ * in compass degrees. Measured 2026-11-10 for the 2025 season's stadiums, and
+ * 2026-11-24 for the one the Bills moved to in 2026.
  *
  * A field is the same end to end, so 10° and 190° are the same axis. Each
  * value is written in whichever of the two directions is nearer the value
@@ -17,6 +18,9 @@
  *   center lies on the tray's axis, within 1.5°), so its axis is the field's.
  * - `imagery`: read from NAIP where OSM had nothing usable: the turf axis,
  *   the sidelines seen through a roof opening, or the roof outline.
+ * - `satellite`: a rectangle fitted to the grass in Sentinel-2 images
+ *   (scripts/measureNflSatellite.py), for a stadium newer than the aerial
+ *   photos. On 13 fields measured the other ways it lands within about 1°.
  * - `not-measured`: the roof was closed in the only aerial photo and
  *   nothing else pins the field down. Pages say so instead of guessing.
  *   Fixed-roof stadiums are listed here too: there the direction never
@@ -25,12 +29,12 @@
 export interface NflFieldAxis {
   orientation: number;
   precisionDeg?: number;
-  method: 'osm-pitch' | 'osm-grass-tray' | 'imagery' | 'not-measured';
+  method: 'osm-pitch' | 'osm-grass-tray' | 'imagery' | 'satellite' | 'not-measured';
   source: string;
 }
 
 export const NFL_FIELD_AXES: Record<string, NflFieldAxis> = {
-  'highmark-stadium': { orientation: 123, precisionDeg: 4, method: 'imagery', source: 'NAIP turf axis 123.1°. The nearest OSM pitch (way 972013095, 290 m away) is the new stadium that opens in 2026.' },
+  'highmark-stadium': { orientation: 168, precisionDeg: 3, method: 'satellite', source: 'Opened in 2026. Sentinel-2, April to October 2026: 168.0° (16 images, spread 0.2°). OSM: the opening in the canopy (way 1577454592) runs 167.5°.' },
   'hard-rock-stadium': { orientation: 301, precisionDeg: 3, method: 'osm-pitch', source: 'OSM way 171419978 (113 x 52 m), 121.4°; canopy hides the turf, outline matches the canopy opening.' },
   'gillette-stadium': { orientation: 342, precisionDeg: 3, method: 'osm-pitch', source: 'OSM way 129176835, 162.3°; NAIP turf axis 164.6°.' },
   'metlife-stadium-jets': { orientation: 346, precisionDeg: 4, method: 'osm-pitch', source: 'OSM way 180559973 (110 x 48 m), 166.4°; sidelines on NAIP about 170°.' },

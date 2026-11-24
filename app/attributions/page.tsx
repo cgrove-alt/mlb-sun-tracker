@@ -147,8 +147,8 @@ export default function AttributionsPage() {
         <div className="bg-purple-50 border border-purple-200 p-6 rounded-lg">
           <h3 className="h3 text-purple-900">Stadium Information</h3>
           <p>
-            Where each MLB park&apos;s sections are, the shape of the stands around them, and the
-            way MLB and MiLB parks face come from public sources:
+            Where each MLB park&apos;s sections are, the shape of the stands around them, the way MLB
+            and MiLB parks face and the way NFL fields run come from public sources:
           </p>
 
           <ul className="list-disc list-inside text-sm space-y-1 mt-4">
@@ -166,6 +166,19 @@ export default function AttributionsPage() {
               The direction all 120 MiLB parks face, measured from USDA NAIP and USGS aerial photos,
               and at six parks from satellite images (contains modified Copernicus Sentinel data
               2025)
+            </li>
+            <li>
+              The direction NFL fields run, where we&apos;ve measured it, from OpenStreetMap (
+              <a
+                href="https://www.openstreetmap.org/copyright"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="underline"
+              >
+                © OpenStreetMap contributors
+              </a>
+              ), USDA NAIP aerial photos and, at Highmark Stadium, satellite images (contains modified
+              Copernicus Sentinel data 2026)
             </li>
           </ul>
         </div>

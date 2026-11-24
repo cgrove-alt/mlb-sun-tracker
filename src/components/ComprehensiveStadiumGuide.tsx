@@ -37,6 +37,9 @@ interface ComprehensiveStadiumGuideProps {
   showTitleBlock?: boolean;
 }
 
+/** A block with nothing in it shows no heading. */
+const some = (list?: unknown[]) => Boolean(list?.length);
+
 const ComprehensiveStadiumGuide: React.FC<ComprehensiveStadiumGuideProps> = ({
   stadiumId,
   guide,
@@ -168,90 +171,102 @@ const ComprehensiveStadiumGuide: React.FC<ComprehensiveStadiumGuideProps> = ({
       </section>
 
       {/* Seating Guide */}
-      <section className="guide-section seating-guide">
-        <h2>Seating Guide</h2>
+      {(some(guide.seatingGuide.premiumSeating?.clubs) || some(guide.seatingGuide.tips) || some(guide.seatingGuide.budgetOptions)) && (
+        <section className="guide-section seating-guide">
+          <h2>Seating Guide</h2>
         
-        {guide.seatingGuide.premiumSeating && (
-          <div className="premium-seating">
-            <h3>Premium Seating Options</h3>
-            {guide.seatingGuide.premiumSeating.clubs && (
-              <div className="clubs">
-                <h4>Club Levels</h4>
-                {guide.seatingGuide.premiumSeating.clubs.map((club, idx) => (
-                  <div key={idx} className="club-info">
-                    <h5>{club.name}</h5>
-                    <p>{club.access}</p>
-                    <ul>
-                      {club.perks.map((perk, pidx) => (
-                        <li key={pidx}>{perk}</li>
-                      ))}
-                    </ul>
+          {some(guide.seatingGuide.premiumSeating?.clubs) && (
+            <div className="premium-seating">
+              <h3>Premium Seating Options</h3>
+              {guide.seatingGuide.premiumSeating.clubs && (
+                <div className="clubs">
+                  <h4>Club Levels</h4>
+                  {guide.seatingGuide.premiumSeating.clubs.map((club, idx) => (
+                    <div key={idx} className="club-info">
+                      <h5>{club.name}</h5>
+                      <p>{club.access}</p>
+                      <ul>
+                        {club.perks.map((perk, pidx) => (
+                          <li key={pidx}>{perk}</li>
+                        ))}
+                      </ul>
+                    </div>
+                  ))}
+                </div>
+              )}
+            </div>
+          )}
+
+          {some(guide.seatingGuide.tips) && (
+            <div className="seating-tips">
+              <h3>Seating Tips</h3>
+              <div className="tips-grid">
+                {guide.seatingGuide.tips.map((tip, idx) => (
+                  <div key={idx} className={`tip-card ${tip.category}`}>
+                    <h4>{tip.section}</h4>
+                    <p>{tip.tip}</p>
+                    <span className="category-badge">{tip.category}</span>
                   </div>
                 ))}
               </div>
-            )}
-          </div>
-        )}
+            </div>
+          )}
 
-        <div className="seating-tips">
-          <h3>Seating Tips</h3>
-          <div className="tips-grid">
-            {guide.seatingGuide.tips.map((tip, idx) => (
-              <div key={idx} className={`tip-card ${tip.category}`}>
-                <h4>{tip.section}</h4>
-                <p>{tip.tip}</p>
-                <span className="category-badge">{tip.category}</span>
-              </div>
-            ))}
-          </div>
-        </div>
-
-        <div className="budget-options">
-          <h3>Budget-Friendly Options</h3>
-          <ul>
-            {guide.seatingGuide.budgetOptions.map((option, idx) => (
-              <li key={idx}>{option}</li>
-            ))}
-          </ul>
-        </div>
-      </section>
+          {some(guide.seatingGuide.budgetOptions) && (
+            <div className="budget-options">
+              <h3>Budget-Friendly Options</h3>
+              <ul>
+                {guide.seatingGuide.budgetOptions.map((option, idx) => (
+                  <li key={idx}>{option}</li>
+                ))}
+              </ul>
+            </div>
+          )}
+        </section>
+      )}
 
       {/* Concessions */}
-      <section className="guide-section concessions">
-        <h2>Food & Drink</h2>
+      {(some(guide.concessions.signature) || some(guide.concessions.local) || guide.concessions.alcohol) && (
+        <section className="guide-section concessions">
+          <h2>Food & Drink</h2>
         
-        <div className="signature-items">
-          <h3>Signature Items</h3>
-          <ul>
-            {guide.concessions.signature.map((item, idx) => (
-              <li key={idx}>{item}</li>
-            ))}
-          </ul>
-        </div>
+          {some(guide.concessions.signature) && (
+            <div className="signature-items">
+              <h3>Signature Items</h3>
+              <ul>
+                {guide.concessions.signature.map((item, idx) => (
+                  <li key={idx}>{item}</li>
+                ))}
+              </ul>
+            </div>
+          )}
 
-        <div className="local-favorites">
-          <h3>Local Favorites</h3>
-          <ul>
-            {guide.concessions.local.map((item, idx) => (
-              <li key={idx}>{item}</li>
-            ))}
-          </ul>
-        </div>
+          {some(guide.concessions.local) && (
+            <div className="local-favorites">
+              <h3>Local Favorites</h3>
+              <ul>
+                {guide.concessions.local.map((item, idx) => (
+                  <li key={idx}>{item}</li>
+                ))}
+              </ul>
+            </div>
+          )}
 
-        {guide.concessions.alcohol && (
-          <div className="beverages">
-            <h3>Beer & Beverages</h3>
-            <ul>
-              {guide.concessions.alcohol.beer.map((beer, idx) => (
-                <li key={idx}>{beer}</li>
-              ))}
-            </ul>
-            {guide.concessions.alcohol.localBreweries && (
-              <p>Local breweries: {guide.concessions.alcohol.localBreweries.join(', ')}</p>
-            )}
-          </div>
-        )}
-      </section>
+          {guide.concessions.alcohol && (
+            <div className="beverages">
+              <h3>Beer & Beverages</h3>
+              <ul>
+                {guide.concessions.alcohol.beer.map((beer, idx) => (
+                  <li key={idx}>{beer}</li>
+                ))}
+              </ul>
+              {guide.concessions.alcohol.localBreweries && (
+                <p>Local breweries: {guide.concessions.alcohol.localBreweries.join(', ')}</p>
+              )}
+            </div>
+          )}
+        </section>
+      )}
 
       {/* Transportation & Parking */}
       <section className="guide-section transportation">
@@ -262,23 +277,25 @@ const ComprehensiveStadiumGuide: React.FC<ComprehensiveStadiumGuideProps> = ({
           <p>{guide.transportation.address}</p>
         </div>
 
-        <div className="parking">
-          <h3>Parking Options</h3>
-          <div className="parking-lots">
-            {guide.parking.lots.map((lot, idx) => (
-              <div key={idx} className="lot-info">
-                <h4>{lot.name}</h4>
-                <div className="lot-details">
-                  <span>Distance: {lot.distance}</span>
-                  <span>Price: {lot.price}</span>
-                  {lot.covered && <span>✓ Covered</span>}
-                  {lot.shadedSpots && <span>✓ Shaded spots</span>}
+        {some(guide.parking.lots) && (
+          <div className="parking">
+            <h3>Parking Options</h3>
+            <div className="parking-lots">
+              {guide.parking.lots.map((lot, idx) => (
+                <div key={idx} className="lot-info">
+                  <h4>{lot.name}</h4>
+                  <div className="lot-details">
+                    <span>Distance: {lot.distance}</span>
+                    <span>Price: {lot.price}</span>
+                    {lot.covered && <span>✓ Covered</span>}
+                    {lot.shadedSpots && <span>✓ Shaded spots</span>}
+                  </div>
+                  {lot.tip && <p className="tip">{lot.tip}</p>}
                 </div>
-                {lot.tip && <p className="tip">{lot.tip}</p>}
-              </div>
-            ))}
+              ))}
+            </div>
           </div>
-        </div>
+        )}
 
         {guide.parking.alternativeTransport && (
           <div className="alternative-transport">
@@ -315,7 +332,9 @@ const ComprehensiveStadiumGuide: React.FC<ComprehensiveStadiumGuideProps> = ({
         <div className="schedule">
           <h3>Typical Game Day Schedule</h3>
           <ul>
-            <li><ClockIcon size={16} /> Gates Open: {guide.gameDay.typicalSchedule.gatesOpen}</li>
+            {guide.gameDay.typicalSchedule.gatesOpen && (
+              <li><ClockIcon size={16} /> Gates Open: {guide.gameDay.typicalSchedule.gatesOpen}</li>
+            )}
             <li><ClockIcon size={16} /> {venue?.league === 'NFL' ? 'Kickoff' : 'First Pitch'}: {guide.gameDay.typicalSchedule.firstPitch}</li>
             {guide.gameDay.typicalSchedule.battingPractice && (
               <li><ClockIcon size={16} /> Batting Practice: {guide.gameDay.typicalSchedule.battingPractice}</li>
@@ -363,16 +382,18 @@ const ComprehensiveStadiumGuide: React.FC<ComprehensiveStadiumGuideProps> = ({
           </ul>
         </div>
 
-        <div className="best-value">
-          <h3>Best Value</h3>
-          <ul>
-            {guide.proTips.bestValue.map((tip, idx) => (
-              <li key={idx}>{tip}</li>
-            ))}
-          </ul>
-        </div>
+        {some(guide.proTips.bestValue) && (
+          <div className="best-value">
+            <h3>Best Value</h3>
+            <ul>
+              {guide.proTips.bestValue.map((tip, idx) => (
+                <li key={idx}>{tip}</li>
+              ))}
+            </ul>
+          </div>
+        )}
 
-        {guide.proTips.hiddenGems && (
+        {some(guide.proTips.hiddenGems) && (
           <div className="hidden-gems">
             <h3>Hidden Gems</h3>
             <ul>
@@ -383,7 +404,7 @@ const ComprehensiveStadiumGuide: React.FC<ComprehensiveStadiumGuideProps> = ({
           </div>
         )}
 
-        {guide.proTips.avoidThese && (
+        {some(guide.proTips.avoidThese) && (
           <div className="avoid-these">
             <h3>Things to Avoid</h3>
             <ul>

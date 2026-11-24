@@ -2,163 +2,77 @@ import { StadiumGuide } from '../stadiumGuides';
 
 export const nflStadiumGuides: Record<string, StadiumGuide> = {
   // AFC EAST
+  // The stadium the Bills moved to in 2026. Seats, field and canopy: New York
+  // State and ESPN, June 23, 2026. Address: Wikipedia and OpenStreetMap. First
+  // game: ESPN. A block with no source for the new building is left empty.
   'highmark-stadium': {
     id: 'highmark-stadium',
     name: 'Highmark Stadium',
     team: 'Buffalo Bills',
-    opened: 1973,
-    capacity: 71608,
+    opened: 2026,
+    capacity: 60108,
     overview: {
-      description: 'Highmark Stadium, home to the Bills since 1973, is known for its passionate fanbase and challenging weather conditions. The open-air stadium creates one of the most intimidating atmospheres in the NFL, especially during December and January playoff games.',
+      description: 'Highmark Stadium opened in June 2026, across the street from the Bills\' old stadium. It\'s open-air, with a natural-grass field and a canopy all the way round that covers more than 60% of the seating bowl.',
       highlights: [
         'Home of the legendary Bills Mafia',
-        'Notorious for brutal winter weather conditions',
-        'One of the loudest stadiums in the NFL',
-        'Historic venue with old-school football atmosphere'
+        '60,108 seats, plus standing room',
+        'Kentucky bluegrass field, heated from below'
       ],
       uniqueFeatures: [
-        'Open-air design exposes fans to lake effect weather',
-        'Famous tailgating culture with table jumping',
-        'Bleacher seating maintains classic football feel',
+        'The canopy covers more than 60% of the seating bowl',
         'Located in suburban Orchard Park'
-      ],
-      renovations: [
-        { year: 1999, description: 'End zone seating expansion' },
-        { year: 2014, description: 'Video board and sound system upgrades' },
-        { year: 2022, description: 'LED lighting installation' }
-      ],
-      previousNames: ['Rich Stadium', 'Ralph Wilson Stadium', 'New Era Field']
+      ]
     },
     shadeGuide: {
-      bestShadedSections: {
-        morning: ['West sideline upper deck', 'Sections 336-344', 'Club Level west side'],
-        afternoon: ['East sideline becomes shaded', 'Sections 220-235', 'Upper deck 300-315'],
-        evening: ['Most seating shaded by 4 PM', 'Lower bowl east side', 'All club seating']
-      },
-      coveredSeating: ['Club Level concourses only', 'Premium boxes', 'Indoor club areas'],
-      shadeTips: [
-        'Stadium runs north-south, east side gets afternoon shade',
-        'Upper deck provides some protection from elements',
-        'December/January games - sun is low, limited shade benefit',
-        'Wind and cold are bigger concerns than sun exposure'
-      ],
-      sunProtection: {
-        sunscreenStations: ['Gate entrances', 'Concession areas'],
-        shadedConcourses: ['Upper level concourses', 'Club level areas'],
-        indoorAreas: ['Bills Store', 'Club lounges', 'Premium areas', 'Restaurants']
-      },
-      worstSunExposure: ['Lower bowl west sideline', 'Sections 106-119', 'End zone sections in early season'],
+      bestShadedSections: { morning: [], afternoon: [], evening: [] },
+      coveredSeating: [],
+      shadeTips: [],
+      sunProtection: { shadedConcourses: [], indoorAreas: [] },
+      worstSunExposure: [],
       monthlyPatterns: [
-        { month: 'September', avgTemp: 65, avgHumidity: 70, rainChance: 25, typicalConditions: 'Pleasant fall weather', shadeTip: 'East side recommended for 1 PM games' },
-        { month: 'October', avgTemp: 54, avgHumidity: 70, rainChance: 30, typicalConditions: 'Crisp and cool', shadeTip: 'Layer up, sun exposure manageable' },
-        { month: 'November', avgTemp: 42, avgHumidity: 75, rainChance: 40, typicalConditions: 'Cold with possible snow', shadeTip: 'Weather protection more important than shade' },
-        { month: 'December', avgTemp: 32, avgHumidity: 80, rainChance: 45, typicalConditions: 'Harsh winter conditions', shadeTip: 'Dress for arctic conditions' },
-        { month: 'January', avgTemp: 26, avgHumidity: 75, rainChance: 40, typicalConditions: 'Brutally cold, lake effect snow', shadeTip: 'Survival mode - location irrelevant' }
+        { month: 'September', avgTemp: 65, avgHumidity: 70, rainChance: 25, typicalConditions: 'Pleasant fall weather', shadeTip: '' },
+        { month: 'October', avgTemp: 54, avgHumidity: 70, rainChance: 30, typicalConditions: 'Crisp and cool', shadeTip: '' },
+        { month: 'November', avgTemp: 42, avgHumidity: 75, rainChance: 40, typicalConditions: 'Cold with possible snow', shadeTip: '' },
+        { month: 'December', avgTemp: 32, avgHumidity: 80, rainChance: 45, typicalConditions: 'Harsh winter conditions', shadeTip: '' },
+        { month: 'January', avgTemp: 26, avgHumidity: 75, rainChance: 40, typicalConditions: 'Brutally cold, lake effect snow', shadeTip: '' }
       ]
     },
     seatingGuide: {
-      premiumSeating: {
-        clubs: [
-          { name: 'Legends Club', perks: ['All-inclusive food and drinks', 'Premium seating', 'Climate control'], access: 'Midfield club level' },
-          { name: 'Red Zone Club', perks: ['Upscale dining', 'Bar service', 'Indoor/outdoor access'], access: 'End zone club level' }
-        ],
-        suites: {
-          levels: ['Suite level between club and upper deck'],
-          amenities: ['Private restrooms', 'Catering', 'Heating', 'Premium furnishing']
-        },
-        specialAreas: [
-          { name: 'Field Goal Post Club', description: 'Behind goal posts with unique perspective', capacity: 150 }
-        ]
-      },
-      budgetOptions: ['Upper deck corners 300-310', 'End zone upper 330-345', 'Bleacher sections'],
-      familySections: ['Family sections in upper deck', 'End zone areas'],
-      standingRoom: ['Concourse areas', 'End zone standing room'],
-      partyAreas: [
-        { name: 'Bills Backyard', capacity: '200', description: 'Group tailgating area', amenities: ['Tents', 'Grills', 'Group seating'] },
-        { name: 'Tailgate Village', capacity: '500', description: 'Premium tailgating experience', amenities: ['Food service', 'Entertainment', 'Heated areas'] }
-      ],
-      tips: [
-        { section: 'Club Level', tip: 'Climate controlled - essential for winter games', category: 'experience' },
-        { section: 'Upper deck 320-330', tip: 'Great views and better value', category: 'value' },
-        { section: 'Lower bowl midfield', tip: 'Closest to action but coldest in winter', category: 'experience' },
-        { section: 'End zones', tip: 'Cheapest option, still great atmosphere', category: 'value' }
-      ]
+      premiumSeating: { clubs: [], suites: { levels: [], amenities: [] } },
+      budgetOptions: [],
+      familySections: [],
+      tips: []
     },
-    concessions: {
-      signature: ['Beef on Weck', 'Buffalo Wings', 'Sponge Candy', 'Loganberry drink'],
-      local: ['Buffalo-style pizza', 'Chiavetta\'s Chicken', 'Ted\'s Hot Dogs', 'Paula\'s Donuts'],
-      healthy: ['Grilled chicken options', 'Salads', 'Fresh fruit'],
-      vegetarian: ['Veggie burgers', 'Buffalo cauliflower', 'Mac and cheese'],
-      glutenFree: ['GF beer available', 'Grilled options'],
-      kidsFriendly: ['Chicken tenders', 'Mini corn dogs', 'Hot chocolate', 'Mac and cheese'],
-      alcohol: {
-        beer: ['Labatt Blue', 'Molson Canadian', 'Budweiser', 'Local craft beers'],
-        wine: true,
-        cocktails: false,
-        localBreweries: ['Flying Bison', '42 North', 'Resurgence']
-      }
-    },
+    concessions: { signature: [], local: [] },
     parking: {
-      lots: [
-        { name: 'Private Lots', distance: 'Adjacent', price: '$40-60', shadedSpots: false, covered: false, tip: 'Easiest exit but pricey' },
-        { name: 'Official Lots A-F', distance: '5-10 min walk', price: '$25', shadedSpots: false, covered: false, tip: 'Official stadium parking' },
-        { name: 'Grass Lots', distance: '10-15 min walk', price: '$15-25', shadedSpots: false, covered: false, tip: 'Can get muddy in bad weather' }
-      ],
-      streetParking: {
-        available: true,
-        restrictions: 'Limited residential streets',
-        tip: 'Get there very early, most fans tailgate in lots'
-      },
+      lots: [],
       alternativeTransport: {
         publicTransit: ['Limited bus service from downtown Buffalo'],
         rideShare: 'Available but surge pricing after games',
         bicycle: 'Not practical due to location'
       }
     },
-    gates: [
-      { name: 'Gate 1', location: 'Southwest corner', bestFor: ['Lower bowl west', 'Club level'], openTime: '2 hours before kickoff' },
-      { name: 'Gate 2', location: 'Northwest corner', bestFor: ['Upper deck', 'North end zone'], openTime: '2 hours before kickoff' },
-      { name: 'Gate 3', location: 'Northeast corner', bestFor: ['East sideline', 'Club areas'], openTime: '2 hours before kickoff' },
-      { name: 'Gate 4', location: 'Southeast corner', bestFor: ['South end zone', 'Lower east'], openTime: '2 hours before kickoff' }
-    ],
-    amenities: {
-      merchandise: [
-        { location: 'Bills Store - Gate 1', exclusive: ['Game-worn items', 'Throwback jerseys'] },
-        { location: 'Kiosks throughout concourses', exclusive: [] }
-      ],
-      firstAid: ['Section 106', 'Section 330', 'Club level'],
-      babyChanging: ['All family restrooms', 'Club level', 'Guest services'],
-      nursingRooms: ['Guest services areas'],
-      atms: ['All gates', 'Club level', 'Concourse areas'],
-      wifi: { available: true, network: 'Bills_WiFi', freeZones: ['All seating areas'] },
-      chargingStations: ['Club level', 'Suite areas'],
-      kidZones: []
-    },
+    gates: [],
+    amenities: { merchandise: [], firstAid: [], babyChanging: [], atms: [] },
     accessibility: {
-      wheelchairAccess: {
-        available: true,
-        sections: ['Designated areas on all levels'],
-        entrance: 'All gates accessible',
-        elevators: ['Each gate area', 'Club level access']
-      },
+      wheelchairAccess: { available: true, sections: [], entrance: '', elevators: [] },
       assistiveListening: true,
       signageAndBraille: true,
       serviceAnimals: true,
       companionSeats: true,
-      accessibleRestrooms: ['All levels'],
-      accessibleConcessions: ['Main concession areas'],
-      parkingSpaces: 'Available in official lots - reserve ahead'
+      accessibleRestrooms: [],
+      accessibleConcessions: [],
+      parkingSpaces: ''
     },
     gameDay: {
       tips: [
         { title: 'Arrive Early for Tailgating', description: 'Bills Mafia tailgating is legendary - experience it', category: 'arrival' },
         { title: 'Dress in Layers', description: 'Weather can change drastically during game', category: 'weather' },
-        { title: 'Try Beef on Weck', description: 'Buffalo\'s signature sandwich', category: 'food' },
         { title: 'Stay for Celebration', description: 'Post-game celebrations are part of the experience', category: 'experience' },
         { title: 'Winter Survival', description: 'Hand warmers, blankets, and hot drinks essential', category: 'weather' }
       ],
       typicalSchedule: {
-        gatesOpen: '2 hours before kickoff',
+        gatesOpen: '',
         firstPitch: '1:00 PM Sundays, 4:25 PM some Sundays, 8:20 PM Monday/Thursday',
         rushHours: ['11:00 AM-12:30 PM for 1 PM games', '2:00-4:00 PM for late games']
       },
@@ -177,33 +91,15 @@ export const nflStadiumGuides: Record<string, StadiumGuide> = {
       radius: '1 mile (limited walkable options)'
     },
     transportation: {
-      address: 'One Bills Drive, Orchard Park, NY 14127',
-      publicTransit: {
-        bus: [{ routes: ['NFTA shuttle from downtown'], stops: ['Downtown Buffalo hotels'] }]
-      },
-      driving: {
-        majorRoutes: ['Route 219 South', 'I-90 to Route 219', 'Abbott Road'],
-        typicalTraffic: 'Heavy 2-4 hours before kickoff',
-        bestApproach: 'Route 219 from north, avoid Route 20'
-      },
-      rideShare: {
-        pickupZone: 'Designated areas in Lots E & F',
-        dropoffZone: 'Abbott Road entrance',
-        surgePricing: '3-5x after games',
-        alternativeTip: 'Walk to nearby businesses for lower rates'
-      }
+      address: '10 Bills Plaza, Orchard Park, NY 14127',
+      publicTransit: {},
+      driving: { majorRoutes: [], typicalTraffic: '', bestApproach: '' },
+      rideShare: { pickupZone: '', dropoffZone: '', surgePricing: '' }
     },
     history: {
       timeline: [
-        { year: 1973, event: 'Stadium opens as Rich Stadium' },
-        { year: 1988, event: 'Renamed Ralph Wilson Stadium' },
-        { year: 2016, event: 'Becomes New Era Field' },
-        { year: 2020, event: 'Renamed Highmark Stadium' }
-      ],
-      notableGames: [
-        { date: '1993-01-03', description: 'The Comeback - Bills overcome 32-point deficit vs Oilers' },
-        { date: '2017-12-10', description: 'Snow Bowl vs Colts' },
-        { date: '2021-01-09', description: 'First playoff win in 25 years' }
+        { year: 2026, event: 'Opens on June 23' },
+        { year: 2026, event: 'First regular-season game, September 17: Bills 41, Lions 31' }
       ],
       traditions: [
         { name: 'Bills Mafia', description: 'Passionate fanbase known for loyalty and wild tailgating' },
