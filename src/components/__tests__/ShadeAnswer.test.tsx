@@ -103,7 +103,7 @@ describe('the NFL shade answer for one game (the finder)', () => {
   it('names the end zone with the sun at its back, when there is one', () => {
     const game = { time: '12:00 PM', date: 'December 6' };
     expect(gameAnswer({ ...game, side: { ...side, shadedEndZone: 'south' } }))
-      .toContain('seats under an overhang. The south end zone has it at its back too. The east sideline and the north end zone face the sun.');
+      .toContain('seats under an overhang. The south end zone has the sun at its back too. The east sideline and the north end zone face the sun.');
   });
 
   it('names no end zone otherwise', () => {
@@ -157,15 +157,15 @@ describe('the NFL shade answer for one game (the finder)', () => {
 
   it('names the end zone on the stadium page, for each kickoff it has the sun behind', () => {
     const text = pageAnswer({ shadedEndZone: 'south' }, {});
-    expect(text).toContain('The south end zone has it at its back too. The east sideline and the north end zone face the sun.');
+    expect(text).toContain('The south end zone has the sun at its back too. The east sideline and the north end zone face the sun.');
     expect(text).toContain("For a 4:25 PM kickoff it's the same west sideline, with more of it in shade as the sun drops. Night games");
   });
 
   it.each([
     ['the same sideline', {}, { shadedEndZone: 'south' },
-      'with more of it in shade as the sun drops. The south end zone has it at its back too. Night games'],
+      'with more of it in shade as the sun drops. The south end zone has the sun at its back too. Night games'],
     ['a sideline the early kickoff has none of', { clear: false, shadedEndZone: 'south' }, { shadedEndZone: 'south' },
-      'For a 4:25 PM kickoff the west sideline shades first. The south end zone has it at its back too. Night games'],
+      'For a 4:25 PM kickoff the west sideline shades first. The south end zone has the sun at its back too. Night games'],
     ['no clear sideline', {}, { clear: false, shadedEndZone: 'south' },
       'For a 4:25 PM kickoff the sun runs along the field, and the south end zone has it at its back. Night games'],
   ])('names it for the late kickoff, with %s', (_case, early, late, words) => {

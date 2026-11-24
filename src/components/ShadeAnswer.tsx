@@ -15,7 +15,7 @@ const boxStyle = {
 } as const;
 
 const endZoneToo = ({ shadedEndZone }: FieldSunSide) =>
-  shadedEndZone ? ` The ${shadedEndZone} end zone has it at its back too.` : '';
+  shadedEndZone ? ` The ${shadedEndZone} end zone has the sun at its back too.` : '';
 
 function kickoffSentence(opening: string, name: string, side: FieldSunSide) {
   return side.clear ? (
