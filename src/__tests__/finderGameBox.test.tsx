@@ -105,6 +105,18 @@ describe.each([['desktop', 1280], ['mobile', 390]])('the game box and the answer
       expect(shown()).toEqual(BOTH);
     });
 
+    it.each([['game', '#game-select'], ['stadium', '#venue-select']])('the %s list opens scrolled to what was chosen', async (_list, input) => {
+      // A list that shows 300 px, with every option below that.
+      jest.spyOn(Element.prototype, 'getBoundingClientRect').mockImplementation(function (this: Element) {
+        return { bottom: this.getAttribute('role') === 'option' ? 1000 : 300 } as DOMRect;
+      });
+      jest.spyOn(Element.prototype, 'scrollHeight', 'get').mockReturnValue(2000);
+      jest.spyOn(HTMLElement.prototype, 'offsetTop', 'get').mockReturnValue(900);
+      fireEvent.keyDown(document.querySelector(input)!, { key: 'ArrowDown' });
+      // At once: the weather, a second on, redraws the finder, which scrolls it too.
+      await waitFor(() => expect(screen.getByRole('listbox').scrollTop).toBe(900), { timeout: 200 });
+    });
+
     it('stay when the list is opened again after Custom Time, and left', async () => {
       tab(/custom time/i);
       tab(/real games/i);

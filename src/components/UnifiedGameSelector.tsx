@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useCallback, useRef } from 'react';
 import { customSelectStyles } from './selectStyles';
 import { groupOptionsByMonth } from './groupOptionsByMonth';
-import Select from 'react-select';
+import Select, { SelectInstance } from 'react-select';
 import { format } from 'date-fns';
 import { MLBGame, mlbApi, upcomingScheduleRange } from '../services/mlbApi';
 import { MiLBGame, milbApi, MILB_LEVELS } from '../services/milbApi';
@@ -49,6 +49,14 @@ const gameOption = (game: MLBGame | MiLBGame | NFLGame, timezone = 'America/New_
   return { value: gameId, label, game };
 };
 
+/**
+ * react-select scrolls to the chosen option when it updates, but the portal puts
+ * the list on the page after that. So update it once more, with the list there.
+ */
+const scrollToChosen = (select: React.RefObject<SelectInstance<any, any, any>>) => {
+  requestAnimationFrame(() => select.current?.forceUpdate());
+};
+
 export const UnifiedGameSelector: React.FC<UnifiedGameSelectorProps> = ({
   selectedVenue,
   selectedGame,
@@ -77,6 +85,8 @@ export const UnifiedGameSelector: React.FC<UnifiedGameSelectorProps> = ({
     return preferencesStorage.get('lastUsedTime', format(new Date(), 'HH:mm'));
   });
   const [error, setError] = useState<string | null>(null);
+  const venueSelect = useRef<SelectInstance<any, any, any>>(null);
+  const gameSelect = useRef<SelectInstance<any, any, any>>(null);
   
   // Check if we're in mobile context
   useEffect(() => {
@@ -494,6 +504,8 @@ export const UnifiedGameSelector: React.FC<UnifiedGameSelectorProps> = ({
           {selectedLeague === 'MLB' ? t('gameSelector.stadium') : 'Venue'}:
         </label>
         <Select
+          ref={venueSelect}
+          onMenuOpen={() => scrollToChosen(venueSelect)}
           inputId="venue-select"
           options={venueOptions}
           value={venueOptions.find(opt => opt.venue.id === selectedVenue?.id) || null}
@@ -546,6 +558,8 @@ export const UnifiedGameSelector: React.FC<UnifiedGameSelectorProps> = ({
                         </div>
                       )}
                       <Select
+                        ref={gameSelect}
+                        onMenuOpen={() => scrollToChosen(gameSelect)}
                         inputId="game-select"
                         value={chosenOption}
                         options={gameOptions}
