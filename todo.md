@@ -7023,6 +7023,76 @@ this file was the only conflict, and both sections are kept.
 in `milbTeamMapping.ts` (Grainger Stadium, and Roger Dean Chevrolet Stadium for
 the Palm Beach Cardinals), so by the code their lists say "venue not recognized".
 
+## §36 The game box and the answer disagree after a tab change (plan, 2026-11-24)
+
+Asked: "fix the tab bug too" (found while checking PR #111). Branch
+`claude/game-box`, from `main` at ae4ba6463 (PR #111).
+
+### Findings
+
+**The bug.** Pick a game, open Custom Time, come back without applying
+anything: the box says "Choose a game..." and the answer for the game is still
+there. All three leagues, desktop and mobile; older than PR #106.
+
+**The cause.** The picker keeps its own copy of the chosen game
+(`selectedGameOption`), next to the finder's (`selectedGame`), which is what the
+answer uses. Two copies have to be cleared together by hand: the picker does it
+in four places, and the tab change is one that shouldn't. It's the third bug
+from this: PR #106 fixed the box that kept a game after a change of stadium, and
+PR #111 the same stadium picked again.
+
+**What's right.** Opening a tab changes nothing until Apply, so the game stays in
+the box with its answer. Once a custom time is applied, the answer is for that
+time and the box is empty.
+
+### Plan
+
+- [x] G1 (551fed99e). Tests first, in the whole finder with its real picker (desktop and
+      mobile, three leagues): the tabs with nothing applied; a custom time
+      applied; the same stadium; another stadium. And the NFL date form after the
+      list comes back empty. The two picker tests for the box move here: what the
+      box shows is the finder's to say.
+- [x] G2 (551fed99e). The box shows the finder's game: `UnifiedGameSelector` takes
+      `selectedGame`, both finders pass theirs, and the picker's copy goes, with
+      the four places that clear it and the one that sets it.
+- [x] G3. Checks: tests, types, eslint, build, and the finder in a browser. Then
+      the review.
+
+**The smaller patch I'd leave:** clear the copy only when the stadium changes,
+and also on Apply and in the date form. Fewer lines, but two copies still, and
+seven places to keep in step.
+
+### §36 Review (2026-11-24)
+
+**What changed:** one commit (551fed99e). The picker's box shows the game the finder
+holds (`selectedGame`), so whatever changes the answer changes the box. The
+picker's own copy is gone, with the four places that cleared it, PR #111's line
+for the same stadium among them. The code that names a game in the list moved
+out of the list so the box can use it too; it reads the same.
+
+**What a fan sees:** Custom Time opened and left keeps the game and its answer.
+Applied, the answer is for that time and the box is empty. Everything else is as
+before.
+
+**Checks:**
+- *Tests:* 4,171 of 4,171 in 107 suites: 26 new in the whole finder, and six
+  picker tests for the box moved into them. Seen to fail first: the six for the
+  tabs and the two for the date form, each with an empty box and the game's
+  answer; the other 18 guard what worked. They also catch half of the smaller
+  patch, the copy cleared only when the stadium changes (eight fail), and a
+  finder that forgets to clear its game (six fail).
+- *Types, build, eslint:* pass, with the two warnings `main` has.
+- *In a browser (dev server):* Lambeau on desktop (tabs with nothing applied, a
+  custom time applied, another game, the same stadium) and Yankee Stadium at
+  phone size (tabs with nothing applied); no console errors.
+- *No page's answer changes:* only the finder's box is touched.
+- *Not tested:* Safari and Firefox, and MiLB in a browser (its season is over).
+
+**PR #111 since its review:** merged as ae4ba6463 and live; `main`'s Playwright
+run passed (17 of 17). On the live site, Lambeau picked again empties the box and
+the answer, on desktop and at phone size. Its changes to the NFL and MiLB lists
+weren't checked live.
+
 ---
 ---
 
