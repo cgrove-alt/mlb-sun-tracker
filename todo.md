@@ -7078,8 +7078,9 @@ before.
 - *Tests:* 4,171 of 4,171 in 107 suites: 26 new in the whole finder, and six
   picker tests for the box moved into them. Seen to fail first: the six for the
   tabs and the two for the date form, each with an empty box and the game's
-  answer; the other 18 guard what worked. They also catch the smaller patch
-  (eight fail) and a finder that forgets to clear its game (six fail).
+  answer; the other 18 guard what worked. They also catch half of the smaller
+  patch, the copy cleared only when the stadium changes (eight fail), and a
+  finder that forgets to clear its game (six fail).
 - *Types, build, eslint:* pass, with the two warnings `main` has.
 - *In a browser (dev server):* Lambeau on desktop (tabs with nothing applied, a
   custom time applied, another game, the same stadium) and Yankee Stadium at
