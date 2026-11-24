@@ -27,3 +27,11 @@ it('the footer credits ESPN beside the others', () => {
     '⚾ MLB data: MLB Advanced Media • 🏈 NFL schedule: ESPN • 🌤️ Weather: Open-Meteo • ☀️ Sun: NREL Solar Position Algorithm',
   );
 });
+
+it('/attributions says where the NFL directions come from', () => {
+  const { container } = render(<AttributionsPage />);
+  expect(container.textContent!.replace(/\s+/g, ' ')).toContain(
+    'The direction NFL fields run, where we\'ve measured it, from OpenStreetMap (© OpenStreetMap contributors), USDA NAIP aerial photos and, at Highmark Stadium, satellite images (contains modified Copernicus Sentinel data 2026)',
+  );
+  expect(container.querySelector('a[href="https://www.openstreetmap.org/copyright"]')).not.toBeNull();
+});
