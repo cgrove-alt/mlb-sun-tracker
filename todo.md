@@ -6926,8 +6926,8 @@ page avoids loading.
 ## §35 Games that leave the finder's list at kickoff (plan, 2026-11-24)
 
 Asked: plan the fix for NFL games that leave the finder's list at kickoff.
-Branch `fix/finder-kickoff`, from `main` at 193d31d4d (PR #109). Nothing but
-this file has changed. (§34 is PR #110.)
+Branch `fix/finder-kickoff`, from `main` at 193d31d4d (PR #109). (When
+the plan was written, nothing but this file had changed. §34 is PR #110.)
 
 **In short:** it's one filter for the NFL. MiLB has the same fault and a second
 one that drops games before they start; I'd fix all three together.
@@ -6966,17 +6966,17 @@ filtered on, so there it's only which states count.
 
 ### Plan (approved 2026-11-24, K1–K4)
 
-- [ ] K1. `nflApi.ts`: keep a game until three hours after kickoff. Tests first,
+- [x] K1 (eaa4a20b8). `nflApi.ts`: keep a game until three hours after kickoff. Tests first,
       on ESPN's 2025 answer: a minute before, at, an hour after, and three hours
       and a minute after kickoff; and the last home game while it's on.
-- [ ] K2. `milbApi.ts`: drop only what's `Final` (finished, postponed or
+- [x] K2 (96e76bc81). `milbApi.ts`: drop only what's `Final` (finished, postponed or
       cancelled: all 8,680 of 2025 end as that), so a game in progress stays.
       `UnifiedGameSelector.tsx`: ask from the fan's own date, with
       `upcomingScheduleRange(now, 30)`. Tests first: `Preview`, `Live`,
       `Final`; and 5:05 PM Pacific and 8:05 PM Eastern.
-- [ ] K3. `UnifiedGameSelector.tsx`: choosing a stadium clears the game box,
+- [x] K3 (4d5e62a58). `UnifiedGameSelector.tsx`: choosing a stadium clears the game box,
       the same one included (one line). Test first, in all three leagues.
-- [ ] K4. Checks: unit tests, types, eslint, build; every team's 2025 home games
+- [x] K4. Checks: unit tests, types, eslint, build; every team's 2025 home games
       through K1 at kickoff and three hours on, and MiLB's 2025 games through K2
       by the hour; the schedule tests in Tokyo, Los Angeles and UTC; the finder
       in a browser with the clock set. Every page's answer unchanged (none of
@@ -6988,6 +6988,40 @@ wait), and K3 is one line in the same file. Or K1 alone.
 
 **Not in this plan:** the list's label still says "upcoming" with a game in
 progress in it, as MLB's does. An open page doesn't reload its list.
+
+### §35 Review (2026-11-24)
+
+**What changed:** three commits, and `main` at 894310f2b (PR #110) merged in;
+this file was the only conflict, and both sections are kept.
+- *K1 (eaa4a20b8):* an NFL game stays in the list for the three hours its
+  answer covers, the last home game of a season included.
+- *K2 (96e76bc81):* a MiLB game stays until MLB calls it `Final`, and the list
+  starts from the fan's own date.
+- *K3 (4d5e62a58):* choosing a stadium clears the game box, the same one too.
+
+**Checks:**
+- *Tests:* 4,151 of 4,151 in 106 suites; 13 new. Seen to fail first: K1's four
+  that cover a game in progress, K2's two and K3's three; the other four guard
+  what must not change. The schedule, picker and form tests also in Tokyo, Los
+  Angeles and UTC. Types and the production build pass; eslint: 0 errors, and
+  one warning that `main` has too.
+- *Every 2025 NFL home game* (265, from ESPN's own answers for the 32 teams):
+  first in its list a minute before, at, and 1, 90 and 180 minutes after
+  kickoff; at 181 it's gone and the next is first.
+- *Every 2025 MiLB game* at the 118 parks with an MLB id, played on its own
+  date (8,123): asked for and kept an hour before first pitch and 90 minutes
+  after. The old way kept 7,170 and none.
+- *In a browser (dev server), the page's clock set:* at 12:30 PM on December 20
+  Lambeau lists Dolphins @ Packers first and answers for it, and Lambeau again
+  empties the box and the answer. At 8:05 PM on July 18, 2025, Sahlen Field asks
+  MLB from July 18.
+- *No page's answer changes:* the three commits touch only the finder's lists.
+- *Not tested:* Safari and Firefox, and a MiLB game in progress in a browser
+  (the season is over).
+
+**Left:** as in "Not in this plan". Found on the way: two parks have no MLB id
+in `milbTeamMapping.ts` (Grainger Stadium, and Roger Dean Chevrolet Stadium for
+the Palm Beach Cardinals), so by the code their lists say "venue not recognized".
 
 ---
 ---
