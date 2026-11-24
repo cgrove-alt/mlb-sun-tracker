@@ -6886,6 +6886,43 @@ pages' answers as tested; the finder's copy, the three source pages, the
 footer and the security policy. The live finder wasn't opened in a browser
 (it would count as a visit in Analytics).
 
+## §34 Three leftovers from checking P6 (plan, 2026-11-24)
+
+Asked: clean up the three leftovers from checking PR #108. Branch
+`fix/cleanup-leftovers`, from `main` at 193d31d4d. No page uses any of them.
+
+1. *`scripts/fixNFLSectionIds.ts`* renames ids in `nflSections.ts`, which P6
+   deleted, so it fails if run. It has no other purpose.
+2. *`scripts/importVenues.ts`* writes `venueSections.ts`, which P6 deleted, so
+   running it would bring the made-up sections back. It also writes
+   `venues.ts` and `venueParams.ts`.
+3. *`bowlGeometry.ts`'s header* names `getUnifiedVenueShade` as if it were
+   still there.
+
+Plan:
+- [x] R1. Delete `fixNFLSectionIds.ts`.
+- [x] R2. `importVenues.ts`: drop the part that makes sections. Run it into a
+      scratch folder before and after: the other two files must be the same.
+- [x] R3. The header says the function has since been deleted.
+- [x] R4. Types, eslint, tests and the build.
+
+### §34 Review (2026-11-24)
+
+- *R1:* the script is gone (31 lines). Nothing named it but this file.
+- *R2:* `importVenues.ts` no longer makes sections (155 lines out, none in).
+  Run into a scratch folder before and after, `venues.ts` and `venueParams.ts`
+  are the same but for the date they carry, and `venueSections.ts` isn't
+  written.
+- *R3:* the header says `getUnifiedVenueShade` has since been deleted. The
+  history it tells is still true, so it stays.
+- *R4:* types and eslint clean, 4,138 of 4,138 tests, and the build passes. All
+  150 stadium-page answers are the same as the live site's (`main` at 193d31d4d).
+
+**Noticed (not changed):** nothing imports `src/data/venues.ts` or
+`venueParams.ts`, the two files `importVenues.ts` still writes. A comment in
+`ComprehensiveStadiumGuide.tsx` names `venueSections` among the data that
+page avoids loading.
+
 ---
 ---
 
