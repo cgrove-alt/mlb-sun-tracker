@@ -3,6 +3,7 @@ import { render } from '@testing-library/react';
 import AttributionsPage from '../attributions/page';
 import DisclaimerPage from '../disclaimer/page';
 import HowItWorksPage from '../how-it-works/page';
+import FooterModern from '../../components/FooterModern';
 
 describe.each([
   ['/attributions', AttributionsPage],
@@ -19,4 +20,10 @@ describe.each([
   it('still say the baseball schedules are from MLB', () => {
     expect(text()).toContain('MLB Advanced Media');
   });
+});
+
+it('the footer credits ESPN beside the others', () => {
+  expect(render(<FooterModern />).container.textContent).toContain(
+    '⚾ MLB data: MLB Advanced Media • 🏈 NFL schedule: ESPN • 🌤️ Weather: Open-Meteo • ☀️ Sun: NREL Solar Position Algorithm',
+  );
 });
