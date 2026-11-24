@@ -209,3 +209,28 @@ it("a game is under the month it's played in at the park", async () => {
   expect(screen.getByRole('option').textContent).toContain('Jul 31, 9:30 PM');
   expect(screen.getByText('July')).toBeTruthy();
 });
+
+it('keeping the chosen game is not choosing it again', async () => {
+  const chosen = baseballGame('Rays', 'Yankees');
+  const another = { ...chosen, gamePk: 'another', gameDate: '2027-07-21T17:05:00Z' };
+  jest.spyOn(mlbApi, 'getSchedule').mockResolvedValue([]);
+  jest.spyOn(mlbApi, 'getHomeGamesForStadium').mockReturnValue([chosen, another]);
+  const onGameSelect = jest.fn();
+  render(
+    <I18nProvider>
+      <UnifiedGameSelector
+        selectedVenue={getUnifiedVenueById('yankees')!}
+        selectedGame={chosen}
+        onGameSelect={onGameSelect}
+        onVenueChange={() => {}}
+      />
+    </I18nProvider>,
+  );
+  await wait(900);
+  openList();
+  fireEvent.keyDown(document.querySelector('#game-select')!, { key: 'Tab' });
+  expect(onGameSelect).not.toHaveBeenCalled();
+  openList();
+  fireEvent.click(screen.getByRole('option', { name: /Jul 21/ }));
+  expect(onGameSelect.mock.calls).toEqual([[another, new Date(another.gameDate)]]);
+});

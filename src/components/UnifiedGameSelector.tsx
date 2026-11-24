@@ -564,6 +564,7 @@ export const UnifiedGameSelector: React.FC<UnifiedGameSelectorProps> = ({
                         value={chosenOption}
                         options={gameOptions}
                         onChange={(option) => {
+                          if (option === chosenOption) return; // kept, not chosen again
                           if (option?.game) {
                             const gameDate = new Date(option.game.gameDate);
                             onGameSelect(option.game, gameDate);
