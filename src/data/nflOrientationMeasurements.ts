@@ -20,7 +20,7 @@
  *   the sidelines seen through a roof opening, or the roof outline.
  * - `satellite`: a rectangle fitted to the grass in Sentinel-2 images
  *   (scripts/measureNflSatellite.py), for a stadium newer than the aerial
- *   photos. On 13 fields measured the other ways it lands within 2°.
+ *   photos. On 13 fields measured the other ways it lands within about 1°.
  * - `not-measured`: the roof was closed in the only aerial photo and
  *   nothing else pins the field down. Pages say so instead of guessing.
  *   Fixed-roof stadiums are listed here too: there the direction never
