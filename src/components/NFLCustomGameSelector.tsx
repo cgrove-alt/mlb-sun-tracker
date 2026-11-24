@@ -19,8 +19,12 @@ const NFLCustomGameSelector: React.FC<NFLCustomGameSelectorProps> = ({
   const [gameDate, setGameDate] = useState(initialDate);
   const [gameTime, setGameTime] = useState(initialTime);
 
+  // A cleared field, or a year of five digits, isn't a date to show or use.
+  const selected = new Date(`${gameDate}T${gameTime}`);
+  const isDate = !Number.isNaN(selected.getTime());
+
   const handleApply = () => {
-    if (gameDate && gameTime && selectedVenue) {
+    if (isDate && selectedVenue) {
       const dateTime = stadiumLocalToUTC(
         gameDate,
         gameTime,
@@ -67,15 +71,17 @@ const NFLCustomGameSelector: React.FC<NFLCustomGameSelectorProps> = ({
           <p>
             <strong>Venue:</strong> {selectedVenue?.name}
           </p>
-          <p>
-            <strong>Selected:</strong> {format(new Date(`${gameDate}T${gameTime}`), 'EEEE, MMMM d, yyyy')} at {gameTime}
-          </p>
+          {isDate && (
+            <p>
+              <strong>Selected:</strong> {format(selected, 'EEEE, MMMM d, yyyy')} at {gameTime}
+            </p>
+          )}
         </div>
 
         <button
           onClick={handleApply}
           className="apply-button"
-          disabled={!gameDate || !gameTime || !selectedVenue}
+          disabled={!isDate || !selectedVenue}
         >
           Calculate Shade
         </button>
