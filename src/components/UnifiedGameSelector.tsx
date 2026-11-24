@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useCallback } from 'react';
+import React, { useState, useEffect, useCallback, useRef } from 'react';
 import { customSelectStyles } from './selectStyles';
 import { groupOptionsByMonth } from './groupOptionsByMonth';
 import Select from 'react-select';
@@ -126,8 +126,15 @@ export const UnifiedGameSelector: React.FC<UnifiedGameSelectorProps> = ({
     };
   });
 
+  // Counts the loads, and the changes of venue. A load that is no longer the
+  // latest must not land on the venue chosen since.
+  const latestLoad = useRef(0);
+
   // Load games for MLB, MiLB, and NFL venues
   const loadGames = useCallback(async () => {
+    const load = ++latestLoad.current;
+    const isStale = () => load !== latestLoad.current;
+
     if (!selectedVenue || (selectedVenue.league !== 'MLB' && selectedVenue.league !== 'MiLB' && selectedVenue.league !== 'NFL')) {
       setGames([]);
       return;
@@ -144,7 +151,8 @@ export const UnifiedGameSelector: React.FC<UnifiedGameSelectorProps> = ({
       if (selectedVenue.league === 'MLB') {
         const range = upcomingScheduleRange(now);
         const schedule = await mlbApi.getSchedule(range.startDate, range.endDate);
-        
+        if (isStale()) return;
+
         const homeGames = mlbApi.getHomeGamesForStadium(selectedVenue.id, schedule);
 
         setGames(homeGames);
@@ -211,6 +219,7 @@ export const UnifiedGameSelector: React.FC<UnifiedGameSelectorProps> = ({
           endDate.toISOString().split('T')[0],
           sportId
         );
+        if (isStale()) return;
 
         const homeGames = milbApi.getHomeGamesForVenue(venueId, schedule);
 
@@ -223,6 +232,7 @@ export const UnifiedGameSelector: React.FC<UnifiedGameSelectorProps> = ({
       } else if (selectedVenue.league === 'NFL') {
 
         const nflGames = await nflApi.getUpcomingVenueGames(selectedVenue.id);
+        if (isStale()) return;
 
         setGames(nflGames);
         gamesLoading.setData(nflGames);
@@ -233,6 +243,7 @@ export const UnifiedGameSelector: React.FC<UnifiedGameSelectorProps> = ({
       }
       
     } catch (error) {
+      if (isStale()) return;
       console.error('[GameSelector] Error loading games:', error);
       
       // Set specific error message based on league
@@ -245,12 +256,13 @@ export const UnifiedGameSelector: React.FC<UnifiedGameSelectorProps> = ({
       setGames([]);
       gamesLoading.setError(error as Error);
     } finally {
-      gamesLoading.setLoading(false);
+      if (!isStale()) gamesLoading.setLoading(false);
     }
   }, [selectedVenue, gamesLoading, onGamesLoaded]);
 
   // Load games when venue changes (MLB, MiLB, and NFL)
   useEffect(() => {
+    latestLoad.current += 1;
     if (selectedVenue && viewMode === 'games' && (selectedVenue.league === 'MLB' || selectedVenue.league === 'MiLB' || selectedVenue.league === 'NFL')) {
       gamesLoading.reset();
       setGames([]);
