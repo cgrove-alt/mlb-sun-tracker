@@ -6286,12 +6286,19 @@ words as they were, and both finders use them.
 
 - [x] P4 (d8feee306). `fieldSunSideAt` also gives the end zone with the sun at
       its back: within 60° of the sun's mean direction, MiLB's test. The
-      sentence adds "The south end zone has it at its back too", and where
+      sentence adds "The south end zone has the sun at its back too", and where
       neither sideline has a clear edge it names the end zone instead. The
       pages' 4:25 PM sentence does the same.
 - [x] P5 (49016b5a8). At AT&T and Lucas Oil a game after sunset says the sun is
       down, in both finders. By day they still say we can't yet say.
 - [x] P7, the checks that cover them.
+- [x] The wording (c880772c9, 2026-11-24; asked: "have the NFL session fix the
+      wording nit"). "The south end zone has it at its back too" is now "has
+      the sun at its back too": in the 4:25 PM sentence "it" had nothing to
+      refer to. The tests changed first (4 failed). It's on 19 of the 20
+      changed pages (not EverBank) and in 126 of the 576 finder answers, and
+      nothing else in any page or answer moved. "The sun runs along the field,
+      and … has it at its back" stays, because there "it" is the sun.
 
 **Which answers change:**
 - *Pages:* 20 of the 24 with a sideline, not all 24 as §30 said. Paycor,
