@@ -6523,11 +6523,33 @@ bring the first two out there.
   finders and `finderMilb.test.tsx`, on other lines. They still merge without
   a conflict, and together pass 4,121 of 4,121.
 
-**Not asked for, left as it is** (the review's list): the date form crashes
-when its date is cleared; it flashes "currently unavailable" before each list;
-a game leaves the list at kickoff; the moved-stadium rule covers only the
-Bills. Also: the footer, `AttributionFooter`, `AttributionNotice` and
-`llms.txt` still name only MLB as a schedule source.
+**Not asked for, left as it is** (the reviews' list): a game leaves the list at
+kickoff; the moved-stadium rule covers only the Bills; picking the same stadium
+again clears the answer but not the box. Also: the footer, `AttributionFooter`,
+`AttributionNotice` and `llms.txt` still name only MLB as a schedule source.
+
+**The date form, after that** (asked: "have the NFL session fix both date form
+bugs", passed on):
+- [x] Q5 (f5480360a). *The crash.* The form formatted its date and time on every
+      render, and a cleared one isn't a date (`RangeError`). It was the same for
+      a cleared time and for a year of five digits. Now the "Selected" line and
+      the button wait until the two make a date.
+- [x] Q6 (4cdc820c6). *The flash.* A stadium's request starts 200 ms after it's
+      picked, and nothing counted that as loading. It wasn't only the NFL: MLB
+      and MiLB flashed "No upcoming games found" the same way. One cause, one
+      fix: before its first load a venue is still loading (`isInitialLoad`,
+      which the loading hook already keeps).
+- *Checks:* 10 new tests, 6 seen to fail (3 in the form; the flash in each
+  league) and 4 that guard what must stay. In a browser (dev server), recording
+  every change of the page: Lambeau and Lumen go from the skeleton to their
+  games, Highmark from the skeleton to the form, and Buffalo on a phone-size
+  window from the skeleton to "none" (its season is over). In the form a
+  cleared date and a cleared time leave it standing with the button off, and
+  filling them in again gives the answer. 4,116 of 4,116 in all; the schedule,
+  picker and form tests also in Tokyo, Los Angeles and UTC; types and the build
+  pass; eslint as above. With P4 and P5: no conflict, 4,131 of 4,131.
+- *Noticed:* for about a frame (13 ms on the dev server) after a change of
+  stadium the old list is still there. It was before, too.
 
 ## §31 Three leftovers from checking §28 (plan, 2026-11-23)
 
