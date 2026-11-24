@@ -33,15 +33,15 @@ export const NFL_STADIUMS: NFLStadium[] = [
     division: 'East',
     city: 'Orchard Park',
     state: 'NY',
-    latitude: 42.7738,
-    longitude: -78.7870,
-    orientation: 123, // ESE-WNW (measured, imagery; see nflOrientationMeasurements.ts)
-    capacity: 71608,
-    opened: 1973,
-    surface: 'turf',
+    latitude: 42.77306,
+    longitude: -78.79222,
+    orientation: 168, // SSE-NNW (measured, satellite; see nflOrientationMeasurements.ts)
+    capacity: 60108,
+    opened: 2026,
+    surface: 'grass',
     roof: 'open',
     timezone: 'America/New_York',
-    elevation: 600,
+    elevation: 770,
     features: ['Wind-prone', 'Lake effect weather']
   },
   {
