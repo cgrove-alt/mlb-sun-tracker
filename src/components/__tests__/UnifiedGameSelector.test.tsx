@@ -196,3 +196,16 @@ describe.each(Object.entries(LEAGUES))('changing stadium in %s', (_league, { ids
     expect(screen.getByText(new RegExp(games[1]))).toBeTruthy();
   });
 });
+
+// 9:30 PM in Los Angeles on July 31, which is August 1 from New York east.
+it("a game is under the month it's played in at the park", async () => {
+  jest.spyOn(mlbApi, 'getSchedule').mockResolvedValue([]);
+  jest.spyOn(mlbApi, 'getHomeGamesForStadium').mockReturnValue([
+    { ...baseballGame('Giants', 'Dodgers'), gameDate: '2025-08-01T04:30:00Z' },
+  ]);
+  render(<Picker ids={['dodgers', 'padres']} />);
+  await wait(900);
+  openList();
+  expect(screen.getByRole('option').textContent).toContain('Jul 31, 9:30 PM');
+  expect(screen.getByText('July')).toBeTruthy();
+});

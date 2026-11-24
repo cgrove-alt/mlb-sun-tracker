@@ -10,7 +10,7 @@ import { UnifiedVenue, getAllLeagues, getVenuesByLeague, getLeagueInfo, getMiLBV
 import { getTeamIdFromVenueId, getVenueIdFromStringId } from '../data/milbTeamMapping';
 import { preferencesStorage } from '../utils/preferences';
 import { formatGameTimeInStadiumTZ } from '../utils/dateTimeUtils';
-import { stadiumLocalToUTC } from '../utils/stadiumTime';
+import { stadiumLocalToUTC, utcToStadiumLocal } from '../utils/stadiumTime';
 import { useHapticFeedback } from '../hooks/useHapticFeedback';
 import { useTranslation } from '../i18n/i18nContext';
 import { GameSelectorSkeleton } from './SkeletonScreens';
@@ -352,7 +352,7 @@ export const UnifiedGameSelector: React.FC<UnifiedGameSelectorProps> = ({
   const gameOptions = React.useMemo(() => {
     return groupOptionsByMonth(
       games,
-      game => new Date(game.gameDate),
+      game => utcToStadiumLocal(new Date(game.gameDate), selectedVenue?.timezone ?? 'America/New_York'),
       game => gameOption(game, selectedVenue?.timezone),
     );
   }, [games, selectedVenue?.timezone]);
