@@ -6627,6 +6627,72 @@ copied into the picker's Custom Time boxes.
 `fix/finder-leftovers`; another branch's plan is §30, so it's §31 here. Its
 conflicts were in `MobileApp.tsx`, `UnifiedApp.tsx` and this file.)
 
+## §32 The NFL answer: the end zone, and the sun down (§30's P4 and P5, 2026-11-23)
+
+Asked: "go ahead with P1–P5", then "have the NFL session start P4 and P5",
+passed on by the session that started this one. The plan and its findings are
+§30, on `claude/agitated-sanderson-94f055` (P1–P3, not merged yet). Branch
+`claude/nfl-end-zone`, from `main` at 977a45f37. Not pushed.
+
+**The plan against `main`:** it still fits. PR #105 left the answer's rule and
+words as they were, and both finders use them.
+
+- [x] P4 (d8feee306). `fieldSunSideAt` also gives the end zone with the sun at
+      its back: within 60° of the sun's mean direction, MiLB's test. The
+      sentence adds "The south end zone has the sun at its back too", and where
+      neither sideline has a clear edge it names the end zone instead. The
+      pages' 4:25 PM sentence does the same.
+- [x] P5 (49016b5a8). At AT&T and Lucas Oil a game after sunset says the sun is
+      down, in both finders. By day they still say we can't yet say.
+- [x] P7, the checks that cover them.
+- [x] The wording (c880772c9, 2026-11-24; asked: "have the NFL session fix the
+      wording nit"). "The south end zone has it at its back too" is now "has
+      the sun at its back too": in the 4:25 PM sentence "it" had nothing to
+      refer to. The tests changed first (4 failed). It's on 19 of the 20
+      changed pages (not EverBank) and in 126 of the 576 finder answers, and
+      nothing else in any page or answer moved. "The sun runs along the field,
+      and … has it at its back" stays, because there "it" is the sun.
+
+**Which answers change:**
+- *Pages:* 20 of the 24 with a sideline, not all 24 as §30 said. Paycor,
+  Nissan, State Farm and Levi's don't: the sun is too square to the field at
+  1:00 and 4:25 PM on September 14. 12 name it at 1:00 only (at EverBank in
+  place of "neither"), 6 at 4:25 only, and Huntington and Mercedes-Benz at both.
+- *Games of 2025:* an end zone is named at 97 of the 166 with sun at measured
+  fields, and at all 6 where no sideline has an edge.
+- *Nothing else:* the other 12 NFL pages, the 120 MiLB pages and 240 MiLB game
+  answers are the same, word for word.
+
+**Checks:**
+- *Tests:* 4,053 of 4,053, 15 of them new, 14 seen to fail first (the other
+  guards the sentence without an end zone). Types, eslint (0 errors, one old
+  warning) and the production build pass.
+- *Every stadium, both real finders:* 576 answers (32 stadiums, desktop and
+  mobile, three 2025 dates, three kickoffs) against a separate calculation in
+  Python (the NOAA equations): all match, sunset times included. Desktop and
+  mobile agree at all of them. Before and after: 428 the same, 126 with only
+  the end-zone sentence added, 10 with the end zone in place of "neither", 12
+  at AT&T and Lucas Oil that now say the sun is down.
+- *The end zone itself:* at 260 answers (the 2025 games and the pages' two
+  kickoffs) the Python names the same one. By the site's bowl model, all 119
+  named are less sunny than the end zone that faces the sun, in the lower and
+  the upper deck, and none is sunnier than the sunny sideline.
+- *In a browser (dev server):* EverBank's page, AT&T at 7:15 PM on November 3,
+  and Lumen Field on a phone-size window.
+- *With P1–P3:* the two branches merge without a conflict, and together pass
+  4,099 of 4,099.
+
+**Known limits:**
+- *Bank of America at 4:25 PM* is the nearest call on the pages: the northwest
+  end zone is 59.8° from the sun's mean direction, so it's just named. The
+  ticket guide calls its south end zone the shaded one, which is right for an
+  early game, where the rule names none (as at State Farm). Of the six end
+  zones the guides name, the rule names four.
+- It says which way the sun is, not how tall the stand behind an end zone is.
+  The same is true of the sidelines.
+- The share image still gives only the sideline ("the sun runs along the
+  field" at EverBank), which is still right.
+
 ---
 ---
 

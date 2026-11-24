@@ -53,13 +53,13 @@ function UnifiedAppContent() {
     () => (selectedVenue?.league === 'MiLB' && gameDateTime ? gameShade(selectedVenue, gameDateTime) : undefined),
     [selectedVenue, gameDateTime],
   );
-  // Undefined for a fixed roof, or a field whose direction we couldn't measure.
-  const nflGame = useMemo(
-    () => (selectedVenue?.league === 'NFL' && gameDateTime && selectedVenue.roof !== 'fixed' && isFieldAxisMeasured(selectedVenue.id)
-      ? nflGameShade(selectedVenue, gameDateTime)
-      : undefined),
-    [selectedVenue, gameDateTime],
-  );
+  // Undefined for a fixed roof, or a field whose direction we couldn't measure,
+  // unless the sun is down: then the direction doesn't matter.
+  const nflGame = useMemo(() => {
+    if (selectedVenue?.league !== 'NFL' || !gameDateTime || selectedVenue.roof === 'fixed') return undefined;
+    const game = nflGameShade(selectedVenue, gameDateTime);
+    return game.side && !isFieldAxisMeasured(selectedVenue.id) ? undefined : game;
+  }, [selectedVenue, gameDateTime]);
 
   // Open the park and time a link names
   useEffect(() => {

@@ -11,24 +11,27 @@ import { getUnifiedVenueById } from '../data/unifiedVenues';
 
 // 6:35 PM in Buffalo on July 20, 2025.
 const GAME = new Date('2025-07-20T22:35:00Z');
+// 7:15 PM in Arlington, Texas, on November 3, 2025.
+const NIGHT_GAME = new Date('2025-11-04T01:15:00Z');
 
 jest.mock('../components/UnifiedGameSelector', () => ({
   UnifiedGameSelector: ({ onVenueChange, onGameSelect }: any) => (
     <>
-      {['buffalo-bisons', 'lambeau-field', 'at-t-stadium', 'ford-field', 'sofi-stadium-chargers', 'yankees'].map((id) => (
+      {['buffalo-bisons', 'lambeau-field', 'at-t-stadium', 'lucas-oil-stadium', 'ford-field', 'sofi-stadium-chargers', 'yankees'].map((id) => (
         <button key={id} onClick={() => onVenueChange(getUnifiedVenueById(id))}>{id}</button>
       ))}
       <button onClick={() => onGameSelect(null, GAME)}>pick game</button>
+      <button onClick={() => onGameSelect(null, NIGHT_GAME)}>pick night game</button>
     </>
   ),
 }));
 jest.mock('../services/weatherApi', () => ({ weatherApi: { getForecast: async () => null } }));
 
-const pickGame = async (venueId: string, width: number) => {
+const pickGame = async (venueId: string, width: number, button = 'pick game') => {
   window.innerWidth = width;
   render(<UnifiedApp />);
   fireEvent.click(screen.getByText(venueId));
-  fireEvent.click(screen.getByText('pick game'));
+  fireEvent.click(screen.getByText(button));
   // Both finders work out their sections after a delay.
   await act(async () => { await new Promise((resolve) => setTimeout(resolve, 900)); });
 };
@@ -83,6 +86,18 @@ describe.each([['desktop', 1280], ['mobile', 390]])('the finder on %s', (device,
     await pickGame('at-t-stadium', width);
     expect(answer('AT&T Stadium')?.textContent).toContain("can't yet say which sideline shades first");
     noSections();
+  });
+
+  it.each([
+    ['at-t-stadium', '7:15 PM'],
+    ['lucas-oil-stadium', '8:15 PM'],
+  ])('NFL: says the sun is down, even where the direction was never measured (%s)', async (id, time) => {
+    await pickGame(id, width, 'pick night game');
+    const { name } = getUnifiedVenueById(id)!;
+    expect(answer(name)?.textContent).toContain(
+      `For the ${time} game on November 3 at ${name}, the sun is down for the whole game, so every seat is out of the sun.`,
+    );
+    expect(answer(name)?.textContent).not.toContain("can't yet say");
   });
 
   it.each(['ford-field', 'sofi-stadium-chargers'])('NFL: says every seat is shaded under a fixed roof (%s)', async (id) => {
