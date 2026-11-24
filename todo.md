@@ -6482,8 +6482,7 @@ for the next PR. `main` at 977a45f37 is merged in here.
 
 **Open:**
 - *Bills:* a date typed in the finder, and their page, still answer for the
-  old stadium. Measuring the new one is its own task. The form says the
-  schedule is "currently unavailable", which isn't quite why.
+  old stadium. Measuring the new one is its own task.
 - Not tested: Safari and Firefox, and the built site in a browser.
 - Playoff games aren't listed, as before (`seasontype=2`).
 
@@ -6548,6 +6547,18 @@ bugs", passed on):
   filling them in again gives the answer. 4,116 of 4,116 in all; the schedule,
   picker and form tests also in Tokyo, Los Angeles and UTC; types and the build
   pass; eslint as above. With P4 and P5: no conflict, 4,131 of 4,131.
+- [x] Q7 (639ef7fce). *The wording* (asked: "Yes, fix it too"). The form said the
+      schedule was unavailable when it had loaded and listed no games.
+      `getVenueSchedule` made an empty list an error, so both came to the form
+      the same way. An empty list is now an answer. A failed load still says
+      "NFL schedule data is currently unavailable."; an empty one says "No
+      upcoming games are listed for this stadium.", which is true at Highmark
+      too. 4 more tests (4,120 in all; 4,135 with P4 and P5): the sentence in
+      each case and at Highmark with ESPN's own answer, and the service's two.
+      4 were seen to fail, and the failure's own two guard it. Seen in a
+      browser: Highmark (none) and, with ESPN answering 404, Lambeau on a
+      phone-size window (unavailable). Highmark now asks ESPN for next season
+      as well, as any stadium does with nothing left this one.
 - *Noticed:* for about a frame (13 ms on the dev server) after a change of
   stadium the old list is still there. It was before, too.
 
