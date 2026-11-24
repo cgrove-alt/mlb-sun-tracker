@@ -1,7 +1,6 @@
 import * as fs from 'fs';
 import * as path from 'path';
 import { NFL_STADIUMS } from '../src/data/nflStadiums';
-import { NFL_SECTIONS } from '../src/data/nflSections';
 
 // Read existing venues.json
 const venuesPath = path.join(__dirname, '../venues.json');
@@ -12,13 +11,6 @@ const nonNFLVenues = venuesData.venues.filter((v: any) => v.league !== 'NFL');
 
 // Convert NFL stadiums to venue format
 const nflVenues = NFL_STADIUMS.map(stadium => {
-  // Check if we have sections for this stadium
-  const hasSections = NFL_SECTIONS[stadium.id] && NFL_SECTIONS[stadium.id].length > 0;
-  
-  if (!hasSections) {
-    console.warn(`Warning: No sections defined for ${stadium.name} (${stadium.id})`);
-  }
-  
   return {
     id: stadium.id,
     name: stadium.name,

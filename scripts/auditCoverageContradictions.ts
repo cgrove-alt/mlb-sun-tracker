@@ -7,17 +7,15 @@
  * TIER is above Exposed (Covered or Partial) — i.e. the shade table would claim
  * shade the seating tips say those seats don't have.
  *
- * Runs across MLB and NFL (MiLB parks have no section lists) using the SAME
- * section sources the pages render from:
- *   MLB  -> getStadiumSectionsAsync (shared per-park DetailedSection modules)
- *   NFL  -> getVenueSections(venue.id)
+ * Runs across MLB (no other league has section lists) using the SAME section
+ * source the pages render from: getStadiumSectionsAsync (shared per-park
+ * DetailedSection modules).
  *
  * Run: npx tsx scripts/auditCoverageContradictions.ts
  */
 import { ALL_UNIFIED_VENUES } from '../src/data/unifiedVenues';
 import { MLB_STADIUMS } from '../src/data/stadiums';
 import { getStadiumSectionsAsync } from '../src/data/getStadiumSections';
-import { getVenueSections } from '../src/data/venueSections';
 
 const OPEN_AIR = /bleacher|pavilion|berm|lawn|porch|rooftop|sun deck|home run|batter'?s eye|outfield reserved/i;
 const INDOOR_OK = /club|suite|lounge|indoor|cafe|café|bar|grill|restaurant/i;
@@ -48,7 +46,7 @@ function tier(s: Sec): 'covered' | 'partial' | 'exposed' {
 async function sectionsFor(v: (typeof ALL_UNIFIED_VENUES)[number]): Promise<Sec[]> {
   try {
     if (v.league === 'MLB') return (await getStadiumSectionsAsync(v.id)) as unknown as Sec[];
-    return getVenueSections(v.id) as unknown as Sec[];
+    return [];
   } catch {
     return [];
   }
@@ -91,7 +89,7 @@ async function main() {
     }
   }
 
-  console.log(`Scanned ${ALL_UNIFIED_VENUES.length} venues (MLB + MiLB + NFL).`);
+  console.log(`Scanned ${MLB_STADIUMS.length} MLB parks (no other league has section lists).`);
   console.log(`Skipped ${roofDependentSkipped} retractable/fixed-roof park(s) (coverage is roof-state, not overhang) and ${reviewedSkipped} verified-exception park(s).\n`);
 
   console.log('── Pass 1: open-air NAMES rendering above Exposed ──');
