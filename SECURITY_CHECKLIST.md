@@ -9,7 +9,7 @@
 - [x] Content-Security-Policy - Comprehensive CSP with:
   - Default-src: 'self'
   - Script-src: Allows Google Analytics
-  - Connect-src: Only allows MLB API, Weather API, and Google Analytics
+  - Connect-src: Only allows MLB API, ESPN (NFL schedule), Weather API, and Google Analytics
   - Frame-ancestors: 'none' - Prevents embedding
 - [x] Strict-Transport-Security (HSTS) - Forces HTTPS in production
 
@@ -68,6 +68,7 @@
 - [x] Google Analytics with proper CSP rules
 - [x] Open-Meteo weather API (no auth required)
 - [x] MLB Stats API (public API)
+- [x] ESPN NFL schedule (no auth required, GET only, no custom headers)
 
 ## 🔍 Additional Recommendations
 1. Regular dependency updates for security patches

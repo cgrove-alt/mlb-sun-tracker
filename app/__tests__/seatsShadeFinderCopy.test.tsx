@@ -12,6 +12,12 @@ describe('the finder page', () => {
     expect(text()).toContain('For NFL and minor league games, the finder names a side of the field or park instead.');
   });
 
+  it('says what each schedule covers, and what to do about a game that is not on it', () => {
+    expect(text()).toContain("For NFL and minor league games, use the finder: pick yours from the schedule, or set its date and time if it isn't listed.");
+    expect(text()).toContain('Pick your game: choose it from the schedule of home games. The minor league schedules cover the next 30 days, and the NFL ones the next eight regular-season games. If yours isn\'t listed, enter its date and start time.');
+    expect(text()).not.toContain('for MLB parks, choose from the real schedule');
+  });
+
   it('claims a confidence label only where there is one', () => {
     expect(text()).toContain('each MLB answer is labelled High, Medium or Low confidence.');
     expect(text()).not.toContain('each answer is labelled');

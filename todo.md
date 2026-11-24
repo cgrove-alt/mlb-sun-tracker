@@ -6215,6 +6215,359 @@ deletion and the schedule left for its own plan. Commits on
 - The homepage still links "Shaded sections at MetLife Stadium (NFL)", and
   that page gives a sideline.
 
+## §30 NFL in the finder: checks on §29, and what it leaves (plan, 2026-11-23)
+
+Asked: investigate the NFL section list in `/seats-shade-finder`, weigh
+correcting its angles against naming a sideline, and plan the fix. Branch
+`claude/agitated-sanderson-94f055`, from `main` at bb77e58af. Nothing but
+this file has changed.
+
+**Overlap:** while I worked, the main session planned and built that same fix
+on `fix/nfl-finder-sections` (its §29, N1–N4 and N6; merged since as PR #105,
+with §31). I don't plan the list again: findings 1–5 are separate checks on
+that choice, and the plan is what it leaves.
+
+**In short:** naming a sideline is right, and correcting the angles would
+have made the answers worse. §29's answer is the same as mine at all 212
+games of 2025 it applies to. Three things are left: the schedule (allowing
+ESPN in the security policy, by itself, would put 210 of 263 games on the
+wrong day), the end zone that shades best, and the unused files.
+
+### Findings
+
+**1. Rotation: confirmed.** 1,818 sections at 31 stadiums.
+- The template: 0 of 580 end-zone sections are at an end zone (they're
+  65–85° from one) and 0 of 580 sideline sections on a sideline (5–25° from
+  an end zone). Hard Rock's, by the labels in `nflSections.ts`: 0 of 24 and
+  0 of 42.
+- Lambeau's 12 areas are named by compass side, and are 35–145° from it:
+  "East" is placed northwest and "West" southeast. "Northwest 6" has the same
+  angle as "North 3".
+- *Cause:* three frames. `sectionCompassAngle` is baseball's (0 = first
+  base). The lists put an end zone at 0, and the type's own comment says
+  "from north". `getUnifiedVenueShade` says baseball's rotation "applies to
+  the generated football layouts", which was never so.
+
+**2. Are the lists real? No.**
+- They came in one commit (ca680f7ae, 2025-08-01, "real sections") with no
+  source. 29 stadiums share the template.
+- Hard Rock and Lambeau are in both `VENUE_SECTIONS` and `NFL_SECTIONS`. The
+  first wins, so 12 club sections at Hard Rock and a 60-section Lambeau list
+  are never shown.
+- SoFi's own list (78) is under `sofi-stadium`, which is no venue's id. The
+  Rams get the template, and the Chargers nothing.
+- The template stops at 136 and 324 and has no 200s, 400s or 500s. Published:
+
+  | Stadium | Published (side) | Ours |
+  |---|---|---|
+  | Lambeau | 100–138; odd numbers east (visitors 117, 119, 121), even west (Packers 118, 120, 122) | "Lower East 1" and so on |
+  | Hard Rock | 144–148 Dolphins (south), 117–121 visitors (north) | 101–136, 301–330 |
+  | Arrowhead | 116–122 Chiefs (west); 101, 102, 136 visitors (east) | 101, 102, 136 as an end zone |
+  | Empower | 104–106 Broncos (west), 122–124 visitors (east); 500s | all six as corners; no 500s |
+  | Soldier | 101–155, 202–256, 427–447 | 101–136, 301–324 |
+  | MetLife | 111–115 Giants (east), 137–140 visitors (west); 201–250 | no 137 up, no 200s |
+  | Levi's | 111–119 visitors (east), 135–141 49ers (west) | no 137 up |
+  | Lumen | 100–151; 133–137 Seahawks (west), 108–110 visitors (east) | 101–136 |
+  | Gillette | 101–143; 101–115 east, 125–138 west | 101–136 |
+  | Paycor | 132–148 east, 231–249 | 101–136, no 200s |
+  | Bank of America | 107–115 east, 126–136 west; 507–547 | no 500s |
+
+**3. Correct the angles, or name a sideline?** 178 of our sections, at 14
+stadiums, have a published side:
+
+| | On that side (within 45°) | Median error |
+|---|---|---|
+| Today | 47 | 95° |
+| Turned 90° back, so every label is right | 24 | 125° |
+| The best of four ways round, chosen per stadium | 98 | |
+
+So the labels would come right and the answers worse: the numbers themselves
+aren't the stadium's (one way round is best at 9 stadiums and another at 5,
+and choosing the best at each still misses 80 sections). The sideline needs
+only the field's direction and the sun.
+
+**4. Does the sideline rule hold?** Yes.
+- *The same answer, three ways:* on the 212 home games of 2025 (ESPN, with
+  playoffs, without neutral sites) at the 24 stadiums without a fixed roof
+  and with a measured direction, `fieldSunSide`, the NOAA equations in
+  Python, and `nflGameShade` on §29's branch agree at 212. The branch gives a
+  sunset at exactly the 32 games it falls in.
+- *Against the site's own bowl model* (24 stadiums, six Sundays, lower and
+  upper decks): the sideline it names is the less sunny one at 141 of 141 at
+  1:00, 137 of 137 at 4:05 and 129 of 129 at 4:25. At 8:20 the sun is down at
+  all 144.
+- *Against published advice* (two ticket guides, mostly): it names a sideline
+  at 22 of the 23 fields at 1:00 PM, and the guides' shaded side is the same
+  at all 22 (at Lincoln Financial one page says the reverse). EverBank, where
+  it names none, is said to have few shaded seats early on. At 4:25 it names
+  22, and 21 agree; for Huntington the guide names the west end zone.
+
+| 2025 home games | Fixed roof | Not measured | Sideline named | No edge | Sun down |
+|---|---|---|---|---|---|
+| Early (178) | 34 | 7 | 132 | 5 | 0 |
+| Late (49) | 11 | 5 | 26 | 1 | 6 |
+| Night (50) | 4 | 4 | 2 | 0 | 40 |
+
+- *Retractable (measured):* NRG, Mercedes-Benz and State Farm agree with the
+  guides for an open roof.
+- *Not measured:* AT&T and Lucas Oil. The list used 340° and 0° all the same,
+  and AT&T is published as running southwest–northeast, so 340° was wrong
+  there. On §29's branch a game after sunset there (4 of 16 in 2025) still
+  gets "we can't yet say which sideline", though the sun is down.
+- *Last light:* at 8 games the sun is up for under 30 minutes (1 minute at
+  Gillette, January 4). The sentence names a sideline and then the sunset.
+  MiLB's does the same.
+- **A gap, on the pages too:** it never names the *end zone* with the sun at
+  its back. At 35 of the 137 early games the model has that end zone more
+  than 5 points shadier than the sideline it names. At 5 of the 6 "neither
+  sideline has a clear edge" games it beats the better sideline by 11–28
+  points, and the fan is told only about overhangs. The guides name an
+  end zone too at Lambeau, NRG, State Farm, Bank of America, EverBank and
+  Huntington. MiLB's test (within 60° of the sun's mean direction) would name
+  it at 97 of the 166 games with sun, all 35 among them. It's as shady as the
+  sideline there (median difference 0), and never 20 points sunnier.
+
+**5. Desktop against mobile** (real code, the 26 stadiums without a fixed roof,
+six 2025 Sundays):
+
+| Kickoff | Median difference | Most | Sunny in one, shaded in the other |
+|---|---|---|---|
+| 1:00 PM | 8 points | 45 | 1,165 of 9,108 (13%) |
+| 4:25 PM | 24 points | 100 | 3,178 of 9,108 (35%) |
+| 8:20 PM | 0 | 0 | 0 |
+
+- **Mobile rates domes as open air.** Seen at Allegiant, 1:00 PM: "Section
+  101 … 89% … Sun for ~160 min", up to 100%; desktop says all 60 are shaded.
+  On September 14 at 1:00 PM, 229 of the 300 sections at the five domes with
+  a list read 50% or more. `SunCalculator` reads `roofType`, and
+  `convertToLegacyStadium` passes `roof`.
+- Both go with §29's N3. They are live until it merges.
+
+**6. The schedule** (§29's finding 6, checked separately, and more):
+- *Where:* `middleware.ts:54`. Production sends the same policy (both hosts,
+  bare URL, build bb77e58af533). `public/_headers` and `_headers` have
+  their own, and Vercel reads neither. In a browser the form took 132 seconds.
+- *The policy alone makes it worse.* With ESPN's 2025 games through our
+  parser, 210 of 263 land on the wrong day. 195 are answered with the sun
+  down, and it was up at kickoff at 214. Dolphins, Sunday 1:00 PM: listed as
+  "Sep 13, 8:00 PM EDT" and answered for Saturday night. Cause:
+  `nflApiClient.ts:136` keeps the UTC date only, and the picker reads that as
+  midnight UTC.
+- *The year is ignored.* ESPN's scoreboard takes `dates=`, not `season=`:
+  asked for 2025, it gave 2026.
+- *Neutral sites:* a game abroad gets the home team's stadium (7 in 2025, 9
+  in 2026), and a game with no time yet would show as midnight.
+- *`User-Agent`:* Chromium drops the header. ESPN refuses the preflight for
+  it (403), so Firefox and Safari, which send it, should fail. Not tested.
+- *Ravens:* `mt-bank-stadium` in both tables, so they match no venue.
+- *No way to type a date once it loads:* the games/custom switch is shown for
+  MLB and MiLB only.
+- *One request would do:* `teams/{id}/schedule?season=` gives a team's season
+  in 14 KB and obeys the year. Now it's up to 18 requests of 14 KB, one after
+  another. A browser can read it (200, `access-control-allow-origin: *`).
+  ESPN refuses headless browsers, so automated tests need saved responses.
+- *The Bills:* ESPN calls the stadium we measured "Highmark Stadium (Old)".
+  Their 8 games of 2026 are in the new one, which we don't have.
+
+### Plan (waiting for your go-ahead)
+
+After `fix/nfl-finder-sections` and `fix/finder-leftovers` merge (they change
+the same files); they have since. P1–P3 went first, in a PR of their own.
+
+- [x] P1. `nflApiClient.ts`, `nflApi.ts`: one request for the stadium's team.
+      Keep ESPN's own instant in `gameDate`, as MLB games do, so the picker
+      and the finder read the real kickoff unchanged. Drop the header, fix
+      the Ravens' id, leave out neutral sites and games with no time yet.
+      Tests first, on saved ESPN responses: Sunday 1:00, Sunday night, a game
+      in London, the Ravens, a fan in another time zone.
+- [x] P2. `middleware.ts`: add `https://site.api.espn.com` to `connect-src`.
+      Never before P1. Test: the header allows exactly the hosts the app
+      calls.
+- [x] P3. `UnifiedGameSelector`: show the games/custom switch for NFL (two
+      conditions).
+- [ ] P4. `nflSunSide.ts`, `ShadeAnswer`: name the end zone with the sun at
+      its back by MiLB's test ("The south end zone has it at its back too";
+      with no clear sideline, the end zone instead of "neither"). It's the
+      pages' sentence as well, so 24 NFL pages change. Tests first.
+- [ ] P5. AT&T and Lucas Oil: a game after sunset says the sun is down.
+- [ ] P6. Deletions (§29's N5, which lists 6 files and 1,530 lines): on that
+      branch 19 files, 4,970 lines with their CSS and helpers, can't be
+      reached from any page. `venueSections.ts` and `nflSections.ts` (772
+      more) go once `sunCalculations.ts` drops a fallback no page uses. Own
+      commit. Check every import, test and script again first.
+- [ ] P7. Checks: unit tests, type check, eslint, build; every team's 2025
+      and 2026 home games through P1 against ESPN's own times; the 24 pages'
+      answers before and after P4; Chrome, and Safari if you can try it. Then
+      the review.
+
+**For you to decide:**
+1. The schedule: P1–P3 (my pick), or drop it and show the date form at once.
+   Dropping it is the smallest change and needs no outside feed; but the
+   answer depends on the kickoff, so a listed game beats a typed one. A third
+   way, our own API route, needs no policy change, but ESPN refuses some
+   automated clients and I haven't tested it from Vercel.
+2. The end zone (P4): do it on the pages and in the finder (my pick), or
+   leave it.
+3. P6: delete, now or later?
+4. The Bills' 2026 games: leave them out of the list until the new stadium is
+   measured, as its own task (my pick), or list them with the old one's
+   direction.
+
+**Not in this plan (noticed):**
+- `nflOrientationMeasurements.ts` calls OSM way 972013095 the new Bills
+  stadium. It was mapped on 2021-08-10, before building began (2023), at
+  124 × 63 m (7°), so it may be a practice field.
+- The weather box gave a 2025 date what looks like today's weather ("For game
+  time: Sep 14 … 32°F" at Lambeau), and says "Sun exposure reduced to 30% due
+  to weather" in a dome. Seen on the dev server, not traced.
+- "Every seat is shaded" may be too strong where the roof or an end lets light
+  through (AT&T's end-zone glass is known for it). Not checked.
+- ESPN calls NRG Stadium "Reliant Stadium" in 2026.
+
+Scripts and data are in the shared notes folder, `nfl-finder/`. The published
+positions and advice came through web-search extracts, so they show the lists
+are wrong but aren't good enough to correct them. Mostly
+[Shaded Seats](https://www.shadedseats.com/nissan-stadium-seats-in-sun-shade/)
+and [RateYourSeats](https://www.rateyourseats.com/lambeau-field/seating/sections/119),
+with [TickPick](https://tpblog.tickpick.com/?p=18379) for benches,
+[Visit Denver](https://visitdenver.com/blog/post/ultimate-guide-empower-field-at-mile-high/)
+and the [Dallas Morning News](https://dallasnews.com/sports/cowboys/2024/11/12/why-is-there-a-sun-issue-at-att-stadium-see-what-experts-have-said-about-cowboys-home)
+for AT&T.
+
+### §30 Review, P1–P3 (2026-11-23)
+
+Go-ahead: "go ahead with P1–P5", then "leave the Bills' 2026 games out"
+(question 4) and "have the NFL session open a PR for P1–P3", passed on by the
+session that started this one. P6 (deletions) isn't approved. P4 and P5 needed
+`nflGameShade`, which reached `main` (PR #105) after P1–P3 were done; they're
+for the next PR. `main` at 977a45f37 is merged in here.
+
+**What changed:** 4 commits, one per step and one for the Bills.
+- *P1 (b6318163e):* `fetchVenueSchedule` asks ESPN once for the stadium's own
+  team and season, and keeps ESPN's kickoff as it is. Neutral sites and games
+  with no time yet are left out, no header is sent, and the Ravens' id is
+  right in both tables. The week-by-week loader and the four `nflApi` methods
+  that depended on it or on the old clock (no callers) are gone.
+- *P2 (d210126b7):* `connect-src` names `https://site.api.espn.com`. A test
+  pins the whole list, so it can't widen unnoticed.
+- *P3 (86aa04f9b):* the games/custom switch shows for NFL, on both finders.
+- *Bills (6a1988214):* only games at what ESPN calls "Highmark Stadium (Old)"
+  are listed. It goes by the building, so it holds for later seasons, and if
+  ESPN renames it the fan gets the date form.
+
+**Checks:**
+- *Tests:* 4,051 of 4,051, 46 of them new, all seen to fail first but one (the
+  Bills' 2025 games, which guards what must not change). The
+  schedule tests also pass in Tokyo, Los Angeles and UTC. The type check is
+  clean, eslint gives no errors (one old warning), and the production build
+  passes.
+- *Every team, live:* 504 games over 64 team-seasons. 2025: all 265 non-neutral
+  games in ESPN's weekly feed, which P1 doesn't use, none missing, none extra,
+  no time different. 2026: all 239; with the Bills' rule 232, the 7 gone all
+  theirs (the eighth has no time yet), and every other team as before. Their 9
+  home games of 2025 still list.
+- *In a browser (dev server):* Lambeau's games load in one request of 0.1 s
+  (it was 132 s to give up). "Dec 20, 12:00 PM CST - Dolphins @ Packers" is
+  rated with the sun at 22.1°, due south. On mobile the Ravens list theirs.
+  At Highmark the date form comes up at once, and it and the Custom Time tab
+  both work: 1:00 PM on December 20, 2026 and September 28, 2025 give the sun
+  at 22.9° and 44.9°, as the NOAA equations do.
+- *With `main` merged in (§29, §31):* the one conflict was this file. 4,084 of
+  4,084 tests (§31's 4,038 and these 46), and the live schedule check the same.
+  In a browser the two halves meet: "Dec 20, 12:00 PM CST - Dolphins @
+  Packers" gives "For the 12:00 PM game on December 20 at Lambeau Field, the
+  sun is on the west side of the field …", the 7:20 PM game on December 13
+  says the sun is down, and on a phone-size window the Ravens' games and a
+  typed date at Highmark get their answers.
+
+**Open:**
+- *Bills:* a date typed in the finder, and their page, still answer for the
+  old stadium. Measuring the new one is its own task.
+- Not tested: Safari and Firefox, and the built site in a browser.
+- Playoff games aren't listed, as before (`seasontype=2`).
+
+### §30, before P1–P3 go out: the picker and the copy (2026-11-24)
+
+Asked: "Yes, fix first", passed on by the main session, which reviewed P1–P3
+and found these four. All four were in `main` already; NFL lists never loaded before, so P1 and P2
+bring the first two out there.
+
+- [x] Q1 (f48c2dbea). *A late schedule.* `loadGames` never checked that its
+      venue was still the selected one, so a slow answer listed the old
+      stadium's games at the new one, and a slow failure showed its error
+      there. Each load now has a number, a change of venue takes the next one,
+      and a load that isn't the latest is dropped: answer, error and "loading"
+      alike. One guard, all three leagues.
+- [x] Q2 (00d614aea). *The old game in the box.* The effect returned its
+      cleanup before the line that clears the choice. The line moves up.
+- [x] Q3 (2ad761e9c). *Copy.* Both finders say "Pick a game from the schedule,
+      or set a date and time if yours isn't listed", for every league. The
+      finder page says what each schedule covers (30 days for the minor
+      leagues, eight games for the NFL) and what to do without one.
+- [x] Q4 (53032dcf1). *Sources.* `/how-it-works`, `/attributions`, `/disclaimer`
+      and `SECURITY_CHECKLIST.md` name ESPN for the NFL schedule.
+
+**Checks:**
+- *Tests first:* 9 for the picker (a late answer, a late failure and the old
+  game, in each league) and 10 for the copy, all seen to fail; 3 more guard
+  the baseball sources. 4,106 of 4,106 in all; the schedule and picker tests
+  also in Tokyo, Los Angeles and UTC. Types and the production build pass;
+  eslint 0 errors, and its 14 warnings are all on `main`. The live schedule
+  check is unchanged (497 games, 64 team-seasons).
+- *In a browser (dev server):* with Lambeau's answer held back 5 s and Lumen
+  picked meanwhile, Lumen lists its own three games, and the first gives
+  Lumen's answer. Going on to M&T with that game chosen, the box reads "Choose
+  a game" and no answer shows. The finder's new copy and `/attributions` too.
+- *With P4 and P5 (`claude/nfl-end-zone`):* both branches now change the two
+  finders and `finderMilb.test.tsx`, on other lines. They still merge without
+  a conflict, and together pass 4,121 of 4,121.
+
+**Not asked for, left as it is** (the reviews' list): a game leaves the list at
+kickoff; the moved-stadium rule covers only the Bills; picking the same stadium
+again clears the answer but not the box. The other places that name a source
+need no ESPN: nothing imports `AttributionFooter`, `AttributionNotice` credits
+MLB for MLB's data, and `llms.txt`'s line is about MLB ballparks.
+
+**The date form, after that** (asked: "have the NFL session fix both date form
+bugs", passed on):
+- [x] Q5 (f5480360a). *The crash.* The form formatted its date and time on every
+      render, and a cleared one isn't a date (`RangeError`). It was the same for
+      a cleared time and for a year of five digits. Now the "Selected" line and
+      the button wait until the two make a date.
+- [x] Q6 (4cdc820c6). *The flash.* A stadium's request starts 200 ms after it's
+      picked, and nothing counted that as loading. It wasn't only the NFL: MLB
+      and MiLB flashed "No upcoming games found" the same way. One cause, one
+      fix: before its first load a venue is still loading (`isInitialLoad`,
+      which the loading hook already keeps).
+- *Checks:* 10 new tests, 6 seen to fail (3 in the form; the flash in each
+  league) and 4 that guard what must stay. In a browser (dev server), recording
+  every change of the page: Lambeau and Lumen go from the skeleton to their
+  games, Highmark from the skeleton to the form, and Buffalo on a phone-size
+  window from the skeleton to "none" (its season is over). In the form a
+  cleared date and a cleared time leave it standing with the button off, and
+  filling them in again gives the answer. 4,116 of 4,116 in all; the schedule,
+  picker and form tests also in Tokyo, Los Angeles and UTC; types and the build
+  pass; eslint as above. With P4 and P5: no conflict, 4,131 of 4,131.
+- [x] Q7 (639ef7fce). *The wording* (asked: "Yes, fix it too"). The form said the
+      schedule was unavailable when it had loaded and listed no games.
+      `getVenueSchedule` made an empty list an error, so both came to the form
+      the same way. An empty list is now an answer. A failed load still says
+      "NFL schedule data is currently unavailable."; an empty one says "No
+      upcoming games are listed for this stadium.", which is true at Highmark
+      too. 4 more tests (4,120 in all; 4,135 with P4 and P5): the sentence in
+      each case and at Highmark with ESPN's own answer, and the service's two.
+      4 were seen to fail, and the failure's own two guard it. Seen in a
+      browser: Highmark (none) and, with ESPN answering 404, Lambeau on a
+      phone-size window (unavailable). Highmark now asks ESPN for next season
+      as well, as any stadium does with nothing left this one.
+- [x] Q8 (9538da0ba). *The footer* (asked: "have the NFL session add ESPN to the
+      footer too"). `FooterModern`, the only footer the layout renders, says
+      "🏈 NFL schedule: ESPN" after the MLB credit. Test first. On a phone
+      (375 px) the line takes three rows inside its margins, at 320 px it still
+      fits, and at 1280 px it takes two.
+- *Noticed:* for about a frame (13 ms on the dev server) after a change of
+  stadium the old list is still there. It was before, too.
+
 ## §31 Three leftovers from checking §28 (plan, 2026-11-23)
 
 Asked: fix the three things noticed while checking PR #104. Branch

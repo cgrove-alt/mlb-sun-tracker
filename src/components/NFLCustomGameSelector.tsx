@@ -6,6 +6,8 @@ import './NFLCustomGameSelector.css';
 interface NFLCustomGameSelectorProps {
   selectedVenue: any;
   onGameSelect: (game: any, customDateTime: Date | null) => void;
+  /** The schedule didn't load. Otherwise it did, and lists no games. */
+  scheduleFailed?: boolean;
   initialDate?: string;
   initialTime?: string;
 }
@@ -13,14 +15,19 @@ interface NFLCustomGameSelectorProps {
 const NFLCustomGameSelector: React.FC<NFLCustomGameSelectorProps> = ({
   selectedVenue,
   onGameSelect,
+  scheduleFailed = false,
   initialDate = format(new Date(), 'yyyy-MM-dd'),
   initialTime = format(new Date(), 'HH:mm')
 }) => {
   const [gameDate, setGameDate] = useState(initialDate);
   const [gameTime, setGameTime] = useState(initialTime);
 
+  // A cleared field, or a year of five digits, isn't a date to show or use.
+  const selected = new Date(`${gameDate}T${gameTime}`);
+  const isDate = !Number.isNaN(selected.getTime());
+
   const handleApply = () => {
-    if (gameDate && gameTime && selectedVenue) {
+    if (isDate && selectedVenue) {
       const dateTime = stadiumLocalToUTC(
         gameDate,
         gameTime,
@@ -34,7 +41,12 @@ const NFLCustomGameSelector: React.FC<NFLCustomGameSelectorProps> = ({
     <div className="nfl-custom-game-selector">
       <div className="custom-game-header">
         <h3>🏈 Select Game Date & Time</h3>
-        <p>NFL schedule data is currently unavailable. Please select a date and time for shade calculations.</p>
+        <p>
+          {scheduleFailed
+            ? 'NFL schedule data is currently unavailable.'
+            : 'No upcoming games are listed for this stadium.'}{' '}
+          Please select a date and time for shade calculations.
+        </p>
       </div>
 
       <div className="custom-game-form">
@@ -67,15 +79,17 @@ const NFLCustomGameSelector: React.FC<NFLCustomGameSelectorProps> = ({
           <p>
             <strong>Venue:</strong> {selectedVenue?.name}
           </p>
-          <p>
-            <strong>Selected:</strong> {format(new Date(`${gameDate}T${gameTime}`), 'EEEE, MMMM d, yyyy')} at {gameTime}
-          </p>
+          {isDate && (
+            <p>
+              <strong>Selected:</strong> {format(selected, 'EEEE, MMMM d, yyyy')} at {gameTime}
+            </p>
+          )}
         </div>
 
         <button
           onClick={handleApply}
           className="apply-button"
-          disabled={!gameDate || !gameTime || !selectedVenue}
+          disabled={!isDate || !selectedVenue}
         >
           Calculate Shade
         </button>

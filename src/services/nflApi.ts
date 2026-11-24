@@ -2,12 +2,10 @@
 // Uses real NFL schedule data from ESPN API
 
 import { nflApiClient } from './nflApiClient';
-import { calendarDateAndTimeToUTC, isIsoDateOnly } from '../utils/stadiumTime';
 
 export interface NFLGame {
   gameId: string;
-  gameDate: string; // ISO date string
-  gameTime: string; // Local time HH:MM
+  gameDate: string; // Kickoff, an ISO instant in UTC
   week: number;
   seasonType: 'preseason' | 'regular' | 'postseason';
   homeTeam: {
@@ -40,19 +38,13 @@ export interface NFLTeam {
   division: 'East' | 'North' | 'South' | 'West';
 }
 
-export interface NFLSchedule {
-  season: number;
-  week?: number;
-  games: NFLGame[];
-}
-
 // Team to stadium mapping for proper venue association
 const TEAM_STADIUM_MAP: Record<string, string> = {
   'Buffalo Bills': 'highmark-stadium',
   'Miami Dolphins': 'hard-rock-stadium',
   'New England Patriots': 'gillette-stadium',
   'New York Jets': 'metlife-stadium-jets',
-  'Baltimore Ravens': 'mt-bank-stadium',
+  'Baltimore Ravens': 'm-t-bank-stadium',
   'Cincinnati Bengals': 'paycor-stadium',
   'Cleveland Browns': 'huntington-bank-field',
   'Pittsburgh Steelers': 'acrisure-stadium',
@@ -83,9 +75,6 @@ const TEAM_STADIUM_MAP: Record<string, string> = {
 };
 
 class NFLApiService {
-  private cache: Map<string, { data: any; timestamp: number }> = new Map();
-  private cacheTimeout = 3600000; // 1 hour cache
-
   // Get current season based on date
   private getCurrentSeason(): number {
     const now = new Date();
@@ -105,85 +94,14 @@ class NFLApiService {
     return currentYear;
   }
 
-  // Get full season schedule
-  async getSeasonSchedule(season?: number): Promise<NFLSchedule> {
-    const targetSeason = season || this.getCurrentSeason();
-    const cacheKey = `season-${targetSeason}`;
-    const cached = this.cache.get(cacheKey);
-    
-    if (cached && Date.now() - cached.timestamp < this.cacheTimeout) {
-      return cached.data;
-    }
-
-    let games: NFLGame[] = [];
-
-    // Try to fetch real data
-    try {
-      // Fetching real data for ${targetSeason} season
-      games = await nflApiClient.fetchSeasonSchedule(targetSeason);
-      
-      if (games.length === 0) {
-        // No real data available for ${targetSeason} season
-        throw new Error('No NFL schedule data available');
-      }
-    } catch (error) {
-      console.error(`[NFL API] Error fetching real data:`, error);
-      throw new Error('NFL schedule data is currently unavailable');
-    }
-
-    const schedule = {
-      season: targetSeason,
-      games
-    };
-    
-    this.cache.set(cacheKey, { data: schedule, timestamp: Date.now() });
-
-    return schedule;
-  }
-
-  // Get games for a specific team
-  async getTeamSchedule(teamName: string, season?: number): Promise<NFLGame[]> {
-    const schedule = await this.getSeasonSchedule(season);
-    return schedule.games.filter(game => 
-      game.homeTeam.name === teamName || game.awayTeam.name === teamName
-    );
-  }
-
   // Get games for a specific venue (only home games)
   async getVenueSchedule(venueId: string, season?: number): Promise<NFLGame[]> {
-    const targetSeason = season || this.getCurrentSeason();
-    
-    // Try to get real data
     try {
-
-      const games = await nflApiClient.fetchVenueSchedule(venueId, targetSeason);
-      
-      if (games.length > 0) {
-
-        return games;
-      }
-      
-      // If no games found for specific venue, try getting from full schedule
-      const schedule = await this.getSeasonSchedule(targetSeason);
-      const venueGames = schedule.games.filter(game => 
-        game.venue.id === venueId
-      );
-      
-      if (venueGames.length === 0) {
-        throw new Error('No games found for this venue');
-      }
-      
-      return venueGames;
+      return await nflApiClient.fetchVenueSchedule(venueId, season || this.getCurrentSeason());
     } catch (error) {
       console.error(`[NFL API] Error fetching venue data:`, error);
       throw new Error('NFL schedule data is currently unavailable');
     }
-  }
-
-  // Get games for a specific week
-  async getWeekSchedule(week: number, season?: number): Promise<NFLGame[]> {
-    const schedule = await this.getSeasonSchedule(season);
-    return schedule.games.filter(game => game.week === week);
   }
 
   // Get upcoming games for a venue
@@ -206,17 +124,6 @@ class NFLApiService {
 
     // Return up to 8 games
     return upcomingGames.slice(0, 8);
-  }
-
-  // Convert game time to a UTC instant. `gameDate` is a stadium-local
-  // calendar date (YYYY-MM-DD) or a full ISO timestamp; `gameTime` is
-  // wall-clock HH:MM at the venue.
-  getGameDateTime(game: NFLGame, timezone: string): Date {
-    const [hours, minutes] = game.gameTime.split(':').map(Number);
-    if (isIsoDateOnly(game.gameDate)) {
-      return calendarDateAndTimeToUTC(game.gameDate, hours, minutes, timezone);
-    }
-    return new Date(game.gameDate);
   }
 
   // Get typical game times for NFL

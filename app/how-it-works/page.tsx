@@ -56,11 +56,11 @@ export default function HowItWorksPage() {
         published reports of where the shade fell at real games.
       </p>
 
-      <h2>3. Game schedule — MLB StatsAPI</h2>
+      <h2>3. Game schedule — MLB StatsAPI and ESPN</h2>
       <p>
-        Shade depends entirely on the real first-pitch time, so we use official MLB schedule data
-        (MLB Advanced Media) to tie every calculation to the actual game you pick, in the
-        stadium&apos;s local time zone.
+        Shade depends entirely on the real start time, so we use official MLB schedule data (MLB
+        Advanced Media) for MLB and the minor leagues, and the NFL schedule from ESPN, to tie every
+        calculation to the actual game you pick, in the stadium&apos;s local time zone.
       </p>
 
       <h2>4. Weather — Open-Meteo</h2>
