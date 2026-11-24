@@ -157,6 +157,7 @@ const MobileApp: React.FC = () => {
           <section className="mobile-section" id="venue-selector">
             <UnifiedGameSelector
               selectedVenue={selectedVenue}
+              selectedGame={selectedGame}
               onGameSelect={handleGameSelect}
               onVenueChange={handleVenueChange}
               onGamesLoaded={handleGamesLoaded}

@@ -170,6 +170,7 @@ function UnifiedAppContent() {
           
           <UnifiedGameSelector
             selectedVenue={selectedVenue}
+            selectedGame={selectedGame}
             onGameSelect={handleGameSelect}
             onVenueChange={handleVenueChange}
             onGamesLoaded={setStadiumGames}

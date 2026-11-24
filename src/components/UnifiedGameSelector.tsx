@@ -20,13 +20,38 @@ import './GameSelector.css';
 
 interface UnifiedGameSelectorProps {
   selectedVenue: UnifiedVenue | null;
+  selectedGame: MLBGame | MiLBGame | NFLGame | null;
   onGameSelect: (game: MLBGame | MiLBGame | NFLGame | null, dateTime: Date | null) => void;
   onVenueChange: (venue: UnifiedVenue | null) => void;
   onGamesLoaded?: (games: (MLBGame | MiLBGame | NFLGame)[]) => void;
 }
 
+/** A game as the list and the box show it. */
+const gameOption = (game: MLBGame | MiLBGame | NFLGame, timezone = 'America/New_York') => {
+  const gameDate = new Date(game.gameDate);
+  const formattedTime = formatGameTimeInStadiumTZ(gameDate, timezone, true);
+
+  // Handle different game structures
+  let label: string;
+  let gameId: string;
+
+  if ('teams' in game) {
+    // MLB/MiLB game structure
+    label = `${formattedTime} - ${game.teams.away.team.name} @ ${game.teams.home.team.name}`;
+    gameId = game.gamePk.toString();
+  } else {
+    // NFL game structure
+    const nflGame = game as NFLGame;
+    label = `${formattedTime} - ${nflGame.awayTeam.name} @ ${nflGame.homeTeam.name}`;
+    gameId = nflGame.gameId;
+  }
+
+  return { value: gameId, label, game };
+};
+
 export const UnifiedGameSelector: React.FC<UnifiedGameSelectorProps> = ({
   selectedVenue,
+  selectedGame,
   onGameSelect,
   onVenueChange,
   onGamesLoaded
@@ -51,7 +76,6 @@ export const UnifiedGameSelector: React.FC<UnifiedGameSelectorProps> = ({
   const [customTime, setCustomTime] = useState<string>(() => {
     return preferencesStorage.get('lastUsedTime', format(new Date(), 'HH:mm'));
   });
-  const [selectedGameOption, setSelectedGameOption] = useState<any>(null);
   const [error, setError] = useState<string | null>(null);
   
   // Check if we're in mobile context
@@ -261,7 +285,6 @@ export const UnifiedGameSelector: React.FC<UnifiedGameSelectorProps> = ({
   // Load games when venue changes (MLB, MiLB, and NFL)
   useEffect(() => {
     latestLoad.current += 1;
-    setSelectedGameOption(null);
     if (selectedVenue && viewMode === 'games' && (selectedVenue.league === 'MLB' || selectedVenue.league === 'MiLB' || selectedVenue.league === 'NFL')) {
       gamesLoading.reset();
       setGames([]);
@@ -283,7 +306,6 @@ export const UnifiedGameSelector: React.FC<UnifiedGameSelectorProps> = ({
     // Clear selected venue when switching leagues
     if (selectedVenue && selectedVenue.league !== league) {
       onVenueChange(null);
-      setSelectedGameOption(null);
     }
   };
 
@@ -295,7 +317,6 @@ export const UnifiedGameSelector: React.FC<UnifiedGameSelectorProps> = ({
     // Clear selected venue when switching levels
     if (selectedVenue && isMiLBVenue(selectedVenue) && selectedVenue.level !== level) {
       onVenueChange(null);
-      setSelectedGameOption(null);
     }
   };
 
@@ -319,31 +340,11 @@ export const UnifiedGameSelector: React.FC<UnifiedGameSelectorProps> = ({
   // re-render, filter change, scroll), which also gave react-select a brand-new
   // options array each time.
   const gameOptions = React.useMemo(() => {
-    const venueTimezone = selectedVenue?.timezone || 'America/New_York';
-
-    const buildOption = (game: typeof games[number]) => {
-      const gameDate = new Date(game.gameDate);
-      const formattedTime = formatGameTimeInStadiumTZ(gameDate, venueTimezone, true);
-
-      // Handle different game structures
-      let label: string;
-      let gameId: string;
-
-      if ('teams' in game) {
-        // MLB/MiLB game structure
-        label = `${formattedTime} - ${game.teams.away.team.name} @ ${game.teams.home.team.name}`;
-        gameId = game.gamePk.toString();
-      } else {
-        // NFL game structure
-        const nflGame = game as NFLGame;
-        label = `${formattedTime} - ${nflGame.awayTeam.name} @ ${nflGame.homeTeam.name}`;
-        gameId = nflGame.gameId;
-      }
-
-      return { value: gameId, label, game };
-    };
-
-    return groupOptionsByMonth(games, game => new Date(game.gameDate), buildOption);
+    return groupOptionsByMonth(
+      games,
+      game => new Date(game.gameDate),
+      game => gameOption(game, selectedVenue?.timezone),
+    );
   }, [games, selectedVenue?.timezone]);
 
   // Custom styles to ensure dropdown text is always visible
@@ -488,10 +489,7 @@ export const UnifiedGameSelector: React.FC<UnifiedGameSelectorProps> = ({
           inputId="venue-select"
           options={venueOptions}
           value={venueOptions.find(opt => opt.venue.id === selectedVenue?.id) || null}
-          onChange={(option) => {
-            setSelectedGameOption(null); // the same stadium again too: the answer is cleared
-            onVenueChange(option?.venue || null);
-          }}
+          onChange={(option) => onVenueChange(option?.venue || null)}
           placeholder={selectedLeague ? `Choose ${leagueInfo?.name || selectedLeague} venue` : 'Select a league first'}
           className="venue-select"
           aria-label={t('gameSelector.selectStadium')}
@@ -541,10 +539,9 @@ export const UnifiedGameSelector: React.FC<UnifiedGameSelectorProps> = ({
                       )}
                       <Select
                         inputId="game-select"
-                        value={selectedGameOption}
+                        value={selectedGame && gameOption(selectedGame, selectedVenue.timezone)}
                         options={gameOptions}
                         onChange={(option) => {
-                          setSelectedGameOption(option);
                           if (option?.game) {
                             const gameDate = new Date(option.game.gameDate);
                             onGameSelect(option.game, gameDate);

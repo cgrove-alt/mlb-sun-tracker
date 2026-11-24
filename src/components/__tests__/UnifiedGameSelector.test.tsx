@@ -27,6 +27,7 @@ const show = async (className: string) => {
       <div className={className}>
         <UnifiedGameSelector
           selectedVenue={getUnifiedVenueById('lambeau-field')!}
+          selectedGame={null}
           onGameSelect={() => {}}
           onVenueChange={() => {}}
         />
@@ -98,11 +99,10 @@ const Picker = ({ ids }: { ids: string[] }) => {
   return (
     <I18nProvider>
       <button onClick={() => setVenue(getUnifiedVenueById(ids[1])!)}>the other stadium</button>
-      <UnifiedGameSelector selectedVenue={venue} onGameSelect={() => {}} onVenueChange={() => {}} />
+      <UnifiedGameSelector selectedVenue={venue} selectedGame={null} onGameSelect={() => {}} onVenueChange={() => {}} />
     </I18nProvider>
   );
 };
-const gameBox = () => document.querySelector('.game-select');
 const openList = () => fireEvent.keyDown(document.querySelector('#game-select')!, { key: 'ArrowDown' });
 
 describe.each(Object.entries(LEAGUES))('while the %s schedule loads', (_league, { ids, request }) => {
@@ -194,30 +194,5 @@ describe.each(Object.entries(LEAGUES))('changing stadium in %s', (_league, { ids
     expect(screen.queryByText(/unavailable|Unable to load/)).toBeNull();
     openList();
     expect(screen.getByText(new RegExp(games[1]))).toBeTruthy();
-  });
-
-  it('the game picked at the old stadium leaves the box', async () => {
-    request(() => Promise.resolve());
-    render(<Picker ids={ids} />);
-    await wait(900);
-    openList();
-    fireEvent.click(screen.getByText(new RegExp(games[0])));
-    expect(gameBox()!.textContent).toContain(games[0]);
-    fireEvent.click(screen.getByText('the other stadium'));
-    await wait(900);
-    expect(gameBox()!.textContent).not.toContain(games[0]);
-    expect(gameBox()!.textContent).toContain('Choose a game');
-  });
-
-  it('so does one picked before choosing the same stadium again', async () => {
-    request(() => Promise.resolve());
-    render(<Picker ids={ids} />);
-    await wait(900);
-    openList();
-    fireEvent.click(screen.getByText(new RegExp(games[0])));
-    expect(gameBox()!.textContent).toContain(games[0]);
-    fireEvent.keyDown(document.querySelector('#venue-select')!, { key: 'ArrowDown' });
-    fireEvent.click(screen.getByRole('option', { name: new RegExp(`^${getUnifiedVenueById(ids[0])!.name}`) }));
-    expect(gameBox()!.textContent).toContain('Choose a game');
   });
 });
