@@ -116,20 +116,19 @@ export const UnifiedGameSelector: React.FC<UnifiedGameSelectorProps> = ({
 
   // Get all leagues and venues
   const leagues = getAllLeagues();
-  const venuesInLeague = selectedLeague === 'MiLB' ? getMiLBVenuesByLevel(selectedMiLBLevel) : getVenuesByLeague(selectedLeague);
   const leagueInfo = getLeagueInfo(selectedLeague);
   const milbLevels = getMiLBLevels();
   
-  // Sort venues alphabetically
-  const sortedVenues = [...venuesInLeague].sort((a, b) => {
-    return a.name.localeCompare(b.name);
-  });
-
-  const venueOptions = sortedVenues.map(venue => ({
-    value: venue.id,
-    label: `${venue.name} - ${venue.team}`,
-    venue: venue
-  }));
+  // Alphabetical. Built once: react-select loses its place in an open list whose
+  // options are new objects.
+  const venueOptions = React.useMemo(() => {
+    const venues = selectedLeague === 'MiLB' ? getMiLBVenuesByLevel(selectedMiLBLevel) : getVenuesByLeague(selectedLeague);
+    return [...venues].sort((a, b) => a.name.localeCompare(b.name)).map(venue => ({
+      value: venue.id,
+      label: `${venue.name} - ${venue.team}`,
+      venue: venue
+    }));
+  }, [selectedLeague, selectedMiLBLevel]);
 
   const leagueOptions = leagues.map(league => {
     const info = getLeagueInfo(league);

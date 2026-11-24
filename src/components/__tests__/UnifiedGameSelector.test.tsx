@@ -268,3 +268,25 @@ it.each([
   fireEvent.click(screen.getByRole('option', { name: /Mets/ }));
   expect(onGameSelect.mock.calls).toEqual([[games[1], new Date(games[1].gameDate)]]);
 });
+
+it('the open stadium list keeps its place when the finder redraws', async () => {
+  const onVenueChange = jest.fn();
+  const picker = () => (
+    <I18nProvider>
+      <UnifiedGameSelector
+        selectedVenue={getUnifiedVenueById('yankees')!}
+        selectedGame={null}
+        onGameSelect={() => {}}
+        onVenueChange={onVenueChange}
+      />
+    </I18nProvider>
+  );
+  jest.spyOn(mlbApi, 'getSchedule').mockResolvedValue([]);
+  const { rerender } = render(picker());
+  await wait(900);
+  const list = document.querySelector('#venue-select')!;
+  fireEvent.keyDown(list, { key: 'ArrowDown' });
+  rerender(picker());
+  fireEvent.keyDown(list, { key: 'Tab' });
+  expect(onVenueChange.mock.calls.map(([venue]) => venue.id)).toEqual(['yankees']);
+});
