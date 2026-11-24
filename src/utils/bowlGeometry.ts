@@ -7,9 +7,10 @@
 // Before this module, four independent implementations each re-derived the
 // sun/shade relationship from scratch (sectionSunCalculations, sunCalculator's
 // SunCalculator class, sunCalculator's calculateRowShadows, and
-// getUnifiedVenueShade). Three of the four had the sign INVERTED — they told
-// users to sit on the sunny side. The comments in two of them even mislabeled
-// the branches, which is how the inversion survived review for so long.
+// getUnifiedVenueShade, since deleted). Three of the four had the sign
+// INVERTED — they told users to sit on the sunny side. The comments in two of
+// them even mislabeled the branches, which is how the inversion survived review
+// for so long.
 //
 // The rule below is short, physical, and verifiable. Do not re-derive it.
 //
