@@ -6734,7 +6734,7 @@ words as they were, and both finders use them.
 
 Asked: plan the fix for the Bills' answers, which are still for the stadium
 they left. Branch `fix/bills-stadium`, from `main` at e7662874c (PR #107).
-Nothing but this file has changed.
+(When the plan was written, nothing but this file had changed.)
 
 **In short:** the new field can be measured, and it isn't the old one's
 direction: 168°, against 123°. I'd move the Bills to it rather than only say
@@ -6791,27 +6791,27 @@ path stays September 14, 2025, as on every NFL page.
 
 ### Plan (approved 2026-11-24, with both decisions below)
 
-- [ ] B1. `scripts/measureNflSatellite.py`: the fit, so the 168° and the 13
+- [x] B1 (18dc52941). `scripts/measureNflSatellite.py`: the fit, so the 168° and the 13
       fields can be run again (as `measureMilbOrientation.py` does for MiLB).
-- [ ] B2. `nflOrientationMeasurements.ts`, `nflStadiums.ts`,
+- [x] B2 (31e1e35e5). `nflOrientationMeasurements.ts`, `nflStadiums.ts`,
       `unifiedVenues.ts`: 168° (±3°), a `satellite` method, the new
       coordinates, 60,108 seats, 2026, grass, and the five angles that follow
       from the direction. The id and the address `/stadium/highmark-stadium`
       stay. Test first: both kickoffs' sentences.
-- [ ] B3. `nflApiClient.ts`: drop the Bills rule, so their games list again.
+- [x] B3 (f48de2609). `nflApiClient.ts`: drop the Bills rule, so their games list again.
       The list only has games still to come, and those are all at the new one.
       Tests: ESPN's own 2026 answer gives the seven games with a time, and the
       two to come.
-- [ ] B4. `nflStadiumGuides.ts`: facts with a source (opened, seats, grass,
+- [x] B4 (26eb7cb2a). `nflStadiumGuides.ts`: facts with a source (opened, seats, grass,
       canopy, address, first game) replace the old building's. What's left
       without one (clubs, section numbers, food, parking, gates) comes out.
-- [ ] B5. `ComprehensiveStadiumGuide.tsx`: a block with nothing in it shows no
+- [x] B5 (0a0c139b7). `ComprehensiveStadiumGuide.tsx`: a block with nothing in it shows no
       heading. Today nine NFL pages show "Best Value", "Hidden Gems" and
       "Things to Avoid" with nothing under them; B4 would add more.
-- [ ] B6. `/attributions`: where the NFL directions come from. The satellite
+- [x] B6 (5a4a28161). `/attributions`: where the NFL directions come from. The satellite
       one needs "contains modified Copernicus Sentinel data 2026", and
       OpenStreetMap, which most of the others use, isn't credited now.
-- [ ] B7. Checks: unit tests, types, eslint, build; the Bills' answers against
+- [x] B7. Checks: unit tests, types, eslint, build; the Bills' answers against
       a separate calculation; the other 31 NFL pages' answers, the 120 MiLB
       pages' answers and the MLB data unchanged; the finder and the page in a
       browser. Then the review, with the live checks of PRs #101–#107, which
@@ -6837,6 +6837,54 @@ path stays September 14, 2025, as on every NFL page.
   field.
 - `sections/nfl/highmark-stadium.ts`, `obstructions/nfl/…`, `venues.ts` and
   `venues.json` have the old stadium too, and no page uses them (P6).
+
+### §33 Review (2026-11-24)
+
+**What changed:** the Bills' page and the finder answer for the new stadium. Six
+commits, one per step, and `main` at 5c9c15d2f (PR #108) merged in.
+- *B1 (18dc52941):* `scripts/measureNflSatellite.py` gives 168.0° (16 images,
+  spread 0.2°). On the 13 other fields it's within about 1° of the record (worst
+  Northwest, +1.0°). It says so when it can't: Hard Rock, 1 clear image of 4.
+- *B2 (31e1e35e5):* 168° ± 3°, the coordinates, seats, year and grass.
+- *B3 (f48de2609):* the Bills' games list again: the Chiefs on November 26 and
+  the Bears on December 19. The saved 2025 answer went with the rule.
+- *B4 (26eb7cb2a):* the guide has the new building's facts. Its clubs, section
+  numbers, food, parking lots, gate times and old history are gone; the town's
+  weather, transport and the team's traditions stay.
+- *B5 (0a0c139b7):* a block with nothing in it shows no heading. It took "Best
+  Value", "Hidden Gems" and "Things to Avoid" off nine NFL pages, and changed
+  nothing else in 152 pages.
+- *B6 (5a4a28161):* `/attributions` credits OpenStreetMap, NAIP and Copernicus
+  for the NFL directions.
+
+**Checks:**
+- *Tests:* 4,138 of 4,138 in 105 suites. Seen to fail first: the Bills' answers
+  and facts (4), their list (2), the empty blocks (2) and the credit (1). The
+  four that pinned the old rule went. Types and the production build pass;
+  eslint: 0 errors, and one warning on a line this didn't write. All on
+  5a4a28161; after it came only the script and one comment.
+- *A separate calculation* (Python, the NOAA equations, none of the site's
+  code): all 288 NFL answers match, the Bills' nine among them.
+- *Nothing else moved,* against `main`: the other 31 NFL pages' answers, the
+  other 279 NFL game answers, all 240 MiLB answers, and the data of the other
+  181 venues.
+- *In a browser (dev server):* the Bills' page (west sideline, the south end
+  zone at 1:00, "Built 2026", 60,108, "Field runs SSE–NNW", and nothing of the
+  old building); the finder lists the two games, and the Chiefs game says the
+  sun is down; on a phone-size window January 10 at 1:00 PM gives the west
+  sideline; `/attributions` fits.
+- *Not tested:* Safari and Firefox. The 168° has no aerial photo behind it yet;
+  when NAIP flies New York again it should be checked.
+
+**Left:** as in "Not in this plan". `stadiumObstructions.ts` still has the old
+stadium's overhang too; I found no page that uses it.
+
+**Live checks the earlier reviews don't have:** PR #105: build 977a45f37fca on
+plain URLs, the finder's new copy, and all 32 NFL pages' answers as before.
+PRs #106 and #107: build e7662874c655 on 39 pages at plain URLs; all 32 NFL
+pages' answers as tested; the finder's copy, the three source pages, the
+footer and the security policy. The live finder wasn't opened in a browser
+(it would count as a visit in Analytics).
 
 ---
 ---
