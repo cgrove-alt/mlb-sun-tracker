@@ -20,15 +20,25 @@ const baseball: any = {
   gamePk: 777, gameDate: '2025-07-20T17:05:00Z', teams: { away: { team: { name: 'Visitors' } }, home: { team: { name: 'Hosts' } } },
 };
 
+// Earlier in the list, so a list that opens at its start shows up.
+const earlierFootball: any = { ...football, gameId: '776', gameDate: '2025-11-30T18:00:00Z', awayTeam: { name: 'Others' } };
+const earlierBaseball: any = {
+  ...baseball, gamePk: 776, gameDate: '2025-07-13T17:05:00Z', teams: { ...baseball.teams, away: { team: { name: 'Others' } } },
+};
+/** What the schedules answer with. */
+const schedule = (footballGame: any, baseballGame: any) => {
+  jest.spyOn(nflApi, 'getUpcomingVenueGames').mockResolvedValue([earlierFootball, footballGame]);
+  jest.spyOn(mlbApi, 'getHomeGamesForStadium').mockReturnValue([earlierBaseball, baseballGame]);
+  jest.spyOn(milbApi, 'getHomeGamesForVenue').mockReturnValue([earlierBaseball, baseballGame]);
+};
+
 beforeEach(() => {
   jest.restoreAllMocks();
   // More games than the mobile finder asks the weather for in a minute.
   jest.spyOn(console, 'warn').mockImplementation(() => {});
-  jest.spyOn(nflApi, 'getUpcomingVenueGames').mockResolvedValue([football]);
   jest.spyOn(mlbApi, 'getSchedule').mockResolvedValue([]);
-  jest.spyOn(mlbApi, 'getHomeGamesForStadium').mockReturnValue([baseball]);
   jest.spyOn(milbApi, 'getTeamScheduleByLevel').mockResolvedValue({ dates: [] });
-  jest.spyOn(milbApi, 'getHomeGamesForVenue').mockReturnValue([baseball]);
+  schedule(football, baseball);
 });
 afterEach(() => {
   localStorage.clear();
@@ -49,6 +59,12 @@ const choose = (input: string, name: RegExp) => {
   fireEvent.click(screen.getByRole('option', { name }));
 };
 const chooseStadium = (id: string) => choose('#venue-select', new RegExp(`^${getUnifiedVenueById(id)!.name} -`));
+/** Opens the game list and leaves it with Tab, which picks the game it opened on. */
+const openAndLeaveList = () => {
+  const list = document.querySelector('#game-select')!;
+  fireEvent.keyDown(list, { key: 'ArrowDown' });
+  fireEvent.keyDown(list, { key: 'Tab' });
+};
 const tab = (name: RegExp) => fireEvent.click(screen.getByRole('tab', { name }));
 const fill = (selector: string, value: string) => fireEvent.change(document.querySelector(selector)!, { target: { value } });
 
@@ -82,6 +98,28 @@ describe.each([['desktop', 1280], ['mobile', 390]])('the game box and the answer
       tab(/real games/i);
       await listLoaded();
       expect(shown()).toEqual(BOTH);
+    });
+
+    it('stay when the list is opened again and left', () => {
+      openAndLeaveList();
+      expect(shown()).toEqual(BOTH);
+    });
+
+    it('stay when the list is opened again after Custom Time, and left', async () => {
+      tab(/custom time/i);
+      tab(/real games/i);
+      await listLoaded();
+      openAndLeaveList();
+      expect(shown()).toEqual(BOTH);
+    });
+
+    it('keep the time that was picked when the list comes back with another', async () => {
+      const picked = shown();
+      schedule({ ...football, gameDate: '2025-12-07T21:25:00Z' }, { ...baseball, gameDate: '2025-07-20T23:10:00Z' });
+      tab(/custom time/i);
+      tab(/real games/i);
+      await listLoaded();
+      expect(shown()).toEqual(picked);
     });
 
     it('change when a custom time is applied, and back with the game', async () => {
