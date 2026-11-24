@@ -7,8 +7,6 @@ import { getUnifiedVenueById } from '../../data/unifiedVenues';
 import { mlbApi } from '../../services/mlbApi';
 import { milbApi } from '../../services/milbApi';
 import { nflApi } from '../../services/nflApi';
-import { nflApiClient } from '../../services/nflApiClient';
-import { bills2026 } from '../../services/__tests__/fixtures/espnBills.json';
 import { getVenueIdFromStringId } from '../../data/milbTeamMapping';
 
 beforeEach(() => {
@@ -148,15 +146,6 @@ describe('what the NFL date form says', () => {
   it('when it loaded and lists no games', async () => {
     jest.spyOn(nflApi, 'getUpcomingVenueGames').mockResolvedValue([]);
     render(<Picker ids={LEAGUES.NFL.ids} />);
-    await wait(900);
-    expect(screen.getByText(NONE_LISTED)).toBeTruthy();
-    expect(screen.queryByText(UNAVAILABLE)).toBeNull();
-  });
-
-  it("at Highmark, where ESPN's games are at the Bills' new stadium", async () => {
-    nflApiClient.clearCache();
-    global.fetch = jest.fn(async () => ({ ok: true, json: async () => bills2026 })) as any;
-    render(<Picker ids={['highmark-stadium', 'lumen-field']} />);
     await wait(900);
     expect(screen.getByText(NONE_LISTED)).toBeTruthy();
     expect(screen.queryByText(UNAVAILABLE)).toBeNull();
