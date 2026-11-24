@@ -6385,17 +6385,17 @@ the same files); they have since. P1–P3 went first, in a PR of their own.
       calls.
 - [x] P3. `UnifiedGameSelector`: show the games/custom switch for NFL (two
       conditions).
-- [ ] P4. `nflSunSide.ts`, `ShadeAnswer`: name the end zone with the sun at
+- [x] P4. `nflSunSide.ts`, `ShadeAnswer`: name the end zone with the sun at
       its back by MiLB's test ("The south end zone has it at its back too";
       with no clear sideline, the end zone instead of "neither"). It's the
       pages' sentence as well, so 24 NFL pages change. Tests first.
-- [ ] P5. AT&T and Lucas Oil: a game after sunset says the sun is down.
-- [ ] P6. Deletions (§29's N5, which lists 6 files and 1,530 lines): on that
+- [x] P5. AT&T and Lucas Oil: a game after sunset says the sun is down.
+- [x] P6. Deletions (§29's N5, which lists 6 files and 1,530 lines): on that
       branch 19 files, 4,970 lines with their CSS and helpers, can't be
       reached from any page. `venueSections.ts` and `nflSections.ts` (772
       more) go once `sunCalculations.ts` drops a fallback no page uses. Own
       commit. Check every import, test and script again first.
-- [ ] P7. Checks: unit tests, type check, eslint, build; every team's 2025
+- [x] P7. Checks: unit tests, type check, eslint, build; every team's 2025
       and 2026 home games through P1 against ESPN's own times; the 24 pages'
       answers before and after P4; Chrome, and Safari if you can try it. Then
       the review.
@@ -6567,6 +6567,43 @@ bugs", passed on):
       fits, and at 1280 px it takes two.
 - *Noticed:* for about a frame (13 ms on the dev server) after a change of
   stadium the old list is still there. It was before, too.
+
+### §30 Review, P6 (2026-11-24)
+
+Go-ahead: "go ahead with P6", typed in this session. P1–P5 and Q1–Q8 are merged
+(PR #106 and #107) and live. Branch `claude/nfl-cleanup`, from `main` at
+e7662874c. Not pushed.
+
+**What went:** 18 of the 21 files, 5,405 lines, plus the lists' own test.
+- *baea2b320:* 16 files no page could reach and nothing else imported: the
+  section list, its filters, its mobile cards, their styles and their helpers
+  (4,633 lines). `shadeDirection.test.ts` loses the model that went with them.
+- *d5c6f5913:* `venueSections.ts` and `nflSections.ts` (772 lines) and
+  `venueSections.test.ts`. `sunCalculations.ts` loses the fallback to them, as
+  the plan said; so does `optimizedSunCalculations.ts`, which nothing imports
+  but the type check reads. `auditCoverageContradictions.ts` checks MLB only
+  (it found nothing before and after), and `syncNFLVenues.ts` loses a warning.
+
+**What stayed, after checking every import:**
+- `Tooltip` (two files, 280 lines): `ShareButton` still imports it.
+- `keyboardActivation.ts` (57 lines): `MobileStadiumGuide` and `SectionLabel`
+  still import it, and it has a test of its own.
+- No page can reach those three components either, but they weren't in the
+  plan.
+
+**Checks:**
+- *What a fan sees:* the 32 NFL pages, 120 MiLB pages, 240 MiLB game answers
+  and all 576 NFL finder answers are byte for byte the same before and after.
+- *Tests:* 4,133 of 4,133 (4,136 less the three for what went). Types, eslint
+  (0 errors) and the production build pass. The client's JavaScript is the same
+  size: the build already left these files out, so this changes the source only.
+- *In a browser (dev server):* Lumen's games and answer, and Yankee Stadium's
+  page. No server errors. The row-shade API withholds its data (409), as the
+  live site's does.
+
+**Noticed (not changed):** two one-off scripts are about a deleted file.
+`fixNFLSectionIds.ts` edits `nflSections.ts`, so it now fails if run, and
+`importVenues.ts` would write `venueSections.ts` again. Nothing runs either.
 
 ## §31 Three leftovers from checking §28 (plan, 2026-11-23)
 

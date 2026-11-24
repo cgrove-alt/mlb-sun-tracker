@@ -26,7 +26,6 @@ import { calendarDateAndTimeToUTC } from '../stadiumTime';
 import { angularDistance, sectionCompassAngle, normalizeAngle } from '../bowlGeometry';
 import { getSectionSunExposure } from '../sectionSunCalculations';
 import { SunCalculator, calculateRowShadows } from '../sunCalculator';
-import { getUnifiedVenueShade } from '../getUnifiedVenueShade';
 
 const DATE = '2025-07-15';
 const HOURS = [13, 16, 19]; // day game, late-afternoon start, evening start
@@ -119,26 +118,6 @@ describe('every production shade model agrees with the physics', () => {
       const a = exp(sunSide);
       const b = exp(oppSide);
       if (!(a < b)) failures.push(`${stadium.id} az=${sun.azimuthDegrees.toFixed(0)} sunSide=${a.toFixed(1)} oppSide=${b.toFixed(1)}`);
-    }
-    expect(failures).toEqual([]);
-  });
-
-  it('getUnifiedVenueShade — homepage shade % and "most shaded first" ordering', () => {
-    const failures: string[] = [];
-    for (const { stadium, utc, sun, sunSide, oppSide } of SAMPLES) {
-      const venue = { ...stadium, sport: 'baseball' } as any;
-      const tag = (list: any[], prefix: string) =>
-        list.map((s, i) => ({
-          id: `${prefix}${i}`, name: `${prefix}${i}`, level: s.level,
-          baseAngle: s.baseAngle, angleSpan: s.angleSpan, covered: false,
-          price: 'moderate', venueType: 'baseball',
-        }));
-      const results = getUnifiedVenueShade(venue, utc, [...tag(sunSide, 'S'), ...tag(oppSide, 'O')]);
-      const avg = (p: string) =>
-        mean(results.filter(r => r.section.id.startsWith(p)).map(r => r.shadePercentage));
-      const a = avg('S'); // shade %: HIGHER means shadier
-      const b = avg('O');
-      if (!(a > b)) failures.push(`${stadium.id} az=${sun.azimuthDegrees.toFixed(0)} sunSideShade=${a.toFixed(1)} oppSideShade=${b.toFixed(1)}`);
     }
     expect(failures).toEqual([]);
   });
@@ -290,12 +269,12 @@ describe('3D ray-cast path (?use3d=true)', () => {
   });
 });
 
-describe('the four models agree with EACH OTHER on which half is shaded', () => {
+describe('the three models agree with EACH OTHER on which half is shaded', () => {
   // Cross-model consistency. Before the fix, the venue page and the homepage
   // could give a fan opposite answers for the same seat at the same moment.
   it('no park/hour has two models disagreeing about the shaded half', () => {
     const failures: string[] = [];
-    for (const { stadium, utc, sun, sections, sunSide, oppSide } of SAMPLES) {
+    for (const { stadium, sun, sections, sunSide, oppSide } of SAMPLES) {
       const calc = new SunCalculator(stadium as any);
 
       const exposureModel = (list: any[]) =>
@@ -313,22 +292,11 @@ describe('the four models agree with EACH OTHER on which half is shaded', () => 
           { altitude: sun.altitudeDegrees, azimuth: sun.azimuthDegrees } as any,
           list.map(s => ({ ...s, depth: 50 })),
         ).map(r => r.sunExposure));
-      const unifiedModel = (list: any[], prefix: string) => {
-        const venue = { ...stadium, sport: 'baseball' } as any;
-        const secs = list.map((s, i) => ({
-          id: `${prefix}${i}`, name: `${prefix}${i}`, level: s.level,
-          baseAngle: s.baseAngle, angleSpan: s.angleSpan, covered: false,
-          price: 'moderate', venueType: 'baseball',
-        }));
-        return mean(getUnifiedVenueShade(venue, utc, secs).map(r => 100 - r.shadePercentage));
-      };
-
       // Every model must call the SUN SIDE less sunny than the opposite side.
       const verdicts = {
         exposure: exposureModel(sunSide) < exposureModel(oppSide),
         rows: rowModel(sections, false) < rowModel(sections, true),
         calculator: calcModel(sunSide) < calcModel(oppSide),
-        unified: unifiedModel(sunSide, 'S') < unifiedModel(oppSide, 'O'),
       };
       const disagreeing = Object.entries(verdicts).filter(([, v]) => !v).map(([k]) => k);
       if (disagreeing.length) {
