@@ -59,6 +59,8 @@ const choose = (input: string, name: RegExp) => {
   fireEvent.click(screen.getByRole('option', { name }));
 };
 const chooseStadium = (id: string) => choose('#venue-select', new RegExp(`^${getUnifiedVenueById(id)!.name} -`));
+/** The games the open list marks as chosen. */
+const marked = () => screen.queryAllByRole('option', { selected: true }).map((option) => option.textContent);
 /** Opens the game list and leaves it with Tab, which picks the game it opened on. */
 const openAndLeaveList = () => {
   const list = document.querySelector('#game-select')!;
@@ -132,6 +134,14 @@ describe.each([['desktop', 1280], ['mobile', 390]])('the game box and the answer
       tab(/real games/i);
       await listLoaded();
       expect(shown()).toEqual(picked);
+      // Nor is the other time marked as chosen.
+      fireEvent.keyDown(document.querySelector('#game-select')!, { key: 'ArrowDown' });
+      expect(marked()).toEqual([]);
+    });
+
+    it('match the one game the list marks', () => {
+      fireEvent.keyDown(document.querySelector('#game-select')!, { key: 'ArrowDown' });
+      expect(marked()).toEqual([box()]);
     });
 
     it('change when a custom time is applied, and back with the game', async () => {

@@ -562,6 +562,7 @@ export const UnifiedGameSelector: React.FC<UnifiedGameSelectorProps> = ({
                         onMenuOpen={() => scrollToChosen(gameSelect)}
                         inputId="game-select"
                         value={chosenOption}
+                        isOptionSelected={(option) => option === chosenOption}
                         options={gameOptions}
                         onChange={(option) => {
                           if (option === chosenOption) return; // kept, not chosen again
