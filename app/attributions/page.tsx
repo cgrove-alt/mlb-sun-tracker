@@ -93,6 +93,21 @@ export default function AttributionsPage() {
       </section>
 
       <section className="stack">
+        <h2 className="h2">🏈 NFL Game Data</h2>
+        
+        <div className="bg-blue-50 border border-blue-200 p-6 rounded-lg">
+          <h3 className="h3 text-blue-900">ESPN</h3>
+          <p>
+            NFL game schedules in the finder come from ESPN.
+          </p>
+          <p className="text-sm mt-2 text-gray-600">
+            The Shadium is not affiliated with, endorsed by, or sponsored by ESPN, the National
+            Football League or any NFL team.
+          </p>
+        </div>
+      </section>
+
+      <section className="stack">
         <h2 className="h2">🌤️ Weather Data</h2>
         
         <div className="bg-green-50 border border-green-200 p-6 rounded-lg">

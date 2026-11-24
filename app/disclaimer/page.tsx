@@ -202,6 +202,13 @@ export default function Disclaimer() {
           </p>
         </div>
         
+        <div className="bg-blue-50 border border-blue-200 p-4 rounded-lg mb-4">
+          <h4 className="font-semibold text-blue-900">ESPN</h4>
+          <p className="text-sm mt-2">
+            NFL game schedules in the finder come from ESPN.
+          </p>
+        </div>
+        
         <div className="bg-green-50 border border-green-200 p-4 rounded-lg mb-4">
           <h4 className="font-semibold text-green-900">Open-Meteo Weather API</h4>
           <p className="text-sm mt-2">
