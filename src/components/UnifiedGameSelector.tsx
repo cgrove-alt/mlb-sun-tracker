@@ -148,8 +148,6 @@ export const UnifiedGameSelector: React.FC<UnifiedGameSelectorProps> = ({
       gamesLoading.setLoading(true);
       
       const now = new Date();
-      // For MiLB, use 30 days due to API limitation with multiple sport IDs
-      const endDate = new Date(now.getTime() + 30 * 24 * 60 * 60 * 1000);
 
       if (selectedVenue.league === 'MLB') {
         const range = upcomingScheduleRange(now);
@@ -216,12 +214,9 @@ export const UnifiedGameSelector: React.FC<UnifiedGameSelectorProps> = ({
           }
         }
 
-        const schedule = await milbApi.getTeamScheduleByLevel(
-          teamId,
-          now.toISOString().split('T')[0],
-          endDate.toISOString().split('T')[0],
-          sportId
-        );
+        // 30 days, for the API's limit with multiple sport IDs
+        const range = upcomingScheduleRange(now, 30);
+        const schedule = await milbApi.getTeamScheduleByLevel(teamId, range.startDate, range.endDate, sportId);
         if (isStale()) return;
 
         const homeGames = milbApi.getHomeGamesForVenue(venueId, schedule);

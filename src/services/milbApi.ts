@@ -161,14 +161,14 @@ class MiLBApiService {
     return this.fetchWithCache<MiLBSchedule>(url);
   }
 
-  // Get home games for a specific venue
+  // Get home games for a specific venue, the one being played included
   getHomeGamesForVenue(venueId: number, schedule: MiLBSchedule): MiLBGame[] {
     const games: MiLBGame[] = [];
     
     schedule.dates.forEach(date => {
       date.games.forEach(game => {
         if (game.venue.id === venueId && 
-            game.status.abstractGameState === 'Preview') {
+            game.status.abstractGameState !== 'Final') {
           games.push(game);
         }
       });
