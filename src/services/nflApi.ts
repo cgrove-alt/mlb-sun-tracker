@@ -2,6 +2,7 @@
 // Uses real NFL schedule data from ESPN API
 
 import { nflApiClient } from './nflApiClient';
+import { GAME_MINUTES } from '../utils/nflSunSide';
 
 export interface NFLGame {
   gameId: string;
@@ -104,14 +105,15 @@ class NFLApiService {
     }
   }
 
-  // Get upcoming games for a venue
+  // Get upcoming games for a venue, and the one being played
   async getUpcomingVenueGames(venueId: string): Promise<NFLGame[]> {
     // First try current season
     let allGames = await this.getVenueSchedule(venueId);
-    const today = new Date();
+    // A game stays as long as the answer for it covers.
+    const oldestKickoff = new Date(Date.now() - GAME_MINUTES * 60_000);
     
     let upcomingGames = allGames
-      .filter(game => new Date(game.gameDate) >= today)
+      .filter(game => new Date(game.gameDate) >= oldestKickoff)
       .sort((a, b) => new Date(a.gameDate).getTime() - new Date(b.gameDate).getTime());
 
     // If no upcoming games in current season, try next season

@@ -4,10 +4,15 @@ import { act, fireEvent, render, screen } from '@testing-library/react';
 import { UnifiedGameSelector } from '../UnifiedGameSelector';
 import { I18nProvider } from '../../i18n/i18nContext';
 import { getUnifiedVenueById } from '../../data/unifiedVenues';
-import { mlbApi } from '../../services/mlbApi';
+import { mlbApi, upcomingScheduleRange } from '../../services/mlbApi';
 import { milbApi } from '../../services/milbApi';
 import { nflApi } from '../../services/nflApi';
 import { getVenueIdFromStringId } from '../../data/milbTeamMapping';
+
+jest.mock('../../services/mlbApi', () => {
+  const actual = jest.requireActual('../../services/mlbApi');
+  return { ...actual, upcomingScheduleRange: jest.fn(actual.upcomingScheduleRange) };
+});
 
 beforeEach(() => {
   jest.restoreAllMocks();
@@ -130,6 +135,17 @@ describe.each(Object.entries(LEAGUES))('while the %s schedule loads', (_league, 
   });
 });
 
+// The UTC date is tomorrow from 8:00 PM Eastern (5:00 PM Pacific), and tonight's
+// game isn't on it. `upcomingScheduleRange` gives the fan's own date.
+it("MiLB: asks for games from the fan's own date, 30 days on", async () => {
+  jest.mocked(upcomingScheduleRange).mockReturnValueOnce({ startDate: 'the fan\'s today', endDate: '30 days on' });
+  const asked = jest.spyOn(milbApi, 'getTeamScheduleByLevel').mockResolvedValue({ dates: [] });
+  render(<Picker ids={['buffalo-bisons', 'durham-bulls']} />);
+  await wait(400);
+  expect(asked.mock.calls[0].slice(1, 3)).toEqual(['the fan\'s today', '30 days on']);
+  expect(upcomingScheduleRange).toHaveBeenLastCalledWith(expect.any(Date), 30);
+});
+
 describe('what the NFL date form says', () => {
   const UNAVAILABLE = 'NFL schedule data is currently unavailable. Please select a date and time for shade calculations.';
   const NONE_LISTED = 'No upcoming games are listed for this stadium. Please select a date and time for shade calculations.';
@@ -190,6 +206,18 @@ describe.each(Object.entries(LEAGUES))('changing stadium in %s', (_league, { ids
     fireEvent.click(screen.getByText('the other stadium'));
     await wait(900);
     expect(gameBox()!.textContent).not.toContain(games[0]);
+    expect(gameBox()!.textContent).toContain('Choose a game');
+  });
+
+  it('so does one picked before choosing the same stadium again', async () => {
+    request(() => Promise.resolve());
+    render(<Picker ids={ids} />);
+    await wait(900);
+    openList();
+    fireEvent.click(screen.getByText(new RegExp(games[0])));
+    expect(gameBox()!.textContent).toContain(games[0]);
+    fireEvent.keyDown(document.querySelector('#venue-select')!, { key: 'ArrowDown' });
+    fireEvent.click(screen.getByRole('option', { name: new RegExp(`^${getUnifiedVenueById(ids[0])!.name}`) }));
     expect(gameBox()!.textContent).toContain('Choose a game');
   });
 });

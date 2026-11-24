@@ -73,6 +73,30 @@ describe("an NFL stadium's home games", () => {
     expect(espn).toHaveBeenCalledTimes(1);
   });
 
+  // The Panthers' game kicks off at 1:00 PM on September 7 (17:00 UTC).
+  it.each([
+    ['a minute before kickoff', '2025-09-07T16:59:00Z', 'Panthers'],
+    ['at kickoff', '2025-09-07T17:00:00Z', 'Panthers'],
+    ['a second after kickoff', '2025-09-07T17:00:01Z', 'Panthers'],
+    ['an hour after kickoff', '2025-09-07T18:00:00Z', 'Panthers'],
+    ['three hours after kickoff', '2025-09-07T20:00:00Z', 'Panthers'],
+    ['a minute after that', '2025-09-07T20:01:00Z', 'Texans'],
+  ])('%s, the first one listed is right', async (_when, now, awayTeam) => {
+    jest.setSystemTime(new Date(now));
+    answer(jaguars2025);
+    expect((await nflApi.getUpcomingVenueGames('everbank-stadium'))[0].awayTeam.name).toBe(awayTeam);
+  });
+
+  it('keeps the last home game while it is on', async () => {
+    answer(jaguars2025);
+    const last = (await nflApiClient.fetchVenueSchedule('everbank-stadium', 2025)).at(-1)!;
+    espn.mockClear();
+    jest.setSystemTime(new Date(new Date(last.gameDate).getTime() + 60 * 60_000));
+    expect((await nflApi.getUpcomingVenueGames('everbank-stadium')).map((game) => game.gameId)).toEqual([last.gameId]);
+    // Not next season's.
+    expect(espn.mock.calls.map(([url]) => url.match(/season=(\d+)/)[1])).toEqual(['2025']);
+  });
+
   it('gives none when ESPN lists none, this season or next', async () => {
     answer({ events: [] });
     expect(await nflApi.getUpcomingVenueGames('everbank-stadium')).toEqual([]);
