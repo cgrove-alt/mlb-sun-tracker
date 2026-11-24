@@ -263,6 +263,7 @@ export const UnifiedGameSelector: React.FC<UnifiedGameSelectorProps> = ({
   // Load games when venue changes (MLB, MiLB, and NFL)
   useEffect(() => {
     latestLoad.current += 1;
+    setSelectedGameOption(null);
     if (selectedVenue && viewMode === 'games' && (selectedVenue.league === 'MLB' || selectedVenue.league === 'MiLB' || selectedVenue.league === 'NFL')) {
       gamesLoading.reset();
       setGames([]);
@@ -274,7 +275,6 @@ export const UnifiedGameSelector: React.FC<UnifiedGameSelectorProps> = ({
       
       return () => clearTimeout(timeoutId);
     }
-    setSelectedGameOption(null);
   }, [selectedVenue, viewMode]);
 
   const handleLeagueChange = (league: string) => {

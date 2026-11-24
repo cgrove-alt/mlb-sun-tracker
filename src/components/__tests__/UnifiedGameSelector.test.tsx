@@ -127,4 +127,17 @@ describe.each(Object.entries(LEAGUES))('changing stadium in %s', (_league, { ids
     openList();
     expect(screen.getByText(new RegExp(games[1]))).toBeTruthy();
   });
+
+  it('the game picked at the old stadium leaves the box', async () => {
+    request(() => Promise.resolve());
+    render(<Picker ids={ids} />);
+    await wait(900);
+    openList();
+    fireEvent.click(screen.getByText(new RegExp(games[0])));
+    expect(gameBox()!.textContent).toContain(games[0]);
+    fireEvent.click(screen.getByText('the other stadium'));
+    await wait(900);
+    expect(gameBox()!.textContent).not.toContain(games[0]);
+    expect(gameBox()!.textContent).toContain('Choose a game');
+  });
 });
