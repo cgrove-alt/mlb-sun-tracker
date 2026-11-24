@@ -45,9 +45,10 @@ export default function SeatsShadeFinderPage() {
         <div className="rounded-xl border bg-white p-4 md:p-5 shadow-sm mb-8 overflow-hidden stack">
           <p className="text-lg text-ink-700 max-w-prose">
             For MLB games, pick your ballpark below to see every section in sun or shade, inning by
-            inning. For NFL and minor league games, use the finder with your game&apos;s date and time.
-            We don&apos;t have seating maps for NFL stadiums or minor league parks, so there it says
-            which sideline, or side of the park, shades first.
+            inning. For NFL and minor league games, use the finder: pick yours from the schedule, or
+            set its date and time if it isn&apos;t listed. We don&apos;t have seating maps for NFL
+            stadiums or minor league parks, so there it says which sideline, or side of the park,
+            shades first.
           </p>
         </div>
 
@@ -99,7 +100,9 @@ export default function SeatsShadeFinderPage() {
             <li className="flex">
               <span className="font-bold text-blue-600 mr-3">2.</span>
               <div>
-                <strong>Pick your game:</strong> for MLB parks, choose from the real schedule; otherwise enter the date and start time.
+                <strong>Pick your game:</strong> choose it from the schedule of home games. The minor
+                league schedules cover the next 30 days, and the NFL ones the next eight regular-season
+                games. If yours isn&apos;t listed, enter its date and start time.
               </div>
             </li>
             <li className="flex">

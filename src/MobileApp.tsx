@@ -203,10 +203,7 @@ const MobileApp: React.FC = () => {
                   type="no-game"
                   action={
                     <p style={{fontSize: '0.9rem', color: '#666', margin: 0}}>
-                      {selectedVenue.league === 'MLB' || selectedVenue.league === 'MiLB'
-                        ? 'Pick a real game or set any custom date and time'
-                        : 'Set a custom date and time for shade calculations'
-                      }
+                      Pick a game from the schedule, or set a date and time if yours isn&apos;t listed
                     </p>
                   }
                 />

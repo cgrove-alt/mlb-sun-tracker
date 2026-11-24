@@ -199,10 +199,7 @@ function UnifiedAppContent() {
                 action={
                   <div style={{textAlign: 'center'}}>
                     <p style={{fontSize: '0.9rem', color: '#666', margin: '0 0 1rem 0'}}>
-                      {selectedVenue.league === 'MLB' 
-                        ? 'Pick a real game or set any custom date and time'
-                        : 'Set a custom date and time for shade calculations'
-                      }
+                      Pick a game from the schedule, or set a date and time if yours isn&apos;t listed
                     </p>
                     <Link 
                       href={`/stadium/${selectedVenue.id}`}

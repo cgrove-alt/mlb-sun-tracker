@@ -91,6 +91,13 @@ describe.each([['desktop', 1280], ['mobile', 390]])('the finder on %s', (device,
     noSections();
   });
 
+  it.each(['buffalo-bisons', 'lambeau-field', 'yankees'])('before a game is picked, says where to find it or what to do without (%s)', (id) => {
+    window.innerWidth = width;
+    render(<UnifiedApp />);
+    fireEvent.click(screen.getByText(id));
+    expect(screen.getByText("Pick a game from the schedule, or set a date and time if yours isn't listed")).toBeTruthy();
+  });
+
   it('MLB: still links to the park page', async () => {
     await pickGame('yankees', width);
     expect(screen.getByText(/See the Yankee Stadium shade map/)).toBeTruthy();
