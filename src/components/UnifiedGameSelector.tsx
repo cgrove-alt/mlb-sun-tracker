@@ -347,6 +347,14 @@ export const UnifiedGameSelector: React.FC<UnifiedGameSelectorProps> = ({
     );
   }, [games, selectedVenue?.timezone]);
 
+  // The list's own entry for the chosen game: react-select opens the list on it
+  // only if it's the same object. One of its own when the list doesn't have the
+  // game as it was chosen, so the box still shows what the answer is for.
+  const chosen = selectedGame && gameOption(selectedGame, selectedVenue?.timezone);
+  const chosenOption = chosen && (gameOptions
+    .flatMap(month => month.options)
+    .find(option => option.value === chosen.value && option.label === chosen.label) ?? chosen);
+
   // Custom styles to ensure dropdown text is always visible
 
   const formatOptionLabel = (option: any) => {
@@ -539,7 +547,7 @@ export const UnifiedGameSelector: React.FC<UnifiedGameSelectorProps> = ({
                       )}
                       <Select
                         inputId="game-select"
-                        value={selectedGame && gameOption(selectedGame, selectedVenue.timezone)}
+                        value={chosenOption}
                         options={gameOptions}
                         onChange={(option) => {
                           if (option?.game) {
