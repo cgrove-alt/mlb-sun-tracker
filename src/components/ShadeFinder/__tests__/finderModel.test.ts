@@ -71,7 +71,7 @@ describe('game labels', () => {
   const game = (gameDate: string, tbd = false): MLBGame => ({
     gamePk: 1,
     gameDate,
-    status: { statusCode: 'S', detailedState: 'Scheduled', startTimeTBD: tbd },
+    status: { abstractGameState: 'Preview', statusCode: 'S', detailedState: 'Scheduled', startTimeTBD: tbd },
     teams: { away: { team: { id: 141, name: 'Toronto Blue Jays' } }, home: { team: { id: 147, name: 'New York Yankees' } } },
     venue: { id: 3313, name: 'Yankee Stadium' },
     gameType: 'R',

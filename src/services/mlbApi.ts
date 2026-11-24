@@ -6,6 +6,8 @@ export interface MLBGame {
   gamePk: number;
   gameDate: string;
   status: {
+    /** `Final` also covers a game that was postponed or cancelled. */
+    abstractGameState: 'Preview' | 'Live' | 'Final' | 'Other';
     statusCode: string;
     detailedState: string;
     /** MLB has not set the start time yet; `gameDate` is a placeholder (07:33 UTC). */
@@ -245,12 +247,10 @@ export class MLBApiService {
 
     // A club's "home" games include spring training in Florida and Arizona
     // and neutral-site series (London, Tokyo, Mexico City). Shade only means
-    // something at the park itself, so keep games played at this venue.
+    // something at the park itself, so keep games played at this venue. A
+    // postponed game has the same number as its makeup: only the makeup stays.
     return games.filter(
-      (game) =>
-        game.venue?.id === venueId &&
-        game.status.statusCode !== 'F' &&
-        game.status.statusCode !== 'C',
+      (game) => game.venue?.id === venueId && game.status.abstractGameState !== 'Final',
     );
   }
 }
