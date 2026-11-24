@@ -6693,6 +6693,114 @@ words as they were, and both finders use them.
 - The share image still gives only the sideline ("the sun runs along the
   field" at EverBank), which is still right.
 
+## §33 The Bills' new stadium (plan, 2026-11-24)
+
+Asked: plan the fix for the Bills' answers, which are still for the stadium
+they left. Branch `fix/bills-stadium`, from `main` at e7662874c (PR #107).
+Nothing but this file has changed.
+
+**In short:** the new field can be measured, and it isn't the old one's
+direction: 168°, against 123°. I'd move the Bills to it rather than only say
+they've moved.
+
+### Findings
+
+**1. The new stadium.** It opened on June 23, 2026, and its first
+regular-season game was on September 17 (Bills 41–31 Lions). 60,108 seats and
+standing room; Kentucky bluegrass; a canopy all the way round, over 64% of the
+bowl; 10 Bills Plaza, Orchard Park; 42.77306, -78.79222. (New York State, June
+23, 2026, for the seats, grass and canopy; ESPN has the same seats and "more
+than 60%"; Wikipedia for the games, address and coordinates, and
+OpenStreetMap puts the stadium within 10 m.) In the September 2026 satellite
+images the old one's site is mostly bare ground.
+
+**2. The field's direction: 168.0°.**
+- *Satellite:* a rectangle fitted to the grass in Sentinel-2 images (10 m
+  pixels), on each of the 13 clear images from May to mid-September 2026:
+  167.7–168.5°, spread 0.2°. From October the canopy shades the south end and
+  it still gives 167.6–168.6° (8 images).
+- *The method, on known fields:* at 13 grass fields (12 stadiums and State
+  Farm's tray) the median of its 2025 dates is within 1.2° of the recorded
+  direction. Hard Rock, the 14th I tried, has a canopy that leaves too little
+  grass in view.
+- *OpenStreetMap,* mapped on November 10: the opening in the canopy (way
+  1577454592) runs 167.5°.
+- The record for the old one says way 972013095 is the new stadium. It isn't:
+  it runs 7°, was mapped in 2021, and is about 680 m away.
+
+**3. What's wrong today.**
+- *Answers:* the new stadium has no southwest sideline, and that's the one
+  named at all 38 Sunday kickoffs (1:00 and 4:25) from September 6 to January
+  10.
+
+  | Page | Today (123°) | New stadium (168°) |
+  |---|---|---|
+  | 1:00 PM | southwest sideline | west sideline, and the south end zone |
+  | 4:25 PM | southwest sideline, and the northwest end zone | west sideline |
+
+  The new page names the same sides for any direction from 163° to 173°.
+- *Night games* say the sun is down either way. The two games left with a time
+  (November 26 and December 19) are both at night, so this matters for the
+  page, for typed dates, for January 10 (no time yet), and from next season.
+- *The finder* lists none of the Bills' games, so as not to give them the old
+  direction.
+- *The page* also has the old building's facts: "Built 1973", 71,608 seats,
+  "home to the Bills since 1973", its clubs, section numbers (300–345), parking
+  lots and prices, address and history. None cites a source.
+
+**4. "Always use 2025 data."** No 2025 game was played in the new stadium, so
+this needs your exception: its direction and facts are from 2026. The sun's
+path stays September 14, 2025, as on every NFL page.
+
+### Plan (approved 2026-11-24, with both decisions below)
+
+- [ ] B1. `scripts/measureNflSatellite.py`: the fit, so the 168° and the 13
+      fields can be run again (as `measureMilbOrientation.py` does for MiLB).
+- [ ] B2. `nflOrientationMeasurements.ts`, `nflStadiums.ts`,
+      `unifiedVenues.ts`: 168° (±3°), a `satellite` method, the new
+      coordinates, 60,108 seats, 2026, grass, and the five angles that follow
+      from the direction. The id and the address `/stadium/highmark-stadium`
+      stay. Test first: both kickoffs' sentences.
+- [ ] B3. `nflApiClient.ts`: drop the Bills rule, so their games list again.
+      The list only has games still to come, and those are all at the new one.
+      Tests: ESPN's own 2026 answer gives the seven games with a time, and the
+      two to come.
+- [ ] B4. `nflStadiumGuides.ts`: facts with a source (opened, seats, grass,
+      canopy, address, first game) replace the old building's. What's left
+      without one (clubs, section numbers, food, parking, gates) comes out.
+- [ ] B5. `ComprehensiveStadiumGuide.tsx`: a block with nothing in it shows no
+      heading. Today nine NFL pages show "Best Value", "Hidden Gems" and
+      "Things to Avoid" with nothing under them; B4 would add more.
+- [ ] B6. `/attributions`: where the NFL directions come from. The satellite
+      one needs "contains modified Copernicus Sentinel data 2026", and
+      OpenStreetMap, which most of the others use, isn't credited now.
+- [ ] B7. Checks: unit tests, types, eslint, build; the Bills' answers against
+      a separate calculation; the other 31 NFL pages' answers, the 120 MiLB
+      pages' answers and the MLB data unchanged; the finder and the page in a
+      browser. Then the review, with the live checks of PRs #101–#107, which
+      earlier reviews don't have.
+
+**For you to decide:**
+1. The stadium: move to the new one (my pick, B1–B7; it's the exception in
+   finding 4), or only say the Bills have moved and give no sideline. The
+   second is smaller and keeps to 2025 data, but the page would have no answer,
+   and we can measure it.
+2. B4's deletions: the old building's clubs, sections, food, parking and gates.
+   I'd delete them. The other choice is to leave them and change only the facts
+   above, which keeps section numbers that aren't the new stadium's.
+
+**Not in this plan:**
+- The Jaguars (Orlando in 2027) and the Titans (new stadium in 2027). With B3
+  no rule is left for a team that moves, so that needs its own before ESPN
+  publishes 2027.
+- The canopy: the sentence already says "upper rows and seats under an
+  overhang", and Hard Rock's, whose canopy is larger, is the same.
+- At 4:25 PM the sun is square across the field, so which end zone "faces the
+  sun" hardly matters, but the finder names one. True of every north–south
+  field.
+- `sections/nfl/highmark-stadium.ts`, `obstructions/nfl/…`, `venues.ts` and
+  `venues.json` have the old stadium too, and no page uses them (P6).
+
 ---
 ---
 
