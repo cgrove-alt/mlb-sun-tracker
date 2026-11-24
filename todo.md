@@ -7200,23 +7200,23 @@ compares the label too. New in PR #112.
 
 Tests first, seen to fail, then the fix; one commit each.
 
-- [ ] L1. `mlbApi.ts`: keep a game unless its `abstractGameState` is `Final`, and
+- [x] L1 (5c5e165b2). `mlbApi.ts`: keep a game unless its `abstractGameState` is `Final`, and
       name that field in `MLBGame`. Tests: the codes of 2025 (F, DR, DI, DS, FR,
       FO) and Game Over go; Scheduled, Delayed Start, In Progress and Suspended
       stay; a postponed game and its makeup leave the makeup.
-- [ ] L2. `UnifiedGameSelector.tsx`: when the stadium or the game list opens,
+- [x] L2 (e9556f06f). `UnifiedGameSelector.tsx`: when the stadium or the game list opens,
       update it once more on the next frame, so react-select does the scroll it
       owes. Tried in the browser by hand: 1,059 on desktop by click and by key,
       2,213 at phone size, and the page itself doesn't move. The league and level
       lists fit without scrolling. Test: the list's scroll is set on opening.
-- [ ] L3. `UnifiedGameSelector.tsx`: group by the park's date, with
+- [x] L3 (7b63bdbb3). `UnifiedGameSelector.tsx`: group by the park's date, with
       `utcToStadiumLocal` (already in `stadiumTime.ts`). Test: a 9:30 PM game in
       Los Angeles on July 31, 2025 is under July.
-- [ ] L4. `UnifiedGameSelector.tsx`: do nothing when the option is the chosen one.
+- [x] L4 (499c2f428). `UnifiedGameSelector.tsx`: do nothing when the option is the chosen one.
       Test: Tab on the chosen game tracks nothing; another game is tracked once.
-- [ ] L5. `UnifiedGameSelector.tsx`: `isOptionSelected` is the box's own entry.
+- [x] L5 (cdc96ee4f). `UnifiedGameSelector.tsx`: `isOptionSelected` is the box's own entry.
       Test: the moved game's entry isn't marked; the chosen game's is.
-- [ ] L8. Checks: all tests, types, eslint, build; every 2025 MLB game through L1
+- [x] L8. Checks: all tests, types, eslint, build; every 2025 MLB game through L1
       and L3 in four time zones; the finder in a browser at both sizes (clicks and
       keys), and a park's page. Then the review.
 
@@ -7226,7 +7226,7 @@ keeping the time that was chosen is §37's decision.
 
 ### Found while planning, not in the five (approved too)
 
-- [ ] L6. **Games with no start time yet are listed at 3:33 AM.** MLB's
+- [x] L6 (f7657dffb). **Games with no start time yet are listed at 3:33 AM.** MLB's
       `startTimeTBD` marks `gameDate` as a placeholder, nearly always 3:33 AM at
       the park; the finder doesn't look at it. On the dev server Yankee Stadium lists
       "Mar 31, 3:33 AM EDT", and, by the code, choosing it says the sun is down.
@@ -7236,12 +7236,70 @@ keeping the time that was chosen is §37's decision.
       2,302. The park's page says "time TBD" and the NFL list leaves such games
       out. *Fix:* the label says "time TBD" and the entry can't be chosen, so a
       fan sees their game and why; Custom Time still works.
-- [ ] L7. **The stadium list loses its place.** Its options are built again on
+- [x] L7 (183fb258f). **The stadium list loses its place.** Its options are built again on
       every render, so anything that redraws the finder with the list open (by the
       code, the weather arriving) moves the highlight to the first stadium, and
       Enter or Tab would pick it. Seen by changing the game behind the open list:
       Yankee Stadium to American Family Field. *Fix:* build them once per league
       and level, as the game list does.
+
+### §38 Review (2026-11-24)
+
+**What changed:** seven commits, one for each. The code is in
+`UnifiedGameSelector.tsx`, `mlbApi.ts`, `milbApi.ts` (a type) and
+`selectStyles.ts` (gray for an entry that can't be chosen).
+
+**What a fan sees:**
+- MLB's lists, the park's page among them, have only games to come or being
+  played. On the day of a rainout the makeup is the makeup.
+- The game and stadium lists open at what was chosen, and stay there.
+- A game is under its month at the park, wherever the fan is.
+- Keeping the chosen game does nothing, and only it is marked as chosen.
+- A game with no start time says "time TBD" and can't be chosen.
+
+**The plan was wrong about L6 in the minors.** There the mark is nearly always a
+doubleheader's second game, not 3:33 AM: 332 of the 347 marked in 2025, at all
+four levels. Its placeholder is five minutes after the first game (293 of the 300
+played), and the game starts when the first ends: Rochester's on April 3, 2025 was
+listed for 1:10 PM and began at 3:41. So the finder gave it the first game's
+answer. "time TBD" is right for it too, but a fan at a second game has to use
+Custom Time.
+
+**Checks:**
+- *Tests:* 4,228 of 4,228 in 107 suites; 39 new. Seen to fail first: 26 of them
+  (L1 9, L2 12, L3 1, L4 1, L6 2, L7 1) and six older ones that L5 extends. The
+  other 13 guard what must stay. The list, picker and finder tests also pass in
+  Tokyo, Los Angeles, London and UTC.
+- *One run lost a suite:* in the first of four full runs one suite didn't run and
+  50 tests were missing, with no test failing. Its message wasn't kept. Only two
+  suites have 50 tests, both checks of a park's shade that nothing here touches.
+  Three more full runs passed, one of them under a build and other load.
+- *Types, build, eslint:* pass, with the one warning `main` has in the picker.
+- *Every 2025 MLB game, in four time zones:* of the season that's over the list
+  keeps none (35 before). As games to come, all 2,343 are listed and under their
+  month (23 wrong in London and 68 in Tokyo before). For all 30 postponements the
+  list has the makeup alone; the old rule put the postponed game first.
+- *Every 2025 MiLB game* played at a park with an MLB id: 8,200, all under their
+  month, 299 marked "time TBD".
+- *In a browser (dev server):* Yankee Stadium on desktop (1,059 px by click and by
+  key; stadium list 908 px, and its place kept when the game changes behind it)
+  and at phone size (2,213 px by click and by key; stadium list 1,314 px; the page
+  doesn't move). Tab keeps the game. "Mar 31, time TBD" is gray and can't be
+  clicked. Wrigley's 27 games are all "time TBD". Lambeau is as before. On the
+  home page, with MLB's April 5-6, 2025 entries for Fenway given to it, the only
+  game is April 6's. Console: two notes about vibration, from a click made by
+  script.
+- *The answer for a given game and time is untouched:* only which games are listed,
+  and how.
+- *Not tested:* Safari and Firefox, a real phone, and MiLB in a browser (its
+  season is over).
+
+**Left as is:**
+- Opening the stadium list and leaving it with Tab chooses the same stadium again,
+  which clears the game (PR #111's rule for picking it again).
+- With every game "time TBD", the finder still says "Pick a game from the
+  schedule, or set a date and time if yours isn't listed".
+- `GameSelector.tsx` has the old month headings and no "time TBD"; no page uses it.
 
 ---
 ---
