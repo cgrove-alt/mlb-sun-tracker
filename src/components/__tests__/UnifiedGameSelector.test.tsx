@@ -51,7 +51,7 @@ const nflGame = (away: string, home: string): any => ({
   gameId: home, gameDate: '2026-12-20T18:00Z', awayTeam: { name: away }, homeTeam: { name: home },
 });
 const baseballGame = (away: string, home: string): any => ({
-  gamePk: home, gameDate: '2027-07-20T17:05:00Z', teams: { away: { team: { name: away } }, home: { team: { name: home } } },
+  gamePk: home, gameDate: '2027-07-20T17:05:00Z', status: {}, teams: { away: { team: { name: away } }, home: { team: { name: home } } },
 });
 
 /** Two stadiums in one league, and the league's schedule request. */
@@ -195,4 +195,98 @@ describe.each(Object.entries(LEAGUES))('changing stadium in %s', (_league, { ids
     openList();
     expect(screen.getByText(new RegExp(games[1]))).toBeTruthy();
   });
+});
+
+// 9:30 PM in Los Angeles on July 31, which is August 1 from New York east.
+it("a game is under the month it's played in at the park", async () => {
+  jest.spyOn(mlbApi, 'getSchedule').mockResolvedValue([]);
+  jest.spyOn(mlbApi, 'getHomeGamesForStadium').mockReturnValue([
+    { ...baseballGame('Giants', 'Dodgers'), gameDate: '2025-08-01T04:30:00Z' },
+  ]);
+  render(<Picker ids={['dodgers', 'padres']} />);
+  await wait(900);
+  openList();
+  expect(screen.getByRole('option').textContent).toContain('Jul 31, 9:30 PM');
+  expect(screen.getByText('July')).toBeTruthy();
+});
+
+it('keeping the chosen game is not choosing it again', async () => {
+  const chosen = baseballGame('Rays', 'Yankees');
+  const another = { ...chosen, gamePk: 'another', gameDate: '2027-07-21T17:05:00Z' };
+  jest.spyOn(mlbApi, 'getSchedule').mockResolvedValue([]);
+  jest.spyOn(mlbApi, 'getHomeGamesForStadium').mockReturnValue([chosen, another]);
+  const onGameSelect = jest.fn();
+  render(
+    <I18nProvider>
+      <UnifiedGameSelector
+        selectedVenue={getUnifiedVenueById('yankees')!}
+        selectedGame={chosen}
+        onGameSelect={onGameSelect}
+        onVenueChange={() => {}}
+      />
+    </I18nProvider>,
+  );
+  await wait(900);
+  openList();
+  fireEvent.keyDown(document.querySelector('#game-select')!, { key: 'Tab' });
+  expect(onGameSelect).not.toHaveBeenCalled();
+  openList();
+  fireEvent.click(screen.getByRole('option', { name: /Jul 21/ }));
+  expect(onGameSelect.mock.calls).toEqual([[another, new Date(another.gameDate)]]);
+});
+
+// The placeholders MLB gives: 3:33 AM at the park, and in the minors five minutes
+// after the first game of a doubleheader.
+it.each([
+  ['MLB', 'yankees', '2025-07-20T07:33:00Z'],
+  ['MiLB', 'buffalo-bisons', '2025-07-20T17:10:00Z'],
+] as const)("%s: a game with no start time yet is listed without one, and can't be chosen", async (league, id, gameDate) => {
+  LEAGUES[league].request(() => Promise.resolve());
+  const games = [{ ...baseballGame('Rays', 'Hosts'), gameDate, status: { startTimeTBD: true } }, baseballGame('Mets', 'Hosts')];
+  jest.spyOn(mlbApi, 'getHomeGamesForStadium').mockReturnValue(games);
+  jest.spyOn(milbApi, 'getHomeGamesForVenue').mockReturnValue(games);
+  const onGameSelect = jest.fn();
+  render(
+    <I18nProvider>
+      <UnifiedGameSelector
+        selectedVenue={getUnifiedVenueById(id)!}
+        selectedGame={null}
+        onGameSelect={onGameSelect}
+        onVenueChange={() => {}}
+      />
+    </I18nProvider>,
+  );
+  await wait(900);
+  openList();
+  expect(screen.getAllByRole('option').map((option) => option.textContent)).toEqual([
+    'Jul 20, time TBD - Rays @ Hosts',
+    'Jul 20, 1:05 PM EDT - Mets @ Hosts',
+  ]);
+  fireEvent.click(screen.getByRole('option', { name: /Rays/ }));
+  fireEvent.keyDown(document.querySelector('#game-select')!, { key: 'Tab' });
+  expect(onGameSelect).not.toHaveBeenCalled();
+  fireEvent.click(screen.getByRole('option', { name: /Mets/ }));
+  expect(onGameSelect.mock.calls).toEqual([[games[1], new Date(games[1].gameDate)]]);
+});
+
+it('the open stadium list keeps its place when the finder redraws', async () => {
+  const onVenueChange = jest.fn();
+  const picker = () => (
+    <I18nProvider>
+      <UnifiedGameSelector
+        selectedVenue={getUnifiedVenueById('yankees')!}
+        selectedGame={null}
+        onGameSelect={() => {}}
+        onVenueChange={onVenueChange}
+      />
+    </I18nProvider>
+  );
+  jest.spyOn(mlbApi, 'getSchedule').mockResolvedValue([]);
+  const { rerender } = render(picker());
+  await wait(900);
+  const list = document.querySelector('#venue-select')!;
+  fireEvent.keyDown(list, { key: 'ArrowDown' });
+  rerender(picker());
+  fireEvent.keyDown(list, { key: 'Tab' });
+  expect(onVenueChange.mock.calls.map(([venue]) => venue.id)).toEqual(['yankees']);
 });

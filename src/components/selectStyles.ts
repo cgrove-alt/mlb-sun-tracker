@@ -30,7 +30,7 @@ export const customSelectStyles = {
   }),
   option: (provided: any, state: any) => ({
     ...provided,
-    color: state.isSelected ? 'white' : '#000',
+    color: state.isDisabled ? '#666' : state.isSelected ? 'white' : '#000',
     backgroundColor: state.isSelected ? '#1a237e' : state.isFocused ? '#f5f5f5' : 'white',
     fontWeight: state.isSelected ? 600 : 500,
     opacity: 1,

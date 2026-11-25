@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useCallback, useRef } from 'react';
 import { customSelectStyles } from './selectStyles';
 import { groupOptionsByMonth } from './groupOptionsByMonth';
-import Select from 'react-select';
+import Select, { SelectInstance } from 'react-select';
 import { format } from 'date-fns';
 import { MLBGame, mlbApi, upcomingScheduleRange } from '../services/mlbApi';
 import { MiLBGame, milbApi, MILB_LEVELS } from '../services/milbApi';
@@ -10,7 +10,7 @@ import { UnifiedVenue, getAllLeagues, getVenuesByLeague, getLeagueInfo, getMiLBV
 import { getTeamIdFromVenueId, getVenueIdFromStringId } from '../data/milbTeamMapping';
 import { preferencesStorage } from '../utils/preferences';
 import { formatGameTimeInStadiumTZ } from '../utils/dateTimeUtils';
-import { stadiumLocalToUTC } from '../utils/stadiumTime';
+import { formatStadiumLocal, stadiumLocalToUTC, utcToStadiumLocal } from '../utils/stadiumTime';
 import { useHapticFeedback } from '../hooks/useHapticFeedback';
 import { useTranslation } from '../i18n/i18nContext';
 import { GameSelectorSkeleton } from './SkeletonScreens';
@@ -29,7 +29,11 @@ interface UnifiedGameSelectorProps {
 /** A game as the list and the box show it. */
 const gameOption = (game: MLBGame | MiLBGame | NFLGame, timezone = 'America/New_York') => {
   const gameDate = new Date(game.gameDate);
-  const formattedTime = formatGameTimeInStadiumTZ(gameDate, timezone, true);
+  // Its date is right, but its time is a placeholder.
+  const timeTBD = 'teams' in game && game.status.startTimeTBD;
+  const formattedTime = timeTBD
+    ? `${formatStadiumLocal(gameDate, timezone, 'MMM d')}, time TBD`
+    : formatGameTimeInStadiumTZ(gameDate, timezone, true);
 
   // Handle different game structures
   let label: string;
@@ -46,7 +50,15 @@ const gameOption = (game: MLBGame | MiLBGame | NFLGame, timezone = 'America/New_
     gameId = nflGame.gameId;
   }
 
-  return { value: gameId, label, game };
+  return { value: gameId, label, game, isDisabled: timeTBD };
+};
+
+/**
+ * react-select scrolls to the chosen option when it updates, but the portal puts
+ * the list on the page after that. So update it once more, with the list there.
+ */
+const scrollToChosen = (select: React.RefObject<SelectInstance<any, any, any>>) => {
+  requestAnimationFrame(() => select.current?.forceUpdate());
 };
 
 export const UnifiedGameSelector: React.FC<UnifiedGameSelectorProps> = ({
@@ -77,6 +89,8 @@ export const UnifiedGameSelector: React.FC<UnifiedGameSelectorProps> = ({
     return preferencesStorage.get('lastUsedTime', format(new Date(), 'HH:mm'));
   });
   const [error, setError] = useState<string | null>(null);
+  const venueSelect = useRef<SelectInstance<any, any, any>>(null);
+  const gameSelect = useRef<SelectInstance<any, any, any>>(null);
   
   // Check if we're in mobile context
   useEffect(() => {
@@ -102,20 +116,19 @@ export const UnifiedGameSelector: React.FC<UnifiedGameSelectorProps> = ({
 
   // Get all leagues and venues
   const leagues = getAllLeagues();
-  const venuesInLeague = selectedLeague === 'MiLB' ? getMiLBVenuesByLevel(selectedMiLBLevel) : getVenuesByLeague(selectedLeague);
   const leagueInfo = getLeagueInfo(selectedLeague);
   const milbLevels = getMiLBLevels();
   
-  // Sort venues alphabetically
-  const sortedVenues = [...venuesInLeague].sort((a, b) => {
-    return a.name.localeCompare(b.name);
-  });
-
-  const venueOptions = sortedVenues.map(venue => ({
-    value: venue.id,
-    label: `${venue.name} - ${venue.team}`,
-    venue: venue
-  }));
+  // Alphabetical. Built once: react-select loses its place in an open list whose
+  // options are new objects.
+  const venueOptions = React.useMemo(() => {
+    const venues = selectedLeague === 'MiLB' ? getMiLBVenuesByLevel(selectedMiLBLevel) : getVenuesByLeague(selectedLeague);
+    return [...venues].sort((a, b) => a.name.localeCompare(b.name)).map(venue => ({
+      value: venue.id,
+      label: `${venue.name} - ${venue.team}`,
+      venue: venue
+    }));
+  }, [selectedLeague, selectedMiLBLevel]);
 
   const leagueOptions = leagues.map(league => {
     const info = getLeagueInfo(league);
@@ -342,7 +355,7 @@ export const UnifiedGameSelector: React.FC<UnifiedGameSelectorProps> = ({
   const gameOptions = React.useMemo(() => {
     return groupOptionsByMonth(
       games,
-      game => new Date(game.gameDate),
+      game => utcToStadiumLocal(new Date(game.gameDate), selectedVenue?.timezone ?? 'America/New_York'),
       game => gameOption(game, selectedVenue?.timezone),
     );
   }, [games, selectedVenue?.timezone]);
@@ -494,6 +507,8 @@ export const UnifiedGameSelector: React.FC<UnifiedGameSelectorProps> = ({
           {selectedLeague === 'MLB' ? t('gameSelector.stadium') : 'Venue'}:
         </label>
         <Select
+          ref={venueSelect}
+          onMenuOpen={() => scrollToChosen(venueSelect)}
           inputId="venue-select"
           options={venueOptions}
           value={venueOptions.find(opt => opt.venue.id === selectedVenue?.id) || null}
@@ -546,10 +561,14 @@ export const UnifiedGameSelector: React.FC<UnifiedGameSelectorProps> = ({
                         </div>
                       )}
                       <Select
+                        ref={gameSelect}
+                        onMenuOpen={() => scrollToChosen(gameSelect)}
                         inputId="game-select"
                         value={chosenOption}
+                        isOptionSelected={(option) => option === chosenOption}
                         options={gameOptions}
                         onChange={(option) => {
+                          if (option === chosenOption) return; // kept, not chosen again
                           if (option?.game) {
                             const gameDate = new Date(option.game.gameDate);
                             onGameSelect(option.game, gameDate);

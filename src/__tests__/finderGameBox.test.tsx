@@ -17,7 +17,7 @@ const football: any = {
   gameId: '777', gameDate: '2025-12-07T18:00:00Z', awayTeam: { name: 'Visitors' }, homeTeam: { name: 'Hosts' },
 };
 const baseball: any = {
-  gamePk: 777, gameDate: '2025-07-20T17:05:00Z', teams: { away: { team: { name: 'Visitors' } }, home: { team: { name: 'Hosts' } } },
+  gamePk: 777, gameDate: '2025-07-20T17:05:00Z', status: {}, teams: { away: { team: { name: 'Visitors' } }, home: { team: { name: 'Hosts' } } },
 };
 
 // Earlier in the list, so a list that opens at its start shows up.
@@ -59,6 +59,8 @@ const choose = (input: string, name: RegExp) => {
   fireEvent.click(screen.getByRole('option', { name }));
 };
 const chooseStadium = (id: string) => choose('#venue-select', new RegExp(`^${getUnifiedVenueById(id)!.name} -`));
+/** The games the open list marks as chosen. */
+const marked = () => screen.queryAllByRole('option', { selected: true }).map((option) => option.textContent);
 /** Opens the game list and leaves it with Tab, which picks the game it opened on. */
 const openAndLeaveList = () => {
   const list = document.querySelector('#game-select')!;
@@ -105,6 +107,18 @@ describe.each([['desktop', 1280], ['mobile', 390]])('the game box and the answer
       expect(shown()).toEqual(BOTH);
     });
 
+    it.each([['game', '#game-select'], ['stadium', '#venue-select']])('the %s list opens scrolled to what was chosen', async (_list, input) => {
+      // A list that shows 300 px, with every option below that.
+      jest.spyOn(Element.prototype, 'getBoundingClientRect').mockImplementation(function (this: Element) {
+        return { bottom: this.getAttribute('role') === 'option' ? 1000 : 300 } as DOMRect;
+      });
+      jest.spyOn(Element.prototype, 'scrollHeight', 'get').mockReturnValue(2000);
+      jest.spyOn(HTMLElement.prototype, 'offsetTop', 'get').mockReturnValue(900);
+      fireEvent.keyDown(document.querySelector(input)!, { key: 'ArrowDown' });
+      // At once: the weather, a second on, redraws the finder, which scrolls it too.
+      await waitFor(() => expect(screen.getByRole('listbox').scrollTop).toBe(900), { timeout: 200 });
+    });
+
     it('stay when the list is opened again after Custom Time, and left', async () => {
       tab(/custom time/i);
       tab(/real games/i);
@@ -120,6 +134,14 @@ describe.each([['desktop', 1280], ['mobile', 390]])('the game box and the answer
       tab(/real games/i);
       await listLoaded();
       expect(shown()).toEqual(picked);
+      // Nor is the other time marked as chosen.
+      fireEvent.keyDown(document.querySelector('#game-select')!, { key: 'ArrowDown' });
+      expect(marked()).toEqual([]);
+    });
+
+    it('match the one game the list marks', () => {
+      fireEvent.keyDown(document.querySelector('#game-select')!, { key: 'ArrowDown' });
+      expect(marked()).toEqual([box()]);
     });
 
     it('change when a custom time is applied, and back with the game', async () => {
