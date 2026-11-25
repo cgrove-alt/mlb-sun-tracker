@@ -7400,6 +7400,88 @@ at the left, not centered over the text (176 px off at 1,280). Older, and anothe
 Tailwind makes every `svg` a block, and centering text doesn't move a block. *Fix:* one
 line in `EmptyStates.css`.
 
+## §41 Text that doesn't line up with its headings (plan, 2026-11-25)
+
+Asked: find why the guide's text and lists don't start where their headings do on
+wide screens. Found while checking PR #116 (§40, still open). Branch
+`fix/guide-text-alignment`, from `main` at 03790f2d4. No code changed yet: the
+"after" numbers come from changing the rules in the browser.
+
+### Findings
+
+**1. Each paragraph and list item is its own centered column.** Two rules cap them
+at 65 characters and center what's left over; headings have no cap, so they stay at
+the left: `app/globals.css:1314` (`.stadium-guide p, .stadium-guide li`) and
+`StadiumGuide.css:266` (`.stadium-guide section > p`, `ul`, `ol`).
+- At 1,280 px on `/stadium/buffalo-bisons`: headings at 81 px, paragraphs at 296,
+  list items at 306. The same on `/stadium/lambeau-field` and at 1,920 px.
+- It's on the 152 MiLB and NFL pages. `/stadium/cubs` isn't reached: MLB pages don't
+  use this guide, and their text is capped at 65 characters and starts at its heading.
+- *Was it intended?* Centering was: both came with a1892eacd (2025-09-12), with "Wider
+  containers should have centered text blocks". The guide was then to be a centered
+  960 px column, but its other rule makes it 1,200 px, so the text is centered in
+  a card while its headings aren't. At 960 px they wouldn't line up either.
+
+**2. The same commit's block for `/guide/*`, which reaches `/faq` too** (`globals.css:1322`,
+from 1,024 px up). Centering was intended here too, but what it does is:
+- `/guide/how-to-find-shaded-seats`: the sentence under the title is 52 px right of it;
+  8 on `avoid-sun-baseball-games`, 3 on `best-shaded-seats-mlb`.
+- `/faq`: every link in "Quick Navigation" and "Related Resources" is centered by
+  itself, so they start at different places (362, 390, 396 px; 435, 451, 453).
+- Its 65-character cap changes nothing: every `p` has one (`typography-system.css:122`)
+  and no list item there is that wide. `.stadium-guide-wrapper` is on no page.
+- The one place it helps is the box at the bottom of `/guide`, whose text is meant to be
+  centered. Without it that's 4 px off.
+
+**3. On phones, another cause.** `StadiumGuide.css:309` adds 16 px of padding to a
+paragraph directly in a section, so the Overview and Neighborhood text start at 89 px
+under headings at 73, and the answer box's at 80 where its box has 64. Other
+paragraphs line up. Same commit. `/guide/*`, `/faq` and `/stadium/cubs` line up at
+phone size.
+
+**4. The error page's message is 75 px left of center** (565 px, title 640, in
+`/seats-shade-finder` with the page's own markup put in by hand). `.error-message` in
+`GameSelector.css:304` is for the picker's error row, and makes the message a row too.
+- *The one-line fix isn't enough:* limited to the picker, that rule stops covering a
+  third one, `app-utilities.css:724`, and the message is gray on a pink strip (tried).
+- *Cause:* two components use one class name. Giving the error page its own name puts
+  the message at 640 px with no strip (tried).
+
+### Plan
+
+One commit each. Nothing to test in jsdom, which doesn't lay pages out; each is
+measured in the browser before and after, at 1,280 and 375 px.
+
+- [ ] A1. *Finding 1.* `globals.css`: drop the two margin lines of `.stadium-guide p,
+      .stadium-guide li`; the cap stays. `StadiumGuide.css:266`: delete the rule (the one
+      above caps paragraphs, and no `ul` or `ol` is directly in a section).
+      Tried: paragraphs at 81 px, list items at 101 (their list's own 20 px indent, as
+      on MLB pages); nothing changes width or height; 800 px doesn't change.
+- [ ] A2. *Finding 2.* `globals.css`: delete the 1,024 px block, and give `.guide-cta p`
+      `margin: 0 auto 2rem`. Tried: the sentences and links line up; `/guide` and phones
+      don't change.
+- [ ] A3. *Finding 3.* `StadiumGuide.css:309`: take the three `.stadium-guide section >`
+      lines out of the phone rule. Tried: 89 to 73 px and 80 to 64; the page is 102 px
+      shorter.
+- [ ] A4, if you want it. *Finding 4.* `ErrorBoundary.tsx` and `ErrorBoundary.css`: rename
+      `error-message` to `error-boundary-message` (three lines). Changes that come with
+      it: the message is gray and 21 px, as its file says, not red and 16 (contrast 4.4,
+      was 3.5; AA asks 4.5), and the picker's error row loses a 24 px bottom margin
+      that came from the error page.
+- [ ] A5. Checks: all tests, types, eslint, build (in a scratch copy); Sahlen, Lambeau,
+      Wrigley, the four guide pages and the FAQ at both sizes. Then the review.
+
+**The other choice for A1:** move the headings to the text instead, by capping each
+section's whole column. The weather, tips and parking grids use the full width, so
+they'd no longer match, and MLB pages already have text at the left.
+
+**Found on the way, not planned:** most lists have no bullets (14 of Sahlen Field's 16, and
+the guide pages'), as Tailwind's base styles take them off; the CSS still colors them
+(`section li::marker`). Each list is only an indent.
+
+**When PR #116 merges:** both add a section here, so one of the two will need this file
+merged by hand. They don't touch the same CSS lines.
+
 ---
 ---
 
