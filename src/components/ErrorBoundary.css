@@ -59,7 +59,7 @@
   font-weight: var(--font-weight-semibold);
 }
 
-.error-message {
+.error-boundary-message {
   color: var(--color-gray-600);
   font-size: var(--font-size-lg);
   line-height: 1.6;
@@ -178,7 +178,7 @@
     font-size: 1.5rem;
   }
   
-  .error-message {
+  .error-boundary-message {
     font-size: 1rem;
   }
   
