@@ -408,6 +408,10 @@ button, a, .clickable {
   font-weight: 500;
 }
 
+.sun-position svg {
+  display: inline;
+}
+
 .webgl-error {
   background: #ffebee;
   color: #c62828;

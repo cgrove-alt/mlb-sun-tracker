@@ -12,6 +12,8 @@
 }
 
 .empty-state-icon {
+  display: flex;
+  justify-content: center;
   font-size: 3rem;
   margin-bottom: 16px;
   opacity: 0.8;
