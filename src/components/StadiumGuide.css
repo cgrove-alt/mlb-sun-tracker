@@ -296,10 +296,7 @@ div.guide-page.stadium-guide > * {
   .shade-evolution,
   .renovations,
   .fun-facts,
-  .tip,
-  .stadium-guide section > p,
-  .stadium-guide section > ul,
-  .stadium-guide section > ol {
+  .tip {
     max-width: 100%;
     padding-left: 1rem;
     padding-right: 1rem;
