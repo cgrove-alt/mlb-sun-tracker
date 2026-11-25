@@ -263,6 +263,7 @@
 /* Lists */
 .post-content ul,
 .post-content ol {
+  list-style: revert; /* Tailwind's base takes the bullets and numbers off */
   margin-bottom: 1.5rem;
   padding-left: 2rem;
 }
