@@ -7403,9 +7403,9 @@ line in `EmptyStates.css`.
 ## §41 Text that doesn't line up with its headings (plan, 2026-11-25)
 
 Asked: find why the guide's text and lists don't start where their headings do on
-wide screens. Found while checking PR #116 (§40, still open). Branch
-`fix/guide-text-alignment`, from `main` at 03790f2d4. No code changed yet: the
-"after" numbers come from changing the rules in the browser.
+wide screens, then "All four (A1–A4)". Found while checking PR #116 (§40, still open).
+Branch `fix/guide-text-alignment`, from `main` at 03790f2d4. The numbers marked
+"tried" come from changing the rules in the browser.
 
 ### Findings
 
@@ -7452,23 +7452,23 @@ phone size.
 One commit each. Nothing to test in jsdom, which doesn't lay pages out; each is
 measured in the browser before and after, at 1,280 and 375 px.
 
-- [ ] A1. *Finding 1.* `globals.css`: drop the two margin lines of `.stadium-guide p,
+- [x] A1 (88470ee89). *Finding 1.* `globals.css`: drop the two margin lines of `.stadium-guide p,
       .stadium-guide li`; the cap stays. `StadiumGuide.css:266`: delete the rule (the one
       above caps paragraphs, and no `ul` or `ol` is directly in a section).
       Tried: paragraphs at 81 px, list items at 101 (their list's own 20 px indent, as
       on MLB pages); nothing changes width or height; 800 px doesn't change.
-- [ ] A2. *Finding 2.* `globals.css`: delete the 1,024 px block, and give `.guide-cta p`
+- [x] A2 (0f9708411). *Finding 2.* `globals.css`: delete the 1,024 px block, and give `.guide-cta p`
       `margin: 0 auto 2rem`. Tried: the sentences and links line up; `/guide` and phones
       don't change.
-- [ ] A3. *Finding 3.* `StadiumGuide.css:309`: take the three `.stadium-guide section >`
+- [x] A3 (71e25cc6c). *Finding 3.* `StadiumGuide.css:309`: take the three `.stadium-guide section >`
       lines out of the phone rule. Tried: 89 to 73 px and 80 to 64; the page is 102 px
       shorter.
-- [ ] A4, if you want it. *Finding 4.* `ErrorBoundary.tsx` and `ErrorBoundary.css`: rename
+- [x] A4 (755a13be5). *Finding 4.* `ErrorBoundary.tsx` and `ErrorBoundary.css`: rename
       `error-message` to `error-boundary-message` (three lines). Changes that come with
       it: the message is gray and 21 px, as its file says, not red and 16 (contrast 4.4,
       was 3.5; AA asks 4.5), and the picker's error row loses a 24 px bottom margin
       that came from the error page.
-- [ ] A5. Checks: all tests, types, eslint, build (in a scratch copy); Sahlen, Lambeau,
+- [x] A5. Checks: all tests, types, eslint, build (in a scratch copy); Sahlen, Lambeau,
       Wrigley, the four guide pages and the FAQ at both sizes. Then the review.
 
 **The other choice for A1:** move the headings to the text instead, by capping each
@@ -7480,7 +7480,54 @@ the guide pages'), as Tailwind's base styles take them off; the CSS still colors
 (`section li::marker`). Each list is only an indent.
 
 **When PR #116 merges:** both add a section here, so one of the two will need this file
-merged by hand. They don't touch the same CSS lines.
+merged by hand. They don't touch the same CSS lines (a trial merge conflicts in this
+file alone).
+
+### §41 Review (2026-11-25)
+
+**What changed:** four commits, one for each: 5 lines added and 29 removed, all CSS but
+one class name.
+
+**What a fan sees:**
+- On the 152 MiLB and NFL pages, text starts under its heading on wide screens, and on
+  phones the Overview, Neighborhood and answer text do too.
+- On the guide pages the opening sentence is under its title, and on the FAQ the links
+  of a list start at one place.
+- The error page's message is centered, gray, and larger on a wide screen.
+
+**Checks:**
+- *All 152 guides*, each one's own markup put in the page and measured, before and after:
+
+  | Width | Paragraphs off their heading | List items from their heading | Guides that changed height |
+  |---|---|---|---|
+  | 1,280 | 1,218 of 3,352, by 191 to 256 px; now none | 225 or 203 px; now 20 or 24 | none |
+  | 800 | 2, by 36 px; now none | 20 or 24 px, as before | none |
+  | 375 | 300, by 16 px; now none | 16 or 24 px, as before | none taller; up to 179 px shorter |
+
+  Not counted as off, and not changed in how they're drawn: 73 parking tips in a bordered
+  box, and the answer box, whose text is now 64 px from the edge at 375 (was 80) in a box
+  that starts at 40. At 1,920 and 700 px, checked after only, it's the same. No page
+  scrolls sideways at any width.
+- *Guide pages and FAQ:* at 1,280 the sentences that were 52, 8 and 3 px off are at 0; the
+  FAQ's links start at 348 (its second column at 605) and 316 px, 24 px in; the centered
+  boxes are still centered, `/guide`'s among them. At 375 nothing moved.
+- *`/stadium/cubs`:* as before at both sizes.
+- *A real error in the finder*, made by giving it a broken stadium: the message's center
+  goes from 551 px to 640, its title's, at 1,280, and is its title's at 375.
+- *The picker's error row*, with MLB's schedule blocked: same color, size and place at
+  both sizes; 24 px less space under it, as the plan says, and at 1,280 its line is 24 px
+  high, not 25.6.
+- *Tests:* 4,240 of 4,240 in 107 suites; none new, as jsdom doesn't lay pages out. *Types,
+  eslint (the one file of code), build (scratch copy):* pass. The built CSS has the new
+  rules and none of the old. Console: of 25 errors the last 10 were read, and all are the
+  ones made for these checks.
+- *Not tested:* Safari and Firefox, a real phone.
+
+**The plan's 75 px isn't the only number:** it's for the trial's sentence. The message sat at
+the left of its row, so a shorter one is further off: 89 px for the real error's.
+
+**Left as is:** the message's contrast, 4.4 where AA asks 4.5 (3.5 before); the lists'
+missing bullets; and, in `StadiumGuide.css`, rules for classes no page has.
 
 ---
 ---
