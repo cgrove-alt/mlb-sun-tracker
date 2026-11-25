@@ -7752,16 +7752,16 @@ has its own gaps. It's the only grid with the class.
 One commit each. No unit tests: jsdom doesn't lay pages out. Both were tried, one at a time
 and together, with injected styles.
 
-- [ ] S1. `globals.css`, after `section li`: `[class*="space-y-"] > li:first-child
+- [x] S1 (57273bc7e). `globals.css`, after `section li`: `[class*="space-y-"] > li:first-child
       { margin-bottom: 0; }`, so the first item drops its own margin as the rest do. In the
       trial the lists are even at what their class says: 4 px on the league and legal
       pages (the NFL page and all the legal ones but `/disclaimer`), 6 in the footer. Pages are 2 to 14 px shorter, and the lists that were even
       don't change. It names the first item because without that it ties with `.prose li`,
       which comes later, and the legal pages stay uneven.
-- [ ] S2. `app/league/[leagueId]/page.tsx`: `stack` comes off the grid. In the trial both
+- [x] S2 (5db50e941). `app/league/[leagueId]/page.tsx`: `stack` comes off the grid. In the trial both
       headings are level (1,280 and 1,920 px), and on phones the second list moves up 8 px,
       with 60 between the first list's last line and the next heading.
-- [ ] S3. Checks: all tests, types, eslint, build; every list on every type of page before
+- [x] S3. Checks: all tests, types, eslint, build; every list on every type of page before
       and after, at both sizes. Then the review.
 
 **The smaller patch:** `space-y-1` off the two lists of the league page, in place of S1.
@@ -7770,6 +7770,32 @@ Their gaps would be the site's own 8 px, and the legal pages and the footer stay
 **Not planned:** the two lists' text is not quite one color (rgb(55, 65, 81) and
 rgb(51, 51, 51)): one sets its color on the items, the other on the list, where
 `section li` overrides it. Barely visible, and another cause.
+
+### §43 Review (2026-11-25)
+
+**What changed:** two commits, after "Build both": one rule in `globals.css` (four lines, one
+blank) and one class off the league page's grid.
+
+**What a fan sees:** the items of "Shade Tips" on the three league pages are evenly spaced, and
+its two lists start level on a wide screen. The lists at the top of four legal pages, one on
+`/attributions` and the footer's three are even too.
+
+**Checks:**
+- *Every page, before, after S1 and after both,* at 1,280 and 375 px, in headless Chromium on
+  the dev server: all 182 stadium pages and 26 others, 6,859 lists in 416 page views. Lists
+  with uneven gaps: 1,270 before (the plan's 14; the footer's three are on every page), 0
+  after. The other 5,589 didn't change. Nothing scrolls sideways.
+- *The league pages:* gaps of 4 px throughout. The headings are level at 1,280 (the second was
+  15 px lower). On phones the second list moves up 8 px from S2 and 4 from S1. Also looked at
+  in the app's browser, the NFL page at 1,280 and the MiLB page at 375: no console errors.
+- *Page heights:* at 1,280 every page is 2 px shorter, and at 375, 6: the footer's. The five
+  legal pages above are 6 and 10 shorter, and the league pages 21 or 22 and 22.
+- *One odd number, explained:* `/privacy-rights` was 267 px taller in one run. It lists what the
+  visitor's browser has stored, and one stored item adds 267 px with the rule on or off. My
+  pages shared a browser profile. The rule's own effect there is the footer's 2 px.
+- *Tests:* 4,240 of 4,240 in 107 suites, none new. *Types, eslint (the page) and build* pass,
+  and the built stylesheet has the rule.
+- *Not tested:* Safari and Firefox, a real phone.
 
 ---
 ---
