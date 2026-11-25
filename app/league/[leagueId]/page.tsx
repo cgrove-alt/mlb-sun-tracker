@@ -198,7 +198,7 @@ export default async function LeaguePage({ params }: LeaguePageProps) {
                 <ul className="space-y-1">
                   {league.typicalGameTimes.map((time: string) => (
                     <li key={time} className="text-ink-700">
-                      • {to12Hour(time)} - {
+                      {to12Hour(time)} - {
                         parseInt(time.split(':')[0]) < 15 ? 'Day game (more sun exposure)' :
                         parseInt(time.split(':')[0]) < 18 ? 'Afternoon (moderate shade)' :
                         'Evening (better shade coverage)'
@@ -211,11 +211,11 @@ export default async function LeaguePage({ params }: LeaguePageProps) {
               <div>
                 <h3 className="text-lg font-semibold mb-2">Season Considerations</h3>
                 <ul className="space-y-1 text-ink-700">
-                  <li>• Early season ({league.season.start}): Lower sun angle</li>
-                  <li>• Mid-season: Peak sun exposure risk</li>
-                  <li>• Late season ({league.season.end}): Better natural shade</li>
+                  <li>Early season ({league.season.start}): Lower sun angle</li>
+                  <li>Mid-season: Peak sun exposure risk</li>
+                  <li>Late season ({league.season.end}): Better natural shade</li>
                   {league.sport === 'football' && (
-                    <li>• Cold weather games: Sun can be beneficial</li>
+                    <li>Cold weather games: Sun can be beneficial</li>
                   )}
                 </ul>
               </div>

@@ -1931,6 +1931,10 @@ div.guide-page.stadium-guide > * {
   margin-bottom: 0.5rem;
 }
 
+.schedule ul {
+  list-style: none; /* each line has a clock */
+}
+
 .schedule svg {
   display: inline;
 }

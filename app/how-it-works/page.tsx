@@ -74,7 +74,7 @@ export default function HowItWorksPage() {
       </p>
 
       <h2>Accuracy &amp; limitations (the honest part)</h2>
-      <ul>
+      <ul className="list-disc pl-5">
         <li>
           At retractable-roof parks the map shows the roof <strong>open</strong>. With it closed,
           every seat is shaded, and whether it&apos;s open is up to the team on the day.
