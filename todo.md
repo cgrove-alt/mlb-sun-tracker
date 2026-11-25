@@ -7612,6 +7612,12 @@ the left of its row, so a shorter one is further off: 89 px for the real error's
 **Left as is:** the message's contrast, 4.4 where AA asks 4.5 (3.5 before); the lists'
 missing bullets; and, in `StadiumGuide.css`, rules for classes no page has.
 
+**PR #116 (§40) merged first:** `main` at 3bd70b12f is merged in here, and this file was the
+only conflict; both sections are whole. Checked on the merged tree: 4,240 of 4,240 tests
+in 107 suites, types and build. At Lambeau and Sahlen Field the clocks are on their
+text's line and the lists and text where §41 has them, and the error page's icon and
+message are both centered (640 at 1,280 px, 187.5 at phone size).
+
 ---
 ---
 
