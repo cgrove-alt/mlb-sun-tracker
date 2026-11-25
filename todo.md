@@ -7400,6 +7400,61 @@ at the left, not centered over the text (176 px off at 1,280). Older, and anothe
 Tailwind makes every `svg` a block, and centering text doesn't move a block. *Fix:* one
 line in `EmptyStates.css`.
 
+**Merged and live:** PR #115 as 03790f2d4, all four checks passed. Production deployment
+8062629638, and nine pages answer as build 03790f2d48c4. In the live scripts the new
+sentence is there for both finders, with the box's three strings and the new CSS rule,
+and the old sentence and rule are gone. `/seats-shade-finder` has W3's wording.
+
+## §40 The off-center ball icon (plan, 2026-11-25)
+
+Asked: "fix the off-center ball icon", then "Build all four". Branch
+`fix/empty-state-icon`, from `main` at 03790f2d4 (PR #115).
+
+### Findings
+
+**The cause:** Tailwind's base styles (added 2025-09-02) make every `svg` a block. The
+finder's icons are older and were placed as text is: centered with `text-align`, or in a
+line of text. Neither works on a block. It's the only rule on the page that sets the
+icon's `display`. I looked for the same thing on the home page, the finder, three stadium
+pages, the stadium list, a league page, the blog and a post. It shows in four places:
+
+**1. The panel's icon, in both finders.** 176 px left of its text at 1,280 px, 112 px at
+phone size. Both the ball ("Select a Game or Time") and the stadium ("Select a Stadium").
+
+**2. The error page's icon,** placed the same way: 185 px off (measured on the page's
+markup with the site's styles; no error was forced).
+
+**3. "Sun Information" on desktop:** the sun or moon is on a line of its own above
+"Sun is at medium height at 55.2° elevation".
+
+**4. "Typical Game Day Schedule" on stadium guides:** each clock is on a line of its own
+above "Gates Open: ...".
+
+### Plan
+
+CSS only; one commit each. No unit tests: jsdom doesn't lay pages out, so each is
+measured in a browser before and after. All but the error page's were tried with
+injected styles.
+
+- [ ] I1 (asked). `EmptyStates.css`: `.empty-state-icon` gets `display: flex;
+      justify-content: center`. Tried: centered to the pixel at 1,280 (464 to 640) and
+      at 375 (75 to 187.5), and the panel keeps its height.
+- [ ] I2. `ErrorBoundary.css`: `.error-icon` gets the same two lines.
+- [ ] I3. `globals.css`: `.sun-position svg { display: inline; }`, and `StadiumGuide.css`:
+      `.schedule svg { display: inline; }`. Tried: the icon is on its text's line, and the
+      line is 26 px tall, not 46 and 42.
+- [ ] I4. Checks: all tests, types, build; the four places in a browser at both sizes.
+      Then the review.
+
+**The smaller patch:** I1 alone, which is all that was asked.
+
+**Not planned:** undoing Tailwind's rule for every `svg`. It's one line, but it reaches
+every icon on the site, and most are placed right for a block.
+
+**Also seen, another cause:** on stadium guides, paragraphs and list items are centered as
+65-character columns under headings at the left (`.stadium-guide p, .stadium-guide li` in
+`globals.css`), so at 1,280 px the text starts about 220 px right of its heading.
+
 ---
 ---
 
