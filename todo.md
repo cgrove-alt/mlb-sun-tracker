@@ -7618,6 +7618,69 @@ in 107 suites, types and build. At Lambeau and Sahlen Field the clocks are on th
 text's line and the lists and text where §41 has them, and the error page's icon and
 message are both centered (640 at 1,280 px, 187.5 at phone size).
 
+**Merged and live:** PR #117 as ad6825ed8, all four checks passed. Production deployment
+8066485028, with no manual promote, and nine pages answer as build ad6825ed8b31. The live
+styles have A1 to A4's rules and none of the old ones, and the finder's script has the
+new class name.
+
+## §42 The missing list bullets (plan, 2026-11-25)
+
+Asked: "restore the missing list bullets", then "All three". Branch `fix/list-bullets`,
+from `main` at ad6825ed8 (PR #117).
+
+### Findings
+
+**The cause:** Tailwind's base styles (abe2e76f2, 2025-09-02) set `list-style: none` on every
+`ul` and `ol`. The site's own rules, from 2025-08-07, indent the lists and color their
+markers (`section ul, section ol` and `section li::marker` in `globals.css`) and left the
+bullets and numbers to the browser. So the indent and the color are still there, with
+nothing in them.
+
+**Where:** I checked every list on every type of page and on all 182 stadium pages. These
+have no marker, and no rule of ours takes it off:
+
+| Pages | Lists |
+|---|---|
+| Stadium guides (150 of the 152 MiLB and NFL pages) | 1,914, with 6,097 items |
+| MLB pages, "Recommended Gear" | 30 |
+| The three `/guide` articles | 27, two of them numbered |
+| Eight legal pages | 77, four of them in closed tabs of `/privacy-rights` |
+| League pages, "Shade Tips" | 6 |
+| Two blog posts (Yankee Stadium and Fenway Park) | 4 |
+| `/how-it-works` | 1, which has no indent either |
+
+**Meant to be plain, so left so:** menus, cards and rows of links on the home page, the
+FAQ, the MLB pages and the blog (each has its own `none`); the footer's links, which have
+only Tailwind's; and the 150 game day schedules, whose clocks stand where bullets would.
+**Already right:** the 190 lists of club perks, and the finder's four steps, which have
+their own numbers.
+
+**League pages:** their items start with a typed "•", so they'd have two.
+
+### Plan
+
+One commit each. No unit tests for L1's and L2's rules: jsdom doesn't lay pages out.
+All were tried with injected styles, on 13 pages at 1,280 px and 11 at 375: no text moved,
+no list or page changed height and nothing scrolls sideways. Only L3's text moves, 20 px
+right. The typed bullets weren't taken off in the trial, and the league pages' are
+doubled in it.
+
+- [ ] L1. `globals.css`: `section ul, section ol` gets `list-style: revert`, which gives back the
+      browser's own bullets and numbers. With it, so that nothing is doubled:
+      `.schedule ul { list-style: none; }` in `StadiumGuide.css`, and the typed "•" comes off
+      five lines of `app/league/[leagueId]/page.tsx`. Lists with a `none` of their own keep
+      it, as their rules are stronger.
+- [ ] L2. `blog-post.css`: `.post-content ul, .post-content ol` gets the same line. A post's
+      text isn't in a `section`.
+- [ ] L3. `/how-it-works`: its list gets `list-disc pl-5`. It isn't in a `section` either.
+- [ ] L4. Checks: all tests, types, eslint, build; every page above in a browser before and
+      after at both sizes, and all 152 guides. Then the review.
+
+**The smaller patch:** L1 alone. It's 2,054 of the 2,059 lists.
+
+**Not planned:** undoing Tailwind's rule for every list. The footer's links and others with
+no rule of their own would get bullets.
+
 ---
 ---
 
