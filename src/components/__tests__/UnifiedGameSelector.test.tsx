@@ -94,10 +94,10 @@ const LEAGUES = {
   },
 };
 
-const Picker = ({ ids }: { ids: string[] }) => {
+const Picker = ({ ids, language }: { ids: string[]; language?: 'en' | 'es' | 'ja' }) => {
   const [venue, setVenue] = useState(getUnifiedVenueById(ids[0])!);
   return (
-    <I18nProvider>
+    <I18nProvider initialLanguage={language}>
       <button onClick={() => setVenue(getUnifiedVenueById(ids[1])!)}>the other stadium</button>
       <UnifiedGameSelector selectedVenue={venue} selectedGame={null} onGameSelect={() => {}} onVenueChange={() => {}} />
     </I18nProvider>
@@ -267,6 +267,57 @@ it.each([
   expect(onGameSelect).not.toHaveBeenCalled();
   fireEvent.click(screen.getByRole('option', { name: /Mets/ }));
   expect(onGameSelect.mock.calls).toEqual([[games[1], new Date(games[1].gameDate)]]);
+});
+
+describe.each([
+  ['MLB', 'yankees'],
+  ['MiLB', 'buffalo-bisons'],
+] as const)('%s: the box', (league, id) => {
+  const TIMED = baseballGame('Mets', 'Hosts');
+  const TBD = { ...baseballGame('Rays', 'Hosts'), status: { startTimeTBD: true } };
+  const HINT = 'Try selecting "Custom Time" to analyze any date and time.';
+  const NONE_FOR_STADIUM = 'No upcoming home games found for this stadium.';
+
+  const list = async (games: unknown[], language?: 'en' | 'es' | 'ja') => {
+    LEAGUES[league].request(() => Promise.resolve());
+    jest.spyOn(mlbApi, 'getHomeGamesForStadium').mockReturnValue(games as any);
+    jest.spyOn(milbApi, 'getHomeGamesForVenue').mockReturnValue(games as any);
+    render(<Picker ids={[id, id]} language={language} />);
+    await wait(900);
+  };
+
+  it.each([
+    ['en', 'No start times set yet'],
+    ['es', 'Aún no hay horas de inicio'],
+    ['ja', '試合開始時間は未定です'],
+  ] as const)('says so when no listed game has a start time (%s)', async (language, text) => {
+    await list([TBD, { ...TBD, gamePk: 'another' }], language);
+    expect(document.querySelector('.game-select')!.textContent).toContain(text);
+  });
+
+  it('then offers Custom Time, and still lists the games', async () => {
+    await list([TBD, { ...TBD, gamePk: 'another' }]);
+    expect(screen.queryByText('Choose a game...')).toBeNull();
+    expect(screen.queryByText(NONE_FOR_STADIUM)).toBeNull();
+    expect(screen.getByText(/Found 2 upcoming home games/)).toBeTruthy();
+    openList();
+    expect(screen.getAllByRole('option', { name: /time TBD/ })).toHaveLength(2);
+    fireEvent.click(screen.getByText(HINT).parentElement!.querySelector('button')!);
+    expect(screen.getByRole('tabpanel').id).toBe('custom-panel');
+  });
+
+  it('asks for a game when one has a start time', async () => {
+    await list([TBD, TIMED]);
+    expect(screen.getByText('Choose a game...')).toBeTruthy();
+    expect(screen.queryByText(HINT)).toBeNull();
+  });
+
+  it('says none are listed when none are', async () => {
+    await list([]);
+    expect(screen.getByText('No upcoming games found')).toBeTruthy();
+    expect(screen.getByText(NONE_FOR_STADIUM)).toBeTruthy();
+    expect(screen.getByText(HINT)).toBeTruthy();
+  });
 });
 
 it('the open stadium list keeps its place when the finder redraws', async () => {

@@ -99,6 +99,7 @@
     "loadingGames": "Cargando juegos...",
     "chooseGame": "Elige un juego...",
     "noGamesFound": "No se encontraron próximos juegos",
+    "noStartTimes": "Aún no hay horas de inicio",
     "selectGame": "Seleccionar próximo juego",
     "noGamesForStadium": "No se encontraron próximos juegos en casa para este estadio.",
     "tryCustomTime": "Intenta seleccionar \"Hora Personalizada\" para analizar cualquier fecha y hora.",

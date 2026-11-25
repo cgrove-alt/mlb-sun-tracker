@@ -99,6 +99,7 @@
     "loadingGames": "Loading games...",
     "chooseGame": "Choose a game...",
     "noGamesFound": "No upcoming games found",
+    "noStartTimes": "No start times set yet",
     "selectGame": "Select upcoming game",
     "noGamesForStadium": "No upcoming home games found for this stadium.",
     "tryCustomTime": "Try selecting \"Custom Time\" to analyze any date and time.",
