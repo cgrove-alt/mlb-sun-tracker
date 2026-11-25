@@ -7303,8 +7303,8 @@ Custom Time.
 
 ## §39 The finder's wording where no game has a start time (plan, 2026-11-25)
 
-Asked: "fix the finder wording for time TBD parks", then "Build all three". Branch
-`fix/tbd-wording`, from `main` at 1de38f24c (PR #114).
+Asked: "fix the finder wording for time TBD parks", then "Build all three", then
+"Center it, then PR" (W5). Branch `fix/tbd-wording`, from `main` at 1de38f24c (PR #114).
 
 ### Findings
 
@@ -7344,6 +7344,8 @@ Tests first, seen to fail, then the fix; one commit each.
       Test: the one that pins them.
 - [x] W4. Checks: all tests, types, eslint, build; Wrigley, Yankee Stadium and Lambeau
       in a browser at both sizes. Then the review.
+- [x] W5 (699295bba). `GameSelector.css`: `.no-games p` gets `margin: 8px auto`, so the
+      hint is centered on a wide screen. Found while checking W2.
 
 **The smaller patch I'd leave:** W1 alone. Two lines, but the box still says to
 choose a game.
@@ -7354,9 +7356,9 @@ one used, not the first game's; that's more than wording.
 
 ### §39 Review (2026-11-25)
 
-**What changed:** three commits, one for each. The code is in
+**What changed:** four commits, one for each. The code is in
 `UnifiedGameSelector.tsx`; the rest is wording, in both finders, the finder page and
-one new string in three languages.
+one new string in three languages, and one line of CSS.
 
 **What a fan sees:**
 - At a park where no listed game has a start time, the box says "No start times set
@@ -7370,7 +7372,8 @@ one new string in three languages.
   the 7 older ones that pin the sentences. The other 4 guard a park with one game that
   has a time, and one with none listed. The picker, finder and schedule tests also
   pass in Tokyo, Los Angeles, London and UTC.
-- *Types, build, eslint:* pass; the 10 warnings in these files are `main`'s.
+- *Types, build, eslint:* pass; the 10 warnings in these files are `main`'s. All of it
+  was run again with W5, with the same results.
 - *Today's schedule, through the site's own list for all 30 parks:* at 7 every listed
   game is TBD (184 games), at 6 one is, at 17 none.
 - *In a browser (dev server), desktop and phone size:* Wrigley has the new box, hint
@@ -7384,11 +7387,18 @@ one new string in three languages.
 - *Not tested:* Safari and Firefox, a real phone, MiLB games with no time in a browser
   (the season is over). The Spanish and Japanese are mine, not a speaker's.
 
-**Found on the way, not changed:** on a wide screen the hint is left of center, 174 px
-at 1,280, above its centered button. It's older: `.no-games p` sets `margin: 8px 0`, and
-every `p` is at most 65 characters wide (`typography-system.css`). Until now only a
-park with no games showed it. *Fix:* `margin: 8px auto`, one line in
-`GameSelector.css`.
+**W5, the hint off center:** `.no-games p` set `margin: 8px 0`, and every `p` is at most
+65 characters wide (`typography-system.css`), so on a wide screen the hint was left of
+its centered button. Older; until now only a park with no games showed it. Measured on
+the dev server: at 1,280 px the text's center was at 466 px and is at 640, the same as
+its block and button, at Wrigley and for both of Sahlen Field's lines. Centered at 1,920
+too. At 800 and 375 px the paragraph fills its block, so nothing moves. No unit test:
+jsdom doesn't lay pages out.
+
+**Found on the way, not changed:** in the "Select a Game or Time" panel the ball icon is
+at the left, not centered over the text (176 px off at 1,280). Older, and another cause:
+Tailwind makes every `svg` a block, and centering text doesn't move a block. *Fix:* one
+line in `EmptyStates.css`.
 
 ---
 ---
