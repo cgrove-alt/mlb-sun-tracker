@@ -7665,21 +7665,49 @@ no list or page changed height and nothing scrolls sideways. Only L3's text move
 right. The typed bullets weren't taken off in the trial, and the league pages' are
 doubled in it.
 
-- [ ] L1. `globals.css`: `section ul, section ol` gets `list-style: revert`, which gives back the
+- [x] L1 (cc4d9856b). `globals.css`: `section ul, section ol` gets `list-style: revert`, which gives back the
       browser's own bullets and numbers. With it, so that nothing is doubled:
       `.schedule ul { list-style: none; }` in `StadiumGuide.css`, and the typed "•" comes off
       five lines of `app/league/[leagueId]/page.tsx`. Lists with a `none` of their own keep
       it, as their rules are stronger.
-- [ ] L2. `blog-post.css`: `.post-content ul, .post-content ol` gets the same line. A post's
+- [x] L2 (e893441ea). `blog-post.css`: `.post-content ul, .post-content ol` gets the same line. A post's
       text isn't in a `section`.
-- [ ] L3. `/how-it-works`: its list gets `list-disc pl-5`. It isn't in a `section` either.
-- [ ] L4. Checks: all tests, types, eslint, build; every page above in a browser before and
+- [x] L3 (72cc8d714). `/how-it-works`: its list gets `list-disc pl-5`. It isn't in a `section` either.
+- [x] L4. Checks: all tests, types, eslint, build; every page above in a browser before and
       after at both sizes, and all 152 guides. Then the review.
 
 **The smaller patch:** L1 alone. It's 2,054 of the 2,059 lists.
 
 **Not planned:** undoing Tailwind's rule for every list. The footer's links and others with
 no rule of their own would get bullets.
+
+### §42 Review (2026-11-25)
+
+**What changed:** three commits, one for each: 12 lines added and 6 removed outside this
+file. CSS, five typed bullets and one list's classes.
+
+**What a fan sees:** bullets on the lists in the stadium guides, the `/guide` articles, the
+legal and league pages, two blog posts, `/how-it-works` and the MLB pages' "Recommended
+Gear", and numbers on two lists in the `/guide` articles. They're navy where the list is in
+a section, as the site's rule always said, and the text's color elsewhere.
+
+**Checks:**
+- *Every page, before and after,* at 1,280 and 375 px on the dev server in Chromium: all 182
+  stadium pages and 25 others (a 26th address is an unpublished post that goes to the
+  Cardinals' page). 2,055 lists got their markers and none lost one; with the four in the
+  closed tabs of `/privacy-rights`, opened and checked by hand, that's the plan's 2,059.
+  The 150 schedules, the menus and the footer are as before, no list has two bullets, and
+  nothing scrolls sideways.
+- *Nothing moved* but these: `/how-it-works`' list, 20 px right at both sizes, and on phones
+  the league pages, which are 26 px shorter. One line fits without its typed bullet. The
+  plan said no height changed, but its trial still had the typed ones.
+- *Dark mode,* at Lambeau: the guide stays light, and its bullets are as in light mode.
+- *Tests:* 4,240 of 4,240 in 107 suites, none new. *Types, eslint (the two files of code)
+  and build* pass, and the built stylesheets have the rules.
+- *Not tested:* Safari and Firefox, a real phone.
+
+**Left as is:** the league pages' items are spaced unevenly (`space-y-1` against the site's
+own margin for items). Older, and another cause.
 
 ---
 ---
