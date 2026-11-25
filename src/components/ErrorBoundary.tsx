@@ -187,7 +187,7 @@ export class ErrorBoundary extends Component<Props, State> {
             <h2 className="error-title">
               {level === 'page' ? 'Page Error' : 'Oops! Something went wrong'}
             </h2>
-            <p className="error-message">
+            <p className="error-boundary-message">
               {errorMessage}
             </p>
             

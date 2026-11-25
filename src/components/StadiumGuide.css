@@ -262,15 +262,6 @@ div.guide-page.stadium-guide > * {
   width: 100%;
 }
 
-/* Ensure all text sections have proper max-width */
-.stadium-guide section > p,
-.stadium-guide section > ul,
-.stadium-guide section > ol {
-  max-width: 65ch; /* Optimal character count per line */
-  margin-left: auto;
-  margin-right: auto;
-}
-
 /* Responsive behavior for content width */
 @media (min-width: 1024px) {
   /* Desktop: enforce max-width for readability */
@@ -305,10 +296,7 @@ div.guide-page.stadium-guide > * {
   .shade-evolution,
   .renovations,
   .fun-facts,
-  .tip,
-  .stadium-guide section > p,
-  .stadium-guide section > ul,
-  .stadium-guide section > ol {
+  .tip {
     max-width: 100%;
     padding-left: 1rem;
     padding-right: 1rem;
