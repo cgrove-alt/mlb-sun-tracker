@@ -7301,6 +7301,57 @@ Custom Time.
   schedule, or set a date and time if yours isn't listed".
 - `GameSelector.tsx` has the old month headings and no "time TBD"; no page uses it.
 
+## §39 The finder's wording where no game has a start time (plan, 2026-11-25)
+
+Asked: "fix the finder wording for time TBD parks". Branch `fix/tbd-wording`, from
+`main` at 1de38f24c (PR #114).
+
+### Findings
+
+In MLB's schedule today 183 of the 806 regular-season games of the next 180 days
+have no start time, and at seven parks that's every one: Dodger Stadium, Fenway,
+Oracle, Progressive, Rate, Rogers Centre and Wrigley. Since PR #114 they're listed
+as "time TBD" and can't be chosen. Seen at Wrigley on the dev server, the same on
+desktop and at phone size:
+
+**1. The box says "Choose a game...", and there's none to choose.** Nothing says why.
+
+**2. The sentence below says "Pick a game from the schedule, or set a date and time
+if yours isn't listed".** The first half can't be done, and the second leaves a fan
+out: their game is listed. That's also so of a single game with no time, as one of
+Yankee Stadium's 31.
+
+**3. `/seats-shade-finder` says the same in two places:** "set its date and time if
+it isn't listed" and "If yours isn't listed, enter its date and start time". In the
+minors that leaves out a doubleheader's second game.
+
+### Plan
+
+Tests first, seen to fail, then the fix; one commit each.
+
+- [ ] W1. `UnifiedApp.tsx` and `MobileApp.tsx`: "If your game isn't listed or its
+      time is TBD, set a date and time". True at every park, so nothing has to know
+      which one this is. The lines above it already say "Select a Game or Time" and
+      "Choose a game time". Test: the one that pins the sentence, in three leagues
+      at both sizes.
+- [ ] W2. `UnifiedGameSelector.tsx`: when none of the listed games can be chosen, the
+      box says "No start times set yet", and below it is what a park with no games
+      already shows: 'Try selecting "Custom Time" to analyze any date and time.' and
+      its button. One new string in English, Spanish and Japanese. Whether a game can
+      be chosen is read from the list's own entries, so there's no second rule for
+      it. Tests: all TBD; one with a time; none listed.
+- [ ] W3. `app/seats-shade-finder/page.tsx`: both sentences add "or its time is TBD".
+      Test: the one that pins them.
+- [ ] W4. Checks: all tests, types, eslint, build; Wrigley, Yankee Stadium and Lambeau
+      in a browser at both sizes. Then the review.
+
+**The smaller patch I'd leave:** W1 alone. Two lines, but the box still says to
+choose a game.
+
+**Left as is:** "27 games loaded" and "Found 27 upcoming home games" are true, and the
+list still opens to show the dates. Custom Time starts on today's date or the last
+one used, not the first game's; that's more than wording.
+
 ---
 ---
 
