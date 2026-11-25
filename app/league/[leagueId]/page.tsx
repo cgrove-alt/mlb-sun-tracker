@@ -192,7 +192,7 @@ export default async function LeaguePage({ params }: LeaguePageProps) {
             {titleCase(league.sport)} Shade Tips
           </h2>
           <div className="rounded-xl border bg-gray-50 p-4 md:p-5 shadow-sm">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6 stack">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
               <div>
                 <h3 className="text-lg font-semibold mb-2">Best Game Times for Shade</h3>
                 <ul className="space-y-1">
