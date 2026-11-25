@@ -7301,6 +7301,105 @@ Custom Time.
   schedule, or set a date and time if yours isn't listed".
 - `GameSelector.tsx` has the old month headings and no "time TBD"; no page uses it.
 
+## §39 The finder's wording where no game has a start time (plan, 2026-11-25)
+
+Asked: "fix the finder wording for time TBD parks", then "Build all three", then
+"Center it, then PR" (W5). Branch `fix/tbd-wording`, from `main` at 1de38f24c (PR #114).
+
+### Findings
+
+In MLB's schedule today 183 of the 806 regular-season games of the next 180 days
+have no start time, and at seven parks that's every one: Dodger Stadium, Fenway,
+Oracle, Progressive, Rate, Rogers Centre and Wrigley. Since PR #114 they're listed
+as "time TBD" and can't be chosen. Seen at Wrigley on the dev server, the same on
+desktop and at phone size:
+
+**1. The box says "Choose a game...", and there's none to choose.** Nothing says why.
+
+**2. The sentence below says "Pick a game from the schedule, or set a date and time
+if yours isn't listed".** The first half can't be done, and the second leaves a fan
+out: their game is listed. That's also so of a single game with no time, as one of
+Yankee Stadium's 31.
+
+**3. `/seats-shade-finder` says the same in two places:** "set its date and time if
+it isn't listed" and "If yours isn't listed, enter its date and start time". In the
+minors that leaves out a doubleheader's second game.
+
+### Plan
+
+Tests first, seen to fail, then the fix; one commit each.
+
+- [x] W1 (913c60905). `UnifiedApp.tsx` and `MobileApp.tsx`: "If your game isn't listed or its
+      time is TBD, set a date and time". True at every park, so nothing has to know
+      which one this is. The lines above it already say "Select a Game or Time" and
+      "Choose a game time". Test: the one that pins the sentence, in three leagues
+      at both sizes.
+- [x] W2 (1677037f6). `UnifiedGameSelector.tsx`: when none of the listed games can be chosen, the
+      box says "No start times set yet", and below it is what a park with no games
+      already shows: 'Try selecting "Custom Time" to analyze any date and time.' and
+      its button. One new string in English, Spanish and Japanese. Whether a game can
+      be chosen is read from the list's own entries, so there's no second rule for
+      it. Tests: all TBD; one with a time; none listed.
+- [x] W3 (2d3fcbbe5). `app/seats-shade-finder/page.tsx`: both sentences add "or its time is TBD".
+      Test: the one that pins them.
+- [x] W4. Checks: all tests, types, eslint, build; Wrigley, Yankee Stadium and Lambeau
+      in a browser at both sizes. Then the review.
+- [x] W5 (699295bba). `GameSelector.css`: `.no-games p` gets `margin: 8px auto`, so the
+      hint is centered on a wide screen. Found while checking W2.
+
+**The smaller patch I'd leave:** W1 alone. Two lines, but the box still says to
+choose a game.
+
+**Left as is:** "27 games loaded" and "Found 27 upcoming home games" are true, and the
+list still opens to show the dates. Custom Time starts on today's date or the last
+one used, not the first game's; that's more than wording.
+
+### §39 Review (2026-11-25)
+
+**What changed:** four commits, one for each. The code is in
+`UnifiedGameSelector.tsx`; the rest is wording, in both finders, the finder page and
+one new string in three languages, and one line of CSS.
+
+**What a fan sees:**
+- At a park where no listed game has a start time, the box says "No start times set
+  yet", with the Custom Time hint and button below it. The list still opens, to show
+  the dates.
+- At every park: "If your game isn't listed or its time is TBD, set a date and time".
+- `/seats-shade-finder` says so too.
+
+**Checks:**
+- *Tests:* 4,240 of 4,240 in 107 suites; 12 new. Seen to fail first: 8 of them, and
+  the 7 older ones that pin the sentences. The other 4 guard a park with one game that
+  has a time, and one with none listed. The picker, finder and schedule tests also
+  pass in Tokyo, Los Angeles, London and UTC.
+- *Types, build, eslint:* pass; the 10 warnings in these files are `main`'s. All of it
+  was run again with W5, with the same results.
+- *Today's schedule, through the site's own list for all 30 parks:* at 7 every listed
+  game is TBD (184 games), at 6 one is, at 17 none.
+- *In a browser (dev server), desktop and phone size:* Wrigley has the new box, hint
+  and sentence, and the button opens Custom Time. Yankee Stadium and Lambeau still say
+  "Choose a game..." with no hint. On desktop, Wrigley lists its 27 games in gray, and
+  Sahlen Field (none listed) is as before. At phone size 1:20 PM on April 9, 2027 gets
+  an answer at Wrigley and going back to the list keeps it, and the box fits in
+  English, Spanish and Japanese.
+  Console: notes about vibration, from clicks made by script.
+- *The answer for a given game and time is untouched:* only wording, and the hint.
+- *Not tested:* Safari and Firefox, a real phone, MiLB games with no time in a browser
+  (the season is over). The Spanish and Japanese are mine, not a speaker's.
+
+**W5, the hint off center:** `.no-games p` set `margin: 8px 0`, and every `p` is at most
+65 characters wide (`typography-system.css`), so on a wide screen the hint was left of
+its centered button. Older; until now only a park with no games showed it. Measured on
+the dev server: at 1,280 px the text's center was at 466 px and is at 640, the same as
+its block and button, at Wrigley and for both of Sahlen Field's lines. Centered at 1,920
+too. At 800 and 375 px the paragraph fills its block, so nothing moves. No unit test:
+jsdom doesn't lay pages out.
+
+**Found on the way, not changed:** in the "Select a Game or Time" panel the ball icon is
+at the left, not centered over the text (176 px off at 1,280). Older, and another cause:
+Tailwind makes every `svg` a block, and centering text doesn't move a block. *Fix:* one
+line in `EmptyStates.css`.
+
 ---
 ---
 

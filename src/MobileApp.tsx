@@ -204,7 +204,7 @@ const MobileApp: React.FC = () => {
                   type="no-game"
                   action={
                     <p style={{fontSize: '0.9rem', color: '#666', margin: 0}}>
-                      Pick a game from the schedule, or set a date and time if yours isn&apos;t listed
+                      If your game isn&apos;t listed or its time is TBD, set a date and time
                     </p>
                   }
                 />

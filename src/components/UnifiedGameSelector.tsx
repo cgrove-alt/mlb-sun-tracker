@@ -359,13 +359,15 @@ export const UnifiedGameSelector: React.FC<UnifiedGameSelectorProps> = ({
       game => gameOption(game, selectedVenue?.timezone),
     );
   }, [games, selectedVenue?.timezone]);
+  const listed = gameOptions.flatMap(month => month.options);
+  // False when no game is listed, and when none of them has a start time yet.
+  const canChoose = listed.some(option => !option.isDisabled);
 
   // The list's own entry for the chosen game: react-select opens the list on it
   // only if it's the same object. One of its own when the list doesn't have the
   // game as it was chosen, so the box still shows what the answer is for.
   const chosen = selectedGame && gameOption(selectedGame, selectedVenue?.timezone);
-  const chosenOption = chosen && (gameOptions
-    .flatMap(month => month.options)
+  const chosenOption = chosen && (listed
     .find(option => option.value === chosen.value && option.label === chosen.label) ?? chosen);
 
   // Custom styles to ensure dropdown text is always visible
@@ -576,7 +578,11 @@ export const UnifiedGameSelector: React.FC<UnifiedGameSelectorProps> = ({
                             onGameSelect(null, null);
                           }
                         }}
-                        placeholder={t(games.length > 0 ? 'gameSelector.chooseGame' : 'gameSelector.noGamesFound')}
+                        placeholder={
+                          canChoose ? t('gameSelector.chooseGame')
+                            : games.length > 0 ? t('gameSelector.noStartTimes')
+                            : t('gameSelector.noGamesFound')
+                        }
                         className={`game-select ${gamesLoading.isRefreshing ? 'refreshing' : ''}`}
                         isDisabled={games.length === 0 || gamesLoading.isRefreshing}
                         aria-label={t('gameSelector.selectGame')}
@@ -588,7 +594,7 @@ export const UnifiedGameSelector: React.FC<UnifiedGameSelectorProps> = ({
                     </>
                   )}
                 </div>
-                {games.length === 0 && !stillLoading && !error && (
+                {!canChoose && !stillLoading && !error && (
                   selectedVenue.league === 'NFL' ? (
                     <NFLCustomGameSelector
                       selectedVenue={selectedVenue}
@@ -598,7 +604,7 @@ export const UnifiedGameSelector: React.FC<UnifiedGameSelectorProps> = ({
                     />
                   ) : (
                     <div className="no-games">
-                      <p>{t('gameSelector.noGamesForStadium')}</p>
+                      {games.length === 0 && <p>{t('gameSelector.noGamesForStadium')}</p>}
                       <p>{t('gameSelector.tryCustomTime')}</p>
                       <button
                         type="button"
