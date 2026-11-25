@@ -1931,6 +1931,10 @@ div.guide-page.stadium-guide > * {
   margin-bottom: 0.5rem;
 }
 
+.schedule svg {
+  display: inline;
+}
+
 /* Timeline */
 .timeline-events {
   position: relative;
