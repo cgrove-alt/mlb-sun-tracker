@@ -950,7 +950,7 @@ section strong {
 }
 
 .guide-cta p {
-  margin-bottom: 2rem;
+  margin: 0 auto 2rem;
   color: white;
   opacity: 1;
 }
@@ -1314,18 +1314,6 @@ section strong {
 .stadium-guide p,
 .stadium-guide li {
   max-width: 65ch; /* Optimal ~60-75 characters per line */
-}
-
-/* Wider containers should have centered text blocks */
-@media (min-width: 1024px) {
-  .stadium-guide-wrapper p,
-  .stadium-guide-wrapper li,
-  .guide-page p,
-  .guide-page li {
-    max-width: 65ch;
-    margin-left: auto;
-    margin-right: auto;
-  }
 }
 
 .content-wide {
