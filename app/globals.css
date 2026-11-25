@@ -596,6 +596,7 @@ section p {
 }
 
 section ul, section ol {
+  list-style: revert; /* Tailwind's base takes the bullets and numbers off */
   margin: 16px 0; /* Standardized margin */
   padding-left: 20px; /* Consistent padding */
 }
