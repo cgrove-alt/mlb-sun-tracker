@@ -1314,8 +1314,6 @@ section strong {
 .stadium-guide p,
 .stadium-guide li {
   max-width: 65ch; /* Optimal ~60-75 characters per line */
-  margin-left: auto;
-  margin-right: auto;
 }
 
 /* Wider containers should have centered text blocks */
