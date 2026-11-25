@@ -7436,14 +7436,14 @@ CSS only; one commit each. No unit tests: jsdom doesn't lay pages out, so each i
 measured in a browser before and after. All but the error page's were tried with
 injected styles.
 
-- [ ] I1 (asked). `EmptyStates.css`: `.empty-state-icon` gets `display: flex;
+- [x] I1 (asked; b7299a3d5). `EmptyStates.css`: `.empty-state-icon` gets `display: flex;
       justify-content: center`. Tried: centered to the pixel at 1,280 (464 to 640) and
       at 375 (75 to 187.5), and the panel keeps its height.
-- [ ] I2. `ErrorBoundary.css`: `.error-icon` gets the same two lines.
-- [ ] I3. `globals.css`: `.sun-position svg { display: inline; }`, and `StadiumGuide.css`:
+- [x] I2 (7cf2e921a). `ErrorBoundary.css`: `.error-icon` gets the same two lines.
+- [x] I3 (b3fce17cf). `globals.css`: `.sun-position svg { display: inline; }`, and `StadiumGuide.css`:
       `.schedule svg { display: inline; }`. Tried: the icon is on its text's line, and the
       line is 26 px tall, not 46 and 42.
-- [ ] I4. Checks: all tests, types, build; the four places in a browser at both sizes.
+- [x] I4. Checks: all tests, types, build; the four places in a browser at both sizes.
       Then the review.
 
 **The smaller patch:** I1 alone, which is all that was asked.
@@ -7454,6 +7454,34 @@ every icon on the site, and most are placed right for a block.
 **Also seen, another cause:** on stadium guides, paragraphs and list items are centered as
 65-character columns under headings at the left (`.stadium-guide p, .stadium-guide li` in
 `globals.css`), so at 1,280 px the text starts about 220 px right of its heading.
+
+### §40 Review (2026-11-25)
+
+**What changed:** three commits, ten lines of CSS and two blank ones. No code.
+
+**What a fan sees:** the ball and stadium icons centered over the panel's text, on desktop
+and phone; the error page's icon centered; the sun or moon beside its sentence, and each
+clock beside its time.
+
+**Checks:**
+- *Tests:* 4,240 of 4,240 in 107 suites, none new (jsdom doesn't lay pages out). *Types
+  and build* pass, and the built stylesheets have all four rules.
+- *Measured on the dev server before and after:* the ball and stadium icons' centers were
+  at 464 px, with the text's at 640, and are at 640; at phone size 75 and 187.5, now
+  187.5. The error page's: 414 and 640, now 640; at phone size 56 and 187.5, now 187.5.
+  The sun's and moon's line was 46 px tall and is 26, the schedule's 42 and is 26, at
+  Lambeau and Sahlen Field.
+- *At phone size the schedule's lines* were 67, 42 and 67 px and are 51 each: the clock's
+  width wraps "First Pitch: Varies by game" onto a second line.
+- *As before:* the height of the ball panel and the error page at both sizes and of the
+  stadium panel at 1,280; the phone's sun banner, which has the same class on its text.
+- *The error page* was shown by setting its state on the dev server. It's 226 px off, not
+  the 185 in the plan: that was a copy of its markup with a shorter sentence.
+- *Not tested:* Safari and Firefox, a real phone.
+
+**Found on the way, not changed:** the error page's message is off center too. Another
+cause: `GameSelector.css` has a rule for the picker's own `.error-message` (text at the
+left, a retry button at the right), and it reaches the error page's.
 
 ---
 ---
