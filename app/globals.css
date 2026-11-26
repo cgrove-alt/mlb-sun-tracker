@@ -608,6 +608,10 @@ section li {
   color: #333333;
 }
 
+[class*="space-y-"] > li:first-child {
+  margin-bottom: 0; /* space-y takes it off the other items */
+}
+
 section li::marker {
   color: #1a237e;
 }
