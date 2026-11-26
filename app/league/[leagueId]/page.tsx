@@ -210,12 +210,12 @@ export default async function LeaguePage({ params }: LeaguePageProps) {
               
               <div>
                 <h3 className="text-lg font-semibold mb-2">Season Considerations</h3>
-                <ul className="space-y-1 text-ink-700">
-                  <li>Early season ({league.season.start}): Lower sun angle</li>
-                  <li>Mid-season: Peak sun exposure risk</li>
-                  <li>Late season ({league.season.end}): Better natural shade</li>
+                <ul className="space-y-1">
+                  <li className="text-ink-700">Early season ({league.season.start}): Lower sun angle</li>
+                  <li className="text-ink-700">Mid-season: Peak sun exposure risk</li>
+                  <li className="text-ink-700">Late season ({league.season.end}): Better natural shade</li>
                   {league.sport === 'football' && (
-                    <li>Cold weather games: Sun can be beneficial</li>
+                    <li className="text-ink-700">Cold weather games: Sun can be beneficial</li>
                   )}
                 </ul>
               </div>
