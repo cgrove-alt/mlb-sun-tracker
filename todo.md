@@ -7797,6 +7797,100 @@ its two lists start level on a wide screen. The lists at the top of four legal p
   and the built stylesheet has the rule.
 - *Not tested:* Safari and Firefox, a real phone.
 
+**Merged and live:** PR #119, merge commit 667751c00 (2026-11-26). Twelve live pages on that
+build; all three league pages have the grid without `stack`, and all twelve load the new rule.
+
+## §44 The two colors of text on the league pages (plan, 2026-11-26)
+
+Asked: "fix the text color mismatch on the league pages". Branch `fix/league-list-color`,
+from `main` at 667751c00 (PR #119).
+
+### Findings
+
+Measured on the dev server in headless Chromium, at 1,280 and 375 px: all 182 stadium pages
+and 26 others, 6,859 lists in 416 page views.
+
+**The fault.** In "Shade Tips" the first list's text is rgb(55, 65, 81), Tailwind's `ink-700`
+(#374151), and the second list's is rgb(51, 51, 51) (#333333), on all three pages at both sizes.
+
+*The cause:* both lists were given the same color in f0da01f8b (2025-08-26, "Fix text
+contrast"). The first list puts it on each item (`<li className="text-ink-700">`) and the second
+on the list itself (`<ul className="space-y-1 text-ink-700">`), meant to be passed down to the
+items. Since f14478af8 (2025-09-12) `globals.css` has `section li { color: #333333; }`,
+which colors every item in a section itself, so it beats what the list passes down. The first
+list's class is on the item and beats `section li` (a class outranks two tag names).
+
+*Where else:* a list with a color class, on it or above it, whose items show another color.
+There are four, all `text-ink-700` on the list, all with items in #333333:
+
+| List | Pages |
+|---|---|
+| "Season Considerations", the second list of "Shade Tips" | `/league/mlb`, `/league/milb`, `/league/nfl` |
+| "How to Find Out If Your Seats Are Shaded", the four steps | `/seats-shade-finder` |
+
+The steps on `/seats-shade-finder` sit right above questions whose answers are `text-ink-700`
+paragraphs, in rgb(55, 65, 81). The other 6,855 lists have no color class, or one that
+reaches their items. Two lists in `src/components/GameWindowShade.tsx` (`text-sm text-gray-700`
+on the `ul`) have the same fault, but they show on no page: their only user,
+`SeatRecommendationsSection`, isn't imported anywhere.
+
+### Plan
+
+One commit each. Each moves the class from the list to its items, as the first list does.
+Tried both in the app's browser by moving the class: the items come out rgb(55, 65, 81), and
+on the finder the blue step numbers and the bold lead-ins don't change. No unit tests: jsdom
+doesn't load the site's stylesheets, so it can't see `section li` win.
+
+- [x] C1 (58689f76a). `app/league/[leagueId]/page.tsx`: `text-ink-700` off the second list's `ul` and onto
+      its items (three, and the football one). Both lists then match, and they match the
+      page's other `text-ink-700` text.
+- [x] C2 (093da1663). `app/seats-shade-finder/page.tsx`: the same for the steps' `ol` and its four items.
+- [x] C3. Checks: all tests, types, eslint, build; every list on every page before and after,
+      at both sizes (the four lists change, and nothing else); a look in the browser. Then
+      the review.
+
+**Why not change `section li`:** it colors the items of every list in a section, thousands of
+them. Taking the color off would move them all to the color `li` sets (#334155) or to their
+parents'. That's a site-wide change for four lists.
+
+**Why `ink-700` and not #333333:** the commit that set the colors chose `ink-700` for both
+lists, and the rest of the page's gray text is `ink-700`. It's a touch lighter: 9.9 to 1 on
+the lists' light gray background (12.1 now), well above the 4.5 AA asks.
+
+**Not planned:**
+- The site has two "ink-700"s: Tailwind's `#374151` and the CSS variable `--ink-700`,
+  `#334155`, which colors every `li` outside a section. Barely visible, and a site-wide change.
+- `GameWindowShade.tsx`, which no page shows (above).
+
+### §44 Review (2026-11-26)
+
+**What changed:** two commits, after "Build both". In each, `text-ink-700` moves from a list to
+its items: the second "Shade Tips" list on the league page (four items in the code) and the
+finder's four steps. Five lines changed in each file.
+
+**What a fan sees:** both lists of "Shade Tips" on the three league pages are one gray, and so
+are the finder's steps and the answers below them: #374151, where the second list and the steps
+were #333333. A touch lighter and bluer, and still 9.9 to 1 or more against their background.
+
+**Checks:**
+- *Every list on every page, before and after,* at 1,280 and 375 px in headless Chromium on the
+  dev server: all 182 stadium pages and 26 others, 6,859 lists in 416 page views. The four
+  lists' items went from rgb(51, 51, 51) to rgb(55, 65, 81) (eight page views), and the other
+  6,851 lists didn't change. Lists whose color class doesn't reach their items: 4 before, 0
+  after. The lists' own color is now their parent's, but all their text is in the items, and
+  the bullets keep their own color (`section li::marker`).
+- *In the app's browser:* the MLB page at 1,024 and the NFL page (both lists in rgb(55, 65, 81),
+  the football item too), and the finder at 375 and 1,024: the steps' text in rgb(55, 65, 81),
+  and the blue numbers and bold lead-ins as before. No console errors, nothing scrolls sideways.
+- *Tests:* 4,240 of 4,240 in 107 suites, none new (above). *Types and build* pass. *eslint*
+  (both pages): no errors, and the 8 warnings `main` has on the finder page. In the built pages
+  no list has `text-ink-700`, and all the items do: 7 on the NFL page, 6 on the other two, 4 on
+  the finder.
+- *Not tested:* Safari and Firefox, a real phone.
+
+**Seen in passing, left as is:** on the finder, step 1's text starts 3 px left of the others at
+375 px: each number takes its own width, and "1." is narrower than "2.". Older, and not color.
+
 ---
 ---
 

@@ -90,14 +90,14 @@ export default function SeatsShadeFinderPage() {
             How to Find Out If Your Seats Are Shaded
           </h2>
           
-          <ol className="space-y-4 text-ink-700">
-            <li className="flex">
+          <ol className="space-y-4">
+            <li className="flex text-ink-700">
               <span className="font-bold text-blue-600 mr-3">1.</span>
               <div>
                 <strong>Pick your stadium:</strong> any of {VENUE_COUNT} MLB, minor league and NFL venues.
               </div>
             </li>
-            <li className="flex">
+            <li className="flex text-ink-700">
               <span className="font-bold text-blue-600 mr-3">2.</span>
               <div>
                 <strong>Pick your game:</strong> choose it from the schedule of home games. The minor
@@ -105,14 +105,14 @@ export default function SeatsShadeFinderPage() {
                 games. If yours isn&apos;t listed or its time is TBD, enter its date and start time.
               </div>
             </li>
-            <li className="flex">
+            <li className="flex text-ink-700">
               <span className="font-bold text-blue-600 mr-3">3.</span>
               <div>
                 <strong>Find your section:</strong> tap it on the map or search for it. For NFL and
                 minor league games, the finder names a side of the field or park instead.
               </div>
             </li>
-            <li className="flex">
+            <li className="flex text-ink-700">
               <span className="font-bold text-blue-600 mr-3">4.</span>
               <div>
                 <strong>Check how sure we are:</strong> each MLB answer is labelled High, Medium or Low confidence.
