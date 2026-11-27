@@ -1344,7 +1344,7 @@ section strong {
 
 /* Call-to-Action Button Styles */
 .cta-btn {
-  background: #b35900; /* Changed from #ff8800 for WCAG AA compliance (4.51:1 contrast) */
+  background: #b35900; /* Changed from #ff8800 for WCAG AA compliance (4.83:1 contrast) */
   color: #ffffff;
   padding: 12px 24px;
   border: none;
@@ -1431,7 +1431,7 @@ section strong {
 }
 
 .cta-btn-outline:hover {
-  background: #b35900; /* Changed from #ff8800 for WCAG AA compliance (4.51:1 contrast) */
+  background: #b35900; /* Changed from #ff8800 for WCAG AA compliance (4.83:1 contrast) */
   color: #ffffff;
   text-decoration: none;
   transform: translateY(-1px);

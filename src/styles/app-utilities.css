@@ -641,7 +641,7 @@ textarea {
 
 :root {
   /* Updated color variables for better contrast */
-  --color-text-light: #595959; /* Changed from #666 (3.7:1) to meet 4.5:1 */
+  --color-text-light: #595959; /* Changed from #666 (5.74:1); 7.00:1 on white */
   --color-text-secondary: #545454; /* Meets 4.6:1 on white */
   --color-text-primary: #212121; /* Meets 16:1 on white */
   
