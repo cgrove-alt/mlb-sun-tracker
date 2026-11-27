@@ -7891,6 +7891,77 @@ were #333333. A touch lighter and bluer, and still 9.9 to 1 or more against thei
 **Seen in passing, left as is:** on the finder, step 1's text starts 3 px left of the others at
 375 px: each number takes its own width, and "1." is narrower than "2.". Older, and not color.
 
+**Merged and live:** PR #120, merge commit 6b0e04241 (2026-11-27). On the live league pages and
+the finder no list has `text-ink-700` and all the items do (6, 6 and 7, and 4).
+
+## §45 Step 1 on the finder starts out of line (plan, 2026-11-27)
+
+Asked: "fix the step 1 misalignment on the finder page". Branch `fix/finder-step-align`, from
+`main` at 6b0e04241 (PR #120).
+
+### Findings
+
+Measured on the dev server in Chromium.
+
+**The fault.** In "How to Find Out If Your Seats Are Shaded" on `/seats-shade-finder`, each
+step is a row: a bold blue number (`<span className="font-bold text-blue-600 mr-3">1.</span>`)
+and then the text. The number is as wide as its digits, so the text starts where the number
+ends. "1." is 12.3 px wide, "2." to "4." 15.3 to 15.6, so step 1's text starts 3.1 to 3.4 px
+left of the others, which differ by up to 0.3 px themselves. The same at 1,280 and 375 px.
+
+*The cause:* the site's font, Inter (from `next/font`), draws digits in proportional widths,
+which suit running text: a "1" is narrower than a "2". Numbers that must line up in a column
+need tabular figures, where every digit is one width. Inter has them, and Tailwind's
+`tabular-nums` turns them on (`font-variant-numeric: tabular-nums`). The steps date from the
+first commit of the site's code (526013212).
+
+*Where else:* no other list. Of the 6,859 lists in 416 page views (all 182 stadium pages and
+26 others, at 1,280 and 375 px), two set out a mark and its text side by side: these steps,
+and the feature list on the home page, whose icons line up. No other code numbers its items
+by hand.
+
+### Plan
+
+One commit. No unit test: jsdom doesn't lay pages out.
+
+- [x] A1 (cec4ec525). `app/seats-shade-finder/page.tsx`: `tabular-nums` on the four number spans. In the
+      trial (a style set in the app's browser) every number is 14.64 px wide and the four texts
+      start at one place: step 1 moves 2.4 px right, the others 0.7 to 1.0 px left.
+- [x] A2. Checks: all tests, types, eslint, build; the same sweep of every page after (the
+      steps line up, and no other list moves); a look in the browser at both sizes. Then the
+      review.
+
+**Why not a fixed width for the numbers:** it lines them up too, but `w-5` (20 px) moves all
+four texts 5 to 8 px right and takes that from their column, and its width has to be chosen
+to fit. With tabular figures the numbers keep their own size.
+
+**Why on the numbers and not the list:** `tabular-nums` on the `ol` would reach the numbers
+in the text too ("any of 182", "the next 30 days"), where proportional figures read better.
+
+### §45 Review (2026-11-27)
+
+**What changed:** one commit, after "Build it": `tabular-nums` on the four step numbers on
+`/seats-shade-finder`. Four lines changed, one word each.
+
+**What a fan sees:** the four steps' text starts in one line, at desktop and phone width. Step 1
+moved 2.4 px right and the others 0.7 to 1.0 px left. The numbers look as before; the "1" takes
+a touch more room and the others a touch less.
+
+**Checks:**
+- *The same sweep, after:* all 182 stadium pages and 26 others at 1,280 and 375 px, in headless
+  Chromium on the dev server. The steps' text started at 40.3, 43.4, 43.3 and 43.6 px from the
+  item's edge and now starts at 42.6 for all four, at both widths; every number is 14.6 px
+  wide. The other list with marks beside its text, the home page's features, didn't change.
+- *Nothing below moves:* at 375, 1,024 and 1,280 px, with and without the class, no line of the
+  steps re-wraps (3, 8, 5 and 3 lines at 375), and the list and the page are the same height.
+- *In the app's browser:* the finder at 1,024 and 375 px: the four texts start at 42.64 and
+  91.64 px. No console errors, nothing scrolls sideways.
+- *Tests:* 4,240 of 4,240 in 107 suites, none new (above). *Types and build* pass. *eslint*
+  (the page): no errors, and the 8 warnings `main` has. The built page has the class on all
+  four numbers, and the built stylesheet has `.tabular-nums`.
+- *Not tested:* Safari and Firefox, a real phone. Inter comes from `next/font` on every
+  browser; before it loads the page uses its fallback font, where the trial didn't look.
+
 ---
 ---
 
