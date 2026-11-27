@@ -8055,6 +8055,90 @@ the venue cards and the rest already had. Barely visible on its own; what matter
   rgb(27 36 50), the same as the tokens and main.css's classes.
 - *Not tested:* Safari and Firefox, a real phone.
 
+**Merged and live:** PR #122, merge commit df9b26bf5 (2026-11-27). On seven live pages Tailwind's
+`.text-ink-700` is rgb(51 65 85) and `.text-ink-800` rgb(27 36 50), the tokens' values.
+
+## §47 The contrast figures in the token comments (plan, 2026-11-27)
+
+Asked: "fix the wrong contrast figures in the token comments". Branch
+`fix/token-contrast-comments`, from `main` at df9b26bf5 (PR #122).
+
+### Findings
+
+Contrast worked out with the WCAG 2 formula (relative luminance, (L1 + 0.05) / (L2 + 0.05)),
+against white as each comment says. It gives the figures the other comments in the CSS have
+(below), so the formula isn't the difference.
+
+**`src/styles/tokens.css`: all nine figures are wrong.**
+
+| Token | Value | Comment says | Real |
+|---|---|---|---|
+| `--ink-900` | #0B1220 | 16.58:1 | 18.72:1 |
+| `--ink-800` | #1B2432 | 13.37:1 | 15.61:1 |
+| `--ink-700` | #334155 | 7.79:1 | 10.35:1 |
+| `--accent-600` | #1D4ED8 | 6.48:1 | 6.70:1 |
+| `--accent-700` | #1E40AF | 8.59:1 | 8.72:1 |
+| `--success` | #059669 | 5.31:1 | 3.77:1 |
+| `--warning` | #D97706 | 4.51:1 | 3.19:1 |
+| `--error` | #DC2626 | 5.86:1 | 4.83:1 |
+| `--info` | #0891B2 | 4.52:1 | 3.68:1 |
+
+Six are lower than the truth, harmless. Three are worse: `--success`, `--warning` and `--info`
+are under AA's 4.5:1 for text, and their comments say they pass. None of the four semantic
+tokens is used anywhere (no `var(--success)` and so on), so no text on the site has those colors
+from them; a comment that says they pass is what would lead someone to use them for text.
+
+**`src/styles/main.css`:** its copies of the ink tokens (`--color-ink-900/800/700`) repeat the
+three wrong ink figures.
+
+*Where else:* the other contrast comments in the CSS are right to within rounding (23 figures in
+`blog-post.css`, `StickyTopNav.css`, `Breadcrumb.css`, `StadiumGuide.css`,
+`StadiumTitleBlock.module.css`), or say "meets" a figure the color does meet. Two are wrong:
+`app/globals.css` gives white on `.cta-btn`'s #b35900 as 4.51:1, twice (it's 4.83), and
+`src/styles/app-utilities.css` says #666 was 3.7:1 (it's 5.74).
+
+### Plan
+
+Comments only; no color changes, so nothing on screen changes.
+
+- [x] T1 (f1d56dfd5, with T2 and T3). A test first, `src/styles/__tests__/tokenContrast.test.ts`: every "N:1 on white" in
+      `tokens.css` and `main.css` is the real contrast of the color on its line, to two
+      decimals. It should fail on the 12 figures above.
+- [x] T2 (f1d56dfd5). `tokens.css`: the nine figures. For `--success`, `--warning` and `--info` the comment
+      says they're under 4.5:1 for text. The header's "All meet WCAG AA (4.5:1)" is about the
+      three ink colors under it, and it's true.
+- [x] T3 (f1d56dfd5). `main.css`: the three ink figures.
+- [x] T4 (4660ea920). The two outside the tokens: `globals.css` 4.51 to 4.83 (two lines), and
+      `app-utilities.css` "#666 (3.7:1)" to 5.74.
+- [x] T5. Checks: all tests, types, build. Then the review.
+
+**Not planned:**
+- Darker values for `--success`, `--warning` and `--info`: nothing uses them.
+- Removing those unused tokens.
+
+### §47 Review (2026-11-27)
+
+**What changed:** two commits, after "Build it", comments only.
+- f1d56dfd5: the nine figures in `tokens.css` and the three in `main.css` give each color's real
+  contrast on white; `--success`, `--warning` and `--info` now say they're under AA's 4.5:1 for
+  text. A new test, `src/styles/__tests__/tokenContrast.test.ts`, works out every "N:1 on white"
+  in the two files with the WCAG 2 formula and checks it to two decimals. Before the fix it failed
+  on all 12 figures, and it also checks that it finds 9 and 3, so it can't pass by finding none.
+- 4660ea920: white on `.cta-btn`'s #b35900 is 4.83:1 (`globals.css`, twice), and #666 was 5.74:1,
+  so `app-utilities.css` no longer says #595959 was chosen to reach 4.5 (it's 7.00).
+
+**What a fan sees:** nothing. What changes is what the next person reading the tokens is told:
+the three semantic colors that read as AA-safe aren't, for text.
+
+**Checks:**
+- *Tests:* 4,260 of 4,260 in 109 suites, 14 new. *Types and build* pass. eslint on the test: no
+  errors.
+- *Nothing on screen changes:* the build's 19 stylesheets are byte-identical to those of a build of
+  `main` (df9b26bf5). An earlier build of the same code (for §46) had one stylesheet with the
+  same rules in another order (the privacy pages' `GPCStatusIndicator` and `PrivacyComponents`
+  modules swapped); the second build of `main` matched this branch's, so that order varies from
+  build to build and isn't from this change.
+
 ---
 ---
 
