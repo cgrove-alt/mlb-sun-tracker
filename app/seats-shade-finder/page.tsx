@@ -92,13 +92,13 @@ export default function SeatsShadeFinderPage() {
           
           <ol className="space-y-4">
             <li className="flex text-ink-700">
-              <span className="font-bold text-blue-600 mr-3">1.</span>
+              <span className="font-bold tabular-nums text-blue-600 mr-3">1.</span>
               <div>
                 <strong>Pick your stadium:</strong> any of {VENUE_COUNT} MLB, minor league and NFL venues.
               </div>
             </li>
             <li className="flex text-ink-700">
-              <span className="font-bold text-blue-600 mr-3">2.</span>
+              <span className="font-bold tabular-nums text-blue-600 mr-3">2.</span>
               <div>
                 <strong>Pick your game:</strong> choose it from the schedule of home games. The minor
                 league schedules cover the next 30 days, and the NFL ones the next eight regular-season
@@ -106,14 +106,14 @@ export default function SeatsShadeFinderPage() {
               </div>
             </li>
             <li className="flex text-ink-700">
-              <span className="font-bold text-blue-600 mr-3">3.</span>
+              <span className="font-bold tabular-nums text-blue-600 mr-3">3.</span>
               <div>
                 <strong>Find your section:</strong> tap it on the map or search for it. For NFL and
                 minor league games, the finder names a side of the field or park instead.
               </div>
             </li>
             <li className="flex text-ink-700">
-              <span className="font-bold text-blue-600 mr-3">4.</span>
+              <span className="font-bold tabular-nums text-blue-600 mr-3">4.</span>
               <div>
                 <strong>Check how sure we are:</strong> each MLB answer is labelled High, Medium or Low confidence.
               </div>
