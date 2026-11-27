@@ -18,8 +18,8 @@ module.exports = {
           400: '#9CA3AF',
           500: '#6B7280',
           600: '#4B5563',
-          700: '#374151',
-          800: '#1F2937',
+          700: '#334155', // --ink-700 in src/styles/tokens.css (kept equal by inkTokens.test.ts)
+          800: '#1B2432', // --ink-800
           900: '#0B1220', // Darkest for high contrast
         },
         // Primary color palette (blues) - matching brand colors

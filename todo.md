@@ -7962,6 +7962,99 @@ a touch more room and the others a touch less.
 - *Not tested:* Safari and Firefox, a real phone. Inter comes from `next/font` on every
   browser; before it loads the page uses its fallback font, where the trial didn't look.
 
+**Merged and live:** PR #121, merge commit 20ab8ed32 (2026-11-27). The live finder's four step
+numbers have `tabular-nums`, and its stylesheet has the rule.
+
+## §46 The two ink-700s (plan, 2026-11-27)
+
+Asked: "fix the two different ink-700 colors". Branch `fix/one-ink-700`, from `main` at
+20ab8ed32 (PR #121).
+
+### Findings
+
+**The fault.** The site's secondary-text gray, `ink-700`, is defined twice with two values:
+
+| Where | Value | What uses it |
+|---|---|---|
+| `src/styles/tokens.css` `--ink-700`, `src/styles/main.css` `--color-ink-700`, and main.css's own `.text-ink-700` | #334155, rgb(51, 65, 85) | 75 `var(...)` uses in the CSS: the stadium pages' breadcrumb, the league pages' venue cards, blog text and more |
+| `tailwind.config.js`, `ink.700` | #374151, rgb(55, 65, 81) | Tailwind's `.text-ink-700`: 14 files, the footer (`components/FooterModern.tsx`) among them |
+
+So two grays a hair apart share a page: on a stadium page the breadcrumb is #334155 and the
+footer #374151; on a league page the venue cards are #334155 and "Shade Tips" #374151. `ink-800` has the same fault: #1B2432 in the CSS, #1F2937 in
+Tailwind (`.text-ink-800`, 9 files). `ink-900` agrees (#0B1220), and the other shades are only in
+Tailwind.
+
+*The cause:* the tokens came first (c3950feec and aeedb1660, 2025-08-26, "WCAG AA compliant
+color tokens"), and f0da01f8b, the same day, moved the pages onto a `.text-ink-700` class of the
+site's own that uses the token. Tailwind came a week later (abe2e76f2, 2025-09-02) with an `ink`
+palette whose comment says "matching existing CSS variables", but its 700 and 800 are Tailwind's
+`gray-700` and `gray-800`. Tailwind's `.text-ink-700` has the same name as the site's, comes
+later (in the built CSS, the second of the two stylesheets), and wins. So since 2025-09-02 every
+`text-ink-700` is #374151, not the token.
+
+*How much text, measured* (all 182 stadium pages and 26 others, at 1,280 and 375 px, in
+headless Chromium on the dev server, counting each element with its own text): 5,610 in Tailwind's
+`ink-700` under a `text-ink-700` class, on all 208 pages (the footer's text and links are on
+every page), and 22 in Tailwind's `ink-800`, on 11. 2,082 are in the token's #334155 and 410 in
+its #1B2432.
+
+*Contrast:* the same to the eye. #334155 is 10.35 to 1 on white and #374151 10.31; #1B2432 is
+15.61 and #1F2937 14.68.
+
+### Plan
+
+Tailwind's palette takes the tokens' values, as its comment says it should. The CSS stays as it is.
+
+- [x] I1 (6c14bfe7f, with I2). A test first, `src/styles/__tests__/inkTokens.test.ts`: Tailwind's `ink` 700, 800 and
+      900 equal `--ink-*` in `tokens.css` and `--color-ink-*` in `main.css`. It should fail
+      on 700 and 800 now.
+- [x] I2 (6c14bfe7f). `tailwind.config.js`: `ink.700` '#334155' and `ink.800` '#1B2432'. Two lines.
+      In the trial (the rules Tailwind would build, added in the app's browser) the league
+      page's 22 `text-ink-700` texts, its `text-ink-800` heading and the footer all take the
+      token's color.
+- [x] I3. Checks: all tests, types, eslint, build (the built `.text-ink-700` is rgb(51 65 85));
+      the same count on every page after (the 5,610 and the 22 move to the tokens, and nothing
+      else changes); a look in the browser. Then the review.
+
+**Why the tokens and not Tailwind's values:** the tokens came first, the pages were moved onto
+them on purpose, Tailwind's own comment says it matches them, and 900 already does. Moving the
+CSS to Tailwind's values would change the 75 `var(...)` uses and leave the comment wrong.
+
+**Not planned:**
+- One place for the values. Three files say them (`tokens.css`, `main.css`, the Tailwind
+  config). Pointing Tailwind at the CSS variables would change how its colors are built; the
+  test in I1 keeps the three equal.
+- The contrast figures in the tokens' comments are off ("7.79:1" for #334155, which is 10.35;
+  13.37 for #1B2432, 15.61; 16.58 for #0B1220, 18.72). The values pass either way.
+
+### §46 Review (2026-11-27)
+
+**What changed:** one commit, after "Build it": Tailwind's `ink.700` and `ink.800` take the
+tokens' values (two lines of `tailwind.config.js`), and a new test,
+`src/styles/__tests__/inkTokens.test.ts`, holds Tailwind, `tokens.css` and `main.css` to one value
+for 700, 800 and 900. Before the fix it failed on 700 and 800 (4 of its 6 tests) and passed on 900.
+
+**What a fan sees:** one secondary gray and one heading gray across the site. The footer, "Shade
+Tips", the finder's steps, the blog, the guides and the contact page move from #374151 to the
+token's #334155, and their `ink-800` headings from #1F2937 to #1B2432, the colors the breadcrumb,
+the venue cards and the rest already had. Barely visible on its own; what matters is that
+`ink-700` and `ink-800` are each one color now. Contrast as before or a touch higher (10.35 to 1 on white, 15.61 for 800).
+
+**Checks:**
+- *Every page, before and after:* all 182 stadium pages and 26 others at 1,280 and 375 px, in
+  headless Chromium on the dev server, counting each element with its own text by color. 5,610
+  under a `text-ink-700` class went from rgb(55, 65, 81) to rgb(51, 65, 85), and 22 under
+  `text-ink-800` from rgb(31, 41, 55) to rgb(27, 36, 50). Taking those as one, all 416 page views
+  count the same as before: nothing else changed. The 3,856 texts in #374151 with no `ink` class
+  (Tailwind's `gray-700` is the same gray) stay as they are; `gray-700` is another color name.
+- *In the app's browser:* the MLB league page (`text-ink-700` and `-800`, the venue cards and the
+  footer in the tokens' colors) and the Cubs page (breadcrumb and footer one gray). No console
+  errors.
+- *Tests:* 4,246 of 4,246 in 108 suites, 6 new. *Types, eslint (the config and the test) and
+  build* pass. In the built CSS, Tailwind's `.text-ink-700` is rgb(51 65 85) and `.text-ink-800`
+  rgb(27 36 50), the same as the tokens and main.css's classes.
+- *Not tested:* Safari and Firefox, a real phone.
+
 ---
 ---
 
