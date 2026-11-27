@@ -47,9 +47,9 @@
   --color-black: #000000;
   
   /* Text Colors with WCAG AA compliance */
-  --color-ink-900: #0B1220;   /* Primary text - 16.58:1 on white */
-  --color-ink-800: #1B2432;   /* Headers - 13.37:1 on white */
-  --color-ink-700: #334155;   /* Secondary text - 7.79:1 on white */
+  --color-ink-900: #0B1220;   /* Primary text - 18.72:1 on white */
+  --color-ink-800: #1B2432;   /* Headers - 15.61:1 on white */
+  --color-ink-700: #334155;   /* Secondary text - 10.35:1 on white */
   
   /* Text on Dark Backgrounds */
   --color-ondark-900: #FFFFFF; /* Primary text on dark */
