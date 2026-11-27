@@ -8139,6 +8139,72 @@ the three semantic colors that read as AA-safe aren't, for text.
   modules swapped); the second build of `main` matched this branch's, so that order varies from
   build to build and isn't from this change.
 
+**Merged and live:** PR #123, merge commit a9d088246 (2026-11-27). Six live pages on that build;
+12 of their 13 stylesheets byte-identical to before, the 13th the privacy pages' with the same
+rules in the other order (the variation above).
+
+## §48 The three tokens under AA (plan, 2026-11-27)
+
+Asked: "fix the three tokens that fail AA contrast". Branch `fix/semantic-token-contrast`, from
+`main` at a9d088246 (PR #123).
+
+### Findings
+
+**The fault.** In `src/styles/tokens.css` (c3950feec, 2025-08-26, "WCAG AA compliant color
+tokens"), three semantic colors are under AA's 4.5:1 for text, as §47's comments now say:
+
+| Token | Value | On white | On `--paper-soft` (#F8FAFC) |
+|---|---|---|---|
+| `--success` | #059669 (Tailwind's emerald-600) | 3.77:1 | 3.60:1 |
+| `--warning` | #D97706 (amber-600) | 3.19:1 | 3.04:1 |
+| `--info` | #0891B2 (cyan-600) | 3.68:1 | 3.52:1 |
+
+The fourth, `--error` (#DC2626, red-600), passes: 4.83 and 4.62. Nothing uses the three
+(no `var(--success)` and so on, and the hex values appear nowhere else as these tokens), so no
+text on the site is in them; the fix keeps them from being used for text as they are.
+
+*The cause:* the 600 shades were taken for all four, and only red's 600 reaches 4.5:1.
+
+*Where else (not this ask):* `src/styles/main.css` has a separate set, `--color-success`,
+`--color-warning`, `--color-error` and `--color-info` (#4caf50, #ff9800, #f44336, #2196f3), at
+2.78, 2.16, 3.68 and 3.12 on white. Those are used, in 12 files (borders, backgrounds, some
+text, main.css's `.text-success` and friends), some of them in rendered components (the finder's
+error boundary, the game picker, the weather display). On all 182 stadium pages and 26 others,
+at 1,280 and 375 px, no text is in those colors when the page loads (§46's sweep); what states
+show them (errors, empty results) wasn't checked.
+
+### Plan
+
+- [x] U1 (ff579f4a0, with U2). The test first: `src/styles/__tests__/tokenContrast.test.ts` also checks that every
+      color with an "on white" figure in `tokens.css` and `main.css` is at least 4.5:1. It
+      should fail on the three.
+- [x] U2 (ff579f4a0). `tokens.css`: each one shade darker, Tailwind's 700: `--success` #047857 (5.48:1 on
+      white, 5.24 on #F8FAFC), `--warning` #B45309 (5.02, 4.80), `--info` #0E7490 (5.36, 5.12).
+      The comments give the new figures, which the test checks.
+- [x] U3. Checks: all tests, types, build (the built CSS has the new values). Then the review.
+
+**Not planned:** main.css's `--color-*` set (above); it's used, so changing it changes what
+some components look like, and it needs its own look at where those colors show.
+
+### §48 Review (2026-11-27)
+
+**What changed:** one commit, after "Build it": `--success`, `--warning` and `--info` in
+`tokens.css` are Tailwind's 700 shades, #047857, #B45309 and #0E7490 (5.48, 5.02 and 5.36:1 on
+white), and their comments give those figures. The contrast test also holds every token with an
+"on white" figure, in `tokens.css` and `main.css`, to 4.5:1; before the fix it failed on the
+three (3.77, 3.19, 3.68).
+
+**What a fan sees:** nothing; no page uses the three. All the site's color tokens now pass AA
+for text on white, so any of them can be used for text.
+
+**Checks:**
+- *Tests:* 4,272 of 4,272 in 109 suites, 12 new (one per token figure). *Types and build* pass.
+  eslint on the test: no errors.
+- *The built CSS:* the tokens' stylesheet has the three new values and is otherwise identical to
+  a build of `main` (same size; the same once the three values are masked). The other 18
+  stylesheets are byte-identical.
+- *In the app's browser:* the home page's `:root` has the new values; no console errors.
+
 ---
 ---
 

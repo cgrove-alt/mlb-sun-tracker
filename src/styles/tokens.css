@@ -30,10 +30,10 @@
   --active-bg: rgba(30, 64, 175, 0.1);
 
   /* ===== Semantic Colors ===== */
-  --success: #059669;     /* 3.77:1 on white: under AA's 4.5:1 for text */
-  --warning: #D97706;     /* 3.19:1 on white: under AA's 4.5:1 for text */
+  --success: #047857;     /* 5.48:1 on white */
+  --warning: #B45309;     /* 5.02:1 on white */
   --error: #DC2626;       /* 4.83:1 on white */
-  --info: #0891B2;        /* 3.68:1 on white: under AA's 4.5:1 for text */
+  --info: #0E7490;        /* 5.36:1 on white */
   
   /* ===== Spacing ===== */
   --spacing-2: 8px;

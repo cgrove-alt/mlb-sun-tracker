@@ -2,7 +2,8 @@
  * The color tokens carry their contrast on white in a comment ("10.35:1 on
  * white"). Those figures were once all wrong, some saying a color passed WCAG
  * AA when it didn't (§47). This works each one out again with the WCAG 2
- * formula, so a figure can't drift from its color.
+ * formula, so a figure can't drift from its color, and holds every one of
+ * those colors to AA's 4.5:1 for text (§48).
  */
 import fs from 'fs';
 import path from 'path';
@@ -40,5 +41,9 @@ describe.each([
 
   it.each(found)('--%s (%s) says %s:1 on white, and is', (_name, hex, claimed) => {
     expect(contrastOnWhite(hex).toFixed(2)).toBe(claimed.toFixed(2));
+  });
+
+  it.each(found)('--%s (%s) is at least 4.5:1 on white, AA for text', (_name, hex) => {
+    expect(contrastOnWhite(hex)).toBeGreaterThanOrEqual(4.5);
   });
 });
